@@ -1,0 +1,10 @@
+[
+  {
+    "level": "critical",
+    "category": "memory",
+    "message": "Memory usage critical: 97.22%",
+    "value": 97.2213864326477,
+    "threshold": 95,
+    "timestamp": "2025-08-25T15:04:02.444Z"
+  }
+]

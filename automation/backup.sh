@@ -70,7 +70,10 @@ fi
 log "Backing up source files..."
 mkdir -p "$BACKUP_DIR/src"
 if [ -d "src" ]; then
-    find src -name "*.tsx" -o -name "*.ts" -o -name "*.js" | head -100 | xargs -I {} cp --parents {} "$BACKUP_DIR/"
+    find src -name "*.tsx" -o -name "*.ts" -o -name "*.js" | head -100 | while read -r file; do
+        mkdir -p "$BACKUP_DIR/$(dirname "$file")"
+        cp "$file" "$BACKUP_DIR/$file"
+    done
     log "Source files backed up"
 fi
 
@@ -78,7 +81,10 @@ fi
 log "Backing up components..."
 mkdir -p "$BACKUP_DIR/components"
 if [ -d "components" ]; then
-    find components -name "*.tsx" -o -name "*.ts" -o -name "*.js" | head -100 | xargs -I {} cp --parents {} "$BACKUP_DIR/"
+    find components -name "*.tsx" -o -name "*.ts" -o -name "*.js" | head -100 | while read -r file; do
+        mkdir -p "$BACKUP_DIR/$(dirname "$file")"
+        cp "$file" "$BACKUP_DIR/$file"
+    done
     log "Components backed up"
 fi
 

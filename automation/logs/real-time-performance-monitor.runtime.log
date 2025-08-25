@@ -374,3 +374,67 @@ Alerts:
 [2025-08-25T15:04:02.447Z] CRITICAL MEMORY ALERT: Memory usage critical: 97.22% - Memory pressure detected
 [2025-08-25T15:04:02.448Z] ALERT [CRITICAL] Memory usage critical: 97.22%
 [2025-08-25T15:04:02.448Z] metrics rss=30.70 MB heapUsed=4.28 MB cpuLoad=50.58 memUsage=97.22%
+[2025-08-25T15:04:03.704Z] Stopping real-time performance monitor...
+[2025-08-25T15:04:03.704Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:04:03.705Z] Stopping performance monitoring
+[2025-08-25T15:04:03.705Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:04:03.705Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:04:03.706Z] Stopping performance monitoring
+[2025-08-25T15:04:03.706Z] [real-time-performance-monitor] [2025-08-25T15:04:03.705Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:04:03.707Z] Stopping performance monitoring
+[2025-08-25T15:04:03.707Z] [real-time-performance-monitor] [2025-08-25T15:04:03.706Z] Stopping performance monitoring
+[2025-08-25T15:04:15.999Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:04:16.183Z] Starting real-time performance monitoring
+[2025-08-25T15:04:37.478Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:04:37.501Z] Starting real-time performance monitoring
+[2025-08-25T15:04:37.501Z] [real-time-performance-monitor] [2025-08-25T15:04:37.478Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:04:37.502Z] [real-time-performance-monitor] [2025-08-25T15:04:37.501Z] Starting real-time performance monitoring
+[2025-08-25T15:04:37.652Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:04:37.657Z] Starting real-time performance monitoring
+[2025-08-25T15:04:46.190Z] ALERT [WARNING] CPU load warning: 75.35
+[2025-08-25T15:04:46.190Z] CRITICAL MEMORY ALERT: Memory usage critical: 98.52% - Memory pressure detected
+[2025-08-25T15:04:46.190Z] ALERT [CRITICAL] Memory usage critical: 98.52%
+[2025-08-25T15:04:46.191Z] metrics rss=30.60 MB heapUsed=4.25 MB cpuLoad=75.35 memUsage=98.52%
+[2025-08-25T15:05:07.506Z] ALERT [WARNING] Memory usage warning: 92.58%
+[2025-08-25T15:05:07.506Z] metrics rss=30.72 MB heapUsed=4.28 MB cpuLoad=56.49 memUsage=92.58%
+[2025-08-25T15:05:07.506Z] [real-time-performance-monitor] [2025-08-25T15:05:07.506Z] ALERT [WARNING] Memory usage warning: 92.58%
+[2025-08-25T15:05:07.506Z] [real-time-performance-monitor] [2025-08-25T15:05:07.506Z] metrics rss=30.72 MB heapUsed=4.28 MB cpuLoad=56.49 memUsage=92.58%
+[2025-08-25T15:05:07.662Z] ALERT [WARNING] Memory usage warning: 92.57%
+[2025-08-25T15:05:07.663Z] metrics rss=30.36 MB heapUsed=4.28 MB cpuLoad=52.20 memUsage=92.57%
+[2025-08-25T15:05:16.188Z] ALERT [WARNING] Memory usage warning: 93.24%
+[2025-08-25T15:05:16.189Z] metrics rss=30.82 MB heapUsed=4.32 MB cpuLoad=48.42 memUsage=93.24%
+[2025-08-25T15:05:37.508Z] ALERT [WARNING] Memory usage warning: 93.62%
+[2025-08-25T15:05:37.509Z] metrics rss=30.91 MB heapUsed=4.34 MB cpuLoad=40.63 memUsage=93.62%
+[2025-08-25T15:05:37.509Z] [real-time-performance-monitor] [2025-08-25T15:05:37.508Z] ALERT [WARNING] Memory usage warning: 93.62%
+[2025-08-25T15:05:37.510Z] [real-time-performance-monitor] [2025-08-25T15:05:37.509Z] metrics rss=30.91 MB heapUsed=4.34 MB cpuLoad=40.63 memUsage=93.62%
+[2025-08-25T15:05:37.512Z] [real-time-performance-monitor] === Performance Monitor Summary ===
+[2025-08-25T15:05:37.513Z] [real-time-performance-monitor] Timestamp: 2025-08-25T15:05:37.504Z
+[2025-08-25T15:05:37.514Z] [real-time-performance-monitor] System Uptime: 1 hours
+[2025-08-25T15:05:37.515Z] [real-time-performance-monitor] Hostname: MacBook-Pro-de-Kleber.local
+
+Current Status:
+  CPU Load: 40.63
+  Memory Usage: 93.62%
+[2025-08-25T15:05:37.516Z] [real-time-performance-monitor] Memory Free: 2.04 GB
+  Process Memory: 30.91 MB
+[2025-08-25T15:05:37.517Z] [real-time-performance-monitor] Process Uptime: 1 minutes
+
+Alerts:
+[2025-08-25T15:05:37.517Z] [real-time-performance-monitor] Total: 2
+  Critical: 0 🔴
+  Warning: 2 🟡
+
+===================================
+[2025-08-25T15:05:37.692Z] ALERT [WARNING] Memory usage warning: 93.59%
+[2025-08-25T15:05:37.694Z] metrics rss=30.77 MB heapUsed=4.43 MB cpuLoad=40.02 memUsage=93.59%
+[2025-08-25T15:05:46.190Z] ALERT [WARNING] Memory usage warning: 94.46%
+[2025-08-25T15:05:46.190Z] metrics rss=31.01 MB heapUsed=4.45 MB cpuLoad=37.70 memUsage=94.46%
+[2025-08-25T15:06:03.440Z] Stopping real-time performance monitor...
+[2025-08-25T15:06:03.447Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:06:03.450Z] Stopping performance monitoring
+[2025-08-25T15:06:03.451Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:06:03.453Z] Stopping performance monitoring
+[2025-08-25T15:06:03.451Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:06:03.455Z] Stopping performance monitoring
+[2025-08-25T15:06:03.461Z] [real-time-performance-monitor] [2025-08-25T15:06:03.451Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:06:03.464Z] [real-time-performance-monitor] [2025-08-25T15:06:03.453Z] Stopping performance monitoring

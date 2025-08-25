@@ -1,0 +1,92 @@
+{
+  "links": [
+    {
+      "url": "https://wikipedia.org",
+      "statusCode": 403,
+      "responseTime": 46,
+      "health": "poor",
+      "timestamp": "2025-08-25T15:04:16.795Z",
+      "headers": {
+        "content-type": "text/plain",
+        "server": "HAProxy"
+      },
+      "intelligence": {
+        "domainAuthority": 70,
+        "securityScore": 90,
+        "performanceScore": 100,
+        "seoScore": 60
+      }
+    },
+    {
+      "url": "https://github.com",
+      "statusCode": 200,
+      "responseTime": 158,
+      "health": "good",
+      "timestamp": "2025-08-25T15:04:34.147Z",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "server": "github.com"
+      },
+      "intelligence": {
+        "domainAuthority": 75,
+        "securityScore": 100,
+        "performanceScore": 100,
+        "seoScore": 100
+      }
+    },
+    {
+      "url": "https://stackoverflow.com",
+      "statusCode": 403,
+      "responseTime": 70,
+      "health": "poor",
+      "timestamp": "2025-08-25T15:04:35.223Z",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "server": "cloudflare"
+      },
+      "intelligence": {
+        "domainAuthority": 70,
+        "securityScore": 90,
+        "performanceScore": 100,
+        "seoScore": 60
+      }
+    },
+    {
+      "url": "https://medium.com",
+      "statusCode": 200,
+      "responseTime": 111,
+      "health": "good",
+      "timestamp": "2025-08-25T15:04:36.339Z",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "server": "cloudflare"
+      },
+      "intelligence": {
+        "domainAuthority": 65,
+        "securityScore": 100,
+        "performanceScore": 100,
+        "seoScore": 100
+      }
+    },
+    {
+      "url": "https://dev.to",
+      "statusCode": 403,
+      "responseTime": 83,
+      "health": "poor",
+      "timestamp": "2025-08-25T15:04:37.437Z",
+      "headers": {
+        "content-type": "unknown",
+        "server": "Varnish"
+      },
+      "intelligence": {
+        "domainAuthority": 65,
+        "securityScore": 90,
+        "performanceScore": 100,
+        "seoScore": 60
+      }
+    }
+  ],
+  "lastUpdated": "2025-08-25T15:04:37.469Z",
+  "totalAnalyzed": 5,
+  "healthScore": 90
+}

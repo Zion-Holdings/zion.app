@@ -1,0 +1,50 @@
+{
+  "links": [
+    {
+      "id": "homepage",
+      "url": "https://ziontechgroup.com",
+      "priority": "critical",
+      "category": "core",
+      "lastCheck": null,
+      "nextCheck": null,
+      "status": "pending",
+      "healthScore": 100,
+      "checkCount": 0
+    },
+    {
+      "id": "services",
+      "url": "https://ziontechgroup.com/services",
+      "priority": "high",
+      "category": "core",
+      "lastCheck": null,
+      "nextCheck": null,
+      "status": "pending",
+      "healthScore": 100,
+      "checkCount": 0
+    },
+    {
+      "id": "about",
+      "url": "https://ziontechgroup.com/about",
+      "priority": "medium",
+      "category": "content",
+      "lastCheck": null,
+      "nextCheck": null,
+      "status": "pending",
+      "healthScore": 100,
+      "checkCount": 0
+    },
+    {
+      "id": "contact",
+      "url": "https://ziontechgroup.com/contact",
+      "priority": "high",
+      "category": "core",
+      "lastCheck": null,
+      "status": "pending",
+      "healthScore": 100,
+      "checkCount": 0
+    }
+  ],
+  "lastUpdated": "2025-08-25T14:26:17.951Z",
+  "totalScheduled": 0,
+  "activeJobs": 0
+}

@@ -20,3 +20,33 @@ No metrics available
 [2025-08-25T15:04:02.447Z] CRITICAL MEMORY ALERT: Memory usage critical: 97.22% - Memory pressure detected
 [2025-08-25T15:04:02.448Z] ALERT [CRITICAL] Memory usage critical: 97.22%
 [2025-08-25T15:04:02.448Z] metrics rss=30.70 MB heapUsed=4.28 MB cpuLoad=50.58 memUsage=97.22%
+[2025-08-25T15:04:03.705Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:04:03.707Z] Stopping performance monitoring
+[2025-08-25T15:04:37.652Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:04:37.657Z] Starting real-time performance monitoring
+[2025-08-25T15:05:07.662Z] ALERT [WARNING] Memory usage warning: 92.57%
+[2025-08-25T15:05:07.663Z] metrics rss=30.36 MB heapUsed=4.28 MB cpuLoad=52.20 memUsage=92.57%
+
+=== Performance Monitor Summary ===
+Timestamp: 2025-08-25T15:05:07.659Z
+System Uptime: 1 hours
+Hostname: MacBook-Pro-de-Kleber.local
+
+Current Status:
+  CPU Load: 52.20
+  Memory Usage: 92.57%
+  Memory Free: 2.38 GB
+  Process Memory: 30.36 MB
+  Process Uptime: 0 minutes
+
+Alerts:
+  Total: 1
+  Critical: 0 🔴
+  Warning: 1 🟡
+
+===================================
+
+[2025-08-25T15:05:37.692Z] ALERT [WARNING] Memory usage warning: 93.59%
+[2025-08-25T15:05:37.694Z] metrics rss=30.77 MB heapUsed=4.43 MB cpuLoad=40.02 memUsage=93.59%
+[2025-08-25T15:06:03.451Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:06:03.455Z] Stopping performance monitoring

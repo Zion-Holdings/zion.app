@@ -1,0 +1,58 @@
+npm warn Unknown project config "<<<<<<< HEAD". This will stop working in the next major version of npm.
+npm warn Unknown project config "strict-peer-dependencies". This will stop working in the next major version of npm.
+npm warn Unknown project config "auto-install-peers". This will stop working in the next major version of npm.
+npm warn Unknown project config "react@18.2.0". This will stop working in the next major version of npm.
+npm warn Unknown project config "react-dom@18.2.0". This will stop working in the next major version of npm.
+npm warn Unknown project config ">>>>>>> origin/c9d4c2-codex/implement-wishlist-functionality". This will stop working in the next major version of npm.
+# npm audit report
+
+@cypress/request  <=3.0.3
+Severity: critical
+Server-Side Request Forgery in Request - https://github.com/advisories/GHSA-p8p7-x288-28g6
+Depends on vulnerable versions of form-data
+fix available via `npm audit fix --force`
+Will install cypress@15.0.0, which is a breaking change
+node_modules/@cypress/request
+  cypress  4.3.0 - 12.17.4
+  Depends on vulnerable versions of @cypress/request
+  node_modules/cypress
+
+dompurify  <3.2.4
+Severity: moderate
+DOMPurify allows Cross-site Scripting (XSS) - https://github.com/advisories/GHSA-vhxf-7vqr-mrjg
+fix available via `npm audit fix --force`
+Will install jspdf@3.0.1, which is a breaking change
+node_modules/dompurify
+  jspdf  <=3.0.0
+  Depends on vulnerable versions of dompurify
+  node_modules/jspdf
+
+esbuild  <=0.24.2
+Severity: moderate
+esbuild enables any website to send any requests to the development server and read the response - https://github.com/advisories/GHSA-67mh-4wv8-2f99
+fix available via `npm audit fix --force`
+Will install vite@7.1.3, which is a breaking change
+node_modules/esbuild
+  vite  0.11.0 - 6.1.6
+  Depends on vulnerable versions of esbuild
+  node_modules/vite
+    vite-node  <=2.2.0-beta.2
+    Depends on vulnerable versions of vite
+    node_modules/vite-node
+      vitest  0.0.1 - 0.0.12 || 0.0.29 - 0.0.122 || 0.3.3 - 2.2.0-beta.2
+      Depends on vulnerable versions of vite
+      Depends on vulnerable versions of vite-node
+      node_modules/vitest
+
+form-data  <2.5.4
+Severity: critical
+form-data uses unsafe random function in form-data for choosing boundary - https://github.com/advisories/GHSA-fjxv-7rqg-78g4
+fix available via `npm audit fix --force`
+Will install cypress@15.0.0, which is a breaking change
+node_modules/@cypress/request/node_modules/form-data
+
+
+9 vulnerabilities (6 moderate, 1 high, 2 critical)
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force

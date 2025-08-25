@@ -184,3 +184,99 @@ Starting Enhanced Autonomous System...
 [2025-08-25T15:04:03.605Z] [link-health-scheduler] [2025-08-25T15:04:03.604Z] Stopping Link Health Scheduler...
 [2025-08-25T15:04:03.606Z] [link-health-scheduler] [2025-08-25T15:04:03.605Z] Stopping Link Health Scheduler
 [2025-08-25T15:04:03.606Z] [link-health-scheduler] [2025-08-25T15:04:03.606Z] All scheduled jobs cleared
+[2025-08-25T15:04:03.706Z] [real-time-performance-monitor] [2025-08-25T15:04:03.705Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:04:03.707Z] [real-time-performance-monitor] [2025-08-25T15:04:03.706Z] Stopping performance monitoring
+[2025-08-25T15:04:06.963Z] [HEALTH] Health check issues found: Service autonomous-system-manager is enabled but not running
+[2025-08-25T15:04:08.030Z] [SYSTEM] Service link-health-scheduler exited with code 0, signal null
+[2025-08-25T15:04:08.031Z] [SYSTEM] Restarting link-health-scheduler in 15000ms (attempt 1/3)
+[2025-08-25T15:04:08.482Z] [SYSTEM] Starting service: autonomous-system-manager
+[2025-08-25T15:04:08.484Z] [SYSTEM] Service autonomous-system-manager started successfully
+[2025-08-25T15:04:08.712Z] [autonomous-system-manager] [2025-08-25T15:04:08.702Z] Starting Autonomous System Manager
+[2025-08-25T15:04:08.713Z] [autonomous-system-manager] [2025-08-25T15:04:08.712Z] Starting all enabled services...
+[2025-08-25T15:04:08.713Z] [autonomous-system-manager] [2025-08-25T15:04:08.713Z] Starting service: autonomous-system-manager
+[2025-08-25T15:04:08.714Z] [autonomous-system-manager] [2025-08-25T15:04:08.714Z] Error starting autonomous-system-manager: Cannot access 'process' before initialization
+[2025-08-25T15:04:09.764Z] [autonomous-system-manager] [2025-08-25T15:04:09.751Z] Starting service: ml-link-intelligence
+[2025-08-25T15:04:09.751Z] Error starting ml-link-intelligence: Cannot access 'process' before initialization
+[2025-08-25T15:04:10.760Z] [autonomous-system-manager] [2025-08-25T15:04:10.758Z] Starting service: link-health-scheduler
+[2025-08-25T15:04:10.761Z] [autonomous-system-manager] [2025-08-25T15:04:10.758Z] Error starting link-health-scheduler: Cannot access 'process' before initialization
+[2025-08-25T15:04:11.849Z] [autonomous-system-manager] [2025-08-25T15:04:11.839Z] Starting service: real-time-performance-monitor
+[2025-08-25T15:04:11.840Z] Error starting real-time-performance-monitor: Cannot access 'process' before initialization
+[2025-08-25T15:04:12.925Z] [autonomous-system-manager] [2025-08-25T15:04:12.921Z] Started 0/4 services successfully
+[2025-08-25T15:04:12.931Z] [autonomous-system-manager] [2025-08-25T15:04:12.923Z] Autonomous System Manager is now running
+[2025-08-25T15:04:23.032Z] [SYSTEM] Starting service: link-health-scheduler
+[2025-08-25T15:04:23.034Z] [SYSTEM] Service link-health-scheduler started successfully
+[2025-08-25T15:04:23.164Z] [link-health-scheduler] [2025-08-25T15:04:23.158Z] Starting Link Health Scheduler
+[2025-08-25T15:04:23.165Z] [link-health-scheduler] [2025-08-25T15:04:23.164Z] Starting Link Health Scheduler
+[2025-08-25T15:04:23.165Z] [link-health-scheduler] [2025-08-25T15:04:23.165Z] Scheduled check for homepage at Mon Aug 25 2025 12:09:23 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:04:23.166Z] [link-health-scheduler] [2025-08-25T15:04:23.165Z] Scheduled check for services at Mon Aug 25 2025 12:19:23 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:04:23.166Z] [link-health-scheduler] [2025-08-25T15:04:23.166Z] Scheduled check for about at Mon Aug 25 2025 13:04:23 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:04:23.166Z] [link-health-scheduler] [2025-08-25T15:04:23.166Z] Scheduled check for contact at Mon Aug 25 2025 12:19:23 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:04:23.167Z] [link-health-scheduler] [2025-08-25T15:04:23.166Z] Scheduled 4 links for health checks
+[2025-08-25T15:04:27.257Z] [SYSTEM] Service real-time-performance-monitor exited with code 0, signal null
+[2025-08-25T15:04:27.258Z] [SYSTEM] Restarting real-time-performance-monitor in 10000ms (attempt 1/3)
+[2025-08-25T15:04:29.083Z] [SYSTEM] Service ml-link-intelligence exited with code 0, signal null
+[2025-08-25T15:04:29.084Z] [SYSTEM] Restarting ml-link-intelligence in 10000ms (attempt 1/3)
+[2025-08-25T15:04:36.973Z] [HEALTH] Health check issues found: Service ml-link-intelligence is enabled but not running, Service real-time-performance-monitor is enabled but not running
+[2025-08-25T15:04:37.259Z] [SYSTEM] Starting service: real-time-performance-monitor
+[2025-08-25T15:04:37.261Z] [SYSTEM] Service real-time-performance-monitor started successfully
+[2025-08-25T15:04:37.501Z] [real-time-performance-monitor] [2025-08-25T15:04:37.478Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:04:37.502Z] [real-time-performance-monitor] [2025-08-25T15:04:37.501Z] Starting real-time performance monitoring
+[2025-08-25T15:04:39.100Z] [SYSTEM] Starting service: ml-link-intelligence
+[2025-08-25T15:04:39.103Z] [SYSTEM] Service ml-link-intelligence started successfully
+[2025-08-25T15:04:39.260Z] [ml-link-intelligence] [2025-08-25T15:04:39.254Z] Starting ML Link Intelligence worker
+[2025-08-25T15:04:39.261Z] [ml-link-intelligence] [2025-08-25T15:04:39.260Z] Added https://github.com to analysis queue
+[2025-08-25T15:04:39.261Z] [ml-link-intelligence] [2025-08-25T15:04:39.261Z] Added https://stackoverflow.com to analysis queue
+[2025-08-25T15:04:39.262Z] [ml-link-intelligence] [2025-08-25T15:04:39.261Z] Added https://medium.com to analysis queue
+[2025-08-25T15:04:39.261Z] Added https://dev.to to analysis queue
+[2025-08-25T15:04:39.262Z] [ml-link-intelligence] [2025-08-25T15:04:39.262Z] Added https://wikipedia.org to analysis queue
+[2025-08-25T15:04:39.263Z] [ml-link-intelligence] [2025-08-25T15:04:39.262Z] Processing queue with 5 links
+[2025-08-25T15:04:39.263Z] [ml-link-intelligence] [2025-08-25T15:04:39.263Z] Analyzing link: https://github.com
+[2025-08-25T15:04:39.441Z] [ml-link-intelligence] [2025-08-25T15:04:39.441Z] Analysis complete for https://github.com: good (200)
+[2025-08-25T15:04:40.442Z] [ml-link-intelligence] [2025-08-25T15:04:40.441Z] Analyzing link: https://stackoverflow.com
+[2025-08-25T15:04:40.535Z] [ml-link-intelligence] [2025-08-25T15:04:40.534Z] Analysis complete for https://stackoverflow.com: poor (403)
+[2025-08-25T15:04:41.536Z] [ml-link-intelligence] [2025-08-25T15:04:41.536Z] Analyzing link: https://medium.com
+[2025-08-25T15:04:41.679Z] [ml-link-intelligence] [2025-08-25T15:04:41.679Z] Analysis complete for https://medium.com: good (200)
+[2025-08-25T15:04:42.679Z] [ml-link-intelligence] [2025-08-25T15:04:42.679Z] Analyzing link: https://dev.to
+[2025-08-25T15:04:42.746Z] [ml-link-intelligence] [2025-08-25T15:04:42.746Z] Analysis complete for https://dev.to: poor (403)
+[2025-08-25T15:04:43.875Z] [ml-link-intelligence] [2025-08-25T15:04:43.867Z] Analyzing link: https://wikipedia.org
+[2025-08-25T15:04:43.935Z] [ml-link-intelligence] [2025-08-25T15:04:43.935Z] Analysis complete for https://wikipedia.org: poor (403)
+[2025-08-25T15:04:44.935Z] [ml-link-intelligence] [2025-08-25T15:04:44.935Z] Queue processing complete
+[2025-08-25T15:05:03.186Z] [link-health-scheduler] [2025-08-25T15:05:03.170Z] Status: 4 jobs scheduled, 0 active
+[2025-08-25T15:05:06.975Z] [HEALTH] All services healthy
+[2025-08-25T15:05:07.506Z] [real-time-performance-monitor] [2025-08-25T15:05:07.506Z] ALERT [WARNING] Memory usage warning: 92.58%
+[2025-08-25T15:05:07.506Z] [real-time-performance-monitor] [2025-08-25T15:05:07.506Z] metrics rss=30.72 MB heapUsed=4.28 MB cpuLoad=56.49 memUsage=92.58%
+[2025-08-25T15:05:12.932Z] [autonomous-system-manager] [2025-08-25T15:05:12.932Z] Periodic status check - all systems operational
+[2025-08-25T15:05:36.977Z] [HEALTH] All services healthy
+[2025-08-25T15:05:37.509Z] [real-time-performance-monitor] [2025-08-25T15:05:37.508Z] ALERT [WARNING] Memory usage warning: 93.62%
+[2025-08-25T15:05:37.510Z] [real-time-performance-monitor] [2025-08-25T15:05:37.509Z] metrics rss=30.91 MB heapUsed=4.34 MB cpuLoad=40.63 memUsage=93.62%
+[2025-08-25T15:05:37.512Z] [real-time-performance-monitor] === Performance Monitor Summary ===
+[2025-08-25T15:05:37.513Z] [real-time-performance-monitor] Timestamp: 2025-08-25T15:05:37.504Z
+[2025-08-25T15:05:37.514Z] [real-time-performance-monitor] System Uptime: 1 hours
+[2025-08-25T15:05:37.515Z] [real-time-performance-monitor] Hostname: MacBook-Pro-de-Kleber.local
+
+Current Status:
+  CPU Load: 40.63
+  Memory Usage: 93.62%
+[2025-08-25T15:05:37.516Z] [real-time-performance-monitor] Memory Free: 2.04 GB
+  Process Memory: 30.91 MB
+[2025-08-25T15:05:37.517Z] [real-time-performance-monitor] Process Uptime: 1 minutes
+
+Alerts:
+[2025-08-25T15:05:37.517Z] [real-time-performance-monitor] Total: 2
+  Critical: 0 🔴
+  Warning: 2 🟡
+
+===================================
+[2025-08-25T15:06:02.907Z] [autonomous-system-manager] [2025-08-25T15:06:02.900Z] Shutting down Autonomous System Manager gracefully...
+[2025-08-25T15:06:02.900Z] Stopping all services...
+[2025-08-25T15:06:02.901Z] Stopped 0 services
+[2025-08-25T15:06:03.015Z] [SYSTEM] Service autonomous-system-manager exited with code 0, signal null
+[2025-08-25T15:06:03.017Z] [SYSTEM] Restarting autonomous-system-manager in 5000ms (attempt 1/5)
+[2025-08-25T15:06:03.046Z] [ml-link-intelligence] [2025-08-25T15:06:03.044Z] Stopping ML Link Intelligence...
+[2025-08-25T15:06:03.167Z] [link-health-scheduler] [2025-08-25T15:06:03.165Z] Stopping Link Health Scheduler...
+[2025-08-25T15:06:03.166Z] Stopping Link Health Scheduler
+[2025-08-25T15:06:03.167Z] All scheduled jobs cleared
+[2025-08-25T15:06:03.349Z] [SYSTEM] Service link-health-scheduler exited with code 0, signal null
+[2025-08-25T15:06:03.349Z] [SYSTEM] Restarting link-health-scheduler in 15000ms (attempt 1/3)
+[2025-08-25T15:06:03.461Z] [real-time-performance-monitor] [2025-08-25T15:06:03.451Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:06:03.464Z] [real-time-performance-monitor] [2025-08-25T15:06:03.453Z] Stopping performance monitoring

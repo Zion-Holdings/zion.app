@@ -1,0 +1,393 @@
+[2025-08-25T13:50:00.709Z] Starting real-time performance monitor
+[2025-08-25T13:50:00.712Z] metrics rss=49.10 MB heapUsed=7.65 MB cpuUser=221848 cpuSystem=57577
+[2025-08-25T13:50:30.713Z] metrics rss=46.12 MB heapUsed=7.01 MB cpuUser=277505 cpuSystem=65627
+[2025-08-25T13:51:00.715Z] metrics rss=46.82 MB heapUsed=6.88 MB cpuUser=295995 cpuSystem=69987
+[2025-08-25T13:51:30.718Z] metrics rss=47.46 MB heapUsed=7.04 MB cpuUser=310938 cpuSystem=73500
+[2025-08-25T13:52:00.719Z] metrics rss=47.68 MB heapUsed=7.53 MB cpuUser=325801 cpuSystem=76489
+[2025-08-25T13:52:06.400Z] Stopping real-time performance monitor...
+[2025-08-25T13:52:11.774Z] Starting real-time performance monitor
+[2025-08-25T13:52:11.776Z] metrics rss=48.13 MB heapUsed=7.56 MB cpuUser=183998 cpuSystem=39484
+[2025-08-25T13:52:21.143Z] Stopping real-time performance monitor...
+[2025-08-25T13:52:26.660Z] Starting real-time performance monitor
+[2025-08-25T13:52:26.662Z] metrics rss=48.71 MB heapUsed=7.63 MB cpuUser=196379 cpuSystem=45466
+[2025-08-25T13:52:56.663Z] metrics rss=46.07 MB heapUsed=6.99 MB cpuUser=245868 cpuSystem=54385
+[2025-08-25T13:53:26.664Z] metrics rss=46.77 MB heapUsed=6.84 MB cpuUser=261391 cpuSystem=58682
+[2025-08-25T13:53:56.665Z] metrics rss=47.43 MB heapUsed=6.98 MB cpuUser=275777 cpuSystem=62466
+[2025-08-25T13:54:08.830Z] Starting real-time performance monitor
+[2025-08-25T13:54:08.833Z] metrics rss=48.65 MB heapUsed=7.57 MB cpuUser=188172 cpuSystem=40682
+[2025-08-25T13:54:11.702Z] Stopping real-time performance monitor...
+[2025-08-25T13:54:38.834Z] metrics rss=45.99 MB heapUsed=6.99 MB cpuUser=241852 cpuSystem=48165
+[2025-08-25T13:55:08.834Z] metrics rss=46.70 MB heapUsed=6.84 MB cpuUser=257605 cpuSystem=52036
+[2025-08-25T13:55:38.835Z] metrics rss=47.35 MB heapUsed=6.99 MB cpuUser=274104 cpuSystem=57252
+[2025-08-25T13:56:08.836Z] metrics rss=47.56 MB heapUsed=7.46 MB cpuUser=289953 cpuSystem=62020
+[2025-08-25T13:56:38.836Z] metrics rss=47.75 MB heapUsed=7.44 MB cpuUser=309484 cpuSystem=69015
+[2025-08-25T13:57:08.837Z] metrics rss=47.77 MB heapUsed=6.83 MB cpuUser=328614 cpuSystem=72148
+[2025-08-25T13:57:38.839Z] metrics rss=47.77 MB heapUsed=7.39 MB cpuUser=347616 cpuSystem=76841
+[2025-08-25T13:58:38.830Z] metrics rss=47.78 MB heapUsed=7.00 MB cpuUser=389660 cpuSystem=84843
+[2025-08-25T13:59:08.827Z] metrics rss=47.79 MB heapUsed=6.81 MB cpuUser=410536 cpuSystem=87892
+[2025-08-25T13:59:38.827Z] metrics rss=47.79 MB heapUsed=7.06 MB cpuUser=429457 cpuSystem=90982
+[2025-08-25T14:00:08.829Z] metrics rss=47.98 MB heapUsed=6.82 MB cpuUser=453982 cpuSystem=95321
+[2025-08-25T14:00:38.829Z] metrics rss=47.98 MB heapUsed=6.83 MB cpuUser=472299 cpuSystem=97782
+[2025-08-25T14:01:08.830Z] metrics rss=48.02 MB heapUsed=7.16 MB cpuUser=496051 cpuSystem=100808
+[2025-08-25T14:01:38.833Z] metrics rss=48.07 MB heapUsed=7.19 MB cpuUser=526801 cpuSystem=104689
+[2025-08-25T14:02:08.834Z] metrics rss=49.86 MB heapUsed=7.42 MB cpuUser=564762 cpuSystem=108795
+[2025-08-25T14:02:38.835Z] metrics rss=49.86 MB heapUsed=7.66 MB cpuUser=588842 cpuSystem=111661
+[2025-08-25T14:03:08.836Z] metrics rss=49.92 MB heapUsed=7.10 MB cpuUser=618264 cpuSystem=115397
+[2025-08-25T14:03:38.837Z] metrics rss=49.93 MB heapUsed=6.91 MB cpuUser=648031 cpuSystem=119667
+[2025-08-25T14:04:08.838Z] metrics rss=49.97 MB heapUsed=7.39 MB cpuUser=675282 cpuSystem=122901
+[2025-08-25T14:15:38.857Z] metrics rss=50.43 MB heapUsed=7.48 MB cpuUser=1505202 cpuSystem=220327
+[2025-08-25T14:16:08.857Z] metrics rss=51.26 MB heapUsed=7.50 MB cpuUser=1552735 cpuSystem=224296
+[2025-08-25T14:16:38.856Z] metrics rss=51.26 MB heapUsed=7.50 MB cpuUser=1592271 cpuSystem=229274
+[2025-08-25T14:17:08.857Z] metrics rss=51.26 MB heapUsed=7.11 MB cpuUser=1635170 cpuSystem=233687
+[2025-08-25T14:17:38.858Z] metrics rss=51.27 MB heapUsed=7.08 MB cpuUser=1674012 cpuSystem=237258
+[2025-08-25T14:18:08.859Z] metrics rss=51.27 MB heapUsed=7.09 MB cpuUser=1714053 cpuSystem=241374
+[2025-08-25T14:18:38.860Z] metrics rss=51.27 MB heapUsed=7.52 MB cpuUser=1757826 cpuSystem=245811
+[2025-08-25T14:19:08.862Z] metrics rss=51.28 MB heapUsed=7.11 MB cpuUser=1796760 cpuSystem=249614
+[2025-08-25T14:19:11.887Z] Starting real-time performance monitor
+[2025-08-25T14:19:11.892Z] metrics rss=29.12 MB heapUsed=3.80 MB cpuUser=63500 cpuSystem=18769
+[2025-08-25T14:19:38.863Z] metrics rss=51.28 MB heapUsed=7.11 MB cpuUser=1829379 cpuSystem=253207
+[2025-08-25T14:19:41.893Z] metrics rss=29.25 MB heapUsed=3.82 MB cpuUser=63978 cpuSystem=18998
+[2025-08-25T14:20:08.864Z] metrics rss=51.28 MB heapUsed=7.91 MB cpuUser=1861695 cpuSystem=258479
+[2025-08-25T14:20:11.901Z] metrics rss=29.27 MB heapUsed=3.82 MB cpuUser=64290 cpuSystem=19281
+[2025-08-25T14:20:38.865Z] metrics rss=51.33 MB heapUsed=7.36 MB cpuUser=1896537 cpuSystem=261925
+[2025-08-25T14:20:41.901Z] metrics rss=29.29 MB heapUsed=3.83 MB cpuUser=64759 cpuSystem=19574
+[2025-08-25T14:21:08.866Z] metrics rss=51.33 MB heapUsed=7.13 MB cpuUser=1929750 cpuSystem=265407
+[2025-08-25T14:21:11.901Z] metrics rss=29.29 MB heapUsed=3.83 MB cpuUser=64995 cpuSystem=19789
+[2025-08-25T14:21:38.867Z] metrics rss=51.34 MB heapUsed=7.53 MB cpuUser=1969829 cpuSystem=269627
+[2025-08-25T14:21:41.902Z] metrics rss=29.31 MB heapUsed=3.85 MB cpuUser=65565 cpuSystem=20095
+[2025-08-25T14:22:08.868Z] metrics rss=51.34 MB heapUsed=7.73 MB cpuUser=2003744 cpuSystem=273539
+[2025-08-25T14:22:11.903Z] metrics rss=29.33 MB heapUsed=3.86 MB cpuUser=65935 cpuSystem=20415
+[2025-08-25T14:22:38.869Z] metrics rss=51.35 MB heapUsed=7.93 MB cpuUser=2038216 cpuSystem=278399
+[2025-08-25T14:22:41.904Z] metrics rss=29.34 MB heapUsed=3.86 MB cpuUser=66213 cpuSystem=20689
+[2025-08-25T14:23:08.903Z] metrics rss=51.35 MB heapUsed=7.58 MB cpuUser=2070182 cpuSystem=282208
+[2025-08-25T14:23:11.904Z] metrics rss=29.39 MB heapUsed=3.90 MB cpuUser=66749 cpuSystem=20962
+[2025-08-25T14:23:38.920Z] metrics rss=51.35 MB heapUsed=7.55 MB cpuUser=2101756 cpuSystem=285860
+[2025-08-25T14:23:41.906Z] metrics rss=29.43 MB heapUsed=3.93 MB cpuUser=67283 cpuSystem=21211
+[2025-08-25T14:24:08.920Z] metrics rss=51.35 MB heapUsed=7.40 MB cpuUser=2133517 cpuSystem=289267
+[2025-08-25T14:24:11.906Z] metrics rss=29.45 MB heapUsed=3.93 MB cpuUser=67573 cpuSystem=21464
+[2025-08-25T14:24:38.921Z] metrics rss=51.35 MB heapUsed=7.64 MB cpuUser=2168152 cpuSystem=292407
+[2025-08-25T14:24:41.907Z] metrics rss=29.46 MB heapUsed=3.94 MB cpuUser=67767 cpuSystem=21750
+[2025-08-25T14:25:08.921Z] metrics rss=51.35 MB heapUsed=7.57 MB cpuUser=2198996 cpuSystem=295610
+[2025-08-25T14:25:11.907Z] metrics rss=29.46 MB heapUsed=3.94 MB cpuUser=67978 cpuSystem=22096
+[2025-08-25T14:25:38.922Z] metrics rss=51.36 MB heapUsed=7.41 MB cpuUser=2230298 cpuSystem=298852
+[2025-08-25T14:25:41.911Z] metrics rss=29.47 MB heapUsed=3.94 MB cpuUser=68277 cpuSystem=22436
+[2025-08-25T14:26:08.922Z] metrics rss=51.47 MB heapUsed=7.27 MB cpuUser=2265068 cpuSystem=302232
+[2025-08-25T14:26:17.957Z] [real-time-performance-monitor] ERROR: /Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_25_25/zion.app/automation/real-time-performance-monitor.cjs:198
+          interfaces[name].forEach(interface => {
+                                   ^^^^^^^^^
+
+SyntaxError: Unexpected strict mode reserved word
+    at wrapSafe (node:internal/modules/cjs/loader:1662:18)
+    at Module._compile (node:internal/modules/cjs/loader:1704:20)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49
+
+Node.js v22.16.0
+[2025-08-25T14:26:28.035Z] [real-time-performance-monitor] ERROR: /Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_25_25/zion.app/automation/real-time-performance-monitor.cjs:198
+          interfaces[name].forEach(interface => {
+                                   ^^^^^^^^^
+
+SyntaxError: Unexpected strict mode reserved word
+    at wrapSafe (node:internal/modules/cjs/loader:1662:18)
+    at Module._compile (node:internal/modules/cjs/loader:1704:20)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49
+
+Node.js v22.16.0
+[2025-08-25T14:26:38.120Z] [real-time-performance-monitor] ERROR: /Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_25_25/zion.app/automation/real-time-performance-monitor.cjs:198
+          interfaces[name].forEach(interface => {
+                                   ^^^^^^^^^
+
+SyntaxError: Unexpected strict mode reserved word
+    at wrapSafe (node:internal/modules/cjs/loader:1662:18)
+    at Module._compile (node:internal/modules/cjs/loader:1704:20)
+    at Object..js (node:internal/modules/cjs/loader:1895:10)
+    at Module.load (node:internal/modules/cjs/loader:1465:32)
+    at Function._load (node:internal/modules/cjs/loader:1282:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:322:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:235:24)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:171:5)
+    at node:internal/main/run_main_module:36:49
+
+Node.js v22.16.0
+[2025-08-25T14:26:38.922Z] metrics rss=51.47 MB heapUsed=7.59 MB cpuUser=2296022 cpuSystem=305661
+[2025-08-25T14:26:48.197Z] Starting Real-Time Performance Monitor
+[2025-08-25T14:26:48.201Z] [real-time-performance-monitor] [2025-08-25T14:26:48.197Z] Starting Real-Time Performance Monitor
+[2025-08-25T14:26:48.201Z] Starting real-time performance monitoring
+[2025-08-25T14:26:48.201Z] [real-time-performance-monitor] [2025-08-25T14:26:48.201Z] Starting real-time performance monitoring
+[2025-08-25T14:26:52.215Z] Starting Real-Time Performance Monitor
+[2025-08-25T14:26:52.225Z] Starting real-time performance monitoring
+[2025-08-25T14:27:08.924Z] metrics rss=51.47 MB heapUsed=7.83 MB cpuUser=2326371 cpuSystem=308686
+[2025-08-25T14:27:18.204Z] CRITICAL MEMORY ALERT: Memory usage critical: 98.63% - Memory pressure detected
+[2025-08-25T14:27:18.204Z] ALERT [CRITICAL] Memory usage critical: 98.63%
+[2025-08-25T14:27:18.205Z] [real-time-performance-monitor] [2025-08-25T14:27:18.204Z] CRITICAL MEMORY ALERT: Memory usage critical: 98.63% - Memory pressure detected
+[2025-08-25T14:27:18.205Z] metrics rss=29.74 MB heapUsed=4.26 MB cpuLoad=7.77 memUsage=98.63%
+[2025-08-25T14:27:18.205Z] [real-time-performance-monitor] [2025-08-25T14:27:18.204Z] ALERT [CRITICAL] Memory usage critical: 98.63%
+[2025-08-25T14:27:18.205Z] [real-time-performance-monitor] [2025-08-25T14:27:18.205Z] metrics rss=29.74 MB heapUsed=4.26 MB cpuLoad=7.77 memUsage=98.63%
+[2025-08-25T14:27:22.229Z] CRITICAL MEMORY ALERT: Memory usage critical: 98.50% - Memory pressure detected
+[2025-08-25T14:27:22.229Z] ALERT [CRITICAL] Memory usage critical: 98.50%
+[2025-08-25T14:27:22.229Z] metrics rss=30.05 MB heapUsed=4.28 MB cpuLoad=7.77 memUsage=98.50%
+[2025-08-25T14:27:38.925Z] metrics rss=51.47 MB heapUsed=7.69 MB cpuUser=2357761 cpuSystem=311575
+[2025-08-25T14:27:52.227Z] CRITICAL MEMORY ALERT: Memory usage critical: 98.53% - Memory pressure detected
+[2025-08-25T14:27:52.227Z] ALERT [CRITICAL] Memory usage critical: 98.53%
+[2025-08-25T14:27:52.228Z] metrics rss=30.29 MB heapUsed=4.36 MB cpuLoad=6.61 memUsage=98.53%
+[2025-08-25T14:28:08.925Z] metrics rss=51.47 MB heapUsed=7.79 MB cpuUser=2388975 cpuSystem=314519
+[2025-08-25T14:28:22.228Z] CRITICAL MEMORY ALERT: Memory usage critical: 98.72% - Memory pressure detected
+[2025-08-25T14:28:22.228Z] ALERT [CRITICAL] Memory usage critical: 98.72%
+[2025-08-25T14:28:22.229Z] metrics rss=30.32 MB heapUsed=4.39 MB cpuLoad=5.94 memUsage=98.72%
+[2025-08-25T14:28:38.926Z] metrics rss=51.47 MB heapUsed=7.21 MB cpuUser=2419646 cpuSystem=317569
+[2025-08-25T14:28:52.227Z] CRITICAL MEMORY ALERT: Memory usage critical: 98.12% - Memory pressure detected
+[2025-08-25T14:28:52.227Z] ALERT [CRITICAL] Memory usage critical: 98.12%
+[2025-08-25T14:28:52.227Z] metrics rss=30.42 MB heapUsed=4.46 MB cpuLoad=5.68 memUsage=98.12%
+[2025-08-25T14:29:08.926Z] metrics rss=51.48 MB heapUsed=7.61 MB cpuUser=2450385 cpuSystem=321301
+[2025-08-25T14:29:22.228Z] CRITICAL MEMORY ALERT: Memory usage critical: 98.58% - Memory pressure detected
+[2025-08-25T14:29:22.228Z] ALERT [CRITICAL] Memory usage critical: 98.58%
+[2025-08-25T14:29:22.228Z] metrics rss=30.48 MB heapUsed=4.51 MB cpuLoad=5.23 memUsage=98.58%
+[2025-08-25T14:29:38.928Z] metrics rss=51.48 MB heapUsed=7.22 MB cpuUser=2480946 cpuSystem=324642
+[2025-08-25T14:29:52.227Z] CRITICAL MEMORY ALERT: Memory usage critical: 98.21% - Memory pressure detected
+[2025-08-25T14:29:52.227Z] ALERT [CRITICAL] Memory usage critical: 98.21%
+[2025-08-25T14:29:52.227Z] metrics rss=30.55 MB heapUsed=4.56 MB cpuLoad=5.88 memUsage=98.21%
+[2025-08-25T14:30:08.928Z] metrics rss=51.48 MB heapUsed=7.22 MB cpuUser=2512714 cpuSystem=328996
+[2025-08-25T14:30:22.229Z] CRITICAL MEMORY ALERT: Memory usage critical: 98.47% - Memory pressure detected
+[2025-08-25T14:30:22.229Z] ALERT [CRITICAL] Memory usage critical: 98.47%
+[2025-08-25T14:30:22.229Z] metrics rss=30.60 MB heapUsed=4.60 MB cpuLoad=6.30 memUsage=98.47%
+[2025-08-25T14:30:39.060Z] metrics rss=51.48 MB heapUsed=7.86 MB cpuUser=2543407 cpuSystem=332115
+[2025-08-25T14:30:52.365Z] CRITICAL MEMORY ALERT: Memory usage critical: 97.90% - Memory pressure detected
+[2025-08-25T14:30:52.366Z] ALERT [CRITICAL] Memory usage critical: 97.90%
+[2025-08-25T14:30:52.366Z] metrics rss=31.30 MB heapUsed=4.20 MB cpuLoad=6.43 memUsage=97.90%
+[2025-08-25T14:31:09.063Z] metrics rss=51.48 MB heapUsed=7.72 MB cpuUser=2573902 cpuSystem=334993
+[2025-08-25T14:31:22.367Z] CRITICAL MEMORY ALERT: Memory usage critical: 98.04% - Memory pressure detected
+[2025-08-25T14:31:22.367Z] ALERT [CRITICAL] Memory usage critical: 98.04%
+[2025-08-25T14:31:22.367Z] metrics rss=31.35 MB heapUsed=4.24 MB cpuLoad=6.38 memUsage=98.04%
+[2025-08-25T14:31:39.065Z] metrics rss=51.48 MB heapUsed=7.63 MB cpuUser=2605395 cpuSystem=338042
+[2025-08-25T14:31:52.368Z] CRITICAL MEMORY ALERT: Memory usage critical: 98.19% - Memory pressure detected
+[2025-08-25T14:31:52.368Z] ALERT [CRITICAL] Memory usage critical: 98.19%
+[2025-08-25T14:31:52.368Z] metrics rss=31.46 MB heapUsed=4.33 MB cpuLoad=5.32 memUsage=98.19%
+[2025-08-25T14:32:09.067Z] metrics rss=51.48 MB heapUsed=7.88 MB cpuUser=2637061 cpuSystem=341306
+[2025-08-25T14:32:22.369Z] CRITICAL MEMORY ALERT: Memory usage critical: 98.24% - Memory pressure detected
+[2025-08-25T14:32:22.369Z] ALERT [CRITICAL] Memory usage critical: 98.24%
+[2025-08-25T14:32:22.369Z] metrics rss=31.55 MB heapUsed=4.39 MB cpuLoad=5.54 memUsage=98.24%
+[2025-08-25T14:32:39.068Z] metrics rss=51.48 MB heapUsed=7.72 MB cpuUser=2668078 cpuSystem=344347
+[2025-08-25T14:32:52.369Z] CRITICAL MEMORY ALERT: Memory usage critical: 97.80% - Memory pressure detected
+[2025-08-25T14:32:52.370Z] ALERT [CRITICAL] Memory usage critical: 97.80%
+[2025-08-25T14:32:52.370Z] metrics rss=31.64 MB heapUsed=4.45 MB cpuLoad=7.26 memUsage=97.80%
+[2025-08-25T14:33:09.071Z] metrics rss=51.49 MB heapUsed=7.25 MB cpuUser=2699424 cpuSystem=347500
+[2025-08-25T14:33:22.378Z] CRITICAL MEMORY ALERT: Memory usage critical: 98.96% - Memory pressure detected
+[2025-08-25T14:33:22.379Z] ALERT [CRITICAL] Memory usage critical: 98.96%
+[2025-08-25T14:33:22.379Z] metrics rss=31.71 MB heapUsed=4.51 MB cpuLoad=6.41 memUsage=98.96%
+[2025-08-25T14:33:39.072Z] metrics rss=51.49 MB heapUsed=7.65 MB cpuUser=2732826 cpuSystem=350638
+[2025-08-25T14:33:52.378Z] CRITICAL MEMORY ALERT: Memory usage critical: 96.01% - Memory pressure detected
+[2025-08-25T14:33:52.378Z] ALERT [CRITICAL] Memory usage critical: 96.01%
+[2025-08-25T14:33:52.379Z] metrics rss=31.78 MB heapUsed=4.58 MB cpuLoad=6.96 memUsage=96.01%
+[2025-08-25T14:34:09.075Z] metrics rss=51.49 MB heapUsed=7.45 MB cpuUser=2767897 cpuSystem=354000
+[2025-08-25T14:34:22.380Z] CRITICAL MEMORY ALERT: Memory usage critical: 97.35% - Memory pressure detected
+[2025-08-25T14:34:22.381Z] ALERT [CRITICAL] Memory usage critical: 97.35%
+[2025-08-25T14:34:22.381Z] metrics rss=35.72 MB heapUsed=4.66 MB cpuLoad=6.98 memUsage=97.35%
+[2025-08-25T14:34:39.077Z] metrics rss=51.50 MB heapUsed=7.85 MB cpuUser=2801983 cpuSystem=357447
+[2025-08-25T14:34:52.381Z] CRITICAL MEMORY ALERT: Memory usage critical: 99.94% - Memory pressure detected
+[2025-08-25T14:34:52.382Z] ALERT [CRITICAL] Memory usage critical: 99.94%
+[2025-08-25T14:34:52.382Z] metrics rss=35.80 MB heapUsed=4.73 MB cpuLoad=11.05 memUsage=99.94%
+[2025-08-25T14:35:09.079Z] metrics rss=51.50 MB heapUsed=7.77 MB cpuUser=2835012 cpuSystem=361018
+[2025-08-25T14:35:22.383Z] ALERT [WARNING] Memory usage warning: 93.13%
+[2025-08-25T14:35:22.383Z] metrics rss=35.18 MB heapUsed=4.06 MB cpuLoad=11.26 memUsage=93.13%
+[2025-08-25T14:35:39.082Z] metrics rss=51.50 MB heapUsed=7.66 MB cpuUser=2867186 cpuSystem=364235
+[2025-08-25T14:35:52.383Z] ALERT [WARNING] Memory usage warning: 92.49%
+[2025-08-25T14:35:52.384Z] metrics rss=35.34 MB heapUsed=4.17 MB cpuLoad=9.65 memUsage=92.49%
+[2025-08-25T14:36:09.085Z] metrics rss=51.50 MB heapUsed=7.91 MB cpuUser=2900918 cpuSystem=367343
+[2025-08-25T14:36:22.386Z] ALERT [WARNING] Memory usage warning: 93.24%
+[2025-08-25T14:36:22.386Z] metrics rss=35.48 MB heapUsed=4.25 MB cpuLoad=8.79 memUsage=93.24%
+[2025-08-25T14:36:39.088Z] metrics rss=51.50 MB heapUsed=8.07 MB cpuUser=2934567 cpuSystem=370550
+[2025-08-25T14:36:52.387Z] ALERT [WARNING] Memory usage warning: 93.18%
+[2025-08-25T14:36:52.387Z] metrics rss=35.70 MB heapUsed=4.37 MB cpuLoad=7.66 memUsage=93.18%
+[2025-08-25T14:55:39.176Z] metrics rss=53.94 MB heapUsed=7.53 MB cpuUser=4194642 cpuSystem=497543
+[2025-08-25T14:56:09.178Z] metrics rss=53.94 MB heapUsed=7.61 MB cpuUser=4229574 cpuSystem=501476
+[2025-08-25T14:56:39.181Z] metrics rss=53.95 MB heapUsed=7.63 MB cpuUser=4263926 cpuSystem=505180
+[2025-08-25T14:57:09.203Z] metrics rss=53.95 MB heapUsed=8.17 MB cpuUser=4303984 cpuSystem=509929
+[2025-08-25T14:57:33.316Z] Starting Real-Time Performance Monitor
+[2025-08-25T14:57:33.325Z] Starting real-time performance monitoring
+[2025-08-25T14:57:33.325Z] [real-time-performance-monitor] [2025-08-25T14:57:33.316Z] Starting Real-Time Performance Monitor
+[2025-08-25T14:57:33.328Z] [real-time-performance-monitor] [2025-08-25T14:57:33.325Z] Starting real-time performance monitoring
+[2025-08-25T14:57:39.209Z] metrics rss=53.96 MB heapUsed=8.00 MB cpuUser=4341954 cpuSystem=514469
+[2025-08-25T14:58:03.334Z] CRITICAL MEMORY ALERT: Memory usage critical: 95.56% - Memory pressure detected
+[2025-08-25T14:58:03.334Z] ALERT [CRITICAL] Memory usage critical: 95.56%
+[2025-08-25T14:58:03.334Z] [real-time-performance-monitor] [2025-08-25T14:58:03.334Z] CRITICAL MEMORY ALERT: Memory usage critical: 95.56% - Memory pressure detected
+[2025-08-25T14:58:03.335Z] metrics rss=30.21 MB heapUsed=4.41 MB cpuLoad=27.44 memUsage=95.56%
+[2025-08-25T14:58:03.335Z] [real-time-performance-monitor] [2025-08-25T14:58:03.334Z] ALERT [CRITICAL] Memory usage critical: 95.56%
+[2025-08-25T14:58:03.336Z] [real-time-performance-monitor] [2025-08-25T14:58:03.335Z] metrics rss=30.21 MB heapUsed=4.41 MB cpuLoad=27.44 memUsage=95.56%
+[2025-08-25T14:58:09.211Z] metrics rss=53.96 MB heapUsed=8.02 MB cpuUser=4386275 cpuSystem=519348
+[2025-08-25T14:58:33.332Z] CRITICAL MEMORY ALERT: Memory usage critical: 95.48% - Memory pressure detected
+[2025-08-25T14:58:33.332Z] ALERT [CRITICAL] Memory usage critical: 95.48%
+[2025-08-25T14:58:33.332Z] [real-time-performance-monitor] [2025-08-25T14:58:33.332Z] CRITICAL MEMORY ALERT: Memory usage critical: 95.48% - Memory pressure detected
+[2025-08-25T14:58:33.332Z] metrics rss=30.41 MB heapUsed=4.48 MB cpuLoad=21.96 memUsage=95.48%
+[2025-08-25T14:58:33.332Z] [real-time-performance-monitor] [2025-08-25T14:58:33.332Z] ALERT [CRITICAL] Memory usage critical: 95.48%
+[2025-08-25T14:58:33.333Z] [real-time-performance-monitor] [2025-08-25T14:58:33.332Z] metrics rss=30.41 MB heapUsed=4.48 MB cpuLoad=21.96 memUsage=95.48%
+[2025-08-25T14:58:39.213Z] metrics rss=53.96 MB heapUsed=7.94 MB cpuUser=4428795 cpuSystem=524176
+[2025-08-25T14:59:03.334Z] ALERT [WARNING] Memory usage warning: 94.80%
+[2025-08-25T14:59:03.334Z] [real-time-performance-monitor] [2025-08-25T14:59:03.334Z] ALERT [WARNING] Memory usage warning: 94.80%
+[2025-08-25T14:59:03.340Z] metrics rss=30.46 MB heapUsed=4.52 MB cpuLoad=17.61 memUsage=94.80%
+[2025-08-25T14:59:03.341Z] [real-time-performance-monitor] [2025-08-25T14:59:03.340Z] metrics rss=30.46 MB heapUsed=4.52 MB cpuLoad=17.61 memUsage=94.80%
+[2025-08-25T14:59:09.215Z] metrics rss=53.97 MB heapUsed=7.95 MB cpuUser=4467047 cpuSystem=528432
+[2025-08-25T14:59:33.395Z] CRITICAL MEMORY ALERT: Memory usage critical: 96.37% - Memory pressure detected
+[2025-08-25T14:59:33.395Z] ALERT [CRITICAL] Memory usage critical: 96.37%
+[2025-08-25T14:59:33.395Z] metrics rss=30.57 MB heapUsed=4.58 MB cpuLoad=15.52 memUsage=96.37%
+[2025-08-25T14:59:33.396Z] [real-time-performance-monitor] [2025-08-25T14:59:33.395Z] CRITICAL MEMORY ALERT: Memory usage critical: 96.37% - Memory pressure detected
+[2025-08-25T14:59:33.395Z] ALERT [CRITICAL] Memory usage critical: 96.37%
+[2025-08-25T14:59:33.395Z] metrics rss=30.57 MB heapUsed=4.58 MB cpuLoad=15.52 memUsage=96.37%
+[2025-08-25T14:59:39.217Z] metrics rss=53.97 MB heapUsed=7.82 MB cpuUser=4504725 cpuSystem=532945
+[2025-08-25T15:00:03.396Z] CRITICAL MEMORY ALERT: Memory usage critical: 97.00% - Memory pressure detected
+[2025-08-25T15:00:03.396Z] ALERT [CRITICAL] Memory usage critical: 97.00%
+[2025-08-25T15:00:03.396Z] metrics rss=30.63 MB heapUsed=4.63 MB cpuLoad=22.44 memUsage=97.00%
+[2025-08-25T15:00:03.396Z] [real-time-performance-monitor] [2025-08-25T15:00:03.396Z] CRITICAL MEMORY ALERT: Memory usage critical: 97.00% - Memory pressure detected
+[2025-08-25T15:00:03.397Z] [real-time-performance-monitor] [2025-08-25T15:00:03.396Z] ALERT [CRITICAL] Memory usage critical: 97.00%
+[2025-08-25T15:00:03.396Z] metrics rss=30.63 MB heapUsed=4.63 MB cpuLoad=22.44 memUsage=97.00%
+[2025-08-25T15:00:06.753Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:00:06.760Z] [real-time-performance-monitor] [2025-08-25T15:00:06.753Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:00:06.760Z] Starting real-time performance monitoring
+[2025-08-25T15:00:06.761Z] [real-time-performance-monitor] [2025-08-25T15:00:06.760Z] Starting real-time performance monitoring
+[2025-08-25T15:00:06.763Z] [real-time-performance-monitor] No metrics available
+[2025-08-25T15:00:09.219Z] metrics rss=53.98 MB heapUsed=8.03 MB cpuUser=4542577 cpuSystem=536701
+[2025-08-25T15:00:21.740Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:00:21.749Z] Starting real-time performance monitoring
+[2025-08-25T15:00:33.396Z] [real-time-performance-monitor] === Performance Monitor Summary ===
+[2025-08-25T15:00:33.397Z] [real-time-performance-monitor] Timestamp: 2025-08-25T15:00:03.393Z
+System Uptime: 1 hours
+Hostname: MacBook-Pro-de-Kleber.local
+
+Current Status:
+  CPU Load: 22.44
+[2025-08-25T15:00:33.398Z] [real-time-performance-monitor] Memory Usage: 97.00%
+  Memory Free: 982.26 MB
+  Process Memory: 30.63 MB
+  Process Uptime: 2 minutes
+
+Alerts:
+  Total: 5
+  Critical: 4 🔴
+  Warning: 1 🟡
+
+===================================
+[2025-08-25T15:00:33.401Z] CRITICAL MEMORY ALERT: Memory usage critical: 95.40% - Memory pressure detected
+[2025-08-25T15:00:33.401Z] ALERT [CRITICAL] Memory usage critical: 95.40%
+[2025-08-25T15:00:33.401Z] metrics rss=30.82 MB heapUsed=4.74 MB cpuLoad=64.39 memUsage=95.40%
+[2025-08-25T15:00:33.401Z] [real-time-performance-monitor] [2025-08-25T15:00:33.401Z] CRITICAL MEMORY ALERT: Memory usage critical: 95.40% - Memory pressure detected
+[2025-08-25T15:00:33.402Z] [real-time-performance-monitor] [2025-08-25T15:00:33.401Z] ALERT [CRITICAL] Memory usage critical: 95.40%
+[2025-08-25T15:00:33.401Z] metrics rss=30.82 MB heapUsed=4.74 MB cpuLoad=64.39 memUsage=95.40%
+[2025-08-25T15:00:36.767Z] CRITICAL MEMORY ALERT: Memory usage critical: 95.30% - Memory pressure detected
+[2025-08-25T15:00:36.767Z] ALERT [CRITICAL] Memory usage critical: 95.30%
+[2025-08-25T15:00:36.767Z] [real-time-performance-monitor] [2025-08-25T15:00:36.767Z] CRITICAL MEMORY ALERT: Memory usage critical: 95.30% - Memory pressure detected
+[2025-08-25T15:00:36.768Z] metrics rss=30.80 MB heapUsed=4.32 MB cpuLoad=64.39 memUsage=95.30%
+[2025-08-25T15:00:36.768Z] [real-time-performance-monitor] [2025-08-25T15:00:36.767Z] ALERT [CRITICAL] Memory usage critical: 95.30%
+[2025-08-25T15:00:36.768Z] [real-time-performance-monitor] [2025-08-25T15:00:36.768Z] metrics rss=30.80 MB heapUsed=4.32 MB cpuLoad=64.39 memUsage=95.30%
+[2025-08-25T15:00:39.221Z] metrics rss=53.98 MB heapUsed=8.22 MB cpuUser=4582666 cpuSystem=540534
+[2025-08-25T15:00:51.757Z] CRITICAL MEMORY ALERT: Memory usage critical: 95.29% - Memory pressure detected
+[2025-08-25T15:00:51.757Z] ALERT [CRITICAL] Memory usage critical: 95.29%
+[2025-08-25T15:00:51.758Z] metrics rss=30.66 MB heapUsed=4.32 MB cpuLoad=54.29 memUsage=95.29%
+[2025-08-25T15:01:03.401Z] CRITICAL MEMORY ALERT: Memory usage critical: 96.94% - Memory pressure detected
+[2025-08-25T15:01:03.402Z] ALERT [CRITICAL] Memory usage critical: 96.94%
+[2025-08-25T15:01:03.402Z] metrics rss=31.35 MB heapUsed=4.19 MB cpuLoad=51.98 memUsage=96.94%
+[2025-08-25T15:01:03.403Z] [real-time-performance-monitor] [2025-08-25T15:01:03.401Z] CRITICAL MEMORY ALERT: Memory usage critical: 96.94% - Memory pressure detected
+[2025-08-25T15:01:03.402Z] ALERT [CRITICAL] Memory usage critical: 96.94%
+[2025-08-25T15:01:03.402Z] metrics rss=31.35 MB heapUsed=4.19 MB cpuLoad=51.98 memUsage=96.94%
+[2025-08-25T15:01:06.766Z] CRITICAL MEMORY ALERT: Memory usage critical: 97.63% - Memory pressure detected
+[2025-08-25T15:01:06.766Z] ALERT [CRITICAL] Memory usage critical: 97.63%
+[2025-08-25T15:01:06.767Z] metrics rss=31.00 MB heapUsed=4.38 MB cpuLoad=51.98 memUsage=97.63%
+[2025-08-25T15:01:06.772Z] [real-time-performance-monitor] [2025-08-25T15:01:06.766Z] CRITICAL MEMORY ALERT: Memory usage critical: 97.63% - Memory pressure detected
+[2025-08-25T15:01:06.766Z] ALERT [CRITICAL] Memory usage critical: 97.63%
+[2025-08-25T15:01:06.767Z] metrics rss=31.00 MB heapUsed=4.38 MB cpuLoad=51.98 memUsage=97.63%
+[2025-08-25T15:01:09.223Z] metrics rss=54.01 MB heapUsed=8.07 MB cpuUser=4626369 cpuSystem=544856
+[2025-08-25T15:01:21.755Z] CRITICAL MEMORY ALERT: Memory usage critical: 96.27% - Memory pressure detected
+[2025-08-25T15:01:21.756Z] ALERT [CRITICAL] Memory usage critical: 96.27%
+[2025-08-25T15:01:21.756Z] metrics rss=30.86 MB heapUsed=4.38 MB cpuLoad=44.83 memUsage=96.27%
+[2025-08-25T15:01:28.730Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:01:28.730Z] Stopping performance monitoring
+[2025-08-25T15:01:28.733Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:01:28.733Z] [real-time-performance-monitor] [2025-08-25T15:01:28.730Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:01:28.730Z] Stopping performance monitoring
+[2025-08-25T15:01:28.734Z] Monitoring is not active
+[2025-08-25T15:01:28.735Z] [real-time-performance-monitor] [2025-08-25T15:01:28.733Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:01:28.734Z] Monitoring is not active
+[2025-08-25T15:01:35.344Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:01:35.353Z] Starting real-time performance monitoring
+[2025-08-25T15:01:36.767Z] ALERT [WARNING] Memory usage warning: 93.20%
+[2025-08-25T15:01:36.767Z] metrics rss=31.07 MB heapUsed=4.44 MB cpuLoad=46.75 memUsage=93.20%
+[2025-08-25T15:01:36.767Z] [real-time-performance-monitor] [2025-08-25T15:01:36.767Z] ALERT [WARNING] Memory usage warning: 93.20%
+[2025-08-25T15:01:36.768Z] [real-time-performance-monitor] [2025-08-25T15:01:36.767Z] metrics rss=31.07 MB heapUsed=4.44 MB cpuLoad=46.75 memUsage=93.20%
+[2025-08-25T15:01:39.225Z] metrics rss=54.01 MB heapUsed=8.37 MB cpuUser=4667616 cpuSystem=549238
+[2025-08-25T15:01:51.755Z] ALERT [WARNING] Memory usage warning: 93.36%
+[2025-08-25T15:01:51.755Z] metrics rss=30.93 MB heapUsed=4.44 MB cpuLoad=39.27 memUsage=93.36%
+[2025-08-25T15:02:02.355Z] Stopping real-time performance monitor...
+[2025-08-25T15:02:02.355Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:02:02.356Z] Stopping performance monitoring
+[2025-08-25T15:02:02.356Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:02:02.356Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:02:02.357Z] Stopping performance monitoring
+[2025-08-25T15:02:02.357Z] Stopping performance monitoring
+[2025-08-25T15:02:02.358Z] [real-time-performance-monitor] [2025-08-25T15:02:02.356Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:02:02.357Z] Stopping performance monitoring
+[2025-08-25T15:02:14.576Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:02:14.691Z] Starting real-time performance monitoring
+[2025-08-25T15:02:17.034Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:02:17.049Z] Starting real-time performance monitoring
+[2025-08-25T15:02:17.052Z] [real-time-performance-monitor] [2025-08-25T15:02:17.034Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:02:17.049Z] Starting real-time performance monitoring
+[2025-08-25T15:02:27.093Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:02:27.116Z] Starting real-time performance monitoring
+[2025-08-25T15:02:35.000Z] Stopping real-time performance monitor...
+[2025-08-25T15:02:35.000Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:02:35.001Z] Monitoring is not active
+[2025-08-25T15:02:35.002Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:02:35.009Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:02:35.011Z] Stopping performance monitoring
+[2025-08-25T15:02:35.013Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:02:35.014Z] Stopping performance monitoring
+[2025-08-25T15:02:35.016Z] Stopping performance monitoring
+[2025-08-25T15:02:35.017Z] [real-time-performance-monitor] [2025-08-25T15:02:35.009Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:02:35.011Z] Stopping performance monitoring
+[2025-08-25T15:02:47.253Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:02:47.259Z] Starting real-time performance monitoring
+[2025-08-25T15:03:17.265Z] CRITICAL MEMORY ALERT: Memory usage critical: 97.94% - Memory pressure detected
+[2025-08-25T15:03:17.265Z] ALERT [CRITICAL] Memory usage critical: 97.94%
+[2025-08-25T15:03:17.266Z] metrics rss=30.16 MB heapUsed=4.26 MB cpuLoad=55.93 memUsage=97.94%
+[2025-08-25T15:03:27.237Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:03:27.246Z] Starting real-time performance monitoring
+[2025-08-25T15:03:27.246Z] [real-time-performance-monitor] [2025-08-25T15:03:27.237Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:03:27.248Z] [real-time-performance-monitor] [2025-08-25T15:03:27.246Z] Starting real-time performance monitoring
+[2025-08-25T15:03:32.432Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:03:32.441Z] Starting real-time performance monitoring
+[2025-08-25T15:03:47.265Z] CRITICAL MEMORY ALERT: Memory usage critical: 97.12% - Memory pressure detected
+[2025-08-25T15:03:47.265Z] ALERT [CRITICAL] Memory usage critical: 97.12%
+[2025-08-25T15:03:47.266Z] metrics rss=30.38 MB heapUsed=4.33 MB cpuLoad=47.02 memUsage=97.12%
+[2025-08-25T15:03:57.290Z] ALERT [WARNING] Memory usage warning: 94.56%
+[2025-08-25T15:03:57.293Z] metrics rss=30.59 MB heapUsed=4.28 MB cpuLoad=54.20 memUsage=94.56%
+[2025-08-25T15:03:57.293Z] [real-time-performance-monitor] [2025-08-25T15:03:57.290Z] ALERT [WARNING] Memory usage warning: 94.56%
+[2025-08-25T15:03:57.294Z] [real-time-performance-monitor] [2025-08-25T15:03:57.293Z] metrics rss=30.59 MB heapUsed=4.28 MB cpuLoad=54.20 memUsage=94.56%
+[2025-08-25T15:04:02.447Z] CRITICAL MEMORY ALERT: Memory usage critical: 97.22% - Memory pressure detected
+[2025-08-25T15:04:02.448Z] ALERT [CRITICAL] Memory usage critical: 97.22%
+[2025-08-25T15:04:02.448Z] metrics rss=30.70 MB heapUsed=4.28 MB cpuLoad=50.58 memUsage=97.22%
+[2025-08-25T15:04:03.704Z] Stopping real-time performance monitor...
+[2025-08-25T15:04:03.704Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:04:03.705Z] Stopping performance monitoring
+[2025-08-25T15:04:03.705Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:04:03.705Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:04:03.706Z] Stopping performance monitoring
+[2025-08-25T15:04:03.706Z] [real-time-performance-monitor] [2025-08-25T15:04:03.705Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:04:03.707Z] Stopping performance monitoring
+[2025-08-25T15:04:03.707Z] [real-time-performance-monitor] [2025-08-25T15:04:03.706Z] Stopping performance monitoring
+[2025-08-25T15:04:15.999Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:04:16.183Z] Starting real-time performance monitoring
+[2025-08-25T15:04:37.478Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:04:37.501Z] Starting real-time performance monitoring
+[2025-08-25T15:04:37.501Z] [real-time-performance-monitor] [2025-08-25T15:04:37.478Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:04:37.502Z] [real-time-performance-monitor] [2025-08-25T15:04:37.501Z] Starting real-time performance monitoring
+[2025-08-25T15:04:37.652Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:04:37.657Z] Starting real-time performance monitoring

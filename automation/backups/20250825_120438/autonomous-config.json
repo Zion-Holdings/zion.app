@@ -1,0 +1,37 @@
+{
+  "services": {
+    "autonomous-system-manager": {
+      "enabled": true,
+      "script": "autonomous-system-manager.cjs",
+      "interval": 60000,
+      "maxRestarts": 5,
+      "restartDelay": 5000
+    },
+    "ml-link-intelligence": {
+      "enabled": true,
+      "script": "ml-link-intelligence.cjs",
+      "interval": 120000,
+      "maxRestarts": 3,
+      "restartDelay": 10000
+    },
+    "link-health-scheduler": {
+      "enabled": true,
+      "script": "link-health-scheduler.cjs",
+      "interval": 600000,
+      "maxRestarts": 3,
+      "restartDelay": 15000
+    },
+    "real-time-performance-monitor": {
+      "enabled": true,
+      "script": "real-time-performance-monitor.cjs",
+      "interval": 30000,
+      "maxRestarts": 3,
+      "restartDelay": 10000
+    }
+  },
+  "monitoring": {
+    "healthCheckInterval": 30000,
+    "logRotationSize": 10485760,
+    "maxLogFiles": 5
+  }
+}

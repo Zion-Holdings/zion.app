@@ -1,0 +1,15 @@
+[2025-08-25T14:19:11.887Z] Starting real-time performance monitor
+[2025-08-25T14:19:11.892Z] metrics rss=29.12 MB heapUsed=3.80 MB cpuUser=63500 cpuSystem=18769
+[2025-08-25T14:19:41.893Z] metrics rss=29.25 MB heapUsed=3.82 MB cpuUser=63978 cpuSystem=18998
+[2025-08-25T14:20:11.901Z] metrics rss=29.27 MB heapUsed=3.82 MB cpuUser=64290 cpuSystem=19281
+[2025-08-25T14:20:41.901Z] metrics rss=29.29 MB heapUsed=3.83 MB cpuUser=64759 cpuSystem=19574
+[2025-08-25T14:21:11.901Z] metrics rss=29.29 MB heapUsed=3.83 MB cpuUser=64995 cpuSystem=19789
+[2025-08-25T14:21:41.902Z] metrics rss=29.31 MB heapUsed=3.85 MB cpuUser=65565 cpuSystem=20095
+[2025-08-25T14:22:11.903Z] metrics rss=29.33 MB heapUsed=3.86 MB cpuUser=65935 cpuSystem=20415
+[2025-08-25T14:22:41.904Z] metrics rss=29.34 MB heapUsed=3.86 MB cpuUser=66213 cpuSystem=20689
+[2025-08-25T14:23:11.904Z] metrics rss=29.39 MB heapUsed=3.90 MB cpuUser=66749 cpuSystem=20962
+[2025-08-25T14:23:41.906Z] metrics rss=29.43 MB heapUsed=3.93 MB cpuUser=67283 cpuSystem=21211
+[2025-08-25T14:24:11.906Z] metrics rss=29.45 MB heapUsed=3.93 MB cpuUser=67573 cpuSystem=21464
+[2025-08-25T14:24:41.907Z] metrics rss=29.46 MB heapUsed=3.94 MB cpuUser=67767 cpuSystem=21750
+[2025-08-25T14:25:11.907Z] metrics rss=29.46 MB heapUsed=3.94 MB cpuUser=67978 cpuSystem=22096
+[2025-08-25T14:25:41.911Z] metrics rss=29.47 MB heapUsed=3.94 MB cpuUser=68277 cpuSystem=22436

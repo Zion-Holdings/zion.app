@@ -203,3 +203,49 @@
 [2025-08-25T15:04:03.606Z] [link-health-scheduler] [2025-08-25T15:04:03.605Z] Stopping Link Health Scheduler
 [2025-08-25T15:04:03.606Z] All scheduled jobs cleared
 [2025-08-25T15:04:03.606Z] [link-health-scheduler] [2025-08-25T15:04:03.606Z] All scheduled jobs cleared
+[2025-08-25T15:04:12.285Z] Starting Link Health Scheduler
+[2025-08-25T15:04:12.300Z] Starting Link Health Scheduler
+[2025-08-25T15:04:12.300Z] Scheduled check for homepage at Mon Aug 25 2025 12:09:12 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:04:12.301Z] Scheduled check for services at Mon Aug 25 2025 12:19:12 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:04:12.301Z] Scheduled check for about at Mon Aug 25 2025 13:04:12 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:04:12.301Z] Scheduled check for contact at Mon Aug 25 2025 12:19:12 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:04:12.301Z] Scheduled 4 links for health checks
+[2025-08-25T15:04:14.003Z] Starting Link Health Scheduler
+[2025-08-25T15:04:14.166Z] Starting Link Health Scheduler
+[2025-08-25T15:04:14.167Z] Scheduled check for homepage at Mon Aug 25 2025 12:09:14 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:04:14.167Z] Scheduled check for services at Mon Aug 25 2025 12:19:14 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:04:14.168Z] Scheduled check for about at Mon Aug 25 2025 13:04:14 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:04:14.168Z] Scheduled check for contact at Mon Aug 25 2025 12:19:14 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:04:14.168Z] Scheduled 4 links for health checks
+[2025-08-25T15:04:23.158Z] Starting Link Health Scheduler
+[2025-08-25T15:04:23.164Z] [link-health-scheduler] [2025-08-25T15:04:23.158Z] Starting Link Health Scheduler
+[2025-08-25T15:04:23.164Z] Starting Link Health Scheduler
+[2025-08-25T15:04:23.165Z] [link-health-scheduler] [2025-08-25T15:04:23.164Z] Starting Link Health Scheduler
+[2025-08-25T15:04:23.165Z] Scheduled check for homepage at Mon Aug 25 2025 12:09:23 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:04:23.165Z] Scheduled check for services at Mon Aug 25 2025 12:19:23 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:04:23.165Z] [link-health-scheduler] [2025-08-25T15:04:23.165Z] Scheduled check for homepage at Mon Aug 25 2025 12:09:23 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:04:23.166Z] Scheduled check for about at Mon Aug 25 2025 13:04:23 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:04:23.166Z] [link-health-scheduler] [2025-08-25T15:04:23.165Z] Scheduled check for services at Mon Aug 25 2025 12:19:23 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:04:23.166Z] Scheduled check for contact at Mon Aug 25 2025 12:19:23 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:04:23.166Z] [link-health-scheduler] [2025-08-25T15:04:23.166Z] Scheduled check for about at Mon Aug 25 2025 13:04:23 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:04:23.166Z] Scheduled 4 links for health checks
+[2025-08-25T15:04:23.166Z] [link-health-scheduler] [2025-08-25T15:04:23.166Z] Scheduled check for contact at Mon Aug 25 2025 12:19:23 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:04:23.167Z] [link-health-scheduler] [2025-08-25T15:04:23.166Z] Scheduled 4 links for health checks
+[2025-08-25T15:05:02.308Z] Status: 4 jobs scheduled, 0 active
+[2025-08-25T15:05:03.170Z] Status: 4 jobs scheduled, 0 active
+[2025-08-25T15:05:03.186Z] [link-health-scheduler] [2025-08-25T15:05:03.170Z] Status: 4 jobs scheduled, 0 active
+[2025-08-25T15:05:04.175Z] Status: 4 jobs scheduled, 0 active
+[2025-08-25T15:06:02.418Z] Status: 4 jobs scheduled, 0 active
+[2025-08-25T15:06:03.163Z] Stopping link health scheduler...
+[2025-08-25T15:06:03.165Z] Stopping Link Health Scheduler...
+[2025-08-25T15:06:03.165Z] Stopping Link Health Scheduler...
+[2025-08-25T15:06:03.165Z] Stopping Link Health Scheduler...
+[2025-08-25T15:06:03.166Z] Stopping Link Health Scheduler
+[2025-08-25T15:06:03.167Z] All scheduled jobs cleared
+[2025-08-25T15:06:03.166Z] Stopping Link Health Scheduler
+[2025-08-25T15:06:03.167Z] [link-health-scheduler] [2025-08-25T15:06:03.165Z] Stopping Link Health Scheduler...
+[2025-08-25T15:06:03.166Z] Stopping Link Health Scheduler
+[2025-08-25T15:06:03.167Z] All scheduled jobs cleared
+[2025-08-25T15:06:03.167Z] All scheduled jobs cleared
+[2025-08-25T15:06:03.168Z] Stopping Link Health Scheduler
+[2025-08-25T15:06:03.168Z] All scheduled jobs cleared

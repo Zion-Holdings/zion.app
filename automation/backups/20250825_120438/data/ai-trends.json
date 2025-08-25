@@ -1,0 +1,76 @@
+{
+  "lastUpdated": "2025-08-25T14:59:46.814Z",
+  "totalTrends": 5,
+  "trends": [
+    {
+      "id": "trend_1756133986814_1",
+      "category": "Machine Learning",
+      "title": "Large Language Model Evolution",
+      "description": "Continued advancement in transformer architectures and multimodal capabilities",
+      "impact": "high",
+      "confidence": 0.9,
+      "sources": [
+        "Research Papers",
+        "Industry Reports",
+        "Conference Proceedings"
+      ],
+      "timestamp": "2025-08-25T14:59:46.814Z"
+    },
+    {
+      "id": "trend_1756133986814_2",
+      "category": "Computer Vision",
+      "title": "Vision-Language Models",
+      "description": "Integration of visual and textual understanding in unified models",
+      "impact": "high",
+      "confidence": 0.85,
+      "sources": [
+        "Research Papers",
+        "Product Launches",
+        "Industry Adoption"
+      ],
+      "timestamp": "2025-08-25T14:59:46.814Z"
+    },
+    {
+      "id": "trend_1756133986814_3",
+      "category": "AI Ethics",
+      "title": "Responsible AI Development",
+      "description": "Increased focus on fairness, transparency, and accountability in AI systems",
+      "impact": "medium",
+      "confidence": 0.8,
+      "sources": [
+        "Policy Documents",
+        "Industry Guidelines",
+        "Academic Research"
+      ],
+      "timestamp": "2025-08-25T14:59:46.814Z"
+    },
+    {
+      "id": "trend_1756133986814_4",
+      "category": "Edge AI",
+      "title": "On-Device AI Processing",
+      "description": "Moving AI inference to edge devices for improved privacy and performance",
+      "impact": "medium",
+      "confidence": 0.75,
+      "sources": [
+        "Product Announcements",
+        "Technical Papers",
+        "Market Analysis"
+      ],
+      "timestamp": "2025-08-25T14:59:46.814Z"
+    },
+    {
+      "id": "trend_1756133986814_5",
+      "category": "AI for Science",
+      "title": "Scientific Discovery Acceleration",
+      "description": "AI applications in drug discovery, materials science, and fundamental research",
+      "impact": "high",
+      "confidence": 0.9,
+      "sources": [
+        "Scientific Publications",
+        "Research Grants",
+        "Industry Partnerships"
+      ],
+      "timestamp": "2025-08-25T14:59:46.814Z"
+    }
+  ]
+}
