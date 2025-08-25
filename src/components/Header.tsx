@@ -26,15 +26,21 @@ export function Header() {
     },
     { 
       path: '/services', 
-      label: 'AI Services', 
+      label: 'Services', 
       icon: '🤖',
-      description: 'Explore our AI service offerings'
+      description: 'Explore our comprehensive service offerings'
     },
     { 
       path: '/solutions/enterprise', 
       label: 'Solutions', 
       icon: '💼',
       description: 'Industry-specific solutions'
+    },
+    { 
+      path: '/ai-solutions', 
+      label: 'AI Solutions', 
+      icon: '🧠',
+      description: 'Advanced AI and machine learning solutions'
     },
     { 
       path: '/pricing', 
@@ -49,18 +55,6 @@ export function Header() {
       description: 'Learn about our company'
     },
     { 
-      path: '/careers', 
-      label: 'Careers', 
-      icon: '🚀',
-      description: 'Join our team'
-    },
-    { 
-      path: '/blog', 
-      label: 'Blog', 
-      icon: '📝',
-      description: 'Latest insights and news'
-    },
-    { 
       path: '/contact', 
       label: 'Contact', 
       icon: '📞',
@@ -72,6 +66,7 @@ export function Header() {
     {
       title: 'AI & Machine Learning',
       services: [
+        { name: 'AI Autonomous Systems', path: '/services/ai-autonomous-systems' },
         { name: 'AI Business Intelligence', path: '/services#ai-bi' },
         { name: 'AI Marketing Automation', path: '/services#ai-marketing' },
         { name: 'AI HR & Recruitment', path: '/services#ai-hr' },
@@ -79,27 +74,47 @@ export function Header() {
       ]
     },
     {
+      title: 'Quantum Technology',
+      services: [
+        { name: 'Quantum Neural Networks', path: '/quantum-neural-network-platform' },
+        { name: 'Quantum Technology', path: '/services/quantum-technology' },
+        { name: 'Quantum-Safe Security', path: '/services#quantum-security' }
+      ]
+    },
+    {
       title: 'Cybersecurity',
       services: [
-        { name: 'Quantum-Safe Security', path: '/services#quantum-security' },
+        { name: 'Advanced Cybersecurity Suite', path: '/advanced-cybersecurity-suite' },
+        { name: 'Cybersecurity Services', path: '/services/cybersecurity' },
         { name: 'Security Assessment', path: '/services#security-assessment' },
         { name: 'Compliance & Audit', path: '/services#compliance' }
       ]
     },
     {
+      title: 'Business Automation',
+      services: [
+        { name: 'Autonomous Business Operations', path: '/autonomous-business-operations-platform' },
+        { name: 'AI-Powered IT Asset Management', path: '/ai-powered-it-asset-management' },
+        { name: 'Advanced Research Automation', path: '/advanced-research-automation' }
+      ]
+    },
+    {
       title: 'Cloud & Infrastructure',
       services: [
+        { name: 'Cloud & DevOps', path: '/services/cloud-devops' },
+        { name: 'IT Infrastructure', path: '/services/it-infrastructure' },
         { name: 'Cloud Migration', path: '/services#cloud-migration' },
         { name: 'Network Infrastructure', path: '/services#network' },
         { name: 'Managed IT Services', path: '/services#managed-it' }
       ]
     },
     {
-      title: 'Emerging Tech',
+      title: 'Specialized Solutions',
       services: [
-        { name: 'Blockchain Solutions', path: '/services#blockchain' },
-        { name: 'IoT Integration', path: '/services#iot' },
-        { name: 'Quantum Computing', path: '/services#quantum' }
+        { name: 'Affiliate Attribution Hub', path: '/affiliate-attribution-hub' },
+        { name: 'Agentic RAG Helpdesk', path: '/agentic-rag-helpdesk' },
+        { name: 'Accessibility Auditor', path: '/accessibility-auditor' },
+        { name: 'Micro SAAS Solutions', path: '/services/micro-saas-solutions' }
       ]
     }
   ];
@@ -129,6 +144,12 @@ export function Header() {
       url: 'https://www.youtube.com/@ziontechgroup',
       icon: '📺',
       fallback: 'https://youtube.com'
+    },
+    {
+      name: 'Discord',
+      url: 'https://discord.gg/ziontechgroup',
+      icon: '🎮',
+      fallback: 'https://discord.com'
     }
   ];
 

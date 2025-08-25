@@ -33,6 +33,16 @@ const CloudDevOps = lazy(() => import('./pages/CloudDevOps'));
 const EnterpriseSolutionsPage = lazy(() => import('./pages/EnterpriseSolutions'));
 const DigitalTransformation = lazy(() => import('./pages/DigitalTransformation'));
 
+// Newly created missing pages
+const QuantumNeuralNetworkPlatform = lazy(() => import('./pages/QuantumNeuralNetworkPlatform'));
+const AutonomousBusinessOperationsPlatform = lazy(() => import('./pages/AutonomousBusinessOperationsPlatform'));
+const AIPoweredITAssetManagement = lazy(() => import('./pages/AIPoweredITAssetManagement'));
+const AdvancedResearchAutomation = lazy(() => import('./pages/AdvancedResearchAutomation'));
+const AffiliateAttributionHub = lazy(() => import('./pages/AffiliateAttributionHub'));
+const AgenticRAGHelpdesk = lazy(() => import('./pages/AgenticRAGHelpdesk'));
+const AdvancedCybersecuritySuite = lazy(() => import('./pages/AdvancedCybersecuritySuite'));
+const AccessibilityAuditor = lazy(() => import('./pages/AccessibilityAuditor'));
+
 // Our enhanced service pages
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
@@ -127,6 +137,16 @@ const App = () => {
                     {/* Solutions Routes */}
                     <Route path="/services/enterprise" element={<EnterpriseSolutions />} />
                     <Route path="/solutions/healthcare" element={<HealthcareSolutions />} />
+                    
+                    {/* Newly added missing page routes */}
+                    <Route path="/quantum-neural-network-platform" element={<QuantumNeuralNetworkPlatform />} />
+                    <Route path="/autonomous-business-operations-platform" element={<AutonomousBusinessOperationsPlatform />} />
+                    <Route path="/ai-powered-it-asset-management" element={<AIPoweredITAssetManagement />} />
+                    <Route path="/advanced-research-automation" element={<AdvancedResearchAutomation />} />
+                    <Route path="/affiliate-attribution-hub" element={<AffiliateAttributionHub />} />
+                    <Route path="/agentic-rag-helpdesk" element={<AgenticRAGHelpdesk />} />
+                    <Route path="/advanced-cybersecurity-suite" element={<AdvancedCybersecuritySuite />} />
+                    <Route path="/accessibility-auditor" element={<AccessibilityAuditor />} />
                   </Routes>
                 </Suspense>
               </main>

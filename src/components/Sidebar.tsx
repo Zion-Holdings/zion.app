@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Home, Briefcase, Users, Phone, Mail, MapPin, Globe, Linkedin, Twitter, Facebook, Instagram, Shield, Handshake } from 'lucide-react';
+import { X, Home, Briefcase, Users, Phone, Mail, MapPin, Globe, Linkedin, Twitter, Shield, Handshake, Github } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 interface SidebarProps {
@@ -22,6 +22,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
       items: [
         { name: 'Home', path: '/', icon: Home },
         { name: 'Services', path: '/services', icon: Briefcase },
+        { name: 'AI Solutions', path: '/ai-solutions', icon: Briefcase },
         { name: 'Solutions', path: '/solutions/enterprise', icon: Briefcase },
         { name: 'Pricing', path: '/pricing', icon: Briefcase },
         { name: 'About', path: '/about', icon: Users },
@@ -29,26 +30,55 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
       ]
     },
     {
-      title: 'Services',
+      title: 'AI & Technology',
       items: [
-        { name: 'AI & Machine Learning', path: '/services?category=AI%20%26%20Machine%20Learning', icon: Briefcase },
-        { name: 'Cybersecurity', path: '/services?category=Cybersecurity', icon: Shield },
-        { name: 'Micro SAAS Solutions', path: '/services?category=Micro%20SAAS%20Solutions', icon: Globe },
-        { name: 'Space Technology', path: '/services?category=Space%20Technology', icon: Globe },
-        { name: 'Healthcare AI', path: '/services?category=Healthcare%20AI', icon: Users },
-        { name: 'Manufacturing AI', path: '/services?category=Manufacturing%20AI', icon: Briefcase },
-        { name: 'Emerging Technology', path: '/services?category=Emerging%20Technology', icon: Globe },
-        { name: 'Autonomous Systems', path: '/services?category=AI%20%26%20Autonomous%20Systems', icon: Users }
+        { name: 'AI Autonomous Systems', path: '/services/ai-autonomous-systems', icon: Briefcase },
+        { name: 'Quantum Neural Networks', path: '/quantum-neural-network-platform', icon: Globe },
+        { name: 'AI-Powered IT Asset Management', path: '/ai-powered-it-asset-management', icon: Briefcase },
+        { name: 'Advanced Research Automation', path: '/advanced-research-automation', icon: Globe },
+        { name: 'Machine Learning', path: '/services#ai-ml', icon: Briefcase }
+      ]
+    },
+    {
+      title: 'Business Solutions',
+      items: [
+        { name: 'Autonomous Business Operations', path: '/autonomous-business-operations-platform', icon: Briefcase },
+        { name: 'Enterprise Solutions', path: '/solutions/enterprise', icon: Briefcase },
+        { name: 'Healthcare Solutions', path: '/solutions/healthcare', icon: Users },
+        { name: 'Financial Solutions', path: '/solutions/financial', icon: Briefcase },
+        { name: 'Manufacturing Solutions', path: '/solutions/manufacturing', icon: Briefcase },
+        { name: 'Retail Solutions', path: '/solutions/retail', icon: Briefcase },
+        { name: 'Government Solutions', path: '/solutions/government', icon: Briefcase }
+      ]
+    },
+    {
+      title: 'Security & Infrastructure',
+      items: [
+        { name: 'Advanced Cybersecurity Suite', path: '/advanced-cybersecurity-suite', icon: Shield },
+        { name: 'Cybersecurity Services', path: '/services/cybersecurity', icon: Shield },
+        { name: 'IT Infrastructure', path: '/services/it-infrastructure', icon: Globe },
+        { name: 'Cloud & DevOps', path: '/services/cloud-devops', icon: Globe },
+        { name: 'Digital Transformation', path: '/digital-transformation', icon: Briefcase },
+        { name: 'Micro SAAS Solutions', path: '/services/micro-saas-solutions', icon: Globe }
+      ]
+    },
+    {
+      title: 'Specialized Services',
+      items: [
+        { name: 'Affiliate Attribution Hub', path: '/affiliate-attribution-hub', icon: Briefcase },
+        { name: 'Agentic RAG Helpdesk', path: '/agentic-rag-helpdesk', icon: Users },
+        { name: 'Accessibility Auditor', path: '/accessibility-auditor', icon: Shield },
+        { name: 'Quantum Technology', path: '/services/quantum-technology', icon: Globe },
+        { name: 'Industry Solutions', path: '/services/industry-solutions', icon: Briefcase }
       ]
     },
     {
       title: 'Company',
       items: [
         { name: 'About Us', path: '/about', icon: Users },
+        { name: 'Our Mission', path: '/mission', icon: Users },
         { name: 'Our Team', path: '/team', icon: Users },
-        { name: 'Careers', path: '/careers', icon: Briefcase },
-        { name: 'Partners', path: '/partners', icon: Handshake },
-        { name: 'Blog', path: '/blog', icon: Globe }
+        { name: 'Partners', path: '/partners', icon: Handshake }
       ]
     },
     {
@@ -69,10 +99,10 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
   ];
 
   const socialLinks = [
-    { icon: Linkedin, href: 'https://linkedin.com/company/ziontechgroup', label: 'LinkedIn' },
+    { icon: Linkedin, href: 'https://www.linkedin.com/company/ziontechgroup', label: 'LinkedIn' },
     { icon: Twitter, href: 'https://twitter.com/ziontechgroup', label: 'Twitter' },
-    { icon: Facebook, href: 'https://facebook.com/ziontechgroup', label: 'Facebook' },
-    { icon: Instagram, href: 'https://instagram.com/ziontechgroup', label: 'Instagram' }
+    { icon: Github, href: 'https://github.com/ziontechgroup', label: 'GitHub' },
+    { icon: Globe, href: 'https://www.youtube.com/@ziontechgroup', label: 'YouTube' }
   ];
 
   const sidebarVariants = {

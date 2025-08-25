@@ -5,45 +5,47 @@ export function Footer() {
 
   const footerSections = [
     {
-      title: "AI & Micro SAAS",
+      title: "AI & Technology",
       links: [
         { label: "AI & Autonomous Systems", path: "/services/ai-autonomous-systems" },
-        { label: "Quantum Technology", path: "/services/quantum-technology" },
-        { label: "IT Infrastructure", path: "/services/it-infrastructure" },
-        { label: "Micro SAAS Solutions", path: "/services/micro-saas-solutions" },
-        { label: "Cybersecurity", path: "/services/cybersecurity" },
-        { label: "Industry Solutions", path: "/services/industry-solutions" },
-        { label: "AI & Machine Learning", path: "/ai-solutions" },
-        { label: "Cloud & Infrastructure", path: "/services/cloud-devops" },
-        { label: "Digital Transformation", path: "/digital-transformation" },
-        { label: "Enterprise Solutions", path: "/enterprise-solutions" }
+        { label: "Quantum Neural Networks", path: "/quantum-neural-network-platform" },
+        { label: "AI-Powered IT Asset Management", path: "/ai-powered-it-asset-management" },
+        { label: "Advanced Research Automation", path: "/advanced-research-automation" },
+        { label: "AI Solutions", path: "/ai-solutions" },
+        { label: "Machine Learning", path: "/services#ai-ml" }
       ]
     },
     {
-      title: "Solutions",
+      title: "Business Solutions",
       links: [
+        { label: "Autonomous Business Operations", path: "/autonomous-business-operations-platform" },
         { label: "Enterprise Solutions", path: "/solutions/enterprise" },
         { label: "Healthcare Solutions", path: "/solutions/healthcare" },
         { label: "Financial Solutions", path: "/solutions/financial" },
         { label: "Manufacturing Solutions", path: "/solutions/manufacturing" },
         { label: "Retail Solutions", path: "/solutions/retail" },
-        { label: "Government Solutions", path: "/solutions/government" },
-        { label: "Business Intelligence", path: "/services/business-intelligence" },
-        { label: "Marketing Automation", path: "/services/ai-marketing" },
-        { label: "HR & Recruitment", path: "/services/ai-hr" },
-        { label: "Legal Tech", path: "/services/ai-legal" }
+        { label: "Government Solutions", path: "/solutions/government" }
       ]
     },
     {
-      title: "Emerging Tech",
+      title: "Security & Infrastructure",
       links: [
-        { label: "Quantum Computing", path: "/emerging-tech" },
-        { label: "Blockchain & DeFi", path: "/emerging-tech" },
-        { label: "IoT & Edge Computing", path: "/emerging-tech" },
-        { label: "Extended Reality (XR)", path: "/emerging-tech" },
-        { label: "5G & Networks", path: "/emerging-tech" },
-        { label: "Green Technology", path: "/emerging-tech" },
-        { label: "Digital Twins", path: "/emerging-tech" }
+        { label: "Advanced Cybersecurity Suite", path: "/advanced-cybersecurity-suite" },
+        { label: "Cybersecurity Services", path: "/services/cybersecurity" },
+        { label: "IT Infrastructure", path: "/services/it-infrastructure" },
+        { label: "Cloud & DevOps", path: "/services/cloud-devops" },
+        { label: "Digital Transformation", path: "/digital-transformation" },
+        { label: "Micro SAAS Solutions", path: "/services/micro-saas-solutions" }
+      ]
+    },
+    {
+      title: "Specialized Services",
+      links: [
+        { label: "Affiliate Attribution Hub", path: "/affiliate-attribution-hub" },
+        { label: "Agentic RAG Helpdesk", path: "/agentic-rag-helpdesk" },
+        { label: "Accessibility Auditor", path: "/accessibility-auditor" },
+        { label: "Quantum Technology", path: "/services/quantum-technology" },
+        { label: "Industry Solutions", path: "/services/industry-solutions" }
       ]
     },
     {
@@ -53,19 +55,18 @@ export function Footer() {
         { label: "Our Mission", path: "/mission" },
         { label: "Team", path: "/team" },
         { label: "Pricing", path: "/pricing" },
-        { label: "Careers", path: "/careers" },
         { label: "Partners", path: "/partners" },
-        { label: "Contact", path: "/contact" },
-        { label: "Blog", path: "/blog" }
+        { label: "Contact", path: "/contact" }
       ]
     },
     {
       title: "Resources",
       links: [
-        { label: "Blog & Articles", path: "/blog" },
-        { label: "Case Studies", path: "/case-studies" },
+        { label: "Help Center", path: "/help" },
         { label: "Documentation", path: "/docs" },
-        { label: "Support Center", path: "/support" }
+        { label: "Support", path: "/support" },
+        { label: "Privacy Policy", path: "/privacy" },
+        { label: "Terms of Service", path: "/terms" }
       ]
     }
   ];
@@ -95,6 +96,12 @@ export function Footer() {
       url: 'https://www.youtube.com/@ziontechgroup', 
       icon: '📺',
       fallback: 'https://youtube.com'
+    },
+    { 
+      name: 'Discord', 
+      url: 'https://discord.gg/ziontechgroup', 
+      icon: '🎮',
+      fallback: 'https://discord.com'
     }
   ];
 
