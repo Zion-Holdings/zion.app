@@ -29,6 +29,41 @@
       "restartDelay": 10000
     }
   },
+  "sync": {
+    "enabled": true,
+    "syncInterval": 300000,
+    "maxConcurrentSyncs": 2,
+    "retryAttempts": 3,
+    "healthCheckInterval": 60000,
+    "autoResolveConflicts": true,
+    "backupBeforeSync": true,
+    "systems": {
+      "git-sync": {
+        "enabled": true,
+        "priority": "high",
+        "autoStash": true,
+        "conflictResolution": "auto"
+      },
+      "file-sync": {
+        "enabled": true,
+        "priority": "medium",
+        "backupEnabled": true,
+        "backupRetention": 7
+      },
+      "data-sync": {
+        "enabled": true,
+        "priority": "medium",
+        "validationEnabled": true,
+        "autoRepair": true
+      },
+      "config-sync": {
+        "enabled": true,
+        "priority": "high",
+        "validationEnabled": true,
+        "autoRepair": true
+      }
+    }
+  },
   "monitoring": {
     "healthCheckInterval": 30000,
     "logRotationSize": 10485760,

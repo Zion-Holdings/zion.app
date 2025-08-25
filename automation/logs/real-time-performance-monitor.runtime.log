@@ -700,3 +700,40 @@ Alerts:
 [2025-08-25T15:22:14.765Z] Starting real-time performance monitoring
 [2025-08-25T15:22:24.706Z] Starting Real-Time Performance Monitor
 [2025-08-25T15:22:24.711Z] Starting real-time performance monitoring
+[2025-08-25T15:22:44.792Z] ALERT [WARNING] Memory usage warning: 85.99%
+[2025-08-25T15:22:44.795Z] metrics rss=30.08 MB heapUsed=4.26 MB cpuLoad=20.41 memUsage=85.99%
+[2025-08-25T15:22:54.718Z] ALERT [WARNING] Memory usage warning: 87.55%
+[2025-08-25T15:22:54.718Z] metrics rss=30.33 MB heapUsed=4.28 MB cpuLoad=29.61 memUsage=87.55%
+[2025-08-25T15:23:09.971Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:23:09.976Z] [real-time-performance-monitor] [2025-08-25T15:23:09.971Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:23:09.976Z] Starting real-time performance monitoring
+[2025-08-25T15:23:09.977Z] [real-time-performance-monitor] [2025-08-25T15:23:09.976Z] Starting real-time performance monitoring
+[2025-08-25T15:23:14.774Z] ALERT [WARNING] Memory usage warning: 84.26%
+[2025-08-25T15:23:14.775Z] metrics rss=30.30 MB heapUsed=4.32 MB cpuLoad=24.66 memUsage=84.26%
+[2025-08-25T15:23:24.733Z] ALERT [WARNING] Memory usage warning: 83.69%
+[2025-08-25T15:23:24.733Z] metrics rss=30.54 MB heapUsed=4.35 MB cpuLoad=22.33 memUsage=83.69%
+[2025-08-25T15:23:39.980Z] ALERT [WARNING] Memory usage warning: 82.95%
+[2025-08-25T15:23:39.980Z] metrics rss=30.39 MB heapUsed=4.28 MB cpuLoad=21.42 memUsage=82.95%
+[2025-08-25T15:23:39.980Z] [real-time-performance-monitor] [2025-08-25T15:23:39.980Z] ALERT [WARNING] Memory usage warning: 82.95%
+[2025-08-25T15:23:39.981Z] [real-time-performance-monitor] [2025-08-25T15:23:39.980Z] metrics rss=30.39 MB heapUsed=4.28 MB cpuLoad=21.42 memUsage=82.95%
+[2025-08-25T15:23:44.774Z] ALERT [WARNING] Memory usage warning: 82.92%
+[2025-08-25T15:23:44.775Z] metrics rss=30.34 MB heapUsed=4.36 MB cpuLoad=19.87 memUsage=82.92%
+[2025-08-25T15:23:54.733Z] ALERT [WARNING] Memory usage warning: 82.92%
+[2025-08-25T15:23:54.733Z] metrics rss=30.57 MB heapUsed=4.38 MB cpuLoad=17.60 memUsage=82.92%
+[2025-08-25T15:24:02.152Z] Stopping real-time performance monitor...
+[2025-08-25T15:24:02.152Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:24:02.152Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:24:02.153Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:24:02.153Z] Stopping performance monitoring
+[2025-08-25T15:24:02.154Z] Stopping performance monitoring
+[2025-08-25T15:24:02.154Z] [real-time-performance-monitor] [2025-08-25T15:24:02.153Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:24:02.155Z] Stopping performance monitoring
+[2025-08-25T15:24:02.155Z] [real-time-performance-monitor] [2025-08-25T15:24:02.154Z] Stopping performance monitoring
+[2025-08-25T15:24:14.331Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:24:14.468Z] Starting real-time performance monitoring
+[2025-08-25T15:24:20.149Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:24:20.159Z] Starting real-time performance monitoring
+[2025-08-25T15:24:20.176Z] [real-time-performance-monitor] [2025-08-25T15:24:20.149Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:24:20.159Z] Starting real-time performance monitoring
+[2025-08-25T15:24:30.150Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:24:30.156Z] Starting real-time performance monitoring
