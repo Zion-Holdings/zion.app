@@ -9,6 +9,8 @@ import { EnhancedTestimonialsSection } from '../components/EnhancedTestimonialsS
 import { EnhancedPricingSection } from '../components/EnhancedPricingSection';
 import { ServiceCalculator } from '../components/ServiceCalculator';
 import { TechnologyStackShowcase } from '../components/TechnologyStackShowcase';
+import { AIServiceRecommendation } from '../components/AIServiceRecommendation';
+import { AdvancedCaseStudies } from '../components/AdvancedCaseStudies';
 
 export default function HomePage() {
   const heroStats = [
@@ -329,6 +331,12 @@ export default function HomePage() {
 
       {/* Technology Stack Showcase */}
       <TechnologyStackShowcase />
+
+      {/* AI Service Recommendations */}
+      <AIServiceRecommendation />
+
+      {/* Advanced Case Studies */}
+      <AdvancedCaseStudies />
 
       {/* Technologies Section */}
       <section className="py-20 px-6">
