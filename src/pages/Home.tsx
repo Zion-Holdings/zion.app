@@ -16,6 +16,7 @@ import {
   ChevronRight,
   ChevronLeft
 } from 'lucide-react';
+import { MetaTags } from '../components/MetaTags';
 
 const Home: React.FC = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -35,7 +36,7 @@ const Home: React.FC = () => {
       subtitle: "Transform your business with cutting-edge artificial intelligence solutions",
       description: "From predictive analytics to intelligent automation, we deliver AI solutions that drive real business results.",
       cta: "Explore AI Solutions",
-      path: "/comprehensive-services",
+      path: "/ai-solutions",
       icon: Brain,
       color: "from-cyan-500 to-blue-600"
     },
@@ -44,7 +45,7 @@ const Home: React.FC = () => {
       subtitle: "Comprehensive IT services for modern businesses",
       description: "24/7 support, cybersecurity, cloud solutions, and strategic technology consulting to keep your business ahead.",
       cta: "View IT Services",
-      path: "/it-onsite-services",
+      path: "/enterprise-solutions",
       icon: Shield,
       color: "from-purple-500 to-pink-600"
     },
@@ -70,7 +71,7 @@ const Home: React.FC = () => {
       category: "AI & Machine Learning",
       rating: 4.9,
       reviewCount: 342,
-      path: "/services/ai-powered-crm"
+      path: "/services/ai-autonomous-systems"
     },
     {
       id: "cybersecurity-platform",
@@ -82,7 +83,7 @@ const Home: React.FC = () => {
       category: "Cybersecurity",
       rating: 4.8,
       reviewCount: 189,
-      path: "/services/cybersecurity-platform"
+      path: "/services/cybersecurity"
     },
     {
       id: "cloud-optimization",
@@ -94,7 +95,7 @@ const Home: React.FC = () => {
       category: "Cloud Computing",
       rating: 4.7,
       reviewCount: 234,
-      path: "/services/cloud-optimization"
+      path: "/services/it-infrastructure"
     }
   ];
 
@@ -114,9 +115,16 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen futuristic-bg">
+    <div className="min-h-screen">
+      <MetaTags
+        title="AI-Powered Innovation & Enterprise IT Excellence"
+        description="Transform your business with cutting-edge AI solutions, comprehensive IT services, and enterprise-grade cybersecurity. Zion Tech Group delivers innovative technology solutions that drive real business results."
+        keywords="AI solutions, artificial intelligence, enterprise IT, cybersecurity, cloud computing, digital transformation, Zion Tech Group"
+        type="website"
+      />
+      
       {/* Hero Section */}
-      <section className="relative pt-20 pb-16 overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Slides */}
           <div className="relative h-[600px] rounded-3xl overflow-hidden">

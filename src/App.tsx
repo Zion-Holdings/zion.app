@@ -17,6 +17,7 @@ import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
 import { ErrorBoundary } from './components/ErrorBoundary';
+import { PerformanceOptimizer } from './components/PerformanceOptimizer';
 
 // Enhanced lazy loading with preloading hints
 const Home = lazy(() => import('./pages/Home'));
@@ -27,13 +28,14 @@ const AIMatcherPage = lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = lazy(() => import('./pages/TalentDirectory'));
 const TalentsPage = lazy(() => import('./pages/TalentsPage'));
 const EmergingTech = lazy(() => import('./pages/EmergingTech'));
-// Newly added service pages
+
+// Service pages
 const AIServices = lazy(() => import('./pages/AIServices'));
 const CloudDevOps = lazy(() => import('./pages/CloudDevOps'));
 const EnterpriseSolutionsPage = lazy(() => import('./pages/EnterpriseSolutions'));
 const DigitalTransformation = lazy(() => import('./pages/DigitalTransformation'));
 
-// Our enhanced service pages
+// Core pages
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Mission = lazy(() => import('./pages/Mission'));
@@ -43,6 +45,8 @@ const Careers = lazy(() => import('./pages/Careers'));
 const Partners = lazy(() => import('./pages/Partners'));
 const Blog = lazy(() => import('./pages/Blog'));
 const News = lazy(() => import('./pages/News'));
+
+// Service detail pages
 const ServicesOverview = lazy(() => import('./pages/services/ServicesOverview'));
 const AIAutonomousSystems = lazy(() => import('./pages/services/AIAutonomousSystems'));
 const QuantumTechnology = lazy(() => import('./pages/services/QuantumTechnology'));
@@ -56,6 +60,9 @@ const SpecializedITInfrastructure = lazy(() => import('./pages/services/Speciali
 // Solutions pages
 const EnterpriseSolutions = lazy(() => import('./pages/solutions/Enterprise'));
 const HealthcareSolutions = lazy(() => import('./pages/solutions/Healthcare'));
+
+// 404 page
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Loading Component
 const LoadingSpinner = () => (
@@ -80,6 +87,7 @@ const App = () => {
         <WhitelabelProvider>
           <Router>
             <div className="App min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
+              <PerformanceOptimizer />
               <Header />
               <Sidebar isOpen={false} onClose={() => {}} />
               
@@ -95,16 +103,14 @@ const App = () => {
                     <Route path="/talent" element={<TalentDirectory />} />
                     <Route path="/talents" element={<TalentsPage />} />
                     <Route path="/emerging-tech" element={<EmergingTech />} />
-                    <Route path="/comprehensive-services" element={<Services />} />
-                    <Route path="/services-comparison" element={<Services />} />
-                    <Route path="/it-onsite-services" element={<Services />} />
-                    {/* Newly added explicit service routes */}
+                    
+                    {/* Service routes */}
                     <Route path="/ai-services" element={<AIServices />} />
                     <Route path="/cloud-devops" element={<CloudDevOps />} />
                     <Route path="/enterprise-solutions" element={<EnterpriseSolutionsPage />} />
                     <Route path="/digital-transformation" element={<DigitalTransformation />} />
                     
-                    {/* Our enhanced service routes */}
+                    {/* Core page routes */}
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/mission" element={<Mission />} />
@@ -114,6 +120,8 @@ const App = () => {
                     <Route path="/partners" element={<Partners />} />
                     <Route path="/blog" element={<Blog />} />
                     <Route path="/news" element={<News />} />
+                    
+                    {/* Service detail routes */}
                     <Route path="/services-overview" element={<ServicesOverview />} />
                     <Route path="/services/ai-autonomous-systems" element={<AIAutonomousSystems />} />
                     <Route path="/services/quantum-technology" element={<QuantumTechnology />} />
@@ -124,9 +132,12 @@ const App = () => {
                     <Route path="/services/innovative-new-services" element={<InnovativeNewServices />} />
                     <Route path="/services/specialized-it-infrastructure" element={<SpecializedITInfrastructure />} />
                     
-                    {/* Solutions Routes */}
-                    <Route path="/services/enterprise" element={<EnterpriseSolutions />} />
+                    {/* Solutions routes */}
+                    <Route path="/solutions/enterprise" element={<EnterpriseSolutions />} />
                     <Route path="/solutions/healthcare" element={<HealthcareSolutions />} />
+                    
+                    {/* 404 page */}
+                    <Route path="*" element={<NotFound />} />
                   </Routes>
                 </Suspense>
               </main>

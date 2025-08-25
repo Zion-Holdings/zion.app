@@ -1,99 +1,105 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { Home, ArrowLeft } from 'lucide-react';
+import { Home, ArrowLeft, Search, Map, Phone } from 'lucide-react';
+import { MetaTags } from '../components/MetaTags';
 
-export function NotFound() {
+const NotFound: React.FC = () => {
+  const popularPages = [
+    { path: '/', label: 'Home', icon: Home, description: 'Return to homepage' },
+    { path: '/services', label: 'Services', icon: Search, description: 'Browse our services' },
+    { path: '/ai-solutions', label: 'AI Solutions', icon: Search, description: 'Explore AI offerings' },
+    { path: '/contact', label: 'Contact', icon: Phone, description: 'Get in touch' }
+  ];
+
   return (
-    <div className="min-h-screen bg-zion-blue-dark text-white flex items-center justify-center relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple-dark">
-        <div className="absolute inset-0 opacity-20"></div>
-      </div>
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-gray-900 to-blue-900">
+      <MetaTags
+        title="Page Not Found"
+        description="The page you're looking for doesn't exist. Explore our services or return to the homepage."
+        type="website"
+      />
       
-      <div className="relative z-10 text-center max-w-2xl mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          {/* 404 Number */}
-          <motion.div
-            initial={{ scale: 0.8 }}
-            animate={{ scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-8xl md:text-9xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-cyan bg-clip-text text-transparent mb-6"
-          >
-            404
-          </motion.div>
-          
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-2xl mx-auto">
+          {/* 404 Animation */}
+          <div className="mb-8">
+            <div className="text-9xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent animate-pulse">
+              404
+            </div>
+            <div className="text-2xl text-gray-400 mt-4">Page Not Found</div>
+          </div>
+
           {/* Error Message */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-3xl md:text-4xl font-bold text-white mb-6"
-          >
-            Page Not Found
-          </motion.h1>
-          
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
-            className="text-xl text-zion-slate-light mb-12 leading-relaxed"
-          >
-            The page you're looking for doesn't exist or has been moved. 
-            Let's get you back on track to discovering amazing technology solutions.
-          </motion.p>
-          
+          <div className="mb-8">
+            <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Oops! Something went wrong
+            </h1>
+            <p className="text-xl text-gray-300 leading-relaxed">
+              The page you're looking for doesn't exist or has been moved. 
+              Don't worry, we've got plenty of amazing content for you to explore.
+            </p>
+          </div>
+
+          {/* Popular Pages */}
+          <div className="mb-8">
+            <h2 className="text-xl font-semibold text-white mb-4">Popular Pages</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {popularPages.map((page) => (
+                <Link
+                  key={page.path}
+                  to={page.path}
+                  className="glass-card p-4 hover:scale-105 transition-all duration-300 group text-left"
+                >
+                  <div className="flex items-center space-x-3">
+                    <page.icon className="w-6 h-6 text-cyan-400 group-hover:text-cyan-300 transition-colors duration-300" />
+                    <div>
+                      <div className="text-white font-medium group-hover:text-cyan-300 transition-colors duration-300">
+                        {page.label}
+                      </div>
+                      <div className="text-sm text-gray-400">{page.description}</div>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+
           {/* Action Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
+          <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
             <Link
               to="/"
-              className="px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white rounded-xl text-lg font-semibold hover:shadow-xl hover:shadow-zion-cyan/25 transition-all duration-300 flex items-center gap-2 justify-center group hover:scale-105"
+              className="futuristic-btn text-lg px-8 py-4 group"
             >
-              <Home className="w-5 h-5" />
-              Go Home
+              <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform duration-300" />
+              <span>Back to Home</span>
             </Link>
             
-            <button
-              onClick={() => window.history.back()}
-              className="px-8 py-4 border-2 border-zion-cyan text-zion-cyan rounded-xl text-lg font-semibold hover:bg-zion-cyan hover:text-white transition-all duration-300 flex items-center gap-2 justify-center group hover:scale-105"
-            >
-              <ArrowLeft className="w-5 h-5" />
-              Go Back
-            </button>
-          </motion.div>
-          
-          {/* Additional Help */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1.0 }}
-            className="mt-12 p-6 bg-zion-blue-light/10 border border-zion-cyan/20 rounded-xl backdrop-blur-md"
-          >
-            <h3 className="text-lg font-semibold text-white mb-3">Need Help?</h3>
-            <p className="text-zion-slate-light mb-4">
-              Can't find what you're looking for? Our team is here to help.
-            </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 text-zion-cyan hover:text-white transition-colors"
+              className="px-8 py-4 border-2 border-cyan-500/50 text-cyan-400 rounded-full font-semibold hover:bg-cyan-500/20 hover:border-cyan-500 transition-all duration-300 group"
             >
-              Contact Support
-              <ArrowLeft className="w-4 h-4 rotate-180" />
+              <span>Contact Support</span>
             </Link>
-          </motion.div>
-        </motion.div>
+          </div>
+
+          {/* Search Suggestion */}
+          <div className="mt-12 p-6 glass-card max-w-md mx-auto">
+            <h3 className="text-lg font-semibold text-white mb-3">Can't find what you're looking for?</h3>
+            <p className="text-gray-300 mb-4">
+              Try searching our site or browse our comprehensive service catalog.
+            </p>
+            <Link
+              to="/services"
+              className="inline-flex items-center space-x-2 text-cyan-400 hover:text-cyan-300 transition-colors duration-300"
+            >
+              <Search className="w-4 h-4" />
+              <span>Browse All Services</span>
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );
-}
+};
 
 export default NotFound;

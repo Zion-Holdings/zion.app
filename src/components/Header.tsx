@@ -26,45 +26,33 @@ export function Header() {
     },
     { 
       path: '/services', 
-      label: 'AI Services', 
+      label: 'Services', 
       icon: '🤖',
-      description: 'Explore our AI service offerings'
+      description: 'Explore our comprehensive service offerings'
     },
     { 
-      path: '/solutions/enterprise', 
-      label: 'Solutions', 
+      path: '/ai-solutions', 
+      label: 'AI Solutions', 
+      icon: '🧠',
+      description: 'Cutting-edge AI and machine learning solutions'
+    },
+    { 
+      path: '/enterprise-solutions', 
+      label: 'Enterprise', 
       icon: '💼',
-      description: 'Industry-specific solutions'
-    },
-    { 
-      path: '/pricing', 
-      label: 'Pricing', 
-      icon: '💰',
-      description: 'Transparent pricing plans'
+      description: 'Enterprise-grade IT solutions and services'
     },
     { 
       path: '/about', 
       label: 'About', 
       icon: 'ℹ️',
-      description: 'Learn about our company'
-    },
-    { 
-      path: '/careers', 
-      label: 'Careers', 
-      icon: '🚀',
-      description: 'Join our team'
-    },
-    { 
-      path: '/blog', 
-      label: 'Blog', 
-      icon: '📝',
-      description: 'Latest insights and news'
+      description: 'Learn about our company and mission'
     },
     { 
       path: '/contact', 
       label: 'Contact', 
       icon: '📞',
-      description: 'Get in touch with us'
+      description: 'Get in touch with our team'
     }
   ];
 
@@ -72,34 +60,34 @@ export function Header() {
     {
       title: 'AI & Machine Learning',
       services: [
-        { name: 'AI Business Intelligence', path: '/services#ai-bi' },
-        { name: 'AI Marketing Automation', path: '/services#ai-marketing' },
-        { name: 'AI HR & Recruitment', path: '/services#ai-hr' },
-        { name: 'AI Legal Tech', path: '/services#ai-legal' }
+        { name: 'AI Business Intelligence', path: '/services/ai-autonomous-systems' },
+        { name: 'AI Marketing Automation', path: '/services/ai-autonomous-systems' },
+        { name: 'AI HR & Recruitment', path: '/services/ai-autonomous-systems' },
+        { name: 'AI Legal Tech', path: '/services/ai-autonomous-systems' }
       ]
     },
     {
       title: 'Cybersecurity',
       services: [
-        { name: 'Quantum-Safe Security', path: '/services#quantum-security' },
-        { name: 'Security Assessment', path: '/services#security-assessment' },
-        { name: 'Compliance & Audit', path: '/services#compliance' }
+        { name: 'Quantum-Safe Security', path: '/services/cybersecurity' },
+        { name: 'Security Assessment', path: '/services/cybersecurity' },
+        { name: 'Compliance & Audit', path: '/services/cybersecurity' }
       ]
     },
     {
       title: 'Cloud & Infrastructure',
       services: [
-        { name: 'Cloud Migration', path: '/services#cloud-migration' },
-        { name: 'Network Infrastructure', path: '/services#network' },
-        { name: 'Managed IT Services', path: '/services#managed-it' }
+        { name: 'Cloud Migration', path: '/services/it-infrastructure' },
+        { name: 'Network Infrastructure', path: '/services/it-infrastructure' },
+        { name: 'Managed IT Services', path: '/services/it-infrastructure' }
       ]
     },
     {
       title: 'Emerging Tech',
       services: [
-        { name: 'Blockchain Solutions', path: '/services#blockchain' },
-        { name: 'Quantum Computing', path: '/services#quantum' },
-        { name: 'IoT & Edge Computing', path: '/services#iot-edge' }
+        { name: 'Blockchain Solutions', path: '/services/quantum-technology' },
+        { name: 'Quantum Computing', path: '/services/quantum-technology' },
+        { name: 'IoT & Edge Computing', path: '/services/quantum-technology' }
       ]
     }
   ];
