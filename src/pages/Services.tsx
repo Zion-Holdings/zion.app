@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { COMPREHENSIVE_SERVICES } from '../data/comprehensiveServices';
@@ -95,110 +96,144 @@ export function Services() {
                 </svg>
               </div>
             </div>
-          </div>
+=======
+import React from 'react';
+import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
+import { 
+  Brain, 
+  Shield, 
+  Cloud, 
+  Zap, 
+  Users, 
+  Globe, 
+  Lock, 
+  BarChart3,
+  ArrowRight,
+  CheckCircle
+} from 'lucide-react';
 
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            {categories.map((category) => (
-              <button
-                key={category}
-                onClick={() => setSelectedCategory(category)}
-                className={`px-6 py-3 rounded-lg font-medium transition-all duration-300 ${
-                  selectedCategory === category
-                    ? 'bg-gradient-to-r from-zion-cyan to-zion-purple text-white shadow-neon'
-                    : 'bg-zion-blue-light/20 text-zion-cyan border border-zion-cyan/30 hover:bg-zion-blue-light/30'
-                }`}
-              >
-                {category === 'all' ? 'All Services' : category}
-              </button>
-            ))}
-          </div>
+export default function Services() {
+  const services = [
+    {
+      icon: <Brain className="w-12 h-12" />,
+      title: "AI & Machine Learning",
+      description: "Custom AI solutions including predictive analytics, natural language processing, and computer vision.",
+      features: ["Machine Learning Models", "Predictive Analytics", "NLP Solutions", "Computer Vision"],
+      category: "AI/ML"
+    },
+    {
+      icon: <Shield className="w-12 h-12" />,
+      title: "Cybersecurity",
+      description: "Comprehensive security solutions including threat detection, compliance, and risk management.",
+      features: ["Threat Detection", "Compliance & Audit", "Risk Assessment", "Security Monitoring"],
+      category: "Security"
+    },
+    {
+      icon: <Cloud className="w-12 h-12" />,
+      title: "Cloud & Infrastructure",
+      description: "Cloud migration, infrastructure management, and scalable solutions for modern businesses.",
+      features: ["Cloud Migration", "Infrastructure Management", "Scalable Solutions", "DevOps"],
+      category: "Cloud"
+    },
+    {
+      icon: <Zap className="w-12 h-12" />,
+      title: "Digital Transformation",
+      description: "End-to-end digital transformation services to modernize your business operations.",
+      features: ["Process Automation", "Digital Workflows", "Legacy Modernization", "Change Management"],
+      category: "Transformation"
+    },
+    {
+      icon: <Users className="w-12 h-12" />,
+      title: "IT Consulting",
+      description: "Strategic IT consulting to align technology with your business objectives.",
+      features: ["Technology Strategy", "Architecture Design", "Implementation Planning", "Performance Optimization"],
+      category: "Consulting"
+    },
+    {
+      icon: <Globe className="w-12 h-12" />,
+      title: "Global Solutions",
+      description: "Worldwide technology solutions with local expertise and 24/7 support.",
+      features: ["Global Deployment", "Local Expertise", "24/7 Support", "Multi-language Support"],
+      category: "Global"
+    }
+  ];
 
-          {/* Quick Navigation to Comprehensive Services */}
-          <div className="mb-12">
-            <h3 className="text-2xl font-bold text-zion-cyan mb-6 text-center">Explore Our Service Categories</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[
-                {
-                  title: "Comprehensive Services",
-                  description: "Full portfolio of IT & AI services",
-                  link: "/comprehensive-services",
-                  icon: "🚀",
-                  color: "from-zion-cyan to-zion-blue-light"
-                },
-                {
-                  title: "AI Services",
-                  description: "AI-powered solutions & consulting",
-                  link: "/ai-services",
-                  icon: "🤖",
-                  color: "from-zion-purple to-zion-cyan"
-                },
-                {
-                  title: "Enterprise Solutions",
-                  description: "Large-scale business transformation",
-                  link: "/enterprise-solutions",
-                  icon: "🏢",
-                  color: "from-zion-cyan to-zion-purple"
-                },
-                {
-                  title: "IT Onsite Services",
-                  description: "Global IT support & maintenance",
-                  link: "/it-onsite-services",
-                  icon: "🌍",
-                  color: "from-zion-purple to-zion-cyan"
-                }
-              ].map((service, index) => (
-                <motion.div
-                  key={service.title}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                  className="group bg-gradient-to-br from-zion-blue-light/10 to-zion-purple/10 backdrop-blur-sm border border-zion-cyan/20 rounded-xl p-6 hover:border-zion-cyan/50 transition-all duration-300 hover:shadow-quantum text-center"
-                >
-                  <div className="text-4xl mb-4">{service.icon}</div>
-                  <h3 className="text-lg font-bold text-zion-cyan mb-2 group-hover:text-neon-green transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-zion-slate-light text-sm mb-4">{service.description}</p>
-                  <Link to={service.link}>
-                    <button className="px-4 py-2 bg-gradient-to-r from-zion-cyan to-zion-purple text-white rounded-lg text-sm font-semibold hover:shadow-neon transition-all duration-300 transform hover:scale-105">
-                      Explore
-                    </button>
+  const industries = [
+    "Healthcare", "Finance", "Retail", "Manufacturing", "Education", "Government"
+  ];
+
+  return (
+    <>
+      <Helmet>
+        <title>Services - Zion Tech Group</title>
+        <meta name="description" content="Comprehensive technology services including AI, cybersecurity, cloud infrastructure, and digital transformation solutions." />
+        <meta name="keywords" content="IT services, AI solutions, cybersecurity, cloud computing, digital transformation, Zion Tech Group" />
+        <link rel="canonical" href="https://ziontechgroup.com/services" />
+      </Helmet>
+
+      <div className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple-dark">
+        {/* Hero Section */}
+        <section className="pt-24 pb-16 px-4">
+          <div className="container mx-auto text-center">
+            <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+              Our <span className="bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">Services</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-zion-slate-light max-w-4xl mx-auto leading-relaxed">
+              Comprehensive technology solutions designed to transform your business and drive innovation.
+              From AI to cybersecurity, we deliver the expertise you need to succeed.
+            </p>
+>>>>>>> main
+          </div>
+        </section>
+
+        {/* Services Grid */}
+        <section className="py-16 px-4">
+          <div className="container mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">What We Offer</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {services.map((service, index) => (
+                <div key={index} className="bg-zion-blue-light/20 rounded-xl p-6 border border-zion-purple/30 hover:border-zion-cyan/50 transition-all duration-300 hover:transform hover:scale-105">
+                  <div className="text-zion-cyan mb-4">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
+                  <p className="text-zion-slate-light mb-4">{service.description}</p>
+                  
+                  <div className="mb-4">
+                    <h4 className="text-sm font-medium text-white mb-2">Key Features:</h4>
+                    <ul className="space-y-1">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center gap-2 text-sm text-zion-slate-light">
+                          <CheckCircle className="w-4 h-4 text-zion-cyan flex-shrink-0" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <Link 
+                    to={`/services/${service.category.toLowerCase()}`}
+                    className="text-zion-cyan hover:text-zion-cyan-light flex items-center group"
+                  >
+                    Learn More <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Link>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
-        </motion.div>
+        </section>
 
-        {/* Services Grid */}
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20"
-        >
-          {filteredServices.map((service, index) => (
-            <motion.div
-              key={service.id}
-              variants={itemVariants}
-              className="group relative bg-zion-blue-light/10 backdrop-blur-sm border border-zion-cyan/20 rounded-xl p-6 hover:border-zion-cyan/50 transition-all duration-300 hover:shadow-quantum"
-            >
-              {/* Service Card Header */}
-              <div className="mb-4">
-                <h3 className="text-xl font-bold text-zion-cyan mb-2 group-hover:text-neon-green transition-colors">
-                  {service.name}
-                </h3>
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="px-3 py-1 bg-zion-purple/20 text-zion-purple text-sm rounded-full border border-zion-purple/30">
-                    {service.category}
-                  </span>
-                  {service.subcategory && (
-                    <span className="px-3 py-1 bg-zion-cyan/20 text-zion-cyan text-sm rounded-full border border-zion-cyan/30">
-                      {service.subcategory}
-                    </span>
-                  )}
+        {/* Industries Section */}
+        <section className="py-16 px-4">
+          <div className="container mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">Industries We Serve</h2>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {industries.map((industry) => (
+                <div key={industry} className="bg-zion-blue-light/10 rounded-lg p-6 text-center border border-zion-purple/20 hover:border-zion-cyan/40 transition-colors">
+                  <h3 className="text-lg font-semibold text-white">{industry}</h3>
                 </div>
+<<<<<<< HEAD
               </div>
 
               {/* Service Description */}
@@ -310,19 +345,32 @@ export function Services() {
                   Middletown DE 19709
                 </p>
               </div>
+=======
+              ))}
+>>>>>>> main
             </div>
-            
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-16 px-4">
+          <div className="container mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Get Started?</h2>
+            <p className="text-xl text-zion-slate-light mb-8 max-w-2xl mx-auto">
+              Let's discuss how our services can transform your business. Contact our experts today.
+            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="mailto:kleber@ziontechgroup.com?subject=Custom Solution Consultation"
-                className="px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white rounded-lg text-lg font-semibold hover:shadow-neon transition-all duration-300 transform hover:scale-105"
+              <Link
+                to="/request-quote"
+                className="bg-zion-cyan hover:bg-zion-cyan-light text-zion-blue-dark font-bold py-3 px-8 rounded-lg transition-colors"
               >
-                Schedule Consultation
-              </a>
-              <a
-                href="tel:+13024640950"
-                className="px-8 py-4 bg-zion-blue-light/20 text-zion-cyan border border-zion-cyan/30 rounded-lg text-lg font-semibold hover:bg-zion-blue-light/30 transition-all duration-300"
+                Get Quote
+              </Link>
+              <Link
+                to="/contact"
+                className="bg-transparent hover:bg-zion-purple/20 text-zion-cyan border-2 border-zion-cyan font-bold py-3 px-8 rounded-lg transition-colors"
               >
+<<<<<<< HEAD
                 Call Sales Team
               </a>
             </div>
@@ -383,6 +431,10 @@ export function Services() {
                 <a href="/privacy" className="ml-2 hover:text-zion-cyan transition-colors">Privacy Policy</a> | 
                 <a href="/terms" className="ml-2 hover:text-zion-cyan transition-colors">Terms of Service</a>
               </p>
+=======
+                Contact Us
+              </Link>
+>>>>>>> main
             </div>
 =======
 import React from 'react';
@@ -411,9 +463,13 @@ export function Services() {
             <p className="text-zion-slate-light">Security audits, compliance, threat protection, and monitoring</p>
 >>>>>>> fca3c1339b92e2c99557b3c800831ed83163fd77
           </div>
-        </div>
+        </section>
       </div>
+<<<<<<< HEAD
     </div>
+=======
+    </>
+>>>>>>> main
   );
 <<<<<<< HEAD
 }

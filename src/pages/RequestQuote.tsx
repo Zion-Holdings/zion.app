@@ -1,7 +1,18 @@
+<<<<<<< HEAD
 import React from 'react';
 import { SEO } from '@/components/SEO';
 
 const RequestQuotePage: React.FC = () => {
+=======
+
+import React from 'react';
+import { QuoteRequestForm } from "@/components/QuoteRequestForm";
+import { SEO } from "@/components/SEO";
+import { AppHeader } from "@/layout/AppHeader";
+import { Footer } from "@/components/Footer";
+
+export default function RequestQuote() {
+>>>>>>> main
   return (
     <>
       <SEO 
@@ -24,9 +35,17 @@ const RequestQuotePage: React.FC = () => {
               </p>
             </div>
           </div>
+<<<<<<< HEAD
         </div>
       </div>
     </>
+=======
+        </section>
+      </main>
+      
+      <Footer />
+    </div>
+>>>>>>> main
   );
 };
 

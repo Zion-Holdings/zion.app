@@ -48,19 +48,19 @@ export function FloatingActionButton({
     {
       icon: <MessageCircle className="w-5 h-5" />,
       label: "Chat Support",
-      onClick: () => console.log("Chat support clicked"),
+      onClick: () => {},
       color: "bg-zion-cyan hover:bg-zion-cyan-light"
     },
     {
       icon: <Phone className="w-5 h-5" />,
       label: "Call Us",
-      onClick: () => console.log("Call clicked"),
+      onClick: () => {},
       color: "bg-zion-purple hover:bg-zion-purple-light"
     },
     {
       icon: <Mail className="w-5 h-5" />,
       label: "Email",
-      onClick: () => console.log("Email clicked"),
+      onClick: () => {},
       color: "bg-zion-blue hover:bg-zion-blue-light"
     }
   ];
@@ -205,9 +205,15 @@ export function QuickActionButton({
     "top-left": "top-6 left-6"
   };
 
+  const handleClick = () => {
+    if (onClick) {
+      onClick();
+    }
+  };
+
   return (
     <motion.button
-      onClick={onClick}
+      onClick={handleClick}
       className={cn(
         "fixed z-50 w-14 h-14 rounded-full bg-gradient-to-r from-zion-purple to-zion-cyan text-white shadow-2xl hover:shadow-zion-purple/50 transition-all duration-300 flex items-center justify-center group",
         positionClasses[position],

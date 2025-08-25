@@ -1,35 +1,6 @@
-# Netlify configuration for Vite project (not Next.js)
 [build]
-  command = "npm ci && npm run build"
+  command = "npm ci && npm install react@18.3.1 react-dom@18.3.1 && npm run build"
   publish = "dist"
 
 [build.environment]
   NODE_OPTIONS = "--max-old-space-size=6144 --openssl-legacy-provider"
-  NETLIFY_NEXT_PLUGIN_SKIP = "true"
-
-# SPA routing redirects for Vite
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
-# Headers for static assets
-[[headers]]
-  for = "/assets/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/*.js"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/*.css"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
-[[headers]]
-  for = "/*.html"
-  [headers.values]
-    Cache-Control = "public, max-age=0, must-revalidate"
