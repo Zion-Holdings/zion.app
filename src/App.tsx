@@ -53,6 +53,12 @@ const IndustrySolutions = lazy(() => import('./pages/services/IndustrySolutions'
 const InnovativeNewServices = lazy(() => import('./pages/services/InnovativeNewServices'));
 const SpecializedITInfrastructure = lazy(() => import('./pages/services/SpecializedITInfrastructure'));
 
+// New innovative service pages
+const InnovativeMicroSaasServices = lazy(() => import('./pages/services/InnovativeMicroSaasServices'));
+const AdvancedITInfrastructure = lazy(() => import('./pages/services/AdvancedITInfrastructure'));
+const EmergingTechnologyServices = lazy(() => import('./pages/services/EmergingTechnologyServices'));
+const ComprehensiveServicesShowcase = lazy(() => import('./pages/services/ComprehensiveServicesShowcase'));
+
 // Solutions pages
 const EnterpriseSolutions = lazy(() => import('./pages/solutions/Enterprise'));
 const HealthcareSolutions = lazy(() => import('./pages/solutions/Healthcare'));
@@ -123,6 +129,12 @@ const App = () => {
                     <Route path="/services/industry-solutions" element={<IndustrySolutions />} />
                     <Route path="/services/innovative-new-services" element={<InnovativeNewServices />} />
                     <Route path="/services/specialized-it-infrastructure" element={<SpecializedITInfrastructure />} />
+                    
+                    {/* New innovative service routes */}
+                    <Route path="/services/innovative-micro-saas" element={<InnovativeMicroSaasServices />} />
+                    <Route path="/services/advanced-it-infrastructure" element={<AdvancedITInfrastructure />} />
+                    <Route path="/services/emerging-technology" element={<EmergingTechnologyServices />} />
+                    <Route path="/services/comprehensive-showcase" element={<ComprehensiveServicesShowcase />} />
                     
                     {/* Solutions Routes */}
                     <Route path="/services/enterprise" element={<EnterpriseSolutions />} />
