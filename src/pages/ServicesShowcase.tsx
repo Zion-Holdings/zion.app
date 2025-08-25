@@ -181,6 +181,23 @@ export default function ServicesShowcase() {
               >
                 {sortOrder === 'asc' ? '↑ Ascending' : '↓ Descending'}
               </button>
+              <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+                <SelectTrigger className="bg-white/10 border-white/20 text-white">
+                  <SelectValue>{selectedCategory}</SelectValue>
+                </SelectTrigger>
+                <SelectContent className="bg-gray-800 border-gray-700">
+                  {categories.map(category => (
+                    <SelectItem key={category} value={category} className="text-white hover:bg-gray-700">
+                      {category}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
+            </div>
+            <div>
+              <label className="block text-sm font-medium text-gray-300 mb-2">Sort By</label>
+              <Select value={sortBy} onValueChange={setSortBy}>
+
             </div>
           </div>
         </motion.div>

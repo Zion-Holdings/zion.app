@@ -14,44 +14,47 @@ export function Footer() {
     {
       title: "Services",
       links: [
-        { label: "AI Services", path: "/comprehensive-services?category=AI Services" },
-        { label: "Micro SAAS", path: "/comprehensive-services?category=Micro SAAS" },
-        { label: "IT Services", path: "/comprehensive-services?category=IT Services" },
-        { label: "Blockchain & Web3", path: "/comprehensive-services?category=Blockchain & Web3" },
-        { label: "IoT & Edge Computing", path: "/comprehensive-services?category=IoT & Edge Computing" },
-        { label: "Cybersecurity", path: "/comprehensive-services?category=Cybersecurity Services" },
-        { label: "Data Science", path: "/comprehensive-services?category=Data Science & Analytics" }
+        { label: "AI & Autonomous Systems", path: "/services/ai-autonomous-systems" },
+        { label: "Quantum Technology", path: "/services/quantum-technology" },
+        { label: "IT Infrastructure", path: "/services/it-infrastructure" },
+        { label: "Micro SAAS Solutions", path: "/services/micro-saas-solutions" },
+        { label: "Cybersecurity", path: "/services/cybersecurity" },
+        { label: "Industry Solutions", path: "/services/industry-solutions" },
+        { label: "Marketplace", path: "/marketplace" }
+      ]
+    },
+    {
+      title: "Solutions",
+      links: [
+        { label: "Enterprise Solutions", path: "/solutions/enterprise" },
+        { label: "Healthcare Solutions", path: "/solutions/healthcare" },
+        { label: "Financial Solutions", path: "/solutions/financial" },
+        { label: "Manufacturing Solutions", path: "/solutions/manufacturing" },
+        { label: "Retail Solutions", path: "/solutions/retail" },
+        { label: "Government Solutions", path: "/solutions/government" }
       ]
     },
     {
       title: "Company",
       links: [
-        { label: "About Us", path: "/" },
-        { label: "Services Overview", path: "/services" },
-        { label: "Service Comparison", path: "/services-comparison" },
-        { label: "Onsite IT Services", path: "/it-onsite-services" },
-        { label: "Contact", path: "/" }
+        { label: "About Us", path: "/about" },
+        { label: "Our Mission", path: "/mission" },
+        { label: "Team", path: "/team" },
+        { label: "Leadership", path: "/leadership" },
+        { label: "Careers", path: "/careers" },
+        { label: "Partners", path: "/partners" },
+        { label: "Contact", path: "/contact" }
       ]
     },
     {
       title: "Resources",
       links: [
-        { label: "Technology Blog", path: "/" },
-        { label: "Case Studies", path: "/" },
-        { label: "White Papers", path: "/" },
-        { label: "API Documentation", path: "/" },
-        { label: "Support Center", path: "/" }
-      ]
-    },
-    {
-      title: "Industries",
-      links: [
-        { label: "Healthcare", path: "/" },
-        { label: "Finance", path: "/" },
-        { label: "Manufacturing", path: "/" },
-        { label: "Retail", path: "/" },
-        { label: "Education", path: "/" },
-        { label: "Government", path: "/" }
+        { label: "Blog & Articles", path: "/blog" },
+        { label: "Documentation", path: "/docs" },
+        { label: "Case Studies", path: "/case-studies" },
+        { label: "White Papers", path: "/white-papers" },
+        { label: "Webinars", path: "/webinars" },
+        { label: "Training", path: "/training" }
       ]
     }
   ];
@@ -224,9 +227,10 @@ export function Footer() {
               © {currentYear} Zion Tech Group. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm text-gray-400">
-              <Link to="/" className="hover:neon-text transition-colors duration-200">Privacy Policy</Link>
-              <Link to="/" className="hover:neon-text transition-colors duration-200">Terms of Service</Link>
-              <Link to="/" className="hover:neon-text transition-colors duration-200">Cookie Policy</Link>
+              <Link to="/privacy" className="hover:neon-text transition-colors duration-200">Privacy Policy</Link>
+              <Link to="/terms" className="hover:neon-text transition-colors duration-200">Terms of Service</Link>
+              <Link to="/cookies" className="hover:neon-text transition-colors duration-200">Cookie Policy</Link>
+              <Link to="/accessibility" className="hover:neon-text transition-colors duration-200">Accessibility</Link>
             </div>
           </div>
         </div>

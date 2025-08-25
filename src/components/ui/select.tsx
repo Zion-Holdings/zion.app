@@ -2,10 +2,12 @@ import React from 'react';
 
 interface SelectProps {
   children: React.ReactNode;
+  value?: string;
+  onValueChange?: (value: string) => void;
   className?: string;
 }
 
-const Select: React.FC<SelectProps> = ({ children, className = '' }) => {
+const Select: React.FC<SelectProps> = ({ children, value, onValueChange, className = '' }) => {
   return (
     <div className={`relative ${className}`}>
       {children}
@@ -37,7 +39,7 @@ const SelectContent: React.FC<SelectProps> = ({ children, className = '' }) => {
   );
 };
 
-const SelectItem: React.FC<SelectProps> = ({ children, className = '' }) => {
+const SelectItem: React.FC<SelectProps> = ({ children, value, className = '' }) => {
   return (
     <div className={`relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50 ${className}`}>
       {children}
