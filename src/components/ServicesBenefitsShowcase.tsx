@@ -1,6 +1,5 @@
-import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { Badge } from './ui/badge';
+
 import { Button } from './ui/button';
 import { 
   Brain, 
@@ -10,7 +9,6 @@ import {
   TrendingUp, 
   Users, 
   Globe, 
-  Clock, 
   CheckCircle, 
   Star,
   ArrowRight,
@@ -147,7 +145,7 @@ export function ServicesBenefitsShowcase() {
 
         {/* Service Benefits Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
-          {serviceBenefits.map((service, index) => (
+          {serviceBenefits.map((service) => (
             <Card key={service.category} className="bg-slate-800/50 border border-slate-700 hover:border-cyan-500/50 transition-all duration-300 hover:scale-105">
               <CardHeader className="text-center pb-4">
                 <div className={`w-20 h-20 bg-gradient-to-br ${service.color} rounded-full flex items-center justify-center mx-auto mb-4 text-white`}>

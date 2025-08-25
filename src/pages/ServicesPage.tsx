@@ -4,24 +4,20 @@ import { ProductListing } from "@/types/listings";
 import { TrustedBySection } from "@/components/TrustedBySection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Globe, ArrowRight, Sparkles } from "lucide-react";
+import { Globe } from "lucide-react";
 import { useEffect, useState } from "react";
 
 // Sample service listings
 const SERVICE_LISTINGS: ProductListing[] = [
   {
     id: "service-1",
-    title: "AI Development & Integration",
+    name: "AI Development & Integration",
     description: "Full-stack AI development services to integrate advanced machine learning models into your existing business systems.",
     category: "Development",
     price: 5000,
     currency: "$",
     tags: ["AI Integration", "Machine Learning", "Enterprise"],
-    author: {
-      name: "TechSolutions Inc.",
-      id: "tech-solutions",
-      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100",
-    },
+      author: "Zion Tech Group",
     images: ["https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=800&h=500"],
     createdAt: "2023-12-10T14:48:00.000Z",
     aiScore: 95,
@@ -30,16 +26,13 @@ const SERVICE_LISTINGS: ProductListing[] = [
   },
   {
     id: "service-2",
-    title: "Cloud Infrastructure Management",
+    name: "Cloud Infrastructure Management",
     description: "24/7 monitoring and management of your cloud infrastructure to ensure optimal performance, security, and cost efficiency.",
     category: "Management",
     price: 3000,
     currency: "$",
     tags: ["Cloud", "DevOps", "Security"],
-    author: {
-      name: "CloudPro Experts",
-      id: "cloud-pro",
-    },
+      author: "Zion Tech Group",
     images: ["https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&h=500"],
     createdAt: "2023-11-20T09:30:00.000Z",
     aiScore: 88,
@@ -48,17 +41,13 @@ const SERVICE_LISTINGS: ProductListing[] = [
   },
   {
     id: "service-3",
-    title: "Big Data Analysis & Insights",
+    name: "Big Data Analysis & Insights",
     description: "Transform your raw data into actionable business insights with our advanced analytics and visualization services.",
     category: "Analytics",
     price: 4500,
     currency: "$",
     tags: ["Big Data", "Analytics", "Business Intelligence"],
-    author: {
-      name: "DataMind Solutions",
-      id: "datamind",
-      avatarUrl: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=100&h=100",
-    },
+      author: "Zion Tech Group",
     images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500"],
     createdAt: "2024-01-05T11:15:00.000Z",
     aiScore: 92,
@@ -67,16 +56,13 @@ const SERVICE_LISTINGS: ProductListing[] = [
   },
   {
     id: "service-4",
-    title: "Cybersecurity Assessment & Protection",
+    name: "Cybersecurity Assessment & Protection",
     description: "Comprehensive security audits and implementation of robust protection systems against modern cyber threats.",
     category: "Security",
     price: 6000,
     currency: "$",
     tags: ["Cybersecurity", "Penetration Testing", "Compliance"],
-    author: {
-      name: "SecureNet Team",
-      id: "secure-net",
-    },
+      author: "Zion Tech Group",
     images: ["https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500"],
     createdAt: "2023-12-28T16:22:00.000Z",
     aiScore: 89,
@@ -85,16 +71,13 @@ const SERVICE_LISTINGS: ProductListing[] = [
   },
   {
     id: "service-5",
-    title: "IT Infrastructure Modernization",
+    name: "IT Infrastructure Modernization",
     description: "Transform your legacy systems into modern, agile infrastructure that supports innovation and business growth.",
     category: "Consulting",
     price: 8500,
     currency: "$",
     tags: ["Digital Transformation", "Legacy Systems", "Infrastructure"],
-    author: {
-      name: "ModernizeIT Consulting",
-      id: "modernize-it",
-    },
+      author: "Zion Tech Group",
     images: ["https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500"],
     createdAt: "2023-11-10T08:45:00.000Z",
     aiScore: 86,
@@ -103,17 +86,13 @@ const SERVICE_LISTINGS: ProductListing[] = [
   },
   {
     id: "service-6",
-    title: "AI Strategy & Implementation",
+    name: "AI Strategy & Implementation",
     description: "Strategic consulting and implementation services to help businesses leverage AI for competitive advantage.",
     category: "Strategy",
     price: 7500,
     currency: "$",
     tags: ["AI Strategy", "Digital Transformation", "Business Growth"],
-    author: {
-      name: "AI Future Consulting",
-      id: "ai-future",
-      avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100",
-    },
+      author: "Zion Tech Group",
     images: ["https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&h=500"],
     createdAt: "2024-02-02T10:30:00.000Z",
     aiScore: 94,
@@ -129,42 +108,42 @@ function getRandomItem<T>(arr: T[]): T {
 function generateRandomService(idNum: number): ProductListing {
   const templates = [
     {
-      title: "AI Automation Consulting",
+      name: "AI Automation Consulting",
       category: "Consulting",
       min: 4000,
       max: 12000,
       tags: ["Automation", "AI Strategy", "Optimization"],
     },
     {
-      title: "Cloud Migration & Support",
+      name: "Cloud Migration & Support",
       category: "Management",
       min: 3000,
       max: 9000,
       tags: ["Cloud", "Migration", "DevOps"],
     },
     {
-      title: "Advanced Cybersecurity Suite",
+      name: "Advanced Cybersecurity Suite",
       category: "Security",
       min: 5000,
       max: 15000,
       tags: ["Cybersecurity", "PenTesting", "Compliance"],
     },
     {
-      title: "Big Data Engineering",
+      name: "Big Data Engineering",
       category: "Analytics",
       min: 3500,
       max: 11000,
       tags: ["Data Engineering", "Analytics", "ETL"],
     },
     {
-      title: "AI Model Training Service",
+      name: "AI Model Training Service",
       category: "Development",
       min: 4500,
       max: 13000,
       tags: ["Machine Learning", "Model Training", "AI"],
     },
     {
-      title: "Digital Transformation Strategy",
+      name: "Digital Transformation Strategy",
       category: "Strategy",
       min: 6000,
       max: 14000,
@@ -196,15 +175,15 @@ function generateRandomService(idNum: number): ProductListing {
 
   return {
     id: `auto-service-${idNum}`,
-    title: template.title,
-    description: `Professional ${template.title.toLowerCase()} with industry-standard practices and tailored solutions for your business.`,
+    name: template.title,
+          description: `Professional ${template.title.toLowerCase()} with industry-standard practices and tailored solutions for your business.`,
     category: template.category,
     price,
     currency: "$",
     tags: template.tags,
-    author: { name: author, id: author.toLowerCase().replace(/\s+/g, "-") },
+          author: author,
     images: [getRandomItem(images)],
-    createdAt: new Date().toISOString(),
+    created_at: new Date().toISOString(),
     aiScore: Math.floor(90 + Math.random() * 10),
     rating: parseFloat((4 + Math.random()).toFixed(1)),
     reviewCount: Math.floor(50 + Math.random() * 150),

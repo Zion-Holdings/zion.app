@@ -21,52 +21,19 @@ import {
   DeveloperRoutes
 } from './routes';
 const Home = React.lazy(() => import('./pages/Home'));
-const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
-const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
-const TalentsPage = React.lazy(() => import('./pages/TalentsPage'));
 const ServicesPage = React.lazy(() => import('./pages/ServicesPage'));
-const EquipmentPage = React.lazy(() => import('./pages/EquipmentPage'));
-const EquipmentDetail = React.lazy(() => import('./pages/EquipmentDetail'));
-const Analytics = React.lazy(() => import('./pages/Analytics'));
-const MobileLaunchPage = React.lazy(() => import('./pages/MobileLaunchPage'));
-const CommunityPage = React.lazy(() => import('./pages/CommunityPage'));
-const Categories = React.lazy(() => import('./pages/Categories'));
-const Blog = React.lazy(() => import('./pages/Blog'));
-const BlogPost = React.lazy(() => import('./pages/BlogPost'));
-const PartnersPage = React.lazy(() => import('./pages/Partners'));
-const Login = React.lazy(() => import('./pages/Login'));
-const Signup = React.lazy(() => import('./pages/Signup'));
 const ITOnsiteServicesPage = React.lazy(() => import('./pages/ITOnsiteServicesPage'));
 const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
 const ContactPage = React.lazy(() => import('./pages/Contact'));
-const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
-const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
 const ComprehensiveServicesPage = React.lazy(() => import('./pages/ComprehensiveServicesPage'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
-  { path: '/match', element: <AIMatcherPage /> },
-  { path: '/login', element: <Login /> },
-  { path: '/signup', element: <Signup /> },
-  { path: '/talent', element: <TalentDirectory /> },
-  { path: '/talents', element: <TalentsPage /> },
   { path: '/services', element: <ServicesPage /> },
   { path: '/comprehensive-services', element: <ComprehensiveServicesPage /> },
   { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
-  { path: '/categories', element: <Categories /> },
-  { path: '/equipment', element: <EquipmentPage /> },
-  { path: '/equipment/:id', element: <EquipmentDetail /> },
-  { path: '/analytics', element: <Analytics /> },
-  { path: '/mobile-launch', element: <MobileLaunchPage /> },
   { path: '/open-app', element: <OpenAppRedirect /> },
-  { path: '/community', element: <CommunityPage /> },
   { path: '/contact', element: <ContactPage /> },
-  { path: '/partners', element: <PartnersPage /> },
-  { path: '/zion-hire-ai', element: <ZionHireAI /> },
-  { path: '/hire-ai', element: <ZionHireAI /> },
-  { path: '/request-quote', element: <RequestQuotePage /> },
-  { path: '/blog', element: <Blog /> },
-  { path: '/blog/:slug', element: <BlogPost /> },
 ];
 
 const App = () => {
@@ -94,7 +61,7 @@ const App = () => {
           </Routes>
         </Suspense>
         <Toaster />
-        <SonnerToaster position="top-right" />
+        <SonnerToaster />
       </ThemeProvider>
     </WhitelabelProvider>
   );

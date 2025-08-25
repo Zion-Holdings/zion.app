@@ -1,9 +1,9 @@
-import React from 'react';
+
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
-import { Check, X, Star, Clock, Globe, Phone, Mail } from 'lucide-react';
+import { Check, X, Star, Clock, Phone, Mail } from 'lucide-react';
 import { COMPREHENSIVE_SERVICES, CONTACT_INFO } from '@/data/comprehensiveServices';
 
 export function ServicesComparisonTable() {
@@ -185,7 +185,7 @@ export function ServicesComparisonTable() {
                       <span className="text-sm font-medium">{service.rating}</span>
                     </div>
                   </div>
-                  <CardTitle className="text-slate-900 dark:text-white text-lg">{service.title}</CardTitle>
+                  <CardTitle className="text-slate-900 dark:text-white text-lg">{service.name}</CardTitle>
                   <CardDescription className="text-slate-600 dark:text-slate-300 text-sm">
                     {service.description.substring(0, 100)}...
                   </CardDescription>
