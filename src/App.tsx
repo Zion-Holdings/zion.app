@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import { Sidebar } from './components/Sidebar';
+import Sidebar from './components/Sidebar';
 import { AccessibilityControls } from './components/AccessibilityControls';
 import { PerformanceDashboard } from './components/PerformanceDashboard';
 import { AnalyticsDashboard } from './components/AnalyticsDashboard';
@@ -17,16 +17,12 @@ import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
 import { ErrorBoundary } from './components/ErrorBoundary';
-import { PerformanceMonitor } from './components/PerformanceMonitor';
 
 // Enhanced lazy loading with preloading hints
 const Home = lazy(() => import('./pages/Home'));
-const EnhancedHome = lazy(() => import('./pages/EnhancedHome'));
 const Services = lazy(() => import('./pages/Services'));
 const AISolutions = lazy(() => import('./pages/AISolutions'));
 const ServicesShowcase = lazy(() => import('./pages/ServicesShowcase'));
-const EnhancedServicesShowcase = lazy(() => import('./pages/EnhancedServicesShowcase'));
-const InnovativeServicesShowcase = lazy(() => import('./components/InnovativeServicesShowcase'));
 const AIMatcherPage = lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = lazy(() => import('./pages/TalentDirectory'));
 const TalentsPage = lazy(() => import('./pages/TalentsPage'));
@@ -44,14 +40,9 @@ const Cybersecurity = lazy(() => import('./pages/services/Cybersecurity'));
 const ITInfrastructure = lazy(() => import('./pages/services/ITInfrastructure'));
 const MicroSAASSolutions = lazy(() => import('./pages/services/MicroSAASSolutions'));
 const IndustrySolutions = lazy(() => import('./pages/services/IndustrySolutions'));
+const InnovativeServices = lazy(() => import('./pages/services/InnovativeServices'));
 
-// New enhanced pages
-const WhitePapers = lazy(() => import('./pages/WhitePapers'));
-const Events = lazy(() => import('./pages/Events'));
-const Webinars = lazy(() => import('./pages/Webinars'));
-const Careers = lazy(() => import('./pages/Careers'));
-
-// Loading Component with Better UX
+// Loading Component
 const LoadingSpinner = () => (
   <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
     <div className="text-center">
@@ -81,13 +72,10 @@ const App = () => {
               <main className="ml-64 pt-20 min-h-screen">
                 <Suspense fallback={<LoadingSpinner />}>
                   <Routes>
-                    <Route path="/" element={<EnhancedHome />} />
-                    <Route path="/home" element={<Home />} />
+                    <Route path="/" element={<Home />} />
                     <Route path="/services" element={<Services />} />
                     <Route path="/ai-solutions" element={<AISolutions />} />
                     <Route path="/services-showcase" element={<ServicesShowcase />} />
-                    <Route path="/enhanced-services" element={<EnhancedServicesShowcase />} />
-                    <Route path="/innovative-services" element={<InnovativeServicesShowcase />} />
                     <Route path="/match" element={<AIMatcherPage />} />
                     <Route path="/talent" element={<TalentDirectory />} />
                     <Route path="/talents" element={<TalentsPage />} />
@@ -108,12 +96,7 @@ const App = () => {
                     <Route path="/services/it-infrastructure" element={<ITInfrastructure />} />
                     <Route path="/services/micro-saas-solutions" element={<MicroSAASSolutions />} />
                     <Route path="/services/industry-solutions" element={<IndustrySolutions />} />
-                    
-                    {/* New enhanced page routes */}
-                    <Route path="/white-papers" element={<WhitePapers />} />
-                    <Route path="/events" element={<Events />} />
-                    <Route path="/webinars" element={<Webinars />} />
-                    <Route path="/careers" element={<Careers />} />
+                    <Route path="/services/innovative-services" element={<InnovativeServices />} />
                   </Routes>
                 </Suspense>
               </main>
@@ -126,13 +109,6 @@ const App = () => {
               
               {/* AI Chatbot - Always Available */}
               <AIChatbot />
-              
-              {/* Performance Monitor - Production Mode */}
-              <PerformanceMonitor 
-                showMetrics={import.meta.env.PROD}
-                logToConsole={true}
-                sendToAnalytics={import.meta.env.PROD}
-              />
               
               {/* Collaborative Text Editor - Development Mode */}
               {import.meta.env.DEV && (
