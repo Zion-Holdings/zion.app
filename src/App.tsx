@@ -32,6 +32,7 @@ const AIServices = lazy(() => import('./pages/AIServices'));
 const CloudDevOps = lazy(() => import('./pages/CloudDevOps'));
 const EnterpriseSolutionsPage = lazy(() => import('./pages/EnterpriseSolutions'));
 const DigitalTransformation = lazy(() => import('./pages/DigitalTransformation'));
+const InnovativeNewServices = lazy(() => import('./pages/services/InnovativeNewServices'));
 
 // Our enhanced service pages
 const About = lazy(() => import('./pages/About'));
@@ -101,6 +102,7 @@ const App = () => {
                     <Route path="/cloud-devops" element={<CloudDevOps />} />
                     <Route path="/enterprise-solutions" element={<EnterpriseSolutionsPage />} />
                     <Route path="/digital-transformation" element={<DigitalTransformation />} />
+                    <Route path="/innovative-services" element={<InnovativeNewServices />} />
                     
                     {/* Our enhanced service routes */}
                     <Route path="/about" element={<About />} />
