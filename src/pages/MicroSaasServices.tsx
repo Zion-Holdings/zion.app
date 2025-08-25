@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Filter, Star, Clock, DollarSign, Users, Zap, Brain, Cloud, Database, Shield, Settings, Eye, Leaf, CreditCard, Heart, Truck, ShoppingCart, Phone, Mail, MapPin, Globe, Bot, Cpu, Network, Database as DatabaseIcon, Shield as ShieldIcon, Zap as ZapIcon, Building, Factory, Store, Car, Plane, Ship, Home, Hospital, Building2, GraduationCap, Calendar, FileText, BarChart3, Users as UsersIcon, CreditCard as CreditCardIcon, MessageSquare, Camera, Video, Music, BookOpen, Target, TrendingUp, PieChart, Activity, Zap as ZapIcon2, Wifi, Smartphone, Server, Code, Lock, Key, Bug, CheckCircle, AlertTriangle, Info, ArrowRight, Satellite, Rocket, Atom, Dna, Brain as BrainIcon, Microchip, Database as DatabaseIcon2, Shield as ShieldIcon2, Zap as ZapIcon3, Globe as GlobeIcon, Network as NetworkIcon, Cpu as CpuIcon, Server as ServerIcon, Code as CodeIcon, Lock as LockIcon, Key as KeyIcon, Bug as BugIcon, CheckCircle as CheckCircleIcon, AlertTriangle as AlertTriangleIcon, Info as InfoIcon, ArrowRight as ArrowRightIcon, Glasses } from 'lucide-react';
+import { Search, Filter, Star, Clock, DollarSign, Users, Zap, Brain, Cloud, Database, Shield, Settings, Eye, Leaf, CreditCard, Heart, Truck, ShoppingCart, Phone, Mail, MapPin, Globe, Bot, Cpu, Network, Database as DatabaseIcon, Shield as ShieldIcon, Zap as ZapIcon, Building, Factory, Store, Car, Plane, Ship, Home, Hospital, Building2, GraduationCap, Calendar, FileText, BarChart3, Users as UsersIcon, CreditCard as CreditCardIcon, MessageSquare, Camera, Video, Music, BookOpen, Target, TrendingUp, PieChart, Activity, Zap as ZapIcon2 } from 'lucide-react';
 
 const MicroSaasServices: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -293,20 +293,19 @@ const MicroSaasServices: React.FC = () => {
         website: "https://ziontechgroup.com"
       }
     },
-    // NEW INNOVATIVE SERVICES ADDED
     {
       id: 16,
-      name: "AI CodeGen Pro",
-      category: "Development",
+      name: "AI-Powered Lead Scoring",
+      category: "Sales",
       pricing: "Freemium",
-      description: "AI-powered code generation and development assistance for developers and teams",
-      price: 55,
+      description: "Intelligent lead scoring and qualification using machine learning algorithms",
+      price: 45,
       pricingModel: "monthly",
-      userLimit: "Up to 10 developers",
-      features: ["AI code generation", "Code review", "Bug detection", "Documentation auto-generation"],
-      benefits: ["Faster development", "Code quality", "Reduced bugs", "Team productivity"],
-      targetAudience: ["Software developers", "Development teams", "Startups", "Tech companies"],
-      tags: ["AI Development", "Code Generation", "Programming", "Automation", "Productivity"],
+      userLimit: "Up to 20 users",
+      features: ["AI lead scoring", "Behavioral analysis", "Predictive analytics", "CRM integration"],
+      benefits: ["Higher conversion rates", "Better lead quality", "Sales efficiency", "ROI improvement"],
+      targetAudience: ["Sales teams", "Marketing agencies", "B2B companies", "Startups"],
+      tags: ["Lead Scoring", "AI", "Sales", "Predictive Analytics", "CRM"],
       contactInfo: {
         phone: "+1 302 464 0950",
         email: "kleber@ziontechgroup.com",
@@ -315,17 +314,17 @@ const MicroSaasServices: React.FC = () => {
     },
     {
       id: 17,
-      name: "BlockchainFlow",
-      category: "Blockchain",
+      name: "SmartContract AI",
+      category: "Legal",
       pricing: "Freemium",
-      description: "Simplified blockchain integration and smart contract development platform",
-      price: 75,
+      description: "AI-powered contract analysis, risk assessment, and legal document automation",
+      price: 55,
       pricingModel: "monthly",
-      userLimit: "Up to 5 projects",
-      features: ["Smart contract templates", "Blockchain deployment", "Wallet integration", "Transaction monitoring"],
-      benefits: ["Blockchain adoption", "Cost reduction", "Security", "Innovation"],
-      targetAudience: ["Fintech startups", "NFT creators", "DeFi projects", "Blockchain developers"],
-      tags: ["Blockchain", "Smart Contracts", "DeFi", "NFT", "Web3"],
+      userLimit: "Up to 10 users",
+      features: ["Contract analysis", "Risk assessment", "Document automation", "Compliance checking"],
+      benefits: ["Legal cost reduction", "Risk mitigation", "Time savings", "Compliance assurance"],
+      targetAudience: ["Legal firms", "In-house counsel", "Contractors", "Real estate"],
+      tags: ["Legal Tech", "AI", "Contract Analysis", "Risk Assessment", "Automation"],
       contactInfo: {
         phone: "+1 302 464 0950",
         email: "kleber@ziontechgroup.com",
@@ -334,17 +333,17 @@ const MicroSaasServices: React.FC = () => {
     },
     {
       id: 18,
-      name: "IoT Connect Hub",
-      category: "IoT",
+      name: "Quantum Analytics",
+      category: "Analytics",
       pricing: "Freemium",
-      description: "Internet of Things device management and data analytics platform",
-      price: 45,
+      description: "Advanced quantum-inspired analytics for complex business intelligence and forecasting",
+      price: 75,
       pricingModel: "monthly",
-      userLimit: "Up to 100 devices",
-      features: ["Device management", "Real-time monitoring", "Data analytics", "Alert system"],
-      benefits: ["IoT insights", "Operational efficiency", "Predictive maintenance", "Cost savings"],
-      targetAudience: ["Manufacturing", "Smart cities", "Agriculture", "Healthcare IoT"],
-      tags: ["IoT", "Device Management", "Data Analytics", "Monitoring", "Automation"],
+      userLimit: "Up to 12 users",
+      features: ["Quantum algorithms", "Complex modeling", "Predictive analytics", "Real-time insights"],
+      benefits: ["Advanced insights", "Competitive advantage", "Complex problem solving", "Future readiness"],
+      targetAudience: ["Research institutions", "Financial services", "Pharmaceuticals", "Advanced manufacturing"],
+      tags: ["Quantum Analytics", "Advanced AI", "Complex Modeling", "Predictive Analytics"],
       contactInfo: {
         phone: "+1 302 464 0950",
         email: "kleber@ziontechgroup.com",
@@ -353,17 +352,17 @@ const MicroSaasServices: React.FC = () => {
     },
     {
       id: 19,
-      name: "QuantumML Studio",
-      category: "AI/ML",
+      name: "Blockchain Supply Chain",
+      category: "Supply Chain",
       pricing: "Freemium",
-      description: "Quantum machine learning platform for advanced AI model training",
-      price: 120,
+      description: "Transparent and secure supply chain tracking using blockchain technology",
+      price: 60,
       pricingModel: "monthly",
-      userLimit: "Up to 3 researchers",
-      features: ["Quantum algorithms", "ML model training", "Quantum simulation", "Performance optimization"],
-      benefits: ["Quantum advantage", "Faster training", "Advanced AI", "Research innovation"],
-      targetAudience: ["AI researchers", "Data scientists", "Universities", "Tech companies"],
-      tags: ["Quantum Computing", "Machine Learning", "AI", "Research", "Innovation"],
+      userLimit: "Up to 25 users",
+      features: ["Blockchain tracking", "Transparency", "Security", "Audit trails"],
+      benefits: ["Supply chain transparency", "Fraud prevention", "Compliance", "Trust building"],
+      targetAudience: ["Manufacturing", "Food industry", "Pharmaceuticals", "Luxury goods"],
+      tags: ["Blockchain", "Supply Chain", "Transparency", "Security", "Compliance"],
       contactInfo: {
         phone: "+1 302 464 0950",
         email: "kleber@ziontechgroup.com",
@@ -372,17 +371,17 @@ const MicroSaasServices: React.FC = () => {
     },
     {
       id: 20,
-      name: "Edge Computing Pro",
-      category: "Infrastructure",
+      name: "AR/VR Business Solutions",
+      category: "Immersive Tech",
       pricing: "Freemium",
-      description: "Edge computing platform for distributed application deployment",
-      price: 65,
+      description: "Augmented and virtual reality solutions for business training, visualization, and customer engagement",
+      price: 80,
       pricingModel: "monthly",
-      userLimit: "Up to 20 edge nodes",
-      features: ["Edge deployment", "Load balancing", "Latency optimization", "Global distribution"],
-      benefits: ["Reduced latency", "Better performance", "Cost optimization", "Global reach"],
-      targetAudience: ["Gaming companies", "CDN providers", "IoT platforms", "Global apps"],
-      tags: ["Edge Computing", "Infrastructure", "Performance", "Global", "Deployment"],
+      userLimit: "Up to 15 users",
+      features: ["AR/VR development", "3D modeling", "Interactive experiences", "Analytics dashboard"],
+      benefits: ["Enhanced training", "Better visualization", "Customer engagement", "Innovation leadership"],
+      targetAudience: ["Training companies", "Real estate", "Manufacturing", "Retail"],
+      tags: ["AR/VR", "Immersive Tech", "3D Modeling", "Training", "Visualization"],
       contactInfo: {
         phone: "+1 302 464 0950",
         email: "kleber@ziontechgroup.com",
@@ -391,17 +390,17 @@ const MicroSaasServices: React.FC = () => {
     },
     {
       id: 21,
-      name: "VoiceAI Studio",
-      category: "AI",
+      name: "Edge Computing Platform",
+      category: "Infrastructure",
       pricing: "Freemium",
-      description: "AI-powered voice recognition and natural language processing platform",
-      price: 40,
+      description: "Edge computing platform for IoT devices and real-time data processing",
+      price: 65,
       pricingModel: "monthly",
-      userLimit: "Up to 1000 API calls/month",
-      features: ["Voice recognition", "Speech synthesis", "Language translation", "Voice analytics"],
-      benefits: ["Voice interfaces", "Multilingual support", "Accessibility", "User experience"],
-      targetAudience: ["Call centers", "Mobile apps", "Accessibility tools", "Language learning"],
-      tags: ["Voice AI", "Speech Recognition", "NLP", "Accessibility", "Multilingual"],
+      userLimit: "Up to 100 devices",
+      features: ["Edge processing", "IoT integration", "Real-time analytics", "Low latency"],
+      benefits: ["Faster processing", "Reduced bandwidth", "Real-time insights", "Cost efficiency"],
+      targetAudience: ["IoT companies", "Manufacturing", "Smart cities", "Transportation"],
+      tags: ["Edge Computing", "IoT", "Real-time", "Analytics", "Infrastructure"],
       contactInfo: {
         phone: "+1 302 464 0950",
         email: "kleber@ziontechgroup.com",
@@ -410,17 +409,17 @@ const MicroSaasServices: React.FC = () => {
     },
     {
       id: 22,
-      name: "AR/VR Creator",
-      category: "Immersive Tech",
+      name: "AI Ethics & Compliance",
+      category: "Compliance",
       pricing: "Freemium",
-      description: "Augmented and virtual reality content creation platform for businesses",
-      price: 85,
+      description: "AI ethics monitoring and compliance management for responsible AI deployment",
+      price: 70,
       pricingModel: "monthly",
-      userLimit: "Up to 5 creators",
-      features: ["3D modeling", "AR/VR development", "Content publishing", "Analytics dashboard"],
-      benefits: ["Immersive experiences", "Customer engagement", "Innovation", "Competitive advantage"],
-      targetAudience: ["Marketing agencies", "Retail stores", "Training companies", "Entertainment"],
-      tags: ["AR/VR", "3D Modeling", "Immersive Tech", "Content Creation", "Innovation"],
+      userLimit: "Up to 20 users",
+      features: ["Ethics monitoring", "Bias detection", "Compliance reporting", "Audit trails"],
+      benefits: ["Ethical AI", "Regulatory compliance", "Risk mitigation", "Trust building"],
+      targetAudience: ["AI companies", "Financial services", "Healthcare", "Government"],
+      tags: ["AI Ethics", "Compliance", "Bias Detection", "Risk Management"],
       contactInfo: {
         phone: "+1 302 464 0950",
         email: "kleber@ziontechgroup.com",
@@ -429,17 +428,17 @@ const MicroSaasServices: React.FC = () => {
     },
     {
       id: 23,
-      name: "Cybersecurity AI",
+      name: "Quantum Cryptography",
       category: "Security",
       pricing: "Freemium",
-      description: "AI-powered cybersecurity threat detection and response platform",
-      price: 95,
+      description: "Quantum-resistant cryptography and secure communication solutions",
+      price: 90,
       pricingModel: "monthly",
-      userLimit: "Up to 50 endpoints",
-      features: ["Threat detection", "Behavioral analysis", "Incident response", "Security automation"],
-      benefits: ["Proactive security", "Reduced breaches", "Compliance", "Peace of mind"],
-      targetAudience: ["Financial institutions", "Healthcare", "E-commerce", "Government agencies"],
-      tags: ["Cybersecurity", "AI", "Threat Detection", "Compliance", "Automation"],
+      userLimit: "Up to 30 users",
+      features: ["Quantum encryption", "Secure communication", "Key management", "Future-proof security"],
+      benefits: ["Quantum resistance", "Enhanced security", "Future readiness", "Competitive advantage"],
+      targetAudience: ["Financial services", "Government", "Healthcare", "Defense"],
+      tags: ["Quantum Cryptography", "Security", "Encryption", "Future-proof"],
       contactInfo: {
         phone: "+1 302 464 0950",
         email: "kleber@ziontechgroup.com",
@@ -448,17 +447,17 @@ const MicroSaasServices: React.FC = () => {
     },
     {
       id: 24,
-      name: "GreenTech Analytics",
+      name: "Sustainable Tech Platform",
       category: "Sustainability",
       pricing: "Freemium",
-      description: "Environmental impact analytics and sustainability reporting platform",
-      price: 55,
+      description: "Comprehensive sustainability tracking and green technology solutions for businesses",
+      price: 50,
       pricingModel: "monthly",
-      userLimit: "Up to 30 users",
-      features: ["Carbon tracking", "ESG reporting", "Sustainability scoring", "Goal monitoring"],
-      benefits: ["ESG compliance", "Investor appeal", "Cost savings", "Brand reputation"],
-      targetAudience: ["Public companies", "ESG investors", "Sustainability consultants", "Government"],
-      tags: ["Sustainability", "ESG", "Carbon Tracking", "Reporting", "Compliance"],
+      userLimit: "Up to 40 users",
+      features: ["Carbon tracking", "Sustainability reporting", "Green tech integration", "ESG compliance"],
+      benefits: ["Environmental impact", "Regulatory compliance", "Cost savings", "Brand reputation"],
+      targetAudience: ["Manufacturing", "Retail", "Service businesses", "ESG-focused companies"],
+      tags: ["Sustainability", "Green Tech", "ESG", "Carbon Tracking", "Compliance"],
       contactInfo: {
         phone: "+1 302 464 0950",
         email: "kleber@ziontechgroup.com",
@@ -467,112 +466,17 @@ const MicroSaasServices: React.FC = () => {
     },
     {
       id: 25,
-      name: "FinTech Suite",
-      category: "Finance",
+      name: "Neuro-Marketing AI",
+      category: "Marketing",
       pricing: "Freemium",
-      description: "Comprehensive financial technology platform for modern businesses",
-      price: 80,
+      description: "AI-powered neuromarketing insights and consumer behavior analysis",
+      price: 85,
       pricingModel: "monthly",
-      userLimit: "Up to 100 transactions/month",
-      features: ["Payment processing", "Financial analytics", "Risk assessment", "Compliance tools"],
-      benefits: ["Financial efficiency", "Risk management", "Regulatory compliance", "Cost reduction"],
-      targetAudience: ["Fintech startups", "E-commerce", "SaaS companies", "Financial services"],
-      tags: ["FinTech", "Payments", "Analytics", "Risk Management", "Compliance"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 26,
-      name: "BioTech Lab",
-      category: "Biotechnology",
-      pricing: "Freemium",
-      description: "Biotechnology research and data analysis platform for life sciences",
-      price: 150,
-      pricingModel: "monthly",
-      userLimit: "Up to 10 researchers",
-      features: ["DNA analysis", "Protein modeling", "Clinical trial management", "Research collaboration"],
-      benefits: ["Research acceleration", "Data insights", "Collaboration", "Innovation"],
-      targetAudience: ["Biotech companies", "Research institutions", "Pharmaceuticals", "Universities"],
-      tags: ["Biotechnology", "DNA Analysis", "Research", "Clinical Trials", "Innovation"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 27,
-      name: "SpaceTech Platform",
-      category: "Space Technology",
-      pricing: "Freemium",
-      description: "Space technology and satellite data analytics platform",
-      price: 200,
-      pricingModel: "monthly",
-      userLimit: "Up to 5 projects",
-      features: ["Satellite data", "Orbital calculations", "Space weather", "Launch planning"],
-      benefits: ["Space insights", "Innovation", "Research", "Competitive advantage"],
-      targetAudience: ["Space companies", "Research institutions", "Government agencies", "Universities"],
-      tags: ["Space Technology", "Satellites", "Data Analytics", "Research", "Innovation"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 28,
-      name: "Quantum Security",
-      category: "Security",
-      pricing: "Freemium",
-      description: "Quantum-resistant cryptography and security solutions for future-proof protection",
-      price: 180,
-      pricingModel: "monthly",
-      userLimit: "Up to 15 users",
-      features: ["Quantum encryption", "Post-quantum algorithms", "Key management", "Security auditing"],
-      benefits: ["Future-proof security", "Quantum resistance", "Advanced protection", "Compliance"],
-      targetAudience: ["Government agencies", "Financial institutions", "Healthcare", "Defense contractors"],
-      tags: ["Quantum Security", "Cryptography", "Post-Quantum", "Advanced Security", "Future-Proof"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 29,
-      name: "NeuroTech AI",
-      category: "AI/Neuroscience",
-      pricing: "Freemium",
-      description: "AI-powered neuroscience research and brain-computer interface platform",
-      price: 250,
-      pricingModel: "monthly",
-      userLimit: "Up to 8 researchers",
-      features: ["Brain mapping", "Neural networks", "BCI development", "Research tools"],
-      benefits: ["Neuroscience insights", "BCI innovation", "Research acceleration", "Medical advances"],
-      targetAudience: ["Neuroscience researchers", "Medical institutions", "BCI companies", "Universities"],
-      tags: ["Neuroscience", "Brain-Computer Interface", "AI", "Research", "Medical Technology"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 30,
-      name: "ClimateTech Analytics",
-      category: "Climate Technology",
-      pricing: "Freemium",
-      description: "Climate change monitoring and environmental technology platform",
-      price: 75,
-      pricingModel: "monthly",
-      userLimit: "Up to 40 users",
-      features: ["Climate monitoring", "Carbon tracking", "Environmental modeling", "Sustainability reporting"],
-      benefits: ["Climate insights", "ESG compliance", "Risk assessment", "Innovation"],
-      targetAudience: ["Climate tech companies", "Environmental agencies", "Insurance companies", "Research institutions"],
-      tags: ["Climate Technology", "Environmental Monitoring", "Carbon Tracking", "Sustainability", "Innovation"],
+      userLimit: "Up to 18 users",
+      features: ["Brain response analysis", "Consumer insights", "Campaign optimization", "Behavioral prediction"],
+      benefits: ["Better marketing ROI", "Consumer understanding", "Campaign effectiveness", "Competitive advantage"],
+      targetAudience: ["Marketing agencies", "Consumer brands", "E-commerce", "Research firms"],
+      tags: ["Neuromarketing", "AI", "Consumer Behavior", "Marketing", "Neuroscience"],
       contactInfo: {
         phone: "+1 302 464 0950",
         email: "kleber@ziontechgroup.com",
@@ -581,7 +485,7 @@ const MicroSaasServices: React.FC = () => {
     }
   ];
 
-  const categories = ['all', 'Productivity', 'Finance', 'Marketing', 'CRM', 'Analytics', 'Scheduling', 'Content', 'Security', 'Media', 'Education', 'Sustainability', 'Legal', 'Healthcare', 'Events', 'Inventory', 'Development', 'Blockchain', 'IoT', 'AI/ML', 'Infrastructure', 'Immersive Tech', 'Biotechnology', 'Space Technology', 'Climate Technology'];
+  const categories = ['all', 'Productivity', 'Finance', 'Marketing', 'CRM', 'Analytics', 'Scheduling', 'Content', 'Security', 'Media', 'Education', 'Sustainability', 'Legal', 'Healthcare', 'Events', 'Inventory', 'Sales', 'Supply Chain', 'Immersive Tech', 'Infrastructure', 'Compliance'];
   const pricingModels = ['all', 'Freemium', 'Subscription', 'One-time'];
 
   const filteredServices = microSaasServices.filter(service => {
@@ -620,15 +524,6 @@ const MicroSaasServices: React.FC = () => {
       case 'Security': return <Shield className="w-6 h-6" />;
       case 'Media': return <Video className="w-6 h-6" />;
       case 'Education': return <BookOpen className="w-6 h-6" />;
-      case 'Development': return <Code className="w-6 h-6" />;
-      case 'Blockchain': return <Network className="w-6 h-6" />;
-      case 'IoT': return <Wifi className="w-6 h-6" />;
-      case 'AI/ML': return <BrainIcon className="w-6 h-6" />;
-      case 'Infrastructure': return <Server className="w-6 h-6" />;
-      case 'Immersive Tech': return <Glasses className="w-6 h-6" />;
-      case 'Biotechnology': return <Dna className="w-6 h-6" />;
-      case 'Space Technology': return <Satellite className="w-6 h-6" />;
-      case 'Climate Technology': return <Leaf className="w-6 h-6" />;
       default: return <ZapIcon2 className="w-6 h-6" />;
     }
   };
