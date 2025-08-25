@@ -14,9 +14,13 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
-      - run: npm ci
+          node-version: '20'
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
       - name: Build project
         run: npm run build
       - name: Verify build output
@@ -27,17 +31,17 @@ jobs:
           fi
       - name: Verify asset paths
         run: |
-          npx serve out/ --cors --single -l 5000 &
+          npx serve dist/ --cors --single -l 5000 &
           SERVE_PID=$!
           sleep 5
           kill $SERVE_PID
-      - name: Run Vitest with Coverage
-        run: npx vitest run --coverage
+      - name: Run Jest with Coverage
+        run: npm run test:ci
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./coverage/coverage-final.json
+          files: ./coverage/lcov.info
       - run: npm run cypress:run
         env:
           TEST_USER_EMAIL: ${{ secrets.CYPRESS_TEST_USER_EMAIL }}
@@ -57,6 +61,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build
-          path: |
-            build
-            dist
+          path: dist

@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { ProductListing } from "../types/listings";
 
 // Simplified Micro SAAS Services for build
@@ -29,10 +30,210 @@ export const MICRO_SAAS_SERVICES: ProductListing[] = [
     featured: true,
     location: "Global",
     aiScore: 96
+=======
+import { ProductListing } from "@/types/listings";
+
+export const MICRO_SAAS_SERVICES: ProductListing[] = [
+  {
+    id: "ai-crm-001",
+    name: "AI-Powered CRM System",
+    description: "Intelligent customer relationship management with predictive analytics, automated lead scoring, and personalized customer insights. Features include smart email campaigns, sales forecasting, and customer behavior analysis.",
+    price: 299,
+    category: "AI Business Solutions",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+    rating: 4.8,
+    review_count: 127,
+    ai_score: 95,
+    features: ["AI-powered", "Automation", "Analytics"],
+    addons: ["Premium Support", "Custom Integration"],
+  },
+  {
+    id: "supply-chain-002",
+    name: "Smart Supply Chain Optimizer",
+    description: "End-to-end supply chain management with AI-driven demand forecasting, inventory optimization, and real-time tracking. Includes supplier management, cost analysis, and risk assessment tools.",
+    price: 199,
+    category: "AI Business Solutions",
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800",
+    rating: 4.6,
+    review_count: 89,
+    ai_score: 92,
+    features: ["AI-powered", "Automation", "Analytics"],
+    addons: ["Premium Support", "Custom Integration"],
+  },
+  {
+    id: "ai-marketing-003",
+    name: "AI Marketing Automation Suite",
+    description: "Comprehensive marketing automation platform with intelligent audience segmentation, personalized content generation, and performance optimization. Features A/B testing, ROI tracking, and multi-channel campaign management.",
+    price: 399,
+    category: "AI Business Solutions",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+    rating: 4.9,
+    review_count: 156,
+    ai_score: 94,
+    features: ["AI-powered", "Automation", "Analytics"],
+    addons: ["Premium Support", "Custom Integration"],
+  },
+  {
+    id: "cloud-infra-004",
+    name: "Cloud Infrastructure Manager",
+    description: "Enterprise-grade cloud infrastructure management with automated scaling, cost optimization, and security monitoring. Includes multi-cloud support, backup solutions, and disaster recovery planning.",
+    price: 149,
+    category: "IT Infrastructure",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800",
+    rating: 4.7,
+    review_count: 203,
+    ai_score: 88,
+    features: ["AI-powered", "Automation", "Analytics"],
+    addons: ["Premium Support", "Custom Integration"],
+  },
+  {
+    id: "data-analytics-005",
+    name: "Advanced Data Analytics Platform",
+    description: "Powerful data analytics and business intelligence platform with real-time dashboards, predictive modeling, and automated reporting. Features data visualization, statistical analysis, and machine learning capabilities.",
+    price: 249,
+    category: "Data Analytics",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+    rating: 4.8,
+    review_count: 178,
+    ai_score: 91,
+    features: ["AI-powered", "Automation", "Analytics"],
+    addons: ["Premium Support", "Custom Integration"],
+  },
+  {
+    id: "ai-dev-006",
+    name: "AI Development Framework",
+    description: "Complete AI development toolkit with pre-trained models, custom algorithm development, and deployment automation. Includes model training, testing frameworks, and production deployment tools.",
+    price: 599,
+    category: "AI Development",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800",
+    rating: 4.9,
+    review_count: 234,
+    ai_score: 96,
+    features: ["AI-powered", "Automation", "Analytics"],
+    addons: ["Premium Support", "Custom Integration"],
+  },
+  {
+    id: "fintech-007",
+    name: "FinTech Payment Gateway",
+    description: "Secure and scalable payment processing solution with fraud detection, multi-currency support, and compliance management. Features real-time transaction monitoring, automated reconciliation, and API integration.",
+    price: 349,
+    category: "FinTech",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
+    rating: 4.7,
+    review_count: 145,
+    ai_score: 89,
+    features: ["AI-powered", "Automation", "Analytics"],
+    addons: ["Premium Support", "Custom Integration"],
+  },
+  {
+    id: "healthtech-008",
+    name: "Healthcare Analytics Platform",
+    description: "Comprehensive healthcare data analytics platform with patient monitoring, predictive diagnostics, and treatment optimization. Includes HIPAA compliance, clinical decision support, and population health management.",
+    price: 279,
+    category: "HealthTech",
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=800",
+    rating: 4.8,
+    review_count: 167,
+    ai_score: 93,
+    features: ["AI-powered", "Automation", "Analytics"],
+    addons: ["Premium Support", "Custom Integration"],
+  },
+  {
+    id: "ecommerce-009",
+    name: "E-commerce Optimization Suite",
+    description: "AI-powered e-commerce optimization with personalized recommendations, dynamic pricing, and inventory management. Features customer behavior analysis, conversion optimization, and multi-platform integration.",
+    price: 799,
+    category: "E-commerce",
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800",
+    rating: 4.9,
+    review_count: 198,
+    ai_score: 94,
+    features: ["AI-powered", "Automation", "Analytics"],
+    addons: ["Premium Support", "Custom Integration"],
+  },
+  {
+    id: "edtech-010",
+    name: "Educational Technology Platform",
+    description: "Comprehensive learning management system with adaptive learning paths, progress tracking, and content creation tools. Includes virtual classrooms, assessment engines, and student analytics.",
+    price: 199,
+    category: "EdTech",
+    image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800",
+    rating: 4.6,
+    review_count: 134,
+    ai_score: 87,
+    features: ["AI-powered", "Automation", "Analytics"],
+    addons: ["Premium Support", "Custom Integration"],
+  },
+  {
+    id: "cybersecurity-011",
+    name: "AI Cybersecurity Suite",
+    description: "Advanced cybersecurity platform with threat detection, vulnerability assessment, and automated incident response. Features behavioral analysis, real-time monitoring, and compliance reporting.",
+    price: 179,
+    category: "Cybersecurity",
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800",
+    rating: 4.8,
+    review_count: 189,
+    ai_score: 92,
+    features: ["AI-powered", "Automation", "Analytics"],
+    addons: ["Premium Support", "Custom Integration"],
+  },
+  {
+    id: "iot-platform-012",
+    name: "IoT Management Platform",
+    description: "Comprehensive IoT device management with real-time monitoring, data collection, and automated control systems. Includes device provisioning, security management, and analytics dashboards.",
+    price: 449,
+    category: "IoT Solutions",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800",
+    rating: 4.7,
+    review_count: 156,
+    ai_score: 90,
+    features: ["AI-powered", "Automation", "Analytics"],
+    addons: ["Premium Support", "Custom Integration"],
+  },
+  {
+    id: "blockchain-013",
+    name: "Blockchain Development Kit",
+    description: "Complete blockchain development toolkit with smart contract templates, deployment tools, and monitoring solutions. Features multi-chain support, security auditing, and performance optimization.",
+    price: 899,
+    category: "Blockchain",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800",
+    rating: 4.9,
+    review_count: 267,
+    ai_score: 95,
+    features: ["AI-powered", "Automation", "Analytics"],
+    addons: ["Premium Support", "Custom Integration"],
+  },
+  {
+    id: "api-gateway-014",
+    name: "API Gateway & Management",
+    description: "Enterprise API gateway with rate limiting, authentication, and monitoring capabilities. Includes API documentation, testing tools, and performance analytics for seamless integration.",
+    price: 329,
+    category: "API Management",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+    rating: 4.6,
+    review_count: 123,
+    ai_score: 88,
+    features: ["AI-powered", "Automation", "Analytics"],
+    addons: ["Premium Support", "Custom Integration"],
+  },
+  {
+    id: "workflow-automation-015",
+    name: "Workflow Automation Engine",
+    description: "Intelligent workflow automation with process optimization, task scheduling, and performance analytics. Features visual workflow designer, integration connectors, and real-time monitoring.",
+    price: 249,
+    category: "Business Process",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+    rating: 4.7,
+    review_count: 178,
+    ai_score: 91,
+    features: ["AI-powered", "Automation", "Analytics"],
+    addons: ["Premium Support", "Custom Integration"],
+>>>>>>> feature-branch-merge
   }
 ];
 
 export const MICRO_SAAS_CATEGORIES = [
+<<<<<<< HEAD
   { 
     label: 'AI Business Solutions', 
     value: 'ai-business-solutions',
@@ -651,4 +852,48 @@ export const getServiceByPricingTier = (tier: string) => {
 export const getFeaturedServices = () => {
   return MICRO_SAAS_SERVICES.filter(service => service.rating >= 4.7).slice(0, 6);
 >>>>>>> cursor/integrate-build-improve-and-re-verify-a776
+=======
+  { label: 'AI Business Solutions', value: 'ai-business-solutions' },
+  { label: 'IT Infrastructure', value: 'it-infrastructure' },
+  { label: 'Data Analytics', value: 'data-analytics' },
+  { label: 'AI Development', value: 'ai-development' },
+  { label: 'FinTech', value: 'fintech' },
+  { label: 'HealthTech', value: 'healthtech' },
+  { label: 'E-commerce', value: 'e-commerce' },
+  { label: 'EdTech', value: 'edtech' },
+  { label: 'Cybersecurity', value: 'cybersecurity' },
+  { label: 'IoT Solutions', value: 'iot-solutions' },
+  { label: 'Blockchain', value: 'blockchain' },
+  { label: 'API Management', value: 'api-management' },
+  { label: 'Business Process', value: 'business-process' }
+];
+
+export const MICRO_SAAS_SUBCATEGORIES = {
+  'ai-business-solutions': ['CRM & Sales', 'Supply Chain', 'Marketing'],
+  'it-infrastructure': ['Cloud Management', 'Server Administration', 'Network Security'],
+  'data-analytics': ['Business Intelligence', 'Predictive Analytics', 'Data Visualization'],
+  'ai-development': ['Machine Learning', 'Natural Language Processing', 'Computer Vision'],
+  'fintech': ['Payment Processing', 'Risk Management', 'Financial Analytics'],
+  'healthtech': ['Patient Management', 'Clinical Analytics', 'Telemedicine'],
+  'e-commerce': ['Platform Optimization', 'Customer Analytics', 'Inventory Management'],
+  'edtech': ['Learning Management', 'Student Analytics', 'Content Creation'],
+  'cybersecurity': ['Threat Detection', 'Vulnerability Assessment', 'Incident Response'],
+  'iot-solutions': ['Device Management', 'Data Collection', 'Control Systems'],
+  'blockchain': ['Smart Contracts', 'DeFi Solutions', 'Supply Chain Tracking'],
+  'api-management': ['Gateway Services', 'Documentation', 'Monitoring'],
+  'business-process': ['Workflow Automation', 'Process Optimization', 'Performance Analytics']
+};
+
+export const PRICING_TIERS = {
+  basic: { name: 'Basic', multiplier: 1 },
+  professional: { name: 'Professional', multiplier: 1.5 },
+  enterprise: { name: 'Enterprise', multiplier: 2.5 }
+};
+
+export const CONTACT_INFO = {
+  mobile: "+1 302 464 0950",
+  email: "kleber@ziontechgroup.com",
+  address: "364 E Main St STE 1008 Middletown DE 19709",
+  website: "https://ziontechgroup.com"
+>>>>>>> feature-branch-merge
 };

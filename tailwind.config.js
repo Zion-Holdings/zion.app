@@ -224,9 +224,11 @@ export default {
 =======
         'zion-blue': '#172d67',
         'zion-blue-dark': '#0f1a3d',
+        'zion-blue-light': '#2e73ea',
         'zion-cyan': '#22ddd2',
         'zion-cyan-light': '#4de8e0',
         'zion-purple': '#8c15e9',
+        'zion-purple-dark': '#6b21a8',
         'zion-purple-light': '#a855f7',
         'zion-slate': '#64748b',
         'zion-slate-light': '#94a3b8',

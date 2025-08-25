@@ -17,6 +17,19 @@ import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
 import { ErrorBoundary } from './components/ErrorBoundary';
+import {
+  AuthRoutes,
+  DashboardRoutes,
+  MarketplaceRoutes,
+  TalentRoutes,
+  AdminRoutes,
+  MobileAppRoutes,
+  ContentRoutes,
+  ErrorRoutes,
+  EnterpriseRoutes,
+  CommunityRoutes,
+  DeveloperRoutes
+} from './routes';
 
 // Enhanced lazy loading with preloading hints
 const Home = lazy(() => import('./pages/Home'));
@@ -27,6 +40,24 @@ const AIMatcherPage = lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = lazy(() => import('./pages/TalentDirectory'));
 const TalentsPage = lazy(() => import('./pages/TalentsPage'));
 const EmergingTech = lazy(() => import('./pages/EmergingTech'));
+const EquipmentPage = lazy(() => import('./pages/EquipmentPage'));
+const EquipmentDetail = lazy(() => import('./pages/EquipmentDetail'));
+const Analytics = lazy(() => import('./pages/Analytics'));
+const MobileLaunchPage = lazy(() => import('./pages/MobileLaunchPage'));
+const CommunityPage = lazy(() => import('./pages/CommunityPage'));
+const Categories = lazy(() => import('./pages/Categories'));
+const Blog = lazy(() => import('./pages/Blog'));
+const BlogPost = lazy(() => import('./pages/BlogPost'));
+const PartnersPage = lazy(() => import('./pages/Partners'));
+const Login = lazy(() => import('./pages/Login'));
+const Signup = lazy(() => import('./pages/Signup'));
+const ITOnsiteServicesPage = lazy(() => import('./pages/ITOnsiteServicesPage'));
+const OpenAppRedirect = lazy(() => import('./pages/OpenAppRedirect'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
+const ZionHireAI = lazy(() => import('./pages/ZionHireAI'));
+const RequestQuotePage = lazy(() => import('./pages/RequestQuote'));
+const MicroSaasServices = lazy(() => import('./pages/MicroSaasServices'));
+const PricingPage = lazy(() => import('./pages/PricingPage'));
 
 // Our enhanced service pages
 const About = lazy(() => import('./pages/About'));
@@ -76,19 +107,38 @@ const App = () => {
               <main className="ml-64 pt-20 min-h-screen">
                 <Suspense fallback={<LoadingSpinner />}>
                   <Routes>
+                    {/* Base Routes */}
                     <Route path="/" element={<Home />} />
+                    <Route path="/match" element={<AIMatcherPage />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/signup" element={<Signup />} />
+                    <Route path="/talent" element={<TalentDirectory />} />
+                    <Route path="/talents" element={<TalentsPage />} />
+                    <Route path="/micro-saas-services" element={<MicroSaasServices />} />
+                    <Route path="/pricing" element={<PricingPage />} />
+                    <Route path="/it-onsite-services" element={<ITOnsiteServicesPage />} />
+                    <Route path="/categories" element={<Categories />} />
+                    <Route path="/equipment" element={<EquipmentPage />} />
+                    <Route path="/equipment/:id" element={<EquipmentDetail />} />
+                    <Route path="/analytics" element={<Analytics />} />
+                    <Route path="/mobile-launch" element={<MobileLaunchPage />} />
+                    <Route path="/open-app" element={<OpenAppRedirect />} />
+                    <Route path="/community" element={<CommunityPage />} />
+                    <Route path="/contact" element={<ContactPage />} />
+                    <Route path="/partners" element={<PartnersPage />} />
+                    <Route path="/zion-hire-ai" element={<ZionHireAI />} />
+                    <Route path="/hire-ai" element={<ZionHireAI />} />
+                    <Route path="/request-quote" element={<RequestQuotePage />} />
+                    <Route path="/blog" element={<Blog />} />
+                    <Route path="/blog/:slug" element={<BlogPost />} />
+                    
+                    {/* Enhanced Service Routes */}
                     <Route path="/services" element={<Services />} />
                     <Route path="/ai-solutions" element={<AISolutions />} />
                     <Route path="/services-showcase" element={<ServicesShowcase />} />
-                    <Route path="/match" element={<AIMatcherPage />} />
-                    <Route path="/talent" element={<TalentDirectory />} />
-                    <Route path="/talents" element={<TalentsPage />} />
                     <Route path="/emerging-tech" element={<EmergingTech />} />
                     <Route path="/comprehensive-services" element={<Services />} />
                     <Route path="/services-comparison" element={<Services />} />
-                    <Route path="/it-onsite-services" element={<Services />} />
-                    
-                    {/* Our enhanced service routes */}
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/mission" element={<Mission />} />
@@ -105,6 +155,19 @@ const App = () => {
                     <Route path="/white-papers" element={<WhitePapers />} />
                     <Route path="/events" element={<Events />} />
                     <Route path="/webinars" element={<Webinars />} />
+                    
+                    {/* Advanced Route Groups */}
+                    <Route path="/auth/*" element={<AuthRoutes />} />
+                    <Route path="/dashboard/*" element={<DashboardRoutes />} />
+                    <Route path="/marketplace/*" element={<MarketplaceRoutes />} />
+                    <Route path="/talent/*" element={<TalentRoutes />} />
+                    <Route path="/admin/*" element={<AdminRoutes />} />
+                    <Route path="/mobile/*" element={<MobileAppRoutes />} />
+                    <Route path="/content/*" element={<ContentRoutes />} />
+                    <Route path="/enterprise/*" element={<EnterpriseRoutes />} />
+                    <Route path="/community/*" element={<CommunityRoutes />} />
+                    <Route path="/developers/*" element={<DeveloperRoutes />} />
+                    <Route path="*" element={<ErrorRoutes />} />
                   </Routes>
                 </Suspense>
               </main>
