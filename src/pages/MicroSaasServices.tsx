@@ -1,348 +1,95 @@
 import React, { useState } from 'react';
-import { Search, Filter, Star, Clock, DollarSign, Users, Zap, Brain, Cloud, Database, Shield, Settings, Eye, Leaf, CreditCard, Heart, Truck, ShoppingCart, Phone, Mail, MapPin, Globe, Bot, Cpu, Network, Database as DatabaseIcon, Shield as ShieldIcon, Zap as ZapIcon, Building, Factory, Store, Car, Plane, Ship, Home, Hospital, Building2, GraduationCap, Calendar, FileText, BarChart3, Users as UsersIcon, CreditCard as CreditCardIcon, MessageSquare, Camera, Video, Music, BookOpen, Target, TrendingUp, PieChart, Activity, Zap as ZapIcon2 } from 'lucide-react';
+import { Search, Filter, Star, Clock, DollarSign, Users, Zap, Brain, Cloud, Database, Shield, Settings, Eye, Leaf, CreditCard, Heart, Truck, ShoppingCart, Phone, Mail, MapPin, Globe, Bot, Cpu, Network, Building, Factory, Store, Car, Plane, Ship, Home, Building2, GraduationCap, Calendar, FileText, BarChart3, MessageSquare, Camera, Video, Music, BookOpen, Target, TrendingUp, PieChart, Activity, Award, Rocket, Lightbulb, Code, Palette, Megaphone, Package, Check } from 'lucide-react';
+import { ADVANCED_MICRO_SAAS_SERVICES } from '../data/advancedMicroSaasServices';
+import { COMPREHENSIVE_IT_SERVICES } from '../data/comprehensiveITServices';
+import { COMPREHENSIVE_AI_SERVICES } from '../data/comprehensiveAIServices';
 
 const MicroSaasServices: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedPricing, setSelectedPricing] = useState<string>('all');
+  const [selectedServiceType, setSelectedServiceType] = useState<string>('all');
 
-  // Micro SAAS Services data
-  const microSaasServices = [
-    {
-      id: 1,
-      name: "TaskFlow Pro",
-      category: "Productivity",
-      pricing: "Freemium",
-      description: "Simple yet powerful task management and project collaboration tool for small teams",
-      price: 15,
-      pricingModel: "monthly",
-      userLimit: "Up to 10 users",
-      features: ["Task management", "Team collaboration", "Time tracking", "Progress reports"],
-      benefits: ["Increased productivity", "Better team coordination", "Project visibility", "Easy to use"],
-      targetAudience: ["Small teams", "Startups", "Freelancers", "Small businesses"],
-      tags: ["Task Management", "Productivity", "Collaboration", "Project Management"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 2,
-      name: "InvoiceGenius",
-      category: "Finance",
-      pricing: "Freemium",
-      description: "AI-powered invoice generation and financial management for small businesses",
-      price: 25,
-      pricingModel: "monthly",
-      userLimit: "Unlimited users",
-      features: ["AI invoice generation", "Expense tracking", "Financial reports", "Tax preparation"],
-      benefits: ["Time savings", "Accuracy improvement", "Tax compliance", "Financial insights"],
-      targetAudience: ["Small businesses", "Freelancers", "Consultants", "Service providers"],
-      tags: ["Invoicing", "Finance", "AI", "Tax Preparation", "Expense Tracking"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 3,
-      name: "SocialSync Pro",
-      category: "Marketing",
-      pricing: "Freemium",
-      description: "Comprehensive social media management and analytics platform for businesses",
-      price: 30,
-      pricingModel: "monthly",
-      userLimit: "Up to 5 users",
-      features: ["Multi-platform posting", "Content scheduling", "Analytics dashboard", "Engagement tracking"],
-      benefits: ["Time efficiency", "Better engagement", "Data insights", "Brand consistency"],
-      targetAudience: ["Marketing teams", "Small businesses", "Agencies", "Content creators"],
-      tags: ["Social Media", "Marketing", "Analytics", "Content Management", "Automation"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 4,
-      name: "CustomerFlow CRM",
-      category: "CRM",
-      pricing: "Freemium",
-      description: "Lightweight customer relationship management system for growing businesses",
-      price: 20,
-      pricingModel: "monthly",
-      userLimit: "Up to 15 users",
-      features: ["Contact management", "Sales pipeline", "Email integration", "Reporting tools"],
-      benefits: ["Better customer relationships", "Sales improvement", "Data organization", "Team collaboration"],
-      targetAudience: ["Sales teams", "Small businesses", "Startups", "Consultants"],
-      tags: ["CRM", "Sales", "Customer Management", "Pipeline", "Reporting"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 5,
-      name: "DataViz Studio",
-      category: "Analytics",
-      pricing: "Freemium",
-      description: "Easy-to-use data visualization and analytics platform for business insights",
-      price: 35,
-      pricingModel: "monthly",
-      userLimit: "Up to 8 users",
-      features: ["Interactive dashboards", "Data connectors", "Custom charts", "Real-time updates"],
-      benefits: ["Data insights", "Better decisions", "Visual communication", "Time savings"],
-      targetAudience: ["Business analysts", "Marketing teams", "Executives", "Data teams"],
-      tags: ["Analytics", "Data Visualization", "Dashboards", "Business Intelligence", "Reporting"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 6,
-      name: "ScheduleMaster",
-      category: "Scheduling",
-      pricing: "Freemium",
-      description: "Intelligent scheduling and appointment booking system for service businesses",
-      price: 18,
-      pricingModel: "monthly",
-      userLimit: "Up to 12 users",
-      features: ["Online booking", "Calendar integration", "Automated reminders", "Payment processing"],
-      benefits: ["Reduced no-shows", "24/7 booking", "Payment collection", "Time savings"],
-      targetAudience: ["Service businesses", "Consultants", "Healthcare", "Beauty salons"],
-      tags: ["Scheduling", "Appointments", "Booking", "Calendar", "Automation"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 7,
-      name: "ContentCraft AI",
-      category: "Content",
-      pricing: "Freemium",
-      description: "AI-powered content creation and optimization tool for marketers and creators",
-      price: 40,
-      pricingModel: "monthly",
-      userLimit: "Up to 6 users",
-      features: ["AI content generation", "SEO optimization", "Content planning", "Performance analytics"],
-      benefits: ["Content creation speed", "SEO improvement", "Engagement increase", "Time efficiency"],
-      targetAudience: ["Content marketers", "Bloggers", "Agencies", "Small businesses"],
-      tags: ["Content Creation", "AI", "SEO", "Marketing", "Automation"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 8,
-      name: "SecureVault",
-      category: "Security",
-      pricing: "Freemium",
-      description: "Enterprise-grade security and compliance management for small businesses",
-      price: 45,
-      pricingModel: "monthly",
-      userLimit: "Up to 20 users",
-      features: ["Password management", "Access control", "Compliance monitoring", "Security audits"],
-      benefits: ["Enhanced security", "Compliance", "Risk reduction", "Peace of mind"],
-      targetAudience: ["Small businesses", "Healthcare", "Finance", "Legal services"],
-      tags: ["Security", "Compliance", "Password Management", "Access Control", "Risk Management"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 9,
-      name: "MediaHub Pro",
-      category: "Media",
-      pricing: "Freemium",
-      description: "Digital asset management and media organization platform for creative teams",
-      price: 28,
-      pricingModel: "monthly",
-      userLimit: "Up to 10 users",
-      features: ["Asset organization", "Version control", "Collaboration tools", "Search & filtering"],
-      benefits: ["Better organization", "Team collaboration", "Time savings", "Asset protection"],
-      targetAudience: ["Design teams", "Marketing agencies", "Photographers", "Content creators"],
-      tags: ["Media Management", "Digital Assets", "Collaboration", "Organization", "Creative Tools"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 10,
-      name: "LearnFlow LMS",
-      category: "Education",
-      pricing: "Freemium",
-      description: "Learning management system for corporate training and online education",
-      price: 32,
-      pricingModel: "monthly",
-      userLimit: "Up to 100 learners",
-      features: ["Course creation", "Progress tracking", "Assessment tools", "Mobile learning"],
-      benefits: ["Training efficiency", "Progress monitoring", "Cost reduction", "Scalability"],
-      targetAudience: ["Corporate training", "Educational institutions", "Online courses", "Skill development"],
-      tags: ["LMS", "Education", "Training", "Online Learning", "Assessment"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 11,
-      name: "EcoTrack Pro",
-      category: "Sustainability",
-      pricing: "Freemium",
-      description: "Sustainability tracking and environmental impact management for businesses",
-      price: 38,
-      pricingModel: "monthly",
-      userLimit: "Up to 25 users",
-      features: ["Carbon footprint tracking", "Sustainability reporting", "Goal setting", "Progress monitoring"],
-      benefits: ["Environmental impact", "Regulatory compliance", "Brand reputation", "Cost savings"],
-      targetAudience: ["Manufacturing", "Retail", "Service businesses", "Sustainability-focused companies"],
-      tags: ["Sustainability", "Environmental Impact", "Carbon Tracking", "Reporting", "Compliance"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 12,
-      name: "LegalAssist AI",
-      category: "Legal",
-      pricing: "Freemium",
-      description: "AI-powered legal document generation and contract management for small businesses",
-      price: 50,
-      pricingModel: "monthly",
-      userLimit: "Up to 8 users",
-      features: ["Document templates", "AI generation", "Contract management", "Legal compliance"],
-      benefits: ["Cost reduction", "Legal protection", "Time savings", "Compliance"],
-      targetAudience: ["Small businesses", "Startups", "Freelancers", "Legal professionals"],
-      tags: ["Legal Tech", "AI", "Document Generation", "Contract Management", "Compliance"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 13,
-      name: "HealthTrack Plus",
-      category: "Healthcare",
-      pricing: "Freemium",
-      description: "Health monitoring and wellness tracking platform for individuals and small clinics",
-      price: 22,
-      pricingModel: "monthly",
-      userLimit: "Up to 50 patients",
-      features: ["Health monitoring", "Wellness tracking", "Patient portal", "Health reports"],
-      benefits: ["Better health outcomes", "Patient engagement", "Data insights", "Preventive care"],
-      targetAudience: ["Small clinics", "Wellness centers", "Personal trainers", "Individuals"],
-      tags: ["Healthcare", "Wellness", "Health Monitoring", "Patient Portal", "Preventive Care"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 14,
-      name: "EventMaster Pro",
-      category: "Events",
-      pricing: "Freemium",
-      description: "Comprehensive event management and ticketing platform for event organizers",
-      price: 35,
-      pricingModel: "monthly",
-      userLimit: "Up to 1000 attendees",
-      features: ["Event planning", "Ticket sales", "Attendee management", "Analytics dashboard"],
-      benefits: ["Event success", "Revenue increase", "Attendee satisfaction", "Data insights"],
-      targetAudience: ["Event organizers", "Conferences", "Workshops", "Entertainment"],
-      tags: ["Event Management", "Ticketing", "Planning", "Attendee Management", "Analytics"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 15,
-      name: "InventorySmart",
-      category: "Inventory",
-      pricing: "Freemium",
-      description: "Intelligent inventory management and supply chain optimization for small businesses",
-      price: 25,
-      pricingModel: "monthly",
-      userLimit: "Up to 15 users",
-      features: ["Inventory tracking", "Demand forecasting", "Reorder alerts", "Analytics reports"],
-      benefits: ["Stock optimization", "Cost reduction", "Better planning", "Customer satisfaction"],
-      targetAudience: ["Retail stores", "E-commerce", "Manufacturing", "Distribution"],
-      tags: ["Inventory Management", "Supply Chain", "Forecasting", "Analytics", "Optimization"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    }
+  // Combine all services
+  const allServices = [
+    ...ADVANCED_MICRO_SAAS_SERVICES.map(service => ({ ...service, type: 'Micro SAAS' })),
+    ...COMPREHENSIVE_IT_SERVICES.map(service => ({ ...service, type: 'IT Services' })),
+    ...COMPREHENSIVE_AI_SERVICES.map(service => ({ ...service, type: 'AI Services' }))
   ];
 
-  const categories = ['all', 'Productivity', 'Finance', 'Marketing', 'CRM', 'Analytics', 'Scheduling', 'Content', 'Security', 'Media', 'Education', 'Sustainability', 'Legal', 'Healthcare', 'Events', 'Inventory'];
-  const pricingModels = ['all', 'Freemium', 'Subscription', 'One-time'];
+  const categories = ['all', 'Legal Tech', 'Real Estate', 'Healthcare', 'Restaurant Tech', 'E-commerce', 'FinTech', 'Human Resources', 'Project Management', 'Customer Experience', 'Inventory Management', 'Marketing', 'Computer Vision', 'Natural Language Processing', 'Financial AI', 'Industrial AI', 'Healthcare AI', 'Transportation AI', 'Environmental AI', 'Creative AI', 'Cloud Services', 'Cybersecurity', 'Data Analytics', 'DevOps', 'Digital Transformation', 'Software Development', 'Infrastructure', 'Managed Services', 'Network Security'];
+  const pricingModels = ['all', 'monthly', 'one-time'];
+  const serviceTypes = ['all', 'Micro SAAS', 'IT Services', 'AI Services'];
 
-  const filteredServices = microSaasServices.filter(service => {
+  const filteredServices = allServices.filter(service => {
     const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          service.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
     
     const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
-    const matchesPricing = selectedPricing === 'all' || service.pricing === selectedPricing;
+    const matchesPricing = selectedPricing === 'all' || service.pricingModel === selectedPricing;
+    const matchesType = selectedServiceType === 'all' || service.type === selectedServiceType;
     
-    return matchesSearch && matchesCategory && matchesPricing;
+    return matchesSearch && matchesCategory && matchesPricing && matchesType;
   });
 
   const formatPrice = (price: number, model: string) => {
-    switch (model) {
-      case 'monthly':
-        return `$${price}/month`;
-      case 'yearly':
-        return `$${price * 12}/year`;
-      case 'one-time':
-        return `$${price.toLocaleString()}`;
-      default:
-        return `$${price}`;
+    if (model === 'monthly') {
+      return `$${price.toLocaleString()}/month`;
+    } else if (model === 'one-time') {
+      return `$${price.toLocaleString()}`;
+    } else {
+      return `$${price.toLocaleString()}`;
     }
   };
 
   const getCategoryIcon = (category: string) => {
     switch (category) {
-      case 'Productivity': return <Target className="w-6 h-6" />;
-      case 'Finance': return <CreditCardIcon className="w-6 h-6" />;
+      case 'Legal Tech': return <FileText className="w-6 h-6" />;
+      case 'Real Estate': return <Building className="w-6 h-6" />;
+      case 'Healthcare': return <Heart className="w-6 h-6" />;
+      case 'Restaurant Tech': return <Store className="w-6 h-6" />;
+      case 'E-commerce': return <ShoppingCart className="w-6 h-6" />;
+      case 'FinTech': return <CreditCard className="w-6 h-6" />;
+      case 'Human Resources': return <Users className="w-6 h-6" />;
+      case 'Project Management': return <Target className="w-6 h-6" />;
+      case 'Customer Experience': return <MessageSquare className="w-6 h-6" />;
+      case 'Inventory Management': return <Package className="w-6 h-6" />;
       case 'Marketing': return <TrendingUp className="w-6 h-6" />;
-      case 'CRM': return <UsersIcon className="w-6 h-6" />;
-      case 'Analytics': return <BarChart3 className="w-6 h-6" />;
-      case 'Scheduling': return <Calendar className="w-6 h-6" />;
-      case 'Content': return <FileText className="w-6 h-6" />;
-      case 'Security': return <Shield className="w-6 h-6" />;
-      case 'Media': return <Video className="w-6 h-6" />;
-      case 'Education': return <BookOpen className="w-6 h-6" />;
-      default: return <ZapIcon2 className="w-6 h-6" />;
+      case 'Computer Vision': return <Camera className="w-6 h-6" />;
+      case 'Natural Language Processing': return <MessageSquare className="w-6 h-6" />;
+      case 'Financial AI': return <Brain className="w-6 h-6" />;
+      case 'Industrial AI': return <Factory className="w-6 h-6" />;
+      case 'Healthcare AI': return <Heart className="w-6 h-6" />;
+      case 'Transportation AI': return <Car className="w-6 h-6" />;
+      case 'Environmental AI': return <Leaf className="w-6 h-6" />;
+      case 'Creative AI': return <Palette className="w-6 h-6" />;
+      case 'Cloud Services': return <Cloud className="w-6 h-6" />;
+      case 'Cybersecurity': return <Shield className="w-6 h-6" />;
+      case 'Data Analytics': return <BarChart3 className="w-6 h-6" />;
+      case 'DevOps': return <Settings className="w-6 h-6" />;
+      case 'Digital Transformation': return <Rocket className="w-6 h-6" />;
+      case 'Software Development': return <Code className="w-6 h-6" />;
+      case 'Infrastructure': return <Database className="w-6 h-6" />;
+      case 'Managed Services': return <Users className="w-6 h-6" />;
+      case 'Network Security': return <Shield className="w-6 h-6" />;
+      default: return <Zap className="w-6 h-6" />;
+    }
+  };
+
+  const getServiceTypeColor = (type: string) => {
+    switch (type) {
+      case 'Micro SAAS': return 'text-green-400';
+      case 'IT Services': return 'text-blue-400';
+      case 'AI Services': return 'text-purple-400';
+      default: return 'text-gray-400';
     }
   };
 
   const getPricingColor = (pricing: string) => {
     switch (pricing) {
-      case 'Freemium': return 'text-green-400';
-      case 'Subscription': return 'text-blue-400';
-      case 'One-time': return 'text-purple-400';
+      case 'monthly': return 'text-green-400';
+      case 'one-time': return 'text-blue-400';
       default: return 'text-gray-400';
     }
   };
@@ -353,11 +100,25 @@ const MicroSaasServices: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-green-400 via-blue-400 to-green-600 bg-clip-text text-transparent mb-4">
-            Micro SAAS Services
+            Comprehensive Technology Services
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Affordable, focused software solutions designed specifically for small businesses, startups, and entrepreneurs
+          <p className="text-xl text-gray-300 max-w-4xl mx-auto">
+            Discover our comprehensive suite of Micro SAAS, IT Services, and AI Solutions designed to transform your business operations, enhance productivity, and drive innovation across all industries
           </p>
+          <div className="mt-6 flex flex-wrap justify-center gap-4">
+                         <div className="flex items-center gap-2 text-green-400">
+               <Megaphone className="w-5 h-5" />
+               <span>Micro SAAS Solutions</span>
+             </div>
+            <div className="flex items-center gap-2 text-blue-400">
+              <Settings className="w-5 h-5" />
+              <span>IT Services</span>
+            </div>
+            <div className="flex items-center gap-2 text-purple-400">
+              <Brain className="w-5 h-5" />
+              <span>AI Services</span>
+            </div>
+          </div>
         </div>
 
         {/* Search and Filters */}
@@ -366,7 +127,7 @@ const MicroSaasServices: React.FC = () => {
             <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
             <input
               type="text"
-              placeholder="Search micro SAAS services..."
+              placeholder="Search for technology services, AI solutions, or IT services..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-10 pr-4 py-3 bg-white/10 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
@@ -393,7 +154,19 @@ const MicroSaasServices: React.FC = () => {
             >
               {pricingModels.map(pricing => (
                 <option key={pricing} value={pricing} className="bg-gray-800 text-white">
-                  {pricing === 'all' ? 'All Pricing Models' : pricing}
+                  {pricing === 'all' ? 'All Pricing Models' : pricing === 'monthly' ? 'Monthly Subscription' : 'One-time Payment'}
+                </option>
+              ))}
+            </select>
+
+            <select
+              value={selectedServiceType}
+              onChange={(e) => setSelectedServiceType(e.target.value)}
+              className="px-4 py-2 bg-white/10 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-green-500"
+            >
+              {serviceTypes.map(type => (
+                <option key={type} value={type} className="bg-gray-800 text-white">
+                  {type === 'all' ? 'All Service Types' : type}
                 </option>
               ))}
             </select>
@@ -412,8 +185,11 @@ const MicroSaasServices: React.FC = () => {
                   <div>
                     <h3 className="text-xl font-semibold text-white">{service.name}</h3>
                     <div className="flex items-center gap-2">
-                      <span className={`px-2 py-1 text-xs font-medium rounded-full ${getPricingColor(service.pricing)} bg-opacity-20 bg-current`}>
-                        {service.pricing}
+                      <span className={`px-2 py-1 text-xs font-medium rounded-full ${getServiceTypeColor(service.type)} bg-opacity-20 bg-current`}>
+                        {service.type}
+                      </span>
+                      <span className={`px-2 py-1 text-xs font-medium rounded-full ${getPricingColor(service.pricingModel)} bg-opacity-20 bg-current`}>
+                        {service.pricingModel === 'monthly' ? 'Monthly' : 'One-time'}
                       </span>
                       <span className="px-2 py-1 text-xs font-medium rounded-full text-green-400 bg-green-400 bg-opacity-20">
                         {service.category}
@@ -429,7 +205,12 @@ const MicroSaasServices: React.FC = () => {
                 <div className="text-2xl font-bold text-white mb-2">
                   {formatPrice(service.price, service.pricingModel)}
                 </div>
-                <div className="text-sm text-gray-400">{service.userLimit}</div>
+                {service.userLimit && (
+                  <div className="text-sm text-gray-400">{service.userLimit}</div>
+                )}
+                {service.duration && (
+                  <div className="text-sm text-gray-400">Duration: {service.duration}</div>
+                )}
               </div>
 
               <div className="mb-4">
@@ -454,16 +235,30 @@ const MicroSaasServices: React.FC = () => {
                 </div>
               </div>
 
+              {service.benefits && (
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-white mb-2">Key Benefits:</h4>
+                  <div className="text-xs text-gray-400">
+                    {service.benefits.slice(0, 2).map((benefit, index) => (
+                      <div key={index} className="flex items-center gap-2 mb-1">
+                        <Check className="w-3 h-3 text-green-400" />
+                        {benefit}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               <div className="border-t border-gray-600 pt-4">
                 <div className="flex items-center justify-between text-sm text-gray-400">
-                  <span>Start your free trial today</span>
+                  <span>Ready to get started?</span>
                   <a 
                     href={service.contactInfo.website}
                     className="text-green-400 hover:text-green-300 transition-colors"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Get Started →
+                    Contact Us →
                   </a>
                 </div>
               </div>
@@ -471,29 +266,59 @@ const MicroSaasServices: React.FC = () => {
           ))}
         </div>
 
+        {/* Service Statistics */}
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+          <div className="bg-white/5 backdrop-blur-sm border border-gray-600 rounded-xl p-6">
+            <div className="text-3xl font-bold text-green-400 mb-2">{allServices.length}+</div>
+            <div className="text-gray-300">Technology Services</div>
+          </div>
+          <div className="bg-white/5 backdrop-blur-sm border border-gray-600 rounded-xl p-6">
+            <div className="text-3xl font-bold text-blue-400 mb-2">25+</div>
+            <div className="text-gray-300">Service Categories</div>
+          </div>
+          <div className="bg-white/5 backdrop-blur-sm border border-gray-600 rounded-xl p-6">
+            <div className="text-3xl font-bold text-purple-400 mb-2">50+</div>
+            <div className="text-gray-300">AI Models</div>
+          </div>
+          <div className="bg-white/5 backdrop-blur-sm border border-gray-600 rounded-xl p-6">
+            <div className="text-3xl font-bold text-green-400 mb-2">99%+</div>
+            <div className="text-gray-300">Client Satisfaction</div>
+          </div>
+        </div>
+
         {/* Contact Information */}
         <div className="mt-16 text-center">
           <div className="bg-white/5 backdrop-blur-sm border border-gray-600 rounded-xl p-8">
-            <h2 className="text-2xl font-bold text-white mb-4">Ready to Scale Your Business?</h2>
+            <h2 className="text-2xl font-bold text-white mb-4">Ready to Transform Your Business?</h2>
             <p className="text-gray-300 mb-6">
-              Our micro SAAS solutions are designed to grow with your business needs
+              Our comprehensive technology services are designed to scale with your business needs and drive innovation across all industries
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div>
                 <Phone className="w-8 h-8 text-green-400 mx-auto mb-2" />
                 <p className="text-white font-semibold">Phone</p>
-                <p className="text-gray-300">{microSaasServices[0].contactInfo.phone}</p>
+                <p className="text-gray-300">+1 302 464 0950</p>
               </div>
               <div>
                 <Mail className="w-8 h-8 text-green-400 mx-auto mb-2" />
                 <p className="text-white font-semibold">Email</p>
-                <p className="text-gray-300">{microSaasServices[0].contactInfo.email}</p>
+                <p className="text-gray-300">kleber@ziontechgroup.com</p>
               </div>
               <div>
                 <MapPin className="w-8 h-8 text-green-400 mx-auto mb-2" />
                 <p className="text-white font-semibold">Address</p>
                 <p className="text-gray-300">364 E Main St STE 1008<br />Middletown DE 19709</p>
               </div>
+            </div>
+            <div className="mt-6">
+              <a 
+                href="https://ziontechgroup.com"
+                className="inline-block bg-gradient-to-r from-green-500 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-green-600 hover:to-blue-700 transition-all duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit Our Website
+              </a>
             </div>
           </div>
         </div>
