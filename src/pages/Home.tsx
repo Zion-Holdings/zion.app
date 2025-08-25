@@ -2,6 +2,7 @@
 import React from 'react';
 import { HeroSection } from '../components/HeroSection';
 import { ServiceCard } from '../components/ServiceCard';
+import { AdvancedAIBusinessProcessAutomation } from '../components/AdvancedAIBusinessProcessAutomation';
 
 export const Home: React.FC = () => {
   return (
@@ -60,6 +61,9 @@ export const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Advanced AI Business Process Automation */}
+      <AdvancedAIBusinessProcessAutomation />
     </div>
   );
 };
