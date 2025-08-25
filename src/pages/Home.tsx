@@ -2,7 +2,7 @@
 import React from 'react';
 import { SEO } from "@/components/SEO";
 import { ServicesShowcase } from '../components/ServicesShowcase';
-import { EnhancedServicesShowcase } from '../components/EnhancedServicesShowcase';
+
 import { AdvancedServicesShowcase } from '../components/AdvancedServicesShowcase';
 
 export default function Home() {
@@ -119,7 +119,7 @@ export default function Home() {
       <ServicesShowcase />
       
       {/* Enhanced Services Showcase */}
-      <EnhancedServicesShowcase />
+      
 
       {/* Enhanced Features Section */}
       <section className="py-20 px-4 relative overflow-hidden">

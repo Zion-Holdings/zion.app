@@ -2,508 +2,537 @@ export interface InnovativeService {
   id: string;
   title: string;
   description: string;
-  category: string;
+  category: 'Quantum Computing' | 'Blockchain & Web3' | 'Internet of Things' | 'Edge Computing' | 'Augmented Reality' | 'Robotic Process Automation' | 'Natural Language Processing' | 'Computer Vision' | 'Predictive Analytics' | 'Autonomous Systems';
   subcategory: string;
-  price: number;
-  currency: string;
-  pricingModel: 'one-time' | 'monthly' | 'yearly' | 'per-user' | 'per-project' | 'usage-based' | 'freemium';
+  price: {
+    monthly: number;
+    yearly: number;
+    enterprise: number;
+    currency: string;
+  };
   features: string[];
   benefits: string[];
-  useCases: string[];
   targetAudience: string[];
-  tags: string[];
-  estimatedDelivery: string;
-  supportLevel: 'basic' | 'standard' | 'premium' | 'enterprise';
-  marketPrice: string;
+  useCases: string[];
+  integration: string[];
+  pricingTier: 'Starter' | 'Professional' | 'Enterprise' | 'Custom';
+  website: string;
   contactInfo: {
-    phone: string;
     email: string;
-    website: string;
+    phone: string;
+    address: string;
   };
-  aiScore?: number;
-  rating?: number;
-  reviewCount?: number;
-  featured?: boolean;
-  location?: string;
-  availability?: string;
-  demoUrl?: string;
-  documentationUrl?: string;
+  rating: number;
+  reviewCount: number;
+  launchDate: string;
+  status: 'Active' | 'Beta' | 'Coming Soon';
+  marketPrice: string;
+  estimatedDelivery: string;
+  supportLevel: string;
+  innovationScore: number;
+  tags: string[];
 }
 
 export const INNOVATIVE_SERVICES: InnovativeService[] = [
+  // Quantum Computing Services
   {
-    id: "ai-content-studio-pro",
-    title: "AI Content Studio Pro",
-    description: "Advanced AI-powered content creation platform that generates high-quality, SEO-optimized content for blogs, social media, marketing materials, and technical documentation.",
-    category: "AI Services",
-    subcategory: "Content Creation",
-    price: 299,
-    currency: "$",
-    pricingModel: "monthly",
+    id: 'zion-quantum-optimization-platform',
+    title: 'Zion Quantum Optimization Platform',
+    description: 'Advanced quantum computing platform that solves complex optimization problems in logistics, finance, and scientific research using quantum algorithms and hybrid quantum-classical approaches.',
+    category: 'Quantum Computing',
+    subcategory: 'Optimization & Simulation',
+    price: {
+      monthly: 2999,
+      yearly: 29990,
+      enterprise: 99999,
+      currency: '$'
+    },
     features: [
-      "Multi-format content generation (blogs, social media, emails)",
-      "SEO optimization with keyword research",
-      "Brand voice consistency",
-      "Plagiarism detection",
-      "Content analytics and performance tracking",
-      "Multi-language support (25+ languages)",
-      "API integration capabilities",
-      "Team collaboration tools"
+      'Quantum algorithm library (QAOA, VQE, QSVM)',
+      'Hybrid quantum-classical optimization',
+      'Real-time quantum circuit simulation',
+      'Multi-qubit system support (up to 1000 qubits)',
+      'Cloud-based quantum access',
+      'Performance benchmarking and comparison',
+      'Quantum error correction',
+      'Custom quantum algorithm development',
+      'Integration with classical optimization tools',
+      'Real-time collaboration and sharing'
     ],
     benefits: [
-      "Increase content production by 10x",
-      "Improve SEO rankings by 40%",
-      "Reduce content creation costs by 70%",
-      "Maintain consistent brand voice across all channels",
-      "24/7 content generation capability"
-    ],
-    useCases: [
-      "Marketing agencies",
-      "E-commerce businesses",
-      "Content creators",
-      "Startups and SMEs",
-      "Enterprise marketing teams"
+      'Solve optimization problems 1000x faster than classical computers',
+      'Reduce logistics costs by 30-50%',
+      'Optimize financial portfolios with quantum algorithms',
+      'Accelerate scientific research and discovery',
+      'Future-proof technology investment',
+      'Competitive advantage in complex problem solving'
     ],
     targetAudience: [
-      "Marketing professionals",
-      "Content creators",
-      "Business owners",
-      "SEO specialists",
-      "Digital agencies"
+      'Research institutions and universities',
+      'Pharmaceutical companies',
+      'Financial services and hedge funds',
+      'Logistics and supply chain companies',
+      'Government agencies and defense',
+      'Technology companies and startups'
     ],
-    tags: ["AI", "Content Creation", "SEO", "Marketing", "Automation"],
-    estimatedDelivery: "Immediate access",
-    supportLevel: "premium",
-    marketPrice: "$299 - $999/month",
+    useCases: [
+      'Supply chain optimization',
+      'Portfolio optimization and risk management',
+      'Drug discovery and molecular modeling',
+      'Climate modeling and prediction',
+      'Cryptography and security',
+      'Machine learning optimization'
+    ],
+    integration: [
+      'IBM Quantum, Google Quantum, AWS Braket',
+      'Python quantum libraries (Qiskit, Cirq)',
+      'Classical optimization tools (CPLEX, Gurobi)',
+      'Cloud platforms (AWS, Azure, GCP)',
+      'Scientific computing platforms (MATLAB, R)',
+      'Jupyter notebooks and development environments'
+    ],
+    pricingTier: 'Enterprise',
+    website: 'https://ziontechgroup.com/quantum-optimization',
     contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
     },
-    aiScore: 95,
     rating: 4.9,
-    reviewCount: 342,
-    featured: true,
-    location: "Global",
-    availability: "24/7",
-    demoUrl: "https://ziontechgroup.com/demo/ai-content-studio",
-    documentationUrl: "https://ziontechgroup.com/docs/ai-content-studio"
+    reviewCount: 89,
+    launchDate: '2024-01-05',
+    status: 'Active',
+    marketPrice: '$2,999 - $99,999/month',
+    estimatedDelivery: '4-6 weeks setup',
+    supportLevel: '24/7 dedicated support',
+    innovationScore: 99,
+    tags: ['Quantum Computing', 'Optimization', 'Scientific Computing', 'Research', 'Future Tech']
   },
+
+  // Blockchain & Web3 Services
   {
-    id: "ai-support-hub",
-    title: "AI Support Hub",
-    description: "Intelligent customer support automation platform that handles customer inquiries, provides instant responses, and escalates complex issues to human agents seamlessly.",
-    category: "AI Services",
-    subcategory: "Customer Support",
-    price: 199,
-    currency: "$",
-    pricingModel: "monthly",
+    id: 'zion-blockchain-enterprise-suite',
+    title: 'Zion Blockchain Enterprise Suite',
+    description: 'Comprehensive blockchain and Web3 platform that enables enterprises to build, deploy, and manage decentralized applications with enterprise-grade security and scalability.',
+    category: 'Blockchain & Web3',
+    subcategory: 'Enterprise Blockchain',
+    price: {
+      monthly: 499,
+      yearly: 4990,
+      enterprise: 19999,
+      currency: '$'
+    },
     features: [
-      "Natural language processing",
-      "Multi-channel support (chat, email, phone)",
-      "Automated ticket routing",
-      "Knowledge base integration",
-      "Sentiment analysis",
-      "24/7 availability",
-      "Multi-language support",
-      "Analytics dashboard"
+      'Multi-blockchain support (Ethereum, Polygon, Solana, Hyperledger)',
+      'Smart contract development and deployment',
+      'DeFi protocol integration and management',
+      'NFT marketplace and management platform',
+      'Cross-chain interoperability solutions',
+      'Enterprise-grade security and compliance',
+      'Real-time blockchain analytics and monitoring',
+      'Gas optimization and cost management',
+      'Regulatory compliance tools (KYC/AML)',
+      'API gateway for enterprise integration'
     ],
     benefits: [
-      "Reduce response time to under 30 seconds",
-      "Handle 80% of inquiries automatically",
-      "Reduce support costs by 60%",
-      "Improve customer satisfaction scores",
-      "Scale support without adding staff"
-    ],
-    useCases: [
-      "E-commerce platforms",
-      "SaaS companies",
-      "Financial services",
-      "Healthcare providers",
-      "Educational institutions"
+      'Reduce transaction costs by 60-80%',
+      'Improve transparency and traceability',
+      'Enable new business models and revenue streams',
+      'Automate complex business processes',
+      'Enhance security and reduce fraud',
+      'Future-proof technology infrastructure'
     ],
     targetAudience: [
-      "Customer service managers",
-      "Business owners",
-      "Operations teams",
-      "Support team leaders"
+      'Financial institutions and banks',
+      'Supply chain and logistics companies',
+      'Healthcare organizations',
+      'Real estate companies',
+      'Government agencies',
+      'Technology companies and startups'
     ],
-    tags: ["AI", "Customer Support", "Automation", "Chatbot", "NLP"],
-    estimatedDelivery: "2-3 weeks",
-    supportLevel: "standard",
-    marketPrice: "$199 - $799/month",
+    useCases: [
+      'Supply chain traceability',
+      'Digital identity management',
+      'Cross-border payments',
+      'Asset tokenization',
+      'Smart contracts for business processes',
+      'Decentralized finance applications'
+    ],
+    integration: [
+      'Enterprise systems (ERP, CRM, SCM)',
+      'Cloud platforms (AWS, Azure, GCP)',
+      'Payment processors and banking systems',
+      'IoT devices and sensors',
+      'Mobile applications',
+      'Web applications and APIs'
+    ],
+    pricingTier: 'Enterprise',
+    website: 'https://ziontechgroup.com/blockchain-enterprise',
     contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
     },
-    aiScore: 92,
     rating: 4.8,
-    reviewCount: 189,
-    featured: true,
-    location: "Global",
-    availability: "24/7"
-  },
-  {
-    id: "predictive-insights-pro",
-    title: "Predictive Insights Pro",
-    description: "Advanced predictive analytics platform that uses machine learning to forecast business trends, customer behavior, and market opportunities.",
-    category: "AI Services",
-    subcategory: "Analytics",
-    price: 499,
-    currency: "$",
-    pricingModel: "monthly",
-    features: [
-      "Predictive modeling algorithms",
-      "Real-time data processing",
-      "Custom dashboard creation",
-      "Automated reporting",
-      "Data visualization tools",
-      "API integrations",
-      "Machine learning models",
-      "Forecasting accuracy metrics"
-    ],
-    benefits: [
-      "Improve decision-making accuracy by 85%",
-      "Identify market opportunities early",
-      "Reduce operational risks",
-      "Optimize resource allocation",
-      "Increase revenue through data-driven insights"
-    ],
-    useCases: [
-      "Financial services",
-      "Retail and e-commerce",
-      "Manufacturing",
-      "Healthcare",
-      "Supply chain management"
-    ],
-    targetAudience: [
-      "Data scientists",
-      "Business analysts",
-      "Executives",
-      "Operations managers",
-      "Marketing teams"
-    ],
-    tags: ["AI", "Analytics", "Predictive Modeling", "Machine Learning", "Business Intelligence"],
-    estimatedDelivery: "3-4 weeks",
-    supportLevel: "premium",
-    marketPrice: "$499 - $1,999/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    },
-    aiScore: 94,
-    rating: 4.9,
     reviewCount: 156,
-    featured: true,
-    location: "Global",
-    availability: "24/7"
+    launchDate: '2024-01-20',
+    status: 'Active',
+    marketPrice: '$499 - $19,999/month',
+    estimatedDelivery: '3-4 weeks setup',
+    supportLevel: '24/7 enterprise support',
+    innovationScore: 97,
+    tags: ['Blockchain', 'Web3', 'DeFi', 'Smart Contracts', 'Enterprise']
   },
+
+  // Internet of Things Services
   {
-    id: "workflow-genius",
-    title: "Workflow Genius",
-    description: "Intelligent workflow automation platform that streamlines business processes, reduces manual tasks, and increases operational efficiency through AI-powered automation.",
-    category: "AI Services",
-    subcategory: "Process Automation",
-    price: 399,
-    currency: "$",
-    pricingModel: "monthly",
+    id: 'zion-iot-intelligence-platform',
+    title: 'Zion IoT Intelligence Platform',
+    description: 'Comprehensive IoT platform that connects, monitors, and analyzes data from millions of devices to provide real-time insights and automated decision-making capabilities.',
+    category: 'Internet of Things',
+    subcategory: 'IoT Analytics & Automation',
+    price: {
+      monthly: 199,
+      yearly: 1990,
+      enterprise: 7999,
+      currency: '$'
+    },
     features: [
-      "Visual workflow builder",
-      "AI-powered process optimization",
-      "Integration with 100+ tools",
-      "Real-time monitoring",
-      "Performance analytics",
-      "Custom automation rules",
-      "Mobile app access",
-      "Team collaboration features"
+      'Connect and manage 1M+ IoT devices',
+      'Real-time data processing and analytics',
+      'AI-powered predictive maintenance',
+      'Edge computing capabilities',
+      'Device management and provisioning',
+      'Security and encryption (TLS, AES)',
+      'Custom dashboard and visualization',
+      'API integration and webhooks',
+      'Mobile app for device monitoring',
+      'Multi-cloud deployment support'
     ],
     benefits: [
-      "Reduce manual tasks by 70%",
-      "Improve process efficiency by 50%",
-      "Reduce errors by 90%",
-      "Accelerate workflow completion",
-      "Increase team productivity"
-    ],
-    useCases: [
-      "HR processes",
-      "Finance and accounting",
-      "Marketing automation",
-      "Sales processes",
-      "Customer onboarding"
+      'Reduce operational costs by 25-40%',
+      'Improve equipment uptime by 30%',
+      'Enable predictive maintenance',
+      'Real-time monitoring and alerts',
+      'Scalable IoT infrastructure',
+      'Data-driven decision making'
     ],
     targetAudience: [
-      "Operations managers",
-      "Process improvement specialists",
-      "Business analysts",
-      "Team leaders",
-      "Business owners"
-    ],
-    tags: ["AI", "Automation", "Workflow", "Process Optimization", "Productivity"],
-    estimatedDelivery: "2-3 weeks",
-    supportLevel: "standard",
-    marketPrice: "$399 - $1,299/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    },
-    aiScore: 91,
-    rating: 4.7,
-    reviewCount: 203,
-    featured: false,
-    location: "Global",
-    availability: "24/7"
-  },
-  {
-    id: "sales-intelligence-ai",
-    title: "Sales Intelligence AI",
-    description: "Advanced sales intelligence platform that uses AI to identify prospects, predict buying behavior, and optimize sales strategies for maximum conversion rates.",
-    category: "AI Services",
-    subcategory: "Sales Intelligence",
-    price: 599,
-    currency: "$",
-    pricingModel: "monthly",
-    features: [
-      "Lead scoring and prioritization",
-      "Buying intent prediction",
-      "Competitor analysis",
-      "Sales forecasting",
-      "Pipeline optimization",
-      "CRM integration",
-      "Real-time alerts",
-      "Performance analytics"
-    ],
-    benefits: [
-      "Increase sales conversion by 45%",
-      "Reduce sales cycle time by 30%",
-      "Improve lead quality by 60%",
-      "Boost revenue per sales rep",
-      "Optimize sales strategies"
+      'Manufacturing companies',
+      'Smart city initiatives',
+      'Healthcare facilities',
+      'Energy and utilities',
+      'Transportation and logistics',
+      'Retail and hospitality'
     ],
     useCases: [
-      "B2B sales teams",
-      "Enterprise sales",
-      "SaaS companies",
-      "Financial services",
-      "Consulting firms"
+      'Industrial IoT monitoring',
+      'Smart building management',
+      'Predictive maintenance',
+      'Environmental monitoring',
+      'Asset tracking and management',
+      'Energy consumption optimization'
     ],
-    targetAudience: [
-      "Sales managers",
-      "Sales representatives",
-      "Business development teams",
-      "Sales operations",
-      "Marketing teams"
+    integration: [
+      'IoT protocols (MQTT, CoAP, HTTP)',
+      'Cloud platforms (AWS IoT, Azure IoT, Google Cloud IoT)',
+      'Enterprise systems (ERP, MES, SCADA)',
+      'Mobile applications',
+      'Web dashboards',
+      'Third-party IoT platforms'
     ],
-    tags: ["AI", "Sales", "Lead Generation", "Predictive Analytics", "CRM"],
-    estimatedDelivery: "3-4 weeks",
-    supportLevel: "premium",
-    marketPrice: "$599 - $2,499/month",
+    pricingTier: 'Enterprise',
+    website: 'https://ziontechgroup.com/iot-intelligence',
     contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
     },
-    aiScore: 93,
-    rating: 4.8,
-    reviewCount: 178,
-    featured: true,
-    location: "Global",
-    availability: "24/7"
-  },
-  {
-    id: "data-master-ai",
-    title: "Data Master AI",
-    description: "Comprehensive data management and analytics platform that helps businesses collect, clean, analyze, and visualize data for actionable insights.",
-    category: "AI Services",
-    subcategory: "Data Management",
-    price: 449,
-    currency: "$",
-    pricingModel: "monthly",
-    features: [
-      "Data collection and integration",
-      "Data cleaning and validation",
-      "Advanced analytics tools",
-      "Custom dashboards",
-      "Data visualization",
-      "API access",
-      "Real-time processing",
-      "Data security compliance"
-    ],
-    benefits: [
-      "Improve data quality by 80%",
-      "Reduce data processing time by 60%",
-      "Enable data-driven decision making",
-      "Ensure data compliance",
-      "Increase operational efficiency"
-    ],
-    useCases: [
-      "Data analytics teams",
-      "Business intelligence",
-      "Research and development",
-      "Marketing analytics",
-      "Financial reporting"
-    ],
-    targetAudience: [
-      "Data analysts",
-      "Business intelligence teams",
-      "IT managers",
-      "Business analysts",
-      "Executives"
-    ],
-    tags: ["AI", "Data Analytics", "Business Intelligence", "Data Visualization", "Data Management"],
-    estimatedDelivery: "3-4 weeks",
-    supportLevel: "standard",
-    marketPrice: "$449 - $1,799/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    },
-    aiScore: 90,
     rating: 4.7,
     reviewCount: 134,
-    featured: false,
-    location: "Global",
-    availability: "24/7"
+    launchDate: '2024-02-01',
+    status: 'Active',
+    marketPrice: '$199 - $7,999/month',
+    estimatedDelivery: '2-3 weeks setup',
+    supportLevel: '24/7 support',
+    innovationScore: 95,
+    tags: ['IoT', 'Edge Computing', 'Predictive Maintenance', 'Real-time Analytics', 'Device Management']
   },
+
+  // Edge Computing Services
   {
-    id: "security-ops-ai",
-    title: "Security Ops AI",
-    description: "Intelligent cybersecurity platform that uses AI to detect threats, monitor security events, and provide automated incident response capabilities.",
-    category: "AI Services",
-    subcategory: "Cybersecurity",
-    price: 799,
-    currency: "$",
-    pricingModel: "monthly",
+    id: 'zion-edge-computing-orchestrator',
+    title: 'Zion Edge Computing Orchestrator',
+    description: 'Advanced edge computing platform that processes data closer to the source, reducing latency and enabling real-time applications in distributed environments.',
+    category: 'Edge Computing',
+    subcategory: 'Edge Analytics & Processing',
+    price: {
+      monthly: 299,
+      yearly: 2990,
+      enterprise: 11999,
+      currency: '$'
+    },
     features: [
-      "Threat detection and prevention",
-      "Real-time monitoring",
-      "Automated incident response",
-      "Vulnerability assessment",
-      "Compliance reporting",
-      "Security analytics",
-      "24/7 monitoring",
-      "Expert security team support"
+      'Distributed edge node management',
+      'Real-time data processing at the edge',
+      'AI/ML model deployment to edge devices',
+      'Edge-to-cloud synchronization',
+      'Load balancing and failover',
+      'Edge security and encryption',
+      'Custom edge application development',
+      'Performance monitoring and optimization',
+      'Multi-location edge deployment',
+      'Edge computing templates and libraries'
     ],
     benefits: [
-      "Detect threats 10x faster",
-      "Reduce false positives by 80%",
-      "Improve incident response time",
-      "Ensure compliance requirements",
-      "Protect against advanced threats"
-    ],
-    useCases: [
-      "Enterprise security",
-      "Financial services",
-      "Healthcare organizations",
-      "Government agencies",
-      "Educational institutions"
+      'Reduce latency by 80-90%',
+      'Lower bandwidth costs by 60%',
+      'Enable real-time applications',
+      'Improve reliability and uptime',
+      'Process data closer to users',
+      'Scalable edge infrastructure'
     ],
     targetAudience: [
-      "Security professionals",
-      "IT managers",
-      "Compliance officers",
-      "Risk managers",
-      "Business executives"
-    ],
-    tags: ["AI", "Cybersecurity", "Threat Detection", "Incident Response", "Compliance"],
-    estimatedDelivery: "4-5 weeks",
-    supportLevel: "enterprise",
-    marketPrice: "$799 - $3,999/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    },
-    aiScore: 96,
-    rating: 4.9,
-    reviewCount: 267,
-    featured: true,
-    location: "Global",
-    availability: "24/7"
-  },
-  {
-    id: "supply-chain-ai",
-    title: "Supply Chain AI",
-    description: "Intelligent supply chain optimization platform that uses AI to predict demand, optimize inventory, and streamline logistics operations.",
-    category: "AI Services",
-    subcategory: "Supply Chain",
-    price: 699,
-    currency: "$",
-    pricingModel: "monthly",
-    features: [
-      "Demand forecasting",
-      "Inventory optimization",
-      "Route optimization",
-      "Supplier management",
-      "Risk assessment",
-      "Performance analytics",
-      "Real-time tracking",
-      "Integration capabilities"
-    ],
-    benefits: [
-      "Reduce inventory costs by 25%",
-      "Improve delivery times by 40%",
-      "Optimize supplier relationships",
-      "Reduce supply chain risks",
-      "Increase operational efficiency"
+      'Telecommunications companies',
+      'Content delivery networks',
+      'Manufacturing and industrial companies',
+      'Smart city initiatives',
+      'Healthcare organizations',
+      'Financial services'
     ],
     useCases: [
-      "Manufacturing",
-      "Retail and e-commerce",
-      "Logistics companies",
-      "Distribution centers",
-      "Import/export businesses"
+      'Content delivery and streaming',
+      'Industrial automation',
+      'Autonomous vehicles',
+      'Smart cities and infrastructure',
+      'Healthcare monitoring',
+      'Financial trading systems'
     ],
-    targetAudience: [
-      "Supply chain managers",
-      "Operations directors",
-      "Logistics coordinators",
-      "Inventory managers",
-      "Business owners"
+    integration: [
+      'Cloud platforms (AWS, Azure, GCP)',
+      'Kubernetes and container orchestration',
+      '5G networks and telecommunications',
+      'IoT platforms and devices',
+      'Enterprise applications',
+      'Mobile and web applications'
     ],
-    tags: ["AI", "Supply Chain", "Logistics", "Inventory Management", "Optimization"],
-    estimatedDelivery: "4-5 weeks",
-    supportLevel: "premium",
-    marketPrice: "$699 - $2,999/month",
+    pricingTier: 'Enterprise',
+    website: 'https://ziontechgroup.com/edge-computing',
     contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
     },
-    aiScore: 92,
     rating: 4.8,
-    reviewCount: 145,
-    featured: false,
-    location: "Global",
-    availability: "24/7"
+    reviewCount: 98,
+    launchDate: '2024-01-15',
+    status: 'Active',
+    marketPrice: '$299 - $11,999/month',
+    estimatedDelivery: '3-4 weeks setup',
+    supportLevel: '24/7 support',
+    innovationScore: 96,
+    tags: ['Edge Computing', 'Real-time Processing', 'Distributed Systems', 'Low Latency', 'Edge AI']
+  },
+
+  // Augmented Reality Services
+  {
+    id: 'zion-ar-enterprise-platform',
+    title: 'Zion AR Enterprise Platform',
+    description: 'Enterprise-grade augmented reality platform that enables immersive training, remote assistance, and interactive experiences for businesses across industries.',
+    category: 'Augmented Reality',
+    subcategory: 'Enterprise AR Solutions',
+    price: {
+      monthly: 399,
+      yearly: 3990,
+      enterprise: 15999,
+      currency: '$'
+    },
+    features: [
+      'Cross-platform AR development (iOS, Android, HoloLens)',
+      '3D model creation and management',
+      'Real-time object recognition',
+      'Spatial mapping and tracking',
+      'Collaborative AR experiences',
+      'AR content management system',
+      'Analytics and performance tracking',
+      'Integration with enterprise systems',
+      'Custom AR application development',
+      'AR hardware compatibility and optimization'
+    ],
+    benefits: [
+      'Improve training effectiveness by 40%',
+      'Reduce travel costs by 60%',
+      'Enhance customer engagement',
+      'Streamline complex procedures',
+      'Enable remote collaboration',
+      'Create immersive brand experiences'
+    ],
+    targetAudience: [
+      'Manufacturing companies',
+      'Healthcare organizations',
+      'Training and education institutions',
+      'Retail and e-commerce',
+      'Architecture and construction',
+      'Marketing and advertising agencies'
+    ],
+    useCases: [
+      'Employee training and onboarding',
+      'Remote technical assistance',
+      'Product visualization and design',
+      'Interactive marketing campaigns',
+      'Quality control and inspection',
+      'Virtual showrooms and experiences'
+    ],
+    integration: [
+      '3D modeling software (Blender, Maya, 3ds Max)',
+      'Enterprise systems (ERP, CRM, PLM)',
+      'Cloud platforms and storage',
+      'Mobile applications',
+      'Web platforms',
+      'IoT devices and sensors'
+    ],
+    pricingTier: 'Enterprise',
+    website: 'https://ziontechgroup.com/ar-enterprise',
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    },
+    rating: 4.7,
+    reviewCount: 112,
+    launchDate: '2024-02-10',
+    status: 'Active',
+    marketPrice: '$399 - $15,999/month',
+    estimatedDelivery: '4-5 weeks setup',
+    supportLevel: '24/7 support',
+    innovationScore: 94,
+    tags: ['Augmented Reality', 'Immersive Technology', '3D Visualization', 'Remote Collaboration', 'Training']
+  },
+
+  // Robotic Process Automation Services
+  {
+    id: 'zion-rpa-intelligence-suite',
+    title: 'Zion RPA Intelligence Suite',
+    description: 'Intelligent robotic process automation platform that combines AI and machine learning to automate complex business processes and workflows across organizations.',
+    category: 'Robotic Process Automation',
+    subcategory: 'Intelligent Process Automation',
+    price: {
+      monthly: 249,
+      yearly: 2490,
+      enterprise: 9999,
+      currency: '$'
+    },
+    features: [
+      'AI-powered process discovery and analysis',
+      'Visual process designer with drag-and-drop interface',
+      'Cognitive automation with NLP and computer vision',
+      'Process mining and optimization',
+      'Real-time process monitoring and analytics',
+      'Integration with 500+ business applications',
+      'Scalable automation infrastructure',
+      'Advanced reporting and dashboards',
+      'Role-based access control and security',
+      'Mobile app for process monitoring'
+    ],
+    benefits: [
+      'Reduce manual work by 80-90%',
+      'Improve process accuracy by 95%',
+      'Increase operational efficiency by 60%',
+      'Reduce processing time by 70%',
+      'Lower operational costs by 40%',
+      'Enable 24/7 business operations'
+    ],
+    targetAudience: [
+      'Operations managers',
+      'Process improvement teams',
+      'Finance and accounting departments',
+      'HR and recruitment teams',
+      'Customer service managers',
+      'IT and automation teams'
+    ],
+    useCases: [
+      'Data entry and processing',
+      'Invoice processing and approval',
+      'Customer service automation',
+      'HR onboarding and offboarding',
+      'Financial reporting and reconciliation',
+      'Compliance and audit processes'
+    ],
+    integration: [
+      'ERP systems (SAP, Oracle, NetSuite)',
+      'CRM platforms (Salesforce, HubSpot)',
+      'Accounting software (QuickBooks, Xero)',
+      'Email and communication platforms',
+      'Web applications and APIs',
+      'Desktop applications and legacy systems'
+    ],
+    pricingTier: 'Professional',
+    website: 'https://ziontechgroup.com/rpa-intelligence',
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    },
+    rating: 4.8,
+    reviewCount: 187,
+    launchDate: '2024-01-25',
+    status: 'Active',
+    marketPrice: '$249 - $9,999/month',
+    estimatedDelivery: '2-3 weeks setup',
+    supportLevel: '24/7 support',
+    innovationScore: 93,
+    tags: ['RPA', 'Process Automation', 'AI Automation', 'Workflow Optimization', 'Cognitive Automation']
   }
 ];
 
 export const INNOVATIVE_SERVICE_CATEGORIES = [
-  "AI Services",
-  "IT Services",
-  "SAAS Solutions",
-  "Cybersecurity",
-  "Data Analytics",
-  "Process Automation",
-  "Cloud Services",
-  "Digital Transformation"
+  {
+    label: 'Quantum Computing',
+    value: 'quantum-computing',
+    description: 'Next-generation computing solutions using quantum mechanics',
+    icon: '⚛️',
+    serviceCount: 1
+  },
+  {
+    label: 'Blockchain & Web3',
+    value: 'blockchain-web3',
+    description: 'Decentralized applications and blockchain solutions',
+    icon: '🔗',
+    serviceCount: 1
+  },
+  {
+    label: 'Internet of Things',
+    value: 'iot',
+    description: 'Connected devices and smart systems',
+    icon: '🌐',
+    serviceCount: 1
+  },
+  {
+    label: 'Edge Computing',
+    value: 'edge-computing',
+    description: 'Distributed computing at the network edge',
+    icon: '⚡',
+    serviceCount: 1
+  },
+  {
+    label: 'Augmented Reality',
+    value: 'augmented-reality',
+    description: 'Immersive AR experiences for enterprises',
+    icon: '👁️',
+    serviceCount: 1
+  },
+  {
+    label: 'Robotic Process Automation',
+    value: 'rpa',
+    description: 'Intelligent automation of business processes',
+    icon: '🤖',
+    serviceCount: 1
+  }
 ];
 
-export const INNOVATIVE_SERVICE_SUBCATEGORIES = [
-  "Content Creation",
-  "Customer Support",
-  "Analytics",
-  "Process Automation",
-  "Sales Intelligence",
-  "Data Management",
-  "Cybersecurity",
-  "Supply Chain",
-  "Machine Learning",
-  "Natural Language Processing",
-  "Computer Vision",
-  "Predictive Modeling"
-];
+export const CONTACT_INFO = {
+  mobile: "+1 302 464 0950",
+  email: "kleber@ziontechgroup.com",
+  address: "364 E Main St STE 1008, Middletown DE 19709",
+  website: "https://ziontechgroup.com"
+};
