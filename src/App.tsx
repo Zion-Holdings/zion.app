@@ -5,6 +5,7 @@ import './App.css';
 // Enhanced lazy loading with preloading hints
 const Home = lazy(() => import('./pages/Home'));
 const Services = lazy(() => import('./pages/Services'));
+const AISolutions = lazy(() => import('./pages/AISolutions'));
 
 // Error Boundary Component
 class ErrorBoundary extends React.Component<
@@ -72,6 +73,7 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/services" element={<Services />} />
+                <Route path="/ai-solutions" element={<AISolutions />} />
                 <Route path="/comprehensive-services" element={<Services />} />
                 <Route path="/services-comparison" element={<Services />} />
                 <Route path="/it-onsite-services" element={<Services />} />
