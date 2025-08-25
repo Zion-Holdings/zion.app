@@ -30,8 +30,8 @@ export function Header() {
   ];
 
   const services = [
-    { name: 'AI Solutions', href: '/services/ai', icon: Brain, description: 'Machine Learning & AI Services' },
-    { name: 'Cloud Infrastructure', href: '/services/cloud', icon: Cloud, description: 'AWS, Azure, GCP Solutions' },
+    { name: 'AI Solutions', href: '/ai-solutions', icon: Brain, description: 'Machine Learning & AI Services' },
+    { name: 'Cloud Infrastructure', href: '/cloud-infrastructure', icon: Cloud, description: 'AWS, Azure, GCP Solutions' },
     { name: 'Cybersecurity', href: '/services/security', icon: Shield, description: 'Security & Compliance' },
     { name: 'Digital Transformation', href: '/services/transformation', icon: Zap, description: 'Business Process Modernization' }
   ];

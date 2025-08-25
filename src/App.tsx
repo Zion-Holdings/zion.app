@@ -14,6 +14,8 @@ import Terms from './pages/Terms';
 import Cookies from './pages/Cookies';
 import Sitemap from './pages/Sitemap';
 import NotFound from './pages/NotFound';
+import AISolutions from './pages/AISolutions';
+import CloudInfrastructure from './pages/CloudInfrastructure';
 
 function App() {
   return (
@@ -35,6 +37,8 @@ function App() {
               <Route path="/terms" element={<Terms />} />
               <Route path="/cookies" element={<Cookies />} />
               <Route path="/sitemap" element={<Sitemap />} />
+              <Route path="/ai-solutions" element={<AISolutions />} />
+              <Route path="/cloud-infrastructure" element={<CloudInfrastructure />} />
               <Route path="/services/:category" element={<Services />} />
               <Route path="*" element={<NotFound />} />
             </Routes>

@@ -40,8 +40,8 @@ export function Sidebar({ className }: SidebarProps) {
     {
       title: 'Services',
       items: [
-        { name: 'AI Solutions', href: '/services/ai', icon: Brain },
-        { name: 'Cloud Infrastructure', href: '/services/cloud', icon: Cloud },
+        { name: 'AI Solutions', href: '/ai-solutions', icon: Brain },
+        { name: 'Cloud Infrastructure', href: '/cloud-infrastructure', icon: Cloud },
         { name: 'Cybersecurity', href: '/services/security', icon: Shield },
         { name: 'Digital Transformation', href: '/services/transformation', icon: Zap },
       ]
