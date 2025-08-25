@@ -17,6 +17,8 @@ import { AdvancedCollaborationPlatform } from "../components/AdvancedCollaborati
 import { AdvancedSecurityDashboard } from "../components/AdvancedSecurityDashboard";
 import { AdvancedPerformanceMonitor } from "../components/AdvancedPerformanceMonitor";
 import { AdvancedAICodeGenerator } from "../components/AdvancedAICodeGenerator";
+import { AdvancedAIProjectManagement } from "../components/AdvancedAIProjectManagement";
+import { AdvancedAICRM } from "../components/AdvancedAICRM";
 
 export default function Home() {
   return (
@@ -472,6 +474,7 @@ export default function Home() {
                <AdvancedPerformanceMonitor />
                <AdvancedAICodeGenerator />
                <AdvancedAIProjectManagement />
+               <AdvancedAICRM />
     </div>
   );
 }
