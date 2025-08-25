@@ -18,6 +18,18 @@
   --card-bg: rgba(26, 26, 46, 0.8);
   --glass-bg: rgba(255, 255, 255, 0.05);
   --border-glow: rgba(0, 255, 255, 0.3);
+  
+  /* Zion Tech Group specific variables */
+  --zion-cyan: #22ddd2;
+  --zion-cyan-light: #4adebb;
+  --zion-blue: #1e40af;
+  --zion-blue-dark: #0f172a;
+  --zion-blue-light: #3b82f6;
+  --zion-purple: #8b5cf6;
+  --zion-purple-light: #a78bfa;
+  --zion-slate: #64748b;
+  --zion-slate-light: #94a3b8;
+  --zion-slate-dark: #475569;
 }
 
 /* Futuristic Animations */
