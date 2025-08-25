@@ -47,6 +47,8 @@ const MicroSaasServices = React.lazy(() => import('./pages/MicroSaasServices'));
 const ITServices = React.lazy(() => import('./pages/ITServices'));
 const AIServices = React.lazy(() => import('./pages/AIServices'));
 const PricingPage = React.lazy(() => import('./pages/PricingPage'));
+const InnovativeServicesShowcase = React.lazy(() => import('./pages/InnovativeServicesShowcase'));
+const ServicesOverview = React.lazy(() => import('./pages/ServicesOverview'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -72,6 +74,8 @@ const baseRoutes = [
   { path: '/zion-hire-ai', element: <ZionHireAI /> },
   { path: '/hire-ai', element: <ZionHireAI /> },
   { path: '/request-quote', element: <RequestQuotePage /> },
+  { path: '/innovative-services', element: <InnovativeServicesShowcase /> },
+  { path: '/services-overview', element: <ServicesOverview /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
 ];
