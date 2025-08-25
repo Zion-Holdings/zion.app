@@ -73,3 +73,27 @@ Alerts:
 [2025-08-25T15:09:48.446Z] CRITICAL MEMORY ALERT: Memory usage critical: 96.77% - Memory pressure detected
 [2025-08-25T15:09:48.447Z] ALERT [CRITICAL] Memory usage critical: 96.77%
 [2025-08-25T15:09:48.447Z] metrics rss=30.78 MB heapUsed=4.35 MB cpuLoad=172.35 memUsage=96.77%
+[2025-08-25T15:15:04.034Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:15:04.041Z] Starting real-time performance monitoring
+No metrics available
+[2025-08-25T15:15:34.046Z] metrics rss=30.59 MB heapUsed=4.30 MB cpuLoad=47.81 memUsage=78.44%
+[2025-08-25T15:16:02.063Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:16:02.064Z] Stopping performance monitoring
+[2025-08-25T15:16:09.134Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:16:09.139Z] Starting real-time performance monitoring
+[2025-08-25T15:16:39.143Z] metrics rss=30.66 MB heapUsed=4.29 MB cpuLoad=21.12 memUsage=79.68%
+[2025-08-25T15:17:09.143Z] metrics rss=30.84 MB heapUsed=4.35 MB cpuLoad=15.47 memUsage=79.45%
+[2025-08-25T15:17:39.145Z] ALERT [WARNING] Memory usage warning: 80.33%
+[2025-08-25T15:17:39.145Z] metrics rss=30.88 MB heapUsed=4.37 MB cpuLoad=11.52 memUsage=80.33%
+[2025-08-25T15:18:02.067Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:18:02.068Z] Stopping performance monitoring
+[2025-08-25T15:18:14.293Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:18:14.298Z] Starting real-time performance monitoring
+[2025-08-25T15:18:44.307Z] ALERT [WARNING] Memory usage warning: 81.10%
+[2025-08-25T15:18:44.308Z] metrics rss=30.73 MB heapUsed=4.29 MB cpuLoad=10.59 memUsage=81.10%
+[2025-08-25T15:19:14.304Z] ALERT [WARNING] Memory usage warning: 81.34%
+[2025-08-25T15:19:14.305Z] metrics rss=30.93 MB heapUsed=4.35 MB cpuLoad=9.90 memUsage=81.34%
+[2025-08-25T15:19:44.310Z] ALERT [WARNING] Memory usage warning: 82.36%
+[2025-08-25T15:19:44.310Z] metrics rss=30.98 MB heapUsed=4.38 MB cpuLoad=11.18 memUsage=82.36%
+[2025-08-25T15:20:02.365Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:20:02.365Z] Stopping performance monitoring

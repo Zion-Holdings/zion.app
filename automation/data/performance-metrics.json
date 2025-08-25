@@ -1,33 +1,33 @@
 [
   {
-    "timestamp": "2025-08-25T15:09:28.350Z",
+    "timestamp": "2025-08-25T15:19:19.183Z",
     "system": {
       "platform": "darwin",
       "arch": "x64",
       "nodeVersion": "v22.16.0",
-      "uptime": 5898,
+      "uptime": 6489,
       "hostname": "MacBook-Pro-de-Kleber.local"
     },
     "cpu": {
       "loadAverage": [
-        196.79541015625,
-        104.50146484375,
-        54.4580078125
+        9.74951171875,
+        65.34912109375,
+        71.5
       ],
       "usage": {
-        "user": 94952,
-        "system": 24538,
-        "total": 119490
+        "user": 98365,
+        "system": 24060,
+        "total": 122425
       },
       "cores": 12
     },
     "memory": {
       "total": 34359738368,
-      "free": 19963904,
-      "used": 34339774464,
-      "usagePercent": 99.94189739227295,
+      "free": 6138814464,
+      "used": 28220923904,
+      "usagePercent": 82.13369846343994,
       "process": {
-        "rss": 32067584,
+        "rss": 31920128,
         "heapTotal": 5574656,
         "heapUsed": 4484040,
         "external": 1561738,
@@ -93,52 +93,52 @@
       "bandwidth": "unknown"
     },
     "process": {
-      "pid": 78340,
-      "uptime": 30.167313098,
+      "pid": 95982,
+      "uptime": 30.068387762,
       "memory": {
-        "rss": 32067584,
+        "rss": 31920128,
         "heapTotal": 5574656,
         "heapUsed": 4484040,
         "external": 1561738,
         "arrayBuffers": 10555
       },
       "cpu": {
-        "user": 94952,
-        "system": 24538
+        "user": 98365,
+        "system": 24060
       }
     }
   },
   {
-    "timestamp": "2025-08-25T15:09:58.351Z",
+    "timestamp": "2025-08-25T15:19:49.197Z",
     "system": {
       "platform": "darwin",
       "arch": "x64",
       "nodeVersion": "v22.16.0",
-      "uptime": 5928,
+      "uptime": 6519,
       "hostname": "MacBook-Pro-de-Kleber.local"
     },
     "cpu": {
       "loadAverage": [
-        159.13427734375,
-        104.5361328125,
-        56.22509765625
+        10.76904296875,
+        60.29443359375,
+        69.45458984375
       ],
       "usage": {
-        "user": 98750,
-        "system": 26815,
-        "total": 125565
+        "user": 101293,
+        "system": 25665,
+        "total": 126958
       },
       "cores": 12
     },
     "memory": {
       "total": 34359738368,
-      "free": 944295936,
-      "used": 33415442432,
-      "usagePercent": 97.25173711776733,
+      "free": 6090141696,
+      "used": 28269596672,
+      "usagePercent": 82.27535486221313,
       "process": {
-        "rss": 32276480,
+        "rss": 32133120,
         "heapTotal": 5574656,
-        "heapUsed": 4559648,
+        "heapUsed": 4554056,
         "external": 1561778,
         "arrayBuffers": 10555
       }
@@ -202,18 +202,18 @@
       "bandwidth": "unknown"
     },
     "process": {
-      "pid": 78340,
-      "uptime": 60.166381473,
+      "pid": 95982,
+      "uptime": 60.079516906,
       "memory": {
-        "rss": 32276480,
+        "rss": 32133120,
         "heapTotal": 5574656,
-        "heapUsed": 4559648,
+        "heapUsed": 4554056,
         "external": 1561778,
         "arrayBuffers": 10555
       },
       "cpu": {
-        "user": 98750,
-        "system": 26815
+        "user": 101293,
+        "system": 25665
       }
     }
   }

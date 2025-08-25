@@ -29,3 +29,16 @@
 ?? automation/logs/test.log
 ?? automation/run-infinite-improvement.sh
 ?? cursor-memory/
+ M automation/data/analyzed-links.json
+ M automation/data/autonomous-state.json
+ M automation/data/performance-alerts.json
+ M automation/data/performance-metrics.json
+ M automation/logs/HEALTH.runtime.log
+ M automation/logs/SYSTEM.runtime.log
+ M automation/logs/error-recovery.log
+ M automation/logs/git-sync.log
+ M automation/logs/link-health-scheduler.runtime.log
+ M automation/logs/master-coordinator.log
+ M automation/logs/ml-link-intelligence.runtime.log
+ M automation/logs/real-time-performance-monitor.runtime.log
+?? automation/enhanced-git-sync.cjs

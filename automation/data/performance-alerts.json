@@ -1,34 +1,18 @@
 [
   {
-    "level": "critical",
-    "category": "cpu",
-    "message": "CPU load critical: 196.80",
-    "value": 196.79541015625,
-    "threshold": 90,
-    "timestamp": "2025-08-25T15:09:28.350Z"
-  },
-  {
-    "level": "critical",
+    "level": "warning",
     "category": "memory",
-    "message": "Memory usage critical: 99.94%",
-    "value": 99.94189739227295,
-    "threshold": 95,
-    "timestamp": "2025-08-25T15:09:28.350Z"
+    "message": "Memory usage warning: 82.13%",
+    "value": 82.13369846343994,
+    "threshold": 80,
+    "timestamp": "2025-08-25T15:19:19.183Z"
   },
   {
-    "level": "critical",
-    "category": "cpu",
-    "message": "CPU load critical: 159.13",
-    "value": 159.13427734375,
-    "threshold": 90,
-    "timestamp": "2025-08-25T15:09:58.351Z"
-  },
-  {
-    "level": "critical",
+    "level": "warning",
     "category": "memory",
-    "message": "Memory usage critical: 97.25%",
-    "value": 97.25173711776733,
-    "threshold": 95,
-    "timestamp": "2025-08-25T15:09:58.351Z"
+    "message": "Memory usage warning: 82.28%",
+    "value": 82.27535486221313,
+    "threshold": 80,
+    "timestamp": "2025-08-25T15:19:49.197Z"
   }
 ]
