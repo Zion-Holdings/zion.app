@@ -30,27 +30,30 @@ jobs:
         run: npm ci
 
       - name: Run build health check
-        run: npm run build:health-check || echo "Build health check completed with status: $?"
+        run: |
+          npm run build:health-check || echo "Build health check completed with status: $?"
 
       - name: Run build validation
-        run: npm run build:validate || echo "Build validation completed with status: $?"
+        run: |
+          npm run build:validate || echo "Build validation completed with status: $?"
 
       - name: Run dependency audit
-        run: npm audit --audit-level=high || echo "Dependency audit completed with status: $?"
+        run: |
+          npm audit --audit-level=high || echo "Dependency audit completed with status: $?"
 
       - name: Run type checking
-        run: npm run type-check || echo "Type checking completed with status: $?"
+        run: |
+          npm run type-check || echo "Type checking completed with status: $?"
 
       - name: Run linting
-        run: npm run lint || echo "Linting completed with status: $?"
+        run: |
+          npm run lint || echo "Linting completed with status: $?"
 
       - name: Generate build report
         run: |
           echo "Build Monitor Report - $(date)" > build-monitor-report.txt
           echo "Node.js Version: $(node --version)" >> build-monitor-report.txt
           echo "npm Version: $(npm --version)" >> build-monitor-report.txt
-          echo "Build Health: ${{ steps.build-health.outputs.status }}" >> build-monitor-report.txt
-          echo "Build Validation: ${{ steps.build-validation.outputs.status }}" >> build-monitor-report.txt
 
       - name: Commit health report
         run: |

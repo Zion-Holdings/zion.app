@@ -72,44 +72,37 @@ jobs:
         run: |
           mkdir -p ./failure_logs/jest
           mkdir -p ./failure_logs/playwright
-          # Copy Jest coverage/logs (assuming text report is in stdout/stderr, json-summary might be useful)
-          # The main logs are captured by Actions itself. We'll focus on reports.
           if [ -d "./coverage-jest-retry" ]; then
             cp -r ./coverage-jest-retry ./failure_logs/jest/
           fi
-          # Copy Playwright reports
           if [ -d "./playwright-report" ]; then
             cp -r ./playwright-report ./failure_logs/playwright/
           fi
-          # Capture full test output from initial and retry phases for context
-          echo "Initial Jest Test Output:" > ./failure_logs/test_run_summary.txt
-          echo "${{ steps.jest_tests_initial.outputs.stdout }}" >> ./failure_logs/test_run_summary.txt
-           ec
-Initial Jest Test Error Output:" >> ./failure_logs/test_run_summary.txt
-
-          echo "
-Initial Playwright Test Output:" >> ./failure_logs/test_run_summary.txt
-          echo "${{ steps.playwright_tests_initial.outputs.stdout }}" >> ./failure_logs/test_run_summary.txt
-          echo "
-Initial Playwright Test Error Output:" >> ./failure_logs/test_run_summary.txt
-          echo "${{ steps.playwright_tests_initial.outputs.stderr }}" >> ./failure_logs/test_run_summary.txt
-
-          if [ -d "./coverage-jest-retry" ]; then
-            echo "
-Retry Jest Test Output:" >> ./failure_logs/test_run_summary.txt
-            echo "${{ steps.jest_tests_retry.outputs.stdout }}" >> ./failure_logs/test_run_summary.txt
-            echo "
-Retry Jest Test Error Output:" >> ./failure_logs/test_run_summary.txt
-            echo "${{ steps.jest_tests_retry.outputs.stderr }}" >> ./failure_logs/test_run_summary.txt
-          fi
-          if [ -d "./playwright-report" ]; then # Assuming playwright retry also ran
-            echo "
-Retry Playwright Test Output:" >> ./failure_logs/test_run_summary.txt
-            echo "${{ steps.playwright_tests_retry.outputs.stdout }}" >> ./failure_logs/test_run_summary.txt
-            echo "
-Retry Playwright Test Error Output:" >> ./failure_logs/test_run_summary.txt
-            echo "${{ steps.playwright_tests_retry.outputs.stderr }}" >> ./failure_logs/test_run_summary.txt
-          fi
+          {
+            echo "Initial Jest Test Output:";
+            echo "${{ steps.jest_tests_initial.outputs.stdout }}";
+            echo "Initial Jest Test Error Output:";
+            echo "${{ steps.jest_tests_initial.outputs.stderr }}";
+            echo "";
+            echo "Initial Playwright Test Output:";
+            echo "${{ steps.playwright_tests_initial.outputs.stdout }}";
+            echo "Initial Playwright Test Error Output:";
+            echo "${{ steps.playwright_tests_initial.outputs.stderr }}";
+            if [ -d "./coverage-jest-retry" ]; then
+              echo "";
+              echo "Retry Jest Test Output:";
+              echo "${{ steps.jest_tests_retry.outputs.stdout }}";
+              echo "Retry Jest Test Error Output:";
+              echo "${{ steps.jest_tests_retry.outputs.stderr }}";
+            fi
+            if [ -d "./playwright-report" ]; then
+              echo "";
+              echo "Retry Playwright Test Output:";
+              echo "${{ steps.playwright_tests_retry.outputs.stdout }}";
+              echo "Retry Playwright Test Error Output:";
+              echo "${{ steps.playwright_tests_retry.outputs.stderr }}";
+            fi
+          } > ./failure_logs/test_run_summary.txt
 
       - name: Upload failure logs
         if: steps.retry_test_run_status.conclusion == 'success'

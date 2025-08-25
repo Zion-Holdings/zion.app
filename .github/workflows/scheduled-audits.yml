@@ -15,29 +15,29 @@ jobs:
     runs-on: ubuntu-latest # Specifies the runner environment
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4 # Action to check out the repository code
+      - name: Checkout repository
+        uses: actions/checkout@v4 # Action to check out the repository code
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v4 # Action to set up a Node.js environment
-      with:
-        node-version: '20.x' # Specifies the Node.js version to use, consistent with other workflows
-        cache: 'npm' # Enables caching for npm dependencies to speed up installation
+      - name: Set up Node.js
+        uses: actions/setup-node@v4 # Action to set up a Node.js environment
+        with:
+          node-version: '20.x' # Specifies the Node.js version to use, consistent with other workflows
+          cache: 'npm' # Enables caching for npm dependencies to speed up installation
 
-    - name: Install dependencies
-      run: npm ci # Installs dependencies cleanly using package-lock.json
+      - name: Install dependencies
+        run: npm ci # Installs dependencies cleanly using package-lock.json
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.10' # Or a generic '3.x' if preferred
-        cache: 'pip'
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10' # Or a generic '3.x' if preferred
+          cache: 'pip'
 
-    - name: Install pip-audit
-      run: pip install pip-audit
+      - name: Install pip-audit
+        run: pip install pip-audit
 
-    - name: Run Python Dependency Audit
-      run: pip-audit -r backend/requirements.txt
+      - name: Run Python Dependency Audit
+        run: pip-audit -r backend/requirements.txt
 
       - name: Run Dependency and Vulnerability Audits
         run: bash ./scripts/security-audit.sh

@@ -43,16 +43,13 @@ jobs:
           LEN: ${{ steps.queue.outputs.len }}
           MAX: ${{ github.event.inputs.max_shards || '16' }}
         run: |
-          python - <<'PY' | tee matrix.json
-import json, os, math
-length = int(os.environ.get('LEN','0'))
-cap = int(os.environ.get('MAX','8'))
-# Exponential-ish scaling: shards = min(cap, max(1, 2^k)) where k grows with backlog
-k = 0 if length < 50 else 1 if length < 200 else 2 if length < 800 else 3 if length < 2000 else 4
-shards = min(cap, max(1, 2 ** k))
-matrix = {"include":[{"shard":i,"num_shards":shards} for i in range(shards)]}
-print(json.dumps(matrix))
-PY
+          length=${LEN:-0}
+          cap=${MAX:-8}
+          if [ "$length" -lt 50 ]; then k=0; elif [ "$length" -lt 200 ]; then k=1; elif [ "$length" -lt 800 ]; then k=2; elif [ "$length" -lt 2000 ]; then k=3; else k=4; fi
+          shards=$(( 1<<k ))
+          if [ "$shards" -lt 1 ]; then shards=1; fi
+          if [ "$shards" -gt "$cap" ]; then shards=$cap; fi
+          jq -n --argjson shards "$shards" '{include: [range(0; $shards) | {shard: ., num_shards: $shards}]}' | tee matrix.json
           echo "matrix=$(cat matrix.json)" >> "$GITHUB_OUTPUT"
       - id: depth
         run: echo "depth=${{ github.event.inputs.max_depth || '3' }}" >> "$GITHUB_OUTPUT"
@@ -77,7 +74,7 @@ PY
           jq -r --argjson s "$SHARD" --argjson n "$NUM_SHARDS" '
             to_entries | map(select(.key % $n == $s)) | map(.value) | .[]
           ' "$file" > shard_urls.txt || true
-          wc -l shard_urls.txt
+          wc -l shard_urls.txt || true
           if [ ! -s shard_urls.txt ]; then echo "No URLs for this shard"; fi
 
       - uses: actions/setup-node@v4
@@ -129,17 +126,14 @@ PY
           ' merged.json > next_queue.json
 
           # Markdown summary
-          {
-            broken: (input | length),
-            sample: (input | .[:50])
-          } as $meta
-          | "Broken links: \($meta.broken)\n\n" +
+          jq -n --slurpfile b broken.json '
+            { broken: ($b[0] | length), sample: ($b[0] | .[:50]) } as $meta |
+            "Broken links: \($meta.broken)\n\n" +
             (if $meta.broken>0 then
               "| Source | Target | Status |\n|---|---|---|\n" +
               ([$meta.sample[] | "| " + .source + " | " + .target + " | " + (.status|tostring) + " |"] | join("\n"))
-             else "No broken links found."
-            )
-        ' broken.json > BROKEN_SUMMARY.md
+             else "No broken links found." end)
+          ' > BROKEN_SUMMARY.md
 
       - name: Upload merged artifacts
         uses: actions/upload-artifact@v4

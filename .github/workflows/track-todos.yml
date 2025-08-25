@@ -53,4 +53,3 @@ jobs:
           # Exclude specific paths if necessary, e.g., "!**/__tests__/**"
           # The action has its own default excludes like node_modules, .git, etc.
           # Adding common directories like 'app', 'packages' for broader coverage.
-```
