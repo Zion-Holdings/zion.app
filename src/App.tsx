@@ -27,6 +27,11 @@ const AIMatcherPage = lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = lazy(() => import('./pages/TalentDirectory'));
 const TalentsPage = lazy(() => import('./pages/TalentsPage'));
 const EmergingTech = lazy(() => import('./pages/EmergingTech'));
+// Newly added service pages
+const AIServices = lazy(() => import('./pages/AIServices'));
+const CloudDevOps = lazy(() => import('./pages/CloudDevOps'));
+const EnterpriseSolutionsPage = lazy(() => import('./pages/EnterpriseSolutions'));
+const DigitalTransformation = lazy(() => import('./pages/DigitalTransformation'));
 
 // Our enhanced service pages
 const About = lazy(() => import('./pages/About'));
@@ -91,6 +96,11 @@ const App = () => {
                     <Route path="/comprehensive-services" element={<Services />} />
                     <Route path="/services-comparison" element={<Services />} />
                     <Route path="/it-onsite-services" element={<Services />} />
+                    {/* Newly added explicit service routes */}
+                    <Route path="/ai-services" element={<AIServices />} />
+                    <Route path="/cloud-devops" element={<CloudDevOps />} />
+                    <Route path="/enterprise-solutions" element={<EnterpriseSolutionsPage />} />
+                    <Route path="/digital-transformation" element={<DigitalTransformation />} />
                     
                     {/* Our enhanced service routes */}
                     <Route path="/about" element={<About />} />
