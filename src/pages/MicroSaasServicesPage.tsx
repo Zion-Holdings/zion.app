@@ -80,7 +80,7 @@ export default function MicroSaasServicesPage() {
       filtered = filtered.filter(service =>
         service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         service.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        service.tags.some(tag => tag.toLowerCase().includes(searchQuery.toLowerCase()))
+        service.tags.some((tag: string) => tag.toLowerCase().includes(searchQuery.toLowerCase()))
       );
     }
 
@@ -322,7 +322,7 @@ export default function MicroSaasServicesPage() {
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2">
-                    {service.tags.slice(0, 3).map((tag, index) => (
+                    {service.tags.slice(0, 3).map((tag: string, index: number) => (
                       <Badge key={index} variant="outline" className="text-xs border-zion-blue-light text-zion-slate-light">
                         {tag}
                       </Badge>
@@ -333,7 +333,7 @@ export default function MicroSaasServicesPage() {
                   <div className="space-y-2">
                     <h4 className="text-sm font-semibold text-zion-cyan">Key Benefits:</h4>
                     <ul className="text-xs text-zion-slate-light space-y-1">
-                      {service.benefits.slice(0, 2).map((benefit, index) => (
+                      {service.benefits.slice(0, 2).map((benefit: string, index: number) => (
                         <li key={index} className="flex items-start gap-2">
                           <div className="w-1.5 h-1.5 bg-zion-cyan rounded-full mt-2 flex-shrink-0"></div>
                           {benefit}

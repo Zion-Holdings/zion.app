@@ -150,7 +150,7 @@ export function CategoriesSection() {
       opacity: 1,
       transition: {
         duration: 0.6,
-        ease: "easeOut"
+        ease: "easeOut" as const
       }
     }
   };
@@ -161,7 +161,7 @@ export function CategoriesSection() {
       scale: 1.02,
       transition: {
         duration: 0.3,
-        ease: "easeOut"
+        ease: "easeOut" as const
       }
     }
   };

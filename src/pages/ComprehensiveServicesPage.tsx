@@ -34,9 +34,9 @@ export default function ComprehensiveServicesPage() {
       const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
       
       const matchesPrice = priceRange === 'all' || 
-        (priceRange === 'low' && service.price < 5000) ||
-        (priceRange === 'medium' && service.price >= 5000 && service.price < 15000) ||
-        (priceRange === 'high' && service.price >= 15000);
+        (priceRange === 'low' && parseInt(service.price.replace(/[^0-9]/g, '')) < 5000) ||
+        (priceRange === 'medium' && parseInt(service.price.replace(/[^0-9]/g, '')) >= 5000 && parseInt(service.price.replace(/[^0-9]/g, '')) < 15000) ||
+        (priceRange === 'high' && parseInt(service.price.replace(/[^0-9]/g, '')) >= 15000);
       
       return matchesSearch && matchesCategory && matchesPrice;
     });
@@ -151,7 +151,7 @@ export default function ComprehensiveServicesPage() {
                       </div>
                       <div className="flex items-center space-x-1">
                         <Users className="h-4 w-4" />
-                        <span>{service.teamSize || '2-5 people'}</span>
+                        <span>2-5 people</span>
                       </div>
                     </div>
 

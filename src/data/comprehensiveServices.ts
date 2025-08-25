@@ -12,32 +12,35 @@ export interface MicroService {
   title: string;
   description: string;
   category: string;
-  subcategory: string;
-  price: number;
-  currency: string;
-  pricingModel: 'one-time' | 'monthly' | 'hourly' | 'project-based';
+  subcategory?: string;
+  price: string;
+  currency?: string;
+  pricingModel?: 'one-time' | 'monthly' | 'hourly' | 'project-based';
   features: string[];
   benefits: string[];
-  marketPrice: string;
-  deliveryTime: string;
+  marketPrice?: string;
+  deliveryTime?: string;
   tags: string[];
-  author: {
+  author?: {
     name: string;
     id: string;
     avatarUrl?: string;
     verified: boolean;
   };
-  images: string[];
-  rating: number;
-  reviewCount: number;
-  aiScore: number;
-  featured: boolean;
-  popular: boolean;
-  contactInfo: {
-    email: string;
-    phone: string;
-    website: string;
-  };
+  images?: string[];
+  rating?: number;
+  reviewCount?: number;
+  aiScore?: number;
+  featured?: boolean;
+  popular?: boolean;
+  contactInfo: string;
+  // Additional properties that exist in the data
+  duration?: string;
+  technology?: string[];
+  targetAudience?: string[];
+  image?: string;
+  link?: string;
+  email?: string;
   // Backward compatibility properties
   support?: string;
   technologies?: string[];
@@ -231,7 +234,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Custom AI-powered chatbots for customer service, sales, and support with natural language processing capabilities.',
     category: 'ai-services',
     subcategory: 'Chatbots',
-    price: 2500,
+    price: '2,500',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -263,11 +266,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 95,
     featured: true,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
   {
     id: 'ai-content-generation',
@@ -275,7 +274,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'AI-powered content creation for blogs, social media, marketing materials, and product descriptions.',
     category: 'ai-services',
     subcategory: 'Content Creation',
-    price: 1500,
+    price: '1,500',
     currency: 'USD',
     pricingModel: 'monthly',
     features: [
@@ -307,11 +306,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 92,
     featured: true,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
   {
     id: 'ai-data-analysis',
@@ -319,7 +314,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Advanced data analytics using machine learning to uncover hidden patterns and provide actionable business insights.',
     category: 'ai-services',
     subcategory: 'Data Analytics',
-    price: 3500,
+    price: '3,500',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -351,11 +346,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 96,
     featured: true,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Cybersecurity Services
@@ -365,7 +356,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Full security assessment including penetration testing, vulnerability scanning, and compliance review.',
     category: 'cybersecurity',
     subcategory: 'Security Audit',
-    price: 4500,
+    price: '4,500',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -397,11 +388,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 94,
     featured: true,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
   {
     id: 'incident-response',
@@ -409,7 +396,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Round-the-clock security monitoring, threat detection, and incident response services.',
     category: 'cybersecurity',
     subcategory: 'Incident Response',
-    price: 2500,
+    price: '2,500',
     currency: 'USD',
     pricingModel: 'monthly',
     features: [
@@ -441,11 +428,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 91,
     featured: false,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Cloud & DevOps Services
@@ -455,7 +438,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Complete cloud migration services including AWS, Azure, and Google Cloud with optimization and cost management.',
     category: 'cloud-services',
     subcategory: 'Cloud Migration',
-    price: 8000,
+    price: '8,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -487,11 +470,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 93,
     featured: true,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
   {
     id: 'devops-automation',
@@ -499,7 +478,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Complete DevOps automation including CI/CD pipelines, infrastructure as code, and monitoring setup.',
     category: 'cloud-services',
     subcategory: 'DevOps',
-    price: 4000,
+    price: '4,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -531,11 +510,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 89,
     featured: false,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Data & Analytics Services
@@ -545,7 +520,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Enterprise data warehouse solutions with ETL processes, data modeling, and business intelligence integration.',
     category: 'data-analytics',
     subcategory: 'Data Engineering',
-    price: 12000,
+    price: '12,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -577,11 +552,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 95,
     featured: true,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
   {
     id: 'business-intelligence',
@@ -589,7 +560,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Custom BI dashboards and reporting solutions using Power BI, Tableau, or custom web applications.',
     category: 'data-analytics',
     subcategory: 'Business Intelligence',
-    price: 3500,
+    price: '3,500',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -621,11 +592,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 88,
     featured: false,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Web & Mobile Development
@@ -635,7 +602,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Complete web application development using modern technologies like React, Node.js, and cloud deployment.',
     category: 'web-development',
     subcategory: 'Web Development',
-    price: 15000,
+    price: '15,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -667,11 +634,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 92,
     featured: true,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
   {
     id: 'mobile-app-development',
@@ -679,7 +642,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Native and cross-platform mobile applications for iOS and Android using React Native or Flutter.',
     category: 'web-development',
     subcategory: 'Mobile Development',
-    price: 12000,
+    price: '12,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -711,11 +674,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 90,
     featured: false,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // IT Consulting Services
@@ -725,7 +684,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Comprehensive digital transformation consulting to modernize your business operations and technology stack.',
     category: 'it-consulting',
     subcategory: 'Strategy Consulting',
-    price: 8000,
+    price: '8,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -757,11 +716,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 94,
     featured: true,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
   {
     id: 'it-infrastructure',
@@ -769,7 +724,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Comprehensive IT infrastructure review, optimization, and modernization planning.',
     category: 'it-consulting',
     subcategory: 'Infrastructure',
-    price: 5000,
+    price: '5,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -801,11 +756,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 87,
     featured: false,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Blockchain & Web3 Services
@@ -815,7 +766,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Ethereum smart contract development, testing, and security auditing for DeFi and NFT projects.',
     category: 'blockchain',
     subcategory: 'Smart Contracts',
-    price: 6000,
+    price: '6,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -847,11 +798,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 91,
     featured: false,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
   {
     id: 'web3-integration',
@@ -859,7 +806,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Web3 integration services including wallet connectivity, blockchain data integration, and decentralized features.',
     category: 'blockchain',
     subcategory: 'Web3 Integration',
-    price: 4000,
+    price: '4,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -891,11 +838,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 89,
     featured: false,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Process Automation Services
@@ -905,7 +848,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Robotic Process Automation solutions to automate repetitive tasks and optimize business workflows.',
     category: 'automation',
     subcategory: 'RPA',
-    price: 3500,
+    price: '3,500',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -937,11 +880,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 90,
     featured: false,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
   {
     id: 'api-integration',
@@ -949,7 +888,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Custom API integration services to connect your business systems and automate data flows.',
     category: 'automation',
     subcategory: 'API Integration',
-    price: 2500,
+    price: '2,500',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -981,11 +920,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 86,
     featured: false,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // IoT & Edge Computing Services
@@ -995,7 +930,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Complete IoT platform solutions including device management, data collection, and real-time analytics.',
     category: 'iot-edge',
     subcategory: 'IoT Platform',
-    price: 15000,
+    price: '15,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -1027,11 +962,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 93,
     featured: true,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Quantum Computing Services
@@ -1041,7 +972,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Quantum computing algorithm development for optimization, cryptography, and machine learning applications.',
     category: 'quantum-computing',
     subcategory: 'Algorithm Development',
-    price: 25000,
+    price: '25,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -1073,11 +1004,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 98,
     featured: true,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // AR/VR & Metaverse Services
@@ -1087,7 +1014,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Immersive AR/VR applications and metaverse platform development for gaming, education, and business.',
     category: 'augmented-reality',
     subcategory: 'AR/VR Development',
-    price: 18000,
+    price: '18,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -1119,11 +1046,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 94,
     featured: true,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Green Technology Services
@@ -1133,7 +1056,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Environmentally conscious technology solutions including energy optimization, carbon tracking, and sustainable practices.',
     category: 'green-tech',
     subcategory: 'Sustainable Solutions',
-    price: 8000,
+    price: '8,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -1165,11 +1088,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 89,
     featured: false,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Advanced AI Services
@@ -1179,7 +1098,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Comprehensive AI ethics and governance frameworks to ensure responsible AI development and deployment.',
     category: 'ai-services',
     subcategory: 'AI Governance',
-    price: 12000,
+    price: '12,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -1211,11 +1130,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 96,
     featured: true,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Advanced Cybersecurity Services
@@ -1225,7 +1140,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Next-generation cybersecurity using artificial intelligence for advanced threat detection and automated response.',
     category: 'cybersecurity',
     subcategory: 'AI Security',
-    price: 6000,
+    price: '6,000',
     currency: 'USD',
     pricingModel: 'monthly',
     features: [
@@ -1257,11 +1172,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 95,
     featured: true,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Specialized AI Services
@@ -1271,7 +1182,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Advanced computer vision solutions for video analysis, object detection, and automated video processing.',
     category: 'ai-services',
     subcategory: 'Computer Vision',
-    price: 8000,
+    price: '8,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -1303,11 +1214,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 94,
     featured: true,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Advanced Data Services
@@ -1317,7 +1224,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'High-performance real-time analytics platforms for processing streaming data and providing instant insights.',
     category: 'data-analytics',
     subcategory: 'Real-Time Analytics',
-    price: 15000,
+    price: '15,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -1349,11 +1256,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 96,
     featured: true,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Advanced Cloud Services
@@ -1363,7 +1266,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Comprehensive multi-cloud management platform for orchestrating workloads across AWS, Azure, Google Cloud, and private clouds.',
     category: 'cloud-services',
     subcategory: 'Multi-Cloud',
-    price: 20000,
+    price: '20,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -1395,11 +1298,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 97,
     featured: true,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Advanced Web3 Services
@@ -1409,7 +1308,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Complete DeFi protocol development including smart contracts, frontend applications, and comprehensive security auditing.',
     category: 'blockchain',
     subcategory: 'DeFi Development',
-    price: 30000,
+    price: '30,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -1441,11 +1340,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 98,
     featured: true,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Advanced AI & Machine Learning Services
@@ -1455,7 +1350,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Custom voice assistants with natural language processing for businesses and applications.',
     category: 'ai-services',
     subcategory: 'Voice AI',
-    price: 4500,
+    price: '4,500',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -1487,11 +1382,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 94,
     featured: true,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   {
@@ -1500,7 +1391,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Machine learning-based predictive maintenance for industrial equipment and machinery.',
     category: 'ai-services',
     subcategory: 'Industrial AI',
-    price: 6000,
+    price: '6,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -1532,11 +1423,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 95,
     featured: true,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Advanced Cybersecurity Services
@@ -1546,7 +1433,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Future-proof encryption solutions resistant to quantum computing attacks.',
     category: 'cybersecurity',
     subcategory: 'Quantum Security',
-    price: 8000,
+    price: '8,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -1578,11 +1465,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 93,
     featured: false,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Advanced Cloud & DevOps Services
@@ -1592,7 +1475,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Enterprise-grade Kubernetes deployment, management, and optimization services.',
     category: 'cloud-services',
     subcategory: 'Container Orchestration',
-    price: 4500,
+    price: '4,500',
     currency: 'USD',
     pricingModel: 'monthly',
     features: [
@@ -1624,11 +1507,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 91,
     featured: false,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   {
@@ -1637,7 +1516,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Design and implement scalable serverless solutions using AWS Lambda, Azure Functions, and more.',
     category: 'cloud-services',
     subcategory: 'Serverless',
-    price: 3500,
+    price: '3,500',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -1669,11 +1548,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 89,
     featured: false,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Advanced Data & Analytics Services
@@ -1683,7 +1558,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Real-time data processing and analytics solutions using Apache Kafka, Spark, and modern streaming technologies.',
     category: 'data-analytics',
     subcategory: 'Real-Time Analytics',
-    price: 7000,
+    price: '7,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -1715,11 +1590,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 94,
     featured: true,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   {
@@ -1728,7 +1599,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Intelligent data governance solutions ensuring data quality, compliance, and trust.',
     category: 'data-analytics',
     subcategory: 'Data Governance',
-    price: 5000,
+    price: '5,000',
     currency: 'USD',
     pricingModel: 'monthly',
     features: [
@@ -1760,11 +1631,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 92,
     featured: false,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Advanced Web & Mobile Development
@@ -1774,7 +1641,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Modern progressive web applications with offline capabilities and native app-like experience.',
     category: 'web-development',
     subcategory: 'PWA Development',
-    price: 4000,
+    price: '4,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -1806,11 +1673,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 90,
     featured: false,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   {
@@ -1819,7 +1682,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Native-quality mobile applications for iOS and Android using React Native, Flutter, or Xamarin.',
     category: 'web-development',
     subcategory: 'Mobile Development',
-    price: 6000,
+    price: '6,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -1851,11 +1714,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 91,
     featured: true,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Advanced IT Consulting Services
@@ -1865,7 +1724,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Comprehensive digital transformation consulting helping businesses modernize and compete in the digital age.',
     category: 'it-consulting',
     subcategory: 'Digital Transformation',
-    price: 15000,
+    price: '15,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -1897,11 +1756,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 95,
     featured: true,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   {
@@ -1910,7 +1765,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Strategic enterprise architecture planning and optimization for large organizations.',
     category: 'it-consulting',
     subcategory: 'Enterprise Architecture',
-    price: 12000,
+    price: '12,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -1942,11 +1797,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 93,
     featured: false,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Advanced Blockchain & Web3 Services
@@ -1956,7 +1807,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Decentralized finance platform development with smart contracts and DeFi protocols.',
     category: 'blockchain',
     subcategory: 'DeFi Development',
-    price: 10000,
+    price: '10,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -1988,11 +1839,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 94,
     featured: true,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   {
@@ -2001,7 +1848,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Custom NFT marketplace development with minting, trading, and auction capabilities.',
     category: 'blockchain',
     subcategory: 'NFT Development',
-    price: 8000,
+    price: '8,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -2033,11 +1880,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 91,
     featured: false,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Advanced Process Automation Services
@@ -2047,7 +1890,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'End-to-end RPA solutions to automate repetitive business processes and workflows.',
     category: 'automation',
     subcategory: 'RPA',
-    price: 7000,
+    price: '7,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -2079,11 +1922,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 93,
     featured: true,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   {
@@ -2092,7 +1931,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Comprehensive workflow automation solutions to streamline business operations and improve efficiency.',
     category: 'automation',
     subcategory: 'Workflow Automation',
-    price: 5000,
+    price: '5,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -2124,11 +1963,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 90,
     featured: false,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Advanced IoT & Edge Computing Services
@@ -2138,7 +1973,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'End-to-end IoT platform development with device management, data collection, and analytics.',
     category: 'iot-edge',
     subcategory: 'IoT Platform',
-    price: 12000,
+    price: '12,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -2170,11 +2005,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 92,
     featured: true,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   {
@@ -2183,7 +2014,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Edge computing infrastructure and optimization for low-latency, high-performance applications.',
     category: 'iot-edge',
     subcategory: 'Edge Computing',
-    price: 8000,
+    price: '8,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -2215,11 +2046,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 89,
     featured: false,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Advanced Quantum Computing Services
@@ -2229,7 +2056,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Custom quantum algorithm development for specific business problems and optimization challenges.',
     category: 'quantum-computing',
     subcategory: 'Algorithm Development',
-    price: 15000,
+    price: '15,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -2261,11 +2088,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 96,
     featured: true,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   {
@@ -2274,7 +2097,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Quantum software development and integration with classical computing systems.',
     category: 'quantum-computing',
     subcategory: 'Software Development',
-    price: 10000,
+    price: '10,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -2306,11 +2129,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 94,
     featured: false,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Advanced AR/VR & Metaverse Services
@@ -2320,7 +2139,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Custom augmented and virtual reality applications for business, education, and entertainment.',
     category: 'augmented-reality',
     subcategory: 'AR/VR Development',
-    price: 8000,
+    price: '8,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -2352,11 +2171,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 91,
     featured: true,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   {
@@ -2365,7 +2180,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Custom metaverse platform development with virtual worlds, avatars, and social interactions.',
     category: 'augmented-reality',
     subcategory: 'Metaverse Development',
-    price: 15000,
+    price: '15,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -2397,11 +2212,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 93,
     featured: false,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Advanced Green Technology Services
@@ -2411,7 +2222,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'AI-powered carbon footprint tracking and reduction strategies for businesses and organizations.',
     category: 'green-tech',
     subcategory: 'Carbon Management',
-    price: 4000,
+    price: '4,000',
     currency: 'USD',
     pricingModel: 'monthly',
     features: [
@@ -2443,11 +2254,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 90,
     featured: false,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   {
@@ -2456,7 +2263,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Smart monitoring and optimization solutions for renewable energy systems and sustainability initiatives.',
     category: 'green-tech',
     subcategory: 'Energy Monitoring',
-    price: 6000,
+    price: '6,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -2488,11 +2295,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 89,
     featured: false,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Advanced Blockchain & Web3 Services
@@ -2502,7 +2305,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Custom smart contracts for DeFi, NFTs, DAOs, and enterprise blockchain solutions with security auditing.',
     category: 'blockchain-services',
     subcategory: 'Smart Contracts',
-    price: 8000,
+    price: '8,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -2534,11 +2337,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 96,
     featured: true,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Advanced Cybersecurity Services
@@ -2548,7 +2347,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Implement comprehensive zero trust security framework for modern enterprise environments.',
     category: 'cybersecurity',
     subcategory: 'Zero Trust',
-    price: 12000,
+    price: '12,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -2580,11 +2379,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 93,
     featured: true,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Advanced Cloud & DevOps Services
@@ -2594,7 +2389,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Design and implement multi-cloud architectures for optimal performance, cost, and reliability.',
     category: 'cloud-services',
     subcategory: 'Multi-Cloud',
-    price: 15000,
+    price: '15,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -2626,11 +2421,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 91,
     featured: false,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Advanced Data & Analytics Services
@@ -2640,7 +2431,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Build real-time analytics platforms for instant insights and decision-making capabilities.',
     category: 'data-services',
     subcategory: 'Real-Time Analytics',
-    price: 18000,
+    price: '18,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -2672,11 +2463,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 95,
     featured: true,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // Advanced IoT & Edge Computing Services
@@ -2686,7 +2473,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Deploy intelligent edge computing solutions for IoT devices with real-time processing capabilities.',
     category: 'iot-services',
     subcategory: 'Edge Computing',
-    price: 22000,
+    price: '22,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -2718,11 +2505,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 94,
     featured: true,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
 
   // NEW INNOVATIVE SERVICES
@@ -2732,7 +2515,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Advanced quantum computing simulation and optimization platform for research and development with hybrid quantum-classical computing capabilities.',
     category: 'quantum-computing',
     subcategory: 'Simulation',
-    price: 50000,
+    price: '50,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -2765,11 +2548,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 98,
     featured: true,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
   {
     id: 'metaverse-enterprise-platform',
@@ -2777,7 +2556,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Complete metaverse solution for businesses with virtual offices, training environments, and immersive customer experiences.',
     category: 'metaverse-vr',
     subcategory: 'Enterprise Platform',
-    price: 8000,
+    price: '8,000',
     currency: 'USD',
     pricingModel: 'monthly',
     features: [
@@ -2810,11 +2589,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 95,
     featured: true,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
   {
     id: 'green-tech-sustainability-platform',
@@ -2822,7 +2597,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Comprehensive sustainability management platform for tracking carbon footprint, energy optimization, and environmental compliance.',
     category: 'green-tech',
     subcategory: 'Sustainability Management',
-    price: 6000,
+    price: '6,000',
     currency: 'USD',
     pricingModel: 'monthly',
     features: [
@@ -2855,11 +2630,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 93,
     featured: true,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
   {
     id: 'ai-legal-document-review',
@@ -2867,7 +2638,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Automated legal document analysis and review using natural language processing and machine learning for law firms and legal departments.',
     category: 'ai-services',
     subcategory: 'Legal Tech',
-    price: 18000,
+    price: '18,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -2900,11 +2671,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 94,
     featured: true,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
   {
     id: 'fintech-payment-gateway',
@@ -2912,7 +2679,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Secure and scalable payment processing platform with multi-currency support, fraud detection, and comprehensive compliance.',
     category: 'fintech',
     subcategory: 'Payment Processing',
-    price: 30000,
+    price: '30,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -2945,11 +2712,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 96,
     featured: true,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
   {
     id: 'ai-healthcare-diagnosis',
@@ -2957,7 +2720,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'AI-powered medical diagnosis support system with image analysis, symptom assessment, and telemedicine integration.',
     category: 'ai-services',
     subcategory: 'Healthcare AI',
-    price: 40000,
+    price: '40,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -2990,11 +2753,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 97,
     featured: true,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
   {
     id: 'blockchain-supply-chain',
@@ -3002,7 +2761,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Transparent and secure supply chain management using blockchain technology for traceability, compliance, and fraud prevention.',
     category: 'blockchain',
     subcategory: 'Supply Chain',
-    price: 35000,
+    price: '35,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -3035,11 +2794,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 94,
     featured: true,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
   {
     id: 'ai-marketing-automation',
@@ -3047,7 +2802,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Intelligent marketing automation with personalized campaigns, predictive analytics, and ROI optimization for modern businesses.',
     category: 'ai-services',
     subcategory: 'Marketing AI',
-    price: 15000,
+    price: '15,000',
     currency: 'USD',
     pricingModel: 'monthly',
     features: [
@@ -3080,11 +2835,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 93,
     featured: true,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
   {
     id: 'ai-robotics-automation',
@@ -3092,7 +2843,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Intelligent robotics solutions with AI-powered automation for manufacturing, logistics, and industrial processes.',
     category: 'ai-services',
     subcategory: 'Robotics & Automation',
-    price: 75000,
+    price: '75,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -3125,11 +2876,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 96,
     featured: true,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
   {
     id: 'space-tech-satellite-solutions',
@@ -3137,7 +2884,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Advanced space technology solutions including satellite communication, space data analytics, and orbital optimization.',
     category: 'space-tech',
     subcategory: 'Satellite Solutions',
-    price: 200000,
+    price: '200,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -3170,11 +2917,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 99,
     featured: true,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
   {
     id: 'biotech-ai-drug-discovery',
@@ -3182,7 +2925,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'AI-powered drug discovery platform using machine learning for pharmaceutical research and development.',
     category: 'biotech-ai',
     subcategory: 'Drug Discovery',
-    price: 120000,
+    price: '120,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -3215,11 +2958,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 98,
     featured: true,
     popular: true,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
   {
     id: 'autonomous-vehicles-platform',
@@ -3227,7 +2966,7 @@ export const MICRO_SERVICES: MicroService[] = [
     description: 'Complete autonomous vehicle solution with AI navigation, safety systems, and fleet management capabilities.',
     category: 'autonomous-tech',
     subcategory: 'Vehicle Platform',
-    price: 180000,
+    price: '180,000',
     currency: 'USD',
     pricingModel: 'project-based',
     features: [
@@ -3260,11 +2999,7 @@ export const MICRO_SERVICES: MicroService[] = [
     aiScore: 95,
     featured: true,
     popular: false,
-    contactInfo: {
-      email: 'kleber@ziontechgroup.com',
-      phone: '+1 302 464 0950',
-      website: 'https://ziontechgroup.com'
-    }
+    contactInfo: 'kleber@ziontechgroup.com'
   },
   {
     id: 'ai-cybersecurity-zero-trust',
@@ -4713,7 +4448,7 @@ export const getServicesBySubcategory = (subcategory: string): MicroService[] =>
 };
 
 export const getServicesByAuthor = (authorId: string): MicroService[] => {
-  return MICRO_SERVICES.filter(service => service.author.id === authorId);
+  return MICRO_SERVICES.filter(service => service.author?.id === authorId);
 };
 
 export const getServicesByTags = (tags: string[]): MicroService[] => {
@@ -4723,11 +4458,11 @@ export const getServicesByTags = (tags: string[]): MicroService[] => {
 };
 
 export const getServicesByRating = (minRating: number): MicroService[] => {
-  return MICRO_SERVICES.filter(service => service.rating >= minRating);
+  return MICRO_SERVICES.filter(service => (service.rating || 0) >= minRating);
 };
 
 export const getServicesByReviewCount = (minReviews: number): MicroService[] => {
-  return MICRO_SERVICES.filter(service => service.reviewCount >= minReviews);
+  return MICRO_SERVICES.filter(service => (service.reviewCount || 0) >= minReviews);
 };
 
 export const getServicesByPricingModel = (model: 'one-time' | 'monthly' | 'hourly' | 'project-based'): MicroService[] => {
@@ -4736,23 +4471,24 @@ export const getServicesByPricingModel = (model: 'one-time' | 'monthly' | 'hourl
 
 export const getServicesByDeliveryTime = (maxWeeks: number): MicroService[] => {
   return MICRO_SERVICES.filter(service => {
-    const weeks = parseInt(service.deliveryTime.split('-')[0]);
+    const weeks = parseInt(service.deliveryTime?.split('-')[0] || '0');
     return weeks <= maxWeeks;
   });
 };
 
 export const getHighAIScoreServices = (minScore: number = 90): MicroService[] => {
-  return MICRO_SERVICES.filter(service => service.aiScore >= minScore);
+  return MICRO_SERVICES.filter(service => (service.aiScore || 0) >= minScore);
 };
 
 export const getTopRatedServices = (minRating: number = 4.5): MicroService[] => {
-  return MICRO_SERVICES.filter(service => service.rating >= minRating);
+  return MICRO_SERVICES.filter(service => (service.rating || 0) >= minRating);
 };
 
 export const getServicesByPriceRange = (minPrice: number, maxPrice: number): MicroService[] => {
-  return MICRO_SERVICES.filter(service => 
-    service.price >= minPrice && service.price <= maxPrice
-  );
+  return MICRO_SERVICES.filter(service => {
+    const price = parseInt(service.price.replace(/[^0-9]/g, ''));
+    return price >= minPrice && price <= maxPrice;
+  });
 };
 
 export const getServicesByCategory = (categoryId: string): MicroService[] => {
@@ -4777,7 +4513,7 @@ export const searchServices = (query: string): MicroService[] => {
 };
 
 export const getTotalServiceValue = (): number => {
-  return MICRO_SERVICES.reduce((total, service) => total + service.price, 0);
+  return MICRO_SERVICES.reduce((total, service) => total + parseInt(service.price), 0);
 };
 
 export const getAverageServicePrice = (): number => {
@@ -4791,9 +4527,9 @@ export const getCategoryStats = () => {
   SERVICE_CATEGORIES.forEach(category => {
     const services = getServicesByCategory(category.id);
     if (services.length > 0) {
-      const totalValue = services.reduce((sum, service) => sum + service.price, 0);
-      const avgRating = services.reduce((sum, service) => sum + service.rating, 0) / services.length;
-      const avgAIScore = services.reduce((sum, service) => sum + service.aiScore, 0) / services.length;
+      const totalValue = services.reduce((sum, service) => sum + parseInt(service.price), 0);
+      const avgRating = services.reduce((sum, service) => sum + (service.rating || 0), 0) / services.length;
+      const avgAIScore = services.reduce((sum, service) => sum + (service.aiScore || 0), 0) / services.length;
       
       stats[category.id] = {
         count: services.length,
@@ -4810,21 +4546,21 @@ export const getCategoryStats = () => {
 export const getTrendingServices = (): MicroService[] => {
   // Services with high ratings, many reviews, and recent activity
   return MICRO_SERVICES
-    .filter(service => service.rating >= 4.7 && service.reviewCount >= 50)
-    .sort((a, b) => (b.rating * b.reviewCount) - (a.rating * a.reviewCount))
+    .filter(service => (service.rating || 0) >= 4.7 && (service.reviewCount || 0) >= 50)
+    .sort((a, b) => ((b.rating || 0) * (b.reviewCount || 0)) - ((a.rating || 0) * (a.reviewCount || 0)))
     .slice(0, 10);
 };
 
 export const getBudgetFriendlyServices = (maxPrice: number = 5000): MicroService[] => {
   return getServicesByPriceRange(0, maxPrice)
-    .sort((a, b) => a.price - b.price);
+    .sort((a, b) => parseInt(a.price.replace(/[^0-9]/g, '')) - parseInt(b.price.replace(/[^0-9]/g, '')));
 };
 
 export const getEnterpriseServices = (): MicroService[] => {
   // High-value services suitable for enterprise clients
   return MICRO_SERVICES
-    .filter(service => service.price >= 10000 && service.rating >= 4.5)
-    .sort((a, b) => b.price - a.price);
+    .filter(service => parseInt(service.price) >= 10000 && (service.rating || 0) >= 4.5)
+    .sort((a, b) => parseInt(b.price.replace(/[^0-9]/g, '')) - parseInt(a.price.replace(/[^0-9]/g, '')));
 };
 
 // Compatibility exports for backward compatibility

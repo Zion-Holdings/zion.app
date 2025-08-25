@@ -118,14 +118,9 @@ export function ServicesOverview() {
                   {/* Pricing */}
                   <div className="mb-4">
                     <div className="text-2xl font-bold text-zion-purple">
-                      {formatPrice(service.price, service.pricingModel)}
+                      {formatPrice(parseInt(service.price.replace(/[^0-9]/g, '')), service.pricingModel || 'project-based')}
                     </div>
-                    {service.freeTrial && (
-                      <div className="text-sm text-green-600 flex items-center gap-1">
-                        <CheckCircle className="w-4 h-4" />
-                        {service.freeTrialDays}-day free trial
-                      </div>
-                    )}
+                    {/* Free trial removed - not available in current service structure */}
                   </div>
 
                   {/* Key Benefits */}
@@ -156,18 +151,7 @@ export function ServicesOverview() {
                       Get Started
                     </Button>
                     <div className="flex gap-2">
-                      {service.website && (
-                        <Button variant="outline" size="sm" className="flex-1">
-                          <ExternalLink className="w-4 h-4 mr-1" />
-                          Website
-                        </Button>
-                      )}
-                      {service.demoUrl && (
-                        <Button variant="outline" size="sm" className="flex-1">
-                          <Eye className="w-4 h-4 mr-1" />
-                          Demo
-                        </Button>
-                      )}
+                      {/* Website and demo removed - not available in current service structure */}
                     </div>
                   </div>
                 </CardContent>

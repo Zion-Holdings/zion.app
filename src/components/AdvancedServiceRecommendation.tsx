@@ -168,7 +168,7 @@ const AdvancedServiceRecommendation: React.FC = () => {
     let score = 0;
     
     // Industry match
-    if (service.targetAudience.some(audience => 
+    if (service.targetAudience?.some((audience: string) => 
       audience.toLowerCase().includes(profile.industry.toLowerCase()))) {
       score += 25;
     }
@@ -197,7 +197,7 @@ const AdvancedServiceRecommendation: React.FC = () => {
     
     // Goal alignment
     const goalMatches = profile.primaryGoals.filter(goal => 
-      service.benefits.some(benefit => 
+      service.benefits.some((benefit: string) => 
         benefit.toLowerCase().includes(goal.toLowerCase())
       )
     ).length;

@@ -3,7 +3,7 @@ import React from 'react';
 import { QuoteRequestForm } from "@/components/QuoteRequestForm";
 import { SEO } from "@/components/SEO";
 import { AppHeader } from "@/layout/AppHeader";
-import { Footer } from "@/components/Footer";
+import Footer from "@/components/Footer";
 
 export default function RequestQuote() {
   return (

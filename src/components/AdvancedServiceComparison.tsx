@@ -142,8 +142,7 @@ export const AdvancedServiceComparison: React.FC = () => {
       const matchesCategory = filters.category === 'all' || service.category === filters.category;
       const matchesComplexity = filters.complexity === 'all' || service.complexity === filters.complexity;
       const matchesTechnology = filters.technology === 'all' || service.technology.includes(filters.technology);
-      const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                           service.description.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase());
       
       return matchesCategory && matchesComplexity && matchesTechnology && matchesSearch;
     });
@@ -293,7 +292,6 @@ export const AdvancedServiceComparison: React.FC = () => {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="max-w-md"
-            icon={<Search className="w-4 h-4" />}
           />
         </div>
       </motion.div>

@@ -32,7 +32,7 @@ export function PerformanceOptimizedLoader({
       transition: {
         duration: 1,
         repeat: Infinity,
-        ease: "linear"
+        ease: "linear" as const
       }
     }
   };
@@ -44,7 +44,7 @@ export function PerformanceOptimizedLoader({
       transition: {
         duration: 2,
         repeat: Infinity,
-        ease: "easeInOut"
+        ease: "easeInOut" as const
       }
     }
   };
