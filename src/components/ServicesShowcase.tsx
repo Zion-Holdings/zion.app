@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 // Mock data for services since the comprehensiveServices file was removed
 const SERVICE_CATEGORIES = [
