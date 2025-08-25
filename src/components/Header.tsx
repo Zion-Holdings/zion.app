@@ -25,34 +25,22 @@ export function Header() {
       description: 'Welcome to Zion Tech Group'
     },
     { 
-      path: '/services', 
-      label: 'AI Services', 
+      path: '/enhanced-services', 
+      label: 'Services', 
+      icon: '🚀',
+      description: 'Explore our comprehensive service catalog'
+    },
+    { 
+      path: '/ai-solutions', 
+      label: 'AI Solutions', 
       icon: '🤖',
-      description: 'Explore our AI service offerings'
+      description: 'Advanced AI and machine learning services'
     },
     { 
       path: '/emerging-tech', 
       label: 'Emerging Tech', 
-      icon: '🚀',
-      description: 'Cutting-edge technology solutions'
-    },
-    { 
-      path: '/comprehensive-services', 
-      label: 'All Services', 
       icon: '⚡',
-      description: 'Complete service catalog'
-    },
-    { 
-      path: '/services-comparison', 
-      label: 'Compare', 
-      icon: '📊',
-      description: 'Compare service options'
-    },
-    { 
-      path: '/it-onsite-services', 
-      label: 'Onsite IT', 
-      icon: '🔧',
-      description: 'Onsite IT support services'
+      description: 'Cutting-edge technology solutions'
     },
     { 
       path: '/pricing', 

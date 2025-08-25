@@ -20,9 +20,11 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 
 // Enhanced lazy loading with preloading hints
 const Home = lazy(() => import('./pages/Home'));
+const EnhancedHome = lazy(() => import('./pages/EnhancedHome'));
 const Services = lazy(() => import('./pages/Services'));
 const AISolutions = lazy(() => import('./pages/AISolutions'));
 const ServicesShowcase = lazy(() => import('./pages/ServicesShowcase'));
+const EnhancedServicesShowcase = lazy(() => import('./pages/EnhancedServicesShowcase'));
 const AIMatcherPage = lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = lazy(() => import('./pages/TalentDirectory'));
 const TalentsPage = lazy(() => import('./pages/TalentsPage'));
@@ -71,10 +73,12 @@ const App = () => {
               <main className="ml-64 pt-20 min-h-screen">
                 <Suspense fallback={<LoadingSpinner />}>
                   <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/" element={<EnhancedHome />} />
+                    <Route path="/home" element={<Home />} />
                     <Route path="/services" element={<Services />} />
                     <Route path="/ai-solutions" element={<AISolutions />} />
                     <Route path="/services-showcase" element={<ServicesShowcase />} />
+                    <Route path="/enhanced-services" element={<EnhancedServicesShowcase />} />
                     <Route path="/match" element={<AIMatcherPage />} />
                     <Route path="/talent" element={<TalentDirectory />} />
                     <Route path="/talents" element={<TalentsPage />} />
