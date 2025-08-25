@@ -13,7 +13,7 @@ import { EnterpriseDashboard } from './components/EnterpriseDashboard';
 import { SecurityComplianceDashboard } from './components/SecurityComplianceDashboard';
 import { MachineLearningDashboard } from './components/MachineLearningDashboard';
 import { Home } from './pages/Home';
-import { Services } from './pages/Services';
+import Services from './pages/Services';
 import { LoadingSpinner } from './components/LoadingSpinner';
 import { ErrorBoundary } from './components/ErrorBoundary';
 import './App.css';
