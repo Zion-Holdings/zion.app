@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import json
+import os
 import subprocess
 import time
 import sys
@@ -9,7 +10,8 @@ from datetime import datetime
 # Configuration
 BATCH_SIZE = 10
 MAX_CONFLICTS_PER_BATCH = 3
-GITHUB_TOKEN = "ghs_19kccVEp5VIJbcu1Oe1bBomzNM9uj62KhopR"
+# Read token from environment. Do not hardcode secrets.
+GITHUB_TOKEN = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN") or ""
 REPO_URL = "https://api.github.com/repos/Zion-Holdings/zion.app"
 
 def run_command(cmd, check=True):
@@ -30,9 +32,10 @@ def get_open_prs():
     
     url = f"{REPO_URL}/pulls?state=open&per_page=100"
     headers = {
-        'Authorization': f'token {GITHUB_TOKEN}',
         'Accept': 'application/vnd.github.v3+json'
     }
+    if GITHUB_TOKEN:
+        headers['Authorization'] = f'token {GITHUB_TOKEN}'
     
     try:
         req = urllib.request.Request(url, headers=headers)
@@ -49,9 +52,10 @@ def get_pr_details(pr_number):
     
     url = f"{REPO_URL}/pulls/{pr_number}"
     headers = {
-        'Authorization': f'token {GITHUB_TOKEN}',
         'Accept': 'application/vnd.github.v3+json'
     }
+    if GITHUB_TOKEN:
+        headers['Authorization'] = f'token {GITHUB_TOKEN}'
     
     try:
         req = urllib.request.Request(url, headers=headers)
