@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Header } from './components/Header';
-import { Footer } from './components/Footer';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import { Sidebar } from './components/Sidebar';
 import { AccessibilityControls } from './components/AccessibilityControls';
 import { PerformanceDashboard } from './components/PerformanceDashboard';
@@ -17,6 +17,12 @@ import './App.css';
 // Enhanced lazy loading with preloading hints
 const Home = lazy(() => import('./pages/Home'));
 const Services = lazy(() => import('./pages/Services'));
+const ComprehensiveServices = lazy(() => import('./pages/ComprehensiveServices'));
+const About = lazy(() => import('./pages/About'));
+const Contact = lazy(() => import('./pages/Contact'));
+const Blog = lazy(() => import('./pages/Blog'));
+const Careers = lazy(() => import('./pages/Careers'));
+const HelpCenter = lazy(() => import('./pages/HelpCenter'));
 
 // Error Boundary Component
 class ErrorBoundary extends React.Component<
@@ -87,9 +93,48 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/services" element={<Services />} />
-                <Route path="/comprehensive-services" element={<Services />} />
+                <Route path="/comprehensive-services" element={<ComprehensiveServices />} />
                 <Route path="/services-comparison" element={<Services />} />
                 <Route path="/it-onsite-services" element={<Services />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/careers" element={<Careers />} />
+                <Route path="/help" element={<HelpCenter />} />
+                
+                {/* Additional service category routes */}
+                <Route path="/services/ai" element={<Services />} />
+                <Route path="/services/it" element={<Services />} />
+                <Route path="/services/saas" element={<Services />} />
+                <Route path="/services/security" element={<Services />} />
+                <Route path="/services/cloud" element={<Services />} />
+                <Route path="/services/analytics" element={<Services />} />
+                
+                {/* Solution routes */}
+                <Route path="/solutions/enterprise-ai" element={<Services />} />
+                <Route path="/solutions/digital-transformation" element={<Services />} />
+                <Route path="/solutions/automation" element={<Services />} />
+                <Route path="/solutions/iot" element={<Services />} />
+                <Route path="/solutions/blockchain" element={<Services />} />
+                <Route path="/solutions/quantum" element={<Services />} />
+                
+                {/* Company routes */}
+                <Route path="/team" element={<About />} />
+                <Route path="/partners" element={<About />} />
+                <Route path="/case-studies" element={<Blog />} />
+                
+                {/* Support routes */}
+                <Route path="/docs" element={<HelpCenter />} />
+                <Route path="/api" element={<HelpCenter />} />
+                <Route path="/status" element={<HelpCenter />} />
+                <Route path="/support" element={<Contact />} />
+                <Route path="/training" element={<HelpCenter />} />
+                
+                {/* Legal routes */}
+                <Route path="/privacy" element={<About />} />
+                <Route path="/terms" element={<About />} />
+                <Route path="/cookies" element={<About />} />
+                <Route path="/accessibility" element={<About />} />
               </Routes>
             </Suspense>
           </main>
