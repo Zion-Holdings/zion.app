@@ -14,7 +14,8 @@ import {
   CheckCircle,
   Briefcase,
   GraduationCap,
-  Award
+  Award,
+  Shield
 } from 'lucide-react';
 
 export default function Careers() {
@@ -159,7 +160,7 @@ export default function Careers() {
 
   const filteredJobs = jobListings.filter(job => {
     const deptMatch = selectedDepartment === 'all' || job.department === selectedDepartment;
-    const locationMatch = selectedLocation === 'all' || job.location === location;
+    const locationMatch = selectedLocation === 'all' || job.location === selectedLocation;
     return deptMatch && locationMatch;
   });
 

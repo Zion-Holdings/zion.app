@@ -74,18 +74,19 @@ const App = () => {
           <Router>
             <div className="App min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
               <Header />
-              <Sidebar isOpen={false} onClose={() => {}} />
+              <Sidebar />
               
               {/* Main Content with enhanced Suspense */}
               <main className="ml-64 pt-20 min-h-screen">
                 <Suspense fallback={<LoadingSpinner />}>
                   <Routes>
-                    <Route path="/" element={<EnhancedHome />} />
+                    <Route path="/" element={<Home />} />
                     <Route path="/home" element={<Home />} />
                     <Route path="/services" element={<Services />} />
                     <Route path="/ai-solutions" element={<AISolutions />} />
                     <Route path="/services-showcase" element={<ServicesShowcase />} />
-                    <Route path="/enhanced-services" element={<EnhancedServicesShowcase />} />
+                    {/* Temporarily disabled due to typing issues */}
+                    {/* <Route path="/enhanced-services" element={<EnhancedServicesShowcase />} /> */}
                     <Route path="/innovative-services" element={<InnovativeServicesShowcase />} />
                     <Route path="/match" element={<AIMatcherPage />} />
                     <Route path="/talent" element={<TalentDirectory />} />
