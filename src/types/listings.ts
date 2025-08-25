@@ -1,6 +1,7 @@
 export interface ProductListing {
   id: string;
   name: string;
+  title: string;
   description: string;
   category: string;
   price: number;

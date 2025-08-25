@@ -5,6 +5,7 @@ export const ENHANCED_SERVICES_DATA: ProductListing[] = [
   // AI & Machine Learning Services
   {
     id: "ai-automation-suite",
+    name: "AI Business Process Automation Suite",
     title: "AI Business Process Automation Suite",
     description: "Complete AI-powered automation solution for business processes including document processing, customer service, and workflow optimization. Features intelligent decision-making, predictive analytics, and seamless integration with existing systems.",
     category: "AI & Automation",
@@ -27,6 +28,7 @@ export const ENHANCED_SERVICES_DATA: ProductListing[] = [
   },
   {
     id: "ai-content-intelligence",
+    name: "AI Content Intelligence & Optimization Platform",
     title: "AI Content Intelligence & Optimization Platform",
     description: "Advanced content analysis and optimization platform using AI to improve SEO, readability, engagement, and conversion rates. Includes sentiment analysis, topic modeling, and automated content recommendations.",
     category: "AI & Content",
@@ -48,6 +50,7 @@ export const ENHANCED_SERVICES_DATA: ProductListing[] = [
   },
   {
     id: "ai-cybersecurity-suite",
+    name: "AI-Powered Cybersecurity Threat Detection Suite",
     title: "AI-Powered Cybersecurity Threat Detection Suite",
     description: "Comprehensive cybersecurity solution using machine learning to detect, prevent, and respond to advanced threats in real-time. Features behavioral analysis, anomaly detection, and automated incident response.",
     category: "AI & Security",
@@ -72,6 +75,7 @@ export const ENHANCED_SERVICES_DATA: ProductListing[] = [
   // IT Infrastructure & Cloud Services
   {
     id: "cloud-migration-expert",
+    name: "Enterprise Cloud Migration & Optimization Expert",
     title: "Enterprise Cloud Migration & Optimization Expert",
     description: "End-to-end cloud migration services including strategy planning, infrastructure design, data migration, and performance optimization. Supports AWS, Azure, and Google Cloud with cost optimization strategies.",
     category: "Cloud & Infrastructure",
@@ -93,6 +97,7 @@ export const ENHANCED_SERVICES_DATA: ProductListing[] = [
   },
   {
     id: "devops-automation-platform",
+    name: "DevOps Automation & CI/CD Platform",
     title: "DevOps Automation & CI/CD Platform",
     description: "Comprehensive DevOps automation platform with continuous integration/deployment, infrastructure as code, monitoring, and automated testing. Includes Kubernetes orchestration and microservices management.",
     category: "DevOps & Automation",
@@ -114,6 +119,7 @@ export const ENHANCED_SERVICES_DATA: ProductListing[] = [
   },
   {
     id: "edge-computing-solution",
+    name: "Edge Computing & IoT Infrastructure Solution",
     title: "Edge Computing & IoT Infrastructure Solution",
     description: "Advanced edge computing platform for IoT applications with real-time data processing, low-latency communication, and distributed computing capabilities. Ideal for smart cities, industrial IoT, and autonomous systems.",
     category: "Edge Computing & IoT",
@@ -137,6 +143,7 @@ export const ENHANCED_SERVICES_DATA: ProductListing[] = [
   // Data & Analytics Services
   {
     id: "big-data-engineering-platform",
+    name: "Big Data Engineering & Analytics Platform",
     title: "Big Data Engineering & Analytics Platform",
     description: "Enterprise-grade big data platform with data ingestion, processing, storage, and analytics capabilities. Includes real-time streaming, batch processing, and advanced analytics with machine learning integration.",
     category: "Data & Analytics",
@@ -159,6 +166,7 @@ export const ENHANCED_SERVICES_DATA: ProductListing[] = [
   },
   {
     id: "business-intelligence-dashboard",
+    name: "AI-Powered Business Intelligence Dashboard",
     title: "AI-Powered Business Intelligence Dashboard",
     description: "Intelligent business intelligence platform with automated insights, predictive analytics, and interactive visualizations. Features natural language querying, automated reporting, and real-time data monitoring.",
     category: "Business Intelligence",
@@ -182,6 +190,7 @@ export const ENHANCED_SERVICES_DATA: ProductListing[] = [
   // Blockchain & Web3 Services
   {
     id: "blockchain-development-suite",
+    name: "Enterprise Blockchain Development Suite",
     title: "Enterprise Blockchain Development Suite",
     description: "Complete blockchain development platform with smart contract development, DApp creation, and enterprise blockchain integration. Supports multiple blockchain networks and includes security auditing tools.",
     category: "Blockchain & Web3",
@@ -203,6 +212,7 @@ export const ENHANCED_SERVICES_DATA: ProductListing[] = [
   },
   {
     id: "defi-protocol-development",
+    name: "DeFi Protocol Development & Security",
     title: "DeFi Protocol Development & Security",
     description: "Specialized DeFi protocol development with advanced security features, liquidity management, and yield optimization strategies. Includes comprehensive security auditing and risk management tools.",
     category: "DeFi & Finance",
@@ -227,6 +237,7 @@ export const ENHANCED_SERVICES_DATA: ProductListing[] = [
   // Quantum Computing Services
   {
     id: "quantum-algorithm-development",
+    name: "Quantum Algorithm Development & Optimization",
     title: "Quantum Algorithm Development & Optimization",
     description: "Advanced quantum computing services including algorithm development, quantum machine learning, and optimization for specific industry applications. Works with leading quantum hardware providers.",
     category: "Quantum Computing",
@@ -251,6 +262,7 @@ export const ENHANCED_SERVICES_DATA: ProductListing[] = [
   // AR/VR & Metaverse Services
   {
     id: "metaverse-development-platform",
+    name: "Metaverse Development & Virtual World Platform",
     title: "Metaverse Development & Virtual World Platform",
     description: "Complete metaverse development platform with 3D world creation, avatar customization, social interactions, and virtual commerce capabilities. Includes VR/AR integration and cross-platform compatibility.",
     category: "AR/VR & Metaverse",
@@ -274,6 +286,7 @@ export const ENHANCED_SERVICES_DATA: ProductListing[] = [
   // Cybersecurity & Compliance Services
   {
     id: "zero-trust-security-framework",
+    name: "Zero Trust Security Framework Implementation",
     title: "Zero Trust Security Framework Implementation",
     description: "Comprehensive zero trust security implementation with identity verification, device management, network segmentation, and continuous monitoring. Includes compliance frameworks and security training.",
     category: "Cybersecurity",
@@ -298,6 +311,7 @@ export const ENHANCED_SERVICES_DATA: ProductListing[] = [
   // API & Integration Services
   {
     id: "api-gateway-platform",
+    name: "Enterprise API Gateway & Management Platform",
     title: "Enterprise API Gateway & Management Platform",
     description: "Advanced API gateway with rate limiting, authentication, monitoring, and analytics. Includes API versioning, documentation generation, and developer portal management.",
     category: "API & Integration",
@@ -321,6 +335,7 @@ export const ENHANCED_SERVICES_DATA: ProductListing[] = [
   // Mobile & App Development
   {
     id: "cross-platform-app-framework",
+    name: "Cross-Platform Mobile App Development Framework",
     title: "Cross-Platform Mobile App Development Framework",
     description: "Advanced cross-platform development framework with native performance, offline capabilities, and seamless integration. Supports iOS, Android, and web platforms with unified codebase.",
     category: "Mobile Development",
@@ -344,6 +359,7 @@ export const ENHANCED_SERVICES_DATA: ProductListing[] = [
   // Digital Transformation Services
   {
     id: "digital-transformation-consulting",
+    name: "Enterprise Digital Transformation Consulting",
     title: "Enterprise Digital Transformation Consulting",
     description: "Comprehensive digital transformation services including strategy development, technology assessment, change management, and implementation support. Focuses on ROI and business value.",
     category: "Digital Transformation",
