@@ -16,7 +16,27 @@ import {
   ChevronDown,
   Search,
   Phone,
-  Mail
+  Mail,
+  Code,
+  Database,
+  Lock,
+  Cpu,
+  Network,
+  BarChart3,
+  Palette,
+  Smartphone,
+  Server,
+  Wifi,
+  Target,
+  Lightbulb,
+  TrendingUp,
+  Briefcase,
+  Home,
+  Info,
+  MessageCircle,
+  FileText,
+  Settings,
+  UserPlus
 } from 'lucide-react';
 
 export const Header: React.FC = () => {
@@ -35,21 +55,43 @@ export const Header: React.FC = () => {
   }, []);
 
   const navigation = [
-    { name: 'Home', href: '/', icon: Building },
+    { name: 'Home', href: '/', icon: Home },
     { 
       name: 'Services', 
       href: '/services',
-      icon: Brain,
+      icon: Rocket,
       dropdown: [
-        { name: 'AI Services', href: '/ai-services-showcase', icon: Brain, description: 'Machine Learning, NLP, Computer Vision' },
+        { name: 'AI & Machine Learning', href: '/ai-services-showcase', icon: Brain, description: 'Advanced AI solutions & automation' },
         { name: 'Cybersecurity', href: '/services', icon: Shield, description: 'Advanced threat protection & compliance' },
-        { name: 'Cloud Solutions', href: '/services', icon: Cloud, description: 'Quantum cloud infrastructure' },
-        { name: 'Digital Transformation', href: '/services', icon: Rocket, description: 'Business process automation' },
+        { name: 'Cloud Solutions', href: '/services', icon: Cloud, description: 'Quantum cloud infrastructure & migration' },
+        { name: 'Web Development', href: '/services', icon: Code, description: 'Modern web applications & e-commerce' },
+        { name: 'Mobile Development', href: '/services', icon: Smartphone, description: 'iOS & Android applications' },
+        { name: 'Data Analytics', href: '/analytics', icon: BarChart3, description: 'Business intelligence & insights' },
+        { name: 'DevOps & Automation', href: '/services', icon: Server, description: 'CI/CD & infrastructure automation' },
+        { name: 'IoT Solutions', href: '/services', icon: Wifi, description: 'Connected devices & smart systems' },
+        { name: 'Digital Marketing', href: '/services', icon: Target, description: 'SEO, PPC & social media' },
+        { name: 'IT Consulting', href: '/services', icon: Lightbulb, description: 'Strategic technology planning' },
+        { name: 'Software Testing', href: '/services', icon: Cpu, description: 'QA & quality assurance' },
+        { name: 'Blockchain', href: '/services', icon: Lock, description: 'DeFi & smart contracts' },
         { name: 'All Services', href: '/all-services', icon: Zap, description: 'Complete service portfolio' }
       ]
     },
-    { name: 'About', href: '/about', icon: Users },
-    { name: 'Contact', href: '/contact', icon: Phone }
+    { 
+      name: 'Solutions', 
+      href: '/enterprise-solutions',
+      icon: Briefcase,
+      dropdown: [
+        { name: 'Enterprise Solutions', href: '/enterprise-solutions', icon: Building, description: 'Large-scale business solutions' },
+        { name: 'Startup Solutions', href: '/services', icon: TrendingUp, description: 'Growth-focused technology services' },
+        { name: 'Government Solutions', href: '/services', icon: Shield, description: 'Public sector technology services' },
+        { name: 'Healthcare Solutions', href: '/services', icon: Users, description: 'Medical technology & compliance' },
+        { name: 'Financial Solutions', href: '/services', icon: BarChart3, description: 'Fintech & banking technology' },
+        { name: 'Education Solutions', href: '/services', icon: Lightbulb, description: 'EdTech & learning platforms' }
+      ]
+    },
+    { name: 'About', href: '/about', icon: Info },
+    { name: 'Blog', href: '/blog', icon: FileText },
+    { name: 'Contact', href: '/contact', icon: MessageCircle }
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -89,6 +131,13 @@ export const Header: React.FC = () => {
       initial="hidden"
       animate="visible"
     >
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-1 h-1 bg-zion-cyan rounded-full animate-pulse opacity-60"></div>
+        <div className="absolute top-2 right-1/3 w-0.5 h-0.5 bg-zion-purple rounded-full animate-pulse opacity-40"></div>
+        <div className="absolute top-4 left-1/2 w-0.5 h-0.5 bg-zion-cyan rounded-full animate-pulse opacity-50"></div>
+      </div>
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
@@ -104,6 +153,8 @@ export const Header: React.FC = () => {
                   <Building className="w-6 h-6 text-white" />
                 </div>
                 <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-zion-cyan to-zion-purple blur-lg opacity-50 group-hover:opacity-75 transition-all duration-300" />
+                {/* Glow effect */}
+                <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-zion-cyan to-zion-purple blur-xl opacity-20 group-hover:opacity-30 transition-all duration-300"></div>
               </div>
               <div className="hidden sm:block">
                 <div className="text-xl font-bold text-white group-hover:text-zion-cyan transition-colors duration-300">
@@ -146,7 +197,7 @@ export const Header: React.FC = () => {
                 {/* Dropdown Menu */}
                 {item.dropdown && activeDropdown === item.name && (
                   <motion.div
-                    className="absolute top-full left-0 mt-2 w-80 bg-glass-morphism-strong backdrop-blur-xl rounded-2xl border border-zion-cyan/20 shadow-neon-strong overflow-hidden"
+                    className="absolute top-full left-0 mt-2 w-96 bg-glass-morphism-strong backdrop-blur-xl rounded-2xl border border-zion-cyan/20 shadow-neon-strong overflow-hidden"
                     initial={{ opacity: 0, y: -10, scale: 0.95 }}
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -10, scale: 0.95 }}
@@ -154,11 +205,18 @@ export const Header: React.FC = () => {
                     onMouseEnter={() => setActiveDropdown(item.name)}
                     onMouseLeave={() => setActiveDropdown(null)}
                   >
-                    <div className="p-4">
-                      <div className="text-sm font-semibold text-zion-cyan mb-3 uppercase tracking-wider">
+                    {/* Dropdown Header */}
+                    <div className="p-4 bg-gradient-to-r from-zion-cyan/10 to-zion-purple/10 border-b border-zion-cyan/20">
+                      <div className="text-sm font-semibold text-zion-cyan mb-1 uppercase tracking-wider">
                         {item.name}
                       </div>
-                      <div className="space-y-2">
+                      <div className="text-xs text-zion-slate-light">
+                        Explore our comprehensive {item.name.toLowerCase()} portfolio
+                      </div>
+                    </div>
+                    
+                    <div className="p-4">
+                      <div className="grid grid-cols-1 gap-2">
                         {item.dropdown.map((dropdownItem) => (
                           <Link
                             key={dropdownItem.name}
@@ -223,12 +281,14 @@ export const Header: React.FC = () => {
                 size="sm"
                 className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-white transition-all duration-300"
               >
+                <UserPlus className="w-4 h-4 mr-2" />
                 Login
               </Button>
               <Button
                 size="sm"
-                className="bg-gradient-to-r from-zion-cyan to-zion-purple hover:from-zion-purple hover:to-zion-cyan text-white transition-all duration-300"
+                className="bg-gradient-to-r from-zion-cyan to-zion-purple hover:from-zion-purple hover:to-zion-cyan text-white transition-all duration-300 shadow-lg hover:shadow-zion-cyan/25"
               >
+                <Rocket className="w-4 h-4 mr-2" />
                 Get Started
               </Button>
             </motion.div>
@@ -263,8 +323,9 @@ export const Header: React.FC = () => {
                   <div key={item.name}>
                     {item.dropdown ? (
                       <div className="space-y-2">
-                        <div className="text-lg font-semibold text-zion-cyan mb-2">
-                          {item.name}
+                        <div className="text-lg font-semibold text-zion-cyan mb-2 flex items-center space-x-2">
+                          <item.icon className="w-5 h-5" />
+                          <span>{item.name}</span>
                         </div>
                         <div className="pl-4 space-y-2">
                           {item.dropdown?.map((dropdownItem) => (
@@ -322,11 +383,13 @@ export const Header: React.FC = () => {
                     variant="outline"
                     className="w-full border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-white transition-all duration-300"
                   >
+                    <UserPlus className="w-4 h-4 mr-2" />
                     Login
                   </Button>
                   <Button
                     className="w-full bg-gradient-to-r from-zion-cyan to-zion-purple hover:from-zion-purple hover:to-zion-cyan text-white transition-all duration-300"
                   >
+                    <Rocket className="w-4 h-4 mr-2" />
                     Get Started
                   </Button>
                 </div>

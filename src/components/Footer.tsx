@@ -17,7 +17,42 @@ import {
   Twitter,
   Github,
   ArrowRight,
-  CheckCircle
+  CheckCircle,
+  Code,
+  Database,
+  Lock,
+  Cpu,
+  Network,
+  BarChart3,
+  Palette,
+  Smartphone,
+  Server,
+  Wifi,
+  Target,
+  Lightbulb,
+  TrendingUp,
+  Briefcase,
+  FileText,
+  MessageCircle,
+  Settings,
+  UserPlus,
+  Star,
+  Award,
+  Clock,
+  ShieldCheck,
+  Zap as Lightning,
+  Globe as World,
+  Heart,
+  Eye,
+  Users as Team,
+  BookOpen,
+  Video,
+  Headphones,
+  HelpCircle,
+  MessageSquare,
+  Calendar,
+  Mail as Email,
+  Phone as PhoneIcon
 } from 'lucide-react';
 
 export const Footer: React.FC = () => {
@@ -25,51 +60,66 @@ export const Footer: React.FC = () => {
 
   const footerSections = [
     {
-      title: 'Services',
+      title: 'Core Services',
       links: [
-        { name: 'AI Services', href: '/ai-services-showcase', icon: Brain },
-        { name: 'Cybersecurity', href: '/services', icon: Shield },
-        { name: 'Cloud Solutions', href: '/services', icon: Cloud },
-        { name: 'Digital Transformation', href: '/services', icon: Rocket },
-        { name: 'All Services', href: '/all-services', icon: Zap }
+        { name: 'AI & Machine Learning', href: '/ai-services-showcase', icon: Brain, description: 'Advanced AI solutions' },
+        { name: 'Cybersecurity', href: '/services', icon: Shield, description: 'Threat protection & compliance' },
+        { name: 'Cloud Solutions', href: '/services', icon: Cloud, description: 'Quantum cloud infrastructure' },
+        { name: 'Web Development', href: '/services', icon: Code, description: 'Modern web applications' },
+        { name: 'Mobile Development', href: '/services', icon: Smartphone, description: 'iOS & Android apps' },
+        { name: 'Data Analytics', href: '/analytics', icon: BarChart3, description: 'Business intelligence' }
       ]
     },
     {
-      title: 'Company',
+      title: 'Specialized Services',
       links: [
-        { name: 'About Us', href: '/about', icon: Users },
-        { name: 'Our Team', href: '/about', icon: Users },
-        { name: 'Careers', href: '/careers', icon: Users },
-        { name: 'Partners', href: '/partners', icon: Users },
-        { name: 'Contact', href: '/contact', icon: Phone }
-      ]
-    },
-    {
-      title: 'Resources',
-      links: [
-        { name: 'Blog', href: '/blog', icon: Brain },
-        { name: 'Documentation', href: '/docs', icon: Brain },
-        { name: 'Case Studies', href: '/case-studies', icon: Brain },
-        { name: 'Webinars', href: '/webinars', icon: Brain },
-        { name: 'Support', href: '/support', icon: Phone }
+        { name: 'DevOps & Automation', href: '/services', icon: Server, description: 'CI/CD & infrastructure' },
+        { name: 'IoT Solutions', href: '/services', icon: Wifi, description: 'Connected devices' },
+        { name: 'Digital Marketing', href: '/services', icon: Target, description: 'SEO, PPC & social media' },
+        { name: 'IT Consulting', href: '/services', icon: Lightbulb, description: 'Strategic planning' },
+        { name: 'Software Testing', href: '/services', icon: Cpu, description: 'QA & quality assurance' },
+        { name: 'Blockchain', href: '/services', icon: Lock, description: 'DeFi & smart contracts' }
       ]
     },
     {
       title: 'Solutions',
       links: [
-        { name: 'Enterprise', href: '/enterprise-solutions', icon: Building },
-        { name: 'Startups', href: '/startup-solutions', icon: Rocket },
-        { name: 'Healthcare', href: '/healthcare-solutions', icon: Shield },
-        { name: 'Finance', href: '/finance-solutions', icon: Shield },
-        { name: 'Education', href: '/education-solutions', icon: Brain }
+        { name: 'Enterprise Solutions', href: '/enterprise-solutions', icon: Building, description: 'Large-scale business' },
+        { name: 'Startup Solutions', href: '/services', icon: TrendingUp, description: 'Growth-focused services' },
+        { name: 'Government Solutions', href: '/services', icon: Shield, description: 'Public sector technology' },
+        { name: 'Healthcare Solutions', href: '/services', icon: Heart, description: 'Medical technology' },
+        { name: 'Financial Solutions', href: '/services', icon: BarChart3, description: 'Fintech & banking' },
+        { name: 'Education Solutions', href: '/services', icon: BookOpen, description: 'EdTech platforms' }
+      ]
+    },
+    {
+      title: 'Company',
+      links: [
+        { name: 'About Us', href: '/about', icon: Users, description: 'Our story & mission' },
+        { name: 'Our Team', href: '/about', icon: Team, description: 'Meet our experts' },
+        { name: 'Careers', href: '/careers', icon: Briefcase, description: 'Join our team' },
+        { name: 'Partners', href: '/partners', icon: Users, description: 'Strategic partnerships' },
+        { name: 'Contact', href: '/contact', icon: MessageCircle, description: 'Get in touch' },
+        { name: 'Blog', href: '/blog', icon: FileText, description: 'Latest insights' }
+      ]
+    },
+    {
+      title: 'Resources',
+      links: [
+        { name: 'Documentation', href: '/docs', icon: BookOpen, description: 'Technical guides' },
+        { name: 'Case Studies', href: '/case-studies', icon: Eye, description: 'Success stories' },
+        { name: 'Webinars', href: '/webinars', icon: Video, description: 'Live sessions' },
+        { name: 'Support Center', href: '/support', icon: HelpCircle, description: 'Help & assistance' },
+        { name: 'Community', href: '/community', icon: Users, description: 'Developer community' },
+        { name: 'Newsletter', href: '/newsletter', icon: Mail, description: 'Stay updated' }
       ]
     }
   ];
 
   const socialLinks = [
-    { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Linkedin },
-    { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter },
-    { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: Github }
+    { name: 'LinkedIn', href: 'https://linkedin.com/company/ziontechgroup', icon: Linkedin, color: 'hover:text-blue-400' },
+    { name: 'Twitter', href: 'https://twitter.com/ziontechgroup', icon: Twitter, color: 'hover:text-blue-400' },
+    { name: 'GitHub', href: 'https://github.com/ziontechgroup', icon: Github, color: 'hover:text-gray-300' }
   ];
 
   const containerVariants = {
@@ -98,16 +148,25 @@ export const Footer: React.FC = () => {
     <footer className="relative bg-gradient-to-br from-zion-slate-dark via-zion-slate to-zion-blue-dark overflow-hidden">
       {/* Quantum Background Effects */}
       <div className="absolute inset-0">
-        <div className="absolute top-0 left-0 w-full h-full cyber-grid opacity-5" />
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-gradient-to-r from-zion-cyan/5 to-zion-purple/5 blur-3xl" />
-        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 rounded-full bg-gradient-to-r from-zion-purple/5 to-zion-blue/5 blur-3xl" />
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-zion-cyan/5 via-transparent to-zion-purple/5"></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-zion-cyan/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-zion-purple/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-zion-cyan/5 rounded-full blur-2xl animate-pulse delay-500"></div>
+      </div>
+
+      {/* Animated Grid Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(34, 211, 238, 0.3) 1px, transparent 0)`,
+          backgroundSize: '20px 20px'
+        }}></div>
       </div>
 
       <div className="relative z-10">
         {/* Main Footer Content */}
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -116,24 +175,22 @@ export const Footer: React.FC = () => {
             {/* Company Info */}
             <motion.div className="lg:col-span-2" variants={itemVariants}>
               <div className="flex items-center space-x-3 mb-6">
-                <div className="relative">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-zion-cyan to-zion-purple flex items-center justify-center">
-                    <Building className="w-7 h-7 text-white" />
-                  </div>
-                  <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-zion-cyan to-zion-purple blur-lg opacity-50" />
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-zion-cyan to-zion-purple flex items-center justify-center">
+                  <Building className="w-7 h-7 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-white">Zion Tech Group</h3>
-                  <p className="text-zion-cyan font-semibold">Quantum Innovation</p>
+                  <div className="text-2xl font-bold text-white">Zion Tech Group</div>
+                  <div className="text-zion-cyan text-sm">Quantum Innovation</div>
                 </div>
               </div>
               
               <p className="text-zion-slate-light mb-6 leading-relaxed">
-                Pioneering the future with cutting-edge AI solutions, quantum computing, and innovative digital transformation services that empower businesses to thrive in the digital age.
+                Transforming businesses through cutting-edge technology solutions. 
+                We specialize in AI, cybersecurity, cloud computing, and digital transformation.
               </p>
 
-              {/* Contact Information */}
-              <div className="space-y-3 mb-6">
+              {/* Contact Info */}
+              <div className="space-y-3">
                 <div className="flex items-center space-x-3 text-zion-slate-light hover:text-zion-cyan transition-colors duration-300">
                   <Phone className="w-4 h-4" />
                   <span>+1 302 464 0950</span>
@@ -149,14 +206,14 @@ export const Footer: React.FC = () => {
               </div>
 
               {/* Social Links */}
-              <div className="flex space-x-4">
+              <div className="flex space-x-4 mt-6">
                 {socialLinks.map((social) => (
                   <motion.a
                     key={social.name}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-10 h-10 rounded-xl bg-glass-morphism hover:bg-glass-morphism-strong text-zion-slate-light hover:text-zion-cyan transition-all duration-300 flex items-center justify-center"
+                    className={`p-2 rounded-lg bg-glass-morphism hover:bg-glass-morphism-strong text-zion-slate-light ${social.color} transition-all duration-300`}
                     whileHover={{ scale: 1.1, y: -2 }}
                     whileTap={{ scale: 0.95 }}
                   >
@@ -167,20 +224,29 @@ export const Footer: React.FC = () => {
             </motion.div>
 
             {/* Footer Sections */}
-            {footerSections.map((section) => (
+            {footerSections.map((section, index) => (
               <motion.div key={section.title} variants={itemVariants}>
-                <h4 className="text-lg font-semibold text-white mb-4">{section.title}</h4>
+                                  <h3 className="text-lg font-semibold text-white mb-4">
+                    <span>{section.title}</span>
+                  </h3>
                 <ul className="space-y-3">
                   {section.links.map((link) => (
                     <li key={link.name}>
                       <Link
                         to={link.href}
-                        className="flex items-center space-x-2 text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 group"
+                        className="group flex items-start space-x-3 text-zion-slate-light hover:text-zion-cyan transition-colors duration-300"
                       >
-                        <link.icon className="w-4 h-4 group-hover:scale-110 transition-transform duration-300" />
-                        <span className="group-hover:translate-x-1 transition-transform duration-300">
-                          {link.name}
-                        </span>
+                        <div className="w-5 h-5 rounded-md bg-zion-cyan/10 flex items-center justify-center group-hover:bg-zion-cyan/20 transition-all duration-300 mt-0.5">
+                          <link.icon className="w-3 h-3 text-zion-cyan" />
+                        </div>
+                        <div>
+                          <div className="font-medium group-hover:text-zion-cyan transition-colors duration-300">
+                            {link.name}
+                          </div>
+                          <div className="text-xs text-zion-slate-light/70 group-hover:text-zion-slate-light/90 transition-colors duration-300">
+                            {link.description}
+                          </div>
+                        </div>
                       </Link>
                     </li>
                   ))}
@@ -191,57 +257,26 @@ export const Footer: React.FC = () => {
 
           {/* Newsletter Section */}
           <motion.div
-            className="mt-16 p-8 glass-morphism rounded-2xl border border-zion-cyan/20"
+            className="mt-16 p-8 rounded-2xl bg-glass-morphism-strong backdrop-blur-xl border border-zion-cyan/20"
             variants={itemVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
             <div className="text-center max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold text-white mb-3">
-                Stay Ahead with Quantum Insights
-              </h3>
+              <h3 className="text-2xl font-bold text-white mb-2">Stay Updated</h3>
               <p className="text-zion-slate-light mb-6">
-                Get the latest updates on AI breakthroughs, quantum computing advances, and digital transformation strategies delivered to your inbox.
+                Get the latest insights on technology trends, AI developments, and industry news.
               </p>
-              
               <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="flex-1 px-4 py-3 rounded-xl bg-glass-morphism border border-zion-cyan/20 text-white placeholder-zion-slate-light focus:outline-none focus:border-zion-cyan/40 focus:ring-2 focus:ring-zion-cyan/20 transition-all duration-300"
+                  className="flex-1 px-4 py-3 rounded-xl bg-white/10 border border-zion-cyan/20 text-white placeholder-zion-slate-light focus:outline-none focus:border-zion-cyan focus:ring-2 focus:ring-zion-cyan/20 transition-all duration-300"
                 />
-                <button className="px-6 py-3 bg-gradient-to-r from-zion-cyan to-zion-purple hover:from-zion-purple hover:to-zion-cyan text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-neon">
+                <button className="px-6 py-3 bg-gradient-to-r from-zion-cyan to-zion-purple hover:from-zion-purple hover:to-zion-cyan text-white rounded-xl font-medium transition-all duration-300 hover:shadow-lg hover:shadow-zion-cyan/25">
                   Subscribe
                 </button>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Trust Indicators */}
-          <motion.div
-            className="mt-16 text-center"
-            variants={itemVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <div className="flex flex-wrap justify-center items-center gap-8 text-zion-slate-light">
-              <div className="flex items-center space-x-2">
-                <CheckCircle className="w-5 h-5 text-zion-green" />
-                <span>Enterprise Grade Security</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircle className="w-5 h-5 text-zion-green" />
-                <span>24/7 Support</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircle className="w-5 h-5 text-zion-green" />
-                <span>99.9% Uptime</span>
-              </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircle className="w-5 h-5 text-zion-green" />
-                <span>ISO 27001 Certified</span>
               </div>
             </div>
           </motion.div>
@@ -250,62 +285,33 @@ export const Footer: React.FC = () => {
         {/* Bottom Bar */}
         <div className="border-t border-zion-cyan/20">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <div className="text-zion-slate-light text-sm">
-                © {currentYear} Zion Tech Group. All rights reserved.
+            <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+              <div className="flex items-center space-x-6 text-sm text-zion-slate-light">
+                <span>&copy; {currentYear} Zion Tech Group. All rights reserved.</span>
+                <div className="flex items-center space-x-4">
+                  <Link to="/privacy" className="hover:text-zion-cyan transition-colors duration-300">Privacy Policy</Link>
+                  <Link to="/terms" className="hover:text-zion-cyan transition-colors duration-300">Terms of Service</Link>
+                  <Link to="/sitemap" className="hover:text-zion-cyan transition-colors duration-300">Sitemap</Link>
+                </div>
               </div>
               
-              <div className="flex flex-wrap justify-center items-center space-x-6 text-sm text-zion-slate-light">
-                <Link to="/privacy" className="hover:text-zion-cyan transition-colors duration-300">
-                  Privacy Policy
-                </Link>
-                <Link to="/terms" className="hover:text-zion-cyan transition-colors duration-300">
-                  Terms of Service
-                </Link>
-                <Link to="/cookies" className="hover:text-zion-cyan transition-colors duration-300">
-                  Cookie Policy
-                </Link>
-                <Link to="/sitemap" className="hover:text-zion-cyan transition-colors duration-300">
-                  Sitemap
-                </Link>
+              <div className="flex items-center space-x-4 text-zion-slate-light">
+                <div className="flex items-center space-x-2">
+                  <ShieldCheck className="w-4 h-4 text-zion-cyan" />
+                  <span className="text-xs">SSL Secured</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Award className="w-4 h-4 text-zion-cyan" />
+                  <span className="text-xs">ISO Certified</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Star className="w-4 h-4 text-zion-cyan" />
+                  <span className="text-xs">5-Star Rated</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Quantum Energy Waves */}
-      <div className="absolute bottom-0 left-0 w-full h-16 overflow-hidden">
-        <svg
-          className="w-full h-full"
-          viewBox="0 0 1200 64"
-          preserveAspectRatio="none"
-        >
-          <defs>
-            <linearGradient id="footerWaveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="rgba(34, 221, 210, 0.3)" />
-              <stop offset="50%" stopColor="rgba(139, 92, 246, 0.3)" />
-              <stop offset="100%" stopColor="rgba(59, 130, 246, 0.3)" />
-            </linearGradient>
-          </defs>
-          
-          <motion.path
-            d="M0,32 Q300,16 600,32 T1200,32 L1200,64 L0,64 Z"
-            fill="url(#footerWaveGradient)"
-            animate={{
-              d: [
-                "M0,32 Q300,16 600,32 T1200,32 L1200,64 L0,64 Z",
-                "M0,32 Q300,48 600,32 T1200,32 L1200,64 L0,64 Z",
-                "M0,32 Q300,16 600,32 T1200,32 L1200,64 L0,64 Z"
-              ]
-            }}
-            transition={{
-              duration: 10,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          />
-        </svg>
       </div>
     </footer>
   );

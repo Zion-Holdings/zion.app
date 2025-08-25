@@ -80,6 +80,104 @@ export const MICRO_SAAS_SERVICES: MicroSaasService[] = [
     }
   },
   {
+    id: "ai-code-assistant",
+    title: "AI Code Assistant Pro",
+    description: "Intelligent code completion, debugging, and optimization tool that learns from your coding patterns and provides real-time suggestions.",
+    category: "AI Services",
+    price: {
+      monthly: 39,
+      yearly: 390,
+      currency: "$"
+    },
+    features: [
+      "AI-powered code completion",
+      "Real-time error detection",
+      "Code optimization suggestions",
+      "Multi-language support (Python, JavaScript, Java, C++)",
+      "GitHub integration",
+      "Code review automation",
+      "Performance analysis",
+      "Security vulnerability scanning"
+    ],
+    benefits: [
+      "50% faster coding",
+      "Reduced debugging time",
+      "Improved code quality",
+      "Security best practices enforcement",
+      "Team collaboration enhancement"
+    ],
+    useCases: [
+      "Software development teams",
+      "Individual developers",
+      "Startups",
+      "Enterprise development",
+      "Open source projects"
+    ],
+    targetAudience: ["Software developers", "DevOps engineers", "Tech leads", "Development teams"],
+    integration: ["VS Code", "IntelliJ", "GitHub", "GitLab", "Bitbucket"],
+    support: ["24/7 technical support", "Documentation", "Video tutorials", "Community forum"],
+    link: "https://ziontechgroup.com/ai-code-assistant",
+    badge: "New",
+    rating: 4.8,
+    reviewCount: 892,
+    aiScore: 94,
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Dev Labs",
+      id: "zion-dev-labs",
+      avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+  {
+    id: "ai-data-analytics",
+    title: "AI Data Analytics Platform",
+    description: "Comprehensive data analysis platform with AI-powered insights, predictive analytics, and automated reporting for business intelligence.",
+    category: "AI Services",
+    price: {
+      monthly: 89,
+      yearly: 890,
+      currency: "$"
+    },
+    features: [
+      "AI-powered data insights",
+      "Predictive analytics",
+      "Automated reporting",
+      "Real-time dashboards",
+      "Data visualization tools",
+      "Machine learning models",
+      "Data integration connectors",
+      "Custom alerting system"
+    ],
+    benefits: [
+      "Data-driven decision making",
+      "Predictive business insights",
+      "Automated reporting saves 20+ hours/week",
+      "Real-time business monitoring",
+      "Competitive advantage through AI insights"
+    ],
+    useCases: [
+      "Business intelligence",
+      "Financial analysis",
+      "Marketing analytics",
+      "Operations optimization",
+      "Risk assessment"
+    ],
+    targetAudience: ["Data analysts", "Business analysts", "Executives", "Marketing teams"],
+    integration: ["Salesforce", "Google Analytics", "HubSpot", "Excel", "Database systems"],
+    support: ["Dedicated account manager", "Training sessions", "24/7 support", "Custom onboarding"],
+    link: "https://ziontechgroup.com/ai-data-analytics",
+    badge: "Featured",
+    rating: 4.7,
+    reviewCount: 567,
+    aiScore: 92,
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Analytics",
+      id: "zion-analytics",
+      avatarUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+  {
     id: "ai-chatbot-builder",
     title: "AI Chatbot Builder Suite",
     description: "No-code AI chatbot creation platform with advanced NLP, multi-channel deployment, and analytics dashboard for customer support automation.",
@@ -730,6 +828,153 @@ export const MICRO_SAAS_SERVICES: MicroSaasService[] = [
       name: "Zion Automation Solutions",
       id: "zion-automation-solutions",
       avatarUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+  {
+    id: "web-development-platform",
+    title: "Web Development Platform",
+    description: "Full-stack web development platform with drag-and-drop builder, custom code editor, and deployment automation for modern web applications.",
+    category: "Development",
+    price: {
+      monthly: 79,
+      yearly: 790,
+      currency: "$"
+    },
+    features: [
+      "Drag-and-drop website builder",
+      "Custom code editor",
+      "Responsive design templates",
+      "SEO optimization tools",
+      "Performance monitoring",
+      "CDN integration",
+      "SSL certificate management",
+      "Git-based version control"
+    ],
+    benefits: [
+      "Faster website development",
+      "Professional design quality",
+      "Mobile-first responsive design",
+      "SEO-optimized structure",
+      "Scalable hosting solution"
+    ],
+    useCases: [
+      "Business websites",
+      "E-commerce stores",
+      "Portfolio sites",
+      "Landing pages",
+      "Web applications"
+    ],
+    targetAudience: ["Web developers", "Designers", "Business owners", "Marketing teams"],
+    integration: ["Custom domains", "Analytics", "Payment gateways", "Email marketing", "Social media"],
+    support: ["Web development experts", "24/7 support", "Design consultation", "SEO guidance"],
+    link: "https://ziontechgroup.com/web-development",
+    badge: "Popular",
+    rating: 4.8,
+    reviewCount: 1234,
+    aiScore: 93,
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Web Solutions",
+      id: "zion-web-solutions",
+      avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+  {
+    id: "mobile-app-development",
+    title: "Mobile App Development Suite",
+    description: "Cross-platform mobile app development platform with native performance, cloud backend, and automated testing for iOS and Android applications.",
+    category: "Development",
+    price: {
+      monthly: 149,
+      yearly: 1490,
+      currency: "$"
+    },
+    features: [
+      "Cross-platform development",
+      "Native performance optimization",
+      "Cloud backend services",
+      "Automated testing suite",
+      "App store deployment",
+      "Push notification system",
+      "Analytics dashboard",
+      "User feedback management"
+    ],
+    benefits: [
+      "Single codebase for multiple platforms",
+      "Native app performance",
+      "Faster time to market",
+      "Reduced development costs",
+      "Scalable cloud backend"
+    ],
+    useCases: [
+      "Business applications",
+      "E-commerce apps",
+      "Social media apps",
+      "Utility applications",
+      "Gaming apps"
+    ],
+    targetAudience: ["Mobile developers", "Startups", "Businesses", "App entrepreneurs"],
+    integration: ["App stores", "Payment gateways", "Social media", "Analytics", "Push services"],
+    support: ["Mobile development experts", "App store guidance", "Performance optimization", "24/7 support"],
+    link: "https://ziontechgroup.com/mobile-development",
+    badge: "Featured",
+    rating: 4.7,
+    reviewCount: 890,
+    aiScore: 91,
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Mobile Labs",
+      id: "zion-mobile-labs",
+      avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+  {
+    id: "blockchain-development",
+    title: "Blockchain Development Platform",
+    description: "Comprehensive blockchain development platform for creating smart contracts, DeFi applications, and NFT marketplaces with enterprise-grade security.",
+    category: "Development",
+    price: {
+      monthly: 199,
+      yearly: 1990,
+      currency: "$"
+    },
+    features: [
+      "Smart contract development",
+      "DeFi application builder",
+      "NFT marketplace creation",
+      "Multi-blockchain support",
+      "Security auditing tools",
+      "Gas optimization",
+      "Wallet integration",
+      "Analytics dashboard"
+    ],
+    benefits: [
+      "Faster blockchain development",
+      "Enhanced security features",
+      "Multi-chain compatibility",
+      "Cost-effective deployment",
+      "Scalable blockchain solutions"
+    ],
+    useCases: [
+      "DeFi applications",
+      "NFT marketplaces",
+      "Smart contracts",
+      "Token creation",
+      "Blockchain games"
+    ],
+    targetAudience: ["Blockchain developers", "DeFi projects", "NFT creators", "Crypto startups"],
+    integration: ["Ethereum", "Polygon", "Binance Smart Chain", "Wallets", "DEX protocols"],
+    support: ["Blockchain experts", "Security auditing", "Smart contract review", "24/7 support"],
+    link: "https://ziontechgroup.com/blockchain-development",
+    badge: "New",
+    rating: 4.6,
+    reviewCount: 345,
+    aiScore: 89,
+    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Blockchain Labs",
+      id: "zion-blockchain-labs",
+      avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100"
     }
   }
 ];
