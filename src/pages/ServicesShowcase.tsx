@@ -269,7 +269,7 @@ export default function ServicesShowcase() {
               <label className="block text-sm font-medium text-gray-300 mb-2">Category</label>
               <Select value={selectedCategory} onValueChange={setSelectedCategory}>
                 <SelectTrigger className="bg-white/10 border-white/20 text-white">
-                  <SelectValue />
+                  <SelectValue>{selectedCategory}</SelectValue>
                 </SelectTrigger>
                 <SelectContent className="bg-gray-800 border-gray-700">
                   {categories.map(category => (
@@ -284,7 +284,7 @@ export default function ServicesShowcase() {
               <label className="block text-sm font-medium text-gray-300 mb-2">Sort By</label>
               <Select value={sortBy} onValueChange={setSortBy}>
                 <SelectTrigger className="bg-white/10 border-white/20 text-white">
-                  <SelectValue />
+                  <SelectValue>{sortBy}</SelectValue>
                 </SelectTrigger>
                 <SelectContent className="bg-gray-800 border-gray-700">
                   <SelectItem value="rating" className="text-white hover:bg-gray-700">Highest Rated</SelectItem>

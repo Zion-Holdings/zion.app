@@ -15,22 +15,8 @@ import { MachineLearningDashboard } from './components/MachineLearningDashboard'
 import { ThemeProvider } from "./components/ThemeProvider";
 import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
-import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
 import { ErrorBoundary } from './components/ErrorBoundary';
-import {
-  AuthRoutes,
-  DashboardRoutes,
-  MarketplaceRoutes,
-  TalentRoutes,
-  AdminRoutes,
-  MobileAppRoutes,
-  ContentRoutes,
-  ErrorRoutes,
-  EnterpriseRoutes,
-  CommunityRoutes,
-  DeveloperRoutes
-} from './routes';
 
 // Enhanced lazy loading with preloading hints
 const Home = lazy(() => import('./pages/Home'));
@@ -107,25 +93,11 @@ const App = () => {
                     <Route path="/services/it-infrastructure" element={<ITInfrastructure />} />
                     <Route path="/services/micro-saas-solutions" element={<MicroSAASSolutions />} />
                     <Route path="/services/industry-solutions" element={<IndustrySolutions />} />
-                    
-                    {/* Include all route groups */}
-                    <AuthRoutes />
-                    <DashboardRoutes />
-                    <MarketplaceRoutes />
-                    <TalentRoutes />
-                    <AdminRoutes />
-                    <MobileAppRoutes />
-                    <ContentRoutes />
-                    <ErrorRoutes />
-                    <EnterpriseRoutes />
-                    <CommunityRoutes />
-                    <DeveloperRoutes />
                   </Routes>
                 </Suspense>
               </main>
               
               <Footer />
-              <Toaster />
               <SonnerToaster />
               
               {/* Enhanced Accessibility Controls */}
