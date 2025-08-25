@@ -17,10 +17,12 @@ export function Header() {
 
   const navigationItems = [
     { path: '/', label: 'Home', icon: '🏠' },
-    { path: '/services', label: 'Services', icon: '⚡' },
-    { path: '/comprehensive-services', label: 'All Services', icon: '🚀' },
-    { path: '/services-comparison', label: 'Compare', icon: '📊' },
-    { path: '/it-onsite-services', label: 'Onsite IT', icon: '🔧' }
+    { path: '/services', label: 'AI Services', icon: '🤖' },
+    { path: '/emerging-tech', label: 'Emerging Tech', icon: '🚀' },
+    { path: '/comprehensive-services', label: 'All Services', icon: '⚡' },
+    { path: '/pricing', label: 'Pricing', icon: '💰' },
+    { path: '/about', label: 'About', icon: 'ℹ️' },
+    { path: '/contact', label: 'Contact', icon: '📞' }
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -34,12 +36,12 @@ export function Header() {
       {/* Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 animate-pulse"></div>
       
-      {/* Matrix Rain Effect */}
+      {/* Enhanced Matrix Rain Effect */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(15)].map((_, i) => (
+        {[...Array(25)].map((_, i) => (
           <div
             key={i}
-            className="absolute text-cyan-400 text-xs animate-matrix-rain opacity-30"
+            className="absolute text-cyan-400 text-xs animate-matrix-rain opacity-40"
             style={{
               left: `${Math.random() * 100}%`,
               animationDelay: `${Math.random() * 20}s`,
@@ -49,6 +51,26 @@ export function Header() {
             {Math.random() > 0.5 ? '1' : '0'}
           </div>
         ))}
+        
+        {/* Floating Particles */}
+        {[...Array(20)].map((_, i) => (
+          <div
+            key={`particle-${i}`}
+            className="absolute w-1 h-1 bg-cyan-400/60 rounded-full animate-float"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${3 + Math.random() * 4}s`
+            }}
+          />
+        ))}
+        
+        {/* Energy Waves */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-blue-500/5 to-purple-500/5 animate-pulse"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/3 via-blue-500/3 to-purple-500/3 animate-pulse" style={{ animationDelay: '1s' }}></div>
+        </div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -86,15 +108,23 @@ export function Header() {
                   <span>{item.label}</span>
                 </span>
                 
-                {/* Hover Effect */}
+                {/* Enhanced Hover Effect */}
                 <div className={`absolute inset-0 rounded-lg bg-gradient-to-r from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+                  isActive(item.path) ? 'opacity-100' : ''
+                }`}></div>
+                
+                {/* Glow Effect */}
+                <div className={`absolute inset-0 rounded-lg bg-gradient-to-r from-cyan-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm ${
                   isActive(item.path) ? 'opacity-100' : ''
                 }`}></div>
                 
                 {/* Active Indicator */}
                 {isActive(item.path) && (
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-cyan-400 rounded-full animate-pulse"></div>
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2 h-1 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full animate-pulse shadow-lg shadow-cyan-400/50"></div>
                 )}
+                
+                {/* Hover Border Animation */}
+                <div className="absolute inset-0 rounded-lg border border-transparent group-hover:border-cyan-400/50 transition-all duration-300"></div>
               </Link>
             ))}
           </nav>

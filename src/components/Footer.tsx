@@ -12,46 +12,47 @@ export function Footer() {
 
   const footerSections = [
     {
-      title: "Services",
+      title: "AI & Micro SAAS",
       links: [
-        { label: "AI Services", path: "/comprehensive-services?category=AI Services" },
-        { label: "Micro SAAS", path: "/comprehensive-services?category=Micro SAAS" },
-        { label: "IT Services", path: "/comprehensive-services?category=IT Services" },
-        { label: "Blockchain & Web3", path: "/comprehensive-services?category=Blockchain & Web3" },
-        { label: "IoT & Edge Computing", path: "/comprehensive-services?category=IoT & Edge Computing" },
-        { label: "Cybersecurity", path: "/comprehensive-services?category=Cybersecurity Services" },
-        { label: "Data Science", path: "/comprehensive-services?category=Data Science & Analytics" }
+        { label: "AI Business Intelligence", path: "/services" },
+        { label: "AI Customer Service", path: "/services" },
+        { label: "AI Sales Intelligence", path: "/services" },
+        { label: "AI Content Creation", path: "/services" },
+        { label: "AI Financial Analysis", path: "/services" },
+        { label: "AI Healthcare Analytics", path: "/services" },
+        { label: "AI Supply Chain", path: "/services" }
+      ]
+    },
+    {
+      title: "Emerging Tech",
+      links: [
+        { label: "Quantum Computing", path: "/emerging-tech" },
+        { label: "Blockchain & DeFi", path: "/emerging-tech" },
+        { label: "IoT & Edge Computing", path: "/emerging-tech" },
+        { label: "Extended Reality (XR)", path: "/emerging-tech" },
+        { label: "5G & Networks", path: "/emerging-tech" },
+        { label: "Green Technology", path: "/emerging-tech" },
+        { label: "Digital Twins", path: "/emerging-tech" }
       ]
     },
     {
       title: "Company",
       links: [
-        { label: "About Us", path: "/" },
-        { label: "Services Overview", path: "/services" },
-        { label: "Service Comparison", path: "/services-comparison" },
-        { label: "Onsite IT Services", path: "/it-onsite-services" },
-        { label: "Contact", path: "/" }
+        { label: "About Us", path: "/about" },
+        { label: "All Services", path: "/comprehensive-services" },
+        { label: "Pricing", path: "/pricing" },
+        { label: "Contact", path: "/contact" },
+        { label: "Careers", path: "/careers" }
       ]
     },
     {
       title: "Resources",
       links: [
-        { label: "Technology Blog", path: "/" },
-        { label: "Case Studies", path: "/" },
-        { label: "White Papers", path: "/" },
-        { label: "API Documentation", path: "/" },
-        { label: "Support Center", path: "/" }
-      ]
-    },
-    {
-      title: "Industries",
-      links: [
-        { label: "Healthcare", path: "/" },
-        { label: "Finance", path: "/" },
-        { label: "Manufacturing", path: "/" },
-        { label: "Retail", path: "/" },
-        { label: "Education", path: "/" },
-        { label: "Government", path: "/" }
+        { label: "Technology Blog", path: "/blog" },
+        { label: "Case Studies", path: "/case-studies" },
+        { label: "White Papers", path: "/white-papers" },
+        { label: "API Documentation", path: "/api-docs" },
+        { label: "Support Center", path: "/support" }
       ]
     }
   ];

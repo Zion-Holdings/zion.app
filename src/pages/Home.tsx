@@ -1,6 +1,6 @@
 
 
-import { ServicesShowcase } from '../components/ServicesShowcase';
+import { EnhancedServicesShowcase } from '../components/EnhancedServicesShowcase';
 
 export function Home() {
   return (
@@ -64,8 +64,8 @@ export function Home() {
         <div className="absolute top-1/2 left-20 w-1 h-1 bg-purple-400 rounded-full animate-bounce"></div>
       </section>
 
-      {/* Services Showcase */}
-      <ServicesShowcase />
+      {/* Enhanced Services Showcase */}
+      <EnhancedServicesShowcase />
 
       {/* Contact Section */}
       <section className="py-20 px-4 bg-gradient-to-r from-gray-900/50 to-black/50">
