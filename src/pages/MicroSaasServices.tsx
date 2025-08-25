@@ -482,11 +482,106 @@ const MicroSaasServices: React.FC = () => {
         email: "kleber@ziontechgroup.com",
         website: "https://ziontechgroup.com/healthtrack-plus"
       }
+    },
+    {
+      id: 26,
+      name: "QuantumFlow AI",
+      category: "AI & Analytics",
+      pricing: "Premium",
+      description: "Next-generation quantum-inspired AI algorithms for complex problem solving",
+      price: 75,
+      pricingModel: "monthly",
+      userLimit: "Up to 15 users",
+      features: ["Quantum algorithms", "Complex optimization", "Machine learning", "Real-time processing", "Advanced analytics"],
+      benefits: ["Competitive advantage", "Complex problem solving", "Faster insights", "Innovation leadership"],
+      targetAudience: ["Research institutions", "Tech companies", "Financial services", "Pharmaceutical companies"],
+      tags: ["Quantum AI", "Machine Learning", "Optimization", "Research", "Innovation"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com/quantumflow-ai"
+      }
+    },
+    {
+      id: 27,
+      name: "BlockChain Forge",
+      category: "Blockchain",
+      pricing: "Enterprise",
+      description: "Enterprise blockchain development and smart contract platform for businesses",
+      price: 120,
+      pricingModel: "monthly",
+      userLimit: "Up to 50 users",
+      features: ["Smart contracts", "DApp development", "Blockchain infrastructure", "Security auditing", "Compliance tools"],
+      benefits: ["Transparency", "Security", "Automation", "Cost reduction", "Trust building"],
+      targetAudience: ["Financial services", "Supply chain", "Healthcare", "Government", "Real estate"],
+      tags: ["Blockchain", "Smart Contracts", "DApps", "Security", "Compliance"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com/blockchain-forge"
+      }
+    },
+    {
+      id: 28,
+      name: "IoT Nexus Hub",
+      category: "IoT",
+      pricing: "Premium",
+      description: "Comprehensive IoT platform for device management and data analytics",
+      price: 65,
+      pricingModel: "monthly",
+      userLimit: "Up to 1000 devices",
+      features: ["Device management", "Real-time monitoring", "Data analytics", "Automation rules", "Security protocols"],
+      benefits: ["Operational efficiency", "Predictive maintenance", "Cost savings", "Data insights"],
+      targetAudience: ["Manufacturing", "Smart cities", "Healthcare", "Agriculture", "Energy"],
+      tags: ["IoT", "Device Management", "Real-time Monitoring", "Automation", "Analytics"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com/iot-nexus-hub"
+      }
+    },
+    {
+      id: 29,
+      name: "CyberShield Pro",
+      category: "Cybersecurity",
+      pricing: "Enterprise",
+      description: "Advanced cybersecurity platform with AI-powered threat detection and response",
+      price: 95,
+      pricingModel: "monthly",
+      userLimit: "Up to 100 users",
+      features: ["Threat detection", "AI analysis", "Incident response", "Compliance reporting", "24/7 monitoring"],
+      benefits: ["Enhanced security", "Threat prevention", "Compliance", "Peace of mind", "Cost reduction"],
+      targetAudience: ["Financial services", "Healthcare", "Government", "E-commerce", "Tech companies"],
+      tags: ["Cybersecurity", "AI", "Threat Detection", "Compliance", "Monitoring"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com/cybershield-pro"
+      }
+    },
+    {
+      id: 30,
+      name: "DataFusion Studio",
+      category: "Data & Analytics",
+      pricing: "Premium",
+      description: "Advanced data integration and analytics platform for enterprise insights",
+      price: 85,
+      pricingModel: "monthly",
+      userLimit: "Up to 30 users",
+      features: ["Data integration", "ETL pipelines", "Advanced analytics", "Machine learning", "Real-time dashboards"],
+      benefits: ["Better insights", "Data-driven decisions", "Operational efficiency", "Competitive advantage"],
+      targetAudience: ["Data scientists", "Business analysts", "Executives", "IT teams"],
+      tags: ["Data Integration", "Analytics", "Machine Learning", "ETL", "Business Intelligence"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com/datafusion-studio"
+      }
     }
   ];
 
-  const categories = ['all', 'Productivity', 'Finance', 'Marketing', 'CRM', 'Analytics', 'Scheduling', 'Content', 'Security', 'Media', 'Education', 'Sustainability', 'Legal', 'Healthcare', 'Events', 'Inventory', 'Development', 'AI & Automation', 'AI & Analytics', 'Human Resources', 'Data Protection', 'Legal Tech'];
-  const pricingModels = ['all', 'Freemium', 'Subscription', 'One-time'];
+  const categories = ['all', 'Productivity', 'Finance', 'Marketing', 'CRM', 'Analytics', 'Scheduling', 'Content', 'Security', 'Media', 'Education', 'Sustainability', 'Legal', 'Healthcare', 'Events', 'Inventory', 'Development', 'AI & Automation', 'AI & Analytics', 'Human Resources', 'Data Protection', 'Legal Tech', 'Blockchain', 'IoT', 'Cybersecurity', 'Data & Analytics'];
+  const pricingModels = ['all', 'Freemium', 'Premium', 'Enterprise', 'Subscription', 'One-time'];
 
   const filteredServices = microSaasServices.filter(service => {
     const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -534,6 +629,10 @@ const MicroSaasServices: React.FC = () => {
       case 'Healthcare': return <Heart className="w-6 h-6" />;
       case 'Events': return <Calendar className="w-6 h-6" />;
       case 'Inventory': return <Package className="w-6 h-6" />;
+      case 'Blockchain': return <Globe className="w-6 h-6" />;
+      case 'IoT': return <Wifi className="w-6 h-6" />;
+      case 'Cybersecurity': return <Shield className="w-6 h-6" />;
+      case 'Data & Analytics': return <Database className="w-6 h-6" />;
       default: return <ZapIcon2 className="w-6 h-6" />;
     }
   };
@@ -541,8 +640,10 @@ const MicroSaasServices: React.FC = () => {
   const getPricingColor = (pricing: string) => {
     switch (pricing) {
       case 'Freemium': return 'text-green-400';
+      case 'Premium': return 'text-yellow-400';
+      case 'Enterprise': return 'text-purple-400';
       case 'Subscription': return 'text-blue-400';
-      case 'One-time': return 'text-purple-400';
+      case 'One-time': return 'text-orange-400';
       default: return 'text-gray-400';
     }
   };

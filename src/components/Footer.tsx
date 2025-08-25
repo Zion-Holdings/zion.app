@@ -21,8 +21,8 @@ const Footer = () => {
       services: [
         { name: "Onsite IT Services", path: "/it-onsite-services", icon: <Server className="w-4 h-4" /> },
         { name: "Cloud Solutions", path: "/cloud-devops-solutions", icon: <Cloud className="w-4 h-4" /> },
-        { name: "Cybersecurity", path: "/it-onsite-services", icon: <Shield className="w-4 h-4" /> },
-        { name: "Network Infrastructure", path: "/it-onsite-services", icon: <Network className="w-4 h-4" /> }
+        { name: "Cybersecurity", path: "/cybersecurity", icon: <Shield className="w-4 h-4" /> },
+        { name: "Network Infrastructure", path: "/it-services-comprehensive", icon: <Network className="w-4 h-4" /> }
       ]
     },
     {
@@ -32,6 +32,15 @@ const Footer = () => {
         { name: "Computer Vision", path: "/ai-services", icon: <Eye className="w-4 h-4" /> },
         { name: "Natural Language Processing", path: "/ai-services", icon: <MessageSquare className="w-4 h-4" /> },
         { name: "Predictive Analytics", path: "/ai-services", icon: <TrendingUp className="w-4 h-4" /> }
+      ]
+    },
+    {
+      title: "Advanced Solutions",
+      services: [
+        { name: "Blockchain Services", path: "/micro-saas-services", icon: <Globe className="w-4 h-4" /> },
+        { name: "IoT Platforms", path: "/micro-saas-services", icon: <Wifi className="w-4 h-4" /> },
+        { name: "Data Analytics", path: "/micro-saas-services", icon: <Database className="w-4 h-4" /> },
+        { name: "DevOps Automation", path: "/micro-saas-services", icon: <Zap className="w-4 h-4" /> }
       ]
     }
   ];

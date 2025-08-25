@@ -39,6 +39,12 @@ export const Header: React.FC = () => {
       description: "Comprehensive IT infrastructure and security solutions"
     },
     {
+      name: "IT Services Comprehensive",
+      path: "/it-services-comprehensive",
+      icon: <Server className="w-4 h-4" />,
+      description: "Detailed IT services with pricing and expertise"
+    },
+    {
       name: "IT Onsite Services",
       path: "/it-onsite-services",
       icon: <Server className="w-4 h-4" />,
@@ -51,10 +57,10 @@ export const Header: React.FC = () => {
       description: "Cloud infrastructure & DevOps"
     },
     {
-      name: "Cloud & DevOps",
-      path: "/cloud-devops",
-      icon: <Cloud className="w-4 h-4" />,
-      description: "Scalable cloud infrastructure and automation"
+      name: "Cybersecurity",
+      path: "/cybersecurity",
+      icon: <Shield className="w-4 h-4" />,
+      description: "Advanced security solutions"
     },
     {
       name: "Digital Transformation",
