@@ -5,52 +5,50 @@ interface CardProps {
   className?: string;
 }
 
-const Card: React.FC<CardProps> = ({ children, className = '' }) => {
+export function Card({ children, className = '' }: CardProps) {
   return (
-    <div className={`rounded-lg border bg-card text-card-foreground shadow-sm ${className}`}>
+    <div className={`bg-white dark:bg-zinc-800 rounded-lg border border-zinc-200 dark:border-zinc-700 p-6 ${className}`}>
       {children}
     </div>
   );
-};
+}
 
-const CardHeader: React.FC<CardProps> = ({ children, className = '' }) => {
+export function CardHeader({ children, className = '' }: CardProps) {
   return (
-    <div className={`flex flex-col space-y-1.5 p-6 ${className}`}>
+    <div className={`mb-4 ${className}`}>
       {children}
     </div>
   );
-};
+}
 
-const CardTitle: React.FC<CardProps> = ({ children, className = '' }) => {
+export function CardTitle({ children, className = '' }: CardProps) {
   return (
-    <h3 className={`text-2xl font-semibold leading-none tracking-tight ${className}`}>
+    <h3 className={`text-lg font-semibold text-zinc-900 dark:text-zinc-100 ${className}`}>
       {children}
     </h3>
   );
-};
+}
 
-const CardDescription: React.FC<CardProps> = ({ children, className = '' }) => {
+export function CardDescription({ children, className = '' }: CardProps) {
   return (
-    <p className={`text-sm text-muted-foreground ${className}`}>
+    <p className={`text-zinc-600 dark:text-zinc-400 ${className}`}>
       {children}
     </p>
   );
-};
+}
 
-const CardContent: React.FC<CardProps> = ({ children, className = '' }) => {
+export function CardContent({ children, className = '' }: CardProps) {
   return (
-    <div className={`p-6 pt-0 ${className}`}>
+    <div className={className}>
       {children}
     </div>
   );
-};
+}
 
-const CardFooter: React.FC<CardProps> = ({ children, className = '' }) => {
+export function CardFooter({ children, className = '' }: CardProps) {
   return (
-    <div className={`flex items-center p-6 pt-0 ${className}`}>
+    <div className={`mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-700 ${className}`}>
       {children}
     </div>
   );
-};
-
-export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter };
+}

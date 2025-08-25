@@ -5,10 +5,10 @@ interface GradientHeadingProps {
   className?: string;
 }
 
-export default function GradientHeading({ children, className = '' }: GradientHeadingProps) {
+export function GradientHeading({ children, className = "" }: GradientHeadingProps) {
   return (
-    <h2 className={`text-4xl md:text-5xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-blue bg-clip-text text-transparent ${className}`}>
+    <h1 className={`bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent ${className}`}>
       {children}
-    </h2>
+    </h1>
   );
 }

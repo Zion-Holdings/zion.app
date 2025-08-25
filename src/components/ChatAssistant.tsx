@@ -1,109 +1,177 @@
 import React, { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { MessageCircle, Send, X, Bot, User } from 'lucide-react';
 
-export const ChatAssistant: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [message, setMessage] = useState('');
-  const [messages, setMessages] = useState([
+interface Message {
+  id: string;
+  text: string;
+  sender: 'user' | 'bot';
+  timestamp: Date;
+}
+
+interface ChatAssistantProps {
+  isOpen: boolean;
+  onToggle: () => void;
+}
+
+export const ChatAssistant: React.FC<ChatAssistantProps> = ({ isOpen, onToggle }) => {
+  const [messages, setMessages] = useState<Message[]>([
     {
-      id: 1,
-      text: 'Hello! I\'m here to help you with any questions about Zion Tech Group services.',
-      isBot: true,
-      timestamp: new Date()
-    }
+      id: '1',
+      text: 'Hello! I\'m your AI assistant. How can I help you today?',
+      sender: 'bot',
+      timestamp: new Date(),
+    },
   ]);
+  const [inputValue, setInputValue] = useState('');
+  const [isTyping, setIsTyping] = useState(false);
 
-  const handleSendMessage = () => {
-    if (!message.trim()) return;
+  const handleSendMessage = async () => {
+    if (!inputValue.trim()) return;
 
-    const userMessage = {
-      id: messages.length + 1,
-      text: message,
-      isBot: false,
-      timestamp: new Date()
+    const userMessage: Message = {
+      id: Date.now().toString(),
+      text: inputValue,
+      sender: 'user',
+      timestamp: new Date(),
     };
 
     setMessages(prev => [...prev, userMessage]);
-    setMessage('');
+    setInputValue('');
+    setIsTyping(true);
 
     // Simulate bot response
     setTimeout(() => {
-      const botMessage = {
-        id: messages.length + 2,
-        text: 'Thank you for your message! Our team will get back to you soon. For immediate assistance, please call us at +1 302 464 0950.',
-        isBot: true,
-        timestamp: new Date()
+      const botMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        text: getBotResponse(inputValue),
+        sender: 'bot',
+        timestamp: new Date(),
       };
       setMessages(prev => [...prev, botMessage]);
+      setIsTyping(false);
     }, 1000);
   };
 
-  return (
-    <>
-      {/* Chat Toggle Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 w-14 h-14 bg-zion-cyan text-white rounded-full shadow-lg hover:bg-zion-cyan-light transition-colors z-50"
-      >
-        <span className="text-2xl">💬</span>
-      </button>
+  const getBotResponse = (userInput: string): string => {
+    const input = userInput.toLowerCase();
+    
+    if (input.includes('hello') || input.includes('hi')) {
+      return 'Hello! How can I assist you with Zion Tech Group services today?';
+    } else if (input.includes('service') || input.includes('help')) {
+      return 'We offer AI-powered business solutions, custom software development, cloud infrastructure, and digital transformation consulting. What specific area are you interested in?';
+    } else if (input.includes('price') || input.includes('cost')) {
+      return 'Our pricing varies based on project scope and requirements. I\'d be happy to connect you with our sales team for a personalized quote. Would you like me to do that?';
+    } else if (input.includes('contact') || input.includes('speak')) {
+      return 'I can help you get in touch with our team. You can call us at +1 (302) 464-0950 or email kleber@ziontechgroup.com. Would you like me to schedule a call?';
+    } else {
+      return 'Thank you for your message. I\'m here to help with any questions about Zion Tech Group services. Could you please provide more details about what you\'re looking for?';
+    }
+  };
 
-      {/* Chat Window */}
-      {isOpen && (
-        <div className="fixed bottom-24 right-6 w-80 h-96 bg-zion-blue-dark border border-zion-blue-light rounded-lg shadow-xl z-50">
-          <div className="bg-zion-blue p-3 rounded-t-lg">
-            <div className="flex items-center justify-between">
-              <h3 className="text-white font-semibold">Zion Tech Assistant</h3>
-              <button
-                onClick={() => setIsOpen(false)}
-                className="text-zion-slate-light hover:text-white"
-              >
-                ✕
-              </button>
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      handleSendMessage();
+    }
+  };
+
+  if (!isOpen) {
+    return (
+      <Button
+        onClick={onToggle}
+        className="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-blue-600 hover:bg-blue-700 shadow-lg"
+      >
+        <MessageCircle className="w-6 h-6" />
+      </Button>
+    );
+  }
+
+  return (
+    <div className="fixed bottom-6 right-6 w-96 h-[500px] bg-white rounded-lg shadow-2xl border">
+      <Card className="h-full">
+        <CardHeader className="pb-3">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center space-x-2">
+              <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                <Bot className="w-5 h-5 text-blue-600" />
+              </div>
+              <div>
+                <CardTitle className="text-lg">AI Assistant</CardTitle>
+                <Badge variant="secondary" className="text-xs">
+                  Online
+                </Badge>
+              </div>
             </div>
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={onToggle}
+              className="h-8 w-8 p-0"
+            >
+              <X className="w-4 h-4" />
+            </Button>
           </div>
-          
-          <div className="h-64 overflow-y-auto p-3 space-y-3">
-            {messages.map((msg) => (
+        </CardHeader>
+        
+        <CardContent className="p-0 h-full flex flex-col">
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 max-h-80">
+            {messages.map((message) => (
               <div
-                key={msg.id}
-                className={`flex ${msg.isBot ? 'justify-start' : 'justify-end'}`}
+                key={message.id}
+                className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div
                   className={`max-w-xs px-3 py-2 rounded-lg ${
-                    msg.isBot
-                      ? 'bg-zion-slate text-white'
-                      : 'bg-zion-cyan text-white'
+                    message.sender === 'user'
+                      ? 'bg-blue-600 text-white'
+                      : 'bg-gray-100 text-gray-900'
                   }`}
                 >
-                  <p className="text-sm">{msg.text}</p>
+                  <p className="text-sm">{message.text}</p>
                   <p className="text-xs opacity-70 mt-1">
-                    {msg.timestamp.toLocaleTimeString()}
+                    {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                   </p>
                 </div>
               </div>
             ))}
+            
+            {isTyping && (
+              <div className="flex justify-start">
+                <div className="bg-gray-100 text-gray-900 px-3 py-2 rounded-lg">
+                  <div className="flex space-x-1">
+                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
+                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.1s' }}></div>
+                    <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
+                  </div>
+                </div>
+              </div>
+            )}
           </div>
           
-          <div className="p-3 border-t border-zion-blue-light">
+          <div className="p-4 border-t">
             <div className="flex space-x-2">
-              <input
-                type="text"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+              <Input
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                onKeyPress={handleKeyPress}
                 placeholder="Type your message..."
-                className="flex-1 px-3 py-2 bg-white/10 border border-zion-blue-light rounded text-white placeholder-zion-slate-light focus:outline-none focus:ring-2 focus:ring-zion-cyan"
+                className="flex-1"
               />
-              <button
+              <Button
                 onClick={handleSendMessage}
-                className="px-4 py-2 bg-zion-cyan text-white rounded hover:bg-zion-cyan-light transition-colors"
+                disabled={!inputValue.trim()}
+                size="sm"
+                className="bg-blue-600 hover:bg-blue-700"
               >
-                Send
-              </button>
+                <Send className="w-4 h-4" />
+              </Button>
             </div>
           </div>
-        </div>
-      )}
-    </>
+        </CardContent>
+      </Card>
+    </div>
   );
 };
