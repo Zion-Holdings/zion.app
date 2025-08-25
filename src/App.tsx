@@ -4,10 +4,13 @@ import { Routes, Route } from 'react-router-dom';
 
 import { ThemeProvider } from "./components/ThemeProvider";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
+import { AccessibilityProvider } from "./components/ui/AccessibilityProvider";
+import { SkipToMainContent } from "./components/ui/AccessibilityProvider";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
+import { FullPageLoader } from "./components/ui/LoadingSpinner";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -73,34 +76,37 @@ const baseRoutes = [
 
 const App = () => {
   return (
-    <WhitelabelProvider>
-      <ThemeProvider defaultTheme="dark">
-        <Header />
-        <main className="min-h-screen">
-          <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
-            <Routes>
-              {baseRoutes.map(({ path, element }) => (
-                <Route key={path} path={path} element={element} />
-              ))}
-              <Route path="/auth/*" element={<AuthRoutes />} />
-              <Route path="/dashboard/*" element={<DashboardRoutes />} />
-              <Route path="/marketplace/*" element={<MarketplaceRoutes />} />
-              <Route path="/talent/*" element={<TalentRoutes />} />
-              <Route path="/admin/*" element={<AdminRoutes />} />
-              <Route path="/mobile/*" element={<MobileAppRoutes />} />
-              <Route path="/content/*" element={<ContentRoutes />} />
-              <Route path="/enterprise/*" element={<EnterpriseRoutes />} />
-              <Route path="/community/*" element={<CommunityRoutes />} />
-              <Route path="/developers/*" element={<DeveloperRoutes />} />
-              <Route path="*" element={<ErrorRoutes />} />
-            </Routes>
-          </Suspense>
-        </main>
-        <Footer />
-        <Toaster />
-        <SonnerToaster position="top-right" />
-      </ThemeProvider>
-    </WhitelabelProvider>
+    <AccessibilityProvider>
+      <WhitelabelProvider>
+        <ThemeProvider defaultTheme="dark">
+          <SkipToMainContent />
+          <Header />
+          <main id="main-content" className="min-h-screen" role="main">
+            <Suspense fallback={<FullPageLoader text="Loading page..." />}>
+              <Routes>
+                {baseRoutes.map(({ path, element }) => (
+                  <Route key={path} path={path} element={element} />
+                ))}
+                <Route path="/auth/*" element={<AuthRoutes />} />
+                <Route path="/dashboard/*" element={<DashboardRoutes />} />
+                <Route path="/marketplace/*" element={<MarketplaceRoutes />} />
+                <Route path="/talent/*" element={<TalentRoutes />} />
+                <Route path="/admin/*" element={<AdminRoutes />} />
+                <Route path="/mobile/*" element={<MobileAppRoutes />} />
+                <Route path="/content/*" element={<ContentRoutes />} />
+                <Route path="/enterprise/*" element={<EnterpriseRoutes />} />
+                <Route path="/community/*" element={<CommunityRoutes />} />
+                <Route path="/developers/*" element={<DeveloperRoutes />} />
+                <Route path="*" element={<ErrorRoutes />} />
+              </Routes>
+            </Suspense>
+          </main>
+          <Footer />
+          <Toaster />
+          <SonnerToaster position="top-right" />
+        </ThemeProvider>
+      </WhitelabelProvider>
+    </AccessibilityProvider>
   );
 };
 

@@ -18,6 +18,24 @@ export const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsOpen(false);
+    setActiveDropdown(null);
+  }, [location.pathname]);
+
+  // Handle escape key to close mobile menu
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsOpen(false);
+        setActiveDropdown(null);
+      }
+    };
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, []);
+
   const services = [
     {
       title: 'AI & Machine Learning',
@@ -65,6 +83,17 @@ export const Header: React.FC = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  const toggleMobileMenu = () => {
+    setIsOpen(!isOpen);
+    if (isOpen) {
+      setActiveDropdown(null);
+    }
+  };
+
+  const toggleDropdown = (dropdown: string) => {
+    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
+  };
+
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -72,6 +101,8 @@ export const Header: React.FC = () => {
           ? 'bg-zion-blue-dark/95 backdrop-blur-md border-b border-zion-cyan/20 shadow-2xl shadow-zion-cyan/10' 
           : 'bg-transparent'
       }`}
+      role="banner"
+      aria-label="Main navigation"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
@@ -82,10 +113,10 @@ export const Header: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <Link to="/" className="flex-shrink-0 group">
+            <Link to="/" className="flex-shrink-0 group" aria-label="Zion Tech Group Home">
               <div className="flex items-center space-x-3">
                 <div className="w-10 h-10 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Zap className="w-6 h-6 text-white" />
+                  <Zap className="w-6 h-6 text-white" aria-hidden="true" />
                 </div>
                 <div>
                   <h1 className="text-2xl font-bold bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
@@ -98,37 +129,42 @@ export const Header: React.FC = () => {
           </motion.div>
           
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
-            <Link 
-              to="/" 
-              className={`px-3 py-2 text-sm font-medium transition-all duration-300 hover:text-zion-cyan ${
-                isActive('/') ? 'text-zion-cyan' : 'text-white'
+          <nav className="hidden lg:flex items-center space-x-8" role="navigation" aria-label="Main menu">
+            <Link
+              to="/"
+              className={`text-sm font-medium transition-colors duration-200 hover:text-zion-cyan ${
+                isActive('/') ? 'text-zion-cyan' : 'text-zion-slate-light'
               }`}
+              aria-current={isActive('/') ? 'page' : undefined}
             >
               Home
             </Link>
             
             {/* Services Dropdown */}
             <div className="relative group">
-              <button 
-                className="px-3 py-2 text-sm font-medium text-white hover:text-zion-cyan transition-colors duration-300 flex items-center gap-2"
+              <button
+                className="flex items-center space-x-1 text-sm font-medium text-zion-slate-light hover:text-zion-cyan transition-colors duration-200"
                 onMouseEnter={() => setActiveDropdown('services')}
                 onMouseLeave={() => setActiveDropdown(null)}
+                aria-expanded={activeDropdown === 'services'}
+                aria-haspopup="true"
               >
-                Services
-                <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" />
+                <span>Services</span>
+                <ChevronDown className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" />
               </button>
               
               <AnimatePresence>
                 {activeDropdown === 'services' && (
                   <motion.div
-                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
-                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-2 w-[600px] bg-zion-blue-dark/95 backdrop-blur-md border border-zion-cyan/20 rounded-2xl shadow-2xl shadow-zion-cyan/20 p-6"
+                    className="absolute top-full left-0 mt-2 w-80 bg-zion-blue-dark/95 backdrop-blur-md border border-zion-cyan/20 rounded-2xl p-4 shadow-2xl shadow-zion-cyan/20"
                     onMouseEnter={() => setActiveDropdown('services')}
                     onMouseLeave={() => setActiveDropdown(null)}
+                    role="menu"
+                    aria-label="Services menu"
                   >
                     <div className="grid grid-cols-2 gap-4">
                       {services.map((service) => {
@@ -137,17 +173,18 @@ export const Header: React.FC = () => {
                           <Link
                             key={service.title}
                             to={service.link}
-                            className="group p-4 rounded-xl hover:bg-zion-blue-light/10 transition-all duration-300 border border-transparent hover:border-zion-cyan/30"
+                            className="group p-3 rounded-xl hover:bg-zion-blue-light/20 transition-all duration-200"
+                            role="menuitem"
                           >
-                            <div className="flex items-start gap-3">
-                              <div className={`w-10 h-10 bg-gradient-to-br ${service.color} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                                <IconComponent className="w-5 h-5 text-white" />
+                            <div className="flex items-center space-x-3">
+                              <div className={`w-10 h-10 bg-gradient-to-br ${service.color} rounded-lg flex items-center justify-center`}>
+                                <IconComponent className="w-5 h-5 text-white" aria-hidden="true" />
                               </div>
                               <div>
-                                <h3 className="font-semibold text-white group-hover:text-zion-cyan transition-colors">
+                                <h3 className="font-medium text-white group-hover:text-zion-cyan transition-colors">
                                   {service.title}
                                 </h3>
-                                <p className="text-sm text-zion-slate-light mt-1">
+                                <p className="text-xs text-zion-slate-light mt-1 line-clamp-2">
                                   {service.description}
                                 </p>
                               </div>
@@ -161,62 +198,75 @@ export const Header: React.FC = () => {
               </AnimatePresence>
             </div>
 
-            <Link 
-              to="/about" 
-              className={`px-3 py-2 text-sm font-medium transition-all duration-300 hover:text-zion-cyan ${
-                isActive('/about') ? 'text-zion-cyan' : 'text-white'
+            <Link
+              to="/talent"
+              className={`text-sm font-medium transition-colors duration-200 hover:text-zion-cyan ${
+                isActive('/talent') ? 'text-zion-cyan' : 'text-zion-slate-light'
               }`}
+              aria-current={isActive('/talent') ? 'page' : undefined}
             >
-              About
+              Talent
             </Link>
             
-            <Link 
-              to="/contact" 
-              className={`px-3 py-2 text-sm font-medium transition-all duration-300 hover:text-zion-cyan ${
-                isActive('/contact') ? 'text-zion-cyan' : 'text-white'
+            <Link
+              to="/marketplace"
+              className={`text-sm font-medium transition-colors duration-200 hover:text-zion-cyan ${
+                isActive('/marketplace') ? 'text-zion-cyan' : 'text-zion-slate-light'
               }`}
+              aria-current={isActive('/marketplace') ? 'page' : undefined}
+            >
+              Marketplace
+            </Link>
+            
+            <Link
+              to="/pricing"
+              className={`text-sm font-medium transition-colors duration-200 hover:text-zion-cyan ${
+                isActive('/pricing') ? 'text-zion-cyan' : 'text-zion-slate-light'
+              }`}
+              aria-current={isActive('/pricing') ? 'page' : undefined}
+            >
+              Pricing
+            </Link>
+            
+            <Link
+              to="/contact"
+              className={`text-sm font-medium transition-colors duration-200 hover:text-zion-cyan ${
+                isActive('/contact') ? 'text-zion-cyan' : 'text-zion-slate-light'
+              }`}
+              aria-current={isActive('/contact') ? 'page' : undefined}
             >
               Contact
             </Link>
-            
-            <Link 
-              to="/blog" 
-              className={`px-3 py-2 text-sm font-medium transition-all duration-300 hover:text-zion-cyan ${
-                isActive('/blog') ? 'text-zion-cyan' : 'text-white'
-              }`}
-            >
-              Blog
-            </Link>
           </nav>
-          
-          {/* CTA Buttons */}
+
+          {/* Desktop CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button 
-              variant="outline" 
-              size="sm"
-              className="border-zion-cyan/30 text-zion-cyan hover:bg-zion-cyan hover:text-white transition-all duration-300"
-            >
-              Sign In
-            </Button>
-            <Button 
-              size="sm"
-              className="bg-gradient-to-r from-zion-cyan to-zion-purple hover:shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300"
-            >
-              Get Started
-            </Button>
+            <Link to="/login">
+              <Button variant="ghost" className="text-zion-slate-light hover:text-white hover:bg-zion-blue-light/20">
+                Sign In
+              </Button>
+            </Link>
+            <Link to="/signup">
+              <Button className="bg-gradient-to-r from-zion-cyan to-zion-purple hover:from-zion-cyan/90 hover:to-zion-purple/90 text-white">
+                Get Started
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-white hover:text-zion-cyan transition-colors duration-300"
-            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden p-2 text-zion-slate-light hover:text-white hover:bg-zion-blue-light/20 rounded-lg transition-colors duration-200"
+            onClick={toggleMobileMenu}
+            aria-expanded={isOpen}
+            aria-label="Toggle mobile menu"
+            aria-controls="mobile-menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -225,78 +275,109 @@ export const Header: React.FC = () => {
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
             className="lg:hidden bg-zion-blue-dark/95 backdrop-blur-md border-t border-zion-cyan/20"
+            id="mobile-menu"
+            role="navigation"
+            aria-label="Mobile menu"
           >
             <div className="px-4 py-6 space-y-4">
-              <Link 
-                to="/" 
-                className={`block px-3 py-2 text-base font-medium transition-colors duration-300 ${
-                  isActive('/') ? 'text-zion-cyan' : 'text-white hover:text-zion-cyan'
-                }`}
+              <Link
+                to="/"
+                className="block py-2 text-lg font-medium text-white hover:text-zion-cyan transition-colors"
                 onClick={() => setIsOpen(false)}
+                aria-current={isActive('/') ? 'page' : undefined}
               >
                 Home
               </Link>
               
-              <div className="space-y-2">
-                <div className="px-3 py-2 text-base font-medium text-zion-slate-light">
-                  Services
-                </div>
-                {services.map((service) => (
-                  <Link
-                    key={service.title}
-                    to={service.link}
-                    className="block px-6 py-2 text-sm text-zion-slate-light hover:text-zion-cyan transition-colors duration-300"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {service.title}
-                  </Link>
-                ))}
+              {/* Mobile Services Accordion */}
+              <div>
+                <button
+                  className="flex items-center justify-between w-full py-2 text-lg font-medium text-white hover:text-zion-cyan transition-colors"
+                  onClick={() => toggleDropdown('mobile-services')}
+                  aria-expanded={activeDropdown === 'mobile-services'}
+                  aria-controls="mobile-services-content"
+                >
+                  <span>Services</span>
+                  <ChevronDown 
+                    className={`w-5 h-5 transition-transform duration-200 ${
+                      activeDropdown === 'mobile-services' ? 'rotate-180' : ''
+                    }`} 
+                  />
+                </button>
+                
+                <AnimatePresence>
+                  {activeDropdown === 'mobile-services' && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.2 }}
+                      className="pl-4 space-y-2 mt-2"
+                      id="mobile-services-content"
+                    >
+                      {services.map((service) => (
+                        <Link
+                          key={service.title}
+                          to={service.link}
+                          className="block py-2 text-zion-slate-light hover:text-zion-cyan transition-colors"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          {service.title}
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
-              
-              <Link 
-                to="/about" 
-                className={`block px-3 py-2 text-base font-medium transition-colors duration-300 ${
-                  isActive('/about') ? 'text-zion-cyan' : 'text-white hover:text-zion-cyan'
-                }`}
+
+              <Link
+                to="/talent"
+                className="block py-2 text-lg font-medium text-white hover:text-zion-cyan transition-colors"
                 onClick={() => setIsOpen(false)}
+                aria-current={isActive('/talent') ? 'page' : undefined}
               >
-                About
+                Talent
               </Link>
               
-              <Link 
-                to="/contact" 
-                className={`block px-3 py-2 text-base font-medium transition-colors duration-300 ${
-                  isActive('/contact') ? 'text-zion-cyan' : 'text-white hover:text-zion-cyan'
-                }`}
+              <Link
+                to="/marketplace"
+                className="block py-2 text-lg font-medium text-white hover:text-zion-cyan transition-colors"
                 onClick={() => setIsOpen(false)}
+                aria-current={isActive('/marketplace') ? 'page' : undefined}
+              >
+                Marketplace
+              </Link>
+              
+              <Link
+                to="/pricing"
+                className="block py-2 text-lg font-medium text-white hover:text-zion-cyan transition-colors"
+                onClick={() => setIsOpen(false)}
+                aria-current={isActive('/pricing') ? 'page' : undefined}
+              >
+                Pricing
+              </Link>
+              
+              <Link
+                to="/contact"
+                className="block py-2 text-lg font-medium text-white hover:text-zion-cyan transition-colors"
+                onClick={() => setIsOpen(false)}
+                aria-current={isActive('/contact') ? 'page' : undefined}
               >
                 Contact
               </Link>
-              
-              <Link 
-                to="/blog" 
-                className={`block px-3 py-2 text-base font-medium transition-colors duration-300 ${
-                  isActive('/blog') ? 'text-zion-cyan' : 'text-white hover:text-zion-cyan'
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                Blog
-              </Link>
-              
+
+              {/* Mobile CTA Buttons */}
               <div className="pt-4 space-y-3">
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  className="w-full border-zion-cyan/30 text-zion-cyan hover:bg-zion-cyan hover:text-white transition-all duration-300"
-                >
-                  Sign In
-                </Button>
-                <Button 
-                  size="sm"
-                  className="w-full bg-gradient-to-r from-zion-cyan to-zion-purple hover:shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300"
-                >
-                  Get Started
-                </Button>
+                <Link to="/login" className="block w-full">
+                  <Button variant="ghost" className="w-full text-zion-slate-light hover:text-white hover:bg-zion-blue-light/20">
+                    Sign In
+                  </Button>
+                </Link>
+                <Link to="/signup" className="block w-full">
+                  <Button className="w-full bg-gradient-to-r from-zion-cyan to-zion-purple hover:from-zion-cyan/90 hover:to-zion-purple/90 text-white">
+                    Get Started
+                  </Button>
+                </Link>
               </div>
             </div>
           </motion.div>
