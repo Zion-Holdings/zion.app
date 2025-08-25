@@ -43,6 +43,7 @@ const ContactPage = React.lazy(() => import('./pages/ContactPage'));
 const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
 const MicroSaasServices = React.lazy(() => import('./pages/MicroSaasServices'));
+const ComprehensiveServicesShowcase = React.lazy(() => import('./pages/ComprehensiveServicesShowcase'));
 const PricingPage = React.lazy(() => import('./pages/PricingPage'));
 
 const baseRoutes = [
@@ -53,6 +54,7 @@ const baseRoutes = [
   { path: '/talent', element: <TalentDirectory /> },
   { path: '/talents', element: <TalentsPage /> },
   { path: '/micro-saas-services', element: <MicroSaasServices /> },
+  { path: '/comprehensive-services', element: <ComprehensiveServicesShowcase /> },
   { path: '/pricing', element: <PricingPage /> },
   { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
   { path: '/categories', element: <Categories /> },
