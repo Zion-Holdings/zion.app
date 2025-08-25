@@ -20,6 +20,28 @@ const ITOnsiteServicesPage = lazy(() => import('./pages/ITOnsiteServicesPage'));
 const Contact = lazy(() => import('./pages/Contact'));
 const About = lazy(() => import('./pages/About'));
 const NotFound = lazy(() => import('./pages/NotFound'));
+const AIMatcherPage = lazy(() => import('./pages/AIMatcher'));
+const TalentDirectory = lazy(() => import('./pages/TalentDirectory'));
+const TalentsPage = lazy(() => import('./pages/TalentsPage'));
+const EquipmentPage = lazy(() => import('./pages/EquipmentPage'));
+const EquipmentDetail = lazy(() => import('./pages/EquipmentDetail'));
+const Analytics = lazy(() => import('./pages/Analytics'));
+const MobileLaunchPage = lazy(() => import('./pages/MobileLaunchPage'));
+const CommunityPage = lazy(() => import('./pages/CommunityPage'));
+const Categories = lazy(() => import('./pages/Categories'));
+const Blog = lazy(() => import('./pages/Blog'));
+const BlogPost = lazy(() => import('./pages/BlogPost'));
+const PartnersPage = lazy(() => import('./pages/Partners'));
+const Login = lazy(() => import('./pages/Login'));
+const Signup = lazy(() => import('./pages/Signup'));
+const OpenAppRedirect = lazy(() => import('./pages/OpenAppRedirect'));
+const ContactPage = lazy(() => import('./pages/ContactPage'));
+const ZionHireAI = lazy(() => import('./pages/ZionHireAI'));
+const RequestQuotePage = lazy(() => import('./pages/RequestQuote'));
+const MicroSaasServices = lazy(() => import('./pages/MicroSaasServices'));
+const PricingPage = lazy(() => import('./pages/PricingPage'));
+const ComprehensiveServices = lazy(() => import('./pages/ComprehensiveServices'));
+const InnovativeServices = lazy(() => import('./pages/InnovativeServices'));
 
 // Enhanced loading fallback
 const EnhancedLoadingFallback = () => (
@@ -58,6 +80,33 @@ const App = () => {
                   <Route path="/cybersecurity" element={<CybersecurityServicesPage />} />
                   <Route path="/services-comparison" element={<ServicesComparisonPage />} />
                   <Route path="/it-onsite-services" element={<ITOnsiteServicesPage />} />
+                  
+                  {/* Enhanced service routes */}
+                  <Route path="/micro-saas-services" element={<MicroSaasServices />} />
+                  <Route path="/pricing" element={<PricingPage />} />
+                  <Route path="/comprehensive-services" element={<ComprehensiveServices />} />
+                  <Route path="/innovative-services" element={<InnovativeServices />} />
+                  
+                  {/* Additional routes */}
+                  <Route path="/match" element={<AIMatcherPage />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/signup" element={<Signup />} />
+                  <Route path="/talent" element={<TalentDirectory />} />
+                  <Route path="/talents" element={<TalentsPage />} />
+                  <Route path="/categories" element={<Categories />} />
+                  <Route path="/equipment" element={<EquipmentPage />} />
+                  <Route path="/equipment/:id" element={<EquipmentDetail />} />
+                  <Route path="/analytics" element={<Analytics />} />
+                  <Route path="/mobile-launch" element={<MobileLaunchPage />} />
+                  <Route path="/open-app" element={<OpenAppRedirect />} />
+                  <Route path="/community" element={<CommunityPage />} />
+                  <Route path="/contact" element={<ContactPage />} />
+                  <Route path="/partners" element={<PartnersPage />} />
+                  <Route path="/zion-hire-ai" element={<ZionHireAI />} />
+                  <Route path="/hire-ai" element={<ZionHireAI />} />
+                  <Route path="/request-quote" element={<RequestQuotePage />} />
+                  <Route path="/blog" element={<Blog />} />
+                  <Route path="/blog/:slug" element={<BlogPost />} />
                   
                   {/* Our enhanced service routes */}
                   <Route path="/about" element={<About />} />

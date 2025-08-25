@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { COMPREHENSIVE_SERVICES } from '../data/comprehensiveServices';
@@ -14,7 +13,7 @@ export function Services() {
   
   const filteredServices = allServices.filter(service => {
     const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
-    const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    const matchesSearch = service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          (service.tags && service.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase())));
     return matchesCategory && matchesSearch;
@@ -131,21 +130,21 @@ export function Services() {
                   description: "AI-powered solutions & consulting",
                   link: "/ai-services",
                   icon: "🤖",
-                  color: "from-zion-purple to-zion-cyan"
-                },
-                {
-                  title: "Enterprise Solutions",
-                  description: "Large-scale business transformation",
-                  link: "/enterprise-solutions",
-                  icon: "🏢",
                   color: "from-zion-cyan to-zion-purple"
                 },
                 {
-                  title: "IT Onsite Services",
-                  description: "Global IT support & maintenance",
-                  link: "/it-onsite-services",
-                  icon: "🌍",
-                  color: "from-zion-purple to-zion-cyan"
+                  title: "Micro SAAS Services",
+                  description: "Affordable business solutions",
+                  link: "/micro-saas-services",
+                  icon: "💼",
+                  color: "from-zion-cyan to-zion-purple"
+                },
+                {
+                  title: "Innovative Services",
+                  description: "Cutting-edge emerging tech",
+                  link: "/innovative-services",
+                  icon: "🚀",
+                  color: "from-zion-cyan to-zion-purple"
                 }
               ].map((service, index) => (
                 <motion.div
@@ -187,7 +186,7 @@ export function Services() {
               {/* Service Card Header */}
               <div className="mb-4">
                 <h3 className="text-xl font-bold text-zion-cyan mb-2 group-hover:text-neon-green transition-colors">
-                  {service.name}
+                  {service.title}
                 </h3>
                 <div className="flex items-center gap-2 mb-3">
                   <span className="px-3 py-1 bg-zion-purple/20 text-zion-purple text-sm rounded-full border border-zion-purple/30">
@@ -210,17 +209,12 @@ export function Services() {
               <div className="mb-4">
                 <div className="flex items-center justify-between">
                   <span className="text-2xl font-bold text-zion-cyan">
-                    {service.currency}{service.price.toLocaleString()}
+                    ${service.price.toLocaleString()}
                   </span>
                   <span className="text-sm text-zion-slate-light">
-                    {service.pricingModel}
+                    {service.priceType}
                   </span>
                 </div>
-                {service.marketPrice && (
-                  <p className="text-sm text-zion-slate-light mt-1">
-                    Market: {service.marketPrice}
-                  </p>
-                )}
               </div>
 
               {/* Features */}
@@ -254,8 +248,8 @@ export function Services() {
               <div className="border-t border-zion-cyan/20 pt-4">
                 <div className="flex items-center justify-between">
                   <div className="text-sm text-zion-slate-light">
-                    <p>📧 {service.contactInfo.email}</p>
-                    <p>📱 {service.contactInfo.phone}</p>
+                    <p>📧 {service.contactInfo?.email || 'kleber@ziontechgroup.com'}</p>
+                    <p>📱 {service.contactInfo?.phone || '+1 302 464 0950'}</p>
                   </div>
                   <button className="px-4 py-2 bg-gradient-to-r from-zion-cyan to-zion-purple text-white rounded-lg text-sm font-semibold hover:shadow-neon transition-all duration-300 transform hover:scale-105">
                     Get Quote
@@ -367,11 +361,11 @@ export function Services() {
                   <a href="/ai-services" className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
                     AI Services
                   </a>
-                  <a href="/enterprise-solutions" className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
-                    Enterprise Solutions
-                  </a>
                   <a href="/micro-saas-services" className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
                     Micro SAAS Services
+                  </a>
+                  <a href="/innovative-services" className="block text-zion-slate-light hover:text-zion-cyan transition-colors">
+                    Innovative Services
                   </a>
                 </div>
               </div>
@@ -384,41 +378,11 @@ export function Services() {
                 <a href="/terms" className="ml-2 hover:text-zion-cyan transition-colors">Terms of Service</a>
               </p>
             </div>
-=======
-import React from 'react';
-
-export function Services() {
-  return (
-    <div className="min-h-screen bg-zion-blue-dark text-white">
-      <div className="container mx-auto px-4 py-20">
-        <h1 className="text-6xl font-bold text-center mb-8">
-          Our Services
-        </h1>
-        <p className="text-xl text-center mb-12 max-w-3xl mx-auto">
-          Comprehensive AI, IT, and technology solutions to transform your business
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div className="bg-zion-blue-light/20 p-6 rounded-lg border border-zion-purple/30">
-            <h3 className="text-2xl font-bold mb-4 text-zion-cyan">AI & Machine Learning</h3>
-            <p className="text-zion-slate-light">Custom AI development, ML model training, and strategic consulting</p>
-          </div>
-          <div className="bg-zion-blue-light/20 p-6 rounded-lg border border-zion-purple/30">
-            <h3 className="text-2xl font-bold mb-4 text-zion-cyan">Cloud & Infrastructure</h3>
-            <p className="text-zion-slate-light">Migration, DevOps, Kubernetes management, and optimization</p>
-          </div>
-          <div className="bg-zion-blue-light/20 p-6 rounded-lg border border-zion-purple/30">
-            <h3 className="text-2xl font-bold mb-4 text-zion-cyan">Cybersecurity</h3>
-            <p className="text-zion-slate-light">Security audits, compliance, threat protection, and monitoring</p>
->>>>>>> fca3c1339b92e2c99557b3c800831ed83163fd77
           </div>
         </div>
       </div>
     </div>
   );
-<<<<<<< HEAD
 }
 
 export default Services;
-=======
-}
->>>>>>> fca3c1339b92e2c99557b3c800831ed83163fd77
