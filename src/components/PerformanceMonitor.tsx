@@ -1,371 +1,370 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { 
-  Activity, 
-  Clock, 
-  HardDrive, 
-  Wifi, 
-  Cpu, 
-  MemoryStick,
-  TrendingUp,
-  AlertTriangle,
-  CheckCircle,
-  X
-} from 'lucide-react';
+import { Activity, Zap, Clock, TrendingUp, AlertTriangle, CheckCircle } from 'lucide-react';
 
 interface PerformanceMetrics {
-  loadTime: number;
-  firstContentfulPaint: number;
-  largestContentfulPaint: number;
-  cumulativeLayoutShift: number;
-  firstInputDelay: number;
-  timeToInteractive: number;
-  memoryUsage: number;
-  networkLatency: number;
-  cpuUsage: number;
-  timestamp: number;
+  fcp: number; // First Contentful Paint
+  lcp: number; // Largest Contentful Paint
+  fid: number; // First Input Delay
+  cls: number; // Cumulative Layout Shift
+  ttfb: number; // Time to First Byte
+  domLoad: number; // DOM Content Loaded
+  windowLoad: number; // Window Load
 }
 
-interface PerformanceAlert {
-  id: string;
-  type: 'warning' | 'error' | 'info';
-  message: string;
-  timestamp: number;
+interface PerformanceMonitorProps {
+  showDetails?: boolean;
+  className?: string;
+  onMetricsUpdate?: (metrics: PerformanceMetrics) => void;
 }
 
-const PerformanceMonitor: React.FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [metrics, setMetrics] = useState<PerformanceMetrics | null>(null);
-  const [alerts, setAlerts] = useState<PerformanceAlert[]>([]);
+export const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
+  showDetails = false,
+  className = '',
+  onMetricsUpdate
+}) => {
+  const [metrics, setMetrics] = useState<PerformanceMetrics>({
+    fcp: 0,
+    lcp: 0,
+    fid: 0,
+    cls: 0,
+    ttfb: 0,
+    domLoad: 0,
+    windowLoad: 0
+  });
+
   const [isMonitoring, setIsMonitoring] = useState(false);
+  const [performanceScore, setPerformanceScore] = useState(0);
 
   // Performance thresholds
   const thresholds = {
-    loadTime: { warning: 3000, error: 5000 },
-    firstContentfulPaint: { warning: 1500, error: 2500 },
-    largestContentfulPaint: { warning: 2500, error: 4000 },
-    cumulativeLayoutShift: { warning: 0.1, error: 0.25 },
-    firstInputDelay: { warning: 100, error: 300 },
-    timeToInteractive: { warning: 3500, error: 5000 }
+    fcp: { good: 1800, poor: 3000 },
+    lcp: { good: 2500, poor: 4000 },
+    fid: { good: 100, poor: 300 },
+    cls: { good: 0.1, poor: 0.25 }
   };
 
-  // Get performance metrics
-  const getPerformanceMetrics = useCallback((): PerformanceMetrics => {
-    const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-    const paint = performance.getEntriesByType('paint');
+  // Calculate performance score
+  const calculateScore = useCallback((metrics: PerformanceMetrics): number => {
+    let score = 100;
     
-    const firstContentfulPaint = paint.find(entry => entry.name === 'first-contentful-paint')?.startTime || 0;
-    const largestContentfulPaint = paint.find(entry => entry.name === 'largest-contentful-paint')?.startTime || 0;
+    // FCP scoring
+    if (metrics.fcp > thresholds.fcp.poor) score -= 25;
+    else if (metrics.fcp > thresholds.fcp.good) score -= 10;
     
-    // Get memory info if available
-    const memory = (performance as any).memory;
-    const memoryUsage = memory ? memory.usedJSHeapSize / memory.jsHeapSizeLimit * 100 : 0;
+    // LCP scoring
+    if (metrics.lcp > thresholds.lcp.poor) score -= 25;
+    else if (metrics.lcp > thresholds.lcp.good) score -= 10;
     
-    return {
-      loadTime: navigation.loadEventEnd - navigation.loadEventStart,
-      firstContentfulPaint,
-      largestContentfulPaint,
-      cumulativeLayoutShift: 0, // Would need to be calculated from LayoutShift API
-      firstInputDelay: 0, // Would need to be calculated from FirstInput API
-      timeToInteractive: navigation.domInteractive - navigation.fetchStart,
-      memoryUsage,
-      networkLatency: navigation.responseEnd - navigation.requestStart,
-      cpuUsage: 0, // Would need to be calculated from Performance API
-      timestamp: Date.now()
-    };
+    // FID scoring
+    if (metrics.fid > thresholds.fid.poor) score -= 25;
+    else if (metrics.fid > thresholds.fid.good) score -= 10;
+    
+    // CLS scoring
+    if (metrics.cls > thresholds.cls.poor) score -= 25;
+    else if (metrics.cls > thresholds.cls.good) score -= 10;
+    
+    return Math.max(0, score);
   }, []);
 
-  // Check for performance issues
-  const checkPerformanceIssues = useCallback((metrics: PerformanceMetrics) => {
-    const newAlerts: PerformanceAlert[] = [];
-    
-    if (metrics.loadTime > thresholds.loadTime.error) {
-      newAlerts.push({
-        id: `load-${Date.now()}`,
-        type: 'error',
-        message: `Page load time is very slow: ${Math.round(metrics.loadTime)}ms`,
-        timestamp: Date.now()
-      });
-    } else if (metrics.loadTime > thresholds.loadTime.warning) {
-      newAlerts.push({
-        id: `load-${Date.now()}`,
-        type: 'warning',
-        message: `Page load time is slow: ${Math.round(metrics.loadTime)}ms`,
-        timestamp: Date.now()
-      });
-    }
-    
-    if (metrics.firstContentfulPaint > thresholds.firstContentfulPaint.error) {
-      newAlerts.push({
-        id: `fcp-${Date.now()}`,
-        type: 'error',
-        message: `First Contentful Paint is very slow: ${Math.round(metrics.firstContentfulPaint)}ms`,
-        timestamp: Date.now()
-      });
-    }
-    
-    if (metrics.largestContentfulPaint > thresholds.largestContentfulPaint.error) {
-      newAlerts.push({
-        id: `lcp-${Date.now()}`,
-        type: 'error',
-        message: `Largest Contentful Paint is very slow: ${Math.round(metrics.largestContentfulPaint)}ms`,
-        timestamp: Date.now()
-      });
-    }
-    
-    if (metrics.memoryUsage > 80) {
-      newAlerts.push({
-        id: `memory-${Date.now()}`,
-        type: 'warning',
-        message: `High memory usage: ${Math.round(metrics.memoryUsage)}%`,
-        timestamp: Date.now()
-      });
-    }
-    
-    if (newAlerts.length > 0) {
-      setAlerts(prev => [...prev, ...newAlerts]);
-    }
-  }, []);
+  // Get performance rating
+  const getPerformanceRating = (score: number): { label: string; color: string; icon: React.ReactNode } => {
+    if (score >= 90) return { label: 'Excellent', color: 'text-green-400', icon: <CheckCircle className="w-4 h-4" /> };
+    if (score >= 70) return { label: 'Good', color: 'text-blue-400', icon: <TrendingUp className="w-4 h-4" /> };
+    if (score >= 50) return { label: 'Fair', color: 'text-yellow-400', icon: <AlertTriangle className="w-4 h-4" /> };
+    return { label: 'Poor', color: 'text-red-400', icon: <AlertTriangle className="w-4 h-4" /> };
+  };
+
+  // Get metric status
+  const getMetricStatus = (metric: keyof typeof thresholds, value: number) => {
+    const threshold = thresholds[metric];
+    if (value <= threshold.good) return { status: 'good', color: 'text-green-400' };
+    if (value <= threshold.poor) return { status: 'needs-improvement', color: 'text-yellow-400' };
+    return { status: 'poor', color: 'text-red-400' };
+  };
+
+  // Format time values
+  const formatTime = (ms: number): string => {
+    if (ms < 1000) return `${Math.round(ms)}ms`;
+    return `${(ms / 1000).toFixed(2)}s`;
+  };
 
   // Start performance monitoring
   const startMonitoring = useCallback(() => {
+    if (!('PerformanceObserver' in window)) {
+      console.warn('PerformanceObserver not supported');
+      return;
+    }
+
     setIsMonitoring(true);
-    
-    // Initial metrics
-    const initialMetrics = getPerformanceMetrics();
-    setMetrics(initialMetrics);
-    checkPerformanceIssues(initialMetrics);
-    
-    // Monitor performance continuously
-    const interval = setInterval(() => {
-      const currentMetrics = getPerformanceMetrics();
-      setMetrics(currentMetrics);
-      checkPerformanceIssues(currentMetrics);
-    }, 5000); // Check every 5 seconds
-    
-    return () => clearInterval(interval);
-  }, [getPerformanceMetrics, checkPerformanceIssues]);
+
+    // First Contentful Paint
+    try {
+      new PerformanceObserver((entryList) => {
+        const entries = entryList.getEntries();
+        const fcpEntry = entries.find(entry => entry.name === 'first-contentful-paint');
+        if (fcpEntry) {
+          setMetrics(prev => ({ ...prev, fcp: fcpEntry.startTime }));
+        }
+      }).observe({ entryTypes: ['paint'] });
+    } catch (e) {
+      console.warn('FCP monitoring failed:', e);
+    }
+
+    // Largest Contentful Paint
+    try {
+      new PerformanceObserver((entryList) => {
+        const entries = entryList.getEntries();
+        const lcpEntry = entries[entries.length - 1];
+        if (lcpEntry) {
+          setMetrics(prev => ({ ...prev, lcp: lcpEntry.startTime }));
+        }
+      }).observe({ entryTypes: ['largest-contentful-paint'] });
+    } catch (e) {
+      console.warn('LCP monitoring failed:', e);
+    }
+
+    // First Input Delay
+    try {
+      new PerformanceObserver((entryList) => {
+        const entries = entryList.getEntries();
+        entries.forEach(entry => {
+          if (entry.processingStart && entry.startTime) {
+            const fid = entry.processingStart - entry.startTime;
+            setMetrics(prev => ({ ...prev, fid }));
+          }
+        });
+      }).observe({ entryTypes: ['first-input'] });
+    } catch (e) {
+      console.warn('FID monitoring failed:', e);
+    }
+
+    // Cumulative Layout Shift
+    try {
+      let clsValue = 0;
+      new PerformanceObserver((entryList) => {
+        const entries = entryList.getEntries();
+        entries.forEach(entry => {
+          if (!entry.hadRecentInput) {
+            clsValue += (entry as any).value;
+            setMetrics(prev => ({ ...prev, cls: clsValue }));
+          }
+        });
+      }).observe({ entryTypes: ['layout-shift'] });
+    } catch (e) {
+      console.warn('CLS monitoring failed:', e);
+    }
+
+    // Navigation timing
+    const navigationEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+    if (navigationEntry) {
+      setMetrics(prev => ({
+        ...prev,
+        ttfb: navigationEntry.responseStart - navigationEntry.requestStart,
+        domLoad: navigationEntry.domContentLoadedEventEnd - navigationEntry.domContentLoadedEventStart,
+        windowLoad: navigationEntry.loadEventEnd - navigationEntry.loadEventStart
+      }));
+    }
+
+    // DOM Content Loaded
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => {
+        const domLoadTime = performance.now();
+        setMetrics(prev => ({ ...prev, domLoad: domLoadTime }));
+      });
+    }
+
+    // Window Load
+    if (document.readyState === 'complete') {
+      const windowLoadTime = performance.now();
+      setMetrics(prev => ({ ...prev, windowLoad: windowLoadTime }));
+    } else {
+      window.addEventListener('load', () => {
+        const windowLoadTime = performance.now();
+        setMetrics(prev => ({ ...prev, windowLoad: windowLoadTime }));
+      });
+    }
+  }, []);
 
   // Stop monitoring
   const stopMonitoring = useCallback(() => {
     setIsMonitoring(false);
   }, []);
 
-  // Clear alerts
-  const clearAlert = useCallback((alertId: string) => {
-    setAlerts(prev => prev.filter(alert => alert.id !== alertId));
+  // Reset metrics
+  const resetMetrics = useCallback(() => {
+    setMetrics({
+      fcp: 0,
+      lcp: 0,
+      fid: 0,
+      cls: 0,
+      ttfb: 0,
+      domLoad: 0,
+      windowLoad: 0
+    });
+    setPerformanceScore(0);
   }, []);
 
-  // Clear all alerts
-  const clearAllAlerts = useCallback(() => {
-    setAlerts([]);
-  }, []);
-
-  // Get performance score
-  const getPerformanceScore = useCallback((metrics: PerformanceMetrics): number => {
-    let score = 100;
-    
-    if (metrics.loadTime > thresholds.loadTime.error) score -= 20;
-    else if (metrics.loadTime > thresholds.loadTime.warning) score -= 10;
-    
-    if (metrics.firstContentfulPaint > thresholds.firstContentfulPaint.error) score -= 20;
-    else if (metrics.firstContentfulPaint > thresholds.firstContentfulPaint.warning) score -= 10;
-    
-    if (metrics.largestContentfulPaint > thresholds.largestContentfulPaint.error) score -= 20;
-    else if (metrics.largestContentfulPaint > thresholds.largestContentfulPaint.warning) score -= 10;
-    
-    if (metrics.memoryUsage > 80) score -= 10;
-    
-    return Math.max(0, score);
-  }, []);
-
-  // Get score color
-  const getScoreColor = useCallback((score: number): string => {
-    if (score >= 90) return 'text-green-500';
-    if (score >= 70) return 'text-yellow-500';
-    return 'text-red-500';
-  }, []);
-
-  // Get score icon
-  const getScoreIcon = useCallback((score: number) => {
-    if (score >= 90) return <CheckCircle size={20} className="text-green-500" />;
-    if (score >= 70) return <AlertTriangle size={20} className="text-yellow-500" />;
-    return <AlertTriangle size={20} className="text-red-500" />;
-  }, []);
-
+  // Start monitoring on mount
   useEffect(() => {
-    if (isMonitoring) {
-      return startMonitoring();
+    startMonitoring();
+    return () => stopMonitoring();
+  }, [startMonitoring, stopMonitoring]);
+
+  // Update performance score when metrics change
+  useEffect(() => {
+    const score = calculateScore(metrics);
+    setPerformanceScore(score);
+    
+    if (onMetricsUpdate) {
+      onMetricsUpdate(metrics);
     }
-  }, [isMonitoring, startMonitoring]);
+  }, [metrics, calculateScore, onMetricsUpdate]);
+
+  const rating = getPerformanceRating(performanceScore);
 
   return (
-    <>
-      {/* Performance Monitor Toggle Button */}
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="fixed top-4 left-4 z-40 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-green-300 focus:ring-opacity-50"
-        aria-label="Open performance monitor"
-        aria-expanded={isOpen}
-        aria-controls="performance-panel"
-      >
-        <Activity size={24} />
-      </button>
+    <div className={`bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-700/50 p-4 ${className}`}>
+      {/* Header */}
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-2">
+          <Activity className="w-5 h-5 text-cyan-400" />
+          <h3 className="text-white font-medium">Performance Monitor</h3>
+        </div>
+        
+        <div className="flex items-center gap-2">
+          <span className={`text-sm font-medium ${rating.color}`}>
+            {rating.icon}
+          </span>
+          <span className={`text-sm font-bold ${rating.color}`}>
+            {performanceScore}/100
+          </span>
+        </div>
+      </div>
 
-      {/* Performance Monitor Panel */}
-      {isOpen && (
-        <div 
-          id="performance-panel"
-          className="fixed top-20 left-4 z-40 bg-white dark:bg-gray-800 rounded-lg shadow-xl p-6 w-96 max-h-[80vh] overflow-y-auto"
-          role="dialog"
-          aria-labelledby="performance-title"
-        >
-          <div className="flex items-center justify-between mb-4">
-            <h2 id="performance-title" className="text-lg font-semibold text-gray-900 dark:text-white flex items-center gap-2">
-              <Activity size={20} />
-              Performance Monitor
-            </h2>
-            <button
-              onClick={() => setIsOpen(false)}
-              className="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200"
-              aria-label="Close performance monitor"
-            >
-              <X size={20} />
-            </button>
+      {/* Performance Score */}
+      <div className="mb-4">
+        <div className="flex items-center justify-between text-sm mb-2">
+          <span className="text-gray-300">Performance Score</span>
+          <span className={`font-bold ${rating.color}`}>{rating.label}</span>
+        </div>
+        <div className="w-full bg-gray-700 rounded-full h-2">
+          <div
+            className={`h-2 rounded-full transition-all duration-500 ${
+              performanceScore >= 90 ? 'bg-green-500' :
+              performanceScore >= 70 ? 'bg-blue-500' :
+              performanceScore >= 50 ? 'bg-yellow-500' : 'bg-red-500'
+            }`}
+            style={{ width: `${performanceScore}%` }}
+          ></div>
+        </div>
+      </div>
+
+      {/* Core Web Vitals */}
+      <div className="space-y-3 mb-4">
+        <h4 className="text-sm font-medium text-gray-300">Core Web Vitals</h4>
+        
+        {/* FCP */}
+        <div className="flex items-center justify-between">
+          <span className="text-xs text-gray-400">FCP</span>
+          <span className={`text-xs font-mono ${
+            getMetricStatus('fcp', metrics.fcp).color
+          }`}>
+            {formatTime(metrics.fcp)}
+          </span>
+        </div>
+
+        {/* LCP */}
+        <div className="flex items-center justify-between">
+          <span className="text-xs text-gray-400">LCP</span>
+          <span className={`text-xs font-mono ${
+            getMetricStatus('lcp', metrics.lcp).color
+          }`}>
+            {formatTime(metrics.lcp)}
+          </span>
+        </div>
+
+        {/* FID */}
+        <div className="flex items-center justify-between">
+          <span className="text-xs text-gray-400">FID</span>
+          <span className={`text-xs font-mono ${
+            getMetricStatus('fid', metrics.fid).color
+          }`}>
+            {formatTime(metrics.fid)}
+          </span>
+        </div>
+
+        {/* CLS */}
+        <div className="flex items-center justify-between">
+          <span className="text-xs text-gray-400">CLS</span>
+          <span className={`text-xs font-mono ${
+            getMetricStatus('cls', metrics.cls).color
+          }`}>
+            {metrics.cls.toFixed(3)}
+          </span>
+        </div>
+      </div>
+
+      {/* Additional Metrics (if showDetails is true) */}
+      {showDetails && (
+        <div className="space-y-3 mb-4 pt-3 border-t border-gray-700/50">
+          <h4 className="text-sm font-medium text-gray-300">Additional Metrics</h4>
+          
+          <div className="flex items-center justify-between">
+            <span className="text-xs text-gray-400">TTFB</span>
+            <span className="text-xs font-mono text-gray-300">
+              {formatTime(metrics.ttfb)}
+            </span>
           </div>
 
-          {/* Monitoring Controls */}
-          <div className="mb-4 flex gap-2">
-            <button
-              onClick={startMonitoring}
-              disabled={isMonitoring}
-              className="px-3 py-2 bg-green-600 hover:bg-green-700 disabled:bg-gray-400 text-white rounded text-sm font-medium transition-colors"
-            >
-              Start Monitoring
-            </button>
-            <button
-              onClick={stopMonitoring}
-              disabled={!isMonitoring}
-              className="px-3 py-2 bg-red-600 hover:bg-red-700 disabled:bg-gray-400 text-white rounded text-sm font-medium transition-colors"
-            >
-              Stop Monitoring
-            </button>
+          <div className="flex items-center justify-between">
+            <span className="text-xs text-gray-400">DOM Load</span>
+            <span className="text-xs font-mono text-gray-300">
+              {formatTime(metrics.domLoad)}
+            </span>
           </div>
 
-          {/* Performance Score */}
-          {metrics && (
-            <div className="mb-4 p-4 bg-gray-50 dark:bg-gray-700 rounded-lg">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Performance Score</span>
-                {getScoreIcon(getPerformanceScore(metrics))}
-              </div>
-              <div className={`text-2xl font-bold ${getScoreColor(getPerformanceScore(metrics))}`}>
-                {getPerformanceScore(metrics)}/100
-              </div>
-            </div>
-          )}
-
-          {/* Performance Metrics */}
-          {metrics && (
-            <div className="space-y-3 mb-4">
-              <h3 className="text-md font-semibold text-gray-900 dark:text-white">Core Metrics</h3>
-              
-              <div className="grid grid-cols-2 gap-3">
-                <div className="p-3 bg-gray-50 dark:bg-gray-700 rounded">
-                  <div className="flex items-center gap-2 mb-1">
-                    <Clock size={16} className="text-gray-500" />
-                    <span className="text-xs text-gray-600 dark:text-gray-400">Load Time</span>
-                  </div>
-                  <div className="text-sm font-medium text-gray-900 dark:text-white">
-                    {Math.round(metrics.loadTime)}ms
-                  </div>
-                </div>
-                
-                <div className="p-3 bg-gray-50 dark:bg-gray-700 rounded">
-                  <div className="flex items-center gap-2 mb-1">
-                    <TrendingUp size={16} className="text-gray-500" />
-                    <span className="text-xs text-gray-600 dark:text-gray-400">FCP</span>
-                  </div>
-                  <div className="text-sm font-medium text-gray-900 dark:text-white">
-                    {Math.round(metrics.firstContentfulPaint)}ms
-                  </div>
-                </div>
-                
-                <div className="p-3 bg-gray-50 dark:bg-gray-700 rounded">
-                  <div className="flex items-center gap-2 mb-1">
-                    <TrendingUp size={16} className="text-gray-500" />
-                    <span className="text-xs text-gray-600 dark:text-gray-400">LCP</span>
-                  </div>
-                  <div className="text-sm font-medium text-gray-900 dark:text-white">
-                    {Math.round(metrics.largestContentfulPaint)}ms
-                  </div>
-                </div>
-                
-                <div className="p-3 bg-gray-50 dark:bg-gray-700 rounded">
-                  <div className="flex items-center gap-2 mb-1">
-                    <MemoryStick size={16} className="text-gray-500" />
-                    <span className="text-xs text-gray-600 dark:text-gray-400">Memory</span>
-                  </div>
-                  <div className="text-sm font-medium text-gray-900 dark:text-white">
-                    {Math.round(metrics.memoryUsage)}%
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Performance Alerts */}
-          {alerts.length > 0 && (
-            <div className="mb-4">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="text-md font-semibold text-gray-900 dark:text-white">Alerts</h3>
-                <button
-                  onClick={clearAllAlerts}
-                  className="text-xs text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
-                >
-                  Clear All
-                </button>
-              </div>
-              
-              <div className="space-y-2 max-h-32 overflow-y-auto">
-                {alerts.slice(-5).map((alert) => (
-                  <div
-                    key={alert.id}
-                    className={`p-3 rounded text-sm ${
-                      alert.type === 'error' 
-                        ? 'bg-red-50 dark:bg-red-900/20 text-red-800 dark:text-red-200' 
-                        : alert.type === 'warning'
-                        ? 'bg-yellow-50 dark:bg-yellow-900/20 text-yellow-800 dark:text-yellow-200'
-                        : 'bg-blue-50 dark:bg-blue-900/20 text-blue-800 dark:text-blue-200'
-                    }`}
-                  >
-                    <div className="flex items-start justify-between">
-                      <span>{alert.message}</span>
-                      <button
-                        onClick={() => clearAlert(alert.id)}
-                        className="ml-2 text-xs opacity-70 hover:opacity-100"
-                        aria-label="Clear alert"
-                      >
-                        ×
-                      </button>
-                    </div>
-                    <div className="text-xs opacity-70 mt-1">
-                      {new Date(alert.timestamp).toLocaleTimeString()}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {/* Last Updated */}
-          {metrics && (
-            <div className="text-xs text-gray-500 dark:text-gray-400 text-center">
-              Last updated: {new Date(metrics.timestamp).toLocaleTimeString()}
-            </div>
-          )}
+          <div className="flex items-center justify-between">
+            <span className="text-xs text-gray-400">Window Load</span>
+            <span className="text-xs font-mono text-gray-300">
+              {formatTime(metrics.windowLoad)}
+            </span>
+          </div>
         </div>
       )}
-    </>
+
+      {/* Controls */}
+      <div className="flex gap-2 pt-3 border-t border-gray-700/50">
+        <button
+          onClick={isMonitoring ? stopMonitoring : startMonitoring}
+          className={`flex-1 px-3 py-2 text-xs rounded-md transition-colors ${
+            isMonitoring
+              ? 'bg-red-600 hover:bg-red-700 text-white'
+              : 'bg-green-600 hover:bg-green-700 text-white'
+          }`}
+        >
+          {isMonitoring ? 'Stop' : 'Start'} Monitoring
+        </button>
+        
+        <button
+          onClick={resetMetrics}
+          className="px-3 py-2 text-xs bg-gray-600 hover:bg-gray-700 text-white rounded-md transition-colors"
+        >
+          Reset
+        </button>
+      </div>
+
+      {/* Status Indicator */}
+      <div className="mt-3 text-center">
+        <div className={`inline-flex items-center gap-1 text-xs ${
+          isMonitoring ? 'text-green-400' : 'text-gray-400'
+        }`}>
+          <div className={`w-2 h-2 rounded-full ${
+            isMonitoring ? 'bg-green-400 animate-pulse' : 'bg-gray-400'
+          }`}></div>
+          {isMonitoring ? 'Monitoring Active' : 'Monitoring Stopped'}
+        </div>
+      </div>
+    </div>
   );
 };
 

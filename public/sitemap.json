@@ -1,0 +1,209 @@
+{
+  "baseUrl": "https://ziontechgroup.com",
+  "generatedAt": "2025-08-25T19:51:30.932Z",
+  "urls": [
+    {
+      "url": "/",
+      "changefreq": "daily",
+      "priority": 1,
+      "fullUrl": "https://ziontechgroup.com/",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/about",
+      "changefreq": "monthly",
+      "priority": 0.8,
+      "fullUrl": "https://ziontechgroup.com/about",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/contact",
+      "changefreq": "monthly",
+      "priority": 0.8,
+      "fullUrl": "https://ziontechgroup.com/contact",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/team",
+      "changefreq": "monthly",
+      "priority": 0.7,
+      "fullUrl": "https://ziontechgroup.com/team",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/mission",
+      "changefreq": "monthly",
+      "priority": 0.7,
+      "fullUrl": "https://ziontechgroup.com/mission",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/services",
+      "changefreq": "weekly",
+      "priority": 0.9,
+      "fullUrl": "https://ziontechgroup.com/services",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/services/ai-autonomous-systems",
+      "changefreq": "weekly",
+      "priority": 0.8,
+      "fullUrl": "https://ziontechgroup.com/services/ai-autonomous-systems",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/services/quantum-technology",
+      "changefreq": "weekly",
+      "priority": 0.8,
+      "fullUrl": "https://ziontechgroup.com/services/quantum-technology",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/services/cybersecurity",
+      "changefreq": "weekly",
+      "priority": 0.8,
+      "fullUrl": "https://ziontechgroup.com/services/cybersecurity",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/services/it-infrastructure",
+      "changefreq": "weekly",
+      "priority": 0.8,
+      "fullUrl": "https://ziontechgroup.com/services/it-infrastructure",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/services/micro-saas-solutions",
+      "changefreq": "weekly",
+      "priority": 0.8,
+      "fullUrl": "https://ziontechgroup.com/services/micro-saas-solutions",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/services/industry-solutions",
+      "changefreq": "weekly",
+      "priority": 0.8,
+      "fullUrl": "https://ziontechgroup.com/services/industry-solutions",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/services/innovative-new-services",
+      "changefreq": "weekly",
+      "priority": 0.8,
+      "fullUrl": "https://ziontechgroup.com/services/innovative-new-services",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/services/specialized-it-infrastructure",
+      "changefreq": "weekly",
+      "priority": 0.8,
+      "fullUrl": "https://ziontechgroup.com/services/specialized-it-infrastructure",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/solutions/enterprise",
+      "changefreq": "weekly",
+      "priority": 0.8,
+      "fullUrl": "https://ziontechgroup.com/solutions/enterprise",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/solutions/healthcare",
+      "changefreq": "weekly",
+      "priority": 0.8,
+      "fullUrl": "https://ziontechgroup.com/solutions/healthcare",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/ai-solutions",
+      "changefreq": "weekly",
+      "priority": 0.9,
+      "fullUrl": "https://ziontechgroup.com/ai-solutions",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/services-showcase",
+      "changefreq": "weekly",
+      "priority": 0.8,
+      "fullUrl": "https://ziontechgroup.com/services-showcase",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/match",
+      "changefreq": "weekly",
+      "priority": 0.7,
+      "fullUrl": "https://ziontechgroup.com/match",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/talent",
+      "changefreq": "weekly",
+      "priority": 0.7,
+      "fullUrl": "https://ziontechgroup.com/talent",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/talents",
+      "changefreq": "weekly",
+      "priority": 0.7,
+      "fullUrl": "https://ziontechgroup.com/talents",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/careers",
+      "changefreq": "weekly",
+      "priority": 0.7,
+      "fullUrl": "https://ziontechgroup.com/careers",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/blog",
+      "changefreq": "daily",
+      "priority": 0.6,
+      "fullUrl": "https://ziontechgroup.com/blog",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/news",
+      "changefreq": "daily",
+      "priority": 0.6,
+      "fullUrl": "https://ziontechgroup.com/news",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/emerging-tech",
+      "changefreq": "weekly",
+      "priority": 0.6,
+      "fullUrl": "https://ziontechgroup.com/emerging-tech",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/pricing",
+      "changefreq": "monthly",
+      "priority": 0.7,
+      "fullUrl": "https://ziontechgroup.com/pricing",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/partners",
+      "changefreq": "monthly",
+      "priority": 0.6,
+      "fullUrl": "https://ziontechgroup.com/partners",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/privacy",
+      "changefreq": "yearly",
+      "priority": 0.3,
+      "fullUrl": "https://ziontechgroup.com/privacy",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    },
+    {
+      "url": "/terms",
+      "changefreq": "yearly",
+      "priority": 0.3,
+      "fullUrl": "https://ziontechgroup.com/terms",
+      "lastmod": "2025-08-25T19:51:30.932Z"
+    }
+  ]
+}
