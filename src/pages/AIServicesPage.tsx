@@ -113,7 +113,7 @@ const AIServiceCard: React.FC<{ service: any }> = ({ service }) => {
         
         <div className="flex flex-wrap gap-2 mb-4">
           {service.tags.map((tag: string) => (
-            <Badge key={tag} variant="outline" className="text-xs border-zion-blue-light text-zion-slate-light">
+            <Badge variant="outline" className="text-xs border-zion-blue-light text-zion-slate-light">
               {tag}
             </Badge>
           ))}

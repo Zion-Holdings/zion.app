@@ -350,7 +350,7 @@ export default function ServicesComparison() {
                     <h4 className="font-semibold mb-2 text-zinc-800 dark:text-zinc-200">Best For</h4>
                     <div className="flex flex-wrap gap-2">
                       {service.bestFor.slice(0, 2).map((item, index) => (
-                        <Badge key={index} variant="secondary" className="text-xs">
+                        <Badge variant="secondary" className="text-xs">
                           {item}
                         </Badge>
                       ))}
@@ -417,7 +417,7 @@ export default function ServicesComparison() {
                       <TableCell>
                         <div className="flex flex-wrap gap-2">
                           {SERVICE_COMPARISONS.find(s => s.category === selectedCategory)?.bestFor.map((item, index) => (
-                            <Badge key={index} variant="secondary">
+                            <Badge variant="secondary">
                               {item}
                             </Badge>
                           ))}

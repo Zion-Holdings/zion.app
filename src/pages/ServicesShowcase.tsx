@@ -308,7 +308,7 @@ export default function ServicesShowcase() {
         {sortedServices.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {sortedServices.map((service) => (
-              <Card key={service.id} className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/50 group bg-white/5 border-white/10 backdrop-blur-sm">
+              <Card className="overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-primary/50 group bg-white/5 border-white/10 backdrop-blur-sm">
                 <CardHeader className="pb-2">
                   <div className="flex justify-between items-start">
                     <div className="group-hover:scale-110 transition-transform duration-300">
