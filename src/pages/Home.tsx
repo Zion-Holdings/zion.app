@@ -3,7 +3,7 @@ import React from 'react';
 import { SEO } from "@/components/SEO";
 import { ServicesShowcase } from '../components/ServicesShowcase';
 
-export function Home() {
+export default function Home() {
   return (
     <div className="min-h-screen relative">
       <SEO 
