@@ -284,6 +284,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@babel/plugin-transform-react-jsx": "^7.27.1",
     "@humanwhocodes/object-schema": "^1.2.1",
     "@testing-library/cypress": "^8.0.2",
     "@testing-library/jest-dom": "^6.1.2",
@@ -293,6 +294,7 @@
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "@vitejs/plugin-react": "^4.2.1",
+    "@vitejs/plugin-react-refresh": "^1.3.6",
     "autoprefixer": "^10.4.17",
     "cypress": "^11.2.0",
     "cypress-real-events": "^1.12.0",
@@ -314,7 +316,6 @@
     "vite": "^5.0.8",
     "vitest": "^1.4.0"
   },
-
   "overrides": {
     "glob": "^10.4.5",
     "rimraf": "^5.0.5"
