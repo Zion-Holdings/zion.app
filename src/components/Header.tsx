@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Sidebar from './Sidebar';
@@ -99,122 +98,61 @@ export function Header() {
                     <span className="text-sm animate-quantum-float">{item.icon}</span>
                     <span>{item.label}</span>
                   </span>
-                  
-                  {/* Enhanced Hover Effect */}
-                  <div className={`absolute inset-0 rounded-lg bg-gradient-to-r from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-                    isActive(item.path) ? 'opacity-100' : ''
-                  }`}></div>
-                  
-                  {/* Enhanced Active Indicator */}
                   {isActive(item.path) && (
-                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-cyan-400 rounded-full animate-pulse animate-energy-pulse"></div>
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 rounded-full animate-pulse"></div>
                   )}
                 </Link>
               ))}
             </nav>
 
-            {/* Enhanced Contact Info */}
-            <div className="hidden lg:flex items-center space-x-4">
-              <button
-                onClick={() => setIsSidebarOpen(true)}
-                className="p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors duration-200 relative group"
-                title="Open Navigation Menu"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-                {/* Quantum particle effect on button */}
-                <div className="absolute -top-1 -right-1 w-1 h-1 bg-cyan-400 rounded-full animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </button>
-              
-              <div className="text-right">
-                <p className="text-sm neon-text font-medium">+1 302 464 0950</p>
-                <p className="text-xs text-gray-400">kleber@ziontechgroup.com</p>
-              </div>
-              <button className="quantum-button px-4 py-2 font-medium transform hover:scale-105">
-                Get Quote
-              </button>
-            </div>
-
             {/* Enhanced Mobile Menu Button */}
-            <div className="lg:hidden flex items-center gap-2">
-              <button
-                onClick={() => setIsSidebarOpen(true)}
-                className="p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors duration-200 relative group"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-                {/* Quantum particle effect on button */}
-                <div className="absolute -top-1 -right-1 w-1 h-1 bg-cyan-400 rounded-full animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </button>
-              
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors duration-200 relative group"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  {isMenuOpen ? (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  ) : (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                  )}
-                </svg>
-                {/* Quantum particle effect on button */}
-                <div className="absolute -top-1 -right-1 w-1 h-1 bg-cyan-400 rounded-full animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </button>
-            </div>
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="lg:hidden relative p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-300 group"
+            >
+              <div className="w-6 h-6 flex flex-col justify-center items-center">
+                <span className={`block w-5 h-0.5 bg-current transition-all duration-300 ${
+                  isMenuOpen ? 'rotate-45 translate-y-1.5' : ''
+                }`}></span>
+                <span className={`block w-5 h-0.5 bg-current transition-all duration-300 mt-1 ${
+                  isMenuOpen ? 'opacity-0' : ''
+                }`}></span>
+                <span className={`block w-5 h-0.5 bg-current transition-all duration-300 mt-1 ${
+                  isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
+                }`}></span>
+              </div>
+            </button>
           </div>
 
           {/* Enhanced Mobile Navigation */}
-          {isMenuOpen && (
-            <div className="lg:hidden">
-              <div className="px-2 pt-2 pb-3 space-y-1 futuristic-card border border-cyan-500/30 shadow-xl shadow-cyan-500/20">
-                {navigationItems.map((item) => (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    onClick={() => setIsMenuOpen(false)}
-                    className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
-                      isActive(item.path)
-                        ? 'text-white bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/50 neon-border'
-                        : 'text-gray-300 hover:text-white hover:bg-white/10'
-                    }`}
-                  >
-                    <span className="flex items-center space-x-3">
-                      <span className="text-lg animate-quantum-float">{item.icon}</span>
-                      <span>{item.label}</span>
-                    </span>
-                  </Link>
-                ))}
-                
-                {/* Enhanced Mobile Contact Info */}
-                <div className="pt-4 border-t border-cyan-500/30">
-                  <div className="px-3 py-2">
-                    <p className="text-sm neon-text font-medium">+1 302 464 0950</p>
-                    <p className="text-xs text-gray-400">kleber@ziontechgroup.com</p>
-                  </div>
-                  <button className="w-full mt-2 quantum-button font-medium">
-                    Get Quote
-                  </button>
-                </div>
-              </div>
-            </div>
-          )}
+          <div className={`lg:hidden transition-all duration-500 ease-in-out ${
+            isMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+          } overflow-hidden`}>
+            <nav className="py-4 space-y-2">
+              {navigationItems.map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block px-4 py-3 rounded-lg font-medium transition-all duration-300 ${
+                    isActive(item.path)
+                      ? 'text-white bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/50 shadow-lg shadow-cyan-500/30'
+                      : 'text-gray-300 hover:text-white hover:bg-white/10'
+                  }`}
+                >
+                  <span className="flex items-center space-x-3">
+                    <span className="text-lg">{item.icon}</span>
+                    <span>{item.label}</span>
+                  </span>
+                </Link>
+              ))}
+            </nav>
+          </div>
         </div>
-
-        {/* Floating Quantum Elements */}
-        <div className="absolute top-4 right-20 w-1 h-1 bg-cyan-400 rounded-full animate-ping animate-energy-pulse"></div>
-        <div className="absolute top-4 right-32 w-1 h-1 bg-blue-400 rounded-full animate-ping animate-energy-pulse animation-delay-1000"></div>
-        <div className="absolute top-4 right-44 w-1 h-1 bg-purple-400 rounded-full animate-ping animate-energy-pulse animation-delay-2000"></div>
       </header>
 
-      {/* Sidebar */}
+      {/* Enhanced Sidebar */}
       <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
     </>
   );
 }
-=======
-export { Header } from './header/Header';
-export type { HeaderProps } from './header/Header';
->>>>>>> cursor/integrate-build-improve-and-re-verify-a776
