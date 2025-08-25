@@ -42,7 +42,7 @@ export function Sidebar({ className }: SidebarProps) {
       items: [
         { name: 'AI Solutions', href: '/ai-solutions', icon: Brain },
         { name: 'Cloud Infrastructure', href: '/cloud-infrastructure', icon: Cloud },
-        { name: 'Cybersecurity', href: '/services/security', icon: Shield },
+        { name: 'Cybersecurity', href: '/cybersecurity', icon: Shield },
         { name: 'Digital Transformation', href: '/services/transformation', icon: Zap },
       ]
     },
