@@ -109,7 +109,7 @@ const App = () => {
               <AIChatbot />
               
               {/* Collaborative Text Editor - Development Mode */}
-              {process.env.NODE_ENV === 'development' && (
+              {import.meta.env.DEV && (
                 <div className="fixed bottom-24 left-6 z-40 w-96">
                   <CollaborativeTextEditor
                     roomId="dev-editor"
@@ -124,14 +124,14 @@ const App = () => {
               )}
               
               {/* AI Code Generator - Development Mode */}
-              {process.env.NODE_ENV === 'development' && (
+              {import.meta.env.DEV && (
                 <div className="fixed bottom-24 right-6 z-40 w-96">
                   <AICodeGenerator />
                 </div>
               )}
               
               {/* Development Dashboards */}
-              {process.env.NODE_ENV === 'development' && (
+              {import.meta.env.DEV && (
                 <>
                   {/* Performance Dashboard */}
                   <div className="fixed top-4 left-4 z-40">

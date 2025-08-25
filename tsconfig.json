@@ -36,21 +36,15 @@
     "src/App.tsx",
     "src/App.css",
     "src/pages/Home.tsx",
-    "src/pages/Services.tsx"
-  ],
-  "exclude": [
-    "src/pages/FAQ.tsx",
-    "src/pages/RequestQuote.tsx",
-    "src/pages/ServicesPricingPage.tsx",
-    "src/pages/Sitemap.tsx"
-  ],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    }
+    "src/pages/Services.tsx",
+    "src/vite-env.d.ts"
   ],
   "exclude": [
     "node_modules",
+    "src/pages/FAQ.tsx",
+    "src/pages/RequestQuote.tsx",
+    "src/pages/ServicesPricingPage.tsx",
+    "src/pages/Sitemap.tsx",
     "src/components/conflicted/**/*",
     "src/components/disabled/**/*",
     "src/components/Advanced*",
@@ -64,5 +58,10 @@
     "src/data/microSaasServices.ts",
     "src/hooks/useBlockchainWeb3.ts",
     "src/pages/HomePage.tsx"
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
   ]
 }

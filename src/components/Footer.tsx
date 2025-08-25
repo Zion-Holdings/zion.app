@@ -126,7 +126,7 @@ export function Footer() {
                         to={link.path}
                         className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 hover:neon-text"
                       >
-                        {link.label || link.name}
+                        {link.label}
                       </Link>
                     </li>
                   ))}

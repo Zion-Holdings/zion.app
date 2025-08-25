@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-
-interface ToasterProps {
-  position?: string;
-}
-
-export function Toaster({ position = 'top-right' }: ToasterProps) {
-  return <div className={`sonner-toaster ${position}`}></div>;
-}
-=======
 import { Toaster as Sonner } from "sonner"
 
 type ToasterProps = React.ComponentProps<typeof Sonner>
@@ -34,4 +23,3 @@ const Toaster = ({ ...props }: ToasterProps) => {
 }
 
 export { Toaster }
->>>>>>> cursor/integrate-build-improve-and-re-verify-a776
