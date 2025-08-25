@@ -215,4 +215,3 @@ export const Blog: React.FC = () => {
     </div>
   );
 };
-

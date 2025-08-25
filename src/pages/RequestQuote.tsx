@@ -1,8 +1,8 @@
 
 import React from 'react';
-import { QuoteRequestForm } from "@/components/QuoteRequestForm";
+import QuoteRequestForm from "@/components/QuoteRequestForm";
 import { SEO } from "@/components/SEO";
-import { AppHeader } from "@/layout/AppHeader";
+import { MainNavigation } from "@/layout/MainNavigation";
 import { Footer } from "@/components/Footer";
 
 export default function RequestQuote() {
@@ -15,7 +15,7 @@ export default function RequestQuote() {
         canonical="https://ziontechgroup.com/request-quote"
       />
       
-      <AppHeader />
+      <MainNavigation />
       
       <main className="pt-16">
         {/* Hero Section */}

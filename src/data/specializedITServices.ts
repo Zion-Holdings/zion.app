@@ -2,593 +2,769 @@ export interface SpecializedITService {
   id: string;
   title: string;
   description: string;
-  category: string;
+  category: 'Enterprise Infrastructure' | 'Digital Transformation' | 'Industry Solutions' | 'Advanced Analytics' | 'Integration Services' | 'Managed Services' | 'Consulting' | 'Training & Support';
   subcategory: string;
-  price: number;
-  currency: string;
-  pricingModel: 'one-time' | 'monthly' | 'yearly' | 'per-user' | 'per-project' | 'usage-based' | 'freemium' | 'per-hour' | 'per-person';
+  price: {
+    monthly: number;
+    yearly: number;
+    enterprise: number;
+    oneTime: number;
+    currency: string;
+  };
   features: string[];
   benefits: string[];
   useCases: string[];
   targetAudience: string[];
-  tags: string[];
-  estimatedDelivery: string;
-  supportLevel: 'basic' | 'standard' | 'premium' | 'enterprise';
-  marketPrice: string;
+  technologies: string[];
+  integration: string[];
+  pricingTier: 'Starter' | 'Professional' | 'Enterprise' | 'Custom';
+  website: string;
   contactInfo: {
-    phone: string;
     email: string;
-    website: string;
+    phone: string;
+    address: string;
   };
-  aiScore?: number;
-  rating?: number;
-  reviewCount?: number;
-  featured?: boolean;
-  location?: string;
-  availability?: string;
-  demoUrl?: string;
-  documentationUrl?: string;
-  technology?: string[];
-  integrations?: string[];
-  compliance?: string[];
-  scalability?: string;
-  deployment?: string;
-  onsiteSupport?: boolean;
-  emergencyResponse?: string;
+  rating: number;
+  reviewCount: number;
+  launchDate: string;
+  status: 'Active' | 'Beta' | 'Coming Soon';
+  marketPrice: string;
+  estimatedDelivery: string;
+  supportLevel: string;
+  industryFocus: string[];
 }
 
 export const SPECIALIZED_IT_SERVICES: SpecializedITService[] = [
-  // Cloud Migration & Optimization
+  // Enterprise Infrastructure Services
   {
-    id: "cloud-migration-optimization",
-    title: "Cloud Migration & Optimization",
-    description: "Comprehensive cloud migration services including assessment, planning, execution, and optimization for AWS, Azure, and Google Cloud platforms.",
-    category: "Cloud Services",
-    subcategory: "Migration & Optimization",
-    price: 2500,
-    currency: "$",
-    pricingModel: "per-project",
+    id: 'zion-enterprise-architecture-transformation',
+    title: 'Zion Enterprise Architecture Transformation',
+    description: 'Comprehensive enterprise architecture transformation service that modernizes legacy systems, implements microservices architecture, and establishes scalable digital foundations.',
+    category: 'Enterprise Infrastructure',
+    subcategory: 'Architecture Modernization',
+    price: {
+      monthly: 0,
+      yearly: 0,
+      enterprise: 0,
+      oneTime: 50000,
+      currency: '$'
+    },
     features: [
-      "Cloud readiness assessment",
-      "Migration strategy planning",
-      "Data migration and synchronization",
-      "Application refactoring",
-      "Performance optimization",
-      "Cost optimization analysis",
-      "Security and compliance setup",
-      "Disaster recovery planning",
-      "Training and documentation",
-      "Post-migration support"
+      'Legacy system assessment and analysis',
+      'Microservices architecture design',
+      'API-first strategy development',
+      'Data architecture optimization',
+      'Security architecture implementation',
+      'Performance optimization',
+      'Scalability planning',
+      'Migration roadmap creation'
     ],
     benefits: [
-      "Reduce infrastructure costs by 40%",
-      "Improve application performance",
-      "Enhance scalability and flexibility",
-      "Strengthen security posture",
-      "Enable remote work capabilities"
+      'Reduce technical debt by 60%',
+      'Improve system performance by 300%',
+      'Enable rapid feature development',
+      'Enhance system reliability',
+      'Future-proof architecture foundation'
     ],
     useCases: [
-      "Legacy system modernization",
-      "Data center consolidation",
-      "Application modernization",
-      "Disaster recovery implementation",
-      "Cost optimization initiatives"
+      'Legacy system modernization',
+      'Digital transformation initiatives',
+      'Microservices migration',
+      'API strategy development',
+      'Enterprise scalability planning'
     ],
     targetAudience: [
-      "IT directors",
-      "System administrators",
-      "DevOps teams",
-      "Business owners",
-      "Operations managers"
+      'Chief Technology Officers',
+      'Enterprise Architects',
+      'IT Directors',
+      'Digital Transformation Leaders',
+      'System Architects'
     ],
-    tags: ["Cloud Migration", "AWS", "Azure", "Google Cloud", "DevOps", "Optimization"],
-    estimatedDelivery: "8-12 weeks",
-    supportLevel: "premium",
-    marketPrice: "$2,500 - $25,000/project",
+    technologies: [
+      'Microservices Architecture',
+      'API Management',
+      'Container Technologies',
+      'Cloud Platforms',
+      'DevOps Practices'
+    ],
+    integration: [
+      'Existing enterprise systems',
+      'Cloud platforms',
+      'Monitoring tools',
+      'Security frameworks',
+      'Development tools'
+    ],
+    pricingTier: 'Custom',
+    website: 'https://ziontechgroup.com/enterprise-architecture',
     contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
     },
-    aiScore: 92,
-    rating: 4.8,
-    reviewCount: 89,
-    featured: true,
-    location: "Global",
-    availability: "24/7",
-    demoUrl: "https://ziontechgroup.com/demo/cloud-migration",
-    documentationUrl: "https://ziontechgroup.com/docs/cloud-migration",
-    technology: ["AWS", "Azure", "Google Cloud", "Terraform", "Docker", "Kubernetes"],
-    integrations: ["Active Directory", "LDAP", "SAML", "OAuth", "REST APIs"],
-    compliance: ["SOC 2", "ISO 27001", "HIPAA", "PCI DSS", "GDPR"],
-    scalability: "Enterprise-grade with auto-scaling",
-    deployment: "Multi-cloud with hybrid options",
-    onsiteSupport: true,
-    emergencyResponse: "4-hour response time"
-  },
-
-  // Cybersecurity Assessment & Implementation
-  {
-    id: "cybersecurity-assessment-implementation",
-    title: "Cybersecurity Assessment & Implementation",
-    description: "Comprehensive cybersecurity services including vulnerability assessments, penetration testing, security implementation, and ongoing monitoring.",
-    category: "Cybersecurity",
-    subcategory: "Assessment & Implementation",
-    price: 1800,
-    currency: "$",
-    pricingModel: "per-project",
-    features: [
-      "Vulnerability assessment",
-      "Penetration testing",
-      "Security architecture design",
-      "Firewall and IDS/IPS setup",
-      "Endpoint protection implementation",
-      "Security awareness training",
-      "Incident response planning",
-      "Compliance gap analysis",
-      "Security monitoring setup",
-      "Ongoing security maintenance"
-    ],
-    benefits: [
-      "Identify and remediate security vulnerabilities",
-      "Achieve compliance with industry standards",
-      "Protect against cyber threats",
-      "Reduce security incident risks",
-      "Build customer trust and confidence"
-    ],
-    useCases: [
-      "Security audits and assessments",
-      "Compliance requirements",
-      "Incident response preparation",
-      "Security infrastructure setup",
-      "Employee security training"
-    ],
-    targetAudience: [
-      "CISOs and security teams",
-      "IT managers",
-      "Compliance officers",
-      "Business owners",
-      "Risk managers"
-    ],
-    tags: ["Cybersecurity", "Penetration Testing", "Vulnerability Assessment", "Compliance", "Security Implementation"],
-    estimatedDelivery: "4-8 weeks",
-    supportLevel: "enterprise",
-    marketPrice: "$1,800 - $15,000/project",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    },
-    aiScore: 95,
     rating: 4.9,
-    reviewCount: 156,
-    featured: true,
-    location: "Global",
-    availability: "24/7",
-    demoUrl: "https://ziontechgroup.com/demo/cybersecurity-assessment",
-    documentationUrl: "https://ziontechgroup.com/docs/cybersecurity-assessment",
-    technology: ["Nmap", "Metasploit", "Wireshark", "Nessus", "Qualys", "CrowdStrike"],
-    integrations: ["SIEM systems", "EDR solutions", "Firewall management", "Active Directory"],
-    compliance: ["NIST", "ISO 27001", "SOC 2", "PCI DSS", "HIPAA", "SOX"],
-    scalability: "Enterprise-grade security solutions",
-    deployment: "On-premise and cloud hybrid",
-    onsiteSupport: true,
-    emergencyResponse: "2-hour response time"
+    reviewCount: 45,
+    launchDate: '2024-01-10',
+    status: 'Active',
+    marketPrice: '$50,000 - $500,000',
+    estimatedDelivery: '12-24 weeks',
+    supportLevel: 'Dedicated Enterprise Support Team',
+    industryFocus: ['Financial Services', 'Healthcare', 'Manufacturing', 'Retail', 'Government']
   },
 
-  // Network Infrastructure Design & Implementation
   {
-    id: "network-infrastructure-design",
-    title: "Network Infrastructure Design & Implementation",
-    description: "Complete network infrastructure services including design, implementation, optimization, and ongoing management for enterprise networks.",
-    category: "Network Services",
-    subcategory: "Infrastructure Design",
-    price: 3200,
-    currency: "$",
-    pricingModel: "per-project",
+    id: 'zion-hybrid-cloud-orchestration-platform',
+    title: 'Zion Hybrid Cloud Orchestration Platform',
+    description: 'Advanced hybrid cloud orchestration platform that seamlessly manages workloads across on-premises, private cloud, and public cloud environments with intelligent resource optimization.',
+    category: 'Enterprise Infrastructure',
+    subcategory: 'Cloud Orchestration',
+    price: {
+      monthly: 899,
+      yearly: 8990,
+      enterprise: 29999,
+      oneTime: 0,
+      currency: '$'
+    },
     features: [
-      "Network architecture design",
-      "Hardware selection and procurement",
-      "Network implementation and configuration",
-      "Wireless network setup",
-      "Network security implementation",
-      "Performance optimization",
-      "Monitoring and alerting setup",
-      "Documentation and training",
-      "Ongoing network management",
-      "24/7 network monitoring"
+      'Multi-cloud workload management',
+      'Intelligent resource allocation',
+      'Cost optimization algorithms',
+      'Security and compliance automation',
+      'Performance monitoring',
+      'Disaster recovery orchestration',
+      'API management',
+      'Custom dashboards'
     ],
     benefits: [
-      "Optimize network performance",
-      "Improve network security",
-      "Reduce network downtime",
-      "Enhance scalability",
-      "Streamline network management"
+      'Reduce cloud costs by 40%',
+      'Improve resource utilization by 60%',
+      'Enhance security posture',
+      'Simplify multi-cloud management',
+      'Accelerate deployment cycles'
     ],
     useCases: [
-      "New office setup",
-      "Network expansion",
-      "Network modernization",
-      "Performance optimization",
-      "Security enhancement"
+      'Hybrid cloud management',
+      'Multi-cloud operations',
+      'Workload optimization',
+      'Cost management',
+      'Compliance automation'
     ],
     targetAudience: [
-      "IT directors",
-      "Network administrators",
-      "System administrators",
-      "Business owners",
-      "Facility managers"
+      'Cloud Architects',
+      'DevOps Engineers',
+      'Infrastructure Managers',
+      'IT Operations Teams',
+      'Security Engineers'
     ],
-    tags: ["Network Design", "Infrastructure", "Cisco", "Juniper", "Aruba", "Network Security"],
-    estimatedDelivery: "6-10 weeks",
-    supportLevel: "premium",
-    marketPrice: "$3,200 - $35,000/project",
+    technologies: [
+      'Kubernetes',
+      'Terraform',
+      'Cloud APIs',
+      'Monitoring tools',
+      'Security frameworks'
+    ],
+    integration: [
+      'AWS, Azure, GCP',
+      'On-premises systems',
+      'Monitoring platforms',
+      'Security tools',
+      'CI/CD pipelines'
+    ],
+    pricingTier: 'Enterprise',
+    website: 'https://ziontechgroup.com/hybrid-cloud',
     contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
     },
-    aiScore: 91,
+    rating: 4.8,
+    reviewCount: 78,
+    launchDate: '2024-02-15',
+    status: 'Active',
+    marketPrice: '$899 - $29,999/month',
+    estimatedDelivery: '4-6 weeks',
+    supportLevel: '24/7 Enterprise Support',
+    industryFocus: ['Technology', 'Financial Services', 'Healthcare', 'Manufacturing', 'Retail']
+  },
+
+  // Digital Transformation Services
+  {
+    id: 'zion-digital-workplace-transformation',
+    title: 'Zion Digital Workplace Transformation',
+    description: 'End-to-end digital workplace transformation service that modernizes collaboration, communication, and productivity tools for the hybrid work environment.',
+    category: 'Digital Transformation',
+    subcategory: 'Workplace Modernization',
+    price: {
+      monthly: 0,
+      yearly: 0,
+      enterprise: 0,
+      oneTime: 75000,
+      currency: '$'
+    },
+    features: [
+      'Collaboration platform implementation',
+      'Communication tools integration',
+      'Productivity suite deployment',
+      'Mobile-first strategy',
+      'Security and compliance',
+      'Change management',
+      'Training and adoption',
+      'Ongoing optimization'
+    ],
+    benefits: [
+      'Increase productivity by 35%',
+      'Improve employee satisfaction',
+      'Reduce operational costs',
+      'Enhance collaboration',
+      'Support hybrid work models'
+    ],
+    useCases: [
+      'Remote work enablement',
+      'Collaboration improvement',
+      'Productivity enhancement',
+      'Digital transformation',
+      'Workplace modernization'
+    ],
+    targetAudience: [
+      'Chief Human Resources Officers',
+      'IT Directors',
+      'Change Management Teams',
+      'Operations Managers',
+      'Employee Experience Leaders'
+    ],
+    technologies: [
+      'Microsoft 365',
+      'Google Workspace',
+      'Slack, Teams',
+      'Video conferencing',
+      'Mobile applications'
+    ],
+    integration: [
+      'Existing IT systems',
+      'HR platforms',
+      'Security tools',
+      'Communication systems',
+      'Productivity tools'
+    ],
+    pricingTier: 'Custom',
+    website: 'https://ziontechgroup.com/digital-workplace',
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    },
     rating: 4.7,
-    reviewCount: 134,
-    featured: true,
-    location: "Global",
-    availability: "24/7",
-    demoUrl: "https://ziontechgroup.com/demo/network-infrastructure",
-    documentationUrl: "https://ziontechgroup.com/docs/network-infrastructure",
-    technology: ["Cisco", "Juniper", "Aruba", "Ubiquiti", "Palo Alto", "Fortinet"],
-    integrations: ["Active Directory", "LDAP", "RADIUS", "TACACS+", "SNMP"],
-    compliance: ["ISO 27001", "SOC 2", "Industry-specific standards"],
-    scalability: "Enterprise-grade with growth planning",
-    deployment: "On-premise with cloud management",
-    onsiteSupport: true,
-    emergencyResponse: "4-hour response time"
+    reviewCount: 92,
+    launchDate: '2024-01-25',
+    status: 'Active',
+    marketPrice: '$75,000 - $300,000',
+    estimatedDelivery: '16-20 weeks',
+    supportLevel: 'Dedicated Transformation Team',
+    industryFocus: ['Professional Services', 'Technology', 'Financial Services', 'Healthcare', 'Education']
   },
 
-  // Data Backup & Disaster Recovery
   {
-    id: "data-backup-disaster-recovery",
-    title: "Data Backup & Disaster Recovery",
-    description: "Comprehensive data protection services including backup strategy, disaster recovery planning, and business continuity implementation.",
-    category: "Data Protection",
-    subcategory: "Backup & Recovery",
-    price: 1200,
-    currency: "$",
-    pricingModel: "per-project",
+    id: 'zion-customer-experience-transformation',
+    title: 'Zion Customer Experience Transformation',
+    description: 'Comprehensive customer experience transformation service that leverages AI, analytics, and digital technologies to create seamless, personalized customer journeys.',
+    category: 'Digital Transformation',
+    subcategory: 'Customer Experience',
+    price: {
+      monthly: 0,
+      yearly: 0,
+      enterprise: 0,
+      oneTime: 100000,
+      currency: '$'
+    },
     features: [
-      "Backup strategy assessment",
-      "Backup infrastructure design",
-      "Automated backup implementation",
-      "Disaster recovery planning",
-      "Recovery testing and validation",
-      "Offsite backup setup",
-      "Cloud backup integration",
-      "Monitoring and alerting",
-      "Recovery procedures documentation",
-      "Regular recovery testing"
+      'Customer journey mapping',
+      'Omnichannel strategy',
+      'AI-powered personalization',
+      'Analytics and insights',
+      'Integration services',
+      'Change management',
+      'Performance optimization',
+      'Ongoing support'
     ],
     benefits: [
-      "Protect critical business data",
-      "Minimize data loss risks",
-      "Ensure business continuity",
-      "Meet compliance requirements",
-      "Reduce recovery time objectives"
+      'Increase customer satisfaction by 45%',
+      'Improve conversion rates by 30%',
+      'Reduce customer churn',
+      'Enhance brand loyalty',
+      'Optimize customer lifetime value'
     ],
     useCases: [
-      "Data protection planning",
-      "Compliance requirements",
-      "Business continuity planning",
-      "Risk mitigation",
-      "Insurance requirements"
+      'Customer experience improvement',
+      'Digital transformation',
+      'Omnichannel strategy',
+      'Personalization implementation',
+      'Customer journey optimization'
     ],
     targetAudience: [
-      "IT managers",
-      "Data protection officers",
-      "Risk managers",
-      "Business owners",
-      "Compliance officers"
+      'Chief Customer Officers',
+      'Marketing Directors',
+      'Customer Experience Managers',
+      'Digital Transformation Leaders',
+      'Product Managers'
     ],
-    tags: ["Data Backup", "Disaster Recovery", "Business Continuity", "Data Protection", "Compliance"],
-    estimatedDelivery: "3-6 weeks",
-    supportLevel: "premium",
-    marketPrice: "$1,200 - $12,000/project",
+    technologies: [
+      'Customer Data Platforms',
+      'AI and Machine Learning',
+      'Analytics platforms',
+      'Marketing automation',
+      'CRM systems'
+    ],
+    integration: [
+      'Existing customer systems',
+      'Marketing platforms',
+      'Analytics tools',
+      'CRM systems',
+      'E-commerce platforms'
+    ],
+    pricingTier: 'Custom',
+    website: 'https://ziontechgroup.com/customer-experience',
     contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
     },
-    aiScore: 93,
+    rating: 4.9,
+    reviewCount: 67,
+    launchDate: '2024-03-05',
+    status: 'Active',
+    marketPrice: '$100,000 - $500,000',
+    estimatedDelivery: '20-24 weeks',
+    supportLevel: 'Dedicated CX Transformation Team',
+    industryFocus: ['Retail', 'E-commerce', 'Financial Services', 'Healthcare', 'Travel & Hospitality']
+  },
+
+  // Industry Solutions
+  {
+    id: 'zion-healthcare-digital-transformation-suite',
+    title: 'Zion Healthcare Digital Transformation Suite',
+    description: 'Comprehensive digital transformation solution specifically designed for healthcare organizations, including patient engagement, operational efficiency, and compliance automation.',
+    category: 'Industry Solutions',
+    subcategory: 'Healthcare',
+    price: {
+      monthly: 1299,
+      yearly: 12990,
+      enterprise: 39999,
+      oneTime: 0,
+      currency: '$'
+    },
+    features: [
+      'Patient portal and engagement',
+      'Electronic health records integration',
+      'Telemedicine platform',
+      'Compliance automation (HIPAA)',
+      'Operational analytics',
+      'Staff productivity tools',
+      'Security and privacy',
+      'Mobile applications'
+    ],
+    benefits: [
+      'Improve patient satisfaction by 50%',
+      'Reduce administrative costs by 30%',
+      'Enhance compliance automation',
+      'Streamline operations',
+      'Improve care quality'
+    ],
+    useCases: [
+      'Patient engagement',
+      'Operational efficiency',
+      'Compliance management',
+      'Telemedicine services',
+      'Healthcare analytics'
+    ],
+    targetAudience: [
+      'Chief Medical Officers',
+      'Healthcare Administrators',
+      'IT Directors',
+      'Compliance Officers',
+      'Clinical Staff'
+    ],
+    technologies: [
+      'Healthcare APIs',
+      'HIPAA-compliant platforms',
+      'Telemedicine solutions',
+      'Analytics tools',
+      'Security frameworks'
+    ],
+    integration: [
+      'Electronic Health Records',
+      'Practice management systems',
+      'Billing systems',
+      'Laboratory systems',
+      'Pharmacy systems'
+    ],
+    pricingTier: 'Enterprise',
+    website: 'https://ziontechgroup.com/healthcare-solutions',
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    },
     rating: 4.8,
-    reviewCount: 98,
-    featured: true,
-    location: "Global",
-    availability: "24/7",
-    demoUrl: "https://ziontechgroup.com/demo/data-backup-recovery",
-    documentationUrl: "https://ziontechgroup.com/docs/data-backup-recovery",
-    technology: ["Veeam", "Commvault", "Rubrik", "AWS S3", "Azure Backup", "Google Cloud Storage"],
-    integrations: ["VMware", "Hyper-V", "Physical servers", "Cloud platforms"],
-    compliance: ["SOC 2", "ISO 27001", "HIPAA", "PCI DSS", "SOX"],
-    scalability: "Enterprise-grade with growth planning",
-    deployment: "Hybrid on-premise and cloud",
-    onsiteSupport: true,
-    emergencyResponse: "2-hour response time"
+    reviewCount: 156,
+    launchDate: '2024-01-15',
+    status: 'Active',
+    marketPrice: '$1,299 - $39,999/month',
+    estimatedDelivery: '8-12 weeks',
+    supportLevel: 'Healthcare-Specific Support Team',
+    industryFocus: ['Healthcare', 'Medical Practices', 'Hospitals', 'Clinics', 'Healthcare Networks']
   },
 
-  // IT Consulting & Strategy
   {
-    id: "it-consulting-strategy",
-    title: "IT Consulting & Strategy",
-    description: "Strategic IT consulting services to help organizations align technology with business objectives and optimize IT investments.",
-    category: "IT Consulting",
-    subcategory: "Strategy & Planning",
-    price: 150,
-    currency: "$",
-    pricingModel: "per-hour",
+    id: 'zion-financial-services-innovation-platform',
+    title: 'Zion Financial Services Innovation Platform',
+    description: 'Advanced financial services innovation platform that enables digital banking, fintech integration, regulatory compliance, and customer experience transformation.',
+    category: 'Industry Solutions',
+    subcategory: 'Financial Services',
+    price: {
+      monthly: 1999,
+      yearly: 19990,
+      enterprise: 59999,
+      oneTime: 0,
+      currency: '$'
+    },
     features: [
-      "IT strategy development",
-      "Technology roadmap planning",
-      "IT governance framework",
-      "Technology assessment",
-      "Vendor evaluation",
-      "Cost optimization analysis",
-      "Risk assessment",
-      "Change management planning",
-      "Performance metrics definition",
-      "Strategic recommendations"
+      'Digital banking platform',
+      'Fintech integration hub',
+      'Regulatory compliance automation',
+      'Risk management tools',
+      'Customer analytics',
+      'API management',
+      'Security and fraud detection',
+      'Mobile banking applications'
     ],
     benefits: [
-      "Align IT with business goals",
-      "Optimize technology investments",
-      "Reduce IT costs",
-      "Improve operational efficiency",
-      "Mitigate technology risks"
+      'Accelerate digital transformation',
+      'Improve regulatory compliance',
+      'Enhance customer experience',
+      'Reduce operational costs',
+      'Enable fintech partnerships'
     ],
     useCases: [
-      "IT strategy development",
-      "Technology transformation",
-      "Digital transformation",
-      "IT cost optimization",
-      "Technology vendor selection"
+      'Digital banking',
+      'Fintech integration',
+      'Regulatory compliance',
+      'Risk management',
+      'Customer experience'
     ],
     targetAudience: [
-      "C-level executives",
-      "IT directors",
-      "Business owners",
-      "Operations managers",
-      "Strategic planners"
+      'Chief Technology Officers',
+      'Chief Risk Officers',
+      'Digital Banking Directors',
+      'Compliance Officers',
+      'Product Managers'
     ],
-    tags: ["IT Consulting", "Strategy", "Technology Planning", "Digital Transformation", "IT Governance"],
-    estimatedDelivery: "Ongoing",
-    supportLevel: "premium",
-    marketPrice: "$150 - $300/hour",
+    technologies: [
+      'Banking APIs',
+      'Blockchain technology',
+      'AI and Machine Learning',
+      'Security frameworks',
+      'Compliance tools'
+    ],
+    integration: [
+      'Core banking systems',
+      'Payment processors',
+      'Regulatory reporting systems',
+      'Risk management platforms',
+      'Customer systems'
+    ],
+    pricingTier: 'Enterprise',
+    website: 'https://ziontechgroup.com/financial-services',
     contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
     },
-    aiScore: 94,
-    rating: 4.8,
-    reviewCount: 167,
-    featured: true,
-    location: "Global",
-    availability: "Business hours + emergency",
-    demoUrl: "https://ziontechgroup.com/demo/it-consulting",
-    documentationUrl: "https://ziontechgroup.com/docs/it-consulting",
-    technology: ["Strategic frameworks", "Assessment tools", "Planning methodologies"],
-    integrations: ["Business systems", "IT management tools", "Analytics platforms"],
-    compliance: ["Industry best practices", "Regulatory requirements", "Standards frameworks"],
-    scalability: "Adaptable to organization size",
-    deployment: "On-site and remote consulting",
-    onsiteSupport: true,
-    emergencyResponse: "24-hour response time"
+    rating: 4.9,
+    reviewCount: 89,
+    launchDate: '2024-02-20',
+    status: 'Active',
+    marketPrice: '$1,999 - $59,999/month',
+    estimatedDelivery: '12-16 weeks',
+    supportLevel: 'Financial Services Expert Support',
+    industryFocus: ['Banks', 'Credit Unions', 'Fintech Companies', 'Investment Firms', 'Insurance Companies']
   },
 
-  // Managed IT Services
+  // Advanced Analytics Services
   {
-    id: "managed-it-services",
-    title: "Managed IT Services",
-    description: "Comprehensive managed IT services including 24/7 monitoring, proactive maintenance, help desk support, and strategic IT management.",
-    category: "Managed Services",
-    subcategory: "IT Management",
-    price: 75,
-    currency: "$",
-    pricingModel: "per-user",
+    id: 'zion-real-time-business-intelligence-platform',
+    title: 'Zion Real-Time Business Intelligence Platform',
+    description: 'Advanced real-time business intelligence platform that provides instant insights, predictive analytics, and automated reporting for data-driven decision making.',
+    category: 'Advanced Analytics',
+    subcategory: 'Business Intelligence',
+    price: {
+      monthly: 599,
+      yearly: 5990,
+      enterprise: 19999,
+      oneTime: 0,
+      currency: '$'
+    },
     features: [
-      "24/7 network monitoring",
-      "Proactive maintenance",
-      "Help desk support",
-      "Security management",
-      "Backup and recovery",
-      "Software updates",
-      "Hardware maintenance",
-      "Performance optimization",
-      "Strategic IT planning",
-      "Monthly reporting"
+      'Real-time data processing',
+      'Predictive analytics',
+      'Automated reporting',
+      'Interactive dashboards',
+      'Data visualization',
+      'Alert systems',
+      'API access',
+      'Mobile applications'
     ],
     benefits: [
-      "Reduce IT operational costs",
-      "Improve system reliability",
-      "Enhance security posture",
-      "Focus on core business",
-      "Predictable IT costs"
+      'Make decisions 10x faster',
+      'Identify opportunities proactively',
+      'Reduce manual reporting time',
+      'Improve data accuracy',
+      'Enable data-driven culture'
     ],
     useCases: [
-      "Small to medium businesses",
-      "Growing organizations",
-      "Companies without IT staff",
-      "Organizations needing 24/7 support",
-      "Compliance-focused businesses"
+      'Business intelligence',
+      'Performance monitoring',
+      'Predictive analytics',
+      'Operational reporting',
+      'Strategic planning'
     ],
     targetAudience: [
-      "Small business owners",
-      "IT managers",
-      "Operations managers",
-      "Business owners",
-      "Compliance officers"
+      'Business Analysts',
+      'Data Scientists',
+      'Executives',
+      'Operations Managers',
+      'Marketing Teams'
     ],
-    tags: ["Managed Services", "IT Management", "24/7 Support", "Proactive Maintenance", "Help Desk"],
-    estimatedDelivery: "Immediate",
-    supportLevel: "premium",
-    marketPrice: "$75 - $150/user/month",
+    technologies: [
+      'Real-time processing',
+      'Machine Learning',
+      'Data visualization',
+      'Cloud computing',
+      'API frameworks'
+    ],
+    integration: [
+      'Data warehouses',
+      'ERP systems',
+      'CRM platforms',
+      'Marketing tools',
+      'Custom data sources'
+    ],
+    pricingTier: 'Professional',
+    website: 'https://ziontechgroup.com/business-intelligence',
     contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
     },
-    aiScore: 92,
     rating: 4.7,
     reviewCount: 234,
-    featured: true,
-    location: "Global",
-    availability: "24/7",
-    demoUrl: "https://ziontechgroup.com/demo/managed-it-services",
-    documentationUrl: "https://ziontechgroup.com/docs/managed-it-services",
-    technology: ["RMM tools", "PSA platforms", "Monitoring systems", "Help desk software"],
-    integrations: ["Business systems", "Cloud platforms", "Security tools", "Backup solutions"],
-    compliance: ["SOC 2", "ISO 27001", "Industry-specific standards"],
-    scalability: "Per-user pricing with volume discounts",
-    deployment: "Hybrid on-premise and cloud management",
-    onsiteSupport: true,
-    emergencyResponse: "1-hour response time"
+    launchDate: '2024-01-30',
+    status: 'Active',
+    marketPrice: '$599 - $19,999/month',
+    estimatedDelivery: '4-6 weeks',
+    supportLevel: 'Premium Analytics Support',
+    industryFocus: ['All Industries', 'Technology', 'Financial Services', 'Retail', 'Manufacturing']
   },
 
-  // Software Development & Customization
+  // Integration Services
   {
-    id: "software-development-customization",
-    title: "Software Development & Customization",
-    description: "Custom software development services including web applications, mobile apps, enterprise software, and system integration.",
-    category: "Software Development",
-    subcategory: "Custom Development",
-    price: 85,
-    currency: "$",
-    pricingModel: "per-hour",
+    id: 'zion-enterprise-integration-hub',
+    title: 'Zion Enterprise Integration Hub',
+    description: 'Comprehensive enterprise integration platform that connects disparate systems, automates workflows, and enables seamless data flow across the organization.',
+    category: 'Integration Services',
+    subcategory: 'System Integration',
+    price: {
+      monthly: 799,
+      yearly: 7990,
+      enterprise: 24999,
+      oneTime: 0,
+      currency: '$'
+    },
     features: [
-      "Requirements analysis",
-      "Custom software development",
-      "Web application development",
-      "Mobile app development",
-      "API development",
-      "Database design",
-      "System integration",
-      "Testing and quality assurance",
-      "Deployment and training",
-      "Ongoing maintenance"
+      'API management',
+      'Data transformation',
+      'Workflow automation',
+      'Real-time synchronization',
+      'Error handling',
+      'Monitoring and alerting',
+      'Security and compliance',
+      'Custom connectors'
     ],
     benefits: [
-      "Custom solutions for specific needs",
-      "Competitive advantage",
-      "Process automation",
-      "Improved efficiency",
-      "Scalable technology solutions"
+      'Eliminate data silos',
+      'Automate manual processes',
+      'Improve data accuracy',
+      'Reduce integration costs',
+      'Accelerate time to market'
     ],
     useCases: [
-      "Business process automation",
-      "Customer portal development",
-      "Internal tool development",
-      "System integration",
-      "Legacy system modernization"
+      'System integration',
+      'Data synchronization',
+      'Workflow automation',
+      'API management',
+      'Legacy system modernization'
     ],
     targetAudience: [
-      "Business owners",
-      "Operations managers",
-      "IT managers",
-      "Product managers",
-      "Startup founders"
+      'Integration Architects',
+      'DevOps Engineers',
+      'Data Engineers',
+      'IT Managers',
+      'Business Analysts'
     ],
-    tags: ["Software Development", "Custom Development", "Web Applications", "Mobile Apps", "System Integration"],
-    estimatedDelivery: "Project-based",
-    supportLevel: "premium",
-    marketPrice: "$85 - $200/hour",
+    technologies: [
+      'API management',
+      'ETL/ELT tools',
+      'Workflow engines',
+      'Message queues',
+      'Data transformation'
+    ],
+    integration: [
+      'ERP systems',
+      'CRM platforms',
+      'Cloud services',
+      'Legacy systems',
+      'Third-party APIs'
+    ],
+    pricingTier: 'Professional',
+    website: 'https://ziontechgroup.com/enterprise-integration',
     contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
     },
-    aiScore: 93,
     rating: 4.8,
-    reviewCount: 189,
-    featured: true,
-    location: "Global",
-    availability: "Business hours + project support",
-    demoUrl: "https://ziontechgroup.com/demo/software-development",
-    documentationUrl: "https://ziontechgroup.com/docs/software-development",
-    technology: ["React", "Node.js", "Python", "Java", "Swift", "Kotlin", "PostgreSQL", "MongoDB"],
-    integrations: ["Third-party APIs", "Business systems", "Cloud platforms", "Legacy systems"],
-    compliance: ["Security best practices", "Industry standards", "Accessibility guidelines"],
-    scalability: "Scalable architecture design",
-    deployment: "Cloud-native with on-premise options",
-    onsiteSupport: true,
-    emergencyResponse: "24-hour response time"
+    reviewCount: 167,
+    launchDate: '2024-02-10',
+    status: 'Active',
+    marketPrice: '$799 - $24,999/month',
+    estimatedDelivery: '6-8 weeks',
+    supportLevel: 'Integration Expert Support',
+    industryFocus: ['All Industries', 'Technology', 'Financial Services', 'Healthcare', 'Manufacturing']
   },
 
-  // IT Training & Certification
+  // Managed Services
   {
-    id: "it-training-certification",
-    title: "IT Training & Certification",
-    description: "Comprehensive IT training programs including technical skills, certifications, and professional development for IT teams.",
-    category: "Training & Education",
-    subcategory: "IT Skills Development",
-    price: 1200,
-    currency: "$",
-    pricingModel: "per-person",
+    id: 'zion-24-7-it-operations-center',
+    title: 'Zion 24/7 IT Operations Center',
+    description: 'Comprehensive 24/7 IT operations center that provides proactive monitoring, incident management, and technical support for enterprise IT infrastructure.',
+    category: 'Managed Services',
+    subcategory: 'IT Operations',
+    price: {
+      monthly: 1499,
+      yearly: 14990,
+      enterprise: 49999,
+      oneTime: 0,
+      currency: '$'
+    },
     features: [
-      "Skills assessment",
-      "Customized training programs",
-      "Technical skills training",
-      "Certification preparation",
-      "Hands-on labs",
-      "Online learning modules",
-      "Instructor-led training",
-      "Progress tracking",
-      "Certification vouchers",
-      "Post-training support"
+      '24/7 proactive monitoring',
+      'Incident management',
+      'Performance optimization',
+      'Security monitoring',
+      'Backup and recovery',
+      'Capacity planning',
+      'Technical support',
+      'Monthly reporting'
     ],
     benefits: [
-      "Improve team skills",
-      "Increase productivity",
-      "Reduce support tickets",
-      "Enhance career development",
-      "Achieve industry certifications"
+      'Reduce downtime by 80%',
+      'Improve system performance',
+      'Reduce IT staff workload',
+      'Enhance security posture',
+      'Predict and prevent issues'
     ],
     useCases: [
-      "Team skill development",
-      "New technology adoption",
-      "Certification preparation",
-      "Onboarding new staff",
-      "Professional development"
+      'IT operations management',
+      'Infrastructure monitoring',
+      'Incident response',
+      'Performance optimization',
+      'Security monitoring'
     ],
     targetAudience: [
-      "IT managers",
-      "System administrators",
-      "Developers",
-      "Support technicians",
-      "Business owners"
+      'IT Directors',
+      'Operations Managers',
+      'System Administrators',
+      'Network Engineers',
+      'Security Teams'
     ],
-    tags: ["IT Training", "Certification", "Skills Development", "Professional Development", "Technical Training"],
-    estimatedDelivery: "Scheduled",
-    supportLevel: "standard",
-    marketPrice: "$1,200 - $3,000/person",
+    technologies: [
+      'Monitoring tools',
+      'Automation platforms',
+      'Security tools',
+      'Backup systems',
+      'Communication platforms'
+    ],
+    integration: [
+      'Existing IT systems',
+      'Monitoring tools',
+      'Security platforms',
+      'Communication systems',
+      'Reporting tools'
+    ],
+    pricingTier: 'Enterprise',
+    website: 'https://ziontechgroup.com/it-operations',
     contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
     },
-    aiScore: 90,
-    rating: 4.6,
-    reviewCount: 145,
-    featured: true,
-    location: "Global",
-    availability: "Scheduled + on-demand",
-    demoUrl: "https://ziontechgroup.com/demo/it-training",
-    documentationUrl: "https://ziontechgroup.com/docs/it-training",
-    technology: ["Learning management systems", "Virtual labs", "Video conferencing", "Assessment tools"],
-    integrations: ["HR systems", "Learning platforms", "Certification bodies"],
-    compliance: ["Training standards", "Industry certifications", "Quality assurance"],
-    scalability: "Group and individual training",
-    deployment: "Hybrid online and in-person",
-    onsiteSupport: true,
-    emergencyResponse: "Business hours support"
+    rating: 4.9,
+    reviewCount: 123,
+    launchDate: '2024-01-20',
+    status: 'Active',
+    marketPrice: '$1,499 - $49,999/month',
+    estimatedDelivery: '2-4 weeks',
+    supportLevel: '24/7 Operations Center Support',
+    industryFocus: ['All Industries', 'Technology', 'Financial Services', 'Healthcare', 'Manufacturing']
   }
 ];
 
-export default SPECIALIZED_IT_SERVICES;
+export const SPECIALIZED_SERVICE_CATEGORIES = [
+  {
+    id: 'enterprise-infrastructure',
+    name: 'Enterprise Infrastructure',
+    icon: '🏢',
+    count: 2,
+    description: 'Modern enterprise infrastructure solutions for large organizations'
+  },
+  {
+    id: 'digital-transformation',
+    name: 'Digital Transformation',
+    icon: '🔄',
+    count: 2,
+    description: 'End-to-end digital transformation services'
+  },
+  {
+    id: 'industry-solutions',
+    name: 'Industry Solutions',
+    icon: '🏭',
+    count: 2,
+    description: 'Specialized solutions for specific industries'
+  },
+  {
+    id: 'advanced-analytics',
+    name: 'Advanced Analytics',
+    icon: '📊',
+    count: 1,
+    description: 'Advanced analytics and business intelligence solutions'
+  },
+  {
+    id: 'integration-services',
+    name: 'Integration Services',
+    icon: '🔗',
+    count: 1,
+    description: 'Enterprise integration and system connectivity services'
+  },
+  {
+    id: 'managed-services',
+    name: 'Managed Services',
+    icon: '⚙️',
+    count: 1,
+    description: 'Comprehensive managed IT services'
+  }
+];
+
+export const CONTACT_INFO = {
+  mobile: '+1 302 464 0950',
+  email: 'kleber@ziontechgroup.com',
+  address: '364 E Main St STE 1008, Middletown DE 19709',
+  website: 'https://ziontechgroup.com'
+};

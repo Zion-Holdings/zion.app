@@ -2,19 +2,61 @@ import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Home, Briefcase, Users, Phone, Mail, MapPin, Globe, Linkedin, Twitter, Facebook, Instagram, Shield } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { cn } from '@/lib/utils';
 
 interface SidebarProps {
   isOpen: boolean;
   onClose: () => void;
+  className?: string;
 }
 
-export default function Sidebar({ isOpen, onClose }: SidebarProps) {
+// Animation variants
+const overlayVariants = {
+  closed: { opacity: 0 },
+  open: { opacity: 1 }
+};
+
+const sidebarVariants = {
+  closed: { x: '-100%' },
+  open: { x: 0 }
+};
+
+// Contact information
+const contactInfo = [
+  { icon: Mail, text: 'info@ziontechgroup.com', href: 'mailto:info@ziontechgroup.com' },
+  { icon: Phone, text: '+1 (555) 123-4567', href: 'tel:+15551234567' },
+  { icon: MapPin, text: 'San Francisco, CA', href: '#' }
+];
+
+// Social media links
+const socialLinks = [
+  { icon: Linkedin, href: 'https://linkedin.com/company/ziontechgroup', label: 'LinkedIn' },
+  { icon: Twitter, href: 'https://twitter.com/ziontechgroup', label: 'Twitter' },
+  { icon: Facebook, href: 'https://facebook.com/ziontechgroup', label: 'Facebook' },
+  { icon: Instagram, href: 'https://instagram.com/ziontechgroup', label: 'Instagram' }
+];
+
+export function Sidebar({ isOpen, onClose, className }: SidebarProps) {
   const location = useLocation();
 
-  // Close sidebar when route changes
+  // Close sidebar on escape key
   useEffect(() => {
-    onClose();
-  }, [location.pathname, onClose]);
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen, onClose]);
 
   const navigationItems = [
     {
@@ -58,43 +100,6 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
       ]
     }
   ];
-
-  const contactInfo = [
-    { icon: Phone, text: '+1 302 464 0950', href: 'tel:+13024640950' },
-    { icon: Mail, text: 'kleber@ziontechgroup.com', href: 'mailto:kleber@ziontechgroup.com' },
-    { icon: MapPin, text: '364 E Main St STE 1008 Middletown DE 19709', href: '#' }
-  ];
-
-  const socialLinks = [
-    { icon: Linkedin, href: 'https://linkedin.com/company/ziontechgroup', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com/ziontechgroup', label: 'Twitter' },
-    { icon: Facebook, href: 'https://facebook.com/ziontechgroup', label: 'Facebook' },
-    { icon: Instagram, href: 'https://instagram.com/ziontechgroup', label: 'Instagram' }
-  ];
-
-  const sidebarVariants = {
-    closed: {
-      x: '-100%',
-      transition: {
-        type: 'spring' as const,
-        stiffness: 300,
-        damping: 30
-      }
-    },
-    open: {
-      x: 0,
-      transition: {
-        type: 'spring' as const,
-        stiffness: 300,
-        damping: 30
-      }
-    }
-  };
-
-  const overlayVariants = {
-    closed: { opacity: 0 },
-    open: { opacity: 1 }
-  };
 
   return (
     <>
