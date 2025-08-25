@@ -1,77 +1,77 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Zap, Shield, Users, TrendingUp, Globe, Lock, CheckCircle, Star, Cpu, Database, Building2, Network, Server, Monitor, Rocket, Code, Settings, RefreshCw } from 'lucide-react';
+import { ArrowRight, Cloud, Zap, Shield, Users, TrendingUp, Globe, Lock, CheckCircle, Star, Cpu, Database, GitBranch, Server, Monitor, Rocket, Code, Settings } from 'lucide-react';
 import { SEO } from '@/components/SEO';
 
-const DigitalTransformation = () => {
+const CloudDevOps = () => {
   const services = [
     {
-      title: "Process Optimization",
-      description: "Streamline and automate business processes for maximum efficiency and productivity.",
-      icon: RefreshCw,
-      features: ["Workflow automation", "Process mapping", "Efficiency analysis", "Performance metrics"],
+      title: "Cloud Infrastructure",
+      description: "Design and deploy scalable cloud solutions on AWS, Azure, and Google Cloud.",
+      icon: Cloud,
+      features: ["Multi-cloud strategy", "Auto-scaling", "Load balancing", "Disaster recovery"],
       color: "from-blue-500 to-cyan-500"
     },
     {
-      title: "Technology Assessment",
-      description: "Evaluate current technology stack and identify modernization opportunities.",
-      icon: Monitor,
-      features: ["Technology audit", "Gap analysis", "Modernization roadmap", "ROI assessment"],
+      title: "CI/CD Pipelines",
+      description: "Automate your development workflow with modern CI/CD tools and practices.",
+      icon: GitBranch,
+      features: ["GitOps workflows", "Automated testing", "Deployment automation", "Rollback strategies"],
       color: "from-green-500 to-emerald-500"
     },
     {
-      title: "Change Management",
-      description: "Guide organizations through digital transformation with proven change management strategies.",
-      icon: Users,
-      features: ["Stakeholder engagement", "Training programs", "Communication strategies", "Success metrics"],
+      title: "Container Orchestration",
+      description: "Manage containerized applications with Kubernetes and Docker.",
+      icon: Server,
+      features: ["Kubernetes clusters", "Docker containers", "Service mesh", "Microservices"],
       color: "from-purple-500 to-pink-500"
     },
     {
-      title: "Digital Strategy",
-      description: "Develop comprehensive digital strategies aligned with business objectives.",
-      icon: Rocket,
-      features: ["Digital roadmap", "Technology selection", "Implementation planning", "Success measurement"],
+      title: "Infrastructure as Code",
+      description: "Define and manage infrastructure using Terraform, CloudFormation, and Ansible.",
+      icon: Code,
+      features: ["Terraform modules", "CloudFormation templates", "Ansible playbooks", "Version control"],
       color: "from-orange-500 to-red-500"
     },
     {
-      title: "Legacy Modernization",
-      description: "Transform legacy systems into modern, scalable digital solutions.",
-      icon: Code,
-      features: ["System analysis", "Modernization planning", "Data migration", "Integration strategies"],
+      title: "Monitoring & Observability",
+      description: "Comprehensive monitoring and logging solutions for production environments.",
+      icon: Monitor,
+      features: ["Real-time monitoring", "Log aggregation", "Alerting systems", "Performance metrics"],
       color: "from-indigo-500 to-purple-500"
     },
     {
-      title: "Digital Culture",
-      description: "Foster a digital-first culture and mindset across the organization.",
-      icon: Building2,
-      features: ["Culture assessment", "Training programs", "Leadership development", "Change champions"],
+      title: "DevOps Consulting",
+      description: "Strategic guidance for DevOps transformation and best practices.",
+      icon: Users,
+      features: ["Process optimization", "Tool selection", "Team training", "Culture change"],
       color: "from-yellow-500 to-orange-500"
     }
   ];
 
   const benefits = [
     {
-      title: "Increased Efficiency",
-      description: "Streamline operations and improve productivity across the organization",
-      icon: TrendingUp,
+      title: "Faster Deployment",
+      description: "Reduce time-to-market with automated CI/CD pipelines",
+      icon: Zap,
       color: "text-green-400"
     },
     {
-      title: "Cost Reduction",
-      description: "Lower operational costs through digital optimization and automation",
-      icon: Zap,
+      title: "Improved Reliability",
+      description: "Increase system uptime and reduce deployment failures",
+      icon: Shield,
       color: "text-blue-400"
     },
     {
-      title: "Better Customer Experience",
-      description: "Enhance customer interactions with digital-first solutions",
-      icon: Users,
+      title: "Cost Optimization",
+      description: "Optimize cloud costs with intelligent resource management",
+      icon: TrendingUp,
       color: "text-yellow-400"
     },
     {
-      title: "Competitive Advantage",
-      description: "Stay ahead with modern digital capabilities and innovation",
+      title: "Scalability",
+      description: "Easily scale applications based on demand",
       icon: Rocket,
       color: "text-purple-400"
     }
@@ -79,21 +79,21 @@ const DigitalTransformation = () => {
 
   const testimonials = [
     {
-      content: "Zion Tech Group's digital transformation project completely revolutionized our business operations. We're now 40% more efficient.",
-      name: "Maria Gonzalez",
-      role: "CEO, Digital Innovations Corp",
+      content: "Zion Tech Group's DevOps implementation reduced our deployment time from days to minutes. Incredible transformation!",
+      name: "David Kim",
+      role: "DevOps Engineer, CloudTech Inc",
       rating: 5
     },
     {
-      content: "The change management approach was exceptional. Our team embraced the new digital tools with enthusiasm.",
-      name: "Thomas Anderson",
-      role: "COO, TechForward Solutions",
+      content: "Their cloud infrastructure design is rock-solid. We've had 99.9% uptime since implementation.",
+      name: "Lisa Wang",
+      role: "CTO, DataFlow Systems",
       rating: 5
     },
     {
-      content: "Our legacy system modernization exceeded expectations. The new platform is faster, more reliable, and user-friendly.",
-      name: "Rachel Kim",
-      role: "CTO, LegacyTech Industries",
+      content: "The CI/CD pipeline they built is a game-changer. Our development team is 3x more productive now.",
+      name: "James Rodriguez",
+      role: "Engineering Manager, StartupHub",
       rating: 5
     }
   ];
@@ -101,9 +101,9 @@ const DigitalTransformation = () => {
   return (
     <>
       <SEO 
-        title="Digital Transformation Services | Zion Tech Group"
-        description="End-to-end business modernization and digital transformation consulting to drive innovation and growth."
-        keywords="digital transformation, business modernization, process optimization, change management, legacy modernization"
+        title="Cloud & DevOps Services | Zion Tech Group"
+        description="Scalable cloud infrastructure, CI/CD pipelines, and automated deployment solutions that accelerate your development cycle."
+        keywords="cloud services, DevOps, CI/CD, Kubernetes, AWS, Azure, infrastructure as code"
       />
       
       <div className="min-h-screen bg-zion-blue-dark">
@@ -117,18 +117,18 @@ const DigitalTransformation = () => {
               transition={{ duration: 0.8 }}
             >
               <div className="inline-flex items-center px-4 py-2 bg-zion-cyan/10 border border-zion-cyan/30 rounded-full text-zion-cyan text-sm font-medium mb-6">
-                <Rocket className="w-4 h-4 mr-2" />
-                Digital Transformation
+                <Cloud className="w-4 h-4 mr-2" />
+                Cloud & DevOps
               </div>
               <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-                Transform Your Business for
+                Accelerate Development with
                 <span className="block bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
-                  the Digital Age
+                  Modern DevOps
                 </span>
               </h1>
               <p className="text-xl text-zion-slate-light max-w-3xl mx-auto mb-8">
-                Navigate the digital landscape with confidence through our comprehensive transformation 
-                services that modernize processes, technology, and culture.
+                Build, deploy, and scale applications faster with our comprehensive cloud infrastructure 
+                and DevOps automation solutions.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
@@ -159,11 +159,11 @@ const DigitalTransformation = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold text-white mb-4">
-                Comprehensive Transformation Services
+                Complete DevOps Solutions
               </h2>
               <p className="text-xl text-zion-slate-light max-w-2xl mx-auto">
-                From process optimization to cultural change, we provide end-to-end digital transformation 
-                services that drive measurable business results.
+                From cloud infrastructure to continuous deployment, we provide end-to-end DevOps services 
+                that modernize your development workflow.
               </p>
             </motion.div>
 
@@ -212,10 +212,10 @@ const DigitalTransformation = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold text-white mb-4">
-                Why Choose Digital Transformation?
+                Why Choose DevOps?
               </h2>
               <p className="text-xl text-zion-slate-light max-w-2xl mx-auto">
-                Discover the transformative benefits of embracing digital transformation in your organization.
+                Discover the transformative benefits of implementing modern DevOps practices.
               </p>
             </motion.div>
 
@@ -256,10 +256,10 @@ const DigitalTransformation = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold text-white mb-4">
-                What Our Transformation Clients Say
+                What Our Clients Say
               </h2>
               <p className="text-xl text-zion-slate-light max-w-2xl mx-auto">
-                Hear from organizations that have successfully transformed their business with our services.
+                Hear from teams that have transformed their development process with our DevOps solutions.
               </p>
             </motion.div>
 
@@ -299,10 +299,10 @@ const DigitalTransformation = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl font-bold text-white mb-4">
-                Ready to Transform Your Business?
+                Ready to Transform Your Development Process?
               </h2>
               <p className="text-xl text-zion-slate-light max-w-2xl mx-auto mb-8">
-                Let's discuss how our digital transformation services can drive innovation and growth in your organization.
+                Let's discuss how our DevOps solutions can accelerate your development and deployment cycles.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
@@ -327,4 +327,4 @@ const DigitalTransformation = () => {
   );
 };
 
-export default DigitalTransformation;
+export default CloudDevOps;

@@ -1,77 +1,77 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Zap, Shield, Users, TrendingUp, Globe, Lock, CheckCircle, Star, Cpu, Database, Building2, Network, Server, Monitor, Rocket, Code, Settings, RefreshCw } from 'lucide-react';
+import { ArrowRight, Shield, Zap, Users, TrendingUp, Globe, Lock, CheckCircle, Star, Cpu, Database, Building2, Network, Server, Monitor, Rocket, Code, Settings } from 'lucide-react';
 import { SEO } from '@/components/SEO';
 
-const DigitalTransformation = () => {
+const EnterpriseSolutions = () => {
   const services = [
     {
-      title: "Process Optimization",
-      description: "Streamline and automate business processes for maximum efficiency and productivity.",
-      icon: RefreshCw,
-      features: ["Workflow automation", "Process mapping", "Efficiency analysis", "Performance metrics"],
+      title: "Enterprise Security",
+      description: "Comprehensive security solutions including threat detection, data protection, and compliance management.",
+      icon: Shield,
+      features: ["Threat detection", "Data encryption", "Compliance management", "Security audits"],
+      color: "from-red-500 to-orange-500"
+    },
+    {
+      title: "Digital Transformation",
+      description: "End-to-end business modernization and digital transformation consulting.",
+      icon: Rocket,
+      features: ["Process optimization", "Technology assessment", "Change management", "ROI optimization"],
       color: "from-blue-500 to-cyan-500"
     },
     {
-      title: "Technology Assessment",
-      description: "Evaluate current technology stack and identify modernization opportunities.",
-      icon: Monitor,
-      features: ["Technology audit", "Gap analysis", "Modernization roadmap", "ROI assessment"],
+      title: "Enterprise Architecture",
+      description: "Design and implement scalable enterprise technology architectures.",
+      icon: Building2,
+      features: ["System design", "Integration planning", "Scalability planning", "Performance optimization"],
       color: "from-green-500 to-emerald-500"
     },
     {
-      title: "Change Management",
-      description: "Guide organizations through digital transformation with proven change management strategies.",
-      icon: Users,
-      features: ["Stakeholder engagement", "Training programs", "Communication strategies", "Success metrics"],
+      title: "Data Management",
+      description: "Enterprise data strategy, governance, and analytics solutions.",
+      icon: Database,
+      features: ["Data strategy", "Governance frameworks", "Analytics platforms", "Data quality"],
       color: "from-purple-500 to-pink-500"
     },
     {
-      title: "Digital Strategy",
-      description: "Develop comprehensive digital strategies aligned with business objectives.",
-      icon: Rocket,
-      features: ["Digital roadmap", "Technology selection", "Implementation planning", "Success measurement"],
-      color: "from-orange-500 to-red-500"
-    },
-    {
-      title: "Legacy Modernization",
-      description: "Transform legacy systems into modern, scalable digital solutions.",
-      icon: Code,
-      features: ["System analysis", "Modernization planning", "Data migration", "Integration strategies"],
+      title: "Network Infrastructure",
+      description: "Robust network design and management for enterprise environments.",
+      icon: Network,
+      features: ["Network design", "Security implementation", "Performance monitoring", "Disaster recovery"],
       color: "from-indigo-500 to-purple-500"
     },
     {
-      title: "Digital Culture",
-      description: "Foster a digital-first culture and mindset across the organization.",
-      icon: Building2,
-      features: ["Culture assessment", "Training programs", "Leadership development", "Change champions"],
+      title: "Enterprise Consulting",
+      description: "Strategic technology consulting for large organizations.",
+      icon: Users,
+      features: ["Technology strategy", "Vendor selection", "Implementation planning", "Team training"],
       color: "from-yellow-500 to-orange-500"
     }
   ];
 
   const benefits = [
     {
-      title: "Increased Efficiency",
-      description: "Streamline operations and improve productivity across the organization",
-      icon: TrendingUp,
+      title: "Enhanced Security",
+      description: "Protect your business with enterprise-grade security solutions",
+      icon: Shield,
       color: "text-green-400"
     },
     {
-      title: "Cost Reduction",
-      description: "Lower operational costs through digital optimization and automation",
-      icon: Zap,
+      title: "Operational Efficiency",
+      description: "Streamline processes and improve productivity across the organization",
+      icon: TrendingUp,
       color: "text-blue-400"
     },
     {
-      title: "Better Customer Experience",
-      description: "Enhance customer interactions with digital-first solutions",
-      icon: Users,
+      title: "Cost Optimization",
+      description: "Reduce IT costs while improving system performance and reliability",
+      icon: Zap,
       color: "text-yellow-400"
     },
     {
       title: "Competitive Advantage",
-      description: "Stay ahead with modern digital capabilities and innovation",
+      description: "Stay ahead with modern enterprise technology solutions",
       icon: Rocket,
       color: "text-purple-400"
     }
@@ -79,21 +79,21 @@ const DigitalTransformation = () => {
 
   const testimonials = [
     {
-      content: "Zion Tech Group's digital transformation project completely revolutionized our business operations. We're now 40% more efficient.",
-      name: "Maria Gonzalez",
-      role: "CEO, Digital Innovations Corp",
+      content: "Zion Tech Group's enterprise solutions transformed our entire IT infrastructure. We've seen a 60% improvement in operational efficiency.",
+      name: "Robert Thompson",
+      role: "CIO, Global Enterprises Inc",
       rating: 5
     },
     {
-      content: "The change management approach was exceptional. Our team embraced the new digital tools with enthusiasm.",
-      name: "Thomas Anderson",
-      role: "COO, TechForward Solutions",
+      content: "Their security implementation is world-class. We feel confident that our data and systems are fully protected.",
+      name: "Jennifer Martinez",
+      role: "CISO, SecureCorp International",
       rating: 5
     },
     {
-      content: "Our legacy system modernization exceeded expectations. The new platform is faster, more reliable, and user-friendly.",
-      name: "Rachel Kim",
-      role: "CTO, LegacyTech Industries",
+      content: "The digital transformation project exceeded our expectations. Our team productivity increased dramatically.",
+      name: "Alexander Chen",
+      role: "CTO, Innovation Labs",
       rating: 5
     }
   ];
@@ -101,9 +101,9 @@ const DigitalTransformation = () => {
   return (
     <>
       <SEO 
-        title="Digital Transformation Services | Zion Tech Group"
-        description="End-to-end business modernization and digital transformation consulting to drive innovation and growth."
-        keywords="digital transformation, business modernization, process optimization, change management, legacy modernization"
+        title="Enterprise Solutions | Zion Tech Group"
+        description="Comprehensive business technology solutions including enterprise security, digital transformation, and infrastructure management."
+        keywords="enterprise solutions, digital transformation, enterprise security, enterprise architecture, data management"
       />
       
       <div className="min-h-screen bg-zion-blue-dark">
@@ -117,18 +117,18 @@ const DigitalTransformation = () => {
               transition={{ duration: 0.8 }}
             >
               <div className="inline-flex items-center px-4 py-2 bg-zion-cyan/10 border border-zion-cyan/30 rounded-full text-zion-cyan text-sm font-medium mb-6">
-                <Rocket className="w-4 h-4 mr-2" />
-                Digital Transformation
+                <Building2 className="w-4 h-4 mr-2" />
+                Enterprise Solutions
               </div>
               <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-                Transform Your Business for
+                Enterprise-Grade
                 <span className="block bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
-                  the Digital Age
+                  Technology Solutions
                 </span>
               </h1>
               <p className="text-xl text-zion-slate-light max-w-3xl mx-auto mb-8">
-                Navigate the digital landscape with confidence through our comprehensive transformation 
-                services that modernize processes, technology, and culture.
+                Transform your enterprise with comprehensive technology solutions designed for scale, 
+                security, and performance in today's digital landscape.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
@@ -159,11 +159,11 @@ const DigitalTransformation = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold text-white mb-4">
-                Comprehensive Transformation Services
+                Enterprise Technology Services
               </h2>
               <p className="text-xl text-zion-slate-light max-w-2xl mx-auto">
-                From process optimization to cultural change, we provide end-to-end digital transformation 
-                services that drive measurable business results.
+                From security to digital transformation, we provide end-to-end enterprise solutions 
+                that drive business growth and operational excellence.
               </p>
             </motion.div>
 
@@ -212,10 +212,10 @@ const DigitalTransformation = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold text-white mb-4">
-                Why Choose Digital Transformation?
+                Why Choose Enterprise Solutions?
               </h2>
               <p className="text-xl text-zion-slate-light max-w-2xl mx-auto">
-                Discover the transformative benefits of embracing digital transformation in your organization.
+                Discover the transformative benefits of implementing enterprise-grade technology solutions.
               </p>
             </motion.div>
 
@@ -256,10 +256,10 @@ const DigitalTransformation = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold text-white mb-4">
-                What Our Transformation Clients Say
+                What Our Enterprise Clients Say
               </h2>
               <p className="text-xl text-zion-slate-light max-w-2xl mx-auto">
-                Hear from organizations that have successfully transformed their business with our services.
+                Hear from enterprise leaders who have transformed their organizations with our solutions.
               </p>
             </motion.div>
 
@@ -299,10 +299,10 @@ const DigitalTransformation = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl font-bold text-white mb-4">
-                Ready to Transform Your Business?
+                Ready to Transform Your Enterprise?
               </h2>
               <p className="text-xl text-zion-slate-light max-w-2xl mx-auto mb-8">
-                Let's discuss how our digital transformation services can drive innovation and growth in your organization.
+                Let's discuss how our enterprise solutions can drive innovation and growth in your organization.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
@@ -327,4 +327,4 @@ const DigitalTransformation = () => {
   );
 };
 
-export default DigitalTransformation;
+export default EnterpriseSolutions;

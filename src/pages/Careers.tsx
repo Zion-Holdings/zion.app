@@ -1,291 +1,384 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Users, Target, Eye, Heart, Award, CheckCircle, Star, Globe, Zap, Shield, Cpu, Cloud, Brain, Rocket, MapPin, Clock, DollarSign, Briefcase } from 'lucide-react';
 import { SEO } from '@/components/SEO';
 
-export default function Careers() {
+const Careers = () => {
+  const openPositions = [
+    {
+      title: "Senior AI Engineer",
+      department: "Artificial Intelligence",
+      location: "Remote / Middletown, DE",
+      type: "Full-time",
+      experience: "5+ years",
+      salary: "$120,000 - $180,000",
+      description: "Lead AI/ML initiatives and develop cutting-edge machine learning solutions for enterprise clients.",
+      requirements: [
+        "Advanced degree in Computer Science, AI, or related field",
+        "Expertise in Python, TensorFlow, PyTorch",
+        "Experience with large-scale ML systems",
+        "Strong problem-solving and communication skills"
+      ]
+    },
+    {
+      title: "DevOps Engineer",
+      department: "Infrastructure",
+      location: "Remote / Middletown, DE",
+      type: "Full-time",
+      experience: "3+ years",
+      salary: "$90,000 - $140,000",
+      description: "Build and maintain scalable cloud infrastructure and CI/CD pipelines for our clients.",
+      requirements: [
+        "Experience with AWS, Azure, or GCP",
+        "Knowledge of Docker, Kubernetes, Terraform",
+        "CI/CD pipeline development experience",
+        "Strong scripting skills (Python, Bash)"
+      ]
+    },
+    {
+      title: "Full Stack Developer",
+      department: "Engineering",
+      location: "Remote / Middletown, DE",
+      type: "Full-time",
+      experience: "3+ years",
+      salary: "$80,000 - $130,000",
+      description: "Develop modern web applications and microservices using cutting-edge technologies.",
+      requirements: [
+        "Proficiency in React, Node.js, TypeScript",
+        "Experience with cloud platforms and databases",
+        "Understanding of microservices architecture",
+        "Agile development experience"
+      ]
+    },
+    {
+      title: "Digital Transformation Consultant",
+      department: "Consulting",
+      location: "Remote / Middletown, DE",
+      type: "Full-time",
+      experience: "5+ years",
+      salary: "$100,000 - $160,000",
+      description: "Guide clients through digital transformation initiatives and technology modernization.",
+      requirements: [
+        "Experience in technology consulting or digital transformation",
+        "Strong business acumen and client relationship skills",
+        "Knowledge of emerging technologies and trends",
+        "Project management and change management experience"
+      ]
+    }
+  ];
+
+  const benefits = [
+    {
+      title: "Competitive Compensation",
+      description: "Attractive salary packages with performance bonuses and equity options",
+      icon: DollarSign,
+      color: "text-green-400"
+    },
+    {
+      title: "Remote-First Culture",
+      description: "Work from anywhere with flexible scheduling and work-life balance",
+      icon: Globe,
+      color: "text-blue-400"
+    },
+    {
+      title: "Professional Growth",
+      description: "Continuous learning opportunities, certifications, and career advancement",
+      icon: Rocket,
+      color: "text-purple-400"
+    },
+    {
+      title: "Health & Wellness",
+      description: "Comprehensive health insurance, mental health support, and wellness programs",
+      icon: Heart,
+      color: "text-red-400"
+    }
+  ];
+
+  const culture = [
+    {
+      title: "Innovation-Driven",
+      description: "We encourage experimentation and pushing boundaries in everything we do",
+      icon: Brain,
+      color: "text-cyan-400"
+    },
+    {
+      title: "Collaborative",
+      description: "Teamwork and knowledge sharing are at the heart of our success",
+      icon: Users,
+      color: "text-green-400"
+    },
+    {
+      title: "Client-Focused",
+      description: "We measure our success by our clients' success and satisfaction",
+      icon: Target,
+      color: "text-blue-400"
+    },
+    {
+      title: "Continuous Learning",
+      description: "We invest in our team's growth and development",
+      icon: Award,
+      color: "text-yellow-400"
+    }
+  ];
+
   return (
     <>
-      <SEO
+      <SEO 
         title="Careers | Zion Tech Group"
-        description="Join our team of technology innovators and AI experts. Explore exciting career opportunities at Zion Tech Group"
-        keywords="careers, jobs, employment, technology jobs, AI careers, Zion Tech Group careers"
-        canonical="https://ziontechgroup.com/careers"
+        description="Join our team of technology innovators. Explore career opportunities at Zion Tech Group and be part of transforming businesses through technology."
+        keywords="careers, jobs, employment, Zion Tech Group, technology jobs, remote work"
       />
-      <main className="min-h-screen bg-zion-blue pt-24 pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Hero Section */}
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Join Our Team
-            </h1>
-            <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-              Be part of a team that's shaping the future of technology. We're looking for passionate 
-              individuals who want to make a difference in the world of AI and digital transformation.
-            </p>
+      
+      <div className="min-h-screen bg-zion-blue-dark">
+        {/* Hero Section */}
+        <section className="relative pt-32 pb-20 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple opacity-20"></div>
+          <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="inline-flex items-center px-4 py-2 bg-zion-cyan/10 border border-zion-cyan/30 rounded-full text-zion-cyan text-sm font-medium mb-6">
+                <Users className="w-4 h-4 mr-2" />
+                Join Our Team
+              </div>
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+                Build the Future with
+                <span className="block bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
+                  Zion Tech Group
+                </span>
+              </h1>
+              <p className="text-xl text-zion-slate-light max-w-3xl mx-auto mb-8">
+                Join our team of technology innovators and help transform businesses through 
+                cutting-edge AI, cloud solutions, and digital transformation.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="#open-positions"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300"
+                >
+                  View Open Positions
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </a>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center px-8 py-4 border border-zion-cyan/30 text-zion-cyan font-semibold rounded-xl hover:bg-zion-cyan hover:text-white transition-all duration-300"
+                >
+                  Get in Touch
+                </Link>
+              </div>
+            </motion.div>
           </div>
+        </section>
 
-          {/* Why Work With Us */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-white text-center mb-12">
-              Why Work With Zion Tech Group?
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-zion-blue-dark border border-zion-blue-light rounded-xl p-6 text-center">
-                <div className="w-16 h-16 bg-zion-cyan rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-zion-blue-dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Innovation First</h3>
-                <p className="text-zion-slate-light">
-                  Work on cutting-edge AI and technology projects that push the boundaries of what's possible.
-                </p>
-              </div>
+        {/* Culture & Values */}
+        <section className="py-20 bg-zion-blue">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Our Culture & Values
+              </h2>
+              <p className="text-xl text-zion-slate-light max-w-2xl mx-auto">
+                We foster an environment where innovation thrives, collaboration is celebrated, and every team member can grow.
+              </p>
+            </motion.div>
 
-              <div className="bg-zion-blue-dark border border-zion-blue-light rounded-xl p-6 text-center">
-                <div className="w-16 h-16 bg-zion-purple rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Collaborative Culture</h3>
-                <p className="text-zion-slate-light">
-                  Join a diverse team where collaboration, creativity, and mutual support drive success.
-                </p>
-              </div>
-
-              <div className="bg-zion-blue-dark border border-zion-blue-light rounded-xl p-6 text-center">
-                <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Growth Opportunities</h3>
-                <p className="text-zion-slate-light">
-                  Continuous learning and development with mentorship programs and skill-building initiatives.
-                </p>
-              </div>
-
-              <div className="bg-zion-blue-dark border border-zion-blue-light rounded-xl p-6 text-center">
-                <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Flexible Work</h3>
-                <p className="text-zion-slate-light">
-                  Remote-first culture with flexible hours and work-life balance that respects your needs.
-                </p>
-              </div>
-
-              <div className="bg-zion-blue-dark border border-zion-blue-light rounded-xl p-6 text-center">
-                <div className="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Competitive Benefits</h3>
-                <p className="text-zion-slate-light">
-                  Comprehensive health coverage, retirement plans, and performance-based compensation.
-                </p>
-              </div>
-
-              <div className="bg-zion-blue-dark border border-zion-blue-light rounded-xl p-6 text-center">
-                <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Global Impact</h3>
-                <p className="text-zion-slate-light">
-                  Contribute to solutions that address real-world challenges and make a positive difference.
-                </p>
-              </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {culture.map((item, index) => {
+                const IconComponent = item.icon;
+                return (
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="text-center"
+                  >
+                    <div className={`w-16 h-16 bg-zion-cyan/10 border border-zion-cyan/30 rounded-xl flex items-center justify-center mx-auto mb-4`}>
+                      <IconComponent className={`w-8 h-8 ${item.color}`} />
+                    </div>
+                    <h3 className="text-xl font-semibold text-white mb-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-zion-slate-light">
+                      {item.description}
+                    </p>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
+        </section>
 
-          {/* Open Positions */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-white text-center mb-12">
-              Open Positions
-            </h2>
+        {/* Benefits */}
+        <section className="py-20 bg-zion-blue-dark">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Why Work With Us?
+              </h2>
+              <p className="text-xl text-zion-slate-light max-w-2xl mx-auto">
+                We offer competitive benefits and a supportive environment where you can thrive and grow.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {benefits.map((benefit, index) => {
+                const IconComponent = benefit.icon;
+                return (
+                  <motion.div
+                    key={benefit.title}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="text-center"
+                  >
+                    <div className={`w-16 h-16 bg-zion-cyan/10 border border-zion-cyan/30 rounded-xl flex items-center justify-center mx-auto mb-4`}>
+                      <IconComponent className={`w-8 h-8 ${benefit.color}`} />
+                    </div>
+                    <h3 className="text-xl font-semibold text-white mb-2">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-zion-slate-light">
+                      {benefit.description}
+                    </p>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Open Positions */}
+        <section id="open-positions" className="py-20 bg-zion-blue">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Open Positions
+              </h2>
+              <p className="text-xl text-zion-slate-light max-w-2xl mx-auto">
+                Join our team and help us build the future of technology solutions.
+              </p>
+            </motion.div>
+
             <div className="space-y-6">
-              {/* Position 1 */}
-              <div className="bg-zion-blue-dark border border-zion-blue-light rounded-xl p-6 hover:border-zion-cyan transition-colors">
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-                  <div className="mb-4 lg:mb-0">
-                    <h3 className="text-2xl font-bold text-white mb-2">
-                      Senior AI Engineer
-                    </h3>
-                    <p className="text-zion-slate-light mb-3">
-                      Lead the development of cutting-edge AI solutions and machine learning models.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="bg-zion-cyan/20 text-zion-cyan px-3 py-1 rounded-full text-sm">
-                        Full-time
-                      </span>
-                      <span className="bg-zion-purple/20 text-zion-purple px-3 py-1 rounded-full text-sm">
-                        Remote
-                      </span>
-                      <span className="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm">
-                        Senior Level
-                      </span>
-                    </div>
-                  </div>
-                  <button className="bg-zion-cyan hover:bg-zion-cyan-light text-zion-blue-dark px-6 py-3 rounded-lg font-semibold transition-colors">
-                    Apply Now
-                  </button>
-                </div>
-              </div>
+              {openPositions.map((position, index) => (
+                <motion.div
+                  key={position.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-zion-blue-dark border border-zion-cyan/20 rounded-2xl p-6 hover:border-zion-cyan/40 transition-all duration-300"
+                >
+                  <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                    <div className="flex-1">
+                      <h3 className="text-2xl font-semibold text-white mb-2">
+                        {position.title}
+                      </h3>
+                      <p className="text-zion-slate-light mb-4">
+                        {position.description}
+                      </p>
+                      
+                      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-4">
+                        <div className="flex items-center gap-2 text-sm text-zion-slate-light">
+                          <Briefcase className="w-4 h-4 text-zion-cyan" />
+                          {position.department}
+                        </div>
+                        <div className="flex items-center gap-2 text-sm text-zion-slate-light">
+                          <MapPin className="w-4 h-4 text-zion-cyan" />
+                          {position.location}
+                        </div>
+                        <div className="flex items-center gap-2 text-sm text-zion-slate-light">
+                          <Clock className="w-4 h-4 text-zion-cyan" />
+                          {position.type}
+                        </div>
+                        <div className="flex items-center gap-2 text-sm text-zion-slate-light">
+                          <Users className="w-4 h-4 text-zion-cyan" />
+                          {position.experience}
+                        </div>
+                      </div>
 
-              {/* Position 2 */}
-              <div className="bg-zion-blue-dark border border-zion-blue-light rounded-xl p-6 hover:border-zion-cyan transition-colors">
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-                  <div className="mb-4 lg:mb-0">
-                    <h3 className="text-2xl font-bold text-white mb-2">
-                      Full-Stack Developer
-                    </h3>
-                    <p className="text-zion-slate-light mb-3">
-                      Build scalable web applications and contribute to our marketplace platform.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="bg-zion-cyan/20 text-zion-cyan px-3 py-1 rounded-full text-sm">
-                        Full-time
-                      </span>
-                      <span className="bg-zion-purple/20 text-zion-purple px-3 py-1 rounded-full text-sm">
-                        Remote
-                      </span>
-                      <span className="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm">
-                        Mid Level
-                      </span>
-                    </div>
-                  </div>
-                  <button className="bg-zion-cyan hover:bg-zion-cyan-light text-zion-blue-dark px-6 py-3 rounded-lg font-semibold transition-colors">
-                    Apply Now
-                  </button>
-                </div>
-              </div>
+                      <div className="mb-4">
+                        <span className="text-zion-cyan font-semibold">Salary: {position.salary}</span>
+                      </div>
 
-              {/* Position 3 */}
-              <div className="bg-zion-blue-dark border border-zion-blue-light rounded-xl p-6 hover:border-zion-cyan transition-colors">
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-                  <div className="mb-4 lg:mb-0">
-                    <h3 className="text-2xl font-bold text-white mb-2">
-                      Green IT Specialist
-                    </h3>
-                    <p className="text-zion-slate-light mb-3">
-                      Develop sustainable technology solutions and help clients reduce their carbon footprint.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="bg-zion-cyan/20 text-zion-cyan px-3 py-1 rounded-full text-sm">
-                        Full-time
-                      </span>
-                      <span className="bg-zion-purple/20 text-zion-purple px-3 py-1 rounded-full text-sm">
-                        Remote
-                      </span>
-                      <span className="bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full text-sm">
-                        Entry Level
-                      </span>
+                      <div>
+                        <h4 className="text-white font-semibold mb-2">Requirements:</h4>
+                        <ul className="space-y-1">
+                          {position.requirements.map((req, idx) => (
+                            <li key={idx} className="flex items-center text-sm text-zion-slate-light">
+                              <CheckCircle className="w-4 h-4 text-zion-cyan mr-2 flex-shrink-0" />
+                              {req}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                  </div>
-                  <button className="bg-zion-cyan hover:bg-zion-cyan-light text-zion-blue-dark px-6 py-3 rounded-lg font-semibold transition-colors">
-                    Apply Now
-                  </button>
-                </div>
-              </div>
 
-              {/* Position 4 */}
-              <div className="bg-zion-blue-dark border border-zion-blue-light rounded-xl p-6 hover:border-zion-cyan transition-colors">
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
-                  <div className="mb-4 lg:mb-0">
-                    <h3 className="text-2xl font-bold text-white mb-2">
-                      Cybersecurity Analyst
-                    </h3>
-                    <p className="text-zion-slate-light mb-3">
-                      Protect our systems and clients from cyber threats with advanced security measures.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="bg-zion-cyan/20 text-zion-cyan px-3 py-1 rounded-full text-sm">
-                        Full-time
-                      </span>
-                      <span className="bg-zion-purple/20 text-zion-purple px-3 py-1 rounded-full text-sm">
-                        Remote
-                      </span>
-                      <span className="bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-sm">
-                        Mid Level
-                      </span>
+                    <div className="lg:flex-shrink-0">
+                      <button className="w-full lg:w-auto px-8 py-3 bg-gradient-to-r from-zion-cyan to-zion-purple text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300">
+                        Apply Now
+                      </button>
                     </div>
                   </div>
-                  <button className="bg-zion-cyan hover:bg-zion-cyan-light text-zion-blue-dark px-6 py-3 rounded-lg font-semibold transition-colors">
-                    Apply Now
-                  </button>
-                </div>
-              </div>
+                </motion.div>
+              ))}
             </div>
           </div>
+        </section>
 
-          {/* Application Process */}
-          <div className="mb-20">
-            <h2 className="text-3xl font-bold text-white text-center mb-12">
-              Application Process
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-zion-cyan rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-zion-blue-dark">
-                  1
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Apply</h3>
-                <p className="text-zion-slate-light">
-                  Submit your application with resume and cover letter
-                </p>
+        {/* CTA Section */}
+        <section className="py-20 bg-gradient-to-r from-zion-blue-dark to-zion-blue">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Don't See the Right Fit?
+              </h2>
+              <p className="text-xl text-zion-slate-light max-w-2xl mx-auto mb-8">
+                We're always looking for talented individuals. Send us your resume and let's discuss how you can contribute to our team.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300"
+                >
+                  Send Resume
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
+                <Link
+                  to="/about"
+                  className="inline-flex items-center px-8 py-4 border border-zion-cyan/30 text-zion-cyan font-semibold rounded-xl hover:bg-zion-cyan hover:text-white transition-all duration-300"
+                >
+                  Learn More About Us
+                </Link>
               </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 bg-zion-cyan rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-zion-blue-dark">
-                  2
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Review</h3>
-                <p className="text-zion-slate-light">
-                  Our team reviews your application within 48 hours
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 bg-zion-cyan rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-zion-blue-dark">
-                  3
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Interview</h3>
-                <p className="text-zion-slate-light">
-                  Technical and cultural fit discussions
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="w-16 h-16 bg-zion-cyan rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold text-zion-blue-dark">
-                  4
-                </div>
-                <h3 className="text-xl font-bold text-white mb-3">Join</h3>
-                <p className="text-zion-slate-light">
-                  Welcome to the Zion Tech Group family!
-                </p>
-              </div>
-            </div>
+            </motion.div>
           </div>
-
-          {/* Contact Section */}
-          <div className="bg-gradient-to-r from-zion-purple to-zion-purple-dark rounded-2xl p-8 text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Don't See the Right Fit?
-            </h2>
-            <p className="text-zion-slate-light text-lg mb-6 max-w-2xl mx-auto">
-              We're always looking for talented individuals. Send us your resume and let's discuss 
-              how you can contribute to our mission.
-            </p>
-            <button className="bg-zion-cyan hover:bg-zion-cyan-light text-zion-blue-dark px-8 py-4 rounded-lg font-semibold transition-colors text-lg">
-              Send General Application
-            </button>
-          </div>
-        </div>
-      </main>
+        </section>
+      </div>
     </>
   );
-}
+};
+
+export default Careers;

@@ -1,315 +1,329 @@
-import React, { useState } from 'react';
-import { Search, Filter, Star, Clock, DollarSign, Users, Zap, Brain, Cloud, Database, Shield, Settings, Eye, Leaf, CreditCard, Heart, Truck, ShoppingCart, Phone, Mail, MapPin, Globe, Bot, Cpu, Network, Database as DatabaseIcon, Shield as ShieldIcon, Zap as ZapIcon, Building, Factory, Store, Car, Plane, Ship, Home, Hospital, Building2, GraduationCap, Calendar, FileText, BarChart3, Users as UsersIcon, CreditCard as CreditCardIcon, MessageSquare, Camera, Video, Music, BookOpen, Target, TrendingUp, PieChart, Activity, Zap as ZapIcon2, Package, Server, Lock, Code, Monitor, Smartphone, Wifi, Database as DatabaseIcon2, Globe as GlobeIcon, Shield as ShieldIcon2, Cpu as CpuIcon, Sparkles, Robot, CircuitBoard, Microchip, Eye as EyeIcon, MessageCircle, Brain as BrainIcon, Zap as ZapIcon3 } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Brain, Zap, Shield, Users, TrendingUp, Globe, Lock, CheckCircle, Star, Cpu, Database, BarChart3, MessageSquare, Eye, Target, Rocket } from 'lucide-react';
+import { SEO } from '@/components/SEO';
 
-const AIServices: React.FC = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
-
-  // AI Services data
-  const aiServices = [
+const AIServices = () => {
+  const services = [
     {
-      id: 1,
-      name: "AI-Powered Business Intelligence",
-      category: "Business Intelligence",
-      description: "Advanced AI-driven analytics and business intelligence solutions for data-driven decision making",
-      features: ["Predictive analytics", "Natural language queries", "Automated reporting", "Real-time dashboards", "Machine learning models"],
-      benefits: ["Better decision making", "Increased efficiency", "Competitive advantage", "Cost reduction"],
-      targetAudience: ["Enterprises", "Financial services", "Retail", "Manufacturing"],
-      pricing: "Custom pricing",
-      marketPrice: "$50,000 - $500,000",
-      implementationTime: "8-20 weeks",
-      supportLevel: "AI specialists + ongoing optimization",
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com/ai-business-intelligence",
-        address: "364 E Main St STE 1008, Middletown DE 19709"
-      },
-      aiCapabilities: ["Machine Learning", "Natural Language Processing", "Predictive Analytics", "Computer Vision"],
-      useCases: ["Customer segmentation", "Demand forecasting", "Fraud detection", "Process optimization"]
+      title: "AI-Powered Analytics",
+      description: "Transform raw data into actionable insights with our advanced AI analytics platform.",
+      icon: BarChart3,
+      features: ["Predictive modeling", "Real-time dashboards", "Custom reporting", "Data visualization"],
+      color: "from-purple-500 to-pink-500"
     },
     {
-      id: 2,
-      name: "Custom AI Solutions Development",
-      category: "AI Development",
-      description: "Tailored AI solutions built specifically for your business needs and industry requirements",
-      features: ["Custom model development", "Data preprocessing", "API integration", "Scalable architecture", "Continuous learning"],
-      benefits: ["Competitive advantage", "Process automation", "Cost savings", "Innovation leadership"],
-      targetAudience: ["Enterprises", "Startups", "Tech companies", "Research institutions"],
-      pricing: "Project-based",
-      marketPrice: "$100,000 - $1,000,000+",
-      implementationTime: "12-32 weeks",
-      supportLevel: "Full AI development team + maintenance",
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com/custom-ai-solutions",
-        address: "364 E Main St STE 1008, Middletown DE 19709"
-      },
-      aiCapabilities: ["Deep Learning", "Neural Networks", "Reinforcement Learning", "Transfer Learning"],
-      useCases: ["Process automation", "Quality control", "Predictive maintenance", "Customer insights"]
+      title: "Natural Language Processing",
+      description: "Build intelligent chatbots, sentiment analysis, and language understanding systems.",
+      icon: MessageSquare,
+      features: ["Chatbot development", "Sentiment analysis", "Text classification", "Language translation"],
+      color: "from-blue-500 to-cyan-500"
     },
     {
-      id: 3,
-      name: "AI Chatbots & Virtual Assistants",
-      category: "Conversational AI",
-      description: "Intelligent conversational AI solutions for customer service, sales, and internal operations",
-      features: ["Natural language understanding", "Multi-language support", "Integration APIs", "Analytics dashboard", "Continuous learning"],
-      benefits: ["24/7 availability", "Cost reduction", "Improved customer satisfaction", "Scalability"],
-      targetAudience: ["E-commerce", "Customer service", "Healthcare", "Financial services"],
-      pricing: "Project-based",
-      marketPrice: "$25,000 - $150,000",
-      implementationTime: "6-16 weeks",
-      supportLevel: "AI engineers + ongoing training",
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com/ai-chatbots",
-        address: "364 E Main St STE 1008, Middletown DE 19709"
-      },
-      aiCapabilities: ["Natural Language Processing", "Intent Recognition", "Sentiment Analysis", "Context Management"],
-      useCases: ["Customer support", "Lead qualification", "Appointment booking", "FAQ handling"]
+      title: "Computer Vision",
+      description: "Implement image recognition, object detection, and visual AI solutions.",
+      icon: Eye,
+      features: ["Image classification", "Object detection", "Facial recognition", "Quality control"],
+      color: "from-green-500 to-emerald-500"
     },
     {
-      id: 4,
-      name: "Computer Vision & Image Recognition",
-      category: "Computer Vision",
-      description: "Advanced computer vision solutions for quality control, security, and automation",
-      features: ["Image recognition", "Object detection", "Facial recognition", "Video analysis", "Real-time processing"],
-      benefits: ["Quality improvement", "Security enhancement", "Automation", "Cost reduction"],
-      targetAudience: ["Manufacturing", "Security", "Healthcare", "Retail"],
-      pricing: "Project-based",
-      marketPrice: "$40,000 - $300,000",
-      implementationTime: "8-20 weeks",
-              supportLevel: "Computer vision specialists + optimization",
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com/computer-vision",
-        address: "364 E Main St STE 1008, Middletown DE 19709"
-      },
-      aiCapabilities: ["Convolutional Neural Networks", "Object Detection", "Image Segmentation", "Video Analysis"],
-      useCases: ["Quality control", "Security monitoring", "Medical imaging", "Retail analytics"]
+      title: "Machine Learning Models",
+      description: "Custom ML models tailored to your specific business requirements.",
+      icon: Target,
+      features: ["Custom algorithms", "Model training", "Performance optimization", "Continuous learning"],
+      color: "from-orange-500 to-red-500"
     },
     {
-      id: 5,
-      name: "Predictive Analytics & Forecasting",
-      category: "Predictive Analytics",
-      description: "AI-powered predictive analytics for business forecasting and trend analysis",
-      features: ["Time series analysis", "Risk assessment", "Demand forecasting", "Anomaly detection", "Scenario modeling"],
-      benefits: ["Better planning", "Risk mitigation", "Cost optimization", "Strategic advantage"],
-      targetAudience: ["Financial services", "Manufacturing", "Retail", "Healthcare"],
-      pricing: "Project-based",
-      marketPrice: "$35,000 - $250,000",
-      implementationTime: "6-18 weeks",
-              supportLevel: "Data scientists + ongoing model updates",
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com/predictive-analytics",
-        address: "364 E Main St STE 1008, Middletown DE 19709"
-      },
-      aiCapabilities: ["Time Series Analysis", "Regression Models", "Classification", "Ensemble Methods"],
-      useCases: ["Sales forecasting", "Risk assessment", "Inventory optimization", "Customer behavior prediction"]
+      title: "AI Infrastructure",
+      description: "Scalable AI infrastructure and deployment solutions.",
+      icon: Cpu,
+      features: ["Cloud deployment", "Auto-scaling", "Performance monitoring", "Security compliance"],
+      color: "from-indigo-500 to-purple-500"
     },
     {
-      id: 6,
-      name: "AI Strategy & Consulting",
-      category: "AI Consulting",
-      description: "Strategic AI consulting to help organizations plan and implement AI initiatives",
-      features: ["AI readiness assessment", "Strategy development", "Technology selection", "Implementation roadmap", "Change management"],
-      benefits: ["Clear AI roadmap", "Risk mitigation", "Cost optimization", "Competitive advantage"],
-      targetAudience: ["Enterprises", "Government", "Healthcare", "Financial services"],
-      pricing: "Consulting-based",
-      marketPrice: "$15,000 - $200,000",
-      implementationTime: "4-16 weeks",
-              supportLevel: "AI strategists + ongoing guidance",
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com/ai-consulting",
-        address: "364 E Main St STE 1008, Middletown DE 19709"
-      },
-      aiCapabilities: ["Strategy Development", "Technology Assessment", "Implementation Planning", "Change Management"],
-      useCases: ["AI transformation", "Digital strategy", "Technology roadmap", "Organizational change"]
+      title: "AI Consulting",
+      description: "Strategic guidance for AI implementation and digital transformation.",
+      icon: Users,
+      features: ["Strategy planning", "Technology selection", "Implementation roadmap", "Team training"],
+      color: "from-yellow-500 to-orange-500"
     }
   ];
 
-  const categories = ['all', 'Business Intelligence', 'AI Development', 'Conversational AI', 'Computer Vision', 'Predictive Analytics', 'AI Consulting'];
-
-  const filteredServices = aiServices.filter(service => {
-    const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         service.description.toLowerCase().includes(searchTerm.toLowerCase());
-    
-    const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
-    
-    return matchesSearch && matchesCategory;
-  });
-
-  const getCategoryIcon = (category: string) => {
-    switch (category) {
-      case 'Business Intelligence': return <BarChart3 className="w-6 h-6" />;
-      case 'AI Development': return <BrainIcon className="w-6 h-6" />;
-      case 'Conversational AI': return <MessageCircle className="w-6 h-6" />;
-      case 'Computer Vision': return <EyeIcon className="w-6 h-6" />;
-      case 'Predictive Analytics': return <TrendingUp className="w-6 h-6" />;
-      case 'AI Consulting': return <Sparkles className="w-6 h-6" />;
-      default: return <Brain className="w-6 h-6" />;
+  const benefits = [
+    {
+      title: "Increased Efficiency",
+      description: "Automate repetitive tasks and streamline operations",
+      icon: TrendingUp,
+      color: "text-green-400"
+    },
+    {
+      title: "Better Decision Making",
+      description: "Data-driven insights for strategic business decisions",
+      icon: Brain,
+      color: "text-blue-400"
+    },
+    {
+      title: "Cost Reduction",
+      description: "Lower operational costs through intelligent automation",
+      icon: Zap,
+      color: "text-yellow-400"
+    },
+    {
+      title: "Competitive Advantage",
+      description: "Stay ahead with cutting-edge AI technology",
+      icon: Rocket,
+      color: "text-purple-400"
     }
-  };
+  ];
 
-  const getCategoryColor = (category: string) => {
-    switch (category) {
-      case 'Business Intelligence': return 'text-purple-400';
-      case 'AI Development': return 'text-green-400';
-      case 'Conversational AI': return 'text-blue-400';
-      case 'Computer Vision': return 'text-cyan-400';
-      case 'Predictive Analytics': return 'text-orange-400';
-      case 'AI Consulting': return 'text-pink-400';
-      default: return 'text-gray-400';
+  const testimonials = [
+    {
+      content: "Zion Tech Group's AI solutions transformed our customer service operations. Our response time improved by 80%.",
+      name: "Sarah Johnson",
+      role: "CTO, TechCorp Solutions",
+      rating: 5
+    },
+    {
+      content: "The AI-powered analytics platform gave us insights we never had before. Game-changing for our business.",
+      name: "Michael Chen",
+      role: "Operations Director, InnovateLab",
+      rating: 5
+    },
+    {
+      content: "Working with Zion's AI team was incredible. They understood our needs and delivered beyond expectations.",
+      name: "Emily Rodriguez",
+      role: "Founder, StartupXYZ",
+      rating: 5
     }
-  };
+  ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <div className="container mx-auto px-4 py-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent mb-4">
-            AI & Machine Learning Services
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Cutting-edge artificial intelligence solutions designed to transform your business operations and drive innovation
-          </p>
-        </div>
-
-        {/* Search and Filters */}
-        <div className="mb-8 space-y-4">
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-            <input
-              type="text"
-              placeholder="Search AI services..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 bg-white/10 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-            />
-          </div>
-          
-          <div className="flex flex-wrap gap-4">
-            <select
-              value={selectedCategory}
-              onChange={(e) => setSelectedCategory(e.target.value)}
-              className="px-4 py-2 bg-white/10 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
+    <>
+      <SEO 
+        title="AI & Machine Learning Services | Zion Tech Group"
+        description="Transform your business with cutting-edge AI solutions including predictive analytics, natural language processing, and automated decision-making systems."
+        keywords="AI services, machine learning, artificial intelligence, predictive analytics, NLP, computer vision"
+      />
+      
+      <div className="min-h-screen bg-zion-blue-dark">
+        {/* Hero Section */}
+        <section className="relative pt-32 pb-20 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple opacity-20"></div>
+          <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
             >
-              {categories.map(category => (
-                <option key={category} value={category} className="bg-gray-800 text-white">
-                  {category === 'all' ? 'All Categories' : category}
-                </option>
-              ))}
-            </select>
+              <div className="inline-flex items-center px-4 py-2 bg-zion-cyan/10 border border-zion-cyan/30 rounded-full text-zion-cyan text-sm font-medium mb-6">
+                <Brain className="w-4 h-4 mr-2" />
+                AI & Machine Learning
+              </div>
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+                Transform Your Business with
+                <span className="block bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
+                  AI-Powered Solutions
+                </span>
+              </h1>
+              <p className="text-xl text-zion-slate-light max-w-3xl mx-auto mb-8">
+                Leverage cutting-edge artificial intelligence and machine learning to automate processes, 
+                gain insights, and create competitive advantages in today's digital landscape.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300"
+                >
+                  Get Started
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
+                <Link
+                  to="/request-quote"
+                  className="inline-flex items-center px-8 py-4 border border-zion-cyan/30 text-zion-cyan font-semibold rounded-xl hover:bg-zion-cyan hover:text-white transition-all duration-300"
+                >
+                  Request Quote
+                </Link>
+              </div>
+            </motion.div>
           </div>
-        </div>
+        </section>
 
         {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredServices.map((service) => (
-            <div key={service.id} className="bg-white/5 backdrop-blur-sm border border-gray-600 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20">
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex items-center gap-3 mb-2">
-                  <div className={`${getCategoryColor(service.category)}`}>
-                    {getCategoryIcon(service.category)}
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-white">{service.name}</h3>
-                    <div className="flex items-center gap-2">
-                      <span className={`px-2 py-1 text-xs font-medium rounded-full ${getCategoryColor(service.category)} bg-opacity-20 bg-current`}>
-                        {service.category}
-                      </span>
-                      <span className="px-2 py-1 text-xs font-medium rounded-full text-purple-400 bg-purple-400 bg-opacity-20">
-                        {service.pricing}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              <p className="text-gray-300 mb-4">{service.description}</p>
-              
-              <div className="mb-4">
-                <div className="text-2xl font-bold text-white mb-2">
-                  {service.marketPrice}
-                </div>
-                <div className="text-sm text-gray-400">Implementation: {service.implementationTime}</div>
-              </div>
+        <section className="py-20 bg-zion-blue">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Comprehensive AI Solutions
+              </h2>
+              <p className="text-xl text-zion-slate-light max-w-2xl mx-auto">
+                From predictive analytics to natural language processing, we offer end-to-end AI solutions 
+                that drive real business value.
+              </p>
+            </motion.div>
 
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-white mb-2">AI Capabilities:</h4>
-                <div className="flex flex-wrap gap-2">
-                  {service.aiCapabilities.slice(0, 3).map((capability, index) => (
-                    <span key={index} className="px-2 py-1 text-xs bg-purple-500/20 text-purple-300 rounded">
-                      {capability}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-white mb-2">Use Cases:</h4>
-                <div className="flex flex-wrap gap-2">
-                  {service.useCases.slice(0, 2).map((useCase, index) => (
-                    <span key={index} className="px-2 py-1 text-xs bg-pink-500/20 text-pink-300 rounded">
-                      {useCase}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="border-t border-gray-600 pt-4">
-                <div className="flex items-center justify-between text-sm text-gray-400">
-                  <span>Support: {service.supportLevel}</span>
-                  <a 
-                    href={service.contactInfo.website}
-                    className="text-purple-400 hover:text-purple-300 transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {services.map((service, index) => {
+                const IconComponent = service.icon;
+                return (
+                  <motion.div
+                    key={service.title}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="bg-zion-blue-dark border border-zion-cyan/20 rounded-2xl p-6 hover:border-zion-cyan/40 transition-all duration-300 group"
                   >
-                    Get Started →
-                  </a>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Contact Information */}
-        <div className="mt-16 text-center">
-          <div className="bg-white/5 backdrop-blur-sm border border-gray-600 rounded-xl p-8">
-            <h2 className="text-2xl font-bold text-white mb-4">Ready to Harness the Power of AI?</h2>
-            <p className="text-gray-300 mb-6">
-              Our AI solutions are designed to transform your business operations and drive innovation
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-              <div>
-                <Phone className="w-8 h-8 text-purple-400 mx-auto mb-2" />
-                <p className="text-white font-semibold">Phone</p>
-                <p className="text-gray-300">{aiServices[0].contactInfo.phone}</p>
-              </div>
-              <div>
-                <Mail className="w-8 h-8 text-purple-400 mx-auto mb-2" />
-                <p className="text-white font-semibold">Email</p>
-                <p className="text-gray-300">{aiServices[0].contactInfo.email}</p>
-              </div>
-              <div>
-                <MapPin className="w-8 h-8 text-purple-400 mx-auto mb-2" />
-                <p className="text-white font-semibold">Address</p>
-                <p className="text-gray-300">364 E Main St STE 1008<br />Middletown DE 19709</p>
-              </div>
+                    <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                      <IconComponent className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-white mb-3">
+                      {service.title}
+                    </h3>
+                    <p className="text-zion-slate-light mb-4">
+                      {service.description}
+                    </p>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-center text-sm text-zion-slate-light">
+                          <CheckCircle className="w-4 h-4 text-zion-cyan mr-2 flex-shrink-0" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </motion.div>
+                );
+              })}
             </div>
           </div>
-        </div>
+        </section>
+
+        {/* Benefits Section */}
+        <section className="py-20 bg-zion-blue-dark">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Why Choose AI Solutions?
+              </h2>
+              <p className="text-xl text-zion-slate-light max-w-2xl mx-auto">
+                Discover the transformative benefits of implementing AI in your business operations.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {benefits.map((benefit, index) => {
+                const IconComponent = benefit.icon;
+                return (
+                  <motion.div
+                    key={benefit.title}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="text-center"
+                  >
+                    <div className={`w-16 h-16 bg-zion-cyan/10 border border-zion-cyan/30 rounded-xl flex items-center justify-center mx-auto mb-4`}>
+                      <IconComponent className={`w-8 h-8 ${benefit.color}`} />
+                    </div>
+                    <h3 className="text-xl font-semibold text-white mb-2">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-zion-slate-light">
+                      {benefit.description}
+                    </p>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section className="py-20 bg-zion-blue">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                What Our Clients Say
+              </h2>
+              <p className="text-xl text-zion-slate-light max-w-2xl mx-auto">
+                Hear from businesses that have transformed their operations with our AI solutions.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {testimonials.map((testimonial, index) => (
+                <motion.div
+                  key={testimonial.name}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-zion-blue-dark border border-zion-cyan/20 rounded-2xl p-6"
+                >
+                  <div className="flex mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-zion-slate-light mb-4 italic">
+                    "{testimonial.content}"
+                  </p>
+                  <div>
+                    <p className="font-semibold text-white">{testimonial.name}</p>
+                    <p className="text-zion-slate-light text-sm">{testimonial.role}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 bg-gradient-to-r from-zion-blue-dark to-zion-blue">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Ready to Transform Your Business with AI?
+              </h2>
+              <p className="text-xl text-zion-slate-light max-w-2xl mx-auto mb-8">
+                Let's discuss how our AI solutions can drive innovation and growth in your organization.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300"
+                >
+                  Schedule Consultation
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
+                <Link
+                  to="/request-quote"
+                  className="inline-flex items-center px-8 py-4 border border-zion-cyan/30 text-zion-cyan font-semibold rounded-xl hover:bg-zion-cyan hover:text-white transition-all duration-300"
+                >
+                  Get Free Quote
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </section>
       </div>
-    </div>
+    </>
   );
 };
 

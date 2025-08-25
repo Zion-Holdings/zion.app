@@ -1,288 +1,344 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { FileText, Scale, Shield, Users, Globe, Mail, Phone, AlertTriangle } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Shield, FileText, CheckCircle, AlertTriangle, Users, Globe, Scale } from 'lucide-react';
+import { SEO } from '@/components/SEO';
 
-export default function Terms() {
+const Terms = () => {
+  const keyTerms = [
+    {
+      title: "Acceptance",
+      description: "By using our services, you agree to these terms and conditions",
+      icon: CheckCircle,
+      color: "text-green-400"
+    },
+    {
+      title: "Services",
+      description: "We provide technology solutions and consulting services",
+      icon: Shield,
+      color: "text-blue-400"
+    },
+    {
+      title: "Payment",
+      description: "Fees are due according to agreed payment schedules",
+      icon: Scale,
+      color: "text-purple-400"
+    },
+    {
+      title: "Liability",
+      description: "Limitations on our liability as outlined in these terms",
+      icon: AlertTriangle,
+      color: "text-orange-400"
+    }
+  ];
+
+  const prohibitedActivities = [
+    "Using our services for illegal purposes",
+    "Attempting to gain unauthorized access to our systems",
+    "Interfering with service availability or performance",
+    "Violating intellectual property rights",
+    "Sharing confidential information without authorization",
+    "Engaging in fraudulent or deceptive practices"
+  ];
+
+  const userObligations = [
+    "Provide accurate and complete information",
+    "Maintain the security of your account credentials",
+    "Comply with all applicable laws and regulations",
+    "Use services only for intended purposes",
+    "Respect intellectual property rights",
+    "Report security concerns promptly"
+  ];
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
-      <div className="max-w-4xl mx-auto px-4 py-12">
-        {/* Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
-        >
-          <div className="flex justify-center mb-4">
-            <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-full flex items-center justify-center">
-              <FileText className="w-8 h-8 text-white" />
-            </div>
-          </div>
-          <h1 className="text-4xl font-bold text-white mb-4">Terms of Service</h1>
-          <p className="text-xl text-gray-300">
-            Please read these terms carefully before using our services.
-          </p>
-        </motion.div>
-
-        {/* Last Updated */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.1 }}
-          className="bg-white/10 backdrop-blur-md rounded-lg p-6 mb-8"
-        >
-          <div className="flex items-center text-cyan-400 mb-2">
-            <Scale className="w-5 h-5 mr-2" />
-            <span className="font-semibold">Last Updated:</span>
-          </div>
-          <p className="text-white">December 2024</p>
-        </motion.div>
-
-        {/* Content Sections */}
-        <div className="space-y-8">
-          {/* Acceptance of Terms */}
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="bg-white/10 backdrop-blur-md rounded-lg p-6"
-          >
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center">
-              <Shield className="w-6 h-6 mr-3 text-cyan-400" />
-              Acceptance of Terms
-            </h2>
-            <div className="space-y-4 text-gray-300">
-              <p>
-                By accessing and using the services provided by Zion Tech Group ("we," "us," or "our"), 
-                you accept and agree to be bound by the terms and provision of this agreement.
-              </p>
-              <p>
-                If you do not agree to abide by the above, please do not use this service. These terms 
-                apply to all visitors, users, and others who access or use our services.
-              </p>
-            </div>
-          </motion.section>
-
-          {/* Description of Services */}
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3 }}
-            className="bg-white/10 backdrop-blur-md rounded-lg p-6"
-          >
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center">
-              <Globe className="w-6 h-6 mr-3 text-cyan-400" />
-              Description of Services
-            </h2>
-            <div className="space-y-4 text-gray-300">
-              <p>
-                Zion Tech Group provides technology consulting and development services including:
-              </p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>AI and Machine Learning Solutions</li>
-                <li>Cloud Infrastructure Services</li>
-                <li>Cybersecurity and Compliance</li>
-                <li>Digital Transformation Consulting</li>
-                <li>Custom Software Development</li>
-                <li>IT Strategy and Planning</li>
-              </ul>
-              <p>
-                We reserve the right to modify, suspend, or discontinue any part of our services 
-                at any time with or without notice.
-              </p>
-            </div>
-          </motion.section>
-
-          {/* User Responsibilities */}
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4 }}
-            className="bg-white/10 backdrop-blur-md rounded-lg p-6"
-          >
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center">
-              <Users className="w-6 h-6 mr-3 text-cyan-400" />
-              User Responsibilities
-            </h2>
-            <div className="space-y-4 text-gray-300">
-              <p>When using our services, you agree to:</p>
-              <ul className="list-disc list-inside space-y-2 ml-4">
-                <li>Provide accurate and complete information</li>
-                <li>Maintain the security of your account credentials</li>
-                <li>Use our services only for lawful purposes</li>
-                <li>Not interfere with or disrupt our services</li>
-                <li>Respect intellectual property rights</li>
-                <li>Comply with all applicable laws and regulations</li>
-              </ul>
-            </div>
-          </motion.section>
-
-          {/* Intellectual Property */}
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="bg-white/10 backdrop-blur-md rounded-lg p-6"
-          >
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center">
-              <Shield className="w-6 h-6 mr-3 text-cyan-400" />
-              Intellectual Property
-            </h2>
-            <div className="space-y-4 text-gray-300">
-              <p>
-                Our services and their original content, features, and functionality are and will 
-                remain the exclusive property of Zion Tech Group and its licensors.
-              </p>
-              <p>
-                The service is protected by copyright, trademark, and other laws. Our trademarks 
-                and trade dress may not be used in connection with any product or service without 
-                our prior written consent.
-              </p>
-            </div>
-          </motion.section>
-
-          {/* Limitation of Liability */}
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="bg-white/10 backdrop-blur-md rounded-lg p-6"
-          >
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center">
-              <AlertTriangle className="w-6 h-6 mr-3 text-cyan-400" />
-              Limitation of Liability
-            </h2>
-            <div className="space-y-4 text-gray-300">
-              <p>
-                In no event shall Zion Tech Group, nor its directors, employees, partners, agents, 
-                suppliers, or affiliates, be liable for any indirect, incidental, special, consequential, 
-                or punitive damages, including without limitation, loss of profits, data, use, goodwill, 
-                or other intangible losses.
-              </p>
-              <p>
-                Our total liability to you for any claims arising from the use of our services 
-                shall not exceed the amount you paid us, if any, for the services in the twelve 
-                months preceding the claim.
-              </p>
-            </div>
-          </motion.section>
-
-          {/* Termination */}
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7 }}
-            className="bg-white/10 backdrop-blur-md rounded-lg p-6"
-          >
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center">
-              <Scale className="w-6 h-6 mr-3 text-cyan-400" />
-              Termination
-            </h2>
-            <div className="space-y-4 text-gray-300">
-              <p>
-                We may terminate or suspend your access immediately, without prior notice or liability, 
-                for any reason whatsoever, including without limitation if you breach the Terms.
-              </p>
-              <p>
-                Upon termination, your right to use the service will cease immediately. If you wish 
-                to terminate your account, you may simply discontinue using the service.
-              </p>
-            </div>
-          </motion.section>
-
-          {/* Governing Law */}
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8 }}
-            className="bg-white/10 backdrop-blur-md rounded-lg p-6"
-          >
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center">
-              <Globe className="w-6 h-6 mr-3 text-cyan-400" />
-              Governing Law
-            </h2>
-            <div className="space-y-4 text-gray-300">
-              <p>
-                These Terms shall be interpreted and governed by the laws of the State of Delaware, 
-                United States, without regard to its conflict of law provisions.
-              </p>
-              <p>
-                Any disputes arising from these terms or the use of our services shall be resolved 
-                in the courts of Delaware, and you consent to the jurisdiction of such courts.
-              </p>
-            </div>
-          </motion.section>
-
-          {/* Changes to Terms */}
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9 }}
-            className="bg-white/10 backdrop-blur-md rounded-lg p-6"
-          >
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center">
-              <FileText className="w-6 h-6 mr-3 text-cyan-400" />
-              Changes to Terms
-            </h2>
-            <div className="space-y-4 text-gray-300">
-              <p>
-                We reserve the right, at our sole discretion, to modify or replace these Terms 
-                at any time. If a revision is material, we will try to provide at least 30 days 
-                notice prior to any new terms taking effect.
-              </p>
-              <p>
-                What constitutes a material change will be determined at our sole discretion. 
-                By continuing to access or use our service after those revisions become effective, 
-                you agree to be bound by the revised terms.
-              </p>
-            </div>
-          </motion.section>
-
-          {/* Contact Information */}
-          <motion.section
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.0 }}
-            className="bg-white/10 backdrop-blur-md rounded-lg p-6"
-          >
-            <h2 className="text-2xl font-bold text-white mb-4 flex items-center">
-              <Mail className="w-6 h-6 mr-3 text-cyan-400" />
-              Contact Information
-            </h2>
-            <div className="space-y-4 text-gray-300">
-              <p>
-                If you have any questions about these Terms of Service, please contact us:
-              </p>
-              <div className="space-y-2">
-                <div className="flex items-center">
-                  <Mail className="w-4 h-4 mr-2 text-cyan-400" />
-                  <span>Email: kleber@ziontechgroup.com</span>
-                </div>
-                <div className="flex items-center">
-                  <Phone className="w-4 h-4 mr-2 text-cyan-400" />
-                  <span>Phone: +1 (302) 464-0950</span>
-                </div>
+    <>
+      <SEO 
+        title="Terms of Service | Zion Tech Group"
+        description="Read Zion Tech Group's terms of service to understand the rules and conditions for using our technology services and solutions."
+        keywords="terms of service, terms and conditions, legal, Zion Tech Group, service agreement"
+      />
+      
+      <div className="min-h-screen bg-zion-blue-dark">
+        {/* Hero Section */}
+        <section className="relative pt-32 pb-20 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple opacity-20"></div>
+          <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="inline-flex items-center px-4 py-2 bg-zion-cyan/10 border border-zion-cyan/30 rounded-full text-zion-cyan text-sm font-medium mb-6">
+                <FileText className="w-4 h-4 mr-2" />
+                Terms of Service
               </div>
-            </div>
-          </motion.section>
-        </div>
+              <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+                Terms of
+                <span className="block bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
+                  Service
+                </span>
+              </h1>
+              <p className="text-xl text-zion-slate-light max-w-3xl mx-auto mb-8">
+                These terms govern your use of Zion Tech Group's services. Please read them carefully 
+                to understand your rights and obligations.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="#terms-content"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300"
+                >
+                  Read Terms
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </a>
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center px-8 py-4 border border-zion-cyan/30 text-zion-cyan font-semibold rounded-xl hover:bg-zion-cyan hover:text-white transition-all duration-300"
+                >
+                  Contact Us
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </section>
 
-        {/* Back to Home */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.1 }}
-          className="text-center mt-12"
-        >
-          <Link
-            to="/"
-            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-400 to-purple-600 text-white font-medium rounded-lg hover:from-cyan-500 hover:to-purple-700 transition-all duration-200"
-          >
-            <Globe className="w-5 h-5 mr-2" />
-            Back to Home
-          </Link>
-        </motion.div>
+        {/* Key Terms */}
+        <section className="py-20 bg-zion-blue">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-16"
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Key Terms
+              </h2>
+              <p className="text-xl text-zion-slate-light max-w-2xl mx-auto">
+                Important concepts and conditions that govern our service relationship.
+              </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+              {keyTerms.map((term, index) => {
+                const IconComponent = term.icon;
+                return (
+                  <motion.div
+                    key={term.title}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    className="text-center"
+                  >
+                    <div className={`w-16 h-16 bg-zion-cyan/10 border border-zion-cyan/30 rounded-xl flex items-center justify-center mx-auto mb-4`}>
+                      <IconComponent className={`w-8 h-8 ${term.color}`} />
+                    </div>
+                    <h3 className="text-xl font-semibold text-white mb-2">
+                      {term.title}
+                    </h3>
+                    <p className="text-zion-slate-light">
+                      {term.description}
+                    </p>
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Terms Content */}
+        <section id="terms-content" className="py-20 bg-zion-blue-dark">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-4xl mx-auto">
+              <motion.div
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="bg-zion-blue border border-zion-cyan/20 rounded-2xl p-8"
+              >
+                <h2 className="text-3xl font-bold text-white mb-6">Terms of Service</h2>
+                <p className="text-zion-slate-light mb-6">
+                  <strong>Effective Date:</strong> January 1, 2024<br />
+                  <strong>Last Updated:</strong> January 1, 2024
+                </p>
+
+                <div className="space-y-6 text-zion-slate-light">
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-3">1. Agreement to Terms</h3>
+                    <p>
+                      By accessing or using Zion Tech Group's services, you agree to be bound by these Terms of Service. 
+                      If you disagree with any part of these terms, you may not access our services.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-3">2. Description of Services</h3>
+                    <p>
+                      Zion Tech Group provides technology consulting, software development, AI solutions, cloud services, 
+                      and digital transformation services. Our services are designed to help businesses leverage technology 
+                      for growth and efficiency.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-3">3. User Accounts</h3>
+                    <p>
+                      When you create an account with us, you must provide accurate and complete information. You are 
+                      responsible for safeguarding your account credentials and for all activities that occur under your account.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-3">4. Acceptable Use</h3>
+                    <p>You agree to use our services only for lawful purposes and in accordance with these terms. You agree not to:</p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-3">
+                      {prohibitedActivities.map((activity, index) => (
+                        <div key={index} className="flex items-start text-sm">
+                          <AlertTriangle className="w-4 h-4 text-red-400 mr-2 mt-0.5 flex-shrink-0" />
+                          {activity}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-3">5. User Obligations</h3>
+                    <p>As a user of our services, you agree to:</p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mt-3">
+                      {userObligations.map((obligation, index) => (
+                        <div key={index} className="flex items-start text-sm">
+                          <CheckCircle className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+                          {obligation}
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-3">6. Payment Terms</h3>
+                    <p>
+                      Service fees are due according to the payment schedule agreed upon in your service agreement. 
+                      Late payments may result in service suspension or termination. All fees are non-refundable unless 
+                      otherwise specified.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-3">7. Intellectual Property</h3>
+                    <p>
+                      Our services and content are protected by intellectual property laws. You retain ownership of 
+                      your content, but grant us a license to use it for service delivery. We retain ownership of 
+                      our proprietary technology and methodologies.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-3">8. Confidentiality</h3>
+                    <p>
+                      Both parties agree to maintain the confidentiality of proprietary and sensitive information 
+                      shared during our business relationship. This obligation survives the termination of services.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-3">9. Limitation of Liability</h3>
+                    <p>
+                      To the maximum extent permitted by law, Zion Tech Group shall not be liable for any indirect, 
+                      incidental, special, consequential, or punitive damages arising from your use of our services.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-3">10. Indemnification</h3>
+                    <p>
+                      You agree to indemnify and hold harmless Zion Tech Group from any claims, damages, or expenses 
+                      arising from your use of our services or violation of these terms.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-3">11. Service Availability</h3>
+                    <p>
+                      We strive to maintain high service availability but do not guarantee uninterrupted access. 
+                      We may perform maintenance or updates that temporarily affect service availability.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-3">12. Termination</h3>
+                    <p>
+                      Either party may terminate services with written notice according to the terms of your service 
+                      agreement. Upon termination, you will lose access to our services and any stored data.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-3">13. Governing Law</h3>
+                    <p>
+                      These terms are governed by the laws of the State of Delaware, United States. Any disputes 
+                      will be resolved in the courts of Delaware.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-3">14. Changes to Terms</h3>
+                    <p>
+                      We may modify these terms at any time. We will notify you of significant changes via email 
+                      or through our website. Continued use of services constitutes acceptance of modified terms.
+                    </p>
+                  </div>
+
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-3">15. Contact Information</h3>
+                    <p>
+                      For questions about these terms or our services, please contact us:
+                    </p>
+                    <div className="bg-zion-blue-dark border border-zion-cyan/20 rounded-xl p-4 mt-3">
+                      <p><strong>Email:</strong> kleber@ziontechgroup.com</p>
+                      <p><strong>Phone:</strong> +1 (302) 464-0950</p>
+                      <p><strong>Address:</strong> 364 E Main St STE 1008, Middletown, DE 19709</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="py-20 bg-gradient-to-r from-zion-blue-dark to-zion-blue">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl font-bold text-white mb-4">
+                Questions About Our Terms?
+              </h2>
+              <p className="text-xl text-zion-slate-light max-w-2xl mx-auto mb-8">
+                We're here to help clarify any questions about our terms of service or policies.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link
+                  to="/contact"
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300"
+                >
+                  Contact Us
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </Link>
+                <Link
+                  to="/privacy"
+                  className="inline-flex items-center px-8 py-4 border border-zion-cyan/30 text-zion-cyan font-semibold rounded-xl hover:bg-zion-cyan hover:text-white transition-all duration-300"
+                >
+                  Privacy Policy
+                </Link>
+              </div>
+            </motion.div>
+          </div>
+        </section>
       </div>
-    </div>
+    </>
   );
-}
+};
+
+export default Terms;
