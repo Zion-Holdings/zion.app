@@ -1,55 +1,23 @@
 
-<<<<<<< HEAD
 import React from 'react';
-import { CategoriesSection } from "@/components/CategoriesSection";
-import { BenefitsSection } from "@/components/BenefitsSection";
-import { HowItWorksSection } from "@/components/HowItWorksSection";
-import { NewsletterSection } from "@/components/NewsletterSection";
-import { FeaturedListingsSection } from "@/components/FeaturedListingsSection";
-import { SEO } from "@/components/SEO";
-import { HeroSection } from "@/components/HeroSection";
-import { QuickAccess } from "@/components/home/QuickAccess";
-import { FeatureCTAs } from "@/components/home/FeatureCTAs";
-import { FeatureHighlights } from "@/components/home/FeatureHighlights";
-import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
-import { AnimatedBackground, FloatingOrbs } from "@/components/ui/AnimatedBackground";
->>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-0c75
-
-  return (
-    <div className="min-h-screen bg-background relative overflow-hidden">
-      <SEO 
-        title="Zion - The Tech & AI Marketplace" 
-        description="Discover top AI and tech talent, services, and equipment in one place."
-        keywords="AI, technology, marketplace, services, talent"
-        canonical="https://app.ziontechgroup.com/"
-      />
-
-      {/* Futuristic Animated Backgrounds */}
-      <AnimatedBackground variant="grid" intensity="low" />
-      <FloatingOrbs count={8} />
-
-      <ITServiceRequestHero />
-
-        {/* Featured Services */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-              Our Featured Services
-=======
-import React, { useEffect, useRef } from 'react';
-import { ServicesShowcase } from "@/components/ServicesShowcase";
-import { motion, useInView } from 'framer-motion';
-import { ArrowRight, Sparkles, Globe, Zap, Phone, Mail, MapPin } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { EnhancedSEO } from "@/components/EnhancedSEO";
+import { ServicesShowcase } from '../components/ServicesShowcase';
+import { EnhancedServicesShowcase } from '../components/EnhancedServicesShowcase';
+import { AdvancedServicesShowcase } from '../components/AdvancedServicesShowcase';
 
 export default function Home() {
   return (
     <div className="min-h-screen relative">
+<<<<<<< HEAD
+=======
+      <EnhancedSEO 
+        title="Zion Tech Group - Transform Your Business With AI & Tech"
+        description="Discover cutting-edge AI services, Micro SAAS solutions, and comprehensive IT services designed to propel your business into the future."
+        url="https://ziontechgroup.com"
+        type="website"
+        tags={["AI services", "Micro SAAS", "IT services", "cybersecurity", "quantum technology", "business transformation"]}
+      />
+>>>>>>> cursor/analyze-improve-and-deploy-ziontechgroup-app-47ca
       
       {/* Futuristic Background Elements */}
       <div className="quantum-particles">

@@ -1,153 +1,270 @@
 import { useEffect, useState, useCallback } from 'react';
 
 interface PerformanceMetrics {
-  loadTime: number;
-  renderTime: number;
-  memoryUsage?: number;
-  fps: number;
-  interactions: number;
+  fcp: number | null;
+  lcp: number | null;
+  fid: number | null;
+  cls: number | null;
+  ttfb: number | null;
+  overallScore: number;
+  isLoaded: boolean;
 }
 
-interface PerformanceOptions {
-  enableMemoryTracking?: boolean;
-  enableFPSTracking?: boolean;
-  enableInteractionTracking?: boolean;
+interface PerformanceEntry {
+  name: string;
+  entryType: string;
+  startTime: number;
+  duration: number;
+  value?: number;
 }
 
-export const usePerformance = (options: PerformanceOptions = {}) => {
+// Performance API types
+interface PerformanceEventTiming extends PerformanceEntry {
+  processingStart: number;
+  processingEnd: number;
+  target: EventTarget | null;
+}
+
+interface LayoutShift extends PerformanceEntry {
+  value: number;
+  hadRecentInput: boolean;
+  lastInputTime: number;
+}
+
+export const usePerformance = (): PerformanceMetrics => {
   const [metrics, setMetrics] = useState<PerformanceMetrics>({
-    loadTime: 0,
-    renderTime: 0,
-    memoryUsage: 0,
-    fps: 0,
-    interactions: 0
+    fcp: null,
+    lcp: null,
+    fid: null,
+    cls: null,
+    ttfb: null,
+    overallScore: 0,
+    isLoaded: false
   });
 
-  const [isMonitoring, setIsMonitoring] = useState(false);
-
-  // Measure initial load time
-  useEffect(() => {
-    if (typeof window !== 'undefined' && window.performance) {
-      const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-      if (navigation) {
-        setMetrics(prev => ({
-          ...prev,
-          loadTime: navigation.loadEventEnd - navigation.loadEventStart
-        }));
-      }
-    }
-  }, []);
-
-  // FPS tracking
-  const measureFPS = useCallback(() => {
-    let frameCount = 0;
-    let lastTime = performance.now();
-    
-    const countFrames = () => {
-      frameCount++;
-      const currentTime = performance.now();
-      
-      if (currentTime - lastTime >= 1000) {
-        const fps = Math.round((frameCount * 1000) / (currentTime - lastTime));
-        setMetrics(prev => ({ ...prev, fps }));
-        frameCount = 0;
-        lastTime = currentTime;
-      }
-      
-      requestAnimationFrame(countFrames);
-    };
-    
-    requestAnimationFrame(countFrames);
-  }, []);
-
-  // Memory tracking
-  const measureMemory = useCallback(() => {
-    if ('memory' in performance) {
-      const memory = (performance as any).memory;
-      setMetrics(prev => ({
-        ...prev,
-        memoryUsage: memory.usedJSHeapSize / 1024 / 1024 // Convert to MB
-      }));
-    }
-  }, []);
-
-  // Start monitoring
-  const startMonitoring = useCallback(() => {
-    setIsMonitoring(true);
-    
-    if (options.enableFPSTracking) {
-      measureFPS();
-    }
-    
-    if (options.enableMemoryTracking) {
-      const memoryInterval = setInterval(measureMemory, 5000);
-      return () => clearInterval(memoryInterval);
-    }
-  }, [options.enableFPSTracking, options.enableMemoryTracking, measureFPS, measureMemory]);
-
-  // Stop monitoring
-  const stopMonitoring = useCallback(() => {
-    setIsMonitoring(false);
-  }, []);
-
-  // Track render time
-  const trackRender = useCallback((componentName: string) => {
-    const startTime = performance.now();
-    
-    return () => {
-      const endTime = performance.now();
-      const renderTime = endTime - startTime;
-      
-      setMetrics(prev => ({
-        ...prev,
-        renderTime: Math.max(prev.renderTime, renderTime)
-      }));
-      
-      // Log slow renders
-      if (renderTime > 16) { // 60fps threshold
-        console.warn(`Slow render detected in ${componentName}: ${renderTime.toFixed(2)}ms`);
-      }
-    };
-  }, []);
-
-  // Track user interactions
-  const trackInteraction = useCallback(() => {
-    setMetrics(prev => ({
-      ...prev,
-      interactions: prev.interactions + 1
-    }));
-  }, []);
-
-  // Get performance score
-  const getPerformanceScore = useCallback(() => {
+  const calculateScore = useCallback((fcp: number, lcp: number, fid: number, cls: number): number => {
     let score = 100;
-    
-    // Deduct points for slow load times
-    if (metrics.loadTime > 3000) score -= 20;
-    else if (metrics.loadTime > 1000) score -= 10;
-    
-    // Deduct points for slow renders
-    if (metrics.renderTime > 16) score -= 15;
-    else if (metrics.renderTime > 8) score -= 5;
-    
-    // Deduct points for low FPS
-    if (metrics.fps < 30) score -= 25;
-    else if (metrics.fps < 50) score -= 10;
-    
-    // Deduct points for high memory usage
-    if (metrics.memoryUsage && metrics.memoryUsage > 100) score -= 20;
-    else if (metrics.memoryUsage && metrics.memoryUsage > 50) score -= 10;
-    
+
+    // FCP scoring (0-25 points)
+    if (fcp <= 1800) score -= 0;
+    else if (fcp <= 3000) score -= 10;
+    else score -= 25;
+
+    // LCP scoring (0-25 points)
+    if (lcp <= 2500) score -= 0;
+    else if (lcp <= 4000) score -= 10;
+    else score -= 25;
+
+    // FID scoring (0-25 points)
+    if (fid <= 100) score -= 0;
+    else if (fid <= 300) score -= 10;
+    else score -= 25;
+
+    // CLS scoring (0-25 points)
+    if (cls <= 0.1) score -= 0;
+    else if (cls <= 0.25) score -= 10;
+    else score -= 25;
+
     return Math.max(0, score);
+  }, []);
+
+  const updateMetrics = useCallback((newMetrics: Partial<PerformanceMetrics>) => {
+    setMetrics(prev => {
+      const updated = { ...prev, ...newMetrics };
+      
+      // Calculate overall score when we have all metrics
+      if (updated.fcp && updated.lcp && updated.fid && updated.cls) {
+        updated.overallScore = calculateScore(updated.fcp, updated.lcp, updated.fid, updated.cls);
+      }
+      
+      return updated;
+    });
+  }, [calculateScore]);
+
+  useEffect(() => {
+    // Check if Performance Observer is supported
+    if (!('PerformanceObserver' in window)) {
+      console.warn('Performance Observer not supported');
+      return;
+    }
+
+    // First Contentful Paint (FCP)
+    const fcpObserver = new PerformanceObserver((list) => {
+      const entries = list.getEntries();
+      const fcpEntry = entries.find(entry => entry.name === 'first-contentful-paint');
+      if (fcpEntry) {
+        const fcp = Math.round(fcpEntry.startTime);
+        updateMetrics({ fcp });
+        if (import.meta.env.DEV) {
+          console.log('FCP:', fcp, 'ms');
+        }
+      }
+    });
+
+    // Largest Contentful Paint (LCP)
+    const lcpObserver = new PerformanceObserver((list) => {
+      const entries = list.getEntries();
+      const lcpEntry = entries[entries.length - 1]; // Get the latest LCP entry
+      if (lcpEntry) {
+        const lcp = Math.round(lcpEntry.startTime);
+        updateMetrics({ lcp });
+        if (import.meta.env.DEV) {
+          console.log('LCP:', lcp, 'ms');
+        }
+      }
+    });
+
+    // First Input Delay (FID)
+    const fidObserver = new PerformanceObserver((list) => {
+      const entries = list.getEntries();
+      entries.forEach(entry => {
+        const fidEntry = entry as unknown as PerformanceEventTiming;
+        if (fidEntry.processingStart) {
+          const fid = Math.round(fidEntry.processingStart - fidEntry.startTime);
+          updateMetrics({ fid });
+          if (import.meta.env.DEV) {
+            console.log('FID:', fid, 'ms');
+          }
+        }
+      });
+    });
+
+    // Cumulative Layout Shift (CLS)
+    let clsValue = 0;
+    const clsObserver = new PerformanceObserver((list) => {
+      const entries = list.getEntries();
+      entries.forEach(entry => {
+        const clsEntry = entry as unknown as LayoutShift;
+        if (!clsEntry.hadRecentInput) {
+          clsValue += clsEntry.value;
+          updateMetrics({ cls: Math.round(clsValue * 1000) / 1000 });
+          if (import.meta.env.DEV) {
+            console.log('CLS:', Math.round(clsValue * 1000) / 1000);
+          }
+        }
+      });
+    });
+
+    // Time to First Byte (TTFB)
+    const navigationEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+    if (navigationEntry) {
+      const ttfb = Math.round(navigationEntry.responseStart - navigationEntry.requestStart);
+      updateMetrics({ ttfb });
+      if (import.meta.env.DEV) {
+        console.log('TTFB:', ttfb, 'ms');
+      }
+    }
+
+    // Start observing
+    try {
+      fcpObserver.observe({ entryTypes: ['paint'] });
+      lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+      fidObserver.observe({ entryTypes: ['first-input'] });
+      clsObserver.observe({ entryTypes: ['layout-shift'] });
+    } catch (error) {
+      console.warn('Error setting up performance observers:', error);
+    }
+
+    // Mark as loaded after a delay to ensure metrics are collected
+    const timer = setTimeout(() => {
+      updateMetrics({ isLoaded: true });
+    }, 5000);
+
+    return () => {
+      fcpObserver.disconnect();
+      lcpObserver.disconnect();
+      fidObserver.disconnect();
+      clsObserver.disconnect();
+      clearTimeout(timer);
+    };
+  }, [updateMetrics]);
+
+  // Performance monitoring for development
+  useEffect(() => {
+    if (import.meta.env.DEV && metrics.isLoaded) {
+      console.group('🚀 Performance Metrics');
+      console.log('FCP:', metrics.fcp, 'ms');
+      console.log('LCP:', metrics.lcp, 'ms');
+      console.log('FID:', metrics.fid, 'ms');
+      console.log('CLS:', metrics.cls);
+      console.log('TTFB:', metrics.ttfb, 'ms');
+      console.log('Overall Score:', metrics.overallScore, '/100');
+      console.groupEnd();
+    }
   }, [metrics]);
 
-  return {
-    metrics,
-    isMonitoring,
-    startMonitoring,
-    stopMonitoring,
-    trackRender,
-    trackInteraction,
-    getPerformanceScore
-  };
+  return metrics;
+};
+
+// Hook for monitoring specific performance metrics
+export const usePerformanceMetric = (metricName: string) => {
+  const [value, setValue] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (!('PerformanceObserver' in window)) return;
+
+    const observer = new PerformanceObserver((list) => {
+      const entries = list.getEntries();
+      entries.forEach(entry => {
+        if (entry.name === metricName) {
+          setValue(entry.startTime);
+        }
+      });
+    });
+
+    try {
+      observer.observe({ entryTypes: ['measure'] });
+    } catch (error) {
+      console.warn('Error setting up performance observer for', metricName, error);
+    }
+
+    return () => observer.disconnect();
+  }, [metricName]);
+
+  return value;
+};
+
+// Hook for measuring custom performance marks
+export const usePerformanceMark = () => {
+  const mark = useCallback((name: string) => {
+    if ('performance' in window) {
+      performance.mark(name);
+    }
+  }, []);
+
+  const measure = useCallback((name: string, startMark: string, endMark: string) => {
+    if ('performance' in window) {
+      try {
+        performance.measure(name, startMark, endMark);
+        const measure = performance.getEntriesByName(name)[0];
+        return measure ? Math.round(measure.duration) : null;
+      } catch (error) {
+        console.warn('Error measuring performance:', error);
+        return null;
+      }
+    }
+    return null;
+  }, []);
+
+  const clearMarks = useCallback((name?: string) => {
+    if ('performance' in window) {
+      if (name) {
+        performance.clearMarks(name);
+      } else {
+        performance.clearMarks();
+      }
+    }
+  }, []);
+
+  const clearMeasures = useCallback((name?: string) => {
+    if ('performance' in window) {
+      if (name) {
+        performance.clearMeasures(name);
+      } else {
+        performance.clearMeasures();
+      }
+    }
+  }, []);
+
+  return { mark, measure, clearMarks, clearMeasures };
 };
