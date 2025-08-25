@@ -18,8 +18,85 @@ const AIServicesPage: React.FC = () => {
       features: ["Real-time dashboards", "Predictive analytics", "Custom reporting", "Data visualization"],
       benefits: ["Data-driven decisions", "Improved efficiency", "Cost reduction", "Competitive advantage"],
       useCases: ["Financial analysis", "Sales forecasting", "Customer behavior analysis", "Performance tracking"],
-      tags: ["AI", "Analytics", "Business Intelligence", "Machine Learning"]
+      tags: ["AI", "Analytics", "Business Intelligence", "Machine Learning"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
     },
+    {
+      id: 7,
+      name: "AI-Powered Customer Service Automation",
+      category: "Customer Service",
+      description: "Intelligent customer service automation with natural language processing and sentiment analysis",
+      price: 1800,
+      pricingModel: "monthly",
+      aiScore: 93,
+      features: ["24/7 chatbot support", "Sentiment analysis", "Ticket routing", "Knowledge base integration"],
+      benefits: ["24/7 availability", "Reduced response time", "Improved customer satisfaction", "Cost savings"],
+      useCases: ["E-commerce support", "Help desk automation", "Customer inquiries", "Technical support"],
+      tags: ["AI", "Customer Service", "Automation", "Chatbot", "NLP"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 8,
+      name: "AI-Powered Marketing Optimization",
+      category: "Marketing AI",
+      description: "Intelligent marketing optimization using AI to improve campaigns, targeting, and ROI",
+      price: 2200,
+      pricingModel: "monthly",
+      aiScore: 91,
+      features: ["Campaign optimization", "Audience targeting", "A/B testing", "ROI prediction"],
+      benefits: ["Higher conversion rates", "Better targeting", "Improved ROI", "Data-driven decisions"],
+      useCases: ["Digital advertising", "Email marketing", "Social media campaigns", "Content optimization"],
+      tags: ["AI", "Marketing", "Optimization", "ROI", "Targeting"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 9,
+      name: "AI-Powered Fraud Detection",
+      category: "Security AI",
+      description: "Advanced fraud detection systems using machine learning to identify and prevent fraudulent activities",
+      price: 3500,
+      pricingModel: "monthly",
+      aiScore: 96,
+      features: ["Real-time monitoring", "Pattern recognition", "Risk scoring", "Alert system"],
+      benefits: ["Fraud prevention", "Risk reduction", "Compliance", "Customer protection"],
+      useCases: ["Financial services", "E-commerce", "Insurance", "Healthcare"],
+      tags: ["AI", "Security", "Fraud Detection", "Risk Management", "Compliance"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 10,
+      name: "AI-Powered Supply Chain Optimization",
+      category: "Supply Chain AI",
+      description: "Intelligent supply chain optimization using AI to improve efficiency and reduce costs",
+      price: 2800,
+      pricingModel: "monthly",
+      aiScore: 89,
+      features: ["Demand forecasting", "Inventory optimization", "Route optimization", "Supplier management"],
+      benefits: ["Cost reduction", "Improved efficiency", "Better planning", "Risk mitigation"],
+      useCases: ["Manufacturing", "Retail", "Logistics", "Distribution"],
+      tags: ["AI", "Supply Chain", "Optimization", "Forecasting", "Logistics"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    }
     {
       id: 2,
       name: "Natural Language Processing Solutions",
@@ -87,7 +164,7 @@ const AIServicesPage: React.FC = () => {
     }
   ];
 
-  const categories = ['all', 'Business Intelligence', 'Language AI', 'Visual AI', 'Predictive AI', 'Process Automation', 'Conversational AI'];
+  const categories = ['all', 'Business Intelligence', 'Language AI', 'Visual AI', 'Predictive AI', 'Process Automation', 'Conversational AI', 'Customer Service', 'Marketing AI', 'Security AI', 'Supply Chain AI'];
 
   const filteredServices = aiServices.filter(service => {
     const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||

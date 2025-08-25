@@ -28,6 +28,101 @@ const MicroSaasServices: React.FC = () => {
       }
     },
     {
+      id: 16,
+      name: "AI Content Optimizer",
+      category: "AI & Marketing",
+      pricing: "Subscription",
+      description: "AI-powered content optimization tool that analyzes and improves your marketing content for better engagement",
+      price: 45,
+      pricingModel: "monthly",
+      userLimit: "Up to 8 users",
+      features: ["AI content analysis", "SEO optimization", "Engagement scoring", "A/B testing suggestions"],
+      benefits: ["Higher engagement rates", "Better SEO rankings", "Content performance insights", "Time savings"],
+      targetAudience: ["Marketing teams", "Content creators", "Digital agencies", "E-commerce businesses"],
+      tags: ["AI", "Content Marketing", "SEO", "Analytics", "Optimization"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 17,
+      name: "Smart Inventory Manager",
+      category: "Inventory",
+      pricing: "Subscription",
+      description: "Intelligent inventory management with AI-powered demand forecasting and automated reordering",
+      price: 35,
+      pricingModel: "monthly",
+      userLimit: "Up to 20 users",
+      features: ["AI demand forecasting", "Automated reordering", "Real-time tracking", "Multi-location support"],
+      benefits: ["Reduced stockouts", "Lower carrying costs", "Improved cash flow", "Better planning"],
+      targetAudience: ["Retail stores", "E-commerce", "Manufacturing", "Distribution centers"],
+      tags: ["Inventory", "AI", "Forecasting", "Automation", "Supply Chain"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 18,
+      name: "Customer Success Hub",
+      category: "Customer Success",
+      pricing: "Freemium",
+      description: "Comprehensive customer success platform with automated onboarding and retention tracking",
+      price: 28,
+      pricingModel: "monthly",
+      userLimit: "Up to 15 users",
+      features: ["Automated onboarding", "Success tracking", "Churn prediction", "Customer health scoring"],
+      benefits: ["Improved retention", "Higher customer satisfaction", "Reduced churn", "Better insights"],
+      targetAudience: ["SaaS companies", "Subscription businesses", "Service providers", "B2B companies"],
+      tags: ["Customer Success", "Onboarding", "Retention", "Analytics", "Automation"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 19,
+      name: "Financial Analytics Pro",
+      category: "Finance",
+      pricing: "Subscription",
+      description: "Advanced financial analytics and reporting platform for small to medium businesses",
+      price: 55,
+      pricingModel: "monthly",
+      userLimit: "Up to 12 users",
+      features: ["Financial dashboards", "Cash flow analysis", "Budget tracking", "Forecasting models"],
+      benefits: ["Better financial decisions", "Improved cash flow", "Risk management", "Strategic planning"],
+      targetAudience: ["Small businesses", "Startups", "Consulting firms", "Service providers"],
+      tags: ["Finance", "Analytics", "Reporting", "Forecasting", "Cash Flow"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 20,
+      name: "HR Management Suite",
+      category: "Human Resources",
+      pricing: "Freemium",
+      description: "Complete HR management solution with employee onboarding, time tracking, and performance management",
+      price: 32,
+      pricingModel: "monthly",
+      userLimit: "Up to 50 employees",
+      features: ["Employee onboarding", "Time tracking", "Performance reviews", "Benefits management"],
+      benefits: ["Streamlined HR processes", "Better employee experience", "Compliance management", "Cost reduction"],
+      targetAudience: ["Growing companies", "Remote teams", "Small businesses", "Startups"],
+      tags: ["HR", "Employee Management", "Time Tracking", "Performance", "Compliance"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
       id: 2,
       name: "InvoiceGenius",
       category: "Finance",
@@ -295,7 +390,7 @@ const MicroSaasServices: React.FC = () => {
     }
   ];
 
-  const categories = ['all', 'Productivity', 'Finance', 'Marketing', 'CRM', 'Analytics', 'Scheduling', 'Content', 'Security', 'Media', 'Education', 'Sustainability', 'Legal', 'Healthcare', 'Events', 'Inventory'];
+  const categories = ['all', 'Productivity', 'Finance', 'Marketing', 'CRM', 'Analytics', 'Scheduling', 'Content', 'Security', 'Media', 'Education', 'Sustainability', 'Legal', 'Healthcare', 'Events', 'Inventory', 'AI & Marketing', 'Customer Success', 'Human Resources'];
   const pricingModels = ['all', 'Freemium', 'Subscription', 'One-time'];
 
   const filteredServices = microSaasServices.filter(service => {
@@ -348,16 +443,35 @@ const MicroSaasServices: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-green-900 to-slate-900">
-      <div className="container mx-auto px-4 py-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-green-900 to-slate-900 relative overflow-hidden">
+      {/* Animated Background */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-br from-green-900/20 via-blue-900/20 to-purple-900/20 animate-pulse"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(34,197,94,0.1),transparent_50%)] animate-float"></div>
+        <div className="absolute top-20 left-10 w-32 h-32 bg-green-500/10 rounded-full blur-xl animate-float"></div>
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-blue-500/10 rounded-full blur-xl animate-float" style={{animationDelay: '2s'}}></div>
+      </div>
+      
+      <div className="container mx-auto px-4 py-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-green-400 via-blue-400 to-green-600 bg-clip-text text-transparent mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-green-400 via-blue-400 to-green-600 bg-clip-text text-transparent mb-4 animate-neon-pulse">
             Micro SAAS Services
           </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto animate-fade-in">
             Affordable, focused software solutions designed specifically for small businesses, startups, and entrepreneurs
           </p>
+          <div className="mt-6 flex justify-center space-x-4">
+            <div className="px-4 py-2 bg-green-500/20 border border-green-500/30 rounded-lg text-green-300 text-sm">
+              <span className="animate-pulse">🚀</span> 20+ Solutions
+            </div>
+            <div className="px-4 py-2 bg-blue-500/20 border border-blue-500/30 rounded-lg text-blue-300 text-sm">
+              <span className="animate-pulse">💰</span> Starting at $15/month
+            </div>
+            <div className="px-4 py-2 bg-purple-500/20 border border-purple-500/30 rounded-lg text-purple-300 text-sm">
+              <span className="animate-pulse">⚡</span> Instant Setup
+            </div>
+          </div>
         </div>
 
         {/* Search and Filters */}
@@ -402,8 +516,12 @@ const MicroSaasServices: React.FC = () => {
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredServices.map((service) => (
-            <div key={service.id} className="bg-white/5 backdrop-blur-sm border border-gray-600 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 hover:shadow-2xl hover:shadow-green-500/20">
+          {filteredServices.map((service, index) => (
+            <div 
+              key={service.id} 
+              className="bg-white/5 backdrop-blur-sm border border-gray-600 rounded-xl p-6 hover:bg-white/10 transition-all duration-500 hover:shadow-2xl hover:shadow-green-500/20 group hover:scale-105 hover:-translate-y-2"
+              style={{animationDelay: `${index * 100}ms`}}
+            >
               <div className="flex items-start justify-between mb-4">
                 <div className="flex items-center gap-3 mb-2">
                   <div className="text-green-400">
@@ -473,26 +591,48 @@ const MicroSaasServices: React.FC = () => {
 
         {/* Contact Information */}
         <div className="mt-16 text-center">
-          <div className="bg-white/5 backdrop-blur-sm border border-gray-600 rounded-xl p-8">
-            <h2 className="text-2xl font-bold text-white mb-4">Ready to Scale Your Business?</h2>
-            <p className="text-gray-300 mb-6">
-              Our micro SAAS solutions are designed to grow with your business needs
-            </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-              <div>
-                <Phone className="w-8 h-8 text-green-400 mx-auto mb-2" />
-                <p className="text-white font-semibold">Phone</p>
-                <p className="text-gray-300">{microSaasServices[0].contactInfo.phone}</p>
+          <div className="bg-white/5 backdrop-blur-sm border border-gray-600 rounded-xl p-8 relative overflow-hidden">
+            {/* Background decoration */}
+            <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 via-blue-500/5 to-purple-500/5"></div>
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-green-400 via-blue-400 to-purple-400"></div>
+            
+            <div className="relative z-10">
+              <h2 className="text-3xl font-bold text-white mb-4 animate-neon-pulse">Ready to Scale Your Business?</h2>
+              <p className="text-gray-300 mb-8 text-lg">
+                Our micro SAAS solutions are designed to grow with your business needs
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div className="group">
+                  <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-green-500/30 transition-all duration-300 group-hover:scale-110">
+                    <Phone className="w-8 h-8 text-green-400" />
+                  </div>
+                  <p className="text-white font-semibold text-lg mb-2">Phone</p>
+                  <p className="text-gray-300 group-hover:text-green-300 transition-colors">{microSaasServices[0].contactInfo.phone}</p>
+                </div>
+                <div className="group">
+                  <div className="w-16 h-16 bg-blue-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-500/30 transition-all duration-300 group-hover:scale-110">
+                    <Mail className="w-8 h-8 text-blue-400" />
+                  </div>
+                  <p className="text-white font-semibold text-lg mb-2">Email</p>
+                  <p className="text-gray-300 group-hover:text-blue-300 transition-colors">{microSaasServices[0].contactInfo.email}</p>
+                </div>
+                <div className="group">
+                  <div className="w-16 h-16 bg-purple-500/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-purple-500/30 transition-all duration-300 group-hover:scale-110">
+                    <MapPin className="w-8 h-8 text-purple-400" />
+                  </div>
+                  <p className="text-white font-semibold text-lg mb-2">Address</p>
+                  <p className="text-gray-300 group-hover:text-purple-300 transition-colors">364 E Main St STE 1008<br />Middletown DE 19709</p>
+                </div>
               </div>
-              <div>
-                <Mail className="w-8 h-8 text-green-400 mx-auto mb-2" />
-                <p className="text-white font-semibold">Email</p>
-                <p className="text-gray-300">{microSaasServices[0].contactInfo.email}</p>
-              </div>
-              <div>
-                <MapPin className="w-8 h-8 text-green-400 mx-auto mb-2" />
-                <p className="text-white font-semibold">Address</p>
-                <p className="text-gray-300">364 E Main St STE 1008<br />Middletown DE 19709</p>
+              
+              <div className="mt-8 pt-8 border-t border-gray-600">
+                <a 
+                  href="mailto:kleber@ziontechgroup.com"
+                  className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white font-semibold rounded-lg transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/25"
+                >
+                  <Mail className="w-5 h-5 mr-2" />
+                  Get Started Today
+                </a>
               </div>
             </div>
           </div>
