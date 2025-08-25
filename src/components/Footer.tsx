@@ -26,14 +26,14 @@ export function Footer() {
       icon: Brain,
       description: "Intelligent solutions powered by artificial intelligence",
       links: [
+        { label: "AI Workflow Automation", path: "/services/ai-workflow-automation", description: "Automate business processes with AI" },
         { label: "AI Business Intelligence", path: "/services#ai-bi", description: "Advanced analytics and insights" },
         { label: "AI Marketing Automation", path: "/services#ai-marketing", description: "Smart marketing optimization" },
         { label: "AI HR & Recruitment", path: "/services#ai-hr", description: "Intelligent talent management" },
         { label: "AI Legal Tech", path: "/services#ai-legal", description: "Automated legal processes" },
         { label: "AI Healthcare Analytics", path: "/services#ai-healthcare", description: "Patient care optimization" },
         { label: "AI Financial Analytics", path: "/services#financial", description: "Risk assessment and insights" },
-        { label: "AI Supply Chain", path: "/services#supply-chain", description: "Optimization and forecasting" },
-        { label: "AI Manufacturing", path: "/services#manufacturing", description: "Smart production systems" }
+        { label: "AI Supply Chain", path: "/services#supply-chain", description: "Optimization and forecasting" }
       ]
     },
     {
@@ -56,14 +56,14 @@ export function Footer() {
       icon: Zap,
       description: "Cutting-edge technologies for tomorrow's challenges",
       links: [
-        { label: "Quantum Computing", path: "/emerging-tech", description: "Next-generation computing" },
+        { label: "Quantum Computing as a Service", path: "/services/quantum-computing-as-a-service", description: "Access quantum computing power" },
+        { label: "Edge Computing Platform", path: "/services/edge-computing-platform", description: "Ultra-low latency edge computing" },
+        { label: "AI Cybersecurity Platform", path: "/services/ai-cybersecurity-platform", description: "AI-powered threat detection" },
         { label: "Blockchain & DeFi", path: "/emerging-tech", description: "Decentralized finance" },
         { label: "IoT & Edge Computing", path: "/emerging-tech", description: "Connected device management" },
         { label: "Extended Reality (XR)", path: "/emerging-tech", description: "Immersive experiences" },
         { label: "5G & Networks", path: "/emerging-tech", description: "High-speed connectivity" },
-        { label: "Green Technology", path: "/emerging-tech", description: "Sustainable solutions" },
-        { label: "Digital Twins", path: "/emerging-tech", description: "Virtual asset replicas" },
-        { label: "Neuromorphic Computing", path: "/emerging-tech", description: "Brain-inspired AI" }
+        { label: "Green Technology", path: "/emerging-tech", description: "Sustainable solutions" }
       ]
     },
     {

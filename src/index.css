@@ -102,6 +102,79 @@
   }
 }
 
+@keyframes neon-glow {
+  0%, 100% {
+    text-shadow: 
+      0 0 5px var(--neon-cyan),
+      0 0 10px var(--neon-cyan),
+      0 0 15px var(--neon-cyan),
+      0 0 20px var(--neon-cyan);
+  }
+  50% {
+    text-shadow: 
+      0 0 10px var(--neon-cyan),
+      0 0 20px var(--neon-cyan),
+      0 0 30px var(--neon-cyan),
+      0 0 40px var(--neon-cyan),
+      0 0 50px var(--neon-cyan);
+  }
+}
+
+@keyframes hologram-flicker {
+  0%, 100% {
+    opacity: 1;
+    filter: hue-rotate(0deg) brightness(1);
+  }
+  25% {
+    opacity: 0.8;
+    filter: hue-rotate(90deg) brightness(1.2);
+  }
+  50% {
+    opacity: 0.9;
+    filter: hue-rotate(180deg) brightness(0.8);
+  }
+  75% {
+    opacity: 0.7;
+    filter: hue-rotate(270deg) brightness(1.1);
+  }
+}
+
+@keyframes data-stream {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes quantum-oscillation {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    transform: scale(1.1) rotate(90deg);
+    filter: hue-rotate(90deg);
+  }
+  50% {
+    transform: scale(0.9) rotate(180deg);
+    filter: hue-rotate(180deg);
+  }
+  75% {
+    transform: scale(1.05) rotate(270deg);
+    filter: hue-rotate(270deg);
+  }
+}
+
 @keyframes hologram-flicker {
   0%, 100% {
     opacity: 1;
@@ -474,6 +547,38 @@
   .futuristic-bg::after,
   .neon-border,
   .neon-border::before,
+
+/* New Futuristic Utility Classes */
+.neon-glow-text {
+  animation: neon-glow 2s ease-in-out infinite;
+}
+
+.data-stream {
+  animation: data-stream 3s linear infinite;
+}
+
+.quantum-oscillation {
+  animation: quantum-oscillation 4s ease-in-out infinite;
+}
+
+.futuristic-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-glow);
+  box-shadow: 0 8px 32px rgba(0, 255, 255, 0.1);
+}
+
+.futuristic-button {
+  background: linear-gradient(45deg, var(--neon-cyan), var(--neon-purple));
+  border: none;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.futuristic-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+}
   .futuristic-btn::before,
   .energy-wave::after,
   .floating-particles::before,
