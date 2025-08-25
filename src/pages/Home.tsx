@@ -10,6 +10,8 @@ import { AnalyticsDashboard } from "../components/AnalyticsDashboard";
 import { CollaborationPlatform } from "../components/CollaborationPlatform";
 import { ProjectManagementDashboard } from "../components/ProjectManagementDashboard";
 import { AdvancedNotificationSystem } from "../components/AdvancedNotificationSystem";
+import { AICodeGenerator } from "../components/AICodeGenerator";
+import { AdvancedDataVisualization } from "../components/AdvancedDataVisualization";
 
 export default function Home() {
   return (
@@ -84,54 +86,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Advanced Features Grid */}
-      <section className="py-16 bg-gradient-to-br from-zion-cyan/5 to-zion-purple/5">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-zion-slate mb-4">
-              Advanced Capabilities
-            </h2>
-            <p className="text-lg text-zion-slate-light max-w-3xl mx-auto">
-              Discover the cutting-edge features that set us apart from the competition
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white dark:bg-zion-slate p-6 rounded-xl border border-zion-slate-light hover:border-zion-cyan transition-all duration-300 group">
-              <div className="w-12 h-12 bg-zion-cyan/10 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <span className="text-zion-cyan text-xl">🤖</span>
-              </div>
-              <h3 className="font-semibold text-zion-slate mb-2">AI-Powered</h3>
-              <p className="text-sm text-zion-slate-light">Machine learning algorithms that adapt and improve over time</p>
-            </div>
-            
-            <div className="bg-white dark:bg-zion-slate p-6 rounded-xl border border-zion-slate-light hover:border-zion-purple transition-all duration-300 group">
-              <div className="w-12 h-12 bg-zion-purple/10 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <span className="text-zion-purple text-xl">🔒</span>
-              </div>
-              <h3 className="font-semibold text-zion-slate mb-2">Enterprise Security</h3>
-              <p className="text-sm text-zion-slate-light">Bank-grade security with SOC 2 compliance and encryption</p>
-            </div>
-            
-            <div className="bg-white dark:bg-zion-slate p-6 rounded-xl border border-zion-slate-light hover:border-zion-emerald transition-all duration-300 group">
-              <div className="w-12 h-12 bg-zion-emerald/10 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <span className="text-zion-emerald text-xl">📊</span>
-              </div>
-              <h3 className="font-semibold text-zion-slate mb-2">Real-time Analytics</h3>
-              <p className="text-sm text-zion-slate-light">Live insights and performance monitoring for data-driven decisions</p>
-            </div>
-            
-            <div className="bg-white dark:bg-zion-slate p-6 rounded-xl border border-zion-slate-light hover:border-zion-gold transition-all duration-300 group">
-              <div className="w-12 h-12 bg-zion-gold/10 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                <span className="text-zion-gold text-xl">🌐</span>
-              </div>
-              <h3 className="font-semibold text-zion-slate mb-2">Global Scale</h3>
-              <p className="text-sm text-zion-slate-light">Multi-region deployment with 99.9% uptime guarantee</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Revolutionary Features Section */}
       <section className="py-16 bg-gradient-to-br from-zion-purple/5 to-zion-emerald/5">
         <div className="container mx-auto px-4">
@@ -191,6 +145,142 @@ export default function Home() {
                   Budget & timeline tracking
                 </li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Futuristic AI Features Section */}
+      <section className="py-16 bg-gradient-to-br from-zion-cyan/5 to-zion-gold/5">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-zion-slate mb-4">
+              Futuristic AI Capabilities
+            </h2>
+            <p className="text-lg text-zion-slate-light max-w-3xl mx-auto">
+              Experience the power of artificial intelligence with our cutting-edge tools and features
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="bg-white dark:bg-zion-slate p-6 rounded-2xl border border-zion-slate-light hover:shadow-xl transition-all duration-300 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-zion-purple to-zion-cyan rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-white text-3xl">🤖</span>
+              </div>
+              <h3 className="text-xl font-bold text-zion-slate mb-4">AI Code Generator</h3>
+              <p className="text-zion-slate-light mb-4">
+                Generate production-ready code in multiple programming languages using natural language descriptions.
+              </p>
+              <ul className="space-y-2 text-sm text-zion-slate-light">
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-zion-purple rounded-full"></span>
+                  Multi-language support
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-zion-purple rounded-full"></span>
+                  Smart code suggestions
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-zion-purple rounded-full"></span>
+                  Code history & favorites
+                </li>
+              </ul>
+            </div>
+            
+            <div className="bg-white dark:bg-zion-slate p-6 rounded-2xl border border-zion-slate-light hover:shadow-xl transition-all duration-300 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-zion-emerald to-zion-gold rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-white text-3xl">📊</span>
+              </div>
+              <h3 className="text-xl font-bold text-zion-slate mb-4">Advanced Data Visualization</h3>
+              <p className="text-zion-slate-light mb-4">
+                Create stunning interactive charts with real-time data, multiple chart types, and customizable themes.
+              </p>
+              <ul className="space-y-2 text-sm text-zion-slate-light">
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-zion-emerald rounded-full"></span>
+                  5+ chart types
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-zion-emerald rounded-full"></span>
+                  Real-time updates
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-zion-emerald rounded-full"></span>
+                  Export capabilities
+                </li>
+              </ul>
+            </div>
+            
+            <div className="bg-white dark:bg-zion-slate p-6 rounded-2xl border border-zion-slate-light hover:shadow-xl transition-all duration-300 group">
+              <div className="w-16 h-16 bg-gradient-to-br from-zion-cyan to-zion-blue rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-white text-3xl">💬</span>
+              </div>
+              <h3 className="text-xl font-bold text-zion-slate mb-4">AI Chat Assistant</h3>
+              <p className="text-zion-slate-light mb-4">
+                Intelligent conversational AI that provides instant support, answers questions, and guides users.
+              </p>
+              <ul className="space-y-2 text-sm text-zion-slate-light">
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-zion-cyan rounded-full"></span>
+                  Voice recognition
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-zion-cyan rounded-full"></span>
+                  Context awareness
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 bg-zion-cyan rounded-full"></span>
+                  Multi-language support
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Advanced Capabilities Grid */}
+      <section className="py-16 bg-gradient-to-br from-zion-cyan/5 to-zion-purple/5">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-zion-slate mb-4">
+              Advanced Capabilities
+            </h2>
+            <p className="text-lg text-zion-slate-light max-w-3xl mx-auto">
+              Discover the cutting-edge features that set us apart from the competition
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white dark:bg-zion-slate p-6 rounded-xl border border-zion-cyan transition-all duration-300 group">
+              <div className="w-12 h-12 bg-zion-cyan/10 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-zion-cyan text-xl">🤖</span>
+              </div>
+              <h3 className="font-semibold text-zion-slate mb-2">AI-Powered</h3>
+              <p className="text-sm text-zion-slate-light">Machine learning algorithms that adapt and improve over time</p>
+            </div>
+            
+            <div className="bg-white dark:bg-zion-slate p-6 rounded-xl border border-zion-purple transition-all duration-300 group">
+              <div className="w-12 h-12 bg-zion-purple/10 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-zion-purple text-xl">🔒</span>
+              </div>
+              <h3 className="font-semibold text-zion-slate mb-2">Enterprise Security</h3>
+              <p className="text-sm text-zion-slate-light">Bank-grade security with SOC 2 compliance and encryption</p>
+            </div>
+            
+            <div className="bg-white dark:bg-zion-slate p-6 rounded-xl border border-zion-emerald transition-all duration-300 group">
+              <div className="w-12 h-12 bg-zion-emerald/10 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-zion-emerald text-xl">📊</span>
+              </div>
+              <h3 className="font-semibold text-zion-slate mb-2">Real-time Analytics</h3>
+              <p className="text-sm text-zion-slate-light">Live insights and performance monitoring for data-driven decisions</p>
+            </div>
+            
+            <div className="bg-white dark:bg-zion-slate p-6 rounded-xl border border-zion-gold transition-all duration-300 group">
+              <div className="w-12 h-12 bg-zion-gold/10 rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                <span className="text-zion-gold text-xl">🌐</span>
+              </div>
+              <h3 className="font-semibold text-zion-slate mb-2">Global Scale</h3>
+              <p className="text-sm text-zion-slate-light">Multi-region deployment with 99.9% uptime guarantee</p>
             </div>
           </div>
         </div>
@@ -272,13 +362,15 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Floating Tools - Enterprise Suite */}
+      {/* Floating Tools - Complete Futuristic Suite */}
       <PerformanceMonitor />
       <AIChatAssistant />
       <AnalyticsDashboard />
       <CollaborationPlatform />
       <ProjectManagementDashboard />
       <AdvancedNotificationSystem />
+      <AICodeGenerator />
+      <AdvancedDataVisualization />
     </div>
   );
 }
