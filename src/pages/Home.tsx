@@ -17,6 +17,7 @@ import { TechSolutionsSection } from "@/components/TechSolutionsSection";
 import { CaseStudiesSection } from "@/components/CaseStudiesSection";
 import { TeamExpertiseSection } from "@/components/TeamExpertiseSection";
 import { GlobalPresenceSection } from "@/components/GlobalPresenceSection";
+import { InnovationResearchSection } from "@/components/InnovationResearchSection";
 
 export default function Home() {
   return (
@@ -39,6 +40,7 @@ export default function Home() {
       <CaseStudiesSection />
       <TeamExpertiseSection />
       <GlobalPresenceSection />
+      <InnovationResearchSection />
       <PricingSection />
       <FeaturedListingsSection />
       <NewsletterSection />
