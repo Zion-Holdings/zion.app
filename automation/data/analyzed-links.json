@@ -3,9 +3,9 @@
     {
       "url": "https://github.com",
       "statusCode": 200,
-      "responseTime": 139,
+      "responseTime": 171,
       "health": "good",
-      "timestamp": "2025-08-25T15:19:51.080Z",
+      "timestamp": "2025-08-25T15:20:30.947Z",
       "headers": {
         "content-type": "text/html; charset=utf-8",
         "server": "github.com"
@@ -20,9 +20,9 @@
     {
       "url": "https://stackoverflow.com",
       "statusCode": 403,
-      "responseTime": 96,
+      "responseTime": 59,
       "health": "poor",
-      "timestamp": "2025-08-25T15:19:52.180Z",
+      "timestamp": "2025-08-25T15:20:32.014Z",
       "headers": {
         "content-type": "text/html; charset=UTF-8",
         "server": "cloudflare"
@@ -37,9 +37,9 @@
     {
       "url": "https://medium.com",
       "statusCode": 200,
-      "responseTime": 147,
+      "responseTime": 132,
       "health": "good",
-      "timestamp": "2025-08-25T15:19:53.332Z",
+      "timestamp": "2025-08-25T15:20:33.158Z",
       "headers": {
         "content-type": "text/html; charset=utf-8",
         "server": "cloudflare"
@@ -54,9 +54,9 @@
     {
       "url": "https://dev.to",
       "statusCode": 403,
-      "responseTime": 57,
+      "responseTime": 82,
       "health": "poor",
-      "timestamp": "2025-08-25T15:19:54.393Z",
+      "timestamp": "2025-08-25T15:20:34.246Z",
       "headers": {
         "content-type": "unknown",
         "server": "Varnish"
@@ -71,9 +71,9 @@
     {
       "url": "https://wikipedia.org",
       "statusCode": 403,
-      "responseTime": 58,
+      "responseTime": 56,
       "health": "poor",
-      "timestamp": "2025-08-25T15:19:55.455Z",
+      "timestamp": "2025-08-25T15:20:35.307Z",
       "headers": {
         "content-type": "text/plain",
         "server": "HAProxy"
@@ -86,7 +86,7 @@
       }
     }
   ],
-  "lastUpdated": "2025-08-25T15:19:55.455Z",
+  "lastUpdated": "2025-08-25T15:20:35.307Z",
   "totalAnalyzed": 5,
   "healthScore": 90
 }

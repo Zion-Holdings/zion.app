@@ -808,3 +808,51 @@
 [2025-08-25T15:20:02.165Z] Stopped 0 services
 [2025-08-25T15:20:02.166Z] Stopping all services...
 [2025-08-25T15:20:02.166Z] Stopped 0 services
+[2025-08-25T15:20:07.405Z] Starting Autonomous System Manager
+[2025-08-25T15:20:07.411Z] Starting all enabled services...
+[2025-08-25T15:20:07.412Z] Starting service: autonomous-system-manager
+[2025-08-25T15:20:07.412Z] Error starting autonomous-system-manager: Cannot access 'process' before initialization
+[2025-08-25T15:20:07.413Z] Starting Autonomous System Manager
+[2025-08-25T15:20:07.421Z] Starting all enabled services...
+[2025-08-25T15:20:07.422Z] Starting service: autonomous-system-manager
+[2025-08-25T15:20:07.422Z] [autonomous-system-manager] [2025-08-25T15:20:07.413Z] Starting Autonomous System Manager
+[2025-08-25T15:20:07.421Z] Starting all enabled services...
+[2025-08-25T15:20:07.422Z] Error starting autonomous-system-manager: Cannot access 'process' before initialization
+[2025-08-25T15:20:07.422Z] [autonomous-system-manager] [2025-08-25T15:20:07.422Z] Starting service: autonomous-system-manager
+[2025-08-25T15:20:07.423Z] [autonomous-system-manager] [2025-08-25T15:20:07.422Z] Error starting autonomous-system-manager: Cannot access 'process' before initialization
+[2025-08-25T15:20:07.488Z] Starting Autonomous System Manager
+[2025-08-25T15:20:07.604Z] Starting all enabled services...
+[2025-08-25T15:20:07.604Z] Starting service: autonomous-system-manager
+[2025-08-25T15:20:07.605Z] Error starting autonomous-system-manager: Cannot access 'process' before initialization
+[2025-08-25T15:20:08.412Z] Starting service: ml-link-intelligence
+[2025-08-25T15:20:08.412Z] Error starting ml-link-intelligence: Cannot access 'process' before initialization
+[2025-08-25T15:20:08.423Z] Starting service: ml-link-intelligence
+[2025-08-25T15:20:08.423Z] Error starting ml-link-intelligence: Cannot access 'process' before initialization
+[2025-08-25T15:20:08.423Z] [autonomous-system-manager] [2025-08-25T15:20:08.423Z] Starting service: ml-link-intelligence
+[2025-08-25T15:20:08.424Z] [autonomous-system-manager] [2025-08-25T15:20:08.423Z] Error starting ml-link-intelligence: Cannot access 'process' before initialization
+[2025-08-25T15:20:08.606Z] Starting service: ml-link-intelligence
+[2025-08-25T15:20:08.607Z] Error starting ml-link-intelligence: Cannot access 'process' before initialization
+[2025-08-25T15:20:09.413Z] Starting service: link-health-scheduler
+[2025-08-25T15:20:09.414Z] Error starting link-health-scheduler: Cannot access 'process' before initialization
+[2025-08-25T15:20:09.425Z] Starting service: link-health-scheduler
+[2025-08-25T15:20:09.425Z] Error starting link-health-scheduler: Cannot access 'process' before initialization
+[2025-08-25T15:20:09.425Z] [autonomous-system-manager] [2025-08-25T15:20:09.425Z] Starting service: link-health-scheduler
+[2025-08-25T15:20:09.426Z] [autonomous-system-manager] [2025-08-25T15:20:09.425Z] Error starting link-health-scheduler: Cannot access 'process' before initialization
+[2025-08-25T15:20:09.607Z] Starting service: link-health-scheduler
+[2025-08-25T15:20:09.622Z] Error starting link-health-scheduler: Cannot access 'process' before initialization
+[2025-08-25T15:20:10.430Z] Starting service: real-time-performance-monitor
+[2025-08-25T15:20:10.449Z] Error starting real-time-performance-monitor: Cannot access 'process' before initialization
+[2025-08-25T15:20:10.457Z] Starting service: real-time-performance-monitor
+[2025-08-25T15:20:10.458Z] Error starting real-time-performance-monitor: Cannot access 'process' before initialization
+[2025-08-25T15:20:10.459Z] [autonomous-system-manager] [2025-08-25T15:20:10.457Z] Starting service: real-time-performance-monitor
+[2025-08-25T15:20:10.458Z] Error starting real-time-performance-monitor: Cannot access 'process' before initialization
+[2025-08-25T15:20:10.674Z] Starting service: real-time-performance-monitor
+[2025-08-25T15:20:10.679Z] Error starting real-time-performance-monitor: Cannot access 'process' before initialization
+[2025-08-25T15:20:11.451Z] Started 0/4 services successfully
+[2025-08-25T15:20:11.453Z] Autonomous System Manager is now running
+[2025-08-25T15:20:11.460Z] Started 0/4 services successfully
+[2025-08-25T15:20:11.463Z] [autonomous-system-manager] [2025-08-25T15:20:11.460Z] Started 0/4 services successfully
+[2025-08-25T15:20:11.464Z] Autonomous System Manager is now running
+[2025-08-25T15:20:11.465Z] [autonomous-system-manager] [2025-08-25T15:20:11.464Z] Autonomous System Manager is now running
+[2025-08-25T15:20:11.864Z] Started 0/4 services successfully
+[2025-08-25T15:20:11.866Z] Autonomous System Manager is now running

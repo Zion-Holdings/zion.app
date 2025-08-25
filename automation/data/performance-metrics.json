@@ -1,41 +1,41 @@
 [
   {
-    "timestamp": "2025-08-25T15:19:19.183Z",
+    "timestamp": "2025-08-25T15:20:49.596Z",
     "system": {
       "platform": "darwin",
       "arch": "x64",
       "nodeVersion": "v22.16.0",
-      "uptime": 6489,
+      "uptime": 6579,
       "hostname": "MacBook-Pro-de-Kleber.local"
     },
     "cpu": {
       "loadAverage": [
-        9.74951171875,
-        65.34912109375,
-        71.5
+        19.05224609375,
+        53.302734375,
+        66.1953125
       ],
       "usage": {
-        "user": 98365,
-        "system": 24060,
-        "total": 122425
+        "user": 98586,
+        "system": 22408,
+        "total": 120994
       },
       "cores": 12
     },
     "memory": {
       "total": 34359738368,
-      "free": 6138814464,
-      "used": 28220923904,
-      "usagePercent": 82.13369846343994,
+      "free": 4773949440,
+      "used": 29585788928,
+      "usagePercent": 86.10597848892212,
       "process": {
-        "rss": 31920128,
+        "rss": 32354304,
         "heapTotal": 5574656,
-        "heapUsed": 4484040,
-        "external": 1561738,
+        "heapUsed": 4509488,
+        "external": 1562874,
         "arrayBuffers": 10555
       }
     },
     "disk": {
-      "currentDirectory": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_25_25/zion.app/automation",
+      "currentDirectory": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_25_25/zion.app",
       "available": "unknown",
       "used": "unknown",
       "total": "unknown",
@@ -93,58 +93,58 @@
       "bandwidth": "unknown"
     },
     "process": {
-      "pid": 95982,
-      "uptime": 30.068387762,
+      "pid": 98357,
+      "uptime": 30.096663463,
       "memory": {
-        "rss": 31920128,
+        "rss": 32354304,
         "heapTotal": 5574656,
-        "heapUsed": 4484040,
-        "external": 1561738,
+        "heapUsed": 4509488,
+        "external": 1562874,
         "arrayBuffers": 10555
       },
       "cpu": {
-        "user": 98365,
-        "system": 24060
+        "user": 98586,
+        "system": 22408
       }
     }
   },
   {
-    "timestamp": "2025-08-25T15:19:49.197Z",
+    "timestamp": "2025-08-25T15:21:19.581Z",
     "system": {
       "platform": "darwin",
       "arch": "x64",
       "nodeVersion": "v22.16.0",
-      "uptime": 6519,
+      "uptime": 6609,
       "hostname": "MacBook-Pro-de-Kleber.local"
     },
     "cpu": {
       "loadAverage": [
-        10.76904296875,
-        60.29443359375,
-        69.45458984375
+        40.80712890625,
+        56.146484375,
+        66.8291015625
       ],
       "usage": {
-        "user": 101293,
-        "system": 25665,
-        "total": 126958
+        "user": 102053,
+        "system": 24204,
+        "total": 126257
       },
       "cores": 12
     },
     "memory": {
       "total": 34359738368,
-      "free": 6090141696,
-      "used": 28269596672,
-      "usagePercent": 82.27535486221313,
+      "free": 6239354880,
+      "used": 28120383488,
+      "usagePercent": 81.8410873413086,
       "process": {
-        "rss": 32133120,
+        "rss": 32567296,
         "heapTotal": 5574656,
-        "heapUsed": 4554056,
-        "external": 1561778,
+        "heapUsed": 4580728,
+        "external": 1562914,
         "arrayBuffers": 10555
       }
     },
     "disk": {
-      "currentDirectory": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_25_25/zion.app/automation",
+      "currentDirectory": "/Users/klebergarciaalcatrao/Desktop/ZION_APP_AUG_25_25/zion.app",
       "available": "unknown",
       "used": "unknown",
       "total": "unknown",
@@ -202,18 +202,18 @@
       "bandwidth": "unknown"
     },
     "process": {
-      "pid": 95982,
-      "uptime": 60.079516906,
+      "pid": 98357,
+      "uptime": 60.077496894,
       "memory": {
-        "rss": 32133120,
+        "rss": 32567296,
         "heapTotal": 5574656,
-        "heapUsed": 4554056,
-        "external": 1561778,
+        "heapUsed": 4580728,
+        "external": 1562914,
         "arrayBuffers": 10555
       },
       "cpu": {
-        "user": 101293,
-        "system": 25665
+        "user": 102053,
+        "system": 24204
       }
     }
   }
