@@ -19,6 +19,7 @@ import { TeamExpertiseSection } from "@/components/TeamExpertiseSection";
 import { GlobalPresenceSection } from "@/components/GlobalPresenceSection";
 import { InnovationResearchSection } from "@/components/InnovationResearchSection";
 import { ClientSuccessStoriesSection } from "@/components/ClientSuccessStoriesSection";
+import { TechnologyStackSection } from "@/components/TechnologyStackSection";
 
 export default function Home() {
   return (
@@ -43,6 +44,7 @@ export default function Home() {
       <GlobalPresenceSection />
       <InnovationResearchSection />
       <ClientSuccessStoriesSection />
+      <TechnologyStackSection />
       <PricingSection />
       <FeaturedListingsSection />
       <NewsletterSection />
