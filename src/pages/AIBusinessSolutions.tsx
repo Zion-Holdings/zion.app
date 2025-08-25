@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Filter, Star, Clock, DollarSign, Users, Zap, Brain, Cloud, Database, Shield, Settings, Eye, Leaf, CreditCard, Heart, Truck, ShoppingCart, Phone, Mail, MapPin, Globe, Bot, Cpu, Network, Database as DatabaseIcon, Shield as ShieldIcon, Zap as ZapIcon, Building, Factory, Store, Car, Plane, Ship, Home, Bank, GraduationCap, Stethoscope, Target, TrendingUp, PieChart, Activity, Zap as ZapIcon2, BarChart3, Users as UsersIcon, CreditCard as CreditCardIcon, MessageSquare, Camera, Video, Music, BookOpen, Calendar, FileText, BarChart3 as BarChart3Icon, Users as UsersIcon2, CreditCard as CreditCardIcon2, MessageSquare as MessageSquareIcon, Camera as CameraIcon, Video as VideoIcon, Music as MusicIcon, BookOpen as BookOpenIcon } from 'lucide-react';
+import { Search, Filter, Star, Clock, DollarSign, Users, Zap, Brain, Cloud, Database, Shield, Settings, Eye, Leaf, CreditCard, Heart, Truck, ShoppingCart, Phone, Mail, MapPin, Globe, Bot, Cpu, Network, Database as DatabaseIcon, Shield as ShieldIcon, Zap as ZapIcon, Building, Factory, Store, Car, Plane, Ship, Home, Building2, GraduationCap, Stethoscope, Target, TrendingUp, PieChart, Activity, Zap as ZapIcon2, BarChart3, Users as UsersIcon, CreditCard as CreditCardIcon, MessageSquare, Camera, Video, Music, BookOpen, Calendar, FileText, BarChart3 as BarChart3Icon, Users as UsersIcon2, CreditCard as CreditCardIcon2, MessageSquare as MessageSquareIcon, Camera as CameraIcon, Video as VideoIcon, Music as MusicIcon, BookOpen as BookOpenIcon } from 'lucide-react';
 
 const AIBusinessSolutions: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -79,7 +79,7 @@ const AIBusinessSolutions: React.FC = () => {
       aiScore: 99,
       features: ["Risk assessment", "Fraud detection", "Portfolio optimization", "Regulatory compliance"],
       benefits: ["Risk reduction", "Compliance automation", "Better decisions", "Cost savings"],
-      useCases: ["Banks", "Investment firms", "Insurance", "Corporate finance"],
+      useCases: ["Building2s", "Investment firms", "Insurance", "Corporate finance"],
       aiCapabilities: ["Machine Learning", "Deep Learning", "Natural Language Processing", "Predictive Analytics"],
       tags: ["Financial AI", "Risk Management", "Fraud Detection", "Compliance", "Portfolio Optimization"],
       contactInfo: {
