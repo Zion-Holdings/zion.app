@@ -5,52 +5,40 @@ export function Footer() {
 
   const footerSections = [
     {
-      title: "AI & Micro SAAS",
+      title: "AI & Autonomous Systems",
       links: [
-        { label: "AI & Autonomous Systems", path: "/services/ai-autonomous-systems" },
+        { label: "AI Autonomous Systems", path: "/services/ai-autonomous-systems" },
+        { label: "AI Services", path: "/ai-services" },
+        { label: "AI Solutions", path: "/ai-solutions" },
+        { label: "AI Matcher", path: "/match" },
+        { label: "Emerging Technology", path: "/emerging-tech" }
+      ]
+    },
+    {
+      title: "Quantum & Advanced Tech",
+      links: [
         { label: "Quantum Technology", path: "/services/quantum-technology" },
+        { label: "Innovative New Services", path: "/services/innovative-new-services" },
+        { label: "Space Technology", path: "/services/innovative-new-services" },
+        { label: "AI Consciousness Evolution", path: "/services/innovative-new-services" }
+      ]
+    },
+    {
+      title: "Infrastructure & Security",
+      links: [
         { label: "IT Infrastructure", path: "/services/it-infrastructure" },
-        { label: "Micro SAAS Solutions", path: "/services/micro-saas-solutions" },
+        { label: "Specialized IT Infrastructure", path: "/services/specialized-it-infrastructure" },
         { label: "Cybersecurity", path: "/services/cybersecurity" },
+        { label: "Cloud & DevOps", path: "/cloud-devops" }
+      ]
+    },
+    {
+      title: "Solutions & Services",
+      links: [
+        { label: "Micro SAAS Solutions", path: "/services/micro-saas-solutions" },
         { label: "Industry Solutions", path: "/services/industry-solutions" },
-        { label: "Marketplace", path: "/marketplace" },
-        { label: "AI & Machine Learning", path: "/services#ai-ml" },
-        { label: "Cloud & Infrastructure", path: "/services#cloud" },
-        { label: "Blockchain Solutions", path: "/services#blockchain" },
-        { label: "IoT & Edge Computing", path: "/services#iot" },
-        { label: "IT Consulting", path: "/services#consulting" },
-        { label: "Managed Services", path: "/services#managed" }
-      ]
-    },
-    {
-      title: "Solutions",
-      links: [
         { label: "Enterprise Solutions", path: "/solutions/enterprise" },
-        { label: "Healthcare Solutions", path: "/solutions/healthcare" },
-        { label: "Financial Solutions", path: "/solutions/financial" },
-        { label: "Manufacturing Solutions", path: "/solutions/manufacturing" },
-        { label: "Retail Solutions", path: "/solutions/retail" },
-        { label: "Government Solutions", path: "/solutions/government" },
-        { label: "Business Intelligence", path: "/services/ai-autonomous-systems" },
-        { label: "Marketing Automation", path: "/services/ai-autonomous-systems" },
-        { label: "HR & Recruitment", path: "/services/ai-autonomous-systems" },
-        { label: "Legal Tech", path: "/services/ai-autonomous-systems" },
-        { label: "Supply Chain", path: "/services/industry-solutions" },
-        { label: "Smart Buildings", path: "/services/industry-solutions" },
-        { label: "Data Protection", path: "/services/cybersecurity" },
-        { label: "Network Security", path: "/services/cybersecurity" }
-      ]
-    },
-    {
-      title: "Emerging Tech",
-      links: [
-        { label: "Quantum Computing", path: "/emerging-tech" },
-        { label: "Blockchain & DeFi", path: "/emerging-tech" },
-        { label: "IoT & Edge Computing", path: "/emerging-tech" },
-        { label: "Extended Reality (XR)", path: "/emerging-tech" },
-        { label: "5G & Networks", path: "/emerging-tech" },
-        { label: "Green Technology", path: "/emerging-tech" },
-        { label: "Digital Twins", path: "/emerging-tech" }
+        { label: "Healthcare Solutions", path: "/solutions/healthcare" }
       ]
     },
     {
@@ -71,8 +59,10 @@ export function Footer() {
       links: [
         { label: "Blog & Articles", path: "/blog" },
         { label: "Case Studies", path: "/case-studies" },
-        { label: "Documentation", path: "/docs" },
-        { label: "Support Center", path: "/support" }
+        { label: "News", path: "/news" },
+        { label: "Webinars", path: "/webinars" },
+        { label: "White Papers", path: "/white-papers" },
+        { label: "Help Center", path: "/help-center" }
       ]
     }
   ];
@@ -101,59 +91,59 @@ export function Footer() {
         <div className="quantum-particle"></div>
       </div>
 
-      <div className="relative z-10">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         {/* Main Footer Content */}
-        <div className="max-w-7xl mx-auto px-4 py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
-            {footerSections.map((section, index) => (
-              <div key={index} className="space-y-4">
-                <h3 className="text-lg font-bold text-cyan-400 neon-text">
-                  {section.title}
-                </h3>
-                <ul className="space-y-2">
-                  {section.links.map((link, linkIndex) => (
-                    <li key={linkIndex}>
-                      <Link
-                        to={link.path}
-                        className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 hover:neon-text"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8 mb-12">
+          {footerSections.map((section, index) => (
+            <div key={index} className="space-y-4">
+              <h3 className="text-lg font-semibold text-cyan-400 border-b border-cyan-500/30 pb-2">
+                {section.title}
+              </h3>
+              <ul className="space-y-2">
+                {section.links.map((link, linkIndex) => (
+                  <li key={linkIndex}>
+                    <Link
+                      to={link.path}
+                      className="text-gray-300 hover:text-cyan-400 transition-colors duration-300 text-sm"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
 
-          {/* Contact & Social Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12 pt-8 border-t border-gray-700/50">
+        {/* Contact & Social Section */}
+        <div className="border-t border-gray-700/50 pt-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Contact Information */}
             <div className="space-y-4">
-              <h3 className="text-lg font-bold text-cyan-400 neon-text">Contact Us</h3>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3">
+              <h3 className="text-lg font-semibold text-cyan-400">Contact Information</h3>
+              <div className="space-y-2 text-sm text-gray-300">
+                <div className="flex items-center space-x-2">
                   <span className="text-cyan-400">📞</span>
-                  <a href={`tel:${contactInfo.phone}`} className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+                  <a href={`tel:${contactInfo.phone}`} className="hover:text-cyan-400 transition-colors">
                     {contactInfo.phone}
                   </a>
                 </div>
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-2">
                   <span className="text-cyan-400">✉️</span>
-                  <a href={`mailto:${contactInfo.email}`} className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
+                  <a href={`mailto:${contactInfo.email}`} className="hover:text-cyan-400 transition-colors">
                     {contactInfo.email}
                   </a>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <span className="text-cyan-400 mt-1">📍</span>
-                  <span className="text-gray-300">{contactInfo.address}</span>
+                <div className="flex items-start space-x-2">
+                  <span className="text-cyan-400">📍</span>
+                  <span>{contactInfo.address}</span>
                 </div>
               </div>
             </div>
 
             {/* Social Links */}
             <div className="space-y-4">
-              <h3 className="text-lg font-bold text-cyan-400 neon-text">Follow Us</h3>
+              <h3 className="text-lg font-semibold text-cyan-400">Follow Us</h3>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
                   <a
@@ -161,59 +151,57 @@ export function Footer() {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-2xl hover:scale-110 transition-transform duration-300 hover:neon-text"
-                    aria-label={social.name}
+                    className="w-10 h-10 bg-gray-800/50 rounded-lg flex items-center justify-center text-lg hover:bg-cyan-500/20 hover:text-cyan-400 transition-all duration-300"
+                    aria-label={`Follow us on ${social.name}`}
                   >
                     {social.icon}
                   </a>
                 ))}
               </div>
             </div>
-          </div>
 
-          {/* Newsletter Signup */}
-          <div className="text-center mb-12 p-8 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-2xl border border-cyan-500/30">
-            <h3 className="text-2xl font-bold text-white mb-4">Stay Updated with Tech Trends</h3>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Get the latest insights on AI, emerging technologies, and industry innovations delivered to your inbox.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
-              />
-              <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-lg hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 transform hover:scale-105">
-                Subscribe
-              </button>
+            {/* Newsletter Signup */}
+            <div className="space-y-4">
+              <h3 className="text-lg font-semibold text-cyan-400">Stay Updated</h3>
+              <p className="text-sm text-gray-300">
+                Get the latest insights and updates from Zion Tech Group
+              </p>
+              <div className="flex space-x-2">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 px-3 py-2 bg-gray-800/50 border border-gray-700/50 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-500/50"
+                />
+                <button className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 text-sm font-medium">
+                  Subscribe
+                </button>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Bottom Footer */}
-        <div className="border-t border-gray-700/50">
-          <div className="max-w-7xl mx-auto px-4 py-8">
-            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-              <div className="text-center md:text-left">
-                <p className="text-gray-400">
-                  © {currentYear} Zion Tech Group. All rights reserved.
-                </p>
-                <p className="text-sm text-gray-500 mt-1">
-                  Transforming businesses through innovative technology solutions
-                </p>
+        <div className="border-t border-gray-700/50 pt-8 mt-8">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div className="flex items-center space-x-3">
+              <div className="w-8 h-8 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-sm">
+                Z
               </div>
-              
-              <div className="flex space-x-6 text-sm text-gray-400">
-                <Link to="/privacy" className="hover:text-cyan-400 transition-colors duration-300">
-                  Privacy Policy
-                </Link>
-                <Link to="/terms" className="hover:text-cyan-400 transition-colors duration-300">
-                  Terms of Service
-                </Link>
-                <Link to="/cookies" className="hover:text-cyan-400 transition-colors duration-300">
-                  Cookie Policy
-                </Link>
-              </div>
+              <span className="text-gray-300 text-sm">
+                © {currentYear} Zion Tech Group. All rights reserved.
+              </span>
+            </div>
+            
+            <div className="flex space-x-6 text-sm text-gray-400">
+              <Link to="/privacy" className="hover:text-cyan-400 transition-colors">
+                Privacy Policy
+              </Link>
+              <Link to="/terms" className="hover:text-cyan-400 transition-colors">
+                Terms of Service
+              </Link>
+              <Link to="/cookies" className="hover:text-cyan-400 transition-colors">
+                Cookie Policy
+              </Link>
             </div>
           </div>
         </div>

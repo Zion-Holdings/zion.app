@@ -1,262 +1,227 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { SEO } from '@/components/SEO';
 import { 
   Shield, 
   Lock, 
   Eye, 
-  CheckCircle, 
-  AlertTriangle,
-  Zap,
-  Building,
-  ArrowRight,
-  CheckCircle2,
-  Star,
-  Users,
-  Globe,
-  Server
+  AlertTriangle, 
+  TrendingUp, 
+  Users, 
+  Globe, 
+  Database,
+  Cpu,
+  BarChart3,
+  Target,
+  Rocket,
+  Brain,
+  Network,
+  Key,
+  Monitor
 } from 'lucide-react';
 
-const securityServices = [
-  {
-    id: 'zero-trust-network-architecture',
-    title: 'Zero Trust Network Architecture',
-    description: 'Comprehensive security framework that assumes no trust and verifies every access attempt',
-    icon: Lock,
-    color: 'from-red-500 to-pink-600',
-    features: [
-      'Identity verification',
-      'Access control',
-      'Network segmentation',
-      'Continuous monitoring',
-      'Threat prevention'
-    ],
-    pricing: '$799/month',
-    href: '/zero-trust-network-architecture'
-  },
-  {
-    id: 'threat-intelligence-platform',
-    title: 'Threat Intelligence Platform',
-    description: 'Advanced threat detection and intelligence gathering system for proactive security',
-    icon: Eye,
-    color: 'from-blue-500 to-cyan-600',
-    features: [
-      'Real-time threat detection',
-      'Intelligence gathering',
-      'Risk assessment',
-      'Incident response',
-      'Security analytics'
-    ],
-    pricing: '$599/month',
-    href: '/threat-intelligence-platform'
-  },
-  {
-    id: 'compliance-automation',
-    title: 'Compliance Automation',
-    description: 'Automated compliance management for various industry standards and regulations',
-    icon: CheckCircle,
-    color: 'from-green-500 to-emerald-600',
-    features: [
-      'Regulatory compliance',
-      'Automated reporting',
-      'Audit trails',
-      'Policy management',
-      'Risk assessment'
-    ],
-    pricing: '$499/month',
-    href: '/compliance-automation'
-  },
-  {
-    id: 'soc2-compliance-automation',
-    title: 'SOC2 Compliance Automation',
-    description: 'Specialized automation for SOC2 Type I and Type II compliance requirements',
-    icon: Shield,
-    color: 'from-purple-500 to-indigo-600',
-    features: [
-      'SOC2 Type I & II',
-      'Control automation',
-      'Evidence collection',
-      'Continuous monitoring',
-      'Audit preparation'
-    ],
-    pricing: '$899/month',
-    href: '/soc2-compliance-automation'
-  },
-  {
-    id: 'vulnerability-assessment-penetration-testing',
-    title: 'Vulnerability Assessment & Penetration Testing',
-    description: 'Comprehensive security testing to identify and remediate vulnerabilities',
-    icon: AlertTriangle,
-    color: 'from-orange-500 to-red-600',
-    features: [
-      'Vulnerability scanning',
-      'Penetration testing',
-      'Security assessment',
-      'Remediation guidance',
-      'Ongoing monitoring'
-    ],
-    pricing: '$1,299/month',
-    href: '/vulnerability-assessment-penetration-testing'
-  }
-];
+const Cybersecurity = () => {
+  const features = [
+    {
+      icon: Shield,
+      title: "Advanced Threat Protection",
+      description: "Multi-layered security systems that detect, prevent, and respond to sophisticated cyber threats in real-time.",
+      benefits: ["Real-time monitoring", "AI-powered detection", "Automated response"]
+    },
+    {
+      icon: Lock,
+      title: "Zero Trust Security",
+      description: "Comprehensive security framework that verifies every user, device, and transaction before granting access.",
+      benefits: ["Identity verification", "Continuous monitoring", "Least privilege access"]
+    },
+    {
+      icon: Eye,
+      title: "Security Operations Center",
+      description: "24/7 monitoring and incident response services that provide round-the-clock protection for your digital assets.",
+      benefits: ["24/7 monitoring", "Expert analysts", "Rapid response"]
+    },
+    {
+      icon: AlertTriangle,
+      title: "Incident Response",
+      description: "Rapid detection, containment, and recovery services to minimize damage from security incidents.",
+      benefits: ["Quick detection", "Minimal downtime", "Full recovery"]
+    }
+  ];
 
-const benefits = [
-  {
-    title: 'Proactive Protection',
-    description: 'Identify and prevent threats before they impact your business',
-    icon: Shield
-  },
-  {
-    title: 'Compliance Ready',
-    description: 'Meet industry standards and regulatory requirements',
-    icon: CheckCircle2
-  },
-  {
-    title: '24/7 Monitoring',
-    description: 'Continuous security monitoring and threat detection',
-    icon: Eye
-  },
-  {
-    title: 'Expert Support',
-    description: 'Access to cybersecurity experts and rapid response teams',
-    icon: Users
-  }
-];
+  const services = [
+    {
+      title: "Network Security",
+      description: "Firewalls, intrusion detection systems, and network monitoring to protect your infrastructure.",
+      icon: Network
+    },
+    {
+      title: "Endpoint Protection",
+      description: "Advanced antivirus, device management, and threat prevention for all endpoints.",
+      icon: Cpu
+    },
+    {
+      title: "Data Protection",
+      description: "Encryption, backup, and recovery solutions to safeguard your critical data.",
+      icon: Database
+    },
+    {
+      title: "Identity & Access Management",
+      description: "Multi-factor authentication, single sign-on, and privileged access management.",
+      icon: Key
+    },
+    {
+      title: "Security Assessment",
+      description: "Vulnerability assessments, penetration testing, and security audits.",
+      icon: Target
+    },
+    {
+      title: "Compliance & Governance",
+      description: "GDPR, HIPAA, SOC 2, and industry-specific compliance solutions.",
+      icon: Monitor
+    }
+  ];
 
-const industries = [
-  {
-    industry: 'Healthcare',
-    description: 'HIPAA compliance and patient data protection',
-    icon: Shield
-  },
-  {
-    industry: 'Finance',
-    description: 'PCI DSS and financial data security',
-    icon: Lock
-  },
-  {
-    industry: 'Government',
-    description: 'FedRAMP and government security standards',
-    icon: Globe
-  },
-  {
-    industry: 'Manufacturing',
-    description: 'Industrial control system security',
-    icon: Server
-  },
-  {
-    industry: 'Retail',
-    description: 'E-commerce and payment security',
-    icon: CheckCircle
-  },
-  {
-    industry: 'Technology',
-    description: 'Cloud and application security',
-    icon: Zap
-  }
-];
+  const technologies = [
+    "AI-Powered Threat Detection",
+    "Machine Learning Analytics",
+    "Behavioral Analysis",
+    "Quantum-Safe Cryptography",
+    "Blockchain Security",
+    "Cloud Security",
+    "IoT Security",
+    "Mobile Security"
+  ];
 
-export default function Cybersecurity() {
+  const benefits = [
+    {
+      title: "Proactive Protection",
+      description: "Identify and neutralize threats before they can cause damage to your systems.",
+      icon: Shield
+    },
+    {
+      title: "Cost Reduction",
+      description: "Prevent costly data breaches and minimize the impact of security incidents.",
+      icon: TrendingUp
+    },
+    {
+      title: "Compliance Assurance",
+      description: "Meet regulatory requirements and industry standards with confidence.",
+      icon: Target
+    },
+    {
+      title: "Business Continuity",
+      description: "Ensure your operations continue uninterrupted even during security events.",
+      icon: Rocket
+    }
+  ];
+
   return (
-    <div className="min-h-screen bg-background">
-      <SEO 
-        title="Cybersecurity - Zion Tech Group" 
-        description="Advanced security and protection solutions for digital assets with comprehensive threat detection and compliance automation."
-        keywords="cybersecurity, zero trust, threat intelligence, compliance automation, SOC2, penetration testing"
-        canonical="https://ziontechgroup.com/services/cybersecurity"
-      />
-
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-red-900 text-white">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-br from-red-900 via-black to-pink-900 overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(239,68,68,0.1),transparent_50%)]"></div>
-        <div className="relative z-10 container mx-auto px-4 text-center">
-          <div className="flex items-center justify-center mb-6">
-            <div className="w-20 h-20 bg-gradient-to-r from-red-500 to-pink-600 rounded-2xl flex items-center justify-center mr-4">
-              <Shield className="w-10 h-10 text-white" />
-            </div>
-            <h1 className="text-5xl md:text-6xl font-bold text-gradient">
-              Cybersecurity
+      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent mb-6">
+              Cybersecurity Solutions
             </h1>
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+              Protect your digital assets with enterprise-grade cybersecurity solutions that detect, 
+              prevent, and respond to threats in real-time.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/contact"
+                className="px-8 py-4 bg-gradient-to-r from-red-500 to-orange-500 text-white rounded-lg hover:from-red-400 hover:to-orange-400 transition-all duration-300 text-lg font-semibold transform hover:scale-105 shadow-lg shadow-red-500/30"
+              >
+                Secure Your Business
+              </Link>
+              <Link
+                to="/services"
+                className="px-8 py-4 border border-red-400/50 text-red-400 rounded-lg hover:bg-red-400/20 transition-all duration-300 text-lg font-semibold"
+              >
+                All Services
+              </Link>
+            </div>
           </div>
-          <p className="text-xl text-gray-300 max-w-4xl mx-auto mb-8">
-            Advanced security and protection solutions that safeguard your digital assets, 
-            ensure compliance, and provide peace of mind in an evolving threat landscape.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link
-              to="/contact"
-              className="btn-primary text-lg px-8 py-4 inline-flex items-center"
-            >
-              Get Started
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </Link>
-            <Link
-              to="/request-quote"
-              className="btn-secondary text-lg px-8 py-4"
-            >
-              Security Assessment
-            </Link>
+        </div>
+        
+        {/* Security Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-20 w-2 h-2 bg-red-400 rounded-full animate-ping"></div>
+          <div className="absolute top-40 right-40 w-3 h-3 bg-orange-400 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-20 left-1/2 w-1 h-1 bg-red-400 rounded-full animate-bounce"></div>
+          <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-orange-400 rounded-full animate-ping animation-delay-1000"></div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Security Capabilities
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Our comprehensive cybersecurity solutions provide multi-layered protection 
+              against evolving threats and ensure your business remains secure.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-red-500/20 hover:border-red-400/40 transition-all duration-300 hover:transform hover:scale-105"
+              >
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-br from-red-500 to-orange-500 rounded-lg flex items-center justify-center">
+                      <feature.icon className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
+                    <p className="text-gray-300 mb-4">{feature.description}</p>
+                    <ul className="space-y-2">
+                      {feature.benefits.map((benefit, idx) => (
+                        <li key={idx} className="flex items-center text-sm text-red-400">
+                          <div className="w-2 h-2 bg-red-400 rounded-full mr-3"></div>
+                          {benefit}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Security Services Grid */}
-      <section className="py-20 bg-gray-900/50">
-        <div className="container mx-auto px-4">
+      {/* Services Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/50">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 text-gradient">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Our Security Services
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Comprehensive cybersecurity solutions designed to protect your business from evolving threats
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Comprehensive cybersecurity services designed to protect every aspect of your digital infrastructure.
             </p>
           </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            {securityServices.map((service) => (
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.map((service, index) => (
               <div
-                key={service.id}
-                className="group bg-gray-800/30 backdrop-blur-sm rounded-2xl p-8 border border-gray-700/50 hover:border-red-500/50 transition-all duration-300 hover:transform hover:scale-105"
+                key={index}
+                className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 hover:border-red-500/30 transition-all duration-300"
               >
-                <div className="flex items-center space-x-4 mb-6">
-                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-r ${service.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                    <service.icon className="w-8 h-8 text-white" />
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center">
+                    <service.icon className="w-5 h-5 text-white" />
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-white group-hover:text-red-400 transition-colors duration-300">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-400">{service.description}</p>
-                  </div>
+                  <h3 className="text-xl font-semibold text-white">{service.title}</h3>
                 </div>
-
-                <div className="space-y-3 mb-6">
-                  {service.features.map((feature, index) => (
-                    <div key={index} className="flex items-center space-x-3 text-sm text-gray-300">
-                      <CheckCircle2 className="w-4 h-4 text-green-400" />
-                      <span>{feature}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="flex items-center justify-between mb-6">
-                  <span className="text-2xl font-bold text-red-400">{service.pricing}</span>
-                  <div className="flex items-center space-x-1">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                </div>
-
-                <div className="pt-4 border-t border-gray-700/50">
-                  <Link
-                    to={service.href}
-                    className="inline-flex items-center space-x-2 text-red-400 hover:text-red-300 transition-colors duration-300 text-sm font-medium group"
-                  >
-                    <span>Learn More</span>
-                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                  </Link>
-                </div>
+                <p className="text-gray-300">{service.description}</p>
               </div>
             ))}
           </div>
@@ -264,28 +229,29 @@ export default function Cybersecurity() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-black/50">
-        <div className="container mx-auto px-4">
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 text-gradient">
-              Why Choose Our Cybersecurity?
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Why Choose Our Security?
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Our security solutions deliver exceptional protection through advanced technology and expert support
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Our cybersecurity solutions provide comprehensive protection and peace of mind.
             </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="text-center group"
-                style={{ opacity: 0, transform: 'translateY(30px)' }}
+                className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 hover:border-orange-500/30 transition-all duration-300"
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-red-500 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <benefit.icon className="w-8 h-8 text-white" />
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-red-500 to-orange-500 rounded-lg flex items-center justify-center">
+                    <benefit.icon className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white">{benefit.title}</h3>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-2">{benefit.title}</h3>
                 <p className="text-gray-300">{benefit.description}</p>
               </div>
             ))}
@@ -293,31 +259,25 @@ export default function Cybersecurity() {
         </div>
       </section>
 
-      {/* Industries Section */}
-      <section className="py-20 bg-gray-900/50">
-        <div className="container mx-auto px-4">
+      {/* Technologies Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/50">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-6 text-gradient">
-              Industry Solutions
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Security Technology Stack
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Specialized cybersecurity solutions for various industries and compliance requirements
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Built on cutting-edge security technologies and best practices.
             </p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {industries.map((industry, index) => (
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {technologies.map((tech, index) => (
               <div
                 key={index}
-                className="bg-gray-800/30 backdrop-blur-sm rounded-2xl p-6 border border-gray-700/50 hover:border-red-500/50 transition-all duration-300"
+                className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 text-center border border-gray-700/50 hover:border-red-500/30 transition-all duration-300 hover:transform hover:scale-105"
               >
-                <div className="flex items-center space-x-3 mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-r from-red-500 to-pink-600 rounded-lg flex items-center justify-center">
-                    <industry.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-white">{industry.industry}</h3>
-                </div>
-                <p className="text-gray-300">{industry.description}</p>
+                <div className="text-red-400 text-sm font-medium">{tech}</div>
               </div>
             ))}
           </div>
@@ -325,32 +285,32 @@ export default function Cybersecurity() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-red-900 to-pink-900">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold mb-6 text-white">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-red-900/20 to-orange-900/20">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Secure Your Business?
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-            Protect your digital assets with our comprehensive cybersecurity solutions. 
-            Get expert protection and peace of mind.
+          <p className="text-xl text-gray-300 mb-8">
+            Don't wait until it's too late. Protect your digital assets with our comprehensive cybersecurity solutions.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contact"
-              className="btn-primary text-lg px-8 py-4 inline-flex items-center"
+              className="px-8 py-4 bg-gradient-to-r from-red-500 to-orange-500 text-white rounded-lg hover:from-red-400 hover:to-orange-400 transition-all duration-300 text-lg font-semibold transform hover:scale-105 shadow-lg shadow-red-500/30"
             >
-              Get Started Today
-              <ArrowRight className="ml-2 w-5 h-5" />
+              Get Security Assessment
             </Link>
             <Link
-              to="/request-quote"
-              className="btn-secondary text-lg px-8 py-4"
+              to="/pricing"
+              className="px-8 py-4 border border-red-400/50 text-red-400 rounded-lg hover:bg-red-400/20 transition-all duration-300 text-lg font-semibold"
             >
-              Security Assessment
+              View Pricing
             </Link>
           </div>
         </div>
       </section>
     </div>
   );
-}
+};
+
+export default Cybersecurity;

@@ -26,9 +26,9 @@ export function Header() {
     },
     { 
       path: '/services', 
-      label: 'AI Services', 
+      label: 'Services', 
       icon: '🤖',
-      description: 'Explore our AI service offerings'
+      description: 'Explore our comprehensive service offerings'
     },
     { 
       path: '/solutions/enterprise', 
@@ -70,36 +70,60 @@ export function Header() {
 
   const serviceCategories = [
     {
-      title: 'AI & Machine Learning',
+      title: 'AI & Autonomous Systems',
       services: [
-        { name: 'AI Business Intelligence', path: '/services#ai-bi' },
-        { name: 'AI Marketing Automation', path: '/services#ai-marketing' },
-        { name: 'AI HR & Recruitment', path: '/services#ai-hr' },
-        { name: 'AI Legal Tech', path: '/services#ai-legal' }
+        { name: 'AI Autonomous Systems', path: '/services/ai-autonomous-systems' },
+        { name: 'AI Services', path: '/ai-services' },
+        { name: 'AI Solutions', path: '/ai-solutions' },
+        { name: 'AI Matcher', path: '/match' }
+      ]
+    },
+    {
+      title: 'Quantum Technology',
+      services: [
+        { name: 'Quantum Technology', path: '/services/quantum-technology' },
+        { name: 'Quantum Computing', path: '/services/quantum-technology' },
+        { name: 'Quantum Security', path: '/services/cybersecurity' }
       ]
     },
     {
       title: 'Cybersecurity',
       services: [
-        { name: 'Quantum-Safe Security', path: '/services#quantum-security' },
-        { name: 'Security Assessment', path: '/services#security-assessment' },
-        { name: 'Compliance & Audit', path: '/services#compliance' }
+        { name: 'Cybersecurity', path: '/services/cybersecurity' },
+        { name: 'Security Assessment', path: '/services/cybersecurity' },
+        { name: 'Compliance & Audit', path: '/services/cybersecurity' }
       ]
     },
     {
-      title: 'Cloud & Infrastructure',
+      title: 'IT Infrastructure',
       services: [
-        { name: 'Cloud Migration', path: '/services#cloud-migration' },
-        { name: 'Network Infrastructure', path: '/services#network' },
-        { name: 'Managed IT Services', path: '/services#managed-it' }
+        { name: 'IT Infrastructure', path: '/services/it-infrastructure' },
+        { name: 'Specialized IT Infrastructure', path: '/services/specialized-it-infrastructure' },
+        { name: 'Cloud & DevOps', path: '/cloud-devops' }
       ]
     },
     {
-      title: 'Emerging Tech',
+      title: 'Micro SAAS Solutions',
       services: [
-        { name: 'Blockchain Solutions', path: '/services#blockchain' },
-        { name: 'Quantum Computing', path: '/services#quantum' },
-        { name: 'IoT & Edge Computing', path: '/services#iot-edge' }
+        { name: 'Micro SAAS Solutions', path: '/services/micro-saas-solutions' },
+        { name: 'Custom Development', path: '/services/micro-saas-solutions' },
+        { name: 'API Development', path: '/services/micro-saas-solutions' }
+      ]
+    },
+    {
+      title: 'Industry Solutions',
+      services: [
+        { name: 'Industry Solutions', path: '/services/industry-solutions' },
+        { name: 'Healthcare Solutions', path: '/solutions/healthcare' },
+        { name: 'Enterprise Solutions', path: '/solutions/enterprise' }
+      ]
+    },
+    {
+      title: 'Innovative Services',
+      services: [
+        { name: 'Innovative New Services', path: '/services/innovative-new-services' },
+        { name: 'Emerging Technology', path: '/emerging-tech' },
+        { name: 'Space Technology', path: '/services/innovative-new-services' }
       ]
     }
   ];
@@ -182,12 +206,18 @@ export function Header() {
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-4">
-              <button className="px-4 py-2 text-cyan-400 border border-cyan-400/50 rounded-lg hover:bg-cyan-400/20 hover:border-cyan-400 transition-all duration-300 text-sm font-medium">
+              <Link
+                to="/contact"
+                className="px-4 py-2 text-cyan-400 border border-cyan-400/50 rounded-lg hover:bg-cyan-400/20 hover:border-cyan-400 transition-all duration-300 text-sm font-medium"
+              >
                 Get Quote
-              </button>
-              <button className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 text-sm font-medium transform hover:scale-105 shadow-lg shadow-cyan-500/30">
+              </Link>
+              <Link
+                to="/contact"
+                className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 text-sm font-medium transform hover:scale-105 shadow-lg shadow-cyan-500/30"
+              >
                 Start Project
-              </button>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -250,12 +280,18 @@ export function Header() {
                 
                 {/* Mobile CTA Buttons */}
                 <div className="pt-4 space-y-2">
-                  <button className="w-full px-4 py-2 text-cyan-400 border border-cyan-400/50 rounded-lg hover:bg-cyan-400/20 transition-all duration-300 text-sm font-medium">
+                  <Link
+                    to="/contact"
+                    className="block w-full px-4 py-2 text-cyan-400 border border-cyan-400/50 rounded-lg hover:bg-cyan-400/20 transition-all duration-300 text-sm font-medium text-center"
+                  >
                     Get Quote
-                  </button>
-                  <button className="w-full px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 text-sm font-medium">
+                  </Link>
+                  <Link
+                    to="/contact"
+                    className="block w-full px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 text-sm font-medium text-center"
+                  >
                     Start Project
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -1,165 +1,227 @@
 import React from 'react';
-import { SEO } from '../../components/SEO';
+import { Link } from 'react-router-dom';
 import { 
-  Code, 
+  Package, 
   Zap, 
   Users, 
-  TrendingUp, 
-  Shield, 
   Globe, 
-  Building, 
-  Rocket, 
-  Cpu, 
-  BarChart3 
+  Shield, 
+  TrendingUp, 
+  Database,
+  Cpu,
+  BarChart3,
+  Target,
+  Rocket,
+  Brain,
+  Monitor,
+  Key,
+  Settings,
+  Cloud
 } from 'lucide-react';
 
-export default function MicroSAASSolutions() {
+const MicroSAASSolutions = () => {
+  const features = [
+    {
+      icon: Package,
+      title: "Lightweight Applications",
+      description: "Small, focused applications that solve specific business problems without overwhelming complexity.",
+      benefits: ["Fast deployment", "Easy maintenance", "Focused functionality"]
+    },
+    {
+      icon: Zap,
+      title: "Rapid Development",
+      description: "Quick development cycles that allow you to iterate and improve your solutions rapidly.",
+      benefits: ["Quick time-to-market", "Agile development", "Continuous improvement"]
+    },
+    {
+      icon: Users,
+      title: "User-Centric Design",
+      description: "Applications designed with the end-user in mind, ensuring high adoption and satisfaction rates.",
+      benefits: ["High user adoption", "Intuitive interfaces", "Customer satisfaction"]
+    },
+    {
+      icon: Globe,
+      title: "Scalable Architecture",
+      description: "Built to grow with your business, from startup to enterprise scale.",
+      benefits: ["Flexible scaling", "Cost-effective growth", "Future-proof design"]
+    }
+  ];
+
   const services = [
     {
-      title: "Custom SAAS Development",
-      description: "Tailored software-as-a-service solutions designed specifically for your business needs and industry requirements.",
-      icon: Code,
-      features: ["Custom workflows", "API integration", "User management", "Scalable architecture"]
+      title: "Custom Micro SAAS",
+      description: "Tailored micro applications designed specifically for your business needs and workflows.",
+      icon: Settings
     },
     {
-      title: "Multi-tenant Architecture",
-      description: "Efficient multi-tenant systems that maximize resource utilization while maintaining data isolation and security.",
-      icon: Users,
-      features: ["Data isolation", "Resource sharing", "Customization options", "Performance optimization"]
+      title: "Integration Services",
+      description: "Seamless integration with existing systems and third-party applications.",
+      icon: Cpu
     },
     {
-      title: "Subscription Management",
-      description: "Comprehensive billing and subscription systems with flexible pricing models and automated renewals.",
-      icon: BarChart3,
-      features: ["Flexible pricing", "Automated billing", "Usage tracking", "Payment processing"]
+      title: "API Development",
+      description: "Robust APIs that enable your micro SAAS to communicate with other systems.",
+      icon: Database
     },
     {
-      title: "API Development & Integration",
-      description: "Robust APIs that enable seamless integration with existing systems and third-party applications.",
-      icon: Cpu,
-      features: ["RESTful APIs", "GraphQL support", "Webhook integration", "API documentation"]
+      title: "Cloud Deployment",
+      description: "Scalable cloud deployment with automatic scaling and high availability.",
+      icon: Cloud
     },
     {
-      title: "Analytics & Reporting",
-      description: "Advanced analytics dashboards providing insights into user behavior, system performance, and business metrics.",
-      icon: TrendingUp,
-      features: ["Real-time metrics", "Custom reports", "Data visualization", "Export capabilities"]
+      title: "Maintenance & Support",
+      description: "Ongoing maintenance, updates, and technical support for your applications.",
+      icon: Monitor
+    },
+    {
+      title: "Analytics & Insights",
+      description: "Built-in analytics to track usage, performance, and user behavior.",
+      icon: BarChart3
     }
+  ];
+
+  const technologies = [
+    "React & Next.js",
+    "Node.js & Express",
+    "Python & Django",
+    "PostgreSQL & MongoDB",
+    "AWS & Azure",
+    "Docker & Kubernetes",
+    "GraphQL APIs",
+    "Real-time WebSockets"
   ];
 
   const benefits = [
     {
-      title: "Rapid Deployment",
-      description: "Quick time-to-market with agile development methodologies",
-      icon: Zap
-    },
-    {
-      title: "Scalability",
-      description: "Built to grow with your business from day one",
+      title: "Cost Efficiency",
+      description: "Lower development and maintenance costs compared to large enterprise applications.",
       icon: TrendingUp
     },
     {
-      title: "Cost Efficiency",
-      description: "Reduced infrastructure costs with cloud-native solutions",
-      icon: BarChart3
+      title: "Faster Deployment",
+      description: "Get your solutions to market quickly with streamlined development processes.",
+      icon: Rocket
     },
     {
-      title: "Security",
-      description: "Enterprise-grade security and compliance standards",
-      icon: Shield
-    }
-  ];
-
-  const industries = [
-    {
-      name: "Healthcare",
-      description: "HIPAA-compliant patient management systems",
-      icon: Building
+      title: "Easier Maintenance",
+      description: "Simplified codebases that are easier to maintain and update.",
+      icon: Settings
     },
     {
-      name: "Finance",
-      description: "Regulatory-compliant financial tools",
-      icon: Building
-    },
-    {
-      name: "Education",
-      description: "Learning management and student tracking",
-      icon: Building
-    },
-    {
-      name: "Real Estate",
-      description: "Property management and client portals",
-      icon: Building
+      title: "Better User Experience",
+      description: "Focused applications that provide superior user experience and satisfaction.",
+      icon: Users
     }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple">
-      <SEO 
-        title="Micro SAAS Solutions - Zion Tech Group" 
-        description="Custom software-as-a-service solutions designed for rapid deployment, scalability, and business growth across industries."
-        keywords="micro SAAS, custom software, subscription management, multi-tenant, API development, business software"
-        canonical="https://ziontechgroup.com/services/micro-saas-solutions"
-      />
-
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-purple-900 text-white">
       {/* Hero Section */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-zion-blue-dark/80 to-zion-purple/80"></div>
-        <div className="relative z-10 container mx-auto px-4 py-24 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-            Micro SAAS Solutions
-            <span className="block text-3xl md:text-4xl text-zion-cyan mt-2">
-              Rapid Deployment, Maximum Impact
-            </span>
-          </h1>
-          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto mb-8">
-            Transform your business ideas into powerful, scalable software solutions with our micro SAAS development 
-            services designed for rapid deployment and growth.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <button className="bg-zion-cyan hover:bg-zion-cyan-light text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-              Start Your Project
-            </button>
-            <button className="border-2 border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-              View Portfolio
-            </button>
+      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center">
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent mb-6">
+              Micro SAAS Solutions
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto">
+              Build focused, scalable software solutions that solve specific business problems 
+              without the complexity of traditional enterprise applications.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/contact"
+                className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-400 hover:to-pink-400 transition-all duration-300 text-lg font-semibold transform hover:scale-105 shadow-lg shadow-purple-500/30"
+              >
+                Start Building
+              </Link>
+              <Link
+                to="/services"
+                className="px-8 py-4 border border-purple-400/50 text-purple-400 rounded-lg hover:bg-purple-400/20 transition-all duration-300 text-lg font-semibold"
+              >
+                All Services
+              </Link>
+            </div>
+          </div>
+        </div>
+        
+        {/* Micro SAAS Background Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-20 w-2 h-2 bg-purple-400 rounded-full animate-ping"></div>
+          <div className="absolute top-40 right-40 w-3 h-3 bg-pink-400 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-20 left-1/2 w-1 h-1 bg-purple-400 rounded-full animate-bounce"></div>
+          <div className="absolute top-1/3 right-1/3 w-1 h-1 bg-pink-400 rounded-full animate-ping animation-delay-1000"></div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Micro SAAS Capabilities
+            </h2>
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Our micro SAAS approach delivers focused solutions that are fast, efficient, 
+              and perfectly suited to your specific business needs.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 hover:transform hover:scale-105"
+              >
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0">
+                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                      <feature.icon className="w-6 h-6 text-white" />
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
+                    <p className="text-gray-300 mb-4">{feature.description}</p>
+                    <ul className="space-y-2">
+                      {feature.benefits.map((benefit, idx) => (
+                        <li key={idx} className="flex items-center text-sm text-purple-400">
+                          <div className="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
+                          {benefit}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Services Grid */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      {/* Services Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/50">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-zion-blue-dark mb-4">
-              Comprehensive SAAS Development Services
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Our Micro SAAS Services
             </h2>
-            <p className="text-xl text-zion-slate max-w-3xl mx-auto">
-              From concept to deployment, we provide end-to-end micro SAAS development services that 
-              accelerate your business growth and digital transformation.
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              End-to-end services to build, deploy, and maintain your micro SAAS applications.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg p-6 border border-zion-blue-light hover:shadow-xl transition-shadow">
-                <div className="w-16 h-16 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-lg flex items-center justify-center mb-6">
-                  <service.icon className="w-8 h-8 text-white" />
+              <div
+                key={index}
+                className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 hover:border-purple-500/30 transition-all duration-300"
+              >
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-pink-500 to-purple-500 rounded-lg flex items-center justify-center">
+                    <service.icon className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white">{service.title}</h3>
                 </div>
-                <h3 className="text-xl font-semibold text-zion-blue-dark mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-zion-slate mb-4">
-                  {service.description}
-                </p>
-                <ul className="space-y-2">
-                  {service.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center text-sm text-zion-slate">
-                      <div className="w-2 h-2 bg-zion-cyan rounded-full mr-3"></div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-gray-300">{service.description}</p>
               </div>
             ))}
           </div>
@@ -167,60 +229,55 @@ export default function MicroSAASSolutions() {
       </section>
 
       {/* Benefits Section */}
-      <section className="py-20 bg-zion-blue-light">
-        <div className="container mx-auto px-4">
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-zion-blue-dark mb-4">
-              Why Choose Our Micro SAAS Solutions?
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Why Choose Micro SAAS?
             </h2>
-            <p className="text-xl text-zion-slate max-w-3xl mx-auto">
-              Experience the advantages of rapid development, scalability, and cost-effective solutions 
-              designed for modern business needs.
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Micro SAAS solutions offer significant advantages over traditional enterprise applications.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
             {benefits.map((benefit, index) => (
-              <div key={index} className="text-center">
-                <div className="w-20 h-20 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-full flex items-center justify-center mx-auto mb-6">
-                  <benefit.icon className="w-10 h-10 text-white" />
+              <div
+                key={index}
+                className="bg-gray-800/30 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50 hover:border-pink-500/30 transition-all duration-300"
+              >
+                <div className="flex items-center space-x-4 mb-4">
+                  <div className="w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center">
+                    <benefit.icon className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-white">{benefit.title}</h3>
                 </div>
-                <h3 className="text-xl font-semibold text-zion-blue-dark mb-3">
-                  {benefit.title}
-                </h3>
-                <p className="text-zion-slate">
-                  {benefit.description}
-                </p>
+                <p className="text-gray-300">{benefit.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Industry Solutions */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
+      {/* Technologies Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900/50">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-zion-blue-dark mb-4">
-              Industry-Specific Solutions
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Technology Stack
             </h2>
-            <p className="text-xl text-zion-slate max-w-3xl mx-auto">
-              Tailored micro SAAS solutions designed for the unique requirements and compliance needs of different industries.
+            <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+              Built with modern, scalable technologies that ensure performance and reliability.
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {industries.map((industry, index) => (
-              <div key={index} className="bg-zion-blue-light rounded-xl p-6 text-center hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <industry.icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-semibold text-zion-blue-dark mb-2">
-                  {industry.name}
-                </h3>
-                <p className="text-sm text-zion-slate">
-                  {industry.description}
-                </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {technologies.map((tech, index) => (
+              <div
+                key={index}
+                className="bg-gray-800/50 backdrop-blur-sm rounded-lg p-6 text-center border border-gray-700/50 hover:border-purple-500/30 transition-all duration-300 hover:transform hover:scale-105"
+              >
+                <div className="text-purple-400 text-sm font-medium">{tech}</div>
               </div>
             ))}
           </div>
@@ -228,25 +285,32 @@ export default function MicroSAASSolutions() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-zion-blue-dark to-zion-purple">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">
-            Ready to Build Your Micro SAAS Solution?
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-900/20 to-pink-900/20">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+            Ready to Build Your Micro SAAS?
           </h2>
-          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto mb-8">
-            Let us help you transform your business idea into a powerful, scalable software solution 
-            that drives growth and innovation.
+          <p className="text-xl text-gray-300 mb-8">
+            Let's discuss how micro SAAS solutions can solve your specific business challenges.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <button className="bg-zion-cyan hover:bg-zion-cyan-light text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-              Start Your Project
-            </button>
-            <button className="border-2 border-white text-white hover:bg-white hover:text-zion-blue-dark px-8 py-3 rounded-lg font-semibold transition-colors">
-              Schedule Consultation
-            </button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="/contact"
+              className="px-8 py-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg hover:from-purple-400 hover:to-pink-400 transition-all duration-300 text-lg font-semibold transform hover:scale-105 shadow-lg shadow-purple-500/30"
+            >
+              Start Project
+            </Link>
+            <Link
+              to="/pricing"
+              className="px-8 py-4 border border-purple-400/50 text-purple-400 rounded-lg hover:bg-purple-400/20 transition-all duration-300 text-lg font-semibold"
+            >
+              View Pricing
+            </Link>
           </div>
         </div>
       </section>
     </div>
   );
-}
+};
+
+export default MicroSAASSolutions;

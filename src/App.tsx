@@ -57,6 +57,13 @@ const SpecializedITInfrastructure = lazy(() => import('./pages/services/Speciali
 const EnterpriseSolutions = lazy(() => import('./pages/solutions/Enterprise'));
 const HealthcareSolutions = lazy(() => import('./pages/solutions/Healthcare'));
 
+// Additional pages
+const HelpCenter = lazy(() => import('./pages/HelpCenter'));
+const CaseStudies = lazy(() => import('./pages/CaseStudies'));
+const Webinars = lazy(() => import('./pages/Webinars'));
+const WhitePapers = lazy(() => import('./pages/WhitePapers'));
+const FAQ = lazy(() => import('./pages/FAQ'));
+
 // Loading Component
 const LoadingSpinner = () => (
   <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
@@ -125,8 +132,15 @@ const App = () => {
                     <Route path="/services/specialized-it-infrastructure" element={<SpecializedITInfrastructure />} />
                     
                     {/* Solutions Routes */}
-                    <Route path="/services/enterprise" element={<EnterpriseSolutions />} />
+                    <Route path="/solutions/enterprise" element={<EnterpriseSolutions />} />
                     <Route path="/solutions/healthcare" element={<HealthcareSolutions />} />
+                    
+                    {/* Additional Routes */}
+                    <Route path="/help-center" element={<HelpCenter />} />
+                    <Route path="/case-studies" element={<CaseStudies />} />
+                    <Route path="/webinars" element={<Webinars />} />
+                    <Route path="/white-papers" element={<WhitePapers />} />
+                    <Route path="/faq" element={<FAQ />} />
                   </Routes>
                 </Suspense>
               </main>
