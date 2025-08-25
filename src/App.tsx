@@ -4,21 +4,13 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import Sidebar from './components/Sidebar';
 import { AccessibilityControls } from './components/AccessibilityControls';
-import { PerformanceDashboard } from './components/PerformanceDashboard';
-import { AnalyticsDashboard } from './components/AnalyticsDashboard';
-import { AIChatbot } from './components/AIChatbot';
-import { CollaborativeTextEditor } from './components/CollaborativeTextEditor';
-import { AICodeGenerator } from './components/AICodeGenerator';
-import { EnterpriseDashboard } from './components/EnterpriseDashboard';
-import { SecurityComplianceDashboard } from './components/SecurityComplianceDashboard';
-import { MachineLearningDashboard } from './components/MachineLearningDashboard';
 import { ThemeProvider } from "./components/ThemeProvider";
 import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
 import { ErrorBoundary } from './components/ErrorBoundary';
 
-// Enhanced lazy loading with preloading hints
+// Enhanced lazy loading with preloading hints and better chunking
 const Home = lazy(() => import('./pages/Home'));
 const Services = lazy(() => import('./pages/Services'));
 const AISolutions = lazy(() => import('./pages/AISolutions'));
@@ -28,7 +20,7 @@ const TalentDirectory = lazy(() => import('./pages/TalentDirectory'));
 const TalentsPage = lazy(() => import('./pages/TalentsPage'));
 const EmergingTech = lazy(() => import('./pages/EmergingTech'));
 
-// Our enhanced service pages
+// Service pages - grouped for better chunking
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Mission = lazy(() => import('./pages/Mission'));
@@ -41,9 +33,13 @@ const ITInfrastructure = lazy(() => import('./pages/services/ITInfrastructure'))
 const MicroSAASSolutions = lazy(() => import('./pages/services/MicroSAASSolutions'));
 const IndustrySolutions = lazy(() => import('./pages/services/IndustrySolutions'));
 
-// Loading Component
+// Enhanced Loading Component with better accessibility
 const LoadingSpinner = () => (
-  <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
+  <div 
+    className="flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900"
+    role="status"
+    aria-label="Loading Zion Tech Group application"
+  >
     <div className="text-center">
       <div className="relative">
         <div className="w-16 h-16 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
@@ -67,8 +63,8 @@ const App = () => {
               <Header />
               <Sidebar isOpen={false} onClose={() => {}} />
               
-              {/* Main Content with enhanced Suspense */}
-              <main className="ml-64 pt-20 min-h-screen">
+              {/* Main Content with enhanced Suspense and better accessibility */}
+              <main className="ml-64 pt-20 min-h-screen" role="main">
                 <Suspense fallback={<LoadingSpinner />}>
                   <Routes>
                     <Route path="/" element={<Home />} />
@@ -83,7 +79,7 @@ const App = () => {
                     <Route path="/services-comparison" element={<Services />} />
                     <Route path="/it-onsite-services" element={<Services />} />
                     
-                    {/* Our enhanced service routes */}
+                    {/* Service routes */}
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/mission" element={<Mission />} />
@@ -104,61 +100,6 @@ const App = () => {
               
               {/* Enhanced Accessibility Controls */}
               <AccessibilityControls position="bottom-right" />
-              
-              {/* AI Chatbot - Always Available */}
-              <AIChatbot />
-              
-              {/* Collaborative Text Editor - Development Mode */}
-              {import.meta.env.DEV && (
-                <div className="fixed bottom-24 left-6 z-40 w-96">
-                  <CollaborativeTextEditor
-                    roomId="dev-editor"
-                    userId="dev-user"
-                    userName="Developer"
-                    initialContent="Welcome to the collaborative text editor! Start typing to see AI suggestions and real-time collaboration features."
-                    enableAI={true}
-                    enableCollaboration={true}
-                    enableVersioning={true}
-                  />
-                </div>
-              )}
-              
-              {/* AI Code Generator - Development Mode */}
-              {import.meta.env.DEV && (
-                <div className="fixed bottom-24 right-6 z-40 w-96">
-                  <AICodeGenerator />
-                </div>
-              )}
-              
-              {/* Development Dashboards */}
-              {import.meta.env.DEV && (
-                <>
-                  {/* Performance Dashboard */}
-                  <div className="fixed top-4 left-4 z-40">
-                    <PerformanceDashboard />
-                  </div>
-                  
-                  {/* Analytics Dashboard */}
-                  <div className="fixed top-4 right-4 z-40">
-                    <AnalyticsDashboard />
-                  </div>
-                  
-                  {/* Enterprise Dashboard */}
-                  <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-40">
-                    <EnterpriseDashboard />
-                  </div>
-                  
-                  {/* Security & Compliance Dashboard */}
-                  <div className="fixed top-4 right-1/2 transform translate-x-1/2 z-40">
-                    <SecurityComplianceDashboard />
-                  </div>
-                  
-                  {/* Machine Learning Dashboard */}
-                  <div className="fixed top-4 right-4 z-40">
-                    <MachineLearningDashboard />
-                  </div>
-                </>
-              )}
             </div>
           </Router>
         </WhitelabelProvider>

@@ -133,7 +133,7 @@ export default function ServicesOverview() {
       <SEO 
         title="Services - Zion Tech Group" 
         description="Comprehensive technology services including AI, quantum computing, cybersecurity, and industry solutions."
-        keywords="AI services, quantum computing, cybersecurity, IT infrastructure, industry solutions"
+        tags={["AI services", "quantum computing", "cybersecurity", "IT infrastructure", "industry solutions"]}
         url="https://ziontechgroup.com/services"
       />
 

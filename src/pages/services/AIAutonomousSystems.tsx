@@ -156,7 +156,7 @@ export default function AIAutonomousSystems() {
       <SEO 
         title="AI & Autonomous Systems - Zion Tech Group" 
         description="Revolutionary AI systems that operate independently and transform business operations across industries."
-        keywords="AI autonomous systems, artificial intelligence, machine learning, business automation"
+        tags={["AI autonomous systems", "artificial intelligence", "machine learning", "business automation"]}
         url="https://ziontechgroup.com/services/ai-autonomous-systems"
       />
 
