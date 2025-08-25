@@ -896,3 +896,46 @@
 [2025-08-25T15:24:16.688Z] Analyzing link: https://wikipedia.org
 [2025-08-25T15:24:16.760Z] Analysis complete for https://wikipedia.org: poor (403)
 [2025-08-25T15:24:17.762Z] Queue processing complete
+[2025-08-25T15:25:02.186Z] Starting ML Link Intelligence worker
+[2025-08-25T15:25:02.194Z] Added https://github.com to analysis queue
+[2025-08-25T15:25:02.194Z] [ml-link-intelligence] [2025-08-25T15:25:02.186Z] Starting ML Link Intelligence worker
+[2025-08-25T15:25:02.195Z] Added https://stackoverflow.com to analysis queue
+[2025-08-25T15:25:02.195Z] Added https://medium.com to analysis queue
+[2025-08-25T15:25:02.195Z] [ml-link-intelligence] [2025-08-25T15:25:02.194Z] Added https://github.com to analysis queue
+[2025-08-25T15:25:02.195Z] Added https://stackoverflow.com to analysis queue
+[2025-08-25T15:25:02.195Z] Added https://dev.to to analysis queue
+[2025-08-25T15:25:02.195Z] [ml-link-intelligence] [2025-08-25T15:25:02.195Z] Added https://medium.com to analysis queue
+[2025-08-25T15:25:02.196Z] Added https://wikipedia.org to analysis queue
+[2025-08-25T15:25:02.196Z] [ml-link-intelligence] [2025-08-25T15:25:02.195Z] Added https://dev.to to analysis queue
+[2025-08-25T15:25:02.196Z] [ml-link-intelligence] [2025-08-25T15:25:02.196Z] Added https://wikipedia.org to analysis queue
+[2025-08-25T15:25:02.196Z] Processing queue with 5 links
+[2025-08-25T15:25:02.197Z] Analyzing link: https://github.com
+[2025-08-25T15:25:02.200Z] [ml-link-intelligence] [2025-08-25T15:25:02.196Z] Processing queue with 5 links
+[2025-08-25T15:25:02.197Z] Analyzing link: https://github.com
+[2025-08-25T15:25:02.407Z] Analysis complete for https://github.com: good (200)
+[2025-08-25T15:25:02.408Z] [ml-link-intelligence] [2025-08-25T15:25:02.407Z] Analysis complete for https://github.com: good (200)
+[2025-08-25T15:25:03.409Z] Analyzing link: https://stackoverflow.com
+[2025-08-25T15:25:03.410Z] [ml-link-intelligence] [2025-08-25T15:25:03.409Z] Analyzing link: https://stackoverflow.com
+[2025-08-25T15:25:03.496Z] Analysis complete for https://stackoverflow.com: poor (403)
+[2025-08-25T15:25:03.496Z] [ml-link-intelligence] [2025-08-25T15:25:03.496Z] Analysis complete for https://stackoverflow.com: poor (403)
+[2025-08-25T15:25:04.498Z] Analyzing link: https://medium.com
+[2025-08-25T15:25:04.498Z] [ml-link-intelligence] [2025-08-25T15:25:04.498Z] Analyzing link: https://medium.com
+[2025-08-25T15:25:04.640Z] Analysis complete for https://medium.com: good (200)
+[2025-08-25T15:25:04.642Z] [ml-link-intelligence] [2025-08-25T15:25:04.640Z] Analysis complete for https://medium.com: good (200)
+[2025-08-25T15:25:05.641Z] Analyzing link: https://dev.to
+[2025-08-25T15:25:05.642Z] [ml-link-intelligence] [2025-08-25T15:25:05.641Z] Analyzing link: https://dev.to
+[2025-08-25T15:25:05.688Z] Analysis complete for https://dev.to: poor (403)
+[2025-08-25T15:25:05.689Z] [ml-link-intelligence] [2025-08-25T15:25:05.688Z] Analysis complete for https://dev.to: poor (403)
+[2025-08-25T15:25:06.689Z] Analyzing link: https://wikipedia.org
+[2025-08-25T15:25:06.690Z] [ml-link-intelligence] [2025-08-25T15:25:06.689Z] Analyzing link: https://wikipedia.org
+[2025-08-25T15:25:06.746Z] Analysis complete for https://wikipedia.org: poor (403)
+[2025-08-25T15:25:06.746Z] [ml-link-intelligence] [2025-08-25T15:25:06.746Z] Analysis complete for https://wikipedia.org: poor (403)
+[2025-08-25T15:25:07.747Z] Queue processing complete
+[2025-08-25T15:25:07.747Z] [ml-link-intelligence] [2025-08-25T15:25:07.747Z] Queue processing complete
+[2025-08-25T15:25:07.748Z] Health Report: Score 90, Links 5, Issues 3
+[2025-08-25T15:25:07.748Z] [ml-link-intelligence] [2025-08-25T15:25:07.748Z] Health Report: Score 90, Links 5, Issues 3
+[2025-08-25T15:26:02.700Z] Stopping ml-link-intelligence...
+[2025-08-25T15:26:02.705Z] Stopping ML Link Intelligence...
+[2025-08-25T15:26:02.706Z] Stopping ML Link Intelligence...
+[2025-08-25T15:26:02.708Z] [ml-link-intelligence] [2025-08-25T15:26:02.706Z] Stopping ML Link Intelligence...
+[2025-08-25T15:26:02.703Z] Stopping ML Link Intelligence...
