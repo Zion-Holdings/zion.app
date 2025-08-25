@@ -19,7 +19,7 @@ const ServicesComparisonPage = lazy(() => import('./pages/ServicesComparison'));
 const ITOnsiteServicesPage = lazy(() => import('./pages/ITOnsiteServicesPage'));
 const Contact = lazy(() => import('./pages/Contact'));
 const About = lazy(() => import('./pages/About'));
-const NotFound = lazy(() => import('./pages/NotFound'));
+
 
 // Enhanced loading fallback
 const EnhancedLoadingFallback = () => (
@@ -64,7 +64,15 @@ const App = () => {
                   <Route path="/contact" element={<Contact />} />
                   
                   {/* Catch all route */}
-                  <Route path="*" element={<NotFound />} />
+                  <Route path="*" element={<div className="min-h-screen bg-zion-blue-dark text-white flex items-center justify-center">
+                    <div className="text-center">
+                      <h1 className="text-4xl font-bold mb-4">404 - Page Not Found</h1>
+                      <p className="text-zion-slate-light mb-8">The page you're looking for doesn't exist.</p>
+                      <a href="/" className="bg-zion-cyan text-zion-blue-dark px-6 py-3 rounded-lg font-medium hover:bg-zion-cyan/90 transition-colors">
+                        Go Home
+                      </a>
+                    </div>
+                  </div>} />
                 </Routes>
               </Suspense>
             </main>
