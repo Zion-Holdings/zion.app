@@ -72,8 +72,6 @@ const ExpandedServicesPage = React.lazy(() => import('./pages/ServicesShowcase')
 const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
 const CybersecurityServicesPage = React.lazy(() => import('./pages/CybersecurityServicesPage'));
 const ServicesComparisonPage = React.lazy(() => import('./pages/ServicesComparison'));
-const Contact = React.lazy(() => import('./pages/Contact'));
-const About = React.lazy(() => import('./pages/About'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
