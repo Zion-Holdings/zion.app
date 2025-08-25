@@ -33,7 +33,7 @@ export function Header() {
     { name: 'AI Solutions', href: '/ai-solutions', icon: Brain, description: 'Machine Learning & AI Services' },
     { name: 'Cloud Infrastructure', href: '/cloud-infrastructure', icon: Cloud, description: 'AWS, Azure, GCP Solutions' },
     { name: 'Cybersecurity', href: '/cybersecurity', icon: Shield, description: 'Security & Compliance' },
-    { name: 'Digital Transformation', href: '/services/transformation', icon: Zap, description: 'Business Process Modernization' }
+    { name: 'Digital Transformation', href: '/digital-transformation', icon: Zap, description: 'Business Process Modernization' }
   ];
 
   return (

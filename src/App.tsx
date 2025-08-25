@@ -17,6 +17,7 @@ import NotFound from './pages/NotFound';
 import AISolutions from './pages/AISolutions';
 import CloudInfrastructure from './pages/CloudInfrastructure';
 import Cybersecurity from './pages/Cybersecurity';
+import DigitalTransformation from './pages/DigitalTransformation';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
               <Route path="/ai-solutions" element={<AISolutions />} />
               <Route path="/cloud-infrastructure" element={<CloudInfrastructure />} />
               <Route path="/cybersecurity" element={<Cybersecurity />} />
+              <Route path="/digital-transformation" element={<DigitalTransformation />} />
               <Route path="/services/:category" element={<Services />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
