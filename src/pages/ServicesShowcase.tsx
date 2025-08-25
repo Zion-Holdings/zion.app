@@ -3,7 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter }
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Select } from '@/components/ui/select';
 import { Link } from 'react-router-dom';
 import {
   Bot,
@@ -267,30 +267,28 @@ export default function ServicesShowcase() {
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-300 mb-2">Category</label>
-              <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                <SelectTrigger className="bg-white/10 border-white/20 text-white">
-                  <SelectValue>{selectedCategory}</SelectValue>
-                </SelectTrigger>
-                <SelectContent className="bg-gray-800 border-gray-700">
-                  {categories.map(category => (
-                    <SelectItem key={category} value={category} className="text-white hover:bg-gray-700">
-                      {category}
-                    </SelectItem>
-                  ))}
-                </SelectContent>
+              <Select 
+                value={selectedCategory} 
+                onChange={(e) => setSelectedCategory(e.target.value)}
+                className="bg-white/10 border-white/20 text-white"
+              >
+                {categories.map(category => (
+                  <option key={category} value={category} className="text-white bg-gray-800">
+                    {category}
+                  </option>
+                ))}
               </Select>
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-300 mb-2">Sort By</label>
-              <Select value={sortBy} onValueChange={setSortBy}>
-                <SelectTrigger className="bg-white/10 border-white/20 text-white">
-                  <SelectValue>{sortBy}</SelectValue>
-                </SelectTrigger>
-                <SelectContent className="bg-gray-800 border-gray-700">
-                  <SelectItem value="rating" className="text-white hover:bg-gray-700">Highest Rated</SelectItem>
-                  <SelectItem value="price" className="text-white hover:bg-gray-700">Lowest Price</SelectItem>
-                  <SelectItem value="delivery" className="text-white hover:bg-gray-700">Fastest Delivery</SelectItem>
-                </SelectContent>
+              <Select 
+                value={sortBy} 
+                onChange={(e) => setSortBy(e.target.value)}
+                className="bg-white/10 border-white/20 text-white"
+              >
+                <option value="rating" className="text-white bg-gray-800">Highest Rated</option>
+                <option value="price" className="text-white bg-gray-800">Lowest Price</option>
+                <option value="delivery" className="text-white bg-gray-800">Fastest Delivery</option>
               </Select>
             </div>
           </div>

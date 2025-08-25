@@ -1,9 +1,5 @@
 import React, { useState } from 'react';
-import { 
-  MICRO_SERVICES, 
-  MicroService,
-  getServicesByCategory
-} from '@/data/comprehensiveServices';
+import { COMPREHENSIVE_SERVICES } from '@/data/comprehensiveServices';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -28,11 +24,13 @@ import {
   Key,
   Network
 } from 'lucide-react';
-import { SEO } from '@/components/SEO';
 
-const cybersecurityServices = getServicesByCategory('cybersecurity');
+const cybersecurityServices = COMPREHENSIVE_SERVICES.filter(service => 
+  service.category.toLowerCase().includes('cybersecurity') || 
+  service.tags.some(tag => tag.toLowerCase().includes('security'))
+);
 
-const SecurityServiceCard: React.FC<{ service: MicroService }> = ({ service }) => {
+const SecurityServiceCard: React.FC<{ service: any }> = ({ service }) => {
   const [showDetails, setShowDetails] = useState(false);
 
   return (
@@ -395,12 +393,6 @@ const SecurityThreatsSection: React.FC = () => (
 export default function CybersecurityServicesPage() {
   return (
     <div className="min-h-screen bg-zion-blue">
-      <SEO 
-        title="Cybersecurity Services - Zion Tech Group" 
-        description="Comprehensive cybersecurity solutions including security audits, incident response, and threat protection. Protect your business with expert security services."
-        keywords="cybersecurity, security audit, penetration testing, incident response, threat protection, compliance, SOC2, ISO27001"
-        canonical="https://ziontechgroup.com/cybersecurity-services"
-      />
 
       {/* Hero Section */}
       <div className="bg-gradient-to-br from-zion-blue-dark to-zion-blue py-20 px-4">

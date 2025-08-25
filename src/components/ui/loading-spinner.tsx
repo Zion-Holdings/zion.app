@@ -1,57 +1,47 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
 
 interface LoadingSpinnerProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
-  variant?: 'default' | 'primary' | 'secondary' | 'white';
-  className?: string;
+  variant?: 'default' | 'pulse' | 'bounce' | 'wave';
   text?: string;
+  className?: string;
 }
+
+const sizeClasses = {
+  sm: 'w-4 h-4',
+  md: 'w-6 h-6',
+  lg: 'w-8 h-8',
+  xl: 'w-12 h-12'
+};
+
+const variantClasses = {
+  default: 'animate-spin',
+  pulse: 'animate-pulse',
+  bounce: 'animate-bounce',
+  wave: 'animate-pulse'
+};
 
 export function LoadingSpinner({ 
   size = 'md', 
-  variant = 'default',
-  className = '',
-  text
+  variant = 'default', 
+  text,
+  className = '' 
 }: LoadingSpinnerProps) {
-  const sizeClasses = {
-    sm: 'w-4 h-4',
-    md: 'w-6 h-6',
-    lg: 'w-8 h-8',
-    xl: 'w-12 h-12'
-  };
-
-  const variantClasses = {
-    default: 'text-zion-cyan',
-    primary: 'text-zion-blue',
-    secondary: 'text-zion-purple',
-    white: 'text-white'
-  };
-
   return (
-    <div className={cn("flex flex-col items-center gap-3", className)}>
-      <motion.div
+    <div className={cn('flex flex-col items-center justify-center', className)}>
+      <div
         className={cn(
-          'animate-spin rounded-full border-2 border-current border-t-transparent',
+          'border-2 border-current border-t-transparent rounded-full',
           sizeClasses[size],
-          variantClasses[variant]
+          variantClasses[variant],
+          'text-zion-cyan'
         )}
-        role="status"
-        aria-label="Loading"
-      >
-        <span className="sr-only">Loading...</span>
-      </motion.div>
-      
+      />
       {text && (
-        <motion.p
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2 }}
-          className="text-zion-slate-light font-medium text-sm"
-        >
+        <p className="mt-2 text-sm text-zion-slate-light text-center">
           {text}
-        </motion.p>
+        </p>
       )}
     </div>
   );
