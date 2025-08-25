@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../../components/ui/card';
 import { Badge } from '../../components/ui/badge';
 import { Button } from '../../components/ui/button';
 import { Input } from '../../components/ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../../components/ui/select';
+import { Select } from '../../components/ui/select';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../components/ui/tabs';
 import { 
   INNOVATIVE_MICRO_SAAS_SERVICES, 
@@ -177,42 +177,46 @@ const InnovativeServicesShowcase: React.FC = () => {
               onChange={(e) => setSearchTerm(e.target.value)}
               className="bg-gray-700 border-gray-600 text-white"
             />
-                          <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                <SelectTrigger className="bg-gray-700 border-gray-600 text-white">
-                  <SelectValue>All Categories</SelectValue>
-                </SelectTrigger>
-              <SelectContent className="bg-gray-700 border-gray-600">
-                <SelectItem value="all">All Categories</SelectItem>
-                {allCategories.map((category) => (
-                  <SelectItem key={category.value} value={category.value}>
-                    {category.label}
-                  </SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
-                          <Select value={selectedPricingTier} onValueChange={setSelectedPricingTier}>
-                <SelectTrigger className="bg-gray-700 border-gray-600 text-white">
-                  <SelectValue>All Pricing Tiers</SelectValue>
-                </SelectTrigger>
-              <SelectContent className="bg-gray-700 border-gray-600">
-                <SelectItem value="all">All Pricing Tiers</SelectItem>
-                <SelectItem value="Starter">Starter</SelectItem>
-                <SelectItem value="Professional">Professional</SelectItem>
-                <SelectItem value="Enterprise">Enterprise</SelectItem>
-                <SelectItem value="Custom">Custom</SelectItem>
-              </SelectContent>
-            </Select>
-                          <Select value={selectedStatus} onValueChange={setSelectedStatus}>
-                <SelectTrigger className="bg-gray-700 border-gray-600 text-white">
-                  <SelectValue>All Statuses</SelectValue>
-                </SelectTrigger>
-              <SelectContent className="bg-gray-700 border-gray-600">
-                <SelectItem value="all">All Statuses</SelectItem>
-                <SelectItem value="Active">Active</SelectItem>
-                <SelectItem value="Beta">Beta</SelectItem>
-                <SelectItem value="Coming Soon">Coming Soon</SelectItem>
-              </SelectContent>
-            </Select>
+            <div className="flex flex-wrap gap-4 mb-6">
+              <div className="flex-1 min-w-[200px]">
+                <label className="block text-sm font-medium text-gray-300 mb-2">
+                  Category
+                </label>
+                <Select value={selectedCategory} onChange={(e) => setSelectedCategory(e.target.value)}>
+                  <option value="">All Categories</option>
+                  <option value="AI & Analytics">AI & Analytics</option>
+                  <option value="Cybersecurity">Cybersecurity</option>
+                  <option value="Cloud & DevOps">Cloud & DevOps</option>
+                  <option value="Data & Analytics">Data & Analytics</option>
+                  <option value="Emerging Technologies">Emerging Technologies</option>
+                </Select>
+              </div>
+              
+              <div className="flex-1 min-w-[200px]">
+                <label className="block text-sm font-medium text-gray-300 mb-2">
+                  Pricing Tier
+                </label>
+                <Select value={selectedPricingTier} onChange={(e) => setSelectedPricingTier(e.target.value)}>
+                  <option value="">All Pricing Tiers</option>
+                  <option value="Starter">Starter</option>
+                  <option value="Professional">Professional</option>
+                  <option value="Enterprise">Enterprise</option>
+                  <option value="Custom">Custom</option>
+                </Select>
+              </div>
+              
+              <div className="flex-1 min-w-[200px]">
+                <label className="block text-sm font-medium text-gray-300 mb-2">
+                  Status
+                </label>
+                <Select value={selectedStatus} onChange={(e) => setSelectedStatus(e.target.value)}>
+                  <option value="">All Statuses</option>
+                  <option value="Active">Active</option>
+                  <option value="Beta">Beta</option>
+                  <option value="Coming Soon">Coming Soon</option>
+                </Select>
+              </div>
+            </div>
           </div>
         </div>
 
