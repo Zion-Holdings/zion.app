@@ -1,159 +1,33 @@
 
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import { ArrowRight, Star, Users, Award, Globe, Zap, Brain, Shield, Cloud, Code, BarChart3, Rocket, CheckCircle, Play } from 'lucide-react';
-
-export function Home() {
-  const featuredServices = [
-    {
-      title: 'AI & Machine Learning',
-      description: 'Revolutionary AI solutions that transform business operations and drive innovation.',
-      icon: Brain,
-      color: 'from-zion-cyan to-zion-purple',
-      link: '/services'
-    },
-    {
-      title: 'Cybersecurity',
-      description: 'Advanced security solutions protecting your digital assets and infrastructure.',
-      icon: Shield,
-      color: 'from-zion-purple to-zion-cyan',
-      link: '/services'
-    },
-    {
-      title: 'Cloud Computing',
-      description: 'Scalable cloud solutions that optimize performance and reduce costs.',
-      icon: Cloud,
-      color: 'from-zion-cyan to-zion-purple',
-      link: '/services'
-    },
-    {
-      title: 'Web Development',
-      description: 'Modern, responsive web applications built with cutting-edge technologies.',
-      icon: Code,
-      color: 'from-zion-purple to-zion-cyan',
-      link: '/services'
-    }
-  ];
-
-  const stats = [
-    { label: 'Years of Experience', value: '10+', icon: Award },
-    { label: 'Projects Completed', value: '500+', icon: Star },
-    { label: 'Global Clients', value: '50+', icon: Globe },
-    { label: 'Team Members', value: '25+', icon: Users },
-  ];
-
-  const features = [
-    {
-      title: 'AI-Powered Solutions',
-      description: 'Cutting-edge artificial intelligence that learns and adapts to your business needs.',
-      icon: Brain,
-      color: 'text-zion-cyan'
-    },
-    {
-      title: '24/7 Support',
-      description: 'Round-the-clock technical support and maintenance for all our solutions.',
-      icon: Zap,
-      color: 'text-zion-purple'
-    },
-    {
-      title: 'Global Reach',
-      description: 'Serving clients worldwide with localized solutions and support.',
-      icon: Globe,
-      color: 'text-zion-cyan'
-    },
-    {
-      title: 'Innovation First',
-      description: 'Constantly pushing boundaries with emerging technologies and creative solutions.',
-      icon: Rocket,
-      color: 'text-zion-purple'
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: 'Sarah Johnson',
-      role: 'CTO, TechCorp',
-      content: 'Zion Tech Group transformed our entire IT infrastructure. Their AI solutions increased our efficiency by 300%.',
-      rating: 5
-    },
-    {
-      name: 'Michael Chen',
-      role: 'CEO, InnovateLab',
-      content: 'The cybersecurity implementation was flawless. We feel completely protected and confident in our digital operations.',
-      rating: 5
-    },
-    {
-      name: 'Emily Rodriguez',
-      role: 'VP Engineering, DataFlow',
-      content: 'Outstanding cloud migration service. Zero downtime and significant cost savings. Highly recommended!',
-      rating: 5
-    }
-  ];
+import React from 'react';
+import { CategoriesSection } from "@/components/CategoriesSection";
+import { BenefitsSection } from "@/components/BenefitsSection";
+import { HowItWorksSection } from "@/components/HowItWorksSection";
+import { NewsletterSection } from "@/components/NewsletterSection";
+import { FeaturedListingsSection } from "@/components/FeaturedListingsSection";
+import { SEO } from "@/components/SEO";
+import { HeroSection } from "@/components/HeroSection";
+import { QuickAccess } from "@/components/home/QuickAccess";
+import { FeatureCTAs } from "@/components/home/FeatureCTAs";
+import { FeatureHighlights } from "@/components/home/FeatureHighlights";
+import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
+import { AnimatedBackground, FloatingOrbs } from "@/components/ui/AnimatedBackground";
+>>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-0c75
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-blue-light text-white">
-      {/* Animated Background Elements */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-zion-cyan/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute top-40 right-20 w-96 h-96 bg-zion-purple/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-zion-cyan/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
-      </div>
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      <SEO 
+        title="Zion - The Tech & AI Marketplace" 
+        description="Discover top AI and tech talent, services, and equipment in one place."
+        keywords="AI, technology, marketplace, services, talent"
+        canonical="https://app.ziontechgroup.com/"
+      />
 
-      <div className="relative z-10">
-        {/* Hero Section */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-cyan bg-clip-text text-transparent animate-neon-pulse">
-              Zion Tech Group
-            </h1>
-            <p className="text-xl md:text-2xl text-zion-slate-light mb-8 max-w-4xl mx-auto">
-              Pioneering the future of technology with revolutionary AI consciousness, 
-              quantum computing, and autonomous solutions that transform businesses worldwide.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white rounded-lg text-lg font-semibold hover:shadow-xl hover:shadow-zion-cyan/25 transition-all duration-300 flex items-center gap-2 justify-center"
-              >
-                Get Started
-                <ArrowRight className="w-5 h-5" />
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 border border-zion-cyan text-zion-cyan rounded-lg text-lg font-semibold hover:bg-zion-cyan hover:text-white transition-all duration-300 flex items-center gap-2 justify-center"
-              >
-                <Play className="w-5 h-5" />
-                Watch Demo
-              </motion.button>
-            </div>
-            
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-              {stats.map((stat, index) => {
-                const IconComponent = stat.icon;
-                return (
-                  <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-                    className="text-center"
-                  >
-                    <div className="text-2xl md:text-3xl font-bold text-zion-cyan mb-2">{stat.value}</div>
-                    <div className="text-zion-slate-light text-sm">{stat.label}</div>
-                  </motion.div>
-                );
-              })}
-            </div>
-          </motion.div>
-        </section>
+      {/* Futuristic Animated Backgrounds */}
+      <AnimatedBackground variant="grid" intensity="low" />
+      <FloatingOrbs count={8} />
+
+      <ITServiceRequestHero />
 
         {/* Featured Services */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">

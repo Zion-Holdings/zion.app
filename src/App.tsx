@@ -42,18 +42,8 @@ const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
 const ContactPage = React.lazy(() => import('./pages/ContactPage'));
 const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
-const ComprehensiveServices = React.lazy(() => import('./pages/ComprehensiveServices'));
-const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
-const EnterpriseSolutions = React.lazy(() => import('./pages/EnterpriseSolutionsPage'));
-const AdvancedServicesPage = React.lazy(() => import('./pages/AdvancedServicesPage'));
-const ServiceDetailPage = React.lazy(() => import('./pages/ServiceDetailPage'));
-const EmergingTechServices = React.lazy(() => import('./pages/EmergingTechServices'));
-const IndustrySolutions = React.lazy(() => import('./pages/IndustrySolutions'));
 const MicroSaasServices = React.lazy(() => import('./pages/MicroSaasServices'));
-const AIBusinessSolutions = React.lazy(() => import('./pages/AIBusinessSolutions'));
-const CloudDevOpsSolutions = React.lazy(() => import('./pages/CloudDevOpsSolutions'));
-const DigitalTransformation = React.lazy(() => import('./pages/DigitalTransformation'));
-
+const PricingPage = React.lazy(() => import('./pages/PricingPage'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -62,10 +52,8 @@ const baseRoutes = [
   { path: '/signup', element: <Signup /> },
   { path: '/talent', element: <TalentDirectory /> },
   { path: '/talents', element: <TalentsPage /> },
-  { path: '/micro-saas-services', element: <ComprehensiveServices /> },
-  { path: '/comprehensive-services', element: <ComprehensiveServices /> },
-  { path: '/ai-services', element: <AIServicesPage /> },
-  { path: '/enterprise-solutions', element: <EnterpriseSolutions /> },
+  { path: '/micro-saas-services', element: <MicroSaasServices /> },
+  { path: '/pricing', element: <PricingPage /> },
   { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
   { path: '/categories', element: <Categories /> },
   { path: '/equipment', element: <EquipmentPage /> },
@@ -79,15 +67,6 @@ const baseRoutes = [
   { path: '/zion-hire-ai', element: <ZionHireAI /> },
   { path: '/hire-ai', element: <ZionHireAI /> },
   { path: '/request-quote', element: <RequestQuotePage /> },
-  { path: '/advanced-services', element: <AdvancedServicesPage /> },
-  { path: '/services/:serviceId', element: <ServiceDetailPage /> },
-                { path: '/emerging-tech-services', element: <EmergingTechServices /> },
-              { path: '/industry-solutions', element: <IndustrySolutions /> },
-              { path: '/micro-saas', element: <MicroSaasServices /> },
-              { path: '/ai-business-solutions', element: <AIBusinessSolutions /> },
-              { path: '/cloud-devops-solutions', element: <CloudDevOpsSolutions /> },
-              { path: '/digital-transformation', element: <DigitalTransformation /> },
-
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
 ];
