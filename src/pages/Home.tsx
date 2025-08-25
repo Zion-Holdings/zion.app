@@ -471,6 +471,7 @@ export default function Home() {
                <AdvancedSecurityDashboard />
                <AdvancedPerformanceMonitor />
                <AdvancedAICodeGenerator />
+               <AdvancedAIProjectManagement />
     </div>
   );
 }
