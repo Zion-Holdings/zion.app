@@ -58,7 +58,7 @@ interface PortfolioMetrics {
 const AdvancedServicePortfolioDashboard: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedStatus, setSelectedStatus] = useState<string>('all');
-  const [selectedComplexity, setSelectedComplexity = useState<string>('all');
+  const [selectedComplexity, setSelectedComplexity] = useState<string>('all');
   const [searchTerm, setSearchTerm] = useState('');
   const [viewMode, setViewMode] = useState<'overview' | 'detailed' | 'analytics'>('overview');
 
@@ -632,7 +632,7 @@ const AdvancedServicePortfolioDashboard: React.FC = () => {
                 <div>
                   <h4 className="font-semibold text-zion-slate-dark">High Growth Services</h4>
                   <p className="text-sm text-zion-slate-light">
-                    {portfolioData.filter(s => s.growth > 30).length} services showing >30% growth
+                                          {portfolioData.filter(s => s.growth > 30).length} services showing &gt;30% growth
                   </p>
                 </div>
               </div>
@@ -642,7 +642,7 @@ const AdvancedServicePortfolioDashboard: React.FC = () => {
                 <div>
                   <h4 className="font-semibold text-zion-slate-dark">Top Performers</h4>
                   <p className="text-sm text-zion-slate-light">
-                    {portfolioData.filter(s => s.performance > 90).length} services with >90% performance
+                                          {portfolioData.filter(s => s.performance > 90).length} services with &gt;90% performance
                   </p>
                 </div>
               </div>

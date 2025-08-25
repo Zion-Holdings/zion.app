@@ -20,7 +20,7 @@ import {
   Brain,
   Eye
 } from 'lucide-react';
-import { AdvancedServicePortfolioDashboard } from '../components/AdvancedServicePortfolioDashboard';
+import AdvancedServicePortfolioDashboard from '../components/AdvancedServicePortfolioDashboard';
 import { Button } from '../components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
 

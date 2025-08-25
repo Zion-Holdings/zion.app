@@ -4160,7 +4160,7 @@ export const MICRO_SERVICES: MicroService[] = [
   {
     id: 'neuromorphic-computing-platform',
     title: 'Advanced Neuromorphic Computing Platform',
-    description: 'Revolutionary neuromorphic computing platform mimicking the human brain's neural structure for ultra-efficient, brain-inspired artificial intelligence and cognitive computing.',
+    description: 'Revolutionary neuromorphic computing platform mimicking the human brain\'s neural structure for ultra-efficient, brain-inspired artificial intelligence and cognitive computing.',
     category: 'ai',
     price: '$350,000/month',
     duration: '30-42 months',
