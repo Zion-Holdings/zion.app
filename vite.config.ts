@@ -25,23 +25,72 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          // Vendor chunks
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'ui-vendor': ['@radix-ui/react-accordion', '@radix-ui/react-alert-dialog', '@radix-ui/react-aspect-ratio', '@radix-ui/react-avatar', '@radix-ui/react-checkbox', '@radix-ui/react-context-menu', '@radix-ui/react-dialog', '@radix-ui/react-dropdown-menu', '@radix-ui/react-label', '@radix-ui/react-popover', '@radix-ui/react-progress', '@radix-ui/react-radio-group', '@radix-ui/react-scroll-area', '@radix-ui/react-select', '@radix-ui/react-separator', '@radix-ui/react-slider', '@radix-ui/react-slot', '@radix-ui/react-switch', '@radix-ui/react-tabs', '@radix-ui/react-toast', '@radix-ui/react-tooltip'],
-          'form-vendor': ['react-hook-form', '@hookform/resolvers', 'zod'],
-          'animation-vendor': ['framer-motion', 'embla-carousel-react'],
-          'utility-vendor': ['clsx', 'class-variance-authority', 'tailwind-merge', 'date-fns'],
-          'chart-vendor': ['recharts'],
-          'icon-vendor': ['lucide-react', 'react-icons'],
-          'state-vendor': ['@reduxjs/toolkit', 'react-redux'],
-          'query-vendor': ['@tanstack/react-query'],
-          'supabase-vendor': ['@supabase/supabase-js'],
-          'stripe-vendor': ['@stripe/stripe-js'],
-          'dnd-vendor': ['@hello-pangea/dnd'],
-          'pdf-vendor': ['jspdf', 'jspdf-autotable'],
-          'i18n-vendor': ['i18next', 'i18next-browser-languagedetector', 'react-i18next'],
-          'input-vendor': ['input-otp'],
-          'ui-components': ['vaul', 'cmdk', 'sonner'],
+          // Core React chunks
+          'react-core': ['react', 'react-dom'],
+          'react-router': ['react-router-dom'],
+          
+          // UI Component chunks - grouped by usage frequency
+          'ui-core': [
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-dropdown-menu',
+            '@radix-ui/react-select',
+            '@radix-ui/react-tabs'
+          ],
+          'ui-forms': [
+            '@radix-ui/react-checkbox',
+            '@radix-ui/react-radio-group',
+            '@radix-ui/react-switch',
+            'react-hook-form',
+            '@hookform/resolvers',
+            'zod'
+          ],
+          'ui-layout': [
+            '@radix-ui/react-accordion',
+            '@radix-ui/react-aspect-ratio',
+            '@radix-ui/react-avatar',
+            '@radix-ui/react-separator',
+            '@radix-ui/react-scroll-area'
+          ],
+          'ui-overlays': [
+            '@radix-ui/react-alert-dialog',
+            '@radix-ui/react-context-menu',
+            '@radix-ui/react-popover',
+            '@radix-ui/react-tooltip',
+            '@radix-ui/react-toast'
+          ],
+          'ui-controls': [
+            '@radix-ui/react-label',
+            '@radix-ui/react-progress',
+            '@radix-ui/react-slider',
+            '@radix-ui/react-slot'
+          ],
+          
+          // Animation and interaction
+          'animation': ['framer-motion', 'embla-carousel-react'],
+          
+          // Utility libraries
+          'utils': ['clsx', 'class-variance-authority', 'tailwind-merge', 'date-fns'],
+          
+          // Icons
+          'icons': ['lucide-react', 'react-icons'],
+          
+          // State management
+          'state': ['@reduxjs/toolkit', 'react-redux'],
+          
+          // Data fetching
+          'data': ['@tanstack/react-query', '@supabase/supabase-js'],
+          
+          // External integrations
+          'integrations': ['@stripe/stripe-js', 'jspdf', 'jspdf-autotable'],
+          
+          // Specialized features
+          'features': ['@hello-pangea/dnd', 'input-otp', 'vaul', 'cmdk', 'sonner'],
+          
+          // Charts and visualization
+          'charts': ['recharts'],
+          
+          // Internationalization
+          'i18n': ['i18next', 'i18next-browser-languagedetector', 'react-i18next']
         },
         chunkFileNames: (chunkInfo) => {
           const facadeModuleId = chunkInfo.facadeModuleId ? chunkInfo.facadeModuleId.split('/').pop() : 'chunk';
@@ -64,12 +113,17 @@ export default defineConfig({
         },
       },
     },
-    chunkSizeWarningLimit: 1000,
+    chunkSizeWarningLimit: 500, // Reduced from 1000 for better optimization
     terserOptions: {
       compress: {
         drop_console: true,
         drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug'],
+        passes: 2
       },
+      mangle: {
+        toplevel: true
+      }
     },
   },
   optimizeDeps: {
@@ -110,6 +164,7 @@ export default defineConfig({
       'vaul',
       'cmdk',
     ],
+    exclude: ['@stripe/stripe-js'], // Exclude Stripe from pre-bundling
   },
   server: {
     port: 3000,
@@ -126,4 +181,18 @@ export default defineConfig({
   esbuild: {
     logOverride: { 'this-is-undefined-in-esm': 'silent' },
   },
+  // Performance optimizations
+  define: {
+    __DEV__: JSON.stringify(process.env.NODE_ENV === 'development'),
+  },
+  // Experimental features for better performance
+  experimental: {
+    renderBuiltUrl(filename, { hostType }) {
+      if (hostType === 'js') {
+        return { js: `/${filename}` }
+      } else {
+        return { relative: true }
+      }
+    }
+  }
 })
