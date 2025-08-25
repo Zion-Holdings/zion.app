@@ -1242,6 +1242,313 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       email: "kleber@ziontechgroup.com",
       website: "https://ziontechgroup.com"
     }
+  },
+  // TRADITIONAL IT SERVICES
+  {
+    id: "network-infrastructure-management",
+    title: "Network Infrastructure Management & Optimization",
+    description: "Comprehensive network infrastructure management including design, implementation, monitoring, and optimization for enterprise networks.",
+    category: "IT Support & Consulting",
+    subcategory: "Network Management",
+    price: 2500,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Network design and architecture",
+      "24/7 network monitoring",
+      "Performance optimization",
+      "Security implementation",
+      "Disaster recovery planning",
+      "Bandwidth management",
+      "VPN setup and management",
+      "Network documentation"
+    ],
+    benefits: [
+      "Improved network reliability",
+      "Enhanced security posture",
+      "Reduced downtime",
+      "Better performance",
+      "Cost optimization",
+      "Scalable infrastructure"
+    ],
+    useCases: [
+      "Enterprise networks",
+      "Multi-site organizations",
+      "Data centers",
+      "Cloud connectivity",
+      "Remote work infrastructure"
+    ],
+    targetAudience: [
+      "IT managers",
+      "Network administrators",
+      "System administrators",
+      "Business owners",
+      "Operations directors"
+    ],
+    tags: ["Network Management", "Infrastructure", "Monitoring", "Security", "Optimization"],
+    estimatedDelivery: "2-4 weeks",
+    supportLevel: "premium",
+    marketPrice: "$2,500 - $6,000/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
+  },
+  {
+    id: "system-administration-support",
+    title: "System Administration & Technical Support",
+    description: "Professional system administration services including server management, user support, and technical infrastructure maintenance.",
+    category: "IT Support & Consulting",
+    subcategory: "System Administration",
+    price: 1800,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Server management and maintenance",
+      "User account management",
+      "Backup and recovery",
+      "System updates and patches",
+      "Performance monitoring",
+      "Technical support desk",
+      "Documentation and training",
+      "Security hardening"
+    ],
+    benefits: [
+      "Reduced system downtime",
+      "Improved user productivity",
+      "Enhanced security",
+      "Cost-effective IT management",
+      "Professional expertise",
+      "24/7 support availability"
+    ],
+    useCases: [
+      "Windows/Linux servers",
+      "Active Directory management",
+      "File and print services",
+      "Email systems",
+      "Database administration"
+    ],
+    targetAudience: [
+      "Small to medium businesses",
+      "Educational institutions",
+      "Healthcare organizations",
+      "Non-profit organizations",
+      "Professional services firms"
+    ],
+    tags: ["System Administration", "Technical Support", "Server Management", "User Support", "Infrastructure"],
+    estimatedDelivery: "1-2 weeks",
+    supportLevel: "standard",
+    marketPrice: "$1,800 - $4,500/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
+  },
+  {
+    id: "help-desk-support",
+    title: "Professional Help Desk & IT Support",
+    description: "Comprehensive help desk services providing technical support, troubleshooting, and user assistance for all IT-related issues.",
+    category: "IT Support & Consulting",
+    subcategory: "Help Desk Support",
+    price: 1200,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "24/7 help desk support",
+      "Multi-channel support (phone, email, chat)",
+      "Ticket management system",
+      "Remote desktop support",
+      "Software installation assistance",
+      "Hardware troubleshooting",
+      "User training and guidance",
+      "Knowledge base management"
+    ],
+    benefits: [
+      "Faster issue resolution",
+      "Improved user satisfaction",
+      "Reduced IT workload",
+      "Consistent support quality",
+      "Better user productivity",
+      "Cost-effective support"
+    ],
+    useCases: [
+      "Software issues",
+      "Hardware problems",
+      "Network connectivity",
+      "Account access issues",
+      "General IT questions"
+    ],
+    targetAudience: [
+      "Businesses of all sizes",
+      "Educational institutions",
+      "Healthcare facilities",
+      "Government agencies",
+      "Non-profit organizations"
+    ],
+    tags: ["Help Desk", "IT Support", "Technical Support", "User Assistance", "Troubleshooting"],
+    estimatedDelivery: "1 week",
+    supportLevel: "standard",
+    marketPrice: "$1,200 - $3,000/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
+  },
+  {
+    id: "data-backup-recovery",
+    title: "Data Backup & Disaster Recovery Solutions",
+    description: "Comprehensive data protection services including automated backups, disaster recovery planning, and business continuity solutions.",
+    category: "IT Support & Consulting",
+    subcategory: "Data Protection",
+    price: 1500,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Automated backup systems",
+      "Cloud and local backup",
+      "Disaster recovery planning",
+      "Business continuity strategies",
+      "Data encryption",
+      "Backup testing and validation",
+      "Recovery time objectives",
+      "Compliance documentation"
+    ],
+    benefits: [
+      "Data protection and security",
+      "Business continuity assurance",
+      "Compliance with regulations",
+      "Reduced risk of data loss",
+      "Fast recovery capabilities",
+      "Peace of mind"
+    ],
+    useCases: [
+      "Critical business data",
+      "Customer information",
+      "Financial records",
+      "Legal documents",
+      "Intellectual property"
+    ],
+    targetAudience: [
+      "Financial services",
+      "Healthcare organizations",
+      "Legal firms",
+      "Manufacturing companies",
+      "Professional services"
+    ],
+    tags: ["Data Backup", "Disaster Recovery", "Business Continuity", "Data Protection", "Compliance"],
+    estimatedDelivery: "2-3 weeks",
+    supportLevel: "premium",
+    marketPrice: "$1,500 - $4,000/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
+  },
+  {
+    id: "it-consulting-strategy",
+    title: "IT Strategy & Digital Transformation Consulting",
+    description: "Strategic IT consulting services to help organizations plan, implement, and optimize their technology infrastructure and digital transformation initiatives.",
+    category: "IT Support & Consulting",
+    subcategory: "Strategic Consulting",
+    price: 3000,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Technology assessment and audit",
+      "Digital transformation roadmap",
+      "IT strategy development",
+      "Technology vendor selection",
+      "Implementation planning",
+      "Change management",
+      "ROI analysis",
+      "Technology governance"
+    ],
+    benefits: [
+      "Optimized technology investments",
+      "Improved operational efficiency",
+      "Competitive advantage",
+      "Risk reduction",
+      "Better decision making",
+      "Long-term cost savings"
+    ],
+    useCases: [
+      "Technology modernization",
+      "Digital transformation",
+      "IT infrastructure planning",
+      "Technology consolidation",
+      "Compliance and security"
+    ],
+    targetAudience: [
+      "C-level executives",
+      "IT directors",
+      "Business owners",
+      "Operations managers",
+      "Strategic planners"
+    ],
+    tags: ["IT Strategy", "Digital Transformation", "Technology Consulting", "Strategic Planning", "Change Management"],
+    estimatedDelivery: "4-6 weeks",
+    supportLevel: "premium",
+    marketPrice: "$3,000 - $8,000/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
+  },
+  {
+    id: "hardware-procurement-support",
+    title: "Hardware Procurement & IT Asset Management",
+    description: "Comprehensive hardware procurement services including vendor management, asset tracking, and lifecycle management for IT equipment.",
+    category: "IT Support & Consulting",
+    subcategory: "Hardware Management",
+    price: 1000,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Hardware needs assessment",
+      "Vendor evaluation and selection",
+      "Procurement management",
+      "Asset tracking and inventory",
+      "Warranty management",
+      "Lifecycle planning",
+      "Disposal and recycling",
+      "Cost optimization"
+    ],
+    benefits: [
+      "Cost-effective procurement",
+      "Quality equipment selection",
+      "Better vendor relationships",
+      "Asset visibility and control",
+      "Reduced waste",
+      "Compliance with policies"
+    ],
+    useCases: [
+      "Computer workstations",
+      "Servers and storage",
+      "Networking equipment",
+      "Mobile devices",
+      "Peripheral equipment"
+    ],
+    targetAudience: [
+      "IT managers",
+      "Procurement teams",
+      "Facility managers",
+      "Business owners",
+      "Operations directors"
+    ],
+    tags: ["Hardware Procurement", "Asset Management", "Vendor Management", "Inventory Control", "Lifecycle Management"],
+    estimatedDelivery: "1-2 weeks",
+    supportLevel: "standard",
+    marketPrice: "$1,000 - $2,500/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
   }
 ];
 
@@ -1253,5 +1560,6 @@ export const SERVICE_CATEGORIES = [
   "Digital Transformation",
   "Web & Mobile Development",
   "IT Support & Consulting",
-  "Blockchain & Web3"
+  "Blockchain & Web3",
+  "AI & Autonomous Systems"
 ];
