@@ -44,24 +44,31 @@ const App = () => {
     <ThemeProvider>
       <WhitelabelProvider>
         <Router>
-          <div className="min-h-screen bg-zion-blue-dark">
+          <div className="App min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
             <MainNavigation />
-            <main className="pt-16">
+            
+            {/* Main Content with enhanced Suspense */}
+            <main className="pt-20 min-h-screen">
               <Suspense fallback={<EnhancedLoadingFallback />}>
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/services" element={<ServicesPage />} />
-                  <Route path="/expanded-services" element={<ExpandedServicesPage />} />
+                  <Route path="/services-showcase" element={<ExpandedServicesPage />} />
                   <Route path="/ai-services" element={<AIServicesPage />} />
-                  <Route path="/cybersecurity-services" element={<CybersecurityServicesPage />} />
+                  <Route path="/cybersecurity" element={<CybersecurityServicesPage />} />
                   <Route path="/services-comparison" element={<ServicesComparisonPage />} />
                   <Route path="/it-onsite-services" element={<ITOnsiteServicesPage />} />
-                  <Route path="/contact" element={<Contact />} />
+                  
+                  {/* Our enhanced service routes */}
                   <Route path="/about" element={<About />} />
+                  <Route path="/contact" element={<Contact />} />
+                  
+                  {/* Catch all route */}
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </Suspense>
             </main>
+            
             <Footer />
             <ToastContainer />
           </div>
