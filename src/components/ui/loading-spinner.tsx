@@ -1,37 +1,48 @@
 import React from 'react';
+import { cn } from '@/lib/utils';
 
 interface LoadingSpinnerProps {
   size?: 'sm' | 'md' | 'lg' | 'xl';
-  variant?: 'default' | 'primary' | 'secondary' | 'white';
+  variant?: 'default' | 'pulse' | 'bounce' | 'wave';
+  text?: string;
   className?: string;
 }
 
+const sizeClasses = {
+  sm: 'w-4 h-4',
+  md: 'w-6 h-6',
+  lg: 'w-8 h-8',
+  xl: 'w-12 h-12'
+};
+
+const variantClasses = {
+  default: 'animate-spin',
+  pulse: 'animate-pulse',
+  bounce: 'animate-bounce',
+  wave: 'animate-pulse'
+};
+
 export function LoadingSpinner({ 
   size = 'md', 
-  variant = 'default',
+  variant = 'default', 
+  text,
   className = '' 
 }: LoadingSpinnerProps) {
-  const sizeClasses = {
-    sm: 'w-4 h-4',
-    md: 'w-6 h-6',
-    lg: 'w-8 h-8',
-    xl: 'w-12 h-12'
-  };
-
-  const variantClasses = {
-    default: 'text-zion-cyan',
-    primary: 'text-zion-blue',
-    secondary: 'text-zion-purple',
-    white: 'text-white'
-  };
-
   return (
-    <div
-      className={`animate-spin rounded-full border-2 border-current border-t-transparent ${sizeClasses[size]} ${variantClasses[variant]} ${className}`}
-      role="status"
-      aria-label="Loading"
-    >
-      <span className="sr-only">Loading...</span>
+    <div className={cn('flex flex-col items-center justify-center', className)}>
+      <div
+        className={cn(
+          'border-2 border-current border-t-transparent rounded-full',
+          sizeClasses[size],
+          variantClasses[variant],
+          'text-zion-cyan'
+        )}
+      />
+      {text && (
+        <p className="mt-2 text-sm text-zion-slate-light text-center">
+          {text}
+        </p>
+      )}
     </div>
   );
 }
