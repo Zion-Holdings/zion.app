@@ -23,6 +23,7 @@ import {
 } from './routes';
 
 const Home = React.lazy(() => import('./pages/Home'));
+const About = React.lazy(() => import('./pages/About'));
 const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
 const TalentsPage = React.lazy(() => import('./pages/TalentsPage'));
@@ -45,8 +46,20 @@ const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
 const MicroSaasServices = React.lazy(() => import('./pages/MicroSaasServices'));
 const PricingPage = React.lazy(() => import('./pages/PricingPage'));
 
+// Service Pages
+const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
+const CloudDevOpsSolutions = React.lazy(() => import('./pages/CloudDevOpsSolutions'));
+const EnterpriseSolutionsPage = React.lazy(() => import('./pages/EnterpriseSolutionsPage'));
+const DigitalTransformation = React.lazy(() => import('./pages/DigitalTransformation'));
+const EmergingTechServices = React.lazy(() => import('./pages/EmergingTechServices'));
+
+// Legal Pages
+const Privacy = React.lazy(() => import('./pages/Privacy'));
+const Terms = React.lazy(() => import('./pages/Terms'));
+
 const baseRoutes = [
   { path: '/', element: <Home /> },
+  { path: '/about', element: <About /> },
   { path: '/match', element: <AIMatcherPage /> },
   { path: '/login', element: <Login /> },
   { path: '/signup', element: <Signup /> },
@@ -69,6 +82,27 @@ const baseRoutes = [
   { path: '/request-quote', element: <RequestQuotePage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
+  
+  // Service Routes
+  { path: '/ai-services', element: <AIServicesPage /> },
+  { path: '/cloud-devops', element: <CloudDevOpsSolutions /> },
+  { path: '/enterprise-solutions', element: <EnterpriseSolutionsPage /> },
+  { path: '/digital-transformation', element: <DigitalTransformation /> },
+  { path: '/emerging-tech', element: <EmergingTechServices /> },
+  
+  // Individual AI Service Routes
+  { path: '/ai-business-intelligence', element: <AIServicesPage /> },
+  { path: '/ai-business-intelligence-pro', element: <AIServicesPage /> },
+  { path: '/ai-content-generation', element: <AIServicesPage /> },
+  { path: '/ai-content-marketing-automation', element: <AIServicesPage /> },
+  { path: '/ai-code-generation-enterprise', element: <AIServicesPage /> },
+  { path: '/ai-code-review-copilot', element: <AIServicesPage /> },
+  { path: '/ai-autonomous-research-assistant', element: <AIServicesPage /> },
+  { path: '/ai-consciousness-evolution-platform', element: <AIServicesPage /> },
+  
+  // Legal Pages
+  { path: '/privacy', element: <Privacy /> },
+  { path: '/terms', element: <Terms /> },
 ];
 
 const App = () => {

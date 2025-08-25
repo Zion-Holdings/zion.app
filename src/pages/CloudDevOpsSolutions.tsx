@@ -1,442 +1,450 @@
-import React, { useState } from 'react';
-import { Search, Filter, Star, Clock, DollarSign, Users, Zap, Brain, Cloud, Database, Shield, Settings, Eye, Leaf, CreditCard, Heart, Truck, ShoppingCart, Phone, Mail, MapPin, Globe, Bot, Cpu, Network, Database as DatabaseIcon, Shield as ShieldIcon, Zap as ZapIcon, Building, Factory, Store, Car, Plane, Ship, Home, Building2, GraduationCap, Stethoscope, Target, TrendingUp, PieChart, Activity, Zap as ZapIcon2, BarChart3, Users as UsersIcon, CreditCard as CreditCardIcon, MessageSquare, Camera, Video, Music, BookOpen, Calendar, FileText, BarChart3 as BarChart3Icon, Users as UsersIcon2, CreditCard as CreditCardIcon2, MessageSquare as MessageSquareIcon, Camera as CameraIcon, Video as VideoIcon, Music as MusicIcon, BookOpen as BookOpenIcon } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Cloud, Cpu, Shield, Zap, Database, Server, GitBranch, Monitor, Rocket, Target, Users, Globe } from 'lucide-react';
 
-const CloudDevOpsSolutions: React.FC = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [selectedComplexity, setSelectedComplexity] = useState<string>('all');
-
-  // Cloud & DevOps Solutions data
-  const cloudDevOpsSolutions = [
+const CloudDevOpsSolutions = () => {
+  const cloudServices = [
     {
-      id: 1,
-      name: "Multi-Cloud Infrastructure Management",
-      category: "Cloud Infrastructure",
-      complexity: "Enterprise",
-      description: "Comprehensive multi-cloud infrastructure management with automated provisioning and cost optimization",
-      price: 95000,
-      pricingModel: "project-based",
-      expertiseScore: 98,
-      features: ["Multi-cloud orchestration", "Automated provisioning", "Cost optimization", "Performance monitoring"],
-      benefits: ["Reduced costs", "Better performance", "Risk mitigation", "Scalability"],
-      useCases: ["Large enterprises", "Multi-region deployments", "Hybrid cloud", "Disaster recovery"],
-      technologies: ["AWS", "Azure", "GCP", "Kubernetes", "Terraform"],
-      tags: ["Multi-Cloud", "Infrastructure", "Automation", "Cost Optimization", "Orchestration"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
+      title: 'Cloud Infrastructure',
+      description: 'Scalable and secure cloud infrastructure solutions for modern businesses.',
+      services: [
+        'AWS, Azure, and Google Cloud expertise',
+        'Multi-cloud architecture design',
+        'Cloud migration and optimization',
+        'Cost optimization and management'
+      ],
+      icon: Cloud,
+      color: 'from-blue-500 to-cyan-500'
     },
     {
-      id: 2,
-      name: "Kubernetes & Container Orchestration",
-      category: "Containerization",
-      complexity: "Advanced",
-      description: "Enterprise-grade Kubernetes deployment and management with advanced monitoring and scaling",
-      price: 75000,
-      pricingModel: "project-based",
-      expertiseScore: 97,
-      features: ["Kubernetes deployment", "Auto-scaling", "Service mesh", "Monitoring & alerting"],
-      benefits: ["Scalability", "Resource efficiency", "Deployment automation", "High availability"],
-      useCases: ["Microservices", "Cloud-native apps", "DevOps pipelines", "High-traffic applications"],
-      technologies: ["Kubernetes", "Docker", "Helm", "Istio", "Prometheus"],
-      tags: ["Kubernetes", "Containerization", "Microservices", "DevOps", "Scalability"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
+      title: 'DevOps Automation',
+      description: 'Streamline development and operations with intelligent automation.',
+      services: [
+        'CI/CD pipeline automation',
+        'Infrastructure as Code (IaC)',
+        'Container orchestration',
+        'Monitoring and alerting'
+      ],
+      icon: GitBranch,
+      color: 'from-green-500 to-emerald-500'
     },
     {
-      id: 3,
-      name: "CI/CD Pipeline Automation",
-      category: "DevOps",
-      complexity: "Mid-Size",
-      description: "End-to-end CI/CD pipeline automation for faster, more reliable software delivery",
-      price: 55000,
-      pricingModel: "project-based",
-      expertiseScore: 95,
-      features: ["Pipeline automation", "Testing integration", "Deployment automation", "Rollback capabilities"],
-      benefits: ["Faster delivery", "Quality improvement", "Reduced errors", "Team productivity"],
-      useCases: ["Software development", "Web applications", "Mobile apps", "API services"],
-      technologies: ["Jenkins", "GitLab CI", "GitHub Actions", "Docker", "Ansible"],
-      tags: ["CI/CD", "Automation", "DevOps", "Deployment", "Testing"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 4,
-      name: "Serverless Architecture Solutions",
-      category: "Serverless",
-      complexity: "Advanced",
-      description: "Modern serverless architecture design and implementation for scalable applications",
-      price: 65000,
-      pricingModel: "project-based",
-      expertiseScore: 96,
-      features: ["Function design", "Event-driven architecture", "Auto-scaling", "Cost optimization"],
-      benefits: ["Reduced costs", "Automatic scaling", "Faster development", "Maintenance-free"],
-      useCases: ["Web applications", "API services", "Data processing", "IoT applications"],
-      technologies: ["AWS Lambda", "Azure Functions", "Google Cloud Functions", "EventBridge"],
-      tags: ["Serverless", "Functions", "Event-Driven", "Auto-scaling", "Cost Optimization"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 5,
-      name: "Infrastructure as Code (IaC)",
-      category: "Infrastructure",
-      complexity: "Mid-Size",
-      description: "Infrastructure automation using code for consistent, repeatable deployments",
-      price: 45000,
-      pricingModel: "project-based",
-      expertiseScore: 94,
-      features: ["Terraform modules", "Ansible playbooks", "Version control", "Environment management"],
-      benefits: ["Consistency", "Reproducibility", "Version control", "Cost savings"],
-      useCases: ["Cloud infrastructure", "On-premises setup", "Hybrid environments", "Disaster recovery"],
-      technologies: ["Terraform", "Ansible", "CloudFormation", "ARM Templates", "Puppet"],
-      tags: ["Infrastructure as Code", "Automation", "Terraform", "Ansible", "Version Control"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 6,
-      name: "Cloud Security & Compliance",
-      category: "Security",
-      complexity: "Enterprise",
-      description: "Comprehensive cloud security solutions with compliance monitoring and threat detection",
-      price: 85000,
-      pricingModel: "project-based",
-      expertiseScore: 99,
-      features: ["Security monitoring", "Compliance automation", "Threat detection", "Access management"],
-      benefits: ["Enhanced security", "Compliance", "Risk reduction", "Audit readiness"],
-      useCases: ["Financial services", "Healthcare", "Government", "Enterprise applications"],
-      technologies: ["AWS Security Hub", "Azure Security Center", "CloudTrail", "IAM", "WAF"],
-      tags: ["Cloud Security", "Compliance", "Threat Detection", "Access Control", "Monitoring"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 7,
-      name: "Database Migration & Optimization",
-      category: "Database",
-      complexity: "Advanced",
-      description: "Cloud database migration services with performance optimization and scaling",
-      price: 70000,
-      pricingModel: "project-based",
-      expertiseScore: 95,
-      features: ["Migration planning", "Performance tuning", "Scaling strategies", "Backup & recovery"],
-      benefits: ["Better performance", "Cost reduction", "Scalability", "Reliability"],
-      useCases: ["Legacy system migration", "Performance improvement", "Cloud adoption", "Database scaling"],
-      technologies: ["AWS RDS", "Azure SQL", "Google Cloud SQL", "MongoDB Atlas", "PostgreSQL"],
-      tags: ["Database Migration", "Performance Tuning", "Cloud Databases", "Scaling", "Optimization"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 8,
-      name: "Monitoring & Observability Platform",
-      category: "Monitoring",
-      complexity: "Mid-Size",
-      description: "Comprehensive monitoring and observability solutions for cloud-native applications",
-      price: 60000,
-      pricingModel: "project-based",
-      expertiseScore: 93,
-      features: ["Application monitoring", "Infrastructure monitoring", "Log aggregation", "Alerting system"],
-      benefits: ["Proactive monitoring", "Faster troubleshooting", "Performance insights", "Cost optimization"],
-      useCases: ["Web applications", "Microservices", "Cloud infrastructure", "DevOps teams"],
-      technologies: ["Prometheus", "Grafana", "ELK Stack", "Datadog", "New Relic"],
-      tags: ["Monitoring", "Observability", "Logging", "Alerting", "Performance"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 9,
-      name: "Disaster Recovery & Business Continuity",
-      category: "Disaster Recovery",
-      complexity: "Enterprise",
-      description: "Comprehensive disaster recovery solutions ensuring business continuity and data protection",
-      price: 120000,
-      pricingModel: "project-based",
-      expertiseScore: 98,
-      features: ["Backup strategies", "Recovery planning", "Testing procedures", "Documentation"],
-      benefits: ["Business continuity", "Data protection", "Risk mitigation", "Compliance"],
-      useCases: ["Financial services", "Healthcare", "E-commerce", "Enterprise applications"],
-      technologies: ["AWS Backup", "Azure Site Recovery", "Veeam", "Commvault", "Custom solutions"],
-      tags: ["Disaster Recovery", "Business Continuity", "Backup", "Recovery", "Risk Mitigation"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 10,
-      name: "Cloud Cost Optimization & Management",
-      category: "Cost Management",
-      complexity: "Mid-Size",
-      description: "Cloud cost optimization strategies and automated cost management solutions",
-      price: 50000,
-      pricingModel: "project-based",
-      expertiseScore: 94,
-      features: ["Cost analysis", "Resource optimization", "Automated scaling", "Budget management"],
-      benefits: ["Cost reduction", "Resource efficiency", "Budget control", "ROI improvement"],
-      useCases: ["Large cloud deployments", "Cost-conscious organizations", "Startups", "Enterprise"],
-      technologies: ["AWS Cost Explorer", "Azure Cost Management", "Google Cloud Billing", "Custom tools"],
-      tags: ["Cost Optimization", "Resource Management", "Budget Control", "ROI", "Efficiency"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
+      title: 'Security & Compliance',
+      description: 'Enterprise-grade security and compliance solutions.',
+      services: [
+        'Identity and access management',
+        'Security monitoring and threat detection',
+        'Compliance automation (SOC2, HIPAA)',
+        'Vulnerability assessment and remediation'
+      ],
+      icon: Shield,
+      color: 'from-red-500 to-pink-500'
     }
   ];
 
-  const categories = ['all', 'Cloud Infrastructure', 'Containerization', 'DevOps', 'Serverless', 'Infrastructure', 'Security', 'Database', 'Monitoring', 'Disaster Recovery', 'Cost Management'];
-  const complexityLevels = ['all', 'Basic', 'Mid-Size', 'Advanced', 'Enterprise'];
-
-  const filteredSolutions = cloudDevOpsSolutions.filter(solution => {
-    const matchesSearch = solution.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         solution.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         solution.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
-    
-    const matchesCategory = selectedCategory === 'all' || solution.category === selectedCategory;
-    const matchesComplexity = selectedComplexity === 'all' || solution.complexity === selectedComplexity;
-    
-    return matchesSearch && matchesCategory && matchesComplexity;
-  });
-
-  const formatPrice = (price: number, model: string) => {
-    switch (model) {
-      case 'monthly':
-        return `$${price.toLocaleString()}/month`;
-      case 'hourly':
-        return `$${price}/hour`;
-      case 'project-based':
-        return `$${price.toLocaleString()}`;
-      default:
-        return `$${price.toLocaleString()}`;
+  const benefits = [
+    {
+      title: 'Faster Deployment',
+      description: 'Reduce time-to-market with automated CI/CD pipelines and cloud-native solutions.',
+      icon: Zap,
+      color: 'from-yellow-500 to-orange-500'
+    },
+    {
+      title: 'Cost Optimization',
+      description: 'Optimize cloud spending and infrastructure costs through intelligent automation.',
+      icon: Target,
+      color: 'from-green-500 to-emerald-500'
+    },
+    {
+      title: 'Scalability',
+      description: 'Scale your infrastructure automatically based on demand and business growth.',
+      icon: Rocket,
+      color: 'from-blue-500 to-cyan-500'
+    },
+    {
+      title: 'Security & Reliability',
+      description: 'Enterprise-grade security and 99.9% uptime guarantees for your applications.',
+      icon: Shield,
+      color: 'from-purple-500 to-pink-500'
     }
-  };
+  ];
 
-  const getExpertiseColor = (score: number) => {
-    if (score >= 95) return 'text-purple-500';
-    if (score >= 90) return 'text-blue-500';
-    if (score >= 85) return 'text-green-500';
-    return 'text-yellow-500';
-  };
+  const technologies = [
+    {
+      category: 'Cloud Platforms',
+      tools: ['AWS', 'Azure', 'Google Cloud', 'DigitalOcean', 'Linode'],
+      icon: Cloud
+    },
+    {
+      category: 'Container & Orchestration',
+      tools: ['Docker', 'Kubernetes', 'Helm', 'OpenShift', 'Rancher'],
+      icon: Cpu
+    },
+    {
+      category: 'Infrastructure as Code',
+      tools: ['Terraform', 'CloudFormation', 'Ansible', 'Puppet', 'Chef'],
+      icon: GitBranch
+    },
+    {
+      category: 'Monitoring & Observability',
+      tools: ['Prometheus', 'Grafana', 'ELK Stack', 'Datadog', 'New Relic'],
+      icon: Monitor
+    }
+  ];
+
+  const useCases = [
+    {
+      industry: 'E-commerce',
+      challenges: ['High traffic spikes', 'Inventory management', 'Payment processing'],
+      solutions: ['Auto-scaling infrastructure', 'Microservices architecture', 'CDN optimization']
+    },
+    {
+      industry: 'Healthcare',
+      challenges: ['Data compliance', 'High availability', 'Security requirements'],
+      solutions: ['HIPAA-compliant infrastructure', 'Multi-region deployment', 'Advanced security monitoring']
+    },
+    {
+      industry: 'Financial Services',
+      challenges: ['Regulatory compliance', 'Real-time processing', 'Data security'],
+      solutions: ['SOC2 compliance automation', 'High-performance computing', 'End-to-end encryption']
+    }
+  ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-cyan-900 to-slate-900">
-      <div className="container mx-auto px-4 py-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-cyan-600 bg-clip-text text-transparent mb-4">
-            Cloud & DevOps Solutions
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Enterprise-grade cloud infrastructure, DevOps automation, and containerization solutions for modern applications
-          </p>
-        </div>
-
-        {/* Search and Filters */}
-        <div className="mb-8 space-y-4">
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-            <input
-              type="text"
-              placeholder="Search cloud & DevOps solutions..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 bg-white/10 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
-            />
-          </div>
-          
-          <div className="flex flex-wrap gap-4">
-            <select
-              value={selectedCategory}
-              onChange={(e) => setSelectedCategory(e.target.value)}
-              className="px-4 py-2 bg-white/10 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
-            >
-              {categories.map(category => (
-                <option key={category} value={category} className="bg-gray-800 text-white">
-                  {category === 'all' ? 'All Categories' : category}
-                </option>
-              ))}
-            </select>
-            
-            <select
-              value={selectedComplexity}
-              onChange={(e) => setSelectedComplexity(e.target.value)}
-              className="px-4 py-2 bg-white/10 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-cyan-500"
-            >
-              {complexityLevels.map(level => (
-                <option key={level} value={level} className="bg-gray-800 text-white">
-                  {level === 'all' ? 'All Complexity Levels' : level}
-                </option>
-              ))}
-            </select>
-          </div>
-        </div>
-
-        {/* Solutions Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredSolutions.map((solution) => (
-            <div key={solution.id} className="bg-white/5 backdrop-blur-sm border border-gray-600 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 hover:shadow-2xl hover:shadow-cyan-500/20">
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-white mb-2">{solution.name}</h3>
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className={`px-2 py-1 text-xs font-medium rounded-full ${getExpertiseColor(solution.expertiseScore)} bg-opacity-20 bg-current`}>
-                      Expertise Score: {solution.expertiseScore}
-                    </span>
-                    <span className="px-2 py-1 text-xs font-medium rounded-full text-cyan-400 bg-cyan-400 bg-opacity-20">
-                      {solution.complexity}
-                    </span>
-                  </div>
-                </div>
-              </div>
-              
-              <p className="text-gray-300 mb-4">{solution.description}</p>
-              
-              <div className="mb-4">
-                <div className="flex items-center gap-2 text-cyan-400 mb-2">
-                  <DollarSign className="w-4 h-4" />
-                  <span className="font-semibold">{formatPrice(solution.price, solution.pricingModel)}</span>
-                </div>
-                <div className="flex items-center gap-2 text-green-400 mb-2">
-                  <Users className="w-4 h-4" />
-                  <span className="text-sm">{solution.complexity} Level</span>
-                </div>
-              </div>
-
-              <div className="mb-4">
-                <h4 className="text-white font-semibold mb-2">Key Features:</h4>
-                <div className="flex flex-wrap gap-2">
-                  {solution.features.slice(0, 3).map((feature, index) => (
-                    <span key={index} className="px-2 py-1 text-xs bg-cyan-500/20 text-cyan-300 rounded">
-                      {feature}
-                    </span>
-                  ))}
-                  {solution.features.length > 3 && (
-                    <span className="px-2 py-1 text-xs bg-gray-500/20 text-gray-300 rounded">
-                      +{solution.features.length - 3} more
-                    </span>
-                  )}
-                </div>
-              </div>
-
-              <div className="mb-4">
-                <h4 className="text-white font-semibold mb-2">Technologies:</h4>
-                <div className="flex flex-wrap gap-2">
-                  {solution.technologies.map((tech, index) => (
-                    <span key={index} className="px-2 py-1 text-xs bg-blue-500/20 text-blue-300 rounded">
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mb-4">
-                <h4 className="text-white font-semibold mb-2">Benefits:</h4>
-                <div className="flex flex-wrap gap-2">
-                  {solution.benefits.map((benefit, index) => (
-                    <span key={index} className="px-2 py-1 text-xs bg-green-500/20 text-green-300 rounded">
-                      {benefit}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mb-4">
-                <h4 className="text-white font-semibold mb-2">Use Cases:</h4>
-                <div className="flex flex-wrap gap-2">
-                  {solution.useCases.map((useCase, index) => (
-                    <span key={index} className="px-2 py-1 text-xs bg-purple-500/20 text-purple-300 rounded">
-                      {useCase}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="border-t border-gray-600 pt-4">
-                <div className="flex items-center justify-between text-sm text-gray-400 mb-2">
-                  <span>Contact Information:</span>
-                </div>
-                <div className="space-y-1 text-sm">
-                  <div className="flex items-center gap-2 text-gray-300">
-                    <Phone className="w-4 h-4" />
-                    <span>{solution.contactInfo.phone}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-gray-300">
-                    <Mail className="w-4 h-4" />
-                    <span>{solution.contactInfo.email}</span>
-                  </div>
-                  <div className="flex items-center gap-2 text-gray-300">
-                    <Globe className="w-4 h-4" />
-                    <a href={solution.contactInfo.website} target="_blank" rel="noopener noreferrer" className="text-cyan-400 hover:underline">
-                      {solution.contactInfo.website}
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Contact Section */}
-        <div className="mt-16 text-center">
-          <div className="bg-white/5 backdrop-blur-sm border border-gray-600 rounded-xl p-8">
-            <h2 className="text-3xl font-bold text-white mb-4">Ready to Transform Your Cloud Infrastructure?</h2>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Our cloud and DevOps experts are ready to help you build scalable, secure, and efficient cloud solutions that will drive your business forward.
+    <div className="min-h-screen bg-zion-blue-dark text-white">
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-zion-cyan/20 via-zion-purple/20 to-zion-blue-light/20"></div>
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+              Cloud &{' '}
+              <span className="bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
+                DevOps
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl text-zion-slate-light leading-relaxed mb-8">
+              Accelerate your digital transformation with enterprise-grade cloud infrastructure 
+              and DevOps automation solutions.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <div className="flex items-center gap-2 text-cyan-400">
-                <Phone className="w-5 h-5" />
-                <span className="font-semibold">+1 302 464 0950</span>
-              </div>
-              <div className="flex items-center gap-2 text-cyan-400">
-                <Mail className="w-5 h-5" />
-                <span className="font-semibold">kleber@ziontechgroup.com</span>
-              </div>
-              <div className="flex items-center gap-2 text-cyan-400">
-                <MapPin className="w-5 h-5" />
-                <span className="font-semibold">364 E Main St STE 1008 Middletown DE 19709</span>
-              </div>
+            <div className="flex flex-wrap justify-center gap-4">
+              <button className="px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white font-semibold rounded-2xl hover:shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300">
+                Get Started
+              </button>
+              <button className="px-8 py-4 border border-zion-cyan/30 text-zion-cyan font-semibold rounded-2xl hover:bg-zion-cyan hover:text-white transition-all duration-300">
+                Schedule a Demo
+              </button>
             </div>
-            <div className="mt-6">
-              <a
-                href="https://ziontechgroup.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-600 transition-all duration-300"
-              >
-                <Globe className="w-5 h-5" />
-                Visit Our Website
-              </a>
-            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Benefits Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-6">
+              Why Choose Our{' '}
+              <span className="bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
+                Cloud & DevOps
+              </span>
+            </h2>
+            <p className="text-lg text-zion-slate-light max-w-2xl mx-auto">
+              Experience the benefits of modern cloud infrastructure and DevOps practices.
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {benefits.map((benefit, index) => {
+              const IconComponent = benefit.icon;
+              return (
+                <motion.div
+                  key={benefit.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="text-center p-6 rounded-2xl bg-zion-blue-dark/50 border border-zion-cyan/20 hover:border-zion-cyan/40 transition-all duration-300"
+                >
+                  <div className={`w-16 h-16 bg-gradient-to-br ${benefit.color} rounded-2xl flex items-center justify-center mx-auto mb-4`}>
+                    <IconComponent className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
+                  <p className="text-zion-slate-light">{benefit.description}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Cloud Services */}
+      <section className="py-20 bg-zion-blue-light/5">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-6">
+              Our{' '}
+              <span className="bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
+                Services
+              </span>
+            </h2>
+            <p className="text-lg text-zion-slate-light max-w-2xl mx-auto">
+              Comprehensive cloud and DevOps solutions designed for modern enterprises.
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {cloudServices.map((service, index) => {
+              const IconComponent = service.icon;
+              return (
+                <motion.div
+                  key={service.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="p-8 rounded-2xl bg-zion-blue-dark/50 border border-zion-cyan/20 hover:border-zion-cyan/40 transition-all duration-300"
+                >
+                  <div className={`w-20 h-20 bg-gradient-to-br ${service.color} rounded-2xl flex items-center justify-center mb-6`}>
+                    <IconComponent className="w-10 h-10 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>
+                  <p className="text-zion-slate-light mb-6">{service.description}</p>
+                  <ul className="space-y-3">
+                    {service.services.map((item, itemIndex) => (
+                      <li key={itemIndex} className="flex items-center gap-3 text-zion-slate-light">
+                        <div className="w-2 h-2 bg-zion-cyan rounded-full"></div>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Technologies */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-6">
+              Technologies &{' '}
+              <span className="bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
+                Tools
+              </span>
+            </h2>
+            <p className="text-lg text-zion-slate-light max-w-2xl mx-auto">
+              We work with the latest and most reliable technologies in the industry.
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {technologies.map((tech, index) => {
+              const IconComponent = tech.icon;
+              return (
+                <motion.div
+                  key={tech.category}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="p-6 rounded-2xl bg-zion-blue-dark/50 border border-zion-cyan/20 hover:border-zion-cyan/40 transition-all duration-300"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-2xl flex items-center justify-center mb-4">
+                    <IconComponent className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-4">{tech.category}</h3>
+                  <div className="space-y-2">
+                    {tech.tools.map((tool, toolIndex) => (
+                      <div key={toolIndex} className="text-zion-slate-light text-sm bg-zion-blue-light/20 px-3 py-2 rounded-lg">
+                        {tool}
+                      </div>
+                    ))}
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases */}
+      <section className="py-20 bg-zion-blue-light/5">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-6">
+              Industry{' '}
+              <span className="bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
+                Solutions
+              </span>
+            </h2>
+            <p className="text-lg text-zion-slate-light max-w-2xl mx-auto">
+              Tailored solutions for specific industry challenges and requirements.
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            {useCases.map((useCase, index) => (
+              <motion.div
+                key={useCase.industry}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="p-6 rounded-2xl bg-zion-blue-dark/50 border border-zion-cyan/20 hover:border-zion-cyan/40 transition-all duration-300"
+              >
+                <h3 className="text-2xl font-semibold mb-6 text-zion-cyan">{useCase.industry}</h3>
+                
+                <div className="mb-6">
+                  <h4 className="text-lg font-semibold mb-3 text-white">Challenges:</h4>
+                  <ul className="space-y-2">
+                    {useCase.challenges.map((challenge, challengeIndex) => (
+                      <li key={challengeIndex} className="flex items-center gap-2 text-zion-slate-light">
+                        <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                        {challenge}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div>
+                  <h4 className="text-lg font-semibold mb-3 text-white">Our Solutions:</h4>
+                  <ul className="space-y-2">
+                    {useCase.solutions.map((solution, solutionIndex) => (
+                      <li key={solutionIndex} className="flex items-center gap-2 text-zion-slate-light">
+                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                        {solution}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Process Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold mb-6">
+              Our{' '}
+              <span className="bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
+                Process
+              </span>
+            </h2>
+            <p className="text-lg text-zion-slate-light max-w-2xl mx-auto">
+              A proven methodology for successful cloud and DevOps implementation.
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                step: '01',
+                title: 'Assessment',
+                description: 'Evaluate current infrastructure and identify optimization opportunities.',
+                icon: Monitor
+              },
+              {
+                step: '02',
+                title: 'Strategy',
+                description: 'Develop comprehensive cloud and DevOps strategy aligned with business goals.',
+                icon: Target
+              },
+              {
+                step: '03',
+                title: 'Implementation',
+                description: 'Execute the strategy with best practices and proven methodologies.',
+                icon: Rocket
+              },
+              {
+                step: '04',
+                title: 'Optimization',
+                description: 'Continuously monitor, optimize, and improve your infrastructure.',
+                icon: Zap
+              }
+            ].map((step, index) => {
+              const IconComponent = step.icon;
+              return (
+                <motion.div
+                  key={step.step}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="text-center p-6 rounded-2xl bg-zion-blue-dark/50 border border-zion-cyan/20 hover:border-zion-cyan/40 transition-all duration-300"
+                >
+                  <div className="w-16 h-16 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-full flex items-center justify-center mx-auto mb-4 text-2xl font-bold">
+                    {step.step}
+                  </div>
+                  <div className="w-16 h-16 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <IconComponent className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
+                  <p className="text-zion-slate-light">{step.description}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 bg-zion-blue-light/5">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center max-w-4xl mx-auto"
+          >
+            <h2 className="text-4xl font-bold mb-6">
+              Ready to Transform Your Infrastructure?
+            </h2>
+            <p className="text-lg text-zion-slate-light mb-8">
+              Let us help you build a scalable, secure, and efficient cloud infrastructure 
+              that drives your business forward.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white font-semibold rounded-2xl hover:shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300">
+                Start Your Journey
+              </button>
+              <button className="px-8 py-4 border border-zion-cyan/30 text-zion-cyan font-semibold rounded-2xl hover:bg-zion-cyan hover:text-white transition-all duration-300">
+                Get a Free Assessment
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 };

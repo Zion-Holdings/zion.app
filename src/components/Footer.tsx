@@ -19,7 +19,7 @@ const Footer = () => {
       </div>
       
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-1">
             <motion.div 
@@ -89,11 +89,42 @@ const Footer = () => {
             </motion.div>
           </div>
 
-          {/* Marketplace Links */}
+          {/* Services Links */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <h3 className="text-white font-semibold mb-6 text-lg">Services</h3>
+            <ul className="space-y-3">
+              <li><Link to="/ai-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
+                <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
+                AI & Machine Learning
+              </Link></li>
+              <li><Link to="/cloud-devops" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
+                <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
+                Cloud & DevOps
+              </Link></li>
+              <li><Link to="/enterprise-solutions" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
+                <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
+                Enterprise Solutions
+              </Link></li>
+              <li><Link to="/digital-transformation" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
+                <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
+                Digital Transformation
+              </Link></li>
+              <li><Link to="/emerging-tech" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
+                <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
+                Emerging Tech
+              </Link></li>
+            </ul>
+          </motion.div>
+
+          {/* Marketplace Links */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
           >
             <h3 className="text-white font-semibold mb-6 text-lg">Marketplace</h3>
             <ul className="space-y-3">
@@ -128,7 +159,7 @@ const Footer = () => {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
           >
             <h3 className="text-white font-semibold mb-6 text-lg">Company</h3>
             <ul className="space-y-3">
@@ -159,7 +190,7 @@ const Footer = () => {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
           >
             <h3 className="text-white font-semibold mb-6 text-lg">Stay Updated</h3>
             <p className="text-zion-slate-light mb-6">

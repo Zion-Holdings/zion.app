@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Menu, X, ChevronDown, Globe, Zap, Shield, Cpu, Cloud, Brain, Rocket } from 'lucide-react';
+import { Menu, X, ChevronDown, Globe, Zap, Shield, Cpu, Cloud, Brain, Rocket, FileText, DollarSign, MessageSquare } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export const Header: React.FC = () => {
@@ -61,6 +61,13 @@ export const Header: React.FC = () => {
       link: '/emerging-tech',
       color: 'from-yellow-500 to-orange-500'
     }
+  ];
+
+  const companyLinks = [
+    { title: 'About Us', link: '/about', icon: FileText },
+    { title: 'Contact', link: '/contact', icon: MessageSquare },
+    { title: 'Blog', link: '/blog', icon: Globe },
+    { title: 'Pricing', link: '/pricing', icon: DollarSign }
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -161,43 +168,31 @@ export const Header: React.FC = () => {
               </AnimatePresence>
             </div>
 
-            <Link 
-              to="/about" 
-              className={`px-3 py-2 text-sm font-medium transition-all duration-300 hover:text-zion-cyan ${
-                isActive('/about') ? 'text-zion-cyan' : 'text-white'
-              }`}
-            >
-              About
-            </Link>
-            
-            <Link 
-              to="/contact" 
-              className={`px-3 py-2 text-sm font-medium transition-all duration-300 hover:text-zion-cyan ${
-                isActive('/contact') ? 'text-zion-cyan' : 'text-white'
-              }`}
-            >
-              Contact
-            </Link>
-            
-            <Link 
-              to="/blog" 
-              className={`px-3 py-2 text-sm font-medium transition-all duration-300 hover:text-zion-cyan ${
-                isActive('/blog') ? 'text-zion-cyan' : 'text-white'
-              }`}
-            >
-              Blog
-            </Link>
+            {/* Company Links */}
+            {companyLinks.map((link) => (
+              <Link 
+                key={link.title}
+                to={link.link} 
+                className={`px-3 py-2 text-sm font-medium transition-all duration-300 hover:text-zion-cyan ${
+                  isActive(link.link) ? 'text-zion-cyan' : 'text-white'
+                }`}
+              >
+                {link.title}
+              </Link>
+            ))}
           </nav>
           
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button 
-              variant="outline" 
-              size="sm"
-              className="border-zion-cyan/30 text-zion-cyan hover:bg-zion-cyan hover:text-white transition-all duration-300"
-            >
-              Sign In
-            </Button>
+            <Link to="/request-quote">
+              <Button 
+                variant="outline" 
+                size="sm"
+                className="border-zion-cyan/30 text-zion-cyan hover:bg-zion-cyan hover:text-white transition-all duration-300"
+              >
+                Request Quote
+              </Button>
+            </Link>
             <Button 
               size="sm"
               className="bg-gradient-to-r from-zion-cyan to-zion-purple hover:shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300"
@@ -253,44 +248,30 @@ export const Header: React.FC = () => {
                 ))}
               </div>
               
-              <Link 
-                to="/about" 
-                className={`block px-3 py-2 text-base font-medium transition-colors duration-300 ${
-                  isActive('/about') ? 'text-zion-cyan' : 'text-white hover:text-zion-cyan'
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                About
-              </Link>
-              
-              <Link 
-                to="/contact" 
-                className={`block px-3 py-2 text-base font-medium transition-colors duration-300 ${
-                  isActive('/contact') ? 'text-zion-cyan' : 'text-white hover:text-zion-cyan'
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                Contact
-              </Link>
-              
-              <Link 
-                to="/blog" 
-                className={`block px-3 py-2 text-base font-medium transition-colors duration-300 ${
-                  isActive('/blog') ? 'text-zion-cyan' : 'text-white hover:text-zion-cyan'
-                }`}
-                onClick={() => setIsOpen(false)}
-              >
-                Blog
-              </Link>
+              {/* Company Links in Mobile */}
+              {companyLinks.map((link) => (
+                <Link 
+                  key={link.title}
+                  to={link.link} 
+                  className={`block px-3 py-2 text-base font-medium transition-colors duration-300 ${
+                    isActive(link.link) ? 'text-zion-cyan' : 'text-white hover:text-zion-cyan'
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {link.title}
+                </Link>
+              ))}
               
               <div className="pt-4 space-y-3">
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  className="w-full border-zion-cyan/30 text-zion-cyan hover:bg-zion-cyan hover:text-white transition-all duration-300"
-                >
-                  Sign In
-                </Button>
+                <Link to="/request-quote" className="block">
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    className="w-full border-zion-cyan/30 text-zion-cyan hover:bg-zion-cyan hover:text-white transition-all duration-300"
+                  >
+                    Request Quote
+                  </Button>
+                </Link>
                 <Button 
                   size="sm"
                   className="w-full bg-gradient-to-r from-zion-cyan to-zion-purple hover:shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300"
