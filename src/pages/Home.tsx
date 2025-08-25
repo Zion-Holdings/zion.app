@@ -4,8 +4,45 @@ import { SEO } from "@/components/SEO";
 import { ServicesShowcase } from '../components/ServicesShowcase';
 import { EnhancedServicesShowcase } from '../components/EnhancedServicesShowcase';
 import { AdvancedServicesShowcase } from '../components/AdvancedServicesShowcase';
+import { INNOVATIVE_MICRO_SAAS_SERVICES } from '../data/innovativeMicroSaasServices';
+import { Link } from 'react-router-dom';
+import { 
+  ArrowRight, 
+  Star, 
+  Zap, 
+  Shield, 
+  Brain, 
+  Globe, 
+  Rocket,
+  TrendingUp,
+  Play,
+  BookOpen
+} from 'lucide-react';
 
 export default function Home() {
+  const getServiceIcon = (category: string) => {
+    switch (category) {
+      case 'AI & Marketing':
+        return <Brain className="w-6 h-6" />;
+      case 'Cybersecurity':
+        return <Shield className="w-6 h-6" />;
+      case 'AI & Automation':
+        return <Zap className="w-6 h-6" />;
+      case 'Blockchain & Supply Chain':
+        return <Globe className="w-6 h-6" />;
+      case 'AI & Healthcare':
+        return <Brain className="w-6 h-6" />;
+      case 'Quantum Computing':
+        return <Rocket className="w-6 h-6" />;
+      case 'AI & Edge Computing':
+        return <Zap className="w-6 h-6" />;
+      case 'AI & Finance':
+        return <TrendingUp className="w-6 h-6" />;
+      default:
+        return <Star className="w-6 h-6" />;
+    }
+  };
+
   return (
     <div className="min-h-screen relative">
       <SEO 
@@ -120,6 +157,99 @@ export default function Home() {
       
       {/* Enhanced Services Showcase */}
       <EnhancedServicesShowcase />
+
+      {/* Innovative Services Showcase */}
+      <section className="py-20 bg-gradient-to-br from-black via-gray-900 to-blue-900 relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10"></div>
+          <div className="absolute inset-0 cyber-grid opacity-20"></div>
+        </div>
+        
+        <div className="relative z-10 container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Revolutionary <span className="text-cyan-400">Innovative Services</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Experience the future of business technology with our cutting-edge micro SAAS solutions
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {INNOVATIVE_MICRO_SAAS_SERVICES.slice(0, 6).map((service, index) => (
+              <div 
+                key={service.id} 
+                className="group bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm rounded-2xl p-6 border border-gray-700 hover:border-cyan-500/50 transition-all duration-500 transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20"
+              >
+                {/* Service Header */}
+                <div className="flex items-start justify-between mb-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-xl flex items-center justify-center">
+                    {getServiceIcon(service.category)}
+                  </div>
+                  {service.featured && (
+                    <div className="flex items-center gap-1 text-yellow-400 text-sm">
+                      <Star className="w-4 h-4 fill-current" />
+                      <span>Featured</span>
+                    </div>
+                  )}
+                </div>
+
+                {/* Service Title and Description */}
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-gray-300 mb-4 line-clamp-3">
+                  {service.description}
+                </p>
+
+                {/* Service Stats */}
+                <div className="grid grid-cols-2 gap-4 mb-4">
+                  <div className="flex items-center gap-2 text-sm">
+                    <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                    <span className="text-gray-400">AI Score:</span>
+                    <span className="text-cyan-400 font-semibold">{service.aiScore}%</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
+                    <span className="text-gray-400">Rating:</span>
+                    <span className="text-blue-400 font-semibold">{service.rating}/5.0</span>
+                  </div>
+                </div>
+
+                {/* Price */}
+                <div className="text-2xl font-bold text-white mb-4">
+                  {service.currency}{service.price}
+                  <span className="text-sm text-gray-400 font-normal">/month</span>
+                </div>
+
+                {/* Action Buttons */}
+                <div className="flex gap-3">
+                  <Link 
+                    to={`/innovative-services#${service.id}`}
+                    className="flex-1 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white px-4 py-2 rounded-lg font-semibold text-sm transition-all duration-300 transform hover:scale-105 text-center"
+                  >
+                    Learn More
+                  </Link>
+                  <button className="px-4 py-2 border border-gray-600 text-gray-300 hover:border-cyan-500 hover:text-cyan-400 rounded-lg transition-colors duration-300">
+                    <Play className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Link 
+              to="/innovative-services"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105"
+            >
+              View All Innovative Services
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* Enhanced Features Section */}
       <section className="py-20 px-4 relative overflow-hidden">

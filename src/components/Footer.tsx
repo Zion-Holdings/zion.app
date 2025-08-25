@@ -5,6 +5,19 @@ export function Footer() {
 
   const footerSections = [
     {
+      title: "Innovative Services",
+      links: [
+        { label: "AI Content Factory Pro", path: "/innovative-services#ai-content-factory" },
+        { label: "Quantum-Safe Cyber Shield", path: "/innovative-services#quantum-safe-cyber-shield" },
+        { label: "Autonomous Business Ops", path: "/innovative-services#autonomous-business-ops" },
+        { label: "Blockchain Supply Chain", path: "/innovative-services#blockchain-supply-chain" },
+        { label: "AI Healthcare Diagnostics", path: "/innovative-services#ai-healthcare-diagnostics" },
+        { label: "Quantum ML Platform", path: "/innovative-services#quantum-ml-platform" },
+        { label: "Edge AI Computing", path: "/innovative-services#edge-ai-computing" },
+        { label: "Autonomous Trading", path: "/innovative-services#autonomous-financial-trading" }
+      ]
+    },
+    {
       title: "AI & Micro SAAS",
       links: [
         { label: "AI & Autonomous Systems", path: "/services/ai-autonomous-systems" },
