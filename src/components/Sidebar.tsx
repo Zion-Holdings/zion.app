@@ -1,56 +1,67 @@
-<<<<<<< HEAD
-import React from 'react';
-=======
 import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, Home, Briefcase, Users, Phone, Mail, MapPin, Globe, Linkedin, Twitter, Facebook, Instagram, Shield } from 'lucide-react';
->>>>>>> c29bead6b13f8ea7191a916e452a8526b40ccd76
 import { Link, useLocation } from 'react-router-dom';
 import { cn } from '@/lib/utils';
-import { 
-  Home, 
-  Users, 
-  Settings, 
-  FileText, 
-  HelpCircle, 
-  Info, 
-  Shield, 
-  Briefcase,
-  Globe,
-  Leaf,
-  MessageSquare,
-  Search,
-  BarChart3
-} from 'lucide-react';
 
 interface SidebarProps {
+  isOpen: boolean;
+  onClose: () => void;
   className?: string;
 }
 
-export function Sidebar({ className }: SidebarProps) {
+// Animation variants
+const overlayVariants = {
+  closed: { opacity: 0 },
+  open: { opacity: 1 }
+};
+
+const sidebarVariants = {
+  closed: { x: '-100%' },
+  open: { x: 0 }
+};
+
+// Contact information
+const contactInfo = [
+  { icon: Mail, text: 'info@ziontechgroup.com', href: 'mailto:info@ziontechgroup.com' },
+  { icon: Phone, text: '+1 (555) 123-4567', href: 'tel:+15551234567' },
+  { icon: MapPin, text: 'San Francisco, CA', href: '#' }
+];
+
+// Social media links
+const socialLinks = [
+  { icon: Linkedin, href: 'https://linkedin.com/company/ziontechgroup', label: 'LinkedIn' },
+  { icon: Twitter, href: 'https://twitter.com/ziontechgroup', label: 'Twitter' },
+  { icon: Facebook, href: 'https://facebook.com/ziontechgroup', label: 'Facebook' },
+  { icon: Instagram, href: 'https://instagram.com/ziontechgroup', label: 'Instagram' }
+];
+
+export function Sidebar({ isOpen, onClose, className }: SidebarProps) {
   const location = useLocation();
+
+  // Close sidebar on escape key
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && isOpen) {
+        onClose();
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'hidden';
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen, onClose]);
 
   const navigationItems = [
     {
       title: 'Main',
       items: [
-<<<<<<< HEAD
-        { name: 'Home', href: '/', icon: Home },
-        { name: 'Marketplace', href: '/marketplace', icon: Home },
-        { name: 'Services', href: '/services', icon: Settings },
-        { name: 'Talent', href: '/talent', icon: Users },
-        { name: 'Equipment', href: '/equipment', icon: Briefcase },
-        { name: 'Categories', href: '/categories', icon: Globe },
-      ]
-    },
-    {
-      title: 'AI & Tools',
-      items: [
-        { name: 'AI Matcher', href: '/match', icon: Search },
-        { name: 'Hire AI', href: '/zion-hire-ai', icon: MessageSquare },
-        { name: 'Green IT', href: '/green-it', icon: Leaf },
-        { name: 'Analytics', href: '/analytics', icon: BarChart3 },
-=======
         { name: 'Home', path: '/', icon: Home },
         { name: 'Services', path: '/services', icon: Briefcase },
         { name: 'About', path: '/about', icon: Users },
@@ -68,89 +79,29 @@ export function Sidebar({ className }: SidebarProps) {
         { name: 'Manufacturing AI', path: '/services?category=Manufacturing%20AI', icon: Briefcase },
         { name: 'Emerging Technology', path: '/services?category=Emerging%20Technology', icon: Globe },
         { name: 'Autonomous Systems', path: '/services?category=AI%20%26%20Autonomous%20Systems', icon: Users }
->>>>>>> c29bead6b13f8ea7191a916e452a8526b40ccd76
       ]
     },
     {
       title: 'Company',
       items: [
-<<<<<<< HEAD
-        { name: 'About Us', href: '/about', icon: Info },
-        { name: 'Blog', href: '/blog', icon: FileText },
-        { name: 'Partners', href: '/partners', icon: Users },
-        { name: 'Careers', href: '/careers', icon: Briefcase },
-        { name: 'Contact', href: '/contact', icon: MessageSquare },
-=======
         { name: 'About Us', path: '/about', icon: Users },
         { name: 'Our Team', path: '/team', icon: Users },
         { name: 'Careers', path: '/careers', icon: Briefcase },
         { name: 'News & Updates', path: '/news', icon: Globe }
->>>>>>> c29bead6b13f8ea7191a916e452a8526b40ccd76
       ]
     },
     {
       title: 'Support',
       items: [
-<<<<<<< HEAD
-        { name: 'Help Center', href: '/help', icon: HelpCircle },
-        { name: 'Request Quote', href: '/request-quote', icon: FileText },
-        { name: 'Community', href: '/community', icon: Users },
-        { name: 'Privacy', href: '/privacy', icon: Shield },
-        { name: 'Terms', href: '/terms', icon: FileText },
-=======
         { name: 'Help Center', path: '/help', icon: Users },
         { name: 'Documentation', path: '/docs', icon: Globe },
         { name: 'Contact Support', path: '/support', icon: Phone },
         { name: 'Status Page', path: '/status', icon: Globe }
->>>>>>> c29bead6b13f8ea7191a916e452a8526b40ccd76
       ]
     }
   ];
 
   return (
-<<<<<<< HEAD
-    <aside className={cn("w-64 bg-zion-blue-dark border-r border-zion-blue-light min-h-screen p-4", className)}>
-      <div className="mb-6">
-        <span className="text-xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent">
-          ZION
-        </span>
-      </div>
-      
-      <nav className="space-y-6">
-        {navigationItems.map((section) => (
-          <div key={section.title}>
-            <h3 className="text-zion-slate-light text-xs font-semibold uppercase tracking-wider mb-3">
-              {section.title}
-            </h3>
-            <ul className="space-y-1">
-              {section.items.map((item) => {
-                const Icon = item.icon;
-                const isActive = location.pathname === item.href || 
-                               (item.href !== '/' && location.pathname.startsWith(item.href));
-                
-                return (
-                  <li key={item.name}>
-                    <Link
-                      to={item.href}
-                      className={cn(
-                        "flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors",
-                        isActive
-                          ? "bg-zion-purple/20 text-zion-cyan"
-                          : "text-zion-slate-light hover:bg-zion-purple/10 hover:text-zion-cyan"
-                      )}
-                    >
-                      <Icon className="w-4 h-4 mr-3" />
-                      {item.name}
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        ))}
-      </nav>
-    </aside>
-=======
     <>
       {/* Overlay */}
       <AnimatePresence>
@@ -331,6 +282,5 @@ export function Sidebar({ className }: SidebarProps) {
         )}
       </AnimatePresence>
     </>
->>>>>>> c29bead6b13f8ea7191a916e452a8526b40ccd76
   );
 }

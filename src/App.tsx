@@ -8,8 +8,19 @@ import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
 import { motion } from "framer-motion";
 import { ThemeProvider } from "./components/ThemeProvider";
-import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
+import { Header } from './components/Header';
+import { Sidebar } from './components/Sidebar';
+import { AccessibilityControls } from './components/AccessibilityControls';
+import { EnhancedAccessibility } from './components/EnhancedAccessibility';
+import { PerformanceDashboard } from './components/PerformanceDashboard';
+import { AnalyticsDashboard } from './components/AnalyticsDashboard';
+import { AIChatbot } from './components/AIChatbot';
+import { CollaborativeTextEditor } from './components/CollaborativeTextEditor';
+import { AICodeGenerator } from './components/AICodeGenerator';
+import { EnterpriseDashboard } from './components/EnterpriseDashboard';
+import { SecurityComplianceDashboard } from './components/SecurityComplianceDashboard';
+import { MachineLearningDashboard } from './components/MachineLearningDashboard';
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -111,8 +122,6 @@ const EnhancedLoadingFallback = () => (
 );
 
 const App = () => {
-  useScrollToTop();
-
   return (
     <WhitelabelProvider>
       <ThemeProvider defaultTheme="dark">
