@@ -76,7 +76,7 @@ export function ErrorBoundary({ children, fallback }: ErrorBoundaryProps) {
             </button>
           </div>
 
-          {process.env.NODE_ENV === 'development' && error && (
+          {typeof window !== 'undefined' && window.location.hostname === 'localhost' && error && (
             <details className="mt-6 text-left">
               <summary className="cursor-pointer text-sm text-white/60 hover:text-white">
                 Error Details (Development)
