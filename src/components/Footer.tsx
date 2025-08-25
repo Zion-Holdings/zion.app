@@ -9,9 +9,12 @@ export function Footer() {
       links: [
         { label: "AI & Autonomous Systems", path: "/services/ai-autonomous-systems" },
         { label: "Quantum Technology", path: "/services/quantum-technology" },
+        { label: "Quantum Neural Networks", path: "/quantum-neural-network-platform" },
         { label: "IT Infrastructure", path: "/services/it-infrastructure" },
+        { label: "AI-Powered IT Asset Management", path: "/ai-powered-it-asset-management" },
         { label: "Micro SAAS Solutions", path: "/services/micro-saas-solutions" },
         { label: "Cybersecurity", path: "/services/cybersecurity" },
+        { label: "Advanced Cybersecurity Suite", path: "/advanced-cybersecurity-suite" },
         { label: "Industry Solutions", path: "/services/industry-solutions" },
         { label: "AI & Machine Learning", path: "/ai-solutions" },
         { label: "Cloud & Infrastructure", path: "/services/cloud-devops" },
@@ -35,6 +38,15 @@ export function Footer() {
       ]
     },
     {
+      title: "Business Operations",
+      links: [
+        { label: "Autonomous Business Operations", path: "/autonomous-business-operations-platform" },
+        { label: "Affiliate Attribution Hub", path: "/affiliate-attribution-hub" },
+        { label: "Agentic RAG Helpdesk", path: "/agentic-rag-helpdesk" },
+        { label: "Advanced Research Automation", path: "/advanced-research-automation" }
+      ]
+    },
+    {
       title: "Emerging Tech",
       links: [
         { label: "Quantum Computing", path: "/emerging-tech" },
@@ -43,7 +55,8 @@ export function Footer() {
         { label: "Extended Reality (XR)", path: "/emerging-tech" },
         { label: "5G & Networks", path: "/emerging-tech" },
         { label: "Green Technology", path: "/emerging-tech" },
-        { label: "Digital Twins", path: "/emerging-tech" }
+        { label: "Digital Twins", path: "/emerging-tech" },
+        { label: "Accessibility Auditor", path: "/accessibility-auditor" }
       ]
     },
     {

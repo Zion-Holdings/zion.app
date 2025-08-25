@@ -26,9 +26,9 @@ export function Header() {
     },
     { 
       path: '/services', 
-      label: 'AI Services', 
+      label: 'Services', 
       icon: '🤖',
-      description: 'Explore our AI service offerings'
+      description: 'Explore our comprehensive service offerings'
     },
     { 
       path: '/solutions/enterprise', 
@@ -75,12 +75,15 @@ export function Header() {
         { name: 'AI Business Intelligence', path: '/services#ai-bi' },
         { name: 'AI Marketing Automation', path: '/services#ai-marketing' },
         { name: 'AI HR & Recruitment', path: '/services#ai-hr' },
-        { name: 'AI Legal Tech', path: '/services#ai-legal' }
+        { name: 'AI Legal Tech', path: '/services#ai-legal' },
+        { name: 'Quantum Neural Networks', path: '/quantum-neural-network-platform' },
+        { name: 'Advanced Research Automation', path: '/advanced-research-automation' }
       ]
     },
     {
       title: 'Cybersecurity',
       services: [
+        { name: 'Advanced Cybersecurity Suite', path: '/advanced-cybersecurity-suite' },
         { name: 'Quantum-Safe Security', path: '/services#quantum-security' },
         { name: 'Security Assessment', path: '/services#security-assessment' },
         { name: 'Compliance & Audit', path: '/services#compliance' }
@@ -91,7 +94,16 @@ export function Header() {
       services: [
         { name: 'Cloud Migration', path: '/services#cloud-migration' },
         { name: 'Network Infrastructure', path: '/services#network' },
-        { name: 'Managed IT Services', path: '/services#managed-it' }
+        { name: 'Managed IT Services', path: '/services#managed-it' },
+        { name: 'AI-Powered IT Asset Management', path: '/ai-powered-it-asset-management' }
+      ]
+    },
+    {
+      title: 'Business Operations',
+      services: [
+        { name: 'Autonomous Business Operations', path: '/autonomous-business-operations-platform' },
+        { name: 'Affiliate Attribution Hub', path: '/affiliate-attribution-hub' },
+        { name: 'Agentic RAG Helpdesk', path: '/agentic-rag-helpdesk' }
       ]
     },
     {
@@ -99,7 +111,8 @@ export function Header() {
       services: [
         { name: 'Blockchain Solutions', path: '/services#blockchain' },
         { name: 'IoT Integration', path: '/services#iot' },
-        { name: 'Quantum Computing', path: '/services#quantum' }
+        { name: 'Quantum Computing', path: '/services#quantum' },
+        { name: 'Accessibility Auditor', path: '/accessibility-auditor' }
       ]
     }
   ];
