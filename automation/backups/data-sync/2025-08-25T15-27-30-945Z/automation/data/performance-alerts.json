@@ -1,0 +1,18 @@
+[
+  {
+    "level": "warning",
+    "category": "memory",
+    "message": "Memory usage warning: 86.77%",
+    "value": 86.76857948303223,
+    "threshold": 80,
+    "timestamp": "2025-08-25T15:27:00.615Z"
+  },
+  {
+    "level": "warning",
+    "category": "memory",
+    "message": "Memory usage warning: 84.90%",
+    "value": 84.90451574325562,
+    "threshold": 80,
+    "timestamp": "2025-08-25T15:27:30.617Z"
+  }
+]

@@ -1,0 +1,92 @@
+{
+  "links": [
+    {
+      "url": "https://github.com",
+      "statusCode": 200,
+      "responseTime": 127,
+      "health": "good",
+      "timestamp": "2025-08-25T15:27:19.010Z",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "server": "github.com"
+      },
+      "intelligence": {
+        "domainAuthority": 75,
+        "securityScore": 100,
+        "performanceScore": 100,
+        "seoScore": 100
+      }
+    },
+    {
+      "url": "https://stackoverflow.com",
+      "statusCode": 403,
+      "responseTime": 118,
+      "health": "poor",
+      "timestamp": "2025-08-25T15:27:20.158Z",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "server": "cloudflare"
+      },
+      "intelligence": {
+        "domainAuthority": 70,
+        "securityScore": 90,
+        "performanceScore": 100,
+        "seoScore": 60
+      }
+    },
+    {
+      "url": "https://medium.com",
+      "statusCode": 200,
+      "responseTime": 99,
+      "health": "good",
+      "timestamp": "2025-08-25T15:27:21.261Z",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "server": "cloudflare"
+      },
+      "intelligence": {
+        "domainAuthority": 65,
+        "securityScore": 100,
+        "performanceScore": 100,
+        "seoScore": 100
+      }
+    },
+    {
+      "url": "https://dev.to",
+      "statusCode": 403,
+      "responseTime": 357,
+      "health": "poor",
+      "timestamp": "2025-08-25T15:27:22.665Z",
+      "headers": {
+        "content-type": "unknown",
+        "server": "Varnish"
+      },
+      "intelligence": {
+        "domainAuthority": 65,
+        "securityScore": 90,
+        "performanceScore": 100,
+        "seoScore": 60
+      }
+    },
+    {
+      "url": "https://wikipedia.org",
+      "statusCode": 403,
+      "responseTime": 71,
+      "health": "poor",
+      "timestamp": "2025-08-25T15:27:23.741Z",
+      "headers": {
+        "content-type": "text/plain",
+        "server": "HAProxy"
+      },
+      "intelligence": {
+        "domainAuthority": 70,
+        "securityScore": 90,
+        "performanceScore": 100,
+        "seoScore": 60
+      }
+    }
+  ],
+  "lastUpdated": "2025-08-25T15:27:23.741Z",
+  "totalAnalyzed": 5,
+  "healthScore": 90
+}

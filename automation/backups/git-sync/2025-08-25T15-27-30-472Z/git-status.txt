@@ -1,0 +1,19 @@
+M automation/data/analyzed-links.json
+ M automation/data/autonomous-state.json
+ M automation/data/performance-alerts.json
+ M automation/data/performance-metrics.json
+ M automation/logs/HEALTH.runtime.log
+ M automation/logs/SYSTEM.runtime.log
+ M automation/logs/continuous-improvement.log
+ M automation/logs/git-sync.log
+ M automation/logs/link-health-scheduler.runtime.log
+ M automation/logs/master-coordinator.log
+ M automation/logs/ml-link-intelligence.runtime.log
+ M automation/logs/real-time-performance-monitor.runtime.log
+ M data/missing-slugs.json
+ M src/data/marketplaceData.ts
+ M tailwind.config.js
+?? automation/backups/config-sync/
+?? automation/backups/data-sync/
+?? automation/backups/file-sync/
+?? automation/backups/git-sync/2025-08-25T15-26-55-641Z/

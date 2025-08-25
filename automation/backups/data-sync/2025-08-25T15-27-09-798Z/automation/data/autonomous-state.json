@@ -1,0 +1,19 @@
+{
+  "lastUpdated": "2025-08-25T15:25:41.531Z",
+  "services": {},
+  "systemHealth": {
+    "overall": 100,
+    "cpu": 100,
+    "memory": 100,
+    "disk": 100,
+    "network": 100
+  },
+  "alerts": [],
+  "decisions": [],
+  "performance": {
+    "totalRequests": 0,
+    "successfulRequests": 0,
+    "failedRequests": 0,
+    "averageResponseTime": 0
+  }
+}

@@ -1,22 +1,15 @@
 /** @type {import('tailwindcss').Config} */
-<<<<<<< HEAD
 module.exports = {
   darkMode: "class",
   content: [
     './src/**/*.{js,ts,jsx,tsx}',
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
-=======
-export default {
-  content: [
-    './src/**/*.{js,ts,jsx,tsx}',
     './index.html',
->>>>>>> a4b0ef56a21d1919a0e2729e4ba64fbc8c4b3f44
   ],
   theme: {
     extend: {
       colors: {
-<<<<<<< HEAD
         // Modern color palette
         primary: {
           50: '#eff6ff',
@@ -135,7 +128,18 @@ export default {
           800: '#1e293b',
           900: '#0f172a',
           950: '#020617',
-        }
+        },
+        // Zion-specific colors
+        'zion-blue': '#172d67',
+        'zion-blue-dark': '#0f1a3d',
+        'zion-blue-light': '#2e73ea',
+        'zion-cyan': '#22ddd2',
+        'zion-cyan-light': '#4de8e0',
+        'zion-purple': '#8c15e9',
+        'zion-purple-dark': '#6b21a8',
+        'zion-purple-light': '#a855f7',
+        'zion-slate': '#64748b',
+        'zion-slate-light': '#94a3b8',
       },
       fontFamily: {
         sans: [
@@ -161,7 +165,8 @@ export default {
           'Consolas',
           'DejaVu Sans Mono',
           'monospace'
-        ]
+        ],
+        'orbitron': ['Orbitron', 'monospace'],
       },
       animation: {
         'fade-in': 'fadeIn 0.6s ease-out',
@@ -171,6 +176,15 @@ export default {
         'bounce-gentle': 'bounceGentle 2s infinite',
         'float': 'float 3s ease-in-out infinite',
         'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'glow': 'glow 2s ease-in-out infinite alternate',
+        'neon-pulse': 'neonPulse 1.5s ease-in-out infinite alternate',
+        'matrix-rain': 'matrixRain 20s linear infinite',
+        'energy-pulse': 'energyPulse 3s ease-in-out infinite',
+        'hologram': 'hologram 4s ease-in-out infinite',
+        'quantum-shift': 'quantumShift 2s ease-in-out infinite',
+        'neon-flicker': 'neonFlicker 0.5s ease-in-out infinite alternate',
+        'cyber-wave': 'cyberWave 8s ease-in-out infinite',
+        'particle-float': 'particleFloat 5s ease-in-out infinite',
       },
       keyframes: {
         fadeIn: {
@@ -196,62 +210,6 @@ export default {
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-20px)' }
-        }
-      },
-      backdropBlur: {
-        xs: '2px',
-      },
-      spacing: {
-        '18': '4.5rem',
-        '88': '22rem',
-        '128': '32rem',
-      },
-      borderRadius: {
-        '4xl': '2rem',
-      },
-      boxShadow: {
-        'glow': '0 0 20px rgba(59, 130, 246, 0.5)',
-        'glow-lg': '0 0 40px rgba(59, 130, 246, 0.3)',
-        'inner-glow': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
-      }
-    },
-  },
-  plugins: [
-    require('@tailwindcss/forms'),
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/aspect-ratio'),
-  ],
-=======
-        'zion-blue': '#172d67',
-        'zion-blue-dark': '#0f1a3d',
-        'zion-blue-light': '#2e73ea',
-        'zion-cyan': '#22ddd2',
-        'zion-cyan-light': '#4de8e0',
-        'zion-purple': '#8c15e9',
-        'zion-purple-dark': '#6b21a8',
-        'zion-purple-light': '#a855f7',
-        'zion-slate': '#64748b',
-        'zion-slate-light': '#94a3b8',
-      },
-      fontFamily: {
-        'orbitron': ['Orbitron', 'monospace'],
-      },
-      animation: {
-        'float': 'float 6s ease-in-out infinite',
-        'glow': 'glow 2s ease-in-out infinite alternate',
-        'neon-pulse': 'neonPulse 1.5s ease-in-out infinite alternate',
-        'matrix-rain': 'matrixRain 20s linear infinite',
-        'energy-pulse': 'energyPulse 3s ease-in-out infinite',
-        'hologram': 'hologram 4s ease-in-out infinite',
-        'quantum-shift': 'quantumShift 2s ease-in-out infinite',
-        'neon-flicker': 'neonFlicker 0.5s ease-in-out infinite alternate',
-        'cyber-wave': 'cyberWave 8s ease-in-out infinite',
-        'particle-float': 'particleFloat 5s ease-in-out infinite',
-      },
-      keyframes: {
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' },
         },
         glow: {
           '0%': { boxShadow: '0 0 5px #22ddd2, 0 0 10px #22ddd2, 0 0 15px #22ddd2' },
@@ -292,9 +250,28 @@ export default {
           '75%': { transform: 'translateY(-15px) translateX(5px)' }
         }
       },
+      backdropBlur: {
+        xs: '2px',
+      },
+      spacing: {
+        '18': '4.5rem',
+        '88': '22rem',
+        '128': '32rem',
+      },
+      borderRadius: {
+        '4xl': '2rem',
+      },
+      boxShadow: {
+        'glow': '0 0 20px rgba(59, 130, 246, 0.5)',
+        'glow-lg': '0 0 40px rgba(59, 130, 246, 0.3)',
+        'inner-glow': 'inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)',
+      }
     },
   },
-  plugins: [],
->>>>>>> a4b0ef56a21d1919a0e2729e4ba64fbc8c4b3f44
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio'),
+  ],
 }
 

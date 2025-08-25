@@ -1,0 +1,201 @@
+{
+  "gaps": [
+    {
+      "id": "gap-1755208831771",
+      "category": "AI/ML Services",
+      "description": "Real-time model serving with automatic scaling",
+      "marketSize": "$3.2B",
+      "growthRate": "28% YoY",
+      "competition": "Low",
+      "timeToMarket": "4-6 months",
+      "technology": "Kubernetes + MLflow + FastAPI",
+      "estimatedRevenue": "$500K - $2M annually",
+      "riskLevel": "Medium",
+      "createdAt": "2025-08-14T22:00:31.771Z"
+    },
+    {
+      "id": "gap-1755208831772",
+      "category": "Data Engineering",
+      "description": "Automated data pipeline orchestration with ML",
+      "marketSize": "$2.8B",
+      "growthRate": "32% YoY",
+      "competition": "Medium",
+      "timeToMarket": "3-5 months",
+      "technology": "Apache Airflow + Python + PostgreSQL",
+      "estimatedRevenue": "$300K - $1.5M annually",
+      "riskLevel": "Low",
+      "createdAt": "2025-08-14T22:00:31.771Z"
+    },
+    {
+      "id": "gap-1755208831773",
+      "category": "DevOps Automation",
+      "description": "AI-powered CI/CD pipeline optimization",
+      "marketSize": "$4.1B",
+      "growthRate": "25% YoY",
+      "competition": "High",
+      "timeToMarket": "2-4 months",
+      "technology": "Jenkins + Python + Prometheus",
+      "estimatedRevenue": "$200K - $800K annually",
+      "riskLevel": "High",
+      "createdAt": "2025-08-14T22:00:31.771Z"
+    }
+  ],
+  "competitiveIntelligence": {
+    "competitors": [
+      {
+        "name": "DataRobot",
+        "category": "AI/ML Platform",
+        "strengths": [
+          "Enterprise focus",
+          "Strong sales team",
+          "Established customer base"
+        ],
+        "weaknesses": [
+          "High pricing",
+          "Complex UI",
+          "Slow innovation"
+        ],
+        "marketShare": "12%",
+        "pricing": "$50K - $500K annually",
+        "threatLevel": "Medium"
+      },
+      {
+        "name": "H2O.ai",
+        "category": "Machine Learning",
+        "strengths": [
+          "Open source",
+          "Good community",
+          "Flexible deployment"
+        ],
+        "weaknesses": [
+          "Limited enterprise features",
+          "Support challenges",
+          "Scaling issues"
+        ],
+        "marketShare": "8%",
+        "pricing": "$25K - $200K annually",
+        "threatLevel": "Low"
+      },
+      {
+        "name": "Algorithmia",
+        "category": "ML Model Serving",
+        "strengths": [
+          "Specialized focus",
+          "Good performance",
+          "Developer friendly"
+        ],
+        "weaknesses": [
+          "Limited scope",
+          "Small team",
+          "Funding challenges"
+        ],
+        "marketShare": "3%",
+        "pricing": "$10K - $100K annually",
+        "threatLevel": "Low"
+      }
+    ]
+  },
+  "trends": {
+    "current": [
+      {
+        "name": "Edge AI Computing",
+        "description": "AI processing at the edge for real-time applications",
+        "growthRate": "45% YoY",
+        "marketSize": "$1.8B",
+        "maturity": "Early Growth",
+        "keyPlayers": [
+          "Intel",
+          "NVIDIA",
+          "Qualcomm"
+        ],
+        "opportunities": [
+          "IoT platforms",
+          "Autonomous vehicles",
+          "Smart cities"
+        ]
+      },
+      {
+        "name": "AI-Powered Cybersecurity",
+        "description": "Machine learning for threat detection and response",
+        "growthRate": "38% YoY",
+        "marketSize": "$2.3B",
+        "maturity": "Growth",
+        "keyPlayers": [
+          "CrowdStrike",
+          "SentinelOne",
+          "Darktrace"
+        ],
+        "opportunities": [
+          "Threat intelligence",
+          "Automated response",
+          "Behavioral analysis"
+        ]
+      },
+      {
+        "name": "MLOps and Model Management",
+        "description": "DevOps practices for machine learning operations",
+        "growthRate": "52% YoY",
+        "marketSize": "$1.2B",
+        "maturity": "Early Growth",
+        "keyPlayers": [
+          "Weights & Biases",
+          "MLflow",
+          "DVC"
+        ],
+        "opportunities": [
+          "Model versioning",
+          "Experiment tracking",
+          "Deployment automation"
+        ]
+      }
+    ]
+  },
+  "opportunities": [
+    {
+      "id": "gap-1755208831771",
+      "category": "AI/ML Services",
+      "description": "Real-time model serving with automatic scaling",
+      "marketSize": "$3.2B",
+      "growthRate": "28% YoY",
+      "competition": "Low",
+      "timeToMarket": "4-6 months",
+      "technology": "Kubernetes + MLflow + FastAPI",
+      "estimatedRevenue": "$500K - $2M annually",
+      "riskLevel": "Medium",
+      "createdAt": "2025-08-14T22:00:31.771Z",
+      "opportunityScore": 1,
+      "recommendation": "High Priority"
+    },
+    {
+      "id": "gap-1755208831772",
+      "category": "Data Engineering",
+      "description": "Automated data pipeline orchestration with ML",
+      "marketSize": "$2.8B",
+      "growthRate": "32% YoY",
+      "competition": "Medium",
+      "timeToMarket": "3-5 months",
+      "technology": "Apache Airflow + Python + PostgreSQL",
+      "estimatedRevenue": "$300K - $1.5M annually",
+      "riskLevel": "Low",
+      "createdAt": "2025-08-14T22:00:31.771Z",
+      "opportunityScore": 0.8,
+      "recommendation": "High Priority"
+    },
+    {
+      "id": "gap-1755208831773",
+      "category": "DevOps Automation",
+      "description": "AI-powered CI/CD pipeline optimization",
+      "marketSize": "$4.1B",
+      "growthRate": "25% YoY",
+      "competition": "High",
+      "timeToMarket": "2-4 months",
+      "technology": "Jenkins + Python + Prometheus",
+      "estimatedRevenue": "$200K - $800K annually",
+      "riskLevel": "High",
+      "createdAt": "2025-08-14T22:00:31.771Z",
+      "opportunityScore": 0.6599999999999999,
+      "recommendation": "Medium Priority"
+    }
+  ],
+  "lastUpdated": "2025-08-14T22:00:31.773Z"
+}

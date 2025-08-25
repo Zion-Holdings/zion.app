@@ -516,3 +516,82 @@ Node.js v22.16.0
 ==================================================
 [2025-08-25 12:25:02] Checking for failed services...
 [2025-08-25 12:25:02] Main automation runner completed
+[2025-08-25 12:30:02] Starting main automation runner...
+[2025-08-25 12:30:02] ml-link-intelligence is already running
+[2025-08-25 12:30:02] link-health-scheduler is already running
+[2025-08-25 12:30:02] real-time-performance-monitor is already running
+[2025-08-25 12:30:02] Running health check...
+🔍 Checking Zion Automation Systems Status...
+
+🟡 Warning autonomous-system-manager
+   Last Activity: 109s ago
+
+🟢 Online ml-link-intelligence
+   Last Activity: 22s ago
+
+🟢 Online link-health-scheduler
+   Last Activity: 55s ago
+
+🟢 Online real-time-performance-monitor
+   Last Activity: 16s ago
+
+📊 Log Files: 42 found
+   HEALTH.runtime.log: 4.27 KB
+   SYSTEM.runtime.log: 19.98 KB
+   ai-trends-cron.log: 0.13 KB
+   ai-trends-research.log: 0.25 KB
+   autonomous-manager-coordinated.log: 13.19 KB
+   autonomous-system-manager.log: 2.27 KB
+   autonomous-system-manager.runtime.log: 86.82 KB
+   backup.log: 1.47 KB
+   build.log: 4.47 KB
+   code-quality.log: 2.05 KB
+   config-sync.log: 3.46 KB
+   continuous-improvement.log: 2.12 KB
+   cron.log: 0.68 KB
+   data-sync.log: 3.95 KB
+   dependency.log: 5.22 KB
+   enhanced-autonomous-coordinated.log: 45.52 KB
+   enhanced-git-sync.log: 4.14 KB
+   error-recovery.log: 50.43 KB
+   file-sync.log: 2.84 KB
+   git-pull-rebase.log: 2.17 KB
+   git-status.log: 949.14 KB
+   git-sync.log: 84.00 KB
+   health-check.log: 14.59 KB
+   health.log: 1.46 KB
+   infinite-improvement.log: 7.55 KB
+   link-health-scheduler-coordinated.log: 9.95 KB
+   link-health-scheduler.log: 0.12 KB
+   link-health-scheduler.runtime.log: 57.05 KB
+   maintenance.log: 1.39 KB
+   master-coordinator.log: 13.00 KB
+   ml-link-intelligence-coordinated.log: 14.17 KB
+   ml-link-intelligence.log: 0.30 KB
+   ml-link-intelligence.runtime.log: 78.82 KB
+   performance-monitor-coordinated.log: 9.37 KB
+   real-time-performance-monitor.log: 1.36 KB
+   real-time-performance-monitor.runtime.log: 68.68 KB
+   run-automation.log: 19.28 KB
+   security.log: 2.54 KB
+   sitemap-keeper.log: 1.15 KB
+   sync-launcher.log: 1.22 KB
+   sync-orchestrator.log: 1.75 KB
+   test.log: 7580.39 KB
+
+💾 Data Files: 9 found
+   ai-trends.json: 2.23 KB
+   analyzed-links.json: 2.17 KB
+   autonomous-config.json: 1.36 KB
+   autonomous-state.json: 0.34 KB
+   health-report.json: 0.40 KB
+   link-schedule.json: 0.45 KB
+   performance-alerts.json: 0.60 KB
+   performance-metrics.json: 7.94 KB
+   scheduled-links.json: 1.11 KB
+
+==================================================
+⚠️  Some automation systems need attention
+==================================================
+[2025-08-25 12:30:02] Checking for failed services...
+[2025-08-25 12:30:03] Main automation runner completed

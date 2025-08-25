@@ -1,0 +1,18 @@
+{
+  "timestamp": "2025-08-25T15:20:08Z",
+  "system": {
+    "cpu_usage": "32.96%",
+    "memory_usage": "83.00%",
+    "disk_usage": "8%"
+  },
+  "services": {
+    "autonomous_system_manager":        0,
+    "ml_link_intelligence":        4,
+    "link_health_scheduler":        3,
+    "real_time_performance_monitor":        4
+  },
+  "alerts": {
+    "offline_services":        0,
+    "zombie_processes": 21
+  }
+}

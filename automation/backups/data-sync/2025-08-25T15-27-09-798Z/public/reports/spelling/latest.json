@@ -1,0 +1,526 @@
+{
+  "generatedAt": "2025-08-11T23:58:46.660Z",
+  "filesScanned": 15,
+  "items": [
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 13,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "merge new Netlify functions and front advertising (b99322c)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 14,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add new Netlify functions (a363654)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 22,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add new autonomous Netlify functions (hygiene, media, knowledge graph, AI newsroom, auto healer, sitemap+SEO) and advertise on homepage + hub; schedule in netlify.toml (4a85a65)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 26,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add front maximizer, continuous front runner, readme advertiser; link from homepage; schedule high frequency Netlify functions [skip ci] (634989e)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 27,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "continuous front enhancer + fast promoter via Netlify functions; expanded autonomous catalog; fix conflict; ultra fast schedules (0b3965b)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 30,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add visionary Netlify functions and scripts; futuristic home/front enhancements; fast continuous schedules [skip ci] (996e81c)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 41,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add Netlify scheduled functions to enhance homepage and health without GH Actions; update homepage with New Tools section; configure Netlify functions dir (205ee8b)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 92,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "resolve conflicts; keep Netlify functions dir, Cloud Automations CTA, and expanded Explore section (91149b8)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 136,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "schedule Netlify functions trigger every 30 minutes (2c935ed)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 198,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add new autonomous Netlify functions (hygiene, media, knowledge graph, AI newsroom, auto healer, sitemap+SEO) and advertise on homepage + hub; schedule in netlify.toml (4a85a65)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 202,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add front maximizer, continuous front runner, readme advertiser; link from homepage; schedule high frequency Netlify functions [skip ci] (634989e)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 203,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "continuous front enhancer + fast promoter via Netlify functions; expanded autonomous catalog; fix conflict; ultra fast schedules (0b3965b)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 206,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add visionary Netlify functions and scripts; futuristic home/front enhancements; fast continuous schedules [skip ci] (996e81c)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 217,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add Netlify scheduled functions to enhance homepage and health without GH Actions; update homepage with New Tools section; configure Netlify functions dir (205ee8b)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 281,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "resolve conflicts; keep Netlify functions dir, Cloud Automations CTA, and expanded Explore section (91149b8)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 331,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "schedule Netlify functions trigger every 30 minutes (2c935ed)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 401,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add new autonomous Netlify functions (hygiene, media, knowledge graph, AI newsroom, auto healer, sitemap+SEO) and advertise on homepage + hub; schedule in netlify.toml (4a85a65)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 405,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add front maximizer, continuous front runner, readme advertiser; link from homepage; schedule high frequency Netlify functions [skip ci] (634989e)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 406,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "continuous front enhancer + fast promoter via Netlify functions; expanded autonomous catalog; fix conflict; ultra fast schedules (0b3965b)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 409,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add visionary Netlify functions and scripts; futuristic home/front enhancements; fast continuous schedules [skip ci] (996e81c)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 420,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add Netlify scheduled functions to enhance homepage and health without GH Actions; update homepage with New Tools section; configure Netlify functions dir (205ee8b)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 484,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "resolve conflicts; keep Netlify functions dir, Cloud Automations CTA, and expanded Explore section (91149b8)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 526,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "schedule Netlify functions trigger every 30 minutes (2c935ed)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 596,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add new autonomous Netlify functions (hygiene, media, knowledge graph, AI newsroom, auto healer, sitemap+SEO) and advertise on homepage + hub; schedule in netlify.toml (4a85a65)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 600,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add front maximizer, continuous front runner, readme advertiser; link from homepage; schedule high frequency Netlify functions [skip ci] (634989e)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 601,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "continuous front enhancer + fast promoter via Netlify functions; expanded autonomous catalog; fix conflict; ultra fast schedules (0b3965b)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 604,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add visionary Netlify functions and scripts; futuristic home/front enhancements; fast continuous schedules [skip ci] (996e81c)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 615,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add Netlify scheduled functions to enhance homepage and health without GH Actions; update homepage with New Tools section; configure Netlify functions dir (205ee8b)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 679,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "resolve conflicts; keep Netlify functions dir, Cloud Automations CTA, and expanded Explore section (91149b8)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 723,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "schedule Netlify functions trigger every 30 minutes (2c935ed)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 793,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add new autonomous Netlify functions (hygiene, media, knowledge graph, AI newsroom, auto healer, sitemap+SEO) and advertise on homepage + hub; schedule in netlify.toml (4a85a65)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 797,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add front maximizer, continuous front runner, readme advertiser; link from homepage; schedule high frequency Netlify functions [skip ci] (634989e)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 798,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "continuous front enhancer + fast promoter via Netlify functions; expanded autonomous catalog; fix conflict; ultra fast schedules (0b3965b)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 801,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add visionary Netlify functions and scripts; futuristic home/front enhancements; fast continuous schedules [skip ci] (996e81c)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 812,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add Netlify scheduled functions to enhance homepage and health without GH Actions; update homepage with New Tools section; configure Netlify functions dir (205ee8b)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 876,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "resolve conflicts; keep Netlify functions dir, Cloud Automations CTA, and expanded Explore section (91149b8)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 918,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "schedule Netlify functions trigger every 30 minutes (2c935ed)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 988,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add new autonomous Netlify functions (hygiene, media, knowledge graph, AI newsroom, auto healer, sitemap+SEO) and advertise on homepage + hub; schedule in netlify.toml (4a85a65)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 992,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add front maximizer, continuous front runner, readme advertiser; link from homepage; schedule high frequency Netlify functions [skip ci] (634989e)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 993,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "continuous front enhancer + fast promoter via Netlify functions; expanded autonomous catalog; fix conflict; ultra fast schedules (0b3965b)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 996,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add visionary Netlify functions and scripts; futuristic home/front enhancements; fast continuous schedules [skip ci] (996e81c)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 1007,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add Netlify scheduled functions to enhance homepage and health without GH Actions; update homepage with New Tools section; configure Netlify functions dir (205ee8b)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 1069,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "resolve conflicts; keep Netlify functions dir, Cloud Automations CTA, and expanded Explore section (91149b8)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 1102,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "schedule Netlify functions trigger every 30 minutes (2c935ed)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 1161,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add new autonomous Netlify functions (hygiene, media, knowledge graph, AI newsroom, auto healer, sitemap+SEO) and advertise on homepage + hub; schedule in netlify.toml (4a85a65)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 1165,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add front maximizer, continuous front runner, readme advertiser; link from homepage; schedule high frequency Netlify functions [skip ci] (634989e)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 1166,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "continuous front enhancer + fast promoter via Netlify functions; expanded autonomous catalog; fix conflict; ultra fast schedules (0b3965b)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 1169,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add visionary Netlify functions and scripts; futuristic home/front enhancements; fast continuous schedules [skip ci] (996e81c)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 1180,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add Netlify scheduled functions to enhance homepage and health without GH Actions; update homepage with New Tools section; configure Netlify functions dir (205ee8b)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 1242,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "resolve conflicts; keep Netlify functions dir, Cloud Automations CTA, and expanded Explore section (91149b8)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 1274,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "schedule Netlify functions trigger every 30 minutes (2c935ed)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 1335,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add new autonomous Netlify functions (hygiene, media, knowledge graph, AI newsroom, auto healer, sitemap+SEO) and advertise on homepage + hub; schedule in netlify.toml (4a85a65)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 1339,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add front maximizer, continuous front runner, readme advertiser; link from homepage; schedule high frequency Netlify functions [skip ci] (634989e)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 1340,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "continuous front enhancer + fast promoter via Netlify functions; expanded autonomous catalog; fix conflict; ultra fast schedules (0b3965b)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 1343,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add visionary Netlify functions and scripts; futuristic home/front enhancements; fast continuous schedules [skip ci] (996e81c)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 1354,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add Netlify scheduled functions to enhance homepage and health without GH Actions; update homepage with New Tools section; configure Netlify functions dir (205ee8b)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 1416,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "resolve conflicts; keep Netlify functions dir, Cloud Automations CTA, and expanded Explore section (91149b8)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 1444,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "schedule Netlify functions trigger every 30 minutes (2c935ed)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 1502,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add new autonomous Netlify functions (hygiene, media, knowledge graph, AI newsroom, auto healer, sitemap+SEO) and advertise on homepage + hub; schedule in netlify.toml (4a85a65)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 1506,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add front maximizer, continuous front runner, readme advertiser; link from homepage; schedule high frequency Netlify functions [skip ci] (634989e)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 1507,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "continuous front enhancer + fast promoter via Netlify functions; expanded autonomous catalog; fix conflict; ultra fast schedules (0b3965b)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 1510,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add visionary Netlify functions and scripts; futuristic home/front enhancements; fast continuous schedules [skip ci] (996e81c)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 1521,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "add Netlify scheduled functions to enhance homepage and health without GH Actions; update homepage with New Tools section; configure Netlify functions dir (205ee8b)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 1583,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "resolve conflicts; keep Netlify functions dir, Cloud Automations CTA, and expanded Explore section (91149b8)"
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "line": 1609,
+      "from": "Netlify functions",
+      "to": "Netlify Functions",
+      "category": "Brand casing",
+      "context": "schedule Netlify functions trigger every 30 minutes (2c935ed)"
+    }
+  ]
+}

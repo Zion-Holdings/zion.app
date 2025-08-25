@@ -1,0 +1,33 @@
+{
+  "intervals": {
+    "critical": 300000,
+    "high": 900000,
+    "medium": 3600000,
+    "low": 7200000
+  },
+  "priorities": {
+    "critical": [
+      "payment",
+      "auth",
+      "api"
+    ],
+    "high": [
+      "user",
+      "content",
+      "search"
+    ],
+    "medium": [
+      "blog",
+      "docs",
+      "help"
+    ],
+    "low": [
+      "archive",
+      "legacy",
+      "test"
+    ]
+  },
+  "maxConcurrent": 5,
+  "retryAttempts": 3,
+  "retryDelay": 30000
+}
