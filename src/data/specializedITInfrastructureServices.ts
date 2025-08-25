@@ -25,575 +25,462 @@ export interface SpecializedITInfrastructureService {
   compliance: string[];
   roi: string;
   competitors: string[];
-  marketTrend: string;
-  innovationLevel: string;
 }
 
 export const SPECIALIZED_IT_INFRASTRUCTURE_SERVICES: SpecializedITInfrastructureService[] = [
+  // Hyperconverged Infrastructure Platform
+  {
+    id: "hyperconverged-infrastructure-platform",
+    title: "Hyperconverged Infrastructure Platform",
+    description: "Enterprise-grade hyperconverged infrastructure solution that combines compute, storage, and networking in a single, scalable platform for modern data centers.",
+    category: "Data Center Infrastructure",
+    subcategory: "Hyperconvergence",
+    price: 2499,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Unified management interface",
+      "Automated scaling",
+      "Built-in disaster recovery",
+      "Advanced monitoring",
+      "Resource optimization",
+      "Multi-site replication",
+      "API integration",
+      "Custom dashboards"
+    ],
+    benefits: [
+      "Reduce infrastructure costs by 40%",
+      "Simplify management and operations",
+      "Improve scalability and flexibility",
+      "Enhance disaster recovery capabilities",
+      "Reduce deployment time by 80%"
+    ],
+    useCases: [
+      "Virtual desktop infrastructure",
+      "Private cloud deployments",
+      "Edge computing",
+      "Branch office consolidation",
+      "Development and testing"
+    ],
+    targetAudience: [
+      "Large enterprises",
+      "Data center operators",
+      "Cloud service providers",
+      "Government agencies",
+      "Educational institutions"
+    ],
+    tags: ["Hyperconvergence", "Data Center", "Virtualization", "Storage", "Networking"],
+    estimatedDelivery: "6-8 weeks",
+    supportLevel: "enterprise",
+    marketPrice: "$2,499 - $10,000/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    },
+    technology: ["VMware", "Nutanix", "Hyper-V", "Kubernetes", "Custom Software"],
+    integrations: ["VMware vCenter", "Microsoft System Center", "Ansible", "Terraform", "Monitoring tools"],
+    compliance: ["SOC 2", "ISO 27001", "HIPAA", "PCI DSS", "FedRAMP"],
+    roi: "350% within 12 months",
+    competitors: ["Nutanix", "VMware", "HPE SimpliVity", "Dell EMC", "Cisco HyperFlex"]
+  },
+
+  // Software-Defined Networking Platform
+  {
+    id: "software-defined-networking-platform",
+    title: "Software-Defined Networking Platform",
+    description: "Advanced SDN platform that provides centralized network control, automation, and programmability for modern enterprise networks.",
+    category: "Networking",
+    subcategory: "Software-Defined Networking",
+    price: 1899,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Centralized network control",
+      "Network automation",
+      "Traffic optimization",
+      "Security policy management",
+      "Multi-vendor support",
+      "Real-time analytics",
+      "API-first architecture",
+      "Custom applications"
+    ],
+    benefits: [
+      "Reduce network management costs by 50%",
+      "Improve network agility and flexibility",
+      "Enhance security and compliance",
+      "Enable network programmability",
+      "Optimize network performance"
+    ],
+    useCases: [
+      "Data center networking",
+      "Campus networks",
+      "Wide area networks",
+      "Cloud networking",
+      "Network automation"
+    ],
+    targetAudience: [
+      "Large enterprises",
+      "Service providers",
+      "Data center operators",
+      "Government agencies",
+      "Educational institutions"
+    ],
+    tags: ["SDN", "Networking", "Automation", "Network Management", "Virtualization"],
+    estimatedDelivery: "4-6 weeks",
+    supportLevel: "enterprise",
+    marketPrice: "$1,899 - $7,500/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    },
+    technology: ["OpenFlow", "OpenDaylight", "ONOS", "Python", "Custom Controllers"],
+    integrations: ["Cisco ACI", "VMware NSX", "OpenStack", "Kubernetes", "Network devices"],
+    compliance: ["SOC 2", "ISO 27001", "NIST", "Industry standards"],
+    roi: "400% within 10 months",
+    competitors: ["Cisco ACI", "VMware NSX", "Juniper Contrail", "OpenStack", "Big Switch Networks"]
+  },
+
   // Edge Computing Infrastructure
   {
     id: "edge-computing-infrastructure",
-    title: "Edge Computing Infrastructure Platform",
-    description: "Distributed edge computing platform that brings computation and data storage closer to data sources, reducing latency and improving performance for IoT and real-time applications.",
-    category: "IT Infrastructure",
-    subcategory: "Edge Computing",
-    price: 1800,
+    title: "Edge Computing Infrastructure",
+    description: "Distributed edge computing infrastructure that brings compute, storage, and networking closer to data sources for real-time processing and reduced latency.",
+    category: "Edge Computing",
+    subcategory: "Infrastructure",
+    price: 1599,
     currency: "$",
     pricingModel: "monthly",
     features: [
       "Distributed edge nodes",
       "Real-time data processing",
-      "Low-latency connectivity",
       "Edge AI capabilities",
-      "Automatic failover",
-      "Load balancing",
-      "Edge security protocols",
-      "Monitoring and analytics",
-      "Scalable architecture",
-      "Multi-cloud integration"
-    ],
-    benefits: [
-      "Reduce latency by 80-90%",
-      "Lower bandwidth costs by 60%",
-      "Improve application performance",
-      "Enhanced user experience",
-      "Better data privacy",
-      "Reduced cloud dependency"
-    ],
-    useCases: [
-      "IoT applications",
-      "Real-time analytics",
-      "Video streaming",
-      "Gaming platforms",
-      "Autonomous vehicles",
-      "Smart cities"
-    ],
-    targetAudience: [
-      "IT infrastructure managers",
-      "DevOps engineers",
-      "System architects",
-      "Network administrators",
-      "Technology directors"
-    ],
-    tags: ["Edge Computing", "IoT", "Real-time Processing", "Low Latency", "Distributed Systems"],
-    estimatedDelivery: "6-8 weeks",
-    supportLevel: "enterprise",
-    marketPrice: "$1,800 - $8,000/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    },
-    technology: ["Kubernetes", "Docker", "Edge Nodes", "5G Networks", "AI/ML", "Blockchain"],
-    integrations: ["AWS IoT", "Azure IoT", "Google Cloud IoT", "Kubernetes", "Docker Swarm"],
-    compliance: ["ISO 27001", "SOC 2", "GDPR", "HIPAA"],
-    roi: "300% within 12 months",
-    competitors: ["AWS Greengrass", "Azure IoT Edge", "Google Cloud IoT Edge", "Cisco Edge"],
-    marketTrend: "High-growth market with 400% annual expansion",
-    innovationLevel: "Advanced edge computing technology for next-generation applications"
-  },
-
-  // Hybrid Cloud Management
-  {
-    id: "hybrid-cloud-management",
-    title: "Hybrid Cloud Management Platform",
-    description: "Comprehensive hybrid cloud management solution that seamlessly integrates on-premises, private cloud, and public cloud environments with unified management and security.",
-    category: "IT Infrastructure",
-    subcategory: "Cloud Management",
-    price: 2200,
-    currency: "$",
-    pricingModel: "monthly",
-    features: [
-      "Multi-cloud orchestration",
-      "Unified management dashboard",
-      "Automated workload migration",
-      "Cost optimization",
-      "Security and compliance",
-      "Performance monitoring",
-      "Disaster recovery",
-      "Resource optimization",
-      "API management",
-      "Multi-tenant support"
-    ],
-    benefits: [
-      "Reduce cloud costs by 30-40%",
-      "Improve resource utilization by 50%",
-      "Enhanced security and compliance",
-      "Simplified management",
-      "Better disaster recovery",
-      "Flexible deployment options"
-    ],
-    useCases: [
-      "Enterprise IT departments",
-      "Multi-cloud environments",
-      "Hybrid deployments",
-      "Legacy system integration",
-      "Compliance requirements",
-      "Cost optimization"
-    ],
-    targetAudience: [
-      "Cloud architects",
-      "IT directors",
-      "DevOps managers",
-      "System administrators",
-      "Enterprise architects"
-    ],
-    tags: ["Hybrid Cloud", "Multi-Cloud", "Cloud Management", "Orchestration", "Cost Optimization"],
-    estimatedDelivery: "8-12 weeks",
-    supportLevel: "enterprise",
-    marketPrice: "$2,200 - $10,000/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    },
-    technology: ["Kubernetes", "Terraform", "Ansible", "Docker", "OpenStack", "Cloud APIs"],
-    integrations: ["AWS", "Azure", "Google Cloud", "VMware", "OpenStack", "On-premises"],
-    compliance: ["SOC 2", "ISO 27001", "GDPR", "HIPAA", "PCI DSS"],
-    roi: "350% within 18 months",
-    competitors: ["VMware vCloud", "Red Hat OpenShift", "IBM Cloud Pak", "HPE OneSphere"],
-    marketTrend: "Growing market with 250% annual growth",
-    innovationLevel: "Advanced hybrid cloud technology for enterprise environments"
-  },
-
-  // Software-Defined Networking (SDN)
-  {
-    id: "software-defined-networking",
-    title: "Software-Defined Networking (SDN) Platform",
-    description: "Advanced SDN solution that centralizes network control and programmatically configures network behavior through software applications and APIs.",
-    category: "IT Infrastructure",
-    subcategory: "Networking",
-    price: 1500,
-    currency: "$",
-    pricingModel: "monthly",
-    features: [
-      "Centralized network control",
-      "Programmable network behavior",
-      "Automated network configuration",
-      "Traffic optimization",
-      "Network virtualization",
-      "Security policy management",
-      "Quality of service (QoS)",
-      "Network monitoring",
-      "API integration",
+      "Local storage and caching",
+      "Network optimization",
+      "Security and encryption",
+      "Monitoring and management",
       "Scalable architecture"
     ],
     benefits: [
-      "Reduce network management time by 70%",
-      "Improve network efficiency by 40%",
-      "Lower operational costs by 30%",
-      "Enhanced security and compliance",
-      "Faster network deployment",
-      "Better resource utilization"
+      "Reduce latency by 80%",
+      "Lower bandwidth costs by 60%",
+      "Improve data privacy and security",
+      "Enable offline operation",
+      "Scale to thousands of edge locations"
     ],
     useCases: [
-      "Data centers",
-      "Enterprise networks",
-      "Cloud environments",
-      "Service providers",
-      "Educational institutions",
-      "Government agencies"
+      "IoT data processing",
+      "Autonomous vehicles",
+      "Smart cities",
+      "Industrial automation",
+      "Content delivery networks"
     ],
     targetAudience: [
-      "Network engineers",
-      "Network administrators",
-      "IT directors",
-      "System architects",
-      "DevOps engineers"
+      "IoT service providers",
+      "Telecommunications companies",
+      "Manufacturing companies",
+      "Smart city initiatives",
+      "Content providers"
     ],
-    tags: ["SDN", "Networking", "Network Virtualization", "Automation", "Network Management"],
-    estimatedDelivery: "6-10 weeks",
+    tags: ["Edge Computing", "IoT", "Real-time Processing", "Distributed Systems", "AI"],
+    estimatedDelivery: "5-7 weeks",
     supportLevel: "premium",
-    marketPrice: "$1,500 - $6,000/month",
+    marketPrice: "$1,599 - $6,000/month",
     contactInfo: {
       phone: "+1 302 464 0950",
       email: "kleber@ziontechgroup.com",
       website: "https://ziontechgroup.com"
     },
-    technology: ["OpenFlow", "OpenDaylight", "OVS", "Linux", "Python", "REST APIs"],
-    integrations: ["VMware NSX", "Cisco ACI", "Juniper Contrail", "OpenStack", "Kubernetes"],
-    compliance: ["ISO 27001", "SOC 2", "NIST", "GDPR"],
-    roi: "250% within 12 months",
-    competitors: ["VMware NSX", "Cisco ACI", "Juniper Contrail", "OpenDaylight"],
-    marketTrend: "Growing market with 200% annual growth",
-    innovationLevel: "Advanced SDN technology for modern network infrastructure"
+    technology: ["Kubernetes", "Docker", "Edge AI", "MQTT", "Custom Software"],
+    integrations: ["Cloud platforms", "IoT platforms", "5G networks", "Monitoring tools"],
+    compliance: ["SOC 2", "ISO 27001", "Industry-specific standards"],
+    roi: "300% within 12 months",
+    competitors: ["AWS Greengrass", "Azure IoT Edge", "Google Edge TPU", "NVIDIA Jetson", "EdgeX Foundry"]
   },
 
-  // Container Orchestration Platform
+  // High-Performance Computing Cluster
   {
-    id: "container-orchestration-platform",
-    title: "Enterprise Container Orchestration Platform",
-    description: "Production-ready container orchestration platform with advanced features for managing, scaling, and securing containerized applications at scale.",
-    category: "IT Infrastructure",
-    subcategory: "Containerization",
-    price: 1200,
+    id: "high-performance-computing-cluster",
+    title: "High-Performance Computing Cluster",
+    description: "Enterprise-grade HPC cluster solution for scientific computing, data analytics, and machine learning workloads requiring massive computational power.",
+    category: "High-Performance Computing",
+    subcategory: "Cluster Management",
+    price: 3999,
     currency: "$",
     pricingModel: "monthly",
     features: [
-      "Advanced container orchestration",
-      "Auto-scaling and load balancing",
-      "Service mesh integration",
-      "Security and compliance",
-      "Monitoring and logging",
-      "Multi-cluster management",
-      "CI/CD integration",
-      "Resource optimization",
-      "Disaster recovery",
-      "Enterprise support"
+      "Scalable compute nodes",
+      "High-speed interconnect",
+      "Parallel file systems",
+      "Job scheduling and management",
+      "Resource monitoring",
+      "GPU acceleration support",
+      "Custom software stack",
+      "Performance optimization"
     ],
     benefits: [
-      "Improve deployment speed by 80%",
-      "Reduce infrastructure costs by 40%",
-      "Enhanced application reliability",
-      "Better resource utilization",
-      "Simplified management",
-      "Enterprise-grade security"
+      "Accelerate computations by 100x",
+      "Handle massive datasets efficiently",
+      "Support complex scientific workflows",
+      "Enable breakthrough research",
+      "Reduce time to results"
     ],
     useCases: [
-      "Microservices architecture",
-      "Cloud-native applications",
-      "DevOps environments",
-      "Enterprise applications",
-      "High-availability systems",
-      "Scalable web services"
+      "Scientific research",
+      "Machine learning training",
+      "Financial modeling",
+      "Engineering simulations",
+      "Data analytics"
     ],
     targetAudience: [
-      "DevOps engineers",
-      "Platform engineers",
-      "System administrators",
-      "Application developers",
-      "IT architects"
+      "Research institutions",
+      "Universities",
+      "Government agencies",
+      "Financial institutions",
+      "Engineering companies"
     ],
-    tags: ["Containers", "Kubernetes", "Orchestration", "Microservices", "DevOps"],
-    estimatedDelivery: "4-6 weeks",
-    supportLevel: "premium",
-    marketPrice: "$1,200 - $5,000/month",
+    tags: ["HPC", "Cluster Computing", "Scientific Computing", "Machine Learning", "High Performance"],
+    estimatedDelivery: "8-12 weeks",
+    supportLevel: "enterprise",
+    marketPrice: "$3,999 - $20,000/month",
     contactInfo: {
       phone: "+1 302 464 0950",
       email: "kleber@ziontechgroup.com",
       website: "https://ziontechgroup.com"
     },
-    technology: ["Kubernetes", "Docker", "Helm", "Istio", "Prometheus", "Grafana"],
-    integrations: ["AWS EKS", "Azure AKS", "Google GKE", "VMware Tanzu", "Red Hat OpenShift"],
-    compliance: ["SOC 2", "ISO 27001", "GDPR", "HIPAA"],
-    roi: "400% within 12 months",
-    competitors: ["Red Hat OpenShift", "VMware Tanzu", "Rancher", "D2iQ"],
-    marketTrend: "High-growth market with 300% annual expansion",
-    innovationLevel: "Advanced container orchestration for enterprise applications"
+    technology: ["Slurm", "OpenMPI", "Lustre", "CUDA", "Custom Software"],
+    integrations: ["Research software", "Data storage systems", "Visualization tools", "Cloud platforms"],
+    compliance: ["Research standards", "Data security", "Performance benchmarks"],
+    roi: "500% within 18 months",
+    competitors: ["Cray", "HPE", "Dell EMC", "IBM", "Fujitsu"]
   },
 
-  // Data Center Automation
+  // Storage Area Network Platform
   {
-    id: "data-center-automation",
+    id: "storage-area-network-platform",
+    title: "Storage Area Network Platform",
+    description: "Enterprise-grade SAN platform providing high-performance, scalable, and reliable storage infrastructure for mission-critical applications.",
+    category: "Storage",
+    subcategory: "Storage Area Networks",
+    price: 2999,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "High-performance storage arrays",
+      "Fibre Channel connectivity",
+      "Data deduplication",
+      "Snapshot and replication",
+      "Thin provisioning",
+      "Quality of service",
+      "Monitoring and analytics",
+      "Disaster recovery"
+    ],
+    benefits: [
+      "Improve storage performance by 300%",
+      "Reduce storage costs through efficiency",
+      "Enhance data protection and availability",
+      "Simplify storage management",
+      "Support mission-critical applications"
+    ],
+    useCases: [
+      "Database storage",
+      "Virtual machine storage",
+      "File sharing",
+      "Backup and recovery",
+      "High-performance applications"
+    ],
+    targetAudience: [
+      "Large enterprises",
+      "Financial institutions",
+      "Healthcare organizations",
+      "Government agencies",
+      "Service providers"
+    ],
+    tags: ["SAN", "Storage", "High Performance", "Data Protection", "Enterprise"],
+    estimatedDelivery: "6-10 weeks",
+    supportLevel: "enterprise",
+    marketPrice: "$2,999 - $15,000/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    },
+    technology: ["Fibre Channel", "iSCSI", "NVMe", "Storage Arrays", "Custom Software"],
+    integrations: ["VMware", "Hyper-V", "Linux", "Windows", "Storage management tools"],
+    compliance: ["SOC 2", "ISO 27001", "HIPAA", "PCI DSS", "Industry standards"],
+    roi: "400% within 15 months",
+    competitors: ["EMC", "NetApp", "HPE", "IBM", "Dell"]
+  },
+
+  // Network Functions Virtualization Platform
+  {
+    id: "network-functions-virtualization-platform",
+    title: "Network Functions Virtualization Platform",
+    description: "NFV platform that virtualizes network functions to improve network flexibility, reduce costs, and accelerate service deployment.",
+    category: "Networking",
+    subcategory: "Network Functions Virtualization",
+    price: 2299,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Virtual network functions",
+      "Service chaining",
+      "Orchestration and management",
+      "Performance optimization",
+      "Scalability and elasticity",
+      "Multi-vendor support",
+      "API integration",
+      "Custom VNFs"
+    ],
+    benefits: [
+      "Reduce network equipment costs by 40%",
+      "Improve network flexibility and agility",
+      "Accelerate service deployment",
+      "Enable network automation",
+      "Support 5G and edge computing"
+    ],
+    useCases: [
+      "5G network infrastructure",
+      "Virtual CPE",
+      "Network slicing",
+      "Service provider networks",
+      "Enterprise networks"
+    ],
+    targetAudience: [
+      "Telecommunications providers",
+      "Service providers",
+      "Large enterprises",
+      "Government agencies",
+      "Network equipment vendors"
+    ],
+    tags: ["NFV", "Virtualization", "5G", "Network Functions", "Service Chaining"],
+    estimatedDelivery: "8-12 weeks",
+    supportLevel: "enterprise",
+    marketPrice: "$2,299 - $9,000/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    },
+    technology: ["OpenStack", "Kubernetes", "DPDK", "SR-IOV", "Custom VNFs"],
+    integrations: ["Network equipment", "OSS/BSS systems", "Cloud platforms", "Monitoring tools"],
+    compliance: ["ETSI NFV", "3GPP standards", "Industry regulations"],
+    roi: "450% within 15 months",
+    competitors: ["VMware", "Cisco", "Nokia", "Ericsson", "Huawei"]
+  },
+
+  // Data Center Automation Platform
+  {
+    id: "data-center-automation-platform",
     title: "Data Center Automation Platform",
-    description: "Intelligent data center automation solution that streamlines operations, reduces manual tasks, and optimizes resource utilization through AI and machine learning.",
-    category: "IT Infrastructure",
-    subcategory: "Data Center",
-    price: 3000,
+    description: "Comprehensive data center automation platform that streamlines operations, reduces costs, and improves efficiency through intelligent automation.",
+    category: "Data Center",
+    subcategory: "Automation",
+    price: 2799,
     currency: "$",
     pricingModel: "monthly",
     features: [
       "Infrastructure automation",
-      "AI-powered optimization",
+      "Workflow orchestration",
+      "Self-healing systems",
       "Predictive maintenance",
-      "Energy management",
-      "Capacity planning",
-      "Workflow automation",
-      "Monitoring and alerting",
+      "Resource optimization",
       "Compliance automation",
-      "Disaster recovery",
-      "Performance analytics"
-    ],
-    benefits: [
-      "Reduce operational costs by 35%",
-      "Improve efficiency by 50%",
-      "Lower energy consumption by 25%",
-      "Enhanced reliability",
-      "Faster incident response",
-      "Better resource utilization"
-    ],
-    useCases: [
-      "Enterprise data centers",
-      "Cloud providers",
-      "Colocation facilities",
-      "Edge data centers",
-      "High-performance computing",
-      "Mission-critical systems"
-    ],
-    targetAudience: [
-      "Data center managers",
-      "IT directors",
-      "Facility managers",
-      "System administrators",
-      "Operations managers"
-    ],
-    tags: ["Data Center", "Automation", "AI", "Optimization", "Monitoring", "Energy Management"],
-    estimatedDelivery: "10-14 weeks",
-    supportLevel: "enterprise",
-    marketPrice: "$3,000 - $15,000/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    },
-    technology: ["AI/ML", "IoT Sensors", "Automation Tools", "Monitoring Systems", "Energy Management"],
-    integrations: ["DCIM Systems", "BMS", "Monitoring Tools", "Automation Platforms", "Cloud Systems"],
-    compliance: ["ISO 50001", "LEED", "SOC 2", "ISO 27001"],
-    roi: "300% within 18 months",
-    competitors: ["Schneider Electric", "Siemens", "Honeywell", "Johnson Controls"],
-    marketTrend: "Growing market with 200% annual growth",
-    innovationLevel: "Advanced AI-powered automation for modern data centers"
-  },
-
-  // Network Security & Zero Trust
-  {
-    id: "network-security-zero-trust",
-    title: "Network Security & Zero Trust Platform",
-    description: "Comprehensive network security solution implementing zero-trust architecture with advanced threat detection, access control, and security monitoring.",
-    category: "IT Infrastructure",
-    subcategory: "Security",
-    price: 2500,
-    currency: "$",
-    pricingModel: "monthly",
-    features: [
-      "Zero-trust architecture",
-      "Advanced threat detection",
-      "Identity and access management",
-      "Network segmentation",
-      "Behavioral analytics",
       "Real-time monitoring",
-      "Automated response",
-      "Compliance reporting",
-      "Security orchestration",
-      "Threat intelligence"
+      "Custom workflows"
     ],
     benefits: [
-      "Reduce security incidents by 90%",
-      "Improve compliance by 95%",
-      "Enhanced threat detection",
-      "Better access control",
-      "Automated security response",
-      "Comprehensive protection"
+      "Reduce operational costs by 50%",
+      "Improve uptime to 99.99%",
+      "Automate 80% of routine tasks",
+      "Enhance compliance and security",
+      "Accelerate service delivery"
     ],
     useCases: [
-      "Enterprise networks",
-      "Financial institutions",
-      "Healthcare organizations",
-      "Government agencies",
-      "Educational institutions",
-      "Critical infrastructure"
-    ],
-    targetAudience: [
-      "Security architects",
-      "Network security engineers",
-      "CISOs",
-      "IT directors",
-      "Compliance officers"
-    ],
-    tags: ["Network Security", "Zero Trust", "Threat Detection", "Access Control", "Compliance"],
-    estimatedDelivery: "8-12 weeks",
-    supportLevel: "enterprise",
-    marketPrice: "$2,500 - $12,000/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    },
-    technology: ["Zero Trust Architecture", "AI/ML", "Behavioral Analytics", "Network Segmentation", "Threat Intelligence"],
-    integrations: ["Active Directory", "SIEM Systems", "Firewalls", "VPN Solutions", "Identity Providers"],
-    compliance: ["NIST", "ISO 27001", "SOC 2", "GDPR", "HIPAA"],
-    roi: "400% within 18 months",
-    competitors: ["Cisco", "Palo Alto Networks", "Fortinet", "Check Point"],
-    marketTrend: "High-growth market with 300% annual expansion",
-    innovationLevel: "Advanced zero-trust security for modern network infrastructure"
-  },
-
-  // High-Performance Computing (HPC)
-  {
-    id: "high-performance-computing",
-    title: "High-Performance Computing (HPC) Platform",
-    description: "Enterprise-grade HPC platform designed for compute-intensive workloads, scientific computing, and data analytics with optimized performance and scalability.",
-    category: "IT Infrastructure",
-    subcategory: "HPC",
-    price: 5000,
-    currency: "$",
-    pricingModel: "monthly",
-    features: [
-      "High-performance computing clusters",
-      "GPU acceleration support",
-      "Parallel processing",
-      "Load balancing",
-      "Job scheduling",
-      "Resource management",
-      "Performance monitoring",
-      "Scalable architecture",
-      "High-speed networking",
-      "Storage optimization"
-    ],
-    benefits: [
-      "Accelerate computations by 1000x",
-      "Reduce processing time by 90%",
-      "Handle complex workloads",
-      "Scalable performance",
-      "Cost-effective computing",
-      "Enhanced research capabilities"
-    ],
-    useCases: [
-      "Scientific research",
-      "Financial modeling",
-      "Machine learning",
-      "Data analytics",
-      "Simulation and modeling",
-      "Genomics and bioinformatics"
-    ],
-    targetAudience: [
-      "Research scientists",
-      "Data scientists",
-      "HPC engineers",
-      "Academic institutions",
-      "Research organizations"
-    ],
-    tags: ["HPC", "High Performance", "Parallel Computing", "GPU Computing", "Scientific Computing"],
-    estimatedDelivery: "12-16 weeks",
-    supportLevel: "enterprise",
-    marketPrice: "$5,000 - $25,000/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    },
-    technology: ["HPC Clusters", "GPU Computing", "Parallel Processing", "High-Speed Networks", "Distributed Computing"],
-    integrations: ["Slurm", "OpenMPI", "CUDA", "High-Speed Networks", "Storage Systems"],
-    compliance: ["Research Standards", "Security Protocols", "Performance Standards"],
-    roi: "500% within 24 months",
-    competitors: ["Cray", "HPE", "IBM", "Dell Technologies"],
-    marketTrend: "Growing market with 200% annual growth",
-    innovationLevel: "Advanced HPC technology for compute-intensive applications"
-  },
-
-  // Storage & Backup Solutions
-  {
-    id: "storage-backup-solutions",
-    title: "Enterprise Storage & Backup Solutions",
-    description: "Comprehensive storage and backup platform with advanced features for data protection, disaster recovery, and storage optimization across hybrid environments.",
-    category: "IT Infrastructure",
-    subcategory: "Storage",
-    price: 1800,
-    currency: "$",
-    pricingModel: "monthly",
-    features: [
-      "Unified storage management",
-      "Automated backup and recovery",
-      "Data deduplication",
-      "Disaster recovery",
-      "Storage optimization",
-      "Data archiving",
-      "Compliance features",
-      "Performance monitoring",
-      "Scalable architecture",
-      "Multi-site replication"
-    ],
-    benefits: [
-      "Reduce storage costs by 40%",
-      "Improve backup efficiency by 70%",
-      "Enhanced data protection",
-      "Faster disaster recovery",
-      "Better compliance",
-      "Simplified management"
-    ],
-    useCases: [
-      "Enterprise storage",
-      "Data centers",
-      "Cloud environments",
-      "Backup and recovery",
-      "Compliance requirements",
+      "Data center operations",
+      "Cloud infrastructure",
+      "DevOps automation",
+      "Compliance management",
       "Disaster recovery"
     ],
     targetAudience: [
-      "Storage administrators",
-      "IT directors",
-      "System administrators",
-      "Backup specialists",
-      "Compliance officers"
+      "Data center operators",
+      "Cloud service providers",
+      "Large enterprises",
+      "Government agencies",
+      "Managed service providers"
     ],
-    tags: ["Storage", "Backup", "Disaster Recovery", "Data Protection", "Compliance"],
-    estimatedDelivery: "6-8 weeks",
-    supportLevel: "premium",
-    marketPrice: "$1,800 - $8,000/month",
+    tags: ["Data Center", "Automation", "DevOps", "Compliance", "Monitoring"],
+    estimatedDelivery: "6-10 weeks",
+    supportLevel: "enterprise",
+    marketPrice: "$2,799 - $12,000/month",
     contactInfo: {
       phone: "+1 302 464 0950",
       email: "kleber@ziontechgroup.com",
       website: "https://ziontechgroup.com"
     },
-    technology: ["Storage Arrays", "Backup Software", "Data Deduplication", "Replication", "Cloud Storage"],
-    integrations: ["VMware", "Hyper-V", "Cloud Platforms", "Backup Applications", "Storage Systems"],
-    compliance: ["SOC 2", "ISO 27001", "GDPR", "HIPAA", "PCI DSS"],
-    roi: "300% within 12 months",
-    competitors: ["NetApp", "Dell EMC", "HPE", "IBM", "Pure Storage"],
-    marketTrend: "Growing market with 200% annual growth",
-    innovationLevel: "Advanced storage and backup technology for enterprise environments"
+    technology: ["Ansible", "Terraform", "Python", "Kubernetes", "Custom Software"],
+    integrations: ["VMware", "OpenStack", "AWS", "Azure", "Monitoring tools"],
+    compliance: ["SOC 2", "ISO 27001", "ITIL", "Industry standards"],
+    roi: "400% within 12 months",
+    competitors: ["VMware vRealize", "BMC", "ServiceNow", "Ansible", "Terraform"]
   },
 
-  // Network Monitoring & Analytics
+  // Quantum-Safe Cryptography Platform
   {
-    id: "network-monitoring-analytics",
-    title: "Network Monitoring & Analytics Platform",
-    description: "Intelligent network monitoring and analytics solution that provides real-time visibility, performance insights, and predictive analytics for network infrastructure.",
-    category: "IT Infrastructure",
-    subcategory: "Monitoring",
-    price: 1200,
+    id: "quantum-safe-cryptography-platform",
+    title: "Quantum-Safe Cryptography Platform",
+    description: "Future-proof cryptography platform implementing post-quantum cryptographic algorithms to protect data against quantum computing threats.",
+    category: "Security",
+    subcategory: "Quantum-Safe Cryptography",
+    price: 1899,
     currency: "$",
     pricingModel: "monthly",
     features: [
-      "Real-time network monitoring",
-      "Performance analytics",
-      "Predictive maintenance",
-      "Traffic analysis",
-      "Alert management",
-      "Reporting and dashboards",
+      "Post-quantum algorithms",
+      "Hybrid cryptography",
+      "Key management",
+      "Performance optimization",
+      "Standards compliance",
+      "Migration tools",
       "API integration",
-      "Custom metrics",
-      "Historical data analysis",
-      "Mobile app access"
+      "Custom implementations"
     ],
     benefits: [
-      "Reduce network downtime by 80%",
-      "Improve performance by 40%",
-      "Proactive issue resolution",
-      "Better capacity planning",
-      "Enhanced visibility",
-      "Data-driven decisions"
+      "Protect against quantum threats",
+      "Future-proof security infrastructure",
+      "Maintain compliance standards",
+      "Enable secure digital transformation",
+      "Reduce security risks"
     ],
     useCases: [
-      "Enterprise networks",
-      "Data centers",
-      "Cloud environments",
-      "Service providers",
-      "Network operations",
-      "Performance optimization"
+      "Digital signatures",
+      "Key exchange",
+      "Encryption",
+      "Authentication",
+      "Secure communications"
     ],
     targetAudience: [
-      "Network engineers",
-      "Network administrators",
-      "IT directors",
-      "System administrators",
-      "Operations teams"
+      "Financial institutions",
+      "Government agencies",
+      "Healthcare organizations",
+      "Technology companies",
+      "Critical infrastructure"
     ],
-    tags: ["Network Monitoring", "Analytics", "Performance", "Predictive Maintenance", "Visibility"],
-    estimatedDelivery: "4-6 weeks",
-    supportLevel: "premium",
-    marketPrice: "$1,200 - $5,000/month",
+    tags: ["Quantum-Safe", "Cryptography", "Security", "Post-Quantum", "Compliance"],
+    estimatedDelivery: "8-12 weeks",
+    supportLevel: "enterprise",
+    marketPrice: "$1,899 - $7,500/month",
     contactInfo: {
       phone: "+1 302 464 0950",
       email: "kleber@ziontechgroup.com",
       website: "https://ziontechgroup.com"
     },
-    technology: ["AI/ML", "Big Data Analytics", "Real-time Processing", "Data Visualization", "API Integration"],
-    integrations: ["Network Devices", "Monitoring Tools", "Cloud Platforms", "SIEM Systems", "Ticketing Systems"],
-    compliance: ["SOC 2", "ISO 27001", "GDPR"],
-    roi: "250% within 12 months",
-    competitors: ["SolarWinds", "PRTG", "Nagios", "Zabbix", "Datadog"],
-    marketTrend: "Growing market with 200% annual growth",
-    innovationLevel: "Advanced AI-powered monitoring for modern network infrastructure"
+    technology: ["Post-Quantum Algorithms", "Hybrid Cryptography", "C++", "Python", "Custom Software"],
+    integrations: ["PKI systems", "TLS/SSL", "Digital certificates", "Security platforms"],
+    compliance: ["NIST standards", "FIPS", "Industry regulations", "International standards"],
+    roi: "350% within 18 months",
+    competitors: ["ISARA", "PQShield", "Cryptosense", "Quantum Xchange", "ID Quantique"]
   }
 ];

@@ -192,18 +192,7 @@ export default function SpecializedITInfrastructure() {
                     </div>
                   </div>
 
-                  {/* Innovation Level */}
-                  <div className="mb-4">
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-zion-cyan/70">Innovation Level:</span>
-                      <div className="flex items-center">
-                        <Award className="w-4 h-4 text-yellow-400 mr-1" />
-                        <span className="text-xs text-yellow-400 font-semibold">
-                          {service.innovationLevel.split(' ')[0]}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+
 
                   {/* CTA Button */}
                   <div className="mt-6">
