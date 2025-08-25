@@ -1,117 +1,90 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Rocket, Zap, Shield, Users, TrendingUp, Globe, CheckCircle, Star, ArrowRight, Cpu, Database, Cloud } from 'lucide-react';
+import { Cloud, Zap, Shield, Cpu, Database, Globe, Lock, CheckCircle, Star, ArrowRight, TrendingUp, Users } from 'lucide-react';
 import { SEO } from '@/components/SEO';
 
-const transformationServices = [
+const cloudServices = [
   {
-    title: "Strategy & Planning",
-    description: "Comprehensive digital transformation roadmap aligned with business objectives and market opportunities.",
-    icon: Rocket,
-    features: ["Digital Maturity Assessment", "Technology Roadmap", "Change Management Strategy", "ROI Analysis"],
-    color: "from-purple-500 to-pink-500"
-  },
-  {
-    title: "Process Automation",
-    description: "Intelligent automation solutions that streamline operations and eliminate manual workflows.",
-    icon: Zap,
-    features: ["Workflow Automation", "RPA Implementation", "Process Optimization", "Performance Monitoring"],
+    title: "Cloud Infrastructure",
+    description: "Scalable and secure cloud solutions built on AWS, Azure, and Google Cloud platforms.",
+    icon: Cloud,
+    features: ["Multi-cloud Strategy", "Auto-scaling", "Load Balancing", "High Availability"],
     color: "from-blue-500 to-cyan-500"
   },
   {
-    title: "Technology Modernization",
-    description: "Legacy system modernization and cloud-native architecture implementation.",
-    icon: Cpu,
-    features: ["Legacy Migration", "Cloud Architecture", "API Development", "Microservices"],
+    title: "DevOps Automation",
+    description: "Streamline development and deployment with CI/CD pipelines and automation tools.",
+    icon: Zap,
+    features: ["CI/CD Pipelines", "Infrastructure as Code", "Automated Testing", "Deployment Automation"],
     color: "from-green-500 to-emerald-500"
   },
   {
-    title: "Data & Analytics",
-    description: "Data-driven insights and business intelligence solutions for informed decision-making.",
+    title: "Container Orchestration",
+    description: "Kubernetes and Docker solutions for scalable containerized applications.",
+    icon: Cpu,
+    features: ["Kubernetes Management", "Docker Optimization", "Service Mesh", "Microservices"],
+    color: "from-purple-500 to-pink-500"
+  },
+  {
+    title: "Database Solutions",
+    description: "Managed database services with high performance and reliability.",
     icon: Database,
-    features: ["Data Strategy", "Business Intelligence", "Predictive Analytics", "Data Governance"],
+    features: ["Database Migration", "Performance Tuning", "Backup & Recovery", "Monitoring"],
     color: "from-orange-500 to-red-500"
   },
   {
-    title: "Customer Experience",
-    description: "Omnichannel customer experience optimization and digital touchpoint enhancement.",
-    icon: Users,
-    features: ["CX Strategy", "Digital Channels", "Personalization", "Customer Journey Mapping"],
+    title: "Security & Compliance",
+    description: "Enterprise-grade security solutions and compliance management.",
+    icon: Shield,
+    features: ["Security Audits", "Compliance Frameworks", "Threat Detection", "Access Control"],
     color: "from-indigo-500 to-purple-500"
   },
   {
-    title: "Security & Compliance",
-    description: "Enterprise-grade security and regulatory compliance for digital transformation initiatives.",
-    icon: Shield,
-    features: ["Security Architecture", "Compliance Frameworks", "Risk Management", "Security Audits"],
+    title: "Global CDN & Edge",
+    description: "Content delivery networks for optimal global performance.",
+    icon: Globe,
+    features: ["Edge Computing", "Global Distribution", "Performance Optimization", "DDoS Protection"],
     color: "from-yellow-500 to-orange-500"
-  }
-];
-
-const transformationPhases = [
-  {
-    phase: "01",
-    title: "Discovery & Assessment",
-    description: "Evaluate current state, identify opportunities, and assess digital maturity",
-    duration: "2-4 weeks"
-  },
-  {
-    phase: "02",
-    title: "Strategy Development",
-    description: "Create comprehensive digital transformation roadmap and business case",
-    duration: "4-6 weeks"
-  },
-  {
-    phase: "03",
-    title: "Pilot & Validation",
-    description: "Implement proof-of-concept and validate approach with stakeholders",
-    duration: "6-8 weeks"
-  },
-  {
-    phase: "04",
-    title: "Full Implementation",
-    description: "Execute transformation plan with phased rollout and continuous optimization",
-    duration: "6-18 months"
   }
 ];
 
 const testimonials = [
   {
-    content: "Zion's digital transformation approach was game-changing. They didn't just implement technology - they transformed our entire business model.",
-    name: "Carlos Rodriguez",
-    role: "CEO, InnovateCorp",
+    content: "Zion's cloud infrastructure reduced our deployment time from days to hours. Their DevOps expertise is unmatched.",
+    name: "Alex Thompson",
+    role: "DevOps Engineer, CloudCorp",
     rating: 5
   },
   {
-    content: "The process automation they implemented saved us 40 hours per week and improved our customer satisfaction scores significantly.",
-    name: "Lisa Chang",
-    role: "COO, TechFlow Solutions",
+    content: "The automated CI/CD pipeline they built for us has eliminated deployment errors and improved our release velocity.",
+    name: "Maria Santos",
+    role: "Engineering Manager, TechFlow",
     rating: 5
   },
   {
-    content: "Working with Zion transformed our company culture. We're now more agile, data-driven, and customer-focused than ever before.",
-    name: "Marcus Johnson",
-    role: "CTO, DigitalFirst Inc",
+    content: "Working with Zion transformed our cloud strategy. We now have a scalable, secure, and cost-effective infrastructure.",
+    name: "David Chen",
+    role: "CTO, StartupHub",
     rating: 5
   }
 ];
 
 const stats = [
-  { label: "Transformations Completed", value: "75+", icon: Rocket },
-  { label: "Average ROI", value: "300%", icon: TrendingUp },
-  { label: "Process Efficiency Gain", value: "60%", icon: Zap },
-  { label: "Customer Satisfaction", value: "95%", icon: Users }
+  { label: "Cloud Deployments", value: "500+", icon: Cloud },
+  { label: "Uptime SLA", value: "99.99%", icon: Shield },
+  { label: "Cost Reduction", value: "40%", icon: TrendingUp },
+  { label: "Deployment Speed", value: "10x Faster", icon: Zap }
 ];
 
-export default function DigitalTransformation() {
+export default function CloudDevOps() {
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       <SEO 
-        title="Digital Transformation Services - Zion Tech Group" 
-        description="End-to-end business modernization strategies and implementation services that drive innovation and competitive advantage."
-        keywords="digital transformation, business modernization, process automation, technology modernization, change management"
-        canonical="https://ziontechgroup.com/digital-transformation"
+        title="Cloud & DevOps Services - Zion Tech Group" 
+        description="Scalable cloud infrastructure, CI/CD pipelines, and automated deployment solutions that accelerate your development cycle."
+        keywords="cloud computing, DevOps, CI/CD, Kubernetes, Docker, AWS, Azure, Google Cloud, automation"
+        canonical="https://ziontechgroup.com/cloud-devops"
       />
 
       {/* Hero Section */}
@@ -124,14 +97,14 @@ export default function DigitalTransformation() {
             className="relative z-10"
           >
             <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
-              Digital
+              Cloud & DevOps
               <span className="block bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
-                Transformation
+                Solutions
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-zion-slate-light max-w-4xl mx-auto mb-8">
-              Transform your business for the digital age with comprehensive modernization strategies, 
-              process automation, and technology innovation that drives real results.
+              Accelerate your development cycle with scalable cloud infrastructure, automated CI/CD pipelines, 
+              and cutting-edge DevOps practices that drive innovation and efficiency.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
@@ -139,7 +112,7 @@ export default function DigitalTransformation() {
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white rounded-lg text-lg font-semibold hover:shadow-xl hover:shadow-zion-cyan/25 transition-all duration-300"
               >
-                Start Your Transformation
+                Start Your Cloud Journey
               </motion.button>
               <Link
                 to="/contact"
@@ -152,7 +125,7 @@ export default function DigitalTransformation() {
         </div>
         
         {/* Animated Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple/20 opacity-50"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-cyan/20 opacity-50"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,229,255,0.1),transparent_50%)]"></div>
       </section>
 
@@ -192,15 +165,15 @@ export default function DigitalTransformation() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-              Our Transformation Services
+              Our Cloud & DevOps Services
             </h2>
             <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-              Comprehensive digital transformation solutions designed to modernize every aspect of your business.
+              Comprehensive cloud infrastructure and DevOps solutions designed to accelerate your digital transformation.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {transformationServices.map((service, index) => {
+            {cloudServices.map((service, index) => {
               const IconComponent = service.icon;
               return (
                 <motion.div
@@ -244,7 +217,7 @@ export default function DigitalTransformation() {
         </div>
       </section>
 
-      {/* Transformation Process */}
+      {/* Process Section */}
       <section className="py-24 bg-zion-blue-light/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -254,101 +227,40 @@ export default function DigitalTransformation() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-              Our Transformation Process
+              Our DevOps Process
             </h2>
             <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-              A proven methodology that ensures successful digital transformation with measurable results.
+              A proven methodology that ensures successful cloud transformation and DevOps implementation.
             </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {transformationPhases.map((phase, index) => (
+            {[
+              { step: "01", title: "Assessment", description: "Evaluate current infrastructure and identify optimization opportunities" },
+              { step: "02", title: "Strategy", description: "Develop comprehensive cloud and DevOps transformation roadmap" },
+              { step: "03", title: "Implementation", description: "Execute migration and automation with best practices" },
+              { step: "04", title: "Optimization", description: "Continuous monitoring and performance improvement" }
+            ].map((process, index) => (
               <motion.div
-                key={phase.phase}
+                key={process.step}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="text-center"
               >
                 <div className="w-20 h-20 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-full mx-auto mb-6 flex items-center justify-center text-white text-2xl font-bold">
-                  {phase.phase}
+                  {process.step}
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">{phase.title}</h3>
-                <p className="text-zion-slate-light mb-2">{phase.description}</p>
-                <span className="text-zion-cyan text-sm font-medium">{phase.duration}</span>
+                <h3 className="text-xl font-semibold text-white mb-3">{process.title}</h3>
+                <p className="text-zion-slate-light">{process.description}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Benefits Section */}
-      <section className="py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
-              Transformation Benefits
-            </h2>
-            <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-              Digital transformation delivers measurable benefits that impact every aspect of your business.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              {
-                title: "Operational Efficiency",
-                description: "Streamlined processes and automation reduce costs and improve productivity by up to 60%.",
-                icon: Zap
-              },
-              {
-                title: "Customer Experience",
-                description: "Enhanced digital touchpoints and personalized experiences increase customer satisfaction and loyalty.",
-                icon: Users
-              },
-              {
-                title: "Data-Driven Insights",
-                description: "Real-time analytics and business intelligence enable informed decision-making and strategic planning.",
-                icon: TrendingUp
-              },
-              {
-                title: "Competitive Advantage",
-                description: "Innovation and agility position your business ahead of competitors in the digital marketplace.",
-                icon: Rocket
-              }
-            ].map((benefit, index) => {
-              const IconComponent = benefit.icon;
-              return (
-                <motion.div
-                  key={benefit.title}
-                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-zion-blue-light/10 backdrop-blur-md border border-zion-purple/20 rounded-2xl p-8 hover:border-zion-cyan/50 hover:bg-zion-blue-light/20 transition-all duration-300"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="p-3 bg-zion-purple/20 rounded-lg text-zion-cyan">
-                      <IconComponent className="w-8 h-8" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-white mb-3">{benefit.title}</h3>
-                      <p className="text-zion-slate-light leading-relaxed">{benefit.description}</p>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* Testimonials */}
-      <section className="py-24 bg-zion-blue-light/5">
+      <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -360,7 +272,7 @@ export default function DigitalTransformation() {
               Success Stories
             </h2>
             <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-              See how we've helped organizations transform their business through digital innovation.
+              See how we've helped organizations transform their cloud and DevOps practices.
             </p>
           </motion.div>
 
@@ -392,7 +304,7 @@ export default function DigitalTransformation() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24">
+      <section className="py-24 bg-zion-blue-light/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -402,10 +314,10 @@ export default function DigitalTransformation() {
           >
             <div className="bg-gradient-to-r from-zion-cyan/20 via-zion-purple/20 to-zion-cyan/20 border border-zion-cyan/30 rounded-2xl p-12 backdrop-blur-md">
               <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">
-                Ready to Transform Your Business?
+                Ready to Accelerate Your Development?
               </h2>
               <p className="text-xl text-zion-slate-light mb-8 max-w-3xl mx-auto">
-                Join the digital revolution and position your business for success in the modern marketplace.
+                Transform your development workflow with our cloud and DevOps solutions that deliver results.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <motion.button
@@ -413,7 +325,7 @@ export default function DigitalTransformation() {
                   whileTap={{ scale: 0.95 }}
                   className="px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white rounded-lg text-lg font-semibold hover:shadow-xl hover:shadow-zion-cyan/25 transition-all duration-300"
                 >
-                  Start Transformation
+                  Start Your Transformation
                 </motion.button>
                 <Link
                   to="/contact"
