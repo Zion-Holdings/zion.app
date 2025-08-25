@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Sidebar from './Sidebar';
 import { 
@@ -26,68 +26,75 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
   const location = useLocation();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+  // Memoized scroll handler for better performance
+  const handleScroll = useCallback(() => {
+    const scrolled = window.scrollY > 50;
+    setIsScrolled(scrolled);
   }, []);
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [handleScroll]);
+
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setIsMenuOpen(false);
+    setIsSidebarOpen(false);
+  }, [location.pathname]);
 
   const navigationItems = [
     { 
       path: '/', 
       label: 'Home', 
       icon: '🏠',
-      description: 'Welcome to Zion Tech Group'
+      description: 'Welcome to Zion Tech Group',
+      ariaLabel: 'Navigate to home page'
     },
     { 
       path: '/services', 
       label: 'Services', 
       icon: '🤖',
-      description: 'Explore our comprehensive service offerings',
-      hasDropdown: true
+      description: 'Explore our AI service offerings',
+      ariaLabel: 'View AI services and solutions'
     },
     { 
       path: '/solutions/enterprise', 
       label: 'Solutions', 
       icon: '💼',
       description: 'Industry-specific solutions',
-      hasDropdown: true
+      ariaLabel: 'Browse enterprise solutions'
     },
     { 
       path: '/pricing', 
       label: 'Pricing', 
       icon: '💰',
-      description: 'Transparent pricing plans'
+      description: 'Transparent pricing plans',
+      ariaLabel: 'View pricing and plans'
     },
     { 
       path: '/about', 
       label: 'About', 
       icon: 'ℹ️',
-      description: 'Learn about our company'
+      description: 'Learn about our company',
+      ariaLabel: 'Learn about Zion Tech Group'
     },
     { 
       path: '/careers', 
       label: 'Careers', 
       icon: '🚀',
-      description: 'Join our team'
-    },
-    { 
-      path: '/blog', 
-      label: 'Blog', 
-      icon: '📝',
-      description: 'Latest insights and news'
+      description: 'Join our innovative team',
+      ariaLabel: 'View career opportunities'
     },
     { 
       path: '/contact', 
       label: 'Contact', 
       icon: '📞',
-      description: 'Get in touch with us'
+      description: 'Get in touch with us',
+      ariaLabel: 'Contact Zion Tech Group'
     }
   ];
 
@@ -95,34 +102,31 @@ export function Header() {
     {
       title: 'AI & Machine Learning',
       icon: Brain,
-      description: 'Intelligent solutions powered by artificial intelligence',
+      description: 'Intelligent solutions for modern businesses',
       services: [
-        { name: 'AI Business Intelligence', path: '/services#ai-bi', description: 'Advanced analytics and insights' },
-        { name: 'AI Marketing Automation', path: '/services#ai-marketing', description: 'Smart marketing optimization' },
-        { name: 'AI HR & Recruitment', path: '/services#ai-hr', description: 'Intelligent talent management' },
-        { name: 'AI Legal Tech', path: '/services#ai-legal', description: 'Automated legal processes' },
-        { name: 'AI Healthcare Analytics', path: '/services#ai-healthcare', description: 'Patient care optimization' }
+        { name: 'AI-Powered CRM', path: '/services#ai-crm', description: 'Smart customer management' },
+        { name: 'Predictive Analytics', path: '/services#analytics', description: 'Data-driven insights' },
+        { name: 'Natural Language Processing', path: '/services#nlp', description: 'Text and speech analysis' },
+        { name: 'Computer Vision', path: '/services#vision', description: 'Image recognition solutions' }
       ]
     },
     {
-      title: 'Cybersecurity & Compliance',
+      title: 'Cybersecurity',
       icon: Shield,
-      description: 'Protect your digital assets with cutting-edge security',
+      description: 'Protect your digital assets with advanced security',
       services: [
-        { name: 'Quantum-Safe Security', path: '/services#quantum-security', description: 'Future-proof protection' },
-        { name: 'Security Assessment', path: '/services#security-assessment', description: 'Comprehensive security audit' },
-        { name: 'Compliance & Audit', path: '/services#compliance', description: 'Regulatory compliance solutions' },
-        { name: 'Threat Detection', path: '/services#threat-detection', description: 'Real-time security monitoring' }
+        { name: 'Threat Detection', path: '/services#threat-detection', description: 'Real-time security monitoring' },
+        { name: 'Vulnerability Assessment', path: '/services#vulnerability', description: 'Comprehensive security audit' },
+        { name: 'Incident Response', path: '/services#incident-response', description: '24/7 security support' },
+        { name: 'Compliance Management', path: '/services#compliance', description: 'Meet regulatory requirements' }
       ]
     },
     {
-      title: 'Cloud & Infrastructure',
+      title: 'Cloud & DevOps',
       icon: Cpu,
-      description: 'Scalable cloud solutions and infrastructure management',
+      description: 'Scalable cloud infrastructure and automation',
       services: [
-        { name: 'Cloud Migration', path: '/services#cloud-migration', description: 'Seamless cloud transition' },
-        { name: 'Network Infrastructure', path: '/services#network', description: 'Robust network solutions' },
-        { name: 'Managed IT Services', path: '/services#managed-it', description: '24/7 IT support' },
+        { name: 'Cloud Migration', path: '/cloud-devops', description: 'Seamless cloud transition' },
         { name: 'DevOps Automation', path: '/services#devops', description: 'Streamlined development' }
       ]
     },
@@ -131,239 +135,176 @@ export function Header() {
       icon: Rocket,
       description: 'Cutting-edge solutions for tomorrow\'s challenges',
       services: [
-        { name: 'Blockchain Solutions', path: '/services#blockchain', description: 'Decentralized applications' },
-        { name: 'IoT Platforms', path: '/services#iot', description: 'Connected device management' },
-        { name: 'Quantum Computing', path: '/services#quantum', description: 'Next-generation computing' },
-        { name: 'AR/VR Solutions', path: '/services#ar-vr', description: 'Immersive experiences' }
-      ]
-    },
-    {
-      title: 'Industry Solutions',
-      icon: Building,
-      description: 'Tailored solutions for specific industries',
-      services: [
-        { name: 'Healthcare Technology', path: '/solutions/healthcare', description: 'Medical innovation' },
-        { name: 'Financial Services', path: '/services#financial', description: 'Fintech solutions' },
-        { name: 'Manufacturing Intelligence', path: '/services#manufacturing', description: 'Smart manufacturing' },
-        { name: 'Retail Technology', path: '/services#retail', description: 'Digital retail transformation' }
+        { name: 'Blockchain Solutions', path: '/services#blockchain' },
+        { name: 'IoT Integration', path: '/services#iot' },
+        { name: 'Quantum Computing', path: '/services#quantum' }
       ]
     }
   ];
 
-  const solutionCategories = [
-    {
-      title: 'Enterprise Solutions',
-      icon: Building,
-      description: 'Large-scale business transformation',
-      solutions: [
-        { name: 'Digital Transformation', path: '/digital-transformation', description: 'Complete business modernization' },
-        { name: 'Enterprise AI', path: '/solutions/enterprise', description: 'AI-powered enterprise solutions' },
-        { name: 'Data Analytics', path: '/services#analytics', description: 'Business intelligence platform' }
-      ]
-    },
-    {
-      title: 'SMB Solutions',
-      icon: Users,
-      description: 'Scalable solutions for growing businesses',
-      solutions: [
-        { name: 'Micro SAAS', path: '/services/micro-saas-solutions', description: 'Custom software solutions' },
-        { name: 'Cloud Migration', path: '/cloud-devops', description: 'Affordable cloud solutions' },
-        { name: 'IT Support', path: '/services#it-support', description: 'Managed IT services' }
-      ]
-    },
-    {
-      title: 'Startup Solutions',
-      icon: Rocket,
-      description: 'Accelerate your startup growth',
-      solutions: [
-        { name: 'MVP Development', path: '/services#mvp', description: 'Rapid prototype development' },
-        { name: 'AI Integration', path: '/ai-solutions', description: 'AI-powered features' },
-        { name: 'Scalable Architecture', path: '/services#architecture', description: 'Growth-ready infrastructure' }
-      ]
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    // Prevent body scroll when menu is open
+    if (!isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
     }
-  ];
-
-  const handleDropdownToggle = (dropdown: string) => {
-    setActiveDropdown(activeDropdown === dropdown ? null : dropdown);
   };
 
-  const closeDropdowns = () => {
-    setActiveDropdown(null);
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
   };
-
-  const isActive = (path: string) => location.pathname === path;
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-zion-blue-dark/95 backdrop-blur-md border-b border-zion-cyan/20 shadow-2xl shadow-zion-cyan/10' 
-        : 'bg-transparent'
-    }`}>
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+    <header 
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled 
+          ? 'bg-black/95 backdrop-blur-md shadow-lg border-b border-gray-800' 
+          : 'bg-transparent'
+      }`}
+      role="banner"
+      aria-label="Main navigation"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-between items-center h-16 lg:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="relative">
-              <div className="w-12 h-12 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Rocket className="w-7 h-7 text-white" />
+          <div className="flex-shrink-0">
+            <Link 
+              to="/" 
+              className="flex items-center space-x-2 group"
+              aria-label="Zion Tech Group - Return to home page"
+            >
+              <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
+                <span className="text-white font-bold text-lg lg:text-xl">Z</span>
               </div>
-              <div className="absolute -inset-1 bg-gradient-to-r from-zion-cyan to-zion-purple rounded-xl blur opacity-25 group-hover:opacity-40 transition-opacity duration-300"></div>
-            </div>
-            <div className="hidden md:block">
-              <div className="text-2xl font-bold text-white group-hover:text-zion-cyan transition-colors">
-                Zion Tech Group
+              <div className="hidden sm:block">
+                <h1 className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
+                  Zion Tech Group
+                </h1>
+                <p className="text-xs text-gray-400 hidden lg:block">Innovation Through Technology</p>
               </div>
-              <div className="text-xs text-zion-slate-light">Revolutionary Technology Solutions</div>
-            </div>
-          </Link>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex space-x-8" role="navigation" aria-label="Main navigation">
             {navigationItems.map((item) => (
-              <div key={item.path} className="relative">
-                {item.hasDropdown ? (
-                  <button
-                    onClick={() => handleDropdownToggle(item.label.toLowerCase())}
-                    className="flex items-center space-x-1 text-white hover:text-zion-cyan transition-colors py-2 px-3 rounded-lg hover:bg-white/10"
-                  >
-                    <span>{item.label}</span>
-                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${
-                      activeDropdown === item.label.toLowerCase() ? 'rotate-180' : ''
-                    }`} />
-                  </button>
-                ) : (
-                  <Link
-                    to={item.path}
-                    className="text-white hover:text-zion-cyan transition-colors py-2 px-3 rounded-lg hover:bg-white/10"
-                  >
-                    {item.label}
-                  </Link>
-                )}
-
-                {/* Services Dropdown */}
-                {item.hasDropdown && item.label === 'Services' && activeDropdown === 'services' && (
-                  <div className="absolute top-full left-0 mt-2 w-96 bg-zion-blue-dark/95 backdrop-blur-md border border-zion-cyan/20 rounded-xl shadow-2xl shadow-zion-cyan/25 p-6">
-                    <div className="grid grid-cols-1 gap-4">
-                      {serviceCategories.map((category) => (
-                        <div key={category.title} className="group">
-                          <div className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10 transition-colors">
-                            <div className="w-10 h-10 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-lg flex items-center justify-center">
-                              <category.icon className="w-5 h-5 text-white" />
-                            </div>
-                            <div className="flex-1">
-                              <h4 className="font-semibold text-white group-hover:text-zion-cyan transition-colors">
-                                {category.title}
-                              </h4>
-                              <p className="text-sm text-zion-slate-light">{category.description}</p>
-                            </div>
-                          </div>
-                          <div className="ml-13 pl-4 border-l border-zion-cyan/20">
-                            {category.services.map((service) => (
-                              <Link
-                                key={service.name}
-                                to={service.path}
-                                onClick={closeDropdowns}
-                                className="block p-2 rounded-lg hover:bg-white/5 transition-colors"
-                              >
-                                <div className="font-medium text-white hover:text-zion-cyan transition-colors">
-                                  {service.name}
-                                </div>
-                                <div className="text-sm text-zion-slate-light">{service.description}</div>
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="mt-4 pt-4 border-t border-zion-cyan/20">
-                      <Link
-                        to="/services-showcase"
-                        onClick={closeDropdowns}
-                        className="flex items-center justify-center w-full bg-gradient-to-r from-zion-cyan to-zion-purple hover:from-zion-cyan-light hover:to-zion-purple-light text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105"
-                      >
-                        <span>View All Services</span>
-                        <ArrowRight className="ml-2 w-4 h-4" />
-                      </Link>
-                    </div>
-                  </div>
-                )}
-
-                {/* Solutions Dropdown */}
-                {item.hasDropdown && item.label === 'Solutions' && activeDropdown === 'solutions' && (
-                  <div className="absolute top-full left-0 mt-2 w-80 bg-zion-blue-dark/95 backdrop-blur-md border border-zion-cyan/20 rounded-xl shadow-2xl shadow-zion-cyan/25 p-6">
-                    <div className="space-y-4">
-                      {solutionCategories.map((category) => (
-                        <div key={category.title} className="group">
-                          <div className="flex items-center space-x-3 p-3 rounded-lg hover:bg-white/10 transition-colors">
-                            <div className="w-10 h-10 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-lg flex items-center justify-center">
-                              <category.icon className="w-5 h-5 text-white" />
-                            </div>
-                            <div className="flex-1">
-                              <h4 className="font-semibold text-white group-hover:text-zion-cyan transition-colors">
-                                {category.title}
-                              </h4>
-                              <p className="text-sm text-zion-slate-light">{category.description}</p>
-                            </div>
-                          </div>
-                          <div className="ml-13 pl-4 border-l border-zion-cyan/20">
-                            {category.solutions.map((solution) => (
-                              <Link
-                                key={solution.name}
-                                to={solution.path}
-                                onClick={closeDropdowns}
-                                className="block p-2 rounded-lg hover:bg-white/5 transition-colors"
-                              >
-                                <div className="font-medium text-white hover:text-zion-cyan transition-colors">
-                                  {solution.name}
-                                </div>
-                                <div className="text-sm text-zion-slate-light">{solution.description}</div>
-                              </Link>
-                            ))}
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`relative group px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 ${
+                  location.pathname === item.path
+                    ? 'text-cyan-400 bg-cyan-400/10'
+                    : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
+                }`}
+                aria-label={item.ariaLabel}
+                title={item.description}
+              >
+                <span className="flex items-center space-x-2">
+                  <span className="text-lg">{item.icon}</span>
+                  <span>{item.label}</span>
+                </span>
+                
+                {/* Hover indicator */}
+                <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+              </Link>
             ))}
           </nav>
 
-          {/* Contact Info & CTA */}
-          <div className="hidden lg:flex items-center space-x-6">
-            {/* Contact Info */}
-            <div className="flex items-center space-x-4 text-zion-slate-light">
-              <div className="flex items-center space-x-2 hover:text-zion-cyan transition-colors cursor-pointer">
-                <Phone className="w-4 h-4" />
-                <span className="text-sm">+1 302 464 0950</span>
-              </div>
-              <div className="flex items-center space-x-2 hover:text-zion-cyan transition-colors cursor-pointer">
-                <Mail className="w-4 h-4" />
-                <span className="text-sm">kleber@ziontechgroup.com</span>
-              </div>
+          {/* Search Bar */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <div className="relative">
+              <input
+                type="search"
+                placeholder="Search services..."
+                className={`w-64 px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all duration-200 ${
+                  isSearchFocused ? 'w-80' : 'w-64'
+                }`}
+                onFocus={() => setIsSearchFocused(true)}
+                onBlur={() => setIsSearchFocused(false)}
+                aria-label="Search for services and solutions"
+              />
+              <button
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-cyan-400 transition-colors duration-200"
+                aria-label="Search"
+              >
+                🔍
+              </button>
             </div>
+          </div>
 
-            {/* CTA Button */}
+          {/* CTA Button */}
+          <div className="hidden lg:block">
             <Link
               to="/contact"
-              className="bg-gradient-to-r from-zion-cyan to-zion-purple hover:from-zion-cyan-light hover:to-zion-purple-light text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-zion-cyan/25"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25"
+              aria-label="Get started with Zion Tech Group"
             >
               Get Started
+              <ArrowRight className="ml-2 w-4 h-4" />
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsSidebarOpen(true)}
-            className="lg:hidden p-2 text-white hover:text-zion-cyan transition-colors"
+            onClick={toggleMenu}
+            className="lg:hidden p-2 text-gray-300 hover:text-white transition-colors duration-200"
+            aria-label="Toggle mobile menu"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
           >
-            <Menu className="w-6 h-6" />
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Sidebar */}
-      <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div 
+          id="mobile-menu"
+          className="lg:hidden bg-black/95 backdrop-blur-md border-t border-gray-800"
+          role="navigation"
+          aria-label="Mobile navigation"
+        >
+          <div className="px-4 py-6 space-y-4">
+            {navigationItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`block px-3 py-3 rounded-md text-base font-medium transition-colors duration-200 ${
+                  location.pathname === item.path
+                    ? 'text-cyan-400 bg-cyan-400/10'
+                    : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+                aria-label={item.ariaLabel}
+              >
+                <span className="flex items-center space-x-3">
+                  <span className="text-xl">{item.icon}</span>
+                  <span>{item.label}</span>
+                </span>
+                <p className="text-sm text-gray-400 mt-1 ml-8">{item.description}</p>
+              </Link>
+            ))}
+            
+            {/* Mobile CTA */}
+            <div className="pt-4 border-t border-gray-800">
+              <Link
+                to="/contact"
+                className="block w-full text-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-lg transition-all duration-200"
+                onClick={() => setIsMenuOpen(false)}
+                aria-label="Get started with Zion Tech Group"
+              >
+                Get Started
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Sidebar */}
+      <Sidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
     </header>
   );
 }

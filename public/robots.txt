@@ -4,20 +4,75 @@ Allow: /
 # Sitemap
 Sitemap: https://ziontechgroup.com/sitemap.xml
 
-# Disallow admin and private areas
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Disallow admin and development areas
 Disallow: /admin/
-Disallow: /private/
 Disallow: /api/
 Disallow: /_next/
 Disallow: /static/
+Disallow: /temp/
+Disallow: /backup/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /automation/
+Disallow: /scripts/
 
 # Allow important pages
-Allow: /services
-Allow: /ai-solutions
-Allow: /about
-Allow: /contact
-Allow: /team
-Allow: /mission
+Allow: /services/
+Allow: /solutions/
+Allow: /about/
+Allow: /contact/
+Allow: /blog/
+Allow: /news/
+Allow: /careers/
+Allow: /pricing/
 
-# Crawl delay (optional)
+# Specific rules for different bots
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.5
+
+User-agent: Bingbot
+Allow: /
 Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: Screaming Frog SEO Spider
+Disallow: /
+
+# Rate limiting for aggressive bots
+User-agent: *
+Crawl-delay: 2
