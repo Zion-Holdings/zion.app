@@ -7,6 +7,8 @@ import { EnhancedComprehensiveServicesShowcase } from '../components/EnhancedCom
 import { EnhancedContactSection } from '../components/EnhancedContactSection';
 import { EnhancedTestimonialsSection } from '../components/EnhancedTestimonialsSection';
 import { EnhancedPricingSection } from '../components/EnhancedPricingSection';
+import { ServiceCalculator } from '../components/ServiceCalculator';
+import { TechnologyStackShowcase } from '../components/TechnologyStackShowcase';
 
 export default function HomePage() {
   const heroStats = [
@@ -321,6 +323,12 @@ export default function HomePage() {
 
       {/* Enhanced Services Showcase */}
       <EnhancedComprehensiveServicesShowcase />
+
+      {/* Service Calculator */}
+      <ServiceCalculator />
+
+      {/* Technology Stack Showcase */}
+      <TechnologyStackShowcase />
 
       {/* Technologies Section */}
       <section className="py-20 px-6">
