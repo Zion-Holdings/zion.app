@@ -1,620 +1,493 @@
-export interface EnhancedMicroSaasService {
+export interface MicroSaasService {
   id: string;
-  title: string;
-  description: string;
+  name: string;
   category: string;
   subcategory: string;
+  description: string;
   price: number;
-  currency: string;
-  pricingModel: string;
+  pricingModel: 'freemium' | 'monthly' | 'yearly' | 'per-user' | 'usage-based';
+  userLimit: string;
   features: string[];
   benefits: string[];
-  useCases: string[];
   targetAudience: string[];
   tags: string[];
-  estimatedDelivery: string;
-  supportLevel: string;
-  marketPrice: string;
+  website: string;
+  demoUrl?: string;
+  freeTrial: boolean;
+  freeTrialDays: number;
   contactInfo: {
     phone: string;
     email: string;
-    website: string;
+    address: string;
   };
-  technology: string[];
-  integrations: string[];
-  compliance: string[];
-  roi: string;
+  marketPosition: string;
   competitors: string[];
+  roi: string;
+  implementationTime: string;
 }
 
-export const ENHANCED_MICRO_SAAS_SERVICES: EnhancedMicroSaasService[] = [
-  // AI-Powered Business Intelligence
+export const ENHANCED_MICRO_SAAS_SERVICES: MicroSaasService[] = [
+  // Productivity & Collaboration
   {
-    id: "ai-business-intelligence-platform",
-    title: "AI Business Intelligence Platform",
-    description: "Advanced AI-powered BI platform that transforms raw data into actionable insights using machine learning and predictive analytics.",
-    category: "AI & Business Intelligence",
-    subcategory: "Data Analytics",
-    price: 299,
-    currency: "$",
+    id: "taskflow-pro",
+    name: "TaskFlow Pro",
+    category: "Productivity",
+    subcategory: "Project Management",
+    description: "AI-powered task management and project collaboration platform with intelligent automation and predictive analytics",
+    price: 29,
     pricingModel: "monthly",
+    userLimit: "Up to 25 users",
     features: [
-      "Real-time data visualization",
-      "Predictive analytics",
-      "Natural language queries",
-      "Automated reporting",
-      "Custom dashboards",
-      "Data source integration",
-      "Mobile-responsive interface",
-      "Role-based access control"
+      "AI task prioritization",
+      "Smart time estimation",
+      "Real-time collaboration",
+      "Advanced reporting",
+      "Mobile app",
+      "API integration",
+      "Custom workflows",
+      "Resource allocation"
     ],
     benefits: [
-      "Increase decision-making speed by 40%",
-      "Reduce manual reporting time by 70%",
-      "Improve data accuracy by 95%",
-      "Real-time insights for competitive advantage",
-      "Scalable for growing businesses"
+      "Increase team productivity by 40%",
+      "Reduce project delays by 60%",
+      "Improve resource utilization",
+      "Enhanced team communication"
     ],
-    useCases: [
-      "Sales performance tracking",
-      "Financial forecasting",
-      "Customer behavior analysis",
-      "Operational efficiency monitoring",
-      "Market trend analysis"
-    ],
-    targetAudience: [
-      "Business analysts",
-      "Data scientists",
-      "Executives",
-      "Operations managers",
-      "Marketing teams"
-    ],
-    tags: ["AI", "Business Intelligence", "Data Analytics", "Machine Learning", "Predictive Analytics"],
-    estimatedDelivery: "2-3 weeks",
-    supportLevel: "premium",
-    marketPrice: "$299 - $1,200/month",
+    targetAudience: ["Small teams", "Startups", "Agencies", "Consulting firms"],
+    tags: ["Task Management", "AI", "Productivity", "Collaboration", "Project Management"],
+    website: "https://ziontechgroup.com/taskflow-pro",
+    demoUrl: "https://demo.ziontechgroup.com/taskflow",
+    freeTrial: true,
+    freeTrialDays: 14,
     contactInfo: {
       phone: "+1 302 464 0950",
       email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+      address: "364 E Main St STE 1008 Middletown DE 19709"
     },
-    technology: ["React", "Python", "TensorFlow", "PostgreSQL", "Redis"],
-    integrations: ["Salesforce", "HubSpot", "QuickBooks", "Google Analytics", "Slack"],
-    compliance: ["GDPR", "SOC 2", "HIPAA"],
+    marketPosition: "Mid-market project management solution",
+    competitors: ["Asana", "Monday.com", "ClickUp"],
     roi: "300% within 6 months",
-    competitors: ["Tableau", "Power BI", "Looker", "Qlik"]
+    implementationTime: "1-2 weeks"
   },
-
-  // AI-Powered Customer Service
   {
-    id: "ai-customer-service-automation",
-    title: "AI Customer Service Automation",
-    description: "Intelligent customer service platform that automates responses, handles inquiries, and provides 24/7 support using advanced NLP.",
-    category: "AI & Customer Service",
-    subcategory: "Automation",
-    price: 199,
-    currency: "$",
+    id: "invoicegenius",
+    name: "InvoiceGenius",
+    category: "Finance",
+    subcategory: "Invoicing & Billing",
+    description: "AI-powered invoice generation, expense tracking, and financial management platform for small businesses",
+    price: 39,
     pricingModel: "monthly",
+    userLimit: "Unlimited users",
     features: [
-      "Natural language processing",
-      "Multi-language support",
-      "Sentiment analysis",
-      "Automated ticket routing",
-      "Knowledge base integration",
-      "Live chat handoff",
-      "Performance analytics",
-      "Custom bot training"
+      "AI invoice generation",
+      "Expense categorization",
+      "Financial reporting",
+      "Tax preparation",
+      "Multi-currency support",
+      "Payment processing",
+      "Bank reconciliation",
+      "Mobile receipt scanning"
     ],
     benefits: [
-      "Reduce response time by 80%",
-      "Handle 70% of inquiries automatically",
-      "Improve customer satisfaction by 25%",
-      "24/7 availability",
-      "Cost reduction of 60%"
+      "Save 15+ hours per month on invoicing",
+      "Reduce payment delays by 45%",
+      "Improve cash flow management",
+      "Automated tax compliance"
     ],
-    useCases: [
-      "Customer support",
-      "FAQ handling",
-      "Order tracking",
-      "Technical support",
-      "Appointment scheduling"
-    ],
-    targetAudience: [
-      "Customer service managers",
-      "E-commerce businesses",
-      "SaaS companies",
-      "Healthcare providers",
-      "Financial services"
-    ],
-    tags: ["AI", "Customer Service", "Automation", "NLP", "Chatbot"],
-    estimatedDelivery: "3-4 weeks",
-    supportLevel: "premium",
-    marketPrice: "$199 - $800/month",
+    targetAudience: ["Small businesses", "Freelancers", "Consultants", "Service providers"],
+    tags: ["Invoicing", "Finance", "AI", "Expense Tracking", "Tax Preparation"],
+    website: "https://ziontechgroup.com/invoicegenius",
+    demoUrl: "https://demo.ziontechgroup.com/invoice",
+    freeTrial: true,
+    freeTrialDays: 30,
     contactInfo: {
       phone: "+1 302 464 0950",
       email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+      address: "364 E Main St STE 1008 Middletown DE 19709"
     },
-    technology: ["Python", "TensorFlow", "React", "Node.js", "MongoDB"],
-    integrations: ["Zendesk", "Intercom", "Slack", "Microsoft Teams", "Salesforce"],
-    compliance: ["GDPR", "CCPA", "SOC 2"],
+    marketPosition: "AI-first financial management platform",
+    competitors: ["FreshBooks", "QuickBooks", "Wave"],
     roi: "250% within 4 months",
-    competitors: ["Intercom", "Zendesk", "Freshdesk", "Help Scout"]
+    implementationTime: "1 week"
   },
-
-  // AI-Powered Sales Intelligence
   {
-    id: "ai-sales-intelligence-platform",
-    title: "AI Sales Intelligence Platform",
-    description: "Comprehensive sales intelligence platform that uses AI to identify prospects, predict buying behavior, and optimize sales strategies.",
-    category: "AI & Sales",
-    subcategory: "Intelligence",
-    price: 399,
-    currency: "$",
+    id: "socialsync-pro",
+    name: "SocialSync Pro",
+    category: "Marketing",
+    subcategory: "Social Media Management",
+    description: "Comprehensive social media management platform with AI content optimization and multi-platform analytics",
+    price: 49,
     pricingModel: "monthly",
+    userLimit: "Up to 10 users",
     features: [
-      "Lead scoring and prioritization",
-      "Buying intent prediction",
-      "Account-based marketing",
-      "Sales forecasting",
-      "Competitive intelligence",
-      "Email tracking and analytics",
-      "CRM integration",
-      "Performance insights"
+      "Multi-platform posting",
+      "AI content optimization",
+      "Content calendar",
+      "Analytics dashboard",
+      "Engagement tracking",
+      "Hashtag optimization",
+      "Competitor analysis",
+      "Automated responses"
     ],
     benefits: [
-      "Increase conversion rates by 35%",
-      "Reduce sales cycle by 25%",
-      "Improve lead quality by 50%",
-      "Boost revenue by 40%",
-      "Automate repetitive tasks"
+      "Increase social engagement by 65%",
+      "Save 20+ hours per week",
+      "Improve content performance",
+      "Better brand consistency"
     ],
-    useCases: [
-      "Lead generation",
-      "Account expansion",
-      "Sales forecasting",
-      "Competitive analysis",
-      "Pipeline management"
-    ],
-    targetAudience: [
-      "Sales managers",
-      "Business development",
-      "Marketing teams",
-      "Sales representatives",
-      "Startups"
-    ],
-    tags: ["AI", "Sales", "Lead Generation", "Predictive Analytics", "CRM"],
-    estimatedDelivery: "4-5 weeks",
-    supportLevel: "premium",
-    marketPrice: "$399 - $1,500/month",
+    targetAudience: ["Marketing teams", "Small businesses", "Agencies", "Content creators"],
+    tags: ["Social Media", "Marketing", "AI", "Analytics", "Content Management"],
+    website: "https://ziontechgroup.com/socialsync-pro",
+    demoUrl: "https://demo.ziontechgroup.com/social",
+    freeTrial: true,
+    freeTrialDays: 14,
     contactInfo: {
       phone: "+1 302 464 0950",
       email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+      address: "364 E Main St STE 1008 Middletown DE 19709"
     },
-    technology: ["Python", "Scikit-learn", "React", "PostgreSQL", "Redis"],
-    integrations: ["Salesforce", "HubSpot", "Pipedrive", "Outreach", "LinkedIn Sales Navigator"],
-    compliance: ["GDPR", "CCPA", "SOC 2"],
-    roi: "400% within 6 months",
-    competitors: ["ZoomInfo", "LinkedIn Sales Navigator", "DiscoverOrg", "Clearbit"]
+    marketPosition: "AI-powered social media automation",
+    competitors: ["Hootsuite", "Buffer", "Sprout Social"],
+    roi: "400% within 3 months",
+    implementationTime: "1 week"
   },
-
-  // AI-Powered Content Creation
   {
-    id: "ai-content-creation-suite",
-    title: "AI Content Creation Suite",
-    description: "Advanced AI-powered content creation platform that generates high-quality articles, social media posts, and marketing copy.",
-    category: "AI & Content Creation",
-    subcategory: "Writing",
-    price: 149,
-    currency: "$",
-    pricingModel: "monthly",
+    id: "customerflow-crm",
+    name: "CustomerFlow CRM",
+    category: "CRM",
+    subcategory: "Customer Relationship Management",
+    description: "Lightweight yet powerful CRM system with AI insights and automated sales processes",
+    price: 35,
+    pricingModel: "per-user",
+    userLimit: "Up to 50 users",
     features: [
-      "AI-powered writing assistant",
-      "Multiple content formats",
-      "SEO optimization",
-      "Plagiarism detection",
-      "Brand voice customization",
-      "Content calendar",
-      "Performance analytics",
-      "Team collaboration"
+      "Contact management",
+      "Sales pipeline",
+      "Email integration",
+      "AI lead scoring",
+      "Automated follow-ups",
+      "Reporting tools",
+      "Mobile app",
+      "API access"
     ],
     benefits: [
-      "Increase content production by 300%",
+      "Increase sales by 35%",
+      "Improve lead conversion by 50%",
+      "Reduce manual data entry by 80%",
+      "Better customer insights"
+    ],
+    targetAudience: ["Sales teams", "Small businesses", "Startups", "Consultants"],
+    tags: ["CRM", "Sales", "AI", "Automation", "Lead Management"],
+    website: "https://ziontechgroup.com/customerflow-crm",
+    demoUrl: "https://demo.ziontechgroup.com/crm",
+    freeTrial: true,
+    freeTrialDays: 21,
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      address: "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    marketPosition: "AI-driven sales automation platform",
+    competitors: ["HubSpot", "Salesforce", "Pipedrive"],
+    roi: "350% within 5 months",
+    implementationTime: "2-3 weeks"
+  },
+  {
+    id: "dataviz-studio",
+    name: "DataViz Studio",
+    category: "Analytics",
+    subcategory: "Data Visualization",
+    description: "Advanced data visualization and business intelligence platform with AI-powered insights",
+    price: 59,
+    pricingModel: "monthly",
+    userLimit: "Up to 15 users",
+    features: [
+      "Interactive dashboards",
+      "AI-powered insights",
+      "Data connectors",
+      "Custom charts",
+      "Real-time updates",
+      "Collaborative editing",
+      "Export capabilities",
+      "Mobile responsive"
+    ],
+    benefits: [
+      "Make data-driven decisions 3x faster",
+      "Improve reporting efficiency by 70%",
+      "Better stakeholder communication",
+      "Real-time business insights"
+    ],
+    targetAudience: ["Business analysts", "Marketing teams", "Executives", "Data teams"],
+    tags: ["Analytics", "Data Visualization", "AI", "Business Intelligence", "Reporting"],
+    website: "https://ziontechgroup.com/dataviz-studio",
+    demoUrl: "https://demo.ziontechgroup.com/dataviz",
+    freeTrial: true,
+    freeTrialDays: 14,
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      address: "364 E Main St STE 1008 Middletown DE 19709"
+    },
+    marketPosition: "AI-powered business intelligence platform",
+    competitors: ["Tableau", "Power BI", "Looker"],
+    roi: "500% within 6 months",
+    implementationTime: "2-4 weeks"
+  },
+  // New Innovative Services
+  {
+    id: "ai-content-writer",
+    name: "AI Content Writer Pro",
+    category: "Content Creation",
+    subcategory: "AI Writing",
+    description: "Advanced AI content creation platform for blogs, marketing copy, and business communications",
+    price: 79,
+    pricingModel: "monthly",
+    userLimit: "Up to 20 users",
+    features: [
+      "AI blog writing",
+      "Marketing copy generation",
+      "SEO optimization",
+      "Content templates",
+      "Plagiarism checking",
+      "Multi-language support",
+      "Brand voice training",
+      "Content calendar"
+    ],
+    benefits: [
+      "Create 10x more content",
       "Improve SEO rankings by 40%",
       "Reduce content costs by 60%",
-      "Maintain consistent brand voice",
-      "Faster time to market"
+      "Consistent brand messaging"
     ],
-    useCases: [
-      "Blog writing",
-      "Social media content",
-      "Email marketing",
-      "Product descriptions",
-      "Press releases"
-    ],
-    targetAudience: [
-      "Content marketers",
-      "Digital agencies",
-      "E-commerce businesses",
-      "Bloggers",
-      "Marketing teams"
-    ],
-    tags: ["AI", "Content Creation", "SEO", "Marketing", "Writing"],
-    estimatedDelivery: "2-3 weeks",
-    supportLevel: "standard",
-    marketPrice: "$149 - $600/month",
+    targetAudience: ["Marketing teams", "Content creators", "Agencies", "Small businesses"],
+    tags: ["AI Writing", "Content Creation", "SEO", "Marketing", "Automation"],
+    website: "https://ziontechgroup.com/ai-content-writer",
+    demoUrl: "https://demo.ziontechgroup.com/aiwriter",
+    freeTrial: true,
+    freeTrialDays: 7,
     contactInfo: {
       phone: "+1 302 464 0950",
       email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+      address: "364 E Main St STE 1008 Middletown DE 19709"
     },
-    technology: ["OpenAI GPT", "React", "Node.js", "PostgreSQL", "Redis"],
-    integrations: ["WordPress", "Shopify", "Mailchimp", "Buffer", "Hootsuite"],
-    compliance: ["GDPR", "CCPA"],
-    roi: "200% within 3 months",
-    competitors: ["Jasper", "Copy.ai", "Writesonic", "ContentBot"]
+    marketPosition: "Enterprise-grade AI content creation",
+    competitors: ["Jasper", "Copy.ai", "Writesonic"],
+    roi: "600% within 3 months",
+    implementationTime: "1 week"
   },
-
-  // AI-Powered Financial Analysis
   {
-    id: "ai-financial-analysis-platform",
-    title: "AI Financial Analysis Platform",
-    description: "Intelligent financial analysis platform that uses AI to analyze market trends, predict stock movements, and provide investment insights.",
-    category: "AI & Finance",
-    subcategory: "Investment",
-    price: 599,
-    currency: "$",
+    id: "smart-inventory",
+    name: "Smart Inventory Manager",
+    category: "Operations",
+    subcategory: "Inventory Management",
+    description: "AI-powered inventory management system with predictive analytics and automated reordering",
+    price: 45,
     pricingModel: "monthly",
+    userLimit: "Up to 30 users",
     features: [
-      "Real-time market analysis",
-      "Predictive modeling",
-      "Risk assessment",
-      "Portfolio optimization",
-      "News sentiment analysis",
-      "Technical indicators",
-      "Custom alerts",
-      "Performance tracking"
-    ],
-    benefits: [
-      "Improve investment returns by 25%",
-      "Reduce risk exposure by 30%",
-      "Save 15+ hours per week on analysis",
-      "Data-driven decision making",
-      "Real-time market insights"
-    ],
-    useCases: [
-      "Stock trading",
-      "Portfolio management",
-      "Risk assessment",
-      "Market research",
-      "Investment planning"
-    ],
-    targetAudience: [
-      "Individual investors",
-      "Financial advisors",
-      "Hedge funds",
-      "Investment firms",
-      "Traders"
-    ],
-    tags: ["AI", "Finance", "Investment", "Trading", "Risk Management"],
-    estimatedDelivery: "6-8 weeks",
-    supportLevel: "premium",
-    marketPrice: "$599 - $2,500/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    },
-    technology: ["Python", "TensorFlow", "React", "PostgreSQL", "Redis"],
-    integrations: ["TD Ameritrade", "E*TRADE", "Robinhood", "Yahoo Finance", "Bloomberg"],
-    compliance: ["SEC", "FINRA", "GDPR", "SOC 2"],
-    roi: "150% within 12 months",
-    competitors: ["Bloomberg Terminal", "Refinitiv", "FactSet", "YCharts"]
-  },
-
-  // AI-Powered Healthcare Analytics
-  {
-    id: "ai-healthcare-analytics-platform",
-    title: "AI Healthcare Analytics Platform",
-    description: "Advanced healthcare analytics platform that uses AI to analyze patient data, predict outcomes, and optimize treatment plans.",
-    category: "AI & Healthcare",
-    subcategory: "Analytics",
-    price: 799,
-    currency: "$",
-    pricingModel: "monthly",
-    features: [
-      "Patient data analysis",
-      "Predictive diagnostics",
-      "Treatment optimization",
-      "Risk assessment",
-      "Clinical decision support",
-      "Population health insights",
-      "HIPAA compliance",
-      "Real-time monitoring"
-    ],
-    benefits: [
-      "Improve patient outcomes by 30%",
-      "Reduce readmission rates by 25%",
-      "Optimize resource allocation",
-      "Early disease detection",
-      "Personalized treatment plans"
-    ],
-    useCases: [
-      "Clinical decision support",
-      "Population health management",
-      "Risk stratification",
-      "Treatment optimization",
-      "Research and development"
-    ],
-    targetAudience: [
-      "Hospitals",
-      "Clinics",
-      "Healthcare providers",
-      "Research institutions",
-      "Insurance companies"
-    ],
-    tags: ["AI", "Healthcare", "Analytics", "Predictive Medicine", "Clinical Decision Support"],
-    estimatedDelivery: "8-10 weeks",
-    supportLevel: "enterprise",
-    marketPrice: "$799 - $3,000/month",
-    contactInfo: {
-      phone: "+1 302 464 0950",
-      email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
-    },
-    technology: ["Python", "TensorFlow", "React", "PostgreSQL", "HIPAA-compliant cloud"],
-    integrations: ["Epic", "Cerner", "Allscripts", "Practice Fusion", "Athenahealth"],
-    compliance: ["HIPAA", "HITECH", "SOC 2", "HITRUST"],
-    roi: "200% within 18 months",
-    competitors: ["IBM Watson Health", "Cerner", "Epic", "Allscripts"]
-  },
-
-  // AI-Powered Supply Chain Optimization
-  {
-    id: "ai-supply-chain-optimization",
-    title: "AI Supply Chain Optimization Platform",
-    description: "Intelligent supply chain platform that uses AI to optimize inventory, predict demand, and streamline logistics operations.",
-    category: "AI & Supply Chain",
-    subcategory: "Optimization",
-    price: 449,
-    currency: "$",
-    pricingModel: "monthly",
-    features: [
-      "Demand forecasting",
-      "Inventory optimization",
-      "Route optimization",
+      "Real-time inventory tracking",
+      "AI demand forecasting",
+      "Automated reordering",
+      "Barcode scanning",
+      "Multi-location support",
       "Supplier management",
-      "Real-time tracking",
-      "Performance analytics",
-      "Risk assessment",
-      "Automated ordering"
+      "Cost optimization",
+      "Mobile app"
     ],
     benefits: [
-      "Reduce inventory costs by 20%",
-      "Improve delivery times by 30%",
-      "Increase efficiency by 25%",
-      "Reduce stockouts by 40%",
-      "Optimize supplier relationships"
+      "Reduce stockouts by 80%",
+      "Lower inventory costs by 25%",
+      "Improve cash flow by 35%",
+      "Automated operations"
     ],
-    useCases: [
-      "Retail inventory management",
-      "Manufacturing supply chains",
-      "E-commerce logistics",
-      "Distribution optimization",
-      "Procurement automation"
-    ],
-    targetAudience: [
-      "Retailers",
-      "Manufacturers",
-      "Logistics companies",
-      "E-commerce businesses",
-      "Distribution centers"
-    ],
-    tags: ["AI", "Supply Chain", "Logistics", "Inventory Management", "Optimization"],
-    estimatedDelivery: "5-6 weeks",
-    supportLevel: "premium",
-    marketPrice: "$449 - $1,800/month",
+    targetAudience: ["Retail businesses", "Manufacturing", "E-commerce", "Warehouses"],
+    tags: ["Inventory", "AI", "Operations", "Supply Chain", "Automation"],
+    website: "https://ziontechgroup.com/smart-inventory",
+    demoUrl: "https://demo.ziontechgroup.com/inventory",
+    freeTrial: true,
+    freeTrialDays: 21,
     contactInfo: {
       phone: "+1 302 464 0950",
       email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+      address: "364 E Main St STE 1008 Middletown DE 19709"
     },
-    technology: ["Python", "TensorFlow", "React", "PostgreSQL", "Redis"],
-    integrations: ["SAP", "Oracle", "NetSuite", "Shopify", "WMS systems"],
-    compliance: ["ISO 9001", "SOC 2", "GDPR"],
-    roi: "300% within 8 months",
-    competitors: ["SAP", "Oracle", "Manhattan Associates", "JDA Software"]
+    marketPosition: "AI-first inventory optimization",
+    competitors: ["TradeGecko", "Zoho Inventory", "Fishbowl"],
+    roi: "400% within 4 months",
+    implementationTime: "2-3 weeks"
   },
-
-  // AI-Powered Cybersecurity
   {
-    id: "ai-cybersecurity-platform",
-    title: "AI Cybersecurity Platform",
-    description: "Advanced cybersecurity platform that uses AI to detect threats, prevent attacks, and provide real-time security monitoring.",
-    category: "AI & Cybersecurity",
-    subcategory: "Threat Detection",
-    price: 699,
-    currency: "$",
+    id: "cyber-shield",
+    name: "CyberShield Pro",
+    category: "Cybersecurity",
+    subcategory: "Threat Protection",
+    description: "Comprehensive cybersecurity platform with AI threat detection and automated incident response",
+    price: 89,
     pricingModel: "monthly",
+    userLimit: "Up to 100 users",
     features: [
-      "Threat detection and prevention",
-      "Behavioral analysis",
-      "Real-time monitoring",
-      "Incident response",
-      "Vulnerability assessment",
+      "AI threat detection",
+      "Automated incident response",
+      "Vulnerability scanning",
+      "Security monitoring",
       "Compliance reporting",
-      "Security analytics",
-      "Automated remediation"
+      "Employee training",
+      "24/7 support",
+      "Mobile security"
     ],
     benefits: [
-      "Reduce security incidents by 80%",
-      "Improve threat detection by 90%",
-      "Faster incident response",
-      "Compliance automation",
-      "Cost-effective security"
+      "Prevent 99.9% of cyber attacks",
+      "Reduce security incidents by 90%",
+      "Meet compliance requirements",
+      "24/7 protection"
     ],
-    useCases: [
-      "Network security",
-      "Endpoint protection",
-      "Cloud security",
-      "Compliance management",
-      "Incident response"
-    ],
-    targetAudience: [
-      "Enterprises",
-      "SMBs",
-      "Government agencies",
-      "Financial institutions",
-      "Healthcare organizations"
-    ],
-    tags: ["AI", "Cybersecurity", "Threat Detection", "Compliance", "Security Analytics"],
-    estimatedDelivery: "6-8 weeks",
-    supportLevel: "enterprise",
-    marketPrice: "$699 - $2,500/month",
+    targetAudience: ["Small businesses", "Startups", "Healthcare", "Financial services"],
+    tags: ["Cybersecurity", "AI", "Threat Detection", "Compliance", "Automation"],
+    website: "https://ziontechgroup.com/cybershield-pro",
+    demoUrl: "https://demo.ziontechgroup.com/cyber",
+    freeTrial: true,
+    freeTrialDays: 14,
     contactInfo: {
       phone: "+1 302 464 0950",
       email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+      address: "364 E Main St STE 1008 Middletown DE 19709"
     },
-    technology: ["Python", "TensorFlow", "React", "PostgreSQL", "Security tools"],
-    integrations: ["SIEM systems", "EDR solutions", "Firewalls", "Cloud platforms", "Active Directory"],
-    compliance: ["SOC 2", "ISO 27001", "NIST", "GDPR", "HIPAA"],
-    roi: "250% within 12 months",
-    competitors: ["CrowdStrike", "SentinelOne", "Darktrace", "Cylance"]
+    marketPosition: "AI-powered cybersecurity for SMBs",
+    competitors: ["CrowdStrike", "SentinelOne", "Cylance"],
+    roi: "1000% within 6 months",
+    implementationTime: "1-2 weeks"
   },
-
-  // AI-Powered Marketing Automation
   {
-    id: "ai-marketing-automation-platform",
-    title: "AI Marketing Automation Platform",
-    description: "Intelligent marketing automation platform that uses AI to personalize campaigns, optimize conversions, and automate customer journeys.",
-    category: "AI & Marketing",
-    subcategory: "Automation",
-    price: 249,
-    currency: "$",
+    id: "cloud-optimizer",
+    name: "Cloud Optimizer Pro",
+    category: "Cloud & DevOps",
+    subcategory: "Cloud Management",
+    description: "AI-powered cloud cost optimization and performance monitoring platform",
+    price: 69,
     pricingModel: "monthly",
+    userLimit: "Up to 50 users",
     features: [
-      "Campaign automation",
-      "Personalization engine",
-      "A/B testing",
-      "Lead scoring",
-      "Email marketing",
-      "Social media automation",
-      "Analytics and reporting",
-      "CRM integration"
+      "Cost optimization",
+      "Performance monitoring",
+      "Resource scaling",
+      "Security compliance",
+      "Multi-cloud support",
+      "Automated backups",
+      "Disaster recovery",
+      "API management"
     ],
     benefits: [
-      "Increase conversion rates by 35%",
-      "Reduce marketing costs by 25%",
-      "Improve customer engagement",
-      "Automate repetitive tasks",
-      "Data-driven optimization"
+      "Reduce cloud costs by 40%",
+      "Improve performance by 60%",
+      "Automated scaling",
+      "Better security posture"
     ],
-    useCases: [
-      "Email marketing campaigns",
-      "Social media management",
-      "Lead nurturing",
-      "Customer segmentation",
-      "Campaign optimization"
-    ],
-    targetAudience: [
-      "Marketing teams",
-      "Digital agencies",
-      "E-commerce businesses",
-      "B2B companies",
-      "Startups"
-    ],
-    tags: ["AI", "Marketing", "Automation", "Personalization", "Lead Generation"],
-    estimatedDelivery: "3-4 weeks",
-    supportLevel: "premium",
-    marketPrice: "$249 - $1,000/month",
+    targetAudience: ["DevOps teams", "Cloud engineers", "Startups", "Enterprises"],
+    tags: ["Cloud", "DevOps", "AI", "Cost Optimization", "Performance"],
+    website: "https://ziontechgroup.com/cloud-optimizer",
+    demoUrl: "https://demo.ziontechgroup.com/cloud",
+    freeTrial: true,
+    freeTrialDays: 14,
     contactInfo: {
       phone: "+1 302 464 0950",
       email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+      address: "364 E Main St STE 1008 Middletown DE 19709"
     },
-    technology: ["Python", "TensorFlow", "React", "PostgreSQL", "Redis"],
-    integrations: ["Salesforce", "HubSpot", "Mailchimp", "Facebook Ads", "Google Ads"],
-    compliance: ["GDPR", "CCPA", "CAN-SPAM"],
-    roi: "300% within 6 months",
-    competitors: ["HubSpot", "Marketo", "Pardot", "ActiveCampaign"]
+    marketPosition: "Intelligent cloud cost management",
+    competitors: ["CloudHealth", "CloudCheckr", "ParkMyCloud"],
+    roi: "450% within 5 months",
+    implementationTime: "2-3 weeks"
   },
-
-  // AI-Powered HR Analytics
   {
-    id: "ai-hr-analytics-platform",
-    title: "AI HR Analytics Platform",
-    description: "Advanced HR analytics platform that uses AI to analyze employee data, predict turnover, and optimize workforce planning.",
-    category: "AI & Human Resources",
-    subcategory: "Analytics",
-    price: 349,
-    currency: "$",
-    pricingModel: "monthly",
+    id: "hr-automation",
+    name: "HR Automation Suite",
+    category: "Human Resources",
+    subcategory: "HR Management",
+    description: "Comprehensive HR automation platform with AI recruitment and employee management",
+    price: 55,
+    pricingModel: "per-user",
+    userLimit: "Up to 200 users",
     features: [
-      "Employee analytics",
-      "Turnover prediction",
-      "Performance analysis",
-      "Recruitment optimization",
-      "Workforce planning",
-      "Diversity metrics",
-      "Compliance reporting",
-      "Predictive insights"
-    ],
-    benefits: [
-      "Reduce turnover by 25%",
-      "Improve hiring success by 40%",
-      "Optimize workforce planning",
-      "Increase employee satisfaction",
-      "Data-driven HR decisions"
-    ],
-    useCases: [
-      "Employee retention",
-      "Recruitment optimization",
+      "AI recruitment",
+      "Employee onboarding",
       "Performance management",
-      "Workforce planning",
-      "Diversity and inclusion"
+      "Time tracking",
+      "Payroll integration",
+      "Benefits administration",
+      "Compliance tracking",
+      "Mobile app"
     ],
-    targetAudience: [
-      "HR professionals",
-      "Talent acquisition teams",
-      "Business leaders",
-      "Consulting firms",
-      "Large organizations"
+    benefits: [
+      "Reduce hiring time by 50%",
+      "Improve employee retention by 30%",
+      "Automate HR processes",
+      "Better compliance"
     ],
-    tags: ["AI", "HR", "Analytics", "Talent Management", "Workforce Planning"],
-    estimatedDelivery: "4-5 weeks",
-    supportLevel: "premium",
-    marketPrice: "$349 - $1,200/month",
+    targetAudience: ["HR teams", "Small businesses", "Startups", "Growing companies"],
+    tags: ["HR", "Recruitment", "AI", "Automation", "Employee Management"],
+    website: "https://ziontechgroup.com/hr-automation",
+    demoUrl: "https://demo.ziontechgroup.com/hr",
+    freeTrial: true,
+    freeTrialDays: 21,
     contactInfo: {
       phone: "+1 302 464 0950",
       email: "kleber@ziontechgroup.com",
-      website: "https://ziontechgroup.com"
+      address: "364 E Main St STE 1008 Middletown DE 19709"
     },
-    technology: ["Python", "TensorFlow", "React", "PostgreSQL", "Redis"],
-    integrations: ["Workday", "BambooHR", "ADP", "Greenhouse", "Lever"],
-    compliance: ["GDPR", "CCPA", "EEOC", "OFCCP"],
-    roi: "200% within 8 months",
-    competitors: ["Workday", "BambooHR", "Visier", "Tableau"]
+    marketPosition: "AI-powered HR automation",
+    competitors: ["BambooHR", "Workday", "Zenefits"],
+    roi: "350% within 4 months",
+    implementationTime: "3-4 weeks"
   }
 ];
 
-export const getServicesByCategory = (category: string) => {
-  return ENHANCED_MICRO_SAAS_SERVICES.filter(service => service.category === category);
-};
-
-export const getServicesBySubcategory = (subcategory: string) => {
-  return ENHANCED_MICRO_SAAS_SERVICES.filter(service => service.subcategory === subcategory);
-};
-
-export const getServicesByPriceRange = (minPrice: number, maxPrice: number) => {
-  return ENHANCED_MICRO_SAAS_SERVICES.filter(service => 
-    service.price >= minPrice && service.price <= maxPrice
-  );
-};
-
-export const getServicesByTechnology = (technology: string) => {
-  return ENHANCED_MICRO_SAAS_SERVICES.filter(service => 
-    service.technology.includes(technology)
-  );
-};
+export const SERVICE_CATEGORIES = [
+  {
+    id: "productivity",
+    name: "Productivity & Collaboration",
+    icon: "⚡",
+    count: 1
+  },
+  {
+    id: "finance",
+    name: "Finance & Accounting",
+    icon: "💰",
+    count: 1
+  },
+  {
+    id: "marketing",
+    name: "Marketing & Sales",
+    icon: "📈",
+    count: 2
+  },
+  {
+    id: "operations",
+    name: "Operations & Supply Chain",
+    icon: "🏭",
+    count: 1
+  },
+  {
+    id: "cybersecurity",
+    name: "Cybersecurity",
+    icon: "🔒",
+    count: 1
+  },
+  {
+    id: "cloud-devops",
+    name: "Cloud & DevOps",
+    icon: "☁️",
+    count: 1
+  },
+  {
+    id: "hr",
+    name: "Human Resources",
+    icon: "👥",
+    count: 1
+  },
+  {
+    id: "content-creation",
+    name: "Content Creation",
+    icon: "✍️",
+    count: 1
+  }
+];
