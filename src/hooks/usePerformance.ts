@@ -1,4 +1,4 @@
-import { useEffect, useState, useCallback } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 interface PerformanceMetrics {
   fcp: number | null;
@@ -7,7 +7,6 @@ interface PerformanceMetrics {
   cls: number | null;
   ttfb: number | null;
   overallScore: number;
-  isLoaded: boolean;
 }
 
 interface PerformanceEntry {
@@ -18,30 +17,28 @@ interface PerformanceEntry {
   value?: number;
 }
 
-// Performance API types
-interface PerformanceEventTiming extends PerformanceEntry {
+interface FirstInputEntry extends PerformanceEntry {
   processingStart: number;
-  processingEnd: number;
-  target: EventTarget | null;
 }
 
-interface LayoutShift extends PerformanceEntry {
-  value: number;
+interface LayoutShiftEntry extends PerformanceEntry {
   hadRecentInput: boolean;
-  lastInputTime: number;
+  value: number;
 }
 
-export const usePerformance = (): PerformanceMetrics => {
+export const usePerformance = () => {
   const [metrics, setMetrics] = useState<PerformanceMetrics>({
     fcp: null,
     lcp: null,
     fid: null,
     cls: null,
     ttfb: null,
-    overallScore: 0,
-    isLoaded: false
+    overallScore: 0
   });
 
+  const [isSupported, setIsSupported] = useState(false);
+
+  // Calculate overall performance score
   const calculateScore = useCallback((fcp: number, lcp: number, fid: number, cls: number): number => {
     let score = 100;
 
@@ -68,203 +65,250 @@ export const usePerformance = (): PerformanceMetrics => {
     return Math.max(0, score);
   }, []);
 
-  const updateMetrics = useCallback((newMetrics: Partial<PerformanceMetrics>) => {
-    setMetrics(prev => {
-      const updated = { ...prev, ...newMetrics };
-      
-      // Calculate overall score when we have all metrics
-      if (updated.fcp && updated.lcp && updated.fid && updated.cls) {
-        updated.overallScore = calculateScore(updated.fcp, updated.lcp, updated.fid, updated.cls);
-      }
-      
-      return updated;
-    });
-  }, [calculateScore]);
+  // Get performance rating
+  const getPerformanceRating = useCallback((score: number): string => {
+    if (score >= 90) return 'Excellent';
+    if (score >= 80) return 'Good';
+    if (score >= 70) return 'Fair';
+    if (score >= 60) return 'Poor';
+    return 'Very Poor';
+  }, []);
 
+  // Get performance color
+  const getPerformanceColor = useCallback((score: number): string => {
+    if (score >= 90) return 'text-green-400';
+    if (score >= 80) return 'text-green-500';
+    if (score >= 70) return 'text-yellow-500';
+    if (score >= 60) return 'text-orange-500';
+    return 'text-red-500';
+  }, []);
+
+  // Measure TTFB
+  const measureTTFB = useCallback((): Promise<number> => {
+    return new Promise((resolve) => {
+      const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+      if (navigation) {
+        resolve(navigation.responseStart - navigation.requestStart);
+      } else {
+        resolve(0);
+      }
+    });
+  }, []);
+
+  // Initialize performance monitoring
   useEffect(() => {
-    // Check if Performance Observer is supported
-    if (!('PerformanceObserver' in window)) {
-      console.warn('Performance Observer not supported');
-      return;
-    }
+    const checkSupport = () => {
+      const hasPerformanceObserver = 'PerformanceObserver' in window;
+      const hasPerformance = 'performance' in window;
+      const hasGetEntriesByType = 'getEntriesByType' in performance;
+      
+      setIsSupported(hasPerformanceObserver && hasPerformance && hasGetEntriesByType);
+    };
 
-    // First Contentful Paint (FCP)
-    const fcpObserver = new PerformanceObserver((list) => {
-      const entries = list.getEntries();
-      const fcpEntry = entries.find(entry => entry.name === 'first-contentful-paint');
-      if (fcpEntry) {
-        const fcp = Math.round(fcpEntry.startTime);
-        updateMetrics({ fcp });
-        if (import.meta.env.DEV) {
-          console.log('FCP:', fcp, 'ms');
-        }
-      }
-    });
+    checkSupport();
+  }, []);
 
-    // Largest Contentful Paint (LCP)
-    const lcpObserver = new PerformanceObserver((list) => {
-      const entries = list.getEntries();
-      const lcpEntry = entries[entries.length - 1]; // Get the latest LCP entry
-      if (lcpEntry) {
-        const lcp = Math.round(lcpEntry.startTime);
-        updateMetrics({ lcp });
-        if (import.meta.env.DEV) {
-          console.log('LCP:', lcp, 'ms');
-        }
-      }
-    });
+  // Monitor Core Web Vitals
+  useEffect(() => {
+    if (!isSupported) return;
 
-    // First Input Delay (FID)
-    const fidObserver = new PerformanceObserver((list) => {
-      const entries = list.getEntries();
-      entries.forEach(entry => {
-        const fidEntry = entry as unknown as PerformanceEventTiming;
-        if (fidEntry.processingStart) {
-          const fid = Math.round(fidEntry.processingStart - fidEntry.startTime);
-          updateMetrics({ fid });
-          if (import.meta.env.DEV) {
-            console.log('FID:', fid, 'ms');
-          }
-        }
-      });
-    });
+    let fcpObserver: PerformanceObserver | null = null;
+    let lcpObserver: PerformanceObserver | null = null;
+    let fidObserver: PerformanceObserver | null = null;
+    let clsObserver: PerformanceObserver | null = null;
 
-    // Cumulative Layout Shift (CLS)
-    let clsValue = 0;
-    const clsObserver = new PerformanceObserver((list) => {
-      const entries = list.getEntries();
-      entries.forEach(entry => {
-        const clsEntry = entry as unknown as LayoutShift;
-        if (!clsEntry.hadRecentInput) {
-          clsValue += clsEntry.value;
-          updateMetrics({ cls: Math.round(clsValue * 1000) / 1000 });
-          if (import.meta.env.DEV) {
-            console.log('CLS:', Math.round(clsValue * 1000) / 1000);
-          }
-        }
-      });
-    });
-
-    // Time to First Byte (TTFB)
-    const navigationEntry = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
-    if (navigationEntry) {
-      const ttfb = Math.round(navigationEntry.responseStart - navigationEntry.requestStart);
-      updateMetrics({ ttfb });
-      if (import.meta.env.DEV) {
-        console.log('TTFB:', ttfb, 'ms');
-      }
-    }
-
-    // Start observing
+    // FCP Observer
     try {
+      fcpObserver = new PerformanceObserver((list) => {
+        const entries = list.getEntries();
+        const fcpEntry = entries[entries.length - 1];
+        if (fcpEntry) {
+          setMetrics(prev => {
+            const newMetrics = { ...prev, fcp: fcpEntry.startTime };
+            const score = calculateScore(
+              newMetrics.fcp || 0,
+              newMetrics.lcp || 0,
+              newMetrics.fid || 0,
+              newMetrics.cls || 0
+            );
+            return { ...newMetrics, overallScore: score };
+          });
+        }
+      });
       fcpObserver.observe({ entryTypes: ['paint'] });
+    } catch (error) {
+      console.warn('FCP observer not supported:', error);
+    }
+
+    // LCP Observer
+    try {
+      lcpObserver = new PerformanceObserver((list) => {
+        const entries = list.getEntries();
+        const lcpEntry = entries[entries.length - 1];
+        if (lcpEntry) {
+          setMetrics(prev => {
+            const newMetrics = { ...prev, lcp: lcpEntry.startTime };
+            const score = calculateScore(
+              newMetrics.fcp || 0,
+              newMetrics.lcp || 0,
+              newMetrics.fid || 0,
+              newMetrics.cls || 0
+            );
+            return { ...newMetrics, overallScore: score };
+          });
+        }
+      });
       lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+    } catch (error) {
+      console.warn('LCP observer not supported:', error);
+    }
+
+    // FID Observer
+    try {
+      fidObserver = new PerformanceObserver((list) => {
+        const entries = list.getEntries();
+        const fidEntry = entries[entries.length - 1];
+        if (fidEntry && 'processingStart' in fidEntry) {
+          const firstInputEntry = fidEntry as FirstInputEntry;
+          setMetrics(prev => {
+            const newMetrics = { ...prev, fid: firstInputEntry.processingStart - firstInputEntry.startTime };
+            const score = calculateScore(
+              newMetrics.fcp || 0,
+              newMetrics.lcp || 0,
+              newMetrics.fid || 0,
+              newMetrics.cls || 0
+            );
+            return { ...newMetrics, overallScore: score };
+          });
+        }
+      });
       fidObserver.observe({ entryTypes: ['first-input'] });
+    } catch (error) {
+      console.warn('FID observer not supported:', error);
+    }
+
+    // CLS Observer
+    try {
+      let clsValue = 0;
+      clsObserver = new PerformanceObserver((list) => {
+        for (const entry of list.getEntries()) {
+          if ('hadRecentInput' in entry && 'value' in entry) {
+            const layoutShiftEntry = entry as LayoutShiftEntry;
+            if (!layoutShiftEntry.hadRecentInput) {
+              clsValue += layoutShiftEntry.value || 0;
+            }
+          }
+        }
+        setMetrics(prev => {
+          const newMetrics = { ...prev, cls: clsValue };
+          const score = calculateScore(
+            newMetrics.fcp || 0,
+            newMetrics.lcp || 0,
+            newMetrics.fid || 0,
+            newMetrics.cls || 0
+          );
+          return { ...newMetrics, overallScore: score };
+        });
+      });
       clsObserver.observe({ entryTypes: ['layout-shift'] });
     } catch (error) {
-      console.warn('Error setting up performance observers:', error);
+      console.warn('CLS observer not supported:', error);
     }
 
-    // Mark as loaded after a delay to ensure metrics are collected
-    const timer = setTimeout(() => {
-      updateMetrics({ isLoaded: true });
-    }, 5000);
-
-    return () => {
-      fcpObserver.disconnect();
-      lcpObserver.disconnect();
-      fidObserver.disconnect();
-      clsObserver.disconnect();
-      clearTimeout(timer);
+    // Measure TTFB after page load
+    const measureTTFBAfterLoad = async () => {
+      const ttfb = await measureTTFB();
+      setMetrics(prev => {
+        const newMetrics = { ...prev, ttfb };
+        const score = calculateScore(
+          newMetrics.fcp || 0,
+          newMetrics.lcp || 0,
+          newMetrics.fid || 0,
+          newMetrics.cls || 0
+        );
+        return { ...newMetrics, overallScore: score };
+      });
     };
-  }, [updateMetrics]);
 
-  // Performance monitoring for development
+    // Wait for page to be fully loaded
+    if (document.readyState === 'complete') {
+      measureTTFBAfterLoad();
+    } else {
+      window.addEventListener('load', measureTTFBAfterLoad);
+    }
+
+    // Cleanup
+    return () => {
+      if (fcpObserver) fcpObserver.disconnect();
+      if (lcpObserver) lcpObserver.disconnect();
+      if (fidObserver) fidObserver.disconnect();
+      if (clsObserver) clsObserver.disconnect();
+      window.removeEventListener('load', measureTTFBAfterLoad);
+    };
+  }, [isSupported, calculateScore, measureTTFB]);
+
+  // Log performance metrics in development
   useEffect(() => {
-    if (import.meta.env.DEV && metrics.isLoaded) {
+    if (import.meta.env.DEV && metrics.overallScore > 0) {
       console.group('🚀 Performance Metrics');
-      console.log('FCP:', metrics.fcp, 'ms');
-      console.log('LCP:', metrics.lcp, 'ms');
-      console.log('FID:', metrics.fid, 'ms');
-      console.log('CLS:', metrics.cls);
-      console.log('TTFB:', metrics.ttfb, 'ms');
-      console.log('Overall Score:', metrics.overallScore, '/100');
+      console.log('FCP:', metrics.fcp ? `${metrics.fcp.toFixed(2)}ms` : 'N/A');
+      console.log('LCP:', metrics.lcp ? `${metrics.lcp.toFixed(2)}ms` : 'N/A');
+      console.log('FID:', metrics.fid ? `${metrics.fid.toFixed(2)}ms` : 'N/A');
+      console.log('CLS:', metrics.cls ? metrics.cls.toFixed(3) : 'N/A');
+      console.log('TTFB:', metrics.ttfb ? `${metrics.ttfb.toFixed(2)}ms` : 'N/A');
+      console.log('Overall Score:', `${metrics.overallScore}/100 (${getPerformanceRating(metrics.overallScore)})`);
       console.groupEnd();
     }
-  }, [metrics]);
+  }, [metrics, getPerformanceRating]);
 
-  return metrics;
-};
+  // Get detailed performance report
+  const getPerformanceReport = useCallback(() => {
+    return {
+      metrics,
+      rating: getPerformanceRating(metrics.overallScore),
+      color: getPerformanceColor(metrics.overallScore),
+      recommendations: getRecommendations(metrics),
+      timestamp: new Date().toISOString()
+    };
+  }, [metrics, getPerformanceRating, getPerformanceColor]);
 
-// Hook for monitoring specific performance metrics
-export const usePerformanceMetric = (metricName: string) => {
-  const [value, setValue] = useState<number | null>(null);
+  // Get performance recommendations
+  const getRecommendations = useCallback((currentMetrics: PerformanceMetrics): string[] => {
+    const recommendations: string[] = [];
 
-  useEffect(() => {
-    if (!('PerformanceObserver' in window)) return;
-
-    const observer = new PerformanceObserver((list) => {
-      const entries = list.getEntries();
-      entries.forEach(entry => {
-        if (entry.name === metricName) {
-          setValue(entry.startTime);
-        }
-      });
-    });
-
-    try {
-      observer.observe({ entryTypes: ['measure'] });
-    } catch (error) {
-      console.warn('Error setting up performance observer for', metricName, error);
+    if (currentMetrics.fcp && currentMetrics.fcp > 1800) {
+      recommendations.push('Optimize First Contentful Paint by reducing server response time and critical resources');
     }
 
-    return () => observer.disconnect();
-  }, [metricName]);
-
-  return value;
-};
-
-// Hook for measuring custom performance marks
-export const usePerformanceMark = () => {
-  const mark = useCallback((name: string) => {
-    if ('performance' in window) {
-      performance.mark(name);
+    if (currentMetrics.lcp && currentMetrics.lcp > 2500) {
+      recommendations.push('Improve Largest Contentful Paint by optimizing images and critical rendering path');
     }
+
+    if (currentMetrics.fid && currentMetrics.fid > 100) {
+      recommendations.push('Reduce First Input Delay by minimizing JavaScript execution time');
+    }
+
+    if (currentMetrics.cls && currentMetrics.cls > 0.1) {
+      recommendations.push('Minimize Cumulative Layout Shift by setting explicit dimensions for media elements');
+    }
+
+    if (currentMetrics.ttfb && currentMetrics.ttfb > 600) {
+      recommendations.push('Optimize Time to First Byte by improving server response time');
+    }
+
+    if (recommendations.length === 0) {
+      recommendations.push('Great performance! Keep up the good work.');
+    }
+
+    return recommendations;
   }, []);
 
-  const measure = useCallback((name: string, startMark: string, endMark: string) => {
-    if ('performance' in window) {
-      try {
-        performance.measure(name, startMark, endMark);
-        const measure = performance.getEntriesByName(name)[0];
-        return measure ? Math.round(measure.duration) : null;
-      } catch (error) {
-        console.warn('Error measuring performance:', error);
-        return null;
-      }
-    }
-    return null;
-  }, []);
-
-  const clearMarks = useCallback((name?: string) => {
-    if ('performance' in window) {
-      if (name) {
-        performance.clearMarks(name);
-      } else {
-        performance.clearMarks();
-      }
-    }
-  }, []);
-
-  const clearMeasures = useCallback((name?: string) => {
-    if ('performance' in window) {
-      if (name) {
-        performance.clearMeasures(name);
-      } else {
-        performance.clearMeasures();
-      }
-    }
-  }, []);
-
-  return { mark, measure, clearMarks, clearMeasures };
+  return {
+    metrics,
+    isSupported,
+    getPerformanceRating,
+    getPerformanceColor,
+    getPerformanceReport,
+    getRecommendations
+  };
 };

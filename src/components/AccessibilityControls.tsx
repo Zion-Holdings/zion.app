@@ -1,220 +1,256 @@
-import { useState, useEffect } from 'react';
-import { Settings, Eye, Zap, X, Volume2, Keyboard, Monitor } from 'lucide-react';
-import { useAccessibility } from '../hooks/useAccessibility';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  Accessibility, 
+  Type, 
+  Contrast, 
+  Volume2, 
+  VolumeX,
+  Settings,
+  X,
+  Sun,
+  Moon,
+  Monitor
+} from 'lucide-react';
 
 interface AccessibilityControlsProps {
-  className?: string;
-  position?: 'top-right' | 'bottom-right' | 'floating';
+  position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 }
 
 export const AccessibilityControls: React.FC<AccessibilityControlsProps> = ({ 
-  className = '',
-  position = 'floating'
+  position = 'bottom-right' 
 }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isExpanded, setIsExpanded] = useState(false);
-  const { preferences, savePreferences, announceToScreenReader } = useAccessibility();
+  const [fontSize, setFontSize] = useState(16);
+  const [contrast, setContrast] = useState<'normal' | 'high' | 'inverted'>('normal');
+  const [isMuted, setIsMuted] = useState(false);
+  const [theme, setTheme] = useState<'light' | 'dark' | 'auto'>('dark');
 
-  // Close panel when clicking outside
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-      if (!target.closest('.accessibility-controls')) {
-        setIsOpen(false);
-        setIsExpanded(false);
-      }
-    };
-
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-      return () => document.removeEventListener('mousedown', handleClickOutside);
-    }
-  }, [isOpen]);
-
-  const togglePanel = () => {
-    setIsOpen(!isOpen);
-    if (!isOpen) {
-      announceToScreenReader('Accessibility controls opened');
-    }
-  };
-
-  const toggleExpanded = () => {
-    setIsExpanded(!isExpanded);
-  };
-
-  const handlePreferenceChange = (key: keyof typeof preferences, value: boolean) => {
-    savePreferences({ [key]: value });
-    announceToScreenReader(`${key.replace(/([A-Z])/g, ' $1').toLowerCase()} ${value ? 'enabled' : 'disabled'}`);
-  };
-
+  // Position classes based on prop
   const getPositionClasses = () => {
     switch (position) {
+      case 'top-left':
+        return 'top-4 left-4';
       case 'top-right':
         return 'top-4 right-4';
+      case 'bottom-left':
+        return 'bottom-4 left-4';
       case 'bottom-right':
-        return 'bottom-4 right-4';
-      case 'floating':
       default:
         return 'bottom-4 right-4';
     }
   };
 
+  // Apply font size changes
+  useEffect(() => {
+    document.documentElement.style.fontSize = `${fontSize}px`;
+  }, [fontSize]);
+
+  // Apply contrast changes
+  useEffect(() => {
+    const root = document.documentElement;
+    root.classList.remove('contrast-normal', 'contrast-high', 'contrast-inverted');
+    root.classList.add(`contrast-${contrast}`);
+  }, [contrast]);
+
+  // Apply theme changes
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === 'auto') {
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      root.classList.toggle('dark', prefersDark);
+    } else {
+      root.classList.toggle('dark', theme === 'dark');
+    }
+  }, [theme]);
+
+  // Toggle mute state
+  const toggleMute = () => {
+    setIsMuted(!isMuted);
+    // Here you would implement actual audio muting logic
+    if (isMuted) {
+      // Unmute audio
+      console.log('Audio unmuted');
+    } else {
+      // Mute audio
+      console.log('Audio muted');
+    }
+  };
+
+  // Reset all settings
+  const resetSettings = () => {
+    setFontSize(16);
+    setContrast('normal');
+    setIsMuted(false);
+    setTheme('dark');
+  };
+
   return (
-    <div className={`accessibility-controls fixed ${getPositionClasses()} z-50 ${className}`}>
-      {/* Main Toggle Button */}
-      <button
-        onClick={togglePanel}
-        className="group relative p-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-4 focus:ring-cyan-300"
-        aria-label="Open accessibility controls"
+    <div className={`fixed ${getPositionClasses()} z-50`}>
+      {/* Main Accessibility Button */}
+      <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-14 h-14 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-full shadow-2xl hover:shadow-cyan-500/25 transition-all duration-300 flex items-center justify-center group"
+        aria-label="Accessibility controls"
         aria-expanded={isOpen}
+        aria-haspopup="dialog"
       >
-        <Settings className="w-6 h-6" />
-        <div className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-      </button>
+        <Accessibility className="w-7 h-7" />
+        
+        {/* Pulse animation when open */}
+        {isOpen && (
+          <motion.div
+            className="absolute inset-0 rounded-full border-2 border-cyan-300"
+            animate={{ scale: [1, 1.2, 1], opacity: [1, 0.5, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          />
+        )}
+      </motion.button>
 
       {/* Accessibility Panel */}
-      {isOpen && (
-        <div className="absolute bottom-full right-0 mb-2 w-80 bg-white dark:bg-gray-800 rounded-xl shadow-2xl border border-gray-200 dark:border-gray-700 overflow-hidden">
-          {/* Header */}
-          <div className="bg-gradient-to-r from-cyan-500 to-blue-500 p-4 text-white">
-            <div className="flex items-center justify-between">
-              <h3 className="text-lg font-semibold flex items-center gap-2">
-                <Eye className="w-5 h-5" />
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.8, y: 20 }}
+            transition={{ duration: 0.3, ease: 'easeOut' }}
+            className="absolute bottom-20 right-0 w-80 bg-gray-900/95 backdrop-blur-xl rounded-2xl border border-gray-700/50 shadow-2xl overflow-hidden"
+            role="dialog"
+            aria-label="Accessibility settings"
+          >
+            {/* Header */}
+            <div className="flex items-center justify-between p-4 border-b border-gray-700/50">
+              <h3 className="text-lg font-semibold text-white flex items-center gap-2">
+                <Accessibility className="w-5 h-5 text-cyan-400" />
                 Accessibility
               </h3>
-              <div className="flex gap-2">
+              <button
+                onClick={() => setIsOpen(false)}
+                className="text-gray-400 hover:text-white transition-colors duration-200"
+                aria-label="Close accessibility panel"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Content */}
+            <div className="p-4 space-y-6">
+              {/* Font Size Control */}
+              <div>
+                <label className="flex items-center gap-2 text-sm font-medium text-gray-300 mb-3">
+                  <Type className="w-4 h-4 text-cyan-400" />
+                  Font Size
+                </label>
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={() => setFontSize(Math.max(12, fontSize - 2))}
+                    className="w-8 h-8 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors duration-200 flex items-center justify-center"
+                    aria-label="Decrease font size"
+                  >
+                    A-
+                  </button>
+                  <span className="text-white font-medium min-w-[3rem] text-center">
+                    {fontSize}px
+                  </span>
+                  <button
+                    onClick={() => setFontSize(Math.min(24, fontSize + 2))}
+                    className="w-8 h-8 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors duration-200 flex items-center justify-center"
+                    aria-label="Increase font size"
+                  >
+                    A+
+                  </button>
+                </div>
+              </div>
+
+              {/* Contrast Control */}
+              <div>
+                <label className="flex items-center gap-2 text-sm font-medium text-gray-300 mb-3">
+                  <Contrast className="w-4 h-4 text-cyan-400" />
+                  Contrast
+                </label>
+                <div className="grid grid-cols-3 gap-2">
+                  {(['normal', 'high', 'inverted'] as const).map((contrastOption) => (
+                    <button
+                      key={contrastOption}
+                      onClick={() => setContrast(contrastOption)}
+                      className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                        contrast === contrastOption
+                          ? 'bg-cyan-500 text-white shadow-lg'
+                          : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                      }`}
+                    >
+                      {contrastOption.charAt(0).toUpperCase() + contrastOption.slice(1)}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Theme Control */}
+              <div>
+                <label className="flex items-center gap-2 text-sm font-medium text-gray-300 mb-3">
+                  <Settings className="w-4 h-4 text-cyan-400" />
+                  Theme
+                </label>
+                <div className="grid grid-cols-3 gap-2">
+                  {([
+                    { value: 'light', icon: Sun, label: 'Light' },
+                    { value: 'dark', icon: Moon, label: 'Dark' },
+                    { value: 'auto', icon: Monitor, label: 'Auto' }
+                  ] as const).map(({ value, icon: Icon, label }) => (
+                    <button
+                      key={value}
+                      onClick={() => setTheme(value)}
+                      className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 flex items-center justify-center gap-2 ${
+                        theme === value
+                          ? 'bg-cyan-500 text-white shadow-lg'
+                          : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+                      }`}
+                    >
+                      <Icon className="w-4 h-4" />
+                      {label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Audio Control */}
+              <div>
+                <label className="flex items-center gap-2 text-sm font-medium text-gray-300 mb-3">
+                  {isMuted ? (
+                    <VolumeX className="w-4 h-4 text-red-400" />
+                  ) : (
+                    <Volume2 className="w-4 h-4 text-cyan-400" />
+                  )}
+                  Audio
+                </label>
                 <button
-                  onClick={toggleExpanded}
-                  className="p-1 hover:bg-white/20 rounded transition-colors"
-                  aria-label={isExpanded ? 'Collapse panel' : 'Expand panel'}
+                  onClick={toggleMute}
+                  className={`w-full px-4 py-2 rounded-lg font-medium transition-all duration-200 ${
+                    isMuted
+                      ? 'bg-red-500 text-white hover:bg-red-600'
+                      : 'bg-green-500 text-white hover:bg-green-600'
+                  }`}
                 >
-                  {isExpanded ? <X className="w-4 h-4" /> : <Monitor className="w-4 h-4" />}
+                  {isMuted ? 'Unmute Audio' : 'Mute Audio'}
                 </button>
+              </div>
+
+              {/* Reset Button */}
+              <div className="pt-4 border-t border-gray-700/50">
                 <button
-                  onClick={() => setIsOpen(false)}
-                  className="p-1 hover:bg-white/20 rounded transition-colors"
-                  aria-label="Close accessibility panel"
+                  onClick={resetSettings}
+                  className="w-full px-4 py-2 bg-gray-800 text-gray-300 rounded-lg hover:bg-gray-700 transition-colors duration-200 font-medium"
                 >
-                  <X className="w-4 h-4" />
+                  Reset to Defaults
                 </button>
               </div>
             </div>
-          </div>
-
-          {/* Content */}
-          <div className="p-4 space-y-4">
-            {/* Visual Preferences */}
-            <div className="space-y-3">
-              <h4 className="font-medium text-gray-900 dark:text-white flex items-center gap-2">
-                <Eye className="w-4 h-4" />
-                Visual Preferences
-              </h4>
-              
-              <div className="space-y-2">
-                <label className="flex items-center gap-3 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={preferences.highContrast}
-                    onChange={(e) => handlePreferenceChange('highContrast', e.target.checked)}
-                    className="w-4 h-4 text-cyan-600 bg-gray-100 border-gray-300 rounded focus:ring-cyan-500 focus:ring-2"
-                  />
-                  <span className="text-sm text-gray-700 dark:text-gray-300">High Contrast</span>
-                </label>
-                
-                <label className="flex items-center gap-3 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={preferences.largeText}
-                    onChange={(e) => handlePreferenceChange('largeText', e.target.checked)}
-                    className="w-4 h-4 text-cyan-600 bg-gray-100 border-gray-300 rounded focus:ring-cyan-500 focus:ring-2"
-                  />
-                  <span className="text-sm text-gray-700 dark:text-gray-300">Large Text</span>
-                </label>
-              </div>
-            </div>
-
-            {/* Motion Preferences */}
-            <div className="space-y-3">
-              <h4 className="font-medium text-gray-900 dark:text-white flex items-center gap-2">
-                <Zap className="w-4 h-4" />
-                Motion Preferences
-              </h4>
-              
-              <div className="space-y-2">
-                <label className="flex items-center gap-3 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={preferences.reducedMotion}
-                    onChange={(e) => handlePreferenceChange('reducedMotion', e.target.checked)}
-                    className="w-4 h-4 text-cyan-600 bg-gray-100 border-gray-300 rounded focus:ring-cyan-500 focus:ring-2"
-                  />
-                  <span className="text-sm text-gray-700 dark:text-gray-300">Reduce Motion</span>
-                </label>
-              </div>
-            </div>
-
-            {/* Navigation Preferences */}
-            <div className="space-y-3">
-              <h4 className="font-medium text-gray-900 dark:text-white flex items-center gap-2">
-                <Keyboard className="w-4 h-4" />
-                Navigation
-              </h4>
-              
-              <div className="space-y-2">
-                <label className="flex items-center gap-3 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={preferences.focusIndicator}
-                    onChange={(e) => handlePreferenceChange('focusIndicator', e.target.checked)}
-                    className="w-4 h-4 text-cyan-600 bg-gray-100 border-gray-300 rounded focus:ring-cyan-500 focus:ring-2"
-                  />
-                  <span className="text-sm text-gray-700 dark:text-gray-300">Focus Indicators</span>
-                </label>
-                
-                <label className="flex items-center gap-3 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={preferences.keyboardNavigation}
-                    onChange={(e) => handlePreferenceChange('keyboardNavigation', e.target.checked)}
-                    className="w-4 h-4 text-cyan-600 bg-gray-100 border-gray-300 rounded focus:ring-cyan-500 focus:ring-2"
-                  />
-                  <span className="text-sm text-gray-700 dark:text-gray-300">Keyboard Navigation</span>
-                </label>
-              </div>
-            </div>
-
-            {/* Screen Reader Support */}
-            <div className="space-y-3">
-              <h4 className="font-medium text-gray-900 dark:text-white flex items-center gap-2">
-                <Volume2 className="w-4 h-4" />
-                Screen Reader
-              </h4>
-              
-              <div className="space-y-2">
-                <label className="flex items-center gap-3 cursor-pointer">
-                  <input
-                    type="checkbox"
-                    checked={preferences.screenReader}
-                    onChange={(e) => handlePreferenceChange('screenReader', e.target.checked)}
-                    className="w-4 h-4 text-cyan-600 bg-gray-100 border-gray-300 rounded focus:ring-cyan-500 focus:ring-2"
-                  />
-                  <span className="text-sm text-gray-700 dark:text-gray-300">Enable Announcements</span>
-                </label>
-              </div>
-            </div>
-
-            {/* Keyboard Shortcuts Info */}
-            <div className="pt-3 border-t border-gray-200 dark:border-gray-700">
-              <h4 className="font-medium text-gray-900 dark:text-white mb-2">Keyboard Shortcuts</h4>
-              <div className="text-xs text-gray-600 dark:text-gray-400 space-y-1">
-                <p><kbd className="px-1 py-0.5 bg-gray-100 dark:bg-gray-700 rounded">Alt + Tab</kbd> Skip to main content</p>
-                <p><kbd className="px-1 py-0.5 bg-gray-100 dark:bg-gray-700 rounded">Escape</kbd> Close modals</p>
-                <p><kbd className="px-1 py-0.5 bg-gray-100 dark:bg-gray-700 rounded">Tab</kbd> Navigate elements</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
