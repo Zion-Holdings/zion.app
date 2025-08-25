@@ -21,6 +21,7 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 // Enhanced lazy loading with preloading hints
 const Home = lazy(() => import('./pages/Home'));
 const Services = lazy(() => import('./pages/Services'));
+const EnhancedServices = lazy(() => import('./pages/EnhancedServicesPage'));
 const AISolutions = lazy(() => import('./pages/AISolutions'));
 const ServicesShowcase = lazy(() => import('./pages/ServicesShowcase'));
 const AIMatcherPage = lazy(() => import('./pages/AIMatcher'));
@@ -78,14 +79,15 @@ const App = () => {
                   <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/services" element={<Services />} />
+                    <Route path="/enhanced-services" element={<EnhancedServices />} />
                     <Route path="/ai-solutions" element={<AISolutions />} />
                     <Route path="/services-showcase" element={<ServicesShowcase />} />
                     <Route path="/match" element={<AIMatcherPage />} />
                     <Route path="/talent" element={<TalentDirectory />} />
                     <Route path="/talents" element={<TalentsPage />} />
                     <Route path="/emerging-tech" element={<EmergingTech />} />
-                    <Route path="/comprehensive-services" element={<Services />} />
-                    <Route path="/services-comparison" element={<Services />} />
+                    <Route path="/comprehensive-services" element={<EnhancedServices />} />
+                    <Route path="/services-comparison" element={<EnhancedServices />} />
                     <Route path="/it-onsite-services" element={<Services />} />
                     
                     {/* Our enhanced service routes */}

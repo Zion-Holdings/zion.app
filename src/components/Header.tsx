@@ -25,10 +25,16 @@ export function Header() {
       description: 'Welcome to Zion Tech Group'
     },
     { 
+      path: '/enhanced-services', 
+      label: 'All Services', 
+      icon: '🚀',
+      description: 'Complete service catalog with AI, IT, and Micro SAAS solutions'
+    },
+    { 
       path: '/services', 
-      label: 'AI Services', 
-      icon: '🤖',
-      description: 'Explore our AI service offerings'
+      label: 'Core Services', 
+      icon: '⚡',
+      description: 'Explore our core AI service offerings'
     },
     { 
       path: '/emerging-tech', 
@@ -38,9 +44,9 @@ export function Header() {
     },
     { 
       path: '/comprehensive-services', 
-      label: 'All Services', 
-      icon: '⚡',
-      description: 'Complete service catalog'
+      label: 'Comprehensive Services', 
+      icon: '📊',
+      description: 'Compare service options'
     },
     { 
       path: '/services-comparison', 

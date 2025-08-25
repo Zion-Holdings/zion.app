@@ -1,9 +1,9 @@
 
 import React from 'react';
 import { SEO } from "@/components/SEO";
+import { Link } from 'react-router-dom';
 import { ServicesShowcase } from '../components/ServicesShowcase';
-import { EnhancedServicesShowcase } from '../components/EnhancedServicesShowcase';
-import { AdvancedServicesShowcase } from '../components/AdvancedServicesShowcase';
+import EnhancedServicesShowcase from '../components/EnhancedServicesShowcase';
 
 export default function Home() {
   return (
@@ -74,10 +74,10 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <button className="quantum-button text-lg px-8 py-4">
-                Explore Services
-              </button>
-              <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 rounded-xl font-semibold text-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 neon-border animate-neon-border-glow">
+              <Link to="/enhanced-services" className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl font-semibold text-lg hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/30 hover:shadow-cyan-400/50">
+                Explore All Services
+              </Link>
+              <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 rounded-xl font-semibold text-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105">
                 Get Free Consultation
               </button>
             </div>
@@ -112,14 +112,11 @@ export default function Home() {
         <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-green-400 rounded-full animate-ping animation-delay-1000"></div>
       </section>
 
-      {/* Advanced Services Showcase */}
-      <AdvancedServicesShowcase />
+      {/* Enhanced Services Showcase */}
+      <EnhancedServicesShowcase />
 
       {/* Original Services Showcase */}
       <ServicesShowcase />
-      
-      {/* Enhanced Services Showcase */}
-      <EnhancedServicesShowcase />
 
       {/* Enhanced Features Section */}
       <section className="py-20 px-4 relative overflow-hidden">
