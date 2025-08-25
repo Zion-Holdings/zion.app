@@ -630,13 +630,7 @@ export const getServiceByCategory = (category: string) => {
   return MICRO_SAAS_SERVICES.filter(service => service.category.toLowerCase() === category.toLowerCase());
 };
 
-export const getPopularServices = () => {
-  return MICRO_SAAS_SERVICES.filter(service => service.isPopular);
-};
 
-export const getNewServices = () => {
-  return MICRO_SAAS_SERVICES.filter(service => service.isNew);
-};
 
 export const getServiceById = (id: string) => {
   return MICRO_SAAS_SERVICES.find(service => service.id === id);

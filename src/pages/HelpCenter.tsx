@@ -1,298 +1,234 @@
+import React from 'react';
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import SEO from "@/components/SEO";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Search, BookOpen, MessageCircle, Phone, Mail, HelpCircle, FileText, Video, Users, Settings, Globe, Shield, Building } from 'lucide-react';
 
+export default function HelpCenter() {
   const helpCategories = [
     {
-      icon: <BookOpen className="h-8 w-8" />,
       title: "Getting Started",
+      description: "Learn the basics of using Zion Tech Group",
+      icon: BookOpen,
+      articles: [
+        "Creating Your First Account",
+        "Setting Up Your Profile",
+        "Navigating the Platform",
+        "Understanding the Marketplace"
+      ]
+    },
+    {
+      title: "For Talent & Creators",
+      description: "Everything you need to succeed as a service provider",
+      icon: Users,
+      articles: [
+        "Building Your Portfolio",
+        "Setting Competitive Rates",
+        "Managing Client Relationships",
+        "Getting Paid Securely"
+      ]
+    },
+    {
+      title: "For Clients & Businesses",
+      description: "How to find and work with the best talent",
+      icon: Building,
+      articles: [
+        "Posting Your First Project",
+        "Evaluating Proposals",
+        "Managing Project Milestones",
+        "Ensuring Project Success"
+      ]
+    },
+    {
+      title: "Platform Features",
+      description: "Master all the tools and features available",
+      icon: Settings,
+      articles: [
+        "Advanced Search & Filters",
+        "Communication Tools",
+        "Project Management",
+        "Analytics & Reporting"
+      ]
+    },
+    {
+      title: "Safety & Security",
+      description: "Understanding our security measures and policies",
+      icon: Shield,
+      articles: [
+        "Payment Protection",
+        "Dispute Resolution",
+        "Privacy & Data Security",
+        "Community Guidelines"
+      ]
+    },
+    {
+      title: "Technical Support",
+      description: "Get help with technical issues and bugs",
+      icon: HelpCircle,
+      articles: [
+        "Common Issues & Solutions",
+        "Browser Compatibility",
+        "Mobile App Support",
+        "API Documentation"
+      ]
     }
   ];
 
   const quickActions = [
     {
+      title: "Live Chat Support",
+      description: "Get instant help from our support team",
+      icon: MessageCircle,
+      action: "Start Chat",
+      href: "/contact"
+    },
+    {
+      title: "Phone Support",
+      description: "Speak directly with our experts",
+      icon: Phone,
+      action: "Call Now",
+      href: "tel:+13024640950"
+    },
+    {
+      title: "Email Support",
+      description: "Send us a detailed message",
+      icon: Mail,
+      action: "Send Email",
+      href: "mailto:kleber@ziontechgroup.com"
+    },
+    {
+      title: "Video Tutorials",
+      description: "Learn through step-by-step videos",
+      icon: Video,
+      action: "Watch Now",
+      href: "/tutorials"
     }
   ];
-
-  const popularArticles = [
-    "How to create your first project",
-    "Understanding billing and pricing",
-    "Common technical issues and solutions",
-    "AI model training and deployment",
-    "Frontend development best practices"
-  ];
-
-  const categories = [
-    { id: 'all', label: 'All Categories', icon: '📚' },
-    ...helpCategories.map(cat => ({ id: cat.title, label: cat.title, icon: cat.icon }))
-  ];
-
-  // Filter help data based on search term and active category
-  const filteredHelpData = helpCategories.filter(category => {
-    if (activeCategory !== 'all' && category.title !== activeCategory) {
-      return false;
-    }
-    
-    if (searchTerm) {
-      const searchLower = searchTerm.toLowerCase();
-      const hasMatchingTitle = category.title.toLowerCase().includes(searchLower);
-      const hasMatchingDescription = category.description.toLowerCase().includes(searchLower);
-      const hasMatchingArticles = category.articles.some(article => 
-        article.title.toLowerCase().includes(searchLower) ||
-        article.content.toLowerCase().includes(searchLower)
-      );
-      return hasMatchingTitle || hasMatchingDescription || hasMatchingArticles;
-    }
-    
-    return true;
-  });
-
-  const handleArticleClick = (articleTitle: string) => {
-    setSelectedArticle(selectedArticle === articleTitle ? null : articleTitle);
-  };
 
   return (
+    <>
+      <SEO
+        title="Help Center - Get Support & Learn | Zion Tech Group"
+        description="Get help, find answers, and learn how to use Zion Tech Group's marketplace platform effectively. 24/7 support available."
+        keywords="help center, support, tutorials, FAQ, Zion Tech Group assistance"
+        canonical="https://ziontechgroup.com/help"
+      />
+      <Header />
+      <main className="min-h-screen bg-zion-blue pt-24 pb-20">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Hero Section */}
+          <div className="text-center mb-16">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              How can we help you?
+            </h1>
+            <p className="text-xl text-zion-slate-light max-w-3xl mx-auto mb-8">
+              Find answers to your questions, learn new features, and get the support you need
             </p>
-
+            
+            {/* Search Bar */}
+            <div className="max-w-2xl mx-auto">
+              <div className="relative">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-zion-slate-light w-5 h-5" />
+                <Input
+                  type="text"
+                  placeholder="Search for help articles, tutorials, or topics..."
+                  className="pl-12 pr-4 py-4 text-lg bg-zion-blue-dark border-zion-blue-light text-white placeholder-zion-slate-light focus:border-zion-cyan"
+                />
+              </div>
             </div>
           </div>
 
-          {/* Contact Support */}
-          <div className="text-center">
-            <Card className="bg-zion-blue-dark border-zion-purple/20 max-w-2xl mx-auto">
-              <CardHeader>
-                <CardTitle className="text-2xl text-zion-cyan">
-                  Need more help?
-                </CardTitle>
-                <CardDescription className="text-zion-slate-light">
-                  Our support team is available 24/7 to assist you.
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  <p className="text-zion-slate-light">
-                    Can't find what you're looking for? Contact our support team directly.
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                    <Link
-                      to="/contact"
-                      className="inline-flex items-center justify-center px-6 py-3 bg-zion-purple text-white font-medium rounded-lg hover:bg-zion-purple-light transition-colors"
-                    >
-                      Contact Support
-                    </Link>
-                    <Link
-                      to="/faq"
-                      className="inline-flex items-center justify-center px-6 py-3 border border-zion-purple text-zion-cyan font-medium rounded-lg hover:bg-zion-purple/10 transition-colors"
-                    >
-                      View FAQ
-                    </Link>
+          {/* Quick Actions */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {quickActions.map((action, index) => (
+              <Card key={index} className="bg-zion-blue-dark border-zion-blue-light hover:border-zion-cyan transition-colors">
+                <CardContent className="p-6 text-center">
+                  <div className="w-12 h-12 bg-zion-cyan/20 rounded-lg flex items-center justify-center mx-auto mb-4">
+                    <action.icon className="w-6 h-6 text-zion-cyan" />
                   </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">{action.title}</h3>
+                  <p className="text-zion-slate-light text-sm mb-4">{action.description}</p>
+                  <Button
+                    asChild
+                    className="w-full bg-zion-cyan hover:bg-zion-cyan-light text-white"
+                  >
+                    <a href={action.href}>{action.action}</a>
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Help Categories */}
+          <div className="mb-16">
+            <h2 className="text-3xl font-bold text-white text-center mb-12">
+              Browse Help Categories
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {helpCategories.map((category, index) => (
+                <Card key={index} className="bg-zion-blue-dark border-zion-blue-light hover:border-zion-cyan transition-colors">
+                  <CardHeader>
+                    <div className="w-12 h-12 bg-zion-cyan/20 rounded-lg flex items-center justify-center mb-4">
+                      <category.icon className="w-6 h-6 text-zion-cyan" />
+                    </div>
+                    <CardTitle className="text-xl text-white">{category.title}</CardTitle>
+                    <CardDescription className="text-zion-slate-light">
+                      {category.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <ul className="space-y-2">
+                      {category.articles.map((article, articleIndex) => (
+                        <li key={articleIndex}>
+                          <a
+                            href={`/help/${category.title.toLowerCase().replace(/\s+/g, '-')}/${article.toLowerCase().replace(/\s+/g, '-')}`}
+                            className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm block py-1"
+                          >
+                            {article}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Contact Support Section */}
+          <div className="text-center">
+            <Card className="bg-gradient-to-r from-zion-blue-dark to-zion-purple-dark border-zion-purple/30 p-8">
+              <CardContent>
+                <h2 className="text-3xl font-bold text-white mb-4">
+                  Still need help?
+                </h2>
+                <p className="text-zion-slate-light mb-8 text-lg">
+                  Our support team is available 24/7 to assist you with any questions or issues.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button
+                    asChild
+                    className="bg-zion-purple hover:bg-zion-purple-light text-white px-8 py-3 text-lg"
+                  >
+                    <a href="/contact">Contact Support</a>
+                  </Button>
+                  <Button
+                    variant="outline"
+                    asChild
+                    className="border-zion-purple/30 text-zion-purple hover:bg-zion-purple/10 px-8 py-3 text-lg"
+                  >
+                    <a href="/faq">View FAQ</a>
+                  </Button>
                 </div>
               </CardContent>
             </Card>
           </div>
         </div>
-      </section>
-
-      {/* Quick Actions Section */}
-      <section className="py-16 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Quick Actions
-            </h2>
-            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-              Get immediate help or access resources quickly
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {quickActions.map((action, index) => (
-              <div 
-                key={index} 
-                className={`bg-gradient-to-br ${action.color} rounded-xl border border-white/20 hover:border-cyan-500/50 transition-all duration-300 group hover:transform hover:scale-105 card-hover ${
-                  isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                }`}
-                style={{ transitionDelay: `${index * 0.1}s` }}
-              >
-                <div className="p-6 text-center">
-                  <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
-                    {action.icon}
-                  </div>
-                  <h3 className="text-lg font-bold text-white mb-2">{action.title}</h3>
-                  <p className="text-gray-300 text-sm mb-4">{action.description}</p>
-                  <a
-                    href={action.href}
-                    className="inline-block bg-cyan-500 text-white px-4 py-2 rounded-lg font-medium hover:bg-cyan-400 transition-colors"
-                  >
-                    {action.action}
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Help Categories Section */}
-      <section className="py-20 px-4 bg-gradient-to-r from-gray-900/50 to-black/50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Help Categories
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              {filteredHelpData.length > 0 
-                ? `Browse ${filteredHelpData.length} categories of help articles and guides.`
-                : 'No categories match your current search criteria. Try adjusting your search terms.'
-              }
-            </p>
-          </div>
-
-          {filteredHelpData.length > 0 ? (
-            <div className="space-y-8">
-              {filteredHelpData.map((category, categoryIndex) => (
-                <div 
-                  key={categoryIndex}
-                  className={`bg-gradient-to-br ${category.color} rounded-2xl border border-white/20 overflow-hidden ${
-                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                  }`}
-                  style={{ transitionDelay: `${categoryIndex * 0.1}s` }}
-                >
-                  {/* Category Header */}
-                  <div className="p-6 border-b border-white/20">
-                    <div className="flex items-center">
-                      <div className="text-4xl mr-4">{category.icon}</div>
-                      <div>
-                        <h3 className="text-2xl font-bold text-white mb-2">{category.title}</h3>
-                        <p className="text-gray-300">{category.description}</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Articles */}
-                  <div className="p-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                      {category.articles.map((article, articleIndex) => (
-                        <div 
-                          key={articleIndex}
-                          className="bg-white/10 rounded-lg p-4 hover:bg-white/20 transition-colors cursor-pointer"
-                          onClick={() => handleArticleClick(article.title)}
-                        >
-                          <div className="flex items-start justify-between mb-2">
-                            <h4 className="text-lg font-semibold text-white mb-2">{article.title}</h4>
-                            <div className="flex items-center gap-2">
-                              <span className="px-2 py-1 bg-white/20 rounded-full text-xs text-white">
-                                {article.readTime}
-                              </span>
-                              <span className={`px-2 py-1 rounded-full text-xs ${
-                                article.difficulty === 'Beginner' ? 'bg-green-500/20 text-green-300' :
-                                article.difficulty === 'Intermediate' ? 'bg-yellow-500/20 text-yellow-300' :
-                                'bg-red-500/20 text-red-300'
-                              }`}>
-                                {article.difficulty}
-                              </span>
-                            </div>
-                          </div>
-                          
-                          {selectedArticle === article.title && (
-                            <div className="mt-3 p-3 bg-white/10 rounded border-l-4 border-cyan-400">
-                              <p className="text-gray-300 text-sm">{article.content}</p>
-                              <button className="mt-2 text-cyan-400 text-sm hover:text-cyan-300">
-                                Read Full Article →
-                              </button>
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          ) : (
-            <div className="text-center py-20">
-              <div className="text-6xl mb-6">🔍</div>
-              <h3 className="text-2xl font-bold text-white mb-4">No help articles found</h3>
-              <p className="text-gray-300 mb-8">
-                Try adjusting your search terms or browse all categories.
-              </p>
-              <button
-                onClick={() => {
-                  setSearchTerm('');
-                  setActiveCategory('all');
-                }}
-                className="bg-cyan-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-cyan-400 transition-colors"
-              >
-                View All Articles
-              </button>
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Popular Articles Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Popular Articles
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Most frequently accessed help articles and guides
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {popularArticles.map((article, index) => (
-              <div 
-                key={index}
-                className="bg-gradient-to-br from-slate-800/50 to-blue-900/50 rounded-xl border border-white/20 hover:border-cyan-500/50 transition-all duration-300 group hover:transform hover:scale-105 card-hover p-6"
-              >
-                <div className="flex items-center mb-4">
-                  <div className="text-2xl mr-3 group-hover:scale-110 transition-transform duration-300">
-                    📖
-                  </div>
-                  <h3 className="text-lg font-bold text-white">{article}</h3>
-                </div>
-                <p className="text-gray-300 text-sm mb-4">
-                  Quick access to this popular help article with detailed information and step-by-step guidance.
-                </p>
-                <button className="text-cyan-400 text-sm hover:text-cyan-300 group-hover:underline">
-                  Read Article →
-                </button>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="bg-gradient-to-r from-cyan-600 to-blue-600 rounded-2xl p-12 text-white text-center">
-            <h3 className="text-4xl font-bold mb-4">
-              Still Need Help?
-            </h3>
-            <p className="text-xl mb-8 opacity-90 max-w-3xl mx-auto">
-              Can't find what you're looking for? Our support team is here to help you succeed.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/contact"
-                className="bg-white text-cyan-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
-              >
-                Contact Support
-              </a>
-              <a
-                href="/request-quote"
-                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-cyan-600 transition-colors"
-              >
-                Get Free Consultation
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+      </main>
+      <Footer />
+    </>
   );
-};
-
-export default HelpCenter;
+}

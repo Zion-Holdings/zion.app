@@ -1,4 +1,7 @@
-import { SEO } from '@/components/SEO';
+import React from 'react';
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import SEO from '@/components/SEO';
 
 const GreenIT = () => {
   const greenSolutions = [
@@ -178,8 +181,13 @@ const GreenIT = () => {
 
   return (
     <>
+      <SEO
+        title="Green IT Solutions - Sustainable Technology | Zion Tech Group"
+        description="Transform your technology infrastructure with sustainable, energy-efficient Green IT solutions. Reduce environmental impact and costs while improving performance."
+        keywords="Green IT, sustainable technology, energy efficiency, environmental impact, carbon footprint, Zion Tech Group"
+        canonical="https://ziontechgroup.com/green-it"
       />
-      
+      <Header />
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
         <main className="pt-12">
           <div className="container mx-auto px-4 py-16">
@@ -371,6 +379,7 @@ const GreenIT = () => {
           </div>
         </main>
       </div>
+      <Footer />
     </>
   );
 };
