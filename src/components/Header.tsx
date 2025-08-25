@@ -31,6 +31,12 @@ export function Header() {
       description: 'Explore our AI service offerings'
     },
     { 
+      path: '/ai-autonomous-business-platform', 
+      label: 'AI Platform', 
+      icon: '🚀',
+      description: 'Autonomous Business Platform'
+    },
+    { 
       path: '/solutions/enterprise', 
       label: 'Solutions', 
       icon: '💼',
@@ -72,6 +78,8 @@ export function Header() {
     {
       title: 'AI & Machine Learning',
       services: [
+        { name: 'AI Autonomous Business Manager', path: '/ai-autonomous-business-manager' },
+        { name: 'AI Autonomous Business Platform', path: '/ai-autonomous-business-platform' },
         { name: 'AI Business Intelligence', path: '/services#ai-bi' },
         { name: 'AI Marketing Automation', path: '/services#ai-marketing' },
         { name: 'AI HR & Recruitment', path: '/services#ai-hr' },

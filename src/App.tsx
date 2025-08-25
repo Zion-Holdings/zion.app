@@ -55,6 +55,15 @@ const IndustrySolutions = lazy(() => import('./pages/services/IndustrySolutions'
 const EnterpriseSolutions = lazy(() => import('./pages/solutions/Enterprise'));
 const HealthcareSolutions = lazy(() => import('./pages/solutions/Healthcare'));
 
+// AI Autonomous Business pages
+const AIAutonomousBusinessManager = lazy(() => import('./pages/AIAutonomousBusinessManager'));
+const AIAutonomousBusinessManager2029 = lazy(() => import('./pages/AIAutonomousBusinessManager2029'));
+const AIAutonomousBusinessPlatform = lazy(() => import('./pages/AIAutonomousBusinessPlatform'));
+const AIAutonomousBusinessPlatform2026 = lazy(() => import('./pages/AIAutonomousBusinessPlatform2026'));
+const AIAutonomousBusinessPlatform2029 = lazy(() => import('./pages/AIAutonomousBusinessPlatform2029'));
+const AIAutonomousBusinessOperations = lazy(() => import('./pages/AIAutonomousBusinessOperations'));
+const AIAutonomousBusinessProcessAutomation = lazy(() => import('./pages/AIAutonomousBusinessProcessAutomation'));
+
 // Loading Component
 const LoadingSpinner = () => (
   <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
@@ -123,6 +132,15 @@ const App = () => {
                     {/* Solutions Routes */}
                     <Route path="/solutions/enterprise" element={<EnterpriseSolutions />} />
                     <Route path="/solutions/healthcare" element={<HealthcareSolutions />} />
+                    
+                    {/* AI Autonomous Business Routes */}
+                    <Route path="/ai-autonomous-business-manager" element={<AIAutonomousBusinessManager />} />
+                    <Route path="/ai-autonomous-business-manager-2029" element={<AIAutonomousBusinessManager2029 />} />
+                    <Route path="/ai-autonomous-business-platform" element={<AIAutonomousBusinessPlatform />} />
+                    <Route path="/ai-autonomous-business-platform-2026" element={<AIAutonomousBusinessPlatform2026 />} />
+                    <Route path="/ai-autonomous-business-platform-2029" element={<AIAutonomousBusinessPlatform2029 />} />
+                    <Route path="/ai-autonomous-business-operations" element={<AIAutonomousBusinessOperations />} />
+                    <Route path="/ai-autonomous-business-process-automation" element={<AIAutonomousBusinessProcessAutomation />} />
                   </Routes>
                 </Suspense>
               </main>
