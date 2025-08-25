@@ -1,4 +1,3 @@
-# Netlify configuration for Vite project (not Next.js)
 [build]
   command = "npm ci && npm run build"
   publish = "dist"

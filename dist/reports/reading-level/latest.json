@@ -1,0 +1,117 @@
+{
+  "generatedAt": "2025-08-11T23:58:47.656Z",
+  "items": [
+    {
+      "file": "docs/TODO_REPORT.md",
+      "score": -1068642.29,
+      "grade": "Very confusing (college graduate)",
+      "sentences": 1,
+      "words": 1052857,
+      "syllables": 2479972
+    },
+    {
+      "file": "docs/CHANGELOG_AI.md",
+      "score": -2129.39,
+      "grade": "Very confusing (college graduate)",
+      "sentences": 10,
+      "words": 21580,
+      "syllables": 37204
+    },
+    {
+      "file": "docs/reports/unused-exports.md",
+      "score": 32.58,
+      "grade": "Difficult (college)",
+      "sentences": 1,
+      "words": 100,
+      "syllables": 86
+    },
+    {
+      "file": "pages/automation/index.tsx",
+      "score": 50.67,
+      "grade": "Fairly difficult (10-12th)",
+      "sentences": 1,
+      "words": 8,
+      "syllables": 14
+    },
+    {
+      "file": "pages/front/index.tsx",
+      "score": 56.25,
+      "grade": "Fairly difficult (10-12th)",
+      "sentences": 1,
+      "words": 15,
+      "syllables": 24
+    },
+    {
+      "file": "pages/site-health.tsx",
+      "score": 61.24,
+      "grade": "Standard (8-9th)",
+      "sentences": 1,
+      "words": 8,
+      "syllables": 13
+    },
+    {
+      "file": "pages/index.tsx",
+      "score": 62.74,
+      "grade": "Standard (8-9th)",
+      "sentences": 26,
+      "words": 549,
+      "syllables": 796
+    },
+    {
+      "file": "pages/_app.tsx",
+      "score": 67.76,
+      "grade": "Standard (8-9th)",
+      "sentences": 1,
+      "words": 12,
+      "syllables": 18
+    },
+    {
+      "file": "pages/newsroom.tsx",
+      "score": 71.82,
+      "grade": "Fairly easy (7th grade)",
+      "sentences": 1,
+      "words": 8,
+      "syllables": 12
+    },
+    {
+      "file": "docs/MEDIA_RELEASE.md",
+      "score": 72.85,
+      "grade": "Fairly easy (7th grade)",
+      "sentences": 4,
+      "words": 147,
+      "syllables": 168
+    },
+    {
+      "file": "pages/reports/seo.tsx",
+      "score": 74.81,
+      "grade": "Fairly easy (7th grade)",
+      "sentences": 1,
+      "words": 12,
+      "syllables": 17
+    },
+    {
+      "file": "pages/main/front/index.tsx",
+      "score": 78.75,
+      "grade": "Fairly easy (7th grade)",
+      "sentences": 57,
+      "words": 1448,
+      "syllables": 1751
+    },
+    {
+      "file": "pages/reports/ai-trends.tsx",
+      "score": 88.91,
+      "grade": "Easy (6th grade)",
+      "sentences": 1,
+      "words": 12,
+      "syllables": 15
+    },
+    {
+      "file": "docs/CHANGELOG.md",
+      "score": 100.24,
+      "grade": "Very easy (5th grade)",
+      "sentences": 1,
+      "words": 5,
+      "syllables": 6
+    }
+  ]
+}

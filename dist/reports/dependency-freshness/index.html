@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dependency Freshness — Zion</title>
+<style>
+  body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial;background:#0b1220;color:#fff;margin:0;padding:24px}
+  a{color:#7de3ff;text-decoration:none}
+  a:hover{text-decoration:underline}
+  code{background:rgba(255,255,255,0.08);padding:2px 6px;border-radius:6px}
+  .pill{display:inline-block;background:rgba(125,227,255,0.14);color:#c7f1ff;border:1px solid rgba(125,227,255,0.5);padding:4px 8px;border-radius:999px;font-size:12px;margin-right:6px}
+  table{width:100%;border-collapse:collapse;font-size:14px;margin-top:12px}
+  th,td{border-bottom:1px solid rgba(255,255,255,0.08);padding:8px;text-align:left}
+</style>
+<body>
+  <h1>Dependency Freshness</h1>
+  <div>
+    <span class="pill">Total: 55</span>
+    <span class="pill">Outdated: 24</span>
+    <span class="pill">Up-to-date: 31</span>
+    <span class="pill">Errors: 0</span>
+  </div>
+  <p>
+    <a href="/.netlify/functions/dependency-freshness-radar">Run Freshness Radar ↗</a> · <a href="/">Home</a> · <a href="/automation">Automation Hub</a>
+  </p>
+  <table>
+    <thead><tr><th>Package</th><th>Current</th><th>Latest</th><th>Status</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr>
+      <td><code>@commitlint/cli</code></td>
+      <td>^19.8.1</td>
+      <td>19.8.1</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>@commitlint/config-conventional</code></td>
+      <td>^19.8.1</td>
+      <td>19.8.1</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>@eslint/js</code></td>
+      <td>^9.32.0</td>
+      <td>9.33.0</td>
+      <td style="color:#fbbf24">outdated</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>@google-analytics/data</code></td>
+      <td>^5.2.0</td>
+      <td>5.2.0</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>@google/generative-ai</code></td>
+      <td>^0.24.1</td>
+      <td>0.24.1</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>@magneticwatermelon/mcp-toolkit</code></td>
+      <td>^1.1.4</td>
+      <td>1.1.5</td>
+      <td style="color:#fbbf24">outdated</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>@modelcontextprotocol/sdk</code></td>
+      <td>^1.17.1</td>
+      <td>1.17.2</td>
+      <td style="color:#fbbf24">outdated</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>@modelcontextprotocol/server-filesystem</code></td>
+      <td>^2025.7.29</td>
+      <td>2025.7.29</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>@modelcontextprotocol/server-memory</code></td>
+      <td>^2025.8.4</td>
+      <td>2025.8.4</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>@modelcontextprotocol/server-sequential-thinking</code></td>
+      <td>^2025.7.1</td>
+      <td>2025.7.1</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>@supabase/ssr</code></td>
+      <td>^0.6.1</td>
+      <td>0.6.1</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>@supabase/supabase-js</code></td>
+      <td>^2.39.0</td>
+      <td>2.54.0</td>
+      <td style="color:#fbbf24">outdated</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>@testing-library/jest-dom</code></td>
+      <td>^6.6.4</td>
+      <td>6.6.4</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>@testing-library/react</code></td>
+      <td>12.1.5</td>
+      <td>16.3.0</td>
+      <td style="color:#fbbf24">outdated</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>@types/node</code></td>
+      <td>^24.2.0</td>
+      <td>24.2.1</td>
+      <td style="color:#fbbf24">outdated</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>@types/node-cron</code></td>
+      <td>^3.0.11</td>
+      <td>3.0.11</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>@types/react</code></td>
+      <td>17.0.34</td>
+      <td>19.1.10</td>
+      <td style="color:#fbbf24">outdated</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>@types/react-datepicker</code></td>
+      <td>^6.2.0</td>
+      <td>7.0.0</td>
+      <td style="color:#fbbf24">outdated</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>@types/react-dom</code></td>
+      <td>17.0.11</td>
+      <td>19.1.7</td>
+      <td style="color:#fbbf24">outdated</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>@typescript-eslint/eslint-plugin</code></td>
+      <td>^8.39.0</td>
+      <td>8.39.1</td>
+      <td style="color:#fbbf24">outdated</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>@typescript-eslint/parser</code></td>
+      <td>^8.39.0</td>
+      <td>8.39.1</td>
+      <td style="color:#fbbf24">outdated</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>autoprefixer</code></td>
+      <td>^10.4.16</td>
+      <td>10.4.21</td>
+      <td style="color:#fbbf24">outdated</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>axios</code></td>
+      <td>^1.11.0</td>
+      <td>1.11.0</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>chalk</code></td>
+      <td>^5.5.0</td>
+      <td>5.5.0</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>cheerio</code></td>
+      <td>^1.1.2</td>
+      <td>1.1.2</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>child_process</code></td>
+      <td>^1.0.2</td>
+      <td>1.0.2</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>chokidar</code></td>
+      <td>^4.0.3</td>
+      <td>4.0.3</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>cron-parser</code></td>
+      <td>^5.3.0</td>
+      <td>5.3.0</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>eslint</code></td>
+      <td>^8.57.0</td>
+      <td>9.33.0</td>
+      <td style="color:#fbbf24">outdated</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>eslint-config-next</code></td>
+      <td>^14.0.0</td>
+      <td>15.4.6</td>
+      <td style="color:#fbbf24">outdated</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>eslint-plugin-react-hooks</code></td>
+      <td>^5.2.0</td>
+      <td>5.2.0</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>eslint-plugin-react-refresh</code></td>
+      <td>^0.4.20</td>
+      <td>0.4.20</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>events</code></td>
+      <td>^3.3.0</td>
+      <td>3.3.0</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>framer-motion</code></td>
+      <td>^6.5.1</td>
+      <td>12.23.12</td>
+      <td style="color:#fbbf24">outdated</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>fs</code></td>
+      <td>^0.0.1-security</td>
+      <td>0.0.1-security</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>fs-extra</code></td>
+      <td>^11.3.1</td>
+      <td>11.3.1</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>glob</code></td>
+      <td>^11.0.3</td>
+      <td>11.0.3</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>https</code></td>
+      <td>^1.0.0</td>
+      <td>1.0.0</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>husky</code></td>
+      <td>^9.1.7</td>
+      <td>9.1.7</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>import-fresh</code></td>
+      <td>^3.3.1</td>
+      <td>3.3.1</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>lint-staged</code></td>
+      <td>^16.1.5</td>
+      <td>16.1.5</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>lucide-react</code></td>
+      <td>^0.536.0</td>
+      <td>0.539.0</td>
+      <td style="color:#fbbf24">outdated</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>next</code></td>
+      <td>^11.1.4</td>
+      <td>15.4.6</td>
+      <td style="color:#fbbf24">outdated</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>node-cron</code></td>
+      <td>^4.2.1</td>
+      <td>4.2.1</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>openai</code></td>
+      <td>^5.11.0</td>
+      <td>5.12.2</td>
+      <td style="color:#fbbf24">outdated</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>path</code></td>
+      <td>^0.12.7</td>
+      <td>0.12.7</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>postcss</code></td>
+      <td>^8.4.32</td>
+      <td>8.5.6</td>
+      <td style="color:#fbbf24">outdated</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>react</code></td>
+      <td>^17.0.2</td>
+      <td>19.1.1</td>
+      <td style="color:#fbbf24">outdated</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>react-datepicker</code></td>
+      <td>^8.4.0</td>
+      <td>8.4.0</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>react-dom</code></td>
+      <td>^17.0.2</td>
+      <td>19.1.1</td>
+      <td style="color:#fbbf24">outdated</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>sharp</code></td>
+      <td>^0.33.4</td>
+      <td>0.34.3</td>
+      <td style="color:#fbbf24">outdated</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>tailwindcss</code></td>
+      <td>^3.4.0</td>
+      <td>4.1.11</td>
+      <td style="color:#fbbf24">outdated</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>ts-node</code></td>
+      <td>^10.9.2</td>
+      <td>10.9.2</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>typescript</code></td>
+      <td>^5.6.3</td>
+      <td>5.9.2</td>
+      <td style="color:#fbbf24">outdated</td>
+      <td></td>
+    </tr>
+<tr>
+      <td><code>uuid</code></td>
+      <td>^11.1.0</td>
+      <td>11.1.0</td>
+      <td style="color:#34d399">ok</td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+</body>
+</html>

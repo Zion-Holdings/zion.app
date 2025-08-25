@@ -37,7 +37,9 @@ export function MainNavigation() {
   const navigationItems = [
     { name: 'Home', href: '/' },
     { name: 'Marketplace', href: '/marketplace' },
-    { name: 'Services', href: '/services' },
+    { name: 'Services Hub', href: '/services-hub' },
+    { name: 'AI Services', href: '/ai-services' },
+    { name: 'IT Services', href: '/it-services-comprehensive' },
     { name: 'Talent', href: '/talent' },
     { name: 'Equipment', href: '/equipment' },
     { name: 'About', href: '/about' },

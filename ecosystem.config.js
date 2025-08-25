@@ -97,10 +97,10 @@ module.exports = {
       user: 'node',
       host: 'localhost',
       ref: 'origin/main',
-      repo: 'git@github.com:Zion-Holdings/zion.git',
+      repo: 'git@github.com:Zion-Holdings/zion.app.git',
       path: '/var/www/zion',
       'pre-deploy-local': '',
-      'post-deploy': 'npm install && pm2 reload ecosystem.config.js --env production',
+      'post-deploy': 'npm install && pm2 install pm2-logrotate || true && pm2 set pm2-logrotate:max_size 10M && pm2 set pm2-logrotate:retain 30 && pm2 set pm2-logrotate:compress true && pm2 reload ecosystem.config.js --env production',
       'pre-setup': ''
     }
   }

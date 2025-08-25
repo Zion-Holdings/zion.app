@@ -377,3 +377,25 @@ The system is designed to operate completely autonomously. However, if you need 
 ---
 
 **The Autonomous Automation System provides complete, zero-intervention automation of your Zion App project, ensuring optimal performance, security, and continuous improvement without any manual intervention required.**
+
+## PM2 Automations
+
+This repository includes several autonomous systems managed by PM2 via `ecosystem.config.js`.
+
+Core processes:
+- autonomous-ai-manager -> `automation/autonomous-system-manager.cjs`
+- ml-intelligence -> `automation/ml-link-intelligence.cjs`
+- real-time-monitor -> `automation/real-time-performance-monitor.cjs`
+- link-scheduler -> `automation/link-health-scheduler.cjs`
+
+Commands:
+- Setup once: `npm run pm2:setup`
+- Start: `npm run pm2:start`
+- Reload on update: `npm run pm2:reload`
+- Status: `npm run pm2:status`
+- Logs: `npm run pm2:logs`
+- Stop/Delete: `npm run pm2:stop` / `npm run pm2:delete`
+
+Notes:
+- PM2 logrotate is configured (10MB max size, retain 30, compress). Logs are under `automation/logs/`.
+- For servers, enable startup with `pm2 startup && pm2 save`.

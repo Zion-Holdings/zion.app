@@ -11,6 +11,7 @@
     "lint": "eslint . --report-unused-disable-directives --max-warnings 0",
     "type-check": "tsc --noEmit",
     "sitemap": "node scripts/generate-sitemap.js",
+    "prepare": "echo 'Skipping husky install'",
     "fix:all": "npm run lint -- --fix || true && node fix_typescript_syntax_errors.cjs || true && node fix_all_typescript_errors.cjs || true && node final_fix.cjs || true",
     "autonomous": "node automation/launch-enhanced-autonomous-system.js",
     "autonomous:dev": "nodemon automation/launch-enhanced-autonomous-system.js",
@@ -196,7 +197,16 @@
     "test:watch": "jest --watch",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --browser chrome",
-    "test:accessibility": "vitest run tests/Accessibility.test.tsx"
+    "test:accessibility": "vitest run tests/Accessibility.test.tsx",
+    "pm2:setup": "pm2 install pm2-logrotate && pm2 set pm2-logrotate:max_size 10M && pm2 set pm2-logrotate:retain 30 && pm2 set pm2-logrotate:compress true && pm2 save",
+    "pm2:startup": "pm2 startup && pm2 save",
+    "pm2:start": "pm2 start ecosystem.config.cjs --env production && pm2 save",
+    "pm2:reload": "pm2 reload ecosystem.config.cjs --env production && pm2 save",
+    "pm2:stop": "pm2 stop all || true && pm2 save",
+    "pm2:delete": "pm2 delete all || true && pm2 save",
+    "pm2:status": "pm2 status",
+    "pm2:logs": "pm2 logs --lines 100",
+    "pm2:health": "bash pm2-healthcheck.sh"
   },
   "dependencies": {
     "@hello-pangea/dnd": "^18.0.1",
