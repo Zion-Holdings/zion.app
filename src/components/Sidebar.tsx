@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Home, Briefcase, Users, Phone, Mail, MapPin, Globe, Linkedin, Twitter, Facebook, Instagram, Shield } from 'lucide-react';
+import { X, Home, Briefcase, Users, Phone, Mail, MapPin, Globe, Linkedin, Twitter, Facebook, Instagram, Shield, Handshake } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 interface SidebarProps {
@@ -22,6 +22,8 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
       items: [
         { name: 'Home', path: '/', icon: Home },
         { name: 'Services', path: '/services', icon: Briefcase },
+        { name: 'Solutions', path: '/solutions/enterprise', icon: Briefcase },
+        { name: 'Pricing', path: '/pricing', icon: Briefcase },
         { name: 'About', path: '/about', icon: Users },
         { name: 'Contact', path: '/contact', icon: Phone }
       ]
@@ -45,7 +47,8 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         { name: 'About Us', path: '/about', icon: Users },
         { name: 'Our Team', path: '/team', icon: Users },
         { name: 'Careers', path: '/careers', icon: Briefcase },
-        { name: 'News & Updates', path: '/news', icon: Globe }
+        { name: 'Partners', path: '/partners', icon: Handshake },
+        { name: 'Blog', path: '/blog', icon: Globe }
       ]
     },
     {

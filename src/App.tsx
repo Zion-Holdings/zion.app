@@ -33,6 +33,11 @@ const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Mission = lazy(() => import('./pages/Mission'));
 const Team = lazy(() => import('./pages/Team'));
+const Pricing = lazy(() => import('./pages/Pricing'));
+const Careers = lazy(() => import('./pages/Careers'));
+const Partners = lazy(() => import('./pages/Partners'));
+const Blog = lazy(() => import('./pages/Blog'));
+const News = lazy(() => import('./pages/News'));
 const ServicesOverview = lazy(() => import('./pages/services/ServicesOverview'));
 const AIAutonomousSystems = lazy(() => import('./pages/services/AIAutonomousSystems'));
 const QuantumTechnology = lazy(() => import('./pages/services/QuantumTechnology'));
@@ -40,6 +45,10 @@ const Cybersecurity = lazy(() => import('./pages/services/Cybersecurity'));
 const ITInfrastructure = lazy(() => import('./pages/services/ITInfrastructure'));
 const MicroSAASSolutions = lazy(() => import('./pages/services/MicroSAASSolutions'));
 const IndustrySolutions = lazy(() => import('./pages/services/IndustrySolutions'));
+
+// Solutions pages
+const EnterpriseSolutions = lazy(() => import('./pages/solutions/Enterprise'));
+const HealthcareSolutions = lazy(() => import('./pages/solutions/Healthcare'));
 
 // Loading Component
 const LoadingSpinner = () => (
@@ -88,6 +97,11 @@ const App = () => {
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/mission" element={<Mission />} />
                     <Route path="/team" element={<Team />} />
+                    <Route path="/pricing" element={<Pricing />} />
+                    <Route path="/careers" element={<Careers />} />
+                    <Route path="/partners" element={<Partners />} />
+                    <Route path="/blog" element={<Blog />} />
+                    <Route path="/news" element={<News />} />
                     <Route path="/services-overview" element={<ServicesOverview />} />
                     <Route path="/services/ai-autonomous-systems" element={<AIAutonomousSystems />} />
                     <Route path="/services/quantum-technology" element={<QuantumTechnology />} />
@@ -95,6 +109,10 @@ const App = () => {
                     <Route path="/services/it-infrastructure" element={<ITInfrastructure />} />
                     <Route path="/services/micro-saas-solutions" element={<MicroSAASSolutions />} />
                     <Route path="/services/industry-solutions" element={<IndustrySolutions />} />
+                    
+                    {/* Solutions Routes */}
+                    <Route path="/solutions/enterprise" element={<EnterpriseSolutions />} />
+                    <Route path="/solutions/healthcare" element={<HealthcareSolutions />} />
                   </Routes>
                 </Suspense>
               </main>

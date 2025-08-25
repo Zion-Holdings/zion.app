@@ -31,14 +31,14 @@ export function Footer() {
         { label: "Manufacturing Solutions", path: "/solutions/manufacturing" },
         { label: "Retail Solutions", path: "/solutions/retail" },
         { label: "Government Solutions", path: "/solutions/government" },
-        { label: "Business Intelligence", path: "/solutions#bi" },
-        { label: "Marketing Automation", path: "/solutions#marketing" },
-        { label: "HR & Recruitment", path: "/solutions#hr" },
-        { label: "Legal Tech", path: "/solutions#legal" },
-        { label: "Supply Chain", path: "/solutions#supply-chain" },
-        { label: "Smart Buildings", path: "/solutions#smart-buildings" },
-        { label: "Data Protection", path: "/solutions#data-protection" },
-        { label: "Network Security", path: "/solutions#network-security" }
+        { label: "Business Intelligence", path: "/services/ai-autonomous-systems" },
+        { label: "Marketing Automation", path: "/services/ai-autonomous-systems" },
+        { label: "HR & Recruitment", path: "/services/ai-autonomous-systems" },
+        { label: "Legal Tech", path: "/services/ai-autonomous-systems" },
+        { label: "Supply Chain", path: "/services/industry-solutions" },
+        { label: "Smart Buildings", path: "/services/industry-solutions" },
+        { label: "Data Protection", path: "/services/cybersecurity" },
+        { label: "Network Security", path: "/services/cybersecurity" }
       ]
     },
     {
@@ -59,28 +59,19 @@ export function Footer() {
         { label: "About Us", path: "/about" },
         { label: "Our Mission", path: "/mission" },
         { label: "Team", path: "/team" },
-        { label: "Leadership", path: "/leadership" },
-        { label: "All Services", path: "/comprehensive-services" },
         { label: "Pricing", path: "/pricing" },
         { label: "Careers", path: "/careers" },
         { label: "Partners", path: "/partners" },
         { label: "Contact", path: "/contact" },
-        { label: "Our Team", path: "/team" },
-        { label: "News & Updates", path: "/news" },
-        { label: "Testimonials", path: "/testimonials" }
+        { label: "Blog", path: "/blog" }
       ]
     },
     {
       title: "Resources",
       links: [
         { label: "Blog & Articles", path: "/blog" },
-        { label: "Technology Blog", path: "/blog" },
-        { label: "Documentation", path: "/docs" },
         { label: "Case Studies", path: "/case-studies" },
-        { label: "White Papers", path: "/white-papers" },
-        { label: "API Documentation", path: "/api-docs" },
-        { label: "Webinars", path: "/webinars" },
-        { label: "Training", path: "/training" },
+        { label: "Documentation", path: "/docs" },
         { label: "Support Center", path: "/support" }
       ]
     }
