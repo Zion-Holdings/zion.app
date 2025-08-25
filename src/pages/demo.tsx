@@ -20,6 +20,7 @@ import { AnalyticsDashboard } from '../components/ui/analytics-dashboard';
 import { AIChatAssistant } from '../components/ui/ai-chat-assistant';
 import { InteractiveTimeline } from '../components/ui/interactive-timeline';
 import { Card3DGallery } from '../components/ui/3d-card-gallery';
+import { PerformanceMonitor } from '../components/ui/performance-monitor';
 
 // Mock data for the timeline
 const mockTimelineEvents = [
@@ -355,6 +356,15 @@ export default function DemoPage() {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        
+        {/* Performance Monitor */}
+        <PerformanceMonitor 
+          enabled={true}
+          showDetails={true}
+          autoRefresh={true}
+          refreshInterval={2000}
+          onAlert={(metric, value, threshold) => console.log(`Alert: ${metric} = ${value} (threshold: ${threshold})`)}
+        />
         <AnimatePresence mode="wait">
           {activeTab === 'overview' && (
             <motion.div
