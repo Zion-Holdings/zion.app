@@ -19,6 +19,7 @@ export interface ITService {
     phone: string;
     email: string;
     website: string;
+    address?: string;
   };
   aiScore?: number;
   rating?: number;
@@ -33,6 +34,13 @@ export interface ITService {
   integrations?: string[];
   compliance?: string[];
   securityFeatures?: string[];
+  roi?: string;
+  competitors?: string[];
+  duration?: string;
+  teamSize?: string;
+  freeConsultation?: boolean;
+  maintenanceIncluded?: boolean;
+  warrantyPeriod?: string;
 }
 
 export const COMPREHENSIVE_IT_SERVICES: ITService[] = [
@@ -86,7 +94,8 @@ export const COMPREHENSIVE_IT_SERVICES: ITService[] = [
     contactInfo: {
       phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
-      website: 'https://ziontechgroup.com'
+      website: 'https://ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
     },
     aiScore: 95,
     rating: 4.8,
@@ -146,7 +155,8 @@ export const COMPREHENSIVE_IT_SERVICES: ITService[] = [
     contactInfo: {
       phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
-      website: 'https://ziontechgroup.com'
+      website: 'https://ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
     },
     aiScore: 92,
     rating: 4.7,
@@ -206,7 +216,8 @@ export const COMPREHENSIVE_IT_SERVICES: ITService[] = [
     contactInfo: {
       phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
-      website: 'https://ziontechgroup.com'
+      website: 'https://ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
     },
     aiScore: 88,
     rating: 4.6,
@@ -266,7 +277,8 @@ export const COMPREHENSIVE_IT_SERVICES: ITService[] = [
     contactInfo: {
       phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
-      website: 'https://ziontechgroup.com'
+      website: 'https://ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
     },
     aiScore: 94,
     rating: 4.8,
@@ -326,7 +338,8 @@ export const COMPREHENSIVE_IT_SERVICES: ITService[] = [
     contactInfo: {
       phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
-      website: 'https://ziontechgroup.com'
+      website: 'https://ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
     },
     aiScore: 90,
     rating: 4.7,
@@ -386,7 +399,8 @@ export const COMPREHENSIVE_IT_SERVICES: ITService[] = [
     contactInfo: {
       phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
-      website: 'https://ziontechgroup.com'
+      website: 'https://ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
     },
     aiScore: 89,
     rating: 4.6,
@@ -446,7 +460,8 @@ export const COMPREHENSIVE_IT_SERVICES: ITService[] = [
     contactInfo: {
       phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
-      website: 'https://ziontechgroup.com'
+      website: 'https://ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
     },
     aiScore: 91,
     rating: 4.8,
@@ -506,7 +521,8 @@ export const COMPREHENSIVE_IT_SERVICES: ITService[] = [
     contactInfo: {
       phone: '+1 302 464 0950',
       email: 'kleber@ziontechgroup.com',
-      website: 'https://ziontechgroup.com'
+      website: 'https://ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
     },
     aiScore: 87,
     rating: 4.5,
@@ -515,6 +531,287 @@ export const COMPREHENSIVE_IT_SERVICES: ITService[] = [
     technologyStack: ['Prometheus', 'Grafana', 'ELK Stack', 'Jaeger', 'Zipkin', 'Datadog', 'New Relic'],
     integrations: ['CI/CD pipelines', 'Cloud platforms', 'Container orchestration', 'Logging systems'],
     securityFeatures: ['Role-based access', 'Audit logging', 'Data encryption', 'Secure communication']
+  },
+  // New additional services
+  {
+    id: 'quantum-network-infrastructure',
+    title: 'Quantum Network Infrastructure',
+    category: 'Network Infrastructure',
+    subcategory: 'Quantum Networking',
+    description: 'Next-generation quantum network infrastructure for ultra-secure, high-speed data transmission. Features include quantum key distribution, quantum repeaters, and quantum internet protocols.',
+    price: 25000,
+    pricingModel: 'per-project',
+    currency: 'USD',
+    duration: '6-8 months',
+    teamSize: '8-12 specialists',
+    features: [
+      'Quantum key distribution (QKD)',
+      'Quantum repeaters and amplifiers',
+      'Quantum internet protocols',
+      'Ultra-secure data transmission',
+      'Quantum network monitoring',
+      'Hybrid classical-quantum networks',
+      'Quantum network security',
+      'Performance optimization'
+    ],
+    benefits: [
+      'Unbreakable encryption through quantum mechanics',
+      'Future-proof network infrastructure',
+      'Ultra-low latency communication',
+      'Enhanced security compliance',
+      'Competitive technological advantage'
+    ],
+    targetAudience: ['Government agencies', 'financial institutions', 'research institutions', 'defense contractors'],
+    tags: ['Quantum Computing', 'Network Infrastructure', 'Cybersecurity', 'Quantum Internet', 'Advanced Technology'],
+    marketPrice: '35000',
+    roi: '400%',
+    competitors: ['IBM Quantum Network', 'Google Quantum AI', 'Microsoft Azure Quantum'],
+    technologyStack: ['Quantum Hardware', 'Qiskit', 'Cirq', 'Python', 'React', 'Quantum Simulators'],
+    integrations: ['Existing network infrastructure', 'Cloud platforms', 'Security systems', 'Monitoring tools'],
+    compliance: ['FISMA', 'FedRAMP', 'SOC 2', 'ISO 27001', 'NIST standards'],
+    estimatedDelivery: '6-8 months',
+    supportLevel: 'enterprise',
+    useCases: [
+      'Government secure communications',
+      'Financial institution data protection',
+      'Research institution quantum networking',
+      'Defense contractor secure systems'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      website: 'https://ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    },
+    demoUrl: 'https://ziontechgroup.com/demo/quantum-network',
+    documentationUrl: 'https://ziontechgroup.com/docs/quantum-network',
+    freeConsultation: true,
+    maintenanceIncluded: true,
+    warrantyPeriod: '2 years'
+  },
+  {
+    id: 'ai-powered-devops-automation',
+    title: 'AI-Powered DevOps Automation Suite',
+    category: 'DevOps & Automation',
+    subcategory: 'AI-Driven Operations',
+    description: 'Intelligent DevOps automation platform that uses AI to optimize deployment pipelines, monitor system health, and automatically resolve issues. Features include predictive analytics, automated scaling, and intelligent incident response.',
+    price: 18000,
+    pricingModel: 'per-project',
+    currency: 'USD',
+    duration: '4-6 months',
+    teamSize: '6-8 specialists',
+    features: [
+      'AI-powered deployment automation',
+      'Predictive system monitoring',
+      'Automated incident response',
+      'Intelligent resource scaling',
+      'Performance optimization',
+      'Security vulnerability detection',
+      'Compliance automation',
+      'Real-time analytics dashboard'
+    ],
+    benefits: [
+      'Reduce deployment time by 80%',
+      'Minimize system downtime by 90%',
+      'Automate 70% of routine operations',
+      'Improve resource utilization by 60%',
+      'Enhanced security and compliance'
+    ],
+    targetAudience: ['Technology companies', 'enterprises', 'cloud service providers', 'DevOps teams'],
+    tags: ['DevOps', 'AI', 'Automation', 'Cloud Computing', 'Monitoring'],
+    marketPrice: '25000',
+    roi: '350%',
+    competitors: ['GitLab Ultimate', 'Jenkins X', 'Spinnaker'],
+    technologyStack: ['Python', 'TensorFlow', 'Kubernetes', 'Docker', 'React', 'Node.js', 'AWS/Azure/GCP'],
+    integrations: ['GitHub', 'GitLab', 'Jira', 'Slack', 'PagerDuty', 'Datadog'],
+    compliance: ['SOC 2', 'ISO 27001', 'HIPAA', 'GDPR'],
+    estimatedDelivery: '4-6 months',
+    supportLevel: 'premium',
+    useCases: [
+      'CI/CD pipeline optimization',
+      'System monitoring and alerting',
+      'Automated incident response',
+      'Resource scaling and optimization'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      website: 'https://ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    },
+    demoUrl: 'https://ziontechgroup.com/demo/ai-devops',
+    documentationUrl: 'https://ziontechgroup.com/docs/ai-devops',
+    freeConsultation: true,
+    maintenanceIncluded: true,
+    warrantyPeriod: '1 year'
+  },
+  {
+    id: 'blockchain-enterprise-platform',
+    title: 'Enterprise Blockchain Platform',
+    category: 'Blockchain Solutions',
+    subcategory: 'Enterprise Blockchain',
+    description: 'Comprehensive enterprise blockchain platform for building secure, scalable distributed applications. Features include smart contract development, private network deployment, and enterprise integration tools.',
+    price: 30000,
+    pricingModel: 'per-project',
+    currency: 'USD',
+    duration: '8-12 months',
+    teamSize: '10-15 specialists',
+    features: [
+      'Private blockchain networks',
+      'Smart contract development',
+      'Enterprise integration APIs',
+      'Multi-consensus mechanisms',
+      'Advanced security features',
+      'Scalability solutions',
+      'Compliance tools',
+      'Performance monitoring'
+    ],
+    benefits: [
+      'Enhanced data security and transparency',
+      'Reduced operational costs by 40%',
+      'Improved supply chain visibility',
+      'Automated compliance processes',
+      'Competitive blockchain advantage'
+    ],
+    targetAudience: ['Financial institutions', 'supply chain companies', 'healthcare organizations', 'government agencies'],
+    tags: ['Blockchain', 'Enterprise', 'Smart Contracts', 'Distributed Systems', 'Security'],
+    marketPrice: '45000',
+    roi: '300%',
+    competitors: ['Hyperledger Fabric', 'Corda', 'Quorum'],
+    technologyStack: ['Go', 'Solidity', 'React', 'Node.js', 'Docker', 'Kubernetes', 'Cloud platforms'],
+    integrations: ['ERP systems', 'CRM platforms', 'Legacy databases', 'Cloud services', 'API gateways'],
+    compliance: ['SOC 2', 'ISO 27001', 'GDPR', 'Industry-specific regulations'],
+    estimatedDelivery: '8-12 months',
+    supportLevel: 'enterprise',
+    useCases: [
+      'Supply chain transparency',
+      'Financial transaction security',
+      'Digital identity management',
+      'Smart contract automation'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      website: 'https://ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    },
+    demoUrl: 'https://ziontechgroup.com/demo/enterprise-blockchain',
+    documentationUrl: 'https://ziontechgroup.com/docs/enterprise-blockchain',
+    freeConsultation: true,
+    maintenanceIncluded: true,
+    warrantyPeriod: '2 years'
+  },
+  {
+    id: 'iot-enterprise-platform',
+    title: 'Enterprise IoT Platform',
+    category: 'Internet of Things',
+    subcategory: 'IoT Solutions',
+    description: 'Scalable enterprise IoT platform for connecting, managing, and analyzing IoT devices and data. Features include device management, real-time analytics, and advanced security protocols.',
+    price: 22000,
+    pricingModel: 'per-project',
+    currency: 'USD',
+    duration: '5-7 months',
+    teamSize: '7-10 specialists',
+    features: [
+      'IoT device management',
+      'Real-time data analytics',
+      'Edge computing capabilities',
+      'Advanced security protocols',
+      'Scalable cloud infrastructure',
+      'API integration tools',
+      'Custom dashboard development',
+      'Predictive maintenance'
+    ],
+    benefits: [
+      'Connect and manage 1000+ IoT devices',
+      'Real-time operational insights',
+      'Predictive maintenance optimization',
+      'Enhanced operational efficiency',
+      'Improved decision-making capabilities'
+    ],
+    targetAudience: ['Manufacturing companies', 'logistics firms', 'smart cities', 'healthcare organizations'],
+    tags: ['IoT', 'Edge Computing', 'Data Analytics', 'Device Management', 'Cloud Platform'],
+    marketPrice: '32000',
+    roi: '280%',
+    competitors: ['AWS IoT Core', 'Azure IoT Hub', 'Google Cloud IoT'],
+    technologyStack: ['Python', 'Node.js', 'React', 'MQTT', 'CoAP', 'Docker', 'Kubernetes', 'Cloud platforms'],
+    integrations: ['ERP systems', 'SCADA systems', 'Legacy equipment', 'Cloud services', 'Analytics platforms'],
+    compliance: ['SOC 2', 'ISO 27001', 'Industry-specific IoT standards'],
+    estimatedDelivery: '5-7 months',
+    supportLevel: 'premium',
+    useCases: [
+      'Manufacturing automation',
+      'Smart city infrastructure',
+      'Healthcare device monitoring',
+      'Logistics tracking and optimization'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      website: 'https://ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    },
+    demoUrl: 'https://ziontechgroup.com/demo/enterprise-iot',
+    documentationUrl: 'https://ziontechgroup.com/docs/enterprise-iot',
+    freeConsultation: true,
+    maintenanceIncluded: true,
+    warrantyPeriod: '1 year'
+  },
+  {
+    id: 'quantum-cybersecurity-suite',
+    title: 'Quantum Cybersecurity Suite',
+    category: 'Cybersecurity',
+    subcategory: 'Quantum Security',
+    description: 'Advanced cybersecurity suite leveraging quantum computing for threat detection, encryption, and security analysis. Features include quantum-resistant algorithms, AI-powered threat detection, and real-time security monitoring.',
+    price: 35000,
+    pricingModel: 'per-project',
+    currency: 'USD',
+    duration: '9-12 months',
+    teamSize: '12-18 specialists',
+    features: [
+      'Quantum-resistant encryption',
+      'AI-powered threat detection',
+      'Real-time security monitoring',
+      'Advanced threat hunting',
+      'Quantum key distribution',
+      'Security analytics platform',
+      'Incident response automation',
+      'Compliance reporting tools'
+    ],
+    benefits: [
+      'Future-proof security against quantum threats',
+      'Advanced threat detection capabilities',
+      'Automated incident response',
+      'Enhanced compliance management',
+      'Competitive security advantage'
+    ],
+    targetAudience: ['Financial institutions', 'government agencies', 'healthcare organizations', 'defense contractors'],
+    tags: ['Cybersecurity', 'Quantum Computing', 'AI', 'Threat Detection', 'Encryption'],
+    marketPrice: '50000',
+    roi: '450%',
+    competitors: ['Palo Alto Networks', 'CrowdStrike', 'SentinelOne'],
+    technologyStack: ['Python', 'Quantum Computing', 'TensorFlow', 'React', 'Node.js', 'Security frameworks'],
+    integrations: ['SIEM systems', 'Firewalls', 'Endpoint protection', 'Cloud security', 'Identity management'],
+    compliance: ['SOC 2', 'ISO 27001', 'NIST', 'FedRAMP', 'Industry-specific standards'],
+    estimatedDelivery: '9-12 months',
+    supportLevel: 'enterprise',
+    useCases: [
+      'Financial institution security',
+      'Government agency protection',
+      'Healthcare data security',
+      'Critical infrastructure defense'
+    ],
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      website: 'https://ziontechgroup.com',
+      address: '364 E Main St STE 1008, Middletown DE 19709'
+    },
+    demoUrl: 'https://ziontechgroup.com/demo/quantum-cybersecurity',
+    documentationUrl: 'https://ziontechgroup.com/docs/quantum-cybersecurity',
+    freeConsultation: true,
+    maintenanceIncluded: true,
+    warrantyPeriod: '2 years'
   }
 ];
 
