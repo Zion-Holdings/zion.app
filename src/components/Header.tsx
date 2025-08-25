@@ -75,22 +75,28 @@ export function Header() {
         { name: 'AI Business Intelligence', path: '/services#ai-bi' },
         { name: 'AI Marketing Automation', path: '/services#ai-marketing' },
         { name: 'AI HR & Recruitment', path: '/services#ai-hr' },
-        { name: 'AI Legal Tech', path: '/services#ai-legal' }
+        { name: 'AI Legal Tech', path: '/services#ai-legal' },
+        { name: 'Advanced Micro SAAS', path: '/services/advanced-micro-saas-services' },
+        { name: 'AI Customer Support', path: '/services/comprehensive-it-services' }
       ]
     },
     {
-      title: 'Cybersecurity',
+      title: 'Cybersecurity & IT',
       services: [
         { name: 'Quantum-Safe Security', path: '/services#quantum-security' },
+        { name: 'AI Network Security', path: '/services/comprehensive-it-services' },
         { name: 'Security Assessment', path: '/services#security-assessment' },
-        { name: 'Compliance & Audit', path: '/services#compliance' }
+        { name: 'Compliance & Audit', path: '/services#compliance' },
+        { name: 'Comprehensive IT Services', path: '/services/comprehensive-it-services' }
       ]
     },
     {
       title: 'Cloud & Infrastructure',
       services: [
         { name: 'Cloud Migration', path: '/services#cloud-migration' },
+        { name: 'DevOps & CI/CD', path: '/services/comprehensive-it-services' },
         { name: 'Network Infrastructure', path: '/services#network' },
+        { name: 'Edge Computing & IoT', path: '/services/comprehensive-it-services' },
         { name: 'Managed IT Services', path: '/services#managed-it' }
       ]
     },

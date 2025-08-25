@@ -102,6 +102,27 @@
   }
 }
 
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+    transform: translate(2px, -2px);
+  }
+}
+
 @keyframes hologram-flicker {
   0%, 100% {
     opacity: 1;

@@ -52,6 +52,9 @@ const MicroSAASSolutions = lazy(() => import('./pages/services/MicroSAASSolution
 const IndustrySolutions = lazy(() => import('./pages/services/IndustrySolutions'));
 const InnovativeNewServices = lazy(() => import('./pages/services/InnovativeNewServices'));
 const SpecializedITInfrastructure = lazy(() => import('./pages/services/SpecializedITInfrastructure'));
+const AdvancedMicroSAASServices = lazy(() => import('./pages/services/AdvancedMicroSAASServices'));
+const ComprehensiveITServices = lazy(() => import('./pages/services/ComprehensiveITServices'));
+const AllServicesOverview = lazy(() => import('./pages/services/AllServicesOverview'));
 
 // Solutions pages
 const EnterpriseSolutions = lazy(() => import('./pages/solutions/Enterprise'));
@@ -123,6 +126,9 @@ const App = () => {
                     <Route path="/services/industry-solutions" element={<IndustrySolutions />} />
                     <Route path="/services/innovative-new-services" element={<InnovativeNewServices />} />
                     <Route path="/services/specialized-it-infrastructure" element={<SpecializedITInfrastructure />} />
+                    <Route path="/services/advanced-micro-saas-services" element={<AdvancedMicroSAASServices />} />
+                    <Route path="/services/comprehensive-it-services" element={<ComprehensiveITServices />} />
+                    <Route path="/services/all-services-overview" element={<AllServicesOverview />} />
                     
                     {/* Solutions Routes */}
                     <Route path="/services/enterprise" element={<EnterpriseSolutions />} />
