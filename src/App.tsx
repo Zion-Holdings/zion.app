@@ -44,7 +44,7 @@ const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
 const MicroSaasServices = React.lazy(() => import('./pages/MicroSaasServices'));
 const PricingPage = React.lazy(() => import('./pages/PricingPage'));
-// New service pages
+// New service pages (retain both legacy and new)
 const AIServices = React.lazy(() => import('./pages/AIServices'));
 const CloudDevOps = React.lazy(() => import('./pages/CloudDevOps'));
 const EnterpriseSolutions = React.lazy(() => import('./pages/EnterpriseSolutions'));
@@ -56,6 +56,15 @@ const Careers = React.lazy(() => import('./pages/Careers'));
 // Legal pages
 const Privacy = React.lazy(() => import('./pages/Privacy'));
 const Terms = React.lazy(() => import('./pages/Terms'));
+// Additional services pages
+const InnovativeServicesShowcase = React.lazy(() => import('./pages/InnovativeServicesShowcase'));
+const ServicesOverview = React.lazy(() => import('./pages/ServicesOverview'));
+const ServicesPage = React.lazy(() => import('./pages/Services'));
+const ExpandedServicesPage = React.lazy(() => import('./pages/ServicesShowcase'));
+const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
+const CybersecurityServicesPage = React.lazy(() => import('./pages/CybersecurityServicesPage'));
+const ServicesComparisonPage = React.lazy(() => import('./pages/ServicesComparison'));
+const ServicesHubPage = React.lazy(() => import('./pages/ServicesHubPage'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -87,7 +96,12 @@ const baseRoutes = [
   { path: '/enterprise-solutions', element: <EnterpriseSolutions /> },
   { path: '/digital-transformation', element: <DigitalTransformation /> },
   { path: '/emerging-tech', element: <EmergingTech /> },
-  // Company pages
+  // Additional services pages
+  { path: '/services', element: <ServicesPage /> },
+  { path: '/services-showcase', element: <ExpandedServicesPage /> },
+  { path: '/cybersecurity', element: <CybersecurityServicesPage /> },
+  { path: '/services-comparison', element: <ServicesComparisonPage /> },
+  { path: '/services-hub', element: <ServicesHubPage /> },
   { path: '/about', element: <About /> },
   { path: '/careers', element: <Careers /> },
   // Legal pages
