@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Search, Filter, Star, Clock, DollarSign, Users, Zap, Brain, Cloud, Database, Shield, Settings, Eye, Leaf, CreditCard, Heart, Truck, ShoppingCart, Phone, Mail, MapPin, Globe, Bot, Cpu, Network, Database as DatabaseIcon, Shield as ShieldIcon, Zap as ZapIcon } from 'lucide-react';
+import { Search, Filter, Star, Clock, DollarSign, Users, Zap, Brain, Cloud, Database, Shield, Settings, Eye, Leaf, CreditCard, Heart, Truck, ShoppingCart, Phone, Mail, MapPin, Globe, Bot, Cpu, Network, Database as DatabaseIcon, Shield as ShieldIcon, Zap as ZapIcon, Code, Layers, Wifi, ShieldCheck, RefreshCw, Server, Laptop, Smartphone, Router, HardDrive, Lock, Key, EyeOff, Globe2, Bluetooth, Satellite, Antenna, CircuitBoard, Chip, Memory, Storage, Backup, Sync, Download, Upload, Share2, Link, Unlink, Settings2, Cog, Tool, Hammer, Screwdriver, Drill, Saw, Paintbrush, Palette, Brush, PenTool, Vector, Grid, Layout, Monitor, Display, Projector, Printer, Scanner, Fax, Copier, Archive, Folder, File, Document, Spreadsheet, Presentation, Chart, Graph, Analytics, Report, Dashboard, Calendar, Clock, Timer, Stopwatch, Hourglass, CalendarDays, CalendarCheck, CalendarX, CalendarPlus, CalendarMinus, CalendarRange, CalendarWeek, CalendarMonth, CalendarYear, Clock1, Clock2, Clock3, Clock4, Clock5, Clock6, Clock7, Clock8, Clock9, Clock10, Clock11, Clock12, BarChart3, MessageSquare, TrendingUp } from 'lucide-react';
 
 const AIServicesPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
-  // AI Service data directly in the component
+  // Enhanced AI Service data with more innovative solutions
   const aiServices = [
     {
       id: 1,
@@ -84,10 +84,127 @@ const AIServicesPage: React.FC = () => {
       benefits: ["24/7 availability", "Cost reduction", "Improved customer satisfaction", "Scalable support"],
       useCases: ["Customer support", "Sales assistance", "Appointment booking", "Information retrieval"],
       tags: ["Chatbot", "Virtual Assistant", "Conversational AI", "Customer Service"]
+    },
+    {
+      id: 7,
+      name: "Quantum Machine Learning",
+      category: "Quantum AI",
+      description: "Quantum computing-powered machine learning for complex optimization and simulation problems",
+      price: 5000,
+      pricingModel: "monthly",
+      aiScore: 98,
+      features: ["Quantum algorithms", "Complex optimization", "Simulation capabilities", "Quantum advantage"],
+      benefits: ["Exponential speedup", "Complex problem solving", "Future readiness", "Competitive edge"],
+      useCases: ["Drug discovery", "Financial modeling", "Climate simulation", "Logistics optimization"],
+      tags: ["Quantum AI", "Machine Learning", "Optimization", "Simulation"]
+    },
+    {
+      id: 8,
+      name: "AI Ethics & Governance Platform",
+      category: "AI Governance",
+      description: "Comprehensive AI ethics monitoring, bias detection, and governance framework",
+      price: 3500,
+      pricingModel: "monthly",
+      aiScore: 93,
+      features: ["Bias detection", "Ethics monitoring", "Compliance reporting", "Audit trails"],
+      benefits: ["Ethical AI deployment", "Regulatory compliance", "Risk mitigation", "Trust building"],
+      useCases: ["AI model validation", "Compliance auditing", "Risk assessment", "Stakeholder reporting"],
+      tags: ["AI Ethics", "Governance", "Bias Detection", "Compliance"]
+    },
+    {
+      id: 9,
+      name: "Edge AI & IoT Intelligence",
+      category: "Edge AI",
+      description: "AI-powered edge computing solutions for real-time IoT data processing and decision making",
+      price: 2800,
+      pricingModel: "monthly",
+      aiScore: 90,
+      features: ["Edge processing", "IoT integration", "Real-time analytics", "Low latency inference"],
+      benefits: ["Real-time decisions", "Reduced bandwidth", "Privacy preservation", "Cost efficiency"],
+      useCases: ["Smart cities", "Industrial IoT", "Autonomous vehicles", "Healthcare monitoring"],
+      tags: ["Edge AI", "IoT", "Real-time", "Privacy", "Efficiency"]
+    },
+    {
+      id: 10,
+      name: "AI-Powered Cybersecurity",
+      category: "AI Security",
+      description: "Intelligent threat detection, anomaly identification, and automated security response",
+      price: 4000,
+      pricingModel: "monthly",
+      aiScore: 96,
+      features: ["Threat detection", "Behavioral analysis", "Automated response", "Predictive security"],
+      benefits: ["Proactive protection", "Reduced false positives", "Faster response", "Adaptive security"],
+      useCases: ["Network security", "Endpoint protection", "Cloud security", "Incident response"],
+      tags: ["AI Security", "Cybersecurity", "Threat Detection", "Automation"]
+    },
+    {
+      id: 11,
+      name: "Generative AI & Content Creation",
+      category: "Generative AI",
+      description: "AI-powered content generation, creative design, and multimedia production",
+      price: 3200,
+      pricingModel: "monthly",
+      aiScore: 89,
+      features: ["Text generation", "Image creation", "Video production", "Audio synthesis"],
+      benefits: ["Content scalability", "Creative efficiency", "Cost reduction", "Brand consistency"],
+      useCases: ["Marketing content", "Product design", "Entertainment", "Educational materials"],
+      tags: ["Generative AI", "Content Creation", "Creative AI", "Multimedia"]
+    },
+    {
+      id: 12,
+      name: "AI-Powered Healthcare Analytics",
+      category: "Healthcare AI",
+      description: "Advanced AI solutions for medical diagnosis, patient care, and healthcare optimization",
+      price: 4500,
+      pricingModel: "monthly",
+      aiScore: 97,
+      features: ["Medical imaging analysis", "Patient monitoring", "Drug discovery", "Treatment optimization"],
+      benefits: ["Improved diagnosis", "Better patient outcomes", "Cost reduction", "Research acceleration"],
+      useCases: ["Radiology", "Patient care", "Pharmaceutical research", "Clinical trials"],
+      tags: ["Healthcare AI", "Medical AI", "Diagnosis", "Patient Care"]
+    },
+    {
+      id: 13,
+      name: "Autonomous Systems & Robotics",
+      category: "Autonomous AI",
+      description: "AI-powered autonomous systems for industrial automation and intelligent robotics",
+      price: 6000,
+      pricingModel: "monthly",
+      aiScore: 94,
+      features: ["Path planning", "Object recognition", "Decision making", "Learning capabilities"],
+      benefits: ["24/7 operation", "Precision accuracy", "Cost efficiency", "Safety improvement"],
+      useCases: ["Manufacturing", "Warehouse automation", "Agricultural robotics", "Service robots"],
+      tags: ["Autonomous Systems", "Robotics", "Industrial AI", "Automation"]
+    },
+    {
+      id: 14,
+      name: "AI-Powered Financial Services",
+      category: "Financial AI",
+      description: "Intelligent financial analysis, risk assessment, and automated trading systems",
+      price: 3800,
+      pricingModel: "monthly",
+      aiScore: 92,
+      features: ["Risk assessment", "Portfolio optimization", "Fraud detection", "Market analysis"],
+      benefits: ["Better risk management", "Improved returns", "Fraud prevention", "Operational efficiency"],
+      useCases: ["Investment management", "Risk assessment", "Fraud detection", "Trading systems"],
+      tags: ["Financial AI", "Risk Management", "Investment", "Fraud Detection"]
+    },
+    {
+      id: 15,
+      name: "AI-Powered Supply Chain Optimization",
+      category: "Supply Chain AI",
+      description: "Intelligent supply chain management with predictive analytics and optimization",
+      price: 3500,
+      pricingModel: "monthly",
+      aiScore: 91,
+      features: ["Demand forecasting", "Inventory optimization", "Route planning", "Supplier management"],
+      benefits: ["Cost reduction", "Efficiency improvement", "Risk mitigation", "Customer satisfaction"],
+      useCases: ["Retail optimization", "Manufacturing planning", "Logistics optimization", "Supplier selection"],
+      tags: ["Supply Chain AI", "Optimization", "Forecasting", "Logistics"]
     }
   ];
 
-  const categories = ['all', 'Business Intelligence', 'Language AI', 'Visual AI', 'Predictive AI', 'Process Automation', 'Conversational AI'];
+  const categories = ['all', 'Business Intelligence', 'Language AI', 'Visual AI', 'Predictive AI', 'Process Automation', 'Conversational AI', 'Quantum AI', 'AI Governance', 'Edge AI', 'AI Security', 'Generative AI', 'Healthcare AI', 'Autonomous AI', 'Financial AI', 'Supply Chain AI'];
 
   const filteredServices = aiServices.filter(service => {
     const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -113,9 +230,31 @@ const AIServicesPage: React.FC = () => {
   };
 
   const getAIScoreColor = (score: number) => {
-    if (score >= 90) return 'text-green-400';
-    if (score >= 80) return 'text-yellow-400';
+    if (score >= 95) return 'text-green-400';
+    if (score >= 90) return 'text-blue-400';
+    if (score >= 85) return 'text-yellow-400';
     return 'text-red-400';
+  };
+
+  const getCategoryIcon = (category: string) => {
+    switch (category) {
+      case 'Business Intelligence': return <BarChart3 className="w-6 h-6" />;
+      case 'Language AI': return <MessageSquare className="w-6 h-6" />;
+      case 'Visual AI': return <Eye className="w-6 h-6" />;
+      case 'Predictive AI': return <TrendingUp className="w-6 h-6" />;
+      case 'Process Automation': return <Settings className="w-6 h-6" />;
+      case 'Conversational AI': return <Bot className="w-6 h-6" />;
+      case 'Quantum AI': return <Cpu className="w-6 h-6" />;
+      case 'AI Governance': return <ShieldCheck className="w-6 h-6" />;
+      case 'Edge AI': return <Server className="w-6 h-6" />;
+      case 'AI Security': return <Shield className="w-6 h-6" />;
+      case 'Generative AI': return <Code className="w-6 h-6" />;
+      case 'Healthcare AI': return <Heart className="w-6 h-6" />;
+      case 'Autonomous AI': return <Cog className="w-6 h-6" />;
+      case 'Financial AI': return <CreditCard className="w-6 h-6" />;
+      case 'Supply Chain AI': return <Truck className="w-6 h-6" />;
+      default: return <Brain className="w-6 h-6" />;
+    }
   };
 
   return (
@@ -174,7 +313,12 @@ const AIServicesPage: React.FC = () => {
             <div key={service.id} className="bg-slate-800 rounded-xl border border-slate-700 hover:border-purple-500 transition-all duration-300 hover:transform hover:scale-105">
               <div className="p-6">
                 <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-bold text-white">{service.name}</h3>
+                  <div className="flex items-center gap-3">
+                    <div className="text-purple-400">
+                      {getCategoryIcon(service.category)}
+                    </div>
+                    <h3 className="text-xl font-bold text-white">{service.name}</h3>
+                  </div>
                   <div className="text-right">
                     <span className="text-2xl font-bold text-purple-400">
                       {formatPrice(service.price, service.pricingModel)}

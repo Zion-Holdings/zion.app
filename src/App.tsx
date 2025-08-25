@@ -8,6 +8,7 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
+import FuturisticBackground from "./components/FuturisticBackground";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -44,6 +45,7 @@ const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
 const MicroSaasServices = React.lazy(() => import('./pages/MicroSaasServices'));
 const PricingPage = React.lazy(() => import('./pages/PricingPage'));
+const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -53,6 +55,7 @@ const baseRoutes = [
   { path: '/talent', element: <TalentDirectory /> },
   { path: '/talents', element: <TalentsPage /> },
   { path: '/micro-saas-services', element: <MicroSaasServices /> },
+  { path: '/ai-services', element: <AIServicesPage /> },
   { path: '/pricing', element: <PricingPage /> },
   { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
   { path: '/categories', element: <Categories /> },
@@ -75,8 +78,9 @@ const App = () => {
   return (
     <WhitelabelProvider>
       <ThemeProvider defaultTheme="dark">
+        <FuturisticBackground />
         <Header />
-        <main className="min-h-screen">
+        <main className="min-h-screen pt-16 lg:pt-20">
           <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
             <Routes>
               {baseRoutes.map(({ path, element }) => (
