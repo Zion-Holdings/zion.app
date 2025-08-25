@@ -45,6 +45,13 @@ const IndustrySolutions = lazy(() => import('./pages/services/IndustrySolutions'
 const WhitePapers = lazy(() => import('./pages/WhitePapers'));
 const Events = lazy(() => import('./pages/Events'));
 const Webinars = lazy(() => import('./pages/Webinars'));
+const Pricing = lazy(() => import('./pages/Pricing'));
+const Careers = lazy(() => import('./pages/Careers'));
+const Partners = lazy(() => import('./pages/Partners'));
+const News = lazy(() => import('./pages/News'));
+const Testimonials = lazy(() => import('./pages/Testimonials'));
+const Leadership = lazy(() => import('./pages/Leadership'));
+const Marketplace = lazy(() => import('./pages/Marketplace'));
 
 // Loading Component
 const LoadingSpinner = () => (
@@ -105,6 +112,13 @@ const App = () => {
                     <Route path="/white-papers" element={<WhitePapers />} />
                     <Route path="/events" element={<Events />} />
                     <Route path="/webinars" element={<Webinars />} />
+                    <Route path="/pricing" element={<Pricing />} />
+                    <Route path="/careers" element={<Careers />} />
+                    <Route path="/partners" element={<Partners />} />
+                    <Route path="/news" element={<News />} />
+                    <Route path="/testimonials" element={<Testimonials />} />
+                    <Route path="/leadership" element={<Leadership />} />
+                    <Route path="/marketplace" element={<Marketplace />} />
                   </Routes>
                 </Suspense>
               </main>

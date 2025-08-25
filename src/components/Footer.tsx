@@ -14,12 +14,12 @@ export function Footer() {
         { label: "Cybersecurity", path: "/services/cybersecurity" },
         { label: "Industry Solutions", path: "/services/industry-solutions" },
         { label: "Marketplace", path: "/marketplace" },
-        { label: "AI & Machine Learning", path: "/services#ai-ml" },
-        { label: "Cloud & Infrastructure", path: "/services#cloud" },
-        { label: "Blockchain Solutions", path: "/services#blockchain" },
-        { label: "IoT & Edge Computing", path: "/services#iot" },
-        { label: "IT Consulting", path: "/services#consulting" },
-        { label: "Managed Services", path: "/services#managed" }
+        { label: "AI & Machine Learning", path: "/services" },
+        { label: "Cloud & Infrastructure", path: "/services" },
+        { label: "Blockchain Solutions", path: "/emerging-tech" },
+        { label: "IoT & Edge Computing", path: "/emerging-tech" },
+        { label: "IT Consulting", path: "/services" },
+        { label: "Managed Services", path: "/services" }
       ]
     },
     {
@@ -31,14 +31,14 @@ export function Footer() {
         { label: "Manufacturing Solutions", path: "/solutions/manufacturing" },
         { label: "Retail Solutions", path: "/solutions/retail" },
         { label: "Government Solutions", path: "/solutions/government" },
-        { label: "Business Intelligence", path: "/solutions#bi" },
-        { label: "Marketing Automation", path: "/solutions#marketing" },
-        { label: "HR & Recruitment", path: "/solutions#hr" },
-        { label: "Legal Tech", path: "/solutions#legal" },
-        { label: "Supply Chain", path: "/solutions#supply-chain" },
-        { label: "Smart Buildings", path: "/solutions#smart-buildings" },
-        { label: "Data Protection", path: "/solutions#data-protection" },
-        { label: "Network Security", path: "/solutions#network-security" }
+        { label: "Business Intelligence", path: "/services" },
+        { label: "Marketing Automation", path: "/services" },
+        { label: "HR & Recruitment", path: "/services" },
+        { label: "Legal Tech", path: "/services" },
+        { label: "Supply Chain", path: "/services" },
+        { label: "Smart Buildings", path: "/services" },
+        { label: "Data Protection", path: "/services/cybersecurity" },
+        { label: "Network Security", path: "/services/cybersecurity" }
       ]
     },
     {
@@ -60,7 +60,7 @@ export function Footer() {
         { label: "Our Mission", path: "/mission" },
         { label: "Team", path: "/team" },
         { label: "Leadership", path: "/leadership" },
-        { label: "All Services", path: "/comprehensive-services" },
+        { label: "All Services", path: "/services" },
         { label: "Pricing", path: "/pricing" },
         { label: "Careers", path: "/careers" },
         { label: "Partners", path: "/partners" },
@@ -73,21 +73,21 @@ export function Footer() {
     {
       title: "Resources",
       links: [
-        { label: "Blog & Articles", path: "/blog" },
-        { label: "Technology Blog", path: "/blog" },
-        { label: "Documentation", path: "/docs" },
-        { label: "Case Studies", path: "/case-studies" },
+        { label: "Blog & Articles", path: "/news" },
+        { label: "Technology Blog", path: "/news" },
+        { label: "Documentation", path: "/white-papers" },
+        { label: "Case Studies", path: "/testimonials" },
         { label: "White Papers", path: "/white-papers" },
-        { label: "API Documentation", path: "/api-docs" },
+        { label: "API Documentation", path: "/services" },
         { label: "Webinars", path: "/webinars" },
-        { label: "Training", path: "/training" },
-        { label: "Support Center", path: "/support" }
+        { label: "Training", path: "/webinars" },
+        { label: "Support Center", path: "/contact" }
       ]
     }
   ];
 
   const socialLinks = [
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/company/zion-tech-group', icon: '💼' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/company/ziontechgroup', icon: '💼' },
     { name: 'Twitter', url: 'https://twitter.com/ziontechgroup', icon: '🐦' },
     { name: 'Facebook', url: 'https://www.facebook.com/ziontechgroup', icon: '📘' },
     { name: 'Instagram', url: 'https://www.instagram.com/ziontechgroup', icon: '📷' },

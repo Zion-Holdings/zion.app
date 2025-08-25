@@ -37,22 +37,10 @@ export function Header() {
       description: 'Cutting-edge technology solutions'
     },
     { 
-      path: '/comprehensive-services', 
-      label: 'All Services', 
-      icon: '⚡',
-      description: 'Complete service catalog'
-    },
-    { 
-      path: '/services-comparison', 
-      label: 'Compare', 
-      icon: '📊',
-      description: 'Compare service options'
-    },
-    { 
-      path: '/it-onsite-services', 
-      label: 'Onsite IT', 
-      icon: '🔧',
-      description: 'Onsite IT support services'
+      path: '/marketplace', 
+      label: 'Marketplace', 
+      icon: '🛒',
+      description: 'AI & Tech products & solutions'
     },
     { 
       path: '/pricing', 
