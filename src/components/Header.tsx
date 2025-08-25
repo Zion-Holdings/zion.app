@@ -147,6 +147,16 @@ export function Header() {
         { name: 'Manufacturing Intelligence', path: '/services#manufacturing', description: 'Smart manufacturing' },
         { name: 'Retail Technology', path: '/services#retail', description: 'Digital retail transformation' }
       ]
+    },
+    {
+      title: 'Innovative Services Showcase',
+      icon: Star,
+      description: 'Explore our latest innovative solutions',
+      services: [
+        { name: 'AI Services Showcase', path: '/innovative-services-showcase', description: 'Cutting-edge AI solutions' },
+        { name: 'IT Infrastructure', path: '/innovative-services-showcase', description: 'Advanced IT solutions' },
+        { name: 'Micro SAAS Platforms', path: '/innovative-services-showcase', description: 'Innovative software solutions' }
+      ]
     }
   ];
 

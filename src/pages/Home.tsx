@@ -14,7 +14,8 @@ import {
   CheckCircle,
   Clock,
   ChevronRight,
-  ChevronLeft
+  ChevronLeft,
+  Phone
 } from 'lucide-react';
 
 const Home: React.FC = () => {
@@ -281,6 +282,38 @@ const Home: React.FC = () => {
               <span>View All Services</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Innovative Services Showcase CTA */}
+      <section className="py-16 bg-gradient-to-r from-zion-blue-dark/50 to-zion-purple/50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Explore Our Latest Innovations
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+              Discover cutting-edge AI services, advanced IT infrastructure, and innovative micro SAAS platforms 
+              designed to transform your business operations and drive unprecedented growth.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/innovative-services-showcase"
+                className="inline-flex items-center space-x-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-lg px-8 py-4 rounded-lg font-semibold hover:from-blue-600 hover:to-cyan-500 transition-all duration-300 transform hover:scale-105"
+              >
+                <Star className="w-6 h-6" />
+                <span>View Innovative Services</span>
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </Link>
+              <Link
+                to="/contact"
+                className="inline-flex items-center space-x-3 border-2 border-zion-cyan text-zion-cyan text-lg px-8 py-4 rounded-lg font-semibold hover:bg-zion-cyan hover:text-black transition-all duration-300"
+              >
+                <Phone className="w-6 h-6" />
+                <span>Get Custom Quote</span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
