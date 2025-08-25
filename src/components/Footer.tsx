@@ -85,18 +85,25 @@ export function Footer() {
 
   const socialLinks = [
     { name: 'LinkedIn', url: 'https://www.linkedin.com/company/zion-tech-group', icon: Linkedin, color: 'hover:text-blue-400' },
-    { name: 'Twitter', url: 'https://twitter.com/ziontechgroup', icon: Twitter, color: 'hover:text-sky-400' },
+    { name: 'Twitter', url: 'https://x.com/ziontechgroup', icon: Twitter, color: 'hover:text-sky-400' },
     { name: 'Facebook', url: 'https://www.facebook.com/ziontechgroup', icon: Facebook, color: 'hover:text-blue-600' },
     { name: 'Instagram', url: 'https://www.instagram.com/ziontechgroup', icon: Instagram, color: 'hover:text-pink-400' },
     { name: 'YouTube', url: 'https://www.youtube.com/@ziontechgroup', icon: Youtube, color: 'hover:text-red-500' }
   ];
 
   const contactInfo = {
-    phone: '+1 302 464 0950',
+    phone: '+1 (302) 464-0950',
     email: 'kleber@ziontechgroup.com',
     address: '364 E Main St STE 1008, Middletown DE 19709',
     website: 'https://ziontechgroup.com'
   };
+
+  const trustSignals = [
+    { label: 'ISO 27001 Certified', icon: Shield },
+    { label: 'SOC 2 Type II', icon: Star },
+    { label: '24/7 Support', icon: Zap },
+    { label: '99.9% Uptime', icon: Rocket }
+  ];
 
   return (
     <footer className="bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple text-white relative overflow-hidden">
@@ -189,6 +196,24 @@ export function Footer() {
               </ul>
             </div>
           ))}
+        </div>
+
+        {/* Trust Signals Section */}
+        <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 mb-8">
+          <div className="text-center mb-6">
+            <h3 className="text-xl font-semibold text-white mb-2">Trust & Security</h3>
+            <p className="text-zion-slate-light">Your data and business are protected by industry-leading security standards</p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {trustSignals.map((signal, index) => (
+              <div key={index} className="text-center group">
+                <div className="w-12 h-12 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-lg flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                  <signal.icon className="w-6 h-6 text-white" />
+                </div>
+                <p className="text-sm text-zion-slate-light font-medium">{signal.label}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Newsletter Section */}

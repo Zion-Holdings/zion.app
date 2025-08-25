@@ -335,11 +335,15 @@ export function Header() {
             <div className="flex items-center space-x-4 text-zion-slate-light">
               <div className="flex items-center space-x-2 hover:text-zion-cyan transition-colors cursor-pointer">
                 <Phone className="w-4 h-4" />
-                <span className="text-sm">+1 302 464 0950</span>
+                <span className="text-sm">+1 (302) 464-0950</span>
               </div>
               <div className="flex items-center space-x-2 hover:text-zion-cyan transition-colors cursor-pointer">
                 <Mail className="w-4 h-4" />
                 <span className="text-sm">kleber@ziontechgroup.com</span>
+              </div>
+              <div className="flex items-center space-x-2 text-green-400">
+                <Shield className="w-4 h-4" />
+                <span className="text-sm">ISO 27001</span>
               </div>
             </div>
 

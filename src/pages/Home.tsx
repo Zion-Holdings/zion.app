@@ -14,7 +14,17 @@ import {
   CheckCircle,
   Clock,
   ChevronRight,
-  ChevronLeft
+  ChevronLeft,
+  Award,
+  Globe,
+  Zap,
+  Target,
+  BarChart3,
+  Lightbulb,
+  Code,
+  Database,
+  Cloud,
+  Lock
 } from 'lucide-react';
 
 const Home: React.FC = () => {
@@ -35,7 +45,7 @@ const Home: React.FC = () => {
       subtitle: "Transform your business with cutting-edge artificial intelligence solutions",
       description: "From predictive analytics to intelligent automation, we deliver AI solutions that drive real business results.",
       cta: "Explore AI Solutions",
-      path: "/comprehensive-services",
+      path: "/ai-solutions",
       icon: Brain,
       color: "from-cyan-500 to-blue-600"
     },
@@ -44,7 +54,7 @@ const Home: React.FC = () => {
       subtitle: "Comprehensive IT services for modern businesses",
       description: "24/7 support, cybersecurity, cloud solutions, and strategic technology consulting to keep your business ahead.",
       cta: "View IT Services",
-      path: "/it-onsite-services",
+      path: "/services",
       icon: Shield,
       color: "from-purple-500 to-pink-600"
     },
@@ -103,6 +113,57 @@ const Home: React.FC = () => {
     { label: "Happy Clients", value: "100+", icon: Users, color: "text-purple-400" },
     { label: "Uptime", value: "99.9%", icon: Shield, color: "text-green-400" },
     { label: "Support", value: "24/7", icon: Clock, color: "text-yellow-400" }
+  ];
+
+  const testimonials = [
+    {
+      name: "Sarah Johnson",
+      role: "CTO, TechFlow Inc.",
+      company: "TechFlow Inc.",
+      content: "Zion Tech Group transformed our entire IT infrastructure. Their AI solutions increased our efficiency by 40% and reduced costs significantly.",
+      rating: 5,
+      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      name: "Michael Chen",
+      role: "CEO, DataSphere",
+      company: "DataSphere",
+      content: "The cybersecurity platform they implemented has given us peace of mind. Their team is incredibly responsive and knowledgeable.",
+      rating: 5,
+      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+    },
+    {
+      name: "Emily Rodriguez",
+      role: "Operations Director, GreenTech",
+      company: "GreenTech",
+      content: "Their micro SAAS solution streamlined our entire workflow. The ROI was immediate and the support is outstanding.",
+      rating: 5,
+      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
+    }
+  ];
+
+  const caseStudies = [
+    {
+      title: "Global Retail Chain Transformation",
+      description: "Implemented AI-powered inventory management for a 500+ store retail chain, reducing waste by 35% and increasing profits by 28%.",
+      metrics: ["35% waste reduction", "28% profit increase", "500+ stores", "6 months implementation"],
+      icon: BarChart3,
+      color: "from-green-500 to-emerald-600"
+    },
+    {
+      title: "Healthcare Data Security",
+      description: "Deployed comprehensive cybersecurity solution for a major hospital network, achieving 100% compliance and zero security breaches.",
+      metrics: ["100% compliance", "0 security breaches", "24/7 monitoring", "HIPAA certified"],
+      icon: Shield,
+      color: "from-blue-500 to-cyan-600"
+    },
+    {
+      title: "Manufacturing Automation",
+      description: "AI-driven process optimization for manufacturing company, increasing production efficiency by 45% while reducing operational costs.",
+      metrics: ["45% efficiency increase", "30% cost reduction", "Real-time monitoring", "Predictive maintenance"],
+      icon: Cpu,
+      color: "from-purple-500 to-pink-600"
+    }
   ];
 
   const nextSlide = () => {
@@ -183,6 +244,29 @@ const Home: React.FC = () => {
                   }`}
                 />
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Signals Section */}
+      <section className="py-12 bg-gradient-to-r from-gray-900/50 to-black/50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h3 className="text-lg text-gray-400 mb-4">Trusted by Industry Leaders</h3>
+            <div className="flex items-center justify-center space-x-8 opacity-60">
+              <div className="flex items-center space-x-2">
+                <Award className="w-6 h-6 text-yellow-400" />
+                <span className="text-gray-300">ISO 27001 Certified</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Shield className="w-6 h-6 text-green-400" />
+                <span className="text-gray-300">SOC 2 Type II</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Globe className="w-6 h-6 text-blue-400" />
+                <span className="text-gray-300">Global Support</span>
+              </div>
             </div>
           </div>
         </div>
@@ -285,6 +369,98 @@ const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Case Studies Section */}
+      <section className="py-16 bg-gradient-to-r from-gray-900/30 to-black/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Success Stories
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Real results from real businesses. See how we've transformed operations across industries.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {caseStudies.map((study, index) => (
+              <div
+                key={index}
+                className="glass-card p-6 hover:scale-105 transition-all duration-300 group"
+                style={{ animationDelay: `${index * 200}ms` }}
+              >
+                <div className={`w-16 h-16 rounded-full bg-gradient-to-br ${study.color} p-4 mb-6 mx-auto`}>
+                  <study.icon className="w-8 h-8 text-white" />
+                </div>
+                
+                <h3 className="text-xl font-semibold text-white mb-4 text-center group-hover:text-cyan-400 transition-colors duration-300">
+                  {study.title}
+                </h3>
+                
+                <p className="text-gray-300 mb-6 leading-relaxed text-center">
+                  {study.description}
+                </p>
+
+                <div className="space-y-2">
+                  {study.metrics.map((metric, metricIndex) => (
+                    <div key={metricIndex} className="flex items-center space-x-2 text-sm">
+                      <div className="w-2 h-2 bg-cyan-400 rounded-full"></div>
+                      <span className="text-gray-300">{metric}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-16">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              What Our Clients Say
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Don't just take our word for it. Here's what industry leaders have to say about working with us.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div
+                key={index}
+                className="glass-card p-6 hover:scale-105 transition-all duration-300 group"
+                style={{ animationDelay: `${index * 200}ms` }}
+              >
+                <div className="flex items-center mb-4">
+                  <img
+                    src={testimonial.avatar}
+                    alt={testimonial.name}
+                    className="w-12 h-12 rounded-full mr-4"
+                  />
+                  <div>
+                    <h4 className="text-white font-semibold">{testimonial.name}</h4>
+                    <p className="text-gray-400 text-sm">{testimonial.role}</p>
+                    <p className="text-gray-500 text-xs">{testimonial.company}</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-center mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                  ))}
+                </div>
+                
+                <p className="text-gray-300 leading-relaxed italic">
+                  "{testimonial.content}"
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Why Choose Us */}
       <section className="py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -342,6 +518,44 @@ const Home: React.FC = () => {
                 <p className="text-gray-300 leading-relaxed">
                   {feature.description}
                 </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Technology Stack Section */}
+      <section className="py-16 bg-gradient-to-r from-gray-900/30 to-black/30">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Cutting-Edge Technology Stack
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              We leverage the latest technologies to deliver robust, scalable, and secure solutions
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { icon: Brain, label: "Machine Learning", color: "text-cyan-400" },
+              { icon: Cloud, label: "Cloud Native", color: "text-blue-400" },
+              { icon: Lock, label: "Zero Trust", color: "text-green-400" },
+              { icon: Zap, label: "Edge Computing", color: "text-yellow-400" },
+              { icon: Database, label: "Big Data", color: "text-purple-400" },
+              { icon: Code, label: "Microservices", color: "text-pink-400" },
+              { icon: Target, label: "DevOps", color: "text-orange-400" },
+              { icon: Lightbulb, label: "IoT Solutions", color: "text-indigo-400" }
+            ].map((tech, index) => (
+              <div
+                key={index}
+                className="text-center group"
+                style={{ animationDelay: `${index * 100}ms` }}
+              >
+                <div className="glass-card p-6 hover:scale-105 transition-transform duration-300">
+                  <tech.icon className={`w-12 h-12 mx-auto mb-4 ${tech.color}`} />
+                  <div className="text-gray-300 font-medium">{tech.label}</div>
+                </div>
               </div>
             ))}
           </div>

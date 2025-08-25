@@ -52,7 +52,7 @@ export default function Contact() {
     {
       icon: Phone,
       title: 'Phone',
-      value: '+1 302 464 0950',
+      value: '+1 (302) 464-0950',
       href: 'tel:+13024640950',
       description: 'Call us anytime for immediate assistance'
     },
