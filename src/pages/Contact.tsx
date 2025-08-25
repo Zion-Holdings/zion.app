@@ -9,9 +9,7 @@ import {
   CheckCircle, 
   MessageSquare,
   Globe,
-  Building,
-  User,
-  Calendar
+  Building
 } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Input } from '../components/ui/input';
@@ -35,6 +33,14 @@ const Contact: React.FC = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -309,7 +315,7 @@ const Contact: React.FC = () => {
                     <select
                       name="service"
                       value={formData.service}
-                      onChange={handleInputChange}
+                      onChange={handleSelectChange}
                       className="w-full bg-zion-slate-dark/50 border border-zion-blue-light/30 text-white rounded-md px-3 py-2 focus:border-zion-cyan focus:outline-none"
                     >
                       <option value="">Select a service</option>

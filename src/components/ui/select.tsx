@@ -5,7 +5,9 @@ interface SelectProps {
   className?: string;
   value?: string;
   onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+  onValueChange?: (value: string) => void;
   disabled?: boolean;
+  defaultValue?: string;
 }
 
 export function Select({ 
@@ -13,16 +15,28 @@ export function Select({
   className = '', 
   value, 
   onChange, 
-  disabled = false 
+  onValueChange,
+  disabled = false,
+  defaultValue
 }: SelectProps) {
   const baseClasses = 'flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50';
   
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    if (onChange) {
+      onChange(e);
+    }
+    if (onValueChange) {
+      onValueChange(e.target.value);
+    }
+  };
+
   return (
     <select
       className={`${baseClasses} ${className}`}
       value={value}
-      onChange={onChange}
+      onChange={handleChange}
       disabled={disabled}
+      defaultValue={defaultValue}
     >
       {children}
     </select>
@@ -54,6 +68,6 @@ export function SelectValue({ placeholder }: { placeholder?: string }) {
   return <span className="text-sm">{placeholder || 'Select an option'}</span>;
 }
 
-export function SelectContent({ children }: { children: React.ReactNode }) {
-  return <div className="relative">{children}</div>;
+export function SelectContent({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+  return <div className={`relative ${className}`}>{children}</div>;
 }

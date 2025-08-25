@@ -181,18 +181,18 @@ export default function HomePage() {
                 className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-purple-400/30 transition-all duration-300 group"
               >
                 <div className="flex items-center justify-between mb-4">
-                  <div className="text-2xl">{service.images[0]}</div>
+                  <div className="text-2xl">{service.image}</div>
                   <div className="flex items-center gap-2">
                     <Star className="w-4 h-4 text-yellow-400 fill-current" />
                     <span className="text-white/80 text-sm">{service.rating}</span>
                   </div>
                 </div>
                 <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-purple-400 transition-colors duration-300">
-                  {service.title}
+                  {service.name}
                 </h3>
                 <p className="text-white/70 mb-4 line-clamp-3">{service.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
-                  {service.tags.slice(0, 3).map((tag) => (
+                  {service.tags && service.tags.slice(0, 3).map((tag) => (
                     <span key={tag} className="px-2 py-1 bg-purple-500/20 text-purple-300 text-xs rounded-full">
                       {tag}
                     </span>
@@ -203,7 +203,7 @@ export default function HomePage() {
                     ${service.price.toLocaleString()}
                   </div>
                   <div className="text-sm text-white/60">
-                    AI Score: {service.aiScore}%
+                    AI Score: {service.ai_score}%
                   </div>
                 </div>
                 <FuturisticNeonButton

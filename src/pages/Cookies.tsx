@@ -1,7 +1,6 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Cookie, Shield, Settings, Eye, Database, Globe, Mail, Phone } from 'lucide-react';
+import { Shield, Lock, Eye, CheckCircle } from 'lucide-react';
 
 export default function Cookies() {
   return (
@@ -15,7 +14,7 @@ export default function Cookies() {
         >
           <div className="flex justify-center mb-4">
             <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-full flex items-center justify-center">
-              <Cookie className="w-8 h-8 text-white" />
+              <Shield className="w-8 h-8 text-white" />
             </div>
           </div>
           <h1 className="text-4xl font-bold text-white mb-4">Cookie Policy</h1>
@@ -32,7 +31,7 @@ export default function Cookies() {
           className="bg-white/10 backdrop-blur-md rounded-lg p-6 mb-8"
         >
           <div className="flex items-center text-cyan-400 mb-2">
-            <Settings className="w-5 h-5 mr-2" />
+            <Lock className="w-5 h-5 mr-2" />
             <span className="font-semibold">Last Updated:</span>
           </div>
           <p className="text-white">December 2024</p>
@@ -48,7 +47,7 @@ export default function Cookies() {
             className="bg-white/10 backdrop-blur-md rounded-lg p-6"
           >
             <h2 className="text-2xl font-bold text-white mb-4 flex items-center">
-              <Cookie className="w-6 h-6 mr-3 text-cyan-400" />
+              <Shield className="w-6 h-6 mr-3 text-cyan-400" />
               What Are Cookies?
             </h2>
             <div className="space-y-4 text-gray-300">
@@ -95,7 +94,7 @@ export default function Cookies() {
             className="bg-white/10 backdrop-blur-md rounded-lg p-6"
           >
             <h2 className="text-2xl font-bold text-white mb-4 flex items-center">
-              <Database className="w-6 h-6 mr-3 text-cyan-400" />
+              <CheckCircle className="w-6 h-6 mr-3 text-cyan-400" />
               Types of Cookies We Use
             </h2>
             <div className="space-y-6 text-gray-300">
@@ -131,7 +130,7 @@ export default function Cookies() {
             className="bg-white/10 backdrop-blur-md rounded-lg p-6"
           >
             <h2 className="text-2xl font-bold text-white mb-4 flex items-center">
-              <Settings className="w-6 h-6 mr-3 text-cyan-400" />
+              <Lock className="w-6 h-6 mr-3 text-cyan-400" />
               Specific Cookies We Use
             </h2>
             <div className="space-y-4 text-gray-300">
@@ -199,7 +198,7 @@ export default function Cookies() {
             className="bg-white/10 backdrop-blur-md rounded-lg p-6"
           >
             <h2 className="text-2xl font-bold text-white mb-4 flex items-center">
-              <Globe className="w-6 h-6 mr-3 text-cyan-400" />
+              <CheckCircle className="w-6 h-6 mr-3 text-cyan-400" />
               Third-Party Services
             </h2>
             <div className="space-y-4 text-gray-300">
@@ -227,7 +226,7 @@ export default function Cookies() {
             className="bg-white/10 backdrop-blur-md rounded-lg p-6"
           >
             <h2 className="text-2xl font-bold text-white mb-4 flex items-center">
-              <Settings className="w-6 h-6 mr-3 text-cyan-400" />
+              <Lock className="w-6 h-6 mr-3 text-cyan-400" />
               Updates to This Policy
             </h2>
             <div className="space-y-4 text-gray-300">
@@ -251,7 +250,7 @@ export default function Cookies() {
             className="bg-white/10 backdrop-blur-md rounded-lg p-6"
           >
             <h2 className="text-2xl font-bold text-white mb-4 flex items-center">
-              <Mail className="w-6 h-6 mr-3 text-cyan-400" />
+              <CheckCircle className="w-6 h-6 mr-3 text-cyan-400" />
               Contact Us
             </h2>
             <div className="space-y-4 text-gray-300">
@@ -261,11 +260,11 @@ export default function Cookies() {
               </p>
               <div className="space-y-2">
                 <div className="flex items-center">
-                  <Mail className="w-4 h-4 mr-2 text-cyan-400" />
+                  <CheckCircle className="w-4 h-4 mr-2 text-cyan-400" />
                   <span>Email: kleber@ziontechgroup.com</span>
                 </div>
                 <div className="flex items-center">
-                  <Phone className="w-4 h-4 mr-2 text-cyan-400" />
+                  <Shield className="w-4 h-4 mr-2 text-cyan-400" />
                   <span>Phone: +1 (302) 464-0950</span>
                 </div>
               </div>
@@ -284,7 +283,7 @@ export default function Cookies() {
             to="/"
             className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-400 to-purple-600 text-white font-medium rounded-lg hover:from-cyan-500 hover:to-purple-700 transition-all duration-200"
           >
-            <Globe className="w-5 h-5 mr-2" />
+            <CheckCircle className="w-5 h-5 mr-2" />
             Back to Home
           </Link>
         </motion.div>

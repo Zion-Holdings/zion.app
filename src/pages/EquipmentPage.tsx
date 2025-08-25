@@ -1,4 +1,5 @@
-import React from 'react';
+import { motion } from 'framer-motion';
+import { Search, Filter, Star, Clock, DollarSign, Users, MapPin, Phone, Mail } from 'lucide-react';
 
 export default function EquipmentPage() {
   return (
