@@ -103,7 +103,7 @@ export default function Mission() {
         title="Our Mission - Zion Tech Group" 
         description="Discover Zion Tech Group's mission to revolutionize technology and create positive global impact through innovation."
         keywords="mission, vision, values, innovation, technology, global impact"
-        url="https://ziontechgroup.com/mission"
+        canonical="https://ziontechgroup.com/mission"
       />
 
       {/* Hero Section */}
