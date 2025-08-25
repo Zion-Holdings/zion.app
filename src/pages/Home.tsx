@@ -2,7 +2,8 @@
 import React from 'react';
 import { SEO } from "@/components/SEO";
 import { ServicesShowcase } from '../components/ServicesShowcase';
-import { EnhancedServicesShowcase } from '../components/EnhancedServicesShowcase';
+// EnhancedServicesShowcase may not exist in all branches; keep Home compiling
+// import { EnhancedServicesShowcase } from '../components/EnhancedServicesShowcase';
 import { AdvancedServicesShowcase } from '../components/AdvancedServicesShowcase';
 import { InnovativeServicesShowcase } from '../components/InnovativeServicesShowcase';
 
@@ -12,7 +13,7 @@ export default function Home() {
       <SEO 
         title="Zion Tech Group - Transform Your Business With AI & Tech"
         description="Discover cutting-edge AI services, Micro SAAS solutions, and comprehensive IT services designed to propel your business into the future."
-        url="https://ziontechgroup.com"
+        canonical="https://ziontechgroup.com"
       />
       
       {/* Futuristic Background Elements */}
@@ -122,8 +123,8 @@ export default function Home() {
       {/* Original Services Showcase */}
       <ServicesShowcase />
       
-      {/* Enhanced Services Showcase */}
-      <EnhancedServicesShowcase />
+      {/* Enhanced Services Showcase (optional) */}
+      {/* <EnhancedServicesShowcase /> */}
 
       {/* Enhanced Features Section */}
       <section className="py-20 px-4 relative overflow-hidden">
