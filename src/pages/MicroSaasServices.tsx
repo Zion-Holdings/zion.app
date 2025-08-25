@@ -471,13 +471,21 @@ const MicroSaasServices: React.FC = () => {
           ))}
         </div>
 
-        {/* Contact Information */}
+        {/* Call to Action */}
         <div className="mt-16 text-center">
           <div className="bg-white/5 backdrop-blur-sm border border-gray-600 rounded-xl p-8">
             <h2 className="text-2xl font-bold text-white mb-4">Ready to Scale Your Business?</h2>
             <p className="text-gray-300 mb-6">
               Our micro SAAS solutions are designed to grow with your business needs
             </p>
+            <div className="mb-6">
+              <a 
+                href="/comprehensive-services"
+                className="inline-block bg-gradient-to-r from-green-600 to-blue-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-green-700 hover:to-blue-700 transition-all duration-300 mb-4"
+              >
+                Explore Our Full Service Portfolio →
+              </a>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div>
                 <Phone className="w-8 h-8 text-green-400 mx-auto mb-2" />
