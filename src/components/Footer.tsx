@@ -7,6 +7,7 @@ export function Footer() {
     {
       title: "AI & Micro SAAS",
       links: [
+        { label: "Innovative Micro SAAS", path: "/innovative-services" },
         { label: "AI & Autonomous Systems", path: "/services/ai-autonomous-systems" },
         { label: "Quantum Technology", path: "/services/quantum-technology" },
         { label: "IT Infrastructure", path: "/services/it-infrastructure" },

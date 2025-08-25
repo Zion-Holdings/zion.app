@@ -37,6 +37,12 @@ export function Header() {
       description: 'Cutting-edge technology solutions'
     },
     { 
+      path: '/innovative-services', 
+      label: 'Innovative SAAS', 
+      icon: '💡',
+      description: 'Cutting-edge micro SAAS solutions'
+    },
+    { 
       path: '/comprehensive-services', 
       label: 'All Services', 
       icon: '⚡',
