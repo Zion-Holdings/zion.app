@@ -19,6 +19,8 @@ import { AdvancedPerformanceMonitor } from "../components/AdvancedPerformanceMon
 import { AdvancedAICodeGenerator } from "../components/AdvancedAICodeGenerator";
 import { AdvancedAIProjectManagement } from "../components/AdvancedAIProjectManagement";
 import { AdvancedAICRM } from "../components/AdvancedAICRM";
+import { AdvancedAIERP } from "../components/AdvancedAIERP";
+import { AdvancedAISupplyChain } from "../components/AdvancedAISupplyChain";
 
 export default function Home() {
   return (
@@ -472,9 +474,11 @@ export default function Home() {
                <AdvancedCollaborationPlatform />
                <AdvancedSecurityDashboard />
                <AdvancedPerformanceMonitor />
-               <AdvancedAICodeGenerator />
-               <AdvancedAIProjectManagement />
-               <AdvancedAICRM />
+                               <AdvancedAICodeGenerator />
+                <AdvancedAIProjectManagement />
+                <AdvancedAICRM />
+                <AdvancedAIERP />
+                <AdvancedAISupplyChain />
     </div>
   );
 }
