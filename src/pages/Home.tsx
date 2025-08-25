@@ -14,7 +14,9 @@ import {
   CheckCircle,
   Clock,
   ChevronRight,
-  ChevronLeft
+  ChevronLeft,
+  Wifi,
+  Link as LinkIcon
 } from 'lucide-react';
 
 const Home: React.FC = () => {
@@ -60,6 +62,54 @@ const Home: React.FC = () => {
   ];
 
   const featuredServices = [
+    {
+      id: "ai-workflow-automation",
+      title: "AI Workflow Automation",
+      description: "Transform business operations with AI-powered workflow automation. Achieve 80% time reduction and 60% cost savings.",
+      price: "$2,500/month",
+      features: ["Process Automation", "Smart Document Processing", "Predictive Analytics", "Real-time Insights"],
+      icon: Brain,
+      category: "AI & Machine Learning",
+      rating: 4.9,
+      reviewCount: 456,
+      path: "/services/ai-workflow-automation"
+    },
+    {
+      id: "quantum-computing",
+      title: "Quantum Computing Solutions",
+      description: "Revolutionary quantum computing for drug discovery, financial modeling, and AI acceleration with 1000x speedup.",
+      price: "$4,200/month",
+      features: ["Quantum Cryptography", "Quantum ML", "Quantum Optimization", "Quantum Simulation"],
+      icon: Cpu,
+      category: "Emerging Tech",
+      rating: 4.8,
+      reviewCount: 234,
+      path: "/services/quantum-computing-solutions"
+    },
+    {
+      id: "blockchain-web3",
+      title: "Blockchain & Web3 Solutions",
+      description: "Build the future of decentralized applications with DeFi, NFTs, DAOs, and cross-chain interoperability.",
+      price: "$6,200/month",
+      features: ["DeFi Platforms", "NFT Marketplaces", "Smart Contracts", "Cross-chain Bridges"],
+      icon: LinkIcon,
+      category: "Emerging Tech",
+      rating: 4.7,
+      reviewCount: 189,
+      path: "/services/blockchain-web3-solutions"
+    },
+    {
+      id: "edge-computing-iot",
+      title: "Edge Computing & IoT",
+      description: "Real-time processing and instant decision-making with our global edge infrastructure. Achieve 10x faster performance.",
+      price: "$3,200/month",
+      features: ["Edge AI Processing", "IoT Management", "5G Optimization", "Global Edge Network"],
+      icon: Wifi,
+      category: "Emerging Tech",
+      rating: 4.8,
+      reviewCount: 312,
+      path: "/services/edge-computing-iot-solutions"
+    },
     {
       id: "ai-powered-crm",
       title: "AI-Powered CRM",

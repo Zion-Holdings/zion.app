@@ -72,6 +72,7 @@ export function Header() {
     {
       title: 'AI & Machine Learning',
       services: [
+        { name: 'AI Workflow Automation', path: '/services/ai-workflow-automation' },
         { name: 'AI Business Intelligence', path: '/services#ai-bi' },
         { name: 'AI Marketing Automation', path: '/services#ai-marketing' },
         { name: 'AI HR & Recruitment', path: '/services#ai-hr' },
@@ -97,6 +98,9 @@ export function Header() {
     {
       title: 'Emerging Tech',
       services: [
+        { name: 'Quantum Computing', path: '/services/quantum-computing-solutions' },
+        { name: 'Blockchain & Web3', path: '/services/blockchain-web3-solutions' },
+        { name: 'Edge Computing & IoT', path: '/services/edge-computing-iot-solutions' },
         { name: 'Blockchain Solutions', path: '/services#blockchain' },
         { name: 'Quantum Computing', path: '/services#quantum' },
         { name: 'IoT & Edge Computing', path: '/services#iot-edge' }

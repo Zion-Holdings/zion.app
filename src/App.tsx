@@ -33,6 +33,12 @@ const CloudDevOps = lazy(() => import('./pages/CloudDevOps'));
 const EnterpriseSolutionsPage = lazy(() => import('./pages/EnterpriseSolutions'));
 const DigitalTransformation = lazy(() => import('./pages/DigitalTransformation'));
 
+// New innovative services
+const AIWorkflowAutomation = lazy(() => import('./pages/services/AIWorkflowAutomation'));
+const QuantumComputingSolutions = lazy(() => import('./pages/services/QuantumComputingSolutions'));
+const BlockchainWeb3Solutions = lazy(() => import('./pages/services/BlockchainWeb3Solutions'));
+const EdgeComputingIoTSolutions = lazy(() => import('./pages/services/EdgeComputingIoTSolutions'));
+
 // Our enhanced service pages
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
@@ -103,6 +109,12 @@ const App = () => {
                     <Route path="/cloud-devops" element={<CloudDevOps />} />
                     <Route path="/enterprise-solutions" element={<EnterpriseSolutionsPage />} />
                     <Route path="/digital-transformation" element={<DigitalTransformation />} />
+                    
+                    {/* New innovative service routes */}
+                    <Route path="/services/ai-workflow-automation" element={<AIWorkflowAutomation />} />
+                    <Route path="/services/quantum-computing-solutions" element={<QuantumComputingSolutions />} />
+                    <Route path="/services/blockchain-web3-solutions" element={<BlockchainWeb3Solutions />} />
+                    <Route path="/services/edge-computing-iot-solutions" element={<EdgeComputingIoTSolutions />} />
                     
                     {/* Our enhanced service routes */}
                     <Route path="/about" element={<About />} />
