@@ -34,10 +34,10 @@ import SEOHead from '../components/SEOHead';
 import { SEOConfigs } from '../components/SEOHead';
 
 // Lazy load components for better performance
-const LazyServicesSection = React.lazy(() => import('../components/ServicesSection'));
-const LazyFeaturesSection = React.lazy(() => import('../components/FeaturesSection'));
-const LazyTestimonialsSection = React.lazy(() => import('../components/TestimonialsSection'));
-const LazyCTASection = React.lazy(() => import('../components/CTASection'));
+const LazyServicesSection = React.lazy(() => import('../components/home/ServicesSection'));
+const LazyFeaturesSection = React.lazy(() => import('../components/home/FeaturesSection'));
+const LazyTestimonialsSection = React.lazy(() => import('../components/home/TestimonialsSection'));
+const LazyCTASection = React.lazy(() => import('../components/home/CTASection'));
 
 // Loading fallback component
 const LoadingFallback = ({ message }: { message: string }) => (
