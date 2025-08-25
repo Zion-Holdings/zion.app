@@ -40,9 +40,9 @@ const MainNavigation: React.FC = () => {
     { path: '/about', label: 'About', icon: Info },
     { path: '/careers', label: 'Careers', icon: Briefcase },
     { path: '/contact', label: 'Contact', icon: Phone },
+    { path: '/enhanced-services', label: 'Enhanced Services', icon: Globe },
+    { path: '/micro-saas-services', label: 'Micro SAAS', icon: Settings },
     { path: '/help', label: 'Help', icon: HelpCircle },
-    { path: '/sitemap', label: 'Sitemap', icon: FileText },
-    { path: '/micro-saas-services', label: 'Services', icon: Globe },
     { path: '/green-it', label: 'Green IT', icon: Settings },
   ];
 
