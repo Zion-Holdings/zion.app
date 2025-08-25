@@ -1,313 +1,259 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { SEO } from '@/components/SEO';
+import { 
+  Home, 
+  Users, 
+  Settings, 
+  FileText, 
+  Shield,
+  Globe,
+  Building2,
+  Zap,
+  Brain,
+  Cloud,
+  Lock,
+  Rocket
+} from 'lucide-react';
 
-export default function Sitemap() {
+const Sitemap: React.FC = () => {
+  const sitemapData = {
+    main: {
+      title: 'Main Pages',
+      icon: Home,
+      pages: [
+        { name: 'Home', path: '/', description: 'Main landing page' },
+        { name: 'About Us', path: '/about', description: 'Company information and team' },
+        { name: 'Contact', path: '/contact', description: 'Get in touch with us' },
+        { name: 'FAQ', path: '/faq', description: 'Frequently asked questions' },
+        { name: 'Blog', path: '/blog', description: 'Latest news and insights' },
+        { name: 'Pricing', path: '/pricing', description: 'Service pricing information' },
+        { name: 'Request Quote', path: '/request-quote', description: 'Get a custom quote' }
+      ]
+    },
+    services: {
+      title: 'Services',
+      icon: Settings,
+      pages: [
+        { name: 'All Services', path: '/services', description: 'Complete service overview' },
+        { name: 'Micro SAAS Services', path: '/micro-saas-services', description: 'Specialized software solutions' },
+        { name: 'AI & Machine Learning', path: '/ai-services', description: 'Artificial intelligence solutions' },
+        { name: 'Cloud & DevOps', path: '/cloud-devops-solutions', description: 'Infrastructure and automation' },
+        { name: 'Cybersecurity', path: '/cybersecurity', description: 'Security and compliance' },
+        { name: 'Enterprise Solutions', path: '/enterprise-solutions', description: 'Large-scale business solutions' },
+        { name: 'IT Onsite Services', path: '/it-onsite-services', description: 'On-site technical support' }
+      ]
+    },
+    solutions: {
+      title: 'Solutions',
+      icon: Rocket,
+      pages: [
+        { name: 'AI Business Solutions', path: '/ai-business-solutions', description: 'AI-powered business tools' },
+        { name: 'Digital Transformation', path: '/digital-transformation', description: 'Business modernization' },
+        { name: 'Industry Solutions', path: '/industry-solutions', description: 'Sector-specific solutions' },
+        { name: 'Green IT', path: '/green-it', description: 'Sustainable technology' },
+        { name: '5G Enterprise Solutions', path: '/5g-enterprise-solutions', description: 'Next-gen connectivity' }
+      ]
+    },
+    marketplace: {
+      title: 'Marketplace',
+      icon: Globe,
+      pages: [
+        { name: 'Talent Directory', path: '/talent', description: 'Find skilled professionals' },
+        { name: 'Equipment', path: '/equipment', description: 'Technology hardware and tools' },
+        { name: 'Categories', path: '/categories', description: 'Browse by category' },
+        { name: 'AI Matcher', path: '/match', description: 'AI-powered matching service' }
+      ]
+    },
+    company: {
+      title: 'Company',
+      icon: Building2,
+      pages: [
+        { name: 'Partners', path: '/partners', description: 'Strategic partnerships' },
+        { name: 'Careers', path: '/careers', description: 'Job opportunities' },
+        { name: 'Community', path: '/community', description: 'Join our community' }
+      ]
+    },
+    legal: {
+      title: 'Legal & Support',
+      icon: Shield,
+      pages: [
+        { name: 'Terms of Service', path: '/terms', description: 'Service terms and conditions' },
+        { name: 'Privacy Policy', path: '/privacy', description: 'Data protection and privacy' },
+        { name: 'Sitemap', path: '/sitemap', description: 'Complete site structure' }
+      ]
+    },
+    auth: {
+      title: 'Authentication',
+      icon: Users,
+      pages: [
+        { name: 'Login', path: '/login', description: 'User authentication' },
+        { name: 'Sign Up', path: '/signup', description: 'Create new account' },
+        { name: 'Talent Sign Up', path: '/signup/talent', description: 'Join as professional' },
+        { name: 'Client Sign Up', path: '/signup/client', description: 'Join as business' }
+      ]
+    }
+  };
+
   return (
-    <>
-      <SEO
-        title="Sitemap | Zion Tech Group"
-        description="Navigate through all pages and sections of the Zion Tech Group website"
-        keywords="sitemap, website navigation, Zion Tech Group pages, site structure"
-        canonical="https://ziontechgroup.com/sitemap"
-      />
-      <main className="min-h-screen bg-zion-blue pt-24 pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Sitemap
-            </h1>
-            <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-              Explore all the pages and sections of our comprehensive technology marketplace platform
-            </p>
+    <div className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple">
+      {/* Hero Section */}
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
+            Site <span className="bg-gradient-to-r from-zion-cyan to-zion-purple-light bg-clip-text text-transparent">Map</span>
+          </h1>
+          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto mb-8">
+            Navigate through our comprehensive website structure to find exactly what you're looking for.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link 
+              to="/contact" 
+              className="bg-zion-cyan hover:bg-zion-cyan-light text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+            >
+              Contact Us
+            </Link>
+            <Link 
+              to="/faq" 
+              className="border border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+            >
+              View FAQ
+            </Link>
           </div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Main Pages */}
-            <div className="bg-zion-blue-dark border border-zion-blue-light rounded-xl p-6">
-              <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-                <svg className="w-6 h-6 text-zion-cyan mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5a2 2 0 012-2h4a2 2 0 012 2v2H8V5z" />
-                </svg>
-                Main Pages
-              </h2>
-              <ul className="space-y-3">
-                <li>
-                  <Link to="/" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-zion-cyan rounded-full mr-3"></span>
-                    Home
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/about" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-zion-cyan rounded-full mr-3"></span>
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-zion-cyan rounded-full mr-3"></span>
-                    Services
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/contact" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-zion-cyan rounded-full mr-3"></span>
-                    Contact
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/blog" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-zion-cyan rounded-full mr-3"></span>
-                    Blog
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/careers" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-zion-cyan rounded-full mr-3"></span>
-                    Careers
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Marketplace */}
-            <div className="bg-zion-blue-dark border border-zion-blue-light rounded-xl p-6">
-              <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-                <svg className="w-6 h-6 text-zion-purple mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
-                Marketplace
-              </h2>
-              <ul className="space-y-3">
-                <li>
-                  <Link to="/marketplace" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-zion-purple rounded-full mr-3"></span>
-                    Browse Marketplace
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/talent" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-zion-purple rounded-full mr-3"></span>
-                    Find Talent
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/equipment" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-zion-purple rounded-full mr-3"></span>
-                    Equipment & Resources
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/create-profile" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-zion-purple rounded-full mr-3"></span>
-                    Create Profile
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/post-job" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-zion-purple rounded-full mr-3"></span>
-                    Post a Job
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Services */}
-            <div className="bg-zion-blue-dark border border-zion-blue-light rounded-xl p-6">
-              <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-                <svg className="w-6 h-6 text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-                </svg>
-                Services
-              </h2>
-              <ul className="space-y-3">
-                <li>
-                  <Link to="/cybersecurity-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                    Cybersecurity
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/it-onsite-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                    IT Onsite Services
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/expanded-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                    Expanded Services
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/green-it" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                    Green IT Solutions
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/ai-solutions" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
-                    AI & ML Solutions
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* User Dashboard */}
-            <div className="bg-zion-blue-dark border border-zion-blue-light rounded-xl p-6">
-              <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-                <svg className="w-6 h-6 text-blue-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
-                User Dashboard
-              </h2>
-              <ul className="space-y-3">
-                <li>
-                  <Link to="/dashboard" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                    Dashboard
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/profile" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                    Profile Settings
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/messages" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                    Messages
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/analytics" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                    Analytics
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/admin/disputes" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-blue-400 rounded-full mr-3"></span>
-                    Dispute Management
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Legal & Support */}
-            <div className="bg-zion-blue-dark border border-zion-blue-light rounded-xl p-6">
-              <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-                <svg className="w-6 h-6 text-yellow-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-                Legal & Support
-              </h2>
-              <ul className="space-y-3">
-                <li>
-                  <Link to="/privacy" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/terms" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
-                    Terms of Service
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/faq" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
-                    FAQ
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/support" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
-                    Support Center
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/help" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-yellow-400 rounded-full mr-3"></span>
-                    Help Documentation
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            {/* Additional Resources */}
-            <div className="bg-zion-blue-dark border border-zion-blue-light rounded-xl p-6">
-              <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
-                <svg className="w-6 h-6 text-red-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                </svg>
-                Additional Resources
-              </h2>
-              <ul className="space-y-3">
-                <li>
-                  <Link to="/resources" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-red-400 rounded-full mr-3"></span>
-                    Resource Library
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/tools" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-red-400 rounded-full mr-3"></span>
-                    Free Tools
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/events" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-red-400 rounded-full mr-3"></span>
-                    Events & Webinars
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/partners" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-red-400 rounded-full mr-3"></span>
-                    Partner Network
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/newsletter" className="text-zion-slate-light hover:text-zion-cyan transition-colors flex items-center">
-                    <span className="w-2 h-2 bg-red-400 rounded-full mr-3"></span>
-                    Newsletter Signup
-                  </Link>
-                </li>
-              </ul>
-            </div>
+      {/* Sitemap Content */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {Object.entries(sitemapData).map(([key, section]) => (
+              <div key={key} className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+                <div className="flex items-center mb-6">
+                  <section.icon className="w-8 h-8 text-zion-cyan mr-3" />
+                  <h2 className="text-xl font-bold text-white">{section.title}</h2>
+                </div>
+                
+                <div className="space-y-3">
+                  {section.pages.map((page, index) => (
+                    <div key={index} className="border-l-2 border-zion-cyan/30 pl-4">
+                      <Link 
+                        to={page.path}
+                        className="block text-zion-cyan hover:text-zion-cyan-light font-medium mb-1 transition-colors"
+                      >
+                        {page.name}
+                      </Link>
+                      <p className="text-zion-slate-light text-sm">
+                        {page.description}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
+        </div>
+      </section>
 
-          {/* Quick Navigation */}
-          <div className="mt-16 bg-gradient-to-r from-zion-purple to-zion-purple-dark rounded-2xl p-8 text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Need Help Finding Something?
-            </h2>
-            <p className="text-zion-slate-light text-lg mb-6 max-w-2xl mx-auto">
-              Can't find what you're looking for? Our team is here to help you navigate our platform.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                to="/contact" 
-                className="bg-zion-cyan hover:bg-zion-cyan-light text-zion-blue-dark px-6 py-3 rounded-lg font-semibold transition-colors"
-              >
-                Contact Support
-              </Link>
-              <Link 
-                to="/faq" 
-                className="bg-transparent border border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark px-6 py-3 rounded-lg font-semibold transition-colors"
-              >
-                View FAQ
-              </Link>
+      {/* Quick Navigation */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white/5 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl font-bold text-white text-center mb-16">Quick Navigation</h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="text-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 mb-4">
+                <Brain className="w-12 h-12 text-zion-cyan mx-auto mb-3" />
+                <h3 className="text-lg font-semibold text-white mb-2">AI Services</h3>
+                <p className="text-zion-slate-light text-sm mb-4">
+                  Explore our artificial intelligence solutions
+                </p>
+                <Link 
+                  to="/ai-services"
+                  className="inline-block bg-zion-cyan hover:bg-zion-cyan-light text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                >
+                  Learn More
+                </Link>
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 mb-4">
+                <Cloud className="w-12 h-12 text-zion-cyan mx-auto mb-3" />
+                <h3 className="text-lg font-semibold text-white mb-2">Cloud Solutions</h3>
+                <p className="text-zion-slate-light text-sm mb-4">
+                  Modern cloud infrastructure and DevOps
+                </p>
+                <Link 
+                  to="/cloud-devops-solutions"
+                  className="inline-block bg-zion-cyan hover:bg-zion-cyan-light text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                >
+                  Learn More
+                </Link>
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 mb-4">
+                <Lock className="w-12 h-12 text-zion-cyan mx-auto mb-3" />
+                <h3 className="text-lg font-semibold text-white mb-2">Security</h3>
+                <p className="text-zion-slate-light text-sm mb-4">
+                  Comprehensive cybersecurity services
+                </p>
+                <Link 
+                  to="/cybersecurity"
+                  className="inline-block bg-zion-cyan hover:bg-zion-cyan-light text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                >
+                  Learn More
+                </Link>
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20 mb-4">
+                <Zap className="w-12 h-12 text-zion-cyan mx-auto mb-3" />
+                <h3 className="text-lg font-semibold text-white mb-2">Micro SAAS</h3>
+                <p className="text-zion-slate-light text-sm mb-4">
+                  Specialized software solutions
+                </p>
+                <Link 
+                  to="/micro-saas-services"
+                  className="inline-block bg-zion-cyan hover:bg-zion-cyan-light text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+                >
+                  Learn More
+                </Link>
+              </div>
             </div>
           </div>
         </div>
-      </main>
-    </>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-zion-cyan to-zion-purple">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold text-white mb-6">
+            Can't Find What You're Looking For?
+          </h2>
+          <p className="text-xl text-white/90 mb-8">
+            Our team is here to help you navigate our services and find the perfect solution for your needs.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link 
+              to="/contact" 
+              className="bg-white text-zion-cyan hover:bg-zion-slate-light px-8 py-3 rounded-lg font-semibold transition-colors"
+            >
+              Contact Us
+            </Link>
+            <Link 
+              to="/faq" 
+              className="border border-white text-white hover:bg-white hover:text-zion-cyan px-8 py-3 rounded-lg font-semibold transition-colors"
+            >
+              View FAQ
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
   );
-}
+};
+
+export default Sitemap;
