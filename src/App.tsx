@@ -29,6 +29,7 @@ const AdvancedTechServices = React.lazy(() => import('./pages/AdvancedTechServic
 const InnovativeServicesShowcase = React.lazy(() => import('./pages/InnovativeServicesShowcase'));
 const ServiceComparison = React.lazy(() => import('./pages/ServiceComparison'));
 const ServiceRecommendations = React.lazy(() => import('./pages/ServiceRecommendations'));
+const ServicePortfolioDashboard = React.lazy(() => import('./pages/ServicePortfolioDashboard'));
 const NotFound = React.lazy(() => import('./pages/NotFound'));
 
 const baseRoutes = [
@@ -51,6 +52,7 @@ const baseRoutes = [
   { path: '/innovative-services', element: <InnovativeServicesShowcase /> },
   { path: '/service-comparison', element: <ServiceComparison /> },
   { path: '/service-recommendations', element: <ServiceRecommendations /> },
+  { path: '/service-portfolio-dashboard', element: <ServicePortfolioDashboard /> },
   // Catch-all route
   { path: '*', element: <NotFound /> },
 ];
