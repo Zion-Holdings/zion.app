@@ -1,671 +1,497 @@
-import { ProductListing } from "@/types/listings";
+export interface Service {
+  id: string;
+  title: string;
+  description: string;
+  category: string;
+  subcategory: string;
+  price: number;
+  priceType: 'one-time' | 'monthly' | 'yearly' | 'per-user';
+  features: string[];
+  benefits: string[];
+  useCases: string[];
+  technologies: string[];
+  deliveryTime: string;
+  support: string;
+  rating: number;
+  reviewCount: number;
+  featured: boolean;
+}
 
 export const SERVICE_CATEGORIES = [
   {
-    id: "ai-services",
-    name: "AI Services",
-    description: "Cutting-edge artificial intelligence solutions for business automation and decision making",
+    id: "ai-ml",
+    name: "AI & Machine Learning",
     icon: "🤖",
+    count: 8
+  },
+  {
+    id: "cybersecurity",
+    name: "Cybersecurity",
+    icon: "🔒",
     count: 5
   },
   {
-    id: "micro-saas",
-    name: "Micro SAAS",
-    description: "Scalable software-as-a-service solutions for business growth and efficiency",
-    icon: "💻",
-    count: 5
+    id: "cloud-devops",
+    name: "Cloud & DevOps",
+    icon: "☁️",
+    count: 6
   },
   {
-    id: "it-services",
-    name: "IT Services",
-    description: "Comprehensive IT infrastructure and management services",
-    icon: "🔧",
-    count: 5
+    id: "web-development",
+    name: "Web Development",
+    icon: "🌐",
+    count: 4
   },
   {
-    id: "blockchain-web3",
-    name: "Blockchain & Web3",
-    description: "Next-generation blockchain and decentralized web solutions",
-    icon: "⛓️",
-    count: 3
-  },
-  {
-    id: "iot-hardware",
-    name: "IoT & Hardware",
-    description: "Internet of Things and hardware integration solutions",
-    icon: "📡",
-    count: 3
-  },
-  {
-    id: "emerging-tech",
-    name: "Emerging Tech",
-    description: "Cutting-edge technologies shaping the future of business",
-    icon: "🚀",
+    id: "data-analytics",
+    name: "Data Analytics",
+    icon: "📊",
     count: 3
   }
 ];
 
-export const COMPREHENSIVE_SERVICES: ProductListing[] = [
-  // AI Services
+export const COMPREHENSIVE_SERVICES = [
   {
-    id: "ai-1",
-    name: "AI-Powered Business Intelligence",
-    description: "Advanced analytics platform using machine learning to provide actionable business insights, predictive modeling, and automated reporting.",
-    category: "AI Services",
-    price: 2999,
-    rating: 4.9,
-    image: "/images/ai-business-intelligence.jpg",
+    id: "ai-chatbot-platform",
+    title: "AI Chatbot Platform",
+    description: "Custom AI-powered chatbot solution for customer service, sales, and support automation",
+    category: "ai-ml",
+    subcategory: "Chatbots",
+    price: 5000,
+    priceType: "one-time",
+    pricingModel: "one-time",
+    duration: "4-6 weeks",
+    teamSize: "3-4 people",
+    rating: 4.7,
+    reviewCount: 45,
+    featured: true,
+    freeTrial: true,
+    freeTrialDays: 14,
+    website: "https://ziontechgroup.com",
+    demoUrl: "https://demo.ziontechgroup.com",
+    tags: ["AI", "Chatbot", "Customer Service", "Automation"],
+    features: [
+      "Natural language processing",
+      "Multi-platform integration",
+      "Analytics dashboard",
+      "Custom training",
+      "API access"
+    ],
+    benefits: [
+      "Reduce customer service costs by 30%",
+      "Improve response time to under 1 second",
+      "Handle multiple conversations simultaneously",
+      "Scalable customer support solution"
+    ],
+    images: ["https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&h=500"],
+    estimatedDelivery: "4-6 weeks",
+    targetAudience: ["E-commerce", "Customer Support", "Sales Teams", "Service Businesses"],
+    contactInfo: {
+      phone: "+1-555-0123",
+      email: "ai-services@ziontechgroup.com"
+    }
+  },
+  {
+    id: "predictive-analytics-platform",
+    title: "Predictive Analytics Platform",
+    description: "Advanced data analytics platform with machine learning models for business forecasting and insights",
+    category: "ai-ml",
+    subcategory: "Analytics",
+    price: 8000,
+    priceType: "one-time",
+    pricingModel: "one-time",
+    duration: "6-8 weeks",
+    teamSize: "4-5 people",
+    rating: 4.8,
+    reviewCount: 32,
+    featured: true,
+    tags: ["Analytics", "Machine Learning", "Forecasting", "Business Intelligence"],
     features: [
       "Real-time data processing",
-      "Predictive analytics",
-      "Custom dashboard creation",
-      "Automated reporting",
-      "Multi-source data integration"
+      "Custom ML model development",
+      "Interactive dashboards",
+      "API integration",
+      "Automated reporting"
     ],
-    addons: ["data-connector", "custom-alerts", "api-access"]
+    benefits: [
+      "Improve decision-making accuracy by 40%",
+      "Identify market trends and opportunities",
+      "Optimize resource allocation",
+      "Reduce operational risks"
+    ],
+    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500"],
+    estimatedDelivery: "6-8 weeks",
+    targetAudience: ["Business Analysts", "Data Scientists", "Executives", "Operations Teams"],
+    contactInfo: {
+      phone: "+1-555-0124",
+      email: "analytics@ziontechgroup.com"
+    }
   },
   {
-    id: "ai-2",
-    name: "Natural Language Processing Engine",
-    description: "Sophisticated NLP solution for text analysis, sentiment analysis, language translation, and automated content generation.",
-    category: "AI Services",
-    price: 2499,
-    rating: 4.8,
-    image: "/images/nlp-engine.jpg",
-    features: [
-      "Multi-language support",
-      "Sentiment analysis",
-      "Text classification",
-      "Named entity recognition",
-      "Content summarization"
-    ],
-    addons: ["custom-model", "api-integration", "training-data"]
-  },
-  {
-    id: "ai-3",
-    name: "Computer Vision Solutions",
-    description: "Advanced image and video analysis using deep learning for object detection, facial recognition, and automated quality control.",
-    category: "AI Services",
-    price: 3999,
+    id: "computer-vision-solution",
+    title: "Computer Vision Solution",
+    description: "Custom computer vision applications for quality control, security, and automation using deep learning",
+    category: "ai-ml",
+    subcategory: "Computer Vision",
+    price: 12000,
+    priceType: "one-time",
+    pricingModel: "one-time",
+    duration: "8-10 weeks",
+    teamSize: "5-6 people",
     rating: 4.9,
-    image: "/images/computer-vision.jpg",
+    reviewCount: 28,
+    featured: true,
+    tags: ["Computer Vision", "Deep Learning", "Quality Control", "Automation"],
     features: [
-      "Object detection & tracking",
-      "Facial recognition",
+      "Object detection and recognition",
       "Image classification",
-      "Video analytics",
-      "Quality control automation"
+      "Real-time video processing",
+      "Custom model training",
+      "API endpoints"
     ],
-    addons: ["custom-model", "edge-deployment", "api-access"]
+    benefits: [
+      "Automate quality control processes",
+      "Improve accuracy by 95%+",
+      "Reduce manual inspection costs",
+      "24/7 monitoring capability"
+    ],
+    images: ["https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&h=500"],
+    estimatedDelivery: "8-10 weeks",
+    targetAudience: ["Manufacturing", "Security", "Healthcare", "Retail"],
+    contactInfo: {
+      phone: "+1-555-0125",
+      email: "vision@ziontechgroup.com"
+    }
   },
   {
-    id: "ai-4",
-    name: "AI-Powered Customer Service",
-    description: "Intelligent chatbot and customer support automation using natural language processing and machine learning.",
-    category: "AI Services",
-    price: 1999,
-    rating: 4.7,
-    image: "/images/ai-customer-service.jpg",
-    features: [
-      "24/7 automated support",
-      "Multi-language support",
-      "Sentiment analysis",
-      "Escalation to humans",
-      "Integration with CRM"
-    ],
-    addons: ["custom-training", "voice-support", "analytics-dashboard"]
-  },
-  {
-    id: "ai-5",
-    name: "Predictive Maintenance AI",
-    description: "IoT-powered predictive maintenance system using machine learning to prevent equipment failures and optimize maintenance schedules.",
-    category: "AI Services",
-    price: 3499,
-    rating: 4.8,
-    image: "/images/predictive-maintenance.jpg",
-    features: [
-      "Real-time monitoring",
-      "Failure prediction",
-      "Maintenance optimization",
-      "Cost analysis",
-      "Mobile alerts"
-    ],
-    addons: ["iot-hardware", "custom-algorithms", "integration-support"]
-  },
-
-  // Micro SAAS Services
-  {
-    id: "saas-1",
-    name: "Project Management Suite",
-    description: "Comprehensive project management platform with task tracking, team collaboration, time management, and resource allocation.",
-    category: "Micro SAAS",
-    price: 49,
+    id: "cloud-migration-service",
+    title: "Cloud Migration Service",
+    description: "Complete cloud migration solution for AWS, Azure, or Google Cloud with minimal downtime",
+    category: "cloud-devops",
+    subcategory: "Migration",
+    price: 15000,
+    priceType: "one-time",
+    pricingModel: "one-time",
+    duration: "8-12 weeks",
+    teamSize: "6-8 people",
     rating: 4.6,
-    image: "/images/project-management.jpg",
+    reviewCount: 35,
+    featured: false,
+    tags: ["Cloud Migration", "AWS", "Azure", "DevOps", "Infrastructure"],
     features: [
-      "Task management",
-      "Team collaboration",
-      "Time tracking",
-      "Resource allocation",
-      "Progress reporting"
+      "Infrastructure assessment",
+      "Migration planning",
+      "Data migration",
+      "Testing and validation",
+      "Post-migration support"
     ],
-    addons: ["advanced-analytics", "custom-workflows", "api-access"]
+    benefits: [
+      "Reduce infrastructure costs by 25-40%",
+      "Improve scalability and flexibility",
+      "Enhanced security and compliance",
+      "Better disaster recovery"
+    ],
+    images: ["https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&w=800&h=500"],
+    estimatedDelivery: "8-12 weeks",
+    targetAudience: ["IT Managers", "DevOps Engineers", "System Administrators", "CTOs"],
+    contactInfo: {
+      phone: "+1-555-0126",
+      email: "cloud@ziontechgroup.com"
+    }
   },
   {
-    id: "saas-2",
-    name: "Marketing Automation Platform",
-    description: "All-in-one marketing automation solution for email campaigns, social media management, lead nurturing, and analytics.",
-    category: "Micro SAAS",
-    price: 79,
-    rating: 4.7,
-    image: "/images/marketing-automation.jpg",
-    features: [
-      "Email automation",
-      "Social media management",
-      "Lead scoring",
-      "Campaign analytics",
-      "A/B testing"
-    ],
-    addons: ["advanced-segmentation", "crm-integration", "custom-templates"]
-  },
-  {
-    id: "saas-3",
-    name: "Financial Management Tool",
-    description: "Comprehensive financial management platform for budgeting, expense tracking, invoicing, and financial reporting.",
-    category: "Micro SAAS",
-    price: 39,
-    rating: 4.5,
-    image: "/images/financial-management.jpg",
-    features: [
-      "Budget planning",
-      "Expense tracking",
-      "Invoice management",
-      "Financial reporting",
-      "Tax preparation"
-    ],
-    addons: ["bank-integration", "advanced-reporting", "multi-currency"]
-  },
-  {
-    id: "saas-4",
-    name: "HR Management System",
-    description: "Complete HR solution for employee management, recruitment, performance tracking, and compliance management.",
-    category: "Micro SAAS",
-    price: 69,
-    rating: 4.6,
-    image: "/images/hr-management.jpg",
-    features: [
-      "Employee database",
-      "Recruitment tools",
-      "Performance management",
-      "Compliance tracking",
-      "Payroll integration"
-    ],
-    addons: ["advanced-analytics", "custom-workflows", "api-access"]
-  },
-  {
-    id: "saas-5",
-    name: "Inventory Management System",
-    description: "Smart inventory management solution with real-time tracking, demand forecasting, and automated reordering.",
-    category: "Micro SAAS",
-    price: 59,
-    rating: 4.7,
-    image: "/images/inventory-management.jpg",
-    features: [
-      "Real-time tracking",
-      "Demand forecasting",
-      "Automated reordering",
-      "Barcode scanning",
-      "Multi-location support"
-    ],
-    addons: ["advanced-analytics", "supplier-integration", "mobile-app"]
-  },
-
-  // IT Services
-  {
-    id: "it-1",
-    name: "Cloud Infrastructure Management",
-    description: "Comprehensive cloud infrastructure management including migration, optimization, monitoring, and cost management.",
-    category: "IT Services",
-    price: 1999,
+    id: "cybersecurity-audit",
+    title: "Cybersecurity Audit & Assessment",
+    description: "Comprehensive security assessment including penetration testing, vulnerability analysis, and compliance review",
+    category: "cybersecurity",
+    subcategory: "Assessment",
+    price: 7000,
+    priceType: "one-time",
+    pricingModel: "one-time",
+    duration: "3-4 weeks",
+    teamSize: "3-4 people",
     rating: 4.8,
-    image: "/images/cloud-infrastructure.jpg",
+    reviewCount: 28,
+    featured: true,
+    tags: ["Security", "Penetration Testing", "Compliance", "Vulnerability Assessment"],
     features: [
-      "Cloud migration",
-      "Infrastructure optimization",
-      "Cost management",
-      "Performance monitoring",
-      "Security compliance"
-    ],
-    addons: ["24-7-support", "disaster-recovery", "custom-automation"]
-  },
-  {
-    id: "it-2",
-    name: "Cybersecurity Assessment",
-    description: "Comprehensive cybersecurity assessment including vulnerability scanning, penetration testing, and security audit.",
-    category: "IT Services",
-    price: 2999,
-    rating: 4.9,
-    image: "/images/cybersecurity.jpg",
-    features: [
-      "Vulnerability assessment",
+      "Security assessment",
       "Penetration testing",
-      "Security audit",
+      "Vulnerability scanning",
       "Compliance review",
-      "Remediation planning"
+      "Detailed report"
     ],
-    addons: ["ongoing-monitoring", "incident-response", "security-training"]
+    benefits: [
+      "Identify security vulnerabilities",
+      "Meet compliance requirements",
+      "Protect against cyber threats",
+      "Improve security posture"
+    ],
+    images: ["https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500"],
+    estimatedDelivery: "3-4 weeks",
+    targetAudience: ["Security Teams", "Compliance Officers", "IT Managers", "Risk Managers"],
+    contactInfo: {
+      phone: "+1-555-0127",
+      email: "security@ziontechgroup.com"
+    }
   },
   {
-    id: "it-3",
-    name: "DevOps Implementation",
-    description: "Complete DevOps implementation including CI/CD pipelines, infrastructure as code, and automated testing.",
-    category: "IT Services",
-    price: 3999,
-    rating: 4.8,
-    image: "/images/devops.jpg",
+    id: "data-warehouse-solution",
+    title: "Data Warehouse Solution",
+    description: "Enterprise data warehouse design and implementation with ETL processes and business intelligence tools",
+    category: "data-analytics",
+    subcategory: "Data Warehouse",
+    price: 25000,
+    priceType: "one-time",
+    pricingModel: "one-time",
+    duration: "12-16 weeks",
+    teamSize: "8-10 people",
+    rating: 4.7,
+    reviewCount: 38,
+    featured: false,
+    tags: ["Data Warehouse", "ETL", "Business Intelligence", "Big Data"],
     features: [
-      "CI/CD pipelines",
-      "Infrastructure as code",
-      "Automated testing",
-      "Monitoring & logging",
+      "Data modeling",
+      "ETL pipeline development",
+      "Data governance",
+      "BI dashboard creation",
       "Performance optimization"
     ],
-    addons: ["custom-automation", "training-program", "ongoing-support"]
-  },
-  {
-    id: "it-4",
-    name: "Network Infrastructure",
-    description: "Complete network infrastructure design, implementation, and management for optimal performance and security.",
-    category: "IT Services",
-    price: 2499,
-    rating: 4.7,
-    image: "/images/network-infrastructure.jpg",
-    features: [
-      "Network design",
-      "Hardware installation",
-      "Configuration management",
-      "Performance monitoring",
-      "Security implementation"
+    benefits: [
+      "Centralized data management",
+      "Improved data quality and consistency",
+      "Faster reporting and analytics",
+      "Better decision-making insights"
     ],
-    addons: ["24-7-monitoring", "backup-solutions", "disaster-recovery"]
+    images: ["https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500"],
+    estimatedDelivery: "12-16 weeks",
+    targetAudience: ["Data Engineers", "Business Analysts", "Data Scientists", "IT Managers"],
+    contactInfo: {
+      phone: "+1-555-0128",
+      email: "data@ziontechgroup.com"
+    }
   },
   {
-    id: "it-5",
-    name: "Data Backup & Recovery",
-    description: "Comprehensive data backup and disaster recovery solution ensuring business continuity and data protection.",
-    category: "IT Services",
-    price: 1499,
+    id: "web-application-development",
+    title: "Web Application Development",
+    description: "Custom web application development with modern frameworks and responsive design",
+    category: "web-development",
+    subcategory: "Web Apps",
+    price: 15000,
+    priceType: "one-time",
+    pricingModel: "one-time",
+    duration: "10-14 weeks",
+    teamSize: "5-7 people",
     rating: 4.6,
-    image: "/images/data-backup.jpg",
+    reviewCount: 42,
+    featured: false,
+    tags: ["Web Development", "React", "Node.js", "Responsive Design"],
     features: [
-      "Automated backups",
-      "Cloud storage",
-      "Disaster recovery",
-      "Data encryption",
-      "Recovery testing"
+      "Custom UI/UX design",
+      "Frontend development",
+      "Backend API development",
+      "Database design",
+      "Testing and deployment"
     ],
-    addons: ["offsite-backup", "custom-retention", "recovery-training"]
-  },
-
-  // Blockchain & Web3 Services
-  {
-    id: "blockchain-1",
-    name: "Smart Contract Development",
-    description: "Secure and audited smart contract development for DeFi, NFTs, and enterprise blockchain applications.",
-    category: "Blockchain & Web3",
-    price: 4999,
-    rating: 4.9,
-    image: "/images/smart-contracts.jpg",
-    features: [
-      "Smart contract development",
-      "Security auditing",
-      "Gas optimization",
-      "Multi-chain deployment",
-      "Testing & validation"
+    benefits: [
+      "Custom solution for your business needs",
+      "Modern, responsive design",
+      "Scalable architecture",
+      "Ongoing support and maintenance"
     ],
-    addons: ["custom-audit", "deployment-support", "ongoing-maintenance"]
+    images: ["https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=800&h=500"],
+    estimatedDelivery: "10-14 weeks",
+    targetAudience: ["Startups", "Small Businesses", "Enterprises", "Digital Agencies"],
+    contactInfo: {
+      phone: "+1-555-0129",
+      email: "web@ziontechgroup.com"
+    }
   },
   {
-    id: "blockchain-2",
-    name: "DeFi Platform Development",
-    description: "Complete DeFi platform development including yield farming, liquidity pools, and automated market making.",
-    category: "Blockchain & Web3",
-    price: 8999,
-    rating: 4.8,
-    image: "/images/defi-platform.jpg",
-    features: [
-      "Yield farming protocols",
-      "Liquidity pools",
-      "AMM algorithms",
-      "Governance tokens",
-      "Security features"
-    ],
-    addons: ["custom-protocols", "audit-services", "launch-support"]
-  },
-  {
-    id: "blockchain-3",
-    name: "NFT Marketplace Development",
-    description: "Custom NFT marketplace with minting, trading, and auction capabilities for digital art and collectibles.",
-    category: "Blockchain & Web3",
-    price: 3999,
+    id: "devops-automation",
+    title: "DevOps Automation Platform",
+    description: "Complete CI/CD pipeline automation with infrastructure as code and monitoring solutions",
+    category: "cloud-devops",
+    subcategory: "Automation",
+    price: 18000,
+    priceType: "one-time",
+    pricingModel: "one-time",
+    duration: "10-12 weeks",
+    teamSize: "6-8 people",
     rating: 4.7,
-    image: "/images/nft-marketplace.jpg",
+    reviewCount: 41,
+    featured: false,
+    tags: ["DevOps", "CI/CD", "Automation", "Infrastructure as Code"],
     features: [
-      "NFT minting",
-      "Marketplace trading",
-      "Auction system",
-      "Royalty management",
-      "Multi-chain support"
-    ],
-    addons: ["custom-features", "mobile-app", "analytics-dashboard"]
-  },
-
-  // IoT & Hardware Services
-  {
-    id: "iot-1",
-    name: "IoT Platform Development",
-    description: "Scalable IoT platform with device management, real-time monitoring, data analytics, and mobile app integration.",
-    category: "IoT & Hardware",
-    price: 5999,
-    rating: 4.8,
-    image: "/images/iot-platform.jpg",
-    features: [
-      "Device management",
-      "Real-time monitoring",
-      "Data analytics",
-      "Mobile app integration",
-      "Cloud infrastructure"
-    ],
-    addons: ["custom-hardware", "edge-computing", "ai-integration"]
-  },
-  {
-    id: "iot-2",
-    name: "Smart Home Automation",
-    description: "Complete smart home automation system with IoT devices, voice control, and intelligent scheduling.",
-    category: "IoT & Hardware",
-    price: 2499,
-    rating: 4.6,
-    image: "/images/smart-home.jpg",
-    features: [
-      "IoT device integration",
-      "Voice control",
-      "Smart scheduling",
-      "Energy optimization",
-      "Security monitoring"
-    ],
-    addons: ["custom-devices", "mobile-app", "24-7-support"]
-  },
-  {
-    id: "iot-3",
-    name: "Industrial IoT Solutions",
-    description: "Industrial IoT solutions for manufacturing, logistics, and supply chain optimization with predictive analytics.",
-    category: "IoT & Hardware",
-    price: 7999,
-    rating: 4.9,
-    image: "/images/industrial-iot.jpg",
-    features: [
-      "Sensor integration",
-      "Real-time monitoring",
-      "Predictive analytics",
-      "Automation control",
+      "CI/CD pipeline setup",
+      "Infrastructure automation",
+      "Monitoring and alerting",
+      "Security scanning",
       "Performance optimization"
     ],
-    addons: ["custom-sensors", "edge-computing", "ai-integration"]
-  },
-
-  // Emerging Tech Services
-  {
-    id: "emerging-1",
-    name: "Quantum Computing Consulting",
-    description: "Expert consultation on quantum computing applications, algorithm development, and quantum advantage strategies.",
-    category: "Emerging Tech",
-    price: 9999,
-    rating: 4.9,
-    image: "/images/quantum-computing.jpg",
-    features: [
-      "Quantum algorithm design",
-      "Application assessment",
-      "Hardware evaluation",
-      "Performance optimization",
-      "Strategic planning"
+    benefits: [
+      "Reduce deployment time by 80%",
+      "Improve code quality and reliability",
+      "Faster time to market",
+      "Reduced human error"
     ],
-    addons: ["custom-algorithms", "hardware-access", "ongoing-support"]
+    images: ["https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=800&h=500"],
+    estimatedDelivery: "10-12 weeks",
+    targetAudience: ["DevOps Engineers", "Software Teams", "System Administrators", "CTOs"],
+    contactInfo: {
+      phone: "+1-555-0130",
+      email: "devops@ziontechgroup.com"
+    }
   },
   {
-    id: "emerging-2",
-    name: "Edge AI Solutions",
-    description: "Edge AI solutions for real-time processing, low-latency applications, and offline AI capabilities.",
-    category: "Emerging Tech",
-    price: 4499,
+    id: "ai-content-optimization",
+    title: "AI Content Performance Optimizer",
+    description: "Intelligent content optimization platform that analyzes content performance and suggests improvements",
+    category: "ai-ml",
+    subcategory: "Content Optimization",
+    price: 6000,
+    priceType: "one-time",
+    pricingModel: "one-time",
+    duration: "5-7 weeks",
+    teamSize: "4-5 people",
+    rating: 4.5,
+    reviewCount: 23,
+    featured: false,
+    tags: ["Content Marketing", "AI", "Performance Analytics", "SEO Optimization"],
+    features: [
+      "Content analysis",
+      "Performance tracking",
+      "A/B testing",
+      "SEO optimization",
+      "Analytics dashboard"
+    ],
+    benefits: [
+      "Improve content performance",
+      "Increase engagement rates",
+      "Better SEO rankings",
+      "Data-driven content decisions"
+    ],
+    images: ["https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&h=500"],
+    estimatedDelivery: "5-7 weeks",
+    targetAudience: ["Marketing Teams", "Content Creators", "SEO Specialists", "Digital Agencies"],
+    contactInfo: {
+      phone: "+1-555-0131",
+      email: "content@ziontechgroup.com"
+    }
+  },
+  {
+    id: "network-security-solution",
+    title: "Network Security Solution",
+    description: "Comprehensive network security implementation including firewalls, intrusion detection, and monitoring",
+    category: "cybersecurity",
+    subcategory: "Network Security",
+    price: 20000,
+    priceType: "one-time",
+    pricingModel: "one-time",
+    duration: "12-16 weeks",
+    teamSize: "7-9 people",
     rating: 4.8,
-    image: "/images/edge-ai.jpg",
+    reviewCount: 52,
+    featured: false,
+    tags: ["Network Security", "Firewall", "Intrusion Detection", "Monitoring"],
     features: [
-      "Edge AI models",
-      "Real-time processing",
-      "Low-latency inference",
-      "Offline capabilities",
-      "Hardware optimization"
+      "Network assessment",
+      "Security architecture design",
+      "Firewall implementation",
+      "Intrusion detection",
+      "24/7 monitoring"
     ],
-    addons: ["custom-models", "hardware-deployment", "performance-tuning"]
-  },
-  {
-    id: "emerging-3",
-    name: "5G Network Solutions",
-    description: "5G network planning, implementation, and optimization for enhanced connectivity and IoT applications.",
-    category: "Emerging Tech",
-    price: 6999,
-    rating: 4.7,
-    image: "/images/5g-network.jpg",
-    features: [
-      "Network planning",
-      "Infrastructure deployment",
-      "Performance optimization",
-      "IoT integration",
-      "Security implementation"
+    benefits: [
+      "Protect against network threats",
+      "Compliance with security standards",
+      "Real-time threat detection",
+      "Comprehensive security coverage"
     ],
-    addons: ["custom-infrastructure", "performance-monitoring", "ongoing-support"]
+    images: ["https://images.unsplash.com/photo-1510511459019-5dda7724fd87?auto=format&fit=crop&w=800&h=500"],
+    estimatedDelivery: "12-16 weeks",
+    targetAudience: ["Network Administrators", "Security Engineers", "IT Managers", "CISOs"],
+    contactInfo: {
+      phone: "+1-555-0132",
+      email: "network@ziontechgroup.com"
+    }
   }
 ];
 
 export const SERVICE_PRICING_TIERS = [
   {
-    name: "Startup",
-    description: "Perfect for small teams and MVPs",
-    discount: "15% OFF",
-    features: ["Basic Support", "Standard Features", "Community Access", "Email Support"]
+    name: "Starter",
+    price: 5000,
+    features: [
+      "Basic implementation",
+      "Standard support",
+      "Documentation",
+      "Training session"
+    ]
   },
   {
-    name: "Business",
-    description: "Ideal for growing businesses",
-    discount: "5% OFF",
-    features: ["Priority Support", "Advanced Features", "Custom Integration", "Account Manager"]
+    name: "Professional",
+    price: 15000,
+    features: [
+      "Advanced features",
+      "Priority support",
+      "Custom integrations",
+      "Extended training",
+      "Performance optimization"
+    ]
   },
   {
     name: "Enterprise",
-    description: "For large organizations",
-    discount: "Custom",
-    features: ["24/7 Support", "All Features", "Dedicated Manager", "On-site Consultation"]
+    price: 50000,
+    features: [
+      "Full customization",
+      "24/7 support",
+      "Dedicated team",
+      "Custom development",
+      "Ongoing maintenance"
+    ]
   }
 ];
 
 export const SERVICE_ADDONS = [
-  // AI & Analytics Addons
   {
-    id: "custom-model",
-    name: "Custom AI Model Training",
-    description: "Train custom AI models on your specific data for improved accuracy and relevance",
-    price: 1499,
-    category: "AI Services"
+    service: "AI Chatbot Development",
+    addons: [
+      { name: "Multi-language Support", price: 2000 },
+      { name: "Advanced Analytics", price: 1500 },
+      { name: "Custom Integrations", price: 3000 }
+    ]
   },
   {
-    id: "data-connector",
-    name: "Data Connector Integration",
-    description: "Connect your existing data sources and databases for seamless integration",
-    price: 299,
-    category: "AI Services"
+    service: "Cloud Migration",
+    addons: [
+      { name: "Data Backup Solution", price: 5000 },
+      { name: "Performance Monitoring", price: 3000 },
+      { name: "Security Hardening", price: 4000 }
+    ]
   },
   {
-    id: "custom-alerts",
-    name: "Custom Alert System",
-    description: "Configure personalized alerts and notifications based on your business rules",
-    price: 199,
-    category: "AI Services"
+    service: "Cybersecurity Assessment",
+    addons: [
+      { name: "Social Engineering Testing", price: 3000 },
+      { name: "Compliance Certification", price: 5000 },
+      { name: "Security Training", price: 2000 }
+    ]
   },
   {
-    id: "api-access",
-    name: "API Access & Integration",
-    description: "Full API access for custom integrations and third-party applications",
-    price: 399,
-    category: "AI Services"
-  },
-  {
-    id: "training-data",
-    name: "Training Data Preparation",
-    description: "Professional data preparation and cleaning for optimal AI model performance",
-    price: 799,
-    category: "AI Services"
-  },
-
-  // Micro SAAS Addons
-  {
-    id: "advanced-analytics",
-    name: "Advanced Analytics Dashboard",
-    description: "Comprehensive analytics and reporting dashboard with custom metrics",
-    price: 99,
-    category: "Micro SAAS"
-  },
-  {
-    id: "custom-workflows",
-    name: "Custom Workflow Automation",
-    description: "Tailored workflow automation to match your business processes",
-    price: 149,
-    category: "Micro SAAS"
-  },
-  {
-    id: "crm-integration",
-    name: "CRM Integration",
-    description: "Seamless integration with popular CRM systems like Salesforce and HubSpot",
-    price: 79,
-    category: "Micro SAAS"
-  },
-  {
-    id: "custom-templates",
-    name: "Custom Templates & Branding",
-    description: "Personalized templates and branding to match your company identity",
-    price: 59,
-    category: "Micro SAAS"
-  },
-  {
-    id: "mobile-app",
-    name: "Mobile App Development",
-    description: "Native mobile applications for iOS and Android platforms",
-    price: 299,
-    category: "Micro SAAS"
-  },
-
-  // IT Services Addons
-  {
-    id: "24-7-support",
-    name: "24/7 Technical Support",
-    description: "Round-the-clock technical support and monitoring services",
-    price: 499,
-    category: "IT Services"
-  },
-  {
-    id: "disaster-recovery",
-    name: "Disaster Recovery Planning",
-    description: "Comprehensive disaster recovery and business continuity planning",
-    price: 899,
-    category: "IT Services"
-  },
-  {
-    id: "custom-automation",
-    name: "Custom Automation Scripts",
-    description: "Tailored automation scripts for your specific infrastructure needs",
-    price: 399,
-    category: "IT Services"
-  },
-  {
-    id: "incident-response",
-    name: "Incident Response Team",
-    description: "Dedicated incident response team for security and technical issues",
-    price: 699,
-    category: "IT Services"
-  },
-  {
-    id: "security-training",
-    name: "Security Awareness Training",
-    description: "Employee security training and awareness programs",
-    price: 299,
-    category: "IT Services"
-  },
-
-  // Blockchain Addons
-  {
-    id: "custom-audit",
-    name: "Custom Security Audit",
-    description: "Comprehensive security audit by blockchain security experts",
-    price: 1999,
-    category: "Blockchain & Web3"
-  },
-  {
-    id: "deployment-support",
-    name: "Deployment & Launch Support",
-    description: "Full support for blockchain deployment and platform launch",
-    price: 1499,
-    category: "Blockchain & Web3"
-  },
-  {
-    id: "ongoing-maintenance",
-    name: "Ongoing Maintenance",
-    description: "Continuous maintenance and updates for blockchain applications",
-    price: 799,
-    category: "Blockchain & Web3"
-  },
-
-  // IoT Addons
-  {
-    id: "custom-hardware",
-    name: "Custom Hardware Development",
-    description: "Development of custom IoT hardware for specific use cases",
-    price: 2999,
-    category: "IoT & Hardware"
-  },
-  {
-    id: "edge-computing",
-    name: "Edge Computing Implementation",
-    description: "Edge computing solutions for real-time processing and reduced latency",
-    price: 1499,
-    category: "IoT & Hardware"
-  },
-  {
-    id: "ai-integration",
-    name: "AI Integration",
-    description: "Integration of AI capabilities into IoT devices and platforms",
-    price: 999,
-    category: "IoT & Hardware"
-  },
-
-  // Emerging Tech Addons
-  {
-    id: "custom-algorithms",
-    name: "Custom Quantum Algorithms",
-    description: "Development of custom quantum algorithms for specific applications",
-    price: 3999,
-    category: "Emerging Tech"
-  },
-  {
-    id: "hardware-access",
-    name: "Quantum Hardware Access",
-    description: "Access to quantum computing hardware for testing and development",
-    price: 1999,
-    category: "Emerging Tech"
-  },
-  {
-    id: "performance-tuning",
-    name: "Performance Tuning",
-    description: "Optimization and tuning for maximum performance and efficiency",
-    price: 799,
-    category: "Emerging Tech"
+    service: "Data Warehouse Solution",
+    addons: [
+      { name: "Advanced Analytics", price: 8000 },
+      { name: "Data Governance", price: 6000 },
+      { name: "Performance Tuning", price: 4000 }
+    ]
   }
 ];
+
+export const CONTACT_INFO = {
+  phone: "+1 302 464 0950",
+  email: "kleber@ziontechgroup.com",
+  address: "364 E Main St STE 1008 Middletown DE 19709",
+  website: "https://ziontechgroup.com",
+  businessHours: "Monday - Friday: 9:00 AM - 6:00 PM EST",
+  emergencySupport: "24/7 emergency support available for enterprise clients"
+};
