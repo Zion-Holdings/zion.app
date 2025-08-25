@@ -26,9 +26,15 @@ export function Header() {
     },
     { 
       path: '/services', 
-      label: 'AI Services', 
+      label: 'Services', 
       icon: '🤖',
-      description: 'Explore our AI service offerings'
+      description: 'Explore our comprehensive services'
+    },
+    { 
+      path: '/ai-services', 
+      label: 'AI Solutions', 
+      icon: '🧠',
+      description: 'AI and machine learning services'
     },
     { 
       path: '/solutions/enterprise', 
@@ -47,18 +53,6 @@ export function Header() {
       label: 'About', 
       icon: 'ℹ️',
       description: 'Learn about our company'
-    },
-    { 
-      path: '/careers', 
-      label: 'Careers', 
-      icon: '🚀',
-      description: 'Join our team'
-    },
-    { 
-      path: '/blog', 
-      label: 'Blog', 
-      icon: '📝',
-      description: 'Latest insights and news'
     },
     { 
       path: '/contact', 
@@ -178,6 +172,23 @@ export function Header() {
                   </div>
                 </div>
               ))}
+              
+              {/* Sitemap Link */}
+              <div className="relative group">
+                <Link
+                  to="/sitemap"
+                  className="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex items-center space-x-2 group-hover:bg-cyan-500/20 group-hover:border-cyan-400/50 text-gray-300 hover:text-white border border-transparent"
+                >
+                  <span className="text-lg">🗺️</span>
+                  <span>Sitemap</span>
+                </Link>
+                
+                {/* Enhanced Tooltip */}
+                <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-black/90 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
+                  Complete site navigation
+                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-black/90"></div>
+                </div>
+              </div>
             </nav>
 
             {/* CTA Buttons */}
@@ -247,6 +258,21 @@ export function Header() {
                     </div>
                   </Link>
                 ))}
+                
+                {/* Sitemap Link in Mobile Menu */}
+                <Link
+                  to="/sitemap"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block px-3 py-2 rounded-lg text-base font-medium transition-all duration-300 text-gray-300 hover:text-white hover:bg-gray-800/50"
+                >
+                  <div className="flex items-center space-x-3">
+                    <span className="text-xl">🗺️</span>
+                    <div>
+                      <div className="font-medium">Sitemap</div>
+                      <div className="text-xs text-gray-400">Complete site navigation</div>
+                    </div>
+                  </div>
+                </Link>
                 
                 {/* Mobile CTA Buttons */}
                 <div className="pt-4 space-y-2">

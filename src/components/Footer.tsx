@@ -5,21 +5,25 @@ export function Footer() {
 
   const footerSections = [
     {
-      title: "AI & Micro SAAS",
+      title: "AI & Technology Services",
       links: [
         { label: "AI & Autonomous Systems", path: "/services/ai-autonomous-systems" },
+        { label: "AI Research Assistant", path: "/ai-research-assistant" },
+        { label: "AI Business Solutions", path: "/ai-business-solutions" },
         { label: "Quantum Technology", path: "/services/quantum-technology" },
+        { label: "Quantum Neural Network Platform", path: "/quantum-neural-network-platform" },
         { label: "IT Infrastructure", path: "/services/it-infrastructure" },
         { label: "Micro SAAS Solutions", path: "/services/micro-saas-solutions" },
         { label: "Cybersecurity", path: "/services/cybersecurity" },
+        { label: "SOC2 Compliance Automation", path: "/soc2-compliance-automation" },
         { label: "Industry Solutions", path: "/services/industry-solutions" },
         { label: "Marketplace", path: "/marketplace" },
-        { label: "AI & Machine Learning", path: "/services#ai-ml" },
-        { label: "Cloud & Infrastructure", path: "/services#cloud" },
-        { label: "Blockchain Solutions", path: "/services#blockchain" },
-        { label: "IoT & Edge Computing", path: "/services#iot" },
-        { label: "IT Consulting", path: "/services#consulting" },
-        { label: "Managed Services", path: "/services#managed" }
+        { label: "AI & Machine Learning", path: "/ai-services" },
+        { label: "Cloud & Infrastructure", path: "/cloud-devops" },
+        { label: "Blockchain Solutions", path: "/blockchain-solutions" },
+        { label: "IoT & Edge Computing", path: "/iot-edge-computing" },
+        { label: "IT Consulting", path: "/services" },
+        { label: "Managed Services", path: "/services" }
       ]
     },
     {
@@ -72,7 +76,8 @@ export function Footer() {
         { label: "Blog & Articles", path: "/blog" },
         { label: "Case Studies", path: "/case-studies" },
         { label: "Documentation", path: "/docs" },
-        { label: "Support Center", path: "/support" }
+        { label: "Support Center", path: "/support" },
+        { label: "Sitemap", path: "/sitemap" }
       ]
     }
   ];

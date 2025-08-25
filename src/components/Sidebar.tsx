@@ -22,23 +22,29 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
       items: [
         { name: 'Home', path: '/', icon: Home },
         { name: 'Services', path: '/services', icon: Briefcase },
+        { name: 'AI Services', path: '/ai-services', icon: Briefcase },
         { name: 'Solutions', path: '/solutions/enterprise', icon: Briefcase },
         { name: 'Pricing', path: '/pricing', icon: Briefcase },
         { name: 'About', path: '/about', icon: Users },
-        { name: 'Contact', path: '/contact', icon: Phone }
+        { name: 'Contact', path: '/contact', icon: Phone },
+        { name: 'Sitemap', path: '/sitemap', icon: Globe }
       ]
     },
     {
       title: 'Services',
       items: [
-        { name: 'AI & Machine Learning', path: '/services?category=AI%20%26%20Machine%20Learning', icon: Briefcase },
-        { name: 'Cybersecurity', path: '/services?category=Cybersecurity', icon: Shield },
-        { name: 'Micro SAAS Solutions', path: '/services?category=Micro%20SAAS%20Solutions', icon: Globe },
-        { name: 'Space Technology', path: '/services?category=Space%20Technology', icon: Globe },
-        { name: 'Healthcare AI', path: '/services?category=Healthcare%20AI', icon: Users },
-        { name: 'Manufacturing AI', path: '/services?category=Manufacturing%20AI', icon: Briefcase },
-        { name: 'Emerging Technology', path: '/services?category=Emerging%20Technology', icon: Globe },
-        { name: 'Autonomous Systems', path: '/services?category=AI%20%26%20Autonomous%20Systems', icon: Users }
+        { name: 'AI & Machine Learning', path: '/ai-services', icon: Briefcase },
+        { name: 'AI Research Assistant', path: '/ai-research-assistant', icon: Briefcase },
+        { name: 'AI Autonomous Systems', path: '/services/ai-autonomous-systems', icon: Briefcase },
+        { name: 'Quantum Technology', path: '/services/quantum-technology', icon: Briefcase },
+        { name: 'Quantum Neural Network Platform', path: '/quantum-neural-network-platform', icon: Briefcase },
+        { name: 'Cybersecurity', path: '/services/cybersecurity', icon: Shield },
+        { name: 'SOC2 Compliance Automation', path: '/soc2-compliance-automation', icon: Shield },
+        { name: 'Micro SAAS Solutions', path: '/services/micro-saas-solutions', icon: Globe },
+        { name: 'IT Infrastructure', path: '/services/it-infrastructure', icon: Briefcase },
+        { name: 'Industry Solutions', path: '/services/industry-solutions', icon: Briefcase },
+        { name: 'Cloud & DevOps', path: '/cloud-devops', icon: Globe },
+        { name: 'Digital Transformation', path: '/digital-transformation', icon: Globe }
       ]
     },
     {
@@ -54,10 +60,12 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
     {
       title: 'Support',
       items: [
-        { name: 'Help Center', path: '/help', icon: Users },
+        { name: 'Help Center', path: '/help-center', icon: Users },
         { name: 'Documentation', path: '/docs', icon: Globe },
         { name: 'Contact Support', path: '/support', icon: Phone },
-        { name: 'Status Page', path: '/status', icon: Globe }
+        { name: 'Status Page', path: '/status', icon: Globe },
+        { name: 'FAQ', path: '/faq', icon: Users },
+        { name: 'Sitemap', path: '/sitemap', icon: Globe }
       ]
     }
   ];

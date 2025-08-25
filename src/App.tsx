@@ -52,6 +52,11 @@ const MicroSAASSolutions = lazy(() => import('./pages/services/MicroSAASSolution
 const IndustrySolutions = lazy(() => import('./pages/services/IndustrySolutions'));
 const InnovativeNewServices = lazy(() => import('./pages/services/InnovativeNewServices'));
 const SpecializedITInfrastructure = lazy(() => import('./pages/services/SpecializedITInfrastructure'));
+const Sitemap = lazy(() => import('./pages/Sitemap'));
+const AIResearchAssistant = lazy(() => import('./pages/AIResearchAssistant'));
+const SOC2ComplianceAutomation = lazy(() => import('./pages/SOC2ComplianceAutomation'));
+const QuantumNeuralNetworkPlatform = lazy(() => import('./pages/QuantumNeuralNetworkPlatform'));
+const AIBusinessSolutions = lazy(() => import('./pages/AIBusinessSolutions'));
 
 // Solutions pages
 const EnterpriseSolutions = lazy(() => import('./pages/solutions/Enterprise'));
@@ -127,6 +132,11 @@ const App = () => {
                     {/* Solutions Routes */}
                     <Route path="/services/enterprise" element={<EnterpriseSolutions />} />
                     <Route path="/solutions/healthcare" element={<HealthcareSolutions />} />
+                    <Route path="/sitemap" element={<Sitemap />} />
+                    <Route path="/ai-research-assistant" element={<AIResearchAssistant />} />
+                    <Route path="/soc2-compliance-automation" element={<SOC2ComplianceAutomation />} />
+                    <Route path="/quantum-neural-network-platform" element={<QuantumNeuralNetworkPlatform />} />
+                    <Route path="/ai-business-solutions" element={<AIBusinessSolutions />} />
                   </Routes>
                 </Suspense>
               </main>
