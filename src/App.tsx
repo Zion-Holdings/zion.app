@@ -8,6 +8,7 @@ import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
+import { PageLoader } from "./components/ui/LoadingSpinner";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -76,8 +77,8 @@ const App = () => {
     <WhitelabelProvider>
       <ThemeProvider defaultTheme="dark">
         <Header />
-        <main className="min-h-screen">
-          <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
+        <main className="min-h-screen pt-20">
+          <Suspense fallback={<PageLoader />}>
             <Routes>
               {baseRoutes.map(({ path, element }) => (
                 <Route key={path} path={path} element={element} />
