@@ -1,0 +1,5 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import React from 'react';
+export function NewsletterSection() {
+    return (_jsx("section", { className: "bg-zion-blue-dark py-16", children: _jsxs("div", { className: "container mx-auto px-4 text-center", children: [_jsx("h2", { className: "text-3xl font-bold text-white mb-4", children: "Stay Updated with Zion Tech Group" }), _jsx("p", { className: "text-zion-cyan mb-8 max-w-2xl mx-auto", children: "Get the latest insights on AI, IT services, and innovative solutions delivered to your inbox." }), _jsx("div", { className: "max-w-md mx-auto", children: _jsxs("div", { className: "flex gap-2", children: [_jsx("input", { type: "email", placeholder: "Enter your email", className: "flex-1 px-4 py-3 rounded-lg border border-zion-blue-light bg-white text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-zion-cyan" }), _jsx("button", { className: "px-6 py-3 bg-zion-cyan text-white font-semibold rounded-lg hover:bg-zion-cyan-light transition-colors", children: "Subscribe" })] }) })] }) }));
+}

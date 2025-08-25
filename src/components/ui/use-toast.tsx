@@ -1,36 +1,55 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 
 interface Toast {
   id: string
-  title?: string
+  title: string
   description?: string
-  variant?: 'default' | 'destructive' | 'success'
+  type?: 'success' | 'error' | 'warning' | 'info'
+  duration?: number
+}
+
+interface ToastOptions {
+  title: string
+  description?: string
+  type?: 'success' | 'error' | 'warning' | 'info'
+  duration?: number
 }
 
 export function useToast() {
   const [toasts, setToasts] = useState<Toast[]>([])
 
-  const toast = ({ title, description, variant = 'default' }: Omit<Toast, 'id'>) => {
+  const addToast = (options: ToastOptions) => {
     const id = Math.random().toString(36).substr(2, 9)
-    const newToast: Toast = { id, title, description, variant }
-    
-    setToasts(prev => [...prev, newToast])
-    
-    // Auto remove after 5 seconds
+    const toast: Toast = {
+      id,
+      title: options.title,
+      description: options.description,
+      type: options.type || 'info',
+      duration: options.duration || 5000
+    }
+
+    setToasts(prev => [...prev, toast])
+
+    // Auto remove toast after duration
     setTimeout(() => {
-      setToasts(prev => prev.filter(toast => toast.id !== id))
-    }, 5000)
-    
+      removeToast(id)
+    }, toast.duration)
+
     return id
   }
 
-  const dismiss = (id: string) => {
+  const removeToast = (id: string) => {
     setToasts(prev => prev.filter(toast => toast.id !== id))
+  }
+
+  const clearToasts = () => {
+    setToasts([])
   }
 
   return {
     toasts,
-    toast,
-    dismiss
+    addToast,
+    removeToast,
+    clearToasts
   }
 }

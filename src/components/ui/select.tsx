@@ -1,122 +1,73 @@
 import React from 'react';
-import { cn } from '@/lib/utils';
 
-interface SelectProps extends React.HTMLAttributes<HTMLDivElement> {
+interface SelectProps {
+  children: React.ReactNode;
+  className?: string;
   value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void;
   onValueChange?: (value: string) => void;
+  disabled?: boolean;
+  defaultValue?: string;
 }
 
-export const Select = React.forwardRef<HTMLDivElement, SelectProps>(
-  ({ className, children, ...props }, ref) => (
-    <div
-      ref={ref}
-      className={cn('relative', className)}
-      {...props}
+export function Select({ 
+  children, 
+  className = '', 
+  value, 
+  onChange, 
+  onValueChange,
+  disabled = false,
+  defaultValue
+}: SelectProps) {
+  const baseClasses = 'flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50';
+  
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    if (onChange) {
+      onChange(e);
+    }
+    if (onValueChange) {
+      onValueChange(e.target.value);
+    }
+  };
+
+  return (
+    <select
+      className={`${baseClasses} ${className}`}
+      value={value}
+      onChange={handleChange}
+      disabled={disabled}
+      defaultValue={defaultValue}
     >
       {children}
-    </div>
-  )
-);
-Select.displayName = 'Select';
-
-interface SelectTriggerProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
-
-export const SelectTrigger = React.forwardRef<HTMLButtonElement, SelectTriggerProps>(
-  ({ className, children, ...props }, ref) => (
-    <button
-      ref={ref}
-      className={cn(
-        'flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </button>
-  )
-);
-SelectTrigger.displayName = 'SelectTrigger';
-
-interface SelectValueProps extends React.HTMLAttributes<HTMLSpanElement> {
-  placeholder?: string;
+    </select>
+  );
 }
 
-export const SelectValue = React.forwardRef<HTMLSpanElement, SelectValueProps>(
-  ({ className, placeholder, ...props }, ref) => (
-    <span
-      ref={ref}
-      className={cn('text-sm', className)}
-      {...props}
-    >
-      {placeholder || 'Select an option'}
-    </span>
-  )
-);
-SelectValue.displayName = 'SelectValue';
-
-interface SelectContentProps extends React.HTMLAttributes<HTMLDivElement> {}
-
-export const SelectContent = React.forwardRef<HTMLDivElement, SelectContentProps>(
-  ({ className, children, ...props }, ref) => (
-    <div
-      ref={ref}
-      className={cn(
-        'absolute top-full left-0 right-0 z-50 mt-1 rounded-md border bg-popover text-popover-foreground shadow-md',
-        className
-      )}
-      {...props}
-    >
-      {children}
-    </div>
-  )
-);
-SelectContent.displayName = 'SelectContent';
-
-interface SelectLabelProps extends React.HTMLAttributes<HTMLDivElement> {}
-
-export const SelectLabel = React.forwardRef<HTMLDivElement, SelectLabelProps>(
-  ({ className, children, ...props }, ref) => (
-    <div
-      ref={ref}
-      className={cn('px-2 py-1.5 text-sm font-semibold', className)}
-      {...props}
-    >
-      {children}
-    </div>
-  )
-);
-SelectLabel.displayName = 'SelectLabel';
-
-interface SelectItemProps extends React.HTMLAttributes<HTMLDivElement> {
+interface SelectItemProps {
+  children: React.ReactNode;
   value: string;
 }
 
-export const SelectItem = React.forwardRef<HTMLDivElement, SelectItemProps>(
-  ({ className, children, value, ...props }, ref) => (
-    <div
-      ref={ref}
-      className={cn(
-        'relative flex w-full cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none hover:bg-accent hover:text-accent-foreground',
-        className
-      )}
-      data-value={value}
-      {...props}
-    >
+export function SelectItem({ children, value }: SelectItemProps) {
+  return (
+    <option value={value}>
+      {children}
+    </option>
+  );
+}
+
+export function SelectTrigger({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+  return (
+    <div className={`flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 ${className}`}>
       {children}
     </div>
-  )
-);
-SelectItem.displayName = 'SelectItem';
+  );
+}
 
-interface SelectSeparatorProps extends React.HTMLAttributes<HTMLDivElement> {}
+export function SelectValue({ placeholder }: { placeholder?: string }) {
+  return <span className="text-sm">{placeholder || 'Select an option'}</span>;
+}
 
-export const SelectSeparator = React.forwardRef<HTMLDivElement, SelectSeparatorProps>(
-  ({ className, ...props }, ref) => (
-    <div
-      ref={ref}
-      className={cn('-mx-1 my-1 h-px bg-muted', className)}
-      {...props}
-    />
-  )
-);
-SelectSeparator.displayName = 'SelectSeparator';
+export function SelectContent({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+  return <div className={`relative ${className}`}>{children}</div>;
+}

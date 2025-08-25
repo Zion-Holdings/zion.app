@@ -2,534 +2,636 @@ export interface MicroSaasService {
   id: string;
   title: string;
   description: string;
-  category: string;
-  pricing: {
-    monthly: number;
-    yearly: number;
-    enterprise: number;
-    currency: string;
-  };
+  category: 'AI' | 'IT' | 'Business' | 'Development' | 'Marketing' | 'Analytics' | 'Security' | 'Automation';
   features: string[];
+  pricing: {
+    plan: string;
+    price: number;
+    currency: string;
+    period: string;
+    features: string[];
+  }[];
   benefits: string[];
   useCases: string[];
   targetAudience: string[];
-  integration: string[];
-  support: string[];
-  link: string;
-  demoLink?: string;
-  rating: number;
-  reviewCount: number;
-  launchDate: string;
-  status: 'live' | 'beta' | 'coming-soon';
-  techStack: string[];
-  compliance: string[];
-  apiAccess: boolean;
-  mobileApp: boolean;
-  whiteLabel: boolean;
+  contactInfo: {
+    email: string;
+    phone: string;
+    website?: string;
+  };
+  status: 'available' | 'coming-soon' | 'beta';
+  tags: string[];
 }
 
 export const MICRO_SAAS_SERVICES: MicroSaasService[] = [
   {
-    id: "zion-ai-chat",
-    title: "Zion AI Chat Assistant",
-    description: "Enterprise-grade AI chat assistant with custom knowledge base integration, multi-language support, and advanced analytics dashboard.",
-    category: "AI & Chatbots",
-    pricing: {
-      monthly: 99,
-      yearly: 990,
-      enterprise: 2999,
-      currency: "$"
-    },
+    id: 'ai-content-generator',
+    title: 'AI Content Generator Pro',
+    description: 'Advanced AI-powered content creation platform for blogs, social media, and marketing materials with SEO optimization and brand voice consistency.',
+    category: 'AI',
     features: [
-      "Custom knowledge base training",
-      "Multi-language support (50+ languages)",
-      "Advanced analytics dashboard",
-      "API integration",
-      "White-label solution",
-      "24/7 customer support",
-      "GDPR & SOC2 compliance",
-      "Custom branding options"
+      'Multi-language content generation',
+      'SEO-optimized writing',
+      'Brand voice customization',
+      'Plagiarism detection',
+      'Content scheduling',
+      'Analytics dashboard',
+      'Team collaboration tools',
+      'API integration'
+    ],
+    pricing: [
+      {
+        plan: 'Starter',
+        price: 29,
+        currency: 'USD',
+        period: 'month',
+        features: ['5,000 words/month', 'Basic templates', 'Email support']
+      },
+      {
+        plan: 'Professional',
+        price: 79,
+        currency: 'USD',
+        period: 'month',
+        features: ['25,000 words/month', 'Advanced templates', 'Priority support', 'API access']
+      },
+      {
+        plan: 'Enterprise',
+        price: 199,
+        currency: 'USD',
+        period: 'month',
+        features: ['Unlimited words', 'Custom templates', 'Dedicated support', 'White-label options']
+      }
     ],
     benefits: [
-      "Reduce customer support costs by 60%",
-      "24/7 availability for global customers",
-      "Instant response times under 100ms",
-      "Scalable to handle millions of conversations",
-      "Seamless integration with existing systems"
+      '10x faster content creation',
+      'Improved SEO rankings',
+      'Consistent brand messaging',
+      'Cost-effective content production',
+      '24/7 content generation capability'
     ],
     useCases: [
-      "Customer support automation",
-      "Sales qualification",
-      "Product recommendations",
-      "FAQ handling",
-      "Lead generation"
+      'Blog content creation',
+      'Social media posts',
+      'Marketing copy',
+      'Product descriptions',
+      'Email campaigns'
     ],
-    targetAudience: ["E-commerce", "SaaS companies", "Enterprise", "Customer service teams"],
-    integration: ["Slack", "Discord", "Website", "Mobile apps", "CRM systems"],
-    support: ["24/7 live chat", "Email support", "Video calls", "Documentation", "Training sessions"],
-    link: "https://ziontechgroup.com/ai-chat",
-    demoLink: "https://ziontechgroup.com/ai-chat/demo",
-    rating: 4.9,
-    reviewCount: 247,
-    launchDate: "2024-01-15",
-    status: "live",
-    techStack: ["GPT-4", "React", "Node.js", "PostgreSQL", "Redis"],
-    compliance: ["GDPR", "SOC2", "HIPAA", "CCPA"],
-    apiAccess: true,
-    mobileApp: true,
-    whiteLabel: true
+    targetAudience: ['Content marketers', 'Small businesses', 'Agencies', 'E-commerce stores'],
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950'
+    },
+    status: 'available',
+    tags: ['AI', 'Content Creation', 'SEO', 'Marketing', 'Automation']
   },
   {
-    id: "zion-data-analytics",
-    title: "Zion Data Analytics Platform",
-    description: "Real-time business intelligence platform with AI-powered insights, predictive analytics, and customizable dashboards for data-driven decision making.",
-    category: "Data & Analytics",
-    pricing: {
-      monthly: 149,
-      yearly: 1490,
-      enterprise: 4999,
-      currency: "$"
-    },
+    id: 'smart-inventory-manager',
+    title: 'Smart Inventory Manager',
+    description: 'Intelligent inventory management system with predictive analytics, automated reordering, and real-time tracking for e-commerce and retail businesses.',
+    category: 'Business',
     features: [
-      "Real-time data processing",
-      "AI-powered predictive analytics",
-      "Custom dashboard builder",
-      "Data visualization library",
-      "Automated reporting",
-      "Data source connectors",
-      "Advanced filtering",
-      "Export capabilities"
+      'Real-time inventory tracking',
+      'Predictive demand forecasting',
+      'Automated reorder points',
+      'Multi-location support',
+      'Barcode scanning',
+      'Supplier management',
+      'Cost optimization',
+      'Mobile app access'
+    ],
+    pricing: [
+      {
+        plan: 'Basic',
+        price: 49,
+        currency: 'USD',
+        period: 'month',
+        features: ['Up to 1,000 SKUs', 'Basic reporting', 'Email support']
+      },
+      {
+        plan: 'Professional',
+        price: 99,
+        currency: 'USD',
+        period: 'month',
+        features: ['Up to 10,000 SKUs', 'Advanced analytics', 'Phone support', 'API access']
+      },
+      {
+        plan: 'Enterprise',
+        price: 249,
+        currency: 'USD',
+        period: 'month',
+        features: ['Unlimited SKUs', 'Custom integrations', 'Dedicated manager', 'White-label options']
+      }
     ],
     benefits: [
-      "Make data-driven decisions in real-time",
-      "Identify trends before competitors",
-      "Reduce manual reporting by 80%",
-      "Improve operational efficiency",
-      "Predict future business outcomes"
+      'Reduce stockouts by 80%',
+      'Lower inventory costs by 25%',
+      'Improve cash flow',
+      'Automated operations',
+      'Data-driven decisions'
     ],
     useCases: [
-      "Sales performance tracking",
-      "Marketing campaign analysis",
-      "Financial reporting",
-      "Operational metrics",
-      "Customer behavior analysis"
+      'E-commerce stores',
+      'Retail chains',
+      'Manufacturing',
+      'Distribution centers',
+      'Restaurants'
     ],
-    targetAudience: ["Business analysts", "Data scientists", "Executives", "Marketing teams"],
-    integration: ["Google Analytics", "Salesforce", "HubSpot", "Stripe", "Custom APIs"],
-    support: ["Business hours support", "Priority support for enterprise", "Training", "Documentation"],
-    link: "https://ziontechgroup.com/data-analytics",
-    rating: 4.8,
-    reviewCount: 189,
-    launchDate: "2024-02-01",
-    status: "live",
-    techStack: ["Python", "TensorFlow", "React", "D3.js", "Apache Kafka"],
-    compliance: ["GDPR", "SOC2", "ISO 27001"],
-    apiAccess: true,
-    mobileApp: true,
-    whiteLabel: false
+    targetAudience: ['Retailers', 'E-commerce businesses', 'Manufacturers', 'Distributors'],
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950'
+    },
+    status: 'available',
+    tags: ['Inventory', 'Analytics', 'Automation', 'E-commerce', 'Retail']
   },
   {
-    id: "zion-cyber-shield",
-    title: "Zion Cyber Shield",
-    description: "Comprehensive cybersecurity platform with threat detection, vulnerability assessment, and automated incident response for businesses of all sizes.",
-    category: "Cybersecurity",
-    pricing: {
-      monthly: 199,
-      yearly: 1990,
-      enterprise: 7999,
-      currency: "$"
-    },
+    id: 'cyber-security-monitor',
+    title: 'Cyber Security Monitor',
+    description: 'Comprehensive cybersecurity monitoring and threat detection platform for small to medium businesses with real-time alerts and incident response.',
+    category: 'Security',
     features: [
-      "Real-time threat detection",
-      "Vulnerability scanning",
-      "Automated incident response",
-      "Security awareness training",
-      "Compliance reporting",
-      "24/7 security monitoring",
-      "Penetration testing",
-      "Security audit trails"
+      'Real-time threat detection',
+      'Vulnerability scanning',
+      'Incident response automation',
+      'Compliance reporting',
+      'Security awareness training',
+      'Dark web monitoring',
+      '24/7 security operations',
+      'Custom security policies'
+    ],
+    pricing: [
+      {
+        plan: 'Essential',
+        price: 89,
+        currency: 'USD',
+        period: 'month',
+        features: ['Up to 50 users', 'Basic monitoring', 'Email alerts', 'Monthly reports']
+      },
+      {
+        plan: 'Professional',
+        price: 179,
+        currency: 'USD',
+        period: 'month',
+        features: ['Up to 200 users', 'Advanced monitoring', 'Phone alerts', 'Weekly reports', 'Incident response']
+      },
+      {
+        plan: 'Enterprise',
+        price: 399,
+        currency: 'USD',
+        period: 'month',
+        features: ['Unlimited users', 'Full monitoring suite', 'Dedicated team', 'Custom policies', 'Compliance support']
+      }
     ],
     benefits: [
-      "Protect against 99.9% of cyber threats",
-      "Meet compliance requirements automatically",
-      "Reduce security incidents by 85%",
-      "Lower cybersecurity insurance costs",
-      "Peace of mind with 24/7 protection"
+      'Prevent 95% of cyber attacks',
+      'Meet compliance requirements',
+      'Reduce security incidents',
+      'Protect customer data',
+      'Maintain business continuity'
     ],
     useCases: [
-      "Threat prevention",
-      "Compliance management",
-      "Incident response",
-      "Security training",
-      "Risk assessment"
+      'Financial services',
+      'Healthcare',
+      'E-commerce',
+      'Legal firms',
+      'Educational institutions'
     ],
-    targetAudience: ["Small businesses", "Medium enterprises", "Healthcare", "Financial services"],
-    integration: ["Active Directory", "Office 365", "Google Workspace", "Slack", "Jira"],
-    support: ["24/7 security operations center", "Emergency response", "Training", "Compliance consulting"],
-    link: "https://ziontechgroup.com/cyber-shield",
-    rating: 4.9,
-    reviewCount: 156,
-    launchDate: "2024-01-20",
-    status: "live",
-    techStack: ["Machine Learning", "SIEM", "EDR", "Python", "Elasticsearch"],
-    compliance: ["SOC2", "ISO 27001", "HIPAA", "PCI DSS", "GDPR"],
-    apiAccess: true,
-    mobileApp: true,
-    whiteLabel: true
+    targetAudience: ['Small businesses', 'Medium enterprises', 'Healthcare providers', 'Financial services'],
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950'
+    },
+    status: 'available',
+    tags: ['Cybersecurity', 'Threat Detection', 'Compliance', 'Incident Response', 'Monitoring']
   },
   {
-    id: "zion-cloud-manager",
-    title: "Zion Cloud Manager",
-    description: "Multi-cloud management platform that optimizes costs, improves performance, and ensures security across AWS, Azure, Google Cloud, and private clouds.",
-    category: "Cloud Management",
-    pricing: {
-      monthly: 129,
-      yearly: 1290,
-      enterprise: 3999,
-      currency: "$"
-    },
+    id: 'ai-customer-support',
+    title: 'AI Customer Support Hub',
+    description: 'Intelligent customer support platform with AI-powered chatbots, ticket management, and customer analytics for improved customer satisfaction.',
+    category: 'AI',
     features: [
-      "Multi-cloud dashboard",
-      "Cost optimization",
-      "Performance monitoring",
-      "Security compliance",
-      "Automated scaling",
-      "Backup management",
-      "Disaster recovery",
-      "Resource optimization"
+      'AI-powered chatbots',
+      'Multi-channel support',
+      'Ticket management',
+      'Customer analytics',
+      'Knowledge base',
+      'Automated responses',
+      'Sentiment analysis',
+      'Performance metrics'
+    ],
+    pricing: [
+      {
+        plan: 'Starter',
+        price: 39,
+        currency: 'USD',
+        period: 'month',
+        features: ['Up to 100 conversations/month', 'Basic chatbot', 'Email support', 'Standard templates']
+      },
+      {
+        plan: 'Growth',
+        price: 79,
+        currency: 'USD',
+        period: 'month',
+        features: ['Up to 1,000 conversations/month', 'Advanced AI', 'Phone support', 'Custom integrations']
+      },
+      {
+        plan: 'Enterprise',
+        price: 159,
+        currency: 'USD',
+        period: 'month',
+        features: ['Unlimited conversations', 'Custom AI training', 'Dedicated support', 'White-label options']
+      }
     ],
     benefits: [
-      "Reduce cloud costs by 30-40%",
-      "Improve performance by 25%",
-      "Centralized management",
-      "Automated compliance",
-      "Faster deployment"
+      '24/7 customer support',
+      'Reduce response time by 90%',
+      'Improve customer satisfaction',
+      'Lower support costs',
+      'Scalable operations'
     ],
     useCases: [
-      "Cost optimization",
-      "Performance monitoring",
-      "Security management",
-      "Compliance reporting",
-      "Resource planning"
+      'E-commerce support',
+      'SaaS customer service',
+      'Technical support',
+      'Sales inquiries',
+      'General customer service'
     ],
-    targetAudience: ["DevOps teams", "Cloud architects", "IT managers", "Startups"],
-    integration: ["AWS", "Azure", "Google Cloud", "Kubernetes", "Terraform"],
-    support: ["24/7 monitoring", "Cloud consulting", "Migration support", "Training"],
-    link: "https://ziontechgroup.com/cloud-manager",
-    rating: 4.7,
-    reviewCount: 203,
-    launchDate: "2024-02-15",
-    status: "live",
-    techStack: ["Python", "React", "Docker", "Kubernetes", "Terraform"],
-    compliance: ["SOC2", "ISO 27001", "GDPR"],
-    apiAccess: true,
-    mobileApp: false,
-    whiteLabel: false
+    targetAudience: ['E-commerce businesses', 'SaaS companies', 'Service providers', 'Retailers'],
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950'
+    },
+    status: 'available',
+    tags: ['AI', 'Customer Support', 'Chatbots', 'Automation', 'Analytics']
   },
   {
-    id: "zion-dev-ops",
-    title: "Zion DevOps Automation",
-    description: "Complete DevOps automation platform with CI/CD pipelines, infrastructure as code, monitoring, and deployment automation for modern software teams.",
-    category: "DevOps & Automation",
-    pricing: {
-      monthly: 89,
-      yearly: 890,
-      enterprise: 2999,
-      currency: "$"
-    },
+    id: 'data-analytics-platform',
+    title: 'Data Analytics Platform',
+    description: 'Comprehensive data analytics and business intelligence platform with real-time dashboards, predictive analytics, and automated reporting.',
+    category: 'Analytics',
     features: [
-      "CI/CD pipeline automation",
-      "Infrastructure as code",
-      "Container orchestration",
-      "Monitoring & alerting",
-      "Deployment automation",
-      "Version control integration",
-      "Testing automation",
-      "Performance optimization"
+      'Real-time dashboards',
+      'Predictive analytics',
+      'Data visualization',
+      'Automated reporting',
+      'Data integration',
+      'Custom metrics',
+      'Mobile access',
+      'Team collaboration'
+    ],
+    pricing: [
+      {
+        plan: 'Analyst',
+        price: 59,
+        currency: 'USD',
+        period: 'month',
+        features: ['Up to 5 data sources', 'Basic dashboards', 'Standard reports', 'Email support']
+      },
+      {
+        plan: 'Business',
+        price: 129,
+        currency: 'USD',
+        period: 'month',
+        features: ['Up to 20 data sources', 'Advanced analytics', 'Custom reports', 'Phone support', 'API access']
+      },
+      {
+        plan: 'Enterprise',
+        price: 299,
+        currency: 'USD',
+        period: 'month',
+        features: ['Unlimited data sources', 'Custom analytics', 'Dedicated analyst', 'White-label options']
+      }
     ],
     benefits: [
-      "Deploy 10x faster",
-      "Reduce deployment errors by 90%",
-      "Automate repetitive tasks",
-      "Improve team productivity",
-      "Faster time to market"
+      'Make data-driven decisions',
+      'Identify growth opportunities',
+      'Optimize operations',
+      'Improve customer insights',
+      'Automate reporting processes'
     ],
     useCases: [
-      "Continuous integration",
-      "Automated deployment",
-      "Infrastructure management",
-      "Testing automation",
-      "Performance monitoring"
+      'Business performance tracking',
+      'Customer behavior analysis',
+      'Operational optimization',
+      'Financial reporting',
+      'Marketing campaign analysis'
     ],
-    targetAudience: ["Development teams", "DevOps engineers", "Startups", "Enterprise IT"],
-    integration: ["GitHub", "GitLab", "Jenkins", "Docker", "Kubernetes"],
-    support: ["Community support", "Premium support", "Training", "Documentation"],
-    link: "https://ziontechgroup.com/devops",
-    rating: 4.8,
-    reviewCount: 178,
-    launchDate: "2024-03-01",
-    status: "live",
-    techStack: ["Go", "React", "Docker", "Kubernetes", "Prometheus"],
-    compliance: ["SOC2", "GDPR"],
-    apiAccess: true,
-    mobileApp: false,
-    whiteLabel: false
+    targetAudience: ['Business owners', 'Data analysts', 'Marketing teams', 'Operations managers'],
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950'
+    },
+    status: 'available',
+    tags: ['Analytics', 'Business Intelligence', 'Data Visualization', 'Reporting', 'Predictive Analytics']
   },
   {
-    id: "zion-ai-content",
-    title: "Zion AI Content Creator",
-    description: "AI-powered content creation platform that generates high-quality articles, social media posts, marketing copy, and creative content in multiple languages.",
-    category: "Content Creation",
-    pricing: {
-      monthly: 79,
-      yearly: 790,
-      enterprise: 2499,
-      currency: "$"
-    },
+    id: 'workflow-automation',
+    title: 'Workflow Automation Suite',
+    description: 'Powerful workflow automation platform that streamlines business processes, reduces manual work, and improves operational efficiency.',
+    category: 'Automation',
     features: [
-      "AI content generation",
-      "Multi-language support",
-      "SEO optimization",
-      "Content templates",
-      "Brand voice customization",
-      "Plagiarism detection",
-      "Content scheduling",
-      "Performance analytics"
+      'Visual workflow builder',
+      'Process automation',
+      'Integration connectors',
+      'Approval workflows',
+      'Task management',
+      'Performance analytics',
+      'Mobile app',
+      'Custom triggers'
+    ],
+    pricing: [
+      {
+        plan: 'Starter',
+        price: 45,
+        currency: 'USD',
+        period: 'month',
+        features: ['Up to 10 workflows', 'Basic automation', 'Standard templates', 'Email support']
+      },
+      {
+        plan: 'Professional',
+        price: 95,
+        currency: 'USD',
+        period: 'month',
+        features: ['Up to 50 workflows', 'Advanced automation', 'Custom integrations', 'Phone support']
+      },
+      {
+        plan: 'Enterprise',
+        price: 199,
+        currency: 'USD',
+        period: 'month',
+        features: ['Unlimited workflows', 'Custom development', 'Dedicated support', 'White-label options']
+      }
     ],
     benefits: [
-      "Create content 10x faster",
-      "Improve SEO rankings",
-      "Maintain consistent brand voice",
-      "Reduce content creation costs",
-      "Scale content marketing efforts"
+      'Reduce manual work by 70%',
+      'Improve process efficiency',
+      'Reduce errors and delays',
+      'Better team collaboration',
+      'Scalable operations'
     ],
     useCases: [
-      "Blog writing",
-      "Social media content",
-      "Marketing copy",
-      "Product descriptions",
-      "Email campaigns"
+      'HR onboarding',
+      'Invoice processing',
+      'Customer onboarding',
+      'Project management',
+      'Quality control'
     ],
-    targetAudience: ["Marketing teams", "Content creators", "Agencies", "Small businesses"],
-    integration: ["WordPress", "Shopify", "Mailchimp", "Hootsuite", "Custom APIs"],
-    support: ["Email support", "Live chat", "Training", "Content strategy consulting"],
-    link: "https://ziontechgroup.com/ai-content",
-    rating: 4.6,
-    reviewCount: 312,
-    launchDate: "2024-01-10",
-    status: "live",
-    techStack: ["GPT-4", "Claude", "React", "Node.js", "MongoDB"],
-    compliance: ["GDPR", "CCPA"],
-    apiAccess: true,
-    mobileApp: true,
-    whiteLabel: true
+    targetAudience: ['Operations managers', 'HR professionals', 'Project managers', 'Business analysts'],
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950'
+    },
+    status: 'available',
+    tags: ['Automation', 'Workflow', 'Process Management', 'Integration', 'Efficiency']
   },
   {
-    id: "zion-api-gateway",
-    title: "Zion API Gateway",
-    description: "Enterprise API gateway with rate limiting, authentication, monitoring, and analytics for building scalable microservices and managing API ecosystems.",
-    category: "API Management",
-    pricing: {
-      monthly: 119,
-      yearly: 1190,
-      enterprise: 3999,
-      currency: "$"
-    },
+    id: 'seo-optimization-tool',
+    title: 'SEO Optimization Pro',
+    description: 'Comprehensive SEO optimization platform with keyword research, competitor analysis, and automated optimization recommendations.',
+    category: 'Marketing',
     features: [
-      "API rate limiting",
-      "Authentication & authorization",
-      "Request/response transformation",
-      "API analytics",
-      "Developer portal",
-      "API versioning",
-      "Load balancing",
-      "Security policies"
+      'Keyword research tools',
+      'Competitor analysis',
+      'Site audit tools',
+      'Ranking tracking',
+      'Content optimization',
+      'Technical SEO',
+      'Local SEO',
+      'Performance monitoring'
+    ],
+    pricing: [
+      {
+        plan: 'Basic',
+        price: 69,
+        currency: 'USD',
+        period: 'month',
+        features: ['Up to 5 websites', 'Basic SEO tools', 'Monthly reports', 'Email support']
+      },
+      {
+        plan: 'Professional',
+        price: 149,
+        currency: 'USD',
+        period: 'month',
+        features: ['Up to 20 websites', 'Advanced tools', 'Weekly reports', 'Phone support', 'API access']
+      },
+      {
+        plan: 'Enterprise',
+        price: 299,
+        currency: 'USD',
+        period: 'month',
+        features: ['Unlimited websites', 'Custom tools', 'Daily reports', 'Dedicated support', 'White-label options']
+      }
     ],
     benefits: [
-      "Secure API access",
-      "Monitor API usage",
-      "Scale microservices",
-      "Reduce development time",
-      "Improve API performance"
+      'Improve search rankings',
+      'Increase organic traffic',
+      'Better user experience',
+      'Competitive advantage',
+      'ROI-focused optimization'
     ],
     useCases: [
-      "Microservices architecture",
-      "Third-party integrations",
-      "Mobile app backends",
-      "Partner APIs",
-      "Internal API management"
+      'Website optimization',
+      'Local business SEO',
+      'E-commerce SEO',
+      'Content marketing',
+      'Competitive analysis'
     ],
-    targetAudience: ["Developers", "Architects", "DevOps teams", "Enterprise"],
-    integration: ["Kong", "AWS API Gateway", "Azure API Management", "Custom APIs"],
-    support: ["Developer support", "Enterprise support", "Documentation", "Training"],
-    link: "https://ziontechgroup.com/api-gateway",
-    rating: 4.7,
-    reviewCount: 145,
-    launchDate: "2024-02-20",
-    status: "live",
-    techStack: ["Go", "React", "Redis", "PostgreSQL", "Docker"],
-    compliance: ["SOC2", "ISO 27001", "GDPR"],
-    apiAccess: true,
-    mobileApp: false,
-    whiteLabel: true
+    targetAudience: ['Digital marketers', 'Website owners', 'E-commerce businesses', 'Local businesses'],
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950'
+    },
+    status: 'available',
+    tags: ['SEO', 'Digital Marketing', 'Keyword Research', 'Competitor Analysis', 'Website Optimization']
   },
   {
-    id: "zion-iot-platform",
-    title: "Zion IoT Platform",
-    description: "Comprehensive IoT platform for device management, data collection, real-time analytics, and automation across connected devices and sensors.",
-    category: "IoT & Edge Computing",
-    pricing: {
-      monthly: 159,
-      yearly: 1590,
-      enterprise: 5999,
-      currency: "$"
-    },
+    id: 'cloud-migration-service',
+    title: 'Cloud Migration Service',
+    description: 'Professional cloud migration and optimization service helping businesses move to the cloud with minimal downtime and maximum efficiency.',
+    category: 'IT',
     features: [
-      "Device management",
-      "Real-time data collection",
-      "Edge computing",
-      "Predictive analytics",
-      "Automation rules",
-      "Device provisioning",
-      "Security protocols",
-      "Scalable infrastructure"
+      'Migration planning',
+      'Infrastructure assessment',
+      'Data migration',
+      'Application optimization',
+      'Performance testing',
+      'Security implementation',
+      'Training and support',
+      'Ongoing maintenance'
+    ],
+    pricing: [
+      {
+        plan: 'Small Business',
+        price: 2999,
+        currency: 'USD',
+        period: 'one-time',
+        features: ['Up to 10 servers', 'Basic migration', '30 days support', 'Documentation']
+      },
+      {
+        plan: 'Medium Business',
+        price: 7999,
+        currency: 'USD',
+        period: 'one-time',
+        features: ['Up to 50 servers', 'Advanced migration', '90 days support', 'Performance optimization']
+      },
+      {
+        plan: 'Enterprise',
+        price: 19999,
+        currency: 'USD',
+        period: 'one-time',
+        features: ['Unlimited servers', 'Custom migration', '1 year support', 'White-label options', 'Custom training']
+      }
     ],
     benefits: [
-      "Connect thousands of devices",
-      "Real-time insights",
-      "Automate operations",
-      "Reduce manual monitoring",
-      "Improve efficiency"
+      'Reduce infrastructure costs',
+      'Improve scalability',
+      'Enhanced security',
+      'Better performance',
+      'Disaster recovery'
     ],
     useCases: [
-      "Smart cities",
-      "Industrial IoT",
-      "Smart homes",
-      "Asset tracking",
-      "Environmental monitoring"
+      'Server migration',
+      'Application modernization',
+      'Data center consolidation',
+      'Disaster recovery setup',
+      'Performance optimization'
     ],
-    targetAudience: ["Manufacturing", "Utilities", "Smart cities", "Retail", "Healthcare"],
-    integration: ["MQTT", "HTTP", "CoAP", "LoRaWAN", "Custom protocols"],
-    support: ["24/7 monitoring", "Field support", "Training", "Custom development"],
-    link: "https://ziontechgroup.com/iot-platform",
-    rating: 4.8,
-    reviewCount: 98,
-    launchDate: "2024-03-10",
-    status: "beta",
-    techStack: ["Python", "React", "InfluxDB", "Kafka", "Docker"],
-    compliance: ["SOC2", "ISO 27001", "GDPR"],
-    apiAccess: true,
-    mobileApp: true,
-    whiteLabel: true
+    targetAudience: ['IT managers', 'System administrators', 'Business owners', 'Operations managers'],
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950'
+    },
+    status: 'available',
+    tags: ['Cloud Migration', 'Infrastructure', 'DevOps', 'Performance', 'Security']
   },
   {
-    id: "zion-blockchain",
-    title: "Zion Blockchain Solutions",
-    description: "Enterprise blockchain platform for smart contracts, decentralized applications, and secure digital asset management with compliance and scalability.",
-    category: "Blockchain & Web3",
-    pricing: {
-      monthly: 199,
-      yearly: 1990,
-      enterprise: 7999,
-      currency: "$"
-    },
+    id: 'mobile-app-development',
+    title: 'Mobile App Development',
+    description: 'Custom mobile application development service for iOS and Android platforms with modern UI/UX design and robust backend integration.',
+    category: 'Development',
     features: [
-      "Smart contract development",
-      "DApp deployment",
-      "Digital asset management",
-      "Compliance tools",
-      "Scalability solutions",
-      "Cross-chain interoperability",
-      "Security auditing",
-      "Regulatory compliance"
+      'Native iOS development',
+      'Native Android development',
+      'Cross-platform solutions',
+      'UI/UX design',
+      'Backend integration',
+      'Testing and QA',
+      'App store submission',
+      'Maintenance and updates'
+    ],
+    pricing: [
+      {
+        plan: 'Basic App',
+        price: 15000,
+        currency: 'USD',
+        period: 'one-time',
+        features: ['Single platform', 'Basic features', 'Standard design', '3 months support']
+      },
+      {
+        plan: 'Professional App',
+        price: 35000,
+        currency: 'USD',
+        period: 'one-time',
+        features: ['Both platforms', 'Advanced features', 'Custom design', '6 months support', 'Backend integration']
+      },
+      {
+        plan: 'Enterprise App',
+        price: 75000,
+        currency: 'USD',
+        period: 'one-time',
+        features: ['Multi-platform', 'Complex features', 'Premium design', '1 year support', 'Custom backend', 'White-label options']
+      }
     ],
     benefits: [
-      "Transparent transactions",
-      "Reduced fraud",
-      "Automated compliance",
-      "Lower transaction costs",
-      "Enhanced security"
+      'Professional mobile presence',
+      'Improved customer engagement',
+      'Increased brand visibility',
+      'Better user experience',
+      'Competitive advantage'
     ],
     useCases: [
-      "Supply chain tracking",
-      "Digital identity",
-      "Tokenization",
-      "DeFi applications",
-      "NFT marketplaces"
+      'E-commerce apps',
+      'Business tools',
+      'Customer portals',
+      'Service delivery',
+      'Brand engagement'
     ],
-    targetAudience: ["Financial services", "Supply chain", "Healthcare", "Real estate"],
-    integration: ["Ethereum", "Polygon", "Solana", "Custom blockchains"],
-    support: ["Blockchain consulting", "Smart contract auditing", "Training", "Legal compliance"],
-    link: "https://ziontechgroup.com/blockchain",
-    rating: 4.9,
-    reviewCount: 67,
-    launchDate: "2024-02-28",
-    status: "beta",
-    techStack: ["Solidity", "React", "Node.js", "IPFS", "Web3.js"],
-    compliance: ["GDPR", "CCPA", "Regulatory frameworks"],
-    apiAccess: true,
-    mobileApp: true,
-    whiteLabel: true
+    targetAudience: ['Business owners', 'Startups', 'Enterprises', 'Service providers'],
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950'
+    },
+    status: 'available',
+    tags: ['Mobile Development', 'iOS', 'Android', 'UI/UX Design', 'App Development']
   },
   {
-    id: "zion-quantum",
-    title: "Zion Quantum Computing",
-    description: "Quantum computing platform for optimization problems, cryptography, and scientific simulations with access to leading quantum hardware providers.",
-    category: "Quantum Computing",
-    pricing: {
-      monthly: 299,
-      yearly: 2990,
-      enterprise: 9999,
-      currency: "$"
-    },
+    id: 'ai-business-intelligence',
+    title: 'AI Business Intelligence',
+    description: 'Advanced AI-powered business intelligence platform providing predictive analytics, automated insights, and actionable recommendations.',
+    category: 'AI',
     features: [
-      "Quantum algorithm library",
-      "Hardware access",
-      "Optimization solvers",
-      "Cryptography tools",
-      "Simulation capabilities",
-      "Hybrid classical-quantum",
-      "Performance benchmarking",
-      "Expert consultation"
+      'Predictive analytics',
+      'Machine learning models',
+      'Natural language queries',
+      'Automated insights',
+      'Custom dashboards',
+      'Data integration',
+      'Real-time monitoring',
+      'Collaborative analytics'
+    ],
+    pricing: [
+      {
+        plan: 'Analyst',
+        price: 89,
+        currency: 'USD',
+        period: 'month',
+        features: ['Basic AI insights', 'Standard dashboards', 'Email support', 'Monthly reports']
+      },
+      {
+        plan: 'Business',
+        price: 189,
+        currency: 'USD',
+        period: 'month',
+        features: ['Advanced AI models', 'Custom dashboards', 'Phone support', 'Weekly insights', 'API access']
+      },
+      {
+        plan: 'Enterprise',
+        price: 399,
+        currency: 'USD',
+        period: 'month',
+        features: ['Custom AI models', 'Advanced analytics', 'Dedicated analyst', 'White-label options', 'Custom training']
+      }
     ],
     benefits: [
-      "Solve complex optimization problems",
-      "Future-proof cryptography",
-      "Accelerate scientific research",
-      "Competitive advantage",
-      "Access to cutting-edge technology"
+      'Predict future trends',
+      'Automate decision making',
+      'Identify opportunities',
+      'Reduce risks',
+      'Improve efficiency'
     ],
     useCases: [
-      "Financial modeling",
-      "Drug discovery",
-      "Logistics optimization",
-      "Cryptography",
-      "Machine learning"
+      'Sales forecasting',
+      'Customer behavior analysis',
+      'Risk assessment',
+      'Operational optimization',
+      'Market analysis'
     ],
-    targetAudience: ["Research institutions", "Financial services", "Pharmaceuticals", "Government"],
-    integration: ["IBM Quantum", "Google Quantum", "Microsoft Azure Quantum", "Custom APIs"],
-    support: ["Quantum consulting", "Algorithm development", "Training", "Research collaboration"],
-    link: "https://ziontechgroup.com/quantum",
-    rating: 4.9,
-    reviewCount: 34,
-    launchDate: "2024-04-01",
-    status: "coming-soon",
-    techStack: ["Qiskit", "Cirq", "Q#", "Python", "Julia"],
-    compliance: ["Research standards", "Security protocols"],
-    apiAccess: true,
-    mobileApp: false,
-    whiteLabel: false
+    targetAudience: ['Business analysts', 'Data scientists', 'Executives', 'Operations managers'],
+    contactInfo: {
+      email: 'kleber@ziontechgroup.com',
+      phone: '+1 302 464 0950'
+    },
+    status: 'available',
+    tags: ['AI', 'Business Intelligence', 'Predictive Analytics', 'Machine Learning', 'Data Science']
   }
 ];
 
-export const getServiceByCategory = (category: string): MicroSaasService[] => {
-  return MICRO_SAAS_SERVICES.filter(service => service.category === category);
+export const getServiceByCategory = (category: string) => {
+  return MICRO_SAAS_SERVICES.filter(service => service.category.toLowerCase() === category.toLowerCase());
 };
 
-export const getFeaturedServices = (): MicroSaasService[] => {
-  return MICRO_SAAS_SERVICES.filter(service => service.status === 'live').slice(0, 6);
-};
 
-export const getServiceById = (id: string): MicroSaasService | undefined => {
+
+export const getServiceById = (id: string) => {
   return MICRO_SAAS_SERVICES.find(service => service.id === id);
 };

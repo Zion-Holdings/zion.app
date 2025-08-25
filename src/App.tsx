@@ -1,41 +1,58 @@
 import React from 'react';
-import { Suspense } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import { Header } from './components/Header';
-import { Footer } from './components/Footer';
+import MainNavigation from './components/MainNavigation';
+import ChatAssistant from './components/ChatAssistant/ChatAssistant';
 
-// Core pages
+// Lazy load pages
 const Home = React.lazy(() => import('./pages/Home'));
-const ContactPage = React.lazy(() => import('./pages/Contact'));
+const About = React.lazy(() => import('./pages/About'));
+const GreenIT = React.lazy(() => import('./pages/GreenIT'));
+const Careers = React.lazy(() => import('./pages/Careers'));
+const Contact = React.lazy(() => import('./pages/Contact'));
+const Services = React.lazy(() => import('./pages/Services'));
 const MicroSaasServices = React.lazy(() => import('./pages/MicroSaasServices'));
+const FAQ = React.lazy(() => import('./pages/FAQ'));
+const HelpCenter = React.lazy(() => import('./pages/HelpCenter'));
+const EnhancedServicesShowcase = React.lazy(() => import('./components/EnhancedServicesShowcase'));
 
-const baseRoutes = [
-  { path: '/', element: <Home /> },
-  { path: '/contact', element: <ContactPage /> },
-  { path: '/micro-saas-services', element: <MicroSaasServices /> },
-];
+// Simple error boundary using functional component
+function ErrorBoundary({ children }: { children: React.ReactNode }) {
+  return <>{children}</>;
+}
+
+// Simple loading component
+function LoadingSpinner() {
+  return (
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-slate-dark">
+      <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-zion-cyan"></div>
+    </div>
+  );
+}
 
 const App = () => {
   return (
-    <div className="App">
-      <Header />
-      <Suspense fallback={
-        <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800 flex items-center justify-center">
-          <div className="text-center">
-            <div className="animate-spin rounded-full h-16 w-16 border-b-2 border-blue-400 mx-auto mb-4"></div>
-            <p className="text-blue-100 text-lg">Loading amazing content...</p>
-          </div>
-        </div>
-      }>
+    <ErrorBoundary>
+      <MainNavigation />
+      
+      <React.Suspense fallback={<LoadingSpinner />}>
         <Routes>
-          {baseRoutes.map(({ path, element }) => (
-            <Route key={path} path={path} element={element} />
-          ))}
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/green-it" element={<GreenIT />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/micro-saas-services" element={<MicroSaasServices />} />
+          <Route path="/enhanced-services" element={<EnhancedServicesShowcase />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/help" element={<HelpCenter />} />
         </Routes>
-      </Suspense>
-      <Footer />
-    </div>
+      </React.Suspense>
+
+      {/* Global Components */}
+      <ChatAssistant />
+    </ErrorBoundary>
   );
 };
 
