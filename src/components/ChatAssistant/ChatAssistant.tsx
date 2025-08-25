@@ -45,7 +45,7 @@ const ChatAssistant: React.FC = () => {
       timestamp: new Date()
     };
 
-    setMessages((prev: Message[]) => [...prev, userMessage]);
+    setMessages(prev => [...prev, userMessage]);
     setInputValue('');
     setIsTyping(true);
 
@@ -57,7 +57,7 @@ const ChatAssistant: React.FC = () => {
         sender: 'bot',
         timestamp: new Date()
       };
-      setMessages((prev: Message[]) => [...prev, botMessage]);
+      setMessages(prev => [...prev, botMessage]);
       setIsTyping(false);
     }, 1000 + Math.random() * 2000);
   };
