@@ -1,6 +1,5 @@
 
 
-import React from 'react';
 import { EnhancedServicesShowcase } from '../components/EnhancedServicesShowcase';
 import '../styles/futuristic.css';
 

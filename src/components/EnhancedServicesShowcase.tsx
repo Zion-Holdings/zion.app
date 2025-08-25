@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { ENHANCED_SERVICES, SERVICE_CATEGORIES, PRICING_TIERS } from '../data/enhancedServices';
 import '../styles/futuristic.css';
 
