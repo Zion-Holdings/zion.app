@@ -17,9 +17,8 @@ export function Header() {
 
   const navigationItems = [
     { path: '/', label: 'Home', icon: '🏠' },
-    { path: '/services', label: 'Services', icon: '⚡' },
-    { path: '/comprehensive-services', label: 'All Services', icon: '🚀' },
-    { path: '/services-comparison', label: 'Compare', icon: '📊' },
+    { path: '/enhanced-services', label: 'All Services', icon: '🚀' },
+    { path: '/services', label: 'Core Services', icon: '⚡' },
     { path: '/it-onsite-services', label: 'Onsite IT', icon: '🔧' }
   ];
 

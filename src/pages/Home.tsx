@@ -1,6 +1,7 @@
 
 
-import { ServicesShowcase } from '../components/ServicesShowcase';
+import { Link } from 'react-router-dom';
+import EnhancedServicesShowcase from '../components/EnhancedServicesShowcase';
 
 export function Home() {
   return (
@@ -33,9 +34,9 @@ export function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl font-semibold text-lg hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/30 hover:shadow-cyan-400/50">
-                Explore Services
-              </button>
+              <Link to="/enhanced-services" className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl font-semibold text-lg hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/30 hover:shadow-cyan-400/50">
+                Explore All Services
+              </Link>
               <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 rounded-xl font-semibold text-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105">
                 Get Free Consultation
               </button>
@@ -65,7 +66,7 @@ export function Home() {
       </section>
 
       {/* Services Showcase */}
-      <ServicesShowcase />
+      <EnhancedServicesShowcase />
 
       {/* Contact Section */}
       <section className="py-20 px-4 bg-gradient-to-r from-gray-900/50 to-black/50">
