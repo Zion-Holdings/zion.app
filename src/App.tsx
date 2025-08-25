@@ -17,6 +17,7 @@ import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
 import { ErrorBoundary } from './components/ErrorBoundary';
+import { PerformanceMonitor } from './components/PerformanceMonitor';
 
 // Enhanced lazy loading with preloading hints
 const Home = lazy(() => import('./pages/Home'));
@@ -50,7 +51,7 @@ const Events = lazy(() => import('./pages/Events'));
 const Webinars = lazy(() => import('./pages/Webinars'));
 const Careers = lazy(() => import('./pages/Careers'));
 
-// Loading Component
+// Loading Component with Better UX
 const LoadingSpinner = () => (
   <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
     <div className="text-center">
@@ -125,6 +126,13 @@ const App = () => {
               
               {/* AI Chatbot - Always Available */}
               <AIChatbot />
+              
+              {/* Performance Monitor - Production Mode */}
+              <PerformanceMonitor 
+                showMetrics={import.meta.env.PROD}
+                logToConsole={true}
+                sendToAnalytics={import.meta.env.PROD}
+              />
               
               {/* Collaborative Text Editor - Development Mode */}
               {import.meta.env.DEV && (
