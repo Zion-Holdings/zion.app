@@ -1,6 +1,26 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Sidebar from './Sidebar';
+import { 
+  Menu, 
+  X, 
+  ChevronDown, 
+  Search, 
+  Phone, 
+  Mail, 
+  MapPin,
+  Brain,
+  Users,
+  Target,
+  Shield,
+  Zap,
+  Building,
+  Cpu,
+  Globe,
+  Rocket,
+  Star,
+  ArrowRight
+} from 'lucide-react';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,7 +56,7 @@ export function Header() {
     },
     { 
       path: '/services', 
-      label: 'AI Services', 
+      label: 'Services', 
       icon: '🤖',
       description: 'Explore our AI service offerings',
       ariaLabel: 'View AI services and solutions'
@@ -66,15 +86,8 @@ export function Header() {
       path: '/careers', 
       label: 'Careers', 
       icon: '🚀',
-      description: 'Join our team',
-      ariaLabel: 'Explore career opportunities'
-    },
-    { 
-      path: '/blog', 
-      label: 'Blog', 
-      icon: '📝',
-      description: 'Latest insights and news',
-      ariaLabel: 'Read our latest blog posts'
+      description: 'Join our innovative team',
+      ariaLabel: 'View career opportunities'
     },
     { 
       path: '/contact', 
@@ -88,31 +101,39 @@ export function Header() {
   const serviceCategories = [
     {
       title: 'AI & Machine Learning',
+      icon: Brain,
+      description: 'Intelligent solutions for modern businesses',
       services: [
-        { name: 'AI Business Intelligence', path: '/services#ai-bi' },
-        { name: 'AI Marketing Automation', path: '/services#ai-marketing' },
-        { name: 'AI HR & Recruitment', path: '/services#ai-hr' },
-        { name: 'AI Legal Tech', path: '/services#ai-legal' }
+        { name: 'AI-Powered CRM', path: '/services#ai-crm', description: 'Smart customer management' },
+        { name: 'Predictive Analytics', path: '/services#analytics', description: 'Data-driven insights' },
+        { name: 'Natural Language Processing', path: '/services#nlp', description: 'Text and speech analysis' },
+        { name: 'Computer Vision', path: '/services#vision', description: 'Image recognition solutions' }
       ]
     },
     {
       title: 'Cybersecurity',
+      icon: Shield,
+      description: 'Protect your digital assets with advanced security',
       services: [
-        { name: 'Quantum-Safe Security', path: '/services#quantum-security' },
-        { name: 'Security Assessment', path: '/services#security-assessment' },
-        { name: 'Compliance & Audit', path: '/services#compliance' }
+        { name: 'Threat Detection', path: '/services#threat-detection', description: 'Real-time security monitoring' },
+        { name: 'Vulnerability Assessment', path: '/services#vulnerability', description: 'Comprehensive security audit' },
+        { name: 'Incident Response', path: '/services#incident-response', description: '24/7 security support' },
+        { name: 'Compliance Management', path: '/services#compliance', description: 'Meet regulatory requirements' }
       ]
     },
     {
-      title: 'Cloud & Infrastructure',
+      title: 'Cloud & DevOps',
+      icon: Cpu,
+      description: 'Scalable cloud infrastructure and automation',
       services: [
-        { name: 'Cloud Migration', path: '/services#cloud-migration' },
-        { name: 'Network Infrastructure', path: '/services#network' },
-        { name: 'Managed IT Services', path: '/services#managed-it' }
+        { name: 'Cloud Migration', path: '/cloud-devops', description: 'Seamless cloud transition' },
+        { name: 'DevOps Automation', path: '/services#devops', description: 'Streamlined development' }
       ]
     },
     {
-      title: 'Emerging Tech',
+      title: 'Emerging Technologies',
+      icon: Rocket,
+      description: 'Cutting-edge solutions for tomorrow\'s challenges',
       services: [
         { name: 'Blockchain Solutions', path: '/services#blockchain' },
         { name: 'IoT Integration', path: '/services#iot' },
@@ -217,73 +238,70 @@ export function Header() {
           <div className="hidden lg:block">
             <Link
               to="/contact"
-              className="inline-flex items-center px-6 py-3 border border-transparent text-sm font-medium rounded-lg text-white bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 transition-all duration-200 transform hover:scale-105"
+              className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg hover:shadow-cyan-500/25"
               aria-label="Get started with Zion Tech Group"
             >
               Get Started
-              <span className="ml-2">→</span>
+              <ArrowRight className="ml-2 w-4 h-4" />
             </Link>
           </div>
 
-          {/* Mobile menu button */}
-          <div className="lg:hidden">
-            <button
-              onClick={toggleMenu}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-500 transition-colors duration-200"
-              aria-expanded={isMenuOpen}
-              aria-label="Toggle mobile menu"
-              aria-controls="mobile-menu"
-            >
-              <span className="sr-only">Open main menu</span>
-              {isMenuOpen ? (
-                <span className="text-2xl">✕</span>
-              ) : (
-                <span className="text-2xl">☰</span>
-              )}
-            </button>
-          </div>
+          {/* Mobile Menu Button */}
+          <button
+            onClick={toggleMenu}
+            className="lg:hidden p-2 text-gray-300 hover:text-white transition-colors duration-200"
+            aria-label="Toggle mobile menu"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
+          >
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
       </div>
 
-      {/* Mobile Navigation Menu */}
-      <div
-        id="mobile-menu"
-        className={`lg:hidden transition-all duration-300 ease-in-out ${
-          isMenuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
-        }`}
-        aria-hidden={!isMenuOpen}
-      >
-        <div className="px-2 pt-2 pb-3 space-y-1 bg-black/95 backdrop-blur-md border-t border-gray-800">
-          {navigationItems.map((item) => (
-            <Link
-              key={item.path}
-              to={item.path}
-              className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
-                location.pathname === item.path
-                  ? 'text-cyan-400 bg-cyan-400/10'
-                  : 'text-gray-300 hover:text-white hover:bg-gray-800'
-              }`}
-              aria-label={item.ariaLabel}
-            >
-              <span className="flex items-center space-x-3">
-                <span className="text-xl">{item.icon}</span>
-                <span>{item.label}</span>
-              </span>
-            </Link>
-          ))}
-          
-          {/* Mobile CTA */}
-          <div className="pt-4 pb-3 border-t border-gray-700">
-            <Link
-              to="/contact"
-              className="block w-full text-center px-4 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 transition-colors duration-200"
-              aria-label="Get started with Zion Tech Group"
-            >
-              Get Started
-            </Link>
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div 
+          id="mobile-menu"
+          className="lg:hidden bg-black/95 backdrop-blur-md border-t border-gray-800"
+          role="navigation"
+          aria-label="Mobile navigation"
+        >
+          <div className="px-4 py-6 space-y-4">
+            {navigationItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`block px-3 py-3 rounded-md text-base font-medium transition-colors duration-200 ${
+                  location.pathname === item.path
+                    ? 'text-cyan-400 bg-cyan-400/10'
+                    : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+                aria-label={item.ariaLabel}
+              >
+                <span className="flex items-center space-x-3">
+                  <span className="text-xl">{item.icon}</span>
+                  <span>{item.label}</span>
+                </span>
+                <p className="text-sm text-gray-400 mt-1 ml-8">{item.description}</p>
+              </Link>
+            ))}
+            
+            {/* Mobile CTA */}
+            <div className="pt-4 border-t border-gray-800">
+              <Link
+                to="/contact"
+                className="block w-full text-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white font-semibold rounded-lg transition-all duration-200"
+                onClick={() => setIsMenuOpen(false)}
+                aria-label="Get started with Zion Tech Group"
+              >
+                Get Started
+              </Link>
+            </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Sidebar */}
       <Sidebar isOpen={isSidebarOpen} onClose={toggleSidebar} />
