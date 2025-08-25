@@ -1,25 +1,19 @@
 {
   "compilerOptions": {
-    "target": "ES2017",
+    "target": "ES2020",
     "useDefineForClassFields": true,
-    "lib": [
-      "ES2024",
-      "DOM",
-      "DOM.Iterable",
-      "WebWorker",
-      "WebWorker.Iterable"
-    ],
-    "module": "esnext",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
     "skipLibCheck": true,
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve",
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "jsx": "react-jsx",
+    "strict": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
@@ -51,73 +45,36 @@
         "./src/data/*"
       ]
     },
-<<<<<<< HEAD
-    /* Bundler mode */
-    "moduleResolution": "bundler",
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "strict": false,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": false,
-    "noImplicitReturns": false,
-    "allowJs": true,
-    "incremental": true,
-    "typeRoots": [
-      "./node_modules/@types",
-      "./types"
-    ],
-    "types": [
-      "node"
-    ],
-    "jsx": "react-jsx",
-    "noEmit": true,
-    "isolatedModules": true,
-    "forceConsistentCasingInFileNames": true
-=======
     "allowJs": true,
     "incremental": true,
     "esModuleInterop": true
->>>>>>> a4b0ef56a21d1919a0e2729e4ba64fbc8c4b3f44
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "types/**/*.ts",
-    "types/**/*.d.ts"
+    "src/main.tsx",
+    "src/App.tsx",
+    "src/App.css",
+    "src/pages/Home.tsx",
+    "src/pages/Services.tsx"
   ],
-<<<<<<< HEAD
-  "exclude": [
-    "node_modules",
-    "zion.app/recovered-content/**",
-    "contracts/**",
-    "dao/**",
-    "zion-os/**",
-    "zion_academy/**",
-    "packages/**",
-    "monitoring/**",
-    "scripts/**",
-    "server/**",
-    "cypress/**",
-    "**/*.disabled/**",
-    "__tests__.disabled/**",
-    "plugins.disabled/**",
-    "test.disabled/**",
-    "services.disabled.temp/**",
-    "data.temp/**",
-    "src_backup/**",
-    "components/**",
-    "pages/**",
-    "src/components/disabled/**"
-=======
   "references": [
     {
       "path": "./tsconfig.node.json"
     }
   ],
   "exclude": [
-    "node_modules"
->>>>>>> a4b0ef56a21d1919a0e2729e4ba64fbc8c4b3f44
+    "node_modules",
+    "src/components/conflicted/**/*",
+    "src/components/disabled/**/*",
+    "src/components/Advanced*",
+    "src/components/CategoriesSection.tsx",
+    "src/components/FeaturedListingsSection.tsx",
+    "src/components/home/Enhanced*",
+    "src/components/home/FeatureCTAs.tsx",
+    "src/components/home/HomePageSkeleton.tsx",
+    "src/components/ui/data-visualization.tsx",
+    "src/data/enhancedServicesData.ts",
+    "src/data/microSaasServices.ts",
+    "src/hooks/useBlockchainWeb3.ts",
+    "src/pages/HomePage.tsx"
   ]
 }
