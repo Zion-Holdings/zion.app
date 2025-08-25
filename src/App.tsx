@@ -33,6 +33,11 @@ const CloudDevOps = lazy(() => import('./pages/CloudDevOps'));
 const EnterpriseSolutionsPage = lazy(() => import('./pages/EnterpriseSolutions'));
 const DigitalTransformation = lazy(() => import('./pages/DigitalTransformation'));
 
+// Advanced AI and IT Services
+const AdvancedAIServices = lazy(() => import('./pages/services/AdvancedAIServices'));
+const SpecializedITServices = lazy(() => import('./pages/services/SpecializedITServices'));
+const InnovativeMicroSAAS = lazy(() => import('./pages/services/InnovativeMicroSAAS'));
+
 // Our enhanced service pages
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
@@ -103,6 +108,11 @@ const App = () => {
                     <Route path="/cloud-devops" element={<CloudDevOps />} />
                     <Route path="/enterprise-solutions" element={<EnterpriseSolutionsPage />} />
                     <Route path="/digital-transformation" element={<DigitalTransformation />} />
+                    
+                    {/* Advanced AI and IT Services Routes */}
+                    <Route path="/services/advanced-ai-services" element={<AdvancedAIServices />} />
+                    <Route path="/services/specialized-it-services" element={<SpecializedITServices />} />
+                    <Route path="/services/innovative-micro-saas" element={<InnovativeMicroSAAS />} />
                     
                     {/* Our enhanced service routes */}
                     <Route path="/about" element={<About />} />
