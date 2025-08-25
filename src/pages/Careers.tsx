@@ -1,51 +1,24 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  MapPin, 
-  Clock, 
-  Users, 
-  Zap, 
-  Brain, 
-  Globe, 
-  Rocket, 
-  Heart, 
-  Star,
-  ArrowRight,
-  CheckCircle,
-  Briefcase,
-  GraduationCap,
-  Award,
-  Shield
-} from 'lucide-react';
+import { Briefcase, MapPin, Clock, Users, Zap, Brain, Shield, Globe, Heart, Star } from 'lucide-react';
 
-export default function Careers() {
-  const [selectedDepartment, setSelectedDepartment] = useState<string>('all');
-  const [selectedLocation, setSelectedLocation] = useState<string>('all');
+const Careers = () => {
+  const [selectedDepartment, setSelectedDepartment] = useState('all');
 
   const departments = [
-    { id: 'all', name: 'All Departments', icon: Briefcase },
-    { id: 'engineering', name: 'Engineering', icon: Zap },
-    { id: 'ai-ml', name: 'AI & Machine Learning', icon: Brain },
-    { id: 'cybersecurity', name: 'Cybersecurity', icon: Shield },
-    { id: 'sales', name: 'Sales & Business Development', icon: Users },
-    { id: 'marketing', name: 'Marketing', icon: Globe },
-    { id: 'operations', name: 'Operations', icon: Rocket }
+    { id: 'all', name: 'All Departments', count: 12 },
+    { id: 'engineering', name: 'Engineering', count: 5 },
+    { id: 'ai', name: 'AI & ML', count: 3 },
+    { id: 'cybersecurity', name: 'Cybersecurity', count: 2 },
+    { id: 'business', name: 'Business Development', count: 2 }
   ];
 
-  const locations = [
-    { id: 'all', name: 'All Locations', icon: MapPin },
-    { id: 'remote', name: 'Remote', icon: Globe },
-    { id: 'middletown', name: 'Middletown, DE', icon: MapPin },
-    { id: 'newyork', name: 'New York, NY', icon: MapPin },
-    { id: 'sanfrancisco', name: 'San Francisco, CA', icon: MapPin }
-  ];
-
-  const jobListings = [
+  const jobOpenings = [
     {
       id: 1,
       title: 'Senior AI Engineer',
-      department: 'ai-ml',
-      location: 'remote',
+      department: 'ai',
+      location: 'Remote / Middletown, DE',
       type: 'Full-time',
       experience: '5+ years',
       description: 'Lead the development of cutting-edge AI solutions for enterprise clients.',
@@ -59,8 +32,8 @@ export default function Careers() {
       benefits: [
         'Competitive salary with equity options',
         'Flexible remote work policy',
-        'Professional development budget',
         'Health, dental, and vision insurance',
+        'Professional development budget',
         '401(k) with company match'
       ]
     },
@@ -68,376 +41,327 @@ export default function Careers() {
       id: 2,
       title: 'Cybersecurity Specialist',
       department: 'cybersecurity',
-      location: 'middletown',
+      location: 'Middletown, DE',
       type: 'Full-time',
       experience: '3+ years',
-      description: 'Implement and maintain security protocols for client infrastructure.',
+      description: 'Protect our clients and infrastructure from evolving cyber threats.',
       requirements: [
-        'Bachelor\'s degree in Cybersecurity or related field',
+        'Bachelor\'s degree in Cybersecurity, IT, or related field',
         'Certifications: CISSP, CISM, or equivalent',
         'Experience with security tools and frameworks',
-        'Knowledge of compliance standards (SOC 2, ISO 27001)',
+        'Knowledge of compliance standards (SOC2, ISO 27001)',
         'Strong analytical and problem-solving skills'
       ],
       benefits: [
         'Competitive salary',
-        'Professional certification support',
-        'Health insurance',
-        'Paid time off',
-        'Career growth opportunities'
+        'Comprehensive benefits package',
+        'Continuous learning opportunities',
+        'Modern office environment',
+        'Team collaboration events'
       ]
     },
     {
       id: 3,
       title: 'Full Stack Developer',
       department: 'engineering',
-      location: 'remote',
+      location: 'Remote / Middletown, DE',
       type: 'Full-time',
       experience: '3+ years',
-      description: 'Build scalable web applications using modern technologies.',
+      description: 'Build scalable web applications and microservices for our AI platform.',
       requirements: [
         'Proficiency in React, Node.js, and TypeScript',
-        'Experience with cloud platforms and databases',
-        'Knowledge of DevOps practices',
-        'Strong problem-solving abilities',
-        'Experience with agile development methodologies'
+        'Experience with cloud-native development',
+        'Knowledge of database design and optimization',
+        'Understanding of DevOps practices',
+        'Strong problem-solving abilities'
       ],
       benefits: [
-        'Competitive salary',
+        'Competitive salary with growth potential',
         'Remote work flexibility',
-        'Professional development opportunities',
-        'Health benefits',
-        'Flexible working hours'
+        'Health and wellness benefits',
+        'Professional development support',
+        'Innovative technology stack'
       ]
     },
     {
       id: 4,
       title: 'Business Development Manager',
-      department: 'sales',
-      location: 'newyork',
+      department: 'business',
+      location: 'Middletown, DE',
       type: 'Full-time',
       experience: '5+ years',
       description: 'Drive business growth through strategic partnerships and client acquisition.',
       requirements: [
+        'Bachelor\'s degree in Business, Marketing, or related field',
         'Proven track record in B2B sales',
-        'Experience in technology or consulting services',
-        'Strong networking and relationship-building skills',
-        'Understanding of AI and emerging technologies',
-        'Excellent communication and presentation skills'
+        'Experience in technology or AI industry',
+        'Strong communication and negotiation skills',
+        'Ability to build and maintain client relationships'
       ],
       benefits: [
         'Base salary + commission structure',
-        'Performance bonuses',
-        'Health and dental insurance',
-        'Professional development budget',
-        'Travel opportunities'
-      ]
-    },
-    {
-      id: 5,
-      title: 'DevOps Engineer',
-      department: 'engineering',
-      location: 'sanfrancisco',
-      type: 'Full-time',
-      experience: '4+ years',
-      description: 'Optimize deployment pipelines and infrastructure automation.',
-      requirements: [
-        'Experience with Docker, Kubernetes, and CI/CD',
-        'Knowledge of cloud platforms (AWS, Azure, GCP)',
-        'Experience with infrastructure as code (Terraform)',
-        'Strong scripting skills (Python, Bash)',
-        'Understanding of monitoring and logging tools'
-      ],
-      benefits: [
-        'Competitive salary with equity',
-        'Health, dental, and vision insurance',
-        'Professional development support',
-        'Flexible work arrangements',
-        '401(k) with company match'
+        'Performance-based bonuses',
+        'Company car allowance',
+        'Health and dental coverage',
+        'Professional development budget'
       ]
     }
   ];
 
-  const filteredJobs = jobListings.filter(job => {
-    const deptMatch = selectedDepartment === 'all' || job.department === selectedDepartment;
-    const locationMatch = selectedLocation === 'all' || job.location === selectedLocation;
-    return deptMatch && locationMatch;
-  });
+  const filteredJobs = jobOpenings.filter(job => 
+    selectedDepartment === 'all' || job.department === selectedDepartment
+  );
 
   const companyValues = [
     {
-      icon: Innovation,
       title: 'Innovation First',
-      description: 'We push boundaries and embrace cutting-edge technologies to solve complex problems.'
+      description: 'We push the boundaries of what\'s possible with AI and technology.',
+      icon: Zap
     },
     {
-      icon: Collaboration,
-      title: 'Collaborative Excellence',
-      description: 'Great achievements come from great teamwork and diverse perspectives.'
+      title: 'Continuous Learning',
+      description: 'Growth mindset drives our personal and professional development.',
+      icon: Brain
     },
     {
-      icon: Integrity,
-      title: 'Integrity & Trust',
-      description: 'We build lasting relationships through transparency and ethical practices.'
+      title: 'Security & Trust',
+      description: 'We build secure, reliable solutions that our clients can trust.',
+      icon: Shield
     },
     {
-      icon: Growth,
-      title: 'Continuous Growth',
-      description: 'We invest in our people and encourage lifelong learning and development.'
+      title: 'Global Impact',
+      description: 'Our solutions help businesses worldwide transform and grow.',
+      icon: Globe
     }
   ];
 
   const perks = [
-    'Flexible remote work policy',
-    'Competitive salary and equity options',
-    'Comprehensive health benefits',
-    'Professional development budget',
-    '401(k) with company match',
-    'Unlimited PTO',
-    'Regular team events and activities',
-    'Latest technology and tools',
-    'Career advancement opportunities',
-    'Work-life balance focus'
+    {
+      title: 'Flexible Work',
+      description: 'Remote-first culture with flexible hours',
+      icon: Clock
+    },
+    {
+      title: 'Health & Wellness',
+      description: 'Comprehensive health coverage and wellness programs',
+      icon: Heart
+    },
+    {
+      title: 'Growth Opportunities',
+      description: 'Clear career paths and advancement opportunities',
+      icon: Star
+    },
+    {
+      title: 'Team Culture',
+      description: 'Collaborative environment with smart, passionate people',
+      icon: Users
+    }
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900 pt-20">
-      {/* Hero Section */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 futuristic-bg opacity-60"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Join Our
-              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
-                {' '}Mission
-              </span>
-            </h1>
-            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Help us transform businesses through innovative AI and technology solutions. 
-              Join a team of passionate professionals shaping the future of technology.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 transform hover:scale-105">
-                View Open Positions
-              </button>
-              <button className="inline-flex items-center px-8 py-3 border border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400/10 transition-all duration-300">
-                Learn About Culture
-              </button>
-            </div>
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900 text-white">
+      {/* Header Section */}
+      <div className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent mb-6">
+            Join Our Team
+          </h1>
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+            Help us shape the future of AI and technology. Join a team of innovators, 
+            problem-solvers, and visionaries building solutions that transform businesses worldwide.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              to="#openings"
+              className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+            >
+              View Open Positions
+            </Link>
+            <Link
+              to="/contact"
+              className="px-8 py-4 border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black font-semibold rounded-lg transition-all duration-300"
+            >
+              Contact HR Team
+            </Link>
           </div>
         </div>
       </div>
 
       {/* Company Values */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-white mb-4">Our Values</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            These core values guide everything we do and shape our company culture
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {companyValues.map((value, index) => {
-            const Icon = value.icon;
-            return (
-              <div key={index} className="text-center">
-                <div className="inline-flex p-4 rounded-xl bg-cyan-500/20 mb-6">
-                  <Icon className="w-8 h-8 text-cyan-400" />
+      <div className="px-4 sm:px-6 lg:px-8 pb-16">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+            Our Values
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {companyValues.map((value, index) => {
+              const Icon = value.icon;
+              return (
+                <div key={index} className="text-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <Icon className="w-10 h-10 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-4">{value.title}</h3>
+                  <p className="text-gray-300">{value.description}</p>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">{value.title}</h3>
-                <p className="text-gray-400">{value.description}</p>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
       </div>
 
       {/* Perks & Benefits */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-white mb-4">Perks & Benefits</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            We believe in taking care of our team with comprehensive benefits and perks
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {perks.map((perk, index) => (
-            <div key={index} className="flex items-center space-x-3 bg-gray-800/30 rounded-xl p-4 border border-gray-700/50">
-              <CheckCircle className="w-5 h-5 text-cyan-400 flex-shrink-0" />
-              <span className="text-gray-300">{perk}</span>
-            </div>
-          ))}
+      <div className="px-4 sm:px-6 lg:px-8 pb-16">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+            Perks & Benefits
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {perks.map((perk, index) => {
+              const Icon = perk.icon;
+              return (
+                <div key={index} className="text-center">
+                  <div className="w-20 h-20 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                    <Icon className="w-10 h-10 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-4">{perk.title}</h3>
+                  <p className="text-gray-300">{perk.description}</p>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
 
-      {/* Job Listings */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-white mb-4">Open Positions</h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Find the perfect role for your skills and career goals
-          </p>
-        </div>
-
-        {/* Filters */}
-        <div className="flex flex-col sm:flex-row gap-4 mb-8 justify-center">
-          <div className="flex items-center space-x-2">
-            <Briefcase className="w-5 h-5 text-cyan-400" />
-            <select
-              value={selectedDepartment}
-              onChange={(e) => setSelectedDepartment(e.target.value)}
-              className="bg-gray-800/50 border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-cyan-400"
-            >
-              {departments.map((dept) => (
-                <option key={dept.id} value={dept.id}>{dept.name}</option>
-              ))}
-            </select>
+      {/* Job Openings */}
+      <div id="openings" className="px-4 sm:px-6 lg:px-8 pb-16">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+            Open Positions
+          </h2>
+          
+          {/* Department Filter */}
+          <div className="flex flex-wrap gap-2 justify-center mb-12">
+            {departments.map((dept) => (
+              <button
+                key={dept.id}
+                onClick={() => setSelectedDepartment(dept.id)}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+                  selectedDepartment === dept.id
+                    ? 'bg-cyan-500 text-black'
+                    : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50'
+                }`}
+              >
+                {dept.name} ({dept.count})
+              </button>
+            ))}
           </div>
           
-          <div className="flex items-center space-x-2">
-            <MapPin className="w-5 h-5 text-cyan-400" />
-            <select
-              value={selectedLocation}
-              onChange={(e) => setSelectedLocation(e.target.value)}
-              className="bg-gray-800/50 border border-gray-600 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-cyan-400"
-            >
-              {locations.map((loc) => (
-                <option key={loc.id} value={loc.id}>{loc.name}</option>
-              ))}
-            </select>
-          </div>
-        </div>
-
-        {/* Job Cards */}
-        <div className="space-y-6">
-          {filteredJobs.map((job) => (
-            <div key={job.id} className="bg-gray-800/30 rounded-xl p-6 border border-gray-700/50 hover:border-cyan-400/50 transition-all duration-300">
-              <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-4">
-                <div>
-                  <h3 className="text-xl font-semibold text-white mb-2">{job.title}</h3>
-                  <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400">
-                    <div className="flex items-center space-x-1">
-                      <Briefcase className="w-4 h-4" />
-                      <span>{departments.find(d => d.id === job.department)?.name}</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <MapPin className="w-4 h-4" />
-                      <span>{locations.find(l => l.id === job.location)?.name}</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <Clock className="w-4 h-4" />
-                      <span>{job.type}</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <GraduationCap className="w-4 h-4" />
-                      <span>{job.experience}</span>
+          {/* Jobs List */}
+          <div className="space-y-6">
+            {filteredJobs.map((job) => (
+              <div key={job.id} className="bg-gray-800/30 rounded-2xl p-8 border border-gray-700 hover:border-cyan-400/50 transition-all duration-300">
+                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-6">
+                  <div>
+                    <h3 className="text-2xl font-bold mb-2">{job.title}</h3>
+                    <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400 mb-4">
+                      <span className="flex items-center">
+                        <Briefcase className="w-4 h-4 mr-2" />
+                        {departments.find(d => d.id === job.department)?.name}
+                      </span>
+                      <span className="flex items-center">
+                        <MapPin className="w-4 h-4 mr-2" />
+                        {job.location}
+                      </span>
+                      <span className="flex items-center">
+                        <Clock className="w-4 h-4 mr-2" />
+                        {job.type}
+                      </span>
+                      <span className="flex items-center">
+                        <Users className="w-4 h-4 mr-2" />
+                        {job.experience}
+                      </span>
                     </div>
                   </div>
-                </div>
-                <button className="mt-4 lg:mt-0 inline-flex items-center px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-lg hover:from-cyan-400 hover:to-blue-400 transition-all duration-300">
-                  Apply Now
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </button>
-              </div>
-              
-              <p className="text-gray-300 mb-4">{job.description}</p>
-              
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="text-lg font-semibold text-white mb-3">Requirements</h4>
-                  <ul className="space-y-2">
-                    {job.requirements.map((req, index) => (
-                      <li key={index} className="flex items-start space-x-2">
-                        <CheckCircle className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-300 text-sm">{req}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <Link
+                    to={`/careers/${job.id}`}
+                    className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+                  >
+                    Apply Now
+                  </Link>
                 </div>
                 
-                <div>
-                  <h4 className="text-lg font-semibold text-white mb-3">Benefits</h4>
-                  <ul className="space-y-2">
-                    {job.benefits.map((benefit, index) => (
-                      <li key={index} className="flex items-start space-x-2">
-                        <Award className="w-4 h-4 text-cyan-400 mt-0.5 flex-shrink-0" />
-                        <span className="text-gray-300 text-sm">{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
+                <p className="text-gray-300 mb-6">{job.description}</p>
+                
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="text-lg font-semibold text-cyan-400 mb-3">Requirements</h4>
+                    <ul className="space-y-2">
+                      {job.requirements.map((req, index) => (
+                        <li key={index} className="flex items-start space-x-2">
+                          <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-gray-300 text-sm">{req}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div>
+                    <h4 className="text-lg font-semibold text-cyan-400 mb-3">Benefits</h4>
+                    <ul className="space-y-2">
+                      {job.benefits.map((benefit, index) => (
+                        <li key={index} className="flex items-start space-x-2">
+                          <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-gray-300 text-sm">{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
-
-        {filteredJobs.length === 0 && (
-          <div className="text-center py-12">
-            <p className="text-gray-400 text-lg">No positions found matching your criteria.</p>
-            <p className="text-gray-500">Try adjusting your filters or check back later for new opportunities.</p>
+            ))}
           </div>
-        )}
+          
+          {filteredJobs.length === 0 && (
+            <div className="text-center py-16">
+              <p className="text-gray-400 text-lg">No positions found in the selected department.</p>
+            </div>
+          )}
+        </div>
       </div>
 
       {/* CTA Section */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-        <div className="text-center bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-2xl p-12 border border-cyan-500/30">
-          <h2 className="text-3xl font-bold text-white mb-4">Don't See the Right Fit?</h2>
-          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
-            We're always looking for talented individuals to join our team. Send us your resume and we'll keep you in mind for future opportunities.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="inline-flex items-center px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 transform hover:scale-105">
-              Submit General Application
-            </button>
-            <Link
-              to="/contact"
-              className="inline-flex items-center px-8 py-3 border border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400/10 transition-all duration-300"
-            >
-              Contact Recruiting
-            </Link>
+      <div className="px-4 sm:px-6 lg:px-8 pb-16">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-2xl p-12 border border-cyan-500/30">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Don't See the Right Fit?
+            </h2>
+            <p className="text-xl text-gray-300 mb-8">
+              We're always looking for talented individuals to join our team. Send us your resume 
+              and we'll keep you in mind for future opportunities.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/contact"
+                className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 hover:from-cyan-400 hover:to-blue-400 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+              >
+                Submit Resume
+              </Link>
+              <Link
+                to="/contact"
+                className="px-8 py-4 border border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-black font-semibold rounded-lg transition-all duration-300"
+              >
+                Contact HR Team
+              </Link>
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
-// Icon components for company values
-function Innovation(props: any) {
-  return (
-    <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
-    </svg>
-  );
-}
-
-function Collaboration(props: any) {
-  return (
-    <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
-      <circle cx="9" cy="7" r="4"/>
-      <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
-      <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
-    </svg>
-  );
-}
-
-function Integrity(props: any) {
-  return (
-    <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-    </svg>
-  );
-}
-
-function Growth(props: any) {
-  return (
-    <svg {...props} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-    </svg>
-  );
-}
+export default Careers;

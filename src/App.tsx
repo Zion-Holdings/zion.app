@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import { Sidebar } from './components/Sidebar';
+import Sidebar from './components/Sidebar';
 import { AccessibilityControls } from './components/AccessibilityControls';
 import { PerformanceDashboard } from './components/PerformanceDashboard';
 import { AnalyticsDashboard } from './components/AnalyticsDashboard';
@@ -20,12 +20,9 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 
 // Enhanced lazy loading with preloading hints
 const Home = lazy(() => import('./pages/Home'));
-const EnhancedHome = lazy(() => import('./pages/EnhancedHome'));
 const Services = lazy(() => import('./pages/Services'));
 const AISolutions = lazy(() => import('./pages/AISolutions'));
 const ServicesShowcase = lazy(() => import('./pages/ServicesShowcase'));
-const EnhancedServicesShowcase = lazy(() => import('./pages/EnhancedServicesShowcase'));
-const InnovativeServicesShowcase = lazy(() => import('./components/InnovativeServicesShowcase'));
 const AIMatcherPage = lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = lazy(() => import('./pages/TalentDirectory'));
 const TalentsPage = lazy(() => import('./pages/TalentsPage'));
@@ -36,6 +33,11 @@ const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Mission = lazy(() => import('./pages/Mission'));
 const Team = lazy(() => import('./pages/Team'));
+const Pricing = lazy(() => import('./pages/Pricing'));
+const Careers = lazy(() => import('./pages/Careers'));
+const Partners = lazy(() => import('./pages/Partners'));
+const Blog = lazy(() => import('./pages/Blog'));
+const News = lazy(() => import('./pages/News'));
 const ServicesOverview = lazy(() => import('./pages/services/ServicesOverview'));
 const AIAutonomousSystems = lazy(() => import('./pages/services/AIAutonomousSystems'));
 const QuantumTechnology = lazy(() => import('./pages/services/QuantumTechnology'));
@@ -44,11 +46,9 @@ const ITInfrastructure = lazy(() => import('./pages/services/ITInfrastructure'))
 const MicroSAASSolutions = lazy(() => import('./pages/services/MicroSAASSolutions'));
 const IndustrySolutions = lazy(() => import('./pages/services/IndustrySolutions'));
 
-// New enhanced pages
-const WhitePapers = lazy(() => import('./pages/WhitePapers'));
-const Events = lazy(() => import('./pages/Events'));
-const Webinars = lazy(() => import('./pages/Webinars'));
-const Careers = lazy(() => import('./pages/Careers'));
+// Solutions pages
+const EnterpriseSolutions = lazy(() => import('./pages/solutions/Enterprise'));
+const HealthcareSolutions = lazy(() => import('./pages/solutions/Healthcare'));
 
 // Loading Component
 const LoadingSpinner = () => (
@@ -74,20 +74,16 @@ const App = () => {
           <Router>
             <div className="App min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
               <Header />
-              <Sidebar />
+              <Sidebar isOpen={false} onClose={() => {}} />
               
               {/* Main Content with enhanced Suspense */}
               <main className="ml-64 pt-20 min-h-screen">
                 <Suspense fallback={<LoadingSpinner />}>
                   <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/home" element={<Home />} />
                     <Route path="/services" element={<Services />} />
                     <Route path="/ai-solutions" element={<AISolutions />} />
                     <Route path="/services-showcase" element={<ServicesShowcase />} />
-                    {/* Temporarily disabled due to typing issues */}
-                    {/* <Route path="/enhanced-services" element={<EnhancedServicesShowcase />} /> */}
-                    <Route path="/innovative-services" element={<InnovativeServicesShowcase />} />
                     <Route path="/match" element={<AIMatcherPage />} />
                     <Route path="/talent" element={<TalentDirectory />} />
                     <Route path="/talents" element={<TalentsPage />} />
@@ -101,6 +97,11 @@ const App = () => {
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/mission" element={<Mission />} />
                     <Route path="/team" element={<Team />} />
+                    <Route path="/pricing" element={<Pricing />} />
+                    <Route path="/careers" element={<Careers />} />
+                    <Route path="/partners" element={<Partners />} />
+                    <Route path="/blog" element={<Blog />} />
+                    <Route path="/news" element={<News />} />
                     <Route path="/services-overview" element={<ServicesOverview />} />
                     <Route path="/services/ai-autonomous-systems" element={<AIAutonomousSystems />} />
                     <Route path="/services/quantum-technology" element={<QuantumTechnology />} />
@@ -109,11 +110,9 @@ const App = () => {
                     <Route path="/services/micro-saas-solutions" element={<MicroSAASSolutions />} />
                     <Route path="/services/industry-solutions" element={<IndustrySolutions />} />
                     
-                    {/* New enhanced page routes */}
-                    <Route path="/white-papers" element={<WhitePapers />} />
-                    <Route path="/events" element={<Events />} />
-                    <Route path="/webinars" element={<Webinars />} />
-                    <Route path="/careers" element={<Careers />} />
+                    {/* Solutions Routes */}
+                    <Route path="/solutions/enterprise" element={<EnterpriseSolutions />} />
+                    <Route path="/solutions/healthcare" element={<HealthcareSolutions />} />
                   </Routes>
                 </Suspense>
               </main>
