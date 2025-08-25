@@ -1,51 +1,51 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Zap, Shield, Users, TrendingUp, Globe, Lock, CheckCircle, Star, Cpu, Database, Building2, Network, Server, Monitor, Rocket, Code, Settings, RefreshCw } from 'lucide-react';
+import { ArrowRight, Brain, Zap, Shield, Users, TrendingUp, Globe, Lock, CheckCircle, Star, Cpu, Database, BarChart3, MessageSquare, Eye, Target, Rocket } from 'lucide-react';
 import { SEO } from '@/components/SEO';
 
-const DigitalTransformation = () => {
+const AIServices = () => {
   const services = [
     {
-      title: "Process Optimization",
-      description: "Streamline and automate business processes for maximum efficiency and productivity.",
-      icon: RefreshCw,
-      features: ["Workflow automation", "Process mapping", "Efficiency analysis", "Performance metrics"],
-      color: "from-blue-500 to-cyan-500"
-    },
-    {
-      title: "Technology Assessment",
-      description: "Evaluate current technology stack and identify modernization opportunities.",
-      icon: Monitor,
-      features: ["Technology audit", "Gap analysis", "Modernization roadmap", "ROI assessment"],
-      color: "from-green-500 to-emerald-500"
-    },
-    {
-      title: "Change Management",
-      description: "Guide organizations through digital transformation with proven change management strategies.",
-      icon: Users,
-      features: ["Stakeholder engagement", "Training programs", "Communication strategies", "Success metrics"],
+      title: "AI-Powered Analytics",
+      description: "Transform raw data into actionable insights with our advanced AI analytics platform.",
+      icon: BarChart3,
+      features: ["Predictive modeling", "Real-time dashboards", "Custom reporting", "Data visualization"],
       color: "from-purple-500 to-pink-500"
     },
     {
-      title: "Digital Strategy",
-      description: "Develop comprehensive digital strategies aligned with business objectives.",
-      icon: Rocket,
-      features: ["Digital roadmap", "Technology selection", "Implementation planning", "Success measurement"],
+      title: "Natural Language Processing",
+      description: "Build intelligent chatbots, sentiment analysis, and language understanding systems.",
+      icon: MessageSquare,
+      features: ["Chatbot development", "Sentiment analysis", "Text classification", "Language translation"],
+      color: "from-blue-500 to-cyan-500"
+    },
+    {
+      title: "Computer Vision",
+      description: "Implement image recognition, object detection, and visual AI solutions.",
+      icon: Eye,
+      features: ["Image classification", "Object detection", "Facial recognition", "Quality control"],
+      color: "from-green-500 to-emerald-500"
+    },
+    {
+      title: "Machine Learning Models",
+      description: "Custom ML models tailored to your specific business requirements.",
+      icon: Target,
+      features: ["Custom algorithms", "Model training", "Performance optimization", "Continuous learning"],
       color: "from-orange-500 to-red-500"
     },
     {
-      title: "Legacy Modernization",
-      description: "Transform legacy systems into modern, scalable digital solutions.",
-      icon: Code,
-      features: ["System analysis", "Modernization planning", "Data migration", "Integration strategies"],
+      title: "AI Infrastructure",
+      description: "Scalable AI infrastructure and deployment solutions.",
+      icon: Cpu,
+      features: ["Cloud deployment", "Auto-scaling", "Performance monitoring", "Security compliance"],
       color: "from-indigo-500 to-purple-500"
     },
     {
-      title: "Digital Culture",
-      description: "Foster a digital-first culture and mindset across the organization.",
-      icon: Building2,
-      features: ["Culture assessment", "Training programs", "Leadership development", "Change champions"],
+      title: "AI Consulting",
+      description: "Strategic guidance for AI implementation and digital transformation.",
+      icon: Users,
+      features: ["Strategy planning", "Technology selection", "Implementation roadmap", "Team training"],
       color: "from-yellow-500 to-orange-500"
     }
   ];
@@ -53,25 +53,25 @@ const DigitalTransformation = () => {
   const benefits = [
     {
       title: "Increased Efficiency",
-      description: "Streamline operations and improve productivity across the organization",
+      description: "Automate repetitive tasks and streamline operations",
       icon: TrendingUp,
       color: "text-green-400"
     },
     {
-      title: "Cost Reduction",
-      description: "Lower operational costs through digital optimization and automation",
-      icon: Zap,
+      title: "Better Decision Making",
+      description: "Data-driven insights for strategic business decisions",
+      icon: Brain,
       color: "text-blue-400"
     },
     {
-      title: "Better Customer Experience",
-      description: "Enhance customer interactions with digital-first solutions",
-      icon: Users,
+      title: "Cost Reduction",
+      description: "Lower operational costs through intelligent automation",
+      icon: Zap,
       color: "text-yellow-400"
     },
     {
       title: "Competitive Advantage",
-      description: "Stay ahead with modern digital capabilities and innovation",
+      description: "Stay ahead with cutting-edge AI technology",
       icon: Rocket,
       color: "text-purple-400"
     }
@@ -79,21 +79,21 @@ const DigitalTransformation = () => {
 
   const testimonials = [
     {
-      content: "Zion Tech Group's digital transformation project completely revolutionized our business operations. We're now 40% more efficient.",
-      name: "Maria Gonzalez",
-      role: "CEO, Digital Innovations Corp",
+      content: "Zion Tech Group's AI solutions transformed our customer service operations. Our response time improved by 80%.",
+      name: "Sarah Johnson",
+      role: "CTO, TechCorp Solutions",
       rating: 5
     },
     {
-      content: "The change management approach was exceptional. Our team embraced the new digital tools with enthusiasm.",
-      name: "Thomas Anderson",
-      role: "COO, TechForward Solutions",
+      content: "The AI-powered analytics platform gave us insights we never had before. Game-changing for our business.",
+      name: "Michael Chen",
+      role: "Operations Director, InnovateLab",
       rating: 5
     },
     {
-      content: "Our legacy system modernization exceeded expectations. The new platform is faster, more reliable, and user-friendly.",
-      name: "Rachel Kim",
-      role: "CTO, LegacyTech Industries",
+      content: "Working with Zion's AI team was incredible. They understood our needs and delivered beyond expectations.",
+      name: "Emily Rodriguez",
+      role: "Founder, StartupXYZ",
       rating: 5
     }
   ];
@@ -101,9 +101,9 @@ const DigitalTransformation = () => {
   return (
     <>
       <SEO 
-        title="Digital Transformation Services | Zion Tech Group"
-        description="End-to-end business modernization and digital transformation consulting to drive innovation and growth."
-        keywords="digital transformation, business modernization, process optimization, change management, legacy modernization"
+        title="AI & Machine Learning Services | Zion Tech Group"
+        description="Transform your business with cutting-edge AI solutions including predictive analytics, natural language processing, and automated decision-making systems."
+        keywords="AI services, machine learning, artificial intelligence, predictive analytics, NLP, computer vision"
       />
       
       <div className="min-h-screen bg-zion-blue-dark">
@@ -117,18 +117,18 @@ const DigitalTransformation = () => {
               transition={{ duration: 0.8 }}
             >
               <div className="inline-flex items-center px-4 py-2 bg-zion-cyan/10 border border-zion-cyan/30 rounded-full text-zion-cyan text-sm font-medium mb-6">
-                <Rocket className="w-4 h-4 mr-2" />
-                Digital Transformation
+                <Brain className="w-4 h-4 mr-2" />
+                AI & Machine Learning
               </div>
               <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-                Transform Your Business for
+                Transform Your Business with
                 <span className="block bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
-                  the Digital Age
+                  AI-Powered Solutions
                 </span>
               </h1>
               <p className="text-xl text-zion-slate-light max-w-3xl mx-auto mb-8">
-                Navigate the digital landscape with confidence through our comprehensive transformation 
-                services that modernize processes, technology, and culture.
+                Leverage cutting-edge artificial intelligence and machine learning to automate processes, 
+                gain insights, and create competitive advantages in today's digital landscape.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
@@ -159,11 +159,11 @@ const DigitalTransformation = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold text-white mb-4">
-                Comprehensive Transformation Services
+                Comprehensive AI Solutions
               </h2>
               <p className="text-xl text-zion-slate-light max-w-2xl mx-auto">
-                From process optimization to cultural change, we provide end-to-end digital transformation 
-                services that drive measurable business results.
+                From predictive analytics to natural language processing, we offer end-to-end AI solutions 
+                that drive real business value.
               </p>
             </motion.div>
 
@@ -212,10 +212,10 @@ const DigitalTransformation = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold text-white mb-4">
-                Why Choose Digital Transformation?
+                Why Choose AI Solutions?
               </h2>
               <p className="text-xl text-zion-slate-light max-w-2xl mx-auto">
-                Discover the transformative benefits of embracing digital transformation in your organization.
+                Discover the transformative benefits of implementing AI in your business operations.
               </p>
             </motion.div>
 
@@ -256,10 +256,10 @@ const DigitalTransformation = () => {
               className="text-center mb-16"
             >
               <h2 className="text-4xl font-bold text-white mb-4">
-                What Our Transformation Clients Say
+                What Our Clients Say
               </h2>
               <p className="text-xl text-zion-slate-light max-w-2xl mx-auto">
-                Hear from organizations that have successfully transformed their business with our services.
+                Hear from businesses that have transformed their operations with our AI solutions.
               </p>
             </motion.div>
 
@@ -299,10 +299,10 @@ const DigitalTransformation = () => {
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-4xl font-bold text-white mb-4">
-                Ready to Transform Your Business?
+                Ready to Transform Your Business with AI?
               </h2>
               <p className="text-xl text-zion-slate-light max-w-2xl mx-auto mb-8">
-                Let's discuss how our digital transformation services can drive innovation and growth in your organization.
+                Let's discuss how our AI solutions can drive innovation and growth in your organization.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
@@ -327,4 +327,4 @@ const DigitalTransformation = () => {
   );
 };
 
-export default DigitalTransformation;
+export default AIServices;

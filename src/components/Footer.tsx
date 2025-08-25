@@ -89,21 +89,21 @@ const Footer = () => {
             </motion.div>
           </div>
 
-          {/* Marketplace Links */}
+          {/* Services Links */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="text-white font-semibold mb-6 text-lg">Marketplace</h3>
+            <h3 className="text-white font-semibold mb-6 text-lg">Services</h3>
             <ul className="space-y-3">
-              <li><Link to="/marketplace" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
+              <li><Link to="/ai-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
-                Products
+                AI Services
               </Link></li>
-              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
+              <li><Link to="/cloud-devops" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
-                Services
+                Cloud & DevOps
               </Link></li>
               <li><Link to="/micro-saas-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
