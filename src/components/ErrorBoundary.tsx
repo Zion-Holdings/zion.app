@@ -8,7 +8,7 @@ interface Props {
   fallback?: ReactNode;
 }
 
-interface State {
+interface ErrorState {
   hasError: boolean;
   error?: Error;
 }
@@ -63,7 +63,7 @@ function ErrorFallback({ error, resetError }: { error: Error; resetError: () => 
           </Link>
         </div>
 
-        {process.env.NODE_ENV === 'development' && error && (
+        {typeof window !== 'undefined' && window.location.hostname === 'localhost' && error && (
           <details className="text-left bg-zion-blue/20 rounded-md p-4">
             <summary className="text-zion-cyan cursor-pointer mb-2 font-medium">
               Error Details (Development)
@@ -79,16 +79,16 @@ function ErrorFallback({ error, resetError }: { error: Error; resetError: () => 
 }
 
 export function ErrorBoundary({ children, fallback }: Props) {
-  const [errorState, setErrorState] = useState<State>({ hasError: false });
+  const [errorState, setErrorState] = useState<ErrorState>({ hasError: false });
 
   useEffect(() => {
-    const handleError = (error: ErrorEvent) => {
-      console.error('Error caught by boundary:', error);
-      setErrorState({ hasError: true, error: error.error });
+    const handleError = (event: ErrorEvent) => {
+      console.error('Error caught by boundary:', event.error);
+      setErrorState({ hasError: true, error: event.error });
     };
 
     const handleUnhandledRejection = (event: PromiseRejectionEvent) => {
-      console.error('Unhandled promise rejection:', event);
+      console.error('Unhandled promise rejection:', event.reason);
       setErrorState({ hasError: true, error: new Error(event.reason) });
     };
 
@@ -107,7 +107,7 @@ export function ErrorBoundary({ children, fallback }: Props) {
 
   if (errorState.hasError) {
     if (fallback) {
-      return fallback;
+      return <>{fallback}</>;
     }
     return <ErrorFallback error={errorState.error!} resetError={resetError} />;
   }
