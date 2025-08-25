@@ -19,31 +19,41 @@ export default function MicroSAASSolutions() {
       title: "Custom SAAS Development",
       description: "Tailored software-as-a-service solutions designed specifically for your business needs and industry requirements.",
       icon: Code,
-      features: ["Custom workflows", "API integration", "User management", "Scalable architecture"]
+      features: ["Custom workflows", "API integration", "User management", "Scalable architecture"],
+      price: "From $15,000",
+      delivery: "6-12 weeks"
     },
     {
       title: "Multi-tenant Architecture",
       description: "Efficient multi-tenant systems that maximize resource utilization while maintaining data isolation and security.",
       icon: Users,
-      features: ["Data isolation", "Resource sharing", "Customization options", "Performance optimization"]
+      features: ["Data isolation", "Resource sharing", "Customization options", "Performance optimization"],
+      price: "From $25,000",
+      delivery: "8-16 weeks"
     },
     {
       title: "Subscription Management",
       description: "Comprehensive billing and subscription systems with flexible pricing models and automated renewals.",
       icon: BarChart3,
-      features: ["Flexible pricing", "Automated billing", "Usage tracking", "Payment processing"]
+      features: ["Flexible pricing", "Automated billing", "Usage tracking", "Payment processing"],
+      price: "From $8,000",
+      delivery: "4-8 weeks"
     },
     {
       title: "API Development & Integration",
       description: "Robust APIs that enable seamless integration with existing systems and third-party applications.",
       icon: Cpu,
-      features: ["RESTful APIs", "GraphQL support", "Webhook integration", "API documentation"]
+      features: ["RESTful APIs", "GraphQL support", "Webhook integration", "API documentation"],
+      price: "From $12,000",
+      delivery: "6-10 weeks"
     },
     {
       title: "Analytics & Reporting",
       description: "Advanced analytics dashboards providing insights into user behavior, system performance, and business metrics.",
       icon: TrendingUp,
-      features: ["Real-time metrics", "Custom reports", "Data visualization", "Export capabilities"]
+      features: ["Real-time metrics", "Custom reports", "Data visualization", "Export capabilities"],
+      price: "From $10,000",
+      delivery: "5-8 weeks"
     }
   ];
 
@@ -152,7 +162,7 @@ export default function MicroSAASSolutions() {
                 <p className="text-zion-slate mb-4">
                   {service.description}
                 </p>
-                <ul className="space-y-2">
+                <ul className="space-y-2 mb-4">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center text-sm text-zion-slate">
                       <div className="w-2 h-2 bg-zion-cyan rounded-full mr-3"></div>
@@ -160,6 +170,10 @@ export default function MicroSAASSolutions() {
                     </li>
                   ))}
                 </ul>
+                <div className="flex justify-between items-center pt-4 border-t border-zion-blue-light">
+                  <div className="text-zion-cyan font-semibold">{service.price}</div>
+                  <div className="text-sm text-zion-slate">Delivery: {service.delivery}</div>
+                </div>
               </div>
             ))}
           </div>
