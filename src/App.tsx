@@ -33,6 +33,8 @@ const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Mission = lazy(() => import('./pages/Mission'));
 const Team = lazy(() => import('./pages/Team'));
+const Careers = lazy(() => import('./pages/Careers'));
+const News = lazy(() => import('./pages/News'));
 const ServicesOverview = lazy(() => import('./pages/services/ServicesOverview'));
 const AIAutonomousSystems = lazy(() => import('./pages/services/AIAutonomousSystems'));
 const QuantumTechnology = lazy(() => import('./pages/services/QuantumTechnology'));
@@ -40,6 +42,10 @@ const Cybersecurity = lazy(() => import('./pages/services/Cybersecurity'));
 const ITInfrastructure = lazy(() => import('./pages/services/ITInfrastructure'));
 const MicroSAASSolutions = lazy(() => import('./pages/services/MicroSAASSolutions'));
 const IndustrySolutions = lazy(() => import('./pages/services/IndustrySolutions'));
+const AIBusinessIntelligence = lazy(() => import('./pages/services/AIBusinessIntelligence'));
+const AIMarketingAutomation = lazy(() => import('./pages/services/AIMarketingAutomation'));
+const AIHRRecruitment = lazy(() => import('./pages/services/AIHRRecruitment'));
+const AILegalTech = lazy(() => import('./pages/services/AILegalTech'));
 
 // Loading Component
 const LoadingSpinner = () => (
@@ -88,6 +94,8 @@ const App = () => {
                     <Route path="/contact" element={<Contact />} />
                     <Route path="/mission" element={<Mission />} />
                     <Route path="/team" element={<Team />} />
+                    <Route path="/careers" element={<Careers />} />
+                    <Route path="/news" element={<News />} />
                     <Route path="/services-overview" element={<ServicesOverview />} />
                     <Route path="/services/ai-autonomous-systems" element={<AIAutonomousSystems />} />
                     <Route path="/services/quantum-technology" element={<QuantumTechnology />} />
@@ -95,6 +103,10 @@ const App = () => {
                     <Route path="/services/it-infrastructure" element={<ITInfrastructure />} />
                     <Route path="/services/micro-saas-solutions" element={<MicroSAASSolutions />} />
                     <Route path="/services/industry-solutions" element={<IndustrySolutions />} />
+                    <Route path="/services/ai-business-intelligence" element={<AIBusinessIntelligence />} />
+                    <Route path="/services/ai-marketing-automation" element={<AIMarketingAutomation />} />
+                    <Route path="/services/ai-hr-recruitment" element={<AIHRRecruitment />} />
+                    <Route path="/services/ai-legal-tech" element={<AILegalTech />} />
                   </Routes>
                 </Suspense>
               </main>

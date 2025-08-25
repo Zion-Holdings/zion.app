@@ -26,45 +26,36 @@ export function Header() {
     },
     { 
       path: '/services', 
-      label: 'AI Services', 
+      label: 'Services', 
       icon: '🤖',
-      description: 'Explore our AI service offerings'
-    },
-    { 
-      path: '/emerging-tech', 
-      label: 'Emerging Tech', 
-      icon: '🚀',
-      description: 'Cutting-edge technology solutions'
-    },
-    { 
-      path: '/comprehensive-services', 
-      label: 'All Services', 
-      icon: '⚡',
-      description: 'Complete service catalog'
-    },
-    { 
-      path: '/services-comparison', 
-      label: 'Compare', 
-      icon: '📊',
-      description: 'Compare service options'
-    },
-    { 
-      path: '/it-onsite-services', 
-      label: 'Onsite IT', 
-      icon: '🔧',
-      description: 'Onsite IT support services'
-    },
-    { 
-      path: '/pricing', 
-      label: 'Pricing', 
-      icon: '💰',
-      description: 'Transparent pricing plans'
+      description: 'Explore our AI service offerings',
+      hasDropdown: true,
+      dropdownItems: [
+        { path: '/services/ai-autonomous-systems', label: 'AI Autonomous Systems' },
+        { path: '/services/ai-business-intelligence', label: 'AI Business Intelligence' },
+        { path: '/services/ai-marketing-automation', label: 'AI Marketing Automation' },
+        { path: '/services/ai-hr-recruitment', label: 'AI HR & Recruitment' },
+        { path: '/services/ai-legal-tech', label: 'AI Legal Tech' },
+        { path: '/services/quantum-technology', label: 'Quantum Technology' },
+        { path: '/services/cybersecurity', label: 'Cybersecurity' },
+        { path: '/services/it-infrastructure', label: 'IT Infrastructure' },
+        { path: '/services/micro-saas-solutions', label: 'Micro SAAS Solutions' },
+        { path: '/services/industry-solutions', label: 'Industry Solutions' }
+      ]
     },
     { 
       path: '/about', 
       label: 'About', 
       icon: 'ℹ️',
-      description: 'Learn about our company'
+      description: 'Learn about our company',
+      hasDropdown: true,
+      dropdownItems: [
+        { path: '/about', label: 'About Us' },
+        { path: '/mission', label: 'Our Mission' },
+        { path: '/team', label: 'Our Team' },
+        { path: '/careers', label: 'Careers' },
+        { path: '/news', label: 'News & Updates' }
+      ]
     },
     { 
       path: '/contact', 
@@ -175,7 +166,34 @@ export function Header() {
                   >
                     <span className="text-lg">{item.icon}</span>
                     <span>{item.label}</span>
+                    {item.hasDropdown && (
+                      <svg className="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    )}
                   </Link>
+                  
+                  {/* Dropdown Menu */}
+                  {item.hasDropdown && (
+                    <div className="absolute top-full left-0 mt-2 w-64 bg-black/90 backdrop-blur-xl border border-cyan-500/30 rounded-xl shadow-2xl shadow-cyan-500/20 opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-50">
+                      <div className="p-4">
+                        <div className="text-cyan-400 text-sm font-semibold mb-3 border-b border-cyan-500/30 pb-2">
+                          {item.label}
+                        </div>
+                        <div className="space-y-2">
+                          {item.dropdownItems?.map((dropdownItem) => (
+                            <Link
+                              key={dropdownItem.path}
+                              to={dropdownItem.path}
+                              className="block px-3 py-2 text-gray-300 hover:text-white hover:bg-cyan-500/20 rounded-lg transition-all duration-200"
+                            >
+                              {dropdownItem.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
                   
                   {/* Enhanced Tooltip */}
                   <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-black/90 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
@@ -234,24 +252,41 @@ export function Header() {
             <div className="lg:hidden">
               <div className="px-2 pt-2 pb-3 space-y-1 bg-black/50 backdrop-blur-xl rounded-xl border border-cyan-500/30 mt-4">
                 {navigationItems.map((item) => (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    onClick={() => setIsMenuOpen(false)}
-                    className={`block px-3 py-2 rounded-lg text-base font-medium transition-all duration-300 ${
-                      isActive(item.path)
-                        ? 'text-cyan-400 bg-cyan-500/20 border border-cyan-400/50'
-                        : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
-                    }`}
-                  >
-                    <div className="flex items-center space-x-3">
-                      <span className="text-xl">{item.icon}</span>
-                      <div>
-                        <div className="font-medium">{item.label}</div>
-                        <div className="text-xs text-gray-400">{item.description}</div>
+                  <div key={item.path}>
+                    <Link
+                      to={item.path}
+                      onClick={() => setIsMenuOpen(false)}
+                      className={`block px-3 py-2 rounded-lg text-base font-medium transition-all duration-300 ${
+                        isActive(item.path)
+                          ? 'text-cyan-400 bg-cyan-500/20 border border-cyan-400/50'
+                          : 'text-gray-300 hover:text-white hover:bg-gray-800/50'
+                      }`}
+                    >
+                      <div className="flex items-center space-x-3">
+                        <span className="text-xl">{item.icon}</span>
+                        <div>
+                          <div className="font-medium">{item.label}</div>
+                          <div className="text-xs text-gray-400">{item.description}</div>
+                        </div>
                       </div>
-                    </div>
-                  </Link>
+                    </Link>
+                    
+                    {/* Mobile Dropdown Items */}
+                    {item.hasDropdown && item.dropdownItems && (
+                      <div className="ml-6 mt-2 space-y-1">
+                        {item.dropdownItems.map((dropdownItem) => (
+                          <Link
+                            key={dropdownItem.path}
+                            to={dropdownItem.path}
+                            onClick={() => setIsMenuOpen(false)}
+                            className="block px-3 py-2 text-sm text-gray-400 hover:text-cyan-400 hover:bg-gray-800/30 rounded-lg transition-all duration-200"
+                          >
+                            {dropdownItem.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 ))}
                 
                 {/* Mobile CTA Buttons */}
