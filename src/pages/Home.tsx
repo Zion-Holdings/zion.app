@@ -16,6 +16,7 @@ import { FeatureCTAs } from "@/components/home/FeatureCTAs";
 import { FeatureHighlights } from "@/components/home/FeatureHighlights";
 import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
 import { AnimatedBackground, FloatingOrbs } from "@/components/ui/AnimatedBackground";
+import { SkeletonGrid } from "@/components/ui/LoadingSpinner";
 
 const featuredServices = [
   {
@@ -107,10 +108,30 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       <SEO 
-        title="Zion Tech Group - The Future of Tech is Here" 
-        description="Discover cutting-edge AI solutions, connect with top tech talent, and access innovative micro SAAS services that transform your business operations."
-        keywords="AI, technology, marketplace, services, talent, micro SAAS, digital transformation"
+        title="Zion Tech Group - AI-Powered Tech Marketplace & Digital Transformation Solutions" 
+        description="Discover cutting-edge AI solutions, connect with top tech talent, and access innovative micro SAAS services that transform your business operations. Leading provider of AI, cloud, and enterprise technology solutions."
+        keywords="AI technology, marketplace, services, talent, micro SAAS, digital transformation, cloud solutions, enterprise technology, machine learning, automation"
         canonical="https://ziontechgroup.com/"
+        ogType="website"
+        structuredData={{
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "Zion Tech Group - AI-Powered Tech Marketplace",
+          "description": "Discover cutting-edge AI solutions, connect with top tech talent, and access innovative micro SAAS services that transform your business operations.",
+          "url": "https://ziontechgroup.com/",
+          "mainEntity": {
+            "@type": "Organization",
+            "name": "Zion Tech Group",
+            "description": "AI-Powered Tech Marketplace and Digital Transformation Solutions",
+            "url": "https://ziontechgroup.com",
+            "logo": "https://ziontechgroup.com/images/zion-logo-192.png",
+            "sameAs": [
+              "https://twitter.com/ziontechgroup",
+              "https://linkedin.com/company/ziontechgroup",
+              "https://github.com/ziontechgroup"
+            ]
+          }
+        }}
       />
 
       {/* Futuristic Animated Backgrounds */}
@@ -124,14 +145,14 @@ export default function Home() {
       <ITServiceRequestHero />
 
       {/* Featured Services */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24" aria-labelledby="featured-services-heading">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
+          <h2 id="featured-services-heading" className="text-3xl md:text-5xl font-bold mb-6 text-white">
             Our Featured Services
           </h2>
           <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
@@ -149,11 +170,13 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
                 className="group bg-zion-blue-light/10 backdrop-blur-md border border-zion-purple/20 rounded-2xl p-6 hover:border-zion-cyan/50 hover:bg-zion-blue-light/20 transition-all duration-300 hover:shadow-2xl hover:shadow-zion-cyan/20"
+                role="article"
+                aria-labelledby={`service-${index}-title`}
               >
                 <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl mb-6 flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300`}>
-                  <IconComponent className="w-8 h-8" />
+                  <IconComponent className="w-8 h-8" aria-hidden="true" />
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-zion-cyan transition-colors">
+                <h3 id={`service-${index}-title`} className="text-xl font-semibold text-white mb-3 group-hover:text-zion-cyan transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-zion-slate-light mb-6 leading-relaxed">
@@ -162,9 +185,10 @@ export default function Home() {
                 <Link
                   to={service.link}
                   className="inline-flex items-center gap-2 text-zion-cyan hover:text-white transition-colors group-hover:translate-x-1 transition-transform duration-300"
+                  aria-label={`Learn more about ${service.title}`}
                 >
                   Learn More
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4" aria-hidden="true" />
                 </Link>
               </motion.div>
             );
@@ -173,7 +197,7 @@ export default function Home() {
       </section>
 
       {/* Stats Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" aria-labelledby="stats-heading">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {stats.map((stat, index) => {
             const IconComponent = stat.icon;
@@ -184,12 +208,14 @@ export default function Home() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="text-center"
+                role="article"
+                aria-labelledby={`stat-${index}-label`}
               >
                 <div className="w-16 h-16 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-2xl mx-auto mb-4 flex items-center justify-center">
-                  <IconComponent className="w-8 h-8 text-white" />
+                  <IconComponent className="w-8 h-8 text-white" aria-hidden="true" />
                 </div>
-                <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-                <div className="text-zion-slate-light">{stat.label}</div>
+                <div className="text-3xl font-bold text-white mb-2" aria-describedby={`stat-${index}-label`}>{stat.value}</div>
+                <div id={`stat-${index}-label`} className="text-zion-slate-light">{stat.label}</div>
               </motion.div>
             );
           })}
@@ -197,14 +223,14 @@ export default function Home() {
       </section>
 
       {/* Features Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24" aria-labelledby="features-heading">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
+          <h2 id="features-heading" className="text-3xl md:text-5xl font-bold mb-6 text-white">
             Why Choose Zion Tech Group?
           </h2>
           <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
@@ -222,13 +248,15 @@ export default function Home() {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
                 className="bg-zion-blue-light/10 backdrop-blur-md border border-zion-purple/20 rounded-2xl p-8 hover:border-zion-cyan/50 hover:bg-zion-blue-light/20 transition-all duration-300"
+                role="article"
+                aria-labelledby={`feature-${index}-title`}
               >
                 <div className="flex items-start gap-4">
                   <div className={`p-3 bg-zion-purple/20 rounded-lg ${feature.color}`}>
-                    <IconComponent className="w-8 h-8" />
+                    <IconComponent className="w-8 h-8" aria-hidden="true" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
+                    <h3 id={`feature-${index}-title`} className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
                     <p className="text-zion-slate-light leading-relaxed">{feature.description}</p>
                   </div>
                 </div>
@@ -239,14 +267,14 @@ export default function Home() {
       </section>
 
       {/* Testimonials */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24" aria-labelledby="testimonials-heading">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.0 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
+          <h2 id="testimonials-heading" className="text-3xl md:text-5xl font-bold mb-6 text-white">
             What Our Clients Say
           </h2>
           <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
@@ -262,17 +290,21 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1.2 + index * 0.1 }}
               className="bg-zion-blue-light/10 backdrop-blur-md border border-zion-purple/20 rounded-2xl p-8 hover:border-zion-cyan/50 hover:bg-zion-blue-light/20 transition-all duration-300"
+              role="article"
+              aria-labelledby={`testimonial-${index}-name`}
             >
-              <div className="flex gap-1 mb-4">
+              <div className="flex gap-1 mb-4" aria-label={`${testimonial.rating} out of 5 stars`}>
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 text-zion-cyan fill-current" />
+                  <Star key={i} className="w-5 h-5 text-zion-cyan fill-current" aria-hidden="true" />
                 ))}
               </div>
-              <p className="text-zion-slate-light mb-6 leading-relaxed italic">
-                "{testimonial.content}"
-              </p>
+              <blockquote>
+                <p className="text-zion-slate-light mb-6 leading-relaxed italic">
+                  "{testimonial.content}"
+                </p>
+              </blockquote>
               <div>
-                <div className="font-semibold text-white">{testimonial.name}</div>
+                <div id={`testimonial-${index}-name`} className="font-semibold text-white">{testimonial.name}</div>
                 <div className="text-zion-cyan text-sm">{testimonial.role}</div>
               </div>
             </motion.div>
@@ -281,7 +313,7 @@ export default function Home() {
       </section>
 
       {/* Call to Action */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24" aria-labelledby="cta-heading">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -289,7 +321,7 @@ export default function Home() {
           className="text-center"
         >
           <div className="bg-gradient-to-r from-zion-cyan/20 via-zion-purple/20 to-zion-cyan/20 border border-zion-cyan/30 rounded-2xl p-12 backdrop-blur-md">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">
+            <h2 id="cta-heading" className="text-3xl md:text-5xl font-bold mb-4 text-white">
               Ready to Transform Your Business?
             </h2>
             <p className="text-xl text-zion-slate-light mb-8 max-w-3xl mx-auto">
@@ -300,15 +332,17 @@ export default function Home() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className="px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white rounded-lg text-lg font-semibold hover:shadow-xl hover:shadow-zion-cyan/25 transition-all duration-300 flex items-center gap-2 justify-center"
+                aria-label="Start your project with Zion Tech Group"
               >
                 Start Your Project
-                <ArrowRight className="w-5 h-5" />
+                <ArrowRight className="w-5 h-5" aria-hidden="true" />
               </motion.button>
               <Link
                 to="/contact"
                 className="px-8 py-4 border border-zion-cyan text-zion-cyan rounded-lg text-lg font-semibold hover:bg-zion-cyan hover:text-white transition-all duration-300 flex items-center gap-2 justify-center"
+                aria-label="Get a free consultation"
               >
-                <CheckCircle className="w-5 h-5" />
+                <CheckCircle className="w-5 h-5" aria-hidden="true" />
                 Free Consultation
               </Link>
             </div>
