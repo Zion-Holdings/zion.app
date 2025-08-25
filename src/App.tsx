@@ -12,11 +12,13 @@ import { AICodeGenerator } from './components/AICodeGenerator';
 import { EnterpriseDashboard } from './components/EnterpriseDashboard';
 import { SecurityComplianceDashboard } from './components/SecurityComplianceDashboard';
 import { MachineLearningDashboard } from './components/MachineLearningDashboard';
+import { PerformanceOptimizer } from './components/PerformanceOptimizer';
+import { LinkHealthMonitor } from './components/LinkHealthMonitor';
 import { ThemeProvider } from "./components/ThemeProvider";
 import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
-import { ErrorBoundary } from './components/ErrorBoundary';
+import { EnhancedErrorBoundary } from './components/EnhancedErrorBoundary';
 
 // Enhanced lazy loading with preloading hints
 const Home = lazy(() => import('./pages/Home'));
@@ -75,7 +77,7 @@ const App = () => {
   useScrollToTop();
 
   return (
-    <ErrorBoundary>
+    <EnhancedErrorBoundary enableReporting={true}>
       <ThemeProvider>
         <WhitelabelProvider>
           <Router>
@@ -191,11 +193,30 @@ const App = () => {
                   </div>
                 </>
               )}
+              
+              {/* Performance Optimizer - Always Available */}
+              <PerformanceOptimizer showMetrics={import.meta.env.DEV} />
+              
+              {/* Link Health Monitor - Development Mode */}
+              {import.meta.env.DEV && (
+                <LinkHealthMonitor
+                  links={[
+                    'https://ziontechgroup.com',
+                    'https://www.linkedin.com/company/ziontechgroup',
+                    'https://twitter.com/ziontechgroup',
+                    'https://github.com/ziontechgroup',
+                    'https://www.youtube.com/@ziontechgroup'
+                  ]}
+                  autoCheck={true}
+                  checkInterval={600000} // 10 minutes
+                  timeout={5000} // 5 seconds
+                />
+              )}
             </div>
           </Router>
         </WhitelabelProvider>
       </ThemeProvider>
-    </ErrorBoundary>
+    </EnhancedErrorBoundary>
   );
 };
 
