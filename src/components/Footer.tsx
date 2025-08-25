@@ -8,18 +8,21 @@ export function Footer() {
       title: "AI & Micro SAAS",
       links: [
         { label: "AI & Autonomous Systems", path: "/services/ai-autonomous-systems" },
+        { label: "AI Research Assistant", path: "/ai-autonomous-research-assistant" },
+        { label: "Quantum Neural Networks", path: "/quantum-neural-network-platform" },
+        { label: "Autonomous Business Platform", path: "/autonomous-business-operations-platform" },
+        { label: "AI Asset Management", path: "/ai-powered-it-asset-management" },
         { label: "Quantum Technology", path: "/services/quantum-technology" },
         { label: "IT Infrastructure", path: "/services/it-infrastructure" },
         { label: "Micro SAAS Solutions", path: "/services/micro-saas-solutions" },
         { label: "Cybersecurity", path: "/services/cybersecurity" },
+        { label: "SOC2 Compliance Automation", path: "/soc2-compliance-automation" },
         { label: "Industry Solutions", path: "/services/industry-solutions" },
-        { label: "Marketplace", path: "/marketplace" },
         { label: "AI & Machine Learning", path: "/services#ai-ml" },
         { label: "Cloud & Infrastructure", path: "/services#cloud" },
+        { label: "5G Enterprise Solutions", path: "/5g-enterprise-solutions" },
         { label: "Blockchain Solutions", path: "/services#blockchain" },
-        { label: "IoT & Edge Computing", path: "/services#iot" },
-        { label: "IT Consulting", path: "/services#consulting" },
-        { label: "Managed Services", path: "/services#managed" }
+        { label: "IoT & Edge Computing", path: "/services#iot" }
       ]
     },
     {
@@ -71,6 +74,7 @@ export function Footer() {
       links: [
         { label: "Blog & Articles", path: "/blog" },
         { label: "Case Studies", path: "/case-studies" },
+        { label: "Help Center", path: "/help" },
         { label: "Documentation", path: "/docs" },
         { label: "Support Center", path: "/support" }
       ]

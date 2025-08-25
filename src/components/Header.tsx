@@ -26,15 +26,21 @@ export function Header() {
     },
     { 
       path: '/services', 
-      label: 'AI Services', 
+      label: 'Services', 
       icon: '🤖',
-      description: 'Explore our AI service offerings'
+      description: 'Explore our comprehensive service offerings'
     },
     { 
       path: '/solutions/enterprise', 
       label: 'Solutions', 
       icon: '💼',
       description: 'Industry-specific solutions'
+    },
+    { 
+      path: '/emerging-tech', 
+      label: 'Emerging Tech', 
+      icon: '🚀',
+      description: 'Cutting-edge technology solutions'
     },
     { 
       path: '/pricing', 
@@ -61,6 +67,18 @@ export function Header() {
       description: 'Latest insights and news'
     },
     { 
+      path: '/case-studies', 
+      label: 'Case Studies', 
+      icon: '📊',
+      description: 'Success stories and results'
+    },
+    { 
+      path: '/help', 
+      label: 'Help', 
+      icon: '❓',
+      description: 'Get help and support'
+    },
+    { 
       path: '/contact', 
       label: 'Contact', 
       icon: '📞',
@@ -72,6 +90,8 @@ export function Header() {
     {
       title: 'AI & Machine Learning',
       services: [
+        { name: 'AI Autonomous Systems', path: '/services/ai-autonomous-systems' },
+        { name: 'AI Research Assistant', path: '/ai-autonomous-research-assistant' },
         { name: 'AI Business Intelligence', path: '/services#ai-bi' },
         { name: 'AI Marketing Automation', path: '/services#ai-marketing' },
         { name: 'AI HR & Recruitment', path: '/services#ai-hr' },
@@ -79,9 +99,26 @@ export function Header() {
       ]
     },
     {
+      title: 'Quantum Technology',
+      services: [
+        { name: 'Quantum Neural Networks', path: '/quantum-neural-network-platform' },
+        { name: 'Quantum Computing', path: '/services/quantum-technology' },
+        { name: 'Quantum-Safe Security', path: '/services#quantum-security' }
+      ]
+    },
+    {
+      title: 'Business Operations',
+      services: [
+        { name: 'Autonomous Business Platform', path: '/autonomous-business-operations-platform' },
+        { name: 'AI Asset Management', path: '/ai-powered-it-asset-management' },
+        { name: 'Business Intelligence', path: '/services#ai-bi' }
+      ]
+    },
+    {
       title: 'Cybersecurity',
       services: [
-        { name: 'Quantum-Safe Security', path: '/services#quantum-security' },
+        { name: 'Cybersecurity Services', path: '/services/cybersecurity' },
+        { name: 'SOC2 Compliance Automation', path: '/soc2-compliance-automation' },
         { name: 'Security Assessment', path: '/services#security-assessment' },
         { name: 'Compliance & Audit', path: '/services#compliance' }
       ]
@@ -89,6 +126,9 @@ export function Header() {
     {
       title: 'Cloud & Infrastructure',
       services: [
+        { name: 'Cloud DevOps', path: '/cloud-devops' },
+        { name: 'IT Infrastructure', path: '/services/it-infrastructure' },
+        { name: '5G Enterprise Solutions', path: '/5g-enterprise-solutions' },
         { name: 'Cloud Migration', path: '/services#cloud-migration' },
         { name: 'Network Infrastructure', path: '/services#network' },
         { name: 'Managed IT Services', path: '/services#managed-it' }
@@ -97,8 +137,8 @@ export function Header() {
     {
       title: 'Emerging Tech',
       services: [
+        { name: 'Emerging Technology', path: '/emerging-tech' },
         { name: 'Blockchain Solutions', path: '/services#blockchain' },
-        { name: 'Quantum Computing', path: '/services#quantum' },
         { name: 'IoT & Edge Computing', path: '/services#iot-edge' }
       ]
     }
