@@ -192,16 +192,12 @@
     "venture:report": "node automation/venture-orchestrator.cjs report",
     "frontend-sync:autonomous:start": "node automation/launch-frontend-sync-autonomous.js",
     "frontend-sync:autonomous:once": "node automation/frontend-sync-autonomous-orchestrator.cjs once 0",
-<<<<<<< HEAD
-    "frontend-sync:autonomous:cron": "bash automation/frontend-sync-autonomous-cron.sh"
-=======
     "frontend-sync:autonomous:cron": "bash automation/frontend-sync-autonomous-cron.sh",
     "test": "jest",
     "test:watch": "jest --watch",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --browser chrome",
     "test:accessibility": "vitest run tests/Accessibility.test.tsx"
->>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
   },
   "dependencies": {
     "@hello-pangea/dnd": "^18.0.1",
@@ -247,13 +243,6 @@
     "jspdf-autotable": "^3.8.1",
     "lucide-react": "^0.541.0",
     "next": "^15.5.0",
-<<<<<<< HEAD
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-icons": "^5.5.0",
-    "react-router-dom": "^7.8.2",
-    "tailwind-merge": "^3.3.1"
-=======
     "next-themes": "^0.2.1",
     "react": "^18.2.0",
     "react-day-picker": "^8.10.0",
@@ -269,7 +258,6 @@
     "tailwind-merge": "^3.3.1",
     "vaul": "^0.9.0",
     "zod": "^3.22.4"
->>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
   },
   "devDependencies": {
     "@testing-library/cypress": "^8.0.2",
@@ -277,11 +265,6 @@
     "@testing-library/react": "^14.1.2",
     "@types/jest": "^29.5.3",
     "@types/node": "^20.11.17",
-<<<<<<< HEAD
-    "@types/react": "^18.3.24",
-    "@types/react-dom": "^18.3.7",
-=======
->>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "@vitejs/plugin-react": "^4.2.1",
@@ -289,15 +272,10 @@
     "cypress": "^11.2.0",
     "cypress-real-events": "^1.12.0",
     "eslint": "8.57.1",
-<<<<<<< HEAD
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.5",
-=======
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.3.0",
->>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "jsdom": "^24.0.0",
@@ -305,11 +283,7 @@
     "rimraf": "^5.0.5",
     "tailwindcss": "^3.4.1",
     "ts-jest": "^29.1.1",
-<<<<<<< HEAD
-    "typescript": "^5.9.2",
-=======
     "typescript": "^5.2.2",
->>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
     "vite": "^5.0.8",
     "vitest": "^1.4.0"
   },

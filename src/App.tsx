@@ -1,13 +1,3 @@
-<<<<<<< HEAD
-import React from 'react';
-import { Home } from './pages/Home';
-
-export function App() {
-  return (
-    <div className="App">
-      <Home />
-    </div>
-=======
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
@@ -93,6 +83,7 @@ const App = () => {
         </div>
       </Router>
     </ErrorBoundary>
->>>>>>> 516e4ee3bcbb9d3b0209b707c6b86a34fb0cacec
   );
 }
+
+export default App;
