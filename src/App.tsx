@@ -40,6 +40,7 @@ const Cybersecurity = lazy(() => import('./pages/services/Cybersecurity'));
 const ITInfrastructure = lazy(() => import('./pages/services/ITInfrastructure'));
 const MicroSAASSolutions = lazy(() => import('./pages/services/MicroSAASSolutions'));
 const IndustrySolutions = lazy(() => import('./pages/services/IndustrySolutions'));
+const InnovativeServices = lazy(() => import('./pages/services/InnovativeServices'));
 
 // Loading Component
 const LoadingSpinner = () => (
@@ -95,6 +96,7 @@ const App = () => {
                     <Route path="/services/it-infrastructure" element={<ITInfrastructure />} />
                     <Route path="/services/micro-saas-solutions" element={<MicroSAASSolutions />} />
                     <Route path="/services/industry-solutions" element={<IndustrySolutions />} />
+                    <Route path="/services/innovative-services" element={<InnovativeServices />} />
                   </Routes>
                 </Suspense>
               </main>
