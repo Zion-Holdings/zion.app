@@ -1,7 +1,21 @@
-import { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 
-export function QuantumMatrixBackground() {
+interface QuantumMatrixBackgroundProps {
+  intensity?: 'low' | 'medium' | 'high';
+  showParticles?: boolean;
+  showGrid?: boolean;
+  showHolograms?: boolean;
+}
+
+export const QuantumMatrixBackground: React.FC<QuantumMatrixBackgroundProps> = ({
+  intensity = 'medium',
+  showParticles = true,
+  showGrid = true,
+  showHolograms = true
+}) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const particlesRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -13,36 +27,139 @@ export function QuantumMatrixBackground() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    const matrix = "ZIONTECHGROUP0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    const matrixArray = matrix.split("");
-    const fontSize = 14;
-    const columns = canvas.width / fontSize;
-    const drops: number[] = [];
+    // Quantum particle system
+    const particles: Array<{
+      x: number;
+      y: number;
+      vx: number;
+      vy: number;
+      size: number;
+      opacity: number;
+      color: string;
+      quantumState: number;
+    }> = [];
 
-    for (let x = 0; x < columns; x++) {
-      drops[x] = 1;
+    const colors = ['#22ddd2', '#8b5cf6', '#3b82f6', '#22ddd2'];
+    const intensityMultiplier = intensity === 'high' ? 2 : intensity === 'medium' ? 1.5 : 1;
+
+    // Initialize particles
+    for (let i = 0; i < 50 * intensityMultiplier; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 2,
+        vy: (Math.random() - 0.5) * 2,
+        size: Math.random() * 3 + 1,
+        opacity: Math.random() * 0.8 + 0.2,
+        color: colors[Math.floor(Math.random() * colors.length)],
+        quantumState: Math.random()
+      });
     }
 
-    const draw = () => {
-      ctx.fillStyle = 'rgba(0, 0, 0, 0.04)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.fillStyle = '#22ddd2';
-      ctx.font = fontSize + 'px monospace';
-
-      for (let i = 0; i < drops.length; i++) {
-        const text = matrixArray[Math.floor(Math.random() * matrixArray.length)];
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
+    // Quantum entanglement effect
+    const entangleParticles = () => {
+      for (let i = 0; i < particles.length; i += 2) {
+        if (i + 1 < particles.length) {
+          const p1 = particles[i];
+          const p2 = particles[i + 1];
+          
+          // Create quantum correlation
+          const distance = Math.sqrt(
+            Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2)
+          );
+          
+          if (distance < 100) {
+            // Draw entanglement line
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = `rgba(34, 221, 210, ${0.3 * (1 - distance / 100)})`;
+            ctx.lineWidth = 1;
+            ctx.stroke();
+          }
         }
-        drops[i]++;
       }
     };
 
-    const interval = setInterval(draw, 35);
+    // Neural network connections
+    const drawNeuralConnections = () => {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const p1 = particles[i];
+          const p2 = particles[j];
+          const distance = Math.sqrt(
+            Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2)
+          );
+          
+          if (distance < 150) {
+            const strength = 1 - distance / 150;
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = `rgba(139, 92, 246, ${0.2 * strength})`;
+            ctx.lineWidth = strength * 2;
+            ctx.stroke();
+          }
+        }
+      }
+    };
 
+    // Animation loop
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Update and draw particles
+      particles.forEach((particle, index) => {
+        // Update position
+        particle.x += particle.vx;
+        particle.y += particle.vy;
+        particle.quantumState += 0.02;
+
+        // Quantum tunneling effect
+        if (Math.random() < 0.001 * intensityMultiplier) {
+          particle.x = Math.random() * canvas.width;
+          particle.y = Math.random() * canvas.height;
+        }
+
+        // Wrap around edges
+        if (particle.x < 0) particle.x = canvas.width;
+        if (particle.x > canvas.width) particle.x = 0;
+        if (particle.y < 0) particle.y = canvas.height;
+        if (particle.y > canvas.height) particle.y = 0;
+
+        // Draw particle with quantum effects
+        ctx.save();
+        ctx.globalAlpha = particle.opacity;
+        ctx.fillStyle = particle.color;
+        
+        // Quantum superposition effect
+        const sizeVariation = Math.sin(particle.quantumState) * 0.5;
+        const finalSize = particle.size + sizeVariation;
+        
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, finalSize, 0, Math.PI * 2);
+        ctx.fill();
+        
+        // Quantum glow effect
+        ctx.shadowColor = particle.color;
+        ctx.shadowBlur = 10;
+        ctx.fill();
+        
+        ctx.restore();
+      });
+
+      // Draw connections
+      if (showParticles) {
+        drawNeuralConnections();
+        entangleParticles();
+      }
+
+      requestAnimationFrame(animate);
+    };
+
+    animate();
+
+    // Handle resize
     const handleResize = () => {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
@@ -51,92 +168,167 @@ export function QuantumMatrixBackground() {
     window.addEventListener('resize', handleResize);
 
     return () => {
-      clearInterval(interval);
       window.removeEventListener('resize', handleResize);
     };
-  }, []);
+  }, [intensity, showParticles]);
 
   return (
-    <div className="fixed inset-0 -z-10 overflow-hidden">
-      <canvas
-        ref={canvasRef}
-        className="w-full h-full"
-        style={{ opacity: 0.3 }}
-      />
-      
-      {/* Floating Quantum Particles */}
+    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+      {/* Quantum Matrix Canvas */}
+      {showParticles && (
+        <canvas
+          ref={canvasRef}
+          className="absolute inset-0 w-full h-full"
+          style={{ opacity: intensity === 'high' ? 0.8 : intensity === 'medium' ? 0.6 : 0.4 }}
+        />
+      )}
+
+      {/* Cyber Grid Background */}
+      {showGrid && (
+        <div className="absolute inset-0 cyber-grid-dense opacity-20" />
+      )}
+
+      {/* Holographic Projections */}
+      {showHolograms && (
+        <>
+          {/* Floating Holographic Elements */}
+          <motion.div
+            className="absolute top-20 left-20 w-32 h-32 rounded-full"
+            style={{
+              background: 'radial-gradient(circle, rgba(34, 221, 210, 0.3) 0%, transparent 70%)',
+              border: '1px solid rgba(34, 221, 210, 0.5)'
+            }}
+            animate={{
+              scale: [1, 1.2, 1],
+              opacity: [0.3, 0.6, 0.3],
+              rotate: [0, 180, 360]
+            }}
+            transition={{
+              duration: 8,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+
+          <motion.div
+            className="absolute top-40 right-32 w-24 h-24"
+            style={{
+              background: 'linear-gradient(45deg, rgba(139, 92, 246, 0.3), rgba(59, 130, 246, 0.3))',
+              clipPath: 'polygon(50% 0%, 0% 100%, 100% 100%)'
+            }}
+            animate={{
+              y: [0, -20, 0],
+              rotate: [0, 360],
+              opacity: [0.4, 0.8, 0.4]
+            }}
+            transition={{
+              duration: 6,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+
+          <motion.div
+            className="absolute bottom-32 left-1/4 w-20 h-20 rounded-full"
+            style={{
+              background: 'conic-gradient(from 0deg, rgba(34, 221, 210, 0.4), rgba(139, 92, 246, 0.4), rgba(59, 130, 246, 0.4), rgba(34, 221, 210, 0.4))'
+            }}
+            animate={{
+              scale: [1, 1.5, 1],
+              rotate: [0, 180, 360]
+            }}
+            transition={{
+              duration: 10,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+          />
+
+          {/* Matrix Rain Effect */}
+          <div className="absolute inset-0 overflow-hidden">
+            {Array.from({ length: 20 }).map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute text-zion-cyan text-xs font-mono"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  animationDelay: `${Math.random() * 20}s`
+                }}
+                animate={{
+                  y: ['-100vh', '100vh']
+                }}
+                transition={{
+                  duration: 20,
+                  repeat: Infinity,
+                  ease: "linear"
+                }}
+              >
+                {String.fromCharCode(0x30A0 + Math.random() * 96)}
+              </motion.div>
+            ))}
+          </div>
+        </>
+      )}
+
+      {/* Quantum Energy Fields */}
       <div className="absolute inset-0">
-        {[...Array(15)].map((_, i) => (
-          <div
+        <motion.div
+          className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full"
+          style={{
+            background: 'radial-gradient(circle, rgba(34, 221, 210, 0.1) 0%, transparent 70%)',
+            border: '1px solid rgba(34, 221, 210, 0.2)'
+          }}
+          animate={{
+            scale: [1, 1.5, 1],
+            opacity: [0.1, 0.3, 0.1]
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+
+        <motion.div
+          className="absolute bottom-1/4 right-1/4 w-48 h-48 rounded-full"
+          style={{
+            background: 'radial-gradient(circle, rgba(139, 92, 246, 0.1) 0%, transparent 70%)',
+            border: '1px solid rgba(139, 92, 246, 0.2)'
+          }}
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.1, 0.25, 0.1]
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+      </div>
+
+      {/* Neural Network Nodes */}
+      <div className="absolute inset-0">
+        {Array.from({ length: 15 }).map((_, i) => (
+          <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-gradient-to-r from-zion-cyan to-zion-purple rounded-full animate-float"
+            className="absolute w-2 h-2 rounded-full bg-zion-cyan"
             style={{
               left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${4 + Math.random() * 3}s`,
-              filter: 'blur(1px)',
-              boxShadow: '0 0 10px rgba(34, 221, 210, 0.6)'
+              top: `${Math.random() * 100}%`
+            }}
+            animate={{
+              scale: [1, 1.5, 1],
+              opacity: [0.3, 0.8, 0.3]
+            }}
+            transition={{
+              duration: 4 + Math.random() * 4,
+              repeat: Infinity,
+              ease: "easeInOut"
             }}
           />
         ))}
       </div>
-
-      {/* Energy Grid Lines */}
-      <div className="absolute inset-0">
-        <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <defs>
-            <linearGradient id="gridGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="rgba(34, 221, 210, 0.3)" />
-              <stop offset="50%" stopColor="rgba(139, 92, 246, 0.3)" />
-              <stop offset="100%" stopColor="rgba(59, 130, 246, 0.3)" />
-            </linearGradient>
-          </defs>
-          
-          {/* Horizontal Grid Lines */}
-          {[...Array(10)].map((_, i) => (
-            <line
-              key={`h-${i}`}
-              x1="0"
-              y1={i * 10}
-              x2="100"
-              y2={i * 10}
-              stroke="url(#gridGradient)"
-              strokeWidth="0.1"
-              opacity="0.3"
-              className="animate-pulse"
-              style={{ animationDelay: `${i * 0.2}s` }}
-            />
-          ))}
-          
-          {/* Vertical Grid Lines */}
-          {[...Array(10)].map((_, i) => (
-            <line
-              key={`v-${i}`}
-              x1={i * 10}
-              y1="0"
-              x2={i * 10}
-              y2="100"
-              stroke="url(#gridGradient)"
-              strokeWidth="0.1"
-              opacity="0.3"
-              className="animate-pulse"
-              style={{ animationDelay: `${i * 0.2}s` }}
-            />
-          ))}
-        </svg>
-      </div>
-
-      {/* Glowing Orbs with Quantum Effects */}
-      <div className="absolute top-32 left-32 w-40 h-40 bg-gradient-to-r from-zion-cyan/20 to-zion-purple/20 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute top-48 right-40 w-32 h-32 bg-gradient-to-r from-zion-purple/20 to-zion-blue/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-      <div className="absolute bottom-32 left-1/3 w-36 h-36 bg-gradient-to-r from-zion-blue/20 to-zion-cyan/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
-      
-      {/* Quantum Energy Waves */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/4 left-0 w-full h-1 bg-gradient-to-r from-transparent via-zion-cyan to-transparent opacity-30 animate-pulse"></div>
-        <div className="absolute top-3/4 left-0 w-full h-1 bg-gradient-to-r from-transparent via-zion-purple to-transparent opacity-30 animate-pulse delay-1000"></div>
-      </div>
     </div>
   );
-}
+};
