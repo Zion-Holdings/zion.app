@@ -1,58 +1,57 @@
-import React from 'react';
-import { cn } from '@/lib/utils';
+import React from 'react'
 
 interface StepsProps {
-  children: React.ReactNode;
-  className?: string;
-  currentStep?: number;
+  children: React.ReactNode
+  className?: string
 }
 
 interface StepProps {
-  children: React.ReactNode;
-  className?: string;
-  isActive?: boolean;
-  isCompleted?: boolean;
-  status?: string;
-  label?: string;
-  description?: string;
+  children: React.ReactNode
+  className?: string
+  isActive?: boolean
+  isCompleted?: boolean
 }
 
-export const Steps: React.FC<StepsProps> = ({ children, className, currentStep = 0 }) => {
-  return (
-    <div className={cn("flex items-center space-x-2", className)}>
-      {React.Children.map(children, (child, index) => {
-        if (React.isValidElement(child)) {
-          return React.cloneElement(child, {
-            isActive: index === currentStep,
-            isCompleted: index < currentStep,
-          } as any);
-        }
-        return child;
-      })}
-    </div>
-  );
-};
+const Steps = ({ children, className = "" }: StepsProps) => (
+  <div className={`flex items-center ${className}`}>
+    {children}
+  </div>
+)
 
-export const Step: React.FC<StepProps> = ({ children, className, isActive, isCompleted }) => {
-  return (
+const Step = ({ children, className = "", isActive = false, isCompleted = false }: StepProps) => (
+  <div className={`flex items-center ${className}`}>
     <div
-      className={cn(
-        "flex items-center space-x-2",
-        isActive && "text-primary",
-        isCompleted && "text-green-600",
-        className
-      )}
+      className={`flex h-8 w-8 items-center justify-center rounded-full border-2 ${
+        isCompleted
+          ? "border-zion-cyan bg-zion-cyan text-white"
+          : isActive
+          ? "border-zion-cyan bg-white text-zion-cyan"
+          : "border-zion-slate-300 bg-white text-zion-slate-500"
+      }`}
     >
-      <div
-        className={cn(
-          "flex h-8 w-8 items-center justify-center rounded-full border-2 text-sm font-medium",
-          isActive && "border-primary bg-primary text-white",
-          isCompleted && "border-green-600 bg-green-600 text-white",
-          !isActive && !isCompleted && "border-gray-300 text-gray-500"
-        )}
-      >
-        {isCompleted ? "✓" : children}
-      </div>
+      {isCompleted ? (
+        <CheckIcon className="h-4 w-4" />
+      ) : (
+        <span className="text-sm font-medium">{children}</span>
+      )}
     </div>
-  );
-};
+  </div>
+)
+
+const CheckIcon = ({ className = "" }: { className?: string }) => (
+  <svg
+    className={className}
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M5 13l4 4L19 7"
+    />
+  </svg>
+)
+
+export { Steps, Step, CheckIcon }

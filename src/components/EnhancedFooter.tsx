@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Link } from 'react-router-dom';
 import { 
   Twitter, 
@@ -33,37 +33,37 @@ export function EnhancedFooter() {
     {
       title: "AI & Chatbots",
       icon: <Brain className="w-4 h-4" />,
-      link: "/micro-saas-services#ai-chatbots",
+      link: "/all-services?category=AI Services",
       color: "from-purple-500 to-pink-500"
     },
     {
       title: "Cybersecurity",
       icon: <Shield className="w-4 h-4" />,
-      link: "/micro-saas-services#cybersecurity",
+      link: "/all-services?category=Security",
       color: "from-red-500 to-orange-500"
     },
     {
       title: "Cloud Management",
       icon: <Cloud className="w-4 h-4" />,
-      link: "/micro-saas-services#cloud-management",
+      link: "/all-services?category=IT Services",
       color: "from-blue-500 to-cyan-500"
     },
     {
       title: "DevOps & Automation",
       icon: <Code className="w-4 h-4" />,
-      link: "/micro-saas-services#devops",
+      link: "/all-services?category=Automation",
       color: "from-green-500 to-emerald-500"
     },
     {
       title: "Data & Analytics",
       icon: <Database className="w-4 h-4" />,
-      link: "/micro-saas-services#data-analytics",
+      link: "/all-services?category=Analytics",
       color: "from-indigo-500 to-purple-500"
     },
     {
       title: "IoT & Edge Computing",
       icon: <Monitor className="w-4 h-4" />,
-      link: "/micro-saas-services#iot",
+      link: "/all-services?category=IT Services",
       color: "from-yellow-500 to-orange-500"
     }
   ];

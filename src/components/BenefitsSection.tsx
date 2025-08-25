@@ -1,115 +1,68 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { CheckCircle, Zap, Shield, Users, Clock, TrendingUp } from 'lucide-react';
 
-const benefits = [
-  {
-    icon: <Zap className="w-8 h-8" />,
-    title: "Lightning Fast",
-    description: "Get your projects delivered in record time with our efficient development process"
-  },
-  {
-    icon: <Shield className="w-8 h-8" />,
-    title: "Enterprise Security",
-    description: "Bank-grade security measures to protect your data and applications"
-  },
-  {
-    icon: <Users className="w-8 h-8" />,
-    title: "Expert Team",
-    description: "Work with certified professionals with years of industry experience"
-  },
-  {
-    icon: <Clock className="w-8 h-8" />,
-    title: "24/7 Support",
-    description: "Round-the-clock assistance whenever you need help or have questions"
-  },
-  {
-    icon: <TrendingUp className="w-8 h-8" />,
-    title: "Scalable Solutions",
-    description: "Built to grow with your business, from startup to enterprise"
-  },
-  {
-    icon: <CheckCircle className="w-8 h-8" />,
-    title: "Quality Guaranteed",
-    description: "100% satisfaction guarantee with our comprehensive testing process"
-  }
-];
+
+import { CheckCircle, Zap, Shield, Users, Globe, TrendingUp } from 'lucide-react';
 
 export function BenefitsSection() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
+  const benefits = [
+    {
+      icon: CheckCircle,
+      title: "Quality Assurance",
+      description: "All services and talent are verified and quality-checked"
+    },
+    {
+      icon: Zap,
+      title: "Fast Delivery",
+      description: "Quick turnaround times for all projects and services"
+    },
+    {
+      icon: Shield,
+      title: "Secure Platform",
+      description: "Enterprise-grade security for your business needs"
+    },
+    {
+      icon: Users,
+      title: "Expert Network",
+      description: "Access to top-tier tech professionals worldwide"
+    },
+    {
+      icon: Globe,
+      title: "Global Reach",
+      description: "Connect with talent and services from anywhere"
+    },
+    {
+      icon: TrendingUp,
+      title: "Scalable Solutions",
+      description: "Grow your business with flexible, scalable services"
     }
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut"
-      }
-    }
-  };
+  ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-zion-slate-dark via-zion-blue-dark to-zion-blue relative overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 75% 75%, currentColor 1px, transparent 1px)`,
-          backgroundSize: '60px 60px'
-        }} />
-      </div>
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <motion.div 
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Why Choose <span className="bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">Zion Tech Group</span>?
+    <section className="py-20 bg-zion-blue-dark">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-white mb-4">
+            Why Choose Zion Tech Group?
           </h2>
-          <p className="text-zion-slate-light text-lg max-w-3xl mx-auto">
-            We combine cutting-edge technology with proven methodologies to deliver exceptional results
+          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
+            We provide the most comprehensive tech marketplace experience with unmatched quality, security, and innovation.
           </p>
-        </motion.div>
-        
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => (
-            <motion.div key={index} variants={itemVariants}>
-              <div className="text-center p-6 rounded-xl bg-gradient-to-br from-zion-blue-dark/80 to-zion-blue-dark/40 backdrop-blur-sm border border-zion-blue-light/30 hover:border-zion-cyan/50 transition-all duration-300 hover:transform hover:scale-105">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-br from-zion-cyan to-zion-purple mb-6">
-                  <div className="text-white">
-                    {benefit.icon}
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-3">
-                  {benefit.title}
-                </h3>
-                <p className="text-zion-slate-light leading-relaxed">
-                  {benefit.description}
-                </p>
+            <div key={index} className="bg-zion-blue-light p-6 rounded-lg text-center hover:transform hover:scale-105 transition-all duration-300">
+              <div className="w-16 h-16 bg-zion-cyan rounded-full flex items-center justify-center mx-auto mb-4">
+                <benefit.icon className="w-8 h-8 text-white" />
               </div>
-            </motion.div>
+              <h3 className="text-xl font-semibold text-white mb-3">
+                {benefit.title}
+              </h3>
+              <p className="text-zion-slate-light">
+                {benefit.description}
+              </p>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

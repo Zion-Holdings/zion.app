@@ -1,73 +1,154 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { cn } from '@/lib/utils';
-import { ChevronDown } from 'lucide-react';
 
-interface AccordionProps {
+export interface AccordionProps extends React.HTMLAttributes<HTMLDivElement> {
   type?: 'single' | 'multiple';
   collapsible?: boolean;
-  children: React.ReactNode;
-  className?: string;
+  defaultValue?: string | string[];
+  value?: string | string[];
+  onValueChange?: (value: string | string[]) => void;
 }
 
-interface AccordionItemProps {
+export interface AccordionItemProps extends React.HTMLAttributes<HTMLDivElement> {
   value: string;
-  children: React.ReactNode;
-  className?: string;
+  disabled?: boolean;
 }
 
-interface AccordionTriggerProps {
+export interface AccordionTriggerProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  className?: string;
-  onClick?: () => void;
-  isOpen?: boolean;
+  value?: string;
 }
 
-interface AccordionContentProps {
+export interface AccordionContentProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
-  className?: string;
-  isOpen?: boolean;
+  value?: string;
 }
 
-export const Accordion: React.FC<AccordionProps> = ({ type = 'single', collapsible = false, children, className }) => {
+const AccordionContext = React.createContext<{
+  type: 'single' | 'multiple';
+  collapsible: boolean;
+  openItems: string[];
+  onToggle: (value: string) => void;
+} | undefined>(undefined);
+
+export const Accordion: React.FC<AccordionProps> = ({
+  type = 'single',
+  collapsible = false,
+  defaultValue,
+  value,
+  onValueChange,
+  children,
+  className,
+  ...props
+}) => {
+  const [openItems, setOpenItems] = React.useState<string[]>(
+    defaultValue ? (Array.isArray(defaultValue) ? defaultValue : [defaultValue]) : []
+  );
+
+  React.useEffect(() => {
+    if (value !== undefined) {
+      setOpenItems(Array.isArray(value) ? value : [value]);
+    }
+  }, [value]);
+
+  const handleToggle = (itemValue: string) => {
+    let newOpenItems: string[];
+    
+    if (type === 'single') {
+      if (openItems.includes(itemValue)) {
+        newOpenItems = collapsible ? [] : openItems;
+      } else {
+        newOpenItems = [itemValue];
+      }
+    } else {
+      if (openItems.includes(itemValue)) {
+        newOpenItems = openItems.filter(item => item !== itemValue);
+      } else {
+        newOpenItems = [...openItems, itemValue];
+      }
+    }
+    
+    setOpenItems(newOpenItems);
+    onValueChange?.(type === 'single' ? newOpenItems[0] || '' : newOpenItems);
+  };
+
   return (
-    <div className={cn("w-full", className)}>
-      {children}
+    <AccordionContext.Provider value={{ type, collapsible, openItems, onToggle: handleToggle }}>
+      <div className={cn('w-full', className)} {...props}>
+        {children}
+      </div>
+    </AccordionContext.Provider>
+  );
+};
+
+export const AccordionItem: React.FC<AccordionItemProps> = ({ value, disabled, children, className, ...props }) => {
+  const context = React.useContext(AccordionContext);
+  if (!context) {
+    throw new Error('AccordionItem must be used within an Accordion component');
+  }
+
+  const isOpen = context.openItems.includes(value);
+
+  return (
+    <div
+      className={cn(
+        'border border-zion-slate rounded-lg mb-2',
+        disabled && 'opacity-50 pointer-events-none',
+        className
+      )}
+      {...props}
+    >
+      {React.Children.map(children, (child) => {
+        if (React.isValidElement(child)) {
+          return React.cloneElement(child, { value, isOpen, disabled } as any);
+        }
+        return child;
+      })}
     </div>
   );
 };
 
-export const AccordionItem: React.FC<AccordionItemProps> = ({ value, children, className }) => {
-  return (
-    <div className={cn("border-b", className)}>
-      {children}
-    </div>
-  );
-};
+export const AccordionTrigger: React.FC<AccordionTriggerProps> = ({ children, className, value, ...props }) => {
+  const context = React.useContext(AccordionContext);
+  if (!context) {
+    throw new Error('AccordionTrigger must be used within an Accordion component');
+  }
 
-export const AccordionTrigger: React.FC<AccordionTriggerProps> = ({ children, className, onClick, isOpen }) => {
+  const stringValue = String(value || '');
+
   return (
     <button
       className={cn(
-        "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
+        'w-full px-4 py-3 text-left flex items-center justify-between hover:bg-zion-blue-light transition-colors',
         className
       )}
-      onClick={onClick}
+      onClick={() => context.onToggle(stringValue)}
+      {...props}
     >
       {children}
-      <ChevronDown className={cn("h-4 w-4 shrink-0 transition-transform duration-200", isOpen && "rotate-180")} />
+      <span className="text-zion-cyan">{context.openItems.includes(stringValue) ? '−' : '+'}</span>
     </button>
   );
 };
 
-export const AccordionContent: React.FC<AccordionContentProps> = ({ children, className, isOpen }) => {
+export const AccordionContent: React.FC<AccordionContentProps> = ({ children, className, value, ...props }) => {
+  const context = React.useContext(AccordionContext);
+  if (!context) {
+    throw new Error('AccordionContent must be used within an Accordion component');
+  }
+
+  const stringValue = String(value || '');
+
   return (
-    <div className={cn(
-      "overflow-hidden text-sm transition-all",
-      isOpen ? "max-h-96 pb-4" : "max-h-0"
-    )}>
-      <div className={cn("pb-4 pt-0", className)}>
-        {children}
-      </div>
+    <div
+      className={cn(
+        'px-4 pb-3 overflow-hidden transition-all duration-200',
+        context.openItems.includes(stringValue) ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0',
+        className
+      )}
+      {...props}
+    >
+      {children}
     </div>
   );
 };

@@ -1,5 +1,5 @@
 
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import { Loader2, User, Sparkles } from 'lucide-react';
 

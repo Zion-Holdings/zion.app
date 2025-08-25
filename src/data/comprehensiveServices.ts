@@ -1,0 +1,2279 @@
+export interface ComprehensiveService {
+  id: string;
+  title: string;
+  description: string;
+  category: 'AI Services' | 'IT Services' | 'Micro SAAS' | 'Development' | 'Analytics' | 'Security' | 'Automation' | 'Cloud' | 'Blockchain' | 'IoT';
+  price: {
+    monthly: number;
+    yearly: number;
+    oneTime?: number;
+    currency: string;
+  };
+  features: string[];
+  benefits: string[];
+  useCases: string[];
+  targetAudience: string[];
+  integration: string[];
+  support: string[];
+  link: string;
+  badge?: 'Popular' | 'New' | 'Featured' | 'Premium' | 'Enterprise';
+  rating: number;
+  reviewCount: number;
+  aiScore: number;
+  image: string;
+  author: {
+    name: string;
+    id: string;
+    avatarUrl?: string;
+  };
+  tags: string[];
+}
+
+export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
+  // AI Services
+  {
+    id: "ai-content-generator",
+    title: "AI Content Generator Pro",
+    description: "Advanced AI-powered content creation platform for blogs, social media, marketing copy, and technical documentation with SEO optimization.",
+    category: "AI Services",
+    price: {
+      monthly: 49,
+      yearly: 490,
+      currency: "$"
+    },
+    features: [
+      "GPT-4 powered content generation",
+      "SEO optimization suggestions",
+      "Multi-language support (50+ languages)",
+      "Content templates library",
+      "Plagiarism detection",
+      "Brand voice customization",
+      "Content calendar management",
+      "Analytics and performance tracking"
+    ],
+    benefits: [
+      "10x faster content creation",
+      "SEO-optimized content that ranks",
+      "Consistent brand voice across all content",
+      "Reduce content creation costs by 70%",
+      "24/7 content generation capability"
+    ],
+    useCases: [
+      "Marketing agencies",
+      "E-commerce businesses",
+      "Content creators",
+      "Startups",
+      "Enterprise marketing teams"
+    ],
+    targetAudience: ["Marketing professionals", "Content creators", "Business owners", "Agencies"],
+    integration: ["WordPress", "Shopify", "HubSpot", "Mailchimp", "Social media platforms"],
+    support: ["24/7 live chat", "Email support", "Video tutorials", "Community forum"],
+    link: "https://ziontechgroup.com/ai-content-generator",
+    badge: "Popular",
+    rating: 4.9,
+    reviewCount: 1247,
+    aiScore: 96,
+    image: "https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion AI Labs",
+      id: "zion-ai-labs",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    },
+    tags: ["AI", "Content Creation", "SEO", "Marketing", "Automation"]
+  },
+  {
+    id: "ai-chatbot-builder",
+    title: "AI Chatbot Builder Suite",
+    description: "No-code AI chatbot creation platform with advanced NLP, multi-channel deployment, and analytics dashboard for customer support automation.",
+    category: "AI Services",
+    price: {
+      monthly: 79,
+      yearly: 790,
+      currency: "$"
+    },
+    features: [
+      "Drag-and-drop chatbot builder",
+      "Advanced NLP and intent recognition",
+      "Multi-language support",
+      "Integration with CRM systems",
+      "Analytics and conversation insights",
+      "Custom branding options",
+      "API access for developers",
+      "Multi-channel deployment (Web, WhatsApp, Facebook)"
+    ],
+    benefits: [
+      "Reduce customer support costs by 60%",
+      "24/7 customer service availability",
+      "Instant response to customer queries",
+      "Scalable customer support solution",
+      "Improved customer satisfaction scores"
+    ],
+    useCases: [
+      "E-commerce customer support",
+      "SaaS product support",
+      "Healthcare patient assistance",
+      "Financial services support",
+      "Educational institutions"
+    ],
+    targetAudience: ["Customer support teams", "E-commerce businesses", "SaaS companies", "Service providers"],
+    integration: ["Zendesk", "Intercom", "Salesforce", "Shopify", "Custom APIs"],
+    support: ["24/7 technical support", "Implementation assistance", "Training sessions", "Documentation"],
+    link: "https://ziontechgroup.com/ai-chatbot-builder",
+    badge: "Featured",
+    rating: 4.8,
+    reviewCount: 892,
+    aiScore: 94,
+    image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion AI Labs",
+      id: "zion-ai-labs",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    },
+    tags: ["AI", "Chatbot", "NLP", "Customer Support", "Automation"]
+  },
+  {
+    id: "ai-data-analytics",
+    title: "AI-Powered Data Analytics Platform",
+    description: "Intelligent data analysis platform that uses machine learning to uncover insights, predict trends, and generate actionable business intelligence reports.",
+    category: "AI Services",
+    price: {
+      monthly: 99,
+      yearly: 990,
+      currency: "$"
+    },
+    features: [
+      "Machine learning-powered insights",
+      "Predictive analytics and forecasting",
+      "Real-time data processing",
+      "Custom dashboard creation",
+      "Automated report generation",
+      "Data visualization tools",
+      "API integration capabilities",
+      "Advanced filtering and segmentation"
+    ],
+    benefits: [
+      "Make data-driven decisions faster",
+      "Identify hidden business opportunities",
+      "Predict market trends and customer behavior",
+      "Automate routine data analysis tasks",
+      "Improve operational efficiency by 40%"
+    ],
+    useCases: [
+      "Business intelligence and reporting",
+      "Customer behavior analysis",
+      "Market research and forecasting",
+      "Operational performance monitoring",
+      "Financial analysis and planning"
+    ],
+    targetAudience: ["Data analysts", "Business intelligence teams", "Executives", "Marketing teams", "Operations managers"],
+    integration: ["Google Analytics", "Salesforce", "HubSpot", "MySQL", "PostgreSQL", "Custom APIs"],
+    support: ["Dedicated account manager", "24/7 technical support", "Training and onboarding", "Custom implementation"],
+    link: "https://ziontechgroup.com/ai-data-analytics",
+    badge: "Premium",
+    rating: 4.9,
+    reviewCount: 567,
+    aiScore: 97,
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Data Labs",
+      id: "zion-data-labs",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    },
+    tags: ["AI", "Data Analytics", "Machine Learning", "Business Intelligence", "Predictive Analytics"]
+  },
+  // IT Services
+  {
+    id: "cybersecurity-suite",
+    title: "Enterprise Cybersecurity Suite",
+    description: "Comprehensive cybersecurity solution providing threat detection, vulnerability assessment, and 24/7 security monitoring for enterprise-level protection.",
+    category: "IT Services",
+    price: {
+      monthly: 299,
+      yearly: 2990,
+      currency: "$"
+    },
+    features: [
+      "Real-time threat detection and response",
+      "Vulnerability assessment and scanning",
+      "24/7 security monitoring",
+      "Incident response automation",
+      "Compliance reporting (SOC2, GDPR, HIPAA)",
+      "Advanced firewall management",
+      "Endpoint protection",
+      "Security awareness training"
+    ],
+    benefits: [
+      "Protect against 99.9% of cyber threats",
+      "Meet regulatory compliance requirements",
+      "Reduce security incident response time by 80%",
+      "Lower cybersecurity insurance premiums",
+      "Protect brand reputation and customer trust"
+    ],
+    useCases: [
+      "Enterprise security management",
+      "Healthcare data protection",
+      "Financial services security",
+      "E-commerce security",
+      "Government and defense"
+    ],
+    targetAudience: ["CISOs", "IT security teams", "Compliance officers", "Enterprise businesses", "Healthcare organizations"],
+    integration: ["Active Directory", "SIEM systems", "Cloud platforms", "Network devices", "Security tools"],
+    support: ["24/7 security operations center", "Dedicated security engineer", "Emergency response team", "Regular security audits"],
+    link: "https://ziontechgroup.com/cybersecurity-suite",
+    badge: "Enterprise",
+    rating: 4.9,
+    reviewCount: 234,
+    aiScore: 98,
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Security",
+      id: "zion-security",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    },
+    tags: ["Cybersecurity", "Threat Detection", "Compliance", "Enterprise", "Security Monitoring"]
+  },
+  {
+    id: "cloud-migration",
+    title: "Cloud Migration & Optimization",
+    description: "End-to-end cloud migration services including strategy planning, implementation, and ongoing optimization for AWS, Azure, and Google Cloud.",
+    category: "IT Services",
+    price: {
+      monthly: 199,
+      yearly: 1990,
+      oneTime: 15000,
+      currency: "$"
+    },
+    features: [
+      "Cloud strategy and planning",
+      "Migration assessment and planning",
+      "Data migration and synchronization",
+      "Application refactoring",
+      "Performance optimization",
+      "Cost optimization and monitoring",
+      "Security and compliance setup",
+      "24/7 cloud management"
+    ],
+    benefits: [
+      "Reduce infrastructure costs by 30-50%",
+      "Improve application performance and scalability",
+      "Enhanced disaster recovery capabilities",
+      "Access to latest cloud technologies",
+      "Pay-as-you-use pricing model"
+    ],
+    useCases: [
+      "Legacy system modernization",
+      "Data center consolidation",
+      "Application scalability improvement",
+      "Disaster recovery enhancement",
+      "Cost optimization initiatives"
+    ],
+    targetAudience: ["CTOs", "IT directors", "DevOps teams", "Enterprise businesses", "Growing startups"],
+    integration: ["AWS", "Azure", "Google Cloud", "Docker", "Kubernetes", "Terraform"],
+    support: ["Dedicated cloud architect", "24/7 monitoring", "Migration support", "Ongoing optimization"],
+    link: "https://ziontechgroup.com/cloud-migration",
+    badge: "Popular",
+    rating: 4.8,
+    reviewCount: 445,
+    aiScore: 93,
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Cloud Solutions",
+      id: "zion-cloud-solutions",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    },
+    tags: ["Cloud Computing", "Migration", "AWS", "Azure", "DevOps"]
+  },
+  // Micro SAAS
+  {
+    id: "project-management-saas",
+    title: "Project Management Pro",
+    description: "Comprehensive project management platform with task tracking, team collaboration, time management, and advanced reporting capabilities.",
+    category: "Micro SAAS",
+    price: {
+      monthly: 29,
+      yearly: 290,
+      currency: "$"
+    },
+    features: [
+      "Task and project tracking",
+      "Team collaboration tools",
+      "Time tracking and reporting",
+      "Gantt charts and timelines",
+      "Resource allocation",
+      "Budget tracking",
+      "Mobile app access",
+      "API and integrations"
+    ],
+    benefits: [
+      "Improve project delivery by 25%",
+      "Reduce project management overhead",
+      "Better team collaboration and communication",
+      "Real-time project visibility",
+      "Automated reporting and analytics"
+    ],
+    useCases: [
+      "Software development projects",
+      "Marketing campaign management",
+      "Construction and engineering",
+      "Event planning and management",
+      "Consulting projects"
+    ],
+    targetAudience: ["Project managers", "Team leaders", "Small businesses", "Freelancers", "Agencies"],
+    integration: ["Slack", "Microsoft Teams", "Google Workspace", "Trello", "Asana", "Jira"],
+    support: ["Email support", "Live chat", "Video tutorials", "Knowledge base", "Community forum"],
+    link: "https://ziontechgroup.com/project-management",
+    badge: "New",
+    rating: 4.7,
+    reviewCount: 156,
+    aiScore: 89,
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Productivity",
+      id: "zion-productivity",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    },
+    tags: ["Project Management", "Team Collaboration", "Task Tracking", "Productivity", "SaaS"]
+  },
+  {
+    id: "inventory-management",
+    title: "Smart Inventory Management",
+    description: "AI-powered inventory management system with demand forecasting, automated reordering, and real-time stock level monitoring.",
+    category: "Micro SAAS",
+    price: {
+      monthly: 39,
+      yearly: 390,
+      currency: "$"
+    },
+    features: [
+      "Real-time inventory tracking",
+      "AI demand forecasting",
+      "Automated reorder points",
+      "Multi-location management",
+      "Barcode scanning",
+      "Supplier management",
+      "Cost analysis and reporting",
+      "Mobile app access"
+    ],
+    benefits: [
+      "Reduce inventory costs by 20-30%",
+      "Eliminate stockouts and overstock",
+      "Improve cash flow management",
+      "Automate routine inventory tasks",
+      "Better supplier relationships"
+    ],
+    useCases: [
+      "Retail businesses",
+      "E-commerce operations",
+      "Manufacturing companies",
+      "Wholesale distributors",
+      "Restaurant and hospitality"
+    ],
+    targetAudience: ["Inventory managers", "Retail owners", "Operations managers", "Small businesses", "E-commerce companies"],
+    integration: ["Shopify", "WooCommerce", "QuickBooks", "Xero", "Shipping carriers", "POS systems"],
+    support: ["Phone support", "Email support", "Implementation assistance", "Training sessions", "Documentation"],
+    link: "https://ziontechgroup.com/inventory-management",
+    badge: "Featured",
+    rating: 4.8,
+    reviewCount: 234,
+    aiScore: 91,
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Operations",
+      id: "zion-operations",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    },
+    tags: ["Inventory Management", "AI", "Automation", "Retail", "E-commerce"]
+  },
+
+  // Web Development Services
+  {
+    id: "web-app-development",
+    title: "Modern Web Application Development",
+    description: "Full-stack web application development using cutting-edge technologies and best practices for optimal performance and user experience.",
+    category: "Development",
+    price: {
+      monthly: 0,
+      yearly: 0,
+      oneTime: 15000,
+      currency: "$"
+    },
+    features: [
+      "Responsive design and development",
+      "Frontend and backend development",
+      "Database design and optimization",
+      "API development and integration",
+      "Performance optimization",
+      "Security implementation"
+    ],
+    benefits: [
+      "Modern, scalable architecture",
+      "Excellent user experience",
+      "Mobile-first responsive design",
+      "Fast loading times",
+      "SEO optimization",
+      "Easy maintenance and updates"
+    ],
+    useCases: [
+      "E-commerce platforms",
+      "Business management systems",
+      "Customer portals",
+      "Content management systems",
+      "Web applications",
+      "Progressive web apps"
+    ],
+    targetAudience: [
+      "Startups and SMEs",
+      "E-commerce businesses",
+      "Service companies",
+      "Educational institutions",
+      "Non-profit organizations",
+      "Government agencies"
+    ],
+    tags: ["Web Development", "React", "Node.js", "Full-Stack", "Responsive Design", "Performance"],
+    integration: ["React", "Node.js", "MongoDB", "AWS", "Docker"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/web-development",
+    rating: 4.8,
+    reviewCount: 156,
+    aiScore: 85,
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+
+  // Mobile Development Services
+  {
+    id: "mobile-app-development",
+    title: "Cross-Platform Mobile App Development",
+    description: "Native-quality mobile applications for iOS and Android using cross-platform technologies for cost-effective development and maintenance.",
+    category: "Development",
+    price: {
+      monthly: 0,
+      yearly: 0,
+      oneTime: 20000,
+      currency: "$"
+    },
+    features: [
+      "Cross-platform development (iOS & Android)",
+      "Native performance optimization",
+      "Offline functionality",
+      "Push notifications",
+      "App store deployment",
+      "Maintenance and updates"
+    ],
+    benefits: [
+      "Single codebase for multiple platforms",
+      "Faster time to market",
+      "Cost-effective development",
+      "Consistent user experience",
+      "Easy maintenance",
+      "Wide device compatibility"
+    ],
+    useCases: [
+      "Business applications",
+      "E-commerce apps",
+      "Social networking apps",
+      "Utility applications",
+      "Entertainment apps",
+      "Educational apps"
+    ],
+    targetAudience: [
+      "Startups and SMEs",
+      "E-commerce businesses",
+      "Service companies",
+      "Educational institutions",
+      "Healthcare organizations",
+      "Government agencies"
+    ],
+    tags: ["Mobile Development", "React Native", "Flutter", "Cross-Platform", "iOS", "Android"],
+    integration: ["React Native", "Flutter", "Firebase", "AWS", "App Store"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/mobile-development",
+    rating: 4.7,
+    reviewCount: 203,
+    aiScore: 82,
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+
+  // Data Analytics Services
+  {
+    id: "data-analytics-platform",
+    title: "Business Intelligence & Data Analytics Platform",
+    description: "Comprehensive data analytics solution that transforms raw data into actionable insights for informed decision-making and business growth.",
+    category: "Analytics",
+    price: {
+      monthly: 10000,
+      yearly: 100000,
+      currency: "$"
+    },
+    features: [
+      "Data integration and warehousing",
+      "Real-time dashboards and reports",
+      "Advanced analytics and forecasting",
+      "Data visualization tools",
+      "Custom KPI tracking",
+      "Automated reporting"
+    ],
+    benefits: [
+      "Data-driven decision making",
+      "Improved operational efficiency",
+      "Better customer insights",
+      "Competitive advantage",
+      "Cost optimization",
+      "Risk mitigation"
+    ],
+    useCases: [
+      "Sales performance analysis",
+      "Customer behavior insights",
+      "Operational efficiency tracking",
+      "Financial reporting",
+      "Market trend analysis",
+      "Predictive analytics"
+    ],
+    targetAudience: [
+      "Medium to large enterprises",
+      "Financial services",
+      "Retail organizations",
+      "Manufacturing companies",
+      "Healthcare organizations",
+      "Technology companies"
+    ],
+    tags: ["Data Analytics", "Business Intelligence", "Dashboards", "Reporting", "Predictive Analytics"],
+    integration: ["Power BI", "Tableau", "Python", "R", "SQL"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/data-analytics",
+    rating: 4.9,
+    reviewCount: 89,
+    aiScore: 91,
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+
+  // DevOps & Automation Services
+  {
+    id: "devops-automation",
+    title: "DevOps & CI/CD Pipeline Automation",
+    description: "End-to-end DevOps implementation with automated CI/CD pipelines, infrastructure as code, and monitoring solutions for faster, more reliable software delivery.",
+    category: "Automation",
+    price: {
+      monthly: 0,
+      yearly: 0,
+      oneTime: 12000,
+      currency: "$"
+    },
+    features: [
+      "CI/CD pipeline setup and automation",
+      "Infrastructure as code (IaC)",
+      "Container orchestration",
+      "Monitoring and alerting",
+      "Security scanning integration",
+      "Performance optimization"
+    ],
+    benefits: [
+      "Faster software delivery",
+      "Reduced deployment errors",
+      "Improved collaboration",
+      "Better resource utilization",
+      "Enhanced security",
+      "Scalable infrastructure"
+    ],
+    useCases: [
+      "Software development teams",
+      "Microservices architecture",
+      "Cloud-native applications",
+      "Legacy system modernization",
+      "High-availability systems",
+      "Multi-environment deployments"
+    ],
+    targetAudience: [
+      "Technology companies",
+      "Software development teams",
+      "IT departments",
+      "Startups",
+      "Financial services",
+      "Healthcare organizations"
+    ],
+    tags: ["DevOps", "CI/CD", "Automation", "Docker", "Kubernetes", "Infrastructure"],
+    integration: ["Jenkins", "GitLab", "Docker", "Kubernetes", "AWS"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/devops",
+    rating: 4.6,
+    reviewCount: 134,
+    aiScore: 78,
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+
+  // Blockchain Services
+  {
+    id: "blockchain-solutions",
+    title: "Blockchain & Smart Contract Development",
+    description: "Custom blockchain solutions and smart contract development for decentralized applications, supply chain tracking, and secure digital transactions.",
+    category: "Blockchain",
+    price: {
+      monthly: 0,
+      yearly: 0,
+      oneTime: 30000,
+      currency: "$"
+    },
+    features: [
+      "Custom blockchain development",
+      "Smart contract creation",
+      "DApp development",
+      "Token creation and management",
+      "Blockchain integration",
+      "Security auditing"
+    ],
+    benefits: [
+      "Enhanced transparency and trust",
+      "Reduced transaction costs",
+      "Improved security",
+      "Automated processes",
+      "Global accessibility",
+      "Immutable records"
+    ],
+    useCases: [
+      "Supply chain tracking",
+      "Digital identity management",
+      "Decentralized finance (DeFi)",
+      "NFT marketplaces",
+      "Voting systems",
+      "Asset tokenization"
+    ],
+    targetAudience: [
+      "Financial services",
+      "Supply chain companies",
+      "Technology startups",
+      "Government agencies",
+      "Healthcare organizations",
+      "Real estate companies"
+    ],
+    tags: ["Blockchain", "Smart Contracts", "DApps", "Ethereum", "DeFi", "NFTs"],
+    integration: ["Ethereum", "Solidity", "Web3.js", "MetaMask", "IPFS"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/blockchain",
+    rating: 4.5,
+    reviewCount: 67,
+    aiScore: 73,
+    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+
+  // IoT Solutions
+  {
+    id: "iot-platform",
+    title: "IoT Platform & Device Management",
+    description: "Comprehensive IoT platform for device management, data collection, and real-time monitoring with advanced analytics and automation capabilities.",
+    category: "IoT",
+    price: {
+      monthly: 0,
+      yearly: 0,
+      oneTime: 25000,
+      currency: "$"
+    },
+    features: [
+      "IoT device management",
+      "Real-time data collection",
+      "Edge computing capabilities",
+      "Advanced analytics",
+      "Automation workflows",
+      "Security and compliance"
+    ],
+    benefits: [
+      "Real-time monitoring and control",
+      "Predictive maintenance",
+      "Operational efficiency",
+      "Cost reduction",
+      "Data-driven insights",
+      "Scalable infrastructure"
+    ],
+    useCases: [
+      "Smart manufacturing",
+      "Connected buildings",
+      "Asset tracking",
+      "Environmental monitoring",
+      "Predictive maintenance",
+      "Smart cities"
+    ],
+    targetAudience: [
+      "Manufacturing companies",
+      "Building management",
+      "Logistics companies",
+      "Utility companies",
+      "Government agencies",
+      "Healthcare organizations"
+    ],
+    tags: ["IoT", "Device Management", "Edge Computing", "Real-time Analytics", "Automation"],
+    integration: ["IoT devices", "Cloud platforms", "Analytics tools", "Mobile apps"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/iot",
+    rating: 4.4,
+    reviewCount: 78,
+    aiScore: 76,
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+
+  // Digital Marketing Services
+  {
+    id: "digital-marketing-automation",
+    title: "AI-Powered Digital Marketing Automation",
+    description: "Intelligent marketing automation platform that leverages AI to optimize campaigns, personalize content, and maximize ROI across all digital channels.",
+    category: "IT Services",
+    price: {
+      monthly: 5000,
+      yearly: 50000,
+      currency: "$"
+    },
+    features: [
+      "Multi-channel campaign management",
+      "AI-powered content optimization",
+      "Customer segmentation and targeting",
+      "Automated email marketing",
+      "Social media automation",
+      "ROI tracking and analytics"
+    ],
+    benefits: [
+      "Increased conversion rates",
+      "Reduced marketing costs",
+      "Better customer engagement",
+      "Personalized experiences",
+      "Data-driven decisions",
+      "Scalable campaigns"
+    ],
+    useCases: [
+      "E-commerce marketing",
+      "Lead generation campaigns",
+      "Customer retention",
+      "Brand awareness",
+      "Product launches",
+      "Event marketing"
+    ],
+    targetAudience: [
+      "E-commerce businesses",
+      "B2B companies",
+      "Service providers",
+      "Startups",
+      "Educational institutions",
+      "Non-profit organizations"
+    ],
+    tags: ["Digital Marketing", "Automation", "AI", "Campaign Management", "Analytics"],
+    integration: ["HubSpot", "Mailchimp", "Google Analytics", "Facebook Ads", "LinkedIn Ads"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/digital-marketing",
+    rating: 4.6,
+    reviewCount: 145,
+    aiScore: 88,
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+
+  // IT Consulting Services
+  {
+    id: "it-strategy-consulting",
+    title: "IT Strategy & Digital Transformation Consulting",
+    description: "Strategic IT consulting services to align technology with business objectives, optimize IT operations, and drive digital transformation initiatives.",
+    category: "IT Services",
+    price: {
+      monthly: 0,
+      yearly: 0,
+      oneTime: 20000,
+      currency: "$"
+    },
+    features: [
+      "IT strategy development",
+      "Technology roadmap planning",
+      "Digital transformation consulting",
+      "IT governance and compliance",
+      "Technology vendor selection",
+      "Change management support"
+    ],
+    benefits: [
+      "Aligned technology strategy",
+      "Optimized IT operations",
+      "Reduced technology costs",
+      "Improved business agility",
+      "Enhanced competitive advantage",
+      "Future-ready infrastructure"
+    ],
+    useCases: [
+      "Digital transformation",
+      "IT modernization",
+      "Technology consolidation",
+      "Compliance and governance",
+      "Merger and acquisition",
+      "Technology assessment"
+    ],
+    targetAudience: [
+      "Large enterprises",
+      "Mid-market companies",
+      "Government agencies",
+      "Healthcare organizations",
+      "Financial services",
+      "Manufacturing companies"
+    ],
+    tags: ["IT Strategy", "Digital Transformation", "Consulting", "Governance", "Compliance"],
+    integration: ["Enterprise systems", "Cloud platforms", "Security tools", "Analytics platforms"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/it-consulting",
+    rating: 4.8,
+    reviewCount: 92,
+    aiScore: 85,
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+
+  // Software Testing Services
+  {
+    id: "software-testing-automation",
+    title: "Automated Software Testing & Quality Assurance",
+    description: "Comprehensive software testing services including automated testing, performance testing, and quality assurance to ensure reliable and high-quality software delivery.",
+    category: "IT Services",
+    price: {
+      monthly: 0,
+      yearly: 0,
+      oneTime: 8000,
+      currency: "$"
+    },
+    features: [
+      "Test automation framework development",
+      "Performance and load testing",
+      "Security testing",
+      "API testing",
+      "Mobile app testing",
+      "Continuous testing integration"
+    ],
+    benefits: [
+      "Faster testing cycles",
+      "Improved test coverage",
+      "Reduced manual effort",
+      "Better quality assurance",
+      "Faster time to market",
+      "Cost-effective testing"
+    ],
+    useCases: [
+      "Web application testing",
+      "Mobile app testing",
+      "API testing",
+      "Performance testing",
+      "Security testing",
+      "Regression testing"
+    ],
+    targetAudience: [
+      "Software development companies",
+      "Technology startups",
+      "E-commerce businesses",
+      "Financial services",
+      "Healthcare organizations",
+      "Government agencies"
+    ],
+    tags: ["Software Testing", "Automation", "Quality Assurance", "Performance Testing", "Security Testing"],
+    integration: ["Selenium", "JUnit", "TestNG", "Jenkins", "GitLab CI"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/software-testing",
+    rating: 4.5,
+    reviewCount: 67,
+    aiScore: 72,
+    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+  // New AI & Machine Learning Services
+  {
+    id: "ai-content-generation",
+    title: "AI-Powered Content Generation Platform",
+    description: "Enterprise-grade AI content generation platform that creates high-quality, SEO-optimized content for blogs, social media, marketing materials, and technical documentation.",
+    category: "AI Services",
+    price: {
+      monthly: 2500,
+      yearly: 25000,
+      currency: "$"
+    },
+    features: [
+      "Multi-language content generation",
+      "SEO optimization and keyword integration",
+      "Brand voice customization",
+      "Content scheduling and automation",
+      "Plagiarism detection and originality scoring",
+      "Analytics and performance tracking",
+      "API integration for existing workflows"
+    ],
+    benefits: [
+      "10x faster content creation",
+      "Consistent brand messaging",
+      "Improved SEO rankings",
+      "Cost-effective content production",
+      "Scalable content operations",
+      "24/7 content generation capability"
+    ],
+    useCases: [
+      "Marketing content creation",
+      "Blog and article writing",
+      "Social media content",
+      "Technical documentation",
+      "Product descriptions",
+      "Email marketing campaigns"
+    ],
+    targetAudience: [
+      "Marketing agencies",
+      "E-commerce businesses",
+      "Content creators",
+      "SaaS companies",
+      "Educational institutions",
+      "Publishing companies"
+    ],
+    tags: ["AI Content", "Content Generation", "SEO", "Marketing", "Automation"],
+    integration: ["WordPress", "Shopify", "HubSpot", "Mailchimp", "Social media platforms"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/ai-content-generation",
+    rating: 4.9,
+    reviewCount: 1247,
+    aiScore: 96,
+    image: "https://images.unsplash.com/photo-1513258496099-48168024aec0?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion AI Labs",
+      id: "zion-ai-labs",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+  {
+    id: "ai-customer-support",
+    title: "Intelligent Customer Support Automation",
+    description: "AI-powered customer support platform that provides 24/7 automated assistance, intelligent ticket routing, and personalized customer experiences.",
+    category: "AI Services",
+    price: {
+      monthly: 1800,
+      yearly: 18000,
+      currency: "$"
+    },
+    features: [
+      "Natural language processing for customer queries",
+      "Automated ticket classification and routing",
+      "Multi-channel support integration",
+      "Sentiment analysis and escalation",
+      "Knowledge base management",
+      "Performance analytics and reporting",
+      "Custom chatbot development"
+    ],
+    benefits: [
+      "24/7 customer support availability",
+      "Reduced response times by 80%",
+      "Lower support costs",
+      "Improved customer satisfaction",
+      "Scalable support operations",
+      "Data-driven insights for improvement"
+    ],
+    useCases: [
+      "E-commerce customer support",
+      "SaaS product support",
+      "Enterprise help desks",
+      "Technical support teams",
+      "Customer service operations",
+      "Support ticket management"
+    ],
+    targetAudience: [
+      "E-commerce businesses",
+      "SaaS companies",
+      "Enterprise organizations",
+      "Customer service teams",
+      "Support operations",
+      "Service-based businesses"
+    ],
+    tags: ["Customer Support", "AI Automation", "Chatbot", "Customer Experience", "24/7 Support"],
+    integration: ["Zendesk", "Intercom", "Slack", "Microsoft Teams", "CRM systems"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/ai-customer-support",
+    rating: 4.7,
+    reviewCount: 892,
+    aiScore: 89,
+    image: "https://images.unsplash.com/photo-1551836022-deb4988cc6c0?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion AI Labs",
+      id: "zion-ai-labs",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+  // New Cybersecurity Services
+  {
+    id: "ai-threat-detection",
+    title: "AI-Powered Threat Detection & Response",
+    description: "Next-generation cybersecurity platform that uses artificial intelligence to detect, analyze, and respond to threats in real-time, providing proactive protection against evolving cyber risks.",
+    category: "Security",
+    price: {
+      monthly: 4200,
+      yearly: 42000,
+      currency: "$"
+    },
+    features: [
+      "Real-time threat detection using AI/ML",
+      "Behavioral analysis and anomaly detection",
+      "Automated incident response and remediation",
+      "Threat intelligence integration",
+      "Advanced analytics and reporting",
+      "24/7 security monitoring",
+      "Custom rule creation and tuning"
+    ],
+    benefits: [
+      "Proactive threat prevention",
+      "Reduced false positives by 90%",
+      "Faster incident response times",
+      "Comprehensive security coverage",
+      "Scalable security operations",
+      "Compliance with security standards"
+    ],
+    useCases: [
+      "Enterprise security operations",
+      "Financial services security",
+      "Healthcare data protection",
+      "Government security",
+      "Critical infrastructure protection",
+      "Cloud security monitoring"
+    ],
+    targetAudience: [
+      "Large enterprises",
+      "Financial institutions",
+      "Healthcare organizations",
+      "Government agencies",
+      "Technology companies",
+      "Security operations centers"
+    ],
+    tags: ["AI Security", "Threat Detection", "Incident Response", "Cybersecurity", "Real-time Monitoring"],
+    integration: ["SIEM systems", "EDR platforms", "Firewalls", "Cloud security tools", "Identity providers"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/ai-threat-detection",
+    rating: 4.8,
+    reviewCount: 445,
+    aiScore: 94,
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Security Labs",
+      id: "zion-security-labs",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+  {
+    id: "zero-trust-security",
+    title: "Zero Trust Security Architecture",
+    description: "Comprehensive zero trust security implementation that verifies every user, device, and network connection before granting access, ensuring maximum security for modern hybrid work environments.",
+    category: "Security",
+    price: {
+      monthly: 3500,
+      yearly: 35000,
+      currency: "$"
+    },
+    features: [
+      "Identity verification and authentication",
+      "Device trust assessment",
+      "Network segmentation and micro-perimeters",
+      "Continuous monitoring and validation",
+      "Privileged access management",
+      "Multi-factor authentication",
+      "Security policy enforcement"
+    ],
+    benefits: [
+      "Enhanced security posture",
+      "Reduced attack surface",
+      "Improved compliance",
+      "Better user experience",
+      "Scalable security model",
+      "Future-proof architecture"
+    ],
+    useCases: [
+      "Remote work security",
+      "Cloud security implementation",
+      "Enterprise access control",
+      "Government security",
+      "Healthcare compliance",
+      "Financial services security"
+    ],
+    targetAudience: [
+      "Enterprise organizations",
+      "Government agencies",
+      "Healthcare institutions",
+      "Financial services",
+      "Technology companies",
+      "Educational institutions"
+    ],
+    tags: ["Zero Trust", "Access Control", "Identity Management", "Network Security", "Compliance"],
+    integration: ["Identity providers", "VPN solutions", "Network security tools", "SIEM systems", "Compliance platforms"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/zero-trust-security",
+    rating: 4.7,
+    reviewCount: 334,
+    aiScore: 87,
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Security Labs",
+      id: "zion-security-labs",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+  // New Cloud Computing & DevOps Services
+  {
+    id: "kubernetes-orchestration",
+    title: "Enterprise Kubernetes Orchestration Platform",
+    description: "Advanced Kubernetes management platform that simplifies container orchestration, provides automated scaling, monitoring, and security for enterprise-grade applications.",
+    category: "Cloud",
+    price: {
+      monthly: 2800,
+      yearly: 28000,
+      currency: "$"
+    },
+    features: [
+      "Multi-cluster management",
+      "Automated scaling and load balancing",
+      "Advanced monitoring and alerting",
+      "Security scanning and compliance",
+      "CI/CD pipeline integration",
+      "Cost optimization and resource management",
+      "Disaster recovery and backup"
+    ],
+    benefits: [
+      "Simplified container management",
+      "Improved application reliability",
+      "Cost optimization",
+      "Enhanced security",
+      "Faster deployment cycles",
+      "Scalable infrastructure"
+    ],
+    useCases: [
+      "Microservices architecture",
+      "Cloud-native applications",
+      "DevOps automation",
+      "Application modernization",
+      "Multi-cloud deployments",
+      "High-availability systems"
+    ],
+    targetAudience: [
+      "Technology companies",
+      "E-commerce businesses",
+      "Financial services",
+      "Healthcare organizations",
+      "Government agencies",
+      "Startups and scale-ups"
+    ],
+    tags: ["Kubernetes", "Container Orchestration", "DevOps", "Microservices", "Cloud Native"],
+    integration: ["Docker", "Helm", "Prometheus", "Grafana", "Jenkins"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/kubernetes",
+    rating: 4.6,
+    reviewCount: 223,
+    aiScore: 79,
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+  {
+    id: "serverless-architecture",
+    title: "Serverless Architecture & API Development",
+    description: "End-to-end serverless architecture design and implementation, including API development, event-driven processing, and cost-optimized cloud solutions.",
+    category: "Cloud",
+    price: {
+      monthly: 2200,
+      yearly: 22000,
+      currency: "$"
+    },
+    features: [
+      "Serverless architecture design",
+      "API Gateway and Lambda development",
+      "Event-driven processing",
+      "Database optimization",
+      "Cost monitoring and optimization",
+      "Auto-scaling implementation",
+      "Performance monitoring and alerting"
+    ],
+    benefits: [
+      "Reduced infrastructure costs",
+      "Automatic scaling",
+      "Faster time to market",
+      "Reduced operational overhead",
+      "Pay-per-use pricing",
+      "High availability and reliability"
+    ],
+    useCases: [
+      "Web applications",
+      "Mobile app backends",
+      "Data processing pipelines",
+      "IoT applications",
+      "Real-time applications",
+      "Microservices architecture"
+    ],
+    targetAudience: [
+      "Startups",
+      "SaaS companies",
+      "E-commerce businesses",
+      "Technology companies",
+      "Digital agencies",
+      "Enterprise organizations"
+    ],
+    tags: ["Serverless", "API Development", "Cloud Architecture", "Cost Optimization", "Auto-scaling"],
+    integration: ["AWS Lambda", "API Gateway", "DynamoDB", "CloudWatch", "S3"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/serverless",
+    rating: 4.5,
+    reviewCount: 178,
+    aiScore: 75,
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+  // New Micro SAAS Services
+  {
+    id: "workflow-automation",
+    title: "Business Workflow Automation Platform",
+    description: "Intelligent workflow automation platform that streamlines business processes, reduces manual tasks, and improves operational efficiency across all departments.",
+    category: "IT Services",
+    price: {
+      monthly: 1200,
+      yearly: 12000,
+      currency: "$"
+    },
+    features: [
+      "Drag-and-drop workflow builder",
+      "Integration with 100+ business tools",
+      "Conditional logic and decision trees",
+      "Performance analytics and reporting",
+      "Custom automation templates",
+      "Mobile app for approvals",
+      "API for custom integrations"
+    ],
+    benefits: [
+      "80% reduction in manual tasks",
+      "Improved process consistency",
+      "Faster approval cycles",
+      "Better compliance tracking",
+      "Increased productivity",
+      "Cost savings through automation"
+    ],
+    useCases: [
+      "HR onboarding processes",
+      "Invoice approval workflows",
+      "Customer service automation",
+      "Sales process automation",
+      "Project management workflows",
+      "Compliance and audit processes"
+    ],
+    targetAudience: [
+      "Small to medium businesses",
+      "Enterprise organizations",
+      "HR departments",
+      "Finance teams",
+      "Operations teams",
+      "Customer service teams"
+    ],
+    tags: ["Workflow Automation", "Process Optimization", "Business Efficiency", "Integration", "Productivity"],
+    integration: ["Slack", "Microsoft Teams", "Zapier", "Salesforce", "HubSpot"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/workflow-automation",
+    rating: 4.4,
+    reviewCount: 156,
+    aiScore: 71,
+    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+  {
+    id: "data-visualization",
+    title: "Interactive Data Visualization Dashboard",
+    description: "Advanced data visualization platform that transforms complex data into interactive charts, graphs, and dashboards for better decision-making and insights.",
+    category: "Analytics",
+    price: {
+      monthly: 1500,
+      yearly: 15000,
+      currency: "$"
+    },
+    features: [
+      "Interactive charts and graphs",
+      "Real-time data updates",
+      "Custom dashboard creation",
+      "Data source integration",
+      "Export and sharing capabilities",
+      "Mobile-responsive design",
+      "Advanced filtering and drill-down"
+    ],
+    benefits: [
+      "Faster data insights",
+      "Improved decision making",
+      "Better data communication",
+      "Increased user engagement",
+      "Reduced analysis time",
+      "Professional presentations"
+    ],
+    useCases: [
+      "Business intelligence reporting",
+      "Sales performance tracking",
+      "Marketing analytics",
+      "Financial reporting",
+      "Operational dashboards",
+      "Customer analytics"
+    ],
+    targetAudience: [
+      "Business analysts",
+      "Marketing teams",
+      "Sales teams",
+      "Executive leadership",
+      "Data scientists",
+      "Consulting firms"
+    ],
+    tags: ["Data Visualization", "Business Intelligence", "Dashboards", "Analytics", "Reporting"],
+    integration: ["Power BI", "Tableau", "Python", "R", "SQL databases"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/data-visualization",
+    rating: 4.6,
+    reviewCount: 234,
+    aiScore: 78,
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+  // New Specialized IT Services
+  {
+    id: "edge-computing",
+    title: "Edge Computing & IoT Platform",
+    description: "Comprehensive edge computing platform that brings computation and data storage closer to data sources, enabling real-time processing for IoT applications and edge devices.",
+    category: "IoT",
+    price: {
+      monthly: 3800,
+      yearly: 38000,
+      currency: "$"
+    },
+    features: [
+      "Edge node management and monitoring",
+      "Real-time data processing",
+      "IoT device integration",
+      "Edge AI and machine learning",
+      "Data synchronization and backup",
+      "Security and access control",
+      "Scalable edge infrastructure"
+    ],
+    benefits: [
+      "Reduced latency for real-time applications",
+      "Lower bandwidth costs",
+      "Improved data privacy",
+      "Enhanced reliability",
+      "Scalable IoT deployments",
+      "Cost-effective edge processing"
+    ],
+    useCases: [
+      "Smart city infrastructure",
+      "Industrial IoT applications",
+      "Autonomous vehicles",
+      "Healthcare monitoring",
+      "Retail analytics",
+      "Energy management systems"
+    ],
+    targetAudience: [
+      "Manufacturing companies",
+      "Smart city initiatives",
+      "Healthcare organizations",
+      "Transportation companies",
+      "Energy companies",
+      "Retail businesses"
+    ],
+    tags: ["Edge Computing", "IoT", "Real-time Processing", "Smart Infrastructure", "Industrial IoT"],
+    integration: ["IoT devices", "Cloud platforms", "Analytics tools", "Mobile apps", "Industrial systems"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/edge-computing",
+    rating: 4.3,
+    reviewCount: 89,
+    aiScore: 74,
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+  {
+    id: "quantum-computing",
+    title: "Quantum Computing Solutions & Consulting",
+    description: "Cutting-edge quantum computing solutions and consulting services for organizations looking to leverage quantum algorithms and quantum-safe cryptography.",
+    category: "AI Services",
+    price: {
+      monthly: 0,
+      yearly: 0,
+      oneTime: 15000,
+      currency: "$"
+    },
+    features: [
+      "Quantum algorithm development",
+      "Quantum-safe cryptography implementation",
+      "Quantum computing strategy consulting",
+      "Hybrid classical-quantum solutions",
+      "Performance optimization",
+      "Training and education programs",
+      "Research and development support"
+    ],
+    benefits: [
+      "Future-proof technology adoption",
+      "Competitive advantage in research",
+      "Enhanced security with quantum-safe crypto",
+      "Access to cutting-edge computing",
+      "Strategic technology positioning",
+      "Innovation leadership"
+    ],
+    useCases: [
+      "Cryptography and security",
+      "Optimization problems",
+      "Machine learning acceleration",
+      "Financial modeling",
+      "Drug discovery",
+      "Climate modeling"
+    ],
+    targetAudience: [
+      "Research institutions",
+      "Financial services",
+      "Pharmaceutical companies",
+      "Government agencies",
+      "Technology companies",
+      "Academic institutions"
+    ],
+    tags: ["Quantum Computing", "Quantum Algorithms", "Quantum-Safe Crypto", "Research", "Innovation"],
+    integration: ["Quantum simulators", "Classical computing platforms", "Research tools", "Security frameworks"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/quantum-computing",
+    rating: 4.2,
+    reviewCount: 45,
+    aiScore: 68,
+    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+  // New Blockchain & Fintech Services
+  {
+    id: "defi-platform",
+    title: "DeFi Platform Development",
+    description: "Complete decentralized finance platform development including smart contracts, liquidity pools, yield farming, and cross-chain interoperability solutions.",
+    category: "Blockchain",
+    price: {
+      monthly: 0,
+      yearly: 0,
+      oneTime: 25000,
+      currency: "$"
+    },
+    features: [
+      "Smart contract development and auditing",
+      "Liquidity pool implementation",
+      "Yield farming mechanisms",
+      "Cross-chain bridge development",
+      "Security and audit integration",
+      "Frontend and mobile applications",
+      "Analytics and monitoring dashboard"
+    ],
+    benefits: [
+      "First-mover advantage in DeFi",
+      "Revenue generation through fees",
+      "Community-driven growth",
+      "Transparent and trustless operations",
+      "Global accessibility",
+      "Innovative financial products"
+    ],
+    useCases: [
+      "Decentralized exchanges",
+      "Lending and borrowing platforms",
+      "Yield farming protocols",
+      "Stablecoin systems",
+      "Cross-chain DeFi",
+      "NFT marketplaces"
+    ],
+    targetAudience: [
+      "Financial institutions",
+      "Crypto startups",
+      "Investment firms",
+      "DeFi entrepreneurs",
+      "Blockchain companies",
+      "Traditional finance companies"
+    ],
+    tags: ["DeFi", "Smart Contracts", "Blockchain", "Cryptocurrency", "Fintech"],
+    integration: ["Ethereum", "Solidity", "Web3.js", "MetaMask", "IPFS"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/defi-platform",
+    rating: 4.4,
+    reviewCount: 78,
+    aiScore: 72,
+    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+  {
+    id: "nft-marketplace",
+    title: "NFT Marketplace & Metaverse Platform",
+    description: "Complete NFT marketplace development with metaverse integration, virtual real estate, digital art trading, and blockchain-based gaming solutions.",
+    category: "Blockchain",
+    price: {
+      monthly: 0,
+      yearly: 0,
+      oneTime: 18000,
+      currency: "$"
+    },
+    features: [
+      "NFT minting and trading platform",
+      "Metaverse virtual world",
+      "Digital wallet integration",
+      "Marketplace analytics",
+      "Creator tools and royalties",
+      "Gaming integration",
+      "Virtual real estate management"
+    ],
+    benefits: [
+      "New revenue streams",
+      "Community engagement",
+      "Digital asset ownership",
+      "Creative monetization",
+      "Virtual commerce opportunities",
+      "Future-proof technology adoption"
+    ],
+    useCases: [
+      "Digital art marketplaces",
+      "Gaming platforms",
+      "Virtual real estate",
+      "Collectibles trading",
+      "Virtual events and concerts",
+      "Educational platforms"
+    ],
+    targetAudience: [
+      "Art galleries and museums",
+      "Gaming companies",
+      "Entertainment companies",
+      "Educational institutions",
+      "Real estate companies",
+      "Creative agencies"
+    ],
+    tags: ["NFT", "Metaverse", "Blockchain", "Virtual Reality", "Digital Art"],
+    integration: ["Ethereum", "Polygon", "VR platforms", "Gaming engines", "Digital wallets"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/nft-marketplace",
+    rating: 4.3,
+    reviewCount: 67,
+    aiScore: 69,
+    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+  // New Web & Mobile Development Services
+  {
+    id: "progressive-web-app",
+    title: "Progressive Web App (PWA) Development",
+    description: "High-performance progressive web applications that provide native app-like experiences with offline functionality, push notifications, and cross-platform compatibility.",
+    category: "Development",
+    price: {
+      monthly: 0,
+      yearly: 0,
+      oneTime: 8500,
+      currency: "$"
+    },
+    features: [
+      "Offline functionality and caching",
+      "Push notifications",
+      "App-like user experience",
+      "Cross-platform compatibility",
+      "Performance optimization",
+      "Service worker implementation",
+      "App store deployment"
+    ],
+    benefits: [
+      "Native app-like experience",
+      "Faster loading times",
+      "Offline functionality",
+      "Cross-platform compatibility",
+      "Lower development costs",
+      "Easy updates and maintenance"
+    ],
+    useCases: [
+      "E-commerce platforms",
+      "Social media applications",
+      "Business applications",
+      "News and content platforms",
+      "Educational platforms",
+      "Service booking applications"
+    ],
+    targetAudience: [
+      "E-commerce businesses",
+      "Media companies",
+      "Educational institutions",
+      "Service-based businesses",
+      "Startups",
+      "Enterprise organizations"
+    ],
+    tags: ["PWA", "Web Development", "Mobile-First", "Offline Support", "Cross-Platform"],
+    integration: ["React", "Vue.js", "Angular", "Service Workers", "Web APIs"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/progressive-web-app",
+    rating: 4.5,
+    reviewCount: 189,
+    aiScore: 76,
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+  {
+    id: "ai-powered-mobile-app",
+    title: "AI-Powered Mobile Application Development",
+    description: "Intelligent mobile applications that leverage artificial intelligence for personalized experiences, predictive analytics, and automated decision-making.",
+    category: "Development",
+    price: {
+      monthly: 0,
+      yearly: 0,
+      oneTime: 12000,
+      currency: "$"
+    },
+    features: [
+      "AI-powered personalization",
+      "Predictive analytics",
+      "Natural language processing",
+      "Computer vision integration",
+      "Machine learning models",
+      "Real-time data processing",
+      "Offline AI capabilities"
+    ],
+    benefits: [
+      "Enhanced user experience",
+      "Personalized content delivery",
+      "Predictive user behavior",
+      "Automated decision making",
+      "Competitive advantage",
+      "Future-proof technology"
+    ],
+    useCases: [
+      "E-commerce applications",
+      "Health and fitness apps",
+      "Financial applications",
+      "Educational platforms",
+      "Social media apps",
+      "Productivity tools"
+    ],
+    targetAudience: [
+      "Technology companies",
+      "Healthcare organizations",
+      "Financial services",
+      "Educational institutions",
+      "E-commerce businesses",
+      "Startups and scale-ups"
+    ],
+    tags: ["Mobile Development", "AI Integration", "Machine Learning", "Personalization", "Predictive Analytics"],
+    integration: ["React Native", "Flutter", "TensorFlow", "Core ML", "Firebase"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/ai-mobile-app",
+    rating: 4.6,
+    reviewCount: 234,
+    aiScore: 83,
+    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+  // New Digital Marketing & Analytics Services
+  {
+    id: "ai-marketing-automation",
+    title: "AI-Powered Marketing Automation Platform",
+    description: "Intelligent marketing automation platform that uses AI to optimize campaigns, personalize content, and maximize ROI across all marketing channels.",
+    category: "IT Services",
+    price: {
+      monthly: 2800,
+      yearly: 28000,
+      currency: "$"
+    },
+    features: [
+      "AI-driven campaign optimization",
+      "Personalized content delivery",
+      "Multi-channel campaign management",
+      "Predictive analytics and scoring",
+      "Automated A/B testing",
+      "Customer journey mapping",
+      "ROI tracking and optimization"
+    ],
+    benefits: [
+      "Increased marketing ROI",
+      "Personalized customer experiences",
+      "Automated campaign optimization",
+      "Better customer engagement",
+      "Data-driven decision making",
+      "Scalable marketing operations"
+    ],
+    useCases: [
+      "Email marketing campaigns",
+      "Social media advertising",
+      "Content marketing",
+      "Lead generation",
+      "Customer retention",
+      "Brand awareness campaigns"
+    ],
+    targetAudience: [
+      "Marketing agencies",
+      "E-commerce businesses",
+      "B2B companies",
+      "SaaS companies",
+      "Retail businesses",
+      "Service-based companies"
+    ],
+    tags: ["Marketing Automation", "AI Marketing", "Campaign Optimization", "Personalization", "ROI Optimization"],
+    integration: ["HubSpot", "Mailchimp", "Google Analytics", "Facebook Ads", "LinkedIn Ads"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/ai-marketing-automation",
+    rating: 4.7,
+    reviewCount: 345,
+    aiScore: 86,
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+  {
+    id: "predictive-analytics",
+    title: "Predictive Analytics & Business Intelligence",
+    description: "Advanced predictive analytics platform that provides actionable insights, trend forecasting, and data-driven recommendations for strategic business decisions.",
+    category: "Analytics",
+    price: {
+      monthly: 4500,
+      yearly: 45000,
+      currency: "$"
+    },
+    features: [
+      "Predictive modeling and forecasting",
+      "Advanced statistical analysis",
+      "Real-time data processing",
+      "Interactive dashboards",
+      "Automated reporting",
+      "Machine learning integration",
+      "Custom algorithm development"
+    ],
+    benefits: [
+      "Data-driven decision making",
+      "Predictive insights",
+      "Risk assessment and mitigation",
+      "Operational efficiency",
+      "Competitive advantage",
+      "Strategic planning support"
+    ],
+    useCases: [
+      "Sales forecasting",
+      "Customer behavior prediction",
+      "Risk assessment",
+      "Operational optimization",
+      "Market trend analysis",
+      "Financial planning"
+    ],
+    targetAudience: [
+      "Financial services",
+      "Retail businesses",
+      "Manufacturing companies",
+      "Healthcare organizations",
+      "Technology companies",
+      "Consulting firms"
+    ],
+    tags: ["Predictive Analytics", "Business Intelligence", "Data Science", "Forecasting", "Machine Learning"],
+    integration: ["Python", "R", "TensorFlow", "PyTorch", "SQL databases"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/predictive-analytics",
+    rating: 4.8,
+    reviewCount: 267,
+    aiScore: 89,
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+  // Final Specialized Services
+  {
+    id: "green-it-solutions",
+    title: "Green IT & Sustainable Technology Solutions",
+    description: "Environmentally conscious IT solutions that reduce carbon footprint, optimize energy consumption, and implement sustainable technology practices for eco-friendly business operations.",
+    category: "IT Services",
+    price: {
+      monthly: 3200,
+      yearly: 32000,
+      currency: "$"
+    },
+    features: [
+      "Energy-efficient infrastructure design",
+      "Carbon footprint monitoring",
+      "Sustainable cloud solutions",
+      "Green data center optimization",
+      "E-waste management strategies",
+      "Renewable energy integration",
+      "Sustainability reporting and compliance"
+    ],
+    benefits: [
+      "Reduced environmental impact",
+      "Lower energy costs",
+      "Improved brand reputation",
+      "Regulatory compliance",
+      "Employee satisfaction",
+      "Long-term sustainability"
+    ],
+    useCases: [
+      "Data center optimization",
+      "Cloud infrastructure",
+      "Office technology",
+      "Supply chain management",
+      "Corporate sustainability",
+      "Green building technology"
+    ],
+    targetAudience: [
+      "Large enterprises",
+      "Government agencies",
+      "Educational institutions",
+      "Healthcare organizations",
+      "Manufacturing companies",
+      "Technology companies"
+    ],
+    tags: ["Green IT", "Sustainability", "Energy Efficiency", "Environmental Impact", "Corporate Responsibility"],
+    integration: ["Energy monitoring systems", "Cloud platforms", "IoT devices", "Analytics tools"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/green-it",
+    rating: 4.5,
+    reviewCount: 123,
+    aiScore: 77,
+    image: "https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+  {
+    id: "digital-twin-platform",
+    title: "Digital Twin & Simulation Platform",
+    description: "Advanced digital twin platform that creates virtual replicas of physical systems, enabling real-time monitoring, predictive maintenance, and simulation-based optimization.",
+    category: "IoT",
+    price: {
+      monthly: 5500,
+      yearly: 55000,
+      currency: "$"
+    },
+    features: [
+      "3D digital twin creation",
+      "Real-time data synchronization",
+      "Predictive maintenance algorithms",
+      "Simulation and scenario testing",
+      "IoT sensor integration",
+      "Advanced analytics and reporting",
+      "Custom visualization dashboards"
+    ],
+    benefits: [
+      "Improved operational efficiency",
+      "Predictive maintenance",
+      "Reduced downtime",
+      "Better resource utilization",
+      "Enhanced decision making",
+      "Cost optimization"
+    ],
+    useCases: [
+      "Manufacturing operations",
+      "Smart city infrastructure",
+      "Healthcare systems",
+      "Energy management",
+      "Transportation systems",
+      "Building management"
+    ],
+    targetAudience: [
+      "Manufacturing companies",
+      "Smart city initiatives",
+      "Healthcare organizations",
+      "Energy companies",
+      "Transportation companies",
+      "Real estate companies"
+    ],
+    tags: ["Digital Twin", "IoT", "Simulation", "Predictive Maintenance", "3D Modeling"],
+    integration: ["IoT sensors", "3D modeling tools", "Simulation platforms", "Analytics tools", "Cloud platforms"],
+    support: ["24/7 support", "Documentation", "Training"],
+    link: "https://ziontechgroup.com/digital-twin",
+    rating: 4.4,
+    reviewCount: 89,
+    aiScore: 75,
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Tech Group",
+      id: "zion-tech-group",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    }
+  },
+  {
+    id: "quantum-ai-platform",
+    title: "Quantum AI Platform",
+    description: "Revolutionary platform combining quantum computing with artificial intelligence for solving complex optimization problems and advancing machine learning capabilities.",
+    category: "AI Services",
+    price: {
+      monthly: 299,
+      yearly: 2990,
+      currency: "$"
+    },
+    features: [
+      "Quantum machine learning algorithms",
+      "Quantum optimization solvers",
+      "Hybrid classical-quantum computing",
+      "Quantum neural networks",
+      "Real-time quantum simulation",
+      "API for quantum algorithm development",
+      "Performance benchmarking tools",
+      "Educational resources and tutorials"
+    ],
+    benefits: [
+      "Solve previously intractable problems",
+      "Exponential speedup for optimization tasks",
+      "Advance AI research and development",
+      "Stay ahead of quantum computing adoption",
+      "Access to cutting-edge quantum technology"
+    ],
+    useCases: [
+      "Drug discovery and molecular modeling",
+      "Financial portfolio optimization",
+      "Logistics and supply chain optimization",
+      "Cryptography and cybersecurity",
+      "Climate modeling and prediction"
+    ],
+    targetAudience: ["Research institutions", "Pharmaceutical companies", "Financial services", "Government agencies", "Technology companies"],
+    integration: ["Python", "Jupyter notebooks", "Cloud platforms", "Scientific computing tools", "Quantum hardware"],
+    support: ["Quantum computing experts", "Custom algorithm development", "Research collaboration", "Training programs"],
+    link: "https://ziontechgroup.com/quantum-ai",
+    badge: "Premium",
+    rating: 4.9,
+    reviewCount: 89,
+    aiScore: 99,
+    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Quantum AI",
+      id: "zion-quantum-ai",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    },
+    tags: ["Quantum Computing", "AI", "Machine Learning", "Optimization", "Research"]
+  },
+  {
+    id: "metaverse-development-platform",
+    title: "Metaverse Development Platform",
+    description: "Comprehensive platform for creating immersive 3D virtual worlds, VR/AR experiences, and digital twin applications for businesses and creators.",
+    category: "Development",
+    price: {
+      monthly: 159,
+      yearly: 1590,
+      currency: "$"
+    },
+    features: [
+      "3D world builder and editor",
+      "VR/AR content creation tools",
+      "Digital twin development",
+      "Multi-user collaboration spaces",
+      "Asset marketplace and library",
+      "Performance optimization tools",
+      "Cross-platform deployment",
+      "Analytics and user engagement tracking"
+    ],
+    benefits: [
+      "Create immersive brand experiences",
+      "Enable remote collaboration in 3D",
+      "Build digital twin solutions",
+      "Monetize virtual experiences",
+      "Future-proof your business strategy"
+    ],
+    useCases: [
+      "Virtual events and conferences",
+      "Product demonstrations and training",
+      "Real estate virtual tours",
+      "Educational simulations",
+      "Brand engagement experiences"
+    ],
+    targetAudience: ["Brand managers", "Event organizers", "Educators", "Real estate professionals", "Content creators"],
+    integration: ["Unity", "Unreal Engine", "VR headsets", "AR devices", "3D modeling tools"],
+    support: ["3D design consultation", "Performance optimization", "Custom development", "Deployment assistance"],
+    link: "https://ziontechgroup.com/metaverse",
+    badge: "New",
+    rating: 4.7,
+    reviewCount: 156,
+    aiScore: 94,
+    image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Metaverse Labs",
+      id: "zion-metaverse",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    },
+    tags: ["Metaverse", "VR/AR", "3D Development", "Digital Twins", "Immersive Tech"]
+  },
+  {
+    id: "ai-ethics-governance",
+    title: "AI Ethics & Governance Platform",
+    description: "Comprehensive platform for ensuring responsible AI development, ethical decision-making, and regulatory compliance in AI systems.",
+    category: "AI Services",
+    price: {
+      monthly: 129,
+      yearly: 1290,
+      currency: "$"
+    },
+    features: [
+      "AI bias detection and mitigation",
+      "Ethical AI framework implementation",
+      "Regulatory compliance monitoring",
+      "Transparency and explainability tools",
+      "AI impact assessment",
+      "Stakeholder engagement tools",
+      "Audit trail and reporting",
+      "Training and certification programs"
+    ],
+    benefits: [
+      "Build trust in AI systems",
+      "Ensure regulatory compliance",
+      "Mitigate AI risks and biases",
+      "Improve AI decision transparency",
+      "Protect brand reputation"
+    ],
+    useCases: [
+      "Financial services AI systems",
+      "Healthcare AI applications",
+      "Government AI deployments",
+      "Enterprise AI platforms",
+      "Public-facing AI services"
+    ],
+    targetAudience: ["AI ethics officers", "Compliance teams", "Legal departments", "AI developers", "Business leaders"],
+    integration: ["AI development platforms", "Compliance systems", "Audit tools", "Reporting platforms"],
+    support: ["Ethics consulting", "Compliance assessment", "Framework implementation", "Training programs"],
+    link: "https://ziontechgroup.com/ai-ethics",
+    badge: "Enterprise",
+    rating: 4.8,
+    reviewCount: 234,
+    aiScore: 95,
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion AI Ethics",
+      id: "zion-ai-ethics",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    },
+    tags: ["AI Ethics", "Governance", "Compliance", "Responsible AI", "Risk Management"]
+  },
+  {
+    id: "federated-learning-platform",
+    title: "Federated Learning Platform",
+    description: "Privacy-preserving machine learning platform that enables collaborative AI model training without sharing raw data, perfect for sensitive industries.",
+    category: "AI Services",
+    price: {
+      monthly: 179,
+      yearly: 1790,
+      currency: "$"
+    },
+    features: [
+      "Distributed model training",
+      "Privacy-preserving algorithms",
+      "Secure aggregation protocols",
+      "Model performance monitoring",
+      "Collaborative learning workflows",
+      "Data privacy compliance tools",
+      "Multi-party computation",
+      "Real-time model updates"
+    ],
+    benefits: [
+      "Train AI models without data sharing",
+      "Maintain data privacy and security",
+      "Collaborate across organizations",
+      "Comply with data protection regulations",
+      "Access larger, more diverse datasets"
+    ],
+    useCases: [
+      "Healthcare data analysis",
+      "Financial fraud detection",
+      "Cross-border research collaboration",
+      "Privacy-sensitive AI applications",
+      "Multi-organization AI projects"
+    ],
+    targetAudience: ["Healthcare organizations", "Financial institutions", "Research institutions", "Government agencies", "Privacy-conscious companies"],
+    integration: ["Machine learning frameworks", "Data platforms", "Privacy tools", "Cloud services"],
+    support: ["Privacy consulting", "Implementation support", "Compliance guidance", "Technical training"],
+    link: "https://ziontechgroup.com/federated-learning",
+    badge: "Premium",
+    rating: 4.9,
+    reviewCount: 123,
+    aiScore: 97,
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Privacy AI",
+      id: "zion-privacy-ai",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    },
+    tags: ["Federated Learning", "Privacy", "Machine Learning", "Collaboration", "Security"]
+  },
+  {
+    id: "neuromorphic-computing",
+    title: "Neuromorphic Computing Platform",
+    description: "Brain-inspired computing platform that mimics neural networks for ultra-efficient AI processing, enabling edge AI applications with minimal power consumption.",
+    category: "AI Services",
+    price: {
+      monthly: 249,
+      yearly: 2490,
+      currency: "$"
+    },
+    features: [
+      "Spiking neural networks",
+      "Event-driven processing",
+      "Ultra-low power consumption",
+      "Real-time learning capabilities",
+      "Edge AI optimization",
+      "Neuromorphic hardware simulation",
+      "Adaptive learning algorithms",
+      "Energy-efficient AI models"
+    ],
+    benefits: [
+      "Reduce AI power consumption by 90%",
+      "Enable real-time edge AI processing",
+      "Improve AI learning efficiency",
+      "Extend battery life in devices",
+      "Advance brain-inspired computing"
+    ],
+    useCases: [
+      "IoT edge AI applications",
+      "Autonomous vehicles",
+      "Smart sensors and devices",
+      "Robotics and automation",
+      "Neuromorphic research"
+    ],
+    targetAudience: ["IoT developers", "Robotics engineers", "Hardware manufacturers", "Research institutions", "Edge AI developers"],
+    integration: ["IoT platforms", "Robotics frameworks", "Hardware simulators", "AI development tools"],
+    support: ["Neuromorphic experts", "Hardware integration", "Performance optimization", "Research collaboration"],
+    link: "https://ziontechgroup.com/neuromorphic",
+    badge: "New",
+    rating: 4.6,
+    reviewCount: 78,
+    aiScore: 96,
+    image: "https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=800&h=500",
+    author: {
+      name: "Zion Neuromorphic Labs",
+      id: "zion-neuromorphic",
+      avatarUrl: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=100&h=100"
+    },
+    tags: ["Neuromorphic Computing", "Edge AI", "IoT", "Energy Efficiency", "Brain-Inspired AI"]
+  }
+];
+
+export const SERVICE_CATEGORIES = [
+  {
+    name: "AI Services",
+    description: "Transform your business with intelligent automation and data-driven insights",
+    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "AI Services"),
+    icon: "🤖",
+    color: "from-purple-500 to-indigo-600"
+  },
+  {
+    name: "Security",
+    description: "Protect your organization with comprehensive security solutions and monitoring",
+    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "Security"),
+    icon: "🔒",
+    color: "from-red-500 to-pink-600"
+  },
+  {
+    name: "Cloud",
+    description: "Modernize your infrastructure with cloud solutions and DevOps automation",
+    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "Cloud"),
+    icon: "☁️",
+    color: "from-blue-500 to-cyan-600"
+  },
+  {
+    name: "Analytics",
+    description: "Unlock business insights with advanced analytics and data engineering",
+    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "Analytics"),
+    icon: "📊",
+    color: "from-green-500 to-emerald-600"
+  },
+  {
+    name: "IT Services",
+    description: "Accelerate your digital journey with strategic transformation services",
+    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "IT Services"),
+    icon: "🚀",
+    color: "from-orange-500 to-red-600"
+  },
+  {
+    name: "Development",
+    description: "Build custom applications and digital experiences for your business",
+    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "Development"),
+    icon: "💻",
+    color: "from-indigo-500 to-purple-600"
+  },
+  {
+    name: "Blockchain",
+    description: "Leverage decentralized technologies for innovation and transparency",
+    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "Blockchain"),
+    icon: "⛓️",
+    color: "from-yellow-500 to-amber-600"
+  },
+  {
+    name: "IoT",
+    description: "Connect and manage devices with advanced IoT platforms",
+    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "IoT"),
+    icon: "🌐",
+    color: "from-green-500 to-emerald-600"
+  },
+  {
+    name: "Automation",
+    description: "Streamline operations with intelligent automation solutions",
+    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "Automation"),
+    icon: "⚡",
+    color: "from-orange-500 to-red-600"
+  },
+  {
+    name: "Micro SAAS",
+    description: "Scalable software solutions for modern businesses",
+    services: COMPREHENSIVE_SERVICES.filter(s => s.category === "Micro SAAS"),
+    icon: "🚀",
+    color: "from-purple-500 to-indigo-600"
+  }
+];

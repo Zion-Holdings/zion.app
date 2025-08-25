@@ -1,122 +1,117 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 
-interface SelectProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface SelectProps extends React.HTMLAttributes<HTMLDivElement> {
   value?: string;
   onValueChange?: (value: string) => void;
+  disabled?: boolean;
 }
 
-export const Select = React.forwardRef<HTMLDivElement, SelectProps>(
-  ({ className, children, ...props }, ref) => (
-    <div
-      ref={ref}
-      className={cn('relative', className)}
-      {...props}
-    >
-      {children}
-    </div>
-  )
-);
-Select.displayName = 'Select';
+export interface SelectTriggerProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
+}
 
-interface SelectTriggerProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {}
+export interface SelectContentProps extends React.HTMLAttributes<HTMLDivElement> {
+  children: React.ReactNode;
+}
 
-export const SelectTrigger = React.forwardRef<HTMLButtonElement, SelectTriggerProps>(
-  ({ className, children, ...props }, ref) => (
+export interface SelectItemProps extends React.HTMLAttributes<HTMLDivElement> {
+  value: string;
+  children: React.ReactNode;
+  disabled?: boolean;
+}
+
+export interface SelectValueProps extends React.HTMLAttributes<HTMLSpanElement> {
+  placeholder?: string;
+}
+
+const SelectContext = React.createContext<{
+  value: string;
+  onValueChange: (value: string) => void;
+  disabled: boolean;
+} | undefined>(undefined);
+
+export const Select: React.FC<SelectProps> = ({
+  value = '',
+  onValueChange,
+  disabled = false,
+  children,
+  className,
+  ...props
+}) => {
+  const handleValueChange = (newValue: string) => {
+    if (!disabled && onValueChange) {
+      onValueChange(newValue);
+    }
+  };
+
+  return (
+    <SelectContext.Provider value={{ value, onValueChange: handleValueChange, disabled }}>
+      <div className={cn('relative', className)} {...props}>
+        {children}
+      </div>
+    </SelectContext.Provider>
+  );
+};
+
+export const SelectTrigger: React.FC<SelectTriggerProps> = ({ children, className, ...props }) => {
+  const context = React.useContext(SelectContext);
+  if (!context) {
+    throw new Error('SelectTrigger must be used within a Select component');
+  }
+
+  return (
     <button
-      ref={ref}
       className={cn(
-        'flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
+        'flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
         className
       )}
+      disabled={context.disabled}
       {...props}
     >
       {children}
     </button>
-  )
-);
-SelectTrigger.displayName = 'SelectTrigger';
+  );
+};
 
-interface SelectValueProps extends React.HTMLAttributes<HTMLSpanElement> {
-  placeholder?: string;
-}
+export const SelectValue: React.FC<SelectValueProps> = ({ placeholder, className, ...props }) => {
+  const context = React.useContext(SelectContext);
+  if (!context) {
+    throw new Error('SelectValue must be used within a Select component');
+  }
 
-export const SelectValue = React.forwardRef<HTMLSpanElement, SelectValueProps>(
-  ({ className, placeholder, ...props }, ref) => (
-    <span
-      ref={ref}
-      className={cn('text-sm', className)}
-      {...props}
-    >
-      {placeholder || 'Select an option'}
+  return (
+    <span className={cn('text-sm', className)} {...props}>
+      {context.value || placeholder || 'Select an option'}
     </span>
-  )
-);
-SelectValue.displayName = 'SelectValue';
+  );
+};
 
-interface SelectContentProps extends React.HTMLAttributes<HTMLDivElement> {}
+export const SelectContent: React.FC<SelectContentProps> = ({ children, className, ...props }) => {
+  return (
+    <div className={cn('relative', className)} {...props}>
+      {children}
+    </div>
+  );
+};
 
-export const SelectContent = React.forwardRef<HTMLDivElement, SelectContentProps>(
-  ({ className, children, ...props }, ref) => (
+export const SelectItem: React.FC<SelectItemProps> = ({ value, children, disabled, className, ...props }) => {
+  const context = React.useContext(SelectContext);
+  if (!context) {
+    throw new Error('SelectItem must be used within a Select component');
+  }
+
+  return (
     <div
-      ref={ref}
       className={cn(
-        'absolute top-full left-0 right-0 z-50 mt-1 rounded-md border bg-popover text-popover-foreground shadow-md',
+        'relative flex w-full cursor-pointer select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground',
+        disabled && 'pointer-events-none opacity-50',
         className
       )}
+      onClick={() => context.onValueChange(value)}
       {...props}
     >
       {children}
     </div>
-  )
-);
-SelectContent.displayName = 'SelectContent';
-
-interface SelectLabelProps extends React.HTMLAttributes<HTMLDivElement> {}
-
-export const SelectLabel = React.forwardRef<HTMLDivElement, SelectLabelProps>(
-  ({ className, children, ...props }, ref) => (
-    <div
-      ref={ref}
-      className={cn('px-2 py-1.5 text-sm font-semibold', className)}
-      {...props}
-    >
-      {children}
-    </div>
-  )
-);
-SelectLabel.displayName = 'SelectLabel';
-
-interface SelectItemProps extends React.HTMLAttributes<HTMLDivElement> {
-  value: string;
-}
-
-export const SelectItem = React.forwardRef<HTMLDivElement, SelectItemProps>(
-  ({ className, children, value, ...props }, ref) => (
-    <div
-      ref={ref}
-      className={cn(
-        'relative flex w-full cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none hover:bg-accent hover:text-accent-foreground',
-        className
-      )}
-      data-value={value}
-      {...props}
-    >
-      {children}
-    </div>
-  )
-);
-SelectItem.displayName = 'SelectItem';
-
-interface SelectSeparatorProps extends React.HTMLAttributes<HTMLDivElement> {}
-
-export const SelectSeparator = React.forwardRef<HTMLDivElement, SelectSeparatorProps>(
-  ({ className, ...props }, ref) => (
-    <div
-      ref={ref}
-      className={cn('-mx-1 my-1 h-px bg-muted', className)}
-      {...props}
-    />
-  )
-);
-SelectSeparator.displayName = 'SelectSeparator';
+  );
+};

@@ -1,289 +1,582 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Advanced Futuristic Design System - Zion Tech Group */
 
-@layer base {
-  :root {
-    --font-sans: 'Orbitron', system-ui, sans-serif;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-    --background: 0 0% 7%;
-    --foreground: 142 71% 45%;
-
-    --card: 0 0% 7%;
-    --card-foreground: 142 71% 45%;
-
-    --popover: 0 0% 7%;
-    --popover-foreground: 142 71% 45%;
-
-    --primary: 216 84% 50%;
-    --primary-foreground: 142 71% 45%;
-
-    --secondary: 0 0% 68%;
-    --secondary-foreground: 0 0% 7%;
-
-    --muted: 0 0% 68%;
-    --muted-foreground: 215 20% 65%;
-
-    --accent: 228 12% 92%;
-    --accent-foreground: 0 0% 7%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 142 71% 45%;
-
-    --border: 0 0% 68%;
-    --input: 0 0% 68%;
-    --ring: 216 84% 53%;
-
-    --radius: 0.5rem;
-
-    --sidebar-background: 228 12% 92%;
-
-    --sidebar-foreground: 0 0% 7%;
-
-    --sidebar-primary: 216 84% 53%;
-
-    --sidebar-primary-foreground: 210 40% 98%;
-    --sidebar-accent: 210 40% 96%;
-    --sidebar-accent-foreground: 224 71% 4%;
-    --sidebar-border: 214 32% 91%;
-    --sidebar-ring: 262 83% 58%;
+/* Quantum Computing Inspired Effects */
+@keyframes quantum-entanglement {
+  0%, 100% { 
+    transform: scale(1) rotate(0deg);
+    filter: hue-rotate(0deg);
   }
-
-  .dark {
-    --background: 0 0% 7%;
-    --foreground: 142 71% 45%;
-
-    --card: 0 0% 7%;
-    --card-foreground: 142 71% 45%;
-
-    --popover: 0 0% 7%;
-    --popover-foreground: 142 71% 45%;
-
-    --primary: 216 84% 50%;
-    --primary-foreground: 142 71% 45%;
-
-    --secondary: 0 0% 68%;
-    --secondary-foreground: 0 0% 7%;
-
-    --muted: 0 0% 68%;
-    --muted-foreground: 215 20% 65%;
-
-    --accent: 228 12% 92%;
-    --accent-foreground: 0 0% 7%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 142 71% 45%;
-
-    --border: 0 0% 68%;
-    --input: 0 0% 68%;
-    --ring: 216 84% 53%;
-    --sidebar-background: 228 12% 92%;
-    --sidebar-foreground: 0 0% 7%;
-    --sidebar-primary: 216 84% 53%;
-    --sidebar-primary-foreground: 210 40% 98%;
-    --sidebar-accent: 210 40% 96%;
-    --sidebar-accent-foreground: 224 71% 4%;
-    --sidebar-border: 214 32% 91%;
-    --sidebar-ring: 262 83% 58%;
+  25% { 
+    transform: scale(1.1) rotate(90deg);
+    filter: hue-rotate(90deg);
   }
-
-  .light {
-    --background: 0 0% 100%;
-    --foreground: 224 71% 4%;
-
-    --card: 0 0% 100%;
-    --card-foreground: 224 71% 4%;
-
-    --popover: 0 0% 100%;
-    --popover-foreground: 224 71% 4%;
-
-    --primary: 262 83% 58%;
-    --primary-foreground: 210 40% 98%;
-
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 220 9% 46%;
-
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
-
-    --accent: 220 14% 96%;
-    --accent-foreground: 220 9% 46%;
-
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 262 83% 58%;
-
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 224 71% 4%;
-    --sidebar-primary: 262 83% 58%;
-    --sidebar-primary-foreground: 210 40% 98%;
-    --sidebar-accent: 220 14% 96%;
-    --sidebar-accent-foreground: 220 9% 46%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 262 83% 58%;
+  50% { 
+    transform: scale(0.9) rotate(180deg);
+    filter: hue-rotate(180deg);
+  }
+  75% { 
+    transform: scale(1.05) rotate(270deg);
+    filter: hue-rotate(270deg);
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
+@keyframes holographic-projection {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.8);
+    filter: blur(10px);
   }
-  body {
-    @apply bg-background text-foreground;
+  50% {
+    opacity: 0.8;
+    transform: translateY(0) scale(1);
+    filter: blur(2px);
   }
-}
-
-/* Zion Tech Group Custom Colors */
-@layer base {
-  :root {
-    --zion-blue: 210 100% 50%;
-    --zion-blue-light: 210 100% 60%;
-    --zion-blue-dark: 210 100% 30%;
-    --zion-slate: 220 13% 18%;
-    --zion-slate-light: 220 13% 70%;
-    --zion-cyan: 180 100% 50%;
-    --zion-purple: 270 100% 50%;
-    --zion-purple-light: 270 100% 60%;
-    --zion-purple-dark: 270 100% 40%;
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
   }
 }
 
-/* Enhanced Animations */
-@keyframes pulse {
+@keyframes neural-network {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes cyber-pulse {
   0%, 100% {
+    box-shadow: 
+      0 0 20px rgba(34, 221, 210, 0.5),
+      0 0 40px rgba(139, 92, 246, 0.3),
+      0 0 60px rgba(59, 130, 246, 0.2);
+  }
+  50% {
+    box-shadow: 
+      0 0 40px rgba(34, 221, 210, 0.8),
+      0 0 80px rgba(139, 92, 246, 0.5),
+      0 0 120px rgba(59, 130, 246, 0.3);
+  }
+}
+
+@keyframes matrix-rain {
+  0% {
+    transform: translateY(-100vh);
     opacity: 1;
   }
-  50% {
-    opacity: .5;
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
   }
 }
 
-@keyframes float {
+@keyframes holographic-shift {
   0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(0, 255, 255, 0.8), 0 0 60px rgba(0, 255, 255, 0.6);
-  }
-}
-
-@keyframes neon-pulse {
-  0%, 100% {
-    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
-  }
-  50% {
-    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
-  }
-}
-
-@keyframes gradient-shift {
-  0% {
     background-position: 0% 50%;
   }
   50% {
     background-position: 100% 50%;
   }
-  100% {
-    background-position: 0% 50%;
+}
+
+@keyframes quantum-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(139, 92, 246, 0.8), 0 0 60px rgba(59, 130, 246, 0.6);
   }
 }
 
-@keyframes slide-in-left {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
+@keyframes dash {
   to {
-    transform: translateX(0);
-    opacity: 1;
+    stroke-dashoffset: -100;
   }
 }
 
-@keyframes slide-in-right {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
+/* Enhanced Futuristic Effects */
+.quantum-entanglement {
+  animation: quantum-entanglement 4s ease-in-out infinite;
 }
 
-@keyframes fade-in-up {
-  from {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+.holographic-projection {
+  animation: holographic-projection 1.5s ease-out forwards;
 }
 
-.pulse { animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
-.float { animation: float 6s ease-in-out infinite; }
-.glow { animation: glow 2s ease-in-out infinite alternate; }
-.neon-pulse { animation: neon-pulse 2s ease-in-out infinite; }
-.gradient-shift { background-size: 200% 200%; animation: gradient-shift 3s ease infinite; }
-.slide-in-left { animation: slide-in-left 0.6s ease-out; }
-.slide-in-right { animation: slide-in-right 0.6s ease-out; }
-.fade-in-up { animation: fade-in-up 0.8s ease-out; }
+.neural-network-bg {
+  background: linear-gradient(-45deg, #22ddd2, #8b5cf6, #3b82f6, #22ddd2);
+  background-size: 400% 400%;
+  animation: neural-network 3s ease infinite;
+}
 
-/* Futuristic Effects */
-.neon-border {
-  border: 2px solid transparent;
-  background: linear-gradient(45deg, #00ffff, #ff00ff, #00ffff) border-box;
+.cyber-pulse {
+  animation: cyber-pulse 2s ease-in-out infinite;
+}
+
+.animate-matrix-rain {
+  animation: matrix-rain 20s linear infinite;
+}
+
+.animate-holographic-shift {
   background-size: 200% 200%;
-  animation: gradient-shift 3s ease infinite;
+  animation: holographic-shift 3s ease infinite;
 }
 
-.glass-effect {
+.animate-quantum-pulse {
+  animation: quantum-pulse 2s ease-in-out infinite;
+}
+
+.animate-dash {
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: dash 3s linear infinite;
+}
+
+/* Advanced Glass Morphism */
+.glass-morphism {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.glass-morphism-strong {
   background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(30px);
   border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
-.holographic {
-  background: linear-gradient(45deg, #00ffff, #ff00ff, #00ffff);
+/* Quantum Border Effects */
+.quantum-border {
+  position: relative;
+  background: linear-gradient(45deg, #22ddd2, #8b5cf6, #3b82f6, #22ddd2);
+  padding: 2px;
+  border-radius: 8px;
+  background-size: 400% 400%;
+  animation: neural-network 3s ease infinite;
+}
+
+.quantum-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #0f0f0f;
+  border-radius: 6px;
+  margin: 1px;
+}
+
+.quantum-border > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Holographic Text Effects */
+.holographic-text {
+  background: linear-gradient(45deg, #22ddd2, #8b5cf6, #3b82f6, #22ddd2);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: neural-network 3s ease infinite;
+}
+
+.holographic-text-strong {
+  background: linear-gradient(45deg, #22ddd2, #8b5cf6, #3b82f6, #22ddd2, #22ddd2);
+  background-size: 500% 500%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: neural-network 2s ease infinite;
+}
+
+/* Neon Glow Effects */
+.neon-glow {
+  box-shadow: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 15px currentColor,
+    0 0 20px currentColor;
+}
+
+.neon-glow-strong {
+  box-shadow: 
+    0 0 10px currentColor,
+    0 0 20px currentColor,
+    0 0 30px currentColor,
+    0 0 40px currentColor;
+}
+
+.hover\:shadow-neon:hover {
+  box-shadow: 0 0 20px rgba(34, 221, 210, 0.5), 0 0 40px rgba(34, 221, 210, 0.3);
+}
+
+/* Cyber Grid Background */
+.cyber-grid {
+  background-image: 
+    linear-gradient(rgba(34, 221, 210, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 221, 210, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.cyber-grid-dense {
+  background-image: 
+    linear-gradient(rgba(34, 221, 210, 0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 221, 210, 0.15) 1px, transparent 1px);
+  background-size: 10px 10px;
+}
+
+/* Floating Elements */
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.glow {
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.neon-pulse {
+  animation: neon-pulse 2s ease-in-out infinite;
+}
+
+.gradient-shift {
   background-size: 200% 200%;
   animation: gradient-shift 3s ease infinite;
+}
+
+/* Slide Animations */
+.slide-in-left {
+  animation: slide-in-left 0.6s ease-out;
+}
+
+.slide-in-right {
+  animation: slide-in-right 0.6s ease-out;
+}
+
+.fade-in-up {
+  animation: fade-in-up 0.8s ease-out;
+}
+
+/* Futuristic Border Effects */
+.futuristic-border {
+  position: relative;
+}
+
+.futuristic-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: linear-gradient(45deg, #22ddd2, #8c15e9, #2e73ea, #22ddd2);
+  background-size: 400% 400%;
+  animation: gradient-shift 3s ease infinite;
+  border-radius: inherit;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}
+
+.neon-text {
+  text-shadow: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 15px currentColor,
+    0 0 20px currentColor;
+}
+
+/* Enhanced Focus States */
+.focus-neon:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(34, 221, 210, 0.3), 0 0 20px rgba(34, 221, 210, 0.2);
+}
+
+/* Loading Animations */
+.loading-dots {
+  display: inline-block;
+}
+
+.loading-dots::after {
+  content: '';
+  animation: loading-dots 1.5s infinite;
+}
+
+@keyframes loading-dots {
+  0%, 20% { content: ''; }
+  40% { content: '.'; }
+  60% { content: '..'; }
+  80%, 100% { content: '...'; }
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Text Gradients */
+.text-gradient-primary {
+  background: linear-gradient(135deg, #22ddd2, #8c15e9);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Enhanced Hover Effects */
-.hover-lift {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.6, 1);
+.text-gradient-secondary {
+  background: linear-gradient(135deg, #2e73ea, #22ddd2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.hover-lift:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+/* Border Gradients */
+.border-gradient {
+  border: 2px solid;
+  border-image: linear-gradient(45deg, #22ddd2, #8b5cf6, #3b82f6) 1;
 }
 
-.hover-glow:hover {
-  box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
+/* Responsive Design */
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
-/* Responsive Utilities */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+}
+
+/* Custom Zion Tech Group Colors */
+:root {
+  --zion-cyan: #00d4ff;
+  --zion-cyan-light: #33ddff;
+  --zion-cyan-dark: #00a3cc;
+  --zion-purple: #8b5cf6;
+  --zion-purple-light: #a78bfa;
+  --zion-purple-dark: #7c3aed;
+  --zion-blue: #3b82f6;
+  --zion-blue-light: #60a5fa;
+  --zion-blue-dark: #1d4ed8;
+  --zion-slate: #64748b;
+  --zion-slate-light: #94a3b8;
+  --zion-slate-dark: #475569;
+  --zion-green: #10b981;
+  --zion-green-light: #34d399;
+  --zion-green-dark: #059669;
+}
+
+/* Enhanced Animations */
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(0, 212, 255, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.8), 0 0 30px rgba(0, 212, 255, 0.6); }
+}
+
+@keyframes neon-pulse {
+  0%, 100% { 
+    text-shadow: 0 0 5px rgba(0, 212, 255, 0.8),
+                 0 0 10px rgba(0, 212, 255, 0.6),
+                 0 0 15px rgba(0, 212, 255, 0.4);
+  }
+  50% { 
+    text-shadow: 0 0 10px rgba(0, 212, 255, 1),
+                 0 0 20px rgba(0, 212, 255, 0.8),
+                 0 0 30px rgba(0, 212, 255, 0.6);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes gradient-shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes slide-in-left {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fade-in-up {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus styles for accessibility */
+*:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Selection styling */
+::selection {
+  background: var(--zion-cyan);
+  color: var(--zion-slate-dark);
+}
+
+/* Responsive utilities */
 .container-responsive {
   @apply container mx-auto px-4 sm:px-6 lg:px-8;
 }
 
+/* LiveKit UI overrides */
+[data-lk-theme='default'] {
+  --lk-color-accent: #06B6D4;
+  --lk-button-background: #06B6D4;
+  --lk-button-background-hover: #0891B2;
+  --lk-bg1: #0B1120;
+  --lk-bg2: #0F172A;
+}
+
+/* Zion-specific custom properties */
+:root {
+  --zion-blue: #2e73ea;
+  --zion-blue-light: #8ab1f3;
+  --zion-blue-dark: #172d67;
+  --zion-purple: #8c15e9;
+  --zion-purple-light: #b971f2;
+  --zion-purple-dark: #530c8b;
+  --zion-cyan: #22ddd2;
+  --zion-cyan-light: #7aeae4;
+  --zion-cyan-dark: #14847e;
+  --zion-slate: #17072b;
+  --zion-slate-light: #451582;
+  --zion-slate-dark: #000000;
+}
+
+/* Accessibility Enhancements */
+.high-contrast {
+  --background: 0 0% 0%;
+  --foreground: 0 0% 100%;
+  --card: 0 0% 0%;
+  --card-foreground: 0 0% 100%;
+  --border: 0 0% 100%;
+  --input: 0 0% 100%;
+  --primary: 0 0% 100%;
+  --primary-foreground: 0 0% 0%;
+}
+
+.high-contrast * {
+  border-color: white !important;
+}
+
+.high-contrast .bg-muted {
+  background-color: #333 !important;
+}
+
+.large-text {
+  font-size: 1.2em;
+}
+
+.large-text h1 { font-size: 2.5em; }
+.large-text h2 { font-size: 2em; }
+.large-text h3 { font-size: 1.75em; }
+.large-text p, .large-text span { font-size: 1.2em; }
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Focus management */
+.focus-visible {
+  outline: 2px solid var(--zion-purple);
+  outline-offset: 2px;
+}
+
+/* Animation utilities */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out;
+}
+
+.animate-pulse-slow {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Responsive text */
 .text-responsive {
   @apply text-sm sm:text-base lg:text-lg;
 }
@@ -292,110 +585,38 @@
   @apply text-2xl sm:text-3xl lg:text-4xl xl:text-5xl;
 }
 
-/* Custom scrollbar for webkit browsers */
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background: theme('colors["zion-blue"].DEFAULT');
-  border-radius: 6px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, theme('colors["zion-purple"].DEFAULT'), theme('colors["zion-cyan"].DEFAULT));
-  border-radius: 6px;
-  border: 2px solid theme('colors["zion-blue"].DEFAULT');
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, theme('colors["zion-purple"].light), theme('colors["zion-cyan"].light));
-}
-
-/* Smooth scrolling */
-html { 
-  scroll-behavior: smooth; 
-}
-
-/* Focus states for accessibility */
-.focus-visible:focus-visible {
-  outline: 2px solid theme('colors["zion-cyan"].DEFAULT');
-  outline-offset: 2px;
-}
-
-/* Selection styles */
-::selection {
-  background: theme('colors["zion-cyan"].DEFAULT');
-  color: white;
-}
-
-::-moz-selection {
-  background: theme('colors["zion-cyan"].DEFAULT');
-  color: white;
-}
-
-/* LiveKit UI overrides */
-[data-lk-theme='default'] {
-  --lk-focus-ring-color: theme('colors["zion-cyan"].DEFAULT');
-  --lk-accent-color: theme('colors["zion-purple"].DEFAULT');
-}
-
-/* Line clamp utility */
-.line-clamp-1 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-}
-
-.line-clamp-2 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-}
-
-.line-clamp-3 {
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-}
-
-/* Loading states */
-.loading-shimmer {
-  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-  background-size: 200% 100%;
-  animation: shimmer 1.5s infinite;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: -200% 0;
-  }
-  100% {
-    background-position: 200% 0;
+/* Mobile utilities */
+@media (max-width: 768px) {
+  .mobile-hidden {
+    display: none;
   }
 }
 
-/* Responsive grid utilities */
-.grid-responsive {
-  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3;
+/* Text utilities */
+.text-center {
+  text-align: center;
 }
 
-.grid-responsive-2 {
-  @apply grid grid-cols-1 md:grid-cols-2;
+/* Enhanced shadow effects */
+.shadow-neon {
+  box-shadow: 0 0 20px rgba(34, 221, 210, 0.3);
 }
 
-.grid-responsive-3 {
-  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+.shadow-neon-strong {
+  box-shadow: 0 0 40px rgba(34, 221, 210, 0.5);
 }
 
-/* Spacing utilities */
-.section-padding {
-  @apply py-16 sm:py-20 lg:py-24;
+/* Quantum state classes */
+.quantum-state-0 {
+  background: linear-gradient(135deg, #22ddd2, #3b82f6);
 }
 
-.container-padding {
-  @apply px-4 sm:px-6 lg:px-8;
+.quantum-state-1 {
+  background: linear-gradient(135deg, #8b5cf6, #22ddd2);
+}
+
+.quantum-state-superposition {
+  background: linear-gradient(135deg, #22ddd2, #8b5cf6, #3b82f6, #22ddd2);
+  background-size: 400% 400%;
+  animation: neural-network 3s ease infinite;
 }
