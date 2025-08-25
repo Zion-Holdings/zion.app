@@ -1,71 +1,71 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Brain, Zap, Users, Target, Shield, Cpu, Globe, Rocket, Star, ArrowRight, CheckCircle, Play, BookOpen, Code, Database, Cloud, Lock, BarChart3, Settings, Monitor, Building } from 'lucide-react';
+import { Code, Brain, Zap, Users, Target, Shield, Cpu, Globe, Rocket, Star, ArrowRight, CheckCircle, Play, BookOpen, Database, Cloud, Lock, BarChart3, Settings, Monitor, GitBranch } from 'lucide-react';
 
-export default function DigitalTransformation() {
+export default function AIAutonomousCodeReview() {
   const features = [
     {
+      icon: Code,
+      title: 'Intelligent Code Analysis',
+      description: 'AI-powered code review that identifies bugs, security vulnerabilities, and optimization opportunities'
+    },
+    {
       icon: Brain,
-      title: 'AI-Powered Transformation',
-      description: 'Leverage artificial intelligence to automate processes and gain competitive advantages'
+      title: 'Learning & Adaptation',
+      description: 'Continuously learns from your codebase to provide increasingly accurate and relevant feedback'
     },
     {
-      icon: Cloud,
-      title: 'Cloud Migration',
-      description: 'Seamless transition to cloud infrastructure for scalability and cost optimization'
-    },
-    {
-      icon: Users,
-      title: 'Change Management',
-      description: 'Comprehensive support for organizational change and digital adoption'
-    },
-    {
-      icon: Target,
-      title: 'Strategic Planning',
-      description: 'Data-driven digital strategy aligned with business objectives'
+      icon: Zap,
+      title: 'Real-time Review',
+      description: 'Instant feedback as you code with suggestions for improvements and best practices'
     },
     {
       icon: Shield,
-      title: 'Security & Compliance',
-      description: 'Enterprise-grade security with built-in compliance monitoring'
+      title: 'Security Scanning',
+      description: 'Automated detection of security vulnerabilities, dependency issues, and compliance violations'
+    },
+    {
+      icon: Users,
+      title: 'Team Collaboration',
+      description: 'Streamlined code review process with AI assistance for faster, more thorough reviews'
     },
     {
       icon: Cpu,
-      title: 'Legacy Modernization',
-      description: 'Transform outdated systems into modern, efficient digital solutions'
+      title: 'Multi-language Support',
+      description: 'Support for all major programming languages and frameworks'
     }
   ];
 
-  const transformationAreas = [
+  const capabilities = [
     {
-      title: 'Process Automation',
-      description: 'Streamline workflows and eliminate manual processes with intelligent automation',
-      icon: Settings
+      title: 'Code Quality Analysis',
+      description: 'Automated assessment of code quality, complexity, and maintainability',
+      icon: Code
     },
     {
-      title: 'Data & Analytics',
-      description: 'Transform data into actionable insights for better decision-making',
-      icon: BarChart3
+      title: 'Security Vulnerability Detection',
+      description: 'Identify security issues, SQL injection, XSS, and other common vulnerabilities',
+      icon: Shield
     },
     {
-      title: 'Customer Experience',
-      description: 'Create seamless, personalized customer journeys across all touchpoints',
-      icon: Users
+      title: 'Performance Optimization',
+      description: 'Suggestions for improving code performance and efficiency',
+      icon: Zap
     },
     {
-      title: 'Employee Productivity',
-      description: 'Empower employees with digital tools and collaborative platforms',
-      icon: Rocket
+      title: 'Best Practices Enforcement',
+      description: 'Ensure adherence to coding standards and industry best practices',
+      icon: GitBranch
     }
   ];
 
   const benefits = [
-    'Increase operational efficiency by 40-60%',
-    'Reduce operational costs by 30-50%',
-    'Improve customer satisfaction by 35%',
-    'Accelerate time to market by 50%',
-    'Enable data-driven decision making',
-    'Create competitive advantages in digital markets'
+    'Reduce code review time by 70%',
+    'Improve code quality by 40%',
+    'Detect security issues early',
+    'Ensure consistent coding standards',
+    'Accelerate development cycles',
+    'Reduce production bugs by 60%'
   ];
 
   return (
@@ -75,26 +75,26 @@ export default function DigitalTransformation() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
             <div className="flex items-center justify-center space-x-2 mb-6">
-              <Rocket className="w-8 h-8 text-cyan-400" />
-              <span className="text-cyan-400 font-semibold">Digital Transformation</span>
+              <Code className="w-8 h-8 text-cyan-400" />
+              <span className="text-cyan-400 font-semibold">AI Autonomous Code Review</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              Transform Your Business
+              Code Review
               <br />
-              <span className="text-white">for the Digital Age</span>
+              <span className="text-white">Reimagined</span>
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Navigate the digital revolution with our comprehensive transformation services. 
-              From strategy to implementation, we help you thrive in the digital economy.
+              Transform your code review process with AI that understands your codebase, 
+              identifies issues instantly, and helps your team write better code.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 transform hover:scale-105">
                 <Play className="w-5 h-5 inline mr-2" />
-                Watch Transformation Story
+                Try Demo
               </button>
               <button className="px-8 py-4 border border-cyan-500 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500 hover:text-white transition-all duration-200">
                 <BookOpen className="w-5 h-5 inline mr-2" />
-                Transformation Guide
+                Learn More
               </button>
             </div>
           </div>
@@ -112,10 +112,10 @@ export default function DigitalTransformation() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Comprehensive Transformation Services
+              Advanced Code Review Features
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              End-to-end digital transformation solutions tailored to your business needs
+              AI-powered insights that transform how you review and improve code
             </p>
           </div>
           
@@ -136,21 +136,21 @@ export default function DigitalTransformation() {
         </div>
       </section>
 
-      {/* Transformation Areas Section */}
+      {/* Capabilities Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Key Transformation Areas
+              Comprehensive Code Analysis
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Focus on the areas that matter most for your digital success
+              From security to performance, our AI covers every aspect of code quality
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {transformationAreas.map((area, index) => {
-              const Icon = area.icon;
+            {capabilities.map((capability, index) => {
+              const Icon = capability.icon;
               return (
                 <div key={index} className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50">
                   <div className="flex items-start space-x-4">
@@ -158,8 +158,8 @@ export default function DigitalTransformation() {
                       <Icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-3">{area.title}</h3>
-                      <p className="text-gray-400">{area.description}</p>
+                      <h3 className="text-xl font-semibold mb-3">{capability.title}</h3>
+                      <p className="text-gray-400">{capability.description}</p>
                     </div>
                   </div>
                 </div>
@@ -174,10 +174,10 @@ export default function DigitalTransformation() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Measurable Business Impact
+              Why Choose AI Code Review?
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              See real results from your digital transformation journey
+              Transform your development process with measurable improvements
             </p>
           </div>
           
@@ -206,24 +206,24 @@ export default function DigitalTransformation() {
       <section className="py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Transform Your Business?
+            Ready to Revolutionize Code Review?
           </h2>
           <p className="text-xl text-gray-400 mb-8">
-            Join leading organizations that have successfully navigated digital transformation
+            Join development teams that are already writing better code with AI assistance
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contact"
               className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 transform hover:scale-105 inline-flex items-center"
             >
-              Start Your Transformation
+              Start Free Trial
               <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
             <Link
               to="/case-studies"
               className="px-8 py-4 border border-cyan-500 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500 hover:text-white transition-all duration-200"
             >
-              View Transformation Stories
+              View Developer Success Stories
             </Link>
           </div>
         </div>

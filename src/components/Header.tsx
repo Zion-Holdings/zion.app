@@ -51,6 +51,12 @@ export function Header() {
       description: 'Explore our comprehensive service offerings'
     },
     { 
+      path: '/ai-solutions', 
+      label: 'AI Solutions', 
+      icon: '🧠',
+      description: 'Advanced AI and machine learning solutions'
+    },
+    { 
       path: '/solutions/enterprise', 
       label: 'Solutions', 
       icon: '💼',
@@ -63,6 +69,12 @@ export function Header() {
       description: 'Cutting-edge technology solutions'
     },
     { 
+      path: '/case-studies', 
+      label: 'Case Studies', 
+      icon: '📊',
+      description: 'Success stories and results'
+    },
+    { 
       path: '/pricing', 
       label: 'Pricing', 
       icon: '💰',
@@ -73,30 +85,6 @@ export function Header() {
       label: 'About', 
       icon: 'ℹ️',
       description: 'Learn about our company'
-    },
-    { 
-      path: '/careers', 
-      label: 'Careers', 
-      icon: '🚀',
-      description: 'Join our team'
-    },
-    { 
-      path: '/blog', 
-      label: 'Blog', 
-      icon: '📝',
-      description: 'Latest insights and news'
-    },
-    { 
-      path: '/case-studies', 
-      label: 'Case Studies', 
-      icon: '📊',
-      description: 'Success stories and results'
-    },
-    { 
-      path: '/help', 
-      label: 'Help', 
-      icon: '❓',
-      description: 'Get help and support'
     },
     { 
       path: '/contact', 
@@ -114,10 +102,10 @@ export function Header() {
       services: [
         { name: 'AI Autonomous Systems', path: '/services/ai-autonomous-systems', description: 'Advanced autonomous AI systems' },
         { name: 'AI Research Assistant', path: '/ai-autonomous-research-assistant', description: 'AI-powered research automation' },
-        { name: 'AI Business Intelligence', path: '/services#ai-bi', description: 'Advanced analytics and insights' },
-        { name: 'AI Marketing Automation', path: '/services#ai-marketing', description: 'Smart marketing optimization' },
-        { name: 'AI HR & Recruitment', path: '/services#ai-hr', description: 'Intelligent talent management' },
-        { name: 'AI Legal Tech', path: '/services#ai-legal', description: 'Automated legal processes' }
+        { name: 'AI Agent Orchestrator', path: '/ai-agent-orchestrator', description: 'Coordinate multiple AI agents' },
+        { name: 'AI Analytics Copilot', path: '/ai-analytics-copilot', description: 'AI-powered data analytics' },
+        { name: 'AI Business Manager', path: '/ai-autonomous-business-manager', description: 'Autonomous business management' },
+        { name: 'AI Code Review', path: '/ai-autonomous-code-review', description: 'Intelligent code analysis' }
       ]
     },
     {
@@ -136,8 +124,9 @@ export function Header() {
       description: 'Streamlined business process automation',
       services: [
         { name: 'Autonomous Business Platform', path: '/autonomous-business-operations-platform', description: 'Self-operating business systems' },
+        { name: 'AI Business Platform', path: '/ai-autonomous-business-platform', description: 'Complete AI business platform' },
         { name: 'AI Asset Management', path: '/ai-powered-it-asset-management', description: 'Intelligent IT asset management' },
-        { name: 'Business Intelligence', path: '/services#ai-bi', description: 'Advanced business analytics' }
+        { name: 'Business Intelligence', path: '/ai-analytics-copilot', description: 'Advanced business analytics' }
       ]
     },
     {

@@ -9,6 +9,11 @@ export function Footer() {
       links: [
         { label: "AI & Autonomous Systems", path: "/services/ai-autonomous-systems" },
         { label: "AI Research Assistant", path: "/ai-autonomous-research-assistant" },
+        { label: "AI Agent Orchestrator", path: "/ai-agent-orchestrator" },
+        { label: "AI Analytics Copilot", path: "/ai-analytics-copilot" },
+        { label: "AI Business Manager", path: "/ai-autonomous-business-manager" },
+        { label: "AI Business Platform", path: "/ai-autonomous-business-platform" },
+        { label: "AI Code Review", path: "/ai-autonomous-code-review" },
         { label: "Quantum Neural Networks", path: "/quantum-neural-network-platform" },
         { label: "Autonomous Business Platform", path: "/autonomous-business-operations-platform" },
         { label: "AI Asset Management", path: "/ai-powered-it-asset-management" },
@@ -18,11 +23,7 @@ export function Footer() {
         { label: "Cybersecurity", path: "/services/cybersecurity" },
         { label: "SOC2 Compliance Automation", path: "/soc2-compliance-automation" },
         { label: "Industry Solutions", path: "/services/industry-solutions" },
-        { label: "AI & Machine Learning", path: "/services#ai-ml" },
-        { label: "Cloud & Infrastructure", path: "/services#cloud" },
-        { label: "5G Enterprise Solutions", path: "/5g-enterprise-solutions" },
-        { label: "Blockchain Solutions", path: "/services#blockchain" },
-        { label: "IoT & Edge Computing", path: "/services#iot" }
+        { label: "5G Enterprise Solutions", path: "/5g-enterprise-solutions" }
       ]
     },
     {
@@ -34,10 +35,10 @@ export function Footer() {
         { label: "Manufacturing Solutions", path: "/solutions/manufacturing" },
         { label: "Retail Solutions", path: "/solutions/retail" },
         { label: "Government Solutions", path: "/solutions/government" },
-        { label: "Business Intelligence", path: "/services/business-intelligence" },
-        { label: "Marketing Automation", path: "/services/ai-marketing" },
-        { label: "HR & Recruitment", path: "/services/ai-hr" },
-        { label: "Legal Tech", path: "/services/ai-legal" }
+        { label: "Business Intelligence", path: "/ai-analytics-copilot" },
+        { label: "AI Business Management", path: "/ai-autonomous-business-manager" },
+        { label: "AI Code Review", path: "/ai-autonomous-code-review" },
+        { label: "AI Agent Orchestration", path: "/ai-agent-orchestrator" }
       ]
     },
     {

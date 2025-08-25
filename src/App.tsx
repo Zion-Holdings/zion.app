@@ -43,6 +43,13 @@ const FiveGEnterpriseSolutions = lazy(() => import('./pages/5GEnterpriseSolution
 const CaseStudies = lazy(() => import('./pages/CaseStudies'));
 const HelpCenter = lazy(() => import('./pages/HelpCenter'));
 
+// Additional missing pages
+const AIAgentOrchestrator = lazy(() => import('./pages/AIAgentOrchestrator'));
+const AIAnalyticsCopilot = lazy(() => import('./pages/AIAnalyticsCopilot'));
+const AIAutonomousBusinessManager = lazy(() => import('./pages/AIAutonomousBusinessManager'));
+const AIAutonomousBusinessPlatform = lazy(() => import('./pages/AIAutonomousBusinessPlatform'));
+const AIAutonomousCodeReview = lazy(() => import('./pages/AIAutonomousCodeReview'));
+
 // Our enhanced service pages
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
@@ -123,6 +130,13 @@ const App = () => {
                     <Route path="/5g-enterprise-solutions" element={<FiveGEnterpriseSolutions />} />
                     <Route path="/case-studies" element={<CaseStudies />} />
                     <Route path="/help" element={<HelpCenter />} />
+                    
+                    {/* Additional missing pages */}
+                    <Route path="/ai-agent-orchestrator" element={<AIAgentOrchestrator />} />
+                    <Route path="/ai-analytics-copilot" element={<AIAnalyticsCopilot />} />
+                    <Route path="/ai-autonomous-business-manager" element={<AIAutonomousBusinessManager />} />
+                    <Route path="/ai-autonomous-business-platform" element={<AIAutonomousBusinessPlatform />} />
+                    <Route path="/ai-autonomous-code-review" element={<AIAutonomousCodeReview />} />
                     
                     {/* Our enhanced service routes */}
                     <Route path="/about" element={<About />} />

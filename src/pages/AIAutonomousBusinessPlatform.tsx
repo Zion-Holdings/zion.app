@@ -2,70 +2,70 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Brain, Zap, Users, Target, Shield, Cpu, Globe, Rocket, Star, ArrowRight, CheckCircle, Play, BookOpen, Code, Database, Cloud, Lock, BarChart3, Settings, Monitor, Building } from 'lucide-react';
 
-export default function DigitalTransformation() {
+export default function AIAutonomousBusinessPlatform() {
   const features = [
     {
       icon: Brain,
-      title: 'AI-Powered Transformation',
-      description: 'Leverage artificial intelligence to automate processes and gain competitive advantages'
+      title: 'Intelligent Business Automation',
+      description: 'AI-powered platform that automates complex business processes and decision-making'
     },
     {
-      icon: Cloud,
-      title: 'Cloud Migration',
-      description: 'Seamless transition to cloud infrastructure for scalability and cost optimization'
+      icon: Zap,
+      title: 'Real-time Operations',
+      description: 'Continuous monitoring and optimization of business operations 24/7'
     },
     {
       icon: Users,
-      title: 'Change Management',
-      description: 'Comprehensive support for organizational change and digital adoption'
+      title: 'Team Collaboration',
+      description: 'Seamless coordination between human teams and AI systems'
     },
     {
       icon: Target,
-      title: 'Strategic Planning',
-      description: 'Data-driven digital strategy aligned with business objectives'
+      title: 'Strategic Alignment',
+      description: 'Automatic alignment of operations with business goals and KPIs'
     },
     {
       icon: Shield,
-      title: 'Security & Compliance',
-      description: 'Enterprise-grade security with built-in compliance monitoring'
+      title: 'Enterprise Security',
+      description: 'Bank-level security with compliance monitoring and audit trails'
     },
     {
       icon: Cpu,
-      title: 'Legacy Modernization',
-      description: 'Transform outdated systems into modern, efficient digital solutions'
+      title: 'Scalable Architecture',
+      description: 'Cloud-native platform that grows with your business needs'
     }
   ];
 
-  const transformationAreas = [
+  const platformModules = [
     {
-      title: 'Process Automation',
-      description: 'Streamline workflows and eliminate manual processes with intelligent automation',
-      icon: Settings
-    },
-    {
-      title: 'Data & Analytics',
-      description: 'Transform data into actionable insights for better decision-making',
+      title: 'Financial Management',
+      description: 'Automated budgeting, forecasting, and financial reporting',
       icon: BarChart3
     },
     {
+      title: 'Operations Management',
+      description: 'Streamlined workflows and process optimization',
+      icon: Settings
+    },
+    {
       title: 'Customer Experience',
-      description: 'Create seamless, personalized customer journeys across all touchpoints',
+      description: 'Personalized interactions and automated support',
       icon: Users
     },
     {
-      title: 'Employee Productivity',
-      description: 'Empower employees with digital tools and collaborative platforms',
-      icon: Rocket
+      title: 'Performance Analytics',
+      description: 'Real-time insights and predictive analytics',
+      icon: Monitor
     }
   ];
 
   const benefits = [
-    'Increase operational efficiency by 40-60%',
-    'Reduce operational costs by 30-50%',
-    'Improve customer satisfaction by 35%',
-    'Accelerate time to market by 50%',
-    'Enable data-driven decision making',
-    'Create competitive advantages in digital markets'
+    'Reduce operational costs by 40-60%',
+    'Improve efficiency by 70%',
+    'Enable 24/7 business operations',
+    'Provide real-time business insights',
+    'Scale operations automatically',
+    'Ensure compliance and risk management'
   ];
 
   return (
@@ -75,26 +75,26 @@ export default function DigitalTransformation() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
             <div className="flex items-center justify-center space-x-2 mb-6">
-              <Rocket className="w-8 h-8 text-cyan-400" />
-              <span className="text-cyan-400 font-semibold">Digital Transformation</span>
+              <Brain className="w-8 h-8 text-cyan-400" />
+              <span className="text-cyan-400 font-semibold">AI Autonomous Business Platform</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
-              Transform Your Business
+              The Complete
               <br />
-              <span className="text-white">for the Digital Age</span>
+              <span className="text-white">Business Platform</span>
             </h1>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
-              Navigate the digital revolution with our comprehensive transformation services. 
-              From strategy to implementation, we help you thrive in the digital economy.
+              Transform your business with a comprehensive AI platform that manages operations, 
+              optimizes performance, and drives growth autonomously.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 transform hover:scale-105">
                 <Play className="w-5 h-5 inline mr-2" />
-                Watch Transformation Story
+                Platform Demo
               </button>
               <button className="px-8 py-4 border border-cyan-500 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500 hover:text-white transition-all duration-200">
                 <BookOpen className="w-5 h-5 inline mr-2" />
-                Transformation Guide
+                Platform Guide
               </button>
             </div>
           </div>
@@ -112,10 +112,10 @@ export default function DigitalTransformation() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Comprehensive Transformation Services
+              Platform Capabilities
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              End-to-end digital transformation solutions tailored to your business needs
+              Everything you need to run your business autonomously with AI
             </p>
           </div>
           
@@ -136,21 +136,21 @@ export default function DigitalTransformation() {
         </div>
       </section>
 
-      {/* Transformation Areas Section */}
+      {/* Platform Modules Section */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-800/20">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Key Transformation Areas
+              Integrated Platform Modules
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              Focus on the areas that matter most for your digital success
+              Comprehensive modules that work together seamlessly
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {transformationAreas.map((area, index) => {
-              const Icon = area.icon;
+            {platformModules.map((module, index) => {
+              const Icon = module.icon;
               return (
                 <div key={index} className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-8 border border-gray-700/50">
                   <div className="flex items-start space-x-4">
@@ -158,8 +158,8 @@ export default function DigitalTransformation() {
                       <Icon className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold mb-3">{area.title}</h3>
-                      <p className="text-gray-400">{area.description}</p>
+                      <h3 className="text-xl font-semibold mb-3">{module.title}</h3>
+                      <p className="text-gray-400">{module.description}</p>
                     </div>
                   </div>
                 </div>
@@ -174,10 +174,10 @@ export default function DigitalTransformation() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Measurable Business Impact
+              Why Choose Our Platform?
             </h2>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-              See real results from your digital transformation journey
+              Transform your business operations with measurable results
             </p>
           </div>
           
@@ -209,21 +209,21 @@ export default function DigitalTransformation() {
             Ready to Transform Your Business?
           </h2>
           <p className="text-xl text-gray-400 mb-8">
-            Join leading organizations that have successfully navigated digital transformation
+            Join leading businesses using our AI Autonomous Business Platform
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               to="/contact"
               className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold rounded-lg hover:from-cyan-600 hover:to-blue-700 transition-all duration-200 transform hover:scale-105 inline-flex items-center"
             >
-              Start Your Transformation
+              Get Platform Access
               <ArrowRight className="w-5 h-5 ml-2" />
             </Link>
             <Link
               to="/case-studies"
               className="px-8 py-4 border border-cyan-500 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-500 hover:text-white transition-all duration-200"
             >
-              View Transformation Stories
+              View Platform Success Stories
             </Link>
           </div>
         </div>
