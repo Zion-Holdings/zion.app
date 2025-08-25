@@ -134,13 +134,13 @@ const mockCardItems = [
       {
         label: 'Try Demo',
         icon: Play,
-        action: () => console.log('Demo clicked'),
+        action: () => {/* Demo clicked */},
         variant: 'default' as const
       },
       {
         label: 'Documentation',
         icon: BookOpen,
-        action: () => console.log('Docs clicked'),
+        action: () => {/* Docs clicked */},
         variant: 'outline' as const
       }
     ]
@@ -175,13 +175,13 @@ const mockCardItems = [
       {
         label: 'Security Scan',
         icon: Shield,
-        action: () => console.log('Scan clicked'),
+        action: () => {/* Scan clicked */},
         variant: 'default' as const
       },
       {
         label: 'Learn More',
         icon: Info,
-        action: () => console.log('Learn clicked'),
+        action: () => {/* Learn clicked */},
         variant: 'outline' as const
       }
     ]
@@ -216,13 +216,13 @@ const mockCardItems = [
       {
         label: 'Start Trial',
         icon: Play,
-        action: () => console.log('Trial clicked'),
+        action: () => {/* Trial clicked */},
         variant: 'default' as const
       },
       {
         label: 'Pricing',
         icon: DollarSign,
-        action: () => console.log('Pricing clicked'),
+        action: () => {/* Pricing clicked */},
         variant: 'outline' as const
       }
     ]
@@ -257,13 +257,13 @@ const mockCardItems = [
       {
         label: 'Download',
         icon: Download,
-        action: () => console.log('Download clicked'),
+        action: () => {/* Download clicked */},
         variant: 'default' as const
       },
       {
         label: 'Examples',
         icon: FileText,
-        action: () => console.log('Examples clicked'),
+        action: () => {/* Examples clicked */},
         variant: 'outline' as const
       }
     ]
@@ -363,7 +363,7 @@ export default function DemoPage() {
           showDetails={true}
           autoRefresh={true}
           refreshInterval={2000}
-          onAlert={(metric, value, threshold) => console.log(`Alert: ${metric} = ${value} (threshold: ${threshold})`)}
+          onAlert={(_metric, _value, _threshold) => {/* Alert logged for demonstration */}}
         />
         <AnimatePresence mode="wait">
           {activeTab === 'overview' && (
@@ -459,8 +459,8 @@ export default function DemoPage() {
               <AISearch 
                 enabled={true}
                 placeholder="Search for AI services, talent, or companies..."
-                onSearch={(query, filters) => console.log('Search:', query, filters)}
-                onResultClick={(result) => console.log('Result clicked:', result)}
+                        onSearch={(_query, _filters) => {/* Search logged for demonstration */}}
+        onResultClick={(_result) => {/* Result clicked logged for demonstration */}}
               />
             </motion.div>
           )}
@@ -510,8 +510,8 @@ export default function DemoPage() {
               <InteractiveTimeline 
                 enabled={true}
                 events={mockTimelineEvents}
-                onEventClick={(event) => console.log('Event clicked:', event)}
-                onStatusChange={(eventId, status) => console.log('Status changed:', eventId, status)}
+                        onEventClick={(_event) => {/* Event clicked logged for demonstration */}}
+        onStatusChange={(_eventId, _status) => {/* Status changed logged for demonstration */}}
               />
             </motion.div>
           )}
@@ -532,8 +532,8 @@ export default function DemoPage() {
               
               <AIChatAssistant 
                 enabled={true}
-                onMessageSend={(message) => console.log('Message sent:', message)}
-                onAssistantResponse={(response) => console.log('Assistant response:', response)}
+                        onMessageSend={(_message) => {/* Message sent logged for demonstration */}}
+        onAssistantResponse={(_response) => {/* Assistant response logged for demonstration */}}
               />
             </motion.div>
           )}
@@ -556,8 +556,8 @@ export default function DemoPage() {
                 enabled={true}
                 items={mockCardItems}
                 columns={3}
-                onCardClick={(item) => console.log('Card clicked:', item)}
-                onAction={(itemId, action) => console.log('Action:', itemId, action)}
+                        onCardClick={(_item) => {/* Card clicked logged for demonstration */}}
+        onAction={(_itemId, _action) => {/* Action logged for demonstration */}}
               />
             </motion.div>
           )}

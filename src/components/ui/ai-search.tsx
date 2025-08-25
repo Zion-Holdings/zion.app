@@ -235,7 +235,7 @@ export function AISearch({
         setIsVoiceActive(false);
       }, 2000);
     }
-  }, [isVoiceActive]);
+  }, [isVoiceActive, handleSearchInput]);
 
   // Save search
   const saveSearch = useCallback((searchQuery: string) => {

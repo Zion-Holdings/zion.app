@@ -177,7 +177,7 @@ export function PerformanceMonitor({
         setAlerts(prev => [alert, ...prev.slice(0, 9)]);
         onAlert?.('networkLatency', latency, thresholds.networkLatency);
       }
-    } catch (_error) {
+    } catch {
       // Network error, set high latency
       setMetrics(prev => ({ ...prev, networkLatency: 999 }));
     }
