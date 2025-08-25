@@ -10,6 +10,8 @@
     "preview": "vite preview",
     "test": "jest",
     "test:watch": "jest --watch",
+    "test:ci": "jest --ci --coverage --watchAll=false",
+    "type-check": "npx tsc --noEmit",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run --browser chrome",
     "test:accessibility": "vitest run tests/Accessibility.test.tsx"
