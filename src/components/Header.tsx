@@ -90,6 +90,9 @@ export function Header() {
             <Link to="/blog" className="text-white hover:text-cyan-400 transition-colors">
               Blog
             </Link>
+            <Link to="/case-studies" className="text-white hover:text-cyan-400 transition-colors">
+              Case Studies
+            </Link>
             <Link to="/contact" className="text-white hover:text-cyan-400 transition-colors">
               Contact
             </Link>

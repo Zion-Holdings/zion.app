@@ -53,6 +53,7 @@ export function Sidebar({ className }: SidebarProps) {
         { name: 'FAQ', href: '/faq', icon: FileText },
         { name: 'Request Quote', href: '/quote', icon: FileText },
         { name: 'Blog', href: '/blog', icon: FileText },
+        { name: 'Case Studies', href: '/case-studies', icon: FileText },
         { name: 'Sitemap', href: '/sitemap', icon: Globe },
       ]
     }
