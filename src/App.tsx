@@ -1,4 +1,4 @@
-import React, { Suspense, lazy } from 'react';
+import React, { Suspense, lazy, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
@@ -94,6 +94,7 @@ const LoadingSpinner = () => (
 
 const App = () => {
   useScrollToTop();
+  const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
     <EnhancedErrorBoundary>
@@ -103,7 +104,7 @@ const App = () => {
             <PerformanceOptimizer>
               <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
                 <Header />
-                <Sidebar />
+                <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
                 
                 <main className="pt-20">
                   <Suspense fallback={<LoadingSpinner />}>
