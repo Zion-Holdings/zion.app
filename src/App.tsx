@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import Sidebar from './components/Sidebar';
@@ -12,6 +12,7 @@ import { AICodeGenerator } from './components/AICodeGenerator';
 import { EnterpriseDashboard } from './components/EnterpriseDashboard';
 import { SecurityComplianceDashboard } from './components/SecurityComplianceDashboard';
 import { MachineLearningDashboard } from './components/MachineLearningDashboard';
+import { WebsiteHealthDashboard } from './components/WebsiteHealthDashboard';
 import { ThemeProvider } from "./components/ThemeProvider";
 import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
@@ -78,8 +79,7 @@ const App = () => {
     <ErrorBoundary>
       <ThemeProvider>
         <WhitelabelProvider>
-          <Router>
-            <div className="App min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
+          <div className="App min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
               <Header />
               <Sidebar isOpen={false} onClose={() => {}} />
               
@@ -189,10 +189,14 @@ const App = () => {
                   <div className="fixed top-4 right-4 z-40">
                     <MachineLearningDashboard />
                   </div>
+                  
+                  {/* Website Health Dashboard */}
+                  <div className="fixed top-4 left-1/4 transform -translate-x-1/2 z-40">
+                    <WebsiteHealthDashboard autoScan={true} />
+                  </div>
                 </>
               )}
-            </div>
-          </Router>
+                      </div>
         </WhitelabelProvider>
       </ThemeProvider>
     </ErrorBoundary>
