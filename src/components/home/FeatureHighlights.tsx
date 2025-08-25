@@ -50,6 +50,17 @@ export function FeatureHighlights() {
         "API access for seamless integration with your HR systems",
         "Customizable workflow and approval processes"
       ]
+    },
+    {
+      title: "Micro SAAS Solutions",
+      features: [
+        "AI-powered content generation and code assistance tools",
+        "Cloud migration and cybersecurity audit services",
+        "Business intelligence dashboards and analytics platforms",
+        "SEO optimization and digital marketing automation",
+        "Custom chatbot builders and conversational AI solutions",
+        "Scalable pricing plans from startup to enterprise"
+      ]
     }
   ];
 
@@ -113,10 +124,7 @@ export function FeatureHighlights() {
           </p>
         </motion.div>
         
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8"
-          variants={containerVariants}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {highlightsData.map((category, index) => (
             <motion.div
               key={index}

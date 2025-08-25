@@ -20,8 +20,10 @@ export function SEO({
   ogType = 'website',
   twitterCard = 'summary_large_image'
 }: SEOProps) {
-  const fullTitle = title.includes('Zion Tech Group') ? title : `${title} | Zion Tech Group`;
+  const siteName = 'Zion Tech Group';
+  const fullTitle = title.includes('Zion Tech Group') ? title : `${title} | ${siteName}`;
   const fullCanonical = canonical || `https://ziontechgroup.com${window.location.pathname}`;
+  const defaultOgImage = 'https://ziontechgroup.com/og-image.jpg';
 
   return (
     <Helmet>
@@ -36,15 +38,15 @@ export function SEO({
       <meta property="og:description" content={description} />
       <meta property="og:type" content={ogType} />
       <meta property="og:url" content={fullCanonical} />
-      <meta property="og:image" content={ogImage} />
-      <meta property="og:site_name" content="Zion Tech Group" />
+      <meta property="og:image" content={ogImage || defaultOgImage} />
+      <meta property="og:site_name" content={siteName} />
       <meta property="og:locale" content="en_US" />
 
       {/* Twitter Card Meta Tags */}
       <meta name="twitter:card" content={twitterCard} />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:image" content={ogImage || defaultOgImage} />
       <meta name="twitter:site" content="@ziontechgroup" />
 
       {/* Additional Meta Tags */}

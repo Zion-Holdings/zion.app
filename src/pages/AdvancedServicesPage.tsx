@@ -81,7 +81,7 @@ export default function AdvancedServicesPage() {
             </div>
 
             {/* Category Filter */}
-            <Select value={filters.category} onChange={(e) => handleFilterChange('category', e.target.value)}>
+            <Select value={filters.category} onValueChange={(value) => handleFilterChange('category', value)}>
               <SelectTrigger className="bg-slate-700 border-slate-600 text-white">
                 <SelectValue placeholder="Category" />
               </SelectTrigger>
@@ -94,7 +94,7 @@ export default function AdvancedServicesPage() {
             </Select>
 
             {/* Pricing Model Filter */}
-            <Select value={filters.pricingModel} onChange={(e) => handleFilterChange('pricingModel', e.target.value)}>
+            <Select value={filters.pricingModel} onValueChange={(value) => handleFilterChange('pricingModel', value)}>
               <SelectTrigger className="bg-slate-700 border-slate-600 text-white">
                 <SelectValue placeholder="Pricing Model" />
               </SelectTrigger>
@@ -108,7 +108,7 @@ export default function AdvancedServicesPage() {
             </Select>
 
             {/* Location Filter */}
-            <Select value={filters.location} onChange={(e) => handleFilterChange('location', e.target.value)}>
+            <Select value={filters.location} onValueChange={(value) => handleFilterChange('location', value)}>
               <SelectTrigger className="bg-slate-700 border-slate-600 text-white">
                 <SelectValue placeholder="Location" />
               </SelectTrigger>
