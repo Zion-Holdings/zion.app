@@ -26,9 +26,9 @@ export function Header() {
     },
     { 
       path: '/services', 
-      label: 'AI Services', 
+      label: 'Services', 
       icon: '🤖',
-      description: 'Explore our AI service offerings'
+      description: 'Explore our comprehensive service offerings'
     },
     { 
       path: '/solutions/enterprise', 
@@ -37,28 +37,16 @@ export function Header() {
       description: 'Industry-specific solutions'
     },
     { 
-      path: '/pricing', 
-      label: 'Pricing', 
-      icon: '💰',
-      description: 'Transparent pricing plans'
-    },
-    { 
       path: '/about', 
       label: 'About', 
       icon: 'ℹ️',
       description: 'Learn about our company'
     },
     { 
-      path: '/careers', 
-      label: 'Careers', 
-      icon: '🚀',
-      description: 'Join our team'
-    },
-    { 
-      path: '/blog', 
-      label: 'Blog', 
-      icon: '📝',
-      description: 'Latest insights and news'
+      path: '/pricing', 
+      label: 'Pricing', 
+      icon: '💰',
+      description: 'Transparent pricing plans'
     },
     { 
       path: '/contact', 
@@ -70,36 +58,36 @@ export function Header() {
 
   const serviceCategories = [
     {
-      title: 'AI & Machine Learning',
+      title: 'AI & Autonomous Systems',
       services: [
-        { name: 'AI Business Intelligence', path: '/services#ai-bi' },
-        { name: 'AI Marketing Automation', path: '/services#ai-marketing' },
-        { name: 'AI HR & Recruitment', path: '/services#ai-hr' },
-        { name: 'AI Legal Tech', path: '/services#ai-legal' }
+        { name: 'AI Autonomous Business Manager', path: '/ai-autonomous-business-manager' },
+        { name: 'AI Agent Orchestrator', path: '/ai-agent-orchestrator' },
+        { name: 'AI Analytics Copilot', path: '/ai-analytics-copilot' },
+        { name: 'Autonomous Business Operations', path: '/autonomous-business-operations-platform' }
       ]
     },
     {
-      title: 'Cybersecurity',
+      title: 'Quantum Technology',
       services: [
-        { name: 'Quantum-Safe Security', path: '/services#quantum-security' },
-        { name: 'Security Assessment', path: '/services#security-assessment' },
-        { name: 'Compliance & Audit', path: '/services#compliance' }
+        { name: 'Quantum Neural Network Platform', path: '/quantum-neural-network-platform' },
+        { name: 'Quantum Technology Services', path: '/services/quantum-technology' },
+        { name: 'Quantum-Safe Security', path: '/services/cybersecurity' }
       ]
     },
     {
-      title: 'Cloud & Infrastructure',
+      title: 'IT Infrastructure',
       services: [
-        { name: 'Cloud Migration', path: '/services#cloud-migration' },
-        { name: 'Network Infrastructure', path: '/services#network' },
-        { name: 'Managed IT Services', path: '/services#managed-it' }
+        { name: 'AI-Powered IT Asset Management', path: '/ai-powered-it-asset-management' },
+        { name: 'IT Infrastructure Services', path: '/services/it-infrastructure' },
+        { name: 'Cloud & DevOps', path: '/cloud-devops' }
       ]
     },
     {
       title: 'Emerging Tech',
       services: [
-        { name: 'Blockchain Solutions', path: '/services#blockchain' },
-        { name: 'Quantum Computing', path: '/services#quantum' },
-        { name: 'IoT & Edge Computing', path: '/services#iot-edge' }
+        { name: 'AI Autonomous Systems', path: '/services/ai-autonomous-systems' },
+        { name: 'Cybersecurity Services', path: '/services/cybersecurity' },
+        { name: 'Micro SAAS Solutions', path: '/services/micro-saas-solutions' }
       ]
     }
   ];
