@@ -17,6 +17,7 @@ import './App.css';
 // Enhanced lazy loading with preloading hints
 const Home = lazy(() => import('./pages/Home'));
 const Services = lazy(() => import('./pages/Services'));
+const AdvancedServices = lazy(() => import('./pages/AdvancedServices'));
 
 // Error Boundary Component
 class ErrorBoundary extends React.Component<
@@ -87,9 +88,17 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/services" element={<Services />} />
+                <Route path="/advanced-services" element={<AdvancedServices />} />
                 <Route path="/comprehensive-services" element={<Services />} />
                 <Route path="/services-comparison" element={<Services />} />
                 <Route path="/it-onsite-services" element={<Services />} />
+                {/* New AI and specialized service routes */}
+                <Route path="/ai-services" element={<AdvancedServices />} />
+                <Route path="/quantum-computing" element={<AdvancedServices />} />
+                <Route path="/cybersecurity" element={<AdvancedServices />} />
+                <Route path="/edge-computing" element={<AdvancedServices />} />
+                <Route path="/blockchain" element={<AdvancedServices />} />
+                <Route path="/devops-automation" element={<AdvancedServices />} />
               </Routes>
             </Suspense>
           </main>
