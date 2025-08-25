@@ -1,13 +1,357 @@
 import React, { useState } from 'react';
-import { COMPREHENSIVE_SERVICES } from '../data/comprehensiveServices';
-import { Brain, Zap, Target, Monitor, Volume2, Circle, ArrowRight, CheckCircle, Star, Clock, Users } from 'lucide-react';
+import { Search, Filter, Star, Clock, DollarSign, Users, Zap, Brain, Cloud, Database, Shield, Settings, Eye, Leaf, CreditCard, Heart, Truck, ShoppingCart, Phone, Mail, MapPin, Globe, Bot, Cpu, Network, Database as DatabaseIcon, Shield as ShieldIcon, Zap as ZapIcon, Building, Factory, Store, Car, Plane, Ship, Home, Hospital, Building2, GraduationCap, Calendar, FileText, BarChart3, Users as UsersIcon, CreditCard as CreditCardIcon, MessageSquare, Camera, Video, Music, BookOpen, Target, TrendingUp, PieChart, Activity, Zap as ZapIcon2, Wifi, Smartphone, Server, Code, Lock, Key, Bug, CheckCircle, AlertTriangle, Info, ArrowRight, Satellite, Rocket, Atom, Dna, Brain as BrainIcon, Microchip, Database as DatabaseIcon2, Shield as ShieldIcon2, Zap as ZapIcon3, Globe as GlobeIcon, Network as NetworkIcon, Cpu as CpuIcon, Server as ServerIcon, Code as CodeIcon, Lock as LockIcon, Key as KeyIcon, Bug as BugIcon, CheckCircle as CheckCircleIcon, AlertTriangle as AlertTriangleIcon, Info as InfoIcon, ArrowRight as ArrowRightIcon, Glasses, Cpu as CpuIcon2, Brain as BrainIcon2, Zap as ZapIcon4, Shield as ShieldIcon3, Database as DatabaseIcon3, Cloud as CloudIcon, Network as NetworkIcon2, Server as ServerIcon2, Code as CodeIcon2, Lock as LockIcon2, Key as KeyIcon2, Bug as BugIcon2, CheckCircle as CheckCircleIcon2, AlertTriangle as AlertTriangleIcon2, Info as InfoIcon2, ArrowRight as ArrowRightIcon2 } from 'lucide-react';
 
 const AIServicesShowcase: React.FC = () => {
   const [activeTab, setActiveTab] = useState('services');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedComplexity, setSelectedComplexity] = useState<string>('all');
 
-  const aiServices = COMPREHENSIVE_SERVICES.filter(service => 
-    service.category === 'AI & Machine Learning'
-  );
+  // Enhanced AI Services data with more innovative offerings
+  const aiServices = [
+    {
+      id: 1,
+      name: "Quantum AI Platform",
+      category: "Quantum AI",
+      complexity: "Advanced",
+      description: "Revolutionary quantum computing-powered AI platform for solving complex computational problems",
+      price: 5000,
+      pricingModel: "monthly",
+      aiScore: 98,
+      features: ["Quantum algorithms", "Superposition computing", "Entanglement optimization", "Quantum ML models"],
+      benefits: ["Exponential speedup", "Complex problem solving", "Research breakthrough", "Competitive advantage"],
+      useCases: ["Drug discovery", "Financial modeling", "Climate simulation", "Cryptography"],
+      tags: ["Quantum Computing", "AI", "Advanced Algorithms", "Research", "Innovation"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 2,
+      name: "Autonomous AI Systems",
+      category: "Autonomous AI",
+      complexity: "Advanced",
+      description: "Self-learning autonomous systems for industrial automation and decision-making",
+      price: 3500,
+      pricingModel: "monthly",
+      aiScore: 96,
+      features: ["Self-learning algorithms", "Decision automation", "Predictive maintenance", "Adaptive control"],
+      benefits: ["Operational efficiency", "Cost reduction", "24/7 operation", "Continuous improvement"],
+      useCases: ["Manufacturing", "Logistics", "Energy management", "Smart cities"],
+      tags: ["Autonomous Systems", "Machine Learning", "Automation", "IoT", "Industry 4.0"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 3,
+      name: "Edge AI Computing",
+      category: "Edge AI",
+      complexity: "Intermediate",
+      description: "AI processing at the edge for real-time decision making and reduced latency",
+      price: 2800,
+      pricingModel: "monthly",
+      aiScore: 94,
+      features: ["Local AI processing", "Real-time inference", "Low latency", "Offline capability"],
+      benefits: ["Instant decisions", "Bandwidth savings", "Privacy protection", "Cost efficiency"],
+      useCases: ["Autonomous vehicles", "Smart cameras", "IoT devices", "Mobile apps"],
+      tags: ["Edge Computing", "AI", "Real-time", "IoT", "Performance"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 4,
+      name: "Federated Learning Platform",
+      category: "Privacy AI",
+      complexity: "Advanced",
+      description: "Distributed AI training without sharing raw data for privacy-preserving machine learning",
+      price: 4200,
+      pricingModel: "monthly",
+      aiScore: 95,
+      features: ["Distributed training", "Privacy preservation", "Data collaboration", "Secure aggregation"],
+      benefits: ["Data privacy", "Regulatory compliance", "Collaborative learning", "Security"],
+      useCases: ["Healthcare", "Financial services", "Cross-company collaboration", "Research"],
+      tags: ["Federated Learning", "Privacy", "Distributed AI", "Security", "Collaboration"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 5,
+      name: "AI-Powered Cybersecurity",
+      category: "Security AI",
+      complexity: "Advanced",
+      description: "Intelligent threat detection and response using advanced AI algorithms",
+      price: 3800,
+      pricingModel: "monthly",
+      aiScore: 97,
+      features: ["Behavioral analysis", "Threat hunting", "Automated response", "Risk assessment"],
+      benefits: ["Proactive defense", "Reduced false positives", "24/7 monitoring", "Cost savings"],
+      useCases: ["Enterprise security", "Financial institutions", "Healthcare", "Government"],
+      tags: ["Cybersecurity", "AI", "Threat Detection", "Automation", "Risk Management"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 6,
+      name: "Multimodal AI Studio",
+      category: "Multimodal AI",
+      complexity: "Intermediate",
+      description: "AI platform for processing and understanding multiple data types simultaneously",
+      price: 3200,
+      pricingModel: "monthly",
+      aiScore: 93,
+      features: ["Text processing", "Image analysis", "Audio recognition", "Video understanding"],
+      benefits: ["Comprehensive insights", "Better accuracy", "Unified platform", "Cost efficiency"],
+      useCases: ["Content moderation", "Customer service", "Media analysis", "Research"],
+      tags: ["Multimodal AI", "Computer Vision", "NLP", "Audio Processing", "Video Analysis"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 7,
+      name: "AI Ethics & Governance",
+      category: "AI Governance",
+      complexity: "Advanced",
+      description: "Comprehensive framework for responsible AI development and deployment",
+      price: 4500,
+      pricingModel: "monthly",
+      aiScore: 99,
+      features: ["Bias detection", "Fairness metrics", "Transparency tools", "Compliance monitoring"],
+      benefits: ["Regulatory compliance", "Risk mitigation", "Trust building", "Ethical AI"],
+      useCases: ["AI development", "Regulatory compliance", "Risk assessment", "Stakeholder trust"],
+      tags: ["AI Ethics", "Governance", "Compliance", "Risk Management", "Transparency"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 8,
+      name: "AI-Powered Drug Discovery",
+      category: "Healthcare AI",
+      complexity: "Advanced",
+      description: "Accelerated drug discovery using AI and machine learning algorithms",
+      price: 8000,
+      pricingModel: "monthly",
+      aiScore: 96,
+      features: ["Molecular modeling", "Target identification", "Drug screening", "Clinical trial optimization"],
+      benefits: ["Faster discovery", "Cost reduction", "Success rate improvement", "Innovation"],
+      useCases: ["Pharmaceutical research", "Biotech companies", "Academic research", "Drug development"],
+      tags: ["Drug Discovery", "AI", "Healthcare", "Molecular Biology", "Research"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 9,
+      name: "AI Financial Trading",
+      category: "Financial AI",
+      complexity: "Advanced",
+      description: "Intelligent algorithmic trading and financial market analysis platform",
+      price: 6000,
+      pricingModel: "monthly",
+      aiScore: 95,
+      features: ["Market analysis", "Risk assessment", "Portfolio optimization", "Automated trading"],
+      benefits: ["Better returns", "Risk reduction", "24/7 trading", "Data-driven decisions"],
+      useCases: ["Hedge funds", "Investment firms", "Trading desks", "Portfolio management"],
+      tags: ["Financial AI", "Algorithmic Trading", "Risk Management", "Portfolio Optimization", "Market Analysis"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 10,
+      name: "AI Climate Modeling",
+      category: "Climate AI",
+      complexity: "Advanced",
+      description: "Advanced climate prediction and environmental impact analysis using AI",
+      price: 5500,
+      pricingModel: "monthly",
+      aiScore: 94,
+      features: ["Climate simulation", "Impact assessment", "Predictive modeling", "Scenario analysis"],
+      benefits: ["Climate insights", "Risk assessment", "Policy support", "Sustainability"],
+      useCases: ["Government agencies", "Environmental organizations", "Insurance companies", "Research institutions"],
+      tags: ["Climate AI", "Environmental Modeling", "Predictive Analytics", "Sustainability", "Risk Assessment"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 11,
+      name: "AI-Powered Education",
+      category: "Education AI",
+      complexity: "Intermediate",
+      description: "Personalized learning and adaptive education platform powered by AI",
+      price: 2500,
+      pricingModel: "monthly",
+      aiScore: 92,
+      features: ["Personalized learning", "Adaptive assessments", "Progress tracking", "Content generation"],
+      benefits: ["Better learning outcomes", "Individualized attention", "Efficiency improvement", "Engagement"],
+      useCases: ["K-12 education", "Higher education", "Corporate training", "Online learning"],
+      tags: ["Education AI", "Personalized Learning", "Adaptive Systems", "Assessment", "Content Generation"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 12,
+      name: "AI Supply Chain Optimization",
+      category: "Supply Chain AI",
+      complexity: "Intermediate",
+      description: "Intelligent supply chain management and optimization using AI algorithms",
+      price: 3500,
+      pricingModel: "monthly",
+      aiScore: 93,
+      features: ["Demand forecasting", "Inventory optimization", "Route planning", "Risk management"],
+      benefits: ["Cost reduction", "Efficiency improvement", "Risk mitigation", "Customer satisfaction"],
+      useCases: ["Manufacturing", "Retail", "Logistics", "E-commerce"],
+      tags: ["Supply Chain AI", "Demand Forecasting", "Inventory Management", "Logistics", "Optimization"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 13,
+      name: "AI-Powered Marketing",
+      category: "Marketing AI",
+      complexity: "Intermediate",
+      description: "Intelligent marketing automation and customer behavior analysis platform",
+      price: 2800,
+      pricingModel: "monthly",
+      aiScore: 91,
+      features: ["Customer segmentation", "Predictive analytics", "Campaign optimization", "ROI analysis"],
+      benefits: ["Better targeting", "Increased conversions", "Cost efficiency", "Data insights"],
+      useCases: ["E-commerce", "B2B marketing", "Retail", "Digital agencies"],
+      tags: ["Marketing AI", "Customer Analytics", "Predictive Marketing", "Automation", "ROI Optimization"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 14,
+      name: "AI Legal Assistant",
+      category: "Legal AI",
+      complexity: "Intermediate",
+      description: "Intelligent legal document analysis and contract review platform",
+      price: 3200,
+      pricingModel: "monthly",
+      aiScore: 90,
+      features: ["Document analysis", "Contract review", "Legal research", "Compliance checking"],
+      benefits: ["Time savings", "Cost reduction", "Accuracy improvement", "Risk mitigation"],
+      useCases: ["Law firms", "Corporate legal", "Compliance departments", "Contract management"],
+      tags: ["Legal AI", "Document Analysis", "Contract Review", "Compliance", "Legal Research"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 15,
+      name: "AI-Powered HR",
+      category: "HR AI",
+      complexity: "Intermediate",
+      description: "Intelligent human resources management and talent acquisition platform",
+      price: 2200,
+      pricingModel: "monthly",
+      aiScore: 89,
+      features: ["Resume screening", "Candidate matching", "Performance analysis", "Employee engagement"],
+      benefits: ["Better hiring", "Time savings", "Cost reduction", "Employee satisfaction"],
+      useCases: ["HR departments", "Recruitment agencies", "Large organizations", "Startups"],
+      tags: ["HR AI", "Talent Acquisition", "Performance Management", "Employee Engagement", "Recruitment"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    }
+  ];
+
+  const categories = ['all', 'Quantum AI', 'Autonomous AI', 'Edge AI', 'Privacy AI', 'Security AI', 'Multimodal AI', 'AI Governance', 'Healthcare AI', 'Financial AI', 'Climate AI', 'Education AI', 'Supply Chain AI', 'Marketing AI', 'Legal AI', 'HR AI'];
+  const complexityLevels = ['all', 'Beginner', 'Intermediate', 'Advanced'];
+
+  const filteredServices = aiServices.filter(service => {
+    const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         service.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+    
+    const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
+    const matchesComplexity = selectedComplexity === 'all' || service.complexity === selectedComplexity;
+    
+    return matchesSearch && matchesCategory && matchesComplexity;
+  });
+
+  const formatPrice = (price: number, model: string) => {
+    switch (model) {
+      case 'monthly':
+        return `$${price}/month`;
+      case 'yearly':
+        return `$${price * 12}/year`;
+      case 'one-time':
+        return `$${price.toLocaleString()}`;
+      default:
+        return `$${price}`;
+    }
+  };
+
+  const getCategoryIcon = (category: string) => {
+    switch (category) {
+      case 'Quantum AI': return <Atom className="w-6 h-6" />;
+      case 'Autonomous AI': return <BrainIcon className="w-6 h-6" />;
+      case 'Edge AI': return <Cpu className="w-6 h-6" />;
+      case 'Privacy AI': return <Shield className="w-6 h-6" />;
+      case 'Security AI': return <Lock className="w-6 h-6" />;
+      case 'Multimodal AI': return <Eye className="w-6 h-6" />;
+      case 'AI Governance': return <Settings className="w-6 h-6" />;
+      case 'Healthcare AI': return <Heart className="w-6 h-6" />;
+      case 'Financial AI': return <TrendingUp className="w-6 h-6" />;
+      case 'Climate AI': return <Leaf className="w-6 h-6" />;
+      case 'Education AI': return <GraduationCap className="w-6 h-6" />;
+      case 'Supply Chain AI': return <Truck className="w-6 h-6" />;
+      case 'Marketing AI': return <Target className="w-6 h-6" />;
+      case 'Legal AI': return <FileText className="w-6 h-6" />;
+      case 'HR AI': return <Users className="w-6 h-6" />;
+      default: return <Brain className="w-6 h-6" />;
+    }
+  };
+
+  const getComplexityColor = (complexity: string) => {
+    switch (complexity) {
+      case 'Beginner': return 'text-green-400';
+      case 'Intermediate': return 'text-yellow-400';
+      case 'Advanced': return 'text-red-400';
+      default: return 'text-gray-400';
+    }
+  };
 
   const aiCapabilities = [
     {
@@ -208,6 +552,48 @@ const AIServicesShowcase: React.FC = () => {
             </p>
           </div>
 
+          {/* Search and Filters */}
+          {activeTab === 'services' && (
+            <div className="mb-8 space-y-4">
+              <div className="relative max-w-md mx-auto">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate-light w-5 h-5" />
+                <input
+                  type="text"
+                  placeholder="Search AI services..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full pl-10 pr-4 py-3 bg-zion-blue-dark border border-zion-blue-light rounded-lg text-white placeholder-zion-slate-light focus:outline-none focus:ring-2 focus:ring-zion-purple focus:border-transparent"
+                />
+              </div>
+              
+              <div className="flex flex-wrap justify-center gap-4">
+                <select
+                  value={selectedCategory}
+                  onChange={(e) => setSelectedCategory(e.target.value)}
+                  className="px-4 py-2 bg-zion-blue-dark border border-zion-blue-light rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-zion-purple"
+                >
+                  {categories.map(category => (
+                    <option key={category} value={category} className="bg-zion-blue-dark text-white">
+                      {category === 'all' ? 'All Categories' : category}
+                    </option>
+                  ))}
+                </select>
+                
+                <select
+                  value={selectedComplexity}
+                  onChange={(e) => setSelectedComplexity(e.target.value)}
+                  className="px-4 py-2 bg-zion-blue-dark border border-zion-blue-light rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-zion-purple"
+                >
+                  {complexityLevels.map(complexity => (
+                    <option key={complexity} value={complexity} className="bg-zion-blue-dark text-white">
+                      {complexity === 'all' ? 'All Complexity Levels' : complexity}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            </div>
+          )}
+
           {/* Tabs */}
           <div className="flex flex-wrap justify-center gap-2 mb-8">
             {['services', 'industries', 'benefits'].map((tab) => (
@@ -229,13 +615,13 @@ const AIServicesShowcase: React.FC = () => {
           <div className="min-h-[400px]">
             {activeTab === 'services' && (
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {aiServices.map((service) => (
+                {filteredServices.map((service) => (
                   <div key={service.id} className="bg-zion-blue-dark border border-zion-blue-light rounded-xl p-6 hover:border-zion-purple transition-all duration-300">
                     <div className="flex items-start justify-between mb-4">
-                      <h3 className="text-xl font-bold text-white">{service.title}</h3>
-                      {service.supportLevel === 'premium' && (
+                      <h3 className="text-xl font-bold text-white">{service.name}</h3>
+                      {service.complexity === 'Advanced' && (
                         <span className="bg-zion-purple text-white text-xs px-2 py-1 rounded-full font-medium">
-                          Premium
+                          Advanced
                         </span>
                       )}
                     </div>
@@ -244,15 +630,17 @@ const AIServicesShowcase: React.FC = () => {
                     <div className="space-y-3 mb-4">
                       <div className="flex items-center justify-between">
                         <span className="text-zion-slate-light text-sm">Price:</span>
-                        <span className="text-white font-bold">{service.currency}{service.price}</span>
+                        <span className="text-white font-bold">{formatPrice(service.price, service.pricingModel)}</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-zion-slate-light text-sm">Delivery:</span>
-                        <span className="text-zion-slate-light text-sm">{service.estimatedDelivery}</span>
+                        <span className="text-zion-slate-light text-sm">AI Score:</span>
+                        <span className="text-zion-cyan font-bold">{service.aiScore}/100</span>
                       </div>
                       <div className="flex items-center justify-between">
-                        <span className="text-zion-slate-light text-sm">Support:</span>
-                        <span className="text-zion-slate-light text-sm capitalize">{service.supportLevel}</span>
+                        <span className="text-zion-slate-light text-sm">Complexity:</span>
+                        <span className={`text-sm font-medium ${getComplexityColor(service.complexity)}`}>
+                          {service.complexity}
+                        </span>
                       </div>
                     </div>
 
@@ -267,7 +655,7 @@ const AIServicesShowcase: React.FC = () => {
                     </div>
 
                     <a
-                      href={`mailto:${service.contactInfo.email}?subject=Inquiry about ${service.title}`}
+                      href={`mailto:${service.contactInfo.email}?subject=Inquiry about ${service.name}`}
                       className="w-full bg-zion-purple hover:bg-zion-purple-dark text-white text-center py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center gap-2"
                     >
                       Get Started
