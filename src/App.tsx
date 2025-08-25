@@ -8,6 +8,7 @@ import { PerformanceDashboard } from './components/PerformanceDashboard';
 import { AnalyticsDashboard } from './components/AnalyticsDashboard';
 import { AIChatbot } from './components/AIChatbot';
 import { CollaborativeTextEditor } from './components/CollaborativeTextEditor';
+import { AICodeGenerator } from './components/AICodeGenerator';
 import './App.css';
 
 // Enhanced lazy loading with preloading hints
@@ -110,6 +111,13 @@ const App = () => {
                 enableCollaboration={true}
                 enableVersioning={true}
               />
+            </div>
+          )}
+          
+          {/* AI Code Generator - Development Mode */}
+          {process.env.NODE_ENV === 'development' && (
+            <div className="fixed bottom-24 right-6 z-40 w-96">
+              <AICodeGenerator />
             </div>
           )}
           
