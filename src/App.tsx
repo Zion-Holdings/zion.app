@@ -46,6 +46,10 @@ const WhitePapers = lazy(() => import('./pages/WhitePapers'));
 const Events = lazy(() => import('./pages/Events'));
 const Webinars = lazy(() => import('./pages/Webinars'));
 
+// New comprehensive service pages
+const InnovativeServicesShowcase = lazy(() => import('./pages/InnovativeServicesShowcase'));
+const ComprehensiveServicesPage = lazy(() => import('./pages/ComprehensiveServicesPage'));
+
 // Loading Component
 const LoadingSpinner = () => (
   <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
@@ -105,6 +109,10 @@ const App = () => {
                     <Route path="/white-papers" element={<WhitePapers />} />
                     <Route path="/events" element={<Events />} />
                     <Route path="/webinars" element={<Webinars />} />
+                    
+                    {/* New comprehensive service routes */}
+                    <Route path="/services/innovative-showcase" element={<InnovativeServicesShowcase />} />
+                    <Route path="/services/comprehensive" element={<ComprehensiveServicesPage />} />
                   </Routes>
                 </Suspense>
               </main>

@@ -138,6 +138,43 @@ export default function Services() {
           </div>
         </section>
 
+        {/* Additional Services Links */}
+        <section className="py-16 px-4">
+          <div className="container mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Explore More Services</h2>
+            <p className="text-xl text-zion-slate-light mb-8 max-w-2xl mx-auto">
+              Discover our comprehensive portfolio of innovative micro SAAS and specialized IT solutions.
+            </p>
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-8">
+              <Link
+                to="/services/comprehensive"
+                className="bg-zion-blue-light/20 rounded-lg p-6 border border-zion-purple/30 hover:border-zion-cyan/50 transition-all duration-300 hover:transform hover:scale-105"
+              >
+                <h3 className="text-xl font-bold text-white mb-3">Comprehensive Services</h3>
+                <p className="text-zion-slate-light mb-4">
+                  Explore our complete portfolio of micro SAAS and IT solutions with transparent pricing and detailed features.
+                </p>
+                <div className="text-zion-cyan hover:text-zion-cyan-light flex items-center justify-center group">
+                  View All Services <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </Link>
+              
+              <Link
+                to="/services/innovative-showcase"
+                className="bg-zion-blue-light/20 rounded-lg p-6 border border-zion-purple/30 hover:border-zion-cyan/50 transition-all duration-300 hover:transform hover:scale-105"
+              >
+                <h3 className="text-xl font-bold text-white mb-3">Innovative Showcase</h3>
+                <p className="text-zion-slate-light mb-4">
+                  Discover cutting-edge solutions including AI-powered business intelligence and advanced cybersecurity platforms.
+                </p>
+                <div className="text-zion-cyan hover:text-zion-cyan-light flex items-center justify-center group">
+                  Explore Innovations <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="py-16 px-4">
           <div className="container mx-auto text-center">
