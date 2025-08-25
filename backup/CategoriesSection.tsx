@@ -1,6 +1,6 @@
 
 import { GradientHeading } from "./GradientHeading";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Briefcase, HardDrive, Lightbulb, Users } from "lucide-react";
 
 const categories = [
@@ -78,7 +78,7 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
           {categories.map((category) => (
             <Link 
               key={category.title} 
-              to={category.link} 
+              href={category.link} 
               className="group block"
             >
               <div className="rounded-lg overflow-hidden h-full border border-zion-blue-light bg-zion-blue-dark p-6 transition-all duration-300 hover:border-zion-purple/50 hover:translate-y-[-5px]">
@@ -100,7 +100,7 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
             {specialServices.map((service) => (
               <Link 
                 key={service.title}
-                to={service.link}
+                href={service.link}
                 className="px-6 py-3 bg-zion-blue-light hover:bg-zion-blue-dark border border-zion-purple/20 hover:border-zion-purple/50 rounded-full text-zion-cyan transition-all duration-300"
               >
                 {service.title}
@@ -111,11 +111,20 @@ export function CategoriesSection({ showTitle = true }: CategoriesSectionProps) 
         
         <div className="mt-12 flex justify-center">
           <Link 
-            to="/categories" 
+            href="/categories" 
             className="text-zion-cyan border-b border-zion-cyan hover:border-zion-cyan-dark transition-colors"
           >
             View All Categories →
           </Link>
+<<<<<<< HEAD:src/components/CategoriesSection.tsx
+          <Link 
+            href="/pricing" 
+            className="text-zion-cyan border-b border-zion-cyan hover:border-zion-cyan-dark transition-colors"
+          >
+            View Pricing →
+          </Link>
+=======
+>>>>>>> 181cfac2212680d9635253bde265173d9d08eca1:backup/CategoriesSection.tsx
         </div>
       </div>
     </section>

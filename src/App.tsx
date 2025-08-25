@@ -1,14 +1,15 @@
-import React from 'react';
-import { Suspense } from 'react';
-import { Routes, Route } from 'react-router-dom';
-
-import { ThemeProvider } from "./components/ThemeProvider";
-import { WhitelabelProvider } from "./context/WhitelabelContext";
-import { Header } from "./components/Header";
+import React, { Suspense, lazy } from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { EnhancedLoading } from "./components/ui/enhanced-loading";
+import { MainNavigation } from "./layout/MainNavigation";
 import { Footer } from "./components/Footer";
 import { FuturisticAnimatedBackground } from "./components/FuturisticAnimatedBackground";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
+import { motion } from "framer-motion";
+import { ThemeProvider } from "./components/ThemeProvider";
+import { useScrollToTop } from "./hooks";
+import { WhitelabelProvider } from "./context/WhitelabelContext";
 import {
   AuthRoutes,
   DashboardRoutes,
@@ -23,6 +24,7 @@ import {
   DeveloperRoutes
 } from './routes';
 
+// Lazy load pages
 const Home = React.lazy(() => import('./pages/Home'));
 const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
@@ -49,6 +51,13 @@ const AIServices = React.lazy(() => import('./pages/AIServices'));
 const PricingPage = React.lazy(() => import('./pages/PricingPage'));
 const InnovativeServicesShowcase = React.lazy(() => import('./pages/InnovativeServicesShowcase'));
 const ServicesOverview = React.lazy(() => import('./pages/ServicesOverview'));
+const ServicesPage = React.lazy(() => import('./pages/Services'));
+const ExpandedServicesPage = React.lazy(() => import('./pages/ServicesShowcase'));
+const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
+const CybersecurityServicesPage = React.lazy(() => import('./pages/CybersecurityServicesPage'));
+const ServicesComparisonPage = React.lazy(() => import('./pages/ServicesComparison'));
+const Contact = React.lazy(() => import('./pages/Contact'));
+const About = React.lazy(() => import('./pages/About'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -78,37 +87,67 @@ const baseRoutes = [
   { path: '/services-overview', element: <ServicesOverview /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
+  { path: '/services', element: <ServicesPage /> },
+  { path: '/services-showcase', element: <ExpandedServicesPage /> },
+  { path: '/cybersecurity', element: <CybersecurityServicesPage /> },
+  { path: '/services-comparison', element: <ServicesComparisonPage /> },
+  { path: '/about', element: <About /> },
 ];
 
+// Enhanced loading fallback
+const EnhancedLoadingFallback = () => (
+  <div className="min-h-screen bg-zion-blue-dark flex items-center justify-center">
+    <div className="text-center">
+      <EnhancedLoading size="xl" text="Loading Zion Tech Group..." variant="pulse" className="mb-8"/>
+      <motion.div
+        className="mt-8 text-zion-slate-light text-sm"
+        animate={{ opacity: [0.5, 1, 0.5] }}
+        transition={{ duration: 2, repeat: Infinity }}
+      >
+        Please wait while we prepare your experience...
+      </motion.div>
+    </div>
+  </div>
+);
+
 const App = () => {
+  useScrollToTop();
+
   return (
     <WhitelabelProvider>
       <ThemeProvider defaultTheme="dark">
         <FuturisticAnimatedBackground />
-        <Header />
-        <main className="min-h-screen relative z-10">
-          <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
-            <Routes>
-              {baseRoutes.map(({ path, element }) => (
-                <Route key={path} path={path} element={element} />
-              ))}
-              <Route path="/auth/*" element={<AuthRoutes />} />
-              <Route path="/dashboard/*" element={<DashboardRoutes />} />
-              <Route path="/marketplace/*" element={<MarketplaceRoutes />} />
-              <Route path="/talent/*" element={<TalentRoutes />} />
-              <Route path="/admin/*" element={<AdminRoutes />} />
-              <Route path="/mobile/*" element={<MobileAppRoutes />} />
-              <Route path="/content/*" element={<ContentRoutes />} />
-              <Route path="/enterprise/*" element={<EnterpriseRoutes />} />
-              <Route path="/community/*" element={<CommunityRoutes />} />
-              <Route path="/developers/*" element={<DeveloperRoutes />} />
-              <Route path="*" element={<ErrorRoutes />} />
-            </Routes>
-          </Suspense>
-        </main>
-        <Footer />
-        <Toaster />
-        <SonnerToaster position="top-right" />
+        <Router>
+          <div className="App min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
+            <MainNavigation />
+            
+            {/* Main Content with enhanced Suspense */}
+            <main className="pt-20 min-h-screen relative z-10">
+              <Suspense fallback={<EnhancedLoadingFallback />}>
+                <Routes>
+                  {baseRoutes.map(({ path, element }) => (
+                    <Route key={path} path={path} element={element} />
+                  ))}
+                  <Route path="/auth/*" element={<AuthRoutes />} />
+                  <Route path="/dashboard/*" element={<DashboardRoutes />} />
+                  <Route path="/marketplace/*" element={<MarketplaceRoutes />} />
+                  <Route path="/talent/*" element={<TalentRoutes />} />
+                  <Route path="/admin/*" element={<AdminRoutes />} />
+                  <Route path="/mobile/*" element={<MobileAppRoutes />} />
+                  <Route path="/content/*" element={<ContentRoutes />} />
+                  <Route path="/enterprise/*" element={<EnterpriseRoutes />} />
+                  <Route path="/community/*" element={<CommunityRoutes />} />
+                  <Route path="/developers/*" element={<DeveloperRoutes />} />
+                  <Route path="*" element={<ErrorRoutes />} />
+                </Routes>
+              </Suspense>
+            </main>
+            
+            <Footer />
+            <Toaster />
+            <SonnerToaster position="top-right" />
+          </div>
+        </Router>
       </ThemeProvider>
     </WhitelabelProvider>
   );

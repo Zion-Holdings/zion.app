@@ -1,0 +1,66 @@
+import React, { useState } from 'react';
+import UltraFuturisticNavigation2040 from './UltraFuturisticNavigation2040';
+import UltraFuturisticFooter2040 from './UltraFuturisticFooter2040';
+import EnhancedSidebar2025 from './EnhancedSidebar2025';
+import UltraFuturisticBackground2040 from '../backgrounds/UltraFuturisticBackground2040';
+import TopContactBar from './TopContactBar';
+import PerformanceMonitor from '../PerformanceMonitor';
+import AccessibilityEnhancer from '../AccessibilityEnhancer';
+import PerformanceOptimizer from '../PerformanceOptimizer';
+
+interface LayoutProps {
+  children: React.ReactNode;
+  seo?: SEOConfig;
+}
+
+export default function Layout({ children, seo }: LayoutProps) {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+
+  return (
+    <div className="min-h-screen bg-black text-white relative overflow-x-hidden">
+      {/* Skip to content link for accessibility */}
+      <a href="#main" className="skip-link">Skip to main content</a>
+      
+<<<<<<< HEAD
+      {/* Enhanced Futuristic Background */}
+=======
+      {/* Futuristic Background */}
+>>>>>>> origin/cursor/enhance-app-with-new-services-and-futuristic-design-7826
+      <UltraFuturisticBackground2040 />
+      
+      {/* Layout Structure */}
+      <div className="relative z-10">
+        {/* Top Contact Bar */}
+        <TopContactBar />
+        
+        {/* Enhanced Navigation */}
+        <UltraFuturisticNavigation2040 />
+        
+        {/* Sidebar and Main Content */}
+        <div className="flex">
+          <EnhancedSidebar2025 
+            isOpen={sidebarOpen} 
+            onClose={() => setSidebarOpen(false)} 
+          />
+          
+          <main id="main" role="main" className="flex-1 pt-24 lg:pt-28 relative">
+            {children}
+          </main>
+        </div>
+        
+        {/* Enhanced Footer */}
+        <UltraFuturisticFooter2040 />
+      </div>
+
+      {/* Accessibility and Performance Tools */}
+      <AccessibilityEnhancer>
+        <PerformanceMonitor />
+      </AccessibilityEnhancer>
+      
+      {/* Cookie Consent Banner */}
+      <CookieConsentBanner />
+    </div>
+  );
+};

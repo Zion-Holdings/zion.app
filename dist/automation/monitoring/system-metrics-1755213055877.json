@@ -1,0 +1,80 @@
+{
+  "timestamp": "2025-08-14T23:10:55.692Z",
+  "system": {
+    "uptime": 120.097929346,
+    "memory": {
+      "rss": 73183232,
+      "heapTotal": 12804096,
+      "heapUsed": 11404832,
+      "external": 3546468,
+      "arrayBuffers": 100754
+    },
+    "cpu": {
+      "user": 318273,
+      "system": 91759
+    },
+    "platform": "linux",
+    "nodeVersion": "v22.16.0"
+  },
+  "processes": [
+    {
+      "name": "ai-service-factory-web",
+      "status": "online",
+      "memory": 118497280,
+      "cpu": 15.9,
+      "uptime": 1755212929284,
+      "restarts": 2
+    },
+    {
+      "name": "ai-service-factory-automation",
+      "status": "online",
+      "memory": 66166784,
+      "cpu": 0,
+      "uptime": 1755212929288,
+      "restarts": 2
+    },
+    {
+      "name": "ai-service-factory-monitor",
+      "status": "online",
+      "memory": 72876032,
+      "cpu": 0,
+      "uptime": 1755212929821,
+      "restarts": 2
+    },
+    {
+      "name": "ai-service-factory-catalog",
+      "status": "online",
+      "memory": 72908800,
+      "cpu": 0.8,
+      "uptime": 1755212932445,
+      "restarts": 3
+    },
+    {
+      "name": "ai-service-factory-advanced-monitor",
+      "status": "online",
+      "memory": 73289728,
+      "cpu": 0.8,
+      "uptime": 1755212935589,
+      "restarts": 0
+    }
+  ],
+  "resources": {
+    "memory": {
+      "total": 16017,
+      "used": 2770,
+      "free": 2302,
+      "available": 13247
+    },
+    "disk": {
+      "total": "126G",
+      "used": "13G",
+      "available": "108G",
+      "usage": "11%"
+    },
+    "load": {
+      "1min": 1.02,
+      "5min": 0.29,
+      "15min": 0.1
+    }
+  }
+}
