@@ -1,6 +1,7 @@
 import type { Config } from 'tailwindcss';
 import defaultTheme from 'tailwindcss/defaultTheme';
 import plugin from 'tailwindcss/plugin';
+import lineClamp from '@tailwindcss/line-clamp';
 
 const config: Config = {
   darkMode: 'class',
@@ -40,8 +41,8 @@ const config: Config = {
           foreground: 'hsl(var(--accent-foreground))',
         },
         popover: {
-          DEFAULT: 'hsl(var(--card))',
-          foreground: 'hsl(var(--card-foreground))',
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
         },
         card: {
           DEFAULT: 'hsl(var(--card))',
@@ -49,9 +50,9 @@ const config: Config = {
         },
         // Custom Zion colors (enhanced palette)
         'zion-blue': {
-          DEFAULT: '#2e73ea',
-          light: '#8ab1f3',
-          dark: '#172d67',
+          DEFAULT: '#0a0f1f',
+          light: '#1e263b',
+          dark: '#090c1a',
         },
         'zion-purple': {
           DEFAULT: '#8c15e9',
@@ -118,6 +119,18 @@ const config: Config = {
             boxShadow: '0 0 40px rgba(34, 221, 210, 0.8)',
             transform: 'scale(1.05)'
           },
+        },
+        'spin-reverse': {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(-360deg)' },
+        },
+        'float': {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        'glow': {
+          '0%': { boxShadow: '0 0 5px rgba(59, 130, 246, 0.5)' },
+          '100%': { boxShadow: '0 0 20px rgba(59, 130, 246, 0.8), 0 0 30px rgba(59, 130, 246, 0.6)' },
         }
       },
       animation: {
@@ -126,10 +139,17 @@ const config: Config = {
         'fade-in': 'fade-in 0.6s ease-out',
         'slide-in': 'slide-in 0.5s ease-out',
         'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+        'spin-reverse': 'spin-reverse 1s linear infinite',
+        'float': 'float 6s ease-in-out infinite',
+        'float-delayed': 'float 6s ease-in-out infinite 2s',
+        'float-slow': 'float 8s ease-in-out infinite 4s',
+        'glow': 'glow 2s ease-in-out infinite alternate',
+        'spin-slow': 'spin 20s linear infinite'
       }
     }
   },
   plugins: [
+    lineClamp,
     plugin(function ({ addUtilities }) {
       const newUtilities = {
         '.rtl': {
