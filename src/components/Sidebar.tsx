@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Home, Briefcase, Users, Phone, Mail, MapPin, Globe, Linkedin, Twitter, Facebook, Instagram, Shield, Handshake } from 'lucide-react';
+import { X, Home, Briefcase, Users, Phone, Mail, MapPin, Globe, Linkedin, Twitter, Facebook, Instagram, Shield, Handshake, FileText } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
 interface SidebarProps {
@@ -63,7 +63,8 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         { name: 'Help Center', path: '/help', icon: Users },
         { name: 'Documentation', path: '/docs', icon: Globe },
         { name: 'Contact Support', path: '/support', icon: Phone },
-        { name: 'Status Page', path: '/status', icon: Globe }
+        { name: 'Status Page', path: '/status', icon: Globe },
+        { name: 'FAQ', path: '/help#faq', icon: FileText }
       ]
     }
   ];
@@ -78,7 +79,8 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
     { icon: Linkedin, href: 'https://linkedin.com/company/ziontechgroup', label: 'LinkedIn' },
     { icon: Twitter, href: 'https://twitter.com/ziontechgroup', label: 'Twitter' },
     { icon: Facebook, href: 'https://facebook.com/ziontechgroup', label: 'Facebook' },
-    { icon: Instagram, href: 'https://instagram.com/ziontechgroup', label: 'Instagram' }
+    { icon: Instagram, href: 'https://instagram.com/ziontechgroup', label: 'Instagram' },
+    { icon: Users, href: 'https://discord.gg/ziontechgroup', label: 'Discord' }
   ];
 
   const sidebarVariants = {

@@ -44,6 +44,9 @@ const AIAutonomousResearchAssistant = lazy(() => import('./pages/AIAutonomousRes
 const FiveGEnterpriseSolutions = lazy(() => import('./pages/5GEnterpriseSolutions'));
 const CaseStudies = lazy(() => import('./pages/CaseStudies'));
 const HelpCenter = lazy(() => import('./pages/HelpCenter'));
+const Support = lazy(() => import('./pages/Support'));
+const Status = lazy(() => import('./pages/Status'));
+const Docs = lazy(() => import('./pages/Docs'));
 
 // Our enhanced service pages
 const About = lazy(() => import('./pages/About'));
@@ -127,6 +130,9 @@ const App = () => {
                     <Route path="/5g-enterprise-solutions" element={<FiveGEnterpriseSolutions />} />
                     <Route path="/case-studies" element={<CaseStudies />} />
                     <Route path="/help" element={<HelpCenter />} />
+                    <Route path="/support" element={<Support />} />
+                    <Route path="/status" element={<Status />} />
+                    <Route path="/docs" element={<Docs />} />
                     
                     {/* Our enhanced service routes */}
                     <Route path="/about" element={<About />} />
