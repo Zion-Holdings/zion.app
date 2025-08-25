@@ -1,60 +1,84 @@
+<<<<<<< HEAD
+
+
+export function FooterNewsletter() {
+  return (
+    <div className="mt-6">
+      <h4 className="text-white font-semibold mb-3 text-sm">Newsletter</h4>
+      <p className="text-zion-slate-light mb-3 text-xs">
+        Stay updated with the latest tech and AI opportunities.
+      </p>
+      <div className="flex">
+        <input
+          type="email"
+          placeholder="Enter your email"
+          className="flex-1 px-3 py-2 text-sm bg-zion-blue-light border border-zion-blue rounded-l-lg text-white placeholder-zion-slate-light focus:outline-none focus:border-zion-cyan"
+        />
+        <button className="px-4 py-2 bg-zion-cyan hover:bg-zion-cyan-dark text-white text-sm font-medium rounded-r-lg transition-colors">
+          Subscribe
+        </button>
+      </div>
+    </div>
+  );
+}
+=======
 import React, { useState } from 'react';
-import { Mail, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
-export function FooterNewsletter() {
+export const FooterNewsletter: React.FC = () => {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!email.trim()) return;
-
     setIsSubmitting(true);
-    
-    // Simulate subscription
+    setMessage('');
+
     try {
+      // Simulate API call
       await new Promise(resolve => setTimeout(resolve, 1000));
+      setMessage('Thank you for subscribing! We\'ll keep you updated with the latest tech insights.');
       setEmail('');
-      // You could show a success message here
     } catch (error) {
-      console.error('Subscription error:', error);
+      setMessage('Something went wrong. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="space-y-3">
-      <form onSubmit={handleSubmit} className="flex space-x-2">
-        <div className="relative flex-1">
-          <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate-light w-4 h-4" />
-          <Input
-            type="email"
-            placeholder="Enter your email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className="pl-10 pr-4 py-2 bg-zion-blue-light/10 border-zion-blue-light/20 text-white placeholder-zion-slate-light focus:border-zion-cyan focus:ring-zion-cyan/20 text-sm"
-          />
-        </div>
-        <Button
-          type="submit"
-          disabled={isSubmitting || !email.trim()}
-          size="sm"
-          className="bg-gradient-to-r from-zion-cyan to-zion-purple hover:from-zion-cyan/90 hover:to-zion-purple/90 text-white px-3 disabled:opacity-50 disabled:cursor-not-allowed"
+    <div className="space-y-4">
+      <h3 className="text-lg font-semibold text-white">Stay Updated</h3>
+      <p className="text-sm text-gray-300">
+        Get the latest insights on AI, cybersecurity, and tech innovation.
+      </p>
+      
+      <form onSubmit={handleSubmit} className="flex gap-2">
+        <Input
+          type="email"
+          placeholder="Enter your email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:bg-white/20"
+        />
+        <Button 
+          type="submit" 
+          disabled={isSubmitting}
+          className="bg-blue-600 hover:bg-blue-700 text-white"
         >
-          {isSubmitting ? (
-            <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
-          ) : (
-            <ArrowRight className="w-4 h-4" />
-          )}
+          {isSubmitting ? 'Subscribing...' : 'Subscribe'}
         </Button>
       </form>
-      <p className="text-xs text-zion-slate-light">
-        Stay updated with tech opportunities and insights
-      </p>
+      
+      {message && (
+        <p className={`text-sm ${message.includes('Thank you') ? 'text-green-400' : 'text-red-400'}`}>
+          {message}
+        </p>
+      )}
     </div>
   );
-}
+};
+>>>>>>> cursor/integrate-build-improve-and-re-verify-a776

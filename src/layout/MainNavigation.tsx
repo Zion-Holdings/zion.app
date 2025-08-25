@@ -100,37 +100,37 @@ export function MainNavigation() {
               EN
             </Button>
             
-            <Button variant="ghost" size="sm" className="text-zion-slate-light hover:text-zion-cyan relative">
-              <Bell className="w-4 h-4" />
-              <Badge className="absolute -top-1 -right-1 h-4 w-4 p-0 text-xs">3</Badge>
+            <Button variant="ghost" size="sm" className="text-zion-slate-light hover:text-zion-cyan">
+              <Bell className="w-4 h-4 mr-2" />
+              <Badge variant="secondary" className="ml-1">3</Badge>
             </Button>
             
             <Button variant="ghost" size="sm" className="text-zion-slate-light hover:text-zion-cyan">
-              <ShoppingCart className="w-4 h-4" />
+              <ShoppingCart className="w-4 h-4 mr-2" />
+              <Badge variant="secondary" className="ml-1">2</Badge>
             </Button>
             
             <Button variant="ghost" size="sm" className="text-zion-slate-light hover:text-zion-cyan">
               <User className="w-4 h-4 mr-2" />
               Sign In
             </Button>
-            
-            <Button className="bg-gradient-to-r from-zion-cyan to-zion-purple hover:from-zion-cyan/90 hover:to-zion-purple/90 text-white">
-              Get Started
-            </Button>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-md text-zion-slate-light hover:text-zion-cyan hover:bg-zion-blue-light/10"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-zion-slate-light hover:text-zion-cyan"
+            >
+              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </Button>
+          </div>
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Navigation */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -139,32 +139,31 @@ export function MainNavigation() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden bg-zion-blue-dark/95 backdrop-blur-md border-t border-zion-blue-light/20"
           >
-            <div className="container mx-auto px-4 py-4">
+            <div className="px-4 py-6 space-y-4">
               {/* Mobile Search */}
-              <form onSubmit={handleSearch} className="mb-4">
-                <div className="relative">
-                  <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate-light w-4 h-4" />
-                  <Input
-                    type="text"
-                    placeholder="Search..."
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    className="pl-10 pr-4 py-2 bg-zion-blue-light/10 border-zion-blue-light/20 text-white placeholder-zion-slate-light"
-                  />
-                </div>
+              <form onSubmit={handleSearch} className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate-light w-4 h-4" />
+                <Input
+                  type="text"
+                  placeholder="Search..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-10 pr-4 py-2 bg-zion-blue-light/10 border-zion-blue-light/20 text-white placeholder-zion-slate-light"
+                />
               </form>
 
-              {/* Mobile Navigation */}
+              {/* Mobile Navigation Items */}
               <div className="space-y-2">
                 {navigationItems.map((item) => (
                   <Link
                     key={item.name}
                     to={item.href}
-                    className={`block px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                       location.pathname === item.href
                         ? 'text-zion-cyan bg-zion-blue-light/10'
                         : 'text-zion-slate-light hover:text-zion-cyan hover:bg-zion-blue-light/10'
                     }`}
+                    onClick={() => setIsOpen(false)}
                   >
                     {item.name}
                   </Link>
@@ -172,7 +171,7 @@ export function MainNavigation() {
               </div>
 
               {/* Mobile Actions */}
-              <div className="mt-6 pt-4 border-t border-zion-blue-light/20 space-y-2">
+              <div className="pt-4 border-t border-zion-blue-light/20 space-y-2">
                 <Button variant="ghost" className="w-full justify-start text-zion-slate-light hover:text-zion-cyan">
                   <Globe className="w-4 h-4 mr-2" />
                   Language
@@ -188,9 +187,6 @@ export function MainNavigation() {
                 <Button variant="ghost" className="w-full justify-start text-zion-slate-light hover:text-zion-cyan">
                   <User className="w-4 h-4 mr-2" />
                   Sign In
-                </Button>
-                <Button className="w-full bg-gradient-to-r from-zion-cyan to-zion-purple hover:from-zion-cyan/90 hover:to-zion-purple/90 text-white">
-                  Get Started
                 </Button>
               </div>
             </div>

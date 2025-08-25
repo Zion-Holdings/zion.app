@@ -21,7 +21,8 @@ import {
   Globe,
   ArrowRight,
   Lightbulb,
-  Shield
+  Shield,
+  Search
 } from 'lucide-react';
 
 const AI_SERVICES = [
@@ -95,36 +96,44 @@ const AIServiceCard: React.FC<{ service: any }> = ({ service }) => {
           </div>
         </div>
       </CardHeader>
-
+      
       <CardContent className="pt-0">
-        <div className="space-y-3">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <DollarSign className="w-4 h-4 text-green-400" />
-              <span className="text-white font-semibold">
-                ${service.price.toLocaleString()}
-              </span>
-              <span className="text-zion-slate-light text-sm">
-                {service.pricingModel === 'monthly' ? '/month' : 'one-time'}
-              </span>
-            </div>
-            <div className="flex items-center gap-1 text-zion-slate-light text-sm">
-              <Clock className="w-3 h-3" />
-              {service.deliveryTime}
-            </div>
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-2">
+            <DollarSign className="w-4 h-4 text-zion-cyan" />
+            <span className="text-white font-semibold">
+              {service.currency}{service.price.toLocaleString()}
+            </span>
           </div>
-
-          <div className="flex flex-wrap gap-1">
-            {service.tags.map((tag: string, index: number) => (
-              <Badge key={index} variant="outline" className="text-xs border-zion-blue-light text-zion-slate-light">
-                {tag}
-              </Badge>
-            ))}
+          <div className="flex items-center gap-2">
+            <Clock className="w-4 h-4 text-zion-slate-light" />
+            <span className="text-zion-slate-light text-sm">{service.deliveryTime}</span>
           </div>
-
-          <Button className="w-full bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white">
-            Learn More
+        </div>
+        
+        <div className="flex flex-wrap gap-2 mb-4">
+          {service.tags.map((tag: string) => (
+            <Badge key={tag} variant="outline" className="text-xs border-zion-blue-light text-zion-slate-light">
+              {tag}
+            </Badge>
+          ))}
+        </div>
+        
+        <div className="flex items-center justify-between">
+          <Button 
+            variant="outline" 
+            size="sm"
+            className="border-zion-purple text-zion-purple hover:bg-zion-purple hover:text-white transition-colors"
+          >
+            View Details
             <ArrowRight className="w-4 h-4 ml-2" />
+          </Button>
+          
+          <Button 
+            size="sm"
+            className="bg-zion-cyan text-white hover:bg-zion-cyan-light transition-colors"
+          >
+            Get Quote
           </Button>
         </div>
       </CardContent>
@@ -133,34 +142,114 @@ const AIServiceCard: React.FC<{ service: any }> = ({ service }) => {
 };
 
 export default function AIServicesPage() {
-  const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const categories = [
+    { id: 'all', name: 'All Services', icon: Brain },
+    { id: 'chatbots', name: 'Chatbots', icon: Bot },
+    { id: 'content', name: 'Content Creation', icon: PenTool },
+    { id: 'analytics', name: 'Data Analytics', icon: BarChart3 },
+    { id: 'automation', name: 'Process Automation', icon: Zap },
+    { id: 'security', name: 'AI Security', icon: Shield }
+  ];
 
   const filteredServices = AI_SERVICES.filter(service => {
+    const matchesCategory = selectedCategory === 'all' || 
+      service.tags.some((tag: string) => tag.toLowerCase().includes(selectedCategory));
     const matchesSearch = service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          service.description.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesCategory = selectedCategory === 'all' || service.tags.includes(selectedCategory);
-    return matchesSearch && matchesCategory;
+    return matchesCategory && matchesSearch;
   });
 
-  const categories = ['all', 'AI Chatbot', 'Content Creation', 'Data Analytics'];
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple">
-      <div className="container mx-auto px-4 py-20">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            AI & Machine Learning Services
-          </h1>
-          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-            Cutting-edge AI solutions to transform your business operations and drive innovation
-          </p>
+    <div className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-slate-dark">
+      {/* Hero Section */}
+      <div className="relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20"></div>
+        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="text-center max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              AI-Powered Solutions
+            </h1>
+            <p className="text-xl text-zion-slate-light mb-8 max-w-2xl mx-auto">
+              Transform your business with cutting-edge artificial intelligence solutions. 
+              From chatbots to data analytics, we deliver intelligent automation that drives growth.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-zion-purple hover:bg-zion-purple-dark text-white px-8 py-3">
+                Explore Services
+              </Button>
+              <Button variant="outline" size="lg" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-white px-8 py-3">
+                Schedule Consultation
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Category Filter */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-8">
+          {categories.map((category) => {
+            const IconComponent = category.icon;
+            return (
+              <Button
+                key={category.id}
+                variant={selectedCategory === category.id ? "default" : "outline"}
+                onClick={() => setSelectedCategory(category.id)}
+                className={`${
+                  selectedCategory === category.id
+                    ? 'bg-zion-purple text-white'
+                    : 'border-zion-blue-light text-zion-slate-light hover:border-zion-purple hover:text-zion-cyan'
+                } transition-colors`}
+              >
+                <IconComponent className="w-4 h-4 mr-2" />
+                {category.name}
+              </Button>
+            );
+          })}
         </div>
 
+        {/* Search */}
+        <div className="max-w-md mx-auto mb-12">
+          <div className="relative">
+            <input
+              type="text"
+              placeholder="Search AI services..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full px-4 py-3 bg-zion-blue-light border border-zion-blue-light rounded-lg text-white placeholder-zion-slate-light focus:outline-none focus:ring-2 focus:ring-zion-purple focus:border-transparent"
+            />
+            <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-zion-slate-light" />
+          </div>
+        </div>
+
+        {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredServices.map((service) => (
             <AIServiceCard key={service.id} service={service} />
           ))}
+        </div>
+
+        {/* CTA Section */}
+        <div className="text-center mt-16">
+          <h2 className="text-3xl font-bold text-white mb-4">
+            Ready to Transform Your Business?
+          </h2>
+          <p className="text-zion-slate-light mb-8 max-w-2xl mx-auto">
+            Let's discuss how AI can revolutionize your operations and drive unprecedented growth.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-zion-cyan hover:bg-zion-cyan-light text-white px-8 py-3">
+              <Mail className="w-5 h-5 mr-2" />
+              Contact Us
+            </Button>
+            <Button variant="outline" size="lg" className="border-zion-purple text-zion-purple hover:bg-zion-purple hover:text-white px-8 py-3">
+              <Phone className="w-5 h-5 mr-2" />
+              Call Now
+            </Button>
+          </div>
         </div>
       </div>
     </div>

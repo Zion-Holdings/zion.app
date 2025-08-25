@@ -11,7 +11,15 @@ export default defineConfig({
     }
   },
   build: {
-    sourcemap: false,
-    minify: 'esbuild'
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom'],
+          'utils-vendor': ['clsx', 'tailwind-merge'],
+          'animation-vendor': ['framer-motion']
+        }
+      }
+    },
+    chunkSizeWarningLimit: 1000
   }
 })

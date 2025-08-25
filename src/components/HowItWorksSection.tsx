@@ -1,142 +1,138 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, ArrowRight, Sparkles } from 'lucide-react';
+import { Search, Users, FileText, Rocket, CheckCircle } from 'lucide-react';
+
+const steps = [
+  {
+    icon: <Search className="w-8 h-8" />,
+    title: "Discover",
+    description: "Browse our comprehensive catalog of services, talent, and solutions",
+    color: "from-zion-cyan to-zion-cyan-dark"
+  },
+  {
+    icon: <Users className="w-8 h-8" />,
+    title: "Connect",
+    description: "Get matched with the perfect team or service for your project",
+    color: "from-zion-purple to-zion-purple-dark"
+  },
+  {
+    icon: <FileText className="w-8 h-8" />,
+    title: "Plan",
+    description: "Collaborate on project requirements, timeline, and deliverables",
+    color: "from-zion-blue to-zion-blue-dark"
+  },
+  {
+    icon: <Rocket className="w-8 h-8" />,
+    title: "Execute",
+    description: "Watch your vision come to life with our expert execution",
+    color: "from-green-500 to-emerald-600"
+  },
+  {
+    icon: <CheckCircle className="w-8 h-8" />,
+    title: "Deliver",
+    description: "Receive your completed project with ongoing support and maintenance",
+    color: "from-orange-500 to-red-600"
+  }
+];
 
 export function HowItWorksSection() {
-  const steps = [
-    {
-      number: '01',
-      title: 'Define Your Needs',
-      description: 'Tell us about your project requirements, timeline, and budget.',
-      icon: CheckCircle,
-      color: 'from-zion-cyan to-zion-blue'
-    },
-    {
-      number: '02',
-      title: 'AI-Powered Matching',
-      description: 'Our AI analyzes your needs and matches you with the perfect experts.',
-      icon: Sparkles,
-      color: 'from-zion-purple to-zion-cyan'
-    },
-    {
-      number: '03',
-      title: 'Connect & Collaborate',
-      description: 'Start working with your matched team and track progress in real-time.',
-      icon: ArrowRight,
-      color: 'from-zion-blue to-zion-purple'
-    }
-  ];
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
+        staggerChildren: 0.2,
+        delayChildren: 0.1
       }
     }
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0 }
+    hidden: { y: 30, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6
+      }
+    }
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple-dark relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-zion-cyan/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-zion-purple/5 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-zion-blue/5 rounded-full blur-3xl"></div>
+    <section className="py-20 bg-gradient-to-br from-zion-blue via-zion-slate-dark to-zion-blue-dark relative overflow-hidden">
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute inset-0" style={{
+          backgroundImage: `radial-gradient(circle at 50% 50%, currentColor 1px, transparent 1px)`,
+          backgroundSize: '40px 40px'
+        }} />
       </div>
-
-      <div className="container mx-auto px-4 relative">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <motion.div 
           className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
         >
-          <motion.div variants={itemVariants} className="mb-4">
-            <span className="inline-flex items-center px-4 py-2 rounded-full bg-zion-cyan/10 border border-zion-cyan/20 text-zion-cyan text-sm font-medium">
-              <Sparkles className="w-4 h-4 mr-2" />
-              Simple Process
-            </span>
-          </motion.div>
-          
-          <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-bold text-white mb-6">
-            How It Works
-          </motion.h2>
-          
-          <motion.p variants={itemVariants} className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-            Get started with Zion Tech Group in just three simple steps. Our AI-powered platform 
-            makes finding the right tech solutions faster and easier than ever before.
-          </motion.p>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            How It <span className="bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">Works</span>
+          </h2>
+          <p className="text-zion-slate-light text-lg max-w-3xl mx-auto">
+            Our streamlined process ensures your project success from concept to completion
+          </p>
         </motion.div>
-
-        <motion.div
+        
+        <motion.div 
+          className="relative"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
         >
-          {steps.map((step, index) => (
-            <motion.div
-              key={step.number}
-              variants={itemVariants}
-              className="relative group"
-            >
-              {/* Connection Line */}
-              {index < steps.length - 1 && (
-                <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-zion-cyan/30 to-zion-purple/30 z-10 transform translate-x-1/2">
-                  <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-zion-cyan to-zion-purple opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                </div>
-              )}
-
-              <div className="relative bg-zion-blue-light/10 border border-zion-blue-light/20 rounded-2xl p-8 backdrop-blur-sm hover:border-zion-cyan/40 transition-all duration-300 group-hover:shadow-2xl group-hover:shadow-zion-cyan/20">
-                {/* Step Number */}
-                <div className={`absolute -top-4 left-8 w-12 h-12 bg-gradient-to-r ${step.color} rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg`}>
-                  {step.number}
-                </div>
-
-                {/* Icon */}
-                <div className="mt-8 mb-6">
-                  <div className={`w-16 h-16 bg-gradient-to-r ${step.color} rounded-2xl flex items-center justify-center shadow-lg`}>
-                    <step.icon className="w-8 h-8 text-white" />
+          {/* Connection line */}
+          <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-blue transform -translate-y-1/2 hidden lg:block" />
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+            {steps.map((step, index) => (
+              <motion.div key={index} variants={itemVariants} className="relative">
+                <div className="text-center">
+                  {/* Step number */}
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-zion-slate-dark border-2 border-zion-blue-light text-white font-bold text-lg mb-4 relative z-10">
+                    {index + 1}
                   </div>
+                  
+                  {/* Icon */}
+                  <div className={`inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br ${step.color} mb-6 shadow-lg`}>
+                    <div className="text-white">
+                      {step.icon}
+                    </div>
+                  </div>
+                  
+                  <h3 className="text-xl font-semibold text-white mb-3">
+                    {step.title}
+                  </h3>
+                  <p className="text-zion-slate-light leading-relaxed text-sm">
+                    {step.description}
+                  </p>
                 </div>
-
-                {/* Content */}
-                <h3 className="text-2xl font-bold text-white mb-4">{step.title}</h3>
-                <p className="text-zion-slate-light leading-relaxed">{step.description}</p>
-
-                {/* Hover Effect */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-zion-cyan/0 via-zion-cyan/5 to-zion-purple/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-
-        {/* CTA Section */}
-        <motion.div
-          variants={itemVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <div className="inline-flex items-center space-x-4 bg-zion-blue-light/10 border border-zion-cyan/20 rounded-2xl px-8 py-6 backdrop-blur-sm">
-            <div className="text-left">
-              <h3 className="text-xl font-semibold text-white mb-2">Ready to Get Started?</h3>
-              <p className="text-zion-slate-light">Join thousands of businesses already using Zion Tech Group</p>
-            </div>
-            <button className="bg-gradient-to-r from-zion-cyan to-zion-purple hover:from-zion-cyan/90 hover:to-zion-purple/90 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-zion-cyan/20">
-              Start Your Project
-            </button>
+              </motion.div>
+            ))}
           </div>
+        </motion.div>
+        
+        {/* Bottom CTA */}
+        <motion.div 
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <button className="inline-flex items-center gap-3 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+            Get Started Today
+            <Rocket className="w-5 h-5" />
+          </button>
         </motion.div>
       </div>
     </section>

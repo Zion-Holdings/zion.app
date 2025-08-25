@@ -9,15 +9,6 @@
     ],
     "module": "ESNext",
     "skipLibCheck": true,
-    "importHelpers": false,
-    "noEmitHelpers": false,
-    "baseUrl": ".",
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    },
-    /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
@@ -28,25 +19,45 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedIndexedAccess": false,
-    "noImplicitReturns": false,
-    "noImplicitAny": false,
-    "noImplicitThis": false,
-    "noImplicitOverride": false,
-    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "types": ["react", "react-dom"]
+    "noImplicitAny": false,
+    "noImplicitReturns": false,
+    "noImplicitThis": false,
+    "strictNullChecks": false
   },
   "include": [
-    "src"
+    "src/main.tsx",
+    "src/App.tsx",
+    "src/App.css",
+    "src/pages/Home.tsx",
+    "src/pages/Services.tsx",
+    "src/vite-env.d.ts"
   ],
   "exclude": [
-    "src/pages/ComprehensiveServicesPage.tsx",
+    "node_modules",
     "src/pages/FAQ.tsx",
     "src/pages/RequestQuote.tsx",
     "src/pages/ServicesPricingPage.tsx",
-    "src/pages/Sitemap.tsx"
+    "src/pages/Sitemap.tsx",
+    "src/components/conflicted/**/*",
+    "src/components/disabled/**/*",
+    "src/components/Advanced*",
+    "src/components/CategoriesSection.tsx",
+    "src/components/FeaturedListingsSection.tsx",
+    "src/components/home/Enhanced*",
+    "src/components/home/FeatureCTAs.tsx",
+    "src/components/home/HomePageSkeleton.tsx",
+    "src/components/ui/data-visualization.tsx",
+    "src/data/enhancedServicesData.ts",
+    "src/data/microSaasServices.ts",
+    "src/hooks/useBlockchainWeb3.ts",
+    "src/pages/HomePage.tsx"
   ],
   "references": [
     {

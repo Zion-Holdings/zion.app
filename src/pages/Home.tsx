@@ -6,235 +6,305 @@ import { ArrowRight, Sparkles, Globe, Zap, Phone, Mail, MapPin } from 'lucide-re
 import { Link } from 'react-router-dom';
 
 export default function Home() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.1
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const floatingVariants = {
-    float: {
-      y: [-10, 10, -10],
-      transition: {
-        duration: 3,
-        repeat: Infinity,
-        ease: "easeInOut"
-      }
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen relative">
+      
+      {/* Futuristic Background Elements */}
+      <div className="quantum-particles">
+        <div className="quantum-particle"></div>
+        <div className="quantum-particle"></div>
+        <div className="quantum-particle"></div>
+        <div className="quantum-particle"></div>
+      </div>
+      
+      <div className="neural-lines">
+        <div className="neural-line"></div>
+        <div className="neural-line"></div>
+        <div className="neural-line"></div>
+        <div className="neural-line"></div>
+      </div>
+
       {/* Hero Section */}
-      <section className="relative overflow-hidden py-20 md:py-32 min-h-screen flex items-center">
-        {/* Enhanced background gradient effect */}
-        <div className="absolute inset-0 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple opacity-90"></div>
-
-        {/* Animated mesh gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-zion-cyan/20 via-transparent to-zion-purple/20 animate-pulse"></div>
-
-        {/* Enhanced floating particles with better positioning */}
-        <div className="absolute inset-0">
-          <motion.div
-            variants={floatingVariants}
-            animate="float"
-            className="absolute top-1/4 left-1/4 w-3 h-3 rounded-full bg-zion-purple-light opacity-60"
-          />
-          <motion.div
-            variants={floatingVariants}
-            animate="float"
-            style={{ animationDelay: "1s" }}
-            className="absolute top-1/3 right-1/3 w-4 h-4 rounded-full bg-zion-cyan opacity-40"
-          />
-          <motion.div
-            variants={floatingVariants}
-            animate="float"
-            style={{ animationDelay: "2s" }}
-            className="absolute bottom-1/4 left-1/2 w-2 h-2 rounded-full bg-zion-purple opacity-50"
-          />
-          <motion.div
-            variants={floatingVariants}
-            animate="float"
-            style={{ animationDelay: "0.5s" }}
-            className="absolute top-1/2 right-1/4 w-5 h-5 rounded-full bg-zion-cyan-light opacity-30"
-          />
-          <motion.div
-            variants={floatingVariants}
-            animate="float"
-            style={{ animationDelay: "1.5s" }}
-            className="absolute top-3/4 left-1/3 w-2 h-2 rounded-full bg-zion-purple-light opacity-40"
-          />
+      <section className="relative py-20 px-4 overflow-hidden">
+        {/* Enhanced Animated Background */}
+        <div className="absolute inset-0 futuristic-bg">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse animate-quantum-float"></div>
+          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse animate-quantum-float animation-delay-1000"></div>
+          <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse animate-quantum-float animation-delay-2000"></div>
         </div>
 
-        {/* Decorative geometric shapes */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-20 right-20 w-32 h-32 border border-zion-cyan/20 rounded-full opacity-30"></div>
-          <div className="absolute bottom-20 left-20 w-24 h-24 border border-zion-purple/20 rotate-45 opacity-30"></div>
-          <div className="absolute top-1/2 left-10 w-16 h-16 border border-zion-cyan/20 rotate-12 opacity-20"></div>
+        {/* Enhanced Grid Pattern */}
+        <div className="absolute inset-0 cyber-grid-bg opacity-30"></div>
+
+        {/* Matrix Rain Effect */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={i}
+              className="absolute text-cyan-400 text-xs animate-matrix-rain opacity-20"
+              style={{
+                left: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 20}s`,
+                animationDuration: `${20 + Math.random() * 10}s`
+              }}
+            >
+              {Math.random() > 0.5 ? '1' : '0'}
+            </div>
+          ))}
         </div>
 
-        <motion.div
-          className="container relative z-10 px-4 mx-auto text-center"
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          {/* Enhanced title with better typography */}
-          <motion.div variants={itemVariants} className="mb-6">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
-              Zion Tech Group - <span className="text-transparent bg-clip-text bg-gradient-to-r from-zion-cyan to-zion-purple">The Future of Tech</span>
+        <div className="relative z-10 max-w-7xl mx-auto text-center">
+          <div className="animate-fade-in-up">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+              <span className="neon-text">
+                Transform Your Business
+              </span>
+              <br />
+              <span className="text-white">With AI & Tech</span>
             </h1>
-          </motion.div>
-
-          {/* Enhanced subtitle with better spacing */}
-          <motion.div variants={itemVariants} className="mb-10">
-            <p className="text-lg sm:text-xl md:text-2xl text-zion-slate-light max-w-4xl mx-auto leading-relaxed">
-              Discover top AI and tech talent, services, and equipment in one place. Powered by cutting-edge AI matching technology.
+            
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+              Discover cutting-edge AI services, Micro SAAS solutions, and comprehensive IT services 
+              designed to propel your business into the future.
             </p>
-          </motion.div>
 
-          {/* Enhanced CTA buttons with better mobile layout */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 max-w-md sm:max-w-none mx-auto"
-          >
-            <Link
-              to="/expanded-services"
-              className="group bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple text-lg py-6 px-8 rounded-xl shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 inline-flex items-center justify-center gap-2 text-white font-bold"
-            >
-              <Sparkles className="w-5 h-5" />
-              Explore Services
-              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+              <button className="quantum-button text-lg px-8 py-4">
+                Explore Services
+              </button>
+              <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 rounded-xl font-semibold text-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 neon-border animate-neon-border-glow">
+                Get Free Consultation
+              </button>
+            </div>
 
-            <Link
-              to="/contact"
-              className="group border-2 border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-zion-blue-dark active:bg-zion-cyan-light text-lg py-6 px-8 rounded-xl inline-flex items-center justify-center gap-2 transition-all duration-300 hover:shadow-lg hover:shadow-zion-cyan/25 transform hover:scale-105 font-bold"
-            >
-              <Globe className="w-5 h-5" />
-              Get in Touch
-              <Zap className="w-4 h-4 group-hover:scale-110 transition-transform" />
-            </Link>
-          </motion.div>
+            {/* Enhanced Stats */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
+              {[
+                { number: "100+", label: "AI Services", icon: "🤖", color: "from-cyan-400 to-blue-400" },
+                { number: "150+", label: "Micro SAAS Solutions", icon: "💻", color: "from-blue-400 to-purple-400" },
+                { number: "24/7", label: "IT Support", icon: "🔧", color: "from-purple-400 to-pink-400" },
+                { number: "Global", label: "Service Coverage", icon: "🌍", color: "from-green-400 to-teal-400" }
+              ].map((stat, index) => (
+                <div key={index} className="text-center animate-fade-in-up group" style={{ animationDelay: `${index * 0.2}s` }}>
+                  <div className="relative mb-4">
+                    <div className="text-5xl mb-2 group-hover:scale-110 transition-transform duration-300">{stat.icon}</div>
+                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                  <div className={`text-4xl font-bold mb-2 bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
+                    {stat.number}
+                  </div>
+                  <div className="text-gray-400 font-medium">{stat.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
 
-          {/* Enhanced trust indicators */}
-          <motion.div
-            variants={itemVariants}
-            className="mt-12 flex flex-wrap justify-center items-center gap-6 text-zion-slate-light text-sm"
-          >
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-zion-cyan rounded-full"></div>
-              <span>AI-Powered Matching</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-zion-purple rounded-full"></div>
-              <span>Global Network</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-zion-cyan rounded-full"></div>
-              <span>24/7 Support</span>
-            </div>
-          </motion.div>
-        </motion.div>
+        {/* Floating Elements */}
+        <div className="absolute top-20 right-20 w-2 h-2 bg-cyan-400 rounded-full animate-ping"></div>
+        <div className="absolute bottom-32 left-32 w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
+        <div className="absolute top-1/2 left-20 w-1 h-1 bg-purple-400 rounded-full animate-bounce"></div>
+        <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-green-400 rounded-full animate-ping animation-delay-1000"></div>
       </section>
 
       {/* Services Showcase */}
       <ServicesShowcase />
-      
-      {/* Contact Section */}
-      <motion.section 
-        className="py-20 bg-gradient-to-br from-zion-slate-dark to-zion-slate"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true }}
-      >
-        <div className="container mx-auto px-4">
+
+      {/* Enhanced Features Section */}
+      <section className="py-20 px-4 relative overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-br from-green-500/10 to-teal-500/10 rounded-full blur-3xl animate-pulse animation-delay-1000"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
-            <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-              Let's discuss how Zion Tech Group can help you achieve your technology goals
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Why Choose <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Zion Tech Group</span>?
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              We combine cutting-edge technology with proven business strategies to deliver exceptional results.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            <motion.div 
-              className="text-center p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20"
-              whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ duration: 0.2 }}
-            >
-              <div className="w-16 h-16 bg-gradient-to-br from-zion-cyan to-zion-cyan-dark rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Phone className="w-8 h-8 text-white" />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: "🚀",
+                title: "Innovation First",
+                description: "Stay ahead with the latest AI and emerging technologies",
+                color: "from-cyan-500 to-blue-500"
+              },
+              {
+                icon: "⚡",
+                title: "Lightning Fast",
+                description: "Rapid deployment and implementation of solutions",
+                color: "from-blue-500 to-purple-500"
+              },
+              {
+                icon: "🔒",
+                title: "Enterprise Security",
+                description: "Bank-grade security and compliance standards",
+                color: "from-purple-500 to-pink-500"
+              },
+              {
+                icon: "💡",
+                title: "Expert Team",
+                description: "Certified professionals with years of experience",
+                color: "from-pink-500 to-red-500"
+              },
+              {
+                icon: "🌐",
+                title: "Global Reach",
+                description: "Serving clients worldwide with local expertise",
+                color: "from-green-500 to-teal-500"
+              },
+              {
+                icon: "📈",
+                title: "Proven Results",
+                description: "Track record of successful transformations",
+                color: "from-teal-500 to-cyan-500"
+              }
+            ].map((feature, index) => (
+              <div key={index} className="group p-6 bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-xl border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20">
+                <div className="relative mb-4">
+                  <div className="text-5xl group-hover:scale-110 transition-transform duration-300">
+                    {feature.icon}
+                  </div>
+                  <div className={`absolute inset-0 bg-gradient-to-r ${feature.color} rounded-full blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-300`}></div>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">{feature.title}</h3>
+                <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">{feature.description}</p>
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">Call Us</h3>
-              <p className="text-zion-slate-light mb-4">Speak directly with our experts</p>
-              <a href="tel:+13024640950" className="text-zion-cyan font-semibold hover:text-zion-cyan-light transition-colors">
-                +1 302 464 0950
-              </a>
-            </motion.div>
-            
-            <motion.div 
-              className="text-center p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20"
-              whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ duration: 0.2 }}
-            >
-              <div className="w-16 h-16 bg-gradient-to-br from-zion-purple to-zion-purple-dark rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <Mail className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Email Us</h3>
-              <p className="text-zion-slate-light mb-4">Send us your project details</p>
-              <a href="mailto:kleber@ziontechgroup.com" className="text-zion-cyan font-semibold hover:text-zion-cyan-light transition-colors">
-                kleber@ziontechgroup.com
-              </a>
-            </motion.div>
-            
-            <motion.div 
-              className="text-center p-8 bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20"
-              whileHover={{ scale: 1.05, y: -5 }}
-              transition={{ duration: 0.2 }}
-            >
-              <div className="w-16 h-16 bg-gradient-to-br from-zion-blue to-zion-blue-dark rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <MapPin className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">Visit Us</h3>
-              <p className="text-zion-slate-light mb-4">Meet us at our headquarters</p>
-              <address className="text-zion-cyan font-semibold not-italic">
-                364 E Main St STE 1008<br />
-                Middletown DE 19709
-              </address>
-            </motion.div>
-          </div>
-          
-          <div className="text-center">
-            <motion.a
-              href="/contact"
-              className="inline-flex items-center bg-gradient-to-r from-zion-cyan to-zion-cyan-dark text-white px-8 py-4 rounded-xl font-bold hover:shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Start Your Project Today
-              <ArrowRight className="w-5 h-5 ml-2" />
-            </motion.a>
+            ))}
           </div>
         </div>
-      </motion.section>
+      </section>
+
+      {/* Enhanced Contact Section */}
+      <section className="py-20 px-4 bg-gradient-to-r from-gray-900/50 to-black/50 relative overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-3xl animate-pulse animation-delay-1000"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Ready to Get Started?
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Contact our team of experts to discuss your specific needs and find the perfect solution for your business.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {[
+              {
+                icon: "📱",
+                title: "Phone",
+                contact: "+1 302 464 0950",
+                description: "Call us anytime for immediate assistance",
+                color: "from-cyan-500 to-blue-500"
+              },
+              {
+                icon: "✉️",
+                title: "Email",
+                contact: "kleber@ziontechgroup.com",
+                description: "Send us a detailed message",
+                color: "from-blue-500 to-purple-500"
+              },
+              {
+                icon: "📍",
+                title: "Address",
+                contact: "364 E Main St STE 1008\nMiddletown DE 19709",
+                description: "Visit our office for in-person consultation",
+                color: "from-purple-500 to-pink-500"
+              }
+            ].map((method, index) => (
+              <div key={index} className="group text-center p-8 bg-gradient-to-br from-gray-900/50 to-gray-800/50 rounded-2xl border border-cyan-500/30 hover:border-cyan-400/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20">
+                <div className="relative mb-4">
+                  <div className="text-6xl group-hover:scale-110 transition-transform duration-300">
+                    {method.icon}
+                  </div>
+                  <div className={`absolute inset-0 bg-gradient-to-r ${method.color} rounded-full blur-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300`}></div>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">{method.title}</h3>
+                <p className="text-cyan-400 font-medium mb-3 whitespace-pre-line group-hover:text-cyan-300 transition-colors duration-300">{method.contact}</p>
+                <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">{method.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <button className="px-10 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl font-semibold text-lg hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/30 hover:shadow-cyan-400/50">
+              Schedule Free Consultation
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* New Technologies Section */}
+      <section className="py-20 px-4 relative overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-green-500/10 to-teal-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-br from-orange-500/10 to-red-500/10 rounded-full blur-3xl animate-pulse animation-delay-1000"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Cutting-Edge <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Technologies</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              We leverage the latest technologies to deliver innovative solutions that drive business transformation.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: "🤖",
+                title: "Artificial Intelligence",
+                description: "Machine learning, NLP, computer vision, and predictive analytics",
+                color: "from-cyan-500 to-blue-500"
+              },
+              {
+                icon: "🔗",
+                title: "Blockchain",
+                description: "Smart contracts, decentralized applications, and secure transactions",
+                color: "from-blue-500 to-purple-500"
+              },
+              {
+                icon: "☁️",
+                title: "Cloud Computing",
+                description: "AWS, Azure, Google Cloud, and hybrid cloud solutions",
+                color: "from-purple-500 to-pink-500"
+              },
+              {
+                icon: "🌐",
+                title: "IoT & Edge",
+                description: "Connected devices, edge computing, and real-time analytics",
+                color: "from-green-500 to-teal-500"
+              }
+            ].map((tech, index) => (
+              <div key={index} className="group text-center p-6 bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-xl border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20">
+                <div className="relative mb-4">
+                  <div className="text-5xl group-hover:scale-110 transition-transform duration-300">
+                    {tech.icon}
+                  </div>
+                  <div className={`absolute inset-0 bg-gradient-to-r ${tech.color} rounded-full blur-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300`}></div>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">{tech.title}</h3>
+                <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300">{tech.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 }

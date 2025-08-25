@@ -1,0 +1,38 @@
+import Link from 'next/link';
+import { useRouter } from 'next/router';
+import React from 'react';
+<<<<<<< HEAD
+import Navigation from './Navigation';
+import Footer from './Footer';
+=======
+import EnhancedNavigation from './EnhancedNavigation';
+import EnhancedFooter from './EnhancedFooter';
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-49d4
+
+export default function DashboardLayout({ children }: { children: React.ReactNode }) {
+  const router = useRouter();
+
+  const NavLink = ({ href, label }: { href: string; label: string }) => (
+    <Link href={href}>
+      <a className={`block px-3 py-2 rounded-md text-sm ${router.pathname === href ? 'bg-gray-900 text-white' : 'hover:bg-gray-100 dark:hover:bg-gray-800'}`}>{label}</a>
+    </Link>
+  );
+
+  return (
+    <div className="min-h-screen bg-black text-white">
+<<<<<<< HEAD
+      <Navigation />
+      <main className="pt-20">
+        {children}
+      </main>
+      <Footer />
+=======
+      <EnhancedNavigation />
+      <main className="pt-24 lg:pt-28">
+        {children}
+      </main>
+      <EnhancedFooter />
+>>>>>>> origin/cursor/enhance-app-services-and-website-with-futuristic-design-49d4
+    </div>
+  );
+}

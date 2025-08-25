@@ -1,22 +1,25 @@
-import React, { Suspense } from "react";
+import React, { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { EnhancedLoading } from "./components/ui/enhanced-loading";
 import { MainNavigation } from "./layout/MainNavigation";
 import { Footer } from "./components/Footer";
 import { ToastContainer } from "./components/ui/toast";
 import { motion } from "framer-motion";
+import { ThemeProvider } from "./components/ThemeProvider";
+import { useScrollToTop } from "./hooks";
+import { WhitelabelProvider } from "./context/WhitelabelContext";
 
 // Lazy load pages
-const Home = React.lazy(() => import('./pages/Home'));
-const ServicesPage = React.lazy(() => import('./pages/ServicesPage'));
-const ExpandedServicesPage = React.lazy(() => import('./pages/ExpandedServicesPage'));
-const ServicesComparisonPage = React.lazy(() => import('./pages/ServicesComparisonPage'));
-const ITOnsiteServicesPage = React.lazy(() => import('./pages/ITOnsiteServicesPage'));
-const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
-const CybersecurityServicesPage = React.lazy(() => import('./pages/CybersecurityServicesPage'));
-const Contact = React.lazy(() => import('./pages/Contact'));
-const About = React.lazy(() => import('./pages/About'));
-const NotFound = React.lazy(() => import('./pages/NotFound'));
+const Home = lazy(() => import('./pages/Home'));
+const ServicesPage = lazy(() => import('./pages/Services'));
+const ExpandedServicesPage = lazy(() => import('./pages/ServicesShowcase'));
+const AIServicesPage = lazy(() => import('./pages/AIServicesPage'));
+const CybersecurityServicesPage = lazy(() => import('./pages/CybersecurityServicesPage'));
+const ServicesComparisonPage = lazy(() => import('./pages/ServicesComparison'));
+const ITOnsiteServicesPage = lazy(() => import('./pages/ITOnsiteServicesPage'));
+const Contact = lazy(() => import('./pages/Contact'));
+const About = lazy(() => import('./pages/About'));
+const NotFound = lazy(() => import('./pages/NotFound'));
 
 // Enhanced loading fallback
 const EnhancedLoadingFallback = () => (
@@ -34,32 +37,38 @@ const EnhancedLoadingFallback = () => (
   </div>
 );
 
-function App() {
+const App = () => {
+  useScrollToTop();
+
   return (
-    <Router>
-      <div className="min-h-screen bg-zion-blue-dark">
-        <MainNavigation />
-        <main className="pt-16">
-          <Suspense fallback={<EnhancedLoadingFallback />}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/services" element={<ServicesPage />} />
-              <Route path="/expanded-services" element={<ExpandedServicesPage />} />
-              <Route path="/ai-services" element={<AIServicesPage />} />
-              <Route path="/cybersecurity-services" element={<CybersecurityServicesPage />} />
-              <Route path="/services-comparison" element={<ServicesComparisonPage />} />
-              <Route path="/it-onsite-services" element={<ITOnsiteServicesPage />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/about" element={<About />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Suspense>
-        </main>
-        <Footer />
-        <ToastContainer />
-      </div>
-    </Router>
+    <ThemeProvider>
+      <WhitelabelProvider>
+        <Router>
+          <div className="min-h-screen bg-zion-blue-dark">
+            <MainNavigation />
+            <main className="pt-16">
+              <Suspense fallback={<EnhancedLoadingFallback />}>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/services" element={<ServicesPage />} />
+                  <Route path="/expanded-services" element={<ExpandedServicesPage />} />
+                  <Route path="/ai-services" element={<AIServicesPage />} />
+                  <Route path="/cybersecurity-services" element={<CybersecurityServicesPage />} />
+                  <Route path="/services-comparison" element={<ServicesComparisonPage />} />
+                  <Route path="/it-onsite-services" element={<ITOnsiteServicesPage />} />
+                  <Route path="/contact" element={<Contact />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="*" element={<NotFound />} />
+                </Routes>
+              </Suspense>
+            </main>
+            <Footer />
+            <ToastContainer />
+          </div>
+        </Router>
+      </WhitelabelProvider>
+    </ThemeProvider>
   );
-}
+};
 
 export default App;
