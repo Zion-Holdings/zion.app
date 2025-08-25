@@ -49,8 +49,7 @@ export function Header() {
       path: '/services', 
       label: 'Services', 
       icon: '🤖',
-      description: 'Explore our comprehensive service offerings',
-      hasDropdown: true
+      description: 'Explore our comprehensive service offerings'
     },
     { 
       path: '/solutions/enterprise', 
@@ -58,6 +57,12 @@ export function Header() {
       icon: '💼',
       description: 'Industry-specific solutions',
       hasDropdown: true
+    },
+    { 
+      path: '/emerging-tech', 
+      label: 'Emerging Tech', 
+      icon: '🚀',
+      description: 'Cutting-edge technology solutions'
     },
     { 
       path: '/pricing', 
@@ -84,6 +89,18 @@ export function Header() {
       description: 'Latest insights and news'
     },
     { 
+      path: '/case-studies', 
+      label: 'Case Studies', 
+      icon: '📊',
+      description: 'Success stories and results'
+    },
+    { 
+      path: '/help', 
+      label: 'Help', 
+      icon: '❓',
+      description: 'Get help and support'
+    },
+    { 
       path: '/contact', 
       label: 'Contact', 
       icon: '📞',
@@ -97,22 +114,43 @@ export function Header() {
       icon: Brain,
       description: 'Intelligent solutions powered by artificial intelligence',
       services: [
+        { name: 'AI Autonomous Systems', path: '/services/ai-autonomous-systems', description: 'Advanced autonomous AI systems' },
+        { name: 'AI Research Assistant', path: '/ai-autonomous-research-assistant', description: 'AI-powered research automation' },
         { name: 'AI Business Intelligence', path: '/services#ai-bi', description: 'Advanced analytics and insights' },
         { name: 'AI Marketing Automation', path: '/services#ai-marketing', description: 'Smart marketing optimization' },
         { name: 'AI HR & Recruitment', path: '/services#ai-hr', description: 'Intelligent talent management' },
-        { name: 'AI Legal Tech', path: '/services#ai-legal', description: 'Automated legal processes' },
-        { name: 'AI Healthcare Analytics', path: '/services#ai-healthcare', description: 'Patient care optimization' }
+        { name: 'AI Legal Tech', path: '/services#ai-legal', description: 'Automated legal processes' }
       ]
     },
     {
-      title: 'Cybersecurity & Compliance',
-      icon: Shield,
-      description: 'Protect your digital assets with cutting-edge security',
+      title: 'Quantum Technology',
+      icon: Brain,
+      description: 'Next-generation quantum computing solutions',
       services: [
-        { name: 'Quantum-Safe Security', path: '/services#quantum-security', description: 'Future-proof protection' },
-        { name: 'Security Assessment', path: '/services#security-assessment', description: 'Comprehensive security audit' },
-        { name: 'Compliance & Audit', path: '/services#compliance', description: 'Regulatory compliance solutions' },
-        { name: 'Threat Detection', path: '/services#threat-detection', description: 'Real-time security monitoring' }
+        { name: 'Quantum Neural Networks', path: '/quantum-neural-network-platform', description: 'Quantum-powered neural networks' },
+        { name: 'Quantum Computing', path: '/services/quantum-technology', description: 'Quantum computing platforms' },
+        { name: 'Quantum-Safe Security', path: '/services#quantum-security', description: 'Future-proof quantum security' }
+      ]
+    },
+    {
+      title: 'Business Operations',
+      icon: Building,
+      description: 'Streamlined business process automation',
+      services: [
+        { name: 'Autonomous Business Platform', path: '/autonomous-business-operations-platform', description: 'Self-operating business systems' },
+        { name: 'AI Asset Management', path: '/ai-powered-it-asset-management', description: 'Intelligent IT asset management' },
+        { name: 'Business Intelligence', path: '/services#ai-bi', description: 'Advanced business analytics' }
+      ]
+    },
+    {
+      title: 'Cybersecurity',
+      icon: Shield,
+      description: 'Comprehensive security and compliance solutions',
+      services: [
+        { name: 'Cybersecurity Services', path: '/services/cybersecurity', description: 'Complete security solutions' },
+        { name: 'SOC2 Compliance Automation', path: '/soc2-compliance-automation', description: 'Automated compliance management' },
+        { name: 'Security Assessment', path: '/services#security-assessment', description: 'Security audit and testing' },
+        { name: 'Compliance & Audit', path: '/services#compliance', description: 'Regulatory compliance support' }
       ]
     },
     {
@@ -120,10 +158,12 @@ export function Header() {
       icon: Cpu,
       description: 'Scalable cloud solutions and infrastructure management',
       services: [
+        { name: 'Cloud DevOps', path: '/cloud-devops', description: 'Cloud development and operations' },
+        { name: 'IT Infrastructure', path: '/services/it-infrastructure', description: 'Complete IT infrastructure solutions' },
+        { name: '5G Enterprise Solutions', path: '/5g-enterprise-solutions', description: 'High-speed 5G connectivity' },
         { name: 'Cloud Migration', path: '/services#cloud-migration', description: 'Seamless cloud transition' },
         { name: 'Network Infrastructure', path: '/services#network', description: 'Robust network solutions' },
-        { name: 'Managed IT Services', path: '/services#managed-it', description: '24/7 IT support' },
-        { name: 'DevOps Automation', path: '/services#devops', description: 'Streamlined development' }
+        { name: 'Managed IT Services', path: '/services#managed-it', description: '24/7 IT support' }
       ]
     },
     {
@@ -131,21 +171,9 @@ export function Header() {
       icon: Rocket,
       description: 'Cutting-edge solutions for tomorrow\'s challenges',
       services: [
+        { name: 'Emerging Technology', path: '/emerging-tech', description: 'Cutting-edge technology solutions' },
         { name: 'Blockchain Solutions', path: '/services#blockchain', description: 'Decentralized applications' },
-        { name: 'IoT Platforms', path: '/services#iot', description: 'Connected device management' },
-        { name: 'Quantum Computing', path: '/services#quantum', description: 'Next-generation computing' },
-        { name: 'AR/VR Solutions', path: '/services#ar-vr', description: 'Immersive experiences' }
-      ]
-    },
-    {
-      title: 'Industry Solutions',
-      icon: Building,
-      description: 'Tailored solutions for specific industries',
-      services: [
-        { name: 'Healthcare Technology', path: '/solutions/healthcare', description: 'Medical innovation' },
-        { name: 'Financial Services', path: '/services#financial', description: 'Fintech solutions' },
-        { name: 'Manufacturing Intelligence', path: '/services#manufacturing', description: 'Smart manufacturing' },
-        { name: 'Retail Technology', path: '/services#retail', description: 'Digital retail transformation' }
+        { name: 'IoT & Edge Computing', path: '/services#iot-edge', description: 'Connected device management' }
       ]
     }
   ];

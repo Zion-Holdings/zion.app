@@ -26,14 +26,22 @@ export function Footer() {
       icon: Brain,
       description: "Intelligent solutions powered by artificial intelligence",
       links: [
-        { label: "AI Business Intelligence", path: "/services#ai-bi", description: "Advanced analytics and insights" },
-        { label: "AI Marketing Automation", path: "/services#ai-marketing", description: "Smart marketing optimization" },
-        { label: "AI HR & Recruitment", path: "/services#ai-hr", description: "Intelligent talent management" },
-        { label: "AI Legal Tech", path: "/services#ai-legal", description: "Automated legal processes" },
-        { label: "AI Healthcare Analytics", path: "/services#ai-healthcare", description: "Patient care optimization" },
-        { label: "AI Financial Analytics", path: "/services#financial", description: "Risk assessment and insights" },
-        { label: "AI Supply Chain", path: "/services#supply-chain", description: "Optimization and forecasting" },
-        { label: "AI Manufacturing", path: "/services#manufacturing", description: "Smart production systems" }
+        { label: "AI & Autonomous Systems", path: "/services/ai-autonomous-systems" },
+        { label: "AI Research Assistant", path: "/ai-autonomous-research-assistant" },
+        { label: "Quantum Neural Networks", path: "/quantum-neural-network-platform" },
+        { label: "Autonomous Business Platform", path: "/autonomous-business-operations-platform" },
+        { label: "AI Asset Management", path: "/ai-powered-it-asset-management" },
+        { label: "Quantum Technology", path: "/services/quantum-technology" },
+        { label: "IT Infrastructure", path: "/services/it-infrastructure" },
+        { label: "Micro SAAS Solutions", path: "/services/micro-saas-solutions" },
+        { label: "Cybersecurity", path: "/services/cybersecurity" },
+        { label: "SOC2 Compliance Automation", path: "/soc2-compliance-automation" },
+        { label: "Industry Solutions", path: "/services/industry-solutions" },
+        { label: "AI & Machine Learning", path: "/services#ai-ml" },
+        { label: "Cloud & Infrastructure", path: "/services#cloud" },
+        { label: "5G Enterprise Solutions", path: "/5g-enterprise-solutions" },
+        { label: "Blockchain Solutions", path: "/services#blockchain" },
+        { label: "IoT & Edge Computing", path: "/services#iot" }
       ]
     },
     {
@@ -71,14 +79,24 @@ export function Footer() {
       icon: Star,
       description: "Learn about our mission and team",
       links: [
-        { label: "About Us", path: "/about", description: "Our story and values" },
-        { label: "Our Mission", path: "/mission", description: "What drives us forward" },
-        { label: "Team", path: "/team", description: "Meet our experts" },
-        { label: "Pricing", path: "/pricing", description: "Transparent pricing plans" },
-        { label: "Careers", path: "/careers", description: "Join our team" },
-        { label: "Partners", path: "/partners", description: "Strategic partnerships" },
-        { label: "Contact", path: "/contact", description: "Get in touch" },
-        { label: "Blog", path: "/blog", description: "Latest insights" }
+        { label: "About Us", path: "/about" },
+        { label: "Our Mission", path: "/mission" },
+        { label: "Team", path: "/team" },
+        { label: "Pricing", path: "/pricing" },
+        { label: "Careers", path: "/careers" },
+        { label: "Partners", path: "/partners" },
+        { label: "Contact", path: "/contact" },
+        { label: "Blog", path: "/blog" }
+      ]
+    },
+    {
+      title: "Resources",
+      links: [
+        { label: "Blog & Articles", path: "/blog" },
+        { label: "Case Studies", path: "/case-studies" },
+        { label: "Help Center", path: "/help" },
+        { label: "Documentation", path: "/docs" },
+        { label: "Support Center", path: "/support" }
       ]
     }
   ];
