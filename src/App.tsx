@@ -26,6 +26,7 @@ const ServicesShowcase = lazy(() => import('./pages/ServicesShowcase'));
 const AIMatcherPage = lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = lazy(() => import('./pages/TalentDirectory'));
 const TalentsPage = lazy(() => import('./pages/TalentsPage'));
+const EmergingTech = lazy(() => import('./pages/EmergingTech'));
 
 // Our enhanced service pages
 const About = lazy(() => import('./pages/About'));
@@ -77,6 +78,7 @@ const App = () => {
                     <Route path="/match" element={<AIMatcherPage />} />
                     <Route path="/talent" element={<TalentDirectory />} />
                     <Route path="/talents" element={<TalentsPage />} />
+                    <Route path="/emerging-tech" element={<EmergingTech />} />
                     <Route path="/comprehensive-services" element={<Services />} />
                     <Route path="/services-comparison" element={<Services />} />
                     <Route path="/it-onsite-services" element={<Services />} />

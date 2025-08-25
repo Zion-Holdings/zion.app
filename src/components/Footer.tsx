@@ -12,7 +12,7 @@ export function Footer() {
 
   const footerSections = [
     {
-      title: "Services",
+      title: "AI & Micro SAAS",
       links: [
         { label: "AI & Autonomous Systems", path: "/services/ai-autonomous-systems" },
         { label: "Quantum Technology", path: "/services/quantum-technology" },
@@ -35,12 +35,26 @@ export function Footer() {
       ]
     },
     {
+      title: "Emerging Tech",
+      links: [
+        { label: "Quantum Computing", path: "/emerging-tech" },
+        { label: "Blockchain & DeFi", path: "/emerging-tech" },
+        { label: "IoT & Edge Computing", path: "/emerging-tech" },
+        { label: "Extended Reality (XR)", path: "/emerging-tech" },
+        { label: "5G & Networks", path: "/emerging-tech" },
+        { label: "Green Technology", path: "/emerging-tech" },
+        { label: "Digital Twins", path: "/emerging-tech" }
+      ]
+    },
+    {
       title: "Company",
       links: [
         { label: "About Us", path: "/about" },
         { label: "Our Mission", path: "/mission" },
         { label: "Team", path: "/team" },
         { label: "Leadership", path: "/leadership" },
+        { label: "All Services", path: "/comprehensive-services" },
+        { label: "Pricing", path: "/pricing" },
         { label: "Careers", path: "/careers" },
         { label: "Partners", path: "/partners" },
         { label: "Contact", path: "/contact" }
@@ -50,11 +64,14 @@ export function Footer() {
       title: "Resources",
       links: [
         { label: "Blog & Articles", path: "/blog" },
+        { label: "Technology Blog", path: "/blog" },
         { label: "Documentation", path: "/docs" },
         { label: "Case Studies", path: "/case-studies" },
         { label: "White Papers", path: "/white-papers" },
+        { label: "API Documentation", path: "/api-docs" },
         { label: "Webinars", path: "/webinars" },
-        { label: "Training", path: "/training" }
+        { label: "Training", path: "/training" },
+        { label: "Support Center", path: "/support" }
       ]
     }
   ];

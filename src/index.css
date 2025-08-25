@@ -2,6 +2,126 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Futuristic utility classes */
+@layer utilities {
+  .neon-glow {
+    box-shadow: 
+      0 0 5px hsl(var(--neon-cyan)),
+      0 0 10px hsl(var(--neon-cyan)),
+      0 0 15px hsl(var(--neon-cyan)),
+      0 0 20px hsl(var(--neon-cyan));
+  }
+
+  .neon-text {
+    text-shadow: 
+      0 0 5px hsl(var(--neon-cyan)),
+      0 0 10px hsl(var(--neon-cyan)),
+      0 0 15px hsl(var(--neon-cyan));
+  }
+
+  .hologram-effect {
+    background: linear-gradient(
+      45deg,
+      hsl(var(--neon-cyan) / var(--hologram-opacity)),
+      hsl(var(--neon-blue) / var(--hologram-opacity)),
+      hsl(var(--neon-purple) / var(--hologram-opacity))
+    );
+    background-size: 200% 200%;
+    animation: hologram 4s ease-in-out infinite;
+  }
+
+  .cyber-border {
+    border: 2px solid transparent;
+    background: linear-gradient(45deg, hsl(var(--neon-cyan)), hsl(var(--neon-blue))) border-box;
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) padding-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+  }
+
+  .energy-field {
+    background: radial-gradient(
+      circle at center,
+      hsl(var(--neon-cyan) / 0.3) 0%,
+      transparent 70%
+    );
+    animation: energyPulse 3s ease-in-out infinite;
+  }
+
+  .matrix-bg {
+    background-image: 
+      linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: matrixRain 20s linear infinite;
+  }
+
+  .quantum-shift {
+    animation: quantumShift 2s ease-in-out infinite;
+  }
+
+  .neon-flicker {
+    animation: neonFlicker 0.5s ease-in-out infinite alternate;
+  }
+
+  .cyber-wave {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cyber-wave::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      hsl(var(--neon-cyan) / 0.3),
+      transparent
+    );
+    animation: cyberWave 8s ease-in-out infinite;
+  }
+
+  .particle-field {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .particle-field::before,
+  .particle-field::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: hsl(var(--neon-cyan));
+    border-radius: 50%;
+    animation: particleFloat 5s ease-in-out infinite;
+  }
+
+  .particle-field::before {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+  }
+
+  .particle-field::after {
+    top: 60%;
+    right: 15%;
+    animation-delay: 2.5s;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
 @layer base {
   :root {
     --font-sans: 'Orbitron', system-ui, sans-serif;
@@ -44,6 +164,14 @@
     --sidebar-accent-foreground: 0 0% 7%;
     --sidebar-border: 0 0% 68%;
     --sidebar-ring: 216 84% 53%;
+
+    /* Enhanced futuristic colors */
+    --neon-cyan: 180 100% 50%;
+    --neon-blue: 210 100% 50%;
+    --neon-purple: 270 100% 50%;
+    --neon-pink: 330 100% 50%;
+    --hologram-opacity: 0.8;
+    --glow-intensity: 0.6;
   }
 
   .dark {

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Sidebar from './Sidebar';
@@ -20,10 +19,12 @@ export function Header() {
 
   const navigationItems = [
     { path: '/', label: 'Home', icon: '🏠' },
-    { path: '/services', label: 'Services', icon: '⚡' },
-    { path: '/comprehensive-services', label: 'All Services', icon: '🚀' },
-    { path: '/services-comparison', label: 'Compare', icon: '📊' },
-    { path: '/it-onsite-services', label: 'Onsite IT', icon: '🔧' }
+    { path: '/services', label: 'AI Services', icon: '🤖' },
+    { path: '/emerging-tech', label: 'Emerging Tech', icon: '🚀' },
+    { path: '/comprehensive-services', label: 'All Services', icon: '⚡' },
+    { path: '/pricing', label: 'Pricing', icon: '💰' },
+    { path: '/about', label: 'About', icon: 'ℹ️' },
+    { path: '/contact', label: 'Contact', icon: '📞' }
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -40,7 +41,7 @@ export function Header() {
         
         {/* Enhanced Matrix Rain Effect */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {[...Array(20)].map((_, i) => (
+          {[...Array(25)].map((_, i) => (
             <div
               key={i}
               className="absolute text-cyan-400 text-xs animate-matrix-rain opacity-40"
@@ -53,160 +54,114 @@ export function Header() {
               {Math.random() > 0.5 ? '1' : '0'}
             </div>
           ))}
+          
+          {/* Floating Particles */}
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={`particle-${i}`}
+              className="absolute w-1 h-1 bg-cyan-400/60 rounded-full animate-float"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+                animationDelay: `${Math.random() * 5}s`,
+                animationDuration: `${3 + Math.random() * 4}s`
+              }}
+            />
+          ))}
+          
+          {/* Energy Waves */}
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-blue-500/5 to-purple-500/5 animate-pulse"></div>
+          </div>
         </div>
 
-        {/* Neural Network Lines */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="neural-line" style={{ top: '25%', width: '30%', left: '0%', animationDelay: '0s' }}></div>
-          <div className="neural-line" style={{ top: '45%', width: '40%', left: '30%', animationDelay: '1s' }}></div>
-          <div className="neural-line" style={{ top: '65%', width: '35%', left: '20%', animationDelay: '2s' }}></div>
+        {/* Main Header Content */}
+        <div className="relative z-10 flex items-center justify-between px-6 py-4">
+          {/* Logo */}
+          <Link to="/" className="flex items-center space-x-3 group">
+            <div className="relative">
+              <div className="w-10 h-10 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform duration-300">
+                Z
+              </div>
+              <div className="absolute inset-0 w-10 h-10 bg-gradient-to-br from-purple-500 to-pink-600 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10 blur-sm"></div>
+            </div>
+            <div className="hidden md:block">
+              <h1 className="text-xl font-bold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+                Zion Tech Group
+              </h1>
+              <p className="text-xs text-gray-400">Future-Ready Solutions</p>
+            </div>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center space-x-8">
+            {navigationItems.map((item) => (
+              <Link
+                key={item.path}
+                to={item.path}
+                className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 ${
+                  isActive(item.path)
+                    ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30'
+                    : 'text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10'
+                }`}
+              >
+                <span className="text-lg">{item.icon}</span>
+                <span className="font-medium">{item.label}</span>
+              </Link>
+            ))}
+          </nav>
+
+          {/* CTA Buttons */}
+          <div className="hidden lg:flex items-center space-x-4">
+            <button className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-medium hover:from-cyan-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105">
+              Get Started
+            </button>
+            <button className="px-6 py-2 border border-cyan-500/30 text-cyan-400 rounded-lg font-medium hover:bg-cyan-500/10 transition-all duration-300">
+              Contact Us
+            </button>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="lg:hidden p-2 text-gray-300 hover:text-cyan-400 transition-colors duration-300"
+          >
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-20">
-            {/* Enhanced Logo */}
-            <Link to="/" className="flex items-center space-x-3 group">
-              <div className="relative">
-                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-lg lg:text-xl shadow-lg shadow-cyan-500/50 group-hover:shadow-cyan-400/70 transition-all duration-300 group-hover:scale-110 animate-quantum-float">
-                  Z
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg blur-lg opacity-50 group-hover:opacity-70 transition-opacity duration-300 animate-pulse"></div>
-                {/* Quantum particles around logo */}
-                <div className="absolute -top-1 -right-1 w-2 h-2 bg-cyan-400 rounded-full animate-ping"></div>
-                <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-blue-400 rounded-full animate-ping animation-delay-1000"></div>
-              </div>
-              <div className="hidden sm:block">
-                <h1 className="text-xl lg:text-2xl font-bold neon-text">
-                  Zion Tech Group
-                </h1>
-                <p className="text-xs text-gray-400 -mt-1">The Tech & AI Marketplace</p>
-              </div>
-            </Link>
-
-            {/* Enhanced Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-1">
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="lg:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-xl border-t border-cyan-500/30">
+            <nav className="px-6 py-4 space-y-2">
               {navigationItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
-                  className={`relative px-4 py-2 rounded-lg font-medium transition-all duration-300 group ${
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-300 ${
                     isActive(item.path)
-                      ? 'text-white bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/50 shadow-lg shadow-cyan-500/30 neon-border animate-neon-border-glow'
-                      : 'text-gray-300 hover:text-white hover:bg-white/10'
+                      ? 'bg-cyan-500/20 text-cyan-400 border border-cyan-500/30'
+                      : 'text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10'
                   }`}
                 >
-                  <span className="flex items-center space-x-2">
-                    <span className="text-sm animate-quantum-float">{item.icon}</span>
-                    <span>{item.label}</span>
-                  </span>
-                  
-                  {/* Enhanced Hover Effect */}
-                  <div className={`absolute inset-0 rounded-lg bg-gradient-to-r from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-                    isActive(item.path) ? 'opacity-100' : ''
-                  }`}></div>
-                  
-                  {/* Enhanced Active Indicator */}
-                  {isActive(item.path) && (
-                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-cyan-400 rounded-full animate-pulse animate-energy-pulse"></div>
-                  )}
+                  <span className="text-lg">{item.icon}</span>
+                  <span className="font-medium">{item.label}</span>
                 </Link>
               ))}
+              <div className="pt-4 space-y-2">
+                <button className="w-full px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 text-white rounded-lg font-medium hover:from-cyan-600 hover:to-blue-700 transition-all duration-300">
+                  Get Started
+                </button>
+                <button className="w-full px-6 py-3 border border-cyan-500/30 text-cyan-400 rounded-lg font-medium hover:bg-cyan-500/10 transition-all duration-300">
+                  Contact Us
+                </button>
+              </div>
             </nav>
-
-            {/* Enhanced Contact Info */}
-            <div className="hidden lg:flex items-center space-x-4">
-              <button
-                onClick={() => setIsSidebarOpen(true)}
-                className="p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors duration-200 relative group"
-                title="Open Navigation Menu"
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-                {/* Quantum particle effect on button */}
-                <div className="absolute -top-1 -right-1 w-1 h-1 bg-cyan-400 rounded-full animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </button>
-              
-              <div className="text-right">
-                <p className="text-sm neon-text font-medium">+1 302 464 0950</p>
-                <p className="text-xs text-gray-400">kleber@ziontechgroup.com</p>
-              </div>
-              <button className="quantum-button px-4 py-2 font-medium transform hover:scale-105">
-                Get Quote
-              </button>
-            </div>
-
-            {/* Enhanced Mobile Menu Button */}
-            <div className="lg:hidden flex items-center gap-2">
-              <button
-                onClick={() => setIsSidebarOpen(true)}
-                className="p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors duration-200 relative group"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-                {/* Quantum particle effect on button */}
-                <div className="absolute -top-1 -right-1 w-1 h-1 bg-cyan-400 rounded-full animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </button>
-              
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors duration-200 relative group"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  {isMenuOpen ? (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                  ) : (
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                  )}
-                </svg>
-                {/* Quantum particle effect on button */}
-                <div className="absolute -top-1 -right-1 w-1 h-1 bg-cyan-400 rounded-full animate-ping opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </button>
-            </div>
           </div>
-
-          {/* Enhanced Mobile Navigation */}
-          {isMenuOpen && (
-            <div className="lg:hidden">
-              <div className="px-2 pt-2 pb-3 space-y-1 futuristic-card border border-cyan-500/30 shadow-xl shadow-cyan-500/20">
-                {navigationItems.map((item) => (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    onClick={() => setIsMenuOpen(false)}
-                    className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
-                      isActive(item.path)
-                        ? 'text-white bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/50 neon-border'
-                        : 'text-gray-300 hover:text-white hover:bg-white/10'
-                    }`}
-                  >
-                    <span className="flex items-center space-x-3">
-                      <span className="text-lg animate-quantum-float">{item.icon}</span>
-                      <span>{item.label}</span>
-                    </span>
-                  </Link>
-                ))}
-                
-                {/* Enhanced Mobile Contact Info */}
-                <div className="pt-4 border-t border-cyan-500/30">
-                  <div className="px-3 py-2">
-                    <p className="text-sm neon-text font-medium">+1 302 464 0950</p>
-                    <p className="text-xs text-gray-400">kleber@ziontechgroup.com</p>
-                  </div>
-                  <button className="w-full mt-2 quantum-button font-medium">
-                    Get Quote
-                  </button>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* Floating Quantum Elements */}
-        <div className="absolute top-4 right-20 w-1 h-1 bg-cyan-400 rounded-full animate-ping animate-energy-pulse"></div>
-        <div className="absolute top-4 right-32 w-1 h-1 bg-blue-400 rounded-full animate-ping animate-energy-pulse animation-delay-1000"></div>
-        <div className="absolute top-4 right-44 w-1 h-1 bg-purple-400 rounded-full animate-ping animate-energy-pulse animation-delay-2000"></div>
+        )}
       </header>
 
       {/* Sidebar */}
@@ -214,7 +169,3 @@ export function Header() {
     </>
   );
 }
-=======
-export { Header } from './header/Header';
-export type { HeaderProps } from './header/Header';
->>>>>>> cursor/integrate-build-improve-and-re-verify-a776
