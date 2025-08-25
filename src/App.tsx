@@ -29,7 +29,8 @@ const AIMatcherPage = lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = lazy(() => import('./pages/TalentDirectory'));
 const TalentsPage = lazy(() => import('./pages/TalentsPage'));
 const EmergingTech = lazy(() => import('./pages/EmergingTech'));
-// Newly added service pages
+
+// Service pages
 const AIServices = lazy(() => import('./pages/AIServices'));
 const CloudDevOps = lazy(() => import('./pages/CloudDevOps'));
 const EnterpriseSolutionsPage = lazy(() => import('./pages/EnterpriseSolutions'));
@@ -45,7 +46,7 @@ const FiveGEnterpriseSolutions = lazy(() => import('./pages/5GEnterpriseSolution
 const CaseStudies = lazy(() => import('./pages/CaseStudies'));
 const HelpCenter = lazy(() => import('./pages/HelpCenter'));
 
-// Our enhanced service pages
+// Company information pages
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
 const Mission = lazy(() => import('./pages/Mission'));
@@ -55,6 +56,8 @@ const Careers = lazy(() => import('./pages/Careers'));
 const Partners = lazy(() => import('./pages/Partners'));
 const Blog = lazy(() => import('./pages/Blog'));
 const News = lazy(() => import('./pages/News'));
+
+// Service detail pages
 const ServicesOverview = lazy(() => import('./pages/services/ServicesOverview'));
 const AIAutonomousSystems = lazy(() => import('./pages/services/AIAutonomousSystems'));
 const QuantumTechnology = lazy(() => import('./pages/services/QuantumTechnology'));
@@ -71,9 +74,13 @@ const ComprehensiveInnovativeServices = lazy(() => import('./pages/Comprehensive
 const EnterpriseSolutions = lazy(() => import('./pages/solutions/Enterprise'));
 const HealthcareSolutions = lazy(() => import('./pages/solutions/Healthcare'));
 
-// Loading Component
+// Loading Component with improved accessibility
 const LoadingSpinner = () => (
-  <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
+  <div 
+    className="flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900"
+    role="status"
+    aria-label="Loading Zion Tech Group application"
+  >
     <div className="text-center">
       <div className="relative">
         <div className="w-16 h-16 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
@@ -89,154 +96,158 @@ const App = () => {
   useScrollToTop();
 
   return (
-    <EnhancedErrorBoundary enableReporting={true}>
+    <EnhancedErrorBoundary>
       <ThemeProvider>
         <WhitelabelProvider>
           <Router>
-            <div className="App min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
-              <Header />
-              <Sidebar isOpen={false} onClose={() => {}} />
-              
-              {/* Main Content with enhanced Suspense */}
-              <main className="ml-64 pt-20 min-h-screen">
-                <Suspense fallback={<LoadingSpinner />}>
-                  <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/services" element={<Services />} />
-                    <Route path="/ai-solutions" element={<AISolutions />} />
-                    <Route path="/services-showcase" element={<ServicesShowcase />} />
-                    <Route path="/match" element={<AIMatcherPage />} />
-                    <Route path="/talent" element={<TalentDirectory />} />
-                    <Route path="/talents" element={<TalentsPage />} />
-                    <Route path="/emerging-tech" element={<EmergingTech />} />
-                    <Route path="/comprehensive-services" element={<Services />} />
-                    <Route path="/services-comparison" element={<Services />} />
-                    <Route path="/it-onsite-services" element={<Services />} />
-                    {/* Newly added explicit service routes */}
-                    <Route path="/ai-services" element={<AIServices />} />
-                    <Route path="/cloud-devops" element={<CloudDevOps />} />
-                    <Route path="/enterprise-solutions" element={<EnterpriseSolutionsPage />} />
-                    <Route path="/digital-transformation" element={<DigitalTransformation />} />
+            <PerformanceOptimizer>
+              <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
+                <Header />
+                <Sidebar />
+                
+                <main className="pt-20">
+                  <Suspense fallback={<LoadingSpinner />}>
+                    <Routes>
+                      {/* Main Routes */}
+                      <Route path="/" element={<Home />} />
+                      <Route path="/services" element={<Services />} />
+                      <Route path="/ai-solutions" element={<AISolutions />} />
+                      <Route path="/services-showcase" element={<ServicesShowcase />} />
+                      <Route path="/ai-matcher" element={<AIMatcherPage />} />
+                      <Route path="/talent-directory" element={<TalentDirectory />} />
+                      <Route path="/talents" element={<TalentsPage />} />
+                      <Route path="/emerging-tech" element={<EmergingTech />} />
+                      
+                      {/* Service Routes */}
+                      <Route path="/ai-services" element={<AIServices />} />
+                      <Route path="/cloud-devops" element={<CloudDevOps />} />
+                      <Route path="/enterprise-solutions" element={<EnterpriseSolutionsPage />} />
+                      <Route path="/digital-transformation" element={<DigitalTransformation />} />
+                      
+                      {/* Missing pages from analysis */}
+                      <Route path="/quantum-neural-network-platform" element={<QuantumNeuralNetworkPlatform />} />
+                      <Route path="/autonomous-business-operations-platform" element={<AutonomousBusinessOperationsPlatform />} />
+                      <Route path="/ai-powered-it-asset-management" element={<AIPoweredITAssetManagement />} />
+                      <Route path="/soc2-compliance-automation" element={<SOC2ComplianceAutomation />} />
+                      <Route path="/ai-autonomous-research-assistant" element={<AIAutonomousResearchAssistant />} />
+                      <Route path="/5g-enterprise-solutions" element={<FiveGEnterpriseSolutions />} />
+                      <Route path="/case-studies" element={<CaseStudies />} />
+                      <Route path="/help" element={<HelpCenter />} />
+                      
+                      {/* Company Routes */}
+                      <Route path="/about" element={<About />} />
+                      <Route path="/contact" element={<Contact />} />
+                      <Route path="/mission" element={<Mission />} />
+                      <Route path="/team" element={<Team />} />
+                      <Route path="/pricing" element={<Pricing />} />
+                      <Route path="/careers" element={<Careers />} />
+                      <Route path="/partners" element={<Partners />} />
+                      <Route path="/blog" element={<Blog />} />
+                      <Route path="/news" element={<News />} />
+                      
+                      {/* Service Detail Routes */}
+                      <Route path="/services-overview" element={<ServicesOverview />} />
+                      <Route path="/services/ai-autonomous-systems" element={<AIAutonomousSystems />} />
+                      <Route path="/services/quantum-technology" element={<QuantumTechnology />} />
+                      <Route path="/services/cybersecurity" element={<Cybersecurity />} />
+                      <Route path="/services/it-infrastructure" element={<ITInfrastructure />} />
+                      <Route path="/services/micro-saas-solutions" element={<MicroSAASSolutions />} />
+                      <Route path="/services/industry-solutions" element={<IndustrySolutions />} />
+                      <Route path="/services/innovative-new-services" element={<InnovativeNewServices />} />
+                      <Route path="/services/specialized-it-infrastructure" element={<SpecializedITInfrastructure />} />
+                      <Route path="/innovative-micro-saas-services" element={<InnovativeMicroSaasServices />} />
+                      <Route path="/comprehensive-innovative-services" element={<ComprehensiveInnovativeServices />} />
+                      
+                      {/* Solutions Routes */}
+                      <Route path="/services/enterprise" element={<EnterpriseSolutions />} />
+                      <Route path="/solutions/healthcare" element={<HealthcareSolutions />} />
+                      
+                      {/* Legacy route redirects for SEO */}
+                      <Route path="/comprehensive-services" element={<Services />} />
+                      <Route path="/services-comparison" element={<Services />} />
+                      <Route path="/it-onsite-services" element={<Services />} />
+                    </Routes>
+                  </Suspense>
+                </main>
+                
+                <Footer />
+                <SonnerToaster />
+                
+                {/* Enhanced Accessibility Controls */}
+                <AccessibilityControls position="bottom-right" />
+                
+                {/* AI Chatbot - Always Available */}
+                <AIChatbot />
+                
+                {/* Collaborative Text Editor - Development Mode */}
+                {import.meta.env.DEV && (
+                  <div className="fixed bottom-24 left-6 z-40 w-96">
+                    <CollaborativeTextEditor
+                      roomId="dev-editor"
+                      userId="dev-user"
+                      userName="Developer"
+                      initialContent="Welcome to the collaborative text editor! Start typing to see AI suggestions and real-time collaboration features."
+                      enableAI={true}
+                      enableCollaboration={true}
+                      enableVersioning={true}
+                    />
+                  </div>
+                )}
+                
+                {/* AI Code Generator - Development Mode */}
+                {import.meta.env.DEV && (
+                  <div className="fixed bottom-24 right-6 z-40 w-96">
+                    <AICodeGenerator />
+                  </div>
+                )}
+                
+                {/* Development Dashboards */}
+                {import.meta.env.DEV && (
+                  <>
+                    {/* Performance Dashboard */}
+                    <div className="fixed top-4 left-4 z-40">
+                      <PerformanceDashboard />
+                    </div>
                     
-                    {/* Missing pages from analysis */}
-                    <Route path="/quantum-neural-network-platform" element={<QuantumNeuralNetworkPlatform />} />
-                    <Route path="/autonomous-business-operations-platform" element={<AutonomousBusinessOperationsPlatform />} />
-                    <Route path="/ai-powered-it-asset-management" element={<AIPoweredITAssetManagement />} />
-                    <Route path="/soc2-compliance-automation" element={<SOC2ComplianceAutomation />} />
-                    <Route path="/ai-autonomous-research-assistant" element={<AIAutonomousResearchAssistant />} />
-                    <Route path="/5g-enterprise-solutions" element={<FiveGEnterpriseSolutions />} />
-                    <Route path="/case-studies" element={<CaseStudies />} />
-                    <Route path="/help" element={<HelpCenter />} />
+                    {/* Analytics Dashboard */}
+                    <div className="fixed top-4 right-4 z-40">
+                      <AnalyticsDashboard />
+                    </div>
                     
-                    {/* Our enhanced service routes */}
-                    <Route path="/about" element={<About />} />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="/mission" element={<Mission />} />
-                    <Route path="/team" element={<Team />} />
-                    <Route path="/pricing" element={<Pricing />} />
-                    <Route path="/careers" element={<Careers />} />
-                    <Route path="/partners" element={<Partners />} />
-                    <Route path="/blog" element={<Blog />} />
-                    <Route path="/news" element={<News />} />
-                    <Route path="/services-overview" element={<ServicesOverview />} />
-                    <Route path="/services/ai-autonomous-systems" element={<AIAutonomousSystems />} />
-                    <Route path="/services/quantum-technology" element={<QuantumTechnology />} />
-                    <Route path="/services/cybersecurity" element={<Cybersecurity />} />
-                    <Route path="/services/it-infrastructure" element={<ITInfrastructure />} />
-                    <Route path="/services/micro-saas-solutions" element={<MicroSAASSolutions />} />
-                    <Route path="/services/industry-solutions" element={<IndustrySolutions />} />
-                    <Route path="/services/innovative-new-services" element={<InnovativeNewServices />} />
-                    <Route path="/services/specialized-it-infrastructure" element={<SpecializedITInfrastructure />} />
-                    <Route path="/innovative-micro-saas-services" element={<InnovativeMicroSaasServices />} />
-                    <Route path="/comprehensive-innovative-services" element={<ComprehensiveInnovativeServices />} />
+                    {/* Enterprise Dashboard */}
+                    <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-40">
+                      <EnterpriseDashboard />
+                    </div>
                     
-                    {/* Solutions Routes */}
-                    <Route path="/services/enterprise" element={<EnterpriseSolutions />} />
-                    <Route path="/solutions/healthcare" element={<HealthcareSolutions />} />
-                  </Routes>
-                </Suspense>
-              </main>
-              
-              <Footer />
-              <SonnerToaster />
-              
-              {/* Enhanced Accessibility Controls */}
-              <AccessibilityControls position="bottom-right" />
-              
-              {/* AI Chatbot - Always Available */}
-              <AIChatbot />
-              
-              {/* Collaborative Text Editor - Development Mode */}
-              {import.meta.env.DEV && (
-                <div className="fixed bottom-24 left-6 z-40 w-96">
-                  <CollaborativeTextEditor
-                    roomId="dev-editor"
-                    userId="dev-user"
-                    userName="Developer"
-                    initialContent="Welcome to the collaborative text editor! Start typing to see AI suggestions and real-time collaboration features."
-                    enableAI={true}
-                    enableCollaboration={true}
-                    enableVersioning={true}
+                    {/* Security & Compliance Dashboard */}
+                    <div className="fixed top-4 right-1/2 transform translate-x-1/2 z-40">
+                      <SecurityComplianceDashboard />
+                    </div>
+                    
+                    {/* Machine Learning Dashboard */}
+                    <div className="fixed top-4 right-4 z-40">
+                      <MachineLearningDashboard />
+                    </div>
+                  </>
+                )}
+                
+                {/* Link Health Monitor - Development Mode */}
+                {import.meta.env.DEV && (
+                  <LinkHealthMonitor
+                    links={[
+                      'https://ziontechgroup.com',
+                      'https://www.linkedin.com/company/ziontechgroup',
+                      'https://twitter.com/ziontechgroup',
+                      'https://github.com/ziontechgroup',
+                      'https://www.youtube.com/@ziontechgroup'
+                    ]}
+                    autoCheck={true}
+                    checkInterval={600000} // 10 minutes
+                    timeout={5000} // 5 seconds
                   />
-                </div>
-              )}
-              
-              {/* AI Code Generator - Development Mode */}
-              {import.meta.env.DEV && (
-                <div className="fixed bottom-24 right-6 z-40 w-96">
-                  <AICodeGenerator />
-                </div>
-              )}
-              
-              {/* Development Dashboards */}
-              {import.meta.env.DEV && (
-                <>
-                  {/* Performance Dashboard */}
-                  <div className="fixed top-4 left-4 z-40">
-                    <PerformanceDashboard />
-                  </div>
-                  
-                  {/* Analytics Dashboard */}
-                  <div className="fixed top-4 right-4 z-40">
-                    <AnalyticsDashboard />
-                  </div>
-                  
-                  {/* Enterprise Dashboard */}
-                  <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-40">
-                    <EnterpriseDashboard />
-                  </div>
-                  
-                  {/* Security & Compliance Dashboard */}
-                  <div className="fixed top-4 right-1/2 transform translate-x-1/2 z-40">
-                    <SecurityComplianceDashboard />
-                  </div>
-                  
-                  {/* Machine Learning Dashboard */}
-                  <div className="fixed top-4 right-4 z-40">
-                    <MachineLearningDashboard />
-                  </div>
-                </>
-              )}
-              
-              {/* Performance Optimizer - Always Available */}
-              <PerformanceOptimizer showMetrics={import.meta.env.DEV} />
-              
-              {/* Link Health Monitor - Development Mode */}
-              {import.meta.env.DEV && (
-                <LinkHealthMonitor
-                  links={[
-                    'https://ziontechgroup.com',
-                    'https://www.linkedin.com/company/ziontechgroup',
-                    'https://twitter.com/ziontechgroup',
-                    'https://github.com/ziontechgroup',
-                    'https://www.youtube.com/@ziontechgroup'
-                  ]}
-                  autoCheck={true}
-                  checkInterval={600000} // 10 minutes
-                  timeout={5000} // 5 seconds
-                />
-              )}
-            </div>
+                )}
+              </div>
+            </PerformanceOptimizer>
           </Router>
         </WhitelabelProvider>
       </ThemeProvider>
