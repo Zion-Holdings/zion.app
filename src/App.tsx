@@ -4,6 +4,7 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import Sidebar from './components/Sidebar';
 import { AccessibilityControls } from './components/AccessibilityControls';
+import { EnhancedAccessibility } from './components/EnhancedAccessibility';
 import { PerformanceDashboard } from './components/PerformanceDashboard';
 import { AnalyticsDashboard } from './components/AnalyticsDashboard';
 import { AIChatbot } from './components/AIChatbot';
@@ -16,7 +17,7 @@ import { ThemeProvider } from "./components/ThemeProvider";
 import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
-import { ErrorBoundary } from './components/ErrorBoundary';
+import { EnhancedErrorBoundary } from './components/EnhancedErrorBoundary';
 
 // Enhanced lazy loading with preloading hints
 const Home = lazy(() => import('./pages/Home'));
@@ -64,7 +65,7 @@ const App = () => {
   useScrollToTop();
 
   return (
-    <ErrorBoundary>
+    <EnhancedErrorBoundary>
       <ThemeProvider>
         <WhitelabelProvider>
           <Router>
@@ -114,6 +115,9 @@ const App = () => {
               
               {/* Enhanced Accessibility Controls */}
               <AccessibilityControls position="bottom-right" />
+              
+              {/* Enhanced Accessibility Panel */}
+              <EnhancedAccessibility />
               
               {/* AI Chatbot - Always Available */}
               <AIChatbot />
@@ -173,7 +177,7 @@ const App = () => {
           </Router>
         </WhitelabelProvider>
       </ThemeProvider>
-    </ErrorBoundary>
+    </EnhancedErrorBoundary>
   );
 };
 

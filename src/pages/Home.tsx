@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { SEO } from "@/components/SEO";
+import { EnhancedSEO } from "@/components/EnhancedSEO";
 import { ServicesShowcase } from '../components/ServicesShowcase';
 import { EnhancedServicesShowcase } from '../components/EnhancedServicesShowcase';
 import { AdvancedServicesShowcase } from '../components/AdvancedServicesShowcase';
@@ -8,10 +8,12 @@ import { AdvancedServicesShowcase } from '../components/AdvancedServicesShowcase
 export default function Home() {
   return (
     <div className="min-h-screen relative">
-      <SEO 
+      <EnhancedSEO 
         title="Zion Tech Group - Transform Your Business With AI & Tech"
         description="Discover cutting-edge AI services, Micro SAAS solutions, and comprehensive IT services designed to propel your business into the future."
         url="https://ziontechgroup.com"
+        type="website"
+        tags={["AI services", "Micro SAAS", "IT services", "cybersecurity", "quantum technology", "business transformation"]}
       />
       
       {/* Futuristic Background Elements */}
