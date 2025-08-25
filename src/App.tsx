@@ -9,6 +9,7 @@ import { AnalyticsDashboard } from './components/AnalyticsDashboard';
 import { AIChatbot } from './components/AIChatbot';
 import { CollaborativeTextEditor } from './components/CollaborativeTextEditor';
 import { AICodeGenerator } from './components/AICodeGenerator';
+import { EnterpriseDashboard } from './components/EnterpriseDashboard';
 import './App.css';
 
 // Enhanced lazy loading with preloading hints
@@ -132,6 +133,11 @@ const App = () => {
               {/* Analytics Dashboard */}
               <div className="fixed top-4 right-4 z-40">
                 <AnalyticsDashboard />
+              </div>
+              
+              {/* Enterprise Dashboard */}
+              <div className="fixed top-4 left-1/2 transform -translate-x-1/2 z-40">
+                <EnterpriseDashboard />
               </div>
             </>
           )}
