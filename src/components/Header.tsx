@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Menu, X, ChevronDown, Globe, Zap, Shield, Cpu, Cloud, Brain, Rocket } from 'lucide-react';
+import { Menu, X, ChevronDown, Globe, Zap, Shield, Cpu, Cloud, Brain, Rocket, Code, TrendingUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export const Header: React.FC = () => {
@@ -60,6 +60,37 @@ export const Header: React.FC = () => {
       icon: Zap,
       link: '/emerging-tech',
       color: 'from-yellow-500 to-orange-500'
+    }
+  ];
+
+  const aiServices = [
+    {
+      title: 'AI Business Manager',
+      description: 'Intelligent business operations management',
+      icon: Brain,
+      link: '/ai-autonomous-business-manager',
+      color: 'from-purple-500 to-pink-500'
+    },
+    {
+      title: 'AI Business Platform',
+      description: 'Unified AI-powered business platform',
+      icon: Cpu,
+      link: '/ai-autonomous-business-platform',
+      color: 'from-blue-500 to-cyan-500'
+    },
+    {
+      title: 'AI Code Review',
+      description: 'Automated code analysis and optimization',
+      icon: Code,
+      link: '/ai-autonomous-code-review',
+      color: 'from-green-500 to-emerald-500'
+    },
+    {
+      title: 'AI Creative Director',
+      description: 'AI-powered creative content generation',
+      icon: Zap,
+      link: '/ai-autonomous-creative-director',
+      color: 'from-orange-500 to-red-500'
     }
   ];
 
@@ -126,35 +157,115 @@ export const Header: React.FC = () => {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-2 w-[600px] bg-zion-blue-dark/95 backdrop-blur-md border border-zion-cyan/20 rounded-2xl shadow-2xl shadow-zion-cyan/20 p-6"
+                    className="absolute top-full left-0 mt-2 w-[800px] bg-zion-blue-dark/95 backdrop-blur-md border border-zion-cyan/20 rounded-2xl shadow-2xl shadow-zion-cyan/20 p-6"
                     onMouseEnter={() => setActiveDropdown('services')}
                     onMouseLeave={() => setActiveDropdown(null)}
                   >
-                    <div className="grid grid-cols-2 gap-4">
-                      {services.map((service) => {
-                        const IconComponent = service.icon;
-                        return (
+                    <div className="grid grid-cols-3 gap-6">
+                      {/* Core Services */}
+                      <div>
+                        <h3 className="text-zion-cyan font-semibold mb-4 text-sm uppercase tracking-wider">Core Services</h3>
+                        <div className="space-y-3">
+                          {services.map((service) => {
+                            const IconComponent = service.icon;
+                            return (
+                              <Link
+                                key={service.title}
+                                to={service.link}
+                                className="group p-3 rounded-xl hover:bg-zion-blue-light/10 transition-all duration-300 border border-transparent hover:border-zion-cyan/30"
+                              >
+                                <div className="flex items-start gap-3">
+                                  <div className={`w-8 h-8 bg-gradient-to-br ${service.color} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                                    <IconComponent className="w-4 h-4 text-white" />
+                                  </div>
+                                  <div>
+                                    <h4 className="font-medium text-white group-hover:text-zion-cyan transition-colors text-sm">
+                                      {service.title}
+                                    </h4>
+                                    <p className="text-xs text-zion-slate-light mt-1">
+                                      {service.description}
+                                    </p>
+                                  </div>
+                                </div>
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </div>
+
+                      {/* AI Services */}
+                      <div>
+                        <h3 className="text-zion-cyan font-semibold mb-4 text-sm uppercase tracking-wider">AI Solutions</h3>
+                        <div className="space-y-3">
+                          {aiServices.map((service) => {
+                            const IconComponent = service.icon;
+                            return (
+                              <Link
+                                key={service.title}
+                                to={service.link}
+                                className="group p-3 rounded-xl hover:bg-zion-blue-light/10 transition-all duration-300 border border-transparent hover:border-zion-cyan/30"
+                              >
+                                <div className="flex items-start gap-3">
+                                  <div className={`w-8 h-8 bg-gradient-to-br ${service.color} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                                    <IconComponent className="w-4 h-4 text-white" />
+                                  </div>
+                                  <div>
+                                    <h4 className="font-medium text-white group-hover:text-zion-cyan transition-colors text-sm">
+                                      {service.title}
+                                    </h4>
+                                    <p className="text-xs text-zion-slate-light mt-1">
+                                      {service.description}
+                                    </p>
+                                  </div>
+                                </div>
+                              </Link>
+                            );
+                          })}
+                        </div>
+                      </div>
+
+                      {/* Quick Links */}
+                      <div>
+                        <h3 className="text-zion-cyan font-semibold mb-4 text-sm uppercase tracking-wider">Quick Links</h3>
+                        <div className="space-y-3">
                           <Link
-                            key={service.title}
-                            to={service.link}
-                            className="group p-4 rounded-xl hover:bg-zion-blue-light/10 transition-all duration-300 border border-transparent hover:border-zion-cyan/30"
+                            to="/pricing"
+                            className="group p-3 rounded-xl hover:bg-zion-blue-light/10 transition-all duration-300 border border-transparent hover:border-zion-cyan/30"
                           >
                             <div className="flex items-start gap-3">
-                              <div className={`w-10 h-10 bg-gradient-to-br ${service.color} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                                <IconComponent className="w-5 h-5 text-white" />
+                              <div className="w-8 h-8 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <TrendingUp className="w-4 h-4 text-white" />
                               </div>
                               <div>
-                                <h3 className="font-semibold text-white group-hover:text-zion-cyan transition-colors">
-                                  {service.title}
-                                </h3>
-                                <p className="text-sm text-zion-slate-light mt-1">
-                                  {service.description}
+                                <h4 className="font-medium text-white group-hover:text-zion-cyan transition-colors text-sm">
+                                  Pricing
+                                </h4>
+                                <p className="text-xs text-zion-slate-light mt-1">
+                                  View our competitive pricing plans
                                 </p>
                               </div>
                             </div>
                           </Link>
-                        );
-                      })}
+                          <Link
+                            to="/contact"
+                            className="group p-3 rounded-xl hover:bg-zion-blue-light/10 transition-all duration-300 border border-transparent hover:border-zion-cyan/30"
+                          >
+                            <div className="flex items-start gap-3">
+                              <div className="w-8 h-8 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <Globe className="w-4 h-4 text-white" />
+                              </div>
+                              <div>
+                                <h4 className="font-medium text-white group-hover:text-zion-cyan transition-colors text-sm">
+                                  Contact Sales
+                                </h4>
+                                <p className="text-xs text-zion-slate-light mt-1">
+                                  Get in touch with our team
+                                </p>
+                              </div>
+                            </div>
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   </motion.div>
                 )}

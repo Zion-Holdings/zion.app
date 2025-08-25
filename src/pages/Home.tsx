@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Star, Brain, Cpu, Shield, Cloud, Zap, Users, TrendingUp, Globe, Lock } from 'lucide-react';
+import { ArrowRight, CheckCircle, Star, Brain, Cpu, Shield, Cloud, Zap, Users, TrendingUp, Globe, Lock, Code, BarChart3 } from 'lucide-react';
 
 import { CategoriesSection } from "@/components/CategoriesSection";
 import { BenefitsSection } from "@/components/BenefitsSection";
@@ -22,7 +22,7 @@ const featuredServices = [
     title: "AI & Machine Learning",
     description: "Transform your business with cutting-edge AI solutions including predictive analytics, natural language processing, and automated decision-making systems.",
     icon: Brain,
-    link: "/ai-services",
+    link: "/ai-autonomous-business-manager",
     color: "from-purple-500 to-pink-500"
   },
   {
@@ -43,7 +43,7 @@ const featuredServices = [
     title: "Enterprise Security",
     description: "Comprehensive security solutions including threat detection, data protection, and compliance management for enterprise environments.",
     icon: Shield,
-    link: "/enterprise-security",
+    link: "/enterprise-solutions",
     color: "from-orange-500 to-red-500"
   }
 ];
@@ -313,6 +313,113 @@ export default function Home() {
               </Link>
             </div>
           </div>
+        </motion.div>
+      </section>
+
+      {/* AI Services Showcase */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 bg-zion-blue-light/5">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
+            Comprehensive AI Solutions
+          </h2>
+          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
+            Discover our full range of AI-powered solutions designed to automate and optimize every aspect of your business.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {[
+            {
+              title: "AI Business Manager",
+              description: "Intelligent business operations management with automated decision-making and real-time analytics.",
+              link: "/ai-autonomous-business-manager",
+              icon: Brain,
+              color: "from-purple-500 to-pink-500"
+            },
+            {
+              title: "AI Business Platform",
+              description: "Unified AI-powered business platform that integrates all your operations seamlessly.",
+              link: "/ai-autonomous-business-platform",
+              icon: Cpu,
+              color: "from-blue-500 to-cyan-500"
+            },
+            {
+              title: "AI Code Review",
+              description: "Automated code analysis and optimization with security vulnerability detection.",
+              link: "/ai-autonomous-code-review",
+              icon: Code,
+              color: "from-green-500 to-emerald-500"
+            },
+            {
+              title: "AI Creative Director",
+              description: "AI-powered creative content generation and management for marketing teams.",
+              link: "/ai-autonomous-creative-director",
+              icon: Zap,
+              color: "from-orange-500 to-red-500"
+            },
+            {
+              title: "AI Data Management",
+              description: "Intelligent data processing, analysis, and insights generation.",
+              link: "/ai-autonomous-data",
+              icon: BarChart3,
+              color: "from-indigo-500 to-purple-500"
+            },
+            {
+              title: "AI Security Platform",
+              description: "Advanced threat detection and security automation for enterprise environments.",
+              link: "/ai-autonomous-security",
+              icon: Shield,
+              color: "from-red-500 to-pink-500"
+            }
+          ].map((service, index) => {
+            const IconComponent = service.icon;
+            return (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.8 + index * 0.1 }}
+                className="group bg-zion-blue-light/10 backdrop-blur-md border border-zion-purple/20 rounded-2xl p-6 hover:border-zion-cyan/50 hover:bg-zion-blue-light/20 transition-all duration-300 hover:shadow-2xl hover:shadow-zion-cyan/20"
+              >
+                <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl mb-6 flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300`}>
+                  <IconComponent className="w-8 h-8" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-zion-cyan transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-zion-slate-light mb-6 leading-relaxed">
+                  {service.description}
+                </p>
+                <Link
+                  to={service.link}
+                  className="inline-flex items-center gap-2 text-zion-cyan hover:text-white transition-colors group-hover:translate-x-1 transition-transform duration-300"
+                >
+                  Learn More
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </motion.div>
+            );
+          })}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 2.2 }}
+          className="text-center mt-12"
+        >
+          <Link
+            to="/ai-services"
+            className="inline-flex items-center gap-2 text-zion-cyan hover:text-white transition-colors text-lg font-semibold hover:scale-105 transition-transform duration-300"
+          >
+            View All AI Solutions
+            <ArrowRight className="w-5 h-5" />
+          </Link>
         </motion.div>
       </section>
     </div>

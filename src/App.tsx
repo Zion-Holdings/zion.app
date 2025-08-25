@@ -45,6 +45,53 @@ const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
 const MicroSaasServices = React.lazy(() => import('./pages/MicroSaasServices'));
 const PricingPage = React.lazy(() => import('./pages/PricingPage'));
 
+// Add new AI service pages
+const AIAutonomousBusinessManager = React.lazy(() => import('./pages/AIServices/AIAutonomousBusinessManager'));
+const AIAutonomousBusinessPlatform = React.lazy(() => import('./pages/AIServices/AIAutonomousBusinessPlatform'));
+const AIAutonomousCodeReview = React.lazy(() => import('./pages/AIServices/AIAutonomousCodeReview'));
+const AIAutonomousCreativeDirector = React.lazy(() => import('./pages/AIServices/AIAutonomousCreativeDirector'));
+const AIAutonomousData = React.lazy(() => import('./pages/AIServices/AIAutonomousData'));
+const AIAutonomousDecisionPlatform = React.lazy(() => import('./pages/AIServices/AIAutonomousDecisionPlatform'));
+const AIAutonomousDevOps = React.lazy(() => import('./pages/AIServices/AIAutonomousDevOps'));
+const AIAutonomousEducationProfessor = React.lazy(() => import('./pages/AIServices/AIAutonomousEducationProfessor'));
+const AIAutonomousHealthcarePhysician = React.lazy(() => import('./pages/AIServices/AIAutonomousHealthcarePhysician'));
+const AIAutonomousLearningSystem = React.lazy(() => import('./pages/AIServices/AIAutonomousLearningSystem'));
+const AIAutonomousLegalCounsel = React.lazy(() => import('./pages/AIServices/AIAutonomousLegalCounsel'));
+const AIAutonomousLogistics = React.lazy(() => import('./pages/AIServices/AIAutonomousLogistics'));
+const AIAutonomousManufacturing = React.lazy(() => import('./pages/AIServices/AIAutonomousManufacturing'));
+const AIAutonomousResearch = React.lazy(() => import('./pages/AIServices/AIAutonomousResearch'));
+const AIAutonomousRobotics = React.lazy(() => import('./pages/AIServices/AIAutonomousRobotics'));
+const AIAutonomousScientificResearcher = React.lazy(() => import('./pages/AIServices/AIAutonomousScientificResearcher'));
+const AIAutonomousSecurity = React.lazy(() => import('./pages/AIServices/AIAutonomousSecurity'));
+const AIAutonomousSystemsPlatform = React.lazy(() => import('./pages/AIServices/AIAutonomousSystemsPlatform'));
+const AIAutonomousTesting = React.lazy(() => import('./pages/AIServices/AIAutonomousTesting'));
+const AIAutonomousVehiclePlatform = React.lazy(() => import('./pages/AIServices/AIAutonomousVehiclePlatform'));
+const AIAutonomousVehicles = React.lazy(() => import('./pages/AIServices/AIAutonomousVehicles'));
+const AIAutonomousVentureCapitalist = React.lazy(() => import('./pages/AIServices/AIAutonomousVentureCapitalist'));
+const AIBiomedicalResearch = React.lazy(() => import('./pages/AIServices/AIBiomedicalResearch'));
+const AIBiotechDrugDiscovery = React.lazy(() => import('./pages/AIServices/AIBiotechDrugDiscovery'));
+const AIBlockchainGovernance = React.lazy(() => import('./pages/AIServices/AIBlockchainGovernance'));
+const AIBrainComputerInterface = React.lazy(() => import('./pages/AIServices/AIBrainComputerInterface'));
+const AIBrainInterface = React.lazy(() => import('./pages/AIServices/AIBrainInterface'));
+const AIBusinessIntelligenceElite = React.lazy(() => import('./pages/AIServices/AIBusinessIntelligenceElite'));
+const AIBusinessIntelligencePro = React.lazy(() => import('./pages/AIServices/AIBusinessIntelligencePro'));
+const AIBusinessIntelligenceSuite = React.lazy(() => import('./pages/AIServices/AIBusinessIntelligenceSuite'));
+const AIClimatePredictionEngine = React.lazy(() => import('./pages/AIServices/AIClimatePredictionEngine'));
+const AIClimatePredictionPlatform = React.lazy(() => import('./pages/AIServices/AIClimatePredictionPlatform'));
+const AIClimatePrediction = React.lazy(() => import('./pages/AIServices/AIClimatePrediction'));
+const AICodeGenerationEnterprise = React.lazy(() => import('./pages/AIServices/AICodeGenerationEnterprise'));
+const AIComplianceAutomation = React.lazy(() => import('./pages/AIServices/AIComplianceAutomation'));
+const AIComputerVisionPlatform = React.lazy(() => import('./pages/AIServices/AIComputerVisionPlatform'));
+const AIConsciousnessEvolutionPlatform = React.lazy(() => import('./pages/AIServices/AIConsciousnessEvolutionPlatform'));
+const AIConsciousnessSimulationPlatform = React.lazy(() => import('./pages/AIServices/AIConsciousnessSimulationPlatform'));
+const AIConsciousnessSimulation = React.lazy(() => import('./pages/AIServices/AIConsciousnessSimulation'));
+const AIConsciousnessSimulator = React.lazy(() => import('./pages/AIServices/AIConsciousnessSimulator'));
+const AIContentCreationRevolution = React.lazy(() => import('./pages/AIServices/AIContentCreationRevolution'));
+const AIContentCreation = React.lazy(() => import('./pages/AIServices/AIContentCreation'));
+const AIContentFactory = React.lazy(() => import('./pages/AIServices/AIContentFactory'));
+const AIContentGenerationAutomation = React.lazy(() => import('./pages/AIServices/AIContentGenerationAutomation'));
+const AIContentGenerationPro = React.lazy(() => import('./pages/AIServices/AIContentGenerationPro'));
+
 const baseRoutes = [
   { path: '/', element: <Home /> },
   { path: '/match', element: <AIMatcherPage /> },
@@ -69,6 +116,53 @@ const baseRoutes = [
   { path: '/request-quote', element: <RequestQuotePage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
+  
+  // Add new AI service routes to fix broken links
+  { path: '/ai-autonomous-business-manager', element: <AIAutonomousBusinessManager /> },
+  { path: '/ai-autonomous-business-platform', element: <AIAutonomousBusinessPlatform /> },
+  { path: '/ai-autonomous-code-review', element: <AIAutonomousCodeReview /> },
+  { path: '/ai-autonomous-creative-director', element: <AIAutonomousCreativeDirector /> },
+  { path: '/ai-autonomous-data', element: <AIAutonomousData /> },
+  { path: '/ai-autonomous-decision-platform', element: <AIAutonomousDecisionPlatform /> },
+  { path: '/ai-autonomous-devops', element: <AIAutonomousDevOps /> },
+  { path: '/ai-autonomous-education-professor', element: <AIAutonomousEducationProfessor /> },
+  { path: '/ai-autonomous-healthcare-physician', element: <AIAutonomousHealthcarePhysician /> },
+  { path: '/ai-autonomous-learning-system', element: <AIAutonomousLearningSystem /> },
+  { path: '/ai-autonomous-legal-counsel', element: <AIAutonomousLegalCounsel /> },
+  { path: '/ai-autonomous-logistics', element: <AIAutonomousLogistics /> },
+  { path: '/ai-autonomous-manufacturing', element: <AIAutonomousManufacturing /> },
+  { path: '/ai-autonomous-research', element: <AIAutonomousResearch /> },
+  { path: '/ai-autonomous-robotics', element: <AIAutonomousRobotics /> },
+  { path: '/ai-autonomous-scientific-researcher', element: <AIAutonomousScientificResearcher /> },
+  { path: '/ai-autonomous-security', element: <AIAutonomousSecurity /> },
+  { path: '/ai-autonomous-systems-platform', element: <AIAutonomousSystemsPlatform /> },
+  { path: '/ai-autonomous-testing', element: <AIAutonomousTesting /> },
+  { path: '/ai-autonomous-vehicle-platform', element: <AIAutonomousVehiclePlatform /> },
+  { path: '/ai-autonomous-vehicles', element: <AIAutonomousVehicles /> },
+  { path: '/ai-autonomous-venture-capitalist', element: <AIAutonomousVentureCapitalist /> },
+  { path: '/ai-biomedical-research', element: <AIBiomedicalResearch /> },
+  { path: '/ai-biotech-drug-discovery', element: <AIBiotechDrugDiscovery /> },
+  { path: '/ai-blockchain-governance', element: <AIBlockchainGovernance /> },
+  { path: '/ai-brain-computer-interface', element: <AIBrainComputerInterface /> },
+  { path: '/ai-brain-interface', element: <AIBrainInterface /> },
+  { path: '/ai-business-intelligence-elite', element: <AIBusinessIntelligenceElite /> },
+  { path: '/ai-business-intelligence-pro', element: <AIBusinessIntelligencePro /> },
+  { path: '/ai-business-intelligence-suite', element: <AIBusinessIntelligenceSuite /> },
+  { path: '/ai-climate-prediction-engine', element: <AIClimatePredictionEngine /> },
+  { path: '/ai-climate-prediction-platform', element: <AIClimatePredictionPlatform /> },
+  { path: '/ai-climate-prediction', element: <AIClimatePrediction /> },
+  { path: '/ai-code-generation-enterprise', element: <AICodeGenerationEnterprise /> },
+  { path: '/ai-compliance-automation', element: <AIComplianceAutomation /> },
+  { path: '/ai-computer-vision-platform', element: <AIComputerVisionPlatform /> },
+  { path: '/ai-consciousness-evolution-platform', element: <AIConsciousnessEvolutionPlatform /> },
+  { path: '/ai-consciousness-simulation-platform', element: <AIConsciousnessSimulationPlatform /> },
+  { path: '/ai-consciousness-simulation', element: <AIConsciousnessSimulation /> },
+  { path: '/ai-consciousness-simulator', element: <AIConsciousnessSimulator /> },
+  { path: '/ai-content-creation-revolution', element: <AIContentCreationRevolution /> },
+  { path: '/ai-content-creation', element: <AIContentCreation /> },
+  { path: '/ai-content-factory', element: <AIContentFactory /> },
+  { path: '/ai-content-generation-automation', element: <AIContentGenerationAutomation /> },
+  { path: '/ai-content-generation-pro', element: <AIContentGenerationPro /> },
 ];
 
 const App = () => {
