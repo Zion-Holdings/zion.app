@@ -2,7 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle, Star, Brain, Cpu, Shield, Cloud, Zap, Users, TrendingUp, Globe, Lock } from 'lucide-react';
+import { ArrowRight, CheckCircle, Star, Brain, Cpu, Shield, Cloud, Zap, Users, TrendingUp, Globe, Lock, Rocket, Target, Award } from 'lucide-react';
 
 import { CategoriesSection } from "@/components/CategoriesSection";
 import { BenefitsSection } from "@/components/BenefitsSection";
@@ -23,28 +23,32 @@ const featuredServices = [
     description: "Transform your business with cutting-edge AI solutions including predictive analytics, natural language processing, and automated decision-making systems.",
     icon: Brain,
     link: "/ai-services",
-    color: "from-purple-500 to-pink-500"
+    color: "from-purple-500 to-pink-500",
+    features: ["Predictive Analytics", "NLP Solutions", "AutoML Platforms"]
   },
   {
     title: "Micro SAAS Solutions",
     description: "Custom software solutions designed for modern businesses, from workflow automation to customer relationship management systems.",
     icon: Cpu,
     link: "/micro-saas-services",
-    color: "from-blue-500 to-cyan-500"
+    color: "from-blue-500 to-cyan-500",
+    features: ["Workflow Automation", "CRM Systems", "Custom Dashboards"]
   },
   {
     title: "Cloud & DevOps",
     description: "Scalable cloud infrastructure, CI/CD pipelines, and automated deployment solutions that accelerate your development cycle.",
     icon: Cloud,
     link: "/cloud-devops",
-    color: "from-green-500 to-emerald-500"
+    color: "from-green-500 to-emerald-500",
+    features: ["CI/CD Pipelines", "Auto-scaling", "Infrastructure as Code"]
   },
   {
     title: "Enterprise Security",
     description: "Comprehensive security solutions including threat detection, data protection, and compliance management for enterprise environments.",
     icon: Shield,
     link: "/enterprise-security",
-    color: "from-orange-500 to-red-500"
+    color: "from-orange-500 to-red-500",
+    features: ["Threat Detection", "Data Protection", "Compliance Management"]
   }
 ];
 
@@ -53,25 +57,29 @@ const features = [
     title: "AI-Powered Matching",
     description: "Our advanced AI algorithms connect you with the perfect tech talent and solutions for your specific needs.",
     icon: Brain,
-    color: "text-zion-cyan"
+    color: "text-zion-cyan",
+    benefit: "95% faster matching"
   },
   {
     title: "Global Talent Network",
     description: "Access a diverse pool of verified tech professionals from around the world with proven expertise.",
     icon: Globe,
-    color: "text-zion-purple"
+    color: "text-zion-purple",
+    benefit: "10K+ verified talents"
   },
   {
     title: "Enterprise-Grade Security",
     description: "Bank-level security protocols ensure your data and transactions are protected at every step.",
     icon: Lock,
-    color: "text-green-400"
+    color: "text-green-400",
+    benefit: "99.9% uptime guarantee"
   },
   {
     title: "24/7 Expert Support",
     description: "Round-the-clock technical support and consultation from our team of industry experts.",
     icon: Users,
-    color: "text-blue-400"
+    color: "text-blue-400",
+    benefit: "Instant response time"
   }
 ];
 
@@ -80,27 +88,64 @@ const testimonials = [
     content: "Zion Tech Group transformed our entire IT infrastructure. Their AI-powered solutions helped us reduce costs by 40% while improving efficiency.",
     name: "Sarah Johnson",
     role: "CTO, TechCorp Solutions",
-    rating: 5
+    rating: 5,
+    company: "TechCorp Solutions",
+    industry: "Technology"
   },
   {
     content: "The micro SAAS platform they built for us has streamlined our operations completely. It's like they read our minds!",
     name: "Michael Chen",
     role: "Operations Director, InnovateLab",
-    rating: 5
+    rating: 5,
+    company: "InnovateLab",
+    industry: "Manufacturing"
   },
   {
     content: "Working with Zion has been a game-changer. Their AI talent matching found us the perfect team in record time.",
     name: "Emily Rodriguez",
     role: "Founder, StartupXYZ",
-    rating: 5
+    rating: 5,
+    company: "StartupXYZ",
+    industry: "Startup"
   }
 ];
 
 const stats = [
-  { label: "Projects Completed", value: "500+", icon: CheckCircle },
-  { label: "Happy Clients", value: "200+", icon: Users },
-  { label: "AI Models Deployed", value: "50+", icon: Brain },
-  { label: "Success Rate", value: "98%", icon: TrendingUp }
+  { label: "Projects Completed", value: "500+", icon: CheckCircle, description: "Successful deliveries" },
+  { label: "Happy Clients", value: "200+", icon: Users, description: "Satisfied customers" },
+  { label: "AI Models Deployed", value: "50+", icon: Brain, description: "Production ready" },
+  { label: "Success Rate", value: "98%", icon: TrendingUp, description: "Project completion" }
+];
+
+const quickActions = [
+  {
+    title: "Find Tech Talent",
+    description: "Connect with verified professionals",
+    icon: Users,
+    link: "/talent",
+    color: "from-blue-500 to-cyan-500"
+  },
+  {
+    title: "Get AI Solutions",
+    description: "Transform your business with AI",
+    icon: Brain,
+    link: "/ai-services",
+    color: "from-purple-500 to-pink-500"
+  },
+  {
+    title: "Request Quote",
+    description: "Get customized pricing",
+    icon: Target,
+    link: "/request-quote",
+    color: "from-green-500 to-emerald-500"
+  },
+  {
+    title: "Schedule Demo",
+    description: "See our solutions in action",
+    icon: Rocket,
+    link: "/contact",
+    color: "from-orange-500 to-red-500"
+  }
 ];
 
 export default function Home() {
@@ -109,7 +154,7 @@ export default function Home() {
       <SEO 
         title="Zion Tech Group - The Future of Tech is Here" 
         description="Discover cutting-edge AI solutions, connect with top tech talent, and access innovative micro SAAS services that transform your business operations."
-        keywords="AI, technology, marketplace, services, talent, micro SAAS, digital transformation"
+        keywords="AI, technology, marketplace, services, talent, micro SAAS, digital transformation, enterprise solutions, cloud computing, cybersecurity"
         canonical="https://ziontechgroup.com/"
       />
 
@@ -122,6 +167,53 @@ export default function Home() {
 
       {/* IT Service Request Hero */}
       <ITServiceRequestHero />
+
+      {/* Quick Actions */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="text-center mb-12"
+        >
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-white">
+            What would you like to do today?
+          </h2>
+          <p className="text-lg text-zion-slate-light max-w-2xl mx-auto">
+            Choose your path to digital transformation
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {quickActions.map((action, index) => {
+            const IconComponent = action.icon;
+            return (
+              <motion.div
+                key={action.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                className="group"
+              >
+                <Link
+                  to={action.link}
+                  className="block bg-zion-blue-light/10 backdrop-blur-md border border-zion-purple/20 rounded-2xl p-6 hover:border-zion-cyan/50 hover:bg-zion-blue-light/20 transition-all duration-300 hover:shadow-2xl hover:shadow-zion-cyan/20 hover:scale-105"
+                >
+                  <div className={`w-16 h-16 bg-gradient-to-br ${action.color} rounded-2xl mb-4 flex items-center justify-center text-white group-hover:scale-110 transition-transform duration-300`}>
+                    <IconComponent className="w-8 h-8" />
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-zion-cyan transition-colors">
+                    {action.title}
+                  </h3>
+                  <p className="text-zion-slate-light text-sm leading-relaxed">
+                    {action.description}
+                  </p>
+                </Link>
+              </motion.div>
+            );
+          })}
+        </div>
+      </section>
 
       {/* Featured Services */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
@@ -156,9 +248,22 @@ export default function Home() {
                 <h3 className="text-xl font-semibold text-white mb-3 group-hover:text-zion-cyan transition-colors">
                   {service.title}
                 </h3>
-                <p className="text-zion-slate-light mb-6 leading-relaxed">
+                <p className="text-zion-slate-light mb-4 leading-relaxed">
                   {service.description}
                 </p>
+                
+                {/* Service Features */}
+                <div className="mb-6">
+                  <ul className="space-y-2">
+                    {service.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center gap-2 text-sm text-zion-slate-light">
+                        <CheckCircle className="w-4 h-4 text-zion-cyan" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
                 <Link
                   to={service.link}
                   className="inline-flex items-center gap-2 text-zion-cyan hover:text-white transition-colors group-hover:translate-x-1 transition-transform duration-300"
@@ -189,7 +294,8 @@ export default function Home() {
                   <IconComponent className="w-8 h-8 text-white" />
                 </div>
                 <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
-                <div className="text-zion-slate-light">{stat.label}</div>
+                <div className="text-zion-slate-light mb-1">{stat.label}</div>
+                <div className="text-xs text-zion-cyan">{stat.description}</div>
               </motion.div>
             );
           })}
@@ -227,9 +333,13 @@ export default function Home() {
                   <div className={`p-3 bg-zion-purple/20 rounded-lg ${feature.color}`}>
                     <IconComponent className="w-8 h-8" />
                   </div>
-                  <div>
+                  <div className="flex-1">
                     <h3 className="text-xl font-semibold text-white mb-3">{feature.title}</h3>
-                    <p className="text-zion-slate-light leading-relaxed">{feature.description}</p>
+                    <p className="text-zion-slate-light leading-relaxed mb-3">{feature.description}</p>
+                    <div className="inline-flex items-center gap-2 bg-zion-cyan/10 text-zion-cyan px-3 py-1 rounded-full text-sm font-medium">
+                      <Award className="w-4 h-4" />
+                      {feature.benefit}
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -271,9 +381,10 @@ export default function Home() {
               <p className="text-zion-slate-light mb-6 leading-relaxed italic">
                 "{testimonial.content}"
               </p>
-              <div>
+              <div className="border-t border-zion-purple/20 pt-4">
                 <div className="font-semibold text-white">{testimonial.name}</div>
-                <div className="text-zion-cyan text-sm">{testimonial.role}</div>
+                <div className="text-zion-cyan text-sm mb-1">{testimonial.role}</div>
+                <div className="text-xs text-zion-slate-light">{testimonial.company} • {testimonial.industry}</div>
               </div>
             </motion.div>
           ))}

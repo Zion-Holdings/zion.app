@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Users, Zap, Shield, Globe, Cpu, Brain } from "lucide-react";
+import { ArrowRight, Sparkles, Users, Zap, Shield, Globe, Cpu, Brain, Star, CheckCircle } from "lucide-react";
 
 export function HeroSection() {
   const containerVariants = {
@@ -53,8 +53,14 @@ export function HeroSection() {
     { icon: Shield, text: "Enterprise Security", color: "from-green-500 to-emerald-500" }
   ];
 
+  const socialProof = [
+    { text: "Trusted by 500+ companies worldwide", icon: CheckCircle },
+    { text: "98% client satisfaction rate", icon: Star },
+    { text: "24/7 expert support available", icon: Shield }
+  ];
+
   return (
-    <section className="relative overflow-hidden py-20 md:py-32 min-h-[90vh] flex items-center">
+    <section className="relative overflow-hidden py-20 md:py-32 min-h-[90vh] flex items-center" role="banner" aria-label="Hero Section">
       {/* Background Layers */}
       <div className="absolute inset-0 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple opacity-95" />
       
@@ -162,6 +168,24 @@ export function HeroSection() {
             </p>
           </motion.div>
 
+          {/* Social Proof */}
+          <motion.div variants={itemVariants} className="mb-8">
+            <div className="flex flex-wrap justify-center gap-4 mb-6">
+              {socialProof.map((proof, index) => {
+                const IconComponent = proof.icon;
+                return (
+                  <div
+                    key={proof.text}
+                    className="inline-flex items-center gap-2 bg-white/5 backdrop-blur-md rounded-full px-4 py-2 border border-white/10 text-zion-slate-light"
+                  >
+                    <IconComponent className="w-4 h-4 text-zion-cyan" />
+                    <span className="text-sm font-medium">{proof.text}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </motion.div>
+
           {/* Feature Pills */}
           <motion.div variants={itemVariants} className="mb-12">
             <div className="flex flex-wrap justify-center gap-4">
@@ -175,7 +199,7 @@ export function HeroSection() {
                     <IconComponent className="w-4 h-4 text-white" />
                     <span className="text-sm text-white font-medium">{feature.text}</span>
                   </div>
-                );
+ );
               })}
             </div>
           </motion.div>
@@ -187,7 +211,7 @@ export function HeroSection() {
               size="lg"
               asChild
             >
-              <Link to="/signup" role="button" aria-label="Get Started">
+              <Link to="/signup" role="button" aria-label="Get Started Today">
                 Get Started Today
                 <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
