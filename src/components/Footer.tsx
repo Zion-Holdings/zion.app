@@ -1,249 +1,250 @@
-import { Twitter, Linkedin, Facebook, Instagram, Github, Mail, Phone, MapPin } from "lucide-react";
+import { FooterNewsletter } from "@/components/FooterNewsletter";
+import { Twitter, Linkedin, Facebook, Instagram, Github, Mail, Phone, MapPin, ChevronUp } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const footerSections = [
+    {
+      title: "Services",
+      links: [
+        { label: "AI & Autonomous Systems", path: "/services/ai-autonomous-systems" },
+        { label: "Quantum Technology", path: "/services/quantum-technology" },
+        { label: "IT Infrastructure", path: "/services/it-infrastructure" },
+        { label: "Micro SAAS Solutions", path: "/services/micro-saas-solutions" },
+        { label: "Cybersecurity", path: "/services/cybersecurity" },
+        { label: "Industry Solutions", path: "/services/industry-solutions" },
+        { label: "Marketplace", path: "/marketplace" }
+      ]
+    },
+    {
+      title: "Solutions",
+      links: [
+        { label: "Enterprise Solutions", path: "/solutions/enterprise" },
+        { label: "Healthcare Solutions", path: "/solutions/healthcare" },
+        { label: "Financial Solutions", path: "/solutions/financial" },
+        { label: "Manufacturing Solutions", path: "/solutions/manufacturing" },
+        { label: "Retail Solutions", path: "/solutions/retail" },
+        { label: "Government Solutions", path: "/solutions/government" }
+      ]
+    },
+    {
+      title: "Company",
+      links: [
+        { label: "About Us", path: "/about" },
+        { label: "Our Mission", path: "/mission" },
+        { label: "Team", path: "/team" },
+        { label: "Leadership", path: "/leadership" },
+        { label: "Careers", path: "/careers" },
+        { label: "Partners", path: "/partners" },
+        { label: "Contact", path: "/contact" }
+      ]
+    },
+    {
+      title: "Resources",
+      links: [
+        { label: "Blog & Articles", path: "/blog" },
+        { label: "Documentation", path: "/docs" },
+        { label: "Case Studies", path: "/case-studies" },
+        { label: "White Papers", path: "/white-papers" },
+        { label: "Webinars", path: "/webinars" },
+        { label: "Training", path: "/training" }
+      ]
+    }
+  ];
+
   return (
-    <footer className="bg-zion-blue-dark border-t border-zion-blue-light pt-16 pb-8">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="relative bg-gradient-to-br from-black via-gray-900 to-blue-900 text-white overflow-hidden">
+      {/* Enhanced Animated Background Elements */}
+      <div className="absolute inset-0 futuristic-bg opacity-60">
+        <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse animate-quantum-float"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse animate-quantum-float animation-delay-1000"></div>
+        <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse animate-quantum-float animation-delay-2000"></div>
+      </div>
+
+      {/* Enhanced Grid Pattern Overlay */}
+      <div className="absolute inset-0 cyber-grid-bg opacity-30"></div>
+
+      {/* Neural Network Lines */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="neural-line" style={{ top: '15%', width: '25%', left: '10%', animationDelay: '0s' }}></div>
+        <div className="neural-line" style={{ top: '35%', width: '35%', left: '25%', animationDelay: '1s' }}></div>
+        <div className="neural-line" style={{ top: '55%', width: '30%', left: '15%', animationDelay: '2s' }}></div>
+        <div className="neural-line" style={{ top: '75%', width: '40%', left: '20%', animationDelay: '3s' }}></div>
+      </div>
+
+      {/* Enhanced Scroll to top button */}
+      <motion.button
+        onClick={scrollToTop}
+        className="absolute top-8 right-8 p-3 quantum-button rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110 z-20"
+        whileHover={{ y: -2 }}
+        whileTap={{ scale: 0.95 }}
+        aria-label="Scroll to top"
+      >
+        <ChevronUp className="w-5 h-5" />
+      </motion.button>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
-          {/* Company Info */}
+          {/* Enhanced Company Info */}
           <div className="lg:col-span-2">
-            <div className="mb-6">
-              <span className="text-3xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent">ZION TECH GROUP</span>
-              <p className="text-sm text-zion-slate-light mt-1">Future Technology Group</p>
+            <div className="flex items-center space-x-3 mb-6">
+              <div className="relative">
+                <div className="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-xl shadow-lg shadow-cyan-500/50 animate-quantum-float">
+                  Z
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg blur-lg opacity-50 animate-pulse"></div>
+                {/* Quantum particles around logo */}
+                <div className="absolute -top-1 -right-1 w-2 h-2 bg-cyan-400 rounded-full animate-ping"></div>
+                <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-blue-400 rounded-full animate-ping animation-delay-1000"></div>
+              </div>
+              <div>
+                <h3 className="text-2xl font-bold neon-text">
+                  Zion Tech Group
+                </h3>
+                <p className="text-gray-400 text-sm">The Tech & AI Marketplace</p>
+              </div>
             </div>
-            <p className="text-zion-slate-light mb-6 max-w-md leading-relaxed">
-              Leading the future of technology with innovative AI autonomous systems, quantum computing infrastructure, and revolutionary micro SAAS solutions that transform businesses and industries.
-            </p>
             
-            {/* Contact Info */}
-            <div className="space-y-3 mb-6">
-              <div className="flex items-center space-x-3 text-sm">
-                <Phone className="w-4 h-4 text-zion-cyan" />
-                <span className="text-zion-slate-light">+1 302 464 0950</span>
-              </div>
-              <div className="flex items-center space-x-3 text-sm">
-                <Mail className="w-4 h-4 text-zion-cyan" />
-                <span className="text-zion-slate-light">kleber@ziontechgroup.com</span>
-              </div>
-              <div className="flex items-start space-x-3 text-sm">
-                <MapPin className="w-4 h-4 text-zion-cyan mt-0.5" />
-                <span className="text-zion-slate-light">364 E Main St STE 1008<br />Middletown DE 19709</span>
-              </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex space-x-4">
-              <a
-                href="https://linkedin.com/company/ziontechgroup"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-zion-slate-light hover:text-zion-cyan transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a
-                href="https://twitter.com/ziontechgroup"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-zion-slate-light hover:text-zion-cyan transition-colors"
-                aria-label="Twitter"
-              >
-                <Twitter className="h-5 w-5" />
-              </a>
-              <a
-                href="https://facebook.com/ziontechgroup"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-zion-slate-light hover:text-zion-cyan transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="h-5 w-5" />
-              </a>
-              <a
-                href="https://instagram.com/ziontechgroup"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-zion-slate-light hover:text-zion-cyan transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a
-                href="https://youtube.com/@ziontechgroup"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-zion-slate-light hover:text-zion-cyan transition-colors"
-                aria-label="YouTube"
-              >
-                <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                </svg>
-              </a>
-              <a
-                href="https://github.com/ziontechgroup"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-zion-slate-light hover:text-zion-cyan transition-colors"
-                aria-label="GitHub"
-              >
-                <Github className="h-5 w-5" />
-              </a>
-            </div>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="text-white font-semibold mb-6 text-lg flex items-center">
-              <span className="w-8 h-8 bg-gradient-to-r from-zion-cyan to-zion-purple rounded-lg flex items-center justify-center mr-2">
-                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </span>
-              Services
-            </h3>
-            <ul className="space-y-3">
-              <li><Link to="/services/ai-autonomous-systems" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">AI & Autonomous Systems</Link></li>
-              <li><Link to="/services/quantum-technology" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Quantum Technology</Link></li>
-              <li><Link to="/services/it-infrastructure" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">IT Infrastructure</Link></li>
-              <li><Link to="/services/micro-saas-solutions" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Micro SAAS Solutions</Link></li>
-              <li><Link to="/services/cybersecurity" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Cybersecurity</Link></li>
-              <li><Link to="/services/industry-solutions" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Industry Solutions</Link></li>
-              <li><Link to="/marketplace" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Marketplace</Link></li>
-            </ul>
-          </div>
-
-          {/* Solutions */}
-          <div>
-            <h3 className="text-white font-semibold mb-6 text-lg flex items-center">
-              <span className="w-8 h-8 bg-gradient-to-r from-zion-purple to-zion-cyan rounded-lg flex items-center justify-center mr-2">
-                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </span>
-              Solutions
-            </h3>
-            <ul className="space-y-3">
-              <li><Link to="/solutions/enterprise" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Enterprise Solutions</Link></li>
-              <li><Link to="/solutions/healthcare" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Healthcare Solutions</Link></li>
-              <li><Link to="/solutions/financial" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Financial Solutions</Link></li>
-              <li><Link to="/solutions/manufacturing" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Manufacturing Solutions</Link></li>
-              <li><Link to="/solutions/retail" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Retail Solutions</Link></li>
-              <li><Link to="/solutions/government" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Government Solutions</Link></li>
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h3 className="text-white font-semibold mb-6 text-lg flex items-center">
-              <span className="w-8 h-8 bg-gradient-to-r from-zion-cyan to-zion-purple rounded-lg flex items-center justify-center mr-2">
-                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-                </svg>
-              </span>
-              Company
-            </h3>
-            <ul className="space-y-3">
-              <li><Link to="/about" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">About Us</Link></li>
-              <li><Link to="/mission" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Our Mission</Link></li>
-              <li><Link to="/team" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Team</Link></li>
-              <li><Link to="/leadership" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Leadership</Link></li>
-              <li><Link to="/careers" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Careers</Link></li>
-              <li><Link to="/partners" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Partners</Link></li>
-              <li><Link to="/contact" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Contact</Link></li>
-            </ul>
-          </div>
-        </div>
-
-        {/* Additional Footer Sections */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          {/* Resources */}
-          <div>
-            <h4 className="text-white font-semibold mb-4 text-lg flex items-center">
-              <span className="w-6 h-6 bg-gradient-to-r from-zion-purple to-zion-cyan rounded-lg flex items-center justify-center mr-2">
-                <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-                </svg>
-              </span>
-              Resources
-            </h4>
-            <div className="grid grid-cols-2 gap-3">
-              <Link to="/blog" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Blog & Articles</Link>
-              <Link to="/docs" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Documentation</Link>
-              <Link to="/case-studies" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Case Studies</Link>
-              <Link to="/white-papers" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">White Papers</Link>
-              <Link to="/webinars" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Webinars</Link>
-              <Link to="/training" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Training</Link>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-white font-semibold mb-4 text-lg flex items-center">
-              <span className="w-6 h-6 bg-gradient-to-r from-zion-cyan to-zion-purple rounded-lg flex items-center justify-center mr-2">
-                <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </span>
-              Quick Links
-            </h4>
-            <div className="grid grid-cols-2 gap-3">
-              <Link to="/get-started" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Get Started</Link>
-              <Link to="/contact" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Contact Sales</Link>
-              <Link to="/support" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Support</Link>
-              <Link to="/status" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Status Page</Link>
-              <Link to="/developer-resources" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Developer Resources</Link>
-              <Link to="/sitemap" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Sitemap</Link>
-            </div>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h4 className="text-white font-semibold mb-4 text-lg flex items-center">
-              <span className="w-6 h-6 bg-gradient-to-r from-zion-purple to-zion-cyan rounded-lg flex items-center justify-center mr-2">
-                <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-              </span>
-              Legal
-            </h4>
-            <div className="grid grid-cols-2 gap-3">
-              <Link to="/privacy" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Privacy Policy</Link>
-              <Link to="/terms" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Terms of Service</Link>
-              <Link to="/cookies" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Cookie Policy</Link>
-              <Link to="/accessibility" className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm">Accessibility</Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Newsletter Section */}
-        <div className="border-t border-zion-blue-light pt-8">
-          <div className="max-w-md">
-            <h4 className="text-white font-semibold mb-4 text-lg">Stay Updated</h4>
-            <p className="text-zion-slate-light text-sm mb-4">
-              Get the latest insights on technology trends and innovations.
+            <p className="text-gray-300 mb-6 max-w-md">
+              Empowering businesses with cutting-edge AI, Micro SAAS, and IT solutions. 
+              We transform ideas into innovative digital solutions that drive growth and efficiency.
             </p>
-            {/* FooterNewsletter component removed - not available */}
+
+            {/* Enhanced Contact Info */}
+            <div className="space-y-3 mb-6">
+              <div className="flex items-center gap-3 text-gray-300 group">
+                <Mail className="w-4 h-4 neon-text group-hover:scale-110 transition-transform duration-300" />
+                <span className="group-hover:text-cyan-400 transition-colors duration-300">kleber@ziontechgroup.com</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300 group">
+                <Phone className="w-4 h-4 neon-text group-hover:scale-110 transition-transform duration-300" />
+                <span className="group-hover:text-cyan-400 transition-colors duration-300">+1 302 464 0950</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-300 group">
+                <MapPin className="w-4 h-4 neon-text group-hover:scale-110 transition-transform duration-300" />
+                <span className="group-hover:text-cyan-400 transition-colors duration-300">364 E Main St STE 1008, Middletown, DE 19709</span>
+              </div>
+            </div>
+
+            {/* Enhanced Social Links */}
+            <div className="flex space-x-4">
+              {[
+                { icon: Twitter, label: "Twitter", href: "https://twitter.com/ziontechgroup" },
+                { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/zion-tech-group" },
+                { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/ziontechgroup" },
+                { icon: Instagram, label: "Instagram", href: "https://instagram.com/ziontechgroup" },
+                { icon: Github, label: "GitHub", href: "https://github.com/ziontechgroup" }
+              ].map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 futuristic-card border border-cyan-500/30 rounded-lg flex items-center justify-center text-cyan-400 hover:bg-cyan-500/30 hover:border-cyan-400 transition-all duration-300 group hover:scale-110"
+                  aria-label={social.label}
+                  title={social.label}
+                >
+                  <social.icon className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Enhanced Footer Sections */}
+          {footerSections.map((section) => (
+            <div key={section.title}>
+              <h4 className="text-lg font-semibold neon-text mb-4 border-b border-cyan-500/30 pb-2">
+                {section.title}
+              </h4>
+              <ul className="space-y-3">
+                {section.links.map((link) => (
+                  <li key={link.label}>
+                    <Link
+                      to={link.path}
+                      className="text-gray-300 hover:text-cyan-400 transition-colors duration-200 text-sm hover:translate-x-1 inline-block group"
+                    >
+                      <span className="group-hover:neon-text transition-all duration-300">{link.label}</span>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        {/* Enhanced Contact & CTA Section */}
+        <div className="border-t border-cyan-500/30 pt-8 mb-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+            {/* Enhanced Contact Info */}
+            <div className="space-y-3">
+              <h4 className="text-lg font-semibold neon-text">Contact Information</h4>
+              <div className="space-y-2 text-sm text-gray-300">
+                <p className="flex items-center space-x-2 group">
+                  <span className="neon-text group-hover:scale-110 transition-transform duration-300">📱</span>
+                  <span className="group-hover:text-cyan-400 transition-colors duration-300">+1 302 464 0950</span>
+                </p>
+                <p className="flex items-center space-x-2 group">
+                  <span className="neon-text group-hover:scale-110 transition-transform duration-300">✉️</span>
+                  <span className="group-hover:text-cyan-400 transition-colors duration-300">kleber@ziontechgroup.com</span>
+                </p>
+                <p className="flex items-center space-x-2 group">
+                  <span className="neon-text group-hover:scale-110 transition-transform duration-300">📍</span>
+                  <span className="group-hover:text-cyan-400 transition-colors duration-300">364 E Main St STE 1008<br />Middletown DE 19709</span>
+                </p>
+              </div>
+            </div>
+
+            {/* Enhanced Newsletter */}
+            <div className="space-y-3">
+              <h4 className="text-lg font-semibold neon-text">Stay Updated</h4>
+              <p className="text-sm text-gray-300">Get the latest tech insights and service updates</p>
+              <FooterNewsletter />
+            </div>
+
+            {/* Enhanced CTA */}
+            <div className="text-center lg:text-right">
+              <h4 className="text-lg font-semibold neon-text mb-3">Ready to Get Started?</h4>
+              <p className="text-sm text-gray-300 mb-4">Transform your business with our innovative solutions</p>
+              <button className="quantum-button px-6 py-3 font-medium transform hover:scale-105">
+                Get Free Consultation
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Footer */}
-        <div className="border-t border-zion-blue-light pt-8 mt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="text-zion-slate-light text-sm mb-4 md:mb-0">
-              © 2024 Zion Tech Group. All rights reserved.
+        {/* Enhanced Bottom Bar */}
+        <div className="border-t border-cyan-500/30 pt-6">
+          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <div className="text-sm text-gray-400">
+              © {currentYear} Zion Tech Group. All rights reserved.
             </div>
-            <div className="flex space-x-6 text-sm">
-              <Link to="/privacy" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Privacy</Link>
-              <Link to="/terms" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Terms</Link>
-              <Link to="/cookies" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Cookies</Link>
-              <Link to="/accessibility" className="text-zion-slate-light hover:text-zion-cyan transition-colors">Accessibility</Link>
+            <div className="flex space-x-6 text-sm text-gray-400">
+              <Link to="/privacy" className="hover:neon-text transition-colors duration-200">Privacy Policy</Link>
+              <Link to="/terms" className="hover:neon-text transition-colors duration-200">Terms of Service</Link>
+              <Link to="/cookies" className="hover:neon-text transition-colors duration-200">Cookie Policy</Link>
+              <Link to="/accessibility" className="hover:neon-text transition-colors duration-200">Accessibility</Link>
             </div>
           </div>
         </div>
       </div>
+
+      {/* Enhanced Floating Elements */}
+      <div className="absolute top-20 right-20 w-2 h-2 bg-cyan-400 rounded-full animate-ping animate-energy-pulse"></div>
+      <div className="absolute bottom-32 left-32 w-3 h-3 bg-blue-400 rounded-full animate-pulse animate-energy-pulse"></div>
+      <div className="absolute top-1/2 left-20 w-1 h-1 bg-purple-400 rounded-full animate-bounce animate-energy-pulse"></div>
+      
+      {/* Additional Quantum Particles */}
+      <div className="absolute top-40 right-40 w-1 h-1 bg-cyan-400 rounded-full animate-ping animate-energy-pulse animation-delay-1000"></div>
+      <div className="absolute bottom-40 right-40 w-1 h-1 bg-blue-400 rounded-full animate-ping animate-energy-pulse animation-delay-2000"></div>
+      <div className="absolute top-1/3 left-40 w-1 h-1 bg-purple-400 rounded-full animate-ping animate-energy-pulse animation-delay-3000"></div>
     </footer>
   );
 }
