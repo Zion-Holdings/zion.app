@@ -22,23 +22,23 @@ jobs:
   check-sync-backup:
     runs-on: ubuntu-latest
     steps:
-name: sync-health-backup-backup
+      - name: Checkout repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-name: sync-health-backup-backup
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-name: sync-health-backup-backup
+      - name: Health check
         id: health-check
         run: |
           echo "Checking primary sync health workflow status..."
           echo "backup_mode=true" >> $GITHUB_OUTPUT
 
-name: sync-health-backup-backup
+      - name: Run backup auto-sync
         env:
           AUTO_SYNC_STRATEGY: hardreset
           AUTO_SYNC_CLEAN: '0'
@@ -47,7 +47,7 @@ name: sync-health-backup-backup
           echo "Running PM2 auto-sync in backup mode..."
           node automation/pm2-auto-sync.js || true
 
-name: sync-health-backup-backup
+      - name: Push backup changes if any
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -60,7 +60,7 @@ name: sync-health-backup-backup
             echo "No push needed in backup mode."
           fi
 
-name: sync-health-backup-backup
+      - name: Complete
         run: |
           echo "Backup sync health check completed successfully"
           echo "Timestamp: $(date -u)"

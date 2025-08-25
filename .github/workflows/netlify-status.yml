@@ -4,26 +4,32 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: read
+  pull-requests: write
+
 jobs:
   check-netlify-status:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: Check Netlify Deploy Status
         id: netlify_status
-         - uses: actions/checkout@v2
-      - uses: amondnet/now-deployment@v2
+        uses: amondnet/now-deployment@v2
         with:
           netlify_token: ${{ secrets.NETLIFY_TOKEN }}
           site_id: "ziontechgroup"
 
       - name: Comment on PR if Deploy Failed
         if: failure() && github.event_name == 'pull_request'
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             const prNumber = context.issue.number;
-            const netlifyLogsUrl = `https://app.netlify.com/sites/ziontechgroup/deploys`; // Replace with actual site name if different
+            const netlifyLogsUrl = 'https://app.netlify.com/sites/ziontechgroup/deploys';
             const commentBody = `🚨 Netlify deployment failed. Please check the [Netlify logs](${netlifyLogsUrl}) for more details.`;
             await github.rest.issues.createComment({
               owner: context.repo.owner,

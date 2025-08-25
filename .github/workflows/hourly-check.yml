@@ -29,19 +29,19 @@ jobs:
       - name: Make security audit script executable
         run: chmod +x ./scripts/hourly_audit.sh
 
-              - name: Install GitHub CLI
-                run: |
-                  sudo apt-get update
-                  sudo apt-get install -y gh
+      - name: Install GitHub CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gh
 
-              - name: Run hourly security audit script
-                env:
-                  WEBHOOK_URL: ${{ secrets.MAINTENANCE_WEBHOOK_URL }}
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-                  MAIN_DEV_BRANCH_ENV_VAR: 'main' # Or your main development branch e.g. 'develop'
-                run: ./scripts/hourly_audit.sh
+      - name: Run hourly security audit script
+        env:
+          WEBHOOK_URL: ${{ secrets.MAINTENANCE_WEBHOOK_URL }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MAIN_DEV_BRANCH_ENV_VAR: 'main' # Or your main development branch e.g. 'develop'
+        run: ./scripts/hourly_audit.sh
 
-              # Performance Audit (Lighthouse)
+      # Performance Audit (Lighthouse)
       - name: Install Lighthouse CI
         run: npm install -g @lhci/cli
 

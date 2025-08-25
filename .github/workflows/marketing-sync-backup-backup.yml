@@ -22,22 +22,22 @@ jobs:
   run-marketing-sync-backup:
     runs-on: ubuntu-latest
     steps:
-name: marketing-sync-backup-backup
+      - name: Checkout repository
         uses: actions/checkout@v4
 
-name: marketing-sync-backup-backup
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-name: marketing-sync-backup-backup
+      - name: Health check
         id: health-check
         run: |
           # Check if primary workflow has run recently
           echo "Checking primary workflow health..."
           echo "backup_mode=true" >> $GITHUB_OUTPUT
 
-name: marketing-sync-backup-backup
+      - name: Run backup marketing sync
         env:
           LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
           LINKEDIN_URN: ${{ secrets.LINKEDIN_URN }}
@@ -48,7 +48,7 @@ name: marketing-sync-backup-backup
           echo "Running marketing sync in backup mode..."
           node automation/marketing-sync.js
 
-name: marketing-sync-backup-backup
+      - name: Commit backup changes if any
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -60,7 +60,7 @@ name: marketing-sync-backup-backup
             echo "No changes to commit in backup mode."
           fi
 
-name: marketing-sync-backup-backup
+      - name: Complete
         run: |
           echo "Backup marketing sync completed successfully"
           echo "Timestamp: $(date -u)"
