@@ -139,7 +139,6 @@ const QuoteRequestForm: React.FC = () => {
                   </label>
                   <Input
                     type="text"
-                    required
                     value={formData.companyName}
                     onChange={(e) => setFormData({...formData, companyName: e.target.value})}
                     className="bg-white/10 border-white/30 text-white placeholder:text-gray-400"
@@ -176,7 +175,6 @@ const QuoteRequestForm: React.FC = () => {
                   </label>
                   <Input
                     type="text"
-                    required
                     value={formData.contactName}
                     onChange={(e) => setFormData({...formData, contactName: e.target.value})}
                     className="bg-white/10 border-white/30 text-white placeholder:text-gray-400"
@@ -215,7 +213,6 @@ const QuoteRequestForm: React.FC = () => {
                 </label>
                 <Input
                   type="email"
-                  required
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
                   className="bg-white/10 border-white/30 text-white placeholder:text-gray-400"

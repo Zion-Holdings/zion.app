@@ -7,7 +7,7 @@ import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { AccessibilityProvider } from "./components/ui/AccessibilityProvider";
 import { SkipToMainContent } from "./components/ui/AccessibilityProvider";
 import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
+import Footer from "./components/Footer";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
 import { FullPageLoader } from "./components/ui/LoadingSpinner";

@@ -1,5 +1,18 @@
 import React, { useState } from 'react';
-import { Search, Filter, Star, Clock, DollarSign, Users, Zap, Brain, Cloud, Database, Shield, Settings, Eye, Leaf, CreditCard, Heart, Truck, ShoppingCart, Phone, Mail, MapPin, Globe, Bot, Cpu, Network, Database as DatabaseIcon, Shield as ShieldIcon, Zap as ZapIcon, Building, Factory, Store, Car, Plane, Ship, Home, Hospital, Building2, GraduationCap, Calendar, FileText, BarChart3, Users as UsersIcon, CreditCard as CreditCardIcon, MessageSquare, Camera, Video, Music, BookOpen, Target, TrendingUp, PieChart, Activity, Zap as ZapIcon2, Wrench, Server, Laptop, Smartphone, Router, HardDrive, Lock, Key, EyeOff, ShieldCheck, Globe2, Wifi, Bluetooth, Satellite, Antenna, CircuitBoard, Chip, Memory, Storage, Backup, Sync, RefreshCw, Download, Upload, Share2, Link, Unlink, Settings2, Cog, Tool, Hammer, Screwdriver, Drill, Saw, Paintbrush, Palette, Brush, PenTool, Vector, Layers, Grid, Layout, Monitor, Display, Projector, Printer, Scanner, Fax, Copier, Archive, Folder, File, Document, Spreadsheet, Presentation, Database, Chart, Graph, Analytics, Report, Dashboard, Calendar, Clock, Timer, Stopwatch, Hourglass, CalendarDays, CalendarCheck, CalendarX, CalendarPlus, CalendarMinus, CalendarRange, CalendarWeek, CalendarMonth, CalendarYear, Clock1, Clock2, Clock3, Clock4, Clock5, Clock6, Clock7, Clock8, Clock9, Clock10, Clock11, Clock12, Code } from 'lucide-react';
+import { 
+  Search, Filter, Star, Clock, DollarSign, Users, Zap, Brain, Cloud, 
+  Database, Shield, Settings, Eye, Leaf, CreditCard, Heart, Truck, 
+  ShoppingCart, Phone, Mail, MapPin, Globe, Bot, Cpu, Network, 
+  Building, Factory, Store, Car, Plane, Ship, Home, Hospital, 
+  Building2, GraduationCap, Calendar, FileText, BarChart3, 
+  MessageSquare, Camera, Video, Music, BookOpen, Target, TrendingUp, 
+  PieChart, Activity, Wrench, Server, Laptop, Smartphone, Router, 
+  HardDrive, Lock, Key, EyeOff, ShieldCheck, Globe2, Wifi, 
+  Bluetooth, Satellite, Antenna, CircuitBoard, RefreshCw, Download, 
+  Upload, Share2, Link, Unlink, Cog, Hammer, Paintbrush, Palette, 
+  Brush, PenTool, Layers, Grid, Layout, Monitor, Projector, Printer, 
+  Archive, Folder, File, Code 
+} from 'lucide-react';
 
 const ITOnsiteServicesPage: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -279,7 +292,7 @@ const ITOnsiteServicesPage: React.FC = () => {
       case 'IoT': return <Wifi className="w-6 h-6" />;
       case 'Virtualization': return <Layers className="w-6 h-6" />;
       case 'Compliance': return <ShieldCheck className="w-6 h-6" />;
-      default: return <ZapIcon2 className="w-6 h-6" />;
+      default: return <Zap className="w-6 h-6" />;
     }
   };
 

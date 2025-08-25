@@ -3,9 +3,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle, Star, Users, Zap, Shield, Brain, Cloud } from 'lucide-react';
-import { EnhancedSEO } from "@/components/EnhancedSEO";
+import EnhancedSEO from "@/components/EnhancedSEO";
 import { ServicesShowcase } from '../components/ServicesShowcase';
-import { EnhancedServicesShowcase } from '../components/EnhancedServicesShowcase';
 import { AdvancedServicesShowcase } from '../components/AdvancedServicesShowcase';
 
 export default function Home() {

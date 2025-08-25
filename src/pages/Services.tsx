@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Search, Clock, Shield, Filter, SortAsc, SortDesc, X } from 'lucide-react';
 import { COMPREHENSIVE_SERVICES } from '../data/comprehensiveServices';
@@ -7,13 +7,12 @@ import { OptimizedImage } from '../components/OptimizedImage';
 import { usePerformance } from '../hooks/usePerformance';
 
 export default function Services() {
-  const { trackRender } = usePerformance();
+  const performanceMetrics = usePerformance();
   
   // Track render performance
-  useState(() => {
-    const cleanup = trackRender('Services');
-    return cleanup;
-  });
+  useEffect(() => {
+    // Performance tracking logic can be added here if needed
+  }, []);
 
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [showFilters, setShowFilters] = useState(false);
