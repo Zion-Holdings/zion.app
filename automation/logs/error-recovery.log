@@ -549,3 +549,59 @@ No metrics available
 [2025-08-25T15:21:02.915Z] Status: 4 jobs scheduled, 0 active
 [2025-08-25T15:21:14.830Z] ALERT [WARNING] Memory usage warning: 81.92%
 [2025-08-25T15:21:14.831Z] metrics rss=31.00 MB heapUsed=4.34 MB cpuLoad=43.75 memUsage=81.92%
+[2025-08-25T15:21:44.831Z] ALERT [WARNING] Memory usage warning: 82.61%
+[2025-08-25T15:21:44.831Z] metrics rss=31.03 MB heapUsed=4.37 MB cpuLoad=30.28 memUsage=82.61%
+[2025-08-25 12:22:01] Starting error recovery process...
+[2025-08-25 12:22:01] Checking for crashed automation processes...
+[2025-08-25 12:22:01] Checking memory usage...
+[2025-08-25 12:22:02] High memory usage detected (554.664 MB), restarting services...
+[2025-08-25T15:22:02.172Z] Shutting down Autonomous System Manager gracefully...
+[2025-08-25T15:22:02.173Z] Stopping all services...
+[2025-08-25T15:22:02.174Z] Stopped 0 services
+[2025-08-25T15:22:02.233Z] Stopping ML Link Intelligence...
+[2025-08-25T15:22:02.292Z] Stopping Link Health Scheduler...
+[2025-08-25T15:22:02.354Z] Stopping Link Health Scheduler
+[2025-08-25T15:22:02.355Z] All scheduled jobs cleared
+[2025-08-25T15:22:02.366Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:22:02.368Z] Stopping performance monitoring
+[2025-08-25T15:22:07.493Z] Starting Autonomous System Manager
+[2025-08-25T15:22:07.619Z] Starting all enabled services...
+[2025-08-25T15:22:07.620Z] Starting service: autonomous-system-manager
+[2025-08-25T15:22:07.621Z] Error starting autonomous-system-manager: Cannot access 'process' before initialization
+[2025-08-25T15:22:08.622Z] Starting service: ml-link-intelligence
+[2025-08-25T15:22:08.624Z] Error starting ml-link-intelligence: Cannot access 'process' before initialization
+[2025-08-25T15:22:09.625Z] Starting service: link-health-scheduler
+[2025-08-25T15:22:09.626Z] Error starting link-health-scheduler: Cannot access 'process' before initialization
+[2025-08-25T15:22:10.641Z] Starting service: real-time-performance-monitor
+[2025-08-25T15:22:10.642Z] Error starting real-time-performance-monitor: Cannot access 'process' before initialization
+[2025-08-25T15:22:10.775Z] Starting ML Link Intelligence worker
+[2025-08-25T15:22:10.949Z] Added https://github.com to analysis queue
+[2025-08-25T15:22:10.950Z] Added https://stackoverflow.com to analysis queue
+[2025-08-25T15:22:10.950Z] Added https://medium.com to analysis queue
+[2025-08-25T15:22:10.950Z] Added https://dev.to to analysis queue
+[2025-08-25T15:22:10.951Z] Added https://wikipedia.org to analysis queue
+[2025-08-25T15:22:10.951Z] Processing queue with 5 links
+[2025-08-25T15:22:10.951Z] Analyzing link: https://github.com
+[2025-08-25T15:22:11.222Z] Analysis complete for https://github.com: good (200)
+[2025-08-25T15:22:11.643Z] Started 0/4 services successfully
+[2025-08-25T15:22:11.644Z] Autonomous System Manager is now running
+[2025-08-25T15:22:12.223Z] Analyzing link: https://stackoverflow.com
+[2025-08-25T15:22:12.284Z] Analysis complete for https://stackoverflow.com: poor (403)
+[2025-08-25T15:22:12.673Z] Starting Link Health Scheduler
+[2025-08-25T15:22:12.809Z] Starting Link Health Scheduler
+[2025-08-25T15:22:12.810Z] Scheduled check for homepage at Mon Aug 25 2025 12:27:12 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:22:12.810Z] Scheduled check for services at Mon Aug 25 2025 12:37:12 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:22:12.810Z] Scheduled check for about at Mon Aug 25 2025 13:22:12 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:22:12.810Z] Scheduled check for contact at Mon Aug 25 2025 12:37:12 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:22:12.811Z] Scheduled 4 links for health checks
+[2025-08-25T15:22:13.284Z] Analyzing link: https://medium.com
+[2025-08-25T15:22:13.377Z] Analysis complete for https://medium.com: good (200)
+[2025-08-25T15:22:14.377Z] Analyzing link: https://dev.to
+[2025-08-25T15:22:14.425Z] Analysis complete for https://dev.to: poor (403)
+[2025-08-25 12:22:14] Checking log file sizes...
+[2025-08-25T15:22:14.632Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:22:14.765Z] Starting real-time performance monitoring
+[2025-08-25 12:22:14] Error recovery process completed
+[2025-08-25T15:22:15.426Z] Analyzing link: https://wikipedia.org
+[2025-08-25T15:22:15.473Z] Analysis complete for https://wikipedia.org: poor (403)
+[2025-08-25T15:22:16.524Z] Queue processing complete

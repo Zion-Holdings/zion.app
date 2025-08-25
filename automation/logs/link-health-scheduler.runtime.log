@@ -493,3 +493,45 @@
 [2025-08-25T15:21:04.496Z] Status: 4 jobs scheduled, 0 active
 [2025-08-25T15:21:05.979Z] Status: 4 jobs scheduled, 0 active
 [2025-08-25T15:21:05.982Z] [link-health-scheduler] [2025-08-25T15:21:05.979Z] Status: 4 jobs scheduled, 0 active
+[2025-08-25T15:22:02.292Z] Stopping link health scheduler...
+[2025-08-25T15:22:02.292Z] Stopping Link Health Scheduler...
+[2025-08-25T15:22:02.292Z] Stopping Link Health Scheduler...
+[2025-08-25T15:22:02.293Z] [link-health-scheduler] [2025-08-25T15:22:02.292Z] Stopping Link Health Scheduler...
+[2025-08-25T15:22:02.293Z] Stopping Link Health Scheduler
+[2025-08-25T15:22:02.293Z] Stopping Link Health Scheduler
+[2025-08-25T15:22:02.294Z] All scheduled jobs cleared
+[2025-08-25T15:22:02.294Z] All scheduled jobs cleared
+[2025-08-25T15:22:02.294Z] [link-health-scheduler] [2025-08-25T15:22:02.293Z] Stopping Link Health Scheduler
+[2025-08-25T15:22:02.295Z] [link-health-scheduler] [2025-08-25T15:22:02.294Z] All scheduled jobs cleared
+[2025-08-25T15:22:02.292Z] Stopping Link Health Scheduler...
+[2025-08-25T15:22:02.354Z] Stopping Link Health Scheduler
+[2025-08-25T15:22:02.355Z] All scheduled jobs cleared
+[2025-08-25T15:22:09.717Z] Starting Link Health Scheduler
+[2025-08-25T15:22:09.738Z] Starting Link Health Scheduler
+[2025-08-25T15:22:09.741Z] Scheduled check for homepage at Mon Aug 25 2025 12:27:09 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:22:09.743Z] Scheduled check for services at Mon Aug 25 2025 12:37:09 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:22:09.745Z] Scheduled check for about at Mon Aug 25 2025 13:22:09 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:22:09.746Z] Scheduled check for contact at Mon Aug 25 2025 12:37:09 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:22:09.747Z] Scheduled 4 links for health checks
+[2025-08-25T15:22:09.748Z] Status: 4 jobs scheduled, 0 active
+[2025-08-25T15:22:12.673Z] Starting Link Health Scheduler
+[2025-08-25T15:22:12.809Z] Starting Link Health Scheduler
+[2025-08-25T15:22:12.810Z] Scheduled check for homepage at Mon Aug 25 2025 12:27:12 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:22:12.810Z] Scheduled check for services at Mon Aug 25 2025 12:37:12 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:22:12.810Z] Scheduled check for about at Mon Aug 25 2025 13:22:12 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:22:12.810Z] Scheduled check for contact at Mon Aug 25 2025 12:37:12 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:22:12.811Z] Scheduled 4 links for health checks
+[2025-08-25T15:22:21.128Z] Starting Link Health Scheduler
+[2025-08-25T15:22:21.133Z] Starting Link Health Scheduler
+[2025-08-25T15:22:21.133Z] [link-health-scheduler] [2025-08-25T15:22:21.128Z] Starting Link Health Scheduler
+[2025-08-25T15:22:21.134Z] [link-health-scheduler] [2025-08-25T15:22:21.133Z] Starting Link Health Scheduler
+[2025-08-25T15:22:21.135Z] Scheduled check for homepage at Mon Aug 25 2025 12:27:21 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:22:21.135Z] Scheduled check for services at Mon Aug 25 2025 12:37:21 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:22:21.135Z] [link-health-scheduler] [2025-08-25T15:22:21.135Z] Scheduled check for homepage at Mon Aug 25 2025 12:27:21 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:22:21.135Z] Scheduled check for about at Mon Aug 25 2025 13:22:21 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:22:21.136Z] Scheduled check for contact at Mon Aug 25 2025 12:37:21 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:22:21.136Z] Scheduled 4 links for health checks
+[2025-08-25T15:22:21.136Z] [link-health-scheduler] [2025-08-25T15:22:21.135Z] Scheduled check for services at Mon Aug 25 2025 12:37:21 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:22:21.137Z] [link-health-scheduler] [2025-08-25T15:22:21.135Z] Scheduled check for about at Mon Aug 25 2025 13:22:21 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:22:21.136Z] Scheduled check for contact at Mon Aug 25 2025 12:37:21 GMT-0300 (Brasilia Standard Time)
+[2025-08-25T15:22:21.136Z] Scheduled 4 links for health checks

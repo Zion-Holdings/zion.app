@@ -675,3 +675,28 @@ Alerts:
 [2025-08-25T15:21:14.831Z] metrics rss=31.00 MB heapUsed=4.34 MB cpuLoad=43.75 memUsage=81.92%
 [2025-08-25T15:21:19.583Z] ALERT [WARNING] Memory usage warning: 81.84%
 [2025-08-25T15:21:19.583Z] metrics rss=31.06 MB heapUsed=4.37 MB cpuLoad=40.81 memUsage=81.84%
+[2025-08-25T15:21:29.702Z] ALERT [WARNING] Memory usage warning: 83.03%
+[2025-08-25T15:21:29.703Z] metrics rss=30.64 MB heapUsed=4.30 MB cpuLoad=36.06 memUsage=83.03%
+[2025-08-25T15:21:29.703Z] [real-time-performance-monitor] [2025-08-25T15:21:29.702Z] ALERT [WARNING] Memory usage warning: 83.03%
+[2025-08-25T15:21:29.703Z] [real-time-performance-monitor] [2025-08-25T15:21:29.703Z] metrics rss=30.64 MB heapUsed=4.30 MB cpuLoad=36.06 memUsage=83.03%
+[2025-08-25T15:21:44.831Z] ALERT [WARNING] Memory usage warning: 82.61%
+[2025-08-25T15:21:44.831Z] metrics rss=31.03 MB heapUsed=4.37 MB cpuLoad=30.28 memUsage=82.61%
+[2025-08-25T15:21:49.592Z] ALERT [WARNING] Memory usage warning: 83.19%
+[2025-08-25T15:21:49.592Z] metrics rss=31.09 MB heapUsed=4.40 MB cpuLoad=28.90 memUsage=83.19%
+[2025-08-25T15:21:59.832Z] ALERT [WARNING] Memory usage warning: 85.83%
+[2025-08-25T15:21:59.832Z] metrics rss=30.83 MB heapUsed=4.36 MB cpuLoad=28.22 memUsage=85.83%
+[2025-08-25T15:21:59.832Z] [real-time-performance-monitor] [2025-08-25T15:21:59.832Z] ALERT [WARNING] Memory usage warning: 85.83%
+[2025-08-25T15:21:59.832Z] [real-time-performance-monitor] [2025-08-25T15:21:59.832Z] metrics rss=30.83 MB heapUsed=4.36 MB cpuLoad=28.22 memUsage=85.83%
+[2025-08-25T15:22:02.366Z] Stopping real-time performance monitor...
+[2025-08-25T15:22:02.366Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:22:02.367Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:22:02.368Z] Stopping performance monitoring
+[2025-08-25T15:22:02.369Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:22:02.369Z] Stopping performance monitoring
+[2025-08-25T15:22:02.369Z] Stopping performance monitoring
+[2025-08-25T15:22:02.370Z] [real-time-performance-monitor] [2025-08-25T15:22:02.369Z] Stopping Real-Time Performance Monitor...
+[2025-08-25T15:22:02.369Z] Stopping performance monitoring
+[2025-08-25T15:22:14.632Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:22:14.765Z] Starting real-time performance monitoring
+[2025-08-25T15:22:24.706Z] Starting Real-Time Performance Monitor
+[2025-08-25T15:22:24.711Z] Starting real-time performance monitoring

@@ -40,3 +40,5 @@
 [2025-08-25T15:20:07.346Z] [HEALTH] All services healthy
 [2025-08-25T15:20:37.348Z] [HEALTH] All services healthy
 [2025-08-25T15:21:07.349Z] [HEALTH] All services healthy
+[2025-08-25T15:21:37.351Z] [HEALTH] All services healthy
+[2025-08-25T15:22:07.353Z] [HEALTH] Health check issues found: Service link-health-scheduler is enabled but not running

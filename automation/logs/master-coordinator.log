@@ -127,3 +127,18 @@
 [2025-08-25T15:20:22.406Z] performance-monitor started successfully
 [2025-08-25T15:20:31.428Z] enhanced-autonomous healthy - uptime: 1225s
 [2025-08-25T15:21:01.430Z] enhanced-autonomous healthy - uptime: 1255s
+[2025-08-25T15:21:31.432Z] enhanced-autonomous healthy - uptime: 1285s
+[2025-08-25T15:21:56.467Z] ml-link-intelligence exited: code=0, signal=null
+[2025-08-25T15:21:56.468Z] Auto-restarting ml-link-intelligence (attempt 1)
+[2025-08-25T15:22:01.432Z] enhanced-autonomous healthy - uptime: 1315s
+[2025-08-25T15:22:01.432Z] Health check failed for ml-link-intelligence
+[2025-08-25T15:22:02.281Z] autonomous-manager exited: code=0, signal=null
+[2025-08-25T15:22:02.281Z] Auto-restarting autonomous-manager (attempt 1)
+[2025-08-25T15:22:04.470Z] ml-link-intelligence started successfully
+[2025-08-25T15:22:04.542Z] link-health-scheduler exited: code=0, signal=null
+[2025-08-25T15:22:04.543Z] Auto-restarting link-health-scheduler (attempt 1)
+[2025-08-25T15:22:10.283Z] autonomous-manager started successfully
+[2025-08-25T15:22:12.557Z] link-health-scheduler started successfully
+[2025-08-25T15:22:19.591Z] performance-monitor exited: code=0, signal=null
+[2025-08-25T15:22:19.591Z] Auto-restarting performance-monitor (attempt 1)
+[2025-08-25T15:22:27.599Z] performance-monitor started successfully
