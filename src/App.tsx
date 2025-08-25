@@ -32,6 +32,7 @@ const AIServices = lazy(() => import('./pages/AIServices'));
 const CloudDevOps = lazy(() => import('./pages/CloudDevOps'));
 const EnterpriseSolutionsPage = lazy(() => import('./pages/EnterpriseSolutions'));
 const DigitalTransformation = lazy(() => import('./pages/DigitalTransformation'));
+const InnovativeServicesShowcase = lazy(() => import('./pages/services/InnovativeServicesShowcase'));
 
 // Our enhanced service pages
 const About = lazy(() => import('./pages/About'));
@@ -44,6 +45,7 @@ const Partners = lazy(() => import('./pages/Partners'));
 const Blog = lazy(() => import('./pages/Blog'));
 const News = lazy(() => import('./pages/News'));
 const ServicesOverview = lazy(() => import('./pages/services/ServicesOverview'));
+const ComprehensiveServicesOverview = lazy(() => import('./pages/services/ComprehensiveServicesOverview'));
 const AIAutonomousSystems = lazy(() => import('./pages/services/AIAutonomousSystems'));
 const QuantumTechnology = lazy(() => import('./pages/services/QuantumTechnology'));
 const Cybersecurity = lazy(() => import('./pages/services/Cybersecurity'));
@@ -103,6 +105,7 @@ const App = () => {
                     <Route path="/cloud-devops" element={<CloudDevOps />} />
                     <Route path="/enterprise-solutions" element={<EnterpriseSolutionsPage />} />
                     <Route path="/digital-transformation" element={<DigitalTransformation />} />
+                    <Route path="/innovative-services-showcase" element={<InnovativeServicesShowcase />} />
                     
                     {/* Our enhanced service routes */}
                     <Route path="/about" element={<About />} />
@@ -115,6 +118,7 @@ const App = () => {
                     <Route path="/blog" element={<Blog />} />
                     <Route path="/news" element={<News />} />
                     <Route path="/services-overview" element={<ServicesOverview />} />
+                    <Route path="/comprehensive-overview" element={<ComprehensiveServicesOverview />} />
                     <Route path="/services/ai-autonomous-systems" element={<AIAutonomousSystems />} />
                     <Route path="/services/quantum-technology" element={<QuantumTechnology />} />
                     <Route path="/services/cybersecurity" element={<Cybersecurity />} />
