@@ -111,7 +111,7 @@ export default function Team() {
         title="Our Team - Zion Tech Group" 
         description="Meet the exceptional team of innovators, engineers, and industry experts driving Zion Tech Group's mission to revolutionize technology."
         keywords="team, leadership, experts, AI specialists, quantum physicists, cybersecurity experts, Zion Tech Group"
-        url="https://ziontechgroup.com/team"
+        canonical="https://ziontechgroup.com/team"
       />
 
       {/* Hero Section */}

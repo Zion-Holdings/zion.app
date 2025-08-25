@@ -16,7 +16,7 @@ interface BlogPost {
   tags: string[];
 }
 
-export const Blog: React.FC = () => {
+const Blog: React.FC = () => {
   const [posts, setPosts] = useState<BlogPost[]>([
     {
       id: 1,
@@ -216,3 +216,4 @@ export const Blog: React.FC = () => {
   );
 };
 
+export default Blog;

@@ -5,25 +5,32 @@ import { SPECIALIZED_IT_SERVICES } from '../data/specializedITServices';
 
 interface Service {
   id: string;
-  title: string;
+  name?: string;
+  title?: string;
   description: string;
   category: string;
   subcategory: string;
-  price: number;
-  currency: string;
-  pricingModel: string;
+  price: number | {
+    monthly: number;
+    yearly: number;
+    enterprise: number;
+    oneTime: number;
+    currency: string;
+  };
+  pricingModel?: string;
   features: string[];
   benefits: string[];
-  tags: string[];
+  tags?: string[];
   aiScore?: number;
   rating?: number;
   reviewCount?: number;
   featured?: boolean;
   marketPrice: string;
   contactInfo: {
-    phone: string;
+    phone?: string;
     email: string;
-    website: string;
+    website?: string;
+    address?: string;
   };
 }
 
@@ -48,12 +55,16 @@ export const AdvancedServicesShowcase: React.FC = () => {
       selectedCategory === 'All' || service.category === selectedCategory
     )
     .filter(service =>
-      service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      service.name?.toLowerCase().includes(searchTerm.toLowerCase()) ||
       service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      service.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+      service.tags?.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()))
     )
     .sort((a, b) => {
-      if (sortBy === 'price') return a.price - b.price;
+      if (sortBy === 'price') {
+        const priceA = typeof a.price === 'number' ? a.price : (a.price as any).monthly;
+        const priceB = typeof b.price === 'number' ? b.price : (b.price as any).monthly;
+        return priceA - priceB;
+      }
       if (sortBy === 'rating') return (b.rating || 0) - (a.rating || 0);
       return (b.aiScore || 0) - (a.aiScore || 0);
     });
@@ -208,9 +219,9 @@ export const AdvancedServicesShowcase: React.FC = () => {
                 <div className="mb-6">
                   <div className="flex items-start justify-between mb-4">
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
-                        {service.title}
-                      </h3>
+                                              <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors duration-300">
+                          {service.name || service.title}
+                        </h3>
                       <div className="flex items-center gap-2 mb-3">
                         <span className="px-2 py-1 bg-cyan-500/20 text-cyan-400 text-xs rounded-full border border-cyan-500/30">
                           {service.category}
@@ -279,7 +290,7 @@ export const AdvancedServicesShowcase: React.FC = () => {
                   <div className="flex items-center justify-between mb-4">
                     <div>
                       <div className="text-2xl font-bold text-white">
-                        {service.currency}{service.price}
+                        {typeof service.price === 'number' ? service.price : (service.price as any).monthly}
                         <span className="text-sm text-gray-400 font-normal ml-1">
                           /{service.pricingModel === 'per-user' ? 'user' : service.pricingModel === 'per-project' ? 'project' : service.pricingModel}
                         </span>
@@ -299,22 +310,24 @@ export const AdvancedServicesShowcase: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Tags */}
-                <div className="mt-4 flex flex-wrap gap-2">
-                  {service.tags.slice(0, 4).map((tag, index) => (
-                    <span
-                      key={index}
-                      className="px-2 py-1 bg-gray-800/50 text-gray-300 text-xs rounded-full border border-gray-600/50"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                  {service.tags.length > 4 && (
-                    <span className="px-2 py-1 bg-gray-800/50 text-gray-500 text-xs rounded-full">
-                      +{service.tags.length - 4}
-                    </span>
+                                  {/* Tags */}
+                  {service.tags && service.tags.length > 0 && (
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {service.tags.slice(0, 4).map((tag, index) => (
+                        <span
+                          key={index}
+                          className="px-2 py-1 bg-gray-800/50 text-gray-300 text-xs rounded-full border border-gray-600/50"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                      {service.tags.length > 4 && (
+                        <span className="px-2 py-1 bg-gray-800/50 text-gray-500 text-xs rounded-full">
+                          +{service.tags.length - 4}
+                        </span>
+                      )}
+                    </div>
                   )}
-                </div>
               </motion.div>
             ))}
           </AnimatePresence>
