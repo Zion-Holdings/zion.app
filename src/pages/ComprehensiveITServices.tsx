@@ -133,10 +133,137 @@ const ComprehensiveITServices: React.FC = () => {
       },
       deliveryTime: "14-20 weeks",
       support: "24/7 analytics support"
+    },
+    // NEW INNOVATIVE IT SERVICES ADDED
+    {
+      id: 7,
+      name: "Quantum Computing Infrastructure",
+      category: "Quantum IT",
+      pricing: "Enterprise",
+      description: "Next-generation quantum computing infrastructure for research and enterprise applications",
+      price: 150000,
+      pricingModel: "project-based",
+      userLimit: "Unlimited users",
+      features: ["Quantum hardware setup", "Quantum software stack", "Quantum algorithms", "Research tools", "Enterprise integration", "Performance monitoring"],
+      benefits: ["Quantum advantage", "Research leadership", "Innovation enablement", "Competitive edge", "Future-proofing", "Scientific advancement"],
+      targetAudience: ["Research institutions", "Pharmaceutical companies", "Financial services", "Government agencies"],
+      tags: ["Quantum Computing", "Quantum Infrastructure", "Research", "Innovation", "Enterprise"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      },
+      deliveryTime: "24-32 weeks",
+      support: "24/7 quantum support"
+    },
+    {
+      id: 8,
+      name: "Edge Computing Network",
+      category: "Edge Computing",
+      pricing: "Enterprise",
+      description: "Distributed edge computing infrastructure for real-time processing and low-latency applications",
+      price: 45000,
+      pricingModel: "project-based",
+      userLimit: "Unlimited users",
+      features: ["Edge node deployment", "Load balancing", "Real-time processing", "Data synchronization", "Security implementation", "Performance optimization"],
+      benefits: ["Reduced latency", "Bandwidth optimization", "Privacy protection", "Scalability", "Cost efficiency", "Real-time capabilities"],
+      targetAudience: ["IoT companies", "Manufacturing", "Smart cities", "Healthcare systems"],
+      tags: ["Edge Computing", "IoT", "Real-time", "Low Latency", "Distributed Systems"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      },
+      deliveryTime: "16-20 weeks",
+      support: "24/7 edge support"
+    },
+    {
+      id: 9,
+      name: "Blockchain Infrastructure",
+      category: "Blockchain",
+      pricing: "Enterprise",
+      description: "Complete blockchain infrastructure for enterprise applications, DeFi, and digital asset management",
+      price: 35000,
+      pricingModel: "project-based",
+      userLimit: "Unlimited users",
+      features: ["Blockchain deployment", "Smart contract development", "Wallet integration", "Security auditing", "Performance optimization", "Compliance tools"],
+      benefits: ["Transparency", "Security", "Cost reduction", "Innovation enablement", "Regulatory compliance", "Trust enhancement"],
+      targetAudience: ["Financial institutions", "Supply chain companies", "Healthcare", "Government agencies"],
+      tags: ["Blockchain", "Smart Contracts", "DeFi", "Digital Assets", "Enterprise"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      },
+      deliveryTime: "12-18 weeks",
+      support: "24/7 blockchain support"
+    },
+    {
+      id: 10,
+      name: "AI Infrastructure Platform",
+      category: "AI Infrastructure",
+      pricing: "Enterprise",
+      description: "Enterprise-grade AI infrastructure for machine learning, deep learning, and AI model deployment",
+      price: 55000,
+      pricingModel: "project-based",
+      userLimit: "Unlimited users",
+      features: ["GPU clusters", "ML pipeline setup", "Model serving", "Data processing", "Monitoring tools", "Auto-scaling"],
+      benefits: ["AI acceleration", "Scalability", "Cost optimization", "Performance improvement", "Innovation enablement", "Competitive advantage"],
+      targetAudience: ["AI companies", "Research institutions", "Financial services", "Healthcare systems"],
+      tags: ["AI Infrastructure", "Machine Learning", "GPU Clusters", "ML Pipelines", "Model Serving"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      },
+      deliveryTime: "18-24 weeks",
+      support: "24/7 AI support"
+    },
+    {
+      id: 11,
+      name: "5G Network Infrastructure",
+      category: "5G Networks",
+      pricing: "Enterprise",
+      description: "Complete 5G network infrastructure for enterprise applications and IoT connectivity",
+      price: 75000,
+      pricingModel: "project-based",
+      userLimit: "Unlimited users",
+      features: ["5G core network", "Radio access network", "Network slicing", "Edge computing integration", "Security implementation", "Performance monitoring"],
+      benefits: ["Ultra-fast connectivity", "Low latency", "Massive IoT support", "Network slicing", "Future-proofing", "Innovation enablement"],
+      targetAudience: ["Telecommunications", "Manufacturing", "Smart cities", "Healthcare systems"],
+      tags: ["5G Networks", "Network Infrastructure", "IoT", "Low Latency", "Network Slicing"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      },
+      deliveryTime: "20-28 weeks",
+      support: "24/7 5G support"
+    },
+    {
+      id: 12,
+      name: "Zero Trust Security Architecture",
+      category: "Security",
+      pricing: "Enterprise",
+      description: "Comprehensive zero trust security implementation for modern enterprise environments",
+      price: 42000,
+      pricingModel: "project-based",
+      userLimit: "Unlimited users",
+      features: ["Identity verification", "Access control", "Network segmentation", "Threat detection", "Compliance monitoring", "Incident response"],
+      benefits: ["Enhanced security", "Risk reduction", "Compliance achievement", "Trust verification", "Proactive protection", "Cost efficiency"],
+      targetAudience: ["Financial institutions", "Healthcare systems", "Government agencies", "Critical infrastructure"],
+      tags: ["Zero Trust", "Security", "Identity Management", "Access Control", "Compliance"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      },
+      deliveryTime: "14-20 weeks",
+      support: "24/7 security support"
     }
   ];
 
-  const categories = ['all', 'Infrastructure', 'Cloud Services', 'Security', 'DevOps', 'Analytics'];
+  const categories = ['all', 'Infrastructure', 'Cloud Services', 'Security', 'DevOps', 'Analytics', 'Quantum IT', 'Edge Computing', 'Blockchain', 'AI Infrastructure', '5G Networks'];
   const pricingOptions = ['all', 'Enterprise', 'Professional', 'Standard'];
 
   const filteredServices = itServices.filter(service => {

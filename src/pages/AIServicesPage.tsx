@@ -84,10 +84,141 @@ const AIServicesPage: React.FC = () => {
       benefits: ["24/7 availability", "Cost reduction", "Improved customer satisfaction", "Scalable support"],
       useCases: ["Customer support", "Sales assistance", "Appointment booking", "Information retrieval"],
       tags: ["Chatbot", "Virtual Assistant", "Conversational AI", "Customer Service"]
+    },
+    // NEW INNOVATIVE AI SERVICES ADDED
+    {
+      id: 7,
+      name: "Quantum AI Computing Platform",
+      category: "Quantum AI",
+      description: "Revolutionary quantum computing platform for AI model training and optimization",
+      price: 8500,
+      pricingModel: "monthly",
+      aiScore: 98,
+      features: ["Quantum algorithms", "AI model acceleration", "Quantum machine learning", "Research tools"],
+      benefits: ["Exponential speed increase", "Breakthrough AI capabilities", "Research leadership", "Competitive advantage"],
+      useCases: ["Drug discovery", "Financial modeling", "Climate simulation", "AI research"],
+      tags: ["Quantum AI", "Quantum Computing", "Machine Learning", "Research", "Innovation"]
+    },
+    {
+      id: 8,
+      name: "Neuromorphic AI Systems",
+      category: "Neuromorphic AI",
+      description: "Brain-inspired AI systems that mimic human neural processing for advanced cognitive tasks",
+      price: 4200,
+      pricingModel: "monthly",
+      aiScore: 96,
+      features: ["Brain-like processing", "Cognitive computing", "Adaptive learning", "Energy efficiency"],
+      benefits: ["Human-like reasoning", "Lower power consumption", "Adaptive intelligence", "Cognitive enhancement"],
+      useCases: ["Autonomous vehicles", "Robotics", "Medical diagnosis", "Cognitive computing"],
+      tags: ["Neuromorphic", "Cognitive AI", "Brain-inspired", "Adaptive Learning", "Robotics"]
+    },
+    {
+      id: 9,
+      name: "Federated Learning Platform",
+      category: "Privacy-Preserving AI",
+      description: "Distributed AI training platform that preserves data privacy while enabling collaborative learning",
+      price: 3800,
+      pricingModel: "monthly",
+      aiScore: 93,
+      features: ["Privacy-preserving training", "Distributed learning", "Secure aggregation", "Model sharing"],
+      benefits: ["Data privacy protection", "Collaborative learning", "Regulatory compliance", "Reduced data costs"],
+      useCases: ["Healthcare AI", "Financial services", "Cross-company collaboration", "Privacy-sensitive domains"],
+      tags: ["Federated Learning", "Privacy", "Distributed AI", "Collaboration", "Security"]
+    },
+    {
+      id: 10,
+      name: "AI-Powered Drug Discovery",
+      category: "Healthcare AI",
+      description: "Advanced AI platform for pharmaceutical research, drug discovery, and clinical trial optimization",
+      price: 6500,
+      pricingModel: "monthly",
+      aiScore: 97,
+      features: ["Molecular modeling", "Drug screening", "Clinical trial design", "Biomarker discovery"],
+      benefits: ["Faster drug development", "Cost reduction", "Success rate improvement", "Patient safety"],
+      useCases: ["Pharmaceutical research", "Clinical trials", "Personalized medicine", "Drug repurposing"],
+      tags: ["Drug Discovery", "Healthcare AI", "Pharmaceuticals", "Clinical Trials", "Personalized Medicine"]
+    },
+    {
+      id: 11,
+      name: "AI-Powered Climate Modeling",
+      category: "Environmental AI",
+      description: "Advanced climate modeling and environmental prediction using AI and machine learning",
+      price: 5200,
+      pricingModel: "monthly",
+      aiScore: 94,
+      features: ["Climate prediction", "Environmental monitoring", "Carbon tracking", "Disaster forecasting"],
+      benefits: ["Climate action planning", "Risk mitigation", "Sustainability insights", "Policy support"],
+      useCases: ["Government planning", "Agriculture optimization", "Disaster preparedness", "Environmental protection"],
+      tags: ["Climate AI", "Environmental Modeling", "Sustainability", "Risk Assessment", "Policy"]
+    },
+    {
+      id: 12,
+      name: "AI-Powered Space Exploration",
+      category: "Space AI",
+      description: "AI solutions for space exploration, satellite data analysis, and astronomical research",
+      price: 7800,
+      pricingModel: "monthly",
+      aiScore: 95,
+      features: ["Satellite data analysis", "Space object detection", "Astronomical research", "Mission planning"],
+      benefits: ["Space exploration advancement", "Scientific discovery", "Mission optimization", "Cost efficiency"],
+      useCases: ["NASA missions", "Satellite operations", "Astronomical research", "Space debris tracking"],
+      tags: ["Space AI", "Satellite Data", "Astronomy", "Space Exploration", "Research"]
+    },
+    {
+      id: 13,
+      name: "AI-Powered Financial Trading",
+      category: "Financial AI",
+      description: "Advanced AI trading platform with real-time market analysis and automated trading strategies",
+      price: 4500,
+      pricingModel: "monthly",
+      aiScore: 96,
+      features: ["Real-time analysis", "Algorithmic trading", "Risk management", "Portfolio optimization"],
+      benefits: ["Improved returns", "Risk reduction", "24/7 trading", "Emotion-free decisions"],
+      useCases: ["Hedge funds", "Investment firms", "Trading desks", "Personal investing"],
+      tags: ["Financial AI", "Algorithmic Trading", "Risk Management", "Portfolio Optimization", "Trading"]
+    },
+    {
+      id: 14,
+      name: "AI-Powered Cybersecurity",
+      category: "Security AI",
+      description: "Next-generation cybersecurity platform with AI-powered threat detection and response",
+      price: 3900,
+      pricingModel: "monthly",
+      aiScore: 95,
+      features: ["Threat detection", "Behavioral analysis", "Automated response", "Zero-day protection"],
+      benefits: ["Enhanced security", "Faster response", "Proactive protection", "Cost reduction"],
+      useCases: ["Enterprise security", "Government agencies", "Financial institutions", "Healthcare"],
+      tags: ["Cybersecurity", "Threat Detection", "Behavioral Analysis", "Zero-day", "Security"]
+    },
+    {
+      id: 15,
+      name: "AI-Powered Creative Suite",
+      category: "Creative AI",
+      description: "Comprehensive AI-powered creative platform for content generation, design, and multimedia creation",
+      price: 2800,
+      pricingModel: "monthly",
+      aiScore: 92,
+      features: ["Content generation", "Design automation", "Video creation", "Music composition"],
+      benefits: ["Creative efficiency", "Cost reduction", "24/7 creativity", "Quality improvement"],
+      useCases: ["Marketing agencies", "Content creators", "Design studios", "Entertainment"],
+      tags: ["Creative AI", "Content Generation", "Design", "Video", "Music"]
+    },
+    {
+      id: 16,
+      name: "AI-Powered Education Platform",
+      category: "Educational AI",
+      description: "Personalized learning platform with AI-powered tutoring, assessment, and curriculum optimization",
+      price: 2200,
+      pricingModel: "monthly",
+      aiScore: 91,
+      features: ["Personalized learning", "Adaptive assessment", "Intelligent tutoring", "Progress tracking"],
+      benefits: ["Improved learning outcomes", "Personalized experience", "Teacher efficiency", "Student engagement"],
+      useCases: ["K-12 education", "Higher education", "Corporate training", "Online learning"],
+      tags: ["Educational AI", "Personalized Learning", "Adaptive Assessment", "Tutoring", "Education"]
     }
   ];
 
-  const categories = ['all', 'Business Intelligence', 'Language AI', 'Visual AI', 'Predictive AI', 'Process Automation', 'Conversational AI'];
+  const categories = ['all', 'Business Intelligence', 'Language AI', 'Visual AI', 'Predictive AI', 'Process Automation', 'Conversational AI', 'Quantum AI', 'Neuromorphic AI', 'Privacy-Preserving AI', 'Healthcare AI', 'Environmental AI', 'Space AI', 'Financial AI', 'Security AI', 'Creative AI', 'Educational AI'];
 
   const filteredServices = aiServices.filter(service => {
     const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||

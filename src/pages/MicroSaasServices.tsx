@@ -292,10 +292,296 @@ const MicroSaasServices: React.FC = () => {
         email: "kleber@ziontechgroup.com",
         website: "https://ziontechgroup.com"
       }
+    },
+    // NEW INNOVATIVE SERVICES ADDED
+    {
+      id: 16,
+      name: "AI-Powered HR Assistant",
+      category: "Human Resources",
+      pricing: "Freemium",
+      description: "Intelligent HR automation with AI-powered recruitment, onboarding, and employee management",
+      price: 42,
+      pricingModel: "monthly",
+      userLimit: "Up to 100 employees",
+      features: ["AI resume screening", "Automated onboarding", "Performance tracking", "Employee self-service"],
+      benefits: ["Faster hiring", "Reduced bias", "Improved retention", "HR efficiency"],
+      targetAudience: ["Growing companies", "HR departments", "Recruitment agencies", "Startups"],
+      tags: ["HR Automation", "AI Recruitment", "Employee Management", "Onboarding", "Performance"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 17,
+      name: "SmartContract AI",
+      category: "Blockchain",
+      pricing: "Freemium",
+      description: "AI-powered smart contract development and blockchain automation for businesses",
+      price: 55,
+      pricingModel: "monthly",
+      userLimit: "Up to 10 developers",
+      features: ["Smart contract templates", "AI code generation", "Security auditing", "Deployment automation"],
+      benefits: ["Faster development", "Enhanced security", "Cost reduction", "Innovation enablement"],
+      targetAudience: ["Blockchain startups", "DeFi projects", "Enterprise blockchain", "Developers"],
+      tags: ["Blockchain", "Smart Contracts", "AI", "DeFi", "Web3"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 18,
+      name: "IoT Fleet Manager",
+      category: "IoT",
+      pricing: "Freemium",
+      description: "Comprehensive IoT fleet management with real-time tracking and predictive maintenance",
+      price: 48,
+      pricingModel: "monthly",
+      userLimit: "Up to 50 vehicles",
+      features: ["Real-time tracking", "Predictive maintenance", "Fuel optimization", "Driver analytics"],
+      benefits: ["Cost reduction", "Safety improvement", "Efficiency gains", "Data insights"],
+      targetAudience: ["Transportation companies", "Delivery services", "Fleet operators", "Logistics"],
+      tags: ["IoT", "Fleet Management", "Predictive Maintenance", "GPS Tracking", "Analytics"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 19,
+      name: "VoiceCommerce Pro",
+      category: "E-commerce",
+      pricing: "Freemium",
+      description: "Voice-activated e-commerce platform with AI-powered shopping assistants",
+      price: 38,
+      pricingModel: "monthly",
+      userLimit: "Up to 1000 products",
+      features: ["Voice search", "AI recommendations", "Multi-language support", "Analytics dashboard"],
+      benefits: ["Improved accessibility", "Higher conversion", "Better UX", "Competitive advantage"],
+      targetAudience: ["E-commerce stores", "Retail businesses", "Marketplaces", "Online sellers"],
+      tags: ["Voice Commerce", "AI", "E-commerce", "Accessibility", "Voice Search"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 20,
+      name: "QuantumML Studio",
+      category: "Quantum Computing",
+      pricing: "Freemium",
+      description: "Quantum machine learning platform for advanced AI model training and optimization",
+      price: 75,
+      pricingModel: "monthly",
+      userLimit: "Up to 5 researchers",
+      features: ["Quantum algorithms", "ML model training", "Performance optimization", "Research tools"],
+      benefits: ["Faster training", "Better accuracy", "Innovation leadership", "Research advancement"],
+      targetAudience: ["Research institutions", "AI companies", "Pharmaceutical companies", "Financial services"],
+      tags: ["Quantum Computing", "Machine Learning", "AI", "Research", "Innovation"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 21,
+      name: "AR Business Suite",
+      category: "Augmented Reality",
+      pricing: "Freemium",
+      description: "Complete AR solution for business presentations, training, and customer engagement",
+      price: 45,
+      pricingModel: "monthly",
+      userLimit: "Up to 20 users",
+      features: ["AR presentations", "Interactive training", "3D visualization", "Mobile AR apps"],
+      benefits: ["Enhanced engagement", "Better training", "Innovative marketing", "Competitive edge"],
+      targetAudience: ["Marketing agencies", "Training companies", "Real estate", "Manufacturing"],
+      tags: ["Augmented Reality", "AR", "3D Visualization", "Training", "Marketing"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 22,
+      name: "EdgeAI Platform",
+      category: "Edge Computing",
+      pricing: "Freemium",
+      description: "Edge AI platform for real-time processing and decision making at the network edge",
+      price: 52,
+      pricingModel: "monthly",
+      userLimit: "Up to 100 edge devices",
+      features: ["Real-time processing", "Edge ML models", "Device management", "Performance monitoring"],
+      benefits: ["Lower latency", "Reduced bandwidth", "Privacy protection", "Cost efficiency"],
+      targetAudience: ["IoT companies", "Manufacturing", "Smart cities", "Healthcare"],
+      tags: ["Edge Computing", "AI", "IoT", "Real-time", "Machine Learning"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 23,
+      name: "GreenTech Analytics",
+      category: "Sustainability",
+      pricing: "Freemium",
+      description: "Advanced sustainability analytics and ESG reporting for modern businesses",
+      price: 40,
+      pricingModel: "monthly",
+      userLimit: "Up to 30 users",
+      features: ["ESG reporting", "Carbon tracking", "Sustainability scoring", "Regulatory compliance"],
+      benefits: ["ESG compliance", "Investor attraction", "Brand reputation", "Cost savings"],
+      targetAudience: ["Public companies", "ESG investors", "Sustainability consultants", "Government"],
+      tags: ["ESG", "Sustainability", "Carbon Tracking", "Compliance", "Reporting"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 24,
+      name: "NeuroTech Interface",
+      category: "Neural Interfaces",
+      pricing: "Freemium",
+      description: "Brain-computer interface platform for accessibility and human-computer interaction",
+      price: 65,
+      pricingModel: "monthly",
+      userLimit: "Up to 10 users",
+      features: ["EEG monitoring", "Brain-computer control", "Accessibility tools", "Research platform"],
+      benefits: ["Accessibility improvement", "Innovation leadership", "Research advancement", "Human enhancement"],
+      targetAudience: ["Healthcare providers", "Research institutions", "Accessibility companies", "Gaming"],
+      tags: ["Neural Interfaces", "BCI", "Accessibility", "Healthcare", "Research"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 25,
+      name: "BioTech Simulator",
+      category: "Biotechnology",
+      pricing: "Freemium",
+      description: "AI-powered biotechnology simulation and drug discovery platform",
+      price: 80,
+      pricingModel: "monthly",
+      userLimit: "Up to 15 researchers",
+      features: ["Molecular modeling", "Drug discovery", "Clinical trial simulation", "Bioinformatics tools"],
+      benefits: ["Faster discovery", "Cost reduction", "Risk mitigation", "Innovation acceleration"],
+      targetAudience: ["Pharmaceutical companies", "Research institutions", "Biotech startups", "Universities"],
+      tags: ["Biotechnology", "Drug Discovery", "AI", "Molecular Modeling", "Bioinformatics"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 26,
+      name: "SpaceTech Analytics",
+      category: "Space Technology",
+      pricing: "Freemium",
+      description: "Satellite data analytics and space technology solutions for Earth observation",
+      price: 70,
+      pricingModel: "monthly",
+      userLimit: "Up to 20 users",
+      features: ["Satellite imagery", "Climate monitoring", "Agricultural insights", "Infrastructure monitoring"],
+      benefits: ["Environmental insights", "Agricultural optimization", "Infrastructure planning", "Climate action"],
+      targetAudience: ["Agriculture companies", "Environmental agencies", "Infrastructure planners", "Research"],
+      tags: ["Space Technology", "Satellite Data", "Climate Monitoring", "Agriculture", "Infrastructure"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 27,
+      name: "CyberDefense AI",
+      category: "Cybersecurity",
+      pricing: "Freemium",
+      description: "AI-powered cybersecurity platform with threat detection and automated response",
+      price: 58,
+      pricingModel: "monthly",
+      userLimit: "Up to 25 users",
+      features: ["Threat detection", "Automated response", "Vulnerability scanning", "Incident management"],
+      benefits: ["Enhanced security", "Faster response", "Reduced risk", "Cost efficiency"],
+      targetAudience: ["Financial institutions", "Healthcare", "Government", "E-commerce"],
+      tags: ["Cybersecurity", "AI", "Threat Detection", "Automation", "Incident Response"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 28,
+      name: "FinTech Compliance",
+      category: "Financial Technology",
+      pricing: "Freemium",
+      description: "Regulatory compliance and risk management platform for financial services",
+      price: 45,
+      pricingModel: "monthly",
+      userLimit: "Up to 15 users",
+      features: ["Regulatory monitoring", "Risk assessment", "Compliance reporting", "Audit trails"],
+      benefits: ["Regulatory compliance", "Risk mitigation", "Audit readiness", "Cost reduction"],
+      targetAudience: ["Banks", "Credit unions", "Fintech startups", "Investment firms"],
+      tags: ["FinTech", "Compliance", "Risk Management", "Regulations", "Auditing"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 29,
+      name: "SmartCity Platform",
+      category: "Smart Cities",
+      pricing: "Freemium",
+      description: "Comprehensive smart city management platform for urban infrastructure and services",
+      price: 60,
+      pricingModel: "monthly",
+      userLimit: "Up to 50 city departments",
+      features: ["Traffic management", "Energy optimization", "Waste management", "Public safety"],
+      benefits: ["Efficiency improvement", "Cost reduction", "Quality of life", "Sustainability"],
+      targetAudience: ["City governments", "Municipalities", "Urban planners", "Infrastructure companies"],
+      tags: ["Smart Cities", "IoT", "Urban Planning", "Infrastructure", "Sustainability"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 30,
+      name: "Metaverse Business",
+      category: "Metaverse",
+      pricing: "Freemium",
+      description: "Complete metaverse business platform for virtual commerce and experiences",
+      price: 55,
+      pricingModel: "monthly",
+      userLimit: "Up to 1000 virtual visitors",
+      features: ["Virtual storefronts", "3D product showcases", "Virtual events", "Digital asset management"],
+      benefits: ["New revenue streams", "Global reach", "Innovation leadership", "Customer engagement"],
+      targetAudience: ["Retail businesses", "Event organizers", "Real estate", "Entertainment"],
+      tags: ["Metaverse", "Virtual Reality", "Digital Commerce", "3D", "Virtual Events"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
     }
   ];
 
-  const categories = ['all', 'Productivity', 'Finance', 'Marketing', 'CRM', 'Analytics', 'Scheduling', 'Content', 'Security', 'Media', 'Education', 'Sustainability', 'Legal', 'Healthcare', 'Events', 'Inventory'];
+  const categories = ['all', 'Productivity', 'Finance', 'Marketing', 'CRM', 'Analytics', 'Scheduling', 'Content', 'Security', 'Media', 'Education', 'Sustainability', 'Legal', 'Healthcare', 'Events', 'Inventory', 'Human Resources', 'Blockchain', 'IoT', 'E-commerce', 'Quantum Computing', 'Augmented Reality', 'Edge Computing', 'Neural Interfaces', 'Biotechnology', 'Space Technology', 'Cybersecurity', 'Financial Technology', 'Smart Cities', 'Metaverse'];
   const pricingModels = ['all', 'Freemium', 'Subscription', 'One-time'];
 
   const filteredServices = microSaasServices.filter(service => {
