@@ -12,6 +12,7 @@ import { AICodeGenerator } from './components/AICodeGenerator';
 import { EnterpriseDashboard } from './components/EnterpriseDashboard';
 import { SecurityComplianceDashboard } from './components/SecurityComplianceDashboard';
 import { MachineLearningDashboard } from './components/MachineLearningDashboard';
+import { FuturisticLoader } from './components/FuturisticLoader';
 import './App.css';
 
 // Enhanced lazy loading with preloading hints
@@ -40,13 +41,13 @@ class ErrorBoundary extends React.Component<
     if (this.state.hasError) {
       return (
         <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-red-50 to-red-100">
-          <div className="text-center p-8 bg-white rounded-xl shadow-lg border border-red-200">
+          <div className="cyber-card text-center p-8 border-red-200">
             <div className="text-6xl mb-4">⚠️</div>
             <h1 className="text-2xl font-bold text-red-800 mb-4">Something went wrong</h1>
             <p className="text-red-600 mb-6">We're working to fix this issue. Please try refreshing the page.</p>
             <button
               onClick={() => window.location.reload()}
-              className="px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
+              className="neon-button px-6 py-3 text-white rounded-lg transition-colors"
             >
               Refresh Page
             </button>
@@ -59,16 +60,16 @@ class ErrorBoundary extends React.Component<
   }
 }
 
-// Enhanced Loading Component
+// Enhanced Loading Component with Futuristic Design
 const LoadingSpinner = () => (
   <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
     <div className="text-center">
-      <div className="relative">
-        <div className="w-16 h-16 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-        <div className="absolute inset-0 w-16 h-16 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mx-auto" style={{ animationDelay: '-0.5s' }}></div>
-      </div>
-      <p className="text-cyan-400 text-lg font-medium">Loading Zion Tech Group...</p>
-      <p className="text-gray-400 text-sm mt-2">Preparing your experience</p>
+      <FuturisticLoader 
+        size="large" 
+        text="Loading Zion Tech Group..." 
+        variant="quantum"
+      />
+      <p className="text-gray-400 text-sm mt-4">Preparing your experience</p>
     </div>
   </div>
 );

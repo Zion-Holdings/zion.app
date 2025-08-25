@@ -93,10 +93,18 @@ export default function Services() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zion-slate-dark via-zion-blue-dark to-zion-blue">
+    <div className="min-h-screen bg-gradient-to-br from-zion-slate-dark via-zion-blue-dark to-zion-blue relative">
+      {/* Matrix Rain Background */}
+      <div className="matrix-rain-container fixed inset-0 pointer-events-none z-0">
+        <div className="matrix-rain"></div>
+      </div>
+
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative py-20 overflow-hidden z-10">
         <div className="absolute inset-0 bg-gradient-to-b from-zion-blue-dark/50 to-transparent"></div>
+        
+        {/* Neural Network Background */}
+        <div className="absolute inset-0 neural-bg opacity-20"></div>
         
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
@@ -106,7 +114,7 @@ export default function Services() {
             className="text-center mb-16"
           >
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-6">
-              Our <span className="bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
+              Our <span className="holographic-text">
                 Services
               </span>
             </h1>
@@ -130,7 +138,7 @@ export default function Services() {
                   placeholder="Search for services, technologies, or solutions..."
                   value={query}
                   onChange={(e) => setQuery(e.target.value)}
-                  className="w-full pl-12 pr-4 py-4 bg-white/10 backdrop-blur-sm border border-zion-cyan/30 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-zion-cyan focus:border-transparent"
+                  className="cyber-card w-full pl-12 pr-4 py-4 border border-zion-cyan/30 rounded-xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-zion-cyan focus:border-transparent"
                 />
                 {query && (
                   <button
@@ -144,7 +152,7 @@ export default function Services() {
 
               {/* Search Suggestions */}
               {suggestions.length > 0 && query && (
-                <div className="absolute top-full left-0 right-0 mt-2 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 z-50">
+                <div className="absolute top-full left-0 right-0 mt-2 cyber-card rounded-lg shadow-xl border border-gray-200 dark:border-gray-700 z-50">
                   {suggestions.map((suggestion, index) => (
                     <button
                       key={index}
@@ -162,7 +170,7 @@ export default function Services() {
             </div>
           </motion.div>
 
-          {/* Category Pills */}
+          {/* Enhanced Category Pills */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -173,8 +181,8 @@ export default function Services() {
               onClick={() => handleCategorySelect('all')}
               className={`px-6 py-3 rounded-full font-medium transition-all ${
                 selectedCategory === 'all'
-                  ? 'bg-zion-cyan text-white shadow-lg shadow-zion-cyan/30'
-                  : 'bg-white/10 text-zion-slate-light hover:bg-white/20 border border-zion-cyan/30'
+                  ? 'neon-button text-white shadow-lg shadow-zion-cyan/30'
+                  : 'cyber-card text-zion-slate-light hover:border-zion-cyan/50 border border-zion-cyan/30'
               }`}
             >
               All Services ({COMPREHENSIVE_SERVICES.length})
@@ -185,8 +193,8 @@ export default function Services() {
                 onClick={() => handleCategorySelect(category)}
                 className={`px-6 py-3 rounded-full font-medium transition-all ${
                   selectedCategory === category
-                    ? 'bg-zion-cyan text-white shadow-lg shadow-zion-cyan/30'
-                    : 'bg-white/10 text-zion-slate-light hover:bg-white/20 border border-zion-cyan/30'
+                    ? 'neon-button text-white shadow-lg shadow-zion-cyan/30'
+                    : 'cyber-card text-zion-slate-light hover:border-zion-cyan/50 border border-zion-cyan/30'
                 }`}
               >
                 {category} ({COMPREHENSIVE_SERVICES.filter(s => s.category === category).length})
@@ -194,7 +202,7 @@ export default function Services() {
             ))}
           </motion.div>
 
-          {/* Filters and Sort Controls */}
+          {/* Enhanced Filters and Sort Controls */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -204,7 +212,7 @@ export default function Services() {
             <div className="flex items-center gap-4">
               <button
                 onClick={() => setShowFilters(!showFilters)}
-                className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 text-zion-slate-light rounded-lg transition-colors"
+                className="cyber-card flex items-center gap-2 px-4 py-2 hover:border-zion-cyan/50 text-zion-slate-light rounded-lg transition-colors"
               >
                 <Filter className="w-4 h-4" />
                 Filters
@@ -224,8 +232,8 @@ export default function Services() {
               <span className="text-zion-slate-light text-sm">Sort by:</span>
               <button
                 onClick={() => handleSort('title')}
-                className={`flex items-center gap-1 px-3 py-2 rounded-lg transition-colors ${
-                  sortBy === 'title' ? 'bg-zion-cyan/20 text-zion-cyan' : 'bg-white/10 text-zion-slate-light hover:bg-white/20'
+                className={`cyber-card flex items-center gap-1 px-3 py-2 rounded-lg transition-colors ${
+                  sortBy === 'title' ? 'border-zion-cyan/50 text-zion-cyan' : 'text-zion-slate-light hover:border-zion-cyan/50'
                 }`}
               >
                 Name
@@ -235,8 +243,8 @@ export default function Services() {
               </button>
               <button
                 onClick={() => handleSort('price')}
-                className={`flex items-center gap-1 px-3 py-2 rounded-lg transition-colors ${
-                  sortBy === 'price' ? 'bg-zion-cyan/20 text-zion-cyan' : 'bg-white/10 text-zion-slate-light hover:bg-white/20'
+                className={`cyber-card flex items-center gap-1 px-3 py-2 rounded-lg transition-colors ${
+                  sortBy === 'price' ? 'border-zion-cyan/50 text-zion-cyan' : 'text-zion-slate-light hover:border-zion-cyan/50'
                 }`}
               >
                 Price
@@ -247,13 +255,13 @@ export default function Services() {
             </div>
           </motion.div>
 
-          {/* Filters Panel */}
+          {/* Enhanced Filters Panel */}
           {showFilters && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="bg-white/10 backdrop-blur-sm border border-zion-cyan/30 rounded-xl p-6 mb-8"
+              className="cyber-card backdrop-blur-sm border border-zion-cyan/30 rounded-xl p-6 mb-8"
             >
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div>
@@ -261,7 +269,7 @@ export default function Services() {
                   <select
                     value={filters.pricingModel || ''}
                     onChange={(e) => setFilter('pricingModel', e.target.value || '')}
-                    className="w-full px-3 py-2 bg-white/10 border border-zion-cyan/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-zion-cyan"
+                    className="cyber-card w-full px-3 py-2 border border-zion-cyan/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-zion-cyan"
                   >
                     <option value="">All Models</option>
                     <option value="monthly">Monthly</option>
@@ -275,7 +283,7 @@ export default function Services() {
                   <select
                     value={filters.supportLevel || ''}
                     onChange={(e) => setFilter('supportLevel', e.target.value || '')}
-                    className="w-full px-3 py-2 bg-white/10 border border-zion-cyan/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-zion-cyan"
+                    className="cyber-card w-full px-3 py-2 border border-zion-cyan/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-zion-cyan"
                   >
                     <option value="">All Levels</option>
                     <option value="basic">Basic</option>
@@ -292,14 +300,14 @@ export default function Services() {
                       placeholder="Min"
                       value={filters.minPrice || ''}
                       onChange={(e) => setFilter('minPrice', e.target.value ? Number(e.target.value) : '')}
-                      className="flex-1 px-3 py-2 bg-white/10 border border-zion-cyan/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-zion-cyan"
+                      className="cyber-card flex-1 px-3 py-2 border border-zion-cyan/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-zion-cyan"
                     />
                     <input
                       type="number"
                       placeholder="Max"
                       value={filters.maxPrice || ''}
                       onChange={(e) => setFilter('maxPrice', e.target.value ? Number(e.target.value) : '')}
-                      className="flex-1 px-3 py-2 bg-white/10 border border-zion-cyan/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-zion-cyan"
+                      className="cyber-card flex-1 px-3 py-2 border border-zion-cyan/30 rounded-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-zion-cyan"
                     />
                   </div>
                 </div>
@@ -310,7 +318,7 @@ export default function Services() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20">
+      <section className="py-20 relative z-10">
         <div className="container mx-auto px-4">
           {/* Results Summary */}
           <div className="text-center mb-12">
@@ -321,7 +329,7 @@ export default function Services() {
             </p>
           </div>
 
-          {/* Services Grid */}
+          {/* Enhanced Services Grid */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -330,7 +338,7 @@ export default function Services() {
           >
             {paginatedResults.results.map((service) => (
               <motion.div key={service.id} variants={itemVariants}>
-                <div className="group bg-gradient-to-br from-zion-blue-dark/80 to-zion-blue-dark/40 backdrop-blur-sm rounded-xl overflow-hidden border border-zion-blue-light/30 hover:border-zion-cyan/50 transition-all duration-500 hover:transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-zion-cyan/20">
+                <div className="cyber-card group overflow-hidden hover:border-zion-cyan/50 transition-all duration-500 hover:transform hover:scale-[1.02] hover:shadow-2xl hover:shadow-zion-cyan/20">
                   {/* Service Image */}
                   <div className="relative h-48 overflow-hidden">
                     <OptimizedImage
@@ -340,7 +348,7 @@ export default function Services() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                     <div className="absolute top-4 right-4">
-                      <span className="px-3 py-1 bg-zion-cyan/20 text-zion-cyan text-xs font-medium rounded-full">
+                      <span className="cyber-card px-3 py-1 text-zion-cyan text-xs font-medium rounded-full">
                         {service.category}
                       </span>
                     </div>
@@ -359,7 +367,7 @@ export default function Services() {
                     {/* Tags */}
                     <div className="flex flex-wrap gap-2 mb-4">
                       {service.tags.slice(0, 3).map((tag, index) => (
-                        <span key={index} className="px-2 py-1 rounded-md bg-zion-slate/30 text-zion-slate-light text-xs">
+                        <span key={index} className="cyber-card px-2 py-1 rounded-md text-zion-slate-light text-xs">
                           {tag}
                         </span>
                       ))}
@@ -379,11 +387,11 @@ export default function Services() {
                     
                     {/* Price and CTA */}
                     <div className="flex items-center justify-between">
-                      <div className="text-2xl font-bold text-zion-cyan">
+                      <div className="text-2xl font-bold neon-text">
                         {service.currency}{service.price.toLocaleString()}
                         <span className="text-sm text-zion-slate-light font-normal">/{service.pricingModel}</span>
                       </div>
-                      <button className="px-4 py-2 bg-gradient-to-r from-zion-cyan to-zion-purple text-white rounded-lg font-medium hover:from-zion-cyan-light hover:to-zion-purple-light transition-all duration-300 transform hover:scale-105">
+                      <button className="neon-button px-4 py-2 text-white rounded-lg font-medium transform hover:scale-105 transition-all duration-300">
                         Get Quote
                       </button>
                     </div>
@@ -393,25 +401,25 @@ export default function Services() {
             ))}
           </motion.div>
 
-          {/* Pagination */}
+          {/* Enhanced Pagination */}
           {paginatedResults.totalPages > 1 && (
             <div className="flex justify-center items-center gap-2">
               <button
                 onClick={() => setCurrentPage(currentPage - 1)}
                 disabled={!paginatedResults.hasPrevPage}
-                className="px-4 py-2 bg-white/10 text-zion-slate-light rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-white/20 transition-colors"
+                className="cyber-card px-4 py-2 text-zion-slate-light rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:border-zion-cyan/50 transition-colors"
               >
                 Previous
               </button>
               
-              <span className="px-4 py-2 text-zion-slate-light">
+              <span className="cyber-card px-4 py-2 text-zion-slate-light">
                 Page {currentPage} of {paginatedResults.totalPages}
               </span>
               
               <button
                 onClick={() => setCurrentPage(currentPage + 1)}
                 disabled={!paginatedResults.hasNextPage}
-                className="px-4 py-2 bg-white/10 text-zion-slate-light rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-white/20 transition-colors"
+                className="cyber-card px-4 py-2 text-zion-slate-light rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:border-zion-cyan/50 transition-colors"
               >
                 Next
               </button>

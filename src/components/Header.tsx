@@ -31,15 +31,18 @@ export function Header() {
         ? 'bg-black/90 backdrop-blur-xl border-b border-cyan-500/30 shadow-2xl shadow-cyan-500/20' 
         : 'bg-gradient-to-r from-black/80 via-blue-900/80 to-purple-900/80 backdrop-blur-md'
     }`}>
-      {/* Animated Background */}
+      {/* Enhanced Animated Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10 animate-pulse"></div>
       
-      {/* Matrix Rain Effect */}
+      {/* Neural Network Background */}
+      <div className="absolute inset-0 neural-bg opacity-20"></div>
+      
+      {/* Enhanced Matrix Rain Effect */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(15)].map((_, i) => (
+        {[...Array(20)].map((_, i) => (
           <div
             key={i}
-            className="absolute text-cyan-400 text-xs animate-matrix-rain opacity-30"
+            className="absolute text-cyan-400 text-xs animate-matrix-rain opacity-40"
             style={{
               left: `${Math.random() * 100}%`,
               animationDelay: `${Math.random() * 20}s`,
@@ -51,25 +54,31 @@ export function Header() {
         ))}
       </div>
 
+      {/* Quantum Field Effect */}
+      <div className="absolute inset-0 quantum-field opacity-10"></div>
+
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-20">
-          {/* Logo */}
+          {/* Enhanced Logo */}
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="relative">
-              <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-lg lg:text-xl shadow-lg shadow-cyan-500/50 group-hover:shadow-cyan-400/70 transition-all duration-300 group-hover:scale-110">
+              <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg flex items-center justify-center text-white font-bold text-lg lg:text-xl shadow-lg shadow-cyan-500/50 group-hover:shadow-cyan-400/70 transition-all duration-300 group-hover:scale-110 animate-quantum-float">
                 Z
               </div>
               <div className="absolute inset-0 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-lg blur-lg opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
+              
+              {/* Holographic Ring Effect */}
+              <div className="absolute inset-0 rounded-lg border-2 border-cyan-400/30 group-hover:border-cyan-400/60 transition-all duration-300 animate-neon-border"></div>
             </div>
             <div className="hidden sm:block">
-              <h1 className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+              <h1 className="text-xl lg:text-2xl font-bold holographic-text">
                 Zion Tech Group
               </h1>
               <p className="text-xs text-gray-400 -mt-1">The Tech & AI Marketplace</p>
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Enhanced Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
             {navigationItems.map((item) => (
               <Link
@@ -77,43 +86,48 @@ export function Header() {
                 to={item.path}
                 className={`relative px-4 py-2 rounded-lg font-medium transition-all duration-300 group ${
                   isActive(item.path)
-                    ? 'text-white bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/50 shadow-lg shadow-cyan-500/30'
-                    : 'text-gray-300 hover:text-white hover:bg-white/10'
+                    ? 'text-white cyber-card border-cyan-500/50 shadow-lg shadow-cyan-500/30'
+                    : 'text-gray-300 hover:text-white cyber-card hover:border-cyan-500/50'
                 }`}
               >
-                <span className="flex items-center space-x-2">
-                  <span className="text-sm">{item.icon}</span>
+                <span className="flex items-center space-x-2 relative z-10">
+                  <span className="text-sm animate-quantum-float">{item.icon}</span>
                   <span>{item.label}</span>
                 </span>
                 
-                {/* Hover Effect */}
+                {/* Enhanced Hover Effect */}
                 <div className={`absolute inset-0 rounded-lg bg-gradient-to-r from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
                   isActive(item.path) ? 'opacity-100' : ''
                 }`}></div>
                 
-                {/* Active Indicator */}
+                {/* Enhanced Active Indicator */}
                 {isActive(item.path) && (
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-cyan-400 rounded-full animate-pulse"></div>
+                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-cyan-400 rounded-full animate-pulse-glow"></div>
                 )}
+                
+                {/* Cyber Wave Effect */}
+                <div className="absolute inset-0 rounded-lg overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-cyan-500/20 to-transparent transform -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                </div>
               </Link>
             ))}
           </nav>
 
-          {/* Contact Info */}
+          {/* Enhanced Contact Info */}
           <div className="hidden lg:flex items-center space-x-4">
-            <div className="text-right">
-              <p className="text-sm text-cyan-400 font-medium">+1 302 464 0950</p>
+            <div className="text-right cyber-card px-3 py-2 border-cyan-500/30">
+              <p className="text-sm neon-text font-medium">+1 302 464 0950</p>
               <p className="text-xs text-gray-400">kleber@ziontechgroup.com</p>
             </div>
-            <button className="px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-medium hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 shadow-lg shadow-cyan-500/30 hover:shadow-cyan-400/50 transform hover:scale-105">
+            <button className="neon-button px-4 py-2 text-white rounded-lg font-medium transform hover:scale-105 transition-all duration-300">
               Get Quote
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Enhanced Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-colors duration-200"
+            className="lg:hidden cyber-card p-2 rounded-lg text-gray-300 hover:text-white hover:border-cyan-500/50 transition-all duration-200"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isMenuOpen ? (
@@ -125,35 +139,35 @@ export function Header() {
           </button>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Enhanced Mobile Navigation */}
         {isMenuOpen && (
           <div className="lg:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-black/50 backdrop-blur-xl rounded-lg border border-cyan-500/30 shadow-xl shadow-cyan-500/20">
+            <div className="cyber-card px-2 pt-2 pb-3 space-y-1 backdrop-blur-xl rounded-lg border border-cyan-500/30 shadow-xl shadow-cyan-500/20">
               {navigationItems.map((item) => (
                 <Link
                   key={item.path}
                   to={item.path}
                   onClick={() => setIsMenuOpen(false)}
-                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                  className={`block px-3 py-2 rounded-md text-base font-medium transition-all duration-200 ${
                     isActive(item.path)
-                      ? 'text-white bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/50'
-                      : 'text-gray-300 hover:text-white hover:bg-white/10'
+                      ? 'text-white cyber-card border-cyan-500/50'
+                      : 'text-gray-300 hover:text-white cyber-card hover:border-cyan-500/50'
                   }`}
                 >
                   <span className="flex items-center space-x-3">
-                    <span className="text-lg">{item.icon}</span>
+                    <span className="text-lg animate-quantum-float">{item.icon}</span>
                     <span>{item.label}</span>
                   </span>
                 </Link>
               ))}
               
-              {/* Mobile Contact Info */}
+              {/* Enhanced Mobile Contact Info */}
               <div className="pt-4 border-t border-cyan-500/30">
-                <div className="px-3 py-2">
-                  <p className="text-sm text-cyan-400 font-medium">+1 302 464 0950</p>
+                <div className="cyber-card px-3 py-2 border-cyan-500/30">
+                  <p className="text-sm neon-text font-medium">+1 302 464 0950</p>
                   <p className="text-xs text-gray-400">kleber@ziontechgroup.com</p>
                 </div>
-                <button className="w-full mt-2 px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-medium hover:from-cyan-400 hover:to-blue-400 transition-all duration-300">
+                <button className="w-full mt-2 neon-button px-4 py-2 text-white rounded-lg font-medium transform hover:scale-105 transition-all duration-300">
                   Get Quote
                 </button>
               </div>
