@@ -257,6 +257,93 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Innovative Services Showcase */}
+      <section className="py-20 px-4 relative overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl animate-pulse animation-delay-1000"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Innovative <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">Micro SAAS</span> Solutions
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Discover our cutting-edge micro SAAS services powered by AI, quantum computing, and blockchain technology.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {[
+              {
+                icon: "🚀",
+                title: "AI Content Orchestrator",
+                description: "Enterprise-grade AI content management with predictive analytics",
+                price: "From $99/month",
+                features: ["Multi-language generation", "SEO optimization", "Brand consistency"],
+                color: "from-cyan-500 to-blue-500",
+                link: "/innovative-services"
+              },
+              {
+                icon: "🔮",
+                title: "Quantum CRM Intelligence",
+                description: "Next-gen CRM with quantum-inspired predictive analytics",
+                price: "From $149/month",
+                features: ["Predictive analytics", "AI lead scoring", "Sales forecasting"],
+                color: "from-blue-500 to-purple-500",
+                link: "/innovative-services"
+              },
+              {
+                icon: "🛡️",
+                title: "Cyber Shield Enterprise",
+                description: "Comprehensive cybersecurity with AI threat detection",
+                price: "From $199/month",
+                features: ["Real-time monitoring", "Compliance management", "24/7 protection"],
+                color: "from-purple-500 to-pink-500",
+                link: "/innovative-services"
+              }
+            ].map((service, index) => (
+              <div key={index} className="group text-center p-6 bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-xl border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20">
+                <div className="relative mb-4">
+                  <div className="text-5xl group-hover:scale-110 transition-transform duration-300">
+                    {service.icon}
+                  </div>
+                  <div className={`absolute inset-0 bg-gradient-to-r ${service.color} rounded-full blur-lg opacity-0 group-hover:opacity-20 transition-opacity duration-300`}></div>
+                </div>
+                <h3 className="text-lg font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">{service.title}</h3>
+                <p className="text-gray-400 text-sm mb-3">{service.description}</p>
+                <div className="text-cyan-400 font-semibold text-sm mb-3">{service.price}</div>
+                <div className="space-y-1 mb-4">
+                  {service.features.map((feature, idx) => (
+                    <div key={idx} className="text-gray-500 text-xs flex items-center justify-center">
+                      <div className="w-1 h-1 bg-cyan-400 rounded-full mr-2"></div>
+                      {feature}
+                    </div>
+                  ))}
+                </div>
+                <a
+                  href={service.link}
+                  className="inline-block px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white text-sm font-semibold rounded-lg hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 transform hover:scale-105"
+                >
+                  Learn More
+                </a>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <a
+              href="/innovative-services"
+              className="inline-block px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-xl hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105"
+            >
+              View All Innovative Services
+            </a>
+          </div>
+        </div>
+      </section>
+
       {/* New Technologies Section */}
       <section className="py-20 px-4 relative overflow-hidden">
         {/* Animated Background */}
