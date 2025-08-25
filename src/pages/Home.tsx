@@ -20,6 +20,7 @@ import { GlobalPresenceSection } from "@/components/GlobalPresenceSection";
 import { InnovationResearchSection } from "@/components/InnovationResearchSection";
 import { ClientSuccessStoriesSection } from "@/components/ClientSuccessStoriesSection";
 import { TechnologyStackSection } from "@/components/TechnologyStackSection";
+import { SecurityComplianceSection } from "@/components/SecurityComplianceSection";
 
 export default function Home() {
   return (
@@ -45,6 +46,7 @@ export default function Home() {
       <InnovationResearchSection />
       <ClientSuccessStoriesSection />
       <TechnologyStackSection />
+      <SecurityComplianceSection />
       <PricingSection />
       <FeaturedListingsSection />
       <NewsletterSection />
