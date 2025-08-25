@@ -566,6 +566,1038 @@ export const COMPREHENSIVE_SERVICES: ComprehensiveService[] = [
       email: "kleber@ziontechgroup.com",
       website: "https://ziontechgroup.com"
     }
+  },
+
+  // Additional AI & Machine Learning Services
+  {
+    id: "ai-content-generator",
+    title: "AI Content Generation Suite",
+    description: "Advanced AI-powered content creation platform for marketing, social media, and business communications with multi-language support.",
+    category: "AI & Machine Learning",
+    subcategory: "Content Creation",
+    price: 299,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Multi-format content generation",
+      "SEO optimization",
+      "Brand voice consistency",
+      "Plagiarism detection",
+      "Multi-language support",
+      "Content analytics"
+    ],
+    benefits: [
+      "10x faster content creation",
+      "Improved SEO rankings",
+      "Consistent brand messaging",
+      "Cost-effective marketing",
+      "Global market reach"
+    ],
+    useCases: [
+      "Marketing teams",
+      "Content creators",
+      "Social media managers",
+      "E-commerce businesses",
+      "Agencies"
+    ],
+    targetAudience: [
+      "Marketing professionals",
+      "Content creators",
+      "Business owners",
+      "Digital agencies",
+      "E-commerce managers"
+    ],
+    tags: ["AI Content", "Marketing", "SEO", "Multi-language", "Automation"],
+    estimatedDelivery: "1-2 weeks",
+    supportLevel: "standard",
+    marketPrice: "$299 - $999/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
+  },
+  {
+    id: "ai-video-editor",
+    title: "AI Video Editing Platform",
+    description: "Intelligent video editing platform that automates editing tasks, enhances quality, and creates professional content with minimal effort.",
+    category: "AI & Machine Learning",
+    subcategory: "Video Processing",
+    price: 199,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Auto-editing algorithms",
+      "Quality enhancement",
+      "Template library",
+      "Cloud rendering",
+      "Collaborative editing",
+      "Export optimization"
+    ],
+    benefits: [
+      "90% faster editing",
+      "Professional quality output",
+      "Reduced skill requirements",
+      "Cloud-based workflow",
+      "Cost-effective production"
+    ],
+    useCases: [
+      "Content creators",
+      "Marketing teams",
+      "Educational institutions",
+      "Business presentations",
+      "Social media"
+    ],
+    targetAudience: [
+      "Video creators",
+      "Marketing professionals",
+      "Educators",
+      "Business presenters",
+      "Social media managers"
+    ],
+    tags: ["AI Video", "Editing", "Automation", "Cloud", "Templates"],
+    estimatedDelivery: "2-3 weeks",
+    supportLevel: "standard",
+    marketPrice: "$199 - $599/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
+  },
+  {
+    id: "ai-customer-support",
+    title: "AI Customer Support Automation",
+    description: "Intelligent customer support system that handles inquiries, provides instant responses, and escalates complex issues to human agents.",
+    category: "AI & Machine Learning",
+    subcategory: "Customer Service",
+    price: 399,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "24/7 automated support",
+      "Multi-language chat",
+      "Ticket management",
+      "Knowledge base integration",
+      "Sentiment analysis",
+      "Human escalation"
+    ],
+    benefits: [
+      "Instant response times",
+      "Reduced support costs",
+      "Improved customer satisfaction",
+      "Scalable support",
+      "Data-driven insights"
+    ],
+    useCases: [
+      "E-commerce platforms",
+      "SaaS companies",
+      "Service businesses",
+      "Educational institutions",
+      "Healthcare providers"
+    ],
+    targetAudience: [
+      "Customer service managers",
+      "Business owners",
+      "E-commerce operators",
+      "Service providers",
+      "Support teams"
+    ],
+    tags: ["AI Support", "Chatbot", "Automation", "24/7", "Multi-language"],
+    estimatedDelivery: "2-3 weeks",
+    supportLevel: "premium",
+    marketPrice: "$399 - $1,299/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
+  },
+
+  // Additional Cybersecurity Services
+  {
+    id: "ai-threat-detection",
+    title: "AI-Powered Threat Detection",
+    description: "Next-generation threat detection system using machine learning to identify and respond to cyber threats in real-time.",
+    category: "Cybersecurity",
+    subcategory: "AI Security",
+    price: 899,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Real-time threat detection",
+      "Behavioral analysis",
+      "Automated response",
+      "Threat intelligence",
+      "Compliance reporting",
+      "Security dashboard"
+    ],
+    benefits: [
+      "Proactive threat prevention",
+      "Reduced false positives",
+      "Automated incident response",
+      "Compliance automation",
+      "Cost-effective security"
+    ],
+    useCases: [
+      "Financial institutions",
+      "Healthcare organizations",
+      "Government agencies",
+      "Technology companies",
+      "Educational institutions"
+    ],
+    targetAudience: [
+      "Security analysts",
+      "IT managers",
+      "CISOs",
+      "Compliance officers",
+      "Security teams"
+    ],
+    tags: ["AI Security", "Threat Detection", "Machine Learning", "Automation", "Compliance"],
+    estimatedDelivery: "3-4 weeks",
+    supportLevel: "premium",
+    marketPrice: "$899 - $2,999/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
+  },
+  {
+    id: "secure-file-sharing",
+    title: "Secure Enterprise File Sharing",
+    description: "Enterprise-grade secure file sharing platform with end-to-end encryption, access controls, and compliance features.",
+    category: "Cybersecurity",
+    subcategory: "Data Protection",
+    price: 149,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "End-to-end encryption",
+      "Access controls",
+      "Audit trails",
+      "Compliance reporting",
+      "Mobile apps",
+      "Integration APIs"
+    ],
+    benefits: [
+      "Enhanced data security",
+      "Regulatory compliance",
+      "Improved collaboration",
+      "Reduced risk",
+      "Centralized management"
+    ],
+    useCases: [
+      "Legal firms",
+      "Healthcare providers",
+      "Financial services",
+      "Consulting companies",
+      "Government agencies"
+    ],
+    targetAudience: [
+      "IT administrators",
+      "Security managers",
+      "Compliance officers",
+      "Legal teams",
+      "Business managers"
+    ],
+    tags: ["File Sharing", "Encryption", "Security", "Compliance", "Collaboration"],
+    estimatedDelivery: "1-2 weeks",
+    supportLevel: "standard",
+    marketPrice: "$149 - $499/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
+  },
+
+  // Additional Cloud & Infrastructure Services
+  {
+    id: "serverless-automation",
+    title: "Serverless Workflow Automation",
+    description: "Cloud-native workflow automation platform that scales automatically and reduces infrastructure costs through serverless architecture.",
+    category: "Cloud & Infrastructure",
+    subcategory: "Serverless",
+    price: 99,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Visual workflow builder",
+      "Serverless execution",
+      "API integrations",
+      "Real-time monitoring",
+      "Error handling",
+      "Scalable triggers"
+    ],
+    benefits: [
+      "Reduced infrastructure costs",
+      "Automatic scaling",
+      "Faster deployment",
+      "Improved reliability",
+      "Pay-per-use pricing"
+    ],
+    useCases: [
+      "Business process automation",
+      "Data processing pipelines",
+      "API orchestration",
+      "Scheduled tasks",
+      "Event-driven workflows"
+    ],
+    targetAudience: [
+      "DevOps engineers",
+      "Business analysts",
+      "IT managers",
+      "Process automation teams",
+      "System administrators"
+    ],
+    tags: ["Serverless", "Automation", "Workflows", "Cloud", "Scalability"],
+    estimatedDelivery: "2-3 weeks",
+    supportLevel: "standard",
+    marketPrice: "$99 - $399/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
+  },
+  {
+    id: "edge-computing-platform",
+    title: "Edge Computing Platform",
+    description: "Distributed edge computing platform that brings processing closer to data sources for improved performance and reduced latency.",
+    category: "Cloud & Infrastructure",
+    subcategory: "Edge Computing",
+    price: 599,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Global edge locations",
+      "Real-time processing",
+      "Data synchronization",
+      "Load balancing",
+      "Security protocols",
+      "Monitoring dashboard"
+    ],
+    benefits: [
+      "Reduced latency",
+      "Improved performance",
+      "Bandwidth optimization",
+      "Enhanced security",
+      "Global scalability"
+    ],
+    useCases: [
+      "IoT applications",
+      "Real-time analytics",
+      "Content delivery",
+      "Gaming platforms",
+      "Financial trading"
+    ],
+    targetAudience: [
+      "IoT developers",
+      "System architects",
+      "DevOps engineers",
+      "Performance engineers",
+      "Infrastructure teams"
+    ],
+    tags: ["Edge Computing", "IoT", "Real-time", "Performance", "Global"],
+    estimatedDelivery: "3-4 weeks",
+    supportLevel: "premium",
+    marketPrice: "$599 - $1,999/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
+  },
+
+  // Additional Data & Analytics Services
+  {
+    id: "predictive-analytics",
+    title: "Predictive Analytics Platform",
+    description: "Advanced predictive analytics platform that uses machine learning to forecast trends, identify patterns, and provide actionable insights.",
+    category: "Data & Analytics",
+    subcategory: "Predictive Analytics",
+    price: 799,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Machine learning models",
+      "Data visualization",
+      "Automated insights",
+      "Forecasting tools",
+      "Model management",
+      "API access"
+    ],
+    benefits: [
+      "Data-driven decisions",
+      "Predictive insights",
+      "Risk mitigation",
+      "Competitive advantage",
+      "Automated analysis"
+    ],
+    useCases: [
+      "Financial forecasting",
+      "Sales predictions",
+      "Risk assessment",
+      "Inventory management",
+      "Customer behavior"
+    ],
+    targetAudience: [
+      "Data scientists",
+      "Business analysts",
+      "Financial analysts",
+      "Marketing teams",
+      "Operations managers"
+    ],
+    tags: ["Predictive Analytics", "Machine Learning", "Forecasting", "Insights", "Automation"],
+    estimatedDelivery: "3-4 weeks",
+    supportLevel: "premium",
+    marketPrice: "$799 - $2,499/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
+  },
+  {
+    id: "data-governance",
+    title: "Data Governance & Compliance",
+    description: "Comprehensive data governance platform that ensures data quality, compliance, and security across organizations.",
+    category: "Data & Analytics",
+    subcategory: "Data Governance",
+    price: 1299,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Data quality monitoring",
+      "Compliance tracking",
+      "Policy management",
+      "Audit trails",
+      "Data lineage",
+      "Risk assessment"
+    ],
+    benefits: [
+      "Regulatory compliance",
+      "Data quality improvement",
+      "Risk reduction",
+      "Operational efficiency",
+      "Trust building"
+    ],
+    useCases: [
+      "Financial services",
+      "Healthcare organizations",
+      "Government agencies",
+      "Retail companies",
+      "Manufacturing"
+    ],
+    targetAudience: [
+      "Data governance officers",
+      "Compliance managers",
+      "Data stewards",
+      "Legal teams",
+      "IT managers"
+    ],
+    tags: ["Data Governance", "Compliance", "Quality", "Risk Management", "Audit"],
+    estimatedDelivery: "4-6 weeks",
+    supportLevel: "premium",
+    marketPrice: "$1,299 - $3,999/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
+  },
+
+  // Additional Web & Mobile Development Services
+  {
+    id: "progressive-web-apps",
+    title: "Progressive Web App Development",
+    description: "Modern progressive web applications that provide native app-like experience with offline functionality and cross-platform compatibility.",
+    category: "Web & Mobile Development",
+    subcategory: "Progressive Web Apps",
+    price: 3999,
+    currency: "$",
+    pricingModel: "project",
+    features: [
+      "Offline functionality",
+      "Push notifications",
+      "App-like experience",
+      "Cross-platform",
+      "Fast loading",
+      "SEO optimized"
+    ],
+    benefits: [
+      "Lower development costs",
+      "Faster deployment",
+      "Better user experience",
+      "Improved performance",
+      "Easier maintenance"
+    ],
+    useCases: [
+      "E-commerce platforms",
+      "Business applications",
+      "Content platforms",
+      "Social media apps",
+      "Utility applications"
+    ],
+    targetAudience: [
+      "Business owners",
+      "Product managers",
+      "Marketing teams",
+      "Startups",
+      "Enterprises"
+    ],
+    tags: ["PWA", "Web Development", "Mobile", "Offline", "Cross-Platform"],
+    estimatedDelivery: "4-6 weeks",
+    supportLevel: "standard",
+    marketPrice: "$3,999 - $15,000/project",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
+  },
+  {
+    id: "mobile-app-development",
+    title: "Native Mobile App Development",
+    description: "High-performance native mobile applications for iOS and Android with modern UI/UX design and advanced features.",
+    category: "Web & Mobile Development",
+    subcategory: "Mobile Apps",
+    price: 8999,
+    currency: "$",
+    pricingModel: "project",
+    features: [
+      "Native iOS & Android",
+      "Modern UI/UX design",
+      "Performance optimization",
+      "App store deployment",
+      "Analytics integration",
+      "Maintenance support"
+    ],
+    benefits: [
+      "Best performance",
+      "Native features access",
+      "App store presence",
+      "User engagement",
+      "Brand recognition"
+    ],
+    useCases: [
+      "Business applications",
+      "E-commerce platforms",
+      "Social media apps",
+      "Utility tools",
+      "Entertainment apps"
+    ],
+    targetAudience: [
+      "Business owners",
+      "Startups",
+      "Enterprises",
+      "Product managers",
+      "Marketing teams"
+    ],
+    tags: ["Mobile Apps", "iOS", "Android", "Native", "UI/UX"],
+    estimatedDelivery: "8-12 weeks",
+    supportLevel: "premium",
+    marketPrice: "$8,999 - $50,000/project",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
+  },
+
+  // Additional IT Support & Consulting Services
+  {
+    id: "cloud-migration",
+    title: "Cloud Migration Services",
+    description: "Comprehensive cloud migration services including assessment, planning, execution, and optimization for modern cloud environments.",
+    category: "IT Support & Consulting",
+    subcategory: "Cloud Migration",
+    price: 4999,
+    currency: "$",
+    pricingModel: "project",
+    features: [
+      "Migration assessment",
+      "Architecture planning",
+      "Data migration",
+      "Application refactoring",
+      "Performance optimization",
+      "Training & support"
+    ],
+    benefits: [
+      "Reduced infrastructure costs",
+      "Improved scalability",
+      "Enhanced security",
+      "Better performance",
+      "Modern technology stack"
+    ],
+    useCases: [
+      "Legacy system modernization",
+      "Data center consolidation",
+      "Application modernization",
+      "Disaster recovery",
+      "Cost optimization"
+    ],
+    targetAudience: [
+      "IT directors",
+      "System administrators",
+      "DevOps teams",
+      "Business owners",
+      "Technology managers"
+    ],
+    tags: ["Cloud Migration", "Modernization", "Planning", "Execution", "Optimization"],
+    estimatedDelivery: "6-12 weeks",
+    supportLevel: "premium",
+    marketPrice: "$4,999 - $25,000/project",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
+  },
+  {
+    id: "digital-transformation",
+    title: "Digital Transformation Consulting",
+    description: "Strategic digital transformation consulting to help organizations modernize processes, adopt new technologies, and improve efficiency.",
+    category: "IT Support & Consulting",
+    subcategory: "Digital Transformation",
+    price: 2999,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Strategy development",
+      "Process optimization",
+      "Technology assessment",
+      "Change management",
+      "Performance monitoring",
+      "Continuous improvement"
+    ],
+    benefits: [
+      "Improved efficiency",
+      "Cost reduction",
+      "Competitive advantage",
+      "Employee productivity",
+      "Customer satisfaction"
+    ],
+    useCases: [
+      "Process automation",
+      "Technology adoption",
+      "Workflow optimization",
+      "Customer experience",
+      "Operational efficiency"
+    ],
+    targetAudience: [
+      "Executives",
+      "Operations managers",
+      "IT directors",
+      "Business consultants",
+      "Change managers"
+    ],
+    tags: ["Digital Transformation", "Strategy", "Process Optimization", "Change Management", "Consulting"],
+    estimatedDelivery: "Ongoing",
+    supportLevel: "premium",
+    marketPrice: "$2,999 - $10,000/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
+  },
+
+  // Additional Blockchain & Web3 Services
+  {
+    id: "nft-marketplace",
+    title: "NFT Marketplace Development",
+    description: "Custom NFT marketplace development with minting, trading, and management features for digital assets and collectibles.",
+    category: "Blockchain & Web3",
+    subcategory: "NFT Platforms",
+    price: 19999,
+    currency: "$",
+    pricingModel: "project",
+    features: [
+      "NFT minting",
+      "Marketplace functionality",
+      "Wallet integration",
+      "Trading features",
+      "Analytics dashboard",
+      "Mobile apps"
+    ],
+    benefits: [
+      "Revenue generation",
+      "Community building",
+      "Brand recognition",
+      "Technology leadership",
+      "Market positioning"
+    ],
+    useCases: [
+      "Digital art",
+      "Gaming assets",
+      "Collectibles",
+      "Music & videos",
+      "Virtual real estate"
+    ],
+    targetAudience: [
+      "Artists & creators",
+      "Gaming companies",
+      "Entertainment brands",
+      "Collectors",
+      "Investors"
+    ],
+    tags: ["NFT", "Blockchain", "Marketplace", "Digital Assets", "Web3"],
+    estimatedDelivery: "12-16 weeks",
+    supportLevel: "premium",
+    marketPrice: "$19,999 - $100,000/project",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
+  },
+  {
+    id: "smart-contract-audit",
+    title: "Smart Contract Security Audit",
+    description: "Comprehensive smart contract security auditing services to identify vulnerabilities and ensure secure blockchain deployments.",
+    category: "Blockchain & Web3",
+    subcategory: "Security",
+    price: 4999,
+    currency: "$",
+    pricingModel: "project",
+    features: [
+      "Code review",
+      "Vulnerability assessment",
+      "Security testing",
+      "Compliance checking",
+      "Detailed reports",
+      "Remediation guidance"
+    ],
+    benefits: [
+      "Security assurance",
+      "Risk mitigation",
+      "Investor confidence",
+      "Regulatory compliance",
+      "Cost savings"
+    ],
+    useCases: [
+      "DeFi protocols",
+      "NFT contracts",
+      "Token contracts",
+      "DAO governance",
+      "DApp contracts"
+    ],
+    targetAudience: [
+      "DeFi developers",
+      "NFT creators",
+      "Token issuers",
+      "DAO organizers",
+      "Blockchain startups"
+    ],
+    tags: ["Smart Contracts", "Security Audit", "Blockchain", "Vulnerability", "Compliance"],
+    estimatedDelivery: "2-4 weeks",
+    supportLevel: "premium",
+    marketPrice: "$4,999 - $20,000/project",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
+  },
+
+  // Emerging Technology Services
+  {
+    id: "quantum-computing",
+    title: "Quantum Computing Solutions",
+    description: "Quantum computing consulting and development services for organizations exploring quantum algorithms and applications.",
+    category: "Emerging Technologies",
+    subcategory: "Quantum Computing",
+    price: 9999,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Quantum algorithm development",
+      "Simulation platforms",
+      "Performance optimization",
+      "Research collaboration",
+      "Training programs",
+      "Strategic consulting"
+    ],
+    benefits: [
+      "Technology leadership",
+      "Competitive advantage",
+      "Research advancement",
+      "Innovation culture",
+      "Future readiness"
+    ],
+    useCases: [
+      "Cryptography research",
+      "Drug discovery",
+      "Financial modeling",
+      "Climate simulation",
+      "Machine learning"
+    ],
+    targetAudience: [
+      "Research institutions",
+      "Pharmaceutical companies",
+      "Financial services",
+      "Technology companies",
+      "Government agencies"
+    ],
+    tags: ["Quantum Computing", "Research", "Innovation", "Algorithms", "Simulation"],
+    estimatedDelivery: "4-8 weeks",
+    supportLevel: "premium",
+    marketPrice: "$9,999 - $50,000/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
+  },
+  {
+    id: "metaverse-platform",
+    title: "Metaverse Platform Development",
+    description: "Custom metaverse platform development with 3D environments, virtual reality integration, and social interaction features.",
+    category: "Emerging Technologies",
+    subcategory: "Metaverse",
+    price: 29999,
+    currency: "$",
+    pricingModel: "project",
+    features: [
+      "3D world creation",
+      "VR/AR integration",
+      "Social features",
+      "Avatar system",
+      "Virtual economy",
+      "Mobile & desktop"
+    ],
+    benefits: [
+      "Innovation leadership",
+      "Revenue generation",
+      "Community building",
+      "Brand engagement",
+      "Technology advancement"
+    ],
+    useCases: [
+      "Virtual events",
+      "Gaming platforms",
+      "Educational environments",
+      "Business meetings",
+      "Social networking"
+    ],
+    targetAudience: [
+      "Event organizers",
+      "Gaming companies",
+      "Educational institutions",
+      "Businesses",
+      "Entertainment brands"
+    ],
+    tags: ["Metaverse", "VR/AR", "3D", "Virtual Worlds", "Social"],
+    estimatedDelivery: "16-24 weeks",
+    supportLevel: "premium",
+    marketPrice: "$29,999 - $150,000/project",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
+  },
+
+  // IoT & Smart City Services
+  {
+    id: "iot-platform",
+    title: "IoT Platform & Management",
+    description: "Comprehensive IoT platform for device management, data collection, and analytics in smart city and industrial applications.",
+    category: "IoT & Smart Cities",
+    subcategory: "IoT Platforms",
+    price: 799,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Device management",
+      "Data collection",
+      "Real-time monitoring",
+      "Analytics dashboard",
+      "Security protocols",
+      "Integration APIs"
+    ],
+    benefits: [
+      "Operational efficiency",
+      "Cost reduction",
+      "Data insights",
+      "Automation",
+      "Scalability"
+    ],
+    useCases: [
+      "Smart cities",
+      "Industrial IoT",
+      "Building management",
+      "Environmental monitoring",
+      "Asset tracking"
+    ],
+    targetAudience: [
+      "City planners",
+      "Industrial companies",
+      "Building managers",
+      "Environmental agencies",
+      "Logistics companies"
+    ],
+    tags: ["IoT", "Smart Cities", "Device Management", "Monitoring", "Analytics"],
+    estimatedDelivery: "3-4 weeks",
+    supportLevel: "premium",
+    marketPrice: "$799 - $2,999/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
+  },
+
+  // Fintech & Payment Services
+  {
+    id: "payment-gateway",
+    title: "Custom Payment Gateway",
+    description: "Secure, scalable payment gateway solution with support for multiple payment methods and global compliance.",
+    category: "Fintech & Payments",
+    subcategory: "Payment Solutions",
+    price: 599,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Multi-payment support",
+      "Global compliance",
+      "Fraud detection",
+      "Analytics dashboard",
+      "API integration",
+      "Mobile SDKs"
+    ],
+    benefits: [
+      "Increased conversions",
+      "Global reach",
+      "Reduced fraud",
+      "Compliance assurance",
+      "Cost optimization"
+    ],
+    useCases: [
+      "E-commerce platforms",
+      "SaaS applications",
+      "Marketplaces",
+      "Subscription services",
+      "Mobile apps"
+    ],
+    targetAudience: [
+      "E-commerce businesses",
+      "SaaS companies",
+      "Marketplace operators",
+      "Mobile app developers",
+      "Financial services"
+    ],
+    tags: ["Payments", "Gateway", "Fintech", "Compliance", "Security"],
+    estimatedDelivery: "3-4 weeks",
+    supportLevel: "premium",
+    marketPrice: "$599 - $2,999/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
+  },
+
+  // Healthcare Technology Services
+  {
+    id: "healthcare-analytics",
+    title: "Healthcare Analytics Platform",
+    description: "Advanced healthcare analytics platform for patient data analysis, predictive diagnostics, and operational optimization.",
+    category: "Healthcare Technology",
+    subcategory: "Analytics",
+    price: 1999,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Patient data analytics",
+      "Predictive diagnostics",
+      "Operational insights",
+      "Compliance reporting",
+      "Integration capabilities",
+      "Security protocols"
+    ],
+    benefits: [
+      "Improved patient outcomes",
+      "Operational efficiency",
+      "Cost reduction",
+      "Regulatory compliance",
+      "Data-driven decisions"
+    ],
+    useCases: [
+      "Hospitals",
+      "Clinics",
+      "Research institutions",
+      "Insurance companies",
+      "Pharmaceutical companies"
+    ],
+    targetAudience: [
+      "Healthcare administrators",
+      "Medical researchers",
+      "Clinical staff",
+      "IT managers",
+      "Compliance officers"
+    ],
+    tags: ["Healthcare", "Analytics", "Predictive", "Compliance", "Security"],
+    estimatedDelivery: "4-6 weeks",
+    supportLevel: "premium",
+    marketPrice: "$1,999 - $8,999/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
+  },
+
+  // Education Technology Services
+  {
+    id: "edtech-platform",
+    title: "Educational Technology Platform",
+    description: "Comprehensive edtech platform with learning management, virtual classrooms, and adaptive learning capabilities.",
+    category: "Education Technology",
+    subcategory: "Learning Platforms",
+    price: 299,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Learning management system",
+      "Virtual classrooms",
+      "Adaptive learning",
+      "Assessment tools",
+      "Analytics dashboard",
+      "Mobile apps"
+    ],
+    benefits: [
+      "Improved learning outcomes",
+      "Increased engagement",
+      "Cost reduction",
+      "Scalable education",
+      "Data-driven insights"
+    ],
+    useCases: [
+      "K-12 schools",
+      "Universities",
+      "Corporate training",
+      "Online education",
+      "Skill development"
+    ],
+    targetAudience: [
+      "Educational institutions",
+      "Corporate trainers",
+      "Online educators",
+      "Students",
+      "Administrators"
+    ],
+    tags: ["EdTech", "Learning", "Virtual Classrooms", "Adaptive", "Analytics"],
+    estimatedDelivery: "3-4 weeks",
+    supportLevel: "standard",
+    marketPrice: "$299 - $1,999/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    }
   }
 ];
 
