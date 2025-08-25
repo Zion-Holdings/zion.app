@@ -204,3 +204,76 @@
 ==================================================
 [2025-08-25 12:05:01] Checking for failed services...
 [2025-08-25 12:05:02] Main automation runner completed
+[2025-08-25 12:10:01] Starting main automation runner...
+[2025-08-25 12:10:02] ml-link-intelligence is already running
+[2025-08-25 12:10:02] link-health-scheduler is already running
+[2025-08-25 12:10:02] real-time-performance-monitor is already running
+[2025-08-25 12:10:02] Running health check...
+🔍 Checking Zion Automation Systems Status...
+
+🟡 Warning autonomous-system-manager
+   Last Activity: 107s ago
+
+🟢 Online ml-link-intelligence
+   Last Activity: 45s ago
+
+🟢 Online link-health-scheduler
+   Last Activity: 56s ago
+
+🟢 Online real-time-performance-monitor
+   Last Activity: 4s ago
+
+📊 Log Files: 36 found
+   HEALTH.runtime.log: 2.20 KB
+   SYSTEM.runtime.log: 10.67 KB
+   ai-trends-cron.log: 0.13 KB
+   ai-trends-research.log: 0.25 KB
+   autonomous-manager-coordinated.log: 6.72 KB
+   autonomous-system-manager.log: 2.27 KB
+   autonomous-system-manager.runtime.log: 54.38 KB
+   backup.log: 1.47 KB
+   build.log: 4.47 KB
+   code-quality.log: 1.02 KB
+   continuous-improvement.log: 0.79 KB
+   cron.log: 0.32 KB
+   dependency.log: 5.22 KB
+   enhanced-autonomous-coordinated.log: 45.52 KB
+   error-recovery.log: 23.24 KB
+   git-pull-rebase.log: 1.09 KB
+   git-status.log: 1.11 KB
+   git-sync.log: 37.88 KB
+   health-check.log: 11.44 KB
+   health.log: 1.46 KB
+   infinite-improvement.log: 6.99 KB
+   link-health-scheduler-coordinated.log: 5.00 KB
+   link-health-scheduler.log: 0.12 KB
+   link-health-scheduler.runtime.log: 28.86 KB
+   maintenance.log: 0.83 KB
+   master-coordinator.log: 5.28 KB
+   ml-link-intelligence-coordinated.log: 6.47 KB
+   ml-link-intelligence.log: 0.30 KB
+   ml-link-intelligence.runtime.log: 41.56 KB
+   performance-monitor-coordinated.log: 4.58 KB
+   real-time-performance-monitor.log: 1.36 KB
+   real-time-performance-monitor.runtime.log: 45.79 KB
+   run-automation.log: 8.57 KB
+   security.log: 2.54 KB
+   sitemap-keeper.log: 1.15 KB
+   test.log: 7580.39 KB
+
+💾 Data Files: 9 found
+   ai-trends.json: 2.23 KB
+   analyzed-links.json: 2.18 KB
+   autonomous-config.json: 1.36 KB
+   autonomous-state.json: 0.34 KB
+   health-report.json: 0.40 KB
+   link-schedule.json: 0.45 KB
+   performance-alerts.json: 0.79 KB
+   performance-metrics.json: 5.32 KB
+   scheduled-links.json: 1.11 KB
+
+==================================================
+⚠️  Some automation systems need attention
+==================================================
+[2025-08-25 12:10:03] Checking for failed services...
+[2025-08-25 12:10:03] Main automation runner completed
