@@ -1,7 +1,7 @@
 import React from 'react';
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import SEO from '@/components/SEO';
+import { SEO } from '@/components/SEO';
 
 const GreenIT = () => {
   const greenSolutions = [

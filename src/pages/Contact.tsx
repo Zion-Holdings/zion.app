@@ -20,7 +20,7 @@ import { Card } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
 import FuturisticNeonButton from '../components/ui/FuturisticNeonButton';
 import FuturisticAnimatedBackground from '../components/ui/FuturisticAnimatedBackground';
-import SEO from '../components/SEO';
+import { SEO } from '../components/SEO';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({

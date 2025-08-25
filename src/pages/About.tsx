@@ -19,7 +19,7 @@ import { Badge } from '../components/ui/badge';
 import { Card } from '../components/ui/card';
 import FuturisticNeonButton from '../components/ui/FuturisticNeonButton';
 import FuturisticAnimatedBackground from '../components/ui/FuturisticAnimatedBackground';
-import SEO from '../components/SEO';
+import { SEO } from '../components/SEO';
 
 const About: React.FC = () => {
   const values = [

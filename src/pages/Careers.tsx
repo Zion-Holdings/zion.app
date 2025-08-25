@@ -24,7 +24,7 @@ import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import FuturisticNeonButton from '../components/ui/FuturisticNeonButton';
 import FuturisticAnimatedBackground from '../components/ui/FuturisticAnimatedBackground';
-import SEO from '../components/SEO';
+import { SEO } from '../components/SEO';
 import { AnimatePresence } from 'framer-motion';
 
 const Careers: React.FC = () => {
