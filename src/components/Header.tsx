@@ -26,11 +26,11 @@ export const Header: React.FC = () => {
               </button>
               <div className="absolute top-full left-0 mt-2 w-64 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                 <div className="py-2">
-                  <Link to="/micro-saas" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                    Micro SAAS Services
+                  <Link to="/services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    All Services
                   </Link>
-                  <Link to="/comprehensive-services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                    Comprehensive Services
+                  <Link to="/micro-saas-services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    Micro SAAS Services
                   </Link>
                   <Link to="/ai-services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                     AI & Machine Learning
@@ -38,27 +38,18 @@ export const Header: React.FC = () => {
                   <Link to="/enterprise-solutions" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                     Enterprise Solutions
                   </Link>
-                  <Link to="/advanced-services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                    Advanced Services
+                  <Link to="/cloud-devops-solutions" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    Cloud & DevOps
                   </Link>
-                              <Link to="/emerging-tech-services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-              Emerging Tech Services
-            </Link>
-            <Link to="/industry-solutions" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-              Industry Solutions
-            </Link>
-            <Link to="/ai-business-solutions" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-              AI Business Solutions
-            </Link>
-            <Link to="/cloud-devops-solutions" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-              Cloud & DevOps Solutions
-            </Link>
-            <Link to="/digital-transformation" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-              Digital Transformation
-            </Link>
+                  <Link to="/digital-transformation" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    Digital Transformation
+                  </Link>
                 </div>
               </div>
             </div>
+            <Link to="/marketplace" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">
+              Marketplace
+            </Link>
             <Link to="/about" className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium">
               About
             </Link>
@@ -68,12 +59,16 @@ export const Header: React.FC = () => {
           </nav>
           
           <div className="flex items-center space-x-4">
-            <Button variant="outline" size="sm">
-              Sign In
-            </Button>
-            <Button size="sm">
-              Get Started
-            </Button>
+            <Link to="/login">
+              <Button variant="outline" size="sm">
+                Sign In
+              </Button>
+            </Link>
+            <Link to="/contact">
+              <Button size="sm">
+                Get Started
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
