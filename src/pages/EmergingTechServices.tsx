@@ -1,387 +1,319 @@
-import React, { useState } from 'react';
-import { Search, Filter, Star, Clock, DollarSign, Users, Zap, Brain, Cloud, Database, Shield, Settings, Eye, Leaf, CreditCard, Heart, Truck, ShoppingCart, Phone, Mail, MapPin, Globe, Bot, Cpu, Network, Database as DatabaseIcon, Shield as ShieldIcon, Zap as ZapIcon, Building, Wifi, Atom, Satellite, Cpu as CpuIcon, Network as NetworkIcon } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { Zap, Brain, Cpu, Shield, ArrowRight, CheckCircle, Star, Globe, Lock, Rocket, Database, Server } from 'lucide-react';
+import { SEO } from '@/components/SEO';
 
-const EmergingTechServices: React.FC = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [selectedTechLevel, setSelectedTechLevel] = useState<string>('all');
+const emergingTechServices = [
+  {
+    title: "Quantum Computing Solutions",
+    description: "Explore the future of computing with quantum algorithms and quantum-safe cryptography.",
+    icon: Cpu,
+    features: ["Quantum Algorithm Development", "Quantum-Safe Cryptography", "Quantum Simulation", "Performance Optimization"],
+    price: "From $25,000/month",
+    color: "from-purple-500 to-pink-500"
+  },
+  {
+    title: "Edge AI & IoT",
+    description: "Deploy intelligent AI systems at the edge for real-time processing and decision making.",
+    icon: Brain,
+    features: ["Edge AI Deployment", "IoT Integration", "Real-time Processing", "Local Intelligence"],
+    price: "From $18,000/month",
+    color: "from-blue-500 to-cyan-500"
+  },
+  {
+    title: "Blockchain & Web3",
+    description: "Build decentralized applications and blockchain solutions for the next generation of the web.",
+    icon: Shield,
+    features: ["Smart Contract Development", "DeFi Solutions", "NFT Platforms", "Blockchain Infrastructure"],
+    price: "From $22,000/month",
+    color: "from-green-500 to-emerald-500"
+  },
+  {
+    title: "Augmented & Virtual Reality",
+    description: "Create immersive experiences with AR/VR solutions for enterprise and consumer applications.",
+    icon: Globe,
+    features: ["AR/VR Development", "3D Modeling", "Interactive Experiences", "Enterprise Solutions"],
+    price: "From $20,000/month",
+    color: "from-orange-500 to-red-500"
+  }
+];
 
-  // Emerging Technology Services data
-  const emergingTechServices = [
-    {
-      id: 1,
-      name: "Blockchain & Web3 Solutions",
-      category: "Blockchain",
-      techLevel: "Advanced",
-      description: "Enterprise blockchain solutions, smart contracts, and Web3 infrastructure development",
-      price: 45000,
-      pricingModel: "project-based",
-      innovationScore: 98,
-      features: ["Smart contract development", "DeFi platforms", "NFT marketplaces", "Blockchain consulting"],
-      benefits: ["Transparency", "Security", "Decentralization", "Cost reduction"],
-      useCases: ["Supply chain tracking", "Digital identity", "Tokenization", "Decentralized finance"],
-      tags: ["Blockchain", "Web3", "Smart Contracts", "DeFi", "NFTs"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 2,
-      name: "IoT & Edge Computing Platform",
-      category: "IoT",
-      techLevel: "Advanced",
-      description: "Comprehensive IoT solutions with edge computing capabilities for real-time data processing",
-      price: 35000,
-      pricingModel: "project-based",
-      innovationScore: 95,
-      features: ["Sensor networks", "Edge analytics", "Real-time monitoring", "Predictive maintenance"],
-      benefits: ["Operational efficiency", "Cost savings", "Data insights", "Automation"],
-      useCases: ["Smart cities", "Industrial IoT", "Healthcare monitoring", "Agriculture"],
-      tags: ["IoT", "Edge Computing", "Sensors", "Analytics", "Automation"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 3,
-      name: "5G & Network Infrastructure",
-      category: "5G",
-      techLevel: "Advanced",
-      description: "Next-generation 5G network infrastructure and optimization services",
-      price: 60000,
-      pricingModel: "project-based",
-      innovationScore: 97,
-      features: ["5G core network", "Network slicing", "Edge computing integration", "Performance optimization"],
-      benefits: ["Ultra-fast connectivity", "Low latency", "High capacity", "Network efficiency"],
-      useCases: ["Telecommunications", "Enterprise networks", "Smart cities", "Autonomous vehicles"],
-      tags: ["5G", "Network Infrastructure", "Telecom", "Edge Computing", "Optimization"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 4,
-      name: "AR/VR & Mixed Reality Solutions",
-      category: "AR/VR",
-      techLevel: "Advanced",
-      description: "Immersive AR/VR experiences and mixed reality applications for enterprise and entertainment",
-      price: 40000,
-      pricingModel: "project-based",
-      innovationScore: 96,
-      features: ["3D modeling", "Interactive experiences", "Cross-platform compatibility", "Performance optimization"],
-      benefits: ["Enhanced user engagement", "Training efficiency", "Product visualization", "Remote collaboration"],
-      useCases: ["Training & education", "Product design", "Marketing", "Healthcare"],
-      tags: ["AR/VR", "Mixed Reality", "3D Modeling", "Immersive Tech", "User Experience"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 5,
-      name: "RPA & Process Automation",
-      category: "RPA",
-      techLevel: "Advanced",
-      description: "Robotic Process Automation solutions to streamline business operations and workflows",
-      price: 30000,
-      pricingModel: "project-based",
-      innovationScore: 94,
-      features: ["Workflow automation", "Process optimization", "Integration capabilities", "Analytics dashboard"],
-      benefits: ["Cost reduction", "Error elimination", "Scalability", "24/7 operation"],
-      useCases: ["Finance & accounting", "Customer service", "HR processes", "Supply chain"],
-      tags: ["RPA", "Automation", "Workflow", "Process Optimization", "Efficiency"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 6,
-      name: "Digital Twin Technology",
-      category: "Digital Twins",
-      techLevel: "Advanced",
-      description: "Digital twin solutions for real-time monitoring and predictive analytics of physical assets",
-      price: 55000,
-      pricingModel: "project-based",
-      innovationScore: 99,
-      features: ["Real-time monitoring", "Predictive analytics", "3D visualization", "IoT integration"],
-      benefits: ["Predictive maintenance", "Risk mitigation", "Operational efficiency", "Data-driven decisions"],
-      useCases: ["Manufacturing", "Infrastructure", "Healthcare", "Energy"],
-      tags: ["Digital Twins", "IoT", "Predictive Analytics", "3D Visualization", "Monitoring"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 7,
-      name: "Quantum AI & Machine Learning",
-      category: "Quantum AI",
-      techLevel: "Cutting-Edge",
-      description: "Quantum computing enhanced AI solutions for complex problem solving and optimization",
-      price: 80000,
-      pricingModel: "project-based",
-      innovationScore: 100,
-      features: ["Quantum algorithms", "Hybrid classical-quantum systems", "Optimization problems", "Cryptography"],
-      benefits: ["Exponential speedup", "Complex problem solving", "Future-proof technology", "Competitive advantage"],
-      useCases: ["Financial modeling", "Drug discovery", "Logistics optimization", "Climate modeling"],
-      tags: ["Quantum Computing", "AI", "Machine Learning", "Optimization", "Cryptography"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 8,
-      name: "Neuromorphic Computing Solutions",
-      category: "Neuromorphic",
-      techLevel: "Cutting-Edge",
-      description: "Brain-inspired computing systems for energy-efficient AI and cognitive computing",
-      price: 70000,
-      pricingModel: "project-based",
-      innovationScore: 100,
-      features: ["Spiking neural networks", "Low-power computing", "Real-time learning", "Cognitive capabilities"],
-      benefits: ["Energy efficiency", "Real-time processing", "Adaptive learning", "Cognitive computing"],
-      useCases: ["Autonomous systems", "Edge AI", "Neuromorphic sensors", "Cognitive robotics"],
-      tags: ["Neuromorphic", "AI", "Neural Networks", "Cognitive Computing", "Energy Efficiency"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 9,
-      name: "Bio-Digital Interface Systems",
-      category: "Bio-Digital",
-      techLevel: "Cutting-Edge",
-      description: "Advanced bio-digital interfaces for human-computer interaction and health monitoring",
-      price: 65000,
-      pricingModel: "project-based",
-      innovationScore: 99,
-      features: ["Brain-computer interfaces", "Biometric sensors", "Health monitoring", "Neural feedback"],
-      benefits: ["Enhanced accessibility", "Health insights", "Natural interaction", "Medical applications"],
-      useCases: ["Healthcare", "Assistive technology", "Gaming", "Research"],
-      tags: ["Bio-Digital", "BCI", "Biometrics", "Health Tech", "Human-Computer Interaction"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    },
-    {
-      id: 10,
-      name: "Sustainable Technology Solutions",
-      category: "Sustainable Tech",
-      techLevel: "Advanced",
-      description: "Green technology solutions for environmental sustainability and energy efficiency",
-      price: 45000,
-      pricingModel: "project-based",
-      innovationScore: 96,
-      features: ["Renewable energy systems", "Carbon footprint tracking", "Sustainable materials", "Energy optimization"],
-      benefits: ["Environmental impact", "Cost savings", "Regulatory compliance", "Brand reputation"],
-      useCases: ["Manufacturing", "Energy sector", "Transportation", "Buildings"],
-      tags: ["Sustainability", "Green Tech", "Renewable Energy", "Carbon Reduction", "Energy Efficiency"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      }
-    }
-  ];
+const benefits = [
+  {
+    title: "Future-Proof Technology",
+    description: "Stay ahead with cutting-edge technologies that define the future",
+    icon: Zap,
+    color: "text-zion-cyan"
+  },
+  {
+    title: "Competitive Advantage",
+    description: "Gain first-mover advantage in emerging technology markets",
+    icon: Brain,
+    color: "text-zion-purple"
+  },
+  {
+    title: "Innovation Leadership",
+    description: "Position your company as a technology innovation leader",
+    icon: Rocket,
+    color: "text-green-400"
+  },
+  {
+    title: "Scalable Solutions",
+    description: "Build solutions that scale with emerging technology adoption",
+    icon: Server,
+    color: "text-blue-400"
+  }
+];
 
-  const categories = ['all', 'Blockchain', 'IoT', '5G', 'AR/VR', 'RPA', 'Digital Twins', 'Quantum AI', 'Neuromorphic', 'Bio-Digital', 'Sustainable Tech'];
-  const techLevels = ['all', 'Advanced', 'Cutting-Edge', 'Experimental'];
+const testimonials = [
+  {
+    content: "Zion Tech Group's quantum computing solutions helped us solve complex optimization problems that were previously impossible to tackle.",
+    name: "Dr. Sarah Johnson",
+    role: "Research Director, Quantum Labs",
+    rating: 5
+  },
+  {
+    content: "Their edge AI implementation reduced our response time by 90% and enabled real-time decision making in critical applications.",
+    name: "Michael Chen",
+    role: "CTO, Smart Manufacturing Inc",
+    rating: 5
+  },
+  {
+    content: "The blockchain platform they built for us has revolutionized our supply chain transparency and trust mechanisms.",
+    name: "Jennifer Kim",
+    role: "VP of Technology, Global Logistics Corp",
+    rating: 5
+  }
+];
 
-  const filteredServices = emergingTechServices.filter(service => {
-    const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         service.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
-    
-    const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
-    const matchesTechLevel = selectedTechLevel === 'all' || service.techLevel === selectedTechLevel;
-    
-    return matchesSearch && matchesCategory && matchesTechLevel;
-  });
-
-  const formatPrice = (price: number, model: string) => {
-    switch (model) {
-      case 'monthly':
-        return `$${price.toLocaleString()}/month`;
-      case 'hourly':
-        return `$${price}/hour`;
-      case 'project-based':
-        return `$${price.toLocaleString()}`;
-      default:
-        return `$${price.toLocaleString()}`;
-    }
-  };
-
-  const getInnovationColor = (score: number) => {
-    if (score >= 95) return 'text-purple-500';
-    if (score >= 90) return 'text-blue-500';
-    if (score >= 85) return 'text-green-500';
-    return 'text-yellow-500';
-  };
-
+export default function EmergingTechServices() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
-      <div className="container mx-auto px-4 py-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent mb-4">
-            Emerging Technology Services
-          </h1>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Cutting-edge technology solutions that will transform your business and keep you ahead of the competition
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      <SEO 
+        title="Emerging Technology Services - Zion Tech Group" 
+        description="Explore the future with our emerging technology services including quantum computing, edge AI, blockchain, and AR/VR solutions."
+        keywords="emerging technology, quantum computing, edge AI, blockchain, Web3, AR/VR, future tech"
+        canonical="https://ziontechgroup.com/emerging-tech"
+      />
+
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
+              Emerging
+              <span className="block bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
+                Technology
+              </span>
+            </h1>
+            <p className="text-xl text-zion-slate-light max-w-3xl mx-auto mb-8">
+              Explore the future with our cutting-edge emerging technology services. 
+              From quantum computing to edge AI, we help you stay ahead of the technology curve.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/contact"
+                className="px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white rounded-lg text-lg font-semibold hover:shadow-xl hover:shadow-zion-cyan/25 transition-all duration-300 flex items-center gap-2 justify-center"
+              >
+                Get Started
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+              <Link
+                to="/request-quote"
+                className="px-8 py-4 border border-zion-cyan text-zion-cyan rounded-lg text-lg font-semibold hover:bg-zion-cyan hover:text-white transition-all duration-300 flex items-center gap-2 justify-center"
+              >
+                Request Quote
+                <CheckCircle className="w-5 h-5" />
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
+            Our Emerging Technology Services
+          </h2>
+          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
+            Cutting-edge technology solutions that define the future of business and innovation.
           </p>
-        </div>
+        </motion.div>
 
-        {/* Search and Filters */}
-        <div className="mb-8 space-y-4">
-          <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-            <input
-              type="text"
-              placeholder="Search emerging technology services..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-10 pr-4 py-3 bg-white/10 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
-            />
-          </div>
-          
-          <div className="flex flex-wrap gap-4">
-            <select
-              value={selectedCategory}
-              onChange={(e) => setSelectedCategory(e.target.value)}
-              className="px-4 py-2 bg-white/10 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
-            >
-              {categories.map(category => (
-                <option key={category} value={category} className="bg-gray-800 text-white">
-                  {category === 'all' ? 'All Categories' : category}
-                </option>
-              ))}
-            </select>
-            
-            <select
-              value={selectedTechLevel}
-              onChange={(e) => setSelectedTechLevel(e.target.value)}
-              className="px-4 py-2 bg-white/10 border border-gray-600 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500"
-            >
-              {techLevels.map(level => (
-                <option key={level} value={level} className="bg-gray-800 text-white">
-                  {level === 'all' ? 'All Tech Levels' : level}
-                </option>
-              ))}
-            </select>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {emergingTechServices.map((service, index) => {
+            const IconComponent = service.icon;
+            return (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-zion-blue-light/10 backdrop-blur-md border border-zion-purple/20 rounded-2xl p-8 hover:border-zion-cyan/50 hover:bg-zion-blue-light/20 transition-all duration-300"
+              >
+                <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl mb-6 flex items-center justify-center text-white`}>
+                  <IconComponent className="w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-semibold text-white mb-4">{service.title}</h3>
+                <p className="text-zion-slate-light mb-6 leading-relaxed">{service.description}</p>
+                
+                <div className="mb-6">
+                  <h4 className="text-white font-semibold mb-3">Key Features:</h4>
+                  <ul className="space-y-2">
+                    {service.features.map((feature) => (
+                      <li key={feature} className="flex items-center gap-2 text-zion-slate-light">
+                        <CheckCircle className="w-4 h-4 text-zion-cyan" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div className="flex items-center justify-between">
+                  <span className="text-zion-cyan font-semibold">{service.price}</span>
+                  <Link
+                    to="/contact"
+                    className="px-6 py-2 bg-zion-cyan text-white rounded-lg hover:bg-zion-cyan/80 transition-colors duration-300"
+                  >
+                    Learn More
+                  </Link>
+                </div>
+              </motion.div>
+            );
+          })}
         </div>
+      </section>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredServices.map((service) => (
-            <div key={service.id} className="bg-white/5 backdrop-blur-sm border border-gray-600 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20">
-              <div className="flex items-start justify-between mb-4">
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-white mb-2">{service.name}</h3>
-                  <div className="flex items-center gap-2 mb-2">
-                    <span className={`px-2 py-1 text-xs font-medium rounded-full ${getInnovationColor(service.innovationScore)} bg-opacity-20 bg-current`}>
-                      Innovation Score: {service.innovationScore}
-                    </span>
-                    <span className="px-2 py-1 text-xs font-medium rounded-full text-blue-400 bg-blue-400 bg-opacity-20">
-                      {service.techLevel}
-                    </span>
+      {/* Benefits Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
+            Why Choose Our Emerging Technology Services?
+          </h2>
+          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
+            We combine cutting-edge research with practical implementation to deliver future-ready solutions.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {benefits.map((benefit, index) => {
+            const IconComponent = benefit.icon;
+            return (
+              <motion.div
+                key={benefit.title}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-zion-blue-light/10 backdrop-blur-md border border-zion-purple/20 rounded-2xl p-8 hover:border-zion-cyan/50 hover:bg-zion-blue-light/20 transition-all duration-300"
+              >
+                <div className="flex items-start gap-4">
+                  <div className={`p-3 bg-zion-purple/20 rounded-lg ${benefit.color}`}>
+                    <IconComponent className="w-8 h-8" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-3">{benefit.title}</h3>
+                    <p className="text-zion-slate-light leading-relaxed">{benefit.description}</p>
                   </div>
                 </div>
-              </div>
-              
-              <p className="text-gray-300 mb-4">{service.description}</p>
-              
-              <div className="mb-4">
-                <div className="text-2xl font-bold text-white mb-2">
-                  {formatPrice(service.price, service.pricingModel)}
-                </div>
-                <div className="text-sm text-gray-400">{service.pricingModel.replace('-', ' ')}</div>
-              </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </section>
 
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-white mb-2">Key Features:</h4>
-                <div className="flex flex-wrap gap-2">
-                  {service.features.slice(0, 3).map((feature, index) => (
-                    <span key={index} className="px-2 py-1 text-xs bg-purple-500/20 text-purple-300 rounded">
-                      {feature}
-                    </span>
-                  ))}
-                </div>
-              </div>
+      {/* Testimonials */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
+            What Our Clients Say
+          </h2>
+          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
+            Don't just take our word for it. Here's what technology leaders have to say about our emerging tech services.
+          </p>
+        </motion.div>
 
-              <div className="mb-4">
-                <h4 className="text-sm font-semibold text-white mb-2">Use Cases:</h4>
-                <div className="flex flex-wrap gap-2">
-                  {service.useCases.slice(0, 2).map((useCase, index) => (
-                    <span key={index} className="px-2 py-1 text-xs bg-blue-500/20 text-blue-300 rounded">
-                      {useCase}
-                    </span>
-                  ))}
-                </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <motion.div
+              key={testimonial.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="bg-zion-blue-light/10 backdrop-blur-md border border-zion-purple/20 rounded-2xl p-8 hover:border-zion-cyan/50 hover:bg-zion-blue-light/20 transition-all duration-300"
+            >
+              <div className="flex gap-1 mb-4">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 text-zion-cyan fill-current" />
+                ))}
               </div>
-
-              <div className="border-t border-gray-600 pt-4">
-                <div className="flex items-center justify-between text-sm text-gray-400">
-                  <span>Contact us for more details</span>
-                  <a 
-                    href={service.contactInfo.website}
-                    className="text-purple-400 hover:text-purple-300 transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Learn More →
-                  </a>
-                </div>
+              <p className="text-zion-slate-light mb-6 leading-relaxed italic">
+                "{testimonial.content}"
+              </p>
+              <div>
+                <div className="font-semibold text-white">{testimonial.name}</div>
+                <div className="text-zion-cyan text-sm">{testimonial.role}</div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
+      </section>
 
-        {/* Contact Information */}
-        <div className="mt-16 text-center">
-          <div className="bg-white/5 backdrop-blur-sm border border-gray-600 rounded-xl p-8">
-            <h2 className="text-2xl font-bold text-white mb-4">Ready to Explore Emerging Technologies?</h2>
-            <p className="text-gray-300 mb-6">
-              Contact our team to discuss how these cutting-edge solutions can transform your business
+      {/* CTA Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center"
+        >
+          <div className="bg-gradient-to-r from-zion-cyan/20 via-zion-purple/20 to-zion-cyan/20 border border-zion-cyan/30 rounded-2xl p-12 backdrop-blur-md">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">
+              Ready to Explore the Future?
+            </h2>
+            <p className="text-xl text-zion-slate-light mb-8 max-w-3xl mx-auto">
+              Join pioneering companies that are already leveraging emerging technologies to transform their industries.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-              <div>
-                <Phone className="w-8 h-8 text-purple-400 mx-auto mb-2" />
-                <p className="text-white font-semibold">Phone</p>
-                <p className="text-gray-300">{emergingTechServices[0].contactInfo.phone}</p>
-              </div>
-              <div>
-                <Mail className="w-8 h-8 text-purple-400 mx-auto mb-2" />
-                <p className="text-white font-semibold">Email</p>
-                <p className="text-gray-300">{emergingTechServices[0].contactInfo.email}</p>
-              </div>
-              <div>
-                <MapPin className="w-8 h-8 text-purple-400 mx-auto mb-2" />
-                <p className="text-white font-semibold">Address</p>
-                <p className="text-gray-300">364 E Main St STE 1008<br />Middletown DE 19709</p>
-              </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/contact"
+                className="px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white rounded-lg text-lg font-semibold hover:shadow-xl hover:shadow-zion-cyan/25 transition-all duration-300 flex items-center gap-2 justify-center"
+              >
+                Start Your Journey
+                <Rocket className="w-5 h-5" />
+              </Link>
+              <Link
+                to="/request-quote"
+                className="px-8 py-4 border border-zion-cyan text-zion-cyan rounded-lg text-lg font-semibold hover:bg-zion-cyan hover:text-white transition-all duration-300 flex items-center gap-2 justify-center"
+              >
+                <CheckCircle className="w-5 h-5" />
+                Get Free Consultation
+              </Link>
             </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </section>
     </div>
   );
-};
-
-export default EmergingTechServices;
+}

@@ -1,302 +1,319 @@
-import React, { useState } from 'react';
-import { Search, Filter, Star, Clock, DollarSign, Users, Zap, Brain, Cloud, Database, Shield, Settings, Eye, Leaf, CreditCard, Heart, Truck, ShoppingCart, Phone, Mail, MapPin, Globe, Building, Cpu, Network, Database as DatabaseIcon, Shield as ShieldIcon, Zap as ZapIcon } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { Shield, Building, Users, Zap, ArrowRight, CheckCircle, Star, Globe, Lock, Rocket, Cpu, Database } from 'lucide-react';
+import { SEO } from '@/components/SEO';
 
-const EnterpriseSolutionsPage: React.FC = () => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedIndustry, setSelectedIndustry] = useState<string>('all');
-  const [selectedSolutionType, setSelectedSolutionType] = useState<string>('all');
+const enterpriseServices = [
+  {
+    title: "Enterprise Security Solutions",
+    description: "Comprehensive security frameworks including threat detection, compliance management, and data protection.",
+    icon: Shield,
+    features: ["Zero Trust Architecture", "Compliance Automation", "Threat Intelligence", "Incident Response"],
+    price: "From $15,000/month",
+    color: "from-red-500 to-orange-500"
+  },
+  {
+    title: "Digital Transformation",
+    description: "End-to-end business modernization with AI, cloud, and process automation.",
+    icon: Building,
+    features: ["Process Optimization", "Legacy Modernization", "Change Management", "ROI Tracking"],
+    price: "From $25,000/month",
+    color: "from-blue-500 to-cyan-500"
+  },
+  {
+    title: "Enterprise AI Integration",
+    description: "Seamlessly integrate AI capabilities across your entire organization.",
+    icon: Cpu,
+    features: ["AI Strategy Planning", "Data Infrastructure", "Model Deployment", "Training Programs"],
+    price: "From $20,000/month",
+    color: "from-purple-500 to-pink-500"
+  },
+  {
+    title: "Enterprise Data Management",
+    description: "Comprehensive data governance, analytics, and business intelligence solutions.",
+    icon: Database,
+    features: ["Data Governance", "Analytics Platform", "Business Intelligence", "Data Quality"],
+    price: "From $18,000/month",
+    color: "from-green-500 to-emerald-500"
+  }
+];
 
-  // Enterprise Solution data directly in the component
-  const enterpriseSolutions = [
-    {
-      id: 1,
-      name: "Enterprise AI Platform",
-      industry: "Technology",
-      solutionType: "AI & Machine Learning",
-      description: "Comprehensive AI platform for enterprise-scale machine learning and automation",
-      price: 50000,
-      pricingModel: "project-based",
-      enterpriseScore: 95,
-      features: ["Scalable ML infrastructure", "AutoML capabilities", "Model governance", "Enterprise security"],
-      benefits: ["Increased efficiency", "Cost reduction", "Competitive advantage", "Data-driven decisions"],
-      targetIndustries: ["Technology", "Finance", "Healthcare", "Manufacturing"],
-      tags: ["AI Platform", "Machine Learning", "Enterprise", "Automation"]
-    },
-    {
-      id: 2,
-      name: "Cloud Migration & Optimization",
-      industry: "All Industries",
-      solutionType: "Cloud Services",
-      description: "End-to-end cloud migration with optimization for performance, cost, and security",
-      price: 75000,
-      pricingModel: "project-based",
-      enterpriseScore: 92,
-      features: ["Multi-cloud strategy", "Performance optimization", "Cost optimization", "Security implementation"],
-      benefits: ["Reduced infrastructure costs", "Improved scalability", "Enhanced security", "Better performance"],
-      targetIndustries: ["Technology", "Finance", "Healthcare", "Retail", "Manufacturing"],
-      tags: ["Cloud Migration", "AWS", "Azure", "GCP", "Optimization"]
-    },
-    {
-      id: 3,
-      name: "Cybersecurity & Compliance Suite",
-      industry: "Finance",
-      solutionType: "Security",
-      description: "Comprehensive cybersecurity solutions with regulatory compliance management",
-      price: 45000,
-      pricingModel: "project-based",
-      enterpriseScore: 94,
-      features: ["Threat detection", "Vulnerability assessment", "Compliance monitoring", "Incident response"],
-      benefits: ["Protection against threats", "Regulatory compliance", "Risk mitigation", "Business continuity"],
-      targetIndustries: ["Finance", "Healthcare", "Government", "Technology"],
-      tags: ["Cybersecurity", "Compliance", "Security", "Risk Management"]
-    },
-    {
-      id: 4,
-      name: "Digital Transformation Consulting",
-      industry: "All Industries",
-      solutionType: "Consulting",
-      description: "Strategic guidance for enterprise digital transformation initiatives",
-      price: 300,
-      pricingModel: "hourly",
-      enterpriseScore: 90,
-      features: ["Strategy development", "Process optimization", "Technology selection", "Change management"],
-      benefits: ["Improved efficiency", "Cost savings", "Competitive advantage", "Future readiness"],
-      targetIndustries: ["All Industries"],
-      tags: ["Digital Transformation", "Consulting", "Strategy", "Process Optimization"]
-    },
-    {
-      id: 5,
-      name: "Enterprise Data Platform",
-      industry: "Technology",
-      solutionType: "Data & Analytics",
-      description: "Scalable data platform for enterprise data management and analytics",
-      price: 60000,
-      pricingModel: "project-based",
-      enterpriseScore: 93,
-      features: ["Data governance", "Real-time analytics", "Data integration", "Scalable architecture"],
-      benefits: ["Data-driven decisions", "Improved efficiency", "Cost reduction", "Competitive advantage"],
-      targetIndustries: ["Technology", "Finance", "Healthcare", "Retail"],
-      tags: ["Data Platform", "Analytics", "Governance", "Integration"]
-    },
-    {
-      id: 6,
-      name: "Enterprise Integration Platform",
-      industry: "Manufacturing",
-      solutionType: "Integration",
-      description: "Comprehensive platform for integrating enterprise systems and applications",
-      price: 55000,
-      pricingModel: "project-based",
-      enterpriseScore: 91,
-      features: ["API management", "System integration", "Workflow automation", "Real-time sync"],
-      benefits: ["Improved efficiency", "Cost reduction", "Better collaboration", "Scalability"],
-      targetIndustries: ["Manufacturing", "Technology", "Finance", "Healthcare"],
-      tags: ["Integration", "API", "Workflow", "Automation"]
-    }
-  ];
+const benefits = [
+  {
+    title: "Enhanced Security",
+    description: "Protect your enterprise with industry-leading security solutions",
+    icon: Shield,
+    color: "text-zion-cyan"
+  },
+  {
+    title: "Operational Efficiency",
+    description: "Streamline processes and reduce costs through digital transformation",
+    icon: Zap,
+    color: "text-zion-purple"
+  },
+  {
+    title: "Competitive Advantage",
+    description: "Stay ahead with cutting-edge technology and AI capabilities",
+    icon: Globe,
+    color: "text-green-400"
+  },
+  {
+    title: "Scalable Growth",
+    description: "Build infrastructure that grows with your business needs",
+    icon: Building,
+    color: "text-blue-400"
+  }
+];
 
-  const industries = ['all', 'Technology', 'Finance', 'Healthcare', 'Manufacturing', 'Retail', 'Government', 'All Industries'];
-  const solutionTypes = ['all', 'AI & Machine Learning', 'Cloud Services', 'Security', 'Consulting', 'Data & Analytics', 'Integration'];
+const testimonials = [
+  {
+    content: "Zion Tech Group's enterprise security solution helped us achieve SOC2 compliance in record time while significantly improving our threat detection capabilities.",
+    name: "Jennifer Williams",
+    role: "CISO, Fortune 500 Company",
+    rating: 5
+  },
+  {
+    content: "Their digital transformation program modernized our entire IT infrastructure, resulting in 60% cost savings and improved employee productivity.",
+    name: "Michael Chang",
+    role: "CTO, Global Manufacturing Corp",
+    rating: 5
+  },
+  {
+    content: "The enterprise AI integration they implemented has given us insights that were previously impossible to obtain, driving millions in new revenue.",
+    name: "Sarah Rodriguez",
+    role: "VP of Innovation, Tech Enterprise",
+    rating: 5
+  }
+];
 
-  const filteredSolutions = enterpriseSolutions.filter(solution => {
-    const matchesSearch = solution.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         solution.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         solution.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
-    
-    const matchesIndustry = selectedIndustry === 'all' || 
-                           solution.targetIndustries.includes(selectedIndustry) || 
-                           solution.industry === selectedIndustry;
-    const matchesSolutionType = selectedSolutionType === 'all' || solution.solutionType === selectedSolutionType;
-    
-    return matchesSearch && matchesIndustry && matchesSolutionType;
-  });
-
-  const formatPrice = (price: number, model: string) => {
-    switch (model) {
-      case 'monthly':
-        return `$${price.toLocaleString()}/month`;
-      case 'hourly':
-        return `$${price}/hour`;
-      case 'project-based':
-        return `$${price.toLocaleString()}`;
-      default:
-        return `$${price.toLocaleString()}`;
-    }
-  };
-
-  const getEnterpriseScoreColor = (score: number) => {
-    if (score >= 90) return 'text-green-400';
-    if (score >= 80) return 'text-yellow-400';
-    return 'text-red-400';
-  };
-
+export default function EnterpriseSolutionsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white">
+    <div className="min-h-screen bg-background relative overflow-hidden">
+      <SEO 
+        title="Enterprise Solutions - Zion Tech Group" 
+        description="Transform your enterprise with comprehensive security, digital transformation, and AI integration solutions."
+        keywords="enterprise solutions, digital transformation, enterprise security, AI integration, data management"
+        canonical="https://ziontechgroup.com/enterprise-solutions"
+      />
+
       {/* Hero Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl font-bold text-white mb-6">
-            Enterprise Solutions
-          </h1>
-          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Transform your enterprise with our comprehensive technology solutions designed for large-scale 
-            organizations. From AI platforms to cloud migration, we deliver results that drive growth.
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">
+              Enterprise
+              <span className="block bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
+                Solutions
+              </span>
+            </h1>
+            <p className="text-xl text-zion-slate-light max-w-3xl mx-auto mb-8">
+              Transform your enterprise with comprehensive security, digital transformation, and AI integration solutions. 
+              Built for scale, security, and success.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/contact"
+                className="px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white rounded-lg text-lg font-semibold hover:shadow-xl hover:shadow-zion-cyan/25 transition-all duration-300 flex items-center gap-2 justify-center"
+              >
+                Get Started
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+              <Link
+                to="/request-quote"
+                className="px-8 py-4 border border-zion-cyan text-zion-cyan rounded-lg text-lg font-semibold hover:bg-zion-cyan hover:text-white transition-all duration-300 flex items-center gap-2 justify-center"
+              >
+                Request Quote
+                <CheckCircle className="w-5 h-5" />
+              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Services Grid */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
+            Our Enterprise Services
+          </h2>
+          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
+            Comprehensive enterprise solutions designed to address the complex challenges of modern organizations.
           </p>
-        </div>
-      </div>
+        </motion.div>
 
-      {/* Search and Filter Section */}
-      <div className="bg-slate-800 py-8 border-b border-slate-700">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-            {/* Search */}
-            <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
-              <input
-                type="text"
-                placeholder="Search enterprise solutions..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="w-full pl-10 pr-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-blue-500"
-              />
-            </div>
-
-            {/* Industry Filter */}
-            <div>
-              <select
-                value={selectedIndustry}
-                onChange={(e) => setSelectedIndustry(e.target.value)}
-                className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-blue-500"
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {enterpriseServices.map((service, index) => {
+            const IconComponent = service.icon;
+            return (
+              <motion.div
+                key={service.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-zion-blue-light/10 backdrop-blur-md border border-zion-purple/20 rounded-2xl p-8 hover:border-zion-cyan/50 hover:bg-zion-blue-light/20 transition-all duration-300"
               >
-                {industries.map(industry => (
-                  <option key={industry} value={industry}>
-                    {industry === 'all' ? 'All Industries' : industry}
-                  </option>
-                ))}
-              </select>
-            </div>
-
-            {/* Solution Type Filter */}
-            <div>
-              <select
-                value={selectedSolutionType}
-                onChange={(e) => setSelectedSolutionType(e.target.value)}
-                className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-blue-500"
-              >
-                {solutionTypes.map(type => (
-                  <option key={type} value={type}>
-                    {type === 'all' ? 'All Solution Types' : type}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Solutions Grid */}
-      <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredSolutions.map((solution) => (
-            <div key={solution.id} className="bg-slate-800 rounded-xl border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:transform hover:scale-105">
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-xl font-bold text-white">{solution.name}</h3>
-                  <div className="text-right">
-                    <span className="text-2xl font-bold text-blue-400">
-                      {formatPrice(solution.price, solution.pricingModel)}
-                    </span>
-                    <div className={`text-sm font-semibold ${getEnterpriseScoreColor(solution.enterpriseScore)}`}>
-                      Enterprise Score: {solution.enterpriseScore}%
-                    </div>
-                  </div>
+                <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-2xl mb-6 flex items-center justify-center text-white`}>
+                  <IconComponent className="w-8 h-8" />
                 </div>
+                <h3 className="text-2xl font-semibold text-white mb-4">{service.title}</h3>
+                <p className="text-zion-slate-light mb-6 leading-relaxed">{service.description}</p>
                 
-                <p className="text-slate-300 mb-4">{solution.description}</p>
-                
-                <div className="mb-4">
-                  <span className="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded-full mb-2">
-                    {solution.industry}
-                  </span>
-                  <span className="inline-block bg-slate-600 text-slate-300 text-xs px-2 py-1 rounded-full ml-2">
-                    {solution.solutionType}
-                  </span>
-                </div>
-
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-white mb-2">Key Features:</h4>
-                  <ul className="text-sm text-slate-300 space-y-1">
-                    {solution.features.slice(0, 3).map((feature, index) => (
-                      <li key={index} className="flex items-center">
-                        <Star className="w-4 h-4 text-blue-400 mr-2" />
+                <div className="mb-6">
+                  <h4 className="text-white font-semibold mb-3">Key Features:</h4>
+                  <ul className="space-y-2">
+                    {service.features.map((feature) => (
+                      <li key={feature} className="flex items-center gap-2 text-zion-slate-light">
+                        <CheckCircle className="w-4 h-4 text-zion-cyan" />
                         {feature}
                       </li>
                     ))}
                   </ul>
                 </div>
+                
+                <div className="flex items-center justify-between">
+                  <span className="text-zion-cyan font-semibold">{service.price}</span>
+                  <Link
+                    to="/contact"
+                    className="px-6 py-2 bg-zion-cyan text-white rounded-lg hover:bg-zion-cyan/80 transition-colors duration-300"
+                  >
+                    Learn More
+                  </Link>
+                </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </section>
 
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-white mb-2">Target Industries:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    {solution.targetIndustries.slice(0, 3).map((industry, index) => (
-                      <span key={index} className="text-xs bg-indigo-600 text-white px-2 py-1 rounded">
-                        {industry}
-                      </span>
-                    ))}
+      {/* Benefits Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
+            Why Choose Our Enterprise Solutions?
+          </h2>
+          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
+            We combine enterprise-grade technology with proven methodologies to deliver solutions that drive real business value.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {benefits.map((benefit, index) => {
+            const IconComponent = benefit.icon;
+            return (
+              <motion.div
+                key={benefit.title}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-zion-blue-light/10 backdrop-blur-md border border-zion-purple/20 rounded-2xl p-8 hover:border-zion-cyan/50 hover:bg-zion-blue-light/20 transition-all duration-300"
+              >
+                <div className="flex items-start gap-4">
+                  <div className={`p-3 bg-zion-purple/20 rounded-lg ${benefit.color}`}>
+                    <IconComponent className="w-8 h-8" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-white mb-3">{benefit.title}</h3>
+                    <p className="text-zion-slate-light leading-relaxed">{benefit.description}</p>
                   </div>
                 </div>
+              </motion.div>
+            );
+          })}
+        </div>
+      </section>
 
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {solution.tags.slice(0, 4).map((tag, index) => (
-                    <span key={index} className="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+      {/* Testimonials */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">
+            What Our Enterprise Clients Say
+          </h2>
+          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
+            Don't just take our word for it. Here's what enterprise leaders have to say about our solutions.
+          </p>
+        </motion.div>
 
-                <button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 px-4 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300">
-                  Get Enterprise Quote
-                </button>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <motion.div
+              key={testimonial.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="bg-zion-blue-light/10 backdrop-blur-md border border-zion-purple/20 rounded-2xl p-8 hover:border-zion-cyan/50 hover:bg-zion-blue-light/20 transition-all duration-300"
+            >
+              <div className="flex gap-1 mb-4">
+                {[...Array(testimonial.rating)].map((_, i) => (
+                  <Star key={i} className="w-5 h-5 text-zion-cyan fill-current" />
+                ))}
               </div>
-            </div>
+              <p className="text-zion-slate-light mb-6 leading-relaxed italic">
+                "{testimonial.content}"
+              </p>
+              <div>
+                <div className="font-semibold text-white">{testimonial.name}</div>
+                <div className="text-zion-cyan text-sm">{testimonial.role}</div>
+              </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </section>
 
-      {/* Contact Section */}
-      <div className="bg-slate-800 py-16 border-t border-slate-700">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-8">
-            Ready to Transform Your Enterprise?
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <div className="text-center">
-              <Phone className="w-8 h-8 text-blue-400 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-white mb-2">Call Us</h3>
-              <p className="text-slate-300">+1 302 464 0950</p>
-            </div>
-            <div className="text-center">
-              <Mail className="w-8 h-8 text-indigo-400 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-white mb-2">Email Us</h3>
-              <p className="text-slate-300">kleber@ziontechgroup.com</p>
-            </div>
-            <div className="text-center">
-              <MapPin className="w-8 h-8 text-green-400 mx-auto mb-4" />
-              <h3 className="text-lg font-semibold text-white mb-2">Visit Us</h3>
-              <p className="text-slate-300">364 E Main St STE 1008<br />Middletown DE 19709</p>
+      {/* CTA Section */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-center"
+        >
+          <div className="bg-gradient-to-r from-zion-cyan/20 via-zion-purple/20 to-zion-cyan/20 border border-zion-cyan/30 rounded-2xl p-12 backdrop-blur-md">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white">
+              Ready to Transform Your Enterprise?
+            </h2>
+            <p className="text-xl text-zion-slate-light mb-8 max-w-3xl mx-auto">
+              Join leading enterprises that have already revolutionized their operations with our comprehensive solutions.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                to="/contact"
+                className="px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white rounded-lg text-lg font-semibold hover:shadow-xl hover:shadow-zion-cyan/25 transition-all duration-300 flex items-center gap-2 justify-center"
+              >
+                Start Your Transformation
+                <Rocket className="w-5 h-5" />
+              </Link>
+              <Link
+                to="/request-quote"
+                className="px-8 py-4 border border-zion-cyan text-zion-cyan rounded-lg text-lg font-semibold hover:bg-zion-cyan hover:text-white transition-all duration-300 flex items-center gap-2 justify-center"
+              >
+                <CheckCircle className="w-5 h-5" />
+                Get Free Consultation
+              </Link>
             </div>
           </div>
-          <div className="mt-8">
-            <a 
-              href="https://ziontechgroup.com" 
-              className="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 px-8 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300"
-            >
-              Visit Our Website
-            </a>
-          </div>
-        </div>
-      </div>
+        </motion.div>
+      </section>
     </div>
   );
-};
-
-export default EnterpriseSolutionsPage;
+}
