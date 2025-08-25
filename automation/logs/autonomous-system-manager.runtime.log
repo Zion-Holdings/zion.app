@@ -93,3 +93,141 @@
 [2025-08-25T14:19:08.392Z] heartbeat ok | rss=53547008 heapUsed=7914064
 [2025-08-25T14:19:18.548Z] heartbeat ok | rss=30519296 heapUsed=3995840
 [2025-08-25T14:19:23.392Z] heartbeat ok | rss=53555200 heapUsed=7419416
+[2025-08-25T14:19:33.548Z] heartbeat ok | rss=30531584 heapUsed=4000792
+[2025-08-25T14:19:38.393Z] heartbeat ok | rss=53555200 heapUsed=7626752
+[2025-08-25T14:19:48.549Z] heartbeat ok | rss=30539776 heapUsed=4003352
+[2025-08-25T14:19:53.393Z] heartbeat ok | rss=53555200 heapUsed=7628768
+[2025-08-25T14:20:03.546Z] autonomous routine tick
+[2025-08-25T14:20:03.549Z] heartbeat ok | rss=30593024 heapUsed=4017952
+[2025-08-25T14:20:08.348Z] autonomous routine tick
+[2025-08-25T14:20:08.393Z] heartbeat ok | rss=53559296 heapUsed=7878520
+[2025-08-25T14:20:18.550Z] heartbeat ok | rss=30609408 heapUsed=4028352
+[2025-08-25T14:20:23.394Z] heartbeat ok | rss=53559296 heapUsed=7427856
+[2025-08-25T14:20:33.551Z] heartbeat ok | rss=30613504 heapUsed=4030736
+[2025-08-25T14:20:38.395Z] heartbeat ok | rss=53710848 heapUsed=8251632
+[2025-08-25T14:20:48.551Z] heartbeat ok | rss=30646272 heapUsed=4042760
+[2025-08-25T14:20:53.395Z] heartbeat ok | rss=53714944 heapUsed=7435984
+[2025-08-25T14:21:03.546Z] autonomous routine tick
+[2025-08-25T14:21:03.551Z] heartbeat ok | rss=30740480 heapUsed=4086808
+[2025-08-25T14:21:08.347Z] autonomous routine tick
+[2025-08-25T14:21:08.396Z] heartbeat ok | rss=53714944 heapUsed=7682672
+[2025-08-25T14:21:18.551Z] heartbeat ok | rss=30756864 heapUsed=4099672
+[2025-08-25T14:21:23.396Z] heartbeat ok | rss=53719040 heapUsed=7851024
+[2025-08-25T14:21:33.551Z] heartbeat ok | rss=30756864 heapUsed=4102152
+[2025-08-25T14:21:38.396Z] heartbeat ok | rss=53764096 heapUsed=8276736
+[2025-08-25T14:21:48.552Z] heartbeat ok | rss=30760960 heapUsed=4104096
+[2025-08-25T14:21:53.396Z] heartbeat ok | rss=53768192 heapUsed=7698392
+[2025-08-25T14:22:03.545Z] autonomous routine tick
+[2025-08-25T14:22:03.552Z] heartbeat ok | rss=30777344 heapUsed=4109040
+[2025-08-25T14:22:08.347Z] autonomous routine tick
+[2025-08-25T14:22:08.396Z] heartbeat ok | rss=53768192 heapUsed=8139000
+[2025-08-25T14:22:18.552Z] heartbeat ok | rss=30777344 heapUsed=4111104
+[2025-08-25T14:22:23.396Z] heartbeat ok | rss=53768192 heapUsed=8122088
+[2025-08-25T14:22:33.553Z] heartbeat ok | rss=30781440 heapUsed=4113144
+[2025-08-25T14:22:38.397Z] heartbeat ok | rss=53772288 heapUsed=7534208
+[2025-08-25T14:22:48.554Z] heartbeat ok | rss=30781440 heapUsed=4115208
+[2025-08-25T14:22:53.398Z] heartbeat ok | rss=53772288 heapUsed=7663800
+[2025-08-25T14:23:03.545Z] autonomous routine tick
+[2025-08-25T14:23:03.555Z] heartbeat ok | rss=30785536 heapUsed=4120392
+[2025-08-25T14:23:08.346Z] autonomous routine tick
+[2025-08-25T14:23:08.397Z] heartbeat ok | rss=53776384 heapUsed=7878704
+[2025-08-25T14:23:18.555Z] heartbeat ok | rss=30789632 heapUsed=4122488
+[2025-08-25T14:23:23.399Z] heartbeat ok | rss=53776384 heapUsed=8284656
+[2025-08-25T14:23:33.557Z] heartbeat ok | rss=30789632 heapUsed=4124672
+[2025-08-25T14:23:38.398Z] heartbeat ok | rss=53784576 heapUsed=7464856
+[2025-08-25T14:23:48.557Z] heartbeat ok | rss=30793728 heapUsed=4126728
+[2025-08-25T14:23:53.399Z] heartbeat ok | rss=53784576 heapUsed=7877616
+[2025-08-25T14:24:03.544Z] autonomous routine tick
+[2025-08-25T14:24:03.557Z] heartbeat ok | rss=30797824 heapUsed=4131640
+[2025-08-25T14:24:08.346Z] autonomous routine tick
+[2025-08-25T14:24:08.399Z] heartbeat ok | rss=53784576 heapUsed=8093408
+[2025-08-25T14:24:18.557Z] heartbeat ok | rss=30801920 heapUsed=4133720
+[2025-08-25T14:24:23.400Z] heartbeat ok | rss=53788672 heapUsed=7676112
+[2025-08-25T14:24:33.557Z] heartbeat ok | rss=30801920 heapUsed=4135800
+[2025-08-25T14:24:38.400Z] heartbeat ok | rss=53792768 heapUsed=7952272
+[2025-08-25T14:24:48.559Z] heartbeat ok | rss=30806016 heapUsed=4137856
+[2025-08-25T14:24:53.401Z] heartbeat ok | rss=53792768 heapUsed=8297176
+[2025-08-25T14:25:03.544Z] autonomous routine tick
+[2025-08-25T14:25:03.559Z] heartbeat ok | rss=30822400 heapUsed=4149672
+[2025-08-25T14:25:08.346Z] autonomous routine tick
+[2025-08-25T14:25:08.401Z] heartbeat ok | rss=53792768 heapUsed=7483664
+[2025-08-25T14:25:18.560Z] heartbeat ok | rss=30822400 heapUsed=4151752
+[2025-08-25T14:25:23.401Z] heartbeat ok | rss=53796864 heapUsed=7685920
+[2025-08-25T14:25:33.560Z] heartbeat ok | rss=30826496 heapUsed=4153808
+[2025-08-25T14:25:38.400Z] heartbeat ok | rss=53796864 heapUsed=7959464
+[2025-08-25T14:25:48.560Z] heartbeat ok | rss=30826496 heapUsed=4155888
+[2025-08-25T14:25:53.401Z] heartbeat ok | rss=53800960 heapUsed=8306176
+[2025-08-25T14:26:08.346Z] autonomous routine tick
+[2025-08-25T14:26:08.401Z] heartbeat ok | rss=53800960 heapUsed=7901776
+[2025-08-25T14:26:17.951Z] Starting Autonomous System Manager
+[2025-08-25T14:26:17.954Z] Starting all enabled services...
+[2025-08-25T14:26:17.954Z] [autonomous-system-manager] [2025-08-25T14:26:17.951Z] Starting Autonomous System Manager
+[2025-08-25T14:26:17.954Z] Starting service: autonomous-system-manager
+[2025-08-25T14:26:17.955Z] Error starting autonomous-system-manager: Cannot access 'process' before initialization
+[2025-08-25T14:26:17.955Z] [autonomous-system-manager] [2025-08-25T14:26:17.954Z] Starting all enabled services...
+[2025-08-25T14:26:17.954Z] Starting service: autonomous-system-manager
+[2025-08-25T14:26:17.955Z] Error starting autonomous-system-manager: Cannot access 'process' before initialization
+[2025-08-25T14:26:18.956Z] Starting service: ml-link-intelligence
+[2025-08-25T14:26:18.956Z] Error starting ml-link-intelligence: Cannot access 'process' before initialization
+[2025-08-25T14:26:18.956Z] [autonomous-system-manager] [2025-08-25T14:26:18.956Z] Starting service: ml-link-intelligence
+[2025-08-25T14:26:18.957Z] [autonomous-system-manager] [2025-08-25T14:26:18.956Z] Error starting ml-link-intelligence: Cannot access 'process' before initialization
+[2025-08-25T14:26:19.957Z] Starting service: link-health-scheduler
+[2025-08-25T14:26:19.958Z] Error starting link-health-scheduler: Cannot access 'process' before initialization
+[2025-08-25T14:26:19.958Z] [autonomous-system-manager] [2025-08-25T14:26:19.957Z] Starting service: link-health-scheduler
+[2025-08-25T14:26:19.958Z] [autonomous-system-manager] [2025-08-25T14:26:19.958Z] Error starting link-health-scheduler: Cannot access 'process' before initialization
+[2025-08-25T14:26:20.959Z] Starting service: real-time-performance-monitor
+[2025-08-25T14:26:20.959Z] [autonomous-system-manager] [2025-08-25T14:26:20.959Z] Starting service: real-time-performance-monitor
+[2025-08-25T14:26:20.959Z] Error starting real-time-performance-monitor: Cannot access 'process' before initialization
+[2025-08-25T14:26:20.960Z] [autonomous-system-manager] [2025-08-25T14:26:20.959Z] Error starting real-time-performance-monitor: Cannot access 'process' before initialization
+[2025-08-25T14:26:21.960Z] Started 0/4 services successfully
+[2025-08-25T14:26:21.961Z] Autonomous System Manager is now running
+[2025-08-25T14:26:21.961Z] [autonomous-system-manager] [2025-08-25T14:26:21.960Z] Started 0/4 services successfully
+[2025-08-25T14:26:21.961Z] [autonomous-system-manager] [2025-08-25T14:26:21.961Z] Autonomous System Manager is now running
+[2025-08-25T14:26:23.401Z] heartbeat ok | rss=53805056 heapUsed=8310648
+[2025-08-25T14:26:38.401Z] heartbeat ok | rss=53805056 heapUsed=7738136
+[2025-08-25T14:26:42.307Z] Starting Autonomous System Manager
+[2025-08-25T14:26:42.314Z] Starting all enabled services...
+[2025-08-25T14:26:42.314Z] Starting service: autonomous-system-manager
+[2025-08-25T14:26:42.315Z] Error starting autonomous-system-manager: Cannot access 'process' before initialization
+[2025-08-25T14:26:43.316Z] Starting service: ml-link-intelligence
+[2025-08-25T14:26:43.316Z] Error starting ml-link-intelligence: Cannot access 'process' before initialization
+[2025-08-25T14:26:44.318Z] Starting service: link-health-scheduler
+[2025-08-25T14:26:44.318Z] Error starting link-health-scheduler: Cannot access 'process' before initialization
+[2025-08-25T14:26:45.320Z] Starting service: real-time-performance-monitor
+[2025-08-25T14:26:45.320Z] Error starting real-time-performance-monitor: Cannot access 'process' before initialization
+[2025-08-25T14:26:46.322Z] Started 0/4 services successfully
+[2025-08-25T14:26:46.322Z] Autonomous System Manager is now running
+[2025-08-25T14:26:53.401Z] heartbeat ok | rss=53809152 heapUsed=8158520
+[2025-08-25T14:27:08.346Z] autonomous routine tick
+[2025-08-25T14:27:08.402Z] heartbeat ok | rss=53809152 heapUsed=7583288
+[2025-08-25T14:27:23.403Z] heartbeat ok | rss=53813248 heapUsed=8164904
+[2025-08-25T14:27:38.404Z] heartbeat ok | rss=53813248 heapUsed=7911528
+[2025-08-25T14:27:53.404Z] heartbeat ok | rss=53813248 heapUsed=8325752
+[2025-08-25T14:28:08.346Z] autonomous routine tick
+[2025-08-25T14:28:08.405Z] heartbeat ok | rss=53817344 heapUsed=8123416
+[2025-08-25T14:28:23.405Z] heartbeat ok | rss=53817344 heapUsed=8326056
+[2025-08-25T14:28:38.405Z] heartbeat ok | rss=53821440 heapUsed=7505952
+[2025-08-25T14:28:53.407Z] heartbeat ok | rss=53821440 heapUsed=7712864
+[2025-08-25T14:29:08.346Z] autonomous routine tick
+[2025-08-25T14:29:08.407Z] heartbeat ok | rss=53825536 heapUsed=7926448
+[2025-08-25T14:29:23.408Z] heartbeat ok | rss=53825536 heapUsed=8331704
+[2025-08-25T14:29:38.408Z] heartbeat ok | rss=53829632 heapUsed=7513800
+[2025-08-25T14:29:53.419Z] heartbeat ok | rss=53829632 heapUsed=8128776
+[2025-08-25T14:30:08.389Z] autonomous routine tick
+[2025-08-25T14:30:08.419Z] heartbeat ok | rss=53833728 heapUsed=8138896
+[2025-08-25T14:30:23.419Z] heartbeat ok | rss=53833728 heapUsed=8339144
+[2025-08-25T14:30:38.551Z] heartbeat ok | rss=53837824 heapUsed=7765944
+[2025-08-25T14:30:46.455Z] Periodic status check - all systems operational
+[2025-08-25T14:30:53.551Z] heartbeat ok | rss=53837824 heapUsed=8181992
+[2025-08-25T14:31:08.522Z] autonomous routine tick
+[2025-08-25T14:31:08.552Z] heartbeat ok | rss=53841920 heapUsed=7777480
+[2025-08-25T14:31:23.554Z] heartbeat ok | rss=53841920 heapUsed=8154376
+[2025-08-25T14:31:38.555Z] heartbeat ok | rss=53846016 heapUsed=7604784
+[2025-08-25T14:31:53.557Z] heartbeat ok | rss=53846016 heapUsed=8147064
+[2025-08-25T14:32:08.525Z] autonomous routine tick
+[2025-08-25T14:32:08.558Z] heartbeat ok | rss=53850112 heapUsed=7539424
+[2025-08-25T14:32:23.558Z] heartbeat ok | rss=53850112 heapUsed=7739496
+[2025-08-25T14:32:38.559Z] heartbeat ok | rss=53854208 heapUsed=7990272
+[2025-08-25T14:32:53.559Z] heartbeat ok | rss=53854208 heapUsed=7537920
+[2025-08-25T14:33:08.528Z] autonomous routine tick
+[2025-08-25T14:33:08.560Z] heartbeat ok | rss=53854208 heapUsed=7960008

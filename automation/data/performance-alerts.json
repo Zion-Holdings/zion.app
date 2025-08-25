@@ -1,0 +1,98 @@
+[
+  {
+    "level": "critical",
+    "category": "memory",
+    "message": "Memory usage critical: 98.50%",
+    "value": 98.49628210067749,
+    "threshold": 95,
+    "timestamp": "2025-08-25T14:27:22.226Z"
+  },
+  {
+    "level": "critical",
+    "category": "memory",
+    "message": "Memory usage critical: 98.53%",
+    "value": 98.5325574874878,
+    "threshold": 95,
+    "timestamp": "2025-08-25T14:27:52.226Z"
+  },
+  {
+    "level": "critical",
+    "category": "memory",
+    "message": "Memory usage critical: 98.72%",
+    "value": 98.72382879257202,
+    "threshold": 95,
+    "timestamp": "2025-08-25T14:28:22.226Z"
+  },
+  {
+    "level": "critical",
+    "category": "memory",
+    "message": "Memory usage critical: 98.12%",
+    "value": 98.12085628509521,
+    "threshold": 95,
+    "timestamp": "2025-08-25T14:28:52.226Z"
+  },
+  {
+    "level": "critical",
+    "category": "memory",
+    "message": "Memory usage critical: 98.58%",
+    "value": 98.57577085494995,
+    "threshold": 95,
+    "timestamp": "2025-08-25T14:29:22.226Z"
+  },
+  {
+    "level": "critical",
+    "category": "memory",
+    "message": "Memory usage critical: 98.21%",
+    "value": 98.21271896362305,
+    "threshold": 95,
+    "timestamp": "2025-08-25T14:29:52.226Z"
+  },
+  {
+    "level": "critical",
+    "category": "memory",
+    "message": "Memory usage critical: 98.47%",
+    "value": 98.46605062484741,
+    "threshold": 95,
+    "timestamp": "2025-08-25T14:30:22.227Z"
+  },
+  {
+    "level": "critical",
+    "category": "memory",
+    "message": "Memory usage critical: 97.90%",
+    "value": 97.89602756500244,
+    "threshold": 95,
+    "timestamp": "2025-08-25T14:30:52.364Z"
+  },
+  {
+    "level": "critical",
+    "category": "memory",
+    "message": "Memory usage critical: 98.04%",
+    "value": 98.04266691207886,
+    "threshold": 95,
+    "timestamp": "2025-08-25T14:31:22.366Z"
+  },
+  {
+    "level": "critical",
+    "category": "memory",
+    "message": "Memory usage critical: 98.19%",
+    "value": 98.19260835647583,
+    "threshold": 95,
+    "timestamp": "2025-08-25T14:31:52.367Z"
+  },
+  {
+    "level": "critical",
+    "category": "memory",
+    "message": "Memory usage critical: 98.24%",
+    "value": 98.23832511901855,
+    "threshold": 95,
+    "timestamp": "2025-08-25T14:32:22.367Z"
+  },
+  {
+    "level": "critical",
+    "category": "memory",
+    "message": "Memory usage critical: 97.80%",
+    "value": 97.79993295669556,
+    "threshold": 95,
+    "timestamp": "2025-08-25T14:32:52.368Z"
+  }
+]
