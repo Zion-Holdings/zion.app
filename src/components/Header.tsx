@@ -22,73 +22,92 @@ export function Header() {
       path: '/', 
       label: 'Home', 
       icon: '🏠',
-      description: 'Welcome to Zion Tech Group'
+      description: 'Welcome to Zion Tech Group',
+      featured: false
     },
     { 
       path: '/services', 
       label: 'AI Services', 
       icon: '🤖',
-      description: 'Explore our AI service offerings'
+      description: 'Explore our AI service offerings',
+      featured: true
     },
     { 
       path: '/emerging-tech', 
       label: 'Emerging Tech', 
       icon: '🚀',
-      description: 'Cutting-edge technology solutions'
+      description: 'Cutting-edge technology solutions',
+      featured: true
+    },
+    { 
+      path: '/innovative-services', 
+      label: 'Innovative Services', 
+      icon: '💡',
+      description: 'Latest micro SAAS and AI solutions',
+      featured: true
     },
     { 
       path: '/comprehensive-services', 
       label: 'All Services', 
       icon: '⚡',
-      description: 'Complete service catalog'
+      description: 'Complete service catalog',
+      featured: false
     },
     { 
       path: '/services-comparison', 
       label: 'Compare', 
       icon: '📊',
-      description: 'Compare service options'
+      description: 'Compare service options',
+      featured: false
     },
     { 
       path: '/it-onsite-services', 
       label: 'Onsite IT', 
       icon: '🔧',
-      description: 'Onsite IT support services'
+      description: 'Onsite IT support services',
+      featured: false
     },
     { 
       path: '/pricing', 
       label: 'Pricing', 
       icon: '💰',
-      description: 'Transparent pricing plans'
+      description: 'Transparent pricing plans',
+      featured: false
     },
     { 
       path: '/about', 
       label: 'About', 
       icon: 'ℹ️',
-      description: 'Learn about our company'
+      description: 'Learn about our company',
+      featured: false
     },
     { 
       path: '/contact', 
       label: 'Contact', 
       icon: '📞',
-      description: 'Get in touch with us'
+      description: 'Get in touch with us',
+      featured: false
     },
     { 
       path: '/white-papers', 
       label: 'White Papers', 
       icon: '📄',
-      description: 'Research and technical documentation'
+      description: 'Research and technical documentation',
+      featured: false
     },
     { 
       path: '/events', 
       label: 'Events', 
       icon: '🎪',
-      description: 'Conferences, workshops, and events'
+      description: 'Conferences, workshops, and events',
+      featured: false
     },
     { 
       path: '/webinars', 
       label: 'Webinars', 
       icon: '🎥',
-      description: 'Live and on-demand learning sessions'
+      description: 'Live and on-demand learning sessions',
+      featured: false
     }
   ];
 
@@ -189,14 +208,20 @@ export function Header() {
                       isActive(item.path)
                         ? 'text-cyan-400 border border-cyan-400/50 bg-cyan-500/10'
                         : 'text-gray-300 hover:text-white border border-transparent'
-                    }`}
+                    } ${item.featured ? 'relative overflow-hidden' : ''}`}
                   >
-                    <span className="text-lg">{item.icon}</span>
-                    <span>{item.label}</span>
+                    {item.featured && (
+                      <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    )}
+                    <span className="text-lg relative z-10">{item.icon}</span>
+                    <span className="relative z-10">{item.label}</span>
+                    {item.featured && (
+                      <span className="absolute -top-1 -right-1 w-2 h-2 bg-gradient-to-r from-cyan-400 to-blue-400 rounded-full animate-pulse"></span>
+                    )}
                   </Link>
                   
                   {/* Enhanced Tooltip */}
-                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-black/90 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50">
+                  <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-3 py-2 bg-black/90 text-white text-xs rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-50 border border-cyan-500/30">
                     {item.description}
                     <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-black/90"></div>
                   </div>
@@ -206,12 +231,20 @@ export function Header() {
 
             {/* CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-4">
-              <button className="px-4 py-2 text-cyan-400 border border-cyan-400/50 rounded-lg hover:bg-cyan-400/20 hover:border-cyan-400 transition-all duration-300 text-sm font-medium">
-                Get Quote
-              </button>
-              <button className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 text-sm font-medium transform hover:scale-105 shadow-lg shadow-cyan-500/30">
-                Start Project
-              </button>
+              <a
+                href="mailto:kleber@ziontechgroup.com?subject=Request for Quote"
+                className="px-4 py-2 text-cyan-400 border border-cyan-400/50 rounded-lg hover:bg-cyan-400/20 hover:border-cyan-400 transition-all duration-300 text-sm font-medium group relative overflow-hidden"
+              >
+                <span className="relative z-10">Get Quote</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </a>
+              <a
+                href="tel:+13024640950"
+                className="px-6 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 text-sm font-medium transform hover:scale-105 shadow-lg shadow-cyan-500/30 relative overflow-hidden group"
+              >
+                <span className="relative z-10">Start Project</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-blue-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </a>
             </div>
 
             {/* Mobile Menu Button */}

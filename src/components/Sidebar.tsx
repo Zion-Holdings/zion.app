@@ -20,23 +20,32 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
     {
       title: 'Main',
       items: [
-        { name: 'Home', path: '/', icon: Home },
-        { name: 'Services', path: '/services', icon: Briefcase },
-        { name: 'About', path: '/about', icon: Users },
-        { name: 'Contact', path: '/contact', icon: Phone }
+        { name: 'Home', path: '/', icon: Home, featured: false },
+        { name: 'Services', path: '/services', icon: Briefcase, featured: true },
+        { name: 'About', path: '/about', icon: Users, featured: false },
+        { name: 'Contact', path: '/contact', icon: Phone, featured: false }
       ]
     },
     {
-      title: 'Services',
+      title: 'Core Services',
       items: [
-        { name: 'AI & Machine Learning', path: '/services?category=AI%20%26%20Machine%20Learning', icon: Briefcase },
-        { name: 'Cybersecurity', path: '/services?category=Cybersecurity', icon: Shield },
-        { name: 'Micro SAAS Solutions', path: '/services?category=Micro%20SAAS%20Solutions', icon: Globe },
-        { name: 'Space Technology', path: '/services?category=Space%20Technology', icon: Globe },
-        { name: 'Healthcare AI', path: '/services?category=Healthcare%20AI', icon: Users },
-        { name: 'Manufacturing AI', path: '/services?category=Manufacturing%20AI', icon: Briefcase },
-        { name: 'Emerging Technology', path: '/services?category=Emerging%20Technology', icon: Globe },
-        { name: 'Autonomous Systems', path: '/services?category=AI%20%26%20Autonomous%20Systems', icon: Users }
+        { name: 'AI & Machine Learning', path: '/services?category=AI%20%26%20Machine%20Learning', icon: Briefcase, featured: true },
+        { name: 'Cybersecurity', path: '/services?category=Cybersecurity', icon: Shield, featured: true },
+        { name: 'Micro SAAS Solutions', path: '/services?category=Micro%20SAAS%20Solutions', icon: Globe, featured: true },
+        { name: 'Quantum Technology', path: '/services/quantum-technology', icon: Globe, featured: true },
+        { name: 'IT Infrastructure', path: '/services/it-infrastructure', icon: Briefcase, featured: false },
+        { name: 'Industry Solutions', path: '/services/industry-solutions', icon: Users, featured: false }
+      ]
+    },
+    {
+      title: 'Innovative Solutions',
+      items: [
+        { name: 'Innovative Services', path: '/innovative-services', icon: Globe, featured: true },
+        { name: 'AI Autonomous Systems', path: '/services/ai-autonomous-systems', icon: Users, featured: true },
+        { name: 'Blockchain Solutions', path: '/services?category=Blockchain', icon: Globe, featured: true },
+        { name: 'IoT & Edge Computing', path: '/services?category=IoT%20%26%20Edge%20Computing', icon: Globe, featured: true },
+        { name: 'VR/AR Training', path: '/services?category=VR%2FAR%20%26%20Training', icon: Users, featured: false },
+        { name: 'Emerging Technology', path: '/emerging-tech', icon: Globe, featured: false }
       ]
     },
     {
@@ -177,23 +186,30 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                       {section.items.map((item) => {
                         const Icon = item.icon;
                         const isActive = location.pathname === item.path;
+                        const isFeatured = item.featured;
                         
                         return (
                           <Link
                             key={item.name}
                             to={item.path}
-                            className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 group ${
+                            className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 group relative ${
                               isActive
                                 ? 'quantum-button shadow-lg shadow-zion-cyan/30'
                                 : 'futuristic-card text-zion-slate-light hover:bg-white/20 hover:neon-text'
-                            }`}
+                            } ${isFeatured ? 'border-l-2 border-zion-cyan/50' : ''}`}
                           >
+                            {isFeatured && (
+                              <div className="absolute -left-1 top-1/2 transform -translate-y-1/2 w-2 h-2 bg-zion-cyan rounded-full animate-pulse"></div>
+                            )}
                             <Icon className={`w-4 h-4 ${
                               isActive ? 'text-white' : 'text-zion-cyan group-hover:neon-text'
                             }`} />
                             <span className="flex-1">{item.name}</span>
                             {isActive && (
                               <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                            )}
+                            {isFeatured && (
+                              <div className="w-2 h-2 bg-zion-cyan rounded-full animate-pulse"></div>
                             )}
                           </Link>
                         );

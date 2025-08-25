@@ -140,22 +140,45 @@ export function Footer() {
             {/* Contact Information */}
             <div className="space-y-4">
               <h3 className="text-lg font-bold text-cyan-400 neon-text">Contact Us</h3>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3">
-                  <span className="text-cyan-400">📞</span>
-                  <a href={`tel:${contactInfo.phone}`} className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
-                    {contactInfo.phone}
-                  </a>
+              <div className="space-y-4">
+                <div className="group p-4 bg-gradient-to-r from-gray-800/30 to-gray-900/30 rounded-xl border border-gray-700/30 hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-105">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg flex items-center justify-center text-white">
+                      📞
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-400">Phone</p>
+                      <a href={`tel:${contactInfo.phone}`} className="text-white hover:text-cyan-400 transition-colors duration-300 font-medium">
+                        {contactInfo.phone}
+                      </a>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <span className="text-cyan-400">✉️</span>
-                  <a href={`mailto:${contactInfo.email}`} className="text-gray-300 hover:text-cyan-400 transition-colors duration-300">
-                    {contactInfo.email}
-                  </a>
+                
+                <div className="group p-4 bg-gradient-to-r from-gray-800/30 to-gray-900/30 rounded-xl border border-gray-700/30 hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-105">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg flex items-center justify-center text-white">
+                      ✉️
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-400">Email</p>
+                      <a href={`mailto:${contactInfo.email}`} className="text-white hover:text-cyan-400 transition-colors duration-300 font-medium">
+                        {contactInfo.email}
+                      </a>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex items-start space-x-3">
-                  <span className="text-cyan-400 mt-1">📍</span>
-                  <span className="text-gray-300">{contactInfo.address}</span>
+                
+                <div className="group p-4 bg-gradient-to-r from-gray-800/30 to-gray-900/30 rounded-xl border border-gray-700/30 hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-105">
+                  <div className="flex items-start space-x-3">
+                    <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center text-white">
+                      📍
+                    </div>
+                    <div>
+                      <p className="text-sm text-gray-400">Address</p>
+                      <span className="text-white font-medium">{contactInfo.address}</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -163,17 +186,22 @@ export function Footer() {
             {/* Social Links */}
             <div className="space-y-4">
               <h3 className="text-lg font-bold text-cyan-400 neon-text">Follow Us</h3>
-              <div className="flex space-x-4">
+              <div className="grid grid-cols-2 gap-3">
                 {socialLinks.map((social, index) => (
                   <a
                     key={index}
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-2xl hover:scale-110 transition-transform duration-300 hover:neon-text"
+                    className="group p-3 bg-gradient-to-r from-gray-800/30 to-gray-900/30 rounded-xl border border-gray-700/30 hover:border-cyan-500/50 transition-all duration-300 hover:transform hover:scale-105 flex items-center space-x-3"
                     aria-label={social.name}
                   >
-                    {social.icon}
+                    <span className="text-2xl group-hover:scale-110 transition-transform duration-300">
+                      {social.icon}
+                    </span>
+                    <span className="text-white group-hover:text-cyan-400 transition-colors duration-300 font-medium">
+                      {social.name}
+                    </span>
                   </a>
                 ))}
               </div>
@@ -181,20 +209,31 @@ export function Footer() {
           </div>
 
           {/* Newsletter Signup */}
-          <div className="text-center mb-12 p-8 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-2xl border border-cyan-500/30">
-            <h3 className="text-2xl font-bold text-white mb-4">Stay Updated with Tech Trends</h3>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-              Get the latest insights on AI, emerging technologies, and industry innovations delivered to your inbox.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20"
-              />
-              <button className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-lg hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 transform hover:scale-105">
-                Subscribe
-              </button>
+          <div className="text-center mb-12 p-8 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 rounded-2xl border border-cyan-500/30 relative overflow-hidden">
+            {/* Animated Background */}
+            <div className="absolute inset-0">
+              <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-cyan-500/5 to-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
+              <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-purple-500/5 to-pink-500/5 rounded-full blur-3xl animate-pulse animation-delay-1000"></div>
+            </div>
+            
+            <div className="relative z-10">
+              <h3 className="text-3xl font-bold text-white mb-4">Stay Updated with Tech Trends</h3>
+              <p className="text-gray-300 mb-8 max-w-2xl mx-auto text-lg leading-relaxed">
+                Get the latest insights on AI, emerging technologies, and industry innovations delivered to your inbox.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-md mx-auto">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  className="flex-1 px-6 py-4 bg-gray-800/50 border border-gray-600 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:ring-2 focus:ring-cyan-400/20 transition-all duration-300"
+                />
+                <button className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white font-semibold rounded-xl hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/30">
+                  Subscribe
+                </button>
+              </div>
+              <p className="text-xs text-gray-500 mt-4">
+                We respect your privacy. Unsubscribe at any time.
+              </p>
             </div>
           </div>
         </div>

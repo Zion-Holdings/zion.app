@@ -98,6 +98,121 @@
     width: 4px;
     height: 4px;
     background: hsl(var(--neon-cyan));
+  }
+
+  /* Enhanced Animation Delays */
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-3000 {
+    animation-delay: 3s;
+  }
+
+  /* Quantum Float Animation */
+  @keyframes quantum-float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-10px) rotate(90deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(180deg);
+    }
+    75% {
+      transform: translateY(-10px) rotate(270deg);
+    }
+  }
+
+  .animate-quantum-float {
+    animation: quantum-float 6s ease-in-out infinite;
+  }
+
+  /* Matrix Rain Animation */
+  @keyframes matrix-rain {
+    0% {
+      transform: translateY(-100vh);
+    }
+    100% {
+      transform: translateY(100vh);
+    }
+  }
+
+  .animate-matrix-rain {
+    animation: matrix-rain linear infinite;
+  }
+
+  /* Neural Line Animation */
+  @keyframes neural-pulse {
+    0%, 100% {
+      opacity: 0.3;
+      transform: scaleY(1);
+    }
+    50% {
+      opacity: 0.8;
+      transform: scaleY(1.2);
+    }
+  }
+
+  .neural-line {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, hsl(var(--neon-cyan)), transparent);
+    animation: neural-pulse 3s ease-in-out infinite;
+  }
+
+  /* Quantum Particle Animation */
+  @keyframes quantum-particle {
+    0%, 100% {
+      transform: scale(1) rotate(0deg);
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1.5) rotate(180deg);
+      opacity: 1;
+    }
+  }
+
+  .quantum-particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: hsl(var(--neon-cyan));
+    border-radius: 50%;
+    animation: quantum-particle 4s ease-in-out infinite;
+  }
+
+  /* Cyber Grid Background */
+  .cyber-grid-bg {
+    background-image: 
+      linear-gradient(rgba(6, 182, 212, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(6, 182, 212, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
+  /* Futuristic Background */
+  .futuristic-bg {
+    background: radial-gradient(
+      circle at 20% 80%,
+      hsl(var(--neon-cyan) / 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      hsl(var(--neon-blue) / 0.1) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 40% 40%,
+      hsl(var(--neon-purple) / 0.1) 0%,
+      transparent 50%
+    );
+  }
     border-radius: 50%;
     animation: particleFloat 5s ease-in-out infinite;
   }

@@ -12,6 +12,7 @@ import { AICodeGenerator } from './components/AICodeGenerator';
 import { EnterpriseDashboard } from './components/EnterpriseDashboard';
 import { SecurityComplianceDashboard } from './components/SecurityComplianceDashboard';
 import { MachineLearningDashboard } from './components/MachineLearningDashboard';
+import { InnovativeServicesShowcase } from './components/InnovativeServicesShowcase';
 import { ThemeProvider } from "./components/ThemeProvider";
 import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
@@ -100,6 +101,9 @@ const App = () => {
                     <Route path="/services/it-infrastructure" element={<ITInfrastructure />} />
                     <Route path="/services/micro-saas-solutions" element={<MicroSAASSolutions />} />
                     <Route path="/services/industry-solutions" element={<IndustrySolutions />} />
+                    
+                    {/* New innovative services routes */}
+                    <Route path="/innovative-services" element={<InnovativeServicesShowcase />} />
                     
                     {/* New enhanced page routes */}
                     <Route path="/white-papers" element={<WhitePapers />} />

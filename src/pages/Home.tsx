@@ -4,6 +4,7 @@ import { SEO } from "@/components/SEO";
 import { ServicesShowcase } from '../components/ServicesShowcase';
 import { EnhancedServicesShowcase } from '../components/EnhancedServicesShowcase';
 import { AdvancedServicesShowcase } from '../components/AdvancedServicesShowcase';
+import { InnovativeServicesShowcase } from '../components/InnovativeServicesShowcase';
 
 export default function Home() {
   return (
@@ -114,6 +115,9 @@ export default function Home() {
 
       {/* Advanced Services Showcase */}
       <AdvancedServicesShowcase />
+
+      {/* Innovative Services Showcase */}
+      <InnovativeServicesShowcase />
 
       {/* Original Services Showcase */}
       <ServicesShowcase />
