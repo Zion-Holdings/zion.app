@@ -1,210 +1,350 @@
-import React from 'react';
-import { SEO } from '@/components/SEO';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { 
+  Search, 
+  Calendar, 
+  User, 
+  Clock, 
+  Tag,
+  ArrowRight,
+  Filter
+} from 'lucide-react';
 
-export default function Blog() {
+const Blog = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('all');
+
+  const categories = [
+    { id: 'all', name: 'All Posts', count: 15 },
+    { id: 'ai', name: 'AI & Machine Learning', count: 6 },
+    { id: 'tech', name: 'Technology Trends', count: 4 },
+    { id: 'business', name: 'Business Insights', count: 3 },
+    { id: 'cybersecurity', name: 'Cybersecurity', count: 2 }
+  ];
+
+  const blogPosts = [
+    {
+      id: 1,
+      title: "The Future of AI in Business: 2025 Trends and Predictions",
+      excerpt: "Discover how artificial intelligence is reshaping business operations and what to expect in the coming year.",
+      category: "ai",
+      author: "Kleber Santos",
+      date: "2025-01-15",
+      readTime: "8 min read",
+      image: "🤖",
+      tags: ["AI", "Business", "Trends", "2025"],
+      featured: true
+    },
+    {
+      id: 2,
+      title: "Building Scalable Micro SAAS Applications: A Complete Guide",
+      excerpt: "Learn the best practices for creating and launching successful micro SAAS applications that scale with your business.",
+      category: "tech",
+      author: "Zion Tech Team",
+      date: "2025-01-12",
+      readTime: "12 min read",
+      image: "🚀",
+      tags: ["SAAS", "Development", "Scalability", "Guide"]
+    },
+    {
+      id: 3,
+      title: "Cybersecurity Best Practices for Modern Enterprises",
+      excerpt: "Essential security measures and strategies to protect your business from evolving cyber threats.",
+      category: "cybersecurity",
+      author: "Security Team",
+      date: "2025-01-10",
+      readTime: "10 min read",
+      image: "🔒",
+      tags: ["Security", "Enterprise", "Best Practices", "Cybersecurity"]
+    },
+    {
+      id: 4,
+      title: "Digital Transformation: How to Successfully Navigate Change",
+      excerpt: "A comprehensive roadmap for businesses looking to embrace digital transformation and stay competitive.",
+      category: "business",
+      author: "Digital Strategy Team",
+      date: "2025-01-08",
+      readTime: "15 min read",
+      image: "💼",
+      tags: ["Digital Transformation", "Strategy", "Business", "Innovation"]
+    },
+    {
+      id: 5,
+      title: "Quantum Computing: The Next Frontier in Technology",
+      excerpt: "Exploring the potential of quantum computing and its implications for various industries.",
+      category: "tech",
+      author: "Quantum Research Team",
+      date: "2025-01-05",
+      readTime: "14 min read",
+      image: "⚛️",
+      tags: ["Quantum Computing", "Technology", "Research", "Future"]
+    },
+    {
+      id: 6,
+      title: "AI Ethics and Responsible Technology Development",
+      excerpt: "Understanding the importance of ethical considerations in AI development and deployment.",
+      category: "ai",
+      author: "AI Ethics Team",
+      date: "2025-01-03",
+      readTime: "11 min read",
+      image: "⚖️",
+      tags: ["AI Ethics", "Responsible AI", "Technology", "Ethics"]
+    }
+  ];
+
+  const filteredPosts = blogPosts.filter(post => {
+    const matchesCategory = selectedCategory === 'all' || post.category === selectedCategory;
+    const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         post.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+    return matchesCategory && matchesSearch;
+  });
+
+  const featuredPost = blogPosts.find(post => post.featured);
+  const regularPosts = filteredPosts.filter(post => !post.featured);
+
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString('en-US', { 
+      year: 'numeric', 
+      month: 'long', 
+      day: 'numeric' 
+    });
+  };
+
   return (
-    <>
-      <SEO
-        title="Blog | Zion Tech Group"
-        description="Stay updated with the latest technology trends, AI insights, and industry news from Zion Tech Group"
-        keywords="blog, technology news, AI insights, tech trends, Zion Tech Group"
-        canonical="https://ziontechgroup.com/blog"
-      />
-      <main className="min-h-screen bg-zion-blue pt-24 pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Zion Tech Group Blog
-            </h1>
-            <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-              Stay ahead of the curve with insights, trends, and expert perspectives on technology, AI, and digital transformation.
-            </p>
-          </div>
-
-          {/* Featured Article */}
-          <div className="mb-16">
-            <div className="bg-zion-blue-dark border border-zion-blue-light rounded-xl p-8">
-              <div className="flex items-center mb-4">
-                <span className="bg-zion-cyan text-zion-blue-dark px-3 py-1 rounded-full text-sm font-semibold">
-                  Featured
-                </span>
-                <span className="text-zion-slate-light ml-4">December 15, 2024</span>
-              </div>
-              <h2 className="text-3xl font-bold text-white mb-4">
-                The Future of AI in Enterprise: 2025 Predictions
-              </h2>
-              <p className="text-zion-slate-light text-lg mb-6">
-                Explore the transformative trends that will shape artificial intelligence in enterprise environments throughout 2025, 
-                from autonomous decision-making to AI-powered cybersecurity.
-              </p>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center space-x-4">
-                  <div className="w-10 h-10 bg-zion-cyan rounded-full flex items-center justify-center">
-                    <span className="text-zion-blue-dark font-bold">ZT</span>
-                  </div>
-                  <div>
-                    <div className="text-white font-semibold">Zion Tech Team</div>
-                    <div className="text-zion-slate-light text-sm">AI & Technology Experts</div>
-                  </div>
-                </div>
-                <button className="bg-zion-cyan hover:bg-zion-cyan-light text-zion-blue-dark px-6 py-3 rounded-lg font-semibold transition-colors">
-                  Read More
-                </button>
-              </div>
+    <div className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple">
+      {/* Hero Section */}
+      <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+            Zion Tech <span className="bg-gradient-to-r from-zion-cyan to-zion-purple-light bg-clip-text text-transparent">Blog</span>
+          </h1>
+          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto mb-8">
+            Insights, trends, and expert analysis on AI, technology, and digital transformation.
+          </p>
+          
+          {/* Search Bar */}
+          <div className="max-w-2xl mx-auto mb-8">
+            <div className="relative">
+              <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-zion-slate-light w-5 h-5" />
+              <input
+                type="text"
+                placeholder="Search articles..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-12 pr-4 py-4 bg-white/20 border border-white/30 rounded-lg text-white placeholder-zion-slate-light focus:outline-none focus:ring-2 focus:ring-zion-cyan focus:border-transparent backdrop-blur-sm"
+              />
             </div>
           </div>
 
-          {/* Article Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Article 1 */}
-            <article className="bg-zion-blue-dark border border-zion-blue-light rounded-xl p-6 hover:border-zion-cyan transition-colors">
-              <div className="mb-4">
-                <span className="bg-zion-purple/20 text-zion-purple px-3 py-1 rounded-full text-sm font-semibold">
-                  AI & ML
-                </span>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">
-                Building Scalable AI Infrastructure
-              </h3>
-              <p className="text-zion-slate-light mb-4">
-                Learn the best practices for designing and implementing AI infrastructure that can grow with your business needs.
-              </p>
-              <div className="flex items-center justify-between">
-                <span className="text-zion-slate-light text-sm">December 10, 2024</span>
-                <button className="text-zion-cyan hover:text-zion-cyan-light font-semibold">
-                  Read →
-                </button>
-              </div>
-            </article>
-
-            {/* Article 2 */}
-            <article className="bg-zion-blue-dark border border-zion-blue-light rounded-xl p-6 hover:border-zion-cyan transition-colors">
-              <div className="mb-4">
-                <span className="bg-green-500/20 text-green-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  Green IT
-                </span>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">
-                Sustainable Technology Solutions
-              </h3>
-              <p className="text-zion-slate-light mb-4">
-                Discover how businesses can reduce their carbon footprint while maintaining technological competitiveness.
-              </p>
-              <div className="flex items-center justify-between">
-                <span className="text-zion-slate-light text-sm">December 8, 2024</span>
-                <button className="text-zion-cyan hover:text-zion-cyan-light font-semibold">
-                  Read →
-                </button>
-              </div>
-            </article>
-
-            {/* Article 3 */}
-            <article className="bg-zion-blue-dark border border-zion-blue-light rounded-xl p-6 hover:border-zion-cyan transition-colors">
-              <div className="mb-4">
-                <span className="bg-blue-500/20 text-blue-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  Cloud
-                </span>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">
-                Multi-Cloud Strategy Best Practices
-              </h3>
-              <p className="text-zion-slate-light mb-4">
-                Navigate the complexities of multi-cloud environments with proven strategies and tools.
-              </p>
-              <div className="flex items-center justify-between">
-                <span className="text-zion-slate-light text-sm">December 5, 2024</span>
-                <button className="text-zion-cyan hover:text-zion-cyan-light font-semibold">
-                  Read →
-                </button>
-              </div>
-            </article>
-
-            {/* Article 4 */}
-            <article className="bg-zion-blue-dark border border-zion-blue-light rounded-xl p-6 hover:border-zion-cyan transition-colors">
-              <div className="mb-4">
-                <span className="bg-red-500/20 text-red-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  Security
-                </span>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">
-                Zero-Trust Security Architecture
-              </h3>
-              <p className="text-zion-slate-light mb-4">
-                Implement a comprehensive zero-trust security model to protect your digital assets.
-              </p>
-              <div className="flex items-center justify-between">
-                <span className="text-zion-slate-light text-sm">December 3, 2024</span>
-                <button className="text-zion-cyan hover:text-zion-cyan-light font-semibold">
-                  Read →
-                </button>
-              </div>
-            </article>
-
-            {/* Article 5 */}
-            <article className="bg-zion-blue-dark border border-zion-blue-light rounded-xl p-6 hover:border-zion-cyan transition-colors">
-              <div className="mb-4">
-                <span className="bg-yellow-500/20 text-yellow-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  Innovation
-                </span>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">
-                The Rise of Edge Computing
-              </h3>
-              <p className="text-zion-slate-light mb-4">
-                Explore how edge computing is revolutionizing data processing and IoT applications.
-              </p>
-              <div className="flex items-center justify-between">
-                <span className="text-zion-slate-light text-sm">November 30, 2024</span>
-                <button className="text-zion-cyan hover:text-zion-cyan-light font-semibold">
-                  Read →
-                </button>
-              </div>
-            </article>
-
-            {/* Article 6 */}
-            <article className="bg-zion-blue-dark border border-zion-blue-light rounded-xl p-6 hover:border-zion-cyan transition-colors">
-              <div className="mb-4">
-                <span className="bg-purple-500/20 text-purple-400 px-3 py-1 rounded-full text-sm font-semibold">
-                  Digital Transformation
-                </span>
-              </div>
-              <h3 className="text-xl font-bold text-white mb-3">
-                Legacy System Modernization
-              </h3>
-              <p className="text-zion-slate-light mb-4">
-                Strategies for successfully modernizing legacy systems without disrupting business operations.
-              </p>
-              <div className="flex items-center justify-between">
-                <span className="text-zion-slate-light text-sm">November 28, 2024</span>
-                <button className="text-zion-cyan hover:text-zion-cyan-light font-semibold">
-                  Read →
-                </button>
-              </div>
-            </article>
+          {/* Category Pills */}
+          <div className="flex flex-wrap justify-center gap-3">
+            {categories.map((category) => (
+              <button
+                key={category.id}
+                onClick={() => setSelectedCategory(category.id)}
+                className={`flex items-center gap-2 px-4 py-2 rounded-full font-medium transition-all duration-300 ${
+                  selectedCategory === category.id
+                    ? 'bg-zion-cyan text-white shadow-lg'
+                    : 'bg-white/20 text-zion-slate-light hover:bg-white/30 border border-white/30'
+                }`}
+              >
+                {category.name}
+                <span className="text-xs opacity-75">({category.count})</span>
+              </button>
+            ))}
           </div>
+        </div>
+      </section>
 
-          {/* Newsletter Signup */}
-          <div className="mt-20 bg-gradient-to-r from-zion-purple to-zion-purple-dark rounded-2xl p-8 text-center">
-            <h2 className="text-3xl font-bold text-white mb-4">
-              Stay Updated
-            </h2>
-            <p className="text-zion-slate-light text-lg mb-6 max-w-2xl mx-auto">
-              Get the latest insights delivered directly to your inbox. Join thousands of tech professionals 
-              who trust Zion Tech Group for industry knowledge.
+      {/* Featured Post */}
+      {featuredPost && (
+        <section className="px-4 sm:px-6 lg:px-8 pb-16">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-2xl font-bold text-white mb-8 text-center">Featured Article</h2>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 overflow-hidden hover:border-zion-cyan/50 transition-all duration-300">
+              <div className="grid lg:grid-cols-2 gap-0">
+                <div className="p-8 lg:p-12 flex flex-col justify-center">
+                  <div className="flex items-center gap-2 mb-4">
+                    <span className="px-3 py-1 bg-zion-cyan/20 text-zion-cyan text-sm rounded-full border border-zion-cyan/30">
+                      {categories.find(c => c.id === featuredPost.category)?.name}
+                    </span>
+                    <span className="text-zion-slate-light text-sm">Featured</span>
+                  </div>
+                  
+                  <h3 className="text-3xl font-bold text-white mb-4 leading-tight">
+                    {featuredPost.title}
+                  </h3>
+                  
+                  <p className="text-zion-slate-light mb-6 text-lg leading-relaxed">
+                    {featuredPost.excerpt}
+                  </p>
+                  
+                  <div className="flex items-center gap-4 mb-6 text-sm text-zion-slate-light">
+                    <div className="flex items-center gap-2">
+                      <User className="w-4 h-4" />
+                      {featuredPost.author}
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Calendar className="w-4 h-4" />
+                      {formatDate(featuredPost.date)}
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Clock className="w-4 h-4" />
+                      {featuredPost.readTime}
+                    </div>
+                  </div>
+                  
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {featuredPost.tags.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="px-2 py-1 bg-white/10 text-zion-slate-light text-xs rounded border border-white/20"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  
+                  <Link 
+                    to={`/blog/${featuredPost.id}`}
+                    className="inline-flex items-center gap-2 bg-zion-cyan hover:bg-zion-cyan-light text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+                  >
+                    Read Full Article
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </div>
+                
+                <div className="bg-gradient-to-br from-zion-cyan/20 to-zion-purple/20 p-8 lg:p-12 flex items-center justify-center">
+                  <div className="text-8xl">{featuredPost.image}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Regular Posts */}
+      <section className="px-4 sm:px-6 lg:px-8 pb-16">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-2xl font-bold text-white mb-8 text-center">Latest Articles</h2>
+          
+          {regularPosts.length === 0 ? (
+            <div className="text-center py-16">
+              <div className="text-6xl mb-4">🔍</div>
+              <h3 className="text-2xl font-bold text-white mb-2">No articles found</h3>
+              <p className="text-zion-slate-light">Try adjusting your search or filter criteria</p>
+            </div>
+          ) : (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {regularPosts.map((post) => (
+                <article key={post.id} className="bg-white/10 backdrop-blur-sm rounded-2xl border border-white/20 overflow-hidden hover:border-zion-cyan/50 transition-all duration-300 group">
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="px-2 py-1 bg-zion-cyan/20 text-zion-cyan text-xs rounded-full border border-zion-cyan/30">
+                        {categories.find(c => c.id === post.category)?.name}
+                      </span>
+                    </div>
+                    
+                    <div className="text-4xl mb-4">{post.image}</div>
+                    
+                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-zion-cyan transition-colors line-clamp-2">
+                      {post.title}
+                    </h3>
+                    
+                    <p className="text-zion-slate-light mb-4 text-sm leading-relaxed line-clamp-3">
+                      {post.excerpt}
+                    </p>
+                    
+                    <div className="flex items-center gap-4 mb-4 text-xs text-zion-slate-light">
+                      <div className="flex items-center gap-1">
+                        <User className="w-3 h-3" />
+                        {post.author}
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Calendar className="w-3 h-3" />
+                        {formatDate(post.date)}
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <Clock className="w-3 h-3" />
+                        {post.readTime}
+                      </div>
+                    </div>
+                    
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {post.tags.slice(0, 3).map((tag, index) => (
+                        <span
+                          key={index}
+                          className="px-2 py-1 bg-white/10 text-zion-slate-light text-xs rounded border border-white/20"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    
+                    <Link 
+                      to={`/blog/${post.id}`}
+                      className="inline-flex items-center gap-2 text-zion-cyan hover:text-zion-cyan-light font-semibold text-sm transition-colors"
+                    >
+                      Read More
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </article>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Newsletter Signup */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+            <h2 className="text-3xl font-bold text-white mb-4">Stay Updated</h2>
+            <p className="text-lg text-zion-slate-light mb-6">
+              Get the latest insights on AI, technology trends, and business transformation delivered to your inbox.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 px-4 py-3 rounded-lg border-0 focus:ring-2 focus:ring-zion-cyan focus:outline-none"
+                className="flex-1 px-4 py-3 bg-white/20 border border-white/30 rounded-lg text-white placeholder-zion-slate-light focus:outline-none focus:ring-2 focus:ring-zion-cyan focus:border-transparent"
               />
-              <button className="bg-zion-cyan hover:bg-zion-cyan-light text-zion-blue-dark px-6 py-3 rounded-lg font-semibold transition-colors">
+              <button className="bg-zion-cyan hover:bg-zion-cyan-light text-white px-6 py-3 rounded-lg font-semibold transition-colors">
                 Subscribe
               </button>
             </div>
           </div>
         </div>
-      </main>
-    </>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-white mb-6">Ready to Transform Your Business?</h2>
+          <p className="text-lg text-zion-slate-light mb-8">
+            Let's discuss how our AI-powered solutions can drive your success.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link 
+              to="/contact" 
+              className="bg-zion-cyan hover:bg-zion-cyan-light text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+            >
+              Get Started
+            </Link>
+            <Link 
+              to="/services" 
+              className="border border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-white px-8 py-3 rounded-lg font-semibold transition-colors"
+            >
+              View Services
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
   );
-}
+};
+
+export default Blog;
