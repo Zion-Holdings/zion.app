@@ -31,7 +31,11 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
     {
       title: 'Services',
       items: [
-        { name: 'AI & Machine Learning', path: '/services?category=AI%20%26%20Machine%20Learning', icon: Briefcase },
+        { name: 'AI Business Intelligence', path: '/services/ai-business-intelligence', icon: Briefcase },
+        { name: 'AI Marketing Automation', path: '/services/ai-marketing-automation', icon: Briefcase },
+        { name: 'AI HR & Recruitment', path: '/services/ai-hr-recruitment', icon: Briefcase },
+        { name: 'AI Legal Tech', path: '/services/ai-legal-tech', icon: Briefcase },
+        { name: 'AI Healthcare Analytics', path: '/services/ai-healthcare-analytics', icon: Briefcase },
         { name: 'Cybersecurity', path: '/services?category=Cybersecurity', icon: Shield },
         { name: 'Micro SAAS Solutions', path: '/services?category=Micro%20SAAS%20Solutions', icon: Globe },
         { name: 'Space Technology', path: '/services?category=Space%20Technology', icon: Globe },

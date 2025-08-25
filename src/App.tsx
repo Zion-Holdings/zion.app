@@ -57,6 +57,27 @@ const SpecializedITInfrastructure = lazy(() => import('./pages/services/Speciali
 const EnterpriseSolutions = lazy(() => import('./pages/solutions/Enterprise'));
 const HealthcareSolutions = lazy(() => import('./pages/solutions/Healthcare'));
 
+// Sitemap
+const Sitemap = lazy(() => import('./pages/Sitemap'));
+
+// AI Business Intelligence
+const AIBusinessIntelligence = lazy(() => import('./pages/services/AIBusinessIntelligence'));
+
+// AI Marketing Automation
+const AIMarketingAutomation = lazy(() => import('./pages/services/AIMarketingAutomation'));
+
+// AI HR & Recruitment
+const AIHRRecruitment = lazy(() => import('./pages/services/AIHRRecruitment'));
+
+// AI Legal Tech
+const AILegalTech = lazy(() => import('./pages/services/AILegalTech'));
+
+// AI Healthcare Analytics
+const AIHealthcareAnalytics = lazy(() => import('./pages/services/AIHealthcareAnalytics'));
+
+// AI Financial Analytics
+const AIFinancialAnalytics = lazy(() => import('./pages/services/AIFinancialAnalytics'));
+
 // Loading Component
 const LoadingSpinner = () => (
   <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
@@ -127,6 +148,27 @@ const App = () => {
                     {/* Solutions Routes */}
                     <Route path="/services/enterprise" element={<EnterpriseSolutions />} />
                     <Route path="/solutions/healthcare" element={<HealthcareSolutions />} />
+                    
+                    {/* Sitemap */}
+                    <Route path="/sitemap" element={<Sitemap />} />
+                    
+                    {/* AI Business Intelligence */}
+                    <Route path="/services/ai-business-intelligence" element={<AIBusinessIntelligence />} />
+                    
+                    {/* AI Marketing Automation */}
+                    <Route path="/services/ai-marketing-automation" element={<AIMarketingAutomation />} />
+                    
+                    {/* AI HR & Recruitment */}
+                    <Route path="/services/ai-hr-recruitment" element={<AIHRRecruitment />} />
+                    
+                    {/* AI Legal Tech */}
+                    <Route path="/services/ai-legal-tech" element={<AILegalTech />} />
+                    
+                    {/* AI Healthcare Analytics */}
+                    <Route path="/services/ai-healthcare-analytics" element={<AIHealthcareAnalytics />} />
+                    
+                    {/* AI Financial Analytics */}
+                    <Route path="/services/ai-financial-analytics" element={<AIFinancialAnalytics />} />
                   </Routes>
                 </Suspense>
               </main>

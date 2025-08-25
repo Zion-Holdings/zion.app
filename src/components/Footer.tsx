@@ -26,12 +26,12 @@ export function Footer() {
       icon: Brain,
       description: "Intelligent solutions powered by artificial intelligence",
       links: [
-        { label: "AI Business Intelligence", path: "/services#ai-bi", description: "Advanced analytics and insights" },
-        { label: "AI Marketing Automation", path: "/services#ai-marketing", description: "Smart marketing optimization" },
-        { label: "AI HR & Recruitment", path: "/services#ai-hr", description: "Intelligent talent management" },
-        { label: "AI Legal Tech", path: "/services#ai-legal", description: "Automated legal processes" },
-        { label: "AI Healthcare Analytics", path: "/services#ai-healthcare", description: "Patient care optimization" },
-        { label: "AI Financial Analytics", path: "/services#financial", description: "Risk assessment and insights" },
+        { label: "AI Business Intelligence", path: "/services/ai-business-intelligence", description: "Advanced analytics and insights" },
+        { label: "AI Marketing Automation", path: "/services/ai-marketing-automation", description: "Smart marketing optimization" },
+        { label: "AI HR & Recruitment", path: "/services/ai-hr-recruitment", description: "Intelligent talent management" },
+        { label: "AI Legal Tech", path: "/services/ai-legal-tech", description: "Automated legal processes" },
+        { label: "AI Healthcare Analytics", path: "/services/ai-healthcare-analytics", description: "Patient care optimization" },
+        { label: "AI Financial Analytics", path: "/services/ai-financial-analytics", description: "Risk assessment and insights" },
         { label: "AI Supply Chain", path: "/services#supply-chain", description: "Optimization and forecasting" },
         { label: "AI Manufacturing", path: "/services#manufacturing", description: "Smart production systems" }
       ]

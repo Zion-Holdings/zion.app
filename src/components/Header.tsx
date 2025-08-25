@@ -97,11 +97,11 @@ export function Header() {
       icon: Brain,
       description: 'Intelligent solutions powered by artificial intelligence',
       services: [
-        { name: 'AI Business Intelligence', path: '/services#ai-bi', description: 'Advanced analytics and insights' },
-        { name: 'AI Marketing Automation', path: '/services#ai-marketing', description: 'Smart marketing optimization' },
-        { name: 'AI HR & Recruitment', path: '/services#ai-hr', description: 'Intelligent talent management' },
-        { name: 'AI Legal Tech', path: '/services#ai-legal', description: 'Automated legal processes' },
-        { name: 'AI Healthcare Analytics', path: '/services#ai-healthcare', description: 'Patient care optimization' }
+        { name: 'AI Business Intelligence', path: '/services/ai-business-intelligence', description: 'Advanced analytics and insights' },
+        { name: 'AI Marketing Automation', path: '/services/ai-marketing-automation', description: 'Smart marketing optimization' },
+        { name: 'AI HR & Recruitment', path: '/services/ai-hr-recruitment', description: 'Intelligent talent management' },
+        { name: 'AI Legal Tech', path: '/services/ai-legal-tech', description: 'Automated legal processes' },
+        { name: 'AI Healthcare Analytics', path: '/services/ai-healthcare-analytics', description: 'Patient care optimization' }
       ]
     },
     {
