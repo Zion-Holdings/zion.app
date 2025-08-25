@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { Search, Filter, Star, Clock, DollarSign, Users, Zap, Brain, Cloud, Database, Shield, Settings, Eye, Leaf, CreditCard, Heart, Truck, ShoppingCart, Phone, Mail, MapPin, Globe, Bot, Cpu, Network, Database as DatabaseIcon, Shield as ShieldIcon, Zap as ZapIcon, Building, Factory, Store, Car, Plane, Ship, Home, Hospital, Building2, GraduationCap, Calendar, FileText, BarChart3, Users as UsersIcon, CreditCard as CreditCardIcon, MessageSquare, Camera, Video, Music, BookOpen, Target, TrendingUp, PieChart, Activity, Zap as ZapIcon2 } from 'lucide-react';
+import { Search, Filter, Star, Clock, DollarSign, Users, Zap, Brain, Cloud, Database, Shield, Settings, Eye, Leaf, CreditCard, Heart, Truck, ShoppingCart, Phone, Mail, MapPin, Globe, Bot, Cpu, Network, Database as DatabaseIcon, Shield as ShieldIcon, Zap as ZapIcon, Building, Factory, Store, Car, Plane, Ship, Home, Hospital, Building2, GraduationCap, Calendar, FileText, BarChart3, Users as UsersIcon, CreditCard as CreditCardIcon, MessageSquare, Camera, Video, Music, BookOpen, Target, TrendingUp, PieChart, Activity, Zap as ZapIcon2, Lock, Key, Globe2, ShieldCheck, BrainCircuit, Rocket, Target, Lightbulb, Code, Palette, DatabaseZap, CloudLightning, Brain, CpuIcon, Network2, Server, Database, Zap2, Shield2, Settings2, Eye2, Leaf2, CreditCard2, Heart2, Truck2, ShoppingCart2, Phone2, Mail2, MapPin2, Globe2, Bot2, Cpu2, Network3, Database2, Shield3, Zap3, Building3, Factory2, Store2, Car2, Plane2, Ship2, Home2, Hospital2, Building4, GraduationCap2, Calendar2, FileText2, BarChart4, Users2, CreditCard3, MessageSquare2, Camera2, Video2, Music2, BookOpen2, Target2, TrendingUp2, PieChart2, Activity2, Zap4 } from 'lucide-react';
 
 const MicroSaasServices: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedPricing, setSelectedPricing] = useState<string>('all');
 
-  // Micro SAAS Services data
+  // Enhanced Micro SAAS Services data with more real, useful services
   const microSaasServices = [
     {
       id: 1,
@@ -292,10 +292,200 @@ const MicroSaasServices: React.FC = () => {
         email: "kleber@ziontechgroup.com",
         website: "https://ziontechgroup.com"
       }
+    },
+    {
+      id: 16,
+      name: "CodeFlow IDE",
+      category: "Development",
+      pricing: "Freemium",
+      description: "Cloud-based integrated development environment with AI-powered code completion and debugging",
+      price: 45,
+      pricingModel: "monthly",
+      userLimit: "Up to 10 developers",
+      features: ["AI code completion", "Real-time collaboration", "Cloud deployment", "Version control"],
+      benefits: ["Faster development", "Team collaboration", "No setup required", "Cross-platform access"],
+      targetAudience: ["Development teams", "Startups", "Freelancers", "Educational institutions"],
+      tags: ["IDE", "Development", "AI", "Collaboration", "Cloud"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 17,
+      name: "DataSync Pro",
+      category: "Data Integration",
+      pricing: "Freemium",
+      description: "Automated data synchronization and ETL platform for business applications",
+      price: 55,
+      pricingModel: "monthly",
+      userLimit: "Up to 20 data sources",
+      features: ["Data connectors", "Real-time sync", "Data transformation", "Error handling"],
+      benefits: ["Data consistency", "Time savings", "Reduced errors", "Scalable integration"],
+      targetAudience: ["Data teams", "Business analysts", "IT departments", "Consulting firms"],
+      tags: ["Data Integration", "ETL", "Automation", "Business Intelligence", "Data Pipeline"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 18,
+      name: "CyberShield Pro",
+      category: "Cybersecurity",
+      pricing: "Freemium",
+      description: "Comprehensive cybersecurity monitoring and threat detection for small businesses",
+      price: 65,
+      pricingModel: "monthly",
+      userLimit: "Up to 50 endpoints",
+      features: ["Threat detection", "Vulnerability scanning", "Security monitoring", "Incident response"],
+      benefits: ["Enhanced security", "Compliance", "Risk reduction", "24/7 monitoring"],
+      targetAudience: ["Small businesses", "Healthcare", "Finance", "Legal services"],
+      tags: ["Cybersecurity", "Threat Detection", "Compliance", "Monitoring", "Incident Response"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 19,
+      name: "CloudOps Manager",
+      category: "Cloud Management",
+      pricing: "Freemium",
+      description: "Multi-cloud management and optimization platform for DevOps teams",
+      price: 75,
+      pricingModel: "monthly",
+      userLimit: "Up to 15 users",
+      features: ["Multi-cloud dashboard", "Cost optimization", "Resource monitoring", "Automation tools"],
+      benefits: ["Cost savings", "Better visibility", "Automated operations", "Multi-cloud strategy"],
+      targetAudience: ["DevOps teams", "Cloud architects", "IT managers", "Startups"],
+      tags: ["Cloud Management", "DevOps", "Cost Optimization", "Multi-cloud", "Automation"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 20,
+      name: "API Gateway Pro",
+      category: "API Management",
+      pricing: "Freemium",
+      description: "Enterprise-grade API gateway with rate limiting, authentication, and analytics",
+      price: 60,
+      pricingModel: "monthly",
+      userLimit: "Up to 1000 API calls/min",
+      features: ["Rate limiting", "Authentication", "API analytics", "Documentation"],
+      benefits: ["API security", "Performance monitoring", "Developer experience", "Scalability"],
+      targetAudience: ["API developers", "Startups", "Enterprises", "Platform companies"],
+      tags: ["API Management", "Gateway", "Security", "Analytics", "Developer Tools"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 21,
+      name: "Blockchain Builder",
+      category: "Blockchain",
+      pricing: "Freemium",
+      description: "No-code blockchain application development platform for businesses",
+      price: 85,
+      pricingModel: "monthly",
+      userLimit: "Up to 5 projects",
+      features: ["Smart contract builder", "DApp templates", "Deployment tools", "Analytics dashboard"],
+      benefits: ["Blockchain adoption", "Cost reduction", "Faster development", "No coding required"],
+      targetAudience: ["Businesses", "Startups", "Consultants", "Educational institutions"],
+      tags: ["Blockchain", "Smart Contracts", "DApps", "No-code", "DeFi"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 22,
+      name: "IoT Hub Manager",
+      category: "IoT",
+      pricing: "Freemium",
+      description: "Internet of Things device management and data analytics platform",
+      price: 70,
+      pricingModel: "monthly",
+      userLimit: "Up to 1000 devices",
+      features: ["Device management", "Data collection", "Real-time monitoring", "Alert system"],
+      benefits: ["IoT insights", "Predictive maintenance", "Operational efficiency", "Cost reduction"],
+      targetAudience: ["Manufacturing", "Smart cities", "Healthcare", "Agriculture"],
+      tags: ["IoT", "Device Management", "Data Analytics", "Smart Cities", "Industry 4.0"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 23,
+      name: "Quantum Simulator",
+      category: "Quantum Computing",
+      pricing: "Freemium",
+      description: "Quantum computing simulation and algorithm development platform",
+      price: 120,
+      pricingModel: "monthly",
+      userLimit: "Up to 10 users",
+      features: ["Quantum circuits", "Algorithm library", "Simulation engine", "Performance analysis"],
+      benefits: ["Quantum education", "Research capabilities", "Algorithm development", "Future readiness"],
+      targetAudience: ["Researchers", "Universities", "Tech companies", "Students"],
+      tags: ["Quantum Computing", "Simulation", "Algorithms", "Research", "Education"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 24,
+      name: "AR/VR Studio",
+      category: "Extended Reality",
+      pricing: "Freemium",
+      description: "Augmented and virtual reality content creation and management platform",
+      price: 95,
+      pricingModel: "monthly",
+      userLimit: "Up to 8 creators",
+      features: ["3D modeling", "Content creation", "Asset management", "Deployment tools"],
+      benefits: ["Immersive experiences", "Content monetization", "Brand engagement", "Innovation"],
+      targetAudience: ["Marketing agencies", "Game developers", "Educational institutions", "Entertainment"],
+      tags: ["AR/VR", "3D Modeling", "Content Creation", "Immersive Tech", "Digital Twins"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 25,
+      name: "Edge Computing Hub",
+      category: "Edge Computing",
+      pricing: "Freemium",
+      description: "Edge computing infrastructure and application deployment platform",
+      price: 80,
+      pricingModel: "monthly",
+      userLimit: "Up to 20 edge nodes",
+      features: ["Edge deployment", "Load balancing", "Monitoring", "Security"],
+      benefits: ["Low latency", "Bandwidth savings", "Offline capability", "Scalability"],
+      targetAudience: ["IoT companies", "CDN providers", "Manufacturing", "Smart cities"],
+      tags: ["Edge Computing", "IoT", "Low Latency", "Distributed Systems", "5G"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
     }
   ];
 
-  const categories = ['all', 'Productivity', 'Finance', 'Marketing', 'CRM', 'Analytics', 'Scheduling', 'Content', 'Security', 'Media', 'Education', 'Sustainability', 'Legal', 'Healthcare', 'Events', 'Inventory'];
+  const categories = ['all', 'Productivity', 'Finance', 'Marketing', 'CRM', 'Analytics', 'Scheduling', 'Content', 'Security', 'Media', 'Education', 'Sustainability', 'Legal', 'Healthcare', 'Events', 'Inventory', 'Development', 'Data Integration', 'Cybersecurity', 'Cloud Management', 'API Management', 'Blockchain', 'IoT', 'Quantum Computing', 'Extended Reality', 'Edge Computing'];
   const pricingModels = ['all', 'Freemium', 'Subscription', 'One-time'];
 
   const filteredServices = microSaasServices.filter(service => {
