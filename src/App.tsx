@@ -147,6 +147,7 @@ const App = () => {
                     <Route path="/services/specialized-it-infrastructure" element={<SpecializedITInfrastructure />} />
                     <Route path="/innovative-micro-saas-services" element={<InnovativeMicroSaasServices />} />
                     <Route path="/comprehensive-innovative-services" element={<ComprehensiveInnovativeServices />} />
+                    <Route path="/innovative-saas-showcase" element={<InnovativeMicroSaasServices />} />
                     
                     {/* Solutions Routes */}
                     <Route path="/services/enterprise" element={<EnterpriseSolutions />} />
