@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from "./components/ThemeProvider";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
+import Footer from "./components/Footer";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
 import {
@@ -44,6 +44,18 @@ const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
 const MicroSaasServices = React.lazy(() => import('./pages/MicroSaasServices'));
 const PricingPage = React.lazy(() => import('./pages/PricingPage'));
+const About = React.lazy(() => import('./pages/About'));
+const Careers = React.lazy(() => import('./pages/Careers'));
+const Privacy = React.lazy(() => import('./pages/Privacy'));
+const Terms = React.lazy(() => import('./pages/Terms'));
+const Cookies = React.lazy(() => import('./pages/Cookies'));
+const AIServices = React.lazy(() => import('./pages/AIServices'));
+const CloudDevOps = React.lazy(() => import('./pages/CloudDevOps'));
+const EnterpriseSolutions = React.lazy(() => import('./pages/EnterpriseSolutions'));
+const DigitalTransformation = React.lazy(() => import('./pages/DigitalTransformation'));
+const EmergingTech = React.lazy(() => import('./pages/EmergingTech'));
+const Marketplace = React.lazy(() => import('./pages/Marketplace'));
+const Services = React.lazy(() => import('./pages/Services'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -69,6 +81,18 @@ const baseRoutes = [
   { path: '/request-quote', element: <RequestQuotePage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
+  { path: '/about', element: <About /> },
+  { path: '/careers', element: <Careers /> },
+  { path: '/privacy', element: <Privacy /> },
+  { path: '/terms', element: <Terms /> },
+  { path: '/cookies', element: <Cookies /> },
+  { path: '/ai-services', element: <AIServices /> },
+  { path: '/cloud-devops', element: <CloudDevOps /> },
+  { path: '/enterprise-solutions', element: <EnterpriseSolutions /> },
+  { path: '/digital-transformation', element: <DigitalTransformation /> },
+  { path: '/emerging-tech', element: <EmergingTech /> },
+  { path: '/marketplace', element: <Marketplace /> },
+  { path: '/services', element: <Services /> },
 ];
 
 const App = () => {

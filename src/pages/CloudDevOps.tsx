@@ -2,81 +2,79 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { SEO } from '@/components/SEO';
 import { 
-  Rocket, 
-  Target, 
-  Users, 
-  BarChart3, 
+  Cloud, 
+  Cpu, 
+  Database, 
+  Shield, 
   Zap, 
   Globe,
   ArrowRight,
   CheckCircle,
   Star,
-  Brain,
+  Users,
+  Target,
   Award,
-  Shield,
-  Cpu,
+  Server,
   Network,
   Code,
-  Settings,
-  TrendingUp,
-  Lightbulb
+  Settings
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const DigitalTransformation = () => {
+const CloudDevOps = () => {
   const services = [
     {
-      icon: Rocket,
-      title: "Digital Strategy & Roadmap Development",
-      description: "Comprehensive digital transformation strategy with detailed roadmap and implementation planning.",
-      features: ["Digital assessment", "Strategy development", "Roadmap creation", "Change management"],
-      price: "From $150,000",
-      maturity: "Enterprise",
-      color: "from-purple-500 to-pink-500"
-    },
-    {
-      icon: Users,
-      title: "Customer Experience (CX) Transformation",
-      description: "End-to-end customer experience transformation with journey mapping and digital touchpoints.",
-      features: ["Customer journey mapping", "Touchpoint optimization", "Digital experience design", "Analytics integration"],
+      icon: Cloud,
+      title: "Multi-Cloud Infrastructure Management",
+      description: "Comprehensive multi-cloud infrastructure management with automated provisioning and cost optimization.",
+      features: ["Multi-cloud orchestration", "Automated provisioning", "Cost optimization", "Performance monitoring"],
       price: "From $95,000",
-      maturity: "Advanced",
+      complexity: "Enterprise",
       color: "from-blue-500 to-cyan-500"
     },
     {
-      icon: Code,
-      title: "Process Digitalization & Automation",
-      description: "Comprehensive process digitalization with intelligent automation and workflow optimization.",
-      features: ["Process analysis", "Digital workflow design", "Automation implementation", "Performance monitoring"],
+      icon: Cpu,
+      title: "Kubernetes & Container Orchestration",
+      description: "Enterprise-grade Kubernetes deployment and management with advanced monitoring and scaling.",
+      features: ["Kubernetes deployment", "Auto-scaling", "Service mesh", "Monitoring & alerting"],
       price: "From $75,000",
-      maturity: "Mid-Size",
+      complexity: "Advanced",
       color: "from-green-500 to-emerald-500"
     },
     {
-      icon: BarChart3,
-      title: "Data-Driven Decision Making Platform",
-      description: "Comprehensive data analytics platform for informed decision making and business intelligence.",
-      features: ["Data integration", "Advanced analytics", "Real-time dashboards", "Predictive modeling"],
-      price: "From $110,000",
-      maturity: "Advanced",
+      icon: Code,
+      title: "CI/CD Pipeline Automation",
+      description: "End-to-end CI/CD pipeline automation for faster, more reliable software delivery.",
+      features: ["Pipeline automation", "Testing integration", "Deployment automation", "Rollback capabilities"],
+      price: "From $55,000",
+      complexity: "Mid-Size",
+      color: "from-purple-500 to-pink-500"
+    },
+    {
+      icon: Server,
+      title: "Serverless Architecture Solutions",
+      description: "Modern serverless architecture design and implementation for scalable applications.",
+      features: ["Function design", "Event-driven architecture", "Auto-scaling", "Cost optimization"],
+      price: "From $65,000",
+      complexity: "Advanced",
       color: "from-orange-500 to-red-500"
     },
     {
-      icon: Lightbulb,
-      title: "Innovation Lab & Digital Hub",
-      description: "Dedicated innovation lab for digital experimentation, prototyping, and innovation management.",
-      features: ["Innovation lab setup", "Prototyping facilities", "Innovation management", "Collaboration tools"],
-      price: "From $180,000",
-      maturity: "Enterprise",
+      icon: Settings,
+      title: "Infrastructure as Code (IaC)",
+      description: "Infrastructure automation using code for consistent, repeatable deployments.",
+      features: ["Terraform modules", "Ansible playbooks", "Version control", "Environment management"],
+      price: "From $45,000",
+      complexity: "Mid-Size",
       color: "from-indigo-500 to-purple-500"
     },
     {
-      icon: Shield,
-      title: "Change Management & Training",
-      description: "Comprehensive change management programs with employee training and adoption strategies.",
-      features: ["Change strategy", "Training programs", "Communication plans", "Adoption metrics"],
-      price: "From $60,000",
-      maturity: "Mid-Size",
+      icon: Database,
+      title: "Database & Storage Solutions",
+      description: "Scalable database design, migration, and optimization for cloud environments.",
+      features: ["Database migration", "Performance tuning", "Backup strategies", "Disaster recovery"],
+      price: "From $35,000",
+      complexity: "Mid-Size",
       color: "from-yellow-500 to-orange-500"
     }
   ];
@@ -84,62 +82,68 @@ const DigitalTransformation = () => {
   const benefits = [
     {
       icon: Target,
-      title: "Increased Efficiency",
-      description: "Streamline operations and automate processes for maximum productivity and cost savings."
+      title: "Scalability & Performance",
+      description: "Build systems that automatically scale with your business needs and deliver optimal performance."
     },
     {
       icon: Award,
-      title: "Competitive Advantage",
-      description: "Stay ahead of the competition with cutting-edge digital capabilities and innovation."
+      title: "Cost Optimization",
+      description: "Reduce infrastructure costs through intelligent resource management and automation."
     },
     {
       icon: Globe,
       title: "Global Reach",
-      description: "Expand your business reach with digital platforms and online presence."
+      description: "Deploy applications worldwide with multi-region cloud infrastructure."
     },
     {
       icon: Shield,
-      title: "Future-Proof Business",
-      description: "Build a resilient business model that adapts to changing market conditions."
+      title: "Security & Compliance",
+      description: "Enterprise-grade security with compliance frameworks and best practices."
     }
   ];
 
   const stats = [
-    { label: "Digital Transformations", value: "80+", icon: Rocket },
-    { label: "Processes Automated", value: "500+", icon: Code },
-    { label: "Efficiency Gain", value: "45%", icon: TrendingUp },
-    { label: "Client ROI", value: "3.2x", icon: Star }
+    { label: "Cloud Projects Delivered", value: "200+", icon: CheckCircle },
+    { label: "Infrastructure Managed", value: "500+", icon: Server },
+    { label: "Cost Reduction", value: "35%", icon: Star },
+    { label: "Deployment Speed", value: "10x", icon: Zap }
   ];
 
-  const methodologies = [
-    { name: "Design Thinking", icon: "🧠", description: "Human-centered approach to problem solving and innovation" },
-    { name: "Agile Methodology", icon: "🔄", description: "Iterative development with rapid feedback and adaptation" },
-    { name: "Lean Six Sigma", icon: "⚡", description: "Process improvement and waste elimination strategies" },
-    { name: "Change Management", icon: "📈", description: "Structured approach to organizational change and adoption" },
-    { name: "Digital Maturity Assessment", icon: "📊", description: "Comprehensive evaluation of current digital capabilities" },
-    { name: "Innovation Management", icon: "💡", description: "Systematic approach to fostering and managing innovation" }
+  const technologies = [
+    { name: "AWS", icon: "☁️", category: "Cloud Providers" },
+    { name: "Azure", icon: "☁️", category: "Cloud Providers" },
+    { name: "Google Cloud", icon: "☁️", category: "Cloud Providers" },
+    { name: "Kubernetes", icon: "⚙️", category: "Containerization" },
+    { name: "Docker", icon: "🐳", category: "Containerization" },
+    { name: "Terraform", icon: "🏗️", category: "Infrastructure" },
+    { name: "Ansible", icon: "🔧", category: "Automation" },
+    { name: "Jenkins", icon: "🚀", category: "CI/CD" },
+    { name: "GitLab CI", icon: "📦", category: "CI/CD" },
+    { name: "Prometheus", icon: "📊", category: "Monitoring" },
+    { name: "Grafana", icon: "📈", category: "Monitoring" },
+    { name: "Istio", icon: "🔄", category: "Service Mesh" }
   ];
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       <SEO 
-        title="Digital Transformation Services - Zion Tech Group"
-        description="End-to-end business modernization through strategic digital transformation, process optimization, and innovation management."
-        keywords="digital transformation, business modernization, process optimization, innovation management, Zion Tech Group"
-        canonical="https://ziontechgroup.com/digital-transformation"
+        title="Cloud & DevOps Solutions - Zion Tech Group"
+        description="Scalable cloud infrastructure, CI/CD pipelines, and automated deployment solutions that accelerate your development cycle."
+        keywords="cloud services, DevOps, AWS, Azure, Kubernetes, CI/CD, infrastructure as code, Zion Tech Group"
+        canonical="https://ziontechgroup.com/cloud-devops"
       />
 
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple opacity-95" />
+        <div className="absolute inset-0 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-cyan opacity-95" />
         <div className="absolute inset-0">
           <motion.div 
-            className="absolute top-1/4 left-1/4 w-4 h-4 rounded-full bg-zion-purple opacity-60 blur-sm"
+            className="absolute top-1/4 left-1/4 w-4 h-4 rounded-full bg-zion-cyan opacity-60 blur-sm"
             animate={{ y: [0, -20, 0], opacity: [0.3, 0.8, 0.3] }}
             transition={{ duration: 3, repeat: Infinity }}
           />
           <motion.div 
-            className="absolute top-3/4 right-1/4 w-6 h-6 rounded-full bg-zion-cyan opacity-40 blur-sm"
+            className="absolute top-3/4 right-1/4 w-6 h-6 rounded-full bg-zion-blue-light opacity-40 blur-sm"
             animate={{ y: [0, 20, 0], opacity: [0.4, 0.7, 0.4] }}
             transition={{ duration: 4, repeat: Infinity, delay: 1 }}
           />
@@ -152,20 +156,20 @@ const DigitalTransformation = () => {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent">
-                Digital
+              <span className="bg-gradient-to-r from-zion-cyan via-zion-blue-light to-zion-blue bg-clip-text text-transparent">
+                Cloud & DevOps
               </span>
               <br />
-              <span className="text-white">Transformation</span>
+              <span className="text-white">Solutions</span>
             </h1>
             <p className="text-xl md:text-2xl text-zion-slate-light max-w-4xl mx-auto mb-8">
-              End-to-end business modernization through strategic digital transformation, 
-              process optimization, and innovation management.
+              Scalable cloud infrastructure, CI/CD pipelines, and automated deployment solutions 
+              that accelerate your development cycle.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300"
+                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-blue text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300"
               >
                 Get Started
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -195,7 +199,7 @@ const DigitalTransformation = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="text-center"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-r from-zion-cyan to-zion-purple rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-r from-zion-cyan to-zion-blue rounded-full flex items-center justify-center mx-auto mb-4">
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
                   <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
@@ -217,10 +221,10 @@ const DigitalTransformation = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Our Digital Transformation Services
+              Our Cloud & DevOps Services
             </h2>
             <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-              Comprehensive services designed to modernize your business and drive innovation
+              Comprehensive solutions designed to modernize your infrastructure and accelerate development
             </p>
           </motion.div>
 
@@ -241,11 +245,11 @@ const DigitalTransformation = () => {
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-xl font-bold text-white">{service.title}</h3>
                     <span className={`px-3 py-1 text-xs font-semibold rounded-full ${
-                      service.maturity === 'Enterprise' ? 'bg-red-500/20 text-red-400' :
-                      service.maturity === 'Advanced' ? 'bg-orange-500/20 text-orange-400' :
+                      service.complexity === 'Enterprise' ? 'bg-red-500/20 text-red-400' :
+                      service.complexity === 'Advanced' ? 'bg-orange-500/20 text-orange-400' :
                       'bg-green-500/20 text-green-400'
                     }`}>
-                      {service.maturity}
+                      {service.complexity}
                     </span>
                   </div>
                   <p className="text-zion-slate-light mb-6">{service.description}</p>
@@ -266,7 +270,7 @@ const DigitalTransformation = () => {
                     <div className="text-2xl font-bold text-zion-cyan mb-4">{service.price}</div>
                     <Link
                       to="/contact"
-                      className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-zion-cyan to-zion-purple text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300"
+                      className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-zion-cyan to-zion-blue text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300"
                     >
                       Learn More
                       <ArrowRight className="ml-2 w-4 h-4" />
@@ -279,7 +283,7 @@ const DigitalTransformation = () => {
         </div>
       </section>
 
-      {/* Methodologies Section */}
+      {/* Technologies Section */}
       <section className="py-20 bg-zion-blue-dark">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -289,25 +293,25 @@ const DigitalTransformation = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Our Methodologies
+              Technologies We Work With
             </h2>
             <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-              Proven frameworks and approaches for successful digital transformation
+              Expert-level proficiency in leading cloud and DevOps technologies
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {methodologies.map((methodology, index) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {technologies.map((tech, index) => (
               <motion.div
-                key={methodology.name}
+                key={tech.name}
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                transition={{ duration: 0.6, delay: index * 0.05 }}
                 className="bg-zion-blue border border-zion-blue-light rounded-xl p-6 text-center hover:border-zion-cyan/50 transition-all duration-300"
               >
-                <div className="text-4xl mb-3">{methodology.icon}</div>
-                <h3 className="text-xl font-semibold text-white mb-3">{methodology.name}</h3>
-                <p className="text-zion-slate-light">{methodology.description}</p>
+                <div className="text-4xl mb-3">{tech.icon}</div>
+                <h3 className="text-lg font-semibold text-white mb-2">{tech.name}</h3>
+                <p className="text-sm text-zion-slate-light">{tech.category}</p>
               </motion.div>
             ))}
           </div>
@@ -324,10 +328,10 @@ const DigitalTransformation = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Why Choose Our Digital Transformation Services?
+              Why Choose Our Cloud & DevOps Services?
             </h2>
             <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-              Experience the benefits of strategic digital transformation and innovation
+              Experience the benefits of modern, scalable, and secure infrastructure
             </p>
           </motion.div>
 
@@ -342,7 +346,7 @@ const DigitalTransformation = () => {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="flex items-start gap-6"
                 >
-                  <div className="w-16 h-16 bg-gradient-to-r from-zion-cyan to-zion-purple rounded-xl flex items-center justify-center flex-shrink-0">
+                  <div className="w-16 h-16 bg-gradient-to-r from-zion-cyan to-zion-blue rounded-xl flex items-center justify-center flex-shrink-0">
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
                   <div>
@@ -357,7 +361,7 @@ const DigitalTransformation = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-zion-cyan to-zion-purple">
+      <section className="py-20 bg-gradient-to-r from-zion-cyan to-zion-blue">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -365,10 +369,10 @@ const DigitalTransformation = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Transform Your Business?
+              Ready to Modernize Your Infrastructure?
             </h2>
             <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8">
-              Let's discuss how our digital transformation services can modernize your operations and drive growth
+              Let's discuss how our cloud and DevOps solutions can accelerate your development and reduce costs
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -392,4 +396,4 @@ const DigitalTransformation = () => {
   );
 };
 
-export default DigitalTransformation;
+export default CloudDevOps;

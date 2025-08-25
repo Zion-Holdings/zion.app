@@ -99,7 +99,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li><Link to="/marketplace" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
-                Products
+                Marketplace
               </Link></li>
               <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>

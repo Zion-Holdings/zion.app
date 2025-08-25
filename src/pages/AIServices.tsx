@@ -2,81 +2,71 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { SEO } from '@/components/SEO';
 import { 
-  Rocket, 
-  Target, 
-  Users, 
-  BarChart3, 
+  Brain, 
+  Cpu, 
+  Eye, 
+  MessageSquare, 
+  TrendingUp, 
   Zap, 
+  Shield, 
   Globe,
   ArrowRight,
   CheckCircle,
   Star,
-  Brain,
-  Award,
-  Shield,
-  Cpu,
-  Network,
-  Code,
-  Settings,
-  TrendingUp,
-  Lightbulb
+  Users,
+  Target,
+  Award
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const DigitalTransformation = () => {
+const AIServices = () => {
   const services = [
     {
-      icon: Rocket,
-      title: "Digital Strategy & Roadmap Development",
-      description: "Comprehensive digital transformation strategy with detailed roadmap and implementation planning.",
-      features: ["Digital assessment", "Strategy development", "Roadmap creation", "Change management"],
-      price: "From $150,000",
-      maturity: "Enterprise",
+      icon: Brain,
+      title: "AI-Powered Business Intelligence",
+      description: "Transform your data into actionable insights with advanced AI analytics and predictive modeling.",
+      features: ["Real-time dashboards", "Predictive analytics", "Custom reporting", "Data visualization"],
+      price: "From $2,500/month",
       color: "from-purple-500 to-pink-500"
     },
     {
-      icon: Users,
-      title: "Customer Experience (CX) Transformation",
-      description: "End-to-end customer experience transformation with journey mapping and digital touchpoints.",
-      features: ["Customer journey mapping", "Touchpoint optimization", "Digital experience design", "Analytics integration"],
-      price: "From $95,000",
-      maturity: "Advanced",
+      icon: MessageSquare,
+      title: "Natural Language Processing",
+      description: "Advanced NLP solutions for text analysis, sentiment analysis, and language understanding.",
+      features: ["Text analysis", "Sentiment analysis", "Language translation", "Chatbot integration"],
+      price: "From $1,800/month",
       color: "from-blue-500 to-cyan-500"
     },
     {
-      icon: Code,
-      title: "Process Digitalization & Automation",
-      description: "Comprehensive process digitalization with intelligent automation and workflow optimization.",
-      features: ["Process analysis", "Digital workflow design", "Automation implementation", "Performance monitoring"],
-      price: "From $75,000",
-      maturity: "Mid-Size",
+      icon: Eye,
+      title: "Computer Vision & Image Recognition",
+      description: "Computer vision solutions for image and video analysis, object detection, and pattern recognition.",
+      features: ["Object detection", "Image classification", "Facial recognition", "Video analysis"],
+      price: "From $3,200/month",
       color: "from-green-500 to-emerald-500"
     },
     {
-      icon: BarChart3,
-      title: "Data-Driven Decision Making Platform",
-      description: "Comprehensive data analytics platform for informed decision making and business intelligence.",
-      features: ["Data integration", "Advanced analytics", "Real-time dashboards", "Predictive modeling"],
-      price: "From $110,000",
-      maturity: "Advanced",
+      icon: TrendingUp,
+      title: "Predictive Analytics & Forecasting",
+      description: "AI-powered predictive analytics for forecasting trends, risks, and opportunities.",
+      features: ["Trend forecasting", "Risk assessment", "Demand prediction", "Anomaly detection"],
+      price: "From $2,800/month",
       color: "from-orange-500 to-red-500"
     },
     {
-      icon: Lightbulb,
-      title: "Innovation Lab & Digital Hub",
-      description: "Dedicated innovation lab for digital experimentation, prototyping, and innovation management.",
-      features: ["Innovation lab setup", "Prototyping facilities", "Innovation management", "Collaboration tools"],
-      price: "From $180,000",
-      maturity: "Enterprise",
+      icon: Zap,
+      title: "AI-Powered Automation",
+      description: "Intelligent automation solutions that learn and adapt to optimize business processes.",
+      features: ["Process optimization", "Workflow automation", "Decision automation", "Learning algorithms"],
+      price: "From $2,200/month",
       color: "from-indigo-500 to-purple-500"
     },
     {
-      icon: Shield,
-      title: "Change Management & Training",
-      description: "Comprehensive change management programs with employee training and adoption strategies.",
-      features: ["Change strategy", "Training programs", "Communication plans", "Adoption metrics"],
-      price: "From $60,000",
-      maturity: "Mid-Size",
+      icon: Users,
+      title: "AI Chatbot & Virtual Assistants",
+      description: "Intelligent chatbots and virtual assistants for customer service and business automation.",
+      features: ["Natural conversations", "Multi-language support", "Integration APIs", "Analytics dashboard"],
+      price: "From $1,500/month",
       color: "from-yellow-500 to-orange-500"
     }
   ];
@@ -85,48 +75,39 @@ const DigitalTransformation = () => {
     {
       icon: Target,
       title: "Increased Efficiency",
-      description: "Streamline operations and automate processes for maximum productivity and cost savings."
+      description: "Automate repetitive tasks and optimize processes for maximum productivity."
     },
     {
       icon: Award,
-      title: "Competitive Advantage",
-      description: "Stay ahead of the competition with cutting-edge digital capabilities and innovation."
+      title: "Cost Reduction",
+      description: "Reduce operational costs through intelligent automation and optimization."
     },
     {
       icon: Globe,
-      title: "Global Reach",
-      description: "Expand your business reach with digital platforms and online presence."
+      title: "Competitive Advantage",
+      description: "Stay ahead of the competition with cutting-edge AI capabilities."
     },
     {
       icon: Shield,
-      title: "Future-Proof Business",
-      description: "Build a resilient business model that adapts to changing market conditions."
+      title: "Data-Driven Decisions",
+      description: "Make informed decisions based on comprehensive AI-powered insights."
     }
   ];
 
   const stats = [
-    { label: "Digital Transformations", value: "80+", icon: Rocket },
-    { label: "Processes Automated", value: "500+", icon: Code },
-    { label: "Efficiency Gain", value: "45%", icon: TrendingUp },
-    { label: "Client ROI", value: "3.2x", icon: Star }
-  ];
-
-  const methodologies = [
-    { name: "Design Thinking", icon: "🧠", description: "Human-centered approach to problem solving and innovation" },
-    { name: "Agile Methodology", icon: "🔄", description: "Iterative development with rapid feedback and adaptation" },
-    { name: "Lean Six Sigma", icon: "⚡", description: "Process improvement and waste elimination strategies" },
-    { name: "Change Management", icon: "📈", description: "Structured approach to organizational change and adoption" },
-    { name: "Digital Maturity Assessment", icon: "📊", description: "Comprehensive evaluation of current digital capabilities" },
-    { name: "Innovation Management", icon: "💡", description: "Systematic approach to fostering and managing innovation" }
+    { label: "AI Projects Delivered", value: "150+", icon: CheckCircle },
+    { label: "Client Satisfaction", value: "98%", icon: Star },
+    { label: "Cost Reduction", value: "40%", icon: TrendingUp },
+    { label: "Efficiency Gain", value: "3x", icon: Zap }
   ];
 
   return (
     <div className="min-h-screen bg-background relative overflow-hidden">
       <SEO 
-        title="Digital Transformation Services - Zion Tech Group"
-        description="End-to-end business modernization through strategic digital transformation, process optimization, and innovation management."
-        keywords="digital transformation, business modernization, process optimization, innovation management, Zion Tech Group"
-        canonical="https://ziontechgroup.com/digital-transformation"
+        title="AI & Machine Learning Services - Zion Tech Group"
+        description="Transform your business with cutting-edge AI solutions including predictive analytics, natural language processing, and automated decision-making systems."
+        keywords="AI services, machine learning, artificial intelligence, predictive analytics, NLP, computer vision, Zion Tech Group"
+        canonical="https://ziontechgroup.com/ai-services"
       />
 
       {/* Hero Section */}
@@ -134,7 +115,7 @@ const DigitalTransformation = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple opacity-95" />
         <div className="absolute inset-0">
           <motion.div 
-            className="absolute top-1/4 left-1/4 w-4 h-4 rounded-full bg-zion-purple opacity-60 blur-sm"
+            className="absolute top-1/4 left-1/4 w-4 h-4 rounded-full bg-zion-purple-light opacity-60 blur-sm"
             animate={{ y: [0, -20, 0], opacity: [0.3, 0.8, 0.3] }}
             transition={{ duration: 3, repeat: Infinity }}
           />
@@ -153,14 +134,14 @@ const DigitalTransformation = () => {
           >
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               <span className="bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent">
-                Digital
+                AI & Machine Learning
               </span>
               <br />
-              <span className="text-white">Transformation</span>
+              <span className="text-white">Services</span>
             </h1>
             <p className="text-xl md:text-2xl text-zion-slate-light max-w-4xl mx-auto mb-8">
-              End-to-end business modernization through strategic digital transformation, 
-              process optimization, and innovation management.
+              Transform your business with cutting-edge AI solutions including predictive analytics, 
+              natural language processing, and automated decision-making systems.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -217,10 +198,10 @@ const DigitalTransformation = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Our Digital Transformation Services
+              Our AI Services
             </h2>
             <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-              Comprehensive services designed to modernize your business and drive innovation
+              Comprehensive AI solutions designed to drive innovation and transform your business operations
             </p>
           </motion.div>
 
@@ -238,16 +219,7 @@ const DigitalTransformation = () => {
                   <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center mb-6`}>
                     <IconComponent className="w-8 h-8 text-white" />
                   </div>
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-xl font-bold text-white">{service.title}</h3>
-                    <span className={`px-3 py-1 text-xs font-semibold rounded-full ${
-                      service.maturity === 'Enterprise' ? 'bg-red-500/20 text-red-400' :
-                      service.maturity === 'Advanced' ? 'bg-orange-500/20 text-orange-400' :
-                      'bg-green-500/20 text-green-400'
-                    }`}>
-                      {service.maturity}
-                    </span>
-                  </div>
+                  <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
                   <p className="text-zion-slate-light mb-6">{service.description}</p>
                   
                   <div className="mb-6">
@@ -279,7 +251,7 @@ const DigitalTransformation = () => {
         </div>
       </section>
 
-      {/* Methodologies Section */}
+      {/* Benefits Section */}
       <section className="py-20 bg-zion-blue-dark">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -289,45 +261,10 @@ const DigitalTransformation = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Our Methodologies
+              Why Choose Our AI Services?
             </h2>
             <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-              Proven frameworks and approaches for successful digital transformation
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {methodologies.map((methodology, index) => (
-              <motion.div
-                key={methodology.name}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-zion-blue border border-zion-blue-light rounded-xl p-6 text-center hover:border-zion-cyan/50 transition-all duration-300"
-              >
-                <div className="text-4xl mb-3">{methodology.icon}</div>
-                <h3 className="text-xl font-semibold text-white mb-3">{methodology.name}</h3>
-                <p className="text-zion-slate-light">{methodology.description}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Benefits Section */}
-      <section className="py-20 bg-zion-blue">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Why Choose Our Digital Transformation Services?
-            </h2>
-            <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-              Experience the benefits of strategic digital transformation and innovation
+              Experience the transformative power of AI with our comprehensive solutions
             </p>
           </motion.div>
 
@@ -365,10 +302,10 @@ const DigitalTransformation = () => {
             transition={{ duration: 0.6 }}
           >
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Ready to Transform Your Business?
+              Ready to Transform Your Business with AI?
             </h2>
             <p className="text-xl text-white/90 max-w-3xl mx-auto mb-8">
-              Let's discuss how our digital transformation services can modernize your operations and drive growth
+              Let's discuss how our AI solutions can drive innovation and growth for your organization
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -392,4 +329,4 @@ const DigitalTransformation = () => {
   );
 };
 
-export default DigitalTransformation;
+export default AIServices;

@@ -191,19 +191,23 @@ export const Header: React.FC = () => {
           
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Button 
-              variant="outline" 
-              size="sm"
-              className="border-zion-cyan/30 text-zion-cyan hover:bg-zion-cyan hover:text-white transition-all duration-300"
-            >
-              Sign In
-            </Button>
-            <Button 
-              size="sm"
-              className="bg-gradient-to-r from-zion-cyan to-zion-purple hover:shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300"
-            >
-              Get Started
-            </Button>
+            <Link to="/login">
+              <Button 
+                variant="outline" 
+                size="sm"
+                className="border-zion-cyan/30 text-zion-cyan hover:bg-zion-cyan hover:text-white transition-all duration-300"
+              >
+                Sign In
+              </Button>
+            </Link>
+            <Link to="/contact">
+              <Button 
+                size="sm"
+                className="bg-gradient-to-r from-zion-cyan to-zion-purple hover:shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300"
+              >
+                Get Started
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -284,19 +288,23 @@ export const Header: React.FC = () => {
               </Link>
               
               <div className="pt-4 space-y-3">
-                <Button 
-                  variant="outline" 
-                  size="sm"
-                  className="w-full border-zion-cyan/30 text-zion-cyan hover:bg-zion-cyan hover:text-white transition-all duration-300"
-                >
-                  Sign In
-                </Button>
-                <Button 
-                  size="sm"
-                  className="w-full bg-gradient-to-r from-zion-cyan to-zion-purple hover:shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300"
-                >
-                  Get Started
-                </Button>
+                <Link to="/login" className="w-full">
+                  <Button 
+                    variant="outline" 
+                    size="sm"
+                    className="w-full border-zion-cyan/30 text-zion-cyan hover:bg-zion-cyan hover:text-white transition-all duration-300"
+                  >
+                    Sign In
+                  </Button>
+                </Link>
+                <Link to="/contact" className="w-full">
+                  <Button 
+                    size="sm"
+                    className="w-full bg-gradient-to-r from-zion-cyan to-zion-purple hover:shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300"
+                  >
+                    Get Started
+                  </Button>
+                </Link>
               </div>
             </div>
           </motion.div>
