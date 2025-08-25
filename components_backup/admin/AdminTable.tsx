@@ -78,7 +78,7 @@ export default function AdminTable() {
     }
   }
 
-  useEffect(() => { load(); /* eslint-disable-next-line */ }, [type, search, sort, order, page, pageSize, statusFilter, roleFilter, verifiedOnly]);
+  useEffect(() => { load();   }, [type, search, sort, order, page, pageSize, statusFilter, roleFilter, verifiedOnly]);
 
   async function onToggleVerified(r: any) {
     await updateItem(type, r.id, { verified: !r.verified });

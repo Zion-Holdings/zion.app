@@ -146,10 +146,10 @@ export default function BridgeForm() {
 
       let ok = false;
       while (Date.now() < deadline) {
-        // eslint-disable-next-line no-await-in-loop
+         
         ok = await poll();
         if (ok) break;
-        // eslint-disable-next-line no-await-in-loop
+         
         await new Promise((r) => setTimeout(r, interval));
       }
 

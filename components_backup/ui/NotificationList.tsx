@@ -35,7 +35,7 @@ export default function NotificationList() {
 
   useEffect(() => {
     load();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [active]);
 
   async function handleMarkAll() {

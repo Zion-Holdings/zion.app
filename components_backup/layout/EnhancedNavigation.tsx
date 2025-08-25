@@ -364,6 +364,6 @@ export default function EnhancedNavigation() {
       </AnimatePresence>
     </nav>
   );
-};
+}
 
 export default EnhancedNavigation;

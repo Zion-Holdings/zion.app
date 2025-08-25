@@ -418,6 +418,6 @@ export default function UltraFuturisticBackground2037({
       {children}
     </div>
   );
-};
+}
 
 export default UltraFuturisticBackground2037;

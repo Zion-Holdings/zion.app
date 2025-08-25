@@ -10,7 +10,7 @@ type Feature = {
 
 function loadFeatures(): Feature[] {
   try {
-    // eslint-disable-next-line @typescript-eslint/no-var-requires
+     
     const data = require('../../data/home/auto-features.json');
     if (Array.isArray(data?.features)) return data.features as Feature[];
   } catch {}

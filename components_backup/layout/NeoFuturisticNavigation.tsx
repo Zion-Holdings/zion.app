@@ -390,6 +390,6 @@ export default function NeoFuturisticNavigation() {
       )}
     </header>
   );
-};
+}
 
 export default NeoFuturisticNavigation;
