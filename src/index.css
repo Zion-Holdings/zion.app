@@ -63,6 +63,22 @@
   .btn-secondary {
     @apply px-6 py-3 border border-zion-cyan text-zion-cyan rounded-lg font-semibold hover:bg-zion-cyan hover:text-white transition-all duration-300;
   }
+
+  .nav-link {
+    @apply px-4 py-2 text-zion-slate-light hover:text-zion-cyan transition-all duration-300 relative group font-medium;
+  }
+  
+  .nav-link::after {
+    @apply content-[''] absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-zion-cyan to-zion-purple transition-all duration-300 transform -translate-x-1/2;
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+  
+  .mobile-nav-link {
+    @apply block py-2 text-zion-slate-light hover:text-zion-cyan transition-colors duration-200;
+  }
   
   /* Accessibility features */
   .high-contrast {

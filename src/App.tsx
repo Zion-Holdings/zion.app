@@ -76,7 +76,7 @@ const App = () => {
     <WhitelabelProvider>
       <ThemeProvider defaultTheme="dark">
         <Header />
-        <main className="min-h-screen">
+        <main className="min-h-screen pt-20">
           <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
             <Routes>
               {baseRoutes.map(({ path, element }) => (
