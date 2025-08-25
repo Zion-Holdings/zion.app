@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, Variants } from 'framer-motion';
 import { X, CheckCircle, AlertCircle, Info, AlertTriangle } from 'lucide-react';
 
 export interface ToastProps {
@@ -11,7 +11,7 @@ export interface ToastProps {
   onClose: (id: string) => void;
 }
 
-const toastVariants = {
+const toastVariants: Variants = {
   initial: { 
     opacity: 0, 
     x: 300, 

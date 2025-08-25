@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { Sparkles, Zap, Shield, Rocket } from 'lucide-react';
 
 interface EnhancedLoadingProps {
@@ -31,7 +31,7 @@ export function EnhancedLoading({
   showIcons = true,
   className = ''
 }: EnhancedLoadingProps) {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -42,7 +42,7 @@ export function EnhancedLoading({
     }
   };
 
-  const iconVariants = {
+  const iconVariants: Variants = {
     hidden: { scale: 0, opacity: 0 },
     visible: {
       scale: 1,
@@ -62,7 +62,7 @@ export function EnhancedLoading({
     }
   };
 
-  const pulseVariants = {
+  const pulseVariants: Variants = {
     pulse: {
       scale: [1, 1.1, 1],
       opacity: [1, 0.7, 1],
@@ -74,7 +74,7 @@ export function EnhancedLoading({
     }
   };
 
-  const bounceVariants = {
+  const bounceVariants: Variants = {
     bounce: {
       y: [0, -20, 0],
       transition: {
@@ -85,7 +85,7 @@ export function EnhancedLoading({
     }
   };
 
-  const waveVariants = {
+  const waveVariants: Variants = {
     wave: {
       y: [0, -15, 0],
       transition: {
