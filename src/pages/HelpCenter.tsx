@@ -1,234 +1,430 @@
-import React from 'react';
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import SEO from "@/components/SEO";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Search, BookOpen, MessageCircle, Phone, Mail, HelpCircle, FileText, Video, Users, Settings, Globe, Shield, Building } from 'lucide-react';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { 
+  Search, 
+  BookOpen, 
+  Video, 
+  MessageSquare, 
+  Phone, 
+  Mail, 
+  Clock,
+  FileText,
+  Download,
+  ExternalLink,
+  ArrowRight,
+  CheckCircle,
+  Star,
+  Users,
+  Zap
+} from 'lucide-react';
 
 export default function HelpCenter() {
+  const [searchTerm, setSearchTerm] = useState('');
+
   const helpCategories = [
     {
-      title: "Getting Started",
-      description: "Learn the basics of using Zion Tech Group",
       icon: BookOpen,
+      title: 'Getting Started',
+      description: 'New to Zion Tech Group? Start here to learn the basics.',
       articles: [
-        "Creating Your First Account",
-        "Setting Up Your Profile",
-        "Navigating the Platform",
-        "Understanding the Marketplace"
-      ]
+        'Welcome to Zion Tech Group',
+        'How to Get Started',
+        'Understanding Our Services',
+        'First Project Setup'
+      ],
+      color: 'from-blue-500 to-cyan-500'
     },
     {
-      title: "For Talent & Creators",
-      description: "Everything you need to succeed as a service provider",
-      icon: Users,
+      icon: Video,
+      title: 'Video Tutorials',
+      description: 'Step-by-step video guides for common tasks and features.',
       articles: [
-        "Building Your Portfolio",
-        "Setting Competitive Rates",
-        "Managing Client Relationships",
-        "Getting Paid Securely"
-      ]
+        'Platform Overview',
+        'Service Request Process',
+        'Project Management Tools',
+        'Support System Usage'
+      ],
+      color: 'from-purple-500 to-pink-500'
     },
     {
-      title: "For Clients & Businesses",
-      description: "How to find and work with the best talent",
-      icon: Building,
+      icon: FileText,
+      title: 'Documentation',
+      description: 'Comprehensive guides and technical documentation.',
       articles: [
-        "Posting Your First Project",
-        "Evaluating Proposals",
-        "Managing Project Milestones",
-        "Ensuring Project Success"
-      ]
+        'API Documentation',
+        'Integration Guides',
+        'Best Practices',
+        'Troubleshooting'
+      ],
+      color: 'from-green-500 to-emerald-500'
     },
     {
-      title: "Platform Features",
-      description: "Master all the tools and features available",
-      icon: Settings,
+      icon: MessageSquare,
+      title: 'Support Resources',
+      description: 'Get help when you need it most.',
       articles: [
-        "Advanced Search & Filters",
-        "Communication Tools",
-        "Project Management",
-        "Analytics & Reporting"
-      ]
-    },
-    {
-      title: "Safety & Security",
-      description: "Understanding our security measures and policies",
-      icon: Shield,
-      articles: [
-        "Payment Protection",
-        "Dispute Resolution",
-        "Privacy & Data Security",
-        "Community Guidelines"
-      ]
-    },
-    {
-      title: "Technical Support",
-      description: "Get help with technical issues and bugs",
-      icon: HelpCircle,
-      articles: [
-        "Common Issues & Solutions",
-        "Browser Compatibility",
-        "Mobile App Support",
-        "API Documentation"
-      ]
+        'Contact Support',
+        'Live Chat',
+        'Emergency Contacts',
+        'Support Hours'
+      ],
+      color: 'from-orange-500 to-red-500'
     }
   ];
 
   const quickActions = [
     {
-      title: "Live Chat Support",
-      description: "Get instant help from our support team",
-      icon: MessageCircle,
-      action: "Start Chat",
-      href: "/contact"
-    },
-    {
-      title: "Phone Support",
-      description: "Speak directly with our experts",
       icon: Phone,
-      action: "Call Now",
-      href: "tel:+13024640950"
+      title: 'Call Support',
+      description: 'Speak directly with our team',
+      action: 'tel:+13024640950',
+      color: 'from-green-500 to-emerald-500'
     },
     {
-      title: "Email Support",
-      description: "Send us a detailed message",
       icon: Mail,
-      action: "Send Email",
-      href: "mailto:kleber@ziontechgroup.com"
+      title: 'Email Support',
+      description: 'Send us a detailed message',
+      action: 'mailto:kleber@ziontechgroup.com',
+      color: 'from-blue-500 to-cyan-500'
     },
     {
-      title: "Video Tutorials",
-      description: "Learn through step-by-step videos",
-      icon: Video,
-      action: "Watch Now",
-      href: "/tutorials"
+      icon: MessageSquare,
+      title: 'Live Chat',
+      description: 'Get instant help online',
+      action: '#',
+      color: 'from-purple-500 to-pink-500'
+    },
+    {
+      icon: Clock,
+      title: 'Check Status',
+      description: 'Monitor your project status',
+      action: '/status',
+      color: 'from-orange-500 to-red-500'
     }
   ];
 
+  const popularArticles = [
+    {
+      title: 'How to Request a New Service',
+      description: 'Step-by-step guide to requesting new services from our team.',
+      category: 'Getting Started',
+      readTime: '5 min read'
+    },
+    {
+      title: 'Understanding Our Pricing Structure',
+      description: 'Learn about our flexible pricing models and payment options.',
+      category: 'Billing',
+      readTime: '8 min read'
+    },
+    {
+      title: 'Project Timeline and Milestones',
+      description: 'How we manage project timelines and what to expect.',
+      category: 'Project Management',
+      readTime: '6 min read'
+    },
+    {
+      title: 'Security and Compliance Standards',
+      description: 'Our security measures and compliance certifications.',
+      category: 'Security',
+      readTime: '7 min read'
+    }
+  ];
+
+  const filteredCategories = helpCategories.filter(category =>
+    category.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    category.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    category.articles.some(article => article.toLowerCase().includes(searchTerm.toLowerCase()))
+  );
+
   return (
-    <>
-      <SEO
-        title="Help Center - Get Support & Learn | Zion Tech Group"
-        description="Get help, find answers, and learn how to use Zion Tech Group's marketplace platform effectively. 24/7 support available."
-        keywords="help center, support, tutorials, FAQ, Zion Tech Group assistance"
-        canonical="https://ziontechgroup.com/help"
-      />
-      <Header />
-      <main className="min-h-screen bg-zion-blue pt-24 pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Hero Section */}
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              How can we help you?
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 px-6">
+        <div className="max-w-7xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-cyan-400 to-purple-400 bg-clip-text text-transparent">
+              Help Center
             </h1>
-            <p className="text-xl text-zion-slate-light max-w-3xl mx-auto mb-8">
-              Find answers to your questions, learn new features, and get the support you need
+            <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
+              Find answers, learn how to use our services, and get the support you need. 
+              Everything you need to succeed with Zion Tech Group is right here.
             </p>
             
             {/* Search Bar */}
-            <div className="max-w-2xl mx-auto">
+            <div className="max-w-2xl mx-auto mb-12">
               <div className="relative">
-                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-zion-slate-light w-5 h-5" />
-                <Input
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-white/50" />
+                <input
                   type="text"
-                  placeholder="Search for help articles, tutorials, or topics..."
-                  className="pl-12 pr-4 py-4 text-lg bg-zion-blue-dark border-zion-blue-light text-white placeholder-zion-slate-light focus:border-zion-cyan"
+                  placeholder="Search for help articles, tutorials, or guides..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full pl-12 pr-4 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-cyan-400 transition-colors"
                 />
               </div>
             </div>
-          </div>
+          </motion.div>
+        </div>
+      </section>
 
-          {/* Quick Actions */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+      {/* Quick Actions */}
+      <section className="py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Quick Actions
+            </h2>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+              Get help quickly with these direct actions
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {quickActions.map((action, index) => (
-              <Card key={index} className="bg-zion-blue-dark border-zion-blue-light hover:border-zion-cyan transition-colors">
-                <CardContent className="p-6 text-center">
-                  <div className="w-12 h-12 bg-zion-cyan/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                    <action.icon className="w-6 h-6 text-zion-cyan" />
-                  </div>
-                  <h3 className="text-lg font-semibold text-white mb-2">{action.title}</h3>
-                  <p className="text-zion-slate-light text-sm mb-4">{action.description}</p>
-                  <Button
-                    asChild
-                    className="w-full bg-zion-cyan hover:bg-zion-cyan-light text-white"
-                  >
-                    <a href={action.href}>{action.action}</a>
-                  </Button>
-                </CardContent>
-              </Card>
+              <motion.div
+                key={action.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-cyan-400/50 transition-all duration-300 text-center group hover:shadow-lg hover:shadow-cyan-400/25"
+              >
+                <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r ${action.color} rounded-xl p-3 mb-4 group-hover:scale-110 transition-transform`}>
+                  <action.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">{action.title}</h3>
+                <p className="text-white/70 text-sm mb-4">{action.description}</p>
+                <a
+                  href={action.action}
+                  className="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-medium group-hover:translate-x-1 transition-all duration-300"
+                >
+                  Get Started
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </a>
+              </motion.div>
             ))}
           </div>
+        </div>
+      </section>
 
-          {/* Help Categories */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-white text-center mb-12">
-              Browse Help Categories
+      {/* Help Categories */}
+      <section className="py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Help Categories
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {helpCategories.map((category, index) => (
-                <Card key={index} className="bg-zion-blue-dark border-zion-blue-light hover:border-zion-cyan transition-colors">
-                  <CardHeader>
-                    <div className="w-12 h-12 bg-zion-cyan/20 rounded-lg flex items-center justify-center mb-4">
-                      <category.icon className="w-6 h-6 text-zion-cyan" />
-                    </div>
-                    <CardTitle className="text-xl text-white">{category.title}</CardTitle>
-                    <CardDescription className="text-zion-slate-light">
-                      {category.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-2">
-                      {category.articles.map((article, articleIndex) => (
-                        <li key={articleIndex}>
-                          <a
-                            href={`/help/${category.title.toLowerCase().replace(/\s+/g, '-')}/${article.toLowerCase().replace(/\s+/g, '-')}`}
-                            className="text-zion-slate-light hover:text-zion-cyan transition-colors text-sm block py-1"
-                          >
-                            {article}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+              Browse organized help content by category
+            </p>
+          </motion.div>
 
-          {/* Contact Support Section */}
-          <div className="text-center">
-            <Card className="bg-gradient-to-r from-zion-blue-dark to-zion-purple-dark border-zion-purple/30 p-8">
-              <CardContent>
-                <h2 className="text-3xl font-bold text-white mb-4">
-                  Still need help?
-                </h2>
-                <p className="text-zion-slate-light mb-8 text-lg">
-                  Our support team is available 24/7 to assist you with any questions or issues.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button
-                    asChild
-                    className="bg-zion-purple hover:bg-zion-purple-light text-white px-8 py-3 text-lg"
-                  >
-                    <a href="/contact">Contact Support</a>
-                  </Button>
-                  <Button
-                    variant="outline"
-                    asChild
-                    className="border-zion-purple/30 text-zion-purple hover:bg-zion-purple/10 px-8 py-3 text-lg"
-                  >
-                    <a href="/faq">View FAQ</a>
-                  </Button>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {filteredCategories.map((category, index) => (
+              <motion.div
+                key={category.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20 hover:border-cyan-400/50 transition-all duration-300"
+              >
+                <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r ${category.color} rounded-xl p-3 mb-6`}>
+                  <category.icon className="w-8 h-8 text-white" />
                 </div>
-              </CardContent>
-            </Card>
+                
+                <h3 className="text-2xl font-bold text-white mb-4">{category.title}</h3>
+                <p className="text-white/80 mb-6 leading-relaxed">{category.description}</p>
+                
+                <div className="space-y-3 mb-6">
+                  {category.articles.map((article) => (
+                    <div key={article} className="flex items-center text-sm text-white/70 hover:text-cyan-400 transition-colors cursor-pointer">
+                      <CheckCircle className="w-4 h-4 text-cyan-400 mr-3 flex-shrink-0" />
+                      {article}
+                    </div>
+                  ))}
+                </div>
+                
+                <Link
+                  to={`/help/${category.title.toLowerCase().replace(/\s+/g, '-')}`}
+                  className="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-semibold group-hover:translate-x-1 transition-all duration-300"
+                >
+                  Explore {category.title}
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Link>
+              </motion.div>
+            ))}
           </div>
         </div>
-      </main>
-      <Footer />
-    </>
+      </section>
+
+      {/* Popular Articles */}
+      <section className="py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Popular Articles
+            </h2>
+            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+              Most frequently accessed help content
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {popularArticles.map((article, index) => (
+              <motion.div
+                key={article.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:border-cyan-400/50 transition-all duration-300 group"
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <span className="inline-block px-3 py-1 bg-cyan-400/20 text-cyan-400 text-xs font-medium rounded-full">
+                    {article.category}
+                  </span>
+                  <span className="text-white/50 text-sm">{article.readTime}</span>
+                </div>
+                
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">
+                  {article.title}
+                </h3>
+                <p className="text-white/80 mb-4 leading-relaxed">{article.description}</p>
+                
+                <Link
+                  to={`/help/article/${article.title.toLowerCase().replace(/\s+/g, '-')}`}
+                  className="inline-flex items-center text-cyan-400 hover:text-cyan-300 font-medium group-hover:translate-x-1 transition-all duration-300"
+                >
+                  Read Article
+                  <ArrowRight className="w-4 h-4 ml-2" />
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Support Options */}
+      <section className="py-20 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Need More Help?
+              </h2>
+              <p className="text-xl text-white/80 mb-8 leading-relaxed">
+                Our support team is here to help you succeed. We offer multiple ways to get assistance 
+                and ensure you have the resources you need.
+              </p>
+              
+              <div className="space-y-6">
+                <div className="flex items-start">
+                  <Star className="w-6 h-6 text-yellow-400 mr-4 mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-2">24/7 Support</h3>
+                    <p className="text-white/70">Round-the-clock assistance for critical issues</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <Users className="w-6 h-6 text-cyan-400 mr-4 mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-2">Expert Team</h3>
+                    <p className="text-white/70">Certified professionals ready to help</p>
+                  </div>
+                </div>
+                <div className="flex items-start">
+                  <Zap className="w-6 h-6 text-purple-400 mr-4 mt-1 flex-shrink-0" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-white mb-2">Fast Response</h3>
+                    <p className="text-white/70">Average response time of 2 hours</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                <h3 className="text-2xl font-bold text-white mb-6">Contact Support</h3>
+                <div className="space-y-4">
+                  <a
+                    href="tel:+13024640950"
+                    className="flex items-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors group"
+                  >
+                    <Phone className="w-6 h-6 text-cyan-400 mr-4" />
+                    <div>
+                      <div className="text-white font-semibold group-hover:text-cyan-400 transition-colors">
+                        Call Support
+                      </div>
+                      <div className="text-white/70 text-sm">+1 (302) 464-0950</div>
+                    </div>
+                  </a>
+                  
+                  <a
+                    href="mailto:kleber@ziontechgroup.com"
+                    className="flex items-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors group"
+                  >
+                    <Mail className="w-6 h-6 text-purple-400 mr-4" />
+                    <div>
+                      <div className="text-white font-semibold group-hover:text-purple-400 transition-colors">
+                        Email Support
+                      </div>
+                      <div className="text-white/70 text-sm">kleber@ziontechgroup.com</div>
+                    </div>
+                  </a>
+                  
+                  <Link
+                    to="/contact"
+                    className="flex items-center p-4 bg-white/10 rounded-lg hover:bg-white/20 transition-colors group"
+                  >
+                    <MessageSquare className="w-6 h-6 text-green-400 mr-4" />
+                    <div>
+                      <div className="text-white font-semibold group-hover:text-green-400 transition-colors">
+                        Contact Form
+                      </div>
+                      <div className="text-white/70 text-sm">Send us a detailed message</div>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+    </div>
   );
 }

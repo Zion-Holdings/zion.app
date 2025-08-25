@@ -1,155 +1,261 @@
-import React from 'react';
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import SEO from "@/components/SEO";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { 
+  ChevronDown, 
+  ChevronUp, 
+  Search,
+  MessageSquare,
+  Clock,
+  Shield,
+  Brain,
+  Cloud
+} from 'lucide-react';
 
 export default function FAQ() {
-  const faqData = [
+  const [openItems, setOpenItems] = useState<number[]>([]);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const toggleItem = (index: number) => {
+    setOpenItems(prev => 
+      prev.includes(index) 
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    );
+  };
+
+  const faqs = [
     {
-      category: "General",
-      questions: [
-        {
-          question: "What is Zion Tech Group?",
-          answer: "Zion Tech Group is the world's first free marketplace dedicated to high-tech and artificial intelligence. We connect talented professionals, innovative services, and cutting-edge equipment in the tech industry."
-        },
-        {
-          question: "Is Zion Tech Group really free to use?",
-          answer: "Yes! Our core marketplace platform is completely free to use. We believe in democratizing access to technology and talent. Some premium features may have associated costs, but the basic marketplace functionality is free."
-        },
-        {
-          question: "How do I get started on Zion Tech Group?",
-          answer: "Getting started is easy! Simply create an account, choose your role (talent, client, or both), and start exploring. You can browse services, post jobs, or showcase your skills immediately."
-        }
-      ]
+      question: "What services does Zion Tech Group offer?",
+      answer: "We offer comprehensive technology solutions including AI & Machine Learning, Cloud Infrastructure & DevOps, Cybersecurity & Compliance, Digital Transformation, Web & Mobile Development, and Data Analytics & BI. Our services are designed to transform businesses through innovative technology solutions.",
+      category: "Services",
+      icon: Brain
     },
     {
-      category: "For Talent & Creators",
-      questions: [
-        {
-          question: "How do I create a talent profile?",
-          answer: "After signing up, go to your dashboard and select 'Create Profile'. Fill in your skills, experience, portfolio items, and set your rates. A complete profile increases your visibility to potential clients."
-        },
-        {
-          question: "What types of projects can I find?",
-          answer: "Our platform hosts a wide range of tech projects including AI development, software engineering, IT consulting, hardware projects, and more. Projects vary from short-term gigs to long-term contracts."
-        },
-        {
-          question: "How do payments work?",
-          answer: "We use secure payment processing with escrow protection. Clients pay upfront, and funds are released upon project completion. We support multiple payment methods including credit cards and digital wallets."
-        }
-      ]
+      question: "How quickly can you start working on my project?",
+      answer: "We can typically begin project work within 1-2 weeks of initial consultation. For urgent projects, we offer expedited onboarding. The exact timeline depends on project complexity and our current capacity.",
+      category: "Timeline",
+      icon: Clock
     },
     {
-      category: "For Clients & Businesses",
-      questions: [
-        {
-          question: "How do I post a project or job?",
-          answer: "Create an account and go to 'Post Project' in your dashboard. Fill in the project details, requirements, budget, and timeline. Our AI will help match you with the best talent for your project."
-        },
-        {
-          question: "What types of services can I find?",
-          answer: "We offer a comprehensive range of technology services including AI development, web development, mobile apps, cloud infrastructure, cybersecurity, data analytics, and more. All services are vetted and quality-assured."
-        },
-        {
-          question: "How do you ensure quality?",
-          answer: "We have a rigorous vetting process for all talent and services. We verify credentials, review portfolios, and maintain a rating system. Additionally, our escrow system protects your investment until project completion."
-        }
-      ]
+      question: "What is your pricing structure?",
+      answer: "We offer flexible pricing models including project-based pricing, hourly rates, and retainer agreements. Pricing varies based on project scope, complexity, and timeline. We provide detailed quotes after understanding your requirements.",
+      category: "Pricing",
+      icon: MessageSquare
     },
     {
-      category: "Technical Support",
-      questions: [
-        {
-          question: "What if I encounter technical issues?",
-          answer: "Our support team is available 24/7 to help with any technical issues. You can reach us through the help center, live chat, or email support. We typically respond within 2 hours."
-        },
-        {
-          question: "Is my data secure?",
-          answer: "Absolutely. We use enterprise-grade security measures including end-to-end encryption, secure cloud infrastructure, and regular security audits. Your data and communications are protected at all times."
-        },
-        {
-          question: "Can I integrate Zion Tech Group with my existing tools?",
-          answer: "Yes! We provide APIs and integrations with popular project management tools, CRMs, and development platforms. Our team can also create custom integrations for enterprise clients."
-        }
-      ]
+      question: "Do you provide ongoing support after project completion?",
+      answer: "Yes, we offer comprehensive post-launch support including maintenance, updates, monitoring, and 24/7 emergency support. We also provide training for your team to ensure smooth operation.",
+      category: "Support",
+      icon: Shield
+    },
+    {
+      question: "What technologies do you specialize in?",
+      answer: "We specialize in modern technologies including React, Node.js, Python, AWS, Azure, GCP, Docker, Kubernetes, TensorFlow, PyTorch, and various AI/ML frameworks. We stay current with emerging technologies.",
+      category: "Technology",
+      icon: Cloud
+    },
+    {
+      question: "Can you work with existing systems and infrastructure?",
+      answer: "Absolutely! We specialize in integrating with and modernizing existing systems. We can work with legacy systems, migrate data, and ensure seamless integration with new solutions.",
+      category: "Integration",
+      icon: Brain
+    },
+    {
+      question: "What is your approach to project management?",
+      answer: "We use agile methodologies with regular client communication, milestone reviews, and transparent project tracking. You'll have a dedicated project manager and access to our project management tools.",
+      category: "Process",
+      icon: Clock
+    },
+    {
+      question: "Do you offer training for our team?",
+      answer: "Yes, we provide comprehensive training programs for your team on new systems and technologies. This includes documentation, hands-on workshops, and ongoing support to ensure successful adoption.",
+      category: "Training",
+      icon: MessageSquare
+    },
+    {
+      question: "What security measures do you implement?",
+      answer: "We implement enterprise-grade security including encryption, secure coding practices, regular security audits, compliance with industry standards, and secure development lifecycle processes.",
+      category: "Security",
+      icon: Shield
+    },
+    {
+      question: "Can you help with compliance and regulatory requirements?",
+      answer: "Yes, we have extensive experience with various compliance frameworks including SOC 2, HIPAA, GDPR, and industry-specific regulations. We ensure all solutions meet your compliance requirements.",
+      category: "Compliance",
+      icon: Shield
+    },
+    {
+      question: "What is your uptime guarantee?",
+      answer: "We provide a 99.99% uptime guarantee for all cloud infrastructure and applications we manage. This includes proactive monitoring, automated failover, and rapid incident response.",
+      category: "Reliability",
+      icon: Cloud
+    },
+    {
+      question: "How do you handle data privacy and protection?",
+      answer: "We follow strict data privacy protocols including data encryption, access controls, regular security audits, and compliance with data protection regulations. Your data security is our top priority.",
+      category: "Privacy",
+      icon: Shield
     }
   ];
 
+  const categories = ['All', 'Services', 'Timeline', 'Pricing', 'Support', 'Technology', 'Integration', 'Process', 'Training', 'Security', 'Compliance', 'Reliability', 'Privacy'];
+
+  const filteredFaqs = faqs.filter(faq => {
+    const matchesSearch = faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         faq.answer.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesCategory = searchTerm === '' || faq.category === searchTerm;
+    return matchesSearch && matchesCategory;
+  });
+
   return (
-    <>
-      <SEO
-        title="FAQ - Frequently Asked Questions | Zion Tech Group"
-        description="Find answers to common questions about Zion Tech Group's marketplace platform, services, and how to get started."
-        keywords="FAQ, help, support, Zion Tech Group, marketplace questions"
-        canonical="https://ziontechgroup.com/faq"
-      />
-      <Header />
-      <main className="min-h-screen bg-zion-blue pt-24 pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-purple-900">
+      {/* Hero Section */}
+      <section className="pt-32 pb-20 px-6">
+        <div className="max-w-7xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-cyan-400 to-purple-400 bg-clip-text text-transparent">
               Frequently Asked Questions
             </h1>
-            <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-              Everything you need to know about Zion Tech Group's marketplace platform
+            <p className="text-xl text-white/80 max-w-3xl mx-auto mb-8">
+              Find answers to common questions about our services, processes, and how we can help transform your business.
             </p>
-          </div>
+            
+            {/* Search Bar */}
+            <div className="max-w-2xl mx-auto mb-12">
+              <div className="relative">
+                <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-white/50" />
+                <input
+                  type="text"
+                  placeholder="Search questions..."
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  className="w-full pl-12 pr-4 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-lg text-white placeholder-white/50 focus:outline-none focus:border-cyan-400 transition-colors"
+                />
+              </div>
+            </div>
 
-          <div className="max-w-4xl mx-auto">
-            {faqData.map((category, categoryIndex) => (
-              <Card key={categoryIndex} className="mb-8 bg-zion-blue-dark border-zion-blue-light">
-                <CardHeader>
-                  <CardTitle className="text-2xl text-white">{category.category}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <Accordion type="single" collapsible className="w-full">
-                    {category.questions.map((item, questionIndex) => (
-                      <AccordionItem key={questionIndex} value={`item-${questionIndex}`}>
-                        <AccordionTrigger className="text-left text-zion-slate-light hover:text-white">
-                          {item.question}
-                        </AccordionTrigger>
-                        <AccordionContent className="text-zion-slate-light">
-                          {item.answer}
-                        </AccordionContent>
-                      </AccordionItem>
-                    ))}
-                  </Accordion>
-                </CardContent>
-              </Card>
+            {/* Category Filter */}
+            <div className="flex flex-wrap justify-center gap-3 mb-8">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  onClick={() => setSearchTerm(category === 'All' ? '' : category)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                    searchTerm === (category === 'All' ? '' : category)
+                      ? 'bg-cyan-400 text-white'
+                      : 'bg-white/10 text-white/70 hover:bg-white/20 hover:text-white'
+                  }`}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="space-y-4">
+            {filteredFaqs.map((faq, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="bg-white/10 backdrop-blur-sm rounded-xl border border-white/20 overflow-hidden"
+              >
+                <button
+                  onClick={() => toggleItem(index)}
+                  className="w-full px-6 py-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors"
+                >
+                  <div className="flex items-start space-x-4">
+                    <faq.icon className="w-6 h-6 text-cyan-400 mt-1 flex-shrink-0" />
+                    <div>
+                      <h3 className="text-lg font-semibold text-white mb-2">{faq.question}</h3>
+                      <span className="inline-block px-3 py-1 bg-cyan-400/20 text-cyan-400 text-xs font-medium rounded-full">
+                        {faq.category}
+                      </span>
+                    </div>
+                  </div>
+                  {openItems.includes(index) ? (
+                    <ChevronUp className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                  ) : (
+                    <ChevronDown className="w-5 h-5 text-cyan-400 flex-shrink-0" />
+                  )}
+                </button>
+                
+                <AnimatePresence>
+                  {openItems.includes(index) && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="overflow-hidden"
+                    >
+                      <div className="px-6 pb-6">
+                        <p className="text-white/80 leading-relaxed">{faq.answer}</p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
             ))}
           </div>
 
-          <div className="text-center mt-16">
-            <Card className="bg-gradient-to-r from-zion-blue-dark to-zion-purple-dark border-zion-purple/30 p-8">
-              <CardContent>
-                <h2 className="text-2xl font-bold text-white mb-4">
-                  Still have questions?
-                </h2>
-                <p className="text-zion-slate-light mb-6">
-                  Can't find what you're looking for? Our support team is here to help.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a
-                    href="/contact"
-                    className="bg-zion-purple hover:bg-zion-purple-light text-white px-6 py-3 rounded-lg font-medium transition-colors"
-                  >
-                    Contact Support
-                  </a>
-                  <a
-                    href="/help"
-                    className="bg-zion-blue hover:bg-zion-blue-light text-white px-6 py-3 rounded-lg font-medium transition-colors"
-                  >
-                    Help Center
-                  </a>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+          {filteredFaqs.length === 0 && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="text-center py-12"
+            >
+              <MessageSquare className="w-16 h-16 text-white/30 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold text-white mb-2">No questions found</h3>
+              <p className="text-white/70">Try adjusting your search terms or browse all categories.</p>
+            </motion.div>
+          )}
         </div>
-      </main>
-      <Footer />
-    </>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Still Have Questions?
+            </h2>
+            <p className="text-xl text-white/80 mb-8">
+              Can't find what you're looking for? Our team is here to help. Get in touch with us for personalized assistance.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="/contact"
+                className="bg-gradient-to-r from-cyan-400 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-400/25 transition-all duration-300 transform hover:scale-105"
+              >
+                Contact Us
+              </a>
+              <a
+                href="tel:+13024640950"
+                className="border-2 border-cyan-400 text-cyan-400 px-8 py-4 rounded-lg font-semibold hover:bg-cyan-400 hover:text-white transition-all duration-300"
+              >
+                Call Now
+              </a>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+    </div>
   );
 }

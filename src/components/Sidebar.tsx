@@ -14,7 +14,10 @@ import {
   Leaf,
   MessageSquare,
   Search,
-  BarChart3
+  BarChart3,
+  Brain,
+  Cloud,
+  Zap
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -29,40 +32,27 @@ export function Sidebar({ className }: SidebarProps) {
       title: 'Main',
       items: [
         { name: 'Home', href: '/', icon: Home },
-        { name: 'Marketplace', href: '/marketplace', icon: Home },
         { name: 'Services', href: '/services', icon: Settings },
-        { name: 'Talent', href: '/talent', icon: Users },
-        { name: 'Equipment', href: '/equipment', icon: Briefcase },
-        { name: 'Categories', href: '/categories', icon: Globe },
-      ]
-    },
-    {
-      title: 'AI & Tools',
-      items: [
-        { name: 'AI Matcher', href: '/match', icon: Search },
-        { name: 'Hire AI', href: '/zion-hire-ai', icon: MessageSquare },
-        { name: 'Green IT', href: '/green-it', icon: Leaf },
-        { name: 'Analytics', href: '/analytics', icon: BarChart3 },
-      ]
-    },
-    {
-      title: 'Company',
-      items: [
-        { name: 'About Us', href: '/about', icon: Info },
-        { name: 'Blog', href: '/blog', icon: FileText },
-        { name: 'Partners', href: '/partners', icon: Users },
-        { name: 'Careers', href: '/careers', icon: Briefcase },
+        { name: 'About', href: '/about', icon: Info },
         { name: 'Contact', href: '/contact', icon: MessageSquare },
+      ]
+    },
+    {
+      title: 'Services',
+      items: [
+        { name: 'AI Solutions', href: '/ai-solutions', icon: Brain },
+        { name: 'Cloud Infrastructure', href: '/cloud-infrastructure', icon: Cloud },
+        { name: 'Cybersecurity', href: '/cybersecurity', icon: Shield },
+        { name: 'Digital Transformation', href: '/services/transformation', icon: Zap },
       ]
     },
     {
       title: 'Support',
       items: [
         { name: 'Help Center', href: '/help', icon: HelpCircle },
-        { name: 'Request Quote', href: '/request-quote', icon: FileText },
-        { name: 'Community', href: '/community', icon: Users },
-        { name: 'Privacy', href: '/privacy', icon: Shield },
-        { name: 'Terms', href: '/terms', icon: FileText },
+        { name: 'FAQ', href: '/faq', icon: FileText },
+        { name: 'Request Quote', href: '/quote', icon: FileText },
+        { name: 'Sitemap', href: '/sitemap', icon: Globe },
       ]
     }
   ];

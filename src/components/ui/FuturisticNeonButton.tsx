@@ -1,221 +1,218 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { cn } from '../../lib/utils';
+import { cn } from '@/lib/utils';
 
 interface FuturisticNeonButtonProps {
   children: React.ReactNode;
-  onClick?: () => void;
-  variant?: 'primary' | 'secondary' | 'accent' | 'danger';
+  variant?: 'primary' | 'secondary' | 'success' | 'warning' | 'danger' | 'info';
   size?: 'sm' | 'md' | 'lg' | 'xl';
   glowIntensity?: 'low' | 'medium' | 'high';
-  disabled?: boolean;
   className?: string;
+  onClick?: () => void;
+  disabled?: boolean;
+  loading?: boolean;
   icon?: React.ReactNode;
   fullWidth?: boolean;
-  loading?: boolean;
 }
 
-const FuturisticNeonButton: React.FC<FuturisticNeonButtonProps> = ({
+export const FuturisticNeonButton: React.FC<FuturisticNeonButtonProps> = ({
   children,
-  onClick,
   variant = 'primary',
   size = 'md',
   glowIntensity = 'medium',
-  disabled = false,
   className = '',
+  onClick,
+  disabled = false,
+  loading = false,
   icon,
-  fullWidth = false,
-  loading = false
+  fullWidth = false
 }) => {
-  const baseClasses = "relative inline-flex items-center justify-center font-semibold transition-all duration-300 transform hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none";
-  
-  const sizeClasses = {
-    sm: "px-3 py-1.5 text-sm rounded-md",
-    md: "px-4 py-2 text-base rounded-lg",
-    lg: "px-6 py-3 text-lg rounded-xl",
-    xl: "px-8 py-4 text-xl rounded-2xl"
-  };
-
-  const variantClasses = {
+  const variants = {
     primary: {
-      base: "bg-gradient-to-r from-zion-cyan via-zion-blue to-zion-purple text-white border border-zion-cyan/50",
-      glow: "shadow-[0_0_20px_rgba(0,212,255,0.5)] hover:shadow-[0_0_30px_rgba(0,212,255,0.8)]",
-      focus: "focus:ring-zion-cyan",
-      hover: "hover:border-zion-cyan hover:bg-gradient-to-r hover:from-zion-cyan-light hover:via-zion-blue-light hover:to-zion-purple-light"
+      borderColor: '#00ffff',
+      textColor: '#00ffff',
+      glowColor: '#00ffff',
+      bgColor: 'rgba(0, 255, 255, 0.1)',
+      hoverBgColor: 'rgba(0, 255, 255, 0.2)'
     },
     secondary: {
-      base: "bg-transparent text-zion-cyan border border-zion-cyan/50",
-      glow: "shadow-[0_0_20px_rgba(0,212,255,0.3)] hover:shadow-[0_0_30px_rgba(0,212,255,0.6)]",
-      focus: "focus:ring-zion-cyan",
-      hover: "hover:bg-zion-cyan/10 hover:border-zion-cyan hover:text-zion-cyan-light"
+      borderColor: '#ff00ff',
+      textColor: '#ff00ff',
+      glowColor: '#ff00ff',
+      bgColor: 'rgba(255, 0, 255, 0.1)',
+      hoverBgColor: 'rgba(255, 0, 255, 0.2)'
     },
-    accent: {
-      base: "bg-gradient-to-r from-zion-purple via-zion-pink to-zion-red text-white border border-zion-purple/50",
-      glow: "shadow-[0_0_20px_rgba(139,92,246,0.5)] hover:shadow-[0_0_30px_rgba(139,92,246,0.8)]",
-      focus: "focus:ring-zion-purple",
-      hover: "hover:border-zion-purple hover:bg-gradient-to-r hover:from-zion-purple-light hover:via-zion-pink-light hover:to-zion-red-light"
+    success: {
+      borderColor: '#00ff80',
+      textColor: '#00ff80',
+      glowColor: '#00ff80',
+      bgColor: 'rgba(0, 255, 128, 0.1)',
+      hoverBgColor: 'rgba(0, 255, 128, 0.2)'
+    },
+    warning: {
+      borderColor: '#ffff00',
+      textColor: '#ffff00',
+      glowColor: '#ffff00',
+      bgColor: 'rgba(255, 255, 0, 0.1)',
+      hoverBgColor: 'rgba(255, 255, 0, 0.2)'
     },
     danger: {
-      base: "bg-gradient-to-r from-red-500 via-red-600 to-red-700 text-white border border-red-500/50",
-      glow: "shadow-[0_0_20px_rgba(239,68,68,0.5)] hover:shadow-[0_0_30px_rgba(239,68,68,0.8)]",
-      focus: "focus:ring-red-500",
-      hover: "hover:border-red-400 hover:bg-gradient-to-r hover:from-red-400 hover:via-red-500 hover:to-red-600"
+      borderColor: '#ff0080',
+      textColor: '#ff0080',
+      glowColor: '#ff0080',
+      bgColor: 'rgba(255, 0, 128, 0.1)',
+      hoverBgColor: 'rgba(255, 0, 128, 0.2)'
+    },
+    info: {
+      borderColor: '#0080ff',
+      textColor: '#0080ff',
+      glowColor: '#0080ff',
+      bgColor: 'rgba(0, 128, 255, 0.1)',
+      hoverBgColor: 'rgba(0, 128, 255, 0.2)'
     }
   };
 
-  const glowIntensityClasses = {
-    low: "shadow-[0_0_10px_rgba(0,212,255,0.3)]",
-    medium: "shadow-[0_0_20px_rgba(0,212,255,0.5)]",
-    high: "shadow-[0_0_40px_rgba(0,212,255,0.8)]"
+  const sizes = {
+    sm: 'px-3 py-1.5 text-sm',
+    md: 'px-4 py-2 text-base',
+    lg: 'px-6 py-3 text-lg',
+    xl: 'px-8 py-4 text-xl'
   };
 
-  const widthClasses = fullWidth ? "w-full" : "";
-
-  const buttonClasses = cn(
-    baseClasses,
-    sizeClasses[size],
-    variantClasses[variant].base,
-    variantClasses[variant].glow,
-    variantClasses[variant].focus,
-    variantClasses[variant].hover,
-    glowIntensityClasses[glowIntensity],
-    widthClasses,
-    className
-  );
-
-  // Neon glow effect variants
-  const glowVariants = {
-    initial: { 
-      boxShadow: variantClasses[variant].glow,
-      filter: "brightness(1)"
-    },
-    hover: { 
-      boxShadow: variantClasses[variant].glow.replace('0.5', '0.8').replace('0.3', '0.6'),
-      filter: "brightness(1.1)",
-      scale: 1.05
-    },
-    tap: { 
-      scale: 0.95,
-      filter: "brightness(0.9)"
-    }
+  const glowIntensities = {
+    low: '0 0 10px',
+    medium: '0 0 20px, 0 0 40px',
+    high: '0 0 20px, 0 0 40px, 0 0 60px'
   };
 
-  // Inner glow effect
-  const innerGlowVariants = {
-    initial: { opacity: 0.3 },
-    hover: { opacity: 0.6 }
-  };
-
-  // Ripple effect
-  const rippleVariants = {
-    initial: { scale: 0, opacity: 0.8 },
-    animate: { scale: 4, opacity: 0 }
-  };
+  const selectedVariant = variants[variant];
+  const selectedSize = sizes[size];
+  const selectedGlow = glowIntensities[glowIntensity];
 
   return (
     <motion.button
-      className={buttonClasses}
+      className={cn(
+        'relative inline-flex items-center justify-center font-mono font-bold tracking-wider',
+        'border-2 rounded-lg transition-all duration-300',
+        'focus:outline-none focus:ring-4 focus:ring-opacity-50',
+        'disabled:opacity-50 disabled:cursor-not-allowed',
+        selectedSize,
+        fullWidth ? 'w-full' : '',
+        className
+      )}
+      style={{
+        borderColor: selectedVariant.borderColor,
+        color: selectedVariant.textColor,
+        backgroundColor: selectedVariant.bgColor,
+        boxShadow: `${selectedGlow} ${selectedVariant.glowColor}`,
+        textShadow: `0 0 10px ${selectedVariant.glowColor}`
+      }}
+      whileHover={{
+        scale: disabled ? 1 : 1.05,
+        backgroundColor: selectedVariant.hoverBgColor,
+        boxShadow: disabled ? `${selectedGlow} ${selectedVariant.glowColor}` : `${selectedGlow} ${selectedVariant.glowColor}, 0 0 80px ${selectedVariant.glowColor}`
+      }}
+      whileTap={{
+        scale: disabled ? 1 : 0.95
+      }}
       onClick={onClick}
       disabled={disabled || loading}
-      variants={glowVariants}
-      initial="initial"
-      whileHover="hover"
-      whileTap="tap"
-      transition={{
-        duration: 0.2,
-        ease: "easeInOut"
-      }}
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
     >
       {/* Inner glow effect */}
-      <motion.div
-        className="absolute inset-0 rounded-inherit bg-gradient-to-r from-white/20 to-transparent opacity-0"
-        variants={innerGlowVariants}
-        initial="initial"
-        whileHover="hover"
-        transition={{ duration: 0.3 }}
+      <div
+        className="absolute inset-0 rounded-lg opacity-20"
+        style={{
+          background: `radial-gradient(circle at center, ${selectedVariant.glowColor} 0%, transparent 70%)`,
+          filter: 'blur(20px)'
+        }}
       />
 
       {/* Animated border */}
       <motion.div
-        className="absolute inset-0 rounded-inherit border border-transparent"
+        className="absolute inset-0 rounded-lg"
         style={{
-          background: `linear-gradient(45deg, ${variant === 'primary' ? '#00D4FF' : variant === 'secondary' ? '#00D4FF' : variant === 'accent' ? '#8B5CF6' : '#EF4444'}, transparent, ${variant === 'primary' ? '#8B5CF6' : variant === 'secondary' ? '#00D4FF' : variant === 'accent' ? '#EC4899' : '#DC2626'})`,
-          backgroundSize: '200% 200%'
+          border: `2px solid ${selectedVariant.borderColor}`,
+          opacity: 0.5
         }}
         animate={{
-          backgroundPosition: ['0% 0%', '100% 100%', '0% 0%']
+          boxShadow: [
+            `0 0 20px ${selectedVariant.glowColor}`,
+            `0 0 40px ${selectedVariant.glowColor}`,
+            `0 0 20px ${selectedVariant.glowColor}`
+          ]
         }}
         transition={{
-          duration: 3,
+          duration: 2,
           repeat: Infinity,
-          ease: "linear"
+          ease: "easeInOut"
         }}
       />
 
       {/* Content */}
       <div className="relative z-10 flex items-center gap-2">
-        {loading && (
+        {loading ? (
           <motion.div
             className="w-4 h-4 border-2 border-current border-t-transparent rounded-full"
             animate={{ rotate: 360 }}
             transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
           />
-        )}
-        {icon && !loading && (
-          <motion.div
-            initial={{ scale: 0.8, opacity: 0.8 }}
-            whileHover={{ scale: 1.1, opacity: 1 }}
-            transition={{ duration: 0.2 }}
-          >
-            {icon}
-          </motion.div>
-        )}
-        <motion.span
-          initial={{ opacity: 0.9 }}
-          whileHover={{ opacity: 1 }}
-          transition={{ duration: 0.2 }}
-        >
-          {children}
-        </motion.span>
+        ) : icon ? (
+          <span className="text-current">{icon}</span>
+        ) : null}
+        
+        <span className="text-current">
+          {loading ? 'Loading...' : children}
+        </span>
       </div>
 
-      {/* Floating particles effect */}
-      {variant === 'primary' && (
-        <div className="absolute inset-0 overflow-hidden rounded-inherit pointer-events-none">
-          {[...Array(3)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute w-1 h-1 bg-zion-cyan rounded-full"
-              style={{
-                left: `${20 + i * 30}%`,
-                top: `${30 + i * 20}%`
-              }}
-              animate={{
-                y: [0, -10, 0],
-                opacity: [0.3, 0.8, 0.3],
-                scale: [0.5, 1, 0.5]
-              }}
-              transition={{
-                duration: 2 + i * 0.5,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: i * 0.3
-              }}
-            />
-          ))}
-        </div>
-      )}
-
-      {/* Hover ripple effect */}
+      {/* Hover effect overlay */}
       <motion.div
-        className="absolute inset-0 rounded-inherit bg-white/20"
-        variants={rippleVariants}
-        initial="initial"
-        whileHover="animate"
+        className="absolute inset-0 rounded-lg opacity-0"
+        style={{
+          background: `linear-gradient(45deg, transparent 30%, ${selectedVariant.glowColor}20 50%, transparent 70%)`
+        }}
+        whileHover={{
+          opacity: disabled ? 0 : 0.3,
+          x: [0, 100, 0]
+        }}
         transition={{ duration: 0.6 }}
+      />
+
+      {/* Click ripple effect */}
+      <motion.div
+        className="absolute inset-0 rounded-lg"
+        style={{
+          background: `radial-gradient(circle, ${selectedVariant.glowColor}40 0%, transparent 70%)`
+        }}
+        initial={{ scale: 0, opacity: 0 }}
+        whileTap={{
+          scale: [0, 1.5, 0],
+          opacity: [0, 0.5, 0]
+        }}
+        transition={{ duration: 0.3 }}
       />
     </motion.button>
   );
 };
+
+// Specialized button variants
+export const CyberpunkButton: React.FC<Omit<FuturisticNeonButtonProps, 'variant'>> = (props) => (
+  <FuturisticNeonButton {...props} variant="primary" />
+);
+
+export const QuantumButton: React.FC<Omit<FuturisticNeonButtonProps, 'variant'>> = (props) => (
+  <FuturisticNeonButton {...props} variant="info" />
+);
+
+export const NeonButton: React.FC<Omit<FuturisticNeonButtonProps, 'variant'>> = (props) => (
+  <FuturisticNeonButton {...props} variant="secondary" />
+);
+
+export const MatrixButton: React.FC<Omit<FuturisticNeonButtonProps, 'variant'>> = (props) => (
+  <FuturisticNeonButton {...props} variant="success" />
+);
 
 export default FuturisticNeonButton;
