@@ -50,7 +50,7 @@ const CloudDevOpsServices = React.lazy(() => import('./pages/CloudDevOpsServices
 const EnterpriseSolutions = React.lazy(() => import('./pages/EnterpriseSolutions'));
 const DigitalTransformation = React.lazy(() => import('./pages/DigitalTransformation'));
 const EmergingTechServices = React.lazy(() => import('./pages/EmergingTechServices'));
-const AboutPage = React.lazy(() => import('./pages/AboutPage'));
+const AboutPage = React.lazy(() => import('./pages/About'));
 const ServicesPage = React.lazy(() => import('./pages/Services'));
 
 const baseRoutes = [

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Filter, Star, Clock, DollarSign, Users, Zap, Brain, Cloud, Database, Shield, Settings, Server, Code, GitBranch, Docker, Kubernetes, Aws, Database as DatabaseIcon, Shield as ShieldIcon, Zap as ZapIcon, Building, Factory, Store, Car, Plane, Ship, Home, Hospital, Building2, GraduationCap, Calendar, FileText, BarChart3, Users as UsersIcon, CreditCard as CreditCardIcon, MessageSquare, Camera, Video, Music, BookOpen, Target, TrendingUp, PieChart, Activity, Zap as ZapIcon2, Phone, Mail, MapPin, Globe, Bot, Cpu, Network, ArrowRight, CheckCircle, AlertTriangle, Info } from 'lucide-react';
+import { Search, Clock, DollarSign, Users, Zap, Cloud, Shield, Settings, Server, Code, GitBranch, Phone, Mail, MapPin } from 'lucide-react';
 
 const CloudDevOpsServices: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -153,7 +153,7 @@ const CloudDevOpsServices: React.FC = () => {
   const getCategoryIcon = (category: string) => {
     switch (category) {
       case 'Cloud Management': return <Cloud className="w-6 h-6" />;
-      case 'Container Orchestration': return <Docker className="w-6 h-6" />;
+      case 'Container Orchestration': return <Server className="w-6 h-6" />;
       case 'DevOps Automation': return <GitBranch className="w-6 h-6" />;
       case 'Serverless': return <Zap className="w-6 h-6" />;
       case 'Infrastructure': return <Server className="w-6 h-6" />;
