@@ -71,6 +71,24 @@ export function Header() {
       label: 'Contact', 
       icon: '📞',
       description: 'Get in touch with us'
+    },
+    { 
+      path: '/white-papers', 
+      label: 'White Papers', 
+      icon: '📄',
+      description: 'Research and technical documentation'
+    },
+    { 
+      path: '/events', 
+      label: 'Events', 
+      icon: '🎪',
+      description: 'Conferences, workshops, and events'
+    },
+    { 
+      path: '/webinars', 
+      label: 'Webinars', 
+      icon: '🎥',
+      description: 'Live and on-demand learning sessions'
     }
   ];
 

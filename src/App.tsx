@@ -41,6 +41,11 @@ const ITInfrastructure = lazy(() => import('./pages/services/ITInfrastructure'))
 const MicroSAASSolutions = lazy(() => import('./pages/services/MicroSAASSolutions'));
 const IndustrySolutions = lazy(() => import('./pages/services/IndustrySolutions'));
 
+// New enhanced pages
+const WhitePapers = lazy(() => import('./pages/WhitePapers'));
+const Events = lazy(() => import('./pages/Events'));
+const Webinars = lazy(() => import('./pages/Webinars'));
+
 // Loading Component
 const LoadingSpinner = () => (
   <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
@@ -95,6 +100,11 @@ const App = () => {
                     <Route path="/services/it-infrastructure" element={<ITInfrastructure />} />
                     <Route path="/services/micro-saas-solutions" element={<MicroSAASSolutions />} />
                     <Route path="/services/industry-solutions" element={<IndustrySolutions />} />
+                    
+                    {/* New enhanced page routes */}
+                    <Route path="/white-papers" element={<WhitePapers />} />
+                    <Route path="/events" element={<Events />} />
+                    <Route path="/webinars" element={<Webinars />} />
                   </Routes>
                 </Suspense>
               </main>
