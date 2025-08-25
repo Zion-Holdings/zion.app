@@ -102,6 +102,12 @@ export function Footer() {
       url: 'https://www.youtube.com/@ziontechgroup', 
       icon: '📺',
       fallback: 'https://youtube.com'
+    },
+    { 
+      name: 'Discord', 
+      url: 'https://discord.gg/ziontechgroup', 
+      icon: '🎮',
+      fallback: 'https://discord.com'
     }
   ];
 
