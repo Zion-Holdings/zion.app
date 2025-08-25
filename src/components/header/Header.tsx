@@ -1,16 +1,10 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Logo } from './Logo';
-import { UserMenu } from './UserMenu';
-import { LanguageSelector } from './LanguageSelector';
-import { MainNavigation } from '@/layout/MainNavigation';
 import { useAuth } from '@/hooks/useAuth';
 import { useWhitelabel } from '@/context/WhitelabelContext';
-import { EnhancedSearchInput } from "@/components/search/EnhancedSearchInput";
-import { generateSearchSuggestions } from "@/data/marketplaceData";
 import { useNavigate } from "react-router-dom";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export interface HeaderProps {
@@ -30,7 +24,6 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
   const [query, setQuery] = useState("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const searchSuggestions = generateSearchSuggestions();
   
   // If we have a white-label tenant and no specific customTheme is provided,
   // use the tenant's primary color
@@ -87,24 +80,34 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
           {/* Neon Glow Effect */}
           <div className="absolute inset-0 bg-gradient-to-r from-zion-cyan/5 via-zion-purple/5 to-zion-cyan/5 rounded-b-3xl"></div>
           
-          <Logo customLogo={customLogo} customColor={effectiveTheme?.primaryColor} />
+          {/* Logo */}
+          <div className="flex items-center">
+            <Link to="/" className="text-2xl font-bold text-white">
+              {customLogo || 'ZION TECH GROUP'}
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="ml-6 flex-1 hidden lg:block">
-            <MainNavigation />
+            <nav className="flex space-x-8">
+              <Link to="/" className="text-white hover:text-zion-cyan transition-colors">Home</Link>
+              <Link to="/marketplace" className="text-white hover:text-zion-cyan transition-colors">Marketplace</Link>
+              <Link to="/services" className="text-white hover:text-zion-cyan transition-colors">Services</Link>
+              <Link to="/talent" className="text-white hover:text-zion-cyan transition-colors">Talent</Link>
+              <Link to="/equipment" className="text-white hover:text-zion-cyan transition-colors">Equipment</Link>
+              <Link to="/community" className="text-white hover:text-zion-cyan transition-colors">Community</Link>
+            </nav>
           </div>
 
           {/* Search Bar */}
           <form onSubmit={handleSubmit} className="hidden md:block w-80 mx-4 relative">
             <div className="relative">
-              <EnhancedSearchInput
+              <input
+                type="text"
                 value={query}
-                onChange={setQuery}
-                onSelectSuggestion={(text) => {
-                  navigate(`/search?q=${encodeURIComponent(text)}`);
-                  setQuery("");
-                }}
-                searchSuggestions={searchSuggestions}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search services..."
+                className="w-full px-4 py-2 bg-white/10 border border-zion-purple/30 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-zion-cyan/50 focus:border-zion-cyan/50"
               />
               {/* Search Glow Effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-zion-cyan/20 to-zion-purple/20 rounded-lg blur-xl opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
@@ -113,8 +116,12 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
 
           {/* Desktop Actions */}
           <div className="flex items-center gap-3 hidden md:flex">
-            <LanguageSelector />
-            {!hideLogin && <UserMenu />}
+            {!hideLogin && (
+              <div className="flex items-center space-x-4">
+                <Link to="/login" className="text-white hover:text-zion-cyan transition-colors">Login</Link>
+                <Link to="/register" className="px-4 py-2 bg-zion-cyan text-black rounded-lg hover:bg-zion-cyan/80 transition-colors">Sign Up</Link>
+              </div>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -134,15 +141,12 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
             <div className="container px-4 py-6 space-y-4">
               {/* Mobile Search */}
               <form onSubmit={handleSubmit} className="w-full">
-                <EnhancedSearchInput
+                <input
+                  type="text"
                   value={query}
-                  onChange={setQuery}
-                  onSelectSuggestion={(text) => {
-                    navigate(`/search?q=${encodeURIComponent(text)}`);
-                    setQuery("");
-                    setIsMobileMenuOpen(false);
-                  }}
-                  searchSuggestions={searchSuggestions}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search services..."
+                  className="w-full px-4 py-2 bg-white/10 border border-zion-purple/30 rounded-lg text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-zion-cyan/50 focus:border-zion-cyan/50"
                 />
               </form>
 
@@ -178,7 +182,7 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
                 </Link>
                 <Link
                   to="/equipment"
-                  className="block px-4 py-3 text-white hover:bg-zion-purple/20 hover:text-zion-cyan rounded-lg transition-colors"
+                  className="block px-4 py-3 text-white hover:bg-zion-purple/20 hover:text-zion-cyan transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   Equipment
@@ -203,8 +207,12 @@ export function Header({ hideLogin = false, customLogo, customTheme }: HeaderPro
 
               {/* Mobile Actions */}
               <div className="pt-4 border-t border-zion-purple/30">
-                <LanguageSelector />
-                {!hideLogin && <UserMenu />}
+                {!hideLogin && (
+                  <div className="flex flex-col space-y-2">
+                    <Link to="/login" className="block px-4 py-3 text-white hover:bg-zion-purple/20 hover:text-zion-cyan rounded-lg transition-colors">Login</Link>
+                    <Link to="/register" className="block px-4 py-3 bg-zion-cyan text-black rounded-lg hover:bg-zion-cyan/80 transition-colors text-center">Sign Up</Link>
+                  </div>
+                )}
               </div>
             </div>
           </div>

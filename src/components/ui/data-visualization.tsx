@@ -7,7 +7,7 @@ import {
   EyeOff
 } from 'lucide-react';
 import { Button } from './button';
-import { Select, SelectItem } from './select';
+import { Select, SelectItem, SelectContent, SelectTrigger, SelectValue } from './select';
 
 interface ChartData {
   labels: string[];
@@ -379,13 +379,17 @@ export function DataVisualization({
           <div className="flex items-center gap-2">
             <Select
               value={currentChartType}
-              onChange={(e) => setCurrentChartType(e.target.value as 'line' | 'bar' | 'pie' | 'area')}
-              className="border-zion-blue-light/30 text-zinc-300 bg-zion-blue-dark/40"
+              onValueChange={(value) => setCurrentChartType(value as 'line' | 'bar' | 'pie' | 'area')}
             >
-              <SelectItem value="line">Line Chart</SelectItem>
-              <SelectItem value="bar">Bar Chart</SelectItem>
-              <SelectItem value="pie">Pie Chart</SelectItem>
-              <SelectItem value="area">Area Chart</SelectItem>
+              <SelectTrigger className="border-zion-blue-light/30 text-zinc-300 bg-zion-blue-dark/40">
+                <SelectValue placeholder="Select chart type" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="line">Line Chart</SelectItem>
+                <SelectItem value="bar">Bar Chart</SelectItem>
+                <SelectItem value="pie">Pie Chart</SelectItem>
+                <SelectItem value="area">Area Chart</SelectItem>
+              </SelectContent>
             </Select>
             
             <Button

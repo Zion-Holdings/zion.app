@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
@@ -114,7 +114,7 @@ const SERVICES: Service[] = [
     rating: 4.8,
     reviewCount: 178,
     deliveryTime: "4-6 weeks",
-    support: "Developer support + maintenance"],
+    support: "Developer support + maintenance",
     price: "$399/project",
     marketPrice: "$1200/project",
     link: "/services-showcase"
@@ -130,7 +130,7 @@ const SERVICES: Service[] = [
     rating: 4.6,
     reviewCount: 94,
     deliveryTime: "6-8 weeks",
-    support: "Network engineer + monitoring"],
+    support: "Network engineer + monitoring",
     price: "$799/project",
     marketPrice: "$2500/project",
     link: "/services-showcase"
@@ -146,7 +146,7 @@ const SERVICES: Service[] = [
     rating: 4.5,
     reviewCount: 67,
     deliveryTime: "3-4 weeks",
-    support: "Implementation specialist + training"],
+    support: "Implementation specialist + training",
     price: "$149/month",
     marketPrice: "$399/month",
     link: "/services-showcase"
@@ -162,7 +162,7 @@ const SERVICES: Service[] = [
     rating: 4.7,
     reviewCount: 112,
     deliveryTime: "1-2 weeks",
-    support: "Creative director + revisions"],
+    support: "Creative director + revisions",
     price: "$299/video",
     marketPrice: "$800/video",
     link: "/services-showcase"
@@ -178,7 +178,7 @@ const SERVICES: Service[] = [
     rating: 4.9,
     reviewCount: 245,
     deliveryTime: "4-8 weeks",
-    support: "Designer + 3 months support"],
+    support: "Designer + 3 months support",
     price: "$599/project",
     marketPrice: "$1500/project",
     link: "/services-showcase"
@@ -194,7 +194,7 @@ const SERVICES: Service[] = [
     rating: 4.8,
     reviewCount: 189,
     deliveryTime: "2-3 weeks",
-    support: "Performance engineer + monitoring"],
+    support: "Performance engineer + monitoring",
     price: "$399/audit",
     marketPrice: "$999/audit",
     link: "/services-showcase"
