@@ -94,5 +94,21 @@
     "value": 97.79993295669556,
     "threshold": 95,
     "timestamp": "2025-08-25T14:32:52.368Z"
+  },
+  {
+    "level": "critical",
+    "category": "memory",
+    "message": "Memory usage critical: 98.96%",
+    "value": 98.96055459976196,
+    "threshold": 95,
+    "timestamp": "2025-08-25T14:33:22.376Z"
+  },
+  {
+    "level": "critical",
+    "category": "memory",
+    "message": "Memory usage critical: 96.01%",
+    "value": 96.01306915283203,
+    "threshold": 95,
+    "timestamp": "2025-08-25T14:33:52.376Z"
   }
 ]

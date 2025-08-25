@@ -182,3 +182,11 @@ Node.js v22.16.0
 [2025-08-25T14:32:52.370Z] ALERT [CRITICAL] Memory usage critical: 97.80%
 [2025-08-25T14:32:52.370Z] metrics rss=31.64 MB heapUsed=4.45 MB cpuLoad=7.26 memUsage=97.80%
 [2025-08-25T14:33:09.071Z] metrics rss=51.49 MB heapUsed=7.25 MB cpuUser=2699424 cpuSystem=347500
+[2025-08-25T14:33:22.378Z] CRITICAL MEMORY ALERT: Memory usage critical: 98.96% - Memory pressure detected
+[2025-08-25T14:33:22.379Z] ALERT [CRITICAL] Memory usage critical: 98.96%
+[2025-08-25T14:33:22.379Z] metrics rss=31.71 MB heapUsed=4.51 MB cpuLoad=6.41 memUsage=98.96%
+[2025-08-25T14:33:39.072Z] metrics rss=51.49 MB heapUsed=7.65 MB cpuUser=2732826 cpuSystem=350638
+[2025-08-25T14:33:52.378Z] CRITICAL MEMORY ALERT: Memory usage critical: 96.01% - Memory pressure detected
+[2025-08-25T14:33:52.378Z] ALERT [CRITICAL] Memory usage critical: 96.01%
+[2025-08-25T14:33:52.379Z] metrics rss=31.78 MB heapUsed=4.58 MB cpuLoad=6.96 memUsage=96.01%
+[2025-08-25T14:34:09.075Z] metrics rss=51.49 MB heapUsed=7.45 MB cpuUser=2767897 cpuSystem=354000
