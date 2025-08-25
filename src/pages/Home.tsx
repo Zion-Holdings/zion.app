@@ -21,6 +21,8 @@ import { InnovationResearchSection } from "@/components/InnovationResearchSectio
 import { ClientSuccessStoriesSection } from "@/components/ClientSuccessStoriesSection";
 import { TechnologyStackSection } from "@/components/TechnologyStackSection";
 import { SecurityComplianceSection } from "@/components/SecurityComplianceSection";
+import { AIServicesShowcase } from "@/components/AIServicesShowcase";
+import { InteractiveTestimonials } from "@/components/InteractiveTestimonials";
 
 export default function Home() {
   return (
@@ -34,6 +36,7 @@ export default function Home() {
       
       <HeroSection />
       <QuickAccess />
+      <AIServicesShowcase />
       <FeatureCTAs />
       <FeatureHighlights />
       <CategoriesSection />
@@ -45,6 +48,7 @@ export default function Home() {
       <GlobalPresenceSection />
       <InnovationResearchSection />
       <ClientSuccessStoriesSection />
+      <InteractiveTestimonials />
       <TechnologyStackSection />
       <SecurityComplianceSection />
       <PricingSection />
