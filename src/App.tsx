@@ -38,6 +38,7 @@ const PartnersPage = React.lazy(() => import('./pages/Partners'));
 const Login = React.lazy(() => import('./pages/Login'));
 const Signup = React.lazy(() => import('./pages/Signup'));
 const ITOnsiteServicesPage = React.lazy(() => import('./pages/ITOnsiteServicesPage'));
+const ITServicesPage = React.lazy(() => import('./pages/ITServicesPage'));
 const OpenAppRedirect = React.lazy(() => import('./pages/OpenAppRedirect'));
 const ContactPage = React.lazy(() => import('./pages/ContactPage'));
 const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
@@ -55,6 +56,7 @@ const baseRoutes = [
   { path: '/micro-saas-services', element: <MicroSaasServices /> },
   { path: '/pricing', element: <PricingPage /> },
   { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
+  { path: '/it-services', element: <ITServicesPage /> },
   { path: '/categories', element: <Categories /> },
   { path: '/equipment', element: <EquipmentPage /> },
   { path: '/equipment/:id', element: <EquipmentDetail /> },
@@ -76,7 +78,7 @@ const App = () => {
     <WhitelabelProvider>
       <ThemeProvider defaultTheme="dark">
         <Header />
-        <main className="min-h-screen">
+        <main className="min-h-screen pt-20">
           <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
             <Routes>
               {baseRoutes.map(({ path, element }) => (
