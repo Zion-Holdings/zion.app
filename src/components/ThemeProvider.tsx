@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+=======
+import React, { createContext, useContext, useState, useEffect } from 'react';
+>>>>>>> cursor/integrate-build-improve-and-re-verify-a776
 
 type Theme = 'light' | 'dark' | 'system';
 
@@ -9,16 +13,27 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+<<<<<<< HEAD
 interface ThemeProviderProps {
   children: ReactNode;
   defaultTheme?: Theme;
 }
 
 export function ThemeProvider({ children, defaultTheme = 'system' }: ThemeProviderProps) {
+=======
+export function ThemeProvider({ 
+  children, 
+  defaultTheme = 'dark' 
+}: { 
+  children: React.ReactNode;
+  defaultTheme?: Theme;
+}) {
+>>>>>>> cursor/integrate-build-improve-and-re-verify-a776
   const [theme, setTheme] = useState<Theme>(defaultTheme);
 
   useEffect(() => {
     const root = window.document.documentElement;
+<<<<<<< HEAD
     
     if (theme === 'system') {
       const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -26,6 +41,14 @@ export function ThemeProvider({ children, defaultTheme = 'system' }: ThemeProvid
       root.classList.add(systemTheme);
     } else {
       root.classList.remove('light', 'dark');
+=======
+    root.classList.remove('light', 'dark');
+
+    if (theme === 'system') {
+      const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      root.classList.add(systemTheme);
+    } else {
+>>>>>>> cursor/integrate-build-improve-and-re-verify-a776
       root.classList.add(theme);
     }
   }, [theme]);

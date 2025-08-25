@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Sidebar from './Sidebar';
@@ -213,3 +214,7 @@ export function Header() {
     </>
   );
 }
+=======
+export { Header } from './header/Header';
+export type { HeaderProps } from './header/Header';
+>>>>>>> cursor/integrate-build-improve-and-re-verify-a776
