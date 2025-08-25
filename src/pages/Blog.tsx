@@ -214,9 +214,4 @@ export const Blog: React.FC = () => {
       </div>
     </div>
   );
-<<<<<<< HEAD
-}
-=======
 };
-
->>>>>>> c29bead6b13f8ea7191a916e452a8526b40ccd76
