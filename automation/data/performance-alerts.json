@@ -110,5 +110,37 @@
     "value": 96.01306915283203,
     "threshold": 95,
     "timestamp": "2025-08-25T14:33:52.376Z"
+  },
+  {
+    "level": "critical",
+    "category": "memory",
+    "message": "Memory usage critical: 97.35%",
+    "value": 97.35409021377563,
+    "threshold": 95,
+    "timestamp": "2025-08-25T14:34:22.378Z"
+  },
+  {
+    "level": "critical",
+    "category": "memory",
+    "message": "Memory usage critical: 99.94%",
+    "value": 99.94238615036011,
+    "threshold": 95,
+    "timestamp": "2025-08-25T14:34:52.379Z"
+  },
+  {
+    "level": "warning",
+    "category": "memory",
+    "message": "Memory usage warning: 93.13%",
+    "value": 93.13291311264038,
+    "threshold": 80,
+    "timestamp": "2025-08-25T14:35:22.380Z"
+  },
+  {
+    "level": "warning",
+    "category": "memory",
+    "message": "Memory usage warning: 92.49%",
+    "value": 92.49221086502075,
+    "threshold": 80,
+    "timestamp": "2025-08-25T14:35:52.382Z"
   }
 ]

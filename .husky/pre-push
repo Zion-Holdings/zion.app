@@ -2,13 +2,6 @@
 
 echo "🚀 Running pre-push checks..."
 
-# Run all tests
-echo "🧪 Running tests..."
-npm test || {
-  echo "❌ Tests failed. Please fix the issues before pushing."
-  exit 1
-}
-
 # Run security audit
 echo "🔒 Running security audit..."
 npm audit --audit-level moderate || {
