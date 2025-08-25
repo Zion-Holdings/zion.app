@@ -35,6 +35,16 @@ const CloudDevOps = lazy(() => import('./pages/CloudDevOps'));
 const EnterpriseSolutionsPage = lazy(() => import('./pages/EnterpriseSolutions'));
 const DigitalTransformation = lazy(() => import('./pages/DigitalTransformation'));
 
+// Missing pages from analysis
+const QuantumNeuralNetworkPlatform = lazy(() => import('./pages/QuantumNeuralNetworkPlatform'));
+const AutonomousBusinessOperationsPlatform = lazy(() => import('./pages/AutonomousBusinessOperationsPlatform'));
+const AIPoweredITAssetManagement = lazy(() => import('./pages/AIPoweredITAssetManagement'));
+const SOC2ComplianceAutomation = lazy(() => import('./pages/SOC2ComplianceAutomation'));
+const AIAutonomousResearchAssistant = lazy(() => import('./pages/AIAutonomousResearchAssistant'));
+const FiveGEnterpriseSolutions = lazy(() => import('./pages/5GEnterpriseSolutions'));
+const CaseStudies = lazy(() => import('./pages/CaseStudies'));
+const HelpCenter = lazy(() => import('./pages/HelpCenter'));
+
 // Our enhanced service pages
 const About = lazy(() => import('./pages/About'));
 const Contact = lazy(() => import('./pages/Contact'));
@@ -54,6 +64,8 @@ const MicroSAASSolutions = lazy(() => import('./pages/services/MicroSAASSolution
 const IndustrySolutions = lazy(() => import('./pages/services/IndustrySolutions'));
 const InnovativeNewServices = lazy(() => import('./pages/services/InnovativeNewServices'));
 const SpecializedITInfrastructure = lazy(() => import('./pages/services/SpecializedITInfrastructure'));
+const InnovativeMicroSaasServices = lazy(() => import('./pages/InnovativeMicroSaasServices'));
+const ComprehensiveInnovativeServices = lazy(() => import('./pages/ComprehensiveInnovativeServices'));
 
 // Solutions pages
 const EnterpriseSolutions = lazy(() => import('./pages/solutions/Enterprise'));
@@ -106,6 +118,16 @@ const App = () => {
                     <Route path="/enterprise-solutions" element={<EnterpriseSolutionsPage />} />
                     <Route path="/digital-transformation" element={<DigitalTransformation />} />
                     
+                    {/* Missing pages from analysis */}
+                    <Route path="/quantum-neural-network-platform" element={<QuantumNeuralNetworkPlatform />} />
+                    <Route path="/autonomous-business-operations-platform" element={<AutonomousBusinessOperationsPlatform />} />
+                    <Route path="/ai-powered-it-asset-management" element={<AIPoweredITAssetManagement />} />
+                    <Route path="/soc2-compliance-automation" element={<SOC2ComplianceAutomation />} />
+                    <Route path="/ai-autonomous-research-assistant" element={<AIAutonomousResearchAssistant />} />
+                    <Route path="/5g-enterprise-solutions" element={<FiveGEnterpriseSolutions />} />
+                    <Route path="/case-studies" element={<CaseStudies />} />
+                    <Route path="/help" element={<HelpCenter />} />
+                    
                     {/* Our enhanced service routes */}
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
@@ -125,6 +147,8 @@ const App = () => {
                     <Route path="/services/industry-solutions" element={<IndustrySolutions />} />
                     <Route path="/services/innovative-new-services" element={<InnovativeNewServices />} />
                     <Route path="/services/specialized-it-infrastructure" element={<SpecializedITInfrastructure />} />
+                    <Route path="/innovative-micro-saas-services" element={<InnovativeMicroSaasServices />} />
+                    <Route path="/comprehensive-innovative-services" element={<ComprehensiveInnovativeServices />} />
                     
                     {/* Solutions Routes */}
                     <Route path="/services/enterprise" element={<EnterpriseSolutions />} />
