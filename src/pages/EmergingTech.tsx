@@ -100,10 +100,11 @@ const EmergingTech = () => {
 
   return (
     <>
-      <SEO 
+            <SEO
         title="Emerging Technology Solutions | Zion Tech Group"
         description="Next-generation technology solutions including quantum computing, XR, blockchain, and IoT for forward-thinking organizations."
-        keywords="emerging technology, quantum computing, XR, blockchain, IoT, edge computing, AI/ML"
+        tags={["emerging technology", "quantum computing", "XR", "blockchain", "IoT", "edge computing", "AI/ML"]}
+        url="https://ziontechgroup.com/emerging-tech"
       />
       
       <div className="min-h-screen bg-zion-blue-dark">

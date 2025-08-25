@@ -2,8 +2,8 @@
 import React from 'react';
 import { SEO } from "@/components/SEO";
 import { ServicesShowcase } from '../components/ServicesShowcase';
-import { EnhancedServicesShowcase } from '../components/EnhancedServicesShowcase';
-import { AdvancedServicesShowcase } from '../components/AdvancedServicesShowcase';
+// import { EnhancedServicesShowcase } from '../components/EnhancedServicesShowcase';
+// import { AdvancedServicesShowcase } from '../components/AdvancedServicesShowcase';
 
 export default function Home() {
   return (
@@ -113,13 +113,13 @@ export default function Home() {
       </section>
 
       {/* Advanced Services Showcase */}
-      <AdvancedServicesShowcase />
+              {/* <AdvancedServicesShowcase /> */}
 
       {/* Original Services Showcase */}
       <ServicesShowcase />
       
       {/* Enhanced Services Showcase */}
-      <EnhancedServicesShowcase />
+              {/* <EnhancedServicesShowcase /> */}
 
       {/* Enhanced Features Section */}
       <section className="py-20 px-4 relative overflow-hidden">

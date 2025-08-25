@@ -160,7 +160,7 @@ export default function QuantumTechnology() {
       <SEO 
         title="Quantum Technology - Zion Tech Group" 
         description="Next-generation quantum computing solutions for unprecedented performance and innovation across industries."
-        keywords="quantum computing, quantum technology, quantum edge computing, neuromorphic computing, holographic data centers"
+        tags={["quantum computing", "quantum technology", "quantum edge computing", "neuromorphic computing", "holographic data centers"]}
         url="https://ziontechgroup.com/services/quantum-technology"
       />
 

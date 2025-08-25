@@ -7,7 +7,7 @@ const TalentDirectory: React.FC = () => {
       <SEO 
         title="Talent Directory - Zion Tech Group"
         description="Browse our directory of talented professionals and experts"
-        canonical="https://ziontechgroup.com/talent"
+        url="https://ziontechgroup.com/talent"
       />
       <div className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-slate-dark">
         <div className="container mx-auto px-4 py-16">

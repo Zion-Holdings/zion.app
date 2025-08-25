@@ -93,10 +93,11 @@ const About = () => {
 
   return (
     <>
-      <SEO 
+            <SEO
         title="About Us | Zion Tech Group"
         description="Learn about Zion Tech Group's mission to transform businesses through innovative technology solutions, AI, and digital transformation."
-        keywords="about Zion Tech Group, company history, team, mission, values, technology company"
+        tags={["about Zion Tech Group", "company history", "team", "mission", "values", "technology company"]}
+        url="https://ziontechgroup.com/about"
       />
       
       <div className="min-h-screen bg-zion-blue-dark">

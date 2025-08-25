@@ -162,7 +162,7 @@ export default function Cybersecurity() {
       <SEO 
         title="Cybersecurity - Zion Tech Group" 
         description="Advanced security and protection solutions for digital assets with comprehensive threat detection and compliance automation."
-        keywords="cybersecurity, zero trust, threat intelligence, compliance automation, SOC2, penetration testing"
+        tags={["cybersecurity", "zero trust", "threat intelligence", "compliance automation", "SOC2", "penetration testing"]}
         url="https://ziontechgroup.com/services/cybersecurity"
       />
 

@@ -7,7 +7,7 @@ const AIMatcherPage: React.FC = () => {
       <SEO 
         title="AI Matcher - Zion Tech Group"
         description="Find the perfect match for your project with our AI-powered matching system"
-        canonical="https://ziontechgroup.com/match"
+        url="https://ziontechgroup.com/match"
       />
       <div className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-slate-dark">
         <div className="container mx-auto px-4 py-16">
