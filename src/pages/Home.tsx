@@ -85,9 +85,9 @@ export default function Home() {
             {/* Enhanced Stats */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
               {[
-                { number: "100+", label: "AI Services", icon: "🤖", color: "from-cyan-400 to-blue-400" },
-                { number: "150+", label: "Micro SAAS Solutions", icon: "💻", color: "from-blue-400 to-purple-400" },
-                { number: "24/7", label: "IT Support", icon: "🔧", color: "from-purple-400 to-pink-400" },
+                { number: "10+", label: "AI-Powered Solutions", icon: "🤖", color: "from-cyan-400 to-blue-400" },
+                { number: "24/7", label: "Expert Support", icon: "🔧", color: "from-blue-400 to-purple-400" },
+                { number: "300%+", label: "Average ROI", icon: "📈", color: "from-purple-400 to-pink-400" },
                 { number: "Global", label: "Service Coverage", icon: "🌍", color: "from-green-400 to-teal-400" }
               ].map((stat, index) => (
                 <div key={index} className="text-center animate-fade-in-up group" style={{ animationDelay: `${index * 0.2}s` }}>
