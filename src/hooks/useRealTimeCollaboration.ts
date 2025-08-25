@@ -272,7 +272,7 @@ export const useRealTimeCollaboration = (
       const newUsers = new Map(prev.users);
       const user = newUsers.get(message.userId);
       if (user) {
-        newUsers.set(message.userId, { ...user, isOnline: false, lastSeen: new Date() });
+        newUsers.set(message.userId, { ...(user as CollaborationUser), isOnline: false, lastSeen: new Date() });
       }
       return { ...prev, users: newUsers };
     });
@@ -284,7 +284,7 @@ export const useRealTimeCollaboration = (
       const newUsers = new Map(prev.users);
       const user = newUsers.get(message.userId);
       if (user) {
-        newUsers.set(message.userId, { ...user, lastSeen: new Date() });
+        newUsers.set(message.userId, { ...(user as CollaborationUser), lastSeen: new Date() });
       }
       return { ...prev, users: newUsers };
     });
@@ -299,7 +299,7 @@ export const useRealTimeCollaboration = (
       const user = newUsers.get(message.userId);
       if (user) {
         newUsers.set(message.userId, {
-          ...user,
+          ...(user as CollaborationUser),
           cursor: message.payload
         });
       }
@@ -316,7 +316,7 @@ export const useRealTimeCollaboration = (
       const user = newUsers.get(message.userId);
       if (user) {
         newUsers.set(message.userId, {
-          ...user,
+          ...(user as CollaborationUser),
           selection: message.payload
         });
       }
@@ -510,23 +510,31 @@ export const useRealTimeCollaboration = (
 
   // Computed values
   const onlineUsers = useMemo(() => {
-    return Array.from(state.users.values()).filter(user => user.isOnline);
+    return Array.from(state.users.values()).filter((user): user is CollaborationUser => {
+      return typeof user === 'object' && user !== null && 'isOnline' in user && (user as CollaborationUser).isOnline;
+    });
   }, [state.users]);
 
   const offlineUsers = useMemo(() => {
-    return Array.from(state.users.values()).filter(user => !user.isOnline);
+    return Array.from(state.users.values()).filter((user): user is CollaborationUser => {
+      return typeof user === 'object' && user !== null && 'isOnline' in user && !(user as CollaborationUser).isOnline;
+    });
   }, [state.users]);
 
   const activeCursors = useMemo(() => {
     return Array.from(state.users.values())
-      .filter(user => user.isOnline && user.cursor)
-      .map(user => ({ ...user.cursor, user }));
+      .filter((user): user is CollaborationUser => {
+        return typeof user === 'object' && user !== null && 'isOnline' in user && (user as CollaborationUser).isOnline && 'cursor' in user && !!(user as CollaborationUser).cursor;
+      })
+      .map(user => ({ ...(user as CollaborationUser).cursor!, user }));
   }, [state.users]);
 
   const activeSelections = useMemo(() => {
     return Array.from(state.users.values())
-      .filter(user => user.isOnline && user.selection)
-      .map(user => ({ ...user.selection, user }));
+      .filter((user): user is CollaborationUser => {
+        return typeof user === 'object' && user !== null && 'isOnline' in user && (user as CollaborationUser).isOnline && 'selection' in user && !!(user as CollaborationUser).selection;
+      })
+      .map(user => ({ ...(user as CollaborationUser).selection!, user }));
   }, [state.users]);
 
   return {

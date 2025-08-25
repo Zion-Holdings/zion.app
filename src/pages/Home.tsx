@@ -1,5 +1,6 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { SEO } from "@/components/SEO";
 import { ServicesShowcase } from '../components/ServicesShowcase';
 import { EnhancedServicesShowcase } from '../components/EnhancedServicesShowcase';
@@ -74,12 +75,12 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <button className="quantum-button text-lg px-8 py-4">
+              <Link to="/services" className="quantum-button text-lg px-8 py-4">
                 Explore Services
-              </button>
-              <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 rounded-xl font-semibold text-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 neon-border animate-neon-border-glow">
+              </Link>
+              <Link to="/contact" className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 rounded-xl font-semibold text-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 neon-border animate-neon-border-glow">
                 Get Free Consultation
-              </button>
+              </Link>
             </div>
 
             {/* Enhanced Stats */}
@@ -110,6 +111,97 @@ export default function Home() {
         <div className="absolute bottom-32 left-32 w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
         <div className="absolute top-1/2 left-20 w-1 h-1 bg-purple-400 rounded-full animate-bounce"></div>
         <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-green-400 rounded-full animate-ping animation-delay-1000"></div>
+      </section>
+
+      {/* AI Services Section */}
+      <section className="py-20 px-4 relative overflow-hidden bg-gradient-to-br from-gray-900/50 to-black/50">
+        {/* Animated Background */}
+        <div className="absolute inset-0">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-cyan-500/10 to-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-gradient-to-br from-purple-500/10 to-pink-500/10 rounded-full blur-3xl animate-pulse animation-delay-1000"></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">AI Services</span> That Transform Business
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Our cutting-edge AI solutions automate, optimize, and revolutionize every aspect of your business operations.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                icon: "🧠",
+                title: "AI Business Manager",
+                description: "Intelligent business management with AI-powered decision making and automation.",
+                path: "/ai-autonomous-business-manager",
+                color: "from-purple-500 to-pink-500"
+              },
+              {
+                icon: "☁️",
+                title: "AI Business Platform",
+                description: "Cloud-native AI platform for scalable business intelligence and operations.",
+                path: "/ai-autonomous-business-platform",
+                color: "from-blue-500 to-cyan-500"
+              },
+              {
+                icon: "💻",
+                title: "AI Code Review",
+                description: "Automated code analysis with security scanning and performance optimization.",
+                path: "/ai-autonomous-code-review",
+                color: "from-green-500 to-emerald-500"
+              },
+              {
+                icon: "🤖",
+                title: "AI Autonomous Systems",
+                description: "Advanced AI systems that operate independently to optimize business processes.",
+                path: "/services/ai-autonomous-systems",
+                color: "from-orange-500 to-red-500"
+              },
+              {
+                icon: "🔒",
+                title: "Cybersecurity",
+                description: "Quantum-safe security solutions with advanced threat detection and prevention.",
+                path: "/services/cybersecurity",
+                color: "from-red-500 to-pink-500"
+              },
+              {
+                icon: "⚡",
+                title: "Quantum Technology",
+                description: "Next-generation quantum computing solutions for complex problem solving.",
+                path: "/services/quantum-technology",
+                color: "from-indigo-500 to-purple-500"
+              }
+            ].map((service, index) => (
+              <Link
+                key={index}
+                to={service.path}
+                className="group p-6 bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-xl border border-gray-700/50 hover:border-cyan-500/50 transition-all duration-500 hover:transform hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/20"
+              >
+                <div className="relative mb-4">
+                  <div className="text-5xl group-hover:scale-110 transition-transform duration-300">
+                    {service.icon}
+                  </div>
+                  <div className={`absolute inset-0 bg-gradient-to-r ${service.color} rounded-full blur-lg opacity-0 group-hover:opacity-30 transition-opacity duration-300`}></div>
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">{service.title}</h3>
+                <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">{service.description}</p>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center mt-12">
+            <Link
+              to="/services"
+              className="px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl font-semibold text-lg hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/30 hover:shadow-cyan-400/50"
+            >
+              View All AI Services
+            </Link>
+          </div>
+        </div>
       </section>
 
       {/* Advanced Services Showcase */}
@@ -250,9 +342,12 @@ export default function Home() {
           </div>
 
           <div className="text-center">
-            <button className="px-10 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl font-semibold text-lg hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/30 hover:shadow-cyan-400/50">
+            <Link
+              to="/contact"
+              className="px-10 py-4 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-xl font-semibold text-lg hover:from-cyan-400 hover:to-blue-400 transition-all duration-300 transform hover:scale-105 shadow-lg shadow-cyan-500/30 hover:shadow-cyan-400/50"
+            >
               Schedule Free Consultation
-            </button>
+            </Link>
           </div>
         </div>
       </section>

@@ -46,6 +46,11 @@ const WhitePapers = lazy(() => import('./pages/WhitePapers'));
 const Events = lazy(() => import('./pages/Events'));
 const Webinars = lazy(() => import('./pages/Webinars'));
 
+// New AI Service pages to fix broken links
+const AIAutonomousBusinessManager = lazy(() => import('./pages/ai-services/AIAutonomousBusinessManager'));
+const AIAutonomousBusinessPlatform = lazy(() => import('./pages/ai-services/AIAutonomousBusinessPlatform'));
+const AIAutonomousCodeReview = lazy(() => import('./pages/ai-services/AIAutonomousCodeReview'));
+
 // Loading Component
 const LoadingSpinner = () => (
   <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
@@ -105,6 +110,11 @@ const App = () => {
                     <Route path="/white-papers" element={<WhitePapers />} />
                     <Route path="/events" element={<Events />} />
                     <Route path="/webinars" element={<Webinars />} />
+                    
+                    {/* New AI service routes to fix broken links */}
+                    <Route path="/ai-autonomous-business-manager" element={<AIAutonomousBusinessManager />} />
+                    <Route path="/ai-autonomous-business-platform" element={<AIAutonomousBusinessPlatform />} />
+                    <Route path="/ai-autonomous-code-review" element={<AIAutonomousCodeReview />} />
                   </Routes>
                 </Suspense>
               </main>

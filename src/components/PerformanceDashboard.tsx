@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { Activity, Zap, Clock, HardDrive, TrendingUp, AlertTriangle, Wifi, WifiOff, RefreshCw, Trash2 } from 'lucide-react';
 import { usePerformance } from '../hooks/usePerformance';
 import { useServiceWorker } from '../hooks/useServiceWorker';

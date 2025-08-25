@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Settings, Eye, Zap, X, Volume2, Keyboard, Monitor } from 'lucide-react';
 import { useAccessibility } from '../hooks/useAccessibility';
 
@@ -44,7 +44,7 @@ export const AccessibilityControls: React.FC<AccessibilityControlsProps> = ({
 
   const handlePreferenceChange = (key: keyof typeof preferences, value: boolean) => {
     savePreferences({ [key]: value });
-    announceToScreenReader(`${key.replace(/([A-Z])/g, ' $1').toLowerCase()} ${value ? 'enabled' : 'disabled'}`);
+    announceToScreenReader(`${String(key).replace(/([A-Z])/g, ' $1').toLowerCase()} ${value ? 'enabled' : 'disabled'}`);
   };
 
   const getPositionClasses = () => {

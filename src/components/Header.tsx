@@ -96,34 +96,34 @@ export function Header() {
     {
       title: 'AI & Machine Learning',
       services: [
-        { name: 'AI Business Intelligence', path: '/services#ai-bi' },
-        { name: 'AI Marketing Automation', path: '/services#ai-marketing' },
-        { name: 'AI HR & Recruitment', path: '/services#ai-hr' },
-        { name: 'AI Legal Tech', path: '/services#ai-legal' }
+        { name: 'AI Business Manager', path: '/ai-autonomous-business-manager' },
+        { name: 'AI Business Platform', path: '/ai-autonomous-business-platform' },
+        { name: 'AI Code Review', path: '/ai-autonomous-code-review' },
+        { name: 'AI Autonomous Systems', path: '/services/ai-autonomous-systems' }
       ]
     },
     {
       title: 'Cybersecurity',
       services: [
-        { name: 'Quantum-Safe Security', path: '/services#quantum-security' },
-        { name: 'Security Assessment', path: '/services#security-assessment' },
-        { name: 'Compliance & Audit', path: '/services#compliance' }
+        { name: 'Quantum-Safe Security', path: '/services/cybersecurity' },
+        { name: 'Security Assessment', path: '/services/cybersecurity' },
+        { name: 'Compliance & Audit', path: '/services/cybersecurity' }
       ]
     },
     {
       title: 'Cloud & Infrastructure',
       services: [
-        { name: 'Cloud Migration', path: '/services#cloud-migration' },
-        { name: 'Network Infrastructure', path: '/services#network' },
-        { name: 'Managed IT Services', path: '/services#managed-it' }
+        { name: 'Cloud Migration', path: '/services/it-infrastructure' },
+        { name: 'Network Infrastructure', path: '/services/it-infrastructure' },
+        { name: 'Managed IT Services', path: '/services/it-infrastructure' }
       ]
     },
     {
       title: 'Emerging Tech',
       services: [
-        { name: 'Blockchain Solutions', path: '/services#blockchain' },
-        { name: 'Quantum Computing', path: '/services#quantum' },
-        { name: 'IoT & Edge Computing', path: '/services#iot-edge' }
+        { name: 'Blockchain Solutions', path: '/emerging-tech' },
+        { name: 'Quantum Technology', path: '/services/quantum-technology' },
+        { name: 'IoT & Edge Computing', path: '/emerging-tech' }
       ]
     }
   ];
