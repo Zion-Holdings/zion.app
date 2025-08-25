@@ -18,35 +18,35 @@ import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
 import { ErrorBoundary } from './components/ErrorBoundary';
 
-// Enhanced lazy loading with preloading hints
-const Home = lazy(() => import('./pages/Home'));
-const Services = lazy(() => import('./pages/Services'));
-const AISolutions = lazy(() => import('./pages/AISolutions'));
-const ServicesShowcase = lazy(() => import('./pages/ServicesShowcase'));
-const AIMatcherPage = lazy(() => import('./pages/AIMatcher'));
-const TalentDirectory = lazy(() => import('./pages/TalentDirectory'));
-const TalentsPage = lazy(() => import('./pages/TalentsPage'));
-const EmergingTech = lazy(() => import('./pages/EmergingTech'));
+// Enhanced lazy loading with preloading hints and better code splitting
+const Home = lazy(() => import('./pages/Home').then(module => ({ default: module.default })));
+const Services = lazy(() => import('./pages/Services').then(module => ({ default: module.default })));
+const AISolutions = lazy(() => import('./pages/AISolutions').then(module => ({ default: module.default })));
+const ServicesShowcase = lazy(() => import('./pages/ServicesShowcase').then(module => ({ default: module.default })));
+const AIMatcherPage = lazy(() => import('./pages/AIMatcher').then(module => ({ default: module.default })));
+const TalentDirectory = lazy(() => import('./pages/TalentDirectory').then(module => ({ default: module.default })));
+const TalentsPage = lazy(() => import('./pages/TalentsPage').then(module => ({ default: module.default })));
+const EmergingTech = lazy(() => import('./pages/EmergingTech').then(module => ({ default: module.default })));
 
-// Our enhanced service pages
-const About = lazy(() => import('./pages/About'));
-const Contact = lazy(() => import('./pages/Contact'));
-const Mission = lazy(() => import('./pages/Mission'));
-const Team = lazy(() => import('./pages/Team'));
-const ServicesOverview = lazy(() => import('./pages/services/ServicesOverview'));
-const AIAutonomousSystems = lazy(() => import('./pages/services/AIAutonomousSystems'));
-const QuantumTechnology = lazy(() => import('./pages/services/QuantumTechnology'));
-const Cybersecurity = lazy(() => import('./pages/services/Cybersecurity'));
-const ITInfrastructure = lazy(() => import('./pages/services/ITInfrastructure'));
-const MicroSAASSolutions = lazy(() => import('./pages/services/MicroSAASSolutions'));
-const IndustrySolutions = lazy(() => import('./pages/services/IndustrySolutions'));
+// Our enhanced service pages with better chunking
+const About = lazy(() => import('./pages/About').then(module => ({ default: module.default })));
+const Contact = lazy(() => import('./pages/Contact').then(module => ({ default: module.default })));
+const Mission = lazy(() => import('./pages/Mission').then(module => ({ default: module.default })));
+const Team = lazy(() => import('./pages/Team').then(module => ({ default: module.default })));
+const ServicesOverview = lazy(() => import('./pages/services/ServicesOverview').then(module => ({ default: module.default })));
+const AIAutonomousSystems = lazy(() => import('./pages/services/AIAutonomousSystems').then(module => ({ default: module.default })));
+const QuantumTechnology = lazy(() => import('./pages/services/QuantumTechnology').then(module => ({ default: module.default })));
+const Cybersecurity = lazy(() => import('./pages/services/Cybersecurity').then(module => ({ default: module.default })));
+const ITInfrastructure = lazy(() => import('./pages/services/ITInfrastructure').then(module => ({ default: module.default })));
+const MicroSAASSolutions = lazy(() => import('./pages/services/MicroSAASSolutions').then(module => ({ default: module.default })));
+const IndustrySolutions = lazy(() => import('./pages/services/IndustrySolutions').then(module => ({ default: module.default })));
 
 // New enhanced pages
-const WhitePapers = lazy(() => import('./pages/WhitePapers'));
-const Events = lazy(() => import('./pages/Events'));
-const Webinars = lazy(() => import('./pages/Webinars'));
+const WhitePapers = lazy(() => import('./pages/WhitePapers').then(module => ({ default: module.default })));
+const Events = lazy(() => import('./pages/Events').then(module => ({ default: module.default })));
+const Webinars = lazy(() => import('./pages/Webinars').then(module => ({ default: module.default })));
 
-// Loading Component
+// Enhanced Loading Component with better UX
 const LoadingSpinner = () => (
   <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
     <div className="text-center">
@@ -56,12 +56,35 @@ const LoadingSpinner = () => (
       </div>
       <p className="text-cyan-400 text-lg font-medium">Loading Zion Tech Group...</p>
       <p className="text-gray-400 text-sm mt-2">Preparing your experience</p>
+      {/* Progress indicator */}
+      <div className="w-48 h-1 bg-gray-700 rounded-full mt-4 overflow-hidden">
+        <div className="h-full bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full animate-pulse"></div>
+      </div>
     </div>
   </div>
 );
 
+// Preload critical routes for better performance
+const preloadCriticalRoutes = () => {
+  // Preload Home page immediately
+  const homePromise = import('./pages/Home');
+  
+  // Preload other critical routes after a delay
+  setTimeout(() => {
+    import('./pages/Services');
+    import('./pages/AISolutions');
+  }, 1000);
+  
+  return homePromise;
+};
+
 const App = () => {
   useScrollToTop();
+
+  // Preload critical routes on mount
+  React.useEffect(() => {
+    preloadCriticalRoutes();
+  }, []);
 
   return (
     <ErrorBoundary>
@@ -72,7 +95,7 @@ const App = () => {
               <Header />
               <Sidebar isOpen={false} onClose={() => {}} />
               
-              {/* Main Content with enhanced Suspense */}
+              {/* Main Content with enhanced Suspense and error handling */}
               <main className="ml-64 pt-20 min-h-screen">
                 <Suspense fallback={<LoadingSpinner />}>
                   <Routes>
