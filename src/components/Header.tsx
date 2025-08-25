@@ -16,11 +16,72 @@ export function Header() {
   }, []);
 
   const navigationItems = [
-    { path: '/', label: 'Home', icon: '🏠' },
-    { path: '/services', label: 'Services', icon: '⚡' },
-    { path: '/comprehensive-services', label: 'All Services', icon: '🚀' },
-    { path: '/services-comparison', label: 'Compare', icon: '📊' },
-    { path: '/it-onsite-services', label: 'Onsite IT', icon: '🔧' }
+    { 
+      path: '/', 
+      label: 'Home', 
+      icon: '🏠',
+      description: 'Welcome to Zion Tech Group'
+    },
+    { 
+      path: '/services', 
+      label: 'Services', 
+      icon: '⚡',
+      description: 'Explore our service offerings'
+    },
+    { 
+      path: '/comprehensive-services', 
+      label: 'All Services', 
+      icon: '🚀',
+      description: 'Complete service catalog'
+    },
+    { 
+      path: '/services-comparison', 
+      label: 'Compare', 
+      icon: '📊',
+      description: 'Compare service options'
+    },
+    { 
+      path: '/it-onsite-services', 
+      label: 'Onsite IT', 
+      icon: '🔧',
+      description: 'Onsite IT support services'
+    }
+  ];
+
+  const serviceCategories = [
+    {
+      title: 'AI & Machine Learning',
+      services: [
+        { name: 'AI Business Intelligence', path: '/services#ai-bi' },
+        { name: 'AI Marketing Automation', path: '/services#ai-marketing' },
+        { name: 'AI HR & Recruitment', path: '/services#ai-hr' },
+        { name: 'AI Legal Tech', path: '/services#ai-legal' }
+      ]
+    },
+    {
+      title: 'Cybersecurity',
+      services: [
+        { name: 'Quantum-Safe Security', path: '/services#quantum-security' },
+        { name: 'Security Assessment', path: '/services#security-assessment' },
+        { name: 'Compliance & Audit', path: '/services#compliance' }
+      ]
+    },
+    {
+      title: 'Cloud & Infrastructure',
+      services: [
+        { name: 'Cloud Migration', path: '/services#cloud-migration' },
+        { name: 'Network Infrastructure', path: '/services#network' },
+        { name: 'Managed IT Services', path: '/services#managed-it' }
+      ]
+    },
+    {
+      title: 'Emerging Tech',
+      services: [
+        { name: 'Blockchain Solutions', path: '/services#blockchain' },
+        { name: 'Quantum Computing', path: '/services#quantum' },
+        { name: 'IoT & Edge Computing', path: '/services#iot-edge' }
+      ]
+    }
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -36,7 +97,7 @@ export function Header() {
       
       {/* Matrix Rain Effect */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(15)].map((_, i) => (
+        {[...Array(20)].map((_, i) => (
           <div
             key={i}
             className="absolute text-cyan-400 text-xs animate-matrix-rain opacity-30"
@@ -72,30 +133,70 @@ export function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-1">
             {navigationItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`relative px-4 py-2 rounded-lg font-medium transition-all duration-300 group ${
-                  isActive(item.path)
-                    ? 'text-white bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/50 shadow-lg shadow-cyan-500/30'
-                    : 'text-gray-300 hover:text-white hover:bg-white/10'
-                }`}
-              >
-                <span className="flex items-center space-x-2">
-                  <span className="text-sm">{item.icon}</span>
-                  <span>{item.label}</span>
-                </span>
-                
-                {/* Hover Effect */}
-                <div className={`absolute inset-0 rounded-lg bg-gradient-to-r from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-                  isActive(item.path) ? 'opacity-100' : ''
-                }`}></div>
-                
-                {/* Active Indicator */}
-                {isActive(item.path) && (
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-cyan-400 rounded-full animate-pulse"></div>
+              <div key={item.path} className="relative group">
+                <Link
+                  to={item.path}
+                  className={`relative px-4 py-2 rounded-lg font-medium transition-all duration-300 group ${
+                    isActive(item.path)
+                      ? 'text-white bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/50 shadow-lg shadow-cyan-500/30'
+                      : 'text-gray-300 hover:text-white hover:bg-white/10'
+                  }`}
+                >
+                  <span className="flex items-center space-x-2">
+                    <span className="text-sm">{item.icon}</span>
+                    <span>{item.label}</span>
+                  </span>
+                  
+                  {/* Hover Effect */}
+                  <div className={`absolute inset-0 rounded-lg bg-gradient-to-r from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+                    isActive(item.path) ? 'opacity-100' : ''
+                  }`}></div>
+                  
+                  {/* Active Indicator */}
+                  {isActive(item.path) && (
+                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-cyan-400 rounded-full animate-pulse"></div>
+                  )}
+                </Link>
+
+                {/* Services Dropdown */}
+                {item.label === 'Services' && (
+                  <div className="absolute top-full left-0 mt-2 w-96 bg-gray-900/95 backdrop-blur-xl rounded-xl border border-cyan-500/30 shadow-2xl shadow-cyan-500/20 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+                    <div className="p-6">
+                      <h3 className="text-lg font-bold text-white mb-4 border-b border-cyan-500/30 pb-2">
+                        Service Categories
+                      </h3>
+                      <div className="grid grid-cols-1 gap-4">
+                        {serviceCategories.map((category, index) => (
+                          <div key={index} className="group">
+                            <h4 className="text-sm font-semibold text-cyan-400 mb-2 group-hover:text-cyan-300 transition-colors duration-300">
+                              {category.title}
+                            </h4>
+                            <div className="space-y-1">
+                              {category.services.map((service, serviceIndex) => (
+                                <Link
+                                  key={serviceIndex}
+                                  to={service.path}
+                                  className="block text-sm text-gray-300 hover:text-white hover:bg-cyan-500/10 rounded-lg px-3 py-2 transition-all duration-300"
+                                >
+                                  {service.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                      <div className="mt-4 pt-4 border-t border-cyan-500/30">
+                        <Link
+                          to="/comprehensive-services"
+                          className="block w-full text-center px-4 py-2 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-medium hover:from-cyan-400 hover:to-blue-400 transition-all duration-300"
+                        >
+                          View All Services
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
                 )}
-              </Link>
+              </div>
             ))}
           </nav>
 
