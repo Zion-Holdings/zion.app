@@ -1,0 +1,5 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import React from 'react';
+export function ITServiceRequestHero() {
+    return (_jsx("section", { className: "py-16 bg-gradient-to-r from-zion-blue to-zion-purple", children: _jsxs("div", { className: "container mx-auto px-4 text-center", children: [_jsx("h2", { className: "text-4xl font-bold text-white mb-6", children: "Need IT Services?" }), _jsx("p", { className: "text-xl text-zion-cyan mb-8 max-w-3xl mx-auto", children: "Get expert IT support, cybersecurity, and digital transformation services from our certified professionals." }), _jsxs("div", { className: "flex flex-col sm:flex-row gap-4 justify-center", children: [_jsx("button", { className: "px-8 py-4 bg-zion-cyan text-white font-semibold rounded-lg hover:bg-zion-cyan-light transition-colors", children: "Request Quote" }), _jsx("button", { className: "px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-zion-blue transition-colors", children: "Learn More" })] })] }) }));
+}

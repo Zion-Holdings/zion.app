@@ -1,80 +1,111 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
-import { SEO } from "@/components/SEO";
-import { GradientHeading } from "@/components/GradientHeading";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Smartphone, Download, Zap, Shield, Globe, Users, Star, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
-export default function Mobile() {
-    const features = [
+import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
+import { SEO } from '@/components/SEO';
+const Mobile = () => {
+    const mobileFeatures = [
         {
-            icon: _jsx(Smartphone, { className: "h-8 w-8 text-zion-cyan" }),
             title: "Mobile-First Design",
-            description: "Optimized for mobile devices with intuitive touch controls and responsive layouts."
+            description: "We design with mobile users in mind first, ensuring optimal experience across all devices",
+            icon: "📱",
+            benefits: [
+                "Responsive design principles",
+                "Touch-friendly interfaces",
+                "Mobile performance optimization",
+                "Cross-platform compatibility"
+            ]
         },
         {
-            icon: _jsx(Zap, { className: "h-8 w-8 text-zion-purple" }),
-            title: "Lightning Fast",
-            description: "Optimized performance with offline capabilities and instant loading times."
+            title: "Zion Mobile App",
+            description: "Access our services and manage your projects on the go with our mobile application",
+            icon: "🚀",
+            benefits: [
+                "Project management",
+                "Real-time updates",
+                "Client communication",
+                "Service booking"
+            ]
         },
         {
-            icon: _jsx(Shield, { className: "h-8 w-8 text-zion-purple-light" }),
-            title: "Secure & Private",
-            description: "End-to-end encryption and secure authentication to protect your data."
-        },
-        {
-            icon: _jsx(Globe, { className: "h-8 w-8 text-zion-cyan" }),
-            title: "Global Access",
-            description: "Access the marketplace from anywhere in the world with localized content."
-        },
-        {
-            icon: _jsx(Users, { className: "h-8 w-8 text-zion-purple" }),
-            title: "Real-time Chat",
-            description: "Instant messaging with clients, talent, and team members on the go."
-        },
-        {
-            icon: _jsx(Star, { className: "h-8 w-8 text-zion-purple-light" }),
-            title: "Smart Notifications",
-            description: "Intelligent alerts for important updates, messages, and opportunities."
+            title: "Progressive Web Apps",
+            description: "Web applications that work like native apps with offline functionality",
+            icon: "🌐",
+            benefits: [
+                "No app store required",
+                "Offline capabilities",
+                "Push notifications",
+                "App-like experience"
+            ]
         }
     ];
-    const appHighlights = [
+    const mobileServices = [
         {
-            title: "Browse Marketplace",
-            description: "Discover AI talent, services, and equipment with advanced search and filtering."
+            title: "iOS Development",
+            description: "Native iPhone and iPad applications using Swift and SwiftUI",
+            icon: "🍎",
+            features: ["Swift & SwiftUI", "App Store optimization", "iOS-specific features", "Performance tuning"]
         },
         {
-            title: "Manage Projects",
-            description: "Track project progress, manage timelines, and collaborate with team members."
+            title: "Android Development",
+            description: "Native Android applications using Kotlin and Jetpack Compose",
+            icon: "🤖",
+            features: ["Kotlin & Jetpack Compose", "Google Play optimization", "Material Design 3", "Android features"]
         },
         {
-            title: "Secure Payments",
-            description: "Handle transactions securely with multiple payment options and escrow protection."
+            title: "Cross-Platform",
+            description: "Single codebase for iOS and Android using React Native or Flutter",
+            icon: "📱",
+            features: ["React Native", "Flutter", "Shared codebase", "Native performance"]
         },
         {
-            title: "AI-Powered Matching",
-            description: "Get intelligent recommendations for talent and services based on your needs."
+            title: "Mobile Web",
+            description: "Responsive web applications optimized for mobile devices",
+            icon: "🌐",
+            features: ["Mobile-first design", "Progressive Web Apps", "Responsive layouts", "Touch optimization"]
         }
     ];
-    const testimonials = [
+    const mobileBenefits = [
         {
-            name: "Sarah Chen",
-            role: "CTO, TechFlow Inc.",
-            content: "The Zion mobile app has revolutionized how we hire AI talent. It's like having the entire marketplace in my pocket.",
-            rating: 5
+            title: "Increased Engagement",
+            description: "Mobile users are more engaged and likely to interact with your content",
+            icon: "📈"
         },
         {
-            name: "Marcus Rodriguez",
-            role: "Freelance AI Developer",
-            content: "I can respond to job opportunities instantly and manage my projects on the go. The mobile experience is seamless.",
-            rating: 5
+            title: "Better User Experience",
+            description: "Optimized mobile experiences lead to higher satisfaction and retention",
+            icon: "⭐"
         },
         {
-            name: "Dr. Emily Watson",
-            role: "AI Research Lead",
-            content: "The mobile app makes it easy to stay connected with clients and manage multiple service requests efficiently.",
-            rating: 5
+            title: "Wider Reach",
+            description: "Mobile-first approach ensures accessibility across all devices",
+            icon: "🌍"
+        },
+        {
+            title: "Competitive Advantage",
+            description: "Stay ahead with modern mobile solutions and user expectations",
+            icon: "🏆"
         }
     ];
-    return (_jsxs("div", { className: "min-h-screen bg-zion-blue", children: [_jsx(SEO, { title: "Mobile App - Zion Tech Group", description: "Download the Zion mobile app for iOS and Android. Access the AI and tech marketplace on the go with our powerful mobile application.", keywords: "mobile app, iOS app, Android app, marketplace app, AI marketplace mobile", canonical: "https://ziontechgroup.com/mobile" }), _jsx("main", { className: "pt-24 pb-20", children: _jsxs("div", { className: "container mx-auto px-4 sm:px-6 lg:px-8", children: [_jsxs("div", { className: "text-center mb-16", children: [_jsx(GradientHeading, { className: "text-4xl md:text-6xl mb-6", children: "Zion Mobile App" }), _jsx("p", { className: "text-xl text-zion-slate-light max-w-3xl mx-auto mb-8", children: "Take the Zion marketplace with you everywhere. Access AI talent, tech services, and manage projects on the go with our powerful mobile application." }), _jsxs("div", { className: "flex flex-col sm:flex-row gap-4 justify-center mb-8", children: [_jsx(Button, { asChild: true, size: "lg", className: "bg-zion-purple hover:bg-zion-purple-light", children: _jsx(Link, { to: "/mobile-launch", children: "Download Now" }) }), _jsx(Button, { asChild: true, variant: "outline", size: "lg", className: "border-zion-purple text-zion-purple hover:bg-zion-purple/10", children: _jsx(Link, { to: "/mobile-launch", children: "Learn More" }) })] }), _jsx("div", { className: "flex flex-col sm:flex-row gap-4 justify-center items-center", children: _jsxs("div", { className: "flex items-center gap-2 bg-black/20 rounded-lg px-4 py-2", children: [_jsx(Download, { className: "h-5 w-5 text-zion-cyan" }), _jsx("span", { className: "text-white text-sm", children: "Available on iOS & Android" })] }) })] }), _jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16", children: features.map((feature, index) => (_jsxs(Card, { className: "bg-zion-blue-dark border-zion-purple/20 hover:border-zion-purple/40 transition-colors", children: [_jsx(CardHeader, { className: "pb-3", children: feature.icon }), _jsxs(CardContent, { children: [_jsx("h3", { className: "font-semibold text-white mb-2", children: feature.title }), _jsx("p", { className: "text-zion-slate-light text-sm", children: feature.description })] })] }, index))) }), _jsxs("div", { className: "mb-16", children: [_jsx("h2", { className: "text-3xl font-bold text-white text-center mb-12", children: "What You Can Do" }), _jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-6", children: appHighlights.map((highlight, index) => (_jsx(Card, { className: "bg-zion-blue-dark border-zion-purple/20", children: _jsxs(CardContent, { className: "pt-6", children: [_jsx("h3", { className: "font-semibold text-white mb-2", children: highlight.title }), _jsx("p", { className: "text-zion-slate-light", children: highlight.description })] }) }, index))) })] }), _jsxs("div", { className: "mb-16", children: [_jsx("h2", { className: "text-3xl font-bold text-white text-center mb-12", children: "What Users Say" }), _jsx("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-6", children: testimonials.map((testimonial, index) => (_jsx(Card, { className: "bg-zion-blue-dark border-zion-purple/20", children: _jsxs(CardContent, { className: "pt-6", children: [_jsx("div", { className: "flex items-center gap-1 mb-3", children: [...Array(testimonial.rating)].map((_, i) => (_jsx(Star, { className: "h-4 w-4 text-yellow-400 fill-current" }, i))) }), _jsxs("p", { className: "text-zion-slate-light mb-4 italic", children: ["\"", testimonial.content, "\""] }), _jsxs("div", { children: [_jsx("p", { className: "text-white font-semibold", children: testimonial.name }), _jsx("p", { className: "text-zion-slate-light text-sm", children: testimonial.role })] })] }) }, index))) })] }), _jsx("div", { className: "text-center", children: _jsx(Card, { className: "bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20 border-zion-purple/40", children: _jsxs(CardContent, { className: "pt-8 pb-8", children: [_jsx("h3", { className: "text-2xl font-bold text-white mb-4", children: "Ready to Go Mobile?" }), _jsx("p", { className: "text-zion-slate-light mb-6 max-w-2xl mx-auto", children: "Download the Zion mobile app today and take the AI marketplace with you everywhere. Available for iOS and Android devices." }), _jsxs("div", { className: "flex flex-col sm:flex-row gap-4 justify-center", children: [_jsx(Button, { asChild: true, size: "lg", className: "bg-zion-purple hover:bg-zion-purple-light", children: _jsxs(Link, { to: "/mobile-launch", children: ["Download App", _jsx(ArrowRight, { className: "ml-2 h-4 w-4" })] }) }), _jsx(Button, { asChild: true, variant: "outline", size: "lg", className: "border-zion-purple text-zion-purple hover:bg-zion-purple/10", children: _jsx(Link, { to: "/mobile-launch", children: "View Features" }) })] })] }) }) })] }) })] }));
-}
+    const mobileStats = [
+        {
+            stat: "73%",
+            label: "Mobile Internet Usage",
+            description: "Of all internet traffic comes from mobile devices"
+        },
+        {
+            stat: "85%",
+            label: "User Preference",
+            description: "Of users prefer mobile-friendly websites"
+        },
+        {
+            stat: "60%",
+            label: "Mobile Search",
+            description: "Of searches are performed on mobile devices"
+        },
+        {
+            stat: "40%",
+            label: "Mobile Conversion",
+            description: "Higher conversion rates on mobile-optimized sites"
+        }
+    ];
+    return (_jsxs(_Fragment, { children: [_jsx(SEO, { title: "Mobile-First Solutions - Zion Tech Group", description: "Experience mobile-first design and development with Zion Tech Group. From responsive websites to native mobile apps, we ensure optimal mobile experiences.", canonical: "/mobile" }), _jsx("div", { className: "min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800", children: _jsx("main", { className: "pt-12", children: _jsxs("div", { className: "container mx-auto px-4 py-16", children: [_jsxs("div", { className: "text-center mb-16", children: [_jsx("h1", { className: "text-4xl md:text-5xl font-bold text-white mb-6", children: "Mobile-First Solutions" }), _jsx("p", { className: "text-xl text-blue-100 max-w-4xl mx-auto", children: "In today's mobile-first world, we ensure your digital presence is optimized for mobile devices. From responsive websites to native mobile applications, we deliver exceptional mobile experiences that drive engagement and results." })] }), _jsxs("div", { className: "mb-20", children: [_jsx("h2", { className: "text-3xl font-semibold text-white text-center mb-12", children: "Our Mobile Approach" }), _jsx("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto", children: mobileFeatures.map((feature, index) => (_jsxs("div", { className: "bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 p-6 hover:bg-white/20 transition-colors duration-200", children: [_jsx("div", { className: "text-4xl mb-4 text-center", children: feature.icon }), _jsx("h3", { className: "text-xl font-semibold text-white mb-3 text-center", children: feature.title }), _jsx("p", { className: "text-blue-100 mb-4 text-sm text-center", children: feature.description }), _jsx("ul", { className: "space-y-2", children: feature.benefits.map((benefit, benefitIndex) => (_jsxs("li", { className: "text-blue-200 text-sm flex items-center", children: [_jsx("span", { className: "text-green-400 mr-2", children: "\u2713" }), benefit] }, benefitIndex))) })] }, index))) })] }), _jsxs("div", { className: "mb-20", children: [_jsx("h2", { className: "text-3xl font-semibold text-white text-center mb-12", children: "Mobile Development Services" }), _jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto", children: mobileServices.map((service, index) => (_jsxs("div", { className: "bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 p-6 hover:bg-white/20 transition-colors duration-200", children: [_jsx("div", { className: "text-4xl mb-4 text-center", children: service.icon }), _jsx("h3", { className: "text-xl font-semibold text-white mb-3 text-center", children: service.title }), _jsx("p", { className: "text-blue-100 mb-4 text-sm text-center", children: service.description }), _jsx("ul", { className: "space-y-2", children: service.features.map((feature, featureIndex) => (_jsxs("li", { className: "text-blue-200 text-sm flex items-center", children: [_jsx("span", { className: "text-green-400 mr-2", children: "\u2713" }), feature] }, featureIndex))) })] }, index))) })] }), _jsxs("div", { className: "mb-20", children: [_jsx("h2", { className: "text-3xl font-semibold text-white text-center mb-12", children: "Why Mobile Matters" }), _jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto", children: mobileStats.map((stat, index) => (_jsxs("div", { className: "bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 p-6 text-center hover:bg-white/20 transition-colors duration-200", children: [_jsx("div", { className: "text-4xl font-bold text-blue-400 mb-2", children: stat.stat }), _jsx("h3", { className: "text-lg font-semibold text-white mb-2", children: stat.label }), _jsx("p", { className: "text-blue-100 text-sm", children: stat.description })] }, index))) })] }), _jsxs("div", { className: "mb-20", children: [_jsx("h2", { className: "text-3xl font-semibold text-white text-center mb-12", children: "Benefits of Mobile-First Design" }), _jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto", children: mobileBenefits.map((benefit, index) => (_jsxs("div", { className: "bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 p-6 text-center hover:bg-white/20 transition-colors duration-200", children: [_jsx("div", { className: "text-4xl mb-4", children: benefit.icon }), _jsx("h3", { className: "text-lg font-semibold text-white mb-3", children: benefit.title }), _jsx("p", { className: "text-blue-100 text-sm", children: benefit.description })] }, index))) })] }), _jsx("div", { className: "mb-20", children: _jsx("div", { className: "max-w-4xl mx-auto", children: _jsxs("div", { className: "bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm rounded-lg border border-blue-500/30 p-8 text-center", children: [_jsx("h2", { className: "text-3xl font-semibold text-white mb-4", children: "Zion Mobile App" }), _jsx("p", { className: "text-blue-100 mb-6 text-lg", children: "Access our services and manage your projects on the go with our mobile application. Available for iOS and Android devices." }), _jsxs("div", { className: "flex flex-col sm:flex-row gap-4 justify-center", children: [_jsx("a", { href: "#", className: "bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-medium transition-colors duration-200 text-lg", children: "Download for iOS" }), _jsx("a", { href: "#", className: "bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-medium transition-colors duration-200 text-lg", children: "Download for Android" })] })] }) }) }), _jsx("div", { className: "max-w-4xl mx-auto", children: _jsxs("div", { className: "bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 p-8 text-center", children: [_jsx("h2", { className: "text-3xl font-semibold text-white mb-4", children: "Ready to Go Mobile?" }), _jsx("p", { className: "text-blue-100 mb-6 text-lg", children: "Let's discuss your mobile strategy and create solutions that deliver exceptional experiences across all devices." }), _jsxs("div", { className: "flex flex-col sm:flex-row gap-4 justify-center", children: [_jsx("a", { href: "/mobile-launch", className: "bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-medium transition-colors duration-200 text-lg", children: "Start Mobile Development" }), _jsx("a", { href: "/contact", className: "border border-white/30 hover:bg-white/10 text-white px-8 py-4 rounded-lg font-medium transition-colors duration-200 text-lg", children: "Discuss Mobile Strategy" })] })] }) })] }) }) })] }));
+};
+export default Mobile;

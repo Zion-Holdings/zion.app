@@ -178,18 +178,6 @@ const GreenIT = () => {
 
   return (
     <>
-<<<<<<< HEAD
-      <SEO
-        title="Green IT Solutions - Sustainable Technology"
-        description="Explore eco-friendly IT solutions and sustainable technology practices that reduce environmental impact while maintaining performance." 
-        keywords="green IT, sustainable technology, eco-friendly computing, energy efficient hardware"
-        canonical="https://ziontechgroup.com/green-it"
-=======
-      <SEO 
-        title="Green IT Solutions - Sustainable Technology - Zion Tech Group"
-        description="Transform your IT infrastructure with sustainable, energy-efficient solutions. Reduce carbon footprint and costs while improving performance with our Green IT services."
-        canonical="/green-it"
->>>>>>> e338169a4e366a68d7d32ebaabd769477f9baeac
       />
       
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
