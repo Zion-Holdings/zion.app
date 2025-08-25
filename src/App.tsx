@@ -21,12 +21,7 @@ import { ErrorBoundary } from './components/ErrorBoundary';
 // Enhanced lazy loading with preloading hints
 const Home = lazy(() => import('./pages/Home'));
 const Services = lazy(() => import('./pages/Services'));
-const AISolutions = lazy(() => import('./pages/AISolutions'));
-const ServicesShowcase = lazy(() => import('./pages/ServicesShowcase'));
-const AIMatcherPage = lazy(() => import('./pages/AIMatcher'));
-const TalentDirectory = lazy(() => import('./pages/TalentDirectory'));
-const TalentsPage = lazy(() => import('./pages/TalentsPage'));
-const EmergingTech = lazy(() => import('./pages/EmergingTech'));
+const AdvancedServices = lazy(() => import('./pages/AdvancedServices'));
 
 // Our enhanced service pages
 const About = lazy(() => import('./pages/About'));
@@ -78,15 +73,18 @@ const App = () => {
                   <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/services" element={<Services />} />
-                    <Route path="/ai-solutions" element={<AISolutions />} />
-                    <Route path="/services-showcase" element={<ServicesShowcase />} />
-                    <Route path="/match" element={<AIMatcherPage />} />
-                    <Route path="/talent" element={<TalentDirectory />} />
-                    <Route path="/talents" element={<TalentsPage />} />
-                    <Route path="/emerging-tech" element={<EmergingTech />} />
+                    <Route path="/advanced-services" element={<AdvancedServices />} />
                     <Route path="/comprehensive-services" element={<Services />} />
                     <Route path="/services-comparison" element={<Services />} />
                     <Route path="/it-onsite-services" element={<Services />} />
+                    
+                    {/* New AI and specialized service routes */}
+                    <Route path="/ai-services" element={<AdvancedServices />} />
+                    <Route path="/quantum-computing" element={<AdvancedServices />} />
+                    <Route path="/cybersecurity" element={<AdvancedServices />} />
+                    <Route path="/edge-computing" element={<AdvancedServices />} />
+                    <Route path="/blockchain" element={<AdvancedServices />} />
+                    <Route path="/devops-automation" element={<AdvancedServices />} />
                     
                     {/* Our enhanced service routes */}
                     <Route path="/about" element={<About />} />
