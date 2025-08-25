@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Menu, X, ChevronDown, Globe, Zap, Shield, Cpu, Cloud, Brain, Rocket } from 'lucide-react';
+import { Menu, X, ChevronDown, Globe, Zap, Shield, Cpu, Cloud, Brain, Rocket, Server, BarChart3, MessageSquare, Eye, TrendingUp, Code } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export const Header: React.FC = () => {
@@ -24,42 +24,48 @@ export const Header: React.FC = () => {
       description: 'Cutting-edge AI solutions for business transformation',
       icon: Brain,
       link: '/ai-services',
-      color: 'from-purple-500 to-pink-500'
+      color: 'from-purple-500 to-pink-500',
+      badge: 'Hot'
     },
     {
-      title: 'Cloud & DevOps',
-      description: 'Scalable cloud infrastructure and automation',
-      icon: Cloud,
-      link: '/cloud-devops',
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      title: 'Enterprise Solutions',
-      description: 'Comprehensive business technology solutions',
-      icon: Shield,
-      link: '/enterprise-solutions',
-      color: 'from-green-500 to-emerald-500'
+      title: 'IT Infrastructure',
+      description: 'Enterprise-grade IT solutions and infrastructure',
+      icon: Server,
+      link: '/it-services',
+      color: 'from-blue-500 to-cyan-500',
+      badge: 'New'
     },
     {
       title: 'Micro SAAS Services',
       description: 'Custom software solutions for modern businesses',
       icon: Cpu,
       link: '/micro-saas-services',
-      color: 'from-orange-500 to-red-500'
+      color: 'from-orange-500 to-red-500',
+      badge: 'Popular'
     },
     {
-      title: 'Digital Transformation',
-      description: 'End-to-end business modernization',
-      icon: Rocket,
-      link: '/digital-transformation',
-      color: 'from-indigo-500 to-purple-500'
+      title: 'Cloud & DevOps',
+      description: 'Scalable cloud infrastructure and automation',
+      icon: Cloud,
+      link: '/cloud-devops',
+      color: 'from-green-500 to-emerald-500',
+      badge: 'Trending'
     },
     {
-      title: 'Emerging Tech',
-      description: 'Next-generation technology solutions',
-      icon: Zap,
-      link: '/emerging-tech',
-      color: 'from-yellow-500 to-orange-500'
+      title: 'Data Analytics',
+      description: 'Business intelligence and data insights',
+      icon: BarChart3,
+      link: '/analytics',
+      color: 'from-indigo-500 to-purple-500',
+      badge: 'Featured'
+    },
+    {
+      title: 'Cybersecurity',
+      description: 'Advanced security and compliance solutions',
+      icon: Shield,
+      link: '/security',
+      color: 'from-red-500 to-pink-500',
+      badge: 'Critical'
     }
   ];
 
@@ -75,7 +81,7 @@ export const Header: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
-          {/* Logo */}
+          {/* Enhanced Logo */}
           <motion.div 
             className="flex items-center"
             initial={{ opacity: 0, x: -20 }}
@@ -84,8 +90,8 @@ export const Header: React.FC = () => {
           >
             <Link to="/" className="flex-shrink-0 group">
               <div className="flex items-center space-x-3">
-                <div className="w-10 h-10 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <Zap className="w-6 h-6 text-white" />
+                <div className="w-12 h-12 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg shadow-zion-cyan/25">
+                  <Zap className="w-7 h-7 text-white" />
                 </div>
                 <div>
                   <h1 className="text-2xl font-bold bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
@@ -97,7 +103,7 @@ export const Header: React.FC = () => {
             </Link>
           </motion.div>
           
-          {/* Desktop Navigation */}
+          {/* Enhanced Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">
             <Link 
               to="/" 
@@ -108,7 +114,7 @@ export const Header: React.FC = () => {
               Home
             </Link>
             
-            {/* Services Dropdown */}
+            {/* Enhanced Services Dropdown */}
             <div className="relative group">
               <button 
                 className="px-3 py-2 text-sm font-medium text-white hover:text-zion-cyan transition-colors duration-300 flex items-center gap-2"
@@ -126,28 +132,37 @@ export const Header: React.FC = () => {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 10, scale: 0.95 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-2 w-[600px] bg-zion-blue-dark/95 backdrop-blur-md border border-zion-cyan/20 rounded-2xl shadow-2xl shadow-zion-cyan/20 p-6"
+                    className="absolute top-full left-0 mt-2 w-[700px] bg-zion-blue-dark/95 backdrop-blur-md border border-zion-cyan/20 rounded-2xl shadow-2xl shadow-zion-cyan/20 p-8"
                     onMouseEnter={() => setActiveDropdown('services')}
                     onMouseLeave={() => setActiveDropdown(null)}
                   >
-                    <div className="grid grid-cols-2 gap-4">
+                    <div className="grid grid-cols-2 gap-6">
                       {services.map((service) => {
                         const IconComponent = service.icon;
                         return (
                           <Link
                             key={service.title}
                             to={service.link}
-                            className="group p-4 rounded-xl hover:bg-zion-blue-light/10 transition-all duration-300 border border-transparent hover:border-zion-cyan/30"
+                            className="group p-4 rounded-xl hover:bg-zion-blue-light/10 transition-all duration-300 border border-transparent hover:border-zion-cyan/30 relative overflow-hidden"
                           >
-                            <div className="flex items-start gap-3">
-                              <div className={`w-10 h-10 bg-gradient-to-br ${service.color} rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
-                                <IconComponent className="w-5 h-5 text-white" />
+                            {/* Badge */}
+                            {service.badge && (
+                              <div className="absolute top-2 right-2">
+                                <span className="px-2 py-1 text-xs font-medium bg-zion-cyan text-zion-blue-dark rounded-full">
+                                  {service.badge}
+                                </span>
                               </div>
-                              <div>
-                                <h3 className="font-semibold text-white group-hover:text-zion-cyan transition-colors">
+                            )}
+                            
+                            <div className="flex items-start gap-4">
+                              <div className={`w-12 h-12 bg-gradient-to-br ${service.color} rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+                                <IconComponent className="w-6 h-6 text-white" />
+                              </div>
+                              <div className="flex-1">
+                                <h3 className="font-semibold text-white group-hover:text-zion-cyan transition-colors mb-2">
                                   {service.title}
                                 </h3>
-                                <p className="text-sm text-zion-slate-light mt-1">
+                                <p className="text-sm text-zion-slate-light leading-relaxed">
                                   {service.description}
                                 </p>
                               </div>
@@ -155,6 +170,24 @@ export const Header: React.FC = () => {
                           </Link>
                         );
                       })}
+                    </div>
+                    
+                    {/* Quick Links */}
+                    <div className="mt-6 pt-6 border-t border-zion-cyan/20">
+                      <div className="flex items-center justify-between">
+                        <span className="text-sm text-zion-slate-light">Quick Access:</span>
+                        <div className="flex gap-4">
+                          <Link to="/pricing" className="text-sm text-zion-cyan hover:text-white transition-colors">
+                            Pricing
+                          </Link>
+                          <Link to="/contact" className="text-sm text-zion-cyan hover:text-white transition-colors">
+                            Contact
+                          </Link>
+                          <Link to="/request-quote" className="text-sm text-zion-cyan hover:text-white transition-colors">
+                            Get Quote
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   </motion.div>
                 )}
@@ -189,7 +222,7 @@ export const Header: React.FC = () => {
             </Link>
           </nav>
           
-          {/* CTA Buttons */}
+          {/* Enhanced CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
             <Button 
               variant="outline" 
@@ -200,13 +233,13 @@ export const Header: React.FC = () => {
             </Button>
             <Button 
               size="sm"
-              className="bg-gradient-to-r from-zion-cyan to-zion-purple hover:shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300"
+              className="bg-gradient-to-r from-zion-cyan to-zion-purple hover:shadow-lg hover:shadow-zion-cyan/25 transition-all duration-300 group"
             >
-              Get Started
+              <span className="group-hover:scale-105 transition-transform duration-300">Get Started</span>
             </Button>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Enhanced Mobile Menu Button */}
           <button
             className="lg:hidden p-2 text-white hover:text-zion-cyan transition-colors duration-300"
             onClick={() => setIsOpen(!isOpen)}
@@ -216,7 +249,7 @@ export const Header: React.FC = () => {
         </div>
       </div>
 
-      {/* Mobile Navigation */}
+      {/* Enhanced Mobile Navigation */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -226,37 +259,50 @@ export const Header: React.FC = () => {
             transition={{ duration: 0.3 }}
             className="lg:hidden bg-zion-blue-dark/95 backdrop-blur-md border-t border-zion-cyan/20"
           >
-            <div className="px-4 py-6 space-y-4">
+            <div className="px-4 py-8 space-y-6">
               <Link 
                 to="/" 
-                className={`block px-3 py-2 text-base font-medium transition-colors duration-300 ${
-                  isActive('/') ? 'text-zion-cyan' : 'text-white hover:text-zion-cyan'
+                className={`block px-3 py-3 text-base font-medium transition-colors duration-300 rounded-lg ${
+                  isActive('/') ? 'text-zion-cyan bg-zion-cyan/10' : 'text-white hover:text-zion-cyan hover:bg-zion-cyan/5'
                 }`}
                 onClick={() => setIsOpen(false)}
               >
                 Home
               </Link>
               
-              <div className="space-y-2">
-                <div className="px-3 py-2 text-base font-medium text-zion-slate-light">
+              <div className="space-y-3">
+                <div className="px-3 py-2 text-base font-medium text-zion-slate-light border-b border-zion-cyan/20">
                   Services
                 </div>
                 {services.map((service) => (
                   <Link
                     key={service.title}
                     to={service.link}
-                    className="block px-6 py-2 text-sm text-zion-slate-light hover:text-zion-cyan transition-colors duration-300"
+                    className="block px-6 py-3 text-sm text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 rounded-lg hover:bg-zion-cyan/5"
                     onClick={() => setIsOpen(false)}
                   >
-                    {service.title}
+                    <div className="flex items-center gap-3">
+                      <div className={`w-8 h-8 bg-gradient-to-br ${service.color} rounded-lg flex items-center justify-center`}>
+                        <service.icon className="w-4 h-4 text-white" />
+                      </div>
+                      <div>
+                        <div className="font-medium">{service.title}</div>
+                        <div className="text-xs text-zion-slate-light">{service.description}</div>
+                      </div>
+                      {service.badge && (
+                        <span className="ml-auto px-2 py-1 text-xs font-medium bg-zion-cyan text-zion-blue-dark rounded-full">
+                          {service.badge}
+                        </span>
+                      )}
+                    </div>
                   </Link>
                 ))}
               </div>
               
               <Link 
                 to="/about" 
-                className={`block px-3 py-2 text-base font-medium transition-colors duration-300 ${
-                  isActive('/about') ? 'text-zion-cyan' : 'text-white hover:text-zion-cyan'
+                className={`block px-3 py-3 text-base font-medium transition-colors duration-300 rounded-lg ${
+                  isActive('/about') ? 'text-zion-cyan bg-zion-cyan/10' : 'text-white hover:text-zion-cyan hover:bg-zion-cyan/5'
                 }`}
                 onClick={() => setIsOpen(false)}
               >
@@ -265,8 +311,8 @@ export const Header: React.FC = () => {
               
               <Link 
                 to="/contact" 
-                className={`block px-3 py-2 text-base font-medium transition-colors duration-300 ${
-                  isActive('/contact') ? 'text-zion-cyan' : 'text-white hover:text-zion-cyan'
+                className={`block px-3 py-3 text-base font-medium transition-colors duration-300 rounded-lg ${
+                  isActive('/contact') ? 'text-zion-cyan bg-zion-cyan/10' : 'text-white hover:text-zion-cyan hover:bg-zion-cyan/5'
                 }`}
                 onClick={() => setIsOpen(false)}
               >
@@ -275,15 +321,15 @@ export const Header: React.FC = () => {
               
               <Link 
                 to="/blog" 
-                className={`block px-3 py-2 text-base font-medium transition-colors duration-300 ${
-                  isActive('/blog') ? 'text-zion-cyan' : 'text-white hover:text-zion-cyan'
+                className={`block px-3 py-3 text-base font-medium transition-colors duration-300 rounded-lg ${
+                  isActive('/blog') ? 'text-zion-cyan bg-zion-cyan/10' : 'text-white hover:text-zion-cyan hover:bg-zion-cyan/5'
                 }`}
                 onClick={() => setIsOpen(false)}
               >
                 Blog
               </Link>
               
-              <div className="pt-4 space-y-3">
+              <div className="pt-6 space-y-3 border-t border-zion-cyan/20">
                 <Button 
                   variant="outline" 
                   size="sm"
