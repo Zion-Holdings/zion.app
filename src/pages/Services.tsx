@@ -166,10 +166,6 @@ export function Services() {
                   <span className="text-2xl font-bold text-white">
                     ${service.price.toLocaleString()}
                   </span>
-                  <div className="flex items-center gap-1">
-                    <span className="text-zion-cyan">★</span>
-                    <span className="text-white font-medium">{service.rating}</span>
-                  </div>
                 </div>
               </div>
               
