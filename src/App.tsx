@@ -21,6 +21,10 @@ const Contact = lazy(() => import('./pages/Contact'));
 const About = lazy(() => import('./pages/About'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 
+// New enhanced pages from our feature branch
+const InnovativeServicesShowcase = lazy(() => import('./pages/services/InnovativeServicesShowcase'));
+const ComprehensiveServicesOverview = lazy(() => import('./pages/services/ComprehensiveServicesOverview'));
+
 // Enhanced loading fallback
 const EnhancedLoadingFallback = () => (
   <div className="min-h-screen bg-zion-blue-dark flex items-center justify-center">
@@ -58,6 +62,11 @@ const App = () => {
                   <Route path="/it-onsite-services" element={<ITOnsiteServicesPage />} />
                   <Route path="/contact" element={<Contact />} />
                   <Route path="/about" element={<About />} />
+                  
+                  {/* New enhanced service routes from our feature branch */}
+                  <Route path="/innovative-services" element={<InnovativeServicesShowcase />} />
+                  <Route path="/comprehensive-services" element={<ComprehensiveServicesOverview />} />
+                  
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </Suspense>
