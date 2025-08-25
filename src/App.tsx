@@ -46,6 +46,7 @@ const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
 const ComprehensiveServices = React.lazy(() => import('./pages/ComprehensiveServices'));
 const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
 const EnterpriseSolutions = React.lazy(() => import('./pages/EnterpriseSolutionsPage'));
+const EnhancedServicesShowcase = React.lazy(() => import('./pages/EnhancedServicesShowcase'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -73,6 +74,8 @@ const baseRoutes = [
   { path: '/request-quote', element: <RequestQuotePage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
+  { path: '/enhanced-services', element: <EnhancedServicesShowcase /> },
+  { path: '/cutting-edge-services', element: <EnhancedServicesShowcase /> },
 ];
 
 function App() {

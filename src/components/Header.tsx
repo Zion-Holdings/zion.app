@@ -10,6 +10,7 @@ export function Header() {
   const navigation = [
     { name: 'Home', href: '/', current: location.pathname === '/' },
     { name: 'Services', href: '/services', current: location.pathname.startsWith('/services') },
+    { name: 'Enhanced Services', href: '/enhanced-services', current: location.pathname === '/enhanced-services' },
     { name: 'AI Matcher', href: '/match', current: location.pathname === '/match' },
     { name: 'Talent', href: '/talent', current: location.pathname.startsWith('/talent') },
     { name: 'About', href: '/about', current: location.pathname === '/about' },
@@ -36,6 +37,11 @@ export function Header() {
       name: 'Development',
       description: 'Custom development services',
       href: '/micro-saas-services?category=Development',
+    },
+    {
+      name: 'Cutting-Edge Tech',
+      description: 'Space, Biotech, Autonomous & AI',
+      href: '/enhanced-services',
     },
   ];
 
