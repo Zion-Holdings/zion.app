@@ -6,6 +6,7 @@ import { Sidebar } from './components/Sidebar';
 import { AccessibilityControls } from './components/AccessibilityControls';
 import { PerformanceDashboard } from './components/PerformanceDashboard';
 import { AnalyticsDashboard } from './components/AnalyticsDashboard';
+import { AIChatbot } from './components/AIChatbot';
 import './App.css';
 
 // Enhanced lazy loading with preloading hints
@@ -92,6 +93,9 @@ const App = () => {
           
           {/* Enhanced Accessibility Controls */}
           <AccessibilityControls position="bottom-right" />
+          
+          {/* AI Chatbot - Always Available */}
+          <AIChatbot />
           
           {/* Development Dashboards */}
           {process.env.NODE_ENV === 'development' && (
