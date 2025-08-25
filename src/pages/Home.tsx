@@ -14,7 +14,10 @@ import {
   CheckCircle,
   Clock,
   ChevronRight,
-  ChevronLeft
+  ChevronLeft,
+  Target,
+  Scale,
+  Heart
 } from 'lucide-react';
 
 const Home: React.FC = () => {
@@ -61,40 +64,64 @@ const Home: React.FC = () => {
 
   const featuredServices = [
     {
-      id: "ai-powered-crm",
-      title: "AI-Powered CRM",
-      description: "Intelligent customer relationship management with predictive analytics and automated insights",
-      price: "$1,500/month",
-      features: ["Predictive Analytics", "Automated Follow-ups", "Smart Lead Scoring", "Real-time Insights"],
+      id: "ai-business-intelligence",
+      title: "AI Business Intelligence",
+      description: "Transform data into actionable intelligence with AI-powered analytics and predictive insights",
+      price: "$299/month",
+      features: ["Predictive Analytics", "Real-time Dashboards", "Natural Language Querying", "Automated Reporting"],
       icon: Brain,
       category: "AI & Machine Learning",
       rating: 4.9,
-      reviewCount: 342,
-      path: "/services/ai-powered-crm"
+      reviewCount: 456,
+      path: "/services/ai-business-intelligence"
     },
     {
-      id: "cybersecurity-platform",
-      title: "Cybersecurity Platform",
-      description: "Comprehensive threat detection and response system with AI-powered security intelligence",
-      price: "$1,800/month",
-      features: ["Threat Detection", "Incident Response", "Compliance Monitoring", "24/7 Protection"],
-      icon: Shield,
-      category: "Cybersecurity",
+      id: "ai-marketing-automation",
+      title: "AI Marketing Automation",
+      description: "Revolutionize marketing with AI-powered automation and personalized campaigns",
+      price: "$199/month",
+      features: ["AI Targeting", "Content Generation", "Campaign Optimization", "Multi-channel Orchestration"],
+      icon: Target,
+      category: "AI & Machine Learning",
       rating: 4.8,
-      reviewCount: 189,
-      path: "/services/cybersecurity-platform"
+      reviewCount: 389,
+      path: "/services/ai-marketing-automation"
     },
     {
-      id: "cloud-optimization",
-      title: "Cloud Cost Optimization",
-      description: "AI-driven cloud cost management that reduces spending by 30-50% automatically",
-      price: "$350/month",
-      features: ["Cost Analysis", "Automated Optimization", "Resource Scheduling", "Budget Management"],
-      icon: Cpu,
-      category: "Cloud Computing",
-      rating: 4.7,
+      id: "ai-hr-recruitment",
+      title: "AI HR & Recruitment",
+      description: "Transform hiring with AI-powered candidate screening and predictive analytics",
+      price: "$299/month",
+      features: ["AI Screening", "Predictive Analytics", "Video Interviews", "Pipeline Management"],
+      icon: Users,
+      category: "AI & Machine Learning",
+      rating: 4.9,
       reviewCount: 234,
-      path: "/services/cloud-optimization"
+      path: "/services/ai-hr-recruitment"
+    },
+    {
+      id: "ai-legal-tech",
+      title: "AI Legal Tech",
+      description: "Revolutionize legal practice with AI-powered contract analysis and research automation",
+      price: "$199/month",
+      features: ["Contract Analysis", "Legal Research", "Document Generation", "Compliance Monitoring"],
+      icon: Scale,
+      category: "AI & Machine Learning",
+      rating: 4.8,
+      reviewCount: 178,
+      path: "/services/ai-legal-tech"
+    },
+    {
+      id: "ai-healthcare-solutions",
+      title: "AI Healthcare Solutions",
+      description: "Transform healthcare with AI-powered diagnosis and predictive analytics",
+      price: "$399/month",
+      features: ["AI Diagnosis", "Medical Imaging", "Predictive Analytics", "Patient Monitoring"],
+      icon: Heart,
+      category: "AI & Machine Learning",
+      rating: 4.9,
+      reviewCount: 312,
+      path: "/services/ai-healthcare-solutions"
     }
   ];
 

@@ -72,10 +72,11 @@ export function Header() {
     {
       title: 'AI & Machine Learning',
       services: [
-        { name: 'AI Business Intelligence', path: '/services#ai-bi' },
-        { name: 'AI Marketing Automation', path: '/services#ai-marketing' },
-        { name: 'AI HR & Recruitment', path: '/services#ai-hr' },
-        { name: 'AI Legal Tech', path: '/services#ai-legal' }
+        { name: 'AI Business Intelligence', path: '/services/ai-business-intelligence' },
+        { name: 'AI Marketing Automation', path: '/services/ai-marketing-automation' },
+        { name: 'AI HR & Recruitment', path: '/services/ai-hr-recruitment' },
+        { name: 'AI Legal Tech', path: '/services/ai-legal-tech' },
+        { name: 'AI Healthcare Solutions', path: '/services/ai-healthcare-solutions' }
       ]
     },
     {

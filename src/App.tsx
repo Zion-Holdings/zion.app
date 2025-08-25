@@ -52,6 +52,14 @@ const MicroSAASSolutions = lazy(() => import('./pages/services/MicroSAASSolution
 const IndustrySolutions = lazy(() => import('./pages/services/IndustrySolutions'));
 const InnovativeNewServices = lazy(() => import('./pages/services/InnovativeNewServices'));
 const SpecializedITInfrastructure = lazy(() => import('./pages/services/SpecializedITInfrastructure'));
+const ComprehensiveServicesOverview = lazy(() => import('./pages/services/ComprehensiveServicesOverview'));
+
+// New AI-powered micro SAAS services
+const AIBusinessIntelligence = lazy(() => import('./pages/services/AIBusinessIntelligence'));
+const AIMarketingAutomation = lazy(() => import('./pages/services/AIMarketingAutomation'));
+const AIHRRecruitment = lazy(() => import('./pages/services/AIHRRecruitment'));
+const AILegalTech = lazy(() => import('./pages/services/AILegalTech'));
+const AIHealthcareSolutions = lazy(() => import('./pages/services/AIHealthcareSolutions'));
 
 // Solutions pages
 const EnterpriseSolutions = lazy(() => import('./pages/solutions/Enterprise'));
@@ -123,6 +131,14 @@ const App = () => {
                     <Route path="/services/industry-solutions" element={<IndustrySolutions />} />
                     <Route path="/services/innovative-new-services" element={<InnovativeNewServices />} />
                     <Route path="/services/specialized-it-infrastructure" element={<SpecializedITInfrastructure />} />
+                    <Route path="/services/comprehensive-overview" element={<ComprehensiveServicesOverview />} />
+                    
+                    {/* New AI-powered micro SAAS service routes */}
+                    <Route path="/services/ai-business-intelligence" element={<AIBusinessIntelligence />} />
+                    <Route path="/services/ai-marketing-automation" element={<AIMarketingAutomation />} />
+                    <Route path="/services/ai-hr-recruitment" element={<AIHRRecruitment />} />
+                    <Route path="/services/ai-legal-tech" element={<AILegalTech />} />
+                    <Route path="/services/ai-healthcare-solutions" element={<AIHealthcareSolutions />} />
                     
                     {/* Solutions Routes */}
                     <Route path="/services/enterprise" element={<EnterpriseSolutions />} />
