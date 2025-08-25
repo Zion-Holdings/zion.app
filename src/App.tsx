@@ -1,8 +1,7 @@
 import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { Header } from './components/Header';
+import { Header } from './components/header/Header';
 import { Footer } from './components/Footer';
-import { Sidebar } from './components/Sidebar';
 import { ThemeProvider } from "./components/ThemeProvider";
 import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
@@ -22,11 +21,14 @@ import {
   DeveloperRoutes
 } from './routes';
 
-const Home = React.lazy(() => import('./pages/Home'));
-const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
-const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
-const TalentsPage = React.lazy(() => import('./pages/TalentsPage'));
-const ServicesShowcase = React.lazy(() => import('./pages/ServicesShowcase'));
+// Enhanced lazy loading with preloading hints
+const Home = lazy(() => import('./pages/Home'));
+const Services = lazy(() => import('./pages/Services'));
+const AISolutions = lazy(() => import('./pages/AISolutions'));
+const ServicesShowcase = lazy(() => import('./pages/ServicesShowcase'));
+const AIMatcherPage = lazy(() => import('./pages/AIMatcher'));
+const TalentDirectory = lazy(() => import('./pages/TalentDirectory'));
+const TalentsPage = lazy(() => import('./pages/TalentsPage'));
 
 // Loading Component
 const LoadingSpinner = () => (
@@ -43,19 +45,22 @@ const LoadingSpinner = () => (
 );
 
 const App = () => {
+  useScrollToTop();
+
   return (
     <ThemeProvider>
       <WhitelabelProvider>
         <Router>
           <div className="App min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
             <Header />
-            <Sidebar />
             
             {/* Main Content with enhanced Suspense */}
-            <main className="ml-64 pt-20 min-h-screen">
+            <main className="pt-20 min-h-screen">
               <Suspense fallback={<LoadingSpinner />}>
                 <Routes>
                   <Route path="/" element={<Home />} />
+                  <Route path="/services" element={<Services />} />
+                  <Route path="/ai-solutions" element={<AISolutions />} />
                   <Route path="/services-showcase" element={<ServicesShowcase />} />
                   <Route path="/match" element={<AIMatcherPage />} />
                   <Route path="/talent" element={<TalentDirectory />} />
@@ -78,8 +83,6 @@ const App = () => {
             </main>
             
             <Footer />
-            
-            {/* Toasters */}
             <Toaster />
             <SonnerToaster />
           </div>
@@ -87,6 +90,6 @@ const App = () => {
       </WhitelabelProvider>
     </ThemeProvider>
   );
-}
+};
 
 export default App;
