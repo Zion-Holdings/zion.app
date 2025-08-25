@@ -1,515 +1,302 @@
 import React, { useState } from 'react';
-import { comprehensiveServices } from '@/data/comprehensiveServices';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { 
-  Building, 
-  Users, 
-  Shield, 
-  Database, 
-  Cloud, 
-  Globe,
-  Star,
-  CheckCircle,
-  TrendingUp,
-  ArrowRight,
-  Phone,
-  Mail,
-  Circle,
-  Zap,
-  Monitor,
-  Lock,
-  BarChart3,
-  Zap as Rocket,
-  Volume2,
-  Clock
-} from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Search, Filter, Star, Clock, DollarSign, Users, Zap, Brain, Cloud, Database, Shield, Settings, Eye, Leaf, CreditCard, Heart, Truck, ShoppingCart, Phone, Mail, MapPin, Globe, Building, Cpu, Network, Database as DatabaseIcon, Shield as ShieldIcon, Zap as ZapIcon } from 'lucide-react';
 
-const enterpriseServices = comprehensiveServices.filter(service => 
-  service.category === 'IT Consulting & Strategy' || 
-  service.category === 'Cloud & DevOps' ||
-  service.category === 'Cybersecurity'
-);
+const EnterpriseSolutionsPage: React.FC = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedIndustry, setSelectedIndustry] = useState<string>('all');
+  const [selectedSolutionType, setSelectedSolutionType] = useState<string>('all');
 
-const enterpriseSolutions = [
-  {
-    icon: <Building className="w-8 h-8" />,
-    title: "Digital Transformation",
-    description: "Complete business transformation with modern technology infrastructure",
-    features: ["Process Optimization", "Technology Modernization", "Change Management", "ROI Analysis"],
-    benefits: ["Increased Efficiency", "Cost Reduction", "Competitive Advantage", "Future-Proof Operations"]
-  },
-  {
-    icon: <Cloud className="w-8 h-8" />,
-    title: "Enterprise Cloud Solutions",
-    description: "Scalable cloud infrastructure for enterprise workloads and applications",
-    features: ["Multi-cloud Strategy", "Hybrid Cloud", "Cloud Security", "Cost Optimization"],
-    benefits: ["Scalability", "Cost Efficiency", "Global Reach", "Disaster Recovery"]
-  },
-  {
-    icon: <Shield className="w-8 h-8" />,
-    title: "Enterprise Security",
-    description: "Comprehensive security solutions for enterprise environments",
-    features: ["Zero Trust Architecture", "Threat Intelligence", "Compliance Management", "Incident Response"],
-    benefits: ["Risk Mitigation", "Regulatory Compliance", "Business Continuity", "Customer Trust"]
-  },
-  {
-    icon: <Database className="w-8 h-8" />,
-    title: "Data & Analytics Platform",
-    description: "Enterprise-grade data infrastructure and analytics capabilities",
-    features: ["Data Warehouse", "Real-time Analytics", "Business Intelligence", "Data Governance"],
-    benefits: ["Data-Driven Decisions", "Operational Insights", "Customer Intelligence", "Performance Optimization"]
-  },
-  {
-    icon: <Users className="w-8 h-8" />,
-    title: "Enterprise Integration",
-    description: "Seamless integration of legacy and modern systems",
-    features: ["API Management", "Data Integration", "System Migration", "Legacy Modernization"],
-    benefits: ["Operational Efficiency", "Data Consistency", "Reduced Complexity", "Improved User Experience"]
-  },
-  {
-    icon: <Globe className="w-8 h-8" />,
-    title: "Global IT Support",
-    description: "24/7 global IT support and managed services",
-    features: ["Global Coverage", "24/7 Support", "Proactive Monitoring", "Rapid Response"],
-    benefits: ["Business Continuity", "Reduced Downtime", "Global Operations", "Cost Predictability"]
-  }
-];
+  // Enterprise Solution data directly in the component
+  const enterpriseSolutions = [
+    {
+      id: 1,
+      name: "Enterprise AI Platform",
+      industry: "Technology",
+      solutionType: "AI & Machine Learning",
+      description: "Comprehensive AI platform for enterprise-scale machine learning and automation",
+      price: 50000,
+      pricingModel: "project-based",
+      enterpriseScore: 95,
+      features: ["Scalable ML infrastructure", "AutoML capabilities", "Model governance", "Enterprise security"],
+      benefits: ["Increased efficiency", "Cost reduction", "Competitive advantage", "Data-driven decisions"],
+      targetIndustries: ["Technology", "Finance", "Healthcare", "Manufacturing"],
+      tags: ["AI Platform", "Machine Learning", "Enterprise", "Automation"]
+    },
+    {
+      id: 2,
+      name: "Cloud Migration & Optimization",
+      industry: "All Industries",
+      solutionType: "Cloud Services",
+      description: "End-to-end cloud migration with optimization for performance, cost, and security",
+      price: 75000,
+      pricingModel: "project-based",
+      enterpriseScore: 92,
+      features: ["Multi-cloud strategy", "Performance optimization", "Cost optimization", "Security implementation"],
+      benefits: ["Reduced infrastructure costs", "Improved scalability", "Enhanced security", "Better performance"],
+      targetIndustries: ["Technology", "Finance", "Healthcare", "Retail", "Manufacturing"],
+      tags: ["Cloud Migration", "AWS", "Azure", "GCP", "Optimization"]
+    },
+    {
+      id: 3,
+      name: "Cybersecurity & Compliance Suite",
+      industry: "Finance",
+      solutionType: "Security",
+      description: "Comprehensive cybersecurity solutions with regulatory compliance management",
+      price: 45000,
+      pricingModel: "project-based",
+      enterpriseScore: 94,
+      features: ["Threat detection", "Vulnerability assessment", "Compliance monitoring", "Incident response"],
+      benefits: ["Protection against threats", "Regulatory compliance", "Risk mitigation", "Business continuity"],
+      targetIndustries: ["Finance", "Healthcare", "Government", "Technology"],
+      tags: ["Cybersecurity", "Compliance", "Security", "Risk Management"]
+    },
+    {
+      id: 4,
+      name: "Digital Transformation Consulting",
+      industry: "All Industries",
+      solutionType: "Consulting",
+      description: "Strategic guidance for enterprise digital transformation initiatives",
+      price: 300,
+      pricingModel: "hourly",
+      enterpriseScore: 90,
+      features: ["Strategy development", "Process optimization", "Technology selection", "Change management"],
+      benefits: ["Improved efficiency", "Cost savings", "Competitive advantage", "Future readiness"],
+      targetIndustries: ["All Industries"],
+      tags: ["Digital Transformation", "Consulting", "Strategy", "Process Optimization"]
+    },
+    {
+      id: 5,
+      name: "Enterprise Data Platform",
+      industry: "Technology",
+      solutionType: "Data & Analytics",
+      description: "Scalable data platform for enterprise data management and analytics",
+      price: 60000,
+      pricingModel: "project-based",
+      enterpriseScore: 93,
+      features: ["Data governance", "Real-time analytics", "Data integration", "Scalable architecture"],
+      benefits: ["Data-driven decisions", "Improved efficiency", "Cost reduction", "Competitive advantage"],
+      targetIndustries: ["Technology", "Finance", "Healthcare", "Retail"],
+      tags: ["Data Platform", "Analytics", "Governance", "Integration"]
+    },
+    {
+      id: 6,
+      name: "Enterprise Integration Platform",
+      industry: "Manufacturing",
+      solutionType: "Integration",
+      description: "Comprehensive platform for integrating enterprise systems and applications",
+      price: 55000,
+      pricingModel: "project-based",
+      enterpriseScore: 91,
+      features: ["API management", "System integration", "Workflow automation", "Real-time sync"],
+      benefits: ["Improved efficiency", "Cost reduction", "Better collaboration", "Scalability"],
+      targetIndustries: ["Manufacturing", "Technology", "Finance", "Healthcare"],
+      tags: ["Integration", "API", "Workflow", "Automation"]
+    }
+  ];
 
-const enterpriseIndustries = [
-  {
-    name: "Financial Services",
-    description: "Banking, insurance, and fintech solutions",
-    icon: "🏦",
-    challenges: ["Regulatory Compliance", "Security Threats", "Legacy Systems", "Digital Innovation"],
-    solutions: ["Compliance Automation", "Advanced Security", "Cloud Migration", "API Banking"]
-  },
-  {
-    name: "Healthcare",
-    description: "Digital health and medical technology solutions",
-    icon: "🏥",
-    challenges: ["Data Privacy", "Interoperability", "Patient Experience", "Operational Efficiency"],
-    solutions: ["HIPAA Compliance", "System Integration", "Patient Portals", "Process Automation"]
-  },
-  {
-    name: "Manufacturing",
-    description: "Industry 4.0 and smart manufacturing",
-    icon: "🏭",
-    challenges: ["Supply Chain", "Quality Control", "Predictive Maintenance", "Digital Twins"],
-    solutions: ["IoT Integration", "AI Analytics", "Predictive Maintenance", "Digital Transformation"]
-  },
-  {
-    name: "Retail & E-commerce",
-    description: "Omnichannel retail and digital commerce",
-    icon: "🛍️",
-    challenges: ["Customer Experience", "Inventory Management", "Omnichannel Integration", "Data Analytics"],
-    solutions: ["Personalization", "Real-time Inventory", "Unified Commerce", "Customer Insights"]
-  },
-  {
-    name: "Energy & Utilities",
-    description: "Smart grid and energy management",
-    icon: "⚡",
-    challenges: ["Grid Modernization", "Renewable Integration", "Customer Engagement", "Operational Efficiency"],
-    solutions: ["Smart Grid", "Energy Analytics", "Customer Portals", "Process Optimization"]
-  },
-  {
-    name: "Transportation & Logistics",
-    description: "Supply chain and mobility solutions",
-    icon: "🚚",
-    challenges: ["Route Optimization", "Real-time Tracking", "Supply Chain Visibility", "Sustainability"],
-    solutions: ["AI Routing", "IoT Tracking", "Blockchain", "Green Logistics"]
-  }
-];
+  const industries = ['all', 'Technology', 'Finance', 'Healthcare', 'Manufacturing', 'Retail', 'Government', 'All Industries'];
+  const solutionTypes = ['all', 'AI & Machine Learning', 'Cloud Services', 'Security', 'Consulting', 'Data & Analytics', 'Integration'];
 
-const enterpriseFeatures = [
-  {
-    icon: <Lock className="w-6 h-6" />,
-    title: "Enterprise Security",
-    description: "Bank-level security with SOC 2, ISO 27001, and GDPR compliance"
-  },
-  {
-    icon: <Monitor className="w-6 h-6" />,
-    title: "Scalable Architecture",
-    description: "Built to handle enterprise workloads and scale with your business"
-  },
-  {
-    icon: <Volume2 className="w-6 h-6" />,
-    title: "24/7 Support",
-    description: "Round-the-clock technical support and monitoring"
-  },
-  {
-    icon: <BarChart3 className="w-6 h-6" />,
-    title: "Performance Analytics",
-    description: "Comprehensive monitoring and performance optimization"
-  },
-  {
-    icon: <Globe className="w-6 h-6" />,
-    title: "Global Deployment",
-    description: "Deploy anywhere with multi-region and multi-cloud support"
-  },
-  {
-    icon: <Rocket className="w-6 h-6" />,
-    title: "Rapid Implementation",
-    description: "Quick deployment with minimal business disruption"
-  }
-];
+  const filteredSolutions = enterpriseSolutions.filter(solution => {
+    const matchesSearch = solution.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         solution.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         solution.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+    
+    const matchesIndustry = selectedIndustry === 'all' || 
+                           solution.targetIndustries.includes(selectedIndustry) || 
+                           solution.industry === selectedIndustry;
+    const matchesSolutionType = selectedSolutionType === 'all' || solution.solutionType === selectedSolutionType;
+    
+    return matchesSearch && matchesIndustry && matchesSolutionType;
+  });
 
-export default function EnterpriseSolutionsPage() {
-  const [selectedTab, setSelectedTab] = useState('solutions');
+  const formatPrice = (price: number, model: string) => {
+    switch (model) {
+      case 'monthly':
+        return `$${price.toLocaleString()}/month`;
+      case 'hourly':
+        return `$${price}/hour`;
+      case 'project-based':
+        return `$${price.toLocaleString()}`;
+      default:
+        return `$${price.toLocaleString()}`;
+    }
+  };
+
+  const getEnterpriseScoreColor = (score: number) => {
+    if (score >= 90) return 'text-green-400';
+    if (score >= 80) return 'text-yellow-400';
+    return 'text-red-400';
+  };
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-zion-blue via-zion-blue-dark to-zion-purple py-20">
+      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 py-20">
         <div className="container mx-auto px-4 text-center">
-          <div className="flex items-center justify-center mb-6">
-            <Building className="w-8 h-8 text-zion-cyan mr-3" />
-            <h1 className="text-4xl md:text-6xl font-bold text-white">
-              Enterprise Solutions
-            </h1>
-          </div>
-          <p className="text-xl text-zion-slate-light max-w-3xl mx-auto mb-8">
-            Transform your enterprise with scalable, secure, and innovative technology solutions. 
-            From digital transformation to global IT support, we deliver enterprise-grade results.
+          <h1 className="text-5xl font-bold text-white mb-6">
+            Enterprise Solutions
+          </h1>
+          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
+            Transform your enterprise with our comprehensive technology solutions designed for large-scale 
+            organizations. From AI platforms to cloud migration, we deliver results that drive growth.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/comprehensive-services">
-              <Button size="lg" className="bg-zion-purple hover:bg-zion-purple-dark text-white">
-                <Circle className="w-5 h-5 mr-2" />
-                Explore Solutions
-              </Button>
-            </Link>
-            <Link to="/request-quote">
-              <Button size="lg" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10">
-                <Phone className="w-5 h-5 mr-2" />
-                Schedule Consultation
-              </Button>
-            </Link>
-          </div>
         </div>
-      </section>
+      </div>
 
-      {/* Enterprise Solutions Overview */}
-      <section className="py-16 bg-zion-blue-light">
+      {/* Search and Filter Section */}
+      <div className="bg-slate-800 py-8 border-b border-slate-700">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-zion-blue mb-4">
-              Enterprise-Grade Solutions
-            </h2>
-            <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
-              Comprehensive technology solutions designed for enterprise-scale operations and growth
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {enterpriseSolutions.map((solution, index) => (
-              <Card key={index} className="border-zion-blue-light hover:border-zion-purple transition-all duration-300 hover:shadow-lg">
-                <CardHeader className="text-center pb-4">
-                  <div className="mx-auto w-16 h-16 bg-gradient-to-br from-zion-purple to-zion-blue rounded-full flex items-center justify-center text-zion-cyan mb-4">
-                    {solution.icon}
-                  </div>
-                  <CardTitle className="text-lg text-zion-blue">{solution.title}</CardTitle>
-                  <CardDescription className="text-zion-slate-light">
-                    {solution.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-zion-blue mb-2">Key Features:</h4>
-                    <div className="space-y-1">
-                      {solution.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center gap-2">
-                          <CheckCircle className="w-3 h-3 text-green-500" />
-                          <span className="text-xs text-zion-slate">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-semibold text-zion-blue mb-2">Business Benefits:</h4>
-                    <div className="space-y-1">
-                      {solution.benefits.map((benefit, benefitIndex) => (
-                        <div key={benefitIndex} className="flex items-center gap-2">
-                          <TrendingUp className="w-3 h-3 text-blue-500" />
-                          <span className="text-xs text-zion-slate">{benefit}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Enterprise Services Tabs */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <Tabs value={selectedTab} onValueChange={setSelectedTab} className="w-full">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-zion-blue mb-4">
-                Enterprise Services Portfolio
-              </h2>
-              <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
-                Comprehensive services designed for enterprise-scale operations and digital transformation
-              </p>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+            {/* Search */}
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
+              <input
+                type="text"
+                placeholder="Search enterprise solutions..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-10 pr-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-blue-500"
+              />
             </div>
-            
-            <TabsList className="grid w-full grid-cols-3 mb-8">
-              <TabsTrigger value="solutions" className="text-zion-blue">Solutions</TabsTrigger>
-              <TabsTrigger value="industries" className="text-zion-blue">Industries</TabsTrigger>
-              <TabsTrigger value="features" className="text-zion-blue">Features</TabsTrigger>
-            </TabsList>
 
-            <TabsContent value="solutions" className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {enterpriseServices.map((service) => (
-                  <Card key={service.id} className="h-full border-zion-blue-light hover:border-zion-purple transition-all duration-300 hover:shadow-lg">
-                    <CardHeader className="pb-3">
-                      <div className="flex items-start justify-between mb-2">
-                        <Badge variant="secondary" className="text-xs">
-                          {service.subcategory}
-                        </Badge>
-                        {service.featured && (
-                          <Badge className="bg-zion-purple text-white text-xs">
-                            <Star className="w-3 h-3 mr-1" />
-                            Featured
-                          </Badge>
-                        )}
-                      </div>
-                      <CardTitle className="text-lg text-zion-blue line-clamp-2">
-                        {service.title}
-                      </CardTitle>
-                      <CardDescription className="text-sm text-zion-slate-light line-clamp-3">
-                        {service.description}
-                      </CardDescription>
-                    </CardHeader>
-
-                    <CardContent className="pb-3">
-                      <div className="mb-4">
-                        <h4 className="text-sm font-semibold text-zion-blue mb-2">Key Features:</h4>
-                        <div className="flex flex-wrap gap-1">
-                          {service.features.slice(0, 3).map((feature, index) => (
-                            <Badge key={index} variant="outline" className="text-xs border-zion-blue-light text-zion-slate">
-                              {feature}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-
-                      <div className="flex items-center justify-between mb-3">
-                        <div className="flex items-center gap-2">
-                          <span className="text-lg font-bold text-zion-blue">
-                            {service.currency}{service.price.toLocaleString()}
-                          </span>
-                          <Badge variant="outline" className="text-xs">
-                            {service.pricingModel}
-                          </Badge>
-                        </div>
-                        <div className="text-right">
-                          <div className="flex items-center gap-1 text-sm text-zion-slate-light">
-                            <Star className="w-3 h-3 text-yellow-500" />
-                            <span>{service.rating}</span>
-                          </div>
-                          <div className="text-xs text-zion-slate-light">
-                            AI Score: {service.aiScore}
-                          </div>
-                        </div>
-                      </div>
-                    </CardContent>
-
-                    <CardFooter className="pt-0">
-                      <div className="w-full space-y-3">
-                        <div className="flex gap-2">
-                          <Button 
-                            size="sm" 
-                            className="flex-1 bg-zion-purple hover:bg-zion-purple-dark text-white"
-                            onClick={() => window.open(`tel:${service.contactInfo.phone}`)}
-                          >
-                            <Phone className="w-3 h-3 mr-1" />
-                            Call Now
-                          </Button>
-                          <Button 
-                            size="sm" 
-                            variant="outline" 
-                            className="flex-1 border-zion-blue-light text-zion-blue hover:bg-zion-blue/10"
-                            onClick={() => window.open(`mailto:${service.contactInfo.email}`)}
-                          >
-                            <Mail className="w-3 h-3 mr-1" />
-                            Email
-                          </Button>
-                        </div>
-                      </div>
-                    </CardFooter>
-                  </Card>
+            {/* Industry Filter */}
+            <div>
+              <select
+                value={selectedIndustry}
+                onChange={(e) => setSelectedIndustry(e.target.value)}
+                className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-blue-500"
+              >
+                {industries.map(industry => (
+                  <option key={industry} value={industry}>
+                    {industry === 'all' ? 'All Industries' : industry}
+                  </option>
                 ))}
-              </div>
-            </TabsContent>
+              </select>
+            </div>
 
-            <TabsContent value="industries" className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {enterpriseIndustries.map((industry, index) => (
-                  <Card key={index} className="border-zion-blue-light hover:border-zion-purple transition-all duration-300 hover:shadow-lg">
-                    <CardHeader className="text-center pb-4">
-                      <div className="text-4xl mb-4">{industry.icon}</div>
-                      <CardTitle className="text-lg text-zion-blue">{industry.name}</CardTitle>
-                      <CardDescription className="text-zion-slate-light">
-                        {industry.description}
-                      </CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="mb-4">
-                        <h4 className="text-sm font-semibold text-zion-blue mb-2">Key Challenges:</h4>
-                        <div className="space-y-1">
-                          {industry.challenges.map((challenge, challengeIndex) => (
-                            <div key={challengeIndex} className="flex items-center gap-2">
-                              <Circle className="w-3 h-3 text-red-500" />
-                              <span className="text-xs text-zion-slate">{challenge}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-semibold text-zion-blue mb-2">Our Solutions:</h4>
-                        <div className="space-y-1">
-                          {industry.solutions.map((solution, solutionIndex) => (
-                            <div key={solutionIndex} className="flex items-center gap-2">
-                              <Zap className="w-3 h-3 text-green-500" />
-                              <span className="text-xs text-zion-slate">{solution}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
+            {/* Solution Type Filter */}
+            <div>
+              <select
+                value={selectedSolutionType}
+                onChange={(e) => setSelectedSolutionType(e.target.value)}
+                className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-blue-500"
+              >
+                {solutionTypes.map(type => (
+                  <option key={type} value={type}>
+                    {type === 'all' ? 'All Solution Types' : type}
+                  </option>
                 ))}
-              </div>
-            </TabsContent>
-
-            <TabsContent value="features" className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                {enterpriseFeatures.map((feature, index) => (
-                  <Card key={index} className="border-zion-blue-light hover:border-zion-purple transition-all duration-300 hover:shadow-lg">
-                    <CardHeader className="text-center pb-4">
-                      <div className="mx-auto w-16 h-16 bg-gradient-to-br from-zion-purple to-zion-blue rounded-full flex items-center justify-center text-zion-cyan mb-4">
-                        {feature.icon}
-                      </div>
-                      <CardTitle className="text-lg text-zion-blue">{feature.title}</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-zion-slate-light text-sm text-center">{feature.description}</p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </TabsContent>
-          </Tabs>
-        </div>
-      </section>
-
-      {/* Enterprise Process */}
-      <section className="py-16 bg-zion-blue-light">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-zion-blue mb-4">
-              Enterprise Implementation Process
-            </h2>
-            <p className="text-zion-slate-light text-lg max-w-2xl mx-auto">
-              Our proven methodology ensures successful enterprise transformation with minimal disruption
-            </p>
+              </select>
+            </div>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                step: "01",
-                title: "Discovery & Assessment",
-                description: "Comprehensive analysis of current systems and business requirements",
-                icon: "🔍",
-                duration: "1-2 weeks"
-              },
-              {
-                step: "02",
-                title: "Strategy & Planning",
-                description: "Detailed roadmap and implementation strategy aligned with business goals",
-                icon: "📋",
-                duration: "2-3 weeks"
-              },
-              {
-                step: "03",
-                title: "Implementation",
-                description: "Phased deployment with continuous testing and validation",
-                icon: "⚡",
-                duration: "4-12 weeks"
-              },
-              {
-                step: "04",
-                title: "Optimization & Support",
-                description: "Ongoing optimization, monitoring, and support services",
-                icon: "🚀",
-                duration: "Ongoing"
-              }
-            ].map((phase, index) => (
-              <Card key={index} className="text-center border-zion-blue-light">
-                <CardHeader>
-                  <div className="text-4xl mb-4">{phase.icon}</div>
-                  <div className="text-sm text-zion-purple font-bold mb-2">{phase.step}</div>
-                  <CardTitle className="text-lg text-zion-blue">{phase.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-zion-slate-light text-sm mb-3">{phase.description}</p>
-                  <div className="flex items-center justify-center gap-1 text-xs text-zion-slate">
-                    <Clock className="w-3 h-3" />
-                    <span>{phase.duration}</span>
+        </div>
+      </div>
+
+      {/* Solutions Grid */}
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredSolutions.map((solution) => (
+            <div key={solution.id} className="bg-slate-800 rounded-xl border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:transform hover:scale-105">
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-xl font-bold text-white">{solution.name}</h3>
+                  <div className="text-right">
+                    <span className="text-2xl font-bold text-blue-400">
+                      {formatPrice(solution.price, solution.pricingModel)}
+                    </span>
+                    <div className={`text-sm font-semibold ${getEnterpriseScoreColor(solution.enterpriseScore)}`}>
+                      Enterprise Score: {solution.enterpriseScore}%
+                    </div>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+                </div>
+                
+                <p className="text-slate-300 mb-4">{solution.description}</p>
+                
+                <div className="mb-4">
+                  <span className="inline-block bg-blue-600 text-white text-xs px-2 py-1 rounded-full mb-2">
+                    {solution.industry}
+                  </span>
+                  <span className="inline-block bg-slate-600 text-slate-300 text-xs px-2 py-1 rounded-full ml-2">
+                    {solution.solutionType}
+                  </span>
+                </div>
 
-      {/* Contact CTA Section */}
-      <section className="py-16 bg-zion-blue">
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-white mb-2">Key Features:</h4>
+                  <ul className="text-sm text-slate-300 space-y-1">
+                    {solution.features.slice(0, 3).map((feature, index) => (
+                      <li key={index} className="flex items-center">
+                        <Star className="w-4 h-4 text-blue-400 mr-2" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-white mb-2">Target Industries:</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {solution.targetIndustries.slice(0, 3).map((industry, index) => (
+                      <span key={index} className="text-xs bg-indigo-600 text-white px-2 py-1 rounded">
+                        {industry}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {solution.tags.slice(0, 4).map((tag, index) => (
+                    <span key={index} className="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <button className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-3 px-4 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300">
+                  Get Enterprise Quote
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Contact Section */}
+      <div className="bg-slate-800 py-16 border-t border-slate-700">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">
+          <h2 className="text-3xl font-bold text-white mb-8">
             Ready to Transform Your Enterprise?
           </h2>
-          <p className="text-zion-slate-light text-lg mb-8 max-w-2xl mx-auto">
-            Let our enterprise experts help you navigate digital transformation and achieve your business objectives. 
-            Schedule a consultation to discuss your specific needs.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <div className="flex items-center justify-center gap-2 text-zion-cyan">
-              <Phone className="w-5 h-5" />
-              <span className="text-lg font-semibold">+1 302 464 0950</span>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="text-center">
+              <Phone className="w-8 h-8 text-blue-400 mx-auto mb-4" />
+              <h3 className="text-lg font-semibold text-white mb-2">Call Us</h3>
+              <p className="text-slate-300">+1 302 464 0950</p>
             </div>
-            <div className="flex items-center justify-center gap-2 text-zion-cyan">
-              <Mail className="w-5 h-5" />
-              <span className="text-lg font-semibold">kleber@ziontechgroup.com</span>
+            <div className="text-center">
+              <Mail className="w-8 h-8 text-indigo-400 mx-auto mb-4" />
+              <h3 className="text-lg font-semibold text-white mb-2">Email Us</h3>
+              <p className="text-slate-300">kleber@ziontechgroup.com</p>
+            </div>
+            <div className="text-center">
+              <MapPin className="w-8 h-8 text-green-400 mx-auto mb-4" />
+              <h3 className="text-lg font-semibold text-white mb-2">Visit Us</h3>
+              <p className="text-slate-300">364 E Main St STE 1008<br />Middletown DE 19709</p>
             </div>
           </div>
-          <div className="flex flex-wrap justify-center gap-4">
-            <Link to="/request-quote">
-              <Button size="lg" className="bg-zion-purple hover:bg-zion-purple-dark text-white">
-                <Circle className="w-5 h-5 mr-2" />
-                Schedule Consultation
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </Link>
-            <Link to="/comprehensive-services">
-              <Button size="lg" variant="outline" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan/10">
-                <Building className="w-5 h-5 mr-2" />
-                Explore Solutions
-              </Button>
-            </Link>
+          <div className="mt-8">
+            <a 
+              href="https://ziontechgroup.com" 
+              className="inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-4 px-8 rounded-lg font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-300"
+            >
+              Visit Our Website
+            </a>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
-}
+};
+
+export default EnterpriseSolutionsPage;
