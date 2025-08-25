@@ -1,77 +1,53 @@
+<<<<<<< HEAD
+export const generateSearchSuggestions = (query: string): string[] => {
+  const suggestions = [
+    'AI Services',
+    'Cybersecurity',
+    'Cloud Migration',
+    'Web Development',
+    'Mobile Apps',
+    'Data Analytics',
+    'Blockchain',
+    'IT Consulting'
+  ];
+  
+  if (!query) return suggestions.slice(0, 5);
+  
+  return suggestions
+    .filter(suggestion => 
+      suggestion.toLowerCase().includes(query.toLowerCase())
+    )
+    .slice(0, 5);
+};
+=======
 export interface SearchSuggestion {
   id: string;
   text: string;
-  type: 'recent' | 'trending' | 'suggestion';
-  category?: string;
-  tags?: string[];
+  type: string;
 }
 
-export const generateSearchSuggestions = (query: string): SearchSuggestion[] => {
-  const suggestions: SearchSuggestion[] = [
-    {
-      id: '1',
-      text: 'AI CRM System',
-      type: 'trending',
-      category: 'AI Solutions',
-      tags: ['CRM', 'AI', 'Business'],
-    },
-    {
-      id: '2',
-      text: 'Cloud Infrastructure Setup',
-      type: 'trending',
-      category: 'Cloud Services',
-      tags: ['AWS', 'Azure', 'DevOps'],
-    },
-    {
-      id: '3',
-      text: 'E-commerce Platform',
-      type: 'trending',
-      category: 'Web Development',
-      tags: ['React', 'Node.js', 'E-commerce'],
-    },
-    {
-      id: '4',
-      text: 'Cybersecurity Audit',
-      type: 'trending',
-      category: 'Security',
-      tags: ['Security', 'Audit', 'Compliance'],
-    },
-    {
-      id: '5',
-      text: 'Data Analytics Dashboard',
-      type: 'trending',
-      category: 'Analytics',
-      tags: ['Data', 'Analytics', 'Dashboard'],
-    },
-  ];
-
-  // Filter suggestions based on query
-  if (query.trim()) {
-    const lowercaseQuery = query.toLowerCase();
-    return suggestions.filter(suggestion =>
-      suggestion.text.toLowerCase().includes(lowercaseQuery) ||
-      suggestion.category?.toLowerCase().includes(lowercaseQuery) ||
-      suggestion.tags?.some(tag => tag.toLowerCase().includes(lowercaseQuery))
-    );
-  }
-
-  return suggestions;
-};
-
-export const getRecentSearches = (): SearchSuggestion[] => {
+export function generateSearchSuggestions(): SearchSuggestion[] {
   return [
-    { id: 'recent1', text: 'AI CRM System', type: 'recent' },
-    { id: 'recent2', text: 'Cloud setup help', type: 'recent' },
-    { id: 'recent3', text: 'Pricing information', type: 'recent' },
-    { id: 'recent4', text: 'API documentation', type: 'recent' },
+    { id: '1', text: 'AI Services', type: 'category' },
+    { id: '2', text: 'Cybersecurity', type: 'category' },
+    { id: '3', text: 'Cloud Solutions', type: 'category' },
+    { id: '4', text: 'Data Analytics', type: 'category' },
+    { id: '5', text: 'Web Development', type: 'category' },
+    { id: '6', text: 'IT Consulting', type: 'category' },
+    { id: '7', text: 'Blockchain', type: 'category' },
+    { id: '8', text: 'Process Automation', type: 'category' },
+    { id: '9', text: 'IoT Solutions', type: 'category' },
+    { id: '10', text: 'Quantum Computing', type: 'category' },
+    { id: '11', text: 'AR/VR Development', type: 'category' },
+    { id: '12', text: 'Green Technology', type: 'category' },
+    { id: '13', text: 'Micro SAAS', type: 'service' },
+    { id: '14', text: 'Enterprise Solutions', type: 'service' },
+    { id: '15', text: 'Custom Software', type: 'service' },
+    { id: '16', text: 'Digital Transformation', type: 'service' },
+    { id: '17', text: 'Machine Learning', type: 'technology' },
+    { id: '18', text: 'DevOps', type: 'technology' },
+    { id: '19', text: 'Cybersecurity Audit', type: 'service' },
+    { id: '20', text: 'Cloud Migration', type: 'service' }
   ];
-};
-
-export const getTrendingSearches = (): SearchSuggestion[] => {
-  return [
-    { id: 'trend1', text: 'AI-powered solutions', type: 'trending', category: 'AI' },
-    { id: 'trend2', text: 'Cloud migration', type: 'trending', category: 'Cloud' },
-    { id: 'trend3', text: 'Digital transformation', type: 'trending', category: 'Consulting' },
-    { id: 'trend4', text: 'Cybersecurity services', type: 'trending', category: 'Security' },
-  ];
-};
+}
+>>>>>>> cursor/integrate-build-improve-and-re-verify-a776

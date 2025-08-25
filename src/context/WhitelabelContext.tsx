@@ -1,57 +1,51 @@
-import React, { createContext, useContext, useState, useCallback } from 'react';
+import React, { createContext, useContext, ReactNode } from 'react';
 
 interface WhitelabelConfig {
   companyName: string;
   logo: string;
   primaryColor: string;
   secondaryColor: string;
-  theme: 'light' | 'dark' | 'auto';
-}
-
-interface WhitelabelContextType {
-  config: WhitelabelConfig;
-  updateConfig: (newConfig: Partial<WhitelabelConfig>) => void;
-  resetConfig: () => void;
+  domain: string;
+  isWhitelabel: boolean;
+  contactInfo: {
+    phone: string;
+    email: string;
+    address: string;
+  };
 }
 
 const defaultConfig: WhitelabelConfig = {
   companyName: 'Zion Tech Group',
   logo: '/logo.svg',
-  primaryColor: '#3B82F6',
-  secondaryColor: '#1E40AF',
-  theme: 'auto'
+  primaryColor: '#1e40af',
+  secondaryColor: '#7c3aed',
+  domain: 'https://ziontechgroup.com',
+  isWhitelabel: false,
+  contactInfo: {
+    phone: '+1 302 464 0950',
+    email: 'kleber@ziontechgroup.com',
+    address: '364 E Main St STE 1008 Middletown DE 19709'
+  }
 };
 
-const WhitelabelContext = createContext<WhitelabelContextType | undefined>(undefined);
+const WhitelabelContext = createContext<WhitelabelConfig>(defaultConfig);
 
-export const WhitelabelProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [config, setConfig] = useState<WhitelabelConfig>(defaultConfig);
+export const useWhitelabel = () => useContext(WhitelabelContext);
 
-  const updateConfig = useCallback((newConfig: Partial<WhitelabelConfig>) => {
-    setConfig(prev => ({ ...prev, ...newConfig }));
-  }, []);
+interface WhitelabelProviderProps {
+  children: ReactNode;
+  config?: Partial<WhitelabelConfig>;
+}
 
-  const resetConfig = useCallback(() => {
-    setConfig(defaultConfig);
-  }, []);
-
-  const value: WhitelabelContextType = {
-    config,
-    updateConfig,
-    resetConfig
-  };
+export const WhitelabelProvider: React.FC<WhitelabelProviderProps> = ({ 
+  children, 
+  config = {} 
+}) => {
+  const mergedConfig = { ...defaultConfig, ...config };
 
   return (
-    <WhitelabelContext.Provider value={value}>
+    <WhitelabelContext.Provider value={mergedConfig}>
       {children}
     </WhitelabelContext.Provider>
   );
-};
-
-export const useWhitelabel = (): WhitelabelContextType => {
-  const context = useContext(WhitelabelContext);
-  if (context === undefined) {
-    throw new Error('useWhitelabel must be used within a WhitelabelProvider');
-  }
-  return context;
 };

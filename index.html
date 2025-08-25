@@ -4,23 +4,41 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zion Tech Group - AI-Powered Tech Marketplace</title>
-    <meta name="description" content="Discover top AI and tech talent, services, and equipment in one place. AI-powered matching for your tech needs." />
+    
+    <title>Zion Tech Group - Revolutionary Technology Solutions</title>
+    <meta name="description" content="Leading provider of revolutionary micro SaaS services, AI solutions, cloud infrastructure, and cutting-edge technology services." />
+    <meta name="author" content="Zion Tech Group" />
+    <meta name="keywords" content="AI marketplace, tech services, artificial intelligence, IT services, AI developers, technology marketplace, AI solutions, machine learning, digital transformation, micro SaaS, quantum computing, blockchain, cybersecurity, edge computing, metaverse" />
+    <meta name="theme-color" content="#1e40af" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Zion Tech Group - Revolutionary Technology Solutions" />
+    <meta property="og:description" content="Leading provider of revolutionary micro SaaS services, AI solutions, cloud infrastructure, and cutting-edge technology services." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://drive.google.com/uc?export=view&id=0B0iuzhpa3pD7X0RzZ2lmclN3Ymc" />
+    <meta property="og:url" content="https://ziontechgroup.com/" />
+    <meta property="og:site_name" content="Zion Tech Group" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@ziontechgroup" />
+    <meta name="twitter:title" content="Zion Tech Group - Revolutionary Technology Solutions" />
+    <meta name="twitter:description" content="Leading provider of revolutionary micro SaaS services, AI solutions, cloud infrastructure, and cutting-edge technology services." />
+    <meta name="twitter:image" content="https://drive.google.com/uc?export=view&id=0B0iuzhpa3pD7X0RzZ2lmclN3Ymc" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://ziontechgroup.com/" />
     
     <!-- High tech font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&display=swap" rel="stylesheet" />
     
-    <!-- Apple Touch Icons -->
-    <link rel="apple-touch-icon" href="/images/zion-logo-192.png" />
-    <link rel="apple-touch-icon" sizes="152x152" href="/images/zion-logo-152.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/zion-logo-180.png" />
-    <link rel="apple-touch-icon" sizes="167x167" href="/images/zion-logo-167.png" />
-    
     <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" href="https://drive.google.com/uc?export=view&id=0B0iuzhpa3pD7X0RzZ2lmclN3Ymc" />
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="https://drive.google.com/uc?export=view&id=0B0iuzhpa3pD7X0RzZ2lmclN3Ymc" />
     
     <!-- DNS Prefetch for performance -->
     <link rel="dns-prefetch" href="//fonts.googleapis.com" />
@@ -30,69 +48,138 @@
     <link rel="preload" href="/src/main.tsx" as="script" />
     <link rel="preload" href="/src/index.css" as="style" />
     
+    <!-- Structured data (JSON-LD) for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Zion Tech Group",
+        "url": "https://ziontechgroup.com",
+        "logo": "https://drive.google.com/uc?export=view&id=0B0iuzhpa3pD7X0RzZ2lmclN3Ymc",
+        "description": "Leading provider of revolutionary micro SaaS services, AI solutions, cloud infrastructure, and cutting-edge technology services.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "364 E Main St STE 1008",
+          "addressLocality": "Middletown",
+          "addressRegion": "DE",
+          "postalCode": "19709",
+          "addressCountry": "US"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+1-302-464-0950",
+          "contactType": "customer service",
+          "email": "kleber@ziontechgroup.com"
+        },
+        "sameAs": [
+          "https://twitter.com/ziontechgroup",
+          "https://www.facebook.com/ziontechgroup",
+          "https://www.linkedin.com/company/zion-tech-group"
+        ],
+        "offers": {
+          "@type": "Offer",
+          "description": "AI-powered technology solutions, micro SaaS services, and cutting-edge development services"
+        }
+      }
+    </script>
+    
     <!-- Critical CSS inline -->
     <style>
       /* Critical CSS for above-the-fold content */
       body {
         margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-          sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        background-color: #172d67;
+        padding: 0;
+        font-family: 'Orbitron', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
         color: #ffffff;
+        overflow-x: hidden;
       }
       
-      #root {
-        min-height: 100vh;
-      }
-      
-      /* Loading spinner for initial load */
-      .initial-loader {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(135deg, #172d67 0%, #2e73ea 50%, #8c15e9 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        z-index: 9999;
-      }
-      
-      .spinner {
-        width: 50px;
-        height: 50px;
-        border: 3px solid rgba(255, 255, 255, 0.3);
-        border-radius: 50%;
-        border-top-color: #22ddd2;
-        animation: spin 1s ease-in-out infinite;
-      }
-      
+      /* Loading animation */
       @keyframes spin {
-        to { transform: rotate(360deg); }
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
       }
       
-      .loading-text {
-        position: absolute;
-        bottom: 30%;
-        color: white;
-        font-size: 18px;
-        font-weight: 500;
-        text-align: center;
+      /* Quantum gradient animation */
+      @keyframes quantum-shift {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+      }
+      
+      .quantum-gradient {
+        background: linear-gradient(-45deg, #1e40af, #3b82f6, #8b5cf6, #06b6d4);
+        background-size: 400% 400%;
+        animation: quantum-shift 15s ease infinite;
+      }
+      
+      /* Neon glow effects */
+      .neon-glow {
+        text-shadow: 0 0 10px #22ddd2, 0 0 20px #22ddd2, 0 0 30px #22ddd2;
+      }
+      
+      /* Matrix rain effect */
+      @keyframes matrix-rain {
+        0% { transform: translateY(-100vh); opacity: 1; }
+        100% { transform: translateY(100vh); opacity: 0; }
+      }
+      
+      .matrix-rain {
+        animation: matrix-rain 20s linear infinite;
       }
     </style>
   </head>
   <body>
     <div id="root">
-      <!-- Loading screen -->
-      <div class="initial-loader">
-        <div class="spinner"></div>
-        <div class="loading-text">Loading Zion Tech Group...</div>
+      <!-- Enhanced loading screen with quantum effects -->
+      <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(135deg, #0f172a 0%, #1e40af 50%, #8b5cf6 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 9999;">
+        <!-- Quantum loading spinner -->
+        <div style="width: 80px; height: 80px; border: 4px solid rgba(34, 221, 210, 0.3); border-radius: 50%; border-top-color: #22ddd2; animation: spin 1s ease-in-out infinite; margin-bottom: 20px;"></div>
+        
+        <!-- Company logo/name -->
+        <div style="color: white; font-size: 24px; font-weight: 600; margin-bottom: 10px; text-shadow: 0 0 20px #22ddd2;">ZION TECH GROUP</div>
+        
+        <!-- Loading text -->
+        <div style="color: #22ddd2; font-size: 16px; font-weight: 500; text-align: center; animation: pulse 2s ease-in-out infinite;">
+          Initializing Quantum Systems...
+        </div>
+        
+        <!-- Matrix rain background effect -->
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none;">
+          {[...Array(20)].map((_, i) => (
+            <div style="position: absolute; color: #22ddd2; font-size: 12px; left: ${Math.random() * 100}%; animation: matrix-rain ${20 + Math.random() * 10}s linear infinite; animation-delay: ${Math.random() * 20}s;">
+              {Math.random() > 0.5 ? '1' : '0'}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
+    
+    <!-- React app entry point -->
     <script type="module" src="/src/main.tsx"></script>
+    
+    <!-- Performance monitoring -->
+    <script>
+      // Performance monitoring
+      window.addEventListener('load', () => {
+        if ('performance' in window) {
+          const perfData = performance.getEntriesByType('navigation')[0];
+          console.log('Page load time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
+        }
+      });
+      
+      // Service Worker registration for PWA capabilities
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
   </body>
 </html>

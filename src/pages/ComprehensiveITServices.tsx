@@ -1,143 +1,332 @@
 import React, { useState } from 'react';
-import { Search, Filter, Star, Clock, DollarSign, Users, Zap, Brain, Cloud, Database, Shield, Settings, Eye, Leaf, CreditCard, Heart, Truck, ShoppingCart, Phone, Mail, MapPin, Globe, Bot, Cpu, Network, Database as DatabaseIcon, Shield as ShieldIcon, Zap as ZapIcon, Building, Factory, Store, Car, Plane, Ship, Home, Hospital, Building2, GraduationCap, Calendar, FileText, BarChart3, Users as UsersIcon, CreditCard as CreditCardIcon, MessageSquare, Camera, Video, Music, BookOpen, Target, TrendingUp, PieChart, Activity, Zap as ZapIcon2, Server, Code, Smartphone, Monitor, Router, HardDrive, Wifi, Lock, Key, Bug, CheckCircle, AlertTriangle, Info, ArrowRight } from 'lucide-react';
+import { Search, Filter, Star, Clock, DollarSign, Users, Zap, Brain, Cloud, Database, Shield, Settings, Eye, Leaf, CreditCard, Heart, Truck, ShoppingCart, Phone, Mail, MapPin, Globe, Bot, Cpu, Network, Database as DatabaseIcon, Shield as ShieldIcon, Zap as ZapIcon, Building, Factory, Store, Car, Plane, Ship, Home, Hospital, Building2, GraduationCap, Calendar, FileText, BarChart3, Users as UsersIcon, CreditCard as CreditCardIcon, MessageSquare, Camera, Video, Music, BookOpen, Target, TrendingUp, PieChart, Activity, Zap as ZapIcon2, Wifi, Smartphone, Server, Code, Lock, Key, Bug, CheckCircle, AlertTriangle, Info, ArrowRight, Satellite, Rocket, Atom, Dna, Brain as BrainIcon, Microchip, Database as DatabaseIcon2, Shield as ShieldIcon2, Zap as ZapIcon3, Globe as GlobeIcon, Network as NetworkIcon, Cpu as CpuIcon, Server as ServerIcon, Code as CodeIcon, Lock as LockIcon, Key as KeyIcon, Bug as BugIcon, CheckCircle as CheckCircleIcon, AlertTriangle as AlertTriangleIcon, Info as InfoIcon, ArrowRight as ArrowRightIcon, Glasses, Cpu as CpuIcon2, Brain as BrainIcon2, Zap as ZapIcon4, Shield as ShieldIcon3, Database as DatabaseIcon3, Cloud as CloudIcon, Network as NetworkIcon2, Server as ServerIcon2, Code as CodeIcon2, Lock as LockIcon2, Key as KeyIcon2, Bug as BugIcon2, CheckCircle as CheckCircleIcon2, AlertTriangle as AlertTriangleIcon2, Info as InfoIcon2, ArrowRight as ArrowRightIcon2 } from 'lucide-react';
 
 const ComprehensiveITServices: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [selectedPricing, setSelectedPricing] = useState<string>('all');
 
-  // Comprehensive IT Services data
+  // Enhanced Comprehensive IT Services data with more innovative offerings
   const itServices = [
     {
       id: 1,
-      name: "Enterprise Network Infrastructure",
-      category: "Infrastructure",
+      name: "Quantum Computing Infrastructure",
+      category: "Quantum IT",
       pricing: "Enterprise",
-      description: "Complete network design, implementation, and management for large organizations",
-      price: 15000,
+      description: "Next-generation quantum computing infrastructure and quantum-ready systems for research and enterprise applications",
+      price: 100000,
       pricingModel: "project-based",
       userLimit: "Unlimited users",
-      features: ["Network design & architecture", "Cisco/Meraki implementation", "SD-WAN solutions", "Network security", "24/7 monitoring", "Performance optimization"],
-      benefits: ["Scalable infrastructure", "Enhanced security", "Improved performance", "Reduced downtime", "Cost optimization", "Future-ready design"],
-      targetAudience: ["Large enterprises", "Multi-location businesses", "Healthcare organizations", "Financial institutions"],
-      tags: ["Networking", "Infrastructure", "Enterprise", "Security", "SD-WAN"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      },
-      deliveryTime: "8-12 weeks",
-      support: "24/7 enterprise support"
-    },
-    {
-      id: 2,
-      name: "Cloud Migration & Optimization",
-      category: "Cloud Services",
-      pricing: "Enterprise",
-      description: "End-to-end cloud migration services with cost optimization and performance tuning",
-      price: 25000,
-      pricingModel: "project-based",
-      userLimit: "Unlimited users",
-      features: ["AWS/Azure/GCP migration", "Cost optimization", "Performance tuning", "Security implementation", "Disaster recovery", "Monitoring setup"],
-      benefits: ["Reduced infrastructure costs", "Improved scalability", "Enhanced security", "Better performance", "Disaster recovery", "Global accessibility"],
-      targetAudience: ["Medium to large businesses", "Healthcare providers", "Financial services", "Manufacturing companies"],
-      tags: ["Cloud Migration", "AWS", "Azure", "GCP", "Cost Optimization"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      },
-      deliveryTime: "12-16 weeks",
-      support: "24/7 cloud support"
-    },
-    {
-      id: 3,
-      name: "Cybersecurity Assessment & Implementation",
-      category: "Security",
-      pricing: "Enterprise",
-      description: "Comprehensive cybersecurity assessment, penetration testing, and security implementation",
-      price: 18000,
-      pricingModel: "project-based",
-      userLimit: "Unlimited users",
-      features: ["Security assessment", "Penetration testing", "Vulnerability scanning", "Security policy development", "Employee training", "Incident response planning"],
-      benefits: ["Risk mitigation", "Compliance achievement", "Customer trust", "Reduced breach risk", "Insurance benefits", "Regulatory compliance"],
-      targetAudience: ["Financial institutions", "Healthcare organizations", "Government agencies", "E-commerce businesses"],
-      tags: ["Cybersecurity", "Penetration Testing", "Compliance", "Risk Assessment", "Security Training"],
-      contactInfo: {
-        phone: "+1 302 464 0950",
-        email: "kleber@ziontechgroup.com",
-        website: "https://ziontechgroup.com"
-      },
-      deliveryTime: "6-10 weeks",
-      support: "24/7 security support"
-    },
-    {
-      id: 4,
-      name: "Data Center Design & Implementation",
-      category: "Infrastructure",
-      pricing: "Enterprise",
-      description: "Complete data center design, build, and management services for enterprise organizations",
-      price: 50000,
-      pricingModel: "project-based",
-      userLimit: "Unlimited users",
-      features: ["Data center design", "HVAC & power systems", "Server infrastructure", "Storage solutions", "Backup systems", "Monitoring & management"],
-      benefits: ["High availability", "Scalability", "Cost control", "Performance optimization", "Security enhancement", "Disaster recovery"],
-      targetAudience: ["Large enterprises", "Government agencies", "Healthcare systems", "Financial institutions"],
-      tags: ["Data Center", "Infrastructure", "Enterprise", "High Availability", "Disaster Recovery"],
+      features: ["Quantum hardware integration", "Quantum algorithm development", "Quantum security protocols", "Hybrid classical-quantum systems", "Quantum error correction", "Performance optimization"],
+      benefits: ["Quantum advantage", "Research breakthrough", "Competitive edge", "Future-proof infrastructure", "Innovation leadership", "Scientific advancement"],
+      targetAudience: ["Research institutions", "Government agencies", "Tech companies", "Financial institutions", "Pharmaceutical companies", "Universities"],
+      tags: ["Quantum Computing", "Infrastructure", "Research", "Innovation", "Advanced Technology", "Scientific Computing"],
       contactInfo: {
         phone: "+1 302 464 0950",
         email: "kleber@ziontechgroup.com",
         website: "https://ziontechgroup.com"
       },
       deliveryTime: "16-24 weeks",
-      support: "24/7 data center support"
+      support: "24/7 quantum support"
     },
     {
-      id: 5,
-      name: "DevOps Implementation & Automation",
-      category: "DevOps",
+      id: 2,
+      name: "Autonomous IT Operations",
+      category: "Autonomous Systems",
       pricing: "Enterprise",
-      description: "Complete DevOps transformation with CI/CD pipelines, automation, and monitoring",
-      price: 22000,
+      description: "Self-healing and self-optimizing IT infrastructure with autonomous operations and predictive maintenance",
+      price: 75000,
       pricingModel: "project-based",
       userLimit: "Unlimited users",
-      features: ["CI/CD pipeline setup", "Infrastructure as code", "Monitoring & alerting", "Automated testing", "Deployment automation", "Performance optimization"],
-      benefits: ["Faster deployments", "Reduced errors", "Improved collaboration", "Better monitoring", "Cost savings", "Scalability"],
-      targetAudience: ["Software companies", "IT departments", "Digital agencies", "E-commerce platforms"],
-      tags: ["DevOps", "CI/CD", "Automation", "Monitoring", "Infrastructure as Code"],
+      features: ["Self-healing systems", "Predictive maintenance", "Automated troubleshooting", "Intelligent scaling", "Performance optimization", "Zero-downtime operations"],
+      benefits: ["Reduced downtime", "Operational efficiency", "Cost optimization", "Proactive management", "Scalability", "Reliability"],
+      targetAudience: ["Large enterprises", "Cloud providers", "Data centers", "Financial institutions", "Healthcare systems", "Manufacturing"],
+      tags: ["Autonomous Systems", "Self-Healing", "Predictive Maintenance", "Automation", "Zero-Downtime", "Intelligent Operations"],
       contactInfo: {
         phone: "+1 302 464 0950",
         email: "kleber@ziontechgroup.com",
         website: "https://ziontechgroup.com"
       },
-      deliveryTime: "10-14 weeks",
+      deliveryTime: "12-20 weeks",
+      support: "24/7 autonomous support"
+    },
+    {
+      id: 3,
+      name: "Edge Computing Network",
+      category: "Edge Computing",
+      pricing: "Enterprise",
+      description: "Distributed edge computing infrastructure for low-latency applications and IoT deployments",
+      price: 60000,
+      pricingModel: "project-based",
+      userLimit: "Unlimited users",
+      features: ["Edge node deployment", "Latency optimization", "IoT integration", "5G network support", "Edge AI processing", "Global distribution"],
+      benefits: ["Ultra-low latency", "Bandwidth optimization", "Real-time processing", "Global reach", "Cost efficiency", "Scalability"],
+      targetAudience: ["Gaming companies", "CDN providers", "IoT platforms", "Autonomous vehicle companies", "Smart city projects", "Telecommunications"],
+      tags: ["Edge Computing", "IoT", "5G", "Low Latency", "Global Distribution", "Real-time Processing"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      },
+      deliveryTime: "10-16 weeks",
+      support: "24/7 edge support"
+    },
+    {
+      id: 4,
+      name: "Zero-Trust Security Architecture",
+      category: "Security",
+      pricing: "Enterprise",
+      description: "Comprehensive zero-trust security framework with advanced threat detection and response capabilities",
+      price: 85000,
+      pricingModel: "project-based",
+      userLimit: "Unlimited users",
+      features: ["Identity verification", "Micro-segmentation", "Continuous monitoring", "Threat hunting", "Incident response", "Compliance management"],
+      benefits: ["Enhanced security", "Risk reduction", "Regulatory compliance", "Threat prevention", "Trust building", "Cost savings"],
+      targetAudience: ["Financial institutions", "Healthcare organizations", "Government agencies", "E-commerce businesses", "Critical infrastructure", "Defense contractors"],
+      tags: ["Zero-Trust", "Cybersecurity", "Identity Management", "Threat Detection", "Compliance", "Risk Management"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      },
+      deliveryTime: "8-14 weeks",
+      support: "24/7 security support"
+    },
+    {
+      id: 5,
+      name: "AI-Powered DevOps Platform",
+      category: "DevOps",
+      pricing: "Enterprise",
+      description: "Intelligent DevOps platform with AI-driven automation, monitoring, and optimization capabilities",
+      price: 55000,
+      pricingModel: "project-based",
+      userLimit: "Unlimited users",
+      features: ["AI automation", "Intelligent monitoring", "Predictive analytics", "Auto-scaling", "Performance optimization", "Continuous deployment"],
+      benefits: ["Faster deployment", "Reduced errors", "Cost optimization", "Performance improvement", "Team productivity", "Quality assurance"],
+      targetAudience: ["Software companies", "Tech startups", "Enterprise IT", "Cloud providers", "Digital agencies", "E-commerce platforms"],
+      tags: ["AI DevOps", "Automation", "Continuous Deployment", "Monitoring", "Performance", "Productivity"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      },
+      deliveryTime: "6-12 weeks",
       support: "24/7 DevOps support"
     },
     {
       id: 6,
-      name: "Business Intelligence & Analytics Platform",
-      category: "Analytics",
+      name: "Blockchain Infrastructure",
+      category: "Blockchain",
       pricing: "Enterprise",
-      description: "Comprehensive BI platform with data warehousing, reporting, and advanced analytics",
-      price: 30000,
+      description: "Enterprise-grade blockchain infrastructure and smart contract development platform",
+      price: 70000,
       pricingModel: "project-based",
       userLimit: "Unlimited users",
-      features: ["Data warehouse design", "ETL processes", "Interactive dashboards", "Advanced analytics", "Predictive modeling", "Real-time reporting"],
-      benefits: ["Data-driven decisions", "Improved efficiency", "Cost reduction", "Competitive advantage", "Performance insights", "Operational optimization"],
-      targetAudience: ["Manufacturing companies", "Retail chains", "Healthcare systems", "Financial services"],
-      tags: ["Business Intelligence", "Data Analytics", "Data Warehouse", "Reporting", "Predictive Analytics"],
+      features: ["Blockchain deployment", "Smart contract development", "Wallet integration", "Transaction monitoring", "Security auditing", "Scalability solutions"],
+      benefits: ["Transparency", "Security", "Cost reduction", "Innovation", "Trust building", "Efficiency"],
+      targetAudience: ["Fintech companies", "Supply chain businesses", "Healthcare organizations", "Government agencies", "NFT platforms", "DeFi projects"],
+      tags: ["Blockchain", "Smart Contracts", "DeFi", "NFT", "Web3", "Cryptocurrency"],
       contactInfo: {
         phone: "+1 302 464 0950",
         email: "kleber@ziontechgroup.com",
         website: "https://ziontechgroup.com"
       },
-      deliveryTime: "14-20 weeks",
-      support: "24/7 analytics support"
+      deliveryTime: "10-18 weeks",
+      support: "24/7 blockchain support"
+    },
+    {
+      id: 7,
+      name: "IoT Platform & Analytics",
+      category: "IoT",
+      pricing: "Enterprise",
+      description: "Comprehensive IoT platform with device management, data analytics, and intelligent automation",
+      price: 65000,
+      pricingModel: "project-based",
+      userLimit: "Unlimited users",
+      features: ["Device management", "Data collection", "Real-time analytics", "Predictive maintenance", "Automation workflows", "Security protocols"],
+      benefits: ["Operational efficiency", "Data insights", "Cost reduction", "Predictive capabilities", "Automation", "Competitive advantage"],
+      targetAudience: ["Manufacturing companies", "Smart city projects", "Agriculture businesses", "Healthcare providers", "Retail chains", "Energy companies"],
+      tags: ["IoT", "Device Management", "Data Analytics", "Predictive Maintenance", "Automation", "Smart Cities"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      },
+      deliveryTime: "12-20 weeks",
+      support: "24/7 IoT support"
+    },
+    {
+      id: 8,
+      name: "Hybrid Cloud Architecture",
+      category: "Cloud Services",
+      pricing: "Enterprise",
+      description: "Advanced hybrid cloud solutions with seamless integration and intelligent workload management",
+      price: 80000,
+      pricingModel: "project-based",
+      userLimit: "Unlimited users",
+      features: ["Multi-cloud integration", "Workload optimization", "Cost management", "Security compliance", "Disaster recovery", "Performance monitoring"],
+      benefits: ["Flexibility", "Cost optimization", "Security enhancement", "Scalability", "Compliance", "Performance"],
+      targetAudience: ["Large enterprises", "Financial institutions", "Healthcare organizations", "Government agencies", "E-commerce platforms", "Media companies"],
+      tags: ["Hybrid Cloud", "Multi-Cloud", "Workload Management", "Cost Optimization", "Security", "Compliance"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      },
+      deliveryTime: "14-22 weeks",
+      support: "24/7 cloud support"
+    },
+    {
+      id: 9,
+      name: "Data Fabric & Analytics",
+      category: "Data & Analytics",
+      pricing: "Enterprise",
+      description: "Unified data fabric with advanced analytics, AI integration, and real-time insights",
+      price: 90000,
+      pricingModel: "project-based",
+      userLimit: "Unlimited users",
+      features: ["Data integration", "Real-time analytics", "AI/ML integration", "Data governance", "Self-service analytics", "Performance optimization"],
+      benefits: ["Data insights", "Operational efficiency", "Better decisions", "Cost reduction", "Innovation", "Competitive advantage"],
+      targetAudience: ["Data-driven companies", "Financial institutions", "Healthcare organizations", "Retail chains", "Manufacturing companies", "Research institutions"],
+      tags: ["Data Fabric", "Analytics", "AI/ML", "Data Governance", "Real-time", "Insights"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      },
+      deliveryTime: "16-24 weeks",
+      support: "24/7 data support"
+    },
+    {
+      id: 10,
+      name: "Digital Twin Platform",
+      category: "Digital Twins",
+      pricing: "Enterprise",
+      description: "Advanced digital twin technology for physical asset monitoring and predictive maintenance",
+      price: 75000,
+      pricingModel: "project-based",
+      userLimit: "Unlimited users",
+      features: ["3D modeling", "Real-time monitoring", "Predictive analytics", "Simulation capabilities", "IoT integration", "Performance optimization"],
+      benefits: ["Predictive maintenance", "Cost reduction", "Operational efficiency", "Risk mitigation", "Innovation", "Competitive advantage"],
+      targetAudience: ["Manufacturing companies", "Infrastructure projects", "Smart cities", "Healthcare facilities", "Energy companies", "Transportation"],
+      tags: ["Digital Twins", "3D Modeling", "Predictive Analytics", "IoT", "Simulation", "Monitoring"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      },
+      deliveryTime: "12-20 weeks",
+      support: "24/7 digital twin support"
+    },
+    {
+      id: 11,
+      name: "AR/VR Enterprise Platform",
+      category: "Immersive Tech",
+      pricing: "Enterprise",
+      description: "Enterprise-grade augmented and virtual reality platform for training, collaboration, and visualization",
+      price: 60000,
+      pricingModel: "project-based",
+      userLimit: "Unlimited users",
+      features: ["3D content creation", "Multi-user collaboration", "Analytics dashboard", "Integration APIs", "Content management", "Performance optimization"],
+      benefits: ["Enhanced training", "Improved collaboration", "Cost reduction", "Innovation", "Competitive advantage", "User engagement"],
+      targetAudience: ["Training companies", "Manufacturing", "Healthcare", "Education", "Retail", "Entertainment"],
+      tags: ["AR/VR", "3D Content", "Collaboration", "Training", "Visualization", "Immersive Tech"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      },
+      deliveryTime: "10-16 weeks",
+      support: "24/7 AR/VR support"
+    },
+    {
+      id: 12,
+      name: "5G Network Infrastructure",
+      category: "5G & Networking",
+      pricing: "Enterprise",
+      description: "Next-generation 5G network infrastructure with edge computing and IoT integration capabilities",
+      price: 120000,
+      pricingModel: "project-based",
+      userLimit: "Unlimited users",
+      features: ["5G deployment", "Edge computing", "IoT integration", "Network slicing", "Security protocols", "Performance monitoring"],
+      benefits: ["Ultra-fast connectivity", "Low latency", "Massive IoT support", "Network flexibility", "Future-proof infrastructure", "Innovation"],
+      targetAudience: ["Telecommunications", "Smart cities", "Manufacturing", "Healthcare", "Transportation", "Entertainment"],
+      tags: ["5G", "Edge Computing", "IoT", "Network Slicing", "Connectivity", "Infrastructure"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      },
+      deliveryTime: "20-32 weeks",
+      support: "24/7 5G support"
+    },
+    {
+      id: 13,
+      name: "Green IT Solutions",
+      category: "Sustainability",
+      pricing: "Enterprise",
+      description: "Eco-friendly IT infrastructure with energy optimization and carbon footprint reduction",
+      price: 55000,
+      pricingModel: "project-based",
+      userLimit: "Unlimited users",
+      features: ["Energy optimization", "Carbon tracking", "Sustainable hardware", "Green data centers", "E-waste management", "Performance monitoring"],
+      benefits: ["Cost savings", "Environmental impact", "Regulatory compliance", "Brand reputation", "Innovation", "Sustainability"],
+      targetAudience: ["Environmentally conscious companies", "Government agencies", "Educational institutions", "Healthcare organizations", "Manufacturing", "Retail"],
+      tags: ["Green IT", "Sustainability", "Energy Optimization", "Carbon Tracking", "Eco-friendly", "Compliance"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      },
+      deliveryTime: "8-16 weeks",
+      support: "24/7 green IT support"
+    },
+    {
+      id: 14,
+      name: "Quantum-Safe Cryptography",
+      category: "Security",
+      pricing: "Enterprise",
+      description: "Post-quantum cryptography solutions for future-proof security against quantum computing threats",
+      price: 95000,
+      pricingModel: "project-based",
+      userLimit: "Unlimited users",
+      features: ["Post-quantum algorithms", "Key management", "Security auditing", "Compliance tools", "Performance optimization", "Migration support"],
+      benefits: ["Future-proof security", "Quantum resistance", "Regulatory compliance", "Risk mitigation", "Innovation", "Competitive advantage"],
+      targetAudience: ["Financial institutions", "Government agencies", "Healthcare organizations", "Defense contractors", "Critical infrastructure", "Tech companies"],
+      tags: ["Quantum-Safe", "Cryptography", "Post-Quantum", "Security", "Compliance", "Future-Proof"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      },
+      deliveryTime: "12-20 weeks",
+      support: "24/7 quantum security support"
+    },
+    {
+      id: 15,
+      name: "Autonomous Data Centers",
+      category: "Infrastructure",
+      pricing: "Enterprise",
+      description: "Self-managing data center infrastructure with AI-driven optimization and autonomous operations",
+      price: 150000,
+      pricingModel: "project-based",
+      userLimit: "Unlimited users",
+      features: ["AI management", "Autonomous operations", "Predictive maintenance", "Energy optimization", "Security automation", "Performance monitoring"],
+      benefits: ["Operational efficiency", "Cost reduction", "Reliability", "Scalability", "Innovation", "Competitive advantage"],
+      targetAudience: ["Cloud providers", "Large enterprises", "Data center operators", "Financial institutions", "Healthcare systems", "Government agencies"],
+      tags: ["Autonomous Data Centers", "AI Management", "Predictive Maintenance", "Energy Optimization", "Automation", "Infrastructure"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      },
+      deliveryTime: "24-36 weeks",
+      support: "24/7 autonomous data center support"
     }
   ];
 
-  const categories = ['all', 'Infrastructure', 'Cloud Services', 'Security', 'DevOps', 'Analytics'];
-  const pricingOptions = ['all', 'Enterprise', 'Professional', 'Standard'];
+  const categories = ['all', 'Quantum IT', 'Autonomous Systems', 'Edge Computing', 'Security', 'DevOps', 'Blockchain', 'IoT', 'Cloud Services', 'Data & Analytics', 'Digital Twins', 'Immersive Tech', '5G & Networking', 'Sustainability', 'Infrastructure'];
+  const pricingModels = ['all', 'Enterprise', 'Project-based', 'Subscription'];
 
   const filteredServices = itServices.filter(service => {
     const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -194,7 +383,7 @@ const ComprehensiveITServices: React.FC = () => {
                 className="px-4 py-2 bg-zion-blue-light/20 border border-zion-cyan/30 rounded-lg text-white focus:outline-none focus:border-zion-cyan"
               >
                 <option value="all">All Pricing</option>
-                {pricingOptions.slice(1).map(option => (
+                {pricingModels.slice(1).map(option => (
                   <option key={option} value={option}>{option}</option>
                 ))}
               </select>
