@@ -471,29 +471,76 @@ const MicroSaasServices: React.FC = () => {
           ))}
         </div>
 
+        {/* Why Choose Zion Tech Group */}
+        <div className="mt-16 mb-16">
+          <h2 className="text-3xl font-bold text-white text-center mb-12">Why Choose Zion Tech Group?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <TrendingUp className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">Proven ROI</h3>
+              <p className="text-gray-300">Our micro SAAS solutions deliver 250-400% ROI within 3-8 months, with measurable business impact</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Zap className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">Rapid Implementation</h3>
+              <p className="text-gray-300">Get up and running in 1-4 weeks with our streamlined onboarding and setup process</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Shield className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-semibold text-white mb-3">Enterprise Security</h3>
+              <p className="text-gray-300">Bank-level security with SOC 2 compliance, GDPR readiness, and industry-standard encryption</p>
+            </div>
+          </div>
+        </div>
+
         {/* Contact Information */}
-        <div className="mt-16 text-center">
+        <div className="text-center">
           <div className="bg-white/5 backdrop-blur-sm border border-gray-600 rounded-xl p-8">
             <h2 className="text-2xl font-bold text-white mb-4">Ready to Scale Your Business?</h2>
             <p className="text-gray-300 mb-6">
-              Our micro SAAS solutions are designed to grow with your business needs
+              Our micro SAAS solutions are designed to grow with your business needs and provide measurable ROI
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center mb-8">
               <div>
                 <Phone className="w-8 h-8 text-green-400 mx-auto mb-2" />
                 <p className="text-white font-semibold">Phone</p>
-                <p className="text-gray-300">{microSaasServices[0].contactInfo.phone}</p>
+                <p className="text-gray-300">+1 302 464 0950</p>
               </div>
               <div>
                 <Mail className="w-8 h-8 text-green-400 mx-auto mb-2" />
                 <p className="text-white font-semibold">Email</p>
-                <p className="text-gray-300">{microSaasServices[0].contactInfo.email}</p>
+                <p className="text-gray-300">kleber@ziontechgroup.com</p>
               </div>
               <div>
                 <MapPin className="w-8 h-8 text-green-400 mx-auto mb-2" />
                 <p className="text-white font-semibold">Address</p>
                 <p className="text-gray-300">364 E Main St STE 1008<br />Middletown DE 19709</p>
               </div>
+            </div>
+            
+            <div className="flex flex-wrap justify-center gap-4">
+              <a 
+                href="https://ziontechgroup.com"
+                className="bg-gradient-to-r from-green-600 to-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-green-700 hover:to-blue-700 transition-all duration-300"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Visit Our Website
+              </a>
+              <a 
+                href="/request-quote"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300"
+              >
+                Request Custom Quote
+              </a>
             </div>
           </div>
         </div>
