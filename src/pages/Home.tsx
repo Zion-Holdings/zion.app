@@ -15,6 +15,7 @@ import { FloatingCTA } from "@/components/FloatingCTA";
 import { PricingSection } from "@/components/PricingSection";
 import { TechSolutionsSection } from "@/components/TechSolutionsSection";
 import { CaseStudiesSection } from "@/components/CaseStudiesSection";
+import { TeamExpertiseSection } from "@/components/TeamExpertiseSection";
 
 export default function Home() {
   return (
@@ -35,6 +36,7 @@ export default function Home() {
       <HowItWorksSection />
       <TechSolutionsSection />
       <CaseStudiesSection />
+      <TeamExpertiseSection />
       <PricingSection />
       <FeaturedListingsSection />
       <NewsletterSection />
