@@ -7,6 +7,7 @@ import { AccessibilityControls } from './components/AccessibilityControls';
 import { PerformanceDashboard } from './components/PerformanceDashboard';
 import { AnalyticsDashboard } from './components/AnalyticsDashboard';
 import { AIChatbot } from './components/AIChatbot';
+import { CollaborativeTextEditor } from './components/CollaborativeTextEditor';
 import './App.css';
 
 // Enhanced lazy loading with preloading hints
@@ -96,6 +97,21 @@ const App = () => {
           
           {/* AI Chatbot - Always Available */}
           <AIChatbot />
+          
+          {/* Collaborative Text Editor - Development Mode */}
+          {process.env.NODE_ENV === 'development' && (
+            <div className="fixed bottom-24 left-6 z-40 w-96">
+              <CollaborativeTextEditor
+                roomId="dev-editor"
+                userId="dev-user"
+                userName="Developer"
+                initialContent="Welcome to the collaborative text editor! Start typing to see AI suggestions and real-time collaboration features."
+                enableAI={true}
+                enableCollaboration={true}
+                enableVersioning={true}
+              />
+            </div>
+          )}
           
           {/* Development Dashboards */}
           {process.env.NODE_ENV === 'development' && (
