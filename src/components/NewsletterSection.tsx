@@ -1,102 +1,105 @@
-
-import GradientHeading from "@/components/GradientHeading";
-// import { EnhancedNewsletterForm } from "@/components/EnhancedNewsletterForm";
-import { motion } from "framer-motion";
-import { Mail, Bell, TrendingUp, Users } from "lucide-react";
+import React, { useState } from 'react';
+import { Mail, Send, Zap, Brain, Shield } from 'lucide-react';
+import { GradientHeading } from '@/components/ui/GradientHeading';
 
 export function NewsletterSection() {
-  const benefits = [
-    { icon: <Bell className="w-5 h-5" />, text: "Latest AI & Tech Updates", color: "text-zion-cyan" },
-    { icon: <TrendingUp className="w-5 h-5" />, text: "Marketplace Opportunities", color: "text-zion-purple" },
-    { icon: <Users className="w-5 h-5" />, text: "Community Insights", color: "text-zion-cyan-light" }
+  const [email, setEmail] = useState('');
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      console.log('Newsletter subscription:', email);
+      setIsSubscribed(true);
+      setEmail('');
+      setTimeout(() => setIsSubscribed(false), 3000);
+    }
+  };
+
+  const features = [
+    {
+      icon: <Zap className="w-6 h-6" />,
+      title: "Latest Tech Trends",
+      description: "Stay ahead with cutting-edge technology insights"
+    },
+    {
+      icon: <Brain className="w-6 h-6" />,
+      title: "AI Innovations",
+      description: "Discover the latest in artificial intelligence"
+    },
+    {
+      icon: <Shield className="w-6 h-6" />,
+      title: "Security Updates",
+      description: "Learn about cybersecurity best practices"
+    }
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-blue-light relative overflow-hidden" id="newsletter">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M40 40c0 22.091-17.909 40-40 40s-40-17.909-40-40 17.909-40 40-40 40 17.909 40 40z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-        }} />
+    <section className="py-16 bg-gradient-to-br from-zion-purple-dark to-zion-blue-dark relative overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-20 w-64 h-64 border border-zion-cyan/10 rounded-full opacity-30"></div>
+        <div className="absolute bottom-20 right-20 w-48 h-48 border border-zion-purple/10 rotate-45 opacity-30"></div>
       </div>
-
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <motion.div 
-          className="max-w-5xl mx-auto text-center"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          {/* Header */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="mb-8"
-          >
-            <div className="flex items-center justify-center gap-3 mb-6">
-              <Mail className="w-8 h-8 text-zion-cyan" />
-              <GradientHeading className="text-4xl md:text-5xl">Stay Informed & Connected</GradientHeading>
-              <Mail className="w-8 h-8 text-zion-cyan" />
-            </div>
-            <p className="text-zion-slate-light text-xl md:text-2xl mb-8 leading-relaxed max-w-3xl mx-auto">
-              Subscribe to our newsletter for the latest updates on Zion's services, trending tech news, and exclusive marketplace opportunities.
-            </p>
-          </motion.div>
-
-          {/* Benefits */}
-          <motion.div 
-            className="flex flex-wrap justify-center gap-6 mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            {benefits.map((benefit, index) => (
-              <motion.div
-                key={benefit.text}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                className="flex items-center gap-2 bg-zion-blue-dark/30 backdrop-blur-sm px-4 py-2 rounded-full border border-zion-purple/20"
+      
+      <div className="relative container mx-auto px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <GradientHeading size="4xl" className="mb-4">
+            Stay Updated with Zion Tech
+          </GradientHeading>
+          <p className="text-zion-slate-light text-lg mb-8 max-w-2xl mx-auto">
+            Get the latest insights on AI, cybersecurity, cloud computing, and emerging technologies. 
+            Join thousands of tech professionals who trust Zion for industry knowledge.
+          </p>
+          
+          <form onSubmit={handleSubmit} className="max-w-md mx-auto mb-8">
+            <div className="flex flex-col sm:flex-row gap-3">
+              <div className="relative flex-1">
+                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-zion-slate-light" />
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Enter your email address"
+                  className="w-full pl-10 pr-4 py-3 bg-white/10 border border-zion-cyan/30 rounded-lg text-white placeholder-zion-slate-light focus:border-zion-cyan focus:ring-2 focus:ring-zion-cyan/20 transition-all duration-300"
+                  required
+                />
+              </div>
+              <button
+                type="submit"
+                className="px-6 py-3 bg-gradient-to-r from-zion-cyan to-zion-purple text-white rounded-lg font-medium hover:from-zion-cyan-light hover:to-zion-purple-light transition-all duration-300 flex items-center justify-center gap-2"
               >
-                <div className={benefit.color}>{benefit.icon}</div>
-                <span className="text-zion-slate-light text-sm font-medium">{benefit.text}</span>
-              </motion.div>
-            ))}
-          </motion.div>
-
-          {/* Newsletter form */}
-          <motion.div 
-            className="max-w-md mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
-            {/* <EnhancedNewsletterForm /> */}
-          </motion.div>
-
-          {/* Trust indicators */}
-          <motion.div 
-            className="mt-12 pt-8 border-t border-zion-purple/20"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: 1 }}
-          >
-            <p className="text-zion-slate-light text-sm mb-4">
-              Join 50,000+ professionals who trust Zion for their tech insights
-            </p>
-            <div className="flex justify-center items-center gap-6 opacity-60">
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                <span className="text-green-400 text-xs">No spam, ever</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 bg-zion-cyan rounded-full animate-pulse"></div>
-                <span className="text-zion-cyan text-xs">Unsubscribe anytime</span>
-              </div>
+                <Send className="w-4 h-4" />
+                Subscribe
+              </button>
             </div>
-          </motion.div>
-        </motion.div>
+          </form>
+          
+          {isSubscribed && (
+            <div className="text-zion-cyan text-center mb-6">
+              Thank you for subscribing! Welcome to the Zion Tech community.
+            </div>
+          )}
+          
+          {/* Features */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+            {features.map((feature, index) => (
+              <div key={index} className="text-center">
+                <div className="w-12 h-12 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-xl flex items-center justify-center mx-auto mb-3">
+                  <div className="text-white">
+                    {feature.icon}
+                  </div>
+                </div>
+                <h4 className="text-white font-semibold mb-2">{feature.title}</h4>
+                <p className="text-zion-slate-light text-sm">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+          
+          <p className="text-xs text-zion-slate-light mt-8">
+            We respect your privacy. Unsubscribe at any time. No spam, ever.
+          </p>
+        </div>
       </div>
     </section>
   );
