@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import { Sidebar } from './components/Sidebar';
+import Sidebar from './components/Sidebar';
 import { AccessibilityControls } from './components/AccessibilityControls';
 import { PerformanceDashboard } from './components/PerformanceDashboard';
 import { AnalyticsDashboard } from './components/AnalyticsDashboard';
@@ -17,6 +17,7 @@ import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
 import { ErrorBoundary } from './components/ErrorBoundary';
+import { InnovativeServicesShowcase } from './components/InnovativeServicesShowcase';
 
 // Enhanced lazy loading with preloading hints
 const Home = lazy(() => import('./pages/Home'));
@@ -25,7 +26,6 @@ const Services = lazy(() => import('./pages/Services'));
 const AISolutions = lazy(() => import('./pages/AISolutions'));
 const ServicesShowcase = lazy(() => import('./pages/ServicesShowcase'));
 const EnhancedServicesShowcase = lazy(() => import('./pages/EnhancedServicesShowcase'));
-const InnovativeServicesShowcase = lazy(() => import('./components/InnovativeServicesShowcase'));
 const AIMatcherPage = lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = lazy(() => import('./pages/TalentDirectory'));
 const TalentsPage = lazy(() => import('./pages/TalentsPage'));
@@ -74,7 +74,7 @@ const App = () => {
           <Router>
             <div className="App min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
               <Header />
-              <Sidebar />
+              <Sidebar isOpen={false} onClose={() => {}} />
               
               {/* Main Content with enhanced Suspense */}
               <main className="ml-64 pt-20 min-h-screen">
@@ -87,7 +87,6 @@ const App = () => {
                     <Route path="/services-showcase" element={<ServicesShowcase />} />
                     {/* Temporarily disabled due to typing issues */}
                     {/* <Route path="/enhanced-services" element={<EnhancedServicesShowcase />} /> */}
-                    <Route path="/innovative-services" element={<InnovativeServicesShowcase />} />
                     <Route path="/match" element={<AIMatcherPage />} />
                     <Route path="/talent" element={<TalentDirectory />} />
                     <Route path="/talents" element={<TalentsPage />} />
@@ -108,6 +107,9 @@ const App = () => {
                     <Route path="/services/it-infrastructure" element={<ITInfrastructure />} />
                     <Route path="/services/micro-saas-solutions" element={<MicroSAASSolutions />} />
                     <Route path="/services/industry-solutions" element={<IndustrySolutions />} />
+                    
+                    {/* New innovative services routes */}
+                    <Route path="/innovative-services" element={<InnovativeServicesShowcase />} />
                     
                     {/* New enhanced page routes */}
                     <Route path="/white-papers" element={<WhitePapers />} />
