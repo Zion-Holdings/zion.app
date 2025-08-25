@@ -1,18 +1,13 @@
 
-import React from 'react';
-import { SEO } from "@/components/SEO";
-import { ServicesShowcase } from '../components/ServicesShowcase';
-import { EnhancedServicesShowcase } from '../components/EnhancedServicesShowcase';
-import { AdvancedServicesShowcase } from '../components/AdvancedServicesShowcase';
+import React, { useEffect, useRef } from 'react';
+import { ServicesShowcase } from "@/components/ServicesShowcase";
+import { motion, useInView } from 'framer-motion';
+import { ArrowRight, Sparkles, Globe, Zap, Phone, Mail, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
   return (
     <div className="min-h-screen relative">
-      <SEO 
-        title="Zion Tech Group - Transform Your Business With AI & Tech"
-        description="Discover cutting-edge AI services, Micro SAAS solutions, and comprehensive IT services designed to propel your business into the future."
-        url="https://ziontechgroup.com"
-      />
       
       {/* Futuristic Background Elements */}
       <div className="quantum-particles">
@@ -112,14 +107,8 @@ export default function Home() {
         <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-green-400 rounded-full animate-ping animation-delay-1000"></div>
       </section>
 
-      {/* Advanced Services Showcase */}
-      <AdvancedServicesShowcase />
-
-      {/* Original Services Showcase */}
+      {/* Services Showcase */}
       <ServicesShowcase />
-      
-      {/* Enhanced Services Showcase */}
-      <EnhancedServicesShowcase />
 
       {/* Enhanced Features Section */}
       <section className="py-20 px-4 relative overflow-hidden">

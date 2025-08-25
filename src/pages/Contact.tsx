@@ -12,6 +12,7 @@ export default function Contact() {
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -26,19 +27,25 @@ export default function Contact() {
     setIsSubmitting(true);
     
     // Simulate form submission
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      company: '',
-      service: '',
-      message: ''
-    });
-    
-    setIsSubmitting(false);
-    alert('Thank you for your message! We\'ll get back to you soon.');
+    try {
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      setSubmitStatus('success');
+      setFormData({ name: '', email: '', company: '', service: '', message: '' });
+      
+      // Show success toast
+      if (typeof window !== 'undefined' && (window as any).showToast) {
+        (window as any).showToast.success('Message Sent!', 'Thank you for contacting us. We\'ll get back to you soon.');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      
+      // Show error toast
+      if (typeof window !== 'undefined' && (window as any).showToast) {
+        (window as any).showToast.error('Error', 'Failed to send message. Please try again.');
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactMethods = [

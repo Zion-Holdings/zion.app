@@ -1,317 +1,198 @@
 
-import { Link, useLocation } from "react-router-dom";
-import { cn } from "@/lib/utils";
-<<<<<<< HEAD
-// useAuth hook removed - not available
-=======
-import { useAuth } from "@/hooks/useAuth";
->>>>>>> cursor/integrate-build-improve-and-re-verify-a776
-import { MessageSquare, ChevronDown } from "lucide-react";
-import { useTranslation } from "react-i18next";
-import { useState } from "react";
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X, Search, User, ShoppingCart, Bell, Globe, Sparkles } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Badge } from '@/components/ui/badge';
 
-interface MainNavigationProps {
-  isAdmin?: boolean;
-  unreadCount?: number;
-  className?: string;
-}
-
-export function MainNavigation({ isAdmin = false, unreadCount = 0, className }: MainNavigationProps) {
-<<<<<<< HEAD
-  // Authentication removed - not available
-  const isAuthenticated = false;
-=======
-  const { user } = useAuth();
-  const isAuthenticated = !!user;
->>>>>>> cursor/integrate-build-improve-and-re-verify-a776
+export function MainNavigation() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
   const location = useLocation();
-  const { t } = useTranslation();
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
-  const baseLinks = [
-    {
-      key: 'home',
-      href: '/',
-<<<<<<< HEAD
-=======
-      name: 'Home',
->>>>>>> cursor/integrate-build-improve-and-re-verify-a776
-      matches: (path: string) => path === '/'
-    },
-    {
-      key: 'services',
-      href: '/services',
-<<<<<<< HEAD
-      matches: (path: string) => path.startsWith('/services'),
-      hasDropdown: true,
-      dropdownItems: [
-        { href: '/services/ai-autonomous-systems', label: 'AI & Autonomous Systems' },
-        { href: '/services/quantum-technology', label: 'Quantum Technology' },
-        { href: '/services/it-infrastructure', label: 'IT Infrastructure' },
-        { href: '/services/micro-saas-solutions', label: 'Micro SAAS Solutions' },
-        { href: '/services/cybersecurity', label: 'Cybersecurity' },
-        { href: '/services/industry-solutions', label: 'Industry Solutions' }
-      ]
-    },
-    {
-      key: 'solutions',
-      href: '/solutions',
-      matches: (path: string) => path.startsWith('/solutions'),
-      hasDropdown: true,
-      dropdownItems: [
-        { href: '/solutions/enterprise', label: 'Enterprise Solutions' },
-        { href: '/solutions/healthcare', label: 'Healthcare Solutions' },
-        { href: '/solutions/financial', label: 'Financial Solutions' },
-        { href: '/solutions/manufacturing', label: 'Manufacturing Solutions' },
-        { href: '/solutions/retail', label: 'Retail Solutions' },
-        { href: '/solutions/government', label: 'Government Solutions' }
-      ]
-=======
-      name: 'Services',
-      matches: (path: string) => path.startsWith('/services')
->>>>>>> cursor/integrate-build-improve-and-re-verify-a776
-    },
-    {
-      key: 'marketplace',
-      href: '/marketplace',
-<<<<<<< HEAD
-      matches: (path: string) => path.startsWith('/marketplace')
-=======
-      name: 'Marketplace',
-      matches: (path: string) => path.startsWith('/marketplace'),
-      dropdown: [
-        { href: '/marketplace', label: 'All Products' },
-        { href: '/categories', label: 'Categories' },
-        { href: '/equipment', label: 'Equipment' },
-        { href: '/green-it', label: 'Green IT' }
-      ]
->>>>>>> cursor/integrate-build-improve-and-re-verify-a776
-    },
-    {
-      key: 'talent',
-      href: '/talent',
-<<<<<<< HEAD
-      matches: (path: string) => path.startsWith('/talent') && !path.includes('/talent-dashboard')
-    },
-    {
-      key: 'equipment',
-      href: '/equipment',
-      matches: (path: string) => path.startsWith('/equipment')
-=======
-      name: 'Talent',
-      matches: (path: string) => path.startsWith('/talent') && !path.includes('/talent-dashboard'),
-      dropdown: [
-        { href: '/talent', label: 'Find Talent' },
-        { href: '/talent/apply', label: 'Apply as Talent' },
-        { href: '/zion-hire-ai', label: 'AI Hiring' }
-      ]
->>>>>>> cursor/integrate-build-improve-and-re-verify-a776
-    },
-    {
-      key: 'community',
-      href: '/community',
-<<<<<<< HEAD
-      matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum')
-=======
-      name: 'Community',
-      matches: (path: string) => path.startsWith('/community') || path.startsWith('/forum'),
-      dropdown: [
-        { href: '/community', label: 'Forums' },
-        { href: '/blog', label: 'Blog' },
-        { href: '/partners', label: 'Partners' }
-      ]
->>>>>>> cursor/integrate-build-improve-and-re-verify-a776
-    },
-    {
-      key: 'about',
-      href: '/about',
-<<<<<<< HEAD
-      matches: (path: string) => path.startsWith('/about') || path.startsWith('/mission') || path.startsWith('/team')
-    },
-    {
-      key: 'resources',
-      href: '/resources',
-      matches: (path: string) => path.startsWith('/blog') || path.startsWith('/docs') || path.startsWith('/webinars'),
-      hasDropdown: true,
-      dropdownItems: [
-        { href: '/blog', label: 'Blog & Articles' },
-        { href: '/docs', label: 'Documentation' },
-        { href: '/case-studies', label: 'Case Studies' },
-        { href: '/white-papers', label: 'White Papers' },
-        { href: '/webinars', label: 'Webinars' },
-        { href: '/training', label: 'Training' }
-      ]
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchQuery.trim()) {
+      // Navigate to search results
+      window.location.href = `/search?q=${encodeURIComponent(searchQuery.trim())}`;
     }
-  ];
-
-  let links = baseLinks.map(link => ({ ...link, name: t(`nav.${link.key}`) }));
-=======
-      name: 'About',
-      matches: (path: string) => path.startsWith('/about') || path === '/careers' || path === '/contact'
-    }
-  ];
-
-  let links = baseLinks;
->>>>>>> cursor/integrate-build-improve-and-re-verify-a776
-  
-  // Add authenticated-only links
-  if (isAuthenticated) {
-    links.push({
-      key: 'dashboard',
-<<<<<<< HEAD
-      name: t('nav.dashboard'),
-=======
-      name: 'Dashboard',
->>>>>>> cursor/integrate-build-improve-and-re-verify-a776
-      href: '/dashboard',
-      matches: (path: string) => path === '/dashboard' || path === '/client-dashboard' || path === '/talent-dashboard'
-    });
-  }
-  
-  // Add admin-only links
-  if (isAdmin) {
-    links.push({
-      key: 'analytics',
-<<<<<<< HEAD
-      name: t('nav.analytics'),
-=======
-      name: 'Analytics',
->>>>>>> cursor/integrate-build-improve-and-re-verify-a776
-      href: '/analytics',
-      matches: (path: string) => path.startsWith('/analytics')
-    });
-  }
-  
-<<<<<<< HEAD
-=======
-  const handleDropdownToggle = (key: string) => {
-    setActiveDropdown(activeDropdown === key ? null : key);
   };
 
-  const handleDropdownClose = () => {
-    setActiveDropdown(null);
-  };
-  
->>>>>>> cursor/integrate-build-improve-and-re-verify-a776
+  const navigationItems = [
+    { name: 'Home', href: '/' },
+    { name: 'Marketplace', href: '/marketplace' },
+    { name: 'Services', href: '/services' },
+    { name: 'Talent', href: '/talent' },
+    { name: 'Equipment', href: '/equipment' },
+    { name: 'About', href: '/about' },
+    { name: 'Contact', href: '/contact' },
+  ];
+
   return (
-    <nav className={cn("navbar ml-6 hidden md:flex", className)}>
-      <ul className="flex items-center gap-1">
-        {links.map((link) => (
-<<<<<<< HEAD
-          <li key={link.name} className="relative">
-            {link.hasDropdown ? (
-              <div
-                className="relative"
-                onMouseEnter={() => setActiveDropdown(link.key)}
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
-                <button
-=======
-          <li key={link.key} className="relative" onMouseLeave={handleDropdownClose}>
-            {link.dropdown ? (
-              <div className="relative">
-                <button
-                  onClick={() => handleDropdownToggle(link.key)}
-                  onMouseEnter={() => setActiveDropdown(link.key)}
->>>>>>> cursor/integrate-build-improve-and-re-verify-a776
-                  className={cn(
-                    "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors",
-                    link.matches(location.pathname)
-                      ? "bg-zion-purple/20 text-zion-cyan"
-                      : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
-                  )}
-                >
-                  {link.name}
-<<<<<<< HEAD
-                  <ChevronDown className="ml-1 h-3 w-3" />
-                </button>
-                
-                {activeDropdown === link.key && (
-                  <div className="absolute top-full left-0 mt-1 w-64 bg-zion-blue-dark border border-zion-purple/20 rounded-lg shadow-lg z-50">
-                    <div className="py-2">
-                      {link.dropdownItems?.map((item) => (
-                        <Link
-                          key={item.href}
-                          to={item.href}
-                          className="block px-4 py-2 text-sm text-zion-slate-light hover:text-zion-cyan hover:bg-zion-purple/10 transition-colors"
-=======
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </button>
-                
-                {activeDropdown === link.key && (
-                  <div className="absolute top-full left-0 mt-1 w-48 bg-zion-blue-dark border border-zion-purple/20 rounded-md shadow-lg z-50">
-                    <div className="py-2">
-                      {link.dropdown.map((item) => (
-                        <Link
-                          key={item.href}
-                          to={item.href}
-                          className="block px-4 py-2 text-sm text-white hover:bg-zion-purple/10 hover:text-zion-cyan transition-colors"
-                          onClick={handleDropdownClose}
->>>>>>> cursor/integrate-build-improve-and-re-verify-a776
-                        >
-                          {item.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-            ) : (
-              <Link
-                to={link.href}
-                className={cn(
-                  "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors",
-                  link.matches(location.pathname)
-                    ? "bg-zion-purple/20 text-zion-cyan"
-                    : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
-                )}
-              >
-                {link.name}
-              </Link>
-            )}
-          </li>
-        ))}
-        
-        {/* Messages link with unread counter */}
-        {isAuthenticated && (
-          <li>
-            <Link
-              to="/messages"
-              className={cn(
-                "inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium transition-colors relative",
-                location.pathname === "/messages" || location.pathname === "/inbox"
-                  ? "bg-zion-purple/20 text-zion-cyan"
-                  : "text-white hover:bg-zion-purple/10 hover:text-zion-cyan"
-              )}
-            >
-              <MessageSquare className="w-4 h-4 mr-1" />
-<<<<<<< HEAD
-              {t('nav.messages')}
-=======
-              Messages
->>>>>>> cursor/integrate-build-improve-and-re-verify-a776
-              {unreadCount > 0 && (
-                <span className="absolute -top-1 -right-1 bg-zion-purple text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  {unreadCount}
-                </span>
-              )}
-            </Link>
-          </li>
-        )}
-<<<<<<< HEAD
-=======
-
-        {/* Request Quote CTA */}
-        <li>
-          <Link
-            to="/request-quote"
-            className="inline-flex h-9 items-center justify-center rounded-md px-4 text-sm font-medium bg-zion-purple hover:bg-zion-purple/80 text-white transition-colors"
-          >
-            Get Quote
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      isScrolled 
+        ? 'bg-zion-blue-dark/95 backdrop-blur-md shadow-lg border-b border-zion-blue-light/20' 
+        : 'bg-transparent'
+    }`}>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          {/* Logo */}
+          <Link to="/" className="flex items-center space-x-2">
+            <div className="w-8 h-8 bg-gradient-to-br from-zion-cyan to-zion-purple rounded-lg flex items-center justify-center">
+              <Sparkles className="w-5 h-5 text-white" />
+            </div>
+            <span className="text-xl font-bold bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
+              Zion Tech
+            </span>
           </Link>
-        </li>
->>>>>>> cursor/integrate-build-improve-and-re-verify-a776
-      </ul>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            {navigationItems.map((item) => (
+              <Link
+                key={item.name}
+                to={item.href}
+                className={`text-sm font-medium transition-colors ${
+                  location.pathname === item.href
+                    ? 'text-zion-cyan'
+                    : 'text-zion-slate-light hover:text-zion-cyan'
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Search Bar */}
+          <div className="hidden lg:flex items-center flex-1 max-w-md mx-8">
+            <form onSubmit={handleSearch} className="relative w-full">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate-light w-4 h-4" />
+              <Input
+                type="text"
+                placeholder="Search for services, talent, or equipment..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="pl-10 pr-4 py-2 bg-zion-blue-light/10 border-zion-blue-light/20 text-white placeholder-zion-slate-light focus:border-zion-cyan focus:ring-zion-cyan/20"
+              />
+            </form>
+          </div>
+
+          {/* Right Side Actions */}
+          <div className="hidden md:flex items-center space-x-4">
+            <Button variant="ghost" size="sm" className="text-zion-slate-light hover:text-zion-cyan">
+              <Globe className="w-4 h-4 mr-2" />
+              EN
+            </Button>
+            
+            <Button variant="ghost" size="sm" className="text-zion-slate-light hover:text-zion-cyan">
+              <Bell className="w-4 h-4 mr-2" />
+              <Badge variant="secondary" className="ml-1">3</Badge>
+            </Button>
+            
+            <Button variant="ghost" size="sm" className="text-zion-slate-light hover:text-zion-cyan">
+              <ShoppingCart className="w-4 h-4 mr-2" />
+              <Badge variant="secondary" className="ml-1">2</Badge>
+            </Button>
+            
+            <Button variant="ghost" size="sm" className="text-zion-slate-light hover:text-zion-cyan">
+              <User className="w-4 h-4 mr-2" />
+              Sign In
+            </Button>
+          </div>
+
+          {/* Mobile menu button */}
+          <div className="md:hidden">
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-zion-slate-light hover:text-zion-cyan"
+            >
+              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Navigation */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-zion-blue-dark/95 backdrop-blur-md border-t border-zion-blue-light/20"
+          >
+            <div className="px-4 py-6 space-y-4">
+              {/* Mobile Search */}
+              <form onSubmit={handleSearch} className="relative">
+                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-zion-slate-light w-4 h-4" />
+                <Input
+                  type="text"
+                  placeholder="Search..."
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  className="pl-10 pr-4 py-2 bg-zion-blue-light/10 border-zion-blue-light/20 text-white placeholder-zion-slate-light"
+                />
+              </form>
+
+              {/* Mobile Navigation Items */}
+              <div className="space-y-2">
+                {navigationItems.map((item) => (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                      location.pathname === item.href
+                        ? 'text-zion-cyan bg-zion-blue-light/10'
+                        : 'text-zion-slate-light hover:text-zion-cyan hover:bg-zion-blue-light/10'
+                    }`}
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ))}
+              </div>
+
+              {/* Mobile Actions */}
+              <div className="pt-4 border-t border-zion-blue-light/20 space-y-2">
+                <Button variant="ghost" className="w-full justify-start text-zion-slate-light hover:text-zion-cyan">
+                  <Globe className="w-4 h-4 mr-2" />
+                  Language
+                </Button>
+                <Button variant="ghost" className="w-full justify-start text-zion-slate-light hover:text-zion-cyan">
+                  <Bell className="w-4 h-4 mr-2" />
+                  Notifications
+                </Button>
+                <Button variant="ghost" className="w-full justify-start text-zion-slate-light hover:text-zion-cyan">
+                  <ShoppingCart className="w-4 h-4 mr-2" />
+                  Cart
+                </Button>
+                <Button variant="ghost" className="w-full justify-start text-zion-slate-light hover:text-zion-cyan">
+                  <User className="w-4 h-4 mr-2" />
+                  Sign In
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 }
