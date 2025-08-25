@@ -14,8 +14,9 @@ const Footer = () => {
         { name: 'AI & Machine Learning', path: '/ai-services' },
         { name: 'Enterprise Solutions', path: '/enterprise-solutions' },
         { name: 'Advanced Services', path: '/advanced-services' },
-        { name: 'Emerging Tech', path: '/emerging-tech-services' },
-        { name: 'Industry Solutions', path: '/industry-solutions' }
+                              { name: 'Emerging Tech', path: '/emerging-tech-services' },
+                      { name: 'Industry Solutions', path: '/industry-solutions' },
+                      { name: 'AI Business Solutions', path: '/ai-business-solutions' }
       ]
     },
     {

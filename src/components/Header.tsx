@@ -41,12 +41,15 @@ export const Header: React.FC = () => {
                   <Link to="/advanced-services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
                     Advanced Services
                   </Link>
-                  <Link to="/emerging-tech-services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                    Emerging Tech Services
-                  </Link>
-                  <Link to="/industry-solutions" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
-                    Industry Solutions
-                  </Link>
+                              <Link to="/emerging-tech-services" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+              Emerging Tech Services
+            </Link>
+            <Link to="/industry-solutions" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+              Industry Solutions
+            </Link>
+            <Link to="/ai-business-solutions" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+              AI Business Solutions
+            </Link>
                 </div>
               </div>
             </div>

@@ -50,6 +50,7 @@ const ServiceDetailPage = React.lazy(() => import('./pages/ServiceDetailPage'));
 const EmergingTechServices = React.lazy(() => import('./pages/EmergingTechServices'));
 const IndustrySolutions = React.lazy(() => import('./pages/IndustrySolutions'));
 const MicroSaasServices = React.lazy(() => import('./pages/MicroSaasServices'));
+const AIBusinessSolutions = React.lazy(() => import('./pages/AIBusinessSolutions'));
 
 
 const baseRoutes = [
@@ -78,9 +79,10 @@ const baseRoutes = [
   { path: '/request-quote', element: <RequestQuotePage /> },
   { path: '/advanced-services', element: <AdvancedServicesPage /> },
   { path: '/services/:serviceId', element: <ServiceDetailPage /> },
-  { path: '/emerging-tech-services', element: <EmergingTechServices /> },
-  { path: '/industry-solutions', element: <IndustrySolutions /> },
-  { path: '/micro-saas', element: <MicroSaasServices /> },
+                { path: '/emerging-tech-services', element: <EmergingTechServices /> },
+              { path: '/industry-solutions', element: <IndustrySolutions /> },
+              { path: '/micro-saas', element: <MicroSaasServices /> },
+              { path: '/ai-business-solutions', element: <AIBusinessSolutions /> },
 
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
