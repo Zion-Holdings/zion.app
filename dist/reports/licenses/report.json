@@ -1,0 +1,336 @@
+{
+  "generatedAt": "2025-08-11T23:57:27.219Z",
+  "total": 55,
+  "results": [
+    {
+      "name": "@modelcontextprotocol/server-memory",
+      "version": "^2025.8.4",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "@magneticwatermelon/mcp-toolkit",
+      "version": "^1.1.4",
+      "license": "unknown",
+      "risk": "low"
+    },
+    {
+      "name": "@google/generative-ai",
+      "version": "^0.24.1",
+      "license": "Apache-2.0",
+      "risk": "low"
+    },
+    {
+      "name": "@modelcontextprotocol/sdk",
+      "version": "^1.17.1",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "@modelcontextprotocol/server-filesystem",
+      "version": "^2025.7.29",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "autoprefixer",
+      "version": "^10.4.16",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "axios",
+      "version": "^1.11.0",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "chalk",
+      "version": "^5.5.0",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "@modelcontextprotocol/server-sequential-thinking",
+      "version": "^2025.7.1",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "@supabase/ssr",
+      "version": "^0.6.1",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "cheerio",
+      "version": "^1.1.2",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "chokidar",
+      "version": "^4.0.3",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "@supabase/supabase-js",
+      "version": "^2.39.0",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "@types/react-datepicker",
+      "version": "^6.2.0",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "child_process",
+      "version": "^1.0.2",
+      "license": "ISC",
+      "risk": "low"
+    },
+    {
+      "name": "framer-motion",
+      "version": "^6.5.1",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "events",
+      "version": "^3.3.0",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "cron-parser",
+      "version": "^5.3.0",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "glob",
+      "version": "^11.0.3",
+      "license": "ISC",
+      "risk": "low"
+    },
+    {
+      "name": "https",
+      "version": "^1.0.0",
+      "license": "ISC",
+      "risk": "low"
+    },
+    {
+      "name": "fs",
+      "version": "^0.0.1-security",
+      "license": "ISC",
+      "risk": "low"
+    },
+    {
+      "name": "fs-extra",
+      "version": "^11.3.1",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "lucide-react",
+      "version": "^0.536.0",
+      "license": "ISC",
+      "risk": "low"
+    },
+    {
+      "name": "import-fresh",
+      "version": "^3.3.1",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "next",
+      "version": "^11.1.4",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "node-cron",
+      "version": "^4.2.1",
+      "license": "ISC",
+      "risk": "low"
+    },
+    {
+      "name": "path",
+      "version": "^0.12.7",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "openai",
+      "version": "^5.11.0",
+      "license": "Apache-2.0",
+      "risk": "low"
+    },
+    {
+      "name": "react",
+      "version": "^17.0.2",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "postcss",
+      "version": "^8.4.32",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "react-dom",
+      "version": "^17.0.2",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "@google-analytics/data",
+      "version": "^5.2.0",
+      "license": "Apache-2.0",
+      "risk": "low"
+    },
+    {
+      "name": "react-datepicker",
+      "version": "^8.4.0",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "uuid",
+      "version": "^11.1.0",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "@commitlint/cli",
+      "version": "^19.8.1",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "@eslint/js",
+      "version": "^9.32.0",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "@testing-library/jest-dom",
+      "version": "^6.6.4",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "@testing-library/react",
+      "version": "12.1.5",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "@commitlint/config-conventional",
+      "version": "^19.8.1",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "@types/node-cron",
+      "version": "^3.0.11",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "eslint",
+      "version": "^8.57.0",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "eslint-config-next",
+      "version": "^14.0.0",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "@types/react-dom",
+      "version": "17.0.11",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "@types/node",
+      "version": "^24.2.0",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "eslint-plugin-react-hooks",
+      "version": "^5.2.0",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "@types/react",
+      "version": "17.0.34",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "eslint-plugin-react-refresh",
+      "version": "^0.4.20",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "lint-staged",
+      "version": "^16.1.5",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "sharp",
+      "version": "^0.33.4",
+      "license": "Apache-2.0",
+      "risk": "low"
+    },
+    {
+      "name": "tailwindcss",
+      "version": "^3.4.0",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "ts-node",
+      "version": "^10.9.2",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "typescript",
+      "version": "^5.6.3",
+      "license": "Apache-2.0",
+      "risk": "low"
+    },
+    {
+      "name": "@typescript-eslint/parser",
+      "version": "^8.39.0",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "husky",
+      "version": "^9.1.7",
+      "license": "MIT",
+      "risk": "low"
+    },
+    {
+      "name": "@typescript-eslint/eslint-plugin",
+      "version": "^8.39.0",
+      "license": "MIT",
+      "risk": "low"
+    }
+  ]
+}
