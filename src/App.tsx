@@ -32,6 +32,13 @@ const AIServices = lazy(() => import('./pages/AIServices'));
 const CloudDevOps = lazy(() => import('./pages/CloudDevOps'));
 const EnterpriseSolutionsPage = lazy(() => import('./pages/EnterpriseSolutions'));
 const DigitalTransformation = lazy(() => import('./pages/DigitalTransformation'));
+// AI Autonomous Business Manager pages
+const AIAutonomousBusinessManager = lazy(() => import('./pages/AIAutonomousBusinessManager'));
+const AIAutonomousBusinessManager2029 = lazy(() => import('./pages/AIAutonomousBusinessManager2029'));
+// Quantum Technology pages
+const QuantumNeuralNetworkPlatform = lazy(() => import('./pages/QuantumNeuralNetworkPlatform'));
+// Operations Platform pages
+const AutonomousBusinessOperationsPlatform = lazy(() => import('./pages/AutonomousBusinessOperationsPlatform'));
 
 // Our enhanced service pages
 const About = lazy(() => import('./pages/About'));
@@ -101,6 +108,16 @@ const App = () => {
                     <Route path="/cloud-devops" element={<CloudDevOps />} />
                     <Route path="/enterprise-solutions" element={<EnterpriseSolutionsPage />} />
                     <Route path="/digital-transformation" element={<DigitalTransformation />} />
+                    
+                    {/* AI Autonomous Business Manager routes */}
+                    <Route path="/ai-autonomous-business-manager" element={<AIAutonomousBusinessManager />} />
+                    <Route path="/ai-autonomous-business-manager-2029" element={<AIAutonomousBusinessManager2029 />} />
+                    
+                    {/* Quantum Technology routes */}
+                    <Route path="/quantum-neural-network-platform" element={<QuantumNeuralNetworkPlatform />} />
+                    
+                    {/* Operations Platform routes */}
+                    <Route path="/autonomous-business-operations-platform" element={<AutonomousBusinessOperationsPlatform />} />
                     
                     {/* Our enhanced service routes */}
                     <Route path="/about" element={<About />} />

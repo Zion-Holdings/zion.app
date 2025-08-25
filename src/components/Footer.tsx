@@ -8,6 +8,10 @@ export function Footer() {
       title: "AI & Micro SAAS",
       links: [
         { label: "AI & Autonomous Systems", path: "/services/ai-autonomous-systems" },
+        { label: "AI Business Manager", path: "/ai-autonomous-business-manager" },
+        { label: "AI Business Manager 2029", path: "/ai-autonomous-business-manager-2029" },
+        { label: "Quantum Neural Network Platform", path: "/quantum-neural-network-platform" },
+        { label: "Autonomous Business Operations Platform", path: "/autonomous-business-operations-platform" },
         { label: "Quantum Technology", path: "/services/quantum-technology" },
         { label: "IT Infrastructure", path: "/services/it-infrastructure" },
         { label: "Micro SAAS Solutions", path: "/services/micro-saas-solutions" },
@@ -78,7 +82,7 @@ export function Footer() {
   ];
 
   const socialLinks = [
-    { name: 'LinkedIn', url: 'https://www.linkedin.com/company/zion-tech-group', icon: '💼' },
+    { name: 'LinkedIn', url: 'https://www.linkedin.com/company/ziontechgroup', icon: '💼' },
     { name: 'Twitter', url: 'https://twitter.com/ziontechgroup', icon: '🐦' },
     { name: 'Facebook', url: 'https://www.facebook.com/ziontechgroup', icon: '📘' },
     { name: 'Instagram', url: 'https://www.instagram.com/ziontechgroup', icon: '📷' },

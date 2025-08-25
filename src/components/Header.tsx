@@ -31,6 +31,24 @@ export function Header() {
       description: 'Explore our AI service offerings'
     },
     { 
+      path: '/ai-autonomous-business-manager', 
+      label: 'AI Business Manager', 
+      icon: '🧠',
+      description: 'AI Autonomous Business Management'
+    },
+    { 
+      path: '/quantum-neural-network-platform', 
+      label: 'Quantum AI', 
+      icon: '⚛️',
+      description: 'Quantum Neural Network Platform'
+    },
+    { 
+      path: '/autonomous-business-operations-platform', 
+      label: 'Operations Platform', 
+      icon: '⚙️',
+      description: 'Autonomous Business Operations'
+    },
+    { 
       path: '/solutions/enterprise', 
       label: 'Solutions', 
       icon: '💼',
@@ -47,18 +65,6 @@ export function Header() {
       label: 'About', 
       icon: 'ℹ️',
       description: 'Learn about our company'
-    },
-    { 
-      path: '/careers', 
-      label: 'Careers', 
-      icon: '🚀',
-      description: 'Join our team'
-    },
-    { 
-      path: '/blog', 
-      label: 'Blog', 
-      icon: '📝',
-      description: 'Latest insights and news'
     },
     { 
       path: '/contact', 
