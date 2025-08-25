@@ -52,6 +52,8 @@ const IndustrySolutions = React.lazy(() => import('./pages/IndustrySolutions'));
 const MicroSaasServices = React.lazy(() => import('./pages/MicroSaasServices'));
 const AIBusinessSolutions = React.lazy(() => import('./pages/AIBusinessSolutions'));
 const MicroSaasServicesPage = React.lazy(() => import('./pages/MicroSaasServicesPage'));
+const CloudDevOpsSolutions = React.lazy(() => import('./pages/CloudDevOpsSolutions'));
+const DigitalTransformation = React.lazy(() => import('./pages/DigitalTransformation'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -84,6 +86,8 @@ const baseRoutes = [
   { path: '/micro-saas', element: <MicroSaasServices /> },
   { path: '/ai-business-solutions', element: <AIBusinessSolutions /> },
   { path: '/micro-saas-services-page', element: <MicroSaasServicesPage /> },
+  { path: '/cloud-devops-solutions', element: <CloudDevOpsSolutions /> },
+  { path: '/digital-transformation', element: <DigitalTransformation /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
 ];

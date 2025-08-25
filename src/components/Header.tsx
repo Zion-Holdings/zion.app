@@ -50,6 +50,12 @@ export const Header: React.FC = () => {
             <Link to="/ai-business-solutions" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
               AI Business Solutions
             </Link>
+            <Link to="/cloud-devops-solutions" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+              Cloud & DevOps Solutions
+            </Link>
+            <Link to="/digital-transformation" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+              Digital Transformation
+            </Link>
                 </div>
               </div>
             </div>
