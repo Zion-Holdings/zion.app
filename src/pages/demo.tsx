@@ -21,6 +21,7 @@ import { AIChatAssistant } from '../components/ui/ai-chat-assistant';
 import { InteractiveTimeline } from '../components/ui/interactive-timeline';
 import { Card3DGallery } from '../components/ui/3d-card-gallery';
 import { PerformanceMonitor } from '../components/ui/performance-monitor';
+import AccessibilityPanel from '../components/ui/accessibility-panel';
 
 // Mock data for the timeline
 const mockTimelineEvents = [
@@ -364,6 +365,12 @@ export default function DemoPage() {
           autoRefresh={true}
           refreshInterval={2000}
           onAlert={(_metric, _value, _threshold) => {/* Alert logged for demonstration */}}
+        />
+        
+        {/* Accessibility Panel */}
+        <AccessibilityPanel 
+          enabled={true}
+          onSettingsChange={(_settings) => {/* Settings changed logged for demonstration */}}
         />
         <AnimatePresence mode="wait">
           {activeTab === 'overview' && (
