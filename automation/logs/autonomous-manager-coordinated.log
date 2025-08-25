@@ -13,3 +13,33 @@
 [2025-08-25T15:02:02.167Z] Shutting down Autonomous System Manager gracefully...
 [2025-08-25T15:02:02.167Z] Stopping all services...
 [2025-08-25T15:02:02.168Z] Stopped 0 services
+[2025-08-25T15:02:07.581Z] Starting Autonomous System Manager
+[2025-08-25T15:02:07.601Z] Starting all enabled services...
+[2025-08-25T15:02:07.602Z] Starting service: autonomous-system-manager
+[2025-08-25T15:02:07.602Z] Error starting autonomous-system-manager: Cannot access 'process' before initialization
+[2025-08-25T15:02:08.610Z] Starting service: ml-link-intelligence
+[2025-08-25T15:02:08.612Z] Error starting ml-link-intelligence: Cannot access 'process' before initialization
+[2025-08-25T15:02:09.618Z] Starting service: link-health-scheduler
+[2025-08-25T15:02:09.618Z] Error starting link-health-scheduler: Cannot access 'process' before initialization
+[2025-08-25T15:02:10.619Z] Starting service: real-time-performance-monitor
+[2025-08-25T15:02:10.619Z] Error starting real-time-performance-monitor: Cannot access 'process' before initialization
+[2025-08-25T15:02:11.619Z] Started 0/4 services successfully
+[2025-08-25T15:02:11.620Z] Autonomous System Manager is now running
+[2025-08-25T15:02:34.632Z] Shutting down Autonomous System Manager gracefully...
+[2025-08-25T15:02:34.632Z] Stopping all services...
+[2025-08-25T15:02:34.635Z] Stopped 0 services
+[2025-08-25T15:02:39.884Z] Starting Autonomous System Manager
+[2025-08-25T15:02:39.891Z] Starting all enabled services...
+[2025-08-25T15:02:39.893Z] Starting service: autonomous-system-manager
+[2025-08-25T15:02:39.893Z] Error starting autonomous-system-manager: Cannot access 'process' before initialization
+[2025-08-25T15:02:40.895Z] Starting service: ml-link-intelligence
+[2025-08-25T15:02:40.895Z] Error starting ml-link-intelligence: Cannot access 'process' before initialization
+[2025-08-25T15:02:41.933Z] Starting service: link-health-scheduler
+[2025-08-25T15:02:41.933Z] Error starting link-health-scheduler: Cannot access 'process' before initialization
+[2025-08-25T15:02:42.980Z] Starting service: real-time-performance-monitor
+[2025-08-25T15:02:42.981Z] Error starting real-time-performance-monitor: Cannot access 'process' before initialization
+[2025-08-25T15:02:43.983Z] Started 0/4 services successfully
+[2025-08-25T15:02:43.984Z] Autonomous System Manager is now running
+[2025-08-25T15:04:03.372Z] Shutting down Autonomous System Manager gracefully...
+[2025-08-25T15:04:03.374Z] Stopping all services...
+[2025-08-25T15:04:03.375Z] Stopped 0 services

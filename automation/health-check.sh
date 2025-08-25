@@ -82,7 +82,7 @@ log "  Link Health Scheduler: $LINK_COUNT"
 log "  Performance Monitor: $PERFORMANCE_COUNT"
 
 # Check for zombie processes
-ZOMBIE_COUNT=$(ps aux | grep -c "Z" || echo "0")
+ZOMBIE_COUNT=$(ps aux | grep -c "Z" 2>/dev/null || echo "0")
 if [ "$ZOMBIE_COUNT" -gt 0 ]; then
     log "WARNING: $ZOMBIE_COUNT zombie processes detected!"
 fi

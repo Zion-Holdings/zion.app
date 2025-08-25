@@ -2,25 +2,9 @@
   {
     "level": "critical",
     "category": "memory",
-    "message": "Memory usage critical: 95.29%",
-    "value": 95.2918291091919,
+    "message": "Memory usage critical: 97.22%",
+    "value": 97.2213864326477,
     "threshold": 95,
-    "timestamp": "2025-08-25T15:00:51.751Z"
-  },
-  {
-    "level": "critical",
-    "category": "memory",
-    "message": "Memory usage critical: 96.27%",
-    "value": 96.27417325973511,
-    "threshold": 95,
-    "timestamp": "2025-08-25T15:01:21.752Z"
-  },
-  {
-    "level": "warning",
-    "category": "memory",
-    "message": "Memory usage warning: 93.36%",
-    "value": 93.36447715759277,
-    "threshold": 80,
-    "timestamp": "2025-08-25T15:01:51.753Z"
+    "timestamp": "2025-08-25T15:04:02.444Z"
   }
 ]

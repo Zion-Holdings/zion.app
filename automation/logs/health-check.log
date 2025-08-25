@@ -237,3 +237,84 @@
 [2025-08-25 12:01:51] WARNING: Log file automation/logs/sitemap-keeper.log is stale (age: 4770s)
 [2025-08-25 12:01:51] Health report saved to automation/data/health-report.json
 [2025-08-25 12:01:51] Health check process completed
+[2025-08-25 12:02:17] Starting health check process...
+[2025-08-25 12:02:17] Checking system resources...
+[2025-08-25 12:02:24] CPU usage: 46.12%
+[2025-08-25 12:02:24] Memory usage: 98.00%
+[2025-08-25 12:02:24] Disk usage: 8%
+[2025-08-25 12:02:24] Checking automation services health...
+🔍 Checking Zion Automation Systems Status...
+
+🟢 Online autonomous-system-manager
+   Last Activity: 12s ago
+
+🟢 Online ml-link-intelligence
+   Last Activity: 0s ago
+
+🟢 Online link-health-scheduler
+   Last Activity: 1s ago
+
+🟢 Online real-time-performance-monitor
+   Last Activity: 7s ago
+
+📊 Log Files: 34 found
+   HEALTH.runtime.log: 0.86 KB
+   SYSTEM.runtime.log: 5.30 KB
+   ai-trends-cron.log: 0.13 KB
+   ai-trends-research.log: 0.25 KB
+   autonomous-manager-coordinated.log: 2.10 KB
+   autonomous-system-manager.log: 2.27 KB
+   autonomous-system-manager.runtime.log: 33.06 KB
+   build.log: 4.47 KB
+   code-quality.log: 1.02 KB
+   continuous-improvement.log: 0.21 KB
+   cron.log: 0.32 KB
+   dependency.log: 5.22 KB
+   enhanced-autonomous-coordinated.log: 12.95 KB
+   error-recovery.log: 3.57 KB
+   git-pull-rebase.log: 0.27 KB
+   git-status.log: 1.11 KB
+   git-sync.log: 6.85 KB
+   health-check.log: 8.72 KB
+   health.log: 1.46 KB
+   infinite-improvement.log: 2.36 KB
+   link-health-scheduler-coordinated.log: 1.49 KB
+   link-health-scheduler.log: 0.12 KB
+   link-health-scheduler.runtime.log: 12.93 KB
+   master-coordinator.log: 1.11 KB
+   ml-link-intelligence-coordinated.log: 2.11 KB
+   ml-link-intelligence.log: 0.30 KB
+   ml-link-intelligence.runtime.log: 19.83 KB
+   performance-monitor-coordinated.log: 0.98 KB
+   real-time-performance-monitor.log: 1.36 KB
+   real-time-performance-monitor.runtime.log: 29.00 KB
+   run-automation.log: 4.41 KB
+   security.log: 2.54 KB
+   sitemap-keeper.log: 1.15 KB
+   test.log: 7580.39 KB
+
+💾 Data Files: 9 found
+   ai-trends.json: 2.23 KB
+   analyzed-links.json: 2.18 KB
+   autonomous-config.json: 1.36 KB
+   autonomous-state.json: 0.34 KB
+   health-report.json: 0.37 KB
+   link-schedule.json: 0.45 KB
+   performance-alerts.json: 0.60 KB
+   performance-metrics.json: 7.95 KB
+   scheduled-links.json: 1.11 KB
+
+==================================================
+✅ All automation systems are healthy and running!
+==================================================
+[2025-08-25 12:02:24] Checking process counts...
+[2025-08-25 12:02:24] Process counts:
+[2025-08-25 12:02:24]   Autonomous System Manager:        4
+[2025-08-25 12:02:24]   ML Link Intelligence:        5
+[2025-08-25 12:02:25]   Link Health Scheduler:        4
+[2025-08-25 12:02:25]   Performance Monitor:        4
+[2025-08-25 12:02:25] WARNING: 20 zombie processes detected!
+[2025-08-25 12:02:25] Checking log file health...
+[2025-08-25 12:02:27] WARNING: Log file automation/logs/sitemap-keeper.log is stale (age: 4806s)
+[2025-08-25 12:02:27] Health report saved to automation/data/health-report.json
+[2025-08-25 12:02:27] Health check process completed

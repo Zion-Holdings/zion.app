@@ -6,3 +6,25 @@
 [2025-08-25T15:00:29.155Z] autonomous-manager started successfully
 [2025-08-25T15:02:02.292Z] autonomous-manager exited: code=0, signal=null
 [2025-08-25T15:02:02.294Z] Auto-restarting autonomous-manager (attempt 1)
+[2025-08-25T15:02:06.649Z] link-health-scheduler exited: code=0, signal=null
+[2025-08-25T15:02:06.649Z] Auto-restarting link-health-scheduler (attempt 1)
+[2025-08-25T15:02:10.430Z] autonomous-manager started successfully
+[2025-08-25T15:02:14.655Z] link-health-scheduler started successfully
+[2025-08-25T15:02:17.077Z] ml-link-intelligence exited: code=0, signal=null
+[2025-08-25T15:02:17.078Z] Auto-restarting ml-link-intelligence (attempt 1)
+[2025-08-25T15:02:21.766Z] performance-monitor exited: code=0, signal=null
+[2025-08-25T15:02:21.767Z] Auto-restarting performance-monitor (attempt 1)
+[2025-08-25T15:02:25.160Z] ml-link-intelligence started successfully
+[2025-08-25T15:02:29.895Z] performance-monitor started successfully
+[2025-08-25T15:02:34.755Z] autonomous-manager exited: code=0, signal=null
+[2025-08-25T15:02:34.756Z] Auto-restarting autonomous-manager (attempt 1)
+[2025-08-25T15:02:41.942Z] link-health-scheduler exited: code=0, signal=null
+[2025-08-25T15:02:41.943Z] Auto-restarting link-health-scheduler (attempt 1)
+[2025-08-25T15:02:42.832Z] autonomous-manager started successfully
+[2025-08-25T15:02:49.974Z] link-health-scheduler started successfully
+[2025-08-25T15:03:27.150Z] performance-monitor exited: code=0, signal=null
+[2025-08-25T15:03:27.151Z] Auto-restarting performance-monitor (attempt 1)
+[2025-08-25T15:03:31.166Z] Health check failed for performance-monitor
+[2025-08-25T15:03:35.176Z] performance-monitor started successfully
+[2025-08-25T15:04:03.483Z] autonomous-manager exited: code=0, signal=null
+[2025-08-25T15:04:03.484Z] Auto-restarting autonomous-manager (attempt 1)
