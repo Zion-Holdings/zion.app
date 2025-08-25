@@ -1,10 +1,15 @@
-# Netlify configuration for Vite project (not Next.js)
 [build]
+<<<<<<< HEAD
+  command = "npm ci && npm install react@18.3.1 react-dom@18.3.1 && npm run build"
+=======
   command = "npm ci && npm run build"
+>>>>>>> 511dcf7abdea592bd7f759151bdcc31a3dedcee6
   publish = "dist"
 
 [build.environment]
   NODE_OPTIONS = "--max-old-space-size=6144 --openssl-legacy-provider"
+<<<<<<< HEAD
+=======
   NETLIFY_NEXT_PLUGIN_SKIP = "true"
 
 # SPA routing redirects for Vite
@@ -33,3 +38,4 @@
   for = "/*.html"
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
+>>>>>>> 511dcf7abdea592bd7f759151bdcc31a3dedcee6

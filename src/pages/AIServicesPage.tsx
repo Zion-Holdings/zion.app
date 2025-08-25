@@ -1,257 +1,421 @@
 import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { 
-  Brain, 
-  Bot, 
-  BarChart3, 
-  PenTool, 
-  MessageSquare, 
-  Zap,
-  CheckCircle,
-  Star,
-  DollarSign,
-  Clock,
-  TrendingUp,
-  Users,
-  Award,
-  Mail,
-  Phone,
-  Globe,
-  ArrowRight,
-  Lightbulb,
-  Shield,
-  Search
-} from 'lucide-react';
+import { Search, Filter, Star, Clock, DollarSign, Users, Zap, Brain, Cloud, Database, Shield, Settings, Eye, Leaf, CreditCard, Heart, Truck, ShoppingCart, Phone, Mail, MapPin, Globe, Bot, Cpu, Network, Database as DatabaseIcon, Shield as ShieldIcon, Zap as ZapIcon, Code, Layers, Wifi, ShieldCheck, RefreshCw, Server, Laptop, Smartphone, Router, HardDrive, Lock, Key, EyeOff, Globe2, Bluetooth, Satellite, Antenna, CircuitBoard, Chip, Memory, Storage, Backup, Sync, Download, Upload, Share2, Link, Unlink, Settings2, Cog, Tool, Hammer, Screwdriver, Drill, Saw, Paintbrush, Palette, Brush, PenTool, Vector, Grid, Layout, Monitor, Display, Projector, Printer, Scanner, Fax, Copier, Archive, Folder, File, Document, Spreadsheet, Presentation, Chart, Graph, Analytics, Report, Dashboard, Calendar, Clock, Timer, Stopwatch, Hourglass, CalendarDays, CalendarCheck, CalendarX, CalendarPlus, CalendarMinus, CalendarRange, CalendarWeek, CalendarMonth, CalendarYear, Clock1, Clock2, Clock3, Clock4, Clock5, Clock6, Clock7, Clock8, Clock9, Clock10, Clock11, Clock12, BarChart3, MessageSquare, TrendingUp } from 'lucide-react';
 
-const AI_SERVICES = [
-  {
-    id: 'ai-chatbot-development',
-    title: 'AI Chatbot Development',
-    description: 'Custom AI-powered chatbots with natural language processing capabilities.',
-    price: 2999,
-    currency: 'USD',
-    rating: 4.8,
-    reviewCount: 156,
-    featured: true,
-    tags: ['AI Chatbot', 'NLP', 'Customer Service', 'Automation'],
-    deliveryTime: '2-4 weeks',
-    pricingModel: 'project-based'
-  },
-  {
-    id: 'ai-content-generation',
-    title: 'AI Content Generation',
-    description: 'AI-powered content creation for blogs, social media, and marketing materials.',
-    price: 1500,
-    currency: 'USD',
-    rating: 4.7,
-    reviewCount: 89,
-    featured: false,
-    tags: ['Content Creation', 'AI Writing', 'Marketing', 'SEO'],
-    deliveryTime: '1-2 weeks',
-    pricingModel: 'monthly'
-  },
-  {
-    id: 'ai-data-analysis',
-    title: 'AI-Powered Data Analysis',
-    description: 'Advanced data analytics using machine learning to uncover hidden patterns.',
-    price: 3500,
-    currency: 'USD',
-    rating: 4.9,
-    reviewCount: 203,
-    featured: true,
-    tags: ['Data Analytics', 'Machine Learning', 'Business Intelligence'],
-    deliveryTime: '3-5 weeks',
-    pricingModel: 'project-based'
-  }
-];
+const AIServicesPage: React.FC = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
-const AIServiceCard: React.FC<{ service: any }> = ({ service }) => {
-  return (
-    <Card className="h-full border-zion-blue-light bg-zion-blue-dark hover:border-zion-purple/50 transition-all duration-300 group">
-      <CardHeader className="pb-3">
-        <div className="flex items-start justify-between">
-          <div className="flex-1">
-            <CardTitle className="text-white text-lg mb-2 group-hover:text-zion-cyan transition-colors">
-              {service.title}
-            </CardTitle>
-            <CardDescription className="text-zion-slate-light text-sm line-clamp-2">
-              {service.description}
-            </CardDescription>
-          </div>
-          {service.featured && (
-            <Badge variant="secondary" className="bg-zion-purple text-white text-xs">
-              <Award className="w-3 h-3 mr-1" />
-              Featured
-            </Badge>
-          )}
-        </div>
-        
-        <div className="flex items-center gap-2 mt-3">
-          <div className="flex items-center gap-1">
-            <Star className="w-4 h-4 text-yellow-400 fill-current" />
-            <span className="text-white text-sm">{service.rating}</span>
-            <span className="text-zion-slate-light text-sm">({service.reviewCount})</span>
-          </div>
-        </div>
-      </CardHeader>
-      
-      <CardContent className="pt-0">
-        <div className="flex items-center justify-between mb-4">
-          <div className="flex items-center gap-2">
-            <DollarSign className="w-4 h-4 text-zion-cyan" />
-            <span className="text-white font-semibold">
-              {service.currency}{service.price.toLocaleString()}
-            </span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Clock className="w-4 h-4 text-zion-slate-light" />
-            <span className="text-zion-slate-light text-sm">{service.deliveryTime}</span>
-          </div>
-        </div>
-        
-        <div className="flex flex-wrap gap-2 mb-4">
-          {service.tags.map((tag: string) => (
-            <Badge key={tag} variant="outline" className="text-xs border-zion-blue-light text-zion-slate-light">
-              {tag}
-            </Badge>
-          ))}
-        </div>
-        
-        <div className="flex items-center justify-between">
-          <Button 
-            variant="outline" 
-            size="sm"
-            className="border-zion-purple text-zion-purple hover:bg-zion-purple hover:text-white transition-colors"
-          >
-            View Details
-            <ArrowRight className="w-4 h-4 ml-2" />
-          </Button>
-          
-          <Button 
-            size="sm"
-            className="bg-zion-cyan text-white hover:bg-zion-cyan-light transition-colors"
-          >
-            Get Quote
-          </Button>
-        </div>
-      </CardContent>
-    </Card>
-  );
-};
-
-export default function AIServicesPage() {
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const categories = [
-    { id: 'all', name: 'All Services', icon: Brain },
-    { id: 'chatbots', name: 'Chatbots', icon: Bot },
-    { id: 'content', name: 'Content Creation', icon: PenTool },
-    { id: 'analytics', name: 'Data Analytics', icon: BarChart3 },
-    { id: 'automation', name: 'Process Automation', icon: Zap },
-    { id: 'security', name: 'AI Security', icon: Shield }
+  // Enhanced AI Service data with more innovative solutions
+  const aiServices = [
+    {
+      id: 1,
+      name: "AI-Powered Business Intelligence",
+      category: "Business Intelligence",
+      description: "Advanced analytics and business intelligence powered by machine learning algorithms",
+      price: 2500,
+      pricingModel: "monthly",
+      aiScore: 95,
+      features: ["Real-time dashboards", "Predictive analytics", "Custom reporting", "Data visualization"],
+      benefits: ["Data-driven decisions", "Improved efficiency", "Cost reduction", "Competitive advantage"],
+      useCases: ["Financial analysis", "Sales forecasting", "Customer behavior analysis", "Performance tracking"],
+      tags: ["AI", "Analytics", "Business Intelligence", "Machine Learning"]
+    },
+    {
+      id: 2,
+      name: "Natural Language Processing Solutions",
+      category: "Language AI",
+      description: "Advanced NLP solutions for text analysis, sentiment analysis, and language understanding",
+      price: 1800,
+      pricingModel: "monthly",
+      aiScore: 92,
+      features: ["Text analysis", "Sentiment analysis", "Language translation", "Chatbot integration"],
+      benefits: ["Improved customer service", "Automated content analysis", "Multilingual support", "Efficiency gains"],
+      useCases: ["Customer support", "Content moderation", "Market research", "Document analysis"],
+      tags: ["NLP", "Language AI", "Text Analysis", "Sentiment Analysis"]
+    },
+    {
+      id: 3,
+      name: "Computer Vision & Image Recognition",
+      category: "Visual AI",
+      description: "Computer vision solutions for image and video analysis, object detection, and pattern recognition",
+      price: 3200,
+      pricingModel: "monthly",
+      aiScore: 94,
+      features: ["Object detection", "Image classification", "Facial recognition", "Video analysis"],
+      benefits: ["Automated quality control", "Security enhancement", "Process automation", "Data extraction"],
+      useCases: ["Manufacturing QC", "Security systems", "Retail analytics", "Medical imaging"],
+      tags: ["Computer Vision", "Image Recognition", "Object Detection", "Video Analysis"]
+    },
+    {
+      id: 4,
+      name: "Predictive Analytics & Forecasting",
+      category: "Predictive AI",
+      description: "AI-powered predictive analytics for forecasting trends, risks, and opportunities",
+      price: 2800,
+      pricingModel: "monthly",
+      aiScore: 91,
+      features: ["Trend forecasting", "Risk assessment", "Demand prediction", "Anomaly detection"],
+      benefits: ["Proactive decision making", "Risk mitigation", "Resource optimization", "Competitive advantage"],
+      useCases: ["Supply chain optimization", "Financial risk management", "Sales forecasting", "Maintenance prediction"],
+      tags: ["Predictive Analytics", "Forecasting", "Risk Assessment", "Trend Analysis"]
+    },
+    {
+      id: 5,
+      name: "AI-Powered Automation",
+      category: "Process Automation",
+      description: "Intelligent automation solutions that learn and adapt to optimize business processes",
+      price: 2200,
+      pricingModel: "monthly",
+      aiScore: 89,
+      features: ["Process optimization", "Workflow automation", "Decision automation", "Learning algorithms"],
+      benefits: ["Increased efficiency", "Cost reduction", "Error reduction", "Scalability"],
+      useCases: ["Customer service", "Data entry", "Document processing", "Quality control"],
+      tags: ["Automation", "Process Optimization", "Workflow", "Decision Making"]
+    },
+    {
+      id: 6,
+      name: "AI Chatbot & Virtual Assistants",
+      category: "Conversational AI",
+      description: "Intelligent chatbots and virtual assistants for customer service and business automation",
+      price: 1500,
+      pricingModel: "monthly",
+      aiScore: 88,
+      features: ["Natural conversations", "Multi-language support", "Integration APIs", "Analytics dashboard"],
+      benefits: ["24/7 availability", "Cost reduction", "Improved customer satisfaction", "Scalable support"],
+      useCases: ["Customer support", "Sales assistance", "Appointment booking", "Information retrieval"],
+      tags: ["Chatbot", "Virtual Assistant", "Conversational AI", "Customer Service"]
+    },
+    {
+      id: 7,
+      name: "Quantum Machine Learning",
+      category: "Quantum AI",
+      description: "Quantum computing-powered machine learning for complex optimization and simulation problems",
+      price: 5000,
+      pricingModel: "monthly",
+      aiScore: 98,
+      features: ["Quantum algorithms", "Complex optimization", "Simulation capabilities", "Quantum advantage"],
+      benefits: ["Exponential speedup", "Complex problem solving", "Future readiness", "Competitive edge"],
+      useCases: ["Drug discovery", "Financial modeling", "Climate simulation", "Logistics optimization"],
+      tags: ["Quantum AI", "Machine Learning", "Optimization", "Simulation"]
+    },
+    {
+      id: 8,
+      name: "AI Ethics & Governance Platform",
+      category: "AI Governance",
+      description: "Comprehensive AI ethics monitoring, bias detection, and governance framework",
+      price: 3500,
+      pricingModel: "monthly",
+      aiScore: 93,
+      features: ["Bias detection", "Ethics monitoring", "Compliance reporting", "Audit trails"],
+      benefits: ["Ethical AI deployment", "Regulatory compliance", "Risk mitigation", "Trust building"],
+      useCases: ["AI model validation", "Compliance auditing", "Risk assessment", "Stakeholder reporting"],
+      tags: ["AI Ethics", "Governance", "Bias Detection", "Compliance"]
+    },
+    {
+      id: 9,
+      name: "Edge AI & IoT Intelligence",
+      category: "Edge AI",
+      description: "AI-powered edge computing solutions for real-time IoT data processing and decision making",
+      price: 2800,
+      pricingModel: "monthly",
+      aiScore: 90,
+      features: ["Edge processing", "IoT integration", "Real-time analytics", "Low latency inference"],
+      benefits: ["Real-time decisions", "Reduced bandwidth", "Privacy preservation", "Cost efficiency"],
+      useCases: ["Smart cities", "Industrial IoT", "Autonomous vehicles", "Healthcare monitoring"],
+      tags: ["Edge AI", "IoT", "Real-time", "Privacy", "Efficiency"]
+    },
+    {
+      id: 10,
+      name: "AI-Powered Cybersecurity",
+      category: "AI Security",
+      description: "Intelligent threat detection, anomaly identification, and automated security response",
+      price: 4000,
+      pricingModel: "monthly",
+      aiScore: 96,
+      features: ["Threat detection", "Behavioral analysis", "Automated response", "Predictive security"],
+      benefits: ["Proactive protection", "Reduced false positives", "Faster response", "Adaptive security"],
+      useCases: ["Network security", "Endpoint protection", "Cloud security", "Incident response"],
+      tags: ["AI Security", "Cybersecurity", "Threat Detection", "Automation"]
+    },
+    {
+      id: 11,
+      name: "Generative AI & Content Creation",
+      category: "Generative AI",
+      description: "AI-powered content generation, creative design, and multimedia production",
+      price: 3200,
+      pricingModel: "monthly",
+      aiScore: 89,
+      features: ["Text generation", "Image creation", "Video production", "Audio synthesis"],
+      benefits: ["Content scalability", "Creative efficiency", "Cost reduction", "Brand consistency"],
+      useCases: ["Marketing content", "Product design", "Entertainment", "Educational materials"],
+      tags: ["Generative AI", "Content Creation", "Creative AI", "Multimedia"]
+    },
+    {
+      id: 12,
+      name: "AI-Powered Healthcare Analytics",
+      category: "Healthcare AI",
+      description: "Advanced AI solutions for medical diagnosis, patient care, and healthcare optimization",
+      price: 4500,
+      pricingModel: "monthly",
+      aiScore: 97,
+      features: ["Medical imaging analysis", "Patient monitoring", "Drug discovery", "Treatment optimization"],
+      benefits: ["Improved diagnosis", "Better patient outcomes", "Cost reduction", "Research acceleration"],
+      useCases: ["Radiology", "Patient care", "Pharmaceutical research", "Clinical trials"],
+      tags: ["Healthcare AI", "Medical AI", "Diagnosis", "Patient Care"]
+    },
+    {
+      id: 13,
+      name: "Autonomous Systems & Robotics",
+      category: "Autonomous AI",
+      description: "AI-powered autonomous systems for industrial automation and intelligent robotics",
+      price: 6000,
+      pricingModel: "monthly",
+      aiScore: 94,
+      features: ["Path planning", "Object recognition", "Decision making", "Learning capabilities"],
+      benefits: ["24/7 operation", "Precision accuracy", "Cost efficiency", "Safety improvement"],
+      useCases: ["Manufacturing", "Warehouse automation", "Agricultural robotics", "Service robots"],
+      tags: ["Autonomous Systems", "Robotics", "Industrial AI", "Automation"]
+    },
+    {
+      id: 14,
+      name: "AI-Powered Financial Services",
+      category: "Financial AI",
+      description: "Intelligent financial analysis, risk assessment, and automated trading systems",
+      price: 3800,
+      pricingModel: "monthly",
+      aiScore: 92,
+      features: ["Risk assessment", "Portfolio optimization", "Fraud detection", "Market analysis"],
+      benefits: ["Better risk management", "Improved returns", "Fraud prevention", "Operational efficiency"],
+      useCases: ["Investment management", "Risk assessment", "Fraud detection", "Trading systems"],
+      tags: ["Financial AI", "Risk Management", "Investment", "Fraud Detection"]
+    },
+    {
+      id: 15,
+      name: "AI-Powered Supply Chain Optimization",
+      category: "Supply Chain AI",
+      description: "Intelligent supply chain management with predictive analytics and optimization",
+      price: 3500,
+      pricingModel: "monthly",
+      aiScore: 91,
+      features: ["Demand forecasting", "Inventory optimization", "Route planning", "Supplier management"],
+      benefits: ["Cost reduction", "Efficiency improvement", "Risk mitigation", "Customer satisfaction"],
+      useCases: ["Retail optimization", "Manufacturing planning", "Logistics optimization", "Supplier selection"],
+      tags: ["Supply Chain AI", "Optimization", "Forecasting", "Logistics"]
+    }
   ];
 
-  const filteredServices = AI_SERVICES.filter(service => {
-    const matchesCategory = selectedCategory === 'all' || 
-      service.tags.some((tag: string) => tag.toLowerCase().includes(selectedCategory));
-    const matchesSearch = service.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                         service.description.toLowerCase().includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearch;
+  const categories = ['all', 'Business Intelligence', 'Language AI', 'Visual AI', 'Predictive AI', 'Process Automation', 'Conversational AI', 'Quantum AI', 'AI Governance', 'Edge AI', 'AI Security', 'Generative AI', 'Healthcare AI', 'Autonomous AI', 'Financial AI', 'Supply Chain AI'];
+
+  const filteredServices = aiServices.filter(service => {
+    const matchesSearch = service.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         service.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         service.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+    
+    const matchesCategory = selectedCategory === 'all' || service.category === selectedCategory;
+    
+    return matchesSearch && matchesCategory;
   });
 
+  const formatPrice = (price: number, model: string) => {
+    switch (model) {
+      case 'monthly':
+        return `$${price.toLocaleString()}/month`;
+      case 'hourly':
+        return `$${price}/hour`;
+      case 'project-based':
+        return `$${price.toLocaleString()}`;
+      default:
+        return `$${price.toLocaleString()}`;
+    }
+  };
+
+  const getAIScoreColor = (score: number) => {
+    if (score >= 95) return 'text-green-400';
+    if (score >= 90) return 'text-blue-400';
+    if (score >= 85) return 'text-yellow-400';
+    return 'text-red-400';
+  };
+
+  const getCategoryIcon = (category: string) => {
+    switch (category) {
+      case 'Business Intelligence': return <BarChart3 className="w-6 h-6" />;
+      case 'Language AI': return <MessageSquare className="w-6 h-6" />;
+      case 'Visual AI': return <Eye className="w-6 h-6" />;
+      case 'Predictive AI': return <TrendingUp className="w-6 h-6" />;
+      case 'Process Automation': return <Settings className="w-6 h-6" />;
+      case 'Conversational AI': return <Bot className="w-6 h-6" />;
+      case 'Quantum AI': return <Cpu className="w-6 h-6" />;
+      case 'AI Governance': return <ShieldCheck className="w-6 h-6" />;
+      case 'Edge AI': return <Server className="w-6 h-6" />;
+      case 'AI Security': return <Shield className="w-6 h-6" />;
+      case 'Generative AI': return <Code className="w-6 h-6" />;
+      case 'Healthcare AI': return <Heart className="w-6 h-6" />;
+      case 'Autonomous AI': return <Cog className="w-6 h-6" />;
+      case 'Financial AI': return <CreditCard className="w-6 h-6" />;
+      case 'Supply Chain AI': return <Truck className="w-6 h-6" />;
+      default: return <Brain className="w-6 h-6" />;
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-slate-dark">
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 text-white">
       {/* Hero Section */}
-      <div className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20"></div>
-        <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20">
-          <div className="text-center max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              AI-Powered Solutions
-            </h1>
-            <p className="text-xl text-zion-slate-light mb-8 max-w-2xl mx-auto">
-              Transform your business with cutting-edge artificial intelligence solutions. 
-              From chatbots to data analytics, we deliver intelligent automation that drives growth.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-zion-purple hover:bg-zion-purple-dark text-white px-8 py-3">
-                Explore Services
-              </Button>
-              <Button variant="outline" size="lg" className="border-zion-cyan text-zion-cyan hover:bg-zion-cyan hover:text-white px-8 py-3">
-                Schedule Consultation
-              </Button>
+      <div className="bg-gradient-to-r from-purple-600 to-blue-600 py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h1 className="text-5xl font-bold text-white mb-6">
+            AI Services & Solutions
+          </h1>
+          <p className="text-xl text-purple-100 max-w-3xl mx-auto">
+            Harness the power of artificial intelligence to transform your business operations, 
+            enhance customer experiences, and drive innovation across all aspects of your organization.
+          </p>
+        </div>
+      </div>
+
+      {/* Search and Filter Section */}
+      <div className="bg-slate-800 py-8 border-b border-slate-700">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+            {/* Search */}
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
+              <input
+                type="text"
+                placeholder="Search AI services..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full pl-10 pr-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-slate-400 focus:outline-none focus:border-purple-500"
+              />
+            </div>
+
+            {/* Category Filter */}
+            <div>
+              <select
+                value={selectedCategory}
+                onChange={(e) => setSelectedCategory(e.target.value)}
+                className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white focus:outline-none focus:border-purple-500"
+              >
+                {categories.map(category => (
+                  <option key={category} value={category}>
+                    {category === 'all' ? 'All AI Categories' : category}
+                  </option>
+                ))}
+              </select>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Category Filter */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="flex flex-wrap justify-center gap-4 mb-8">
-          {categories.map((category) => {
-            const IconComponent = category.icon;
-            return (
-              <Button
-                key={category.id}
-                variant={selectedCategory === category.id ? "default" : "outline"}
-                onClick={() => setSelectedCategory(category.id)}
-                className={`${
-                  selectedCategory === category.id
-                    ? 'bg-zion-purple text-white'
-                    : 'border-zion-blue-light text-zion-slate-light hover:border-zion-purple hover:text-zion-cyan'
-                } transition-colors`}
-              >
-                <IconComponent className="w-4 h-4 mr-2" />
-                {category.name}
-              </Button>
-            );
-          })}
-        </div>
-
-        {/* Search */}
-        <div className="max-w-md mx-auto mb-12">
-          <div className="relative">
-            <input
-              type="text"
-              placeholder="Search AI services..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-4 py-3 bg-zion-blue-light border border-zion-blue-light rounded-lg text-white placeholder-zion-slate-light focus:outline-none focus:ring-2 focus:ring-zion-purple focus:border-transparent"
-            />
-            <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-zion-slate-light" />
-          </div>
-        </div>
-
-        {/* Services Grid */}
+      {/* Services Grid */}
+      <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredServices.map((service) => (
-            <AIServiceCard key={service.id} service={service} />
+            <div key={service.id} className="bg-slate-800 rounded-xl border border-slate-700 hover:border-purple-500 transition-all duration-300 hover:transform hover:scale-105">
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="text-purple-400">
+                      {getCategoryIcon(service.category)}
+                    </div>
+                    <h3 className="text-xl font-bold text-white">{service.name}</h3>
+                  </div>
+                  <div className="text-right">
+                    <span className="text-2xl font-bold text-purple-400">
+                      {formatPrice(service.price, service.pricingModel)}
+                    </span>
+                    <div className={`text-sm font-semibold ${getAIScoreColor(service.aiScore)}`}>
+                      AI Score: {service.aiScore}%
+                    </div>
+                  </div>
+                </div>
+                
+                <p className="text-slate-300 mb-4">{service.description}</p>
+                
+                <div className="mb-4">
+                  <span className="inline-block bg-purple-600 text-white text-xs px-2 py-1 rounded-full mb-2">
+                    {service.category}
+                  </span>
+                  <span className="inline-block bg-slate-600 text-slate-300 text-xs px-2 py-1 rounded-full ml-2">
+                    {service.pricingModel}
+                  </span>
+                </div>
+
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-white mb-2">Key Features:</h4>
+                  <ul className="text-sm text-slate-300 space-y-1">
+                    {service.features.slice(0, 3).map((feature, index) => (
+                      <li key={index} className="flex items-center">
+                        <Star className="w-4 h-4 text-purple-400 mr-2" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mb-4">
+                  <h4 className="text-sm font-semibold text-white mb-2">Use Cases:</h4>
+                  <ul className="text-sm text-slate-300 space-y-1">
+                    {service.useCases.slice(0, 2).map((useCase, index) => (
+                      <li key={index} className="flex items-center">
+                        <Zap className="w-4 h-4 text-green-400 mr-2" />
+                        {useCase}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {service.tags.slice(0, 4).map((tag, index) => (
+                    <span key={index} className="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-3 px-4 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300">
+                  Get Started
+                </button>
+              </div>
+            </div>
           ))}
         </div>
+      </div>
 
-        {/* CTA Section */}
-        <div className="text-center mt-16">
-          <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to Transform Your Business?
+      {/* Contact Section */}
+      <div className="bg-slate-800 py-16 border-t border-slate-700">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-white mb-8">
+            Ready to Harness AI Power?
           </h2>
-          <p className="text-zion-slate-light mb-8 max-w-2xl mx-auto">
-            Let's discuss how AI can revolutionize your operations and drive unprecedented growth.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-zion-cyan hover:bg-zion-cyan-light text-white px-8 py-3">
-              <Mail className="w-5 h-5 mr-2" />
-              Contact Us
-            </Button>
-            <Button variant="outline" size="lg" className="border-zion-purple text-zion-purple hover:bg-zion-purple hover:text-white px-8 py-3">
-              <Phone className="w-5 h-5 mr-2" />
-              Call Now
-            </Button>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+            <div className="text-center">
+              <Phone className="w-8 h-8 text-purple-400 mx-auto mb-4" />
+              <h3 className="text-lg font-semibold text-white mb-2">Call Us</h3>
+              <p className="text-slate-300">+1 302 464 0950</p>
+            </div>
+            <div className="text-center">
+              <Mail className="w-8 h-8 text-blue-400 mx-auto mb-4" />
+              <h3 className="text-lg font-semibold text-white mb-2">Email Us</h3>
+              <p className="text-slate-300">kleber@ziontechgroup.com</p>
+            </div>
+            <div className="text-center">
+              <MapPin className="w-8 h-8 text-green-400 mx-auto mb-4" />
+              <h3 className="text-lg font-semibold text-white mb-2">Visit Us</h3>
+              <p className="text-slate-300">364 E Main St STE 1008<br />Middletown DE 19709</p>
+            </div>
+          </div>
+          <div className="mt-8">
+            <a 
+              href="https://ziontechgroup.com" 
+              className="inline-block bg-gradient-to-r from-purple-600 to-blue-600 text-white py-4 px-8 rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300"
+            >
+              Visit Our Website
+            </a>
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default AIServicesPage;

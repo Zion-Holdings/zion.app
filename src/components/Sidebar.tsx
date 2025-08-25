@@ -1,146 +1,156 @@
+<<<<<<< HEAD
+import React from 'react';
+=======
 import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  X, Home, Briefcase, Users, Phone, Mail, MapPin, Globe, Linkedin, Twitter, Facebook, Instagram, 
-  Shield, Brain, Cpu, Zap, Rocket, Database, Cloud, Lock, Server, Code, BarChart3, 
-  Settings, FileText, HelpCircle, MessageSquare, Star, Award, TrendingUp, Target, Eye, Wifi, Glasses, Bot, Building, Heart, DollarSign, Factory, ShoppingCart, GraduationCap, Activity, Atom
-} from 'lucide-react';
+import { X, Home, Briefcase, Users, Phone, Mail, MapPin, Globe, Linkedin, Twitter, Facebook, Instagram, Shield } from 'lucide-react';
+>>>>>>> c29bead6b13f8ea7191a916e452a8526b40ccd76
 import { Link, useLocation } from 'react-router-dom';
+import { cn } from '@/lib/utils';
+import { 
+  Home, 
+  Users, 
+  Settings, 
+  FileText, 
+  HelpCircle, 
+  Info, 
+  Shield, 
+  Briefcase,
+  Globe,
+  Leaf,
+  MessageSquare,
+  Search,
+  BarChart3
+} from 'lucide-react';
 
 interface SidebarProps {
-  isOpen: boolean;
-  onClose: () => void;
+  className?: string;
 }
 
-export default function Sidebar({ isOpen, onClose }: SidebarProps) {
+export function Sidebar({ className }: SidebarProps) {
   const location = useLocation();
-
-  // Close sidebar when route changes
-  useEffect(() => {
-    onClose();
-  }, [location.pathname, onClose]);
 
   const navigationItems = [
     {
       title: 'Main',
       items: [
-        { name: 'Home', path: '/', icon: Home, description: 'Welcome to Zion Tech Group' },
-        { name: 'Services Overview', path: '/services', icon: Briefcase, description: 'All our services' },
-        { name: 'Advanced Services', path: '/advanced-services', icon: Rocket, description: 'Cutting-edge solutions' },
-        { name: 'About Us', path: '/about', icon: Users, description: 'Our story and mission' },
-        { name: 'Contact', path: '/contact', icon: Phone, description: 'Get in touch' }
+<<<<<<< HEAD
+        { name: 'Home', href: '/', icon: Home },
+        { name: 'Marketplace', href: '/marketplace', icon: Home },
+        { name: 'Services', href: '/services', icon: Settings },
+        { name: 'Talent', href: '/talent', icon: Users },
+        { name: 'Equipment', href: '/equipment', icon: Briefcase },
+        { name: 'Categories', href: '/categories', icon: Globe },
       ]
     },
     {
-      title: 'AI & Machine Learning',
+      title: 'AI & Tools',
       items: [
-        { name: 'AI Services', path: '/ai-services', icon: Brain, description: 'AI-powered solutions' },
-        { name: 'Machine Learning', path: '/services?category=machine-learning', icon: Cpu, description: 'ML algorithms & models' },
-        { name: 'Computer Vision', path: '/services?category=computer-vision', icon: Eye, description: 'Image & video analysis' },
-        { name: 'Natural Language Processing', path: '/services?category=nlp', icon: MessageSquare, description: 'Text & speech AI' },
-        { name: 'Predictive Analytics', path: '/services?category=predictive-analytics', icon: BarChart3, description: 'Data forecasting' }
+        { name: 'AI Matcher', href: '/match', icon: Search },
+        { name: 'Hire AI', href: '/zion-hire-ai', icon: MessageSquare },
+        { name: 'Green IT', href: '/green-it', icon: Leaf },
+        { name: 'Analytics', href: '/analytics', icon: BarChart3 },
+=======
+        { name: 'Home', path: '/', icon: Home },
+        { name: 'Services', path: '/services', icon: Briefcase },
+        { name: 'About', path: '/about', icon: Users },
+        { name: 'Contact', path: '/contact', icon: Phone }
       ]
     },
     {
-      title: 'Cybersecurity & Security',
+      title: 'Services',
       items: [
-        { name: 'Cybersecurity', path: '/cybersecurity', icon: Shield, description: 'Security solutions' },
-        { name: 'Quantum Security', path: '/services?category=quantum-security', icon: Lock, description: 'Future-proof security' },
-        { name: 'Threat Intelligence', path: '/services?category=threat-intelligence', icon: Target, description: 'Security monitoring' },
-        { name: 'Compliance & Governance', path: '/services?category=compliance', icon: Award, description: 'Regulatory compliance' },
-        { name: 'Penetration Testing', path: '/services?category=penetration-testing', icon: Zap, description: 'Security assessment' }
+        { name: 'AI & Machine Learning', path: '/services?category=AI%20%26%20Machine%20Learning', icon: Briefcase },
+        { name: 'Cybersecurity', path: '/services?category=Cybersecurity', icon: Shield },
+        { name: 'Micro SAAS Solutions', path: '/services?category=Micro%20SAAS%20Solutions', icon: Globe },
+        { name: 'Space Technology', path: '/services?category=Space%20Technology', icon: Globe },
+        { name: 'Healthcare AI', path: '/services?category=Healthcare%20AI', icon: Users },
+        { name: 'Manufacturing AI', path: '/services?category=Manufacturing%20AI', icon: Briefcase },
+        { name: 'Emerging Technology', path: '/services?category=Emerging%20Technology', icon: Globe },
+        { name: 'Autonomous Systems', path: '/services?category=AI%20%26%20Autonomous%20Systems', icon: Users }
+>>>>>>> c29bead6b13f8ea7191a916e452a8526b40ccd76
       ]
     },
     {
-      title: 'Infrastructure & Cloud',
+      title: 'Company',
       items: [
-        { name: 'Cloud Solutions', path: '/services?category=cloud', icon: Cloud, description: 'Cloud infrastructure' },
-        { name: 'Edge Computing', path: '/edge-computing', icon: Server, description: 'Distributed computing' },
-        { name: 'DevOps Automation', path: '/devops-automation', icon: Settings, description: 'CI/CD & automation' },
-        { name: 'Database Management', path: '/services?category=database', icon: Database, description: 'Data infrastructure' },
-        { name: 'Server Management', path: '/services?category=server-management', icon: Server, description: 'Infrastructure ops' }
+<<<<<<< HEAD
+        { name: 'About Us', href: '/about', icon: Info },
+        { name: 'Blog', href: '/blog', icon: FileText },
+        { name: 'Partners', href: '/partners', icon: Users },
+        { name: 'Careers', href: '/careers', icon: Briefcase },
+        { name: 'Contact', href: '/contact', icon: MessageSquare },
+=======
+        { name: 'About Us', path: '/about', icon: Users },
+        { name: 'Our Team', path: '/team', icon: Users },
+        { name: 'Careers', path: '/careers', icon: Briefcase },
+        { name: 'News & Updates', path: '/news', icon: Globe }
+>>>>>>> c29bead6b13f8ea7191a916e452a8526b40ccd76
       ]
     },
     {
-      title: 'Emerging Technologies',
+      title: 'Support',
       items: [
-        { name: 'Quantum Computing', path: '/quantum-computing', icon: Atom, description: 'Quantum solutions' },
-        { name: 'Blockchain', path: '/blockchain', icon: Link, description: 'Distributed ledger tech' },
-        { name: 'IoT Solutions', path: '/services?category=iot', icon: Wifi, description: 'Internet of Things' },
-        { name: 'AR/VR Development', path: '/services?category=ar-vr', icon: Glasses, description: 'Immersive experiences' },
-        { name: 'Robotics & Automation', path: '/services?category=robotics', icon: Bot, description: 'Automated systems' }
-      ]
-    },
-    {
-      title: 'Business Solutions',
-      items: [
-        { name: 'Micro SAAS', path: '/services?category=micro-saas', icon: Briefcase, description: 'Software as a Service' },
-        { name: 'Business Intelligence', path: '/services?category=business-intelligence', icon: BarChart3, description: 'Data insights' },
-        { name: 'API Management', path: '/api-management', icon: Code, description: 'API development' },
-        { name: 'Digital Transformation', path: '/digital-transformation', icon: TrendingUp, description: 'Business modernization' },
-        { name: 'Enterprise Solutions', path: '/enterprise', icon: Building, description: 'Large-scale solutions' }
-      ]
-    },
-    {
-      title: 'Industry Solutions',
-      items: [
-        { name: 'Healthcare AI', path: '/services?category=healthcare-ai', icon: Heart, description: 'Medical AI solutions' },
-        { name: 'Financial Services', path: '/services?category=financial', icon: DollarSign, description: 'FinTech solutions' },
-        { name: 'Manufacturing', path: '/services?category=manufacturing', icon: Factory, description: 'Industry 4.0' },
-        { name: 'Retail & E-commerce', path: '/services?category=retail', icon: ShoppingCart, description: 'Digital commerce' },
-        { name: 'Education Technology', path: '/services?category=education', icon: GraduationCap, description: 'EdTech solutions' }
-      ]
-    },
-    {
-      title: 'Support & Resources',
-      items: [
-        { name: 'Help Center', path: '/help', icon: HelpCircle, description: 'Support documentation' },
-        { name: 'API Documentation', path: '/docs', icon: FileText, description: 'Developer resources' },
-        { name: 'Contact Support', path: '/support', icon: MessageSquare, description: 'Get help' },
-        { name: 'Status Page', path: '/status', icon: Activity, description: 'Service status' },
-        { name: 'Training & Certification', path: '/training', icon: Award, description: 'Skill development' }
+<<<<<<< HEAD
+        { name: 'Help Center', href: '/help', icon: HelpCircle },
+        { name: 'Request Quote', href: '/request-quote', icon: FileText },
+        { name: 'Community', href: '/community', icon: Users },
+        { name: 'Privacy', href: '/privacy', icon: Shield },
+        { name: 'Terms', href: '/terms', icon: FileText },
+=======
+        { name: 'Help Center', path: '/help', icon: Users },
+        { name: 'Documentation', path: '/docs', icon: Globe },
+        { name: 'Contact Support', path: '/support', icon: Phone },
+        { name: 'Status Page', path: '/status', icon: Globe }
+>>>>>>> c29bead6b13f8ea7191a916e452a8526b40ccd76
       ]
     }
   ];
-
-  const contactInfo = [
-    { icon: Phone, text: '+1 302 464 0950', href: 'tel:+13024640950' },
-    { icon: Mail, text: 'kleber@ziontechgroup.com', href: 'mailto:kleber@ziontechgroup.com' },
-    { icon: MapPin, text: '364 E Main St STE 1008 Middletown DE 19709', href: '#' }
-  ];
-
-  const socialLinks = [
-    { icon: Linkedin, href: 'https://linkedin.com/company/ziontechgroup', label: 'LinkedIn' },
-    { icon: Twitter, href: 'https://twitter.com/ziontechgroup', label: 'Twitter' },
-    { icon: Facebook, href: 'https://facebook.com/ziontechgroup', label: 'Facebook' },
-    { icon: Instagram, href: 'https://instagram.com/ziontechgroup', label: 'Instagram' }
-  ];
-
-  const sidebarVariants = {
-    closed: {
-      x: '-100%',
-      transition: {
-        type: 'spring' as const,
-        stiffness: 300,
-        damping: 30
-      }
-    },
-    open: {
-      x: 0,
-      transition: {
-        type: 'spring' as const,
-        stiffness: 300,
-        damping: 30
-      }
-    }
-  };
-
-  const overlayVariants = {
-    closed: { opacity: 0 },
-    open: { opacity: 1 }
-  };
 
   return (
+<<<<<<< HEAD
+    <aside className={cn("w-64 bg-zion-blue-dark border-r border-zion-blue-light min-h-screen p-4", className)}>
+      <div className="mb-6">
+        <span className="text-xl font-bold bg-gradient-to-r from-zion-cyan via-zion-purple-light to-zion-purple bg-clip-text text-transparent">
+          ZION
+        </span>
+      </div>
+      
+      <nav className="space-y-6">
+        {navigationItems.map((section) => (
+          <div key={section.title}>
+            <h3 className="text-zion-slate-light text-xs font-semibold uppercase tracking-wider mb-3">
+              {section.title}
+            </h3>
+            <ul className="space-y-1">
+              {section.items.map((item) => {
+                const Icon = item.icon;
+                const isActive = location.pathname === item.href || 
+                               (item.href !== '/' && location.pathname.startsWith(item.href));
+                
+                return (
+                  <li key={item.name}>
+                    <Link
+                      to={item.href}
+                      className={cn(
+                        "flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors",
+                        isActive
+                          ? "bg-zion-purple/20 text-zion-cyan"
+                          : "text-zion-slate-light hover:bg-zion-purple/10 hover:text-zion-cyan"
+                      )}
+                    >
+                      <Icon className="w-4 h-4 mr-3" />
+                      {item.name}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        ))}
+      </nav>
+    </aside>
+=======
     <>
       {/* Overlay */}
       <AnimatePresence>
@@ -164,7 +174,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
             initial="closed"
             animate="open"
             exit="closed"
-            className="fixed left-0 top-0 h-full w-96 max-w-[90vw] z-50 overflow-hidden"
+            className="fixed left-0 top-0 h-full w-80 max-w-[90vw] z-50 overflow-hidden"
           >
             {/* Futuristic Background */}
             <div className="absolute inset-0 futuristic-bg opacity-80"></div>
@@ -198,7 +208,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                   </div>
                   <div>
                     <h2 className="text-xl font-bold neon-text">Zion Tech</h2>
-                    <p className="text-sm text-zion-slate-light">Advanced Navigation</p>
+                    <p className="text-sm text-zion-slate-light">Navigation</p>
                   </div>
                 </div>
                 <button
@@ -217,7 +227,7 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                     <h3 className="text-sm font-semibold text-zion-cyan uppercase tracking-wider neon-text">
                       {section.title}
                     </h3>
-                    <div className="space-y-2">
+                    <div className="space-y-1">
                       {section.items.map((item) => {
                         const Icon = item.icon;
                         const isActive = location.pathname === item.path;
@@ -226,58 +236,68 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                           <Link
                             key={item.name}
                             to={item.path}
-                            className={`group block p-3 rounded-lg transition-all duration-200 ${
+                            className={`flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 group ${
                               isActive
                                 ? 'quantum-button shadow-lg shadow-zion-cyan/30'
                                 : 'futuristic-card text-zion-slate-light hover:bg-white/20 hover:neon-text'
                             }`}
                           >
-                            <div className="flex items-center gap-3">
-                              <Icon className={`w-4 h-4 ${
-                                isActive ? 'text-white' : 'text-zion-cyan group-hover:neon-text'
-                              }`} />
-                              <div className="flex-1">
-                                <span className="font-medium">{item.name}</span>
-                                <p className="text-xs text-zion-slate-light mt-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                                  {item.description}
-                                </p>
-                              </div>
-                              {isActive && (
-                                <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
-                              )}
-                            </div>
+                            <Icon className={`w-4 h-4 ${
+                              isActive ? 'text-white' : 'text-zion-cyan group-hover:neon-text'
+                            }`} />
+                            <span className="flex-1">{item.name}</span>
+                            {isActive && (
+                              <div className="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+                            )}
                           </Link>
                         );
                       })}
                     </div>
                   </div>
                 ))}
+
+                {/* Quick Actions */}
+                <div className="space-y-3">
+                  <h3 className="text-sm font-semibold text-zion-cyan uppercase tracking-wider neon-text">
+                    Quick Actions
+                  </h3>
+                  <div className="space-y-2">
+                    <button className="w-full quantum-button py-3 px-4 rounded-lg font-medium transform hover:scale-105 transition-transform">
+                      Get Free Quote
+                    </button>
+                    <button className="w-full futuristic-card border border-zion-cyan/30 text-zion-cyan py-3 px-4 rounded-lg font-medium hover:bg-zion-cyan/10 transition-colors">
+                      Schedule Demo
+                    </button>
+                  </div>
+                </div>
               </div>
 
               {/* Footer */}
               <div className="border-t border-zion-cyan/30 p-6 space-y-4">
                 {/* Contact Info */}
-                <div className="space-y-2">
+                <div className="space-y-3">
                   <h4 className="text-sm font-semibold text-zion-cyan neon-text">Contact Info</h4>
-                  {contactInfo.map((contact, index) => {
-                    const Icon = contact.icon;
-                    return (
-                      <a
-                        key={index}
-                        href={contact.href}
-                        className="flex items-center gap-2 text-xs text-zion-slate-light hover:neon-text transition-colors"
-                      >
-                        <Icon className="w-3 h-3" />
-                        <span className="truncate">{contact.text}</span>
-                      </a>
-                    );
-                  })}
+                  <div className="space-y-2">
+                    {contactInfo.map((contact, index) => {
+                      const Icon = contact.icon;
+                      return (
+                        <a
+                          key={index}
+                          href={contact.href}
+                          className="flex items-center gap-3 text-sm text-zion-slate-light hover:neon-text transition-colors group"
+                        >
+                          <Icon className="w-4 h-4 text-zion-cyan group-hover:neon-text" />
+                          <span className="flex-1">{contact.text}</span>
+                        </a>
+                      );
+                    })}
+                  </div>
                 </div>
 
                 {/* Social Links */}
-                <div className="space-y-2">
+                <div className="space-y-3">
                   <h4 className="text-sm font-semibold text-zion-cyan neon-text">Follow Us</h4>
-                  <div className="flex gap-2">
+                  <div className="flex gap-3">
                     {socialLinks.map((social, index) => {
                       const Icon = social.icon;
                       return (
@@ -296,18 +316,14 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
                   </div>
                 </div>
 
-                {/* Quick Stats */}
-                <div className="pt-4 border-t border-zion-cyan/20">
-                  <div className="grid grid-cols-2 gap-4 text-center">
-                    <div className="futuristic-card p-3">
-                      <div className="text-lg font-bold text-zion-cyan">500+</div>
-                      <div className="text-xs text-zion-slate-light">Services</div>
-                    </div>
-                    <div className="futuristic-card p-3">
-                      <div className="text-lg font-bold text-zion-cyan">99.9%</div>
-                      <div className="text-xs text-zion-slate-light">Uptime</div>
-                    </div>
-                  </div>
+                {/* Company Info */}
+                <div className="text-center pt-4 border-t border-zion-cyan/20">
+                  <p className="text-xs text-zion-slate-light">
+                    © 2024 Zion Tech Group
+                  </p>
+                  <p className="text-xs text-zion-slate-light mt-1">
+                    Transforming Business with AI & Tech
+                  </p>
                 </div>
               </div>
             </div>
@@ -315,5 +331,6 @@ export default function Sidebar({ isOpen, onClose }: SidebarProps) {
         )}
       </AnimatePresence>
     </>
+>>>>>>> c29bead6b13f8ea7191a916e452a8526b40ccd76
   );
 }

@@ -1,55 +1,84 @@
-import React, { useState } from 'react';
-import { Mail, Send } from 'lucide-react';
+<<<<<<< HEAD
+
 
 export function FooterNewsletter() {
-  const [email, setEmail] = useState('');
-  const [isSubscribed, setIsSubscribed] = useState(false);
+  return (
+    <div className="mt-6">
+      <h4 className="text-white font-semibold mb-3 text-sm">Newsletter</h4>
+      <p className="text-zion-slate-light mb-3 text-xs">
+        Stay updated with the latest tech and AI opportunities.
+      </p>
+      <div className="flex">
+        <input
+          type="email"
+          placeholder="Enter your email"
+          className="flex-1 px-3 py-2 text-sm bg-zion-blue-light border border-zion-blue rounded-l-lg text-white placeholder-zion-slate-light focus:outline-none focus:border-zion-cyan"
+        />
+        <button className="px-4 py-2 bg-zion-cyan hover:bg-zion-cyan-dark text-white text-sm font-medium rounded-r-lg transition-colors">
+          Subscribe
+        </button>
+      </div>
+    </div>
+  );
+}
+=======
+import React, { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 
-  const handleSubmit = (e: React.FormEvent) => {
+export const FooterNewsletter: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState('');
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      // Here you would typically send the email to your newsletter service
-      console.log('Newsletter subscription:', email);
-      setIsSubscribed(true);
+    setIsSubmitting(true);
+    setMessage('');
+
+    try {
+      // Simulate API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      setMessage('Thank you for subscribing! We\'ll keep you updated with the latest tech insights.');
       setEmail('');
-      
-      // Reset subscription status after 3 seconds
-      setTimeout(() => setIsSubscribed(false), 3000);
+    } catch (error) {
+      setMessage('Something went wrong. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   return (
     <div className="space-y-4">
-      <form onSubmit={handleSubmit} className="flex flex-col space-y-3">
-        <div className="relative">
-          <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-zion-slate-light" />
-          <input
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            placeholder="Enter your email"
-            className="w-full pl-10 pr-4 py-2 bg-white/5 border border-zion-cyan/30 rounded-lg text-white placeholder-zion-slate-light focus:border-zion-cyan focus:ring-2 focus:ring-zion-cyan/20 transition-all duration-300"
-            required
-          />
-        </div>
-        <button
-          type="submit"
-          className="flex items-center justify-center gap-2 px-4 py-2 bg-gradient-to-r from-zion-cyan to-zion-purple text-white rounded-lg font-medium hover:from-zion-cyan-light hover:to-zion-purple-light transition-all duration-300"
+      <h3 className="text-lg font-semibold text-white">Stay Updated</h3>
+      <p className="text-sm text-gray-300">
+        Get the latest insights on AI, cybersecurity, and tech innovation.
+      </p>
+      
+      <form onSubmit={handleSubmit} className="flex gap-2">
+        <Input
+          type="email"
+          placeholder="Enter your email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          className="bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:bg-white/20"
+        />
+        <Button 
+          type="submit" 
+          disabled={isSubmitting}
+          className="bg-blue-600 hover:bg-blue-700 text-white"
         >
-          <Send className="w-4 h-4" />
-          Subscribe
-        </button>
+          {isSubmitting ? 'Subscribing...' : 'Subscribe'}
+        </Button>
       </form>
       
-      {isSubscribed && (
-        <div className="text-zion-cyan text-sm text-center">
-          Thank you for subscribing!
-        </div>
+      {message && (
+        <p className={`text-sm ${message.includes('Thank you') ? 'text-green-400' : 'text-red-400'}`}>
+          {message}
+        </p>
       )}
-      
-      <p className="text-xs text-zion-slate-light text-center">
-        We respect your privacy. Unsubscribe at any time.
-      </p>
     </div>
   );
-}
+};
+>>>>>>> cursor/integrate-build-improve-and-re-verify-a776

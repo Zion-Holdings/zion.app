@@ -292,10 +292,200 @@ const MicroSaasServices: React.FC = () => {
         email: "kleber@ziontechgroup.com",
         website: "https://ziontechgroup.com"
       }
+    },
+    {
+      id: 16,
+      name: "AI-Powered Lead Scoring",
+      category: "Sales",
+      pricing: "Freemium",
+      description: "Intelligent lead scoring and qualification using machine learning algorithms",
+      price: 45,
+      pricingModel: "monthly",
+      userLimit: "Up to 20 users",
+      features: ["AI lead scoring", "Behavioral analysis", "Predictive analytics", "CRM integration"],
+      benefits: ["Higher conversion rates", "Better lead quality", "Sales efficiency", "ROI improvement"],
+      targetAudience: ["Sales teams", "Marketing agencies", "B2B companies", "Startups"],
+      tags: ["Lead Scoring", "AI", "Sales", "Predictive Analytics", "CRM"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 17,
+      name: "SmartContract AI",
+      category: "Legal",
+      pricing: "Freemium",
+      description: "AI-powered contract analysis, risk assessment, and legal document automation",
+      price: 55,
+      pricingModel: "monthly",
+      userLimit: "Up to 10 users",
+      features: ["Contract analysis", "Risk assessment", "Document automation", "Compliance checking"],
+      benefits: ["Legal cost reduction", "Risk mitigation", "Time savings", "Compliance assurance"],
+      targetAudience: ["Legal firms", "In-house counsel", "Contractors", "Real estate"],
+      tags: ["Legal Tech", "AI", "Contract Analysis", "Risk Assessment", "Automation"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 18,
+      name: "Quantum Analytics",
+      category: "Analytics",
+      pricing: "Freemium",
+      description: "Advanced quantum-inspired analytics for complex business intelligence and forecasting",
+      price: 75,
+      pricingModel: "monthly",
+      userLimit: "Up to 12 users",
+      features: ["Quantum algorithms", "Complex modeling", "Predictive analytics", "Real-time insights"],
+      benefits: ["Advanced insights", "Competitive advantage", "Complex problem solving", "Future readiness"],
+      targetAudience: ["Research institutions", "Financial services", "Pharmaceuticals", "Advanced manufacturing"],
+      tags: ["Quantum Analytics", "Advanced AI", "Complex Modeling", "Predictive Analytics"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 19,
+      name: "Blockchain Supply Chain",
+      category: "Supply Chain",
+      pricing: "Freemium",
+      description: "Transparent and secure supply chain tracking using blockchain technology",
+      price: 60,
+      pricingModel: "monthly",
+      userLimit: "Up to 25 users",
+      features: ["Blockchain tracking", "Transparency", "Security", "Audit trails"],
+      benefits: ["Supply chain transparency", "Fraud prevention", "Compliance", "Trust building"],
+      targetAudience: ["Manufacturing", "Food industry", "Pharmaceuticals", "Luxury goods"],
+      tags: ["Blockchain", "Supply Chain", "Transparency", "Security", "Compliance"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 20,
+      name: "AR/VR Business Solutions",
+      category: "Immersive Tech",
+      pricing: "Freemium",
+      description: "Augmented and virtual reality solutions for business training, visualization, and customer engagement",
+      price: 80,
+      pricingModel: "monthly",
+      userLimit: "Up to 15 users",
+      features: ["AR/VR development", "3D modeling", "Interactive experiences", "Analytics dashboard"],
+      benefits: ["Enhanced training", "Better visualization", "Customer engagement", "Innovation leadership"],
+      targetAudience: ["Training companies", "Real estate", "Manufacturing", "Retail"],
+      tags: ["AR/VR", "Immersive Tech", "3D Modeling", "Training", "Visualization"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 21,
+      name: "Edge Computing Platform",
+      category: "Infrastructure",
+      pricing: "Freemium",
+      description: "Edge computing platform for IoT devices and real-time data processing",
+      price: 65,
+      pricingModel: "monthly",
+      userLimit: "Up to 100 devices",
+      features: ["Edge processing", "IoT integration", "Real-time analytics", "Low latency"],
+      benefits: ["Faster processing", "Reduced bandwidth", "Real-time insights", "Cost efficiency"],
+      targetAudience: ["IoT companies", "Manufacturing", "Smart cities", "Transportation"],
+      tags: ["Edge Computing", "IoT", "Real-time", "Analytics", "Infrastructure"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 22,
+      name: "AI Ethics & Compliance",
+      category: "Compliance",
+      pricing: "Freemium",
+      description: "AI ethics monitoring and compliance management for responsible AI deployment",
+      price: 70,
+      pricingModel: "monthly",
+      userLimit: "Up to 20 users",
+      features: ["Ethics monitoring", "Bias detection", "Compliance reporting", "Audit trails"],
+      benefits: ["Ethical AI", "Regulatory compliance", "Risk mitigation", "Trust building"],
+      targetAudience: ["AI companies", "Financial services", "Healthcare", "Government"],
+      tags: ["AI Ethics", "Compliance", "Bias Detection", "Risk Management"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 23,
+      name: "Quantum Cryptography",
+      category: "Security",
+      pricing: "Freemium",
+      description: "Quantum-resistant cryptography and secure communication solutions",
+      price: 90,
+      pricingModel: "monthly",
+      userLimit: "Up to 30 users",
+      features: ["Quantum encryption", "Secure communication", "Key management", "Future-proof security"],
+      benefits: ["Quantum resistance", "Enhanced security", "Future readiness", "Competitive advantage"],
+      targetAudience: ["Financial services", "Government", "Healthcare", "Defense"],
+      tags: ["Quantum Cryptography", "Security", "Encryption", "Future-proof"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 24,
+      name: "Sustainable Tech Platform",
+      category: "Sustainability",
+      pricing: "Freemium",
+      description: "Comprehensive sustainability tracking and green technology solutions for businesses",
+      price: 50,
+      pricingModel: "monthly",
+      userLimit: "Up to 40 users",
+      features: ["Carbon tracking", "Sustainability reporting", "Green tech integration", "ESG compliance"],
+      benefits: ["Environmental impact", "Regulatory compliance", "Cost savings", "Brand reputation"],
+      targetAudience: ["Manufacturing", "Retail", "Service businesses", "ESG-focused companies"],
+      tags: ["Sustainability", "Green Tech", "ESG", "Carbon Tracking", "Compliance"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
+    },
+    {
+      id: 25,
+      name: "Neuro-Marketing AI",
+      category: "Marketing",
+      pricing: "Freemium",
+      description: "AI-powered neuromarketing insights and consumer behavior analysis",
+      price: 85,
+      pricingModel: "monthly",
+      userLimit: "Up to 18 users",
+      features: ["Brain response analysis", "Consumer insights", "Campaign optimization", "Behavioral prediction"],
+      benefits: ["Better marketing ROI", "Consumer understanding", "Campaign effectiveness", "Competitive advantage"],
+      targetAudience: ["Marketing agencies", "Consumer brands", "E-commerce", "Research firms"],
+      tags: ["Neuromarketing", "AI", "Consumer Behavior", "Marketing", "Neuroscience"],
+      contactInfo: {
+        phone: "+1 302 464 0950",
+        email: "kleber@ziontechgroup.com",
+        website: "https://ziontechgroup.com"
+      }
     }
   ];
 
-  const categories = ['all', 'Productivity', 'Finance', 'Marketing', 'CRM', 'Analytics', 'Scheduling', 'Content', 'Security', 'Media', 'Education', 'Sustainability', 'Legal', 'Healthcare', 'Events', 'Inventory'];
+  const categories = ['all', 'Productivity', 'Finance', 'Marketing', 'CRM', 'Analytics', 'Scheduling', 'Content', 'Security', 'Media', 'Education', 'Sustainability', 'Legal', 'Healthcare', 'Events', 'Inventory', 'Sales', 'Supply Chain', 'Immersive Tech', 'Infrastructure', 'Compliance'];
   const pricingModels = ['all', 'Freemium', 'Subscription', 'One-time'];
 
   const filteredServices = microSaasServices.filter(service => {

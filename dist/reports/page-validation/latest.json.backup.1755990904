@@ -1,0 +1,20 @@
+{
+  "summary": {
+<<<<<<< HEAD
+  "results": [],
+  "buildBreakingFiles": [],
+  "generatedAt": "2025-08-19T17:23:22.064Z"
+=======
+=======
+>>>>>>> 0326d2d387e86183b2aa59d7ac94999b40abe001
+    "totalFiles": 0,
+    "filesWithIssues": 0,
+    "totalIssues": 0,
+    "totalWarnings": 0,
+    "buildBreakingFiles": 0,
+    "canBuild": true
+  },
+  "results": [],
+  "buildBreakingFiles": [],
+  "generatedAt": "2025-08-19T18:52:46.253Z"
+}
