@@ -1,0 +1,31 @@
+ M automation/backup.sh
+ M automation/data/analyzed-links.json
+ M automation/data/autonomous-state.json
+ M automation/data/performance-alerts.json
+ M automation/data/performance-metrics.json
+ M automation/error-recovery.sh
+ M automation/health-check.sh
+ M automation/log-rotation.sh
+ M automation/logs/HEALTH.runtime.log
+ M automation/logs/SYSTEM.runtime.log
+ M automation/logs/autonomous-system-manager.runtime.log
+ M automation/logs/link-health-scheduler.runtime.log
+ M automation/logs/ml-link-intelligence.runtime.log
+ M automation/logs/real-time-performance-monitor.runtime.log
+ M automation/maintenance.sh
+ M automation/run-automation.sh
+?? automation/advanced-git-sync.cjs
+?? automation/data/ai-trends.json
+?? automation/git-pull-rebase.cjs
+?? automation/logs/ai-trends-research.log
+?? automation/logs/build.log
+?? automation/logs/code-quality.log
+?? automation/logs/cron.log
+?? automation/logs/dependency.log
+?? automation/logs/git-pull-rebase.log
+?? automation/logs/git-status.log
+?? automation/logs/health.log
+?? automation/logs/security.log
+?? automation/logs/test.log
+?? automation/run-infinite-improvement.sh
+?? cursor-memory/

@@ -85,3 +85,126 @@
 [2025-08-25T14:34:08.529Z] analyze-links tick (placeholder)
 [2025-08-25T14:36:08.534Z] analyze-links tick (placeholder)
 [2025-08-25T14:56:08.578Z] analyze-links tick (placeholder)
+[2025-08-25T14:57:33.320Z] Starting ML Link Intelligence worker
+[2025-08-25T14:57:33.328Z] Added https://github.com to analysis queue
+[2025-08-25T14:57:33.328Z] [ml-link-intelligence] [2025-08-25T14:57:33.320Z] Starting ML Link Intelligence worker
+[2025-08-25T14:57:33.329Z] Added https://stackoverflow.com to analysis queue
+[2025-08-25T14:57:33.329Z] Added https://medium.com to analysis queue
+[2025-08-25T14:57:33.329Z] [ml-link-intelligence] [2025-08-25T14:57:33.328Z] Added https://github.com to analysis queue
+[2025-08-25T14:57:33.329Z] Added https://stackoverflow.com to analysis queue
+[2025-08-25T14:57:33.329Z] Added https://dev.to to analysis queue
+[2025-08-25T14:57:33.329Z] Added https://wikipedia.org to analysis queue
+[2025-08-25T14:57:33.329Z] [ml-link-intelligence] [2025-08-25T14:57:33.329Z] Added https://medium.com to analysis queue
+[2025-08-25T14:57:33.330Z] [ml-link-intelligence] [2025-08-25T14:57:33.329Z] Added https://dev.to to analysis queue
+[2025-08-25T14:57:33.329Z] Added https://wikipedia.org to analysis queue
+[2025-08-25T14:57:33.330Z] Processing queue with 5 links
+[2025-08-25T14:57:33.331Z] Analyzing link: https://github.com
+[2025-08-25T14:57:33.331Z] [ml-link-intelligence] [2025-08-25T14:57:33.330Z] Processing queue with 5 links
+[2025-08-25T14:57:33.331Z] Analyzing link: https://github.com
+[2025-08-25T14:57:33.500Z] Analysis complete for https://github.com: good (200)
+[2025-08-25T14:57:33.500Z] [ml-link-intelligence] [2025-08-25T14:57:33.500Z] Analysis complete for https://github.com: good (200)
+[2025-08-25T14:57:34.501Z] Analyzing link: https://stackoverflow.com
+[2025-08-25T14:57:34.501Z] [ml-link-intelligence] [2025-08-25T14:57:34.501Z] Analyzing link: https://stackoverflow.com
+[2025-08-25T14:57:34.578Z] Analysis complete for https://stackoverflow.com: poor (403)
+[2025-08-25T14:57:34.578Z] [ml-link-intelligence] [2025-08-25T14:57:34.578Z] Analysis complete for https://stackoverflow.com: poor (403)
+[2025-08-25T14:57:35.579Z] Analyzing link: https://medium.com
+[2025-08-25T14:57:35.579Z] [ml-link-intelligence] [2025-08-25T14:57:35.579Z] Analyzing link: https://medium.com
+[2025-08-25T14:57:35.676Z] Analysis complete for https://medium.com: good (200)
+[2025-08-25T14:57:35.677Z] [ml-link-intelligence] [2025-08-25T14:57:35.676Z] Analysis complete for https://medium.com: good (200)
+[2025-08-25T14:57:36.677Z] Analyzing link: https://dev.to
+[2025-08-25T14:57:36.677Z] [ml-link-intelligence] [2025-08-25T14:57:36.677Z] Analyzing link: https://dev.to
+[2025-08-25T14:57:36.759Z] Analysis complete for https://dev.to: poor (403)
+[2025-08-25T14:57:36.759Z] [ml-link-intelligence] [2025-08-25T14:57:36.759Z] Analysis complete for https://dev.to: poor (403)
+[2025-08-25T14:57:37.759Z] Analyzing link: https://wikipedia.org
+[2025-08-25T14:57:37.760Z] [ml-link-intelligence] [2025-08-25T14:57:37.759Z] Analyzing link: https://wikipedia.org
+[2025-08-25T14:57:37.819Z] Analysis complete for https://wikipedia.org: poor (403)
+[2025-08-25T14:57:37.820Z] [ml-link-intelligence] [2025-08-25T14:57:37.819Z] Analysis complete for https://wikipedia.org: poor (403)
+[2025-08-25T14:57:38.820Z] Queue processing complete
+[2025-08-25T14:57:38.821Z] [ml-link-intelligence] [2025-08-25T14:57:38.820Z] Queue processing complete
+[2025-08-25T14:58:08.586Z] analyze-links tick (placeholder)
+[2025-08-25T15:00:06.735Z] Starting ML Link Intelligence worker
+[2025-08-25T15:00:06.741Z] [ml-link-intelligence] [2025-08-25T15:00:06.735Z] Starting ML Link Intelligence worker
+[2025-08-25T15:00:06.741Z] Added https://github.com to analysis queue
+[2025-08-25T15:00:06.742Z] Added https://stackoverflow.com to analysis queue
+[2025-08-25T15:00:06.742Z] Added https://medium.com to analysis queue
+[2025-08-25T15:00:06.742Z] Added https://dev.to to analysis queue
+[2025-08-25T15:00:06.742Z] [ml-link-intelligence] [2025-08-25T15:00:06.741Z] Added https://github.com to analysis queue
+[2025-08-25T15:00:06.742Z] Added https://wikipedia.org to analysis queue
+[2025-08-25T15:00:06.743Z] [ml-link-intelligence] [2025-08-25T15:00:06.742Z] Added https://stackoverflow.com to analysis queue
+[2025-08-25T15:00:06.742Z] Added https://medium.com to analysis queue
+[2025-08-25T15:00:06.742Z] Added https://dev.to to analysis queue
+[2025-08-25T15:00:06.743Z] Processing queue with 5 links
+[2025-08-25T15:00:06.743Z] [ml-link-intelligence] [2025-08-25T15:00:06.742Z] Added https://wikipedia.org to analysis queue
+[2025-08-25T15:00:06.743Z] Analyzing link: https://github.com
+[2025-08-25T15:00:06.743Z] [ml-link-intelligence] [2025-08-25T15:00:06.743Z] Processing queue with 5 links
+[2025-08-25T15:00:06.744Z] [ml-link-intelligence] [2025-08-25T15:00:06.743Z] Analyzing link: https://github.com
+[2025-08-25T15:00:07.263Z] Analysis complete for https://github.com: good (200)
+[2025-08-25T15:00:07.264Z] [ml-link-intelligence] [2025-08-25T15:00:07.263Z] Analysis complete for https://github.com: good (200)
+[2025-08-25T15:00:08.265Z] Analyzing link: https://stackoverflow.com
+[2025-08-25T15:00:08.266Z] [ml-link-intelligence] [2025-08-25T15:00:08.265Z] Analyzing link: https://stackoverflow.com
+[2025-08-25T15:00:08.333Z] Analysis complete for https://stackoverflow.com: poor (403)
+[2025-08-25T15:00:08.333Z] [ml-link-intelligence] [2025-08-25T15:00:08.333Z] Analysis complete for https://stackoverflow.com: poor (403)
+[2025-08-25T15:00:08.591Z] analyze-links tick (placeholder)
+[2025-08-25T15:00:09.392Z] Analyzing link: https://medium.com
+[2025-08-25T15:00:09.394Z] [ml-link-intelligence] [2025-08-25T15:00:09.392Z] Analyzing link: https://medium.com
+[2025-08-25T15:00:09.546Z] Analysis complete for https://medium.com: good (200)
+[2025-08-25T15:00:09.547Z] [ml-link-intelligence] [2025-08-25T15:00:09.546Z] Analysis complete for https://medium.com: good (200)
+[2025-08-25T15:00:10.548Z] Analyzing link: https://dev.to
+[2025-08-25T15:00:10.548Z] [ml-link-intelligence] [2025-08-25T15:00:10.548Z] Analyzing link: https://dev.to
+[2025-08-25T15:00:10.606Z] Analysis complete for https://dev.to: poor (403)
+[2025-08-25T15:00:10.606Z] [ml-link-intelligence] [2025-08-25T15:00:10.606Z] Analysis complete for https://dev.to: poor (403)
+[2025-08-25T15:00:11.295Z] Starting ML Link Intelligence worker
+[2025-08-25T15:00:11.310Z] Added https://github.com to analysis queue
+[2025-08-25T15:00:11.311Z] Added https://stackoverflow.com to analysis queue
+[2025-08-25T15:00:11.311Z] Added https://medium.com to analysis queue
+[2025-08-25T15:00:11.311Z] Added https://dev.to to analysis queue
+[2025-08-25T15:00:11.312Z] Added https://wikipedia.org to analysis queue
+[2025-08-25T15:00:11.313Z] Processing queue with 5 links
+[2025-08-25T15:00:11.314Z] Analyzing link: https://github.com
+[2025-08-25T15:00:11.606Z] Analyzing link: https://wikipedia.org
+[2025-08-25T15:00:11.606Z] [ml-link-intelligence] [2025-08-25T15:00:11.606Z] Analyzing link: https://wikipedia.org
+[2025-08-25T15:00:11.679Z] Analysis complete for https://wikipedia.org: poor (403)
+[2025-08-25T15:00:11.679Z] [ml-link-intelligence] [2025-08-25T15:00:11.679Z] Analysis complete for https://wikipedia.org: poor (403)
+[2025-08-25T15:00:11.766Z] Analysis complete for https://github.com: good (200)
+[2025-08-25T15:00:12.680Z] Queue processing complete
+[2025-08-25T15:00:12.680Z] [ml-link-intelligence] [2025-08-25T15:00:12.680Z] Queue processing complete
+[2025-08-25T15:00:12.681Z] Health Report: Score 90, Links 5, Issues 3
+[2025-08-25T15:00:12.681Z] [ml-link-intelligence] [2025-08-25T15:00:12.681Z] Health Report: Score 90, Links 5, Issues 3
+[2025-08-25T15:00:12.769Z] Analyzing link: https://stackoverflow.com
+[2025-08-25T15:00:12.830Z] Analysis complete for https://stackoverflow.com: poor (403)
+[2025-08-25T15:00:13.831Z] Analyzing link: https://medium.com
+[2025-08-25T15:00:13.929Z] Analysis complete for https://medium.com: good (200)
+[2025-08-25T15:00:14.931Z] Analyzing link: https://dev.to
+[2025-08-25T15:00:14.986Z] Analysis complete for https://dev.to: poor (403)
+[2025-08-25T15:00:15.986Z] Analyzing link: https://wikipedia.org
+[2025-08-25T15:00:16.042Z] Analysis complete for https://wikipedia.org: poor (403)
+[2025-08-25T15:00:17.043Z] Queue processing complete
+[2025-08-25T15:00:17.044Z] Health Report: Score 90, Links 5, Issues 3
+[2025-08-25T15:00:35.781Z] Starting ML Link Intelligence worker
+[2025-08-25T15:00:35.792Z] Added https://github.com to analysis queue
+[2025-08-25T15:00:35.793Z] Added https://stackoverflow.com to analysis queue
+[2025-08-25T15:00:35.793Z] Added https://medium.com to analysis queue
+[2025-08-25T15:00:35.794Z] Added https://dev.to to analysis queue
+[2025-08-25T15:00:35.794Z] Added https://wikipedia.org to analysis queue
+[2025-08-25T15:00:35.794Z] Processing queue with 5 links
+[2025-08-25T15:00:35.795Z] Analyzing link: https://github.com
+[2025-08-25T15:00:35.995Z] Analysis complete for https://github.com: good (200)
+[2025-08-25T15:00:36.996Z] Analyzing link: https://stackoverflow.com
+[2025-08-25T15:00:37.071Z] Analysis complete for https://stackoverflow.com: poor (403)
+[2025-08-25T15:00:38.072Z] Analyzing link: https://medium.com
+[2025-08-25T15:00:38.187Z] Analysis complete for https://medium.com: good (200)
+[2025-08-25T15:00:39.189Z] Analyzing link: https://dev.to
+[2025-08-25T15:00:39.244Z] Analysis complete for https://dev.to: poor (403)
+[2025-08-25T15:00:40.244Z] Analyzing link: https://wikipedia.org
+[2025-08-25T15:00:40.296Z] Analysis complete for https://wikipedia.org: poor (403)
+[2025-08-25T15:00:41.296Z] Queue processing complete
+[2025-08-25T15:00:41.297Z] Health Report: Score 90, Links 5, Issues 3
+[2025-08-25T15:01:28.730Z] Stopping ML Link Intelligence...
+[2025-08-25T15:01:28.733Z] Stopping ML Link Intelligence...
+[2025-08-25T15:01:28.734Z] [ml-link-intelligence] [2025-08-25T15:01:28.730Z] Stopping ML Link Intelligence...
+[2025-08-25T15:01:28.733Z] Stopping ML Link Intelligence...
+[2025-08-25T15:02:02.217Z] Stopping ml-link-intelligence...
+[2025-08-25T15:02:02.217Z] Stopping ML Link Intelligence...
+[2025-08-25T15:02:02.217Z] Stopping ML Link Intelligence...
+[2025-08-25T15:02:02.217Z] Stopping ML Link Intelligence...
+[2025-08-25T15:02:02.218Z] [ml-link-intelligence] [2025-08-25T15:02:02.217Z] Stopping ML Link Intelligence...

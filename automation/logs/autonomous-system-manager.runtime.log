@@ -257,3 +257,126 @@
 [2025-08-25T14:56:08.754Z] heartbeat ok | rss=56537088 heapUsed=8023656
 [2025-08-25T14:56:23.754Z] heartbeat ok | rss=56541184 heapUsed=8296472
 [2025-08-25T14:56:38.756Z] heartbeat ok | rss=56545280 heapUsed=7814456
+[2025-08-25T14:56:53.756Z] heartbeat ok | rss=56545280 heapUsed=8024032
+[2025-08-25T14:57:08.581Z] autonomous routine tick
+[2025-08-25T14:57:08.757Z] heartbeat ok | rss=56549376 heapUsed=8301632
+[2025-08-25T14:57:23.759Z] heartbeat ok | rss=56549376 heapUsed=8471024
+[2025-08-25T14:57:33.312Z] Starting Autonomous System Manager
+[2025-08-25T14:57:33.317Z] Starting all enabled services...
+[2025-08-25T14:57:33.318Z] Starting service: autonomous-system-manager
+[2025-08-25T14:57:33.318Z] Error starting autonomous-system-manager: Cannot access 'process' before initialization
+[2025-08-25T14:57:33.319Z] [autonomous-system-manager] [2025-08-25T14:57:33.312Z] Starting Autonomous System Manager
+[2025-08-25T14:57:33.317Z] Starting all enabled services...
+[2025-08-25T14:57:33.318Z] Starting service: autonomous-system-manager
+[2025-08-25T14:57:33.318Z] Error starting autonomous-system-manager: Cannot access 'process' before initialization
+[2025-08-25T14:57:34.319Z] Starting service: ml-link-intelligence
+[2025-08-25T14:57:34.319Z] Error starting ml-link-intelligence: Cannot access 'process' before initialization
+[2025-08-25T14:57:34.320Z] [autonomous-system-manager] [2025-08-25T14:57:34.319Z] Starting service: ml-link-intelligence
+[2025-08-25T14:57:34.321Z] [autonomous-system-manager] [2025-08-25T14:57:34.319Z] Error starting ml-link-intelligence: Cannot access 'process' before initialization
+[2025-08-25T14:57:35.321Z] Starting service: link-health-scheduler
+[2025-08-25T14:57:35.321Z] Error starting link-health-scheduler: Cannot access 'process' before initialization
+[2025-08-25T14:57:35.321Z] [autonomous-system-manager] [2025-08-25T14:57:35.321Z] Starting service: link-health-scheduler
+[2025-08-25T14:57:35.322Z] [autonomous-system-manager] [2025-08-25T14:57:35.321Z] Error starting link-health-scheduler: Cannot access 'process' before initialization
+[2025-08-25T14:57:36.322Z] Starting service: real-time-performance-monitor
+[2025-08-25T14:57:36.323Z] [autonomous-system-manager] [2025-08-25T14:57:36.322Z] Starting service: real-time-performance-monitor
+[2025-08-25T14:57:36.323Z] Error starting real-time-performance-monitor: Cannot access 'process' before initialization
+[2025-08-25T14:57:36.323Z] [autonomous-system-manager] [2025-08-25T14:57:36.323Z] Error starting real-time-performance-monitor: Cannot access 'process' before initialization
+[2025-08-25T14:57:37.324Z] Started 0/4 services successfully
+[2025-08-25T14:57:37.324Z] Autonomous System Manager is now running
+[2025-08-25T14:57:37.325Z] [autonomous-system-manager] [2025-08-25T14:57:37.324Z] Started 0/4 services successfully
+[2025-08-25T14:57:37.325Z] [autonomous-system-manager] [2025-08-25T14:57:37.324Z] Autonomous System Manager is now running
+[2025-08-25T14:57:38.762Z] heartbeat ok | rss=56553472 heapUsed=8232904
+[2025-08-25T14:57:53.763Z] heartbeat ok | rss=56553472 heapUsed=8441096
+[2025-08-25T14:58:08.586Z] autonomous routine tick
+[2025-08-25T14:58:08.765Z] heartbeat ok | rss=56557568 heapUsed=7832736
+[2025-08-25T14:58:23.766Z] heartbeat ok | rss=56557568 heapUsed=8036352
+[2025-08-25T14:58:38.767Z] heartbeat ok | rss=56561664 heapUsed=8242840
+[2025-08-25T14:58:53.768Z] heartbeat ok | rss=56561664 heapUsed=8448696
+[2025-08-25T14:59:08.588Z] autonomous routine tick
+[2025-08-25T14:59:08.769Z] heartbeat ok | rss=56565760 heapUsed=8456088
+[2025-08-25T14:59:23.770Z] heartbeat ok | rss=56565760 heapUsed=8659712
+[2025-08-25T14:59:38.771Z] heartbeat ok | rss=56569856 heapUsed=8312768
+[2025-08-25T14:59:53.772Z] heartbeat ok | rss=56569856 heapUsed=8455800
+[2025-08-25T15:00:06.720Z] Starting Autonomous System Manager
+[2025-08-25T15:00:06.732Z] [autonomous-system-manager] [2025-08-25T15:00:06.720Z] Starting Autonomous System Manager
+[2025-08-25T15:00:06.732Z] Starting all enabled services...
+[2025-08-25T15:00:06.732Z] [autonomous-system-manager] [2025-08-25T15:00:06.732Z] Starting all enabled services...
+[2025-08-25T15:00:06.733Z] Starting service: autonomous-system-manager
+[2025-08-25T15:00:06.733Z] [autonomous-system-manager] [2025-08-25T15:00:06.733Z] Starting service: autonomous-system-manager
+[2025-08-25T15:00:06.733Z] Error starting autonomous-system-manager: Cannot access 'process' before initialization
+[2025-08-25T15:00:06.734Z] [autonomous-system-manager] [2025-08-25T15:00:06.733Z] Error starting autonomous-system-manager: Cannot access 'process' before initialization
+[2025-08-25T15:00:07.735Z] Starting service: ml-link-intelligence
+[2025-08-25T15:00:07.735Z] Error starting ml-link-intelligence: Cannot access 'process' before initialization
+[2025-08-25T15:00:07.735Z] [autonomous-system-manager] [2025-08-25T15:00:07.735Z] Starting service: ml-link-intelligence
+[2025-08-25T15:00:07.735Z] [autonomous-system-manager] [2025-08-25T15:00:07.735Z] Error starting ml-link-intelligence: Cannot access 'process' before initialization
+[2025-08-25T15:00:07.759Z] Starting Autonomous System Manager
+[2025-08-25T15:00:07.770Z] Starting all enabled services...
+[2025-08-25T15:00:07.770Z] Starting service: autonomous-system-manager
+[2025-08-25T15:00:07.771Z] Error starting autonomous-system-manager: Cannot access 'process' before initialization
+[2025-08-25T15:00:08.591Z] autonomous routine tick
+[2025-08-25T15:00:08.735Z] Starting service: link-health-scheduler
+[2025-08-25T15:00:08.736Z] Error starting link-health-scheduler: Cannot access 'process' before initialization
+[2025-08-25T15:00:08.736Z] [autonomous-system-manager] [2025-08-25T15:00:08.735Z] Starting service: link-health-scheduler
+[2025-08-25T15:00:08.736Z] [autonomous-system-manager] [2025-08-25T15:00:08.736Z] Error starting link-health-scheduler: Cannot access 'process' before initialization
+[2025-08-25T15:00:08.771Z] Starting service: ml-link-intelligence
+[2025-08-25T15:00:08.771Z] Error starting ml-link-intelligence: Cannot access 'process' before initialization
+[2025-08-25T15:00:08.772Z] heartbeat ok | rss=56573952 heapUsed=8669216
+[2025-08-25T15:00:09.737Z] Starting service: real-time-performance-monitor
+[2025-08-25T15:00:09.737Z] [autonomous-system-manager] [2025-08-25T15:00:09.737Z] Starting service: real-time-performance-monitor
+[2025-08-25T15:00:09.737Z] Error starting real-time-performance-monitor: Cannot access 'process' before initialization
+[2025-08-25T15:00:09.738Z] [autonomous-system-manager] [2025-08-25T15:00:09.737Z] Error starting real-time-performance-monitor: Cannot access 'process' before initialization
+[2025-08-25T15:00:09.772Z] Starting service: link-health-scheduler
+[2025-08-25T15:00:09.772Z] Error starting link-health-scheduler: Cannot access 'process' before initialization
+[2025-08-25T15:00:10.738Z] Started 0/4 services successfully
+[2025-08-25T15:00:10.739Z] Autonomous System Manager is now running
+[2025-08-25T15:00:10.739Z] [autonomous-system-manager] [2025-08-25T15:00:10.738Z] Started 0/4 services successfully
+[2025-08-25T15:00:10.740Z] [autonomous-system-manager] [2025-08-25T15:00:10.739Z] Autonomous System Manager is now running
+[2025-08-25T15:00:10.773Z] Starting service: real-time-performance-monitor
+[2025-08-25T15:00:10.774Z] Error starting real-time-performance-monitor: Cannot access 'process' before initialization
+[2025-08-25T15:00:11.776Z] Started 0/4 services successfully
+[2025-08-25T15:00:11.776Z] Autonomous System Manager is now running
+[2025-08-25T15:00:23.773Z] heartbeat ok | rss=56573952 heapUsed=7845496
+[2025-08-25T15:00:26.477Z] Starting Autonomous System Manager
+[2025-08-25T15:00:26.488Z] Starting all enabled services...
+[2025-08-25T15:00:26.489Z] Starting service: autonomous-system-manager
+[2025-08-25T15:00:26.490Z] Error starting autonomous-system-manager: Cannot access 'process' before initialization
+[2025-08-25T15:00:27.492Z] Starting service: ml-link-intelligence
+[2025-08-25T15:00:27.492Z] Error starting ml-link-intelligence: Cannot access 'process' before initialization
+[2025-08-25T15:00:28.493Z] Starting service: link-health-scheduler
+[2025-08-25T15:00:28.493Z] Error starting link-health-scheduler: Cannot access 'process' before initialization
+[2025-08-25T15:00:29.494Z] Starting service: real-time-performance-monitor
+[2025-08-25T15:00:29.495Z] Error starting real-time-performance-monitor: Cannot access 'process' before initialization
+[2025-08-25T15:00:30.496Z] Started 0/4 services successfully
+[2025-08-25T15:00:30.497Z] Autonomous System Manager is now running
+[2025-08-25T15:00:37.331Z] Periodic status check - all systems operational
+[2025-08-25T15:00:37.332Z] [autonomous-system-manager] [2025-08-25T15:00:37.331Z] Periodic status check - all systems operational
+[2025-08-25T15:00:38.775Z] heartbeat ok | rss=56578048 heapUsed=8086128
+[2025-08-25T15:00:46.602Z] Periodic status check - all systems operational
+[2025-08-25T15:00:53.776Z] heartbeat ok | rss=56578048 heapUsed=8261344
+[2025-08-25T15:01:08.594Z] autonomous routine tick
+[2025-08-25T15:01:08.776Z] heartbeat ok | rss=56582144 heapUsed=8473136
+[2025-08-25T15:01:23.778Z] heartbeat ok | rss=56590336 heapUsed=8266056
+[2025-08-25T15:01:28.730Z] Shutting down Autonomous System Manager gracefully...
+[2025-08-25T15:01:28.731Z] Stopping all services...
+[2025-08-25T15:01:28.731Z] Stopped 0 services
+[2025-08-25T15:01:28.734Z] [autonomous-system-manager] [2025-08-25T15:01:28.730Z] Shutting down Autonomous System Manager gracefully...
+[2025-08-25T15:01:28.731Z] Stopping all services...
+[2025-08-25T15:01:28.731Z] Stopped 0 services
+[2025-08-25T15:01:38.780Z] heartbeat ok | rss=56590336 heapUsed=8268896
+[2025-08-25T15:01:53.781Z] heartbeat ok | rss=56594432 heapUsed=8682456
+[2025-08-25T15:02:02.166Z] Shutting down Autonomous System Manager gracefully...
+[2025-08-25T15:02:02.166Z] Shutting down Autonomous System Manager gracefully...
+[2025-08-25T15:02:02.166Z] Shutting down autonomous-system-manager gracefully...
+[2025-08-25T15:02:02.166Z] Shutting down Autonomous System Manager gracefully...
+[2025-08-25T15:02:02.167Z] Stopping all services...
+[2025-08-25T15:02:02.167Z] Stopped 0 services
+[2025-08-25T15:02:02.167Z] Stopping all services...
+[2025-08-25T15:02:02.167Z] Stopped 0 services
+[2025-08-25T15:02:02.167Z] Shutting down Autonomous System Manager gracefully...
+[2025-08-25T15:02:02.167Z] Stopping all services...
+[2025-08-25T15:02:02.167Z] Stopping all services...
+[2025-08-25T15:02:02.167Z] [autonomous-system-manager] [2025-08-25T15:02:02.166Z] Shutting down Autonomous System Manager gracefully...
+[2025-08-25T15:02:02.167Z] Stopped 0 services
+[2025-08-25T15:02:02.168Z] Stopped 0 services
+[2025-08-25T15:02:02.168Z] [autonomous-system-manager] [2025-08-25T15:02:02.167Z] Stopping all services...
+[2025-08-25T15:02:02.168Z] [autonomous-system-manager] [2025-08-25T15:02:02.167Z] Stopped 0 services

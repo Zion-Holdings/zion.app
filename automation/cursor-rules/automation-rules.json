@@ -1,0 +1,97 @@
+{
+  "timestamp": "2025-08-25T15:00:05.390Z",
+  "project": "zion.app",
+  "totalRules": 8,
+  "categories": {
+    "code-quality": 1,
+    "testing": 1,
+    "security": 1,
+    "performance": 1,
+    "automation": 1,
+    "documentation": 1,
+    "linting": 1,
+    "build": 1
+  },
+  "rules": [
+    {
+      "id": "rule_001",
+      "category": "code-quality",
+      "name": "TypeScript Strict Mode",
+      "description": "Enforce strict TypeScript compilation",
+      "pattern": "tsconfig.json",
+      "action": "Ensure strict mode is enabled",
+      "priority": "high",
+      "enabled": true
+    },
+    {
+      "id": "rule_002",
+      "category": "testing",
+      "name": "Test Coverage",
+      "description": "Maintain minimum test coverage thresholds",
+      "pattern": "jest.config.cjs",
+      "action": "Ensure coverage thresholds are met",
+      "priority": "medium",
+      "enabled": true
+    },
+    {
+      "id": "rule_003",
+      "category": "security",
+      "name": "Dependency Scanning",
+      "description": "Regular security audits of dependencies",
+      "pattern": "package.json",
+      "action": "Run npm audit regularly",
+      "priority": "high",
+      "enabled": true
+    },
+    {
+      "id": "rule_004",
+      "category": "performance",
+      "name": "Bundle Optimization",
+      "description": "Monitor and optimize bundle sizes",
+      "pattern": "dist/",
+      "action": "Analyze bundle size trends",
+      "priority": "medium",
+      "enabled": true
+    },
+    {
+      "id": "rule_005",
+      "category": "automation",
+      "name": "Husky Hooks",
+      "description": "Ensure git hooks are properly configured",
+      "pattern": ".husky/",
+      "action": "Validate hook configurations",
+      "priority": "high",
+      "enabled": true
+    },
+    {
+      "id": "rule_006",
+      "category": "documentation",
+      "name": "README Maintenance",
+      "description": "Keep documentation up to date",
+      "pattern": "README.md",
+      "action": "Check for outdated information",
+      "priority": "low",
+      "enabled": true
+    },
+    {
+      "id": "rule_007",
+      "category": "linting",
+      "name": "ESLint Enforcement",
+      "description": "Maintain code quality standards",
+      "pattern": "src/**/*.{ts,tsx}",
+      "action": "Run linting on all source files",
+      "priority": "high",
+      "enabled": true
+    },
+    {
+      "id": "rule_008",
+      "category": "build",
+      "name": "Build Validation",
+      "description": "Ensure builds complete successfully",
+      "pattern": "dist/",
+      "action": "Validate build output",
+      "priority": "high",
+      "enabled": true
+    }
+  ]
+}

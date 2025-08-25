@@ -1,0 +1,29 @@
+[2025-08-25 12:00:02] Starting health check process...
+[2025-08-25 12:00:02] Checking system resources...
+[2025-08-25 12:00:23] CPU usage: 44.65%
+[2025-08-25 12:00:23] Memory usage: 100%
+[2025-08-25 12:00:23] Disk usage: 8%
+[2025-08-25 12:00:23] Checking automation services health...
+[2025-08-25 12:00:23] Checking process counts...
+usage: pgrep [-Lfilnoqvx] [-d delim] [-F pidfile] [-G gid]
+             [-P ppid] [-U uid] [-g pgrp] [-t tty] [-u euid]
+             pattern ...
+usage: pgrep [-Lfilnoqvx] [-d delim] [-F pidfile] [-G gid]
+             [-P ppid] [-U uid] [-g pgrp] [-t tty] [-u euid]
+             pattern ...
+usage: pgrep [-Lfilnoqvx] [-d delim] [-F pidfile] [-G gid]
+             [-P ppid] [-U uid] [-g pgrp] [-t tty] [-u euid]
+             pattern ...
+usage: pgrep [-Lfilnoqvx] [-d delim] [-F pidfile] [-G gid]
+             [-P ppid] [-U uid] [-g pgrp] [-t tty] [-u euid]
+             pattern ...
+[2025-08-25 12:00:23] Process counts:
+[2025-08-25 12:00:23]   Autonomous System Manager: 0
+[2025-08-25 12:00:23]   ML Link Intelligence: 0
+[2025-08-25 12:00:23]   Link Health Scheduler: 0
+[2025-08-25 12:00:23]   Performance Monitor: 0
+[2025-08-25 12:00:25] WARNING: 42 zombie processes detected!
+[2025-08-25 12:00:25] Checking log file health...
+[2025-08-25 12:00:27] WARNING: Log file automation/logs/sitemap-keeper.log is stale (age: 4686s)
+[2025-08-25 12:00:27] Health report saved to automation/data/health-report.json
+[2025-08-25 12:00:27] Health check process completed

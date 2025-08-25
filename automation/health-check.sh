@@ -70,10 +70,10 @@ fi
 
 # Check process counts
 log "Checking process counts..."
-AUTONOMOUS_COUNT=$(pgrep -c -f "autonomous-system-manager" || echo "0")
-ML_COUNT=$(pgrep -c -f "ml-link-intelligence" || echo "0")
-LINK_COUNT=$(pgrep -c -f "link-health-scheduler" || echo "0")
-PERFORMANCE_COUNT=$(pgrep -c -f "real-time-performance-monitor" || echo "0")
+AUTONOMOUS_COUNT=$(pgrep -f "autonomous-system-manager" | wc -l || echo "0")
+ML_COUNT=$(pgrep -f "ml-link-intelligence" | wc -l || echo "0")
+LINK_COUNT=$(pgrep -f "link-health-scheduler" | wc -l || echo "0")
+PERFORMANCE_COUNT=$(pgrep -f "real-time-performance-monitor" | wc -l || echo "0")
 
 log "Process counts:"
 log "  Autonomous System Manager: $AUTONOMOUS_COUNT"
