@@ -1,108 +1,173 @@
-import { jsx as _jsx, jsxs as _jsxs, Fragment as _Fragment } from "react/jsx-runtime";
-import { AppHeader } from "@/layout/AppHeader";
-import { Footer } from "@/components/Footer";
-import { SEO } from "@/components/SEO";
-import { GradientHeading } from "@/components/GradientHeading";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-export default function Careers() {
-    // Sample job listings
-    const jobs = {
-        engineering: [
-            {
-                title: "Senior Frontend Engineer",
-                location: "Remote",
-                type: "Full-time",
-                department: "Engineering",
-                description: "Join our frontend team to build beautiful, responsive, and accessible user interfaces for our AI-powered marketplace."
-            },
-            {
-                title: "AI Research Engineer",
-                location: "San Francisco, CA",
-                type: "Full-time",
-                department: "Engineering",
-                description: "Work on cutting-edge AI technologies to power our matching algorithms and recommendation systems."
-            },
-            {
-                title: "Full Stack Developer",
-                location: "Remote",
-                type: "Full-time",
-                department: "Engineering",
-                description: "Develop end-to-end features across our platform, working with modern technologies like React, Node.js, and PostgreSQL."
-            }
-        ],
-        product: [
-            {
-                title: "Product Manager",
-                location: "New York, NY",
-                type: "Full-time",
-                department: "Product",
-                description: "Lead product development initiatives to enhance our marketplace experience for both talent and clients."
-            },
-            {
-                title: "UX/UI Designer",
-                location: "Remote",
-                type: "Full-time",
-                department: "Product",
-                description: "Create intuitive and engaging user experiences that make complex technology accessible to all users."
-            }
-        ],
-        marketing: [
-            {
-                title: "Growth Marketing Manager",
-                location: "Remote",
-                type: "Full-time",
-                department: "Marketing",
-                description: "Drive user acquisition and engagement strategies across multiple channels to grow our marketplace."
-            },
-            {
-                title: "Content Strategist",
-                location: "London, UK",
-                type: "Full-time",
-                department: "Marketing",
-                description: "Develop compelling content that educates and inspires our audience about the future of AI and technology."
-            }
-        ],
-        operations: [
-            {
-                title: "Community Manager",
-                location: "Remote",
-                type: "Full-time",
-                department: "Operations",
-                description: "Build and nurture our growing community of AI specialists, developers, and tech enthusiasts."
-            },
-            {
-                title: "Talent Acquisition Specialist",
-                location: "Remote",
-                type: "Full-time",
-                department: "Operations",
-                description: "Help connect the right talent with the right opportunities on our platform through personalized matching."
-            }
-        ]
-    };
-    // Benefits list
-    const benefits = [
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Users, Heart, Zap, Globe, Award, Clock, MapPin, DollarSign, Send, TrendingUp } from 'lucide-react';
+import { Badge } from '../components/ui/badge';
+import { Card } from '../components/ui/card';
+import { Button } from '../components/ui/button';
+import { Input } from '../components/ui/input';
+import { Textarea } from '../components/ui/textarea';
+import FuturisticNeonButton from '../components/ui/FuturisticNeonButton';
+import FuturisticAnimatedBackground from '../components/ui/FuturisticAnimatedBackground';
+import SEO from '../components/SEO';
+import { AnimatePresence } from 'framer-motion';
+const Careers = () => {
+    var _a;
+    const [selectedDepartment, setSelectedDepartment] = useState('all');
+    const [isApplying, setIsApplying] = useState(null);
+    const departments = [
+        { id: 'all', name: 'All Departments', color: 'from-zion-cyan to-zion-blue' },
+        { id: 'engineering', name: 'Engineering', color: 'from-purple-500 to-pink-500' },
+        { id: 'ai', name: 'AI & ML', color: 'from-blue-500 to-cyan-500' },
+        { id: 'design', name: 'Design', color: 'from-green-500 to-emerald-500' },
+        { id: 'sales', name: 'Sales & Marketing', color: 'from-yellow-500 to-orange-500' },
+        { id: 'operations', name: 'Operations', color: 'from-red-500 to-pink-500' }
+    ];
+    const jobOpenings = [
         {
-            title: "Flexible Work",
-            description: "Remote-first culture with flexible hours to support your productivity and work-life balance.",
-            icon: (_jsx("svg", { className: "w-10 h-10 text-zion-cyan", fill: "none", stroke: "currentColor", viewBox: "0 0 24 24", xmlns: "http://www.w3.org/2000/svg", children: _jsx("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" }) }))
+            id: 'senior-ai-engineer',
+            title: 'Senior AI Engineer',
+            department: 'ai',
+            location: 'Remote / Middletown, DE',
+            type: 'Full-time',
+            experience: '5+ years',
+            salary: '$120,000 - $180,000',
+            description: 'Lead the development of cutting-edge AI solutions and machine learning platforms.',
+            requirements: [
+                'Advanced degree in Computer Science, AI, or related field',
+                'Expertise in Python, TensorFlow, PyTorch',
+                'Experience with large language models and NLP',
+                'Strong background in machine learning algorithms',
+                'Experience with cloud platforms (AWS, Azure, GCP)'
+            ],
+            benefits: [
+                'Competitive salary with equity options',
+                'Flexible remote work policy',
+                'Professional development budget',
+                'Health, dental, and vision insurance',
+                '401(k) with company match'
+            ]
         },
         {
-            title: "Health & Wellness",
-            description: "Comprehensive health insurance and wellness programs to keep you at your best.",
-            icon: (_jsx("svg", { className: "w-10 h-10 text-zion-purple", fill: "none", stroke: "currentColor", viewBox: "0 0 24 24", xmlns: "http://www.w3.org/2000/svg", children: _jsx("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" }) }))
+            id: 'full-stack-developer',
+            title: 'Full Stack Developer',
+            department: 'engineering',
+            location: 'Remote / Middletown, DE',
+            type: 'Full-time',
+            experience: '3+ years',
+            salary: '$90,000 - $140,000',
+            description: 'Build scalable web applications and contribute to our technology platform.',
+            requirements: [
+                'Strong proficiency in React, Node.js, and TypeScript',
+                'Experience with modern web technologies and APIs',
+                'Knowledge of database design and optimization',
+                'Understanding of DevOps and CI/CD practices',
+                'Experience with cloud services and microservices'
+            ],
+            benefits: [
+                'Competitive salary with growth opportunities',
+                'Remote-first work environment',
+                'Latest tools and technology',
+                'Collaborative team culture',
+                'Career advancement paths'
+            ]
         },
         {
-            title: "Continuous Learning",
-            description: "Education stipends and dedicated learning time to help you grow professionally.",
-            icon: (_jsx("svg", { className: "w-10 h-10 text-zion-cyan", fill: "none", stroke: "currentColor", viewBox: "0 0 24 24", xmlns: "http://www.w3.org/2000/svg", children: _jsx("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" }) }))
+            id: 'ui-ux-designer',
+            title: 'Senior UI/UX Designer',
+            department: 'design',
+            location: 'Remote / Middletown, DE',
+            type: 'Full-time',
+            experience: '4+ years',
+            salary: '$85,000 - $130,000',
+            description: 'Create exceptional user experiences and beautiful interfaces for our products.',
+            requirements: [
+                'Strong portfolio showcasing web and mobile design',
+                'Expertise in Figma, Sketch, or similar tools',
+                'Understanding of user research and testing',
+                'Experience with design systems and component libraries',
+                'Knowledge of accessibility and responsive design'
+            ],
+            benefits: [
+                'Creative freedom and ownership',
+                'Latest design tools and resources',
+                'Collaboration with cross-functional teams',
+                'Professional development opportunities',
+                'Competitive compensation package'
+            ]
         },
         {
-            title: "Competitive Compensation",
-            description: "Salary packages that recognize your value, plus equity options to share in our success.",
-            icon: (_jsx("svg", { className: "w-10 h-10 text-zion-purple", fill: "none", stroke: "currentColor", viewBox: "0 0 24 24", xmlns: "http://www.w3.org/2000/svg", children: _jsx("path", { strokeLinecap: "round", strokeLinejoin: "round", strokeWidth: 2, d: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" }) }))
+            id: 'sales-director',
+            title: 'Sales Director',
+            department: 'sales',
+            location: 'Remote / Middletown, DE',
+            type: 'Full-time',
+            experience: '7+ years',
+            salary: '$100,000 - $150,000 + Commission',
+            description: 'Lead our sales strategy and drive revenue growth for enterprise clients.',
+            requirements: [
+                'Proven track record in B2B technology sales',
+                'Experience with enterprise software solutions',
+                'Strong leadership and team management skills',
+                'Understanding of complex sales cycles',
+                'Excellent communication and presentation skills'
+            ],
+            benefits: [
+                'Uncapped commission structure',
+                'Leadership development opportunities',
+                'High-growth company environment',
+                'Competitive base salary',
+                'Performance-based bonuses'
+            ]
         }
     ];
-    return (_jsxs(_Fragment, { children: [_jsx(SEO, { title: "Careers at Zion - Join Our Team", description: "Join the team building the future of AI and technology. Explore career opportunities at Zion's innovative marketplace platform.", keywords: "Zion careers, AI jobs, tech careers, remote work, startup jobs", canonical: "https://ziontechgroup.com/careers" }), _jsx(AppHeader, {}), _jsx("main", { className: "min-h-screen bg-zion-blue pt-24 pb-20", children: _jsxs("div", { className: "container mx-auto px-4 sm:px-6 lg:px-8", children: [_jsxs("div", { className: "text-center mb-16", children: [_jsx(GradientHeading, { children: "Join Our Team" }), _jsx("p", { className: "mt-4 text-zion-slate-light text-xl max-w-3xl mx-auto", children: "Help us build the future of AI and technology" })] }), _jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24", children: [_jsxs("div", { children: [_jsx("h2", { className: "text-3xl font-bold text-white mb-6", children: "Why Work at Zion?" }), _jsx("p", { className: "text-zion-slate-light text-lg mb-6", children: "At Zion, we're not just building a marketplace; we're creating a new paradigm for how AI and technology are accessed, shared, and implemented globally." }), _jsx("p", { className: "text-zion-slate-light text-lg mb-6", children: "Our team is passionate about democratizing access to cutting-edge technology and connecting talented individuals with meaningful opportunities. We value innovation, collaboration, and impact in everything we do." }), _jsx("p", { className: "text-zion-slate-light text-lg", children: "If you're excited about shaping the future of AI and technology while working in a dynamic, remote-first environment with a mission-driven team, we'd love to meet you." })] }), _jsx("div", { className: "rounded-lg overflow-hidden", children: _jsx("img", { src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&h=600", alt: "Team collaboration", className: "object-cover w-full h-full" }) })] }), _jsxs("div", { className: "mb-24", children: [_jsx("h2", { className: "text-3xl font-bold text-white mb-12 text-center", children: "Our Benefits" }), _jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8", children: benefits.map((benefit, index) => (_jsxs("div", { className: "bg-zion-blue-dark p-8 rounded-lg border border-zion-blue-light", children: [_jsx("div", { className: "bg-zion-blue inline-flex p-4 rounded-full mb-4", children: benefit.icon }), _jsx("h3", { className: "text-xl font-bold text-white mb-3", children: benefit.title }), _jsx("p", { className: "text-zion-slate-light", children: benefit.description })] }, index))) })] }), _jsxs("div", { className: "mb-24", children: [_jsx("h2", { className: "text-3xl font-bold text-white mb-12 text-center", children: "Open Positions" }), _jsxs(Tabs, { defaultValue: "engineering", className: "w-full", children: [_jsxs(TabsList, { className: "bg-zion-blue-dark border border-zion-blue-light mb-8 w-full flex flex-wrap justify-center", children: [_jsx(TabsTrigger, { value: "engineering", className: "data-[state=active]:bg-zion-purple/20 data-[state=active]:text-zion-purple", children: "Engineering" }), _jsx(TabsTrigger, { value: "product", className: "data-[state=active]:bg-zion-purple/20 data-[state=active]:text-zion-purple", children: "Product" }), _jsx(TabsTrigger, { value: "marketing", className: "data-[state=active]:bg-zion-purple/20 data-[state=active]:text-zion-purple", children: "Marketing" }), _jsx(TabsTrigger, { value: "operations", className: "data-[state=active]:bg-zion-purple/20 data-[state=active]:text-zion-purple", children: "Operations" })] }), Object.entries(jobs).map(([department, jobList]) => (_jsx(TabsContent, { value: department, className: "space-y-6", children: jobList.map((job, index) => (_jsx(Card, { className: "bg-zion-blue-dark border border-zion-blue-light hover:border-zion-purple transition-colors", children: _jsx(CardContent, { className: "p-6", children: _jsxs("div", { className: "flex flex-col md:flex-row md:items-center md:justify-between", children: [_jsxs("div", { children: [_jsx("h3", { className: "text-xl font-bold text-white mb-2", children: job.title }), _jsxs("div", { className: "flex flex-wrap gap-2 mb-4", children: [_jsx("span", { className: "text-xs text-zion-slate-light bg-zion-blue px-2 py-1 rounded-full", children: job.location }), _jsx("span", { className: "text-xs text-zion-slate-light bg-zion-blue px-2 py-1 rounded-full", children: job.type }), _jsx("span", { className: "text-xs text-zion-slate-light bg-zion-blue px-2 py-1 rounded-full", children: job.department })] }), _jsx("p", { className: "text-zion-slate-light mb-4", children: job.description })] }), _jsx(Button, { className: "w-full md:w-auto mt-4 md:mt-0 bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple", children: "Apply Now" })] }) }) }, index))) }, department)))] })] }), _jsxs("div", { className: "bg-gradient-to-r from-zion-blue-dark to-zion-blue-light border border-zion-purple/30 rounded-xl p-8 md:p-12 text-center", children: [_jsx("h2", { className: "text-3xl font-bold text-white mb-6", children: "Don't see the right position?" }), _jsx("p", { className: "text-zion-slate-light text-lg mb-8 max-w-2xl mx-auto", children: "We're always looking for talented individuals who are passionate about AI and technology. Send us your resume and let's start a conversation." }), _jsx(Button, { className: "bg-gradient-to-r from-zion-purple to-zion-purple-dark hover:from-zion-purple-light hover:to-zion-purple", children: "Send General Application" })] })] }) }), _jsx(Footer, {})] }));
-}
+    const filteredJobs = selectedDepartment === 'all'
+        ? jobOpenings
+        : jobOpenings.filter(job => job.department === selectedDepartment);
+    const companyValues = [
+        {
+            icon: Heart,
+            title: 'People First',
+            description: 'We believe our team is our greatest asset and invest in their growth and well-being.',
+            color: 'from-red-500 to-pink-500'
+        },
+        {
+            icon: Zap,
+            title: 'Innovation Driven',
+            description: 'We constantly push boundaries and embrace new technologies to solve complex problems.',
+            color: 'from-yellow-500 to-orange-500'
+        },
+        {
+            icon: Globe,
+            title: 'Global Impact',
+            description: 'Our solutions help businesses worldwide transform and succeed in the digital age.',
+            color: 'from-blue-500 to-cyan-500'
+        },
+        {
+            icon: Award,
+            title: 'Excellence',
+            description: 'We maintain the highest standards of quality and professionalism in everything we do.',
+            color: 'from-purple-500 to-pink-500'
+        }
+    ];
+    const perks = [
+        '🏠 Remote-first work environment',
+        '💰 Competitive salary with equity options',
+        '🏥 Comprehensive health insurance',
+        '📚 Professional development budget',
+        '🎯 Performance-based bonuses',
+        '🌍 Flexible working hours',
+        '🎉 Team events and celebrations',
+        '🚀 Fast-paced, innovative culture'
+    ];
+    return (_jsxs("div", { className: "min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-slate-dark relative overflow-hidden", children: [_jsx(SEO, { title: "Careers - Join Our Team | Zion Tech Group", description: "Join Zion Tech Group and be part of a team that's transforming businesses through innovative technology solutions. Explore career opportunities in AI, engineering, design, and more.", canonical: "/careers" }), _jsx(FuturisticAnimatedBackground, { intensity: "medium" }), _jsx("section", { className: "relative z-10 pt-32 pb-20 px-4", children: _jsx("div", { className: "max-w-7xl mx-auto text-center", children: _jsxs(motion.div, { initial: { opacity: 0, y: 30 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.8 }, children: [_jsx(Badge, { className: "mb-6 bg-zion-cyan/20 text-zion-cyan border-zion-cyan/30", children: "\uD83D\uDE80 Join Our Team" }), _jsxs(motion.h1, { className: "text-5xl md:text-7xl font-bold text-white mb-8 leading-tight", initial: { opacity: 0, scale: 0.8 }, animate: { opacity: 1, scale: 1 }, transition: { duration: 1, delay: 0.2 }, children: ["Build the Future", _jsx("br", {}), _jsx("span", { className: "bg-gradient-to-r from-zion-cyan via-zion-purple to-zion-pink bg-clip-text text-transparent", children: "With Us" })] }), _jsx(motion.p, { className: "text-xl md:text-2xl text-zion-slate-light mb-12 max-w-4xl mx-auto leading-relaxed", initial: { opacity: 0, y: 20 }, animate: { opacity: 1, y: 0 }, transition: { duration: 0.8, delay: 0.4 }, children: "Join a team of innovators, problem-solvers, and technology enthusiasts who are shaping the future of business technology. Your next career adventure starts here." }), _jsxs(motion.div, { className: "flex flex-wrap justify-center gap-6 text-zion-cyan", initial: { opacity: 0 }, animate: { opacity: 1 }, transition: { duration: 0.8, delay: 0.6 }, children: [_jsxs("div", { className: "flex items-center gap-2", children: [_jsx(Users, { className: "w-6 h-6" }), _jsx("span", { children: "50+ Team Members" })] }), _jsxs("div", { className: "flex items-center gap-2", children: [_jsx(Globe, { className: "w-6 h-6" }), _jsx("span", { children: "Remote-First Culture" })] }), _jsxs("div", { className: "flex items-center gap-2", children: [_jsx(TrendingUp, { className: "w-6 h-6" }), _jsx("span", { children: "Rapid Growth" })] })] })] }) }) }), _jsx("section", { className: "relative z-10 py-20 px-4", children: _jsxs("div", { className: "max-w-7xl mx-auto", children: [_jsxs(motion.div, { className: "text-center mb-16", initial: { opacity: 0, y: 30 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.8 }, viewport: { once: true }, children: [_jsxs("h2", { className: "text-4xl md:text-5xl font-bold text-white mb-6", children: ["Our ", _jsx("span", { className: "text-zion-cyan", children: "Values" })] }), _jsx("p", { className: "text-xl text-zion-slate-light max-w-3xl mx-auto", children: "These core principles guide how we work, collaborate, and grow together as a team." })] }), _jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8", children: companyValues.map((value, index) => (_jsx(motion.div, { initial: { opacity: 0, y: 30 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.6, delay: index * 0.1 }, viewport: { once: true }, whileHover: { y: -10 }, className: "group", children: _jsxs(Card, { className: "bg-zion-blue-dark/30 backdrop-blur-lg border-zion-blue-light/20 hover:border-zion-cyan/50 transition-all duration-300 h-full p-6 text-center", children: [_jsx("div", { className: `w-16 h-16 mx-auto mb-4 rounded-xl bg-gradient-to-br ${value.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`, children: _jsx(value.icon, { className: "w-8 h-8 text-white" }) }), _jsx("h3", { className: "text-xl font-bold text-white mb-3 group-hover:text-zion-cyan transition-colors", children: value.title }), _jsx("p", { className: "text-zion-slate-light leading-relaxed", children: value.description })] }) }, value.title))) })] }) }), _jsx("section", { className: "relative z-10 py-20 px-4 bg-zion-blue-dark/30", children: _jsxs("div", { className: "max-w-7xl mx-auto", children: [_jsxs(motion.div, { className: "text-center mb-16", initial: { opacity: 0, y: 30 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.8 }, viewport: { once: true }, children: [_jsxs("h2", { className: "text-4xl md:text-5xl font-bold text-white mb-6", children: ["Why Work at ", _jsx("span", { className: "text-zion-cyan", children: "Zion Tech Group" }), "?"] }), _jsx("p", { className: "text-xl text-zion-slate-light max-w-3xl mx-auto", children: "We offer more than just a job \u2013 we provide an environment where you can thrive, grow, and make a real impact." })] }), _jsx("div", { className: "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6", children: perks.map((perk, index) => (_jsx(motion.div, { initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.6, delay: index * 0.1 }, viewport: { once: true }, whileHover: { scale: 1.05 }, className: "group", children: _jsx(Card, { className: "bg-zion-blue-dark/30 backdrop-blur-lg border-zion-blue-light/20 hover:border-zion-cyan/50 transition-all duration-300 p-4 text-center", children: _jsx("p", { className: "text-zion-slate-light group-hover:text-zion-cyan transition-colors font-medium", children: perk }) }) }, perk))) })] }) }), _jsx("section", { className: "relative z-10 py-20 px-4", children: _jsxs("div", { className: "max-w-7xl mx-auto", children: [_jsxs(motion.div, { className: "text-center mb-16", initial: { opacity: 0, y: 30 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.8 }, viewport: { once: true }, children: [_jsxs("h2", { className: "text-4xl md:text-5xl font-bold text-white mb-6", children: ["Open ", _jsx("span", { className: "text-zion-cyan", children: "Positions" })] }), _jsx("p", { className: "text-xl text-zion-slate-light max-w-3xl mx-auto", children: "Find the perfect role that matches your skills, passion, and career goals. We're always looking for talented individuals to join our team." })] }), _jsx("div", { className: "flex flex-wrap justify-center gap-4 mb-12", children: departments.map((dept) => {
+                                const isActive = selectedDepartment === dept.id;
+                                return (_jsx(motion.button, { onClick: () => setSelectedDepartment(dept.id), className: `px-6 py-3 rounded-xl font-medium transition-all duration-300 ${isActive
+                                        ? 'bg-gradient-to-r ' + dept.color + ' text-white shadow-lg shadow-zion-cyan/25'
+                                        : 'bg-zion-blue-dark/30 text-zion-slate-light hover:text-white hover:bg-zion-blue-light/20 border border-zion-blue-light/20'}`, whileHover: { scale: 1.05 }, whileTap: { scale: 0.95 }, children: dept.name }, dept.id));
+                            }) }), _jsx("div", { className: "space-y-6", children: filteredJobs.map((job, index) => {
+                                var _a;
+                                return (_jsx(motion.div, { initial: { opacity: 0, y: 30 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.6, delay: index * 0.1 }, viewport: { once: true }, whileHover: { y: -5 }, className: "group", children: _jsx(Card, { className: "bg-zion-blue-dark/30 backdrop-blur-lg border-zion-blue-light/20 hover:border-zion-cyan/50 transition-all duration-300 overflow-hidden", children: _jsx("div", { className: "p-8", children: _jsxs("div", { className: "flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6", children: [_jsxs("div", { className: "flex-1", children: [_jsxs("div", { className: "flex items-center gap-3 mb-4", children: [_jsx(Badge, { className: "bg-zion-cyan/20 text-zion-cyan border-zion-cyan/30", children: (_a = departments.find(d => d.id === job.department)) === null || _a === void 0 ? void 0 : _a.name }), _jsx(Badge, { variant: "outline", className: "border-zion-blue-light/30 text-zion-slate-light", children: job.type })] }), _jsx("h3", { className: "text-2xl font-bold text-white mb-3 group-hover:text-zion-cyan transition-colors", children: job.title }), _jsx("p", { className: "text-zion-slate-light mb-4", children: job.description }), _jsxs("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-zion-slate-light", children: [_jsxs("div", { className: "flex items-center gap-2", children: [_jsx(MapPin, { className: "w-4 h-4 text-zion-cyan" }), _jsx("span", { children: job.location })] }), _jsxs("div", { className: "flex items-center gap-2", children: [_jsx(Clock, { className: "w-4 h-4 text-zion-cyan" }), _jsx("span", { children: job.experience })] }), _jsxs("div", { className: "flex items-center gap-2", children: [_jsx(DollarSign, { className: "w-4 h-4 text-zion-cyan" }), _jsx("span", { children: job.salary })] })] })] }), _jsxs("div", { className: "flex flex-col gap-3", children: [_jsx(FuturisticNeonButton, { onClick: () => setIsApplying(job.id), size: "sm", className: "px-6", children: "Apply Now" }), _jsx(Button, { variant: "outline", size: "sm", onClick: () => setIsApplying(job.id), className: "border-zion-cyan/50 text-zion-cyan hover:bg-zion-cyan/10", children: "View Details" })] })] }) }) }) }, job.id));
+                            }) })] }) }), _jsx(AnimatePresence, { children: isApplying && (_jsx(motion.div, { className: "fixed inset-0 z-50 bg-black/50 backdrop-blur-sm flex items-center justify-center p-4", initial: { opacity: 0 }, animate: { opacity: 1 }, exit: { opacity: 0 }, children: _jsx(motion.div, { className: "bg-zion-blue-dark/95 backdrop-blur-lg border border-zion-blue-light/30 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto", initial: { scale: 0.8, y: 50 }, animate: { scale: 1, y: 0 }, exit: { scale: 0.8, y: 50 }, transition: { type: "spring", stiffness: 300, damping: 30 }, children: _jsxs("div", { className: "p-8", children: [_jsxs("div", { className: "flex items-center justify-between mb-6", children: [_jsxs("h3", { className: "text-2xl font-bold text-white", children: ["Apply for ", (_a = jobOpenings.find(j => j.id === isApplying)) === null || _a === void 0 ? void 0 : _a.title] }), _jsx(Button, { variant: "ghost", size: "sm", onClick: () => setIsApplying(null), className: "text-zion-slate-light hover:text-white", children: "\u2715" })] }), _jsxs("form", { className: "space-y-6", children: [_jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-6", children: [_jsxs("div", { children: [_jsx("label", { className: "block text-white font-medium mb-2", children: "Full Name *" }), _jsx(Input, { type: "text", required: true, className: "bg-zion-slate-dark/50 border-zion-blue-light/30 text-white placeholder-zion-slate-light focus:border-zion-cyan", placeholder: "Enter your full name" })] }), _jsxs("div", { children: [_jsx("label", { className: "block text-white font-medium mb-2", children: "Email *" }), _jsx(Input, { type: "email", required: true, className: "bg-zion-slate-dark/50 border-zion-blue-light/30 text-white placeholder-zion-slate-light focus:border-zion-cyan", placeholder: "Enter your email" })] })] }), _jsxs("div", { className: "grid grid-cols-1 md:grid-cols-2 gap-6", children: [_jsxs("div", { children: [_jsx("label", { className: "block text-white font-medium mb-2", children: "Phone" }), _jsx(Input, { type: "tel", className: "bg-zion-slate-dark/50 border-zion-blue-light/30 text-white placeholder-zion-slate-light focus:border-zion-cyan", placeholder: "Enter your phone number" })] }), _jsxs("div", { children: [_jsx("label", { className: "block text-white font-medium mb-2", children: "LinkedIn Profile" }), _jsx(Input, { type: "url", className: "bg-zion-slate-dark/50 border-zion-blue-light/30 text-white placeholder-zion-slate-light focus:border-zion-cyan", placeholder: "https://linkedin.com/in/yourprofile" })] })] }), _jsxs("div", { children: [_jsx("label", { className: "block text-white font-medium mb-2", children: "Cover Letter *" }), _jsx(Textarea, { required: true, rows: 4, className: "bg-zion-slate-dark/50 border-zion-blue-light/30 text-white placeholder-zion-slate-light focus:border-zion-cyan resize-none", placeholder: "Tell us why you're interested in this position and what makes you a great fit..." })] }), _jsxs("div", { children: [_jsx("label", { className: "block text-white font-medium mb-2", children: "Resume/CV *" }), _jsx(Input, { type: "file", accept: ".pdf,.doc,.docx", required: true, className: "bg-zion-slate-dark/50 border-zion-blue-light/30 text-white file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-medium file:bg-zion-cyan file:text-white hover:file:bg-zion-cyan-light" })] }), _jsxs("div", { className: "flex gap-4 pt-4", children: [_jsxs(FuturisticNeonButton, { type: "submit", className: "flex-1", children: [_jsx(Send, { className: "w-4 h-4 mr-2" }), "Submit Application"] }), _jsx(Button, { variant: "outline", onClick: () => setIsApplying(null), className: "border-zion-blue-light/30 text-zion-slate-light hover:bg-zion-blue-light/20", children: "Cancel" })] })] })] }) }) })) }), _jsx("section", { className: "relative z-10 py-20 px-4", children: _jsx("div", { className: "max-w-4xl mx-auto text-center", children: _jsx(motion.div, { initial: { opacity: 0, y: 30 }, whileInView: { opacity: 1, y: 0 }, transition: { duration: 0.8 }, viewport: { once: true }, children: _jsxs(Card, { className: "bg-gradient-to-r from-zion-blue-dark/50 to-zion-purple-dark/50 backdrop-blur-lg border-zion-cyan/30 p-12", children: [_jsx("h2", { className: "text-4xl md:text-5xl font-bold text-white mb-6", children: "Don't See the Right Role?" }), _jsx("p", { className: "text-xl text-zion-slate-light mb-8 max-w-2xl mx-auto", children: "We're always looking for talented individuals. Send us your resume and we'll keep you in mind for future opportunities." }), _jsxs("div", { className: "flex flex-col sm:flex-row gap-4 justify-center", children: [_jsx(FuturisticNeonButton, { onClick: () => window.location.href = 'mailto:kleber@ziontechgroup.com?subject=General Career Inquiry', size: "lg", className: "text-lg px-8 py-4", children: "Send Resume" }), _jsx(Button, { variant: "outline", size: "lg", onClick: () => window.location.href = '/contact', className: "border-zion-cyan/50 text-zion-cyan hover:bg-zion-cyan/10 hover:border-zion-cyan text-lg px-8 py-4", children: "Get in Touch" })] })] }) }) }) })] }));
+};
+export default Careers;

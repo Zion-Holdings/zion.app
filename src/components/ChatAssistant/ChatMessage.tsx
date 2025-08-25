@@ -30,16 +30,16 @@ export const ChatMessage: React.FC<ChatMessageProps> = ({ message }) => {
       )}
       
       <div
-        className={`max-w-xs md:max-w-md lg:max-w-lg px-4 py-3 rounded-2xl ${
+        className={`px-4 py-3 rounded-2xl max-w-xs md:max-w-md lg:max-w-lg ${
           isUser
             ? 'bg-zion-cyan text-white rounded-br-md'
-            : 'bg-zion-blue-dark/50 text-white border border-zion-blue-light/30 rounded-bl-md'
+            : 'bg-zion-blue-dark/50 text-white rounded-bl-md'
         }`}
       >
         <p className="text-sm leading-relaxed">{message.text}</p>
-        <div className={`text-xs opacity-70 mt-2 ${isUser ? 'text-right' : 'text-left'}`}>
+        <p className={`text-xs mt-2 ${isUser ? 'text-white/70' : 'text-zion-slate-light'}`}>
           {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
-        </div>
+        </p>
       </div>
       
       {isUser && (

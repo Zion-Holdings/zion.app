@@ -42,7 +42,7 @@ const ChatAssistant = () => {
             sender: 'user',
             timestamp: new Date()
         };
-        setMessages((prev) => [...prev, userMessage]);
+        setMessages(prev => [...prev, userMessage]);
         setInputValue('');
         setIsTyping(true);
         // Simulate AI response
@@ -53,7 +53,7 @@ const ChatAssistant = () => {
                 sender: 'bot',
                 timestamp: new Date()
             };
-            setMessages((prev) => [...prev, botMessage]);
+            setMessages(prev => [...prev, botMessage]);
             setIsTyping(false);
         }, 1000 + Math.random() * 2000);
     };
