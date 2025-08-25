@@ -19,7 +19,10 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     featured: true,
     location: "Global",
     availability: "4-6 Weeks",
-    ai_score: 96
+    ai_score: 96,
+    image: images[0],
+    features: tags.slice(0, 3),
+    addons: []
   },
   {
     id: "ai-content-generation-suite",
@@ -36,7 +39,10 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     review_count: 89,
     location: "Global",
     availability: "Immediate",
-    ai_score: 92
+    ai_score: 92,
+    image: images[0],
+    features: tags.slice(0, 3),
+    addons: []
   },
   {
     id: "ai-data-analytics-platform",
@@ -53,7 +59,10 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     review_count: 67,
     location: "Global",
     availability: "2-3 Weeks",
-    ai_score: 94
+    ai_score: 94,
+    image: images[0],
+    features: tags.slice(0, 3),
+    addons: []
   },
 
   // IT Infrastructure Services
@@ -73,7 +82,10 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     featured: true,
     location: "Global",
     availability: "3-4 Weeks",
-    ai_score: 91
+    ai_score: 91,
+    image: images[0],
+    features: tags.slice(0, 3),
+    addons: []
   },
   {
     id: "cybersecurity-audit-compliance",
@@ -90,7 +102,10 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     review_count: 98,
     location: "Global",
     availability: "2-3 Weeks",
-    ai_score: 95
+    ai_score: 95,
+    image: images[0],
+    features: tags.slice(0, 3),
+    addons: []
   },
   {
     id: "devops-automation-pipeline",
@@ -107,7 +122,10 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     review_count: 76,
     location: "Global",
     availability: "3-4 Weeks",
-    ai_score: 89
+    ai_score: 89,
+    image: images[0],
+    features: tags.slice(0, 3),
+    addons: []
   },
 
   // Micro SAAS Solutions
@@ -126,7 +144,10 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     review_count: 45,
     location: "Global",
     availability: "Immediate",
-    ai_score: 87
+    ai_score: 87,
+    image: images[0],
+    features: tags.slice(0, 3),
+    addons: []
   },
   {
     id: "project-management-tool",
@@ -143,7 +164,10 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     review_count: 67,
     location: "Global",
     availability: "1-2 Weeks",
-    ai_score: 93
+    ai_score: 93,
+    image: images[0],
+    features: tags.slice(0, 3),
+    addons: []
   },
   {
     id: "customer-support-automation",
@@ -160,7 +184,10 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     review_count: 89,
     location: "Global",
     availability: "2-3 Weeks",
-    ai_score: 90
+    ai_score: 90,
+    image: images[0],
+    features: tags.slice(0, 3),
+    addons: []
   },
 
   // Advanced AI Solutions
@@ -180,7 +207,10 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     featured: true,
     location: "Global",
     availability: "1-2 Weeks",
-    ai_score: 95
+    ai_score: 95,
+    image: images[0],
+    features: tags.slice(0, 3),
+    addons: []
   },
   {
     id: "natural-language-processing",
@@ -197,7 +227,10 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     review_count: 56,
     location: "Global",
     availability: "2-3 Weeks",
-    ai_score: 93
+    ai_score: 93,
+    image: images[0],
+    features: tags.slice(0, 3),
+    addons: []
   },
   {
     id: "predictive-analytics-engine",
@@ -214,7 +247,10 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     review_count: 43,
     location: "Global",
     availability: "3-4 Weeks",
-    ai_score: 96
+    ai_score: 96,
+    image: images[0],
+    features: tags.slice(0, 3),
+    addons: []
   },
 
   // IT Consulting & Strategy
@@ -234,7 +270,10 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     featured: true,
     location: "Global",
     availability: "4-6 Weeks",
-    ai_score: 94
+    ai_score: 94,
+    image: images[0],
+    features: tags.slice(0, 3),
+    addons: []
   },
   {
     id: "data-governance-framework",
@@ -251,7 +290,10 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     review_count: 34,
     location: "Global",
     availability: "3-4 Weeks",
-    ai_score: 88
+    ai_score: 88,
+    image: images[0],
+    features: tags.slice(0, 3),
+    addons: []
   },
 
   // Specialized Micro SAAS
@@ -270,7 +312,10 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     review_count: 78,
     location: "Global",
     availability: "2-3 Weeks",
-    ai_score: 89
+    ai_score: 89,
+    image: images[0],
+    features: tags.slice(0, 3),
+    addons: []
   },
   {
     id: "financial-analytics-dashboard",
@@ -287,7 +332,10 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     review_count: 56,
     location: "Global",
     availability: "1-2 Weeks",
-    ai_score: 91
+    ai_score: 91,
+    image: images[0],
+    features: tags.slice(0, 3),
+    addons: []
   },
   {
     id: "supply-chain-optimization",
@@ -304,7 +352,10 @@ export const COMPREHENSIVE_SERVICES: ProductListing[] = [
     review_count: 45,
     location: "Global",
     availability: "2-3 Weeks",
-    ai_score: 90
+    ai_score: 90,
+    image: images[0],
+    features: tags.slice(0, 3),
+    addons: []
   }
 ];
 
