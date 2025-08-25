@@ -12,12 +12,12 @@ Disallow: /_next/
 Disallow: /static/
 
 # Allow important pages
-Allow: /services
-Allow: /ai-solutions
-Allow: /about
-Allow: /contact
-Allow: /team
-Allow: /mission
+Allow: /services/
+Allow: /solutions/
+Allow: /about/
+Allow: /contact/
+Allow: /blog/
+Allow: /news/
 
-# Crawl delay (optional)
+# Crawl delay
 Crawl-delay: 1
