@@ -52,6 +52,9 @@ const DigitalTransformation = React.lazy(() => import('./pages/DigitalTransforma
 const EmergingTechServices = React.lazy(() => import('./pages/EmergingTechServices'));
 const AboutPage = React.lazy(() => import('./pages/About'));
 const ServicesPage = React.lazy(() => import('./pages/Services'));
+const Careers = React.lazy(() => import('./pages/Careers'));
+const Privacy = React.lazy(() => import('./pages/Privacy'));
+const Terms = React.lazy(() => import('./pages/Terms'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -85,6 +88,9 @@ const baseRoutes = [
   { path: '/emerging-tech', element: <EmergingTechServices /> },
   { path: '/about', element: <AboutPage /> },
   { path: '/services', element: <ServicesPage /> },
+  { path: '/careers', element: <Careers /> },
+  { path: '/privacy', element: <Privacy /> },
+  { path: '/terms', element: <Terms /> },
 ];
 
 const App = () => {

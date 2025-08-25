@@ -1,14 +1,15 @@
 import type { Config } from 'tailwindcss';
 import defaultTheme from 'tailwindcss/defaultTheme';
 import plugin from 'tailwindcss/plugin';
+import lineClamp from '@tailwindcss/line-clamp';
 
 const config: Config = {
-  darkMode: "class",
+  darkMode: 'class',
   content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
   ],
   safelist: ['border-border'],
   theme: {
@@ -47,35 +48,35 @@ const config: Config = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
-        // Zion colors
-        "zion-blue": {
-          DEFAULT: "#0a0f1f",
-          light: "#1e263b",
-          dark: "#090c1a",
+        // Zion color palette (consolidated)
+        'zion-blue': {
+          DEFAULT: '#0a0f1f',
+          light: '#1e263b',
+          dark: '#090c1a',
         },
-        "zion-purple": {
-          DEFAULT: "#a855f7",
-          light: "#d8b4fe",
-          dark: "#9333ea",
+        'zion-purple': {
+          DEFAULT: '#a855f7',
+          light: '#d8b4fe',
+          dark: '#9333ea',
         },
-        "zion-cyan": {
-          DEFAULT: "#00e5ff",
-          light: "#7df9ff",
-          dark: "#00c4cc",
+        'zion-cyan': {
+          DEFAULT: '#00e5ff',
+          light: '#7df9ff',
+          dark: '#00c4cc',
         },
-        "zion-slate": {
-          DEFAULT: "#94A3B8",
-          light: "#CBD5E1",
-          dark: "#64748B",
+        'zion-slate': {
+          DEFAULT: '#94A3B8',
+          light: '#CBD5E1',
+          dark: '#64748B',
         },
-        // Additional futuristic accents
-        "neon-pink": "#ff0080",
-        "neon-green": "#00ff41",
-        "neon-orange": "#ff6b35",
-        "neon-yellow": "#ffff00",
-        "quantum-blue": "#1e40af",
-        "quantum-purple": "#7c3aed",
-        "quantum-cyan": "#0891b2",
+        // Futuristic accents
+        'neon-pink': '#ff0080',
+        'neon-green': '#00ff41',
+        'neon-orange': '#ff6b35',
+        'neon-yellow': '#ffff00',
+        'quantum-blue': '#1e40af',
+        'quantum-purple': '#7c3aed',
+        'quantum-cyan': '#0891b2',
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -88,9 +89,13 @@ const config: Config = {
           'var(--font-poppins)',
           'Poppins Fallback',
           ...defaultTheme.fontFamily.sans
+<<<<<<< HEAD
+        ]
+=======
         ],
         futuristic: ['Orbitron', 'monospace'],
         neon: ['Rajdhani', 'sans-serif'],
+>>>>>>> a4b0ef56a21d1919a0e2729e4ba64fbc8c4b3f44
       },
       keyframes: {
         'accordion-down': {
@@ -133,7 +138,7 @@ const config: Config = {
           '0%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
           '100%': { backgroundPosition: '0% 50%' },
-        }
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
@@ -162,6 +167,7 @@ const config: Config = {
     }
   },
   plugins: [
+    lineClamp,
     plugin(function ({ addUtilities }) {
       const newUtilities = {
         '.rtl': {
@@ -172,6 +178,19 @@ const config: Config = {
           direction: 'ltr',
           textAlign: 'left',
         },
+<<<<<<< HEAD
+        '.text-gradient': {
+          background: 'linear-gradient(135deg, #2e73ea 0%, #8c15e9 50%, #22ddd2 100%)',
+          '-webkit-background-clip': 'text',
+          '-webkit-text-fill-color': 'transparent',
+          'background-clip': 'text',
+        },
+        '.glass-effect': {
+          background: 'rgba(255, 255, 255, 0.1)',
+          'backdrop-filter': 'blur(10px)',
+          border: '1px solid rgba(255, 255, 255, 0.2)',
+        }
+=======
         '.text-neon': {
           textShadow: '0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor',
         },
@@ -188,6 +207,7 @@ const config: Config = {
           background: 'linear-gradient(45deg, #00e5ff, #a855f7) border-box',
           backgroundClip: 'border-box',
         },
+>>>>>>> a4b0ef56a21d1919a0e2729e4ba64fbc8c4b3f44
       };
       addUtilities(newUtilities);
     })

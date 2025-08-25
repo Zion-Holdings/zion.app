@@ -99,39 +99,40 @@ export const INNOVATIVE_SERVICES: InnovativeService[] = [
     currency: "$",
     pricingModel: "monthly",
     features: [
-      "Natural language processing",
-      "Multi-channel support (chat, email, phone)",
-      "Automated ticket routing",
-      "Knowledge base integration",
+      "Natural language understanding",
+      "Multi-channel support integration",
+      "Intelligent ticket routing",
+      "Knowledge base automation",
       "Sentiment analysis",
-      "24/7 availability",
-      "Multi-language support",
-      "Analytics dashboard"
+      "Performance analytics",
+      "Custom bot training",
+      "Seamless human handoff"
     ],
     benefits: [
-      "Reduce response time to under 30 seconds",
-      "Handle 80% of inquiries automatically",
-      "Reduce support costs by 60%",
-      "Improve customer satisfaction scores",
-      "Scale support without adding staff"
+      "Reduce response time by 85%",
+      "Handle 70% of inquiries automatically",
+      "Improve customer satisfaction by 40%",
+      "Reduce support costs by 65%",
+      "24/7 availability"
     ],
     useCases: [
-      "E-commerce platforms",
-      "SaaS companies",
-      "Financial services",
-      "Healthcare providers",
-      "Educational institutions"
+      "E-commerce support",
+      "SaaS product support",
+      "Service business inquiries",
+      "Technical support",
+      "Sales qualification"
     ],
     targetAudience: [
-      "Customer service managers",
-      "Business owners",
-      "Operations teams",
-      "Support team leaders"
+      "Customer support teams",
+      "E-commerce businesses",
+      "SaaS companies",
+      "Service providers",
+      "Startups"
     ],
-    tags: ["AI", "Customer Support", "Automation", "Chatbot", "NLP"],
-    estimatedDelivery: "2-3 weeks",
-    supportLevel: "standard",
-    marketPrice: "$199 - $799/month",
+    tags: ["AI", "Customer Support", "Automation", "Chatbot", "24/7 Support"],
+    estimatedDelivery: "Immediate access",
+    supportLevel: "premium",
+    marketPrice: "$199 - $800/month",
     contactInfo: {
       phone: "+1 302 464 0950",
       email: "kleber@ziontechgroup.com",
@@ -139,10 +140,12 @@ export const INNOVATIVE_SERVICES: InnovativeService[] = [
     },
     aiScore: 92,
     rating: 4.8,
-    reviewCount: 189,
+    reviewCount: 287,
     featured: true,
     location: "Global",
-    availability: "24/7"
+    availability: "24/7",
+    demoUrl: "https://ziontechgroup.com/demo/ai-support-hub",
+    documentationUrl: "https://ziontechgroup.com/docs/ai-support-hub"
   },
   {
     id: "predictive-insights-pro",
@@ -479,6 +482,470 @@ export const INNOVATIVE_SERVICES: InnovativeService[] = [
     featured: false,
     location: "Global",
     availability: "24/7"
+  },
+  {
+    id: "ai-video-analytics-platform",
+    title: "AI Video Analytics Platform",
+    description: "Advanced video analytics platform that uses computer vision and AI to extract insights, detect anomalies, and automate video monitoring for security and business intelligence.",
+    category: "AI Services",
+    subcategory: "Video Analytics",
+    price: 599,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Real-time video processing",
+      "Object detection and tracking",
+      "Behavioral analysis",
+      "Anomaly detection",
+      "Facial recognition",
+      "License plate recognition",
+      "Custom AI model training",
+      "Cloud and edge deployment"
+    ],
+    benefits: [
+      "Reduce security incidents by 80%",
+      "Automate 90% of video monitoring",
+      "Improve operational efficiency by 45%",
+      "Real-time threat detection",
+      "Reduce manual review time by 70%"
+    ],
+    useCases: [
+      "Security surveillance",
+      "Retail analytics",
+      "Traffic monitoring",
+      "Manufacturing quality control",
+      "Smart city applications"
+    ],
+    targetAudience: [
+      "Security companies",
+      "Retail chains",
+      "Manufacturing companies",
+      "Government agencies",
+      "Smart city initiatives"
+    ],
+    tags: ["AI", "Video Analytics", "Computer Vision", "Security", "Automation"],
+    estimatedDelivery: "4-6 weeks",
+    supportLevel: "premium",
+    marketPrice: "$599 - $2,400/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    },
+    aiScore: 94,
+    rating: 4.9,
+    reviewCount: 156,
+    featured: true,
+    location: "Global",
+    availability: "24/7",
+    demoUrl: "https://ziontechgroup.com/demo/ai-video-analytics",
+    documentationUrl: "https://ziontechgroup.com/docs/ai-video-analytics"
+  },
+  {
+    id: "quantum-machine-learning-platform",
+    title: "Quantum Machine Learning Platform",
+    description: "Cutting-edge platform that combines quantum computing with machine learning to solve complex optimization problems and accelerate AI model training.",
+    category: "Quantum Computing",
+    subcategory: "Machine Learning",
+    price: 2499,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Quantum algorithm library",
+      "Hybrid quantum-classical workflows",
+      "Quantum neural networks",
+      "Optimization solvers",
+      "Real-time quantum simulation",
+      "API access",
+      "Expert consultation",
+      "Performance benchmarking"
+    ],
+    benefits: [
+      "Solve previously intractable problems",
+      "Exponential speedup for specific algorithms",
+      "Future-proof technology investment",
+      "Competitive advantage in research",
+      "Access to cutting-edge quantum hardware"
+    ],
+    useCases: [
+      "Drug discovery",
+      "Financial portfolio optimization",
+      "Logistics optimization",
+      "Machine learning acceleration",
+      "Cryptography research"
+    ],
+    targetAudience: [
+      "Research institutions",
+      "Pharmaceutical companies",
+      "Financial services",
+      "Technology companies",
+      "Government agencies"
+    ],
+    tags: ["Quantum Computing", "Machine Learning", "Optimization", "Research", "Innovation"],
+    estimatedDelivery: "8-12 weeks",
+    supportLevel: "enterprise",
+    marketPrice: "$2,499 - $10,000/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    },
+    aiScore: 98,
+    rating: 4.9,
+    reviewCount: 89,
+    featured: true,
+    location: "Global",
+    availability: "24/7",
+    demoUrl: "https://ziontechgroup.com/demo/quantum-ml",
+    documentationUrl: "https://ziontechgroup.com/docs/quantum-ml"
+  },
+  {
+    id: "biometric-authentication-platform",
+    title: "Biometric Authentication Platform",
+    description: "Advanced biometric authentication platform using fingerprint, facial recognition, voice, and behavioral biometrics for secure, user-friendly identity verification.",
+    category: "Security & Authentication",
+    subcategory: "Biometrics",
+    price: 399,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Multi-modal biometric authentication",
+      "Liveness detection",
+      "Behavioral biometrics",
+      "Mobile and web SDKs",
+      "API integration",
+      "Compliance reporting",
+      "Real-time fraud detection",
+      "Custom deployment options"
+    ],
+    benefits: [
+      "Reduce fraud by 95%",
+      "Improve user experience by 60%",
+      "Reduce password-related support by 80%",
+      "Meet compliance requirements",
+      "Scalable authentication solution"
+    ],
+    useCases: [
+      "Mobile app authentication",
+      "Web application security",
+      "Financial services",
+      "Healthcare access control",
+      "Government identification"
+    ],
+    targetAudience: [
+      "Financial institutions",
+      "Healthcare providers",
+      "Technology companies",
+      "Government agencies",
+      "E-commerce businesses"
+    ],
+    tags: ["Biometrics", "Authentication", "Security", "Identity Verification", "Fraud Prevention"],
+    estimatedDelivery: "6-8 weeks",
+    supportLevel: "premium",
+    marketPrice: "$399 - $1,600/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    },
+    aiScore: 91,
+    rating: 4.8,
+    reviewCount: 234,
+    featured: true,
+    location: "Global",
+    availability: "24/7",
+    demoUrl: "https://ziontechgroup.com/demo/biometric-auth",
+    documentationUrl: "https://ziontechgroup.com/docs/biometric-auth"
+  },
+  {
+    id: "autonomous-drone-management-platform",
+    title: "Autonomous Drone Management Platform",
+    description: "Comprehensive platform for managing autonomous drone fleets, route optimization, and automated aerial operations for various industries.",
+    category: "Autonomous Systems",
+    subcategory: "Drone Management",
+    price: 799,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Fleet management dashboard",
+      "Autonomous route planning",
+      "Real-time monitoring",
+      "Weather integration",
+      "Regulatory compliance",
+      "Data collection and analysis",
+      "Mobile app control",
+      "API integration"
+    ],
+    benefits: [
+      "Reduce operational costs by 40%",
+      "Improve efficiency by 60%",
+      "Ensure regulatory compliance",
+      "Real-time fleet monitoring",
+      "Automated operations"
+    ],
+    useCases: [
+      "Aerial photography",
+      "Infrastructure inspection",
+      "Agricultural monitoring",
+      "Search and rescue",
+      "Delivery services"
+    ],
+    targetAudience: [
+      "Drone service companies",
+      "Agricultural businesses",
+      "Infrastructure companies",
+      "Emergency services",
+      "Logistics companies"
+    ],
+    tags: ["Autonomous Systems", "Drones", "Fleet Management", "Automation", "Aerial Operations"],
+    estimatedDelivery: "8-10 weeks",
+    supportLevel: "premium",
+    marketPrice: "$799 - $3,200/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    },
+    aiScore: 93,
+    rating: 4.7,
+    reviewCount: 178,
+    featured: true,
+    location: "Global",
+    availability: "24/7",
+    demoUrl: "https://ziontechgroup.com/demo/autonomous-drones",
+    documentationUrl: "https://ziontechgroup.com/docs/autonomous-drones"
+  },
+  {
+    id: "5g-network-optimization-platform",
+    title: "5G Network Optimization Platform",
+    description: "Advanced platform for optimizing 5G network performance, managing network slicing, and ensuring optimal user experience across different applications.",
+    category: "5G & Telecommunications",
+    subcategory: "Network Optimization",
+    price: 1299,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Network performance monitoring",
+      "Dynamic network slicing",
+      "Quality of service management",
+      "Traffic optimization",
+      "Predictive analytics",
+      "Real-time optimization",
+      "API access",
+      "Custom dashboards"
+    ],
+    benefits: [
+      "Improve network performance by 35%",
+      "Reduce network congestion by 50%",
+      "Optimize resource allocation",
+      "Enhance user experience",
+      "Reduce operational costs"
+    ],
+    useCases: [
+      "Mobile network operators",
+      "Enterprise 5G networks",
+      "Smart city infrastructure",
+      "Industrial IoT",
+      "Edge computing networks"
+    ],
+    targetAudience: [
+      "Telecommunications companies",
+      "Enterprise IT departments",
+      "Smart city initiatives",
+      "Industrial companies",
+      "Technology providers"
+    ],
+    tags: ["5G", "Network Optimization", "Telecommunications", "Network Slicing", "Performance Management"],
+    estimatedDelivery: "10-12 weeks",
+    supportLevel: "enterprise",
+    marketPrice: "$1,299 - $5,200/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    },
+    aiScore: 95,
+    rating: 4.8,
+    reviewCount: 145,
+    featured: true,
+    location: "Global",
+    availability: "24/7",
+    demoUrl: "https://ziontechgroup.com/demo/5g-optimization",
+    documentationUrl: "https://ziontechgroup.com/docs/5g-optimization"
+  },
+  {
+    id: "brain-computer-interface-platform",
+    title: "Brain-Computer Interface Platform",
+    description: "Revolutionary platform that enables direct communication between the human brain and computers for assistive technology, gaming, and research applications.",
+    category: "Brain-Computer Interface",
+    subcategory: "Neural Technology",
+    price: 1999,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "EEG signal processing",
+      "Real-time brain activity monitoring",
+      "Custom control interfaces",
+      "Machine learning algorithms",
+      "API for developers",
+      "Data visualization",
+      "Research tools",
+      "Accessibility features"
+    ],
+    benefits: [
+      "Enable new forms of human-computer interaction",
+      "Assist people with disabilities",
+      "Advance neuroscience research",
+      "Create innovative gaming experiences",
+      "Improve accessibility"
+    ],
+    useCases: [
+      "Assistive technology",
+      "Gaming and entertainment",
+      "Neuroscience research",
+      "Medical applications",
+      "Education and training"
+    ],
+    targetAudience: [
+      "Healthcare organizations",
+      "Research institutions",
+      "Gaming companies",
+      "Assistive technology providers",
+      "Educational institutions"
+    ],
+    tags: ["Brain-Computer Interface", "Neural Technology", "Assistive Technology", "Research", "Innovation"],
+    estimatedDelivery: "12-16 weeks",
+    supportLevel: "enterprise",
+    marketPrice: "$1,999 - $8,000/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    },
+    aiScore: 97,
+    rating: 4.9,
+    reviewCount: 67,
+    featured: true,
+    location: "Global",
+    availability: "24/7",
+    demoUrl: "https://ziontechgroup.com/demo/bci-platform",
+    documentationUrl: "https://ziontechgroup.com/docs/bci-platform"
+  },
+  {
+    id: "holographic-display-platform",
+    title: "Holographic Display Platform",
+    description: "Advanced holographic display platform that creates immersive 3D visualizations for entertainment, education, and business applications.",
+    category: "Holographic Technology",
+    subcategory: "Display Systems",
+    price: 899,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "3D holographic projection",
+      "Interactive touch controls",
+      "Content management system",
+      "Multi-user collaboration",
+      "Mobile app integration",
+      "Custom content creation",
+      "API access",
+      "Analytics dashboard"
+    ],
+    benefits: [
+      "Create immersive experiences",
+      "Improve engagement by 70%",
+      "Reduce travel costs for presentations",
+      "Enable remote collaboration",
+      "Stand out from competitors"
+    ],
+    useCases: [
+      "Product demonstrations",
+      "Virtual meetings",
+      "Educational content",
+      "Entertainment experiences",
+      "Marketing campaigns"
+    ],
+    targetAudience: [
+      "Marketing agencies",
+      "Educational institutions",
+      "Entertainment companies",
+      "Businesses",
+      "Event organizers"
+    ],
+    tags: ["Holographic Technology", "3D Display", "Immersive Technology", "Visualization", "Innovation"],
+    estimatedDelivery: "8-10 weeks",
+    supportLevel: "premium",
+    marketPrice: "$899 - $3,600/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    },
+    aiScore: 94,
+    rating: 4.8,
+    reviewCount: 123,
+    featured: true,
+    location: "Global",
+    availability: "24/7",
+    demoUrl: "https://ziontechgroup.com/demo/holographic-display",
+    documentationUrl: "https://ziontechgroup.com/docs/holographic-display"
+  },
+  {
+    id: "space-technology-platform",
+    title: "Space Technology Platform",
+    description: "Comprehensive platform for satellite data analysis, space mission planning, and Earth observation applications using advanced AI and data science.",
+    category: "Space Technology",
+    subcategory: "Satellite Analytics",
+    price: 1499,
+    currency: "$",
+    pricingModel: "monthly",
+    features: [
+      "Satellite data processing",
+      "Earth observation analytics",
+      "Mission planning tools",
+      "Real-time data feeds",
+      "Custom AI models",
+      "API access",
+      "Data visualization",
+      "Compliance reporting"
+    ],
+    benefits: [
+      "Access to space-based data",
+      "Improve decision-making with satellite insights",
+      "Reduce costs of ground-based monitoring",
+      "Enable global coverage",
+      "Support sustainability initiatives"
+    ],
+    useCases: [
+      "Environmental monitoring",
+      "Agricultural optimization",
+      "Urban planning",
+      "Disaster response",
+      "Climate research"
+    ],
+    targetAudience: [
+      "Environmental organizations",
+      "Agricultural companies",
+      "Urban planning agencies",
+      "Government agencies",
+      "Research institutions"
+    ],
+    tags: ["Space Technology", "Satellite Analytics", "Earth Observation", "AI", "Environmental Monitoring"],
+    estimatedDelivery: "10-12 weeks",
+    supportLevel: "enterprise",
+    marketPrice: "$1,499 - $6,000/month",
+    contactInfo: {
+      phone: "+1 302 464 0950",
+      email: "kleber@ziontechgroup.com",
+      website: "https://ziontechgroup.com"
+    },
+    aiScore: 96,
+    rating: 4.9,
+    reviewCount: 89,
+    featured: true,
+    location: "Global",
+    availability: "24/7",
+    demoUrl: "https://ziontechgroup.com/demo/space-technology",
+    documentationUrl: "https://ziontechgroup.com/docs/space-technology"
   }
 ];
 

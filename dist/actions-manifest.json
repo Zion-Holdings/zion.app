@@ -1,0 +1,94 @@
+{
+  "repo": "Zion-Holdings/zion.app",
+  "generatedAt": "2025-08-12T01:25:12.169Z",
+  "actions": [
+    {
+      "name": "Actions Advertiser",
+      "file": "actions-advertiser.yml",
+      "relPath": ".github/workflows/actions-advertiser.yml",
+      "url": "https://github.com/Zion-Holdings/zion.app/actions/workflows/actions-advertiser.yml",
+      "badge": "https://github.com/Zion-Holdings/zion.app/actions/workflows/actions-advertiser.yml/badge.svg",
+      "crons": [
+        "*/1 * * * *"
+      ]
+    },
+    {
+      "name": "Actions Health Report",
+      "file": "actions-health-report.yml",
+      "relPath": ".github/workflows/actions-health-report.yml",
+      "url": "https://github.com/Zion-Holdings/zion.app/actions/workflows/actions-health-report.yml",
+      "badge": "https://github.com/Zion-Holdings/zion.app/actions/workflows/actions-health-report.yml/badge.svg",
+      "crons": [
+        "0 * * * *"
+      ]
+    },
+    {
+      "name": "Automation Advertiser",
+      "file": "automation-advertiser.yml",
+      "relPath": ".github/workflows/automation-advertiser.yml",
+      "url": "https://github.com/Zion-Holdings/zion.app/actions/workflows/automation-advertiser.yml",
+      "badge": "https://github.com/Zion-Holdings/zion.app/actions/workflows/automation-advertiser.yml/badge.svg",
+      "crons": [
+        "*/15 * * * *"
+      ]
+    },
+    {
+      "name": "Configure Netlify Rerun Chain",
+      "file": "netlify-config.yml",
+      "relPath": ".github/workflows/netlify-config.yml",
+      "url": "https://github.com/Zion-Holdings/zion.app/actions/workflows/netlify-config.yml",
+      "badge": "https://github.com/Zion-Holdings/zion.app/actions/workflows/netlify-config.yml/badge.svg",
+      "crons": []
+    },
+    {
+      "name": "Knowledge Graph & Radar",
+      "file": "knowledge-graph-radar.yml",
+      "relPath": ".github/workflows/knowledge-graph-radar.yml",
+      "url": "https://github.com/Zion-Holdings/zion.app/actions/workflows/knowledge-graph-radar.yml",
+      "badge": "https://github.com/Zion-Holdings/zion.app/actions/workflows/knowledge-graph-radar.yml/badge.svg",
+      "crons": [
+        "0 * * * *"
+      ]
+    },
+    {
+      "name": "Netlify Functions Trigger",
+      "file": "netlify-functions-trigger.yml",
+      "relPath": ".github/workflows/netlify-functions-trigger.yml",
+      "url": "https://github.com/Zion-Holdings/zion.app/actions/workflows/netlify-functions-trigger.yml",
+      "badge": "https://github.com/Zion-Holdings/zion.app/actions/workflows/netlify-functions-trigger.yml/badge.svg",
+      "crons": [
+        "*/30 * * * *"
+      ]
+    },
+    {
+      "name": "README Auto-Advertiser",
+      "file": "readme-auto-advertiser.yml",
+      "relPath": ".github/workflows/readme-auto-advertiser.yml",
+      "url": "https://github.com/Zion-Holdings/zion.app/actions/workflows/readme-auto-advertiser.yml",
+      "badge": "https://github.com/Zion-Holdings/zion.app/actions/workflows/readme-auto-advertiser.yml/badge.svg",
+      "crons": [
+        "0 0 * * *"
+      ]
+    },
+    {
+      "name": "Site Health Guardian",
+      "file": "site-health-guardian.yml",
+      "relPath": ".github/workflows/site-health-guardian.yml",
+      "url": "https://github.com/Zion-Holdings/zion.app/actions/workflows/site-health-guardian.yml",
+      "badge": "https://github.com/Zion-Holdings/zion.app/actions/workflows/site-health-guardian.yml/badge.svg",
+      "crons": [
+        "0 */6 * * *"
+      ]
+    },
+    {
+      "name": "Ultra Rapid Sync",
+      "file": "ultra-rapid-sync.yml",
+      "relPath": ".github/workflows/ultra-rapid-sync.yml",
+      "url": "https://github.com/Zion-Holdings/zion.app/actions/workflows/ultra-rapid-sync.yml",
+      "badge": "https://github.com/Zion-Holdings/zion.app/actions/workflows/ultra-rapid-sync.yml/badge.svg",
+      "crons": [
+        "*/1 * * * *"
+      ]
+    }
+  ]
+}

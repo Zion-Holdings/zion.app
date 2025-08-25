@@ -1,0 +1,331 @@
+{
+  "testRun": {
+    "startTime": "2025-08-14T22:00:32.101Z",
+    "endTime": "2025-08-14T22:00:41.522Z",
+    "duration": 9421,
+    "totalTests": 6
+  },
+  "summary": {
+    "totalTests": 6,
+    "passedTests": 5,
+    "failedTests": 1,
+    "errorTests": 0,
+    "overallStatus": "FAILED"
+  },
+  "testResults": {
+    "componentLoading": {
+      "name": "Component Loading Test",
+      "status": "FAILED",
+      "details": {
+        "market-intelligence.cjs": "Loaded Successfully",
+        "opportunity-detector.cjs": "Loaded Successfully",
+        "mvp-generator.cjs": "Load Failed: Unexpected identifier '$'",
+        "service-blueprint-generator.cjs": "Loaded Successfully",
+        "quality-automation.cjs": "Loaded Successfully",
+        "deployment-orchestrator.cjs": "Loaded Successfully",
+        "service-factory-orchestrator.cjs": "Loaded Successfully",
+        "service-factory-dashboard.cjs": "Loaded Successfully"
+      },
+      "errors": [
+        "mvp-generator.cjs: Unexpected identifier '$'",
+        "Critical components failed to load: mvp-generator.cjs"
+      ]
+    },
+    "dataFlow": {
+      "name": "Data Flow Test",
+      "status": "PASSED",
+      "details": {
+        "Market Intelligence → Opportunity Detection": {
+          "status": "PASSED",
+          "dataProcessed": true,
+          "dataSize": 370
+        },
+        "Opportunity Detection → Service Generation": {
+          "status": "PASSED",
+          "dataProcessed": true,
+          "dataSize": 225
+        },
+        "Service Generation → Quality Assurance": {
+          "status": "PASSED",
+          "dataProcessed": true,
+          "dataSize": 246
+        },
+        "Quality Assurance → Deployment": {
+          "status": "PASSED",
+          "dataProcessed": true,
+          "dataSize": 150
+        }
+      },
+      "errors": []
+    },
+    "serviceGenerationPipeline": {
+      "name": "Service Generation Pipeline Test",
+      "status": "PASSED",
+      "details": {
+        "Market Analysis": {
+          "status": "PASSED",
+          "output": {
+            "step": "Market Analysis",
+            "output": "Generated market gaps and trends",
+            "status": "completed",
+            "timestamp": "2025-08-14T22:00:32.710Z"
+          },
+          "duration": 201,
+          "performance": "Good"
+        },
+        "Opportunity Detection": {
+          "status": "PASSED",
+          "output": {
+            "step": "Opportunity Detection",
+            "output": "Generated validated opportunities",
+            "status": "completed",
+            "timestamp": "2025-08-14T22:00:32.911Z"
+          },
+          "duration": 201,
+          "performance": "Good"
+        },
+        "Service Blueprint Generation": {
+          "status": "PASSED",
+          "output": {
+            "step": "Service Blueprint Generation",
+            "output": "Generated service blueprints",
+            "status": "completed",
+            "timestamp": "2025-08-14T22:00:33.111Z"
+          },
+          "duration": 200,
+          "performance": "Good"
+        },
+        "MVP Generation": {
+          "status": "PASSED",
+          "output": {
+            "step": "MVP Generation",
+            "output": "Generated complete service projects",
+            "status": "completed",
+            "timestamp": "2025-08-14T22:00:33.312Z"
+          },
+          "duration": 201,
+          "performance": "Good"
+        }
+      },
+      "errors": [],
+      "performance": {
+        "Market Analysis": 201,
+        "Opportunity Detection": 201,
+        "Service Blueprint Generation": 200,
+        "MVP Generation": 201,
+        "totalDuration": 803,
+        "averageStepDuration": 201
+      }
+    },
+    "qualityAssurance": {
+      "name": "Quality Assurance Integration Test",
+      "status": "PASSED",
+      "details": {
+        "Code Quality Analysis": {
+          "status": "PASSED",
+          "score": 85,
+          "issues": [],
+          "recommendations": [
+            "Continue monitoring quality metrics"
+          ]
+        },
+        "Security Analysis": {
+          "status": "PASSED",
+          "score": 92,
+          "issues": [],
+          "recommendations": [
+            "Continue monitoring quality metrics"
+          ]
+        },
+        "Performance Analysis": {
+          "status": "PASSED",
+          "score": 78,
+          "issues": [],
+          "recommendations": [
+            "Continue monitoring quality metrics"
+          ]
+        },
+        "Compliance Checking": {
+          "status": "PASSED",
+          "score": 88,
+          "issues": [],
+          "recommendations": [
+            "Continue monitoring quality metrics"
+          ]
+        }
+      },
+      "errors": [],
+      "qualityMetrics": {
+        "Code Quality Analysis": 85,
+        "Security Analysis": 92,
+        "Performance Analysis": 78,
+        "Compliance Checking": 88,
+        "overall": 86
+      }
+    },
+    "deploymentOrchestration": {
+      "name": "Deployment Orchestration Test",
+      "status": "PASSED",
+      "details": {
+        "AWS Container Deployment": {
+          "status": "PASSED",
+          "provider": "aws",
+          "type": "container",
+          "configuration": {
+            "type": "ECS",
+            "region": "us-west-2"
+          },
+          "files": [
+            "deployment.yaml",
+            "config.json",
+            "terraform.tf"
+          ]
+        },
+        "GCP Serverless Deployment": {
+          "status": "PASSED",
+          "provider": "gcp",
+          "type": "serverless",
+          "configuration": {
+            "type": "Cloud Run",
+            "region": "us-central1"
+          },
+          "files": [
+            "deployment.yaml",
+            "config.json",
+            "terraform.tf"
+          ]
+        },
+        "Kubernetes Deployment": {
+          "status": "PASSED",
+          "provider": "kubernetes",
+          "type": "kubernetes",
+          "configuration": {
+            "type": "K8s",
+            "namespace": "default"
+          },
+          "files": [
+            "deployment.yaml",
+            "config.json",
+            "terraform.tf"
+          ]
+        },
+        "Terraform Configuration": {
+          "status": "PASSED",
+          "provider": "terraform",
+          "type": "infrastructure",
+          "configuration": {
+            "type": "Terraform",
+            "provider": "aws"
+          },
+          "files": [
+            "deployment.yaml",
+            "config.json",
+            "terraform.tf"
+          ]
+        }
+      },
+      "errors": [],
+      "deploymentMetrics": {
+        "AWS Container Deployment": {
+          "success": true,
+          "fileCount": 3
+        },
+        "GCP Serverless Deployment": {
+          "success": true,
+          "fileCount": 3
+        },
+        "Kubernetes Deployment": {
+          "success": true,
+          "fileCount": 3
+        },
+        "Terraform Configuration": {
+          "success": true,
+          "fileCount": 3
+        },
+        "coverage": 100
+      }
+    },
+    "performanceAndScalability": {
+      "name": "Performance & Scalability Test",
+      "status": "PASSED",
+      "details": {
+        "Single Service Generation": {
+          "status": "PASSED",
+          "load": 1,
+          "duration": 1002,
+          "expected": 5000,
+          "performance": "Excellent",
+          "throughput": 0.998003992015968
+        },
+        "Multiple Service Generation": {
+          "status": "PASSED",
+          "load": 5,
+          "duration": 2237,
+          "expected": 15000,
+          "performance": "Excellent",
+          "throughput": 2.235136343316942
+        },
+        "Bulk Service Generation": {
+          "status": "PASSED",
+          "load": 10,
+          "duration": 3165,
+          "expected": 30000,
+          "performance": "Excellent",
+          "throughput": 3.1595576619273302
+        }
+      },
+      "errors": [],
+      "performanceMetrics": {
+        "Single Service Generation": {
+          "duration": 1002,
+          "throughput": 0.998003992015968,
+          "performance": "Excellent"
+        },
+        "Multiple Service Generation": {
+          "duration": 2237,
+          "throughput": 2.235136343316942,
+          "performance": "Excellent"
+        },
+        "Bulk Service Generation": {
+          "duration": 3165,
+          "throughput": 3.1595576619273302,
+          "performance": "Excellent"
+        },
+        "overall": {
+          "averageDuration": 2135,
+          "averageThroughput": 2.13,
+          "scalability": "Poor"
+        }
+      }
+    }
+  },
+  "recommendations": [
+    {
+      "priority": "Critical",
+      "action": "Fix component loading issues",
+      "details": "Ensure all service factory components are properly installed and accessible"
+    },
+    {
+      "priority": "Medium",
+      "action": "Optimize system scalability",
+      "details": "Review performance bottlenecks and implement caching or parallel processing"
+    }
+  ],
+  "nextSteps": [
+    {
+      "action": "Review and fix failed tests",
+      "command": "npm run integration:test",
+      "timeline": "Today"
+    },
+    {
+      "action": "Run performance benchmarks",
+      "command": "npm run performance:test",
+      "timeline": "This Week"
+    },
+    {
+      "action": "Generate quality dashboard",
+      "command": "npm run dashboard:generate",
+      "timeline": "This Week"
+    }
+  ]
+}
