@@ -745,6 +745,238 @@ export const ADVANCED_MICRO_SAAS_SERVICES: AdvancedMicroSaasService[] = [
     documentationUrl: "https://ziontechgroup.com/docs/seo-optimizer",
     freeTrial: true,
     freeTrialDays: 14
+  },
+
+  // New additional services
+  {
+    id: 'ai-content-curator',
+    name: 'AI Content Curator Pro',
+    category: 'Content Management',
+    subcategory: 'AI-Powered Curation',
+    description: 'Intelligent content curation platform that uses AI to discover, organize, and recommend relevant content for your audience. Features include automated tagging, sentiment analysis, and personalized content feeds.',
+    price: 89,
+    pricingModel: 'monthly',
+    userLimit: 'unlimited',
+    features: [
+      'AI-powered content discovery',
+      'Automated content tagging',
+      'Sentiment analysis',
+      'Personalized content feeds',
+      'Multi-platform integration',
+      'Content performance analytics',
+      'Automated scheduling',
+      'Team collaboration tools'
+    ],
+    benefits: [
+      'Save 15+ hours per week on content curation',
+      'Increase audience engagement by 40%',
+      'Improve content relevance and quality',
+      'Automated workflow optimization',
+      'Data-driven content strategy'
+    ],
+    targetAudience: 'Content marketers, social media managers, publishers, digital agencies',
+    tags: ['AI', 'Content Curation', 'Marketing', 'Automation', 'Analytics'],
+    marketPrice: 120,
+    roi: '300%',
+    competitors: ['Feedly Pro', 'Pocket Premium', 'Flipboard'],
+    technology: 'React, Node.js, OpenAI GPT-4, TensorFlow, Redis',
+    integrations: ['WordPress', 'Shopify', 'Mailchimp', 'Buffer', 'Hootsuite'],
+    compliance: 'GDPR, CCPA, SOC 2',
+    estimatedDelivery: '2-3 weeks',
+    supportLevel: '24/7 priority support',
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      website: 'https://ziontechgroup.com'
+    },
+    demoUrl: 'https://ziontechgroup.com/demo/ai-content-curator',
+    documentationUrl: 'https://ziontechgroup.com/docs/ai-content-curator',
+    freeTrial: true,
+    freeTrialDays: 14
+  },
+  {
+    id: 'blockchain-invoice-manager',
+    name: 'Blockchain Invoice Manager',
+    category: 'Financial Services',
+    subcategory: 'Blockchain Solutions',
+    description: 'Secure, transparent invoice management system built on blockchain technology. Features include smart contracts, automated payments, and immutable audit trails for complete financial transparency.',
+    price: 149,
+    pricingModel: 'monthly',
+    userLimit: 'unlimited',
+    features: [
+      'Blockchain-based invoice tracking',
+      'Smart contract automation',
+      'Automated payment processing',
+      'Immutable audit trails',
+      'Multi-currency support',
+      'Real-time reconciliation',
+      'Regulatory compliance tools',
+      'API integration capabilities'
+    ],
+    benefits: [
+      'Eliminate invoice fraud and disputes',
+      'Reduce payment processing time by 60%',
+      'Ensure regulatory compliance',
+      'Improve financial transparency',
+      'Lower operational costs'
+    ],
+    targetAudience: 'Accounting firms, financial institutions, enterprises, fintech companies',
+    tags: ['Blockchain', 'Invoicing', 'Finance', 'Smart Contracts', 'Compliance'],
+    marketPrice: 200,
+    roi: '250%',
+    competitors: ['QuickBooks Enterprise', 'Xero', 'FreshBooks'],
+    technology: 'React, Solidity, Ethereum, Web3.js, Node.js, PostgreSQL',
+    integrations: ['QuickBooks', 'Xero', 'Stripe', 'PayPal', 'Bank APIs'],
+    compliance: 'SOX, PCI DSS, SOC 2, GDPR',
+    estimatedDelivery: '4-6 weeks',
+    supportLevel: '24/7 enterprise support',
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      website: 'https://ziontechgroup.com'
+    },
+    demoUrl: 'https://ziontechgroup.com/demo/blockchain-invoice',
+    documentationUrl: 'https://ziontechgroup.com/docs/blockchain-invoice',
+    freeTrial: true,
+    freeTrialDays: 30
+  },
+  {
+    id: 'quantum-crypto-wallet',
+    name: 'Quantum Crypto Wallet',
+    category: 'Cryptocurrency',
+    subcategory: 'Quantum Security',
+    description: 'Next-generation cryptocurrency wallet with quantum-resistant encryption. Features include multi-signature support, hardware wallet integration, and advanced security protocols for the quantum computing era.',
+    price: 199,
+    pricingModel: 'monthly',
+    userLimit: 'unlimited',
+    features: [
+      'Quantum-resistant encryption',
+      'Multi-signature support',
+      'Hardware wallet integration',
+      'Cold storage options',
+      'Multi-currency support',
+      'Advanced security protocols',
+      'Portfolio tracking',
+      'DeFi integration'
+    ],
+    benefits: [
+      'Future-proof security against quantum attacks',
+      'Enhanced protection of digital assets',
+      'Comprehensive portfolio management',
+      'Seamless DeFi integration',
+      'Enterprise-grade security'
+    ],
+    targetAudience: 'Cryptocurrency investors, DeFi users, enterprises, financial institutions',
+    tags: ['Cryptocurrency', 'Quantum Security', 'DeFi', 'Wallet', 'Blockchain'],
+    marketPrice: 250,
+    roi: '400%',
+    competitors: ['Ledger Live', 'Exodus', 'Trust Wallet'],
+    technology: 'React Native, WebAssembly, Post-Quantum Cryptography, Web3.js',
+    integrations: ['MetaMask', 'WalletConnect', 'DeFi protocols', 'DEX platforms'],
+    compliance: 'SOC 2, ISO 27001, GDPR',
+    estimatedDelivery: '6-8 weeks',
+    supportLevel: '24/7 priority support',
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      website: 'https://ziontechgroup.com'
+    },
+    demoUrl: 'https://ziontechgroup.com/demo/quantum-wallet',
+    documentationUrl: 'https://ziontechgroup.com/docs/quantum-wallet',
+    freeTrial: true,
+    freeTrialDays: 30
+  },
+  {
+    id: 'ai-voice-cloning',
+    name: 'AI Voice Cloning Studio',
+    category: 'Audio Technology',
+    subcategory: 'Voice Synthesis',
+    description: 'Professional AI voice cloning platform for creating high-quality voice replicas. Features include emotion control, accent modification, and real-time voice synthesis for various applications.',
+    price: 299,
+    pricingModel: 'monthly',
+    userLimit: 'unlimited',
+    features: [
+      'High-fidelity voice cloning',
+      'Emotion and tone control',
+      'Accent modification',
+      'Real-time synthesis',
+      'Multi-language support',
+      'Voice customization tools',
+      'API integration',
+      'Batch processing'
+    ],
+    benefits: [
+      'Create professional voice-overs in minutes',
+      'Reduce production costs by 70%',
+      'Maintain brand voice consistency',
+      'Scale content creation',
+      'Access to diverse voice options'
+    ],
+    targetAudience: 'Content creators, podcasters, marketers, game developers, film studios',
+    tags: ['AI', 'Voice Cloning', 'Audio', 'Synthesis', 'Content Creation'],
+    marketPrice: 400,
+    roi: '350%',
+    competitors: ['Descript', 'Murf.ai', 'Play.ht'],
+    technology: 'Python, TensorFlow, PyTorch, React, WebRTC, AWS',
+    integrations: ['Adobe Premiere', 'Final Cut Pro', 'Audacity', 'OBS Studio'],
+    compliance: 'GDPR, CCPA, Voice Privacy Laws',
+    estimatedDelivery: '8-10 weeks',
+    supportLevel: '24/7 technical support',
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      website: 'https://ziontechgroup.com'
+    },
+    demoUrl: 'https://ziontechgroup.com/demo/voice-cloning',
+    documentationUrl: 'https://ziontechgroup.com/docs/voice-cloning',
+    freeTrial: true,
+    freeTrialDays: 14
+  },
+  {
+    id: 'quantum-machine-learning',
+    name: 'Quantum Machine Learning Platform',
+    category: 'Artificial Intelligence',
+    subcategory: 'Quantum Computing',
+    description: 'Cutting-edge platform that combines quantum computing with machine learning for solving complex optimization problems. Features include quantum algorithms, hybrid classical-quantum workflows, and advanced analytics.',
+    price: 499,
+    pricingModel: 'monthly',
+    userLimit: 'unlimited',
+    features: [
+      'Quantum machine learning algorithms',
+      'Hybrid classical-quantum workflows',
+      'Advanced optimization solvers',
+      'Real-time quantum simulation',
+      'API access to quantum computers',
+      'Performance benchmarking',
+      'Custom algorithm development',
+      'Enterprise security features'
+    ],
+    benefits: [
+      'Solve complex optimization problems 100x faster',
+      'Access to cutting-edge quantum technology',
+      'Competitive advantage in AI/ML',
+      'Future-proof technology investment',
+      'Expert quantum computing support'
+    ],
+    targetAudience: 'Research institutions, pharmaceutical companies, financial services, logistics companies',
+    tags: ['Quantum Computing', 'Machine Learning', 'AI', 'Optimization', 'Research'],
+    marketPrice: 750,
+    roi: '500%',
+    competitors: ['IBM Quantum', 'Google Quantum AI', 'Microsoft Azure Quantum'],
+    technology: 'Python, Qiskit, Cirq, TensorFlow, React, Quantum Simulators',
+    integrations: ['AWS Braket', 'IBM Quantum', 'Google Cloud', 'Azure Quantum'],
+    compliance: 'SOC 2, ISO 27001, HIPAA (for healthcare)',
+    estimatedDelivery: '12-16 weeks',
+    supportLevel: '24/7 dedicated support',
+    contactInfo: {
+      phone: '+1 302 464 0950',
+      email: 'kleber@ziontechgroup.com',
+      website: 'https://ziontechgroup.com'
+    },
+    demoUrl: 'https://ziontechgroup.com/demo/quantum-ml',
+    documentationUrl: 'https://ziontechgroup.com/docs/quantum-ml',
+    freeTrial: true,
+    freeTrialDays: 30
   }
 ];
 
