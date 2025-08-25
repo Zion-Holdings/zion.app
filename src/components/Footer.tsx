@@ -97,29 +97,29 @@ const Footer = () => {
           >
             <h3 className="text-white font-semibold mb-6 text-lg">Marketplace</h3>
             <ul className="space-y-3">
-              <li><Link to="/marketplace" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
+              <li><Link to="/ai-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
-                Products
+                AI Services
               </Link></li>
-              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
+              <li><Link to="/cloud-devops" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
-                Services
+                Cloud & DevOps
               </Link></li>
               <li><Link to="/micro-saas-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
                 Micro SAAS
               </Link></li>
-              <li><Link to="/pricing" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
+              <li><Link to="/enterprise-solutions" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
-                Pricing
+                Enterprise
               </Link></li>
-              <li><Link to="/talent" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
+              <li><Link to="/digital-transformation" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
-                Talent
+                Digital Transformation
               </Link></li>
-              <li><Link to="/equipment" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
+              <li><Link to="/emerging-tech" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
-                Equipment
+                Emerging Tech
               </Link></li>
             </ul>
           </motion.div>
@@ -144,9 +144,9 @@ const Footer = () => {
                 <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
                 Partners
               </Link></li>
-              <li><Link to="/careers" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
+              <li><Link to="/pricing" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
-                Careers
+                Pricing
               </Link></li>
               <li><Link to="/contact" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
@@ -183,7 +183,7 @@ const Footer = () => {
             <div className="flex space-x-8 mt-6 md:mt-0">
               <Link to="/privacy" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors duration-300">Privacy Policy</Link>
               <Link to="/terms" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors duration-300">Terms of Service</Link>
-              <Link to="/cookies" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors duration-300">Cookie Policy</Link>
+              <Link to="/sitemap" className="text-zion-slate-light hover:text-zion-cyan text-sm transition-colors duration-300">Sitemap</Link>
             </div>
           </div>
         </motion.div>

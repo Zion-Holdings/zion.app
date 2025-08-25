@@ -23,6 +23,7 @@ import {
 } from './routes';
 
 const Home = React.lazy(() => import('./pages/Home'));
+const About = React.lazy(() => import('./pages/About'));
 const AIMatcherPage = React.lazy(() => import('./pages/AIMatcher'));
 const TalentDirectory = React.lazy(() => import('./pages/TalentDirectory'));
 const TalentsPage = React.lazy(() => import('./pages/TalentsPage'));
@@ -44,9 +45,15 @@ const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
 const MicroSaasServices = React.lazy(() => import('./pages/MicroSaasServices'));
 const PricingPage = React.lazy(() => import('./pages/PricingPage'));
+const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
+const CloudDevOpsSolutions = React.lazy(() => import('./pages/CloudDevOpsSolutions'));
+const EnterpriseSolutionsPage = React.lazy(() => import('./pages/EnterpriseSolutionsPage'));
+const DigitalTransformation = React.lazy(() => import('./pages/DigitalTransformation'));
+const EmergingTech = React.lazy(() => import('./pages/EmergingTech'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
+  { path: '/about', element: <About /> },
   { path: '/match', element: <AIMatcherPage /> },
   { path: '/login', element: <Login /> },
   { path: '/signup', element: <Signup /> },
@@ -69,6 +76,11 @@ const baseRoutes = [
   { path: '/request-quote', element: <RequestQuotePage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
+  { path: '/ai-services', element: <AIServicesPage /> },
+  { path: '/cloud-devops', element: <CloudDevOpsSolutions /> },
+  { path: '/enterprise-solutions', element: <EnterpriseSolutionsPage /> },
+  { path: '/digital-transformation', element: <DigitalTransformation /> },
+  { path: '/emerging-tech', element: <EmergingTech /> },
 ];
 
 const App = () => {
