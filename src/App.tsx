@@ -17,6 +17,8 @@ import { useScrollToTop } from "./hooks";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
 import { ErrorBoundary } from './components/ErrorBoundary';
+import { SEO } from './components/SEO';
+import { PerformanceMonitor } from './components/PerformanceMonitor';
 
 // Enhanced lazy loading with preloading hints
 const Home = lazy(() => import('./pages/Home'));
@@ -57,9 +59,13 @@ const SpecializedITInfrastructure = lazy(() => import('./pages/services/Speciali
 const EnterpriseSolutions = lazy(() => import('./pages/solutions/Enterprise'));
 const HealthcareSolutions = lazy(() => import('./pages/solutions/Healthcare'));
 
-// Loading Component
+// Loading Component with improved accessibility
 const LoadingSpinner = () => (
-  <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
+  <div 
+    className="flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900"
+    role="status"
+    aria-label="Loading Zion Tech Group application"
+  >
     <div className="text-center">
       <div className="relative">
         <div className="w-16 h-16 border-4 border-cyan-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
@@ -67,6 +73,7 @@ const LoadingSpinner = () => (
       </div>
       <p className="text-cyan-400 text-lg font-medium">Loading Zion Tech Group...</p>
       <p className="text-gray-400 text-sm mt-2">Preparing your experience</p>
+      <div className="sr-only">Loading, please wait</div>
     </div>
   </div>
 );
@@ -79,12 +86,15 @@ const App = () => {
       <ThemeProvider>
         <WhitelabelProvider>
           <Router>
+            {/* Global SEO Component */}
+            <SEO />
+            
             <div className="App min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
               <Header />
               <Sidebar isOpen={false} onClose={() => {}} />
               
               {/* Main Content with enhanced Suspense */}
-              <main className="ml-64 pt-20 min-h-screen">
+              <main className="ml-64 pt-20 min-h-screen" role="main">
                 <Suspense fallback={<LoadingSpinner />}>
                   <Routes>
                     <Route path="/" element={<Home />} />
@@ -139,6 +149,9 @@ const App = () => {
               
               {/* AI Chatbot - Always Available */}
               <AIChatbot />
+              
+              {/* Performance Monitor - Always Available */}
+              <PerformanceMonitor showDetails={false} />
               
               {/* Collaborative Text Editor - Development Mode */}
               {import.meta.env.DEV && (
