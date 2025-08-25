@@ -1,36 +1,204 @@
 
 import React from 'react';
-import { CategoriesSection } from "@/components/CategoriesSection";
-import { BenefitsSection } from "@/components/BenefitsSection";
-import { HowItWorksSection } from "@/components/HowItWorksSection";
-import { NewsletterSection } from "@/components/NewsletterSection";
-import { FeaturedListingsSection } from "@/components/FeaturedListingsSection";
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { 
+  ArrowRight, 
+  CheckCircle, 
+  Star, 
+  Zap, 
+  Shield, 
+  Users, 
+  Globe, 
+  Cpu,
+  Brain,
+  Cloud,
+  Database,
+  Lock,
+  TrendingUp,
+  Rocket,
+  Target,
+  Award
+} from 'lucide-react';
 import { SEO } from "@/components/SEO";
-import { HeroSection } from "@/components/HeroSection";
-import { QuickAccess } from "@/components/home/QuickAccess";
-import { FeatureCTAs } from "@/components/home/FeatureCTAs";
-import { FeatureHighlights } from "@/components/home/FeatureHighlights";
-import { ITServiceRequestHero } from "@/components/home/ITServiceRequestHero";
-import { AnimatedBackground, FloatingOrbs } from "@/components/ui/AnimatedBackground";
->>>>>>> cursor/enhance-app-with-new-services-and-futuristic-design-0c75
 
+const featuredServices = [
+  {
+    title: "AI & Machine Learning",
+    description: "Cutting-edge AI solutions that transform your business operations and decision-making processes.",
+    icon: Brain,
+    color: "from-zion-cyan to-zion-blue-light",
+    link: "/ai-services"
+  },
+  {
+    title: "Micro SAAS Services",
+    description: "Scalable software solutions designed to grow with your business needs and requirements.",
+    icon: Cpu,
+    color: "from-zion-purple to-zion-cyan",
+    link: "/micro-saas-services"
+  },
+  {
+    title: "Cloud & DevOps",
+    description: "Optimize your infrastructure with modern cloud solutions and automated deployment pipelines.",
+    icon: Cloud,
+    color: "from-zion-blue-light to-zion-purple",
+    link: "/cloud-devops-solutions"
+  },
+  {
+    title: "Digital Transformation",
+    description: "Complete business modernization with cutting-edge technology and strategic implementation.",
+    icon: Rocket,
+    color: "from-zion-cyan to-zion-purple",
+    link: "/digital-transformation"
+  }
+];
+
+const features = [
+  {
+    title: "Innovation First",
+    description: "We stay ahead of the curve with the latest technologies and innovative approaches to solve complex business challenges.",
+    icon: Zap,
+    color: "text-zion-cyan"
+  },
+  {
+    title: "Expert Team",
+    description: "Our team of seasoned professionals brings years of experience across various industries and technologies.",
+    icon: Users,
+    color: "text-zion-purple"
+  },
+  {
+    title: "Security Focused",
+    description: "Enterprise-grade security measures ensure your data and systems are protected at every level.",
+    icon: Shield,
+    color: "text-zion-cyan"
+  },
+  {
+    title: "Global Reach",
+    description: "Serving clients worldwide with localized solutions and 24/7 support across all time zones.",
+    icon: Globe,
+    color: "text-zion-purple"
+  }
+];
+
+const testimonials = [
+  {
+    name: "Sarah Johnson",
+    role: "CTO, TechCorp Inc.",
+    content: "Zion Tech Group transformed our entire IT infrastructure. Their AI solutions increased our efficiency by 300%.",
+    rating: 5
+  },
+  {
+    name: "Michael Chen",
+    role: "CEO, StartupXYZ",
+    content: "The micro SAAS services they provided helped us scale from 10 to 1000 users in just 6 months.",
+    rating: 5
+  },
+  {
+    name: "Emily Rodriguez",
+    role: "VP Engineering, DataFlow",
+    content: "Their cloud and DevOps expertise saved us months of development time and significantly reduced costs.",
+    rating: 5
+  }
+];
+
+const stats = [
+  { number: "500+", label: "Projects Completed", icon: Target },
+  { number: "50+", label: "Enterprise Clients", icon: Award },
+  { number: "99.9%", label: "Uptime Guarantee", icon: Shield },
+  { number: "24/7", label: "Support Available", icon: Users }
+];
+
+const Home: React.FC = () => {
   return (
-    <div className="min-h-screen bg-background relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-zion-blue-dark via-zion-blue to-zion-purple-dark relative overflow-hidden">
       <SEO 
-        title="Zion - The Tech & AI Marketplace" 
-        description="Discover top AI and tech talent, services, and equipment in one place."
-        keywords="AI, technology, marketplace, services, talent"
-        canonical="https://app.ziontechgroup.com/"
+        title="Zion Tech Group - Leading Technology Solutions & AI Services" 
+        description="Transform your business with Zion Tech Group's cutting-edge AI, cloud, and digital transformation services. Expert solutions for the modern enterprise."
+        keywords="AI services, technology solutions, digital transformation, cloud computing, micro SAAS, enterprise solutions"
+        canonical="https://ziontechgroup.com/"
       />
 
-      {/* Futuristic Animated Backgrounds */}
-      <AnimatedBackground variant="grid" intensity="low" />
-      <FloatingOrbs count={8} />
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="mb-8"
+          >
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+              Transforming Business Through
+              <span className="block bg-gradient-to-r from-zion-cyan to-zion-purple bg-clip-text text-transparent">
+                Technology Innovation
+              </span>
+            </h1>
+            <p className="text-xl md:text-2xl text-zion-slate-light max-w-4xl mx-auto leading-relaxed">
+              We deliver cutting-edge AI solutions, cloud infrastructure, and digital transformation services 
+              that propel your business into the future.
+            </p>
+          </motion.div>
 
-      <ITServiceRequestHero />
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
+            <Link
+              to="/contact"
+              className="px-8 py-4 bg-gradient-to-r from-zion-cyan to-zion-purple text-white rounded-xl text-lg font-semibold hover:shadow-2xl hover:shadow-zion-cyan/25 transition-all duration-300 flex items-center gap-2 justify-center group"
+            >
+              Start Your Project
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+            <Link
+              to="/pricing"
+              className="px-8 py-4 border-2 border-zion-cyan text-zion-cyan rounded-xl text-lg font-semibold hover:bg-zion-cyan hover:text-white transition-all duration-300 flex items-center gap-2 justify-center"
+            >
+              <CheckCircle className="w-5 h-5" />
+              View Pricing
+            </Link>
+          </motion.div>
+        </div>
 
-        {/* Featured Services */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+        {/* Floating Elements */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className="absolute top-20 left-10 w-20 h-20 bg-zion-cyan/20 rounded-full animate-float"></div>
+          <div className="absolute top-40 right-20 w-16 h-16 bg-zion-purple/20 rounded-full animate-float" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-zion-blue-light/20 rounded-full animate-float" style={{ animationDelay: '4s' }}></div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, index) => {
+              const IconComponent = stat.icon;
+              return (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="text-center"
+                >
+                  <div className="w-16 h-16 bg-zion-cyan/20 rounded-2xl mx-auto mb-4 flex items-center justify-center">
+                    <IconComponent className="w-8 h-8 text-zion-cyan" />
+                  </div>
+                  <div className="text-3xl md:text-4xl font-bold text-white mb-2">{stat.number}</div>
+                  <div className="text-zion-slate-light">{stat.label}</div>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Services */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -76,10 +244,12 @@ import { AnimatedBackground, FloatingOrbs } from "@/components/ui/AnimatedBackgr
               );
             })}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Features Section */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      {/* Features Section */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -118,10 +288,12 @@ import { AnimatedBackground, FloatingOrbs } from "@/components/ui/AnimatedBackgr
               );
             })}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Testimonials */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      {/* Testimonials */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -160,10 +332,12 @@ import { AnimatedBackground, FloatingOrbs } from "@/components/ui/AnimatedBackgr
               </motion.div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Call to Action */}
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      {/* Call to Action */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -196,8 +370,10 @@ import { AnimatedBackground, FloatingOrbs } from "@/components/ui/AnimatedBackgr
               </div>
             </div>
           </motion.div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   );
-}
+};
+
+export default Home;
