@@ -41,6 +41,24 @@ const ITInfrastructure = lazy(() => import('./pages/services/ITInfrastructure'))
 const MicroSAASSolutions = lazy(() => import('./pages/services/MicroSAASSolutions'));
 const IndustrySolutions = lazy(() => import('./pages/services/IndustrySolutions'));
 
+// Additional pages
+const Pricing = lazy(() => import('./pages/Pricing'));
+const Careers = lazy(() => import('./pages/Careers'));
+const Partners = lazy(() => import('./pages/Partners'));
+const News = lazy(() => import('./pages/News'));
+const Testimonials = lazy(() => import('./pages/Testimonials'));
+const Leadership = lazy(() => import('./pages/Leadership'));
+const Blog = lazy(() => import('./pages/Blog'));
+const CaseStudies = lazy(() => import('./pages/CaseStudies'));
+const FAQ = lazy(() => import('./pages/FAQ'));
+const Privacy = lazy(() => import('./pages/Privacy'));
+const Terms = lazy(() => import('./pages/Terms'));
+const Cookies = lazy(() => import('./pages/Cookies'));
+const Accessibility = lazy(() => import('./pages/Accessibility'));
+const Sitemap = lazy(() => import('./pages/Sitemap'));
+const HelpCenter = lazy(() => import('./pages/HelpCenter'));
+const RequestQuote = lazy(() => import('./pages/RequestQuote'));
+
 // Loading Component
 const LoadingSpinner = () => (
   <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900">
@@ -95,6 +113,26 @@ const App = () => {
                     <Route path="/services/it-infrastructure" element={<ITInfrastructure />} />
                     <Route path="/services/micro-saas-solutions" element={<MicroSAASSolutions />} />
                     <Route path="/services/industry-solutions" element={<IndustrySolutions />} />
+                    
+                    {/* Additional page routes */}
+                    <Route path="/pricing" element={<Pricing />} />
+                    <Route path="/careers" element={<Careers />} />
+                    <Route path="/partners" element={<Partners />} />
+                    <Route path="/news" element={<News />} />
+                    <Route path="/testimonials" element={<Testimonials />} />
+                    <Route path="/leadership" element={<Leadership />} />
+                    <Route path="/blog" element={<Blog />} />
+                    <Route path="/case-studies" element={<CaseStudies />} />
+                    <Route path="/faq" element={<FAQ />} />
+                    <Route path="/privacy" element={<Privacy />} />
+                    <Route path="/terms" element={<Terms />} />
+                    <Route path="/cookies" element={<Cookies />} />
+                    <Route path="/accessibility" element={<Accessibility />} />
+                    <Route path="/sitemap" element={<Sitemap />} />
+                    <Route path="/help" element={<HelpCenter />} />
+                    <Route path="/support" element={<HelpCenter />} />
+                    <Route path="/request-quote" element={<RequestQuote />} />
+                    <Route path="/quote" element={<RequestQuote />} />
                   </Routes>
                 </Suspense>
               </main>

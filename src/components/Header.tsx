@@ -26,33 +26,15 @@ export function Header() {
     },
     { 
       path: '/services', 
-      label: 'AI Services', 
+      label: 'Services', 
       icon: '🤖',
       description: 'Explore our AI service offerings'
     },
     { 
-      path: '/emerging-tech', 
-      label: 'Emerging Tech', 
-      icon: '🚀',
-      description: 'Cutting-edge technology solutions'
-    },
-    { 
-      path: '/comprehensive-services', 
-      label: 'All Services', 
-      icon: '⚡',
-      description: 'Complete service catalog'
-    },
-    { 
-      path: '/services-comparison', 
-      label: 'Compare', 
-      icon: '📊',
-      description: 'Compare service options'
-    },
-    { 
-      path: '/it-onsite-services', 
-      label: 'Onsite IT', 
-      icon: '🔧',
-      description: 'Onsite IT support services'
+      path: '/about', 
+      label: 'About', 
+      icon: 'ℹ️',
+      description: 'Learn about our company'
     },
     { 
       path: '/pricing', 
@@ -61,10 +43,22 @@ export function Header() {
       description: 'Transparent pricing plans'
     },
     { 
-      path: '/about', 
-      label: 'About', 
-      icon: 'ℹ️',
-      description: 'Learn about our company'
+      path: '/case-studies', 
+      label: 'Case Studies', 
+      icon: '📊',
+      description: 'View our success stories'
+    },
+    { 
+      path: '/news', 
+      label: 'News', 
+      icon: '📰',
+      description: 'Latest updates and insights'
+    },
+    { 
+      path: '/careers', 
+      label: 'Careers', 
+      icon: '💼',
+      description: 'Join our team'
     },
     { 
       path: '/contact', 
