@@ -44,6 +44,14 @@ const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
 const MicroSaasServices = React.lazy(() => import('./pages/MicroSaasServices'));
 const PricingPage = React.lazy(() => import('./pages/PricingPage'));
+const AIServicesPage = React.lazy(() => import('./pages/AIServicesPage'));
+const ComprehensiveITServices = React.lazy(() => import('./pages/ComprehensiveITServices'));
+const CloudDevOpsServices = React.lazy(() => import('./pages/CloudDevOpsServices'));
+const EnterpriseSolutions = React.lazy(() => import('./pages/EnterpriseSolutions'));
+const DigitalTransformation = React.lazy(() => import('./pages/DigitalTransformation'));
+const EmergingTechServices = React.lazy(() => import('./pages/EmergingTechServices'));
+const AboutPage = React.lazy(() => import('./pages/AboutPage'));
+const ServicesPage = React.lazy(() => import('./pages/Services'));
 
 const baseRoutes = [
   { path: '/', element: <Home /> },
@@ -69,6 +77,14 @@ const baseRoutes = [
   { path: '/request-quote', element: <RequestQuotePage /> },
   { path: '/blog', element: <Blog /> },
   { path: '/blog/:slug', element: <BlogPost /> },
+  { path: '/ai-services', element: <AIServicesPage /> },
+  { path: '/comprehensive-it-services', element: <ComprehensiveITServices /> },
+  { path: '/cloud-devops', element: <CloudDevOpsServices /> },
+  { path: '/enterprise-solutions', element: <EnterpriseSolutions /> },
+  { path: '/digital-transformation', element: <DigitalTransformation /> },
+  { path: '/emerging-tech', element: <EmergingTechServices /> },
+  { path: '/about', element: <AboutPage /> },
+  { path: '/services', element: <ServicesPage /> },
 ];
 
 const App = () => {
