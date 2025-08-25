@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
-import { Star, Zap, Shield, TrendingUp, Users, Clock } from 'lucide-react';
+import { Star, Zap, Shield, TrendingUp, Users } from 'lucide-react';
 
 interface ServiceShowcaseProps {
   services: Array<{

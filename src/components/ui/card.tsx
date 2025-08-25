@@ -5,50 +5,52 @@ interface CardProps {
   className?: string;
 }
 
-export function Card({ children, className = '' }: CardProps) {
+const Card: React.FC<CardProps> = ({ children, className = '' }) => {
   return (
-    <div className={`bg-white dark:bg-zinc-800 rounded-lg border border-zinc-200 dark:border-zinc-700 p-6 ${className}`}>
+    <div className={`rounded-lg border bg-card text-card-foreground shadow-sm ${className}`}>
       {children}
     </div>
   );
-}
+};
 
-export function CardHeader({ children, className = '' }: CardProps) {
+const CardHeader: React.FC<CardProps> = ({ children, className = '' }) => {
   return (
-    <div className={`mb-4 ${className}`}>
+    <div className={`flex flex-col space-y-1.5 p-6 ${className}`}>
       {children}
     </div>
   );
-}
+};
 
-export function CardTitle({ children, className = '' }: CardProps) {
+const CardTitle: React.FC<CardProps> = ({ children, className = '' }) => {
   return (
-    <h3 className={`text-lg font-semibold text-zinc-900 dark:text-zinc-100 ${className}`}>
+    <h3 className={`text-2xl font-semibold leading-none tracking-tight ${className}`}>
       {children}
     </h3>
   );
-}
+};
 
-export function CardDescription({ children, className = '' }: CardProps) {
+const CardDescription: React.FC<CardProps> = ({ children, className = '' }) => {
   return (
-    <p className={`text-zinc-600 dark:text-zinc-400 ${className}`}>
+    <p className={`text-sm text-muted-foreground ${className}`}>
       {children}
     </p>
   );
-}
+};
 
-export function CardContent({ children, className = '' }: CardProps) {
+const CardContent: React.FC<CardProps> = ({ children, className = '' }) => {
   return (
-    <div className={className}>
+    <div className={`p-6 pt-0 ${className}`}>
       {children}
     </div>
   );
-}
+};
 
-export function CardFooter({ children, className = '' }: CardProps) {
+const CardFooter: React.FC<CardProps> = ({ children, className = '' }) => {
   return (
-    <div className={`mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-700 ${className}`}>
+    <div className={`flex items-center p-6 pt-0 ${className}`}>
       {children}
     </div>
   );
-}
+};
+
+export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter };

@@ -1,0 +1,35 @@
+User-agent: *
+Allow: /
+
+<<<<<<< HEAD
+# Sitemap
+Sitemap: https://ziontechgroup.com/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /automation/
+Disallow: /scripts/
+
+# Allow important pages
+Allow: /services/
+Allow: /solutions/
+Allow: /about/
+Allow: /contact/
+Allow: /blog/
+Allow: /case-studies/
+Allow: /webinars/
+
+# Crawl delay for better server performance
+Crawl-delay: 1
+
+=======
+# Sitemaps
+Sitemap: https://zion.app/sitemap.xml
+Sitemap: https://zion.app/sitemap.txt
+
+# Crawl-delay
+Crawl-delay: 1
+>>>>>>> origin/cursor/enhance-app-with-micro-saas-and-deploy-655c

@@ -1,52 +1,49 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { Search, X, TrendingUp, Clock } from 'lucide-react';
+import React, { useState, useRef, useEffect } from 'react';
+import { Search, X } from 'lucide-react';
 
 interface SearchSuggestion {
   id: string;
   text: string;
-  type: 'recent' | 'trending' | 'suggestion';
-  category?: string;
+  type: string;
 }
 
 interface EnhancedSearchInputProps {
+  value: string;
+  onChange: (value: string) => void;
+  onSelectSuggestion: (text: string) => void;
+  searchSuggestions: SearchSuggestion[];
   placeholder?: string;
-  onSearch?: (query: string) => void;
-  suggestions?: SearchSuggestion[];
+  className?: string;
 }
 
-export const EnhancedSearchInput: React.FC<EnhancedSearchInputProps> = ({
-  placeholder = "Search for services, solutions, or help...",
-  onSearch,
-  suggestions = [],
-}) => {
-  const [query, setQuery] = useState('');
-  const [isFocused, setIsFocused] = useState(false);
+export function EnhancedSearchInput({
+  value,
+  onChange,
+  onSelectSuggestion,
+  searchSuggestions,
+  placeholder = "Search services, solutions...",
+  className = ""
+}: EnhancedSearchInputProps) {
   const [showSuggestions, setShowSuggestions] = useState(false);
+  const [filteredSuggestions, setFilteredSuggestions] = useState<SearchSuggestion[]>([]);
   const inputRef = useRef<HTMLInputElement>(null);
   const suggestionsRef = useRef<HTMLDivElement>(null);
 
-  // Mock suggestions
-  const mockSuggestions: SearchSuggestion[] = [
-    { id: '1', text: 'AI CRM System', type: 'trending', category: 'AI Solutions' },
-    { id: '2', text: 'Cloud Infrastructure', type: 'trending', category: 'Cloud Services' },
-    { id: '3', text: 'Web Development', type: 'trending', category: 'Development' },
-    { id: '4', text: 'AI CRM System', type: 'recent' },
-    { id: '5', text: 'Cloud setup help', type: 'recent' },
-    { id: '6', text: 'Pricing information', type: 'recent' },
-  ];
-
-  const allSuggestions = [...mockSuggestions, ...suggestions];
+  useEffect(() => {
+    if (value.trim()) {
+      const filtered = searchSuggestions.filter(suggestion =>
+        suggestion.text.toLowerCase().includes(value.toLowerCase())
+      );
+      setFilteredSuggestions(filtered.slice(0, 5));
+      setShowSuggestions(true);
+    } else {
+      setShowSuggestions(false);
+    }
+  }, [value, searchSuggestions]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (
-        suggestionsRef.current &&
-        !suggestionsRef.current.contains(event.target as Node) &&
-        inputRef.current &&
-        !inputRef.current.contains(event.target as Node)
-      ) {
+      if (suggestionsRef.current && !suggestionsRef.current.contains(event.target as Node)) {
         setShowSuggestions(false);
       }
     };
@@ -55,111 +52,59 @@ export const EnhancedSearchInput: React.FC<EnhancedSearchInputProps> = ({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const handleSearch = () => {
-    if (query.trim()) {
-      onSearch?.(query.trim());
-      setShowSuggestions(false);
-    }
-  };
-
-  const handleKeyPress = (e: React.KeyboardEvent) => {
-    if (e.key === 'Enter') {
-      handleSearch();
-    }
-  };
-
   const handleSuggestionClick = (suggestion: SearchSuggestion) => {
-    setQuery(suggestion.text);
-    onSearch?.(suggestion.text);
+    onSelectSuggestion(suggestion.text);
     setShowSuggestions(false);
   };
 
   const clearSearch = () => {
-    setQuery('');
+    onChange('');
+    setShowSuggestions(false);
     inputRef.current?.focus();
   };
 
-  const getSuggestionIcon = (type: string) => {
-    switch (type) {
-      case 'trending':
-        return <TrendingUp className="w-4 h-4 text-orange-500" />;
-      case 'recent':
-        return <Clock className="w-4 h-4 text-blue-500" />;
-      default:
-        return <Search className="w-4 h-4 text-gray-400" />;
-    }
-  };
-
   return (
-    <div className="relative w-full max-w-2xl">
+    <div className={`relative ${className}`} ref={suggestionsRef}>
       <div className="relative">
-        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
-        <Input
+        <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-zion-slate-light" />
+        <input
           ref={inputRef}
           type="text"
-          value={query}
-          onChange={(e) => {
-            setQuery(e.target.value);
-            setShowSuggestions(e.target.value.length > 0);
-          }}
-          onFocus={() => {
-            setIsFocused(true);
-            if (query.length > 0) {
-              setShowSuggestions(true);
-            }
-          }}
-          onBlur={() => setIsFocused(false)}
-          onKeyPress={handleKeyPress}
+          value={value}
+          onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
-          className="pl-10 pr-20 py-3 text-base border-2 focus:border-blue-500 focus:ring-blue-500"
+          className="w-full pl-10 pr-10 py-2 bg-zion-blue-light/20 border border-zion-blue-light/30 rounded-lg text-white placeholder:text-zion-slate-light focus:outline-none focus:ring-2 focus:ring-zion-cyan focus:border-transparent"
+          onFocus={() => value.trim() && setShowSuggestions(true)}
         />
-        
-        {query && (
-          <Button
-            variant="ghost"
-            size="sm"
+        {value && (
+          <button
             onClick={clearSearch}
-            className="absolute right-16 top-1/2 transform -translate-y-1/2 h-8 w-8 p-0 hover:bg-gray-100"
+            className="absolute right-3 top-1/2 transform -translate-y-1/2 text-zion-slate-light hover:text-white transition-colors"
           >
             <X className="w-4 h-4" />
-          </Button>
+          </button>
         )}
-        
-        <Button
-          onClick={handleSearch}
-          disabled={!query.trim()}
-          className="absolute right-2 top-1/2 transform -translate-y-1/2 h-8 px-4 bg-blue-600 hover:bg-blue-700 text-white"
-        >
-          Search
-        </Button>
       </div>
 
-      {showSuggestions && allSuggestions.length > 0 && (
-        <div
-          ref={suggestionsRef}
-          className="absolute top-full left-0 right-0 mt-1 bg-white border border-gray-200 rounded-lg shadow-lg z-50 max-h-96 overflow-y-auto"
-        >
-          <div className="p-2">
-            {allSuggestions.map((suggestion) => (
-              <button
-                key={suggestion.id}
-                onClick={() => handleSuggestionClick(suggestion)}
-                className="w-full text-left p-3 hover:bg-gray-50 rounded-md flex items-center space-x-3 group"
-              >
-                {getSuggestionIcon(suggestion.type)}
-                <div className="flex-1">
-                  <div className="font-medium text-gray-900 group-hover:text-blue-600">
-                    {suggestion.text}
-                  </div>
-                  {suggestion.category && (
-                    <div className="text-sm text-gray-500">{suggestion.category}</div>
-                  )}
+      {showSuggestions && filteredSuggestions.length > 0 && (
+        <div className="absolute top-full left-0 right-0 mt-1 bg-zion-blue-light/95 backdrop-blur-sm border border-zion-blue-light/30 rounded-lg shadow-xl z-50">
+          {filteredSuggestions.map((suggestion) => (
+            <button
+              key={suggestion.id}
+              onClick={() => handleSuggestionClick(suggestion)}
+              className="w-full px-4 py-3 text-left text-white hover:bg-zion-blue-light/30 transition-colors first:rounded-t-lg last:rounded-b-lg"
+            >
+              <div className="flex items-center gap-3">
+                <Search className="w-4 h-4 text-zion-cyan" />
+                <div>
+                  <div className="font-medium">{suggestion.text}</div>
+                  <div className="text-sm text-zion-slate-light capitalize">{suggestion.type}</div>
                 </div>
-              </button>
-            ))}
-          </div>
+              </div>
+            </button>
+          ))}
         </div>
       )}
     </div>
   );
-};
+}

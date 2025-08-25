@@ -1,0 +1,17 @@
+{
+  "summary": {
+    "totalFiles": 0,
+    "filesWithIssues": 0,
+    "totalIssues": 0,
+    "totalWarnings": 0,
+    "buildBreakingFiles": 0,
+    "canBuild": true
+  },
+  "results": [],
+  "buildBreakingFiles": [],
+<<<<<<< HEAD
+  "generatedAt": "2025-08-19T15:46:17.458Z"
+=======
+  "generatedAt": "2025-08-19T16:26:24.267Z"
+>>>>>>> origin/cursor/automate-deployment-redundancy-and-clean-up-e342
+}
