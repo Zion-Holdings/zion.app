@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import Sidebar from './components/Sidebar';
-import { AccessibilityControls } from './components/AccessibilityControls';
-import { PerformanceDashboard } from './components/PerformanceDashboard';
+import EnhancedAccessibility from './components/EnhancedAccessibility';
+import PerformanceMonitor from './components/PerformanceMonitor';
 import { AnalyticsDashboard } from './components/AnalyticsDashboard';
 import { AIChatbot } from './components/AIChatbot';
 import { CollaborativeTextEditor } from './components/CollaborativeTextEditor';
@@ -103,7 +103,10 @@ const App = () => {
               <SonnerToaster />
               
               {/* Enhanced Accessibility Controls */}
-              <AccessibilityControls position="bottom-right" />
+              <EnhancedAccessibility />
+              
+              {/* Performance Monitor */}
+              <PerformanceMonitor />
               
               {/* AI Chatbot - Always Available */}
               <AIChatbot />
@@ -133,11 +136,6 @@ const App = () => {
               {/* Development Dashboards */}
               {import.meta.env.DEV && (
                 <>
-                  {/* Performance Dashboard */}
-                  <div className="fixed top-4 left-4 z-40">
-                    <PerformanceDashboard />
-                  </div>
-                  
                   {/* Analytics Dashboard */}
                   <div className="fixed top-4 right-4 z-40">
                     <AnalyticsDashboard />

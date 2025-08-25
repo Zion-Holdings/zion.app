@@ -1,6 +1,7 @@
 
 import React from 'react';
-import { SEO } from "@/components/SEO";
+import EnhancedSEO from "@/components/EnhancedSEO";
+import PerformanceOptimizedHero from '../components/PerformanceOptimizedHero';
 import { ServicesShowcase } from '../components/ServicesShowcase';
 import { EnhancedServicesShowcase } from '../components/EnhancedServicesShowcase';
 import { AdvancedServicesShowcase } from '../components/AdvancedServicesShowcase';
@@ -8,10 +9,20 @@ import { AdvancedServicesShowcase } from '../components/AdvancedServicesShowcase
 export default function Home() {
   return (
     <div className="min-h-screen relative">
-      <SEO 
+      <EnhancedSEO 
         title="Zion Tech Group - Transform Your Business With AI & Tech"
         description="Discover cutting-edge AI services, Micro SAAS solutions, and comprehensive IT services designed to propel your business into the future."
         url="https://ziontechgroup.com"
+        keywords={[
+          'AI services',
+          'Micro SAAS solutions',
+          'IT infrastructure',
+          'Cybersecurity',
+          'Quantum technology',
+          'Machine learning',
+          'Business transformation',
+          'Digital innovation'
+        ]}
       />
       
       {/* Futuristic Background Elements */}
@@ -29,88 +40,8 @@ export default function Home() {
         <div className="neural-line"></div>
       </div>
 
-      {/* Hero Section */}
-      <section className="relative py-20 px-4 overflow-hidden">
-        {/* Enhanced Animated Background */}
-        <div className="absolute inset-0 futuristic-bg">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl animate-pulse animate-quantum-float"></div>
-          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse animate-quantum-float animation-delay-1000"></div>
-          <div className="absolute bottom-0 left-1/2 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse animate-quantum-float animation-delay-2000"></div>
-        </div>
-
-        {/* Enhanced Grid Pattern */}
-        <div className="absolute inset-0 cyber-grid-bg opacity-30"></div>
-
-        {/* Matrix Rain Effect */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          {[...Array(20)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute text-cyan-400 text-xs animate-matrix-rain opacity-20"
-              style={{
-                left: `${Math.random() * 100}%`,
-                animationDelay: `${Math.random() * 20}s`,
-                animationDuration: `${20 + Math.random() * 10}s`
-              }}
-            >
-              {Math.random() > 0.5 ? '1' : '0'}
-            </div>
-          ))}
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto text-center">
-          <div className="animate-fade-in-up">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="neon-text">
-                Transform Your Business
-              </span>
-              <br />
-              <span className="text-white">With AI & Tech</span>
-            </h1>
-            
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
-              Discover cutting-edge AI services, Micro SAAS solutions, and comprehensive IT services 
-              designed to propel your business into the future.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-              <button className="quantum-button text-lg px-8 py-4">
-                Explore Services
-              </button>
-              <button className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 rounded-xl font-semibold text-lg hover:bg-cyan-400 hover:text-black transition-all duration-300 transform hover:scale-105 neon-border animate-neon-border-glow">
-                Get Free Consultation
-              </button>
-            </div>
-
-            {/* Enhanced Stats */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-6xl mx-auto">
-              {[
-                { number: "100+", label: "AI Services", icon: "🤖", color: "from-cyan-400 to-blue-400" },
-                { number: "150+", label: "Micro SAAS Solutions", icon: "💻", color: "from-blue-400 to-purple-400" },
-                { number: "24/7", label: "IT Support", icon: "🔧", color: "from-purple-400 to-pink-400" },
-                { number: "Global", label: "Service Coverage", icon: "🌍", color: "from-green-400 to-teal-400" }
-              ].map((stat, index) => (
-                <div key={index} className="text-center animate-fade-in-up group" style={{ animationDelay: `${index * 0.2}s` }}>
-                  <div className="relative mb-4">
-                    <div className="text-5xl mb-2 group-hover:scale-110 transition-transform duration-300">{stat.icon}</div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-blue-500/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  </div>
-                  <div className={`text-4xl font-bold mb-2 bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
-                    {stat.number}
-                  </div>
-                  <div className="text-gray-400 font-medium">{stat.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Floating Elements */}
-        <div className="absolute top-20 right-20 w-2 h-2 bg-cyan-400 rounded-full animate-ping"></div>
-        <div className="absolute bottom-32 left-32 w-3 h-3 bg-blue-400 rounded-full animate-pulse"></div>
-        <div className="absolute top-1/2 left-20 w-1 h-1 bg-purple-400 rounded-full animate-bounce"></div>
-        <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-green-400 rounded-full animate-ping animation-delay-1000"></div>
-      </section>
+      {/* Performance Optimized Hero Section */}
+      <PerformanceOptimizedHero />
 
       {/* Advanced Services Showcase */}
       <AdvancedServicesShowcase />
