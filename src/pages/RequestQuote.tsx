@@ -1,99 +1,94 @@
 
-import React from 'react';
-import { QuoteRequestForm } from "@/components/QuoteRequestForm";
-import { SEO } from "@/components/SEO";
-import { AppHeader } from "@/layout/AppHeader";
-import { Footer } from "@/components/Footer";
+import React, { useState } from 'react';
 
 export default function RequestQuote() {
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    company: '',
+    phone: '',
+    projectType: '',
+    budget: '',
+    details: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setForm(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log('Quote Request Submitted', form);
+    alert('Thanks! We\'ll get back to you within 24 hours.');
+    setForm({ name: '', email: '', company: '', phone: '', projectType: '', budget: '', details: '' });
+  };
+
   return (
-    <div className="min-h-screen bg-background">
-      <SEO 
-        title="Request a Quote - Zion Tech Group" 
-        description="Get a customized quote for your AI, IT services, or equipment needs. Our team will provide you with competitive pricing and solutions."
-        keywords="quote request, pricing, AI services, IT services, equipment, Zion Tech Group"
-        canonical="https://ziontechgroup.com/request-quote"
-      />
-      
-      <AppHeader />
-      
-      <main className="pt-16">
-        {/* Hero Section */}
-        <section className="bg-zion-blue py-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Get Your Custom Quote
-            </h1>
-            <p className="text-xl text-zion-slate-light max-w-3xl mx-auto">
-              Tell us about your project requirements and we'll provide you with a detailed quote tailored to your needs. 
-              Whether it's AI development, IT services, or equipment solutions, we've got you covered.
+    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-blue-900 text-white">
+      <div className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          {/* Hero */}
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">Request a Quote</h1>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Tell us about your project and we\'ll send a tailored proposal within 24 hours.
             </p>
           </div>
-        </section>
-        
-        {/* Quote Form Section */}
-        <section className="py-20">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto">
-              <div className="bg-zion-blue-light/20 rounded-lg border border-zion-purple/20 p-8">
-                <QuoteRequestForm />
+
+          {/* Form */}
+          <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-8">
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm text-gray-300 mb-2">Full Name</label>
+                  <input name="name" value={form.name} onChange={handleChange} className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-gray-400" placeholder="Jane Doe" />
+                </div>
+                <div>
+                  <label className="block text-sm text-gray-300 mb-2">Email</label>
+                  <input name="email" type="email" value={form.email} onChange={handleChange} className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-gray-400" placeholder="jane@company.com" />
+                </div>
+                <div>
+                  <label className="block text-sm text-gray-300 mb-2">Company</label>
+                  <input name="company" value={form.company} onChange={handleChange} className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-gray-400" placeholder="Acme Inc." />
+                </div>
+                <div>
+                  <label className="block text-sm text-gray-300 mb-2">Phone</label>
+                  <input name="phone" value={form.phone} onChange={handleChange} className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-gray-400" placeholder="+1 555 123 4567" />
+                </div>
+                <div>
+                  <label className="block text-sm text-gray-300 mb-2">Project Type</label>
+                  <select name="projectType" value={form.projectType} onChange={handleChange} className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white">
+                    <option value="">Select...</option>
+                    <option value="AI Development">AI Development</option>
+                    <option value="Cybersecurity">Cybersecurity</option>
+                    <option value="IT Infrastructure">IT Infrastructure</option>
+                    <option value="Micro-SaaS">Micro-SaaS</option>
+                    <option value="Consulting">Consulting</option>
+                  </select>
+                </div>
+                <div>
+                  <label className="block text-sm text-gray-300 mb-2">Budget</label>
+                  <select name="budget" value={form.budget} onChange={handleChange} className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white">
+                    <option value="">Select...</option>
+                    <option value="$5k - $20k">$5k - $20k</option>
+                    <option value="$20k - $50k">$20k - $50k</option>
+                    <option value="$50k - $100k">$50k - $100k</option>
+                    <option value="$100k+">$100k+</option>
+                  </select>
+                </div>
               </div>
-            </div>
+              <div>
+                <label className="block text-sm text-gray-300 mb-2">Project Details</label>
+                <textarea name="details" rows={5} value={form.details} onChange={handleChange} className="w-full px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-gray-400" placeholder="Tell us about your goals, timeline, and requirements..." />
+              </div>
+              <div className="text-center">
+                <button type="submit" className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg font-semibold hover:from-cyan-400 hover:to-blue-400 transition-colors">Submit Request</button>
+              </div>
+            </form>
           </div>
-        </section>
-        
-        {/* Why Choose Zion Section */}
-        <section className="py-20 bg-zion-blue-dark">
-          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-white mb-4">Why Choose Zion for Your Tech Needs?</h2>
-              <p className="text-zion-slate-light text-xl max-w-2xl mx-auto">
-                We combine cutting-edge technology with proven expertise to deliver exceptional results.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-              <div className="text-center p-6">
-                <div className="bg-zion-purple/10 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <svg className="w-8 h-8 text-zion-purple" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-3">Fast & Efficient</h3>
-                <p className="text-zion-slate-light">
-                  Get your quote within 24 hours and start your project quickly with our streamlined process.
-                </p>
-              </div>
-              
-              <div className="text-center p-6">
-                <div className="bg-zion-cyan/10 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <svg className="w-8 h-8 text-zion-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-3">Quality Assured</h3>
-                <p className="text-zion-slate-light">
-                  All our services and equipment meet the highest industry standards with comprehensive warranties.
-                </p>
-              </div>
-              
-              <div className="text-center p-6">
-                <div className="bg-zion-purple-light/10 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
-                  <svg className="w-8 h-8 text-zion-purple-light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold text-white mb-3">Competitive Pricing</h3>
-                <p className="text-zion-slate-light">
-                  Get the best value for your investment with our transparent pricing and no hidden costs.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-      
-      <Footer />
+        </div>
+      </div>
     </div>
   );
 }
