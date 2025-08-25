@@ -6,6 +6,7 @@ import { ThemeProvider } from "./components/ThemeProvider";
 import { WhitelabelProvider } from "./context/WhitelabelContext";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
+import { FuturisticAnimatedBackground } from "./components/FuturisticAnimatedBackground";
 import { Toaster } from "./components/ui/toaster";
 import { Toaster as SonnerToaster } from "./components/ui/sonner";
 import {
@@ -43,6 +44,8 @@ const ContactPage = React.lazy(() => import('./pages/ContactPage'));
 const ZionHireAI = React.lazy(() => import('./pages/ZionHireAI'));
 const RequestQuotePage = React.lazy(() => import('./pages/RequestQuote'));
 const MicroSaasServices = React.lazy(() => import('./pages/MicroSaasServices'));
+const ITServices = React.lazy(() => import('./pages/ITServices'));
+const AIServices = React.lazy(() => import('./pages/AIServices'));
 const PricingPage = React.lazy(() => import('./pages/PricingPage'));
 
 const baseRoutes = [
@@ -53,6 +56,8 @@ const baseRoutes = [
   { path: '/talent', element: <TalentDirectory /> },
   { path: '/talents', element: <TalentsPage /> },
   { path: '/micro-saas-services', element: <MicroSaasServices /> },
+  { path: '/it-services', element: <ITServices /> },
+  { path: '/ai-services', element: <AIServices /> },
   { path: '/pricing', element: <PricingPage /> },
   { path: '/it-onsite-services', element: <ITOnsiteServicesPage /> },
   { path: '/categories', element: <Categories /> },
@@ -75,8 +80,9 @@ const App = () => {
   return (
     <WhitelabelProvider>
       <ThemeProvider defaultTheme="dark">
+        <FuturisticAnimatedBackground />
         <Header />
-        <main className="min-h-screen">
+        <main className="min-h-screen relative z-10">
           <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
             <Routes>
               {baseRoutes.map(({ path, element }) => (

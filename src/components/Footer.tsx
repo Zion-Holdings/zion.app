@@ -89,29 +89,48 @@ const Footer = () => {
             </motion.div>
           </div>
 
-          {/* Marketplace Links */}
+          {/* Services Links */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
+          >
+            <h3 className="text-white font-semibold mb-6 text-lg">Services</h3>
+            <ul className="space-y-3">
+              <li><Link to="/ai-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
+                <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
+                AI & Machine Learning
+              </Link></li>
+              <li><Link to="/it-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
+                <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
+                Enterprise IT Services
+              </Link></li>
+              <li><Link to="/micro-saas-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
+                <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
+                Micro SAAS Services
+              </Link></li>
+              <li><Link to="/pricing" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
+                <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
+                Pricing
+              </Link></li>
+              <li><Link to="/contact" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
+                <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
+                Get Quote
+              </Link></li>
+            </ul>
+          </motion.div>
+
+          {/* Marketplace Links */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
           >
             <h3 className="text-white font-semibold mb-6 text-lg">Marketplace</h3>
             <ul className="space-y-3">
               <li><Link to="/marketplace" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
                 Products
-              </Link></li>
-              <li><Link to="/services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
-                <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
-                Services
-              </Link></li>
-              <li><Link to="/micro-saas-services" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
-                <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
-                Micro SAAS
-              </Link></li>
-              <li><Link to="/pricing" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
-                <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
-                Pricing
               </Link></li>
               <li><Link to="/talent" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
@@ -121,6 +140,10 @@ const Footer = () => {
                 <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
                 Equipment
               </Link></li>
+              <li><Link to="/blog" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
+                <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
+                Blog
+              </Link></li>
             </ul>
           </motion.div>
 
@@ -128,17 +151,13 @@ const Footer = () => {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
           >
             <h3 className="text-white font-semibold mb-6 text-lg">Company</h3>
             <ul className="space-y-3">
               <li><Link to="/about" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
                 About Us
-              </Link></li>
-              <li><Link to="/blog" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
-                <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
-                Blog
               </Link></li>
               <li><Link to="/partners" className="text-zion-slate-light hover:text-zion-cyan transition-colors duration-300 flex items-center group">
                 <span className="w-1 h-1 bg-zion-cyan rounded-full mr-3 group-hover:scale-150 transition-transform duration-300"></span>
@@ -159,7 +178,7 @@ const Footer = () => {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
           >
             <h3 className="text-white font-semibold mb-6 text-lg">Stay Updated</h3>
             <p className="text-zion-slate-light mb-6">
@@ -174,7 +193,7 @@ const Footer = () => {
           className="mt-16 pt-12 border-t border-zion-cyan/20"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
         >
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-zion-slate-light text-sm">

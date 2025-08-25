@@ -27,18 +27,11 @@ export const Header: React.FC = () => {
       color: 'from-purple-500 to-pink-500'
     },
     {
-      title: 'Cloud & DevOps',
-      description: 'Scalable cloud infrastructure and automation',
-      icon: Cloud,
-      link: '/cloud-devops',
-      color: 'from-blue-500 to-cyan-500'
-    },
-    {
-      title: 'Enterprise Solutions',
-      description: 'Comprehensive business technology solutions',
+      title: 'Enterprise IT Services',
+      description: 'Comprehensive IT infrastructure and security solutions',
       icon: Shield,
-      link: '/enterprise-solutions',
-      color: 'from-green-500 to-emerald-500'
+      link: '/it-services',
+      color: 'from-blue-500 to-cyan-500'
     },
     {
       title: 'Micro SAAS Services',
@@ -46,6 +39,13 @@ export const Header: React.FC = () => {
       icon: Cpu,
       link: '/micro-saas-services',
       color: 'from-orange-500 to-red-500'
+    },
+    {
+      title: 'Cloud & DevOps',
+      description: 'Scalable cloud infrastructure and automation',
+      icon: Cloud,
+      link: '/cloud-devops',
+      color: 'from-green-500 to-emerald-500'
     },
     {
       title: 'Digital Transformation',
