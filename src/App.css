@@ -1,40 +1,93 @@
-/* App.css - Basic styling for the application */
+/* App.css - Clean version without merge conflicts */
 
-.app {
+.App {
+  text-align: center;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 }
 
-.main-content {
-  flex: 1;
-}
-
-/* Loading overlay styles */
-.loading-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
+.App-header {
+  background-color: #282c34;
+  padding: 20px;
   color: white;
-  font-size: 1.2rem;
 }
 
-/* Basic responsive utilities */
+.App-link {
+  color: #61dafb;
+}
+
+/* Navigation styles */
+.nav-link {
+  color: #61dafb;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+}
+
+/* Button styles */
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+/* Card styles */
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 20px;
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+/* Utility classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+/* Responsive design */
 @media (max-width: 768px) {
-  .mobile-hidden {
-    display: none;
+  .App {
+    padding: 10px;
   }
-}
-
-@media (min-width: 769px) {
-  .desktop-hidden {
-    display: none;
+  
+  .card {
+    margin: 10px;
+    padding: 15px;
   }
 }

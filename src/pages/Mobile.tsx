@@ -1,200 +1,296 @@
-import React from 'react';
-import { SEO } from "@/components/SEO";
-import { GradientHeading } from "@/components/GradientHeading";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Smartphone, Download, Zap, Shield, Globe, Users, Star, ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { SEO } from '@/components/SEO';
 
-export default function Mobile() {
-  const features = [
+const Mobile = () => {
+  const mobileFeatures = [
     {
-      icon: <Smartphone className="h-8 w-8 text-zion-cyan" />,
       title: "Mobile-First Design",
-      description: "Optimized for mobile devices with intuitive touch controls and responsive layouts."
+      description: "We design with mobile users in mind first, ensuring optimal experience across all devices",
+      icon: "📱",
+      benefits: [
+        "Responsive design principles",
+        "Touch-friendly interfaces",
+        "Mobile performance optimization",
+        "Cross-platform compatibility"
+      ]
     },
     {
-      icon: <Zap className="h-8 w-8 text-zion-purple" />,
-      title: "Lightning Fast",
-      description: "Optimized performance with offline capabilities and instant loading times."
+      title: "Zion Mobile App",
+      description: "Access our services and manage your projects on the go with our mobile application",
+      icon: "🚀",
+      benefits: [
+        "Project management",
+        "Real-time updates",
+        "Client communication",
+        "Service booking"
+      ]
     },
     {
-      icon: <Shield className="h-8 w-8 text-zion-purple-light" />,
-      title: "Secure & Private",
-      description: "End-to-end encryption and secure authentication to protect your data."
-    },
-    {
-      icon: <Globe className="h-8 w-8 text-zion-cyan" />,
-      title: "Global Access",
-      description: "Access the marketplace from anywhere in the world with localized content."
-    },
-    {
-      icon: <Users className="h-8 w-8 text-zion-purple" />,
-      title: "Real-time Chat",
-      description: "Instant messaging with clients, talent, and team members on the go."
-    },
-    {
-      icon: <Star className="h-8 w-8 text-zion-purple-light" />,
-      title: "Smart Notifications",
-      description: "Intelligent alerts for important updates, messages, and opportunities."
+      title: "Progressive Web Apps",
+      description: "Web applications that work like native apps with offline functionality",
+      icon: "🌐",
+      benefits: [
+        "No app store required",
+        "Offline capabilities",
+        "Push notifications",
+        "App-like experience"
+      ]
     }
   ];
 
-  const appHighlights = [
+  const mobileServices = [
     {
-      title: "Browse Marketplace",
-      description: "Discover AI talent, services, and equipment with advanced search and filtering."
+      title: "iOS Development",
+      description: "Native iPhone and iPad applications using Swift and SwiftUI",
+      icon: "🍎",
+      features: ["Swift & SwiftUI", "App Store optimization", "iOS-specific features", "Performance tuning"]
     },
     {
-      title: "Manage Projects",
-      description: "Track project progress, manage timelines, and collaborate with team members."
+      title: "Android Development",
+      description: "Native Android applications using Kotlin and Jetpack Compose",
+      icon: "🤖",
+      features: ["Kotlin & Jetpack Compose", "Google Play optimization", "Material Design 3", "Android features"]
     },
     {
-      title: "Secure Payments",
-      description: "Handle transactions securely with multiple payment options and escrow protection."
+      title: "Cross-Platform",
+      description: "Single codebase for iOS and Android using React Native or Flutter",
+      icon: "📱",
+      features: ["React Native", "Flutter", "Shared codebase", "Native performance"]
     },
     {
-      title: "AI-Powered Matching",
-      description: "Get intelligent recommendations for talent and services based on your needs."
+      title: "Mobile Web",
+      description: "Responsive web applications optimized for mobile devices",
+      icon: "🌐",
+      features: ["Mobile-first design", "Progressive Web Apps", "Responsive layouts", "Touch optimization"]
     }
   ];
 
-  const testimonials = [
+  const mobileBenefits = [
     {
-      name: "Sarah Chen",
-      role: "CTO, TechFlow Inc.",
-      content: "The Zion mobile app has revolutionized how we hire AI talent. It's like having the entire marketplace in my pocket.",
-      rating: 5
+      title: "Increased Engagement",
+      description: "Mobile users are more engaged and likely to interact with your content",
+      icon: "📈"
     },
     {
-      name: "Marcus Rodriguez",
-      role: "Freelance AI Developer",
-      content: "I can respond to job opportunities instantly and manage my projects on the go. The mobile experience is seamless.",
-      rating: 5
+      title: "Better User Experience",
+      description: "Optimized mobile experiences lead to higher satisfaction and retention",
+      icon: "⭐"
     },
     {
-      name: "Dr. Emily Watson",
-      role: "AI Research Lead",
-      content: "The mobile app makes it easy to stay connected with clients and manage multiple service requests efficiently.",
-      rating: 5
+      title: "Wider Reach",
+      description: "Mobile-first approach ensures accessibility across all devices",
+      icon: "🌍"
+    },
+    {
+      title: "Competitive Advantage",
+      description: "Stay ahead with modern mobile solutions and user expectations",
+      icon: "🏆"
+    }
+  ];
+
+  const mobileStats = [
+    {
+      stat: "73%",
+      label: "Mobile Internet Usage",
+      description: "Of all internet traffic comes from mobile devices"
+    },
+    {
+      stat: "85%",
+      label: "User Preference",
+      description: "Of users prefer mobile-friendly websites"
+    },
+    {
+      stat: "60%",
+      label: "Mobile Search",
+      description: "Of searches are performed on mobile devices"
+    },
+    {
+      stat: "40%",
+      label: "Mobile Conversion",
+      description: "Higher conversion rates on mobile-optimized sites"
     }
   ];
 
   return (
-    <div className="min-h-screen bg-zion-blue">
+    <>
       <SEO 
-        title="Mobile App - Zion Tech Group" 
-        description="Download the Zion mobile app for iOS and Android. Access the AI and tech marketplace on the go with our powerful mobile application."
-        keywords="mobile app, iOS app, Android app, marketplace app, AI marketplace mobile"
-        canonical="https://ziontechgroup.com/mobile"
+        title="Mobile-First Solutions - Zion Tech Group"
+        description="Experience mobile-first design and development with Zion Tech Group. From responsive websites to native mobile apps, we ensure optimal mobile experiences."
+        canonical="/mobile"
       />
       
-      <main className="pt-24 pb-20">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Hero Section */}
-          <div className="text-center mb-16">
-            <GradientHeading className="text-4xl md:text-6xl mb-6">
-              Zion Mobile App
-            </GradientHeading>
-            <p className="text-xl text-zion-slate-light max-w-3xl mx-auto mb-8">
-              Take the Zion marketplace with you everywhere. Access AI talent, tech services, and manage projects on the go with our powerful mobile application.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Button asChild size="lg" className="bg-zion-purple hover:bg-zion-purple-light">
-                <Link to="/mobile-launch">Download Now</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="border-zion-purple text-zion-purple hover:bg-zion-purple/10">
-                <Link to="/mobile-launch">Learn More</Link>
-              </Button>
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-800">
+        <main className="pt-12">
+          <div className="container mx-auto px-4 py-16">
+            {/* Header */}
+            <div className="text-center mb-16">
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                Mobile-First Solutions
+              </h1>
+              <p className="text-xl text-blue-100 max-w-4xl mx-auto">
+                In today's mobile-first world, we ensure your digital presence is optimized 
+                for mobile devices. From responsive websites to native mobile applications, 
+                we deliver exceptional mobile experiences that drive engagement and results.
+              </p>
             </div>
-            
-            {/* App Store Badges */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <div className="flex items-center gap-2 bg-black/20 rounded-lg px-4 py-2">
-                <Download className="h-5 w-5 text-zion-cyan" />
-                <span className="text-white text-sm">Available on iOS & Android</span>
+
+            {/* Mobile Features */}
+            <div className="mb-20">
+              <h2 className="text-3xl font-semibold text-white text-center mb-12">
+                Our Mobile Approach
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                {mobileFeatures.map((feature, index) => (
+                  <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 p-6 hover:bg-white/20 transition-colors duration-200">
+                    <div className="text-4xl mb-4 text-center">{feature.icon}</div>
+                    <h3 className="text-xl font-semibold text-white mb-3 text-center">
+                      {feature.title}
+                    </h3>
+                    <p className="text-blue-100 mb-4 text-sm text-center">
+                      {feature.description}
+                    </p>
+                    <ul className="space-y-2">
+                      {feature.benefits.map((benefit, benefitIndex) => (
+                        <li key={benefitIndex} className="text-blue-200 text-sm flex items-center">
+                          <span className="text-green-400 mr-2">✓</span>
+                          {benefit}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Mobile Services */}
+            <div className="mb-20">
+              <h2 className="text-3xl font-semibold text-white text-center mb-12">
+                Mobile Development Services
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                {mobileServices.map((service, index) => (
+                  <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 p-6 hover:bg-white/20 transition-colors duration-200">
+                    <div className="text-4xl mb-4 text-center">{service.icon}</div>
+                    <h3 className="text-xl font-semibold text-white mb-3 text-center">
+                      {service.title}
+                    </h3>
+                    <p className="text-blue-100 mb-4 text-sm text-center">
+                      {service.description}
+                    </p>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="text-blue-200 text-sm flex items-center">
+                          <span className="text-green-400 mr-2">✓</span>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Mobile Stats */}
+            <div className="mb-20">
+              <h2 className="text-3xl font-semibold text-white text-center mb-12">
+                Why Mobile Matters
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                {mobileStats.map((stat, index) => (
+                  <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 p-6 text-center hover:bg-white/20 transition-colors duration-200">
+                    <div className="text-4xl font-bold text-blue-400 mb-2">
+                      {stat.stat}
+                    </div>
+                    <h3 className="text-lg font-semibold text-white mb-2">
+                      {stat.label}
+                    </h3>
+                    <p className="text-blue-100 text-sm">
+                      {stat.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Mobile Benefits */}
+            <div className="mb-20">
+              <h2 className="text-3xl font-semibold text-white text-center mb-12">
+                Benefits of Mobile-First Design
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                {mobileBenefits.map((benefit, index) => (
+                  <div key={index} className="bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 p-6 text-center hover:bg-white/20 transition-colors duration-200">
+                    <div className="text-4xl mb-4">{benefit.icon}</div>
+                    <h3 className="text-lg font-semibold text-white mb-3">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-blue-100 text-sm">
+                      {benefit.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Zion Mobile App */}
+            <div className="mb-20">
+              <div className="max-w-4xl mx-auto">
+                <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 backdrop-blur-sm rounded-lg border border-blue-500/30 p-8 text-center">
+                  <h2 className="text-3xl font-semibold text-white mb-4">
+                    Zion Mobile App
+                  </h2>
+                  <p className="text-blue-100 mb-6 text-lg">
+                    Access our services and manage your projects on the go with our mobile application. 
+                    Available for iOS and Android devices.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a
+                      href="#"
+                      className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-medium transition-colors duration-200 text-lg"
+                    >
+                      Download for iOS
+                    </a>
+                    <a
+                      href="#"
+                      className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-lg font-medium transition-colors duration-200 text-lg"
+                    >
+                      Download for Android
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Call to Action */}
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg border border-white/20 p-8 text-center">
+                <h2 className="text-3xl font-semibold text-white mb-4">
+                  Ready to Go Mobile?
+                </h2>
+                <p className="text-blue-100 mb-6 text-lg">
+                  Let's discuss your mobile strategy and create solutions that deliver 
+                  exceptional experiences across all devices.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a
+                    href="/mobile-launch"
+                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-medium transition-colors duration-200 text-lg"
+                  >
+                    Start Mobile Development
+                  </a>
+                  <a
+                    href="/contact"
+                    className="border border-white/30 hover:bg-white/10 text-white px-8 py-4 rounded-lg font-medium transition-colors duration-200 text-lg"
+                  >
+                    Discuss Mobile Strategy
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-
-          {/* Features Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            {features.map((feature, index) => (
-              <Card key={index} className="bg-zion-blue-dark border-zion-purple/20 hover:border-zion-purple/40 transition-colors">
-                <CardHeader className="pb-3">
-                  {feature.icon}
-                </CardHeader>
-                <CardContent>
-                  <h3 className="font-semibold text-white mb-2">{feature.title}</h3>
-                  <p className="text-zion-slate-light text-sm">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-
-          {/* App Highlights */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-white text-center mb-12">What You Can Do</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {appHighlights.map((highlight, index) => (
-                <Card key={index} className="bg-zion-blue-dark border-zion-purple/20">
-                  <CardContent className="pt-6">
-                    <h3 className="font-semibold text-white mb-2">{highlight.title}</h3>
-                    <p className="text-zion-slate-light">{highlight.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          {/* Testimonials */}
-          <div className="mb-16">
-            <h2 className="text-3xl font-bold text-white text-center mb-12">What Users Say</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {testimonials.map((testimonial, index) => (
-                <Card key={index} className="bg-zion-blue-dark border-zion-purple/20">
-                  <CardContent className="pt-6">
-                    <div className="flex items-center gap-1 mb-3">
-                      {[...Array(testimonial.rating)].map((_, i) => (
-                        <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
-                      ))}
-                    </div>
-                    <p className="text-zion-slate-light mb-4 italic">"{testimonial.content}"</p>
-                    <div>
-                      <p className="text-white font-semibold">{testimonial.name}</p>
-                      <p className="text-zion-slate-light text-sm">{testimonial.role}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-
-          {/* Download CTA */}
-          <div className="text-center">
-            <Card className="bg-gradient-to-r from-zion-purple/20 to-zion-cyan/20 border-zion-purple/40">
-              <CardContent className="pt-8 pb-8">
-                <h3 className="text-2xl font-bold text-white mb-4">Ready to Go Mobile?</h3>
-                <p className="text-zion-slate-light mb-6 max-w-2xl mx-auto">
-                  Download the Zion mobile app today and take the AI marketplace with you everywhere. Available for iOS and Android devices.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button asChild size="lg" className="bg-zion-purple hover:bg-zion-purple-light">
-                    <Link to="/mobile-launch">
-                      Download App
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                  <Button asChild variant="outline" size="lg" className="border-zion-purple text-zion-purple hover:bg-zion-purple/10">
-                    <Link to="/mobile-launch">View Features</Link>
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </main>
-    </div>
+        </main>
+      </div>
+    </>
   );
-}
+};
+
+export default Mobile;
