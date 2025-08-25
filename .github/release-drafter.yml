@@ -15,3 +15,5 @@ categories:
       - 'dependencies'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 no-changes-template: 'No user-facing changes.'
+exclude-labels:
+  - 'skip-changelog'
