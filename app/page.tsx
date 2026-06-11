@@ -14,7 +14,7 @@ import ContactFunnel from '@/components/ContactFunnel';
 import ServiceCounter from '@/components/ServiceCounter';
 import FloatingActionDock from '@/components/FloatingActionDock';
 import ServiceMatchQuiz from '@/components/ServiceMatchQuiz';
-import AgentsMonitoring from '../components/AgentsMonitoring';
+import AgentDashboard from './components/AgentDashboard';
 
 
 // Category accent color for showcase cards (maps category key → gradient)
@@ -416,7 +416,7 @@ let list = services;
       </section>
 
       {/* ── AI Agent Monitoring — Live Fleet Banner (Priority) ── */}
-      <AgentsMonitoring />
+      <AgentDashboard defaultView="client" defaultTab="showcase" />
 
       {/* ── AI Agent Operations — Always Visible Banner ── */}
       <section className="relative overflow-hidden border-y border-purple-500/20">

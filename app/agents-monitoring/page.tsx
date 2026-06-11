@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import AgentsMonitoring from '@/components/AgentsMonitoring';
+import AgentDashboard from '../components/AgentDashboard';
 
 export const metadata: Metadata = {
   title: 'AI Agent Operations — Live Monitoring | Zion Tech Group',
@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function AgentsMonitoringPage() {
-  return <AgentsMonitoring />;
+  return <AgentDashboard defaultView="client" defaultTab="showcase" />;
 }
