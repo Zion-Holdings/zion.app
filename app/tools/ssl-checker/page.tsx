@@ -143,8 +143,8 @@ export default function SSLCheckerPage() {
         </div>
 
         <div className="mt-8 text-center">
-          <Link href="/services/ai-compliance/" className="text-purple-400 hover:underline text-sm">
-            Need help fixing SSL issues? → Security Compliance & Monitoring
+          <Link href="/services/w178-insurance-claims-auto/" className="text-purple-400 hover:underline text-sm">
+            Need help fixing SSL issues? → Insurance Claims Automation
           </Link>
         </div>
       </div>
