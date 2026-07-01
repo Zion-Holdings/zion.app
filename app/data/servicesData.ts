@@ -102,6 +102,7 @@ import { wave276ItServices, wave276MicroSaasServices } from './wave276';
 import { wave277ItServices, wave277MicroSaasServices } from './wave277';
 import { wave278ItServices, wave278AiServices, wave278MicroSaasServices, wave278Services } from './wave278';
 import { wave279ItServices, wave279SecurityServices, wave279CloudServices, wave279DataServices, wave279AutomationServices, wave279MicroSaasServices, wave279AiServices } from './wave279';
+import { wave280ItServices, wave280SecurityServices, wave280CloudServices, wave280DataServices, wave280AutomationServices, wave280MicroSaasServices, wave280AiServices } from './wave280';
 
 export const aiServices: Service[] = [
   {
@@ -1706,11 +1707,18 @@ export const allServices: Service[] = [
   ...wave278AiServices,
   ...wave278MicroSaasServices,
   ...wave278Services,
-    ...wave279AiServices,
-    ...wave279ItServices,
-    ...wave279SecurityServices,
-    ...wave279CloudServices,
-    ...wave279DataServices,
-    ...wave279AutomationServices,
-    ...wave279MicroSaasServices,
-  ].filter((s: Service) => s.benefits.length > 0);
+  ...wave279AiServices,
+  ...wave279ItServices,
+  ...wave279SecurityServices,
+  ...wave279CloudServices,
+  ...wave279DataServices,
+  ...wave279AutomationServices,
+  ...wave279MicroSaasServices,
+  ...wave280AiServices,
+  ...wave280ItServices,
+  ...wave280SecurityServices,
+  ...wave280CloudServices,
+  ...wave280DataServices,
+  ...wave280AutomationServices,
+  ...wave280MicroSaasServices,
+].filter((s: Service) => s.benefits.length > 0);
