@@ -1,0 +1,96 @@
+{
+  "generatedAt": "2026-07-03T08:28:02.694321+00:00",
+  "send_count": 15,
+  "results": [
+    {
+      "to": "contact@resilienceit.com",
+      "success": true,
+      "message_id": "19f27172c8603f9e",
+      "thread_id": "19f27172c8603f9e"
+    },
+    {
+      "to": "info@bridgepointsystems.com",
+      "success": true,
+      "message_id": "19f271730cecdf55",
+      "thread_id": "19f271730cecdf55"
+    },
+    {
+      "to": "ops@meridianops.io",
+      "success": true,
+      "message_id": "19f27173402d5eac",
+      "thread_id": "19f27173402d5eac"
+    },
+    {
+      "to": "hello@civicdigital.io",
+      "success": true,
+      "message_id": "19f27173afe50a40",
+      "thread_id": "19f27173afe50a40"
+    },
+    {
+      "to": "support@pilotlabs.io",
+      "success": true,
+      "message_id": "19f2717402e1215f",
+      "thread_id": "19f2717402e1215f"
+    },
+    {
+      "to": "info@sentryshield.net",
+      "success": true,
+      "message_id": "19f271746121258d",
+      "thread_id": "19f271746121258d"
+    },
+    {
+      "to": "contact@altoexchange.io",
+      "success": true,
+      "message_id": "19f27175088e9028",
+      "thread_id": "19f27175088e9028"
+    },
+    {
+      "to": "partner@forgepartners.co",
+      "success": true,
+      "message_id": "19f2717587b9d879",
+      "thread_id": "19f2717587b9d879"
+    },
+    {
+      "to": "admin@crestbridgemsp.com",
+      "success": true,
+      "message_id": "19f27175fbcf4d35",
+      "thread_id": "19f27175fbcf4d35"
+    },
+    {
+      "to": "sales@lakeroute.net",
+      "success": true,
+      "message_id": "19f2717666cd70ac",
+      "thread_id": "19f2717666cd70ac"
+    },
+    {
+      "to": "hello@helixplanning.co",
+      "success": true,
+      "message_id": "19f27176b25c7131",
+      "thread_id": "19f27176b25c7131"
+    },
+    {
+      "to": "ops@northroute.io",
+      "success": true,
+      "message_id": "19f2717729f0157d",
+      "thread_id": "19f2717729f0157d"
+    },
+    {
+      "to": "info@tidepathsupport.com",
+      "success": true,
+      "message_id": "19f27177ab6c2016",
+      "thread_id": "19f27177ab6c2016"
+    },
+    {
+      "to": "contact@irongridsecurity.com",
+      "success": true,
+      "message_id": "19f27178a124b926",
+      "thread_id": "19f27178a124b926"
+    },
+    {
+      "to": "sales@dialaxis.io",
+      "success": true,
+      "message_id": "19f2717910112b01",
+      "thread_id": "19f2717910112b01"
+    }
+  ]
+}

@@ -1175,5 +1175,65 @@
     "title": "Low-Code and Internal Tool Buildout",
     "category": "automation",
     "industry": "Productivity"
+  },
+  {
+    "id": "it-recovery-planning",
+    "title": "Business Continuity and Recovery Planning",
+    "category": "it",
+    "industry": "Risk"
+  },
+  {
+    "id": "it-device-provisioning",
+    "title": "Device Provisioning and Lifecycle Management",
+    "category": "it",
+    "industry": "Workplace"
+  },
+  {
+    "id": "it-email-security",
+    "title": "Email Security and Anti-Phishing Gateway",
+    "category": "security",
+    "industry": "Email Security"
+  },
+  {
+    "id": "it-change-management",
+    "title": "IT Change and Release Management",
+    "category": "it",
+    "industry": "Operations"
+  },
+  {
+    "id": "it-secure-file-transfer",
+    "title": "Secure File Transfer and EDI Gateway",
+    "category": "it",
+    "industry": "Integration"
+  },
+  {
+    "id": "it-drone-iot",
+    "title": "Drone and IoT Deployment Support",
+    "category": "iot",
+    "industry": "Operations"
+  },
+  {
+    "id": "it-performance-testing",
+    "title": "Performance and Load Testing",
+    "category": "devops",
+    "industry": "Engineering"
+  },
+  {
+    "id": "it-knowledge-base",
+    "title": "Internal Knowledge Base and Runbooks",
+    "category": "automation",
+    "industry": "Operations"
+  },
+  {
+    "id": "it-financial-operations",
+    "title": "IT Financial Operations and Chargeback",
+    "category": "it",
+    "industry": "Finance"
+  },
+  {
+    "id": "it-hybrid-event-platform",
+    "title": "Hybrid Event Platform Support",
+    "category": "it",
+    "industry": "Events"
   }
 ]
