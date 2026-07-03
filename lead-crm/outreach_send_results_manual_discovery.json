@@ -1,0 +1,78 @@
+{
+  "generatedAt": "2026-07-03T07:50:12.402369+00:00",
+  "send_count": 8,
+  "results": [
+    {
+      "to": "admin@nebulait.net",
+      "subject": "Nebula Solutions LLC \u2014 IT support options worth comparing",
+      "result": {
+        "success": true,
+        "message_id": "19f26f4d314edcfa",
+        "thread_id": "19f26f4d314edcfa"
+      }
+    },
+    {
+      "to": "hello@thecloudbuffer.com",
+      "subject": "Cloud Buffer Inc. \u2014 IT support options worth comparing",
+      "result": {
+        "success": true,
+        "message_id": "19f26f4d557c9c0f",
+        "thread_id": "19f26f4d557c9c0f"
+      }
+    },
+    {
+      "to": "info@netpixelsystems.com",
+      "subject": "NetPixel Systems \u2014 IT support options worth comparing",
+      "result": {
+        "success": true,
+        "message_id": "19f26f4d717d0370",
+        "thread_id": "19f26f4d717d0370"
+      }
+    },
+    {
+      "to": "hello@exigenthqllc.com",
+      "subject": "Exigent HQ LLC \u2014 IT support options worth comparing",
+      "result": {
+        "success": true,
+        "message_id": "19f26f4dda8b5be1",
+        "thread_id": "19f26f4dda8b5be1"
+      }
+    },
+    {
+      "to": "contact@omnitechcyber.com",
+      "subject": "Omni Tech Cyber Services \u2014 IT support options worth comparing",
+      "result": {
+        "success": true,
+        "message_id": "19f26f4df856bb52",
+        "thread_id": "19f26f4df856bb52"
+      }
+    },
+    {
+      "to": "support@venezialogisticsllc.com",
+      "subject": "Venezia Logistics LLC \u2014 IT support options worth comparing",
+      "result": {
+        "success": true,
+        "message_id": "19f26f4e5495c07f",
+        "thread_id": "19f26f4e5495c07f"
+      }
+    },
+    {
+      "to": "info@docentriccyber.com",
+      "subject": "Docentric Cybersecurity \u2014 IT support options worth comparing",
+      "result": {
+        "success": true,
+        "message_id": "19f26f4ebf422695",
+        "thread_id": "19f26f4ebf422695"
+      }
+    },
+    {
+      "to": "sitekit@smartsecurityinfo.com",
+      "subject": "Smart Security Info \u2014 IT support options worth comparing",
+      "result": {
+        "success": true,
+        "message_id": "19f26f4eff778719",
+        "thread_id": "19f26f4eff778719"
+      }
+    }
+  ]
+}

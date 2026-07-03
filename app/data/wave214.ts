@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { Service } from './serviceTypes';
 
 export const wave214DeveloperExperiencePlatformsServices: Service[] = [
@@ -144,3 +145,7 @@ export const wave214IncidentManagementServices: Service[] = [
     ]
   }
 ];
+=======
+export const wave214ItServices: any[] = [];
+export const wave214SecurityServices: any[] = [];
+>>>>>>> 4152c7d0a (feat: add wave214/wave216 IT services and manual lead discovery outreach artifacts)
