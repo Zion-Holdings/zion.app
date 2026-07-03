@@ -1,0 +1,12 @@
+{
+  "generatedAt": "2026-07-03T15:34:20.959562+00:00",
+  "auth_ok": true,
+  "hot_follow_up_messages": 0,
+  "inbox_sample_count": 20,
+  "monitor_send_log_count": 286,
+  "reply_scan_count": 8,
+  "follow_up_ready_count": 5,
+  "service_waves": 9,
+  "test_send_ok": true,
+  "test_message_id": "19f289dde03bcbd6"
+}
