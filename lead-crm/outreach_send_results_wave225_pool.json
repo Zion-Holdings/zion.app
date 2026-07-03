@@ -1,0 +1,84 @@
+{
+  "generatedAt": "2026-07-03T10:40:12.847555+00:00",
+  "send_count": 13,
+  "results": [
+    {
+      "to": "ops@apexdesk.tech",
+      "success": true,
+      "message_id": "19f27905ed120420",
+      "thread_id": "19f27905ed120420"
+    },
+    {
+      "to": "security@corepath.tech",
+      "success": true,
+      "message_id": "19f279060f4d602e",
+      "thread_id": "19f279060f4d602e"
+    },
+    {
+      "to": "managed@deltastack.tech",
+      "success": true,
+      "message_id": "19f279064db1414f",
+      "thread_id": "19f279064db1414f"
+    },
+    {
+      "to": "cloud@edgekeep.tech",
+      "success": true,
+      "message_id": "19f279066185f5f0",
+      "thread_id": "19f279066185f5f0"
+    },
+    {
+      "to": "labs@forgeops.tech",
+      "success": true,
+      "message_id": "19f27906c8675063",
+      "thread_id": "19f27906c8675063"
+    },
+    {
+      "to": "ops@helixvault.tech",
+      "success": true,
+      "message_id": "19f279071c2a9fc7",
+      "thread_id": "19f279071c2a9fc7"
+    },
+    {
+      "to": "managed@ironline.tech",
+      "success": true,
+      "message_id": "19f279077833da8b",
+      "thread_id": "19f279077833da8b"
+    },
+    {
+      "to": "cloud@junctionops.tech",
+      "success": true,
+      "message_id": "19f2790783c7eb94",
+      "thread_id": "19f2790783c7eb94"
+    },
+    {
+      "to": "msp@keystone.tech",
+      "success": true,
+      "message_id": "19f27907c779aeab",
+      "thread_id": "19f27907c779aeab"
+    },
+    {
+      "to": "support@lumenstack.tech",
+      "success": true,
+      "message_id": "19f2790837f441f8",
+      "thread_id": "19f2790837f441f8"
+    },
+    {
+      "to": "services@meridiancloud.tech",
+      "success": true,
+      "message_id": "19f279087463cb76",
+      "thread_id": "19f279087463cb76"
+    },
+    {
+      "to": "solutions@northspan.tech",
+      "success": true,
+      "message_id": "19f27908ffaa736a",
+      "thread_id": "19f27908ffaa736a"
+    },
+    {
+      "to": "msp@openroute.tech",
+      "success": true,
+      "message_id": "19f2790945f90335",
+      "thread_id": "19f2790945f90335"
+    }
+  ]
+}

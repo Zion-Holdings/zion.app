@@ -1511,5 +1511,53 @@
     "title": "IT Compliance Program Management",
     "category": "compliance",
     "industry": "Governance"
+  },
+  {
+    "id": "it-data-lake",
+    "title": "Data Lake and Warehouse Governance",
+    "category": "data",
+    "industry": "Analytics"
+  },
+  {
+    "id": "it-crm-integration",
+    "title": "CRM Integration and Sales-IT Alignment",
+    "category": "integration",
+    "industry": "Sales"
+  },
+  {
+    "id": "it-incident-response",
+    "title": "Incident Response and Forensics",
+    "category": "security",
+    "industry": "Incident Response"
+  },
+  {
+    "id": "it-device-management",
+    "title": "Mobile and IoT Device Management",
+    "category": "it",
+    "industry": "IoT"
+  },
+  {
+    "id": "it-power-platform",
+    "title": "Power Platform and Low-Code Automation",
+    "category": "automation",
+    "industry": "Low-Code"
+  },
+  {
+    "id": "it-ux-engineering",
+    "title": "Frontend Engineering for Internal Tools",
+    "category": "it",
+    "industry": "UX/Engineering"
+  },
+  {
+    "id": "it-content-delivery",
+    "title": "Content Delivery and Media Infrastructure",
+    "category": "it",
+    "industry": "Media"
+  },
+  {
+    "id": "it-vendor-management",
+    "title": "Vendor and Supplier Risk Management",
+    "category": "security",
+    "industry": "Vendor Risk"
   }
 ]
