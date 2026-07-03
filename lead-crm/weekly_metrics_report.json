@@ -1,0 +1,14 @@
+{
+  "generatedAt": "2026-07-03T19:50:41.099750+00:00",
+  "weekly_summary": {
+    "rfq_leads_discovered": 50,
+    "reply_scan_total": 53,
+    "positive_replies": 4,
+    "neutral_replies": 31,
+    "auto_reply": 14,
+    "support_tickets": 4,
+    "follow_up_sent": 4,
+    "unique_recipients_in_registry": 52,
+    "duplicate_recipients": 22
+  }
+}

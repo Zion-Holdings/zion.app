@@ -1,0 +1,691 @@
+{
+  "generatedAt": "2026-07-03T19:48:10.177757+00:00",
+  "count": 52,
+  "duplicates": 22,
+  "recipients": [
+    {
+      "email": "14769@sarah.br",
+      "send_count": 2,
+      "batches": [
+        "outreach_batch_20260703T162430Z.json",
+        "outreach_batch_20260703T162804Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "admin@keystonemsp.io",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T113843Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "admin@nebulait.net",
+      "send_count": 26,
+      "batches": [
+        "outreach_batch_2026-07-03T133616Z.json",
+        "outreach_batch_20260703T063148Z.json",
+        "outreach_batch_20260703T065428Z.json",
+        "outreach_batch_20260703T072157Z.json",
+        "outreach_batch_20260703T075616Z.json",
+        "outreach_batch_20260703T083500Z.json",
+        "outreach_batch_20260703T091759Z.json",
+        "outreach_batch_20260703T101803Z.json",
+        "outreach_batch_20260703T104913Z.json",
+        "outreach_batch_20260703T105231Z.json",
+        "outreach_batch_20260703T111712Z.json",
+        "outreach_batch_20260703T111953Z.json",
+        "outreach_batch_20260703T112416Z.json",
+        "outreach_batch_20260703T122811Z.json",
+        "outreach_batch_20260703T130219Z.json",
+        "outreach_batch_20260703T141025Z.json",
+        "outreach_batch_20260703T141634Z.json",
+        "outreach_batch_20260703T143315Z.json",
+        "outreach_batch_20260703T143922Z.json",
+        "outreach_batch_20260703T151941Z.json",
+        "outreach_batch_20260703T162430Z.json",
+        "outreach_batch_20260703T162804Z.json",
+        "outreach_batch_20260703T182453Z.json",
+        "outreach_batch_20260703T190515Z.json",
+        "outreach_batch_20260703T192715Z.json",
+        "outreach_batch_20260703_135339.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "alerta@pge.rj.gov.br",
+      "send_count": 2,
+      "batches": [
+        "outreach_batch_20260703T162430Z.json",
+        "outreach_batch_20260703T162804Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "archive@datakeep.io",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T113843Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "automated@airbnb.com",
+      "send_count": 2,
+      "batches": [
+        "outreach_batch_20260703T162430Z.json",
+        "outreach_batch_20260703T162804Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "ax@belenus.com.br",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T141634Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "cloud@edgekeep.tech",
+      "send_count": 2,
+      "batches": [
+        "outreach_batch_20260703T111953Z.json",
+        "outreach_batch_20260703T141634Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "cloud@junctionops.tech",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T111953Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "commercial@ziontechgroup.com",
+      "send_count": 2,
+      "batches": [
+        "outreach_batch_20260703T162430Z.json",
+        "outreach_batch_20260703T162804Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "contact@clearpathdigital.io",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T113843Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "contact@omnitechcyber.com",
+      "send_count": 32,
+      "batches": [
+        "outreach_batch_2026-07-03T133616Z.json",
+        "outreach_batch_20260703T063148Z.json",
+        "outreach_batch_20260703T065428Z.json",
+        "outreach_batch_20260703T0705UTC.json",
+        "outreach_batch_20260703T070658Z.json",
+        "outreach_batch_20260703T071603Z.json",
+        "outreach_batch_20260703T072157Z.json",
+        "outreach_batch_20260703T075616Z.json",
+        "outreach_batch_20260703T083500Z.json",
+        "outreach_batch_20260703T091759Z.json",
+        "outreach_batch_20260703T095651Z.json",
+        "outreach_batch_20260703T095810Z.json",
+        "outreach_batch_20260703T101803Z.json",
+        "outreach_batch_20260703T104913Z.json",
+        "outreach_batch_20260703T105231Z.json",
+        "outreach_batch_20260703T111712Z.json",
+        "outreach_batch_20260703T111953Z.json",
+        "outreach_batch_20260703T112416Z.json",
+        "outreach_batch_20260703T122811Z.json",
+        "outreach_batch_20260703T130219Z.json",
+        "outreach_batch_20260703T141025Z.json",
+        "outreach_batch_20260703T141634Z.json",
+        "outreach_batch_20260703T143315Z.json",
+        "outreach_batch_20260703T143922Z.json",
+        "outreach_batch_20260703T151941Z.json",
+        "outreach_batch_20260703T152639Z.json",
+        "outreach_batch_20260703T162430Z.json",
+        "outreach_batch_20260703T162804Z.json",
+        "outreach_batch_20260703T182453Z.json",
+        "outreach_batch_20260703T190515Z.json",
+        "outreach_batch_20260703T192715Z.json",
+        "outreach_batch_20260703_135339.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "contact@opticoremsp.com",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T113843Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "devops@summitstacklabs.com",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T113843Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "express@airbnb.com",
+      "send_count": 11,
+      "batches": [
+        "outreach_batch_20260703T052301Z.json",
+        "outreach_batch_20260703T052939Z.json",
+        "outreach_batch_20260703T053948Z.json",
+        "outreach_batch_20260703T055138Z.json",
+        "outreach_batch_20260703T060051Z.json",
+        "outreach_batch_20260703T082641Z.json",
+        "outreach_batch_20260703T083500Z.json",
+        "outreach_batch_20260703T091759Z.json",
+        "outreach_batch_20260703T141634Z.json",
+        "outreach_batch_20260703T162430Z.json",
+        "outreach_batch_20260703T162804Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "gemini-notes@google.com",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T141634Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "hello@blueforge.io",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T113843Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "hello@bridgerouteit.com",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T113843Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "hello@exigenthqllc.com",
+      "send_count": 32,
+      "batches": [
+        "outreach_batch_2026-07-03T133616Z.json",
+        "outreach_batch_20260703T063148Z.json",
+        "outreach_batch_20260703T065428Z.json",
+        "outreach_batch_20260703T0705UTC.json",
+        "outreach_batch_20260703T070658Z.json",
+        "outreach_batch_20260703T071603Z.json",
+        "outreach_batch_20260703T072157Z.json",
+        "outreach_batch_20260703T075616Z.json",
+        "outreach_batch_20260703T083500Z.json",
+        "outreach_batch_20260703T091759Z.json",
+        "outreach_batch_20260703T095651Z.json",
+        "outreach_batch_20260703T095810Z.json",
+        "outreach_batch_20260703T101803Z.json",
+        "outreach_batch_20260703T104913Z.json",
+        "outreach_batch_20260703T105231Z.json",
+        "outreach_batch_20260703T111712Z.json",
+        "outreach_batch_20260703T111953Z.json",
+        "outreach_batch_20260703T112416Z.json",
+        "outreach_batch_20260703T122811Z.json",
+        "outreach_batch_20260703T130219Z.json",
+        "outreach_batch_20260703T141025Z.json",
+        "outreach_batch_20260703T141634Z.json",
+        "outreach_batch_20260703T143315Z.json",
+        "outreach_batch_20260703T143922Z.json",
+        "outreach_batch_20260703T151941Z.json",
+        "outreach_batch_20260703T152639Z.json",
+        "outreach_batch_20260703T162430Z.json",
+        "outreach_batch_20260703T162804Z.json",
+        "outreach_batch_20260703T182453Z.json",
+        "outreach_batch_20260703T190515Z.json",
+        "outreach_batch_20260703T192715Z.json",
+        "outreach_batch_20260703_135339.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "hello@lumendesk.io",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T113843Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "hello@openedgecloud.io",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T113843Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "hello@thecloudbuffer.com",
+      "send_count": 32,
+      "batches": [
+        "outreach_batch_2026-07-03T133616Z.json",
+        "outreach_batch_20260703T063148Z.json",
+        "outreach_batch_20260703T065428Z.json",
+        "outreach_batch_20260703T0705UTC.json",
+        "outreach_batch_20260703T070658Z.json",
+        "outreach_batch_20260703T071603Z.json",
+        "outreach_batch_20260703T072157Z.json",
+        "outreach_batch_20260703T075616Z.json",
+        "outreach_batch_20260703T083500Z.json",
+        "outreach_batch_20260703T091759Z.json",
+        "outreach_batch_20260703T095651Z.json",
+        "outreach_batch_20260703T095810Z.json",
+        "outreach_batch_20260703T101803Z.json",
+        "outreach_batch_20260703T104913Z.json",
+        "outreach_batch_20260703T105231Z.json",
+        "outreach_batch_20260703T111712Z.json",
+        "outreach_batch_20260703T111953Z.json",
+        "outreach_batch_20260703T112416Z.json",
+        "outreach_batch_20260703T122811Z.json",
+        "outreach_batch_20260703T130219Z.json",
+        "outreach_batch_20260703T141025Z.json",
+        "outreach_batch_20260703T141634Z.json",
+        "outreach_batch_20260703T143315Z.json",
+        "outreach_batch_20260703T143922Z.json",
+        "outreach_batch_20260703T151941Z.json",
+        "outreach_batch_20260703T152639Z.json",
+        "outreach_batch_20260703T162430Z.json",
+        "outreach_batch_20260703T162804Z.json",
+        "outreach_batch_20260703T182453Z.json",
+        "outreach_batch_20260703T190515Z.json",
+        "outreach_batch_20260703T192715Z.json",
+        "outreach_batch_20260703_135339.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "info@docentriccyber.com",
+      "send_count": 32,
+      "batches": [
+        "outreach_batch_2026-07-03T133616Z.json",
+        "outreach_batch_20260703T063148Z.json",
+        "outreach_batch_20260703T065428Z.json",
+        "outreach_batch_20260703T0705UTC.json",
+        "outreach_batch_20260703T070658Z.json",
+        "outreach_batch_20260703T071603Z.json",
+        "outreach_batch_20260703T072157Z.json",
+        "outreach_batch_20260703T075616Z.json",
+        "outreach_batch_20260703T083500Z.json",
+        "outreach_batch_20260703T091759Z.json",
+        "outreach_batch_20260703T095651Z.json",
+        "outreach_batch_20260703T095810Z.json",
+        "outreach_batch_20260703T101803Z.json",
+        "outreach_batch_20260703T104913Z.json",
+        "outreach_batch_20260703T105231Z.json",
+        "outreach_batch_20260703T111712Z.json",
+        "outreach_batch_20260703T111953Z.json",
+        "outreach_batch_20260703T112416Z.json",
+        "outreach_batch_20260703T122811Z.json",
+        "outreach_batch_20260703T130219Z.json",
+        "outreach_batch_20260703T141025Z.json",
+        "outreach_batch_20260703T141634Z.json",
+        "outreach_batch_20260703T143315Z.json",
+        "outreach_batch_20260703T143922Z.json",
+        "outreach_batch_20260703T151941Z.json",
+        "outreach_batch_20260703T152639Z.json",
+        "outreach_batch_20260703T162430Z.json",
+        "outreach_batch_20260703T162804Z.json",
+        "outreach_batch_20260703T182453Z.json",
+        "outreach_batch_20260703T190515Z.json",
+        "outreach_batch_20260703T192715Z.json",
+        "outreach_batch_20260703_135339.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "info@edgeops.support",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T113843Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "info@irongatenetworks.io",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T113843Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "info@meridiandesk.io",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T113843Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "info@netpixelsystems.com",
+      "send_count": 32,
+      "batches": [
+        "outreach_batch_2026-07-03T133616Z.json",
+        "outreach_batch_20260703T063148Z.json",
+        "outreach_batch_20260703T065428Z.json",
+        "outreach_batch_20260703T0705UTC.json",
+        "outreach_batch_20260703T070658Z.json",
+        "outreach_batch_20260703T071603Z.json",
+        "outreach_batch_20260703T072157Z.json",
+        "outreach_batch_20260703T075616Z.json",
+        "outreach_batch_20260703T083500Z.json",
+        "outreach_batch_20260703T091759Z.json",
+        "outreach_batch_20260703T095651Z.json",
+        "outreach_batch_20260703T095810Z.json",
+        "outreach_batch_20260703T101803Z.json",
+        "outreach_batch_20260703T104913Z.json",
+        "outreach_batch_20260703T105231Z.json",
+        "outreach_batch_20260703T111712Z.json",
+        "outreach_batch_20260703T111953Z.json",
+        "outreach_batch_20260703T112416Z.json",
+        "outreach_batch_20260703T122811Z.json",
+        "outreach_batch_20260703T130219Z.json",
+        "outreach_batch_20260703T141025Z.json",
+        "outreach_batch_20260703T141634Z.json",
+        "outreach_batch_20260703T143315Z.json",
+        "outreach_batch_20260703T143922Z.json",
+        "outreach_batch_20260703T151941Z.json",
+        "outreach_batch_20260703T152639Z.json",
+        "outreach_batch_20260703T162430Z.json",
+        "outreach_batch_20260703T162804Z.json",
+        "outreach_batch_20260703T182453Z.json",
+        "outreach_batch_20260703T190515Z.json",
+        "outreach_batch_20260703T192715Z.json",
+        "outreach_batch_20260703_135339.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "info@vaultlinesecurity.com",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T113843Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "kleber@ziontechgroup.com",
+      "send_count": 3,
+      "batches": [
+        "outreach_batch_20260703T141634Z.json",
+        "outreach_batch_20260703T162430Z.json",
+        "outreach_batch_20260703T162804Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "labs@forgeops.tech",
+      "send_count": 2,
+      "batches": [
+        "outreach_batch_20260703T111953Z.json",
+        "outreach_batch_20260703T141634Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "managed@deltastack.tech",
+      "send_count": 2,
+      "batches": [
+        "outreach_batch_20260703T111953Z.json",
+        "outreach_batch_20260703T141634Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "managed@ironline.tech",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T111953Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "msp@keystone.tech",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T111953Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "msp@openroute.tech",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T111953Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "notifications@github.com",
+      "send_count": 3,
+      "batches": [
+        "outreach_batch_20260703T141634Z.json",
+        "outreach_batch_20260703T162430Z.json",
+        "outreach_batch_20260703T162804Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "ops@apexdesk.tech",
+      "send_count": 2,
+      "batches": [
+        "outreach_batch_20260703T111953Z.json",
+        "outreach_batch_20260703T141634Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "ops@helixdesk.io",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T113843Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "ops@helixvault.tech",
+      "send_count": 2,
+      "batches": [
+        "outreach_batch_20260703T111953Z.json",
+        "outreach_batch_20260703T141634Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "ops@northharbor.io",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T113843Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "ops@pinnacledesk.io",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T113843Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "pauloblotto@somaticabrasil.com",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T141634Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "retail_funding_corp@mail.vresp.com",
+      "send_count": 2,
+      "batches": [
+        "outreach_batch_20260703T162430Z.json",
+        "outreach_batch_20260703T162804Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "sales@gridpathcloud.io",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T113843Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "security@corepath.tech",
+      "send_count": 2,
+      "batches": [
+        "outreach_batch_20260703T111953Z.json",
+        "outreach_batch_20260703T141634Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "services@meridiancloud.tech",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T111953Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "sitekit@smartsecurityinfo.com",
+      "send_count": 33,
+      "batches": [
+        "outreach_batch_2026-07-03T133616Z.json",
+        "outreach_batch_20260703T063148Z.json",
+        "outreach_batch_20260703T065428Z.json",
+        "outreach_batch_20260703T0705UTC.json",
+        "outreach_batch_20260703T070658Z.json",
+        "outreach_batch_20260703T071603Z.json",
+        "outreach_batch_20260703T072157Z.json",
+        "outreach_batch_20260703T075616Z.json",
+        "outreach_batch_20260703T083500Z.json",
+        "outreach_batch_20260703T085702Z.json",
+        "outreach_batch_20260703T091759Z.json",
+        "outreach_batch_20260703T095651Z.json",
+        "outreach_batch_20260703T095810Z.json",
+        "outreach_batch_20260703T101803Z.json",
+        "outreach_batch_20260703T104913Z.json",
+        "outreach_batch_20260703T105231Z.json",
+        "outreach_batch_20260703T111712Z.json",
+        "outreach_batch_20260703T111953Z.json",
+        "outreach_batch_20260703T112416Z.json",
+        "outreach_batch_20260703T122811Z.json",
+        "outreach_batch_20260703T130219Z.json",
+        "outreach_batch_20260703T141025Z.json",
+        "outreach_batch_20260703T141634Z.json",
+        "outreach_batch_20260703T143315Z.json",
+        "outreach_batch_20260703T143922Z.json",
+        "outreach_batch_20260703T151941Z.json",
+        "outreach_batch_20260703T152639Z.json",
+        "outreach_batch_20260703T162430Z.json",
+        "outreach_batch_20260703T162804Z.json",
+        "outreach_batch_20260703T182453Z.json",
+        "outreach_batch_20260703T190515Z.json",
+        "outreach_batch_20260703T192715Z.json",
+        "outreach_batch_20260703_135339.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "solutions@northspan.tech",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T111953Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "support@coastalsystems.io",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T113843Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "support@lumenstack.tech",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T111953Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "support@northpath.support",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T113843Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "support@pilotdesk.io",
+      "send_count": 1,
+      "batches": [
+        "outreach_batch_20260703T113843Z.json"
+      ],
+      "message_ids": []
+    },
+    {
+      "email": "support@venezialogisticsllc.com",
+      "send_count": 32,
+      "batches": [
+        "outreach_batch_2026-07-03T133616Z.json",
+        "outreach_batch_20260703T063148Z.json",
+        "outreach_batch_20260703T065428Z.json",
+        "outreach_batch_20260703T0705UTC.json",
+        "outreach_batch_20260703T070658Z.json",
+        "outreach_batch_20260703T071603Z.json",
+        "outreach_batch_20260703T072157Z.json",
+        "outreach_batch_20260703T075616Z.json",
+        "outreach_batch_20260703T083500Z.json",
+        "outreach_batch_20260703T091759Z.json",
+        "outreach_batch_20260703T095651Z.json",
+        "outreach_batch_20260703T095810Z.json",
+        "outreach_batch_20260703T101803Z.json",
+        "outreach_batch_20260703T104913Z.json",
+        "outreach_batch_20260703T105231Z.json",
+        "outreach_batch_20260703T111712Z.json",
+        "outreach_batch_20260703T111953Z.json",
+        "outreach_batch_20260703T112416Z.json",
+        "outreach_batch_20260703T122811Z.json",
+        "outreach_batch_20260703T130219Z.json",
+        "outreach_batch_20260703T141025Z.json",
+        "outreach_batch_20260703T141634Z.json",
+        "outreach_batch_20260703T143315Z.json",
+        "outreach_batch_20260703T143922Z.json",
+        "outreach_batch_20260703T151941Z.json",
+        "outreach_batch_20260703T152639Z.json",
+        "outreach_batch_20260703T162430Z.json",
+        "outreach_batch_20260703T162804Z.json",
+        "outreach_batch_20260703T182453Z.json",
+        "outreach_batch_20260703T190515Z.json",
+        "outreach_batch_20260703T192715Z.json",
+        "outreach_batch_20260703_135339.json"
+      ],
+      "message_ids": []
+    }
+  ]
+}
