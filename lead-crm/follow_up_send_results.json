@@ -1,0 +1,35 @@
+{
+  "generatedAt": "2026-07-03T17:21:30.814775+00:00",
+  "results": [
+    {
+      "to": "partners@zendesk.com",
+      "success": true,
+      "message_id": "19f28ffe433d0824",
+      "error": null
+    },
+    {
+      "to": "support+noreply@smarthr.co.jp",
+      "success": true,
+      "message_id": "19f28ffeaa10fe24",
+      "error": null
+    },
+    {
+      "to": "support@upstash.com",
+      "success": true,
+      "message_id": "19f28ffefe9b7164",
+      "error": null
+    },
+    {
+      "to": "help@hingehealth.com",
+      "success": true,
+      "message_id": "19f28fff49f7f366",
+      "error": null
+    },
+    {
+      "to": "support@torotms.com",
+      "success": true,
+      "message_id": "19f28fffac768a63",
+      "error": null
+    }
+  ]
+}

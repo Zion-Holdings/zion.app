@@ -3,35 +3,45 @@
     "to": "\"Sean Kyron Tan (Support)\" <partners@zendesk.com>",
     "subject": "Re: [Zendesk Support] Re: Zendesk Partner Program \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
     "thread_id": "19f272736f630d11",
-    "status": "pending_followup",
-    "createdAt": "2026-07-03T17:13:41.184597+00:00"
+    "status": "sent",
+    "createdAt": "2026-07-03T17:13:41.184597+00:00",
+    "sentAt": "2026-07-03T17:21:25.011003+00:00",
+    "message_id": "19f28ffe433d0824"
   },
   {
     "to": "\"\u30b5\u30dd\u30fc\u30c8\" <support+noreply@smarthr.co.jp>",
     "subject": "Re: Re: IT support review for SmartHR",
     "thread_id": "19f08018d2657d9b",
-    "status": "pending_followup",
-    "createdAt": "2026-07-03T17:13:41.184638+00:00"
+    "status": "sent",
+    "createdAt": "2026-07-03T17:13:41.184638+00:00",
+    "sentAt": "2026-07-03T17:21:26.283476+00:00",
+    "message_id": "19f28ffeaa10fe24"
   },
   {
     "to": "Fin from Upstash <support@upstash.com>",
     "subject": "Re: Re: Upstash: Managed IT + security ops for fast-growing serverless teams",
     "thread_id": "19eff96a3a19733b",
-    "status": "pending_followup",
-    "createdAt": "2026-07-03T17:13:41.184649+00:00"
+    "status": "sent",
+    "createdAt": "2026-07-03T17:13:41.184649+00:00",
+    "sentAt": "2026-07-03T17:21:27.790772+00:00",
+    "message_id": "19f28ffefe9b7164"
   },
   {
     "to": "Hinge Health <help@hingehealth.com>",
     "subject": "Re: Re: Managed SOC & compliance monitoring for Hinge Health",
     "thread_id": "19f0417550971de0",
-    "status": "pending_followup",
-    "createdAt": "2026-07-03T17:13:41.184658+00:00"
+    "status": "sent",
+    "createdAt": "2026-07-03T17:13:41.184658+00:00",
+    "sentAt": "2026-07-03T17:21:29.362685+00:00",
+    "message_id": "19f28fff49f7f366"
   },
   {
     "to": "ToroTMS <support@torotms.com>",
     "subject": "Re: [Request received] -- Re: [Request received] -- Managed SOC & compliance monitoring for Toro TMS",
     "thread_id": "19f03fc1f6ca24ce",
-    "status": "pending_followup",
-    "createdAt": "2026-07-03T17:13:41.184665+00:00"
+    "status": "sent",
+    "createdAt": "2026-07-03T17:13:41.184665+00:00",
+    "sentAt": "2026-07-03T17:21:30.813372+00:00",
+    "message_id": "19f28fffac768a63"
   }
 ]
