@@ -1,0 +1,29 @@
+{
+  "generatedAt": "2026-07-03T17:37:52.353481+00:00",
+  "results": [
+    {
+      "to": "kilocode@service.usepylon.com",
+      "success": true,
+      "message_id": "19f290ee4cc34d0d",
+      "error": null
+    },
+    {
+      "to": "flavio.miranda@persistiq.com",
+      "success": true,
+      "message_id": "19f290ee8c97143c",
+      "error": null
+    },
+    {
+      "to": "ajuda@homer.com.br",
+      "success": true,
+      "message_id": "19f290eee668c357",
+      "error": null
+    },
+    {
+      "to": "suporte@agilize.zendesk.com",
+      "success": true,
+      "message_id": "19f290ef4e39e0dd",
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,888 @@
+{
+  "generatedAt": "2026-07-03T17:37:30.318723+00:00",
+  "total_replies": 53,
+  "by_intent": {
+    "neutral": 23,
+    "neutral_ack": 8,
+    "auto_reply": 14,
+    "support_ticket": 4,
+    "positive": 4
+  },
+  "messages": [
+    {
+      "id": "19f28004b936b2ab",
+      "threadId": "19f28004b936b2ab",
+      "subject": "RE: Consulta para Mans\u00e3o espa\u00e7osa e \u00fanica de 3 andares na Riviera., 4\u2009\u2013\u20096 de dez.",
+      "from": "Airbnb <express@airbnb.com>",
+      "to": "kleber@ziontechgroup.com",
+      "date": "Fri, 03 Jul 2026 12:42:14 +0000 (UTC)",
+      "snippet": "Airbnb Consulta para Mans\u00e3o espa\u00e7osa e \u00fanica de 3 andares na Riviera., 4 \u2013 6 de dez. Para sua prote\u00e7\u00e3o e seguran\u00e7a, comunique-se sempre atrav\u00e9s do Airbnb. Fernanda Respons\u00e1vel pela reserva Ol\u00e1 Kleber!",
+      "body_excerpt": "",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "intent": "neutral"
+    },
+    {
+      "id": "19f27d52ad0460c5",
+      "threadId": "19f0e9ba3287610d",
+      "subject": "RE: Reserva para Casa com 5 su\u00edtes na Riviera de S\u00e3o Louren\u00e7o., 5\u2009\u2013\u20099 de jul.",
+      "from": "Airbnb <express@airbnb.com>",
+      "to": "kleber@ziontechgroup.com",
+      "date": "Fri, 03 Jul 2026 11:55:07 +0000 (UTC)",
+      "snippet": "Airbnb Reserva para Casa com 5 su\u00edtes na Riviera de S\u00e3o Louren\u00e7o., 5 \u2013 9 de jul. Para sua prote\u00e7\u00e3o e seguran\u00e7a, comunique-se sempre atrav\u00e9s do Airbnb. Andrea H\u00f3spede Bom Dia, como vai ter jogo domingo,",
+      "body_excerpt": "",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "intent": "neutral"
+    },
+    {
+      "id": "19f27cb9e562c781",
+      "threadId": "19f27cb9e562c781",
+      "subject": "RE: Pr\u00e9-aprova\u00e7\u00e3o para Mans\u00e3o espa\u00e7osa no melhor bairro de Bertioga., 16\u2009\u2013\u200919 de out.",
+      "from": "Airbnb <express@airbnb.com>",
+      "to": "kleber@ziontechgroup.com",
+      "date": "Fri, 03 Jul 2026 11:44:42 +0000 (UTC)",
+      "snippet": "Airbnb Pr\u00e9-aprova\u00e7\u00e3o para Mans\u00e3o espa\u00e7osa no melhor bairro de Bertioga., 16 \u2013 19 de out. Para sua prote\u00e7\u00e3o e seguran\u00e7a, comunique-se sempre atrav\u00e9s do Airbnb. Milene Respons\u00e1vel pela reserva Bom dia,",
+      "body_excerpt": "",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "intent": "neutral"
+    },
+    {
+      "id": "19f2790c7c75194b",
+      "threadId": "19f22871f73ca299",
+      "subject": "[Agilize Contabilidade Online] Re: Solu\u00e7\u00f5es de TI \u2014 Workforce, Seguran\u00e7a, Cloud e Plataforma",
+      "from": "\"Carla - Gerente Unique (Agilize)\" <suporte@agilize.zendesk.com>",
+      "to": "Kleber <kleber@ziontechgroup.com>",
+      "date": "Fri, 03 Jul 2026 10:40:26 +0000",
+      "snippet": "##- N\u00e3o escreva abaixo desta linha -## Sua solicita\u00e7\u00e3o (#2264375) foi atualizada. SAIR Seguimos \u00e0 disposi\u00e7\u00e3o! Cordialmente, Agilize Contabilidade Online O nosso tempo de resposta \u00e9 at\u00e9 24 horas uteis.",
+      "body_excerpt": "",
+      "labels": [
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "intent": "neutral"
+    },
+    {
+      "id": "19f27590837fa8ce",
+      "threadId": "19f2757a56101b3d",
+      "subject": "Re: perplexity \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
+      "from": "David from Perplexity Enterprise <enterprise@perplexity.ai>",
+      "to": "kleber@ziontechgroup.com",
+      "date": "Fri, 03 Jul 2026 09:39:32 +0000",
+      "snippet": "It looks like our chat has wandered into areas I&#39;m not equipped to handle effectively. Since I&#39;m here to help with Perplexity-related questions, I want to make sure you get the best possible",
+      "body_excerpt": "",
+      "labels": [
+        "UNREAD",
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "neutral_ack"
+    },
+    {
+      "id": "19f2758cca617fe3",
+      "threadId": "19f2757a56101b3d",
+      "subject": "Re: perplexity \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
+      "from": "Perplexity Support Concierge from Perplexity Enterprise <enterprise@perplexity.ai>",
+      "to": "kleber@ziontechgroup.com",
+      "date": "Fri, 03 Jul 2026 09:39:16 +0000",
+      "snippet": "Thank you for reaching out to Perplexity&#39;s Support. Here&#39;s what you can expect from us: We have written this automated response as a confirmation that your message has been delivered to us. We",
+      "body_excerpt": "",
+      "labels": [
+        "UNREAD",
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "auto_reply"
+    },
+    {
+      "id": "19f2757df04460ca",
+      "threadId": "19f2757afe8e468b",
+      "subject": "Re: replicate \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
+      "from": "Replicate Support <support@replicate.com>",
+      "to": "kleber@ziontechgroup.com",
+      "date": "Fri, 03 Jul 2026 09:38:17 +0000",
+      "snippet": "Hi there, Thank you for reaching out. This email address is no longer monitored. To create a support ticket, you can do so at https://replicate.com/support. Best, Support @ Replicate",
+      "body_excerpt": "Hi there,<br><br>Thank you for reaching out. This email address is no longer monitored. To create a support ticket, you can do so at https://replicate.com/support.<br><br>Best,<br>Support @ Replicate<br><img src=\"https://ea.pstmrk.it/open?m=v3_1.57OhwM3TGNsgThjoIyT8Bw.agSfXGHcNY7OUIw5jUm8RmmxGZlgltFHbsh8-vgbYdh0y_ZkKNakTVfkDqRkSCmImiVqt6FwYhKvyXdx7x2K_1FKuUNsPa1-7VnSJfiaZn7YjSjw1bOjYXTwAP5MvlNQO2V4ZlWW1UUOrBj76Pnw-jU8w_L3HzKYly11qTNuxX1r0ZBpk01RNgoYY1xN8UaDqDTG0sM3HT2EPtwYeFfFt3rMMSjhOZgFqoxnLM2ucmTSwg_k1yZI0Ro5ZQWGh65_QBngf5pbkKgcGsMlkmhdNXm5v_U2_89TyJ0o8mqGuLtsvVgPTzffP98s3Ye9S2M4-xI4aDZ6ZHSixUVwsvsALjLtKl0OoB6XpZhN-EwtuO9_yZb4bOEngHOfxFhQyOGmT6SJjcRB2rO9SrhOeWg5hwMA3LmTP_gnpZYommRaRhbTSjhnl5ixYSespJtMJAaJk0zOEZ4AbKT9xoTP305ar3NLxe3PyANTgIydR2T0JCWShBVLtpOjoiP_quTkX9Z1dKxTal_0xtACUuo8I4KqZ4o6_TQd06XrAVAYsv-ljaFLmSeQ6rvKekNUtvzCpeq14YQzLaoWIDo78BzhLsHiNPWBtP6NK9o-rJtUTFrLdfO6DzkVMVd5Ae8rZI04TaTAEoXBnm7QPuroky007_YAAofjT0QXCWXQECtA_qUxEV6hVXRTWZ6mGndWnnwFGVs0Kj_S6kwwEA77BtNS6z_HzeWy3cP",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "auto_reply"
+    },
+    {
+      "id": "19f274a948fbb5ec",
+      "threadId": "19f272736f630d11",
+      "subject": "[Zendesk Support] Re: Zendesk Partner Program \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
+      "from": "\"Sean Kyron Tan (Support)\" <partners@zendesk.com>",
+      "to": "\"Kleber Garcia Alcatr\u00e3o @ Zion Tech Group\" <kleber@ziontechgroup.com>",
+      "date": "Fri, 03 Jul 2026 09:23:46 +0000",
+      "snippet": "Sua solicita\u00e7\u00e3o (#14951443) foi atualizada. Para adicionar mais coment\u00e1rios, responda a este e-mail. Sean Kyron Tan (Zendesk Support) 3 de jul. de 2026, 4:23 AM GMT-5 Hi Kleber, Thank you for reaching",
+      "body_excerpt": "",
+      "labels": [
+        "Label_624",
+        "UNREAD",
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "Label_803",
+        "INBOX"
+      ],
+      "intent": "neutral_ack"
+    },
+    {
+      "id": "19f27273d72d3013",
+      "threadId": "19f2727283d9b7e2",
+      "subject": "Re: Shopify Partners \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
+      "from": "partners <partners+noreply@shopify.com>",
+      "to": "<kleber@ziontechgroup.com>",
+      "date": "Fri, 03 Jul 2026 08:45:10 +0000",
+      "snippet": "Thank you for your email. As of Dec 2018, this email address is not monitored and will no longer create support tickets. For answers to commonly asked questions, please see our Help Center, community",
+      "body_excerpt": "Thank you for your email.\r\n\r\nAs of Dec 2018, this email address is not monitored and will no longer create support tickets. For answers to commonly asked questions, please see our Help Center, community forums, and Shopify Partner blog.\r\n\r\nFor additional help, please fill out the support form in your Partner Dashboard: https://partners.shopify.com/current/support/form.\r\n\r\nAs a partner, you also have access to 24/7 priority support at 1-866-752-0324, as well as via the live chat within your Partner Dashboard. \r\n\r\nThank you!\r\n\r\nThe Shopify App and Partner Team\r\n",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "intent": "auto_reply"
+    },
+    {
+      "id": "19f2727249c7fed3",
+      "threadId": "19f272707f1987df",
+      "subject": "Re: Cloudflare Partner Portal \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
+      "from": "Partners <partners+noreply@cloudflare.com>",
+      "to": "<kleber@ziontechgroup.com>",
+      "date": "Fri, 03 Jul 2026 08:45:04 +0000",
+      "snippet": "Thank you for contacting partners@cloudflare.com \u2014 we&#39;ve received your message and will respond within 24\u201348 business hours.",
+      "body_excerpt": "Thank you for contacting partners@cloudflare.com \u2014 we\u2019ve received your message and will respond within 24\u201348 business hours.\r\n",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "neutral_ack"
+    },
+    {
+      "id": "19f26abfa85284c4",
+      "threadId": "19f26abfa85284c4",
+      "subject": "Out of Office/Expect Slower Response Re: Solu\u00c3\u0192\u00c2\u00a7\u00c3\u0192\u00c2\u00b5es de TI \u00c3\u00a2\u00c2\u20ac\u00c2\u201d Workforce, Seguran\u00c3\u0192\u00c2\u00a7a, Cloud e Plataforma",
+      "from": "Michelle Statham <michelle.statham@techskills.com>",
+      "to": "kleber@ziontechgroup.com",
+      "date": "Thu, 2 Jul 2026 23:30:31 -0700",
+      "snippet": "Please anticipate my delayed response as I will have limited access to email. Best, -- Michelle Statham Manager of Business Development [image: TechSkills Logo] *P:* (919) 276-9013 &lt;9192769013&gt; *",
+      "body_excerpt": "Please anticipate my delayed response as I will have limited access to email.\r\n\r\nBest,\r\n\r\n-- \r\n\r\nMichelle Statham\r\nManager of Business Development\r\n[image: TechSkills Logo]\r\n*P:* (919) 276-9013 <9192769013>\r\n*E:* michelle.statham@techskills.com\r\n*W:* www.techskills.com\r\n[image: LinkedIn] <https://www.linkedin.com/showcase/techskills-training>\r\nSchedule Some Time With Me <https://meetings.hubspot.com/mstatham>\r\n",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "support_ticket"
+    },
+    {
+      "id": "19f266aaa1891040",
+      "threadId": "19f2665ee5b36bd7",
+      "subject": "Re: Solu\u00e7\u00f5es de TI \u2014 Workforce, Seguran\u00e7a, Cloud e Plataforma",
+      "from": "\"billing-support@supabase.com\" <billing-support@supabase.com>",
+      "to": "",
+      "date": "Fri, 03 Jul 2026 05:19:11 +0000 (UTC)",
+      "snippet": "Hi, Thanks for reaching out to us. This is an automated response. We have received your support request and your ticket id is SU-410997 We noticed this request came in via email. To help us verify your",
+      "body_excerpt": "",
+      "labels": [
+        "Label_624",
+        "UNREAD",
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "Label_803",
+        "INBOX"
+      ],
+      "intent": "auto_reply"
+    },
+    {
+      "id": "19f2666b1d78cc40",
+      "threadId": "19f26668e3dc0341",
+      "subject": "Re: Oportunidade para semrush.com: Remote Workforce Enablement",
+      "from": "Semrush Position Tracking <position-tracking+noreply@semrush.com>",
+      "to": "<kleber@ziontechgroup.com>",
+      "date": "Fri, 03 Jul 2026 05:14:51 +0000",
+      "snippet": "Please be informed that this email is not monitored by the Semrush Team. We would be happy to help you with any questions or concerns at mail@semrush.com. Feel free to check out our contacts page to",
+      "body_excerpt": "Please be informed that this email is not monitored by the Semrush Team. We would be happy to help you with any questions or concerns at mail@semrush.com. \r\n\r\nFeel free to check out our contacts page to choose the most convenient way to get in touch with us!\r\n\r\nhttps://www.semrush.com/company/contacts/\r\n",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "neutral"
+    },
+    {
+      "id": "19f2665d47ab3a60",
+      "threadId": "19f26651d921b08d",
+      "subject": "Re: Solu\u00e7\u00f5es de TI \u2014 Workforce, Seguran\u00e7a, Cloud e Plataforma",
+      "from": "Kilo Support Bot <kilocode@service.usepylon.com>",
+      "to": "kleber@ziontechgroup.com",
+      "date": "Fri, 03 Jul 2026 05:13:54 +0000",
+      "snippet": "\ud83e\udd16 Kilo Support Bot (AI) This is an automated first response to help you quickly. If this doesn&#39;t solve your issue or you&#39;d like to speak with a human, simply reply to this message and our team",
+      "body_excerpt": "\ud83e\udd16 <strong>Kilo Support Bot (AI)</strong><br>This is an automated first response to help you quickly.<br>If this doesn&#39;t solve your issue or you&#39;d like to speak with a human, simply reply to this message and our team will assist you. \ud83d\udd52 Support hours: Monday to Friday, 9:00\u201318:00 CEST. \u23f1\ufe0f First response from a human may take up to 3 business days, depending on demand.<br>\r\n<hr>\r\nHello Kleber,<br>\r\nThank you for your message. This appears to be a business development outreach rather than a Kilo Code support request.<br>\r\n<strong>To unsubscribe from Kilo Code communications</strong>, please send an email to <strong><a href=\"mailto:hi+unsubscribe@kilocode.ai\">hi+unsubscribe@kilocode.ai</a></strong> as noted in your message footer.<br>\r\nIf you have a technical support question about Kilo Code, please reply with details about your issue and our team will be happy to assist.<br>\r\nBest regards,<br>Kilo Support Bot<br>\r\n<img src=\"https://ea.pstmrk.it/open?m=v3_1.NzGV4BVIJuPAmEpQv8JfLA.ui",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "positive"
+    },
+    {
+      "id": "19f24ea9fd6fe906",
+      "threadId": "19f231fe7831a9e8",
+      "subject": "RE: Reserva para Mans\u00e3o espa\u00e7osa e \u00fanica de 3 andares na Riviera., 24\u2009\u2013\u200926 de jul.",
+      "from": "Airbnb <express@airbnb.com>",
+      "to": "kleber@ziontechgroup.com",
+      "date": "Thu, 02 Jul 2026 22:19:42 +0000 (UTC)",
+      "snippet": "Airbnb Reserva para Mans\u00e3o espa\u00e7osa e \u00fanica de 3 andares na Riviera., 24 \u2013 26 de jul. Para sua prote\u00e7\u00e3o e seguran\u00e7a, comunique-se sempre atrav\u00e9s do Airbnb. Gabriel Respons\u00e1vel pela reserva Muito",
+      "body_excerpt": "",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "intent": "neutral"
+    },
+    {
+      "id": "19f245e43157cd4c",
+      "threadId": "19f23cfc8ee7fee9",
+      "subject": "RE: Pr\u00e9-aprova\u00e7\u00e3o para Mans\u00e3o espa\u00e7osa e \u00fanica de 3 andares na Riviera., 7\u2009\u2013\u20099 de ago.",
+      "from": "Airbnb <express@airbnb.com>",
+      "to": "kleber@ziontechgroup.com",
+      "date": "Thu, 02 Jul 2026 19:46:24 +0000 (UTC)",
+      "snippet": "Airbnb Pr\u00e9-aprova\u00e7\u00e3o para Mans\u00e3o espa\u00e7osa e \u00fanica de 3 andares na Riviera., 7 \u2013 9 de ago. Para sua prote\u00e7\u00e3o e seguran\u00e7a, comunique-se sempre atrav\u00e9s do Airbnb. Ros\u00e2ngela Respons\u00e1vel pela reserva Ol\u00e1 eu",
+      "body_excerpt": "",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "intent": "neutral"
+    },
+    {
+      "id": "19f23d46a75d6f21",
+      "threadId": "19f23cfc8ee7fee9",
+      "subject": "RE: Pr\u00e9-aprova\u00e7\u00e3o para Mans\u00e3o espa\u00e7osa e \u00fanica de 3 andares na Riviera., 7\u2009\u2013\u20099 de ago.",
+      "from": "Airbnb <express@airbnb.com>",
+      "to": "kleber@ziontechgroup.com",
+      "date": "Thu, 02 Jul 2026 17:15:51 +0000 (UTC)",
+      "snippet": "Airbnb Pr\u00e9-aprova\u00e7\u00e3o para Mans\u00e3o espa\u00e7osa e \u00fanica de 3 andares na Riviera., 7 \u2013 9 de ago. Para sua prote\u00e7\u00e3o e seguran\u00e7a, comunique-se sempre atrav\u00e9s do Airbnb. Ros\u00e2ngela Respons\u00e1vel pela reserva Ol\u00e1",
+      "body_excerpt": "",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "intent": "neutral"
+    },
+    {
+      "id": "19f23cfc8ee7fee9",
+      "threadId": "19f23cfc8ee7fee9",
+      "subject": "RE: Pr\u00e9-aprova\u00e7\u00e3o para Mans\u00e3o espa\u00e7osa e \u00fanica de 3 andares na Riviera., 7\u2009\u2013\u20099 de ago.",
+      "from": "Airbnb <express@airbnb.com>",
+      "to": "kleber@ziontechgroup.com",
+      "date": "Thu, 02 Jul 2026 17:10:46 +0000 (UTC)",
+      "snippet": "Airbnb Pr\u00e9-aprova\u00e7\u00e3o para Mans\u00e3o espa\u00e7osa e \u00fanica de 3 andares na Riviera., 7 \u2013 9 de ago. Para sua prote\u00e7\u00e3o e seguran\u00e7a, comunique-se sempre atrav\u00e9s do Airbnb. Ros\u00e2ngela Respons\u00e1vel pela reserva Reagiu",
+      "body_excerpt": "",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "intent": "neutral"
+    },
+    {
+      "id": "19f23603da617574",
+      "threadId": "19ef07035cf5a9cb",
+      "subject": "Re: PersistIQ Partnership",
+      "from": "flavio.miranda@persistiq.com",
+      "to": "kleber@ziontechgroup.com",
+      "date": "Thu, 2 Jul 2026 08:08:55 -0700",
+      "snippet": "Hi Kleber, just circling back on this\u2014did the suggested time for a quick call work for you? I&#39;d love to find a moment that fits your schedule to explore the partnership opportunity.",
+      "body_excerpt": "Hi Kleber, just circling back on this\u2014did the suggested time for a\r\nquick call work for you? I'd love to find a moment that fits your\r\nschedule to explore the partnership opportunity.\r\n",
+      "labels": [
+        "Label_624",
+        "UNREAD",
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "Label_803",
+        "INBOX"
+      ],
+      "intent": "positive"
+    },
+    {
+      "id": "19f231fe7831a9e8",
+      "threadId": "19f231fe7831a9e8",
+      "subject": "RE: Reserva para Mans\u00e3o espa\u00e7osa e \u00fanica de 3 andares na Riviera., 24\u2009\u2013\u200926 de jul.",
+      "from": "Airbnb <express@airbnb.com>",
+      "to": "kleber@ziontechgroup.com",
+      "date": "Thu, 02 Jul 2026 13:58:40 +0000 (UTC)",
+      "snippet": "Airbnb Reserva para Mans\u00e3o espa\u00e7osa e \u00fanica de 3 andares na Riviera., 24 \u2013 26 de jul. Para sua prote\u00e7\u00e3o e seguran\u00e7a, comunique-se sempre atrav\u00e9s do Airbnb. Gabriel Respons\u00e1vel pela reserva Oii Kleber",
+      "body_excerpt": "",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "intent": "neutral"
+    },
+    {
+      "id": "19f28fb1d91fc8e1",
+      "threadId": "176475e0edbea90c",
+      "subject": "Read: Pre-invoice: July 2020 - UA/HCL",
+      "from": "Rajeev Rattan <rattan.r@hcltech.com>",
+      "to": "\"kleber@ziontechgroup.com\" <kleber@ziontechgroup.com>",
+      "date": "Fri, 3 Jul 2026 17:16:03 +0000",
+      "snippet": "::DISCLAIMER:: ________________________________ The contents of this e-mail and any attachment(s) are confidential and intended for the named recipient(s) only. E-mail transmission is not guaranteed to",
+      "body_excerpt": "",
+      "labels": [
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "neutral"
+    },
+    {
+      "id": "19f289282d9ddb3c",
+      "threadId": "19f2891ea7cbe9d3",
+      "subject": "Login verification code (https://www.gate.com)",
+      "from": "Gate <no-reply@alert.gate.com>",
+      "to": "kleber@ziontechgroup.com",
+      "date": "Fri, 3 Jul 2026 23:21:55 +0800 (CST)",
+      "snippet": "Login verification code (https://www.gate.com) Dear kleberalcatrao, Gate has detected that someone is trying to get a login verification code of your account from this IP: IP: 177.112.78.163 IP",
+      "body_excerpt": "",
+      "labels": [
+        "UNREAD",
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "neutral"
+    },
+    {
+      "id": "19f2891ea7cbe9d3",
+      "threadId": "19f2891ea7cbe9d3",
+      "subject": "Login verification code (https://www.gate.com)",
+      "from": "Gate <no-reply@alert.gate.com>",
+      "to": "kleber@ziontechgroup.com",
+      "date": "Fri, 3 Jul 2026 23:21:15 +0800 (CST)",
+      "snippet": "Login verification code (https://www.gate.com) Dear kleberalcatrao, Gate has detected that someone is trying to get a login verification code of your account from this IP: IP: 177.112.78.163 IP",
+      "body_excerpt": "",
+      "labels": [
+        "UNREAD",
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "neutral"
+    },
+    {
+      "id": "19f288d04ad9e7f6",
+      "threadId": "17628396a7a7da92",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "to": "kleber@ziontechgroup.com",
+      "date": "Fri, 03 Jul 2026 08:15:57 -0700 (PDT)",
+      "snippet": "Address not found Your message wasn&#39;t delivered to ricardoft@algartech.com because the address couldn&#39;t be found, or is unable to receive mail. LEARN MORE This link will take you to a third-",
+      "body_excerpt": "",
+      "labels": [
+        "UNREAD",
+        "IMPORTANT",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "intent": "neutral"
+    },
+    {
+      "id": "19f2873d1d8c6a95",
+      "threadId": "1764398dff83f60c",
+      "subject": "Delivery Status Notification (Failure)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "to": "kleber@ziontechgroup.com",
+      "date": "Fri, 03 Jul 2026 07:48:26 -0700 (PDT)",
+      "snippet": "Address not found Your message wasn&#39;t delivered to mayke.santos@salusgroup.com.br because the address couldn&#39;t be found, or is unable to receive mail. LEARN MORE The response was: 550 5.1.1 The",
+      "body_excerpt": "",
+      "labels": [
+        "UNREAD",
+        "IMPORTANT",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "intent": "neutral"
+    },
+    {
+      "id": "19f2841f5a96cbb7",
+      "threadId": "19f2841f5a96cbb7",
+      "subject": "Nota Fiscal Eletr\u00f4nica",
+      "from": "Ax Belenus <ax@belenus.com.br>",
+      "to": "\"kleber@ziontechgroup.com\" <kleber@ziontechgroup.com>",
+      "date": "3 Jul 2026 10:53:57 -0300",
+      "snippet": "",
+      "body_excerpt": "",
+      "labels": [
+        "UNREAD",
+        "IMPORTANT",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "intent": "neutral"
+    },
+    {
+      "id": "19f282581e89ce7a",
+      "threadId": "19f282581e89ce7a",
+      "subject": "Supplier Collaboration Opportunity",
+      "from": "Wayne Hibbert <Whibbert@solyssey.com>",
+      "to": "\"Kleber Garcia Alcatr\u00e3o @ Zion Tech Group\" <kleber@ziontechgroup.com>",
+      "date": "Fri, 3 Jul 2026 13:22:48 +0000",
+      "snippet": "Hi Kleber, Thank you very much for your email. I&#39;m reaching out to provide you with my company email address, and I&#39;ve also copied in my CEO for visibility. What I&#39;d like you to do is let",
+      "body_excerpt": "",
+      "labels": [
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "neutral_ack"
+    },
+    {
+      "id": "19f26669e93ecd48",
+      "threadId": "19f26662832f9020",
+      "subject": "Oportunidade para homer.com.br: Remote Workforce Enablement",
+      "from": "Ajuda do Homer <ajuda@homer.com.br>",
+      "to": "\"Kleber Garcia Alcatr\u00e3o @ Zion Tech Group\" <kleber@ziontechgroup.com>",
+      "date": "Fri, 3 Jul 2026 01:14:45 -0400",
+      "snippet": "Ol\u00e1, Kleber! Obrigado pelo contato e pela proposta. Vou encaminhar sua mensagem para o nosso time comercial, que \u00e9 a \u00e1rea respons\u00e1vel por avaliar esse tipo de iniciativa com a Homer. Eles entrar\u00e3o em",
+      "body_excerpt": "",
+      "labels": [
+        "UNREAD",
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "positive"
+    },
+    {
+      "id": "19f2664afc9e9bc9",
+      "threadId": "19f2664afc9e9bc9",
+      "subject": "Automatic reply: [External] Solu\u00e7\u00f5es de TI \u2014 Workforce, Seguran\u00e7a, Cloud e Plataforma",
+      "from": "Becerra Ruben <Ruben.Becerra@hemmersbach.com>",
+      "to": "\"Kleber Garcia Alcatr\u00e3o @ Zion Tech Group\" <kleber@ziontechgroup.com>",
+      "date": "Fri, 3 Jul 2026 05:12:37 +0000",
+      "snippet": "Thank you for your message, I am currently out of the officewithout access to my mail or corporate phone, I will return on July 6th. In observance of Independence Day. Thank you in advance Best Regards",
+      "body_excerpt": "<html xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:w=\"urn:schemas-microsoft-com:office:word\" xmlns:m=\"http://schemas.microsoft.com/office/2004/12/omml\" xmlns=\"http://www.w3.org/TR/REC-html40\">\r\n<head>\r\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=Windows-1252\">\r\n<meta name=\"Generator\" content=\"Microsoft Word 15 (filtered medium)\">\r\n<style><!--\r\n/* Font Definitions */\r\n@font-face\r\n\t{font-family:\"Cambria Math\";\r\n\tpanose-1:2 4 5 3 5 4 6 3 2 4;}\r\n@font-face\r\n\t{font-family:Calibri;\r\n\tpanose-1:2 15 5 2 2 2 4 3 2 4;}\r\n@font-face\r\n\t{font-family:\"Segoe UI\";\r\n\tpanose-1:2 11 5 2 4 2 4 2 2 3;}\r\n/* Style Definitions */\r\np.MsoNormal, li.MsoNormal, div.MsoNormal\r\n\t{margin:0in;\r\n\tmargin-bottom:.0001pt;\r\n\tfont-size:11.0pt;\r\n\tfont-family:\"Calibri\",sans-serif;\r\n\tmso-fareast-language:EN-US;}\r\na:link, span.MsoHyperlink\r\n\t{mso-style-priority:99;\r\n\tcolor:#0563C1;\r\n\ttext-decoration:underline;}\r\na:visited, span.MsoHyperlinkFollowed\r\n\t{mso-style-priority:99;\r\n\tcolor:#954F72;\r\n\ttext-dec",
+      "labels": [
+        "UNREAD",
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "neutral_ack"
+    },
+    {
+      "id": "19f2539af9534ed9",
+      "threadId": "17d71343484cc3df",
+      "subject": "Delivery Status Notification (Delay)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "to": "kleber@ziontechgroup.com",
+      "date": "Thu, 02 Jul 2026 16:46:04 -0700 (PDT)",
+      "snippet": "Delivery incomplete There was a temporary problem delivering your message to contabilidademendes@veloxmail.com.br. Gmail will retry for 20 more hours. You&#39;ll be notified if the delivery fails",
+      "body_excerpt": "",
+      "labels": [
+        "UNREAD",
+        "IMPORTANT",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "intent": "neutral"
+    },
+    {
+      "id": "19f24d84d1718738",
+      "threadId": "17d71343484cc3df",
+      "subject": "Delivery Status Notification (Delay)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "to": "kleber@ziontechgroup.com",
+      "date": "Thu, 02 Jul 2026 14:59:42 -0700 (PDT)",
+      "snippet": "Delivery incomplete There was a temporary problem delivering your message to marcio.bernardino@marph.com.br. Gmail will retry for 21 more hours. You&#39;ll be notified if the delivery fails permanently",
+      "body_excerpt": "",
+      "labels": [
+        "UNREAD",
+        "IMPORTANT",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "intent": "neutral"
+    },
+    {
+      "id": "19f24d18eb0468a4",
+      "threadId": "17d71343484cc3df",
+      "subject": "Delivery Status Notification (Delay)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "to": "kleber@ziontechgroup.com",
+      "date": "Thu, 02 Jul 2026 14:52:20 -0700 (PDT)",
+      "snippet": "Delivery incomplete There was a temporary problem delivering your message to rodrigo@lcinfor.com.br. Gmail will retry for 22 more hours. You&#39;ll be notified if the delivery fails permanently. LEARN",
+      "body_excerpt": "",
+      "labels": [
+        "UNREAD",
+        "IMPORTANT",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "intent": "neutral"
+    },
+    {
+      "id": "19f2452aa218918d",
+      "threadId": "182ea26cbf9dccd4",
+      "subject": "Delivery Status Notification (Delay)",
+      "from": "Mail Delivery Subsystem <mailer-daemon@googlemail.com>",
+      "to": "kleber@ziontechgroup.com",
+      "date": "Thu, 02 Jul 2026 12:33:44 -0700 (PDT)",
+      "snippet": "Delivery incomplete There was a temporary problem delivering your message to esbarreto@daerp.pmrp.com.br. Gmail will retry for 23 more hours. You&#39;ll be notified if the delivery fails permanently.",
+      "body_excerpt": "",
+      "labels": [
+        "UNREAD",
+        "IMPORTANT",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "intent": "neutral"
+    },
+    {
+      "id": "19f2302648d77089",
+      "threadId": "19f22fd9efb99bb1",
+      "subject": "Re: Oportunidade: IT services modernos para Parceiro",
+      "from": "\"billing-support@supabase.com\" <billing-support@supabase.com>",
+      "to": "",
+      "date": "Thu, 02 Jul 2026 13:26:26 +0000 (UTC)",
+      "snippet": "Hi, Thanks for reaching out to us. This is an automated response. We have received your support request and your ticket id is SU-410316 We noticed this request came in via email. To help us verify your",
+      "body_excerpt": "",
+      "labels": [
+        "Label_624",
+        "UNREAD",
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "Label_803",
+        "INBOX"
+      ],
+      "intent": "auto_reply"
+    },
+    {
+      "id": "19f23013e9f163dd",
+      "threadId": "19f22fc88aedb308",
+      "subject": "Re: Oportunidade: IT services modernos para Parceiro",
+      "from": "\"billing-support@supabase.com\" <billing-support@supabase.com>",
+      "to": "",
+      "date": "Thu, 02 Jul 2026 13:25:11 +0000 (UTC)",
+      "snippet": "Hi, Thanks for reaching out to us. This is an automated response. We have received your support request and your ticket id is SU-410312 We noticed this request came in via email. To help us verify your",
+      "body_excerpt": "",
+      "labels": [
+        "Label_624",
+        "UNREAD",
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "Label_803",
+        "INBOX"
+      ],
+      "intent": "auto_reply"
+    },
+    {
+      "id": "19f29001159c04d9",
+      "threadId": "19f29001159c04d9",
+      "subject": "A ajuda est\u00e1 a caminho",
+      "from": "Support <partners@zendesk.com>",
+      "to": "\"Kleber Garcia Alcatr\u00e3o @ Zion Tech Group\" <kleber@ziontechgroup.com>",
+      "date": "Fri, 03 Jul 2026 17:21:37 +0000",
+      "snippet": "Ol\u00e1, Kleber, Recebemos sua mensagem e estamos trabalhando em sua solicita\u00e7\u00e3o (#14953120). Voc\u00ea receber\u00e1 uma resposta em breve. Para obter uma resposta mais r\u00e1pida, inicie uma conversa no Zendesk",
+      "body_excerpt": "",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "neutral"
+    },
+    {
+      "id": "19f27db00a535e1c",
+      "threadId": "19f27db00a535e1c",
+      "subject": "Avalia\u00e7\u00e3o do seu atendimento no 2264375",
+      "from": "Agilize <suporte@agilize.zendesk.com>",
+      "to": "Kleber <kleber@ziontechgroup.com>",
+      "date": "Fri, 03 Jul 2026 12:01:31 +0000",
+      "snippet": "##- N\u00e3o escreva abaixo desta linha -## Ol\u00e1, Kleber. Espero que esteja bem! O ticket 2264375 est\u00e1 Conclu\u00eddo. Qual a sua avalia\u00e7\u00e3o sobre o suporte recebido? Bom, estou contente Ruim, estou descontente [",
+      "body_excerpt": "",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "intent": "auto_reply"
+    },
+    {
+      "id": "19f272768a3fdfec",
+      "threadId": "19f272768a3fdfec",
+      "subject": "A ajuda est\u00e1 a caminho",
+      "from": "Support <partners@zendesk.com>",
+      "to": "\"Kleber Garcia Alcatr\u00e3o @ Zion Tech Group\" <kleber@ziontechgroup.com>",
+      "date": "Fri, 03 Jul 2026 08:45:20 +0000",
+      "snippet": "Ol\u00e1, Kleber, Recebemos sua mensagem e estamos trabalhando em sua solicita\u00e7\u00e3o (#14951443). Voc\u00ea receber\u00e1 uma resposta em breve. Para obter uma resposta mais r\u00e1pida, inicie uma conversa no Zendesk",
+      "body_excerpt": "",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "neutral"
+    },
+    {
+      "id": "19f080198f3ab56d",
+      "threadId": "19f08018d2657d9b",
+      "subject": "Re: IT support review for SmartHR",
+      "from": "\"\u30b5\u30dd\u30fc\u30c8\" <support+noreply@smarthr.co.jp>",
+      "to": "<kleber@ziontechgroup.com>",
+      "date": "Sat, 27 Jun 2026 07:35:50 +0000",
+      "snippet": "===================================================== \u672c\u30e1\u30fc\u30eb\u306f\u81ea\u52d5\u914d\u4fe1\u30e1\u30fc\u30eb\u306e\u305f\u3081\u3001\u3054\u8fd4\u4fe1\u3044\u305f\u3060\u3044\u3066\u3082\u304a\u7b54\u3048\u3067\u304d\u307e\u305b\u3093\u306e\u3067\u3054\u4e86\u627f\u304f\u3060\u3055\u3044\u3002 ===================================================== \u304a\u554f\u3044\u5408\u308f\u305b\u3044\u305f\u3060\u304d\u3001\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002 SmartHR \u30ab\u30b9\u30bf\u30de\u30fc\u30b5\u30dd\u30fc\u30c8\u3067\u3059\u3002 \u5185\u5bb9\u3092\u78ba\u8a8d",
+      "body_excerpt": "=====================================================\n\u672c\u30e1\u30fc\u30eb\u306f\u81ea\u52d5\u914d\u4fe1\u30e1\u30fc\u30eb\u306e\u305f\u3081\u3001\u3054\u8fd4\u4fe1\u3044\u305f\u3060\u3044\u3066\u3082\u304a\u7b54\u3048\u3067\u304d\u307e\u305b\u3093\u306e\u3067\u3054\u4e86\u627f\u304f\u3060\u3055\u3044\u3002\n=====================================================\n\n\u304a\u554f\u3044\u5408\u308f\u305b\u3044\u305f\u3060\u304d\u3001\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002\nSmartHR \u30ab\u30b9\u30bf\u30de\u30fc\u30b5\u30dd\u30fc\u30c8\u3067\u3059\u3002\n\n\u5185\u5bb9\u3092\u78ba\u8a8d\u306e\u3046\u3048\u30012\u301c3\u55b6\u696d\u65e5\u3092\u76ee\u51e6\u306b\u62c5\u5f53\u8005\u3088\u308a\u3054\u6848\u5185\u3044\u305f\u3057\u307e\u3059\u306e\u3067\u3001\u3057\u3070\u3089\u304f\u304a\u5f85\u3061\u304f\u3060\u3055\u3044\u3002\n\uff08\u30b5\u30dd\u30fc\u30c8\u53d7\u4ed8\u6642\u9593 10:00\u301c17:00 \u203b\u571f\u65e5\u795d\u3092\u9664\u304f\uff09\n\n\n\uff1c\uff1c\uff1c\u3088\u304f\u3042\u308b\u304a\u554f\u3044\u5408\u308f\u305b\uff1e\uff1e\uff1e\nQ. \u5f93\u696d\u54e1\u3055\u307e\u306e2\u8981\u7d20\u8a8d\u8a3c\u306e\u89e3\u9664\u306b\u3064\u3044\u3066\n\u5f93\u696d\u54e1\u3055\u307e\u306e2\u8981\u7d20\u8a8d\u8a3c\u306e\u89e3\u9664\u306f\u3001\u8cb4\u793e\u306eSmartHR\u7ba1\u7406\u8005\u3055\u307e\uff08\u4eba\u4e8b\u90e8\u9580\u7b49\u306e\u3054\u62c5\u5f53\u8005\u3055\u307e\uff09\u3078\u3054\u4f9d\u983c\u304f\u3060\u3055\u3044\u3002\n\uff08\u4ed6\u306e\u30a2\u30ab\u30a6\u30f3\u30c8\u306e2\u8981\u7d20\u8a8d\u8a3c\u3092\u89e3\u9664\u3059\u308b\uff1ahttps://support.smarthr.jp/ja/help/articles/360026106214/\uff09\n\n\u203b\u306a\u304a\u3001\u3053\u3061\u3089\u306e\u7a93\u53e3\u3067\u306f\u5f93\u696d\u54e1\u3055\u307e\u304b\u3089\u306e\u304a\u554f\u3044\u5408\u308f\u305b\u306f\u3054\u6848\u5185\u3057\u3066\u304a\u308a\u307e\u305b\u3093\u3002\n\u5f93\u696d\u54e1\u3055\u307e\u3068\u3057\u3066\u5229\u7528\u3055\u308c\u3066\u3044\u308b\u5834\u5408\u306f\u3001\u6050\u308c\u5165\u308a\u307e\u3059\u304c\u3001\u8cb4\u793e\u306eSmartHR\u7ba1\u7406\u8005\u3055\u307e\uff08\u4eba\u4e8b\u62c5\u5f53\u8005\u3055\u307e\uff09\u3078\u3054\u9023\u7d61\u3044\u305f\u3060\u304d\u307e\u3059\u3088\u3046\u304a\u9858\u3044\u3044\u305f\u3057\u307e\u3059\u3002\n\nQ. SmartHR\u306b\u30ed\u30b0\u30a4\u30f3\u3067\u304d\u306a\u3044\n\u4e0b\u8a18\u306e\u30d8\u30eb\u30d7\u30bb\u30f3\u30bf\u30fc\u3092\u3054\u89a7\u304f\u3060\u3055\u3044\u3002\n\uff08\u30ed\u30b0\u30a4\u30f3\u306b\u95a2\u3059\u308b\u3088\u304f\u3042\u308b\u8cea\u554f\uff1ahttps://support.smarthr.jp/ja/help/sections/33e345b3-86a8-4a01-8582-f78d7b938646/\uff09\n\n------------------------------------------------------------\n\u682a\u5f0f\u4f1a\u793eSmartHR\n\u30ab\u30b9\u30bf\u30de\u30fc\u30b5\u30dd\u30fc\u30c8\nMail\uff1asupport@smarthr.co.jp\n\u3012106-6239\n\u6771\u4eac\u90fd\u6e2f\u533a\u516d\u672c\u67283-2-1\n\u4f4f\u53cb\u4e0d\u52d5\u7523\u516d\u672c\u6728\u30b0\u30e9\u30f3\u30c9\u30bf\u30ef\u30fc\n------------------------------------------------------------",
+      "labels": [
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "neutral"
+    },
+    {
+      "id": "19f0417550971de0",
+      "threadId": "19f0417550971de0",
+      "subject": "Re: Managed SOC & compliance monitoring for Hinge Health",
+      "from": "Hinge Health <help@hingehealth.com>",
+      "to": "kleber@ziontechgroup.com",
+      "date": "Fri, 26 Jun 2026 13:21:03 +0000",
+      "snippet": "Hello, Thank you for reaching out to Hinge Health Support. We&#39;ve received your message and are reviewing it to provide you with a personalized response. If you are contacting us about your Hinge",
+      "body_excerpt": "",
+      "labels": [
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "neutral_ack"
+    },
+    {
+      "id": "19f04050e7c8826c",
+      "threadId": "19f04050e7c8826c",
+      "subject": "[Request received] -- Cut Torotms logistics costs with AI \u00c3\u00a2\u00c2\u20ac\u00c2\u201d 30% savings",
+      "from": "ToroTMS <support@torotms.com>",
+      "to": "Kleber Garcia <kleber@ziontechgroup.com>",
+      "date": "Fri, 26 Jun 2026 09:01:06 -0400",
+      "snippet": "We&#39;re on it! Your request (9846) has been received and is being reviewed by the Toro TMS team. To add additional comments, reply to this email. This email is a service from ToroTMS. Delivered by",
+      "body_excerpt": "",
+      "labels": [
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "support_ticket"
+    },
+    {
+      "id": "19f03fc1f6ca24ce",
+      "threadId": "19f03fc1f6ca24ce",
+      "subject": "[Request received] -- Re: [Request received] -- Managed SOC & compliance monitoring for Toro TMS",
+      "from": "ToroTMS <support@torotms.com>",
+      "to": "Kleber Garcia <kleber@ziontechgroup.com>",
+      "date": "Fri, 26 Jun 2026 08:51:21 -0400",
+      "snippet": "We&#39;re on it! Your request (9845) has been received and is being reviewed by the Toro TMS team. To add additional comments, reply to this email. This email is a service from ToroTMS. Delivered by",
+      "body_excerpt": "",
+      "labels": [
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "support_ticket"
+    },
+    {
+      "id": "19f03fb122b7d4a3",
+      "threadId": "19f03fb122b7d4a3",
+      "subject": "[Request received] -- Managed SOC & compliance monitoring for Toro TMS",
+      "from": "ToroTMS <support@torotms.com>",
+      "to": "Kleber Garcia <kleber@ziontechgroup.com>",
+      "date": "Fri, 26 Jun 2026 08:50:11 -0400",
+      "snippet": "We&#39;re on it! Your request (9844) has been received and is being reviewed by the Toro TMS team. To add additional comments, reply to this email. This email is a service from ToroTMS. Delivered by",
+      "body_excerpt": "",
+      "labels": [
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "support_ticket"
+    },
+    {
+      "id": "19f00cdcbf8b58b6",
+      "threadId": "19f00cdcbf8b58b6",
+      "subject": "Avalia\u00e7\u00e3o do seu atendimento no 2249682",
+      "from": "Agilize <suporte@agilize.zendesk.com>",
+      "to": "Kleber <kleber@ziontechgroup.com>",
+      "date": "Thu, 25 Jun 2026 22:01:54 +0000",
+      "snippet": "##- N\u00e3o escreva abaixo desta linha -## Ol\u00e1, Kleber. Espero que esteja bem! O ticket 2249682 est\u00e1 Conclu\u00eddo. Qual a sua avalia\u00e7\u00e3o sobre o suporte recebido? Bom, estou contente Ruim, estou descontente [",
+      "body_excerpt": "",
+      "labels": [
+        "IMPORTANT",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "intent": "auto_reply"
+    },
+    {
+      "id": "19eff96a3a19733b",
+      "threadId": "19eff96a3a19733b",
+      "subject": "Re: Upstash: Managed IT + security ops for fast-growing serverless teams",
+      "from": "Fin from Upstash <support@upstash.com>",
+      "to": "kleber@ziontechgroup.com",
+      "date": "Thu, 25 Jun 2026 16:22:01 +0000",
+      "snippet": "Thanks for contacting us. Our team will get back to you as soon as we can.",
+      "body_excerpt": "",
+      "labels": [
+        "IMPORTANT",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "neutral_ack"
+    },
+    {
+      "id": "19efb01f78212e2e",
+      "threadId": "19efb01f78212e2e",
+      "subject": "[Agilize Contabilidade Online] Solicita\u00e7\u00e3o pendente: CORRE\u00c7\u00c3O PROCESSO - PRAIA DIGITAL IMOVEIS LTDA",
+      "from": "Agilize <suporte@agilize.zendesk.com>",
+      "to": "Kleber <kleber@ziontechgroup.com>",
+      "date": "Wed, 24 Jun 2026 19:01:10 +0000",
+      "snippet": "##- N\u00e3o escreva abaixo desta linha -## Ol\u00e1, Kleber! Respondemos a solicita\u00e7\u00e3o (n\u00ba #2244340) h\u00e1 2 dias e n\u00e3o recebemos o seu retorno. Essa solicita\u00e7\u00e3o j\u00e1 foi resolvida? Seu ticket ser\u00e1 fechado",
+      "body_excerpt": "",
+      "labels": [
+        "IMPORTANT",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "intent": "positive"
+    },
+    {
+      "id": "19ef27fe2f8b6213",
+      "threadId": "19ef27f6e9aa2ab7",
+      "subject": "Re: Parceria data center / infraestrutura - Upstash",
+      "from": "Fin from Upstash <support@upstash.com>",
+      "to": "kleber@ziontechgroup.com",
+      "date": "Tue, 23 Jun 2026 03:22:06 +0000",
+      "snippet": "Thanks for contacting us. Our team will get back to you as soon as we can.",
+      "body_excerpt": "",
+      "labels": [
+        "IMPORTANT",
+        "Label_939",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "neutral_ack"
+    },
+    {
+      "id": "19ef1b4d6c4ee8da",
+      "threadId": "19ef1b4d6c4ee8da",
+      "subject": "Request #2923579: How would you rate the support you received?",
+      "from": "\"Zachary Hasseler (Support)\" <partners@datadog.zendesk.com>",
+      "to": "\"Kleber Garcia Alcatr\u00e3o @ Zion Tech Group\" <kleber@ziontechgroup.com>",
+      "date": "Mon, 22 Jun 2026 23:40:20 +0000",
+      "snippet": "##- Please type your reply above this line -## Hello Kleber Garcia Alcatr\u00e3o @ Zion Tech Group, We hope your issue with ticket 2923579 has been resolved to your satisfaction. **If your issue hasn&#39;t",
+      "body_excerpt": "",
+      "labels": [
+        "Label_939",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "auto_reply"
+    },
+    {
+      "id": "19ef1b4c33cc2fc1",
+      "threadId": "19ef1b4c33cc2fc1",
+      "subject": "Request #2923577: How would you rate the support you received?",
+      "from": "\"Zachary Hasseler (Support)\" <partners@datadog.zendesk.com>",
+      "to": "\"Kleber Garcia Alcatr\u00e3o @ Zion Tech Group\" <kleber@ziontechgroup.com>",
+      "date": "Mon, 22 Jun 2026 23:40:15 +0000",
+      "snippet": "##- Please type your reply above this line -## Hello Kleber Garcia Alcatr\u00e3o @ Zion Tech Group, We hope your issue with ticket 2923577 has been resolved to your satisfaction. **If your issue hasn&#39;t",
+      "body_excerpt": "",
+      "labels": [
+        "Label_939",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "auto_reply"
+    },
+    {
+      "id": "19ef1b4ab54ca13c",
+      "threadId": "19ef1b4ab54ca13c",
+      "subject": "Request #2923574: How would you rate the support you received?",
+      "from": "\"Zachary Hasseler (Support)\" <partners@datadog.zendesk.com>",
+      "to": "\"Kleber Garcia Alcatr\u00e3o @ Zion Tech Group\" <kleber@ziontechgroup.com>",
+      "date": "Mon, 22 Jun 2026 23:40:09 +0000",
+      "snippet": "##- Please type your reply above this line -## Hello Kleber Garcia Alcatr\u00e3o @ Zion Tech Group, We hope your issue with ticket 2923574 has been resolved to your satisfaction. **If your issue hasn&#39;t",
+      "body_excerpt": "",
+      "labels": [
+        "Label_939",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "auto_reply"
+    },
+    {
+      "id": "19ef1b4964a87b82",
+      "threadId": "19ef1b4964a87b82",
+      "subject": "Request #2923578: How would you rate the support you received?",
+      "from": "\"Zachary Hasseler (Support)\" <partners@datadog.zendesk.com>",
+      "to": "\"Kleber Garcia Alcatr\u00e3o @ Zion Tech Group\" <kleber@ziontechgroup.com>",
+      "date": "Mon, 22 Jun 2026 23:40:04 +0000",
+      "snippet": "##- Please type your reply above this line -## Hello Kleber Garcia Alcatr\u00e3o @ Zion Tech Group, We hope your issue with ticket 2923578 has been resolved to your satisfaction. **If your issue hasn&#39;t",
+      "body_excerpt": "",
+      "labels": [
+        "Label_939",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "auto_reply"
+    },
+    {
+      "id": "19ef1b467fc92a68",
+      "threadId": "19ef1b467fc92a68",
+      "subject": "Request #2923581: How would you rate the support you received?",
+      "from": "\"Zachary Hasseler (Support)\" <partners@datadog.zendesk.com>",
+      "to": "\"Kleber Garcia Alcatr\u00e3o @ Zion Tech Group\" <kleber@ziontechgroup.com>",
+      "date": "Mon, 22 Jun 2026 23:39:51 +0000",
+      "snippet": "##- Please type your reply above this line -## Hello Kleber Garcia Alcatr\u00e3o @ Zion Tech Group, We hope your issue with ticket 2923581 has been resolved to your satisfaction. **If your issue hasn&#39;t",
+      "body_excerpt": "",
+      "labels": [
+        "Label_939",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "auto_reply"
+    },
+    {
+      "id": "19ef1b445e88e5f2",
+      "threadId": "19ef1b445e88e5f2",
+      "subject": "Request #2923582: How would you rate the support you received?",
+      "from": "\"Zachary Hasseler (Support)\" <partners@datadog.zendesk.com>",
+      "to": "\"Kleber Garcia Alcatr\u00e3o @ Zion Tech Group\" <kleber@ziontechgroup.com>",
+      "date": "Mon, 22 Jun 2026 23:39:43 +0000",
+      "snippet": "##- Please type your reply above this line -## Hello Kleber Garcia Alcatr\u00e3o @ Zion Tech Group, We hope your issue with ticket 2923582 has been resolved to your satisfaction. **If your issue hasn&#39;t",
+      "body_excerpt": "",
+      "labels": [
+        "Label_939",
+        "CATEGORY_PERSONAL",
+        "INBOX"
+      ],
+      "intent": "auto_reply"
+    }
+  ]
+}
