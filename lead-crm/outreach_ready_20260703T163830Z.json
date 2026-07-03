@@ -1,0 +1,12 @@
+{
+  "generatedAt": "2026-07-03T16:38:30.000000+00:00",
+  "status": "send_blocked_no_explicit_run_consent",
+  "sendBlocked": true,
+  "sendBlockedReason": "No explicit run-scoped opt-in consent flag was present in this automation session; sending was not performed.",
+  "sendCount": 0,
+  "errors": [],
+  "servicesReferenced": [
+    "it"
+  ],
+  "worker_note": "Created because Step 4 required a blocking artifact when sending is inhibited."
+}

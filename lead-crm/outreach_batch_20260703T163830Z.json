@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-07-03T16:38:30.000000+00:00",
+  "lead_crm_current_outreach_run_file": "lead-crm/outreach_run_2026-06-30.json",
+  "status": "send_blocked_no_explicit_run_consent",
+  "send": {
+    "requested": false,
+    "blocked": true,
+    "blockedReason": "No explicit trip/run-scoped send permission discovered in this automation run; only ambient env opt-ins were present."
+  },
+  "consent": {
+    "environment_present": true,
+    "workspace_config_present": false
+  },
+  "batch": [],
+  "counts": {
+    "batch_size": 0,
+    "filtered_send_ready": 0,
+    "send_count": 0,
+    "errors": 0
+  },
+  "worker_note": "Batch building and sending skipped after consent-state review."
+}
