@@ -10,7 +10,7 @@ FIXED for proper conversation threading
 import urllib.request, urllib.parse, json, datetime, sys, time, base64
 from pathlib import Path
 
-WORKSPACE = Path('/root/.openclaw/workspace')
+WORKSPACE = Path('/data/data/com.termux/files/home/.openclaw/workspace')
 TOKENS_FILE = WORKSPACE / 'gog_tokens.json'
 
 def load_gog_tokens():
@@ -150,6 +150,24 @@ def extract_body_from_gmail_message(msg):
             return '\n'.join(part_text(p) for p in part['parts'])
         return ''
     return part_text(msg.get('payload', {}))
+
+def gmail_send_new(to_addr: str, subject: str, body: str) -> dict:
+    raw_lines = [
+        f"To: {to_addr}",
+        f"Subject: {subject}",
+        "",
+        body,
+    ]
+    raw = "\r\n".join(raw_lines)
+    encoded = base64.urlsafe_b64encode(raw.encode('utf-8')).decode('utf-8')
+    send_url = 'https://gmail.googleapis.com/gmail/v1/users/me/messages/send'
+    payload = json.dumps({'raw': encoded}).encode('utf-8')
+    req = urllib.request.Request(send_url, data=payload, headers={**gog_headers(), 'Content-Type': 'application/json'})
+    try:
+        result = json.loads(urllib.request.urlopen(req).read())
+        return {'success': True, 'message_id': result.get('id'), 'thread_id': result.get('threadId')}
+    except Exception as e:
+        return {'success': False, 'error': str(e)}
 
 def gmail_batch_modify(payload: dict, addLabelIds=None, removeLabelIds=None):
     """Apply label changes to multiple messages. Blocks up to 60s."""

@@ -44,6 +44,7 @@ import { wave212AiServices, wave212MicroSaasServices, wave212ItServices, wave212
 import { wave213AiObservabilityServices, wave213DataPrivacyServices, wave213CloudFinOpsServices, wave213SecurityThreatIntelServices, wave213AiTransparencyServices, wave213HealthcareItServices } from './wave213';
 import { wave214ItServices, wave214SecurityServices } from './wave214';
 import { wave215ItServices } from './wave215';
+import { wave216ItServices, wave216SecurityServices, wave216CloudServices, wave216DataServices, wave216AutomationServices, wave216MicroSaasServices, wave216AiServices } from './wave216';
 export const aiServices: Service[] = [
   {
     id: 'ai-document-processing',
@@ -1873,4 +1874,5 @@ export const allServices: Service[] = [
   ...wave213HealthcareItServices,
   ...wave214ItServices,
   ...wave214SecurityServices,
-].filter((s: Service) => s.benefits.length > 0);
+  ...wave215ItServices,
+].filter((s: any) => s && (s.benefits || []).length > 0);
