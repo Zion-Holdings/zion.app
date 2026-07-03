@@ -1,0 +1,125 @@
+{
+  "generatedAt": "2026-07-03T08:45:08.008357+00:00",
+  "send_count": 20,
+  "results": [
+    {
+      "to": "partnerplus@ibm.com",
+      "success": true,
+      "message_id": "19f2726c6a83973e",
+      "thread_id": "19f2726c6a83973e"
+    },
+    {
+      "to": "cloud.builders@google.com",
+      "success": true,
+      "message_id": "19f2726ca68fa677",
+      "thread_id": "19f2726ca68fa677"
+    },
+    {
+      "to": "partnerships@stripe.com",
+      "success": true,
+      "message_id": "19f2726cf93f495f",
+      "thread_id": "19f2726cf93f495f"
+    },
+    {
+      "to": "partners@microsoft.com",
+      "success": true,
+      "message_id": "19f2726d3d07f296",
+      "thread_id": "19f2726d3d07f296"
+    },
+    {
+      "to": "apn@amazon.com",
+      "success": true,
+      "message_id": "19f2726d79b46cdb",
+      "thread_id": "19f2726d79b46cdb"
+    },
+    {
+      "to": "changelog@updates.linear.app",
+      "success": true,
+      "message_id": "19f2726df147d430",
+      "thread_id": "19f2726df147d430"
+    },
+    {
+      "to": "partners@github.com",
+      "success": true,
+      "message_id": "19f2726e40a921bd",
+      "thread_id": "19f2726e40a921bd"
+    },
+    {
+      "to": "alliances@datadoghq.com",
+      "success": true,
+      "message_id": "19f2726e876ad540",
+      "thread_id": "19f2726e876ad540"
+    },
+    {
+      "to": "partners@hashicorp.com",
+      "success": true,
+      "message_id": "19f2726ec0778731",
+      "thread_id": "19f2726ec0778731"
+    },
+    {
+      "to": "partnerships@vercel.com",
+      "success": true,
+      "message_id": "19f2726f8dca4208",
+      "thread_id": "19f2726f8dca4208"
+    },
+    {
+      "to": "partners@cloudflare.com",
+      "success": true,
+      "message_id": "19f272707f1987df",
+      "thread_id": "19f272707f1987df"
+    },
+    {
+      "to": "partners@mongodb.com",
+      "success": true,
+      "message_id": "19f27270d7485831",
+      "thread_id": "19f27270d7485831"
+    },
+    {
+      "to": "partners@docker.com",
+      "success": true,
+      "message_id": "19f272712f2556c3",
+      "thread_id": "19f272712f2556c3"
+    },
+    {
+      "to": "partners@snyk.io",
+      "success": true,
+      "message_id": "19f272718cec26b9",
+      "thread_id": "19f272718cec26b9"
+    },
+    {
+      "to": "partners@atlassian.com",
+      "success": true,
+      "message_id": "19f27271f499bfa7",
+      "thread_id": "19f27271f499bfa7"
+    },
+    {
+      "to": "partners@hubspot.com",
+      "success": false,
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "to": "partners@shopify.com",
+      "success": true,
+      "message_id": "19f2727283d9b7e2",
+      "thread_id": "19f2727283d9b7e2"
+    },
+    {
+      "to": "partners@twilio.com",
+      "success": true,
+      "message_id": "19f27272d57b1d8f",
+      "thread_id": "19f27272d57b1d8f"
+    },
+    {
+      "to": "partners@okta.com",
+      "success": true,
+      "message_id": "19f272733066cdea",
+      "thread_id": "19f272733066cdea"
+    },
+    {
+      "to": "partners@zendesk.com",
+      "success": true,
+      "message_id": "19f272736f630d11",
+      "thread_id": "19f272736f630d11"
+    }
+  ]
+}

@@ -1295,5 +1295,65 @@
     "title": "Cloud Migration and App Modernization",
     "category": "cloud",
     "industry": "Cloud Computing"
+  },
+  {
+    "id": "it-digital-transformation",
+    "title": "IT Digital Transformation Advisory",
+    "category": "it",
+    "industry": "Strategy"
+  },
+  {
+    "id": "it-service-desk",
+    "title": "Service Desk Optimization",
+    "category": "it",
+    "industry": "Support"
+  },
+  {
+    "id": "it-endpoint-lifecycle",
+    "title": "Endpoint Lifecycle and Refresh Planning",
+    "category": "it",
+    "industry": "Workplace"
+  },
+  {
+    "id": "it-data-warehouse",
+    "title": "Data Warehouse Modernization",
+    "category": "data",
+    "industry": "Analytics"
+  },
+  {
+    "id": "it-licensing-optimization",
+    "title": "Software Licensing and Asset Optimization",
+    "category": "it",
+    "industry": "Finance"
+  },
+  {
+    "id": "it-disaster-recovery",
+    "title": "Disaster Recovery Program Design",
+    "category": "it",
+    "industry": "Risk"
+  },
+  {
+    "id": "it-network-design",
+    "title": "Network Architecture and Design",
+    "category": "networking",
+    "industry": "Infrastructure"
+  },
+  {
+    "id": "it-software-deployment",
+    "title": "Software Deployment and Release Orchestration",
+    "category": "devops",
+    "industry": "Engineering"
+  },
+  {
+    "id": "it-voice-calling",
+    "title": "Voice and Calling Platform Support",
+    "category": "it",
+    "industry": "Telephony"
+  },
+  {
+    "id": "it-financial-ops",
+    "title": "IT Financial Reporting and Budgeting",
+    "category": "it",
+    "industry": "Finance"
   }
 ]

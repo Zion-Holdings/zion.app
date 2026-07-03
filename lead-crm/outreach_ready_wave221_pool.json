@@ -1,0 +1,370 @@
+{
+  "generatedAt": "2026-07-03T08:44:10.581762+00:00",
+  "source": "local_partner_expansion_wave221",
+  "counts": {
+    "business_domain_ready": 20
+  },
+  "recipients": [
+    {
+      "name": "IBM Partner Plus",
+      "email": "partnerplus@ibm.com",
+      "website": "https://ibm.com/partner",
+      "service_ids": [
+        "it",
+        "it-cloud-migration",
+        "it-api-integration",
+        "it-security",
+        "cloud-cost-optimization",
+        "it-development-platform"
+      ],
+      "subject": "IBM Partner Plus \u2014 partner-led IT and cloud implementation",
+      "body": "Hi IBM team,\n\nI notice IBM Partner Plus often works with partners on managed IT, cloud migration, API integration, and security enablement. If useful, I can share a concise 2-minute comparison focused on implementation support, not generic marketing.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "sent",
+      "discoveredAt": "2026-07-03T08:44:10.581453+00:00",
+      "sentAt": "2026-07-03T08:46:03.106390+00:00"
+    },
+    {
+      "name": "Google Cloud Builders",
+      "email": "cloud.builders@google.com",
+      "website": "https://cloud.google.com/builders",
+      "service_ids": [
+        "it",
+        "it-cloud-migration",
+        "it-api-integration",
+        "it-security",
+        "cloud-cost-optimization",
+        "it-development-platform"
+      ],
+      "subject": "Google Cloud Builders \u2014 partner-led IT and cloud implementation",
+      "body": "Hi Google team,\n\nI notice Google Cloud Builders often works with partners on managed IT, cloud migration, API integration, and security enablement. If useful, I can share a concise 2-minute comparison focused on implementation support, not generic marketing.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "sent",
+      "discoveredAt": "2026-07-03T08:44:10.581505+00:00",
+      "sentAt": "2026-07-03T08:46:03.106505+00:00"
+    },
+    {
+      "name": "Stripe Partnerships",
+      "email": "partnerships@stripe.com",
+      "website": "https://stripe.com/partners",
+      "service_ids": [
+        "it",
+        "it-cloud-migration",
+        "it-api-integration",
+        "it-security",
+        "cloud-cost-optimization",
+        "it-development-platform"
+      ],
+      "subject": "Stripe Partnerships \u2014 partner-led IT and cloud implementation",
+      "body": "Hi Stripe team,\n\nI notice Stripe Partnerships often works with partners on managed IT, cloud migration, API integration, and security enablement. If useful, I can share a concise 2-minute comparison focused on implementation support, not generic marketing.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "sent",
+      "discoveredAt": "2026-07-03T08:44:10.581521+00:00",
+      "sentAt": "2026-07-03T08:46:03.106563+00:00"
+    },
+    {
+      "name": "Microsoft Cloud Partners",
+      "email": "partners@microsoft.com",
+      "website": "https://partner.microsoft.com",
+      "service_ids": [
+        "it",
+        "it-cloud-migration",
+        "it-api-integration",
+        "it-security",
+        "cloud-cost-optimization",
+        "it-development-platform"
+      ],
+      "subject": "Microsoft Cloud Partners \u2014 partner-led IT and cloud implementation",
+      "body": "Hi Microsoft team,\n\nI notice Microsoft Cloud Partners often works with partners on managed IT, cloud migration, API integration, and security enablement. If useful, I can share a concise 2-minute comparison focused on implementation support, not generic marketing.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "sent",
+      "discoveredAt": "2026-07-03T08:44:10.581535+00:00",
+      "sentAt": "2026-07-03T08:46:03.106619+00:00"
+    },
+    {
+      "name": "AWS Partner Network",
+      "email": "apn@amazon.com",
+      "website": "https://aws.amazon.com/partners",
+      "service_ids": [
+        "it",
+        "it-cloud-migration",
+        "it-api-integration",
+        "it-security",
+        "cloud-cost-optimization",
+        "it-development-platform"
+      ],
+      "subject": "AWS Partner Network \u2014 partner-led IT and cloud implementation",
+      "body": "Hi AWS team,\n\nI notice AWS Partner Network often works with partners on managed IT, cloud migration, API integration, and security enablement. If useful, I can share a concise 2-minute comparison focused on implementation support, not generic marketing.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "sent",
+      "discoveredAt": "2026-07-03T08:44:10.581546+00:00",
+      "sentAt": "2026-07-03T08:46:03.106675+00:00"
+    },
+    {
+      "name": "Linear Updates",
+      "email": "changelog@updates.linear.app",
+      "website": "https://linear.app",
+      "service_ids": [
+        "it",
+        "it-cloud-migration",
+        "it-api-integration",
+        "it-security",
+        "cloud-cost-optimization",
+        "it-development-platform"
+      ],
+      "subject": "Linear Updates \u2014 partner-led IT and cloud implementation",
+      "body": "Hi Linear team,\n\nI notice Linear Updates often works with partners on managed IT, cloud migration, API integration, and security enablement. If useful, I can share a concise 2-minute comparison focused on implementation support, not generic marketing.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "sent",
+      "discoveredAt": "2026-07-03T08:44:10.581557+00:00",
+      "sentAt": "2026-07-03T08:46:03.106730+00:00"
+    },
+    {
+      "name": "GitHub Partner Team",
+      "email": "partners@github.com",
+      "website": "https://github.com/partners",
+      "service_ids": [
+        "it",
+        "it-cloud-migration",
+        "it-api-integration",
+        "it-security",
+        "cloud-cost-optimization",
+        "it-development-platform"
+      ],
+      "subject": "GitHub Partner Team \u2014 partner-led IT and cloud implementation",
+      "body": "Hi GitHub team,\n\nI notice GitHub Partner Team often works with partners on managed IT, cloud migration, API integration, and security enablement. If useful, I can share a concise 2-minute comparison focused on implementation support, not generic marketing.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "sent",
+      "discoveredAt": "2026-07-03T08:44:10.581567+00:00",
+      "sentAt": "2026-07-03T08:46:03.106784+00:00"
+    },
+    {
+      "name": "Datadog Alliances",
+      "email": "alliances@datadoghq.com",
+      "website": "https://datadog.com/partners",
+      "service_ids": [
+        "it",
+        "it-cloud-migration",
+        "it-api-integration",
+        "it-security",
+        "cloud-cost-optimization",
+        "it-development-platform"
+      ],
+      "subject": "Datadog Alliances \u2014 partner-led IT and cloud implementation",
+      "body": "Hi Datadog team,\n\nI notice Datadog Alliances often works with partners on managed IT, cloud migration, API integration, and security enablement. If useful, I can share a concise 2-minute comparison focused on implementation support, not generic marketing.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "sent",
+      "discoveredAt": "2026-07-03T08:44:10.581577+00:00",
+      "sentAt": "2026-07-03T08:46:03.106838+00:00"
+    },
+    {
+      "name": "HashiCorp Partner Program",
+      "email": "partners@hashicorp.com",
+      "website": "https://hashicorp.com/partners",
+      "service_ids": [
+        "it",
+        "it-cloud-migration",
+        "it-api-integration",
+        "it-security",
+        "cloud-cost-optimization",
+        "it-development-platform"
+      ],
+      "subject": "HashiCorp Partner Program \u2014 partner-led IT and cloud implementation",
+      "body": "Hi HashiCorp team,\n\nI notice HashiCorp Partner Program often works with partners on managed IT, cloud migration, API integration, and security enablement. If useful, I can share a concise 2-minute comparison focused on implementation support, not generic marketing.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "sent",
+      "discoveredAt": "2026-07-03T08:44:10.581587+00:00",
+      "sentAt": "2026-07-03T08:46:03.106896+00:00"
+    },
+    {
+      "name": "Vercel Partnerships",
+      "email": "partnerships@vercel.com",
+      "website": "https://vercel.com/partners",
+      "service_ids": [
+        "it",
+        "it-cloud-migration",
+        "it-api-integration",
+        "it-security",
+        "cloud-cost-optimization",
+        "it-development-platform"
+      ],
+      "subject": "Vercel Partnerships \u2014 partner-led IT and cloud implementation",
+      "body": "Hi Vercel team,\n\nI notice Vercel Partnerships often works with partners on managed IT, cloud migration, API integration, and security enablement. If useful, I can share a concise 2-minute comparison focused on implementation support, not generic marketing.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "sent",
+      "discoveredAt": "2026-07-03T08:44:10.581596+00:00",
+      "sentAt": "2026-07-03T08:46:03.106950+00:00"
+    },
+    {
+      "name": "Cloudflare Partner Portal",
+      "email": "partners@cloudflare.com",
+      "website": "https://cloudflare.com/partners",
+      "service_ids": [
+        "it",
+        "it-cloud-migration",
+        "it-api-integration",
+        "it-security",
+        "cloud-cost-optimization",
+        "it-development-platform"
+      ],
+      "subject": "Cloudflare Partner Portal \u2014 partner-led IT and cloud implementation",
+      "body": "Hi Cloudflare team,\n\nI notice Cloudflare Partner Portal often works with partners on managed IT, cloud migration, API integration, and security enablement. If useful, I can share a concise 2-minute comparison focused on implementation support, not generic marketing.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "sent",
+      "discoveredAt": "2026-07-03T08:44:10.581606+00:00",
+      "sentAt": "2026-07-03T08:46:03.107004+00:00"
+    },
+    {
+      "name": "MongoDB Partner Network",
+      "email": "partners@mongodb.com",
+      "website": "https://mongodb.com/partners",
+      "service_ids": [
+        "it",
+        "it-cloud-migration",
+        "it-api-integration",
+        "it-security",
+        "cloud-cost-optimization",
+        "it-development-platform"
+      ],
+      "subject": "MongoDB Partner Network \u2014 partner-led IT and cloud implementation",
+      "body": "Hi MongoDB team,\n\nI notice MongoDB Partner Network often works with partners on managed IT, cloud migration, API integration, and security enablement. If useful, I can share a concise 2-minute comparison focused on implementation support, not generic marketing.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "sent",
+      "discoveredAt": "2026-07-03T08:44:10.581617+00:00",
+      "sentAt": "2026-07-03T08:46:03.107060+00:00"
+    },
+    {
+      "name": "Docker Partner Team",
+      "email": "partners@docker.com",
+      "website": "https://docker.com/partners",
+      "service_ids": [
+        "it",
+        "it-cloud-migration",
+        "it-api-integration",
+        "it-security",
+        "cloud-cost-optimization",
+        "it-development-platform"
+      ],
+      "subject": "Docker Partner Team \u2014 partner-led IT and cloud implementation",
+      "body": "Hi Docker team,\n\nI notice Docker Partner Team often works with partners on managed IT, cloud migration, API integration, and security enablement. If useful, I can share a concise 2-minute comparison focused on implementation support, not generic marketing.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "sent",
+      "discoveredAt": "2026-07-03T08:44:10.581627+00:00",
+      "sentAt": "2026-07-03T08:46:03.107116+00:00"
+    },
+    {
+      "name": "Snyk Partner Program",
+      "email": "partners@snyk.io",
+      "website": "https://snyk.io/partners",
+      "service_ids": [
+        "it",
+        "it-cloud-migration",
+        "it-api-integration",
+        "it-security",
+        "cloud-cost-optimization",
+        "it-development-platform"
+      ],
+      "subject": "Snyk Partner Program \u2014 partner-led IT and cloud implementation",
+      "body": "Hi Snyk team,\n\nI notice Snyk Partner Program often works with partners on managed IT, cloud migration, API integration, and security enablement. If useful, I can share a concise 2-minute comparison focused on implementation support, not generic marketing.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "sent",
+      "discoveredAt": "2026-07-03T08:44:10.581638+00:00",
+      "sentAt": "2026-07-03T08:46:03.107170+00:00"
+    },
+    {
+      "name": "Atlassian Partner Program",
+      "email": "partners@atlassian.com",
+      "website": "https://atlassian.com/partners",
+      "service_ids": [
+        "it",
+        "it-cloud-migration",
+        "it-api-integration",
+        "it-security",
+        "cloud-cost-optimization",
+        "it-development-platform"
+      ],
+      "subject": "Atlassian Partner Program \u2014 partner-led IT and cloud implementation",
+      "body": "Hi Atlassian team,\n\nI notice Atlassian Partner Program often works with partners on managed IT, cloud migration, API integration, and security enablement. If useful, I can share a concise 2-minute comparison focused on implementation support, not generic marketing.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "sent",
+      "discoveredAt": "2026-07-03T08:44:10.581648+00:00",
+      "sentAt": "2026-07-03T08:46:03.107224+00:00"
+    },
+    {
+      "name": "HubSpot Partner Program",
+      "email": "partners@hubspot.com",
+      "website": "https://hubspot.com/partners",
+      "service_ids": [
+        "it",
+        "it-cloud-migration",
+        "it-api-integration",
+        "it-security",
+        "cloud-cost-optimization",
+        "it-development-platform"
+      ],
+      "subject": "HubSpot Partner Program \u2014 partner-led IT and cloud implementation",
+      "body": "Hi HubSpot team,\n\nI notice HubSpot Partner Program often works with partners on managed IT, cloud migration, API integration, and security enablement. If useful, I can share a concise 2-minute comparison focused on implementation support, not generic marketing.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "failed",
+      "discoveredAt": "2026-07-03T08:44:10.581672+00:00",
+      "sentAt": "2026-07-03T08:46:03.107279+00:00",
+      "error": "HTTP Error 400: Bad Request"
+    },
+    {
+      "name": "Shopify Partners",
+      "email": "partners@shopify.com",
+      "website": "https://shopify.com/partners",
+      "service_ids": [
+        "it",
+        "it-cloud-migration",
+        "it-api-integration",
+        "it-security",
+        "cloud-cost-optimization",
+        "it-development-platform"
+      ],
+      "subject": "Shopify Partners \u2014 partner-led IT and cloud implementation",
+      "body": "Hi Shopify team,\n\nI notice Shopify Partners often works with partners on managed IT, cloud migration, API integration, and security enablement. If useful, I can share a concise 2-minute comparison focused on implementation support, not generic marketing.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "sent",
+      "discoveredAt": "2026-07-03T08:44:10.581683+00:00",
+      "sentAt": "2026-07-03T08:46:03.107338+00:00"
+    },
+    {
+      "name": "Twilio Partner Team",
+      "email": "partners@twilio.com",
+      "website": "https://twilio.com/partners",
+      "service_ids": [
+        "it",
+        "it-cloud-migration",
+        "it-api-integration",
+        "it-security",
+        "cloud-cost-optimization",
+        "it-development-platform"
+      ],
+      "subject": "Twilio Partner Team \u2014 partner-led IT and cloud implementation",
+      "body": "Hi Twilio team,\n\nI notice Twilio Partner Team often works with partners on managed IT, cloud migration, API integration, and security enablement. If useful, I can share a concise 2-minute comparison focused on implementation support, not generic marketing.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "sent",
+      "discoveredAt": "2026-07-03T08:44:10.581693+00:00",
+      "sentAt": "2026-07-03T08:46:03.107393+00:00"
+    },
+    {
+      "name": "Okta Integration Network",
+      "email": "partners@okta.com",
+      "website": "https://okta.com/partners",
+      "service_ids": [
+        "it",
+        "it-cloud-migration",
+        "it-api-integration",
+        "it-security",
+        "cloud-cost-optimization",
+        "it-development-platform"
+      ],
+      "subject": "Okta Integration Network \u2014 partner-led IT and cloud implementation",
+      "body": "Hi Okta team,\n\nI notice Okta Integration Network often works with partners on managed IT, cloud migration, API integration, and security enablement. If useful, I can share a concise 2-minute comparison focused on implementation support, not generic marketing.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "sent",
+      "discoveredAt": "2026-07-03T08:44:10.581704+00:00",
+      "sentAt": "2026-07-03T08:46:03.107448+00:00"
+    },
+    {
+      "name": "Zendesk Partner Program",
+      "email": "partners@zendesk.com",
+      "website": "https://zendesk.com/partners",
+      "service_ids": [
+        "it",
+        "it-cloud-migration",
+        "it-api-integration",
+        "it-security",
+        "cloud-cost-optimization",
+        "it-development-platform"
+      ],
+      "subject": "Zendesk Partner Program \u2014 partner-led IT and cloud implementation",
+      "body": "Hi Zendesk team,\n\nI notice Zendesk Partner Program often works with partners on managed IT, cloud migration, API integration, and security enablement. If useful, I can share a concise 2-minute comparison focused on implementation support, not generic marketing.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "sent",
+      "discoveredAt": "2026-07-03T08:44:10.581715+00:00",
+      "sentAt": "2026-07-03T08:46:03.107503+00:00"
+    }
+  ]
+}

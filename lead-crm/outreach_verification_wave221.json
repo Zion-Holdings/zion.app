@@ -1,0 +1,157 @@
+{
+  "generatedAt": "2026-07-03T08:46:03.103136+00:00",
+  "messages": [
+    {
+      "id": "19f2726c6a83973e",
+      "subject": "IBM Partner Plus \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
+      "to": "partnerplus@ibm.com",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f2726ca68fa677",
+      "subject": "Google Cloud Builders \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
+      "to": "cloud.builders@google.com",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f2726cf93f495f",
+      "subject": "Stripe Partnerships \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
+      "to": "partnerships@stripe.com",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f2726d3d07f296",
+      "subject": "Microsoft Cloud Partners \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
+      "to": "partners@microsoft.com",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f2726d79b46cdb",
+      "subject": "AWS Partner Network \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
+      "to": "apn@amazon.com",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f2726df147d430",
+      "subject": "Linear Updates \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
+      "to": "changelog@updates.linear.app",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f2726e40a921bd",
+      "subject": "GitHub Partner Team \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
+      "to": "partners@github.com",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f2726e876ad540",
+      "subject": "Datadog Alliances \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
+      "to": "alliances@datadoghq.com",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f2726ec0778731",
+      "subject": "HashiCorp Partner Program \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
+      "to": "partners@hashicorp.com",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f2726f8dca4208",
+      "subject": "Vercel Partnerships \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
+      "to": "partnerships@vercel.com",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f272707f1987df",
+      "subject": "Cloudflare Partner Portal \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
+      "to": "partners@cloudflare.com",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f27270d7485831",
+      "subject": "MongoDB Partner Network \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
+      "to": "partners@mongodb.com",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f272712f2556c3",
+      "subject": "Docker Partner Team \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
+      "to": "partners@docker.com",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f272718cec26b9",
+      "subject": "Snyk Partner Program \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
+      "to": "partners@snyk.io",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f27271f499bfa7",
+      "subject": "Atlassian Partner Program \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
+      "to": "partners@atlassian.com",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f2727283d9b7e2",
+      "subject": "Shopify Partners \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
+      "to": "partners@shopify.com",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f27272d57b1d8f",
+      "subject": "Twilio Partner Team \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
+      "to": "partners@twilio.com",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f272733066cdea",
+      "subject": "Okta Integration Network \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
+      "to": "partners@okta.com",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f272736f630d11",
+      "subject": "Zendesk Partner Program \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
+      "to": "partners@zendesk.com",
+      "labels": [
+        "SENT"
+      ]
+    }
+  ]
+}
