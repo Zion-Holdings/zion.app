@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-07-03T061500Z",
+  "source": "blocked_no_new_leads_no_consent",
+  "state": {
+    "send_blocked": true,
+    "block_reason": "missing_sender_path_and_opt_in_consent_flag_absent",
+    "opt_in_consent_flag_present": false
+  },
+  "error": "web_prospecting.py not found; lead-crm/outreach_run_2026-06-30.json missing; lead-crm/all-leads.json missing; no prospector output available.",
+  "counts": {
+    "new_leads_discovered": 0,
+    "batch_size": 0,
+    "send_count": 0
+  },
+  "recipients": [],
+  "servicesReferenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge"
+  ]
+}

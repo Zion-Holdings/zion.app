@@ -1,0 +1,11 @@
+{
+  "generatedAt": "2026-07-03T13:50:31.809977+00:00",
+  "state": {
+    "send_blocked": true,
+    "block_reason": "send_suppressed_because_recipients_already_sent_in_earlier_runs_of_this_pipeline",
+    "opt_in_consent_flag_present": true,
+    "duplicate_suppression_applied": true,
+    "excluded_already_sent": 8
+  },
+  "batch": []
+}

@@ -1,0 +1,31 @@
+{
+  "generatedAt": "20260703T091213Z",
+  "source": "curated_fallback_outreach_batch_20260703T114940Z.json",
+  "batch": "lead-crm/outreach_batch_20260703T091213Z.json",
+  "sendStatus": "send-blocked-partial",
+  "sendBlocked": true,
+  "sendBlockReason": "explicit_outreach_opt_in_present_send_path_unverified_in_this_cron_run",
+  "readyRecipients": [
+    "admin@nebulait.net"
+  ],
+  "batchSize": 8,
+  "sendReadyCount": 1,
+  "alreadySentCount": 7,
+  "sendCount": 0,
+  "sendErrors": [],
+  "newLeadsDiscovered": 0,
+  "servicesReferenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge",
+    "it-zero-trust-access",
+    "it-backup-disaster-recovery",
+    "it-hybrid-cloud-orchestrator",
+    "it-endpoint-management",
+    "it-network-monitoring"
+  ],
+  "senderAuthStatus": "unverified"
+}

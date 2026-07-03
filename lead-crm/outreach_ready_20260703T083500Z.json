@@ -1,0 +1,28 @@
+{
+  "generatedAt": "2026-07-03T08:48:43.405979Z",
+  "batch_file": "lead-crm/outreach_batch_20260703T083500Z.json",
+  "send_status": "send-ready",
+  "send_blocked": false,
+  "block_reason": null,
+  "batch_size": 9,
+  "send_count": 9,
+  "send_errors": [],
+  "counts": {
+    "ready_before_dedupe": 9,
+    "system_excluded": 3,
+    "business_domain_ready": 9
+  },
+  "new_leads_discovered": 0,
+  "send_blocked_reason": "",
+  "services_referenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge"
+  ],
+  "artifacts": [
+    "/data/data/com.termux/files/home/zion-support.github.io/lead-crm/outreach_batch_20260703T083500Z.json"
+  ]
+}

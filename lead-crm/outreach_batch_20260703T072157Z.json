@@ -1,0 +1,101 @@
+{
+  "generatedAt": "2026-07-03T07:21:57.450005+00:00",
+  "source": "web_prospecting_py_no_output_and_fallback_discovery",
+  "state": {
+    "send_blocked": true,
+    "block_reason": "send_auth_not_verified_in_subsequent_cron_run",
+    "opt_in_consent_flag_present": true
+  },
+  "counts": {
+    "new_leads_discovered": 0,
+    "candidates_reused": 8,
+    "system_excluded": 0,
+    "business_domain_ready": 8,
+    "batch_size": 8,
+    "send_count": 0
+  },
+  "recipients": [
+    {
+      "name": "Nebula Solutions LLC",
+      "email": "admin@nebulait.net",
+      "website": "https://nebulait.net",
+      "personalizedServiceIds": [
+        "it-remote-workforce-enablement",
+        "it-secure-access-service-edge"
+      ]
+    },
+    {
+      "name": "Cloud Buffer Inc.",
+      "email": "hello@thecloudbuffer.com",
+      "website": "https://thecloudbuffer.com",
+      "personalizedServiceIds": [
+        "it-cost-optimization-cloud",
+        "it-remote-workforce-enablement"
+      ]
+    },
+    {
+      "name": "NetPixel Systems",
+      "email": "info@netpixelsystems.com",
+      "website": "https://netpixelsystems.com",
+      "personalizedServiceIds": [
+        "it-modern-dev-platform",
+        "it-incident-response-retainer"
+      ]
+    },
+    {
+      "name": "Exigent HQ LLC",
+      "email": "hello@exigenthqllc.com",
+      "website": "https://exigenthqllc.com",
+      "personalizedServiceIds": [
+        "it-incident-response-retainer",
+        "it-secure-access-service-edge"
+      ]
+    },
+    {
+      "name": "Omni Tech Cyber Services",
+      "email": "contact@omnitechcyber.com",
+      "website": "https://omnitechcyber.com",
+      "personalizedServiceIds": [
+        "it-secure-access-service-edge",
+        "it-incident-response-retainer"
+      ]
+    },
+    {
+      "name": "Venezia Logistics LLC",
+      "email": "support@venezialogisticsllc.com",
+      "website": "https://venezialogisticsllc.com",
+      "personalizedServiceIds": [
+        "it-remote-workforce-enablement",
+        "it-cost-optimization-cloud"
+      ]
+    },
+    {
+      "name": "Docentric Cybersecurity",
+      "email": "info@docentriccyber.com",
+      "website": "https://docentriccyber.com",
+      "personalizedServiceIds": [
+        "it-secure-access-service-edge",
+        "it-modern-dev-platform"
+      ]
+    },
+    {
+      "name": "Smart Security Info",
+      "email": "sitekit@smartsecurityinfo.com",
+      "website": "https://smartsecurityinfo.com",
+      "personalizedServiceIds": [
+        "it-cost-optimization-cloud",
+        "it-secure-access-service-edge"
+      ]
+    }
+  ],
+  "servicesReferenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge"
+  ],
+  "sendReady": false,
+  "sendBlockReason": "send blocked: send_auth_not_verified_in_subsequent_cron_run"
+}

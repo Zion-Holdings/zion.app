@@ -59,6 +59,9 @@ OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434").rstrip("/")
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "qwen3:0.6b")
 
+# Nous provider reads auth from ~/.hermes/auth.json when available
+NOUS_AUTH_PATH = os.path.expanduser("~/.hermes/auth.json")
+
 # Optional model overrides per provider
 GROQ_MODEL = os.getenv("GROQ_MODEL", "llama-3.3-70b-versatile")
 GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.0-flash-lite")
@@ -110,6 +113,8 @@ def chat(
         return _call_openai(messages, temperature)
     if provider == "anthropic":
         return _call_anthropic(messages, temperature)
+    if provider == "nous":
+        return _call_nous(messages, temperature)
     if provider == "freecloud":
         return _call_freecloud(messages, temperature)
     if provider == "ollama":
@@ -124,17 +129,22 @@ def chat(
             return p(messages, temperature)
         except Exception as e:
             print(f"[LLM] {p.__name__} failed: {e}")
-    # 2) free cloud tier
+    # 2) Nous authenticated provider
+    try:
+        return _call_nous(messages, temperature)
+    except Exception as e:
+        print(f"[LLM] nous failed: {e}")
+    # 3) free cloud tier
     try:
         return _call_freecloud(messages, temperature)
     except Exception as e:
         print(f"[LLM] freecloud failed: {e}")
-    # 3) local Ollama
+    # 4) local Ollama
     try:
         return _call_ollama(messages, temperature)
     except Exception as e:
         print(f"[LLM] ollama failed: {e}")
-    # 4) template fallback (never fails)
+    # 5) template fallback (never fails)
     return _call_template(messages, temperature)
 
 def checkFreeProviders() -> List[str]:
@@ -150,6 +160,11 @@ def checkFreeProviders() -> List[str]:
     if TOGETHER_API_KEY:        available.append("together")
     if COHERE_API_KEY:          available.append("cohere")
     if OPENROUTER_API_KEY:      available.append("openrouter")
+    try:
+        _load_nous_auth()
+        available.append("nous")
+    except Exception:
+        pass
     return available
 
 
@@ -469,6 +484,63 @@ def _call_openrouter(messages, temperature):
         "content": data["choices"][0]["message"]["content"],
         "provider": "openrouter",
         "model": data.get("model", OPENROUTER_MODEL),
+    }
+
+
+def _load_nous_auth():
+    if not os.path.exists(NOUS_AUTH_PATH):
+        raise RuntimeError("Nous auth file not found")
+    with open(NOUS_AUTH_PATH) as f:
+        auth = json.load(f)
+    provider = auth.get("providers", {}).get("nous", {})
+    base_url = provider.get("inference_base_url") or "https://inference-api.nousresearch.com/v1"
+    agent_key = provider.get("agent_key")
+    access_token = provider.get("access_token")
+    expires_at = provider.get("agent_key_expires_at") or provider.get("expires_at")
+    token = None
+    if agent_key:
+        token = agent_key
+    elif access_token:
+        token = access_token
+    if not token:
+        raise RuntimeError("Nous auth missing usable token")
+    if expires_at:
+        try:
+            from datetime import datetime, timezone
+            exp = datetime.fromisoformat(expires_at.replace("Z", "+00:00"))
+            if exp.tzinfo is None:
+                exp = exp.replace(tzinfo=timezone.utc)
+            if exp <= datetime.now(timezone.utc):
+                raise RuntimeError("Nous token expired")
+        except Exception as e:
+            if "expired" in str(e).lower():
+                raise
+    return base_url.rstrip("/"), token
+
+
+def _call_nous(messages, temperature):
+    base_url, token = _load_nous_auth()
+    body = {
+        "model": "stepfun/step-3.7-flash:free",
+        "messages": messages,
+        "temperature": temperature,
+    }
+    req = urllib.request.Request(
+        f"{base_url}/chat/completions",
+        data=json.dumps(body).encode(),
+        headers={
+            "Authorization": f"Bearer {token}",
+            "Content-Type": "application/json",
+        },
+        method="POST",
+    )
+    with urllib.request.urlopen(req, timeout=25) as resp:
+        data = json.loads(resp.read())
+    content = data.get("choices", [{}])[0].get("message", {}).get("content", "")
+    return {
+        "content": content,
+        "provider": "nous",
+        "model": data.get("model", body["model"]),
     }
 
 

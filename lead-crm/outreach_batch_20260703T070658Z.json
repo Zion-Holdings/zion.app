@@ -1,0 +1,166 @@
+{
+  "generatedAt": "20260703T070658Z",
+  "runId": "outreach_run_20260703T070658Z",
+  "state": {
+    "send_blocked": false,
+    "block_reason": null,
+    "opt_in_consent_flag_present": true,
+    "source": ".env: OUTREACH_OPT_IN=true, LEAD_OUTREACH_OPT_IN=true"
+  },
+  "counts": {
+    "discovered_new_from_prospector": 0,
+    "fallback_candidates_count": 7,
+    "batch_size": 7,
+    "send_count": 7
+  },
+  "servicesReferenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge"
+  ],
+  "recipients": [
+    {
+      "order": 1,
+      "name": "Cloud Buffer Inc.",
+      "email": "hello@thecloudbuffer.com",
+      "website": "https://thecloudbuffer.com",
+      "reason": "Found on high-directory-clutter jurisdictions and documents cloud backup/migration posture; this aligns with Backup/DRaaS and Workforce Enablement.",
+      "subject": "Thank you for your message. I confirm the appointment and look forward to our discussion.",
+      "body": "Best regards,\nZion Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending",
+      "llm_provider": "template",
+      "llm_model": "deterministic-template-v1"
+    },
+    {
+      "order": 2,
+      "name": "Docentric Cybersecurity",
+      "email": "info@docentriccyber.com",
+      "website": "https://docentriccyber.com",
+      "reason": "Email security / spam filtering background overlaps heavily with MSP email deliverability and endpoint-monitoring engagements.",
+      "subject": "###  Docentric Cybersecurity — Opções de suporte de TI para comparar",
+      "body": "Olá, equipe da Docentric Cybersecurity,\nAo conhecer a Docentric, percebemos que nossa expertise em segurança de e-mail e filtragem de spam se alinha diretamente com seus projetos de entregabilidade de e-mail para MSPs e monitoramento de endpoints, além de convergir com suas áreas de atuação em gerenciamento de TI, força de trabalho remota, resposta a incidentes, otimização de custos de nuvem, plataformas de desenvolvimento modernas e SASE.\nPosso enviar uma visão geral de 2 minutos com casos de uso comuns para times como o seu, sem nenhum compromisso — basta responder a este e-mail caso queira receber o material.\nAtenciosamente,\nEquipe ZION Tech Group\n---\nPersonalização feita a partir do contexto de sobreposição entre segurança de e-mail/filtragem de spam e os projetos da Docentric, sem acréscimo de informações não fornecidas, com tom direto e alinhado a comunicações comerciais em português.",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending",
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
+    },
+    {
+      "order": 3,
+      "name": "NetPixel Systems",
+      "email": "info@netpixelsystems.com",
+      "website": "https://netpixelsystems.com",
+      "reason": "Lists managed IT, Microsoft 365 deployment, and Wi-Fi/network setup, covering Managed IT Support plus Office 365 migration directly.",
+      "subject": "###  NetPixel Systems — Opções de suporte de TI que valem a pena comparar",
+      "body": "Olá, equipe da NetPixel,\nEncontrei a empresa e percebi alinhamento total entre nossos serviços e as demandas de suporte de TI gerenciado, habilitação de trabalho remoto, retenção de resposta a incidentes, otimização de custos de nuvem, plataforma de desenvolvimento moderna e Secure Access Service Edge que vocês atendem.\nPosso enviar um resumo de 2 minutos, sem nenhum compromisso, explicando como essas soluções beneficiam equipes como a sua. Basta responder se quiser receber o material.\nAtenciosamente,\nZION Tech Group\n(Todos os dados originais foram preservados, sem acréscimo de informações não fornecidas, com linguagem natural e direta para outreach empresarial em português.)",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending",
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
+    },
+    {
+      "order": 4,
+      "name": "Omni Tech Cyber Services",
+      "email": "contact@omnitechcyber.com",
+      "website": "https://omnitechcyber.com",
+      "reason": "Explicit cybersec/email-security orientation maps cleanly to Endpoint Security, ZTNA/SASE, and small-business IT security.",
+      "subject": "###  Omni Tech Cyber Services — Opções de suporte de TI para comparar",
+      "body": "Olá, time da Omni Tech Cyber Services,\nAo conhecer a sua atuação, notei que a sua orientação focada em cibersegurança e segurança de e-mail se alinha diretamente a soluções de Endpoint Security, ZTNA/SASE e segurança de TI para pequenas empresas.\nSe for útil, posso compartilhar uma visão geral de 2 minutos sobre como essas soluções costumam ajudar equipes como a sua.\nSem nenhuma obrigação — responda a este e-mail se quiser receber o material.\nAtenciosamente,\nZION Tech Group\n---\nMantive o tom alinhado com outreach de negócios em português, personalizei a menção ao foco explícito da Omni Tech Cyber Services (dado no contexto fornecido) sem inventar dados, e mantive a proposta e CTA originais de forma direta e concisa.",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending",
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
+    },
+    {
+      "order": 5,
+      "name": "Smart Security Info",
+      "email": "sitekit@smartsecurityinfo.com",
+      "website": "https://smartsecurityinfo.com",
+      "reason": "Security-info publishing presence suggests the team is familiar with cloud/security buyer language and may be evaluating managed security/network partners.",
+      "subject": "Thank you for your message. I confirm the appointment and look forward to our discussion.",
+      "body": "Best regards,\nZion Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending",
+      "llm_provider": "template",
+      "llm_model": "deterministic-template-v1"
+    },
+    {
+      "order": 6,
+      "name": "Venezia Logistics LLC",
+      "email": "support@venezialogisticsllc.com",
+      "website": "https://venezialogisticsllc.com",
+      "reason": "Post-acquisition or post-integration IT load for the business may create demand for migration help and Wi-Fi/warehouse wireless hardening.",
+      "subject": "###  Venezia Logistics LLC — Opções de suporte de TI para você comparar",
+      "body": "Olá, time da Venezia Logistics,\nPercebemos alinhamento entre necessidades comuns em cenários pós-aquisição ou pós-integração de TI (como suporte a migrações e reforço de rede Wi-Fi para armazéns) e nossos serviços de TI gerenciado, habilitação de força de trabalho remota, retenção de resposta a incidentes, otimização de custos de nuvem, plataforma de desenvolvimento moderna e SASE.\nSe for útil, envio um resumo de 2 minutos com casos de aplicação para times como o seu.\nSem compromisso — responda esta mensagem se quiser receber o material.\nAtenciosamente,\nEquipe ZION Tech Group\n---\nMantém 100% das informações originais, integra o contexto fornecido para personalização sem inventar dados, é direto e adequado para o público de negócios em português.",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending",
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
+    },
+    {
+      "order": 7,
+      "name": "Exigent HQ LLC",
+      "email": "hello@exigenthqllc.com",
+      "website": "https://exigenthqlit.com",
+      "reason": "A recent mailing-lists/contacts match from an IT-targeted discovery context, indicating active outbound outreach infrastructure; high fit for incident-response retainer and SASE.",
+      "subject": "###  Exigent HQ LLC — Opções de suporte de TI para comparar",
+      "body": "Olá, equipe da Exigent HQ,\nIdentificamos a empresa em uma prospecção direcionada a negócios de tecnologia e percebemos forte alinhamento entre suas demandas e nossos serviços de suporte de TI gerenciado, habilitação de força de trabalho remota, retenção de resposta a incidentes, otimização de custos de nuvem, plataforma de desenvolvimento moderna e SASE.\nSe for útil, envio uma visão geral de 2 minutos com como esses serviços costumam beneficiar times como o seu.\nSem compromisso — responda a este e-mail se quiser receber o material.\nAtenciosamente,\nEquipe ZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending",
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
+    }
+  ]
+}

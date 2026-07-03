@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-07-03T10:18:03+00:00",
+  "batch_file": "lead-crm/outreach_batch_20260703T101803Z.json",
+  "send_status": "send-blocked",
+  "send_blocked": true,
+  "block_reason": "completed_zero_new_prospector_output",
+  "batch_size": 8,
+  "send_count": 0,
+  "send_errors": [],
+  "counts": {
+    "ready_before_dedupe": 8,
+    "system_excluded": 0,
+    "business_domain_ready": 8
+  },
+  "services_referenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge",
+    "it-zero-trust-access",
+    "it-backup-disaster-recovery",
+    "it-hybrid-cloud-orchestrator",
+    "it-endpoint-management",
+    "it-vcio-service",
+    "it-it-asset-management",
+    "it-asset-lifecycle-manager",
+    "it-runbook-automation-platform",
+    "it-sla-compliance-monitor",
+    "it-change-advisory-board-engine",
+    "it-config-drift-detector",
+    "it-network-monitoring"
+  ],
+  "new_leads_discovered": 0,
+  "note": "web_prospecting.py exited with empty logs in this cron run; batch was rebuilt from curated lead_discovery_2026-07-03T033000Z fallback. No sends were attempted in this run.",
+  "artifacts": {
+    "batch": "lead-crm/outreach_batch_20260703T101803Z.json",
+    "prospector_logs": {
+      "out": "logs/web_prospecting.out",
+      "err": "logs/web_prospecting.err"
+    },
+    "prospector_log_sizes": {
+      "out_bytes": 0,
+      "err_bytes": 0
+    }
+  }
+}

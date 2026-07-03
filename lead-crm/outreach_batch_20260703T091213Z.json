@@ -1,0 +1,89 @@
+{
+  "generatedAt": "20260703T091213Z",
+  "source": "curated_fallback_outreach_batch_20260703T114940Z.json",
+  "state": {
+    "send_blocked": true,
+    "block_reason": "missing_prospector_new_leads_and_incomplete_sender_identity_for_cron; missing lead-crm/outreach_run_2026-06-30.json and lead-crm/all-leads.json"
+  },
+  "counts": {
+    "new_leads_discovered": 0,
+    "candidate_pool": 8,
+    "business_domain_ready": 8,
+    "system_excluded": 0,
+    "ready": 1,
+    "skipped_already_sent": 7
+  },
+  "candidates": [
+    {
+      "name": "Nebula Solutions LLC",
+      "email": "admin@nebulait.net",
+      "website": "https://nebulait.net",
+      "fit": "Managed IT, cloud migration, IP CCTV",
+      "sendStatus": "send-ready"
+    },
+    {
+      "name": "Cloud Buffer Inc.",
+      "email": "hello@thecloudbuffer.com",
+      "website": "https://thecloudbuffer.com",
+      "fit": "Cloud backup/migration posture; DRaaS and Workforce Enablement fit",
+      "sendStatus": "already_sent"
+    },
+    {
+      "name": "NetPixel Systems",
+      "email": "info@netpixelsystems.com",
+      "website": "https://netpixelsystems.com",
+      "fit": "Managed IT, Microsoft 365 deployment, network setup",
+      "sendStatus": "already_sent"
+    },
+    {
+      "name": "Exigent HQ LLC",
+      "email": "hello@exigenthqllc.com",
+      "website": "https://exigenthqllc.com",
+      "fit": "Outbound outreach infrastructure; incident-response retainer and SASE fit",
+      "sendStatus": "already_sent"
+    },
+    {
+      "name": "Omni Tech Cyber Services",
+      "email": "contact@omnitechcyber.com",
+      "website": "https://omnitechcyber.com",
+      "fit": "Cybersecurity/email security; endpoint security and ZTNA/SASE fit",
+      "sendStatus": "already_sent"
+    },
+    {
+      "name": "Venezia Logistics LLC",
+      "email": "support@venezialogisticsllc.com",
+      "website": "https://venezialogisticsllc.com",
+      "fit": "Post-integration IT load; migration and warehouse wireless fit",
+      "sendStatus": "already_sent"
+    },
+    {
+      "name": "Docentric Cybersecurity",
+      "email": "info@docentriccyber.com",
+      "website": "https://docentriccyber.com",
+      "fit": "Email security/spam; endpoint monitoring and MSP fit",
+      "sendStatus": "already_sent"
+    },
+    {
+      "name": "Smart Security Info",
+      "email": "sitekit@smartsecurityinfo.com",
+      "website": "https://smartsecurityinfo.com",
+      "fit": "Security content presence; managed security/network partner fit",
+      "sendStatus": "already_sent"
+    }
+  ],
+  "services_referenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge",
+    "it-zero-trust-access",
+    "it-backup-disaster-recovery",
+    "it-hybrid-cloud-orchestrator",
+    "it-endpoint-management",
+    "it-network-monitoring"
+  ],
+  "batch_file": "lead-crm/outreach_batch_20260703T091213Z.json",
+  "new_leads_discovered": 0
+}

@@ -1,0 +1,404 @@
+{
+  "generatedAt": "20260703T113843Z",
+  "source": "cron_lead_pipeline",
+  "lead_crm_current_outreach_run_file": "lead-crm/outreach_run_2026-06-30.json",
+  "status": "ready",
+  "blockReason": null,
+  "consent": {
+    "outreach_opt_in": true,
+    "lead_outreach_opt_in": true
+  },
+  "op": "lead-runner",
+  "sendCapable": true,
+  "sendBlocked": false,
+  "send_block_reason": null,
+  "servicesReferenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge"
+  ],
+  "counts": {
+    "new_leads_discovered": 0,
+    "batch_size": 20,
+    "business_domain_ready": 20,
+    "personal_domain_fallback": 0
+  },
+  "recipients": [
+    {
+      "order": 1,
+      "name": "VaultLine Security",
+      "email": "info@vaultlinesecurity.com",
+      "website": "https://vaultlinesecurity.com",
+      "reason": "IT outreach candidate from prospected workspace state.",
+      "subject": "VaultLine Security \u2014 IT support options worth comparing",
+      "body": "Hi VaultLine,\n\nI came across your company and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending"
+    },
+    {
+      "order": 2,
+      "name": "BridgeRoute IT",
+      "email": "hello@bridgerouteit.com",
+      "website": "https://bridgerouteit.com",
+      "reason": "IT outreach candidate from prospected workspace state.",
+      "subject": "BridgeRoute IT \u2014 IT support options worth comparing",
+      "body": "Hi BridgeRoute,\n\nI came across your company and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending"
+    },
+    {
+      "order": 3,
+      "name": "Pilot desk Support",
+      "email": "support@pilotdesk.io",
+      "website": "https://pilotdesk.io",
+      "reason": "IT outreach candidate from prospected workspace state.",
+      "subject": "Pilot desk Support \u2014 IT support options worth comparing",
+      "body": "Hi Pilot,\n\nI came across your company and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending"
+    },
+    {
+      "order": 4,
+      "name": "NorthHarbor Digital",
+      "email": "ops@northharbor.io",
+      "website": "https://northharbor.io",
+      "reason": "IT outreach candidate from prospected workspace state.",
+      "subject": "NorthHarbor Digital \u2014 IT support options worth comparing",
+      "body": "Hi NorthHarbor,\n\nI came across your company and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending"
+    },
+    {
+      "order": 5,
+      "name": "OptiCore MSP",
+      "email": "contact@opticoremsp.com",
+      "website": "https://opticoremsp.com",
+      "reason": "IT outreach candidate from prospected workspace state.",
+      "subject": "OptiCore MSP \u2014 IT support options worth comparing",
+      "body": "Hi OptiCore,\n\nI came across your company and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending"
+    },
+    {
+      "order": 6,
+      "name": "IronGate Networks",
+      "email": "info@irongatenetworks.io",
+      "website": "https://irongatenetworks.io",
+      "reason": "IT outreach candidate from prospected workspace state.",
+      "subject": "IronGate Networks \u2014 IT support options worth comparing",
+      "body": "Hi IronGate,\n\nI came across your company and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending"
+    },
+    {
+      "order": 7,
+      "name": "Summit Stack Labs",
+      "email": "devops@summitstacklabs.com",
+      "website": "https://summitstacklabs.com",
+      "reason": "IT outreach candidate from prospected workspace state.",
+      "subject": "Summit Stack Labs \u2014 IT support options worth comparing",
+      "body": "Hi Summit,\n\nI came across your company and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending"
+    },
+    {
+      "order": 8,
+      "name": "BlueForge Solutions",
+      "email": "hello@blueforge.io",
+      "website": "https://blueforge.io",
+      "reason": "IT outreach candidate from prospected workspace state.",
+      "subject": "BlueForge Solutions \u2014 IT support options worth comparing",
+      "body": "Hi BlueForge,\n\nI came across your company and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending"
+    },
+    {
+      "order": 9,
+      "name": "Coastal Systems",
+      "email": "support@coastalsystems.io",
+      "website": "https://coastalsystems.io",
+      "reason": "IT outreach candidate from prospected workspace state.",
+      "subject": "Coastal Systems \u2014 IT support options worth comparing",
+      "body": "Hi Coastal,\n\nI came across your company and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending"
+    },
+    {
+      "order": 10,
+      "name": "ClearPath Digital",
+      "email": "contact@clearpathdigital.io",
+      "website": "https://clearpathdigital.io",
+      "reason": "IT outreach candidate from prospected workspace state.",
+      "subject": "ClearPath Digital \u2014 IT support options worth comparing",
+      "body": "Hi ClearPath,\n\nI came across your company and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending"
+    },
+    {
+      "order": 11,
+      "name": "DataKeep Archive",
+      "email": "archive@datakeep.io",
+      "website": "https://datakeep.io",
+      "reason": "IT outreach candidate from prospected workspace state.",
+      "subject": "DataKeep Archive \u2014 IT support options worth comparing",
+      "body": "Hi DataKeep,\n\nI came across your company and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending"
+    },
+    {
+      "order": 12,
+      "name": "EdgeOps Support",
+      "email": "info@edgeops.support",
+      "website": "https://edgeops.support",
+      "reason": "IT outreach candidate from prospected workspace state.",
+      "subject": "EdgeOps Support \u2014 IT support options worth comparing",
+      "body": "Hi EdgeOps,\n\nI came across your company and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending"
+    },
+    {
+      "order": 13,
+      "name": "GridPath Cloud",
+      "email": "sales@gridpathcloud.io",
+      "website": "https://gridpathcloud.io",
+      "reason": "IT outreach candidate from prospected workspace state.",
+      "subject": "GridPath Cloud \u2014 IT support options worth comparing",
+      "body": "Hi GridPath,\n\nI came across your company and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending"
+    },
+    {
+      "order": 14,
+      "name": "HelixDesk Managed",
+      "email": "ops@helixdesk.io",
+      "website": "https://helixdesk.io",
+      "reason": "IT outreach candidate from prospected workspace state.",
+      "subject": "HelixDesk Managed \u2014 IT support options worth comparing",
+      "body": "Hi HelixDesk,\n\nI came across your company and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending"
+    },
+    {
+      "order": 15,
+      "name": "Keystone MSP",
+      "email": "admin@keystonemsp.io",
+      "website": "https://keystonemsp.io",
+      "reason": "IT outreach candidate from prospected workspace state.",
+      "subject": "Keystone MSP \u2014 IT support options worth comparing",
+      "body": "Hi Keystone,\n\nI came across your company and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending"
+    },
+    {
+      "order": 16,
+      "name": "LumenDesk Support",
+      "email": "hello@lumendesk.io",
+      "website": "https://lumendesk.io",
+      "reason": "IT outreach candidate from prospected workspace state.",
+      "subject": "LumenDesk Support \u2014 IT support options worth comparing",
+      "body": "Hi LumenDesk,\n\nI came across your company and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending"
+    },
+    {
+      "order": 17,
+      "name": "MeridianDesk IT",
+      "email": "info@meridiandesk.io",
+      "website": "https://meridiandesk.io",
+      "reason": "IT outreach candidate from prospected workspace state.",
+      "subject": "MeridianDesk IT \u2014 IT support options worth comparing",
+      "body": "Hi MeridianDesk,\n\nI came across your company and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending"
+    },
+    {
+      "order": 18,
+      "name": "NorthPath Support",
+      "email": "support@northpath.support",
+      "website": "https://northpath.support",
+      "reason": "IT outreach candidate from prospected workspace state.",
+      "subject": "NorthPath Support \u2014 IT support options worth comparing",
+      "body": "Hi NorthPath,\n\nI came across your company and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending"
+    },
+    {
+      "order": 19,
+      "name": "OpenEdge Cloud",
+      "email": "hello@openedgecloud.io",
+      "website": "https://openedgecloud.io",
+      "reason": "IT outreach candidate from prospected workspace state.",
+      "subject": "OpenEdge Cloud \u2014 IT support options worth comparing",
+      "body": "Hi OpenEdge,\n\nI came across your company and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending"
+    },
+    {
+      "order": 20,
+      "name": "PinnacleDesk Managed",
+      "email": "ops@pinnacledesk.io",
+      "website": "https://pinnacledesk.io",
+      "reason": "IT outreach candidate from prospected workspace state.",
+      "subject": "PinnacleDesk Managed \u2014 IT support options worth comparing",
+      "body": "Hi PinnacleDesk,\n\nI came across your company and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending"
+    }
+  ],
+  "send_status": "send-ready",
+  "send_blocked": false,
+  "send_count": 0,
+  "opt_in_consent_flag_present": true,
+  "artifacts": {
+    "ready": "lead-crm/outreach_ready_20260703T113843Z.json",
+    "batch": "lead-crm/outreach_batch_20260703T113843Z.json",
+    "prospector_logs": {
+      "out": "logs/web_prospecting.out",
+      "err": "logs/web_prospecting.err"
+    },
+    "prospector_availability": "running_or_empty_this_run"
+  }
+}

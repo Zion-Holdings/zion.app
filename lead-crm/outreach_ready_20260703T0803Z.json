@@ -1,0 +1,493 @@
+{
+  "generatedAt": "2026-07-03T11:04:28.450Z",
+  "lead_crm_current_outreach_run_file": "missing",
+  "consent": {
+    "outreach_opt_in": false,
+    "lead_outreach_opt_in": false,
+    "note": "Derived from workspace config/env: flag missing or false"
+  },
+  "sendCapable": true,
+  "sendBlocked": true,
+  "servicesReferenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge",
+    "it-zero-trust-access",
+    "it-backup-disaster-recovery",
+    "it-hybrid-cloud-orchestrator",
+    "it-endpoint-management"
+  ],
+  "counts": {
+    "ready_before_dedupe": 8,
+    "system_excluded": 0,
+    "business_domain_ready": 8
+  },
+  "recipients": [
+    {
+      "recipient": "admin@nebulait.net",
+      "to": "admin@nebulait.net",
+      "email": "admin@nebulait.net",
+      "display_name": "Nebula Solutions LLC",
+      "company_name": "Nebula Solutions LLC",
+      "subject": "Nebula Solutions LLC — IT support options worth comparing",
+      "body": "Hi Nebula Solutions LLC,\n\nSite explicitly offers managed IT, IP CCTV, and cloud migration for SMBs, so they already speak the language of the five service pillars.\n\nBest fits based on your posture:\n- It: /services/it\n- Remote Workforce Enablement: /services/it-remote-workforce-enablement\n- Incident Response Retainer: /services/it-incident-response-retainer\n\nAlso worth a look: it-cost-optimization-cloud, it-modern-dev-platform. \n\nWant a quick call?\n\nBest,\nZion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi Nebula Solutions LLC,</p>\n<p>Site explicitly offers managed IT, IP CCTV, and cloud migration for SMBs, so they already speak the language of the five service pillars.</p>\n<p><strong>Best fits based on your posture:</strong></p><ul>\n<li>It: <a href=\"/services/it\">/services/it</a></li>\n<li>Remote Workforce Enablement: <a href=\"/services/it-remote-workforce-enablement\">/services/it-remote-workforce-enablement</a></li>\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\n</ul>\n<p>Also worth a look: it-cost-optimization-cloud, it-modern-dev-platform.</p>\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "Nebula Solutions LLC",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-remote-workforce-enablement": {
+          "id": "it-remote-workforce-enablement",
+          "title": "it-remote-workforce-enablement",
+          "href": "/services/it-remote-workforce-enablement"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-cost-optimization-cloud": {
+          "id": "it-cost-optimization-cloud",
+          "title": "it-cost-optimization-cloud",
+          "href": "/services/it-cost-optimization-cloud"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T10:54:31.712327+00:00",
+      "status": "send-blocked",
+      "source": "lead_discovery_current",
+      "skipped_reason": "send_blocked_no_consent"
+    },
+    {
+      "recipient": "contact@omnitechcyber.com",
+      "to": "contact@omnitechcyber.com",
+      "email": "contact@omnitechcyber.com",
+      "display_name": "Omni Tech Cyber Services",
+      "company_name": "Omni Tech Cyber Services",
+      "subject": "Omni Tech Cyber Services — IT support options worth comparing",
+      "body": "Hi Omni Tech Cyber Services,\n\nExplicit cybersec/email-security orientation maps cleanly to Endpoint Security, ZTNA/SASE, and small-business IT security.\n\nBest fits based on your posture:\n- It: /services/it\n- Remote Workforce Enablement: /services/it-remote-workforce-enablement\n- Incident Response Retainer: /services/it-incident-response-retainer\n\nAlso worth a look: it-cost-optimization-cloud, it-modern-dev-platform. \n\nWant a quick call?\n\nBest,\nZion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi Omni Tech Cyber Services,</p>\n<p>Explicit cybersec/email-security orientation maps cleanly to Endpoint Security, ZTNA/SASE, and small-business IT security.</p>\n<p><strong>Best fits based on your posture:</strong></p><ul>\n<li>It: <a href=\"/services/it\">/services/it</a></li>\n<li>Remote Workforce Enablement: <a href=\"/services/it-remote-workforce-enablement\">/services/it-remote-workforce-enablement</a></li>\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\n</ul>\n<p>Also worth a look: it-cost-optimization-cloud, it-modern-dev-platform.</p>\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "Omni Tech Cyber Services",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-remote-workforce-enablement": {
+          "id": "it-remote-workforce-enablement",
+          "title": "it-remote-workforce-enablement",
+          "href": "/services/it-remote-workforce-enablement"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-cost-optimization-cloud": {
+          "id": "it-cost-optimization-cloud",
+          "title": "it-cost-optimization-cloud",
+          "href": "/services/it-cost-optimization-cloud"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T10:54:31.712693+00:00",
+      "status": "send-blocked",
+      "source": "lead_discovery_current",
+      "skipped_reason": "send_blocked_no_consent"
+    },
+    {
+      "recipient": "hello@exigenthqllc.com",
+      "to": "hello@exigenthqllc.com",
+      "email": "hello@exigenthqllc.com",
+      "display_name": "Exigent HQ LLC",
+      "company_name": "Exigent HQ LLC",
+      "subject": "Exigent HQ LLC — IT support options worth comparing",
+      "body": "Hi Exigent HQ LLC,\n\nA recent mailing-lists/contacts match from an IT-targeted discovery context, indicating active outbound outreach infrastructure; high fit for incident-response retainer and SASE.\n\nBest fits based on your posture:\n- It: /services/it\n- Remote Workforce Enablement: /services/it-remote-workforce-enablement\n- Incident Response Retainer: /services/it-incident-response-retainer\n\nAlso worth a look: it-cost-optimization-cloud, it-modern-dev-platform. \n\nWant a quick call?\n\nBest,\nZion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi Exigent HQ LLC,</p>\n<p>A recent mailing-lists/contacts match from an IT-targeted discovery context, indicating active outbound outreach infrastructure; high fit for incident-response retainer and SASE.</p>\n<p><strong>Best fits based on your posture:</strong></p><ul>\n<li>It: <a href=\"/services/it\">/services/it</a></li>\n<li>Remote Workforce Enablement: <a href=\"/services/it-remote-workforce-enablement\">/services/it-remote-workforce-enablement</a></li>\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\n</ul>\n<p>Also worth a look: it-cost-optimization-cloud, it-modern-dev-platform.</p>\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "Exigent HQ LLC",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-remote-workforce-enablement": {
+          "id": "it-remote-workforce-enablement",
+          "title": "it-remote-workforce-enablement",
+          "href": "/services/it-remote-workforce-enablement"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-cost-optimization-cloud": {
+          "id": "it-cost-optimization-cloud",
+          "title": "it-cost-optimization-cloud",
+          "href": "/services/it-cost-optimization-cloud"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T10:54:31.712623+00:00",
+      "status": "send-blocked",
+      "source": "lead_discovery_current",
+      "skipped_reason": "send_blocked_no_consent"
+    },
+    {
+      "recipient": "hello@thecloudbuffer.com",
+      "to": "hello@thecloudbuffer.com",
+      "email": "hello@thecloudbuffer.com",
+      "display_name": "Cloud Buffer Inc.",
+      "company_name": "Cloud Buffer Inc.",
+      "subject": "Cloud Buffer Inc. — IT support options worth comparing",
+      "body": "Hi Cloud Buffer Inc.,\n\nFound on high-directory-clutter jurisdictions and documents cloud backup/migration posture; this aligns with Backup/DRaaS and Workforce Enablement.\n\nBest fits based on your posture:\n- It: /services/it\n- Remote Workforce Enablement: /services/it-remote-workforce-enablement\n- Incident Response Retainer: /services/it-incident-response-retainer\n\nAlso worth a look: it-cost-optimization-cloud, it-modern-dev-platform. \n\nWant a quick call?\n\nBest,\nZion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi Cloud Buffer Inc.,</p>\n<p>Found on high-directory-clutter jurisdictions and documents cloud backup/migration posture; this aligns with Backup/DRaaS and Workforce Enablement.</p>\n<p><strong>Best fits based on your posture:</strong></p><ul>\n<li>It: <a href=\"/services/it\">/services/it</a></li>\n<li>Remote Workforce Enablement: <a href=\"/services/it-remote-workforce-enablement\">/services/it-remote-workforce-enablement</a></li>\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\n</ul>\n<p>Also worth a look: it-cost-optimization-cloud, it-modern-dev-platform.</p>\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "Cloud Buffer Inc.",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-remote-workforce-enablement": {
+          "id": "it-remote-workforce-enablement",
+          "title": "it-remote-workforce-enablement",
+          "href": "/services/it-remote-workforce-enablement"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-cost-optimization-cloud": {
+          "id": "it-cost-optimization-cloud",
+          "title": "it-cost-optimization-cloud",
+          "href": "/services/it-cost-optimization-cloud"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T10:54:31.712466+00:00",
+      "status": "send-blocked",
+      "source": "lead_discovery_current",
+      "skipped_reason": "send_blocked_no_consent"
+    },
+    {
+      "recipient": "info@docentriccyber.com",
+      "to": "info@docentriccyber.com",
+      "email": "info@docentriccyber.com",
+      "display_name": "Docentric Cybersecurity",
+      "company_name": "Docentric Cybersecurity",
+      "subject": "Docentric Cybersecurity — IT support options worth comparing",
+      "body": "Hi Docentric Cybersecurity,\n\nEmail security / spam filtering background overlaps heavily with MSP email deliverability and endpoint-monitoring engagements.\n\nBest fits based on your posture:\n- It: /services/it\n- Remote Workforce Enablement: /services/it-remote-workforce-enablement\n- Incident Response Retainer: /services/it-incident-response-retainer\n\nAlso worth a look: it-cost-optimization-cloud, it-modern-dev-platform. \n\nWant a quick call?\n\nBest,\nZion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi Docentric Cybersecurity,</p>\n<p>Email security / spam filtering background overlaps heavily with MSP email deliverability and endpoint-monitoring engagements.</p>\n<p><strong>Best fits based on your posture:</strong></p><ul>\n<li>It: <a href=\"/services/it\">/services/it</a></li>\n<li>Remote Workforce Enablement: <a href=\"/services/it-remote-workforce-enablement\">/services/it-remote-workforce-enablement</a></li>\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\n</ul>\n<p>Also worth a look: it-cost-optimization-cloud, it-modern-dev-platform.</p>\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "Docentric Cybersecurity",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-remote-workforce-enablement": {
+          "id": "it-remote-workforce-enablement",
+          "title": "it-remote-workforce-enablement",
+          "href": "/services/it-remote-workforce-enablement"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-cost-optimization-cloud": {
+          "id": "it-cost-optimization-cloud",
+          "title": "it-cost-optimization-cloud",
+          "href": "/services/it-cost-optimization-cloud"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T10:54:31.712848+00:00",
+      "status": "send-blocked",
+      "source": "lead_discovery_current",
+      "skipped_reason": "send_blocked_no_consent"
+    },
+    {
+      "recipient": "info@netpixelsystems.com",
+      "to": "info@netpixelsystems.com",
+      "email": "info@netpixelsystems.com",
+      "display_name": "NetPixel Systems",
+      "company_name": "NetPixel Systems",
+      "subject": "NetPixel Systems — IT support options worth comparing",
+      "body": "Hi NetPixel Systems,\n\nLists managed IT, Microsoft 365 deployment, and Wi-Fi/network setup, covering Managed IT Support plus Office 365 migration directly.\n\nBest fits based on your posture:\n- It: /services/it\n- Remote Workforce Enablement: /services/it-remote-workforce-enablement\n- Incident Response Retainer: /services/it-incident-response-retainer\n\nAlso worth a look: it-cost-optimization-cloud, it-modern-dev-platform. \n\nWant a quick call?\n\nBest,\nZion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi NetPixel Systems,</p>\n<p>Lists managed IT, Microsoft 365 deployment, and Wi-Fi/network setup, covering Managed IT Support plus Office 365 migration directly.</p>\n<p><strong>Best fits based on your posture:</strong></p><ul>\n<li>It: <a href=\"/services/it\">/services/it</a></li>\n<li>Remote Workforce Enablement: <a href=\"/services/it-remote-workforce-enablement\">/services/it-remote-workforce-enablement</a></li>\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\n</ul>\n<p>Also worth a look: it-cost-optimization-cloud, it-modern-dev-platform.</p>\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "NetPixel Systems",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-remote-workforce-enablement": {
+          "id": "it-remote-workforce-enablement",
+          "title": "it-remote-workforce-enablement",
+          "href": "/services/it-remote-workforce-enablement"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-cost-optimization-cloud": {
+          "id": "it-cost-optimization-cloud",
+          "title": "it-cost-optimization-cloud",
+          "href": "/services/it-cost-optimization-cloud"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T10:54:31.712550+00:00",
+      "status": "send-blocked",
+      "source": "lead_discovery_current",
+      "skipped_reason": "send_blocked_no_consent"
+    },
+    {
+      "recipient": "sitekit@smartsecurityinfo.com",
+      "to": "sitekit@smartsecurityinfo.com",
+      "email": "sitekit@smartsecurityinfo.com",
+      "display_name": "Smart Security Info",
+      "company_name": "Smart Security Info",
+      "subject": "Smart Security Info — IT support options worth comparing",
+      "body": "Hi Smart Security Info,\n\nSecurity-info publishing presence suggests the team is familiar with cloud/security buyer language and may be evaluating managed security/network partners.\n\nBest fits based on your posture:\n- It: /services/it\n- Remote Workforce Enablement: /services/it-remote-workforce-enablement\n- Incident Response Retainer: /services/it-incident-response-retainer\n\nAlso worth a look: it-cost-optimization-cloud, it-modern-dev-platform. \n\nWant a quick call?\n\nBest,\nZion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi Smart Security Info,</p>\n<p>Security-info publishing presence suggests the team is familiar with cloud/security buyer language and may be evaluating managed security/network partners.</p>\n<p><strong>Best fits based on your posture:</strong></p><ul>\n<li>It: <a href=\"/services/it\">/services/it</a></li>\n<li>Remote Workforce Enablement: <a href=\"/services/it-remote-workforce-enablement\">/services/it-remote-workforce-enablement</a></li>\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\n</ul>\n<p>Also worth a look: it-cost-optimization-cloud, it-modern-dev-platform.</p>\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "Smart Security Info",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-remote-workforce-enablement": {
+          "id": "it-remote-workforce-enablement",
+          "title": "it-remote-workforce-enablement",
+          "href": "/services/it-remote-workforce-enablement"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-cost-optimization-cloud": {
+          "id": "it-cost-optimization-cloud",
+          "title": "it-cost-optimization-cloud",
+          "href": "/services/it-cost-optimization-cloud"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T10:54:31.712915+00:00",
+      "status": "send-blocked",
+      "source": "lead_discovery_current",
+      "skipped_reason": "send_blocked_no_consent"
+    },
+    {
+      "recipient": "support@venezialogisticsllc.com",
+      "to": "support@venezialogisticsllc.com",
+      "email": "support@venezialogisticsllc.com",
+      "display_name": "Venezia Logistics LLC",
+      "company_name": "Venezia Logistics LLC",
+      "subject": "Venezia Logistics LLC — IT support options worth comparing",
+      "body": "Hi Venezia Logistics LLC,\n\nPost-acquisition or post-integration IT load for the business may create demand for migration help and Wi-Fi/warehouse wireless hardening.\n\nBest fits based on your posture:\n- It: /services/it\n- Remote Workforce Enablement: /services/it-remote-workforce-enablement\n- Incident Response Retainer: /services/it-incident-response-retainer\n\nAlso worth a look: it-cost-optimization-cloud, it-modern-dev-platform. \n\nWant a quick call?\n\nBest,\nZion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi Venezia Logistics LLC,</p>\n<p>Post-acquisition or post-integration IT load for the business may create demand for migration help and Wi-Fi/warehouse wireless hardening.</p>\n<p><strong>Best fits based on your posture:</strong></p><ul>\n<li>It: <a href=\"/services/it\">/services/it</a></li>\n<li>Remote Workforce Enablement: <a href=\"/services/it-remote-workforce-enablement\">/services/it-remote-workforce-enablement</a></li>\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\n</ul>\n<p>Also worth a look: it-cost-optimization-cloud, it-modern-dev-platform.</p>\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "Venezia Logistics LLC",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-remote-workforce-enablement": {
+          "id": "it-remote-workforce-enablement",
+          "title": "it-remote-workforce-enablement",
+          "href": "/services/it-remote-workforce-enablement"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-cost-optimization-cloud": {
+          "id": "it-cost-optimization-cloud",
+          "title": "it-cost-optimization-cloud",
+          "href": "/services/it-cost-optimization-cloud"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T10:54:31.712767+00:00",
+      "status": "send-blocked",
+      "source": "lead_discovery_current",
+      "skipped_reason": "send_blocked_no_consent"
+    }
+  ],
+  "new_leads_discovered": 0,
+  "prospector": {
+    "stdout_bytes": 0,
+    "stderr_bytes": 18,
+    "returncode": null
+  },
+  "sendBlockedReason": "no_outreach_opt_in_consent"
+}

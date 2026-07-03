@@ -1,0 +1,38 @@
+{
+  "generatedAt": "20260703T071603Z",
+  "batchFile": "outreach_batch_20260703T071603Z.json",
+  "status": "send-ready",
+  "send_blocked": true,
+  "send_blocked_reason": "send_auth_not_verified_in_subsequent_cron_run",
+  "block_reason": "send_auth_not_verified_in_subsequent_cron_run",
+  "counts": {
+    "discovered_new_from_prospector": 0,
+    "fallback_candidates_count": 7,
+    "batch_size": 7,
+    "send_count": 0
+  },
+  "services_referenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge"
+  ],
+  "recipients": [
+    "hello@thecloudbuffer.com",
+    "info@docentriccyber.com",
+    "info@netpixelsystems.com",
+    "contact@omnitechcyber.com",
+    "sitekit@smartsecurityinfo.com",
+    "support@venezialogisticsllc.com",
+    "hello@exigenthqllc.com"
+  ],
+  "artifacts": {
+    "new_leads_discovered": 0,
+    "prospector_log_bytes_out": 0,
+    "prospector_log_bytes_err": 0,
+    "source_batch": "20260703T070658Z",
+    "batch": "outreach_batch_20260703T071603Z.json"
+  }
+}

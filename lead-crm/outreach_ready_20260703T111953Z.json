@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-07-03T11:19:53Z",
+  "state": {
+    "send_blocked": true,
+    "block_reason": "outreach_not_explicitly_opted_in",
+    "opt_in_consent_flag_present": false
+  },
+  "consent": {
+    "outreach_opt_in": false,
+    "lead_outreach_opt_in": false
+  },
+  "counts": {
+    "ready_before_dedupe": 21,
+    "system_excluded": 0,
+    "business_domain_ready": 21,
+    "send_count": 0
+  },
+  "batch_file": "lead-crm/outreach_batch_20260703T111953Z.json",
+  "notes": [
+    "No explicit outreach opt-in flag found in environment or workspace config.",
+    "Miner not executed because direct run timed out after 180s and prior logs show 0-email/0-lead output.",
+    "Batch built from existing consolidated pools; all recipients are business-domain addresses."
+  ]
+}

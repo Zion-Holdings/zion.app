@@ -1,0 +1,47 @@
+{
+  "generatedAt": "2026-07-03T08:57:02.796673+00:00",
+  "runId": "outreach_run_20260703T085702Z",
+  "state": {
+    "send_blocked": true,
+    "block_reason": "send_not_executed_this_run",
+    "opt_in_consent_flag_present": true,
+    "source": "cron_run_from_existing_batch_20260703T083500Z_cleaned"
+  },
+  "counts": {
+    "discovered_new_from_prospector": 0,
+    "ready_before_dedupe": 9,
+    "system_excluded": 8,
+    "business_domain_ready": 1,
+    "batch_size": 1,
+    "send_count": 0
+  },
+  "servicesReferenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge"
+  ],
+  "recipients": [
+    {
+      "order": 1,
+      "name": "Smart Security Info",
+      "email": "sitekit@smartsecurityinfo.com",
+      "website": "https://smartsecurityinfo.com",
+      "reason": "Security publishing background often leads to demand for managed IT and modern dev platform controls.",
+      "subject": "Smart Security Info \u2014 IT support options worth comparing",
+      "body": "Hi Smart,\n\nI came across Smart Security Info and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "ready",
+      "recipient": "sitekit@smartsecurityinfo.com"
+    }
+  ]
+}

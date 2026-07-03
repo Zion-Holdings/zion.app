@@ -1,0 +1,46 @@
+{
+  "generatedAt": "2026-07-03T05:55:44+00:00",
+  "lead_crm_current_outreach_run_file": "lead-crm/outreach_run_2026-06-30.json",
+  "status": "send-blocked",
+  "blockReason": "lead_miner_missing",
+  "error": "lead-crm/outreach_run_2026-06-30.json and lead-crm/all-leads.json not found; web_prospecting.py not found; no new leads discovered.",
+  "consent": {
+    "outreach_opt_in": true,
+    "lead_outreach_opt_in": true
+  },
+  "op": "lead-runner",
+  "sendCapable": false,
+  "sendBlocked": true,
+  "servicesReferenced": [
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge",
+    "it-zero-trust-access",
+    "it-backup-disaster-recovery",
+    "it-hybrid-cloud-orchestrator",
+    "it-endpoint-management",
+    "it-network-monitoring"
+  ],
+  "counts": {
+    "new_leads_discovered": 0,
+    "system_excluded": 0,
+    "business_domain_ready": 0
+  },
+  "recipients": [],
+  "send_status": "send-blocked",
+  "send_blocked": true,
+  "send_block_reason": "lead_miner_missing",
+  "opt_in_consent_flag_present": true,
+  "send_count": 0,
+  "artifacts": {
+    "ready": "lead-crm/outreach_ready_2026-07-03T055544Z.json",
+    "batch": "lead-crm/outreach_batch_2026-07-03T055544Z.json",
+    "prospector_logs": {
+      "out": "logs/web_prospecting.out",
+      "err": "logs/web_prospecting.err"
+    },
+    "prospector_availability": "missing"
+  }
+}

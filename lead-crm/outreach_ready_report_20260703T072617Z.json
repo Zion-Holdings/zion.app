@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-07-03T073334Z",
+  "result": "skipped_sending",
+  "reason": "intentionally_skipped_because_no_execution_requested",
+  "batch_file": "lead-crm/outreach_batch_20260703T072157Z.json",
+  "new_leads_discovered": 0,
+  "batch_size": 8,
+  "send_count": 0,
+  "errors": [
+    "prospector_timeout_no_output"
+  ],
+  "note": "tests conducted but no execution caused success; cached curated batch reused unchanged"
+}

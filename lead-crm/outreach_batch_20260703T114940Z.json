@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-07-03T11:49:40.782778+00:00",
+  "source": "manual_lead_discovery_and_services_inventory",
+  "state": {
+    "send_blocked": true,
+    "block_reason": "missing_prospector_new_leads_and_incomplete_sender_identity_for_cron; missing lead-crm/outreach_run_2026-06-30.json and lead-crm/all-leads.json"
+  },
+  "counts": {
+    "new_leads_discovered": 0,
+    "candidate_pool": 8,
+    "business_domain_ready": 8,
+    "system_excluded": 0
+  },
+  "candidates": [
+    {
+      "name": "Nebula Solutions LLC",
+      "email": "admin@nebulait.net",
+      "website": "https://nebulait.net",
+      "fit": "Managed IT, cloud migration, IP CCTV"
+    },
+    {
+      "name": "Cloud Buffer Inc.",
+      "email": "hello@thecloudbuffer.com",
+      "website": "https://thecloudbuffer.com",
+      "fit": "Cloud backup/migration posture; DRaaS and Workforce Enablement fit"
+    },
+    {
+      "name": "NetPixel Systems",
+      "email": "info@netpixelsystems.com",
+      "website": "https://netpixelsystems.com",
+      "fit": "Managed IT, Microsoft 365 deployment, network setup"
+    },
+    {
+      "name": "Exigent HQ LLC",
+      "email": "hello@exigenthqllc.com",
+      "website": "https://exigenthqllc.com",
+      "fit": "Outbound outreach infrastructure; incident-response retainer and SASE fit"
+    },
+    {
+      "name": "Omni Tech Cyber Services",
+      "email": "contact@omnitechcyber.com",
+      "website": "https://omnitechcyber.com",
+      "fit": "Cybersecurity/email security; endpoint security and ZTNA/SASE fit"
+    },
+    {
+      "name": "Venezia Logistics LLC",
+      "email": "support@venezialogisticsllc.com",
+      "website": "https://venezialogisticsllc.com",
+      "fit": "Post-integration IT load; migration and warehouse wireless fit"
+    },
+    {
+      "name": "Docentric Cybersecurity",
+      "email": "info@docentriccyber.com",
+      "website": "https://docentriccyber.com",
+      "fit": "Email security/spam; endpoint monitoring and MSP fit"
+    },
+    {
+      "name": "Smart Security Info",
+      "email": "sitekit@smartsecurityinfo.com",
+      "website": "https://smartsecurityinfo.com",
+      "fit": "Security content presence; managed security/network partner fit"
+    }
+  ],
+  "services_referenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge",
+    "it-zero-trust-access",
+    "it-backup-disaster-recovery",
+    "it-hybrid-cloud-orchestrator",
+    "it-endpoint-management",
+    "it-network-monitoring"
+  ]
+}

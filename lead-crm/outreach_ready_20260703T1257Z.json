@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-07-03T1257Z",
+  "batch_file": "lead-crm/outreach_batch_20260703T1257Z.json",
+  "send_status": "send-blocked",
+  "send_blocked": true,
+  "block_reason": "no_ready_recipients_after_deduping_sent",
+  "batch_size": 0,
+  "send_count": 0,
+  "send_errors": [],
+  "counts": {
+    "ready_before_dedupe": 8,
+    "system_excluded": 1,
+    "business_domain_ready": 0
+  },
+  "services_referenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge"
+  ],
+  "new_leads_discovered": 0,
+  "send_blocked_reason": "no_ready_recipients_after_deduping_sent",
+  "artifacts": [
+    "lead-crm/outreach_batch_20260703T1257Z.json",
+    "lead-crm/outreach_ready_20260703T1257Z.json"
+  ]
+}

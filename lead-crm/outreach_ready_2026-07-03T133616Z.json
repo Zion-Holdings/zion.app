@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-07-03T13:36:16+00:00",
+  "batch_file": "/data/data/com.termux/files/home/zion-support.github.io/lead-crm/outreach_batch_2026-07-03T133616Z.json",
+  "send_status": "send-blocked",
+  "send_blocked": true,
+  "block_reason": "sender_identity_unverified_for_cron_run",
+  "batch_size": 8,
+  "send_count": 0,
+  "send_errors": [],
+  "counts": {
+    "ready_before_dedupe": 8,
+    "system_excluded": 0,
+    "business_domain_ready": 8
+  },
+  "services_referenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge",
+    "it-zero-trust-access",
+    "it-backup-disaster-recovery",
+    "it-hybrid-cloud-orchestrator",
+    "it-endpoint-management"
+  ],
+  "new_leads_discovered": 0,
+  "note": "Opt-in present, but direct send is blocked in this cron run because send auth is not verified here.",
+  "recipients_emails": [
+    "admin@nebulait.net",
+    "hello@thecloudbuffer.com",
+    "info@netpixelsystems.com",
+    "hello@exigenthqllc.com",
+    "contact@omnitechcyber.com",
+    "support@venezialogisticsllc.com",
+    "info@docentriccyber.com",
+    "sitekit@smartsecurityinfo.com"
+  ]
+}

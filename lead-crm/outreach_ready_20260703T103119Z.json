@@ -1,0 +1,19 @@
+{
+  "generated_at": "2026-07-03T10:31:19Z",
+  "batch_file": "lead-crm/outreach_batch_20260703T103119Z.json",
+  "send_status": "send-blocked",
+  "send_blocked": true,
+  "block_reason": "lead_miner_missing",
+  "batch_size": 0,
+  "send_count": 0,
+  "send_errors": [],
+  "counts": {
+    "ready_before_dedupe": 0,
+    "system_excluded": 0,
+    "business_domain_ready": 0
+  },
+  "services_referenced": [],
+  "new_leads_discovered": 0,
+  "send_blocked_reason": "lead_miner_missing",
+  "note": "lead-crm/all-leads.json and lead-crm/outreach_run_2026-06-30.json were missing in this cron run, so pipeline stopped at source assessment and emitted minimal blocked artifacts."
+}

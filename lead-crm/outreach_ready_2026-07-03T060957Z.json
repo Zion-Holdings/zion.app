@@ -1,0 +1,42 @@
+{
+  "generatedAt": "2026-07-03T060957Z",
+  "lead_crm_current_outreach_run_file": "lead-crm/outreach_run_2026-06-30.json",
+  "status": "send-blocked",
+  "blockReason": "lead_miner_missing",
+  "error": "web_prospecting.py not found; lead-crm/outreach_run_2026-06-30.json not present; lead-crm/all-leads.json not present; no prospector output available.",
+  "consent": {
+    "outreach_opt_in": false,
+    "lead_outreach_opt_in": false
+  },
+  "op": "lead-runner",
+  "sendCapable": false,
+  "sendBlocked": true,
+  "servicesReferenced": [
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge"
+  ],
+  "counts": {
+    "new_leads_discovered": 0,
+    "system_excluded": 0,
+    "business_domain_ready": 0
+  },
+  "recipients": [],
+  "send_status": "send-blocked",
+  "send_blocked": true,
+  "send_block_reason": "lead_miner_missing",
+  "opt_in_consent_flag_present": false,
+  "send_count": 0,
+  "artifacts": {
+    "ready": "lead-crm/outreach_ready_2026-07-03T060957Z.json",
+    "batch": null,
+    "prospector_logs": {
+      "out": "logs/web_prospecting.out",
+      "err": "logs/web_prospecting.err"
+    },
+    "prospector_availability": "missing",
+    "note": "No emails sent. Outreach pipeline blocked due missing lead miner and optional sender path."
+  }
+}

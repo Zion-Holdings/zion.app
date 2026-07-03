@@ -1,0 +1,41 @@
+{
+  "generatedAt": "2026-07-03T061500Z",
+  "source": "existing_workspace_lead_state_without_prospector",
+  "leadCrmRunFile": "lead-crm/outreach_run_2026-06-30.json",
+  "allLeadsFile": "lead-crm/all-leads.json",
+  "status": "send-blocked",
+  "blockReason": "lead_miner_missing_and_prior_run_artifact_missing",
+  "error": "web_prospecting.py not found; outreach_run_2026-06-30.json missing; all-leads.json missing.",
+  "consent": {
+    "outreach_opt_in": false,
+    "lead_outreach_opt_in": false,
+    "opt_in_consent_flag_present": false
+  },
+  "prospector": {
+    "launched": false,
+    "stdout": "logs/web_prospecting.out",
+    "stderr": "logs/web_prospecting.err",
+    "newLeadsDiscovered": 0
+  },
+  "counts": {
+    "new_leads_discovered": 0,
+    "candidates_available": 0,
+    "batch_size": 0,
+    "send_count": 0
+  },
+  "recipients": [],
+  "servicesReferenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge"
+  ],
+  "artifacts": {
+    "ready": "lead-crm/outreach_ready_2026-07-03T061500Z.json",
+    "batch": null
+  },
+  "sendBlocked": true,
+  "sendBlockReason": "missing lead miner, missing CRM state files, and no opt-in consent flag"
+}

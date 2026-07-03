@@ -1,0 +1,105 @@
+{
+  "generatedAt": "2026-07-03T05:30:22.322141+00:00",
+  "lead_crm_current_outreach_run_file": "not-present",
+  "consent": {
+    "outreach_opt_in": true,
+    "lead_outreach_opt_in": true
+  },
+  "sendCapable": false,
+  "sendBlocked": true,
+  "blockReason": "missing_sender_path",
+  "servicesReferenced": [
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge",
+    "it-zero-trust-access",
+    "it-backup-disaster-recovery",
+    "it-hybrid-cloud-orchestrator",
+    "it-endpoint-management",
+    "it-network-monitoring"
+  ],
+  "counts": {
+    "ready_before_dedupe": 1,
+    "system_excluded": 0,
+    "business_domain_ready": 1
+  },
+  "recipients": [
+    {
+      "recipient": "express@airbnb.com",
+      "email": "express@airbnb.com",
+      "display_name": "Airbnb",
+      "company_name": "Airbnb",
+      "domain": "airbnb.com",
+      "subject": "Remote workforce, incident response, cloud cost and secure access \u2014 practical IT services for Airbnb",
+      "body": "Hi Airbnb,\n\nI noticed Airbnb. A few practical IT playbooks fit that tempo well:\n\nPrimary:\n- Remote Workforce Enablement & Managed VDI \u2014 /services/it-remote-workforce-enablement\n- Incident Response & Forensics Retainer \u2014 /services/it-incident-response-retainer\n- Cloud Cost Optimization & FinOps \u2014 /services/it-cost-optimization-cloud\n\nRelated options:\n- Secure Access Service Edge (SASE) Implementation \u2014 /services/it-secure-access-service-edge\n- Modern Dev Platform / DevEx Accelerator \u2014 /services/it-modern-dev-platform\n- Zero Trust Network Access (ZTNA) \u2014 /services/it-zero-trust-access\n\nWant a quick call?\n\nBest,\nZion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi Airbnb,</p><p>A few practical IT playbooks for Airbnb:</p><ul><li>Primary:<br/><pre>Remote Workforce Enablement & Managed VDI - /services/it-remote-workforce-enablement<br/>Incident Response & Forensics Retainer - /services/it-incident-response-retainer<br/>Cloud Cost Optimization & FinOps - /services/it-cost-optimization-cloud</pre></li><li>Related:<br/><pre>Secure Access Service Edge (SASE) Implementation - /services/it-secure-access-service-edge<br/>Modern Dev Platform / DevEx Accelerator - /services/it-modern-dev-platform<br/>Zero Trust Network Access (ZTNA) - /services/it-zero-trust-access</pre></li></ul><p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/>https://ziontechgroup.com</p></body></html>",
+      "service_references": {
+        "it-remote-workforce-enablement": {
+          "id": "it-remote-workforce-enablement",
+          "title": "Remote Workforce Enablement & Managed VDI",
+          "href": "/services/it-remote-workforce-enablement"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "Incident Response & Forensics Retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-cost-optimization-cloud": {
+          "id": "it-cost-optimization-cloud",
+          "title": "Cloud Cost Optimization & FinOps",
+          "href": "/services/it-cost-optimization-cloud"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "Developer Platform & DevEx Accelerator",
+          "href": "/services/it-modern-dev-platform"
+        },
+        "it-secure-access-service-edge": {
+          "id": "it-secure-access-service-edge",
+          "title": "Secure Access Service Edge (SASE) Implementation",
+          "href": "/services/it-secure-access-service-edge"
+        },
+        "it-zero-trust-access": {
+          "id": "it-zero-trust-access",
+          "title": "Zero Trust Network Access (ZTNA)",
+          "href": "/services/it-zero-trust-access"
+        },
+        "it-backup-disaster-recovery": {
+          "id": "it-backup-disaster-recovery",
+          "title": "Backup Disaster Recovery as a Service",
+          "href": "/services/it-backup-disaster-recovery"
+        },
+        "it-hybrid-cloud-orchestrator": {
+          "id": "it-hybrid-cloud-orchestrator",
+          "title": "Hybrid Cloud Orchestration Platform",
+          "href": "/services/it-hybrid-cloud-orchestrator"
+        },
+        "it-endpoint-management": {
+          "id": "it-endpoint-management",
+          "title": "Unified Endpoint Management (UEM)",
+          "href": "/services/it-endpoint-management"
+        },
+        "it-network-monitoring": {
+          "id": "it-network-monitoring",
+          "title": "AI Network Performance Monitoring",
+          "href": "/services/it-network-monitoring"
+        }
+      },
+      "template_context": {
+        "services_grid": [
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform",
+          "it-secure-access-service-edge",
+          "it-zero-trust-access"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T05:30:22.322091+00:00",
+      "discoveredAt": "2026-05-17T14:32:40.328818"
+    }
+  ]
+}

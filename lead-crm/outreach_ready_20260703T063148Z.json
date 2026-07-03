@@ -1,0 +1,34 @@
+{
+  "generatedAt": "2026-07-03T06:31:48+00:00",
+  "source": "outreach_batch_20260703T063148Z",
+  "status": "send-blocked",
+  "blockReason": "missing_sender_path_and_opt_in_consent_flag_absent",
+  "consent": {
+    "outreach_opt_in": false,
+    "lead_outreach_opt_in": false,
+    "opt_in_consent_flag_present": false
+  },
+  "counts": {
+    "candidates_available": 8,
+    "business_domain_ready": 8,
+    "batch_size": 8,
+    "duplicates_excluded": 0,
+    "system_addresses_excluded": 0,
+    "send_count": 0
+  },
+  "recipients": [
+    {"name": "Nebula Solutions LLC", "email": "admin@nebulait.net"},
+    {"name": "Cloud Buffer Inc.", "email": "hello@thecloudbuffer.com"},
+    {"name": "NetPixel Systems", "email": "info@netpixelsystems.com"},
+    {"name": "Exigent HQ LLC", "email": "hello@exigenthqllc.com"},
+    {"name": "Omni Tech Cyber Services", "email": "contact@omnitechcyber.com"},
+    {"name": "Venezia Logistics LLC", "email": "support@venezialogisticsllc.com"},
+    {"name": "Docentric Cybersecurity", "email": "info@docentriccyber.com"},
+    {"name": "Smart Security Info", "email": "sitekit@smartsecurityinfo.com"}
+  ],
+  "servicesReferenced": [
+    "it","it-remote-workforce-enablement","it-incident-response-retainer","it-cost-optimization-cloud","it-modern-dev-platform","it-secure-access-service-edge"
+  ],
+  "sendReady": false,
+  "sendAttempted": false
+}

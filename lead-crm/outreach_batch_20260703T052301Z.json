@@ -1,0 +1,117 @@
+{
+  "generatedAt": "2026-07-03T05:23:01.274983+00:00",
+  "lead_crm_current_outreach_run_file": "not-present",
+  "consent": {
+    "outreach_opt_in": true
+  },
+  "sendCapable": false,
+  "sendBlocked": true,
+  "servicesReferenced": [
+    "it-asset-lifecycle-manager",
+    "it-backup-disaster-recovery",
+    "it-change-advisory-board-engine",
+    "it-config-drift-detector",
+    "it-endpoint-management"
+  ],
+  "counts": {
+    "ready_before_dedupe": 1,
+    "system_excluded": 0,
+    "business_domain_ready": 1
+  },
+  "recipients": [
+    {
+      "recipient": "express@airbnb.com",
+      "to": "express@airbnb.com",
+      "email": "express@airbnb.com",
+      "display_name": "Airbnb",
+      "company_name": "Airbnb",
+      "subject": "RE: Reserva para Mansão espaçosa e única de 3 andares na Riviera., 16 – 17 de mai.",
+      "body": "Hi Airbnb,\n\nI noticed Airbnb. A few practical IT playbooks fit that tempo perfectly:\n\nPrimary:\nIT Asset Lifecycle Manager - /services/it-asset-lifecycle-manager\nBackup Disaster Recovery as a Service - /services/it-backup-disaster-recovery\n\nRelated options:\nHybrid Cloud Orchestration Platform - /services/it-hybrid-cloud-orchestrator\nIT Asset Management & CMDB - /services/it-it-asset-management\nAI Network Performance Monitoring - /services/it-network-monitoring\n\nWant a quick call?\n\nBest,\nZion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi Airbnb,</p><p>A few practical IT playbooks for Airbnb:</p><ul><li>Primary:<br/><pre>IT Asset Lifecycle Manager - /services/it-asset-lifecycle-manager<br/>Backup Disaster Recovery as a Service - /services/it-backup-disaster-recovery</pre></li><li>Related:<br/><pre>Hybrid Cloud Orchestration Platform - /services/it-hybrid-cloud-orchestrator<br/>IT Asset Management & CMDB - /services/it-it-asset-management<br/>AI Network Performance Monitoring - /services/it-network-monitoring</pre></li></ul><p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/>https://ziontechgroup.com</p></body></html>",
+      "service_references": {
+        "it-zero-trust-access": {
+          "id": "it-zero-trust-access",
+          "title": "Zero Trust Network Access (ZTNA)",
+          "href": "/services/it-zero-trust-access"
+        },
+        "it-backup-disaster-recovery": {
+          "id": "it-backup-disaster-recovery",
+          "title": "Backup Disaster Recovery as a Service",
+          "href": "/services/it-backup-disaster-recovery"
+        },
+        "it-hybrid-cloud-orchestrator": {
+          "id": "it-hybrid-cloud-orchestrator",
+          "title": "Hybrid Cloud Orchestration Platform",
+          "href": "/services/it-hybrid-cloud-orchestrator"
+        },
+        "it-endpoint-management": {
+          "id": "it-endpoint-management",
+          "title": "Unified Endpoint Management (UEM)",
+          "href": "/services/it-endpoint-management"
+        },
+        "it-network-monitoring": {
+          "id": "it-network-monitoring",
+          "title": "AI Network Performance Monitoring",
+          "href": "/services/it-network-monitoring"
+        },
+        "it-vcio-service": {
+          "id": "it-vcio-service",
+          "title": "Virtual CIO & IT Strategy Service",
+          "href": "/services/it-vcio-service"
+        },
+        "it-it-asset-management": {
+          "id": "it-it-asset-management",
+          "title": "IT Asset Management & CMDB",
+          "href": "/services/it-it-asset-management"
+        },
+        "it-asset-lifecycle-manager": {
+          "id": "it-asset-lifecycle-manager",
+          "title": "IT Asset Lifecycle Manager",
+          "href": "/services/it-asset-lifecycle-manager"
+        },
+        "it-runbook-automation-platform": {
+          "id": "it-runbook-automation-platform",
+          "title": "IT Runbook Automation Platform",
+          "href": "/services/it-runbook-automation-platform"
+        },
+        "it-sla-compliance-monitor": {
+          "id": "it-sla-compliance-monitor",
+          "title": "IT SLA Compliance Monitor",
+          "href": "/services/it-sla-compliance-monitor"
+        },
+        "it-change-advisory-board-engine": {
+          "id": "it-change-advisory-board-engine",
+          "title": "IT Change Advisory Board Engine",
+          "href": "/services/it-change-advisory-board-engine"
+        },
+        "it-config-drift-detector": {
+          "id": "it-config-drift-detector",
+          "title": "IT Configuration Drift Detector",
+          "href": "/services/it-config-drift-detector"
+        }
+      },
+      "service_references_primary": [
+        "it-asset-lifecycle-manager",
+        "it-backup-disaster-recovery"
+      ],
+      "studies_ref": [
+        "2095",
+        "2096",
+        "2097",
+        "2098"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it-asset-lifecycle-manager",
+          "it-backup-disaster-recovery",
+          "it-change-advisory-board-engine",
+          "it-config-drift-detector",
+          "it-endpoint-management"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T05:23:01.274916+00:00",
+      "discoveredAt": "2026-05-17T14:32:40.328818"
+    }
+  ]
+}

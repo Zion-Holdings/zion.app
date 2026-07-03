@@ -1,0 +1,35 @@
+{
+  "runAt": "20260703T134230Z",
+  "results": [
+    {
+      "email": "tech@fortray.com",
+      "ok": true,
+      "id": "19f28377cf61dd4e",
+      "err": null
+    },
+    {
+      "email": "rfp@thegrowthsyndicate.com",
+      "ok": true,
+      "id": "19f28379ac086ed0",
+      "err": null
+    },
+    {
+      "email": "contact@itservicesdelaware.com",
+      "ok": true,
+      "id": "19f2837b9333f4c2",
+      "err": null
+    },
+    {
+      "email": "info@discovercybersolutions.com",
+      "ok": true,
+      "id": "19f2837d74c77e7c",
+      "err": null
+    },
+    {
+      "email": "info@skyterratech.com",
+      "ok": true,
+      "id": "19f2837f4c864427",
+      "err": null
+    }
+  ]
+}

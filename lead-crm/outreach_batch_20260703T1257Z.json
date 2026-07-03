@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-07-03T1257Z",
+  "source": "post_dedup_exhausted_pool",
+  "state": {
+    "send_blocked": true,
+    "block_reason": "no_ready_recipients_after_deduping_sent",
+    "issue": "Current curated batch pool is exhausted after applying already-sent dedupe and system-exclusion rules; no send-ready recipients remain."
+  },
+  "counts": {
+    "new_leads_discovered": 0,
+    "candidate_pool": 8,
+    "business_domain_ready": 0,
+    "system_excluded": 1,
+    "ready": 0,
+    "skipped_already_sent": 7
+  },
+  "candidates": [],
+  "services_referenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge"
+  ]
+}

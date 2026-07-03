@@ -1,0 +1,34 @@
+{
+  "generatedAt": "2026-07-03T08:57:02.797331+00:00",
+  "batch_file": "/data/data/com.termux/files/home/zion-support.github.io/lead-crm/outreach_batch_20260703T085702Z.json",
+  "send_status": "send-blocked",
+  "send_blocked": true,
+  "block_reason": "send_not_executed_this_run",
+  "batch_size": 1,
+  "send_count": 0,
+  "send_errors": [],
+  "counts": {
+    "ready_before_dedupe": 9,
+    "system_excluded": 8,
+    "business_domain_ready": 1
+  },
+  "new_leads_discovered": 0,
+  "send_blocked_reason": "send_not_executed_this_run",
+  "services_referenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge"
+  ],
+  "artifacts": [
+    "/data/data/com.termux/files/home/zion-support.github.io/lead-crm/outreach_batch_20260703T085702Z.json",
+    "/data/data/com.termux/files/home/zion-support.github.io/lead-crm/outreach_ready_20260703T085702Z.json"
+  ],
+  "consent": {
+    "outreach_opt_in": true,
+    "lead_outreach_opt_in": true
+  },
+  "note": "Consent flags are present; send not executed in cron run."
+}

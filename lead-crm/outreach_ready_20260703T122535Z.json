@@ -1,0 +1,48 @@
+{
+  "generatedAt": "20260703T122535Z",
+  "source": "outreach_batch_20260703T122535Z.json",
+  "sendStatus": "send-ready-draft",
+  "sendBlocked": false,
+  "blockReason": null,
+  "optInConsentFound": false,
+  "readyRecipients": [
+    "admin@nebulait.net"
+  ],
+  "batchSize": 8,
+  "sendReadyCount": 1,
+  "alreadySentCount": 7,
+  "sendCount": 0,
+  "sendErrors": [],
+  "contacts": [
+    {
+      "name": "Nebula Solutions LLC",
+      "to": "admin@nebulait.net",
+      "subject": "Managed IT partnerships: SASE, cloud cost optimization, and incident response",
+      "body": "Hi,\n\nWe help IT service firms expand their portfolio with remote workforce enablement, incident response retainers, cloud cost optimization, modern development platforms, and Secure Access Service Edge engagements.\nIf you'd like, I can share a short playbook that maps these services to the needs your clients are already raising.\n\nBest,\nZion Support",
+      "html": "<p>Hi,</p><p>We help IT service firms expand their portfolio with <strong>remote workforce enablement</strong>, <strong>incident response retainers</strong>, <strong>cloud cost optimization</strong>, <strong>modern development platforms</strong>, and <strong>Secure Access Service Edge</strong> engagements.</p><p>If you'd like, I can share a short playbook that maps these services to the needs your clients are already raising.</p><p>Best,<br>Zion Support</p>",
+      "sendStatus": "send-ready",
+      "recommendedServices": [
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ]
+    }
+  ],
+  "newLeadsDiscovered": 1,
+  "servicesReferenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge",
+    "it-zero-trust-access",
+    "it-backup-disaster-recovery",
+    "it-hybrid-cloud-orchestrator",
+    "it-endpoint-management",
+    "it-network-monitoring"
+  ],
+  "issue": "web_prospecting.py timed out after 120s; sending must be retried or manually approved."
+}

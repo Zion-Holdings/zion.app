@@ -1,0 +1,43 @@
+{
+  "generated_at": "2026-07-03T05:23:01.275887+00:00",
+  "batch_file": "lead-crm/outreach_batch_20260703T052301Z.json",
+  "send_status": "send-blocked",
+  "send_blocked": true,
+  "block_reason": "send_auth_unverifiable_in_this_cron_run",
+  "batch_size": 1,
+  "send_count": 0,
+  "send_errors": [
+    "Send authorization not verifiable in this cron run."
+  ],
+  "counts": {
+    "ready_before_dedupe": 1,
+    "system_excluded": 0,
+    "business_domain_ready": 1
+  },
+  "services_referenced": [
+    "it-asset-lifecycle-manager",
+    "it-backup-disaster-recovery",
+    "it-change-advisory-board-engine",
+    "it-config-drift-detector",
+    "it-endpoint-management"
+  ],
+  "new_leads_discovered": 0,
+  "send_blocked_reason": "cannot_verify_send_auth_or_gws_installed",
+  "artifacts": {
+    "batch": "lead-crm/outreach_batch_20260703T052301Z.json",
+    "ready": "lead-crm/outreach_ready_20260703T052301Z.json",
+    "service_main_ids": [
+      "it-asset-lifecycle-manager",
+      "it-backup-disaster-recovery",
+      "it-change-advisory-board-engine",
+      "it-config-drift-detector",
+      "it-endpoint-management"
+    ],
+    "web_prospecting_script": "not found",
+    "prospector_log_redirects": {
+      "out": "logs/web_prospecting.out",
+      "err": "logs/web_prospecting.err"
+    },
+    "prospector_availability": "missing_will_use_fallback"
+  }
+}

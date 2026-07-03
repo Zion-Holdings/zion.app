@@ -1,0 +1,28 @@
+{
+  "generatedAt": "2026-07-03T09:33:37.000000+00:00",
+  "runId": "outreach_run_20260703T093337Z",
+  "state": {
+    "send_blocked": true,
+    "block_reason": "already_sent_in_prior_run",
+    "opt_in_consent_flag_present": true,
+    "source": "cron_run_recheck_after_083500Z_send_ready_state"
+  },
+  "counts": {
+    "discovered_new_from_prospector": 0,
+    "ready_before_dedupe": 8,
+    "system_excluded": 8,
+    "business_domain_ready": 0,
+    "batch_size": 0,
+    "send_count": 0
+  },
+  "servicesReferenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge"
+  ],
+  "recipients": [],
+  "note": "prospector_run_status=no_output_or_timeout; prior_batch_send_results_suggest_sent_083500Z=9; no additional ready recipients available for this run"
+}

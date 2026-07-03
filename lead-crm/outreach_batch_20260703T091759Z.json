@@ -1,0 +1,408 @@
+{
+  "generatedAt": "20260703T083500ZZ",
+  "runId": "outreach_run_20260703T083500ZZ",
+  "state": {
+    "send_blocked": false,
+    "block_reason": null,
+    "opt_in_consent_flag_present": true,
+    "source": "canonical_merge_main20260703T075616Z_plus_20260703T082641Z_prior_sent_deduped"
+  },
+  "counts": {
+    "discovered_new_from_prospector": 0,
+    "ready_before_dedupe": 9,
+    "business_domain_ready": 9,
+    "batch_size": 9,
+    "send_count": 9
+  },
+  "servicesReferenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge"
+  ],
+  "recipients": [
+    {
+      "order": 1,
+      "name": "Nebula Solutions LLC",
+      "email": "admin@nebulait.net",
+      "website": "https://nebulait.net",
+      "reason": "Site explicitly offers managed IT, IP CCTV, and cloud migration for SMBs, so they already speak the language of the five service pillars.",
+      "subject": "Nebula Solutions LLC \u2014 IT support options worth comparing",
+      "body": "Hi Nebula,\n\nI came across Nebula Solutions LLC and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending",
+      "recipient": "admin@nebulait.net",
+      "html": "<html><body><p>Hi Nebula,</p><p></p><p>I came across Nebula Solutions LLC and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.</p><p></p><p>If it helps, I can share a 2-minute overview of where these typically help teams like yours.</p><p></p><p>No obligation \u2014 feel free to reply if you want the overview.</p><p></p><p>Best,</p><p>ZION Tech Group</p></body></html>",
+      "service_references": {
+        "it": "it",
+        "it-remote-workforce-enablement": "it-remote-workforce-enablement",
+        "it-incident-response-retainer": "it-incident-response-retainer",
+        "it-cost-optimization-cloud": "it-cost-optimization-cloud",
+        "it-modern-dev-platform": "it-modern-dev-platform",
+        "it-secure-access-service-edge": "it-secure-access-service-edge"
+      },
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform",
+          "it-secure-access-service-edge"
+        ]
+      }
+    },
+    {
+      "order": 2,
+      "name": "Cloud Buffer Inc.",
+      "email": "hello@thecloudbuffer.com",
+      "website": "https://thecloudbuffer.com",
+      "reason": "Cloud Buffer\u2019s cloud posture fits backup/DR, workforce enablement, and cloud cost optimization well.",
+      "subject": "Cloud Buffer Inc. \u2014 IT support options worth comparing",
+      "body": "Hi Cloud,\n\nI came across Cloud Buffer Inc. and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending",
+      "recipient": "hello@thecloudbuffer.com",
+      "html": "<html><body><p>Hi Cloud,</p><p></p><p>I came across Cloud Buffer Inc. and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.</p><p></p><p>If it helps, I can share a 2-minute overview of where these typically help teams like yours.</p><p></p><p>No obligation \u2014 feel free to reply if you want the overview.</p><p></p><p>Best,</p><p>ZION Tech Group</p></body></html>",
+      "service_references": {
+        "it": "it",
+        "it-remote-workforce-enablement": "it-remote-workforce-enablement",
+        "it-incident-response-retainer": "it-incident-response-retainer",
+        "it-cost-optimization-cloud": "it-cost-optimization-cloud",
+        "it-modern-dev-platform": "it-modern-dev-platform",
+        "it-secure-access-service-edge": "it-secure-access-service-edge"
+      },
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform",
+          "it-secure-access-service-edge"
+        ]
+      }
+    },
+    {
+      "order": 3,
+      "name": "NetPixel Systems",
+      "email": "info@netpixelsystems.com",
+      "website": "https://netpixelsystems.com",
+      "reason": "NetPixel\u2019s 365 migration work overlaps directly with cloud cost optimization and modern developer workflows.",
+      "subject": "NetPixel Systems \u2014 IT support options worth comparing",
+      "body": "Hi NetPixel,\n\nI came across NetPixel Systems and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending",
+      "recipient": "info@netpixelsystems.com",
+      "html": "<html><body><p>Hi NetPixel,</p><p></p><p>I came across NetPixel Systems and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.</p><p></p><p>If it helps, I can share a 2-minute overview of where these typically help teams like yours.</p><p></p><p>No obligation \u2014 feel free to reply if you want the overview.</p><p></p><p>Best,</p><p>ZION Tech Group</p></body></html>",
+      "service_references": {
+        "it": "it",
+        "it-remote-workforce-enablement": "it-remote-workforce-enablement",
+        "it-incident-response-retainer": "it-incident-response-retainer",
+        "it-cost-optimization-cloud": "it-cost-optimization-cloud",
+        "it-modern-dev-platform": "it-modern-dev-platform",
+        "it-secure-access-service-edge": "it-secure-access-service-edge"
+      },
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform",
+          "it-secure-access-service-edge"
+        ]
+      }
+    },
+    {
+      "order": 4,
+      "name": "Exigent HQ LLC",
+      "email": "hello@exigenthqllc.com",
+      "website": "https://exigenthqlit.com",
+      "reason": "Outreach-aware operator profile suggests fast evaluation of incident response retainer and SASE.",
+      "subject": "Exigent HQ LLC \u2014 IT support options worth comparing",
+      "body": "Hi Exigent,\n\nI came across Exigent HQ LLC and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending",
+      "recipient": "hello@exigenthqllc.com",
+      "html": "<html><body><p>Hi Exigent,</p><p></p><p>I came across Exigent HQ LLC and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.</p><p></p><p>If it helps, I can share a 2-minute overview of where these typically help teams like yours.</p><p></p><p>No obligation \u2014 feel free to reply if you want the overview.</p><p></p><p>Best,</p><p>ZION Tech Group</p></body></html>",
+      "service_references": {
+        "it": "it",
+        "it-remote-workforce-enablement": "it-remote-workforce-enablement",
+        "it-incident-response-retainer": "it-incident-response-retainer",
+        "it-cost-optimization-cloud": "it-cost-optimization-cloud",
+        "it-modern-dev-platform": "it-modern-dev-platform",
+        "it-secure-access-service-edge": "it-secure-access-service-edge"
+      },
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform",
+          "it-secure-access-service-edge"
+        ]
+      }
+    },
+    {
+      "order": 5,
+      "name": "Omni Tech Cyber Services",
+      "email": "contact@omnitechcyber.com",
+      "website": "https://omnitechcyber.com",
+      "reason": "Cybersecurity orientation matches incident response retainer and SASE/zero-trust needs.",
+      "subject": "Omni Tech Cyber Services \u2014 IT support options worth comparing",
+      "body": "Hi Omni,\n\nI came across Omni Tech Cyber Services and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending",
+      "recipient": "contact@omnitechcyber.com",
+      "html": "<html><body><p>Hi Omni,</p><p></p><p>I came across Omni Tech Cyber Services and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.</p><p></p><p>If it helps, I can share a 2-minute overview of where these typically help teams like yours.</p><p></p><p>No obligation \u2014 feel free to reply if you want the overview.</p><p></p><p>Best,</p><p>ZION Tech Group</p></body></html>",
+      "service_references": {
+        "it": "it",
+        "it-remote-workforce-enablement": "it-remote-workforce-enablement",
+        "it-incident-response-retainer": "it-incident-response-retainer",
+        "it-cost-optimization-cloud": "it-cost-optimization-cloud",
+        "it-modern-dev-platform": "it-modern-dev-platform",
+        "it-secure-access-service-edge": "it-secure-access-service-edge"
+      },
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform",
+          "it-secure-access-service-edge"
+        ]
+      }
+    },
+    {
+      "order": 6,
+      "name": "Venezia Logistics LLC",
+      "email": "support@venezialogisticsllc.com",
+      "website": "https://venezialogisticsllc.com",
+      "reason": "Post-acquisition IT load maps to remote workforce enablement and SASE/secure access modernization.",
+      "subject": "Venezia Logistics LLC \u2014 IT support options worth comparing",
+      "body": "Hi Venezia,\n\nI came across Venezia Logistics LLC and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending",
+      "recipient": "support@venezialogisticsllc.com",
+      "html": "<html><body><p>Hi Venezia,</p><p></p><p>I came across Venezia Logistics LLC and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.</p><p></p><p>If it helps, I can share a 2-minute overview of where these typically help teams like yours.</p><p></p><p>No obligation \u2014 feel free to reply if you want the overview.</p><p></p><p>Best,</p><p>ZION Tech Group</p></body></html>",
+      "service_references": {
+        "it": "it",
+        "it-remote-workforce-enablement": "it-remote-workforce-enablement",
+        "it-incident-response-retainer": "it-incident-response-retainer",
+        "it-cost-optimization-cloud": "it-cost-optimization-cloud",
+        "it-modern-dev-platform": "it-modern-dev-platform",
+        "it-secure-access-service-edge": "it-secure-access-service-edge"
+      },
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform",
+          "it-secure-access-service-edge"
+        ]
+      }
+    },
+    {
+      "order": 7,
+      "name": "Docentric Cybersecurity",
+      "email": "info@docentriccyber.com",
+      "website": "https://docentriccyber.com",
+      "reason": "Email-security background fits endpoint security and Secure Access Service Edge adoption.",
+      "subject": "Docentric Cybersecurity \u2014 IT support options worth comparing",
+      "body": "Hi Docentric,\n\nI came across Docentric Cybersecurity and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending",
+      "recipient": "info@docentriccyber.com",
+      "html": "<html><body><p>Hi Docentric,</p><p></p><p>I came across Docentric Cybersecurity and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.</p><p></p><p>If it helps, I can share a 2-minute overview of where these typically help teams like yours.</p><p></p><p>No obligation \u2014 feel free to reply if you want the overview.</p><p></p><p>Best,</p><p>ZION Tech Group</p></body></html>",
+      "service_references": {
+        "it": "it",
+        "it-remote-workforce-enablement": "it-remote-workforce-enablement",
+        "it-incident-response-retainer": "it-incident-response-retainer",
+        "it-cost-optimization-cloud": "it-cost-optimization-cloud",
+        "it-modern-dev-platform": "it-modern-dev-platform",
+        "it-secure-access-service-edge": "it-secure-access-service-edge"
+      },
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform",
+          "it-secure-access-service-edge"
+        ]
+      }
+    },
+    {
+      "order": 8,
+      "name": "Smart Security Info",
+      "email": "sitekit@smartsecurityinfo.com",
+      "website": "https://smartsecurityinfo.com",
+      "reason": "Security publishing background often leads to demand for managed IT and modern dev platform controls.",
+      "subject": "Smart Security Info \u2014 IT support options worth comparing",
+      "body": "Hi Smart,\n\nI came across Smart Security Info and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "services": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge"
+      ],
+      "status": "pending",
+      "recipient": "sitekit@smartsecurityinfo.com",
+      "html": "<html><body><p>Hi Smart,</p><p></p><p>I came across Smart Security Info and noticed alignment with managed IT, remote workforce enablement, incident response retainer, cloud cost optimization, modern dev platform, and Secure Access Service Edge services.</p><p></p><p>If it helps, I can share a 2-minute overview of where these typically help teams like yours.</p><p></p><p>No obligation \u2014 feel free to reply if you want the overview.</p><p></p><p>Best,</p><p>ZION Tech Group</p></body></html>",
+      "service_references": {
+        "it": "it",
+        "it-remote-workforce-enablement": "it-remote-workforce-enablement",
+        "it-incident-response-retainer": "it-incident-response-retainer",
+        "it-cost-optimization-cloud": "it-cost-optimization-cloud",
+        "it-modern-dev-platform": "it-modern-dev-platform",
+        "it-secure-access-service-edge": "it-secure-access-service-edge"
+      },
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform",
+          "it-secure-access-service-edge"
+        ]
+      }
+    },
+    {
+      "recipient": "express@airbnb.com",
+      "email": "express@airbnb.com",
+      "domain": "airbnb.com",
+      "display_name": "Airbnb",
+      "company_name": "Airbnb",
+      "subject": "Remote workforce, incident response, cloud cost and secure access \u2014 practical IT services for Airbnb",
+      "body": "Hi Airbnb,\n\nI noticed Airbnb. A few practical IT playbooks fit that tempo well:\n\nPrimary:\n- Remote Workforce Enablement & Managed VDI \u2014 /services/it-remote-workforce-enablement\n- Incident Response & Forensics Retainer \u2014 /services/it-incident-response-retainer\n- Cloud Cost Optimization & FinOps \u2014 /services/it-cost-optimization-cloud\n\nRelated options:\n- Secure Access Service Edge (SASE) Implementation \u2014 /services/it-secure-access-service-edge\n- Modern Dev Platform / DevEx Accelerator \u2014 /services/it-modern-dev-platform\n- Zero Trust Network Access (ZTNA) \u2014 /services/it-zero-trust-access\n\nWant a quick call?\n\nBest,\nZion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi Airbnb,</p><p></p><p>I noticed Airbnb. A few practical IT playbooks fit that tempo well:</p><p></p><p>Primary:</p><p>- Remote Workforce Enablement & Managed VDI \u2014 /services/it-remote-workforce-enablement</p><p>- Incident Response & Forensics Retainer \u2014 /services/it-incident-response-retainer</p><p>- Cloud Cost Optimization & FinOps \u2014 /services/it-cost-optimization-cloud</p><p></p><p>Related options:</p><p>- Secure Access Service Edge (SASE) Implementation \u2014 /services/it-secure-access-service-edge</p><p>- Modern Dev Platform / DevEx Accelerator \u2014 /services/it-modern-dev-platform</p><p>- Zero Trust Network Access (ZTNA) \u2014 /services/it-zero-trust-access</p><p></p><p>Want a quick call?</p><p></p><p>Best,</p><p>Zion Tech Group</p><p>kleber@ziontechgroup.com | +1 302 464 0950</p><p>https://ziontechgroup.com</p></body></html>",
+      "service_references": {
+        "it-remote-workforce-enablement": {
+          "id": "it-remote-workforce-enablement",
+          "title": "Remote Workforce Enablement & Managed VDI",
+          "href": "/services/it-remote-workforce-enablement"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "Incident Response & Forensics Retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-cost-optimization-cloud": {
+          "id": "it-cost-optimization-cloud",
+          "title": "Cloud Cost Optimization & FinOps",
+          "href": "/services/it-cost-optimization-cloud"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "Developer Platform & DevEx Accelerator",
+          "href": "/services/it-modern-dev-platform"
+        },
+        "it-secure-access-service-edge": {
+          "id": "it-secure-access-service-edge",
+          "title": "Secure Access Service Edge (SASE) Implementation",
+          "href": "/services/it-secure-access-service-edge"
+        },
+        "it-zero-trust-access": {
+          "id": "it-zero-trust-access",
+          "title": "Zero Trust Network Access (ZTNA)",
+          "href": "/services/it-zero-trust-access"
+        },
+        "it-backup-disaster-recovery": {
+          "id": "it-backup-disaster-recovery",
+          "title": "Backup Disaster Recovery as a Service",
+          "href": "/services/it-backup-disaster-recovery"
+        },
+        "it-hybrid-cloud-orchestrator": {
+          "id": "it-hybrid-cloud-orchestrator",
+          "title": "Hybrid Cloud Orchestration Platform",
+          "href": "/services/it-hybrid-cloud-orchestrator"
+        },
+        "it-endpoint-management": {
+          "id": "it-endpoint-management",
+          "title": "Unified Endpoint Management (UEM)",
+          "href": "/services/it-endpoint-management"
+        },
+        "it-network-monitoring": {
+          "id": "it-network-monitoring",
+          "title": "AI Network Performance Monitoring",
+          "href": "/services/it-network-monitoring"
+        }
+      },
+      "template_context": {
+        "services_grid": [
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform",
+          "it-secure-access-service-edge",
+          "it-zero-trust-access"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T08:26:41+00:00",
+      "discoveredAt": "2026-05-17T14:32:40.328818",
+      "order": 9,
+      "status": "pending"
+    }
+  ]
+}

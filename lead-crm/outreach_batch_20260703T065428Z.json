@@ -1,0 +1,71 @@
+{
+  "generatedAt": "20260703T065428Z",
+  "state": {
+    "send_blocked": true,
+    "block_reason": "web_prospecting_timed_out_or_errored",
+    "opt_in_consent_flag_present": false
+  },
+  "counts": {
+    "new_leads_discovered": 0,
+    "batch_size": 8,
+    "send_count": 0
+  },
+  "recipients": [
+    {
+      "name": "Cloud Buffer Inc.",
+      "email": "hello@thecloudbuffer.com",
+      "website": "https://thecloudbuffer.com",
+      "reason": "Found on high-directory-clutter jurisdictions and documents cloud backup/migration posture; this aligns with Backup/DRaaS and Workforce Enablement."
+    },
+    {
+      "name": "Docentric Cybersecurity",
+      "email": "info@docentriccyber.com",
+      "website": "https://docentriccyber.com",
+      "reason": "Email security / spam filtering background overlaps heavily with MSP email deliverability and endpoint-monitoring engagements."
+    },
+    {
+      "name": "Exigent HQ LLC",
+      "email": "hello@exigenthqllc.com",
+      "website": "https://exigenthqlit.com",
+      "reason": "A recent mailing-lists/contacts match from an IT-targeted discovery context, indicating active outbound outreach infrastructure; high fit for incident-response retainer and SASE."
+    },
+    {
+      "name": "Nebula Solutions LLC",
+      "email": "admin@nebulait.net",
+      "website": "https://nebulait.net",
+      "reason": "Site explicitly offers managed IT, IP CCTV, and cloud migration for SMBs, so they already speak the language of the five service pillars."
+    },
+    {
+      "name": "NetPixel Systems",
+      "email": "info@netpixelsystems.com",
+      "website": "https://netpixelsystems.com",
+      "reason": "Lists managed IT, Microsoft 365 deployment, and Wi-Fi/network setup, covering Managed IT Support plus Office 365 migration directly."
+    },
+    {
+      "name": "Omni Tech Cyber Services",
+      "email": "contact@omnitechcyber.com",
+      "website": "https://omnitechcyber.com",
+      "reason": "Explicit cybersec/email-security orientation maps cleanly to Endpoint Security, ZTNA/SASE, and small-business IT security."
+    },
+    {
+      "name": "Smart Security Info",
+      "email": "sitekit@smartsecurityinfo.com",
+      "website": "https://smartsecurityinfo.com",
+      "reason": "Security-info publishing presence suggests the team is familiar with cloud/security buyer language and may be evaluating managed security/network partners."
+    },
+    {
+      "name": "Venezia Logistics LLC",
+      "email": "support@venezialogisticsllc.com",
+      "website": "https://venezialogisticsllc.com",
+      "reason": "Post-acquisition or post-integration IT load for the business may create demand for migration help and Wi-Fi/warehouse wireless hardening."
+    }
+  ],
+  "servicesReferenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge"
+  ]
+}

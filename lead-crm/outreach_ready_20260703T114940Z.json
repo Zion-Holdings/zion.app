@@ -1,0 +1,23 @@
+{
+  "generatedAt": "2026-07-03T11:49:40.782778+00:00",
+  "sendStatus": "send-blocked",
+  "sendBlocked": true,
+  "sendBlockReason": "missing_prospector_new_leads_and_incomplete_sender_identity_for_cron; missing lead-crm/outreach_run_2026-06-30.json and lead-crm/all-leads.json",
+  "batch": "lead-crm/outreach_batch_20260703T114940Z.json",
+  "counts": {
+    "new_leads_discovered": 0,
+    "candidate_pool": 8,
+    "business_domain_ready": 8,
+    "system_excluded": 0
+  },
+  "recipients": [
+    "admin@nebulait.net",
+    "hello@thecloudbuffer.com",
+    "info@netpixelsystems.com",
+    "hello@exigenthqllc.com",
+    "contact@omnitechcyber.com",
+    "support@venezialogisticsllc.com",
+    "info@docentriccyber.com",
+    "sitekit@smartsecurityinfo.com"
+  ]
+}

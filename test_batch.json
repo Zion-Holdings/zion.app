@@ -1,0 +1,17 @@
+{
+  "generatedAt": "20260703T100000Z",
+  "runId": "test_llm_tailor",
+  "state": {
+    "send_blocked": false
+  },
+  "recipients": [
+    {
+      "name": "Test Company",
+      "email": "kleber@ziontechgroup.com",
+      "website": "https://example.com",
+      "reason": "IT services lead",
+      "subject": "Test Subject",
+      "body": "Hi Test,\nI came across Test Company and noticed alignment with managed IT, remote workforce enablement, and cloud cost optimization services.\n\nBest,\nZION Tech Group"
+    }
+  ]
+}

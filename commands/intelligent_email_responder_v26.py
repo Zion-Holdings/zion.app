@@ -42,7 +42,7 @@ from commands.v40_modules.thread_headroom_lock import ThreadHeadroomLock
 POLICY_DB = IntentPolicyDB.load(str(DATA / "policies" / "intent_policies.json"))
 POLICY_LOOKUP = IntentPolicyLookup(POLICY_DB)
 # V40-C: ThreadHeadroomLock — shared lock for per-thread conveyor-belt gate.
-_head_lock = ThreadHeadroomLock(POLICY_DB)
+_head_lock = ThreadHeadroomLock()
 # Drop-in replacement: .get(label, default) mirrors V26 semantics
 
 

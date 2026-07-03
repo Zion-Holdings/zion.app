@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-07-03T13:24:20.000000+00:00",
+  "send_status": "send-blocked-run",
+  "send_blocked": true,
+  "block_reason": "No verifiable new leads from this run; reused existing completed run lead-crm/outreach_ready_20260703T130219Z.json to preserve prior send state and avoid duplicate sends.",
+  "batch_size": 0,
+  "new_leads_discovered": 0,
+  "note": "No web_prospecting.py new output available; logs empty after run attempt."
+}

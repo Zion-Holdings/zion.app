@@ -1,0 +1,35 @@
+{
+  "generatedAt": null,
+  "lead_crm_current_outreach_run_file": null,
+  "status": "send-blocked",
+  "blockReason": "no-op: prior state unchanged",
+  "error": "No-op/abort: this run intentionally skipped duplicate batch generation because prior outreach artifacts already encode the same blocked state for missing prospector and sender path.",
+  "consent": {
+    "outreach_opt_in": false,
+    "lead_outreach_opt_in": false
+  },
+  "op": "lead-runner",
+  "sendCapable": false,
+  "sendBlocked": true,
+  "servicesReferenced": [],
+  "counts": {
+    "new_leads_discovered": 0,
+    "system_excluded": 0,
+    "business_domain_ready": 0
+  },
+  "recipients": [],
+  "send_status": "send-blocked",
+  "send_blocked": true,
+  "send_block_reason": "no-op safe abort; prior batch unchanged",
+  "opt_in_consent_flag_present": false,
+  "send_count": 0,
+  "artifacts": {
+    "ready": "lead-crm/outreach_ready_" + null + ".json",
+    "batch": null,
+    "prospector_logs": {
+      "out": "logs/web_prospecting.out",
+      "err": "logs/web_prospecting.err"
+    },
+    "prospector_availability": "missing"
+  }
+}

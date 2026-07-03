@@ -1,0 +1,46 @@
+{
+  "send_results": [
+    {
+      "email": "hello@thecloudbuffer.com",
+      "stdout": "{\n  \"status\": \"sent\",\n  \"id\": \"19f26cebb7b1a288\",\n  \"threadId\": \"19f26cebb7b1a288\"\n}",
+      "stderr": "",
+      "status": "sent"
+    },
+    {
+      "email": "info@docentriccyber.com",
+      "stdout": "{\n  \"status\": \"sent\",\n  \"id\": \"19f26cec515275f2\",\n  \"threadId\": \"19f26cec515275f2\"\n}",
+      "stderr": "",
+      "status": "sent"
+    },
+    {
+      "email": "info@netpixelsystems.com",
+      "stdout": "{\n  \"status\": \"sent\",\n  \"id\": \"19f26cecc050e9eb\",\n  \"threadId\": \"19f26cecc050e9eb\"\n}",
+      "stderr": "",
+      "status": "sent"
+    },
+    {
+      "email": "contact@omnitechcyber.com",
+      "stdout": "{\n  \"status\": \"sent\",\n  \"id\": \"19f26ced4f42adc0\",\n  \"threadId\": \"19f26ced4f42adc0\"\n}",
+      "stderr": "",
+      "status": "sent"
+    },
+    {
+      "email": "sitekit@smartsecurityinfo.com",
+      "stdout": "{\n  \"status\": \"sent\",\n  \"id\": \"19f26cedca200f9d\",\n  \"threadId\": \"19f26cedca200f9d\"\n}",
+      "stderr": "",
+      "status": "sent"
+    },
+    {
+      "email": "support@venezialogisticsllc.com",
+      "stdout": "{\n  \"status\": \"sent\",\n  \"id\": \"19f26cee5b1f53d6\",\n  \"threadId\": \"19f26cee5b1f53d6\"\n}",
+      "stderr": "",
+      "status": "sent"
+    },
+    {
+      "email": "hello@exigenthqllc.com",
+      "stdout": "{\n  \"status\": \"sent\",\n  \"id\": \"19f26ceec1aacfb2\",\n  \"threadId\": \"19f26ceec1aacfb2\"\n}",
+      "stderr": "",
+      "status": "sent"
+    }
+  ]
+}
