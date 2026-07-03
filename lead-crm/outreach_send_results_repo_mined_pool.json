@@ -1,0 +1,66 @@
+{
+  "generatedAt": "2026-07-03T09:53:34.676918+00:00",
+  "send_count": 10,
+  "results": [
+    {
+      "to": "a.pipkin@yahoo.com",
+      "success": true,
+      "message_id": "19f2765bc7c5259d",
+      "thread_id": "19f2765bc7c5259d"
+    },
+    {
+      "to": "adam@reis.nz",
+      "success": true,
+      "message_id": "19f2765c1d61daa4",
+      "thread_id": "19f2765c1d61daa4"
+    },
+    {
+      "to": "aditya@netroy.in",
+      "success": true,
+      "message_id": "19f2765c5d1d2eee",
+      "thread_id": "19f2765c5d1d2eee"
+    },
+    {
+      "to": "admin@1stg.me",
+      "success": true,
+      "message_id": "19f2765c971153f0",
+      "thread_id": "19f2765c971153f0"
+    },
+    {
+      "to": "admin@alexander-wong.com",
+      "success": true,
+      "message_id": "19f2765cdd5170c6",
+      "thread_id": "19f2765cdd5170c6"
+    },
+    {
+      "to": "admin@hk1229.cn",
+      "success": true,
+      "message_id": "19f2765d1537de7c",
+      "thread_id": "19f2765d1537de7c"
+    },
+    {
+      "to": "admin@zensh.com",
+      "success": true,
+      "message_id": "19f2765d57d6d38e",
+      "thread_id": "19f2765d57d6d38e"
+    },
+    {
+      "to": "ajhoolachan21@gmail.com",
+      "success": true,
+      "message_id": "19f2765d6914f19b",
+      "thread_id": "19f2765d6914f19b"
+    },
+    {
+      "to": "alangpierce@gmail.com",
+      "success": true,
+      "message_id": "19f2765dd065404c",
+      "thread_id": "19f2765dd065404c"
+    },
+    {
+      "to": "alaric.holloway@gmail.com",
+      "success": true,
+      "message_id": "19f2765e1a913726",
+      "thread_id": "19f2765e1a913726"
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "generatedAt": "2026-07-03T09:52:52.875712+00:00",
+  "source": "repo_json_mined_contacts",
+  "counts": {
+    "business_domain_ready": 10
+  },
+  "recipients": [
+    {
+      "name": "A",
+      "email": "a.pipkin@yahoo.com",
+      "website": "https://yahoo.com",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "yahoo \u2014 managed IT and security implementation support",
+      "body": "Hi A,\n\nI came across a.pipkin@yahoo.com while prospecting for IT partners and see fit with managed IT, endpoint security, identity and access management, cloud migration, logging/archive, API integration, incident management, secrets management, and support automation.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:52:52.875469+00:00"
+    },
+    {
+      "name": "Adam",
+      "email": "adam@reis.nz",
+      "website": "https://reis.nz",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "reis \u2014 managed IT and security implementation support",
+      "body": "Hi Adam,\n\nI came across adam@reis.nz while prospecting for IT partners and see fit with managed IT, endpoint security, identity and access management, cloud migration, logging/archive, API integration, incident management, secrets management, and support automation.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:52:52.875530+00:00"
+    },
+    {
+      "name": "Aditya",
+      "email": "aditya@netroy.in",
+      "website": "https://netroy.in",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "netroy \u2014 managed IT and security implementation support",
+      "body": "Hi Aditya,\n\nI came across aditya@netroy.in while prospecting for IT partners and see fit with managed IT, endpoint security, identity and access management, cloud migration, logging/archive, API integration, incident management, secrets management, and support automation.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:52:52.875547+00:00"
+    },
+    {
+      "name": "Admin",
+      "email": "admin@1stg.me",
+      "website": "https://1stg.me",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "1stg \u2014 managed IT and security implementation support",
+      "body": "Hi Admin,\n\nI came across admin@1stg.me while prospecting for IT partners and see fit with managed IT, endpoint security, identity and access management, cloud migration, logging/archive, API integration, incident management, secrets management, and support automation.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:52:52.875561+00:00"
+    },
+    {
+      "name": "Admin",
+      "email": "admin@alexander-wong.com",
+      "website": "https://alexander-wong.com",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "alexander-wong \u2014 managed IT and security implementation support",
+      "body": "Hi Admin,\n\nI came across admin@alexander-wong.com while prospecting for IT partners and see fit with managed IT, endpoint security, identity and access management, cloud migration, logging/archive, API integration, incident management, secrets management, and support automation.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:52:52.875592+00:00"
+    },
+    {
+      "name": "Admin",
+      "email": "admin@hk1229.cn",
+      "website": "https://hk1229.cn",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "hk1229 \u2014 managed IT and security implementation support",
+      "body": "Hi Admin,\n\nI came across admin@hk1229.cn while prospecting for IT partners and see fit with managed IT, endpoint security, identity and access management, cloud migration, logging/archive, API integration, incident management, secrets management, and support automation.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:52:52.875606+00:00"
+    },
+    {
+      "name": "Admin",
+      "email": "admin@zensh.com",
+      "website": "https://zensh.com",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "zensh \u2014 managed IT and security implementation support",
+      "body": "Hi Admin,\n\nI came across admin@zensh.com while prospecting for IT partners and see fit with managed IT, endpoint security, identity and access management, cloud migration, logging/archive, API integration, incident management, secrets management, and support automation.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:52:52.875619+00:00"
+    },
+    {
+      "name": "Ajhoolachan21",
+      "email": "ajhoolachan21@gmail.com",
+      "website": "https://gmail.com",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "gmail \u2014 managed IT and security implementation support",
+      "body": "Hi Ajhoolachan21,\n\nI came across ajhoolachan21@gmail.com while prospecting for IT partners and see fit with managed IT, endpoint security, identity and access management, cloud migration, logging/archive, API integration, incident management, secrets management, and support automation.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:52:52.875631+00:00"
+    },
+    {
+      "name": "Alangpierce",
+      "email": "alangpierce@gmail.com",
+      "website": "https://gmail.com",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "gmail \u2014 managed IT and security implementation support",
+      "body": "Hi Alangpierce,\n\nI came across alangpierce@gmail.com while prospecting for IT partners and see fit with managed IT, endpoint security, identity and access management, cloud migration, logging/archive, API integration, incident management, secrets management, and support automation.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:52:52.875644+00:00"
+    },
+    {
+      "name": "Alaric",
+      "email": "alaric.holloway@gmail.com",
+      "website": "https://gmail.com",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "gmail \u2014 managed IT and security implementation support",
+      "body": "Hi Alaric,\n\nI came across alaric.holloway@gmail.com while prospecting for IT partners and see fit with managed IT, endpoint security, identity and access management, cloud migration, logging/archive, API integration, incident management, secrets management, and support automation.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:52:52.875659+00:00"
+    }
+  ]
+}
