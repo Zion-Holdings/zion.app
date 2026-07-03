@@ -47,8 +47,9 @@ export async function generateStaticParams() {
   return Object.keys(toolData).map(id => ({ toolId: id }));
 }
 
-export default function ToolPage({ params }: { params: { toolId: string } }) {
-  const tool = toolData[params.toolId];
+export default async function ToolPage({ params }: { params: Promise<{ toolId: string }> }) {
+  const { toolId } = await params;
+  const tool = toolData[toolId];
   
   if (!tool) {
     return (

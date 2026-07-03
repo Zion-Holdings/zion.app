@@ -1,8 +1,9 @@
 {
   "name": "zion-tech-group",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "license": "ISC",
+  "type": "module",
+  "packageManager": "npm@10.9.8",
   "scripts": {
     "dev": "next dev",
     "build": "next build --webpack",
@@ -12,9 +13,10 @@
     "lint:check": "next lint --max-warnings=0",
     "type-check": "tsc --noEmit",
     "wrap": "bash scripts/error-wrapper.sh",
-    "postbuild": "next-sitemap --config next-sitemap.config.cjs",
-    "generate-sitemap": "next-sitemap --config next-sitemap.config.cjs",
+    "postbuild": "node scripts/generate_service_index.cjs && node scripts/generate-sitemap-feed.cjs && node scripts/checks/build-and-verify.cjs",
+    "generate-sitemap": "node scripts/generate-sitemap-feed.cjs",
     "postdeploy": "npm run generate-sitemap",
+    "deploy:contents": "node scripts/deploy-gh-pages-contents.cjs",
     "deploy:status:generate": "node scripts/generate-deploy-status.js",
     "automation:preflight": "node scripts/checks/automation-preflight-check.cjs",
     "deploy:watchdog": "node scripts/checks/deploy-watchdog-check.cjs",
@@ -25,7 +27,8 @@
     "routes:promotions:check": "echo 'routes promotions ok'",
     "test": "jest --passWithNoTests",
     "test:ci": "jest --ci --coverage --watchAll=false --passWithNoTests",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "health:check": "node scripts/automation/workspace-health-check.cjs"
   },
   "dependencies": {
     "@sendgrid/mail": "^8.1.6",
@@ -69,6 +72,5 @@
     "typescript": "^6.0.3",
     "web-vitals": "^5.2.0",
     "yargs": "^18.0.0"
-  },
-  "type": "module"
+  }
 }

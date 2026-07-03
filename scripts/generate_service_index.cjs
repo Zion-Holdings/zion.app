@@ -103,9 +103,10 @@ function main() {
   }
   console.log(`Phase 2: built service dirs — ${svcDirs.length}`);
 
-  // ── Phase 3: Build complete index ──
+  // ── Phase 3: Build complete index ─
   const allServices = [];
   const seen = new Set();
+  const skipHtml = Object.keys(jsonMap).length > 1200;
 
   // 3a. JSON-first: services in jsonMap
   let fromJson = 0;
@@ -131,33 +132,38 @@ function main() {
 
   // 3b. HTML supplement: services with dirs not yet added
   let fromHtml = 0;
-  let htmlErrors = 0;
-  for (const sid of svcDirs) {
-    if (seen.has(sid)) continue;
-    const htmlPath = path.join(SVC_DIR, sid, 'index.html');
-    let title = '', desc = '';
-    try {
-      const html = fs.readFileSync(htmlPath, 'utf8');
-      title = extractTitleFromHtml(html);
-      desc  = extractDescFromHtml(html);
-    } catch(e) { htmlErrors++; }
+  if (!skipHtml) {
+    let htmlErrors = 0;
+    for (const sid of svcDirs) {
+      if (seen.has(sid)) continue;
+      const htmlPath = path.join(SVC_DIR, sid, 'index.html');
+      let title = '', desc = '';
+      try {
+        const html = fs.readFileSync(htmlPath, 'utf8');
+        title = extractTitleFromHtml(html);
+        desc  = extractDescFromHtml(html);
+      } catch(e) { htmlErrors++; }
 
-    allServices.push({
-      id:         sid,
-      title:      title || sid.split('-').map(capitalize).join(' '),
-      description: desc || `Advanced ${sid.replace(/-/g,' ')} service by Zion Tech Group.`,
-      category:   inferCategory(sid),
-      basic:      '',
-      pro:        '',
-      enterprise: '',
-      popular:    false,
-      features:   extractFeaturesFromHtml(sid),
-      benefits:   [],
-      href:       `/services/${sid}`,
-      source:     'html',
-    });
-    seen.add(sid);
-    fromHtml++;
+      allServices.push({
+        id:         sid,
+        title:      title || sid.replace(/-/g,' '),
+        description: desc || `Advanced ${sid.replace(/-/g,' ')} service by Zion Tech Group.`,
+        category:   inferCategory(sid),
+        basic:      '',
+        pro:        '',
+        enterprise: '',
+        popular:    false,
+        features:   extractFeaturesFromHtml(sid),
+        benefits:   [],
+        href:       `/services/${sid}`,
+        source:     'html',
+      });
+      seen.add(sid);
+      fromHtml++;
+    }
+    console.log(`Phase 3b: HTML supplement done (errors: ${htmlErrors})`);
+  } else {
+    console.log('Phase 3b: HTML supplement skipped for speed');
   }
 
   console.log(`Phase 3: built → ${allServices.length} services (json:${fromJson}, html:${fromHtml})`);
@@ -167,6 +173,7 @@ function main() {
   for (const s of allServices) byCat[s.category] = (byCat[s.category] || 0) + 1;
 
   // ── Phase 5: Write index ──
+  let htmlErrors = 0;
   const index = {
     generated:  new Date().toISOString(),
     count:      allServices.length,
@@ -179,7 +186,7 @@ function main() {
     fs.writeFileSync(OUT_FILE, JSON.stringify(index, null, 2));
     console.log(`\nservice-index.json: ${index.count} services → ${OUT_FILE}`);
     console.log(`Categories: ${JSON.stringify(byCat)}`);
-    console.log(`HTML read errors: ${htmlErrors}`);
+    if (!skipHtml) console.log(`HTML read errors: ${htmlErrors}`);
   } catch(e) {
     console.error('FATAL writing output:', e.message);
     process.exit(1);

@@ -24,44 +24,35 @@ function collectLeafPages() {
     pages.push({ url: `${SITE_URL}/`, lastmod: fs.statSync(homeHtml).mtime });
   }
 
-  // 2) Known top-level pages (dirs with index.html)
-  const topDirs = ['ai', 'ai-services', 'api', 'configurator', 'contact', 'faq',
-                   'industry-solutions', 'portal', 'pricing', 'pricing-calculator',
-                   'privacy', 'products', 'proposal-generator', 'proposals',
-                   'search', 'service-comparison', 'services-explorer', 'solutions',
-                   'status', 'terms', 'testimonials', 'tools',
-                   'zion-ai-compliance-checker', 'zion-ai-vendor-manager'];
-
-  for (const d of topDirs) {
-    const f = path.join(outDir, d, 'index.html');
-    if (fs.existsSync(f)) {
-      pages.push({ url: `${SITE_URL}/${d}/`, lastmod: fs.statSync(f).mtime });
-    }
+  // 2) Known top-level pages (index.html)
+  const topDirs = new Set([
+    '5g-solutions','about','academy','agents','agents-monitoring','ai',
+    'ai-services','api','blockchain-services','blockchain-solutions','blog',
+    'careers','case-studies','client-portal','cloud-infrastructure',
+    'cloud-services','compliance-automation','community','contact',
+    'cookies','docs','ecommerce','education','energy','faq','finance',
+    'government','healthcare','insurance','logistics','manufacturing',
+    'media','pricing','pricing-calculator','portal','privacy','products',
+    'proposal-generator','proposals','public-sector','status','terms',
+    'testimonials','tools','training','transportation','utilities'
+  ]);
+  const topFiles = ['index.html','404.html'];
+  for (const f of topFiles) {
+    const p = path.join(outDir, f);
+    if (fs.existsSync(p)) pages.push({ url: `${SITE_URL}/${f === 'index.html' ? '' : f.replace(/\.html$/, '')}`, lastmod: fs.statSync(p).mtime });
+  }
+  for (const entry of fs.readdirSync(outDir, { withFileTypes: true })) {
+    if (!entry.isDirectory()) continue;
+    const idx = path.join(outDir, entry.name, 'index.html');
+    if (fs.existsSync(idx)) pages.push({ url: `${SITE_URL}/${entry.name}/`, lastmod: fs.statSync(idx).mtime });
   }
 
-  // 2a-1) Dynamic ai/* sub-pages (app/ai/* → out/ai/*/index.html)
-  const aiDir = path.join(outDir, 'ai');
-  if (fs.existsSync(aiDir)) {
-    for (const entry of fs.readdirSync(aiDir, { withFileTypes: true })) {
-      if (!entry.isDirectory()) continue;
-      const f = path.join(aiDir, entry.name, 'index.html');
-      if (fs.existsSync(f)) {
-        pages.push({ url: `${SITE_URL}/ai/${entry.name}/`, lastmod: fs.statSync(f).mtime });
-      }
-    }
-  }
-
-  // 2a) Dynamic tools/* sub-pages (app/tools/* → out/tools/*/index.html)
-  const toolsDir = path.join(outDir, 'tools');
-  if (fs.existsSync(toolsDir)) {
-    for (const entry of fs.readdirSync(toolsDir, { withFileTypes: true })) {
-      if (!entry.isDirectory()) continue;
-      const f = path.join(toolsDir, entry.name, 'index.html');
-      if (fs.existsSync(f)) {
-        pages.push({ url: `${SITE_URL}/tools/${entry.name}/`, lastmod: fs.statSync(f).mtime });
-      }
-    }
-  }
+  // 2a) Dynamic ai/* sub-pages and solutions/* sub-pages
+  const walkDirs = [
+    { dir: path.join(outDir, 'ai'), prefix: 'ai' },
+    { dir: path.join(outDir, 'solutions'), prefix: 'solutions' },
+    { dir: path.join(outDir, 'tools'), prefix: 'tools' }
+  ];
 
   // 3) Service pages: out/services/<id>/index.html
   const svcDir = path.join(outDir, 'services');
@@ -107,6 +98,19 @@ function collectLeafPages() {
       const f = path.join(blogDir, entry.name, 'index.html');
       if (!fs.existsSync(f)) continue;
       pages.push({ url: `${SITE_URL}/blog/${entry.name}/`, lastmod: fs.statSync(f).mtime });
+    }
+  }
+
+  for (const wd of walkDirs) {
+    const base = wd.dir;
+    if (!fs.existsSync(base)) continue;
+    for (const entry of fs.readdirSync(base, { withFileTypes: true })) {
+      if (!entry.isDirectory()) continue;
+      const file = path.join(base, entry.name, 'index.html');
+      const meta = path.join(base, entry.name, 'index.txt');
+      const last = fs.existsSync(file) ? fs.statSync(file).mtime : fs.existsSync(meta) ? fs.statSync(meta).mtime : null;
+      if (!last) continue;
+      pages.push({ url: `${SITE_URL}/${wd.prefix}/${entry.name}/`, lastmod: last });
     }
   }
 
@@ -215,7 +219,7 @@ function main() {
   const idxFile = path.join(outDir, 'service-index.json');
   let idx = {};
   try { idx = JSON.parse(fs.readFileSync(idxFile, 'utf8')); }
-  catch (e) { console.error('cannot read service-index.json:', e.message); process.exit(1); }
+  catch (e) { console.warn('service-index.json missing, feed will be skipped:', e.message); }
 
   const allServices = idx.services || [];
   console.log(`services loaded: ${allServices.length}`);

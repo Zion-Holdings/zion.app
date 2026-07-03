@@ -1,14 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  outputFileTracingRoot: process.cwd(),
   basePath: '',
   trailingSlash: true,
-  images: {
-    unoptimized: true,
-  },
   compress: true,
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
+  images: {
+    unoptimized: true,
+    remotePatterns: [{ protocol: 'https', hostname: '**' }],
+  },
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -18,6 +20,7 @@ const nextConfig = {
   experimental: {
     optimizePackageImports: ['lucide-react'],
   },
+  generateBuildId: async () => 'zion-tech-group-v1',
 };
 
 export default nextConfig;

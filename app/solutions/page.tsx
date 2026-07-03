@@ -26,7 +26,7 @@ export default function SolutionsPage() {
         Click any industry to see challenges we solve, our specific solutions, and how we can help.
       </p>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        {industries.map((ind) => (
+        {(industries).map((ind) => (
           <Link key={ind.name} href="/industry-solutions/" className="glass-card">
             <h3 className="font-semibold text-white mb-2">{ind.name}</h3>
             <p className="text-slate-400 text-sm">{ind.desc}</p>
