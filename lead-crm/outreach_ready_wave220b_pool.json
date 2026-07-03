@@ -1,0 +1,349 @@
+{
+  "generatedAt": "2026-07-03T08:33:20.713244+00:00",
+  "source": "local_expansion_wave220b",
+  "counts": {
+    "business_domain_ready": 20
+  },
+  "recipients": [
+    {
+      "name": "Apexor Solutions",
+      "email": "hello@apexorsolutions.com",
+      "website": "https://apexorsolutions.com",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "Apexor Solutions \u2014 managed IT and security services worth comparing",
+      "body": "Hi Apexor,\n\nI came across Apexor Solutions and noticed fit with managed IT, endpoint security, identity/access management, cloud migration, logging/archive, API integration, incident management, and secrets management.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:33:20.712921+00:00"
+    },
+    {
+      "name": "BlueMesh Support",
+      "email": "support@bluemesh.io",
+      "website": "https://bluemesh.io",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "BlueMesh Support \u2014 managed IT and security services worth comparing",
+      "body": "Hi BlueMesh,\n\nI came across BlueMesh Support and noticed fit with managed IT, endpoint security, identity/access management, cloud migration, logging/archive, API integration, incident management, and secrets management.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:33:20.712972+00:00"
+    },
+    {
+      "name": "CorePath IT",
+      "email": "info@corepathit.com",
+      "website": "https://corepathit.com",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "CorePath IT \u2014 managed IT and security services worth comparing",
+      "body": "Hi CorePath,\n\nI came across CorePath IT and noticed fit with managed IT, endpoint security, identity/access management, cloud migration, logging/archive, API integration, incident management, and secrets management.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:33:20.712987+00:00"
+    },
+    {
+      "name": "DataVault Services",
+      "email": "ops@datavaultservices.io",
+      "website": "https://datavaultservices.io",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "DataVault Services \u2014 managed IT and security services worth comparing",
+      "body": "Hi DataVault,\n\nI came across DataVault Services and noticed fit with managed IT, endpoint security, identity/access management, cloud migration, logging/archive, API integration, incident management, and secrets management.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:33:20.713000+00:00"
+    },
+    {
+      "name": "Evergreen MSP",
+      "email": "contact@evergreenmsp.com",
+      "website": "https://evergreenmsp.com",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "Evergreen MSP \u2014 managed IT and security services worth comparing",
+      "body": "Hi Evergreen,\n\nI came across Evergreen MSP and noticed fit with managed IT, endpoint security, identity/access management, cloud migration, logging/archive, API integration, incident management, and secrets management.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:33:20.713010+00:00"
+    },
+    {
+      "name": "Forgewave",
+      "email": "hello@forgewave.co",
+      "website": "https://forgewave.co",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "Forgewave \u2014 managed IT and security services worth comparing",
+      "body": "Hi Forgewave,\n\nI came across Forgewave and noticed fit with managed IT, endpoint security, identity/access management, cloud migration, logging/archive, API integration, incident management, and secrets management.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:33:20.713022+00:00"
+    },
+    {
+      "name": "Gridpoint Digital",
+      "email": "info@gridpointdigital.io",
+      "website": "https://gridpointdigital.io",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "Gridpoint Digital \u2014 managed IT and security services worth comparing",
+      "body": "Hi Gridpoint,\n\nI came across Gridpoint Digital and noticed fit with managed IT, endpoint security, identity/access management, cloud migration, logging/archive, API integration, incident management, and secrets management.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:33:20.713033+00:00"
+    },
+    {
+      "name": "Helix North",
+      "email": "ops@helixnorth.com",
+      "website": "https://helixnorth.com",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "Helix North \u2014 managed IT and security services worth comparing",
+      "body": "Hi Helix,\n\nI came across Helix North and noticed fit with managed IT, endpoint security, identity/access management, cloud migration, logging/archive, API integration, incident management, and secrets management.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:33:20.713043+00:00"
+    },
+    {
+      "name": "Ironline Security",
+      "email": "contact@ironlinesecurity.io",
+      "website": "https://ironlinesecurity.io",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "Ironline Security \u2014 managed IT and security services worth comparing",
+      "body": "Hi Ironline,\n\nI came across Ironline Security and noticed fit with managed IT, endpoint security, identity/access management, cloud migration, logging/archive, API integration, incident management, and secrets management.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:33:20.713054+00:00"
+    },
+    {
+      "name": "Junction Stack",
+      "email": "devops@junctionstack.co",
+      "website": "https://junctionstack.co",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "Junction Stack \u2014 managed IT and security services worth comparing",
+      "body": "Hi Junction,\n\nI came across Junction Stack and noticed fit with managed IT, endpoint security, identity/access management, cloud migration, logging/archive, API integration, incident management, and secrets management.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:33:20.713065+00:00"
+    },
+    {
+      "name": "Keystone Ops",
+      "email": "admin@keystoneops.io",
+      "website": "https://keystoneops.io",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "Keystone Ops \u2014 managed IT and security services worth comparing",
+      "body": "Hi Keystone,\n\nI came across Keystone Ops and noticed fit with managed IT, endpoint security, identity/access management, cloud migration, logging/archive, API integration, incident management, and secrets management.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:33:20.713075+00:00"
+    },
+    {
+      "name": "Lumenwave",
+      "email": "hello@lumenwave.com",
+      "website": "https://lumenwave.com",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "Lumenwave \u2014 managed IT and security services worth comparing",
+      "body": "Hi Lumenwave,\n\nI came across Lumenwave and noticed fit with managed IT, endpoint security, identity/access management, cloud migration, logging/archive, API integration, incident management, and secrets management.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:33:20.713085+00:00"
+    },
+    {
+      "name": "Meridian Vault",
+      "email": "data@meridianvault.io",
+      "website": "https://meridianvault.io",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "Meridian Vault \u2014 managed IT and security services worth comparing",
+      "body": "Hi Meridian,\n\nI came across Meridian Vault and noticed fit with managed IT, endpoint security, identity/access management, cloud migration, logging/archive, API integration, incident management, and secrets management.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:33:20.713095+00:00"
+    },
+    {
+      "name": "Northspan Networks",
+      "email": "sales@northspan.co",
+      "website": "https://northspan.co",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "Northspan Networks \u2014 managed IT and security services worth comparing",
+      "body": "Hi Northspan,\n\nI came across Northspan Networks and noticed fit with managed IT, endpoint security, identity/access management, cloud migration, logging/archive, API integration, incident management, and secrets management.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:33:20.713105+00:00"
+    },
+    {
+      "name": "Openroute Support",
+      "email": "info@openroutesupport.com",
+      "website": "https://openroutesupport.com",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "Openroute Support \u2014 managed IT and security services worth comparing",
+      "body": "Hi Openroute,\n\nI came across Openroute Support and noticed fit with managed IT, endpoint security, identity/access management, cloud migration, logging/archive, API integration, incident management, and secrets management.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:33:20.713115+00:00"
+    },
+    {
+      "name": "Pinnacle Cloud",
+      "email": "contact@pinnaclecloud.io",
+      "website": "https://pinnaclecloud.io",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "Pinnacle Cloud \u2014 managed IT and security services worth comparing",
+      "body": "Hi Pinnacle,\n\nI came across Pinnacle Cloud and noticed fit with managed IT, endpoint security, identity/access management, cloud migration, logging/archive, API integration, incident management, and secrets management.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:33:20.713125+00:00"
+    },
+    {
+      "name": "Qualis IT",
+      "email": "hello@qualisit.co",
+      "website": "https://qualisit.co",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "Qualis IT \u2014 managed IT and security services worth comparing",
+      "body": "Hi Qualis,\n\nI came across Qualis IT and noticed fit with managed IT, endpoint security, identity/access management, cloud migration, logging/archive, API integration, incident management, and secrets management.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:33:20.713135+00:00"
+    },
+    {
+      "name": "Redpoint MSP",
+      "email": "admin@redpointmsp.com",
+      "website": "https://redpointmsp.com",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "Redpoint MSP \u2014 managed IT and security services worth comparing",
+      "body": "Hi Redpoint,\n\nI came across Redpoint MSP and noticed fit with managed IT, endpoint security, identity/access management, cloud migration, logging/archive, API integration, incident management, and secrets management.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:33:20.713166+00:00"
+    },
+    {
+      "name": "Summit Methods",
+      "email": "info@summitmethods.io",
+      "website": "https://summitmethods.io",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "Summit Methods \u2014 managed IT and security services worth comparing",
+      "body": "Hi Summit,\n\nI came across Summit Methods and noticed fit with managed IT, endpoint security, identity/access management, cloud migration, logging/archive, API integration, incident management, and secrets management.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:33:20.713181+00:00"
+    },
+    {
+      "name": "Tier1 Ops",
+      "email": "ops@tier1ops.com",
+      "website": "https://tier1ops.com",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "Tier1 Ops \u2014 managed IT and security services worth comparing",
+      "body": "Hi Tier1,\n\nI came across Tier1 Ops and noticed fit with managed IT, endpoint security, identity/access management, cloud migration, logging/archive, API integration, incident management, and secrets management.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:33:20.713192+00:00"
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "generatedAt": "2026-07-03T08:34:00.785134+00:00",
+  "send_count": 20,
+  "results": [
+    {
+      "to": "hello@apexorsolutions.com",
+      "success": true,
+      "message_id": "19f271ca15b7e449",
+      "thread_id": "19f271ca15b7e449"
+    },
+    {
+      "to": "support@bluemesh.io",
+      "success": true,
+      "message_id": "19f271ca2c1c4d90",
+      "thread_id": "19f271ca2c1c4d90"
+    },
+    {
+      "to": "info@corepathit.com",
+      "success": true,
+      "message_id": "19f271ca7f80e0df",
+      "thread_id": "19f271ca7f80e0df"
+    },
+    {
+      "to": "ops@datavaultservices.io",
+      "success": true,
+      "message_id": "19f271caaf24117e",
+      "thread_id": "19f271caaf24117e"
+    },
+    {
+      "to": "contact@evergreenmsp.com",
+      "success": true,
+      "message_id": "19f271cae684e783",
+      "thread_id": "19f271cae684e783"
+    },
+    {
+      "to": "hello@forgewave.co",
+      "success": true,
+      "message_id": "19f271cb020fb042",
+      "thread_id": "19f271cb020fb042"
+    },
+    {
+      "to": "info@gridpointdigital.io",
+      "success": true,
+      "message_id": "19f271cb6980a6de",
+      "thread_id": "19f271cb6980a6de"
+    },
+    {
+      "to": "ops@helixnorth.com",
+      "success": true,
+      "message_id": "19f271cbbbde47e8",
+      "thread_id": "19f271cbbbde47e8"
+    },
+    {
+      "to": "contact@ironlinesecurity.io",
+      "success": true,
+      "message_id": "19f271cc1583b2a3",
+      "thread_id": "19f271cc1583b2a3"
+    },
+    {
+      "to": "devops@junctionstack.co",
+      "success": true,
+      "message_id": "19f271cc74668914",
+      "thread_id": "19f271cc74668914"
+    },
+    {
+      "to": "admin@keystoneops.io",
+      "success": true,
+      "message_id": "19f271ccb7c7835d",
+      "thread_id": "19f271ccb7c7835d"
+    },
+    {
+      "to": "hello@lumenwave.com",
+      "success": true,
+      "message_id": "19f271cceda70cc0",
+      "thread_id": "19f271cceda70cc0"
+    },
+    {
+      "to": "data@meridianvault.io",
+      "success": true,
+      "message_id": "19f271cd27b71be9",
+      "thread_id": "19f271cd27b71be9"
+    },
+    {
+      "to": "sales@northspan.co",
+      "success": true,
+      "message_id": "19f271cd8dde3c18",
+      "thread_id": "19f271cd8dde3c18"
+    },
+    {
+      "to": "info@openroutesupport.com",
+      "success": true,
+      "message_id": "19f271ce3b21d9a7",
+      "thread_id": "19f271ce3b21d9a7"
+    },
+    {
+      "to": "contact@pinnaclecloud.io",
+      "success": true,
+      "message_id": "19f271ce8739f295",
+      "thread_id": "19f271ce8739f295"
+    },
+    {
+      "to": "hello@qualisit.co",
+      "success": true,
+      "message_id": "19f271cecc458e04",
+      "thread_id": "19f271cecc458e04"
+    },
+    {
+      "to": "admin@redpointmsp.com",
+      "success": true,
+      "message_id": "19f271cf2757fb24",
+      "thread_id": "19f271cf2757fb24"
+    },
+    {
+      "to": "info@summitmethods.io",
+      "success": true,
+      "message_id": "19f271cf9b19d387",
+      "thread_id": "19f271cf9b19d387"
+    },
+    {
+      "to": "ops@tier1ops.com",
+      "success": true,
+      "message_id": "19f271d00f0f7cf6",
+      "thread_id": "19f271d00f0f7cf6"
+    }
+  ]
+}

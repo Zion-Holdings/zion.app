@@ -1235,5 +1235,65 @@
     "title": "Hybrid Event Platform Support",
     "category": "it",
     "industry": "Events"
+  },
+  {
+    "id": "it-secrets-management",
+    "title": "Secrets and Credential Management",
+    "category": "security",
+    "industry": "Infrastructure"
+  },
+  {
+    "id": "it-incident-management",
+    "title": "Incident Management and On-Call Operations",
+    "category": "it",
+    "industry": "Operations"
+  },
+  {
+    "id": "it-logging-archive",
+    "title": "Logging and Long-Term Archive",
+    "category": "data",
+    "industry": "Observability"
+  },
+  {
+    "id": "it-desktop-support",
+    "title": "Desktop Support and Workstation Services",
+    "category": "it",
+    "industry": "Support"
+  },
+  {
+    "id": "it-application-support",
+    "title": "Application Support and Maintenance",
+    "category": "it",
+    "industry": "Enterprise Apps"
+  },
+  {
+    "id": "it-api-integration",
+    "title": "API Integration and Middleware",
+    "category": "it",
+    "industry": "Integration"
+  },
+  {
+    "id": "it-data-resilience",
+    "title": "Data Resilience and Integrity",
+    "category": "data",
+    "industry": "Storage"
+  },
+  {
+    "id": "it-accessibility-compliance",
+    "title": "Accessibility and Inclusive Design Support",
+    "category": "it",
+    "industry": "Compliance"
+  },
+  {
+    "id": "it-queue-automation",
+    "title": "Queue Automation and Load Shedding",
+    "category": "automation",
+    "industry": "Infrastructure"
+  },
+  {
+    "id": "it-cloud-migration",
+    "title": "Cloud Migration and App Modernization",
+    "category": "cloud",
+    "industry": "Cloud Computing"
   }
 ]
