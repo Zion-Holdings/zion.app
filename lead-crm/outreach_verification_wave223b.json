@@ -1,0 +1,165 @@
+{
+  "generatedAt": "2026-07-03T09:11:57.748623+00:00",
+  "messages": [
+    {
+      "id": "19f273ec5592014f",
+      "subject": "VaultLine Security \u00c3\u00a2\u00c2\u20ac\u00c2\u201d managed operations and security implementation",
+      "to": "info@vaultlinesecurity.com",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f273ec964c6a9f",
+      "subject": "BridgeRoute IT \u00c3\u00a2\u00c2\u20ac\u00c2\u201d managed operations and security implementation",
+      "to": "hello@bridgerouteit.com",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f273ecb03e1dc4",
+      "subject": "Pilot desk Support \u00c3\u00a2\u00c2\u20ac\u00c2\u201d managed operations and security implementation",
+      "to": "support@pilotdesk.io",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f273ecee15dfac",
+      "subject": "NorthHarbor Digital \u00c3\u00a2\u00c2\u20ac\u00c2\u201d managed operations and security implementation",
+      "to": "ops@northharbor.io",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f273ed56ce81f7",
+      "subject": "OptiCore MSP \u00c3\u00a2\u00c2\u20ac\u00c2\u201d managed operations and security implementation",
+      "to": "contact@opticoremsp.com",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f273ed8352be0f",
+      "subject": "IronGate Networks \u00c3\u00a2\u00c2\u20ac\u00c2\u201d managed operations and security implementation",
+      "to": "info@irongatenetworks.io",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f273ede1dff800",
+      "subject": "Summit Stack Labs \u00c3\u00a2\u00c2\u20ac\u00c2\u201d managed operations and security implementation",
+      "to": "devops@summitstacklabs.com",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f273ee314a3aa6",
+      "subject": "BlueForge Solutions \u00c3\u00a2\u00c2\u20ac\u00c2\u201d managed operations and security implementation",
+      "to": "hello@blueforge.io",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f273ee7a334c12",
+      "subject": "Coastal Systems \u00c3\u00a2\u00c2\u20ac\u00c2\u201d managed operations and security implementation",
+      "to": "support@coastalsystems.io",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f273eebe21233f",
+      "subject": "ClearPath Digital \u00c3\u00a2\u00c2\u20ac\u00c2\u201d managed operations and security implementation",
+      "to": "contact@clearpathdigital.io",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f273eef63d7082",
+      "subject": "DataKeep Archive \u00c3\u00a2\u00c2\u20ac\u00c2\u201d managed operations and security implementation",
+      "to": "archive@datakeep.io",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f273ef2999fba4",
+      "subject": "EdgeOps Support \u00c3\u00a2\u00c2\u20ac\u00c2\u201d managed operations and security implementation",
+      "to": "info@edgeops.support",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f273ef69bc0141",
+      "subject": "GridPath Cloud \u00c3\u00a2\u00c2\u20ac\u00c2\u201d managed operations and security implementation",
+      "to": "sales@gridpathcloud.io",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f273efa42fca5a",
+      "subject": "HelixDesk Managed \u00c3\u00a2\u00c2\u20ac\u00c2\u201d managed operations and security implementation",
+      "to": "ops@helixdesk.io",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f273eff40894df",
+      "subject": "Keystone MSP \u00c3\u00a2\u00c2\u20ac\u00c2\u201d managed operations and security implementation",
+      "to": "admin@keystonemsp.io",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f273f04fd2dbb4",
+      "subject": "LumenDesk Support \u00c3\u00a2\u00c2\u20ac\u00c2\u201d managed operations and security implementation",
+      "to": "hello@lumendesk.io",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f273f0a1df8de3",
+      "subject": "MeridianDesk IT \u00c3\u00a2\u00c2\u20ac\u00c2\u201d managed operations and security implementation",
+      "to": "info@meridiandesk.io",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f273f0dc1bd570",
+      "subject": "NorthPath Support \u00c3\u00a2\u00c2\u20ac\u00c2\u201d managed operations and security implementation",
+      "to": "support@northpath.support",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f273f16923140d",
+      "subject": "OpenEdge Cloud \u00c3\u00a2\u00c2\u20ac\u00c2\u201d managed operations and security implementation",
+      "to": "hello@openedgecloud.io",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f273f1c23f77e8",
+      "subject": "PinnacleDesk Managed \u00c3\u00a2\u00c2\u20ac\u00c2\u201d managed operations and security implementation",
+      "to": "ops@pinnacledesk.io",
+      "labels": [
+        "SENT"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,294 @@
+{
+  "generatedAt": "2026-07-03T08:49:55.491935+00:00",
+  "source": "local_expansion_wave222",
+  "counts": {
+    "business_domain_ready": 15
+  },
+  "recipients": [
+    {
+      "name": "ApexStack",
+      "email": "hello@apexstack.io",
+      "website": "https://apexstack.io",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support",
+        "it-cloud-migration",
+        "it-api-integration"
+      ],
+      "subject": "ApexStack \u2014 managed IT, security, and cloud implementation support",
+      "body": "Hi ApexStack,\n\nI came across ApexStack and noticed fit with managed IT, endpoint and identity security, cloud migration, API integration, AI ops, logging, secrets management, and support automation.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:49:55.491697+00:00"
+    },
+    {
+      "name": "CoreDesk Support",
+      "email": "contact@coredesk.io",
+      "website": "https://coredesk.io",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support",
+        "it-cloud-migration",
+        "it-api-integration"
+      ],
+      "subject": "CoreDesk Support \u2014 managed IT, security, and cloud implementation support",
+      "body": "Hi CoreDesk,\n\nI came across CoreDesk Support and noticed fit with managed IT, endpoint and identity security, cloud migration, API integration, AI ops, logging, secrets management, and support automation.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:49:55.491748+00:00"
+    },
+    {
+      "name": "DataPulse Analytics",
+      "email": "info@datapulse.co",
+      "website": "https://datapulse.co",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support",
+        "it-cloud-migration",
+        "it-api-integration"
+      ],
+      "subject": "DataPulse Analytics \u2014 managed IT, security, and cloud implementation support",
+      "body": "Hi DataPulse,\n\nI came across DataPulse Analytics and noticed fit with managed IT, endpoint and identity security, cloud migration, API integration, AI ops, logging, secrets management, and support automation.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:49:55.491764+00:00"
+    },
+    {
+      "name": "EdgePath Networks",
+      "email": "sales@edgepath.io",
+      "website": "https://edgepath.io",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support",
+        "it-cloud-migration",
+        "it-api-integration"
+      ],
+      "subject": "EdgePath Networks \u2014 managed IT, security, and cloud implementation support",
+      "body": "Hi EdgePath,\n\nI came across EdgePath Networks and noticed fit with managed IT, endpoint and identity security, cloud migration, API integration, AI ops, logging, secrets management, and support automation.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:49:55.491777+00:00"
+    },
+    {
+      "name": "ForgeStackDev",
+      "email": "hello@forgestack.co",
+      "website": "https://forgestack.co",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support",
+        "it-cloud-migration",
+        "it-api-integration"
+      ],
+      "subject": "ForgeStackDev \u2014 managed IT, security, and cloud implementation support",
+      "body": "Hi ForgeStackDev,\n\nI came across ForgeStackDev and noticed fit with managed IT, endpoint and identity security, cloud migration, API integration, AI ops, logging, secrets management, and support automation.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:49:55.491788+00:00"
+    },
+    {
+      "name": "Gridpoint Digital",
+      "email": "info@gridpoint.co",
+      "website": "https://gridpoint.co",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support",
+        "it-cloud-migration",
+        "it-api-integration"
+      ],
+      "subject": "Gridpoint Digital \u2014 managed IT, security, and cloud implementation support",
+      "body": "Hi Gridpoint,\n\nI came across Gridpoint Digital and noticed fit with managed IT, endpoint and identity security, cloud migration, API integration, AI ops, logging, secrets management, and support automation.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:49:55.491799+00:00"
+    },
+    {
+      "name": "Helix North",
+      "email": "ops@helixnorth.io",
+      "website": "https://helixnorth.io",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support",
+        "it-cloud-migration",
+        "it-api-integration"
+      ],
+      "subject": "Helix North \u2014 managed IT, security, and cloud implementation support",
+      "body": "Hi Helix,\n\nI came across Helix North and noticed fit with managed IT, endpoint and identity security, cloud migration, API integration, AI ops, logging, secrets management, and support automation.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:49:55.491809+00:00"
+    },
+    {
+      "name": "Ironline Security",
+      "email": "contact@ironlinesecurity.co",
+      "website": "https://ironlinesecurity.co",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support",
+        "it-cloud-migration",
+        "it-api-integration"
+      ],
+      "subject": "Ironline Security \u2014 managed IT, security, and cloud implementation support",
+      "body": "Hi Ironline,\n\nI came across Ironline Security and noticed fit with managed IT, endpoint and identity security, cloud migration, API integration, AI ops, logging, secrets management, and support automation.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:49:55.491820+00:00"
+    },
+    {
+      "name": "Junction Stack",
+      "email": "devops@junctionstack.io",
+      "website": "https://junctionstack.io",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support",
+        "it-cloud-migration",
+        "it-api-integration"
+      ],
+      "subject": "Junction Stack \u2014 managed IT, security, and cloud implementation support",
+      "body": "Hi Junction,\n\nI came across Junction Stack and noticed fit with managed IT, endpoint and identity security, cloud migration, API integration, AI ops, logging, secrets management, and support automation.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:49:55.491830+00:00"
+    },
+    {
+      "name": "Keystone Ops",
+      "email": "admin@keystoneops.co",
+      "website": "https://keystoneops.co",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support",
+        "it-cloud-migration",
+        "it-api-integration"
+      ],
+      "subject": "Keystone Ops \u2014 managed IT, security, and cloud implementation support",
+      "body": "Hi Keystone,\n\nI came across Keystone Ops and noticed fit with managed IT, endpoint and identity security, cloud migration, API integration, AI ops, logging, secrets management, and support automation.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:49:55.491840+00:00"
+    },
+    {
+      "name": "Lumenwave",
+      "email": "hello@lumenwave.io",
+      "website": "https://lumenwave.io",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support",
+        "it-cloud-migration",
+        "it-api-integration"
+      ],
+      "subject": "Lumenwave \u2014 managed IT, security, and cloud implementation support",
+      "body": "Hi Lumenwave,\n\nI came across Lumenwave and noticed fit with managed IT, endpoint and identity security, cloud migration, API integration, AI ops, logging, secrets management, and support automation.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:49:55.491851+00:00"
+    },
+    {
+      "name": "Meridian Vault",
+      "email": "data@meridianvault.co",
+      "website": "https://meridianvault.co",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support",
+        "it-cloud-migration",
+        "it-api-integration"
+      ],
+      "subject": "Meridian Vault \u2014 managed IT, security, and cloud implementation support",
+      "body": "Hi Meridian,\n\nI came across Meridian Vault and noticed fit with managed IT, endpoint and identity security, cloud migration, API integration, AI ops, logging, secrets management, and support automation.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:49:55.491861+00:00"
+    },
+    {
+      "name": "Northspan Networks",
+      "email": "sales@northspan.io",
+      "website": "https://northspan.io",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support",
+        "it-cloud-migration",
+        "it-api-integration"
+      ],
+      "subject": "Northspan Networks \u2014 managed IT, security, and cloud implementation support",
+      "body": "Hi Northspan,\n\nI came across Northspan Networks and noticed fit with managed IT, endpoint and identity security, cloud migration, API integration, AI ops, logging, secrets management, and support automation.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:49:55.491871+00:00"
+    },
+    {
+      "name": "Openroute Support",
+      "email": "info@openroutesupport.io",
+      "website": "https://openroutesupport.io",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support",
+        "it-cloud-migration",
+        "it-api-integration"
+      ],
+      "subject": "Openroute Support \u2014 managed IT, security, and cloud implementation support",
+      "body": "Hi Openroute,\n\nI came across Openroute Support and noticed fit with managed IT, endpoint and identity security, cloud migration, API integration, AI ops, logging, secrets management, and support automation.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:49:55.491881+00:00"
+    },
+    {
+      "name": "Pinnacle Cloud",
+      "email": "contact@pinnaclecloud.co",
+      "website": "https://pinnaclecloud.co",
+      "service_ids": [
+        "it",
+        "security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support",
+        "it-cloud-migration",
+        "it-api-integration"
+      ],
+      "subject": "Pinnacle Cloud \u2014 managed IT, security, and cloud implementation support",
+      "body": "Hi Pinnacle,\n\nI came across Pinnacle Cloud and noticed fit with managed IT, endpoint and identity security, cloud migration, API integration, AI ops, logging, secrets management, and support automation.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:49:55.491891+00:00"
+    }
+  ]
+}

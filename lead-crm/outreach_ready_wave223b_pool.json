@@ -1,0 +1,349 @@
+{
+  "generatedAt": "2026-07-03T09:10:31.677845+00:00",
+  "source": "local_expansion_wave223b",
+  "counts": {
+    "business_domain_ready": 20
+  },
+  "recipients": [
+    {
+      "name": "VaultLine Security",
+      "email": "info@vaultlinesecurity.com",
+      "website": "https://vaultlinesecurity.com",
+      "service_ids": [
+        "it-operations",
+        "it-security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "VaultLine Security \u2014 managed operations and security implementation",
+      "body": "Hi VaultLine,\n\nI came across VaultLine Security and noticed possible fit with managed IT, backup/DR, endpoint security, identity and access management, network monitoring, AI ops, patch management, SaaS management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:10:31.677545+00:00"
+    },
+    {
+      "name": "BridgeRoute IT",
+      "email": "hello@bridgerouteit.com",
+      "website": "https://bridgerouteit.com",
+      "service_ids": [
+        "it-operations",
+        "it-security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "BridgeRoute IT \u2014 managed operations and security implementation",
+      "body": "Hi BridgeRoute,\n\nI came across BridgeRoute IT and noticed possible fit with managed IT, backup/DR, endpoint security, identity and access management, network monitoring, AI ops, patch management, SaaS management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:10:31.677592+00:00"
+    },
+    {
+      "name": "Pilot desk Support",
+      "email": "support@pilotdesk.io",
+      "website": "https://pilotdesk.io",
+      "service_ids": [
+        "it-operations",
+        "it-security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "Pilot desk Support \u2014 managed operations and security implementation",
+      "body": "Hi Pilot,\n\nI came across Pilot desk Support and noticed possible fit with managed IT, backup/DR, endpoint security, identity and access management, network monitoring, AI ops, patch management, SaaS management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:10:31.677608+00:00"
+    },
+    {
+      "name": "NorthHarbor Digital",
+      "email": "ops@northharbor.io",
+      "website": "https://northharbor.io",
+      "service_ids": [
+        "it-operations",
+        "it-security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "NorthHarbor Digital \u2014 managed operations and security implementation",
+      "body": "Hi NorthHarbor,\n\nI came across NorthHarbor Digital and noticed possible fit with managed IT, backup/DR, endpoint security, identity and access management, network monitoring, AI ops, patch management, SaaS management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:10:31.677621+00:00"
+    },
+    {
+      "name": "OptiCore MSP",
+      "email": "contact@opticoremsp.com",
+      "website": "https://opticoremsp.com",
+      "service_ids": [
+        "it-operations",
+        "it-security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "OptiCore MSP \u2014 managed operations and security implementation",
+      "body": "Hi OptiCore,\n\nI came across OptiCore MSP and noticed possible fit with managed IT, backup/DR, endpoint security, identity and access management, network monitoring, AI ops, patch management, SaaS management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:10:31.677632+00:00"
+    },
+    {
+      "name": "IronGate Networks",
+      "email": "info@irongatenetworks.io",
+      "website": "https://irongatenetworks.io",
+      "service_ids": [
+        "it-operations",
+        "it-security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "IronGate Networks \u2014 managed operations and security implementation",
+      "body": "Hi IronGate,\n\nI came across IronGate Networks and noticed possible fit with managed IT, backup/DR, endpoint security, identity and access management, network monitoring, AI ops, patch management, SaaS management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:10:31.677643+00:00"
+    },
+    {
+      "name": "Summit Stack Labs",
+      "email": "devops@summitstacklabs.com",
+      "website": "https://summitstacklabs.com",
+      "service_ids": [
+        "it-operations",
+        "it-security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "Summit Stack Labs \u2014 managed operations and security implementation",
+      "body": "Hi Summit,\n\nI came across Summit Stack Labs and noticed possible fit with managed IT, backup/DR, endpoint security, identity and access management, network monitoring, AI ops, patch management, SaaS management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:10:31.677654+00:00"
+    },
+    {
+      "name": "BlueForge Solutions",
+      "email": "hello@blueforge.io",
+      "website": "https://blueforge.io",
+      "service_ids": [
+        "it-operations",
+        "it-security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "BlueForge Solutions \u2014 managed operations and security implementation",
+      "body": "Hi BlueForge,\n\nI came across BlueForge Solutions and noticed possible fit with managed IT, backup/DR, endpoint security, identity and access management, network monitoring, AI ops, patch management, SaaS management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:10:31.677664+00:00"
+    },
+    {
+      "name": "Coastal Systems",
+      "email": "support@coastalsystems.io",
+      "website": "https://coastalsystems.io",
+      "service_ids": [
+        "it-operations",
+        "it-security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "Coastal Systems \u2014 managed operations and security implementation",
+      "body": "Hi Coastal,\n\nI came across Coastal Systems and noticed possible fit with managed IT, backup/DR, endpoint security, identity and access management, network monitoring, AI ops, patch management, SaaS management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:10:31.677675+00:00"
+    },
+    {
+      "name": "ClearPath Digital",
+      "email": "contact@clearpathdigital.io",
+      "website": "https://clearpathdigital.io",
+      "service_ids": [
+        "it-operations",
+        "it-security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "ClearPath Digital \u2014 managed operations and security implementation",
+      "body": "Hi ClearPath,\n\nI came across ClearPath Digital and noticed possible fit with managed IT, backup/DR, endpoint security, identity and access management, network monitoring, AI ops, patch management, SaaS management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:10:31.677685+00:00"
+    },
+    {
+      "name": "DataKeep Archive",
+      "email": "archive@datakeep.io",
+      "website": "https://datakeep.io",
+      "service_ids": [
+        "it-operations",
+        "it-security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "DataKeep Archive \u2014 managed operations and security implementation",
+      "body": "Hi DataKeep,\n\nI came across DataKeep Archive and noticed possible fit with managed IT, backup/DR, endpoint security, identity and access management, network monitoring, AI ops, patch management, SaaS management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:10:31.677695+00:00"
+    },
+    {
+      "name": "EdgeOps Support",
+      "email": "info@edgeops.support",
+      "website": "https://edgeops.support",
+      "service_ids": [
+        "it-operations",
+        "it-security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "EdgeOps Support \u2014 managed operations and security implementation",
+      "body": "Hi EdgeOps,\n\nI came across EdgeOps Support and noticed possible fit with managed IT, backup/DR, endpoint security, identity and access management, network monitoring, AI ops, patch management, SaaS management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:10:31.677705+00:00"
+    },
+    {
+      "name": "GridPath Cloud",
+      "email": "sales@gridpathcloud.io",
+      "website": "https://gridpathcloud.io",
+      "service_ids": [
+        "it-operations",
+        "it-security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "GridPath Cloud \u2014 managed operations and security implementation",
+      "body": "Hi GridPath,\n\nI came across GridPath Cloud and noticed possible fit with managed IT, backup/DR, endpoint security, identity and access management, network monitoring, AI ops, patch management, SaaS management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:10:31.677715+00:00"
+    },
+    {
+      "name": "HelixDesk Managed",
+      "email": "ops@helixdesk.io",
+      "website": "https://helixdesk.io",
+      "service_ids": [
+        "it-operations",
+        "it-security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "HelixDesk Managed \u2014 managed operations and security implementation",
+      "body": "Hi HelixDesk,\n\nI came across HelixDesk Managed and noticed possible fit with managed IT, backup/DR, endpoint security, identity and access management, network monitoring, AI ops, patch management, SaaS management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:10:31.677725+00:00"
+    },
+    {
+      "name": "Keystone MSP",
+      "email": "admin@keystonemsp.io",
+      "website": "https://keystonemsp.io",
+      "service_ids": [
+        "it-operations",
+        "it-security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "Keystone MSP \u2014 managed operations and security implementation",
+      "body": "Hi Keystone,\n\nI came across Keystone MSP and noticed possible fit with managed IT, backup/DR, endpoint security, identity and access management, network monitoring, AI ops, patch management, SaaS management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:10:31.677742+00:00"
+    },
+    {
+      "name": "LumenDesk Support",
+      "email": "hello@lumendesk.io",
+      "website": "https://lumendesk.io",
+      "service_ids": [
+        "it-operations",
+        "it-security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "LumenDesk Support \u2014 managed operations and security implementation",
+      "body": "Hi LumenDesk,\n\nI came across LumenDesk Support and noticed possible fit with managed IT, backup/DR, endpoint security, identity and access management, network monitoring, AI ops, patch management, SaaS management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:10:31.677753+00:00"
+    },
+    {
+      "name": "MeridianDesk IT",
+      "email": "info@meridiandesk.io",
+      "website": "https://meridiandesk.io",
+      "service_ids": [
+        "it-operations",
+        "it-security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "MeridianDesk IT \u2014 managed operations and security implementation",
+      "body": "Hi MeridianDesk,\n\nI came across MeridianDesk IT and noticed possible fit with managed IT, backup/DR, endpoint security, identity and access management, network monitoring, AI ops, patch management, SaaS management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:10:31.677764+00:00"
+    },
+    {
+      "name": "NorthPath Support",
+      "email": "support@northpath.support",
+      "website": "https://northpath.support",
+      "service_ids": [
+        "it-operations",
+        "it-security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "NorthPath Support \u2014 managed operations and security implementation",
+      "body": "Hi NorthPath,\n\nI came across NorthPath Support and noticed possible fit with managed IT, backup/DR, endpoint security, identity and access management, network monitoring, AI ops, patch management, SaaS management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:10:31.677774+00:00"
+    },
+    {
+      "name": "OpenEdge Cloud",
+      "email": "hello@openedgecloud.io",
+      "website": "https://openedgecloud.io",
+      "service_ids": [
+        "it-operations",
+        "it-security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "OpenEdge Cloud \u2014 managed operations and security implementation",
+      "body": "Hi OpenEdge,\n\nI came across OpenEdge Cloud and noticed possible fit with managed IT, backup/DR, endpoint security, identity and access management, network monitoring, AI ops, patch management, SaaS management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:10:31.677784+00:00"
+    },
+    {
+      "name": "PinnacleDesk Managed",
+      "email": "ops@pinnacledesk.io",
+      "website": "https://pinnacledesk.io",
+      "service_ids": [
+        "it-operations",
+        "it-security",
+        "cloud",
+        "data",
+        "automation",
+        "it-support"
+      ],
+      "subject": "PinnacleDesk Managed \u2014 managed operations and security implementation",
+      "body": "Hi PinnacleDesk,\n\nI came across PinnacleDesk Managed and noticed possible fit with managed IT, backup/DR, endpoint security, identity and access management, network monitoring, AI ops, patch management, SaaS management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison focused on implementation support.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:10:31.677794+00:00"
+    }
+  ]
+}

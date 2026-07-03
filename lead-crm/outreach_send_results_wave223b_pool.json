@@ -1,0 +1,126 @@
+{
+  "generatedAt": "2026-07-03T09:11:13.880242+00:00",
+  "send_count": 20,
+  "results": [
+    {
+      "to": "info@vaultlinesecurity.com",
+      "success": true,
+      "message_id": "19f273ec5592014f",
+      "thread_id": "19f273ec5592014f"
+    },
+    {
+      "to": "hello@bridgerouteit.com",
+      "success": true,
+      "message_id": "19f273ec964c6a9f",
+      "thread_id": "19f273ec964c6a9f"
+    },
+    {
+      "to": "support@pilotdesk.io",
+      "success": true,
+      "message_id": "19f273ecb03e1dc4",
+      "thread_id": "19f273ecb03e1dc4"
+    },
+    {
+      "to": "ops@northharbor.io",
+      "success": true,
+      "message_id": "19f273ecee15dfac",
+      "thread_id": "19f273ecee15dfac"
+    },
+    {
+      "to": "contact@opticoremsp.com",
+      "success": true,
+      "message_id": "19f273ed56ce81f7",
+      "thread_id": "19f273ed56ce81f7"
+    },
+    {
+      "to": "info@irongatenetworks.io",
+      "success": true,
+      "message_id": "19f273ed8352be0f",
+      "thread_id": "19f273ed8352be0f"
+    },
+    {
+      "to": "devops@summitstacklabs.com",
+      "success": true,
+      "message_id": "19f273ede1dff800",
+      "thread_id": "19f273ede1dff800"
+    },
+    {
+      "to": "hello@blueforge.io",
+      "success": true,
+      "message_id": "19f273ee314a3aa6",
+      "thread_id": "19f273ee314a3aa6"
+    },
+    {
+      "to": "support@coastalsystems.io",
+      "success": true,
+      "message_id": "19f273ee7a334c12",
+      "thread_id": "19f273ee7a334c12"
+    },
+    {
+      "to": "contact@clearpathdigital.io",
+      "success": true,
+      "message_id": "19f273eebe21233f",
+      "thread_id": "19f273eebe21233f"
+    },
+    {
+      "to": "archive@datakeep.io",
+      "success": true,
+      "message_id": "19f273eef63d7082",
+      "thread_id": "19f273eef63d7082"
+    },
+    {
+      "to": "info@edgeops.support",
+      "success": true,
+      "message_id": "19f273ef2999fba4",
+      "thread_id": "19f273ef2999fba4"
+    },
+    {
+      "to": "sales@gridpathcloud.io",
+      "success": true,
+      "message_id": "19f273ef69bc0141",
+      "thread_id": "19f273ef69bc0141"
+    },
+    {
+      "to": "ops@helixdesk.io",
+      "success": true,
+      "message_id": "19f273efa42fca5a",
+      "thread_id": "19f273efa42fca5a"
+    },
+    {
+      "to": "admin@keystonemsp.io",
+      "success": true,
+      "message_id": "19f273eff40894df",
+      "thread_id": "19f273eff40894df"
+    },
+    {
+      "to": "hello@lumendesk.io",
+      "success": true,
+      "message_id": "19f273f04fd2dbb4",
+      "thread_id": "19f273f04fd2dbb4"
+    },
+    {
+      "to": "info@meridiandesk.io",
+      "success": true,
+      "message_id": "19f273f0a1df8de3",
+      "thread_id": "19f273f0a1df8de3"
+    },
+    {
+      "to": "support@northpath.support",
+      "success": true,
+      "message_id": "19f273f0dc1bd570",
+      "thread_id": "19f273f0dc1bd570"
+    },
+    {
+      "to": "hello@openedgecloud.io",
+      "success": true,
+      "message_id": "19f273f16923140d",
+      "thread_id": "19f273f16923140d"
+    },
+    {
+      "to": "ops@pinnacledesk.io",
+      "success": true,
+      "message_id": "19f273f1c23f77e8",
+      "thread_id": "19f273f1c23f77e8"
+    }
+  ]
+}

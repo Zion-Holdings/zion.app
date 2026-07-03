@@ -1,0 +1,96 @@
+{
+  "generatedAt": "2026-07-03T08:50:29.645614+00:00",
+  "send_count": 15,
+  "results": [
+    {
+      "to": "hello@apexstack.io",
+      "success": true,
+      "message_id": "19f272bda8106840",
+      "thread_id": "19f272bda8106840"
+    },
+    {
+      "to": "contact@coredesk.io",
+      "success": true,
+      "message_id": "19f272bdfc7c1c00",
+      "thread_id": "19f272bdfc7c1c00"
+    },
+    {
+      "to": "info@datapulse.co",
+      "success": true,
+      "message_id": "19f272be0ca723fd",
+      "thread_id": "19f272be0ca723fd"
+    },
+    {
+      "to": "sales@edgepath.io",
+      "success": true,
+      "message_id": "19f272be5baa1d4b",
+      "thread_id": "19f272be5baa1d4b"
+    },
+    {
+      "to": "hello@forgestack.co",
+      "success": true,
+      "message_id": "19f272be88c08741",
+      "thread_id": "19f272be88c08741"
+    },
+    {
+      "to": "info@gridpoint.co",
+      "success": true,
+      "message_id": "19f272bec38be16b",
+      "thread_id": "19f272bec38be16b"
+    },
+    {
+      "to": "ops@helixnorth.io",
+      "success": true,
+      "message_id": "19f272bf3a2abe56",
+      "thread_id": "19f272bf3a2abe56"
+    },
+    {
+      "to": "contact@ironlinesecurity.co",
+      "success": true,
+      "message_id": "19f272bf9cd6da59",
+      "thread_id": "19f272bf9cd6da59"
+    },
+    {
+      "to": "devops@junctionstack.io",
+      "success": true,
+      "message_id": "19f272bffc544a43",
+      "thread_id": "19f272bffc544a43"
+    },
+    {
+      "to": "admin@keystoneops.co",
+      "success": true,
+      "message_id": "19f272c026690ca8",
+      "thread_id": "19f272c026690ca8"
+    },
+    {
+      "to": "hello@lumenwave.io",
+      "success": true,
+      "message_id": "19f272c09668c298",
+      "thread_id": "19f272c09668c298"
+    },
+    {
+      "to": "data@meridianvault.co",
+      "success": true,
+      "message_id": "19f272c115e8bf04",
+      "thread_id": "19f272c115e8bf04"
+    },
+    {
+      "to": "sales@northspan.io",
+      "success": true,
+      "message_id": "19f272c163ff2186",
+      "thread_id": "19f272c163ff2186"
+    },
+    {
+      "to": "info@openroutesupport.io",
+      "success": true,
+      "message_id": "19f272c1ab84fa6c",
+      "thread_id": "19f272c1ab84fa6c"
+    },
+    {
+      "to": "contact@pinnaclecloud.co",
+      "success": true,
+      "message_id": "19f272c1f199d3b4",
+      "thread_id": "19f272c1f199d3b4"
+    }
+  ]
+}
