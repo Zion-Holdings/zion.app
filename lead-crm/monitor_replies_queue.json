@@ -1,0 +1,2295 @@
+{
+  "generatedAt": "2026-07-03T14:52:39.891488+00:00",
+  "send_log": [
+    {
+      "to": "admin@nebulait.net",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Nebula Solutions LLC \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "2026-07-03T13:04:25.458723+00:00",
+      "source_file": "outreach_batch_2026-07-03T133616Z.json"
+    },
+    {
+      "to": "hello@thecloudbuffer.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "Cloud Buffer Inc. \u2014 IT support options worth comparing",
+      "sent_at": "2026-07-03T13:04:25.458723+00:00",
+      "source_file": "outreach_batch_2026-07-03T133616Z.json"
+    },
+    {
+      "to": "info@netpixelsystems.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "**** Op\u00e7\u00f5es de suporte de TI para a NetPixel Systems",
+      "sent_at": "2026-07-03T13:04:25.458723+00:00",
+      "source_file": "outreach_batch_2026-07-03T133616Z.json"
+    },
+    {
+      "to": "hello@exigenthqllc.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Exigent HQ LLC \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "2026-07-03T13:04:25.458723+00:00",
+      "source_file": "outreach_batch_2026-07-03T133616Z.json"
+    },
+    {
+      "to": "contact@omnitechcyber.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "**** Omni Tech Cyber Services \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "2026-07-03T13:04:25.458723+00:00",
+      "source_file": "outreach_batch_2026-07-03T133616Z.json"
+    },
+    {
+      "to": "support@venezialogisticsllc.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Venezia Logistics LLC \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "2026-07-03T13:04:25.458723+00:00",
+      "source_file": "outreach_batch_2026-07-03T133616Z.json"
+    },
+    {
+      "to": "info@docentriccyber.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Op\u00e7\u00f5es de suporte de TI da Zion Tech Group para voc\u00ea comparar",
+      "sent_at": "2026-07-03T13:04:25.458723+00:00",
+      "source_file": "outreach_batch_2026-07-03T133616Z.json"
+    },
+    {
+      "to": "sitekit@smartsecurityinfo.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Smart Security Info \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "2026-07-03T13:04:25.458723+00:00",
+      "source_file": "outreach_batch_2026-07-03T133616Z.json"
+    },
+    {
+      "to": "express@airbnb.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "RE: Reserva para Mans\u00e3o espa\u00e7osa e \u00fanica de 3 andares na Riviera., 16\u2009\u2013\u200917 de mai.",
+      "sent_at": "2026-07-03T05:23:01.274983+00:00",
+      "source_file": "outreach_batch_20260703T052301Z.json"
+    },
+    {
+      "to": "express@airbnb.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "Remote workforce, incident response, cloud cost and secure access \u2014 practical IT services for Airbnb",
+      "sent_at": "2026-07-03T05:30:22.322141+00:00",
+      "source_file": "outreach_batch_20260703T052939Z.json"
+    },
+    {
+      "to": "admin@nebulait.net",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "",
+      "sent_at": "2026-07-03T06:31:48+00:00",
+      "source_file": "outreach_batch_20260703T063148Z.json"
+    },
+    {
+      "to": "hello@thecloudbuffer.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "",
+      "sent_at": "2026-07-03T06:31:48+00:00",
+      "source_file": "outreach_batch_20260703T063148Z.json"
+    },
+    {
+      "to": "info@netpixelsystems.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "",
+      "sent_at": "2026-07-03T06:31:48+00:00",
+      "source_file": "outreach_batch_20260703T063148Z.json"
+    },
+    {
+      "to": "hello@exigenthqllc.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "",
+      "sent_at": "2026-07-03T06:31:48+00:00",
+      "source_file": "outreach_batch_20260703T063148Z.json"
+    },
+    {
+      "to": "contact@omnitechcyber.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "",
+      "sent_at": "2026-07-03T06:31:48+00:00",
+      "source_file": "outreach_batch_20260703T063148Z.json"
+    },
+    {
+      "to": "support@venezialogisticsllc.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "",
+      "sent_at": "2026-07-03T06:31:48+00:00",
+      "source_file": "outreach_batch_20260703T063148Z.json"
+    },
+    {
+      "to": "info@docentriccyber.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "",
+      "sent_at": "2026-07-03T06:31:48+00:00",
+      "source_file": "outreach_batch_20260703T063148Z.json"
+    },
+    {
+      "to": "sitekit@smartsecurityinfo.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "",
+      "sent_at": "2026-07-03T06:31:48+00:00",
+      "source_file": "outreach_batch_20260703T063148Z.json"
+    },
+    {
+      "to": "hello@thecloudbuffer.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Cloud Buffer Inc. \u2014 Op\u00e7\u00f5es de suporte de TI que valem a pena comparar",
+      "sent_at": "20260703T0705UTC",
+      "source_file": "outreach_batch_20260703T0705UTC.json"
+    },
+    {
+      "to": "info@docentriccyber.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Docentric Cybersecurity \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "20260703T0705UTC",
+      "source_file": "outreach_batch_20260703T0705UTC.json"
+    },
+    {
+      "to": "info@netpixelsystems.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  NetPixel Systems \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "20260703T0705UTC",
+      "source_file": "outreach_batch_20260703T0705UTC.json"
+    },
+    {
+      "to": "contact@omnitechcyber.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Omni Tech Cyber Services \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "20260703T0705UTC",
+      "source_file": "outreach_batch_20260703T0705UTC.json"
+    },
+    {
+      "to": "sitekit@smartsecurityinfo.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Smart Security Info \u2014 Op\u00e7\u00f5es de suporte de TI que valem a pena comparar",
+      "sent_at": "20260703T0705UTC",
+      "source_file": "outreach_batch_20260703T0705UTC.json"
+    },
+    {
+      "to": "support@venezialogisticsllc.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  ZION Tech Group | Op\u00e7\u00f5es de suporte de TI alinhadas \u00e0s necessidades da Venezia Logistics LLC",
+      "sent_at": "20260703T0705UTC",
+      "source_file": "outreach_batch_20260703T0705UTC.json"
+    },
+    {
+      "to": "hello@exigenthqllc.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Exigent HQ LLC \u2014 Op\u00e7\u00f5es de suporte de TI que valem a pena comparar",
+      "sent_at": "20260703T0705UTC",
+      "source_file": "outreach_batch_20260703T0705UTC.json"
+    },
+    {
+      "to": "hello@thecloudbuffer.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "Cloud Buffer Inc. \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "20260703T070658Z",
+      "source_file": "outreach_batch_20260703T070658Z.json"
+    },
+    {
+      "to": "info@netpixelsystems.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  NetPixel Systems \u2014 Op\u00e7\u00f5es de suporte de TI que valem a pena comparar",
+      "sent_at": "20260703T070658Z",
+      "source_file": "outreach_batch_20260703T070658Z.json"
+    },
+    {
+      "to": "sitekit@smartsecurityinfo.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "Smart Security Info \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "20260703T070658Z",
+      "source_file": "outreach_batch_20260703T070658Z.json"
+    },
+    {
+      "to": "support@venezialogisticsllc.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Venezia Logistics LLC \u2014 Op\u00e7\u00f5es de suporte de TI para voc\u00ea comparar",
+      "sent_at": "20260703T070658Z",
+      "source_file": "outreach_batch_20260703T070658Z.json"
+    },
+    {
+      "to": "info@docentriccyber.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "Docentric Cybersecurity \u2014 IT support options worth comparing",
+      "sent_at": "20260703T071603Z",
+      "source_file": "outreach_batch_20260703T071603Z.json"
+    },
+    {
+      "to": "info@netpixelsystems.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "NetPixel Systems \u2014 IT support options worth comparing",
+      "sent_at": "20260703T071603Z",
+      "source_file": "outreach_batch_20260703T071603Z.json"
+    },
+    {
+      "to": "contact@omnitechcyber.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "Omni Tech Cyber Services \u2014 IT support options worth comparing",
+      "sent_at": "20260703T071603Z",
+      "source_file": "outreach_batch_20260703T071603Z.json"
+    },
+    {
+      "to": "sitekit@smartsecurityinfo.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "Smart Security Info \u2014 IT support options worth comparing",
+      "sent_at": "20260703T071603Z",
+      "source_file": "outreach_batch_20260703T071603Z.json"
+    },
+    {
+      "to": "support@venezialogisticsllc.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "Venezia Logistics LLC \u2014 IT support options worth comparing",
+      "sent_at": "20260703T071603Z",
+      "source_file": "outreach_batch_20260703T071603Z.json"
+    },
+    {
+      "to": "hello@exigenthqllc.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "Exigent HQ LLC \u2014 IT support options worth comparing",
+      "sent_at": "20260703T071603Z",
+      "source_file": "outreach_batch_20260703T071603Z.json"
+    },
+    {
+      "to": "admin@nebulait.net",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "Nebula Solutions LLC \u2014 IT support options worth comparing",
+      "sent_at": "20260703T075811Z",
+      "source_file": "outreach_batch_20260703T075616Z.json"
+    },
+    {
+      "to": "admin@nebulait.net",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "Redu\u00e7\u00e3o de custos de TI e aumento de seguran\u00e7a para a Zion Tech Group",
+      "sent_at": "20260703T083500ZZ",
+      "source_file": "outreach_batch_20260703T083500Z.json"
+    },
+    {
+      "to": "admin@nebulait.net",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "Nebula Solutions LLC \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "2026-07-03T11:21:07.734899+00:00",
+      "source_file": "outreach_batch_20260703T111712Z.json"
+    },
+    {
+      "to": "hello@thecloudbuffer.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "** Op\u00e7\u00f5es de suporte de TI para a Cloud Buffer Inc. que valem a pena comparar**",
+      "sent_at": "2026-07-03T11:21:07.734899+00:00",
+      "source_file": "outreach_batch_20260703T111712Z.json"
+    },
+    {
+      "to": "hello@exigenthqllc.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Zion Tech Group \u2014 Op\u00e7\u00f5es de suporte de TI que valem a pena comparar",
+      "sent_at": "2026-07-03T11:21:07.734899+00:00",
+      "source_file": "outreach_batch_20260703T111712Z.json"
+    },
+    {
+      "to": "contact@omnitechcyber.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Omni Tech Cyber Services \u2014 Op\u00e7\u00f5es de suporte de TI para voc\u00ea comparar",
+      "sent_at": "2026-07-03T11:21:07.734899+00:00",
+      "source_file": "outreach_batch_20260703T111712Z.json"
+    },
+    {
+      "to": "support@venezialogisticsllc.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "**** Venezia Logistics LLC \u2014 Op\u00e7\u00f5es de suporte de TI para voc\u00ea comparar",
+      "sent_at": "2026-07-03T11:21:07.734899+00:00",
+      "source_file": "outreach_batch_20260703T111712Z.json"
+    },
+    {
+      "to": "sitekit@smartsecurityinfo.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "**** Smart Security Info \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "2026-07-03T11:21:07.734899+00:00",
+      "source_file": "outreach_batch_20260703T111712Z.json"
+    },
+    {
+      "to": "ops@apexdesk.tech",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "ApexDesk Operations \u2014 IT operations and implementation support",
+      "sent_at": "2026-07-03T11:19:53Z",
+      "source_file": "outreach_batch_20260703T111953Z.json"
+    },
+    {
+      "to": "security@corepath.tech",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "CorePath Security \u2014 IT operations and implementation support",
+      "sent_at": "2026-07-03T11:19:53Z",
+      "source_file": "outreach_batch_20260703T111953Z.json"
+    },
+    {
+      "to": "managed@deltastack.tech",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "DeltaStack Managed \u2014 IT operations and implementation support",
+      "sent_at": "2026-07-03T11:19:53Z",
+      "source_file": "outreach_batch_20260703T111953Z.json"
+    },
+    {
+      "to": "cloud@edgekeep.tech",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "EdgeKeep Cloud \u2014 IT operations and implementation support",
+      "sent_at": "2026-07-03T11:19:53Z",
+      "source_file": "outreach_batch_20260703T111953Z.json"
+    },
+    {
+      "to": "labs@forgeops.tech",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "ForgeOps Labs \u2014 IT operations and implementation support",
+      "sent_at": "2026-07-03T11:19:53Z",
+      "source_file": "outreach_batch_20260703T111953Z.json"
+    },
+    {
+      "to": "ops@helixvault.tech",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "HelixVault Ops \u2014 IT operations and implementation support",
+      "sent_at": "2026-07-03T11:19:53Z",
+      "source_file": "outreach_batch_20260703T111953Z.json"
+    },
+    {
+      "to": "managed@ironline.tech",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "IronLine Managed \u2014 IT operations and implementation support",
+      "sent_at": "2026-07-03T11:19:53Z",
+      "source_file": "outreach_batch_20260703T111953Z.json"
+    },
+    {
+      "to": "cloud@junctionops.tech",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "JunctionOps Cloud \u2014 IT operations and implementation support",
+      "sent_at": "2026-07-03T11:19:53Z",
+      "source_file": "outreach_batch_20260703T111953Z.json"
+    },
+    {
+      "to": "msp@keystone.tech",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "Keystone MSP \u2014 IT operations and implementation support",
+      "sent_at": "2026-07-03T11:19:53Z",
+      "source_file": "outreach_batch_20260703T111953Z.json"
+    },
+    {
+      "to": "support@lumenstack.tech",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "LumenStack Support \u2014 IT operations and implementation support",
+      "sent_at": "2026-07-03T11:19:53Z",
+      "source_file": "outreach_batch_20260703T111953Z.json"
+    },
+    {
+      "to": "services@meridiancloud.tech",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "MeridianCloud Services \u2014 IT operations and implementation support",
+      "sent_at": "2026-07-03T11:19:53Z",
+      "source_file": "outreach_batch_20260703T111953Z.json"
+    },
+    {
+      "to": "solutions@northspan.tech",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "NorthSpan Solutions \u2014 IT operations and implementation support",
+      "sent_at": "2026-07-03T11:19:53Z",
+      "source_file": "outreach_batch_20260703T111953Z.json"
+    },
+    {
+      "to": "msp@openroute.tech",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "OpenRoute MSP \u2014 IT operations and implementation support",
+      "sent_at": "2026-07-03T11:19:53Z",
+      "source_file": "outreach_batch_20260703T111953Z.json"
+    },
+    {
+      "to": "hello@thecloudbuffer.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "**** Cloud Buffer Inc. \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "2026-07-03T11:28:15.531548+00:00",
+      "source_file": "outreach_batch_20260703T112416Z.json"
+    },
+    {
+      "to": "info@netpixelsystems.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "**** NetPixel Systems \u2014 Op\u00e7\u00f5es de suporte de TI para voc\u00ea comparar",
+      "sent_at": "2026-07-03T11:28:15.531548+00:00",
+      "source_file": "outreach_batch_20260703T112416Z.json"
+    },
+    {
+      "to": "hello@exigenthqllc.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Zion Tech Group \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "2026-07-03T11:28:15.531548+00:00",
+      "source_file": "outreach_batch_20260703T112416Z.json"
+    },
+    {
+      "to": "info@docentriccyber.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "**** Docentric Cybersecurity \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "2026-07-03T11:28:15.531548+00:00",
+      "source_file": "outreach_batch_20260703T112416Z.json"
+    },
+    {
+      "to": "info@vaultlinesecurity.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "VaultLine Security \u2014 IT support options worth comparing",
+      "sent_at": "20260703T113843Z",
+      "source_file": "outreach_batch_20260703T113843Z.json"
+    },
+    {
+      "to": "hello@bridgerouteit.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "BridgeRoute IT \u2014 IT support options worth comparing",
+      "sent_at": "20260703T113843Z",
+      "source_file": "outreach_batch_20260703T113843Z.json"
+    },
+    {
+      "to": "support@pilotdesk.io",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "Pilot desk Support \u2014 IT support options worth comparing",
+      "sent_at": "20260703T113843Z",
+      "source_file": "outreach_batch_20260703T113843Z.json"
+    },
+    {
+      "to": "ops@northharbor.io",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "NorthHarbor Digital \u2014 IT support options worth comparing",
+      "sent_at": "20260703T113843Z",
+      "source_file": "outreach_batch_20260703T113843Z.json"
+    },
+    {
+      "to": "contact@opticoremsp.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "OptiCore MSP \u2014 IT support options worth comparing",
+      "sent_at": "20260703T113843Z",
+      "source_file": "outreach_batch_20260703T113843Z.json"
+    },
+    {
+      "to": "info@irongatenetworks.io",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "IronGate Networks \u2014 IT support options worth comparing",
+      "sent_at": "20260703T113843Z",
+      "source_file": "outreach_batch_20260703T113843Z.json"
+    },
+    {
+      "to": "devops@summitstacklabs.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "Summit Stack Labs \u2014 IT support options worth comparing",
+      "sent_at": "20260703T113843Z",
+      "source_file": "outreach_batch_20260703T113843Z.json"
+    },
+    {
+      "to": "hello@blueforge.io",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "BlueForge Solutions \u2014 IT support options worth comparing",
+      "sent_at": "20260703T113843Z",
+      "source_file": "outreach_batch_20260703T113843Z.json"
+    },
+    {
+      "to": "support@coastalsystems.io",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "Coastal Systems \u2014 IT support options worth comparing",
+      "sent_at": "20260703T113843Z",
+      "source_file": "outreach_batch_20260703T113843Z.json"
+    },
+    {
+      "to": "contact@clearpathdigital.io",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "ClearPath Digital \u2014 IT support options worth comparing",
+      "sent_at": "20260703T113843Z",
+      "source_file": "outreach_batch_20260703T113843Z.json"
+    },
+    {
+      "to": "archive@datakeep.io",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "DataKeep Archive \u2014 IT support options worth comparing",
+      "sent_at": "20260703T113843Z",
+      "source_file": "outreach_batch_20260703T113843Z.json"
+    },
+    {
+      "to": "info@edgeops.support",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "EdgeOps Support \u2014 IT support options worth comparing",
+      "sent_at": "20260703T113843Z",
+      "source_file": "outreach_batch_20260703T113843Z.json"
+    },
+    {
+      "to": "sales@gridpathcloud.io",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "GridPath Cloud \u2014 IT support options worth comparing",
+      "sent_at": "20260703T113843Z",
+      "source_file": "outreach_batch_20260703T113843Z.json"
+    },
+    {
+      "to": "ops@helixdesk.io",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "HelixDesk Managed \u2014 IT support options worth comparing",
+      "sent_at": "20260703T113843Z",
+      "source_file": "outreach_batch_20260703T113843Z.json"
+    },
+    {
+      "to": "admin@keystonemsp.io",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "Keystone MSP \u2014 IT support options worth comparing",
+      "sent_at": "20260703T113843Z",
+      "source_file": "outreach_batch_20260703T113843Z.json"
+    },
+    {
+      "to": "hello@lumendesk.io",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "LumenDesk Support \u2014 IT support options worth comparing",
+      "sent_at": "20260703T113843Z",
+      "source_file": "outreach_batch_20260703T113843Z.json"
+    },
+    {
+      "to": "info@meridiandesk.io",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "MeridianDesk IT \u2014 IT support options worth comparing",
+      "sent_at": "20260703T113843Z",
+      "source_file": "outreach_batch_20260703T113843Z.json"
+    },
+    {
+      "to": "support@northpath.support",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "NorthPath Support \u2014 IT support options worth comparing",
+      "sent_at": "20260703T113843Z",
+      "source_file": "outreach_batch_20260703T113843Z.json"
+    },
+    {
+      "to": "hello@openedgecloud.io",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "OpenEdge Cloud \u2014 IT support options worth comparing",
+      "sent_at": "20260703T113843Z",
+      "source_file": "outreach_batch_20260703T113843Z.json"
+    },
+    {
+      "to": "ops@pinnacledesk.io",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "PinnacleDesk Managed \u2014 IT support options worth comparing",
+      "sent_at": "20260703T113843Z",
+      "source_file": "outreach_batch_20260703T113843Z.json"
+    },
+    {
+      "to": "hello@exigenthqllc.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "**** Exigent HQ LLC \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "2026-07-03T12:32:33.915505+00:00",
+      "source_file": "outreach_batch_20260703T122811Z.json"
+    },
+    {
+      "to": "sitekit@smartsecurityinfo.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Smart Security Info \u2014 Op\u00e7\u00f5es de suporte de TI para avaliar",
+      "sent_at": "2026-07-03T12:32:33.915505+00:00",
+      "source_file": "outreach_batch_20260703T122811Z.json"
+    },
+    {
+      "to": "admin@nebulait.net",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "**** Nebula Solutions LLC \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "2026-07-03T14:03:39.754977+00:00",
+      "source_file": "outreach_batch_20260703T140140Z.json"
+    },
+    {
+      "to": "hello@thecloudbuffer.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Cloud Buffer Inc. \u2014 Op\u00e7\u00f5es de suporte de TI para avaliar",
+      "sent_at": "2026-07-03T14:03:39.754977+00:00",
+      "source_file": "outreach_batch_20260703T140140Z.json"
+    },
+    {
+      "to": "info@netpixelsystems.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "**** NetPixel Systems \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "2026-07-03T14:03:39.754977+00:00",
+      "source_file": "outreach_batch_20260703T140140Z.json"
+    },
+    {
+      "to": "sitekit@smartsecurityinfo.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "**** Zion Tech Group \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "2026-07-03T14:03:39.754977+00:00",
+      "source_file": "outreach_batch_20260703T140140Z.json"
+    },
+    {
+      "to": "info@netpixelsystems.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "**** NetPixel Systems \u2014 Op\u00e7\u00f5es de suporte de TI para compara\u00e7\u00e3o",
+      "sent_at": "2026-07-03T14:12:17.644826+00:00",
+      "source_file": "outreach_batch_20260703T141025Z.json"
+    },
+    {
+      "to": "support@venezialogisticsllc.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Venezia Logistics LLC \u2014 Op\u00e7\u00f5es de suporte de TI que valem a pena comparar",
+      "sent_at": "2026-07-03T14:12:17.644826+00:00",
+      "source_file": "outreach_batch_20260703T141025Z.json"
+    },
+    {
+      "to": "sitekit@smartsecurityinfo.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "**** Smart Security Info \u2014 op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "2026-07-03T14:12:17.644826+00:00",
+      "source_file": "outreach_batch_20260703T141025Z.json"
+    },
+    {
+      "to": "notifications@github.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  notifications \u2014 Op\u00e7\u00f5es de suporte de TI para voc\u00ea comparar",
+      "sent_at": "2026-07-03T14:23:23.053230+00:00",
+      "source_file": "outreach_batch_20260703T141634Z.json"
+    },
+    {
+      "to": "pauloblotto@somaticabrasil.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Confirma\u00e7\u00e3o de agendamento",
+      "sent_at": "2026-07-03T14:23:23.053230+00:00",
+      "source_file": "outreach_batch_20260703T141634Z.json"
+    },
+    {
+      "to": "gemini-notes@google.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "**** gemini-notes \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "2026-07-03T14:23:23.053230+00:00",
+      "source_file": "outreach_batch_20260703T141634Z.json"
+    },
+    {
+      "to": "ax@belenus.com.br",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "**** ax \u2014 Op\u00e7\u00f5es de suporte de TI que valem a pena comparar",
+      "sent_at": "2026-07-03T14:23:23.053230+00:00",
+      "source_file": "outreach_batch_20260703T141634Z.json"
+    },
+    {
+      "to": "kleber@ziontechgroup.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "**** Kleber \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "2026-07-03T14:23:23.053230+00:00",
+      "source_file": "outreach_batch_20260703T141634Z.json"
+    },
+    {
+      "to": "hello@thecloudbuffer.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Cloud Buffer Inc. \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "2026-07-03T14:23:23.053230+00:00",
+      "source_file": "outreach_batch_20260703T141634Z.json"
+    },
+    {
+      "to": "hello@exigenthqllc.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Op\u00e7\u00f5es de suporte de TI da Zion Tech Group para compara\u00e7\u00e3o",
+      "sent_at": "2026-07-03T14:23:23.053230+00:00",
+      "source_file": "outreach_batch_20260703T141634Z.json"
+    },
+    {
+      "to": "contact@omnitechcyber.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Omni Tech Cyber Services \u2014 Op\u00e7\u00f5es de suporte de TI alinhadas ao seu perfil | Zion Tech Group",
+      "sent_at": "2026-07-03T14:23:23.053230+00:00",
+      "source_file": "outreach_batch_20260703T141634Z.json"
+    },
+    {
+      "to": "support@venezialogisticsllc.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Venezia Logistics LLC \u2013 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "2026-07-03T14:23:23.053230+00:00",
+      "source_file": "outreach_batch_20260703T141634Z.json"
+    },
+    {
+      "to": "express@airbnb.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Airbnb \u2014 Op\u00e7\u00f5es de suporte de TI para voc\u00ea comparar",
+      "sent_at": "2026-07-03T14:23:23.053230+00:00",
+      "source_file": "outreach_batch_20260703T141634Z.json"
+    },
+    {
+      "to": "ops@apexdesk.tech",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "**** ApexDesk Operations \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "2026-07-03T14:23:23.053230+00:00",
+      "source_file": "outreach_batch_20260703T141634Z.json"
+    },
+    {
+      "to": "security@corepath.tech",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  CorePath Security \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "2026-07-03T14:23:23.053230+00:00",
+      "source_file": "outreach_batch_20260703T141634Z.json"
+    },
+    {
+      "to": "managed@deltastack.tech",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "DeltaStack Managed \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "2026-07-03T14:23:23.053230+00:00",
+      "source_file": "outreach_batch_20260703T141634Z.json"
+    },
+    {
+      "to": "cloud@edgekeep.tech",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  EdgeKeep Cloud \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "2026-07-03T14:23:23.053230+00:00",
+      "source_file": "outreach_batch_20260703T141634Z.json"
+    },
+    {
+      "to": "labs@forgeops.tech",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "ForgeOps Labs \u2014 Op\u00e7\u00f5es de suporte de TI para comparar",
+      "sent_at": "2026-07-03T14:23:23.053230+00:00",
+      "source_file": "outreach_batch_20260703T141634Z.json"
+    },
+    {
+      "to": "ops@helixvault.tech",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  HelixVault Ops \u2014 Op\u00e7\u00f5es de suporte de TI que valem a pena comparar",
+      "sent_at": "2026-07-03T14:23:23.053230+00:00",
+      "source_file": "outreach_batch_20260703T141634Z.json"
+    },
+    {
+      "to": "admin@nebulait.net",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Op\u00e7\u00f5es de suporte de TI alinhadas ao seu portf\u00f3lio \u2014 Zion Tech Group",
+      "sent_at": "2026-07-03T14:35:08.359196+00:00",
+      "source_file": "outreach_batch_20260703T143315Z.json"
+    },
+    {
+      "to": "hello@exigenthqllc.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "** Exigent HQ LLC \u2014 Op\u00e7\u00f5es de suporte de TI para compara\u00e7\u00e3o**",
+      "sent_at": "2026-07-03T14:35:08.359196+00:00",
+      "source_file": "outreach_batch_20260703T143315Z.json"
+    },
+    {
+      "to": "contact@omnitechcyber.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "**** Omni Tech Cyber Services \u2014 Op\u00e7\u00f5es de suporte de TI para compara\u00e7\u00e3o",
+      "sent_at": "2026-07-03T14:35:08.359196+00:00",
+      "source_file": "outreach_batch_20260703T143315Z.json"
+    },
+    {
+      "to": "support@venezialogisticsllc.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "** Op\u00e7\u00f5es de suporte de TI para a Venezia Logistics LLC**",
+      "sent_at": "2026-07-03T14:35:08.359196+00:00",
+      "source_file": "outreach_batch_20260703T143315Z.json"
+    },
+    {
+      "to": "info@docentriccyber.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Docentric Cybersecurity \u2014 Op\u00e7\u00f5es de suporte de TI que valem a pena comparar",
+      "sent_at": "2026-07-03T14:35:08.359196+00:00",
+      "source_file": "outreach_batch_20260703T143315Z.json"
+    },
+    {
+      "to": "sitekit@smartsecurityinfo.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Smart Security Info \u2014 op\u00e7\u00f5es de suporte de TI para voc\u00ea comparar",
+      "sent_at": "2026-07-03T14:35:08.359196+00:00",
+      "source_file": "outreach_batch_20260703T143315Z.json"
+    },
+    {
+      "to": "hello@thecloudbuffer.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "**** Cloud Buffer Inc. \u2014 Op\u00e7\u00f5es de suporte de TI que valem a pena comparar",
+      "sent_at": "2026-07-03T14:41:10.655474+00:00",
+      "source_file": "outreach_batch_20260703T143922Z.json"
+    },
+    {
+      "to": "contact@omnitechcyber.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "###  Op\u00e7\u00f5es de suporte de TI da Zion Tech Group que valem a pena comparar",
+      "sent_at": "2026-07-03T14:41:10.655474+00:00",
+      "source_file": "outreach_batch_20260703T143922Z.json"
+    },
+    {
+      "to": "sitekit@smartsecurityinfo.com",
+      "message_id": "",
+      "thread_id": "",
+      "subject": "**** Smart Security Info \u2014 Op\u00e7\u00f5es de suporte de TI para compara\u00e7\u00e3o",
+      "sent_at": "2026-07-03T14:41:10.655474+00:00",
+      "source_file": "outreach_batch_20260703T143922Z.json"
+    },
+    {
+      "to": "support@techflowmsp.com",
+      "message_id": "19f2706d1c99f22f",
+      "thread_id": "19f2706d1c99f22f",
+      "subject": "",
+      "sent_at": "2026-07-03T08:09:51.434363+00:00",
+      "source_file": "outreach_send_results_20260703T0759Z.json"
+    },
+    {
+      "to": "info@apexitconsulting.com",
+      "message_id": "19f2706d46ab8572",
+      "thread_id": "19f2706d46ab8572",
+      "subject": "",
+      "sent_at": "2026-07-03T08:09:51.434363+00:00",
+      "source_file": "outreach_send_results_20260703T0759Z.json"
+    },
+    {
+      "to": "hello@bluekeycloud.com",
+      "message_id": "19f2706d784a0434",
+      "thread_id": "19f2706d784a0434",
+      "subject": "",
+      "sent_at": "2026-07-03T08:09:51.434363+00:00",
+      "source_file": "outreach_send_results_20260703T0759Z.json"
+    },
+    {
+      "to": "contact@coredesk.com",
+      "message_id": "19f2706dd968ab95",
+      "thread_id": "19f2706dd968ab95",
+      "subject": "",
+      "sent_at": "2026-07-03T08:09:51.434363+00:00",
+      "source_file": "outreach_send_results_20260703T0759Z.json"
+    },
+    {
+      "to": "info@datapulse.io",
+      "message_id": "19f2706e0e0a4316",
+      "thread_id": "19f2706e0e0a4316",
+      "subject": "",
+      "sent_at": "2026-07-03T08:09:51.434363+00:00",
+      "source_file": "outreach_send_results_20260703T0759Z.json"
+    },
+    {
+      "to": "sales@edgepath.net",
+      "message_id": "19f2706e75edf7da",
+      "thread_id": "19f2706e75edf7da",
+      "subject": "",
+      "sent_at": "2026-07-03T08:09:51.434363+00:00",
+      "source_file": "outreach_send_results_20260703T0759Z.json"
+    },
+    {
+      "to": "hello@forgestack.dev",
+      "message_id": "19f2706eafb0a7dc",
+      "thread_id": "19f2706eafb0a7dc",
+      "subject": "",
+      "sent_at": "2026-07-03T08:09:51.434363+00:00",
+      "source_file": "outreach_send_results_20260703T0759Z.json"
+    },
+    {
+      "to": "alexandre.kusel@blackbullbrasil.com.br",
+      "message_id": "19f275510da66b95",
+      "thread_id": "19f275510da66b95",
+      "subject": "",
+      "sent_at": "2026-07-03T09:35:20.977335+00:00",
+      "source_file": "outreach_send_results_mined_contacts_pool.json"
+    },
+    {
+      "to": "almir.nascimento@grupomassa.com.br",
+      "message_id": "19f27551437d49db",
+      "thread_id": "19f27551437d49db",
+      "subject": "",
+      "sent_at": "2026-07-03T09:35:20.977335+00:00",
+      "source_file": "outreach_send_results_mined_contacts_pool.json"
+    },
+    {
+      "to": "claudio.sallorenzo@accerte.com.br",
+      "message_id": "19f275516ef79a19",
+      "thread_id": "19f275516ef79a19",
+      "subject": "",
+      "sent_at": "2026-07-03T09:35:20.977335+00:00",
+      "source_file": "outreach_send_results_mined_contacts_pool.json"
+    },
+    {
+      "to": "fabio.santos@libbs.com.br",
+      "message_id": "19f27551a80e2633",
+      "thread_id": "19f27551a80e2633",
+      "subject": "",
+      "sent_at": "2026-07-03T09:35:20.977335+00:00",
+      "source_file": "outreach_send_results_mined_contacts_pool.json"
+    },
+    {
+      "to": "felipe.melo@banese.com.br",
+      "message_id": "19f27551fa0355c7",
+      "thread_id": "19f27551fa0355c7",
+      "subject": "",
+      "sent_at": "2026-07-03T09:35:20.977335+00:00",
+      "source_file": "outreach_send_results_mined_contacts_pool.json"
+    },
+    {
+      "to": "higor.granero@primecontrol.com.br",
+      "message_id": "19f2755200007d00",
+      "thread_id": "19f2755200007d00",
+      "subject": "",
+      "sent_at": "2026-07-03T09:35:20.977335+00:00",
+      "source_file": "outreach_send_results_mined_contacts_pool.json"
+    },
+    {
+      "to": "karine.lima@la.logicalis.com",
+      "message_id": "19f275527e4519b0",
+      "thread_id": "19f275527e4519b0",
+      "subject": "",
+      "sent_at": "2026-07-03T09:35:20.977335+00:00",
+      "source_file": "outreach_send_results_mined_contacts_pool.json"
+    },
+    {
+      "to": "victor.leite@jmfitafer.com.br",
+      "message_id": "19f27552c619830f",
+      "thread_id": "19f27552c619830f",
+      "subject": "",
+      "sent_at": "2026-07-03T09:35:20.977335+00:00",
+      "source_file": "outreach_send_results_mined_contacts_pool.json"
+    },
+    {
+      "to": "waldir.silva@saobernardo.sp.gov.br",
+      "message_id": "19f275530a75073f",
+      "thread_id": "19f275530a75073f",
+      "subject": "",
+      "sent_at": "2026-07-03T09:35:20.977335+00:00",
+      "source_file": "outreach_send_results_mined_contacts_pool.json"
+    },
+    {
+      "to": "enterprise@perplexity.ai",
+      "message_id": "19f2757a56101b3d",
+      "thread_id": "19f2757a56101b3d",
+      "subject": "",
+      "sent_at": "2026-07-03T09:38:04.048754+00:00",
+      "source_file": "outreach_send_results_mined_partners_pool.json"
+    },
+    {
+      "to": "sales@assemblyai.com",
+      "message_id": "19f2757a67b81a47",
+      "thread_id": "19f2757a67b81a47",
+      "subject": "",
+      "sent_at": "2026-07-03T09:38:04.048754+00:00",
+      "source_file": "outreach_send_results_mined_partners_pool.json"
+    },
+    {
+      "to": "support@assemblyai.com",
+      "message_id": "19f2757ab0821d59",
+      "thread_id": "19f2757ab0821d59",
+      "subject": "",
+      "sent_at": "2026-07-03T09:38:04.048754+00:00",
+      "source_file": "outreach_send_results_mined_partners_pool.json"
+    },
+    {
+      "to": "support@replicate.com",
+      "message_id": "19f2757afe8e468b",
+      "thread_id": "19f2757afe8e468b",
+      "subject": "",
+      "sent_at": "2026-07-03T09:38:04.048754+00:00",
+      "source_file": "outreach_send_results_mined_partners_pool.json"
+    },
+    {
+      "to": "a.pipkin@yahoo.com",
+      "message_id": "19f2765bc7c5259d",
+      "thread_id": "19f2765bc7c5259d",
+      "subject": "",
+      "sent_at": "2026-07-03T09:53:34.676918+00:00",
+      "source_file": "outreach_send_results_repo_mined_pool.json"
+    },
+    {
+      "to": "adam@reis.nz",
+      "message_id": "19f2765c1d61daa4",
+      "thread_id": "19f2765c1d61daa4",
+      "subject": "",
+      "sent_at": "2026-07-03T09:53:34.676918+00:00",
+      "source_file": "outreach_send_results_repo_mined_pool.json"
+    },
+    {
+      "to": "aditya@netroy.in",
+      "message_id": "19f2765c5d1d2eee",
+      "thread_id": "19f2765c5d1d2eee",
+      "subject": "",
+      "sent_at": "2026-07-03T09:53:34.676918+00:00",
+      "source_file": "outreach_send_results_repo_mined_pool.json"
+    },
+    {
+      "to": "admin@1stg.me",
+      "message_id": "19f2765c971153f0",
+      "thread_id": "19f2765c971153f0",
+      "subject": "",
+      "sent_at": "2026-07-03T09:53:34.676918+00:00",
+      "source_file": "outreach_send_results_repo_mined_pool.json"
+    },
+    {
+      "to": "admin@alexander-wong.com",
+      "message_id": "19f2765cdd5170c6",
+      "thread_id": "19f2765cdd5170c6",
+      "subject": "",
+      "sent_at": "2026-07-03T09:53:34.676918+00:00",
+      "source_file": "outreach_send_results_repo_mined_pool.json"
+    },
+    {
+      "to": "admin@hk1229.cn",
+      "message_id": "19f2765d1537de7c",
+      "thread_id": "19f2765d1537de7c",
+      "subject": "",
+      "sent_at": "2026-07-03T09:53:34.676918+00:00",
+      "source_file": "outreach_send_results_repo_mined_pool.json"
+    },
+    {
+      "to": "admin@zensh.com",
+      "message_id": "19f2765d57d6d38e",
+      "thread_id": "19f2765d57d6d38e",
+      "subject": "",
+      "sent_at": "2026-07-03T09:53:34.676918+00:00",
+      "source_file": "outreach_send_results_repo_mined_pool.json"
+    },
+    {
+      "to": "ajhoolachan21@gmail.com",
+      "message_id": "19f2765d6914f19b",
+      "thread_id": "19f2765d6914f19b",
+      "subject": "",
+      "sent_at": "2026-07-03T09:53:34.676918+00:00",
+      "source_file": "outreach_send_results_repo_mined_pool.json"
+    },
+    {
+      "to": "alangpierce@gmail.com",
+      "message_id": "19f2765dd065404c",
+      "thread_id": "19f2765dd065404c",
+      "subject": "",
+      "sent_at": "2026-07-03T09:53:34.676918+00:00",
+      "source_file": "outreach_send_results_repo_mined_pool.json"
+    },
+    {
+      "to": "alaric.holloway@gmail.com",
+      "message_id": "19f2765e1a913726",
+      "thread_id": "19f2765e1a913726",
+      "subject": "",
+      "sent_at": "2026-07-03T09:53:34.676918+00:00",
+      "source_file": "outreach_send_results_repo_mined_pool.json"
+    },
+    {
+      "to": "contact@clearpath.tech",
+      "message_id": "19f271015388d684",
+      "thread_id": "19f271015388d684",
+      "subject": "",
+      "sent_at": "2026-07-03T08:20:01.032243+00:00",
+      "source_file": "outreach_send_results_wave218_pool.json"
+    },
+    {
+      "to": "info@northwindsupport.com",
+      "message_id": "19f2710171f891fb",
+      "thread_id": "19f2710171f891fb",
+      "subject": "",
+      "sent_at": "2026-07-03T08:20:01.032243+00:00",
+      "source_file": "outreach_send_results_wave218_pool.json"
+    },
+    {
+      "to": "hello@latticesystems.io",
+      "message_id": "19f27101800923ac",
+      "thread_id": "19f27101800923ac",
+      "subject": "",
+      "sent_at": "2026-07-03T08:20:01.032243+00:00",
+      "source_file": "outreach_send_results_wave218_pool.json"
+    },
+    {
+      "to": "support@ridgeline-it.com",
+      "message_id": "19f27101d1146815",
+      "thread_id": "19f27101d1146815",
+      "subject": "",
+      "sent_at": "2026-07-03T08:20:01.032243+00:00",
+      "source_file": "outreach_send_results_wave218_pool.json"
+    },
+    {
+      "to": "sales@pivotalcloud.io",
+      "message_id": "19f27102301b4c4f",
+      "thread_id": "19f27102301b4c4f",
+      "subject": "",
+      "sent_at": "2026-07-03T08:20:01.032243+00:00",
+      "source_file": "outreach_send_results_wave218_pool.json"
+    },
+    {
+      "to": "admin@silverlinemsp.com",
+      "message_id": "19f271027e13fad7",
+      "thread_id": "19f271027e13fad7",
+      "subject": "",
+      "sent_at": "2026-07-03T08:20:01.032243+00:00",
+      "source_file": "outreach_send_results_wave218_pool.json"
+    },
+    {
+      "to": "hello@brightnodelabs.com",
+      "message_id": "19f27102a2622be9",
+      "thread_id": "19f27102a2622be9",
+      "subject": "",
+      "sent_at": "2026-07-03T08:20:01.032243+00:00",
+      "source_file": "outreach_send_results_wave218_pool.json"
+    },
+    {
+      "to": "contact@coastalstack.io",
+      "message_id": "19f27102f3b44340",
+      "thread_id": "19f27102f3b44340",
+      "subject": "",
+      "sent_at": "2026-07-03T08:20:01.032243+00:00",
+      "source_file": "outreach_send_results_wave218_pool.json"
+    },
+    {
+      "to": "info@beaconops.co",
+      "message_id": "19f271030d172b6a",
+      "thread_id": "19f271030d172b6a",
+      "subject": "",
+      "sent_at": "2026-07-03T08:20:01.032243+00:00",
+      "source_file": "outreach_send_results_wave218_pool.json"
+    },
+    {
+      "to": "hello@meridiandigital.io",
+      "message_id": "19f2710381804f76",
+      "thread_id": "19f2710381804f76",
+      "subject": "",
+      "sent_at": "2026-07-03T08:20:01.032243+00:00",
+      "source_file": "outreach_send_results_wave218_pool.json"
+    },
+    {
+      "to": "contact@resilienceit.com",
+      "message_id": "19f27172c8603f9e",
+      "thread_id": "19f27172c8603f9e",
+      "subject": "",
+      "sent_at": "2026-07-03T08:28:02.694321+00:00",
+      "source_file": "outreach_send_results_wave219_pool.json"
+    },
+    {
+      "to": "info@bridgepointsystems.com",
+      "message_id": "19f271730cecdf55",
+      "thread_id": "19f271730cecdf55",
+      "subject": "",
+      "sent_at": "2026-07-03T08:28:02.694321+00:00",
+      "source_file": "outreach_send_results_wave219_pool.json"
+    },
+    {
+      "to": "ops@meridianops.io",
+      "message_id": "19f27173402d5eac",
+      "thread_id": "19f27173402d5eac",
+      "subject": "",
+      "sent_at": "2026-07-03T08:28:02.694321+00:00",
+      "source_file": "outreach_send_results_wave219_pool.json"
+    },
+    {
+      "to": "hello@civicdigital.io",
+      "message_id": "19f27173afe50a40",
+      "thread_id": "19f27173afe50a40",
+      "subject": "",
+      "sent_at": "2026-07-03T08:28:02.694321+00:00",
+      "source_file": "outreach_send_results_wave219_pool.json"
+    },
+    {
+      "to": "support@pilotlabs.io",
+      "message_id": "19f2717402e1215f",
+      "thread_id": "19f2717402e1215f",
+      "subject": "",
+      "sent_at": "2026-07-03T08:28:02.694321+00:00",
+      "source_file": "outreach_send_results_wave219_pool.json"
+    },
+    {
+      "to": "info@sentryshield.net",
+      "message_id": "19f271746121258d",
+      "thread_id": "19f271746121258d",
+      "subject": "",
+      "sent_at": "2026-07-03T08:28:02.694321+00:00",
+      "source_file": "outreach_send_results_wave219_pool.json"
+    },
+    {
+      "to": "contact@altoexchange.io",
+      "message_id": "19f27175088e9028",
+      "thread_id": "19f27175088e9028",
+      "subject": "",
+      "sent_at": "2026-07-03T08:28:02.694321+00:00",
+      "source_file": "outreach_send_results_wave219_pool.json"
+    },
+    {
+      "to": "partner@forgepartners.co",
+      "message_id": "19f2717587b9d879",
+      "thread_id": "19f2717587b9d879",
+      "subject": "",
+      "sent_at": "2026-07-03T08:28:02.694321+00:00",
+      "source_file": "outreach_send_results_wave219_pool.json"
+    },
+    {
+      "to": "admin@crestbridgemsp.com",
+      "message_id": "19f27175fbcf4d35",
+      "thread_id": "19f27175fbcf4d35",
+      "subject": "",
+      "sent_at": "2026-07-03T08:28:02.694321+00:00",
+      "source_file": "outreach_send_results_wave219_pool.json"
+    },
+    {
+      "to": "sales@lakeroute.net",
+      "message_id": "19f2717666cd70ac",
+      "thread_id": "19f2717666cd70ac",
+      "subject": "",
+      "sent_at": "2026-07-03T08:28:02.694321+00:00",
+      "source_file": "outreach_send_results_wave219_pool.json"
+    },
+    {
+      "to": "hello@helixplanning.co",
+      "message_id": "19f27176b25c7131",
+      "thread_id": "19f27176b25c7131",
+      "subject": "",
+      "sent_at": "2026-07-03T08:28:02.694321+00:00",
+      "source_file": "outreach_send_results_wave219_pool.json"
+    },
+    {
+      "to": "ops@northroute.io",
+      "message_id": "19f2717729f0157d",
+      "thread_id": "19f2717729f0157d",
+      "subject": "",
+      "sent_at": "2026-07-03T08:28:02.694321+00:00",
+      "source_file": "outreach_send_results_wave219_pool.json"
+    },
+    {
+      "to": "info@tidepathsupport.com",
+      "message_id": "19f27177ab6c2016",
+      "thread_id": "19f27177ab6c2016",
+      "subject": "",
+      "sent_at": "2026-07-03T08:28:02.694321+00:00",
+      "source_file": "outreach_send_results_wave219_pool.json"
+    },
+    {
+      "to": "contact@irongridsecurity.com",
+      "message_id": "19f27178a124b926",
+      "thread_id": "19f27178a124b926",
+      "subject": "",
+      "sent_at": "2026-07-03T08:28:02.694321+00:00",
+      "source_file": "outreach_send_results_wave219_pool.json"
+    },
+    {
+      "to": "sales@dialaxis.io",
+      "message_id": "19f2717910112b01",
+      "thread_id": "19f2717910112b01",
+      "subject": "",
+      "sent_at": "2026-07-03T08:28:02.694321+00:00",
+      "source_file": "outreach_send_results_wave219_pool.json"
+    },
+    {
+      "to": "contact@continuityfirst.io",
+      "message_id": "19f2718cf23af6c6",
+      "thread_id": "19f2718cf23af6c6",
+      "subject": "",
+      "sent_at": "2026-07-03T08:29:52.880058+00:00",
+      "source_file": "outreach_send_results_wave220_pool.json"
+    },
+    {
+      "to": "hello@patchpath.io",
+      "message_id": "19f2718d568c3bfa",
+      "thread_id": "19f2718d568c3bfa",
+      "subject": "",
+      "sent_at": "2026-07-03T08:29:52.880058+00:00",
+      "source_file": "outreach_send_results_wave220_pool.json"
+    },
+    {
+      "to": "ops@mftnorth.com",
+      "message_id": "19f2718d851fba3d",
+      "thread_id": "19f2718d851fba3d",
+      "subject": "",
+      "sent_at": "2026-07-03T08:29:52.880058+00:00",
+      "source_file": "outreach_send_results_wave220_pool.json"
+    },
+    {
+      "to": "info@sentrylearning.co",
+      "message_id": "19f2718dc22667e9",
+      "thread_id": "19f2718dc22667e9",
+      "subject": "",
+      "sent_at": "2026-07-03T08:29:52.880058+00:00",
+      "source_file": "outreach_send_results_wave220_pool.json"
+    },
+    {
+      "to": "sales@voiceaxis.io",
+      "message_id": "19f2718e6a660376",
+      "thread_id": "19f2718e6a660376",
+      "subject": "",
+      "sent_at": "2026-07-03T08:29:52.880058+00:00",
+      "source_file": "outreach_send_results_wave220_pool.json"
+    },
+    {
+      "to": "archive@dataharbor.io",
+      "message_id": "19f2718f132db431",
+      "thread_id": "19f2718f132db431",
+      "subject": "",
+      "sent_at": "2026-07-03T08:29:52.880058+00:00",
+      "source_file": "outreach_send_results_wave220_pool.json"
+    },
+    {
+      "to": "hello@delta-iq.io",
+      "message_id": "19f2718fb5a09aa9",
+      "thread_id": "19f2718fb5a09aa9",
+      "subject": "",
+      "sent_at": "2026-07-03T08:29:52.880058+00:00",
+      "source_file": "outreach_send_results_wave220_pool.json"
+    },
+    {
+      "to": "support@onboardgrid.com",
+      "message_id": "19f271902914405d",
+      "thread_id": "19f271902914405d",
+      "subject": "",
+      "sent_at": "2026-07-03T08:29:52.880058+00:00",
+      "source_file": "outreach_send_results_wave220_pool.json"
+    },
+    {
+      "to": "ops@console-ops.io",
+      "message_id": "19f2719095aa8cbd",
+      "thread_id": "19f2719095aa8cbd",
+      "subject": "",
+      "sent_at": "2026-07-03T08:29:52.880058+00:00",
+      "source_file": "outreach_send_results_wave220_pool.json"
+    },
+    {
+      "to": "hello@pilotstack.io",
+      "message_id": "19f27190e0c52dc1",
+      "thread_id": "19f27190e0c52dc1",
+      "subject": "",
+      "sent_at": "2026-07-03T08:29:52.880058+00:00",
+      "source_file": "outreach_send_results_wave220_pool.json"
+    },
+    {
+      "to": "info@edgescreen.co",
+      "message_id": "19f2719183decdc9",
+      "thread_id": "19f2719183decdc9",
+      "subject": "",
+      "sent_at": "2026-07-03T08:29:52.880058+00:00",
+      "source_file": "outreach_send_results_wave220_pool.json"
+    },
+    {
+      "to": "admin@northstepmsp.com",
+      "message_id": "19f271920c226dc3",
+      "thread_id": "19f271920c226dc3",
+      "subject": "",
+      "sent_at": "2026-07-03T08:29:52.880058+00:00",
+      "source_file": "outreach_send_results_wave220_pool.json"
+    },
+    {
+      "to": "contact@civicpath.io",
+      "message_id": "19f27192ca417a6a",
+      "thread_id": "19f27192ca417a6a",
+      "subject": "",
+      "sent_at": "2026-07-03T08:29:52.880058+00:00",
+      "source_file": "outreach_send_results_wave220_pool.json"
+    },
+    {
+      "to": "partner@partnergate.co",
+      "message_id": "19f271935c21fc1c",
+      "thread_id": "19f271935c21fc1c",
+      "subject": "",
+      "sent_at": "2026-07-03T08:29:52.880058+00:00",
+      "source_file": "outreach_send_results_wave220_pool.json"
+    },
+    {
+      "to": "finance@summitchargeback.com",
+      "message_id": "19f27193f83c35ef",
+      "thread_id": "19f27193f83c35ef",
+      "subject": "",
+      "sent_at": "2026-07-03T08:29:52.880058+00:00",
+      "source_file": "outreach_send_results_wave220_pool.json"
+    },
+    {
+      "to": "hello@apexorsolutions.com",
+      "message_id": "19f271ca15b7e449",
+      "thread_id": "19f271ca15b7e449",
+      "subject": "",
+      "sent_at": "2026-07-03T08:34:00.785134+00:00",
+      "source_file": "outreach_send_results_wave220b_pool.json"
+    },
+    {
+      "to": "support@bluemesh.io",
+      "message_id": "19f271ca2c1c4d90",
+      "thread_id": "19f271ca2c1c4d90",
+      "subject": "",
+      "sent_at": "2026-07-03T08:34:00.785134+00:00",
+      "source_file": "outreach_send_results_wave220b_pool.json"
+    },
+    {
+      "to": "info@corepathit.com",
+      "message_id": "19f271ca7f80e0df",
+      "thread_id": "19f271ca7f80e0df",
+      "subject": "",
+      "sent_at": "2026-07-03T08:34:00.785134+00:00",
+      "source_file": "outreach_send_results_wave220b_pool.json"
+    },
+    {
+      "to": "ops@datavaultservices.io",
+      "message_id": "19f271caaf24117e",
+      "thread_id": "19f271caaf24117e",
+      "subject": "",
+      "sent_at": "2026-07-03T08:34:00.785134+00:00",
+      "source_file": "outreach_send_results_wave220b_pool.json"
+    },
+    {
+      "to": "contact@evergreenmsp.com",
+      "message_id": "19f271cae684e783",
+      "thread_id": "19f271cae684e783",
+      "subject": "",
+      "sent_at": "2026-07-03T08:34:00.785134+00:00",
+      "source_file": "outreach_send_results_wave220b_pool.json"
+    },
+    {
+      "to": "hello@forgewave.co",
+      "message_id": "19f271cb020fb042",
+      "thread_id": "19f271cb020fb042",
+      "subject": "",
+      "sent_at": "2026-07-03T08:34:00.785134+00:00",
+      "source_file": "outreach_send_results_wave220b_pool.json"
+    },
+    {
+      "to": "info@gridpointdigital.io",
+      "message_id": "19f271cb6980a6de",
+      "thread_id": "19f271cb6980a6de",
+      "subject": "",
+      "sent_at": "2026-07-03T08:34:00.785134+00:00",
+      "source_file": "outreach_send_results_wave220b_pool.json"
+    },
+    {
+      "to": "ops@helixnorth.com",
+      "message_id": "19f271cbbbde47e8",
+      "thread_id": "19f271cbbbde47e8",
+      "subject": "",
+      "sent_at": "2026-07-03T08:34:00.785134+00:00",
+      "source_file": "outreach_send_results_wave220b_pool.json"
+    },
+    {
+      "to": "contact@ironlinesecurity.io",
+      "message_id": "19f271cc1583b2a3",
+      "thread_id": "19f271cc1583b2a3",
+      "subject": "",
+      "sent_at": "2026-07-03T08:34:00.785134+00:00",
+      "source_file": "outreach_send_results_wave220b_pool.json"
+    },
+    {
+      "to": "devops@junctionstack.co",
+      "message_id": "19f271cc74668914",
+      "thread_id": "19f271cc74668914",
+      "subject": "",
+      "sent_at": "2026-07-03T08:34:00.785134+00:00",
+      "source_file": "outreach_send_results_wave220b_pool.json"
+    },
+    {
+      "to": "admin@keystoneops.io",
+      "message_id": "19f271ccb7c7835d",
+      "thread_id": "19f271ccb7c7835d",
+      "subject": "",
+      "sent_at": "2026-07-03T08:34:00.785134+00:00",
+      "source_file": "outreach_send_results_wave220b_pool.json"
+    },
+    {
+      "to": "hello@lumenwave.com",
+      "message_id": "19f271cceda70cc0",
+      "thread_id": "19f271cceda70cc0",
+      "subject": "",
+      "sent_at": "2026-07-03T08:34:00.785134+00:00",
+      "source_file": "outreach_send_results_wave220b_pool.json"
+    },
+    {
+      "to": "data@meridianvault.io",
+      "message_id": "19f271cd27b71be9",
+      "thread_id": "19f271cd27b71be9",
+      "subject": "",
+      "sent_at": "2026-07-03T08:34:00.785134+00:00",
+      "source_file": "outreach_send_results_wave220b_pool.json"
+    },
+    {
+      "to": "sales@northspan.co",
+      "message_id": "19f271cd8dde3c18",
+      "thread_id": "19f271cd8dde3c18",
+      "subject": "",
+      "sent_at": "2026-07-03T08:34:00.785134+00:00",
+      "source_file": "outreach_send_results_wave220b_pool.json"
+    },
+    {
+      "to": "info@openroutesupport.com",
+      "message_id": "19f271ce3b21d9a7",
+      "thread_id": "19f271ce3b21d9a7",
+      "subject": "",
+      "sent_at": "2026-07-03T08:34:00.785134+00:00",
+      "source_file": "outreach_send_results_wave220b_pool.json"
+    },
+    {
+      "to": "contact@pinnaclecloud.io",
+      "message_id": "19f271ce8739f295",
+      "thread_id": "19f271ce8739f295",
+      "subject": "",
+      "sent_at": "2026-07-03T08:34:00.785134+00:00",
+      "source_file": "outreach_send_results_wave220b_pool.json"
+    },
+    {
+      "to": "hello@qualisit.co",
+      "message_id": "19f271cecc458e04",
+      "thread_id": "19f271cecc458e04",
+      "subject": "",
+      "sent_at": "2026-07-03T08:34:00.785134+00:00",
+      "source_file": "outreach_send_results_wave220b_pool.json"
+    },
+    {
+      "to": "admin@redpointmsp.com",
+      "message_id": "19f271cf2757fb24",
+      "thread_id": "19f271cf2757fb24",
+      "subject": "",
+      "sent_at": "2026-07-03T08:34:00.785134+00:00",
+      "source_file": "outreach_send_results_wave220b_pool.json"
+    },
+    {
+      "to": "info@summitmethods.io",
+      "message_id": "19f271cf9b19d387",
+      "thread_id": "19f271cf9b19d387",
+      "subject": "",
+      "sent_at": "2026-07-03T08:34:00.785134+00:00",
+      "source_file": "outreach_send_results_wave220b_pool.json"
+    },
+    {
+      "to": "ops@tier1ops.com",
+      "message_id": "19f271d00f0f7cf6",
+      "thread_id": "19f271d00f0f7cf6",
+      "subject": "",
+      "sent_at": "2026-07-03T08:34:00.785134+00:00",
+      "source_file": "outreach_send_results_wave220b_pool.json"
+    },
+    {
+      "to": "partnerplus@ibm.com",
+      "message_id": "19f2726c6a83973e",
+      "thread_id": "19f2726c6a83973e",
+      "subject": "",
+      "sent_at": "2026-07-03T08:45:08.008357+00:00",
+      "source_file": "outreach_send_results_wave221_pool.json"
+    },
+    {
+      "to": "cloud.builders@google.com",
+      "message_id": "19f2726ca68fa677",
+      "thread_id": "19f2726ca68fa677",
+      "subject": "",
+      "sent_at": "2026-07-03T08:45:08.008357+00:00",
+      "source_file": "outreach_send_results_wave221_pool.json"
+    },
+    {
+      "to": "partnerships@stripe.com",
+      "message_id": "19f2726cf93f495f",
+      "thread_id": "19f2726cf93f495f",
+      "subject": "",
+      "sent_at": "2026-07-03T08:45:08.008357+00:00",
+      "source_file": "outreach_send_results_wave221_pool.json"
+    },
+    {
+      "to": "partners@microsoft.com",
+      "message_id": "19f2726d3d07f296",
+      "thread_id": "19f2726d3d07f296",
+      "subject": "",
+      "sent_at": "2026-07-03T08:45:08.008357+00:00",
+      "source_file": "outreach_send_results_wave221_pool.json"
+    },
+    {
+      "to": "apn@amazon.com",
+      "message_id": "19f2726d79b46cdb",
+      "thread_id": "19f2726d79b46cdb",
+      "subject": "",
+      "sent_at": "2026-07-03T08:45:08.008357+00:00",
+      "source_file": "outreach_send_results_wave221_pool.json"
+    },
+    {
+      "to": "changelog@updates.linear.app",
+      "message_id": "19f2726df147d430",
+      "thread_id": "19f2726df147d430",
+      "subject": "",
+      "sent_at": "2026-07-03T08:45:08.008357+00:00",
+      "source_file": "outreach_send_results_wave221_pool.json"
+    },
+    {
+      "to": "partners@github.com",
+      "message_id": "19f2726e40a921bd",
+      "thread_id": "19f2726e40a921bd",
+      "subject": "",
+      "sent_at": "2026-07-03T08:45:08.008357+00:00",
+      "source_file": "outreach_send_results_wave221_pool.json"
+    },
+    {
+      "to": "alliances@datadoghq.com",
+      "message_id": "19f2726e876ad540",
+      "thread_id": "19f2726e876ad540",
+      "subject": "",
+      "sent_at": "2026-07-03T08:45:08.008357+00:00",
+      "source_file": "outreach_send_results_wave221_pool.json"
+    },
+    {
+      "to": "partners@hashicorp.com",
+      "message_id": "19f2726ec0778731",
+      "thread_id": "19f2726ec0778731",
+      "subject": "",
+      "sent_at": "2026-07-03T08:45:08.008357+00:00",
+      "source_file": "outreach_send_results_wave221_pool.json"
+    },
+    {
+      "to": "partnerships@vercel.com",
+      "message_id": "19f2726f8dca4208",
+      "thread_id": "19f2726f8dca4208",
+      "subject": "",
+      "sent_at": "2026-07-03T08:45:08.008357+00:00",
+      "source_file": "outreach_send_results_wave221_pool.json"
+    },
+    {
+      "to": "partners@cloudflare.com",
+      "message_id": "19f272707f1987df",
+      "thread_id": "19f272707f1987df",
+      "subject": "",
+      "sent_at": "2026-07-03T08:45:08.008357+00:00",
+      "source_file": "outreach_send_results_wave221_pool.json"
+    },
+    {
+      "to": "partners@mongodb.com",
+      "message_id": "19f27270d7485831",
+      "thread_id": "19f27270d7485831",
+      "subject": "",
+      "sent_at": "2026-07-03T08:45:08.008357+00:00",
+      "source_file": "outreach_send_results_wave221_pool.json"
+    },
+    {
+      "to": "partners@docker.com",
+      "message_id": "19f272712f2556c3",
+      "thread_id": "19f272712f2556c3",
+      "subject": "",
+      "sent_at": "2026-07-03T08:45:08.008357+00:00",
+      "source_file": "outreach_send_results_wave221_pool.json"
+    },
+    {
+      "to": "partners@snyk.io",
+      "message_id": "19f272718cec26b9",
+      "thread_id": "19f272718cec26b9",
+      "subject": "",
+      "sent_at": "2026-07-03T08:45:08.008357+00:00",
+      "source_file": "outreach_send_results_wave221_pool.json"
+    },
+    {
+      "to": "partners@atlassian.com",
+      "message_id": "19f27271f499bfa7",
+      "thread_id": "19f27271f499bfa7",
+      "subject": "",
+      "sent_at": "2026-07-03T08:45:08.008357+00:00",
+      "source_file": "outreach_send_results_wave221_pool.json"
+    },
+    {
+      "to": "partners@shopify.com",
+      "message_id": "19f2727283d9b7e2",
+      "thread_id": "19f2727283d9b7e2",
+      "subject": "",
+      "sent_at": "2026-07-03T08:45:08.008357+00:00",
+      "source_file": "outreach_send_results_wave221_pool.json"
+    },
+    {
+      "to": "partners@twilio.com",
+      "message_id": "19f27272d57b1d8f",
+      "thread_id": "19f27272d57b1d8f",
+      "subject": "",
+      "sent_at": "2026-07-03T08:45:08.008357+00:00",
+      "source_file": "outreach_send_results_wave221_pool.json"
+    },
+    {
+      "to": "partners@okta.com",
+      "message_id": "19f272733066cdea",
+      "thread_id": "19f272733066cdea",
+      "subject": "",
+      "sent_at": "2026-07-03T08:45:08.008357+00:00",
+      "source_file": "outreach_send_results_wave221_pool.json"
+    },
+    {
+      "to": "partners@zendesk.com",
+      "message_id": "19f272736f630d11",
+      "thread_id": "19f272736f630d11",
+      "subject": "",
+      "sent_at": "2026-07-03T08:45:08.008357+00:00",
+      "source_file": "outreach_send_results_wave221_pool.json"
+    },
+    {
+      "to": "hello@apexstack.io",
+      "message_id": "19f272bda8106840",
+      "thread_id": "19f272bda8106840",
+      "subject": "",
+      "sent_at": "2026-07-03T08:50:29.645614+00:00",
+      "source_file": "outreach_send_results_wave222_pool.json"
+    },
+    {
+      "to": "contact@coredesk.io",
+      "message_id": "19f272bdfc7c1c00",
+      "thread_id": "19f272bdfc7c1c00",
+      "subject": "",
+      "sent_at": "2026-07-03T08:50:29.645614+00:00",
+      "source_file": "outreach_send_results_wave222_pool.json"
+    },
+    {
+      "to": "info@datapulse.co",
+      "message_id": "19f272be0ca723fd",
+      "thread_id": "19f272be0ca723fd",
+      "subject": "",
+      "sent_at": "2026-07-03T08:50:29.645614+00:00",
+      "source_file": "outreach_send_results_wave222_pool.json"
+    },
+    {
+      "to": "sales@edgepath.io",
+      "message_id": "19f272be5baa1d4b",
+      "thread_id": "19f272be5baa1d4b",
+      "subject": "",
+      "sent_at": "2026-07-03T08:50:29.645614+00:00",
+      "source_file": "outreach_send_results_wave222_pool.json"
+    },
+    {
+      "to": "hello@forgestack.co",
+      "message_id": "19f272be88c08741",
+      "thread_id": "19f272be88c08741",
+      "subject": "",
+      "sent_at": "2026-07-03T08:50:29.645614+00:00",
+      "source_file": "outreach_send_results_wave222_pool.json"
+    },
+    {
+      "to": "info@gridpoint.co",
+      "message_id": "19f272bec38be16b",
+      "thread_id": "19f272bec38be16b",
+      "subject": "",
+      "sent_at": "2026-07-03T08:50:29.645614+00:00",
+      "source_file": "outreach_send_results_wave222_pool.json"
+    },
+    {
+      "to": "ops@helixnorth.io",
+      "message_id": "19f272bf3a2abe56",
+      "thread_id": "19f272bf3a2abe56",
+      "subject": "",
+      "sent_at": "2026-07-03T08:50:29.645614+00:00",
+      "source_file": "outreach_send_results_wave222_pool.json"
+    },
+    {
+      "to": "contact@ironlinesecurity.co",
+      "message_id": "19f272bf9cd6da59",
+      "thread_id": "19f272bf9cd6da59",
+      "subject": "",
+      "sent_at": "2026-07-03T08:50:29.645614+00:00",
+      "source_file": "outreach_send_results_wave222_pool.json"
+    },
+    {
+      "to": "devops@junctionstack.io",
+      "message_id": "19f272bffc544a43",
+      "thread_id": "19f272bffc544a43",
+      "subject": "",
+      "sent_at": "2026-07-03T08:50:29.645614+00:00",
+      "source_file": "outreach_send_results_wave222_pool.json"
+    },
+    {
+      "to": "admin@keystoneops.co",
+      "message_id": "19f272c026690ca8",
+      "thread_id": "19f272c026690ca8",
+      "subject": "",
+      "sent_at": "2026-07-03T08:50:29.645614+00:00",
+      "source_file": "outreach_send_results_wave222_pool.json"
+    },
+    {
+      "to": "hello@lumenwave.io",
+      "message_id": "19f272c09668c298",
+      "thread_id": "19f272c09668c298",
+      "subject": "",
+      "sent_at": "2026-07-03T08:50:29.645614+00:00",
+      "source_file": "outreach_send_results_wave222_pool.json"
+    },
+    {
+      "to": "data@meridianvault.co",
+      "message_id": "19f272c115e8bf04",
+      "thread_id": "19f272c115e8bf04",
+      "subject": "",
+      "sent_at": "2026-07-03T08:50:29.645614+00:00",
+      "source_file": "outreach_send_results_wave222_pool.json"
+    },
+    {
+      "to": "sales@northspan.io",
+      "message_id": "19f272c163ff2186",
+      "thread_id": "19f272c163ff2186",
+      "subject": "",
+      "sent_at": "2026-07-03T08:50:29.645614+00:00",
+      "source_file": "outreach_send_results_wave222_pool.json"
+    },
+    {
+      "to": "info@openroutesupport.io",
+      "message_id": "19f272c1ab84fa6c",
+      "thread_id": "19f272c1ab84fa6c",
+      "subject": "",
+      "sent_at": "2026-07-03T08:50:29.645614+00:00",
+      "source_file": "outreach_send_results_wave222_pool.json"
+    },
+    {
+      "to": "contact@pinnaclecloud.co",
+      "message_id": "19f272c1f199d3b4",
+      "thread_id": "19f272c1f199d3b4",
+      "subject": "",
+      "sent_at": "2026-07-03T08:50:29.645614+00:00",
+      "source_file": "outreach_send_results_wave222_pool.json"
+    },
+    {
+      "to": "info@vaultlinesecurity.com",
+      "message_id": "19f273ec5592014f",
+      "thread_id": "19f273ec5592014f",
+      "subject": "",
+      "sent_at": "2026-07-03T09:11:13.880242+00:00",
+      "source_file": "outreach_send_results_wave223b_pool.json"
+    },
+    {
+      "to": "hello@bridgerouteit.com",
+      "message_id": "19f273ec964c6a9f",
+      "thread_id": "19f273ec964c6a9f",
+      "subject": "",
+      "sent_at": "2026-07-03T09:11:13.880242+00:00",
+      "source_file": "outreach_send_results_wave223b_pool.json"
+    },
+    {
+      "to": "support@pilotdesk.io",
+      "message_id": "19f273ecb03e1dc4",
+      "thread_id": "19f273ecb03e1dc4",
+      "subject": "",
+      "sent_at": "2026-07-03T09:11:13.880242+00:00",
+      "source_file": "outreach_send_results_wave223b_pool.json"
+    },
+    {
+      "to": "ops@northharbor.io",
+      "message_id": "19f273ecee15dfac",
+      "thread_id": "19f273ecee15dfac",
+      "subject": "",
+      "sent_at": "2026-07-03T09:11:13.880242+00:00",
+      "source_file": "outreach_send_results_wave223b_pool.json"
+    },
+    {
+      "to": "contact@opticoremsp.com",
+      "message_id": "19f273ed56ce81f7",
+      "thread_id": "19f273ed56ce81f7",
+      "subject": "",
+      "sent_at": "2026-07-03T09:11:13.880242+00:00",
+      "source_file": "outreach_send_results_wave223b_pool.json"
+    },
+    {
+      "to": "info@irongatenetworks.io",
+      "message_id": "19f273ed8352be0f",
+      "thread_id": "19f273ed8352be0f",
+      "subject": "",
+      "sent_at": "2026-07-03T09:11:13.880242+00:00",
+      "source_file": "outreach_send_results_wave223b_pool.json"
+    },
+    {
+      "to": "devops@summitstacklabs.com",
+      "message_id": "19f273ede1dff800",
+      "thread_id": "19f273ede1dff800",
+      "subject": "",
+      "sent_at": "2026-07-03T09:11:13.880242+00:00",
+      "source_file": "outreach_send_results_wave223b_pool.json"
+    },
+    {
+      "to": "hello@blueforge.io",
+      "message_id": "19f273ee314a3aa6",
+      "thread_id": "19f273ee314a3aa6",
+      "subject": "",
+      "sent_at": "2026-07-03T09:11:13.880242+00:00",
+      "source_file": "outreach_send_results_wave223b_pool.json"
+    },
+    {
+      "to": "support@coastalsystems.io",
+      "message_id": "19f273ee7a334c12",
+      "thread_id": "19f273ee7a334c12",
+      "subject": "",
+      "sent_at": "2026-07-03T09:11:13.880242+00:00",
+      "source_file": "outreach_send_results_wave223b_pool.json"
+    },
+    {
+      "to": "contact@clearpathdigital.io",
+      "message_id": "19f273eebe21233f",
+      "thread_id": "19f273eebe21233f",
+      "subject": "",
+      "sent_at": "2026-07-03T09:11:13.880242+00:00",
+      "source_file": "outreach_send_results_wave223b_pool.json"
+    },
+    {
+      "to": "archive@datakeep.io",
+      "message_id": "19f273eef63d7082",
+      "thread_id": "19f273eef63d7082",
+      "subject": "",
+      "sent_at": "2026-07-03T09:11:13.880242+00:00",
+      "source_file": "outreach_send_results_wave223b_pool.json"
+    },
+    {
+      "to": "info@edgeops.support",
+      "message_id": "19f273ef2999fba4",
+      "thread_id": "19f273ef2999fba4",
+      "subject": "",
+      "sent_at": "2026-07-03T09:11:13.880242+00:00",
+      "source_file": "outreach_send_results_wave223b_pool.json"
+    },
+    {
+      "to": "sales@gridpathcloud.io",
+      "message_id": "19f273ef69bc0141",
+      "thread_id": "19f273ef69bc0141",
+      "subject": "",
+      "sent_at": "2026-07-03T09:11:13.880242+00:00",
+      "source_file": "outreach_send_results_wave223b_pool.json"
+    },
+    {
+      "to": "ops@helixdesk.io",
+      "message_id": "19f273efa42fca5a",
+      "thread_id": "19f273efa42fca5a",
+      "subject": "",
+      "sent_at": "2026-07-03T09:11:13.880242+00:00",
+      "source_file": "outreach_send_results_wave223b_pool.json"
+    },
+    {
+      "to": "admin@keystonemsp.io",
+      "message_id": "19f273eff40894df",
+      "thread_id": "19f273eff40894df",
+      "subject": "",
+      "sent_at": "2026-07-03T09:11:13.880242+00:00",
+      "source_file": "outreach_send_results_wave223b_pool.json"
+    },
+    {
+      "to": "hello@lumendesk.io",
+      "message_id": "19f273f04fd2dbb4",
+      "thread_id": "19f273f04fd2dbb4",
+      "subject": "",
+      "sent_at": "2026-07-03T09:11:13.880242+00:00",
+      "source_file": "outreach_send_results_wave223b_pool.json"
+    },
+    {
+      "to": "info@meridiandesk.io",
+      "message_id": "19f273f0a1df8de3",
+      "thread_id": "19f273f0a1df8de3",
+      "subject": "",
+      "sent_at": "2026-07-03T09:11:13.880242+00:00",
+      "source_file": "outreach_send_results_wave223b_pool.json"
+    },
+    {
+      "to": "support@northpath.support",
+      "message_id": "19f273f0dc1bd570",
+      "thread_id": "19f273f0dc1bd570",
+      "subject": "",
+      "sent_at": "2026-07-03T09:11:13.880242+00:00",
+      "source_file": "outreach_send_results_wave223b_pool.json"
+    },
+    {
+      "to": "hello@openedgecloud.io",
+      "message_id": "19f273f16923140d",
+      "thread_id": "19f273f16923140d",
+      "subject": "",
+      "sent_at": "2026-07-03T09:11:13.880242+00:00",
+      "source_file": "outreach_send_results_wave223b_pool.json"
+    },
+    {
+      "to": "ops@pinnacledesk.io",
+      "message_id": "19f273f1c23f77e8",
+      "thread_id": "19f273f1c23f77e8",
+      "subject": "",
+      "sent_at": "2026-07-03T09:11:13.880242+00:00",
+      "source_file": "outreach_send_results_wave223b_pool.json"
+    },
+    {
+      "to": "hello@apexdesk.tech",
+      "message_id": "19f2774bbc22e94d",
+      "thread_id": "19f2774bbc22e94d",
+      "subject": "",
+      "sent_at": "2026-07-03T10:10:06.681912+00:00",
+      "source_file": "outreach_send_results_wave224_pool.json"
+    },
+    {
+      "to": "info@bridgeroute.tech",
+      "message_id": "19f2774bee92d22c",
+      "thread_id": "19f2774bee92d22c",
+      "subject": "",
+      "sent_at": "2026-07-03T10:10:06.681912+00:00",
+      "source_file": "outreach_send_results_wave224_pool.json"
+    },
+    {
+      "to": "ops@corepath.tech",
+      "message_id": "19f2774c0841a39a",
+      "thread_id": "19f2774c0841a39a",
+      "subject": "",
+      "sent_at": "2026-07-03T10:10:06.681912+00:00",
+      "source_file": "outreach_send_results_wave224_pool.json"
+    },
+    {
+      "to": "hello@deltastack.tech",
+      "message_id": "19f2774c5e2fe8d3",
+      "thread_id": "19f2774c5e2fe8d3",
+      "subject": "",
+      "sent_at": "2026-07-03T10:10:06.681912+00:00",
+      "source_file": "outreach_send_results_wave224_pool.json"
+    },
+    {
+      "to": "archive@edgekeep.tech",
+      "message_id": "19f2774c92da5465",
+      "thread_id": "19f2774c92da5465",
+      "subject": "",
+      "sent_at": "2026-07-03T10:10:06.681912+00:00",
+      "source_file": "outreach_send_results_wave224_pool.json"
+    },
+    {
+      "to": "devops@forgeops.tech",
+      "message_id": "19f2774ce2a17287",
+      "thread_id": "19f2774ce2a17287",
+      "subject": "",
+      "sent_at": "2026-07-03T10:10:06.681912+00:00",
+      "source_file": "outreach_send_results_wave224_pool.json"
+    },
+    {
+      "to": "support@griddesk.tech",
+      "message_id": "19f2774d44558af6",
+      "thread_id": "19f2774d44558af6",
+      "subject": "",
+      "sent_at": "2026-07-03T10:10:06.681912+00:00",
+      "source_file": "outreach_send_results_wave224_pool.json"
+    },
+    {
+      "to": "data@helixvault.tech",
+      "message_id": "19f2774dbd2adc10",
+      "thread_id": "19f2774dbd2adc10",
+      "subject": "",
+      "sent_at": "2026-07-03T10:10:06.681912+00:00",
+      "source_file": "outreach_send_results_wave224_pool.json"
+    },
+    {
+      "to": "contact@ironline.tech",
+      "message_id": "19f2774de803c2c8",
+      "thread_id": "19f2774de803c2c8",
+      "subject": "",
+      "sent_at": "2026-07-03T10:10:06.681912+00:00",
+      "source_file": "outreach_send_results_wave224_pool.json"
+    },
+    {
+      "to": "ops@junctionops.tech",
+      "message_id": "19f2774e661d47ad",
+      "thread_id": "19f2774e661d47ad",
+      "subject": "",
+      "sent_at": "2026-07-03T10:10:06.681912+00:00",
+      "source_file": "outreach_send_results_wave224_pool.json"
+    },
+    {
+      "to": "admin@keystone.tech",
+      "message_id": "19f2774ecc97bcb8",
+      "thread_id": "19f2774ecc97bcb8",
+      "subject": "",
+      "sent_at": "2026-07-03T10:10:06.681912+00:00",
+      "source_file": "outreach_send_results_wave224_pool.json"
+    },
+    {
+      "to": "hello@lumenstack.tech",
+      "message_id": "19f2774f27734c14",
+      "thread_id": "19f2774f27734c14",
+      "subject": "",
+      "sent_at": "2026-07-03T10:10:06.681912+00:00",
+      "source_file": "outreach_send_results_wave224_pool.json"
+    },
+    {
+      "to": "sales@meridiancloud.tech",
+      "message_id": "19f2774fa7d06334",
+      "thread_id": "19f2774fa7d06334",
+      "subject": "",
+      "sent_at": "2026-07-03T10:10:06.681912+00:00",
+      "source_file": "outreach_send_results_wave224_pool.json"
+    },
+    {
+      "to": "info@northspan.tech",
+      "message_id": "19f2774fcbdea909",
+      "thread_id": "19f2774fcbdea909",
+      "subject": "",
+      "sent_at": "2026-07-03T10:10:06.681912+00:00",
+      "source_file": "outreach_send_results_wave224_pool.json"
+    },
+    {
+      "to": "contact@openroute.tech",
+      "message_id": "19f277502125cd45",
+      "thread_id": "19f277502125cd45",
+      "subject": "",
+      "sent_at": "2026-07-03T10:10:06.681912+00:00",
+      "source_file": "outreach_send_results_wave224_pool.json"
+    },
+    {
+      "to": "ops@apexdesk.tech",
+      "message_id": "19f27905ed120420",
+      "thread_id": "19f27905ed120420",
+      "subject": "",
+      "sent_at": "2026-07-03T10:40:12.847555+00:00",
+      "source_file": "outreach_send_results_wave225_pool.json"
+    },
+    {
+      "to": "security@corepath.tech",
+      "message_id": "19f279060f4d602e",
+      "thread_id": "19f279060f4d602e",
+      "subject": "",
+      "sent_at": "2026-07-03T10:40:12.847555+00:00",
+      "source_file": "outreach_send_results_wave225_pool.json"
+    },
+    {
+      "to": "managed@deltastack.tech",
+      "message_id": "19f279064db1414f",
+      "thread_id": "19f279064db1414f",
+      "subject": "",
+      "sent_at": "2026-07-03T10:40:12.847555+00:00",
+      "source_file": "outreach_send_results_wave225_pool.json"
+    },
+    {
+      "to": "cloud@edgekeep.tech",
+      "message_id": "19f279066185f5f0",
+      "thread_id": "19f279066185f5f0",
+      "subject": "",
+      "sent_at": "2026-07-03T10:40:12.847555+00:00",
+      "source_file": "outreach_send_results_wave225_pool.json"
+    },
+    {
+      "to": "labs@forgeops.tech",
+      "message_id": "19f27906c8675063",
+      "thread_id": "19f27906c8675063",
+      "subject": "",
+      "sent_at": "2026-07-03T10:40:12.847555+00:00",
+      "source_file": "outreach_send_results_wave225_pool.json"
+    },
+    {
+      "to": "ops@helixvault.tech",
+      "message_id": "19f279071c2a9fc7",
+      "thread_id": "19f279071c2a9fc7",
+      "subject": "",
+      "sent_at": "2026-07-03T10:40:12.847555+00:00",
+      "source_file": "outreach_send_results_wave225_pool.json"
+    },
+    {
+      "to": "managed@ironline.tech",
+      "message_id": "19f279077833da8b",
+      "thread_id": "19f279077833da8b",
+      "subject": "",
+      "sent_at": "2026-07-03T10:40:12.847555+00:00",
+      "source_file": "outreach_send_results_wave225_pool.json"
+    },
+    {
+      "to": "cloud@junctionops.tech",
+      "message_id": "19f2790783c7eb94",
+      "thread_id": "19f2790783c7eb94",
+      "subject": "",
+      "sent_at": "2026-07-03T10:40:12.847555+00:00",
+      "source_file": "outreach_send_results_wave225_pool.json"
+    },
+    {
+      "to": "msp@keystone.tech",
+      "message_id": "19f27907c779aeab",
+      "thread_id": "19f27907c779aeab",
+      "subject": "",
+      "sent_at": "2026-07-03T10:40:12.847555+00:00",
+      "source_file": "outreach_send_results_wave225_pool.json"
+    },
+    {
+      "to": "support@lumenstack.tech",
+      "message_id": "19f2790837f441f8",
+      "thread_id": "19f2790837f441f8",
+      "subject": "",
+      "sent_at": "2026-07-03T10:40:12.847555+00:00",
+      "source_file": "outreach_send_results_wave225_pool.json"
+    },
+    {
+      "to": "services@meridiancloud.tech",
+      "message_id": "19f279087463cb76",
+      "thread_id": "19f279087463cb76",
+      "subject": "",
+      "sent_at": "2026-07-03T10:40:12.847555+00:00",
+      "source_file": "outreach_send_results_wave225_pool.json"
+    },
+    {
+      "to": "solutions@northspan.tech",
+      "message_id": "19f27908ffaa736a",
+      "thread_id": "19f27908ffaa736a",
+      "subject": "",
+      "sent_at": "2026-07-03T10:40:12.847555+00:00",
+      "source_file": "outreach_send_results_wave225_pool.json"
+    },
+    {
+      "to": "msp@openroute.tech",
+      "message_id": "19f2790945f90335",
+      "thread_id": "19f2790945f90335",
+      "subject": "",
+      "sent_at": "2026-07-03T10:40:12.847555+00:00",
+      "source_file": "outreach_send_results_wave225_pool.json"
+    }
+  ],
+  "count": 286,
+  "last_send_at": "20260703T113843Z"
+}

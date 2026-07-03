@@ -1,0 +1,56 @@
+{
+  "generatedAt": "2026-07-03T14:53:02.280528+00:00",
+  "count": 5,
+  "recipients": [
+    {
+      "id": "19f274a948fbb5ec",
+      "threadId": "19f272736f630d11",
+      "subject": "[Zendesk Support] Re: Zendesk Partner Program \u00c3\u00a2\u00c2\u20ac\u00c2\u201d partner-led IT and cloud implementation",
+      "from": "\"Sean Kyron Tan (Support)\" <partners@zendesk.com>",
+      "to": "\"Kleber Garcia Alcatr\u00e3o @ Zion Tech Group\" <kleber@ziontechgroup.com>",
+      "snippet": "Sua solicita\u00e7\u00e3o (#14951443) foi atualizada. Para adicionar mais coment\u00e1rios, responda a este e-mail. Sean Kyron Tan (Zendesk Support) 3 de jul. de 2026, 4:23 AM GMT-5 Hi Kleber, Thank you for reaching",
+      "receivedAt": "Fri, 03 Jul 2026 09:23:46 +0000",
+      "intent": "neutral"
+    },
+    {
+      "id": "19f080198f3ab56d",
+      "threadId": "19f08018d2657d9b",
+      "subject": "Re: IT support review for SmartHR",
+      "from": "\"\u30b5\u30dd\u30fc\u30c8\" <support+noreply@smarthr.co.jp>",
+      "to": "<kleber@ziontechgroup.com>",
+      "snippet": "===================================================== \u672c\u30e1\u30fc\u30eb\u306f\u81ea\u52d5\u914d\u4fe1\u30e1\u30fc\u30eb\u306e\u305f\u3081\u3001\u3054\u8fd4\u4fe1\u3044\u305f\u3060\u3044\u3066\u3082\u304a\u7b54\u3048\u3067\u304d\u307e\u305b\u3093\u306e\u3067\u3054\u4e86\u627f\u304f\u3060\u3055\u3044\u3002 ===================================================== \u304a\u554f\u3044\u5408\u308f\u305b\u3044\u305f\u3060\u304d\u3001\u3042\u308a\u304c\u3068\u3046\u3054\u3056\u3044\u307e\u3059\u3002 SmartHR \u30ab\u30b9\u30bf\u30de\u30fc\u30b5\u30dd\u30fc\u30c8\u3067\u3059\u3002 \u5185\u5bb9\u3092\u78ba\u8a8d",
+      "receivedAt": "Sat, 27 Jun 2026 07:35:50 +0000",
+      "intent": "neutral"
+    },
+    {
+      "id": "19eff96a3a19733b",
+      "threadId": "19eff96a3a19733b",
+      "subject": "Re: Upstash: Managed IT + security ops for fast-growing serverless teams",
+      "from": "Fin from Upstash <support@upstash.com>",
+      "to": "kleber@ziontechgroup.com",
+      "snippet": "Thanks for contacting us. Our team will get back to you as soon as we can.",
+      "receivedAt": "Thu, 25 Jun 2026 16:22:01 +0000",
+      "intent": "neutral"
+    },
+    {
+      "id": "19f0417550971de0",
+      "threadId": "19f0417550971de0",
+      "subject": "Re: Managed SOC & compliance monitoring for Hinge Health",
+      "from": "Hinge Health <help@hingehealth.com>",
+      "to": "kleber@ziontechgroup.com",
+      "snippet": "Hello, Thank you for reaching out to Hinge Health Support. We&#39;ve received your message and are reviewing it to provide you with a personalized response. If you are contacting us about your Hinge",
+      "receivedAt": "Fri, 26 Jun 2026 13:21:03 +0000",
+      "intent": "neutral"
+    },
+    {
+      "id": "19f03fc1f6ca24ce",
+      "threadId": "19f03fc1f6ca24ce",
+      "subject": "[Request received] -- Re: [Request received] -- Managed SOC & compliance monitoring for Toro TMS",
+      "from": "ToroTMS <support@torotms.com>",
+      "to": "Kleber Garcia <kleber@ziontechgroup.com>",
+      "snippet": "We&#39;re on it! Your request (9845) has been received and is being reviewed by the Toro TMS team. To add additional comments, reply to this email. This email is a service from ToroTMS. Delivered by",
+      "receivedAt": "Fri, 26 Jun 2026 08:51:21 -0400",
+      "intent": "neutral"
+    }
+  ]
+}

@@ -1,0 +1,1165 @@
+{
+  "generatedAt": "2026-07-03T14:23:23.053230+00:00",
+  "lead_crm_current_outreach_run_file": "lead-crm/outreach_run_2026-06-30.json",
+  "consent": {
+    "outreach_opt_in": true,
+    "lead_outreach_opt_in": true
+  },
+  "sendCapable": true,
+  "sendBlocked": false,
+  "servicesReferenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge",
+    "it-zero-trust-access",
+    "it-backup-disaster-recovery",
+    "it-hybrid-cloud-orchestrator",
+    "it-endpoint-management"
+  ],
+  "counts": {
+    "ready_before_dedupe": 47,
+    "system_excluded": 0,
+    "business_domain_ready": 47
+  },
+  "recipients": [
+    {
+      "recipient": "notifications@github.com",
+      "to": "notifications@github.com",
+      "email": "notifications@github.com",
+      "display_name": "notifications",
+      "company_name": "notifications",
+      "subject": "###  notifications — Opções de suporte de TI para você comparar",
+      "body": "Olá, equipe notifications,\nSua operação atual se alinha a soluções de TI direcionadas que reduzem o tempo de resolução de incidentes e aumentam a eficiência operacional.\nSoluções aderentes ao seu cenário:\n- Suporte de TI: /services/it\n- Retenção de resposta a incidentes: /services/it-incident-response-retainer\n- Plataforma de desenvolvimento moderno: /services/it-modern-dev-platform\nQuer agendar uma chamada rápida?\nAtenciosamente,\nEquipe Zion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com\n(Todas as informações originais foram mantidas, sem acréscimo de dados não fornecidos, com linguagem natural e direta para o público de língua portuguesa)",
+      "html": "<html><body><p>Hi notifications,</p>\\n<p><strong>Best fits based on your posture:</strong></p><ul>\\n<li>It: <a href=\"/services/it\">/services/it</a></li>\\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\\n<li>Modern Dev Platform: <a href=\"/services/it-modern-dev-platform\">/services/it-modern-dev-platform</a></li>\\n</ul>\\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "notifications",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-incident-response-retainer",
+        "it-modern-dev-platform"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T14:16:35.046536+00:00",
+      "status": "ready",
+      "source": "mined_in_anywhere",
+      "skipped_reason": "",
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
+    },
+    {
+      "recipient": "pauloblotto@somaticabrasil.com",
+      "to": "pauloblotto@somaticabrasil.com",
+      "email": "pauloblotto@somaticabrasil.com",
+      "display_name": "pauloblotto",
+      "company_name": "pauloblotto",
+      "subject": "###  Confirmação de agendamento",
+      "body": "Olá, pauloblotto,\nAgradecemos o seu contato e confirmamos o nosso agendamento. Estamos ansiosos para a nossa discussão.\nAtenciosamente,\nZion Tech Group\n*(Mantém todas as informações originais, é direto, personalizado com o identificador do contato e não adiciona dados não fornecidos)*",
+      "html": "<html><body><p>Hi pauloblotto,</p>\\n<p><strong>Best fits based on your posture:</strong></p><ul>\\n<li>It: <a href=\"/services/it\">/services/it</a></li>\\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\\n<li>Modern Dev Platform: <a href=\"/services/it-modern-dev-platform\">/services/it-modern-dev-platform</a></li>\\n</ul>\\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "pauloblotto",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-incident-response-retainer",
+        "it-modern-dev-platform"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T14:16:51.064694+00:00",
+      "status": "ready",
+      "source": "mined_in_anywhere",
+      "skipped_reason": "",
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
+    },
+    {
+      "recipient": "gemini-notes@google.com",
+      "to": "gemini-notes@google.com",
+      "email": "gemini-notes@google.com",
+      "display_name": "gemini-notes",
+      "company_name": "gemini-notes",
+      "subject": "**** gemini-notes — Opções de suporte de TI para comparar",
+      "body": "Olá, equipe da gemini-notes,\nSua postura operacional combina perfeitamente com soluções de TI direcionadas que reduzem o desgaste com incidentes e aumentam a eficiência da sua operação.\nSoluções mais alinhadas ao seu perfil:\n- Suporte de TI: /services/it\n- Retenção de resposta a incidentes: /services/it-incident-response-retainer\n- Plataforma de desenvolvimento moderna: /services/it-modern-dev-platform\nQuer agendar uma chamada rápida?\nAtenciosamente,\nZion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi gemini-notes,</p>\\n<p><strong>Best fits based on your posture:</strong></p><ul>\\n<li>It: <a href=\"/services/it\">/services/it</a></li>\\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\\n<li>Modern Dev Platform: <a href=\"/services/it-modern-dev-platform\">/services/it-modern-dev-platform</a></li>\\n</ul>\\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "gemini-notes",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-incident-response-retainer",
+        "it-modern-dev-platform"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T14:17:16.694688+00:00",
+      "status": "ready",
+      "source": "mined_in_anywhere",
+      "skipped_reason": "",
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
+    },
+    {
+      "recipient": "ax@belenus.com.br",
+      "to": "ax@belenus.com.br",
+      "email": "ax@belenus.com.br",
+      "display_name": "ax",
+      "company_name": "ax",
+      "subject": "**** ax — Opções de suporte de TI que valem a pena comparar",
+      "body": "Olá, Ax,\nSeu perfil se alinha a soluções de TI direcionadas que reduzem o tempo de resolução de incidentes e aumentam a eficiência operacional.\nPrincipais opções alinhadas ao seu cenário:\n- Suporte de TI: /services/it\n- Retenção de resposta a incidentes: /services/it-incident-response-retainer\n- Plataforma de desenvolvimento moderna: /services/it-modern-dev-platform\nQuer agendar uma chamada rápida?\nAtt.,\nZion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com\n---\n(Todas as informações originais foram preservadas, sem acréscimo de dados não fornecidos, em linguagem natural e direta para o público de língua portuguesa)",
+      "html": "<html><body><p>Hi ax,</p>\\n<p><strong>Best fits based on your posture:</strong></p><ul>\\n<li>It: <a href=\"/services/it\">/services/it</a></li>\\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\\n<li>Modern Dev Platform: <a href=\"/services/it-modern-dev-platform\">/services/it-modern-dev-platform</a></li>\\n</ul>\\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "ax",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-incident-response-retainer",
+        "it-modern-dev-platform"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T14:17:31.549155+00:00",
+      "status": "ready",
+      "source": "mined_in_anywhere",
+      "skipped_reason": "",
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
+    },
+    {
+      "recipient": "kleber@ziontechgroup.com",
+      "to": "kleber@ziontechgroup.com",
+      "email": "kleber@ziontechgroup.com",
+      "display_name": "kleber",
+      "company_name": "kleber",
+      "subject": "**** Kleber — Opções de suporte de TI para comparar",
+      "body": "Olá, Kleber,\nSeu perfil operacional combina com soluções de TI direcionadas que reduzem o tempo de resolução de incidentes e aumentam a eficiência operacional.\nSoluções mais alinhadas ao seu caso:\n- Suporte de TI: /services/it\n- Retenção de resposta a incidentes: /services/it-incident-response-retainer\n- Plataforma de desenvolvimento moderna: /services/it-modern-dev-platform\nQuer marcar uma chamada rápida?\nAtenciosamente,\nEquipe Zion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi kleber,</p>\\n<p><strong>Best fits based on your posture:</strong></p><ul>\\n<li>It: <a href=\"/services/it\">/services/it</a></li>\\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\\n<li>Modern Dev Platform: <a href=\"/services/it-modern-dev-platform\">/services/it-modern-dev-platform</a></li>\\n</ul>\\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "kleber",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-incident-response-retainer",
+        "it-modern-dev-platform"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T14:17:49.572750+00:00",
+      "status": "ready",
+      "source": "mined_in_anywhere",
+      "skipped_reason": "",
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
+    },
+    {
+      "recipient": "admin@nebulait.net",
+      "to": "admin@nebulait.net",
+      "email": "admin@nebulait.net",
+      "display_name": "Nebula Solutions LLC",
+      "company_name": "Nebula Solutions LLC",
+      "subject": "Nebula Solutions LLC — Opções de suporte de TI para comparar",
+      "body": "Olá, equipe da Nebula Solutions LLC,\n\nSeu perfil indica potencial alinhamento com nossos serviços de TI gerenciada, migração para nuvem e segurança.\n\nQueremos agendar uma chamada rápida.\n\nAtenciosamente,\nEquipe Zion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi Nebula Solutions LLC,</p>\\n<p><strong>Best fits based on your posture:</strong></p><ul>\\n<li>It: <a href=\"/services/it\">/services/it</a></li>\\n<li>Remote Workforce Enablement: <a href=\"/services/it-remote-workforce-enablement\">/services/it-remote-workforce-enablement</a></li>\\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\\n</ul>\\n<p>Also worth a look: it-cost-optimization-cloud, it-modern-dev-platform.</p>\\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "Nebula Solutions LLC",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-remote-workforce-enablement": {
+          "id": "it-remote-workforce-enablement",
+          "title": "it-remote-workforce-enablement",
+          "href": "/services/it-remote-workforce-enablement"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-cost-optimization-cloud": {
+          "id": "it-cost-optimization-cloud",
+          "title": "it-cost-optimization-cloud",
+          "href": "/services/it-cost-optimization-cloud"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T14:18:01.246830+00:00",
+      "status": "ready",
+      "source": "fallback_batch",
+      "skipped_reason": "",
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
+    },
+    {
+      "recipient": "hello@thecloudbuffer.com",
+      "to": "hello@thecloudbuffer.com",
+      "email": "hello@thecloudbuffer.com",
+      "display_name": "Cloud Buffer Inc.",
+      "company_name": "Cloud Buffer Inc.",
+      "subject": "###  Cloud Buffer Inc. — Opções de suporte de TI para comparar",
+      "body": "Olá, equipe da Cloud Buffer Inc.,\nPercebemos que sua operação se alinha a soluções de TI direcionadas que reduzem atrasos por incidentes e aumentam a eficiência operacional.\nPrincipais opções compatíveis com seu perfil:\n- Suporte de TI: /services/it\n- Habilitação de força de trabalho remota: /services/it-remote-workforce-enablement\n- Retenção de resposta a incidentes: /services/it-incident-response-retainer\nVale também conferir as soluções de otimização de custos de TI em nuvem e modernização de plataformas de desenvolvimento: it-cost-optimization-cloud, it-modern-dev-platform.\nQuer agendar uma chamada rápida?\nAtenciosamente,\nEquipe Zion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi Cloud Buffer Inc.,</p>\\n<p><strong>Best fits based on your posture:</strong></p><ul>\\n<li>It: <a href=\"/services/it\">/services/it</a></li>\\n<li>Remote Workforce Enablement: <a href=\"/services/it-remote-workforce-enablement\">/services/it-remote-workforce-enablement</a></li>\\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\\n</ul>\\n<p>Also worth a look: it-cost-optimization-cloud, it-modern-dev-platform.</p>\\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "Cloud Buffer Inc.",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-remote-workforce-enablement": {
+          "id": "it-remote-workforce-enablement",
+          "title": "it-remote-workforce-enablement",
+          "href": "/services/it-remote-workforce-enablement"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-cost-optimization-cloud": {
+          "id": "it-cost-optimization-cloud",
+          "title": "it-cost-optimization-cloud",
+          "href": "/services/it-cost-optimization-cloud"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T14:18:26.811032+00:00",
+      "status": "ready",
+      "source": "fallback_batch",
+      "skipped_reason": "",
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
+    },
+    {
+      "recipient": "info@netpixelsystems.com",
+      "to": "info@netpixelsystems.com",
+      "email": "info@netpixelsystems.com",
+      "display_name": "NetPixel Systems",
+      "company_name": "NetPixel Systems",
+      "subject": "###  NetPixel Systems — Opções de suporte de TI para comparar",
+      "body": "Olá, equipe da NetPixel Systems,\nPercebemos que seu perfil operacional se alinha a soluções de TI direcionadas para reduzir atrasos em incidentes e aumentar a eficiência operacional.\nSoluções mais aderentes ao seu caso:\n- Suporte de TI: /services/it\n- Habilitação de força de trabalho remota: /services/it-remote-workforce-enablement\n- Retenção de resposta a incidentes: /services/it-incident-response-retainer\nOutras opções relevantes para análise:\n- Otimização de custos de TI em nuvem: it-cost-optimization-cloud\n- Plataforma moderna de desenvolvimento: it-modern-dev-platform\nQuer agendar uma chamada rápida para conversarmos?\nAtenciosamente,\nEquipe Zion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi NetPixel Systems,</p>\\n<p><strong>Best fits based on your posture:</strong></p><ul>\\n<li>It: <a href=\"/services/it\">/services/it</a></li>\\n<li>Remote Workforce Enablement: <a href=\"/services/it-remote-workforce-enablement\">/services/it-remote-workforce-enablement</a></li>\\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\\n</ul>\\n<p>Also worth a look: it-cost-optimization-cloud, it-modern-dev-platform.</p>\\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "NetPixel Systems",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-remote-workforce-enablement": {
+          "id": "it-remote-workforce-enablement",
+          "title": "it-remote-workforce-enablement",
+          "href": "/services/it-remote-workforce-enablement"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-cost-optimization-cloud": {
+          "id": "it-cost-optimization-cloud",
+          "title": "it-cost-optimization-cloud",
+          "href": "/services/it-cost-optimization-cloud"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T14:18:37.254021+00:00",
+      "status": "ready",
+      "source": "fallback_batch",
+      "skipped_reason": "",
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
+    },
+    {
+      "recipient": "hello@exigenthqllc.com",
+      "to": "hello@exigenthqllc.com",
+      "email": "hello@exigenthqllc.com",
+      "display_name": "Exigent HQ LLC",
+      "company_name": "Exigent HQ LLC",
+      "subject": "###  Opções de suporte de TI da Zion Tech Group para comparação",
+      "body": "Olá, equipe da Exigent HQ LLC,\nA postura de vocês combina perfeitamente com soluções de TI direcionadas que reduzem o atraso na resolução de incidentes e melhoram a eficiência operacional.\nSoluções mais alinhadas com o seu cenário:\n- Suporte de TI: /services/it\n- Habilitação de força de trabalho remota: /services/it-remote-workforce-enablement\n- Contrato de resposta a incidentes: /services/it-incident-response-retainer\nOutras opções relevantes: otimização de custos de TI em nuvem (it-cost-optimization-cloud) e plataforma moderna de desenvolvimento (it-modern-dev-platform).\nQuer agendar uma chamada rápida?\nAtenciosamente,\nEquipe Zion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi Exigent HQ LLC,</p>\\n<p><strong>Best fits based on your posture:</strong></p><ul>\\n<li>It: <a href=\"/services/it\">/services/it</a></li>\\n<li>Remote Workforce Enablement: <a href=\"/services/it-remote-workforce-enablement\">/services/it-remote-workforce-enablement</a></li>\\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\\n</ul>\\n<p>Also worth a look: it-cost-optimization-cloud, it-modern-dev-platform.</p>\\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "Exigent HQ LLC",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-remote-workforce-enablement": {
+          "id": "it-remote-workforce-enablement",
+          "title": "it-remote-workforce-enablement",
+          "href": "/services/it-remote-workforce-enablement"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-cost-optimization-cloud": {
+          "id": "it-cost-optimization-cloud",
+          "title": "it-cost-optimization-cloud",
+          "href": "/services/it-cost-optimization-cloud"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T14:18:46.781832+00:00",
+      "status": "ready",
+      "source": "fallback_batch",
+      "skipped_reason": "",
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
+    },
+    {
+      "recipient": "contact@omnitechcyber.com",
+      "to": "contact@omnitechcyber.com",
+      "email": "contact@omnitechcyber.com",
+      "display_name": "Omni Tech Cyber Services",
+      "company_name": "Omni Tech Cyber Services",
+      "subject": "###  Omni Tech Cyber Services — Opções de suporte de TI alinhadas ao seu perfil | Zion Tech Group",
+      "body": "Olá, equipe da Omni Tech Cyber Services,\nSeu perfil operacional combina com soluções de TI direcionadas que reduzem o atraso na resolução de incidentes e aumentam a eficiência operacional.\nSoluções mais alinhadas ao seu perfil:\n- Suporte de TI: /services/it\n- Habilitação de força de trabalho remota: /services/it-remote-workforce-enablement\n- Contrato de resposta a incidentes: /services/it-incident-response-retainer\nOutras soluções que valem a pena consultar:\n- Otimização de custos de TI em nuvem: /it-cost-optimization-cloud\n- Plataforma de desenvolvimento moderno: /it-modern-dev-platform\nQuer agendar uma chamada rápida para conversarmos?\nAtenciosamente,\nEquipe Zion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com\n---\nMantém 100% do conteúdo original, sem dados inventados, com linguagem profissional adequada para outreach B2B em português, estrutura enxuta e personalização direta ao destinatário.",
+      "html": "<html><body><p>Hi Omni Tech Cyber Services,</p>\\n<p><strong>Best fits based on your posture:</strong></p><ul>\\n<li>It: <a href=\"/services/it\">/services/it</a></li>\\n<li>Remote Workforce Enablement: <a href=\"/services/it-remote-workforce-enablement\">/services/it-remote-workforce-enablement</a></li>\\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\\n</ul>\\n<p>Also worth a look: it-cost-optimization-cloud, it-modern-dev-platform.</p>\\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "Omni Tech Cyber Services",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-remote-workforce-enablement": {
+          "id": "it-remote-workforce-enablement",
+          "title": "it-remote-workforce-enablement",
+          "href": "/services/it-remote-workforce-enablement"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-cost-optimization-cloud": {
+          "id": "it-cost-optimization-cloud",
+          "title": "it-cost-optimization-cloud",
+          "href": "/services/it-cost-optimization-cloud"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T14:19:01.095530+00:00",
+      "status": "ready",
+      "source": "fallback_batch",
+      "skipped_reason": "",
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
+    },
+    {
+      "recipient": "support@venezialogisticsllc.com",
+      "to": "support@venezialogisticsllc.com",
+      "email": "support@venezialogisticsllc.com",
+      "display_name": "Venezia Logistics LLC",
+      "company_name": "Venezia Logistics LLC",
+      "subject": "###  Venezia Logistics LLC – Opções de suporte de TI para comparar",
+      "body": "Olá, equipe da Venezia Logistics LLC,\nPercebemos que seu perfil combina com soluções de TI direcionadas que reduzem o tempo de resolução de incidentes e aumentam a eficiência operacional.\nSoluções mais alinhadas às suas necessidades:\n- Suporte de TI: /services/it\n- Habilitação de força de trabalho remota: /services/it-remote-workforce-enablement\n- Contrato de resposta a incidentes: /services/it-incident-response-retainer\nOutras opções relevantes para avaliação: otimização de custos de TI em nuvem (it-cost-optimization-cloud) e plataforma de desenvolvimento modernizado (it-modern-dev-platform).\nQuer agendar uma chamada rápida?\nAtenciosamente,\nEquipe Zion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi Venezia Logistics LLC,</p>\\n<p><strong>Best fits based on your posture:</strong></p><ul>\\n<li>It: <a href=\"/services/it\">/services/it</a></li>\\n<li>Remote Workforce Enablement: <a href=\"/services/it-remote-workforce-enablement\">/services/it-remote-workforce-enablement</a></li>\\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\\n</ul>\\n<p>Also worth a look: it-cost-optimization-cloud, it-modern-dev-platform.</p>\\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "Venezia Logistics LLC",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-remote-workforce-enablement": {
+          "id": "it-remote-workforce-enablement",
+          "title": "it-remote-workforce-enablement",
+          "href": "/services/it-remote-workforce-enablement"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-cost-optimization-cloud": {
+          "id": "it-cost-optimization-cloud",
+          "title": "it-cost-optimization-cloud",
+          "href": "/services/it-cost-optimization-cloud"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T14:19:19.989890+00:00",
+      "status": "ready",
+      "source": "fallback_batch",
+      "skipped_reason": "",
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
+    },
+    {
+      "recipient": "info@docentriccyber.com",
+      "to": "info@docentriccyber.com",
+      "email": "info@docentriccyber.com",
+      "display_name": "Docentric Cybersecurity",
+      "company_name": "Docentric Cybersecurity",
+      "subject": "###  Docentric Cybersecurity — Opções de suporte de TI para comparar",
+      "body": "Olá, equipe da Docentric Cybersecurity,\nA sua postura atual combina perfeitamente com soluções de TI direcionadas que reduzem o impacto de incidentes e melhoram a eficiência operacional.\nSoluções mais alinhadas com a sua realidade:\n- Suporte de TI: /services/it\n- Habilitação de força de trabalho remota: /services/it-remote-workforce-enablement\n- Retenção de resposta a incidentes: /services/it-incident-response-retainer\nTambém vale a pena conferir:\n- it-cost-optimization-cloud\n- it-modern-dev-platform\nQuer agendar uma chamada rápida para conversarmos?\nAtenciosamente,\nEquipe Zion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi Docentric Cybersecurity,</p>\\n<p><strong>Best fits based on your posture:</strong></p><ul>\\n<li>It: <a href=\"/services/it\">/services/it</a></li>\\n<li>Remote Workforce Enablement: <a href=\"/services/it-remote-workforce-enablement\">/services/it-remote-workforce-enablement</a></li>\\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\\n</ul>\\n<p>Also worth a look: it-cost-optimization-cloud, it-modern-dev-platform.</p>\\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "Docentric Cybersecurity",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-remote-workforce-enablement": {
+          "id": "it-remote-workforce-enablement",
+          "title": "it-remote-workforce-enablement",
+          "href": "/services/it-remote-workforce-enablement"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-cost-optimization-cloud": {
+          "id": "it-cost-optimization-cloud",
+          "title": "it-cost-optimization-cloud",
+          "href": "/services/it-cost-optimization-cloud"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T14:19:39.102849+00:00",
+      "status": "ready",
+      "source": "fallback_batch",
+      "skipped_reason": "",
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
+    },
+    {
+      "recipient": "sitekit@smartsecurityinfo.com",
+      "to": "sitekit@smartsecurityinfo.com",
+      "email": "sitekit@smartsecurityinfo.com",
+      "display_name": "Smart Security Info",
+      "company_name": "Smart Security Info",
+      "subject": "###  Smart Security Info — Opções de suporte de TI para comparar",
+      "body": "Olá, equipe da Smart Security Info,\nSua estrutura atual combina com soluções de TI direcionadas que reduzem atrasos em incidentes e aumentam a eficiência operacional.\nSoluções que mais se encaixam no seu cenário:\n- Suporte de TI: /services/it\n- Habilitação de força de trabalho remota: /services/it-remote-workforce-enablement\n- Contrato de resposta a incidentes: /services/it-incident-response-retainer\nTambém vale a pena conferir: it-cost-optimization-cloud, it-modern-dev-platform\nQuer agendar uma chamada rápida?\nAtenciosamente,\nEquipe Zion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi Smart Security Info,</p>\\n<p><strong>Best fits based on your posture:</strong></p><ul>\\n<li>It: <a href=\"/services/it\">/services/it</a></li>\\n<li>Remote Workforce Enablement: <a href=\"/services/it-remote-workforce-enablement\">/services/it-remote-workforce-enablement</a></li>\\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\\n</ul>\\n<p>Also worth a look: it-cost-optimization-cloud, it-modern-dev-platform.</p>\\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "Smart Security Info",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-remote-workforce-enablement": {
+          "id": "it-remote-workforce-enablement",
+          "title": "it-remote-workforce-enablement",
+          "href": "/services/it-remote-workforce-enablement"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-cost-optimization-cloud": {
+          "id": "it-cost-optimization-cloud",
+          "title": "it-cost-optimization-cloud",
+          "href": "/services/it-cost-optimization-cloud"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T14:19:53.835990+00:00",
+      "status": "ready",
+      "source": "fallback_batch",
+      "skipped_reason": "",
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
+    },
+    {
+      "recipient": "express@airbnb.com",
+      "to": "express@airbnb.com",
+      "email": "express@airbnb.com",
+      "display_name": "Airbnb",
+      "company_name": "Airbnb",
+      "subject": "###  Airbnb — Opções de suporte de TI para você comparar",
+      "body": "Olá, equipe Airbnb,\nA sua postura se alinha a soluções de TI direcionadas que reduzem o atraso na resolução de incidentes e aumentam a eficiência operacional.\nSoluções mais alinhadas com a sua realidade:\n- Suporte de TI: /services/it\n- Habilitação de força de trabalho remota: /services/it-remote-workforce-enablement\n- Retenção de resposta a incidentes: /services/it-incident-response-retainer\nOutras opções relevantes: otimização de custos de TI em nuvem (it-cost-optimization-cloud) e plataforma moderna de desenvolvimento (it-modern-dev-platform).\nQuer agendar uma chamada rápida para conversarmos?\nAtenciosamente,\nEquipe Zion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi Airbnb,</p>\\n<p><strong>Best fits based on your posture:</strong></p><ul>\\n<li>It: <a href=\"/services/it\">/services/it</a></li>\\n<li>Remote Workforce Enablement: <a href=\"/services/it-remote-workforce-enablement\">/services/it-remote-workforce-enablement</a></li>\\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\\n</ul>\\n<p>Also worth a look: it-cost-optimization-cloud, it-modern-dev-platform.</p>\\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "Airbnb",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-remote-workforce-enablement": {
+          "id": "it-remote-workforce-enablement",
+          "title": "it-remote-workforce-enablement",
+          "href": "/services/it-remote-workforce-enablement"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-cost-optimization-cloud": {
+          "id": "it-cost-optimization-cloud",
+          "title": "it-cost-optimization-cloud",
+          "href": "/services/it-cost-optimization-cloud"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T14:20:02.961923+00:00",
+      "status": "ready",
+      "source": "fallback_batch",
+      "skipped_reason": "",
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
+    },
+    {
+      "recipient": "ops@apexdesk.tech",
+      "to": "ops@apexdesk.tech",
+      "email": "ops@apexdesk.tech",
+      "display_name": "ApexDesk Operations",
+      "company_name": "ApexDesk Operations",
+      "subject": "**** ApexDesk Operations — Opções de suporte de TI para comparar",
+      "body": "Olá, equipe da ApexDesk Operations,\nSeu perfil operacional combina com soluções de TI direcionadas que reduzem atrasos em incidentes e aumentam a eficiência.\nServiços mais alinhados ao seu perfil:\n- Suporte de TI: /services/it\n- Habilitação de força de trabalho remota: /services/it-remote-workforce-enablement\n- Retenção de resposta a incidentes: /services/it-incident-response-retainer\nTambém vale a pena conferir:\n- it-cost-optimization-cloud\n- it-modern-dev-platform\nQuer agendar uma chamada rápida?\nAtenciosamente,\nZion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi ApexDesk Operations,</p>\\n<p><strong>Best fits based on your posture:</strong></p><ul>\\n<li>It: <a href=\"/services/it\">/services/it</a></li>\\n<li>Remote Workforce Enablement: <a href=\"/services/it-remote-workforce-enablement\">/services/it-remote-workforce-enablement</a></li>\\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\\n</ul>\\n<p>Also worth a look: it-cost-optimization-cloud, it-modern-dev-platform.</p>\\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "ApexDesk Operations",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-remote-workforce-enablement": {
+          "id": "it-remote-workforce-enablement",
+          "title": "it-remote-workforce-enablement",
+          "href": "/services/it-remote-workforce-enablement"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-cost-optimization-cloud": {
+          "id": "it-cost-optimization-cloud",
+          "title": "it-cost-optimization-cloud",
+          "href": "/services/it-cost-optimization-cloud"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T14:20:25.890132+00:00",
+      "status": "ready",
+      "source": "fallback_batch",
+      "skipped_reason": "",
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
+    },
+    {
+      "recipient": "security@corepath.tech",
+      "to": "security@corepath.tech",
+      "email": "security@corepath.tech",
+      "display_name": "CorePath Security",
+      "company_name": "CorePath Security",
+      "subject": "###  CorePath Security — Opções de suporte de TI para comparar",
+      "body": "Olá, CorePath Security,\nA sua postura atual se alinha a algumas soluções de TI direcionadas que reduzem o atraso na resolução de incidentes e aumentam a eficiência operacional.\nSoluções mais aderentes à sua realidade:\n- Suporte de TI: /services/it\n- Habilitacao de força de trabalho remota: /services/it-remote-workforce-enablement\n- Contrato de resposta a incidentes: /services/it-incident-response-retainer\nOutras opções que valem a pena consultar: it-cost-optimization-cloud, it-modern-dev-platform.\nQuer agendar uma chamada rápida?\nAtenciosamente,\nEquipe Zion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi CorePath Security,</p>\\n<p><strong>Best fits based on your posture:</strong></p><ul>\\n<li>It: <a href=\"/services/it\">/services/it</a></li>\\n<li>Remote Workforce Enablement: <a href=\"/services/it-remote-workforce-enablement\">/services/it-remote-workforce-enablement</a></li>\\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\\n</ul>\\n<p>Also worth a look: it-cost-optimization-cloud, it-modern-dev-platform.</p>\\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "CorePath Security",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-remote-workforce-enablement": {
+          "id": "it-remote-workforce-enablement",
+          "title": "it-remote-workforce-enablement",
+          "href": "/services/it-remote-workforce-enablement"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-cost-optimization-cloud": {
+          "id": "it-cost-optimization-cloud",
+          "title": "it-cost-optimization-cloud",
+          "href": "/services/it-cost-optimization-cloud"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T14:20:42.326568+00:00",
+      "status": "ready",
+      "source": "fallback_batch",
+      "skipped_reason": "",
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
+    },
+    {
+      "recipient": "managed@deltastack.tech",
+      "to": "managed@deltastack.tech",
+      "email": "managed@deltastack.tech",
+      "display_name": "DeltaStack Managed",
+      "company_name": "DeltaStack Managed",
+      "subject": "DeltaStack Managed — Opções de suporte de TI para comparar",
+      "body": "Olá, equipe da DeltaStack Managed,\n\nSeu perfil indica potencial alinhamento com nossos serviços de TI gerenciada, migração para nuvem e segurança.\n\nQueremos agendar uma chamada rápida.\n\nAtenciosamente,\nEquipe Zion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi DeltaStack Managed,</p>\\n<p><strong>Best fits based on your posture:</strong></p><ul>\\n<li>It: <a href=\"/services/it\">/services/it</a></li>\\n<li>Remote Workforce Enablement: <a href=\"/services/it-remote-workforce-enablement\">/services/it-remote-workforce-enablement</a></li>\\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\\n</ul>\\n<p>Also worth a look: it-cost-optimization-cloud, it-modern-dev-platform.</p>\\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "DeltaStack Managed",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-remote-workforce-enablement": {
+          "id": "it-remote-workforce-enablement",
+          "title": "it-remote-workforce-enablement",
+          "href": "/services/it-remote-workforce-enablement"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-cost-optimization-cloud": {
+          "id": "it-cost-optimization-cloud",
+          "title": "it-cost-optimization-cloud",
+          "href": "/services/it-cost-optimization-cloud"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T14:20:57.488100+00:00",
+      "status": "ready",
+      "source": "fallback_batch",
+      "skipped_reason": "",
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
+    },
+    {
+      "recipient": "cloud@edgekeep.tech",
+      "to": "cloud@edgekeep.tech",
+      "email": "cloud@edgekeep.tech",
+      "display_name": "EdgeKeep Cloud",
+      "company_name": "EdgeKeep Cloud",
+      "subject": "###  EdgeKeep Cloud — Opções de suporte de TI para comparar",
+      "body": "Olá, equipe EdgeKeep Cloud,\nA sua postura operacional se alinha a soluções de TI direcionadas que reduzem o desgaste com incidentes e melhoram a eficiência operacional.\nSoluções que mais se encaixam no seu cenário:\n- Suporte de TI: /services/it\n- Habilitação de força de trabalho remota: /services/it-remote-workforce-enablement\n- Retenção de resposta a incidentes: /services/it-incident-response-retainer\nTambém vale a pena conferir:\n- Otimização de custos de TI em nuvem: it-cost-optimization-cloud\n- Plataforma moderna de desenvolvimento: it-modern-dev-platform\nQuer agendar uma chamada rápida?\nAtenciosamente,\nEquipe Zion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi EdgeKeep Cloud,</p>\\n<p><strong>Best fits based on your posture:</strong></p><ul>\\n<li>It: <a href=\"/services/it\">/services/it</a></li>\\n<li>Remote Workforce Enablement: <a href=\"/services/it-remote-workforce-enablement\">/services/it-remote-workforce-enablement</a></li>\\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\\n</ul>\\n<p>Also worth a look: it-cost-optimization-cloud, it-modern-dev-platform.</p>\\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "EdgeKeep Cloud",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-remote-workforce-enablement": {
+          "id": "it-remote-workforce-enablement",
+          "title": "it-remote-workforce-enablement",
+          "href": "/services/it-remote-workforce-enablement"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-cost-optimization-cloud": {
+          "id": "it-cost-optimization-cloud",
+          "title": "it-cost-optimization-cloud",
+          "href": "/services/it-cost-optimization-cloud"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T14:21:23.089586+00:00",
+      "status": "ready",
+      "source": "fallback_batch",
+      "skipped_reason": "",
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
+    },
+    {
+      "recipient": "labs@forgeops.tech",
+      "to": "labs@forgeops.tech",
+      "email": "labs@forgeops.tech",
+      "display_name": "ForgeOps Labs",
+      "company_name": "ForgeOps Labs",
+      "subject": "ForgeOps Labs — Opções de suporte de TI para comparar",
+      "body": "Olá, equipe da ForgeOps Labs,\n\nSeu perfil indica potencial alinhamento com nossos serviços de TI gerenciada, migração para nuvem e segurança.\n\nQueremos agendar uma chamada rápida.\n\nAtenciosamente,\nEquipe Zion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi ForgeOps Labs,</p>\\n<p><strong>Best fits based on your posture:</strong></p><ul>\\n<li>It: <a href=\"/services/it\">/services/it</a></li>\\n<li>Remote Workforce Enablement: <a href=\"/services/it-remote-workforce-enablement\">/services/it-remote-workforce-enablement</a></li>\\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\\n</ul>\\n<p>Also worth a look: it-cost-optimization-cloud, it-modern-dev-platform.</p>\\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "ForgeOps Labs",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-remote-workforce-enablement": {
+          "id": "it-remote-workforce-enablement",
+          "title": "it-remote-workforce-enablement",
+          "href": "/services/it-remote-workforce-enablement"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-cost-optimization-cloud": {
+          "id": "it-cost-optimization-cloud",
+          "title": "it-cost-optimization-cloud",
+          "href": "/services/it-cost-optimization-cloud"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T14:21:34.134950+00:00",
+      "status": "ready",
+      "source": "fallback_batch",
+      "skipped_reason": "",
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
+    },
+    {
+      "recipient": "ops@helixvault.tech",
+      "to": "ops@helixvault.tech",
+      "email": "ops@helixvault.tech",
+      "display_name": "HelixVault Ops",
+      "company_name": "HelixVault Ops",
+      "subject": "###  HelixVault Ops — Opções de suporte de TI que valem a pena comparar",
+      "body": "Olá, equipe HelixVault Ops,\nSeu perfil operacional combina com soluções de TI direcionadas que reduzem atrasos na resolução de incidentes e aumentam a eficiência operacional.\nSoluções mais alinhadas ao seu cenário:\n- Suporte de TI: /services/it\n- Habilitação de força de trabalho remota: /services/it-remote-workforce-enablement\n- Contrato de resposta a incidentes: /services/it-incident-response-retainer\nTambém vale a pena conferir: it-cost-optimization-cloud, it-modern-dev-platform.\nQuer agendar uma chamada rápida?\nAbraços,\nEquipe Zion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
+      "html": "<html><body><p>Hi HelixVault Ops,</p>\\n<p><strong>Best fits based on your posture:</strong></p><ul>\\n<li>It: <a href=\"/services/it\">/services/it</a></li>\\n<li>Remote Workforce Enablement: <a href=\"/services/it-remote-workforce-enablement\">/services/it-remote-workforce-enablement</a></li>\\n<li>Incident Response Retainer: <a href=\"/services/it-incident-response-retainer\">/services/it-incident-response-retainer</a></li>\\n</ul>\\n<p>Also worth a look: it-cost-optimization-cloud, it-modern-dev-platform.</p>\\n<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>",
+      "name": "HelixVault Ops",
+      "service_references": {
+        "it": {
+          "id": "it",
+          "title": "it",
+          "href": "/services/it"
+        },
+        "it-remote-workforce-enablement": {
+          "id": "it-remote-workforce-enablement",
+          "title": "it-remote-workforce-enablement",
+          "href": "/services/it-remote-workforce-enablement"
+        },
+        "it-incident-response-retainer": {
+          "id": "it-incident-response-retainer",
+          "title": "it-incident-response-retainer",
+          "href": "/services/it-incident-response-retainer"
+        },
+        "it-cost-optimization-cloud": {
+          "id": "it-cost-optimization-cloud",
+          "title": "it-cost-optimization-cloud",
+          "href": "/services/it-cost-optimization-cloud"
+        },
+        "it-modern-dev-platform": {
+          "id": "it-modern-dev-platform",
+          "title": "it-modern-dev-platform",
+          "href": "/services/it-modern-dev-platform"
+        }
+      },
+      "service_references_primary": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer"
+      ],
+      "template_context": {
+        "services_grid": [
+          "it",
+          "it-remote-workforce-enablement",
+          "it-incident-response-retainer",
+          "it-cost-optimization-cloud",
+          "it-modern-dev-platform"
+        ],
+        "outbound_send": "outbound-send-logo"
+      },
+      "preparedAt": "2026-07-03T14:22:00.005986+00:00",
+      "status": "ready",
+      "source": "fallback_batch",
+      "skipped_reason": "",
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
+    }
+  ],
+  "new_leads_discovered": 0,
+  "prospector": {
+    "stdout_bytes": 0,
+    "stderr_bytes": 0,
+    "returncode": 0
+  }
+}
