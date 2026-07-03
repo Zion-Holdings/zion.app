@@ -1,0 +1,156 @@
+{
+  "generatedAt": "2026-07-03T08:09:28.538505+00:00",
+  "source": "lead history + local candidate expansion",
+  "counts": {
+    "business_domain_ready": 7
+  },
+  "recipients": [
+    {
+      "name": "TechFlow MSP",
+      "email": "support@techflowmsp.com",
+      "website": "https://techflowmsp.com",
+      "service_ids": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge",
+        "it-endpoint-security",
+        "cloud-cost-optimization",
+        "it-network-monitoring",
+        "it-helpdesk-outsource"
+      ],
+      "subject": "TechFlow MSP \u2014 IT support options worth comparing",
+      "body": "Hi TechFlow,\n\nI came across TechFlow MSP and noticed alignment with managed IT, endpoint security, network monitoring, helpdesk outsourcing, cloud cost optimization, and modern development platform services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:09:28.538359+00:00"
+    },
+    {
+      "name": "ApexIT Consulting",
+      "email": "info@apexitconsulting.com",
+      "website": "https://apexitconsulting.com",
+      "service_ids": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge",
+        "it-endpoint-security",
+        "cloud-cost-optimization",
+        "it-network-monitoring",
+        "it-helpdesk-outsource"
+      ],
+      "subject": "ApexIT Consulting \u2014 IT support options worth comparing",
+      "body": "Hi ApexIT,\n\nI came across ApexIT Consulting and noticed alignment with managed IT, endpoint security, network monitoring, helpdesk outsourcing, cloud cost optimization, and modern development platform services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:09:28.538405+00:00"
+    },
+    {
+      "name": "BlueKey Cloud",
+      "email": "hello@bluekeycloud.com",
+      "website": "https://bluekeycloud.com",
+      "service_ids": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge",
+        "it-endpoint-security",
+        "cloud-cost-optimization",
+        "it-network-monitoring",
+        "it-helpdesk-outsource"
+      ],
+      "subject": "BlueKey Cloud \u2014 IT support options worth comparing",
+      "body": "Hi BlueKey,\n\nI came across BlueKey Cloud and noticed alignment with managed IT, endpoint security, network monitoring, helpdesk outsourcing, cloud cost optimization, and modern development platform services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:09:28.538420+00:00"
+    },
+    {
+      "name": "CoreDesk Support",
+      "email": "contact@coredesk.com",
+      "website": "https://coredesk.com",
+      "service_ids": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge",
+        "it-endpoint-security",
+        "cloud-cost-optimization",
+        "it-network-monitoring",
+        "it-helpdesk-outsource"
+      ],
+      "subject": "CoreDesk Support \u2014 IT support options worth comparing",
+      "body": "Hi CoreDesk,\n\nI came across CoreDesk Support and noticed alignment with managed IT, endpoint security, network monitoring, helpdesk outsourcing, cloud cost optimization, and modern development platform services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:09:28.538432+00:00"
+    },
+    {
+      "name": "DataPulse Analytics",
+      "email": "info@datapulse.io",
+      "website": "https://datapulse.io",
+      "service_ids": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge",
+        "it-endpoint-security",
+        "cloud-cost-optimization",
+        "it-network-monitoring",
+        "it-helpdesk-outsource"
+      ],
+      "subject": "DataPulse Analytics \u2014 IT support options worth comparing",
+      "body": "Hi DataPulse,\n\nI came across DataPulse Analytics and noticed alignment with managed IT, endpoint security, network monitoring, helpdesk outsourcing, cloud cost optimization, and modern development platform services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:09:28.538443+00:00"
+    },
+    {
+      "name": "EdgePath Networks",
+      "email": "sales@edgepath.net",
+      "website": "https://edgepath.net",
+      "service_ids": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge",
+        "it-endpoint-security",
+        "cloud-cost-optimization",
+        "it-network-monitoring",
+        "it-helpdesk-outsource"
+      ],
+      "subject": "EdgePath Networks \u2014 IT support options worth comparing",
+      "body": "Hi EdgePath,\n\nI came across EdgePath Networks and noticed alignment with managed IT, endpoint security, network monitoring, helpdesk outsourcing, cloud cost optimization, and modern development platform services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:09:28.538455+00:00"
+    },
+    {
+      "name": "ForgeStackDev",
+      "email": "hello@forgestack.dev",
+      "website": "https://forgestack.dev",
+      "service_ids": [
+        "it",
+        "it-remote-workforce-enablement",
+        "it-incident-response-retainer",
+        "it-cost-optimization-cloud",
+        "it-modern-dev-platform",
+        "it-secure-access-service-edge",
+        "it-endpoint-security",
+        "cloud-cost-optimization",
+        "it-network-monitoring",
+        "it-helpdesk-outsource"
+      ],
+      "subject": "ForgeStackDev \u2014 IT support options worth comparing",
+      "body": "Hi ForgeStackDev,\n\nI came across ForgeStackDev and noticed alignment with managed IT, endpoint security, network monitoring, helpdesk outsourcing, cloud cost optimization, and modern development platform services.\n\nIf it helps, I can share a 2-minute overview of where these typically help teams like yours.\n\nNo obligation \u2014 feel free to reply if you want the overview.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:09:28.538466+00:00"
+    }
+  ]
+}

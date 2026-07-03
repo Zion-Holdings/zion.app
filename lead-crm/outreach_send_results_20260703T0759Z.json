@@ -1,0 +1,48 @@
+{
+  "generatedAt": "2026-07-03T08:09:51.434363+00:00",
+  "send_count": 7,
+  "results": [
+    {
+      "to": "support@techflowmsp.com",
+      "success": true,
+      "message_id": "19f2706d1c99f22f",
+      "thread_id": "19f2706d1c99f22f"
+    },
+    {
+      "to": "info@apexitconsulting.com",
+      "success": true,
+      "message_id": "19f2706d46ab8572",
+      "thread_id": "19f2706d46ab8572"
+    },
+    {
+      "to": "hello@bluekeycloud.com",
+      "success": true,
+      "message_id": "19f2706d784a0434",
+      "thread_id": "19f2706d784a0434"
+    },
+    {
+      "to": "contact@coredesk.com",
+      "success": true,
+      "message_id": "19f2706dd968ab95",
+      "thread_id": "19f2706dd968ab95"
+    },
+    {
+      "to": "info@datapulse.io",
+      "success": true,
+      "message_id": "19f2706e0e0a4316",
+      "thread_id": "19f2706e0e0a4316"
+    },
+    {
+      "to": "sales@edgepath.net",
+      "success": true,
+      "message_id": "19f2706e75edf7da",
+      "thread_id": "19f2706e75edf7da"
+    },
+    {
+      "to": "hello@forgestack.dev",
+      "success": true,
+      "message_id": "19f2706eafb0a7dc",
+      "thread_id": "19f2706eafb0a7dc"
+    }
+  ]
+}
