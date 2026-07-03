@@ -12,24 +12,18 @@ const OUT_DIR = path.join(__dirname, 'out');
 const REPO = 'Zion-support/zion-support.github.io';
 
 function getPat() {
-  // Try env first
   if (process.env.GITHUB_TOKEN) return process.env.GITHUB_TOKEN;
   if (process.env.GH_TOKEN) return process.env.GH_TOKEN;
-  
-  // Try ~/.git-credentials
   try {
     const creds = fs.readFileSync(path.join(process.env.HOME || process.env.USERPROFILE, '.git-credentials'), 'utf-8');
     const m = creds.match(/https:\/\/[^:]+:([^@]+)@github\.com/);
     if (m) return m[1];
   } catch (e) {}
-  
-  // Try git remote URL
   try {
     const url = execSync('git remote get-url origin', { encoding: 'utf-8' }).trim();
     const m = url.match(/https:\/\/[^:]+:([^@]+)@github\.com/);
     if (m) return m[1];
   } catch (e) {}
-  
   return null;
 }
 
@@ -73,20 +67,26 @@ async function main() {
     process.exit(1);
   }
 
-  // Get main branch SHA
   console.log('Fetching main ref...');
   const refRes = await api('GET', `/repos/${REPO}/git/refs/heads/main`, null, pat);
-  const mainSha = refRes.body.object.sha;
+  const mainSha = refRes?.body?.object?.sha || refRes?.data?.object?.sha;
+  if (!mainSha) {
+    console.error('missing main ref:', JSON.stringify(refRes).slice(0,400));
+    process.exit(1);
+  }
 
-  // Get base tree
+  console.log('Fetching base tree...');
   const commitRes = await api('GET', `/repos/${REPO}/git/commits/${mainSha}`, null, pat);
-  const baseTree = commitRes.data.tree.sha;
+  const baseTree = commitRes?.body?.tree?.sha || commitRes?.data?.tree?.sha;
+  if (!baseTree) {
+    console.error('missing base tree:', JSON.stringify(commitRes).slice(0,400));
+    process.exit(1);
+  }
 
-  // Build tree entries
   console.log('Building file tree from out/...');
   const treeEntries = [];
   let blobCount = 0;
-  
+
   async function processDir(dir, prefix = '') {
     const items = fs.readdirSync(dir);
     for (const item of items) {
@@ -114,38 +114,47 @@ async function main() {
   await processDir(OUT_DIR);
   console.log(`✓ ${blobCount} blobs created`);
 
-  // Create tree
   console.log('Creating tree...');
   const treeRes = await api('POST', `/repos/${REPO}/git/trees`, {
-    base_tree: baseTree, tree: treeEntries,
+    base_tree: baseTree,
+    tree: treeEntries,
   }, pat);
   if (treeRes.status !== 201) {
     console.error('Tree error:', treeRes.body);
     process.exit(1);
   }
+  const treeSha = treeRes?.body?.sha || treeRes?.data?.sha;
+  if (!treeSha) {
+    console.error('missing tree sha:', JSON.stringify(treeRes).slice(0,400));
+    process.exit(1);
+  }
 
-  // Create commit
   console.log('Creating commit...');
-  const newSha = treeRes.data.sha;
   const commitRes2 = await api('POST', `/repos/${REPO}/git/commits`, {
-    message: `deploy: ${new Date().toISOString().slice(0,19)} - 602 service pages + SEO`,
-    tree: newSha, parents: [mainSha],
+    message: `deploy: ${new Date().toISOString().slice(0,19)} - static site export`,
+    tree: treeSha,
+    parents: [mainSha],
   }, pat);
   if (commitRes2.status !== 201) {
     console.error('Commit error:', commitRes2.body);
     process.exit(1);
   }
+  const commitSha = commitRes2?.body?.sha || commitRes2?.data?.sha;
+  if (!commitSha) {
+    console.error('missing commit sha:', JSON.stringify(commitRes2).slice(0,400));
+    process.exit(1);
+  }
 
-  // Create/update gh-pages
   console.log('Pushing to gh-pages...');
   const refRes2 = await api('POST', `/repos/${REPO}/git/refs`, {
-    ref: 'refs/heads/gh-pages', sha: commitRes2.body.sha,
+    ref: 'refs/heads/gh-pages',
+    sha: commitSha,
   }, pat);
-  
+
   if (refRes2.status === 422) {
-    // Exists — force update
     await api('PATCH', `/repos/${REPO}/git/refs/heads/gh-pages`, {
-      sha: commitRes2.body.sha, force: true,
+      sha: commitSha,
+      force: true,
     }, pat);
   }
 

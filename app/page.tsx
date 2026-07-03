@@ -150,8 +150,8 @@ export default function HomePage() {
       .finally(() => clearTimeout(t));
   }, []);
 
-    const filteredShowcase = useMemo(() => {
-let list = services;
+  const filteredShowcase = useMemo(() => {
+    let list = services;
     if (catFilter) list = list.filter((s: any) => s.category === catFilter);
     if (search.trim()) {
       const q = search.toLowerCase();
