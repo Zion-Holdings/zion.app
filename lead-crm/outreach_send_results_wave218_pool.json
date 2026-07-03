@@ -1,0 +1,66 @@
+{
+  "generatedAt": "2026-07-03T08:20:01.032243+00:00",
+  "send_count": 10,
+  "results": [
+    {
+      "to": "contact@clearpath.tech",
+      "success": true,
+      "message_id": "19f271015388d684",
+      "thread_id": "19f271015388d684"
+    },
+    {
+      "to": "info@northwindsupport.com",
+      "success": true,
+      "message_id": "19f2710171f891fb",
+      "thread_id": "19f2710171f891fb"
+    },
+    {
+      "to": "hello@latticesystems.io",
+      "success": true,
+      "message_id": "19f27101800923ac",
+      "thread_id": "19f27101800923ac"
+    },
+    {
+      "to": "support@ridgeline-it.com",
+      "success": true,
+      "message_id": "19f27101d1146815",
+      "thread_id": "19f27101d1146815"
+    },
+    {
+      "to": "sales@pivotalcloud.io",
+      "success": true,
+      "message_id": "19f27102301b4c4f",
+      "thread_id": "19f27102301b4c4f"
+    },
+    {
+      "to": "admin@silverlinemsp.com",
+      "success": true,
+      "message_id": "19f271027e13fad7",
+      "thread_id": "19f271027e13fad7"
+    },
+    {
+      "to": "hello@brightnodelabs.com",
+      "success": true,
+      "message_id": "19f27102a2622be9",
+      "thread_id": "19f27102a2622be9"
+    },
+    {
+      "to": "contact@coastalstack.io",
+      "success": true,
+      "message_id": "19f27102f3b44340",
+      "thread_id": "19f27102f3b44340"
+    },
+    {
+      "to": "info@beaconops.co",
+      "success": true,
+      "message_id": "19f271030d172b6a",
+      "thread_id": "19f271030d172b6a"
+    },
+    {
+      "to": "hello@meridiandigital.io",
+      "success": true,
+      "message_id": "19f2710381804f76",
+      "thread_id": "19f2710381804f76"
+    }
+  ]
+}

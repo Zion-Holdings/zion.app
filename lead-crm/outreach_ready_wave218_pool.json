@@ -1,0 +1,189 @@
+{
+  "generatedAt": "2026-07-03T08:19:31.503239+00:00",
+  "source": "local_expansion_wave218",
+  "counts": {
+    "business_domain_ready": 10
+  },
+  "recipients": [
+    {
+      "name": "ClearPath Tech",
+      "email": "contact@clearpath.tech",
+      "website": "https://clearpath.tech",
+      "service_ids": [
+        "it",
+        "it-endpoint-security",
+        "it-network-monitoring",
+        "it-secure-wireless",
+        "it-helpdesk-outsource",
+        "it-ai-ops",
+        "it-observability-synthetic"
+      ],
+      "subject": "ClearPath Tech \u2014 managed IT operations worth comparing",
+      "body": "Hi ClearPath,\n\nI came across ClearPath Tech and noticed fit with managed IT, endpoint security, network monitoring/NOC, SD-WAN/wireless, helpdesk outsourcing, AI ops, and synthetic monitoring.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:19:31.503009+00:00"
+    },
+    {
+      "name": "Northwind Support",
+      "email": "info@northwindsupport.com",
+      "website": "https://northwindsupport.com",
+      "service_ids": [
+        "it",
+        "it-endpoint-security",
+        "it-network-monitoring",
+        "it-secure-wireless",
+        "it-helpdesk-outsource",
+        "it-ai-ops",
+        "it-observability-synthetic"
+      ],
+      "subject": "Northwind Support \u2014 managed IT operations worth comparing",
+      "body": "Hi Northwind,\n\nI came across Northwind Support and noticed fit with managed IT, endpoint security, network monitoring/NOC, SD-WAN/wireless, helpdesk outsourcing, AI ops, and synthetic monitoring.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:19:31.503064+00:00"
+    },
+    {
+      "name": "Lattice Systems",
+      "email": "hello@latticesystems.io",
+      "website": "https://latticesystems.io",
+      "service_ids": [
+        "it",
+        "it-endpoint-security",
+        "it-network-monitoring",
+        "it-secure-wireless",
+        "it-helpdesk-outsource",
+        "it-ai-ops",
+        "it-observability-synthetic"
+      ],
+      "subject": "Lattice Systems \u2014 managed IT operations worth comparing",
+      "body": "Hi Lattice,\n\nI came across Lattice Systems and noticed fit with managed IT, endpoint security, network monitoring/NOC, SD-WAN/wireless, helpdesk outsourcing, AI ops, and synthetic monitoring.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:19:31.503080+00:00"
+    },
+    {
+      "name": "RidgeLine IT",
+      "email": "support@ridgeline-it.com",
+      "website": "https://ridgeline-it.com",
+      "service_ids": [
+        "it",
+        "it-endpoint-security",
+        "it-network-monitoring",
+        "it-secure-wireless",
+        "it-helpdesk-outsource",
+        "it-ai-ops",
+        "it-observability-synthetic"
+      ],
+      "subject": "RidgeLine IT \u2014 managed IT operations worth comparing",
+      "body": "Hi RidgeLine,\n\nI came across RidgeLine IT and noticed fit with managed IT, endpoint security, network monitoring/NOC, SD-WAN/wireless, helpdesk outsourcing, AI ops, and synthetic monitoring.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:19:31.503094+00:00"
+    },
+    {
+      "name": "Pivotal Cloud",
+      "email": "sales@pivotalcloud.io",
+      "website": "https://pivotalcloud.io",
+      "service_ids": [
+        "it",
+        "it-endpoint-security",
+        "it-network-monitoring",
+        "it-secure-wireless",
+        "it-helpdesk-outsource",
+        "it-ai-ops",
+        "it-observability-synthetic"
+      ],
+      "subject": "Pivotal Cloud \u2014 managed IT operations worth comparing",
+      "body": "Hi Pivotal,\n\nI came across Pivotal Cloud and noticed fit with managed IT, endpoint security, network monitoring/NOC, SD-WAN/wireless, helpdesk outsourcing, AI ops, and synthetic monitoring.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:19:31.503106+00:00"
+    },
+    {
+      "name": "Silverline MSP",
+      "email": "admin@silverlinemsp.com",
+      "website": "https://silverlinemsp.com",
+      "service_ids": [
+        "it",
+        "it-endpoint-security",
+        "it-network-monitoring",
+        "it-secure-wireless",
+        "it-helpdesk-outsource",
+        "it-ai-ops",
+        "it-observability-synthetic"
+      ],
+      "subject": "Silverline MSP \u2014 managed IT operations worth comparing",
+      "body": "Hi Silverline,\n\nI came across Silverline MSP and noticed fit with managed IT, endpoint security, network monitoring/NOC, SD-WAN/wireless, helpdesk outsourcing, AI ops, and synthetic monitoring.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:19:31.503135+00:00"
+    },
+    {
+      "name": "BrightNode Labs",
+      "email": "hello@brightnodelabs.com",
+      "website": "https://brightnodelabs.com",
+      "service_ids": [
+        "it",
+        "it-endpoint-security",
+        "it-network-monitoring",
+        "it-secure-wireless",
+        "it-helpdesk-outsource",
+        "it-ai-ops",
+        "it-observability-synthetic"
+      ],
+      "subject": "BrightNode Labs \u2014 managed IT operations worth comparing",
+      "body": "Hi BrightNode,\n\nI came across BrightNode Labs and noticed fit with managed IT, endpoint security, network monitoring/NOC, SD-WAN/wireless, helpdesk outsourcing, AI ops, and synthetic monitoring.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:19:31.503148+00:00"
+    },
+    {
+      "name": "Coastal Stack",
+      "email": "contact@coastalstack.io",
+      "website": "https://coastalstack.io",
+      "service_ids": [
+        "it",
+        "it-endpoint-security",
+        "it-network-monitoring",
+        "it-secure-wireless",
+        "it-helpdesk-outsource",
+        "it-ai-ops",
+        "it-observability-synthetic"
+      ],
+      "subject": "Coastal Stack \u2014 managed IT operations worth comparing",
+      "body": "Hi Coastal,\n\nI came across Coastal Stack and noticed fit with managed IT, endpoint security, network monitoring/NOC, SD-WAN/wireless, helpdesk outsourcing, AI ops, and synthetic monitoring.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:19:31.503162+00:00"
+    },
+    {
+      "name": "BeaconOps",
+      "email": "info@beaconops.co",
+      "website": "https://beaconops.co",
+      "service_ids": [
+        "it",
+        "it-endpoint-security",
+        "it-network-monitoring",
+        "it-secure-wireless",
+        "it-helpdesk-outsource",
+        "it-ai-ops",
+        "it-observability-synthetic"
+      ],
+      "subject": "BeaconOps \u2014 managed IT operations worth comparing",
+      "body": "Hi BeaconOps,\n\nI came across BeaconOps and noticed fit with managed IT, endpoint security, network monitoring/NOC, SD-WAN/wireless, helpdesk outsourcing, AI ops, and synthetic monitoring.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:19:31.503174+00:00"
+    },
+    {
+      "name": "Meridian Digital",
+      "email": "hello@meridiandigital.io",
+      "website": "https://meridiandigital.io",
+      "service_ids": [
+        "it",
+        "it-endpoint-security",
+        "it-network-monitoring",
+        "it-secure-wireless",
+        "it-helpdesk-outsource",
+        "it-ai-ops",
+        "it-observability-synthetic"
+      ],
+      "subject": "Meridian Digital \u2014 managed IT operations worth comparing",
+      "body": "Hi Meridian,\n\nI came across Meridian Digital and noticed fit with managed IT, endpoint security, network monitoring/NOC, SD-WAN/wireless, helpdesk outsourcing, AI ops, and synthetic monitoring.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:19:31.503186+00:00"
+    }
+  ]
+}
