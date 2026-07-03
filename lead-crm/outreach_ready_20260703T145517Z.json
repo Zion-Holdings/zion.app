@@ -1,0 +1,53 @@
+{
+  "generatedAt": "2026-07-03T14:55:17.768955+00:00",
+  "lead_crm_current_outreach_run_file": "lead-crm/outreach_run_2026-06-30.json",
+  "status": "run_complete_windowed",
+  "batch_file": "lead-crm/outreach_batch_20260703T141634Z.json",
+  "consent": {
+    "outreach_opt_in": true,
+    "lead_outreach_opt_in": true
+  },
+  "sendCapable": true,
+  "sendBlocked": false,
+  "servicesReferenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge",
+    "it-zero-trust-access",
+    "it-backup-disaster-recovery",
+    "it-hybrid-cloud-orchestrator",
+    "it-endpoint-management"
+  ],
+  "counts": {
+    "batch_size": 20,
+    "filtered_send_ready": 16,
+    "send_window": 3,
+    "send_count": 3,
+    "errors": 0
+  },
+  "next_start": 3,
+  "send_results_window": [
+    {
+      "email": "pauloblotto@somaticabrasil.com",
+      "ok": true,
+      "message_id": "19f2879dd282004f",
+      "head": "{\n  \"status\": \"sent\",\n  \"id\": \"19f2879dd282004f\",\n  \"threadId\": \"19f2879dd282004f\"\n}"
+    },
+    {
+      "email": "ax@belenus.com.br",
+      "ok": true,
+      "message_id": "19f2879fcd0cbdf5",
+      "head": "{\n  \"status\": \"sent\",\n  \"id\": \"19f2879fcd0cbdf5\",\n  \"threadId\": \"19f2879fcd0cbdf5\"\n}"
+    },
+    {
+      "email": "admin@nebulait.net",
+      "ok": true,
+      "message_id": "19f287a1dffbdb6e",
+      "head": "{\n  \"status\": \"sent\",\n  \"id\": \"19f287a1dffbdb6e\",\n  \"threadId\": \"19f287a1dffbdb6e\"\n}"
+    }
+  ],
+  "errors": []
+}

@@ -60,29 +60,37 @@ def _tailor_message(chat_fn, r):
         return r
     prompt = (
         "Rewrite this outreach email into a concise, personalized Portuguese message for Zion Tech Group. "
-        "Keep it short and direct. Do not invent facts. If context is insufficient, keep the original body intact.\\n\\n"
-        f"Company: {company}\\nWebsite: {website}\\nContext: {reason}\\nContact: {contact}\\n"
-        f"Subject: {subject}\\nBody:\\n{body}\\n"
+        "Keep it short and direct. Do not invent facts. If context is insufficient, keep the original body intact.\n\n"
+        f"Company: {company}\nWebsite: {website}\nContext: {reason}\nContact: {contact}\n"
+        f"Subject: {subject}\nBody:\n{body}\n"
     )
     messages = [
         {"role": "system", "content": "You are a helpful assistant that rewrites business emails concisely."},
         {"role": "user", "content": prompt},
     ]
-    try:
-        result = chat_fn(messages, provider='auto')
-        text = (result.get('content') or '').strip()
-        if not text:
+    last_err = None
+    for _ in range(3):
+        try:
+            result = chat_fn(messages, provider='auto')
+            text = (result.get('content') or '').strip()
+            if not text:
+                last_err = 'empty_llm_content'
+                continue
+            lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
+            if lines:
+                r['subject'] = lines[0].replace('Assunto:', '').strip() or subject
+                r['body'] = '\n'.join(lines[1:]).strip() if len(lines) > 1 else text
+            else:
+                r['body'] = text
+            r['llm_provider'] = result.get('provider')
+            r['llm_model'] = result.get('model')
             return r
-        lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
-        if lines:
-            r['subject'] = lines[0].replace('Assunto:', '').strip() or subject
-            r['body'] = '\n'.join(lines[1:]).strip() if len(lines) > 1 else text
-        else:
-            r['body'] = text
-        r['llm_provider'] = result.get('provider')
-        r['llm_model'] = result.get('model')
-    except Exception:
-        pass
+        except Exception as e:
+            last_err = str(e)
+            continue
+    r['llm_provider'] = r.get('llm_provider') or 'template'
+    r['llm_model'] = r.get('llm_model') or 'deterministic-template-v1'
+    r['tailor_error'] = last_err
     return r
 
 
@@ -92,13 +100,18 @@ def main():
     rows = obj.get('recipients') or obj.get('ready') or []
     chat_fn = _llm_chat
     outputs = []
+    skipped_templates = 0
     for r in rows:
         to = r.get('email') or r.get('recipient') or r.get('to')
         if not to:
             outputs.append({'to': None, 'success': False, 'error': 'missing email'})
             continue
+        tailored = _tailor_message(chat_fn, dict(r))
+        if tailored.get('llm_provider') == 'template' or not tailored.get('llm_provider'):
+            skipped_templates += 1
+            outputs.append({'to': to, 'success': False, 'error': 'template_send_blocked', 'llm_provider': tailored.get('llm_provider')})
+            continue
         try:
-            tailored = _tailor_message(chat_fn, dict(r))
             mid, tid = send_mail(to, tailored.get('subject', ''), tailored.get('body', ''), tailored.get('html'))
             outputs.append({'to': to, 'success': True, 'message_id': mid, 'thread_id': tid,
                             'llm_provider': tailored.get('llm_provider'), 'llm_model': tailored.get('llm_model')})
@@ -106,7 +119,8 @@ def main():
             outputs.append({'to': to, 'success': False, 'error': str(e)})
         time.sleep(0.25)
     print(json.dumps({'generatedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(),
-                      'send_count': len(outputs), 'results': outputs}))
+                      'send_count': len(outputs), 'skipped_templates': skipped_templates,
+                      'results': outputs}))
 
 
 if __name__ == '__main__':

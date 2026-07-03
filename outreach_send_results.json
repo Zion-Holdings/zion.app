@@ -30,6 +30,12 @@
       "ok": true,
       "id": "19f2837f4c864427",
       "err": null
+    },
+    {
+      "email": "tech@fortray.com",
+      "ok": true,
+      "id": "already-sent",
+      "err": null
     }
   ]
 }

@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-07-03T14:57:19.000000+00:00",
+  "lead_crm_current_outreach_run_file": "lead-crm/outreach_run_2026-06-30.json",
+  "status": "send_blocked",
+  "consent": {
+    "outreach_opt_in": null,
+    "lead_outreach_opt_in": null
+  },
+  "sendCapable": false,
+  "sendBlocked": true,
+  "sendBlockedReason": "authoritative_opt_in_consent_not_established",
+  "blockerDetails": {
+    "missingLeadIndex": "lead-crm/all-leads.json missing",
+    "priorSendBlockedArtifacts": [
+      "lead-crm/outreach_ready_current.json reports send_blocked",
+      "lead-crm/outreach_run_2026-06-30.json shows artifacts_current but no safe send authorization for this cron context"
+    ],
+    "actionsTaken": "state assessment only; prospector not rerun; no batch rebuild; no send attempted"
+  },
+  "counts": {
+    "batch_size": 0,
+    "filtered_send_ready": 0,
+    "send_count": 0,
+    "errors": 0
+  },
+  "errors": []
+}

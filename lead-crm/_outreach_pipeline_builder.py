@@ -98,35 +98,35 @@ def build_body(name, services, reason=''):
     primary = services[:3]
     lines = []
     if reason:
-        lines.append(f"Hi {name},\\n\\n{reason}")
+        lines.append(f"Olá, equipe da {name},\\n\\n{reason}")
     else:
-        lines.append(f"Hi {name},\\n\\nYour posture aligns well with a few targeted IT plays that reduce incident drag and improve operational efficiency.")
+        lines.append(f"Olá, equipe da {name},\\n\\nSeu perfil indica potencial alinhamento com nossos serviços de TI gerenciada, migração para nuvem e segurança.")
     if primary:
-        lines.append("\\nBest fits based on your posture:")
+        lines.append("\\nPrincipais alinhamentos com a sua atuação:")
         for sid in primary:
             svc = service_lookup.get(sid, {'id': sid, 'title': sid.replace('it-','').replace('-',' ').title(), 'href': f'/services/{sid}'})
             lines.append(f"- {svc['title']}: {svc['href']}")
     if len(services) > 3:
         extra = ', '.join(service_lookup.get(s, {'title': s})['title'] for s in services[3:6])
-        lines.append(f"\\nAlso worth a look: {extra}. ")
-    lines.append("\\nWant a quick call?\\n\\nBest,\\nZion Tech Group\\nkleber@ziontechgroup.com | +1 302 464 0950\\nhttps://ziontechgroup.com")
+        lines.append(f"\\nTambém vale a pena conferir: {extra}.")
+    lines.append("\\nGostariam de agendar uma chamada rápida?\\n\\nAtenciosamente,\\nEquipe Zion Tech Group\\nkleber@ziontechgroup.com | +1 302 464 0950\\nhttps://ziontechgroup.com")
     return '\\n'.join(lines)
 
 def build_html(name, services, reason=''):
     primary = services[:3]
-    html = [f"<html><body><p>Hi {name},</p>"]
+    html = [f"<html><body><p>Olá, equipe da {name},</p>"]
     if reason:
         html.append(f"<p>{reason}</p>")
     if primary:
-        html.append("<p><strong>Best fits based on your posture:</strong></p><ul>")
+        html.append("<p><strong>Principais alinhamentos com a sua atuação:</strong></p><ul>")
         for sid in primary:
             svc = service_lookup.get(sid, {'id': sid, 'title': sid.replace('it-','').replace('-',' ').title(), 'href': f'/services/{sid}'})
             html.append(f"<li>{svc['title']}: <a href=\"{svc['href']}\">{svc['href']}</a></li>")
         html.append("</ul>")
     if len(services) > 3:
         extra = ', '.join(service_lookup.get(s, {'title': s})['title'] for s in services[3:6])
-        html.append(f"<p>Also worth a look: {extra}.</p>")
-    html.append("<p>Want a quick call?</p><p>Best,<br/>Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>")
+        html.append(f"<p>Também vale a pena conferir: {extra}.</p>")
+    html.append("<p>Gostariam de agendar uma chamada rápida?</p><p>Atenciosamente,<br/>Equipe Zion Tech Group<br/>kleber@ziontechgroup.com | +1 302 464 0950<br/><a href=\"https://ziontechgroup.com\">https://ziontechgroup.com</a></p></body></html>")
     return '\\n'.join(html)
 
 recipients = []

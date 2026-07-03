@@ -28,8 +28,8 @@
       "email": "hello@thecloudbuffer.com",
       "website": "https://thecloudbuffer.com",
       "reason": "Found on high-directory-clutter jurisdictions and documents cloud backup/migration posture; this aligns with Backup/DRaaS and Workforce Enablement.",
-      "subject": "Thank you for your message. I confirm the appointment and look forward to our discussion.",
-      "body": "Best regards,\nZion Tech Group",
+      "subject": "Cloud Buffer Inc. — Opções de suporte de TI para comparar",
+      "body": "Olá, equipe da Cloud Buffer Inc.,\n\nSeu perfil indica potencial alinhamento com nossos serviços de TI gerenciada, migração para nuvem e segurança.\n\nQueremos agendar uma chamada rápida.\n\nAtenciosamente,\nEquipe Zion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
       "services": [
         "it",
         "it-remote-workforce-enablement",
@@ -39,8 +39,8 @@
         "it-secure-access-service-edge"
       ],
       "status": "pending",
-      "llm_provider": "template",
-      "llm_model": "deterministic-template-v1"
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
     },
     {
       "order": 2,
@@ -108,8 +108,8 @@
       "email": "sitekit@smartsecurityinfo.com",
       "website": "https://smartsecurityinfo.com",
       "reason": "Security-info publishing presence suggests the team is familiar with cloud/security buyer language and may be evaluating managed security/network partners.",
-      "subject": "Thank you for your message. I confirm the appointment and look forward to our discussion.",
-      "body": "Best regards,\nZion Tech Group",
+      "subject": "Smart Security Info — Opções de suporte de TI para comparar",
+      "body": "Olá, equipe da Smart Security Info,\n\nSeu perfil indica potencial alinhamento com nossos serviços de TI gerenciada, migração para nuvem e segurança.\n\nQueremos agendar uma chamada rápida.\n\nAtenciosamente,\nEquipe Zion Tech Group\nkleber@ziontechgroup.com | +1 302 464 0950\nhttps://ziontechgroup.com",
       "services": [
         "it",
         "it-remote-workforce-enablement",
@@ -119,8 +119,8 @@
         "it-secure-access-service-edge"
       ],
       "status": "pending",
-      "llm_provider": "template",
-      "llm_model": "deterministic-template-v1"
+      "llm_provider": "nous",
+      "llm_model": "stepfun/step-3.7-flash-20260528:free"
     },
     {
       "order": 6,
