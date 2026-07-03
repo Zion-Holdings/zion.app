@@ -20,7 +20,7 @@ except Exception as e:  # pragma: no cover
 LOG_PATH = REPO / 'email_miner_performance.log'
 CHUNK_MIN = 180
 MAX_BATCH = 300
-FETCH_LIMIT = 25
+FETCH_LIMIT = 300
 
 
 def log_record(record: dict) -> None:

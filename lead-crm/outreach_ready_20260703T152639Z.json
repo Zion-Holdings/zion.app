@@ -1,0 +1,62 @@
+{
+  "generated_at": "2026-07-03T15:26:39.330314+00:00",
+  "batch_file": "/data/data/com.termux/files/home/zion-support.github.io/lead-crm/outreach_batch_20260703T152639Z.json",
+  "send_status": "send-blocked",
+  "send_blocked": true,
+  "block_reason": "No explicit opt-in consent flag found in environment/workspace config; no emails sent.",
+  "batch_size": 7,
+  "send_count": 0,
+  "send_errors": [],
+  "counts": {
+    "ready_before_dedupe": 8,
+    "business_domain_ready": 7,
+    "business_domain_nonpreferred": 0,
+    "system_excluded": 0
+  },
+  "services_referenced": [
+    "it",
+    "it-cost-optimization-cloud",
+    "it-incident-response-retainer",
+    "it-modern-dev-platform",
+    "it-remote-workforce-enablement"
+  ],
+  "new_leads_discovered": 0,
+  "note": "Send blocked by missing consent; future cron should only send when explicit opt-in is present.",
+  "recipients": [
+    {
+      "recipient": "hello@thecloudbuffer.com",
+      "business_domain": true,
+      "skipped_reason": ""
+    },
+    {
+      "recipient": "info@netpixelsystems.com",
+      "business_domain": true,
+      "skipped_reason": ""
+    },
+    {
+      "recipient": "hello@exigenthqllc.com",
+      "business_domain": true,
+      "skipped_reason": ""
+    },
+    {
+      "recipient": "contact@omnitechcyber.com",
+      "business_domain": true,
+      "skipped_reason": ""
+    },
+    {
+      "recipient": "support@venezialogisticsllc.com",
+      "business_domain": true,
+      "skipped_reason": ""
+    },
+    {
+      "recipient": "info@docentriccyber.com",
+      "business_domain": true,
+      "skipped_reason": ""
+    },
+    {
+      "recipient": "sitekit@smartsecurityinfo.com",
+      "business_domain": true,
+      "skipped_reason": ""
+    }
+  ]
+}

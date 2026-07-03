@@ -1,9 +1,0 @@
-{
-  "generated_at": "2026-07-03T13:20:05.837851+00:00",
-  "status": "duplicate_run_detected",
-  "new_leads_discovered": 0,
-  "batch_size": 0,
-  "send_count": 0,
-  "errors": 0,
-  "note": "Existing completed run outreach_ready_20260703T130219Z.json already shows send_count=8 with sent_message_ids; no duplicate sends were attempted."
-}

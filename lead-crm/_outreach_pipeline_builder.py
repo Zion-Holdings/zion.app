@@ -27,6 +27,22 @@ def is_business(email):
     domain = e.split('@',1)[1] if '@' in e else ''
     return domain not in free_providers
 
+def is_internal_or_junk(email):
+    e = email.lower()
+    if not e or '@' not in e:
+        return True
+    domain = e.split('@',1)[1]
+    return (
+        domain.endswith(('.local',))
+        or domain in {'localhost','example.com','example.org'}
+        or domain.endswith(('.gov','.gov.br','.mil'))
+        or 'noreply' in e
+        or 'no-reply' in e
+        or 'mailer-daemon' in e
+        or 'postmaster' in e
+        or 'abuse@' in e
+    )
+
 it_pool = [
     'it','it-remote-workforce-enablement','it-incident-response-retainer',
     'it-cost-optimization-cloud','it-modern-dev-platform','it-secure-access-service-edge',
@@ -148,9 +164,12 @@ for p in sorted(lead_crm.glob('outreach_batch_*.json')):
             b = json.load(f)
         for r in b.get('recipients', []):
             email = r.get('email', r.get('recipient', '')).lower()
-            if email and valid_email(email) and email not in {c.get('email','').lower() for c in candidates}:
-                c = {'email': email, 'company_name': r.get('company_name') or r.get('name') or r.get('display_name'), 'source': 'fallback_batch'}
-                candidates.append(c)
+            if not email or not valid_email(email) or is_internal_or_junk(email):
+                continue
+            if email in {c.get('email','').lower() for c in candidates}:
+                continue
+            c = {'email': email, 'company_name': r.get('company_name') or r.get('name') or r.get('display_name'), 'source': 'fallback_batch'}
+            candidates.append(c)
     except Exception:
         pass
 
@@ -204,6 +223,8 @@ for rec in recipients:
 recipients=forced
 template_count=sum(1 for r in recipients if r.get('llm_provider')=='template')
 print('LLM_TAILOR_STATS', f'llm={sum(1 for r in recipients if r.get("llm_provider")!="template")}', f'template={template_count}')
+if template_count:
+    print('LLM_TAILOR_BLOCK', 'templates_present')
 
 batch = {
     'generatedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(),
@@ -232,8 +253,8 @@ ready = {
     'generated_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
     'batch_file': str(batch_path),
     'send_status': 'ready',
-    'send_blocked': False,
-    'block_reason': '',
+    'send_blocked': template_count > 0,
+    'block_reason': 'templates_present' if template_count > 0 else '',
     'batch_size': len(recipients),
     'send_count': 0,
     'send_errors': [],

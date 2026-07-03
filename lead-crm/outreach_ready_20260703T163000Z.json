@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-07-03T16:45:00.000000+00:00",
+  "requested_run_file": "lead-crm/outreach_run_2026-06-30.json",
+  "status": "completed_auto_block",
+  "batch_file": "lead-crm/outreach_batch_20260703T162804Z.json",
+  "ready_report_file": "lead-crm/outreach_ready_20260703T163000Z.json",
+  "discovered_new_from_prospector": 0,
+  "batch_size": 16,
+  "send_count": 0,
+  "send_blocked": true,
+  "block_reason": "Batch contained stale-mined internal/non-business addresses and mismatched sender identity; sending is blocked for this unattended cron run.",
+  "cancellation_trigger": "invalid_recipients_in_auto_generated_batch",
+  "errors": [
+    "web_prospecting.py produced no new leads this run.",
+    "Batch included sender/internal addresses, government domains, non-business domains, and prevalent fallback duplicates."
+  ],
+  "services_referenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge"
+  ]
+}

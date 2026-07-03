@@ -1,10 +1,6 @@
 {
-  "generated_at": "2026-07-03T14:35:08Z",
   "requested_run_file": "lead-crm/outreach_run_2026-06-30.json",
-  "status": "artifacts_current",
-  "batch_file": "lead-crm/outreach_batch_20260703T143315Z.json",
-  "ready_file": "lead-crm/outreach_ready_20260703T143315Z.json",
-  "prospector_returncode": 0,
-  "prospector_new_leads": 0,
-  "note": "Batch and ready artifacts updated for this run; use current ready_file for final send status."
+  "status": "in_progress",
+  "started_at": "2026-07-03T16:30:00.000000+00:00",
+  "note": "Created by cron pipeline after confirming missing/missing prior state files."
 }
