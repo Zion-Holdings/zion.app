@@ -25,3 +25,15 @@ out/
 *.backup_before*
 *.orig
 *.rej
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.next/
+.tmp_build.log
+tmp_*.py
+check_sent_quick.py
+send_outreach_rerun.py
+latest_ready.json
+lead-crm/outreach_run-*.md

@@ -1,0 +1,222 @@
+{
+  "title": "AI Services - Zion Tech Group",
+  "url": "/ai-services",
+  "description": "Cutting-edge AI services for business automation, voice agents, computer vision, and intelligent systems.",
+  "services": [
+    {
+      "category": "it",
+      "id": "it-ai-observability-intelligence",
+      "title": "AI Observability & Intelligence",
+      "description": "AI-driven observability: anomaly detection across metrics/logs/traces, root-cause ranking, SLO burn-rate prediction, and incident summarization for engineering teams.",
+      "basic": "2999",
+      "pro": "8999",
+      "enterprise": "29999",
+      "popular": true,
+      "features": [
+        "Cross-signal anomaly detection",
+        "Root-cause ranking and timeline",
+        "SLO burn-rate prediction",
+        "Incident summarization for Slack/Teams"
+      ],
+      "benefits": [
+        "Reduce MTTR with automated context",
+        "Predict SLO breaches before pages",
+        "Cut on-call toil with AI summaries"
+      ]
+    },
+    {
+      "category": "it",
+      "id": "it-edge-ai-inference",
+      "title": "Edge AI Inference Platform",
+      "description": "Deploy and manage AI models at the edge: model optimization, hardware abstraction, offline inference, and fleet-wide monitoring with privacy-first processing.",
+      "basic": "3999",
+      "pro": "12999",
+      "enterprise": "34999",
+      "popular": true,
+      "features": [
+        "Model optimization for edge hardware",
+        "Hardware abstraction and driver management",
+        "Offline inference with sync",
+        "Fleet-wide model monitoring and rollback"
+      ],
+      "benefits": [
+        "Run AI without cloud latency",
+        "Keep sensitive data on-device",
+        "Manage model versions across sites"
+      ]
+    },
+    {
+      "category": "it",
+      "id": "it-cybersecurity-awareness-training",
+      "title": "Cybersecurity Awareness & Simulation Training",
+      "description": "Continuous security awareness: phishing simulation, role-based training, risk scoring, and compliance-ready reporting with measurable improvement metrics.",
+      "basic": "999",
+      "pro": "2999",
+      "enterprise": "9999",
+      "popular": false,
+      "features": [
+        "Phishing simulation and measurement",
+        "Role-based training modules",
+        "User risk scoring and coaching",
+        "Compliance reporting with audit trail"
+      ],
+      "benefits": [
+        "Reduce phishing click-through rates",
+        "Train teams without boring modules",
+        "Prove awareness maturity to auditors"
+      ]
+    },
+    {
+      "category": "it",
+      "id": "it-mainframe-modernization",
+      "title": "Mainframe Modernization & Integration",
+      "description": "Mainframe application modernization: API enablement, data extraction, cloud migration, and hybrid integration without disrupting core banking or legacy workloads.",
+      "basic": "4999",
+      "pro": "14999",
+      "enterprise": "49999",
+      "popular": false,
+      "features": [
+        "API enablement for legacy apps",
+        "Secure data extraction and replication",
+        "Hybrid cloud migration planning",
+        "Real-time integration with modern stacks"
+      ],
+      "benefits": [
+        "Unlock legacy data for innovation",
+        "Reduce mainframe operating cost",
+        "Migrate without business disruption"
+      ]
+    },
+    {
+      "category": "it",
+      "id": "it-ai-consulting",
+      "title": "AI Consulting & Proof-of-Value",
+      "description": "AI readiness assessment, use case validation, proof-of-value delivery, and deployment support for enterprises adopting AI.",
+      "basic": "3499",
+      "pro": "9999",
+      "enterprise": "39999",
+      "popular": false,
+      "features": [
+        "AI readiness and maturity assessment",
+        "Use case validation and prioritization",
+        "Proof-of-value delivery and measurement",
+        "Deployment support and change management"
+      ],
+      "benefits": [
+        "Avoid AI projects with no business outcome",
+        "Validate feasibility before large investment",
+        "Build internal capability with structured support"
+      ]
+    },
+    {
+      "category": "it",
+      "id": "it-incident-response-retainer",
+      "title": "Incident Response & Forensics Retainer",
+      "description": "Retainer-based incident response, evidence collection, forensics, and remediation with 1-hour activation SLA.",
+      "basic": "2999",
+      "pro": "8999",
+      "enterprise": "29999",
+      "popular": false,
+      "features": [
+        "1-hour incident activation",
+        "Evidence collection and chain-of-custody",
+        "Forensic analysis and reporting",
+        "Remediation and hardening"
+      ],
+      "benefits": [
+        "Fast response when every minute counts",
+        "Evidence-ready for legal and insurance",
+        "Convert incidents into stronger controls"
+      ]
+    },
+    {
+      "category": "it",
+      "id": "it-ai-governance-risk-management",
+      "title": "AI Governance & Risk Management",
+      "description": "AI risk governance, bias review, model inventory, and approval workflows for regulated AI deployments.",
+      "basic": "2999",
+      "pro": "9999",
+      "enterprise": "34999",
+      "popular": false,
+      "features": [
+        "AI model inventory and risk classification",
+        "Bias review and fairness testing",
+        "Governance approval workflows",
+        "Regulatory documentation and evidence"
+      ],
+      "benefits": [
+        "Ship AI with accountable guardrails",
+        "Reduce regulatory objection risk",
+        "Create audit-ready AI evidence quickly"
+      ]
+    },
+    {
+      "category": "it",
+      "id": "it-virtualization-services",
+      "title": "Virtualization & Containerization",
+      "description": "Server, desktop, and application virtualization with container orchestration, migration planning, and hybrid cloud integration.",
+      "basic": "2999",
+      "pro": "8999",
+      "enterprise": "24999",
+      "popular": false,
+      "features": [
+        "Server and desktop virtualization",
+        "Container orchestration design",
+        "Migration planning and execution",
+        "Hybrid cloud integration"
+      ],
+      "benefits": [
+        "Increase hardware utilization",
+        "Simplify application deployment",
+        "Modernize workloads without rip-and-replace"
+      ]
+    },
+    {
+      "category": "it",
+      "id": "it-email-migration-services",
+      "title": "Email & Communication Migration",
+      "description": "Email platform migration, mailbox consolidation, hybrid deployment, post-migration optimization, and user onboarding.",
+      "basic": "1999",
+      "pro": "5999",
+      "enterprise": "17999",
+      "popular": false,
+      "features": [
+        "Email platform migration planning",
+        "Mailbox consolidation and routing",
+        "Hybrid deployment support",
+        "Post-migration user onboarding"
+      ],
+      "benefits": [
+        "Minimize disruption during migration",
+        "Reduce email platform sprawl",
+        "Onboard users with minimal training"
+      ]
+    },
+    {
+      "category": "it",
+      "id": "it-email-migration",
+      "title": "Email & Communication Migration",
+      "description": "Email platform migration, mailbox consolidation, hybrid deployment, post-migration optimization, and user onboarding.",
+      "basic": "1999",
+      "pro": "5999",
+      "enterprise": "17999",
+      "popular": false,
+      "features": [
+        "Migration planning and readiness",
+        "Mailbox consolidation and routing",
+        "Hybrid deployment support",
+        "User onboarding after cutover"
+      ],
+      "benefits": [
+        "Minimize disruption during migration",
+        "Reduce email platform sprawl",
+        "Onboard users with minimal downtime"
+      ]
+    }
+  ],
+  "cta": {
+    "primary": "Schedule a demo",
+    "link": "https://calendly.com/kleber-ziontechgroup",
+    "secondary": "Visit ziontechgroup.com for free tools and more services"
+  }
+}
