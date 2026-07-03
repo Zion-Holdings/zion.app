@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-07-03T09:37:40.119402+00:00",
+  "source": "gmail_history_mining_partners",
+  "counts": {
+    "business_domain_ready": 4
+  },
+  "recipients": [
+    {
+      "name": "perplexity",
+      "email": "enterprise@perplexity.ai",
+      "website": "https://perplexity.ai",
+      "service_ids": [
+        "it",
+        "it-cloud-migration",
+        "it-api-integration",
+        "it-security",
+        "cloud-cost-optimization",
+        "it-development-platform"
+      ],
+      "subject": "perplexity \u2014 partner-led IT and cloud implementation",
+      "body": "Hi Enterprise,\n\nI notice perplexity.ai partners on managed IT, cloud migration, API integration, and security enablement. If useful, I can share a concise 2-minute comparison focused on implementation support, not generic marketing.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:37:40.119269+00:00"
+    },
+    {
+      "name": "assemblyai",
+      "email": "sales@assemblyai.com",
+      "website": "https://assemblyai.com",
+      "service_ids": [
+        "it",
+        "it-cloud-migration",
+        "it-api-integration",
+        "it-security",
+        "cloud-cost-optimization",
+        "it-development-platform"
+      ],
+      "subject": "assemblyai \u2014 partner-led IT and cloud implementation",
+      "body": "Hi Sales,\n\nI notice assemblyai.com partners on managed IT, cloud migration, API integration, and security enablement. If useful, I can share a concise 2-minute comparison focused on implementation support, not generic marketing.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:37:40.119320+00:00"
+    },
+    {
+      "name": "assemblyai",
+      "email": "support@assemblyai.com",
+      "website": "https://assemblyai.com",
+      "service_ids": [
+        "it",
+        "it-cloud-migration",
+        "it-api-integration",
+        "it-security",
+        "cloud-cost-optimization",
+        "it-development-platform"
+      ],
+      "subject": "assemblyai \u2014 partner-led IT and cloud implementation",
+      "body": "Hi Support,\n\nI notice assemblyai.com partners on managed IT, cloud migration, API integration, and security enablement. If useful, I can share a concise 2-minute comparison focused on implementation support, not generic marketing.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:37:40.119338+00:00"
+    },
+    {
+      "name": "replicate",
+      "email": "support@replicate.com",
+      "website": "https://replicate.com",
+      "service_ids": [
+        "it",
+        "it-cloud-migration",
+        "it-api-integration",
+        "it-security",
+        "cloud-cost-optimization",
+        "it-development-platform"
+      ],
+      "subject": "replicate \u2014 partner-led IT and cloud implementation",
+      "body": "Hi Support,\n\nI notice replicate.com partners on managed IT, cloud migration, API integration, and security enablement. If useful, I can share a concise 2-minute comparison focused on implementation support, not generic marketing.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T09:37:40.119353+00:00"
+    }
+  ]
+}

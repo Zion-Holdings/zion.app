@@ -1,0 +1,60 @@
+{
+  "generatedAt": "2026-07-03T09:35:20.977335+00:00",
+  "send_count": 9,
+  "results": [
+    {
+      "to": "alexandre.kusel@blackbullbrasil.com.br",
+      "success": true,
+      "message_id": "19f275510da66b95",
+      "thread_id": "19f275510da66b95"
+    },
+    {
+      "to": "almir.nascimento@grupomassa.com.br",
+      "success": true,
+      "message_id": "19f27551437d49db",
+      "thread_id": "19f27551437d49db"
+    },
+    {
+      "to": "claudio.sallorenzo@accerte.com.br",
+      "success": true,
+      "message_id": "19f275516ef79a19",
+      "thread_id": "19f275516ef79a19"
+    },
+    {
+      "to": "fabio.santos@libbs.com.br",
+      "success": true,
+      "message_id": "19f27551a80e2633",
+      "thread_id": "19f27551a80e2633"
+    },
+    {
+      "to": "felipe.melo@banese.com.br",
+      "success": true,
+      "message_id": "19f27551fa0355c7",
+      "thread_id": "19f27551fa0355c7"
+    },
+    {
+      "to": "higor.granero@primecontrol.com.br",
+      "success": true,
+      "message_id": "19f2755200007d00",
+      "thread_id": "19f2755200007d00"
+    },
+    {
+      "to": "karine.lima@la.logicalis.com",
+      "success": true,
+      "message_id": "19f275527e4519b0",
+      "thread_id": "19f275527e4519b0"
+    },
+    {
+      "to": "victor.leite@jmfitafer.com.br",
+      "success": true,
+      "message_id": "19f27552c619830f",
+      "thread_id": "19f27552c619830f"
+    },
+    {
+      "to": "waldir.silva@saobernardo.sp.gov.br",
+      "success": true,
+      "message_id": "19f275530a75073f",
+      "thread_id": "19f275530a75073f"
+    }
+  ]
+}

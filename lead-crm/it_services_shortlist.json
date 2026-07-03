@@ -1355,5 +1355,107 @@
     "title": "IT Financial Reporting and Budgeting",
     "category": "it",
     "industry": "Finance"
+  },
+  {
+    "id": "it-remote-hybrid-support",
+    "title": "Remote and Hybrid IT Support",
+    "category": "it",
+    "industry": "Remote Work"
+  },
+  {
+    "id": "it-service-catalog",
+    "title": "IT Service Catalog and Request Management",
+    "category": "it",
+    "industry": "Service Management"
+  },
+  {
+    "id": "it-vulnerability-management",
+    "title": "Vulnerability Management and Remediation",
+    "category": "security",
+    "industry": "Vulnerability"
+  },
+  {
+    "id": "it-cloud-finops",
+    "title": "Cloud FinOps and Cost Governance",
+    "category": "cloud",
+    "industry": "FinOps"
+  },
+  {
+    "id": "it-backup-cloud",
+    "title": "Cloud Backup and SaaS Protection",
+    "category": "cloud",
+    "industry": "Data Protection"
+  },
+  {
+    "id": "it-database-operations",
+    "title": "Database Operations and DBA Support",
+    "category": "data",
+    "industry": "Database"
+  },
+  {
+    "id": "it-itam",
+    "title": "IT Asset Management and Software Audit",
+    "category": "it",
+    "industry": "Asset Management"
+  },
+  {
+    "id": "it-security-awareness",
+    "title": "Security Awareness and Phishing Defense",
+    "category": "security",
+    "industry": "Training"
+  },
+  {
+    "id": "it-event-management",
+    "title": "IT Event Management and Correlation",
+    "category": "it",
+    "industry": "Operations"
+  },
+  {
+    "id": "it-api-management",
+    "title": "API Management and Partner Portals",
+    "category": "it",
+    "industry": "Integration"
+  },
+  {
+    "id": "it-container-platform",
+    "title": "Container Platform Operations",
+    "category": "devops",
+    "industry": "Containers"
+  },
+  {
+    "id": "it-lowcode-platform",
+    "title": "Low-Code Platform Governance",
+    "category": "automation",
+    "industry": "Low-Code"
+  },
+  {
+    "id": "it-hybrid-network",
+    "title": "Hybrid Network and SD-WAN Support",
+    "category": "networking",
+    "industry": "Network"
+  },
+  {
+    "id": "it-devsecops-pipeline",
+    "title": "DevSecOps Pipeline Integration",
+    "category": "security",
+    "industry": "DevSecOps"
+  },
+  {
+    "id": "it-application-delivery",
+    "title": "Application Delivery and Release Management",
+    "category": "devops",
+    "industry": "Engineering"
+  },
+  {
+    "id": "it-application-modernization",
+    "title": "Application Modernization and M&A Integration",
+    "category": "it",
+    "industry": "Enterprise Apps"
+  },
+  {
+    "id": "it-client-success",
+    "title": "Client Success and Adoption Management",
+    "category": "it",
+    "industry": "Customer Success"
   }
 ]

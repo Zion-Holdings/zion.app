@@ -1,0 +1,30 @@
+{
+  "generatedAt": "2026-07-03T09:38:04.048754+00:00",
+  "send_count": 4,
+  "results": [
+    {
+      "to": "enterprise@perplexity.ai",
+      "success": true,
+      "message_id": "19f2757a56101b3d",
+      "thread_id": "19f2757a56101b3d"
+    },
+    {
+      "to": "sales@assemblyai.com",
+      "success": true,
+      "message_id": "19f2757a67b81a47",
+      "thread_id": "19f2757a67b81a47"
+    },
+    {
+      "to": "support@assemblyai.com",
+      "success": true,
+      "message_id": "19f2757ab0821d59",
+      "thread_id": "19f2757ab0821d59"
+    },
+    {
+      "to": "support@replicate.com",
+      "success": true,
+      "message_id": "19f2757afe8e468b",
+      "thread_id": "19f2757afe8e468b"
+    }
+  ]
+}
