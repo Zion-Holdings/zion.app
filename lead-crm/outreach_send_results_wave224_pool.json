@@ -1,0 +1,96 @@
+{
+  "generatedAt": "2026-07-03T10:10:06.681912+00:00",
+  "send_count": 15,
+  "results": [
+    {
+      "to": "hello@apexdesk.tech",
+      "success": true,
+      "message_id": "19f2774bbc22e94d",
+      "thread_id": "19f2774bbc22e94d"
+    },
+    {
+      "to": "info@bridgeroute.tech",
+      "success": true,
+      "message_id": "19f2774bee92d22c",
+      "thread_id": "19f2774bee92d22c"
+    },
+    {
+      "to": "ops@corepath.tech",
+      "success": true,
+      "message_id": "19f2774c0841a39a",
+      "thread_id": "19f2774c0841a39a"
+    },
+    {
+      "to": "hello@deltastack.tech",
+      "success": true,
+      "message_id": "19f2774c5e2fe8d3",
+      "thread_id": "19f2774c5e2fe8d3"
+    },
+    {
+      "to": "archive@edgekeep.tech",
+      "success": true,
+      "message_id": "19f2774c92da5465",
+      "thread_id": "19f2774c92da5465"
+    },
+    {
+      "to": "devops@forgeops.tech",
+      "success": true,
+      "message_id": "19f2774ce2a17287",
+      "thread_id": "19f2774ce2a17287"
+    },
+    {
+      "to": "support@griddesk.tech",
+      "success": true,
+      "message_id": "19f2774d44558af6",
+      "thread_id": "19f2774d44558af6"
+    },
+    {
+      "to": "data@helixvault.tech",
+      "success": true,
+      "message_id": "19f2774dbd2adc10",
+      "thread_id": "19f2774dbd2adc10"
+    },
+    {
+      "to": "contact@ironline.tech",
+      "success": true,
+      "message_id": "19f2774de803c2c8",
+      "thread_id": "19f2774de803c2c8"
+    },
+    {
+      "to": "ops@junctionops.tech",
+      "success": true,
+      "message_id": "19f2774e661d47ad",
+      "thread_id": "19f2774e661d47ad"
+    },
+    {
+      "to": "admin@keystone.tech",
+      "success": true,
+      "message_id": "19f2774ecc97bcb8",
+      "thread_id": "19f2774ecc97bcb8"
+    },
+    {
+      "to": "hello@lumenstack.tech",
+      "success": true,
+      "message_id": "19f2774f27734c14",
+      "thread_id": "19f2774f27734c14"
+    },
+    {
+      "to": "sales@meridiancloud.tech",
+      "success": true,
+      "message_id": "19f2774fa7d06334",
+      "thread_id": "19f2774fa7d06334"
+    },
+    {
+      "to": "info@northspan.tech",
+      "success": true,
+      "message_id": "19f2774fcbdea909",
+      "thread_id": "19f2774fcbdea909"
+    },
+    {
+      "to": "contact@openroute.tech",
+      "success": true,
+      "message_id": "19f277502125cd45",
+      "thread_id": "19f277502125cd45"
+    }
+  ]
+}

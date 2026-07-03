@@ -1,0 +1,125 @@
+{
+  "generatedAt": "2026-07-03T10:10:27.250438+00:00",
+  "messages": [
+    {
+      "id": "19f2774bbc22e94d",
+      "subject": "ApexDesk \u00c3\u00a2\u00c2\u20ac\u00c2\u201d IT operations and implementation support",
+      "to": "hello@apexdesk.tech",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f2774bee92d22c",
+      "subject": "BridgeRoute Engineering \u00c3\u00a2\u00c2\u20ac\u00c2\u201d IT operations and implementation support",
+      "to": "info@bridgeroute.tech",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f2774c0841a39a",
+      "subject": "CorePath Managed \u00c3\u00a2\u00c2\u20ac\u00c2\u201d IT operations and implementation support",
+      "to": "ops@corepath.tech",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f2774c5e2fe8d3",
+      "subject": "DeltaStack \u00c3\u00a2\u00c2\u20ac\u00c2\u201d IT operations and implementation support",
+      "to": "hello@deltastack.tech",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f2774c92da5465",
+      "subject": "EdgeKeep \u00c3\u00a2\u00c2\u20ac\u00c2\u201d IT operations and implementation support",
+      "to": "archive@edgekeep.tech",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f2774ce2a17287",
+      "subject": "ForgeOps \u00c3\u00a2\u00c2\u20ac\u00c2\u201d IT operations and implementation support",
+      "to": "devops@forgeops.tech",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f2774d44558af6",
+      "subject": "GridDesk Support \u00c3\u00a2\u00c2\u20ac\u00c2\u201d IT operations and implementation support",
+      "to": "support@griddesk.tech",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f2774dbd2adc10",
+      "subject": "HelixVault \u00c3\u00a2\u00c2\u20ac\u00c2\u201d IT operations and implementation support",
+      "to": "data@helixvault.tech",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f2774de803c2c8",
+      "subject": "IronLine Security \u00c3\u00a2\u00c2\u20ac\u00c2\u201d IT operations and implementation support",
+      "to": "contact@ironline.tech",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f2774e661d47ad",
+      "subject": "JunctionOps \u00c3\u00a2\u00c2\u20ac\u00c2\u201d IT operations and implementation support",
+      "to": "ops@junctionops.tech",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f2774ecc97bcb8",
+      "subject": "Keystone Digital \u00c3\u00a2\u00c2\u20ac\u00c2\u201d IT operations and implementation support",
+      "to": "admin@keystone.tech",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f2774f27734c14",
+      "subject": "LumenStack \u00c3\u00a2\u00c2\u20ac\u00c2\u201d IT operations and implementation support",
+      "to": "hello@lumenstack.tech",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f2774fa7d06334",
+      "subject": "MeridianCloud \u00c3\u00a2\u00c2\u20ac\u00c2\u201d IT operations and implementation support",
+      "to": "sales@meridiancloud.tech",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f2774fcbdea909",
+      "subject": "NorthSpan Networks \u00c3\u00a2\u00c2\u20ac\u00c2\u201d IT operations and implementation support",
+      "to": "info@northspan.tech",
+      "labels": [
+        "SENT"
+      ]
+    },
+    {
+      "id": "19f277502125cd45",
+      "subject": "OpenRoute MSP \u00c3\u00a2\u00c2\u20ac\u00c2\u201d IT operations and implementation support",
+      "to": "contact@openroute.tech",
+      "labels": [
+        "SENT"
+      ]
+    }
+  ]
+}

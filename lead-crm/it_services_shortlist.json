@@ -1457,5 +1457,59 @@
     "title": "Client Success and Adoption Management",
     "category": "it",
     "industry": "Customer Success"
+  },
+  {
+    "id": "it-identity-governance",
+    "title": "Identity Governance and Access Reviews",
+    "category": "security",
+    "industry": "IAM"
+  },
+  {
+    "id": "it-platform-engineering",
+    "title": "Platform Engineering and Developer Portal",
+    "category": "devops",
+    "industry": "Platform"
+  },
+  {
+    "id": "it-blockchain-infrastructure",
+    "title": "Blockchain Infrastructure and Node Operations",
+    "category": "it",
+    "industry": "Blockchain"
+  },
+  {
+    "id": "it-immersive-tech",
+    "title": "Immersive Technology Integration Support",
+    "category": "it",
+    "industry": "Immersive"
+  },
+  {
+    "id": "it-quantum-readiness",
+    "title": "Quantum-Ready Security and Data Strategy",
+    "category": "security",
+    "industry": "Quantum"
+  },
+  {
+    "id": "it-observability-sre",
+    "title": "SRE and Observability Enablement",
+    "category": "it",
+    "industry": "Observability"
+  },
+  {
+    "id": "it-workspace-modernization",
+    "title": "Digital Workspace Modernization",
+    "category": "it",
+    "industry": "Workplace"
+  },
+  {
+    "id": "it-video-collab",
+    "title": "Video Collaboration and Event Operations",
+    "category": "it",
+    "industry": "Collaboration"
+  },
+  {
+    "id": "it-compliance-program",
+    "title": "IT Compliance Program Management",
+    "category": "compliance",
+    "industry": "Governance"
   }
 ]
