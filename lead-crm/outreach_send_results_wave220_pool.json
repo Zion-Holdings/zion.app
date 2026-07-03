@@ -1,0 +1,96 @@
+{
+  "generatedAt": "2026-07-03T08:29:52.880058+00:00",
+  "send_count": 15,
+  "results": [
+    {
+      "to": "contact@continuityfirst.io",
+      "success": true,
+      "message_id": "19f2718cf23af6c6",
+      "thread_id": "19f2718cf23af6c6"
+    },
+    {
+      "to": "hello@patchpath.io",
+      "success": true,
+      "message_id": "19f2718d568c3bfa",
+      "thread_id": "19f2718d568c3bfa"
+    },
+    {
+      "to": "ops@mftnorth.com",
+      "success": true,
+      "message_id": "19f2718d851fba3d",
+      "thread_id": "19f2718d851fba3d"
+    },
+    {
+      "to": "info@sentrylearning.co",
+      "success": true,
+      "message_id": "19f2718dc22667e9",
+      "thread_id": "19f2718dc22667e9"
+    },
+    {
+      "to": "sales@voiceaxis.io",
+      "success": true,
+      "message_id": "19f2718e6a660376",
+      "thread_id": "19f2718e6a660376"
+    },
+    {
+      "to": "archive@dataharbor.io",
+      "success": true,
+      "message_id": "19f2718f132db431",
+      "thread_id": "19f2718f132db431"
+    },
+    {
+      "to": "hello@delta-iq.io",
+      "success": true,
+      "message_id": "19f2718fb5a09aa9",
+      "thread_id": "19f2718fb5a09aa9"
+    },
+    {
+      "to": "support@onboardgrid.com",
+      "success": true,
+      "message_id": "19f271902914405d",
+      "thread_id": "19f271902914405d"
+    },
+    {
+      "to": "ops@console-ops.io",
+      "success": true,
+      "message_id": "19f2719095aa8cbd",
+      "thread_id": "19f2719095aa8cbd"
+    },
+    {
+      "to": "hello@pilotstack.io",
+      "success": true,
+      "message_id": "19f27190e0c52dc1",
+      "thread_id": "19f27190e0c52dc1"
+    },
+    {
+      "to": "info@edgescreen.co",
+      "success": true,
+      "message_id": "19f2719183decdc9",
+      "thread_id": "19f2719183decdc9"
+    },
+    {
+      "to": "admin@northstepmsp.com",
+      "success": true,
+      "message_id": "19f271920c226dc3",
+      "thread_id": "19f271920c226dc3"
+    },
+    {
+      "to": "contact@civicpath.io",
+      "success": true,
+      "message_id": "19f27192ca417a6a",
+      "thread_id": "19f27192ca417a6a"
+    },
+    {
+      "to": "partner@partnergate.co",
+      "success": true,
+      "message_id": "19f271935c21fc1c",
+      "thread_id": "19f271935c21fc1c"
+    },
+    {
+      "to": "finance@summitchargeback.com",
+      "success": true,
+      "message_id": "19f27193f83c35ef",
+      "thread_id": "19f27193f83c35ef"
+    }
+  ]
+}

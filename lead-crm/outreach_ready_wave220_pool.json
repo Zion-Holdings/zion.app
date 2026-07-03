@@ -1,0 +1,264 @@
+{
+  "generatedAt": "2026-07-03T08:29:11.200055+00:00",
+  "source": "local_expansion_wave220",
+  "counts": {
+    "business_domain_ready": 15
+  },
+  "recipients": [
+    {
+      "name": "Continuity First",
+      "email": "contact@continuityfirst.io",
+      "website": "https://continuityfirst.io",
+      "service_ids": [
+        "it",
+        "it-operations",
+        "it-security",
+        "it-support",
+        "it-compliance",
+        "it-ai-ops"
+      ],
+      "subject": "Continuity First \u2014 IT operations and security services worth comparing",
+      "body": "Hi Continuity,\n\nI came across Continuity First and noticed fit with managed IT, endpoint security, network monitoring and SD-WAN, helpdesk outsourcing, AI ops, synthetic monitoring, patch management, SaaS vendor management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:29:11.199817+00:00"
+    },
+    {
+      "name": "PatchPath",
+      "email": "hello@patchpath.io",
+      "website": "https://patchpath.io",
+      "service_ids": [
+        "it",
+        "it-operations",
+        "it-security",
+        "it-support",
+        "it-compliance",
+        "it-ai-ops"
+      ],
+      "subject": "PatchPath \u2014 IT operations and security services worth comparing",
+      "body": "Hi PatchPath,\n\nI came across PatchPath and noticed fit with managed IT, endpoint security, network monitoring and SD-WAN, helpdesk outsourcing, AI ops, synthetic monitoring, patch management, SaaS vendor management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:29:11.199866+00:00"
+    },
+    {
+      "name": "MFT North",
+      "email": "ops@mftnorth.com",
+      "website": "https://mftnorth.com",
+      "service_ids": [
+        "it",
+        "it-operations",
+        "it-security",
+        "it-support",
+        "it-compliance",
+        "it-ai-ops"
+      ],
+      "subject": "MFT North \u2014 IT operations and security services worth comparing",
+      "body": "Hi MFT,\n\nI came across MFT North and noticed fit with managed IT, endpoint security, network monitoring and SD-WAN, helpdesk outsourcing, AI ops, synthetic monitoring, patch management, SaaS vendor management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:29:11.199881+00:00"
+    },
+    {
+      "name": "Sentry Learning",
+      "email": "info@sentrylearning.co",
+      "website": "https://sentrylearning.co",
+      "service_ids": [
+        "it",
+        "it-operations",
+        "it-security",
+        "it-support",
+        "it-compliance",
+        "it-ai-ops"
+      ],
+      "subject": "Sentry Learning \u2014 IT operations and security services worth comparing",
+      "body": "Hi Sentry,\n\nI came across Sentry Learning and noticed fit with managed IT, endpoint security, network monitoring and SD-WAN, helpdesk outsourcing, AI ops, synthetic monitoring, patch management, SaaS vendor management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:29:11.199893+00:00"
+    },
+    {
+      "name": "VoiceAxis",
+      "email": "sales@voiceaxis.io",
+      "website": "https://voiceaxis.io",
+      "service_ids": [
+        "it",
+        "it-operations",
+        "it-security",
+        "it-support",
+        "it-compliance",
+        "it-ai-ops"
+      ],
+      "subject": "VoiceAxis \u2014 IT operations and security services worth comparing",
+      "body": "Hi VoiceAxis,\n\nI came across VoiceAxis and noticed fit with managed IT, endpoint security, network monitoring and SD-WAN, helpdesk outsourcing, AI ops, synthetic monitoring, patch management, SaaS vendor management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:29:11.199904+00:00"
+    },
+    {
+      "name": "DataHarbor",
+      "email": "archive@dataharbor.io",
+      "website": "https://dataharbor.io",
+      "service_ids": [
+        "it",
+        "it-operations",
+        "it-security",
+        "it-support",
+        "it-compliance",
+        "it-ai-ops"
+      ],
+      "subject": "DataHarbor \u2014 IT operations and security services worth comparing",
+      "body": "Hi DataHarbor,\n\nI came across DataHarbor and noticed fit with managed IT, endpoint security, network monitoring and SD-WAN, helpdesk outsourcing, AI ops, synthetic monitoring, patch management, SaaS vendor management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:29:11.199914+00:00"
+    },
+    {
+      "name": "Delta IQ",
+      "email": "hello@delta-iq.io",
+      "website": "https://delta-iq.io",
+      "service_ids": [
+        "it",
+        "it-operations",
+        "it-security",
+        "it-support",
+        "it-compliance",
+        "it-ai-ops"
+      ],
+      "subject": "Delta IQ \u2014 IT operations and security services worth comparing",
+      "body": "Hi Delta,\n\nI came across Delta IQ and noticed fit with managed IT, endpoint security, network monitoring and SD-WAN, helpdesk outsourcing, AI ops, synthetic monitoring, patch management, SaaS vendor management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:29:11.199925+00:00"
+    },
+    {
+      "name": "Onboard Grid",
+      "email": "support@onboardgrid.com",
+      "website": "https://onboardgrid.com",
+      "service_ids": [
+        "it",
+        "it-operations",
+        "it-security",
+        "it-support",
+        "it-compliance",
+        "it-ai-ops"
+      ],
+      "subject": "Onboard Grid \u2014 IT operations and security services worth comparing",
+      "body": "Hi Onboard,\n\nI came across Onboard Grid and noticed fit with managed IT, endpoint security, network monitoring and SD-WAN, helpdesk outsourcing, AI ops, synthetic monitoring, patch management, SaaS vendor management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:29:11.199935+00:00"
+    },
+    {
+      "name": "Console Ops",
+      "email": "ops@console-ops.io",
+      "website": "https://console-ops.io",
+      "service_ids": [
+        "it",
+        "it-operations",
+        "it-security",
+        "it-support",
+        "it-compliance",
+        "it-ai-ops"
+      ],
+      "subject": "Console Ops \u2014 IT operations and security services worth comparing",
+      "body": "Hi Console,\n\nI came across Console Ops and noticed fit with managed IT, endpoint security, network monitoring and SD-WAN, helpdesk outsourcing, AI ops, synthetic monitoring, patch management, SaaS vendor management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:29:11.199946+00:00"
+    },
+    {
+      "name": "Pilot Stack",
+      "email": "hello@pilotstack.io",
+      "website": "https://pilotstack.io",
+      "service_ids": [
+        "it",
+        "it-operations",
+        "it-security",
+        "it-support",
+        "it-compliance",
+        "it-ai-ops"
+      ],
+      "subject": "Pilot Stack \u2014 IT operations and security services worth comparing",
+      "body": "Hi Pilot,\n\nI came across Pilot Stack and noticed fit with managed IT, endpoint security, network monitoring and SD-WAN, helpdesk outsourcing, AI ops, synthetic monitoring, patch management, SaaS vendor management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:29:11.199955+00:00"
+    },
+    {
+      "name": "EdgeScreen",
+      "email": "info@edgescreen.co",
+      "website": "https://edgescreen.co",
+      "service_ids": [
+        "it",
+        "it-operations",
+        "it-security",
+        "it-support",
+        "it-compliance",
+        "it-ai-ops"
+      ],
+      "subject": "EdgeScreen \u2014 IT operations and security services worth comparing",
+      "body": "Hi EdgeScreen,\n\nI came across EdgeScreen and noticed fit with managed IT, endpoint security, network monitoring and SD-WAN, helpdesk outsourcing, AI ops, synthetic monitoring, patch management, SaaS vendor management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:29:11.199965+00:00"
+    },
+    {
+      "name": "NorthStep MSP",
+      "email": "admin@northstepmsp.com",
+      "website": "https://northstepmsp.com",
+      "service_ids": [
+        "it",
+        "it-operations",
+        "it-security",
+        "it-support",
+        "it-compliance",
+        "it-ai-ops"
+      ],
+      "subject": "NorthStep MSP \u2014 IT operations and security services worth comparing",
+      "body": "Hi NorthStep,\n\nI came across NorthStep MSP and noticed fit with managed IT, endpoint security, network monitoring and SD-WAN, helpdesk outsourcing, AI ops, synthetic monitoring, patch management, SaaS vendor management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:29:11.199975+00:00"
+    },
+    {
+      "name": "CivicPath",
+      "email": "contact@civicpath.io",
+      "website": "https://civicpath.io",
+      "service_ids": [
+        "it",
+        "it-operations",
+        "it-security",
+        "it-support",
+        "it-compliance",
+        "it-ai-ops"
+      ],
+      "subject": "CivicPath \u2014 IT operations and security services worth comparing",
+      "body": "Hi CivicPath,\n\nI came across CivicPath and noticed fit with managed IT, endpoint security, network monitoring and SD-WAN, helpdesk outsourcing, AI ops, synthetic monitoring, patch management, SaaS vendor management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:29:11.199985+00:00"
+    },
+    {
+      "name": "PartnerGate",
+      "email": "partner@partnergate.co",
+      "website": "https://partnergate.co",
+      "service_ids": [
+        "it",
+        "it-operations",
+        "it-security",
+        "it-support",
+        "it-compliance",
+        "it-ai-ops"
+      ],
+      "subject": "PartnerGate \u2014 IT operations and security services worth comparing",
+      "body": "Hi PartnerGate,\n\nI came across PartnerGate and noticed fit with managed IT, endpoint security, network monitoring and SD-WAN, helpdesk outsourcing, AI ops, synthetic monitoring, patch management, SaaS vendor management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:29:11.199994+00:00"
+    },
+    {
+      "name": "Summit Chargeback",
+      "email": "finance@summitchargeback.com",
+      "website": "https://summitchargeback.com",
+      "service_ids": [
+        "it",
+        "it-operations",
+        "it-security",
+        "it-support",
+        "it-compliance",
+        "it-ai-ops"
+      ],
+      "subject": "Summit Chargeback \u2014 IT operations and security services worth comparing",
+      "body": "Hi Summit,\n\nI came across Summit Chargeback and noticed fit with managed IT, endpoint security, network monitoring and SD-WAN, helpdesk outsourcing, AI ops, synthetic monitoring, patch management, SaaS vendor management, secure email, compliance readiness, and business continuity support.\n\nIf useful, I can share a concise 2-minute comparison.\n\nNo obligation \u2014 reply if you want it.\n\nBest,\nZION Tech Group",
+      "status": "pending",
+      "discoveredAt": "2026-07-03T08:29:11.200005+00:00"
+    }
+  ]
+}
