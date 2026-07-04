@@ -16,7 +16,7 @@
     "postbuild": "node scripts/generate_service_index.cjs && node scripts/generate-sitemap-feed.cjs && node scripts/checks/build-and-verify.cjs",
     "generate-sitemap": "node scripts/generate-sitemap-feed.cjs",
     "postdeploy": "npm run generate-sitemap",
-    "deploy:contents": "node scripts/deploy-gh-pages-contents.cjs",
+    "deploy:contents": "node scripts/deploy-gh-pages-contents.cjs main",
     "deploy:status:generate": "node scripts/generate-deploy-status.js",
     "automation:preflight": "node scripts/checks/automation-preflight-check.cjs",
     "deploy:watchdog": "node scripts/checks/deploy-watchdog-check.cjs",
