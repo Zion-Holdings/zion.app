@@ -1165,8 +1165,8 @@ export default function HomePage() {
                 .slice()
                 .sort((a, b) => new Date(b.released_at).getTime() - new Date(a.released_at).getTime())
                 .slice(0, 5)
-                .map(r => ({ r, svc: lookup.get(r.id) }))
-                .filter(x => x.svc)
+                .map(r => ({ r, svc: lookup.get(r.id) as Service | undefined }))
+                .filter((x): x is { r: any; svc: Service } => x.svc !== undefined)
                 .map(({ r, svc }) => {
                   const daysAgo = Math.max(0, Math.round((Date.now() - new Date(r.released_at).getTime()) / 86_400_000));
                   const tag = (r.tags || []).map(t => TAG_MAP[t]).find(Boolean) || 'New';
