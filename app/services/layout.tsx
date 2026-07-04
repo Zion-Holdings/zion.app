@@ -17,7 +17,8 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
             href="/contact"
             className="flex-1 text-center px-4 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold text-sm hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/25"
           >
-            ⚡ Get Free Consultation
+            💡 Book a Free Strategy Session →
+            <span className="hidden sm:inline">Visit /consulting/</span>
           </Link>
           <a
             href="tel:+13024640950"

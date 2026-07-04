@@ -23,7 +23,7 @@ import FloatingAgentStatus from './components/FloatingAgentStatus';
 import { AutoJsonLd } from './hooks/useAutoJsonLdPage';
 import './globals.css';
 
-const siteUrl = 'https://ziontechgroup.com';
+export const siteUrl = 'https://ziontechgroup.com';
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
 export const metadata = {
@@ -33,10 +33,10 @@ export const metadata = {
     template: '%s | Zion Tech Group',
   },
   description:
-    'AI applications, secure engineering, and scalable delivery for modern teams. Zion Tech Group.',
+    'Zion Tech Group delivers AI & IT solutions including automation, cybersecurity, cloud, quantum computing, enterprise software, and managed services for modern enterprises.',
   applicationName: 'Zion Tech Group',
   alternates: {
-    canonical: '/',
+    canonical: siteUrl + '/',
   },
   icons: {
     icon: '/icon.svg',
@@ -114,8 +114,6 @@ export default function RootLayout({
             <AIChatWidget />
             <AIExperienceLoader />
             <StickyMobileCTA />
-            <ServiceWorkerRegistration />
-            <StickyDonateBanner />
             <CookieConsentBanner />
             <ErrorTracker />
             <FieldPerformanceCollector />
