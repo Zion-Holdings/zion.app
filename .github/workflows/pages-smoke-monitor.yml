@@ -1,0 +1,69 @@
+name: Pages Smoke Monitor
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  smoke-monitor:
+    name: 'Pages smoke monitor'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      HOME_URL: https://zion-support.github.io/
+      SERVICES_URL: https://zion-support.github.io/services/
+      SDK_URL: https://zion-support.github.io/sdk/
+      STATUS_URL: https://zion-support.github.io/status/
+      DEPLOY_WATCHDOG_BASE_URL: https://zion-support.github.io
+      DEPLOY_WATCHDOG_ROUTES_FILE: config/smoke-routes.txt
+      DEPLOY_WATCHDOG_MAX_ROUTES: 40
+      DEPLOY_WATCHDOG_ATTEMPTS: 2
+      DEPLOY_WATCHDOG_INTERVAL_MS: 10000
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6.3.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --prefer-offline --no-audit --fund=false
+
+      - name: Quick smoke checks
+        run: |
+          set -euo pipefail
+          for url in "$HOME_URL" "$SERVICES_URL" "$SDK_URL" "$STATUS_URL"; do
+            status=$(curl --silent --show-error --max-time 12 -o /dev/null -w "%{http_code}" "$url" || echo "000")
+            echo "smoke $url => $status"
+            if [ "$status" != "200" ]; then
+              echo "::warning::Smoke failed: $url ($status)"
+            fi
+          done
+
+      - name: Deploy watchdog
+        env:
+          DEPLOY_WATCHDOG_BASE_URL: ${{ env.DEPLOY_WATCHDOG_BASE_URL }}
+          DEPLOY_WATCHDOG_ROUTES_FILE: ${{ env.DEPLOY_WATCHDOG_ROUTES_FILE }}
+          DEPLOY_WATCHDOG_MAX_ROUTES: ${{ env.DEPLOY_WATCHDOG_MAX_ROUTES }}
+          DEPLOY_WATCHDOG_ATTEMPTS: ${{ env.DEPLOY_WATCHDOG_ATTEMPTS }}
+          DEPLOY_WATCHDOG_INTERVAL_MS: ${{ env.DEPLOY_WATCHDOG_INTERVAL_MS }}
+        run: |
+          set -euo pipefail
+          npm run deploy:watchdog || true
+          if [ -f automation/reports/deploy-watchdog-latest.json ]; then
+            cat automation/reports/deploy-watchdog-latest.json
+            unhealthy=$(node -e "try{const fs=require('fs');const r=JSON.parse(fs.readFileSync('automation/reports/deploy-watchdog-latest.json','utf8'));const u=r.unhealthyCount;const h=r.healthy;const n=typeof u==='number'?u:(h===false?1:0);process.stdout.write(String(n));}catch(e){process.stdout.write('0');}" 2>/dev/null || echo 0)
+            echo "watchdog_unhealthy=$unhealthy"
+            if [ "${unhealthy:-0}" != "0" ]; then
+              echo "::warning::Deploy watchdog found unhealthy routes"
+            fi
+          else
+            echo "::warning::Deploy watchdog report missing"
+          fi
