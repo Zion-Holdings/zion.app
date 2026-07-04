@@ -89,24 +89,28 @@ async function getExistingTree() {
   const head = refResp?.object?.sha;
   if (!head) throw new Error('missing remote ref: ' + JSON.stringify(refResp));
   const treeResp = await request('GET', `/repos/${repo}/git/commits/${head}`);
-  return treeResp.tree.sha;
+  return { head, treeSha: treeResp.tree.sha };
 }
 
 (async () => {
   console.log(`Reading out directory: ${outDir}`);
   const files = await walk(outDir);
   console.log(`Uploading ${files.length} files`);
-  const treeResp = await fileTree(files);
+  const { head, treeSha } = await getExistingTree();
+  const treeResp = await request('POST', `/repos/${repo}/git/trees`, {
+    tree: files,
+    base_tree: treeSha,
+  });
 
   const message = process.argv[3] || `deploy: static export ${new Date().toISOString()}`;
   const commit = await request('POST', `/repos/${repo}/git/commits`, {
-    message: process.argv[3] || `deploy: static export ${new Date().toISOString()}`,
-    tree: tree.sha,
-    parents: [ref.object.sha],
+    message,
+    tree: treeResp.sha,
+    parents: [head],
   });
 
-  const updResp = await request('PATCH', `/repos/${repo}/git/refs/heads/${branch}`, { sha: commitResp.sha, force: true });
-  console.log(`deployed: branch=${branch} commit=${commitResp.sha} ref=${updResp.object?.sha}`);
+  const updResp = await request('PATCH', `/repos/${repo}/git/refs/heads/${branch}`, { sha: commit.sha, force: true });
+  console.log(`deployed: branch=${branch} commit=${commit.sha} ref=${updResp.object?.sha}`);
 })().catch(err => {
   console.error('deploy failed:', err.message);
   process.exit(1);
