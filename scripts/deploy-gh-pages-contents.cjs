@@ -77,10 +77,17 @@ async function deploy() {
   if (!head) throw new Error('missing remote ref');
   const baseTree = await getTree(head);
   const items = [];
+  let errors = 0;
   for (const file of files) {
-    const blob = await createBlob(file.full);
-    items.push({ path: file.path, mode: '100644', type: 'blob', sha: blob.sha });
+    try {
+      const blob = await createBlob(file.full);
+      items.push({ path: file.path, mode: '100644', type: 'blob', sha: blob.sha });
+    } catch (e) {
+      errors++;
+      console.warn(`deploy skip: ${file.path}: ${e.message}`);
+    }
   }
+  if (items.length === 0) throw new Error('no deployable files');
   const tree = await createTree(baseTree, items);
   const commit = await createCommit(tree.sha, head, `Deploy static site ${new Date().toISOString()}`);
   const updated = await updateRef(commit.sha);

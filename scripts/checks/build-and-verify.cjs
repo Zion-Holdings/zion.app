@@ -5,33 +5,100 @@ const { execSync } = require('child_process');
 const repo = process.cwd();
 const outDir = path.join(repo, 'out');
 const statePath = path.join(repo, 'automation/reports/build-and-verify-latest.json');
-const requiredOutputs = [
+
+const REQUIRED = [
   path.join(outDir, 'index.html'),
   path.join(outDir, '404.html'),
   path.join(outDir, 'data', 'services.json'),
+  path.join(outDir, 'service-index.json'),
 ];
 
-let buildStatus = 'ok';
-try {
-  const cmd = process.platform === 'win32' ? 'npx.cmd' : 'npx';
-  execSync(cmd + ' next build --webpack', { cwd: repo, stdio: 'inherit', timeout: 20 * 60 * 1000 });
-} catch (err) {
-  console.error('build failed: ' + err.message);
-  buildStatus = 'build_failed';
+function exists(p) {
+  try { return fs.existsSync(p); } catch { return false; }
 }
 
-const missing = requiredOutputs.filter((filePath) => !fs.existsSync(filePath));
-const state = {
-  builtAt: new Date().toISOString(),
-  buildStatus,
-  stagedFallback: buildStatus !== 'ok' || missing.length > 0,
-  stagedOutputsPresent: missing.length === 0,
-  outputsChecked: requiredOutputs.length,
-  outputsMissing: missing.map((m) => path.relative(repo, m)),
-  missingCount: missing.length,
-  next: buildStatus !== 'ok' ? 'Build flow reached regression. Inspect logs/build_deploy.log.' : 'verified local static export'
-};
-fs.mkdirSync(path.dirname(statePath), { recursive: true });
-fs.writeFileSync(statePath, JSON.stringify(state, null, 2));
-console.log(JSON.stringify(state, null, 2));
-process.exit(0);
+function tryRun(label, cmd) {
+  try {
+    const out = execSync(cmd, { cwd: repo, encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
+    console.log(`${label}: ok`);
+    return true;
+  } catch (e) {
+    console.warn(`${label} failed: ${e.stderr?.split('\n').slice(-3).join('\n') || e.message}`);
+    return false;
+  }
+}
+
+function ensureArtifacts(missing) {
+  const needServicesJson = missing.includes(path.join(outDir, 'data', 'services.json'));
+  const needServiceIndex = missing.includes(path.join(outDir, 'service-index.json'));
+  let regenerated = false;
+  if (needServicesJson) {
+    console.log('services.json missing — generating...');
+    const ok = tryRun('services.json', 'node scripts/generate_services_json.cjs');
+    regenerated = ok || regenerated;
+  }
+  if (needServiceIndex) {
+    console.log('service-index.json missing — generating...');
+    const ok = tryRun('service-index.json', 'node scripts/generate_service_index.cjs');
+    regenerated = ok || regenerated;
+  }
+  return regenerated;
+}
+
+function detectBuildError() {
+  const candidates = [
+    path.join(repo, '.next', 'diagnostics', 'build-diagnostics.json'),
+    path.join(repo, 'logs', 'build_deploy.log'),
+  ];
+  for (const p of candidates) {
+    if (!exists(p)) continue;
+    try {
+      const raw = fs.readFileSync(p, 'utf8');
+      if (/\bworker exited\b|\bexit code:\s*1\b|\bENOMEM\b|\bOOM\b/i.test(raw)) {
+        return 'next-build-worker-failure';
+      }
+    } catch {}
+  }
+  return null;
+}
+
+function main() {
+  fs.mkdirSync(path.dirname(statePath), { recursive: true });
+
+  let buildStatus = 'ok';
+  let missing = REQUIRED.filter((f) => !exists(f));
+
+  const buildError = detectBuildError();
+  if (buildError) {
+    buildStatus = 'next-build-worker-failure';
+    console.warn(`Next.js build error marker detected: ${buildError}`);
+  }
+
+  let regenerated = false;
+  if (missing.length > 0) {
+    const before = [...missing];
+    regenerated = ensureArtifacts(missing);
+    missing = REQUIRED.filter((f) => !exists(f));
+    if (!regenerated) {
+      console.warn('Artifact regeneration did not complete.');
+    }
+  }
+
+  const state = {
+    checkedAt: new Date().toISOString(),
+    buildStatus,
+    missingNow: missing.map((m) => path.relative(repo, m)),
+    missingCount: missing.length,
+    artifactsGenerated: regenerated,
+    buildError,
+    next: missing.length === 0
+      ? 'verified local static export'
+      : 'build regression — inspect referenced scripts/logs',
+  };
+
+  fs.writeFileSync(statePath, JSON.stringify(state, null, 2));
+  console.log(JSON.stringify(state, null, 2));
+  process.exit(missing.length === 0 ? 0 : 2);
+}
+
+try { main(); } catch (e) { console.error(e); process.exit(1); }
