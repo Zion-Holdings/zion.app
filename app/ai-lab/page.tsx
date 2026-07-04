@@ -36,10 +36,10 @@ const PLAYGROUND_CARDS: ToolCard[] = [
   },
   {
     emoji: '🧪',
-    name: 'AI Service Demo Sandbox',
-    href: '/ai/demo',
+    name: 'AI Service Router',
+    href: '/tools/ai-service-router',
     description:
-      'Try Zion\'s AI service matching tool live — no sign-up, no API key. Type a use case and get ranked service recommendations computed instantly in your browser.',
+      'Describe what you need. Get ranked service matches, direct links, and category tags — all computed in the browser from the full service catalog.',
     tag: 'Demo',
     tagColor: 'emerald',
   },

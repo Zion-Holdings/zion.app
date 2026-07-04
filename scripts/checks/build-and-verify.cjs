@@ -45,6 +45,37 @@ function ensureArtifacts(missing) {
   return regenerated;
 }
 
+function tryBuild() {
+  console.log('required artifacts missing — attempting local build/remediation...');
+  let buildOk = tryRun('build', 'npm run build');
+  if (!buildOk) {
+    console.warn('build failed — skipping further local remediation');
+    return false;
+  }
+  const stillMissing = REQUIRED.filter((f) => !exists(f));
+  if (stillMissing.length === 0) {
+    console.log('build produced required artifacts');
+    return true;
+  }
+
+  const needServicesJson = stillMissing.includes(path.join(outDir, 'data', 'services.json'));
+  const needServiceIndex = stillMissing.includes(path.join(outDir, 'service-index.json'));
+  let artifactsOk = false;
+  if (needServicesJson || needServiceIndex) {
+    console.log('attempting artifact regeneration after build...');
+    artifactsOk = ensureArtifacts(stillMissing);
+  }
+
+  if (stillMissing.filter((f) => !exists(f)).length === 0) {
+    console.log('artifact remediation completed');
+    return true;
+  }
+  if (artifactsOk) return true;
+
+  console.warn('local remediation incomplete — manual deploy may be required');
+  return false;
+}
+
 function detectBuildError() {
   const candidates = [
     path.join(repo, '.next', 'diagnostics', 'build-diagnostics.json'),
