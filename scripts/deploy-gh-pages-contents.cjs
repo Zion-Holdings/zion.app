@@ -3,9 +3,10 @@ const path = require('path');
 const https = require('https');
 
 const repo = 'Zion-support/zion-support.github.io';
-const branch = process.env.ZION_DEPLOY_BRANCH || 'main';
+const branch = process.argv[2] || 'gh-pages';
 const tokenFile = path.join(process.env.USERPROFILE || process.env.HOME, '.gh_token');
-const outDir = path.join(process.cwd(), 'out');
+const token = fs.readFileSync(tokenFile, 'utf8').trim();
+const outDir = process.argv[3] || path.join(process.cwd(), 'out');
 
 function request(method, urlPath, body) {
   return new Promise((resolve, reject) => {
@@ -15,7 +16,7 @@ function request(method, urlPath, body) {
       path: urlPath,
       method,
       headers: {
-        Authorization: `token ${fs.readFileSync(tokenFile, 'utf8').trim()}`,
+        Authorization: `token ${token}`,
         Accept: 'application/vnd.github+json',
         'User-Agent': 'Hermes-Agent',
         ...(payload ? { 'Content-Type': 'application/json' } : {}),
@@ -24,7 +25,8 @@ function request(method, urlPath, body) {
       let raw = '';
       res.on('data', chunk => raw += chunk);
       res.on('end', () => {
-        try { resolve(JSON.parse(raw)); } catch { resolve(raw); }
+        try { resolve(JSON.parse(raw)); }
+        catch { resolve(raw); }
       });
     });
     req.on('error', reject);
@@ -33,65 +35,79 @@ function request(method, urlPath, body) {
   });
 }
 
-function walk(dir, prefix = '') {
-  const entries = [];
-  if (!fs.existsSync(dir)) return entries;
-  for (const name of fs.readdirSync(dir, { withFileTypes: true })) {
-    const rel = prefix ? `${prefix}/${name.name}` : name.name;
-    if (name.isDirectory()) entries.push(...walk(path.join(dir, name.name), rel));
-    else entries.push({ path: rel, full: path.join(dir, name.name) });
+async function sha256Base64(str) {
+  const crypto = require('crypto');
+  return crypto.createHash('sha256').update(str).digest('base64');
+}
+
+async function walk(dir) {
+  const entries = await fs.promises.readdir(dir, { withFileTypes: true, recursive: true });
+  const files = [];
+  for (const e of entries) {
+    if (!e.isFile()) continue;
+    const full = path.join(e.parentPath || dir, e.name);
+    const rel = path.relative(outDir, full).replace(/\\/g, '/');
+    const content = await fs.promises.readFile(full);
+    const b64 = content.toString('base64');
+    const computed = await sha256Base64(content);
+    files.push({ path: rel, mode: '100644', type: 'blob', sha: undefined, content: b64 });
   }
-  return entries;
-}
-
-async function getRef() {
-  return request('GET', `/repos/${repo}/git/ref/heads/${branch}`);
-}
-
-async function getTree(sha) {
-  return request('GET', `/repos/${repo}/git/commits/${sha}`).then(c => c.tree.sha);
-}
-
-async function createBlob(filePath) {
-  const content = Buffer.from(fs.readFileSync(filePath, 'utf8')).toString('base64');
-  return request('POST', `/repos/${repo}/git/blobs`, { content, encoding: 'base64' });
-}
-
-async function createTree(baseTreeSha, items) {
-  return request('POST', `/repos/${repo}/git/trees`, { base_tree: baseTreeSha, tree: items });
-}
-
-async function createCommit(treeSha, parentSha, message) {
-  return request('POST', `/repos/${repo}/git/commits`, { message, tree: treeSha, parents: [parentSha] });
-}
-
-async function updateRef(commitSha) {
-  return request('PATCH', `/repos/${repo}/git/refs/heads/${branch}`, { sha: commitSha, force: false });
-}
-
-async function deploy() {
-  const files = walk(outDir);
-  console.log(`files: ${files.length}`);
-  const ref = await getRef();
-  const head = ref?.object?.sha;
-  if (!head) throw new Error('missing remote ref');
-  const baseTree = await getTree(head);
-  const items = [];
-  let errors = 0;
-  for (const file of files) {
-    try {
-      const blob = await createBlob(file.full);
-      items.push({ path: file.path, mode: '100644', type: 'blob', sha: blob.sha });
-    } catch (e) {
-      errors++;
-      console.warn(`deploy skip: ${file.path}: ${e.message}`);
+  // De-duplicate paths by preferring non-hidden files if duplicate
+  const map = new Map();
+  for (const f of files) {
+    if (map.has(f.path)) {
+      const prev = map.get(f.path);
+      if (!f.path.includes('/.')) map.set(f.path, f);
+    } else {
+      map.set(f.path, f);
     }
   }
-  if (items.length === 0) throw new Error('no deployable files');
-  const tree = await createTree(baseTree, items);
-  const commit = await createCommit(tree.sha, head, `Deploy static site ${new Date().toISOString()}`);
-  const updated = await updateRef(commit.sha);
-  console.log(`deployed: commit=${commit.sha} ref=${updated.object?.sha}`);
+  return Array.from(map.values());
 }
 
-deploy().catch(err => { console.error('deploy failed:', err.message); process.exit(1); });
+async function fileTree(files) {
+  // Create blobs
+  const created = [];
+  for (const f of files) {
+    let sha;
+    if (f.sha) {
+      sha = f.sha;
+    } else {
+      const blob = await request('POST', `/repos/${repo}/git/blobs`, { content: f.content, encoding: 'base64' });
+      sha = blob.sha;
+    }
+    created.push({ path: f.path, mode: f.mode, type: f.type, sha });
+  }
+  return await request('POST', `/repos/${repo}/git/trees`, {
+    tree: created,
+    base_tree: await getExistingTree()
+  });
+}
+
+async function getExistingTree() {
+  const refResp = await request('GET', `/repos/${repo}/git/ref/heads/${branch}`);
+  const head = refResp?.object?.sha;
+  if (!head) throw new Error('missing remote ref: ' + JSON.stringify(refResp));
+  const treeResp = await request('GET', `/repos/${repo}/git/commits/${head}`);
+  return treeResp.tree.sha;
+}
+
+(async () => {
+  console.log(`Reading out directory: ${outDir}`);
+  const files = await walk(outDir);
+  console.log(`Uploading ${files.length} files`);
+  const treeResp = await fileTree(files);
+
+  const message = `deploy: static export ${new Date().toISOString()}`;
+  const commitResp = await request('POST', `/repos/${repo}/git/commits`, {
+    message,
+    tree: treeResp.sha,
+    parents: [(await request('GET', `/repos/${repo}/git/ref/heads/${branch}`)).object.sha],
+  });
+
+  const updResp = await request('PATCH', `/repos/${repo}/git/refs/heads/${branch}`, { sha: commitResp.sha, force: true });
+  console.log(`deployed: branch=${branch} commit=${commitResp.sha} ref=${updResp.object?.sha}`);
+})().catch(err => {
+  console.error('deploy failed:', err.message);
+  process.exit(1);
+});

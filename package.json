@@ -28,7 +28,9 @@
     "test": "jest --passWithNoTests",
     "test:ci": "jest --ci --coverage --watchAll=false --passWithNoTests",
     "build-storybook": "storybook build",
-    "health:check": "node scripts/automation/workspace-health-check.cjs"
+    "health:check": "node scripts/automation/workspace-health-check.cjs",
+    "build:win": "node scripts/windows-build-guard.cjs && next build",
+    "deploy:verify": "node scripts/verify-deploy.cjs"
   },
   "dependencies": {
     "@sendgrid/mail": "^8.1.6",
