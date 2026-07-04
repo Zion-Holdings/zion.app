@@ -2,15 +2,13 @@
 'use client';
 
 import { useState, useMemo, Suspense } from 'react';
-
 import { useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import SmartSearchBar from '@/components/SmartSearchBar';
 import JsonLd from '@/components/JsonLd';
+import { ServiceGridSkeleton } from '@/components/Skeletons';
 import { allServices } from '../data/servicesData';
 import type { Service } from '../data/servicesData';
-
-
 
 const SVC_CAT_LABELS: Record<string,string> = { ai: 'AI Services', it: 'IT', cloud: 'Cloud', security: 'Security', data: 'Data & Analytics', automation: 'Automation', 'micro-saas': 'Micro-SaaS', devops: 'DevOps', blockchain: 'Blockchain', iot: 'IoT & Edge', 'email-intelligence': 'Email Intelligence', observability: 'Observability', identity: 'Identity & Access', cms: 'CMS & Content', ecommerce: 'E-Commerce', documentation: 'Documentation', 'ai-ml-ops': 'AI/ML Ops', devsecops: 'DevSecOps', fintech: 'FinTech', edtech: 'EdTech', 'healthcare-it': 'Healthcare IT', 'data-streaming': 'Data Streaming', search: 'Search', api: 'API Management' };
 const CATEGORIES = [
@@ -128,7 +126,7 @@ function ServicesContent() {
         <div className="text-center mt-16">
           <Link href="/configurator/" className="btn-primary text-lg">Get Your Custom Proposal →</Link>
           <div className="mt-6 space-y-2">
-            <p className="text-slate-400 text-sm">📞 <a href="tel:+13024640950" className="text-purple-300 hover:underline">+1 302 464 0950</a></p>
+            <p className="text-slate-400 text-sm">📞 <a href="tel:+130****0950" className="text-purple-300 hover:underline">+1 302 464 0950</a></p>
             <p className="text-slate-400 text-sm">✉️ <a href="mailto:kleber@ziontechgroup.com" className="text-purple-300 hover:underline">kleber@ziontechgroup.com</a></p>
             <p className="text-slate-400 text-sm">📍 364 E Main St STE 1008, Middletown, DE 19709</p>
           </div>
@@ -143,11 +141,12 @@ export default function ServicesPage() {
   return (
     <Suspense fallback={
       <main className="min-h-screen bg-slate-950 py-20">
-        <div className="container-page text-center py-20">
-          <h1 className="text-4xl font-bold text-white mb-2">Our Complete Service Catalog</h1>
-          <p className="section-subheading">Browse all services</p>
-          <div className="inline-block w-8 h-8 border-4 border-purple-500 border-t-transparent rounded-full animate-spin mt-8" />
-          <p className="text-slate-400 mt-4">Loading services...</p>
+        <div className="container-page">
+          <h1 className="text-4xl font-bold text-white mb-2 text-center">Our Complete Service Catalog</h1>
+          <p className="section-subheading text-center">Browse all services</p>
+          <div className="mt-8">
+            <ServiceGridSkeleton />
+          </div>
         </div>
       </main>
     }>
