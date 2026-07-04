@@ -28,7 +28,7 @@ function quarantinePatterns() {
 const customJestConfig = {
   setupFilesAfterEnv: ['<rootDir>/jest.setup.cjs'],
   testEnvironment: 'jsdom',
-  roots: ['<rootDir>/app', '<rootDir>/components', '<rootDir>/lib'],
+  roots: ['<rootDir>/app', '<rootDir>/components', '<rootDir>/lib', '<rootDir>/__tests__'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/$1',
   },

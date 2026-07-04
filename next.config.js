@@ -14,12 +14,6 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  compiler: {
-    removeConsole: process.env.NODE_ENV === 'production' ? { exclude: ['error', 'warn'] } : false,
-  },
-  experimental: {
-    optimizePackageImports: ['lucide-react'],
-  },
   generateBuildId: async () => 'zion-tech-group-v1',
 };
 

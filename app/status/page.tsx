@@ -3,6 +3,7 @@
 import { useEffect, useState, useCallback } from 'react';
 
 import { allServices } from '@/data/servicesData';
+import runtimeIntegrity from '@/data/runtime-integrity';
 
 type CheckStatus = 'checking' | 'operational' | 'degraded' | 'outage' | 'unknown';
 
@@ -133,6 +134,23 @@ export default function StatusPage() {
       <div className="container-page max-w-3xl">
         <h1 className="text-4xl font-bold text-white mb-2">System Status</h1>
         <p className="text-slate-400 mb-10">Live health summary — refreshed every 60 seconds via client-side probes</p>
+
+        {/* Build-time asset verification */}
+        <div className="glass-card mb-10">
+          <h2 className="font-semibold text-white mb-3">Build Verification</h2>
+          <p className="text-slate-400 text-sm">Last verified: {new Date(runtimeIntegrity.lastVerified).toISOString()}</p>
+          <ul className="mt-3 space-y-2">
+            {runtimeIntegrity.integrityChecks.map((item) => (
+              <li key={item.name} className="flex items-start gap-3 text-sm">
+                <span className="mt-0.5">{item.ok ? '✅' : '❌'}</span>
+                <div>
+                  <p className="text-white font-medium">{item.name}</p>
+                  <p className="text-slate-400">{item.detail}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
 
         {/* Overall status card */}
         <div className="glass-card mb-10">
