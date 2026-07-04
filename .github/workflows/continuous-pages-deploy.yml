@@ -36,7 +36,7 @@ jobs:
       - name: Install dependencies
         run: npm ci --prefer-offline --no-audit --fund=false
 
-      - name: Build static export
+      - name: Static site build
         id: build
         run: |
           set -euo pipefail
@@ -50,61 +50,17 @@ jobs:
           fi
           echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
           echo "size=$SIZE" >> "$GITHUB_OUTPUT"
-          echo "trigger=schedule" >> "$GITHUB_OUTPUT"
 
-      - name: Generate service index + sitemap + feed
-        run: |
-          set -euo pipefail
-          node scripts/generate_service_index.cjs
-          node scripts/generate_services_json.cjs
-          node scripts/generate-sitemap-feed.cjs
-          test -f out/sitemap.xml
-          test -f out/feed.xml
-          test -f out/service-index.json
-          test -f out/data/services.json
-        continue-on-error: false
-
-      - name: Upload Pages artifact
+      - name: Pages artifact
         uses: actions/upload-pages-artifact@v3.0.1
         with:
           path: out
+
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4.0.5
 
       - name: Summary
         if: always()
         run: |
           echo "pages=${{ steps.build.outputs.pages }}"
           echo "size=${{ steps.build.outputs.size }}"
-          echo "trigger=${{ steps.build.outputs.trigger }}"
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4.0.5
-
-      - name: Pages smoke check
-        if: success()
-        env:
-          BASE_URL: ${{ steps.deployment.outputs.page_url }}
-        run: |
-          set -euo pipefail
-          status=$(curl --silent --show-error --max-time 10 -o /dev/null -w "%{http_code}" "${BASE_URL}/" || echo "000")
-          if [ "$status" = "200" ]; then
-            echo "OK home ($status)"
-          else
-            echo "FAIL home ($status)"
-            exit 1
-          fi
-          status=$(curl --silent --show-error --max-time 10 -o /dev/null -w "%{http_code}" "${BASE_URL}/services/" || echo "000")
-          if [ "$status" = "200" ]; then
-            echo "OK services ($status)"
-          else
-            echo "FAIL services ($status)"
-            exit 1
-          fi
