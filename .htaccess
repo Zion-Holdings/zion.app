@@ -1,0 +1,18 @@
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  Header set Strict-Transport-Security "max-age=63072000; includeSubDomains"
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_METHOD} ^TRACE
+  RewriteRule .* - [F]
+  RewriteRule ^robots.txt - [L]
+  RewriteRule ^sitemap.xml - [L]
+  RewriteRule ^feed.xml - [L]
+  RewriteRule ^.well-known/ - [L]
+  RewriteRule ^(.*)$ index.html [QSA,L]
+</IfModule>
