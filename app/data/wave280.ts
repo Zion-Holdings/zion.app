@@ -1,30 +1,301 @@
-export const wave280ItServices = [
-  { id:"it-desktop-lifecycle-service", title:"IT Desktop Lifecycle & Imaging Service", description:"Standardizes PC/Mac imaging, provisioning, and refresh cycles across locations. Reduces onboarding time and keeps hardware inventories clean.", features:["Golden image management","OS migration automation","Hardware refresh scheduling","Asset tagging and handoff","Policy-driven provisioning","Location-aware rollout"], benefits:["Cut onboarding time by 60%","Keep imaging consistent across sites","Reduce manual setup errors","Maintain auditable hardware records"], pricing:{basic:"$149/mo", pro:"$449/mo", enterprise:"$1,299/mo"}, contactInfo:{website:"/services/it-desktop-lifecycle-service", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🖥️", href:"/services/it-desktop-lifecycle-service", popular:false, category:"it", industry:"Endpoint Management", stage:"published"},
-  { id:"it-support-tiered-onboarding", title:"Tiered Support Onboarding & Escalation Framework", description:"Designs helpdesk tiers, escalation paths, and runbooks so L1/L2/L3 coverage is predictable and measurable.", features:["Tier definition and coverage model","Escalation SLA enforcement","Runbook and knowledge-base pairing","Ticket routing and workload balance","Quality assurance sampling","Reporting by tier and queue"], benefits:["Improve first-contact resolution","Reduce escalation chaos","Make support predictable","Keep staffing aligned to demand"], pricing:{basic:"$99/mo", pro:"$349/mo", enterprise:"$899/mo"}, contactInfo:{website:"/services/it-support-tiered-onboarding", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"📞", href:"/services/it-support-tiered-onboarding", popular:false, category:"it", industry:"Service Management", stage:"published"},
-  { id:"it-data-center-readiness-audit", title:"Data Center Readiness Audit & Checklist", description:"Audits power, cooling, rack, labeling, and change controls for small-to-mid data center footprints. Delivers actionable findings and remediation tracking.", features:["Rack and cable audit","Power/cooling capacity review","Change control assessment","Fire suppression and physical security review","Remediation backlog with priority","Evidence package for audits"], benefits:["Reduce outage risk before inspection","Produce audited evidence","Prioritize spending by real risk","Improve physical security posture"], pricing:{basic:"$199/mo", pro:"$699/mo", enterprise:"Custom"}, contactInfo:{website:"/services/it-data-center-readiness-audit", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🗄️", href:"/services/it-data-center-readiness-audit", popular:false, category:"it", industry:"Infrastructure", stage:"published"},
-  { id:"it-remote-staff-access-framework", title:"Remote Staff Access Framework", description:"Safely provisions and governs remote access for distributed teams with MFA, device trust, least privilege, and session controls.", features:["Remote access policy templates","MFA and device trust requirements","Least privilege access tiers","Session timeout and monitoring","VPN/ZTNA pairing guidance","Offboarding automation"], benefits:["Reduce unauthorized remote access risk","Keep distributed teams productive","Make audits simpler","Reduce helpdesk access requests"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,699/mo"}, contactInfo:{website:"/services/it-remote-staff-access-framework", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🌍", href:"/services/it-remote-staff-access-framework", popular:false, category:"it", industry:"Identity & Access", stage:"published"}
-];
-export const wave280AiServices = [
-  { id:"ai-churn-prevention-system", title:"AI Churn Prevention & Recovery System", description:"Predicts churn risk, triggers interventions, and tracks recovery outcomes across subscriptions and recurring revenue.", features:["Churn risk scoring","Intervention automation","Recovery campaign tracking","Segment-based playbooks","Revenue impact estimation","Outcome analytics"], benefits:["Reduce churn by actionable alerts","Recover revenue before cancellations","Keep playbooks consistent","Measure intervention success"], pricing:{basic:"$149/mo", pro:"$449/mo", enterprise:"$1,499/mo"}, contactInfo:{website:"/services/ai-churn-prevention-system", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"📉", href:"/services/ai-churn-prevention-system", popular:false, category:"ai", industry:"Customer Success", stage:"published"},
-  { id:"ai-quality-assistants", title:"AI Quality Assistants for Support and Ops", description:"Deploys AI assistants that monitor conversations, tickets, and workflows for quality, compliance, and coaching moments.", features:["Conversation quality scoring","Compliance flag detection","Real-time coaching prompts","Supervisor dashboards","Playbook adherence tracking","Sentiment-aware escalation"], benefits:["Improve support quality consistently","Reduce compliance misses","Coach teams without extra headcount","Make QA evidence-based"], pricing:{basic:"$99/mo", pro:"$349/mo", enterprise:"$999/mo"}, contactInfo:{website:"/services/ai-quality-assistants", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🧭", href:"/services/ai-quality-assistants", popular:false, category:"ai", industry:"Quality Assurance", stage:"published"}
-];
-export const wave280SecurityServices = [
-  { id:"security-access-review-automation", title:"Access Review Automation Platform", description:"Automates quarterly access reviews, collects attestations, and flags risky entitlements across directories and cloud apps.", features:["Review cycle automation","Attestation collection","Entitlement anomaly flags","Manager escalation paths","Remediation tracking","Evidence export for audits"], benefits:["Reduce review time from weeks to days","Produce audit-ready evidence","Lower entitlement sprawl","Keep managers accountable"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,599/mo"}, contactInfo:{website:"/services/security-access-review-automation", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🧾", href:"/services/security-access-review-automation", popular:false, category:"security", industry:"Governance", stage:"published"},
-  { id:"security-privacy-incident-responder", title:"Privacy Incident Responder", description:"Guides privacy incident response with evidence collection, notification timelines, and remediation workflows aligned to GDPR and state privacy laws.", features:["Incident classification and scoping","Notification timeline guidance","Evidence collection automation","Remediation workflow tracking","Cross-jurisdiction rules","Post-incident summary reports"], benefits:["Reduce response time during incidents","Produce defensible evidence","Stay within notification windows","Simplify legal and PR coordination"], pricing:{basic:"$199/mo", pro:"$699/mo", enterprise:"Custom"}, contactInfo:{website:"/services/security-privacy-incident-responder", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🛡️", href:"/services/security-privacy-incident-responder", popular:false, category:"security", industry:"Privacy", stage:"published"}
-];
-export const wave280CloudServices = [
-  { id:"cloud-migration-runway-planner", title:"Cloud Migration Runway Planner", description:"Creates prioritized migration runways with dependency mapping, blast-radius estimation, and rollback planning for hybrid estates.", features:["Dependency mapping and sequencing","Blast-radius estimation","Migration runway timelines","Rollback and roll-forward plans","Environment pairing","Cost projection by workload"], benefits:["Reduce migration surprises","Keep rollback plans real","Prioritize by business impact","Maintain continuity during transitions"], pricing:{basic:"$199/mo", pro:"$699/mo", enterprise:"Custom"}, contactInfo:{website:"/services/cloud-migration-runway-planner", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🛫", href:"/services/cloud-migration-runway-planner", popular:false, category:"cloud", industry:"Migration", stage:"published"},
-  { id:"cloud-resilience-scorecard", title:"Cloud Resilience Scorecard", description:"Scores cloud estate reliability across regions, zones, and workloads with measurable targets and weekly trend reporting.", features:["Multi-region reliability scoring","Workload blast-radius review","Incident pattern tracking","Trend reporting","SLO target tracking","Executive summary exports"], benefits:["Make resilience measurable","Find weak regions and workloads","Track improvements weekly","Produce executive-ready visuals"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,299/mo"}, contactInfo:{website:"/services/cloud-resilience-scorecard", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"📊", href:"/services/cloud-resilience-scorecard", popular:false, category:"cloud", industry:"Reliability", stage:"published"}
-];
-export const wave280DataServices = [
-  { id:"data-contract-quality-guard", title:"Data Contract & Quality Guard", description:"Defines data contracts between producers and consumers, then validates freshness, schema, and quality every run.", features:["Schema contract validation","Freshness and volume checks","Owner attribution","Policy breach alerts","Remediation runbook links","Evidence export for analytics"], benefits:["Keep data trustworthy","Reduce broken dashboard incidents","Make ownership explicit","Produce quality evidence"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,699/mo"}, contactInfo:{website:"/services/data-contract-quality-guard", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"📜", href:"/services/data-contract-quality-guard", popular:false, category:"data", industry:"Data Engineering", stage:"published"},
-  { id:"data-meeting-alchemy", title:"Data Meeting Alchemy", description:"Turns meeting artifacts into structured datasets: action items, owners, deadlines, decisions, and sentiment for business intelligence use.", features:["Meeting artifact ingestion","Action and decision extraction","Owner-deadline dataset generation","Sentiment tagging","BI/CRM export options","Privacy-aware handling"], benefits:["Turn meetings into usable data","Connect discussion to execution","Feed CRM and PM tools","Keep history searchable"], pricing:{basic:"$79/mo", pro:"$249/mo", enterprise:"$799/mo"}, contactInfo:{website:"/services/data-meeting-alchemy", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🔮", href:"/services/data-meeting-alchemy", popular:false, category:"data", industry:"Productivity", stage:"published"}
-];
-export const wave280AutomationServices = [
-  { id:"automation-compliance-checkpoint-automator", title:"Compliance Checkpoint Automator", description:"Automates recurring compliance checkpoints with evidence collection, owner assignment, and remediation routing.", features:["Recurring checkpoint scheduling","Evidence collection automation","Owner assignment and alerts","Remediation routing","Framework templates","Audit trail exports"], benefits:["Reduce manual compliance coordination","Produce consistent evidence","Keep remediation on schedule","Simplify audit preparation"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,499/mo"}, contactInfo:{website:"/services/automation-compliance-checkpoint-automator", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"✅", href:"/services/automation-compliance-checkpoint-automator", popular:false, category:"automation", industry:"Governance", stage:"published"},
-  { id:"automation-vendor-risk-workflow", title:"Vendor Risk Workflow Automation", description:"Automates vendor risk questionnaires, evidence collection, renewal reminders, and exception tracking for procurement teams.", features:["Questionnaire automation","Evidence collection workflows","Renewal and expiration reminders","Exception tracking","Vendor scorecards","Audit-ready exports"], benefits:["Reduce vendor onboarding time","Maintain risk evidence","Simplify renewal cycles","Keep procurement decisions data-driven"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,299/mo"}, contactInfo:{website:"/services/automation-vendor-risk-workflow", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🏢", href:"/services/automation-vendor-risk-workflow", popular:false, category:"automation", industry:"Procurement", stage:"published"}
-];
-export const wave280MicroSaasServices = [
-  { id:"micro-saas-ai-report-card-builder", title:"Micro-SaaS AI Report Card Builder", description:"Generates business report cards with scoring, trend indicators, and export-ready formats for executives and board reviews.", features:["Auto-generated report cards","Trend and variance indicators","Template customization","PDF and CSV exports","Stakeholder distribution lists","Drill-down by initiative"], benefits:["Speed up board-ready reporting","Reduce analyst formatting work","Keep trend context visible","Support recurring review cycles"], pricing:{basic:"$49/mo", pro:"$149/mo", enterprise:"$499/mo"}, contactInfo:{website:"/services/micro-saas-ai-report-card-builder", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🗂️", href:"/services/micro-saas-ai-report-card-builder", popular:false, category:"micro-saas", industry:"Reporting", stage:"published"},
-  { id:"micro-saas-ai-incident-timeline", title:"Micro-SaaS AI Incident Timeline", description:"Builds concise incident timelines from alerts, tickets, chat, and monitoring signals with impact framing and remediation tracking.", features:["Multi-source timeline assembly","Impact and blast-radius framing","Owner and action extraction","Remediation status tracking","Communication templates","Evidence export"], benefits:["Reduce post-incident writeup time","Keep leadership informed clearly","Connect signals across tools","Maintain audit-friendly records"], pricing:{basic:"$49/mo", pro:"$149/mo", enterprise:"$499/mo"}, contactInfo:{website:"/services/micro-saas-ai-incident-timeline", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"📅", href:"/services/micro-saas-ai-incident-timeline", popular:false, category:"micro-saas", industry:"Incident Management", stage:"published"}
+import { Service } from './serviceTypes';
+
+export const wave280ItServices: Service[] = [
+  {
+    id: 'it-endpoint-management-ai',
+    title: 'AI-Powered Endpoint Management & Unified Endpoint Security',
+    description: 'Consolidate device management, security, and support across Windows, macOS, Linux, iOS, and Android. AI automates patching, compliance checks, threat detection, and remote support — reducing endpoint risk and helpdesk workload.',
+    category: 'endpoint-management',
+    icon: '💻',
+    href: '/services/endpoint-management-ai',
+    industry: 'IT Operations & Security',
+    stage: 'published',
+    popular: true,
+    pricing: { basic: '$149/mo', pro: '$499/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'Cross-platform endpoint inventory and policy enforcement',
+      'AI-driven patch prioritization and automated deployment',
+      'Zero-trust endpoint compliance checking',
+      'Remote troubleshooting with AI-assisted diagnostics',
+      'Behavioral threat detection on laptops, mobiles, and servers',
+      'Unified helpdesk ticketing with bot-assisted resolution'
+    ],
+    benefits: [
+      'Reduce endpoint-related breaches by 60%',
+      'Cut helpdesk ticket volume by 40% with self-healing automation',
+      'Maintain compliance across BYOD and corporate-device fleets',
+      'Decrease patch exposure windows from weeks to hours'
+    ]
+  },
+  {
+    id: 'it-backup-disaster-recovery-ai',
+    title: 'Intelligent Backup & Disaster Recovery with AI Orchestration',
+    description: 'Protect data and applications across cloud, on-prem, and SaaS with AI-driven backup scheduling, immutability, cross-region replication, and automated failover. Reduce RPO/RTO with predictive recovery readiness.',
+    category: 'backup-dr',
+    icon: '🔄',
+    href: '/services/backup-disaster-recovery-ai',
+    industry: 'IT Infrastructure & Business Continuity',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$199/mo', pro: '$599/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'AI backup scheduling based on change frequency and criticality',
+      'Immutable air-gapped backups with ransomware protection',
+      'Cross-cloud and cross-region replication orchestration',
+      'Automated failover testing and recovery runbooks',
+      'SaaS backup (Microsoft 365, Google Workspace, Salesforce)',
+      'Predictive RPO/RTO modeling and trend reporting'
+    ],
+    benefits: [
+      'Achieve near-zero RPO/RTO for critical workloads',
+      'Recover from ransomware in under 2 hours instead of days',
+      'Eliminate backup sprawl with unified data protection',
+      'Pass audits with immutable backup evidence and recovery tests'
+    ]
+  },
+  {
+    id: 'it-hybrid-multicloud-management',
+    title: 'Hybrid & Multi-Cloud Management Platform',
+    description: 'Unify operations across AWS, Azure, GCP, and on-premises infrastructure. Centralized visibility, policy enforcement, cost governance, and workload migration orchestration without vendor lock-in.',
+    category: 'multicloud',
+    icon: '☁️',
+    href: '/services/hybrid-multicloud-management',
+    industry: 'Cloud & IT Operations',
+    stage: 'published',
+    popular: true,
+    pricing: { basic: '$299/mo', pro: '$899/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'Unified control plane for AWS, Azure, GCP, and on-prem',
+      'Cloud-agnostic policy engine and governance guardrails',
+      'Workload placement optimizer based on cost and performance',
+      'Automated cross-cloud migration and disaster recovery',
+      'Multi-cloud network and security policy synchronization',
+      'FinOps dashboards with shared cost and anomaly attribution'
+    ],
+    benefits: [
+      'Reduce cloud operational overhead by 50%',
+      'Avoid vendor lock-in with portable workload definitions',
+      'Optimize spend by placing workloads on the best-value cloud',
+      'Accelerate migrations with automated lift-and-shift tooling'
+    ]
+  },
+  {
+    id: 'it-identity-access-management-ai',
+    title: 'AI-Driven Identity & Access Management (IAM)',
+    description: 'Secure identity lifecycle management with AI anomaly detection, just-in-time access, adaptive MFA, and least-privilege enforcement. Protect against credential stuffing, lateral movement, and insider risk.',
+    category: 'iam',
+    icon: '🔐',
+    href: '/services/identity-access-management-ai',
+    industry: 'Security & IT',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$199/mo', pro: '$699/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'AI-powered anomaly detection for login and access patterns',
+      'Just-in-time privileged access with auto-expiry',
+      'Adaptive MFA based on risk score and context',
+      'Automated user lifecycle (joiner/mover/leaver)',
+      'SSO federation across cloud, on-prem, and SaaS apps',
+      'Insider threat detection and segregation-of-duties enforcement'
+    ],
+    benefits: [
+      'Reduce account takeovers by 70% with risk-based authentication',
+      'Eliminate standing excess privileges with Just-In-Time access',
+      'Automate identity lifecycle to reduce manual provisioning errors',
+      'Detect compromised credentials before they cause breaches'
+    ]
+  },
+  {
+    id: 'it-network-automation-sdwan',
+    title: 'Network Automation & SD-WAN with Intent-Based Networking',
+    description: 'Transform legacy networks with intent-based automation, self-healing WAN, centralized policy, and real-time path optimization. Reduce network outages, provisioning time, and MPLS costs.',
+    category: 'networking',
+    icon: '🌐',
+    href: '/services/network-automation-sdwan',
+    industry: 'IT Networking & Telecom',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$299/mo', pro: '$899/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'Intent-based networking with natural-language policy translation',
+      'Self-healing WAN with dynamic path optimization',
+      'Automated site provisioning and branch deployment',
+      'Centralized configuration and drift prevention',
+      'Real-time application performance routing',
+      'Integrated security (ZTNA, firewall, DNS protection)'
+    ],
+    benefits: [
+      'Reduce branch provisioning from days to minutes',
+      'Cut MPLS/connectivity costs by 30-40%',
+      'Improve application performance by 2x with dynamic path selection',
+      'Decrease network-related outages by 80%'
+    ]
+  },
+  {
+    id: 'it-virtualization-container-optimization',
+    title: 'Virtualization & Container Optimization Platform',
+    description: 'Maximize utilization and reduce sprawl across VMware, Hyper-V, KVM, and Kubernetes. AI rightsizes VMs and containers, detects zombie resources, and automates housekeeping.',
+    category: 'virtualization',
+    icon: '📦',
+    href: '/services/virtualization-container-optimization',
+    industry: 'IT Infrastructure & Cloud',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$249/mo', pro: '$749/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'AI-powered VM and container right-sizing recommendations',
+      'Zombie resource detection and automated cleanup',
+      'Hybrid VMware/Kubernetes management console',
+      'Storage performance optimization and tiering',
+      'License and entitlement optimization',
+      'Capacity forecasting and budget planning'
+    ],
+    benefits: [
+      'Reclaim 15-25% of infrastructure capacity without new purchases',
+      'Reduce license costs by identifying unused entitlements',
+      'Simplify hybrid virtualization with unified management',
+      'Improve workload performance with rightsized resource allocations'
+    ]
+  },
+  {
+    id: 'it-workspace-modernization-digital-workplace',
+    title: 'Digital Workplace & Workspace Modernization',
+    description: 'Modernize employee experience with secure cloud desktops (DaaS), unified communications, device provisioning, and AI-powered self-service support. Enable hybrid and remote work without complexity.',
+    category: 'digital-workplace',
+    icon: '🖥️',
+    href: '/services/digital-workplace-modernization',
+    industry: 'Enterprise IT & Workplace',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$199/mo', pro: '$599/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'DaaS and VDI deployment with GPU acceleration',
+      'Unified communications and collaboration suite integration',
+      'Zero-touch device provisioning (Zero Touch Provisioning)',
+      'AI self-service IT chatbot and knowledge base',
+      'Cross-platform productivity analytics',
+      'Secure remote access with ZTNA and conditional access'
+    ],
+    benefits: [
+      'Reduce IT support tickets by 35% with AI self-service',
+      'Provision new hire workstations in under 10 minutes',
+      'Enable secure hybrid work without VPN bottlenecks',
+      'Improve employee satisfaction with modern, consistent tooling'
+    ]
+  },
+  {
+    id: 'it-software-asset-management-itam',
+    title: 'AI-Enhanced Software Asset Management (ITAM)',
+    description: 'Gain full visibility into software licenses, usage, and compliance across devices, SaaS, and cloud. AI detects over-provisioning, under-utilization, and audit risk automatically.',
+    category: 'itam',
+    icon: '📜',
+    href: '/services/software-asset-management-itam',
+    industry: 'IT Finance & Compliance',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$149/mo', pro: '$449/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'Automated software inventory across devices and SaaS',
+      'License compliance analysis and audit-ready reporting',
+      'AI-driven usage analytics and reclamation recommendations',
+      'SaaS shadow IT discovery and risk assessment',
+      'Vendor negotiation support with utilization evidence',
+      'Renewal calendar and budget forecasting'
+    ],
+    benefits: [
+      'Reduce software license costs by 20-30%',
+      'Pass software audits with documented compliance evidence',
+      'Eliminate shadow IT risks with automated discovery',
+      'Improve budgeting with accurate renewal forecasting'
+    ]
+  },
+  {
+    id: 'it-data-center-green-ops',
+    title: 'Data Center GreenOps & Energy Optimization',
+    description: 'Reduce data center carbon footprint and PUE with AI-powered environmental monitoring, cooling optimization, renewable energy matching, and hardware lifecycle management. Meet ESG targets profitably.',
+    category: 'greenops',
+    icon: '🌱',
+    href: '/services/data-center-green-ops',
+    industry: 'Data Center & Sustainability',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$349/mo', pro: '$999/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'AI-controlled cooling optimization (liquid, air, immersion)',
+      'Real-time PUE and energy efficiency monitoring',
+      'Carbon-aware workload scheduling and renewable PPAs',
+      'Hardware lifecycle automation and ITAD remarketing',
+      'ESG reporting and sustainability scorecards',
+      'Power capacity forecasting and heat-map visualization'
+    ],
+    benefits: [
+      'Reduce data center energy costs by 25-40%',
+      'Improve PUE toward industry-leading values',
+      'Meet ESG and carbon-neutral commitments without sacrificing performance',
+      'Extend hardware life and reduce e-waste'
+    ]
+  },
+  {
+    id: 'it-application-performance-monitoring-ai',
+    title: 'AI Application Performance Monitoring & Optimization',
+    description: 'Monitor, diagnose, and optimize application performance across full-stack and microservices. AI correlates anomalies, predicts degradation, and recommends fixes before users notice.',
+    category: 'apm',
+    icon: '📏',
+    href: '/services/application-performance-monitoring',
+    industry: 'IT Operations & DevOps',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$199/mo', pro: '$599/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'Full-stack tracing (frontend, backend, database, infrastructure)',
+      'AI anomaly detection and automatic root-cause correlation',
+      'SLO/SLA tracking with error budget burn-rate alerts',
+      'Production profiling and hotspot identification',
+      'Release impact analysis and regression detection',
+      'Cross-team dashboards and incident escalation automation'
+    ],
+    benefits: [
+      'Detect performance regressions before customers report them',
+      'Reduce mean time to resolution (MTTR) by 60%',
+      'Optimize release confidence with automated impact analysis',
+      'Improve user experience through proactive performance tuning'
+    ]
+  },
+  {
+    id: 'it-cybersecurity-awareness-training-ai',
+    title: 'AI-Powered Cybersecurity Awareness Training',
+    description: 'Train employees with adaptive, personalized phishing simulations and security education. AI adjusts difficulty, tracks improvement, and reduces human-factor risk across the organization.',
+    category: 'security-training',
+    icon: '🎓',
+    href: '/services/cybersecurity-awareness-training',
+    industry: 'Security & HR',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$99/mo', pro: '$299/mo', enterprise: '$999/mo' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'Adaptive phishing simulation campaigns',
+      'Personalized training modules based on click behavior',
+      'AI-generated lures reflecting current threat trends',
+      'Gamified progress tracking and leaderboards',
+      'Compliance reporting for SOC 2, ISO 27001, HIPAA',
+      'Dedicated admin dashboard and org-wide risk scoring'
+    ],
+    benefits: [
+      'Reduce phishing click rates by 70% within 90 days',
+      'Build a human firewall that complements technical controls',
+      'Meet compliance training requirements with documented modules',
+      'Identify repeat-risk employees and deliver targeted remediation'
+    ]
+  }
 ];

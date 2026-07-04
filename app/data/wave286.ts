@@ -1,23 +1,164 @@
 export const wave286ItServices = [
-  { id:"it-mobile-device-management", title:"Mobile Device Management Service", description:"Manages device enrollment, policy enforcement, compliance, and remote actions across corporate and BYOD fleets.", features:["Device enrollment and inventory","Policy and compliance enforcement","App distribution and protection","Remote lock and wipe","OS and patch visibility","Reporting by device and user"], benefits:["Reduce mobile risk exposure","Keep device posture visible","Protect corporate data on personal devices","Simplify helpdesk mobile support"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,399/mo"}, contactInfo:{website:"/services/it-mobile-device-management", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"📱", href:"/services/it-mobile-device-management", popular:false, category:"it", industry:"Endpoint Management", stage:"published"},
-  { id:"it-support-ticket-intelligence", title:"Support Ticket Intelligence", description:"Classifies, routes, and predicts ticket volume with root-cause signals and resource planning for helpdesk managers.", features:["Auto-classification and routing","Volume forecasting","Root-cause clustering","SLA risk prediction","Queue balancing","Manager dashboards"], benefits:["Improve ticket routing accuracy","Reduce backlog surprises","Identify recurring root causes","Support staffing decisions"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,299/mo"}, contactInfo:{website:"/services/it-support-ticket-intelligence", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🎫", href:"/services/it-support-ticket-intelligence", popular:false, category:"it", industry:"Service Management", stage:"published"},
-  { id:"it-cab-meeting-minutes", title:"CAB Meeting Minutes & Decision Tracker", description:"Captures change-advisory board outputs, approvals, risks, and action items with audit-ready records and reminders.", features:["Change request capture","Approval and risk recording","Action item extraction","Follow-up reminders","Audit trail exports","Integration with ticketing"], benefits:["Reduce missing approvals","Keep CAB decisions auditable","Track actions from meetings","Improve governance evidence"], pricing:{basic:"$99/mo", pro:"$349/mo", enterprise:"$999/mo"}, contactInfo:{website:"/services/it-cab-meeting-minutes", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🗂️", href:"/services/it-cab-meeting-minutes", popular:false, category:"it", industry:"Change Management", stage:"published"}
-];
-export const wave286AiServices = [
-  { id:"ai-knowledge-retrieval-graph", title:"AI Knowledge Retrieval Graph", description:"Builds a searchable internal knowledge graph from docs, tickets, and chat with entity resolution and provenance tracking.", features:["Entity extraction and linking","Provenance citation tracking","Team-specific namespaces","Freshness scoring","Query expansion","Export to BI or vector stores"], benefits:["Reduce search time for answers","Keep institutional knowledge usable","Prevent outdated guidance reuse","Support onboarding and audits"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,699/mo"}, contactInfo:{website:"/services/ai-knowledge-retrieval-graph", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🕸️", href:"/services/ai-knowledge-retrieval-graph", popular:false, category:"ai", industry:"Knowledge Systems", stage:"published"}
-];
-export const wave286SecurityServices = [
-  { id:"security-endpoint-detection-guidance", title:"Endpoint Detection & Response Guidance", description:"Advises EDR placement, tuning, and alert triage workflows with mapping to MITRE ATT&CK and incident playbooks.", features:["EDR placement review","Alert tuning recommendations","MITRE ATT&CK mapping","Playbook pairing guidance","Telemetry gap analysis","Executive readiness summary"], benefits:["Improve detection quality","Reduce alert fatigue","Keep incident response coherent","Make tooling investment clearer"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,599/mo"}, contactInfo:{website:"/services/security-endpoint-detection-guidance", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🔍", href:"/services/security-endpoint-detection-guidance", popular:false, category:"security", industry:"Detection", stage:"published"}
-];
-export const wave286CloudServices = [
-  { id:"cloud-spend-forecasting-model", title:"Cloud Spend Forecasting Model", description:"Forecasts cloud spend by workload and team with variance analysis, anomaly explanation, and budget alerts.", features:["Workload and team attribution","Forecast variance analysis","Anomaly explanation","Budget and alert policies","Reservation planning","Executive and engineering views"], benefits:["Reduce budget surprise","Improve forecasting accuracy","Keep finance and engineering aligned","Maintain growth without runaway costs"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,299/mo"}, contactInfo:{website:"/services/cloud-spend-forecasting-model", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"💵", href:"/services/cloud-spend-forecasting-model", popular:false, category:"cloud", industry:"Cloud Economics", stage:"published"}
-];
-export const wave286DataServices = [
-  { id:"data-quality-rule-studio", title:"Data Quality Rule Studio", description:"Lets data owners define, test, and monitor validation rules with alerting, lineage links, and owner accountability.", features:["Rule builder for data owners","Validation scheduling and monitoring","Lineage links","Owner accountability and alerts","Framework templates","Evidence exports for analytics"], benefits:["Reduce broken dashboard incidents","Make ownership explicit","Produce quality evidence","Speed up data onboarding"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,699/mo"}, contactInfo:{website:"/services/data-quality-rule-studio", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🧪", href:"/services/data-quality-rule-studio", popular:false, category:"data", industry:"Data Quality", stage:"published"}
-];
-export const wave286AutomationServices = [
-  { id:"automation-onboarding-flow-automator", title:"Onboarding Flow Automator", description:"Automates employee and vendor onboarding sequences with provisioning, access, training assignment, and evidence capture.", features:["Role-based onboarding sequences","Provisioning and access automation","Training assignment and tracking","Manager and buddy notifications","Evidence and audit capture","Offboarding mirror workflows"], benefits:["Reduce onboarding time","Keep access consistent","Produce compliant evidence","Support distributed teams"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,299/mo"}, contactInfo:{website:"/services/automation-onboarding-flow-automator", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"👋", href:"/services/automation-onboarding-flow-automator", popular:false, category:"automation", industry:"Workflow", stage:"published"}
-];
-export const wave286MicroSaasServices = [
-  { id:"micro-saas-ai-sow-builder", title:"Micro-SaaS AI SOW Builder", description:"Generates statement-of-work drafts from client briefs with scope boundaries, milestones, risks, and acceptance criteria.", features:["Brief-to-SOW generation","Milestone and deliverable structuring","Risk and assumption prompts","Acceptance criteria templates","Revision tracking","PDF and DOCX exports"], benefits:["Accelerate proposal writing","Keep scope explicit","Reduce client misalignment","Support repeatable delivery"], pricing:{basic:"$49/mo", pro:"$149/mo", enterprise:"$499/mo"}, contactInfo:{website:"/services/micro-saas-ai-sow-builder", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"📝", href:"/services/micro-saas-ai-sow-builder", popular:false, category:"micro-saas", industry:"Proposals", stage:"published"}
+  {
+    id: 'it-managed-support',
+    title: 'Managed IT Support & Help Desk',
+    description: 'Full help desk coverage for growing teams: ticket routing, user provisioning, endpoint support, and a single escalation path so internal IT stays small and reliable.',
+    features: [
+      'Ticketing and triage workflows',
+      'User onboarding/offboarding runs',
+      'Endpoint support for macOS, Windows, iOS, Android',
+      'Single escalation path to senior engineers',
+      'Clear SLAs and coverage windows',
+      'Incident summary reporting',
+    ],
+    benefits: [
+      'Reduce unplanned downtime',
+      'Free internal staff from repetitive support work',
+      'Keep support costs predictable',
+      'Improve employee productivity through faster resolution',
+    ],
+    pricing: { basic: '$1,200/mo', pro: '$2,800/mo', enterprise: 'Custom' },
+    contactInfo: { website: '/services/it-managed-support', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    icon: '🛎️',
+    href: '/services/it-managed-support',
+    popular: false,
+    category: 'it',
+    industry: 'IT Support',
+    stage: 'published' as const,
+  },
+  {
+    id: 'it-remote-workforce-services',
+    title: 'Remote Workforce Enablement',
+    description: 'Deploy and secure remote and hybrid workforce tooling: VPN-free access, endpoint readiness checks, collaboration hygiene, and policy enforcement for distributed teams.',
+    features: [
+      'Secure access setup and user guides',
+      'Hybrid collaboration standards',
+      'Endpoint readiness checks',
+      'Policy enforcement for remote behavior',
+      'Support for home and branch offices',
+      'Recurring workforce readiness review',
+    ],
+    benefits: [
+      'Support hybrid work without increasing security risk',
+      'Reduce onboarding friction for new remote employees',
+      'Maintain consistent tooling across locations',
+      'Improve audit readiness for distributed access',
+    ],
+    pricing: { basic: '$1,450/mo', pro: '$2,950/mo', enterprise: 'Custom' },
+    contactInfo: { website: '/services/it-remote-workforce-services', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    icon: '🏗️',
+    href: '/services/it-remote-workforce-services',
+    popular: false,
+    category: 'it',
+    industry: 'Remote Work',
+    stage: 'published' as const,
+  },
+  {
+    id: 'it-project-delivery',
+    title: 'IT Project Delivery Services',
+    description: 'Run infrastructure and application rollout projects with defined timelines, testing checkpoints, change management, and post-launch support periods.',
+    features: [
+      'Project scoping and milestone planning',
+      'Implementation with staging validation',
+      'Change and communication management',
+      'Knowledge transfer sessions',
+      'Post-launch support warranty',
+      'Status reporting for stakeholders',
+    ],
+    benefits: [
+      'Deliver projects on schedule with predictable scope',
+      'Reduce operational risk during infrastructure changes',
+      'Keep leadership informed with concise status reporting',
+      'Transfer knowledge so internal teams sustain outcomes',
+    ],
+    pricing: { basic: '$4,500/project', pro: '$9,500/project', enterprise: 'Custom' },
+    contactInfo: { website: '/services/it-project-delivery', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    icon: '📦',
+    href: '/services/it-project-delivery',
+    popular: false,
+    category: 'it',
+    industry: 'Project Delivery',
+    stage: 'published' as const,
+  },
+  {
+    id: 'it-staff-augmentation',
+    title: 'IT Staff Augmentation',
+    description: 'Add experienced engineers and operators without committing to permanent hires. Each engagement includes knowledge transfer, runbooks, and coverage planning for continuity.',
+    features: [
+      'Experienced engineer placement',
+      'Role-based coverage for operations and engineering',
+      'Knowledge transfer and documentation',
+      'Coverage planning for shifts and handoffs',
+      'Onboarding acceleration',
+      'Performance reporting embedded into flows',
+    ],
+    benefits: [
+      'Scale team output quickly during peak demand',
+      'Reduce recruiting and onboarding delays',
+      'Maintain coverage across business hours',
+      'Protect productivity during transitions',
+    ],
+    pricing: { basic: '$4,800/mo', pro: '$7,200/mo', enterprise: 'Custom' },
+    contactInfo: { website: '/services/it-staff-augmentation', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    icon: '🧰',
+    href: '/services/it-staff-augmentation',
+    popular: false,
+    category: 'it',
+    industry: 'Staffing',
+    stage: 'published' as const,
+  },
+  {
+    id: 'it-vcio-advisory',
+    title: 'vCIO Advisory & Planning',
+    description: 'Fractional CIO support for planning, vendor strategy, governance, and board-ready technology reporting suited to companies that need executive guidance without a full-time CTO.',
+    features: [
+      'Quarterly technology roadmap review',
+      'Vendor strategy and negotiation support',
+      'Governance and risk oversight',
+      'Board and executive reporting',
+      'Capability gap assessment',
+      'Capital and operating budget guidance',
+    ],
+    benefits: [
+      'Improve technology decision quality',
+      'Reduce costly vendor and architecture mistakes',
+      'Strengthen executive confidence in IT direction',
+      'Align technology spend with business outcomes',
+    ],
+    pricing: { basic: '$3,200/mo', pro: '$5,600/mo', enterprise: 'Custom' },
+    contactInfo: { website: '/services/it-vcio-advisory', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    icon: '🧭',
+    href: '/services/it-vcio-advisory',
+    popular: true,
+    category: 'it',
+    industry: 'IT Leadership',
+    stage: 'published' as const,
+  },
+  {
+    id: 'it-saas-operations-support',
+    title: 'SaaS Operations Support',
+    description: 'Keep SaaS operations reliable through lifecycle management, permission hygiene, integrations, usage monitoring, and renewals review tailored to business needs.',
+    features: [
+      'SaaS app inventory and lifecycle management',
+      'Permission audits and access hygiene',
+      'Integration and automation monitoring',
+      'Usage and ROI review',
+      'Renewal and vendor management support',
+      'Incident escalation for app-specific issues',
+    ],
+    benefits: [
+      'Reduce shadow IT and access drift',
+      'Improve SaaS ROI through active lifecycle management',
+      'Simplify renewals and vendor negotiations',
+      'Keep integrations reliable and documented',
+    ],
+    pricing: { basic: '$1,600/mo', pro: '$3,200/mo', enterprise: 'Custom' },
+    contactInfo: { website: '/services/it-saas-operations-support', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    icon: '🗂️',
+    href: '/services/it-saas-operations-support',
+    popular: false,
+    category: 'it',
+    industry: 'SaaS Operations',
+    stage: 'published' as const,
+  },
 ];

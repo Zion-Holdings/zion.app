@@ -1,26 +1,356 @@
-export const wave281ItServices = [
-  { id:"it-service-catalog-governance", title:"IT Service Catalog Governance", description:"Keeps the service catalog accurate, categorized, and owner-assigned with lifecycle tracking and consumer feedback loops.", features:["Service record ownership","Category and tagging hygiene","Lifecycle stage tracking","Consumer feedback collection","Deprecation and change routing","Export and audit trails"], benefits:["Reduce catalog drift","Keep teams aligned on offerings","Simplify procurement and access requests","Maintain audit-ready metadata"], pricing:{basic:"$99/mo", pro:"$349/mo", enterprise:"$999/mo"}, contactInfo:{website:"/services/it-service-catalog-governance", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🗂️", href:"/services/it-service-catalog-governance", popular:false, category:"it", industry:"Service Management", stage:"published"},
-  { id:"it-change-success-predictor", title:"IT Change Success Predictor", description:"Scores planned changes for risk using dependency, blast-radius, and incident-history signals before execution.", features:["Change risk scoring","Dependency mapping","Blast-radius estimation","Historical incident correlation","Rollback readiness check","Approval routing by risk"], benefits:["Reduce failed changes","Keep approvals evidence-based","Lower incident rate","Speed safe changes"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,499/mo"}, contactInfo:{website:"/services/it-change-success-predictor", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"📈", href:"/services/it-change-success-predictor", popular:false, category:"it", industry:"Change Management", stage:"published"},
-  { id:"it-incident-postmortem-assistant", title:"IT Postmortem & Retroactive Assistant", description:"Assembles incident postmortems from alerts, tickets, chat, and monitoring with owner statements and action tracking.", features:["Multi-source narrative assembly","Owner and witness prompts","Action item extraction","Recurrence analysis","Communication templates","Evidence and attachment links"], benefits:["Reduce postmortem writeup time","Keep leadership informed","Connect signals across tools","Maintain audit-friendly records"], pricing:{basic:"$99/mo", pro:"$349/mo", enterprise:"$999/mo"}, contactInfo:{website:"/services/it-incident-postmortem-assistant", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🧩", href:"/services/it-incident-postmortem-assistant", popular:false, category:"it", industry:"Incident Management", stage:"published"}
-];
-export const wave281AiServices = [
-  { id:"ai-knowledge-retrieval-graph", title:"AI Knowledge Retrieval Graph", description:"Builds a searchable internal knowledge graph from docs, tickets, and chat with entity resolution and provenance tracking.", features:["Entity extraction and linking","Provenance citation tracking","Team-specific namespaces","Freshness scoring","Query expansion","Export to BI/vector stores"], benefits:["Reduce search time for answers","Keep institutional knowledge usable","Prevent outdated guidance reuse","Support onboarding and audits"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,699/mo"}, contactInfo:{website:"/services/ai-knowledge-retrieval-graph", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🕸️", href:"/services/ai-knowledge-retrieval-graph", popular:false, category:"ai", industry:"Knowledge Systems", stage:"published"},
-  { id:"ai-vision-ops-assistant", title:"AI Vision Ops Assistant", description:"Reads dashboards,巡检 images, and physical environment footage to suggest operational actions and incident signals.", features:["Dashboard OCR and trend extraction","Physical scene anomaly hints","Ops action suggestions","Incident correlation","Privacy-aware processing","Mobile + camera pairing"], benefits:["Reduce manual dashboard reviews","Get early anomaly signals","Connect visual to operational data","Keep responses faster"], pricing:{basic:"$199/mo", pro:"$699/mo", enterprise:"Custom"}, contactInfo:{website:"/services/ai-vision-ops-assistant", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"📷", href:"/services/ai-vision-ops-assistant", popular:false, category:"ai", industry:"Observability", stage:"published"}
-];
-export const wave281SecurityServices = [
-  { id:"security-endpoint-detection-guidance", title:"Endpoint Detection & Response Guidance", description:"Advises EDR placement, tuning, and alert triage workflows with mapping to MITRE ATT&CK and incident playbooks.", features:["EDR placement review","Alert tuning recommendations","MITRE ATT&CK mapping","Playbook pairing guidance","Telemetry gap analysis","Executive readiness summary"], benefits:["Improve detection quality","Reduce alert fatigue","Keep incident response coherent","Make tooling investment clearer"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,599/mo"}, contactInfo:{website:"/services/security-endpoint-detection-guidance", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🔍", href:"/services/security-endpoint-detection-guidance", popular:false, category:"security", industry:"Detection", stage:"published"},
-  { id:"security-policy-compliance-mapper", title:"Policy-to-Control Compliance Mapper", description:"Maps written policies to enforceable controls, evidence requirements, and test schedules across frameworks.", features:["Policy inventory and versioning","Control mapping by framework","Evidence requirement suggestions","Test schedule generation","Exception tracking","Audit-ready export"], benefits:["Close policy-to-evidence gaps","Reduce audit findings","Maintain current control maps","Simplify examiner requests"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,499/mo"}, contactInfo:{website:"/services/security-policy-compliance-mapper", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🗺️", href:"/services/security-policy-compliance-mapper", popular:false, category:"security", industry:"Compliance", stage:"published"}
-];
-export const wave281CloudServices = [
-  { id:"cloud-spend-forecasting-model", title:"Cloud Spend Forecasting Model", description:"Forecasts cloud spend by workload and team with variance analysis, anomaly explanation, and budget alerts.", features:["Workload and team attribution","Forecast variance analysis","Anomaly explanation","Budget and alert policies","Reservation planning","Executive and engineering views"], benefits:["Reduce budget surprise","Improve forecasting accuracy","Keep finance and eng aligned","Maintain growth without runaway costs"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,299/mo"}, contactInfo:{website:"/services/cloud-spend-forecasting-model", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"💵", href:"/services/cloud-spend-forecasting-model", popular:false, category:"cloud", industry:"Cloud Economics", stage:"published"},
-  { id:"cloud-landing-zone-enforcer", title:"Cloud Landing Zone Enforcer", description:"Enforces landing-zone standards across accounts and subscriptions with guardrails, drift alerts, and remediation playbooks.", features:["Account and subscription guardrails","Policy-as-code pairing","Drift alerting","Remediation playbooks","Inventory and tagging enforcement","Compliance evidence exports"], benefits:["Keep multi-account estates consistent","Reduce onboarding drift","Produce audit-ready evidence","Accelerate new workload safe deployment"], pricing:{basic:"$199/mo", pro:"$699/mo", enterprise:"Custom"}, contactInfo:{website:"/services/cloud-landing-zone-enforcer", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🏗️", href:"/services/cloud-landing-zone-enforcer", popular:false, category:"cloud", industry:"Governance", stage:"published"}
-];
-export const wave281DataServices = [
-  { id:"data-quality-rule-studio", title:"Data Quality Rule Studio", description:"Lets data owners define, test, and monitor validation rules with alerting, lineage links, and owner accountability.", features:["Rule builder for data owners","Validation scheduling and monitoring","Lineage links","Owner accountability and alerts","Framework templates","Evidence exports for analytics"], benefits:["Reduce broken dashboard incidents","Make ownership explicit","Produce quality evidence","Speed up data onboarding"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,699/mo"}, contactInfo:{website:"/services/data-quality-rule-studio", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🧪", href:"/services/data-quality-rule-studio", popular:false, category:"data", industry:"Data Quality", stage:"published"}
-];
-export const wave281AutomationServices = [
-  { id:"automation-onboarding-flow-automator", title:"Onboarding Flow Automator", description:"Automates employee and vendor onboarding sequences with provisioning, access, training assignment, and evidence capture.", features:["Role-based onboarding sequences","Provisioning and access automation","Training assignment and tracking","Manager and buddy notifications","Evidence and audit capture","Offboarding mirror workflows"], benefits:["Reduce onboarding time","Keep access consistent","Produce compliant evidence","Support distributed teams"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,299/mo"}, contactInfo:{website:"/services/automation-onboarding-flow-automator", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"👋", href:"/services/automation-onboarding-flow-automator", popular:false, category:"automation", industry:"Workflow", stage:"published"}
-];
-export const wave281MicroSaasServices = [
-  { id:"micro-saas-ai-sow-builder", title:"Micro-SaaS AI SOW Builder", description:"Generates statement-of-work drafts from client briefs with scope boundaries, milestones, risks, and acceptance criteria.", features:["Brief-to-SOW generation","Milestone and deliverable structuring","Risk and assumption prompts","Acceptance criteria templates","Revision tracking","PDF and DOCX exports"], benefits:["Accelerate proposal writing","Keep scope explicit","Reduce client misalignment","Support repeatable delivery"], pricing:{basic:"$49/mo", pro:"$149/mo", enterprise:"$499/mo"}, contactInfo:{website:"/services/micro-saas-ai-sow-builder", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"📝", href:"/services/micro-saas-ai-sow-builder", popular:false, category:"micro-saas", industry:"Proposals", stage:"published"}
+import { Service } from './serviceTypes';
+
+export const wave281DataCenterServices: Service[] =
+[
+  {
+    id: 'data-center-dcim-deployment',
+    title: 'Data Center DCIM Software Deployment & Integration',
+    description: 'Deploy and integrate data center infrastructure management (DCIM) platforms for unified monitoring of power, cooling, space, and network assets. Real-time dashboards, capacity forecasting, and automated ticketing integration.',
+    category: 'data-center-dcim',
+    icon: '🖥️',
+    href: '/services/data-center-dcim-deployment',
+    industry: 'Data Center & Infrastructure',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$349/mo', pro: '$999/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'DCIM platform selection and deployment (Sunbird, Nlyte, Schneider, Raritan)',
+      'Real-time power, thermal, and network asset monitoring',
+      'Capacity planning dashboards and alerting',
+      'Integration with BMS, PDUs, UPS, CRAC/CRAH units',
+      'Automated workflow integration with ServiceNow/Jira',
+      'IT asset discovery and CMDB synchronization'
+    ],
+    benefits: [
+      'Gain single-pane-of-glass visibility across all facility systems',
+      'Reduce capacity planning time by 70% with predictive analytics',
+      'Automate change management and compliance reporting',
+      'Eliminate spreadsheet-based capacity tracking and forecasting errors'
+    ]
+  },
+  {
+    id: 'data-center-physical-security',
+    title: 'Data Center Physical Security & Access Control Systems',
+    description: 'Design, install, and certify layered physical security for data halls and support rooms: biometric access, mantraps, CCTV/AI video analytics, perimeter detection, and SOC 2 / ISO 27001 compliance alignment.',
+    category: 'data-center-physical-security',
+    icon: '🔐',
+    href: '/services/data-center-physical-security',
+    industry: 'Security & Compliance',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$299/mo', pro: '$899/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'Biometric badge readers and PIN + card dual-factor mantrap design',
+      'AI video analytics for tailgating and anomalous behavior detection',
+      'Perimeter intrusion detection (fiber, microwave, beam)',
+      'Security operations center integration and SIEM correlation',
+      'Visitor management system (VMS) with escort tracking',
+      'Audit logging and compliance evidence automation'
+    ],
+    benefits: [
+      'Prevent unauthorized access to critical infrastructure',
+      'Meet Uptime Institute Tier/ISO 27001 physical security requirements',
+      'Reduce security incidents with real-time AI anomaly detection',
+      'Streamline audit evidence collection for certification cycles'
+    ]
+  },
+  {
+    id: 'data-center-cross-connect',
+    title: 'Data Center Cross-Connect & Interconnection Services',
+    description: 'Provision and manage intra-facility cross-connects, inter-carrier peering, and hybrid cloud connectivity (AWS Direct Connect, Azure ExpressRoute, Google Cloud Interconnect). Layer 2 and Layer 3 circuit design.',
+    category: 'data-center-interconnect',
+    icon: '🔗',
+    href: '/services/data-center-cross-connect',
+    industry: 'Network Infrastructure',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$199/mo', pro: '$599/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'Patch panel and fiber tray cross-connect provisioning',
+      'Cloud on-ramp integration (AWS/Azure/GCP/OCI)',
+      'Layer 2 EVPN and Layer 3 BGP peering design',
+      'Metro Ethernet and DWavelength transport planning',
+      'Bandwidth monitoring and SLA reporting',
+      'Automated circuit provisioning via APIs'
+    ],
+    benefits: [
+      'Reduce latency between tenants and cloud providers',
+      'Eliminate complex VPN routing with direct cloud interconnect',
+      'Speed up deployment from weeks to hours with automation',
+      'Support multi-cloud architectures with consistent connectivity'
+    ]
+  },
+  {
+    id: 'data-center-colocation-leasing',
+    title: 'Data Center Colocation & Wholesale Space Leasing',
+    description: 'Flexible colocation options from single cabinets to wholesale suites and build-to-spec shells. Power configurations from 5 kW to 2 MW+, redundant utility feeds, and carrier-neutral interconnection included.',
+    category: 'data-center-colocation',
+    icon: '🏗️',
+    href: '/services/data-center-colocation-leasing',
+    industry: 'Data Center & Infrastructure',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$499/mo', pro: '$1,999/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'Cabinet, cage, suite, and wholesale hall configurations',
+      'Redundant 2N power feeds and UPS-backed circuits',
+      'Carrier-neutral meet-me room with 50+ providers',
+      'Remote hands and smart hands service levels',
+      '24/7 NOC and on-site security',
+      'Tier III/IV certified facilities with 99.982% uptime SLA'
+    ],
+    benefits: [
+      'Scale from 1 cabinet to 10,000 sq ft without moving',
+      'Avoid 18+ month build timelines with ready capacity',
+      'Reduce colocation costs with consolidated billing',
+      'Access to rich interconnection ecosystem for hybrid cloud'
+    ]
+  },
+  {
+    id: 'data-center-noc-managed-services',
+    title: 'Data Center NOC Staffing & Managed Operations',
+    description: '24/7 NOC staffing, remote hands, smart hands, and managed infrastructure services. Augment or fully outsource data center operations with certified technicians and DC-aware monitoring toolchains.',
+    category: 'data-center-noc',
+    icon: '👷',
+    href: '/services/data-center-noc-managed-services',
+    industry: 'Managed Services',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$399/mo', pro: '$1,199/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      '24/7 Tier 1–3 NOC staffing with shift coverage',
+      'Remote hands for hardware swaps, cabling, and patching',
+      'Smart hands for complex installs and break-fix',
+      'DC-aware monitoring integrations (Datadog, SolarWinds, PRTG)',
+      'On-call escalation and vendor management',
+      'ITIL-aligned incident and change management'
+    ],
+    benefits: [
+      'Eliminate overnight coverage gaps and burnout',
+      'Reduce mean-time-to-repair with guaranteed SLAs',
+      'Access specialized data center skills on demand',
+      'Cut operational headcount costs by 30–50%'
+    ]
+  },
+  {
+    id: 'data-center-ai-cooling-optimization',
+    title: 'AI-Driven Data Center Cooling Optimization',
+    description: 'Machine learning models that optimize CRAC/CRAH setpoints, air distribution, and liquid cooling controls in real time. Reduce cooling energy by 20–40% while maintaining strict ASHRAE thermal envelopes.',
+    category: 'data-center-ai-cooling',
+    icon: '🤖',
+    href: '/services/data-center-ai-cooling-optimization',
+    industry: 'Data Center & Infrastructure',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$349/mo', pro: '$999/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'Digital twin thermal modeling of the facility',
+      'Real-time sensor ingestion (temperature, humidity, airflow)',
+      'ML-based setpoint optimization with MPC control',
+      'Anomaly detection for cooling equipment failures',
+      'Integration with BMS/DCIM and existing PLC controls',
+      'Energy savings reporting and PUE improvement tracking'
+    ],
+    benefits: [
+      'Reduce cooling energy consumption by 20–40%',
+      'Maintain ASHRAE recommended thermal envelopes',
+      'Predict cooling failures before they cause outages',
+      'Document carbon reduction for ESG and sustainability reporting'
+    ]
+  },
+  {
+    id: 'data-center-edge-micro-data-center',
+    title: 'Edge Micro Data Center as a Service',
+    description: 'Deploy and manage containerized micro data centers (5 kW to 200 kW) at factory, retail, telecom, or remote field sites. Pre-integrated power, cooling, security, and connectivity with centralized cloud orchestration.',
+    category: 'data-center-edge',
+    icon: '📡',
+    href: '/services/data-center-edge-micro-data-center',
+    industry: 'Edge Computing',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$299/mo', pro: '$899/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'ISO container and rack-scale micro DC designs',
+      'Ruggedized enclosures for industrial and outdoor environments',
+      'Edge orchestration with Kubernetes and zero-touch provisioning',
+      'Satellite or wireless backhaul integration',
+      'Remote monitoring and automated health checks',
+      'Terraform/Ansible-driven deployment automation'
+    ],
+    benefits: [
+      'Bring compute to the data source with <1 ms latency',
+      'Deploy in days instead of months for time-sensitive projects',
+      'Reduce WAN bandwidth costs by 70–90%',
+      'Support IoT, AI inference, and 5G MEC workloads'
+    ]
+  },
+  {
+    id: 'data-center-sustainability-carbon-reporting',
+    title: 'Data Center Sustainability & Carbon Reporting',
+    description: 'Implement Scope 1/2/3 emissions tracking, PUE benchmarking, renewable PPAs, and carbon accounting aligned with GHG Protocol and CSRD. Grid-aware workload scheduling for maximum renewable utilization.',
+    category: 'data-center-sustainability',
+    icon: '🌱',
+    href: '/services/data-center-sustainability-carbon-reporting',
+    industry: 'Sustainability & ESG',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$299/mo', pro: '$899/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'PUE, WUE, and carbon-intensity telemetry collection',
+      'Scope 1/2/3 GHG Protocol emissions calculation',
+      'Renewable energy matching and PPA advisory',
+      'CSRD and EU ETS compliance reporting automation',
+      'Grid-aware workload shifting to low-carbon hours',
+      'Third-party audit evidence generation'
+    ],
+    benefits: [
+      'Reduce Scope 2 emissions by 30–60% with renewables',
+      'Meet CSRD disclosure requirements on time',
+      'Demonstrate ESG leadership to customers and investors',
+      'Optimize energy spend with time-of-use and carbon-aware scheduling'
+    ]
+  },
+  {
+    id: 'data-center-cabling-rack-integration',
+    title: 'Data Center Structured Cabling & Rack Integration',
+    description: 'Design and install TIA-942 compliant structured cabling: copper Cat6A/Cat8, single-mode/multi-mode fiber, MPO/MTP breakout panels, cable management, and rack/cabinet installation with proper labeling and documentation.',
+    category: 'data-center-cabling',
+    icon: '🔌',
+    href: '/services/data-center-cabling-rack-integration',
+    industry: 'Network Infrastructure',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$249/mo', pro: '$749/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'TIA-942 and ISO/IEC 11801 compliant infrastructure design',
+      'Copper Cat6A/Cat8 and fiber (OS2/OM4/OM5) installation',
+      'MPO/MTP trunk cabling and high-density patch panels',
+      'Vertical and horizontal cable management systems',
+      'Intelligent PDUs and power strip installation',
+      'Digital floor plan and asset tagging documentation'
+    ],
+    benefits: [
+      'Support 400G/800G/1.6T Ethernet migration paths',
+      'Reduce cable congestion and improve airflow management',
+      'Minimize unplanned downtime from cabling faults',
+      'Accelerate moves/adds/changes with clear labeling'
+    ]
+  },
+  {
+    id: 'data-center-ot-cybersecurity',
+    title: 'Data Center OT Cybersecurity & ICS Protection',
+    description: 'Secure operational technology systems (BMS, UPS, generator controllers, HVAC BAS, fire panels) against ransomware and targeted attacks. Network segmentation, vulnerability assessment, and incident response playbooks for DC infrastructure.',
+    category: 'data-center-ot-security',
+    icon: '🛡️',
+    href: '/services/data-center-ot-cybersecurity',
+    industry: 'Cybersecurity',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$349/mo', pro: '$999/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'OT asset discovery and network mapping (Modbus, BACnet, SNMP)',
+      'Zero-trust segmentation between IT and OT networks',
+      'ICS vulnerability assessment and patch management',
+      'Threat detection and anomaly monitoring for facility systems',
+      'Incident response planning and tabletop exercises',
+      'NIST SP 800-82 and IEC 62443 compliance alignment'
+    ],
+    benefits: [
+      'Prevent OT-driven outages from ransomware and malware',
+      'Achieve regulatory alignment for critical infrastructure',
+      'Detect anomalous behavior in power and cooling systems',
+      'Reduce risk of cascading failures between IT and OT'
+    ]
+  },
+  {
+    id: 'data-center-5g-private-network',
+    title: 'Data Center 5G Private Network Integration',
+    description: 'Deploy private 5G networks inside data centers for low-latency connectivity between staff, IoT sensors, autonomous vehicles, and warehouse robots. Integration with existing DC fabric and edge compute platforms.',
+    category: 'data-center-5g',
+    icon: '📶',
+    href: '/services/data-center-5g-private-network',
+    industry: 'Telecommunications',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$499/mo', pro: '$1,499/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'Private 5G small cell and core planning',
+      'Indoor distributed antenna system (DAS) design',
+      'Network slicing for operational traffic classes',
+      'Edge MEC integration for real-time processing',
+      'SIM-based access control for devices and personnel',
+      'Spectrum licensing advisory and CBRS support'
+    ],
+    benefits: [
+      'Enable sub-10 ms latency for in-facility device communication',
+      'Support massive IoT sensor deployments without WiFi congestion',
+      'Improve security with carrier-grade encryption and SIM control',
+      'Power robotics, AGVs, and computer vision inspection at scale'
+    ]
+  },
+  {
+    id: 'data-center-environmental-monitoring',
+    title: 'Data Center Environmental Monitoring & Alarming',
+    description: 'Deploy sensor networks for temperature, humidity, airflow, water detection, and particulate monitoring across hot/cold aisles. Real-time alarming, integration with DCIM/BMS, and predictive analytics for early failure detection.',
+    category: 'data-center-environmental',
+    icon: '🌡️',
+    href: '/services/data-center-environmental-monitoring',
+    industry: 'Data Center & Infrastructure',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$199/mo', pro: '$599/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'Wireless and wired temperature/humidity sensor arrays',
+      'Water leak detection and under-floor fluid monitoring',
+      'Air velocity and differential pressure sensors',
+      'Real-time alarming via SMS/voice/email/webhook',
+      'Integration with DCIM, BMS, and NOC dashboards',
+      'Predictive analytics for thermal anomaly forecasting'
+    ],
+    benefits: [
+      'Detect hot spots and thermal runaway before outages occur',
+      'Reduce mean-time-to-detect for environmental faults by 80%',
+      'Prevent costly water damage with early leak alerts',
+      'Improve PUE by identifying overcooled aisles'
+    ]
+  },
+  {
+    id: 'data-center-remote-hands',
+    title: 'Data Center Remote Hands & Smart Hands Support',
+    description: 'On-demand engineering support for hardware installation, rack-and-stack, cable patching, equipment swaps, and break-fix. 15-minute response SLA with technician dispatch to any facility location.',
+    category: 'data-center-remote-hands',
+    icon: '🛠️',
+    href: '/services/data-center-remote-hands',
+    industry: 'Managed Services',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$149/mo', pro: '$449/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'Rack-and-stack with torque screwdriving and labeling',
+      'Server, network, and storage hardware replacement',
+      'Fiber and copper cable patching with OTDR validation',
+      'Temporary cross-connects and breakout cables',
+      'OS reload and Bare Metal provisioning assistance',
+      'Dedicated client portal with ticket tracking and photo updates'
+    ],
+    benefits: [
+      'Speed up deployments with on-demand engineer access',
+      'Avoid costly travel for remote site fixes',
+      'Guarantee SLA compliance with documented procedures',
+      'Reduce accidental downtime with certified technician work'
+    ]
+  }
 ];

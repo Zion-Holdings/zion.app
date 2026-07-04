@@ -1,26 +1,274 @@
-export const wave282ItServices = [
-  { id:"it-incident-timeline-archivist", title:"IT Incident Timeline Archivist", description:"Creates concise, evidence-ready incident timelines from alerts, tickets, chat, and monitoring feeds with blast-radius framing and action tracking.", features:["Multi-source timeline assembly","Impact and blast-radius framing","Owner and action extraction","Remediation status tracking","Communication templates","Evidence export"], benefits:["Reduce post-incident writeup time","Keep leadership informed clearly","Connect signals across tools","Maintain audit-friendly records"], pricing:{basic:"$99/mo", pro:"$349/mo", enterprise:"$999/mo"}, contactInfo:{website:"/services/it-incident-timeline-archivist", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"📅", href:"/services/it-incident-timeline-archivist", popular:false, category:"it", industry:"Incident Management", stage:"published"},
-  { id:"it-itam-lifecycle-tracker", title:"IT Asset Lifecycle Tracker", description:"Tracks hardware and software from procurement to retirement with location, warranty, compliance, and financial accountability.", features:["Asset discovery and tagging","Warranty and support tracking","License and compliance status","Location and custodian history","Retirement and disposal workflows","Financial depreciation linkage"], benefits:["Reduce asset visibility gaps","Maintain compliance posture","Prevent unlicensed software risk","Produce auditable asset records"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,399/mo"}, contactInfo:{website:"/services/it-itam-lifecycle-tracker", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🏷️", href:"/services/it-itam-lifecycle-tracker", popular:false, category:"it", industry:"Asset Management", stage:"published"},
-  { id:"it-desktop-image-manager", title:"Desktop Image & Provisioning Manager", description:"Standardizes OS images, drivers, and app packages across PC/Mac fleets with refresh scheduling and audit trails.", features:["Golden image library","OS migration automation","Driver and app package management","Refresh scheduling","Policy-driven provisioning","Audit trail exports"], benefits:["Cut onboarding time by 60%","Keep imaging consistent across sites","Reduce manual setup errors","Maintain auditable hardware and image records"], pricing:{basic:"$149/mo", pro:"$449/mo", enterprise:"$1,299/mo"}, contactInfo:{website:"/services/it-desktop-image-manager", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🔄", href:"/services/it-desktop-image-manager", popular:false, category:"it", industry:"Endpoint Management", stage:"published"}
-];
-export const wave282AiServices = [
-  { id:"ai-meeting-decision-executor", title:"AI Meeting Decision Executor", description:"Turns meeting outputs into tracked actions with owners, deadlines, and status checks while integrating with project systems.", features:["Decision and action extraction","Owner and deadline assignment","Status tracking and reminders","Integration with PM tools","Shareholder reporting","Meeting archive linking"], benefits:["Close the gap between discussion and execution","Reduce missed action items","Update stakeholders automatically","Increase meeting ROI tracking"], pricing:{basic:"$79/mo", pro:"$249/mo", enterprise:"$799/mo"}, contactInfo:{website:"/services/ai-meeting-decision-executor", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"📋", href:"/services/ai-meeting-decision-executor", popular:false, category:"ai", industry:"Productivity", stage:"published"},
-  { id:"ai-quality-assistants-for-support", title:"AI Quality Assistants for Support and Ops", description:"Monitors conversations, tickets, and workflows for quality, compliance, and coaching moments with supervisor dashboards.", features:["Conversation quality scoring","Compliance flag detection","Real-time coaching prompts","Supervisor dashboards","Playbook adherence tracking","Sentiment-aware escalation"], benefits:["Improve support quality consistently","Reduce compliance misses","Coach teams without extra headcount","Make QA evidence-based"], pricing:{basic:"$99/mo", pro:"$349/mo", enterprise:"$999/mo"}, contactInfo:{website:"/services/ai-quality-assistants-for-support", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🧭", href:"/services/ai-quality-assistants-for-support", popular:false, category:"ai", industry:"Quality Assurance", stage:"published"}
-];
-export const wave282SecurityServices = [
-  { id:"security-incident-preparedness-runner", title:"Incident Preparedness & Runbook Runner", description:"Runs scenario-based incident drills, collects evidence automatically, and notifies stakeholders for repeatable response practice without headcount growth.", features:["Scenario-based runbook execution","Automated evidence export","Stakeholder notification routing","Playbook version control","Metrics and SLO tracking","Integration with SIEM or ticketing"], benefits:["Reduce response time by 50%","Produce consistent incident records","Eliminate manual notification chains","Track readiness by scenario"], pricing:{basic:"$199/mo", pro:"$699/mo", enterprise:"Custom"}, contactInfo:{website:"/services/security-incident-preparedness-runner", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🚨", href:"/services/security-incident-preparedness-runner", popular:false, category:"security", industry:"Incident Response", stage:"published"},
-  { id:"security-privacy-incident-responder", title:"Privacy Incident Responder", description:"Guides privacy incident response with evidence collection, notification timelines, and remediation workflows aligned to GDPR and state privacy laws.", features:["Incident classification and scoping","Notification timeline guidance","Evidence collection automation","Remediation workflow tracking","Cross-jurisdiction rules","Post-incident summary reports"], benefits:["Reduce response time during incidents","Produce defensible evidence","Stay within notification windows","Simplify legal and PR coordination"], pricing:{basic:"$199/mo", pro:"$699/mo", enterprise:"Custom"}, contactInfo:{website:"/services/security-privacy-incident-responder", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🛡️", href:"/services/security-privacy-incident-responder", popular:false, category:"security", industry:"Privacy", stage:"published"}
-];
-export const wave282CloudServices = [
-  { id:"cloud-spend-forecasting-model", title:"Cloud Spend Forecasting Model", description:"Forecasts cloud spend by workload and team with variance analysis, anomaly explanation, and budget alerts.", features:["Workload and team attribution","Forecast variance analysis","Anomaly explanation","Budget and alert policies","Reservation planning","Executive and engineering views"], benefits:["Reduce budget surprise","Improve forecasting accuracy","Keep finance and engineering aligned","Maintain growth without runaway costs"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,299/mo"}, contactInfo:{website:"/services/cloud-spend-forecasting-model", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"💵", href:"/services/cloud-spend-forecasting-model", popular:false, category:"cloud", industry:"Cloud Economics", stage:"published"},
-  { id:"cloud-landing-zone-enforcer", title:"Cloud Landing Zone Enforcer", description:"Enforces landing-zone standards across accounts and subscriptions with guardrails, drift alerts, and remediation playbooks.", features:["Account and subscription guardrails","Policy-as-code pairing","Drift alerting","Remediation playbooks","Inventory and tagging enforcement","Compliance evidence exports"], benefits:["Keep multi-account estates consistent","Reduce onboarding drift","Produce audit-ready evidence","Accelerate new workload safe deployment"], pricing:{basic:"$199/mo", pro:"$699/mo", enterprise:"Custom"}, contactInfo:{website:"/services/cloud-landing-zone-enforcer", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🏗️", href:"/services/cloud-landing-zone-enforcer", popular:false, category:"cloud", industry:"Governance", stage:"published"}
-];
-export const wave282DataServices = [
-  { id:"data-quality-rule-studio", title:"Data Quality Rule Studio", description:"Lets data owners define, test, and monitor validation rules with alerting, lineage links, and owner accountability.", features:["Rule builder for data owners","Validation scheduling and monitoring","Lineage links","Owner accountability and alerts","Framework templates","Evidence exports for analytics"], benefits:["Reduce broken dashboard incidents","Make ownership explicit","Produce quality evidence","Speed up data onboarding"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,699/mo"}, contactInfo:{website:"/services/data-quality-rule-studio", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🧪", href:"/services/data-quality-rule-studio", popular:false, category:"data", industry:"Data Quality", stage:"published"}
-];
-export const wave282AutomationServices = [
-  { id:"automation-onboarding-flow-automator", title:"Onboarding Flow Automator", description:"Automates employee and vendor onboarding sequences with provisioning, access, training assignment, and evidence capture.", features:["Role-based onboarding sequences","Provisioning and access automation","Training assignment and tracking","Manager and buddy notifications","Evidence and audit capture","Offboarding mirror workflows"], benefits:["Reduce onboarding time","Keep access consistent","Produce compliant evidence","Support distributed teams"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,299/mo"}, contactInfo:{website:"/services/automation-onboarding-flow-automator", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"👋", href:"/services/automation-onboarding-flow-automator", popular:false, category:"automation", industry:"Workflow", stage:"published"}
-];
-export const wave282MicroSaasServices = [
-  { id:"micro-saas-ai-sow-builder", title:"Micro-SaaS AI SOW Builder", description:"Generates statement-of-work drafts from client briefs with scope boundaries, milestones, risks, and acceptance criteria.", features:["Brief-to-SOW generation","Milestone and deliverable structuring","Risk and assumption prompts","Acceptance criteria templates","Revision tracking","PDF and DOCX exports"], benefits:["Accelerate proposal writing","Keep scope explicit","Reduce client misalignment","Support repeatable delivery"], pricing:{basic:"$49/mo", pro:"$149/mo", enterprise:"$499/mo"}, contactInfo:{website:"/services/micro-saas-ai-sow-builder", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"📝", href:"/services/micro-saas-ai-sow-builder", popular:false, category:"micro-saas", industry:"Proposals", stage:"published"}
+import { Service } from './serviceTypes';
+
+export const wave282DataCenterServices: Service[] = [
+  {
+    id: 'data-center-structured-cabling',
+    title: 'Data Center Structured Cabling & Fiber Infrastructure',
+    description: 'Design, certify, and deploy high-density structured cabling systems for data centers: copper Cat6a/Cat7 and single-mode/multi-mode fiber. TIA-942/EIA/TIA-568 compliant with full test reports and traceability.',
+    category: 'data-center-cabling',
+    icon: '🔌',
+    href: '/services/data-center-structured-cabling',
+    industry: 'Data Center & Infrastructure',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$249/mo', pro: '$749/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'TIA-942 and EIA/TIA-568 compliant topology design',
+      'MPO/MTP and LC fiber trunk deployment',
+      'Copper Cat6a/Cat7 and Category 8 plant installation',
+      'OTDR, IL/RL testing and certification reports',
+      'Patch panel labeling and asset traceability',
+      '10G/40G/100G/400G migration-ready pathways'
+    ],
+    benefits: [
+      'Reduce signal degradation and link failures',
+      'Accelerate move-add-change cycles with accurate documentation',
+      'Support future upgrades to 400G/800G without re-cabling',
+      'Achieve compliance with audit-ready test reports'
+    ]
+  },
+  {
+    id: 'data-center-itad-procurement',
+    title: 'Data Center ITAD & Procurement Lifecycle Services',
+    description: 'End-to-end IT asset disposition (ITAD) and procurement: secure chain-of-custody, NIST 800-88 sanitization, remarketing, and vendor-neutral hardware procurement for data center refresh cycles.',
+    category: 'data-center-itad',
+    icon: '♻️',
+    href: '/services/data-center-itad-procurement',
+    industry: 'Data Center & Infrastructure',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$199/mo', pro: '$699/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'Secure chain-of-custody and barcode/RFID asset tracking',
+      'NIST 800-88 and DoD 5220.22-M data sanitization',
+      'E-waste recycling with R2/ISO 14001 compliance',
+      'Asset remarketing and value recovery programs',
+      'Vendor-neutral hardware procurement for refresh cycles',
+      'Audit-ready disposition documentation'
+    ],
+    benefits: [
+      'Recover 20–60% of hardware residual value',
+      'Eliminate data leakage risk with certified sanitization',
+      'Streamline CapEx for hardware refresh programs',
+      'Meet environmental and regulatory compliance requirements'
+    ]
+  },
+  {
+    id: 'data-center-operator-training',
+    title: 'Data Center Operations Training & Certification Programs',
+    description: 'Uptime Institute, DCi, and custom curricula for data center technicians, facilities staff, and managers: maintenance, safety, power, cooling, and emergency response. Hands-on labs and online instructor-led sessions.',
+    category: 'data-center-training',
+    icon: '🎓',
+    href: '/services/data-center-operator-training',
+    industry: 'Training & Workforce Development',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$149/mo', pro: '$499/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'Uptime Institute Tier certification prep',
+      'Electrical safety (NFPA 70E) and lockout/tagout',
+      'Thermal and airflow management labs',
+      'Emergency response and incident command drills',
+      'Online and on-site instructor-led cohorts',
+      'Custom curriculum for proprietary infrastructure'
+    ],
+    benefits: [
+      'Reduce human-error incidents with certified operators',
+      'Improve retention with clear career ladders for DC staff',
+      'Standardize procedures across multiple facilities',
+      'Meet insurance and audit requirements for trained personnel'
+    ]
+  },
+  {
+    id: 'data-center-modular-expansion',
+    title: 'Modular Data Center Expansion & Prefabricated Data Halls',
+    description: 'Accelerate data center expansion with prefabricated data halls, modular power and cooling pods, and rapid-deployment shell-and-core designs. Reduce build timelines from 18 months to under 6 months.',
+    category: 'data-center-modular',
+    icon: '🏗️',
+    href: '/services/data-center-modular-expansion',
+    industry: 'Data Center & Infrastructure',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$399/mo', pro: '$1,199/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'Prefabricated data hall modules (containerized or booth-style)',
+      'Modular power and cooling skids (UPS, PDUs, CRAH/CRAC)',
+      'Shell-and-core design for phased buildout',
+      'Rapid deployment with factory acceptance testing (FAT)',
+      'Seismic and environmental compliance engineering',
+      'Integration with existing facility BMS and security systems'
+    ],
+    benefits: [
+      'Cut construction timelines by 60–70%',
+      'Reduce cost and schedule risk with off-site fabrication',
+      'Scale capacity in sync with revenue growth',
+      'Minimize disruption to live operations during expansion'
+    ]
+  },
+  {
+    id: 'data-center-healthcare-compliance',
+    title: 'Data Center Healthcare Compliance (HIPAA & HITRUST)',
+    description: 'Specialized compliance assessments, policy frameworks, and audit readiness for healthcare data centers handling PHI. HITRUST CSF, HIPAA Security Rule, and FedRAMP mapping with automated evidence collection.',
+    category: 'data-center-healthcare-compliance',
+    icon: '🏥',
+    href: '/services/data-center-healthcare-compliance',
+    industry: 'Healthcare & Compliance',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$399/mo', pro: '$1,199/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'HIPAA Security Rule gap assessments for data centers',
+      'HITRUST CSF certification program management',
+      'Business associate agreement (BAA) development and review',
+      'Audit automation and evidence collection tooling',
+      'Incident response plan tailored for PHI breach scenarios',
+      'Continuous monitoring and quarterly compliance reporting'
+    ],
+    benefits: [
+      'Achieve HIPAA and HITRUST certification faster',
+      'Reduce compliance overhead with automated evidence workflows',
+      'Protect patient data with controls designed for healthcare',
+      'Demonstrate security posture to auditors and regulators'
+    ]
+  },
+  {
+    id: 'data-center-telecom-carrier-coordination',
+    title: 'Data Center Telecommunications & Carrier Coordination',
+    description: 'Streamline carrier onboarding, telco coordination, and meet-me room management for data centers. Carrier-neutral provisioning, circuit ordering, and SLA monitoring across multiple service providers.',
+    category: 'data-center-telecom',
+    icon: '📞',
+    href: '/services/data-center-telecom-carrier-coordination',
+    industry: 'Telecommunications',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$199/mo', pro: '$699/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'Carrier-neutral meet-me room coordination',
+      'Cross-connect and port provisioning management',
+      'Circuit ordering and installation tracking',
+      'Multi-carrier SLA monitoring and reporting',
+      'Telecom inventory and cable management database',
+      'Change management for carrier moves, adds, and changes'
+    ],
+    benefits: [
+      'Reduce circuit provisioning time from weeks to days',
+      'Avoid single-carrier lock-in with neutral coordination',
+      'Improve SLA tracking and exception resolution',
+      'Maintain accurate telecom inventory for capacity planning'
+    ]
+  },
+  {
+    id: 'data-center-cyber-physical-convergence',
+    title: 'Data Center Cyber-Physical Security Convergence',
+    description: 'Unify IT security with physical data center controls: integrate SIEM, access control, CCTV/AI video, and environmental sensors into a single SOC 2 and ISO 27001 aligned security architecture.',
+    category: 'data-center-cyber-physical',
+    icon: '🔐',
+    href: '/services/data-center-cyber-physical-convergence',
+    industry: 'Security & Compliance',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$299/mo', pro: '$899/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'SIEM integration with physical access control systems',
+      'Correlated alerting for cyber and physical threat events',
+      'AI video analytics for tailgating and anomalous behavior',
+      'Environmental sensor monitoring (water, smoke, HVAC)',
+      'Unified audit logging for SOC 2 and ISO 27001',
+      'Incident response runbook bridging ITSM and physical security'
+    ],
+    benefits: [
+      'Detect blended cyber-physical attack scenarios',
+      'Streamline audit evidence across IT and facilities teams',
+      'Reduce mean-time-to-detect with correlated intelligence',
+      'Achieve Zero Trust from the cage to the cloud'
+    ]
+  },
+  {
+    id: 'data-center-energy-advisory',
+    title: 'Data Center Energy Procurement & PPA Advisory',
+    description: 'Navigate utility procurement, renewable PPAs, and grid-interactive demand response for data center operators. Energy benchmarking, tariff optimization, and sustainability-linked financing.',
+    category: 'data-center-energy',
+    icon: '⚡',
+    href: '/services/data-center-energy-advisory',
+    industry: 'Energy & Sustainability',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$299/mo', pro: '$999/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'Utility tariff analysis and demand charge optimization',
+      'Renewable PPA negotiation and offtake structuring',
+      'Grid-interactive demand response enrollment and management',
+      'Energy use intensity (EUI) benchmarking against peers',
+      'Battery storage and co-location with on-site generation',
+      'Carbon credit and REC accounting for ESG disclosures'
+    ],
+    benefits: [
+      'Reduce energy spend by 10–25% through smarter procurement',
+      'Lock in long-term renewable costs with PPAs',
+      'Earn revenue streams through demand response participation',
+      'Meet investor and customer carbon commitments with confidence'
+    ]
+  },
+  {
+    id: 'data-center-site-selection',
+    title: 'Data Center Site Selection & Real Estate Advisory',
+    description: 'Evaluate and acquire data center sites with the right power, fiber, tax, and risk profiles. Fiber route analysis, utility redundancy maps, and tax incentive programs across target markets.',
+    category: 'data-center-real-estate',
+    icon: '📍',
+    href: '/services/data-center-site-selection',
+    industry: 'Real Estate & Infrastructure',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$399/mo', pro: '$1,499/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'Power availability and latency mapping',
+      'Carrier-neutral fiber route surveys and diversity analysis',
+      'Tax incentive and enterprise zone qualification support',
+      'Utility rate case tracking and redundancy evaluation',
+      'Environmental and seismic risk assessments',
+      'Zoning, permitting, and entitlement support'
+    ],
+    benefits: [
+      'Reduce site selection risk from months to weeks',
+      'Avoid costly build surprises with early utility and right-of-way analysis',
+      'Maximize tax incentives for greenfield and brownfield projects',
+      'Choose locations that ensure long-term operational resilience'
+    ]
+  },
+  {
+    id: 'data-center-environmental-monitoring',
+    title: 'Data Center Environmental Monitoring & Cleanroom Services',
+    description: 'Deploy granular environmental monitoring (particulates, humidity, water, smoke) and cleanroom-certified maintenance programs for mission-critical data halls. ASHRAE and ISO 14644 aligned.',
+    category: 'data-center-environmental',
+    icon: '🛡️',
+    href: '/services/data-center-environmental-monitoring',
+    industry: 'Facility Management',
+    stage: 'published',
+    popular: false,
+    pricing: { basic: '$199/mo', pro: '$699/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'Zero-leak detection and water intrusion monitoring',
+      'Particulate and volatile organic compound (VOC) sensing',
+      'ASHRAE thermal envelope compliance dashboards',
+      'Cleanroom-grade maintenance and particle counting',
+      'Smoke detection aspiration (VESDA) integration',
+      'Automated alerting and incident escalation workflows'
+    ],
+    benefits: [
+      'Prevent water and particle damage to IT equipment',
+      'Maintain ASHRAE and ISO 14644 standards',
+      'Reduce mean-time-to-repair for environmental incidents',
+      'Automate compliance reporting for facility audits'
+    ]
+  }
 ];

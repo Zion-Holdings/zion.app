@@ -1,23 +1,137 @@
 export const wave285ItServices = [
-  { id:"it-backup-verification-service", title:"Backup Integrity & Verification Service", description:"Validates backup freshness, restorability, and retention policies across cloud and on-premises estates with evidence summaries.", features:["Recovery job validation","Freshness and retention reports","Cross-site restore checks","Policy compliance dashboards","Alerting on backup drift","Evidence exports"], benefits:["Reduce surprise restore failures","Keep retention policies verified","Produce audit-ready backup evidence","Focus recovery readiness with tests"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,399/mo"}, contactInfo:{website:"/services/it-backup-verification-service", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"💾", href:"/services/it-backup-verification-service", popular:false, category:"it", industry:"Backup & Recovery", stage:"published"},
-  { id:"it-client-hw-repair-triage", title:"Client Hardware Repair & Triage", description:"Triage, dispatch, and repair tracking for client hardware with SLA visibility and spare parts forecasting.", features:["Dispatch triage and routing","Repair timeline and SLA tracking","Parts inventory forecasting","Repeat-failure detection","Customer status notifications","Cost and chargeback links"], benefits:["Reduce repair turnaround time","Keep SLA commitments visible","Control parts spend","Improve client communication"], pricing:{basic:"$99/mo", pro:"$349/mo", enterprise:"$899/mo"}, contactInfo:{website:"/services/it-client-hw-repair-triage", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🔧", href:"/services/it-client-hw-repair-triage", popular:false, category:"it", industry:"Service Delivery", stage:"published"},
-  { id:"it-sla-breach-risk-radar", title:"SLA Breach Risk Radar", description:"Predicts SLA breach probability from capacity, change backlog, and incident signals with mitigation routing and alerting.", features:["Breach probability scoring","Capacity and backlog integration","Mitigation routing","Contractual SLA mapping","Executive alerting","Remediation tracking"], benefits:["Reduce avoidable SLA breaches","Keep leadership informed early","Link incidents to contract risk","Improve service credibility"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,699/mo"}, contactInfo:{website:"/services/it-sla-breach-risk-radar", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"📡", href:"/services/it-sla-breach-risk-radar", popular:false, category:"it", industry:"Service Management", stage:"published"}
-];
-export const wave285AiServices = [
-  { id:"ai-decision-impact-modeler", title:"AI Decision Impact Modeler", description:"Estimates downstream impact of decisions on costs, timelines, and risk so teams choose options with explicit evidence.", features:["Decision input modeling","Cost and timeline impact estimates","Risk probability and severity","Scenario comparison views","Approval evidence records","Executive summary outputs"], benefits:["Reduce decision reversal cost","Keep options evidence-based","Improve executive confidence","Connect actions to business outcomes"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,699/mo"}, contactInfo:{website:"/services/ai-decision-impact-modeler", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🧠", href:"/services/ai-decision-impact-modeler", popular:false, category:"ai", industry:"Decision Intelligence", stage:"published"}
-];
-export const wave285SecurityServices = [
-  { id:"security-threat-landscape-digest", title:"Threat Landscape Digest Service", description:"Aggregates threat feeds, CVE data, and industry telemetry into concise executive and analyst digests for faster decisions.", features:["CVE and threat feed aggregation","Industry-relevant threat framing","Executive and analyst summaries","Mitigation prioritization","Integration with incident workflow","Daily and weekly delivery options"], benefits:["Reduce threat analysis time","Keep leadership informed","Focus teams on relevant threats","Improve readiness posture"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,399/mo"}, contactInfo:{website:"/services/security-threat-landscape-digest", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🌐", href:"/services/security-threat-landscape-digest", popular:false, category:"security", industry:"Threat Intelligence", stage:"published"}
-];
-export const wave285CloudServices = [
-  { id:"cloud-continuity-plan-tester", title:"Cloud Continuity Plan Tester", description:"Simulates outages, data-loss scenarios, and key-service failures to validate recovery procedures, RTO, and RPO targets.", features:["Outage scenario simulation","Data loss drill automation","RTO and RPO measurement","Key-service dependency mapping","Runbook validation","Evidence and gap reports"], benefits:["Reduce recovery guesswork","Validate true recovery capability","Keep RTO and RPO credible","Produce actional improvement lists"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,699/mo"}, contactInfo:{website:"/services/cloud-continuity-plan-tester", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🔁", href:"/services/cloud-continuity-plan-tester", popular:false, category:"cloud", industry:"Resilience", stage:"published"}
-];
-export const wave285DataServices = [
-  { id:"data-observer-quality-auto-fix", title:"Data Observer Quality Auto-Fix", description:"Monitors data quality and applies automated remediation actions within policy boundaries so pipelines stay healthy with limited manual ops.", features:["Quality rule monitoring","Auto-remediation within policy","Anomaly detection","Pipeline health dashboards","Owner alerts and evidence","Escalation for unresolved breaches"], benefits:["Reduce pipeline breakage","Keep quality consistent","Reduce manual monitoring load","Produce evidence for anomalies"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,699/mo"}, contactInfo:{website:"/services/data-observer-quality-auto-fix", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🧪", href:"/services/data-observer-quality-auto-fix", popular:false, category:"data", industry:"Data Quality", stage:"published"}
-];
-export const wave285AutomationServices = [
-  { id:"automation-revenue-leak-detector", title:"Revenue Leak Detector", description:"Detects missed renewals, underbilling, and pricing drift across invoices, subscriptions, and vendor agreements.", features:["Recurring revenue validation","Underbilling anomaly detection","Vendor pricing drift tracking","Missed renewal alerts","Recovery workflow routing","Revenue impact reporting"], benefits:["Recover hidden revenue","Reduce billing surprises","Keep vendor spend aligned","Support cleaner forecasting"], pricing:{basic:"$149/mo", pro:"$499/mo", enterprise:"$1,699/mo"}, contactInfo:{website:"/services/automation-revenue-leak-detector", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"💸", href:"/services/automation-revenue-leak-detector", popular:false, category:"automation", industry:"Revenue Operations", stage:"published"}
-];
-export const wave285MicroSaasServices = [
-  { id:"micro-saas-ai-training-coach", title:"Micro-SaaS AI Training Coach", description:"Delivers role-based training paths, quizzes, and progress coaching for staff onboarding and skills refresh with admin dashboards.", features:["Role-based learning paths","Interactive quizzes and validation","Progress coaching and nudges","Admin completion dashboards","Content versioning","Export and compliance reports"], benefits:["Standardize onboarding training","Reduce manual coaching time","Track completion without spreadsheets","Support repeatable skills refresh"], pricing:{basic:"$49/mo", pro:"$149/mo", enterprise:"$499/mo"}, contactInfo:{website:"/services/micro-saas-ai-training-coach", email:"kleber@ziontechgroup.com", phone:"+1 302 464 0950"}, icon:"🎓", href:"/services/micro-saas-ai-training-coach", popular:false, category:"micro-saas", industry:"Training", stage:"published"}
+  {
+    id: 'it-nextgen-services',
+    title: 'Next-Generation IT Modernization',
+    description: 'Modernize legacy IT operations with platform engineering, reliability automation, and cloud-native tooling. Covers containerized infrastructure, progressive delivery, and IT operations standardization.',
+    features: [
+      'Platform engineering foundation',
+      'Reliability automation',
+      'Cloud-native toolchain setup',
+      'Progressive delivery pipelines',
+      'IT operations standardization',
+      'Cross-environment governance',
+    ],
+    benefits: [
+      'Reduce manual operational overhead',
+      'Improve delivery reliability',
+      'Standardize engineering practices',
+      'Accelerate modernization programs',
+    ],
+    pricing: { basic: '$429/mo', pro: '$949/mo', enterprise: 'Custom' },
+    contactInfo: { website: '/services/it-nextgen-services', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    icon: '⚙️',
+    href: '/services/it-nextgen-services',
+    popular: false,
+    category: 'it',
+    industry: 'IT Modernization',
+    stage: 'published' as const,
+  },
+  {
+    id: 'it-advanced-network-services',
+    title: 'Advanced Network & Secure Access Services',
+    description: 'Design and operate secure, high-performance networks with SD-WAN, SASE, Zero Trust access, and traffic optimization. Improve performance while reducing security risk.',
+    features: [
+      'SD-WAN design and tuning',
+      'SASE policy management',
+      'Secure remote access rollout',
+      'Traffic optimization',
+      'Branch site standardization',
+      'Network segmentation',
+    ],
+    benefits: [
+      'Improve network performance',
+      'Strengthen secure access controls',
+      'Reduce connectivity-related incidents',
+      'Simplify branch and remote operations',
+    ],
+    pricing: { basic: '$369/mo', pro: '$849/mo', enterprise: 'Custom' },
+    contactInfo: { website: '/services/it-advanced-network-services', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    icon: '🌐',
+    href: '/services/it-advanced-network-services',
+    popular: false,
+    category: 'it',
+    industry: 'Networking',
+    stage: 'published' as const,
+  },
+  {
+    id: 'it-email-collaboration-services',
+    title: 'Email & Collaboration Security Services',
+    description: 'Harden email and collaboration suites with anti-phishing controls, DMARC enforcement, anomaly detection, and incident response playbooks for modern messaging platforms.',
+    features: [
+      'Anti-phishing gateway tuning',
+      'DMARC enforcement and reporting',
+      'Anomaly detection for mail flows',
+      'Incident response playbooks',
+      'Collaboration suite hardening',
+      'Executive communication protection',
+    ],
+    benefits: [
+      'Reduce phishing exposure',
+      'Improve mail authentication posture',
+      'Speed incident response',
+      'Protect executive and sensitive mailboxes',
+    ],
+    pricing: { basic: '$349/mo', pro: '$799/mo', enterprise: 'Custom' },
+    contactInfo: { website: '/services/it-email-collaboration-services', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    icon: '📧',
+    href: '/services/it-email-collaboration-services',
+    popular: false,
+    category: 'it',
+    industry: 'Security',
+    stage: 'published' as const,
+  },
+  {
+    id: 'it-data-protection-services',
+    title: 'IT Data Protection & Backup Strategy',
+    description: 'Protect business-critical data with layered backup, retention policies, recovery testing, and capacity planning. Reduce data loss impact and improve recovery confidence.',
+    features: [
+      'Layered backup architecture',
+      'Retention and compliance rules',
+      'Recovery drill automation',
+      'Capacity and cost planning',
+      'RPO and RTO tracking',
+      'Cross-region redundancy checks',
+    ],
+    benefits: [
+      'Reduce data loss impact',
+      'Improve recovery confidence',
+      'Lower storage and recovery costs',
+      'Support compliance and audit requirements',
+    ],
+    pricing: { basic: '$399/mo', pro: '$899/mo', enterprise: 'Custom' },
+    contactInfo: { website: '/services/it-data-protection-services', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    icon: '💾',
+    href: '/services/it-data-protection-services',
+    popular: false,
+    category: 'it',
+    industry: 'Data Protection',
+    stage: 'published' as const,
+  },
+  {
+    id: 'it-device-lifecycle-services',
+    title: 'IT Device Lifecycle & Endpoint Services',
+    description: 'Standardize device provisioning, patching, monitoring, and decommission workflows across fleets. Reduce support overhead and maintain consistent security baselines.',
+    features: [
+      'Device provisioning automation',
+      'Patch and update enforcement',
+      'Endpoint health monitoring',
+      'Secure decommission workflows',
+      'Inventory and lifecycle tracking',
+      'Cross-platform support',
+    ],
+    benefits: [
+      'Reduce provisioning delays',
+      'Improve patch coverage',
+      'Maintain consistent device baselines',
+      'Streamline device retirement',
+    ],
+    pricing: { basic: '$329/mo', pro: '$779/mo', enterprise: 'Custom' },
+    contactInfo: { website: '/services/it-device-lifecycle-services', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    icon: '📱',
+    href: '/services/it-device-lifecycle-services',
+    popular: false,
+    category: 'it',
+    industry: 'Device Management',
+    stage: 'published' as const,
+  },
 ];
