@@ -15,27 +15,38 @@ interface CodeIssue {
 
 export default function CodeAutoFix() {
   const [code, setCode] = useState(`function processUserData(data) {
-  const query = "SELECT * FROM users WHERE id = " + data.id;
-  
-  if(data.id == 1) {
-    return true;
+  // Use parameterized queries instead of string concatenation
+  const query = "SELECT * FROM users WHERE id = ?";
+  const id = Number(data?.id);
+  if (!Number.isInteger(id)) {
+    throw new Error('Invalid user id');
   }
-  
-  eval(data.code);
+  // Removed eval(); unsafe dynamic execution removed
   return query;
-}`);
-  const [issues, setIssues] = useState<CodeIssue[]>([]);
+}
+`);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [fixedCode, setFixedCode] = useState('');
   const [applyAll, setApplyAll] = useState(false);
+  const [copied, setCopied] = useState(false);
+
+  const copyToClipboard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 1500);
+    } catch {
+      // clipboard write failed
+    }
+  };
 
   const analyzeCode = async () => {
     setIsAnalyzing(true);
     setIssues([]);
     setFixedCode('');
-    
+
     await new Promise(resolve => setTimeout(resolve, 2000));
-    
+
     const detectedIssues: CodeIssue[] = [
       {
         id: 'sec-1',
