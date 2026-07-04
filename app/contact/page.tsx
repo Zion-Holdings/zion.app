@@ -2,6 +2,8 @@
 import Link from 'next/link';
 import { LocalBusinessJsonLd } from '@/components/LocalBusinessStructuredData';
 
+const CALENDLY_URL = 'https://calendly.com/ziontechgroup/30min';
+
 export const metadata = {
   title: 'Contact Us',
   description: 'Get in touch with Zion Tech Group. Call, email, or visit us in Middletown, DE.',
@@ -49,41 +51,18 @@ export default function ContactPage() {
             <h2 className="text-2xl font-semibold text-white mb-6">Quick Actions</h2>
             <div className="space-y-4">
               <Link href="/configurator/" className="btn-primary w-full text-center block">
-                ⚙️ Get Your Custom Proposal →
+                Get Your Custom Proposal →
               </Link>
               <Link href="/services/" className="btn-secondary w-full text-center block">
-                🛠️ Browse All Services
+                Browse All Services
               </Link>
               <a href="tel:+13024640950" className="btn-secondary w-full text-center block">
                 ☎ Call Now
               </a>
+              <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="btn-secondary w-full text-center block">
+                📅 Book Consultation
+              </a>
             </div>
-          </div>
-        </div>
-
-        {/* Service Categories Quick Links */}
-        <div className="mb-16">
-          <h2 className="text-2xl font-bold text-white text-center mb-8">Browse by Category</h2>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {[
-              { key: 'ai', label: 'AI Services', emoji: '🧠' },
-              { key: 'it', label: 'IT Services', emoji: '🖥️' },
-              { key: 'cloud', label: 'Cloud', emoji: '☁️' },
-              { key: 'security', label: 'Security', emoji: '🔐' },
-              { key: 'data', label: 'Data', emoji: '📊' },
-              { key: 'automation', label: 'Automation', emoji: '🤖' },
-            ].map(cat => (
-              <Link
-                key={cat.key}
-                href={`/services?category=${cat.key}`}
-                className="glass-card text-center hover:border-purple-500/40 transition-all group"
-              >
-                <div className="text-3xl mb-2">{cat.emoji}</div>
-                <div className="text-sm font-medium text-white group-hover:text-purple-300 transition-colors">
-                  {cat.label}
-                </div>
-              </Link>
-            ))}
           </div>
         </div>
 
@@ -96,6 +75,9 @@ export default function ContactPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:+13024640950" className="btn-primary text-lg">
               ☎ +1 302 464 0950
+            </a>
+            <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="btn-secondary text-lg">
+              📅 Book a Consultation
             </a>
             <a href="mailto:kleber@ziontechgroup.com" className="btn-secondary text-lg">
               ✉️ kleber@ziontechgroup.com

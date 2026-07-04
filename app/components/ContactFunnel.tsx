@@ -8,6 +8,7 @@ const PHONE      = '+1 302 464 0950';
 const EMAIL      = 'kleber@ziontechgroup.com';
 const ADDRESS    = '364 E Main St STE 1008, Middletown, DE 19709, USA';
 const MAPS_URL   = 'https://maps.google.com/?q=364+E+Main+St+STE+1008+Middletown+DE+19709';
+const CALENDLY_URL = 'https://calendly.com/ziontechgroup/30min';
 
 /* ── Schema.org ContactPoint + Place JSON-LD ─────────── */
 function ContactSchema() {
@@ -35,7 +36,7 @@ function ContactSchema() {
       {
         '@type': 'ContactPoint',
         telephone: PHONE,
-        contactType: 'customer service',
+        contactType: 'sales',
         email: EMAIL,
         availableLanguage: ['English', 'Portuguese'],
       },
@@ -164,10 +165,10 @@ export default function ContactFunnel() {
           />
 
           <DirectAction
-            href="/status/"
-            icon={<span>📊</span>}
-            label="System Status"
-            sub="24/7 uptime monitoring"
+            href={CALENDLY_URL}
+            icon={<span>📅</span>}
+            label="Book a Consultation"
+            sub="30-minute intro call"
           />
         </div>
 
