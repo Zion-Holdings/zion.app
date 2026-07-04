@@ -1,0 +1,4 @@
+resources:
+  - type: image/svg+xml
+    sizes: any
+    src: "/icon.svg"

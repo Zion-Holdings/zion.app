@@ -3,7 +3,7 @@ const path = require('path');
 const https = require('https');
 
 const repo = 'Zion-support/zion-support.github.io';
-const branch = 'gh-pages';
+const branch = process.env.ZION_DEPLOY_BRANCH || 'main';
 const tokenFile = path.join(process.env.USERPROFILE || process.env.HOME, '.gh_token');
 const outDir = path.join(process.cwd(), 'out');
 

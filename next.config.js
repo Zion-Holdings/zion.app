@@ -19,7 +19,6 @@ const nextConfig = {
   },
   experimental: {
     optimizePackageImports: ['lucide-react'],
-    buildWorker: false,
   },
   generateBuildId: async () => 'zion-tech-group-v1',
 };
