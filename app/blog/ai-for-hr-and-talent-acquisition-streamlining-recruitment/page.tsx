@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-hr-and-talent-acquisition-streamlining-recruitment/' },
+
   title: 'AI for HR and Talent Acquisition: Streamlining Recruitment',
   description:
     'Resume screening, candidate matching, interview scheduling, and diversity in hiring. Reducing time-to-hire while improving quality of hire.',
-  alternates: { canonical: '/blog/ai-for-hr-and-talent-acquisition-streamlining-recruitment/' },
   openGraph: {
     title: 'AI for HR and Talent Acquisition: Streamlining Recruitment',
     description:

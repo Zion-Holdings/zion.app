@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-customer-service-and-support-automation/' },
+
   title: 'AI for Customer Service and Support Automation',
   description:
     'Intelligent routing, self-service deflection, agent assist, and sentiment analysis. Delivering faster resolution and higher satisfaction.',
-  alternates: { canonical: '/blog/ai-for-customer-service-and-support-automation/' },
   openGraph: {
     title: 'AI for Customer Service and Support Automation',
     description:

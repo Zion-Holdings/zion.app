@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-document-intelligence-and-intelligent-automation/' },
+
   title: 'AI for Document Intelligence and Intelligent Automation',
   description:
     'IDP, contract analysis, form processing, and knowledge extraction. End-to-end document workflows with AI.',
-  alternates: { canonical: '/blog/ai-for-document-intelligence-and-intelligent-automation/' },
   openGraph: {
     title: 'AI for Document Intelligence and Intelligent Automation',
     description:

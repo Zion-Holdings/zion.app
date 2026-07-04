@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/vector-databases-and-enterprise-rag-systems/' },
+
   title: 'Vector Databases and Enterprise RAG Systems',
   description:
     'Embeddings, similarity search, and retrieval-augmented generation. Building enterprise knowledge bases that ground LLMs in your data.',
-  alternates: { canonical: '/blog/vector-databases-and-enterprise-rag-systems/' },
   openGraph: {
     title: 'Vector Databases and Enterprise RAG Systems',
     description:

@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-healthcare-analytics-and-clinical-decision-support/' },
+
   title: 'AI for Healthcare Analytics and Clinical Decision Support',
   description:
     'Clinical documentation, diagnosis assistance, population health, and operational analytics. Responsible AI in healthcare delivery.',
-  alternates: { canonical: '/blog/ai-for-healthcare-analytics-and-clinical-decision-support/' },
   openGraph: {
     title: 'AI for Healthcare Analytics and Clinical Decision Support',
     description:

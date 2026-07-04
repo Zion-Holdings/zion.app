@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-cybersecurity-threat-detection/' },
+
   title: 'AI for Cybersecurity Threat Detection',
   description:
     'Anomaly detection, behavioral analysis, SIEM enhancement, and automated response. Using machine learning to identify and respond to threats faster.',
-  alternates: { canonical: '/blog/ai-for-cybersecurity-threat-detection/' },
   openGraph: {
     title: 'AI for Cybersecurity Threat Detection',
     description:

@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-blockchain-and-web3-operations/' },
+
   title: 'AI for Blockchain and Web3 Operations',
   description:
     'Smart contract analysis, DeFi risk scoring, NFT analytics, and on-chain intelligence. AI meets decentralized systems.',
-  alternates: { canonical: '/blog/ai-for-blockchain-and-web3-operations/' },
   openGraph: {
     title: 'AI for Blockchain and Web3 Operations',
     description:

@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-in-construction-and-project-management/' },
+
   title: 'AI in Construction and Project Management',
   description:
     'Schedule optimization, cost forecasting, risk prediction, and document management. How AI is transforming construction delivery and project controls.',
-  alternates: { canonical: '/blog/ai-in-construction-and-project-management/' },
   openGraph: {
     title: 'AI in Construction and Project Management',
     description:

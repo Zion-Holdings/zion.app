@@ -1,6 +1,8 @@
 import Link from 'next/link';
 
 export const metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/cloud-migration-and-ai-modernizing-infrastructure-for-intelligent-workloads/' },
+
   title: 'Cloud Migration & AI Infrastructure | Zion Tech Group',
   description: 'Modernize your infrastructure for intelligent workloads with cloud migration strategies and AI integration.',
 };

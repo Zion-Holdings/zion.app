@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-in-supply-chain-predictive-inventory-and-demand-forecasting/' },
+
   title: 'AI in Supply Chain: Predictive Inventory and Demand Forecasting',
   description:
     'Demand sensing, safety stock optimization, multi-echelon inventory, and supplier risk prediction. Real-world metrics from retail and manufacturing.',
-  alternates: { canonical: '/blog/ai-in-supply-chain-predictive-inventory-and-demand-forecasting/' },
   openGraph: {
     title: 'AI in Supply Chain: Predictive Inventory and Demand Forecasting',
     description:

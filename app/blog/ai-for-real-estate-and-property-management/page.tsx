@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-real-estate-and-property-management/' },
+
   title: 'AI for Real Estate and Property Management',
   description:
     'Lease abstraction, tenant analytics, maintenance prediction, and valuation. Transforming property operations with intelligent automation.',
-  alternates: { canonical: '/blog/ai-for-real-estate-and-property-management/' },
   openGraph: {
     title: 'AI for Real Estate and Property Management',
     description:

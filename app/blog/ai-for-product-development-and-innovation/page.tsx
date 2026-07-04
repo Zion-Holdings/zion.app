@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-product-development-and-innovation/' },
+
   title: 'AI for Product Development and Innovation',
   description:
     'Ideation assistance, market research automation, competitive analysis, and rapid prototyping. Accelerating the product lifecycle with AI.',
-  alternates: { canonical: '/blog/ai-for-product-development-and-innovation/' },
   openGraph: {
     title: 'AI for Product Development and Innovation',
     description:

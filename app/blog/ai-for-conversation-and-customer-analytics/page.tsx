@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-conversation-and-customer-analytics/' },
+
   title: 'AI for Conversation and Customer Analytics',
   description:
     'Unifying customer data, analyzing conversations across channels, and driving next-best-action recommendations. Building a true customer 360.',
-  alternates: { canonical: '/blog/ai-for-conversation-and-customer-analytics/' },
   openGraph: {
     title: 'AI for Conversation and Customer Analytics',
     description:

@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-audit-and-compliance-automation/' },
+
   title: 'AI for Audit and Compliance Automation',
   description:
     'Automating evidence collection, compliance checks, and audit report generation. Reducing manual effort and improving audit trail completeness.',
-  alternates: { canonical: '/blog/ai-for-audit-and-compliance-automation/' },
   openGraph: {
     title: 'AI for Audit and Compliance Automation',
     description:

@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/responsible-ai-practices-for-enterprise-deployment/' },
+
   title: 'Responsible AI Practices for Enterprise Deployment',
   description:
     'Bias detection, explainability, human oversight, and governance frameworks. Aligning AI systems with organizational values and regulatory expectations.',
-  alternates: { canonical: '/blog/responsible-ai-practices-for-enterprise-deployment/' },
   openGraph: {
     title: 'Responsible AI Practices for Enterprise Deployment',
     description:

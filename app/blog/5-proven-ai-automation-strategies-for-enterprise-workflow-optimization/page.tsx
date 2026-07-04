@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization/' },
+
   title: '5 Proven AI Automation Strategies for Enterprise Workflow Optimization',
   description:
     'Intelligent process mining, RPA + AI hybrid automation, document workflows, customer journey automation, and cross-department orchestration. ROI metrics and implementation timelines.',
-  alternates: { canonical: '/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization/' },
   openGraph: {
     title: '5 Proven AI Automation Strategies for Enterprise Workflow Optimization',
     description:

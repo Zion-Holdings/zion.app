@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-in-sustainability-and-esg-reporting/' },
+
   title: 'AI in Sustainability and ESG Reporting',
   description:
     'Carbon footprint calculation, supply chain emissions, regulatory compliance, and automated ESG disclosure. Meeting reporting requirements with AI-powered data aggregation.',
-  alternates: { canonical: '/blog/ai-in-sustainability-and-esg-reporting/' },
   openGraph: {
     title: 'AI in Sustainability and ESG Reporting',
     description:

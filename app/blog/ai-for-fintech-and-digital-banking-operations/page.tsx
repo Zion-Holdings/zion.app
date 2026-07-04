@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-fintech-and-digital-banking-operations/' },
+
   title: 'AI for FinTech and Digital Banking Operations',
   description:
     'Credit scoring, fraud prevention, customer onboarding, and regulatory compliance. AI-powered financial services at scale.',
-  alternates: { canonical: '/blog/ai-for-fintech-and-digital-banking-operations/' },
   openGraph: {
     title: 'AI for FinTech and Digital Banking Operations',
     description:

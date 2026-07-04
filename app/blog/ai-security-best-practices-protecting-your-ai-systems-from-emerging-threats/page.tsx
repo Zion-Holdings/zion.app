@@ -1,6 +1,8 @@
 import Link from 'next/link';
 
 export const metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-security-best-practices-protecting-your-ai-systems-from-emerging-threats/' },
+
   title: 'AI Security Best Practices | Zion Tech Group',
   description: 'Protect your AI systems from emerging threats with these essential security practices and frameworks.',
 };

@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-quantum-computing-and-hybrid-workloads/' },
+
   title: 'AI for Quantum Computing and Hybrid Workloads',
   description:
     'Quantum machine learning, hybrid classical-quantum pipelines, and optimization. When quantum advantage matters for AI.',
-  alternates: { canonical: '/blog/ai-for-quantum-computing-and-hybrid-workloads/' },
   openGraph: {
     title: 'AI for Quantum Computing and Hybrid Workloads',
     description:

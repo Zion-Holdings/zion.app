@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/securing-ai-models-a-practical-guide-to-threat-mitigation-in-production/' },
+
   title: 'Securing AI Models: A Practical Guide to Threat Mitigation in Production',
   description:
     'Adversarial attacks, data poisoning, model extraction, secure deployment patterns, and monitoring for AI systems. NIST and OWASP references for production security.',
-  alternates: { canonical: '/blog/securing-ai-models-a-practical-guide-to-threat-mitigation-in-production/' },
   openGraph: {
     title: 'Securing AI Models: A Practical Guide to Threat Mitigation in Production',
     description:

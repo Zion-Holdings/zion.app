@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-procurement-and-vendor-management/' },
+
   title: 'AI for Procurement and Vendor Management',
   description:
     'Spend analysis, contract extraction, supplier risk scoring, and automated sourcing. Optimizing procurement with intelligent automation.',
-  alternates: { canonical: '/blog/ai-for-procurement-and-vendor-management/' },
   openGraph: {
     title: 'AI for Procurement and Vendor Management',
     description:

@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-cybersecurity-operations-and-threat-hunting/' },
+
   title: 'AI for Cybersecurity Operations and Threat Hunting',
   description:
     'Threat detection, anomaly analysis, automated response, and security orchestration. How AI augments SOC teams and reduces mean time to detect.',
-  alternates: { canonical: '/blog/ai-for-cybersecurity-operations-and-threat-hunting/' },
   openGraph: {
     title: 'AI for Cybersecurity Operations and Threat Hunting',
     description:

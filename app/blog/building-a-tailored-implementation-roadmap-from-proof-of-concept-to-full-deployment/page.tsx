@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/building-a-tailored-implementation-roadmap-from-proof-of-concept-to-full-deployment/' },
+
   title: 'Building a Tailored Implementation Roadmap: From Proof of Concept to Full Deployment',
   description:
     'Define success criteria, proof of concept best practices, pilot scaling, full deployment planning, and change management. Milestone templates and common pitfalls.',
-  alternates: { canonical: '/blog/building-a-tailored-implementation-roadmap-from-proof-of-concept-to-full-deployment/' },
   openGraph: {
     title: 'Building a Tailored Implementation Roadmap: From Proof of Concept to Full Deployment',
     description:

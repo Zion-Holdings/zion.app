@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-digital-transformation-and-change-management/' },
+
   title: 'AI for Digital Transformation and Change Management',
   description:
     'Driving organizational change with AI: adoption strategies, stakeholder alignment, training programs, and measuring transformation success.',
-  alternates: { canonical: '/blog/ai-for-digital-transformation-and-change-management/' },
   openGraph: {
     title: 'AI for Digital Transformation and Change Management',
     description:

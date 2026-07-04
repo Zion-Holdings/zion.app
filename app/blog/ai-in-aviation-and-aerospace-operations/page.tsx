@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-in-aviation-and-aerospace-operations/' },
+
   title: 'AI in Aviation and Aerospace Operations',
   description:
     'Predictive maintenance, crew scheduling, cargo optimization, and safety analytics. How airlines and aerospace companies use AI for operational excellence.',
-  alternates: { canonical: '/blog/ai-in-aviation-and-aerospace-operations/' },
   openGraph: {
     title: 'AI in Aviation and Aerospace Operations',
     description:

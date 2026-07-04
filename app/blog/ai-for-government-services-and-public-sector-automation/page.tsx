@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-government-services-and-public-sector-automation/' },
+
   title: 'AI for Government Services and Public Sector Automation',
   description:
     'Citizen services, permit processing, fraud detection, and operational efficiency. Responsible AI in government with transparency and accountability.',
-  alternates: { canonical: '/blog/ai-for-government-services-and-public-sector-automation/' },
   openGraph: {
     title: 'AI for Government Services and Public Sector Automation',
     description:

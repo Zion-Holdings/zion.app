@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/generative-ai-for-content-and-creative-workflows/' },
+
   title: 'Generative AI for Content and Creative Workflows',
   description:
     'Copy generation, image creation, video editing, and brand consistency. Scaling creative output without sacrificing quality.',
-  alternates: { canonical: '/blog/generative-ai-for-content-and-creative-workflows/' },
   openGraph: {
     title: 'Generative AI for Content and Creative Workflows',
     description:

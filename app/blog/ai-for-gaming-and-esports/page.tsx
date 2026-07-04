@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-gaming-and-esports/' },
+
   title: 'AI for Gaming and Esports',
   description:
     'Player analytics, anti-cheat, content moderation, and personalized experiences. AI powers the gaming industry.',
-  alternates: { canonical: '/blog/ai-for-gaming-and-esports/' },
   openGraph: {
     title: 'AI for Gaming and Esports',
     description:

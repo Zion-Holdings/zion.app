@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-climate-tech-and-sustainability-operations/' },
+
   title: 'AI for Climate Tech and Sustainability Operations',
   description:
     'Carbon accounting, supply chain emissions, renewable forecasting, and ESG reporting. AI accelerates the path to net zero.',
-  alternates: { canonical: '/blog/ai-for-climate-tech-and-sustainability-operations/' },
   openGraph: {
     title: 'AI for Climate Tech and Sustainability Operations',
     description:

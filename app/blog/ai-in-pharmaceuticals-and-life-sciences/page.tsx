@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-in-pharmaceuticals-and-life-sciences/' },
+
   title: 'AI in Pharmaceuticals and Life Sciences',
   description:
     'Drug discovery, clinical trial optimization, regulatory submissions, and pharmacovigilance. Accelerating life sciences with AI.',
-  alternates: { canonical: '/blog/ai-in-pharmaceuticals-and-life-sciences/' },
   openGraph: {
     title: 'AI in Pharmaceuticals and Life Sciences',
     description:

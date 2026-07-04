@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-media-and-content-production/' },
+
   title: 'AI for Media and Content Production',
   description:
     'Content generation, editing automation, rights management, and audience analytics. How media companies leverage AI for scale and efficiency.',
-  alternates: { canonical: '/blog/ai-for-media-and-content-production/' },
   openGraph: {
     title: 'AI for Media and Content Production',
     description:

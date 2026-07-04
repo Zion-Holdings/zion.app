@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-food-and-beverage-operations/' },
+
   title: 'AI for Food and Beverage Operations',
   description:
     'Demand forecasting, quality control, supply chain traceability, and waste reduction. AI across the food value chain.',
-  alternates: { canonical: '/blog/ai-for-food-and-beverage-operations/' },
   openGraph: {
     title: 'AI for Food and Beverage Operations',
     description:

@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-observability-and-mlops-best-practices/' },
+
   title: 'AI Observability and MLOps Best Practices',
   description:
     'Model monitoring, drift detection, feature stores, and CI/CD for ML. Building reliable AI systems that stay accurate over time.',
-  alternates: { canonical: '/blog/ai-observability-and-mlops-best-practices/' },
   openGraph: {
     title: 'AI Observability and MLOps Best Practices',
     description:

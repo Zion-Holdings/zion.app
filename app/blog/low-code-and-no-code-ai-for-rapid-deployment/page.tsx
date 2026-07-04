@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/low-code-and-no-code-ai-for-rapid-deployment/' },
+
   title: 'Low-Code and No-Code AI for Rapid Deployment',
   description:
     'Citizen development, workflow automation, and AI builders. Empowering business users to deploy AI without engineering.',
-  alternates: { canonical: '/blog/low-code-and-no-code-ai-for-rapid-deployment/' },
   openGraph: {
     title: 'Low-Code and No-Code AI for Rapid Deployment',
     description:

@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-finops-and-cloud-cost-optimization-with-machine-learning/' },
+
   title: 'AI FinOps: Cloud Cost Optimization with Machine Learning',
   description:
     'Right-sizing recommendations, spot instance optimization, reserved capacity planning, and anomaly detection for cloud spend. Reducing waste without sacrificing performance.',
-  alternates: { canonical: '/blog/ai-finops-and-cloud-cost-optimization-with-machine-learning/' },
   openGraph: {
     title: 'AI FinOps: Cloud Cost Optimization with Machine Learning',
     description:

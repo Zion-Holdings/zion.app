@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-sales-enablement-and-revenue-operations/' },
+
   title: 'AI for Sales Enablement and Revenue Operations',
   description:
     'Conversation intelligence, deal scoring, forecast accuracy, and sales content automation. Turning RevOps into a competitive advantage.',
-  alternates: { canonical: '/blog/ai-for-sales-enablement-and-revenue-operations/' },
   openGraph: {
     title: 'AI for Sales Enablement and Revenue Operations',
     description:

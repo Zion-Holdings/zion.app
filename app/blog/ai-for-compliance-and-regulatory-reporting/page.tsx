@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-compliance-and-regulatory-reporting/' },
+
   title: 'AI for Compliance and Regulatory Reporting',
   description:
     'Automated compliance monitoring, regulatory change tracking, and audit-ready documentation. Reducing compliance burden with intelligent automation.',
-  alternates: { canonical: '/blog/ai-for-compliance-and-regulatory-reporting/' },
   openGraph: {
     title: 'AI for Compliance and Regulatory Reporting',
     description:

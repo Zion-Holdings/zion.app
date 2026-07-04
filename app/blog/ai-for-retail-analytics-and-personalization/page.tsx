@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-retail-analytics-and-personalization/' },
+
   title: 'AI for Retail Analytics and Personalization',
   description:
     'Demand forecasting, assortment optimization, personalization engines, and loss prevention. Data-driven retail in the age of AI.',
-  alternates: { canonical: '/blog/ai-for-retail-analytics-and-personalization/' },
   openGraph: {
     title: 'AI for Retail Analytics and Personalization',
     description:

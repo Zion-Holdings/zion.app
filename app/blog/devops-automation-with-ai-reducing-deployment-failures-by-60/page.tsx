@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/devops-automation-with-ai-reducing-deployment-failures-by-60/' },
+
   title: 'DevOps Automation with AI: Reducing Deployment Failures by 60%',
   description:
     'AI-powered code review, intelligent test generation, automated incident detection, predictive deployment risk scoring, and self-healing infrastructure.',
-  alternates: { canonical: '/blog/devops-automation-with-ai-reducing-deployment-failures-by-60/' },
   openGraph: {
     title: 'DevOps Automation with AI: Reducing Deployment Failures by 60%',
     description:

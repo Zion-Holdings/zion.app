@@ -4,10 +4,11 @@ import BlogPostStructuredData from '@/components/BlogPostStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-agriculture-and-agritech/' },
+
   title: 'AI for Agriculture and Agritech',
   description:
     'Precision agriculture, crop yield prediction, pest detection, and supply chain optimization. Data-driven farming with AI.',
-  alternates: { canonical: '/blog/ai-for-agriculture-and-agritech/' },
   openGraph: {
     title: 'AI for Agriculture and Agritech',
     description:

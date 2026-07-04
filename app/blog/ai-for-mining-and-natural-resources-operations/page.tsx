@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-mining-and-natural-resources-operations/' },
+
   title: 'AI for Mining and Natural Resources Operations',
   description:
     'Predictive maintenance, ore grade estimation, safety monitoring, and supply chain optimization. AI in extractive industries.',
-  alternates: { canonical: '/blog/ai-for-mining-and-natural-resources-operations/' },
   openGraph: {
     title: 'AI for Mining and Natural Resources Operations',
     description:

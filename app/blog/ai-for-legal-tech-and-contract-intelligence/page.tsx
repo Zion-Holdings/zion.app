@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-legal-tech-and-contract-intelligence/' },
+
   title: 'AI for Legal Tech and Contract Intelligence',
   description:
     'Contract analysis, due diligence automation, legal research, and matter management. AI augments legal workflows.',
-  alternates: { canonical: '/blog/ai-for-legal-tech-and-contract-intelligence/' },
   openGraph: {
     title: 'AI for Legal Tech and Contract Intelligence',
     description:

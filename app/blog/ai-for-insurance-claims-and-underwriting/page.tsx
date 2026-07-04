@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-insurance-claims-and-underwriting/' },
+
   title: 'AI for Insurance Claims and Underwriting',
   description:
     'Claims triage, fraud detection, risk assessment, and automated underwriting. Improving accuracy and speed in insurance operations.',
-  alternates: { canonical: '/blog/ai-for-insurance-claims-and-underwriting/' },
   openGraph: {
     title: 'AI for Insurance Claims and Underwriting',
     description:

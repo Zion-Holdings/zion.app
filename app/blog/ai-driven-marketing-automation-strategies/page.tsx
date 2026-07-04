@@ -1,6 +1,8 @@
 import Link from 'next/link';
 
 export const metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-driven-marketing-automation-strategies/' },
+
   title: 'AI-Driven Marketing Automation Strategies | Zion Tech Group',
   description: 'Learn how AI is transforming marketing automation with predictive targeting, personalized campaigns, and intelligent workflows.',
 };

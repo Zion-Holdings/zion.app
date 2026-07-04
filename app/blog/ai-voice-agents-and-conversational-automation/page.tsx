@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-voice-agents-and-conversational-automation/' },
+
   title: 'AI Voice Agents and Conversational Automation',
   description:
     'Voice-first customer service, IVR replacement, and multimodal assistants. Deploying AI voice at scale with quality and compliance.',
-  alternates: { canonical: '/blog/ai-voice-agents-and-conversational-automation/' },
   openGraph: {
     title: 'AI Voice Agents and Conversational Automation',
     description:

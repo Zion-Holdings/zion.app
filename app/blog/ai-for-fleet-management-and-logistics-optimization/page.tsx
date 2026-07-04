@@ -4,10 +4,11 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata: Metadata = {
+  alternates: { canonical: 'http://ziontechgroup.com/blog/ai-for-fleet-management-and-logistics-optimization/' },
+
   title: 'AI for Fleet Management and Logistics Optimization',
   description:
     'Route optimization, predictive maintenance, driver behavior analytics, and real-time visibility. How AI transforms fleet operations and reduces costs.',
-  alternates: { canonical: '/blog/ai-for-fleet-management-and-logistics-optimization/' },
   openGraph: {
     title: 'AI for Fleet Management and Logistics Optimization',
     description:
