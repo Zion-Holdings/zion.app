@@ -6,7 +6,7 @@ const repo = 'Zion-support/zion-support.github.io';
 const branch = process.argv[2] || 'gh-pages';
 const tokenFile = path.join(process.env.USERPROFILE || process.env.HOME, '.gh_token');
 const token = fs.readFileSync(tokenFile, 'utf8').trim();
-const outDir = process.argv[3] || path.join(process.cwd(), 'out');
+const outDir = path.join(process.cwd(), 'out');
 
 function request(method, urlPath, body) {
   return new Promise((resolve, reject) => {
@@ -98,11 +98,11 @@ async function getExistingTree() {
   console.log(`Uploading ${files.length} files`);
   const treeResp = await fileTree(files);
 
-  const message = `deploy: static export ${new Date().toISOString()}`;
-  const commitResp = await request('POST', `/repos/${repo}/git/commits`, {
-    message,
-    tree: treeResp.sha,
-    parents: [(await request('GET', `/repos/${repo}/git/ref/heads/${branch}`)).object.sha],
+  const message = process.argv[3] || `deploy: static export ${new Date().toISOString()}`;
+  const commit = await request('POST', `/repos/${repo}/git/commits`, {
+    message: process.argv[3] || `deploy: static export ${new Date().toISOString()}`,
+    tree: tree.sha,
+    parents: [ref.object.sha],
   });
 
   const updResp = await request('PATCH', `/repos/${repo}/git/refs/heads/${branch}`, { sha: commitResp.sha, force: true });
