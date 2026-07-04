@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CONTACT_INFO } from '@/utils/seoConstants';
-import { siteUrl } from '@/utils/seoConstants';
+
 
 export const metadata: Metadata = {
   title: 'Book a Free IT/AI Strategy Consultation | Zion Tech Group',
