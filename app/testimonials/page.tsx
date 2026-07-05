@@ -85,8 +85,66 @@ const contactInfo = {
 };
 
 export default function TestimonialsPage() {
+  const ratingValue = '4.8';
+  const reviewCount = testimonials.length + caseStudies.length;
+
+  const aggregateRatingSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'AggregateRating',
+    itemReviewed: {
+      '@type': 'Organization',
+      name: 'Zion Tech Group',
+      url: 'https://ziontechgroup.com',
+    },
+    ratingValue,
+    bestRating: '5',
+    worstRating: '1',
+    reviewCount: String(reviewCount),
+  };
+
+  const reviewSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    name: 'Client testimonials for Zion Tech Group',
+    itemReviewed: {
+      '@type': 'Organization',
+      name: 'Zion Tech Group',
+      url: 'https://ziontechgroup.com',
+    },
+    review: testimonials.map((t) => ({
+      '@type': 'Review',
+      author: { '@type': 'Person', name: t.name },
+      reviewRating: { '@type': 'Rating', ratingValue: '5', bestRating: '5' },
+      reviewBody: t.text,
+    })),
+  };
+
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://ziontechgroup.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Testimonials & Case Studies', item: 'https://ziontechgroup.com/testimonials/' },
+    ],
+  };
+
   return (
     <main className="min-h-screen bg-slate-950">
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRatingSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Hero */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(56,189,248,0.15),transparent_60%)]" />

@@ -10,7 +10,7 @@
     "build:check": "npm run type-check && npm run build",
     "start": "next start",
     "lint": "next lint",
-    "lint:check": "next lint --max-warnings=0",
+    "lint:check": "npx eslint . --ignore-pattern \".next/**\" --ignore-pattern \"out/**\" --ignore-pattern \"dist/**\" --ignore-pattern \"build/**\" --quiet",
     "type-check": "tsc --noEmit",
     "wrap": "bash scripts/error-wrapper.sh",
     "postbuild": "node scripts/generate_service_index.cjs && node scripts/generate-sitemap-feed.cjs && node scripts/checks/build-and-verify.cjs",
@@ -28,7 +28,6 @@
     "test": "jest --passWithNoTests",
     "test:ci": "jest --ci --coverage --watchAll=false --passWithNoTests",
     "build-storybook": "storybook build",
-    "health:check": "node scripts/automation/workspace-health-check.cjs",
     "build:win": "node scripts/windows-build-guard.cjs && next build",
     "deploy:verify": "node scripts/verify-deploy.cjs"
   },

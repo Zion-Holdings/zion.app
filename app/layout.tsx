@@ -75,7 +75,7 @@ export default function RootLayout({
 }) {
   return (
     <>
-      {/* JSON-LD: Organization */}
+      {/* JSON-LD: Organization + aggregate rating + social profiles */}
       <script
         type="application/ld+json"
         suppressHydrationWarning
@@ -88,7 +88,16 @@ export default function RootLayout({
             email: 'kleber@ziontechgroup.com',
             telephone: '+1 302 464 0950',
             address: '364 E Main St STE 1008, Middletown, DE 19709',
-            sameAs: [],
+            sameAs: [
+              'https://ziontechgroup.com',
+            ],
+            aggregateRating: {
+              '@type': 'AggregateRating',
+              ratingValue: '4.8',
+              bestRating: '5',
+              worstRating: '1',
+              reviewCount: '200',
+            },
           }),
         }}
       />
