@@ -41,7 +41,7 @@ export default function ServiceComparisonPage() {
     // Sort: popular first, then title
     return [...list].sort((a, b) => {
       const ap = a.popular ? 1 : 0, bp = b.popular ? 1 : 0;
-      return bp - ap || a.title.localeCompare(b.title);
+      return bp - ap || (a.title || '').localeCompare(b.title || '');
     });
   }, [search, catFilter]);
 
