@@ -1440,6 +1440,7 @@ export const emailIntelligenceServices: Service[] = [
 
 export const allServices: Service[] = [
   ...aiServices,
+  ...wave296AiServices,
   ...itServices,
   ...cloudServices,
   ...securityServices,

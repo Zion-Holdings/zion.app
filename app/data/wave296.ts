@@ -1,39 +1,140 @@
-export const wave296ItServices = [
-  { id: 'it-ad-passwordless-migration', title: 'AD to Passwordless Migration Accelerator', description: 'Migrates Active Directory workloads to passwordless and cloud identity providers with phased cutover, device trust, and application compatibility handling.', features: ['Credential modernization roadmap', 'Cloud identity passthrough', 'Device trust enrollment', 'App protocol gaps analysis', 'Cutover rehearsal gates', 'Rollback to hybrid AD fallback'], benefits: ['Reduce password-based attacks', 'Accelerate identity cloud adoption', 'Maintain app access during cutover', 'Protect legacy compatibility'], pricing: {basic: '$249/mo', pro: '$899/mo', enterprise: 'Custom'}, contactInfo: {website: '/services/it-ad-passwordless-migration', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'}, icon: '🔑', href: '/services/it-ad-passwordless-migration', popular: false, category: 'it', industry: 'Identity & Access', stage: 'published' },
-  { id: 'it-edge-networking-tail', title: 'Edge Networking & Branch Tail Automation', description: 'Automates branch edge connectivity, SD-WAN policy, local breakouts, and centralized monitoring while keeping security and traffic visibility consistent across sites.', features: ['SD-WAN policy templates', 'Local breakout controls', 'Branch health telemetry', 'Failover automation', 'Centralized policy manager', 'Security enforcement at edge'], benefits: ['Improve branch latency', 'Reduce VPN choke points', 'Maintain consistent device posture', 'Simplify multi-site changes'], pricing: {basic: '$199/mo', pro: '$749/mo', enterprise: 'Custom'}, contactInfo: {website: '/services/it-edge-networking-tail', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'}, icon: '🌐', href: '/services/it-edge-networking-tail', popular: false, category: 'it', industry: 'Networking', stage: 'published' },
-  { id: 'it-endpoint-usb-external-device-control', title: 'Endpoint USB & External Device Control', description: 'Enforces device attach policies across workstations and laptops by class, user role, and risk signal with audit-ready evidence and safe-allow workflows.', features: ['Device class allow/deny rules', 'User role exceptions', 'Risk-based inspection', 'Safe carriage options', 'Audit evidence exporter', 'Endpoint policy analytics'], benefits: ['Reduce data exfil from removable media', 'Simplify policy exceptions', 'Produce device access evidence', 'Maintain user productivity'], pricing: {basic: '$99/mo', pro: '$349/mo', enterprise: '$1,099/mo'}, contactInfo: {website: '/services/it-endpoint-usb-external-device-control', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'}, icon: '🔌', href: '/services/it-endpoint-usb-external-device-control', popular: false, category: 'it', industry: 'Endpoint Security', stage: 'published' },
-  { id: 'it-printer-multi-function-lifecycle', title: 'Printer & Multi-Function Device Lifecycle Automation', description: 'Manages discovery, driver standards, supply levels, cost tracking, and refresh timing for print and multi-function fleets with minimal IT overhead.', features: ['Fleet discovery and profiling', 'Driver standard enforcement', 'Supply level automation', 'Cost-per-page reporting', 'Refresh lifecycle planning', 'Vendor management integration'], benefits: ['Lower print-related support load', 'Reduce consumables surprise', 'Standardize device firmware', 'Track print spend by department'], pricing: {basic: '$79/mo', pro: '$279/mo', enterprise: '$899/mo'}, contactInfo: {website: '/services/it-printer-multi-function-lifecycle', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'}, icon: '🖨️', href: '/services/it-printer-multi-function-lifecycle', popular: false, category: 'it', industry: 'Device Operations', stage: 'published' },
-  { id: 'it-secure-email-relay-migration', title: 'Secure Email Relay & Gateway Migration', description: 'Plans and executes email gateway transitions and secure relay integrations with DKIM/DMARC/SPF validation, routing tests, and continuity checks.', features: ['Gateway migration timeline', 'Mail flow continuity tests', 'Authentication validation suite', 'Routing policy checks', 'Mail trace and replay support', 'Back-office MTA integration'], benefits: ['Protect outbound mail reputation', 'Reduce delivery failures', 'Complete email hardening work', 'Support multi-domain migrations'], pricing: {basic: '$149/mo', pro: '$499/mo', enterprise: 'Custom'}, contactInfo: {website: '/services/it-secure-email-relay-migration', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'}, icon: '📨', href: '/services/it-secure-email-relay-migration', popular: false, category: 'it', industry: 'Messaging', stage: 'published' }
+import { Service } from './serviceTypes';
+
+export const wave296AiServices: Service[] = [
+  {
+    id: 'ai-4801',
+    name: 'AI Revenue Operations Assistant',
+    slug: 'ai-revenue-operations-assistant',
+    category: 'ai',
+    tags: ['ai', 'revenue', 'revops', 'billing', 'collections'],
+    short: 'Automates revenue operations workflows, dunning, invoicing follow-up, and collections.',
+    full: 'Our AI Revenue Operations Assistant automates billing follow-up, dunning, payment follow-up, and collections workflows. It learns from payment behavior, prioritizes outreach by revenue impact, and coordinates with billing systems and CRM schedules. The assistant reduces manual AR work, improves cash conversion cycles, and surfaces revenue risks earlier. It connects with invoice platforms, payment processors, and calendar calendars to turn revenue ops into a continuous, predictable system.',
+    features: ['Intelligent dunning and reminder sequencing','Payment behavior-based prioritization','CRM and billing system integration','Revenue risk escalation'],
+    benefits: ['Faster collections','Lower manual follow-up load','Better cash flow visibility','Stronger customer follow-up discipline'],
+    pricing: { starter: '$599/mo', pro: '$999/mo', enterprise: 'Custom' },
+    rating: 0,
+    reviews: 0,
+    industries: ['SaaS', 'Technology', 'Finance'],
+    stage: 'ga',
+    target: 'RevOps managers and finance ops leads'
+  },
+  {
+    id: 'ai-4802',
+    name: 'AI Partner Co-Sell Assistant',
+    slug: 'ai-partner-co-sell-assistant',
+    category: 'ai',
+    tags: ['ai', 'partner', 'co-sell', 'channel', 'sales'],
+    short: 'Co-ordinates partner co-sell motions with deal registration, handoffs, and follow-up tracking.',
+    full: 'The AI Partner Co-Sell Assistant structures partner-led sales motions by tracking deal registrations, partner introductions, handoffs, and follow-up tasks. It suggests partner matches for opportunities, records partner contributions, and maintains accurate co-sell attribution across the pipeline. The assistant reduces partner channel leakage and improves trust with resellers, ISVs, and alliance teams by making shared deals feel coordinated and credited.',
+    features: ['Deal registration tracking','Partner matching and introduction suggestions','Co-sell attribution and reporting','Follow-up task automation'],
+    benefits: ['Stronger partner relationships','Clearer deal attribution','Reduced channel conflict','More repeatable co-sell motion'],
+    pricing: { starter: '$699/mo', pro: '$1,199/mo', enterprise: 'Custom' },
+    rating: 0,
+    reviews: 0,
+    industries: ['SaaS', 'Technology', 'Marketing'],
+    stage: 'ga',
+    target: 'Channel sales managers and ecosystem teams'
+  },
+  {
+    id: 'ai-4803',
+    name: 'AI Procurement Cost Optimizer',
+    slug: 'ai-procurement-cost-optimizer',
+    category: 'ai',
+    tags: ['ai', 'procurement', 'cost', 'vendor', 'savings'],
+    short: 'Identifies procurement savings, vendor consolidation opportunities, and contract renewal risks.',
+    full: 'The AI Procurement Cost Optimizer scans purchase data, vendor contracts, renewal calendars, and pricing benchmarks to reveal savings opportunities. It flags duplicate vendors, pricing anomalies, early renewal risks, and quotations below market rates. The assistant recommends consolidation paths, negotiation angles, and supplier alternatives while keeping compliance and audit requirements intact.',
+    features: ['Vendor consolidation analysis','Contract renewal and anomaly detection','Benchmarking and savings recommendations','Compliance-aware reporting'],
+    benefits: ['Lower procurement costs','Cleaner vendor portfolio','Fewer renewal surprises','Better negotiation posture'],
+    pricing: { starter: '$699/mo', pro: '$1,199/mo', enterprise: 'Custom' },
+    rating: 0,
+    reviews: 0,
+    industries: ['Finance', 'Manufacturing', 'Technology'],
+    stage: 'ga',
+    target: 'Procurement managers and finance controllers'
+  },
+  {
+    id: 'ai-4804',
+    name: 'AI Field Service Scheduler',
+    slug: 'ai-field-service-scheduler',
+    category: 'ai',
+    tags: ['ai', 'field service', 'dispatch', 'schedule', 'technician'],
+    short: 'Schedules field technicians with territory, skills, SLA, and route-aware dispatch intelligence.',
+    full: 'The AI Field Service Scheduler plans technician assignments from territory constraints, skill requirements, SLA windows, traffic patterns, and customer location preferences. It produces dispatch schedules, ETAs, and exception alerts while minimizing travel time and missed appointments. The assistant supports change notifications and rescheduling, and integrates with ERP, CRM, and mobile field tooling.',
+    features: ['Skill-aware technician matching','Territory and SLA aware scheduling','Travel time minimization','Exception and change notification handling'],
+    benefits: ['Higher SLA compliance','Reduced technician idle time','Fewer missed appointments','Clearer customer communication'],
+    pricing: { starter: '$599/mo', pro: '$999/mo', enterprise: 'Custom' },
+    rating: 0,
+    reviews: 0,
+    industries: ['Manufacturing', 'Healthcare', 'Technology'],
+    stage: 'ga',
+    target: 'Field service managers and operations leads'
+  },
+  {
+    id: 'ai-4805',
+    name: 'AI Observability Correlation Engine',
+    slug: 'ai-observability-correlation-engine',
+    category: 'ai',
+    tags: ['ai', 'observability', 'monitoring', 'alerts', 'incident'],
+    short: 'Correlates logs, metrics, and traces into actionable observability signals and incident hypotheses.',
+    full: 'The AI Observability Correlation Engine joins logs, metrics, traces, and change events into correlated incident hypotheses. It reduces alert noise by clustering related signals, identifying root cause candidates, and recommending runbooks. The engine learns from incident histories and improves signal quality over time, helping on-call teams resolve production issues faster while avoiding paged fatigue.',
+    features: ['Cross-signal correlation','Noise reduction and alert clustering','Root cause hypothesis generation','Runbook recommendation and history learning'],
+    benefits: ['Faster incident resolution','Lower alert fatigue','Cleaner on-call workflows','Stronger production reliability'],
+    pricing: { starter: '$699/mo', pro: '$1,199/mo', enterprise: 'Custom' },
+    rating: 0,
+    reviews: 0,
+    industries: ['Technology', 'Finance', 'SaaS'],
+    stage: 'ga',
+    target: 'SRE and observability managers'
+  },
+  {
+    id: 'ai-4806',
+    name: 'AI Supply Chain Risk Monitor',
+    slug: 'ai-supply-chain-risk-monitor',
+    category: 'ai',
+    tags: ['ai', 'supply chain', 'risk', 'logistics', 'resilience'],
+    short: 'Monitors supplier, logistics, and geopolitical risks with early warning signals for supply chains.',
+    full: 'The AI Supply Chain Risk Monitor ingests supplier data, logistics trackers, weather feeds, geopolitical alerts, and inventory schedules to predict disruption windows. It assigns risk scores by component, lane, and supplier and recommends buffer, alternate source, or expedite actions. The assistant turns reactive supply chain firefighting into proactive risk management.',
+    features: ['Multi-source risk ingestion','Supplier and lane scoring','Expedite and alternate-source recommendations','Executive readiness reporting'],
+    benefits: ['Fewer stockouts','Better supplier continuity','More proactive leadership decisions','Stronger supply resilience'],
+    pricing: { starter: '$799/mo', pro: '$1,399/mo', enterprise: 'Custom' },
+    rating: 0,
+    reviews: 0,
+    industries: ['Manufacturing', 'Finance', 'Technology'],
+    stage: 'ga',
+    target: 'Supply chain directors and operations risk managers'
+  },
+  {
+    id: 'ai-4807',
+    name: 'AI Workplace Automation Discovery Assistant',
+    slug: 'ai-workplace-automation-discovery-assistant',
+    category: 'ai',
+    tags: ['ai', 'workplace', 'automation', 'intake', 'workflow'],
+    short: 'Captures employee automation ideas, inspects feasibility, and turns requests into proto-workflows.',
+    full: 'The AI Workplace Automation Discovery Assistant provides an internal channel where employees submit workflow pain points, automation ideas, and productivity complaints. It evaluates feasibility, overlap with existing flows, expected ROI, and implementation complexity before surfacing approved candidates for engineering or low-code development. The assistant builds a living, governed pipeline of internal innovation requests.',
+    features: ['Employee idea intake with classification','Feasibility and overlap analysis','ROI and complexity estimation','Governed pipeline handoff to builders'],
+    benefits: ['More innovation surface area','Better prioritization of automation work','Shared visibility into workplace pain','Cleaner intake from business teams'],
+    pricing: { starter: '$499/mo', pro: '$899/mo', enterprise: 'Custom' },
+    rating: 0,
+    reviews: 0,
+    industries: ['Technology', 'Finance', 'Healthcare'],
+    stage: 'ga',
+    target: 'Digital workplace managers and internal IT teams'
+  },
+  {
+    id: 'ai-4808',
+    name: 'AI Talent Marketplace Recommender',
+    slug: 'ai-talent-marketplace-recommender',
+    category: 'ai',
+    tags: ['ai', 'talent', 'marketplace', 'staffing', 'project'],
+    short: 'Matches internal or freelance talent to projects with skill, availability, and growth fit.',
+    full: 'The AI Talent Marketplace Recommender matches employees, contractors, or freelance talent to project openings with skill fit, availability history, location, growth goals, and performance data. It reduces bench time, speeds up staffing decisions, and improves retention by aligning assignments with career trajectories. The assistant works with HR systems, project management tools, and staffing budgets to make team formation faster and fairer.',
+    features: ['Skill and availability fit scoring','Internal and external talent pools','Retention-aware assignment recommendations','Budget and utilization reporting'],
+    benefits: ['Faster staffing decisions','Lower bench costs','Better growth alignment','Stronger project fit'],
+    pricing: { starter: '$699/mo', pro: '$1,199/mo', enterprise: 'Custom' },
+    rating: 0,
+    reviews: 0,
+    industries: ['Technology', 'HR', 'Finance'],
+    stage: 'ga',
+    target: 'Staffing leads, PMO, and HR operations'
+  }
 ];
-export const wave296AiServices = [
-  { id: 'ai-knowledge-graph-query-assistant', title: 'Knowledge Graph Query Assistant', description: 'Lets teams query internal knowledge, documents, and tickets with graph-aware retrieval and explanations instead of keyword search.', features: ['Entity relationship retrieval', 'Natural language graph queries', 'Explanation trails', 'Schema-aware search', 'Internal doc connector', 'Answer verification scoring'], benefits: ['Find insights faster with context', 'Reduce duplicate research', 'Explain reasoning traces', 'Connect scattered data assets'], pricing: {basic: '$149/mo', pro: '$499/mo', enterprise: 'Custom'}, contactInfo: {website: '/services/ai-knowledge-graph-query-assistant', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'}, icon: '🕸️', href: '/services/ai-knowledge-graph-query-assistant', popular: false, category: 'ai', industry: 'Search', stage: 'published' },
-  { id: 'ai-voice-command-operations', title: 'Voice Command Operations Copilot', description: 'Allows operators and field technicians to run workflows, query systems, and report status with hands-free voice commands and confirmation traces.', features: ['Operational command vocabularies', 'Confirmation and rollback prompts', 'Scene-aware workflow selection', 'Offline command fallback', 'Command audit log', 'Multi-language support'], benefits: ['Cut input friction in ops', 'Reduce hands-on-keyboard needs', 'Track operator commands', 'Speed incident response'], pricing: {basic: '$99/mo', pro: '$349/mo', enterprise: '$1,099/mo'}, contactInfo: {website: '/services/ai-voice-command-operations', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'}, icon: '🎙️', href: '/services/ai-voice-command-operations', popular: false, category: 'ai', industry: 'Productivity', stage: 'published' },
-  { id: 'ai-video-summarization-dashboard', title: 'AI Video Summarization & Highlights', description: 'Extracts highlights, chapters, transcripts, and action items from instructional, security, and meeting videos for fast human review.', features: ['Automatic chapter generation', 'Highlight extraction', 'Speaker diarization', 'Timestamped action items', 'Sharing-ready summary cards', 'Long-video batching'], benefits: ['Review footage faster', 'Reduce repetitive triage', 'Share corrections faster', 'Track meeting outputs'], pricing: {basic: '$79/mo', pro: '$249/mo', enterprise: '$799/mo'}, contactInfo: {website: '/services/ai-video-summarization-dashboard', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'}, icon: '🎬', href: '/services/ai-video-summarization-dashboard', popular: false, category: 'ai', industry: 'Media', stage: 'published' }
-];
-export const wave296SecurityServices = [
-  { id: 'security-policy-drift-auditor', title: 'Security Policy Drift Auditor', description: 'Continuously compares applied security policies against approved baselines across cloud, identity, endpoints, and network to find silent policy breakdowns.', features: ['Baseline policy comparison', 'Silent drift detection', 'Remediation priority scoring', 'Evidence export for auditors', 'Policy ownership tracking', 'Multi-source reconciliation'], benefits: ['Find hidden policy breakdowns', 'Reduce audit findings', 'Maintain approved policy posture', 'Streamline compliance reviews'], pricing: {basic: '$149/mo', pro: '$449/mo', enterprise: 'Custom'}, contactInfo: {website: '/services/security-policy-drift-auditor', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'}, icon: '🧭', href: '/services/security-policy-drift-auditor', popular: false, category: 'security', industry: 'Governance', stage: 'published' },
-  { id: 'security-insider-threat-pattern-analytics', title: 'Insider Threat Pattern Analytics', description: 'Uses behavior baselining, access anomalies, and peer context to surface insider risk early while preserving privacy and operational trust.', features: ['Baseline behavior modeling', 'Access anomaly detection', 'Peer group context', 'Policy exception awareness', 'Privacy-preserving scoring', 'Case management export'], benefits: ['Detect insider risk faster', 'Reduce false positive fatigue', 'Maintain employee trust', 'Deliver actionable cases'], pricing: {basic: '$199/mo', pro: '$699/mo', enterprise: 'Custom'}, contactInfo: {website: '/services/security-insider-threat-pattern-analytics', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'}, icon: '🧩', href: '/services/security-insider-threat-pattern-analytics', popular: false, category: 'security', industry: 'Insider Risk', stage: 'published' },
-  { id: 'security-red-team-automation-scheduler', title: 'Red Team Automation Scheduler', description: 'Plans and runs controlled red-team simulation exercises with safer scope controls, evidence capture, and lesson exports for maturity improvement.', features: ['Exercise scenario scheduling', 'Scope and time controls', 'Evidence and finding export', 'Team assignment and roles', 'Improvement tracker', 'Vulnerability recheck queue'], benefits: ['Improve security maturity', 'Train teams safely', 'Track recurring outcomes', 'Reduce manual red-team ops'], pricing: {basic: '$149/mo', pro: '$499/mo', enterprise: '$1,599/mo'}, contactInfo: {website: '/services/security-red-team-automation-scheduler', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'}, icon: '🎯', href: '/services/security-red-team-automation-scheduler', popular: false, category: 'security', industry: 'Red Team', stage: 'published' }
-];
-export const wave296CloudServices = [
-  { id: 'cloud-proxy-reverse-proxy-automation', title: 'Proxy & Reverse-Proxy Automation for Cloud Services', description: 'Automates ingress and API gateway rules for cloud workloads with routing, health checks, header policies, and geo-control templates.', features: ['Ingress policy templates', 'Health-aware routing', 'Header and token rules', 'Geo-control routing', 'Certificate automation', 'Audit-ready change logs'], benefits: ['Reduce ingress change effort', 'Keep API access safe', 'Improve regional resilience', 'Accelerate cloud onboarding'], pricing: {basic: '$149/mo', pro: '$449/mo', enterprise: 'Custom'}, contactInfo: {website: '/services/cloud-proxy-reverse-proxy-automation', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'}, icon: '🚦', href: '/services/cloud-proxy-reverse-proxy-automation', popular: false, category: 'cloud', industry: 'Networking', stage: 'published' },
-  { id: 'cloud-authorization-centralized-iam-fabric', title: 'Cloud Authorization Centralized IAM Fabric', description: 'Unifies cloud IAM across vendors with role harmonization, permission analytics, cross-cloud trust policies, and recomendaible least-privilege transitions.', features: ['Role mapping across clouds', 'Permission analytics', 'Trust policy orchestration', 'Least-privilege transitions', 'Signal-based access control', 'Audit trail export'], benefits: ['Reduce duplicate IAM config', 'Improve multi-cloud control', 'Lower permission overprovision', 'Produce audit evidence'], pricing: {basic: '$249/mo', pro: '$799/mo', enterprise: 'Custom'}, contactInfo: {website: '/services/cloud-authorization-centralized-iam-fabric', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'}, icon: '🧩', href: '/services/cloud-authorization-centralized-iam-fabric', popular: false, category: 'cloud', industry: 'IAM', stage: 'published' },
-  { id: 'cloud-storage-lifecycle-cost-saver', title: 'Cloud Storage Lifecycle Cost Saver', description: 'Manages object storage transitions, expired object cleanup, and tier placement rules across cloud buckets while preserving retention policy requirements.', features: ['Tier transition automation', 'Expired object cleanup', 'Retention policy preservation', 'Cross-bucket rule templates', 'Usage attribution', 'Cost attribution dashboards'], benefits: ['Cut storage spend', 'Keep required retention intact', 'Reduce stale storage risk', 'Track storage by team'], pricing: {basic: '$99/mo', pro: '$349/mo', enterprise: '$1,099/mo'}, contactInfo: {website: '/services/cloud-storage-lifecycle-cost-saver', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'}, icon: '🗄️', href: '/services/cloud-storage-lifecycle-cost-saver', popular: false, category: 'cloud', industry: 'Storage', stage: 'published' }
-];
-export const wave296DataServices = [
-  { id: 'data-query-usage-pii-guard', title: 'Query Usage & PII Exposure Guard', description: 'Watches analytics, reporting, and AI queries for PII usage, abnormal query patterns, and policy violations before data leaves secure systems.', features: ['Query pattern analysis', 'PII column detection', 'Abnormal access signals', 'Policy violation blocking', 'Redaction suggestion engine', 'Audit evidence exporter'], benefits: ['Reduce PII exposure in analytics', 'Maintain data handling rules', 'Protect customer records', 'Produce compliance evidence'], pricing: {basic: '$149/mo', pro: '$499/mo', enterprise: 'Custom'}, contactInfo: {website: '/services/data-query-usage-pii-guard', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'}, icon: '🔎', href: '/services/data-query-usage-pii-guard', popular: false, category: 'data', industry: 'Privacy', stage: 'published' },
-  { id: 'data-change-capture-trail-normalizer', title: 'Change Capture Trail Normalizer', description: 'Normalizes database change streams, Kafka topics, and CDC logs into consistent event trails for auditing, analytics, and downstream consumer accuracy.', features: ['Stream schema normalization', 'CDC log standardization', 'Event replay and repair', 'Late-arrival handling', 'Consumer drift detection', 'Trail validation checks'], benefits: ['Improve analytics trust', 'Reduce consumer errors', 'Strengthen audit trails', 'Lower event-integrity risk'], pricing: {basic: '$149/mo', pro: '$49999/mo', enterprise: '$1,499/mo'}, contactInfo: {website: '/services/data-change-capture-trail-normalizer', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'}, icon: '🧵', href: '/services/data-change-capture-trail-normalizer', popular: false, category: 'data', industry: 'Streaming', stage: 'published' },
-  { id: 'data-governance-policy-workbench', title: 'Data Governance Policy Workbench', description: 'Provides a unified place for stewards to publish classification rules, retention policies, and access expectations with validation and publishing checkpoints.', features: ['Policy drafting and editing', 'Validation tests before publish', 'Rule owner routing', 'Retention policies', 'Access expectation definitions', 'Change review evidence'], benefits: ['Reduce governance chaos', 'Speed rule publishing', 'Lower dispute costs', 'Connect data to owners'], pricing: {basic: '$149/mo', pro: '$499/mo', enterprise: 'Custom'}, contactInfo: {website: '/services/data-governance-policy-workbench', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'}, icon: '⚖️', href: '/services/data-governance-policy-workbench', popular: false, category: 'data', industry: 'Governance', stage: 'published' }
-];
-export const wave296AutomationServices = [
-  { id: 'automation-incident-postmortem-automation', title: 'Incident Postmortem Automation', description: 'Transforms incident timelines, tickets, and chat threads into structured postmortem documents with owners, remediation steps, and preventive controls.', features: ['Timeline reconstruction', 'Ticket and chat parsing', 'Remediation extraction', 'Preventive control suggestions', 'Document publishing workflow', 'Postmortem analytics'], benefits: ['Reduce postmortem effort', 'Standardize improvement actions', 'Maintain incident memory', 'Improve follow-through'], pricing: {basic: '$99/mo', pro: '$349/mo', enterprise: '$999/mo'}, contactInfo: {website: '/services/automation-incident-postmortem-automation', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'}, icon: '🛠️', href: '/services/automation-incident-postmortem-automation', popular: false, category: 'automation', industry: 'Incident Response', stage: 'published' },
-  { id: 'automation-customer-onboarding-journey', title: 'Customer Onboarding Journey Automation', description: 'Automates onboarding milestones, task assignment, notification routing, and documentation handoff while tracking completion rates by client segment.', features: ['Milestone templates', 'Task assignment by role', 'Notification routing', 'Feedback capture', 'Completion analytics', 'Document handoff automation'], benefits: ['Reduce manual onboarding', 'Track completion by segment', 'Deliver predictable first experience', 'Scale onboarding efficiently'], pricing: {basic: '$79/mo', pro: '$279/mo', enterprise: '$899/mo'}, contactInfo: {website: '/services/automation-customer-onboarding-journey', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'}, icon: '🚀', href: '/services/automation-customer-onboarding-journey', popular: false, category: 'automation', industry: 'Customer Success', stage: 'published' },
-  { id: 'automation-expense-audit-automation', title: 'Expense Audit & Compliance Automation', description: 'Reads receipt, card, and invoice streams to detect policy violations, duplicates, fraud signals, and approval gaps before finance closes the month.', features: ['Receipt parsing', 'Policy rule matching', 'Duplicate detection', 'Fraud signal labeling', 'Approval gap alerts', 'Finance export reports'], benefits: ['Reduce audit effort', 'Detect misuse faster', 'Speed month-end close', 'Cut finance review cycles'], pricing: {basic: '$149/mo', pro: '$449/mo', enterprise: 'Custom'}, contactInfo: {website: '/services/automation-expense-audit-automation', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'}, icon: '💰', href: '/services/automation-expense-audit-automation', popular: false, category: 'automation', industry: 'Finance', stage: 'published' }
-];
-export const wave296MicroSaasServices = [
-  { id: 'micro-saas-ai-link-shortener-analytics', title: 'Micro-SaaS AI Link Shortener + Analytics', description: 'Shortens and tracks links with campaign grouping, geographic insight, device breakdown, and fraud-aware previewing for marketers and founders.', features: ['Campaign grouping', 'Geographic insight', 'Device breakdown', 'Fraud-aware previewing', 'QR export', 'Retargeting-friendly params'], benefits: ['Understand link engagement', 'Reduce click waste', 'Share cleaner campaign links', 'Track attribution faster'], pricing: {basic: '$29/mo', pro: '$89/mo', enterprise: '$299/mo'}, contactInfo: {website: '/services/micro-saas-ai-link-shortener-analytics', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'}, icon: '🔗', href: '/services/micro-saas-ai-link-shortener-analytics', popular: false, category: 'micro-saas', industry: 'Marketing', stage: 'published' },
-  { id: 'micro-saas-ai-competitor-price-monitor', title: 'Micro-SaaS Competitor Price Monitor', description: 'Monitors competitor pricing, bundle changes, and public page updates then alerts founders with evidence-backed pricing recommendations and deal retention flags.', features: ['Price change alerts', 'Bundle comparison views', 'Public page diff tracking', 'Recommendation engine', 'Deal retention flags', 'CSV/API export'], benefits: ['React to market pricing', 'Reduce churn from competitors', 'Support pricing review', 'Get evidence-backed options'], pricing: {basic: '$49/mo', pro: '$149/mo', enterprise: '$499/mo'}, contactInfo: {website: '/services/micro-saas-ai-competitor-price-monitor', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'}, icon: '🏷️', href: '/services/micro-saas-ai-competitor-price-monitor', popular: false, category: 'micro-saas', industry: 'SaaS Growth', stage: 'published' },
-  { id: 'micro-saas-ai-facebook-posts-generator', title: 'Micro-SaaS AI Facebook Posts Generator', description: 'Creates brand-aligned Facebook posts in batches with hooks, variants, hashtag sets, and compliance checks for agencies and founders on tight content calendars.', features: ['Batch generation modes', 'Hook and CTA variants', 'Hashtag set generation', 'Brand compliance scoring', 'Calendar import', 'Approval workflow output'], benefits: ['Produce content faster', 'Maintain brand tone', 'Reduce compliance mistakes', 'Support weekly planning cycles'], pricing: {basic: '$29/mo', pro: '$89/mo', enterprise: '$299/mo'}, contactInfo: {website: '/services/micro-saas-ai-facebook-posts-generator', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'}, icon: '📘', href: '/services/micro-saas-ai-facebook-posts-generator', popular: false, category: 'micro-saas', industry: 'Social Content', stage: 'published' },
-  { id: 'micro-saas-ai-tenant-onboarding-automation', title: 'Micro-SaaS Tenant Onboarding Automation', description: 'Automates tenant provisioning, training material assignments, access policies, and success milestones for SaaS landlords and platform operators.', features: ['Tenant provisioning', 'Training assignments', 'Access policy templates', 'Success milestone tracking', 'Usage guardrails', 'Renewal visibility'], benefits: ['Reduce onboarding ops', 'Keep tenant policies consistent', 'Support new tenants faster', 'Reduce launch mistakes'], pricing: {basic: '$39/mo', pro: '$129/mo', enterprise: '$449/mo'}, contactInfo: {website: '/services/micro-saas-ai-tenant-onboarding-automation', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950'}, icon: '🏢', href: '/services/micro-saas-ai-tenant-onboarding-automation', popular: false, category: 'micro-saas', industry: 'Plumbing', stage: 'published' }
-];
-export const wave296Services = {} as any;
