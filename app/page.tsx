@@ -569,6 +569,37 @@ export default function HomePage() {
       </section>
 
       {/* ── Service Match Quiz — Interactive AI Tool ── */}
+      <section className="py-12 bg-gradient-to-b from-slate-950 via-slate-900/40 to-slate-950">
+        <div className="container-page">
+          <div className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-4 py-1.5 mb-4">
+              <span className="text-xs">🆕</span>
+              <span className="text-xs text-emerald-300 font-medium">Recommended Services</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-emerald-400 via-green-400 to-emerald-300 bg-clip-text text-transparent">High-Impact Options to Explore Now</span>
+            </h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">Selected from our latest catalog wave — built for measurable outcomes in reliability, cost, and speed.</p>
+          </div>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {[
+              { title: 'AI Computer Vision Quality Inspection', slug: '/services/ai-computer-vision-quality-inspection', emoji: '👁️', color: 'from-blue-500 to-cyan-500' },
+              { title: 'AI Knowledge Base & RAG Platform', slug: '/services/ai-knowledge-base-rag-platform', emoji: '📚', color: 'from-green-500 to-emerald-500' },
+              { title: 'Cyber Incident Response Retainer', slug: '/services/cyber-incident-response-retainer', emoji: '🛡️', color: 'from-red-500 to-orange-500' },
+              { title: 'Cloud Cost Optimization Platform', slug: '/services/cloud-cost-optimization-platform', emoji: '☁️', color: 'from-sky-400 to-blue-600' },
+              { title: 'Managed Observability 24/7', slug: '/services/managed-observability-247', emoji: '📡', color: 'from-cyan-500 to-blue-500' },
+            ].map((item) => (
+              <Link key={item.slug} href={item.slug} className={`rounded-2xl p-5 border bg-slate-900/70 hover:border-white/30 transition-all group`}>
+                <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center text-2xl shadow-lg mb-3 group-hover:scale-110 transition-transform`}>{item.emoji}</div>
+                <div className="text-sm font-semibold text-white leading-snug line-clamp-2 group-hover:text-purple-300">{item.title}</div>
+                <div className="text-[11px] text-purple-300 font-semibold mt-2">View details →</div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Service Match Quiz — Interactive AI Tool ── */}
       <ServiceMatchQuiz />
       
       {/* ── How It Works ── */}
@@ -881,25 +912,25 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                title: '5 Proven AI Automation Strategies for Enterprise Workflow Optimization',
-                date: '2026-04-28',
-                excerpt: 'Discover five battle-tested AI automation patterns that cut operational overhead and accelerate enterprise workflow throughput — with real-world implementation examples.',
-                slug: '/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization/',
+                title: 'AI Agentic Workflow Automation: Reduce Manual Work Hours by 70%',
+                date: '2026-07-05',
+                excerpt: 'Deploy autonomous AI agents for support, invoicing, follow-ups, CRM updates, and reporting with natural-language workflows.',
+                slug: '/blog/ai-agentic-workflow-automation-reduce-manual-work-hours/',
                 emoji: '🤖',
               },
               {
-                title: 'AI Agent Frameworks for Business Automation',
-                date: '2026-04-21',
-                excerpt: 'A deep dive into AI agent architectures: LLM orchestration, tool use, memory, and multi-agent coordination — what actually works in production.',
-                slug: '/blog/ai-agent-frameworks-for-business-automation/',
-                emoji: '🧠',
+                title: 'AI Computer Vision for Quality Inspection in Production and Logistics',
+                date: '2026-07-05',
+                excerpt: 'Use vision AI to detect defects, verify assemblies, and measure consistency in production with camera and MES integrations.',
+                slug: '/blog/ai-computer-vision-quality-inspection/',
+                emoji: '👁️',
               },
               {
-                title: 'AI FinOps: Cloud Cost Optimization with Machine Learning',
-                date: '2026-04-14',
-                excerpt: 'Machine learning approaches to FinOps: workload-aware rightsizing, anomaly detection for runaway cloud bills, and predictive capacity planning.',
-                slug: '/blog/ai-finops-and-cloud-cost-optimization-with-machine-learning/',
-                emoji: '💡',
+                title: 'Cyber Incident Response Retainer: Be Ready Before the Breach',
+                date: '2026-07-05',
+                excerpt: 'Guaranteed rapid incident response with playbooks, forensics, recovery support, and post-incident hardening.',
+                slug: '/blog/cyber-incident-response-retainer-ready-before-breach/',
+                emoji: '🛡️',
               },
             ].map((post: any) => (
               <Link key={post.slug} href={post.slug} className="glass-card flex flex-col gap-3 p-6 hover:border-purple-500/40 group">
