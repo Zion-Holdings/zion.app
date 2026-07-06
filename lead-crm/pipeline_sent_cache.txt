@@ -994,8 +994,8 @@ whitelabel@trubotai.com|2026-07-06T17:06:07.596891Z
 whitelabel@vomyra.com|2026-07-06T17:06:07.596891Z
 will.cesar@dealwise.com.br|2026-07-06T17:06:07.596891Z
 willemjan.schutte@return.energy|2026-07-06T17:06:07.596891Z
-joao.marcos@awazai.intercom-mail.com|2026-07-06T18:40:00.642228Z
-nrozengarten@nebius.com|2026-07-06T18:40:00.642228Z
+joao.marcos@awazai.intercom-mail.com|2026-07-06T20:31:46.691598Z
+nrozengarten@nebius.com|2026-07-06T20:31:46.691598Z
 john.bricknell@techsub.it|2026-07-06T18:40:00.642228Z
 jhlinka@cds.net|2026-07-06T18:40:00.642228Z
 joao.marcos@awazai.intercom-mail.com|2026-07-06T18:58:34.698700Z
