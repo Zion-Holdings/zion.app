@@ -10,24 +10,20 @@ Provides a single `chat(messages, provider='auto')` interface that supports:
 - HuggingFace Inference API — limited free
 - Cerebras, Cloudflare Workers, DeepSeek, Mistral, Together, Cohere, OpenRouter
 - Ollama (local) — ultimate fallback
+- Nous — configured via ~/.hermes/auth.json or env
 
 Usage:
   from llm_client import chat
   result = chat([{"role":"user","content":"Hello"}], provider="auto")
   # → {"content": str, "provider": str, "model": str}
-
-Environment variables required:
-  OPENAI_API_KEY, ANTHROPIC_API_KEY, GROQ_API_KEY, GEMINI_API_KEY, etc.
-  OLLAMA_BASE_URL (default: http://localhost:11434)
-  OLLAMA_MODEL (default: qwen3:0.6b)
 """
-
 import os
 import json
 import re
 import time
 import urllib.request
 import urllib.parse
+from pathlib import Path
 from typing import List, Dict, Any, Optional
 
 # ── Auto-load .env from project root (zion.app/.env) ───────────────────────
@@ -55,6 +51,9 @@ MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")
 TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY")
 COHERE_API_KEY = os.getenv("COHERE_API_KEY")
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+NOUS_BASE_URL = os.getenv("NOUS_BASE_URL", "https://inference-api.nousresearch.com/v1")
+NOUS_TOKEN = os.getenv("NOUS_TOKEN") or os.getenv("HERMES_LLM_TOKEN")
+NOUS_MODEL = os.getenv("NOUS_MODEL", "stepfun/step-3.7-flash:free")
 
 OLLAMA_BASE_URL = os.getenv("OLLAMA_BASE_URL", "http://localhost:11434").rstrip("/")
 OLLAMA_MODEL = os.getenv("OLLAMA_MODEL", "qwen3:0.6b")
@@ -125,6 +124,10 @@ def chat(
         except Exception as e:
             print(f"[LLM] {p.__name__} failed: {e}")
     # 2) free cloud tier
+    try:
+        return _call_nous(messages, temperature)
+    except Exception as e:
+        print(f"[LLM] nous failed: {e}")
     try:
         return _call_freecloud(messages, temperature)
     except Exception as e:
@@ -470,6 +473,29 @@ def _call_openrouter(messages, temperature):
         "provider": "openrouter",
         "model": data.get("model", OPENROUTER_MODEL),
     }
+
+
+def _call_nous(messages, temperature):
+    token = NOUS_TOKEN
+    if not token:
+        try:
+            auth_path = Path.home() / '.hermes' / 'auth.json'
+            provider = json.loads(auth_path.read_text(encoding='utf-8')).get('providers', {}).get('nous', {})
+            token = provider.get('access_token') or os.getenv('HERMES_LLM_TOKEN', '')
+        except Exception:
+            token = ''
+    if not token:
+        raise RuntimeError("NOUS_TOKEN not set")
+    body = {"model": NOUS_MODEL, "messages": messages, "temperature": temperature}
+    req = urllib.request.Request(
+        NOUS_BASE_URL.rstrip("/") + "/chat/completions",
+        data=json.dumps(body).encode(),
+        headers={"Authorization": f"Bearer {NOUS_TOKEN}", "Content-Type": "application/json"},
+        method="POST",
+    )
+    with urllib.request.urlopen(req, timeout=20) as resp:
+        data = json.loads(resp.read())
+    return {"content": data["choices"][0]["message"]["content"], "provider": "nous", "model": data.get("model", NOUS_MODEL)}
 
 
 def _call_ollama(messages, temperature):

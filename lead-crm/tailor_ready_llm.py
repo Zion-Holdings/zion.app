@@ -50,39 +50,13 @@ def _dedupe_subject_style(subject, seen_subjects):
     return subject
 
 def _call_llm_chat(messages, model=None, temperature=0.35, max_tokens=500):
-    """Try Nous/OpenAI-compatible LLM, return content or empty string on failure."""
     try:
-        import urllib.request
-        auth_path = Path.home() / '.hermes' / 'auth.json'
-        provider = json.loads(auth_path.read_text(encoding='utf-8')).get('providers', {}).get('nous', {})
-        url = provider.get('inference_base_url') or os.environ.get('HERMES_LLM_BASE_URL', '')
-        token = provider.get('access_token') or os.environ.get('GOG_TOKEN', '')
-        if not url or not token:
-            return {'content': '', 'provider': 'error', 'model': '', 'error': 'missing_url_or_token'}
-        headers = {'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'}
-        url = url.rstrip('/') + '/chat/completions'
-        model = model or os.environ.get('HERMES_LLM_MODEL', 'stepfun/step-3.7-flash:free')
-        body = {
-            'model': model,
-            'messages': messages,
-            'temperature': temperature,
-            'max_tokens': min(int(os.environ.get('HERMES_LLM_MAX_TOKENS', '512')), max_tokens),
-        }
-        last_err = None
-        for attempt in range(1, 4):
-            try:
-                req = urllib.request.Request(url, data=json.dumps(body).encode('utf-8'), headers=headers, method='POST')
-                raw = urllib.request.urlopen(req, timeout=25).read()
-                data = json.loads(raw)
-                msg = (data.get('choices') or [{}])[0].get('message') or {}
-                content = msg.get('content') or msg.get('reasoning') or ''
-                return {'content': content.strip() if isinstance(content, str) else '', 'provider': provider.get('client_id') or 'openai_compat', 'model': data.get('model') or model}
-            except Exception as e:
-                last_err = str(e)
-                if attempt < 3:
-                    time.sleep(2 * attempt)
-                    continue
-        return {'content': '', 'provider': 'error', 'model': '', 'error': last_err or 'llm_failed'}
+        sys.path.insert(0, str(REPO / 'lib'))
+        from lib.llm_client import chat
+        res = chat(messages, provider="auto", temperature=temperature)
+        if isinstance(res, dict):
+            return {'content': (res.get('content') or '').strip(), 'provider': res.get('provider', 'llm'), 'model': res.get('model', '')}
+        return {'content': '', 'provider': 'error', 'model': '', 'error': 'invalid_llm_result'}
     except Exception as e:
         return {'content': '', 'provider': 'error', 'model': '', 'error': str(e)}
 
