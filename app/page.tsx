@@ -586,7 +586,7 @@ export default function HomePage() {
               { title: 'AI Computer Vision Quality Inspection', slug: '/services/ai-computer-vision-quality-inspection', emoji: '👁️', color: 'from-blue-500 to-cyan-500' },
               { title: 'AI Knowledge Base & RAG Platform', slug: '/services/ai-knowledge-base-rag-platform', emoji: '📚', color: 'from-green-500 to-emerald-500' },
               { title: 'Cyber Incident Response Retainer', slug: '/services/cyber-incident-response-retainer', emoji: '🛡️', color: 'from-red-500 to-orange-500' },
-              { title: 'Cloud Cost Optimization Platform', slug: '/services/cloud-cost-optimization-platform', emoji: '☁️', color: 'from-sky-400 to-blue-600' },
+              { title: 'Cloud Cost Optimization Platform', slug: '/services/cloud-cost-optimization-service', emoji: '☁️', color: 'from-sky-400 to-blue-600' },
               { title: 'Managed Observability 24/7', slug: '/services/managed-observability-247', emoji: '📡', color: 'from-cyan-500 to-blue-500' },
             ].map((item) => (
               <Link key={item.slug} href={item.slug} className={`rounded-2xl p-5 border bg-slate-900/70 hover:border-white/30 transition-all group`}>
