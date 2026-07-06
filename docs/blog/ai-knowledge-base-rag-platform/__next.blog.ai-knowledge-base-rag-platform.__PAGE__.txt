@@ -1,5 +1,5 @@
 1:"$Sreact.fragment"
-2:I[97367,["/_next/static/chunks/3s8be-uf-juyk.js","/_next/static/chunks/0-gal_8rifesv.js"],"OutletBoundary"]
+2:I[484,[],"OutletBoundary"]
 3:"$Sreact.suspense"
 0:{"rsc":["$","$1","c",{"children":[["$","div",null,{"className":"container-page py-20","children":[["$","h1",null,{"className":"text-3xl font-bold mb-4","children":"ai-knowledge-base-rag-platform"}],["$","p",null,{"className":"text-slate-400","children":"Coming soon."}]]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"zion-tech-group-v1"}
 4:null
