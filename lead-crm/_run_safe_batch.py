@@ -115,7 +115,11 @@ while len(batch) < 50 and checked < len(recs):
         continue
     if is_system(to):
         continue
-    if not os.environ.get('OUTREACH_RECOVERY_MODE') and to in sent_cache:
+    if not os.environ.get('OUTREACH_RECOVERY_MODE') and to.lower() in sent_cache:
+        continue
+    if any(to.lower().endswith('@' + s) or ('@' + s) in to.lower() for s in sys_domains):
+        continue
+    if any(to.lower().endswith('.' + s) for s in sys_domains):
         continue
     name = pick_name(r)
     extra = (r.get('body') or '').strip()

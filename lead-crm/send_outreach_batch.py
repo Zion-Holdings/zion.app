@@ -174,9 +174,9 @@ def _call_openai_compat_chat(messages, temperature=0.3):
 
 
 def main():
-    batch_path = sys.argv[1] if len(sys.argv) > 1 else str(REPO / 'lead-crm' / 'outreach_batch_current.json')
+    batch_path = sys.argv[1] if len(sys.argv) > 1 else str(REPO / 'lead-crm' / 'outreach_ready_canonical.json')
     if not Path(batch_path).exists():
-        print(json.dumps({'error': f'batch_missing:{batch_path}', 'used_default': 'outreach_batch_current.json'}, ensure_ascii=False))
+        print(json.dumps({'error': f'batch_missing:{batch_path}', 'used_default': 'outreach_ready_canonical.json'}, ensure_ascii=False))
         return
 
     obj = json.loads(Path(batch_path).read_text())
