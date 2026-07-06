@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import Link from 'next/link';
 /* eslint-disable */
-import Metadata from 'next';
+import type { Metadata } from 'next';
 
 type ReadinessCheck = {
   name: string;

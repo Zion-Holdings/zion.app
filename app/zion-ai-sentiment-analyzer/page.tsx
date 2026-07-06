@@ -1,6 +1,6 @@
 import Link from 'next/link';
 /* eslint-disable */
-import Metadata from 'next';
+import type { Metadata } from 'next';
 
 export const metadata = {
   title: 'Zion AI Sentiment Analyzer | Zion Tech Group',

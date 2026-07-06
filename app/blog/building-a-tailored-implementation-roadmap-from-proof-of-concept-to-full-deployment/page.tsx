@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
+import Breadcrumb from '@/app/components/Breadcrumb';
 import Link from 'next/link';
 import ArticleStructuredData from '@/app/components/ArticleStructuredData';
 export const metadata: Metadata = {
   title: 'Building a Tailored Implementation Roadmap: From Proof of Concept to Full Deployment',
   description: 'Define success criteria, proof of concept best practices, pilot scaling, full deployment planning, and change management. Milestone templates and common pitfalls.',
-  type: 'article',
   url: 'https://ziontechgroup.com/blog/building-a-tailored-implementation-roadmap-from-proof-of-concept-to-full-deployment'
 };
 export default function Page() {

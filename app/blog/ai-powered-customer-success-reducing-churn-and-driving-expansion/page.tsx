@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
+import Breadcrumb from '@/app/components/Breadcrumb';
 import Link from 'next/link';
 import ArticleStructuredData from '@/app/components/ArticleStructuredData';
 export const metadata: Metadata = {
   title: 'AI-Powered Customer Success: Reducing Churn and Driving Expansion',
   description: 'Churn prediction, health scoring, next-best-action, and expansion opportunity identification. Turning customer data into retention and growth.',
-  type: 'article',
   url: 'https://ziontechgroup.com/blog/ai-powered-customer-success-reducing-churn-and-driving-expansion'
 };
 export default function Page() {

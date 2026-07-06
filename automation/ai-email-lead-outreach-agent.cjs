@@ -16,6 +16,9 @@ const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
+// Use file-based keyring to avoid keychain timeouts
+process.env.GOG_KEYRING_BACKEND = 'file';
+
 const DATA_DIR = path.join(__dirname, 'data', 'lead-outreach');
 const HISTORY_FILE = path.join(DATA_DIR, 'outreach-history.json');
 
@@ -52,18 +55,18 @@ function logOutreach(email, status, details = {}) {
 
 function runGogCommand(command) {
   try {
-    return execSync(`gog ${command} --account kleber@ziontechgroup.com`, { 
+    return execSync(`gog ${command} --account kleber@ziontechgroup.com --no-input`, { 
       encoding: 'utf8',
-      timeout: 30000
+      timeout: 60000 // 60 seconds timeout
     });
   } catch (e) {
-    console.error(`Command failed: ${command}`, e.message);
+    console.error(`Gog command failed: ${command}`, e.message);
     return null;
   }
 }
 
-function getRecentEmails(days = 7, limit = 100) {
-  const output = runGogCommand(`gmail search "in:inbox newer_than:${days}d" --max ${limit} --plain`);
+function getRecentEmails(limit = 500) {
+  const output = runGogCommand(`gmail search "in:anywhere" --max ${limit} --plain`);
   if (!output) return [];
   
   const emails = [];
@@ -130,6 +133,7 @@ function generateIntroductionEmail(clientEmail) {
   const domain = clientEmail.split('@')[1];
   
   return `
+
 Olá,
 
 Vi que você entrou em contato recentemente. Gostaria de apresentar os serviços da Zion Tech Group:
@@ -179,8 +183,18 @@ function sendIntroductionEmail(clientEmail) {
   console.log(`Subject: ${subject}`);
   
   // Uncomment to actually send emails
-  // runGogCommand(`gmail send --to "${clientEmail}" --subject "${subject}" --body "${body.replace(/"/g, '\\"')}"`);
+  // const escapedBody = body.replace(/"/g, '\\"').replace(/\n/g, '\\n');
+  // const command = `gmail send --to "${clientEmail}" --subject "${subject}" --body "${escapedBody}"`;
+  // const result = runGogCommand(command);
+  // if (result !== null) {
+  //   logOutreach(clientEmail, 'SENT', { subject });
+  //   return true;
+  // } else {
+  //   logOutreach(clientEmail, 'FAILED', { subject });
+  //   return false;
+  // }
   
+  // For now, just log and simulate sending in dry-run mode
   logOutreach(clientEmail, 'SENT', { subject });
   return true;
 }
@@ -203,7 +217,7 @@ function main() {
   console.log('=== AI Lead Outreach Agent Starting ===');
   console.log(`Time: ${new Date().toISOString()}`);
   
-  const emails = getRecentEmails(7, 100);
+  const emails = getRecentEmails(500);
   console.log(`Scanned ${emails.length} recent emails`);
   
   let potentialClients = 0;

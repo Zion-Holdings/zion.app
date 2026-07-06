@@ -1,5 +1,5 @@
 
-import Metadata from 'next';
+import type { Metadata } from 'next';
 
 export const siteMetadata: Metadata = {
   title: 'Zion Tech Group - Advanced AI & IT Solutions',

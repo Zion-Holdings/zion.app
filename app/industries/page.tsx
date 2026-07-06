@@ -1,6 +1,6 @@
 import Link from 'next/link';
 /* eslint-disable */
-import Metadata from 'next';
+import type { Metadata } from 'next';
 import Breadcrumb from '../components/Breadcrumb';
 import { HelpCircle } from 'lucide-react';
 

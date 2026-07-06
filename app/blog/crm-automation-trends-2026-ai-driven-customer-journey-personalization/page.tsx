@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
+import Breadcrumb from '@/app/components/Breadcrumb';
 import Link from 'next/link';
 import ArticleStructuredData from '@/app/components/ArticleStructuredData';
 export const metadata: Metadata = {
   title: 'CRM Automation Trends 2026: AI-Driven Customer Journey Personalization',
   description: 'AI-powered lead scoring, predictive customer analytics, automated outreach, personalization at scale, and CRM integration with marketing and support.',
-  type: 'article',
   url: 'https://ziontechgroup.com/blog/crm-automation-trends-2026-ai-driven-customer-journey-personalization'
 };
 export default function Page() {

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 /* eslint-disable */
-import Metadata from 'next';
+import type { Metadata } from 'next';
 import { ArrowRight, Users, Zap, Shield, Target, BookOpen } from 'lucide-react';
 import Breadcrumb from '../components/Breadcrumb';
 

@@ -1,6 +1,6 @@
 import ProductPageLayout from '../components/ProductPageLayout';
 /* eslint-disable */
-import Metadata from 'next';
+import type { Metadata } from 'next';
 
 export const metadata = {
   title: 'AI Space Technology Pro | Zion Tech Group',

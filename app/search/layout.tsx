@@ -1,6 +1,6 @@
 import React from 'react';
 /* eslint-disable */
-import Metadata from 'next';
+import type { Metadata } from 'next';
 
 export const metadata = {
   title: 'Search | Zion Tech Group',

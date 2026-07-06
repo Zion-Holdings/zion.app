@@ -1,6 +1,6 @@
 import MarketPriceTracker from '../components/MarketPriceTracker';
 /* eslint-disable */
-import Metadata from 'next';
+import type { Metadata } from 'next';
 
 export const metadata = {
   title: 'Market Prices | Zion Tech Group',

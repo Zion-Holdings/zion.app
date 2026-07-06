@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
+import Breadcrumb from '@/app/components/Breadcrumb';
 import Link from 'next/link';
 import ArticleStructuredData from '@/app/components/ArticleStructuredData';
 export const metadata: Metadata = {
   title: 'Securing AI Models: A Practical Guide to Threat Mitigation in Production',
   description: 'Adversarial attacks, data poisoning, model extraction, secure deployment patterns, and monitoring for AI systems. NIST and OWASP references for production security.',
-  type: 'article',
   url: 'https://ziontechgroup.com/blog/securing-ai-models-a-practical-guide-to-threat-mitigation-in-production'
 };
 export default function Page() {

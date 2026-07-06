@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
+import Breadcrumb from '@/app/components/Breadcrumb';
 import Link from 'next/link';
 import ArticleStructuredData from '@/app/components/ArticleStructuredData';
 export const metadata: Metadata = {
   title: 'DevOps Automation with AI: Reducing Deployment Failures by 60%',
   description: 'AI-powered code review, intelligent test generation, automated incident detection, predictive deployment risk scoring, and self-healing infrastructure.',
-  type: 'article',
   url: 'https://ziontechgroup.com/blog/devops-automation-with-ai-reducing-deployment-failures-by-60'
 };
 export default function Page() {

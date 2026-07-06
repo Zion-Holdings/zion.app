@@ -1,6 +1,6 @@
 import Link from 'next/link';
 /* eslint-disable */
-import Metadata from 'next';
+import type { Metadata } from 'next';
 import { ArrowRight, Zap, Globe, Heart, BookOpen, Users, Mail } from 'lucide-react';
 import Breadcrumb from '../components/Breadcrumb';
 import { CONTACT_INFO } from '../utils/seoConstants';

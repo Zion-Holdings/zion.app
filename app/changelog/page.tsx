@@ -1,5 +1,5 @@
 /* eslint-disable */
-import Metadata from 'next';
+import type { Metadata } from 'next';
 
 type ChangelogEntry = {
   date: string;

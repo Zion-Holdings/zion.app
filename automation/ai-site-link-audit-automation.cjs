@@ -22,77 +22,32 @@ const CONFIG = {
   appDir: path.join(process.cwd(), 'app'),
   baseUrl: process.env.BASE_URL || 'https://ziontechgroup.com',
   excludePaths: ['#', 'mailto:', 'tel:', 'javascript:', 'data:', 'blob:', '/_next/', '/static/', '/icon', '/manifest', '/og-'],
-  crawlPaths: [
-    '/',
-    '/about',
-    '/services',
-    '/products',
-    '/ai-services',
-    '/solutions',
-    '/solutions/beauty-wellness',
-    '/solutions/legal-professional-services',
-    '/solutions/education-training',
-    '/solutions/packaging-materials',
-    '/solutions/warehousing-3pl',
-    '/solutions/asset-management',
-    '/solutions/financial-services',
-    '/solutions/insurance',
-    '/solutions/healthcare',
-    '/solutions/government-and-public-sector',
-    '/solutions/banking-and-capital-markets',
-    '/solutions/telecommunications',
-    '/solutions/technology-and-saas',
-    '/solutions/ecommerce-retail',
-    '/solutions/manufacturing-industrial',
-    '/solutions/logistics-supply-chain',
-    '/solutions/media-entertainment',
-    '/solutions/real-estate-property',
-    '/solutions/agriculture-agritech',
-    '/solutions/automotive-mobility',
-    '/solutions/energy-utilities',
-    '/solutions/renewable-energy-cleantech',
-    '/solutions/mining-natural-resources',
-    '/solutions/food-beverage',
-    '/solutions/veterinary-animal-health',
-    '/solutions/home-services-contractors',
-    '/solutions/hospitality-travel',
-    '/solutions/non-profit-social-impact',
-    '/solutions/construction-engineering',
-    '/solutions/pharmaceuticals-life-sciences',
-    '/solutions/aerospace-defense',
-    '/solutions/maritime-shipping',
-    '/solutions/oil-gas',
-    '/solutions/environmental-waste-management',
-    '/solutions/gaming-esports',
-    '/solutions/sports-fitness',
-    '/solutions/consumer-goods-cpg',
-    '/solutions/transportation-fleet',
-    '/solutions/marketing-advertising',
-    '/solutions/chemicals-materials',
-    '/solutions/electronics-semiconductors',
-    '/solutions/space-satellite',
-    '/solutions/textiles-apparel',
-    '/solutions/accounting-tax-services',
-    '/solutions/wholesale-distribution',
-    '/solutions/restaurants-food-service',
-    '/contact',
-    '/case-studies',
-    '/blog',
-    '/industries',
-    '/community',
-    '/automation',
-    '/consultation',
-    '/micro-saas-services',
-    '/pricing',
-    '/search',
-    '/careers',
-    '/terms',
-    '/privacy',
-    '/innovation-bundles',
-    '/workflow-automation',
-    '/partners',
-    '/site-map',
-  ],
+  crawlPaths: (() => {
+    const base = [
+      '/','/about','/services','/products','/ai-services','/solutions',
+      '/contact','/case-studies','/blog','/industries','/community',
+      '/automation','/consultation','/micro-saas-services','/pricing',
+      '/search','/careers','/terms','/privacy','/innovation-bundles',
+      '/workflow-automation','/partners','/site-map'
+    ];
+    try {
+      const appDir = path.join(process.cwd(), 'app');
+      const entries = fs.readdirSync(appDir, { withFileTypes: true });
+      for (const e of entries) {
+        if (!e.isDirectory() || e.name.startsWith('.') || e.name === 'not-found' || e.name === 'api') continue;
+        const pp = path.join(appDir, e.name, 'page.tsx');
+        if (fs.existsSync(pp)) base.push('/' + e.name);
+        const sub = path.join(appDir, e.name);
+        if (!fs.existsSync(sub) || !fs.statSync(sub).isDirectory()) continue;
+        for (const sube of fs.readdirSync(sub, { withFileTypes: true })) {
+          if (!sube.isDirectory() || sube.name.startsWith('.')) continue;
+          const ssp = path.join(sub, sube.name, 'page.tsx');
+          if (fs.existsSync(ssp)) base.push('/' + e.name + '/' + sube.name);
+        }
+      }
+    } catch {}
+    return Array.from(new Set(base));
+  })(),
   requestTimeout: 10000,
   concurrency: 5,
 };
