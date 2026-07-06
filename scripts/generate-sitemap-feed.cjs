@@ -26,23 +26,26 @@ function collectLeafPages() {
 
   // 2) Known top-level pages (index.html)
   const topDirs = new Set([
-    '5g-solutions','about','academy','agents','agents-monitoring','ai',
-    'ai-services','api','blockchain-services','blockchain-solutions','blog',
-    'careers','case-studies','client-portal','cloud-infrastructure',
-    'cloud-services','compliance-automation','community','contact',
-    'cookies','docs','ecommerce','education','energy','faq','finance',
-    'government','healthcare','insurance','logistics','manufacturing',
-    'media','pricing','pricing-calculator','portal','privacy','products',
-    'proposal-generator','proposals','public-sector','status','terms',
-    'testimonials','tools','training','transportation','utilities'
+    'about','academy','agents-monitoring','ai','ai-services','api',
+    'blockchain-services','blockchain-solutions','blog','careers','case-studies',
+    'client-portal','cloud-infrastructure','cloud-services','compliance-automation',
+    'community','contact','cookies','docs','ecommerce','education','energy','faq','finance',
+    'government','healthcare','insurance','logistics','manufacturing','media',
+    'pricing','pricing-calculator','portal','privacy','products','proposal-generator',
+    'proposals','public-sector','status','terms','testimonials','tools','training',
+    'transportation','utilities','services','free-tools-hub','free-resources','ai-lab'
   ]);
-  const topFiles = ['index.html','404.html'];
+  const skipDirs = new Set([
+    '404','_not-found','_next','api','data','Drop Box','0','__next'
+  ]);
+  const topFiles = ['index.html'];
   for (const f of topFiles) {
     const p = path.join(outDir, f);
-    if (fs.existsSync(p)) pages.push({ url: `${SITE_URL}/${f === 'index.html' ? '' : f.replace(/\.html$/, '')}`, lastmod: fs.statSync(p).mtime });
+    if (fs.existsSync(p)) pages.push({ url: `${SITE_URL}/${f === 'index.html' ? '' : f.replace(/\\.html$/, '')}`, lastmod: fs.statSync(p).mtime });
   }
   for (const entry of fs.readdirSync(outDir, { withFileTypes: true })) {
     if (!entry.isDirectory()) continue;
+    if (skipDirs.has(entry.name)) continue;
     const idx = path.join(outDir, entry.name, 'index.html');
     if (fs.existsSync(idx)) pages.push({ url: `${SITE_URL}/${entry.name}/`, lastmod: fs.statSync(idx).mtime });
   }
@@ -133,7 +136,15 @@ function pageInfo(url, lastmod) {
 
 function buildSitemap(pages) {
   const today = new Date().toISOString().split('T')[0];
-  const rows = pages.map(p => pageInfo(p.url, p.lastmod));
+  const seen = new Set();
+  const rows = [];
+  for (const p of pages) {
+    const url = typeof p === 'string' ? p : p.url;
+    if (seen.has(url)) continue;
+    seen.add(url);
+    const lastmod = typeof p === 'string' ? new Date(today) : p.lastmod;
+    rows.push(pageInfo(url, lastmod));
+  }
   return [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
