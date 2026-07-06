@@ -983,5 +983,30 @@
     "id": "19f2e2bb9b38bd0f",
     "email": "partners@cassavaai.com",
     "query": "in:anywhere subject:AI services"
+  },
+  {
+    "id": "19f398fc9640d8cb",
+    "email": "rsantosm@sp.gov.br",
+    "query": "in:anywhere \"Zion Tech Group\""
+  },
+  {
+    "id": "19f398fc005d085f",
+    "email": "compras@prodemge.gov.br",
+    "query": "in:anywhere \"Zion Tech Group\""
+  },
+  {
+    "id": "19f398fbaae983cf",
+    "email": "grazielamendes@pbh.gov.br",
+    "query": "in:anywhere \"Zion Tech Group\""
+  },
+  {
+    "id": "19f398fb1f3e0a9c",
+    "email": "mauro.faria@fgv.br",
+    "query": "in:anywhere \"Zion Tech Group\""
+  },
+  {
+    "id": "19f398fabad0acd0",
+    "email": "tdamasceno@cge.rj.gov.br",
+    "query": "in:anywhere \"Zion Tech Group\""
   }
 ]
