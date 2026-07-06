@@ -1,0 +1,37 @@
+1:"$Sreact.fragment"
+3:I[484,[],"OutletBoundary"]
+4:"$Sreact.suspense"
+2:T609,<p>keywords:</p>
+<ul>
+<li>"computer vision quality inspection"</li>
+<li>"AI defect detection"</li>
+<li>"vision AI manufacturing"</li>
+<li>"assembly verification AI"</li>
+<li>"MES integration vision AI"</li>
+<li>"logistics vision AI"</li>
+<li>"production inspection automation"</li>
+</ul>
+<p>body: |</p>
+<p>Manual inspection is slow, inconsistent, and expensive. AI computer vision can detect defects, verify assemblies, and measure tolerances faster and more consistently than human review—while logging every finding for traceability.</p>
+<p>Zion Tech Group implements vision AI solutions that integrate with your cameras, PLCs, and MES systems. We start with your highest-return inspection use case, validate accuracy against your quality team, then expand coverage.</p>
+<h3>Capabilities</h3>
+<ul>
+<li>Defect detection and classification</li>
+<li>Assembly verification against specs</li>
+<li>Real-time alerts and dashboarding</li>
+<li>Continuous improvement from operator feedback</li>
+</ul>
+<h3>Business impact</h3>
+<ul>
+<li>Lower defect escapes and rework</li>
+<li>Faster throughput at inspection points</li>
+<li>Consistent reporting for compliance</li>
+</ul>
+<p><a href="/contact">Talk to a solutions engineer</a></p>
+<h3>Related services</h3>
+<ul>
+<li><a href="/services/ai-computer-vision-quality-inspection">AI Computer Vision Quality Inspection</a></li>
+<li><a href="/services/ai-document-processing-ocr">AI Document Processing & OCR</a></li>
+<li><a href="/services/managed-observability-247">Managed Observability 24/7</a></li>
+</ul>0:{"rsc":["$","$1","c",{"children":[["$","article",null,{"className":"container-page py-20","children":[["$","h1",null,{"className":"text-4xl font-bold mb-4 text-white","children":"AI Computer Vision for Quality Inspection in Production and Logistics"}],["$","div",null,{"className":"text-sm text-slate-500 mb-8","children":"Published: 2026-07-05"}],["$","div",null,{"className":"prose prose-invert max-w-none text-slate-300 leading-relaxed","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"zion-tech-group-v1"}
+5:null

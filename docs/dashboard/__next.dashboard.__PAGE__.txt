@@ -1,5 +1,5 @@
 1:"$Sreact.fragment"
-2:I[8610,["8500","static/chunks/8500-fd2dcfc09a359754.js","7682","static/chunks/7682-68ff02e5ef210831.js","5105","static/chunks/app/dashboard/page-a6ec530584d46712.js"],"default"]
+2:I[8610,["8500","static/chunks/8500-fd2dcfc09a359754.js","2894","static/chunks/2894-5243388a49cd03a9.js","5105","static/chunks/app/dashboard/page-a28a32de3859fbb9.js"],"default"]
 3:I[484,[],"OutletBoundary"]
 4:"$Sreact.suspense"
 0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"defaultView":"operations","defaultTab":"fleet"}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"zion-tech-group-v1"}

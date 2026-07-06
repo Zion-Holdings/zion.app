@@ -1,0 +1,37 @@
+1:"$Sreact.fragment"
+3:I[484,[],"OutletBoundary"]
+4:"$Sreact.suspense"
+2:T534,<p>keywords:</p>
+<ul>
+<li>"managed observability"</li>
+<li>"24x7 monitoring"</li>
+<li>"SLO monitoring"</li>
+<li>"distributed tracing"</li>
+<li>"PagerDuty on-call"</li>
+<li>"incident detection"</li>
+<li>"MTTR reduction"</li>
+<li>"site reliability monitoring"</li>
+</ul>
+<p>body: |</p>
+<p>Customer complaints are the worst signal. Modern observability stacks let teams detect issues earlier, understand root cause faster, and own reliability outcomes instead of reacting to social media.</p>
+<p>Zion Tech Group runs managed observability across apps and infrastructure: metrics, logs, traces, SLO-based alerting, PagerDuty or OpsGenie on-call, runbooks, and postmortem support.</p>
+<h3>What changes</h3>
+<ul>
+<li>Fewer customer-facing incidents</li>
+<li>Faster root-cause analysis</li>
+<li>Clear ownership through SLOs and dashboards</li>
+</ul>
+<h3>Best fit</h3>
+<ul>
+<li>SaaS and platform teams</li>
+<li>E-commerce and digital operations</li>
+<li>IT teams without dedicated SRE staffing</li>
+</ul>
+<p><a href="/contact">Get an observability health check</a></p>
+<h3>Related services</h3>
+<ul>
+<li><a href="/services/managed-observability-247">Managed Observability 24/7</a></li>
+<li><a href="/services/siem-as-a-service">SIEM as a Service</a></li>
+<li><a href="/services/devops-automation-consulting">DevOps Automation</a></li>
+</ul>0:{"rsc":["$","$1","c",{"children":[["$","article",null,{"className":"container-page py-20","children":[["$","h1",null,{"className":"text-4xl font-bold mb-4 text-white","children":"Managed Observability 24/7: Detect Issues Before Customers Notice"}],["$","div",null,{"className":"text-sm text-slate-500 mb-8","children":"Published: 2026-07-05"}],["$","div",null,{"className":"prose prose-invert max-w-none text-slate-300 leading-relaxed","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"zion-tech-group-v1"}
+5:null
