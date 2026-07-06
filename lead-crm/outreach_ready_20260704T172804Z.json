@@ -1,0 +1,30 @@
+{
+  "generatedAt": "20260704T172804Z",
+  "sendBlocked": true,
+  "blockReason": "send_blocked_runtime_send_path_requires_live_gmail_execution; build_completed",
+  "batch_file": "lead-crm/outreach_batch_20260704T172804Z.json",
+  "batch_size": 96,
+  "send_status": "send-blocked",
+  "send_count": 0,
+  "sent_message_ids": [],
+  "discoveredNewFromProspector": 0,
+  "miner_run": "web_prospecting_script_missing",
+  "errors": [
+    "web_prospecting.py_missing",
+    "runtime_send_path_unavailable_in_cron_context",
+    "opt-in_consent_flag_present_in_workspace_env=OUTREACH_OPT_IN|LEAD_OUTREACH_OPT_IN"
+  ],
+  "services_referenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge"
+  ],
+  "counts": {
+    "ready_before_dedupe": 97,
+    "dropped_system_or_duplicate": 1,
+    "business_domain_ready": 96
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "batch_file": "lead-crm/outreach_batch_20260704T154847Z.json",
+  "state": "send_blocked",
+  "reason": "gmail_send_auth_unverified_in_cron_run",
+  "opt_in_checked": {
+    "outreach_opt_in": true,
+    "lead_outreach_opt_in": true
+  },
+  "batch_size": 0,
+  "ready_count": 0,
+  "block_reason": "sender_auth_requiring_manual_verification_in_cron_context",
+  "services_referenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge"
+  ],
+  "generated_at": "2026-07-04T15:51:36.417762+00:00",
+  "note": "Send remains blocked this cron run pending verified Gmail API auth. Preserved candidate batch exists at outreach_batch_20260704T154847Z.json for manual/next-run validation."
+}

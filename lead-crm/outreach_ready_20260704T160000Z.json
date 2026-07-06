@@ -1,0 +1,17 @@
+{
+  "batch_file": "lead-crm/outreach_batch_20260704T155715Z.json",
+  "state": "send_blocked",
+  "send_blocked": true,
+  "block_reason": "sender_script_missing",
+  "script": "lead-crm/send_outreach_batch.py",
+  "send_count": 0,
+  "errors": [
+    "web_prospecting.py missing",
+    "lead-crm/outreach_run_2026-06-30.json missing",
+    "lead-crm/send_outreach_batch.py missing"
+  ],
+  "vs_batch_state_mismatch": true,
+  "vs_batch_state": "send_ready",
+  "generated_at": "2026-07-04T16:00:00.000000+00:00",
+  "note": "Latest batch indicates send_ready, but required sender script is absent. This validator blocks send until script present and rerun completes."
+}

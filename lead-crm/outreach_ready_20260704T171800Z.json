@@ -1,0 +1,25 @@
+{
+  "generatedAt": "20260704T171800Z",
+  "sendBlocked": true,
+  "blockReason": "no_explicit_opt_in_consent_flag_in_workspace_config_for_this_automation",
+  "batch_file": "lead-crm/outreach_batch_20260704T171800Z.json",
+  "batch_size": 0,
+  "send_status": "blocked",
+  "send_count": 0,
+  "sent_message_ids": [],
+  "discoveredNewFromProspector": 0,
+  "miner_run": "web_prospecting_script_missing",
+  "errors": [
+    "web_prospecting.py_missing",
+    "opt-in_consent_flag_absent:OUTREACH_OPT_IN",
+    "opt-in_consent_flag_absent:LEAD_OUTREACH_OPT_IN"
+  ],
+  "services_referenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge"
+  ]
+}

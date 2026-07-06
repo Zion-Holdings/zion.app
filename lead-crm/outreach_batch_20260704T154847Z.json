@@ -1,0 +1,9 @@
+{
+  "batch": [],
+  "candidate_pool_file": "lead-crm/all-leads.json",
+  "dedupe_and_filters_applied": true,
+  "system_addresses_excluded": true,
+  "business_domain_preference_applied": true,
+  "services_taxonomy_note": "IT focus with new service categories from app/data/new_services_it.json and referenced it services from servicesData.ts",
+  "generated_at": "2026-07-05T20:53:12.309453+00:00"
+}

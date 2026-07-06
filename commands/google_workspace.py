@@ -10,7 +10,7 @@ FIXED for proper conversation threading
 import urllib.request, urllib.parse, json, datetime, sys, time, base64
 from pathlib import Path
 
-WORKSPACE = Path('/root/.openclaw/workspace')
+WORKSPACE = Path('/data/data/com.termux/files/home/.openclaw/workspace')
 TOKENS_FILE = WORKSPACE / 'gog_tokens.json'
 
 def load_gog_tokens():

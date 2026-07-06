@@ -1,0 +1,16 @@
+{
+  "generatedAt": "20260704T165406Z",
+  "sendBlocked": true,
+  "blockReason": "no_new_recipients_after_completed_run",
+  "servicesReferenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge"
+  ],
+  "count": 0,
+  "candidates": [],
+  "batch": []
+}

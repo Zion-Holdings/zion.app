@@ -1,0 +1,11 @@
+{
+  "status": "send_blocked_no_user_confirm_in_cron",
+  "send_count": 0,
+  "batch_file": "/data/data/com.termux/files/home/zion-support.github.io/lead-crm/outreach_batch_20260704T171142Z.json",
+  "batch_size": 103,
+  "errors": [
+    "Skipping send as this is an autonomous cron run; no user confirmation despite OUTREACH_OPT_IN present."
+  ],
+  "candidateCount": 103,
+  "discoveredNewFromProspector": 0
+}

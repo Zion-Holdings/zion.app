@@ -1,0 +1,632 @@
+[
+  {
+    "id": "19f2e2caad875009",
+    "email": "kleber@ziontechgroup.com",
+    "query": "in:anywhere subject:parceria"
+  },
+  {
+    "id": "19f2861aad704ba7",
+    "email": "carlos@ziontechgroup.com",
+    "query": "in:anywhere subject:proposta"
+  },
+  {
+    "id": "19f2861aad704ba7",
+    "email": "commercial@ziontechgroup.com",
+    "query": "in:anywhere subject:proposta"
+  },
+  {
+    "id": "19f2861aad704ba7",
+    "email": "sdm@ziontechgroup.com",
+    "query": "in:anywhere subject:proposta"
+  },
+  {
+    "id": "19f2843f631621bc",
+    "email": "comercial@somaticabrasil.com",
+    "query": "in:anywhere subject:proposta"
+  },
+  {
+    "id": "19f2843f631621bc",
+    "email": "pauloblotto@somaticabrasil.com",
+    "query": "in:anywhere subject:proposta"
+  },
+  {
+    "id": "19f1d20578c4b3d0",
+    "email": "14771@sarah.br",
+    "query": "in:anywhere subject:proposta"
+  },
+  {
+    "id": "19f1b258580da288",
+    "email": "gestaocontratos@ipt.br",
+    "query": "in:anywhere subject:proposta"
+  },
+  {
+    "id": "19f1b10448de28da",
+    "email": "acarlotti@liquigas.com.br",
+    "query": "in:anywhere subject:proposta"
+  },
+  {
+    "id": "19f1b10448de28da",
+    "email": "macarmo@liquigas.com.br",
+    "query": "in:anywhere subject:proposta"
+  },
+  {
+    "id": "19f1b041eed048c3",
+    "email": "postmaster@stategrid.com.br",
+    "query": "in:anywhere subject:proposta"
+  },
+  {
+    "id": "19f1b007ccf77b9b",
+    "email": "mariana.pimentel@ziontechgroup.com",
+    "query": "in:anywhere subject:proposta"
+  },
+  {
+    "id": "19f1b007ccf77b9b",
+    "email": "valdinei.silva@autopass.com.br",
+    "query": "in:anywhere subject:proposta"
+  },
+  {
+    "id": "19f1af50f8085b2b",
+    "email": "felipe.figueiredo@stategrid.com.br",
+    "query": "in:anywhere subject:proposta"
+  },
+  {
+    "id": "19f1a2f6f02c7a6e",
+    "email": "daniele.oliveira@colaborador.inpi.gov.br",
+    "query": "in:anywhere subject:proposta"
+  },
+  {
+    "id": "19f1a2463d182aa3",
+    "email": "guilherme.guimaraes@copagaz.com.br",
+    "query": "in:anywhere subject:proposta"
+  },
+  {
+    "id": "19f1a1effff0d400",
+    "email": "dilog.suag@pg.df.gov.br",
+    "query": "in:anywhere subject:proposta"
+  },
+  {
+    "id": "19f1ea96f114a914",
+    "email": "higor.granero@primecontrol.com.br",
+    "query": "in:anywhere subject:orçamento"
+  },
+  {
+    "id": "19f1d74b075b9553",
+    "email": "almir.nascimento@grupomassa.com.br",
+    "query": "in:anywhere subject:orçamento"
+  },
+  {
+    "id": "19f1b271f5fc7cb7",
+    "email": "crprieto@coderp.sp.gov.br",
+    "query": "in:anywhere subject:orçamento"
+  },
+  {
+    "id": "19f1b228d60a7300",
+    "email": "renan.amorim@cavalera.com.br",
+    "query": "in:anywhere subject:orçamento"
+  },
+  {
+    "id": "19f1b228d60a7300",
+    "email": "ti@cavalera.com.br",
+    "query": "in:anywhere subject:orçamento"
+  },
+  {
+    "id": "19f1b15f1d516d9c",
+    "email": "saude@rioparanaiba.mg.gov.br",
+    "query": "in:anywhere subject:orçamento"
+  },
+  {
+    "id": "19f1b0b5b8ded3f5",
+    "email": "marcio.coutrin@school360.com.br",
+    "query": "in:anywhere subject:orçamento"
+  },
+  {
+    "id": "19f1b03e8a5af420",
+    "email": "marcos.maciel@novaengevix.com.br",
+    "query": "in:anywhere subject:orçamento"
+  },
+  {
+    "id": "19f1aeaec11e4004",
+    "email": "murilo.silvino@camarasjc.sp.gov.br",
+    "query": "in:anywhere subject:orçamento"
+  },
+  {
+    "id": "19f1ab9a621169d1",
+    "email": "celi.vasconcelos@wyntech.inf.br",
+    "query": "in:anywhere subject:orçamento"
+  },
+  {
+    "id": "19f1a422ccb47180",
+    "email": "karine.lima@la.logicalis.com",
+    "query": "in:anywhere subject:orçamento"
+  },
+  {
+    "id": "19f1a39eeb644fc5",
+    "email": "thaisa.lavra@iamspe.sp.gov.br",
+    "query": "in:anywhere subject:orçamento"
+  },
+  {
+    "id": "19f1a35aca793ac5",
+    "email": "alexandre.kusel@blackbullbrasil.com",
+    "query": "in:anywhere subject:orçamento"
+  },
+  {
+    "id": "19f1a32d6ee161a3",
+    "email": "fabio.mesquita@vspsolution.com.br",
+    "query": "in:anywhere subject:orçamento"
+  },
+  {
+    "id": "19f1a2d4c5f0048a",
+    "email": "wagner.dias@logicnet.com.br",
+    "query": "in:anywhere subject:orçamento"
+  },
+  {
+    "id": "19ebb3f20924ea51",
+    "email": "contato@comunicacao.serasaexperian.com.br",
+    "query": "in:anywhere subject:reunião"
+  },
+  {
+    "id": "19ebb3f13d0fd387",
+    "email": "mkt@knl.digital",
+    "query": "in:anywhere subject:reunião"
+  },
+  {
+    "id": "19c28864131426a7",
+    "email": "infra@ingaia.com.br",
+    "query": "in:anywhere subject:reunião"
+  },
+  {
+    "id": "19c10746d3190776",
+    "email": "cassia.barbosa@kenlo.com",
+    "query": "in:anywhere subject:reunião"
+  },
+  {
+    "id": "19df2a74f3fb2ea1",
+    "email": "rogerio.rocha@vbr2.com.br",
+    "query": "in:anywhere subject:diagnóstico"
+  },
+  {
+    "id": "19cddd81dbf4a732",
+    "email": "luiz.campagner@ziontechgroup.com",
+    "query": "in:anywhere subject:diagnóstico"
+  },
+  {
+    "id": "19cddd81dbf4a732",
+    "email": "marketing@addee.com.br",
+    "query": "in:anywhere subject:diagnóstico"
+  },
+  {
+    "id": "19cdae98eb41096e",
+    "email": "tcharles.godoi@ziontechgroup.com",
+    "query": "in:anywhere subject:diagnóstico"
+  },
+  {
+    "id": "19976735b7afab8d",
+    "email": "coface.latinamerica@go.coface.com",
+    "query": "in:anywhere subject:diagnóstico"
+  },
+  {
+    "id": "1995cc95c85bdf10",
+    "email": "alexandre.souza@outmarketing.com.br",
+    "query": "in:anywhere subject:diagnóstico"
+  },
+  {
+    "id": "1980b902c27d6c7c",
+    "email": "tatiana.sciencio@bcrcx.com",
+    "query": "in:anywhere subject:diagnóstico"
+  },
+  {
+    "id": "1958590645153fd3",
+    "email": "paulo.volpis@vetorzero.com.br",
+    "query": "in:anywhere subject:diagnóstico"
+  },
+  {
+    "id": "18bafd870c782928",
+    "email": "ofinirg@gmail.com",
+    "query": "in:anywhere subject:diagnóstico"
+  },
+  {
+    "id": "18bafd029503da5b",
+    "email": "ricardo.cgid@gmail.com",
+    "query": "in:anywhere subject:diagnóstico"
+  },
+  {
+    "id": "19f2e647561a574c",
+    "email": "partners@zendesk.com",
+    "query": "in:anywhere \"Zion Tech\""
+  },
+  {
+    "id": "19f2e893f64ec4d8",
+    "email": "ci_activity@noreply.github.com",
+    "query": "in:anywhere \"AI services\""
+  },
+  {
+    "id": "19f2e893f64ec4d8",
+    "email": "zion-support.github.io@noreply.github.com",
+    "query": "in:anywhere \"AI services\""
+  },
+  {
+    "id": "19f2bddea27159a7",
+    "email": "postmaster@tsit.local",
+    "query": "in:anywhere \"managed services\""
+  },
+  {
+    "id": "19f2bdda3ab6382c",
+    "email": "info@techsub.it",
+    "query": "in:anywhere \"managed services\""
+  },
+  {
+    "id": "19f2e17b286375d0",
+    "email": "np@summithealthit.com",
+    "query": "in:anywhere \"security operations\""
+  },
+  {
+    "id": "19f2a4dc2faa8a31",
+    "email": "ev@lumenbridgeit.com",
+    "query": "in:anywhere \"security operations\""
+  },
+  {
+    "id": "19f2a4db81211bbe",
+    "email": "md@orbitalbackup.com",
+    "query": "in:anywhere \"security operations\""
+  },
+  {
+    "id": "19f1a6e25b03df56",
+    "email": "fabricioecheverria@gmail.com",
+    "query": "in:anywhere \"vendor\" \"software\""
+  },
+  {
+    "id": "19f19e44293bc610",
+    "email": "e-e@mail.beehiiv.com",
+    "query": "in:anywhere \"vendor\" \"software\""
+  },
+  {
+    "id": "19f2f55798b9c846",
+    "email": "postmaster@araico.ai",
+    "query": "in:anywhere subject:parceria"
+  },
+  {
+    "id": "19f2f344d00250a9",
+    "email": "bc@fleetdevice.com",
+    "query": "in:anywhere \"security operations\""
+  },
+  {
+    "id": "19f2f34414382aeb",
+    "email": "ot@streamlineaiinfra.com",
+    "query": "in:anywhere \"security operations\""
+  },
+  {
+    "id": "19f2f3434ba12393",
+    "email": "mb@securemaildefense.com",
+    "query": "in:anywhere \"security operations\""
+  },
+  {
+    "id": "19f30b1a90535767",
+    "email": "rimpy.bawa@techsub.it",
+    "query": "in:anywhere \"AI services\""
+  },
+  {
+    "id": "19f3292e96879006",
+    "email": "quotes@techsub.it",
+    "query": "in:anywhere \"AI services\""
+  },
+  {
+    "id": "19f329585b4781f8",
+    "email": "express@airbnb.com",
+    "query": "in:anywhere \"Zion Tech\""
+  },
+  {
+    "id": "19f327a0d6d7e3a5",
+    "email": "uber@uber.com",
+    "query": "in:anywhere \"Zion Tech\""
+  },
+  {
+    "id": "19f3279fe717adfb",
+    "email": "contato@e.drogaraia.com.br",
+    "query": "in:anywhere \"Zion Tech\""
+  },
+  {
+    "id": "19f3169fdc017c47",
+    "email": "mauricio.visintin@ziontechgroup.com",
+    "query": "in:anywhere \"Zion Tech\""
+  },
+  {
+    "id": "19f3321dfc82e5df",
+    "email": "postmaster@gruve.ai",
+    "query": "in:anywhere subject:parceria"
+  },
+  {
+    "id": "19f23fd9b4e86bcd",
+    "email": "stays@email.stays.net",
+    "query": "in:anywhere subject:automação"
+  },
+  {
+    "id": "19f07e1e4f6af451",
+    "email": "hello@incident-response.io",
+    "query": "in:anywhere subject:incident response"
+  },
+  {
+    "id": "19db90bad3642f46",
+    "email": "edgar.abad@aisworld.com",
+    "query": "in:anywhere subject:incident response"
+  },
+  {
+    "id": "19ac30fc54147662",
+    "email": "hello@mail.cointracker.io",
+    "query": "in:anywhere subject:incident response"
+  },
+  {
+    "id": "1986b72a04b0dc09",
+    "email": "zion.app@noreply.github.com",
+    "query": "in:anywhere subject:incident response"
+  },
+  {
+    "id": "184ca925504846b4",
+    "email": "all@ziontechgroup.com",
+    "query": "in:anywhere subject:incident response"
+  },
+  {
+    "id": "17c053412bf51277",
+    "email": "dharmendarkumar.j@hcl.com",
+    "query": "in:anywhere subject:incident response"
+  },
+  {
+    "id": "17c053412bf51277",
+    "email": "rodney.beebe@hcl.com",
+    "query": "in:anywhere subject:incident response"
+  },
+  {
+    "id": "17c053412bf51277",
+    "email": "joshuaan@hcl.com",
+    "query": "in:anywhere subject:incident response"
+  },
+  {
+    "id": "17c053412bf51277",
+    "email": "shubham.saini@hcl.com",
+    "query": "in:anywhere subject:incident response"
+  },
+  {
+    "id": "17c053412bf51277",
+    "email": "shobhit.aggarwal@hcl.com",
+    "query": "in:anywhere subject:incident response"
+  },
+  {
+    "id": "179ec11fcc05c404",
+    "email": "list@wordfence.com",
+    "query": "in:anywhere subject:incident response"
+  },
+  {
+    "id": "179d860963ac4a70",
+    "email": "tluizteo@its.jnj.com",
+    "query": "in:anywhere subject:incident response"
+  },
+  {
+    "id": "179d860963ac4a70",
+    "email": "phelipe.pomaranz@ziontechgroup.com",
+    "query": "in:anywhere subject:incident response"
+  },
+  {
+    "id": "179d860963ac4a70",
+    "email": "support@ziontechgroup.com",
+    "query": "in:anywhere subject:incident response"
+  },
+  {
+    "id": "179d860963ac4a70",
+    "email": "dhideaki@its.jnj.com",
+    "query": "in:anywhere subject:incident response"
+  },
+  {
+    "id": "19f07831d3a678bd",
+    "email": "dcho@finopsvelocity.com",
+    "query": "in:anywhere subject:finops"
+  },
+  {
+    "id": "19f28fffac768a63",
+    "email": "support@torotms.com",
+    "query": "in:anywhere subject:managed services"
+  },
+  {
+    "id": "19f28fff49f7f366",
+    "email": "help@hingehealth.com",
+    "query": "in:anywhere subject:managed services"
+  },
+  {
+    "id": "19f28ffefe9b7164",
+    "email": "support@upstash.com",
+    "query": "in:anywhere subject:managed services"
+  },
+  {
+    "id": "19f28fae06511248",
+    "email": "marketing@mkt.agilize.com.br",
+    "query": "in:anywhere subject:managed services"
+  },
+  {
+    "id": "19f2837d74c77e7c",
+    "email": "info@discovercybersolutions.com",
+    "query": "in:anywhere subject:managed services"
+  },
+  {
+    "id": "19f2837b9333f4c2",
+    "email": "contact@itservicesdelaware.com",
+    "query": "in:anywhere subject:managed services"
+  },
+  {
+    "id": "19f271d00f0f7cf6",
+    "email": "ops@tier1ops.com",
+    "query": "in:anywhere subject:managed services"
+  },
+  {
+    "id": "19f271cf9b19d387",
+    "email": "info@summitmethods.io",
+    "query": "in:anywhere subject:managed services"
+  },
+  {
+    "id": "19f271cf2757fb24",
+    "email": "admin@redpointmsp.com",
+    "query": "in:anywhere subject:managed services"
+  },
+  {
+    "id": "19f271cecc458e04",
+    "email": "hello@qualisit.co",
+    "query": "in:anywhere subject:managed services"
+  },
+  {
+    "id": "19f271ce8739f295",
+    "email": "contact@pinnaclecloud.io",
+    "query": "in:anywhere subject:managed services"
+  },
+  {
+    "id": "19f2a042f4944556",
+    "email": "carlos.feliciano@tryterracotta.com",
+    "query": "in:anywhere subject:devops"
+  },
+  {
+    "id": "19f2a04222d3b465",
+    "email": "fabian.lindfors@specific.dev",
+    "query": "in:anywhere subject:devops"
+  },
+  {
+    "id": "19f2a041bc30acdf",
+    "email": "nodar.daneliya@shuttle.dev",
+    "query": "in:anywhere subject:devops"
+  },
+  {
+    "id": "19f2a0410adb4d44",
+    "email": "tomas.barreto@okayhq.com",
+    "query": "in:anywhere subject:devops"
+  },
+  {
+    "id": "19f2a0407206f327",
+    "email": "andrios.robert@hoop.dev",
+    "query": "in:anywhere subject:devops"
+  },
+  {
+    "id": "19f2a03fedd45b35",
+    "email": "david.ruescas@sequentech.io",
+    "query": "in:anywhere subject:devops"
+  },
+  {
+    "id": "19f2a03f65f7903c",
+    "email": "eduardo.robles@sequentech.io",
+    "query": "in:anywhere subject:devops"
+  },
+  {
+    "id": "19f2a03ed9cd48e7",
+    "email": "shai.bargil@sequentech.io",
+    "query": "in:anywhere subject:devops"
+  },
+  {
+    "id": "19f2a03e837f6ab5",
+    "email": "alex.polvi@coreos.com",
+    "query": "in:anywhere subject:devops"
+  },
+  {
+    "id": "19f2a03e1dca9f2a",
+    "email": "sjoerd.bazen@return.energy",
+    "query": "in:anywhere subject:devops"
+  },
+  {
+    "id": "19f2a03debb9611a",
+    "email": "daniel.witvoet@return.energy",
+    "query": "in:anywhere subject:devops"
+  },
+  {
+    "id": "19f2a03d576c19e8",
+    "email": "willemjan.schutte@return.energy",
+    "query": "in:anywhere subject:devops"
+  },
+  {
+    "id": "19f2a03d0e220372",
+    "email": "sam.alba@mendral.com",
+    "query": "in:anywhere subject:devops"
+  },
+  {
+    "id": "19f2a03cbc8e636a",
+    "email": "sascha.kuzins@ninite.com",
+    "query": "in:anywhere subject:devops"
+  },
+  {
+    "id": "19f2a03c60308e41",
+    "email": "robin.prothmann@egg-ai.com",
+    "query": "in:anywhere subject:devops"
+  },
+  {
+    "id": "19f2add14804d681",
+    "email": "er@netbridgesase.com",
+    "query": "in:anywhere subject:sase"
+  },
+  {
+    "id": "19f13c448c590d2a",
+    "email": "support@rundoo.ai",
+    "query": "in:anywhere subject:sase"
+  },
+  {
+    "id": "19f07fd81fdb1063",
+    "email": "hello@netfoundry.io",
+    "query": "in:anywhere subject:sase"
+  },
+  {
+    "id": "19f077784c938ad8",
+    "email": "eruiz@netbridgesase.com",
+    "query": "in:anywhere subject:sase"
+  },
+  {
+    "id": "18c630e02a9e74e2",
+    "email": "info@connect.arubanetworks.com",
+    "query": "in:anywhere subject:sase"
+  },
+  {
+    "id": "18c630e02a9e74e2",
+    "email": "kleber@ztg.com.br",
+    "query": "in:anywhere subject:sase"
+  },
+  {
+    "id": "19717d8660e87dd2",
+    "email": "andre@iima.com.br",
+    "query": "in:anywhere subject:low-code"
+  },
+  {
+    "id": "1963eb41d6634c9d",
+    "email": "bruna@iima.com.br",
+    "query": "in:anywhere subject:low-code"
+  },
+  {
+    "id": "195de429484dfe29",
+    "email": "contato@iima.com.br",
+    "query": "in:anywhere subject:low-code"
+  },
+  {
+    "id": "18ea4c8e3cc25542",
+    "email": "mike.a@zohocreator.com",
+    "query": "in:anywhere subject:low-code"
+  },
+  {
+    "id": "17f2c2c1f559b8cc",
+    "email": "replies@oracle-mail.com",
+    "query": "in:anywhere subject:low-code"
+  },
+  {
+    "id": "17b30ef498ae4e45",
+    "email": "news@caspio.com",
+    "query": "in:anywhere subject:low-code"
+  },
+  {
+    "id": "17ae7bc23e161d59",
+    "email": "akanksha.b@vtiger.com",
+    "query": "in:anywhere subject:low-code"
+  },
+  {
+    "id": "19f33e46fa4c767d",
+    "email": "postmaster@jnj.onmicrosoft.com",
+    "query": "in:anywhere \"Zion Tech\""
+  },
+  {
+    "id": "19f33e41447fe60c",
+    "email": "postmaster@hcl.com",
+    "query": "in:anywhere \"Zion Tech\""
+  },
+  {
+    "id": "19f3410b0bf88ebc",
+    "email": "postmaster@trubotai.com",
+    "query": "in:anywhere \"Zion Tech\""
+  }
+]

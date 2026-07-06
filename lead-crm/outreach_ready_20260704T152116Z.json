@@ -1,0 +1,1947 @@
+{
+  "generatedAt": "2026-07-04T15:21:16Z",
+  "count": 253,
+  "sendBlocked": true,
+  "blockReason": "consent_not_present",
+  "discoveredNewFromProspector": 0,
+  "errors": [
+    "web_prospecting.py missing or no new leads"
+  ],
+  "leads": [
+    {
+      "email": "no-reply@updates.coursiv.co",
+      "name": "Coursiv",
+      "subject": "Parceria Zion Tech Group - Automação Inteligente",
+      "date": "2025-12-18 07:43",
+      "snippet": "",
+      "threadId": "19b306a308355bd9",
+      "messageId": "19b306a308355bd9",
+      "score": 1,
+      "template": "cold",
+      "to": "no-reply@updates.coursiv.co",
+      "body": "<p>Prezado,</p>\n<p>Sou Kleber Alcatrão da Zion Tech Group. Oferecemos <strong>automação inteligente com IA</strong>.</p>\n<p><a href=\"https://ziontechgroup.com\">ziontechgroup.com</a> | Whats: +55 11 97614XXXX</p>\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>",
+      "status": "ready",
+      "preparedAt": "2026-06-08T22:52:43.337Z"
+    },
+    {
+      "email": "timedemarketing@resultadosdigitaismail.com.br",
+      "name": "Robinson da RD",
+      "subject": "Parceria Zion Tech Group - Automação Inteligente",
+      "date": "2025-04-15 11:48",
+      "snippet": "",
+      "threadId": "19639476121eef0a",
+      "messageId": "19639476121eef0a",
+      "score": 1,
+      "template": "cold",
+      "to": "timedemarketing@resultadosdigitaismail.com.br",
+      "body": "<p>Prezado,</p>\n<p>Sou Kleber Alcatrão da Zion Tech Group. Oferecemos <strong>automação inteligente com IA</strong>.</p>\n<p><a href=\"https://ziontechgroup.com\">ziontechgroup.com</a> | Whats: +55 11 97614XXXX</p>\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>",
+      "status": "ready",
+      "preparedAt": "2026-06-08T22:52:43.337Z"
+    },
+    {
+      "email": "timedemarketing@resultadosdigitais-mkt.com.br",
+      "name": "Robinson da RD",
+      "subject": "Parceria Zion Tech Group - Automação Inteligente",
+      "date": "2025-04-10 11:00",
+      "snippet": "",
+      "threadId": "1961f5c2f0ebe970",
+      "messageId": "1961f5c2f0ebe970",
+      "score": 1,
+      "template": "cold",
+      "to": "timedemarketing@resultadosdigitais-mkt.com.br",
+      "body": "<p>Prezado,</p>\n<p>Sou Kleber Alcatrão da Zion Tech Group. Oferecemos <strong>automação inteligente com IA</strong>.</p>\n<p><a href=\"https://ziontechgroup.com\">ziontechgroup.com</a> | Whats: +55 11 97614XXXX</p>\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>",
+      "status": "ready",
+      "preparedAt": "2026-06-08T22:52:43.337Z"
+    },
+    {
+      "email": "santosdenovais@xwf.google.com",
+      "name": "Paula Novais",
+      "subject": "Parceria Zion Tech Group - Automação Inteligente",
+      "date": "2025-03-28 02:08",
+      "snippet": "",
+      "threadId": "195cea773bd76f2c",
+      "messageId": "195cea773bd76f2c",
+      "score": 1,
+      "template": "cold",
+      "to": "santosdenovais@xwf.google.com",
+      "body": "<p>Prezado,</p>\n<p>Sou Kleber Alcatrão da Zion Tech Group. Oferecemos <strong>automação inteligente com IA</strong>.</p>\n<p><a href=\"https://ziontechgroup.com\">ziontechgroup.com</a> | Whats: +55 11 97614XXXX</p>\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>",
+      "status": "ready",
+      "preparedAt": "2026-06-08T22:52:43.337Z"
+    },
+    {
+      "email": "partners@cerebras.ai",
+      "name": "Cerebras",
+      "subject": "Partnership - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "ai_infrastructure",
+      "status": "ready",
+      "date": "2026-06-09T15:23:11.660212+00:00",
+      "snippet": "OpenAI API compatible, high throughput inference, free API access available",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "info@yorizon.com",
+      "name": "Yorizon Factory AI",
+      "subject": "Partnership - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "ai_infrastructure",
+      "status": "ready",
+      "date": "2026-06-09T15:23:11.660217+00:00",
+      "snippet": "European GPU infrastructure, GDPR/NIS2/EU AI Act compliant, OpenAI-compatible API",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "support@zenocloud.io",
+      "name": "ZenoCloud",
+      "subject": "Partnership - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "ai_infrastructure",
+      "status": "ready",
+      "date": "2026-06-09T15:23:11.660221+00:00",
+      "snippet": "vLLM, TGI, Triton deployed and managed in India, OpenAI-compatible",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "contact@geodd.io",
+      "name": "Geodd AI",
+      "subject": "Partnership - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "ai_infrastructure",
+      "status": "ready",
+      "date": "2026-06-09T15:23:11.660226+00:00",
+      "snippet": "Hyper-optimized inference stack, open-source models, custom deployments",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@cudocompute.com",
+      "name": "CUDO Compute",
+      "subject": "Partnership - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "gpu_cloud",
+      "status": "ready",
+      "date": "2026-06-09T15:23:11.660234+00:00",
+      "snippet": "Purpose-built H100 clusters, rack design, 24/7 monitoring, contact for pricing",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "sales@genesiscloud.com",
+      "name": "Genesis Cloud",
+      "subject": "Partnership - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "gpu_cloud",
+      "status": "ready",
+      "date": "2026-06-09T15:23:11.660237+00:00",
+      "snippet": "HGX SXM5 form factor, dedicated GPUs, data centers in Norway, France, Spain, Finland, USA, Canada",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "sales@logicoverdrive.com",
+      "name": "LogicOverdrive",
+      "subject": "Partnership - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "gpu_cloud",
+      "status": "ready",
+      "date": "2026-06-09T15:23:11.660245+00:00",
+      "snippet": "Enterprise GPU Cloud, NVIDIA H100 SXM5 80GB, 4 ODC locations (Mumbai, Dubai, US)",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "support@immers.cloud",
+      "name": "Immerse Cloud",
+      "subject": "Partnership - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "gpu_cloud",
+      "status": "ready",
+      "date": "2026-06-09T15:23:11.660253+00:00",
+      "snippet": "NVIDIA H100 NVL 94GB, 24/7 tech support via Telegram",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@bland.ai",
+      "name": "Bland.ai",
+      "subject": "Partnership - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "voice_ai",
+      "status": "ready",
+      "date": "2026-06-09T15:23:11.660257+00:00",
+      "snippet": "Enterprise voice AI platform for phone agents, SOC 2, HIPAA, PCI DSS, GDPR certified",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@inworld.ai",
+      "name": "Inworld AI",
+      "subject": "Partnership - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "voice_ai",
+      "status": "ready",
+      "date": "2026-06-09T15:23:11.660261+00:00",
+      "snippet": "#1 ranked voice on cascade pipeline, SIP telephony, on-prem deployment, HIPAA BAA",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@elevenlabs.io",
+      "name": "ElevenLabs",
+      "subject": "Partnership - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "voice_ai",
+      "status": "ready",
+      "date": "2026-06-09T15:23:11.660264+00:00",
+      "snippet": "ElevenAgents platform, customer service agents, sales SDR agents, used by Revolut, Deliveroo, Cisco",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "hello@fin.ai",
+      "name": "Fin.ai",
+      "subject": "Partnership - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "voice_ai",
+      "status": "ready",
+      "date": "2026-06-09T15:23:11.660275+00:00",
+      "snippet": "Fin Voice 2, integrates with Twilio, Genesys, RingCentral, Five9, 8x8, Aircall, Mitel",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "contact@tatacommunications.com",
+      "name": "Tata Communications (Kaleyra)",
+      "subject": "Partnership - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "voice_ai",
+      "status": "ready",
+      "date": "2026-06-09T15:23:11.660279+00:00",
+      "snippet": "Real-time speech-to-speech platform, patent-pending models, omnichannel",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "contact@delight.ai",
+      "name": "Delight.ai",
+      "subject": "Partnership - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "voice_ai",
+      "status": "ready",
+      "date": "2026-06-09T15:23:11.660282+00:00",
+      "snippet": "Proactive outbound calls, omnichannel platform, SOC 2 and GDPR compliant",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "hello@kaivoice.com",
+      "name": "KAI Voice",
+      "subject": "Partnership - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "voice_ai",
+      "status": "ready",
+      "date": "2026-06-09T15:23:11.660286+00:00",
+      "snippet": "AI phone agents in 32 languages, 60+ voices, SIP trunk management",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "contact@mavimovoa.ai",
+      "name": "MaviNovo AI",
+      "subject": "Partnership - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "partnership",
+      "status": "ready",
+      "date": "2026-06-09T15:23:11.660290+00:00",
+      "snippet": "White Label AI Reseller Program, launch full-stack AI under your brand",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "contact@exei.ai",
+      "name": "Exei.ai",
+      "subject": "Partnership - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "partnership",
+      "status": "ready",
+      "date": "2026-06-09T15:23:11.660294+00:00",
+      "snippet": "White Label AI Agent Program, deliver AI agents under your brand name",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@b4g.ai",
+      "name": "B4G AI",
+      "subject": "Partnership - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "partnership",
+      "status": "ready",
+      "date": "2026-06-09T15:23:11.660301+00:00",
+      "snippet": "White Label Partner Program, business-in-a-box solution",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@younea.ai",
+      "name": "Younea.ai",
+      "subject": "Partnership - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "partnership",
+      "status": "ready",
+      "date": "2026-06-09T15:23:11.660304+00:00",
+      "snippet": "White label AI platform, ready in 2 weeks",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@trubotai.com",
+      "name": "TruBot AI",
+      "subject": "Partnership - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "partnership",
+      "status": "ready",
+      "date": "2026-06-09T15:23:11.660308+00:00",
+      "snippet": "White Label Partner Program, 24/7 partner support, no R&D investment needed",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@robofy.ai",
+      "name": "Robofy",
+      "subject": "Partnership - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "partnership",
+      "status": "ready",
+      "date": "2026-06-09T15:23:11.660312+00:00",
+      "snippet": "White Label Chatbot Reseller Program, set own pricing, 100% revenue kept",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@truefoundry.com",
+      "name": "TrueFoundry",
+      "subject": "Partnership - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "partnership",
+      "status": "ready",
+      "date": "2026-06-09T15:23:11.660319+00:00",
+      "snippet": "VAR and VAD partner ecosystem, AI Gateway distribution, model serving",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@scx.ai",
+      "name": "SCX.ai",
+      "subject": "Partnership - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "partnership",
+      "status": "ready",
+      "date": "2026-06-09T15:23:11.660323+00:00",
+      "snippet": "Sovereign AI infrastructure, resell APIs, white-labelled AI stack",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partner-support@openai.com",
+      "name": "OpenAI",
+      "subject": "Partnership - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "partnership",
+      "status": "ready",
+      "date": "2026-06-09T15:23:11.660327+00:00",
+      "snippet": "ISV/Product Partner, Services Partner, Reseller Partner programs",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "contact@synthflow.ai",
+      "name": "Synthflow",
+      "subject": "Partnership Opportunity - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "voice_ai",
+      "status": "ready",
+      "date": "2026-06-09T15:34:04.928392+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "contact@voice.ai",
+      "name": "Voice AI",
+      "subject": "Partnership Opportunity - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "voice_ai",
+      "status": "ready",
+      "date": "2026-06-09T15:34:05.445571+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@kore.ai",
+      "name": "Kore.ai",
+      "subject": "Partnership Opportunity - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "voice_ai",
+      "status": "ready",
+      "date": "2026-06-09T15:34:06.266256+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@nice.com",
+      "name": "NiCE CXone",
+      "subject": "Partnership Opportunity - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "voice_ai",
+      "status": "ready",
+      "date": "2026-06-09T15:34:07.311477+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@soundhound.com",
+      "name": "SoundHound AI",
+      "subject": "Partnership Opportunity - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "voice_ai",
+      "status": "ready",
+      "date": "2026-06-09T15:34:08.620351+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@quiq.com",
+      "name": "Quiq",
+      "subject": "Partnership Opportunity - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "voice_ai",
+      "status": "ready",
+      "date": "2026-06-09T15:34:09.772107+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "info@linklive.ai",
+      "name": "LinkLive AI",
+      "subject": "Partnership Opportunity - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "voice_ai",
+      "status": "ready",
+      "date": "2026-06-09T15:34:10.820035+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "contact@speakai.co",
+      "name": "Speak AI",
+      "subject": "Partnership Opportunity - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "voice_ai",
+      "status": "ready",
+      "date": "2026-06-09T15:34:12.280592+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "contact@omind.ai",
+      "name": "Omind AI",
+      "subject": "Partnership Opportunity - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "voice_ai",
+      "status": "ready",
+      "date": "2026-06-09T15:34:13.705077+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "info@omilia.com",
+      "name": "Omilia",
+      "subject": "Partnership Opportunity - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "voice_ai",
+      "status": "ready",
+      "date": "2026-06-09T15:34:14.957327+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "contact@zudu.ai",
+      "name": "Zudu AI",
+      "subject": "Partnership Opportunity - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "voice_ai",
+      "status": "ready",
+      "date": "2026-06-09T15:34:16.470045+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "contact@verbatik.com",
+      "name": "Verbatik AI",
+      "subject": "Partnership Opportunity - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "voice_ai",
+      "status": "ready",
+      "date": "2026-06-09T15:34:17.051694+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "contact@indigitall.com",
+      "name": "indigitall",
+      "subject": "Partnership Opportunity - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "voice_ai",
+      "status": "ready",
+      "date": "2026-06-09T15:34:18.496298+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "contato@cpqd.com.br",
+      "name": "CPQD",
+      "subject": "Partnership Opportunity - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "voice_ai",
+      "status": "ready",
+      "date": "2026-06-09T15:34:20.733358+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "contact@fonema.ai",
+      "name": "Fonema AI",
+      "subject": "Partnership Opportunity - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "voice_ai",
+      "status": "ready",
+      "date": "2026-06-09T15:34:21.841649+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "contact@nativa-voicebot.ai",
+      "name": "Nativa Voicebot",
+      "subject": "Partnership Opportunity - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "voice_ai",
+      "status": "ready",
+      "date": "2026-06-09T15:34:30.704685+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "contact@toshihpc.com",
+      "name": "ToshiHPC",
+      "subject": "Partnership Opportunity - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "gpu_cloud",
+      "status": "ready",
+      "date": "2026-06-09T15:34:31.260740+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "support@cloudoora.com",
+      "name": "Cloudoora",
+      "subject": "Partnership Opportunity - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "gpu_cloud",
+      "status": "ready",
+      "date": "2026-06-09T15:34:32.076690+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "info@webcare360.com",
+      "name": "WebCare360",
+      "subject": "Partnership Opportunity - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "gpu_cloud",
+      "status": "ready",
+      "date": "2026-06-09T15:34:33.048281+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "support@gpu-host.com",
+      "name": "GPU-Host",
+      "subject": "Partnership Opportunity - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "gpu_cloud",
+      "status": "ready",
+      "date": "2026-06-09T15:34:34.015214+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "cloud.partners@jio.com",
+      "name": "Jio Platforms",
+      "subject": "Partnership Opportunity - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "gpu_cloud",
+      "status": "ready",
+      "date": "2026-06-09T15:34:34.946617+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "support@charg.cloud",
+      "name": "Charg Cloud",
+      "subject": "Partnership Opportunity - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "gpu_cloud",
+      "status": "ready",
+      "date": "2026-06-09T15:34:35.673052+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "contact@makeitfuture.eu",
+      "name": "Makeitfuture",
+      "subject": "Partnership Opportunity - Zion Tech Group AI Solutions",
+      "template": "partnership_proposal",
+      "category": "whitelabel_ai",
+      "status": "ready",
+      "date": "2026-06-09T16:02:56.676593+00:00",
+      "snippet": "White-label AI services partner, Luxembourg",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@stratosone.com",
+      "name": "StratosOne",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@aligneddc.com",
+      "name": "Aligned DC",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@wyetree.com",
+      "name": "Wyetree",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@matriaai.com",
+      "name": "Matria AI",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@thecloudgroup.com",
+      "name": "The Cloud Group",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@argitai.com",
+      "name": "Argit AI",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@towinia.com",
+      "name": "Towinia",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@appropia.com",
+      "name": "Appropia",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@seidor.com",
+      "name": "SEIDOR",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@synthflow.com",
+      "name": "Synthflow",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@voiceai.com",
+      "name": "Voice AI",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@koreai.com",
+      "name": "Kore.ai",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@nicecxone.com",
+      "name": "NiCE CXone",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@soundhoundai.com",
+      "name": "SoundHound AI",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@linkliveai.com",
+      "name": "LinkLive AI",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@speakai.com",
+      "name": "Speak AI",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@omindai.com",
+      "name": "Omind AI",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@omilia.com",
+      "name": "Omilia",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@zuduai.com",
+      "name": "Zudu AI",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@retellai.com",
+      "name": "Retell AI",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@verbatikai.com",
+      "name": "Verbatik AI",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@indigitall.com",
+      "name": "indigitall",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@cpqd.com",
+      "name": "CPQD",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@fonemaai.com",
+      "name": "Fonema AI",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@cariai.com",
+      "name": "Cari AI",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@nativavoicebot.com",
+      "name": "Nativa Voicebot",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@toshihpc.com",
+      "name": "ToshiHPC",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@cloudoora.com",
+      "name": "Cloudoora",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@webcare360.com",
+      "name": "WebCare360",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@gpuhost.com",
+      "name": "GPU-Host",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@jioplatforms.com",
+      "name": "Jio Platforms",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@chargcloud.com",
+      "name": "Charg Cloud",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@reflectionai.com",
+      "name": "Reflection AI",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@crewaipartners.com",
+      "name": "CrewAI Partners",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@relevanceai.com",
+      "name": "Relevance AI",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@voxtellai.com",
+      "name": "Voxtell AI",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@waboomai.com",
+      "name": "Waboom AI",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@convocore.com",
+      "name": "ConvoCore",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@callplaneai.com",
+      "name": "Callplane AI",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@patagonai.com",
+      "name": "Patagon AI",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@greennodeai.com",
+      "name": "GreenNode AI",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@hostedai.com",
+      "name": "hosted.ai",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@infronai.com",
+      "name": "Infron AI",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@atlanticnet.com",
+      "name": "Atlantic.Net",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@omccloud.com",
+      "name": "OMC Cloud",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@scaleway.com",
+      "name": "Scaleway",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@nebulai.com",
+      "name": "Nebul AI",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@hostyourai.com",
+      "name": "HostYourAI",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@perlod.com",
+      "name": "Perlod",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@workllm.com",
+      "name": "WorkLLM",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@fptaifactory.com",
+      "name": "FPT AI Factory",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@inferless.com",
+      "name": "Inferless",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@rafay.com",
+      "name": "Rafay",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@tandemnlabs.com",
+      "name": "Tandemn Labs",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@rafaysystems.com",
+      "name": "Rafay Systems",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@edgeunoatlas.com",
+      "name": "EdgeUno Atlas",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@agentsense.ai",
+      "name": "AgentSense",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "team@hawil.ai",
+      "name": "Hawil AI",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@lightedge.com",
+      "name": "Lightedge",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@quali.com",
+      "name": "Quali",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@vastai.com",
+      "name": "Vast.ai",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@vircos.com",
+      "name": "Vircos",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@silicomaicloud.com",
+      "name": "Silicom AI Cloud",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@cassavaai.com",
+      "name": "Cassava AI",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@omnia.com",
+      "name": "Omnia",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@wevy.com",
+      "name": "Wevy",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@turbocloud.com",
+      "name": "Turbo Cloud",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@itglobal.com",
+      "name": "ITGlobal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@eveo.com",
+      "name": "Eveo",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@skynova.com",
+      "name": "Skynova",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@konexai.com",
+      "name": "Konex.ai",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@produtiveai.com",
+      "name": "Produtive.ai",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@mercadoagentes.com",
+      "name": "Mercado Agentes",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@meteorpartnerprogram.com",
+      "name": "Meteor Partner Program",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@claronvidiacloud.com",
+      "name": "Claro NVIDIA Cloud",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@aigdcmexico.com",
+      "name": "AI-GDC Mexico",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@voice.ibm.com",
+      "name": "IBM Watsonx Voice Agents",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@viirtue.com",
+      "name": "Viirtue",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "jeff@ehva.ai",
+      "name": "EHVA.ai",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "contato@fortics.com.br",
+      "name": "Fortics",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "contato@distrito.io",
+      "name": "Distrito",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@openai.com",
+      "name": "OpenAI",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@dronahq.com",
+      "name": "DronaHQ",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@omnia.com.br",
+      "name": "Omnia Data Centers",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@outsystems.com",
+      "name": "OutSystems Elevate Partner Program",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@parloa.com",
+      "name": "Parloa",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@replit.com",
+      "name": "Replit",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@qcall.ai",
+      "name": "QCall.ai",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@voiceinfra.ai",
+      "name": "VoiceInfra",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@calld.ai",
+      "name": "CallD.AI",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@solace.com",
+      "name": "Solace",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@airia.com",
+      "name": "Airia",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@darede.com.br",
+      "name": "Darede",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "contato@performait.com.br",
+      "name": "Performa IT",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@itellico.ai",
+      "name": "itellicoAI",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@sfdc.com.br",
+      "name": "Salesforce Agentforce Partner - Brazil",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "hello@awaz.ai",
+      "name": "Awaz AI - White Label Platform",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "contato@agenciacognitiva.com",
+      "name": "Agência Cognitiva - Brazil",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@kbrainx.com",
+      "name": "Kbrainx Consulting",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@avaamo.com",
+      "name": "Avaamo",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@vonage.com",
+      "name": "Vonage (Ericsson)",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@servicenow.com",
+      "name": "ServiceNow Partner Program - Agentforce",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@syndeo.ai",
+      "name": "Syndeo",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@lety.ai",
+      "name": "Lety.ai",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "parceria@robotsa.com.br",
+      "name": "Robot S.A. - Brazil",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@vida.io",
+      "name": "Telinta + Vida Partnership",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@skyone.com.br",
+      "name": "Skyone",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "contact@burki.dev",
+      "name": "Burki - Founding Agency Program",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "hello@voicemetrics.ai",
+      "name": "Voicemetrics - White Label Voice AI",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@resellaiagents.com",
+      "name": "Resell AI Agents - Agency-in-a-Box",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@hirefortuna.com",
+      "name": "Fortuna - White Label Customer Service AI",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@hyro.ai",
+      "name": "Hyro",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@ascenty.com",
+      "name": "Ascenty AI Infrastructure",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@deepdub.com",
+      "name": "Deepdub",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@newo.ai",
+      "name": "Newo AI",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@synthflow.ai",
+      "name": "Synthflow AI",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@wonderful.ai",
+      "name": "Wonderful",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@anthropic.com",
+      "name": "Anthropic Claude Partner Network",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@rossy.ai",
+      "name": "Rossy AI",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "ai-partner@mckinsey.com",
+      "name": "McKinsey Google Transformation Group",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "ai-alliance@ey.com",
+      "name": "EY Microsoft AI Alliance",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "whitelabel@vomyra.com",
+      "name": "Vomyra",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@globalvoicedirect.com",
+      "name": "Global Voice Direct",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "sales@cloudinteract.io",
+      "name": "CloudInteract",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "jason.gerdon@hyland.com",
+      "name": "Hyland Global Partner Network",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@fridayai.io",
+      "name": "Friday AI",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@conversa.ai",
+      "name": "Conversa AI",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@agencyai.co",
+      "name": "AgencyAI",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@datadog.com",
+      "name": "Datadog AI Observability",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "whitelabel@mercadoagentes.com",
+      "name": "Mercado Agentes - White Label Platform",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "ai-ecosystem@oracle.com",
+      "name": "Oracle AI Ecosystem Brazil",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partnerships@x8cloud.ai",
+      "name": "X8 Cloud - Latin America AI Infrastructure",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "contact@hive.com.py",
+      "name": "Hive Digital - Green AI Data Centers LATAM",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@stammer.ai",
+      "name": "Stammer AI",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "ai-agent-hub@sap.com",
+      "name": "SAP AI Agent Hub",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@nvidia.com",
+      "name": "NVIDIA Partner Network - Latin America",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partnerships@eliex.ai",
+      "name": "Eliex AI",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "parcerias@ziveai.com.br",
+      "name": "ZiveAI",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "sovereignai@gov.uk",
+      "name": "UK DSIT Sovereign AI Fund",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "info@innova.py",
+      "name": "Paraguay-Taiwan AI Hub Initiative",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partnerships@adya.ai",
+      "name": "Adya - Governance-First AI Platform",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@blazeo.com",
+      "name": "Blazeo Voice AI - White Label Platform",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@teneo.ai",
+      "name": "Teneo.ai - Conversational IVR & AI Agents",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "info@edgeir.com",
+      "name": "EdgeIR AI Infrastructure",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@getvocal.ai",
+      "name": "GetVocal",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "hello@burki.dev",
+      "name": "Burki",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "hello@exclamo.com",
+      "name": "Exclamo",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "parceiros@mitralab.io",
+      "name": "Mitra Partner Program",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "info@araico.ai",
+      "name": "Araico Iguazu AI Campus",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@together.ai",
+      "name": "Together",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@replicate.com",
+      "name": "Replicate",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@baseten.co",
+      "name": "Baseten",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@sonantic.com",
+      "name": "Sonantic",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@ngc.nvidia.com",
+      "name": "Ngc",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@respeech.ai",
+      "name": "Respeech",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@descript.com",
+      "name": "Descript",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@rafay.io",
+      "name": "Rafay Systems & AI-GDC",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "hello@exei.ai",
+      "name": "Exei",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "sales@convocore.ai",
+      "name": "ConvoCore AI Agency Platform",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "ai.partners@genexus.com",
+      "name": "GeneXus AI Partners - Globant",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "ai.partner@pareto.io",
+      "name": "Pareto AI Partner - Tess AI Platform",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "parceiros@meliia.com.br",
+      "name": "MELI IA Partner Program",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@infineural.com",
+      "name": "Infineural Agency Partner Program",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "hello@callplane.ai",
+      "name": "Callplane AI Agency Program",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@autocalls.ai",
+      "name": "Autocalls White-Label AI Voice",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "parceiros@patagon.ai",
+      "name": "Patagon AI Partner Program",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@atento.com",
+      "name": "Atento + Cresta Partnership",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@botpenguin.com",
+      "name": "BotPenguin",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partner-kickoff@oracle.com",
+      "name": "Oracle Integration Agentic AI",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@bairesdev.com",
+      "name": "BairesDev - AI Transformation Services LATAM",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partner@aihive.global",
+      "name": "AI Hive - White Label AI Platform",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@exei.ai",
+      "name": "Exei - White Label Voice AI",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@agent.ai",
+      "name": "Resell AI Agents - Agency-in-a-Box",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "support@wellSaidlabs.com",
+      "name": "WellSaid API",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@vast.ai",
+      "name": "Vast.ai",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@echo.win",
+      "name": "echowin",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partner@oracle.com",
+      "name": "Oracle Integration Agentic AI",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@sap.com",
+      "name": "Produtive.ai - White Label WhatsApp AI",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "sales@gruve.ai",
+      "name": "Gruve AI Sales",
+      "category": "ai",
+      "source": "web_search",
+      "foundAt": "2026-06-09T23:03:25.916293+00:00",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "contact@shaped.ai",
+      "name": "Shaped AI Partnerships",
+      "category": "ai",
+      "source": "web_search",
+      "foundAt": "2026-06-09T23:03:25.916296+00:00",
+      "status": "ready",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@exa.ai",
+      "name": "Exa AI Partnerships",
+      "source": "web",
+      "category": "ai_search",
+      "note": "Context Engine for AI - partnerships@exa.ai",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "createdAt": "2026-06-09T23:14:09.551725+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "whitelabel@hanc.ai",
+      "name": "Hanc.AI White Label",
+      "source": "web",
+      "category": "white_label",
+      "note": "Full rebrand white-label partner program",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "createdAt": "2026-06-09T23:16:49.392426+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "whitelabel@botpenguin.com",
+      "name": "BotPenguin White Label",
+      "source": "web",
+      "category": "white_label",
+      "note": "White-label AI agent builder",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "createdAt": "2026-06-09T23:16:49.392471+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "whitelabel@trubotai.com",
+      "name": "TruBot AI White Label",
+      "source": "web",
+      "category": "white_label",
+      "note": "White-label chatbots and voice bots",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "createdAt": "2026-06-09T23:16:49.392475+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "peter@agenticinternational.com",
+      "name": "Agentic International",
+      "source": "web",
+      "category": "white_label",
+      "note": "White-label AI Agent Platform",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "createdAt": "2026-06-09T23:21:54.837284+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@cloudone-ai.com",
+      "name": "Cloud One-AI",
+      "source": "web",
+      "category": "white_label",
+      "note": "AI Voice Platform - WhatsApp/Slack support",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "createdAt": "2026-06-09T23:21:54.837345+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@hanc.ai",
+      "name": "Hanc.AI",
+      "source": "web",
+      "category": "white_label",
+      "note": "Full white-label rebrand program",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "createdAt": "2026-06-09T23:21:54.837349+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@flowbots.ai",
+      "name": "FlowBots.ai",
+      "source": "web",
+      "category": "white_label",
+      "note": "Agency partnership program",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "createdAt": "2026-06-09T23:21:54.837352+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@success.ai",
+      "name": "Success.ai",
+      "source": "web",
+      "category": "white_label",
+      "note": "White-label AI platform",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "createdAt": "2026-06-10T03:28:19.903739+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partnerships@mavinovoai.com",
+      "name": "MaviNovo AI",
+      "source": "web",
+      "category": "white_label",
+      "note": "White-label AI reseller program",
+      "template": "partnership_proposal",
+      "status": "ready",
+      "createdAt": "2026-06-10T03:28:19.903781+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "sales@smartdeploy.ai",
+      "name": "SmartDeploy AI",
+      "subject": "Partnership - SmartDeploy AI",
+      "date": "2026-06-10",
+      "snippet": "ML deployment",
+      "status": "ready",
+      "template": "partnership_proposal",
+      "category": "web_search_discovery",
+      "addedAt": "2026-06-10T21:24:25.499931+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@quantumvoice.ai",
+      "name": "QuantumVoice",
+      "subject": "Partnership - QuantumVoice",
+      "date": "2026-06-10",
+      "snippet": "Voice AI",
+      "status": "ready",
+      "template": "partnership_proposal",
+      "category": "web_search_discovery",
+      "addedAt": "2026-06-10T21:24:55.534146+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@ai-infrastructure.com",
+      "name": "AI Infrastructure Co",
+      "subject": "Partnership - AI Infrastructure Co",
+      "date": "2026-06-10",
+      "snippet": "AI cloud computing",
+      "status": "ready",
+      "template": "partnership_proposal",
+      "category": "web_search_discovery",
+      "addedAt": "2026-06-10T21:25:25.569798+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@voice-flow.ai",
+      "name": "VoiceFlow AI",
+      "subject": "Partnership - VoiceFlow AI",
+      "date": "2026-06-10",
+      "snippet": "Voice AI automation",
+      "status": "ready",
+      "template": "partnership_proposal",
+      "category": "web_search_discovery",
+      "addedAt": "2026-06-10T21:25:55.630528+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "hello@cloudbrain.ai",
+      "name": "CloudBrain AI",
+      "subject": "Partnership - CloudBrain AI",
+      "date": "2026-06-10",
+      "snippet": "Enterprise AI",
+      "status": "ready",
+      "template": "partnership_proposal",
+      "category": "web_search_discovery",
+      "addedAt": "2026-06-10T21:26:25.705256+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partnerships@nextgenailabs.com",
+      "name": "NextGen AI Labs",
+      "subject": "Partnership - NextGen AI Labs",
+      "date": "2026-06-10",
+      "snippet": "AI development",
+      "status": "ready",
+      "template": "partnership_proposal",
+      "category": "web_search_discovery",
+      "addedAt": "2026-06-10T21:26:55.778061+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "contact@autoai.solutions",
+      "name": "AutoAI Solutions",
+      "subject": "Partnership - AutoAI Solutions",
+      "date": "2026-06-10",
+      "snippet": "AI automation",
+      "status": "ready",
+      "template": "partnership_proposal",
+      "category": "web_search_discovery",
+      "addedAt": "2026-06-10T21:27:25.844458+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@deeplearn.io",
+      "name": "DeepLearn Partners",
+      "subject": "Partnership - DeepLearn Partners",
+      "date": "2026-06-10",
+      "snippet": "ML infrastructure",
+      "status": "ready",
+      "template": "partnership_proposal",
+      "category": "web_search_discovery",
+      "addedAt": "2026-06-10T21:27:55.886183+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "hello@neuralstack.ai",
+      "name": "NeuralStack",
+      "subject": "Partnership - NeuralStack",
+      "date": "2026-06-10",
+      "snippet": "AI platform",
+      "status": "ready",
+      "template": "partnership_proposal",
+      "category": "web_search_discovery",
+      "addedAt": "2026-06-10T21:28:25.920922+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "partners@edgeaisystems.com",
+      "name": "EdgeAI Systems",
+      "subject": "Partnership - EdgeAI Systems",
+      "date": "2026-06-10",
+      "snippet": "Edge AI",
+      "status": "ready",
+      "template": "partnership_proposal",
+      "category": "web_search_discovery",
+      "addedAt": "2026-06-10T21:28:55.977682+00:00",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "meyling@verticaldata.io",
+      "name": "Vertical Data Inc.",
+      "subject": "Partnership - AI Infrastructure Latin America",
+      "template": "partnership_proposal",
+      "category": "ai_infrastructure",
+      "status": "ready",
+      "date": "2026-06-10",
+      "snippet": "Partnering with Ascenty (40 data centers in Brazil, Chile, Mexico, Colombia) - Reseller and Referral Agreement for AI workloads deployment",
+      "source": "web_search",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    },
+    {
+      "email": "analivia.jardine@ciandt.com",
+      "name": "CI&T",
+      "subject": "Partnership - AWS GenAI Partner in Brazil",
+      "template": "partnership_proposal",
+      "category": "ai_infrastructure",
+      "status": "ready",
+      "date": "2026-06-10",
+      "snippet": "Brazilian company selected for AWS Generative AI Partner Innovation Alliance - First Latin American org in elite group",
+      "source": "web_search",
+      "body": "\n<p>We currently have high-impact IT offers that may be relevant to your environment, including remote workforce enablement, incident-response retainer, cloud cost optimization, modern dev platform, and secure access service edge. If useful, I can send a tailored overview next.</p>"
+    }
+  ]
+}

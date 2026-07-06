@@ -1,0 +1,24 @@
+{
+  "batch_file": "lead-crm/outreach_batch_20260704T154847Z.json",
+  "state": "send_ready",
+  "reason": "opt_in_consent_present",
+  "opt_in_checked": {
+    "outreach_opt_in": "true",
+    "lead_outreach_opt_in": "true"
+  },
+  "sendBlocked": false,
+  "blockReason": "",
+  "batch_size": 20,
+  "ready_count": 20,
+  "sendCount": 20,
+  "services_referenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge"
+  ],
+  "generated_at": "2026-07-04T16:33:52.404615+00:00",
+  "note": "Opt-in checked from env; sender may run directly against the batch artifact when consent is present."
+}

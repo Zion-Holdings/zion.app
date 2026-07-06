@@ -1,0 +1,23 @@
+{
+  "generatedAt": "2026-07-04T16:30:00Z",
+  "sendBlocked": true,
+  "blockReason": "prior_duplicate_send_risk_and_missing_workspace_config_consent",
+  "discoveredNewFromProspector": 0,
+  "candidateBatchFile": "lead-crm/outreach_batch_20260704T154847Z.json",
+  "candidateBatchCount": 20,
+  "errors": [
+    "web_prospecting.py missing",
+    "lead-crm/outreach_run_2026-06-30.json missing",
+    "send_outreach_batch.py missing",
+    "workspace_config_opt_in file absent",
+    "prior_cron_runs_sent_duplicate_batch_into_Gmail; resending blocked to prevent duplicates"
+  ],
+  "servicesReferenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge"
+  ]
+}

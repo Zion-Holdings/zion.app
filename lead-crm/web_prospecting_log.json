@@ -1,0 +1,135 @@
+[
+  {
+    "ts": "2026-07-04T21:16:11.334720+00:00",
+    "event": "prospecting_tick",
+    "queries_run": 11,
+    "contacts_found": 9,
+    "new_leads_added": 9
+  },
+  {
+    "ts": "2026-07-04T22:11:00.946115+00:00",
+    "event": "prospecting_tick",
+    "queries_run": 11,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-04T22:59:45.866988+00:00",
+    "event": "prospecting_tick",
+    "queries_run": 11,
+    "contacts_found": 4,
+    "new_leads_added": 4
+  },
+  {
+    "ts": "2026-07-04T23:09:24.350349+00:00",
+    "event": "prospecting_tick",
+    "queries_run": 11,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T05:25:57.388421+00:00",
+    "event": "prospecting_tick",
+    "queries_run": 11,
+    "contacts_found": 1,
+    "new_leads_added": 1
+  },
+  {
+    "ts": "2026-07-05T05:48:09.219204+00:00",
+    "event": "prospecting_tick",
+    "queries_run": 11,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T05:54:31.360194+00:00",
+    "event": "prospecting_tick",
+    "queries_run": 11,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T14:05:17.659222+00:00",
+    "event": "prospecting_tick",
+    "queries_run": 11,
+    "contacts_found": 1,
+    "new_leads_added": 1
+  },
+  {
+    "ts": "2026-07-05T14:21:33.190595+00:00",
+    "event": "prospecting_tick",
+    "queries_run": 11,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T14:54:39.073106+00:00",
+    "event": "prospecting_tick",
+    "queries_run": 11,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T15:03:53.834204+00:00",
+    "event": "prospecting_tick",
+    "queries_run": 11,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T15:11:30.782690+00:00",
+    "event": "prospecting_tick",
+    "queries_run": 11,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T15:28:18.815222+00:00",
+    "event": "prospecting_tick",
+    "queries_run": 11,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T16:17:53.242767+00:00",
+    "event": "prospecting_tick",
+    "queries_run": 11,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:07:30.320549+00:00",
+    "event": "prospecting_tick",
+    "queries_run": 11,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:40:04.526347+00:00",
+    "event": "prospecting_tick",
+    "queries_run": 11,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T18:04:00.062906+00:00",
+    "event": "prospecting_tick",
+    "queries_run": 11,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T18:28:55.901051+00:00",
+    "event": "prospecting_tick",
+    "queries_run": 11,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T18:36:54.366147+00:00",
+    "event": "prospecting_tick",
+    "queries_run": 11,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  }
+]

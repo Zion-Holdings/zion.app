@@ -1,0 +1,22 @@
+{
+  "generated_at": "2026-07-06T17:09:50.373154+00:00",
+  "state": "send_ready",
+  "reason": "opt_in_consent_present",
+  "send_blocked": false,
+  "enforce_opt_in_at_send": true,
+  "opts_in": {
+    "outreach_opt_in": "1",
+    "lead_outreach_opt_in": "1"
+  },
+  "services_referenced": [
+    "it",
+    "it-remote-workforce-enablement",
+    "it-incident-response-retainer",
+    "it-cost-optimization-cloud",
+    "it-modern-dev-platform",
+    "it-secure-access-service-edge"
+  ],
+  "candidate_pool": "lead-crm/all-leads.json",
+  "sender": "lead-crm/send_outreach_batch.py",
+  "ready": []
+}

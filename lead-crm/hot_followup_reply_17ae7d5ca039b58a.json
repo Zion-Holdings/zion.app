@@ -1,0 +1,34 @@
+{
+  "label": "!!!!HOT FOLLOW-UP",
+  "thread_id": "17ae7d5ca039b58a",
+  "msg_id": "17b30325ffc676d8",
+  "to": "quotes@techsub.it",
+  "subject": "Re: //A21072705//Need AMC price - Moscow",
+  "status": "sent",
+  "reason": "sent",
+  "ts": "2026-07-05T12:44:41.063600Z",
+  "cooldown_until": "2026-07-05T12:59:41.063544Z",
+  "body": "Hi Rimpy / TSIT team,\n\nThanks again for the Moscow AMC opportunity. I still remember the candid feedback from your side on pricing and coverage, and I’d rather build on that than start from scratch.\n\nThat’s why I’m proposing something concrete, not generic boilerplate:\n- managed NOC/SOC augmentation fitted to your 24x7 support model\n- joint AI/runtime tooling to reduce L2 workload and ticket resolution time\n- co-selling Zion’s newer AI managed services in your markets so both sides unlock incremental demand\n\nIf this direction is useful, I’m happy to advance it by email or on a short call.\nPick a time: https://calendly.com/kleber-ziontechgroup\n\nOur AI services and free tools are here:\n- https://ziontechgroup.com\n\nBest regards,\nKleber Garcia Alcatrão\nPresident, Zion Tech Group\n+1 302 464 0950\nhttps://ziontechgroup.com",
+  "fail_count": 8,
+  "last_error": "HTTPError 429 on attempt 3",
+  "last_attempt": "2026-07-05T13:58:35.871250Z",
+  "auto_retry": false,
+  "retry_mode": "none",
+  "thread_context": {
+    "label": "!!!!HOT FOLLOW-UP",
+    "thread_id": "17ae7d5ca039b58a",
+    "subject": "Re: //A21072705//Need AMC price - Moscow",
+    "language": "English",
+    "known_bounce_addresses": [
+      "Rimpy.Bawa@techsub.it",
+      "info@techsub.it"
+    ],
+    "confirmed_hard_bounce": true
+  },
+  "send_blocked": false,
+  "draft_id": "r7177999617725894311",
+  "send_mode": "draft_ready",
+  "message_id": "19f3292e96879006",
+  "thread_id_sent": "17ae7d5ca039b58a",
+  "verified_send": true
+}

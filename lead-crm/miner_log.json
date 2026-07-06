@@ -1,0 +1,1536 @@
+[
+  {
+    "ts": "2026-07-04T17:39:44.068807+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 46,
+    "new_leads_added": 46
+  },
+  {
+    "ts": "2026-07-04T19:34:10.840439+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 1,
+    "new_leads_added": 1
+  },
+  {
+    "ts": "2026-07-04T19:40:09.957536+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T14:35:17.772128+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 4,
+    "new_leads_added": 4
+  },
+  {
+    "ts": "2026-07-05T17:02:37.155718+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 1,
+    "new_leads_added": 1
+  },
+  {
+    "ts": "2026-07-05T17:03:21.631740+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:04:19.180918+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:05:18.367598+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:06:16.430575+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:07:15.804122+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:08:14.700635+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:09:13.589318+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:10:12.360027+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:11:10.828248+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:12:11.207890+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:13:10.263783+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:14:09.979585+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:15:10.099411+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:16:07.480739+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:17:05.808416+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:18:03.870835+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:19:04.021408+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:20:04.999371+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:21:04.801770+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:22:06.088467+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:23:05.633224+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:24:06.080446+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:25:06.253182+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:26:06.696757+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:27:07.912115+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:28:07.610345+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:29:05.195751+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:30:03.245490+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:31:00.363391+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:31:58.337058+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:32:55.774049+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:33:56.100219+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:34:54.643410+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:35:52.969667+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:36:51.387328+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:37:50.472903+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:38:49.819664+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:39:48.181632+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:40:46.806698+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:41:45.174053+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:42:43.226219+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:43:41.347376+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:44:39.578973+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:45:37.652067+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:46:36.913578+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:47:36.149970+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:48:35.235672+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:49:33.063249+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:50:32.021741+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:51:31.364707+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:52:31.066922+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:53:30.489834+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:54:29.487434+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:55:28.624810+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:56:27.064502+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:57:27.716102+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:58:27.415526+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T17:59:25.951561+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T18:00:25.462053+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T18:01:23.031570+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T18:02:22.886486+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T18:03:22.430054+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T18:04:18.844550+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T18:05:34.188844+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T18:06:31.567161+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T18:07:27.815525+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T18:08:25.164604+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T18:09:51.929054+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T18:12:13.696959+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T18:13:16.859431+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T18:15:19.532846+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T18:17:11.045706+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T18:19:12.989006+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T18:20:24.435669+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T18:21:50.898037+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T18:22:48.581941+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T18:42:10.364504+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T19:33:58.581944+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T19:36:04.312425+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T19:38:25.780467+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T19:40:56.761082+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T19:43:16.493785+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T19:45:44.819586+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T19:47:50.172599+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T19:50:30.587034+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T19:52:42.255041+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T19:53:56.851870+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T19:54:59.446977+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T19:56:00.296118+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T19:57:00.611698+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T19:58:00.610946+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T19:58:59.190615+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T19:59:57.608866+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:00:56.210753+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:01:55.221631+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:02:54.299016+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:03:52.825972+00:00",
+    "event": "mine_tick",
+    "queries_run": 6,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:05:13.588853+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 56,
+    "new_leads_added": 56
+  },
+  {
+    "ts": "2026-07-05T20:05:47.853542+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 56,
+    "new_leads_added": 56
+  },
+  {
+    "ts": "2026-07-05T20:09:06.736779+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 2,
+    "new_leads_added": 2
+  },
+  {
+    "ts": "2026-07-05T20:10:54.428189+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:12:49.296290+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:14:45.829903+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:16:42.164690+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:18:38.633309+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:20:35.332865+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:22:34.717195+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:24:24.541047+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:26:20.004231+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:28:10.851446+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:30:04.109048+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:31:53.120142+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:34:07.353150+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:36:05.589345+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:38:01.542629+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:39:55.536694+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:41:46.826514+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:43:40.894065+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:45:35.173843+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:47:28.428546+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:47:45.988105+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:49:21.630814+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:51:18.111457+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:53:11.679357+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:55:08.921308+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T20:57:04.806560+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 1,
+    "new_leads_added": 1
+  },
+  {
+    "ts": "2026-07-05T20:58:58.041780+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:00:49.964285+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:02:44.023917+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:04:46.564901+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:06:42.069527+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:08:38.756950+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:10:37.641283+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:12:33.941936+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:14:31.679839+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:16:29.621534+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:18:25.668764+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:20:22.348108+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:22:23.280404+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:24:19.641992+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:26:14.971502+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:28:25.368670+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:30:24.546821+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:32:04.478975+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:33:46.973671+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:35:29.217882+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:37:10.937380+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:38:55.345707+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:40:36.759942+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:42:14.197000+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:43:53.624121+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:45:33.926674+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:47:13.322494+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:48:52.884495+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:50:31.340303+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:52:11.902999+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:53:52.205627+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:55:33.666199+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:57:16.215138+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T21:58:57.869958+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T22:00:36.992528+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T22:02:18.015525+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T22:03:58.568061+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-05T22:05:48.757013+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-06T16:09:51.480245+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:parceria",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T16:09:51.482411+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:proposta",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T16:09:51.484110+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:orçamento",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T16:09:51.485875+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:reunião",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T16:09:51.487854+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:diagnóstico",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T16:09:51.489983+00:00",
+    "event": "search_error",
+    "query": "in:anywhere \"Zion Tech\"",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T16:09:51.492024+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:automação",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T16:09:51.494203+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:incident response",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T16:09:51.496160+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:finops",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T16:09:51.498163+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:managed services",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T16:09:51.500101+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:devops",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T16:09:51.502005+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:sase",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T16:09:51.503950+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:low-code",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T16:09:51.506116+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:platform engineering",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T16:09:51.508173+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:AI services",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T16:09:51.510343+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-06T17:07:30.028217+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:parceria",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:07:30.030678+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:proposta",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:07:30.032721+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:orçamento",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:07:30.034836+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:reunião",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:07:30.036943+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:diagnóstico",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:07:30.039151+00:00",
+    "event": "search_error",
+    "query": "in:anywhere \"Zion Tech\"",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:07:30.041390+00:00",
+    "event": "search_error",
+    "query": "in:anywhere \"AI services\"",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:07:30.043821+00:00",
+    "event": "search_error",
+    "query": "in:anywhere \"IT services\"",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:07:30.046070+00:00",
+    "event": "search_error",
+    "query": "in:anywhere \"contact center\"",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:07:30.048105+00:00",
+    "event": "search_error",
+    "query": "in:anywhere \"document\"",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:07:30.050133+00:00",
+    "event": "search_error",
+    "query": "in:anywhere \"security operations\"",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:07:30.052283+00:00",
+    "event": "search_error",
+    "query": "in:anywhere \"automation\"",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:07:30.054576+00:00",
+    "event": "search_error",
+    "query": "in:anywhere \"support\"",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:07:30.056823+00:00",
+    "event": "search_error",
+    "query": "in:anywhere \"outsource\"",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:07:30.059260+00:00",
+    "event": "search_error",
+    "query": "in:anywhere \"managed services\"",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:07:30.061541+00:00",
+    "event": "search_error",
+    "query": "in:anywhere \"meeting\"",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:07:30.063923+00:00",
+    "event": "search_error",
+    "query": "in:anywhere \"schedule\"",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:07:30.066265+00:00",
+    "event": "search_error",
+    "query": "in:anywhere \"quote\"",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:07:30.068648+00:00",
+    "event": "search_error",
+    "query": "in:anywhere \"pricing\"",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:07:30.071153+00:00",
+    "event": "search_error",
+    "query": "in:anywhere \"vendor\"",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:07:30.073478+00:00",
+    "event": "search_error",
+    "query": "in:anywhere \"procurement\"",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:07:30.076040+00:00",
+    "event": "search_error",
+    "query": "in:anywhere \"project\"",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:07:30.079287+00:00",
+    "event": "search_error",
+    "query": "in:anywhere \"proposal\"",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:07:30.081655+00:00",
+    "event": "search_error",
+    "query": "in:anywhere \"partnership\"",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:07:30.084008+00:00",
+    "event": "search_error",
+    "query": "in:anywhere \"meeting\"",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:07:30.086508+00:00",
+    "event": "mine_tick",
+    "queries_run": 25,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-06T17:11:09.808650+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:parceria",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:11:09.812438+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:proposta",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:11:09.814986+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:orçamento",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:11:09.817324+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:reunião",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:11:09.819681+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:diagnóstico",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:11:09.821951+00:00",
+    "event": "search_error",
+    "query": "in:anywhere \"Zion Tech\"",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:11:09.824187+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:automação",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:11:09.826465+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:incident response",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:11:09.828678+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:finops",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:11:09.830908+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:managed services",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:11:09.833206+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:devops",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:11:09.835738+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:sase",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:11:09.838205+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:low-code",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:11:09.840524+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:platform engineering",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:11:09.842887+00:00",
+    "event": "search_error",
+    "query": "in:anywhere subject:AI services",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:11:09.845137+00:00",
+    "event": "mine_tick",
+    "queries_run": 15,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  }
+]

@@ -1,0 +1,10 @@
+{
+  "status": "ready_existing_surface_retained",
+  "previous_timestamp": "20260704T172825Z",
+  "previous_batch_file": "lead-crm/outreach_batch_20260704T172825Z.json",
+  "previous_ready_file": "lead-crm/outreach_ready_20260704T172825Z.json",
+  "previous_send_count": 0,
+  "latest_batch_file": "lead-crm/outreach_batch_20260704T172825Z.json",
+  "latest_ready_file": "lead-crm/outreach_ready_20260704T172825Z.json",
+  "note": "Canonical ready surface retained from prior artifact; runtime sender block preserved; no duplicate send."
+}
