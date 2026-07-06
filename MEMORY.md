@@ -1714,3 +1714,246 @@ OAuth (browser flow):
 Workspace service account (domain-wide delegation):
   gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
 - [EmailInteraction] 2026-07-06 20:31:22 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 20:32:38 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 20:32:38 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 20:32:38 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 20:33:22 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 20:33:22 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 20:33:22 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 20:34:16 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 20:34:16 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 20:34:16 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 20:37:02 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 20:37:02 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 20:37:02 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 20:39:00 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 20:39:00 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 20:39:00 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 20:40:50 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 20:40:50 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 20:40:50 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 20:41:18 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 20:41:19 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 20:41:19 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 20:42:20 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 20:42:20 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 20:42:20 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 20:43:29 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 20:43:29 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 20:43:29 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 20:44:22 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 20:44:22 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 20:44:23 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 20:48:14 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 20:48:14 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 20:48:14 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 20:48:26 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 20:48:26 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 20:48:26 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 20:50:13 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 20:50:13 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 20:50:13 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 20:50:34 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 20:50:34 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 20:50:34 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 20:52:45 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 20:52:45 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 20:52:45 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 20:53:04 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 20:53:04 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 20:53:04 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 20:54:16 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 20:54:16 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 20:54:16 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 20:56:53 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 20:56:53 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 20:56:53 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 20:57:13 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 20:57:13 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 20:57:13 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 20:58:25 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 20:58:25 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 20:58:25 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 20:59:16 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 20:59:16 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 20:59:16 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 21:00:15 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 21:00:15 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 21:00:15 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 21:01:56 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 21:01:57 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 21:01:57 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 21:02:24 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 21:02:24 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 21:02:24 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 21:07:23 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 21:07:24 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 21:07:24 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 21:07:35 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 21:07:35 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 21:07:35 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 21:09:16 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 21:09:16 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 21:09:16 | === Email Interaction Agent Completed ===
