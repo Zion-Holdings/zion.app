@@ -127,6 +127,14 @@ const Footer: React.FC = () => {
                   {CONTACT_INFO.address.city}, {CONTACT_INFO.address.state} {CONTACT_INFO.address.zipCode}
                 </span>
               </div>
+              <a
+                href="https://calendly.com/ziontechgroup/30min"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-600 text-white text-xs font-semibold hover:bg-blue-500 transition-colors mt-1"
+              >
+                📅 Book a Consultation
+              </a>
             </div>
           </div>
         </div>
