@@ -40,7 +40,7 @@ jobs:
         id: build
         run: |
           set -euo pipefail
-          npm run build
+          npm run build -- --webpack
           if [ -d out ]; then
             PAGES=$(find out -name 'index.html' | wc -l)
             SIZE=$(du -sh out | awk '{print $1}')

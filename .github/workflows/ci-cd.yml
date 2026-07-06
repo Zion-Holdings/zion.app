@@ -79,7 +79,7 @@ jobs:
         id: build
         run: |
           set -euo pipefail
-          npm run build:check
+          npm run build:check -- --webpack
           if [ -d "dist" ]; then
             PAGE_COUNT=$(find dist -name '*.html' | wc -l)
             BUILD_SIZE=$(du -sh dist | awk '{print $1}')
