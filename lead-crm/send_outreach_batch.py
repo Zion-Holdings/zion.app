@@ -89,12 +89,14 @@ def _tailor_message(chat_fn, r):
         {"role": "user", "content": prompt},
     ]
     last_err = None
-    for backend in ('openai_compat', 'template'):
+    for backend in ('unified', 'openai_compat', 'template'):
         try:
-            if backend == 'openai_compat':
+            if backend == 'unified' and callable(chat_fn):
+                result = chat_fn(messages, provider='auto')
+            elif backend == 'openai_compat':
                 result = _call_openai_compat_chat(messages)
             else:
-                result = chat_fn(messages, provider='template') if callable(chat_fn) else {'content': '', 'provider': 'template', 'model': ''}
+                result = {'content': '', 'provider': 'template', 'model': 'deterministic-template-v1'}
             text = (result.get('content') or '').strip()
             if not text:
                 last_err = 'empty_llm_content'
