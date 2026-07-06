@@ -285,3 +285,19 @@
 
 ### Broken Links: Final Word
 - 62 “broken” service links = internal Next.js chunk paths `/_next/static/chunks/webpack-3383486f79a89402.js` — all present in `out/_next/static/chunks/` (12 files). Auditor false positives. 0 real broken links.
+- [EmailInteraction] 2026-07-06 16:38:22 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 16:38:22 | gog list error: unknown flag --query
+Run with --help to see available flags
+- [EmailInteraction] 2026-07-06 16:38:22 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 16:40:30 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 16:40:30 | gog list error: missing --account (or set GOG_ACCOUNT, set default via `gog auth manage`, or store exactly one token)
+- [EmailInteraction] 2026-07-06 16:40:30 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-06 16:41:18 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-06 16:41:18 | gog list error: No auth for gmail kleber@ziontechgroup.com.
+
+OAuth (browser flow):
+  gog auth add kleber@ziontechgroup.com --services gmail
+
+Workspace service account (domain-wide delegation):
+  gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
+- [EmailInteraction] 2026-07-06 16:41:18 | === Email Interaction Agent Completed ===
