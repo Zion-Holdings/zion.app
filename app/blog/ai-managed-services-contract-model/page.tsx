@@ -11,7 +11,7 @@ export default function Page() {
       <div className="text-sm text-slate-500 mb-8">Published: 2026-07-06</div>
       <div
         className="prose prose-invert max-w-none text-slate-300 leading-relaxed"
-        dangerouslySetInnerHTML={ __html: `
+        dangerouslySetInnerHTML={{ __html: `
 <p>A practical AI managed services contract model helps IT providers deliver support with predictable SLAs, clear scopes, and scalable pricing.</p>
 <h3>Core model elements</h3>
 <ul>
@@ -21,7 +21,7 @@ export default function Page() {
 <li>Usage-based or retainer pricing</li>
 </ul>
 <p><a href="/contact">Request a contract model template</a></p>
-` }
+` }}
       />
     </article>
   );
