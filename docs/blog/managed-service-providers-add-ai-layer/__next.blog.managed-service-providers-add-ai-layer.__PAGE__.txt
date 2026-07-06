@@ -1,0 +1,37 @@
+1:"$Sreact.fragment"
+3:I[97367,["/_next/static/chunks/3s8be-uf-juyk.js","/_next/static/chunks/0-gal_8rifesv.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+2:T55a,<p>keywords:</p>
+<ul>
+<li>"managed services AI"</li>
+<li>"MSP AI services"</li>
+<li>"IT service expansion"</li>
+<li>"AI for MSPs"</li>
+<li>"managed SOC"</li>
+<li>"SLA-backed AI support"</li>
+</ul>
+<p>body: |</p>
+<p>Managed service providers can move upmarket by adding AI-led and platform services instead of competing only on break/fix pricing. Clients want outcomes: faster support, stronger security, predictive insights, and operational automation.</p>
+<p>Zion Tech Group helps MSPs expand their service catalog with AI, cloud, security, observability, and vertical SaaS modules under their own brand or co-sold with our team.</p>
+<h3>Expandable service lines</h3>
+<ul>
+<li>AI email and ticket triage</li>
+<li>Managed observability and on-call rotation</li>
+<li>Security operations and incident response</li>
+<li>Cloud cost optimization</li>
+<li>Data warehouse modernization</li>
+</ul>
+<h3>Partnership model</h3>
+<ul>
+<li>Co-sell and implementation support</li>
+<li>Tiered revenue and margin sharing</li>
+<li>Training and enablement for your team</li>
+</ul>
+<p><a href="/contact">Explore partnership models</a></p>
+<h3>Related services</h3>
+<ul>
+<li><a href="/partners">Partner & Reseller Program</a></li>
+<li><a href="/services/managed-observability-247">Managed Observability 24/7</a></li>
+<li><a href="/services/siem-as-a-service">SIEM as a Service</a></li>
+</ul>0:{"rsc":["$","$1","c",{"children":[["$","article",null,{"className":"container-page py-20","children":[["$","h1",null,{"className":"text-4xl font-bold mb-4 text-white","children":"Managed Service Providers: Add a High-Margin AI Layer to Your Catalog"}],["$","div",null,{"className":"text-sm text-slate-500 mb-8","children":"Published: 2026-07-05"}],["$","div",null,{"className":"prose prose-invert max-w-none text-slate-300 leading-relaxed","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"zion-tech-group-v1"}
+5:null

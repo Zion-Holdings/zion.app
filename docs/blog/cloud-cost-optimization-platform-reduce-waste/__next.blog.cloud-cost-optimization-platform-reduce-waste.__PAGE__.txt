@@ -1,0 +1,37 @@
+1:"$Sreact.fragment"
+3:I[97367,["/_next/static/chunks/3s8be-uf-juyk.js","/_next/static/chunks/0-gal_8rifesv.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+2:T5a6,<p>keywords:</p>
+<ul>
+<li>"cloud cost optimization"</li>
+<li>"reduce AWS Azure GCP cost"</li>
+<li>"cloud waste reduction"</li>
+<li>"rightsizing cloud instances"</li>
+<li>"FinOps automation"</li>
+<li>"reserved instances strategy"</li>
+<li>"cloud spend management"</li>
+</ul>
+<p>body: |</p>
+<p>Cloud spend grows fast when rightsizing, scheduling, reservations, and waste tracking are manual. A Cloud Cost Optimization Platform automates those controls across accounts and services with guardrails that protect performance.</p>
+<p>Zion Tech Group implements cloud cost controls with practical guardrails: idle resource cleanup, rightsizing recommendations, reserved-instance planning, and budget alerting.</p>
+<h3>Typical savings levers</h3>
+<ul>
+<li>Idle compute shutdown schedules</li>
+<li>Storage tier adjustments</li>
+<li>Network egress review</li>
+<li>Software license reconciliation</li>
+</ul>
+<h3>Why it works</h3>
+<ul>
+<li>You keep headroom for growth</li>
+<li>You avoid breaking SLAs to save money</li>
+<li>Finance and engineering share visibility</li>
+</ul>
+<p><a href="/contact">Ask for a cloud spend assessment</a></p>
+<h3>Related services</h3>
+<ul>
+<li><a href="/services/cloud-cost-optimization-platform">Cloud Cost Optimization Platform</a></li>
+<li><a href="/services/cloud-migration-assessment-tool">Cloud Migration Assessment Tool</a></li>
+<li><a href="/services/managed-observability-247">Managed Observability 24/7</a></li>
+</ul>0:{"rsc":["$","$1","c",{"children":[["$","article",null,{"className":"container-page py-20","children":[["$","h1",null,{"className":"text-4xl font-bold mb-4 text-white","children":"Cloud Cost Optimization Platform: Reduce Waste Without Downgrading Performance"}],["$","div",null,{"className":"text-sm text-slate-500 mb-8","children":"Published: 2026-07-05"}],["$","div",null,{"className":"prose prose-invert max-w-none text-slate-300 leading-relaxed","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"zion-tech-group-v1"}
+5:null

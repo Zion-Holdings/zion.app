@@ -1,0 +1,39 @@
+1:"$Sreact.fragment"
+3:I[97367,["/_next/static/chunks/3s8be-uf-juyk.js","/_next/static/chunks/0-gal_8rifesv.js"],"OutletBoundary"]
+4:"$Sreact.suspense"
+2:T626,<p>keywords:</p>
+<ul>
+<li>"incident response retainer"</li>
+<li>"cyber breach response"</li>
+<li>"forensics as a service"</li>
+<li>"breach containment"</li>
+<li>"security incident playbook"</li>
+<li>"RTO RPO incident"</li>
+<li>"post-breach hardening"</li>
+<li>"regulator-ready documentation"</li>
+</ul>
+<p>body: |</p>
+<p>A breach is not the time to search for vendor phone numbers. A cyber incident response retainer gives your team direct access to prepared responders, tested playbooks, and clear escalation paths before an event occurs.</p>
+<p>Zion Tech Group incident response retainer covers playbook creation, 24/7 on-call SLAs, containment support, forensics, and post-incident review. We treat every engagement as a readiness exercise first, response second.</p>
+<h3>What is included</h3>
+<ul>
+<li>Incident response playbooks</li>
+<li>24/7 on-call response with SLAs</li>
+<li>Forensics and chain-of-custody support</li>
+<li>Communication templates</li>
+<li>Post-incident review and hardening</li>
+</ul>
+<h3>Why it matters</h3>
+<ul>
+<li>Shorter containment time reduces cost and exposure</li>
+<li>Regulator-ready documentation reduces friction</li>
+<li>Clear recovery path preserves customer trust</li>
+</ul>
+<p><a href="/contact">Ask about retainer options</a></p>
+<h3>Related services</h3>
+<ul>
+<li><a href="/services/cyber-incident-response-retainer">Cyber Incident Response Retainer</a></li>
+<li><a href="/services/siem-as-a-service">SIEM as a Service</a></li>
+<li><a href="/services/zero-trust-network-architecture">Zero Trust Network Architecture</a></li>
+</ul>0:{"rsc":["$","$1","c",{"children":[["$","article",null,{"className":"container-page py-20","children":[["$","h1",null,{"className":"text-4xl font-bold mb-4 text-white","children":"Cyber Incident Response Retainer: Be Ready Before the Breach"}],["$","div",null,{"className":"text-sm text-slate-500 mb-8","children":"Published: 2026-07-05"}],["$","div",null,{"className":"prose prose-invert max-w-none text-slate-300 leading-relaxed","dangerouslySetInnerHTML":{"__html":"$2"}}]]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"zion-tech-group-v1"}
+5:null
