@@ -1008,5 +1008,10 @@
     "id": "19f398fabad0acd0",
     "email": "tdamasceno@cge.rj.gov.br",
     "query": "in:anywhere \"Zion Tech Group\""
+  },
+  {
+    "id": "19f39b289443fa6c",
+    "email": "automated@airbnb.com",
+    "query": "in:anywhere \"ziontechgroup.com\""
   }
 ]
