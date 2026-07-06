@@ -1,27 +1,26 @@
-export const metadata = {
-  title: 'AI Free Trial for Enterprise | Zion Tech Group',
-  description: 'Start an AI free trial for enterprise with guided onboarding, sample automations, security guardrails, and expert support.',
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Enterprise AI Free Trial | Zion Tech Group",
+  description: "Start an enterprise AI free trial with Zion Tech Group. Hands-on onboarding, no long-term lock-in.",
+  alternates: { canonical: "https://ziontechgroup.com/seo/enterprise-ai-free-trial" },
 };
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950">
-      <main className="relative z-10 flex-1">
-        <section className="py-20">
-          <div className="container-page">
-            <div className="max-w-4xl mx-auto">
-              <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">Enterprise AI Free Trial</h1>
-              <p className="text-slate-400 mb-8">Evaluate enterprise AI with a guided free trial: secure access, sample workflows, and hands-on support.</p>
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="glass-card"><div className="text-sm font-semibold text-white mb-2">Guided Onboarding</div><div className="text-xs text-slate-400">Credentials, roles, and first automation quickstart.</div></div>
-                <div className="glass-card"><div className="text-sm font-semibold text-white mb-2">Business Scenarios</div><div className="text-xs text-slate-400">Sales, support, operations, and security templates.</div></div>
-                <div className="glass-card"><div className="text-sm font-semibold text-white mb-2">Expert Support</div><div className="text-xs text-slate-400">Office hours and rollout guidance included.</div></div>
-              </div>
-              <div className="mt-10"><a className="btn-primary" href="/contact/">Start Enterprise Trial →</a></div>
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>
+    <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>
+      <div style={{ maxWidth: "900px", margin: "0 auto" }}>
+        <h1 style={{ fontSize: "2.4rem", fontWeight: 700, marginBottom: "1rem" }}>Enterprise AI Free Trial</h1>
+        <p style={{ color: "#94a3b8", fontSize: "1.05rem", marginBottom: "1rem" }}>
+          Try Zion Tech Group AI services with guided setup and measurable outcomes.
+        </p>
+        <p style={{ color: "#cbd5e1", marginBottom: "1rem" }}>
+          Visit https://ziontechgroup.com to explore more free services and tools before you commit.
+        </p>
+        <a href="https://calendly.com/kleber-ziontechgroup" style={{ color: "#34d399", textDecoration: "underline" }}>
+          Book your onboarding call
+        </a>
+      </div>
+    </main>
   );
 }

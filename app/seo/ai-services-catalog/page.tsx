@@ -1,38 +1,31 @@
-export const metadata = {
-  title: 'AI Services Catalog | Zion Tech Group',
-  description: 'Browse the Zion Tech Group AI services catalog: automation, copilots, document intelligence, sales AI, security, monitoring, and free trial options.',
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "AI Services Catalog | Zion Tech Group",
+  description: "Explore Zion Tech Group's AI services catalog: automation, copilots, computer vision, document intelligence, and workflow AI.",
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-services-catalog" },
 };
 
 export default function Page() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950">
-      <main className="relative z-10 flex-1">
-        <section className="py-20">
-          <div className="container-page">
-            <div className="max-w-6xl mx-auto">
-              <h1 className="text-3xl md:text-5xl font-bold text-white mb-4">AI Services Catalog</h1>
-              <p className="text-slate-400 mb-10">
-                Explore our AI and IT services designed to reduce manual work, improve decision speed, and generate measurable business outcomes.
-              </p>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <a className="glass-card group" href="/ai-copilot-for-enterprise-it/"><div className="font-semibold text-white">IT Copilot</div><div className="text-xs text-slate-400">Ticket triage, runbooks, onboarding</div></a>
-                <a className="glass-card group" href="/ai-document-automation-enterprise/"><div className="font-semibold text-white">Document AI</div><div className="text-xs text-slate-400">Extraction, validation, compliance</div></a>
-                <a className="glass-card group" href="/ai-sales-workflow-automation-templates/"><div className="font-semibold text-white">Sales AI</div><div className="text-xs text-slate-400">Lead routing, proposals, follow-up</div></a>
-                <a className="glass-card group" href="/ai-email-tuning-free-tools/"><div className="font-semibold text-white">Email AI</div><div className="text-xs text-slate-400">Subject scoring, readability, timing</div></a>
-                <a className="glass-card group" href="/ai-security-automation-platform-free-trial/"><div className="font-semibold text-white">Security AI</div><div className="text-xs text-slate-400">Alert triage, playbooks, response</div></a>
-                <a className="glass-card group" href="/ai-ops-assistant-free-trial/"><div className="font-semibold text-white">Ops AI</div><div className="text-xs text-slate-400">Incident summaries, SLA tracking</div></a>
-                <a className="glass-card group" href="/enterprise-ai-poc-playbook/"><div className="font-semibold text-white">Enterprise PoC</div><div className="text-xs text-slate-400">Pilot to production roadmap</div></a>
-                <a className="glass-card group" href="/it-automation-starter-kit/"><div className="font-semibold text-white">IT Automation</div><div className="text-xs text-slate-400">Scripts, runbooks, checklists</div></a>
-                <a className="glass-card group" href="/free-it-health-check-monitoring-tools/"><div className="font-semibold text-white">Monitoring</div><div className="text-xs text-slate-400">Health checks, uptime helpers, alerts</div></a>
-              </div>
-              <div className="mt-10 flex flex-wrap gap-4">
-                <a className="btn-primary" href="/contact/">Request a Consultation →</a>
-                <a className="btn-secondary" href="/ai-free-services-and-tools/">Explore Free Tools →</a>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>
+    <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>
+      <div style={{ maxWidth: "1100px", margin: "0 auto" }}>
+        <h1 style={{ fontSize: "2.5rem", fontWeight: 700, marginBottom: "1rem" }}>AI Services Catalog</h1>
+        <p style={{ color: "#94a3b8", fontSize: "1.1rem", marginBottom: "1.5rem" }}>
+          Browse our AI services and find the right automation stack for your business.
+        </p>
+        <ul style={{ display: "grid", gap: "0.75rem" }}>
+          <li>AI Customer Success & Support Automation</li>
+          <li>AI Document Intelligence & RAG</li>
+          <li>AI Security Operations & Threat Detection</li>
+          <li>AI Computer Vision & Quality Inspection</li>
+          <li>AI Marketing & Revenue Operations</li>
+        </ul>
+        <div style={{ marginTop: "1.5rem", display: "flex", gap: "1rem" }}>
+          <a href="https://ziontechgroup.com" style={{ color: "#a78bfa", textDecoration: "underline" }}>Visit ziontechgroup.com</a>
+          <a href="https://calendly.com/kleber-ziontechgroup" style={{ color: "#34d399", textDecoration: "underline" }}>Schedule a meeting</a>
+        </div>
+      </div>
+    </main>
   );
 }
