@@ -838,5 +838,30 @@
     "id": "19f3949d45489d24",
     "email": "marketing@belenergy.com.br",
     "query": "in:anywhere \"ziontechgroup.com\""
+  },
+  {
+    "id": "19c2d759a1228741",
+    "email": "notifications@youcanbook.me",
+    "query": "in:anywhere subject:reunião"
+  },
+  {
+    "id": "19c1e3060581ea5c",
+    "email": "calendar-notification@google.com",
+    "query": "in:anywhere subject:reunião"
+  },
+  {
+    "id": "19f395f5aa138588",
+    "email": "postmaster@procurri.com",
+    "query": "in:anywhere \"Zion Tech Group\""
+  },
+  {
+    "id": "19f395dc96c609b1",
+    "email": "mweiss@procurri.com",
+    "query": "in:anywhere \"Zion Tech Group\""
+  },
+  {
+    "id": "19635969f75cef14",
+    "email": "donotreply@wordpress.com",
+    "query": "in:anywhere subject:low-code"
   }
 ]

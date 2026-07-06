@@ -8903,5 +8903,70 @@
     "is_generic_provider": false,
     "confidence": 1,
     "discovered_at": "2026-07-06T21:16:34.410355+00:00"
+  },
+  {
+    "to": "notifications@youcanbook.me",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "in:anywhere subject:reunião",
+    "domain": "youcanbook.me",
+    "is_generic_provider": false,
+    "confidence": 1,
+    "discovered_at": "2026-07-06T21:55:16.374277+00:00"
+  },
+  {
+    "to": "calendar-notification@google.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "in:anywhere subject:reunião",
+    "domain": "google.com",
+    "is_generic_provider": false,
+    "confidence": 1,
+    "discovered_at": "2026-07-06T21:55:17.218636+00:00"
+  },
+  {
+    "to": "postmaster@procurri.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "in:anywhere \"Zion Tech Group\"",
+    "domain": "procurri.com",
+    "is_generic_provider": false,
+    "confidence": 1,
+    "discovered_at": "2026-07-06T21:55:29.028616+00:00"
+  },
+  {
+    "to": "mweiss@procurri.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "in:anywhere \"Zion Tech Group\"",
+    "domain": "procurri.com",
+    "is_generic_provider": false,
+    "confidence": 1,
+    "discovered_at": "2026-07-06T21:55:32.068423+00:00"
+  },
+  {
+    "to": "donotreply@wordpress.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "in:anywhere subject:low-code",
+    "domain": "wordpress.com",
+    "is_generic_provider": false,
+    "confidence": 1,
+    "discovered_at": "2026-07-06T21:56:13.984871+00:00"
   }
 ]
