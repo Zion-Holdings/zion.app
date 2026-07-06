@@ -20,8 +20,6 @@ jobs:
     env:
       NEXT_TELEMETRY_DISABLED: '1'
       NODE_OPTIONS: '--max-old-space-size=4096'
-    outputs:
-      sha: ${{ steps.resolve-sha.outputs.sha }}
     steps:
       - name: Checkout
         uses: actions/checkout@v6.0.2
@@ -53,21 +51,16 @@ jobs:
           echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
           echo "size=$SIZE" >> "$GITHUB_OUTPUT"
 
-      - name: Write deploy status
-        id: resolve-sha
-        env:
-          GITHUB_SHA: ${{ github.sha }}
-          GITHUB_RUN_ID: ${{ github.run_id }}
-          GITHUB_WORKFLOW: ${{ github.workflow }}
-        run: |
-          sha="${{ github.sha }}"
-          echo "sha=$sha" >> "$GITHUB_OUTPUT"
-          DEPLOY_STATUS=triggered DEPLOY_STATUS_SOURCE=continuous-pages-deploy npm run deploy:status:generate
-
       - name: Pages artifact
         uses: actions/upload-pages-artifact@v3.0.1
         with:
           path: out
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "pages=${{ steps.build.outputs.pages }}"
+          echo "size=${{ steps.build.outputs.size }}"
 
   deploy:
     needs: build
@@ -81,15 +74,10 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4.0.5
 
-      - name: Write deploy status (completed)
-        if: always()
-        env:
-          GITHUB_SHA: ${{ needs.build.outputs.sha }}
-          GITHUB_RUN_ID: ${{ github.run_id_
-          GITHUB_WORKFLOW: ${{ github.workflow }}
+      - name: Verify deployment
         run: |
-          if [ "${{ job.status }}" = "success" ]; then
-            DEPLOY_STATUS=success DEPLOY_STATUS_SOURCE=continuous-pages-deploy npm run deploy:status:generate
-          else
-            DEPLOY_STATUS=failed DEPLOY_STATUS_SOURCE=continuous-pages-deploy npm run deploy:status:generate
-          fi
+          echo "Deployment URL: ${{ steps.deployment.outputs.page_url }}"
+          sleep 30
+          curl -sf "${{ steps.deployment.outputs.page_url }}/" > /dev/null && echo "✓ Homepage is live" || echo "✗ Homepage check failed"
+          curl -sf "${{ steps.deployment.outputs.page_url }}/contact/" > /dev/null && echo "✓ Contact page is live" || echo "✗ Contact page check failed"
+          curl -sf "${{ steps.deployment.outputs.page_url }}/services/" > /dev/null && echo "✓ Services page is live" || echo "✗ Services page check failed"
