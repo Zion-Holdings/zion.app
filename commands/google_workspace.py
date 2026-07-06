@@ -50,8 +50,11 @@ def gog_headers():
 
 # ── Gmail ──────────────────────────────────────────────────────────────────
 
-def gmail_search(query, limit=20):
-    q = query + ' label:INBOX'
+def gmail_search(query, limit=20, all_folders=False):
+    if all_folders:
+        q = f'in:anywhere {query}'
+    else:
+        q = query + ' label:INBOX'
     url = ('https://gmail.googleapis.com/gmail/v1/users/me/messages'
            f'?q={urllib.parse.quote(q)}&maxResults={limit}')
     req = urllib.request.Request(url, headers=gog_headers())

@@ -1,9 +1,22 @@
 {
-  "batch": [],
+  "batch": [
+    {
+      "from": "kleber@ziontechgroup.com",
+      "to": "discover@airbnb.com",
+      "name": "Prezado",
+      "subject": "Parceria em airbnb — Zion Tech Group",
+      "body": "<p>Prezado,</p><p>Sou Kleber Garcia Alcatrão da <strong>Zion Tech Group</strong>. Vi potencial de colaboração mútua com sua operação em <strong>airbnb.com</strong>.</p><ul><li>Automação inteligente para TI</li><li>Otimização de custos em cloud/IA</li><li>Resposta a incidentes e DevEx</li></ul><p>Posso enviar um diagnóstico inicial de 15 minutos?</p><p><a href=\"https://ziontechgroup.com\" style=\"background:#0066cc;color:white;padding:12px 24px;text-decoration:none;border-radius:4px\">Nossos serviços</a> | <a href=\"https://calendly.com/kleber-ziontechgroup\">Agende uma reunião</a></p>",
+      "status": "ready",
+      "source_record_status": "discovered",
+      "company_domain": "airbnb.com",
+      "company_name": "airbnb",
+      "source_query": "in:anywhere \"Zion Tech\""
+    }
+  ],
   "candidate_pool_file": "lead-crm/all-leads.json",
   "dedupe_and_filters_applied": true,
   "system_addresses_excluded": true,
   "business_domain_preference_applied": true,
   "services_taxonomy_note": "IT focus with new service categories from app/data/new_services_it.json and referenced it services from servicesData.ts",
-  "generated_at": "2026-07-06T17:09:50.372813+00:00"
+  "generated_at": "2026-07-06T20:35:38.104992+00:00"
 }

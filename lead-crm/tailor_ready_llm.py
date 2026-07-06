@@ -50,7 +50,7 @@ def _dedupe_subject_style(subject, seen_subjects):
     return subject
 
 def _call_llm_chat(messages, model=None, temperature=0.35, max_tokens=500):
-    """Try Nous LLM, return content or empty string on failure."""
+    """Try Nous/OpenAI-compatible LLM, return content or empty string on failure."""
     try:
         import urllib.request
         auth_path = Path.home() / '.hermes' / 'auth.json'
@@ -68,12 +68,21 @@ def _call_llm_chat(messages, model=None, temperature=0.35, max_tokens=500):
             'temperature': temperature,
             'max_tokens': min(int(os.environ.get('HERMES_LLM_MAX_TOKENS', '512')), max_tokens),
         }
-        req = urllib.request.Request(url, data=json.dumps(body).encode('utf-8'), headers=headers, method='POST')
-        raw = urllib.request.urlopen(req, timeout=25).read()
-        data = json.loads(raw)
-        msg = (data.get('choices') or [{}])[0].get('message') or {}
-        content = msg.get('content') or msg.get('reasoning') or ''
-        return {'content': content.strip() if isinstance(content, str) else '', 'provider': provider.get('client_id') or 'openai_compat', 'model': data.get('model') or model}
+        last_err = None
+        for attempt in range(1, 4):
+            try:
+                req = urllib.request.Request(url, data=json.dumps(body).encode('utf-8'), headers=headers, method='POST')
+                raw = urllib.request.urlopen(req, timeout=25).read()
+                data = json.loads(raw)
+                msg = (data.get('choices') or [{}])[0].get('message') or {}
+                content = msg.get('content') or msg.get('reasoning') or ''
+                return {'content': content.strip() if isinstance(content, str) else '', 'provider': provider.get('client_id') or 'openai_compat', 'model': data.get('model') or model}
+            except Exception as e:
+                last_err = str(e)
+                if attempt < 3:
+                    time.sleep(2 * attempt)
+                    continue
+        return {'content': '', 'provider': 'error', 'model': '', 'error': last_err or 'llm_failed'}
     except Exception as e:
         return {'content': '', 'provider': 'error', 'model': '', 'error': str(e)}
 

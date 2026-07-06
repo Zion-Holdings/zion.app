@@ -8465,5 +8465,70 @@
     "source": "web_prospecting",
     "query": "AI startup partnership",
     "timestamp": "2026-07-06T16:10:48.986620+00:00"
+  },
+  {
+    "to": "joao.marcos@awazai.intercom-mail.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "sent",
+    "source": "ai_it_historical_email_miner",
+    "source_query": "in:anywhere subject:parceria",
+    "domain": "awazai.intercom-mail.com",
+    "is_generic_provider": false,
+    "confidence": 1,
+    "discovered_at": "2026-07-06T18:25:02.272976+00:00"
+  },
+  {
+    "to": "nrozengarten@nebius.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "sent",
+    "source": "ai_it_historical_email_miner",
+    "source_query": "in:anywhere subject:parceria",
+    "domain": "nebius.com",
+    "is_generic_provider": false,
+    "confidence": 1,
+    "discovered_at": "2026-07-06T18:25:03.504142+00:00"
+  },
+  {
+    "to": "john.bricknell@techsub.it",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "sent",
+    "source": "ai_it_historical_email_miner",
+    "source_query": "in:anywhere \"AI services\"",
+    "domain": "techsub.it",
+    "is_generic_provider": false,
+    "confidence": 1,
+    "discovered_at": "2026-07-06T18:25:07.428839+00:00"
+  },
+  {
+    "to": "jhlinka@cds.net",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "sent",
+    "source": "ai_it_historical_email_miner",
+    "source_query": "in:anywhere \"AI services\"",
+    "domain": "cds.net",
+    "is_generic_provider": false,
+    "confidence": 1,
+    "discovered_at": "2026-07-06T18:25:08.297833+00:00"
+  },
+  {
+    "to": "discover@airbnb.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "in:anywhere \"Zion Tech\"",
+    "domain": "airbnb.com",
+    "is_generic_provider": false,
+    "confidence": 1,
+    "discovered_at": "2026-07-06T20:33:22.621610+00:00"
   }
 ]

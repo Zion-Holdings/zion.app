@@ -1,117 +1,5 @@
 [
   {
-    "ts": "2026-07-05T16:31:41.926572+00:00",
-    "event": "replenish",
-    "returncode": 0,
-    "stdout": "{\"batch\": 28, \"ready_canonical\": \"/data/data/com.termux/files/home/zion-support.github.io/lead-crm/outreach_ready_canonical.json\", \"consent_ok\": true}\n",
-    "stderr": ""
-  },
-  {
-    "ts": "2026-07-05T16:31:40.765252+00:00",
-    "event": "pipeline_tick",
-    "sent": 28,
-    "next_batch": "/data/data/com.termux/files/home/zion-support.github.io/lead-crm/outreach_batch_current.json",
-    "sent_keys": 311,
-    "sent_subjects": 0
-  },
-  {
-    "ts": "2026-07-05T16:32:27.143642+00:00",
-    "event": "replenish",
-    "returncode": 0,
-    "stdout": "{\"batch\": 50, \"ready_canonical\": \"/data/data/com.termux/files/home/zion-support.github.io/lead-crm/outreach_ready_canonical.json\", \"consent_ok\": true}\n",
-    "stderr": ""
-  },
-  {
-    "ts": "2026-07-05T16:32:26.547943+00:00",
-    "event": "pipeline_tick",
-    "sent": 50,
-    "next_batch": "/data/data/com.termux/files/home/zion-support.github.io/lead-crm/outreach_batch_current.json",
-    "sent_keys": 339,
-    "sent_subjects": 0
-  },
-  {
-    "ts": "2026-07-05T16:34:02.199842+00:00",
-    "event": "replenish",
-    "returncode": 0,
-    "stdout": "{\"batch\": 15, \"ready_canonical\": \"/data/data/com.termux/files/home/zion-support.github.io/lead-crm/outreach_ready_canonical.json\", \"consent_ok\": true}\n",
-    "stderr": ""
-  },
-  {
-    "ts": "2026-07-05T16:34:01.161530+00:00",
-    "event": "pipeline_tick",
-    "sent": 15,
-    "next_batch": "/data/data/com.termux/files/home/zion-support.github.io/lead-crm/outreach_batch_current.json",
-    "sent_keys": 389,
-    "sent_subjects": 0
-  },
-  {
-    "ts": "2026-07-05T16:34:21.680185+00:00",
-    "event": "replenish",
-    "returncode": 0,
-    "stdout": "{\"batch\": 4, \"ready_canonical\": \"/data/data/com.termux/files/home/zion-support.github.io/lead-crm/outreach_ready_canonical.json\", \"consent_ok\": true}\n",
-    "stderr": ""
-  },
-  {
-    "ts": "2026-07-05T16:34:20.834898+00:00",
-    "event": "pipeline_tick",
-    "sent": 4,
-    "next_batch": "/data/data/com.termux/files/home/zion-support.github.io/lead-crm/outreach_batch_current.json",
-    "sent_keys": 404,
-    "sent_subjects": 0
-  },
-  {
-    "ts": "2026-07-05T16:34:27.009929+00:00",
-    "event": "replenish",
-    "returncode": 0,
-    "stdout": "{\"batch\": 0, \"ready_canonical\": \"/data/data/com.termux/files/home/zion-support.github.io/lead-crm/outreach_ready_canonical.json\", \"consent_ok\": true}\n",
-    "stderr": ""
-  },
-  {
-    "ts": "2026-07-05T16:34:26.442789+00:00",
-    "event": "pipeline_tick",
-    "sent": 0,
-    "next_batch": null,
-    "sent_keys": 408,
-    "sent_subjects": 0
-  },
-  {
-    "ts": "2026-07-05T16:34:42.969891+00:00",
-    "event": "replenish",
-    "returncode": 0,
-    "stdout": "{\"batch\": 0, \"ready_canonical\": \"/data/data/com.termux/files/home/zion-support.github.io/lead-crm/outreach_ready_canonical.json\", \"consent_ok\": true}\n",
-    "stderr": ""
-  },
-  {
-    "ts": "2026-07-05T16:34:42.047468+00:00",
-    "event": "pipeline_tick",
-    "sent": 0,
-    "next_batch": null,
-    "sent_keys": 408,
-    "sent_subjects": 0
-  },
-  {
-    "ts": "2026-07-05T16:34:58.659645+00:00",
-    "event": "replenish",
-    "returncode": 0,
-    "stdout": "{\"batch\": 0, \"ready_canonical\": \"/data/data/com.termux/files/home/zion-support.github.io/lead-crm/outreach_ready_canonical.json\", \"consent_ok\": true}\n",
-    "stderr": ""
-  },
-  {
-    "ts": "2026-07-05T16:34:58.008029+00:00",
-    "event": "pipeline_tick",
-    "sent": 0,
-    "next_batch": null,
-    "sent_keys": 408,
-    "sent_subjects": 0
-  },
-  {
-    "ts": "2026-07-05T16:35:14.291526+00:00",
-    "event": "replenish",
-    "returncode": 0,
-    "stdout": "{\"batch\": 0, \"ready_canonical\": \"/data/data/com.termux/files/home/zion-support.github.io/lead-crm/outreach_ready_canonical.json\", \"consent_ok\": true}\n",
-    "stderr": ""
-  },
-  {
     "ts": "2026-07-05T16:35:13.696712+00:00",
     "event": "pipeline_tick",
     "sent": 0,
@@ -14672,6 +14560,120 @@
   },
   {
     "ts": "2026-07-06T17:11:10.034991+00:00",
+    "event": "web_prospecting",
+    "queries_run": 10,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-06T17:32:06.516944+00:00",
+    "event": "web_prospecting",
+    "queries_run": 10,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-06T17:37:37.452547+00:00",
+    "event": "duplicate_candidates_detected",
+    "pids": [
+      19708
+    ],
+    "note": "no_kill_self_heal_not_auto_terminating"
+  },
+  {
+    "ts": "2026-07-06T17:37:37.481114+00:00",
+    "event": "search_error",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:37:37.479819+00:00",
+    "event": "batch_error",
+    "error": "name 'os' is not defined"
+  },
+  {
+    "ts": "2026-07-06T17:37:37.479819+00:00",
+    "event": "pipeline_tick",
+    "sent": 0,
+    "next_batch": null,
+    "sent_keys": 996,
+    "sent_subjects": 0
+  },
+  {
+    "ts": "2026-07-06T17:37:52.559208+00:00",
+    "event": "search_error",
+    "error": "gmail_search() got an unexpected keyword argument 'all_folders'"
+  },
+  {
+    "ts": "2026-07-06T17:37:52.557712+00:00",
+    "event": "batch_error",
+    "error": "name 'os' is not defined"
+  },
+  {
+    "ts": "2026-07-06T17:37:52.557712+00:00",
+    "event": "pipeline_tick",
+    "sent": 0,
+    "next_batch": null,
+    "sent_keys": 996,
+    "sent_subjects": 0
+  },
+  {
+    "ts": "2026-07-06T17:48:53.737495+00:00",
+    "event": "web_prospecting",
+    "queries_run": 10,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-06T18:04:46.729320+00:00",
+    "event": "web_prospecting",
+    "queries_run": 10,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-06T18:20:54.107723+00:00",
+    "event": "web_prospecting",
+    "queries_run": 10,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-06T18:25:44.870702+00:00",
+    "event": "web_prospecting",
+    "queries_run": 10,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-06T18:53:41.620928+00:00",
+    "event": "web_prospecting",
+    "queries_run": 10,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-06T19:10:16.446398+00:00",
+    "event": "web_prospecting",
+    "queries_run": 10,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-06T19:42:54.378789+00:00",
+    "event": "web_prospecting",
+    "queries_run": 10,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-06T20:15:39.399444+00:00",
+    "event": "web_prospecting",
+    "queries_run": 10,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-06T20:34:59.131231+00:00",
     "event": "web_prospecting",
     "queries_run": 10,
     "contacts_found": 0,

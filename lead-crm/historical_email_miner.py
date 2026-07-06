@@ -23,7 +23,8 @@ QUERIES = [
     'in:anywhere subject:orçamento',
     'in:anywhere subject:reunião',
     'in:anywhere subject:diagnóstico',
-    'in:anywhere "Zion Tech"',
+    'in:anywhere "Zion Tech Group"',
+    'in:anywhere "ziontechgroup.com"',
     'in:anywhere subject:automação',
     'in:anywhere subject:incident response',
     'in:anywhere subject:finops',
@@ -33,7 +34,24 @@ QUERIES = [
     'in:anywhere subject:low-code',
     'in:anywhere subject:platform engineering',
     'in:anywhere subject:AI services',
+    'in:anywhere subject:contact center intelligence',
+    'in:anywhere subject:email reply intelligence',
+    'in:anywhere subject:document intelligence',
+    'in:anywhere subject:security operations assistant',
 ]
+
+EXCLUDE_DOMAINS = {
+    'gov.br','sp.gov.br','rj.gov.br','es.gov.br','unicamp.br','fgv.br',
+    'pbh.gov.br','prodemge.gov.br','cge.rj.gov.br',
+    'docusign.net','wordpress.com','wordpress.net','google.com','github.com',
+    'youcanbook.me','updates.coursiv.co',
+    'airbnb.com','booking.com','expedia.com','hotels.com','tripadvisor.com',
+    'airbnb.co.uk','airbnb.co.za','airbnb.com.au','airbnb.co.in',
+    'airbnb.ca','airbnb.fr','airbnb.de','airbnb.es','airbnb.it',
+    'airbnb.nl','airbnb.be','airbnb.at','airbnb.ch','airbnb.se','airbnb.no','airbnb.dk','airbnb.fi',
+    'airbnb.co.nz','airbnb.co.jp','airbnb.kr','airbnb.co.za',
+    'stays.net','stayz.com','homeaway.com','vrbo.com',
+}
 
 EMAIL_RE = re.compile(r'[\w\.-]+@[\w\.-]+\.\w+')
 MAX_RESULTS_PER_QUERY = 15

@@ -628,5 +628,30 @@
     "id": "19f3410b0bf88ebc",
     "email": "postmaster@trubotai.com",
     "query": "in:anywhere \"Zion Tech\""
+  },
+  {
+    "id": "19f38a71455e08b2",
+    "email": "joao.marcos@awazai.intercom-mail.com",
+    "query": "in:anywhere subject:parceria"
+  },
+  {
+    "id": "19f389dff0daafae",
+    "email": "nrozengarten@nebius.com",
+    "query": "in:anywhere subject:parceria"
+  },
+  {
+    "id": "19f389ae199019ff",
+    "email": "john.bricknell@techsub.it",
+    "query": "in:anywhere \"AI services\""
+  },
+  {
+    "id": "19f383bb8fb7daf4",
+    "email": "jhlinka@cds.net",
+    "query": "in:anywhere \"AI services\""
+  },
+  {
+    "id": "19f3913ab8eceb84",
+    "email": "discover@airbnb.com",
+    "query": "in:anywhere \"Zion Tech\""
   }
 ]

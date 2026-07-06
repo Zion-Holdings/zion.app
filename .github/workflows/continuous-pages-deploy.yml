@@ -56,12 +56,6 @@ jobs:
         with:
           path: out
 
-      - name: Summary
-        if: always()
-        run: |
-          echo "pages=${{ steps.build.outputs.pages }}"
-          echo "size=${{ steps.build.outputs.size }}"
-
   deploy:
     needs: build
     runs-on: ubuntu-latest

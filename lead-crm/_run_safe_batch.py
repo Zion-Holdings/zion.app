@@ -55,7 +55,13 @@ sys_domains = {
     'gov.br','sp.gov.br','rj.gov.br','es.gov.br','unicamp.br','fgv.br',
     'pbh.gov.br','prodemge.gov.br','cge.rj.gov.br',
     'docusign.net','wordpress.com','wordpress.net','google.com','github.com',
-    'youcanbook.me','updates.coursiv.co'
+    'youcanbook.me','updates.coursiv.co',
+    'airbnb.com','booking.com','expedia.com','hotels.com','tripadvisor.com',
+    'airbnb.co.uk','airbnb.co.za','airbnb.com.au','airbnb.co.in',
+    'airbnb.ca','airbnb.fr','airbnb.de','airbnb.es','airbnb.it',
+    'airbnb.nl','airbnb.be','airbnb.at','airbnb.ch','airbnb.se','airbnb.no','airbnb.dk','airbnb.fi',
+    'airbnb.co.nz','airbnb.co.jp','airbnb.kr','airbnb.co.za',
+    'stays.net','stayz.com','homeaway.com','vrbo.com',
 }
 system_local_prefixes = [
     'mailer-daemon','no-reply','noreply','notifications@github.com',
