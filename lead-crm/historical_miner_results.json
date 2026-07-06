@@ -863,5 +863,125 @@
     "id": "19635969f75cef14",
     "email": "donotreply@wordpress.com",
     "query": "in:anywhere subject:low-code"
+  },
+  {
+    "id": "19f2e2c1bb66b48e",
+    "email": "partners@turbocloud.com",
+    "query": "in:anywhere subject:proposta"
+  },
+  {
+    "id": "19ebb3f2b7245800",
+    "email": "contato@sieg.com",
+    "query": "in:anywhere subject:reunião"
+  },
+  {
+    "id": "19d40214c8cff7a1",
+    "email": "will.cesar@dealwise.com.br",
+    "query": "in:anywhere subject:reunião"
+  },
+  {
+    "id": "19c10746d3190776",
+    "email": "veronica.oliveira@i-value.com.br",
+    "query": "in:anywhere subject:reunião"
+  },
+  {
+    "id": "19b0d6b1be79d282",
+    "email": "natalia.diniz@dealwise.com.br",
+    "query": "in:anywhere subject:reunião"
+  },
+  {
+    "id": "19f397693cec463d",
+    "email": "flavio.miranda@persistiq.com",
+    "query": "in:anywhere \"ziontechgroup.com\""
+  },
+  {
+    "id": "19f3975bd07ea4b3",
+    "email": "notifications@calendly.com",
+    "query": "in:anywhere \"ziontechgroup.com\""
+  },
+  {
+    "id": "19f39737d73d0ceb",
+    "email": "eburke@nowcfo.com",
+    "query": "in:anywhere \"ziontechgroup.com\""
+  },
+  {
+    "id": "19f1dea345552448",
+    "email": "contatordp@phicube.com.br",
+    "query": "in:anywhere subject:automação"
+  },
+  {
+    "id": "19f1dea2c1d6365e",
+    "email": "alvaro@sigapregao.com.br",
+    "query": "in:anywhere subject:automação"
+  },
+  {
+    "id": "19f1dea22f66041b",
+    "email": "victor@gopresence.com",
+    "query": "in:anywhere subject:automação"
+  },
+  {
+    "id": "19f1dea1ad88b062",
+    "email": "rafaelamuller@prospectanerus.com.br",
+    "query": "in:anywhere subject:automação"
+  },
+  {
+    "id": "19f1dea11157c3f8",
+    "email": "vcorreia@aktienow.com",
+    "query": "in:anywhere subject:automação"
+  },
+  {
+    "id": "19f1de9ffacd4a4a",
+    "email": "timedemarketing@resultadosdigitais-mkt.com.br",
+    "query": "in:anywhere subject:automação"
+  },
+  {
+    "id": "19f1de9f72d3d108",
+    "email": "timedemarketing@resultadosdigitaismail.com.br",
+    "query": "in:anywhere subject:automação"
+  },
+  {
+    "id": "19f1de9f1b483c25",
+    "email": "hi@pricelabs.co",
+    "query": "in:anywhere subject:automação"
+  },
+  {
+    "id": "19f1de9ba56530cd",
+    "email": "leticiam.sdr@econodata.com.br",
+    "query": "in:anywhere subject:automação"
+  },
+  {
+    "id": "19f1de9b41f7b499",
+    "email": "felipe.palmeiro@mkt.placehub.io",
+    "query": "in:anywhere subject:automação"
+  },
+  {
+    "id": "19f1de994beebed2",
+    "email": "juliana.geglio@lastro.co",
+    "query": "in:anywhere subject:automação"
+  },
+  {
+    "id": "19f34119c0e583ac",
+    "email": "contact@voice.ai",
+    "query": "in:anywhere subject:AI services"
+  },
+  {
+    "id": "19f34112b2b509f0",
+    "email": "partners@scx.ai",
+    "query": "in:anywhere subject:AI services"
+  },
+  {
+    "id": "19f341097d486a54",
+    "email": "partners@trubotai.com",
+    "query": "in:anywhere subject:AI services"
+  },
+  {
+    "id": "19f2e2c949bd0404",
+    "email": "partners@konexai.com",
+    "query": "in:anywhere subject:AI services"
+  },
+  {
+    "id": "19f2e2bb9b38bd0f",
+    "email": "partners@cassavaai.com",
+    "query": "in:anywhere subject:AI services"
   }
 ]
