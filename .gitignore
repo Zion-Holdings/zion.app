@@ -45,3 +45,6 @@ Library/
 *.swo
 .pageploy
 core
+data/response_scores.jsonl
+data/v26_run_log.jsonl
+data/v26_stats.jsonl
