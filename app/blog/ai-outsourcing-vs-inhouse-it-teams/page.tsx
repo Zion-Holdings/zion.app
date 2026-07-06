@@ -4,14 +4,7 @@ export const metadata = {
   alternates: { canonical: "/ai-outsourcing-vs-inhouse-it-teams/" },
 };
 
-export default function Page() {
-  return (
-    <article className="container-page py-20">
-      <h1 className="text-4xl font-bold mb-4 text-white">AI Outsourcing vs In-House IT Teams: When to Choose What</h1>
-      <div className="text-sm text-slate-500 mb-8">Published: 2026-07-06</div>
-      <div
-        className="prose prose-invert max-w-none text-slate-300 leading-relaxed"
-        dangerouslySetInnerHTML={ __html: `
+const html = `
 <p>The choice between AI outsourcing and in-house IT teams depends on speed, cost predictability, and specialization. In-house teams offer control and institutional knowledge. Outsourcing offers execution speed, broader skill coverage, and lower hiring risk.</p>
 <h3>When outsourcing wins</h3>
 <ul>
@@ -29,7 +22,16 @@ export default function Page() {
 <h3>A hybrid option</h3>
 <p>Many companies use hybrid models: internal product and security leadership with outsourced implementation, operations, and monitoring. That often gives the best risk-adjusted outcome.</p>
 <p><a href="/contact">Talk to Zion about a hybrid AI/IT model</a></p>
-` }
+`;
+
+export default function Page() {
+  return (
+    <article className="container-page py-20">
+      <h1 className="text-4xl font-bold mb-4 text-white">AI Outsourcing vs In-House IT Teams: When to Choose What</h1>
+      <div className="text-sm text-slate-500 mb-8">Published: 2026-07-06</div>
+      <div
+        className="prose prose-invert max-w-none text-slate-300 leading-relaxed"
+        dangerouslySetInnerHTML={{ __html: html }}
       />
     </article>
   );

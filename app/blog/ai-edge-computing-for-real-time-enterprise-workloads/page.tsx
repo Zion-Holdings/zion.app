@@ -11,7 +11,7 @@ export default function Page() {
       <div className="text-sm text-slate-500 mb-8">Published: 2026-07-06</div>
       <div
         className="prose prose-invert max-w-none text-slate-300 leading-relaxed"
-        dangerouslySetInnerHTML={ __html: `
+        dangerouslySetInnerHTML={{ __html: `
 <p>Edge AI moves inference closer to the source: cameras, sensors, terminals, and field devices. The result is lower latency, reduced bandwidth cost, and better privacy for sensitive operations data.</p>
 <h3>Best-fit workloads</h3>
 <ul>
@@ -27,7 +27,7 @@ export default function Page() {
 <li>Keep a centralized evaluation and monitoring plane</li>
 </ul>
 <p><a href="/contact">Request an edge AI architecture review</a></p>
-` }
+` }}
       />
     </article>
   );

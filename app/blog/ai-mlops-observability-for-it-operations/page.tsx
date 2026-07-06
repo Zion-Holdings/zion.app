@@ -11,7 +11,7 @@ export default function Page() {
       <div className="text-sm text-slate-500 mb-8">Published: 2026-07-06</div>
       <div
         className="prose prose-invert max-w-none text-slate-300 leading-relaxed"
-        dangerouslySetInnerHTML={ __html: `
+        dangerouslySetInnerHTML={{ __html: `
 <p>Production AI systems fail silently: data drift, latency spikes, token-cost overruns, and model-quality regressions. MLOps observability combines metrics, logs, traces, and model signals into one operational view.</p>
 <h3>What to monitor</h3>
 <ul>
@@ -28,7 +28,7 @@ export default function Page() {
 <li>Instrument business KPIs, not only technical metrics</li>
 </ul>
 <p><a href="/contact">Request an AI observability assessment</a></p>
-` }
+` }}
       />
     </article>
   );

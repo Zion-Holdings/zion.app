@@ -11,7 +11,7 @@ export default function Page() {
       <div className="text-sm text-slate-500 mb-8">Published: 2026-07-06</div>
       <div
         className="prose prose-invert max-w-none text-slate-300 leading-relaxed"
-        dangerouslySetInnerHTML={ __html: `
+        dangerouslySetInnerHTML={{ __html: `
 <p>IT costs grow silently across cloud spend, manual support, repeated onboarding work, and shadow automation. AI cost optimization targets those leakages with measurable controls.</p>
 <h3>Common targets</h3>
 <ul>
@@ -28,7 +28,7 @@ export default function Page() {
 <li>Measure and publish results internally to expand adoption</li>
 </ul>
 <p><a href="/contact">Request an AI cost-optimization assessment</a></p>
-` }
+` }}
       />
     </article>
   );

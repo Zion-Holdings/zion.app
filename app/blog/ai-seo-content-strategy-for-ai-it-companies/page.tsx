@@ -11,7 +11,7 @@ export default function Page() {
       <div className="text-sm text-slate-500 mb-8">Published: 2026-07-06</div>
       <div
         className="prose prose-invert max-w-none text-slate-300 leading-relaxed"
-        dangerouslySetInnerHTML={ __html: `
+        dangerouslySetInnerHTML={{ __html: `
 <p>AI and IT companies need SEO content that speaks to buyers, not just researchers. In 2026, the winning pattern is topic clusters built around real business problems: automation, cost reduction, compliance, and implementation speed.</p>
 <h3>Content types that convert</h3>
 <ul>
@@ -30,7 +30,7 @@ export default function Page() {
 <h3>Next step</h3>
 <p>If you want, Zion Tech Group can audit your content pipeline and build a 90-day AI SEO plan focused on pipeline, not just traffic.</p>
 <p><a href="/contact">Book a content strategy call</a></p>
-` }
+` }}
       />
     </article>
   );
