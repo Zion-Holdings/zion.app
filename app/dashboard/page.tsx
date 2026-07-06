@@ -1,5 +1,5 @@
 // app/dashboard/page.tsx — Agent Operations Dashboard (Ops View)
-import { Metadata } from 'next';
+import type { Metadata } from 'next';
 import AgentDashboard from '@/components/AgentDashboard';
 
 export const metadata: Metadata = {
