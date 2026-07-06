@@ -1,47 +1,27 @@
 export const metadata = {
   title: 'Revenue Operations AI Tools | Zion Tech Group',
-  description: 'Revenue operations AI tools for IT services, pipeline hygiene, forecasting, and sales-process automation with practical use cases.',
-  alternates: { canonical: '/revenue-operations-ai-tools' }
+  description: 'Revenue operations AI tools from Zion Tech Group: pipeline hygiene, forecasting, lead scoring, and GTM automation helpers.',
 };
 
 export default function Page() {
   return (
-    <main className="min-h-screen">
-      <section className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 pt-20 pb-16">
-        <div className="container-page relative">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-orange-400/20 bg-orange-400/5 mb-6">
-            <span className="text-orange-400 text-xs font-semibold uppercase tracking-wider">Revenue</span>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950">
+      <main className="relative z-10 flex-1">
+        <section className="py-20">
+          <div className="container-page">
+            <div className="max-w-4xl mx-auto">
+              <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">Revenue Operations AI Tools</h1>
+              <p className="text-slate-400 mb-8">AI tools to clean pipeline data, improve forecasts, and shorten revenue cycles.</p>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="glass-card"><div className="text-sm font-semibold text-white mb-2">Pipeline Hygiene</div><div className="text-xs text-slate-400">Stale deals, stage drift, and duplicate handling.</div></div>
+                <div className="glass-card"><div className="text-sm font-semibold text-white mb-2">Forecast Assist</div><div className="text-xs text-slate-400">Probability weighting and coverage checks.</div></div>
+                <div className="glass-card"><div className="text-sm font-semibold text-white mb-2">GTM Automation</div><div className="text-xs text-slate-400">Sequences, routing, and attribution helpers.</div></div>
+              </div>
+              <div className="mt-10"><a className="btn-primary" href="/contact/">Request RevOps Tools →</a></div>
+            </div>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 max-w-3xl">Revenue Operations AI Tools</h1>
-          <p className="text-lg text-slate-400 max-w-2xl mb-8">Revenue operations AI tools for IT services, pipeline hygiene, forecasting, and sales-process automation with practical use cases.</p>
-          <div className="flex flex-wrap gap-4">
-            <a href="https://ziontechgroup.com" className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:opacity-90 transition">Visit ziontechgroup.com</a>
-            <a href="/contact" className="inline-flex items-center px-6 py-3 rounded-lg border border-slate-700 text-slate-300 font-medium hover:border-purple-500/40 transition">Contact Us</a>
-          </div>
-        </div>
-      </section>
-      <section className="py-20 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800/60">
-        <div className="container-page">
-          <h2 className="text-3xl font-bold text-white mb-4">How we can help</h2>
-          <p className="text-slate-400 max-w-2xl mb-6">RevOps AI tools focused on clean pipeline data, predictable forecasting, and repeatable growth models.</p>
-          <ul className="grid md:grid-cols-2 gap-4 text-slate-300 list-disc pl-6">
-            <li>Pipeline hygiene and enrichment automation</li>
-            <li>Forecasting and dashboards with AI signals</li>
-            <li>Sales process automation and orchestration</li>
-            <li>Go-to-market readiness for AI services</li>
-          </ul>
-          <div className="mt-10">
-            <a href="https://calendly.com/kleber-ziontechgroup" className="inline-flex items-center px-8 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold text-lg">Book a Meeting</a>
-          </div>
-        </div>
-      </section>
-      <section className="py-20 bg-gradient-to-b from-slate-900 to-slate-950 border-t border-slate-800/60">
-        <div className="container-page text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Want to see more?</h2>
-          <p className="text-slate-400 max-w-xl mx-auto mb-8">Explore our services, free tools, and AI resources at https://ziontechgroup.com</p>
-          <a href="https://ziontechgroup.com" className="inline-flex items-center px-8 py-3 rounded-lg bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold text-lg">Visit ziontechgroup.com</a>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </div>
   );
 }
