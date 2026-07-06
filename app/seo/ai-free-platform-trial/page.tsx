@@ -44,4 +44,4 @@ export default function Page() {
       </section>
     </main>
   );
-}}
+}
