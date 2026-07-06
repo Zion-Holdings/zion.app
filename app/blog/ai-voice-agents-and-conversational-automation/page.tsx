@@ -11,7 +11,7 @@ export default function Page() {
       <div className="text-sm text-slate-500 mb-8">Published: 2026-07-06</div>
       <div
         className="prose prose-invert max-w-none text-slate-300 leading-relaxed"
-        dangerouslySetInnerHTML={ __html: `
+        dangerouslySetInnerHTML={{ __html: `
 <p>AI voice agents reduce handle time and enable always-on coverage for inbound support and outbound qualification. The best deployments keep human handoff explicit and fast.</p>
 <h3>Use cases that work</h3>
 <ul>
@@ -28,7 +28,7 @@ export default function Page() {
 <li>Quality evaluation on intent accuracy</li>
 </ul>
 <p><a href="/contact">Talk to Zion about voice automation</a></p>
-` }
+` }}
       />
     </article>
   );

@@ -11,7 +11,7 @@ export default function Page() {
       <div className="text-sm text-slate-500 mb-8">Published: 2026-07-06</div>
       <div
         className="prose prose-invert max-w-none text-slate-300 leading-relaxed"
-        dangerouslySetInnerHTML={ __html: `
+        dangerouslySetInnerHTML={{ __html: `
 <p>Business IT leaders in 2026 need more than AI proofs of concept. They need production-ready services, accountable operating models, and measurable outcomes.</p>
 <h3>Priority investments</h3>
 <ul>
@@ -27,7 +27,7 @@ export default function Page() {
 <li>Expand to adjacent workflows after proving value</li>
 </ul>
 <p><a href="/contact">Book an IT leadership AI briefing</a></p>
-` }
+` }}
       />
     </article>
   );
