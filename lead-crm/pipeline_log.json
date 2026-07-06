@@ -1,12 +1,5 @@
 [
   {
-    "ts": "2026-07-05T19:58:59.589564+00:00",
-    "event": "web_prospecting",
-    "queries_run": 10,
-    "contacts_found": 0,
-    "new_leads_added": 0
-  },
-  {
     "ts": "2026-07-05T19:58:59.634883+00:00",
     "event": "web_prospecting_replenish",
     "prospector": "/data/data/com.termux/files/home/zion-support.github.io/lead-crm/web_prospecting.py"
@@ -3421,5 +3414,20 @@
       }
     ],
     "notes": "Awaz.ai declined partnership, offered services; Nebius call booked Friday July 10"
+  },
+  {
+    "ts": "2026-07-06T21:19:12.771266+00:00",
+    "event": "mine_tick_success",
+    "queries_run": 20,
+    "contacts_found": 36,
+    "new_leads_added": 36,
+    "notes": "Miner completed before timeout; 36 new leads added"
+  },
+  {
+    "ts": "2026-07-06T21:27:40.058497+00:00",
+    "event": "web_prospecting",
+    "queries_run": 10,
+    "contacts_found": 0,
+    "new_leads_added": 0
   }
 ]

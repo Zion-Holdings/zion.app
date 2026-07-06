@@ -653,5 +653,190 @@
     "id": "19f3913ab8eceb84",
     "email": "discover@airbnb.com",
     "query": "in:anywhere \"Zion Tech\""
+  },
+  {
+    "id": "19f392fede716748",
+    "email": "ajuda@homer.com.br",
+    "query": "in:anywhere \"Zion Tech Group\""
+  },
+  {
+    "id": "19f3939a5ccead63",
+    "email": "contadoronline@contmatic.com.br",
+    "query": "in:anywhere \"ziontechgroup.com\""
+  },
+  {
+    "id": "17f94a37a1a87df8",
+    "email": "contactcenter@dmsenviosdigitales.com",
+    "query": "in:anywhere subject:contact center intelligence"
+  },
+  {
+    "id": "170f2cb51c4df6af",
+    "email": "marc@ralfkairos.com",
+    "query": "in:anywhere subject:contact center intelligence"
+  },
+  {
+    "id": "170f2cb51c4df6af",
+    "email": "hr@ziontechgroup.com",
+    "query": "in:anywhere subject:contact center intelligence"
+  },
+  {
+    "id": "170f2cb51c4df6af",
+    "email": "talha.tariq@ziontechgroup.com",
+    "query": "in:anywhere subject:contact center intelligence"
+  },
+  {
+    "id": "170f2cb51c4df6af",
+    "email": "julien@ralfkairos.com",
+    "query": "in:anywhere subject:contact center intelligence"
+  },
+  {
+    "id": "170ab274541e03e0",
+    "email": "aneeq.tariq@ziontechgroup.com",
+    "query": "in:anywhere subject:contact center intelligence"
+  },
+  {
+    "id": "170a774486f8ffac",
+    "email": "kaypty@gmail.com",
+    "query": "in:anywhere subject:contact center intelligence"
+  },
+  {
+    "id": "170a2d09cb75d4d1",
+    "email": "maiadan@hotmail.com",
+    "query": "in:anywhere subject:contact center intelligence"
+  },
+  {
+    "id": "17087435071f3cf1",
+    "email": "fermolina56@gmail.com",
+    "query": "in:anywhere subject:contact center intelligence"
+  },
+  {
+    "id": "16dcbc55a413b5a8",
+    "email": "valmy.gonzalez@shervacom.com",
+    "query": "in:anywhere subject:contact center intelligence"
+  },
+  {
+    "id": "16d61e4222c56c5c",
+    "email": "alexpt@hotmail.com",
+    "query": "in:anywhere subject:contact center intelligence"
+  },
+  {
+    "id": "16c098706f72de71",
+    "email": "thomas@gakenholz.de",
+    "query": "in:anywhere subject:contact center intelligence"
+  },
+  {
+    "id": "16aeb50af29d49f9",
+    "email": "fernando.agostino@gmail.com",
+    "query": "in:anywhere subject:contact center intelligence"
+  },
+  {
+    "id": "15b586fa14309679",
+    "email": "computerworld_resources@cwresources.computerworld.com",
+    "query": "in:anywhere subject:contact center intelligence"
+  },
+  {
+    "id": "148655df75a0f5c5",
+    "email": "nww_newsletters@newsletters.networkworld.com",
+    "query": "in:anywhere subject:contact center intelligence"
+  },
+  {
+    "id": "148655df75a0f5c5",
+    "email": "kleber@sscs-sa.com",
+    "query": "in:anywhere subject:contact center intelligence"
+  },
+  {
+    "id": "13faa32a29218d9d",
+    "email": "djean.axt@ztg.com.br",
+    "query": "in:anywhere subject:contact center intelligence"
+  },
+  {
+    "id": "19f0562378fcdeb0",
+    "email": "editors@channelpronetwork.com",
+    "query": "in:anywhere subject:email reply intelligence"
+  },
+  {
+    "id": "19f056233eed7a3a",
+    "email": "help@kickbox.com",
+    "query": "in:anywhere subject:email reply intelligence"
+  },
+  {
+    "id": "16a2cd147d1504c8",
+    "email": "birendarkumar.s@tcs.com",
+    "query": "in:anywhere subject:email reply intelligence"
+  },
+  {
+    "id": "16a2cd147d1504c8",
+    "email": "filipe.dias@ziontechgroup.com",
+    "query": "in:anywhere subject:email reply intelligence"
+  },
+  {
+    "id": "16a2cd147d1504c8",
+    "email": "raj.rahul1@tcs.com",
+    "query": "in:anywhere subject:email reply intelligence"
+  },
+  {
+    "id": "16a2cd147d1504c8",
+    "email": "accounts@ziontechgroup.com",
+    "query": "in:anywhere subject:email reply intelligence"
+  },
+  {
+    "id": "16a2cd147d1504c8",
+    "email": "sujatha.venkatesan@tcs.com",
+    "query": "in:anywhere subject:email reply intelligence"
+  },
+  {
+    "id": "16a2cd147d1504c8",
+    "email": "internal@ziontechgroup.com",
+    "query": "in:anywhere subject:email reply intelligence"
+  },
+  {
+    "id": "16a2cd147d1504c8",
+    "email": "sabrina.oliveira@ziontechgroup.com",
+    "query": "in:anywhere subject:email reply intelligence"
+  },
+  {
+    "id": "16a2cd147d1504c8",
+    "email": "marketing@ziontechgroup.com",
+    "query": "in:anywhere subject:email reply intelligence"
+  },
+  {
+    "id": "16a132d3dc4b7f88",
+    "email": "jayant.pant@tcs.com",
+    "query": "in:anywhere subject:email reply intelligence"
+  },
+  {
+    "id": "16a132d3dc4b7f88",
+    "email": "raja.arunachalam@tcs.com",
+    "query": "in:anywhere subject:email reply intelligence"
+  },
+  {
+    "id": "16a132d3dc4b7f88",
+    "email": "john.peter@tcs.com",
+    "query": "in:anywhere subject:email reply intelligence"
+  },
+  {
+    "id": "16a132d3dc4b7f88",
+    "email": "shahulhameed.h@tcs.com",
+    "query": "in:anywhere subject:email reply intelligence"
+  },
+  {
+    "id": "16a132d3dc4b7f88",
+    "email": "tapas.tripathy@tcs.com",
+    "query": "in:anywhere subject:email reply intelligence"
+  },
+  {
+    "id": "166434300c959a7e",
+    "email": "gmailgenius@wordzen.com",
+    "query": "in:anywhere subject:email reply intelligence"
+  },
+  {
+    "id": "14b12de09a6065ee",
+    "email": "bob@scrubly.com",
+    "query": "in:anywhere subject:email reply intelligence"
+  },
+  {
+    "id": "19f3949d45489d24",
+    "email": "marketing@belenergy.com.br",
+    "query": "in:anywhere \"ziontechgroup.com\""
   }
 ]

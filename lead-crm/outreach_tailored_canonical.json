@@ -24,11 +24,11 @@
       "name": "Prezado",
       "subject": "Parceria em airbnb — Zion Tech Group",
       "body": "<p>Olá Prezado,</p>\n<p>Sou Kleber Garcia Alcatrão, Presidente da <strong>Zion Tech Group</strong>. Temos atuado em AI/IT managed services e gostaria de explorar uma colaboração prática com necessidades reais da sua operação.</p>\n<ul>\n<li>Automação inteligente e suporte contínuo a incidentes</li>\n<li>Otimização de custos cloud/IA e modernização de plataformas</li>\n<li>Acesso a ferramentas e serviços gratuitos para começar rápido</li>\n</ul>\n<p>Conheça nossos serviços: https://ziontechgroup.com</p>\n<p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
-      "tailored_at": "2026-07-06T20:39:37.251431+00:00",
+      "tailored_at": "2026-07-06T21:17:00.576331+00:00",
       "llm_provider": "deterministic-template-v3"
     }
   ],
-  "tailored_at": "2026-07-06T20:39:37.268644+00:00",
+  "tailored_at": "2026-07-06T21:17:00.593295+00:00",
   "tailored_by": "lead-crm/tailor_ready_llm.py",
   "llm_success_rate": "0/1"
 }
