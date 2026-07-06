@@ -1012,3 +1012,6 @@ joao.marcos@awazai.intercom-mail.com|Re: Parceria Zion Tech Group — operaçõe
 nrozengarten@nebius.com|Re: Parceria em nebius — Zion Tech Group|2026-07-06T23:30:00Z|19f39c5e131d2713
 joao.marcos@awazai.intercom-mail.com|Parceria Zion Tech Group — operações e eficiência para TI|2026-07-06T23:30:00Z|19f39c5e96f94bbe
 joao.marcos@awazai.intercom-mail.com|DECLINED|2026-07-06T21:06:00Z|no_partnership
+joao.marcos@awazai.intercom-mail.com|DECLINED|2026-07-06T21:06:00Z|no_partnership
+marketing@belenergy.com.br|NOISE|2026-07-06T21:16:00Z|newsletter_only
+automated@airbnb.com|NOISE|2026-07-05T14:00:00Z|generic_outreach
