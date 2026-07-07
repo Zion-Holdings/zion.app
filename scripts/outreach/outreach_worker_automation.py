@@ -1,5 +1,7 @@
-import sys, base64, json, time, os
+import sys, base64, json, time, os, re
 from pathlib import Path
+from datetime import datetime, timezone
+from email.utils import parsedate_to_datetime
 
 sys.path.insert(0, r'C:\Users\Zion\AppData\Local\hermes\skills\productivity\google-workspace\scripts')
 from google_api import build_service
@@ -13,6 +15,10 @@ STATE_FILE = DEDUP_DIR / 'global_dedup_state.json'
 LEDGER_FILE = DEDUP_DIR / 'sent_ledger.jsonl'
 
 DEDUP_COOLDOWN_SECONDS = 18 * 3600  # 18 hours per contact
+LLM_TAILOR_ENABLED = False  # flip to True when LLM path is configured
+LLM_API_ENDPOINT = os.getenv('ZION_LLM_API_ENDPOINT') or os.getenv('LLM_API_ENDPOINT')
+LLM_API_KEY = os.getenv('ZION_LLM_API_KEY') or os.getenv('LLM_API_KEY')
+LLM_MODEL = os.getenv('ZION_LLM_MODEL') or 'gpt-4o-mini'
 
 def load_state():
     if STATE_FILE.exists():
@@ -75,7 +81,23 @@ def mark_seen_message_id(message_id):
 
 def search_all_folders(q, max_results=20):
     resp = service.users().messages().list(userId='me', q=q, maxResults=max_results).execute()
-    return resp.get('messages', [])
+    items = resp.get('messages', [])
+    out = []
+    for item in items:
+        try:
+            msg = service.users().messages().get(userId='me', id=item['id'], format='metadata', metadataHeaders=['From','Subject','Date']).execute()
+        except Exception:
+            continue
+        headers = {h['name']: h['value'] for h in msg.get('payload', {}).get('headers', [])}
+        out.append({
+            'id': msg['id'],
+            'threadId': msg.get('threadId'),
+            'from': headers.get('From', ''),
+            'subject': headers.get('Subject', ''),
+            'date': headers.get('Date', ''),
+            'snippet': msg.get('snippet', ''),
+        })
+    return out
 
 def get_message_text(msg_id):
     msg = service.users().messages().get(userId='me', id=msg_id, format='full').execute()
@@ -109,6 +131,51 @@ def detect_language(text):
     if any(w in lower for w in es_words):
         return 'es'
     return 'en'
+
+def _message_is_too_old(date_hdr: str, max_age_days: int = 180) -> bool:
+    if not date_hdr:
+        return False
+    try:
+        dt = parsedate_to_datetime(date_hdr)
+        now = datetime.now(timezone.utc)
+        return (now - dt).days > max_age_days
+    except Exception:
+        return False
+
+def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, language: str) -> str:
+    if not LLM_TAILOR_ENABLED or not LLM_API_ENDPOINT or not LLM_API_KEY:
+        return ''
+    prompt = (
+        "You are the CEO of Zion Tech Group. Draft a friendly-professional reply. "
+        f"Contact: {contact_name}. Company: {company_name}. Language: {language}. "
+        "Context:\n" + (thread_text[:1400])
+        + "\nRules: include Calendly https://calendly.com/kleber-ziontechgroup "
+        "and https://ziontechgroup.com. Close warmly."
+    )
+    headers = {
+        'Authorization': f"Bearer {LLM_API_KEY}",
+        'Content-Type': 'application/json',
+    }
+    body = json.dumps({
+        'model': LLM_MODEL,
+        'messages': [
+            {'role': 'system', 'content': 'You write short, specific, business-friendly emails.'},
+            {'role': 'user', 'content': prompt},
+        ],
+        'temperature': 0.4,
+        'max_tokens': 400,
+    }).encode('utf-8')
+    try:
+        import urllib.request
+        req = urllib.request.Request(LLM_API_ENDPOINT, data=body, headers=headers, method='POST')
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            data = json.loads(resp.read().decode('utf-8'))
+        reply = ((data.get('choices') or [{}])[0].get('message') or {}).get('content')
+        if isinstance(reply, str) and reply.strip():
+            return reply.strip()
+    except Exception as e:
+        print('LLM_ERR', repr(e))
+    return ''
 
 def _personalize(thread_text: str, contact_name: str, company_name: str, language: str) -> dict:
     t = (thread_text or '').lower()
@@ -147,6 +214,10 @@ def _personalize(thread_text: str, contact_name: str, company_name: str, languag
     }
 
 def build_ceo_reply(contact_name, company_name, thread_text, language='en'):
+    # Prefer LLM-tailored output when enabled; fallback to deterministic template.
+    tailored = llm_tailor_reply(thread_text, contact_name, company_name, language)
+    if tailored:
+        return tailored
     p = _personalize(thread_text, contact_name, company_name, language)
     return f"""{contact_name},
 
@@ -188,20 +259,32 @@ def safe_slug(s):
     return s.lower().strip().replace('.', '-').replace('_', '-')
 
 def fetch_or_create_lead_from_inbox(email, thread_subject=None):
-    # Try to find recent inbound message from the contact
-    hits = search_all_folders(f"in:inbox from:{email} -category:promotions newer_than:2d", max_results=5)
-    if not hits:
+    # Priority 1: recent unread/new inbound message across all folders
+    hit = None
+    for query in [
+        f"from:{email} -category:promotions -in:spam -in:trash newer_than:1d",
+        f"from:{email} -category:promotions -in:spam -in:trash newer_than:7d",
+        f"from:{email} -category:promotions -in:spam -in:trash",
+    ]:
+        hits = search_all_folders(query, max_results=10)
+        if hits:
+            newest = hits[0]
+            if is_seen_message_id(newest['id']):
+                continue
+            date_hdr = newest.get('date', '')
+            if _message_is_too_old(date_hdr, max_age_days=180):
+                continue
+            hit = newest
+            break
+    if not hit:
         return None
-    newest = hits[0]
-    msg_id = newest['id']
-    if is_seen_message_id(msg_id):
-        return None
+    msg_id = hit['id']
     text = get_message_text(msg_id) or ''
     lang = detect_language(text)
     contact_name = email.split('@')[0].replace('.', ' ').title()
     company_name = email.split('@')[1].split('.')[0].title()
-    subject = thread_subject or "Next steps"
-    body = build_ceo_reply(contact_name, company_name, text[:300], language=lang)
+    subject = thread_subject or hit.get("subject") or "Next steps"
+    body = build_ceo_reply(contact_name, company_name, text[:500], language=lang)
     return {
         "email": email,
         "msg_id": msg_id,

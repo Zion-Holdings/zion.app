@@ -1,7 +1,7 @@
 permissions:
   contents: read
 name: Autonomous Custom ESLint Rules
-true:
+on:
   push:
     branches:
     - main

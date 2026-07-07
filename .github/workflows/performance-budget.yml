@@ -1,7 +1,7 @@
 permissions:
   contents: read
 name: Autonomous Performance Budget Enforcer with CI Gate
-true:
+on:
   pull_request:
     branches:
     - main

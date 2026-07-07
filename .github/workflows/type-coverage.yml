@@ -1,7 +1,7 @@
 permissions:
   contents: read
 name: TypeScript Type Coverage & Dead Code Check
-true:
+on:
   push:
     branches:
     - main
