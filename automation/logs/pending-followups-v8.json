@@ -1,0 +1,1002 @@
+[
+  {
+    "originalEmail": "alice@example.com",
+    "sender": "Alice Johnson",
+    "subject": "Still not working after 5 days",
+    "type": "support",
+    "originalSentAt": "2026-06-26T14:34:36.587Z",
+    "followUpAt": "2026-06-29T14:34:36.587Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "ceo@enterprise.com",
+    "sender": "CEO Mark",
+    "subject": "URGENT: Partnership opportunity",
+    "type": "sales",
+    "originalSentAt": "2026-06-26T14:34:36.601Z",
+    "followUpAt": "2026-06-29T14:34:36.602Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "carol@startup.io",
+    "sender": "Carol Chen",
+    "subject": "Having issues with AI setup",
+    "type": "support",
+    "originalSentAt": "2026-06-26T14:34:36.611Z",
+    "followUpAt": "2026-06-29T14:34:36.611Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "david@partner.co",
+    "sender": "David Lee",
+    "subject": "Quick question about API",
+    "type": "general",
+    "originalSentAt": "2026-06-26T14:34:36.620Z",
+    "followUpAt": "2026-06-29T14:34:36.620Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "emma@company.com",
+    "sender": "Emma Wilson",
+    "subject": "Invoice question",
+    "type": "billing",
+    "originalSentAt": "2026-06-26T14:34:36.629Z",
+    "followUpAt": "2026-06-29T14:34:36.629Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "alice@example.com",
+    "sender": "Alice Johnson",
+    "subject": "Still not working after 5 days",
+    "type": "support",
+    "originalSentAt": "2026-06-26T14:40:35.103Z",
+    "followUpAt": "2026-06-29T14:40:35.103Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "ceo@enterprise.com",
+    "sender": "CEO Mark",
+    "subject": "URGENT: Partnership opportunity",
+    "type": "sales",
+    "originalSentAt": "2026-06-26T14:40:35.116Z",
+    "followUpAt": "2026-06-29T14:40:35.117Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "carol@startup.io",
+    "sender": "Carol Chen",
+    "subject": "Having issues with AI setup",
+    "type": "support",
+    "originalSentAt": "2026-06-26T14:40:35.125Z",
+    "followUpAt": "2026-06-29T14:40:35.125Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "david@partner.co",
+    "sender": "David Lee",
+    "subject": "Quick question about API",
+    "type": "general",
+    "originalSentAt": "2026-06-26T14:40:35.133Z",
+    "followUpAt": "2026-06-29T14:40:35.134Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "emma@company.com",
+    "sender": "Emma Wilson",
+    "subject": "Invoice question",
+    "type": "billing",
+    "originalSentAt": "2026-06-26T14:40:35.142Z",
+    "followUpAt": "2026-06-29T14:40:35.142Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "alice@example.com",
+    "sender": "Alice Johnson",
+    "subject": "Still not working after 5 days",
+    "type": "support",
+    "originalSentAt": "2026-06-26T14:58:39.392Z",
+    "followUpAt": "2026-06-29T14:58:39.392Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "ceo@enterprise.com",
+    "sender": "CEO Mark",
+    "subject": "URGENT: Partnership opportunity",
+    "type": "sales",
+    "originalSentAt": "2026-06-26T14:58:39.406Z",
+    "followUpAt": "2026-06-29T14:58:39.406Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "carol@startup.io",
+    "sender": "Carol Chen",
+    "subject": "Having issues with AI setup",
+    "type": "support",
+    "originalSentAt": "2026-06-26T14:58:39.414Z",
+    "followUpAt": "2026-06-29T14:58:39.415Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "david@partner.co",
+    "sender": "David Lee",
+    "subject": "Quick question about API",
+    "type": "general",
+    "originalSentAt": "2026-06-26T14:58:39.423Z",
+    "followUpAt": "2026-06-29T14:58:39.423Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "emma@company.com",
+    "sender": "Emma Wilson",
+    "subject": "Invoice question",
+    "type": "billing",
+    "originalSentAt": "2026-06-26T14:58:39.431Z",
+    "followUpAt": "2026-06-29T14:58:39.431Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "alice@example.com",
+    "sender": "Alice Johnson",
+    "subject": "Still not working after 5 days",
+    "type": "support",
+    "originalSentAt": "2026-06-26T16:02:10.252Z",
+    "followUpAt": "2026-06-29T16:02:10.253Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "ceo@enterprise.com",
+    "sender": "CEO Mark",
+    "subject": "URGENT: Partnership opportunity",
+    "type": "sales",
+    "originalSentAt": "2026-06-26T16:02:10.267Z",
+    "followUpAt": "2026-06-29T16:02:10.267Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "carol@startup.io",
+    "sender": "Carol Chen",
+    "subject": "Having issues with AI setup",
+    "type": "support",
+    "originalSentAt": "2026-06-26T16:02:10.277Z",
+    "followUpAt": "2026-06-29T16:02:10.277Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "david@partner.co",
+    "sender": "David Lee",
+    "subject": "Quick question about API",
+    "type": "general",
+    "originalSentAt": "2026-06-26T16:02:10.327Z",
+    "followUpAt": "2026-06-29T16:02:10.327Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "emma@company.com",
+    "sender": "Emma Wilson",
+    "subject": "Invoice question",
+    "type": "billing",
+    "originalSentAt": "2026-06-26T16:02:10.336Z",
+    "followUpAt": "2026-06-29T16:02:10.336Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "alice@example.com",
+    "sender": "Alice Johnson",
+    "subject": "Still not working after 5 days",
+    "type": "support",
+    "originalSentAt": "2026-06-26T16:47:59.178Z",
+    "followUpAt": "2026-06-29T16:47:59.179Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "ceo@enterprise.com",
+    "sender": "CEO Mark",
+    "subject": "URGENT: Partnership opportunity",
+    "type": "sales",
+    "originalSentAt": "2026-06-26T16:47:59.193Z",
+    "followUpAt": "2026-06-29T16:47:59.193Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "carol@startup.io",
+    "sender": "Carol Chen",
+    "subject": "Having issues with AI setup",
+    "type": "support",
+    "originalSentAt": "2026-06-26T16:47:59.203Z",
+    "followUpAt": "2026-06-29T16:47:59.203Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "david@partner.co",
+    "sender": "David Lee",
+    "subject": "Quick question about API",
+    "type": "general",
+    "originalSentAt": "2026-06-26T16:47:59.212Z",
+    "followUpAt": "2026-06-29T16:47:59.212Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "emma@company.com",
+    "sender": "Emma Wilson",
+    "subject": "Invoice question",
+    "type": "billing",
+    "originalSentAt": "2026-06-26T16:47:59.221Z",
+    "followUpAt": "2026-06-29T16:47:59.221Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "alice@example.com",
+    "sender": "Alice Johnson",
+    "subject": "Still not working after 5 days",
+    "type": "support",
+    "originalSentAt": "2026-06-26T16:58:53.026Z",
+    "followUpAt": "2026-06-29T16:58:53.026Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "ceo@enterprise.com",
+    "sender": "CEO Mark",
+    "subject": "URGENT: Partnership opportunity",
+    "type": "sales",
+    "originalSentAt": "2026-06-26T16:58:53.040Z",
+    "followUpAt": "2026-06-29T16:58:53.040Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "carol@startup.io",
+    "sender": "Carol Chen",
+    "subject": "Having issues with AI setup",
+    "type": "support",
+    "originalSentAt": "2026-06-26T16:58:53.048Z",
+    "followUpAt": "2026-06-29T16:58:53.049Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "david@partner.co",
+    "sender": "David Lee",
+    "subject": "Quick question about API",
+    "type": "general",
+    "originalSentAt": "2026-06-26T16:58:53.057Z",
+    "followUpAt": "2026-06-29T16:58:53.057Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "emma@company.com",
+    "sender": "Emma Wilson",
+    "subject": "Invoice question",
+    "type": "billing",
+    "originalSentAt": "2026-06-26T16:58:53.065Z",
+    "followUpAt": "2026-06-29T16:58:53.065Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "alice@example.com",
+    "sender": "Alice Johnson",
+    "subject": "Still not working after 5 days",
+    "type": "support",
+    "originalSentAt": "2026-06-26T17:23:14.697Z",
+    "followUpAt": "2026-06-29T17:23:14.698Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "ceo@enterprise.com",
+    "sender": "CEO Mark",
+    "subject": "URGENT: Partnership opportunity",
+    "type": "sales",
+    "originalSentAt": "2026-06-26T17:23:14.711Z",
+    "followUpAt": "2026-06-29T17:23:14.711Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "carol@startup.io",
+    "sender": "Carol Chen",
+    "subject": "Having issues with AI setup",
+    "type": "support",
+    "originalSentAt": "2026-06-26T17:23:14.719Z",
+    "followUpAt": "2026-06-29T17:23:14.720Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "david@partner.co",
+    "sender": "David Lee",
+    "subject": "Quick question about API",
+    "type": "general",
+    "originalSentAt": "2026-06-26T17:23:14.728Z",
+    "followUpAt": "2026-06-29T17:23:14.728Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "emma@company.com",
+    "sender": "Emma Wilson",
+    "subject": "Invoice question",
+    "type": "billing",
+    "originalSentAt": "2026-06-26T17:23:14.737Z",
+    "followUpAt": "2026-06-29T17:23:14.737Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "alice@example.com",
+    "sender": "Alice Johnson",
+    "subject": "Still not working after 5 days",
+    "type": "support",
+    "originalSentAt": "2026-06-26T17:46:06.466Z",
+    "followUpAt": "2026-06-29T17:46:06.466Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "ceo@enterprise.com",
+    "sender": "CEO Mark",
+    "subject": "URGENT: Partnership opportunity",
+    "type": "sales",
+    "originalSentAt": "2026-06-26T17:46:06.481Z",
+    "followUpAt": "2026-06-29T17:46:06.481Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "carol@startup.io",
+    "sender": "Carol Chen",
+    "subject": "Having issues with AI setup",
+    "type": "support",
+    "originalSentAt": "2026-06-26T17:46:06.490Z",
+    "followUpAt": "2026-06-29T17:46:06.491Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "david@partner.co",
+    "sender": "David Lee",
+    "subject": "Quick question about API",
+    "type": "general",
+    "originalSentAt": "2026-06-26T17:46:06.499Z",
+    "followUpAt": "2026-06-29T17:46:06.499Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "emma@company.com",
+    "sender": "Emma Wilson",
+    "subject": "Invoice question",
+    "type": "billing",
+    "originalSentAt": "2026-06-26T17:46:06.508Z",
+    "followUpAt": "2026-06-29T17:46:06.508Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "alice@example.com",
+    "sender": "Alice Johnson",
+    "subject": "Still not working after 5 days",
+    "type": "support",
+    "originalSentAt": "2026-06-26T18:05:50.873Z",
+    "followUpAt": "2026-06-29T18:05:50.873Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "ceo@enterprise.com",
+    "sender": "CEO Mark",
+    "subject": "URGENT: Partnership opportunity",
+    "type": "sales",
+    "originalSentAt": "2026-06-26T18:05:50.887Z",
+    "followUpAt": "2026-06-29T18:05:50.888Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "carol@startup.io",
+    "sender": "Carol Chen",
+    "subject": "Having issues with AI setup",
+    "type": "support",
+    "originalSentAt": "2026-06-26T18:05:50.897Z",
+    "followUpAt": "2026-06-29T18:05:50.897Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "david@partner.co",
+    "sender": "David Lee",
+    "subject": "Quick question about API",
+    "type": "general",
+    "originalSentAt": "2026-06-26T18:05:50.905Z",
+    "followUpAt": "2026-06-29T18:05:50.906Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "emma@company.com",
+    "sender": "Emma Wilson",
+    "subject": "Invoice question",
+    "type": "billing",
+    "originalSentAt": "2026-06-26T18:05:50.914Z",
+    "followUpAt": "2026-06-29T18:05:50.914Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "alice@example.com",
+    "sender": "Alice Johnson",
+    "subject": "Still not working after 5 days",
+    "type": "support",
+    "originalSentAt": "2026-06-26T19:13:35.376Z",
+    "followUpAt": "2026-06-29T19:13:35.377Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "ceo@enterprise.com",
+    "sender": "CEO Mark",
+    "subject": "URGENT: Partnership opportunity",
+    "type": "sales",
+    "originalSentAt": "2026-06-26T19:13:35.389Z",
+    "followUpAt": "2026-06-29T19:13:35.390Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "carol@startup.io",
+    "sender": "Carol Chen",
+    "subject": "Having issues with AI setup",
+    "type": "support",
+    "originalSentAt": "2026-06-26T19:13:35.399Z",
+    "followUpAt": "2026-06-29T19:13:35.399Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "david@partner.co",
+    "sender": "David Lee",
+    "subject": "Quick question about API",
+    "type": "general",
+    "originalSentAt": "2026-06-26T19:13:35.407Z",
+    "followUpAt": "2026-06-29T19:13:35.407Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "emma@company.com",
+    "sender": "Emma Wilson",
+    "subject": "Invoice question",
+    "type": "billing",
+    "originalSentAt": "2026-06-26T19:13:35.415Z",
+    "followUpAt": "2026-06-29T19:13:35.416Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "alice@example.com",
+    "sender": "Alice Johnson",
+    "subject": "Still not working after 5 days",
+    "type": "support",
+    "originalSentAt": "2026-06-26T19:29:46.522Z",
+    "followUpAt": "2026-06-29T19:29:46.522Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "ceo@enterprise.com",
+    "sender": "CEO Mark",
+    "subject": "URGENT: Partnership opportunity",
+    "type": "sales",
+    "originalSentAt": "2026-06-26T19:29:46.536Z",
+    "followUpAt": "2026-06-29T19:29:46.536Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "carol@startup.io",
+    "sender": "Carol Chen",
+    "subject": "Having issues with AI setup",
+    "type": "support",
+    "originalSentAt": "2026-06-26T19:29:46.545Z",
+    "followUpAt": "2026-06-29T19:29:46.545Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "david@partner.co",
+    "sender": "David Lee",
+    "subject": "Quick question about API",
+    "type": "general",
+    "originalSentAt": "2026-06-26T19:29:46.553Z",
+    "followUpAt": "2026-06-29T19:29:46.553Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "emma@company.com",
+    "sender": "Emma Wilson",
+    "subject": "Invoice question",
+    "type": "billing",
+    "originalSentAt": "2026-06-26T19:29:46.562Z",
+    "followUpAt": "2026-06-29T19:29:46.562Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "alice@example.com",
+    "sender": "Alice Johnson",
+    "subject": "Still not working after 5 days",
+    "type": "support",
+    "originalSentAt": "2026-06-26T20:05:32.188Z",
+    "followUpAt": "2026-06-29T20:05:32.189Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "ceo@enterprise.com",
+    "sender": "CEO Mark",
+    "subject": "URGENT: Partnership opportunity",
+    "type": "sales",
+    "originalSentAt": "2026-06-26T20:05:32.202Z",
+    "followUpAt": "2026-06-29T20:05:32.202Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "carol@startup.io",
+    "sender": "Carol Chen",
+    "subject": "Having issues with AI setup",
+    "type": "support",
+    "originalSentAt": "2026-06-26T20:05:32.211Z",
+    "followUpAt": "2026-06-29T20:05:32.211Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "david@partner.co",
+    "sender": "David Lee",
+    "subject": "Quick question about API",
+    "type": "general",
+    "originalSentAt": "2026-06-26T20:05:32.219Z",
+    "followUpAt": "2026-06-29T20:05:32.220Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "emma@company.com",
+    "sender": "Emma Wilson",
+    "subject": "Invoice question",
+    "type": "billing",
+    "originalSentAt": "2026-06-26T20:05:32.228Z",
+    "followUpAt": "2026-06-29T20:05:32.229Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "alice@example.com",
+    "sender": "Alice Johnson",
+    "subject": "Still not working after 5 days",
+    "type": "support",
+    "originalSentAt": "2026-06-26T20:43:48.045Z",
+    "followUpAt": "2026-06-29T20:43:48.045Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "ceo@enterprise.com",
+    "sender": "CEO Mark",
+    "subject": "URGENT: Partnership opportunity",
+    "type": "sales",
+    "originalSentAt": "2026-06-26T20:43:48.058Z",
+    "followUpAt": "2026-06-29T20:43:48.059Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "carol@startup.io",
+    "sender": "Carol Chen",
+    "subject": "Having issues with AI setup",
+    "type": "support",
+    "originalSentAt": "2026-06-26T20:43:48.067Z",
+    "followUpAt": "2026-06-29T20:43:48.067Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "david@partner.co",
+    "sender": "David Lee",
+    "subject": "Quick question about API",
+    "type": "general",
+    "originalSentAt": "2026-06-26T20:43:48.076Z",
+    "followUpAt": "2026-06-29T20:43:48.076Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "emma@company.com",
+    "sender": "Emma Wilson",
+    "subject": "Invoice question",
+    "type": "billing",
+    "originalSentAt": "2026-06-26T20:43:48.084Z",
+    "followUpAt": "2026-06-29T20:43:48.085Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "alice@example.com",
+    "sender": "Alice Johnson",
+    "subject": "Still not working after 5 days",
+    "type": "support",
+    "originalSentAt": "2026-06-26T20:46:17.687Z",
+    "followUpAt": "2026-06-29T20:46:17.688Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "ceo@enterprise.com",
+    "sender": "CEO Mark",
+    "subject": "URGENT: Partnership opportunity",
+    "type": "sales",
+    "originalSentAt": "2026-06-26T20:46:17.742Z",
+    "followUpAt": "2026-06-29T20:46:17.743Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "carol@startup.io",
+    "sender": "Carol Chen",
+    "subject": "Having issues with AI setup",
+    "type": "support",
+    "originalSentAt": "2026-06-26T20:46:17.752Z",
+    "followUpAt": "2026-06-29T20:46:17.752Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "david@partner.co",
+    "sender": "David Lee",
+    "subject": "Quick question about API",
+    "type": "general",
+    "originalSentAt": "2026-06-26T20:46:17.761Z",
+    "followUpAt": "2026-06-29T20:46:17.761Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "emma@company.com",
+    "sender": "Emma Wilson",
+    "subject": "Invoice question",
+    "type": "billing",
+    "originalSentAt": "2026-06-26T20:46:17.771Z",
+    "followUpAt": "2026-06-29T20:46:17.771Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "alice@example.com",
+    "sender": "Alice Johnson",
+    "subject": "Still not working after 5 days",
+    "type": "support",
+    "originalSentAt": "2026-06-26T21:23:11.927Z",
+    "followUpAt": "2026-06-29T21:23:11.927Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "ceo@enterprise.com",
+    "sender": "CEO Mark",
+    "subject": "URGENT: Partnership opportunity",
+    "type": "sales",
+    "originalSentAt": "2026-06-26T21:23:11.941Z",
+    "followUpAt": "2026-06-29T21:23:11.942Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "carol@startup.io",
+    "sender": "Carol Chen",
+    "subject": "Having issues with AI setup",
+    "type": "support",
+    "originalSentAt": "2026-06-26T21:23:11.951Z",
+    "followUpAt": "2026-06-29T21:23:11.951Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "david@partner.co",
+    "sender": "David Lee",
+    "subject": "Quick question about API",
+    "type": "general",
+    "originalSentAt": "2026-06-26T21:23:11.960Z",
+    "followUpAt": "2026-06-29T21:23:11.960Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "emma@company.com",
+    "sender": "Emma Wilson",
+    "subject": "Invoice question",
+    "type": "billing",
+    "originalSentAt": "2026-06-26T21:23:11.970Z",
+    "followUpAt": "2026-06-29T21:23:11.970Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "alice@example.com",
+    "sender": "Alice Johnson",
+    "subject": "Still not working after 5 days",
+    "type": "support",
+    "originalSentAt": "2026-06-26T21:57:47.863Z",
+    "followUpAt": "2026-06-29T21:57:47.864Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "ceo@enterprise.com",
+    "sender": "CEO Mark",
+    "subject": "URGENT: Partnership opportunity",
+    "type": "sales",
+    "originalSentAt": "2026-06-26T21:57:47.877Z",
+    "followUpAt": "2026-06-29T21:57:47.877Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "carol@startup.io",
+    "sender": "Carol Chen",
+    "subject": "Having issues with AI setup",
+    "type": "support",
+    "originalSentAt": "2026-06-26T21:57:47.886Z",
+    "followUpAt": "2026-06-29T21:57:47.887Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "david@partner.co",
+    "sender": "David Lee",
+    "subject": "Quick question about API",
+    "type": "general",
+    "originalSentAt": "2026-06-26T21:57:47.895Z",
+    "followUpAt": "2026-06-29T21:57:47.895Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "emma@company.com",
+    "sender": "Emma Wilson",
+    "subject": "Invoice question",
+    "type": "billing",
+    "originalSentAt": "2026-06-26T21:57:47.904Z",
+    "followUpAt": "2026-06-29T21:57:47.904Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "alice@example.com",
+    "sender": "Alice Johnson",
+    "subject": "Still not working after 5 days",
+    "type": "support",
+    "originalSentAt": "2026-06-26T22:27:22.682Z",
+    "followUpAt": "2026-06-29T22:27:22.683Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "ceo@enterprise.com",
+    "sender": "CEO Mark",
+    "subject": "URGENT: Partnership opportunity",
+    "type": "sales",
+    "originalSentAt": "2026-06-26T22:27:22.738Z",
+    "followUpAt": "2026-06-29T22:27:22.739Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "carol@startup.io",
+    "sender": "Carol Chen",
+    "subject": "Having issues with AI setup",
+    "type": "support",
+    "originalSentAt": "2026-06-26T22:27:23.361Z",
+    "followUpAt": "2026-06-29T22:27:23.361Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "david@partner.co",
+    "sender": "David Lee",
+    "subject": "Quick question about API",
+    "type": "general",
+    "originalSentAt": "2026-06-26T22:27:23.860Z",
+    "followUpAt": "2026-06-29T22:27:23.860Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "emma@company.com",
+    "sender": "Emma Wilson",
+    "subject": "Invoice question",
+    "type": "billing",
+    "originalSentAt": "2026-06-26T22:27:24.524Z",
+    "followUpAt": "2026-06-29T22:27:24.524Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "alice@example.com",
+    "sender": "Alice Johnson",
+    "subject": "Still not working after 5 days",
+    "type": "support",
+    "originalSentAt": "2026-06-26T22:51:46.754Z",
+    "followUpAt": "2026-06-29T22:51:46.754Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "ceo@enterprise.com",
+    "sender": "CEO Mark",
+    "subject": "URGENT: Partnership opportunity",
+    "type": "sales",
+    "originalSentAt": "2026-06-26T22:51:46.768Z",
+    "followUpAt": "2026-06-29T22:51:46.768Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "carol@startup.io",
+    "sender": "Carol Chen",
+    "subject": "Having issues with AI setup",
+    "type": "support",
+    "originalSentAt": "2026-06-26T22:51:46.777Z",
+    "followUpAt": "2026-06-29T22:51:46.777Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "david@partner.co",
+    "sender": "David Lee",
+    "subject": "Quick question about API",
+    "type": "general",
+    "originalSentAt": "2026-06-26T22:51:46.786Z",
+    "followUpAt": "2026-06-29T22:51:46.786Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "emma@company.com",
+    "sender": "Emma Wilson",
+    "subject": "Invoice question",
+    "type": "billing",
+    "originalSentAt": "2026-06-26T22:51:46.795Z",
+    "followUpAt": "2026-06-29T22:51:46.796Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "alice@example.com",
+    "sender": "Alice Johnson",
+    "subject": "Still not working after 5 days",
+    "type": "support",
+    "originalSentAt": "2026-06-26T23:15:23.309Z",
+    "followUpAt": "2026-06-29T23:15:23.310Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "ceo@enterprise.com",
+    "sender": "CEO Mark",
+    "subject": "URGENT: Partnership opportunity",
+    "type": "sales",
+    "originalSentAt": "2026-06-26T23:15:23.323Z",
+    "followUpAt": "2026-06-29T23:15:23.323Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "carol@startup.io",
+    "sender": "Carol Chen",
+    "subject": "Having issues with AI setup",
+    "type": "support",
+    "originalSentAt": "2026-06-26T23:15:23.332Z",
+    "followUpAt": "2026-06-29T23:15:23.332Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "david@partner.co",
+    "sender": "David Lee",
+    "subject": "Quick question about API",
+    "type": "general",
+    "originalSentAt": "2026-06-26T23:15:23.340Z",
+    "followUpAt": "2026-06-29T23:15:23.340Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "emma@company.com",
+    "sender": "Emma Wilson",
+    "subject": "Invoice question",
+    "type": "billing",
+    "originalSentAt": "2026-06-26T23:15:23.349Z",
+    "followUpAt": "2026-06-29T23:15:23.349Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "alice@example.com",
+    "sender": "Alice Johnson",
+    "subject": "Still not working after 5 days",
+    "type": "support",
+    "originalSentAt": "2026-06-26T23:40:18.982Z",
+    "followUpAt": "2026-06-29T23:40:18.982Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "ceo@enterprise.com",
+    "sender": "CEO Mark",
+    "subject": "URGENT: Partnership opportunity",
+    "type": "sales",
+    "originalSentAt": "2026-06-26T23:40:18.996Z",
+    "followUpAt": "2026-06-29T23:40:18.996Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "carol@startup.io",
+    "sender": "Carol Chen",
+    "subject": "Having issues with AI setup",
+    "type": "support",
+    "originalSentAt": "2026-06-26T23:40:19.005Z",
+    "followUpAt": "2026-06-29T23:40:19.005Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "david@partner.co",
+    "sender": "David Lee",
+    "subject": "Quick question about API",
+    "type": "general",
+    "originalSentAt": "2026-06-26T23:40:19.014Z",
+    "followUpAt": "2026-06-29T23:40:19.014Z",
+    "status": "pending",
+    "followUpCount": 0
+  },
+  {
+    "originalEmail": "emma@company.com",
+    "sender": "Emma Wilson",
+    "subject": "Invoice question",
+    "type": "billing",
+    "originalSentAt": "2026-06-26T23:40:19.105Z",
+    "followUpAt": "2026-06-29T23:40:19.105Z",
+    "status": "pending",
+    "followUpCount": 0
+  }
+]

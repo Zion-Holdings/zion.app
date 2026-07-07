@@ -1,0 +1,8202 @@
+[
+  {
+    "timestamp": "2026-06-25T13:07:05.536Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:07:05.549Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:07:05.562Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:07:05.571Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:07:05.580Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:15:18.408Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:15:18.419Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:15:18.431Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:15:18.439Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:15:18.447Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:23:18.311Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:23:18.322Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:23:18.335Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:23:18.343Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:23:18.352Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:34:40.494Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:34:40.506Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:34:40.518Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:34:40.527Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:34:40.535Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:42:25.139Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:42:25.151Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:42:25.163Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:42:25.172Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:42:25.180Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:47:45.212Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:47:45.224Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:47:45.237Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:47:45.245Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:47:45.254Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:51:48.417Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:51:48.429Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:51:48.441Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:51:48.449Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T13:51:48.458Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T14:19:00.820Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T14:19:00.832Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T14:19:00.843Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T14:19:00.851Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T14:19:00.860Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:07:32.492Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:07:32.505Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:07:32.519Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:07:32.527Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:07:32.537Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:37:02.511Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:37:02.524Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:37:02.538Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:37:02.547Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:37:02.556Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:40:44.007Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:40:44.019Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:40:44.031Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:40:44.039Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:40:44.048Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:47:18.918Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:47:18.929Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:47:18.942Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:47:18.950Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:47:18.958Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:50:28.782Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:50:28.793Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:50:28.805Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:50:28.814Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:50:28.823Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:55:39.577Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:55:39.590Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:55:39.602Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:55:39.611Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:55:39.620Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:58:06.135Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:58:06.148Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:58:06.160Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:58:06.169Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T15:58:06.178Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T16:02:45.307Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T16:02:45.319Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T16:02:45.332Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T16:02:45.341Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T16:02:45.350Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T16:29:53.527Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T16:29:53.539Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T16:29:53.552Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T16:29:53.562Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T16:29:53.572Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T17:14:05.063Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T17:14:05.075Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T17:14:05.087Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T17:14:05.096Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T17:14:05.105Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T17:28:56.353Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T17:28:56.365Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T17:28:56.377Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T17:28:56.385Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T17:28:56.394Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T17:36:14.768Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T17:36:14.779Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T17:36:14.791Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T17:36:14.799Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T17:36:14.808Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T17:48:12.164Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T17:48:12.176Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T17:48:12.189Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T17:48:12.198Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T17:48:12.207Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T17:54:58.265Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T17:54:58.276Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T17:54:58.287Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T17:54:58.295Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T17:54:58.304Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T18:11:57.949Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T18:11:57.961Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T18:11:57.975Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T18:11:57.984Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T18:11:57.993Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T18:32:48.683Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T18:32:48.696Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T18:32:48.709Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T18:32:48.717Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T18:32:48.727Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T18:44:32.555Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T18:44:32.568Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T18:44:32.581Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T18:44:32.590Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T18:44:32.600Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T18:53:33.555Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T18:53:33.568Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T18:53:33.582Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T18:53:33.632Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T18:53:33.641Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T19:57:35.090Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T19:57:35.102Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T19:57:35.114Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T19:57:35.122Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T19:57:35.131Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T20:07:50.424Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T20:07:50.436Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T20:07:50.449Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T20:07:50.457Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T20:07:50.465Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T20:19:12.755Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T20:19:12.767Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T20:19:12.780Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T20:19:12.789Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T20:19:12.798Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T20:46:12.075Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T20:46:12.087Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T20:46:12.100Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T20:46:12.109Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T20:46:12.119Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T20:50:39.059Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T20:50:39.071Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T20:50:39.084Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T20:50:39.094Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T20:50:39.103Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T20:57:14.028Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T20:57:14.040Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T20:57:14.053Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T20:57:14.061Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T20:57:14.070Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T21:27:02.265Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T21:27:02.277Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T21:27:02.291Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T21:27:02.300Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T21:27:02.309Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T21:36:35.956Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T21:36:35.968Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T21:36:35.982Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T21:36:35.991Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T21:36:36.041Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T21:59:42.484Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T21:59:42.496Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T21:59:42.508Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T21:59:42.517Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T21:59:42.526Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T22:11:02.776Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T22:11:02.829Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T22:11:02.847Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T22:11:02.856Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T22:11:02.866Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T22:29:45.216Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T22:29:45.228Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T22:29:45.241Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T22:29:45.249Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T22:29:45.258Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T22:33:07.037Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T22:33:07.049Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T22:33:07.061Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T22:33:07.070Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T22:33:07.079Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T22:52:08.193Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T22:52:08.206Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T22:52:08.219Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T22:52:08.229Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T22:52:08.238Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T23:21:45.042Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T23:21:45.055Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T23:21:45.069Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T23:21:45.078Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T23:21:45.087Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-25T23:45:49.026Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T23:45:49.037Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-25T23:45:49.050Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-25T23:45:49.058Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-25T23:45:49.068Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T00:00:09.839Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T00:00:09.858Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T00:00:09.891Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T00:00:09.900Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T00:00:09.926Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T01:09:38.133Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T01:09:38.145Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T01:09:38.157Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T01:09:38.165Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T01:09:38.174Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T01:21:53.931Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T01:21:53.943Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T01:21:53.955Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T01:21:53.963Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T01:21:53.971Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T01:29:00.601Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T01:29:00.612Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T01:29:00.624Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T01:29:00.632Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T01:29:00.641Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T01:48:54.581Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T01:48:54.592Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T01:48:54.604Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T01:48:54.612Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T01:48:54.621Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T02:11:18.009Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T02:11:18.020Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T02:11:18.033Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T02:11:18.041Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T02:11:18.050Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T02:28:59.977Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T02:28:59.989Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T02:29:00.043Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T02:29:00.051Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T02:29:00.061Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T02:37:13.743Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T02:37:13.755Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T02:37:13.767Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T02:37:13.776Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T02:37:13.785Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T03:09:40.553Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T03:09:40.566Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T03:09:40.580Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T03:09:40.589Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T03:09:40.598Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T03:18:45.628Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T03:18:45.642Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T03:18:45.656Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T03:18:45.664Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T03:18:45.707Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T03:38:35.056Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T03:38:35.069Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T03:38:35.084Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T03:38:35.092Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T03:38:35.103Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T04:35:29.992Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T04:35:30.005Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T04:35:30.059Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T04:35:30.067Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T04:35:30.076Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:04:44.774Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:04:44.785Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:04:44.797Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:04:44.806Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:04:44.815Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:13:25.133Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:13:25.146Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:13:25.160Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:13:25.168Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:13:25.178Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:25:52.483Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:25:52.494Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:25:52.506Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:25:52.514Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:25:52.523Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:31:48.521Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:31:48.532Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:31:48.544Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:31:48.553Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:31:48.561Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:40:56.604Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:40:56.616Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:40:56.628Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:40:56.636Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:40:56.646Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:47:38.810Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:47:38.822Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:47:38.835Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:47:38.843Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:47:38.853Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:56:12.068Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:56:12.080Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:56:12.092Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:56:12.100Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T05:56:12.109Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T06:04:16.622Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T06:04:16.635Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T06:04:16.648Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T06:04:16.697Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T06:04:16.707Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T06:26:04.500Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T06:26:04.513Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T06:26:04.525Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T06:26:04.533Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T06:26:04.542Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T06:56:27.417Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T06:56:27.428Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T06:56:27.441Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T06:56:27.449Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T06:56:27.458Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T07:26:59.834Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T07:26:59.847Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T07:26:59.860Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T07:26:59.868Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T07:26:59.878Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T07:47:41.907Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T07:47:41.919Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T07:47:41.932Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T07:47:41.941Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T07:47:41.950Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T08:13:53.761Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T08:13:53.773Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T08:13:53.785Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T08:13:53.793Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T08:13:53.802Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T08:17:43.744Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T08:17:43.758Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T08:17:43.771Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T08:17:43.780Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T08:17:43.789Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T08:21:46.988Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T08:21:47.000Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T08:21:47.013Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T08:21:47.021Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T08:21:47.031Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T08:37:24.129Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T08:37:24.141Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T08:37:24.154Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T08:37:24.162Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T08:37:24.172Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T08:51:15.769Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T08:51:15.781Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T08:51:15.793Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T08:51:15.801Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T08:51:15.809Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T09:05:41.515Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T09:05:41.529Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T09:05:41.542Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T09:05:41.550Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T09:05:41.642Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T09:36:21.865Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T09:36:21.876Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T09:36:21.889Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T09:36:21.897Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T09:36:21.906Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T09:50:01.153Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T09:50:01.173Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T09:50:01.187Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T09:50:01.195Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T09:50:01.206Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T11:52:52.174Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T11:52:52.185Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T11:52:52.197Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T11:52:52.205Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T11:52:52.253Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T13:05:08.994Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T13:05:09.008Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T13:05:09.021Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T13:05:09.030Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T13:05:09.039Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T13:55:37.698Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T13:55:37.709Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T13:55:37.721Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T13:55:37.729Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T13:55:37.737Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:03:35.211Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:03:35.227Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:03:35.239Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:03:35.247Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:03:35.256Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:10:45.356Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:10:45.368Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:10:45.381Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:10:45.389Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:10:45.398Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:24:03.025Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:24:03.038Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:24:03.051Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:24:03.060Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:24:03.110Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:30:41.307Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:30:41.319Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:30:41.332Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:30:41.341Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:30:41.350Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:34:36.584Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:34:36.596Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:34:36.608Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:34:36.617Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:34:36.627Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:40:35.100Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:40:35.111Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:40:35.123Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:40:35.131Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:40:35.140Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:58:39.389Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:58:39.400Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:58:39.412Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:58:39.420Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T14:58:39.429Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T16:02:10.248Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T16:02:10.261Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T16:02:10.274Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T16:02:10.325Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T16:02:10.334Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T16:47:59.175Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T16:47:59.187Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T16:47:59.200Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T16:47:59.209Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T16:47:59.219Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T16:58:53.022Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T16:58:53.034Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T16:58:53.046Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T16:58:53.054Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T16:58:53.063Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T17:23:14.694Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T17:23:14.705Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T17:23:14.717Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T17:23:14.726Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T17:23:14.735Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T17:46:06.462Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T17:46:06.475Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T17:46:06.488Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T17:46:06.497Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T17:46:06.506Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T18:05:50.869Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T18:05:50.882Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T18:05:50.894Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T18:05:50.903Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T18:05:50.912Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T19:13:35.373Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T19:13:35.384Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T19:13:35.397Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T19:13:35.405Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T19:13:35.413Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T19:29:46.518Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T19:29:46.530Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T19:29:46.543Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T19:29:46.551Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T19:29:46.560Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T20:05:32.185Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T20:05:32.196Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T20:05:32.209Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T20:05:32.217Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T20:05:32.226Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T20:43:48.041Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T20:43:48.053Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T20:43:48.065Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T20:43:48.074Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T20:43:48.082Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T20:46:17.684Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T20:46:17.696Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T20:46:17.750Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T20:46:17.759Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T20:46:17.768Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T21:23:11.923Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T21:23:11.936Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T21:23:11.949Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T21:23:11.958Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T21:23:11.968Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T21:57:47.860Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T21:57:47.871Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T21:57:47.884Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T21:57:47.893Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T21:57:47.902Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T22:27:22.639Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T22:27:22.692Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T22:27:23.236Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T22:27:23.735Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T22:27:24.399Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T22:51:46.750Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T22:51:46.762Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T22:51:46.774Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T22:51:46.783Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T22:51:46.793Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T23:15:23.306Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T23:15:23.317Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T23:15:23.330Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T23:15:23.338Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T23:15:23.347Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  },
+  {
+    "timestamp": "2026-06-26T23:40:18.979Z",
+    "email": {
+      "subject": "Still not working after 5 days",
+      "from": "alice@example.com",
+      "type": "support",
+      "cc": [
+        "bob@example.com"
+      ]
+    },
+    "response": {
+      "sent": true,
+      "to": "alice@example.com",
+      "ccIncluded": true,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T23:40:18.991Z",
+    "email": {
+      "subject": "URGENT: Partnership opportunity",
+      "from": "ceo@enterprise.com",
+      "type": "sales",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "ceo@enterprise.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 85
+    }
+  },
+  {
+    "timestamp": "2026-06-26T23:40:19.003Z",
+    "email": {
+      "subject": "Having issues with AI setup",
+      "from": "carol@startup.io",
+      "type": "support",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "carol@startup.io",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 70
+    }
+  },
+  {
+    "timestamp": "2026-06-26T23:40:19.012Z",
+    "email": {
+      "subject": "Quick question about API",
+      "from": "david@partner.co",
+      "type": "general",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "david@partner.co",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 60
+    }
+  },
+  {
+    "timestamp": "2026-06-26T23:40:19.021Z",
+    "email": {
+      "subject": "Invoice question",
+      "from": "emma@company.com",
+      "type": "billing",
+      "cc": []
+    },
+    "response": {
+      "sent": true,
+      "to": "emma@company.com",
+      "ccIncluded": false,
+      "qualityScore": 100,
+      "priorityScore": 75
+    }
+  }
+]

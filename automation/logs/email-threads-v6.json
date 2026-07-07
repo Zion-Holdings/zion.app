@@ -1,0 +1,172 @@
+{
+  "alice@example.com": {
+    "count": 68,
+    "messages": [
+      {
+        "subject": "Still not working after 5 days",
+        "type": "support",
+        "timestamp": "2026-06-26T01:16:22.601Z"
+      },
+      {
+        "subject": "Still not working after 5 days",
+        "type": "support",
+        "timestamp": "2026-06-26T04:15:30.485Z"
+      },
+      {
+        "subject": "Still not working after 5 days",
+        "type": "support",
+        "timestamp": "2026-06-26T10:58:51.372Z"
+      },
+      {
+        "subject": "Still not working after 5 days",
+        "type": "support",
+        "timestamp": "2026-06-26T14:57:51.384Z"
+      },
+      {
+        "subject": "Still not working after 5 days",
+        "type": "support",
+        "timestamp": "2026-06-26T18:48:39.718Z"
+      }
+    ],
+    "lastResponse": "Dear Valued Customer,\n\nWe understand your time is valuable. Thank you for contacting Zion Tech Group Support regarding: \"Still not working after 5 days\"\n\nOur technical team will provide diagnosis and resolution within 24-48 hours.\n\nFor critical issues, call immediately: +1 302 464 0950\n\nOur Process:",
+    "subject": "Still not working after 5 days",
+    "lastType": "support",
+    "lastDate": "2026-06-26T18:48:39.718Z"
+  },
+  "ceo@enterprise.com": {
+    "count": 68,
+    "messages": [
+      {
+        "subject": "URGENT: Partnership opportunity",
+        "type": "sales",
+        "timestamp": "2026-06-26T01:16:22.612Z"
+      },
+      {
+        "subject": "URGENT: Partnership opportunity",
+        "type": "sales",
+        "timestamp": "2026-06-26T04:15:30.497Z"
+      },
+      {
+        "subject": "URGENT: Partnership opportunity",
+        "type": "sales",
+        "timestamp": "2026-06-26T10:58:51.381Z"
+      },
+      {
+        "subject": "URGENT: Partnership opportunity",
+        "type": "sales",
+        "timestamp": "2026-06-26T14:57:51.393Z"
+      },
+      {
+        "subject": "URGENT: Partnership opportunity",
+        "type": "sales",
+        "timestamp": "2026-06-26T18:48:39.729Z"
+      }
+    ],
+    "lastResponse": "Dear Customer,\n\nThank you for your interest in Zion Tech Group AI solutions!\n\nYour inquiry: \"URGENT: Partnership opportunity\" has been forwarded to our sales team.\n\nYou will receive personalized consultation within 24 hours.\n\nExplore Our Services:\n- Integration & API Services\n\nContact: +1 302 464 09",
+    "subject": "URGENT: Partnership opportunity",
+    "lastType": "sales",
+    "lastDate": "2026-06-26T18:48:39.729Z"
+  },
+  "carol@startup.io": {
+    "count": 68,
+    "messages": [
+      {
+        "subject": "Having issues with AI setup",
+        "type": "support",
+        "timestamp": "2026-06-26T01:16:22.620Z"
+      },
+      {
+        "subject": "Having issues with AI setup",
+        "type": "support",
+        "timestamp": "2026-06-26T04:15:30.505Z"
+      },
+      {
+        "subject": "Having issues with AI setup",
+        "type": "support",
+        "timestamp": "2026-06-26T10:58:51.389Z"
+      },
+      {
+        "subject": "Having issues with AI setup",
+        "type": "support",
+        "timestamp": "2026-06-26T14:57:51.401Z"
+      },
+      {
+        "subject": "Having issues with AI setup",
+        "type": "support",
+        "timestamp": "2026-06-26T18:48:39.737Z"
+      }
+    ],
+    "lastResponse": "Welcome back,\n\nThank you for contacting Zion Tech Group Support regarding: \"Having issues with AI setup\"\n\nOur technical team will provide diagnosis and resolution within 24-48 hours.\n\nRelated Resources:\n- AI Automation Setup Guide: https://ziontechgroup.com/zion-ai-workflow-orchestrator\n\nFor critica",
+    "subject": "Having issues with AI setup",
+    "lastType": "support",
+    "lastDate": "2026-06-26T18:48:39.737Z"
+  },
+  "david@partner.co": {
+    "count": 68,
+    "messages": [
+      {
+        "subject": "Quick question about API",
+        "type": "general",
+        "timestamp": "2026-06-26T01:16:22.625Z"
+      },
+      {
+        "subject": "Quick question about API",
+        "type": "general",
+        "timestamp": "2026-06-26T04:15:30.510Z"
+      },
+      {
+        "subject": "Quick question about API",
+        "type": "general",
+        "timestamp": "2026-06-26T10:58:51.394Z"
+      },
+      {
+        "subject": "Quick question about API",
+        "type": "general",
+        "timestamp": "2026-06-26T14:57:51.406Z"
+      },
+      {
+        "subject": "Quick question about API",
+        "type": "general",
+        "timestamp": "2026-06-26T18:48:39.741Z"
+      }
+    ],
+    "lastResponse": "Dear Customer,\n\nThank you for reaching out regarding: \"Quick question about API\". We will respond within 24 hours.\n\nBest regards,\nZion Tech Group\n\n---\nZion Tech Group\n+1 302 464 0950 | kleber@ziontechgroup.com | https://ziontechgroup.com",
+    "subject": "Quick question about API",
+    "lastType": "general",
+    "lastDate": "2026-06-26T18:48:39.741Z"
+  },
+  "emma@company.com": {
+    "count": 68,
+    "messages": [
+      {
+        "subject": "Invoice question",
+        "type": "billing",
+        "timestamp": "2026-06-26T01:16:22.631Z"
+      },
+      {
+        "subject": "Invoice question",
+        "type": "billing",
+        "timestamp": "2026-06-26T04:15:30.515Z"
+      },
+      {
+        "subject": "Invoice question",
+        "type": "billing",
+        "timestamp": "2026-06-26T10:58:51.400Z"
+      },
+      {
+        "subject": "Invoice question",
+        "type": "billing",
+        "timestamp": "2026-06-26T14:57:51.412Z"
+      },
+      {
+        "subject": "Invoice question",
+        "type": "billing",
+        "timestamp": "2026-06-26T18:48:39.747Z"
+      }
+    ],
+    "lastResponse": "Dear Customer,\n\nThank you for reaching out to Zion Tech Group!\n\nWe have received your message: \"Invoice question\"\n\nOur team will respond within 24-48 hours.\n\nBest regards,\nZion Tech Group Team\n\n---\nZion Tech Group\n+1 302 464 0950 | kleber@ziontechgroup.com | https://ziontechgroup.com",
+    "subject": "Invoice question",
+    "lastType": "billing",
+    "lastDate": "2026-06-26T18:48:39.747Z"
+  }
+}

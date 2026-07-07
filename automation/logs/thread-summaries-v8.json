@@ -1,0 +1,37 @@
+{
+  "alice@example.com": {
+    "summary": "20 messages exchanged over 0 days. Last type: support. Topics: Still not working after 5 days",
+    "msgCount": 20,
+    "duration": 0,
+    "lastDate": "2026-06-26T23:15:23.308Z",
+    "type": "support"
+  },
+  "ceo@enterprise.com": {
+    "summary": "20 messages exchanged over 0 days. Last type: sales. Topics: URGENT: Partnership opportunity",
+    "msgCount": 20,
+    "duration": 0,
+    "lastDate": "2026-06-26T23:15:23.319Z",
+    "type": "sales"
+  },
+  "carol@startup.io": {
+    "summary": "20 messages exchanged over 0 days. Last type: support. Topics: Having issues with AI setup",
+    "msgCount": 20,
+    "duration": 0,
+    "lastDate": "2026-06-26T23:15:23.331Z",
+    "type": "support"
+  },
+  "david@partner.co": {
+    "summary": "20 messages exchanged over 0 days. Last type: general. Topics: Quick question about API",
+    "msgCount": 20,
+    "duration": 0,
+    "lastDate": "2026-06-26T23:15:23.340Z",
+    "type": "general"
+  },
+  "emma@company.com": {
+    "summary": "20 messages exchanged over 0 days. Last type: billing. Topics: Invoice question",
+    "msgCount": 20,
+    "duration": 0,
+    "lastDate": "2026-06-26T23:15:23.348Z",
+    "type": "billing"
+  }
+}

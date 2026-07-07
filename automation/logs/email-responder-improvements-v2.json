@@ -1,0 +1,106 @@
+{
+  "version": 4,
+  "enhancements": [
+    {
+      "id": "urgent_enhance_1779982438118",
+      "type": "template_enhancement",
+      "category": "urgent",
+      "change": "Add 24/7 priority hotline and live chat link to urgent responses",
+      "priority": "high",
+      "timestamp": "2026-05-28T15:33:58.118Z",
+      "status": "applied",
+      "appliedAt": "2026-05-28T15:33:58.118Z"
+    },
+    {
+      "id": "ai_sentiment_1779982438118",
+      "type": "ai_enhancement",
+      "change": "Enable dynamic response tone adjustment based on sentiment (empathetic for negative, enthusiastic for positive)",
+      "priority": "medium",
+      "timestamp": "2026-05-28T15:33:58.118Z",
+      "status": "applied",
+      "appliedAt": "2026-05-28T15:33:58.119Z"
+    },
+    {
+      "id": "kb_recommend_1779982438118",
+      "type": "kb_enhancement",
+      "change": "Add personalized KB article recommendations based on sender history and email topic",
+      "priority": "medium",
+      "timestamp": "2026-05-28T15:33:58.118Z",
+      "status": "applied",
+      "appliedAt": "2026-05-28T15:33:58.119Z"
+    },
+    {
+      "id": "urgent_enhance_1779983194127",
+      "type": "template_enhancement",
+      "category": "urgent",
+      "change": "Add 24/7 priority hotline and live chat link to urgent responses",
+      "priority": "high",
+      "timestamp": "2026-05-28T15:46:34.127Z",
+      "status": "applied",
+      "appliedAt": "2026-05-28T15:46:34.128Z"
+    },
+    {
+      "id": "ai_sentiment_1779983194128",
+      "type": "ai_enhancement",
+      "change": "Enable dynamic response tone adjustment based on sentiment (empathetic for negative, enthusiastic for positive)",
+      "priority": "medium",
+      "timestamp": "2026-05-28T15:46:34.127Z",
+      "status": "applied",
+      "appliedAt": "2026-05-28T15:46:34.128Z"
+    },
+    {
+      "id": "kb_recommend_1779983194128",
+      "type": "kb_enhancement",
+      "change": "Add personalized KB article recommendations based on sender history and email topic",
+      "priority": "medium",
+      "timestamp": "2026-05-28T15:46:34.127Z",
+      "status": "applied",
+      "appliedAt": "2026-05-28T15:46:34.129Z"
+    }
+  ],
+  "learnedPatterns": {
+    "support": {
+      "count": 2,
+      "percentage": 17
+    },
+    "sales": {
+      "count": 2,
+      "percentage": 17
+    },
+    "urgent": {
+      "count": 2,
+      "percentage": 17
+    },
+    "partnership": {
+      "count": 2,
+      "percentage": 17
+    },
+    "general": {
+      "count": 2,
+      "percentage": 17
+    },
+    "billing": {
+      "count": 2,
+      "percentage": 17
+    }
+  },
+  "performanceMetrics": {
+    "totalProcessed": 12,
+    "types": {
+      "support": 2,
+      "sales": 2,
+      "urgent": 2,
+      "partnership": 2,
+      "general": 2,
+      "billing": 2
+    },
+    "responseRate": 0,
+    "escalationRate": 0,
+    "aiUsageRate": 0,
+    "taskExtractionRate": 0,
+    "avgResponseTime": null,
+    "topCategories": [],
+    "needsAttention": []
+  },
+  "lastEnhanced": "2026-05-28T15:46:34.129Z"
+}

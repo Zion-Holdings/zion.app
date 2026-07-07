@@ -1,0 +1,762 @@
+{
+  "alice@example.com": {
+    "email": "alice@example.com",
+    "firstSeen": "2026-05-28T16:07:21.494Z",
+    "interactions": 66,
+    "sentimentHistory": [
+      {
+        "timestamp": "2026-06-18T07:59:41.735Z",
+        "tone": "frustrated",
+        "toneScore": 45,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-18T08:01:31.312Z",
+        "tone": "frustrated",
+        "toneScore": 45,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-18T08:27:54.323Z",
+        "tone": "frustrated",
+        "toneScore": 45,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-18T09:30:23.775Z",
+        "tone": "frustrated",
+        "toneScore": 45,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:08:35.342Z",
+        "tone": "frustrated",
+        "toneScore": 45,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:10:03.902Z",
+        "tone": "frustrated",
+        "toneScore": 45,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:10:15.434Z",
+        "tone": "frustrated",
+        "toneScore": 45,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:10:31.051Z",
+        "tone": "frustrated",
+        "toneScore": 45,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:10:38.051Z",
+        "tone": "frustrated",
+        "toneScore": 45,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:10:58.549Z",
+        "tone": "frustrated",
+        "toneScore": 45,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-25T12:59:16.588Z",
+        "tone": "frustrated",
+        "toneScore": 45,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-25T13:08:06.362Z",
+        "tone": "frustrated",
+        "toneScore": 45,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-25T16:17:43.456Z",
+        "tone": "frustrated",
+        "toneScore": 45,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-25T19:16:55.915Z",
+        "tone": "frustrated",
+        "toneScore": 45,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-25T21:13:32.781Z",
+        "tone": "frustrated",
+        "toneScore": 45,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-26T01:16:22.595Z",
+        "tone": "frustrated",
+        "toneScore": 45,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-26T04:15:30.479Z",
+        "tone": "frustrated",
+        "toneScore": 45,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-26T10:58:51.366Z",
+        "tone": "frustrated",
+        "toneScore": 45,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-26T14:57:51.378Z",
+        "tone": "frustrated",
+        "toneScore": 45,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-26T18:48:39.710Z",
+        "tone": "frustrated",
+        "toneScore": 45,
+        "type": "support",
+        "qualityScore": 100
+      }
+    ],
+    "avgTone": 45,
+    "frustrationEvents": 20,
+    "satisfactionEvents": 0,
+    "lastSeen": "2026-06-26T18:48:39.710Z",
+    "trend": "stable"
+  },
+  "ceo@enterprise.com": {
+    "email": "ceo@enterprise.com",
+    "firstSeen": "2026-05-28T16:07:21.502Z",
+    "interactions": 66,
+    "sentimentHistory": [
+      {
+        "timestamp": "2026-06-18T07:59:41.745Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "sales",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-18T08:01:31.322Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "sales",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-18T08:27:54.333Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "sales",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-18T09:30:23.785Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "sales",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:08:35.353Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "sales",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:10:03.912Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "sales",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:10:15.444Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "sales",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:10:31.061Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "sales",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:10:38.060Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "sales",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:10:58.558Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "sales",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-25T12:59:16.598Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "sales",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-25T13:08:06.372Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "sales",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-25T16:17:43.467Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "sales",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-25T19:16:55.926Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "sales",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-25T21:13:32.792Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "sales",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-26T01:16:22.606Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "sales",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-26T04:15:30.490Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "sales",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-26T10:58:51.376Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "sales",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-26T14:57:51.388Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "sales",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-26T18:48:39.722Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "sales",
+        "qualityScore": 100
+      }
+    ],
+    "avgTone": 0,
+    "frustrationEvents": 0,
+    "satisfactionEvents": 0,
+    "lastSeen": "2026-06-26T18:48:39.722Z",
+    "trend": "stable"
+  },
+  "carol@startup.io": {
+    "email": "carol@startup.io",
+    "firstSeen": "2026-05-28T16:07:21.508Z",
+    "interactions": 66,
+    "sentimentHistory": [
+      {
+        "timestamp": "2026-06-18T07:59:41.755Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-18T08:01:31.331Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-18T08:27:54.341Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-18T09:30:23.794Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:08:35.363Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:10:03.924Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:10:15.454Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:10:31.070Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:10:38.069Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:10:58.567Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-25T12:59:16.607Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-25T13:08:06.382Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-25T16:17:43.477Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-25T19:16:55.937Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-25T21:13:32.802Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-26T01:16:22.616Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-26T04:15:30.501Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-26T10:58:51.385Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-26T14:57:51.397Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "support",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-26T18:48:39.733Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "support",
+        "qualityScore": 100
+      }
+    ],
+    "avgTone": 0,
+    "frustrationEvents": 0,
+    "satisfactionEvents": 0,
+    "lastSeen": "2026-06-26T18:48:39.733Z",
+    "trend": "stable"
+  },
+  "david@partner.co": {
+    "email": "david@partner.co",
+    "firstSeen": "2026-05-28T16:07:21.513Z",
+    "interactions": 66,
+    "sentimentHistory": [
+      {
+        "timestamp": "2026-06-18T07:59:41.761Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "general",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-18T08:01:31.338Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "general",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-18T08:27:54.348Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "general",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-18T09:30:23.800Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "general",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:08:35.370Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "general",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:10:03.931Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "general",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:10:15.462Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "general",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:10:31.078Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "general",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:10:38.076Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "general",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:10:58.574Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "general",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-25T12:59:16.613Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "general",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-25T13:08:06.389Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "general",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-25T16:17:43.484Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "general",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-25T19:16:55.944Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "general",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-25T21:13:32.809Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "general",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-26T01:16:22.624Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "general",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-26T04:15:30.508Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "general",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-26T10:58:51.392Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "general",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-26T14:57:51.404Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "general",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-26T18:48:39.740Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "general",
+        "qualityScore": 100
+      }
+    ],
+    "avgTone": 0,
+    "frustrationEvents": 0,
+    "satisfactionEvents": 0,
+    "lastSeen": "2026-06-26T18:48:39.740Z",
+    "trend": "stable"
+  },
+  "emma@company.com": {
+    "email": "emma@company.com",
+    "firstSeen": "2026-05-28T16:07:21.517Z",
+    "interactions": 66,
+    "sentimentHistory": [
+      {
+        "timestamp": "2026-06-18T07:59:41.765Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "billing",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-18T08:01:31.342Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "billing",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-18T08:27:54.352Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "billing",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-18T09:30:23.804Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "billing",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:08:35.374Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "billing",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:10:03.935Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "billing",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:10:15.466Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "billing",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:10:31.124Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "billing",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:10:38.081Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "billing",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-22T19:10:58.578Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "billing",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-25T12:59:16.617Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "billing",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-25T13:08:06.393Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "billing",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-25T16:17:43.488Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "billing",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-25T19:16:55.948Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "billing",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-25T21:13:32.813Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "billing",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-26T01:16:22.628Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "billing",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-26T04:15:30.512Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "billing",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-26T10:58:51.397Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "billing",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-26T14:57:51.409Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "billing",
+        "qualityScore": 100
+      },
+      {
+        "timestamp": "2026-06-26T18:48:39.744Z",
+        "tone": "neutral",
+        "toneScore": 0,
+        "type": "billing",
+        "qualityScore": 100
+      }
+    ],
+    "avgTone": 0,
+    "frustrationEvents": 0,
+    "satisfactionEvents": 0,
+    "lastSeen": "2026-06-26T18:48:39.744Z",
+    "trend": "stable"
+  }
+}

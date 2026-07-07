@@ -1,0 +1,44 @@
+[
+  {
+    "id": "TKT-MPPOHLNT",
+    "created": "2026-05-28T15:59:14.921Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 90,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP.",
+      "cc": []
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "assignedTo": null,
+    "dueDate": "2026-05-28T19:59:14.921Z",
+    "resolvedAt": null
+  },
+  {
+    "id": "TKT-MPPOI3N7",
+    "created": "2026-05-28T15:59:38.227Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 90,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP.",
+      "cc": []
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "assignedTo": null,
+    "dueDate": "2026-05-28T19:59:38.227Z",
+    "resolvedAt": null
+  }
+]

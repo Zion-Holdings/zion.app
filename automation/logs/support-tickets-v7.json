@@ -1,0 +1,3566 @@
+[
+  {
+    "id": "TKT-MPPOS140",
+    "created": "2026-05-28T16:07:21.504Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-05-28T20:07:21.504Z"
+  },
+  {
+    "id": "TKT-MPPOS145",
+    "created": "2026-05-28T16:07:21.509Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-05-28T20:07:21.509Z"
+  },
+  {
+    "id": "TKT-MPPOS14E",
+    "created": "2026-05-28T16:07:21.518Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-05-28T20:07:21.518Z"
+  },
+  {
+    "id": "TKT-MQI42XQ9",
+    "created": "2026-06-17T13:33:17.505Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T17:33:17.505Z"
+  },
+  {
+    "id": "TKT-MQI42XQF",
+    "created": "2026-06-17T13:33:17.511Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T17:33:17.511Z"
+  },
+  {
+    "id": "TKT-MQI42XQN",
+    "created": "2026-06-17T13:33:17.519Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T17:33:17.519Z"
+  },
+  {
+    "id": "TKT-MQI76V8P",
+    "created": "2026-06-17T15:00:19.753Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:00:19.753Z"
+  },
+  {
+    "id": "TKT-MQI76V8U",
+    "created": "2026-06-17T15:00:19.758Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:00:19.758Z"
+  },
+  {
+    "id": "TKT-MQI76VA7",
+    "created": "2026-06-17T15:00:19.807Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:00:19.807Z"
+  },
+  {
+    "id": "TKT-MQI7A4SG",
+    "created": "2026-06-17T15:02:52.096Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:02:52.096Z"
+  },
+  {
+    "id": "TKT-MQI7A4SM",
+    "created": "2026-06-17T15:02:52.102Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:02:52.102Z"
+  },
+  {
+    "id": "TKT-MQI7A4SW",
+    "created": "2026-06-17T15:02:52.112Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:02:52.112Z"
+  },
+  {
+    "id": "TKT-MQI7CVV8",
+    "created": "2026-06-17T15:05:00.500Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:05:00.500Z"
+  },
+  {
+    "id": "TKT-MQI7CVVD",
+    "created": "2026-06-17T15:05:00.505Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:05:00.505Z"
+  },
+  {
+    "id": "TKT-MQI7CVVN",
+    "created": "2026-06-17T15:05:00.515Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:05:00.515Z"
+  },
+  {
+    "id": "TKT-MQI7EX32",
+    "created": "2026-06-17T15:06:35.390Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:06:35.390Z"
+  },
+  {
+    "id": "TKT-MQI7EX37",
+    "created": "2026-06-17T15:06:35.395Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:06:35.395Z"
+  },
+  {
+    "id": "TKT-MQI7EX3H",
+    "created": "2026-06-17T15:06:35.405Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:06:35.405Z"
+  },
+  {
+    "id": "TKT-MQI7FH3P",
+    "created": "2026-06-17T15:07:01.333Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:07:01.333Z"
+  },
+  {
+    "id": "TKT-MQI7FH3V",
+    "created": "2026-06-17T15:07:01.339Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:07:01.339Z"
+  },
+  {
+    "id": "TKT-MQI7FH44",
+    "created": "2026-06-17T15:07:01.348Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:07:01.348Z"
+  },
+  {
+    "id": "TKT-MQI7UDT2",
+    "created": "2026-06-17T15:18:36.902Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:18:36.902Z"
+  },
+  {
+    "id": "TKT-MQI7UDT8",
+    "created": "2026-06-17T15:18:36.908Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:18:36.908Z"
+  },
+  {
+    "id": "TKT-MQI7UDTH",
+    "created": "2026-06-17T15:18:36.917Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:18:36.917Z"
+  },
+  {
+    "id": "TKT-MQI8FZQO",
+    "created": "2026-06-17T15:35:25.104Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:35:25.104Z"
+  },
+  {
+    "id": "TKT-MQI8FZQU",
+    "created": "2026-06-17T15:35:25.110Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:35:25.110Z"
+  },
+  {
+    "id": "TKT-MQI8FZR3",
+    "created": "2026-06-17T15:35:25.119Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:35:25.119Z"
+  },
+  {
+    "id": "TKT-MQI8GYV1",
+    "created": "2026-06-17T15:36:10.621Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:36:10.621Z"
+  },
+  {
+    "id": "TKT-MQI8GYV7",
+    "created": "2026-06-17T15:36:10.627Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:36:10.627Z"
+  },
+  {
+    "id": "TKT-MQI8GYVG",
+    "created": "2026-06-17T15:36:10.636Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:36:10.636Z"
+  },
+  {
+    "id": "TKT-MQI8UNJN",
+    "created": "2026-06-17T15:46:49.139Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:46:49.139Z"
+  },
+  {
+    "id": "TKT-MQI8UNJT",
+    "created": "2026-06-17T15:46:49.145Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:46:49.145Z"
+  },
+  {
+    "id": "TKT-MQI8UNK3",
+    "created": "2026-06-17T15:46:49.155Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:46:49.155Z"
+  },
+  {
+    "id": "TKT-MQI8ZLY3",
+    "created": "2026-06-17T15:50:40.347Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:50:40.347Z"
+  },
+  {
+    "id": "TKT-MQI8ZLYA",
+    "created": "2026-06-17T15:50:40.354Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:50:40.354Z"
+  },
+  {
+    "id": "TKT-MQI8ZLYK",
+    "created": "2026-06-17T15:50:40.364Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:50:40.364Z"
+  },
+  {
+    "id": "TKT-MQI93Y3J",
+    "created": "2026-06-17T15:54:02.719Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:54:02.719Z"
+  },
+  {
+    "id": "TKT-MQI93Y3R",
+    "created": "2026-06-17T15:54:02.727Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:54:02.727Z"
+  },
+  {
+    "id": "TKT-MQI93Y41",
+    "created": "2026-06-17T15:54:02.737Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T19:54:02.737Z"
+  },
+  {
+    "id": "TKT-MQIA4GYA",
+    "created": "2026-06-17T16:22:26.770Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T20:22:26.770Z"
+  },
+  {
+    "id": "TKT-MQIA4GYI",
+    "created": "2026-06-17T16:22:26.778Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T20:22:26.778Z"
+  },
+  {
+    "id": "TKT-MQIA4GYT",
+    "created": "2026-06-17T16:22:26.789Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T20:22:26.789Z"
+  },
+  {
+    "id": "TKT-MQIADXV4",
+    "created": "2026-06-17T16:29:48.592Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T20:29:48.592Z"
+  },
+  {
+    "id": "TKT-MQIADXVB",
+    "created": "2026-06-17T16:29:48.599Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T20:29:48.599Z"
+  },
+  {
+    "id": "TKT-MQIADXVL",
+    "created": "2026-06-17T16:29:48.609Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T20:29:48.609Z"
+  },
+  {
+    "id": "TKT-MQIAKILD",
+    "created": "2026-06-17T16:34:55.393Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T20:34:55.393Z"
+  },
+  {
+    "id": "TKT-MQIAKILK",
+    "created": "2026-06-17T16:34:55.400Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T20:34:55.400Z"
+  },
+  {
+    "id": "TKT-MQIAKILV",
+    "created": "2026-06-17T16:34:55.411Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T20:34:55.411Z"
+  },
+  {
+    "id": "TKT-MQIAR5BE",
+    "created": "2026-06-17T16:40:04.778Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T20:40:04.778Z"
+  },
+  {
+    "id": "TKT-MQIAR5BM",
+    "created": "2026-06-17T16:40:04.786Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T20:40:04.786Z"
+  },
+  {
+    "id": "TKT-MQIAR5BY",
+    "created": "2026-06-17T16:40:04.798Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T20:40:04.798Z"
+  },
+  {
+    "id": "TKT-MQIAY9LR",
+    "created": "2026-06-17T16:45:36.927Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T20:45:36.927Z"
+  },
+  {
+    "id": "TKT-MQIAY9LY",
+    "created": "2026-06-17T16:45:36.934Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T20:45:36.934Z"
+  },
+  {
+    "id": "TKT-MQIAY9M8",
+    "created": "2026-06-17T16:45:36.944Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T20:45:36.944Z"
+  },
+  {
+    "id": "TKT-MQIBA528",
+    "created": "2026-06-17T16:54:50.912Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T20:54:50.912Z"
+  },
+  {
+    "id": "TKT-MQIBA52G",
+    "created": "2026-06-17T16:54:50.920Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T20:54:50.920Z"
+  },
+  {
+    "id": "TKT-MQIBA52R",
+    "created": "2026-06-17T16:54:50.931Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T20:54:50.931Z"
+  },
+  {
+    "id": "TKT-MQIBD16O",
+    "created": "2026-06-17T16:57:05.856Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T20:57:05.856Z"
+  },
+  {
+    "id": "TKT-MQIBD16V",
+    "created": "2026-06-17T16:57:05.863Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T20:57:05.863Z"
+  },
+  {
+    "id": "TKT-MQIBD176",
+    "created": "2026-06-17T16:57:05.874Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T20:57:05.874Z"
+  },
+  {
+    "id": "TKT-MQIBLA2R",
+    "created": "2026-06-17T17:03:30.627Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T21:03:30.627Z"
+  },
+  {
+    "id": "TKT-MQIBLA2Y",
+    "created": "2026-06-17T17:03:30.634Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T21:03:30.634Z"
+  },
+  {
+    "id": "TKT-MQIBLA39",
+    "created": "2026-06-17T17:03:30.645Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T21:03:30.645Z"
+  },
+  {
+    "id": "TKT-MQIBR5E2",
+    "created": "2026-06-17T17:08:04.490Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T21:08:04.490Z"
+  },
+  {
+    "id": "TKT-MQIBR5E8",
+    "created": "2026-06-17T17:08:04.496Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T21:08:04.496Z"
+  },
+  {
+    "id": "TKT-MQIBR5EI",
+    "created": "2026-06-17T17:08:04.506Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T21:08:04.506Z"
+  },
+  {
+    "id": "TKT-MQIBTVZM",
+    "created": "2026-06-17T17:10:12.274Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T21:10:12.274Z"
+  },
+  {
+    "id": "TKT-MQIBTVZT",
+    "created": "2026-06-17T17:10:12.281Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T21:10:12.281Z"
+  },
+  {
+    "id": "TKT-MQIBTW04",
+    "created": "2026-06-17T17:10:12.292Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T21:10:12.292Z"
+  },
+  {
+    "id": "TKT-MQIBULE3",
+    "created": "2026-06-17T17:10:45.195Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T21:10:45.195Z"
+  },
+  {
+    "id": "TKT-MQIBULEA",
+    "created": "2026-06-17T17:10:45.202Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T21:10:45.202Z"
+  },
+  {
+    "id": "TKT-MQIBULEK",
+    "created": "2026-06-17T17:10:45.212Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T21:10:45.212Z"
+  },
+  {
+    "id": "TKT-MQIC0368",
+    "created": "2026-06-17T17:15:01.520Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T21:15:01.520Z"
+  },
+  {
+    "id": "TKT-MQIC036F",
+    "created": "2026-06-17T17:15:01.527Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T21:15:01.527Z"
+  },
+  {
+    "id": "TKT-MQIC036Q",
+    "created": "2026-06-17T17:15:01.538Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T21:15:01.538Z"
+  },
+  {
+    "id": "TKT-MQIC62HN",
+    "created": "2026-06-17T17:19:40.571Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T21:19:40.571Z"
+  },
+  {
+    "id": "TKT-MQIC62HU",
+    "created": "2026-06-17T17:19:40.578Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T21:19:40.578Z"
+  },
+  {
+    "id": "TKT-MQIC62I4",
+    "created": "2026-06-17T17:19:40.588Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T21:19:40.588Z"
+  },
+  {
+    "id": "TKT-MQICBL6R",
+    "created": "2026-06-17T17:23:58.083Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T21:23:58.083Z"
+  },
+  {
+    "id": "TKT-MQICBL6Y",
+    "created": "2026-06-17T17:23:58.090Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T21:23:58.090Z"
+  },
+  {
+    "id": "TKT-MQICBL79",
+    "created": "2026-06-17T17:23:58.101Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T21:23:58.101Z"
+  },
+  {
+    "id": "TKT-MQIE30M7",
+    "created": "2026-06-17T18:13:17.407Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T22:13:17.407Z"
+  },
+  {
+    "id": "TKT-MQIE30ME",
+    "created": "2026-06-17T18:13:17.414Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T22:13:17.414Z"
+  },
+  {
+    "id": "TKT-MQIE30MP",
+    "created": "2026-06-17T18:13:17.425Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T22:13:17.425Z"
+  },
+  {
+    "id": "TKT-MQIGFACY",
+    "created": "2026-06-17T19:18:49.138Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T23:18:49.138Z"
+  },
+  {
+    "id": "TKT-MQIGFAD5",
+    "created": "2026-06-17T19:18:49.145Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T23:18:49.145Z"
+  },
+  {
+    "id": "TKT-MQIGFADF",
+    "created": "2026-06-17T19:18:49.155Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-17T23:18:49.155Z"
+  },
+  {
+    "id": "TKT-MQIII7KK",
+    "created": "2026-06-17T20:17:04.724Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T00:17:04.724Z"
+  },
+  {
+    "id": "TKT-MQIII7KR",
+    "created": "2026-06-17T20:17:04.731Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T00:17:04.731Z"
+  },
+  {
+    "id": "TKT-MQIII7L1",
+    "created": "2026-06-17T20:17:04.741Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T00:17:04.741Z"
+  },
+  {
+    "id": "TKT-MQIO1QVH",
+    "created": "2026-06-17T22:52:14.285Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T02:52:14.285Z"
+  },
+  {
+    "id": "TKT-MQIO1QVO",
+    "created": "2026-06-17T22:52:14.292Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T02:52:14.292Z"
+  },
+  {
+    "id": "TKT-MQIO1QVZ",
+    "created": "2026-06-17T22:52:14.303Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T02:52:14.303Z"
+  },
+  {
+    "id": "TKT-MQIQF19E",
+    "created": "2026-06-17T23:58:33.506Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T03:58:33.506Z"
+  },
+  {
+    "id": "TKT-MQIQF19L",
+    "created": "2026-06-17T23:58:33.513Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T03:58:33.513Z"
+  },
+  {
+    "id": "TKT-MQIQF19W",
+    "created": "2026-06-17T23:58:33.524Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T03:58:33.524Z"
+  },
+  {
+    "id": "TKT-MQIQF9X4",
+    "created": "2026-06-17T23:58:44.728Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T03:58:44.728Z"
+  },
+  {
+    "id": "TKT-MQIQF9XB",
+    "created": "2026-06-17T23:58:44.735Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T03:58:44.735Z"
+  },
+  {
+    "id": "TKT-MQIQF9XL",
+    "created": "2026-06-17T23:58:44.745Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T03:58:44.745Z"
+  },
+  {
+    "id": "TKT-MQITRQP6",
+    "created": "2026-06-18T01:32:25.194Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T05:32:25.194Z"
+  },
+  {
+    "id": "TKT-MQITRQPE",
+    "created": "2026-06-18T01:32:25.202Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T05:32:25.202Z"
+  },
+  {
+    "id": "TKT-MQITRQPO",
+    "created": "2026-06-18T01:32:25.212Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T05:32:25.212Z"
+  },
+  {
+    "id": "TKT-MQIU2QGF",
+    "created": "2026-06-18T01:40:58.095Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T05:40:58.095Z"
+  },
+  {
+    "id": "TKT-MQIU2QGM",
+    "created": "2026-06-18T01:40:58.102Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T05:40:58.102Z"
+  },
+  {
+    "id": "TKT-MQIU2QGW",
+    "created": "2026-06-18T01:40:58.112Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T05:40:58.112Z"
+  },
+  {
+    "id": "TKT-MQIUDP7H",
+    "created": "2026-06-18T01:49:29.693Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T05:49:29.693Z"
+  },
+  {
+    "id": "TKT-MQIUDP7P",
+    "created": "2026-06-18T01:49:29.701Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T05:49:29.701Z"
+  },
+  {
+    "id": "TKT-MQIUDP7Y",
+    "created": "2026-06-18T01:49:29.710Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T05:49:29.711Z"
+  },
+  {
+    "id": "TKT-MQIUR6L0",
+    "created": "2026-06-18T01:59:58.740Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T05:59:58.740Z"
+  },
+  {
+    "id": "TKT-MQIUR6L8",
+    "created": "2026-06-18T01:59:58.748Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T05:59:58.748Z"
+  },
+  {
+    "id": "TKT-MQIUR6LI",
+    "created": "2026-06-18T01:59:58.758Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T05:59:58.758Z"
+  },
+  {
+    "id": "TKT-MQIVAQ8H",
+    "created": "2026-06-18T02:15:10.673Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T06:15:10.673Z"
+  },
+  {
+    "id": "TKT-MQIVAQ8O",
+    "created": "2026-06-18T02:15:10.680Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T06:15:10.680Z"
+  },
+  {
+    "id": "TKT-MQIVAQ8Y",
+    "created": "2026-06-18T02:15:10.690Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T06:15:10.690Z"
+  },
+  {
+    "id": "TKT-MQIWMT1L",
+    "created": "2026-06-18T02:52:33.801Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T06:52:33.801Z"
+  },
+  {
+    "id": "TKT-MQIWMT1S",
+    "created": "2026-06-18T02:52:33.808Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T06:52:33.808Z"
+  },
+  {
+    "id": "TKT-MQIWMT23",
+    "created": "2026-06-18T02:52:33.819Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T06:52:33.819Z"
+  },
+  {
+    "id": "TKT-MQIWRYFT",
+    "created": "2026-06-18T02:56:34.073Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T06:56:34.073Z"
+  },
+  {
+    "id": "TKT-MQIWRYG0",
+    "created": "2026-06-18T02:56:34.080Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T06:56:34.080Z"
+  },
+  {
+    "id": "TKT-MQIWRYGA",
+    "created": "2026-06-18T02:56:34.090Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T06:56:34.090Z"
+  },
+  {
+    "id": "TKT-MQIXLJII",
+    "created": "2026-06-18T03:19:34.410Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T07:19:34.410Z"
+  },
+  {
+    "id": "TKT-MQIXLJIQ",
+    "created": "2026-06-18T03:19:34.418Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T07:19:34.418Z"
+  },
+  {
+    "id": "TKT-MQIXLJJ0",
+    "created": "2026-06-18T03:19:34.428Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T07:19:34.428Z"
+  },
+  {
+    "id": "TKT-MQIXSP3B",
+    "created": "2026-06-18T03:25:08.231Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T07:25:08.231Z"
+  },
+  {
+    "id": "TKT-MQIXSP3J",
+    "created": "2026-06-18T03:25:08.239Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T07:25:08.239Z"
+  },
+  {
+    "id": "TKT-MQIXSP3U",
+    "created": "2026-06-18T03:25:08.250Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T07:25:08.250Z"
+  },
+  {
+    "id": "TKT-MQIXWFU7",
+    "created": "2026-06-18T03:28:02.863Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T07:28:02.863Z"
+  },
+  {
+    "id": "TKT-MQIXWFUG",
+    "created": "2026-06-18T03:28:02.872Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T07:28:02.872Z"
+  },
+  {
+    "id": "TKT-MQIXWFUR",
+    "created": "2026-06-18T03:28:02.883Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T07:28:02.883Z"
+  },
+  {
+    "id": "TKT-MQIY1SK5",
+    "created": "2026-06-18T03:32:12.629Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T07:32:12.629Z"
+  },
+  {
+    "id": "TKT-MQIY1SKD",
+    "created": "2026-06-18T03:32:12.637Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T07:32:12.637Z"
+  },
+  {
+    "id": "TKT-MQIY1SKN",
+    "created": "2026-06-18T03:32:12.647Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T07:32:12.647Z"
+  },
+  {
+    "id": "TKT-MQIZKPDV",
+    "created": "2026-06-18T04:14:54.595Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T08:14:54.595Z"
+  },
+  {
+    "id": "TKT-MQIZKPE3",
+    "created": "2026-06-18T04:14:54.603Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T08:14:54.603Z"
+  },
+  {
+    "id": "TKT-MQIZKPED",
+    "created": "2026-06-18T04:14:54.613Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T08:14:54.613Z"
+  },
+  {
+    "id": "TKT-MQJ10YIF",
+    "created": "2026-06-18T04:55:32.535Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T08:55:32.535Z"
+  },
+  {
+    "id": "TKT-MQJ10YIN",
+    "created": "2026-06-18T04:55:32.543Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T08:55:32.543Z"
+  },
+  {
+    "id": "TKT-MQJ10YIX",
+    "created": "2026-06-18T04:55:32.553Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T08:55:32.553Z"
+  },
+  {
+    "id": "TKT-MQJ7LS51",
+    "created": "2026-06-18T07:59:41.749Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T11:59:41.749Z"
+  },
+  {
+    "id": "TKT-MQJ7LS59",
+    "created": "2026-06-18T07:59:41.757Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T11:59:41.757Z"
+  },
+  {
+    "id": "TKT-MQJ7LS5J",
+    "created": "2026-06-18T07:59:41.767Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T11:59:41.767Z"
+  },
+  {
+    "id": "TKT-MQJ7O4OT",
+    "created": "2026-06-18T08:01:31.325Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T12:01:31.325Z"
+  },
+  {
+    "id": "TKT-MQJ7O4P1",
+    "created": "2026-06-18T08:01:31.333Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T12:01:31.333Z"
+  },
+  {
+    "id": "TKT-MQJ7O4QG",
+    "created": "2026-06-18T08:01:31.384Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T12:01:31.384Z"
+  },
+  {
+    "id": "TKT-MQJ8M25C",
+    "created": "2026-06-18T08:27:54.336Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T12:27:54.336Z"
+  },
+  {
+    "id": "TKT-MQJ8M25J",
+    "created": "2026-06-18T08:27:54.343Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T12:27:54.343Z"
+  },
+  {
+    "id": "TKT-MQJ8M25T",
+    "created": "2026-06-18T08:27:54.353Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T12:27:54.354Z"
+  },
+  {
+    "id": "TKT-MQJAUF8S",
+    "created": "2026-06-18T09:30:23.788Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T13:30:23.788Z"
+  },
+  {
+    "id": "TKT-MQJAUF90",
+    "created": "2026-06-18T09:30:23.796Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T13:30:23.796Z"
+  },
+  {
+    "id": "TKT-MQJAUF9A",
+    "created": "2026-06-18T09:30:23.806Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-18T13:30:23.806Z"
+  },
+  {
+    "id": "TKT-MQPL9E3H",
+    "created": "2026-06-22T19:08:35.357Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-22T23:08:35.357Z"
+  },
+  {
+    "id": "TKT-MQPL9E3P",
+    "created": "2026-06-22T19:08:35.365Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-22T23:08:35.365Z"
+  },
+  {
+    "id": "TKT-MQPL9E40",
+    "created": "2026-06-22T19:08:35.376Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-22T23:08:35.376Z"
+  },
+  {
+    "id": "TKT-MQPLBAFF",
+    "created": "2026-06-22T19:10:03.915Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-22T23:10:03.915Z"
+  },
+  {
+    "id": "TKT-MQPLBAFQ",
+    "created": "2026-06-22T19:10:03.926Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-22T23:10:03.926Z"
+  },
+  {
+    "id": "TKT-MQPLBAG1",
+    "created": "2026-06-22T19:10:03.937Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-22T23:10:03.937Z"
+  },
+  {
+    "id": "TKT-MQPLBJBS",
+    "created": "2026-06-22T19:10:15.448Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-22T23:10:15.448Z"
+  },
+  {
+    "id": "TKT-MQPLBJC1",
+    "created": "2026-06-22T19:10:15.457Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-22T23:10:15.457Z"
+  },
+  {
+    "id": "TKT-MQPLBJCC",
+    "created": "2026-06-22T19:10:15.468Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-22T23:10:15.468Z"
+  },
+  {
+    "id": "TKT-MQPLBVDL",
+    "created": "2026-06-22T19:10:31.065Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-22T23:10:31.065Z"
+  },
+  {
+    "id": "TKT-MQPLBVDT",
+    "created": "2026-06-22T19:10:31.073Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-22T23:10:31.073Z"
+  },
+  {
+    "id": "TKT-MQPLBVFA",
+    "created": "2026-06-22T19:10:31.126Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-22T23:10:31.126Z"
+  },
+  {
+    "id": "TKT-MQPLC0RZ",
+    "created": "2026-06-22T19:10:38.063Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-22T23:10:38.063Z"
+  },
+  {
+    "id": "TKT-MQPLC0S7",
+    "created": "2026-06-22T19:10:38.071Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-22T23:10:38.071Z"
+  },
+  {
+    "id": "TKT-MQPLC0SJ",
+    "created": "2026-06-22T19:10:38.083Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-22T23:10:38.083Z"
+  },
+  {
+    "id": "TKT-MQPLCGLE",
+    "created": "2026-06-22T19:10:58.562Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-22T23:10:58.562Z"
+  },
+  {
+    "id": "TKT-MQPLCGLL",
+    "created": "2026-06-22T19:10:58.569Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-22T23:10:58.569Z"
+  },
+  {
+    "id": "TKT-MQPLCGLW",
+    "created": "2026-06-22T19:10:58.580Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-22T23:10:58.580Z"
+  },
+  {
+    "id": "TKT-MQTIE0AH",
+    "created": "2026-06-25T12:59:16.601Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-25T16:59:16.602Z"
+  },
+  {
+    "id": "TKT-MQTIE0AP",
+    "created": "2026-06-25T12:59:16.609Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-25T16:59:16.609Z"
+  },
+  {
+    "id": "TKT-MQTIE0AZ",
+    "created": "2026-06-25T12:59:16.619Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-25T16:59:16.619Z"
+  },
+  {
+    "id": "TKT-MQTIPD2G",
+    "created": "2026-06-25T13:08:06.376Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-25T17:08:06.376Z"
+  },
+  {
+    "id": "TKT-MQTIPD2O",
+    "created": "2026-06-25T13:08:06.384Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-25T17:08:06.384Z"
+  },
+  {
+    "id": "TKT-MQTIPD2Z",
+    "created": "2026-06-25T13:08:06.395Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-25T17:08:06.395Z"
+  },
+  {
+    "id": "TKT-MQTPH7OV",
+    "created": "2026-06-25T16:17:43.471Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-25T20:17:43.471Z"
+  },
+  {
+    "id": "TKT-MQTPH7P3",
+    "created": "2026-06-25T16:17:43.479Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-25T20:17:43.479Z"
+  },
+  {
+    "id": "TKT-MQTPH7PD",
+    "created": "2026-06-25T16:17:43.489Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-25T20:17:43.489Z"
+  },
+  {
+    "id": "TKT-MQTVVOCB",
+    "created": "2026-06-25T19:16:55.931Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-25T23:16:55.931Z"
+  },
+  {
+    "id": "TKT-MQTVVOCJ",
+    "created": "2026-06-25T19:16:55.939Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-25T23:16:55.939Z"
+  },
+  {
+    "id": "TKT-MQTVVOCU",
+    "created": "2026-06-25T19:16:55.950Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-25T23:16:55.950Z"
+  },
+  {
+    "id": "TKT-MQU01N5O",
+    "created": "2026-06-25T21:13:32.796Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-26T01:13:32.796Z"
+  },
+  {
+    "id": "TKT-MQU01N5W",
+    "created": "2026-06-25T21:13:32.804Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-26T01:13:32.804Z"
+  },
+  {
+    "id": "TKT-MQU01N67",
+    "created": "2026-06-25T21:13:32.815Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-26T01:13:32.815Z"
+  },
+  {
+    "id": "TKT-MQU8PXAQ",
+    "created": "2026-06-26T01:16:22.610Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-26T05:16:22.610Z"
+  },
+  {
+    "id": "TKT-MQU8PXAY",
+    "created": "2026-06-26T01:16:22.618Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-26T05:16:22.618Z"
+  },
+  {
+    "id": "TKT-MQU8PXBA",
+    "created": "2026-06-26T01:16:22.630Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-26T05:16:22.630Z"
+  },
+  {
+    "id": "TKT-MQUF4AF3",
+    "created": "2026-06-26T04:15:30.495Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-26T08:15:30.495Z"
+  },
+  {
+    "id": "TKT-MQUF4AFB",
+    "created": "2026-06-26T04:15:30.503Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-26T08:15:30.503Z"
+  },
+  {
+    "id": "TKT-MQUF4AFM",
+    "created": "2026-06-26T04:15:30.514Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-26T08:15:30.514Z"
+  },
+  {
+    "id": "TKT-MQUTIZXV",
+    "created": "2026-06-26T10:58:51.380Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-26T14:58:51.380Z"
+  },
+  {
+    "id": "TKT-MQUTIZY3",
+    "created": "2026-06-26T10:58:51.388Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-26T14:58:51.388Z"
+  },
+  {
+    "id": "TKT-MQUTIZYE",
+    "created": "2026-06-26T10:58:51.398Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-26T14:58:51.398Z"
+  },
+  {
+    "id": "TKT-MQV22CRK",
+    "created": "2026-06-26T14:57:51.392Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-26T18:57:51.392Z"
+  },
+  {
+    "id": "TKT-MQV22CRR",
+    "created": "2026-06-26T14:57:51.400Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-26T18:57:51.400Z"
+  },
+  {
+    "id": "TKT-MQV22CS2",
+    "created": "2026-06-26T14:57:51.410Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-26T18:57:51.410Z"
+  },
+  {
+    "id": "TKT-MQVAB67J",
+    "created": "2026-06-26T18:48:39.727Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "ceo@enterprise.com",
+      "subject": "URGENT: Partnership opportunity",
+      "body": "We need to discuss a major integration project ASAP."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-26T22:48:39.727Z"
+  },
+  {
+    "id": "TKT-MQVAB67R",
+    "created": "2026-06-26T18:48:39.735Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 100,
+    "email": {
+      "from": "carol@startup.io",
+      "subject": "Having issues with AI setup",
+      "body": "Hi, need help with the automation workflow."
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-26T22:48:39.735Z"
+  },
+  {
+    "id": "TKT-MQVAB682",
+    "created": "2026-06-26T18:48:39.746Z",
+    "status": "open",
+    "priority": "critical",
+    "priorityScore": 86,
+    "email": {
+      "from": "emma@company.com",
+      "subject": "Invoice question",
+      "body": ""
+    },
+    "ai": {
+      "sentiment": "neutral",
+      "urgency": "medium",
+      "topics": []
+    },
+    "dueDate": "2026-06-26T22:48:39.746Z"
+  }
+]

@@ -1,0 +1,18 @@
+Subject: Obrigado pela parceria anterior — ideias conjuntas em IA e IT
+To: [Cliente pendente — aguardando descoberta de !!!hot-follow-up thread]
+Language: pt-BR
+Status: DRAFT — NOT SENT
+Reason: Gmail auth remains missing for kleber@ziontechgroup.com; no hot-follow-up thread is currently discoverable in outreach-log.jsonl. This template is ready to be LLM-tailored per thread once auth is restored and a !!!hot-follow-up thread exists.
+Draft template (replace placeholders with thread-specific LLM-tailored content before sending):
+
+Olá [Nome],
+
+Sou Kleber Garcia Alcatrão, CEO da Zion Tech Group. Agradeço o contato e vejo possibilidade de trabalharmos juntos em projetos de inteligência artificial aplicada à TI, automação de resposta a incidentes, otimização de custo em nuvem e modernização de plataformas.
+
+Temos também novos serviços de IA e ferramentas gratuitas que podem acelerar sua operação. Conheça mais em https://ziontechgroup.com
+
+Se fizer sentido, podemos avançar por aqui ou agendar uma conversa curta: https://calendly.com/kleber-ziontechgroup
+
+Abraço,
+Kleber Garcia Alcatrão
+CEO — Zion Tech Group
