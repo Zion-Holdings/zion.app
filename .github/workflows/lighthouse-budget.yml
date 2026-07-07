@@ -49,26 +49,26 @@ jobs:
             exit 1
           fi
           node - <<'NODE'
-const fs = require('fs');
-const report = JSON.parse(fs.readFileSync('./lighthouse-report.json', 'utf8'));
-const scores = report.categories || {};
-const budget = {
-  performance: 0.9,
-  accessibility: 0.9,
-  bestPractices: 0.9,
-  seo: 0.9,
-};
-const failures = [];
-for (const [key, min] of Object.entries(budget)) {
-  const score = scores[key]?.score;
-  if (score === null || score === undefined || score < min) {
-    failures.push(`${key}: ${score} < ${min}`);
-  }
-}
-if (failures.length) {
-  console.log('Lighthouse budget failures:\n' + failures.join('\n'));
-  process.exit(1);
-} else {
-  console.log('Lighthouse budget passed');
-}
+              const fs = require('fs');
+              const report = JSON.parse(fs.readFileSync('./lighthouse-report.json', 'utf8'));
+              const scores = report.categories || {};
+              const budget = {
+                performance: 0.9,
+                accessibility: 0.9,
+                bestPractices: 0.9,
+                seo: 0.9,
+              };
+              const failures = [];
+              for (const [key, min] of Object.entries(budget)) {
+                const score = scores[key]?.score;
+                if (score === null || score === undefined || score < min) {
+                  failures.push(`${key}: ${score} < ${min}`);
+                }
+              }
+              if (failures.length) {
+                console.log('Lighthouse budget failures:\n' + failures.join('\n'));
+                process.exit(1);
+              } else {
+                console.log('Lighthouse budget passed');
+              }
 NODE

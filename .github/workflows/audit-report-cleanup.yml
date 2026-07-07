@@ -29,20 +29,7 @@ jobs:
         run: |
           set -euo pipefail
           if [ -f public/api/automation-health-history.json ]; then
-            node - <<'NODE'
-const fs = require('fs');
-const path = 'public/api/automation-health-history.json';
-const retentionDays = 30;
-try {
-  const data = JSON.parse(fs.readFileSync(path, 'utf8'));
-  const cutoff = Date.now() - retentionDays * 24 * 60 * 60 * 1000;
-  const filtered = Array.isArray(data) ? data.filter(entry => (entry.timestamp || entry.date || 0) >= cutoff) : [];
-  fs.writeFileSync(path, JSON.stringify(filtered, null, 2));
-  console.log('pruned automation health history to', filtered.length, 'entries');
-} catch (e) {
-  console.log('skip prune:', e.message);
-}
-NODE
+            node -e "const fs=require('fs');const p='public/api/automation-health-history.json';try{const data=JSON.parse(fs.readFileSync(p,'utf8'));const cutoff=Date.now()-30*24*60*60*1000;const out=Array.isArray(data)?data.filter(e=>(e.timestamp||e.date||0)>=cutoff):[];fs.writeFileSync(p,JSON.stringify(out,null,2));console.log('pruned',out.length);}catch(e){console.log('skip prune:',e.message);}"
           fi
 
       - name: 'commit cleanup changes'
