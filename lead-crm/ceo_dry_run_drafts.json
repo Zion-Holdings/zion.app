@@ -1,0 +1,48 @@
+{
+  "createdAt": "2026-07-07T12:15:00.000Z",
+  "mode": "dry_run_ceo_drafts",
+  "prompts": [
+    "Threaded follow-up after a completed mobile app pilot.",
+    "Threaded follow-up after a BI dashboard rollout.",
+    "Threaded follow-up after a cloud migration assessment.",
+    "Cold follow-up after an inbound AI automation inquiry."
+  ],
+  "drafts": [
+    {
+      "thread_id": "dry-run-thread-1",
+      "to": "cliente@empresa.com",
+      "subject": "Re: Parceria em IA e automação",
+      "reply": "Olá! Foi um prazer entregar o app mobile para vocês. Agora vejo duas oportunidades rápidas: um copiloto de atendimento por IA no WhatsApp e um pipeline de dados automático para o BI. Se fizer sentido, vamos marcar 20 min aqui: https://calendly.com/kleber-ziontechgroup . Também temos serviços e ferramentas gratuitas em https://ziontechgroup.com . Abraço, Kleber Garcia Alcatrão",
+      "llm_provider": "local-render",
+      "tone": "friendly-professional",
+      "cta": "calendly+site+free-tools"
+    },
+    {
+      "thread_id": "dry-run-thread-2",
+      "to": "cliente@empresa.com",
+      "subject": "Re: BI Dashboard - Próxima fase",
+      "reply": "Obrigado pelo projeto do dashboard! Podemos evoluir para alertas inteligentes, previsão de métricas e automação de relatórios executivos. Quer conversar sobre uma parceria técnica? https://calendly.com/kleber-ziontechgroup . Conheça também nossas ferramentas gratuitas em https://ziontechgroup.com . Kleber Garcia Alcatrão",
+      "llm_provider": "local-render",
+      "tone": "friendly-professional",
+      "cta": "calendly+site+free-tools"
+    },
+    {
+      "thread_id": "dry-run-thread-3",
+      "to": "cliente@empresa.com",
+      "subject": "Re: Cloud Migration Assessment",
+      "reply": "Foi ótimo trabalhar na avaliação de cloud. Podemos seguir com uma migração faseada e otimização de custos com FinOps automático. Quer avançar? https://calendly.com/kleber-ziontechgroup . Acesse também https://ziontechgroup.com para ver serviços e ferramentas gratuitas. Kleber Garcia Alcatrão",
+      "llm_provider": "local-render",
+      "tone": "friendly-professional",
+      "cta": "calendly+site+free-tools"
+    },
+    {
+      "thread_id": "dry-run-thread-4",
+      "to": "lead@startup.com",
+      "subject": "Re: Automação com IA",
+      "reply": "Obrigado pelo interesse! Podemos começar por um piloto de automação de cobrança e um assistente de vendas com IA. Se quiser, explico um plano rápido: https://calendly.com/kleber-ziontechgroup . Também oferecemos ferramentas gratuitas em https://ziontechgroup.com . Atenciosamente, Kleber Garcia Alcatrão",
+      "llm_provider": "local-render",
+      "tone": "friendly-professional",
+      "cta": "calendly+site+free-tools"
+    }
+  ]
+}
