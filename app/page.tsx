@@ -128,7 +128,7 @@ export default function HomePage() {
 
   // Agent stats for banner
   const activeBots = 9;
-  const totalServices = serviceCount;
+  const totalServices = Math.max(serviceCount, 0);
   const totalWaves = 60; // 60 wave files (174-237, with gaps)
 
   // Dynamic stats — auto-update when catalog changes
