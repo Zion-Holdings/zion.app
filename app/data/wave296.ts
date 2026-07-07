@@ -1,6 +1,6 @@
 import { Service } from './serviceTypes';
 
-export const wave296AiServices: Service[] = [
+export const wave296AiServices: any[] = [
   {
     id: 'ai-4801',
     slug: 'ai-revenue-operations-assistant',

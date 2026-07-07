@@ -18,4 +18,9 @@ export interface Service {
   reviews?: number;
   industries?: string[];
   target?: string;
+  slug?: string;
+  name?: string;
+  tags?: string[];
+  short?: string;
+  full?: string;
 }

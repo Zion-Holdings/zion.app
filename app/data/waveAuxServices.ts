@@ -1,4 +1,5 @@
-export const waveAuxServices = [
+import { Service } from './serviceTypes';
+export const waveAuxServices: Service[] = [
   {
     id: 'ai-agentic-workflow-automation',
     title: 'Agentic AI Workflow Automation',
