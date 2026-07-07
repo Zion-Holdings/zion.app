@@ -146,6 +146,34 @@ def save_json(path: Path, obj):
     atomic_write_json(path, obj)
 
 
+def _thread_cache_path():
+    return LEAD_DIR / 'pipeline_sent_threads.txt'
+
+
+def load_sent_thread_ids():
+    ids = set()
+    p = _thread_cache_path()
+    if p.exists():
+        try:
+            for line in p.read_text(encoding='utf-8').splitlines():
+                val = line.strip()
+                if val:
+                    ids.add(val)
+        except Exception:
+            pass
+    return ids
+
+
+def save_sent_thread_ids(ids):
+    p = _thread_cache_path()
+    try:
+        if len(ids) > 5000:
+            ids = set(list(ids)[-5000:])
+        p.write_text('\n'.join(sorted(ids)), encoding='utf-8')
+    except Exception:
+        pass
+
+
 def append_log(entry: dict):
     try:
         data = []
