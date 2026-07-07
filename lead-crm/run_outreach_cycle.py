@@ -54,8 +54,14 @@ print(json.dumps({"ready":len(ready)}))
     rc, out, err = run(f'python3 -c {repr(rebuild)}', timeout=60)
     log['steps']['queue_rebuild'] = {'rc': rc, 'stdout': out, 'stderr': err[:500]}
 
-    # 3) Fast tailor
-    rc, out, err = run('python3 lead-crm/tailor_ready_fast.py', timeout=200)
+    # 3) Tailor: prefer validated LLM path when possible, with fast fallback
+    rc_llm, out_llm, err_llm = run('python3 lead-crm/tailor_ready_with_llm.py', timeout=220)
+    if rc_llm == 0 and out_llm:
+        rc, out, err = rc_llm, out_llm, err_llm
+        log['steps']['tailor_backup'] = None
+    else:
+        rc, out, err = run('python3 lead-crm/tailor_ready_fast.py', timeout=200)
+        log['steps']['tailor_backup'] = {'llm_rc': rc_llm, 'llm_stdout': out_llm[:200], 'llm_stderr': err_llm[:200]}
     log['steps']['tailor'] = {'rc': rc, 'stdout': out, 'stderr': err[:500]}
 
     # 4) Send batch
