@@ -6556,3 +6556,7 @@ OAuth (browser flow):
 Workspace service account (domain-wide delegation):
   gog auth service-account set kleber@ziontechgroup.com --key <service-account.json>
 - [EmailInteraction] 2026-07-07 18:26:49 | === Email Interaction Agent Completed ===
+- [LeadDiscovery] 2026-07-07 19:34:12 | === Lead Discovery Agent Started ===
+- [LeadDiscovery] 2026-07-07 19:34:12 | Crunchbase API key missing
+- [LeadDiscovery] 2026-07-07 19:34:12 | Apollo API key missing
+- [LeadDiscovery] 2026-07-07 19:34:12 | No leads fetched from any source
