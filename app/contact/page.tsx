@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { LocalBusinessJsonLd } from '@/components/LocalBusinessStructuredData';
 
-const CALENDLY_URL = 'https://calendly.com/ziontechgroup/30min';
+const CALENDLY_URL = 'https://calendly.com/ziontechgroup/free-consultation';
 
 export const metadata = {
   title: 'Contact Us',

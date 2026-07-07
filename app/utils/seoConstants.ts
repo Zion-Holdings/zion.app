@@ -40,7 +40,7 @@ export const ORGANIZATION_SCHEMA = {
   },
   sameAs: [
     'https://github.com/zion-support',
-    'https://www.linkedin.com/company/zion-tech-group',
+    'https://www.linkedin.com/company/zion-tech-group/',
   ],
 };
 

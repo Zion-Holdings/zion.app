@@ -128,7 +128,7 @@ const Footer: React.FC = () => {
                 </span>
               </div>
               <a
-                href="https://calendly.com/ziontechgroup/30min"
+                href="https://calendly.com/ziontechgroup/free-consultation"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-600 text-white text-xs font-semibold hover:bg-blue-500 transition-colors mt-1"
