@@ -44,5 +44,31 @@
     "next_batch": null,
     "sent_keys": 1003,
     "sent_subjects": 0
+  },
+  {
+    "ts": "2026-07-07T13:49:51.764381+00:00",
+    "event": "batch_error",
+    "error": "name 'os' is not defined"
+  },
+  {
+    "ts": "2026-07-07T13:49:51.764381+00:00",
+    "event": "pipeline_tick",
+    "sent": 0,
+    "next_batch": null,
+    "sent_keys": 1003,
+    "sent_subjects": 0
+  },
+  {
+    "ts": "2026-07-07T13:50:07.291424+00:00",
+    "event": "batch_error",
+    "error": "name 'os' is not defined"
+  },
+  {
+    "ts": "2026-07-07T13:50:07.291424+00:00",
+    "event": "pipeline_tick",
+    "sent": 0,
+    "next_batch": null,
+    "sent_keys": 1003,
+    "sent_subjects": 0
   }
 ]
