@@ -1133,5 +1133,10 @@
     "id": "19f3a1844612287c",
     "email": "clayton.gardner@titan.com",
     "query": "in:anywhere subject:AI services"
+  },
+  {
+    "id": "19f3a5ee9c4867ad",
+    "email": "thiago@germanbusiness.com.br",
+    "query": "in:anywhere \"ziontechgroup.com\""
   }
 ]

@@ -54,10 +54,18 @@ export async function generateMetadata({ params }: PageProps) {
 export default async function ServicePage({ params }: PageProps) {
   const { id } = await params;
   // Accept both kebab-case and underscore-case IDs
-  const service = allServices.find(
+  let service = allServices.find(
     (s) => s.id === id || s.id.replace(/-/g, '_') === id || s.id.replace(/_/g, '-') === id
   );
-  if (!service) notFound();
+  if (!service) {
+    const legacy = id === 'cloud-cost-optimization-platform' || id === 'cloud-cost-optimization-service';
+    if (legacy) {
+      const url = new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://ziontechgroup.com');
+      url.pathname = `/services/${id === 'cloud-cost-optimization-platform' ? 'cloud-cost-optimization-service' : id}/`;
+      return new Response(null, { status: 308, headers: { location: url.pathname } });
+    }
+    notFound();
+  }
 
   const catLabel = CAT_LABELS[service.category] || service.category;
 
