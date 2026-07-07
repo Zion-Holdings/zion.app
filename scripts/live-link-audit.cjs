@@ -5,7 +5,7 @@ const { URL } = require('url');
 
 const BASE = process.env.BASE || 'https://ziontechgroup.com';
 const CONCURRENCY = 6;
-const DELAY_MS = 150;
+const DELAY_MS = 120;
 
 const docsDir = path.join(__dirname, '..', 'docs');
 const reportPath = path.join(__dirname, 'reports', 'live-link-audit.json');
@@ -25,19 +25,16 @@ walk(docsDir);
 const hrefRegex = /href=["']([^"']+)["']/gi;
 const broken = [];
 const checked = new Map();
-let queue = Promise.resolve();
+const queue = [];
+let active = 0;
 
-function toTarget(link, fileDir) {
+function toTarget(link) {
   try {
     const u = new URL(link, 'http://localhost/');
-    if (u.protocol && u.host) {
-      if (/^https?$/.test(u.protocol)) return `${u.protocol}//${u.host}${u.pathname}`;
-      return null;
-    }
+    if (/^https?$/.test(u.protocol)) return null;
     let rel = (u.pathname || '/').split('?', 1)[0].split('#', 1)[0].replace(/^\/+/, '');
     if (!rel) rel = 'index.html';
     if (rel.endsWith('/')) rel = `${rel}index.html`;
-    if (rel.startsWith('_next/static/') || rel.startsWith('api/')) return `${BASE.replace(/\/$/, '')}/${rel}`;
     const live = rel.startsWith('docs/') ? `${BASE.replace(/\/$/, '')}/${rel.slice(5)}` : `${BASE.replace(/\/$/, '')}/${rel}`;
     return live;
   } catch {
@@ -60,6 +57,20 @@ function checkUrl(target) {
   });
 }
 
+function processQueue() {
+  while (active < CONCURRENCY && queue.length) {
+    const item = queue.shift();
+    active++;
+    checkUrl(item.target).then((code) => {
+      if (code < 200 || code >= 400) {
+        broken.push({ file: item.file, link: item.link, target: item.target, status: code });
+      }
+      active--;
+      processQueue();
+    }).catch(() => { active--; processQueue(); });
+  }
+}
+
 async function run() {
   const start = Date.now();
   for (const file of htmlFiles) {
@@ -68,16 +79,17 @@ async function run() {
     while ((m = hrefRegex.exec(content)) !== null) {
       const link = m[1];
       if (!link || link.startsWith('javascript:') || link.startsWith('mailto:') || link.startsWith('tel:') || link.startsWith('#')) continue;
-      const target = toTarget(link, path.dirname(file));
+      const target = toTarget(link);
       if (!target) continue;
-      queue = queue.then(() => checkUrl(target)).then((code) => {
-        if (code < 200 || code >= 400) {
-          broken.push({ file: path.relative(docsDir, file), link, target, status: code });
-        }
-      });
+      queue.push({ file: path.relative(docsDir, file), link, target });
     }
   }
-  await queue;
+  processQueue();
+  await new Promise((resolve) => {
+    const interval = setInterval(() => {
+      if (active === 0 && queue.length === 0) { clearInterval(interval); resolve(); }
+    }, 50);
+  });
   fs.mkdirSync(path.dirname(reportPath), { recursive: true });
   fs.writeFileSync(reportPath, JSON.stringify({ generatedAt: new Date().toISOString(), base: BASE, totalFiles: htmlFiles.length, totalChecked: checked.size, brokenCount: broken.length, broken: broken.slice(0, 200) }, null, 2));
   console.log(JSON.stringify({ totalFiles: htmlFiles.length, totalChecked: checked.size, brokenCount: broken.length, reportPath }, null, 2));
