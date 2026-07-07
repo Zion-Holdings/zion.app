@@ -1,64 +1,28 @@
 {
+  "createdAt": "2026-07-07T12:00:00.000Z",
+  "updatedAt": "2026-07-07T20:45:00.000Z",
   "status": "blocked/auth-missing",
-  "authRequired": "gog auth add kleber@ziontechgroup.com --services gmail",
-  "rules": [
-    {
-      "id": "suppression-7days",
-      "rule": "Keep default suppression window at 7 days until 50+ sends are recorded after auth restore.",
-      "confidence": "high",
-      "status": "active"
-    },
-    {
-      "id": "llm-tailored-responses",
-      "rule": "hot_followup_responder.py now uses thread-aware LLM CEO replies from lib.llm_client, with deterministic fallback when unavailable.",
-      "confidence": "high",
-      "status": "active",
-      "implemented": true
-    },
-    {
-      "id": "high-frequency-scheduling",
-      "rule": "Outreach pipeline supports ~60s loops once auth works. Configure cron to */1 minute or run continuous_outreach_pipeline.py as a watcher after auth restore.",
-      "confidence": "high",
-      "status": "pending_auth"
-    },
-    {
-      "id": "hot-followup-llm-reply",
-      "rule": "hot_followup_responder.py queries LLM with thread context for CEO replies; CEO templates expanded in lead-crm/ceo_followup_templates.json.",
-      "confidence": "high",
-      "status": "pending_auth_send"
-    },
-    {
-      "id": "continuous-improvement",
-      "rule": "Continue monitoring outreach-monitor and improvements.json after each real send; tune after 50+ sends.",
-      "confidence": "high",
-      "status": "active"
-    },
-    {
-      "id": "reduce-cron-noise",
-      "rule": "Guard or pause cron loop when gmail auth is missing so blocked runs do not pollute the log.",
-      "confidence": "high",
-      "status": "active"
-    },
-    {
-      "id": "log-schema-normalization",
-      "rule": "Standardize outreach-log.jsonl to a single canonical record schema; avoid mixing blocked-auth, event, rerun-blocked, and legacy batch-run shapes.",
-      "confidence": "medium",
-      "sourceNote": "Recomputed from live outreach-log.jsonl and improvements.json state; append new digest only when meaningful state changes."
-    }
+  "blocks": [
+    "gog auth status returns No auth for gmail kleber@ziontechgroup.com",
+    "hot_followup_responder.py cannot read !!!hot-follow-up or send replies",
+    "continuous_outreach_pipeline.py cannot search or send without auth",
+    "web_prospecting.py returned 0 discovered/added emails on 2026-07-07"
   ],
-  "automationImprovements": [
-    "Added hot_followup_responder.py with thread-aware LLM CEO replies and probe check for all-folders search",
-    "Expanded CEO follow-up templates with more mutually beneficial business angles",
-    "Added SEO_CONTENT_PACK.md for AI/IT lead generation",
-    "Added HOT_FOLLOWUP_SETUP.md with exact run instructions",
-    "Existing continuous_outreach_pipeline.py already imports real gmail_search with all_folders=True",
-    "Auth remains the live blocker; improvements are ready to run immediately after restore"
+  "unlock": [
+    "gog auth add kleber@ziontechgroup.com --services gmail",
+    "paste redirect URL in browser",
+    "verify: gog gmail search 'in:anywhere' --max 1 --plain --account kleber@ziontechgroup.com"
   ],
-  "notes": "Auth still missing; live scan/send/hot-followup remain paused until gog auth succeeds. All content and code changes are offline-complete and ready for immediate execution.",
+  "postAuthPlan": [
+    "read !!!hot-follow-up threads",
+    "audit recent Sent mail",
+    "send LLM-tailored Portuguese CEO hot-follow-up reply avoiding duplicates",
+    "launch high-frequency LLM-tailored outreach with continuous monitoring"
+  ],
   "digests": [
     {
-      "ts": "2026-07-07T20:10:00.000000+00:00",
-      "scope": "outreach_log_2026-07-07T190000",
+      "ts": "2026-07-07T20:45:00.000Z",
+      "status": "blocked/auth-missing",
       "metrics": {
         "totalRuns": 59,
         "sendsAttempted": 0,
@@ -67,9 +31,12 @@
         "hotFollowups": 0,
         "latestComplete": "2026-07-07T20:04:39.690418+00:00"
       },
-      "status": "blocked/auth-missing",
-      "sourceNote": "Recomputed from live outreach-log.jsonl; append new digest only when meaningful state changes.",
-      "reconciliationNote": "Inline verifier passed after in-place metric refresh; no new blocked digest appended because state is unchanged from prior baseline except log-line freshness."
+      "reconciliationNote": "Recomputed from current outreach-log.jsonl; latest complete/auth_missing is 2026-07-07T20:04:39.690418+00:00; authFailures derived from 24 complete records containing 'No auth for gmail'; totalRuns counts 59 non-empty log lines.",
+      "recommendations": [
+        "Restore Gmail auth before tuning prompts/scoring; current metrics are zeroed by auth failure, not by suppression or prompt issues.",
+        "Reduce cron noise by exiting on the first auth-missing probe instead of accumulating duplicate auth-missing start/complete pairs.",
+        "After auth restoration, evaluate suppression window and prompt wording using real send/response data rather than synthetic baselines."
+      ]
     }
   ]
 }
