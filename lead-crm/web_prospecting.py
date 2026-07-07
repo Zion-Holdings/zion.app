@@ -22,7 +22,12 @@ KEYWORDS = [
     'field service intelligent routing',
     'BI predictive analytics dashboard',
     'cloud migration assessment',
-    'IT outsourcing LATAM'
+    'IT outsourcing LATAM',
+    'managed SOCaaS pricing small business',
+    'enterprise document processing OCR',
+    'edge AI video analytics retail',
+    'low-code workflow automation enterprise',
+    'AI customer success churn prevention'
 ]
 
 HEADERS = {
