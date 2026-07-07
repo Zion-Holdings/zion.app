@@ -178,7 +178,7 @@ export default function AILabPage() {
             ever leaves your machine.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/ai/demo/" className="btn-primary text-lg px-10 py-4">
+            <Link href="/ai-lab/" className="btn-primary text-lg px-10 py-4">
               🧪 Try the Demo Sandbox
             </Link>
             <Link href="/ai/solutions-configurator/" className="btn-secondary text-lg px-10 py-4">

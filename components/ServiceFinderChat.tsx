@@ -46,7 +46,7 @@ const serviceKnowledge: { keywords: string[]; services: ServiceMatch[] }[] = [
   {
     keywords: ['cloud', 'aws', 'azure', 'gcp', 'infrastructure', 'server', 'kubernetes', 'k8s'],
     services: [
-      { title: 'Cloud Cost Optimization', href: '/services/cloud-cost-optimization-platform', price: '$1,499/mo', icon: '☁️', match: 95, description: '35% cloud cost reduction' },
+      { title: 'Cloud Cost Optimization', href: '/services/cloud-cost-optimization-service', price: '$1,499/mo', icon: '☁️', match: 95, description: '35% cloud cost reduction' },
       { title: 'Cloud FinOps Platform', href: '/services/cloud-finops-platform', price: '$2,999/mo', icon: '💰', match: 92, description: 'Multi-cloud financial management' },
       { title: 'Kubernetes Autoscaling', href: '/services/kubernetes-autoscaling-intelligence', price: '$2,399/mo', icon: '⚡', match: 88, description: 'ML-based traffic prediction & scaling' },
     ]

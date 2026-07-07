@@ -12,7 +12,7 @@ export default function Page() {
         <h1 className="text-4xl font-bold text-white mb-4">AI Claims Automation</h1>
         <p className="text-slate-400 text-lg mb-8">Automate insurance claims processing with AI and machine learning.</p>
         <div className="flex flex-wrap gap-4">
-        <Link href="/services/ai-claims-automation" className="text-emerald-400 hover:text-emerald-300 underline">Claims Automation Service</Link>
+        <Link href="/ai-claims-automation" className="text-emerald-400 hover:text-emerald-300 underline">Claims Automation Service</Link>
         <Link href="/contact" className="text-emerald-400 hover:text-emerald-300 underline">Learn More</Link>
         </div>
         <div className="mt-12 p-6 rounded-xl bg-slate-800/50 border border-slate-700/50">
