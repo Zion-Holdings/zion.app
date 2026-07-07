@@ -57,40 +57,19 @@
   "notes": "Auth still missing; live scan/send/hot-followup remain paused until gog auth succeeds. All content and code changes are offline-complete and ready for immediate execution.",
   "digests": [
     {
-      "ts": "2026-07-07T16:36:25.485318Z",
-      "scope": "outreach_log_2026-07-07T163625_48",
+      "ts": "2026-07-07T20:10:00.000000+00:00",
+      "scope": "outreach_log_2026-07-07T190000",
       "metrics": {
-        "totalRuns": 57,
+        "totalRuns": 59,
         "sendsAttempted": 0,
         "duplicatesSuppressed": 0,
-        "authFailures": 24,
+        "authFailures": 26,
         "hotFollowups": 0,
-        "latestComplete": "2026-07-07T18:01:53.605660Z"
+        "latestComplete": "2026-07-07T20:04:39.690418+00:00"
       },
       "status": "blocked/auth-missing",
-      "sourceNote": "Recomputed from live outreach-log.jsonl and improvements.json state; append new digest only when meaningful state changes.",
-      "patterns": [
-        "Auth is still the single root cause; no sends, suppression events, or hot-followup reply threads were observed in this cycle.",
-        "Cron continues emitting blocked-auth complete records; latestComplete advances but metrics remain zero.",
-        "No message-level outcome data exists; suppression window, prompt wording, and scoring tuning remain premature.",
-        "No CEO hot-followup threads detected; keep drafts unsent until auth is restored and a real reply thread exists."
-      ],
-      "actionsAfterAuthRestore": [
-        "Restore Gmail auth before changing outreach mechanics.",
-        "Keep default 7-day suppression window until 50+ successful sends are recorded.",
-        "Guard cron so blocked-auth runs do not append duplicate noisy metrics.",
-        "Normalize outreach-log schema before using counts for live tuning.",
-        "Tune suppression window, prompt wording, and scoring only after 50+ sends with cold-open vs threaded-reply distinction.",
-        "Generate CEO hot-followup drafts only after a real reply thread is detected and auth is restored."
-      ],
-      "metricsToWatch": [
-        "Replies per send",
-        "Unsubscribe rate",
-        "Spam reports",
-        "Conversation replies vs cold opens",
-        "Follow-up efficacy after 3 days"
-      ],
-      "reconciliationNote": "In-place metric reconciliation from live outreach-log.jsonl; freshness-only totalRuns/latestComplete/authFailures advance, no meaningful state delta, no new blocked digest appended."
+      "sourceNote": "Recomputed from live outreach-log.jsonl; append new digest only when meaningful state changes.",
+      "reconciliationNote": "Inline verifier passed after in-place metric refresh; no new blocked digest appended because state is unchanged from prior baseline except log-line freshness."
     }
   ]
 }
