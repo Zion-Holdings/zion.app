@@ -87,9 +87,10 @@ DEEP_QUERIES = [
     'in:anywhere subject:AI implementation',
 ]
 EMAIL_RE = re.compile(r'[\w\.-]+@[\w\.-]+\.\w+')
-MAX_RESULTS_PER_QUERY = 25
+MAX_RESULTS_PER_QUERY = 10
 MIN_CONFIDENCE = 1
 HEALTH_MONITOR = LEAD_DIR / 'miner_health.json'
+QUERY_TIMEOUT_SECONDS = 8
 def now_iso():
     return datetime.datetime.now(datetime.timezone.utc).isoformat()
 
@@ -119,11 +120,11 @@ def append_log(entry: dict):
 
 def extract_contacts_metadata(msg_id: str):
     try:
-        import urllib.request, urllib.parse, json as _json
+        import urllib.request, json as _json
         from commands.google_workspace import gog_headers
         url = f'https://gmail.googleapis.com/gmail/v1/users/me/messages/{msg_id}?format=metadata'
         req = urllib.request.Request(url, headers=gog_headers())
-        with urllib.request.urlopen(req, timeout=10) as r:
+        with urllib.request.urlopen(req, timeout=QUERY_TIMEOUT_SECONDS) as r:
             raw = r.read()
         msg = _json.loads(raw)
         headers = msg.get('payload', {}).get('headers', [])
@@ -171,7 +172,7 @@ def run_miner():
     new_leads = []
     mined_contacts = []
     queries_run = 0
-    active_queries = DEEP_QUERIES if DEEP_QUERIES else QUERIES
+    active_queries = DEEP_QUERIES[:18] if len(DEEP_QUERIES) > 18 else DEEP_QUERIES
     for q in active_queries:
         queries_run += 1
         try:
