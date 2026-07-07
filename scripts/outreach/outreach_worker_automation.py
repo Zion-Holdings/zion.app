@@ -8,14 +8,14 @@ from google_api import build_service
 
 service = build_service('gmail', 'v1')
 
-BASE_DIR = Path('/c/Users/Zion/tmp/zion-clone-test')
+BASE_DIR = Path('/c/Users/Zion/tmp/zion-clone-test2')
 DEDUP_DIR = BASE_DIR / 'outreach_monitor' / 'processed'
 DEDUP_DIR.mkdir(parents=True, exist_ok=True)
 STATE_FILE = DEDUP_DIR / 'global_dedup_state.json'
 LEDGER_FILE = DEDUP_DIR / 'sent_ledger.jsonl'
 
 DEDUP_COOLDOWN_SECONDS = 18 * 3600  # 18 hours per contact
-LLM_TAILOR_ENABLED = False  # flip to True when LLM path is configured
+LLM_TAILOR_ENABLED = bool(os.getenv('ZION_LLM_API_ENDPOINT') and os.getenv('ZION_LLM_API_KEY') and os.getenv('ZION_LLM_MODEL'))
 LLM_API_ENDPOINT = os.getenv('ZION_LLM_API_ENDPOINT') or os.getenv('LLM_API_ENDPOINT')
 LLM_API_KEY = os.getenv('ZION_LLM_API_KEY') or os.getenv('LLM_API_KEY')
 LLM_MODEL = os.getenv('ZION_LLM_MODEL') or 'gpt-4o-mini'
@@ -146,11 +146,12 @@ def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, lan
     if not LLM_TAILOR_ENABLED or not LLM_API_ENDPOINT or not LLM_API_KEY:
         return ''
     prompt = (
-        "You are the CEO of Zion Tech Group. Draft a friendly-professional reply. "
+        "You are the CEO of Zion Tech Group. Draft a short, friendly-professional, specific reply. "
         f"Contact: {contact_name}. Company: {company_name}. Language: {language}. "
-        "Context:\n" + (thread_text[:1400])
-        + "\nRules: include Calendly https://calendly.com/kleber-ziontechgroup "
-        "and https://ziontechgroup.com. Close warmly."
+        "Context:\n" + (thread_text[:1600])
+        + "\nRules: include Calendly https://calendly.com/kleber-ziontechgroup, "
+        "https://ziontechgroup.com, 1-3 mutually beneficial ideas, and a soft close. "
+        "Avoid generic filler."
     )
     headers = {
         'Authorization': f"Bearer {LLM_API_KEY}",
@@ -277,22 +278,36 @@ def sanitize_outreach_body(body: str) -> str:
     return body.strip()
 
 def fetch_or_create_lead_from_inbox(email, thread_subject=None):
-    # Priority 1: recent unread/new inbound message across all folders
+    # Priority 1: recent unread/new inbound message across all folders and explicit variant subjects
+    queries = []
+    base = f"from:{email} -category:promotions -in:spam -in:trash"
+    if thread_subject:
+        for q in [
+            f'{base} subject:"{thread_subject}"',
+            f'{base} newer_than:7d',
+            f'{base} newer_than:30d',
+        ]:
+            queries.append(q)
+    else:
+        for q in [
+            f'{base} newer_than:1d',
+            f'{base} newer_than:7d',
+            f'{base}',
+        ]:
+            queries.append(q)
     hit = None
-    for query in [
-        f"from:{email} -category:promotions -in:spam -in:trash newer_than:1d",
-        f"from:{email} -category:promotions -in:spam -in:trash newer_than:7d",
-        f"from:{email} -category:promotions -in:spam -in:trash",
-    ]:
-        hits = search_all_folders(query, max_results=10)
+    for query in queries:
+        hits = search_all_folders(query, max_results=20)
         if hits:
-            newest = hits[0]
-            if is_seen_message_id(newest['id']):
-                continue
-            date_hdr = newest.get('date', '')
-            if _message_is_too_old(date_hdr, max_age_days=180):
-                continue
-            hit = newest
+            for newest in hits:
+                if is_seen_message_id(newest['id']):
+                    continue
+                date_hdr = newest.get('date', '')
+                if _message_is_too_old(date_hdr, max_age_days=180):
+                    continue
+                hit = newest
+                break
+        if hit:
             break
     if not hit:
         return None
