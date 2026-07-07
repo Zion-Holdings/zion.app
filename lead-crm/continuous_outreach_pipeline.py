@@ -333,12 +333,16 @@ def discover_next_batch(sent_keys, sent_subjects):
     blocked = False
     batch = []
     seen = set()
+    sent_thread_ids = load_sent_thread_ids()
     recovery_mode = os.environ.get('OUTREACH_RECOVERY_MODE') in {'1','true','yes','y'}
     for r in rows:
         key = str(r.get('to') or r.get('email') or r.get('recipient') or '').strip().lower()
         if not key:
             continue
         if key in seen or (not recovery_mode and key in sent_keys):
+            continue
+        thread_id = str(r.get('thread_id') or '').strip().lower()
+        if thread_id and thread_id in sent_thread_ids:
             continue
         if _is_system_like(key):
             continue
@@ -379,6 +383,9 @@ def discover_next_batch(sent_keys, sent_subjects):
                     key = str(r.get('to') or r.get('email') or r.get('recipient') or '').strip().lower()
                     if not key or key in seen or key in sent_keys:
                         continue
+                    thread_id = str(r.get('thread_id') or '').strip().lower()
+                    if thread_id and thread_id in sent_thread_ids:
+                        continue
                     batch.append(r)
                     seen.add(key)
                 if not batch:
@@ -407,6 +414,9 @@ def discover_next_batch(sent_keys, sent_subjects):
                         for r in rows:
                             key = str(r.get('to') or r.get('email') or r.get('recipient') or '').strip().lower()
                             if not key or key in seen or key in sent_keys:
+                                continue
+                            thread_id = str(r.get('thread_id') or '').strip().lower()
+                            if thread_id and thread_id in sent_thread_ids:
                                 continue
                             batch.append(r)
                             seen.add(key)
@@ -471,6 +481,14 @@ def send_current_batch(batch_path: Path, sender):
 
     try:
         save_sent_keys(updated_sent_keys)
+    except Exception:
+        pass
+    try:
+        sent_threads = load_sent_thread_ids()
+        for res in results:
+            if res.get('success') and res.get('thread_id'):
+                sent_threads.add(str(res['thread_id']).strip().lower())
+        save_sent_thread_ids(sent_threads)
     except Exception:
         pass
     if rate_hit:
