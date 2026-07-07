@@ -18,24 +18,24 @@ jobs:
         run: |
           set -euo pipefail
           node - <<'NODE'
-              const fs = require('fs');
-              const healthPath = 'public/api/automation-health.json';
-              const historyPath = 'public/api/automation-health-history.json';
-              const outputPath = 'digest.json';
-              let text = '';
-              try {
-                const health = JSON.parse(fs.readFileSync(healthPath, 'utf8'));
-                const history = JSON.parse(fs.readFileSync(historyPath, 'utf8'));
-                const currentScore = health.sloScore ?? 'n/a';
-                const prev = history.length > 1 ? history[history.length - 2] : null;
-                const prevScore = prev?.sloScore ?? 'n/a';
-                text += `Zion Daily Digest\nSLO Score: ${currentScore}\nPrevious: ${prevScore}\nDeploy Status: ${health.deployStatus ?? 'unknown'}\nOpen Incident Fingerprints: ${health.openFingerprintIssues ?? 'n/a'}`;
-              } catch (e) {
-                text = 'Zion Daily Digest\nCould not parse automation health data: ' + e.message;
-              }
-              const payload = { text };
-              fs.writeFileSync(outputPath, JSON.stringify(payload));
-              console.log('digest', text);
+                            const fs = require('fs');
+                            const healthPath = 'public/api/automation-health.json';
+                            const historyPath = 'public/api/automation-health-history.json';
+                            const outputPath = 'digest.json';
+                            let text = '';
+                            try {
+                              const health = JSON.parse(fs.readFileSync(healthPath, 'utf8'));
+                              const history = JSON.parse(fs.readFileSync(historyPath, 'utf8'));
+                              const currentScore = health.sloScore ?? 'n/a';
+                              const prev = history.length > 1 ? history[history.length - 2] : null;
+                              const prevScore = prev?.sloScore ?? 'n/a';
+                              text += `Zion Daily Digest\nSLO Score: ${currentScore}\nPrevious: ${prevScore}\nDeploy Status: ${health.deployStatus ?? 'unknown'}\nOpen Incident Fingerprints: ${health.openFingerprintIssues ?? 'n/a'}`;
+                            } catch (e) {
+                              text = 'Zion Daily Digest\nCould not parse automation health data: ' + e.message;
+                            }
+                            const payload = { text };
+                            fs.writeFileSync(outputPath, JSON.stringify(payload));
+                            console.log('digest', text);
 NODE
 
       - name: 'send Telegram digest'

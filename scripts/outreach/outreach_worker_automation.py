@@ -242,6 +242,7 @@ CEO, Zion Tech Group
 """
 
 def send_ceo_reply(thread_id, to_addr, subject, body, references_message_id):
+    body = sanitize_outreach_body(body)
     msg_id_str = f"<{references_message_id}>"
     raw_headers = [
         f"From: kleber@ziontechgroup.com",
@@ -255,8 +256,25 @@ def send_ceo_reply(thread_id, to_addr, subject, body, references_message_id):
     sent = service.users().messages().send(userId='me', body={'raw': raw, 'threadId': thread_id}).execute()
     return sent
 
-def safe_slug(s):
-    return s.lower().strip().replace('.', '-').replace('_', '-')
+def sanitize_outreach_body(body: str) -> str:
+    # Strip common leaked AI planning preambles that slipped into sent mail.
+    patterns = [
+        r"(?is)^got it[^\\n\
+]*(\
+?\\n)+",
+        r"(?is)^then body:[^\\n\
+]*(\
+?\\n)+",
+        r"(?is)^first, the recipient is[^\\n\
+]*(\
+?\\n)+",
+        r"(?is)^need to be concise[^\\n\
+]*(\
+?\\n)+",
+    ]
+    for p in patterns:
+        body = re.sub(p, "", body)
+    return body.strip()
 
 def fetch_or_create_lead_from_inbox(email, thread_subject=None):
     # Priority 1: recent unread/new inbound message across all folders
