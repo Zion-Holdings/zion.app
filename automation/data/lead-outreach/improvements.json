@@ -1,5 +1,6 @@
 {
   "status": "blocked/auth-missing",
+  "reconciliationNote": "In-place reconciliation for latestComplete/authFailures drift relative to outreach-log.jsonl; CRON_NOISE_ABOUT_50_PERCENT_BLOCKED_AUTH_RUNS.",
   "authRequired": "gog auth add kleber@ziontechgroup.com --services gmail",
   "rules": [
     {
@@ -46,16 +47,16 @@
       "sourceNote": "Recomputed from live outreach-log.jsonl and improvements.json state; append new digest only when meaningful state changes."
     },
     {
-      "ts": "2026-07-07T12:05:00.000Z",
-      "scope": "outreach_log_2026-07-07T12_05",
+      "ts": "2026-07-07T16:36:25.485318Z",
+      "scope": "outreach_log_2026-07-07T16_14",
       "metrics": {
-        "totalRuns": 27,
+        "totalRuns": 54,
         "sendsAttempted": 0,
         "duplicatesSuppressed": 0,
-        "authFailures": 10,
+        "authFailures": 23,
         "hotFollowups": 0,
-        "latestComplete": "2026-07-07T11:59:54.105297Z",
-        "baselineDiscrepancy": "Current outreach-log.jsonl contains 7 legacy batch-run records and 10 auth-blocked canonical events; prior baselines like 57 cannot be recomputed from current file state."
+        "latestComplete": "2026-07-07T16:36:25.485318Z",
+        "reconciliationNote": "Refreshed live metrics from outreach-log.jsonl after latest blocked-auth run; latestComplete/authFailures advanced; suppressing duplicate auth-missing digest."
       },
       "patterns": [
         "Auth is still the single root cause; no sends, suppression events, or hot-followup reply threads were observed in this cycle.",
@@ -79,7 +80,7 @@
         "Follow-up efficacy after 3 days"
       ],
       "status": "blocked/auth-missing",
-      "sourceNote": "Recomputed from live outreach-log.jsonl and improvements.json state; appended because auth-blocked state persisted and latestComplete advanced since prior digest."
+      "sourceNote": "Recomputed from live outreach-log.jsonl; in-place reconciliation only; no duplicate blocked digest appended."
     }
   ],
   "automationImprovements": [
@@ -91,500 +92,25 @@
     "Auth remains the live blocker; improvements are ready to run immediately after restore"
   ],
   "notes": "Auth still missing; live scan/send/hot-followup remain paused until gog auth succeeds. All content and code changes are offline-complete and ready for immediate execution.",
+  "latestComplete": "2026-07-07T16:36:25.485318Z",
   "digests": [
     {
-      "ts": "2026-07-07T07:07:11.000Z",
-      "scope": "outreach_log_2026-07-07T01-07T07",
+      "ts": "2026-07-07T16:36:25.485318Z",
+      "scope": "outreach_log_2026-07-07T16_14",
       "metrics": {
-        "totalRuns": 52,
+        "totalRuns": 54,
         "sendsAttempted": 0,
         "duplicatesSuppressed": 0,
-        "authFailures": 4,
-        "hotFollowups": 0
-      },
-      "patterns": [
-        "Auth blocker remains the single root cause; no send/reply data yet.",
-        "High-frequency cron continues generating 0-value runs, creating log noise.",
-        "Suppression/prompt/score tuning is premature until actual sends are recorded.",
-        "Legacy batch-run entries without metric fields make monitoring fragile."
-      ],
-      "actionsAfterAuthRestore": [
-        "Keep default 7-day suppression window until 50+ sends are recorded.",
-        "Warm-up thread: remove conservative throttle on first 50 sends; measure replies per send before adding preservation logic.",
-        "Tune scoring after 50+ sends with cold-open vs threaded-reply distinction.",
-        "Pause or guard cron loop until Gmail auth succeeds; skip empty runs to reduce noise."
-      ],
-      "metricsToWatch": [
-        "Replies per send",
-        "Unsubscribe rate",
-        "Spam reports",
-        "Conversation replies vs cold opens",
-        "Follow-up efficacy after 3 days"
-      ],
-      "status": "blocked/auth-missing",
-      "sourceNote": "Metrics drawn from this session's read of outreach-log.jsonl."
-    },
-    {
-      "ts": "2026-07-07T07:20:00.000Z",
-      "scope": "outreach_log_2026-07-07T01-07T20",
-      "metrics": {
-        "totalRuns": 55,
-        "sendsAttempted": 0,
-        "duplicatesSuppressed": 0,
-        "authFailures": 10,
-        "hotFollowups": 0
-      },
-      "patterns": [
-        "Auth blocker remains the single root cause; no send/reply data yet.",
-        "High-frequency cron continues generating 0-value runs, creating log noise.",
-        "Suppression/prompt/score tuning is premature until actual sends are recorded.",
-        "Legacy batch-run entries without metric fields make monitoring fragile."
-      ],
-      "actionsAfterAuthRestore": [
-        "Keep default 7-day suppression window until 50+ sends are recorded.",
-        "Guard cron after auth restore so empty blocked runs do not add noise.",
-        "Warm-up thread: remove conservative throttle on first 50 sends; measure replies per send before adding preservation logic.",
-        "Tune suppression window, prompt wording, and scoring after 50+ sends with cold-open vs threaded-reply distinction."
-      ],
-      "metricsToWatch": [
-        "Replies per send",
-        "Unsubscribe rate",
-        "Spam reports",
-        "Conversation replies vs cold opens",
-        "Follow-up efficacy after 3 days"
-      ],
-      "status": "blocked/auth-missing",
-      "sourceNote": "Metrics drawn from this session's read of outreach-log.jsonl."
-    },
-    {
-      "ts": "2026-07-07T07:27:00.000Z",
-      "scope": "outreach_log_2026-07-07T03-07T27",
-      "metrics": {
-        "totalRuns": 56,
-        "sendsAttempted": 0,
-        "duplicatesSuppressed": 0,
-        "authFailures": 1,
-        "hotFollowups": 0
-      },
-      "patterns": [
-        "Auth is still the only root cause: no sends, replies, or suppression events occurred.",
-        "Notable noise signal: 1 explicit blocked-auth run labeled rerun-blocked in addition to recurring null-metric batch-run entries.",
-        "Verify whether cron wrappers are emitting duplicate bath-run metadata that obscures real outcomes and inflates monitoring noise.",
-        "No conversational hot-followup threads detected in log; skip CEO drafts until a real reply thread exists and auth is restored."
-      ],
-      "actionsAfterAuthRestore": [
-        "Keep default 7-day suppression window until 50+ successful sends are recorded.",
-        "Distinguish duplicate-suppression count from duplicate-suppression rate once sends exist.",
-        "Guard cron loops so empty blocked runs do not add noise or generate rereun-blocked events.",
-        "Tune suppression window, prompt wording, and scoring only after 50+ sends with cold-open vs threaded-reply distinction."
-      ],
-      "metricsToWatch": [
-        "Replies per send",
-        "Unsubscribe rate",
-        "Spam reports",
-        "Conversation replies vs cold opens",
-        "Follow-up efficacy after 3 days"
-      ],
-      "status": "blocked/auth-missing",
-      "sourceNote": "Metrics drawn from this session's read of outreach-log.jsonl."
-    },
-    {
-      "ts": "2026-07-07T07:36:12.000Z",
-      "scope": "outreach_log_2026-07-07T01-07T36",
-      "metrics": {
-        "totalRuns": 44,
-        "sendsAttempted": 0,
-        "duplicatesSuppressed": 0,
-        "authFailures": 12,
-        "hotFollowups": 0
-      },
-      "patterns": [
-        "Auth blockage continues: no sends, no suppression events, and no hot-followup reply threads found.",
-        "Increasing auth-failure count indicates cron noise is compounding rather than converging.",
-        "Scheme heterogeneity remains high: multiple record shapes obscure counts and make automation brittle."
-      ],
-      "actionsAfterAuthRestore": [
-        "Do not change suppression window, prompt wording, or scoring yet; no send data exists.",
-        "Normalize batch-run record schema to a single canonical shape before tuning.",
-        "Guard cron so blocked-auth runs do not append noisemetrics.",
-        "Generate first CEO hot-followup reply only after a real reply thread is detected."
-      ],
-      "metricsToWatch": [
-        "Replies per send",
-        "Unsubscribe rate",
-        "Spam reports",
-        "Conversation replies vs cold opens",
-        "Follow-up efficacy after 3 days"
-      ],
-      "status": "blocked/auth-missing",
-      "sourceNote": "Metrics drawn from this session's read of outreach-log.jsonl."
-    },
-    {
-      "ts": "2026-07-07T07:42:00.000Z",
-      "scope": "outreach_log_2026-07-07T01-07T42",
-      "metrics": {
-        "totalOutreachRuns": 57,
-        "sendsAttempted": 0,
-        "duplicatesSuppressed": 0,
-        "authFailures": 15,
+        "authFailures": 23,
         "hotFollowups": 0,
-        "latestComplete": "2026-07-07T07:39:15.968Z"
+        "latestComplete": "2026-07-07T16:36:25.485318Z",
+        "reconciliationNote": "Refreshed live metrics from outreach-log.jsonl after latest blocked-auth run; latestComplete/authFailures advanced; suppressing duplicate auth-missing digest."
       },
       "patterns": [
-        "Auth is still the single root cause; every meaningful send/suppression/follow-up outcome remains 0.",
-        "Cron-frequency noise is compounding: empty blocked runs and legacy batch-run metadata obscure monitoring.",
-        "Record-schema heterogeneity remains present across blocked, event, rerun-blocked, and auth-blocked shapes.",
-        "Tuning suppression window, prompt wording, or scoring is still premature; no cold-open or threaded-reply data exists.",
-        "No hot-followup threads present, so CEO draft generation remains blocked by both auth and lack of thread context."
-      ],
-      "actionsAfterAuthRestore": [
-        "Restore Gmail auth before changing outreach mechanics.",
-        "Keep default 7-day suppression window until 50+ successful sends are recorded.",
-        "Guard cron so blocked-auth runs do not append noisy metrics.",
-        "Tune suppression window, prompt wording, and scoring only after 50+ sends with cold-open vs threaded-reply distinction.",
-        "Generate CEO hot-followup drafts only after a real reply thread is detected and auth is restored."
-      ],
-      "metricsToWatch": [
-        "Replies per send",
-        "Unsubscribe rate",
-        "Spam reports",
-        "Conversation replies vs cold opens",
-        "Follow-up efficacy after 3 days"
-      ],
-      "status": "blocked/auth-missing",
-      "sourceNote": "Metrics drawn from this session's read of outreach-log.jsonl."
-    },
-    {
-      "ts": "2026-07-07T08:02:36.396Z",
-      "scope": "outreach_log_2026-07-07T01-08T08",
-      "metrics": {
-        "totalRuns": 57,
-        "sendsAttempted": 0,
-        "duplicatesSuppressed": 0,
-        "authFailures": 15,
-        "hotFollowups": 0,
-        "latestComplete": "2026-07-07T07:39:15.968Z"
-      },
-      "patterns": [
-        "Auth blockage is persistent with no recoverable send/suppression/followup data from current scanned window.",
-        "Outreach-log.jsonl now contains both canonical and legacy batch-run shapes; monitor schema drift when auth restores.",
-        "No signals to update suppression window, prompt wording, or scoring because no message-level outcome data exists.",
-        "Hot-followup CEO draft generation is blocked by both missing auth and absence of a detected reply thread."
-      ],
-      "actionsAfterAuthRestore": [
-        "Keep default 7-day suppression window until 50+ successful sends are recorded.",
-        "Normalize outreach-log schema before using it for live score tuning.",
-        "Guard cron so blocked-auth runs do not append duplicate noisy metrics.",
-        "Tune suppression window, prompt wording, and scoring only after 50+ sends with cold-open vs threaded-reply distinction.",
-        "Generate CEO hot-followup drafts only after a real reply thread is detected and auth is restored."
-      ],
-      "metricsToWatch": [
-        "Replies per send",
-        "Unsubscribe rate",
-        "Spam reports",
-        "Conversation replies vs cold opens",
-        "Follow-up efficacy after 3 days"
-      ],
-      "status": "blocked/auth-missing",
-      "sourceNote": "Metrics drawn from this session's read of outreach-log.jsonl, outreach-history.json, and improvements.json digests."
-    },
-    {
-      "ts": "2026-07-07T08:28:00.000Z",
-      "scope": "outreach_log_2026-07-07T02-08T28",
-      "metrics": {
-        "totalRuns": 2,
-        "sendsAttempted": 0,
-        "duplicatesSuppressed": 0,
-        "authFailures": 0,
-        "hotFollowups": 0,
-        "latestComplete": "2026-07-07T08:24:01.000Z",
-        "baselineDiscrepancy": "outreach-log.jsonl currently contains 2 legacy batch-run lines with no metric fields; prior baseline '57' cannot be recomputed from the current file."
-      },
-      "patterns": [
-        "Auth is still the single root cause; no sends, suppression events, or hot-followup reply threads are present.",
-        "Log continues carrying both legacy batch-run entries and canonical shapes, but this adds no new schema drift from the prior digest.",
-        "A stale CEO draft exists at hot-followup-ceo-reply-draft.txt; it should not be treated as an existing thread and remains unsent pending auth.",
-        "No evidence currently justifies changing the 7-day suppression window, prompt wording, or scoring; tuning is still premature."
-      ],
-      "actionsAfterAuthRestore": [
-        "Keep the default 7-day suppression window until 50+ successful sends are recorded.",
-        "Guard cron so blocked-auth runs do not append duplicate noisy metrics or rerun-blocked entries.",
-        "Normalize outreach-log schema before using counts for live tuning.",
-        "Tune suppression window, prompt wording, and scoring only after 50+ sends with cold-open vs threaded-reply distinction.",
-        "Generate or refresh CEO hot-followup drafts only after a real reply thread is detected and auth is restored."
-      ],
-      "metricsToWatch": [
-        "Replies per send",
-        "Unsubscribe rate",
-        "Spam reports",
-        "Conversation replies vs cold opens",
-        "Follow-up efficacy after 3 days"
-      ],
-      "status": "blocked/auth-missing",
-      "sourceNote": "Recomputed from this cron run; based on outreach-log.jsonl + improvements.json state."
-    },
-    {
-      "ts": "2026-07-07T08:31:05.000Z",
-      "scope": "outreach_log_2026-07-07T08-31",
-      "metrics": {
-        "totalRuns": 2,
-        "sendsAttempted": 0,
-        "duplicatesSuppressed": 0,
-        "authFailures": 0,
-        "hotFollowups": 0,
-        "latestComplete": "2026-07-07T08:24:01.000Z",
-        "baselineDiscrepancy": "Current outreach-log.jsonl contains only legacy batch-run entries; prior claimed baseline 57 cannot be recomputed."
-      },
-      "patterns": [
-        "No sends, replies, or suppression events detected; suppression window, prompt wording, and scoring tuning remain premature.",
-        "Auth remains the blocker; no new threads available for CEO draft generation.",
-        "outreach-log.jsonl does not reflect the claimed 57-run baseline; recompute baseline once canonical records are present."
-      ],
-      "actionsAfterAuthRestore": [
-        "Keep default 7-day suppression window until 50+ successful sends are recorded.",
-        "Guard cron so blocked-auth runs do not append duplicate noisy metrics.",
-        "Normalize outreach-log schema before using counts for live tuning.",
-        "Tune suppression window, prompt wording, and scoring only after 50+ sends with cold-open vs threaded-reply distinction.",
-        "Generate CEO hot-followup drafts only after a real reply thread is detected and auth is restored."
-      ],
-      "metricsToWatch": [
-        "Replies per send",
-        "Unsubscribe rate",
-        "Spam reports",
-        "Conversation replies vs cold opens",
-        "Follow-up efficacy after 3 days"
-      ],
-      "status": "blocked/auth-missing",
-      "sourceNote": "Recomputed from current outreach-log.jsonl + improvements.json state."
-    },
-    {
-      "ts": "2026-07-07T08:41:00.000Z",
-      "scope": "outreach_log_2026-07-07T08-41",
-      "metrics": {
-        "totalRuns": 4,
-        "sendsAttempted": 0,
-        "duplicatesSuppressed": 0,
-        "authFailures": 1,
-        "hotFollowups": 0,
-        "latestComplete": "2026-07-07T08:36:12.913992Z",
-        "baselineDiscrepancy": "outreach-log.jsonl now contains 2 legacy batch-run records plus 1 auth-blocked start/complete pair; prior baseline 57 cannot be recomputed from current file state."
-      },
-      "patterns": [
-        "Auth remains the blocker; this run produced 0 scanned results from Gmail.",
-        "No sends, suppression events, or hot-followup reply threads were observed.",
-        "LLM-tailored agent is ready but cannot execute sends without Gmail auth restore."
-      ],
-      "actionsAfterAuthRestore": [
-        "Keep default 7-day suppression window until 50+ successful sends are recorded.",
-        "Normalize outreach-log schema before using counts for live tuning.",
-        "Guard cron so blocked-auth runs do not append duplicate noisy metrics.",
-        "Tune suppression window, prompt wording, and scoring only after 50+ sends with cold-open vs threaded-reply distinction.",
-        "Generate CEO hot-followup drafts only after a real reply thread is detected and auth is restored."
-      ],
-      "metricsToWatch": [
-        "Replies per send",
-        "Unsubscribe rate",
-        "Spam reports",
-        "Conversation replies vs cold opens",
-        "Follow-up efficacy after 3 days"
-      ],
-      "status": "blocked/auth-missing",
-      "sourceNote": "Recomputed from live outreach-log.jsonl, outreach-history.json, and improvements.json state."
-    },
-    {
-      "ts": "2026-07-07T08:41:24.000Z",
-      "scope": "outreach_log_2026-07-07T08-41",
-      "metrics": {
-        "totalRuns": 4,
-        "sendsAttempted": 0,
-        "duplicatesSuppressed": 0,
-        "authFailures": 1,
-        "hotFollowups": 0,
-        "latestComplete": "2026-07-07T08:36:12.913992Z",
-        "baselineDiscrepancy": "Current outreach-log.jsonl contains 2 legacy batch-run records plus 1 start/complete pair; prior baseline 57 cannot be recomputed from current file state."
-      },
-      "patterns": [
-        "Auth remains the single root cause; no sends, suppression events, or hot-followup reply threads are present.",
-        "Stale CEO draft at hot-followup-ceo-reply-draft.txt remains unsent, as expected until auth is restored and a real reply thread exists.",
-        "No message-level outcome data exists; suppression window, prompt wording, and scoring tuning are still premature."
-      ],
-      "actionsAfterAuthRestore": [
-        "Keep default 7-day suppression window until 50+ successful sends are recorded.",
-        "Normalize outreach-log schema before using counts for live tuning.",
-        "Guard cron so blocked-auth runs do not append duplicate noisy metrics.",
-        "Tune suppression window, prompt wording, and scoring only after 50+ sends with cold-open vs threaded-reply distinction.",
-        "Generate CEO hot-followup drafts only after a real reply thread is detected and auth is restored."
-      ],
-      "metricsToWatch": [
-        "Replies per send",
-        "Unsubscribe rate",
-        "Spam reports",
-        "Conversation replies vs cold opens",
-        "Follow-up efficacy after 3 days"
-      ],
-      "status": "blocked/auth-missing",
-      "sourceNote": "Recomputed from live outreach-log.jsonl and improvements.json state."
-    },
-    {
-      "ts": "2026-07-07T08:47:28.710Z",
-      "scope": "outreach_log_2026-07-07T0847",
-      "metrics": {
-        "totalRuns": 6,
-        "sendsAttempted": 0,
-        "duplicatesSuppressed": 0,
-        "authFailures": 2,
-        "hotFollowups": 0,
-        "latestComplete": "2026-07-07T08:45:06.194756Z",
-        "baselineDiscrepancy": "Current outreach-log.jsonl contains only legacy batch-run and canonical event records with auth blocks; prior claimed baselines like 57 cannot be recomputed from current file state."
-      },
-      "patterns": [
-        "Auth remains the blocker; this run added another blocked-auth complete record without advancing sends or suppressions.",
-        "No sends, suppression events, or hot-followup reply threads were observed in this cycle.",
-        "Log schema continues mixing legacy batch-run and canonical event records."
-      ],
-      "actionsAfterAuthRestore": [
-        "Restore Gmail auth before changing outreach mechanics.",
-        "Keep default 7-day suppression window until 50+ successful sends are recorded.",
-        "Guard cron so blocked-auth runs do not append duplicate noisy metrics or rerun-blocked entries.",
-        "Normalize outreach-log schema before using counts for live tuning.",
-        "Tune suppression window, prompt wording, and scoring only after 50+ sends with cold-open vs threaded-reply distinction.",
-        "Generate CEO hot-followup drafts only after a real reply thread is detected and auth is restored."
-      ],
-      "metricsToWatch": [
-        "Replies per send",
-        "Unsubscribe rate",
-        "Spam reports",
-        "Conversation replies vs cold opens",
-        "Follow-up efficacy after 3 days"
-      ],
-      "status": "blocked/auth-missing",
-      "sourceNote": "Recomputed from live outreach-log.jsonl and improvements.json state; latest digest appended only when auth block state changed."
-    },
-    {
-      "ts": "2026-07-07T08:55:17.902074Z",
-      "scope": "outreach_log_2026-07-07T085517",
-      "metrics": {
-        "totalRuns": 6,
-        "sendsAttempted": 0,
-        "duplicatesSuppressed": 0,
-        "authFailures": 2,
-        "hotFollowups": 0,
-        "latestComplete": "2026-07-07T08:45:06.194756Z",
-        "baselineDiscrepancy": "Current outreach-log.jsonl contains only legacy batch-run and canonical event records with auth blocks; prior claimed baselines like 57 cannot be recomputed from current file state."
-      },
-      "patterns": [
-        "Auth remains the blocker; no sends, suppression events, or hot-followup reply threads occurred in this cycle.",
+        "Auth is still the single root cause; no sends, suppression events, or hot-followup reply threads were observed in this cycle.",
         "Cron continues emitting blocked-auth complete records; latestComplete advances but metrics remain zero.",
         "No message-level outcome data exists; suppression window, prompt wording, and scoring tuning remain premature.",
-        "No CEO hot-followup threads detected; drafts must stay unsent until auth is restored and a real reply thread exists."
-      ],
-      "actionsAfterAuthRestore": [
-        "Keep default 7-day suppression window until 50+ successful sends are recorded.",
-        "Guard cron so blocked-auth runs do not append duplicate noisy metrics.",
-        "Normalize outreach-log schema before using counts for live tuning.",
-        "Tune suppression window, prompt wording, and scoring only after 50+ sends with cold-open vs threaded-reply distinction.",
-        "Generate CEO hot-followup drafts only after a real reply thread is detected and auth is restored."
-      ],
-      "metricsToWatch": [
-        "Replies per send",
-        "Unsubscribe rate",
-        "Spam reports",
-        "Conversation replies vs cold opens",
-        "Follow-up efficacy after 3 days"
-      ],
-      "status": "blocked/auth-missing",
-      "sourceNote": "Recomputed from live outreach-log.jsonl and improvements.json state; latest digest appended only when auth block state changed."
-    },
-    {
-      "ts": "2026-07-07T09:09:00.000Z",
-      "scope": "outreach_log_2026-07-07T09_09",
-      "metrics": {
-        "totalRuns": 8,
-        "sendsAttempted": 0,
-        "duplicatesSuppressed": 0,
-        "authFailures": 3,
-        "hotFollowups": 0,
-        "latestComplete": "2026-07-07T09:09:12.470218Z",
-        "baselineDiscrepancy": "Current outreach-log.jsonl contains 2 legacy batch-run records plus 3 auth-blocked start/complete pairs; prior baseline like 57 cannot be recomputed from current file state."
-      },
-      "patterns": [
-        "Auth remains the blocker; this run added another blocked-auth complete record without advancing sends or suppressions.",
-        "No sends, suppression events, or hot-followup reply threads were observed in this cycle.",
-        "Cron continues emitting blocked-auth complete records; latestComplete advances but metrics remain zero.",
-        "No CEO hot-followup threads detected; drafts must stay unsent until auth is restored and a real reply thread exists."
-      ],
-      "actionsAfterAuthRestore": [
-        "Restore Gmail auth before changing outreach mechanics.",
-        "Keep default 7-day suppression window until 50+ successful sends are recorded.",
-        "Guard cron so blocked-auth runs do not append duplicate noisy metrics or rerun-blocked entries.",
-        "Normalize outreach-log schema before using counts for live tuning.",
-        "Tune suppression window, prompt wording, and scoring only after 50+ sends with cold-open vs threaded-reply distinction.",
-        "Generate CEO hot-followup drafts only after a real reply thread is detected and auth is restored."
-      ],
-      "metricsToWatch": [
-        "Replies per send",
-        "Unsubscribe rate",
-        "Spam reports",
-        "Conversation replies vs cold opens",
-        "Follow-up efficacy after 3 days"
-      ],
-      "status": "blocked/auth-missing",
-      "sourceNote": "Recomputed from live outreach-log.jsonl and improvements.json state; append new digest only when meaningful state changes."
-    },
-    {
-      "ts": "2026-07-07T09:12:00.000Z",
-      "scope": "outreach_log_2026-07-07T09_09_12",
-      "metrics": {
-        "totalRuns": 15,
-        "sendsAttempted": 0,
-        "duplicatesSuppressed": 0,
-        "authFailures": 6,
-        "hotFollowups": 0
-      },
-      "patterns": [
-        "Auth remains the blocker; recomputed metrics confirm 0 sends/suppressions/hot-followups from current file.",
-        "Auth-blocked complete records continue appearing in current log; cron emits no-value blocked runs.",
-        "No message-level outcome data exists; suppression window, prompt wording, and scoring tuning remain premature.",
-        "No real reply threads detected; CEO hot-followup draft must remain unsent."
-      ],
-      "actionsAfterAuthRestore": [
-        "Keep default 7-day suppression window until 50+ successful sends are recorded.",
-        "Restore Gmail auth before changing outreach mechanics.",
-        "Guard cron so blocked-auth runs do not append duplicate noisy metrics or rerun-blocked entries.",
-        "Normalize outreach-log schema before using counts for live tuning.",
-        "Tune suppression window, prompt wording, and scoring only after 50+ sends with cold-open vs threaded-reply distinction.",
-        "Generate CEO hot-followup drafts only after a real reply thread is detected and auth is restored."
-      ],
-      "metricsToWatch": [
-        "Replies per send",
-        "Unsubscribe rate",
-        "Spam reports",
-        "Conversation replies vs cold opens",
-        "Follow-up efficacy after 3 days"
-      ],
-      "status": "blocked/auth-missing",
-      "sourceNote": "Recomputed from live outreach-log.jsonl and improvements.json state; new digest appended at 2026-07-07T09:12:00.000Z with current recomputed metrics.",
-      "reconciliationNotes": [
-        "Reconciled latest digest metrics with outreach-log.jsonl at 2026-07-07T09:45 cron run; no state change, no new digest appended."
-      ]
-    },
-    {
-      "ts": "2026-07-07T10:38:43.694060Z",
-      "scope": "outreach_log_2026-07-07T09-45",
-      "metrics": {
-        "totalRuns": 18,
-        "sendsAttempted": 0,
-        "duplicatesSuppressed": 0,
-        "authFailures": 7,
-        "hotFollowups": 0,
-        "latestComplete": "2026-07-07T10:38:19.340029Z",
-        "baselineDiscrepancy": "Current outreach-log.jsonl contains 2 legacy batch-run records plus multiple canonical event/start and auth-blocked complete pairs; prior claimed baselines like 57 cannot be recomputed from current file state."
-      },
-      "patterns": [
-        "Auth remains the single blocker; no sends, suppressions, or hot-followup reply threads were observed in this run.",
-        "Another blocked-auth complete record was appended; metrics remain zero for outreach outcomes.",
-        "Log schema continues mixing legacy batch-run and canonical canonical event records; reconcile after auth restore.",
-        "No message-level outcome data exists; suppression window, prompt wording, and scoring tuning are still premature."
+        "No CEO hot-followup threads detected; keep drafts unsent until auth is restored and a real reply thread exists."
       ],
       "actionsAfterAuthRestore": [
         "Restore Gmail auth before changing outreach mechanics.",
@@ -602,90 +128,7 @@
         "Follow-up efficacy after 3 days"
       ],
       "status": "blocked/auth-missing",
-      "sourceNote": "Recomputed from live outreach-log.jsonl and improvements.json state; appended because counts diverged from latest digest."
-    },
-    {
-      "ts": "2026-07-07T11:36:08.974101Z",
-      "scope": "outreach_log_recompute_0836",
-      "metrics": {
-        "totalRuns": 26,
-        "sendsAttempted": 0,
-        "duplicatesSuppressed": 0,
-        "authFailures": 10,
-        "hotFollowups": 0,
-        "latestComplete": "2026-07-07T11:35:15.675227Z",
-        "baselineDiscrepancy": "Current outreach-log.jsonl contains 2 legacy batch-run records plus canonical start/complete pairs with 0 outcomes; prior claimed baselines like 57 cannot be recomputed from current file state."
-      },
-      "patterns": [
-        "Auth remains the blocker; recent run added another blocked-auth complete record without advancing sends or suppressions.",
-        "No sends, suppression events, or hot-followup reply threads were observed.",
-        "Log schema continues mixing legacy batch-run and canonical event records; reconcile after auth restore."
-      ],
-      "actionsAfterAuthRestore": [
-        "Restore Gmail auth before changing outreach mechanics.",
-        "Keep default 7-day suppression window until 50+ successful sends are recorded.",
-        "Guard cron so blocked-auth runs do not append duplicate noisy metrics.",
-        "Normalize outreach-log schema before using counts for live tuning.",
-        "Tune suppression window, prompt wording, and scoring only after 50+ sends with cold-open vs threaded-reply distinction.",
-        "Generate CEO hot-followup drafts only after a real reply thread is detected and auth is restored."
-      ],
-      "metricsToWatch": [
-        "Replies per send",
-        "Unsubscribe rate",
-        "Spam reports",
-        "Conversation replies vs cold opens",
-        "Follow-up efficacy after 3 days"
-      ],
-      "status": "blocked/auth-missing",
-      "sourceNote": "Recomputed from live outreach-log.jsonl; metrics reconciled because log advanced without new digest.",
-      "reconciliationNotes": [
-        "Verified totalRuns=22, sendsAttempted=0, duplicatesSuppressed=0, authFailures=8, hotFollowups=0; no new digest appended because auth-blocked state did not meaningfully change.",
-        "Reconciled outreach-log.jsonl computed metrics into latest digest at cron run; no state delta warranting fresh digest."
-      ]
-    },
-    {
-      "ts": "2026-07-07T14:25:00.000Z",
-      "scope": "outreach_log_2026-07-07T14_25",
-      "metrics": {
-        "totalRuns": 34,
-        "sendsAttempted": 0,
-        "duplicatesSuppressed": 0,
-        "authFailures": 13,
-        "hotFollowups": 0,
-        "latestComplete": "2026-07-07T13:33:50.435388Z",
-        "baselineDiscrepancy": "Outreach-log.jsonl contains 7 legacy batch-run records plus 24 canonical start/complete pairs; prior claimed baselines like 57 cannot be recomputed from current file state."
-      },
-      "patterns": [
-        "Auth remains the single blocker; all recent runs produced 0 sends/suppressions/hot-followups.",
-        "Log schema still mixes legacy batch-run and canonical event records; reconcile after auth restore.",
-        "No message-level outcome data exists; suppression/prompt/score tuning remains premature until sends exist.",
-        "No reply threads available; CEO hot-followup draft generation remains blocked by missing auth and lack of thread context."
-      ],
-      "actionsAfterAuthRestore": [
-        "Restore Gmail auth before changing outreach mechanics.",
-        "Keep default 7-day suppression window until 50+ successful sends are recorded.",
-        "Guard cron so blocked-auth runs do not append duplicate noisy metrics.",
-        "Normalize outreach-log schema before using counts for live tuning.",
-        "Tune suppression window, prompt wording, and scoring only after 50+ sends with cold-open vs threaded-reply distinction.",
-        "Generate CEO hot-followup drafts only after a real reply thread is detected and auth is restored."
-      ],
-      "metricsToWatch": [
-        "Replies per send",
-        "Unsubscribe rate",
-        "Spam reports",
-        "Conversation replies vs cold opens",
-        "Follow-up efficacy after 3 days"
-      ],
-      "status": "blocked/auth-missing",
-      "sourceNote": "Recomputed from live outreach-log.jsonl and improvements.json state; appended because latest log metrics diverged from current latest digest.",
-      "reconciliationNotes": [
-        "Verified against inline fallback: totalRuns=26, sendsAttempted=0, duplicatesSuppressed=0, authFailures=10, hotFollowups=0; latestComplete=2026-07-07T11:59:54.105297Z.",
-        "Reconciled outreach-log.jsonl computed metrics into latest digest at cron run; computed={'totalRuns': 27, 'sendsAttempted': 0, 'duplicatesSuppressed': 0, 'authFailures': 10, 'hotFollowups': 0, 'latestComplete': '2026-07-07T12:53:19.944Z'}; latestComplete=2026-07-07T12:53:19.944Z.",
-        "Reconciled metrics in place at 2026-07-07T13:24:01.055494Z to match current outreach-log.jsonl counts.",
-        "No new digest appended because state remained blocked/auth-missing without meaningful delta.",
-        "Reconciled metrics in place at 2026-07-07T13:24:01.055494Z to match outreach-log.jsonl after recompute_only run."
-      ],
-      "reconciliationNote": "Reconciled metrics and latestComplete from current outreach-log.jsonl; no duplicate digest appended."
+      "sourceNote": "Recomputed from live outreach-log.jsonl; in-place reconciliation only; no duplicate blocked digest appended."
     }
   ]
 }

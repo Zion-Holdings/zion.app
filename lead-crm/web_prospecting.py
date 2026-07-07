@@ -41,7 +41,10 @@ def fetch_html(url: str) -> str:
 def duckduckgo_search(query: str, max_results: int = 10) -> list[str]:
     q = urllib.parse.quote_plus(query)
     url = f'https://html.duckduckgo.com/html/?q={q}'
-    html = fetch_html(url)
+    try:
+        html = fetch_html(url)
+    except Exception:
+        return []
     links = []
     for m in re.finditer(r'<a[^>]+class="result__a"[^>]+href="([^"]+)"[^>]*>(.*?)</a>', html):
         href = m.group(1)
@@ -77,6 +80,7 @@ def bing_html_search(query: str, max_results: int = 10) -> list[str]:
 def discover_leads(keyword: str, limit: int = 8) -> list[dict]:
     leads = []
     seen = set()
+    urls = []
     try:
         urls = duckduckgo_search(keyword, max_results=limit)
     except Exception:
@@ -116,11 +120,17 @@ def discover_leads(keyword: str, limit: int = 8) -> list[dict]:
     return leads
 
 
-def append_ready(rows: list[dict]):
+def load_canonical():
+    if not CANONICAL_READY.exists():
+        return {'ready': []}
     try:
-        data = json.loads(CANONICAL_READY.read_text(encoding='utf-8'))
+        return json.loads(CANONICAL_READY.read_text(encoding='utf-8'))
     except Exception:
-        data = {'ready': []}
+        return {'ready': []}
+
+
+def append_ready(rows: list[dict]):
+    data = load_canonical()
     ready = data.get('ready') or []
     seen_to = {str(r.get('to')).strip().lower() for r in ready if r.get('to')}
     added = 0
@@ -138,19 +148,46 @@ def append_ready(rows: list[dict]):
     return added
 
 
+def backfill_ready():
+    data = load_canonical()
+    ready = data.get('ready') or []
+    updated = 0
+    for r in ready:
+        if not r.get('subject'):
+            r['subject'] = 'Parceria Zion Tech Group — operações e eficiência para TI'
+            updated += 1
+        if not r.get('body'):
+            r['body'] = (
+                'Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, '
+                'inspeção por visão computacional e modernização de plataformas.\n\n'
+                'Gostaríamos de explorar uma possível parceria ou projeto conjunto.\n\n'
+                'Agende uma conversa: https://calendly.com/kleber-ziontechgroup\n'
+                'Serviços e ferramentas gratuitas: https://ziontechgroup.com\n'
+            )
+            updated += 1
+    data['ready'] = ready
+    CANONICAL_READY.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
+    return updated
+
+
 def main():
+    backfilled = backfill_ready()
     all_leads = []
     for kw in KEYWORDS:
         try:
-            rows = discover_leads(kw, limit=6)
+            rows = discover_leads(kw, limit=5)
             all_leads.extend(rows)
         except Exception:
             pass
         time.sleep(1.0)
     added = append_ready(all_leads)
-    print(json.dumps({'ts': datetime.datetime.now(datetime.timezone.utc).isoformat(),
-                       'discovered': len(all_leads), 'added': added,
-                       'canonical_path': str(CANONICAL_READY)}, ensure_ascii=False))
+    print(json.dumps({
+        'ts': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        'backfilled': backfilled,
+        'discovered': len(all_leads),
+        'added': added,
+        'canonical_path': str(CANONICAL_READY)
+    }, ensure_ascii=False))
 
 
 if __name__ == '__main__':

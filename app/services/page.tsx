@@ -41,7 +41,7 @@ const CATEGORIES = [
 
 function ServicesContent() {
   const searchParams = useSearchParams();
-  const urlCategory = searchParams.get('category') || 'all';
+  const urlCategory = (searchParams?.get('category') || 'all');
   const [activeCategory, setActiveCategory] = useState(urlCategory);
   const [searchQuery, setSearchQuery] = useState('');
 
