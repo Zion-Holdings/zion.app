@@ -1,0 +1,47 @@
+{
+  "checkedAt": "2026-07-07T20:50:00.000Z",
+  "source": "manual-static-export-inspection",
+  "overall": "unhealthy-live-but-fixable",
+  "liveSummary": {
+    "healthyDirectRoutes": ["/pricing", "/contact", "/dashboard"],
+    "redirectRoutes": [],
+    "unhealthyDirectRoutes": [
+      "/careers",
+      "/partners",
+      "/portal",
+      "/press",
+      "/status",
+      "/faq",
+      "/case-studies",
+      "/privacy",
+      "/terms",
+      "/cookies",
+      "/sla",
+      "/configurator"
+    ],
+    "first3Unhealthy": ["/careers", "/partners", "/portal"],
+    "monitorScript": "absent"
+  },
+  "buildSummary": {
+    "status": "ok",
+    "staticRoutesChecked": [
+      "/careers",
+      "/contact",
+      "/case-studies",
+      "/configurator",
+      "/privacy"
+    ],
+    "buildArtifactsPresentAfterFix": true
+  },
+  "patches": [
+    {
+      "file": "app/privacy/page.tsx",
+      "change": "replaced null return with real fallback content and fixed canonical to /privacy"
+    },
+    {
+      "file": "app/dashboard/page.tsx",
+      "change": "added missing alternates.canonical metadata"
+    }
+  ],
+  "next": "push rebuilt static export to hosting after commit"
+}

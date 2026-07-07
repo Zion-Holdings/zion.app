@@ -11,6 +11,8 @@ import sys, json, time, datetime, importlib.util, collections
 from pathlib import Path
 
 REPO = Path('/data/data/com.termux/files/home/zion-support.github.io')
+if not REPO.exists():
+    REPO = Path('/Users/miami2/zion.app')
 LEAD_DIR = REPO / 'lead-crm'
 SENDER_PATH = LEAD_DIR / 'send_outreach_batch.py'
 CANONICAL_READY = LEAD_DIR / 'outreach_ready_canonical.json'

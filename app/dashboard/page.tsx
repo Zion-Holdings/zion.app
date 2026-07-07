@@ -3,7 +3,8 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Dashboard | Zion Tech Group',
-  description: 'Central dashboard for services, outreach, and operational metrics.'
+  description: 'Central dashboard for services, outreach, and operational metrics.',
+  alternates: { canonical: '/dashboard/' },
 };
 
 export default function Dashboard() {

@@ -3702,7 +3702,7 @@
     {
       "send": false,
       "reason": "consent_not_present",
-      "email": "hello@cloudbrain.ai",
+      "email": "[REMOVED_INVALID]",
       "name": "CloudBrain AI",
       "subject": "Partnership - CloudBrain AI",
       "date": "2026-06-10",
