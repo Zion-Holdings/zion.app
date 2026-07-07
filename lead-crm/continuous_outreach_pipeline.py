@@ -451,7 +451,18 @@ def send_current_batch(batch_path: Path, sender):
 def loop_once(run_once=False):
     ts = now_iso()
     sent_keys = load_sent_keys()
-    sent_subjects = search_sent_subjects()
+    try:
+        sent_subjects = search_sent_subjects()
+    except Exception as e:
+        if 'No auth for gmail' in str(e):
+            append_log({'ts': ts, 'event': 'send_skipped', 'reason': 'auth_missing', 'error': str(e)})
+            entry = {'ts': ts, 'event': 'pipeline_tick', 'sent': 0, 'next_batch': None, 'sent_keys': len(sent_keys), 'sent_subjects': 0, 'auth_missing': True}
+            append_log(entry)
+            if run_once:
+                print(json.dumps(entry, ensure_ascii=False), flush=True)
+            return entry
+        sent_subjects = []
+        append_log({'ts': ts, 'event': 'search_error', 'error': str(e)})
     batch_path = latest('outreach_batch_*.json')
     sent_count = 0
     new_batch = None
