@@ -89,7 +89,7 @@ def _tailor_message(chat_fn, r):
         {"role": "user", "content": prompt},
     ]
     last_err = None
-    for backend in ('unified', 'openai_compat', 'template'):
+    for backend in ('openai_compat', 'unified', 'template'):
         try:
             if backend == 'unified' and callable(chat_fn):
                 result = chat_fn(messages, provider='auto')
