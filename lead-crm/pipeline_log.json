@@ -3464,5 +3464,13 @@
     "queries_run": 10,
     "contacts_found": 0,
     "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-07T00:46:16.476259+00:00",
+    "event": "nebius_advanced_follow_up",
+    "message_id": "19f3a0965afd08c6",
+    "thread_id": "19f3843fbc14999e",
+    "to": "nrozengarten@nebius.com",
+    "provider": "direct-send"
   }
 ]
