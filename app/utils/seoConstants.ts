@@ -45,7 +45,7 @@ export const ORGANIZATION_SCHEMA = {
 };
 
 export const SOCIAL_LINKS = {
-  linkedin: 'https://www.linkedin.com/company/zion-tech-group',
+  linkedin: 'https://www.linkedin.com/company/zion-tech-group/',
   twitter: 'https://twitter.com/ziontechgroup',
   github: 'https://github.com/zion-support',
 };
