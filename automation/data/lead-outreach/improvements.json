@@ -572,10 +572,10 @@
       "ts": "2026-07-07T11:36:08.974101Z",
       "scope": "outreach_log_recompute_0836",
       "metrics": {
-        "totalRuns": 24,
+        "totalRuns": 26,
         "sendsAttempted": 0,
         "duplicatesSuppressed": 0,
-        "authFailures": 9,
+        "authFailures": 10,
         "hotFollowups": 0,
         "latestComplete": "2026-07-07T11:35:15.675227Z",
         "baselineDiscrepancy": "Current outreach-log.jsonl contains 2 legacy batch-run records plus canonical start/complete pairs with 0 outcomes; prior claimed baselines like 57 cannot be recomputed from current file state."
@@ -601,9 +601,10 @@
         "Follow-up efficacy after 3 days"
       ],
       "status": "blocked/auth-missing",
-      "sourceNote": "Recomputed from live outreach-log.jsonl; previous digest metrics replaced because state did not change.",
+      "sourceNote": "Recomputed from live outreach-log.jsonl; metrics reconciled because log advanced without new digest.",
       "reconciliationNotes": [
-        "Verified totalRuns=22, sendsAttempted=0, duplicatesSuppressed=0, authFailures=8, hotFollowups=0; no new digest appended because auth-blocked state did not meaningfully change."
+        "Verified totalRuns=22, sendsAttempted=0, duplicatesSuppressed=0, authFailures=8, hotFollowups=0; no new digest appended because auth-blocked state did not meaningfully change.",
+        "Reconciled outreach-log.jsonl computed metrics into latest digest at cron run; no state delta warranting fresh digest."
       ]
     }
   ]

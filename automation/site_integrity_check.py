@@ -1,125 +1,153 @@
-#!/usr/bin/env python3
-import sys
-from urllib.parse import urlparse, urljoin
+"""Site integrity check for ziontechgroup.com
 
+Crawls internal links, reports total crawled, HTTP 200 count,
+broken count, first 10 broken URLs with classification.
+"""
+
+from urllib.parse import urljoin, urlparse
 import requests
 from bs4 import BeautifulSoup
-from collections import deque
 
-BASE_DOMAIN = "ziontechgroup.com"
-START_URL = f"https://{BASE_DOMAIN}"
-
+TARGET = "https://ziontechgroup.com"
 MAX_PAGES = 200
-TIMEOUT = 20
-USER_AGENT = "SiteIntegrityBot/1.0"
-
-session = requests.Session()
-session.headers.update({"User-Agent": USER_AGENT})
+TIMEOUT = 15
 
 visited = set()
-queue = deque([START_URL])
-broken = []  # tuples (url, final_url, status_or_error, category)
-external_checked = set()
-
-crawled = 0
-crawled_200 = 0
+broken = []  # list of dicts with url, status, classification, location
+session = requests.Session()
+session.headers.update({"User-Agent": "Mozilla/5.0 (compatible; site-integrity-bot/1.0)"})
 
 
-def classify(url, final_url, status, is_external=False):
-    if is_external:
-        return "external reference error"
-    if isinstance(status, int):
-        if 300 <= status < 400:
-            return "stale redirect"
-        if status == 404:
-            return "missing page"
-        if status >= 500:
-            return "missing page"
-    return "missing page"
+def same_domain(base, candidate):
+    bp = urlparse(base)
+    cp = urlparse(candidate)
+    return bp.netloc == cp.netloc or (bp.netloc == "" and cp.netloc == "")
 
 
-def check_external(url):
-    """Return (status, error)."""
-    try:
-        r = session.head(url, timeout=TIMEOUT, allow_redirects=True, headers={"User-Agent": USER_AGENT})
-        if r.status_code == 405 or r.status_code == 403:
-            r = session.get(url, timeout=TIMEOUT, allow_redirects=True, headers={"User-Agent": USER_AGENT})
-        return r.status_code, None
-    except Exception as e:
-        return None, str(e)
+def classify_issue(url, status_or_exc, from_page=None):
+    if isinstance(status_or_exc, str) and status_or_exc.lower() == "timeout":
+        return "timeout / no response"
+    if isinstance(status_or_exc, str) and status_or_exc.lower() == "connection error":
+        return "connection error"
+    if isinstance(status_or_exc, str) and status_or_exc.lower() == "ssl error":
+        return "TLS/SSL error"
+    code = None
+    if isinstance(status_or_exc, int):
+        code = status_or_exc
+    elif isinstance(status_or_exc, requests.Response):
+        code = status_or_exc.status_code
+    if code is None:
+        return "other error"
+    if 300 <= code < 400:
+        return "stale redirect"
+    if code == 404:
+        return "missing page"
+    if code == 403:
+        return "forbidden / access error"
+    if code >= 400 and code < 500:
+        return "client error"
+    if code >= 500:
+        return "server error"
+    return "other error"
 
 
-while queue and len(visited) < MAX_PAGES:
-    url = queue.popleft()
-    if url in visited:
-        continue
-    visited.add(url)
-    crawled += 1
+def pull_links(html, base):
+    soup = BeautifulSoup(html, "html.parser")
+    links = set()
+    for tag in soup.find_all("a", href=True):
+        href = tag.get("href").strip()
+        if not href:
+            continue
+        joined = urljoin(base, href)
+        parsed = urlparse(joined)
+        if parsed.scheme not in {"http", "https"}:
+            continue
+        if not same_domain(TARGET, joined):
+            continue
+        clean = parsed._replace(fragment="").geturl()
+        links.add(clean)
+    return links
 
-    final_url = url
-    status = None
-    error = None
-    text = None
 
-    try:
-        resp = session.get(url, timeout=TIMEOUT, allow_redirects=True, headers={"User-Agent": USER_AGENT})
-        final_url = resp.url
-        status = resp.status_code
-        if status == 200:
-            text = resp.text
-            crawled_200 += 1
-    except Exception as e:
-        error = str(e)
-        status = "error"
+def crawl():
+    queue = [TARGET]
+    total = 0
+    ok_count = 0
 
-    if status != 200 or error:
-        cat = classify(url, final_url, status if not error else error)
-        broken.append((url, final_url, status if not error else error, cat))
-        continue
+    while queue and total < MAX_PAGES:
+        url = queue.pop(0)
+        if url in visited:
+            continue
+        visited.add(url)
+        total += 1
 
-    # Parse links from 200 pages only
-    soup = BeautifulSoup(text, "html.parser")
-    tags = soup.find_all(["a", "img", "script", "link", "iframe", "source", "video", "audio"])
-    for tag in tags:
-        for attr in ["href", "src"]:
-            link = tag.get(attr)
-            if not link:
-                continue
-            link = link.strip()
-            if not link or link.startswith(("javascript:", "mailto:", "tel:", "#")):
-                continue
-            abs_link = urljoin(final_url, link)
-            parsed = urlparse(abs_link)
-            if not parsed.scheme.startswith("http"):
-                continue
-            # Drop fragment
-            norm = parsed._replace(fragment="").geturl()
-            if parsed.netloc == BASE_DOMAIN:
-                if norm not in visited and norm not in queue:
-                    queue.append(norm)
+        try:
+            resp = session.get(url, allow_redirects=False, timeout=TIMEOUT)
+            code = resp.status_code
+            classification = classify_issue(url, code)
+            if code != 200:
+                extra = None
+                if 300 <= code < 400:
+                    extra = "redirects to " + resp.headers.get("Location", "")
+                broken.append({
+                    "url": url,
+                    "code": code,
+                    "classification": classification,
+                    "found_on": extra,
+                })
             else:
-                if norm not in external_checked and len(external_checked) < 200:
-                    external_checked.add(norm)
-                    ext_status, ext_err = check_external(norm)
-                    if ext_status != 200:
-                        cat = classify(norm, None, ext_status if not ext_err else ext_err, is_external=True)
-                        broken.append((norm, None, ext_status if not ext_err else ext_err, cat))
+                ok_count += 1
+                try:
+                    for link in pull_links(resp.text, url):
+                        if link not in visited and link not in queue:
+                            if total + len(queue) < MAX_PAGES:
+                                queue.append(link)
+                except Exception:
+                    pass
+        except requests.exceptions.SSLError:
+            broken.append({
+                "url": url,
+                "code": None,
+                "classification": classify_issue(url, "ssl error"),
+                "found_on": None,
+            })
+        except requests.exceptions.Timeout:
+            broken.append({
+                "url": url,
+                "code": None,
+                "classification": classify_issue(url, "timeout"),
+                "found_on": None,
+            })
+        except requests.exceptions.RequestException as e:
+            broken.append({
+                "url": url,
+                "code": None,
+                "classification": classify_issue(url, "connection error"),
+                "found_on": str(e)[:120],
+            })
 
-# Print report
-print(f"BASE: {START_URL}")
-print(f"TOTAL_CRAWLED={crawled}")
-print(f"HTTP_200_COUNT={crawled_200}")
-print(f"BROKEN_COUNT={len(broken)}")
-if broken:
-    print("FIRST_10_BROKEN:")
-    for item in broken[:10]:
-        if len(item) == 4:
-            u, fu, st, cat = item
-            print(f"- {u} => final={fu} status={st} category={cat}")
-        else:
-            u, fu, st, cat = (item + (None,))[:4]
-            print(f"- {u} => final={fu} status={st} category={cat}")
-else:
-    print("NO_BROKEN_LINKS")
+    return total, ok_count
 
-sys.exit(0 if not broken else 1)
+
+def main():
+    total, ok_count = crawl()
+    broken_count = len(broken)
+    lines = []
+    lines.append(f"BASE URL: {TARGET}")
+    lines.append(f"TOTAL CRAWLED: {total}")
+    lines.append(f"HTTP 200 COUNT: {ok_count}")
+    lines.append(f"BROKEN COUNT: {broken_count}")
+    if broken_count:
+        lines.append("FIRST 10 BROKEN URLs:")
+        for entry in broken[:10]:
+            c = entry["classification"]
+            code = entry["code"] if entry["code"] else "n/a"
+            loc = f" [{entry['found_on']}]" if entry.get("found_on") else ""
+            lines.append(f"  [{code}] {entry['url']} — {c}{loc}")
+    else:
+        lines.append("BROKEN URLs: none")
+    print("\n".join(lines))
+
+
+if __name__ == "__main__":
+    main()

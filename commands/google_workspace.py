@@ -11,7 +11,8 @@ import urllib.request, urllib.parse, json, datetime, sys, time, base64
 from pathlib import Path
 
 WORKSPACE = Path('/data/data/com.termux/files/home/.openclaw/workspace')
-TOKENS_FILE = WORKSPACE / 'gog_tokens.json'
+FALLBACK_WORKSPACE = Path('/Users/miami2/zion.app/lead-crm')
+TOKENS_FILE = WORKSPACE / 'gog_tokens.json' if (WORKSPACE / 'gog_tokens.json').exists() else (FALLBACK_WORKSPACE / 'gog_tokens.json')
 
 def load_gog_tokens():
     with open(TOKENS_FILE) as f:

@@ -72,6 +72,14 @@ if callable(gmail_search):
             raise RuntimeError('probe search returned unusable result')
     except Exception as e:
         _append_log({'ts': _now_iso(), 'event': 'gmail_search_probe_failed', 'error': str(e)})
+        gmail_search = None
+        gmail_get = None
+        gmail_thread_get = None
+        gog_headers = None
+        gmail_list_labels = None
+        gmail_get_or_create_label_id = None
+        gmail_send_reply_fixed = None
+        gmail_batch_modify = None
 
 try:
     from lib.llm_client import chat as _llm_chat
