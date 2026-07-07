@@ -5731,5 +5731,57 @@
     "is_generic_provider": false,
     "confidence": 1,
     "discovered_at": "2026-07-07T03:39:27.610361+00:00"
+  },
+  {
+    "to": "obrigacoes@nibo.com.br",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "in:anywhere \"ziontechgroup.com\"",
+    "domain": "nibo.com.br",
+    "is_generic_provider": false,
+    "confidence": 1,
+    "discovered_at": "2026-07-07T06:57:49.661345+00:00"
+  },
+  {
+    "to": "jcarlossilva@suzano.com.br",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "in:anywhere subject:proposta",
+    "domain": "suzano.com.br",
+    "is_generic_provider": false,
+    "confidence": 1,
+    "discovered_at": "2026-07-07T08:52:23.136565+00:00"
+  },
+  {
+    "to": "marketing@actionsys.com.br",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "in:anywhere \"ziontechgroup.com\"",
+    "domain": "actionsys.com.br",
+    "is_generic_provider": false,
+    "confidence": 1,
+    "discovered_at": "2026-07-07T08:53:02.633358+00:00"
+  },
+  {
+    "to": "marketing@agriusit.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "in:anywhere \"ziontechgroup.com\"",
+    "domain": "agriusit.com",
+    "is_generic_provider": false,
+    "confidence": 1,
+    "discovered_at": "2026-07-07T08:53:07.987402+00:00"
   }
 ]
