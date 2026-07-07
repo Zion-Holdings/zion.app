@@ -11,6 +11,8 @@ from pathlib import Path
 REPO = Path('/Users/miami2/zion.app')
 LEAD_DIR = REPO / 'lead-crm'
 CANONICAL_READY = LEAD_DIR / 'outreach_ready_canonical.json'
+if not CANONICAL_READY.parent.exists():
+    CANONICAL_READY = Path('/data/data/com.termux/files/home/zion-support.github.io/lead-crm/outreach_ready_canonical.json')
 
 KEYWORDS = [
     'AI automation for support',
@@ -149,6 +151,7 @@ def append_ready(rows: list[dict]):
     data['ready'] = ready[-2000:]
     data['state'] = 'send_ready'
     data['send_blocked'] = False
+    CANONICAL_READY.parent.mkdir(parents=True, exist_ok=True)
     CANONICAL_READY.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
     return added
 
@@ -171,11 +174,13 @@ def backfill_ready():
             )
             updated += 1
     data['ready'] = ready
+    CANONICAL_READY.parent.mkdir(parents=True, exist_ok=True)
     CANONICAL_READY.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
     return updated
 
 
 def main():
+    CANONICAL_READY.parent.mkdir(parents=True, exist_ok=True)
     backfilled = backfill_ready()
     all_leads = []
     for kw in KEYWORDS:
