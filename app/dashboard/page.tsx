@@ -1,4 +1,4 @@
-import { Breadcrumb } from '@/components/Breadcrumb';
+import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import Link from 'next/link';
 
 export const metadata = {
@@ -9,7 +9,7 @@ export const metadata = {
 export default function Dashboard() {
   return (
     <div>
-      <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Dashboard' }]} />
+      <SiteBreadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Dashboard' }]} />
       <div className="container">
         <h1>Dashboard</h1>
         <p className="lead">Business and operations overview for AI/IT initiatives and lead pipeline.</p>

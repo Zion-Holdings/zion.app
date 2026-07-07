@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Breadcrumb } from '@/components/Breadcrumb';
+import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 const posts = [
   'ai-agentic-workflow-automation-reduce-manual-work-hours',
@@ -42,7 +42,7 @@ export const metadata = {
 export default function BlogIndex() {
   return (
     <div>
-      <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Blog' }]} />
+      <SiteBreadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Blog' }]} />
       <div className="container">
         <h1>Blog</h1>
         <p className="lead">Latest posts about AI, IT operations, cloud, security, and enterprise automation.</p>

@@ -11,7 +11,7 @@ export default function Page() {
       <div className="text-sm text-slate-500 mb-8">Published: 2026-07-07</div>
       <div
         className="prose prose-invert max-w-none text-slate-300 leading-relaxed"
-        dangerouslySetInnerHTML={ __html: `
+        dangerouslySetInnerHTML={{ __html: `
 <p>Nebius partnership for LATAM AI cloud expansion works best when a local partner handles delivery, operations, and customer support.</p>
 <h3>Practical collaboration areas</h3>
 <ul>
@@ -27,7 +27,7 @@ export default function Page() {
 <li>Reduced customer acquisition and support costs</li>
 </ul>
 <p><a href="/contact">Discuss a Nebius partnership with Zion Tech Group</a></p>
-` }
+` }}
       />
     </article>
   );

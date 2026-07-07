@@ -1,4 +1,4 @@
-import { Breadcrumb } from '@/components/Breadcrumb';
+import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import Link from 'next/link';
 
 export const metadata = {
@@ -9,7 +9,7 @@ export const metadata = {
 export default function AgentsMonitoring() {
   return (
     <div>
-      <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Agents Monitoring' }]} />
+      <SiteBreadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Agents Monitoring' }]} />
       <div className="container">
         <h1>Agents Monitoring</h1>
         <p className="lead">Unified visibility into automation agents, workflows, and system health.</p>

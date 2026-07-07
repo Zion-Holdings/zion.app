@@ -11,7 +11,7 @@ export default function Page() {
       <div className="text-sm text-slate-500 mb-8">Published: 2026-07-07</div>
       <div
         className="prose prose-invert max-w-none text-slate-300 leading-relaxed"
-        dangerouslySetInnerHTML={ __html: `
+        dangerouslySetInnerHTML={{ __html: `
 <p>AI vendor channel partnerships in LATAM are most effective when a local partner owns delivery, support, and customer success.</p>
 <h3>What a strong model includes</h3>
 <ul>
@@ -27,7 +27,7 @@ export default function Page() {
 <li>Free tools and content to accelerate partner demand</li>
 </ul>
 <p><a href="/contact">Discuss an AI vendor partnership with Zion</a></p>
-` }
+` }}
       />
     </article>
   );

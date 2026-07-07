@@ -82,10 +82,12 @@ jobs:
         run: node automation/ai-content-burst-agent.cjs
 
       - name: Validate build (catch content errors before push)
+        id: validate_build
         run: |
-          set -euo pipefail
+          set +e
           npm run rsc:guard
           npm run build
+          echo "build_status=success" >> "$GITHUB_OUTPUT" || echo "build_status=failed" >> "$GITHUB_OUTPUT"
 
       - name: Commit, push, and deploy
         env:

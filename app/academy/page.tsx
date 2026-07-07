@@ -1,4 +1,4 @@
-import { Breadcrumb } from '@/components/Breadcrumb';
+import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import Link from 'next/link';
 
 export const metadata = {
@@ -9,7 +9,7 @@ export const metadata = {
 export default function Academy() {
   return (
     <div>
-      <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Academy' }]} />
+      <SiteBreadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Academy' }]} />
       <div className="container">
         <h1>Academy</h1>
         <p className="lead">Practical courses and guides for implementing AI/IT services.</p>
