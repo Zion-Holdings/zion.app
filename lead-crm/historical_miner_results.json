@@ -1143,5 +1143,40 @@
     "id": "19f3a6a87007f874",
     "email": "postmaster@microsoft.com",
     "query": "in:anywhere \"Zion Tech Group\""
+  },
+  {
+    "id": "19f3b2c357c1f0be",
+    "email": "obrigacoes@nibo.com.br",
+    "query": "in:anywhere \"ziontechgroup.com\""
+  },
+  {
+    "id": "19f3b6de36798956",
+    "email": "jcarlossilva@suzano.com.br",
+    "query": "in:anywhere subject:proposta"
+  },
+  {
+    "id": "19f3bb4cd4ae2731",
+    "email": "marketing@actionsys.com.br",
+    "query": "in:anywhere \"ziontechgroup.com\""
+  },
+  {
+    "id": "19f3b72b80bf1a21",
+    "email": "marketing@agriusit.com",
+    "query": "in:anywhere \"ziontechgroup.com\""
+  },
+  {
+    "id": "19f3c21c90f482d2",
+    "email": "partners@datadog.zendesk.com",
+    "query": "in:anywhere \"Zion Tech Group\""
+  },
+  {
+    "id": "19f3c2fa1b2873c2",
+    "email": "arulnathan.k@hcltech.com",
+    "query": "in:anywhere \"Zion Tech Group\""
+  },
+  {
+    "id": "19f3c4c92c5413ac",
+    "email": "hardware@hascon.com",
+    "query": "in:anywhere \"ziontechgroup.com\""
   }
 ]

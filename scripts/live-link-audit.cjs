@@ -28,11 +28,11 @@ const checked = new Map();
 const queue = [];
 let active = 0;
 
-function toTarget(link) {
+function toTarget(link, fileDir) {
   try {
-    const u = new URL(link, 'http://localhost/');
-    if (/^https?$/.test(u.protocol)) return null;
-    let rel = (u.pathname || '/').split('?', 1)[0].split('#', 1)[0].replace(/^\/+/, '');
+    const resolved = new URL(link, 'https://ziontechgroup.com/');
+    if (resolved.host !== new URL(BASE).host) return null;
+    let rel = resolved.pathname.split('?', 1)[0].split('#', 1)[0].replace(/^\/+/, '');
     if (!rel) rel = 'index.html';
     if (rel.endsWith('/')) rel = `${rel}index.html`;
     const live = rel.startsWith('docs/') ? `${BASE.replace(/\/$/, '')}/${rel.slice(5)}` : `${BASE.replace(/\/$/, '')}/${rel}`;

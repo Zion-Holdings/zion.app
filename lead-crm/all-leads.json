@@ -5783,5 +5783,44 @@
     "is_generic_provider": false,
     "confidence": 1,
     "discovered_at": "2026-07-07T08:53:07.987402+00:00"
+  },
+  {
+    "to": "partners@datadog.zendesk.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "in:anywhere \"Zion Tech Group\"",
+    "domain": "datadog.zendesk.com",
+    "is_generic_provider": false,
+    "confidence": 1,
+    "discovered_at": "2026-07-07T10:31:56.441492+00:00"
+  },
+  {
+    "to": "arulnathan.k@hcltech.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "in:anywhere \"Zion Tech Group\"",
+    "domain": "hcltech.com",
+    "is_generic_provider": false,
+    "confidence": 1,
+    "discovered_at": "2026-07-07T11:21:24.556339+00:00"
+  },
+  {
+    "to": "hardware@hascon.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "in:anywhere \"ziontechgroup.com\"",
+    "domain": "hascon.com",
+    "is_generic_provider": false,
+    "confidence": 1,
+    "discovered_at": "2026-07-07T11:21:29.593036+00:00"
   }
 ]
