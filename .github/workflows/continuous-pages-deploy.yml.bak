@@ -58,9 +58,11 @@ jobs:
           mkdir -p "$ARTIFACT_DIR"
           if [ -d out ]; then
             cp -a out/. "$ARTIFACT_DIR"/
-          fi
-          if [ -d docs ]; then
+          elif [ -d docs ]; then
             cp -a docs/. "$ARTIFACT_DIR"/
+          else
+            echo "No static site artifact found" >&2
+            exit 1
           fi
           PAGES=$(find "$ARTIFACT_DIR" -name 'index.html' | wc -l)
           SIZE=$(du -sh "$ARTIFACT_DIR" | awk '{print $1}')
