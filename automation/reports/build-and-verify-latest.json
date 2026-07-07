@@ -1,9 +1,9 @@
 {
-  "checkedAt": "2026-07-07T15:03:36.722Z",
+  "checkedAt": "2026-07-07T16:44:46.280Z",
   "buildStatus": "ok",
   "missingNow": [],
   "missingCount": 0,
-  "artifactsGenerated": false,
+  "artifactsGenerated": true,
   "buildError": null,
   "next": "verified local static export"
 }
