@@ -29,7 +29,9 @@
     "test:ci": "jest --ci --coverage --watchAll=false --passWithNoTests",
     "build-storybook": "storybook build",
     "build:win": "node scripts/windows-build-guard.cjs && next build",
-    "deploy:verify": "node scripts/verify-deploy.cjs"
+    "deploy:verify": "node scripts/verify-deploy.cjs",
+    "write:api:health": "node scripts/checks/write-api-health.cjs",
+    "rsc:guard": "node scripts/checks/rsc-guard-check.cjs"
   },
   "dependencies": {
     "@sendgrid/mail": "^8.1.6",

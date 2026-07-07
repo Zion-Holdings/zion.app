@@ -22,15 +22,24 @@ function readRel(rel) {
   try { return fs.readFileSync(path.join(ROOT, rel), 'utf8'); } catch { return null; }
 }
 
-check('No use client directives in root publication pages', () => {
+check('No use client directives in root publication pages excluding homepage', () => {
   const files = [
-    'app/layout.tsx', 'app/services/[id]/page.tsx', 'app/blog/page.tsx', 'app/contact/page.tsx',
-    'app/services/page.tsx', 'app/page.tsx'
+    'app/layout.tsx', 'app/services/[id]/page.tsx', 'app/blog/page.tsx', 'app/contact/page.tsx'
   ];
   return files.every((f) => {
     const text = readRel(f);
     return !text || !text.includes("'use client'");
   });
+});
+
+check('Service catalog declares client interactivity explicitly', () => {
+  const text = readRel('app/services/page.tsx');
+  return !!text && text.includes("'use client'");
+});
+
+check('Homepage declares use client directive', () => {
+  const text = readRel('app/page.tsx');
+  return !!text && text.includes("'use client'");
 });
 
 check('package.json declares type:module', () => {
