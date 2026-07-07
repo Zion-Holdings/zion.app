@@ -65,8 +65,7 @@ print(json.dumps({"ready":len(ready)}))
     log['steps']['tailor'] = {'rc': rc, 'stdout': out, 'stderr': err[:500]}
 
     # 4) Send batch
-    # rc, out, err = run('python3 lead-crm/send_outreach_batch.py lead-crm/outreach_ready_canonical.json', timeout=300)
-    # log['steps']['send_batch'] = {'rc': rc, 'stdout': out, 'stderr': err[:500]}
+    print('SEND_DISABLED: outreach sends remain policy-locked to avoid duplicates')
 
     # 5) Git commit
     rc, out, err = git('add -A')
