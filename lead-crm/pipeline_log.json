@@ -1,161 +1,5 @@
 [
   {
-    "ts": "2026-07-07T07:11:43.582227+00:00",
-    "event": "pipeline_tick",
-    "sent": 0,
-    "next_batch": null,
-    "sent_keys": 1002,
-    "sent_subjects": 0
-  },
-  {
-    "ts": "2026-07-07T07:11:59.285219+00:00",
-    "event": "batch_error",
-    "error": "name 'os' is not defined"
-  },
-  {
-    "ts": "2026-07-07T07:11:59.285219+00:00",
-    "event": "pipeline_tick",
-    "sent": 0,
-    "next_batch": null,
-    "sent_keys": 1002,
-    "sent_subjects": 0
-  },
-  {
-    "ts": "2026-07-07T07:12:14.904496+00:00",
-    "event": "batch_error",
-    "error": "name 'os' is not defined"
-  },
-  {
-    "ts": "2026-07-07T07:12:14.904496+00:00",
-    "event": "pipeline_tick",
-    "sent": 0,
-    "next_batch": null,
-    "sent_keys": 1002,
-    "sent_subjects": 0
-  },
-  {
-    "ts": "2026-07-07T07:12:30.535432+00:00",
-    "event": "batch_error",
-    "error": "name 'os' is not defined"
-  },
-  {
-    "ts": "2026-07-07T07:12:30.535432+00:00",
-    "event": "pipeline_tick",
-    "sent": 0,
-    "next_batch": null,
-    "sent_keys": 1002,
-    "sent_subjects": 0
-  },
-  {
-    "ts": "2026-07-07T07:12:46.233999+00:00",
-    "event": "batch_error",
-    "error": "name 'os' is not defined"
-  },
-  {
-    "ts": "2026-07-07T07:12:46.233999+00:00",
-    "event": "pipeline_tick",
-    "sent": 0,
-    "next_batch": null,
-    "sent_keys": 1002,
-    "sent_subjects": 0
-  },
-  {
-    "ts": "2026-07-07T07:13:01.850786+00:00",
-    "event": "batch_error",
-    "error": "name 'os' is not defined"
-  },
-  {
-    "ts": "2026-07-07T07:13:01.850786+00:00",
-    "event": "pipeline_tick",
-    "sent": 0,
-    "next_batch": null,
-    "sent_keys": 1002,
-    "sent_subjects": 0
-  },
-  {
-    "ts": "2026-07-07T07:13:17.418941+00:00",
-    "event": "batch_error",
-    "error": "name 'os' is not defined"
-  },
-  {
-    "ts": "2026-07-07T07:13:17.418941+00:00",
-    "event": "pipeline_tick",
-    "sent": 0,
-    "next_batch": null,
-    "sent_keys": 1002,
-    "sent_subjects": 0
-  },
-  {
-    "ts": "2026-07-07T07:13:33.104110+00:00",
-    "event": "batch_error",
-    "error": "name 'os' is not defined"
-  },
-  {
-    "ts": "2026-07-07T07:13:33.104110+00:00",
-    "event": "pipeline_tick",
-    "sent": 0,
-    "next_batch": null,
-    "sent_keys": 1002,
-    "sent_subjects": 0
-  },
-  {
-    "ts": "2026-07-07T07:13:48.728504+00:00",
-    "event": "batch_error",
-    "error": "name 'os' is not defined"
-  },
-  {
-    "ts": "2026-07-07T07:13:48.728504+00:00",
-    "event": "pipeline_tick",
-    "sent": 0,
-    "next_batch": null,
-    "sent_keys": 1002,
-    "sent_subjects": 0
-  },
-  {
-    "ts": "2026-07-07T07:14:04.384149+00:00",
-    "event": "batch_error",
-    "error": "name 'os' is not defined"
-  },
-  {
-    "ts": "2026-07-07T07:14:04.384149+00:00",
-    "event": "pipeline_tick",
-    "sent": 0,
-    "next_batch": null,
-    "sent_keys": 1002,
-    "sent_subjects": 0
-  },
-  {
-    "ts": "2026-07-07T07:14:20.040196+00:00",
-    "event": "batch_error",
-    "error": "name 'os' is not defined"
-  },
-  {
-    "ts": "2026-07-07T07:14:20.040196+00:00",
-    "event": "pipeline_tick",
-    "sent": 0,
-    "next_batch": null,
-    "sent_keys": 1002,
-    "sent_subjects": 0
-  },
-  {
-    "ts": "2026-07-07T07:14:35.988012+00:00",
-    "event": "batch_error",
-    "error": "name 'os' is not defined"
-  },
-  {
-    "ts": "2026-07-07T07:14:35.988012+00:00",
-    "event": "pipeline_tick",
-    "sent": 0,
-    "next_batch": null,
-    "sent_keys": 1002,
-    "sent_subjects": 0
-  },
-  {
-    "ts": "2026-07-07T07:14:51.521221+00:00",
-    "event": "batch_error",
-    "error": "name 'os' is not defined"
-  },
-  {
     "ts": "2026-07-07T07:14:51.521221+00:00",
     "event": "pipeline_tick",
     "sent": 0,
@@ -13001,6 +12845,162 @@
   },
   {
     "ts": "2026-07-07T11:30:55.122152+00:00",
+    "event": "pipeline_tick",
+    "sent": 0,
+    "next_batch": null,
+    "sent_keys": 1003,
+    "sent_subjects": 0
+  },
+  {
+    "ts": "2026-07-07T11:31:10.725828+00:00",
+    "event": "batch_error",
+    "error": "name 'os' is not defined"
+  },
+  {
+    "ts": "2026-07-07T11:31:10.725828+00:00",
+    "event": "pipeline_tick",
+    "sent": 0,
+    "next_batch": null,
+    "sent_keys": 1003,
+    "sent_subjects": 0
+  },
+  {
+    "ts": "2026-07-07T11:31:26.359148+00:00",
+    "event": "batch_error",
+    "error": "name 'os' is not defined"
+  },
+  {
+    "ts": "2026-07-07T11:31:26.359148+00:00",
+    "event": "pipeline_tick",
+    "sent": 0,
+    "next_batch": null,
+    "sent_keys": 1003,
+    "sent_subjects": 0
+  },
+  {
+    "ts": "2026-07-07T11:31:42.055682+00:00",
+    "event": "batch_error",
+    "error": "name 'os' is not defined"
+  },
+  {
+    "ts": "2026-07-07T11:31:42.055682+00:00",
+    "event": "pipeline_tick",
+    "sent": 0,
+    "next_batch": null,
+    "sent_keys": 1003,
+    "sent_subjects": 0
+  },
+  {
+    "ts": "2026-07-07T11:31:57.601313+00:00",
+    "event": "batch_error",
+    "error": "name 'os' is not defined"
+  },
+  {
+    "ts": "2026-07-07T11:31:57.601313+00:00",
+    "event": "pipeline_tick",
+    "sent": 0,
+    "next_batch": null,
+    "sent_keys": 1003,
+    "sent_subjects": 0
+  },
+  {
+    "ts": "2026-07-07T11:32:13.152328+00:00",
+    "event": "batch_error",
+    "error": "name 'os' is not defined"
+  },
+  {
+    "ts": "2026-07-07T11:32:13.152328+00:00",
+    "event": "pipeline_tick",
+    "sent": 0,
+    "next_batch": null,
+    "sent_keys": 1003,
+    "sent_subjects": 0
+  },
+  {
+    "ts": "2026-07-07T11:32:28.880917+00:00",
+    "event": "batch_error",
+    "error": "name 'os' is not defined"
+  },
+  {
+    "ts": "2026-07-07T11:32:28.880917+00:00",
+    "event": "pipeline_tick",
+    "sent": 0,
+    "next_batch": null,
+    "sent_keys": 1003,
+    "sent_subjects": 0
+  },
+  {
+    "ts": "2026-07-07T11:32:44.507791+00:00",
+    "event": "batch_error",
+    "error": "name 'os' is not defined"
+  },
+  {
+    "ts": "2026-07-07T11:32:44.507791+00:00",
+    "event": "pipeline_tick",
+    "sent": 0,
+    "next_batch": null,
+    "sent_keys": 1003,
+    "sent_subjects": 0
+  },
+  {
+    "ts": "2026-07-07T11:33:00.054057+00:00",
+    "event": "batch_error",
+    "error": "name 'os' is not defined"
+  },
+  {
+    "ts": "2026-07-07T11:33:00.054057+00:00",
+    "event": "pipeline_tick",
+    "sent": 0,
+    "next_batch": null,
+    "sent_keys": 1003,
+    "sent_subjects": 0
+  },
+  {
+    "ts": "2026-07-07T11:33:15.691910+00:00",
+    "event": "batch_error",
+    "error": "name 'os' is not defined"
+  },
+  {
+    "ts": "2026-07-07T11:33:15.691910+00:00",
+    "event": "pipeline_tick",
+    "sent": 0,
+    "next_batch": null,
+    "sent_keys": 1003,
+    "sent_subjects": 0
+  },
+  {
+    "ts": "2026-07-07T11:33:31.239174+00:00",
+    "event": "batch_error",
+    "error": "name 'os' is not defined"
+  },
+  {
+    "ts": "2026-07-07T11:33:31.239174+00:00",
+    "event": "pipeline_tick",
+    "sent": 0,
+    "next_batch": null,
+    "sent_keys": 1003,
+    "sent_subjects": 0
+  },
+  {
+    "ts": "2026-07-07T11:33:46.962414+00:00",
+    "event": "batch_error",
+    "error": "name 'os' is not defined"
+  },
+  {
+    "ts": "2026-07-07T11:33:46.962414+00:00",
+    "event": "pipeline_tick",
+    "sent": 0,
+    "next_batch": null,
+    "sent_keys": 1003,
+    "sent_subjects": 0
+  },
+  {
+    "ts": "2026-07-07T11:34:02.507959+00:00",
+    "event": "batch_error",
+    "error": "name 'os' is not defined"
+  },
+  {
+    "ts": "2026-07-07T11:34:02.507959+00:00",
     "event": "pipeline_tick",
     "sent": 0,
     "next_batch": null,
