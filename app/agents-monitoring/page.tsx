@@ -1,12 +1,36 @@
-import type { Metadata } from 'next';
-import AgentDashboard from '@/components/AgentDashboard';
+import { Breadcrumb } from '@/components/Breadcrumb';
+import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: 'AI Agent Operations Center — Live Monitoring | Zion Tech Group',
-  description: 'Real-time monitoring of Zion Tech Group AI agent fleet. Watch autonomous agents build, test, and deploy services 24/7. Track actions, uptime, and performance.',
-  alternates: { canonical: 'https://ziontechgroup.com/agents-monitoring' },
+export const metadata = {
+  title: 'Agents Monitoring | Zion Tech Group',
+  description: 'Monitor AI agents, automations, and operational telemetry in one place.'
 };
 
-export default function AgentsMonitoringPage() {
-  return <AgentDashboard />;
+export default function AgentsMonitoring() {
+  return (
+    <div>
+      <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Agents Monitoring' }]} />
+      <div className="container">
+        <h1>Agents Monitoring</h1>
+        <p className="lead">Unified visibility into automation agents, workflows, and system health.</p>
+        <div className="grid">
+          <div className="card">
+            <h3>AI Agents</h3>
+            <p>Track active automations, failures, and throughput.</p>
+            <Link href="/services/ai-chatbot-builder/">Explore AI Chatbot Builder</Link>
+          </div>
+          <div className="card">
+            <h3>Ops Telemetry</h3>
+            <p>Monitor alerts, incidents, and remediation status.</p>
+            <Link href="/services/ai-observability/">Explore Observability</Link>
+          </div>
+          <div className="card">
+            <h3>Security Signals</h3>
+            <p>Review detections, triage queues, and response metrics.</p>
+            <Link href="/services/ai-soc-automation-and-threat-detection-in-2026/">Explore SOC Automation</Link>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
