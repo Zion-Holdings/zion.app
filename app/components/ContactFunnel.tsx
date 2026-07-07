@@ -76,12 +76,11 @@ function PulsingCTA({ href, children }: { href: string; children: React.ReactNod
 
 /* ── Click-to-call / email / maps button ───────────────── */
 function DirectAction({
-  href, icon, label, sub, rel,
-}: { href: string; icon: React.ReactNode; label: string; sub: string; rel?: string })
+  href, icon, label, sub,
+}: { href: string; icon: React.ReactNode; label: string; sub: string }) {
   return (
     <a
       href={href}
-      rel={rel}
       className="group flex items-center gap-3 p-4 rounded-xl bg-slate-800/50 border border-slate-700/60
                  hover:bg-slate-800/80 hover:border-blue-500/30
                  transition-all"
@@ -166,8 +165,7 @@ export default function ContactFunnel() {
           />
 
           <DirectAction
-            href="https://calendly.com/ziontechgroup/free-consultation"
-            rel="noopener noreferrer"
+            href={CALENDLY_URL}
             icon={<span>📅</span>}
             label="Book a Consultation"
             sub="30-minute intro call"
