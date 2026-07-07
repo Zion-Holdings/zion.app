@@ -8,9 +8,9 @@ No paid APIs required.
 import sys, json, time, re, urllib.parse, urllib.request, datetime
 from pathlib import Path
 
-REPO = Path('/Users/miami2/zion.app')
+REPO = Path(__file__).resolve().parent.parent
 LEAD_DIR = REPO / 'lead-crm'
-CANONICAL_READY = LEAD_DIR / 'outreach_ready_canonical.json'
+CANONICAL_READY = Path('/data/data/com.termux/files/home/zion-support.github.io/lead-crm/outreach_ready_canonical.json')
 
 KEYWORDS = [
     'AI automation for support',

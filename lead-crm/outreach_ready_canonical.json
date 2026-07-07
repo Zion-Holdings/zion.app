@@ -2638,5 +2638,6 @@
       "tailored_at": "2026-07-07T00:00:00.000000+00:00"
     }
   ],
-  "tailored_by": "lead-crm/clean_ready_queue.py"
+  "tailored_by": "lead-crm/clean_ready_queue.py",
+  "send_blocked": false
 }
