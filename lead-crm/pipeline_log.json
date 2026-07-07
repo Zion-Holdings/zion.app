@@ -3472,5 +3472,21 @@
     "thread_id": "19f3843fbc14999e",
     "to": "nrozengarten@nebius.com",
     "provider": "direct-send"
+  },
+  {
+    "ts": "2026-07-07T00:48:55.858236+00:00",
+    "event": "web_prospecting",
+    "queries_run": 10,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-07T01:01:08.075683+00:00",
+    "event": "nebius_call_advance_reply",
+    "message_id": "19f3a173867334a0",
+    "thread_id": "19f3843fbc14999e",
+    "to": "nrozengarten@nebius.com",
+    "provider": "direct-send",
+    "notes": "proposed friday slots 9-10:30am est + calendly"
   }
 ]
