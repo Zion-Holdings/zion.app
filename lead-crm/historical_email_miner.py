@@ -52,12 +52,44 @@ EXCLUDE_DOMAINS = {
     'airbnb.co.nz','airbnb.co.jp','airbnb.kr','airbnb.co.za',
     'stays.net','stayz.com','homeaway.com','vrbo.com',
 }
-
+DEEP_QUERIES = [
+    'in:anywhere subject:parceria',
+    'in:anywhere subject:proposta',
+    'in:anywhere subject:orçamento',
+    'in:anywhere subject:reunião',
+    'in:anywhere subject:diagnóstico',
+    'in:anywhere "Zion Tech Group"',
+    'in:anywhere "ziontechgroup.com"',
+    'in:anywhere subject:automação',
+    'in:anywhere subject:incident response',
+    'in:anywhere subject:finops',
+    'in:anywhere subject:managed services',
+    'in:anywhere subject:devops',
+    'in:anywhere subject:sase',
+    'in:anywhere subject:low-code',
+    'in:anywhere subject:platform engineering',
+    'in:anywhere subject:AI services',
+    'in:anywhere subject:contact center intelligence',
+    'in:anywhere subject:email reply intelligence',
+    'in:anywhere subject:document intelligence',
+    'in:anywhere subject:security operations assistant',
+    'in:anywhere subject:readiness assessment',
+    'in:anywhere subject:free tools',
+    'in:anywhere subject:cost optimization',
+    'in:anywhere subject:channel partner',
+    'in:anywhere subject:vendor partnership',
+    'in:anywhere subject:observability',
+    'in:anywhere subject:integration',
+    'in:anywhere subject:outsourcing',
+    'in:anywhere subject:outsourcing vs in-house',
+    'in:anywhere subject:managed cloud',
+    'in:anywhere subject:AI consulting',
+    'in:anywhere subject:AI implementation',
+]
 EMAIL_RE = re.compile(r'[\w\.-]+@[\w\.-]+\.\w+')
-MAX_RESULTS_PER_QUERY = 15
+MAX_RESULTS_PER_QUERY = 25
 MIN_CONFIDENCE = 1
-
-
+HEALTH_MONITOR = LEAD_DIR / 'miner_health.json'
 def now_iso():
     return datetime.datetime.now(datetime.timezone.utc).isoformat()
 
@@ -139,7 +171,8 @@ def run_miner():
     new_leads = []
     mined_contacts = []
     queries_run = 0
-    for q in QUERIES:
+    active_queries = DEEP_QUERIES if DEEP_QUERIES else QUERIES
+    for q in active_queries:
         queries_run += 1
         try:
             msgs = gmail_search(q, limit=MAX_RESULTS_PER_QUERY, all_folders=True)
@@ -166,18 +199,20 @@ def run_miner():
         results.extend(mined_contacts)
         save_json(MINED_FILE, results)
 
-    append_log({
-        'ts': now_iso(),
-        'event': 'mine_tick',
+    now = now_iso()
+    health = {
+        'ts': now,
         'queries_run': queries_run,
         'contacts_found': len(mined_contacts),
         'new_leads_added': len(new_leads),
-    })
-    return {
-        'queries_run': queries_run,
-        'contacts_found': len(mined_contacts),
-        'new_leads_added': len(new_leads),
+        'status': 'ok' if queries_run else 'error',
     }
+    try:
+        save_json(HEALTH_MONITOR, health)
+    except Exception:
+        pass
+    append_log({'ts': now, 'event': 'mine_tick', **health})
+    return health
 
 
 if __name__ == '__main__':
