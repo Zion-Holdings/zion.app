@@ -605,6 +605,4 @@
       "reconciliationNotes": [
         "Verified totalRuns=22, sendsAttempted=0, duplicatesSuppressed=0, authFailures=8, hotFollowups=0; no new digest appended because auth-blocked state did not meaningfully change."
       ]
-    }
-  ]
-}
+]}
