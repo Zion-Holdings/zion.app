@@ -230,17 +230,22 @@ def main():
         return
 
     seen_threads = set()
+    seen_sent_normalized = set()
     for m in msgs:
         msg_id = m.get('id')
         thread_id = m.get('threadId')
+        subject = m.get('subject') or m.get('snippet') or ''
+        subject_norm = ' '.join(subject.lower().split())
         if not msg_id or not thread_id or thread_id in seen_threads:
             skipped += 1
             continue
         seen_threads.add(thread_id)
         thread_key = f'thread:{thread_id}'
-        if thread_key in sent_keys:
+        subject_key = f'subject:{subject_norm}'
+        if thread_key in sent_keys or subject_key in sent_keys or subject_key in seen_sent_normalized:
             skipped += 1
             continue
+        seen_sent_normalized.add(subject_key)
 
         try:
             full = gmail_get(msg_id)
@@ -264,6 +269,7 @@ def main():
             if DRY_RUN:
                 drafts.append({'thread_id': thread_id, 'to': from_header, 'subject': send_subject, 'reply': reply_body, 'llm_provider': provider})
                 sent_keys.add(thread_key)
+                sent_keys.add(subject_key)
                 sent_count += 1
                 _append_log({'ts': _now_iso(), 'event': 'hot_followup_dry_run', 'thread_id': thread_id, 'to': from_header, 'llm_provider': provider})
                 processed += 1
@@ -274,6 +280,7 @@ def main():
             mid = result.get('message_id') if isinstance(result, dict) else None
             sent_count += 1
             sent_keys.add(thread_key)
+            sent_keys.add(subject_key)
             if sent_label_id:
                 try:
                     mark_labeled(thread_id, sent_label_id)

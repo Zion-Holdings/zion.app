@@ -1,6 +1,6 @@
+#!/usr/bin/env python3
 from __future__ import annotations
 
-import os
 import sys
 from collections import deque
 from urllib.parse import urljoin, urlparse
@@ -8,113 +8,134 @@ from urllib.parse import urljoin, urlparse
 import requests
 from bs4 import BeautifulSoup
 
-BASE_URL = "https://ziontechgroup.com"
-REQUEST_TIMEOUT = 15
-MAX_PAGES = 300
-ALLOWED_SCHEME = "https"
-USER_AGENT = "site-integrity-bot/1.0 (+ziontechgroup-crawl)"
+BASE = sys.argv[1] if len(sys.argv) > 1 else "https://ziontechgroup.com"
+DOMAIN = urlparse(BASE).netloc.lower()
 
-session = requests.Session()
-session.headers.update({"User-Agent": USER_AGENT, "Accept": "text/html,application/xhtml+xml,application/xhtml+xml"})
-session.max_redirects = 5
-
-
-def is_same_host(url: str) -> bool:
-    try:
-        p = urlparse(url)
-        return p.scheme in ("http", "https") and p.hostname and p.hostname.lower() == urlparse(BASE_URL).hostname.lower()
-    except Exception:
-        return False
-
-
-def norm(url: str) -> str:
-    p = urlparse(url)
-    return p.scheme.lower() + "://" + p.netloc.lower() + p.path
-
-
-def classify(status_code, error, final_url, request_url):
-    if error:
-        return "network error"
-    if status_code is None:
-        return "unknown"
-    if status_code in (301, 308, 302):
-        if final_url and is_same_host(final_url):
-            return "stale redirect"
-        return "external redirect"
-    if status_code == 404:
-        return "missing page"
-    if status_code in (502, 503, 504):
-        return "server error"
-    if status_code >= 400:
-        return "client/server error"
-    if status_code == 200:
-        return "ok"
-    return "unclassified"
-
-
-def main():
-    crawled = set()
-    queue = deque([BASE_URL])
-    results = {
-        "total_crawled": 0,
-        "http_200": 0,
-        "broken": 0,
-        "broken_urls": [],  # list of (url, status_code, classification)
+SESSION = requests.Session()
+SESSION.headers.update(
+    {
+        "User-Agent": "Mozilla/5.0 (compatible; SiteIntegrityBot/1.0; +https://ziontechgroup.com)",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9",
     }
+)
+SESSION.max_redirects = 5
 
-    while queue and len(crawled) < MAX_PAGES:
-        url = queue.popleft()
-        n = norm(url)
-        if n in crawled:
-            continue
+frontier: deque[str] = deque([BASE])
+visited: set[str] = set()
+results: dict[str, int | str] = {}
+broken: list[tuple[str, int | str, str]] = []
 
-        status_code = None
-        error = None
-        final_url = None
-        content_type = ""
-        try:
-            r = session.get(url, timeout=REQUEST_TIMEOUT, allow_redirects=True)
-            status_code = r.status_code
-            final_url = norm(r.url)
-            content_type = r.headers.get("Content-Type", "")
-        except Exception as e:
-            error = str(e)
+LIMIT = 300
 
-        results["total_crawled"] += 1
-        classification = classify(status_code, error, final_url, url)
-        if classification == "ok":
-            results["http_200"] += 1
+
+def canonical(url: str) -> str:
+    p = urlparse(url.strip())
+    scheme = p.scheme or "https"
+    netloc = p.netloc or DOMAIN
+    path = p.path or "/"
+    return f"{scheme}://{netloc}{path if path.endswith('/') else path + '/'}"
+
+
+def snoozey_target(location: str | None) -> str | None:
+    if not location:
+        return None
+    pl = urlparse(location)
+    return pl.path
+
+
+while frontier and len(visited) < LIMIT:
+    url = frontier.popleft()
+    url = url.strip()
+    p = urlparse(url)
+    if p.scheme not in {"http", "https"} or p.netloc.lower() != DOMAIN:
+        continue
+    cu = canonical(url)
+    cu_nf = f"{p.scheme}://{p.netloc}{p.path if p.path.endswith('/') else p.path + '/'}"
+    if cu_nf in visited:
+        continue
+    visited.add(cu_nf)
+
+    try:
+        resp = SESSION.get(cu, allow_redirects=False, timeout=20)
+    except requests.Timeout:
+        results[cu_nf] = "timeout / no response"
+        broken.append((cu_nf, "timeout / no response", ""))
+        continue
+    except requests.ConnectionError:
+        results[cu_nf] = "connection error"
+        broken.append((cu_nf, "connection error", ""))
+        continue
+    except requests.TooManyRedirects:
+        results[cu_nf] = "redirect loop"
+        broken.append((cu_nf, "redirect loop", ""))
+        continue
+    except requests.RequestException as e:
+        results[cu_nf] = f"connection error"
+        broken.append((cu_nf, "connection error", str(e)))
+        continue
+
+    code = resp.status_code
+
+    if 300 <= code < 400:
+        loc = resp.headers.get("Location")
+        path_target = snoozey_target(loc)
+        classification = "stale redirect"
+        if loc:
+            classification = f"stale redirect -> {urljoin(BASE, loc)}"
+        results[cu_nf] = code
+        broken.append((cu_nf, classification, urljoin(BASE, loc) if loc else ""))
+    elif 400 <= code < 500:
+        if code == 403:
+            classification = "forbidden / access error"
+        elif code == 404:
+            classification = "missing page"
         else:
-            results["broken"] += 1
-            out_url = final_url if final_url and is_same_host(final_url) else url
-            results["broken_urls"].append({
-                "url": out_url,
-                "status_code": status_code,
-                "classification": classification,
-                "error": error,
-            })
+            classification = "client error"
+        results[cu_nf] = code
+        broken.append((cu_nf, classification, ""))
+    elif 500 <= code < 600:
+        results[cu_nf] = code
+        broken.append((cu_nf, "server error", ""))
+    elif code == 200:
+        results[cu_nf] = 200
+        try:
+            soup = BeautifulSoup(resp.text, "html.parser")
+            for tag in soup.find_all(["a", "area"], href=True):
+                href = tag.get("href")
+                if not href:
+                    continue
+                if href.startswith(("mailto:", "tel:", "javascript:")):
+                    continue
+                h = urljoin(cu_nf, href)
+                qp = urlparse(h)
+                if qp.fragment:
+                    h = urljoin(qp._replace(fragment="").geturl(), "")
+                np = urlparse(h)
+                if np.scheme not in {"http", "https"}:
+                    continue
+                if (np.netloc or "").lower() != DOMAIN:
+                    continue
+                nh = f"{np.scheme}://{np.netloc}{np.path if np.path.endswith('/') or np.path == '' else np.path + '/'}"
+                if nh not in visited and nh not in frontier:
+                    frontier.append(nh)
+        except Exception:
+            pass
+    else:
+        results[cu_nf] = code
 
-        if status_code == 200 and "text/html" in content_type.lower():
-            try:
-                soup = BeautifulSoup(r.text, "html.parser")
-                for a in soup.find_all("a", href=True):
-                    href = a.get("href", "")
-                    if href.startswith("#"):
-                        continue
-                    absolute = urljoin(final_url or url, href)
-                    if is_same_host(absolute):
-                        nn = norm(absolute)
-                        if nn not in crawled and nn not in {norm(x) for x in queue}:
-                            queue.append(absolute)
-            except Exception:
-                pass
+total = len(results)
+ok200 = sum(1 for v in results.values() if v == 200)
+broken_count = sum(1 for v in results.values() if v != 200)
 
-        print(f"crawled={results['total_crawled']} queue={len(queue)} broken={results['broken']} url={n}", file=sys.stderr)
+print(f"BASE: {BASE}")
+print(f"DOMAIN: {DOMAIN}")
+print(f"TOTAL_CRAWLED: {total}")
+print(f"HTTP_200_COUNT: {ok200}")
+print(f"BROKEN_COUNT: {broken_count}")
 
-    return results
-
-
-if __name__ == "__main__":
-    res = main()
-    print("\nRESULTS_JSON:::")
-    print(res)
+if broken_count:
+    print("FIRST_10_BROKEN:")
+    for url, classification, target in broken[:10]:
+        target_str = f" -> {target}" if target else ""
+        print(f"{url} | {classification}{target_str}")

@@ -1,6 +1,6 @@
 {
   "createdAt": "2026-07-07T12:00:00.000Z",
-  "updatedAt": "2026-07-07T20:45:00.000Z",
+  "updatedAt": "2026-07-07T23:03:44Z",
   "status": "blocked/auth-missing",
   "blocks": [
     "gog auth status returns No auth for gmail kleber@ziontechgroup.com",
@@ -31,12 +31,75 @@
         "hotFollowups": 0,
         "latestComplete": "2026-07-07T20:04:39.690418+00:00"
       },
-      "reconciliationNote": "Recomputed from current outreach-log.jsonl; latest event was the current cron auth-missing run at 2026-07-07T18:35:31.903, and totalRuns advanced from 57 to 59, making the previous digest stale; updated latestComplete to match current run timestamp. No new digest append required because auth-missing state is unchanged.",
+      "reconciliationNote": "Recomputed from outreach-log.jsonl on 2026-07-07 due to METRICS_MISMATCH driven by latestComplete/totalRuns freshness; no auth-state delta detected. totalRuns=59, authFailures=26, latestComplete=2026-07-07T20:04:39.690418+00:00. Gmail auth remains missing; updated in place instead of appending another blocked digest.",
       "recommendations": [
-        "Restore Gmail auth before tuning prompts/scoring; current metrics are zeroed by auth failure, not by suppression or prompt issues.",
-        "Reduce cron noise by exiting on the first auth-missing probe instead of accumulating duplicate auth-missing start/complete pairs.",
-        "After auth restoration, evaluate suppression window and prompt wording using real send/response data rather than synthetic baselines."
+        "Restore Gmail auth before tuning prompts or scoring; current metrics are zeroed by auth failure, not by suppression or prompt issues.",
+        "Reduce cron noise by exiting on the first auth-missing probe instead of accumulating duplicate auth-missing run records.",
+        "After auth restoration, evaluate suppression window and prompt wording using real send/response data rather than synthetic baselines.",
+        "Once auth is restored, generate a hot-followup CEO reply only when !!!hot-follow-up threads exist and Sent-audit shows no duplicate reply was already sent."
       ]
+    }
+  ],
+  "runs": [
+    {
+      "at": "2026-07-07T22:19:52.035317Z",
+      "mode": "cron",
+      "auth": "missing",
+      "hotFollowupDraft": "not_sent_auth_missing",
+      "status": "metrics_refreshed",
+      "files": {
+        "outreachLogNonEmptyLines": 59,
+        "authFailures": 26,
+        "duplicatesSuppressed": 0,
+        "sendsAttempted": 0,
+        "hotFollowups": 0,
+        "latestComplete": "2026-07-07T20:04:39.690418+00:00"
+      }
+    },
+    {
+      "at": "2026-07-07T22:21:57.956110Z",
+      "mode": "cron",
+      "auth": "missing",
+      "hotFollowupDraft": "not_sent_auth_missing",
+      "status": "metrics_refreshed",
+      "files": {
+        "outreachLogNonEmptyLines": 59,
+        "authFailures": 26,
+        "duplicatesSuppressed": 0,
+        "sendsAttempted": 0,
+        "hotFollowups": 0,
+        "latestComplete": "2026-07-07T20:04:39.690418+00:00"
+      }
+    },
+    {
+      "at": "2026-07-07T22:43:43.144433Z",
+      "mode": "cron",
+      "auth": "missing",
+      "hotFollowupDraft": "not_sent_auth_missing",
+      "status": "metrics_refreshed",
+      "files": {
+        "outreachLogNonEmptyLines": 59,
+        "authFailures": 26,
+        "duplicatesSuppressed": 0,
+        "sendsAttempted": 0,
+        "hotFollowups": 0,
+        "latestComplete": "2026-07-07T20:04:39.690418+00:00"
+      }
+    },
+    {
+      "at": "2026-07-07T23:03:44Z",
+      "mode": "cron",
+      "auth": "missing",
+      "hotFollowupDraft": "not_sent_auth_missing",
+      "status": "metrics_refreshed",
+      "files": {
+        "outreachLogNonEmptyLines": 59,
+        "authFailures": 26,
+        "duplicatesSuppressed": 0,
+        "sendsAttempted": 0,
+        "hotFollowups": 0,
+        "latestComplete": "2026-07-07T20:04:39.690418+00:00"
+      }
     }
   ]
 }

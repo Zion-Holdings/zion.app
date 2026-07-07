@@ -11,6 +11,62 @@ ready_path = LEAD_DIR / 'outreach_ready_canonical.json'
 SENT_CACHE = LEAD_DIR / 'pipeline_sent_cache.txt'
 CURSOR_FILE = LEAD_DIR / 'replenish_cursor.json'
 
+
+def _backfill_ready_from_batch():
+    try:
+        if not batch_path.exists():
+            return []
+        payload = json.loads(batch_path.read_text(encoding='utf-8'))
+        rows = payload.get('batch') or payload.get('ready') or payload.get('recipients') or []
+        out = []
+        seen = set()
+        for r in rows:
+            if not isinstance(r, dict):
+                continue
+            to = (r.get('to') or r.get('email') or r.get('recipient') or '').strip().lower()
+            if not to or to in seen:
+                continue
+            seen.add(to)
+            subject = (r.get('subject') or 'Parceria Zion Tech Group').strip()
+            body = (r.get('body') or "<p>Olá, sou Kleber Garcia Alcatrão, CEO da Zion Tech Group.</p><p>Vamos alinhar uma parceria mútua em AI/IT. Conheça nossos serviços e ferramentas gratuitas em <a href=\"https://ziontechgroup.com\">ziontechgroup.com</a> e agende uma conversa em <a href=\"https://calendly.com/kleber-ziontechgroup\">calendly.com/kleber-ziontechgroup</a>.</p>").strip()
+            if not r.get('subject') or not r.get('body'):
+                r['subject'] = subject
+                r['body'] = body
+            out.append({
+                'to': r.get('to') or r.get('email') or to,
+                'name': r.get('name'),
+                'subject': subject,
+                'body': body,
+            })
+        return out
+    except Exception:
+        return []
+
+
+def load_json(path, default=None):
+    try:
+        if Path(path).exists():
+            return json.loads(Path(path).read_text(encoding='utf-8'))
+    except Exception:
+        pass
+    return default if default is not None else {}
+
+
+def build_ready_payload(rows, send_blocked=False):
+    state = 'send_ready' if rows else 'empty'
+    payload = {
+        'generated_at': datetime.now(timezone.utc).isoformat(),
+        'state': state if not send_blocked else 'send_ready_no_explicit_opt_in',
+        'send_blocked': bool(send_blocked),
+        'ready': rows[:200],
+    }
+    for p in (LEAD_DIR / 'outreach_ready_canonical.json', LEAD_DIR / 'outreach_ready_replenished.json'):
+        try:
+            p.write_text(json.dumps(payload, ensure_ascii=False, indent=2))
+        except Exception:
+            pass
+    return payload
+
 _CURSOR = None
 
 
@@ -191,4 +247,9 @@ ready_payload = {
     ],
 }
 ready_path.write_text(json.dumps(ready_payload, ensure_ascii=False, indent=2))
+ready_check = load_json(LEAD_DIR / 'outreach_ready_canonical.json', {})
+if not (ready_check.get('ready') or []):
+    fallback = _backfill_ready_from_batch()
+    if fallback:
+        build_ready_payload(fallback, send_blocked=ready_check.get('send_blocked', False))
 print(json.dumps({'batch': len(batch), 'ready_canonical': str(ready_path), 'consent_ok': consent_ok}, ensure_ascii=False))
