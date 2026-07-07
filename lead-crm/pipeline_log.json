@@ -3488,5 +3488,14 @@
     "to": "nrozengarten@nebius.com",
     "provider": "direct-send",
     "notes": "proposed friday slots 9-10:30am est + calendly"
+  },
+  {
+    "ts": "2026-07-07T01:01:57.689434+00:00",
+    "event": "nebius_reply_to_partner_manager_advanced",
+    "message_id": "19f3a173867334a0",
+    "thread_id": "19f3843fbc14999e",
+    "to": "nrozengarten@nebius.com",
+    "provider": "direct-send",
+    "notes": "Replied to ISV & VAR Partner Manager at Nebius"
   }
 ]
