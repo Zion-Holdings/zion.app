@@ -9,5 +9,31 @@
     "hot_label_count": 0,
     "new_replies_1h": 0,
     "ready_queue": 25
+  },
+  {
+    "ts": "2026-07-07T03:41:07.294532+00:00",
+    "event": "batch_error",
+    "error": "name 'os' is not defined"
+  },
+  {
+    "ts": "2026-07-07T03:41:07.294532+00:00",
+    "event": "pipeline_tick",
+    "sent": 0,
+    "next_batch": null,
+    "sent_keys": 1002,
+    "sent_subjects": 0
+  },
+  {
+    "ts": "2026-07-07T03:41:22.776284+00:00",
+    "event": "batch_error",
+    "error": "name 'os' is not defined"
+  },
+  {
+    "ts": "2026-07-07T03:41:22.776284+00:00",
+    "event": "pipeline_tick",
+    "sent": 0,
+    "next_batch": null,
+    "sent_keys": 1002,
+    "sent_subjects": 0
   }
 ]

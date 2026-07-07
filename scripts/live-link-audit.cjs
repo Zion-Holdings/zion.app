@@ -4,10 +4,10 @@ const https = require('https');
 const { URL } = require('url');
 
 const BASE = process.env.BASE || 'https://ziontechgroup.com';
-const CONCURRENCY = 8;
-const DELAY_MS = 120;
+const CONCURRENCY = 6;
+const DELAY_MS = 150;
 
-const outDir = path.join(__dirname, 'docs');
+const docsDir = path.join(__dirname, '..', 'docs');
 const reportPath = path.join(__dirname, 'reports', 'live-link-audit.json');
 
 const htmlFiles = [];
@@ -20,21 +20,38 @@ function walk(dir) {
     }
   } catch (e) {}
 }
-walk(outDir);
+walk(docsDir);
 
 const hrefRegex = /href=["']([^"']+)["']/gi;
 const broken = [];
 const checked = new Map();
 let queue = Promise.resolve();
 
+function toTarget(link, fileDir) {
+  try {
+    const u = new URL(link, 'http://localhost/');
+    if (u.protocol && u.host) {
+      if (/^https?$/.test(u.protocol)) return `${u.protocol}//${u.host}${u.pathname}`;
+      return null;
+    }
+    let rel = (u.pathname || '/').split('?', 1)[0].split('#', 1)[0].replace(/^\/+/, '');
+    if (!rel) rel = 'index.html';
+    if (rel.endsWith('/')) rel = `${rel}index.html`;
+    if (rel.startsWith('_next/static/') || rel.startsWith('api/')) return `${BASE.replace(/\/$/, '')}/${rel}`;
+    const live = rel.startsWith('docs/') ? `${BASE.replace(/\/$/, '')}/${rel.slice(5)}` : `${BASE.replace(/\/$/, '')}/${rel}`;
+    return live;
+  } catch {
+    return null;
+  }
+}
+
 function checkUrl(target) {
   return new Promise((resolve) => {
     if (checked.has(target)) return resolve(checked.get(target));
     setTimeout(() => {
-      const req = https.request(target, { method: 'HEAD', timeout: 15000 }, (res) => {
-        const code = res.statusCode;
-        checked.set(target, code);
-        resolve(code);
+      const req = https.request(target, { method: 'HEAD', timeout: 20000 }, (res) => {
+        checked.set(target, res.statusCode);
+        resolve(res.statusCode);
       });
       req.on('error', () => { checked.set(target, 0); resolve(0); });
       req.on('timeout', () => { req.destroy(); checked.set(target, 0); resolve(0); });
@@ -51,23 +68,11 @@ async function run() {
     while ((m = hrefRegex.exec(content)) !== null) {
       const link = m[1];
       if (!link || link.startsWith('javascript:') || link.startsWith('mailto:') || link.startsWith('tel:') || link.startsWith('#')) continue;
-      let target;
-      try {
-        const u = new URL(link);
-        if (u.protocol && u.host) {
-          target = `${u.protocol}//${u.host}${u.pathname}`;
-        } else {
-          let rel = (u.pathname || '/').split('?', 1)[0].split('#', 1)[0].replace(/^\/+/, '');
-          if (!rel || rel.endsWith('/')) rel = rel ? `${rel}index.html` : 'index.html';
-          target = `${BASE.replace(/\/$/, '')}/${rel}`;
-        }
-      } catch {
-        continue;
-      }
+      const target = toTarget(link, path.dirname(file));
       if (!target) continue;
       queue = queue.then(() => checkUrl(target)).then((code) => {
         if (code < 200 || code >= 400) {
-          broken.push({ file: path.relative(outDir, file), link, target, status: code });
+          broken.push({ file: path.relative(docsDir, file), link, target, status: code });
         }
       });
     }
