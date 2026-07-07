@@ -1623,5 +1623,12 @@
     "queries_run": 20,
     "contacts_found": 7,
     "new_leads_added": 7
+  },
+  {
+    "ts": "2026-07-07T00:35:29.054999+00:00",
+    "event": "mine_tick",
+    "queries_run": 20,
+    "contacts_found": 3,
+    "new_leads_added": 3
   }
 ]
