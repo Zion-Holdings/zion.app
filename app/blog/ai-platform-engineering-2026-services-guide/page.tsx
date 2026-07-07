@@ -11,7 +11,7 @@ export default function Page() {
       <div className="text-sm text-slate-500 mb-8">Published: 2026-07-07</div>
       <div
         className="prose prose-invert max-w-none text-slate-300 leading-relaxed"
-        dangerouslySetInnerHTML={ __html: `
+        dangerouslySetInnerHTML={{ __html: `
 <p>AI platform engineering services should reduce internal tooling sprawl while improving reliability and developer experience.</p>
 <h3>Key service areas</h3>
 <ul>
@@ -21,7 +21,7 @@ export default function Page() {
 <li>Security and compliance guardrails</li>
 </ul>
 <p><a href="/contact">Discuss a platform engineering engagement</a></p>
-` }
+` }}
       />
     </article>
   );
