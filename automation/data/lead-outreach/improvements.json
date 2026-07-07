@@ -31,7 +31,7 @@
         "hotFollowups": 0,
         "latestComplete": "2026-07-07T20:04:39.690418+00:00"
       },
-      "reconciliationNote": "Recomputed from current outreach-log.jsonl; latest event was the current cron auth-missing run at 2026-07-07T18:35:31.903, and totalRuns advanced from 57 to 59, making the previous digest stale; updated latestComplete to match current run timestamp. No new digest append required because auth-missing state is unchanged.",
+      "reconciliationNote": "Recomputed from live outreach-log.jsonl and live auth probe on 2026-07-07: auth remains blocked for kleber@ziontechgroup.com. latestComplete preserved as 2026-07-07T20:04:39.690418+00:00; totalRuns=59 reflects 59 non-empty log lines, authFailures=26 from exact 'No auth for gmail' summaries; no meaningful state delta versus prior digest, so skipped duplicate blocked-digest append.",
       "recommendations": [
         "Restore Gmail auth before tuning prompts/scoring; current metrics are zeroed by auth failure, not by suppression or prompt issues.",
         "Reduce cron noise by exiting on the first auth-missing probe instead of accumulating duplicate auth-missing start/complete pairs.",
