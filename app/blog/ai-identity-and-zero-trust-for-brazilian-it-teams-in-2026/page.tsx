@@ -1,4 +1,5 @@
 import Link from 'next/link';
+
 export const metadata = {
   title: 'AI Identity and Zero Trust for Brazilian IT Teams in 2026',
   description: 'Practical AI-driven identity and zero-trust patterns for Brazilian IT teams in 2026.',

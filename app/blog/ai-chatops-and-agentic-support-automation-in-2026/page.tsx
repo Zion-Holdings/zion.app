@@ -1,4 +1,5 @@
 import Link from 'next/link';
+
 export const metadata = {
   title: 'AI ChatOps and Agentic Support Automation in 2026',
   description: 'ChatOps and agentic support automation patterns that reduce response time and handoff friction for customer-facing teams.',

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+
 export const metadata = {
   title: 'AI DevOps, Automation, and Platform Engineering in 2026',
   description: 'AI DevOps, automation, and platform engineering models that help teams ship faster with guardrails.',

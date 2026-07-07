@@ -13,7 +13,7 @@ export interface Service {
   popular?: boolean;
   category: string;
   industry: string;
-  stage?: 'published' | 'beta' | 'planned' | 'ga';
+  stage?: string;
   rating?: number;
   reviews?: number;
   industries?: string[];

@@ -58,12 +58,6 @@ export default async function ServicePage({ params }: PageProps) {
     (s) => s.id === id || s.id.replace(/-/g, '_') === id || s.id.replace(/_/g, '-') === id
   );
   if (!service) {
-    const legacy = id === 'cloud-cost-optimization-platform' || id === 'cloud-cost-optimization-service';
-    if (legacy) {
-      const url = new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://ziontechgroup.com');
-      url.pathname = `/services/${id === 'cloud-cost-optimization-platform' ? 'cloud-cost-optimization-service' : id}/`;
-      return new Response(null, { status: 308, headers: { location: url.pathname } });
-    }
     notFound();
   }
 

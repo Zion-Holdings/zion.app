@@ -9,7 +9,7 @@ export const wave278DataCenterServices: Service[] = [
     icon: '🤖',
     href: '/services/data-center-ai-infrastructure',
     industry: 'Data Center & Infrastructure',
-    stage: 'published',
+    stage: "published",
     popular: true,
     pricing: { basic: '$499/mo', pro: '$1,499/mo', enterprise: 'Custom' },
     contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
@@ -36,7 +36,7 @@ export const wave278DataCenterServices: Service[] = [
     icon: '☁️',
     href: '/services/data-center-hybrid-cloud-migration',
     industry: 'Cloud Infrastructure',
-    stage: 'published',
+    stage: "published",
     popular: true,
     pricing: { basic: '$399/mo', pro: '$1,199/mo', enterprise: 'Custom' },
     contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
@@ -63,7 +63,7 @@ export const wave278DataCenterServices: Service[] = [
     icon: '📡',
     href: '/services/data-center-edge-computing',
     industry: 'Edge & Telecommunications',
-    stage: 'published',
+    stage: "published",
     popular: false,
     pricing: { basic: '$299/mo', pro: '$899/mo', enterprise: 'Custom' },
     contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
@@ -90,7 +90,7 @@ export const wave278DataCenterServices: Service[] = [
     icon: '🌱',
     href: '/services/data-center-sustainability',
     industry: 'Sustainability & Energy',
-    stage: 'published',
+    stage: "published",
     popular: false,
     pricing: { basic: '$299/mo', pro: '$799/mo', enterprise: 'Custom' },
     contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
@@ -117,7 +117,7 @@ export const wave278DataCenterServices: Service[] = [
     icon: '🖥️',
     href: '/services/data-center-digital-twin',
     industry: 'Simulation & Engineering',
-    stage: 'published',
+    stage: "published",
     popular: false,
     pricing: { basic: '$499/mo', pro: '$1,499/mo', enterprise: 'Custom' },
     contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
@@ -144,7 +144,7 @@ export const wave278DataCenterServices: Service[] = [
     icon: '🧠',
     href: '/services/data-center-aiops-monitoring',
     industry: 'IT Operations & AIOps',
-    stage: 'published',
+    stage: "published",
     popular: false,
     pricing: { basic: '$399/mo', pro: '$1,199/mo', enterprise: 'Custom' },
     contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
@@ -161,87 +161,87 @@ export const wave278DataCenterServices: Service[] = [
       'Cut energy costs through intelligent power optimization',
       'Free up ops teams from repetitive manual monitoring',
       'Deliver 99.999% availability for critical workloads'
-    ] 
+    ]
   },
   {
     id: 'data-center-cabling-management',
-      title: 'Data Center Cabling & Infrastructure Management',
-      description: 'Structured cabling, copper/fiber remediation, and patch panel management for reliable colocation and cloud connectivity. Supports TIA-606 labeling standards, move/add/change, and Panduit/Corning/Dynacom deployments.',
-      category: 'data-center-cabling-management',
-      icon: '🔌',
-      href: '/services/data-center-cabling-management',
-      industry: 'Data Center & Infrastructure',
-      stage: 'published',
-      popular: false,
-      pricing: { basic: '$249/mo', pro: '$749/mo', enterprise: 'Custom' },
-      contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
-      features: [
-        'Structured cabling design and audit',
-        'Copper and fiber optic deployment',
-        'Patch panel consolidation and labeling',
-        'MAC (move/add/change) services',
-        'TIA-606 compliance and documentation',
-        'Preventive maintenance and remediation'
-      ],
-      benefits: [
-        'Reduce unplanned downtime from cable faults',
-        'Improve port traceability and audit readiness',
-        'Lower rack maintenance overhead',
-        'Support accurate capacity planning'
-      ]
-    },
-    {
-      id: 'data-center-rack-integration',
-      title: 'Rack & Cabinet Integration Services',
-      description: 'End-to-end rack builds: mounting, labeling, PDUs, cable management, and network gear installation for new deployments and refreshes.',
-      category: 'data-center-rack-integration',
-      icon: '🗄️',
-      href: '/services/data-center-rack-integration',
-      industry: 'Data Center & Infrastructure',
-      stage: 'published',
-      popular: false,
-      pricing: { basic: '$349/mo', pro: '$999/mo', enterprise: 'Custom' },
-      contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
-      features: [
-        'Server and switch rack installation',
-        'PDU and power distribution setup',
-        'Cable routing and management',
-        'Pre-, during, and post-installation labeling',
-        'Label audits and asset validation',
-        'Handoff documentation and QA'
-      ],
-      benefits: [
-        'Faster time-to-production for new deployments',
-        'Consistent build quality across locations',
-        'Easier troubleshooting with clear labeling',
-        'Reduced rework from missed cable or power planning'
-      ]
-    },
-    {
-      id: 'data-center-access-control',
-      title: 'Data Center Access Control & Compliance',
-      description: 'Physical security hardening for data centers: man traps, badge readers, biometric access, visitor management, and SOC/PCI-ready audit trails.',
-      category: 'data-center-access-control',
-      icon: '🛡️',
-      href: '/services/data-center-access-control',
-      industry: 'Data Center & Infrastructure',
-      stage: 'published',
-      popular: false,
-      pricing: { basic: '$299/mo', pro: '$899/mo', enterprise: 'Custom' },
-      contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
-      features: [
-        'Biometric and multi-factor access',
-        'Man trap and mantrap design',
-        'Service entrance access hardening',
-        'Visitor escort workflow',
-        'Audit logging aligned with SOC/PCI requirements',
-        'CCTV and door controller integration'
-      ],
-      benefits: [
-        'Prevent unauthorized physical access',
-        'Meet compliance and audit requirements',
-        'Enable traceable personnel movement',
-        'Reduce risk with layered physical controls'
-      ]
-    }
-  ];
+    title: 'Data Center Cabling & Infrastructure Management',
+    description: 'Structured cabling, copper/fiber remediation, and patch panel management for reliable colocation and cloud connectivity. Supports TIA-606 labeling standards, move/add/change, and Panduit/Corning/Dynacom deployments.',
+    category: 'data-center-cabling-management',
+    icon: '🔌',
+    href: '/services/data-center-cabling-management',
+    industry: 'Data Center & Infrastructure',
+    stage: "published",
+    popular: false,
+    pricing: { basic: '$249/mo', pro: '$749/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'Structured cabling design and audit',
+      'Copper and fiber optic deployment',
+      'Patch panel consolidation and labeling',
+      'MAC (move/add/change) services',
+      'TIA-606 compliance and documentation',
+      'Preventive maintenance and remediation'
+    ],
+    benefits: [
+      'Reduce unplanned downtime from cable faults',
+      'Improve port traceability and audit readiness',
+      'Lower rack maintenance overhead',
+      'Support accurate capacity planning'
+    ]
+  },
+  {
+    id: 'data-center-rack-integration',
+    title: 'Rack & Cabinet Integration Services',
+    description: 'End-to-end rack builds: mounting, labeling, PDUs, cable management, and network gear installation for new deployments and refreshes.',
+    category: 'data-center-rack-integration',
+    icon: '🗄️',
+    href: '/services/data-center-rack-integration',
+    industry: 'Data Center & Infrastructure',
+    stage: "published",
+    popular: false,
+    pricing: { basic: '$349/mo', pro: '$999/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'Server and switch rack installation',
+      'PDU and power distribution setup',
+      'Cable routing and management',
+      'Pre-, during, and post-installation labeling',
+      'Label audits and asset validation',
+      'Handoff documentation and QA'
+    ],
+    benefits: [
+      'Faster time-to-production for new deployments',
+      'Consistent build quality across locations',
+      'Easier troubleshooting with clear labeling',
+      'Reduced rework from missed cable or power planning'
+    ]
+  },
+  {
+    id: 'data-center-access-control',
+    title: 'Data Center Access Control & Compliance',
+    description: 'Physical security hardening for data centers: man traps, badge readers, biometric access, visitor management, and SOC/PCI-ready audit trails.',
+    category: 'data-center-access-control',
+    icon: '🛡️',
+    href: '/services/data-center-access-control',
+    industry: 'Data Center & Infrastructure',
+    stage: "published",
+    popular: false,
+    pricing: { basic: '$299/mo', pro: '$899/mo', enterprise: 'Custom' },
+    contactInfo: { website: 'https://ziontechgroup.com', email: 'kleber@ziontechgroup.com', phone: '+1 302 464 0950' },
+    features: [
+      'Biometric and multi-factor access',
+      'Man trap and mantrap design',
+      'Service entrance access hardening',
+      'Visitor escort workflow',
+      'Audit logging aligned with SOC/PCI requirements',
+      'CCTV and door controller integration'
+    ],
+    benefits: [
+      'Prevent unauthorized physical access',
+      'Meet compliance and audit requirements',
+      'Enable traceable personnel movement',
+      'Reduce risk with layered physical controls'
+    ]
+  }
+];
