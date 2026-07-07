@@ -46,8 +46,8 @@ export async function generateMetadata({ params }: PageProps) {
   const service = allServices.find((s) => s.id === id);
   if (!service) return { title: 'Service Not Found' };
   return {
-    title: service.title,
-    description: service.description || `Explore ${service.title} at Zion Tech Group — enterprise-grade solutions.`,
+    title: service.title || 'Service',
+    description: service.description || `Explore ${service.title || 'this service'} at Zion Tech Group — enterprise-grade solutions.`,
   };
 }
 
