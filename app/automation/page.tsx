@@ -1,5 +1,7 @@
-export const metadata = { title: 'Automation', description: 'Intelligent process automation services from Zion Tech Group. RPA, workflow automation, AI-powered business processes.' };
-import Link from 'next/link';
+export const metadata = {
+  title: 'Automation',
+  description: 'Intelligent process automation services from Zion Tech Group. RPA, workflow automation, AI-powered business processes.',
+};
 
 export default function AutomationPage() {
   const services = [
@@ -23,11 +25,11 @@ export default function AutomationPage() {
         <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((s, i) => (
-              <Link key={i} href={s.href} className="group rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
+              <a key={i} href={s.href} className="group rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-colors">
                 <span className="text-3xl">{s.icon}</span>
                 <h3 className="mt-3 text-lg font-semibold text-white group-hover:text-purple-300">{s.name}</h3>
                 <p className="mt-2 text-sm text-slate-400">{s.desc}</p>
-              </Link>
+              </a>
             ))}
           </div>
         </div>

@@ -34,7 +34,7 @@ export default function SiteMapPage() {
         { name: 'All Services', href: '/services' },
         { name: 'AI Services', href: '/ai-services' },
         { name: 'Products', href: '/products' },
-        { name: 'Automation', href: '/automation' },
+        
         { name: 'Micro SAAS', href: '/micro-saas-services' },
         { name: 'IT Services', href: '/it-services' },
         { name: 'Cloud Services', href: '/cloud-services' },

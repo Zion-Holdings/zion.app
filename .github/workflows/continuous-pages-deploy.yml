@@ -51,10 +51,28 @@ jobs:
           echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
           echo "size=$SIZE" >> "$GITHUB_OUTPUT"
 
+      - name: Verify or deploy pages artifact
+        run: |
+          set -euo pipefail
+          ARTIFACT_DIR="${GITHUB_WORKSPACE:-.}/artifacts/pages"
+          mkdir -p "$ARTIFACT_DIR"
+          if [ -d out ]; then
+            cp -a out/. "$ARTIFACT_DIR"/
+          elif [ -d docs ]; then
+            cp -a docs/. "$ARTIFACT_DIR"/
+          else
+            echo "No static site artifact found" >&2
+            exit 1
+          fi
+          PAGES=$(find "$ARTIFACT_DIR" -name 'index.html' | wc -l)
+          SIZE=$(du -sh "$ARTIFACT_DIR" | awk '{print $1}')
+          echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
+          echo "size=$SIZE" >> "$GITHUB_OUTPUT"
+
       - name: Pages artifact
         uses: actions/upload-pages-artifact@v3.0.1
         with:
-          path: docs
+          path: artifacts/pages
 
   deploy:
     needs: build
