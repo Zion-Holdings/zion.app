@@ -1,3 +1,4 @@
+import Link from 'next/link';
 export const metadata = {
   title: 'AI Support Automation: AI Chat and Ticket Intelligence in 2026',
   description: 'Support automation models that combine AI chat, ticket triage, and knowledge retrieval for faster customer outcomes.',

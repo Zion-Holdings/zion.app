@@ -1,3 +1,4 @@
+import Link from 'next/link';
 export const metadata = {
   title: 'AI Vendor Channel Partnership Model for LATAM',
   description: 'Channel partnership models for LATAM vendors, service providers, and resellers.',

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 export const metadata = {
   title: 'AI Financial Engineering and Portfolio Automation in 2026',
   description: 'Practical financial engineering and portfolio automation with AI assistants.',

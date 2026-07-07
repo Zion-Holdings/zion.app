@@ -1,3 +1,4 @@
+import Link from 'next/link';
 export const metadata = {
   title: 'AI Platform Engineering 2026 Services Guide',
   description: 'A service guide to building, operating, and scaling internal AI platforms safely in 2026.',

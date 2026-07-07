@@ -1,3 +1,4 @@
+import Link from 'next/link';
 export const metadata = {
   title: 'AI Outsourcing vs. In-House IT Teams for LATAM in 2026',
   description: 'Comparing outsourcing versus in-house IT execution for LATAM companies.',

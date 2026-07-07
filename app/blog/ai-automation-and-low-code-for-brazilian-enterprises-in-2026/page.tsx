@@ -3,6 +3,8 @@ export const metadata = {
   description: 'How Brazilian enterprises can apply AI automation and low-code platforms to accelerate delivery without increasing risk.',
 };
 
+import Link from 'next/link';
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

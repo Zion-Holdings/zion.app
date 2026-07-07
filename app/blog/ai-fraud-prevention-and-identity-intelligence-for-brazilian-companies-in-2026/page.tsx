@@ -1,3 +1,4 @@
+import Link from 'next/link';
 export const metadata = {
   title: 'AI Fraud Prevention and Identity Intelligence for Brazilian Companies in 2026',
   description: 'AI fraud prevention and identity intelligence approaches for Brazilian companies without replacing core banking or ERP stacks.',

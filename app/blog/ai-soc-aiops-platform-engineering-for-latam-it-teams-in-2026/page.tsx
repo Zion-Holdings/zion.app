@@ -1,3 +1,4 @@
+import Link from 'next/link';
 export const metadata = {
   title: 'AI SOC + AIOps + Platform Engineering for LATAM IT Teams in 2026',
   description: 'Practical AI SOC, AIOps, and platform engineering models for LATAM IT teams reducing incidents and operating with smaller staff.',

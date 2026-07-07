@@ -1,3 +1,4 @@
+import Link from 'next/link';
 export const metadata = {
   title: 'AI Observability and Incident Management in 2026',
   description: 'AI observability and incident management patterns that reduce MTTR and improve reliability for distributed teams.',

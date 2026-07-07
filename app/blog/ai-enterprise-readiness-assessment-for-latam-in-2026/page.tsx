@@ -1,3 +1,4 @@
+import Link from 'next/link';
 export const metadata = {
   title: 'AI Enterprise Readiness Assessment for LATAM in 2026',
   description: 'An enterprise readiness checklist for evaluating execution readiness and partnership fit in LATAM.',
