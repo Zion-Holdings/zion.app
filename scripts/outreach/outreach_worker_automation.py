@@ -99,6 +99,33 @@ def search_all_folders(q, max_results=20):
         })
     return out
 
+
+def resolve_thread_id(email, subject_hint=None):
+    queries = []
+    base = f"from:{email} -category:promotions -in:spam -in:trash"
+    if subject_hint:
+        queries += [f'{base} subject:"{subject_hint}"', f'{base} newer_than:30d']
+    else:
+        queries += [f'{base} newer_than:30d', f'{base}']
+    hits = []
+    for q in queries:
+        hits = search_all_folders(q, max_results=10)
+        if hits:
+            break
+    if hits:
+        return hits[0].get('threadId') or hits[0].get('id')
+    return None
+
+
+def probe_thread_alive(thread_id):
+    if not thread_id:
+        return False
+    try:
+        service.users().threads().get(userId='me', id=thread_id).execute()
+        return True
+    except Exception:
+        return False
+
 def get_message_text(msg_id):
     msg = service.users().messages().get(userId='me', id=msg_id, format='full').execute()
     payload = msg.get('payload', {})
@@ -360,22 +387,42 @@ def run_high_frequency_outreach():
     skipped = 0
     newest_used = []
 
+    dead = []
+    hardened_contacts=[]
+    merged_contacts = hardened_contacts or merged_contacts
     for c in merged_contacts:
         email = c["email"]
         contact_key = email.lower()
+        prospective_subject = c.get("thread_subject") or "Next steps"
         if recent_sent_exists(contact_key, within_seconds=DEDUP_COOLDOWN_SECONDS):
             skipped += 1
             continue
-        prospective_subject = c.get("thread_subject") or "Next steps"
         if same_subject_recently_sent(contact_key, prospective_subject, within_seconds=12 * 3600):
             skipped += 1
             continue
-        lead = fetch_or_create_lead_from_inbox(email, c.get("thread_subject"))
+        lead = fetch_or_create_lead_from_inbox(email, prospective_subject)
         if not lead:
             skipped += 1
             continue
         newest_used.append({"contact": email, "msg_id": lead["msg_id"], "lang": lead["lang"]})
         thread_id = c.get("thread_id")
+        if not thread_id:
+            thread_id = resolve_thread_id(email, prospective_subject)
+        if not thread_id or not probe_thread_alive(thread_id):
+            for alt in [
+                lead.get("msg_id"),
+                lead.get("thread_id"),
+            ]:
+                if alt and probe_thread_alive(alt):
+                    thread_id = alt
+                    break
+        c = dict(c)
+        c["_resolved_thread_id"] = thread_id
+        hardened_contacts.append(c)
+        if not thread_id or not probe_thread_alive(thread_id):
+            dead.append({"contact": email, "thread_id": thread_id, "subject": prospective_subject})
+            skipped += 1
+            continue
         try:
             sent = send_ceo_reply(thread_id, email, lead["subject"], lead["body"], lead["msg_id"])
             record_send(contact_key, email, lead["subject"], sent.get('id'), sent.get('threadId'), f"tailored CEO reply from inbox msg {lead['msg_id']}")
@@ -392,8 +439,12 @@ def run_high_frequency_outreach():
     print('ADDS', len(newest_used))
     print('SENT_TOTAL', sent_count)
     print('SKIPPED', skipped)
+    if dead:
+        print('DEAD_THREADS', len(dead))
+        for d in dead:
+            print('DEAD', d)
     print('STATE_TS', int(time.time()))
-    return {"sent": sent_count, "skipped": skipped, "adds": len(newest_used)}
+    return {"sent": sent_count, "skipped": skipped, "adds": len(newest_used), "dead": dead}
 
 if __name__ == '__main__':
     run_high_frequency_outreach()

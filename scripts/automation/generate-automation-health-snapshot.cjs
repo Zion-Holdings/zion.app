@@ -1,5 +1,5 @@
-import { mkdirSync, writeFileSync } from 'fs';
-import { join } from 'path';
+const { mkdirSync, writeFileSync } = require('fs');
+const { join } = require('path');
 
 const dir = 'automation/reports';
 mkdirSync(dir, { recursive: true });
