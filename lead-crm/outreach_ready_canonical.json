@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-06T23:48:14.303931+00:00",
+  "generatedAt": "2026-07-07T00:28:23.662822+00:00",
   "state": "send_ready",
   "ready": [
     {
@@ -43,6 +43,96 @@
       "name": "Hotmail",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "<p>Hotmail,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Vejo potencial real de colaboração mútua em <strong>hotmail.com</strong>.</p><ul><li>Agentes e automação inteligente para operações de TI</li><li>Otimização cloud/IA e resposta a incidentes</li><li>Acesso a ferramentas e serviços gratuitos no nosso site</li></ul><p>Conheça: https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
+      "threadId": null,
+      "messageId": null,
+      "status": "discovered"
+    },
+    {
+      "to": "thomas@gakenholz.de",
+      "name": "Gakenholz",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": "<p>Gakenholz,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Vejo potencial real de colaboração mútua em <strong>gakenholz.de</strong>.</p><ul><li>Agentes e automação inteligente para operações de TI</li><li>Otimização cloud/IA e resposta a incidentes</li><li>Acesso a ferramentas e serviços gratuitos no nosso site</li></ul><p>Conheça: https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
+      "threadId": null,
+      "messageId": null,
+      "status": "discovered"
+    },
+    {
+      "to": "fernando.agostino@gmail.com",
+      "name": "Gmail",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": "<p>Gmail,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Vejo potencial real de colaboração mútua em <strong>gmail.com</strong>.</p><ul><li>Agentes e automação inteligente para operações de TI</li><li>Otimização cloud/IA e resposta a incidentes</li><li>Acesso a ferramentas e serviços gratuitos no nosso site</li></ul><p>Conheça: https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
+      "threadId": null,
+      "messageId": null,
+      "status": "discovered"
+    },
+    {
+      "to": "kleber@sscs-sa.com",
+      "name": "Sscs-Sa",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": "<p>Sscs-Sa,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Vejo potencial real de colaboração mútua em <strong>sscs-sa.com</strong>.</p><ul><li>Agentes e automação inteligente para operações de TI</li><li>Otimização cloud/IA e resposta a incidentes</li><li>Acesso a ferramentas e serviços gratuitos no nosso site</li></ul><p>Conheça: https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
+      "threadId": null,
+      "messageId": null,
+      "status": "discovered"
+    },
+    {
+      "to": "djean.axt@ztg.com.br",
+      "name": "Ztg",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": "<p>Ztg,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Vejo potencial real de colaboração mútua em <strong>ztg.com.br</strong>.</p><ul><li>Agentes e automação inteligente para operações de TI</li><li>Otimização cloud/IA e resposta a incidentes</li><li>Acesso a ferramentas e serviços gratuitos no nosso site</li></ul><p>Conheça: https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
+      "threadId": null,
+      "messageId": null,
+      "status": "discovered"
+    },
+    {
+      "to": "editors@channelpronetwork.com",
+      "name": "Channelpronetwork",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": "<p>Channelpronetwork,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Vejo potencial real de colaboração mútua em <strong>channelpronetwork.com</strong>.</p><ul><li>Agentes e automação inteligente para operações de TI</li><li>Otimização cloud/IA e resposta a incidentes</li><li>Acesso a ferramentas e serviços gratuitos no nosso site</li></ul><p>Conheça: https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
+      "threadId": null,
+      "messageId": null,
+      "status": "discovered"
+    },
+    {
+      "to": "gmailgenius@wordzen.com",
+      "name": "Wordzen",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": "<p>Wordzen,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Vejo potencial real de colaboração mútua em <strong>wordzen.com</strong>.</p><ul><li>Agentes e automação inteligente para operações de TI</li><li>Otimização cloud/IA e resposta a incidentes</li><li>Acesso a ferramentas e serviços gratuitos no nosso site</li></ul><p>Conheça: https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
+      "threadId": null,
+      "messageId": null,
+      "status": "discovered"
+    },
+    {
+      "to": "bob@scrubly.com",
+      "name": "Scrubly",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": "<p>Scrubly,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Vejo potencial real de colaboração mútua em <strong>scrubly.com</strong>.</p><ul><li>Agentes e automação inteligente para operações de TI</li><li>Otimização cloud/IA e resposta a incidentes</li><li>Acesso a ferramentas e serviços gratuitos no nosso site</li></ul><p>Conheça: https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
+      "threadId": null,
+      "messageId": null,
+      "status": "discovered"
+    },
+    {
+      "to": "mweiss@procurri.com",
+      "name": "Procurri",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": "<p>Procurri,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Vejo potencial real de colaboração mútua em <strong>procurri.com</strong>.</p><ul><li>Agentes e automação inteligente para operações de TI</li><li>Otimização cloud/IA e resposta a incidentes</li><li>Acesso a ferramentas e serviços gratuitos no nosso site</li></ul><p>Conheça: https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
+      "threadId": null,
+      "messageId": null,
+      "status": "discovered"
+    },
+    {
+      "to": "mauro.faria@fgv.br",
+      "name": "Fgv",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": "<p>Fgv,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Vejo potencial real de colaboração mútua em <strong>fgv.br</strong>.</p><ul><li>Agentes e automação inteligente para operações de TI</li><li>Otimização cloud/IA e resposta a incidentes</li><li>Acesso a ferramentas e serviços gratuitos no nosso site</li></ul><p>Conheça: https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
+      "threadId": null,
+      "messageId": null,
+      "status": "discovered"
+    },
+    {
+      "to": "avinash.r@hcl.com",
+      "name": "Hcl",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": "<p>Hcl,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Vejo potencial real de colaboração mútua em <strong>hcl.com</strong>.</p><ul><li>Agentes e automação inteligente para operações de TI</li><li>Otimização cloud/IA e resposta a incidentes</li><li>Acesso a ferramentas e serviços gratuitos no nosso site</li></ul><p>Conheça: https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
       "threadId": null,
       "messageId": null,
       "status": "discovered"
