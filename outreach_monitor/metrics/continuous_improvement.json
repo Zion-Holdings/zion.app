@@ -1,0 +1,14 @@
+{
+  "runs": [
+    {
+      "scan_id": "20260707-121702",
+      "label": "hot-follow-up",
+      "processed": 0,
+      "drafts": 0,
+      "skipped_ledger": 0,
+      "errors": 0,
+      "llm_tailored": 0,
+      "ts": "2026-07-07T12:30:58.697766+00:00"
+    }
+  ]
+}
