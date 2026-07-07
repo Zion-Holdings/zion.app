@@ -1,34 +1,29 @@
-
 export const metadata = {
-  title: "AI Vendor Channel Partnership Model for LATAM | Zion Tech Group",
-  description: "A practical AI vendor channel partnership model for expanding into LATAM through local delivery, managed services, and co-selling.",
-  alternates: { canonical: "/ai-vendor-channel-partnership-model-for-latam/" },
+  title: 'AI Vendor Channel Partnership Model for LATAM',
+  description: 'Channel partnership models for LATAM vendors, service providers, and resellers.',
 };
 
 export default function Page() {
-  const content = `<p>AI vendor channel partnerships in LATAM are most effective when a local partner owns delivery, support, and customer success.</p>
-<h3>What a strong model includes</h3>
-<ul>
-<li>Local implementation and migration support for AI/cloud workloads</li>
-<li>24x7 managed NOC/SOC for vendor-backed environments</li>
-<li>FinOps and cost optimization for GPU/cloud spend</li>
-<li>Portuguese and Spanish support coverage</li>
-</ul>
-<h3>How Zion fits</h3>
-<ul>
-<li>Existing AI/IT services execution team in Brazil</li>
-<li>Proven managed-services operations</li>
-<li>Free tools and content to accelerate partner demand</li>
-</ul>
-<p><a href="/contact">Discuss an AI vendor partnership with Zion</a></p>`;
   return (
-    <article className="container-page py-20">
-      <h1 className="text-4xl font-bold mb-4 text-white">AI Vendor Channel Partnership Model for LATAM</h1>
-      <div className="text-sm text-slate-500 mb-8">Published: 2026-07-07</div>
-      <div
-        className="prose prose-invert max-w-none text-slate-300 leading-relaxed"
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
-    </article>
+    <main className="min-h-screen bg-slate-950 py-20">
+      <div className="container-page">
+        <nav className="mb-6 text-sm text-slate-400">
+          <Link href="/" className="hover:text-purple-400 transition">Home</Link>
+          <span className="mx-2">/</span>
+          <Link href="/blog/" className="hover:text-purple-400 transition">Blog</Link>
+          <span className="mx-2">/</span>
+          <span className="text-slate-300">AI Vendor Channel Partnership Model</span>
+        </nav>
+        <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">AI Vendor Channel Partnership Model for LATAM</h1>
+        <p className="text-slate-300 leading-relaxed mb-8">Co-sell, enablement, local delivery, and margin models for LATAM partners.</p>
+        <div className="glass-card prose prose-invert max-w-none">
+          <p>Channel partnership models for LATAM vendors, service providers, and resellers.</p><ul><li>Co-sell and enablement frameworks</li><li>Local delivery and margin models</li><li>Partnership inquiry at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>See <a href="/services">AI services</a>, then <a href="/contact">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
+        </div>
+        <div className="mt-10 flex flex-col sm:flex-row gap-3">
+          <Link href="/services/" className="btn-primary">Explore AI services</Link>
+          <Link href="/contact/" className="btn-secondary">Contact us</Link>
+        </div>
+      </div>
+    </main>
   );
 }
