@@ -3,7 +3,6 @@ import { Service } from './serviceTypes';
 export const wave297AiServices: Service[] = [
   {
     id: 'ai-4809',
-    name: 'AI Voice Assistant for Enterprise Support',
     slug: 'ai-voice-assistant-enterprise-support',
     category: 'ai',
     tags: ['ai', 'voice', 'support', 'ivr', 'automation'],
@@ -20,7 +19,6 @@ export const wave297AiServices: Service[] = [
   },
   {
     id: 'ai-4810',
-    name: 'AI Document Redaction & Compliance Assistant',
     slug: 'ai-document-redaction-compliance-assistant',
     category: 'ai',
     tags: ['ai', 'redaction', 'compliance', 'document', 'privacy'],
@@ -37,7 +35,6 @@ export const wave297AiServices: Service[] = [
   },
   {
     id: 'it-4811',
-    name: 'Managed Device Fleet & Patch Compliance',
     slug: 'managed-device-fleet-patch-compliance',
     category: 'it',
     tags: ['it', 'endpoint', 'patch', 'compliance', 'mdm', 'security'],
@@ -54,7 +51,6 @@ export const wave297AiServices: Service[] = [
   },
   {
     id: 'cloud-4812',
-    name: 'Cloud DR Automation & Failover Orchestration',
     slug: 'cloud-dr-automation-failover-orchestration',
     category: 'cloud',
     tags: ['cloud', 'dr', 'disaster recovery', 'failover', 'resilience'],
@@ -71,7 +67,6 @@ export const wave297AiServices: Service[] = [
   },
   {
     id: 'security-4813',
-    name: 'AI Security Policy & Access Review Assistant',
     slug: 'ai-security-policy-access-review-assistant',
     category: 'security',
     tags: ['security', 'access review', 'policy', 'compliance', 'ai'],
@@ -88,7 +83,6 @@ export const wave297AiServices: Service[] = [
   },
   {
     id: 'data-4814',
-    name: 'Data Lineage & Change Impact Analyzer',
     slug: 'data-lineage-change-impact-analyzer',
     category: 'data',
     tags: ['data', 'lineage', 'impact', 'governance', 'analytics'],
@@ -105,7 +99,6 @@ export const wave297AiServices: Service[] = [
   },
   {
     id: 'micro-saas-4815',
-    name: 'Embedded Unit Economics & LTV Dashboard',
     slug: 'embedded-unit-economics-ltv-dashboard',
     category: 'micro-saas',
     tags: ['micro-saas', 'metrics', 'unit economics', 'ltv', 'saas'],

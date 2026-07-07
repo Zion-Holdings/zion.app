@@ -3,7 +3,6 @@ import { Service } from './serviceTypes';
 export const wave296AiServices: Service[] = [
   {
     id: 'ai-4801',
-    name: 'AI Revenue Operations Assistant',
     slug: 'ai-revenue-operations-assistant',
     category: 'ai',
     tags: ['ai', 'revenue', 'revops', 'billing', 'collections'],
@@ -20,7 +19,6 @@ export const wave296AiServices: Service[] = [
   },
   {
     id: 'ai-4802',
-    name: 'AI Partner Co-Sell Assistant',
     slug: 'ai-partner-co-sell-assistant',
     category: 'ai',
     tags: ['ai', 'partner', 'co-sell', 'channel', 'sales'],
@@ -37,7 +35,6 @@ export const wave296AiServices: Service[] = [
   },
   {
     id: 'ai-4803',
-    name: 'AI Procurement Cost Optimizer',
     slug: 'ai-procurement-cost-optimizer',
     category: 'ai',
     tags: ['ai', 'procurement', 'cost', 'vendor', 'savings'],
@@ -54,7 +51,6 @@ export const wave296AiServices: Service[] = [
   },
   {
     id: 'ai-4804',
-    name: 'AI Field Service Scheduler',
     slug: 'ai-field-service-scheduler',
     category: 'ai',
     tags: ['ai', 'field service', 'dispatch', 'schedule', 'technician'],
@@ -71,7 +67,6 @@ export const wave296AiServices: Service[] = [
   },
   {
     id: 'ai-4805',
-    name: 'AI Observability Correlation Engine',
     slug: 'ai-observability-correlation-engine',
     category: 'ai',
     tags: ['ai', 'observability', 'monitoring', 'alerts', 'incident'],
@@ -88,7 +83,6 @@ export const wave296AiServices: Service[] = [
   },
   {
     id: 'ai-4806',
-    name: 'AI Supply Chain Risk Monitor',
     slug: 'ai-supply-chain-risk-monitor',
     category: 'ai',
     tags: ['ai', 'supply chain', 'risk', 'logistics', 'resilience'],
@@ -105,7 +99,6 @@ export const wave296AiServices: Service[] = [
   },
   {
     id: 'ai-4807',
-    name: 'AI Workplace Automation Discovery Assistant',
     slug: 'ai-workplace-automation-discovery-assistant',
     category: 'ai',
     tags: ['ai', 'workplace', 'automation', 'intake', 'workflow'],
@@ -122,7 +115,6 @@ export const wave296AiServices: Service[] = [
   },
   {
     id: 'ai-4808',
-    name: 'AI Talent Marketplace Recommender',
     slug: 'ai-talent-marketplace-recommender',
     category: 'ai',
     tags: ['ai', 'talent', 'marketplace', 'staffing', 'project'],
