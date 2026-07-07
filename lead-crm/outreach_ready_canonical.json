@@ -1,206 +1,206 @@
 {
-  "generatedAt": "2026-07-07T03:55:45.812326+00:00",
+  "generatedAt": "2026-07-07T06:59:31.689476+00:00",
   "state": "send_ready",
   "ready": [
     {
       "to": "valmy.gonzalez@shervacom.com",
       "name": "Shervacom",
       "domain": "shervacom.com",
-      "subject": "Parceria em Shervacom — Zion Tech Group",
-      "body": "<p>Shervacom,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Busco colaboração prática em serviços AI/IT gerenciados.</p><ul><li>Automação inteligente</li><li>FinOps cloud/IA</li><li>Ferramentas gratuitas</li></ul><p>https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "ready"
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     },
     {
       "to": "thomas@gakenholz.de",
       "name": "Gakenholz",
       "domain": "gakenholz.de",
-      "subject": "Parceria em Gakenholz — Zion Tech Group",
-      "body": "<p>Gakenholz,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Busco colaboração prática em serviços AI/IT gerenciados.</p><ul><li>Automação inteligente</li><li>FinOps cloud/IA</li><li>Ferramentas gratuitas</li></ul><p>https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "ready"
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     },
     {
       "to": "kleber@sscs-sa.com",
       "name": "Sscs-Sa",
       "domain": "sscs-sa.com",
-      "subject": "Parceria em Sscs-Sa — Zion Tech Group",
-      "body": "<p>Sscs-Sa,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Busco colaboração prática em serviços AI/IT gerenciados.</p><ul><li>Automação inteligente</li><li>FinOps cloud/IA</li><li>Ferramentas gratuitas</li></ul><p>https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "ready"
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     },
     {
       "to": "djean.axt@ztg.com.br",
       "name": "Ztg",
       "domain": "ztg.com.br",
-      "subject": "Parceria em Ztg — Zion Tech Group",
-      "body": "<p>Ztg,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Busco colaboração prática em serviços AI/IT gerenciados.</p><ul><li>Automação inteligente</li><li>FinOps cloud/IA</li><li>Ferramentas gratuitas</li></ul><p>https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "ready"
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     },
     {
       "to": "editors@channelpronetwork.com",
       "name": "Channelpronetwork",
       "domain": "channelpronetwork.com",
-      "subject": "Parceria em Channelpronetwork — Zion Tech Group",
-      "body": "<p>Channelpronetwork,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Busco colaboração prática em serviços AI/IT gerenciados.</p><ul><li>Automação inteligente</li><li>FinOps cloud/IA</li><li>Ferramentas gratuitas</li></ul><p>https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "ready"
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     },
     {
       "to": "gmailgenius@wordzen.com",
       "name": "Wordzen",
       "domain": "wordzen.com",
-      "subject": "Parceria em Wordzen — Zion Tech Group",
-      "body": "<p>Wordzen,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Busco colaboração prática em serviços AI/IT gerenciados.</p><ul><li>Automação inteligente</li><li>FinOps cloud/IA</li><li>Ferramentas gratuitas</li></ul><p>https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "ready"
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     },
     {
       "to": "bob@scrubly.com",
       "name": "Scrubly",
       "domain": "scrubly.com",
-      "subject": "Parceria em Scrubly — Zion Tech Group",
-      "body": "<p>Scrubly,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Busco colaboração prática em serviços AI/IT gerenciados.</p><ul><li>Automação inteligente</li><li>FinOps cloud/IA</li><li>Ferramentas gratuitas</li></ul><p>https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "ready"
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     },
     {
       "to": "mweiss@procurri.com",
       "name": "Procurri",
       "domain": "procurri.com",
-      "subject": "Parceria em Procurri — Zion Tech Group",
-      "body": "<p>Procurri,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Busco colaboração prática em serviços AI/IT gerenciados.</p><ul><li>Automação inteligente</li><li>FinOps cloud/IA</li><li>Ferramentas gratuitas</li></ul><p>https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "ready"
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     },
     {
       "to": "mauro.faria@fgv.br",
       "name": "Fgv",
       "domain": "fgv.br",
-      "subject": "Parceria em Fgv — Zion Tech Group",
-      "body": "<p>Fgv,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Busco colaboração prática em serviços AI/IT gerenciados.</p><ul><li>Automação inteligente</li><li>FinOps cloud/IA</li><li>Ferramentas gratuitas</li></ul><p>https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "ready"
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     },
     {
       "to": "avinash.r@hcl.com",
       "name": "Hcl",
       "domain": "hcl.com",
-      "subject": "Parceria em Hcl — Zion Tech Group",
-      "body": "<p>Hcl,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Busco colaboração prática em serviços AI/IT gerenciados.</p><ul><li>Automação inteligente</li><li>FinOps cloud/IA</li><li>Ferramentas gratuitas</li></ul><p>https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "ready"
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     },
     {
       "to": "ishukohli@hcl.com",
       "name": "Hcl",
       "domain": "hcl.com",
-      "subject": "Parceria em Hcl — Zion Tech Group",
-      "body": "<p>Hcl,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Busco colaboração prática em serviços AI/IT gerenciados.</p><ul><li>Automação inteligente</li><li>FinOps cloud/IA</li><li>Ferramentas gratuitas</li></ul><p>https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "ready"
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     },
     {
       "to": "jason.guidry@hcl.com",
       "name": "Hcl",
       "domain": "hcl.com",
-      "subject": "Parceria em Hcl — Zion Tech Group",
-      "body": "<p>Hcl,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Busco colaboração prática em serviços AI/IT gerenciados.</p><ul><li>Automação inteligente</li><li>FinOps cloud/IA</li><li>Ferramentas gratuitas</li></ul><p>https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "ready"
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     },
     {
       "to": "arulnathan.k@hcl.com",
       "name": "Hcl",
       "domain": "hcl.com",
-      "subject": "Parceria em Hcl — Zion Tech Group",
-      "body": "<p>Hcl,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Busco colaboração prática em serviços AI/IT gerenciados.</p><ul><li>Automação inteligente</li><li>FinOps cloud/IA</li><li>Ferramentas gratuitas</li></ul><p>https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "ready"
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     },
     {
       "to": "greivinantonio.garci@hcl.com",
       "name": "Hcl",
       "domain": "hcl.com",
-      "subject": "Parceria em Hcl — Zion Tech Group",
-      "body": "<p>Hcl,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Busco colaboração prática em serviços AI/IT gerenciados.</p><ul><li>Automação inteligente</li><li>FinOps cloud/IA</li><li>Ferramentas gratuitas</li></ul><p>https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "ready"
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     },
     {
       "to": "mohitg@hcl.com",
       "name": "Hcl",
       "domain": "hcl.com",
-      "subject": "Parceria em Hcl — Zion Tech Group",
-      "body": "<p>Hcl,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Busco colaboração prática em serviços AI/IT gerenciados.</p><ul><li>Automação inteligente</li><li>FinOps cloud/IA</li><li>Ferramentas gratuitas</li></ul><p>https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "ready"
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     },
     {
       "to": "hi@app.kilocode.ai",
       "name": "App",
       "domain": "app.kilocode.ai",
-      "subject": "Parceria em App — Zion Tech Group",
-      "body": "<p>App,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Busco colaboração prática em serviços AI/IT gerenciados.</p><ul><li>Automação inteligente</li><li>FinOps cloud/IA</li><li>Ferramentas gratuitas</li></ul><p>https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "ready"
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     },
     {
       "to": "whibbert@solyssey.com",
       "name": "Solyssey",
       "domain": "solyssey.com",
-      "subject": "Parceria em Solyssey — Zion Tech Group",
-      "body": "<p>Solyssey,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Busco colaboração prática em serviços AI/IT gerenciados.</p><ul><li>Automação inteligente</li><li>FinOps cloud/IA</li><li>Ferramentas gratuitas</li></ul><p>https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "ready"
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     },
     {
       "to": "mrodrigues@solyssey.com",
       "name": "Solyssey",
       "domain": "solyssey.com",
-      "subject": "Parceria em Solyssey — Zion Tech Group",
-      "body": "<p>Solyssey,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Busco colaboração prática em serviços AI/IT gerenciados.</p><ul><li>Automação inteligente</li><li>FinOps cloud/IA</li><li>Ferramentas gratuitas</li></ul><p>https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "ready"
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     },
     {
       "to": "rsingh@solyssey.com",
       "name": "Solyssey",
       "domain": "solyssey.com",
-      "subject": "Parceria em Solyssey — Zion Tech Group",
-      "body": "<p>Solyssey,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Busco colaboração prática em serviços AI/IT gerenciados.</p><ul><li>Automação inteligente</li><li>FinOps cloud/IA</li><li>Ferramentas gratuitas</li></ul><p>https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "ready"
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     },
     {
       "to": "balaji-kalimireddi@hcl.com",
       "name": "Hcl",
       "domain": "hcl.com",
-      "subject": "Parceria em Hcl — Zion Tech Group",
-      "body": "<p>Hcl,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Busco colaboração prática em serviços AI/IT gerenciados.</p><ul><li>Automação inteligente</li><li>FinOps cloud/IA</li><li>Ferramentas gratuitas</li></ul><p>https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "ready"
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     },
     {
       "to": "sugandha_s@hcl.com",
       "name": "Hcl",
       "domain": "hcl.com",
-      "subject": "Parceria em Hcl — Zion Tech Group",
-      "body": "<p>Hcl,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Busco colaboração prática em serviços AI/IT gerenciados.</p><ul><li>Automação inteligente</li><li>FinOps cloud/IA</li><li>Ferramentas gratuitas</li></ul><p>https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "ready"
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     },
     {
       "to": "suruchi.g@hcl.com",
       "name": "Hcl",
       "domain": "hcl.com",
-      "subject": "Parceria em Hcl — Zion Tech Group",
-      "body": "<p>Hcl,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Busco colaboração prática em serviços AI/IT gerenciados.</p><ul><li>Automação inteligente</li><li>FinOps cloud/IA</li><li>Ferramentas gratuitas</li></ul><p>https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "ready"
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     },
     {
       "to": "hugo.sousa@dekra.com",
       "name": "Dekra",
       "domain": "dekra.com",
-      "subject": "Parceria em Dekra — Zion Tech Group",
-      "body": "<p>Dekra,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Busco colaboração prática em serviços AI/IT gerenciados.</p><ul><li>Automação inteligente</li><li>FinOps cloud/IA</li><li>Ferramentas gratuitas</li></ul><p>https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "ready"
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     },
     {
       "to": "ingrid.ciarelli@dekra.com",
       "name": "Dekra",
       "domain": "dekra.com",
-      "subject": "Parceria em Dekra — Zion Tech Group",
-      "body": "<p>Dekra,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Busco colaboração prática em serviços AI/IT gerenciados.</p><ul><li>Automação inteligente</li><li>FinOps cloud/IA</li><li>Ferramentas gratuitas</li></ul><p>https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "ready"
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     },
     {
       "to": "infraestrutura@dekra.com",
       "name": "Dekra",
       "domain": "dekra.com",
-      "subject": "Parceria em Dekra — Zion Tech Group",
-      "body": "<p>Dekra,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Busco colaboração prática em serviços AI/IT gerenciados.</p><ul><li>Automação inteligente</li><li>FinOps cloud/IA</li><li>Ferramentas gratuitas</li></ul><p>https://ziontechgroup.com</p><p>Agende: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "ready"
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     }
   ]
 }
