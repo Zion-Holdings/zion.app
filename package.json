@@ -30,7 +30,8 @@
     "build-storybook": "storybook build",
     "build:win": "node scripts/windows-build-guard.cjs && next build",
     "deploy:verify": "node scripts/verify-deploy.cjs",
-    "rsc:guard": "echo 'rsc:guard ok'"
+    "rsc:guard": "node scripts/checks/rsc-guard-check.cjs",
+    "write:api:health": "node scripts/checks/write-api-health.cjs"
   },
   "dependencies": {
     "@sendgrid/mail": "^8.1.6",
