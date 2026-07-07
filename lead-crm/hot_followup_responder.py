@@ -10,6 +10,8 @@ import sys, json, base64, datetime, time, os, re, hashlib
 from pathlib import Path
 
 REPO = Path('/data/data/com.termux/files/home/zion-support.github.io')
+if not REPO.exists():
+    REPO = Path('/Users/miami2/zion.app')
 LEAD_DIR = REPO / 'lead-crm'
 SENT_CACHE = LEAD_DIR / 'pipeline_sent_cache.txt'
 PIPELINE_LOG = LEAD_DIR / 'pipeline_log.json'
