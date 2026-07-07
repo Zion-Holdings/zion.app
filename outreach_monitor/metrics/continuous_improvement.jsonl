@@ -46221,3 +46221,7 @@
 {"scan_id": "20260707-170951", "label": "hot-follow-up", "processed": 0, "drafts": 0, "skipped_ledger": 0, "errors": 0, "llm_tailored": 0, "ts": "2026-07-07T18:44:38.256826+00:00"}
 {"scan_id": "20260707-170712", "label": "hot-follow-up", "processed": 0, "drafts": 0, "skipped_ledger": 0, "errors": 0, "llm_tailored": 0, "ts": "2026-07-07T18:53:04.147476+00:00"}
 {"scan_id": "20260707-170215", "label": "hot-follow-up", "processed": 0, "drafts": 0, "skipped_ledger": 0, "errors": 0, "llm_tailored": 0, "ts": "2026-07-07T18:46:47.455554+00:00"}
+{"scan_id": "20260707-165757", "label": "hot-follow-up", "processed": 0, "drafts": 0, "skipped_ledger": 0, "errors": 0, "llm_tailored": 0, "ts": "2026-07-07T19:11:50.538827+00:00"}
+{"scan_id": "20260707-151425", "label": "hot-follow-up", "processed": 0, "drafts": 0, "skipped_ledger": 0, "errors": 0, "llm_tailored": 0, "ts": "2026-07-07T18:21:25.328505+00:00"}
+{"scan_id": "20260707-151720", "label": "hot-follow-up", "processed": 0, "drafts": 0, "skipped_ledger": 0, "errors": 0, "llm_tailored": 0, "ts": "2026-07-07T18:45:36.269568+00:00"}
+{"scan_id": "20260707-161629", "label": "hot-follow-up", "processed": 0, "drafts": 0, "skipped_ledger": 0, "errors": 0, "llm_tailored": 0, "ts": "2026-07-07T19:06:00.878346+00:00"}

@@ -17,26 +17,7 @@ jobs:
       - name: 'build digest payload'
         run: |
           set -euo pipefail
-          node - <<'NODE'
-const fs = require('fs');
-const healthPath = 'public/api/automation-health.json';
-const historyPath = 'public/api/automation-health-history.json';
-const outputPath = 'digest.json';
-let text = '';
-try {
-  const health = JSON.parse(fs.readFileSync(healthPath, 'utf8'));
-  const history = JSON.parse(fs.readFileSync(historyPath, 'utf8'));
-  const currentScore = health.sloScore ?? 'n/a';
-  const prev = history.length > 1 ? history[history.length - 2] : null;
-  const prevScore = prev?.sloScore ?? 'n/a';
-  text += `Zion Daily Digest\nSLO Score: ${currentScore}\nPrevious: ${prevScore}\nDeploy Status: ${health.deployStatus ?? 'unknown'}\nOpen Incident Fingerprints: ${health.openFingerprintIssues ?? 'n/a'}`;
-} catch (e) {
-  text = 'Zion Daily Digest\nCould not parse automation health data: ' + e.message;
-}
-const payload = { text };
-fs.writeFileSync(outputPath, JSON.stringify(payload));
-console.log('digest', text);
-NODE
+          node -e "const fs=require('fs');const hp='public/api/automation-health.json',hisp='public/api/automation-health-history.json',out='digest.json';let text='';try{const health=JSON.parse(fs.readFileSync(hp,'utf8')),history=JSON.parse(fs.readFileSync(hisp,'utf8')),cur=health.sloScore??'n/a',prev=history.length>1?history[history.length-2]:null,ps=prev?.sloScore??'n/a';text=`Zion Daily Digest\\nSLO Score: ${cur}\\nPrevious: ${ps}\\nDeploy Status: ${health.deployStatus??'unknown'}\\nOpen Incident Fingerprints: ${health.openFingerprintIssues??'n/a'}`;}catch(e){text='Zion Daily Digest\\nCould not parse automation health data: '+e.message;}fs.writeFileSync(out,JSON.stringify({text}));console.log('digest',text);"
 
       - name: 'send Telegram digest'
         env:
@@ -47,5 +28,4 @@ NODE
           PAYLOAD=$(cat digest.json)
           curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             -H 'Content-Type: application/json' \
-            -d "${PAYLOAD}" \
-            >/dev/null
+            -d "$PAYLOAD"

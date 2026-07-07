@@ -13,7 +13,6 @@ jobs:
     defaults:
       run:
         shell: bash
-
     steps:
       - name: 'checkout'
         uses: actions/checkout@v4
@@ -48,27 +47,4 @@ jobs:
             echo 'lighthouse report missing' >&2
             exit 1
           fi
-          node - <<'NODE'
-const fs = require('fs');
-const report = JSON.parse(fs.readFileSync('./lighthouse-report.json', 'utf8'));
-const scores = report.categories || {};
-const budget = {
-  performance: 0.9,
-  accessibility: 0.9,
-  bestPractices: 0.9,
-  seo: 0.9,
-};
-const failures = [];
-for (const [key, min] of Object.entries(budget)) {
-  const score = scores[key]?.score;
-  if (score === null || score === undefined || score < min) {
-    failures.push(`${key}: ${score} < ${min}`);
-  }
-}
-if (failures.length) {
-  console.log('Lighthouse budget failures:\n' + failures.join('\n'));
-  process.exit(1);
-} else {
-  console.log('Lighthouse budget passed');
-}
-NODE
+          node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('./lighthouse-report.json','utf8'));const s=r.categories||{};const b={performance:.9,accessibility:.9,bestPractices:.9,seo:.9};const fails=[];for(const[k,m] of Object.entries(b)){const v=s[k]?.score;if(v==null||v<m)fails.push(`${k}: ${v} < ${m}`);}if(fails.length){console.log('Lighthouse budget failures:\\n'+fails.join('\\n'));process.exit(1);}else{console.log('Lighthouse budget passed');}"
