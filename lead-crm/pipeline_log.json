@@ -3497,5 +3497,21 @@
     "to": "nrozengarten@nebius.com",
     "provider": "direct-send",
     "notes": "Replied to ISV & VAR Partner Manager at Nebius"
+  },
+  {
+    "ts": "2026-07-07T01:05:04.910220+00:00",
+    "event": "web_prospecting",
+    "queries_run": 10,
+    "contacts_found": 0,
+    "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-07T01:05:14.857615+00:00",
+    "event": "nebius_call_scheduling_reply",
+    "message_id": "19f3a1a552cb9973",
+    "thread_id": "19f3843fbc14999e",
+    "to": "nrozengarten@nebius.com",
+    "provider": "direct-send",
+    "notes": "Proposed 3 scheduling slots for July 10 before 11am EST"
   }
 ]
