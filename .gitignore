@@ -48,3 +48,4 @@ data/response_scores.jsonl
 data/v26_run_log.jsonl
 data/v26_stats.jsonl
 __pycache__/
+lead-crm/continuous_outreach_pipeline.lock
