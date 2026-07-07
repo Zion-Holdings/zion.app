@@ -80,7 +80,7 @@ async function run() {
     let m;
     while ((m = hrefRegex.exec(content)) !== null) {
       const link = m[1];
-      if (!link || link.startsWith('javascript:') || link.startsWith('mailto:') || link.startsWith('tel:') || link.startsWith('#')) continue;
+      if (!link || link.startsWith('javascript:') || link.startsWith('mailto:') || link.startsWith('tel:') || link.startsWith('#') || link.startsWith('/_next/') || link.startsWith('_next/')) continue;
       const target = toTarget(link);
       if (!target) continue;
       queue.push({ file: path.relative(item.baseDir, item.file), link, target });
