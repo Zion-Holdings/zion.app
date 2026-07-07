@@ -1,24 +1,24 @@
 {
   "schema": "outreach-history.v1",
-  "latestRun": "2026-07-07T08:24:01Z",
-  "latestComplete": "2026-07-07T08:24:01Z",
+  "latestRun": "2026-07-07T13:24:01.055494Z",
+  "latestComplete": "2026-07-07T13:17:53.188823Z",
   "summary": {
     "totalOutreach": 57,
     "sendsAttempted": 0,
     "duplicatesSuppressed": 0,
-    "authFailures": 15,
-    "latestComplete": "2026-07-07T08:24:01Z",
+    "authFailures": 11,
+    "latestComplete": "2026-07-07T13:17:53.188823Z",
     "hotFollowups": 0,
     "suppressionWindowDays": 7
   },
   "recoveryRequired": "gog auth add kleber@ziontechgroup.com --services gmail",
   "batch-run": {
-    "timestamp": "2026-07-07T10:55:41.850Z",
+    "timestamp": "2026-07-07T13:24:01.055494Z",
     "status": "COMPLETE",
     "scanned": 0,
     "potentialClients": 0,
     "emailsSentCount": 0,
     "hotFollowups": 0
   },
-  "batchRunAt": "2026-07-07T08:24:01Z"
+  "batchRunAt": "2026-07-07T13:24:01.055494Z"
 }

@@ -1,19 +1,19 @@
-"""Site integrity check for ziontechgroup.com
+"""Site integrity check for https://ziontechgroup.com
 
-Crawls internal links, reports total crawled, HTTP 200 count,
-broken count, first 10 broken URLs with classification.
+Crawls internal links and reports total crawled, HTTP 200 count,
+broken count, and first 10 broken URLs with classification.
 """
-
 from urllib.parse import urljoin, urlparse
 import requests
 from bs4 import BeautifulSoup
+
 
 TARGET = "https://ziontechgroup.com"
 MAX_PAGES = 200
 TIMEOUT = 15
 
 visited = set()
-broken = []  # list of dicts with url, status, classification, location
+broken = []  # list of dicts with url, code, classification, found_on
 session = requests.Session()
 session.headers.update({"User-Agent": "Mozilla/5.0 (compatible; site-integrity-bot/1.0)"})
 
@@ -25,17 +25,14 @@ def same_domain(base, candidate):
 
 
 def classify_issue(url, status_or_exc, from_page=None):
-    if isinstance(status_or_exc, str) and status_or_exc.lower() == "timeout":
+    s = status_or_exc
+    if isinstance(s, str) and s.lower() == "timeout":
         return "timeout / no response"
-    if isinstance(status_or_exc, str) and status_or_exc.lower() == "connection error":
+    if isinstance(s, str) and s.lower() == "connection error":
         return "connection error"
-    if isinstance(status_or_exc, str) and status_or_exc.lower() == "ssl error":
+    if isinstance(s, str) and s.lower() == "ssl error":
         return "TLS/SSL error"
-    code = None
-    if isinstance(status_or_exc, int):
-        code = status_or_exc
-    elif isinstance(status_or_exc, requests.Response):
-        code = status_or_exc.status_code
+    code = s.status_code if hasattr(s, "status_code") else s
     if code is None:
         return "other error"
     if 300 <= code < 400:
@@ -44,9 +41,9 @@ def classify_issue(url, status_or_exc, from_page=None):
         return "missing page"
     if code == 403:
         return "forbidden / access error"
-    if code >= 400 and code < 500:
+    if 400 <= code < 500:
         return "client error"
-    if code >= 500:
+    if 500 <= code < 600:
         return "server error"
     return "other error"
 
@@ -64,8 +61,7 @@ def pull_links(html, base):
             continue
         if not same_domain(TARGET, joined):
             continue
-        clean = parsed._replace(fragment="").geturl()
-        links.add(clean)
+        links.add(parsed._replace(fragment="").geturl())
     return links
 
 
@@ -85,8 +81,8 @@ def crawl():
             resp = session.get(url, allow_redirects=False, timeout=TIMEOUT)
             code = resp.status_code
             classification = classify_issue(url, code)
+            extra = None
             if code != 200:
-                extra = None
                 if 300 <= code < 400:
                     extra = "redirects to " + resp.headers.get("Location", "")
                 broken.append({
@@ -130,23 +126,20 @@ def crawl():
 
 
 def main():
-    total, ok_count = crawl()
+    total, ok = crawl()
     broken_count = len(broken)
-    lines = []
-    lines.append(f"BASE URL: {TARGET}")
-    lines.append(f"TOTAL CRAWLED: {total}")
-    lines.append(f"HTTP 200 COUNT: {ok_count}")
-    lines.append(f"BROKEN COUNT: {broken_count}")
+    print(f"BASE URL: {TARGET}")
+    print(f"TOTAL CRAWLED: {total}")
+    print(f"HTTP 200 COUNT: {ok}")
+    print(f"BROKEN COUNT: {broken_count}")
     if broken_count:
-        lines.append("FIRST 10 BROKEN URLs:")
+        print("FIRST 10 BROKEN URLs:")
         for entry in broken[:10]:
-            c = entry["classification"]
-            code = entry["code"] if entry["code"] else "n/a"
-            loc = f" [{entry['found_on']}]" if entry.get("found_on") else ""
-            lines.append(f"  [{code}] {entry['url']} — {c}{loc}")
+            code_display = entry["code"] if entry["code"] is not None else "n/a"
+            note = f" [{entry['found_on']}]" if entry.get("found_on") else ""
+            print(f"  [{code_display}] {entry['url']} — {entry['classification']}{note}")
     else:
-        lines.append("BROKEN URLs: none")
-    print("\n".join(lines))
+        print("BROKEN URLs: none")
 
 
 if __name__ == "__main__":

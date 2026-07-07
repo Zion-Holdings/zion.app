@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Breadcrumb } from '@/components/Breadcrumb';
+import Breadcrumb from '@/components/Breadcrumb';
 
 const posts = [
   'ai-agentic-workflow-automation-reduce-manual-work-hours',

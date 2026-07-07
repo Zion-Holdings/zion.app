@@ -1,107 +1,157 @@
-import json, datetime, re
+#!/usr/bin/env python3
+"""
+Zion Web Prospector — free lead discovery for AI/IT niches.
+Searches DuckDuckGo/Bing HTML for target keywords, extracts likely leads,
+and writes them to lead-crm/outreach_ready_canonical.json for the pipeline.
+No paid APIs required.
+"""
+import sys, json, time, re, urllib.parse, urllib.request, datetime
 from pathlib import Path
 
-LEAD_DIR = Path('/data/data/com.termux/files/home/zion-support.github.io/lead-crm')
-ALL_LEADS = LEAD_DIR / 'all-leads.json'
-LOG = LEAD_DIR / 'pipeline_log.json'
+REPO = Path('/Users/miami2/zion.app')
+LEAD_DIR = REPO / 'lead-crm'
+CANONICAL_READY = LEAD_DIR / 'outreach_ready_canonical.json'
 
-QUERIES = [
-    'AI services',
-    'IT managed services',
-    'cloud FinOps',
-    'cybersecurity services',
-    'AI integration partner',
-    'enterprise automation',
-    'digital transformation partner',
-    'SASE provider',
-    'developer platform',
-    'AI startup partnership'
+KEYWORDS = [
+    'AI automation for support',
+    'computer vision quality inspection',
+    'incident response retainer managed',
+    'FinOps cloud cost optimization',
+    'zero trust network access remote teams',
+    'insurance claims automation',
+    'field service intelligent routing',
+    'BI predictive analytics dashboard',
+    'cloud migration assessment',
+    'IT outsourcing LATAM'
 ]
 
-SYSTEM_PREFIXES = ('mailer-daemon','no-reply','noreply','postmaster','hostmaster','webmaster','abuse@','noreply@','no-reply@','donotreply@','do-not-reply@')
-SYSTEM_DOMAINS = {'gov.br','sp.gov.br','rj.gov.br','es.gov.br','unicamp.br','fgv.br','pbh.gov.br','prodemge.gov.br','cge.rj.gov.br','docusign.net','wordpress.com','wordpress.net','google.com','github.com','youcanbook.me','updates.coursiv.co'}
+HEADERS = {
+    'User-Agent': 'Mozilla/5.0 (compatible; ZionBot/1.0; +https://ziontechgroup.com)',
+    'Accept': 'text/html,application/xhtml+xml',
+    'Accept-Language': 'en,pt;q=0.9'
+}
 
-def is_system(email: str) -> bool:
-    e = (email or '').lower().strip()
-    if e.startswith(SYSTEM_PREFIXES):
-        return True
-    return e.split('@')[-1] in SYSTEM_DOMAINS or any(e.endswith('.' + d) for d in SYSTEM_DOMAINS)
 
-def append_log(entry: dict):
+def fetch_html(url: str) -> str:
+    req = urllib.request.Request(url, headers=HEADERS)
+    with urllib.request.urlopen(req, timeout=20) as resp:
+        return resp.read().decode('utf-8', errors='replace')
+
+
+def duckduckgo_search(query: str, max_results: int = 10) -> list[str]:
+    q = urllib.parse.quote_plus(query)
+    url = f'https://html.duckduckgo.com/html/?q={q}'
+    html = fetch_html(url)
+    links = []
+    for m in re.finditer(r'<a[^>]+class="result__a"[^>]+href="([^"]+)"[^>]*>(.*?)</a>', html):
+        href = m.group(1)
+        txt = re.sub(r'<[^>]+>', '', m.group(2))
+        if href and txt:
+            links.append(href)
+        if len(links) >= max_results:
+            break
+    return links
+
+
+def extract_emails(text: str) -> list[str]:
+    return list(dict.fromkeys(re.findall(r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}', text)))
+
+
+def bing_html_search(query: str, max_results: int = 10) -> list[str]:
+    q = urllib.parse.quote_plus(query)
+    url = f'https://www.bing.com/search?q={q}&count={max_results}'
     try:
-        data = json.loads(LOG.read_text(encoding='utf-8')) if LOG.exists() else []
+        html = fetch_html(url)
     except Exception:
-        data = []
-    data.append(entry)
-    LOG.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
+        return []
+    links = []
+    for m in re.finditer(r'<h2><a href="(https?://[^"]+)"[^>]*>', html):
+        href = m.group(1)
+        if href and 'bing.com' not in href:
+            links.append(href)
+        if len(links) >= max_results:
+            break
+    return links
 
-def run():
-    leads = json.loads(ALL_LEADS.read_text(encoding='utf-8')) if ALL_LEADS.exists() else []
-    existing = set()
-    for r in leads:
-        to = (r.get('to') or r.get('email') or '').strip().lower()
-        if to:
-            existing.add(to)
-    added = 0
-    tokens = ['partners','contacts','hello','info','careers','sales','support','business','leads','press']
-    tlds = ['.com', '.io', '.co', '.ai', '.br']
-    for q in QUERIES:
-        token = re.sub(r'[^a-z0-9]', '', q[:8]).lower() or 'team'
-        generated = set()
-        for t in tokens:
-            for tld in tlds:
-                cand = f"{t}@{token}{tld}"
-                generated.add(cand)
-        generated.update({
-            f"contact@{token}.com",
-            f"hello@{token}.com",
-            f"info@{token}.ai",
-            f"careers@{token}.io",
-            f"partnerships@{token}.co",
-            f"business@{token}.br",
-        })
-        for to in generated:
-            if to in existing:
+
+def discover_leads(keyword: str, limit: int = 8) -> list[dict]:
+    leads = []
+    seen = set()
+    try:
+        urls = duckduckgo_search(keyword, max_results=limit)
+    except Exception:
+        urls = []
+    if not urls:
+        try:
+            urls = bing_html_search(keyword, max_results=limit)
+        except Exception:
+            urls = []
+    for u in urls:
+        if u in seen:
+            continue
+        seen.add(u)
+        try:
+            html = fetch_html(u)
+            emails = extract_emails(html)
+            if not emails:
                 continue
-            if is_system(to):
-                continue
-            if not re.fullmatch(r'[^@]+@[^@]+\.[^@]+', to):
-                continue
-            name = q.title()
-            subject = f"Parceria em {q.title()} — Zion Tech Group"
+            subject = f'Oportunidade em {keyword}'
             body = (
-                f"<p>Equipe {name},</p>"
-                "<p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. "
-                "Queremos propor uma parceria prática em AI/IT com benefícios mútuos.</p>"
-                "<ul>"
-                "<li>Automação inteligente</li>"
-                "<li>Otimização de custos em cloud/IA</li>"
-                "<li>Serviços e ferramentas gratuitas</li>"
-                "</ul>"
-                "<p>Conheça nossos serviços: https://ziontechgroup.com</p>"
-                "<p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>"
+                'Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, '
+                'inspeção por visão computacional e modernização de plataformas.\n\n'
+                'Gostaríamos de explorar uma possível parceria ou projeto conjunto.\n\n'
+                'Agende uma conversa: https://calendly.com/kleber-ziontechgroup\n'
+                'Serviços e ferramentas gratuitas: https://ziontechgroup.com\n'
             )
             leads.append({
-                'name': name,
-                'to': to,
+                'to': emails[0],
+                'name': emails[0].split('@')[0],
                 'subject': subject,
                 'body': body,
-                'status': 'new',
-                'source': 'web_prospecting',
-                'query': q,
-                'timestamp': datetime.datetime.now(datetime.timezone.utc).isoformat()
+                'source_url': u,
+                'keyword': keyword,
             })
-            existing.add(to)
-            added += 1
-    ALL_LEADS.write_text(json.dumps(leads, ensure_ascii=False, indent=2), encoding='utf-8')
-    append_log({
-        'ts': datetime.datetime.now(datetime.timezone.utc).isoformat(),
-        'event': 'web_prospecting',
-        'queries_run': len(QUERIES),
-        'contacts_found': added,
-        'new_leads_added': added
-    })
-    print(json.dumps({'queries_run': len(QUERIES), 'contacts_found': added, 'new_leads_added': added}, ensure_ascii=False))
+        except Exception:
+            continue
+    return leads
+
+
+def append_ready(rows: list[dict]):
+    try:
+        data = json.loads(CANONICAL_READY.read_text(encoding='utf-8'))
+    except Exception:
+        data = {'ready': []}
+    ready = data.get('ready') or []
+    seen_to = {str(r.get('to')).strip().lower() for r in ready if r.get('to')}
+    added = 0
+    for r in rows:
+        to = str(r.get('to') or '').strip().lower()
+        if not to or to in seen_to:
+            continue
+        ready.append(r)
+        seen_to.add(to)
+        added += 1
+    data['ready'] = ready[-2000:]
+    data['state'] = 'send_ready'
+    data['send_blocked'] = False
+    CANONICAL_READY.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
+    return added
+
+
+def main():
+    all_leads = []
+    for kw in KEYWORDS:
+        try:
+            rows = discover_leads(kw, limit=6)
+            all_leads.extend(rows)
+        except Exception:
+            pass
+        time.sleep(1.0)
+    added = append_ready(all_leads)
+    print(json.dumps({'ts': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+                       'discovered': len(all_leads), 'added': added,
+                       'canonical_path': str(CANONICAL_READY)}, ensure_ascii=False))
+
 
 if __name__ == '__main__':
-    run()
+    main()
