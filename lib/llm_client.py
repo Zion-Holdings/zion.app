@@ -490,7 +490,7 @@ def _call_nous(messages, temperature):
     req = urllib.request.Request(
         NOUS_BASE_URL.rstrip("/") + "/chat/completions",
         data=json.dumps(body).encode(),
-        headers={"Authorization": f"Bearer {NOUS_TOKEN}", "Content-Type": "application/json"},
+        headers={"Authorization": f"Bearer {token}", "Content-Type": "application/json"},
         method="POST",
     )
     with urllib.request.urlopen(req, timeout=20) as resp:

@@ -8,19 +8,22 @@ const CONCURRENCY = 6;
 const DELAY_MS = 120;
 
 const docsDir = path.join(__dirname, '..', 'docs');
+const rootDir = path.join(__dirname, '..');
 const reportPath = path.join(__dirname, 'reports', 'live-link-audit.json');
 
 const htmlFiles = [];
-function walk(dir) {
+function walk(dir, baseDir) {
   try {
     for (const item of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (item.name.startsWith('.') || item.name === 'node_modules' || item.name === 'out' || item.name === '_next') continue;
       const full = path.join(dir, item.name);
-      if (item.isDirectory()) walk(full);
-      else if (item.name.endsWith('.html')) htmlFiles.push(full);
+      if (item.isDirectory()) walk(full, baseDir);
+      else if (item.name.endsWith('.html')) htmlFiles.push({ file: full, baseDir });
     }
   } catch (e) {}
 }
-walk(docsDir);
+walk(docsDir, docsDir);
+walk(rootDir, rootDir);
 
 const hrefRegex = /href=["']([^"']+)["']/gi;
 const broken = [];
@@ -28,7 +31,7 @@ const checked = new Map();
 const queue = [];
 let active = 0;
 
-function toTarget(link, fileDir) {
+function toTarget(link) {
   try {
     const resolved = new URL(link, 'https://ziontechgroup.com/');
     if (resolved.host !== new URL(BASE).host) return null;
@@ -72,16 +75,15 @@ function processQueue() {
 }
 
 async function run() {
-  const start = Date.now();
-  for (const file of htmlFiles) {
-    const content = fs.readFileSync(file, 'utf8');
+  for (const item of htmlFiles) {
+    const content = fs.readFileSync(item.file, 'utf8');
     let m;
     while ((m = hrefRegex.exec(content)) !== null) {
       const link = m[1];
-      if (!link || link.startsWith('javascript:') || link.startsWith('mailto:') || link.startsWith('tel:') || link.startsWith('#')) continue;
+      if (!link || link.startsWith('javascript:') || link.startsWith('mailto:') || link.startsWith('tel:') || link.startsWith('#') || link.startsWith('/_next/') || link.startsWith('_next/')) continue;
       const target = toTarget(link);
       if (!target) continue;
-      queue.push({ file: path.relative(docsDir, file), link, target });
+      queue.push({ file: path.relative(item.baseDir, item.file), link, target });
     }
   }
   processQueue();
@@ -90,8 +92,9 @@ async function run() {
       if (active === 0 && queue.length === 0) { clearInterval(interval); resolve(); }
     }, 50);
   });
+  const report = { generatedAt: new Date().toISOString(), base: BASE, totalFiles: htmlFiles.length, totalChecked: checked.size, brokenCount: broken.length, broken: broken.slice(0, 200) };
   fs.mkdirSync(path.dirname(reportPath), { recursive: true });
-  fs.writeFileSync(reportPath, JSON.stringify({ generatedAt: new Date().toISOString(), base: BASE, totalFiles: htmlFiles.length, totalChecked: checked.size, brokenCount: broken.length, broken: broken.slice(0, 200) }, null, 2));
+  fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
   console.log(JSON.stringify({ totalFiles: htmlFiles.length, totalChecked: checked.size, brokenCount: broken.length, reportPath }, null, 2));
   if (broken.length) console.log('First broken:', broken[0]);
 }

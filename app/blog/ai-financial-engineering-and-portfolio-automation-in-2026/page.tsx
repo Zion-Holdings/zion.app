@@ -1,21 +1,30 @@
-
+import Link from 'next/link';
 export const metadata = {
-  title: "AI Financial Engineering and Portfolio Automation in 2026 | Zion Tech Group",
-  description: "How AI supports financial engineering and portfolio automation in practice.",
-  alternates: { canonical: "/ai-financial-engineering-and-portfolio-automation-in-2026/" },
+  title: 'AI Financial Engineering and Portfolio Automation in 2026',
+  description: 'Practical financial engineering and portfolio automation with AI assistants.',
 };
 
 export default function Page() {
-  const content = `<p>How AI supports financial engineering and portfolio automation in practice.</p>
-<p>Explore our <a href="/ai-services">AI services</a> and <a href="/ai-services/">free tools</a>.</p>`;
   return (
-    <article className="container-page py-20">
-      <h1 className="text-4xl font-bold mb-4 text-white">AI Financial Engineering and Portfolio Automation in 2026</h1>
-      <div className="text-sm text-slate-500 mb-8">Published: 2026-07-07</div>
-      <div
-        className="prose prose-invert max-w-none text-slate-300 leading-relaxed"
-        dangerouslySetInnerHTML={{ __html: content }}
-      />
-    </article>
+    <main className="min-h-screen bg-slate-950 py-20">
+      <div className="container-page">
+        <nav className="mb-6 text-sm text-slate-400">
+          <Link href="/" className="hover:text-purple-400 transition">Home</Link>
+          <span className="mx-2">/</span>
+          <Link href="/blog/" className="hover:text-purple-400 transition">Blog</Link>
+          <span className="mx-2">/</span>
+          <span className="text-slate-300">AI Financial Engineering and Portfolio Automation</span>
+        </nav>
+        <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">AI Financial Engineering and Portfolio Automation in 2026</h1>
+        <p className="text-slate-300 leading-relaxed mb-8">Workflow automation, anomaly detection, and governance for financial data.</p>
+        <div className="glass-card prose prose-invert max-w-none">
+          <p>Practical financial engineering and portfolio automation models using AI assistants.</p><ul><li>Workflow automation and anomaly detection</li><li>Reporting and governance for financial data</li><li>Free tools listed at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>Explore <a href="/services">AI services</a>, then <a href="/contact">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
+        </div>
+        <div className="mt-10 flex flex-col sm:flex-row gap-3">
+          <Link href="/services/" className="btn-primary">Explore AI services</Link>
+          <Link href="/contact/" className="btn-secondary">Contact us</Link>
+        </div>
+      </div>
+    </main>
   );
 }

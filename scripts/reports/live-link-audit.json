@@ -1,8 +1,1209 @@
 {
-  "generatedAt": "2026-07-07T10:03:44.887Z",
+  "generatedAt": "2026-07-07T17:00:27.147Z",
   "base": "https://ziontechgroup.com",
-  "totalFiles": 595,
-  "totalChecked": 0,
-  "brokenCount": 0,
-  "broken": []
+  "totalFiles": 1216,
+  "totalChecked": 482,
+  "brokenCount": 48587,
+  "broken": [
+    {
+      "file": "404/index.html",
+      "link": "/_next/static/css/398e9a4507626d41.css",
+      "target": "https://ziontechgroup.com/_next/static/css/398e9a4507626d41.css",
+      "status": 404
+    },
+    {
+      "file": "404/index.html",
+      "link": "/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "target": "https://ziontechgroup.com/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "status": 404
+    },
+    {
+      "file": "404/index.html",
+      "link": "/_next/static/css/7e7d96b1e6991756.css",
+      "target": "https://ziontechgroup.com/_next/static/css/7e7d96b1e6991756.css",
+      "status": 404
+    },
+    {
+      "file": "404/index.html",
+      "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+      "target": "https://ziontechgroup.com/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+      "status": 404
+    },
+    {
+      "file": "404/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 404
+    },
+    {
+      "file": "404/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 404
+    },
+    {
+      "file": "404/index.html",
+      "link": "/ai-services/",
+      "target": "https://ziontechgroup.com/ai-services/index.html",
+      "status": 404
+    },
+    {
+      "file": "404/index.html",
+      "link": "/careers/",
+      "target": "https://ziontechgroup.com/careers/index.html",
+      "status": 404
+    },
+    {
+      "file": "404/index.html",
+      "link": "/partners/",
+      "target": "https://ziontechgroup.com/partners/index.html",
+      "status": 404
+    },
+    {
+      "file": "404/index.html",
+      "link": "/portal/",
+      "target": "https://ziontechgroup.com/portal/index.html",
+      "status": 404
+    },
+    {
+      "file": "404/index.html",
+      "link": "/status/",
+      "target": "https://ziontechgroup.com/status/index.html",
+      "status": 404
+    },
+    {
+      "file": "404/index.html",
+      "link": "/press/",
+      "target": "https://ziontechgroup.com/press/index.html",
+      "status": 404
+    },
+    {
+      "file": "404/index.html",
+      "link": "/faq/",
+      "target": "https://ziontechgroup.com/faq/index.html",
+      "status": 404
+    },
+    {
+      "file": "404/index.html",
+      "link": "/privacy/",
+      "target": "https://ziontechgroup.com/privacy/index.html",
+      "status": 404
+    },
+    {
+      "file": "404.html",
+      "link": "/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "target": "https://ziontechgroup.com/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "status": 404
+    },
+    {
+      "file": "404.html",
+      "link": "/_next/static/css/398e9a4507626d41.css",
+      "target": "https://ziontechgroup.com/_next/static/css/398e9a4507626d41.css",
+      "status": 404
+    },
+    {
+      "file": "404.html",
+      "link": "/_next/static/css/7e7d96b1e6991756.css",
+      "target": "https://ziontechgroup.com/_next/static/css/7e7d96b1e6991756.css",
+      "status": 404
+    },
+    {
+      "file": "404.html",
+      "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+      "target": "https://ziontechgroup.com/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+      "status": 404
+    },
+    {
+      "file": "404.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 404
+    },
+    {
+      "file": "404.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 404
+    },
+    {
+      "file": "404.html",
+      "link": "/ai-services/",
+      "target": "https://ziontechgroup.com/ai-services/index.html",
+      "status": 404
+    },
+    {
+      "file": "404.html",
+      "link": "/careers/",
+      "target": "https://ziontechgroup.com/careers/index.html",
+      "status": 404
+    },
+    {
+      "file": "404.html",
+      "link": "/partners/",
+      "target": "https://ziontechgroup.com/partners/index.html",
+      "status": 404
+    },
+    {
+      "file": "404.html",
+      "link": "/portal/",
+      "target": "https://ziontechgroup.com/portal/index.html",
+      "status": 404
+    },
+    {
+      "file": "404.html",
+      "link": "/press/",
+      "target": "https://ziontechgroup.com/press/index.html",
+      "status": 404
+    },
+    {
+      "file": "404.html",
+      "link": "/status/",
+      "target": "https://ziontechgroup.com/status/index.html",
+      "status": 404
+    },
+    {
+      "file": "404.html",
+      "link": "/faq/",
+      "target": "https://ziontechgroup.com/faq/index.html",
+      "status": 404
+    },
+    {
+      "file": "404/index.html",
+      "link": "/case-studies/",
+      "target": "https://ziontechgroup.com/case-studies/index.html",
+      "status": 404
+    },
+    {
+      "file": "404.html",
+      "link": "/privacy/",
+      "target": "https://ziontechgroup.com/privacy/index.html",
+      "status": 404
+    },
+    {
+      "file": "404.html",
+      "link": "/case-studies/",
+      "target": "https://ziontechgroup.com/case-studies/index.html",
+      "status": 404
+    },
+    {
+      "file": "404/index.html",
+      "link": "/cookies/",
+      "target": "https://ziontechgroup.com/cookies/index.html",
+      "status": 404
+    },
+    {
+      "file": "404.html",
+      "link": "/terms/",
+      "target": "https://ziontechgroup.com/terms/index.html",
+      "status": 404
+    },
+    {
+      "file": "404/index.html",
+      "link": "/terms/",
+      "target": "https://ziontechgroup.com/terms/index.html",
+      "status": 404
+    },
+    {
+      "file": "5g-solutions/index.html",
+      "link": "/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "target": "https://ziontechgroup.com/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "status": 404
+    },
+    {
+      "file": "5g-solutions/index.html",
+      "link": "/_next/static/css/398e9a4507626d41.css",
+      "target": "https://ziontechgroup.com/_next/static/css/398e9a4507626d41.css",
+      "status": 404
+    },
+    {
+      "file": "5g-solutions/index.html",
+      "link": "/_next/static/css/7e7d96b1e6991756.css",
+      "target": "https://ziontechgroup.com/_next/static/css/7e7d96b1e6991756.css",
+      "status": 404
+    },
+    {
+      "file": "5g-solutions/index.html",
+      "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+      "target": "https://ziontechgroup.com/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+      "status": 404
+    },
+    {
+      "file": "404/index.html",
+      "link": "/configurator/",
+      "target": "https://ziontechgroup.com/configurator/index.html",
+      "status": 404
+    },
+    {
+      "file": "5g-solutions/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 404
+    },
+    {
+      "file": "5g-solutions/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 404
+    },
+    {
+      "file": "5g-solutions/index.html",
+      "link": "/ai-services/",
+      "target": "https://ziontechgroup.com/ai-services/index.html",
+      "status": 404
+    },
+    {
+      "file": "5g-solutions/index.html",
+      "link": "/careers/",
+      "target": "https://ziontechgroup.com/careers/index.html",
+      "status": 404
+    },
+    {
+      "file": "5g-solutions/index.html",
+      "link": "/partners/",
+      "target": "https://ziontechgroup.com/partners/index.html",
+      "status": 404
+    },
+    {
+      "file": "5g-solutions/index.html",
+      "link": "/portal/",
+      "target": "https://ziontechgroup.com/portal/index.html",
+      "status": 404
+    },
+    {
+      "file": "5g-solutions/index.html",
+      "link": "/press/",
+      "target": "https://ziontechgroup.com/press/index.html",
+      "status": 404
+    },
+    {
+      "file": "5g-solutions/index.html",
+      "link": "/status/",
+      "target": "https://ziontechgroup.com/status/index.html",
+      "status": 404
+    },
+    {
+      "file": "5g-solutions/index.html",
+      "link": "/faq/",
+      "target": "https://ziontechgroup.com/faq/index.html",
+      "status": 404
+    },
+    {
+      "file": "5g-solutions/index.html",
+      "link": "/case-studies/",
+      "target": "https://ziontechgroup.com/case-studies/index.html",
+      "status": 404
+    },
+    {
+      "file": "5g-solutions/index.html",
+      "link": "/privacy/",
+      "target": "https://ziontechgroup.com/privacy/index.html",
+      "status": 404
+    },
+    {
+      "file": "5g-solutions/index.html",
+      "link": "/terms/",
+      "target": "https://ziontechgroup.com/terms/index.html",
+      "status": 404
+    },
+    {
+      "file": "5g-solutions/index.html",
+      "link": "/cookies/",
+      "target": "https://ziontechgroup.com/cookies/index.html",
+      "status": 404
+    },
+    {
+      "file": "404/index.html",
+      "link": "/sla/",
+      "target": "https://ziontechgroup.com/sla/index.html",
+      "status": 404
+    },
+    {
+      "file": "5g-solutions/index.html",
+      "link": "/configurator/",
+      "target": "https://ziontechgroup.com/configurator/index.html",
+      "status": 404
+    },
+    {
+      "file": "5g-solutions/index.html",
+      "link": "/configurator/",
+      "target": "https://ziontechgroup.com/configurator/index.html",
+      "status": 404
+    },
+    {
+      "file": "5g-solutions/index.html",
+      "link": "/configurator/",
+      "target": "https://ziontechgroup.com/configurator/index.html",
+      "status": 404
+    },
+    {
+      "file": "_not-found/index.html",
+      "link": "/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "target": "https://ziontechgroup.com/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "status": 404
+    },
+    {
+      "file": "_not-found/index.html",
+      "link": "/_next/static/css/398e9a4507626d41.css",
+      "target": "https://ziontechgroup.com/_next/static/css/398e9a4507626d41.css",
+      "status": 404
+    },
+    {
+      "file": "_not-found/index.html",
+      "link": "/_next/static/css/7e7d96b1e6991756.css",
+      "target": "https://ziontechgroup.com/_next/static/css/7e7d96b1e6991756.css",
+      "status": 404
+    },
+    {
+      "file": "_not-found/index.html",
+      "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+      "target": "https://ziontechgroup.com/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+      "status": 404
+    },
+    {
+      "file": "_not-found/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 404
+    },
+    {
+      "file": "_not-found/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 404
+    },
+    {
+      "file": "_not-found/index.html",
+      "link": "/ai-services/",
+      "target": "https://ziontechgroup.com/ai-services/index.html",
+      "status": 404
+    },
+    {
+      "file": "_not-found/index.html",
+      "link": "/careers/",
+      "target": "https://ziontechgroup.com/careers/index.html",
+      "status": 404
+    },
+    {
+      "file": "_not-found/index.html",
+      "link": "/partners/",
+      "target": "https://ziontechgroup.com/partners/index.html",
+      "status": 404
+    },
+    {
+      "file": "_not-found/index.html",
+      "link": "/portal/",
+      "target": "https://ziontechgroup.com/portal/index.html",
+      "status": 404
+    },
+    {
+      "file": "_not-found/index.html",
+      "link": "/press/",
+      "target": "https://ziontechgroup.com/press/index.html",
+      "status": 404
+    },
+    {
+      "file": "_not-found/index.html",
+      "link": "/status/",
+      "target": "https://ziontechgroup.com/status/index.html",
+      "status": 404
+    },
+    {
+      "file": "_not-found/index.html",
+      "link": "/faq/",
+      "target": "https://ziontechgroup.com/faq/index.html",
+      "status": 404
+    },
+    {
+      "file": "_not-found/index.html",
+      "link": "/case-studies/",
+      "target": "https://ziontechgroup.com/case-studies/index.html",
+      "status": 404
+    },
+    {
+      "file": "_not-found/index.html",
+      "link": "/privacy/",
+      "target": "https://ziontechgroup.com/privacy/index.html",
+      "status": 404
+    },
+    {
+      "file": "_not-found/index.html",
+      "link": "/terms/",
+      "target": "https://ziontechgroup.com/terms/index.html",
+      "status": 404
+    },
+    {
+      "file": "_not-found/index.html",
+      "link": "/cookies/",
+      "target": "https://ziontechgroup.com/cookies/index.html",
+      "status": 404
+    },
+    {
+      "file": "_not-found/index.html",
+      "link": "/sla/",
+      "target": "https://ziontechgroup.com/sla/index.html",
+      "status": 404
+    },
+    {
+      "file": "_not-found/index.html",
+      "link": "/configurator/",
+      "target": "https://ziontechgroup.com/configurator/index.html",
+      "status": 404
+    },
+    {
+      "file": "about/index.html",
+      "link": "/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "target": "https://ziontechgroup.com/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "status": 404
+    },
+    {
+      "file": "about/index.html",
+      "link": "/_next/static/css/398e9a4507626d41.css",
+      "target": "https://ziontechgroup.com/_next/static/css/398e9a4507626d41.css",
+      "status": 404
+    },
+    {
+      "file": "about/index.html",
+      "link": "/_next/static/css/7e7d96b1e6991756.css",
+      "target": "https://ziontechgroup.com/_next/static/css/7e7d96b1e6991756.css",
+      "status": 404
+    },
+    {
+      "file": "about/index.html",
+      "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+      "target": "https://ziontechgroup.com/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+      "status": 404
+    },
+    {
+      "file": "about/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 404
+    },
+    {
+      "file": "about/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 404
+    },
+    {
+      "file": "about/index.html",
+      "link": "/ai-services/",
+      "target": "https://ziontechgroup.com/ai-services/index.html",
+      "status": 404
+    },
+    {
+      "file": "about/index.html",
+      "link": "/careers/",
+      "target": "https://ziontechgroup.com/careers/index.html",
+      "status": 404
+    },
+    {
+      "file": "about/index.html",
+      "link": "/partners/",
+      "target": "https://ziontechgroup.com/partners/index.html",
+      "status": 404
+    },
+    {
+      "file": "about/index.html",
+      "link": "/portal/",
+      "target": "https://ziontechgroup.com/portal/index.html",
+      "status": 404
+    },
+    {
+      "file": "about/index.html",
+      "link": "/press/",
+      "target": "https://ziontechgroup.com/press/index.html",
+      "status": 404
+    },
+    {
+      "file": "about/index.html",
+      "link": "/status/",
+      "target": "https://ziontechgroup.com/status/index.html",
+      "status": 404
+    },
+    {
+      "file": "about/index.html",
+      "link": "/faq/",
+      "target": "https://ziontechgroup.com/faq/index.html",
+      "status": 404
+    },
+    {
+      "file": "about/index.html",
+      "link": "/case-studies/",
+      "target": "https://ziontechgroup.com/case-studies/index.html",
+      "status": 404
+    },
+    {
+      "file": "about/index.html",
+      "link": "/privacy/",
+      "target": "https://ziontechgroup.com/privacy/index.html",
+      "status": 404
+    },
+    {
+      "file": "about/index.html",
+      "link": "/terms/",
+      "target": "https://ziontechgroup.com/terms/index.html",
+      "status": 404
+    },
+    {
+      "file": "about/index.html",
+      "link": "/cookies/",
+      "target": "https://ziontechgroup.com/cookies/index.html",
+      "status": 404
+    },
+    {
+      "file": "about/index.html",
+      "link": "/sla/",
+      "target": "https://ziontechgroup.com/sla/index.html",
+      "status": 404
+    },
+    {
+      "file": "about/index.html",
+      "link": "/configurator/",
+      "target": "https://ziontechgroup.com/configurator/index.html",
+      "status": 404
+    },
+    {
+      "file": "academy/index.html",
+      "link": "/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "target": "https://ziontechgroup.com/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "status": 404
+    },
+    {
+      "file": "academy/index.html",
+      "link": "/_next/static/css/398e9a4507626d41.css",
+      "target": "https://ziontechgroup.com/_next/static/css/398e9a4507626d41.css",
+      "status": 404
+    },
+    {
+      "file": "academy/index.html",
+      "link": "/_next/static/css/7e7d96b1e6991756.css",
+      "target": "https://ziontechgroup.com/_next/static/css/7e7d96b1e6991756.css",
+      "status": 404
+    },
+    {
+      "file": "academy/index.html",
+      "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+      "target": "https://ziontechgroup.com/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+      "status": 404
+    },
+    {
+      "file": "academy/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 404
+    },
+    {
+      "file": "academy/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 404
+    },
+    {
+      "file": "academy/index.html",
+      "link": "/ai-services/",
+      "target": "https://ziontechgroup.com/ai-services/index.html",
+      "status": 404
+    },
+    {
+      "file": "academy/index.html",
+      "link": "/careers/",
+      "target": "https://ziontechgroup.com/careers/index.html",
+      "status": 404
+    },
+    {
+      "file": "academy/index.html",
+      "link": "/partners/",
+      "target": "https://ziontechgroup.com/partners/index.html",
+      "status": 404
+    },
+    {
+      "file": "academy/index.html",
+      "link": "/portal/",
+      "target": "https://ziontechgroup.com/portal/index.html",
+      "status": 404
+    },
+    {
+      "file": "academy/index.html",
+      "link": "/press/",
+      "target": "https://ziontechgroup.com/press/index.html",
+      "status": 404
+    },
+    {
+      "file": "academy/index.html",
+      "link": "/status/",
+      "target": "https://ziontechgroup.com/status/index.html",
+      "status": 404
+    },
+    {
+      "file": "academy/index.html",
+      "link": "/faq/",
+      "target": "https://ziontechgroup.com/faq/index.html",
+      "status": 404
+    },
+    {
+      "file": "academy/index.html",
+      "link": "/case-studies/",
+      "target": "https://ziontechgroup.com/case-studies/index.html",
+      "status": 404
+    },
+    {
+      "file": "academy/index.html",
+      "link": "/privacy/",
+      "target": "https://ziontechgroup.com/privacy/index.html",
+      "status": 404
+    },
+    {
+      "file": "academy/index.html",
+      "link": "/terms/",
+      "target": "https://ziontechgroup.com/terms/index.html",
+      "status": 404
+    },
+    {
+      "file": "academy/index.html",
+      "link": "/cookies/",
+      "target": "https://ziontechgroup.com/cookies/index.html",
+      "status": 404
+    },
+    {
+      "file": "academy/index.html",
+      "link": "/sla/",
+      "target": "https://ziontechgroup.com/sla/index.html",
+      "status": 404
+    },
+    {
+      "file": "academy/index.html",
+      "link": "/configurator/",
+      "target": "https://ziontechgroup.com/configurator/index.html",
+      "status": 404
+    },
+    {
+      "file": "404.html",
+      "link": "/cookies/",
+      "target": "https://ziontechgroup.com/cookies/index.html",
+      "status": 404
+    },
+    {
+      "file": "404.html",
+      "link": "/sla/",
+      "target": "https://ziontechgroup.com/sla/index.html",
+      "status": 404
+    },
+    {
+      "file": "404.html",
+      "link": "/configurator/",
+      "target": "https://ziontechgroup.com/configurator/index.html",
+      "status": 404
+    },
+    {
+      "file": "agents-monitoring/index.html",
+      "link": "/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "target": "https://ziontechgroup.com/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "status": 404
+    },
+    {
+      "file": "agents-monitoring/index.html",
+      "link": "/_next/static/css/398e9a4507626d41.css",
+      "target": "https://ziontechgroup.com/_next/static/css/398e9a4507626d41.css",
+      "status": 404
+    },
+    {
+      "file": "agents-monitoring/index.html",
+      "link": "/_next/static/css/7e7d96b1e6991756.css",
+      "target": "https://ziontechgroup.com/_next/static/css/7e7d96b1e6991756.css",
+      "status": 404
+    },
+    {
+      "file": "agents-monitoring/index.html",
+      "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+      "target": "https://ziontechgroup.com/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+      "status": 404
+    },
+    {
+      "file": "agents-monitoring/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 404
+    },
+    {
+      "file": "agents-monitoring/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 404
+    },
+    {
+      "file": "agents-monitoring/index.html",
+      "link": "/ai-services/",
+      "target": "https://ziontechgroup.com/ai-services/index.html",
+      "status": 404
+    },
+    {
+      "file": "agents-monitoring/index.html",
+      "link": "/careers/",
+      "target": "https://ziontechgroup.com/careers/index.html",
+      "status": 404
+    },
+    {
+      "file": "agents-monitoring/index.html",
+      "link": "/partners/",
+      "target": "https://ziontechgroup.com/partners/index.html",
+      "status": 404
+    },
+    {
+      "file": "agents-monitoring/index.html",
+      "link": "/portal/",
+      "target": "https://ziontechgroup.com/portal/index.html",
+      "status": 404
+    },
+    {
+      "file": "agents-monitoring/index.html",
+      "link": "/press/",
+      "target": "https://ziontechgroup.com/press/index.html",
+      "status": 404
+    },
+    {
+      "file": "agents-monitoring/index.html",
+      "link": "/status/",
+      "target": "https://ziontechgroup.com/status/index.html",
+      "status": 404
+    },
+    {
+      "file": "agents-monitoring/index.html",
+      "link": "/faq/",
+      "target": "https://ziontechgroup.com/faq/index.html",
+      "status": 404
+    },
+    {
+      "file": "agents-monitoring/index.html",
+      "link": "/case-studies/",
+      "target": "https://ziontechgroup.com/case-studies/index.html",
+      "status": 404
+    },
+    {
+      "file": "agents-monitoring/index.html",
+      "link": "/privacy/",
+      "target": "https://ziontechgroup.com/privacy/index.html",
+      "status": 404
+    },
+    {
+      "file": "agents-monitoring/index.html",
+      "link": "/terms/",
+      "target": "https://ziontechgroup.com/terms/index.html",
+      "status": 404
+    },
+    {
+      "file": "agents-monitoring/index.html",
+      "link": "/cookies/",
+      "target": "https://ziontechgroup.com/cookies/index.html",
+      "status": 404
+    },
+    {
+      "file": "agents-monitoring/index.html",
+      "link": "/sla/",
+      "target": "https://ziontechgroup.com/sla/index.html",
+      "status": 404
+    },
+    {
+      "file": "agents-monitoring/index.html",
+      "link": "/configurator/",
+      "target": "https://ziontechgroup.com/configurator/index.html",
+      "status": 404
+    },
+    {
+      "file": "5g-solutions/index.html",
+      "link": "/sla/",
+      "target": "https://ziontechgroup.com/sla/index.html",
+      "status": 404
+    },
+    {
+      "file": "academy/index.html",
+      "link": "/blog/ai-consulting-services-for-enterprise-it-in-2026/",
+      "target": "https://ziontechgroup.com/blog/ai-consulting-services-for-enterprise-it-in-2026/index.html",
+      "status": 404
+    },
+    {
+      "file": "academy/index.html",
+      "link": "/services/zero-trust-network-access/",
+      "target": "https://ziontechgroup.com/services/zero-trust-network-access/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/index.html",
+      "link": "/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "target": "https://ziontechgroup.com/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "status": 404
+    },
+    {
+      "file": "ai/index.html",
+      "link": "/_next/static/css/398e9a4507626d41.css",
+      "target": "https://ziontechgroup.com/_next/static/css/398e9a4507626d41.css",
+      "status": 404
+    },
+    {
+      "file": "ai/index.html",
+      "link": "/_next/static/css/7e7d96b1e6991756.css",
+      "target": "https://ziontechgroup.com/_next/static/css/7e7d96b1e6991756.css",
+      "status": 404
+    },
+    {
+      "file": "ai/index.html",
+      "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+      "target": "https://ziontechgroup.com/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+      "status": 404
+    },
+    {
+      "file": "ai/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 404
+    },
+    {
+      "file": "ai/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 404
+    },
+    {
+      "file": "ai/index.html",
+      "link": "/ai-services/",
+      "target": "https://ziontechgroup.com/ai-services/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/index.html",
+      "link": "/careers/",
+      "target": "https://ziontechgroup.com/careers/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/index.html",
+      "link": "/partners/",
+      "target": "https://ziontechgroup.com/partners/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/index.html",
+      "link": "/portal/",
+      "target": "https://ziontechgroup.com/portal/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/index.html",
+      "link": "/press/",
+      "target": "https://ziontechgroup.com/press/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/index.html",
+      "link": "/status/",
+      "target": "https://ziontechgroup.com/status/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/index.html",
+      "link": "/faq/",
+      "target": "https://ziontechgroup.com/faq/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/index.html",
+      "link": "/case-studies/",
+      "target": "https://ziontechgroup.com/case-studies/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/index.html",
+      "link": "/privacy/",
+      "target": "https://ziontechgroup.com/privacy/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/index.html",
+      "link": "/terms/",
+      "target": "https://ziontechgroup.com/terms/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/index.html",
+      "link": "/cookies/",
+      "target": "https://ziontechgroup.com/cookies/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/index.html",
+      "link": "/sla/",
+      "target": "https://ziontechgroup.com/sla/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/index.html",
+      "link": "/configurator/",
+      "target": "https://ziontechgroup.com/configurator/index.html",
+      "status": 404
+    },
+    {
+      "file": "agents-monitoring/index.html",
+      "link": "/services/ai-chatbot-builder/",
+      "target": "https://ziontechgroup.com/services/ai-chatbot-builder/index.html",
+      "status": 404
+    },
+    {
+      "file": "agents-monitoring/index.html",
+      "link": "/services/managed-observability-247/",
+      "target": "https://ziontechgroup.com/services/managed-observability-247/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/solutions-configurator/index.html",
+      "link": "/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "target": "https://ziontechgroup.com/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "status": 404
+    },
+    {
+      "file": "ai/solutions-configurator/index.html",
+      "link": "/_next/static/css/398e9a4507626d41.css",
+      "target": "https://ziontechgroup.com/_next/static/css/398e9a4507626d41.css",
+      "status": 404
+    },
+    {
+      "file": "ai/solutions-configurator/index.html",
+      "link": "/_next/static/css/7e7d96b1e6991756.css",
+      "target": "https://ziontechgroup.com/_next/static/css/7e7d96b1e6991756.css",
+      "status": 404
+    },
+    {
+      "file": "ai/solutions-configurator/index.html",
+      "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+      "target": "https://ziontechgroup.com/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+      "status": 404
+    },
+    {
+      "file": "agents-monitoring/index.html",
+      "link": "/services/sec-soc-as-a-service/",
+      "target": "https://ziontechgroup.com/services/sec-soc-as-a-service/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/solutions-configurator/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 404
+    },
+    {
+      "file": "ai/solutions-configurator/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 404
+    },
+    {
+      "file": "ai/solutions-configurator/index.html",
+      "link": "/ai-services/",
+      "target": "https://ziontechgroup.com/ai-services/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/solutions-configurator/index.html",
+      "link": "/careers/",
+      "target": "https://ziontechgroup.com/careers/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/solutions-configurator/index.html",
+      "link": "/partners/",
+      "target": "https://ziontechgroup.com/partners/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/solutions-configurator/index.html",
+      "link": "/portal/",
+      "target": "https://ziontechgroup.com/portal/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/solutions-configurator/index.html",
+      "link": "/press/",
+      "target": "https://ziontechgroup.com/press/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/solutions-configurator/index.html",
+      "link": "/status/",
+      "target": "https://ziontechgroup.com/status/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/solutions-configurator/index.html",
+      "link": "/faq/",
+      "target": "https://ziontechgroup.com/faq/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/solutions-configurator/index.html",
+      "link": "/case-studies/",
+      "target": "https://ziontechgroup.com/case-studies/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/solutions-configurator/index.html",
+      "link": "/privacy/",
+      "target": "https://ziontechgroup.com/privacy/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/solutions-configurator/index.html",
+      "link": "/terms/",
+      "target": "https://ziontechgroup.com/terms/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/solutions-configurator/index.html",
+      "link": "/cookies/",
+      "target": "https://ziontechgroup.com/cookies/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/solutions-configurator/index.html",
+      "link": "/sla/",
+      "target": "https://ziontechgroup.com/sla/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/solutions-configurator/index.html",
+      "link": "/configurator/",
+      "target": "https://ziontechgroup.com/configurator/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/url-audit-assistant/index.html",
+      "link": "/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "target": "https://ziontechgroup.com/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "status": 404
+    },
+    {
+      "file": "ai/url-audit-assistant/index.html",
+      "link": "/_next/static/css/398e9a4507626d41.css",
+      "target": "https://ziontechgroup.com/_next/static/css/398e9a4507626d41.css",
+      "status": 404
+    },
+    {
+      "file": "ai/url-audit-assistant/index.html",
+      "link": "/_next/static/css/7e7d96b1e6991756.css",
+      "target": "https://ziontechgroup.com/_next/static/css/7e7d96b1e6991756.css",
+      "status": 404
+    },
+    {
+      "file": "ai/url-audit-assistant/index.html",
+      "link": "/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+      "target": "https://ziontechgroup.com/_next/static/chunks/webpack-820d47b7d6d1545d.js",
+      "status": 404
+    },
+    {
+      "file": "ai/url-audit-assistant/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 404
+    },
+    {
+      "file": "ai/url-audit-assistant/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 404
+    },
+    {
+      "file": "ai/url-audit-assistant/index.html",
+      "link": "/ai-services/",
+      "target": "https://ziontechgroup.com/ai-services/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/url-audit-assistant/index.html",
+      "link": "/careers/",
+      "target": "https://ziontechgroup.com/careers/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/url-audit-assistant/index.html",
+      "link": "/partners/",
+      "target": "https://ziontechgroup.com/partners/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/url-audit-assistant/index.html",
+      "link": "/portal/",
+      "target": "https://ziontechgroup.com/portal/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/url-audit-assistant/index.html",
+      "link": "/press/",
+      "target": "https://ziontechgroup.com/press/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/url-audit-assistant/index.html",
+      "link": "/status/",
+      "target": "https://ziontechgroup.com/status/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/url-audit-assistant/index.html",
+      "link": "/faq/",
+      "target": "https://ziontechgroup.com/faq/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/url-audit-assistant/index.html",
+      "link": "/case-studies/",
+      "target": "https://ziontechgroup.com/case-studies/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/url-audit-assistant/index.html",
+      "link": "/privacy/",
+      "target": "https://ziontechgroup.com/privacy/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/url-audit-assistant/index.html",
+      "link": "/terms/",
+      "target": "https://ziontechgroup.com/terms/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/url-audit-assistant/index.html",
+      "link": "/cookies/",
+      "target": "https://ziontechgroup.com/cookies/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/url-audit-assistant/index.html",
+      "link": "/sla/",
+      "target": "https://ziontechgroup.com/sla/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai/url-audit-assistant/index.html",
+      "link": "/configurator/",
+      "target": "https://ziontechgroup.com/configurator/index.html",
+      "status": 404
+    },
+    {
+      "file": "ai-chatbot-builder/index.html",
+      "link": "/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "target": "https://ziontechgroup.com/_next/static/media/e4af272ccee01ff0-s.p.woff2",
+      "status": 404
+    },
+    {
+      "file": "ai-chatbot-builder/index.html",
+      "link": "/_next/static/css/398e9a4507626d41.css",
+      "target": "https://ziontechgroup.com/_next/static/css/398e9a4507626d41.css",
+      "status": 404
+    },
+    {
+      "file": "ai-chatbot-builder/index.html",
+      "link": "/_next/static/css/7e7d96b1e6991756.css",
+      "target": "https://ziontechgroup.com/_next/static/css/7e7d96b1e6991756.css",
+      "status": 404
+    }
+  ]
 }
