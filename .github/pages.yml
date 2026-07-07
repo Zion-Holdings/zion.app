@@ -1,0 +1,4 @@
+build_type: workflow
+workflow: continuous-pages-deploy.yml
+branch: main
+path: /
