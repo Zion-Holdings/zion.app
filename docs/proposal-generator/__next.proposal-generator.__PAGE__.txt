@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
 2:I[1304,[],"ClientPageRoot"]
-3:I[9090,["9713","static/chunks/app/proposal-generator/page-9e834b37472c871c.js"],"default"]
+3:I[9090,["9713","static/chunks/app/proposal-generator/page-aea4a0cf71ee87c3.js"],"default"]
 6:I[484,[],"OutletBoundary"]
 7:"$Sreact.suspense"
 0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],null,["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"zion-tech-group-v1"}
