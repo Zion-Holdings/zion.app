@@ -169,6 +169,15 @@ def generate_ceo_reply(from_email, subject, body, thread_context=None):
     return text, llm.get('provider', 'llm')
 
 
+def classify_ceo_reply_preference(subject, body):
+    text = f"{subject}\n{body}".lower()
+    if any(k in text for k in ['parceria', 'reunião', 'projeto', 'contrato', 'serviços']):
+        return 'partnership'
+    if any(k in text for k in ['incident', 'segurança', 'cloud', 'finops', 'custo']):
+        return 'operations'
+    return 'general'
+
+
 def latest_thread_reply_body(thread_id: str) -> str:
     try:
         msgs = gmail_thread_get(thread_id)
@@ -185,6 +194,22 @@ def latest_thread_reply_body(thread_id: str) -> str:
         return f"latest_from={hdrs.get('From','')} latest_subject={hdrs.get('Subject','')} body={(body[:1200] or '').replace(chr(10), ' ')}"
     except Exception as e:
         return f'latest_thread_read_error={e}'
+
+
+def load_sent_subject_keys() -> set:
+    keys = set()
+    if not callable(gmail_search):
+        return keys
+    try:
+        msgs = gmail_search('in:sent', limit=300, all_folders=True)
+        for m in msgs:
+            s = (m.get('subject') or '').strip().lower()
+            if not s:
+                continue
+            keys.add(' '.join(s.split()))
+    except Exception:
+        pass
+    return keys
 
 
 def mark_labeled(thread_id, label_id):
@@ -206,6 +231,7 @@ def main():
         return
 
     sent_keys = _load_sent_keys()
+    sent_subjects = load_sent_subject_keys()
     processed = 0
     sent_count = 0
     skipped = 0

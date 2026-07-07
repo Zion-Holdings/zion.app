@@ -3,6 +3,8 @@ import sys, json, base64, urllib.request, urllib.parse, urllib.error, datetime, 
 from pathlib import Path
 
 REPO = Path('/data/data/com.termux/files/home/zion-support.github.io')
+if not REPO.exists():
+    REPO = Path('/Users/miami2/zion.app')
 sys.path.insert(0, str(REPO))
 sys.path.insert(0, str(REPO / 'commands'))
 try:
@@ -44,6 +46,17 @@ def _send_request(req, timeout=30):
     if last_err:
         raise last_err
     raise RuntimeError('send_failed')
+
+
+OUTREACH_LOG = REPO / 'lead-crm' / 'outreach-log.jsonl'
+
+
+def _append_outreach_log(record: dict):
+    try:
+        with OUTREACH_LOG.open('a', encoding='utf-8') as f:
+            f.write(json.dumps(record, ensure_ascii=False) + '\n')
+    except Exception:
+        pass
 
 
 def send_mail(to_addr, subject, body, html=None):

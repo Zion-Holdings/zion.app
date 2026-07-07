@@ -54,3 +54,4 @@ lead-crm/continuous_outreach_pipeline.lock
 
 # Automation runtime reports — generated locally, not part of build output
 automation/reports/*.json
+.local-backup-gog
