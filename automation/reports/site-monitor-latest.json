@@ -1,11 +1,12 @@
 {
-  "checkedAt": "2026-07-07T20:50:00.000Z",
-  "source": "manual-static-export-inspection",
-  "overall": "unhealthy-live-but-fixable",
-  "liveSummary": {
-    "healthyDirectRoutes": ["/pricing", "/contact", "/dashboard"],
-    "redirectRoutes": [],
-    "unhealthyDirectRoutes": [
+  "checkedAt": "2026-07-07T21:34:59.606625+00:00",
+  "base": "http://localhost:3000",
+  "summary": {
+    "healthyDirectRoutes": [
+      "/",
+      "/pricing",
+      "/contact",
+      "/dashboard",
       "/careers",
       "/partners",
       "/portal",
@@ -19,29 +20,109 @@
       "/sla",
       "/configurator"
     ],
-    "first3Unhealthy": ["/careers", "/partners", "/portal"],
-    "monitorScript": "absent"
+    "redirectRoutes": [],
+    "unhealthyDirectRoutes": [],
+    "first3Unhealthy": [],
+    "healthy": 16,
+    "unhealthy": 0,
+    "total": 16
   },
-  "buildSummary": {
-    "status": "ok",
-    "staticRoutesChecked": [
-      "/careers",
-      "/contact",
-      "/case-studies",
-      "/configurator",
-      "/privacy"
-    ],
-    "buildArtifactsPresentAfterFix": true
-  },
-  "patches": [
-    {
-      "file": "app/privacy/page.tsx",
-      "change": "replaced null return with real fallback content and fixed canonical to /privacy"
+  "details": {
+    "/": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
     },
-    {
-      "file": "app/dashboard/page.tsx",
-      "change": "added missing alternates.canonical metadata"
+    "/pricing": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/contact": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/dashboard": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/careers": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/partners": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/portal": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/press": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/status": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/faq": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/case-studies": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/privacy": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/terms": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/cookies": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/sla": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/configurator": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
     }
-  ],
-  "next": "push rebuilt static export to hosting after commit"
+  }
 }

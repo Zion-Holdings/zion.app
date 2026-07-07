@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Managed SOCaaS Pricing Model for Small Business | Zion Tech Group',
-  description: 'A practical look at managed SOCaaS pricing models for small business, including coverage tiers, automation impact, and measurable security outcomes.',
+  description: 'A practical look at managed SOCaaS pricing models for small business, including coverage tiers, automation impact, and measurable outcomes.',
 }
 
 export default function ManagedSocaasPricingModelSmallBusinessPage() {
@@ -13,13 +13,13 @@ export default function ManagedSocaasPricingModelSmallBusinessPage() {
 
       <p className="text-lg mb-8">
         Small businesses need security operations coverage without enterprise budgets or headcount. A managed SOCaaS model
-        can provide monitoring, triage, and incident response as a predictable operational expense with measurable outcomes.
+        can deliver monitoring, triage, and incident response as a predictable operational expense with measurable outcomes.
       </p>
 
       <h2 className="text-2xl font-semibold mt-10 mb-4">Pricing considerations</h2>
       <p className="mb-6">
         Base pricing on coverage hours, alert volume, integration complexity, and response commitment level. Include automation
-        credits because reduced manual work should lower recurring cost over time.
+        credits so reduced manual work lowers recurring cost over time.
       </p>
 
       <h2 className="text-2xl font-semibold mt-10 mb-4">What buyers should require</h2>
@@ -32,7 +32,7 @@ export default function ManagedSocaasPricingModelSmallBusinessPage() {
 
       <h2 className="text-2xl font-semibold mt-10 mb-4">CTAs and next steps</h2>
       <p className="mb-4">
-        Zion Tech Group helps small businesses adopt practical SOCaaS coverage with transparent pricing and measurable outcomes.
+        Zion Tech Group helps small businesses adopt practical SOCaaS coverage with transparent pricing and measurable security outcomes.
       </p>
 
       <div className="flex flex-wrap gap-4">

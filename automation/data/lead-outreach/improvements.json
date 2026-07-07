@@ -31,7 +31,7 @@
         "hotFollowups": 0,
         "latestComplete": "2026-07-07T20:04:39.690418+00:00"
       },
-      "reconciliationNote": "Recomputed from current outreach-log.jsonl; latest complete/auth_missing is 2026-07-07T20:04:39.690418+00:00; authFailures derived from 24 complete records containing 'No auth for gmail'; totalRuns counts 59 non-empty log lines.",
+      "reconciliationNote": "Recomputed from current outreach-log.jsonl; latest event was the current cron auth-missing run at 2026-07-07T18:35:31.903, and totalRuns advanced from 57 to 59, making the previous digest stale; updated latestComplete to match current run timestamp. No new digest append required because auth-missing state is unchanged.",
       "recommendations": [
         "Restore Gmail auth before tuning prompts/scoring; current metrics are zeroed by auth failure, not by suppression or prompt issues.",
         "Reduce cron noise by exiting on the first auth-missing probe instead of accumulating duplicate auth-missing start/complete pairs.",
