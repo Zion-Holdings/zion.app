@@ -273,7 +273,7 @@
       "actionsAfterAuthRestore": [
         "Keep the default 7-day suppression window until 50+ successful sends are recorded.",
         "Guard cron so blocked-auth runs do not append duplicate noisy metrics or rerun-blocked entries.",
-        "Normalize outreach-log schema before using it for live score tuning.",
+        "Normalize outreach-log schema before using counts for live tuning.",
         "Tune suppression window, prompt wording, and scoring only after 50+ sends with cold-open vs threaded-reply distinction.",
         "Generate or refresh CEO hot-followup drafts only after a real reply thread is detected and auth is restored."
       ],
@@ -296,7 +296,7 @@
         "duplicatesSuppressed": 0,
         "authFailures": 0,
         "hotFollowups": 0,
-        "latestComplete": "2026-07-07T07:39:15.968Z",
+        "latestComplete": "2026-07-07T08:24:01.000Z",
         "baselineDiscrepancy": "Current outreach-log.jsonl contains only legacy batch-run entries; prior claimed baseline 57 cannot be recomputed."
       },
       "patterns": [
@@ -341,7 +341,7 @@
       "actionsAfterAuthRestore": [
         "Keep default 7-day suppression window until 50+ successful sends are recorded.",
         "Normalize outreach-log schema before using counts for live tuning.",
-        "Guard cron so blocked-auth runs do not append noisy duplicate metrics.",
+        "Guard cron so blocked-auth runs do not append duplicate noisy metrics.",
         "Tune suppression window, prompt wording, and scoring only after 50+ sends with cold-open vs threaded-reply distinction.",
         "Generate CEO hot-followup drafts only after a real reply thread is detected and auth is restored."
       ],
@@ -605,4 +605,6 @@
       "reconciliationNotes": [
         "Verified totalRuns=22, sendsAttempted=0, duplicatesSuppressed=0, authFailures=8, hotFollowups=0; no new digest appended because auth-blocked state did not meaningfully change."
       ]
-]}
+    }
+  ]
+}
