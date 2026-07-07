@@ -24,6 +24,20 @@ ROUTES = [
     "/cookies",
     "/sla",
     "/configurator",
+    "/services/it-workspace-analytics",
+    "/services/ai-observability",
+    "/services/ai-insurance-claims",
+    "/services/ai-edge-cdn-connectivity",
+    "/services/ai-observability-aiops",
+    "/blog/ai-first-msp-pricing-model-for-ai-support-automation-in-2026",
+    "/blog/cyber-incident-response-retainer-services-for-it-teams-in-2026",
+    "/blog/it-cost-optimization-report-for-managed-cloud-spend",
+    "/blog/ai-first-customer-success-and-churn-prevention-for-saas-in-2026",
+    "/blog/edge-ai-video-analytics-for-retail-operations-in-2026",
+    "/blog/ai-insurance-claims-automation-guide-for-operations-leaders",
+    "/blog/ai-first-device-management-and-iot-operations-in-2026",
+    "/blog/ai-first-digital-twins-and-asset-simulation-for-industry-in-2026",
+    "/blog/ai-anti-fraud-and-payment-intelligence-for-fintech-in-2026",
 ]
 
 def probe(path: str):

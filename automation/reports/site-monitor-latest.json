@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-07-07T23:23:38.583746+00:00",
+  "checkedAt": "2026-07-07T23:31:56.842352+00:00",
   "base": "http://localhost:3000",
   "summary": {
     "healthyDirectRoutes": [
@@ -18,14 +18,28 @@
       "/terms",
       "/cookies",
       "/sla",
-      "/configurator"
+      "/configurator",
+      "/services/it-workspace-analytics",
+      "/services/ai-observability",
+      "/services/ai-insurance-claims",
+      "/services/ai-edge-cdn-connectivity",
+      "/services/ai-observability-aiops",
+      "/blog/ai-first-msp-pricing-model-for-ai-support-automation-in-2026",
+      "/blog/cyber-incident-response-retainer-services-for-it-teams-in-2026",
+      "/blog/it-cost-optimization-report-for-managed-cloud-spend",
+      "/blog/ai-first-customer-success-and-churn-prevention-for-saas-in-2026",
+      "/blog/edge-ai-video-analytics-for-retail-operations-in-2026",
+      "/blog/ai-insurance-claims-automation-guide-for-operations-leaders",
+      "/blog/ai-first-device-management-and-iot-operations-in-2026",
+      "/blog/ai-first-digital-twins-and-asset-simulation-for-industry-in-2026",
+      "/blog/ai-anti-fraud-and-payment-intelligence-for-fintech-in-2026"
     ],
     "redirectRoutes": [],
     "unhealthyDirectRoutes": [],
     "first3Unhealthy": [],
-    "healthy": 16,
+    "healthy": 30,
     "unhealthy": 0,
-    "total": 16
+    "total": 30
   },
   "details": {
     "/": {
@@ -119,6 +133,90 @@
       "reason": null
     },
     "/configurator": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/services/it-workspace-analytics": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/services/ai-observability": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/services/ai-insurance-claims": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/services/ai-edge-cdn-connectivity": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/services/ai-observability-aiops": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/blog/ai-first-msp-pricing-model-for-ai-support-automation-in-2026": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/blog/cyber-incident-response-retainer-services-for-it-teams-in-2026": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/blog/it-cost-optimization-report-for-managed-cloud-spend": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/blog/ai-first-customer-success-and-churn-prevention-for-saas-in-2026": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/blog/edge-ai-video-analytics-for-retail-operations-in-2026": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/blog/ai-insurance-claims-automation-guide-for-operations-leaders": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/blog/ai-first-device-management-and-iot-operations-in-2026": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/blog/ai-first-digital-twins-and-asset-simulation-for-industry-in-2026": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null
+    },
+    "/blog/ai-anti-fraud-and-payment-intelligence-for-fintech-in-2026": {
       "ok": true,
       "code": 200,
       "final": null,
