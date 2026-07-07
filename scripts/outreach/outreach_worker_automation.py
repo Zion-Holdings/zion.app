@@ -54,6 +54,15 @@ def recent_sent_exists(contact, within_seconds=DEDUP_COOLDOWN_SECONDS):
     last = entry.get("last_outbound_ts", 0)
     return (time.time() - last) < within_seconds
 
+def same_subject_recently_sent(contact, subject, within_seconds=12 * 3600):
+    state = load_state()
+    entry = state.get("contacts", {}).get(contact)
+    if not entry:
+        return False
+    last_subject = entry.get("last_outbound_subject") or ""
+    last_ts = entry.get("last_outbound_ts", 0)
+    return (time.time() - last_ts) < within_seconds and last_subject.strip().lower() == subject.strip().lower()
+
 def is_seen_message_id(message_id):
     state = load_state()
     return message_id in state.get("seen_message_ids", {})
@@ -101,49 +110,62 @@ def detect_language(text):
         return 'es'
     return 'en'
 
-def build_ceo_reply(contact_name, company_name, thread_text, language='en'):
+def _personalize(thread_text: str, contact_name: str, company_name: str, language: str) -> dict:
+    t = (thread_text or '').lower()
+    invoice = any(w in t for w in ['invoice','billing','invoice','pagamento','boleto','fatura'])
+    ticket = any(w in t for w in ['ticket','support','issue','erro','bug','incident','suporte'])
+    urgent = any(w in t for w in ['urgent','priority','p1','escalation','emergency','crítico'])
+    upsell = any(w in t for w in ['partnership','parceria','revenue','growth','crescimento','sell','proposal','proposta'])
     if language == 'pt':
-        return f"""Oi {contact_name},
+        return {
+            'opening': f'Obrigado pela conversa com a {company_name}.',
+            'need': 'Suporte e operações com IA reduzem custos e melhoram o tempo de resposta',
+            'pillar_1': 'Automação de suporte e operações com IA para reduzir custos e tempo de resposta.',
+            'pillar_2': 'Integração de ferramentas AI/IT no seu fluxo atual, sem trocar toda a stack.',
+            'pillar_3': 'Um piloto gratuito de readiness audit para mapear ganhos rápidos e ROI visível.',
+            'cta': 'Se fizer sentido, podemos avançar por e-mail ou por uma call rápida:',
+            'closing': 'Fico à disposição para criarmos algo mútuo e rápido.',
+        }
+    if language == 'es':
+        return {
+            'opening': f'Gracias por la conversación con {company_name}.',
+            'need': 'Automatizar soporte y operaciones con IA reduce costos y acorta tiempos de respuesta',
+            'pillar_1': 'Automatización de soporte y operaciones con IA para reducir costos y tiempos.',
+            'pillar_2': 'Integración de herramientas AI/IT en tu flujo actual, sin reemplazar toda la stack.',
+            'pillar_3': 'Un piloto gratuito de readiness audit para identificar wins rápidos con ROI visible.',
+            'cta': 'Si cuadra con lo que estás evaluando, podemos avanzar por email o una llamada breve:',
+            'closing': 'Quedo atento para construir algo beneficioso para ambos.',
+        }
+    return {
+        'opening': f'Thanks for the conversation with {company_name}.',
+        'need': 'AI support automation can cut response time and operational cost while protecting quality',
+        'pillar_1': 'AI support automation to cut response time and operational cost with cleaner handoffs.',
+        'pillar_2': 'Workflow integration of AI/IT tools into your current stack, with minimal disruption.',
+        'pillar_3': 'A free AI readiness audit pilot to spot quick wins and roadmap the larger rollout.',
+        'cta': 'If this aligns with what you’re evaluating, I’m happy to advance by email or a quick call:',
+        'closing': 'Let’s build something that benefits both teams.',
+    }
 
-Obrigado pela oportunidade de construirmos algo junto com a {company_name} anteriormente. Foi um ótimo aprendizado.
+def build_ceo_reply(contact_name, company_name, thread_text, language='en'):
+    p = _personalize(thread_text, contact_name, company_name, language)
+    return f"""{contact_name},
 
-Agora a Zion Tech Group está ampliando a atuação em IA e serviços de TI, e vejo 3 caminhos rápidos para gerarmos valor conjunto:
-
-1. Automação de suporte e operações com IA para reduzir custos e tempo de resposta.
-2. Integração de ferramentas AI/IT no seu fluxo atual, sem trocar toda a stack.
-3. Um piloto gratuito de readiness audit para mapear ganhos rápidos.
-
-Se fizer sentido, podemos avançar por e-mail ou por uma call rápida:
-https://calendly.com/kleber-ziontechgroup
-
-Conheça também nossos novos serviços e ferramentas gratuitas:
-https://ziontechgroup.com
-
-Fico à disposição para criarmos algo mútuo e rápido.
-
-Abraço,
-Kleber Garcia Alcatrão
-CEO, Zion Tech Group
-"""
-    return f"""Hi {contact_name},
-
-Thanks again for the opportunity to work with {company_name} on the earlier project — I really value that partnership.
+{p['opening']} I really value that partnership.
 
 Today Zion Tech Group is expanding into AI/IT services, and I see a few fast, mutually beneficial next steps we could explore together:
 
-1) AI support automation to cut response time and operational cost.
-2) Workflow integration of AI/IT tools into your current stack, with minimal disruption.
-3) A free AI readiness audit pilot to spot quick wins and roadmap the larger rollout.
+1) {p['pillar_1']}
+2) {p['pillar_2']}
+3) {p['pillar_3']}
 
-If any of this aligns with what you’re evaluating, I’m happy to advance by email or a quick call:
+{p['cta']}
 https://calendly.com/kleber-ziontechgroup
 
 You can also explore our new AI services and free tools here:
 https://ziontechgroup.com
 
-Let’s build something that benefits both teams.
+{p['closing']}
 
-Best,
 Kleber Garcia Alcatrão
 CEO, Zion Tech Group
 """
@@ -226,6 +248,10 @@ def run_high_frequency_outreach():
         email = c["email"]
         contact_key = email.lower()
         if recent_sent_exists(contact_key, within_seconds=DEDUP_COOLDOWN_SECONDS):
+            skipped += 1
+            continue
+        prospective_subject = c.get("thread_subject") or "Next steps"
+        if same_subject_recently_sent(contact_key, prospective_subject, within_seconds=12 * 3600):
             skipped += 1
             continue
         lead = fetch_or_create_lead_from_inbox(email, c.get("thread_subject"))
