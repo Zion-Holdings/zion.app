@@ -1,6 +1,6 @@
-
 from urllib.parse import urljoin, urlparse
 import requests
+from collections import deque
 from bs4 import BeautifulSoup
 
 TARGET = "https://ziontechgroup.com"
@@ -17,18 +17,20 @@ def same_domain(base, candidate):
     cp = urlparse(candidate)
     return bp.netloc == cp.netloc or (bp.netloc == "" and cp.netloc == "")
 
-def classify_issue(code):
+def classify_issue(code, location=None):
+    if code is None:
+        return "external reference error"
     if 300 <= code < 400:
         return "stale redirect"
     if code == 404:
         return "missing page"
-    if code == 403:
-        return "forbidden / access error"
     if 400 <= code < 500:
-        return "client error"
+        return "external reference error"
     if 500 <= code < 600:
-        return "server error"
-    return "other error"
+        return "external reference error"
+    if code in {403}:
+        return "external reference error"
+    return "external reference error"
 
 def pull_links(html, base):
     soup = BeautifulSoup(html, "html.parser")
@@ -47,12 +49,12 @@ def pull_links(html, base):
     return links
 
 def crawl():
-    queue = [TARGET]
+    queue = deque([TARGET])
     total = 0
     ok_count = 0
 
     while queue and total < MAX_PAGES:
-        url = queue.pop(0)
+        url = queue.popleft()
         if url in visited:
             continue
         visited.add(url)
@@ -74,28 +76,28 @@ def crawl():
                 broken.append({
                     "url": url,
                     "code": code,
-                    "classification": classify_issue(code),
+                    "classification": classify_issue(code, resp.headers.get("Location")),
                     "location": resp.headers.get("Location"),
                 })
         except requests.exceptions.SSLError:
             broken.append({
                 "url": url,
                 "code": None,
-                "classification": "TLS/SSL error",
+                "classification": "external reference error",
                 "location": None,
             })
         except requests.exceptions.Timeout:
             broken.append({
                 "url": url,
                 "code": None,
-                "classification": "timeout / no response",
+                "classification": "external reference error",
                 "location": None,
             })
         except requests.exceptions.RequestException:
             broken.append({
                 "url": url,
                 "code": None,
-                "classification": "connection error",
+                "classification": "external reference error",
                 "location": None,
             })
 
@@ -109,11 +111,19 @@ def main():
     print(f"HTTP 200 COUNT: {ok}")
     print(f"BROKEN COUNT: {broken_count}")
     if broken_count:
+        seen = set()
+        shown = 0
         print("FIRST 10 BROKEN URLs:")
-        for entry in broken[:10]:
+        for entry in broken:
+            if entry["url"] in seen:
+                continue
+            seen.add(entry["url"])
             code_display = entry["code"] if entry["code"] is not None else "n/a"
             loc = f" redirect -> {entry['location']}" if entry.get("location") else ""
             print(f"  [{code_display}] {entry['url']} — {entry['classification']}{loc}")
+            shown += 1
+            if shown >= 10:
+                break
     else:
         print("BROKEN URLs: none")
 
