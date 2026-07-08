@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
 Master outreach automation cycle.
-Runs miner -> rebuild queue -> fast tailor -> send batch -> check replies -> log -> commit.
+Runs miner -> rebuild queue -> LLM tailor with metrics -> send batch -> check replies -> log -> commit.
 """
-import json, os, sys, subprocess
+import json, os, subprocess
 from pathlib import Path
 from datetime import datetime, timezone
 
 REPO = Path('/data/data/com.termux/files/home/zion-support.github.io')
-LEAD_DIR = REPO / 'lead-crm'
+
 
 def run(cmd, timeout=200):
     try:
@@ -17,8 +17,10 @@ def run(cmd, timeout=200):
     except subprocess.TimeoutExpired:
         return 124, '', 'timeout'
 
+
 def git(*args):
     return run(f'git {" ".join(args)}')
+
 
 def main():
     ts = datetime.now(timezone.utc).isoformat()
@@ -29,42 +31,20 @@ def main():
     log['steps']['miner'] = {'rc': rc, 'stdout': out, 'stderr': err[:500]}
 
     # 2) Rebuild queue
-    rebuild = '''
-import json, re
-from pathlib import Path
-from datetime import datetime, timezone
-all_leads = json.loads(Path("lead-crm/all-leads.json").read_text())
-sent = set(line.split("|")[0].strip().lower() for line in Path("lead-crm/pipeline_sent_cache.txt").read_text(encoding="utf-8").splitlines() if line.strip())
-clean = {"gmail.com","hotmail.com","outlook.com","yahoo.com","yahoo.com.br","icloud.com","live.com","ymail.com"}
-noise = ("mailer-daemon","no-reply","noreply","notifications@","postmaster@","support@")
-ready=[]; seen=set()
-for r in all_leads:
-    to=(r.get("email") or r.get("to") or "").strip().lower()
-    if not to or not re.fullmatch(r"[^@]+@[^@]+\\.[^@]+", to): continue
-    if to in sent or to in seen: continue
-    if any(to.startswith(p) for p in noise): continue
-    seen.add(to)
-    domain=to.split("@")[-1]
-    if domain in clean: continue
-    ready.append({"to":to,"name":r.get("name") or domain.split(".")[0].title(),"domain":domain,"subject":r.get("subject") or f'Parceria em {domain.split(".")[0]} — Zion Tech Group',"body":r.get("body"),"status":r.get("status","ready")})
-    if len(ready)>=25: break
-Path("lead-crm/outreach_ready_canonical.json").write_text(json.dumps({"generatedAt":datetime.now(timezone.utc).isoformat(),"state":"send_ready","ready":ready},ensure_ascii=False,indent=2))
-print(json.dumps({"ready":len(ready)}))
-'''
-    rc, out, err = run(f'python3 -c {repr(rebuild)}', timeout=60)
+    rc, out, err = run('python3 lead-crm/rebuild_outreach_queue.py', timeout=60)
     log['steps']['queue_rebuild'] = {'rc': rc, 'stdout': out, 'stderr': err[:500]}
 
-    # 3) Tailor: prefer validated LLM path when possible, with fast fallback
+    # 3) Tailor: prefer LLM path, record real coverage metrics from final tailored file
     rc_llm, out_llm, err_llm = run('python3 lead-crm/tailor_ready_with_llm.py', timeout=220)
     used_llm = False
     if rc_llm == 0 and out_llm:
         rc, out, err = rc_llm, out_llm, err_llm
-        log['steps']['tailor_backup'] = None
         used_llm = True
     else:
         rc, out, err = run('python3 lead-crm/tailor_ready_fast.py', timeout=200)
         log['steps']['tailor_backup'] = {'llm_rc': rc_llm, 'llm_stdout': out_llm[:200], 'llm_stderr': err_llm[:200]}
     log['steps']['tailor'] = {'rc': rc, 'stdout': out, 'stderr': err[:500], 'used_llm': used_llm}
+
     tailored_path = REPO / 'lead-crm' / 'outreach_tailored_canonical.json'
     tailored_total = 0
     tailored_llm = 0
@@ -76,7 +56,7 @@ print(json.dumps({"ready":len(ready)}))
             tailored_total = len(rows)
             for row in rows:
                 provider = (row.get('llm_provider') or '').strip().lower()
-                if provider in {'template','deterministic-template-v1','deterministic-template-v2'}:
+                if provider in {'template', 'deterministic-template-v1', 'deterministic-template-v2'}:
                     tailored_template += 1
                 else:
                     tailored_llm += 1
@@ -97,7 +77,9 @@ print(json.dumps({"ready":len(ready)}))
         pass
 
     # 4) Send batch
-    print('SEND_DISABLED: outreach sends remain policy-locked to avoid duplicates')
+    send_allowed = os.environ.get('ZTG_SEND_ALLOWED') == '1'
+    if not send_allowed:
+        print('SEND_DISABLED: outreach sends remain policy-locked to avoid duplicates')
 
     # 5) Git commit
     rc, out, err = git('add -A')
@@ -106,6 +88,7 @@ print(json.dumps({"ready":len(ready)}))
     log['steps']['git'] = {'add_rc': rc, 'commit_rc': rc2, 'push_rc': rc3}
 
     print(json.dumps(log, ensure_ascii=False, indent=2))
+
 
 if __name__ == '__main__':
     main()
