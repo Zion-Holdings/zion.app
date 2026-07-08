@@ -1,11 +1,29 @@
 {
-  "ts": "2026-07-08T10:51:40.880067+00:00",
+  "ts": "2026-07-08T10:59:56.803508+00:00",
   "queries_run": 32,
   "contacts_found": 0,
   "new_leads_added": 0,
-  "elapsed_s": 153.761,
-  "queries_per_second": 0.2081,
-  "avg_query_s": 4.805,
-  "max_query_s": 7.1822,
-  "status": "ok"
+  "elapsed_s": 150.409,
+  "queries_per_second": 0.2128,
+  "avg_query_s": 4.7003,
+  "max_query_s": 6.196,
+  "status": "ok",
+  "high_signal_leads": 0,
+  "lead_quality_ratio": null,
+  "rolling": {
+    "last_5_queries": [
+      5.050271420011995,
+      0.5228783069760539,
+      5.058190881012706,
+      4.812826189008774,
+      6.044633802986937
+    ],
+    "last_5_qps": [
+      0.198,
+      1.9125,
+      0.1977,
+      0.2078,
+      0.1654
+    ]
+  }
 }
