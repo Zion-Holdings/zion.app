@@ -285,26 +285,80 @@ def send_ceo_reply(thread_id, to_addr, subject, body, references_message_id):
     raw = base64.urlsafe_b64encode(("\r\n".join(raw_headers) + "\r\n\r\n" + body).encode('utf-8')).decode('utf-8')
     sent = service.users().messages().send(userId='me', body={'raw': raw, 'threadId': thread_id}).execute()
     return sent
-
 def sanitize_outreach_body(body: str) -> str:
     # Strip common leaked AI planning preambles that slipped into sent mail.
-    patterns = [
-        r"(?is)^got it[^\\n\
-]*(\
-?\\n)+",
-        r"(?is)^then body:[^\\n\
-]*(\
-?\\n)+",
-        r"(?is)^first, the recipient is[^\\n\
-]*(\
-?\\n)+",
-        r"(?is)^need to be concise[^\\n\
-]*(\
-?\\n)+",
+    leaked_patterns = [
+        r'(?is)^got it[^
+]*(?:
+[ 	]*)+',
+        r'(?is)^then body:[^
+]*(?:
+[ 	]*)+',
+        r'(?is)^first, the recipient is[^
+]*(?:
+[ 	]*)+',
+        r'(?is)^need to be concise[^
+]*(?:
+[ 	]*)+',
+        r'(?is)^okay,? let.s tackle this[^
+]*(?:
+[ 	]*)+',
+        r'(?is)^hmm[,][^
+]*(?:
+[ 	]*)+',
+        r'(?is)^wait[,][^
+]*(?:
+[ 	]*)+',
+        r'(?is)^no, wait[^
+]*(?:
+[ 	]*)+',
+        r'(?is)^actually[,][^
+]*(?:
+[ 	]*)+',
+        r'(?is)^let me think[^
+]*(?:
+[ 	]*)+',
+        r'(?is)^i should[^
+]*(?:
+[ 	]*)+',
+        r'(?is)^hold on[^
+]*(?:
+[ 	]*)+',
+        r'(?is)^one more thing[^
+]*(?:
+[ 	]*)+',
+        r'(?is)^before i forget[^
+]*(?:
+[ 	]*)+',
+        r'(?is)^kleber garcia alcatr[^
+]*(?:
+[ 	]*)+',
+        r'(?is)^\s*subject line is already given[^
+]*(?:
+[ 	]*)+',
+        r'(?is)^wait no[^
+]*(?:
+[ 	]*)+',
+        r'(?is)^wait, no[^
+]*(?:
+[ 	]*)+',
     ]
-    for p in patterns:
-        body = re.sub(p, "", body)
-    return body.strip()
+    for p in leaked_patterns:
+        body = re.sub(p, '', body)
+
+    # Normalize whitespace and remove leading/trailing blank lines
+    body = re.sub(r'
+{3,}', '
+
+', body)
+    lines = [line.rstrip() for line in body.splitlines()]
+    while lines and not lines[0].strip():
+        lines.pop(0)
+    while lines and not lines[-1].strip():
+        lines.pop()
+    return '
+'.join(lines).strip()
+
 
 def fetch_or_create_lead_from_inbox(email, thread_subject=None):
     # Priority 1: recent unread/new inbound message across all folders and explicit variant subjects
