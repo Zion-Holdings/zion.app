@@ -6363,5 +6363,57 @@
     "is_generic_provider": false,
     "confidence": 1,
     "discovered_at": "2026-07-08T00:59:46.066338+00:00"
+  },
+  {
+    "to": "matheuspavan@suzano.com.br",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "in:anywhere subject:proposta",
+    "domain": "suzano.com.br",
+    "is_generic_provider": false,
+    "confidence": 1,
+    "discovered_at": "2026-07-08T02:25:18.308629+00:00"
+  },
+  {
+    "to": "vinicius.machadorosa@hcl.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "in:anywhere \"Zion Tech Group\"",
+    "domain": "hcl.com",
+    "is_generic_provider": false,
+    "confidence": 1,
+    "discovered_at": "2026-07-08T02:25:39.456381+00:00"
+  },
+  {
+    "to": "nishtha.gujral@hcl.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "in:anywhere \"Zion Tech Group\"",
+    "domain": "hcl.com",
+    "is_generic_provider": false,
+    "confidence": 1,
+    "discovered_at": "2026-07-08T02:25:41.421195+00:00"
+  },
+  {
+    "to": "bruno.silveira@ibor.com.br",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "in:anywhere \"Zion Tech Group\"",
+    "domain": "ibor.com.br",
+    "is_generic_provider": false,
+    "confidence": 1,
+    "discovered_at": "2026-07-08T02:25:41.859278+00:00"
   }
 ]

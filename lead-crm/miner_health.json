@@ -1,1 +1,10 @@
-{'ts': '2026-07-08T02:20:35.532469+00:00', 'queries_run': 32, 'status': 'ok', 'send_locked': True}
+{
+  "ts": "2026-07-08T02:49:23.962043+00:00",
+  "queries_run": 32,
+  "status": "ok",
+  "send_locked": true,
+  "elapsed_s": null,
+  "queries_per_second": null,
+  "avg_query_s": null,
+  "max_query_s": null
+}
