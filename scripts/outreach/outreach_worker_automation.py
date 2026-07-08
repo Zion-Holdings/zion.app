@@ -195,16 +195,21 @@ def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, lan
         'temperature': 0.4,
         'max_tokens': 400,
     }).encode('utf-8')
-    try:
-        import urllib.request
-        req = urllib.request.Request(LLM_API_ENDPOINT, data=body, headers=headers, method='POST')
-        with urllib.request.urlopen(req, timeout=20) as resp:
-            data = json.loads(resp.read().decode('utf-8'))
-        reply = ((data.get('choices') or [{}])[0].get('message') or {}).get('content')
-        if isinstance(reply, str) and reply.strip():
-            return reply.strip()
-    except Exception as e:
-        print('LLM_ERR', repr(e))
+    last_err = None
+    for attempt in range(3):
+        try:
+            import urllib.request
+            req = urllib.request.Request(LLM_API_ENDPOINT, data=body, headers=headers, method='POST')
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                data = json.loads(resp.read().decode('utf-8'))
+            reply = ((data.get('choices') or [{}])[0].get('message') or {}).get('content')
+            if isinstance(reply, str) and reply.strip():
+                return reply.strip()
+        except Exception as e:
+            last_err = repr(e)
+            print('LLM_ERR', last_err, f'attempt={attempt+1}')
+            time.sleep(2 ** attempt)
+    print('LLM_FINAL_ERR', last_err)
     return ''
 
 def _personalize(thread_text: str, contact_name: str, company_name: str, language: str) -> dict:
@@ -406,7 +411,7 @@ def run_high_frequency_outreach():
             if '@' not in frm:
                 continue
             lower = frm.lower()
-            if any(x in lower for x in ['no-reply','noreply','mailer-daemon','postmaster','github','semrush','booking.com','calendly','datadog.zendesk.com','support@']):
+            if any(x in lower for x in ['no-reply','noreply','mailer-daemon','postmaster','github','semrush','booking.com','calendly','datadog.zendesk.com','support@','servi.co']):
                 continue
             import re
             m = re.search(r'<([^>]+)>', frm)
