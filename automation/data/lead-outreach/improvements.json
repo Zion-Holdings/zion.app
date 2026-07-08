@@ -31,7 +31,7 @@
         "hotFollowups": 0,
         "latestComplete": "2026-07-08T02:01:32.745119+00:00"
       },
-      "reconciliationNote": "Freshness-only refresh from outreach-log.jsonl: totalRuns advanced to 59 and latestComplete updated; auth state unchanged. Reusing canonical blocked digest; no duplicate digest appended.",
+      "reconciliationNote": "cron reconciliation: live log now has 59 non-empty records; auth state unchanged, upgraded metrics in place.",
       "recommendations": [
         "Auth is still missing; do not tune suppression window, prompt wording, or scoring.",
         "After Gmail auth is restored, inspect real duplicate counts before changing suppression window.",
