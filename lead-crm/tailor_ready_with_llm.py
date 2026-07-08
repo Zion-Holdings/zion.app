@@ -111,6 +111,9 @@ def main():
     if not ready:
         print(json.dumps({'updated': 0, 'error': 'empty_ready'}, ensure_ascii=False))
         return
+    max_tailor = DEFAULT_MAX_TAILOR
+    if max_tailor and max_tailor > 0 and len(ready) > max_tailor:
+        ready = ready[:max_tailor]
     seen_subjects = set()
     updated = 0
     out_rows = []
