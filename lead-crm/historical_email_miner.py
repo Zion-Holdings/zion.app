@@ -88,6 +88,10 @@ DEEP_QUERIES = [
     'in:anywhere subject:managed cloud',
     'in:anywhere subject:AI consulting',
     'in:anywhere subject:AI implementation',
+    'in:anywhere subject:AI platform',
+    'in:anywhere subject:AI strategy',
+    'in:anywhere subject:data lakehouse',
+    'in:anywhere subject:AIOps',
 ]
 EMAIL_RE = re.compile(r'[\w\.-]+@[\w\.-]+\.\w+')
 MAX_RESULTS_PER_QUERY = 10
@@ -143,7 +147,14 @@ def extract_contacts_metadata(msg_id: str):
 
 def classifiy_prospect(email: str, source_query: str) -> dict:
     domain = email.split('@')[-1].lower()
-    is_generic = domain in {'gmail.com', 'hotmail.com', 'outlook.com', 'yahoo.com', 'yahoo.com.br', 'icloud.com'}
+    is_generic = domain in {'gmail.com', 'hotmail.com', 'outlook.com', 'yahoo.com', 'yahoo.com.br', 'icloud.com', 'live.com', 'ymail.com'}
+    is_invalid = domain.startswith('[') or domain.endswith('.invalid') or domain == 'blocked.invalid'
+    is_placeholder = domain in {
+        'cybersec.ai','cybersec.io','cybersec.co','cybersec.br','manag.ai','develope.ai','servi.ai','servi.co','servi.br',
+        'integ.ai','integ.br','integ.co','integ.com','enterpri.ai','enterpri.br','enterpri.co','enterpri.com','pro.ai','pro.br','pro.co',
+        'pro.com','digital.ai','digital.br','digital.co','digital.io','cloudi.ai','cloudi.br','cloudi.co','cloudi.com','cloudi.io',
+    }
+    is_noise = is_invalid or is_placeholder
     return {
         'to': email,
         'name': None,
@@ -154,8 +165,9 @@ def classifiy_prospect(email: str, source_query: str) -> dict:
         'source_query': source_query,
         'domain': domain,
         'is_generic_provider': is_generic,
-        'confidence': 1 if not is_generic else 0,
-        'discovered_at': now_iso(),
+        'is_invalid_domain': is_invalid,
+        'is_placeholder_domain': is_placeholder,
+        'confidence': 0 if (is_generic or is_noise) else 2,
     }
 
 
