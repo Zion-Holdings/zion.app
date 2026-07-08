@@ -1,27 +1,206 @@
 {
+  "generatedAt": "2026-07-08T05:37:10.979830+00:00",
+  "state": "send_ready",
   "ready": [
     {
-      "to": "ops@logibrasil.com",
-      "name": "Logibrasil",
-      "domain": "logibrasil.com",
-      "subject": "Parceria em Logibrasil — Zion Tech Group",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "to": "valmy.gonzalez@shervacom.com",
+      "name": "Shervacom",
+      "domain": "shervacom.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     },
     {
-      "to": "finance@paydemo.com",
-      "name": "PayDemo",
-      "domain": "paydemo.com",
-      "subject": "orçamento — Zion Tech Group",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "to": "thomas@gakenholz.de",
+      "name": "Gakenholz",
+      "domain": "gakenholz.de",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     },
     {
-      "to": "info@genericco.com",
-      "name": "GenericCo",
-      "domain": "genericco.com",
-      "subject": "Partnership",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
+      "to": "kleber@sscs-sa.com",
+      "name": "Sscs-Sa",
+      "domain": "sscs-sa.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
+    },
+    {
+      "to": "djean.axt@ztg.com.br",
+      "name": "Ztg",
+      "domain": "ztg.com.br",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
+    },
+    {
+      "to": "editors@channelpronetwork.com",
+      "name": "Channelpronetwork",
+      "domain": "channelpronetwork.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
+    },
+    {
+      "to": "gmailgenius@wordzen.com",
+      "name": "Wordzen",
+      "domain": "wordzen.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
+    },
+    {
+      "to": "bob@scrubly.com",
+      "name": "Scrubly",
+      "domain": "scrubly.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
+    },
+    {
+      "to": "mweiss@procurri.com",
+      "name": "Procurri",
+      "domain": "procurri.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
+    },
+    {
+      "to": "mauro.faria@fgv.br",
+      "name": "Fgv",
+      "domain": "fgv.br",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
+    },
+    {
+      "to": "avinash.r@hcl.com",
+      "name": "Hcl",
+      "domain": "hcl.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
+    },
+    {
+      "to": "ishukohli@hcl.com",
+      "name": "Hcl",
+      "domain": "hcl.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
+    },
+    {
+      "to": "jason.guidry@hcl.com",
+      "name": "Hcl",
+      "domain": "hcl.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
+    },
+    {
+      "to": "arulnathan.k@hcl.com",
+      "name": "Hcl",
+      "domain": "hcl.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
+    },
+    {
+      "to": "greivinantonio.garci@hcl.com",
+      "name": "Hcl",
+      "domain": "hcl.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
+    },
+    {
+      "to": "mohitg@hcl.com",
+      "name": "Hcl",
+      "domain": "hcl.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
+    },
+    {
+      "to": "hi@app.kilocode.ai",
+      "name": "App",
+      "domain": "app.kilocode.ai",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
+    },
+    {
+      "to": "whibbert@solyssey.com",
+      "name": "Solyssey",
+      "domain": "solyssey.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
+    },
+    {
+      "to": "mrodrigues@solyssey.com",
+      "name": "Solyssey",
+      "domain": "solyssey.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
+    },
+    {
+      "to": "rsingh@solyssey.com",
+      "name": "Solyssey",
+      "domain": "solyssey.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
+    },
+    {
+      "to": "balaji-kalimireddi@hcl.com",
+      "name": "Hcl",
+      "domain": "hcl.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
+    },
+    {
+      "to": "sugandha_s@hcl.com",
+      "name": "Hcl",
+      "domain": "hcl.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
+    },
+    {
+      "to": "suruchi.g@hcl.com",
+      "name": "Hcl",
+      "domain": "hcl.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
+    },
+    {
+      "to": "hugo.sousa@dekra.com",
+      "name": "Dekra",
+      "domain": "dekra.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
+    },
+    {
+      "to": "ingrid.ciarelli@dekra.com",
+      "name": "Dekra",
+      "domain": "dekra.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
+    },
+    {
+      "to": "infraestrutura@dekra.com",
+      "name": "Dekra",
+      "domain": "dekra.com",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+      "body": null,
+      "status": "discovered"
     }
-  ],
-  "state": "send_ready",
-  "send_blocked": false
+  ]
 }

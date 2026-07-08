@@ -6415,5 +6415,18 @@
     "is_generic_provider": false,
     "confidence": 1,
     "discovered_at": "2026-07-08T02:25:41.859278+00:00"
+  },
+  {
+    "to": "global-seller@email.alibaba.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "in:anywhere \"ziontechgroup.com\"",
+    "domain": "email.alibaba.com",
+    "is_generic_provider": false,
+    "confidence": 1,
+    "discovered_at": "2026-07-08T05:35:09.555845+00:00"
   }
 ]
