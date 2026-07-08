@@ -1,11 +1,11 @@
 {
-  "ts": "2026-07-08T08:11:03.106855+00:00",
+  "ts": "2026-07-08T08:25:21.990216+00:00",
   "queries_run": 32,
   "contacts_found": 0,
   "new_leads_added": 0,
-  "elapsed_s": 153.092,
-  "queries_per_second": 0.209,
-  "avg_query_s": 4.7841,
-  "max_query_s": 6.5119,
+  "elapsed_s": 154.397,
+  "queries_per_second": 0.2073,
+  "avg_query_s": 4.8249,
+  "max_query_s": 6.615,
   "status": "ok"
 }
