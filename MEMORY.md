@@ -7253,3 +7253,11 @@ Workspace service account (domain-wide delegation):
 - [EmailInteraction] 2026-07-08 04:29:40 | fetch_unread exception: Command '['gog', 'mail', 'search', 'is:unread', '--account', 'kleber@ziontechgroup.com', '--no-input', '--max', '20']' timed out after 30 seconds
 - [EmailInteraction] 2026-07-08 04:29:40 | === Email Interaction Agent Completed ===
 - [EmailInteraction] 2026-07-08 04:30:18 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-08 04:30:48 | fetch_unread exception: Command '['gog', 'mail', 'search', 'is:unread', '--account', 'kleber@ziontechgroup.com', '--no-input', '--max', '20']' timed out after 30 seconds
+- [EmailInteraction] 2026-07-08 04:30:48 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-08 04:39:43 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-08 04:40:13 | fetch_unread exception: Command '['gog', 'mail', 'search', 'is:unread', '--account', 'kleber@ziontechgroup.com', '--no-input', '--max', '20']' timed out after 30 seconds
+- [EmailInteraction] 2026-07-08 04:40:13 | === Email Interaction Agent Completed ===
+- [EmailInteraction] 2026-07-08 04:40:32 | === Email Interaction Agent Started ===
+- [EmailInteraction] 2026-07-08 04:41:02 | fetch_unread exception: Command '['gog', 'mail', 'search', 'is:unread', '--account', 'kleber@ziontechgroup.com', '--no-input', '--max', '20']' timed out after 30 seconds
+- [EmailInteraction] 2026-07-08 04:41:02 | === Email Interaction Agent Completed ===
