@@ -1,7 +1,1 @@
-{
-  "ts": "2026-07-07T19:28:45.096887+00:00",
-  "queries_run": 18,
-  "contacts_found": 11,
-  "new_leads_added": 11,
-  "status": "ok"
-}
+{'last_miner_ts': '2026-07-08T00:24:45.510778+00:00', 'note': 'continuous_miner_active', 'send_locked': True}
