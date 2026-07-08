@@ -10,8 +10,8 @@ permissions:
   pages: write
   id-token: write
 concurrency:
-  group: continuous-pages-deploy
-  cancel-in-progress: false
+  group: continuous-pages-deploy-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build:

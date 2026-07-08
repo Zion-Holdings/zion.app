@@ -1,13 +1,20 @@
+"""Site integrity check script template
+
+Crawls internal links and reports total crawled, HTTP 200 count,
+broken count, and first 10 broken URLs with classification.
+"""
+
 from urllib.parse import urljoin, urlparse
 import requests
 from bs4 import BeautifulSoup
+
 
 TARGET = "https://ziontechgroup.com"
 MAX_PAGES = 200
 TIMEOUT = 15
 
 visited = set()
-broken = []
+broken = []  # list of dicts with url, code, classification, found_on
 session = requests.Session()
 session.headers.update({"User-Agent": "Mozilla/5.0 (compatible; site-integrity-bot/1.0)"})
 
@@ -18,7 +25,7 @@ def same_domain(base, candidate):
     return bp.netloc == cp.netloc or (bp.netloc == "" and cp.netloc == "")
 
 
-def classify_issue(url, status_or_exc):
+def classify_issue(url, status_or_exc, from_page=None):
     s = status_or_exc
     if isinstance(s, str) and s.lower() == "timeout":
         return "timeout / no response"
@@ -59,7 +66,7 @@ def pull_links(html, base):
     return links
 
 
-def crawles():
+def crawl():
     queue = [TARGET]
     total = 0
     ok_count = 0
@@ -120,7 +127,7 @@ def crawles():
 
 
 def main():
-    total, ok = crawles()
+    total, ok = crawl()
     broken_count = len(broken)
     print(f"BASE URL: {TARGET}")
     print(f"TOTAL CRAWLED: {total}")
