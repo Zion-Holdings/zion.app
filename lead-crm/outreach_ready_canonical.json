@@ -1,206 +1,27 @@
 {
-  "generatedAt": "2026-07-08T02:28:44.977478+00:00",
-  "state": "send_ready",
   "ready": [
     {
-      "to": "valmy.gonzalez@shervacom.com",
-      "name": "Shervacom",
-      "domain": "shervacom.com",
-      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "discovered"
+      "to": "ops@logibrasil.com",
+      "name": "Logibrasil",
+      "domain": "logibrasil.com",
+      "subject": "Parceria em Logibrasil — Zion Tech Group",
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
     },
     {
-      "to": "thomas@gakenholz.de",
-      "name": "Gakenholz",
-      "domain": "gakenholz.de",
-      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "discovered"
+      "to": "finance@paydemo.com",
+      "name": "PayDemo",
+      "domain": "paydemo.com",
+      "subject": "orçamento — Zion Tech Group",
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
     },
     {
-      "to": "kleber@sscs-sa.com",
-      "name": "Sscs-Sa",
-      "domain": "sscs-sa.com",
-      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "discovered"
-    },
-    {
-      "to": "djean.axt@ztg.com.br",
-      "name": "Ztg",
-      "domain": "ztg.com.br",
-      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "discovered"
-    },
-    {
-      "to": "editors@channelpronetwork.com",
-      "name": "Channelpronetwork",
-      "domain": "channelpronetwork.com",
-      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "discovered"
-    },
-    {
-      "to": "gmailgenius@wordzen.com",
-      "name": "Wordzen",
-      "domain": "wordzen.com",
-      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "discovered"
-    },
-    {
-      "to": "bob@scrubly.com",
-      "name": "Scrubly",
-      "domain": "scrubly.com",
-      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "discovered"
-    },
-    {
-      "to": "mweiss@procurri.com",
-      "name": "Procurri",
-      "domain": "procurri.com",
-      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "discovered"
-    },
-    {
-      "to": "mauro.faria@fgv.br",
-      "name": "Fgv",
-      "domain": "fgv.br",
-      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "discovered"
-    },
-    {
-      "to": "info@blocked.invalid",
-      "name": "Ai Services",
-      "domain": "blocked.invalid",
-      "subject": "Parceria em Ai Services — Zion Tech Group",
-      "body": "<p>Equipe Ai Services,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Queremos propor uma parceria prática em AI/IT com benefícios mútuos.</p><ul><li>Automação inteligente</li><li>Otimização de custos em cloud/IA</li><li>Serviços e ferramentas gratuitas</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "new"
-    },
-    {
-      "to": "leads@blocked.invalid",
-      "name": "Ai Services",
-      "domain": "blocked.invalid",
-      "subject": "Parceria em Ai Services — Zion Tech Group",
-      "body": "<p>Equipe Ai Services,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Queremos propor uma parceria prática em AI/IT com benefícios mútuos.</p><ul><li>Automação inteligente</li><li>Otimização de custos em cloud/IA</li><li>Serviços e ferramentas gratuitas</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "new"
-    },
-    {
-      "to": "contacts@blocked.invalid",
-      "name": "Ai Services",
-      "domain": "blocked.invalid",
-      "subject": "Parceria em Ai Services — Zion Tech Group",
-      "body": "<p>Equipe Ai Services,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Queremos propor uma parceria prática em AI/IT com benefícios mútuos.</p><ul><li>Automação inteligente</li><li>Otimização de custos em cloud/IA</li><li>Serviços e ferramentas gratuitas</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "new"
-    },
-    {
-      "to": "sales@blocked.invalid",
-      "name": "Ai Services",
-      "domain": "blocked.invalid",
-      "subject": "Parceria em Ai Services — Zion Tech Group",
-      "body": "<p>Equipe Ai Services,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Queremos propor uma parceria prática em AI/IT com benefícios mútuos.</p><ul><li>Automação inteligente</li><li>Otimização de custos em cloud/IA</li><li>Serviços e ferramentas gratuitas</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "new"
-    },
-    {
-      "to": "hello@blocked.invalid",
-      "name": "Ai Services",
-      "domain": "blocked.invalid",
-      "subject": "Parceria em Ai Services — Zion Tech Group",
-      "body": "<p>Equipe Ai Services,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Queremos propor uma parceria prática em AI/IT com benefícios mútuos.</p><ul><li>Automação inteligente</li><li>Otimização de custos em cloud/IA</li><li>Serviços e ferramentas gratuitas</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "new"
-    },
-    {
-      "to": "careers@blocked.invalid",
-      "name": "Ai Services",
-      "domain": "blocked.invalid",
-      "subject": "Parceria em Ai Services — Zion Tech Group",
-      "body": "<p>Equipe Ai Services,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Queremos propor uma parceria prática em AI/IT com benefícios mútuos.</p><ul><li>Automação inteligente</li><li>Otimização de custos em cloud/IA</li><li>Serviços e ferramentas gratuitas</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "new"
-    },
-    {
-      "to": "business@blocked.invalid",
-      "name": "Ai Services",
-      "domain": "blocked.invalid",
-      "subject": "Parceria em Ai Services — Zion Tech Group",
-      "body": "<p>Equipe Ai Services,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Queremos propor uma parceria prática em AI/IT com benefícios mútuos.</p><ul><li>Automação inteligente</li><li>Otimização de custos em cloud/IA</li><li>Serviços e ferramentas gratuitas</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "new"
-    },
-    {
-      "to": "partners@blocked.invalid",
-      "name": "Ai Services",
-      "domain": "blocked.invalid",
-      "subject": "Parceria em Ai Services — Zion Tech Group",
-      "body": "<p>Equipe Ai Services,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Queremos propor uma parceria prática em AI/IT com benefícios mútuos.</p><ul><li>Automação inteligente</li><li>Otimização de custos em cloud/IA</li><li>Serviços e ferramentas gratuitas</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "new"
-    },
-    {
-      "to": "press@blocked.invalid",
-      "name": "Ai Services",
-      "domain": "blocked.invalid",
-      "subject": "Parceria em Ai Services — Zion Tech Group",
-      "body": "<p>Equipe Ai Services,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Queremos propor uma parceria prática em AI/IT com benefícios mútuos.</p><ul><li>Automação inteligente</li><li>Otimização de custos em cloud/IA</li><li>Serviços e ferramentas gratuitas</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "new"
-    },
-    {
-      "to": "contact@blocked.invalid",
-      "name": "Cybersecurity Services",
-      "domain": "blocked.invalid",
-      "subject": "Parceria em Cybersecurity Services — Zion Tech Group",
-      "body": "<p>Equipe Cybersecurity Services,</p><p>Sou Kleber Garcia Alcatrão, CEO da <strong>Zion Tech Group</strong>. Queremos propor uma parceria prática em AI/IT com benefícios mútuos.</p><ul><li>Automação inteligente</li><li>Otimização de custos em cloud/IA</li><li>Serviços e ferramentas gratuitas</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "new"
-    },
-    {
-      "to": "avinash.r@hcl.com",
-      "name": "Hcl",
-      "domain": "hcl.com",
-      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "discovered"
-    },
-    {
-      "to": "ishukohli@hcl.com",
-      "name": "Hcl",
-      "domain": "hcl.com",
-      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "discovered"
-    },
-    {
-      "to": "jason.guidry@hcl.com",
-      "name": "Hcl",
-      "domain": "hcl.com",
-      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "discovered"
-    },
-    {
-      "to": "arulnathan.k@hcl.com",
-      "name": "Hcl",
-      "domain": "hcl.com",
-      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "discovered"
-    },
-    {
-      "to": "greivinantonio.garci@hcl.com",
-      "name": "Hcl",
-      "domain": "hcl.com",
-      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "discovered"
-    },
-    {
-      "to": "mohitg@hcl.com",
-      "name": "Hcl",
-      "domain": "hcl.com",
-      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "discovered"
+      "to": "info@genericco.com",
+      "name": "GenericCo",
+      "domain": "genericco.com",
+      "subject": "Partnership",
+      "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n"
     }
-  ]
+  ],
+  "state": "send_ready",
+  "send_blocked": false
 }

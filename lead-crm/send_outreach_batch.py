@@ -42,7 +42,8 @@ def _send_request(req, timeout=30):
             if attempt < max_attempts:
                 time.sleep(base_wait * attempt)
                 continue
-            raise
+            last_err = RuntimeError('send_failed_after_retries')
+            raise last_err
     if last_err:
         raise last_err
     raise RuntimeError('send_failed')
@@ -197,6 +198,10 @@ def main():
     chat_fn = _llm_chat
     outputs = []
     skipped_templates = 0
+    send_allowed = os.environ.get('ZTG_SEND_ALLOWED') == '1'
+    if not send_allowed:
+        print(json.dumps({'generatedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'send_count': 0, 'skipped_templates': skipped_templates, 'results': [], 'note': 'SEND_DISABLED: set ZTG_SEND_ALLOWED=1 to enable outbound sends'}, ensure_ascii=False))
+        return
     for r in rows:
         to = r.get('email') or r.get('recipient') or r.get('to')
         if not to:

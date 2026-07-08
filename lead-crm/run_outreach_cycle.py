@@ -65,8 +65,34 @@ print(json.dumps({"ready":len(ready)}))
         rc, out, err = run('python3 lead-crm/tailor_ready_fast.py', timeout=200)
         log['steps']['tailor_backup'] = {'llm_rc': rc_llm, 'llm_stdout': out_llm[:200], 'llm_stderr': err_llm[:200]}
     log['steps']['tailor'] = {'rc': rc, 'stdout': out, 'stderr': err[:500], 'used_llm': used_llm}
+    tailored_path = REPO / 'lead-crm' / 'outreach_tailored_canonical.json'
+    tailored_total = 0
+    tailored_llm = 0
+    tailored_template = 0
+    if tailored_path.exists():
+        try:
+            payload = json.loads(tailored_path.read_text(encoding='utf-8'))
+            rows = payload.get('ready') or []
+            tailored_total = len(rows)
+            for row in rows:
+                provider = (row.get('llm_provider') or '').strip().lower()
+                if provider in {'template','deterministic-template-v1','deterministic-template-v2'}:
+                    tailored_template += 1
+                else:
+                    tailored_llm += 1
+        except Exception:
+            pass
     try:
-        Path('lead-crm/metrics_tailor_coverage.json').write_text(json.dumps({'ts': datetime.now(timezone.utc).isoformat(), 'used_llm': used_llm, 'llm_stdout': out_llm[:180], 'llm_stderr': err_llm[:180]}, ensure_ascii=False), encoding='utf-8')
+        Path('lead-crm/metrics_tailor_coverage.json').write_text(json.dumps({
+            'ts': datetime.now(timezone.utc).isoformat(),
+            'used_llm': used_llm,
+            'tailored_total': tailored_total,
+            'tailored_llm': tailored_llm,
+            'tailored_template': tailored_template,
+            'llm_share': round((tailored_llm / tailored_total) if tailored_total else 0, 4),
+            'llm_stdout': out_llm[:180],
+            'llm_stderr': err_llm[:180],
+        }, ensure_ascii=False), encoding='utf-8')
     except Exception:
         pass
 
