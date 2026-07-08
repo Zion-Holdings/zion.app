@@ -1,7 +1,1 @@
-{
-  "ts": "2026-07-08T00:59:55.410284+00:00",
-  "queries_run": 32,
-  "contacts_found": 39,
-  "new_leads_added": 39,
-  "status": "ok"
-}
+{'ts': '2026-07-08T02:20:35.532469+00:00', 'queries_run': 32, 'status': 'ok', 'send_locked': True}
