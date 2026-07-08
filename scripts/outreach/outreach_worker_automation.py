@@ -284,67 +284,52 @@ def send_ceo_reply(thread_id, to_addr, subject, body, references_message_id):
     ]
     raw = base64.urlsafe_b64encode(("\r\n".join(raw_headers) + "\r\n\r\n" + body).encode('utf-8')).decode('utf-8')
     sent = service.users().messages().send(userId='me', body={'raw': raw, 'threadId': thread_id}).execute()
-    return sent
 def sanitize_outreach_body(body: str) -> str:
     # Strip common leaked AI planning preambles that slipped into sent mail.
-    leaked_patterns = [
-        r'(?is)^got it[^
-]*(?:
-[ 	]*)+',
-        r'(?is)^then body:[^
-]*(?:
-[ 	]*)+',
-        r'(?is)^first, the recipient is[^
-]*(?:
-[ 	]*)+',
-        r'(?is)^need to be concise[^
-]*(?:
-[ 	]*)+',
-        r'(?is)^okay,? let.s tackle this[^
-]*(?:
-[ 	]*)+',
-        r'(?is)^hmm[,][^
-]*(?:
-[ 	]*)+',
-        r'(?is)^wait[,][^
-]*(?:
-[ 	]*)+',
-        r'(?is)^no, wait[^
-]*(?:
-[ 	]*)+',
-        r'(?is)^actually[,][^
-]*(?:
-[ 	]*)+',
-        r'(?is)^let me think[^
-]*(?:
-[ 	]*)+',
-        r'(?is)^i should[^
-]*(?:
-[ 	]*)+',
-        r'(?is)^hold on[^
-]*(?:
-[ 	]*)+',
-        r'(?is)^one more thing[^
-]*(?:
-[ 	]*)+',
-        r'(?is)^before i forget[^
-]*(?:
-[ 	]*)+',
-        r'(?is)^kleber garcia alcatr[^
-]*(?:
-[ 	]*)+',
-        r'(?is)^\s*subject line is already given[^
-]*(?:
-[ 	]*)+',
-        r'(?is)^wait no[^
-]*(?:
-[ 	]*)+',
-        r'(?is)^wait, no[^
-]*(?:
-[ 	]*)+',
+    leaked_prefixes = [
+        "got it",
+        "then body:",
+        "first, the recipient is",
+        "need to be concise",
+        "okay, let's tackle this",
+        "hmm,",
+        "wait,",
+        "no, wait",
+        "actually,",
+        "let me think",
+        "i should",
+        "hold on",
+        "one more thing",
+        "before i forget",
+        "kleber garcia alcatr",
+        "subject line is already given",
+        "wait no",
+        "wait, no",
     ]
-    for p in leaked_patterns:
-        body = re.sub(p, '', body)
+    lines = body.splitlines()
+    cleaned = []
+    skip = True
+    for line in lines:
+        lower = line.lower().strip()
+        if skip and any(lower.startswith(p.lower()) for p in leaked_prefixes):
+            continue
+        skip = False
+        cleaned.append(line)
+    # Normalize multiple blank lines
+    out = []
+    blank_count = 0
+    for line in cleaned:
+        if line.strip() == '':
+            blank_count += 1
+            if blank_count <= 2:
+                out.append(line)
+        else:
+            blank_count = 0
+            out.append(line)
+    result = '
+'.join(out).strip()
+    return result
+    return sent
 
     # Normalize whitespace and remove leading/trailing blank lines
     body = re.sub(r'
