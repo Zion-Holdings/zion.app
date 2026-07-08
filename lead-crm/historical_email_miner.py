@@ -234,9 +234,30 @@ def run_miner():
         'avg_query_s': round(sum(query_durations) / len(query_durations), 4) if query_durations else None,
         'max_query_s': round(max(query_durations), 4) if query_durations else None,
         'status': 'ok' if queries_run else 'error',
+        'high_signal_leads': 0,
+        'lead_quality_ratio': None,
+        'rolling': {'last_5_queries': query_durations[-5:], 'last_5_qps': [round(1/q, 4) if q else None for q in query_durations[-5:]]}
     }
     try:
         save_json(HEALTH_MONITOR, health)
+    except Exception:
+        pass
+    try:
+        hist_path = LEAD_DIR / 'miner_health_history.json'
+        hist = []
+        if hist_path.exists():
+            try:
+                hist = json.loads(hist_path.read_text(encoding='utf-8'))
+            except Exception:
+                hist = []
+        hist.append(health)
+        hist = hist[-20:]
+        avg_qps = round(sum(h.get('queries_per_second') or 0 for h in hist if h.get('queries_per_second') is not None) / max(len(hist),1), 4)
+        avg_new_leads = round(sum(h.get('new_leads_added') or 0 for h in hist) / max(len(hist),1), 3)
+        health['high_signal_leads'] = avg_new_leads
+        health['lead_quality_ratio'] = avg_qps
+        hist[-1] = health
+        hist_path.write_text(json.dumps(hist, ensure_ascii=False, indent=2), encoding='utf-8')
     except Exception:
         pass
     append_log({'ts': now, 'event': 'mine_tick', **health})
