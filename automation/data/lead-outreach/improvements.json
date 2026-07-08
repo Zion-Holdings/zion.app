@@ -31,7 +31,7 @@
         "hotFollowups": 0,
         "latestComplete": "2026-07-08T02:01:32.745119+00:00"
       },
-      "reconciliationNote": "Cron rerun recomputed equal totals from outreach-log.jsonl; no append because auth state unchanged and latestComplete matches live log.",
+      "reconciliationNote": "Freshness reconciliation preserved authFailures=26 from live outreach-log.jsonl; other metrics unchanged. Auth still missing; no new digest appended.",
       "recommendations": [
         "Auth is still missing; suppress tuning until live send/response data exists.",
         "After Gmail auth is restored, inspect real duplicate counts before changing suppression window.",
