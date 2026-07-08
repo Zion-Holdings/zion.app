@@ -1,6 +1,6 @@
 {
   "createdAt": "2026-07-07T12:00:00.000Z",
-  "updatedAt": "2026-07-07T23:18:00.000Z",
+  "updatedAt": "2026-07-07T23:18:00.000000+00:00",
   "status": "blocked/auth-missing",
   "blocks": [
     "gog auth status returns No auth for gmail kleber@ziontechgroup.com",
@@ -31,7 +31,7 @@
         "hotFollowups": 0,
         "latestComplete": "2026-07-07T23:18:00.000000+00:00"
       },
-      "reconciliationNote": "Recomputed from outreach-log.jsonl on 2026-07-07 due to METRICS_MISMATCH driven by latestComplete/totalRuns freshness; no auth-state delta detected. totalRuns=59, authFailures=26, latestComplete=2026-07-07T23:18:00.000000+00:00. Gmail auth remains missing; updated in place instead of appending another blocked digest.",
+      "reconciliationNote": "In-place refresh on cron run. totalRuns=59, authFailures=26, latestComplete=2026-07-07T23:18:00.000000+00:00. Gmail auth remains missing; no new run attempted; skipped appending duplicate blocked digest.",
       "recommendations": [
         "Restore Gmail auth before tuning prompts or scoring; current metrics are zeroed by auth failure, not by suppression or prompt issues.",
         "Reduce cron noise by exiting on the first auth-missing probe instead of accumulating duplicate auth-missing run records.",
