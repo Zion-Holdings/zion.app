@@ -36,10 +36,10 @@ def main():
             continue
         if any(to.startswith(p) for p in noise):
             continue
-        seen.add(to)
         domain=to.split("@")[-1]
-        if domain in clean:
+        if domain in clean or domain.startswith('[') or domain.endswith('.invalid') or domain == 'blocked.invalid':
             continue
+        seen.add(to)
         ready.append({
             "to":to,
             "name":r.get("name") or domain.split(".")[0].title(),
