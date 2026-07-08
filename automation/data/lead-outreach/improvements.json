@@ -21,7 +21,7 @@
   ],
   "digests": [
     {
-      "ts": "2026-07-07T20:45:00.000Z",
+      "ts": "2026-07-08T02:01:32.745119+00:00",
       "status": "blocked/auth-missing",
       "metrics": {
         "totalRuns": 59,
@@ -31,9 +31,9 @@
         "hotFollowups": 0,
         "latestComplete": "2026-07-08T02:01:32.745119+00:00"
       },
-      "reconciliationNote": "Freshness reconciliation preserved authFailures=26 from live outreach-log.jsonl; other metrics unchanged. Auth still missing; no new digest appended.",
+      "reconciliationNote": "Freshness-only refresh from outreach-log.jsonl: totalRuns advanced to 59 and latestComplete updated; auth state unchanged. Reusing canonical blocked digest; no duplicate digest appended.",
       "recommendations": [
-        "Auth is still missing; suppress tuning until live send/response data exists.",
+        "Auth is still missing; do not tune suppression window, prompt wording, or scoring.",
         "After Gmail auth is restored, inspect real duplicate counts before changing suppression window.",
         "Keep cron noise low by fast-exiting on first No auth for gmail probe."
       ],
