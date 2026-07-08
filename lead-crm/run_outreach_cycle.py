@@ -56,13 +56,19 @@ print(json.dumps({"ready":len(ready)}))
 
     # 3) Tailor: prefer validated LLM path when possible, with fast fallback
     rc_llm, out_llm, err_llm = run('python3 lead-crm/tailor_ready_with_llm.py', timeout=220)
+    used_llm = False
     if rc_llm == 0 and out_llm:
         rc, out, err = rc_llm, out_llm, err_llm
         log['steps']['tailor_backup'] = None
+        used_llm = True
     else:
         rc, out, err = run('python3 lead-crm/tailor_ready_fast.py', timeout=200)
         log['steps']['tailor_backup'] = {'llm_rc': rc_llm, 'llm_stdout': out_llm[:200], 'llm_stderr': err_llm[:200]}
-    log['steps']['tailor'] = {'rc': rc, 'stdout': out, 'stderr': err[:500]}
+    log['steps']['tailor'] = {'rc': rc, 'stdout': out, 'stderr': err[:500], 'used_llm': used_llm}
+    try:
+        Path('lead-crm/metrics_tailor_coverage.json').write_text(json.dumps({'ts': datetime.now(timezone.utc).isoformat(), 'used_llm': used_llm, 'llm_stdout': out_llm[:180], 'llm_stderr': err_llm[:180]}, ensure_ascii=False), encoding='utf-8')
+    except Exception:
+        pass
 
     # 4) Send batch
     print('SEND_DISABLED: outreach sends remain policy-locked to avoid duplicates')
