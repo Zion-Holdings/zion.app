@@ -1,43 +1,68 @@
-import os, sys, json
-from urllib.parse import urlparse, urljoin
+import os
+import sys
+import json
+import re
+import time
+import urllib.parse
+import urllib.request
+import urllib.error
 from collections import deque
 
-import requests
-from bs4 import BeautifulSoup
-
-BASE = "https://ziontechgroup.com"
-BASE_DOMAIN = urlparse(BASE).netloc
-
-session = requests.Session()
-session.headers["User-Agent"] = "zion-integrity-check/1.0 (+cron job)"
-session.max_redirects = 8
+BASE = os.environ.get("SITE_BASE", "https://ziontechgroup.com")
+BASE_DOMAIN = urllib.parse.urlparse(BASE).netloc
+USER_AGENT = "zion-integrity-check/1.0 (+cron job)"
+TIMEOUT = 20
+MAX_URLS = 250
 
 visited = set()
 queue = deque([BASE])
 broken = []
 counts = {"total_checked": 0, "http_200": 0, "broken_count": 0}
 status_counts = {}
-MAX_URLS = 200
+content_type_counts = {}
+link_graph = {}
 
 
-def classify(url, response):
-    status = response.status_code
-    if 300 <= status < 400:
-        loc = response.headers.get("location", "")
-        final_status = None
+def _is_internal(url: str) -> bool:
+    try:
+        p = urllib.parse.urlparse(url)
+        return p.scheme in ("http", "https") and p.netloc == BASE_DOMAIN
+    except Exception:
+        return False
+
+
+def _clean_url(url: str) -> str:
+    return urllib.parse.urljoin(BASE, url.split("#")[0])
+
+
+def fetch(url: str):
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    try:
+        with urllib.request.urlopen(req, timeout=TIMEOUT) as r:
+            return r.status, r.getheader("content-type", ""), r.getheader("Location"), ""
+    except urllib.error.HTTPError as e:
+        return e.code, e.headers.get("content-type", ""), e.headers.get("Location"), str(e)
+    except urllib.error.URLError as e:
+        return None, None, None, str(e.reason)
+    except Exception as e:
+        return None, None, None, str(e)
+
+
+def classify(status: int, final: str):
+    if final:
         try:
-            r2 = session.head(loc, allow_redirects=True, timeout=20)
-            final_status = r2.status_code
+            r = fetch(final)
+            final_code = r[0]
         except Exception:
-            pass
-        if final_status == 404:
+            final_code = None
+        if final_code == 404:
             return "stale redirect"
-        if final_status and final_status >= 400:
+        if isinstance(final_code, int) and final_code >= 400:
             return "missing page"
         return "stale redirect"
     if status == 404:
         return "missing page"
-    if status >= 500:
+    if isinstance(status, int) and status >= 500:
         return "missing page"
     return "unknown error"
 
@@ -47,64 +72,37 @@ while queue and len(visited) < MAX_URLS:
     if url in visited:
         continue
     visited.add(url)
-    try:
-        resp = session.get(url, timeout=20)
-    except requests.exceptions.TooManyRedirects:
-        broken.append((url, "stale redirect"))
-        counts["broken_count"] += 1
-        counts["total_checked"] += 1
-        continue
-    except requests.exceptions.ConnectionError:
-        broken.append((url, "missing page"))
-        counts["broken_count"] += 1
-        counts["total_checked"] += 1
-        continue
-    except requests.exceptions.Timeout:
-        broken.append((url, "missing page"))
-        counts["broken_count"] += 1
-        counts["total_checked"] += 1
-        continue
-    except Exception:
-        broken.append((url, "unknown error"))
-        counts["broken_count"] += 1
-        counts["total_checked"] += 1
-        continue
-
     counts["total_checked"] += 1
-    status_counts[url] = resp.status_code
-    status = resp.status_code
+    status, ct, final, err = fetch(url)
+    status_counts[url] = status
+    content_type_counts[url] = ct
     if status == 200:
         counts["http_200"] += 1
+        if any(x in (ct or "").lower() for x in ["text/html", "application/xhtml"]):
+            try:
+                data = urllib.request.urlopen(
+                    urllib.request.Request(url, headers={"User-Agent": USER_AGENT}), timeout=TIMEOUT
+                ).read().decode("utf-8", errors="replace")
+            except Exception:
+                data = ""
+            hrefs = re.findall(r'href=["\']([^"\']+)["\']', data, flags=re.I)
+            link_graph[url] = hrefs
+            for href in hrefs:
+                absu = _clean_url(href)
+                if _is_internal(absu) and absu not in visited and absu not in queue:
+                    queue.append(absu)
     else:
-        kind = classify(url, resp)
+        kind = classify(status, final)
         broken.append((url, kind))
         counts["broken_count"] += 1
 
-    # Follow internal links if page is HTML
-    ct = resp.headers.get("Content-Type", "")
-    if "text/html" in ct and status == 200:
-        try:
-            soup = BeautifulSoup(resp.text, "html.parser")
-        except Exception:
-            continue
-        for a in soup.find_all("a", href=True):
-            href = a.get("href", "")
-            if not href or href.startswith(("javascript:", "mailto:", "tel:", "#")):
-                continue
-            abs_url = urljoin(url, href).split("#")[0]
-            parsed = urlparse(abs_url)
-            if parsed.scheme not in ("http", "https") or parsed.netloc != BASE_DOMAIN:
-                continue
-            if abs_url not in visited and abs_url not in queue:
-                queue.append(abs_url)
-
-# Output report as JSON
-first_10 = broken[:10]
 report = {
     "base": BASE,
     "total_crawled": counts["total_checked"],
     "http_200_count": counts["http_200"],
     "broken_count": counts["broken_count"],
-    "first_10_broken": [{"url": u, "class": c} for u, c in first_10],
+    "first_10_broken": [{"url": u, "class": c} for u, c in broken[:10]],
+    "status_counts": status_counts,
+    "link_graph_count": {u: len(hs) for u, hs in link_graph.items()},
 }
 print(json.dumps(report, indent=2))
