@@ -1,6 +1,6 @@
 {
   "createdAt": "2026-07-07T12:00:00.000Z",
-  "updatedAt": "2026-07-07T23:31:00.000Z",
+  "updatedAt": "2026-07-08T05:43:11.008+00:00",
   "status": "blocked/auth-missing",
   "blocks": [
     "gog auth status returns No auth for gmail kleber@ziontechgroup.com",
@@ -21,24 +21,23 @@
   ],
   "digests": [
     {
-      "ts": "2026-07-07T20:45:00.000Z",
+      "ts": "2026-07-08T05:43:11.008+00:00",
       "status": "blocked/auth-missing",
       "metrics": {
-        "totalRuns": 59,
+        "totalRuns": 61,
         "sendsAttempted": 0,
         "duplicatesSuppressed": 0,
         "authFailures": 26,
         "hotFollowups": 0,
-        "latestComplete": "2026-07-07T23:18:00.000000+00:00"
+        "latestComplete": "2026-07-08T05:27:36.629453Z"
       },
-      "reconciliationNote": "Pattern-review cron run confirmed baseline stability. totalRuns=59, authFailures=26, latestComplete=2026-07-07T23:18:00.000000+00:00. No sends, suppressions, or hot-followups recorded; metrics remain zeroed by persistent auth failure. Improvement note updated in place; no duplicate blocked digest appended because there was no meaningful state delta.",
+      "reconciliationNote": "In-place freshness reconciliation on 2026-07-08T05:43:11.008+00:00 from outreach-log.jsonl: totalRuns advanced from prior baseline to 61. latestComplete advanced to 2026-07-08T05:27:36.629453Z. Auth state unchanged (blocked/auth-missing); no new digest appended because there is no meaningful state delta.",
       "recommendations": [
-        "Auth remains missing; do not tune suppression window, prompt wording, or scoring until real send/response data exists.",
-        "Reduce auth-blocked cron noise by fast-exiting on the first No auth for gmail probe and avoid writing duplicate auth_missing records per run window.",
-        "After restoring Gmail auth, audit real duplicate counts before expanding or tightening suppression window.",
-        "Drop or reconcile legacy batch-run lines in outreach-log.jsonl; they inflate totalRuns and make post-auth tuning noisy.",
-        "When auth is restored and hot-follow-up threads exist, draft CEO replies in the conversation language with Calendly and ziontechgroup.com links, mention new AI services and free tools, and fire only after deduping thread cache + Sent-subject history."
-      ]
+        "Auth is still missing; do not tune suppression window, prompt wording, or scoring.",
+        "After Gmail auth is restored, inspect real duplicate counts before changing suppression window.",
+        "Keep cron noise low by fast-exiting on first No auth for gmail probe."
+      ],
+      "reconciliationDate": "2026-07-08T02:01:32.745119+00:00"
     }
   ],
   "runs": [

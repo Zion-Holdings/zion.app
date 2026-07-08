@@ -103,12 +103,14 @@ def _tailor_message(chat_fn, r):
         {"role": "user", "content": prompt},
     ]
     last_err = None
-    for backend in ('openai_compat', 'unified', 'template'):
+    for backend in ('openai_compat', 'unified', 'utils_llm_query', 'template'):
         try:
             if backend == 'unified' and callable(chat_fn):
                 result = chat_fn(messages, provider='auto')
             elif backend == 'openai_compat':
                 result = _call_openai_compat_chat(messages)
+            elif backend == 'utils_llm_query':
+                result = _call_utils_llm_query(messages)
             else:
                 result = {'content': '', 'provider': 'template', 'model': 'deterministic-template-v1'}
             text = (result.get('content') or '').strip()
@@ -185,6 +187,22 @@ def _call_openai_compat_chat(messages, temperature=0.3):
         'provider': provider.get('client_id') or 'openai_compat',
         'model': data.get('model') or model,
     }
+
+
+def _call_utils_llm_query(messages, temperature=0.3):
+    if _llm_query is None:
+        raise RuntimeError('utils_llm_query_unavailable')
+    prompt = '\n'.join(m.get('content', '') for m in messages if m.get('content'))
+    result = _llm_query(prompt, temperature=temperature)
+    if isinstance(result, dict):
+        return {
+            'content': (result.get('content') or result.get('text') or '').strip(),
+            'provider': result.get('provider', 'utils-llm-query'),
+            'model': result.get('model', 'legacy-llm-query'),
+        }
+    if isinstance(result, str):
+        return {'content': result.strip(), 'provider': 'utils-llm-query-string', 'model': 'legacy-llm-query-string'}
+    raise RuntimeError('utils_llm_query_unexpected')
 
 
 def main():

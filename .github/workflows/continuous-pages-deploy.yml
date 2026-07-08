@@ -10,7 +10,7 @@ permissions:
   pages: write
   id-token: write
 concurrency:
-  group: continuous-pages-deploy
+  group: continuous-pages-deploy-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
@@ -58,13 +58,6 @@ jobs:
           mkdir -p "$ARTIFACT_DIR"
           if [ -d out ]; then
             cp -a out/. "$ARTIFACT_DIR"/
-            if [ -d docs ]; then
-              while IFS= read -r -d '' f; do
-                rel="${f#docs/}"
-                mkdir -p "$ARTIFACT_DIR/$(dirname "$rel")"
-                cp -a "$f" "$ARTIFACT_DIR/$rel"
-              done < <(find docs -type f -name 'index.html' -print0 2>/dev/null || true)
-            fi
           elif [ -d docs ]; then
             cp -a docs/. "$ARTIFACT_DIR"/
           else
