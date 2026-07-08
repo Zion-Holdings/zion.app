@@ -20,7 +20,7 @@ export default function Page() {
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">AI Knowledge Management and Enterprise Search in 2026</h1>
         <p className="text-slate-300 leading-relaxed mb-8">Practical retrieval, ranking, and governance patterns for internal knowledge systems.</p>
         <div className="glass-card prose prose-invert max-w-none">
-          <p>Enterprise search patterns that make knowledge actionable.</p><ul><li>Semantic retrieval and ranking</li><li>Governance, access control, and freshness</li><li>Proof-of-concept at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>See <a href="/services/ai-observability-aiops">AI platform services</a>, then <a href="/contact">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
+          <p>Enterprise search patterns that make knowledge actionable.</p><ul><li>Semantic retrieval and ranking</li><li>Governance, access control, and freshness</li><li>Proof-of-concept at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>See <a href="/services/-aiops">AI platform services</a>, then <a href="/contact">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
         </div>
         <div className="mt-10 flex flex-col sm:flex-row gap-3">
           <Link href="/services/" className="btn-primary">Explore AI services</Link>
