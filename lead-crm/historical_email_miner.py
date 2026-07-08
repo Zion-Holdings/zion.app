@@ -51,6 +51,9 @@ EXCLUDE_DOMAINS = {
     'airbnb.nl','airbnb.be','airbnb.at','airbnb.ch','airbnb.se','airbnb.no','airbnb.dk','airbnb.fi',
     'airbnb.co.nz','airbnb.co.jp','airbnb.kr','airbnb.co.za',
     'stays.net','stayz.com','homeaway.com','vrbo.com',
+    'linkedin.com','twitter.com','x.com','instagram.com','facebook.com',
+    'youtube.com','reddit.com','pinterest.com','tiktok.com',
+    'amazon.com','apple.com','microsoft.com','netflix.com',
 }
 DEEP_QUERIES = [
     'in:anywhere subject:parceria',
@@ -172,7 +175,7 @@ def run_miner():
     new_leads = []
     mined_contacts = []
     queries_run = 0
-    active_queries = DEEP_QUERIES[:18] if len(DEEP_QUERIES) > 18 else DEEP_QUERIES
+    active_queries = DEEP_QUERIES[:32] if len(DEEP_QUERIES) > 32 else DEEP_QUERIES
     for q in active_queries:
         queries_run += 1
         try:
