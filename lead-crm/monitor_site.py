@@ -38,6 +38,11 @@ ROUTES = [
     "/blog/ai-first-device-management-and-iot-operations-in-2026",
     "/blog/ai-first-digital-twins-and-asset-simulation-for-industry-in-2026",
     "/blog/ai-anti-fraud-and-payment-intelligence-for-fintech-in-2026",
+    "/free-ai-readiness-audit",
+    "/free-tools-hub",
+    "/free-resources",
+    "/leads",
+    "/services/rack-and-stack-field-services",
 ]
 
 def probe(path: str):

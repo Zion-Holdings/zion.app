@@ -5822,5 +5822,39 @@
     "is_generic_provider": false,
     "confidence": 1,
     "discovered_at": "2026-07-07T11:21:29.593036+00:00"
+  },
+  {
+    "to": null,
+    "name": "Field Engineer 1 — Twinsburg rack & stack",
+    "subject": "Parceria Zion Tech Group — rack & stack e implementação em campo para OH",
+    "body": null,
+    "status": "ready_to_contact",
+    "source": "manual_requirement",
+    "source_query": "Twinsburg OH rack and stack with US Citizen requirement",
+    "domain": null,
+    "is_generic_provider": false,
+    "confidence": 1,
+    "discovered_at": "2026-07-07T23:41:00.000Z",
+    "compliance": "US Citizen mandatory on-site; soft copy of passport and driving license required",
+    "services_referenced": [
+      "rack-and-stack-field-services"
+    ]
+  },
+  {
+    "to": null,
+    "name": "Field Engineer 2 — Twinsburg rack & stack",
+    "subject": "Parceria Zion Tech Group — rack & stack e implementação em campo para OH",
+    "body": null,
+    "status": "ready_to_contact",
+    "source": "manual_requirement",
+    "source_query": "Twinsburg OH rack and stack with US Citizen requirement",
+    "domain": null,
+    "is_generic_provider": false,
+    "confidence": 1,
+    "discovered_at": "2026-07-07T23:41:00.000Z",
+    "compliance": "US Citizen mandatory on-site; soft copy of passport and driving license required",
+    "services_referenced": [
+      "rack-and-stack-field-services"
+    ]
   }
 ]
