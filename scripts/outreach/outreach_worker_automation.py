@@ -14,7 +14,9 @@ DEDUP_DIR.mkdir(parents=True, exist_ok=True)
 STATE_FILE = DEDUP_DIR / 'global_dedup_state.json'
 LEDGER_FILE = DEDUP_DIR / 'sent_ledger.jsonl'
 
-DEDUP_COOLDOWN_SECONDS = 18 * 3600  # 18 hours per contact
+DEDUP_COOLDOWN_SECONDS = 6 * 3600  # 6 hours per contact, short enough for safe re-engagement
+MAX_AGE_DAYS = 180
+SEND_REQUIRES_ALIVE_THREAD = True
 LLM_TAILOR_ENABLED = bool(os.getenv('ZION_LLM_API_ENDPOINT') and os.getenv('ZION_LLM_API_KEY') and os.getenv('ZION_LLM_MODEL'))
 LLM_API_ENDPOINT = os.getenv('ZION_LLM_API_ENDPOINT') or os.getenv('LLM_API_ENDPOINT')
 LLM_API_KEY = os.getenv('ZION_LLM_API_KEY') or os.getenv('LLM_API_KEY')
