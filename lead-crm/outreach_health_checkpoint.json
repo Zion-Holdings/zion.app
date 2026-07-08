@@ -1,0 +1,30 @@
+{
+  "ts": "2026-07-08T08:30:00Z",
+  "miner": {
+    "queries_run": 32,
+    "contacts_found": 1,
+    "new_leads_added": 1,
+    "elapsed_s": 154.765,
+    "queries_per_second": 0.2068,
+    "avg_query_s": 4.8364,
+    "max_query_s": 6.1276,
+    "status": "ok"
+  },
+  "queue": {
+    "ready_count": 25
+  },
+  "tailor": {
+    "used_llm": true,
+    "LLM_CALL_TIMEOUT": 20,
+    "LLM_RETRIES": 3,
+    "LLM_RETRY_BACKOFF": 2,
+    "ZT_MAX_TAILOR": 10,
+    "tailored_count": 10
+  },
+  "send_policy": "locked",
+  "next_actions": [
+    "Enrich top prospects with public company context",
+    "Schedule manual review of CEO drafts",
+    "Diagnose provider quota/latency and token budget"
+  ]
+}
