@@ -4,7 +4,7 @@ Zion Historical Email Miner - Termux-safe.
 Uses gmail_search(all_folders=True) to discover new prospect emails from sent/inbox threads.
 Writes new leads to lead-crm/all-leads.json with status='discovered'.
 """
-import sys, json, re, datetime
+import sys, json, re, datetime, time
 from pathlib import Path
 
 REPO = Path('/data/data/com.termux/files/home/zion-support.github.io')
@@ -176,12 +176,17 @@ def run_miner():
     mined_contacts = []
     queries_run = 0
     active_queries = DEEP_QUERIES[:32] if len(DEEP_QUERIES) > 32 else DEEP_QUERIES
+    started = time.perf_counter()
+    query_durations = []
     for q in active_queries:
+        qstart = time.perf_counter()
         queries_run += 1
         try:
             msgs = gmail_search(q, limit=MAX_RESULTS_PER_QUERY, all_folders=True)
         except Exception as e:
             append_log({'ts': now_iso(), 'event': 'search_error', 'query': q, 'error': str(e)})
+            qend = time.perf_counter()
+            query_durations.append(qend - qstart)
             continue
         msg_ids = [m.get('id') for m in msgs if m.get('id')]
         for msg_id in msg_ids:
@@ -196,6 +201,9 @@ def run_miner():
                 lead = classifiy_prospect(key, q)
                 new_leads.append(lead)
                 mined_contacts.append({'id': msg_id, 'email': key, 'query': q})
+        qend = time.perf_counter()
+        query_durations.append(qend - qstart)
+    elapsed = time.perf_counter() - started
 
     if new_leads:
         existing.extend(new_leads)
@@ -209,6 +217,10 @@ def run_miner():
         'queries_run': queries_run,
         'contacts_found': len(mined_contacts),
         'new_leads_added': len(new_leads),
+        'elapsed_s': round(elapsed, 3),
+        'queries_per_second': round(queries_run / elapsed, 4) if elapsed > 0 else None,
+        'avg_query_s': round(sum(query_durations) / len(query_durations), 4) if query_durations else None,
+        'max_query_s': round(max(query_durations), 4) if query_durations else None,
         'status': 'ok' if queries_run else 'error',
     }
     try:
