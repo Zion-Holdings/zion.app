@@ -18,7 +18,6 @@
 {"event":"complete","summary":{"scanned":0,"potentialClients":0,"skippedDuplicateSuppression":0,"sent":0,"errors":["gmail search failed: No auth for gmail kleber@ziontechgroup.com.\n\nOAuth (browser flow):\n  gog auth add kleber@ziontechgroup.com --services gmail\n\nWorkspace service account (domain-wide delegation):\n  gog auth service-acco"]},"ts":"2026-07-07T10:38:19.340029Z"}
 {"email":"batch-run","status":"COMPLETE","scanned":0,"potentialClients":0,"emailsSentCount":0,"hotFollowups":0,"ts":"2026-07-07T10:49:59.734Z"}
 {"event":"start","ts":"2026-07-07T10:38:19.340029Z","host":"cron"}
-{"event":"complete","summary":{"scanned":0,"potentialClients":0,"skippedDuplicateSuppression":0,"sent":0,"errors":["gmail search failed: No auth for gmail kleber@ziontechgroup.com.\n\nOAuth (browser flow):\n  gog auth add kleber@ziontechgroup.com --services gmail\n\nWorkspace service account (domain-wide delegation):\n  gog auth service-acco"]},"ts":"2026-07-07T10:38:19.340029Z"}
 {"email":"batch-run","status":"COMPLETE","scanned":0,"potentialClients":0,"emailsSentCount":0,"hotFollowups":0,"ts":"2026-07-07T10:55:41.851Z"}
 {"event":"start","ts":"2026-07-07T11:35:15.576111Z","host":"cron"}
 {"event":"complete","summary":{"scanned":0,"potentialClients":0,"skippedDuplicateSuppression":0,"sent":0,"errors":["gmail search failed: No auth for gmail kleber@ziontechgroup.com.\n\nOAuth (browser flow):\n  gog auth add kleber@ziontechgroup.com --services gmail\n\nWorkspace service account (domain-wide delegation):\n  gog auth service-acco"]},"ts":"2026-07-07T11:35:15.675227Z"}
@@ -57,3 +56,4 @@
 {"event":"complete","summary":{"scanned":0,"potentialClients":0,"skippedDuplicateSuppression":0,"sent":0,"errors":["gmail search failed: No auth for gmail kleber@ziontechgroup.com.\n\nOAuth (browser flow):\n  gog auth add kleber@ziontechgroup.com --services gmail\n\nWorkspace service account (domain-wide delegation):\n  gog auth service-acco"]},"ts":"2026-07-07T18:01:53.605660Z"}
 {"event":"auth_missing","ts":"2026-07-07T20:04:23.382047+00:00","summary":{"errors":["No auth for gmail kleber@ziontechgroup.com. Fast-exit; no new run attempted."]}}
 {"event":"auth_missing","ts":"2026-07-07T20:04:39.690418+00:00","summary":{"errors":["No auth for gmail kleber@ziontechgroup.com. Fast-exit; no new run attempted."]}}
+{"event":"auth_missing","ts":"2026-07-07T23:18:00.000000+00:00","summary":{"errors":["No auth for gmail kleber@ziontechgroup.com. Fast-exit; no new run attempted."]}}
