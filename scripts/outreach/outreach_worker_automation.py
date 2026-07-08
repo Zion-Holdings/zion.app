@@ -285,7 +285,6 @@ def send_ceo_reply(thread_id, to_addr, subject, body, references_message_id):
     raw = base64.urlsafe_b64encode(("\r\n".join(raw_headers) + "\r\n\r\n" + body).encode('utf-8')).decode('utf-8')
     sent = service.users().messages().send(userId='me', body={'raw': raw, 'threadId': thread_id}).execute()
 def sanitize_outreach_body(body: str) -> str:
-    # Strip common leaked AI planning preambles that slipped into sent mail.
     leaked_prefixes = [
         "got it",
         "then body:",
@@ -319,32 +318,15 @@ def sanitize_outreach_body(body: str) -> str:
     out = []
     blank_count = 0
     for line in cleaned:
-        if line.strip() == '':
+        if line.strip() == "":
             blank_count += 1
             if blank_count <= 2:
                 out.append(line)
         else:
             blank_count = 0
             out.append(line)
-    result = '
-'.join(out).strip()
+    result = chr(10).join(out).strip()
     return result
-    return sent
-
-    # Normalize whitespace and remove leading/trailing blank lines
-    body = re.sub(r'
-{3,}', '
-
-', body)
-    lines = [line.rstrip() for line in body.splitlines()]
-    while lines and not lines[0].strip():
-        lines.pop(0)
-    while lines and not lines[-1].strip():
-        lines.pop()
-    return '
-'.join(lines).strip()
-
-
 def fetch_or_create_lead_from_inbox(email, thread_subject=None):
     # Priority 1: recent unread/new inbound message across all folders and explicit variant subjects
     queries = []
@@ -444,6 +426,7 @@ def run_high_frequency_outreach():
 
     harden=[]
 
+    dead = []
     for c in contacts:
         email = c["email"]
         contact_key = email.lower()
@@ -473,7 +456,6 @@ def run_high_frequency_outreach():
         c = dict(c)
         c["_resolved_thread_id"] = thread_id
         harden.append(c)
-        dead = []
         if not thread_id or not probe_thread_alive(thread_id):
             dead.append({"contact": email, "thread_id": thread_id, "subject": prospective_subject})
             skipped += 1
