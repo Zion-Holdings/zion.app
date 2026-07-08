@@ -356,43 +356,56 @@ def fetch_or_create_lead_from_inbox(email, thread_subject=None):
     }
 
 def run_high_frequency_outreach():
-    contacts = [
-        {"email": "sac@relacionamento.santabarbararesidence.com.br", "name": "Santa", "company": "Santa Barbara Residence", "thread_id": "19f3d496d3924520"},
-        {"email": "flavio.miranda@persistiq.com", "name": "Flavio", "company": "Persistiq", "thread_id": "19f3c9ced31ce3"},
-        {"email": "mweiss@procurri.com", "name": "Matt Weiss", "company": "Procurri", "thread_id": "17b0c52dcebfda15"},
-        {"email": "anjali@quantomtech.com", "name": "Anjali", "company": "QuantomTech", "thread_subject": "Boost Quantomtech revenue with AI personalization"},
-        {"email": "paulo@somaticabrasil.com", "name": "Paulo", "company": "Somatica Brasil", "thread_subject": "Parceria Zion Tech Group"},
-        {"email": "ajuda@homer.com.br", "name": "Homer Team", "company": "Homer", "thread_subject": "Free AI readiness audit for Homer"},
-        {"email": "Whibbert@solyssey.com", "name": "Wayne", "company": "Solyssey", "thread_subject": "Supplier Collaboration Opportunity"},
+    # Dynamic discovery from mail instead of replaying a fixed contact list.
+    discovery_queries = [
+        "in:inbox -category:promotions -in:spam -in:trash newer_than:7d \"partnership\" OR \"collaboration\" OR \"proposal\"",
+        "in:inbox -category:promotions -in:spam -in:trash newer_than:7d \"AI services\" OR \"AI support\" OR \"project\"",
+        "in:inbox -category:promotions -in:spam -in:trash newer_than:7d \"interested\" OR \"next steps\" OR \"opportunity\"",
+        "in:sent -category:promotions -in:spam -in:trash older_than:30d newer_than:180d",
     ]
-
-    # Also search inbox for new contacts beyond the explicit list
-    additional_hits = search_all_folders("in:inbox -category:promotions newer_than:1d", max_results=20)
-    additional_emails = []
-    for hit in additional_hits:
-        msg = service.users().messages().get(userId='me', id=hit['id'], format='metadata', metadataHeaders=['From','Subject','In-Reply-To']).execute()
-        headers = {x['name']: x['value'] for x in msg.get('payload', {}).get('headers', [])}
-        frm = headers.get('From', '')
-        if '@' in frm and 'no-reply' not in frm.lower() and 'github' not in frm.lower():
+    hit_ids = set()
+    contacts = []
+    for q in discovery_queries:
+        try:
+            hits = search_all_folders(q, max_results=25)
+        except Exception:
+            hits = []
+        for h in hits:
+            hit_id = h.get('id')
+            if not hit_id or hit_id in hit_ids:
+                continue
+            hit_ids.add(hit_id)
+            try:
+                msg = service.users().messages().get(userId='me', id=hit_id, format='metadata', metadataHeaders=['From','Subject','In-Reply-To']).execute()
+            except Exception:
+                continue
+            headers = {x['name']: x['value'] for x in msg.get('payload', {}).get('headers', [])}
+            frm = headers.get('From', '')
+            subj = headers.get('Subject', '')
+            if '@' not in frm:
+                continue
+            lower = frm.lower()
+            if any(x in lower for x in ['no-reply','noreply','mailer-daemon','postmaster','github','semrush','booking.com','calendly','datadog.zendesk.com','support@']):
+                continue
             import re
             m = re.search(r'<([^>]+)>', frm)
-            addr = m.group(1) if m else frm.strip()
-            additional_emails.append({"email": addr, "name": addr.split('@')[0].replace('.', ' ').title(), "company": addr.split('@')[1].split('.')[0].title(), "thread_subject": headers.get('Subject', 'Next steps')})
-
-    seen_add = set()
-    merged_contacts = list(contacts)
-    for a in additional_emails:
-        if a["email"] not in {c["email"] for c in merged_contacts}:
-            merged_contacts.append(a)
+            addr = m.group(1).lower() if m else frm.strip().lower()
+            thread_id = msg.get('threadId') or hit_id
+            contacts.append({
+                "email": addr,
+                "name": addr.split('@')[0].replace('.', ' ').title(),
+                "company": addr.split('@')[1].split('.')[0].title(),
+                "thread_id": thread_id,
+                "thread_subject": subj or 'Next steps',
+            })
 
     sent_count = 0
     skipped = 0
     newest_used = []
 
-    dead = []
-    hardened_contacts=[]
-    merged_contacts = hardened_contacts or merged_contacts
-    for c in merged_contacts:
+    harden=[]
+
+    for c in contacts:
         email = c["email"]
         contact_key = email.lower()
         prospective_subject = c.get("thread_subject") or "Next steps"
@@ -420,7 +433,8 @@ def run_high_frequency_outreach():
                     break
         c = dict(c)
         c["_resolved_thread_id"] = thread_id
-        hardened_contacts.append(c)
+        harden.append(c)
+        dead = []
         if not thread_id or not probe_thread_alive(thread_id):
             dead.append({"contact": email, "thread_id": thread_id, "subject": prospective_subject})
             skipped += 1
