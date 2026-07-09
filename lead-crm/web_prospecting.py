@@ -41,8 +41,28 @@ HEADERS = {
 
 def fetch_html(url: str) -> str:
     req = urllib.request.Request(url, headers=HEADERS)
-    with urllib.request.urlopen(req, timeout=20) as resp:
-        return resp.read().decode('utf-8', errors='replace')
+    try:
+        with urllib.request.urlopen(req, timeout=20) as resp:
+            if resp.status not in (200, 202):
+                return ''
+            return resp.read().decode('utf-8', errors='replace')
+    except Exception:
+        return ''
+
+
+def _clean_ddg_href(href: str, url: str) -> str | None:
+    if href.startswith('//duckduckgo.com/l/?uddg='):
+        try:
+            parsed = urllib.parse.parse_qs(urllib.parse.urlparse(href).query)
+            target = parsed.get('uddg', [''])[0]
+            if target.startswith('http'):
+                return urllib.parse.unquote(target)
+        except Exception:
+            pass
+        return None
+    if href.startswith('http') and 'duckduckgo.com' not in href:
+        return href
+    return None
 
 
 def duckduckgo_search(query: str, max_results: int = 10) -> list[str]:
@@ -53,11 +73,12 @@ def duckduckgo_search(query: str, max_results: int = 10) -> list[str]:
     except Exception:
         return []
     links = []
-    for m in re.finditer(r'<a[^>]+class="result__a"[^>]+href="([^"]+)"[^>]*>(.*?)</a>', html):
+    for m in re.finditer(r'<a[^>]+class="result__a"[^>]+href="([^"]+)"', html):
         href = m.group(1)
-        txt = re.sub(r'<[^>]+>', '', m.group(2))
-        if href and txt:
-            links.append(href)
+        target = _clean_ddg_href(href, url)
+        if not target:
+            continue
+        links.append(target)
         if len(links) >= max_results:
             break
     return links
@@ -75,7 +96,7 @@ def bing_html_search(query: str, max_results: int = 10) -> list[str]:
     except Exception:
         return []
     links = []
-    for m in re.finditer(r'<h2><a href="(https?://[^"]+)"[^>]*>', html):
+    for m in re.finditer(r'<a[^>]+href="(https?://[^"]+)"', html):
         href = m.group(1)
         if href and 'bing.com' not in href:
             links.append(href)
@@ -189,7 +210,7 @@ def main():
             all_leads.extend(rows)
         except Exception:
             pass
-        time.sleep(1.0)
+        time.sleep(0.4)
     added = append_ready(all_leads)
     print(json.dumps({
         'ts': datetime.datetime.now(datetime.timezone.utc).isoformat(),

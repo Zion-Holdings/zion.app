@@ -5,9 +5,9 @@ import subprocess
 from datetime import datetime
 from pathlib import Path
 
-base = Path('/Users/miami2/zion.app/automation')
-history_file = base / 'data' / 'lead-outreach' / 'outreach-history.json'
-log_file = base / 'data' / 'lead-outreach' / 'outreach-log.jsonl'
+base = Path(__file__).resolve().parents[1]
+history_file = base / 'automation' / 'data' / 'lead-outreach' / 'outreach-history.json'
+log_file = base / 'automation' / 'data' / 'lead-outreach' / 'outreach-log.jsonl'
 errors = []
 
 def append_event(entry):
