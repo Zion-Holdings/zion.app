@@ -1,58 +1,10 @@
 {
-  "generatedAt": "2026-07-08T10:01:27.717Z",
+  "generatedAt": "2026-07-09T10:03:01.863Z",
   "base": "https://ziontechgroup.com",
-  "totalFiles": 1225,
+  "totalFiles": 1223,
   "totalChecked": 472,
-  "brokenCount": 36873,
+  "brokenCount": 35544,
   "broken": [
-    {
-      "file": "ai-services/index.html",
-      "link": "/services/ai-4801/",
-      "target": "https://ziontechgroup.com/services/ai-4801/index.html",
-      "status": 404
-    },
-    {
-      "file": "ai-services/index.html",
-      "link": "/services/ai-4806/",
-      "target": "https://ziontechgroup.com/services/ai-4806/index.html",
-      "status": 404
-    },
-    {
-      "file": "ai-services/index.html",
-      "link": "/services/ai-4804/",
-      "target": "https://ziontechgroup.com/services/ai-4804/index.html",
-      "status": 404
-    },
-    {
-      "file": "ai-services/index.html",
-      "link": "/services/ai-4803/",
-      "target": "https://ziontechgroup.com/services/ai-4803/index.html",
-      "status": 404
-    },
-    {
-      "file": "ai-services/index.html",
-      "link": "/services/ai-4802/",
-      "target": "https://ziontechgroup.com/services/ai-4802/index.html",
-      "status": 404
-    },
-    {
-      "file": "ai-services/index.html",
-      "link": "/services/ai-4805/",
-      "target": "https://ziontechgroup.com/services/ai-4805/index.html",
-      "status": 404
-    },
-    {
-      "file": "ai-services/index.html",
-      "link": "/services/ai-4807/",
-      "target": "https://ziontechgroup.com/services/ai-4807/index.html",
-      "status": 404
-    },
-    {
-      "file": "ai-services/index.html",
-      "link": "/services/ai-4808/",
-      "target": "https://ziontechgroup.com/services/ai-4808/index.html",
-      "status": 404
-    },
     {
       "file": "blog/ai-agentic-workflow-automation-reduce-manual-work-hours/index.html",
       "link": "https://ziontechgroup.com/ai-agentic-workflow-automation-reduce-manual-work-hours/",
@@ -60,15 +12,15 @@
       "status": 404
     },
     {
-      "file": "blog/ai-computer-vision-quality-inspection/index.html",
-      "link": "https://ziontechgroup.com/ai-computer-vision-quality-inspection/",
-      "target": "https://ziontechgroup.com/ai-computer-vision-quality-inspection/index.html",
-      "status": 404
-    },
-    {
       "file": "blog/ai-ci-execution-and-ci-cd-ai-automation/index.html",
       "link": "https://ziontechgroup.com/ai-ci-execution-and-ci-cd-ai-automation/",
       "target": "https://ziontechgroup.com/ai-ci-execution-and-ci-cd-ai-automation/index.html",
+      "status": 404
+    },
+    {
+      "file": "blog/ai-computer-vision-quality-inspection/index.html",
+      "link": "https://ziontechgroup.com/ai-computer-vision-quality-inspection/",
+      "target": "https://ziontechgroup.com/ai-computer-vision-quality-inspection/index.html",
       "status": 404
     },
     {
@@ -114,12 +66,6 @@
       "status": 404
     },
     {
-      "file": "blog/ai-outsourcing-vs-in-house-it-latam/index.html",
-      "link": "https://ziontechgroup.com/ai-outsourcing-vs-in-house-it-latam/",
-      "target": "https://ziontechgroup.com/ai-outsourcing-vs-in-house-it-latam/index.html",
-      "status": 404
-    },
-    {
       "file": "blog/ai-observability-and-incident-response-for-modern-it-teams/index.html",
       "link": "https://ziontechgroup.com/ai-observability-and-incident-response-for-modern-it-teams/",
       "target": "https://ziontechgroup.com/ai-observability-and-incident-response-for-modern-it-teams/index.html",
@@ -129,6 +75,12 @@
       "file": "blog/ai-outsourcing-vs-inhouse-it-teams-2026/index.html",
       "link": "https://ziontechgroup.com/ai-outsourcing-vs-inhouse-it-teams-2026/",
       "target": "https://ziontechgroup.com/ai-outsourcing-vs-inhouse-it-teams-2026/index.html",
+      "status": 404
+    },
+    {
+      "file": "blog/ai-outsourcing-vs-in-house-it-latam/index.html",
+      "link": "https://ziontechgroup.com/ai-outsourcing-vs-in-house-it-latam/",
+      "target": "https://ziontechgroup.com/ai-outsourcing-vs-in-house-it-latam/index.html",
       "status": 404
     },
     {
@@ -180,15 +132,15 @@
       "status": 404
     },
     {
-      "file": "blog/ai-voice-and-multichannel-support-automation/index.html",
-      "link": "https://ziontechgroup.com/ai-voice-and-multichannel-support-automation/",
-      "target": "https://ziontechgroup.com/ai-voice-and-multichannel-support-automation/index.html",
-      "status": 404
-    },
-    {
       "file": "blog/ai-vendor-channel-partnership-model-for-latam/index.html",
       "link": "https://ziontechgroup.com/ai-vendor-channel-partnership-model-for-latam/",
       "target": "https://ziontechgroup.com/ai-vendor-channel-partnership-model-for-latam/index.html",
+      "status": 404
+    },
+    {
+      "file": "blog/ai-voice-and-multichannel-support-automation/index.html",
+      "link": "https://ziontechgroup.com/ai-voice-and-multichannel-support-automation/",
+      "target": "https://ziontechgroup.com/ai-voice-and-multichannel-support-automation/index.html",
       "status": 404
     },
     {
@@ -216,6 +168,12 @@
       "status": 404
     },
     {
+      "file": "blog/managed-ai-cloud-support-for-startups-and-enterprises-in-2026/index.html",
+      "link": "https://ziontechgroup.com/managed-ai-cloud-support-for-startups-and-enterprises-in-2026/",
+      "target": "https://ziontechgroup.com/managed-ai-cloud-support-for-startups-and-enterprises-in-2026/index.html",
+      "status": 404
+    },
+    {
       "file": "blog/nebius-ai-cloud-partnership-model-for-latam/index.html",
       "link": "https://ziontechgroup.com/nebius-ai-cloud-partnership-model-for-latam/",
       "target": "https://ziontechgroup.com/nebius-ai-cloud-partnership-model-for-latam/index.html",
@@ -228,27 +186,9 @@
       "status": 404
     },
     {
-      "file": "blog/managed-ai-cloud-support-for-startups-and-enterprises-in-2026/index.html",
-      "link": "https://ziontechgroup.com/managed-ai-cloud-support-for-startups-and-enterprises-in-2026/",
-      "target": "https://ziontechgroup.com/managed-ai-cloud-support-for-startups-and-enterprises-in-2026/index.html",
-      "status": 404
-    },
-    {
       "file": "blog/nebius-latam-ai-partnership-opportunity-2026/index.html",
       "link": "https://ziontechgroup.com/nebius-latam-ai-partnership-opportunity-2026/",
       "target": "https://ziontechgroup.com/nebius-latam-ai-partnership-opportunity-2026/index.html",
-      "status": 404
-    },
-    {
-      "file": "blog/nebius-partnership-and-ai-vendor-co-selling-2026/index.html",
-      "link": "https://ziontechgroup.com/nebius-partnership-and-ai-vendor-co-selling-2026/",
-      "target": "https://ziontechgroup.com/nebius-partnership-and-ai-vendor-co-selling-2026/index.html",
-      "status": 404
-    },
-    {
-      "file": "blog/nebius-partnership-latam-expansion-guide/index.html",
-      "link": "https://ziontechgroup.com/nebius-partnership-latam-expansion-guide/",
-      "target": "https://ziontechgroup.com/nebius-partnership-latam-expansion-guide/index.html",
       "status": 404
     },
     {
@@ -258,13 +198,19 @@
       "status": 404
     },
     {
-      "file": "docs/OPENROUTER-SETUP/index.html",
-      "link": "/docs/API_REGISTRY/",
-      "target": "https://ziontechgroup.com/API_REGISTRY/index.html",
+      "file": "blog/nebius-partnership-latam-expansion-guide/index.html",
+      "link": "https://ziontechgroup.com/nebius-partnership-latam-expansion-guide/",
+      "target": "https://ziontechgroup.com/nebius-partnership-latam-expansion-guide/index.html",
       "status": 404
     },
     {
-      "file": "free-resources/index.html",
+      "file": "blog/nebius-partnership-and-ai-vendor-co-selling-2026/index.html",
+      "link": "https://ziontechgroup.com/nebius-partnership-and-ai-vendor-co-selling-2026/",
+      "target": "https://ziontechgroup.com/nebius-partnership-and-ai-vendor-co-selling-2026/index.html",
+      "status": 404
+    },
+    {
+      "file": "docs/OPENROUTER-SETUP/index.html",
       "link": "/docs/API_REGISTRY/",
       "target": "https://ziontechgroup.com/API_REGISTRY/index.html",
       "status": 404
@@ -283,20 +229,26 @@
     },
     {
       "file": "free-resources/index.html",
+      "link": "/docs/API_REGISTRY/",
+      "target": "https://ziontechgroup.com/API_REGISTRY/index.html",
+      "status": 404
+    },
+    {
+      "file": "free-resources/index.html",
       "link": "/blog/ai-driven-marketing-automation-strategies/",
       "target": "https://ziontechgroup.com/blog/ai-driven-marketing-automation-strategies/index.html",
       "status": 404
     },
     {
       "file": "free-resources/index.html",
-      "link": "/blog/cloud-migration-and-ai-modernizing-infrastructure-for-intelligent-workloads/",
-      "target": "https://ziontechgroup.com/blog/cloud-migration-and-ai-modernizing-infrastructure-for-intelligent-workloads/index.html",
+      "link": "/blog/ai-security-best-practices-protecting-your-ai-systems-from-emerging-threats/",
+      "target": "https://ziontechgroup.com/blog/ai-security-best-practices-protecting-your-ai-systems-from-emerging-threats/index.html",
       "status": 404
     },
     {
       "file": "free-resources/index.html",
-      "link": "/blog/ai-security-best-practices-protecting-your-ai-systems-from-emerging-threats/",
-      "target": "https://ziontechgroup.com/blog/ai-security-best-practices-protecting-your-ai-systems-from-emerging-threats/index.html",
+      "link": "/blog/cloud-migration-and-ai-modernizing-infrastructure-for-intelligent-workloads/",
+      "target": "https://ziontechgroup.com/blog/cloud-migration-and-ai-modernizing-infrastructure-for-intelligent-workloads/index.html",
       "status": 404
     },
     {
@@ -309,114 +261,6 @@
       "file": "free-tools-hub/index.html",
       "link": "/tools/favicon-generator/",
       "target": "https://ziontechgroup.com/tools/favicon-generator/index.html",
-      "status": 404
-    },
-    {
-      "file": "index.html",
-      "link": "/docs/new-ai-services/",
-      "target": "https://ziontechgroup.com/new-ai-services/index.html",
-      "status": 404
-    },
-    {
-      "file": "industry-solutions/index.html",
-      "link": "/services/ai-4801/",
-      "target": "https://ziontechgroup.com/services/ai-4801/index.html",
-      "status": 404
-    },
-    {
-      "file": "industry-solutions/index.html",
-      "link": "/services/ai-4802/",
-      "target": "https://ziontechgroup.com/services/ai-4802/index.html",
-      "status": 404
-    },
-    {
-      "file": "industry-solutions/index.html",
-      "link": "/services/ai-4803/",
-      "target": "https://ziontechgroup.com/services/ai-4803/index.html",
-      "status": 404
-    },
-    {
-      "file": "industry-solutions/index.html",
-      "link": "/services/ai-4804/",
-      "target": "https://ziontechgroup.com/services/ai-4804/index.html",
-      "status": 404
-    },
-    {
-      "file": "industry-solutions/index.html",
-      "link": "/services/ai-4805/",
-      "target": "https://ziontechgroup.com/services/ai-4805/index.html",
-      "status": 404
-    },
-    {
-      "file": "industry-solutions/index.html",
-      "link": "/services/ai-4806/",
-      "target": "https://ziontechgroup.com/services/ai-4806/index.html",
-      "status": 404
-    },
-    {
-      "file": "industry-solutions/index.html",
-      "link": "/services/ai-4807/",
-      "target": "https://ziontechgroup.com/services/ai-4807/index.html",
-      "status": 404
-    },
-    {
-      "file": "industry-solutions/index.html",
-      "link": "/services/ai-4808/",
-      "target": "https://ziontechgroup.com/services/ai-4808/index.html",
-      "status": 404
-    },
-    {
-      "file": "new-ai-services/index.html",
-      "link": "https://ziontechgroup.com/new-ai-services/",
-      "target": "https://ziontechgroup.com/new-ai-services/index.html",
-      "status": 404
-    },
-    {
-      "file": "new-ai-services/index.html",
-      "link": "/services/ai-4801/",
-      "target": "https://ziontechgroup.com/services/ai-4801/index.html",
-      "status": 404
-    },
-    {
-      "file": "new-ai-services/index.html",
-      "link": "/services/ai-4802/",
-      "target": "https://ziontechgroup.com/services/ai-4802/index.html",
-      "status": 404
-    },
-    {
-      "file": "new-ai-services/index.html",
-      "link": "/services/ai-4803/",
-      "target": "https://ziontechgroup.com/services/ai-4803/index.html",
-      "status": 404
-    },
-    {
-      "file": "new-ai-services/index.html",
-      "link": "/services/ai-4804/",
-      "target": "https://ziontechgroup.com/services/ai-4804/index.html",
-      "status": 404
-    },
-    {
-      "file": "new-ai-services/index.html",
-      "link": "/services/ai-4805/",
-      "target": "https://ziontechgroup.com/services/ai-4805/index.html",
-      "status": 404
-    },
-    {
-      "file": "new-ai-services/index.html",
-      "link": "/services/ai-4806/",
-      "target": "https://ziontechgroup.com/services/ai-4806/index.html",
-      "status": 404
-    },
-    {
-      "file": "new-ai-services/index.html",
-      "link": "/services/ai-4807/",
-      "target": "https://ziontechgroup.com/services/ai-4807/index.html",
-      "status": 404
-    },
-    {
-      "file": "new-ai-services/index.html",
-      "link": "/services/ai-4808/",
-      "target": "https://ziontechgroup.com/services/ai-4808/index.html",
       "status": 404
     },
     {
@@ -438,771 +282,927 @@
       "status": 404
     },
     {
-      "file": "seo/ai-document-automation-free-tools/index.html",
-      "link": "/icon.svg",
-      "target": "https://ziontechgroup.com/icon.svg",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-document-automation-free-tools/index.html",
-      "link": "/icon.svg",
-      "target": "https://ziontechgroup.com/icon.svg",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-document-automation-free-tools/index.html",
-      "link": "/",
-      "target": "https://ziontechgroup.com/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-document-automation-free-tools/index.html",
-      "link": "/pricing/",
-      "target": "https://ziontechgroup.com/pricing/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-document-automation-free-tools/index.html",
-      "link": "/",
-      "target": "https://ziontechgroup.com/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-document-automation-free-tools/index.html",
-      "link": "/pricing/",
-      "target": "https://ziontechgroup.com/pricing/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-document-automation-free-tools/index.html",
-      "link": "/docs/",
-      "target": "https://ziontechgroup.com/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-document-automation-free-tools/index.html",
-      "link": "https://ziontechgroup.com",
-      "target": "https://ziontechgroup.com/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-document-intelligence-free-trial/index.html",
-      "link": "/manifest.json",
-      "target": "https://ziontechgroup.com/manifest.json",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-document-intelligence-free-trial/index.html",
-      "link": "/icon.svg",
-      "target": "https://ziontechgroup.com/icon.svg",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-document-intelligence-free-trial/index.html",
-      "link": "/icon.svg",
-      "target": "https://ziontechgroup.com/icon.svg",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-document-intelligence-free-trial/index.html",
-      "link": "/",
-      "target": "https://ziontechgroup.com/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-document-intelligence-free-trial/index.html",
-      "link": "/pricing/",
-      "target": "https://ziontechgroup.com/pricing/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-document-intelligence-free-trial/index.html",
-      "link": "/",
-      "target": "https://ziontechgroup.com/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-document-intelligence-free-trial/index.html",
-      "link": "/pricing/",
-      "target": "https://ziontechgroup.com/pricing/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-document-intelligence-free-trial/index.html",
-      "link": "/docs/",
-      "target": "https://ziontechgroup.com/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-document-intelligence-free-trial/index.html",
-      "link": "https://ziontechgroup.com",
-      "target": "https://ziontechgroup.com/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-document-processing/index.html",
-      "link": "/manifest.json",
-      "target": "https://ziontechgroup.com/manifest.json",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-document-processing/index.html",
-      "link": "/icon.svg",
-      "target": "https://ziontechgroup.com/icon.svg",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-document-processing/index.html",
-      "link": "/icon.svg",
-      "target": "https://ziontechgroup.com/icon.svg",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-document-processing/index.html",
-      "link": "/",
-      "target": "https://ziontechgroup.com/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-document-processing/index.html",
-      "link": "/pricing/",
-      "target": "https://ziontechgroup.com/pricing/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-document-processing/index.html",
-      "link": "/",
-      "target": "https://ziontechgroup.com/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-document-processing/index.html",
-      "link": "/pricing/",
-      "target": "https://ziontechgroup.com/pricing/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-document-processing/index.html",
-      "link": "/docs/",
-      "target": "https://ziontechgroup.com/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-document-processing/index.html",
-      "link": "https://ziontechgroup.com",
-      "target": "https://ziontechgroup.com/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-edge-iot/index.html",
-      "link": "/manifest.json",
-      "target": "https://ziontechgroup.com/manifest.json",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-edge-iot/index.html",
-      "link": "/icon.svg",
-      "target": "https://ziontechgroup.com/icon.svg",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-edge-iot/index.html",
-      "link": "/icon.svg",
-      "target": "https://ziontechgroup.com/icon.svg",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-edge-iot/index.html",
-      "link": "/",
-      "target": "https://ziontechgroup.com/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-edge-iot/index.html",
-      "link": "/pricing/",
-      "target": "https://ziontechgroup.com/pricing/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-edge-iot/index.html",
-      "link": "/",
-      "target": "https://ziontechgroup.com/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-edge-iot/index.html",
-      "link": "/pricing/",
-      "target": "https://ziontechgroup.com/pricing/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-edge-iot/index.html",
-      "link": "/docs/",
-      "target": "https://ziontechgroup.com/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-edge-iot/index.html",
-      "link": "https://ziontechgroup.com",
-      "target": "https://ziontechgroup.com/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-edge-realtime/index.html",
-      "link": "/manifest.json",
-      "target": "https://ziontechgroup.com/manifest.json",
-      "status": 0
-    },
-    {
       "file": "seo/ai-document-automation-enterprise/index.html",
       "link": "https://ziontechgroup.com/ai-document-automation-enterprise/",
       "target": "https://ziontechgroup.com/ai-document-automation-enterprise/index.html",
       "status": 404
     },
     {
-      "file": "seo/ai-edge-realtime/index.html",
+      "file": "seo/ai-free-tools-enterprise/index.html",
+      "link": "https://ziontechgroup.com/ai-free-tools-enterprise/",
+      "target": "https://ziontechgroup.com/ai-free-tools-enterprise/index.html",
+      "status": 404
+    },
+    {
+      "file": "seo/ai-intelligent-routing/index.html",
       "link": "/icon.svg",
       "target": "https://ziontechgroup.com/icon.svg",
       "status": 0
     },
     {
-      "file": "seo/ai-edge-realtime/index.html",
+      "file": "seo/ai-intelligent-routing/index.html",
       "link": "/icon.svg",
       "target": "https://ziontechgroup.com/icon.svg",
       "status": 0
     },
     {
-      "file": "seo/ai-edge-realtime/index.html",
+      "file": "seo/ai-intelligent-routing/index.html",
       "link": "/",
       "target": "https://ziontechgroup.com/index.html",
       "status": 0
     },
     {
-      "file": "seo/ai-edge-realtime/index.html",
+      "file": "seo/ai-intelligent-routing/index.html",
       "link": "/pricing/",
       "target": "https://ziontechgroup.com/pricing/index.html",
       "status": 0
     },
     {
-      "file": "seo/ai-edge-realtime/index.html",
-      "link": "/contact/",
-      "target": "https://ziontechgroup.com/contact/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-edge-realtime/index.html",
-      "link": "/agents-monitoring/",
-      "target": "https://ziontechgroup.com/agents-monitoring/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-edge-realtime/index.html",
-      "link": "/contact/",
-      "target": "https://ziontechgroup.com/contact/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-edge-realtime/index.html",
+      "file": "seo/ai-intelligent-routing/index.html",
       "link": "/",
       "target": "https://ziontechgroup.com/index.html",
       "status": 0
     },
     {
-      "file": "seo/ai-edge-realtime/index.html",
-      "link": "/ai-services/",
-      "target": "https://ziontechgroup.com/ai-services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-edge-realtime/index.html",
-      "link": "/services/",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-edge-realtime/index.html",
-      "link": "/services/?category=micro-saas",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-edge-realtime/index.html",
-      "link": "/services/?category=cloud",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-edge-realtime/index.html",
-      "link": "/services/?category=security",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-edge-realtime/index.html",
-      "link": "/services/?category=data",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-edge-realtime/index.html",
-      "link": "/services/?category=blockchain",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-edge-realtime/index.html",
-      "link": "/services/?category=iot",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-edge-realtime/index.html",
+      "file": "seo/ai-intelligent-routing/index.html",
       "link": "/pricing/",
       "target": "https://ziontechgroup.com/pricing/index.html",
       "status": 0
     },
     {
-      "file": "seo/ai-edge-realtime/index.html",
-      "link": "/agents-monitoring/",
-      "target": "https://ziontechgroup.com/agents-monitoring/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-edge-realtime/index.html",
-      "link": "/agents-monitoring/",
-      "target": "https://ziontechgroup.com/agents-monitoring/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-edge-realtime/index.html",
+      "file": "seo/ai-intelligent-routing/index.html",
       "link": "/docs/",
       "target": "https://ziontechgroup.com/index.html",
       "status": 0
     },
     {
-      "file": "seo/ai-edge-realtime/index.html",
+      "file": "seo/ai-intelligent-routing/index.html",
       "link": "https://ziontechgroup.com",
       "target": "https://ziontechgroup.com/index.html",
       "status": 0
     },
     {
-      "file": "seo/ai-education-adaptive/index.html",
+      "file": "seo/ai-knowledge-management/index.html",
       "link": "/manifest.json",
       "target": "https://ziontechgroup.com/manifest.json",
       "status": 0
     },
     {
-      "file": "seo/ai-education-adaptive/index.html",
+      "file": "seo/ai-knowledge-management/index.html",
       "link": "/icon.svg",
       "target": "https://ziontechgroup.com/icon.svg",
       "status": 0
     },
     {
-      "file": "seo/ai-education-adaptive/index.html",
+      "file": "seo/ai-knowledge-management/index.html",
       "link": "/icon.svg",
       "target": "https://ziontechgroup.com/icon.svg",
       "status": 0
     },
     {
-      "file": "seo/ai-education-adaptive/index.html",
+      "file": "seo/ai-knowledge-management/index.html",
       "link": "/",
       "target": "https://ziontechgroup.com/index.html",
       "status": 0
     },
     {
-      "file": "seo/ai-education-adaptive/index.html",
+      "file": "seo/ai-knowledge-management/index.html",
       "link": "/pricing/",
       "target": "https://ziontechgroup.com/pricing/index.html",
       "status": 0
     },
     {
-      "file": "seo/ai-education-adaptive/index.html",
-      "link": "/contact/",
-      "target": "https://ziontechgroup.com/contact/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-education-adaptive/index.html",
-      "link": "/agents-monitoring/",
-      "target": "https://ziontechgroup.com/agents-monitoring/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-education-adaptive/index.html",
-      "link": "/contact/",
-      "target": "https://ziontechgroup.com/contact/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-education-adaptive/index.html",
+      "file": "seo/ai-knowledge-management/index.html",
       "link": "/",
       "target": "https://ziontechgroup.com/index.html",
       "status": 0
     },
     {
-      "file": "seo/ai-education-adaptive/index.html",
-      "link": "/ai-services/",
-      "target": "https://ziontechgroup.com/ai-services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-education-adaptive/index.html",
-      "link": "/services/",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-education-adaptive/index.html",
-      "link": "/services/?category=micro-saas",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-education-adaptive/index.html",
-      "link": "/services/?category=cloud",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-education-adaptive/index.html",
-      "link": "/services/?category=security",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-education-adaptive/index.html",
-      "link": "/services/?category=data",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-education-adaptive/index.html",
-      "link": "/services/?category=blockchain",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-education-adaptive/index.html",
-      "link": "/services/?category=iot",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-education-adaptive/index.html",
+      "file": "seo/ai-knowledge-management/index.html",
       "link": "/pricing/",
       "target": "https://ziontechgroup.com/pricing/index.html",
       "status": 0
     },
     {
-      "file": "seo/ai-education-adaptive/index.html",
-      "link": "/agents-monitoring/",
-      "target": "https://ziontechgroup.com/agents-monitoring/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-education-adaptive/index.html",
-      "link": "/agents-monitoring/",
-      "target": "https://ziontechgroup.com/agents-monitoring/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-education-adaptive/index.html",
+      "file": "seo/ai-knowledge-management/index.html",
       "link": "/docs/",
       "target": "https://ziontechgroup.com/index.html",
       "status": 0
     },
     {
-      "file": "seo/ai-education-adaptive/index.html",
+      "file": "seo/ai-knowledge-management/index.html",
       "link": "https://ziontechgroup.com",
       "target": "https://ziontechgroup.com/index.html",
       "status": 0
     },
     {
-      "file": "seo/ai-email-automation-business/index.html",
+      "file": "seo/ai-legal-contract/index.html",
       "link": "/manifest.json",
       "target": "https://ziontechgroup.com/manifest.json",
       "status": 0
     },
     {
-      "file": "seo/ai-email-automation-business/index.html",
+      "file": "seo/ai-legal-contract/index.html",
       "link": "/icon.svg",
       "target": "https://ziontechgroup.com/icon.svg",
       "status": 0
     },
     {
-      "file": "seo/ai-email-automation-business/index.html",
+      "file": "seo/ai-legal-contract/index.html",
       "link": "/icon.svg",
       "target": "https://ziontechgroup.com/icon.svg",
       "status": 0
     },
     {
-      "file": "seo/ai-email-automation-business/index.html",
+      "file": "seo/ai-legal-contract/index.html",
       "link": "/",
       "target": "https://ziontechgroup.com/index.html",
       "status": 0
     },
     {
-      "file": "seo/ai-email-automation-business/index.html",
+      "file": "seo/ai-legal-contract/index.html",
       "link": "/pricing/",
       "target": "https://ziontechgroup.com/pricing/index.html",
       "status": 0
     },
     {
-      "file": "seo/ai-email-automation-business/index.html",
-      "link": "/contact/",
-      "target": "https://ziontechgroup.com/contact/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-automation-business/index.html",
-      "link": "/agents-monitoring/",
-      "target": "https://ziontechgroup.com/agents-monitoring/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-automation-business/index.html",
-      "link": "/contact/",
-      "target": "https://ziontechgroup.com/contact/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-automation-business/index.html",
+      "file": "seo/ai-legal-contract/index.html",
       "link": "/",
       "target": "https://ziontechgroup.com/index.html",
       "status": 0
     },
     {
-      "file": "seo/ai-email-automation-business/index.html",
-      "link": "/ai-services/",
-      "target": "https://ziontechgroup.com/ai-services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-automation-business/index.html",
-      "link": "/services/",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-automation-business/index.html",
-      "link": "/services/?category=micro-saas",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-automation-business/index.html",
-      "link": "/services/?category=cloud",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-automation-business/index.html",
-      "link": "/services/?category=security",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-automation-business/index.html",
-      "link": "/services/?category=data",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-automation-business/index.html",
-      "link": "/services/?category=blockchain",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-automation-business/index.html",
-      "link": "/services/?category=iot",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-automation-business/index.html",
+      "file": "seo/ai-legal-contract/index.html",
       "link": "/pricing/",
       "target": "https://ziontechgroup.com/pricing/index.html",
       "status": 0
     },
     {
-      "file": "seo/ai-email-automation-business/index.html",
-      "link": "/agents-monitoring/",
-      "target": "https://ziontechgroup.com/agents-monitoring/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-automation-business/index.html",
-      "link": "/agents-monitoring/",
-      "target": "https://ziontechgroup.com/agents-monitoring/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-automation-business/index.html",
+      "file": "seo/ai-legal-contract/index.html",
       "link": "/docs/",
       "target": "https://ziontechgroup.com/index.html",
       "status": 0
     },
     {
-      "file": "seo/ai-email-automation-business/index.html",
+      "file": "seo/ai-legal-contract/index.html",
       "link": "https://ziontechgroup.com",
       "target": "https://ziontechgroup.com/index.html",
       "status": 0
     },
     {
-      "file": "seo/ai-email-tuning-free-tools/index.html",
+      "file": "seo/ai-low-code-platform/index.html",
       "link": "/manifest.json",
       "target": "https://ziontechgroup.com/manifest.json",
       "status": 0
     },
     {
-      "file": "seo/ai-email-tuning-free-tools/index.html",
-      "link": "https://ziontechgroup.com/",
-      "target": "https://ziontechgroup.com/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-tuning-free-tools/index.html",
+      "file": "seo/ai-low-code-platform/index.html",
       "link": "/icon.svg",
       "target": "https://ziontechgroup.com/icon.svg",
       "status": 0
     },
     {
-      "file": "seo/ai-email-tuning-free-tools/index.html",
+      "file": "seo/ai-low-code-platform/index.html",
       "link": "/icon.svg",
       "target": "https://ziontechgroup.com/icon.svg",
       "status": 0
     },
     {
-      "file": "seo/ai-email-tuning-free-tools/index.html",
+      "file": "seo/ai-low-code-platform/index.html",
       "link": "/",
       "target": "https://ziontechgroup.com/index.html",
       "status": 0
     },
     {
-      "file": "seo/ai-email-tuning-free-tools/index.html",
+      "file": "seo/ai-low-code-platform/index.html",
       "link": "/pricing/",
       "target": "https://ziontechgroup.com/pricing/index.html",
       "status": 0
     },
     {
-      "file": "seo/ai-email-tuning-free-tools/index.html",
-      "link": "/contact/",
-      "target": "https://ziontechgroup.com/contact/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-tuning-free-tools/index.html",
-      "link": "/agents-monitoring/",
-      "target": "https://ziontechgroup.com/agents-monitoring/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-tuning-free-tools/index.html",
-      "link": "/contact/",
-      "target": "https://ziontechgroup.com/contact/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-tuning-free-tools/index.html",
+      "file": "seo/ai-low-code-platform/index.html",
       "link": "/",
       "target": "https://ziontechgroup.com/index.html",
       "status": 0
     },
     {
-      "file": "seo/ai-email-tuning-free-tools/index.html",
-      "link": "/ai-services/",
-      "target": "https://ziontechgroup.com/ai-services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-tuning-free-tools/index.html",
-      "link": "/services/",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-tuning-free-tools/index.html",
-      "link": "/services/?category=micro-saas",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-tuning-free-tools/index.html",
-      "link": "/services/?category=cloud",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-tuning-free-tools/index.html",
-      "link": "/services/?category=security",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-tuning-free-tools/index.html",
-      "link": "/services/?category=data",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-tuning-free-tools/index.html",
-      "link": "/services/?category=blockchain",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-tuning-free-tools/index.html",
-      "link": "/services/?category=iot",
-      "target": "https://ziontechgroup.com/services/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-tuning-free-tools/index.html",
+      "file": "seo/ai-low-code-platform/index.html",
       "link": "/pricing/",
       "target": "https://ziontechgroup.com/pricing/index.html",
       "status": 0
     },
     {
-      "file": "seo/ai-email-tuning-free-tools/index.html",
-      "link": "/agents-monitoring/",
-      "target": "https://ziontechgroup.com/agents-monitoring/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-tuning-free-tools/index.html",
-      "link": "/agents-monitoring/",
-      "target": "https://ziontechgroup.com/agents-monitoring/index.html",
-      "status": 0
-    },
-    {
-      "file": "seo/ai-email-tuning-free-tools/index.html",
+      "file": "seo/ai-low-code-platform/index.html",
       "link": "/docs/",
       "target": "https://ziontechgroup.com/index.html",
       "status": 0
     },
     {
-      "file": "seo/ai-email-tuning-free-tools/index.html",
-      "link": "/contact/",
-      "target": "https://ziontechgroup.com/contact/index.html",
+      "file": "seo/ai-low-code-platform/index.html",
+      "link": "https://ziontechgroup.com",
+      "target": "https://ziontechgroup.com/index.html",
       "status": 0
     },
     {
-      "file": "seo/ai-energy-optimization/index.html",
+      "file": "seo/ai-manufacturing-quality/index.html",
       "link": "/manifest.json",
       "target": "https://ziontechgroup.com/manifest.json",
       "status": 0
     },
     {
-      "file": "seo/ai-energy-optimization/index.html",
+      "file": "seo/ai-manufacturing-quality/index.html",
       "link": "/icon.svg",
       "target": "https://ziontechgroup.com/icon.svg",
       "status": 0
     },
     {
-      "file": "seo/ai-energy-optimization/index.html",
+      "file": "seo/ai-manufacturing-quality/index.html",
       "link": "/icon.svg",
       "target": "https://ziontechgroup.com/icon.svg",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-manufacturing-quality/index.html",
+      "link": "/",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-manufacturing-quality/index.html",
+      "link": "/pricing/",
+      "target": "https://ziontechgroup.com/pricing/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-manufacturing-quality/index.html",
+      "link": "/",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-manufacturing-quality/index.html",
+      "link": "/pricing/",
+      "target": "https://ziontechgroup.com/pricing/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-manufacturing-quality/index.html",
+      "link": "/docs/",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-manufacturing-quality/index.html",
+      "link": "https://ziontechgroup.com",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-media-entertainment/index.html",
+      "link": "/manifest.json",
+      "target": "https://ziontechgroup.com/manifest.json",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-media-entertainment/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-media-entertainment/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-media-entertainment/index.html",
+      "link": "/",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-media-entertainment/index.html",
+      "link": "/pricing/",
+      "target": "https://ziontechgroup.com/pricing/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-media-entertainment/index.html",
+      "link": "/",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-media-entertainment/index.html",
+      "link": "/pricing/",
+      "target": "https://ziontechgroup.com/pricing/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-media-entertainment/index.html",
+      "link": "/docs/",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-media-entertainment/index.html",
+      "link": "https://ziontechgroup.com",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-memory-agents/index.html",
+      "link": "/manifest.json",
+      "target": "https://ziontechgroup.com/manifest.json",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-memory-agents/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-memory-agents/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-memory-agents/index.html",
+      "link": "/",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-memory-agents/index.html",
+      "link": "/pricing/",
+      "target": "https://ziontechgroup.com/pricing/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-memory-agents/index.html",
+      "link": "/contact/",
+      "target": "https://ziontechgroup.com/contact/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-memory-agents/index.html",
+      "link": "/agents-monitoring/",
+      "target": "https://ziontechgroup.com/agents-monitoring/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-memory-agents/index.html",
+      "link": "/contact/",
+      "target": "https://ziontechgroup.com/contact/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-memory-agents/index.html",
+      "link": "/",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-memory-agents/index.html",
+      "link": "/ai-services/",
+      "target": "https://ziontechgroup.com/ai-services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-memory-agents/index.html",
+      "link": "/services/",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-memory-agents/index.html",
+      "link": "/services/?category=micro-saas",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-memory-agents/index.html",
+      "link": "/services/?category=cloud",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-memory-agents/index.html",
+      "link": "/services/?category=security",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-memory-agents/index.html",
+      "link": "/services/?category=data",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-memory-agents/index.html",
+      "link": "/services/?category=blockchain",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-memory-agents/index.html",
+      "link": "/services/?category=iot",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-memory-agents/index.html",
+      "link": "/pricing/",
+      "target": "https://ziontechgroup.com/pricing/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-memory-agents/index.html",
+      "link": "/agents-monitoring/",
+      "target": "https://ziontechgroup.com/agents-monitoring/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-memory-agents/index.html",
+      "link": "/agents-monitoring/",
+      "target": "https://ziontechgroup.com/agents-monitoring/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-memory-agents/index.html",
+      "link": "/docs/",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-memory-agents/index.html",
+      "link": "https://ziontechgroup.com",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-model-orchestration/index.html",
+      "link": "/manifest.json",
+      "target": "https://ziontechgroup.com/manifest.json",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-model-orchestration/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-model-orchestration/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-model-orchestration/index.html",
+      "link": "/",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-model-orchestration/index.html",
+      "link": "/pricing/",
+      "target": "https://ziontechgroup.com/pricing/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-model-orchestration/index.html",
+      "link": "/contact/",
+      "target": "https://ziontechgroup.com/contact/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-model-orchestration/index.html",
+      "link": "/agents-monitoring/",
+      "target": "https://ziontechgroup.com/agents-monitoring/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-model-orchestration/index.html",
+      "link": "/contact/",
+      "target": "https://ziontechgroup.com/contact/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-model-orchestration/index.html",
+      "link": "/",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-model-orchestration/index.html",
+      "link": "/ai-services/",
+      "target": "https://ziontechgroup.com/ai-services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-model-orchestration/index.html",
+      "link": "/services/",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-model-orchestration/index.html",
+      "link": "/services/?category=micro-saas",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-model-orchestration/index.html",
+      "link": "/services/?category=cloud",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-model-orchestration/index.html",
+      "link": "/services/?category=security",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-model-orchestration/index.html",
+      "link": "/services/?category=data",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-model-orchestration/index.html",
+      "link": "/services/?category=blockchain",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-model-orchestration/index.html",
+      "link": "/services/?category=iot",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-model-orchestration/index.html",
+      "link": "/pricing/",
+      "target": "https://ziontechgroup.com/pricing/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-model-orchestration/index.html",
+      "link": "/agents-monitoring/",
+      "target": "https://ziontechgroup.com/agents-monitoring/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-model-orchestration/index.html",
+      "link": "/agents-monitoring/",
+      "target": "https://ziontechgroup.com/agents-monitoring/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-model-orchestration/index.html",
+      "link": "/docs/",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-model-orchestration/index.html",
+      "link": "https://ziontechgroup.com",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-observability-free-trial/index.html",
+      "link": "/manifest.json",
+      "target": "https://ziontechgroup.com/manifest.json",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-observability-free-trial/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-observability-free-trial/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-observability-free-trial/index.html",
+      "link": "/",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-observability-free-trial/index.html",
+      "link": "/pricing/",
+      "target": "https://ziontechgroup.com/pricing/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-observability-free-trial/index.html",
+      "link": "/contact/",
+      "target": "https://ziontechgroup.com/contact/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-observability-free-trial/index.html",
+      "link": "/agents-monitoring/",
+      "target": "https://ziontechgroup.com/agents-monitoring/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-observability-free-trial/index.html",
+      "link": "/contact/",
+      "target": "https://ziontechgroup.com/contact/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-observability-free-trial/index.html",
+      "link": "/",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-observability-free-trial/index.html",
+      "link": "/ai-services/",
+      "target": "https://ziontechgroup.com/ai-services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-observability-free-trial/index.html",
+      "link": "/services/",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-observability-free-trial/index.html",
+      "link": "/services/?category=micro-saas",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-observability-free-trial/index.html",
+      "link": "/services/?category=cloud",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-observability-free-trial/index.html",
+      "link": "/services/?category=security",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-observability-free-trial/index.html",
+      "link": "/services/?category=data",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-observability-free-trial/index.html",
+      "link": "/services/?category=blockchain",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-observability-free-trial/index.html",
+      "link": "/services/?category=iot",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-observability-free-trial/index.html",
+      "link": "/pricing/",
+      "target": "https://ziontechgroup.com/pricing/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-observability-free-trial/index.html",
+      "link": "/agents-monitoring/",
+      "target": "https://ziontechgroup.com/agents-monitoring/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-observability-free-trial/index.html",
+      "link": "/agents-monitoring/",
+      "target": "https://ziontechgroup.com/agents-monitoring/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-observability-free-trial/index.html",
+      "link": "/docs/",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-observability-free-trial/index.html",
+      "link": "https://ziontechgroup.com",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-ops-assistant-free-trial/index.html",
+      "link": "/manifest.json",
+      "target": "https://ziontechgroup.com/manifest.json",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-ops-assistant-free-trial/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-ops-assistant-free-trial/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-ops-assistant-free-trial/index.html",
+      "link": "/",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-ops-assistant-free-trial/index.html",
+      "link": "/pricing/",
+      "target": "https://ziontechgroup.com/pricing/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-ops-assistant-free-trial/index.html",
+      "link": "/contact/",
+      "target": "https://ziontechgroup.com/contact/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-ops-assistant-free-trial/index.html",
+      "link": "/agents-monitoring/",
+      "target": "https://ziontechgroup.com/agents-monitoring/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-ops-assistant-free-trial/index.html",
+      "link": "/contact/",
+      "target": "https://ziontechgroup.com/contact/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-ops-assistant-free-trial/index.html",
+      "link": "/",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-ops-assistant-free-trial/index.html",
+      "link": "/ai-services/",
+      "target": "https://ziontechgroup.com/ai-services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-ops-assistant-free-trial/index.html",
+      "link": "/services/",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-ops-assistant-free-trial/index.html",
+      "link": "/services/?category=micro-saas",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-ops-assistant-free-trial/index.html",
+      "link": "/services/?category=cloud",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-ops-assistant-free-trial/index.html",
+      "link": "/services/?category=security",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-ops-assistant-free-trial/index.html",
+      "link": "/services/?category=data",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-ops-assistant-free-trial/index.html",
+      "link": "/services/?category=blockchain",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-ops-assistant-free-trial/index.html",
+      "link": "/services/?category=iot",
+      "target": "https://ziontechgroup.com/services/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-ops-assistant-free-trial/index.html",
+      "link": "/pricing/",
+      "target": "https://ziontechgroup.com/pricing/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-ops-assistant-free-trial/index.html",
+      "link": "/agents-monitoring/",
+      "target": "https://ziontechgroup.com/agents-monitoring/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-ops-assistant-free-trial/index.html",
+      "link": "/agents-monitoring/",
+      "target": "https://ziontechgroup.com/agents-monitoring/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-ops-assistant-free-trial/index.html",
+      "link": "/docs/",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-ops-assistant-free-trial/index.html",
+      "link": "https://ziontechgroup.com",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-ops-assistant-free-trial/index.html",
+      "link": "https://ziontechgroup.com",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-platform-free-trial/index.html",
+      "link": "/manifest.json",
+      "target": "https://ziontechgroup.com/manifest.json",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-platform-free-trial/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-platform-free-trial/index.html",
+      "link": "/icon.svg",
+      "target": "https://ziontechgroup.com/icon.svg",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-platform-free-trial/index.html",
+      "link": "/",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-platform-free-trial/index.html",
+      "link": "/pricing/",
+      "target": "https://ziontechgroup.com/pricing/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-platform-free-trial/index.html",
+      "link": "/contact/",
+      "target": "https://ziontechgroup.com/contact/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-platform-free-trial/index.html",
+      "link": "/agents-monitoring/",
+      "target": "https://ziontechgroup.com/agents-monitoring/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-platform-free-trial/index.html",
+      "link": "/contact/",
+      "target": "https://ziontechgroup.com/contact/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-platform-free-trial/index.html",
+      "link": "/",
+      "target": "https://ziontechgroup.com/index.html",
+      "status": 0
+    },
+    {
+      "file": "seo/ai-platform-free-trial/index.html",
+      "link": "/ai-services/",
+      "target": "https://ziontechgroup.com/ai-services/index.html",
       "status": 0
     }
   ]
