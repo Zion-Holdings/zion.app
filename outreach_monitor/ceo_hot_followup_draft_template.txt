@@ -1,0 +1,18 @@
+Subject: Re: {{subject}}
+
+Hi {{contact_name}},
+
+Thank you for the opportunity to work together on this project—I really enjoyed partnering with the {{company_name}} team. I think we created something useful, and I’d love to build on that momentum.
+
+A few new ideas that could make sense for both companies:
+1) {{pillar_1}}
+2) {{pillar_2}}
+3) {{pillar_3}}
+
+If this aligns with what you’re evaluating, I’m happy to advance by email or a quick call: https://calendly.com/kleber-ziontechgroup
+
+You can also explore our new AI services and free tools here: https://ziontechgroup.com
+
+Best,
+Kleber Garcia Alcatrão
+CEO, Zion Tech Group
