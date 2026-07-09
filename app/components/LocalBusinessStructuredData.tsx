@@ -49,8 +49,10 @@ export function LocalBusinessJsonLd() {
     ],
     sameAs: [
       'https://www.linkedin.com/company/ziontechgroup',
-      'https://twitter.com/ziontechgroup',
-      'https://github.com/ziontechgroup',
+      'https://x.com/ziontechgroup',
+      'https://github.com/zion-support' + '               '
+      + 'https://www.linkedin.com/company/ziontechgroup/' + ' '
+      + 'https://x.com/ziontechgroup',
     ],
   };
 
