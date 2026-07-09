@@ -64,6 +64,13 @@ jobs:
             echo "No static site artifact found" >&2
             exit 1
           fi
+          if [ -d docs ]; then
+            while IFS= read -r -d '' f; do
+              rel="${f#docs/}"
+              mkdir -p "$ARTIFACT_DIR/$(dirname "$rel")"
+              cp -a "$f" "$ARTIFACT_DIR/$rel"
+            done < <(find docs -type f -name 'index.html' -print0 2>/dev/null || true)
+          fi
           PAGES=$(find "$ARTIFACT_DIR" -name 'index.html' | wc -l)
           SIZE=$(du -sh "$ARTIFACT_DIR" | awk '{print $1}')
           echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
