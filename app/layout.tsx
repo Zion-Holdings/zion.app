@@ -89,7 +89,9 @@ export default function RootLayout({
             telephone: '+1 302 464 0950',
             address: '364 E Main St STE 1008, Middletown, DE 19709',
             sameAs: [
-              'https://ziontechgroup.com',
+              'https://github.com/zion-support',
+              'https://www.linkedin.com/company/ziontechgroup',
+              'https://x.com/ziontechgroup',
             ],
             aggregateRating: {
               '@type': 'AggregateRating',
@@ -98,15 +100,15 @@ export default function RootLayout({
               worstRating: '1',
               reviewCount: '200',
             },
-          }),
-        }}
-      />
-      <AutoJsonLd />
-      <html lang="en" dir="ltr">
-        <head>
-          <link rel="preconnect" href="https://www.googletagmanager.com" />
-          <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-        </head>
+            }),
+            }
+            />
+            <AutoJsonLd />
+            <html lang="en" dir="ltr">
+            <head>
+            <link rel="preconnect" href="https://www.googletagmanager.com" />
+            <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+            </head>
         <body className={`${inter.className} antialiased`}>
           <Analytics />
           <CtaTracking />
