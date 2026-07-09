@@ -40,13 +40,14 @@ export const ORGANIZATION_SCHEMA = {
   },
   sameAs: [
     'https://github.com/zion-support',
-    'https://www.linkedin.com/company/zion-tech-group/',
+    'https://www.linkedin.com/company/ziontechgroup/',
+    'https://x.com/ziontechgroup',
   ],
 };
 
 export const SOCIAL_LINKS = {
-  linkedin: 'https://www.linkedin.com/company/zion-tech-group/',
-  twitter: 'https://twitter.com/ziontechgroup',
+  linkedin: 'https://www.linkedin.com/company/ziontechgroup/',
+  twitter: 'https://x.com/ziontechgroup',
   github: 'https://github.com/zion-support',
 };
 
