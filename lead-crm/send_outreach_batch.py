@@ -60,7 +60,42 @@ def _append_outreach_log(record: dict):
         pass
 
 
+SEND_LOG = REPO / 'lead-crm' / 'outreach_sent_history.jsonl'
+
+
+def _load_sent_set():
+    sent = set()
+    if not SEND_LOG.exists():
+        return sent
+    try:
+        for line in SEND_LOG.read_text(encoding='utf-8', errors='ignore').splitlines():
+            if not line.strip():
+                continue
+            try:
+                obj = json.loads(line)
+                key = (obj.get('to') or '').lower(), (obj.get('subject') or '').strip()
+                if key[0] and key[1]:
+                    sent.add(key)
+            except Exception:
+                continue
+    except Exception:
+        pass
+    return sent
+
+
+def append_sent(record: dict):
+    try:
+        with SEND_LOG.open('a', encoding='utf-8') as f:
+            f.write(json.dumps(record, ensure_ascii=False) + '\n')
+    except Exception:
+        pass
+
+
 def send_mail(to_addr, subject, body, html=None):
+    sent = _load_sent_set()
+    if (to_addr or '').lower() and subject:
+        if ((to_addr).lower(), subject.strip()) in sent:
+            return None, 'duplicate'
     raw_email_lines = [
         'From: kleber@ziontechgroup.com',
         'To: %s' % to_addr,
@@ -77,7 +112,20 @@ def send_mail(to_addr, subject, body, html=None):
     headers['Content-Type'] = 'application/json'
     req = urllib.request.Request(url, data=payload, headers=headers, method='POST')
     result = _send_request(req)
-    return result.get('id'), result.get('threadId')
+    mid = result.get('id')
+    tid = result.get('threadId')
+    try:
+        append_sent({
+            'ts': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+            'to': to_addr,
+            'subject': subject,
+            'message_id': mid,
+            'thread_id': tid,
+            'provider': 'gmail_api',
+        })
+    except Exception:
+        pass
+    return mid, tid
 
 
 def _tailor_message(chat_fn, r):

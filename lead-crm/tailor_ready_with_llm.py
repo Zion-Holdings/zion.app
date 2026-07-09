@@ -12,9 +12,9 @@ LEAD_DIR = REPO / 'lead-crm'
 CANONICAL = LEAD_DIR / 'outreach_ready_canonical.json'
 OUT = LEAD_DIR / 'outreach_tailored_canonical.json'
 MAX_LLM_CALL_SECONDS = int(os.environ.get('ZT_LLM_CALL_TIMEOUT', '20'))
-LLM_RETRIES = int(os.environ.get('ZT_LLM_RETRIES', '3'))
-LLM_RETRY_BACKOFF = float(os.environ.get('ZT_LLM_RETRY_BACKOFF', '2'))
-DEFAULT_MAX_TAILOR = int(os.environ.get('ZT_MAX_TAILOR', '10'))
+LLM_RETRIES = int(os.environ.get('ZT_LLM_RETRIES', '2'))
+LLM_RETRY_BACKOFF = float(os.environ.get('ZT_LLM_RETRY_BACKOFF', '1'))
+DEFAULT_MAX_TAILOR = int(os.environ.get('ZT_MAX_TAILOR', '8'))
 
 def _now():
     return datetime.now(timezone.utc).isoformat()
