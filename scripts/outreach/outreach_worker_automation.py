@@ -15,7 +15,16 @@ STATE_FILE = DEDUP_DIR / 'global_dedup_state.json'
 LEDGER_FILE = DEDUP_DIR / 'sent_ledger.jsonl'
 BOUNCE_HISTORY_FILE = DEDUP_DIR / 'bounce_history.jsonl'
 
-DEDUP_COOLDOWN_SECONDS = 6 * 3600
+FORBIDDEN_ADDR_PREFIXES = (
+    'no-reply','noreply','mailer-daemon','postmaster','notifications@github.com',
+    'support@','press@','info@','sales@','team@','hello@','hi@','marketing@',
+    'commercial@','service delivery','account manager','comunicaciones@',
+)
+FORBIDDEN_DOMAIN_SUBSTRINGS = (
+    'servi.co','servi.io','servi.ai','manag.co','manag.io','manag.ai','manag.br','manag.com',
+    'legalys.com.pa','start.co','github.com','hcl.com','zendesk.com','calendly.com',
+    'datadog','mercadobitcoin','suzano.com.br',
+)
 MAX_AGE_DAYS = 180
 SEND_REQUIRES_ALIVE_THREAD = True
 LLM_TAILOR_ENABLED = bool(os.getenv('ZION_LLM_API_ENDPOINT') and os.getenv('ZION_LLM_API_KEY') and os.getenv('ZION_LLM_MODEL'))
