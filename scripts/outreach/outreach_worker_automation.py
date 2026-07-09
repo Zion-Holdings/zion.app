@@ -411,7 +411,7 @@ def run_high_frequency_outreach():
             if '@' not in frm:
                 continue
             lower = frm.lower()
-            if any(x in lower for x in ['no-reply','noreply','mailer-daemon','postmaster','github','semrush','booking.com','calendly','datadog.zendesk.com','support@','servi.co']):
+            if any(x in lower for x in ['no-reply','noreply','mailer-daemon','postmaster','github','semrush','booking.com','calendly','datadog.zendesk.com','support@','servi.co','manag.co','manag.io','manag.ai','manag.br','manag.com']):
                 continue
             import re
             m = re.search(r'<([^>]+)>', frm)
