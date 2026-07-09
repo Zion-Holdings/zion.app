@@ -8,7 +8,7 @@ const PHONE      = '+1 302 464 0950';
 const EMAIL      = 'kleber@ziontechgroup.com';
 const ADDRESS    = '364 E Main St STE 1008, Middletown, DE 19709, USA';
 const MAPS_URL   = 'https://maps.google.com/?q=364+E+Main+St+STE+1008+Middletown+DE+19709';
-const CALENDLY_URL = 'https://calendly.com/ziontechgroup/free-consultation';
+const CALENDLY_URL = 'https://calendly.com/kleber-ziontechgroup';
 
 /* ── Schema.org ContactPoint + Place JSON-LD ─────────── */
 function ContactSchema() {
