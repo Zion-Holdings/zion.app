@@ -65,3 +65,5 @@
 {"event": "complete", "summary": {"scanned": 0, "potentialClients": 0, "skippedDuplicateSuppression": 0, "sent": 0, "errors": ["gmail search failed: [Errno 2] No such file or directory: 'gog'"]}, "ts": "2026-07-09T00:11:27.672032Z"}
 {"event": "start", "ts": "2026-07-09T01:37:53.517629Z", "host": "cron"}
 {"event": "complete", "summary": {"scanned": 0, "potentialClients": 0, "skippedDuplicateSuppression": 0, "sent": 0, "errors": ["gmail search failed: [Errno 2] No such file or directory: 'gog'"]}, "ts": "2026-07-09T01:37:53.539510Z"}
+{"event": "start", "ts": "2026-07-09T05:07:54.956453Z", "host": "cron"}
+{"event": "complete", "summary": {"scanned": 0, "potentialClients": 0, "skippedDuplicateSuppression": 0, "sent": 0, "errors": ["gmail search failed: [WinError 2] O sistema não pode encontrar o arquivo especificado"]}, "ts": "2026-07-09T05:07:55.014843Z"}

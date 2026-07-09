@@ -13,12 +13,35 @@ DEDUP_DIR = BASE_DIR / 'outreach_monitor' / 'processed'
 DEDUP_DIR.mkdir(parents=True, exist_ok=True)
 STATE_FILE = DEDUP_DIR / 'global_dedup_state.json'
 LEDGER_FILE = DEDUP_DIR / 'sent_ledger.jsonl'
+BOUNCE_HISTORY_FILE = DEDUP_DIR / 'bounce_history.jsonl'
 
-DEDUP_COOLDOWN_SECONDS = 18 * 3600  # 18 hours per contact
+FORBIDDEN_ADDR_PREFIXES = (
+    'no-reply','noreply','mailer-daemon','postmaster','notifications@github.com',
+    'support@','press@','info@','sales@','team@','hello@','hi@','marketing@',
+    'commercial@','service delivery','account manager','comunicaciones@',
+)
+FORBIDDEN_DOMAIN_SUBSTRINGS = (
+    'servi.co','servi.io','servi.ai','manag.co','manag.io','manag.ai','manag.br','manag.com',
+    'legalys.com.pa','start.co','github.com','hcl.com','zendesk.com','calendly.com',
+    'datadog','mercadobitcoin','suzano.com.br',
+)
+MAX_AGE_DAYS = 180
+SEND_REQUIRES_ALIVE_THREAD = True
 LLM_TAILOR_ENABLED = bool(os.getenv('ZION_LLM_API_ENDPOINT') and os.getenv('ZION_LLM_API_KEY') and os.getenv('ZION_LLM_MODEL'))
 LLM_API_ENDPOINT = os.getenv('ZION_LLM_API_ENDPOINT') or os.getenv('LLM_API_ENDPOINT')
 LLM_API_KEY = os.getenv('ZION_LLM_API_KEY') or os.getenv('LLM_API_KEY')
 LLM_MODEL = os.getenv('ZION_LLM_MODEL') or 'gpt-4o-mini'
+
+FORBIDDEN_ADDR_PREFIXES = (
+    'no-reply','noreply','mailer-daemon','postmaster','notifications@github.com',
+    'support@','press@','info@','sales@','team@','hello@','hi@','marketing@',
+    'commercial@','service delivery','account manager','comunicaciones@',
+)
+FORBIDDEN_DOMAIN_SUBSTRINGS = (
+    'servi.co','servi.io','servi.ai','manag.co','manag.io','manag.ai','manag.br','manag.com',
+    'legalys.com.pa','start.co','github.com','hcl.com','zendesk.com','calendly.com',
+    'datadog','mercadobitcoin','suzano.com.br',
+)
 
 def load_state():
     if STATE_FILE.exists():
@@ -31,52 +54,75 @@ def load_state():
 def save_state(state):
     STATE_FILE.write_text(json.dumps(state, indent=2, ensure_ascii=False), encoding='utf-8')
 
+def record_bounce(to_addr, reason, message_id=None):
+    entry = {
+        'ts': int(time.time()),
+        'to': to_addr,
+        'reason': reason,
+        'message_id': message_id,
+    }
+    try:
+        with BOUNCE_HISTORY_FILE.open('a', encoding='utf-8') as f:
+            f.write(json.dumps(entry, ensure_ascii=False) + '\n')
+    except Exception:
+        pass
+
+def is_bouncing_domain(addr: str) -> bool:
+    addr = addr.lower()
+    if any(addr.endswith(d) for d in ('.servi.io','.servi.ai','.servi.com','.servi.co','.manag.co','.manag.io','.manag.ai','.manag.br','.manag.com','legalys.com.pa','start.co')):
+        return True
+    local = addr.split('@', 1)[-1]
+    for bad in ('servi','manag','legalys.com.pa','start.co','github.com','hcl.com','zendesk.com','calendly.com','datadog','mercadobitcoin','suzano.com.br'):
+        if bad in local:
+            return True
+    return False
+
 def record_send(contact, to_addr, subject, message_id, thread_id, reason):
     entry = {
-        "ts": int(time.time()),
-        "contact": contact,
-        "to": to_addr,
-        "subject": subject,
-        "message_id": message_id,
-        "thread_id": thread_id,
-        "reason": reason,
+        'ts': int(time.time()),
+        'contact': contact,
+        'to': to_addr,
+        'subject': subject,
+        'message_id': message_id,
+        'thread_id': thread_id,
+        'reason': reason,
     }
     with LEDGER_FILE.open('a', encoding='utf-8') as f:
         f.write(json.dumps(entry, ensure_ascii=False) + '\n')
     state = load_state()
-    state["contacts"].setdefault(contact, {})
-    state["contacts"][contact]["last_outbound_ts"] = entry["ts"]
-    state["contacts"][contact]["last_outbound_subject"] = subject
-    state["contacts"][contact]["last_outbound_message_id"] = message_id
-    state["contacts"][contact]["last_outbound_thread_id"] = thread_id
-    state["last_check"] = int(time.time())
+    state['contacts'].setdefault(contact, {})
+    state['contacts'][contact]['last_outbound_ts'] = entry['ts']
+    state['contacts'][contact]['last_outbound_subject'] = subject
+    state['contacts'][contact]['last_outbound_message_id'] = message_id
+    state['contacts'][contact]['last_outbound_thread_id'] = thread_id
+    state['last_check'] = int(time.time())
     save_state(state)
 
 def recent_sent_exists(contact, within_seconds=DEDUP_COOLDOWN_SECONDS):
     state = load_state()
-    entry = state.get("contacts", {}).get(contact)
+    entry = state.get('contacts', {}).get(contact)
     if not entry:
         return False
-    last = entry.get("last_outbound_ts", 0)
+    last = entry.get('last_outbound_ts', 0)
     return (time.time() - last) < within_seconds
 
 def same_subject_recently_sent(contact, subject, within_seconds=12 * 3600):
     state = load_state()
-    entry = state.get("contacts", {}).get(contact)
+    entry = state.get('contacts', {}).get(contact)
     if not entry:
         return False
-    last_subject = entry.get("last_outbound_subject") or ""
-    last_ts = entry.get("last_outbound_ts", 0)
+    last_subject = entry.get('last_outbound_subject') or ''
+    last_ts = entry.get('last_outbound_ts', 0)
     return (time.time() - last_ts) < within_seconds and last_subject.strip().lower() == subject.strip().lower()
 
 def is_seen_message_id(message_id):
     state = load_state()
-    return message_id in state.get("seen_message_ids", {})
+    return message_id in state.get('seen_message_ids', {})
 
 def mark_seen_message_id(message_id):
     state = load_state()
-    state.setdefault("seen_message_ids", {})
-    state["seen_message_ids"][message_id] = int(time.time())
+    state.setdefault('seen_message_ids', {})
+    state['seen_message_ids'][message_id] = int(time.time())
     save_state(state)
 
 def search_all_folders(q, max_results=20):
@@ -99,7 +145,6 @@ def search_all_folders(q, max_results=20):
         })
     return out
 
-
 def resolve_thread_id(email, subject_hint=None):
     queries = []
     base = f"from:{email} -category:promotions -in:spam -in:trash"
@@ -115,7 +160,6 @@ def resolve_thread_id(email, subject_hint=None):
     if hits:
         return hits[0].get('threadId') or hits[0].get('id')
     return None
-
 
 def probe_thread_alive(thread_id):
     if not thread_id:
@@ -193,16 +237,21 @@ def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, lan
         'temperature': 0.4,
         'max_tokens': 400,
     }).encode('utf-8')
-    try:
-        import urllib.request
-        req = urllib.request.Request(LLM_API_ENDPOINT, data=body, headers=headers, method='POST')
-        with urllib.request.urlopen(req, timeout=20) as resp:
-            data = json.loads(resp.read().decode('utf-8'))
-        reply = ((data.get('choices') or [{}])[0].get('message') or {}).get('content')
-        if isinstance(reply, str) and reply.strip():
-            return reply.strip()
-    except Exception as e:
-        print('LLM_ERR', repr(e))
+    last_err = None
+    for attempt in range(3):
+        try:
+            import urllib.request
+            req = urllib.request.Request(LLM_API_ENDPOINT, data=body, headers=headers, method='POST')
+            with urllib.request.urlopen(req, timeout=30) as resp:
+                data = json.loads(resp.read().decode('utf-8'))
+            reply = ((data.get('choices') or [{}])[0].get('message') or {}).get('content')
+            if isinstance(reply, str) and reply.strip():
+                return reply.strip()
+        except Exception as e:
+            last_err = repr(e)
+            print('LLM_ERR', last_err, f'attempt={attempt+1}')
+            time.sleep(2 ** attempt)
+    print('LLM_FINAL_ERR', last_err)
     return ''
 
 def _personalize(thread_text: str, contact_name: str, company_name: str, language: str) -> dict:
@@ -241,8 +290,22 @@ def _personalize(thread_text: str, contact_name: str, company_name: str, languag
         'closing': 'Let’s build something that benefits both teams.',
     }
 
+def _addr_is_invalid(addr: str) -> bool:
+    a = addr.lower()
+    if not a or '@' not in a:
+        return True
+    local, domain = a.rsplit('@', 1)
+    if not local or not domain:
+        return True
+    if any(s in a for s in ('.servi.io','.servi.ai','.servi.com','.servi.co','.manag.co','.manag.io','.manag.ai','.manag.br','.manag.com','legalys.com.pa','start.co')):
+        return True
+    if any(d in domain for d in ('servi','manag','legalys.com.pa','start.co','github.com','hcl.com','zendesk.com','calendly.com','datadog','mercadobitcoin','suzano.com.br')):
+        return True
+    if any(local.startswith(p) for p in ('no-reply','noreply','mailer-daemon','postmaster','support@','press@','info@','sales@','team@','hello@','hi@','marketing@','commercial@','service delivery','account manager','comunicaciones@')):
+        return True
+    return False
+
 def build_ceo_reply(contact_name, company_name, thread_text, language='en'):
-    # Prefer LLM-tailored output when enabled; fallback to deterministic template.
     tailored = llm_tailor_reply(thread_text, contact_name, company_name, language)
     if tailored:
         return tailored
@@ -269,43 +332,50 @@ Kleber Garcia Alcatrão
 CEO, Zion Tech Group
 """
 
-def send_ceo_reply(thread_id, to_addr, subject, body, references_message_id):
-    body = sanitize_outreach_body(body)
-    msg_id_str = f"<{references_message_id}>"
-    raw_headers = [
-        f"From: kleber@ziontechgroup.com",
-        f"To: {to_addr}",
-        f"Subject: {subject}",
-        "Content-Type: text/plain; charset=utf-8",
-        f"References: {msg_id_str}",
-        f"In-Reply-To: {msg_id_str}",
-    ]
-    raw = base64.urlsafe_b64encode(("\r\n".join(raw_headers) + "\r\n\r\n" + body).encode('utf-8')).decode('utf-8')
-    sent = service.users().messages().send(userId='me', body={'raw': raw, 'threadId': thread_id}).execute()
-    return sent
-
 def sanitize_outreach_body(body: str) -> str:
-    # Strip common leaked AI planning preambles that slipped into sent mail.
-    patterns = [
-        r"(?is)^got it[^\\n\
-]*(\
-?\\n)+",
-        r"(?is)^then body:[^\\n\
-]*(\
-?\\n)+",
-        r"(?is)^first, the recipient is[^\\n\
-]*(\
-?\\n)+",
-        r"(?is)^need to be concise[^\\n\
-]*(\
-?\\n)+",
+    leaked_prefixes = [
+        'got it',
+        'then body:',
+        'first, the recipient is',
+        'need to be concise',
+        'okay, let\'s tackle this',
+        'hmm,',
+        'wait,',
+        'no, wait',
+        'actually,',
+        'let me think',
+        'i should',
+        'hold on',
+        'one more thing',
+        'before i forget',
+        'kleber garcia alcatr',
+        'subject line is already given',
+        'wait no',
+        'wait, no',
     ]
-    for p in patterns:
-        body = re.sub(p, "", body)
-    return body.strip()
+    lines = body.splitlines()
+    cleaned = []
+    skip = True
+    for line in lines:
+        lower = line.lower().strip()
+        if skip and any(lower.startswith(p.lower()) for p in leaked_prefixes):
+            continue
+        skip = False
+        cleaned.append(line)
+    out = []
+    blank_count = 0
+    for line in cleaned:
+        if line.strip() == "":
+            blank_count += 1
+            if blank_count <= 2:
+                out.append(line)
+        else:
+            blank_count = 0
+            out.append(line)
+    result = chr(10).join(out).strip()
+    return result
 
 def fetch_or_create_lead_from_inbox(email, thread_subject=None):
-    # Priority 1: recent unread/new inbound message across all folders and explicit variant subjects
     queries = []
     base = f"from:{email} -category:promotions -in:spam -in:trash"
     if thread_subject:
@@ -343,57 +413,73 @@ def fetch_or_create_lead_from_inbox(email, thread_subject=None):
     lang = detect_language(text)
     contact_name = email.split('@')[0].replace('.', ' ').title()
     company_name = email.split('@')[1].split('.')[0].title()
-    subject = thread_subject or hit.get("subject") or "Next steps"
+    subject = thread_subject or hit.get('subject') or 'Next steps'
     body = build_ceo_reply(contact_name, company_name, text[:500], language=lang)
     return {
-        "email": email,
-        "msg_id": msg_id,
-        "subject": subject,
-        "body": body,
-        "lang": lang,
+        'email': email,
+        'msg_id': msg_id,
+        'subject': subject,
+        'body': body,
+        'lang': lang,
     }
 
 def run_high_frequency_outreach():
-    contacts = [
-        {"email": "sac@relacionamento.santabarbararesidence.com.br", "name": "Santa", "company": "Santa Barbara Residence", "thread_id": "19f3d496d3924520"},
-        {"email": "flavio.miranda@persistiq.com", "name": "Flavio", "company": "Persistiq", "thread_id": "19f3c9ced31ce3"},
-        {"email": "mweiss@procurri.com", "name": "Matt Weiss", "company": "Procurri", "thread_id": "17b0c52dcebfda15"},
-        {"email": "anjali@quantomtech.com", "name": "Anjali", "company": "QuantomTech", "thread_subject": "Boost Quantomtech revenue with AI personalization"},
-        {"email": "paulo@somaticabrasil.com", "name": "Paulo", "company": "Somatica Brasil", "thread_subject": "Parceria Zion Tech Group"},
-        {"email": "ajuda@homer.com.br", "name": "Homer Team", "company": "Homer", "thread_subject": "Free AI readiness audit for Homer"},
-        {"email": "Whibbert@solyssey.com", "name": "Wayne", "company": "Solyssey", "thread_subject": "Supplier Collaboration Opportunity"},
+    discovery_queries = [
+        "in:inbox -category:promotions -in:spam -in:trash newer_than:7d \"partnership\" OR \"collaboration\" OR \"proposal\"",
+        "in:inbox -category:promotions -in:spam -in:trash newer_than:7d \"AI services\" OR \"AI support\" OR \"project\"",
+        "in:inbox -category:promotions -in:spam -in:trash newer_than:7d \"interested\" OR \"next steps\" OR \"opportunity\"",
+        "in:sent -category:promotions -in:spam -in:trash older_than:30d newer_than:180d",
     ]
-
-    # Also search inbox for new contacts beyond the explicit list
-    additional_hits = search_all_folders("in:inbox -category:promotions newer_than:1d", max_results=20)
-    additional_emails = []
-    for hit in additional_hits:
-        msg = service.users().messages().get(userId='me', id=hit['id'], format='metadata', metadataHeaders=['From','Subject','In-Reply-To']).execute()
-        headers = {x['name']: x['value'] for x in msg.get('payload', {}).get('headers', [])}
-        frm = headers.get('From', '')
-        if '@' in frm and 'no-reply' not in frm.lower() and 'github' not in frm.lower():
+    hit_ids = set()
+    contacts = []
+    for q in discovery_queries:
+        try:
+            hits = search_all_folders(q, max_results=25)
+        except Exception:
+            hits = []
+        for h in hits:
+            hit_id = h.get('id')
+            if not hit_id or hit_id in hit_ids:
+                continue
+            hit_ids.add(hit_id)
+            try:
+                msg = service.users().messages().get(userId='me', id=hit_id, format='metadata', metadataHeaders=['From','Subject','In-Reply-To']).execute()
+            except Exception:
+                continue
+            headers = {x['name']: x['value'] for x in msg.get('payload', {}).get('headers', [])}
+            frm = headers.get('From', '')
+            subj = headers.get('Subject', '')
+            if '@' not in frm:
+                continue
+            lower = frm.lower()
+            if any(x in lower for x in list(FORBIDDEN_ADDR_PREFIXES)):
+                continue
             import re
             m = re.search(r'<([^>]+)>', frm)
-            addr = m.group(1) if m else frm.strip()
-            additional_emails.append({"email": addr, "name": addr.split('@')[0].replace('.', ' ').title(), "company": addr.split('@')[1].split('.')[0].title(), "thread_subject": headers.get('Subject', 'Next steps')})
-
-    seen_add = set()
-    merged_contacts = list(contacts)
-    for a in additional_emails:
-        if a["email"] not in {c["email"] for c in merged_contacts}:
-            merged_contacts.append(a)
+            addr = m.group(1).lower() if m else frm.strip().lower()
+            if is_bouncing_domain(addr):
+                record_bounce(addr, 'forbidden domain in discovery')
+                continue
+            if _addr_is_invalid(addr):
+                record_bounce(addr, 'invalid addr pattern')
+                continue
+            thread_id = msg.get('threadId') or hit_id
+            contacts.append({
+                'email': addr,
+                'name': addr.split('@')[0].replace('.', ' ').title(),
+                'company': addr.split('@')[1].split('.')[0].title(),
+                'thread_id': thread_id,
+                'thread_subject': subj or 'Next steps',
+            })
 
     sent_count = 0
     skipped = 0
     newest_used = []
-
     dead = []
-    hardened_contacts=[]
-    merged_contacts = hardened_contacts or merged_contacts
-    for c in merged_contacts:
-        email = c["email"]
+    for c in contacts:
+        email = c['email']
         contact_key = email.lower()
-        prospective_subject = c.get("thread_subject") or "Next steps"
+        prospective_subject = c.get('thread_subject') or 'Next steps'
         if recent_sent_exists(contact_key, within_seconds=DEDUP_COOLDOWN_SECONDS):
             skipped += 1
             continue
@@ -404,36 +490,36 @@ def run_high_frequency_outreach():
         if not lead:
             skipped += 1
             continue
-        newest_used.append({"contact": email, "msg_id": lead["msg_id"], "lang": lead["lang"]})
-        thread_id = c.get("thread_id")
+        newest_used.append({'contact': email, 'msg_id': lead['msg_id'], 'lang': lead['lang']})
+        thread_id = c.get('thread_id')
         if not thread_id:
             thread_id = resolve_thread_id(email, prospective_subject)
         if not thread_id or not probe_thread_alive(thread_id):
-            for alt in [
-                lead.get("msg_id"),
-                lead.get("thread_id"),
-            ]:
+            for alt in [lead.get('msg_id'), lead.get('thread_id')]:
                 if alt and probe_thread_alive(alt):
                     thread_id = alt
                     break
         c = dict(c)
-        c["_resolved_thread_id"] = thread_id
-        hardened_contacts.append(c)
+        c['_resolved_thread_id'] = thread_id
         if not thread_id or not probe_thread_alive(thread_id):
-            dead.append({"contact": email, "thread_id": thread_id, "subject": prospective_subject})
+            dead.append({'contact': email, 'thread_id': thread_id, 'subject': prospective_subject})
             skipped += 1
             continue
         try:
-            sent = send_ceo_reply(thread_id, email, lead["subject"], lead["body"], lead["msg_id"])
-            record_send(contact_key, email, lead["subject"], sent.get('id'), sent.get('threadId'), f"tailored CEO reply from inbox msg {lead['msg_id']}")
-            mark_seen_message_id(lead["msg_id"])
+            body = sanitize_outreach_body(lead['body'])
+            if not body or not body.strip():
+                skipped += 1
+                continue
+            sent = send_ceo_reply(thread_id, email, lead['subject'], body, lead['msg_id'])
+            record_send(contact_key, email, lead['subject'], sent.get('id'), sent.get('threadId'), f'tailored CEO reply from inbox msg {lead["msg_id"]}')
+            mark_seen_message_id(lead['msg_id'])
             sent_count += 1
         except Exception as e:
             print('SEND_ERR', email, e)
+            record_bounce(email, f'SEND_ERR: {e}', lead.get('msg_id'))
 
-    # Update state timestamp
     state = load_state()
-    state["last_check"] = int(time.time())
+    state['last_check'] = int(time.time())
     save_state(state)
 
     print('ADDS', len(newest_used))
@@ -444,7 +530,21 @@ def run_high_frequency_outreach():
         for d in dead:
             print('DEAD', d)
     print('STATE_TS', int(time.time()))
-    return {"sent": sent_count, "skipped": skipped, "adds": len(newest_used), "dead": dead}
+    return {'sent': sent_count, 'skipped': skipped, 'adds': len(newest_used), 'dead': dead}
+
+def send_ceo_reply(thread_id, to_addr, subject, body, references_message_id):
+    body = sanitize_outreach_body(body)
+    msg_id_str = f"<{references_message_id}>"
+    raw_headers = [
+        f"From: kleber@ziontechgroup.com",
+        f"To: {to_addr}",
+        f"Subject: {subject}",
+        'Content-Type: text/plain; charset=utf-8',
+        f"References: {msg_id_str}",
+        f"In-Reply-To: {msg_id_str}",
+    ]
+    raw = base64.urlsafe_b64encode(("\r\n".join(raw_headers) + "\r\n\r\n" + body).encode('utf-8')).decode('utf-8')
+    return service.users().messages().send(userId='me', body={'raw': raw, 'threadId': thread_id}).execute()
 
 if __name__ == '__main__':
     run_high_frequency_outreach()
