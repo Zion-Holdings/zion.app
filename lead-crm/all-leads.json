@@ -6540,5 +6540,47 @@
     "is_invalid_domain": false,
     "is_placeholder_domain": false,
     "confidence": 2
+  },
+  {
+    "to": "leads@manag.io",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "in:anywhere subject:parceria",
+    "domain": "manag.io",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "confidence": 2
+  },
+  {
+    "to": "contact@solyssey.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "in:anywhere subject:readiness assessment",
+    "domain": "solyssey.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "confidence": 2
+  },
+  {
+    "to": "sac@sub.cobasi.com.br",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "in:anywhere subject:readiness assessment",
+    "domain": "sub.cobasi.com.br",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "confidence": 2
   }
 ]

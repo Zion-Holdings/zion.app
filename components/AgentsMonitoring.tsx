@@ -127,7 +127,7 @@ export default function AgentsMonitoring() {
               </div>
             </div>
             <div className="flex gap-3 flex-wrap">
-              <Link href="/agents-monitoring" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl text-sm hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/25">
+              <Link href="/agents-monitoring/" className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold rounded-xl text-sm hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/25">
                 ⚡ Open Full Dashboard
               </Link>
             </div>
@@ -194,7 +194,7 @@ export default function AgentsMonitoring() {
             </p>
           </div>
           <div className="flex gap-3 flex-wrap">
-            <Link href="/agents-monitoring" className="inline-flex items-center px-4 py-2 bg-white text-slate-900 font-semibold rounded-lg text-sm hover:bg-slate-100 transition-colors shadow">
+            <Link href="/agents-monitoring/" className="inline-flex items-center px-4 py-2 bg-white text-slate-900 font-semibold rounded-lg text-sm hover:bg-slate-100 transition-colors shadow">
               📊 Full Dashboard
             </Link>
             <a href="mailto:kleber@ziontechgroup.com" className="inline-flex items-center px-4 py-2 bg-blue-600 text-white font-medium rounded-lg text-sm hover:bg-blue-500 transition-colors">
@@ -239,7 +239,7 @@ export default function AgentsMonitoring() {
 
         <div className="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between">
           <p className="text-xs text-slate-500">Showing {filteredActions.length} recent actions. Click any agent above to filter.</p>
-          <Link href="/agents-monitoring" className="text-xs text-purple-400 hover:text-purple-300 font-medium">
+          <Link href="/agents-monitoring/" className="text-xs text-purple-400 hover:text-purple-300 font-medium">
             View complete history →
           </Link>
         </div>

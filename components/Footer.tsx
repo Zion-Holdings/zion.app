@@ -59,7 +59,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/ai-services"
+                  href="/ai-services/"
                   className="text-gray-300 hover:text-emerald-400 text-sm transition-colors"
                 >
                   AI Services

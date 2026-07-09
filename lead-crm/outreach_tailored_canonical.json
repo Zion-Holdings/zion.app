@@ -1,258 +1,108 @@
 {
-  "generatedAt": "2026-07-08T16:20:15.385884+00:00",
+  "generatedAt": "2026-07-09T01:08:08.491708+00:00",
   "state": "send_ready",
   "ready": [
     {
       "to": "valmy.gonzalez@shervacom.com",
       "name": "Shervacom",
       "domain": "shervacom.com",
-      "subject": "Proposta de valor conjunto — Shervacom",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "<p>Olá Shervacom,</p><p>Sou Kleber Garcia Alcatrão, Presidente da <strong>Zion Tech Group</strong>. Temos atuado em AI/IT managed services e gostaria de explorar uma colaboração prática com necessidades reais da sua operação.</p><ul><li>Automação inteligente e suporte contínuo a incidentes</li><li>Otimização de custos cloud/IA e modernização de plataformas</li><li>Acesso a ferramentas e serviços gratuitos para começar rápido</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
       "status": "discovered",
-      "tailored_at": "2026-07-08T16:20:16.603022+00:00",
-      "llm_provider": "deterministic-template-v2"
+      "tailored_at": "2026-07-09T01:08:14.067502+00:00",
+      "llm_provider": "hermes-cli"
     },
     {
       "to": "thomas@gakenholz.de",
       "name": "Gakenholz",
       "domain": "gakenholz.de",
-      "subject": "Proposta de valor conjunto — Gakenholz",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI — novas oportunidades",
       "body": "<p>Olá Gakenholz,</p><p>Sou Kleber Garcia Alcatrão, Presidente da <strong>Zion Tech Group</strong>. Temos atuado em AI/IT managed services e gostaria de explorar uma colaboração prática com necessidades reais da sua operação.</p><ul><li>Automação inteligente e suporte contínuo a incidentes</li><li>Otimização de custos cloud/IA e modernização de plataformas</li><li>Acesso a ferramentas e serviços gratuitos para começar rápido</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
       "status": "discovered",
-      "tailored_at": "2026-07-08T16:20:16.603154+00:00",
-      "llm_provider": "deterministic-template-v2"
+      "tailored_at": "2026-07-09T01:08:25.231614+00:00",
+      "llm_provider": "hermes-cli"
     },
     {
       "to": "kleber@sscs-sa.com",
       "name": "Sscs-Sa",
       "domain": "sscs-sa.com",
-      "subject": "Proposta de valor conjunto — Sscs-Sa",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI — colaboração",
       "body": "<p>Olá Sscs-Sa,</p><p>Sou Kleber Garcia Alcatrão, Presidente da <strong>Zion Tech Group</strong>. Temos atuado em AI/IT managed services e gostaria de explorar uma colaboração prática com necessidades reais da sua operação.</p><ul><li>Automação inteligente e suporte contínuo a incidentes</li><li>Otimização de custos cloud/IA e modernização de plataformas</li><li>Acesso a ferramentas e serviços gratuitos para começar rápido</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
       "status": "discovered",
-      "tailored_at": "2026-07-08T16:20:16.603240+00:00",
-      "llm_provider": "deterministic-template-v2"
+      "tailored_at": "2026-07-09T01:08:37.929025+00:00",
+      "llm_provider": "hermes-cli"
     },
     {
       "to": "djean.axt@ztg.com.br",
       "name": "Ztg",
       "domain": "ztg.com.br",
-      "subject": "Proposta de valor conjunto — Ztg",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI — sinergia",
       "body": "<p>Olá Ztg,</p><p>Sou Kleber Garcia Alcatrão, Presidente da <strong>Zion Tech Group</strong>. Temos atuado em AI/IT managed services e gostaria de explorar uma colaboração prática com necessidades reais da sua operação.</p><ul><li>Automação inteligente e suporte contínuo a incidentes</li><li>Otimização de custos cloud/IA e modernização de plataformas</li><li>Acesso a ferramentas e serviços gratuitos para começar rápido</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
       "status": "discovered",
-      "tailored_at": "2026-07-08T16:20:16.603317+00:00",
-      "llm_provider": "deterministic-template-v2"
+      "tailored_at": "2026-07-09T01:08:42.944669+00:00",
+      "llm_provider": "hermes-cli"
     },
     {
       "to": "editors@channelpronetwork.com",
       "name": "Channelpronetwork",
       "domain": "channelpronetwork.com",
-      "subject": "Proposta de valor conjunto — Channelpronetwork",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI — rápido alinhamento",
       "body": "<p>Olá Channelpronetwork,</p><p>Sou Kleber Garcia Alcatrão, Presidente da <strong>Zion Tech Group</strong>. Temos atuado em AI/IT managed services e gostaria de explorar uma colaboração prática com necessidades reais da sua operação.</p><ul><li>Automação inteligente e suporte contínuo a incidentes</li><li>Otimização de custos cloud/IA e modernização de plataformas</li><li>Acesso a ferramentas e serviços gratuitos para começar rápido</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
       "status": "discovered",
-      "tailored_at": "2026-07-08T16:20:16.603400+00:00",
-      "llm_provider": "deterministic-template-v2"
+      "tailored_at": "2026-07-09T01:09:22.511423+00:00",
+      "llm_provider": "hermes-cli"
     },
     {
       "to": "gmailgenius@wordzen.com",
       "name": "Wordzen",
       "domain": "wordzen.com",
-      "subject": "Proposta de valor conjunto — Wordzen",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "<p>Olá Wordzen,</p><p>Sou Kleber Garcia Alcatrão, Presidente da <strong>Zion Tech Group</strong>. Temos atuado em AI/IT managed services e gostaria de explorar uma colaboração prática com necessidades reais da sua operação.</p><ul><li>Automação inteligente e suporte contínuo a incidentes</li><li>Otimização de custos cloud/IA e modernização de plataformas</li><li>Acesso a ferramentas e serviços gratuitos para começar rápido</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
       "status": "discovered",
-      "tailored_at": "2026-07-08T16:20:16.603487+00:00",
-      "llm_provider": "deterministic-template-v2"
+      "tailored_at": "2026-07-09T01:09:27.014436+00:00",
+      "llm_provider": "hermes-cli"
     },
     {
       "to": "bob@scrubly.com",
       "name": "Scrubly",
       "domain": "scrubly.com",
-      "subject": "Proposta de valor conjunto — Scrubly",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "<p>Olá Scrubly,</p><p>Sou Kleber Garcia Alcatrão, Presidente da <strong>Zion Tech Group</strong>. Temos atuado em AI/IT managed services e gostaria de explorar uma colaboração prática com necessidades reais da sua operação.</p><ul><li>Automação inteligente e suporte contínuo a incidentes</li><li>Otimização de custos cloud/IA e modernização de plataformas</li><li>Acesso a ferramentas e serviços gratuitos para começar rápido</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
       "status": "discovered",
-      "tailored_at": "2026-07-08T16:20:16.603568+00:00",
-      "llm_provider": "deterministic-template-v2"
+      "tailored_at": "2026-07-09T01:09:32.366936+00:00",
+      "llm_provider": "hermes-cli"
     },
     {
       "to": "mweiss@procurri.com",
       "name": "Procurri",
       "domain": "procurri.com",
-      "subject": "Proposta de valor conjunto — Procurri",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "<p>Olá Procurri,</p><p>Sou Kleber Garcia Alcatrão, Presidente da <strong>Zion Tech Group</strong>. Temos atuado em AI/IT managed services e gostaria de explorar uma colaboração prática com necessidades reais da sua operação.</p><ul><li>Automação inteligente e suporte contínuo a incidentes</li><li>Otimização de custos cloud/IA e modernização de plataformas</li><li>Acesso a ferramentas e serviços gratuitos para começar rápido</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
       "status": "discovered",
-      "tailored_at": "2026-07-08T16:20:16.603646+00:00",
-      "llm_provider": "deterministic-template-v2"
+      "tailored_at": "2026-07-09T01:09:37.523068+00:00",
+      "llm_provider": "hermes-cli"
     },
     {
       "to": "mauro.faria@fgv.br",
       "name": "Fgv",
       "domain": "fgv.br",
-      "subject": "Proposta de valor conjunto — Fgv",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "<p>Olá Fgv,</p><p>Sou Kleber Garcia Alcatrão, Presidente da <strong>Zion Tech Group</strong>. Temos atuado em AI/IT managed services e gostaria de explorar uma colaboração prática com necessidades reais da sua operação.</p><ul><li>Automação inteligente e suporte contínuo a incidentes</li><li>Otimização de custos cloud/IA e modernização de plataformas</li><li>Acesso a ferramentas e serviços gratuitos para começar rápido</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
       "status": "discovered",
-      "tailored_at": "2026-07-08T16:20:16.603717+00:00",
-      "llm_provider": "deterministic-template-v2"
+      "tailored_at": "2026-07-09T01:09:48.062660+00:00",
+      "llm_provider": "hermes-cli"
     },
     {
       "to": "avinash.r@hcl.com",
       "name": "Hcl",
       "domain": "hcl.com",
-      "subject": "Proposta de valor conjunto — Hcl",
+      "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "<p>Olá Hcl,</p><p>Sou Kleber Garcia Alcatrão, Presidente da <strong>Zion Tech Group</strong>. Temos atuado em AI/IT managed services e gostaria de explorar uma colaboração prática com necessidades reais da sua operação.</p><ul><li>Automação inteligente e suporte contínuo a incidentes</li><li>Otimização de custos cloud/IA e modernização de plataformas</li><li>Acesso a ferramentas e serviços gratuitos para começar rápido</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
       "status": "discovered",
-      "tailored_at": "2026-07-08T16:20:16.603787+00:00",
-      "llm_provider": "deterministic-template-v2"
-    },
-    {
-      "to": "ishukohli@hcl.com",
-      "name": "Hcl",
-      "domain": "hcl.com",
-      "subject": "Proposta de valor conjunto — Hcl — novas oportunidades",
-      "body": "<p>Olá Hcl,</p><p>Sou Kleber Garcia Alcatrão, Presidente da <strong>Zion Tech Group</strong>. Temos atuado em AI/IT managed services e gostaria de explorar uma colaboração prática com necessidades reais da sua operação.</p><ul><li>Automação inteligente e suporte contínuo a incidentes</li><li>Otimização de custos cloud/IA e modernização de plataformas</li><li>Acesso a ferramentas e serviços gratuitos para começar rápido</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "discovered",
-      "tailored_at": "2026-07-08T16:20:16.603861+00:00",
-      "llm_provider": "deterministic-template-v2"
-    },
-    {
-      "to": "jason.guidry@hcl.com",
-      "name": "Hcl",
-      "domain": "hcl.com",
-      "subject": "Proposta de valor conjunto — Hcl — colaboração",
-      "body": "<p>Olá Hcl,</p><p>Sou Kleber Garcia Alcatrão, Presidente da <strong>Zion Tech Group</strong>. Temos atuado em AI/IT managed services e gostaria de explorar uma colaboração prática com necessidades reais da sua operação.</p><ul><li>Automação inteligente e suporte contínuo a incidentes</li><li>Otimização de custos cloud/IA e modernização de plataformas</li><li>Acesso a ferramentas e serviços gratuitos para começar rápido</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "discovered",
-      "tailored_at": "2026-07-08T16:20:16.603937+00:00",
-      "llm_provider": "deterministic-template-v2"
-    },
-    {
-      "to": "arulnathan.k@hcl.com",
-      "name": "Hcl",
-      "domain": "hcl.com",
-      "subject": "Proposta de valor conjunto — Hcl — sinergia",
-      "body": "<p>Olá Hcl,</p><p>Sou Kleber Garcia Alcatrão, Presidente da <strong>Zion Tech Group</strong>. Temos atuado em AI/IT managed services e gostaria de explorar uma colaboração prática com necessidades reais da sua operação.</p><ul><li>Automação inteligente e suporte contínuo a incidentes</li><li>Otimização de custos cloud/IA e modernização de plataformas</li><li>Acesso a ferramentas e serviços gratuitos para começar rápido</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "discovered",
-      "tailored_at": "2026-07-08T16:20:16.604008+00:00",
-      "llm_provider": "deterministic-template-v2"
-    },
-    {
-      "to": "greivinantonio.garci@hcl.com",
-      "name": "Hcl",
-      "domain": "hcl.com",
-      "subject": "Proposta de valor conjunto — Hcl — rápido alinhamento",
-      "body": "<p>Olá Hcl,</p><p>Sou Kleber Garcia Alcatrão, Presidente da <strong>Zion Tech Group</strong>. Temos atuado em AI/IT managed services e gostaria de explorar uma colaboração prática com necessidades reais da sua operação.</p><ul><li>Automação inteligente e suporte contínuo a incidentes</li><li>Otimização de custos cloud/IA e modernização de plataformas</li><li>Acesso a ferramentas e serviços gratuitos para começar rápido</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "discovered",
-      "tailored_at": "2026-07-08T16:20:16.604081+00:00",
-      "llm_provider": "deterministic-template-v2"
-    },
-    {
-      "to": "mohitg@hcl.com",
-      "name": "Hcl",
-      "domain": "hcl.com",
-      "subject": "Proposta de valor conjunto — Hcl — proposta",
-      "body": "<p>Olá Hcl,</p><p>Sou Kleber Garcia Alcatrão, Presidente da <strong>Zion Tech Group</strong>. Temos atuado em AI/IT managed services e gostaria de explorar uma colaboração prática com necessidades reais da sua operação.</p><ul><li>Automação inteligente e suporte contínuo a incidentes</li><li>Otimização de custos cloud/IA e modernização de plataformas</li><li>Acesso a ferramentas e serviços gratuitos para começar rápido</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "discovered",
-      "tailored_at": "2026-07-08T16:20:16.604155+00:00",
-      "llm_provider": "deterministic-template-v2"
-    },
-    {
-      "to": "hi@app.kilocode.ai",
-      "name": "App",
-      "domain": "app.kilocode.ai",
-      "subject": "Proposta de valor conjunto — App",
-      "body": "<p>Olá App,</p><p>Sou Kleber Garcia Alcatrão, Presidente da <strong>Zion Tech Group</strong>. Temos atuado em AI/IT managed services e gostaria de explorar uma colaboração prática com necessidades reais da sua operação.</p><ul><li>Automação inteligente e suporte contínuo a incidentes</li><li>Otimização de custos cloud/IA e modernização de plataformas</li><li>Acesso a ferramentas e serviços gratuitos para começar rápido</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "discovered",
-      "tailored_at": "2026-07-08T16:20:16.604228+00:00",
-      "llm_provider": "deterministic-template-v2"
-    },
-    {
-      "to": "whibbert@solyssey.com",
-      "name": "Solyssey",
-      "domain": "solyssey.com",
-      "subject": "Proposta de valor conjunto — Solyssey",
-      "body": "<p>Olá Solyssey,</p><p>Sou Kleber Garcia Alcatrão, Presidente da <strong>Zion Tech Group</strong>. Temos atuado em AI/IT managed services e gostaria de explorar uma colaboração prática com necessidades reais da sua operação.</p><ul><li>Automação inteligente e suporte contínuo a incidentes</li><li>Otimização de custos cloud/IA e modernização de plataformas</li><li>Acesso a ferramentas e serviços gratuitos para começar rápido</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "discovered",
-      "tailored_at": "2026-07-08T16:20:16.604301+00:00",
-      "llm_provider": "deterministic-template-v2"
-    },
-    {
-      "to": "mrodrigues@solyssey.com",
-      "name": "Solyssey",
-      "domain": "solyssey.com",
-      "subject": "Proposta de valor conjunto — Solyssey — novas oportunidades",
-      "body": "<p>Olá Solyssey,</p><p>Sou Kleber Garcia Alcatrão, Presidente da <strong>Zion Tech Group</strong>. Temos atuado em AI/IT managed services e gostaria de explorar uma colaboração prática com necessidades reais da sua operação.</p><ul><li>Automação inteligente e suporte contínuo a incidentes</li><li>Otimização de custos cloud/IA e modernização de plataformas</li><li>Acesso a ferramentas e serviços gratuitos para começar rápido</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "discovered",
-      "tailored_at": "2026-07-08T16:20:16.604376+00:00",
-      "llm_provider": "deterministic-template-v2"
-    },
-    {
-      "to": "rsingh@solyssey.com",
-      "name": "Solyssey",
-      "domain": "solyssey.com",
-      "subject": "Proposta de valor conjunto — Solyssey — colaboração",
-      "body": "<p>Olá Solyssey,</p><p>Sou Kleber Garcia Alcatrão, Presidente da <strong>Zion Tech Group</strong>. Temos atuado em AI/IT managed services e gostaria de explorar uma colaboração prática com necessidades reais da sua operação.</p><ul><li>Automação inteligente e suporte contínuo a incidentes</li><li>Otimização de custos cloud/IA e modernização de plataformas</li><li>Acesso a ferramentas e serviços gratuitos para começar rápido</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "discovered",
-      "tailored_at": "2026-07-08T16:20:16.604453+00:00",
-      "llm_provider": "deterministic-template-v2"
-    },
-    {
-      "to": "balaji-kalimireddi@hcl.com",
-      "name": "Hcl",
-      "domain": "hcl.com",
-      "subject": "Proposta de valor conjunto — Hcl",
-      "body": "<p>Olá Hcl,</p><p>Sou Kleber Garcia Alcatrão, Presidente da <strong>Zion Tech Group</strong>. Temos atuado em AI/IT managed services e gostaria de explorar uma colaboração prática com necessidades reais da sua operação.</p><ul><li>Automação inteligente e suporte contínuo a incidentes</li><li>Otimização de custos cloud/IA e modernização de plataformas</li><li>Acesso a ferramentas e serviços gratuitos para começar rápido</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "discovered",
-      "tailored_at": "2026-07-08T16:20:16.604528+00:00",
-      "llm_provider": "deterministic-template-v2"
-    },
-    {
-      "to": "sugandha_s@hcl.com",
-      "name": "Hcl",
-      "domain": "hcl.com",
-      "subject": "Proposta de valor conjunto — Hcl",
-      "body": "<p>Olá Hcl,</p><p>Sou Kleber Garcia Alcatrão, Presidente da <strong>Zion Tech Group</strong>. Temos atuado em AI/IT managed services e gostaria de explorar uma colaboração prática com necessidades reais da sua operação.</p><ul><li>Automação inteligente e suporte contínuo a incidentes</li><li>Otimização de custos cloud/IA e modernização de plataformas</li><li>Acesso a ferramentas e serviços gratuitos para começar rápido</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "discovered",
-      "tailored_at": "2026-07-08T16:20:16.604599+00:00",
-      "llm_provider": "deterministic-template-v2"
-    },
-    {
-      "to": "suruchi.g@hcl.com",
-      "name": "Hcl",
-      "domain": "hcl.com",
-      "subject": "Proposta de valor conjunto — Hcl",
-      "body": "<p>Olá Hcl,</p><p>Sou Kleber Garcia Alcatrão, Presidente da <strong>Zion Tech Group</strong>. Temos atuado em AI/IT managed services e gostaria de explorar uma colaboração prática com necessidades reais da sua operação.</p><ul><li>Automação inteligente e suporte contínuo a incidentes</li><li>Otimização de custos cloud/IA e modernização de plataformas</li><li>Acesso a ferramentas e serviços gratuitos para começar rápido</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "discovered",
-      "tailored_at": "2026-07-08T16:20:16.604669+00:00",
-      "llm_provider": "deterministic-template-v2"
-    },
-    {
-      "to": "hugo.sousa@dekra.com",
-      "name": "Dekra",
-      "domain": "dekra.com",
-      "subject": "Proposta de valor conjunto — Dekra",
-      "body": "<p>Olá Dekra,</p><p>Sou Kleber Garcia Alcatrão, Presidente da <strong>Zion Tech Group</strong>. Temos atuado em AI/IT managed services e gostaria de explorar uma colaboração prática com necessidades reais da sua operação.</p><ul><li>Automação inteligente e suporte contínuo a incidentes</li><li>Otimização de custos cloud/IA e modernização de plataformas</li><li>Acesso a ferramentas e serviços gratuitos para começar rápido</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "discovered",
-      "tailored_at": "2026-07-08T16:20:16.604740+00:00",
-      "llm_provider": "deterministic-template-v2"
-    },
-    {
-      "to": "ingrid.ciarelli@dekra.com",
-      "name": "Dekra",
-      "domain": "dekra.com",
-      "subject": "Proposta de valor conjunto — Dekra — novas oportunidades",
-      "body": "<p>Olá Dekra,</p><p>Sou Kleber Garcia Alcatrão, Presidente da <strong>Zion Tech Group</strong>. Temos atuado em AI/IT managed services e gostaria de explorar uma colaboração prática com necessidades reais da sua operação.</p><ul><li>Automação inteligente e suporte contínuo a incidentes</li><li>Otimização de custos cloud/IA e modernização de plataformas</li><li>Acesso a ferramentas e serviços gratuitos para começar rápido</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "discovered",
-      "tailored_at": "2026-07-08T16:20:16.604811+00:00",
-      "llm_provider": "deterministic-template-v2"
-    },
-    {
-      "to": "infraestrutura@dekra.com",
-      "name": "Dekra",
-      "domain": "dekra.com",
-      "subject": "Proposta de valor conjunto — Dekra — colaboração",
-      "body": "<p>Olá Dekra,</p><p>Sou Kleber Garcia Alcatrão, Presidente da <strong>Zion Tech Group</strong>. Temos atuado em AI/IT managed services e gostaria de explorar uma colaboração prática com necessidades reais da sua operação.</p><ul><li>Automação inteligente e suporte contínuo a incidentes</li><li>Otimização de custos cloud/IA e modernização de plataformas</li><li>Acesso a ferramentas e serviços gratuitos para começar rápido</li></ul><p>Conheça nossos serviços: https://ziontechgroup.com</p><p>Agende uma conversa: https://calendly.com/kleber-ziontechgroup</p>",
-      "status": "discovered",
-      "tailored_at": "2026-07-08T16:20:16.604882+00:00",
-      "llm_provider": "deterministic-template-v2"
+      "tailored_at": "2026-07-09T01:09:53.566205+00:00",
+      "llm_provider": "hermes-cli"
     }
   ],
-  "tailored_at": "2026-07-08T16:20:16.604894+00:00",
-  "tailored_by": "lead-crm/tailor_ready_fast.py"
+  "tailored_at": "2026-07-09T01:09:53.566300+00:00",
+  "tailored_by": "lead-crm/tailor_ready_with_llm.py"
 }

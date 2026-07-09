@@ -135,7 +135,7 @@ export default function HomePage() {
   const stats = [
     { value: <AnimatedCounter target={serviceCount} suffix="+" />, label: STAT_SERVICES },
     { value: '16 Categories', label: 'AI · IT · Cloud · Security · Data · Automation · Micro-SaaS · DevOps · Blockchain · IoT · Email Intel · Database · Collaboration · Media · IaC · Low-Code' },
-    { value: <Link href="/agents-monitoring" className="text-purple-400 hover:text-purple-300 transition">⚡ 9 Live Agents</Link>, label: 'Working 24/7 on this site' },
+    { value: <Link href="/agents-monitoring/" className="text-purple-400 hover:text-purple-300 transition">⚡ 9 Live Agents</Link>, label: 'Working 24/7 on this site' },
     { value: '99.9%', label: STAT_SLA },
   ];
 
@@ -307,7 +307,7 @@ export default function HomePage() {
             Get a free, custom proposal in minutes.
           </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <Link href="/configurator/" className="btn-primary text-lg px-10 py-4">
+              <Link href="/configurator" className="btn-primary text-lg px-10 py-4">
                 ⚡ Get Your Custom Proposal →
               </Link>
               <Link href="/services/" className="btn-secondary text-lg px-10 py-4">
@@ -485,10 +485,10 @@ export default function HomePage() {
               <Link href="/dashboard" className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-xl font-semibold text-sm hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/25">
                 ⚡ Open Live Dashboard
               </Link>
-              <Link href="/agents-monitoring" className="inline-flex items-center gap-2 bg-slate-800/60 border border-purple-500/30 text-purple-300 px-6 py-3 rounded-xl font-medium text-sm hover:bg-purple-500/10 hover:border-purple-400/50 transition-all">
+              <Link href="/agents-monitoring/" className="inline-flex items-center gap-2 bg-slate-800/60 border border-purple-500/30 text-purple-300 px-6 py-3 rounded-xl font-medium text-sm hover:bg-purple-500/10 hover:border-purple-400/50 transition-all">
                 📊 Monitor Agents
               </Link>
-              <Link href="/agents-monitoring" className="inline-flex items-center gap-2 bg-slate-800/60 border border-slate-700/60 text-slate-300 px-6 py-3 rounded-xl font-medium text-sm hover:bg-slate-700/80 hover:border-purple-500/30 transition-all">
+              <Link href="/agents-monitoring/" className="inline-flex items-center gap-2 bg-slate-800/60 border border-slate-700/60 text-slate-300 px-6 py-3 rounded-xl font-medium text-sm hover:bg-slate-700/80 hover:border-purple-500/30 transition-all">
                 🤖 Meet the Fleet
               </Link>
             </div>
@@ -553,13 +553,13 @@ export default function HomePage() {
               <div className="bg-gradient-to-br from-purple-500/5 to-pink-500/5 border border-purple-500/20 rounded-xl p-6">
                 <h3 className="font-semibold text-sm mb-2 text-purple-300">🎯 For Clients</h3>
                 <p className="text-xs text-slate-400 mb-3">Show your clients the future of software development. Transparent AI operations they can watch live, anytime.</p>
-                <Link href="/agents-monitoring" className="text-xs text-purple-400 hover:text-purple-300 font-medium">View Client Showcase →</Link>
+                <Link href="/agents-monitoring/" className="text-xs text-purple-400 hover:text-purple-300 font-medium">View Client Showcase →</Link>
               </div>
             </div>
 
             {/* Main CTA */}
             <div className="text-center">
-              <Link href="/agents-monitoring" className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/25 text-lg">
+              <Link href="/agents-monitoring/" className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-xl font-semibold hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/25 text-lg">
                 ⚡ Launch Monitoring Dashboard
               </Link>
               <p className="text-[10px] text-slate-500 mt-3">Available to agents and clients · No login required · Updates in real time</p>
@@ -1037,7 +1037,7 @@ export default function HomePage() {
                 >
                   View Full Page →
                 </Link>
-                <Link href="/configurator/" className="btn-secondary px-6 py-3 text-sm" onClick={() => setQuickView(null)}>
+                <Link href="/configurator" className="btn-secondary px-6 py-3 text-sm" onClick={() => setQuickView(null)}>
                   ⚙️ Configure This Service
                 </Link>
                 <a href="mailto:kleber@ziontechgroup.com" className="text-sm text-purple-300 hover:text-purple-200 px-4 py-3 self-center">
@@ -1106,7 +1106,7 @@ export default function HomePage() {
               Delivered to your inbox as a PDF within 24 hours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/configurator/" className="btn-primary text-lg px-10 py-4">
+              <Link href="/configurator" className="btn-primary text-lg px-10 py-4">
                 ⚙️ Start Configurator →
               </Link>
               <a href="mailto:kleber@ziontechgroup.com" className="btn-secondary text-lg px-10 py-4">
@@ -1264,7 +1264,7 @@ export default function HomePage() {
             <Link href="/faq/" className="hover:text-purple-400 transition">❓ FAQ</Link>
             <Link href="/industry-solutions/" className="hover:text-purple-400 transition">🏭 Industry Solutions</Link>
             <Link href="/services/" className="hover:text-purple-400 transition">🛠️ All Services</Link>
-            <Link href="/configurator/" className="hover:text-purple-400 transition">⚙️ Configurator</Link>
+            <Link href="/configurator" className="hover:text-purple-400 transition">⚙️ Configurator</Link>
             <Link href="/proposals/" className="hover:text-purple-400 transition">📄 Proposals</Link>
             <Link href="/partners/" className="hover:text-purple-400 transition">🤝 Partners</Link>
             <Link href="/status/" className="hover:text-green-400 transition">● System Status</Link>

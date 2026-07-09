@@ -98,7 +98,7 @@ const Navigation: React.FC = () => {
             <Link href="/contact" className="text-gray-300 hover:text-emerald-400 hover:bg-slate-800/50 px-3 py-2 rounded-lg text-sm font-medium transition-all">
               Contact
             </Link>
-            <Link href="/agents-monitoring" className="inline-flex items-center gap-2 text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 px-4 py-2 rounded-lg text-sm font-semibold transition-all shadow-lg">
+            <Link href="/agents-monitoring/" className="inline-flex items-center gap-2 text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 px-4 py-2 rounded-lg text-sm font-semibold transition-all shadow-lg">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500" />
@@ -138,7 +138,7 @@ const Navigation: React.FC = () => {
               <div className="border-t border-slate-700/50 my-2" />
               <Link href="/blog" className="text-gray-300 hover:text-emerald-400 block px-4 py-2.5 rounded-lg text-base font-medium hover:bg-slate-700/50" onClick={toggleMenu}>📝 Blog</Link>
               <Link href="/contact" className="text-gray-300 hover:text-emerald-400 block px-4 py-2.5 rounded-lg text-base font-medium hover:bg-slate-700/50" onClick={toggleMenu}>📞 Contact</Link>
-              <Link href="/agents-monitoring" className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-base font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500" onClick={toggleMenu}>📊 Monitoring Dashboard</Link>
+              <Link href="/agents-monitoring/" className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-base font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500" onClick={toggleMenu}>📊 Monitoring Dashboard</Link>
               <div className="pt-3 px-2">
                 <Link href="/configurator" className="bg-gradient-to-r from-emerald-600 to-cyan-600 text-white block px-4 py-3 rounded-lg text-base font-semibold text-center" onClick={toggleMenu}>⚡ Get Started Free</Link>
                 <div className="flex items-center justify-center gap-4 mt-3 text-sm text-slate-400">
