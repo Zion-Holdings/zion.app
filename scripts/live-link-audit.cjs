@@ -37,9 +37,13 @@ function toTarget(link) {
     if (resolved.host !== new URL(BASE).host) return null;
     let rel = resolved.pathname.split('?', 1)[0].split('#', 1)[0].replace(/^\/+/, '');
     if (!rel) rel = 'index.html';
-    if (rel.endsWith('/')) rel = `${rel}index.html`;
-    const live = rel.startsWith('docs/') ? `${BASE.replace(/\/$/, '')}/${rel.slice(5)}` : `${BASE.replace(/\/$/, '')}/${rel}`;
-    return live;
+    const isDir = rel.endsWith('/');
+    const fsRel = isDir ? `${rel}index.html` : rel;
+    let live = `${BASE.replace(/\/$/, '')}/${fsRel}`;
+    if (isDir) {
+      const candidate = `${BASE.replace(/\/$/, '')}/${rel}`;
+      if (candidate !== live) live = candidate;
+    }
   } catch {
     return null;
   }
