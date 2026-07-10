@@ -65,8 +65,9 @@ for q in QUERIES:
     if SEEN_QUERIES.count(q) > 1:
         pass
 EMAIL_RE = re.compile(r'[\w\.-]+@[\w\.-]+\.[A-Za-z]{2,}')
-MAX_RESULTS_PER_QUERY = 10
-QUERY_TIMEOUT_SECONDS = 6
+MAX_RESULTS_PER_QUERY = 12
+QUERY_TIMEOUT_SECONDS = 3
+FAST_MODE = True
 
 
 def now_iso():
