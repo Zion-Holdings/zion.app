@@ -6971,5 +6971,39 @@
     "llm_model": "stepfun/step-3.7-flash-20260528:free",
     "llm_reason": "### Rating: 1 (weak/indirect signal)\n#### Reasoning aligned to the 0/1/2 scale for managed AI/IT services relevance:\n1. **Not a 2 (strong/direct signal):** There is no explicit confirmation in the provided input that ziontechgroup.com offers managed AI/IT services (no public service listings for man",
     "confidence": 1
+  },
+  {
+    "to": "partners@ultahost.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"Zion Tech Group\"",
+    "domain": "ultahost.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash-20260528:free",
+    "llm_reason": "### Rating: 1\n#### Reasoning aligned to the 0/1/2 scale for managed AI/IT services relevance:\nThis is a weak, partial value signal. The entity’s name includes the generic \"Tech\" label and uses a tech-aligned domain, which places it in the broader technology industry space adjacent to managed AI/IT s",
+    "confidence": 1
+  },
+  {
+    "to": "alebiosu.o.2005001049@eksu.edu.ng",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "eksu.edu.ng",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash-20260528:free",
+    "llm_reason": "### Rating: 0\n### Reasoning:\nThe signal only contains an uncontextualized domain name with no associated information (e.g. service listings, capability descriptions, case studies, or explicit mentions of managed AI/IT offerings) to indicate the entity behind the domain provides relevant managed AI/I",
+    "confidence": 0
   }
 ]
