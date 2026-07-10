@@ -1405,7 +1405,7 @@ export const devOpsServices: Service[] = [
   },
 ];
 
-export const emailIntelligenceServices: Service[] = [
+export const emailIntelligenceServices = [
   {
     id: 'ai-email-triage',
     title: 'AI Email Triage & Auto-Response',
