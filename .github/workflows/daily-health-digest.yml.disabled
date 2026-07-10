@@ -1,0 +1,42 @@
+name: Daily Health Digest
+on:
+  schedule:
+    - cron: '0 18 * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Collect workflow statuses
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          curl -s -H "Authorization: Bearer *** ${GITHUB_TOKEN}" \
+            "https://api.github.com/repos/${{ github.repository }}/actions/runs?per_page=50" \
+            > runs.json
+      - name: Summarize last 24h
+        run: |
+          echo '# Health Digest — '$(date -u +%Y-%m-%dT%H:%M:%SZ) > summary.txt
+          echo 'Runs in last 24h:' $(jq '.workflow_runs|length' runs.json) >> summary.txt
+          echo '' >> summary.txt
+          echo '## Recent failures' >> summary.txt
+          jq -r '.workflow_runs[] | select(.conclusion != "success" and .conclusion != null) | "- " + .name + " (" + .head_branch + ") — " + (.conclusion // "unknown") + " — " + .html_url' runs.json | head -n 20 >> summary.txt || true
+          echo '' >> summary.txt
+          echo '## Top recent runs' >> summary.txt
+          jq -r '.workflow_runs[:10][] | "- " + .name + " (" + .head_branch + ") — " + (.conclusion // "unknown") + " — " + .created_at' runs.json >> summary.txt || true
+      - name: Create digest issue
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs=require('fs');
+            const body=fs.readFileSync('summary.txt','utf8');
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: 'Daily Health Digest — ' + new Date().toISOString().slice(0,10),
+              body: body
+            });

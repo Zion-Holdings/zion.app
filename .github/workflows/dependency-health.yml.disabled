@@ -1,0 +1,55 @@
+name: Dependency Health Monitor
+on:
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  dependency-health:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: 'checkout'
+        uses: actions/checkout@v4
+
+      - name: 'set up Node'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: 'install dependencies'
+        run: npm ci
+
+      - name: 'check for outdated packages'
+        id: outdated
+        run: |
+          set -euo pipefail
+          npm outdated --json > npm-outdated.json || true
+          echo "outdated_count=$(jq 'length' npm-outdated.json)" >> "$GITHUB_OUTPUT"
+
+      - name: 'check for vulnerabilities'
+        id: audit
+        run: |
+          set -euo pipefail
+          npm audit --audit-level moderate --json > npm-audit.json || true
+          echo "vulnerability_count=$(jq '.vulnerabilities | length' npm-audit.json)" >> "$GITHUB_OUTPUT"
+
+      - name: 'notify on Telegram if issues found'
+        if: ${{ steps.outdated.outputs.outdated_count > 0 || steps.audit.outputs.vulnerability_count > 0 }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          set -euo pipefail
+          OUTDATED=${{ steps.outdated.outputs.outdated_count }}
+          VULNS=${{ steps.audit.outputs.vulnerability_count }}
+          TEXT="⚠️ Zion app dependency report:\nOutdated: ${OUTDATED}\nVulnerabilities: ${VULNS}\nReview GitHub Actions log for details."
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d chat_id="${TELEGRAM_CHAT_ID}" \
+            -d text="${TEXT}" \
+            -d parse_mode="Markdown" \
+            >/dev/null
