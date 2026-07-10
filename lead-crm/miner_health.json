@@ -1,18 +1,50 @@
 {
-  "ts": "2026-07-10T05:23:44.456691+00:00",
-  "queries_run": 0,
-  "contacts_found": 0,
-  "new_leads_added": 0,
-  "elapsed_s": 0,
-  "queries_per_second": null,
-  "avg_query_s": null,
-  "max_query_s": null,
-  "status": "ready",
-  "improvements_applied": [
-    "miner timeout reduced to 3s",
-    "label cache TTL reduced to 20m",
-    "fast_mode enabled for miner",
-    "llm classification prompt improved with B2B intent model",
-    "miner health/monitor refreshed automatically"
-  ]
+  "ts": "2026-07-10T06:40:15.640119+00:00",
+  "queries_run": 31,
+  "contacts_found": 7,
+  "new_leads_added": 7,
+  "elapsed_s": 286.68,
+  "queries_per_second": 0.1081,
+  "avg_query_s": 9.2477,
+  "max_query_s": 65.4843,
+  "status": "ok",
+  "high_signal_leads": 0,
+  "lead_quality_ratio": null,
+  "rolling": {
+    "last_5_queries": [
+      24.003169752002577,
+      1.0372100000022328,
+      23.200901444994088,
+      5.93647434200102,
+      65.48432891500124
+    ],
+    "last_5_qps": [
+      0.0417,
+      0.9641,
+      0.0431,
+      0.1685,
+      0.0153
+    ]
+  },
+  "outreach_analysis": {
+    "ts": "2026-07-10T06:43:41.734410+00:00",
+    "send_policy": "disabled",
+    "total_ready": 25,
+    "improved_records": 25,
+    "domains": [
+      "app.kilocode.ai",
+      "channelpronetwork.com",
+      "dekra.com",
+      "fgv.br",
+      "gakenholz.de",
+      "hcl.com",
+      "procurri.com",
+      "scrubly.com",
+      "shervacom.com",
+      "solyssey.com",
+      "sscs-sa.com",
+      "wordzen.com",
+      "ztg.com.br"
+    ]
+  }
 }
