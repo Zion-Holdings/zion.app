@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react';
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
 import SkipLink from './components/SkipLink';
 import EnhancedSkipLink from './components/EnhancedSkipLink';
 import Header from './components/Header';
@@ -24,7 +23,6 @@ import { AutoJsonLd } from './hooks/useAutoJsonLdPage';
 import './globals.css';
 
 export const siteUrl = 'https://ziontechgroup.com';
-const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
