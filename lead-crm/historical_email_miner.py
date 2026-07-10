@@ -60,8 +60,9 @@ QUERIES = [
 
 EMAIL_RE = re.compile(r'[\w\.-]+@[\w\.-]+\.[A-Za-z]{2,}')
 MAX_RESULTS_PER_QUERY = 10
-QUERY_TIMEOUT_SECONDS = 6
-LABEL_CACHE_TTL_SECONDS = 60 * 30
+QUERY_TIMEOUT_SECONDS = 3
+LABEL_CACHE_TTL_SECONDS = 60 * 20
+FAST_MODE = True
 
 
 def now_iso() -> str:

@@ -145,22 +145,25 @@ def send_mail(to_addr, subject, body, html=None):
 def _tailor_message(chat_fn, r):
     subject = r.get('subject', '') or ''
     body = r.get('body', '') or ''
-    if not body:
+    thread_body = r.get('thread_body') or body
+    if not thread_body:
         return r
     company = r.get('company_name') or r.get('name') or ''
     website = r.get('website') or 'https://ziontechgroup.com'
     contact = r.get('display_name') or r.get('recipient') or r.get('to') or ''
     primary_services = ', '.join(r.get('service_references_primary', []) or [])
     prompt = (
-        "Rewrite this outreach email into a concise, personalized message from Kleber Garcia Alcatrão, CEO of Zion Tech Group. "
-        "Use the same language as the original thread unless it is clearly mixed; if mixed, prefer Portuguese with brief English where natural. "
-        "Tone: friendly, professional, creative, CEO-level. Do not invent facts. "
-        "Include: thanks for past collaboration, 2–3 specific mutually beneficial next-step ideas for both companies, "
-        "and a clear CTA to schedule at https://calendly.com/kleber-ziontechgroup. "
-        "Also mention visiting https://ziontechgroup.com for new AI services and free tools/services.\n\n"
-        f"Valid recipient: {contact}\n"
-        f"Company: {company}\nWebsite: {website}\nPrimary IT focus: {primary_services}\n"
-        f"Subject: {subject}\nBody:\n{body}\n"
+        "You are Kleber Garcia Alcatrão, CEO of Zion Tech Group. "
+        "Rewrite the following outreach reply into a concise, personalized continuation. "
+        "Use the same language as the client thread; if mixed, prefer Portuguese with brief English where natural. "
+        "Tone: friendly, professional, creative, CEO-level. Do not invent facts or promises. "
+        "Structure: 1) short thanks for the past collaboration/opportunity, "
+        "2) 2-3 concrete mutually beneficial next-step ideas tailored to the conversation, "
+        "3) clear CTA to schedule at https://calendly.com/kleber-ziontechgroup, "
+        "4) invitation to visit https://ziontechgroup.com for new AI services and free tools.\n\n"
+        f"Recipient: {contact}\n"
+        f"Company: {company}\nWebsite: {website}\nContext/IT focus: {primary_services}\n"
+        f"Thread excerpt:\n{thread_body[:4000]}\n"
     )
     messages = [
         {"role": "system", "content": "You are a helpful assistant that rewrites business emails concisely."},
