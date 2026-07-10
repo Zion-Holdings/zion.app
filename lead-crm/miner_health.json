@@ -1,29 +1,40 @@
 {
-  "ts": "2026-07-10T10:18:19.054603+00:00",
+  "ts": "2026-07-10T10:35:57.241164+00:00",
   "queries_run": 31,
-  "contacts_found": 1,
-  "new_leads_added": 1,
-  "elapsed_s": 156.574,
-  "queries_per_second": 0.198,
-  "avg_query_s": 5.0508,
-  "max_query_s": 21.6782,
+  "contacts_found": 0,
+  "new_leads_added": 0,
+  "elapsed_s": 148.623,
+  "queries_per_second": 0.2086,
+  "avg_query_s": 4.7943,
+  "max_query_s": 6.3484,
   "status": "ok",
   "high_signal_leads": 0,
   "lead_quality_ratio": null,
   "rolling": {
     "last_5_queries": [
-      5.166916997004591,
-      0.4220393849973334,
-      1.3252995369985001,
-      5.117373803994269,
-      2.46208445999946
+      5.315668843002641,
+      0.5174255759993684,
+      1.5928943059989251,
+      5.621222303001559,
+      2.4576279600005364
     ],
     "last_5_qps": [
-      0.1935,
-      2.3694,
-      0.7545,
-      0.1954,
-      0.4062
+      0.1881,
+      1.9326,
+      0.6278,
+      0.1779,
+      0.4069
     ]
-  }
+  },
+  "last_outreach_run_ts": "2026-07-10T10:35:57.241164+00:00",
+  "last_outreach_mode": "analysis_only",
+  "last_outreach_batch_path": "/data/data/com.termux/files/home/zion-support.github.io/lead-crm/outreach_ready_canonical.json",
+  "last_outreach_recipients": 25,
+  "last_outreach_send_allowed_env": false,
+  "last_outreach_send_blocked_flag": true,
+  "last_outreach_personalization_avg": 0.8228,
+  "last_outreach_personalization_min": 0.78,
+  "last_outreach_personalization_max": 0.88,
+  "last_outreach_batch_state": "send_ready",
+  "block_reason": "ZTG_SEND_ALLOWED!=1"
 }
