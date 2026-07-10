@@ -30,9 +30,9 @@ export default function HealthcareCRMAutomationPage() {
       />
       <SiteBreadcrumbs
         items={[
-          { name: 'Home', href: '/' },
-          { name: 'Blog', href: '/blog' },
-          { name: 'Healthcare CRM Automation', href: '/blog/healthcare-crm-automation-ai-patient-workflows-2026' }
+          { label: 'Home', href: '/' },
+          { label: 'Blog', href: '/blog' },
+          { label: 'Healthcare CRM Automation', href: '/blog/healthcare-crm-automation-ai-patient-workflows-2026' }
         ]}
       />
       <div className="max-w-4xl mx-auto px-4 py-8">
