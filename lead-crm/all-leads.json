@@ -7090,5 +7090,22 @@
     "llm_model": "stepfun/step-3.7-flash-20260528:free",
     "llm_reason": "### Rating: 1\n#### Reasoning:\nThe domain `ziontechgroup.com` is a generic tech-focused name that places it in the broader technology services space adjacent to managed AI/IT offerings, but there is no explicit mention of managed AI/IT services, no associated content confirming the entity provides th",
     "confidence": 1
+  },
+  {
+    "to": "news@nvidia.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"Zion Tech Group\"",
+    "domain": "nvidia.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash-20260528:free",
+    "llm_reason": "### Rating: 0\n#### Rationale:\nThe provided input only includes a generic tech company name and an unremarkable domain, with no explicit or implicit indicators (e.g., service keywords, naming cues tied to managed AI/IT) that the entity operates in or offers managed AI/IT services. \"Tech Group\" is an ",
+    "confidence": 0
   }
 ]
