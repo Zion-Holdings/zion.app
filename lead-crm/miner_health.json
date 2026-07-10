@@ -1,38 +1,29 @@
 {
-  "ts": "2026-07-10T09:07:20.705116+00:00",
+  "ts": "2026-07-10T09:17:53.054708+00:00",
   "queries_run": 31,
-  "contacts_found": 1,
-  "new_leads_added": 1,
-  "elapsed_s": 193.641,
-  "queries_per_second": 0.1601,
-  "avg_query_s": 6.2465,
-  "max_query_s": 28.043,
+  "contacts_found": 0,
+  "new_leads_added": 0,
+  "elapsed_s": 151.053,
+  "queries_per_second": 0.2052,
+  "avg_query_s": 4.8727,
+  "max_query_s": 7.8823,
   "status": "ok",
   "high_signal_leads": 0,
   "lead_quality_ratio": null,
   "rolling": {
     "last_5_queries": [
-      5.4764461500017205,
-      0.46212615400145296,
-      1.8239042290006182,
-      5.812735380000959,
-      2.5134006520020193
+      5.138605303996883,
+      0.7966454609995708,
+      1.7420714990003034,
+      5.281112764998397,
+      2.4137225360027514
     ],
     "last_5_qps": [
-      0.1826,
-      2.1639,
-      0.5483,
-      0.172,
-      0.3979
+      0.1946,
+      1.2553,
+      0.574,
+      0.1894,
+      0.4143
     ]
-  },
-  "last_outreach_status": "send_blocked_policy",
-  "outreach_batch": {
-    "file": "outreach_ready_canonical.json",
-    "ready_rows": 25,
-    "send_allowed": false,
-    "avg_personalization_score": 0.823,
-    "low_scored_count": 10,
-    "note": "ZTG_SEND_ALLOWED not 1; blocked per policy."
   }
 }
