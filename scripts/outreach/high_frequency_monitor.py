@@ -90,9 +90,18 @@ def main():
                         userId='me', id=m['id'], format='metadata', metadataHeaders=['Subject', 'From', 'Date']
                     ).execute()
                     hdrs = {x['name']: x['value'] for x in meta.get('payload', {}).get('headers', [])}
+                    thread_id = meta.get('threadId')
+                    thread_alive = False
+                    if thread_id:
+                        try:
+                            service.users().threads().get(userId='me', id=thread_id).execute()
+                            thread_alive = True
+                        except Exception:
+                            thread_alive = False
                     examples.append({
                         'id': meta['id'],
-                        'thread_id': meta.get('threadId'),
+                        'thread_id': thread_id,
+                        'thread_alive': thread_alive,
                         'from': hdrs.get('From'),
                         'subject': hdrs.get('Subject'),
                         'date': hdrs.get('Date'),
