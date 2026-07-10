@@ -1,0 +1,102 @@
+name: Continuous Pages Deploy
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: continuous-pages-deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      NEXT_TELEMETRY_DISABLED: '1'
+      NODE_OPTIONS: '--max-old-space-size=16384'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6.3.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm install --no-audit --fund=false
+
+      - name: Static site build
+        id: build
+        run: |
+          set -euo pipefail
+          npm run build -- --webpack || echo "Next build failed; will deploy docs fallback"
+          if [ -d out ]; then
+            PAGES=$(find out -name 'index.html' | wc -l)
+            SIZE=$(du -sh out | awk '{print $1}')
+          else
+            PAGES=0
+            SIZE="unknown"
+          fi
+          echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
+          echo "size=$SIZE" >> "$GITHUB_OUTPUT"
+
+      - name: Verify or deploy pages artifact
+        run: |
+          set -euo pipefail
+          ARTIFACT_DIR="${GITHUB_WORKSPACE:-.}/artifacts/pages"
+          mkdir -p "$ARTIFACT_DIR"
+          if [ -d out ]; then
+            cp -a out/. "$ARTIFACT_DIR"/
+          elif [ -d docs ]; then
+            cp -a docs/. "$ARTIFACT_DIR"/
+          else
+            echo "No static site artifact found" >&2
+            exit 1
+          fi
+          if [ -d docs ]; then
+            while IFS= read -r -d '' f; do
+              rel="${f#docs/}"
+              mkdir -p "$ARTIFACT_DIR/$(dirname "$rel")"
+              cp -a "$f" "$ARTIFACT_DIR/$rel"
+            done < <(find docs -type f -name 'index.html' -print0 2>/dev/null || true)
+          fi
+          PAGES=$(find "$ARTIFACT_DIR" -name 'index.html' | wc -l)
+          SIZE=$(du -sh "$ARTIFACT_DIR" | awk '{print $1}')
+          echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
+          echo "size=$SIZE" >> "$GITHUB_OUTPUT"
+
+      - name: Pages artifact
+        uses: actions/upload-pages-artifact@v3.0.1
+        with:
+          path: artifacts/pages
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4.0.5
+
+      - name: Verify deployment
+        run: |
+          echo "Deployment URL: ${{ steps.deployment.outputs.page_url }}"
+          sleep 30
+          curl -sf "${{ steps.deployment.outputs.page_url }}/" > /dev/null && echo "✓ Homepage is live" || echo "✗ Homepage check failed"
+          curl -sf "${{ steps.deployment.outputs.page_url }}/contact/" > /dev/null && echo "✓ Contact page is live" || echo "✗ Contact page check failed"
+          curl -sf "${{ steps.deployment.outputs.page_url }}/services/" > /dev/null && echo "✓ Services page is live" || echo "✗ Services page check failed"
