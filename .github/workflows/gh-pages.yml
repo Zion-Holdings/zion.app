@@ -20,7 +20,7 @@ jobs:
       with:
         node-version: '20'
         cache: npm
-    - run: npm ci
+    - run: npm install --no-audit --fund=false
     - run: npm run build:ci
     - uses: actions/configure-pages@v4
       with:
