@@ -1,0 +1,46 @@
+name: Auto-Merge Dependabot PRs
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: 'PR number'
+        required: true
+        type: string
+
+jobs:
+  auto-merge:
+    name: 'Auto-merge safe Dependabot updates'
+    runs-on: ubuntu-latest
+    if: github.actor == 'dependabot[bot]' || github.event_name == 'workflow_dispatch'
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: 'checkout PR'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: 'set up Node'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: 'install dependencies'
+        run: npm ci
+
+      - name: 'run tests'
+        run: npm test -- --ci --coverage --watchAll=false
+
+      - name: 'enable auto-merge'
+        if: ${{ success() }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          PR_NUMBER="${{ github.event.pull_request.number || inputs.pr }}"
+          gh pr merge "$PR_NUMBER" --squash --auto

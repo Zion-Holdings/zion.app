@@ -1,0 +1,34 @@
+name: Broken Links (out/)
+'on':
+  schedule:
+    - cron: '0 3 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  link-check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: 'checkout'
+        uses: actions/checkout@v4
+      - name: 'setup Node'
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: 'run link checker'
+        run: |
+          set -euo pipefail
+          if [[ ! -d out ]]; then
+            echo 'No out/ directory; skipping.'
+            exit 0
+          fi
+          node check-links.cjs || true
+      - name: 'upload report'
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: broken-links-report
+          path: broken-links-report.json
+          retention-days: 30
