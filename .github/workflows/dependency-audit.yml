@@ -23,7 +23,7 @@ jobs:
         id: npm_audit
         continue-on-error: true
         run: |
-          npm audit --json > audit-report.json || true
+          npm audit --audit-level=high --json > audit-report.json || true
           npm audit --audit-level=high > audit-high.txt || true
       - name: Check for high/critical vulnerabilities
         run: |

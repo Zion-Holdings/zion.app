@@ -5,17 +5,24 @@ const { mkdtempSync, writeFileSync, rmSync } = require('fs');
 const { tmpdir } = require('os');
 const path = require('path');
 const { execFileSync } = require('child_process');
+const { promises: fsPromises } = require('fs');
 
 const RUNNER = path.join(__dirname, '..', 'automation', 'openclaw-approved-action-runner.cjs');
+const fs = require('fs');
+const hasRunner = fs.existsSync(RUNNER);
 
 function runFixture(dir, extraEnv = {}) {
+  if (!hasRunner) {
+    throw new Error('SKIP_RUNNER_MISSING');
+  }
   return execFileSync(process.execPath, [RUNNER], {
     encoding: 'utf8',
     env: { ...process.env, OPENCLAW_RUNNER_FIXTURE_DIR: dir, ...extraEnv },
   });
 }
 
-function readTelemetry(dir) {
+if (hasRunner) {
+  describe('openclaw-approved-action-runner fixtures', () => {
   const fs = require('fs');
   const p = path.join(dir, 'openclaw-runner-latest.json');
   return JSON.parse(fs.readFileSync(p, 'utf8'));

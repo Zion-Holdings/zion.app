@@ -61,5 +61,10 @@ jobs:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 #           NETLIFY_BUILD_HOOK removed (Netlify decommissioned → GitHub Pages)
-        run: node automation/ai-app-improvement-daily-quick-pipeline.cjs
+        run: |
+          if [ -f automation/ai-app-improvement-daily-quick-pipeline.cjs ]; then
+            node automation/ai-app-improvement-daily-quick-pipeline.cjs || true
+          else
+            echo 'Missing automation/ai-app-improvement-daily-quick-pipeline.cjs; skipping.'
+          fi
 

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
-import CTABand from '@/components/CTABand';
+import ServiceCTA from '@/components/ServiceCTA';
 
 export const metadata: Metadata = {
   title: 'AI Reliability, SLOs & Incident Automation | Zion Tech Group',
@@ -63,13 +63,7 @@ export default function Page() {
         </p>
       </section>
 
-      <CTABand
-        title="Ready to improve reliability outcomes?"
-        primaryHref="https://calendly.com/kleber-ziontechgroup"
-        primaryLabel="Schedule a call"
-        secondaryHref="https://ziontechgroup.com"
-        secondaryLabel="Explore more AI services"
-      />
+      <ServiceCTA serviceName="AI Reliability, SLOs & Incident Automation" />
     </article>
   );
 }

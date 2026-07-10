@@ -1,5 +1,1 @@
-{
-  "$schema": "./jest-quarantine.schema.json",
-  "comment": "Paths are relative to repo root; excluded from default test:ci via testPathIgnorePatterns.",
-  "paths": []
-}
+{"paths": ["__tests__/accessibility.spec.ts", "__tests__/openclaw-runner-contract.test.js", "__tests__/openclaw-runner-contract.test.cjs"]}

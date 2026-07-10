@@ -56,7 +56,12 @@ jobs:
 
       - name: Run Broken Link Fixer
         if: github.event.inputs.create_pages == 'true'
-        run: node automation/ai-broken-link-fixer.cjs run || true
+        run: |
+          if [ -f automation/ai-broken-link-fixer.cjs ]; then
+            node automation/ai-broken-link-fixer.cjs run || true
+          else
+            echo 'Missing automation/ai-broken-link-fixer.cjs; skipping.'
+          fi
 
       - name: Create Missing Pages (live site)
         if: github.event.inputs.create_pages == 'true'
@@ -70,7 +75,11 @@ jobs:
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
         run: |
-          node automation/ai-broken-link-page-automation.cjs run || true
+          if [ -f automation/ai-broken-link-page-automation.cjs ]; then
+            node automation/ai-broken-link-page-automation.cjs run || true
+          else
+            echo 'Missing automation/ai-broken-link-page-automation.cjs; skipping.'
+          fi
 
       - name: Commit and push fixes
         if: github.event.inputs.create_pages == 'true'
@@ -81,7 +90,7 @@ jobs:
             echo "No changes to commit."
             exit 0
           fi
-          git add -A
+          node -e 'const { execSync } = require("child_process"); const branch = process.env.GITHUB_REF?.replace(/^refs\/heads\//, "") || ""; execSync("git add automation/reports/", { stdio: "inherit" }); const scoped = [".github/workflows/", "app/", "data/", "app/components/", "automation/ai-site-link-audit-automation.cjs", "automation/ai-broken-link-fixer.cjs"]; if (branch === "audit-fixes-2026-07-09") { for (const path of scoped) execSync(`git add ${path}`, { stdio: "inherit" }); }'
           bash scripts/automation/commit-and-push-main.sh "chore(app): fix broken links and create missing pages [automation]"
 
       - name: Upload audit artifact

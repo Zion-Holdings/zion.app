@@ -1,5 +1,6 @@
-const nextConfigPath = 'C:/Users/Zion/zion-support.github.io/next.config.js';
-const pkg = require('C:/Users/Zion/zion-support.github.io/package.json');
+const path = require('path');
+const nextConfigPath = path.join(__dirname, '..', 'next.config.js');
+const pkg = require(nextConfigPath.replace('next.config.js', 'package.json'));
 
 const maybeConfig = require(nextConfigPath);
 const config = maybeConfig && maybeConfig.default ? maybeConfig.default : maybeConfig;
