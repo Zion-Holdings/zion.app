@@ -578,5 +578,12 @@
         0.3898
       ]
     }
+  },
+  {
+    "ts": "2026-07-10T08:41:49.130995+00:00",
+    "source": "cron_send_outreach_batch",
+    "outreach_ready_count": 25,
+    "outreach_improved_records": 25,
+    "outreach_fixes_applied": 75
   }
 ]
