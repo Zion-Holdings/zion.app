@@ -4,7 +4,7 @@ Zion AI/IT Historical Email Miner - Termux-safe.
 Uses gmail_search(all_folders=True) across broader AI/IT business queries.
 Writes new leads to lead-crm/all-leads.json with status='discovered'.
 """
-import sys, json, re, datetime
+import sys, json, re, datetime, time
 from pathlib import Path
 
 REPO = Path('/data/data/com.termux/files/home/zion-support.github.io')
@@ -12,42 +12,61 @@ LEAD_DIR = REPO / 'lead-crm'
 sys.path.insert(0, str(REPO))
 sys.path.insert(0, str(REPO / 'commands'))
 from google_workspace import gmail_search
+try:
+    from lib.llm_client import chat as llm_chat
+except Exception:
+    llm_chat = None
+try:
+    from lead_crm.historical_email_miner import QUERIES as BASE_QUERIES
+except Exception:
+    BASE_QUERIES = []
 
 PROSPECTS_FILE = LEAD_DIR / 'all-leads.json'
 MINED_FILE = LEAD_DIR / 'historical_miner_results.json'
 MINER_LOG = LEAD_DIR / 'miner_log.json'
+HEALTH_MONITOR = LEAD_DIR / 'miner_health.json'
 
-QUERIES = [
+QUERIES = BASE_QUERIES or [
     'in:anywhere subject:parceria',
     'in:anywhere subject:proposta',
     'in:anywhere subject:orçamento',
     'in:anywhere subject:reunião',
     'in:anywhere subject:diagnóstico',
-    'in:anywhere "Zion Tech"',
-    'in:anywhere "AI services"',
-    'in:anywhere "IT services"',
-    'in:anywhere "contact center"',
-    'in:anywhere "document"',
-    'in:anywhere "security operations"',
-    'in:anywhere "automation"',
-    'in:anywhere "support"',
-    'in:anywhere "outsource"',
-    'in:anywhere "managed services"',
-    'in:anywhere "meeting"',
-    'in:anywhere "schedule"',
-    'in:anywhere "quote"',
-    'in:anywhere "pricing"',
-    'in:anywhere "vendor"',
-    'in:anywhere "procurement"',
-    'in:anywhere "project"',
-    'in:anywhere "proposal"',
-    'in:anywhere "partnership"',
-    'in:anywhere "meeting"',
+    'in:anywhere "Zion Tech Group"',
+    'in:anywhere "ziontechgroup.com"',
+    'in:anywhere subject:automação',
+    'in:anywhere "incident response"',
+    'in:anywhere subject:managed services',
+    'in:anywhere subject:devops',
+    'in:anywhere subject:sase',
+    'in:anywhere subject:"platform engineering"',
+    'in:anywhere subject:"AI services"',
+    'in:anywhere "contact center intelligence"',
+    'in:anywhere "document intelligence"',
+    'in:anywhere subject:"security operations assistant"',
+    'in:anywhere subject:readiness assessment',
+    'in:anywhere subject:free tools',
+    'in:anywhere subject:cost optimization',
+    'in:anywhere subject:channel partner',
+    'in:anywhere subject:vendor partnership',
+    'in:anywhere subject:observability',
+    'in:anywhere subject:integration',
+    'in:anywhere subject:outsourcing',
+    'in:anywhere subject:managed cloud',
+    'in:anywhere subject:"AI consulting"',
+    'in:anywhere subject:"AI implementation"',
+    'in:anywhere subject:"AI strategy"',
+    'in:anywhere subject:data lakehouse',
+    'in:anywhere subject:AIOps',
 ]
-
+SEEN_QUERIES = set()
+for q in QUERIES:
+    SEEN_QUERIES.add(q)
+    if SEEN_QUERIES.count(q) > 1:
+        pass
 EMAIL_RE = re.compile(r'[\w\.-]+@[\w\.-]+\.[A-Za-z]{2,}')
-MAX_RESULTS_PER_QUERY = 25
-MIN_CONFIDENCE = 1
+MAX_RESULTS_PER_QUERY = 10
+QUERY_TIMEOUT_SECONDS = 6
 
 
 def now_iso():
