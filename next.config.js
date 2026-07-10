@@ -7,6 +7,7 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   productionBrowserSourceMaps: false,
+  optimizeFonts: false,
   images: {
     unoptimized: true,
     remotePatterns: [{ protocol: 'https', hostname: '**' }],
