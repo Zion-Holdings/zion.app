@@ -1,0 +1,46 @@
+name: Pages Smoke Monitor
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  smoke-monitor:
+    name: 'Pages smoke monitor'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      HOME_URL: https://ziontechgroup.com/
+      SERVICES_URL: https://ziontechgroup.com/services/
+      TOOLS_URL: https://ziontechgroup.com/tools/
+      AI_LAB_URL: https://ziontechgroup.com/ai-lab/
+      CONTACT_URL: https://ziontechgroup.com/contact/
+      PRICING_URL: https://ziontechgroup.com/pricing/
+      BLOG_URL: https://ziontechgroup.com/blog/
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.2
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6.3.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm install --no-audit --fund=false
+
+      - name: Quick smoke checks
+        run: |
+          set -euo pipefail
+          for url in "$HOME_URL" "$SERVICES_URL" "$TOOLS_URL" "$AI_LAB_URL" "$CONTACT_URL" "$PRICING_URL" "$BLOG_URL"; do
+            status=$(curl --silent --show-error --max-time 12 -o /dev/null -w "%{http_code}" "$url" || echo "000")
+            echo "smoke $url => $status"
+            if [ "$status" != "200" ]; then
+              echo "::warning::Smoke failed: $url ($status)"
+            fi
+          done
