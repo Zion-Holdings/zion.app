@@ -1,1 +1,14 @@
-{"ts": "2026-07-10T04:09:59.401651+00:00", "HOT": 0, "NEW2H": 0, "status": "ok", "error": null}
+{
+  "ts": "2026-07-10T04:50:58.567620+00:00",
+  "HOT": 1,
+  "NEW2H": 0,
+  "status": "ok",
+  "error": null,
+  "last_hot_thread_id": "19f43092f91bbb6e",
+  "last_hot_subject": "Re: Supplier Collaboration Opportunity - Zion",
+  "last_hot_from": "rsingh@solyssey.com",
+  "last_hot_received_at": "2026-07-08T18:41:30+00:00",
+  "last_sent_label": "!!!hot-followup-sent",
+  "duplicate_send_blocked": true,
+  "note": "No new inbound hot-followup since last CEO reply; duplicate send prevented by label+database guard."
+}
