@@ -1,29 +1,32 @@
 {
-  "ts": "2026-07-10T19:05:46.602785+00:00",
+  "ts": "2026-07-10T21:06:08.264367+00:00",
   "queries_run": 31,
-  "contacts_found": 1,
-  "new_leads_added": 1,
-  "elapsed_s": 158.646,
-  "queries_per_second": 0.1954,
-  "avg_query_s": 5.1176,
-  "max_query_s": 13.9751,
-  "status": "ok",
+  "contacts_found": 0,
+  "new_leads_added": 0,
+  "elapsed_s": 169.014,
+  "queries_per_second": 0.1834,
+  "avg_query_s": 5.452,
+  "max_query_s": 12.1998,
+  "status": "no_send_scheduled",
   "high_signal_leads": 0,
   "lead_quality_ratio": null,
   "rolling": {
     "last_5_queries": [
-      5.392668804008281,
-      0.4431928839912871,
-      1.4336829609965207,
-      7.006907379996846,
-      2.4664314599940553
+      5.5353885350050405,
+      0.5915466150036082,
+      1.3250565759954043,
+      5.74955195801158,
+      2.3621308830042835
     ],
     "last_5_qps": [
-      0.1854,
-      2.2564,
-      0.6975,
-      0.1427,
-      0.4054
+      0.1807,
+      1.6905,
+      0.7547,
+      0.1739,
+      0.4233
     ]
-  }
+  },
+  "send_allowed": false,
+  "outreach_canonical_present": true,
+  "note": "ZTG_SEND_ALLOWED not set to 1; updated from offline outreach run after SEND_DISABLED path executed."
 }
