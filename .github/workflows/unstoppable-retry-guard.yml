@@ -19,7 +19,7 @@ jobs:
         with:
           node-version: 20
           cache: npm
-      - run: npm ci --include=optional --prefer-offline --no-audit --fund=false
+      - run: npm ci --include=optional --prefer-offline --no-audit --fund=false --unsafe-perm
       - name: Self-healing retry wrapper
         run: |
           ATTEMPTS=3
