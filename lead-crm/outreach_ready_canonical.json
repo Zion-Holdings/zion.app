@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-07-10T11:05:59.899591+00:00",
-  "state": "send_blocked_no_send_allowed",
+  "state": "send_ready",
   "ready": [
     {
       "to": "valmy.gonzalez@shervacom.com",
@@ -32,7 +32,8 @@
       "send_attempted": false,
       "outreach_status": "send_blocked_policy",
       "data_quality_issues": [],
-      "next_send_rank": 1
+      "next_send_rank": 1,
+      "processing_note": "post_send_blocked_analysis_v2"
     },
     {
       "to": "thomas@gakenholz.de",
@@ -64,7 +65,8 @@
       "send_attempted": false,
       "outreach_status": "hold",
       "data_quality_issues": [],
-      "next_send_rank": null
+      "next_send_rank": null,
+      "processing_note": "post_send_blocked_analysis_v2"
     },
     {
       "to": "kleber@sscs-sa.com",
@@ -96,7 +98,8 @@
       "send_attempted": false,
       "outreach_status": "send_blocked_policy",
       "data_quality_issues": [],
-      "next_send_rank": null
+      "next_send_rank": null,
+      "processing_note": "post_send_blocked_analysis_v2"
     },
     {
       "to": "djean.axt@ztg.com.br",
@@ -130,7 +133,8 @@
       "data_quality_issues": [
         "unicode-error-坑"
       ],
-      "next_send_rank": null
+      "next_send_rank": null,
+      "processing_note": "post_send_blocked_analysis_v2"
     },
     {
       "to": "editors@channelpronetwork.com",
@@ -156,7 +160,7 @@
       "display_name": "Editors",
       "source_id": "canonical_editors_channelpronetwork_com_channelpronetwork.com",
       "improved_at": "2026-07-10T09:07:20.703514+00:00",
-      "processing_note": " | post_send_blocked_analysis_v1",
+      "processing_note": "post_send_blocked_analysis_v1 | post_send_blocked_analysis_v2",
       "triage": "ready",
       "triage_reason": "matches ICP and send policy",
       "send_policy_decision": "send_disabled",
@@ -195,7 +199,8 @@
       "send_attempted": false,
       "outreach_status": "hold",
       "data_quality_issues": [],
-      "next_send_rank": null
+      "next_send_rank": null,
+      "processing_note": "post_send_blocked_analysis_v2"
     },
     {
       "to": "bob@scrubly.com",
@@ -227,7 +232,8 @@
       "send_attempted": false,
       "outreach_status": "hold",
       "data_quality_issues": [],
-      "next_send_rank": null
+      "next_send_rank": null,
+      "processing_note": "post_send_blocked_analysis_v2"
     },
     {
       "to": "mweiss@procurri.com",
@@ -259,7 +265,8 @@
       "send_attempted": false,
       "outreach_status": "send_blocked_policy",
       "data_quality_issues": [],
-      "next_send_rank": 1
+      "next_send_rank": 1,
+      "processing_note": "post_send_blocked_analysis_v2"
     },
     {
       "to": "mauro.faria@fgv.br",
@@ -291,7 +298,8 @@
       "send_attempted": false,
       "outreach_status": "send_blocked_policy",
       "data_quality_issues": [],
-      "next_send_rank": 1
+      "next_send_rank": 1,
+      "processing_note": "post_send_blocked_analysis_v2"
     },
     {
       "to": "avinash.r@hcl.com",
@@ -317,7 +325,7 @@
       "display_name": "Avinash R",
       "source_id": "canonical_avinash_r_hcl_com_hcl.com",
       "improved_at": "2026-07-10T09:07:20.703562+00:00",
-      "processing_note": " | post_send_blocked_analysis_v1",
+      "processing_note": "post_send_blocked_analysis_v1 | post_send_blocked_analysis_v2",
       "triage": "ready",
       "triage_reason": "matches ICP and send policy",
       "send_policy_decision": "send_disabled",
@@ -350,7 +358,7 @@
       "display_name": "Ishukohli",
       "source_id": "canonical_ishukohli_hcl_com_hcl.com",
       "improved_at": "2026-07-10T09:07:20.703577+00:00",
-      "processing_note": " | post_send_blocked_analysis_v1",
+      "processing_note": "post_send_blocked_analysis_v1 | post_send_blocked_analysis_v2",
       "triage": "ready",
       "triage_reason": "matches ICP and send policy",
       "send_policy_decision": "send_disabled",
@@ -383,7 +391,7 @@
       "display_name": "Jason Guidry",
       "source_id": "canonical_jason_guidry_hcl_com_hcl.com",
       "improved_at": "2026-07-10T09:07:20.703590+00:00",
-      "processing_note": " | post_send_blocked_analysis_v1",
+      "processing_note": "post_send_blocked_analysis_v1 | post_send_blocked_analysis_v2",
       "triage": "ready",
       "triage_reason": "matches ICP and send policy",
       "send_policy_decision": "send_disabled",
@@ -416,7 +424,7 @@
       "display_name": "Arulnathan K",
       "source_id": "canonical_arulnathan_k_hcl_com_hcl.com",
       "improved_at": "2026-07-10T09:07:20.703603+00:00",
-      "processing_note": " | post_send_blocked_analysis_v1",
+      "processing_note": "post_send_blocked_analysis_v1 | post_send_blocked_analysis_v2",
       "triage": "ready",
       "triage_reason": "matches ICP and send policy",
       "send_policy_decision": "send_disabled",
@@ -449,7 +457,7 @@
       "display_name": "Greivinantonio Garci",
       "source_id": "canonical_greivinantonio_garci_hcl_com_hcl.com",
       "improved_at": "2026-07-10T09:07:20.703614+00:00",
-      "processing_note": " | post_send_blocked_analysis_v1",
+      "processing_note": "post_send_blocked_analysis_v1 | post_send_blocked_analysis_v2",
       "triage": "ready",
       "triage_reason": "matches ICP and send policy",
       "send_policy_decision": "send_disabled",
@@ -482,7 +490,7 @@
       "display_name": "Mohitg",
       "source_id": "canonical_mohitg_hcl_com_hcl.com",
       "improved_at": "2026-07-10T09:07:20.703625+00:00",
-      "processing_note": " | post_send_blocked_analysis_v1",
+      "processing_note": "post_send_blocked_analysis_v1 | post_send_blocked_analysis_v2",
       "triage": "ready",
       "triage_reason": "matches ICP and send policy",
       "send_policy_decision": "send_disabled",
@@ -521,7 +529,8 @@
       "send_attempted": false,
       "outreach_status": "send_blocked_policy",
       "data_quality_issues": [],
-      "next_send_rank": 1
+      "next_send_rank": 1,
+      "processing_note": "post_send_blocked_analysis_v2"
     },
     {
       "to": "whibbert@solyssey.com",
@@ -553,7 +562,8 @@
       "send_attempted": false,
       "outreach_status": "send_blocked_policy",
       "data_quality_issues": [],
-      "next_send_rank": 1
+      "next_send_rank": 1,
+      "processing_note": "post_send_blocked_analysis_v2"
     },
     {
       "to": "mrodrigues@solyssey.com",
@@ -585,7 +595,8 @@
       "send_attempted": false,
       "outreach_status": "send_blocked_policy",
       "data_quality_issues": [],
-      "next_send_rank": 1
+      "next_send_rank": 1,
+      "processing_note": "post_send_blocked_analysis_v2"
     },
     {
       "to": "rsingh@solyssey.com",
@@ -617,7 +628,8 @@
       "send_attempted": false,
       "outreach_status": "send_blocked_policy",
       "data_quality_issues": [],
-      "next_send_rank": 1
+      "next_send_rank": 1,
+      "processing_note": "post_send_blocked_analysis_v2"
     },
     {
       "to": "balaji-kalimireddi@hcl.com",
@@ -643,7 +655,7 @@
       "display_name": "Balaji-kalimireddi",
       "source_id": "canonical_balaji-kalimireddi_hcl_com_hcl.com",
       "improved_at": "2026-07-10T09:07:20.703636+00:00",
-      "processing_note": " | post_send_blocked_analysis_v1",
+      "processing_note": "post_send_blocked_analysis_v1 | post_send_blocked_analysis_v2",
       "triage": "ready",
       "triage_reason": "matches ICP and send policy",
       "send_policy_decision": "send_disabled",
@@ -676,7 +688,7 @@
       "display_name": "Sugandha_s",
       "source_id": "canonical_sugandha_s_hcl_com_hcl.com",
       "improved_at": "2026-07-10T09:07:20.703646+00:00",
-      "processing_note": " | post_send_blocked_analysis_v1",
+      "processing_note": "post_send_blocked_analysis_v1 | post_send_blocked_analysis_v2",
       "triage": "ready",
       "triage_reason": "matches ICP and send policy",
       "send_policy_decision": "send_disabled",
@@ -709,7 +721,7 @@
       "display_name": "Suruchi G",
       "source_id": "canonical_suruchi_g_hcl_com_hcl.com",
       "improved_at": "2026-07-10T09:07:20.703656+00:00",
-      "processing_note": " | post_send_blocked_analysis_v1",
+      "processing_note": "post_send_blocked_analysis_v1 | post_send_blocked_analysis_v2",
       "triage": "ready",
       "triage_reason": "matches ICP and send policy",
       "send_policy_decision": "send_disabled",
@@ -748,7 +760,8 @@
       "send_attempted": false,
       "outreach_status": "send_blocked_policy",
       "data_quality_issues": [],
-      "next_send_rank": 1
+      "next_send_rank": 1,
+      "processing_note": "post_send_blocked_analysis_v2"
     },
     {
       "to": "ingrid.ciarelli@dekra.com",
@@ -780,7 +793,8 @@
       "send_attempted": false,
       "outreach_status": "send_blocked_policy",
       "data_quality_issues": [],
-      "next_send_rank": 1
+      "next_send_rank": 1,
+      "processing_note": "post_send_blocked_analysis_v2"
     },
     {
       "to": "infraestrutura@dekra.com",
@@ -812,7 +826,9 @@
       "send_attempted": false,
       "outreach_status": "send_blocked_policy",
       "data_quality_issues": [],
-      "next_send_rank": 1
+      "next_send_rank": 1,
+      "processing_note": "post_send_blocked_analysis_v2"
     }
-  ]
+  ],
+  "send_blocked": false
 }

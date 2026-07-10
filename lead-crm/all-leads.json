@@ -6937,5 +6937,39 @@
     "llm_model": "stepfun/step-3.7-flash-20260528:free",
     "llm_reason": "### Rating: 1\n#### Rating context definition first for clarity:\n- 2 = Strong, explicit signal the entity offers managed AI/IT services (e.g. domain with clear service keywords, accompanying content confirming these offerings)\n- 1 = Weak, tangential relevance to the broader tech sector, but no explic",
     "confidence": 1
+  },
+  {
+    "to": "googlecloud@google.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"Zion Tech Group\"",
+    "domain": "google.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "template",
+    "llm_model": "deterministic-template-v1",
+    "llm_reason": "Thank you for your interest in our services. I'd be happy to prepare a customized proposal based on your requirements.\n\nCould you please provide more details about your project scope and timeline?\n\nBest regards,\nZion Tech Group",
+    "confidence": 2
+  },
+  {
+    "to": "sellersupport@shop.tiktok.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "shop.tiktok.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash-20260528:free",
+    "llm_reason": "### Rating: 1 (weak/indirect signal)\n#### Reasoning aligned to the 0/1/2 scale for managed AI/IT services relevance:\n1. **Not a 2 (strong/direct signal):** There is no explicit confirmation in the provided input that ziontechgroup.com offers managed AI/IT services (no public service listings for man",
+    "confidence": 1
   }
 ]

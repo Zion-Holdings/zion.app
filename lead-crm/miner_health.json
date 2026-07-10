@@ -1,36 +1,29 @@
 {
-  "ts": "2026-07-10T11:06:18.538982+00:00",
+  "ts": "2026-07-10T11:48:11.494882+00:00",
   "queries_run": 31,
   "contacts_found": 0,
   "new_leads_added": 0,
-  "elapsed_s": 162.0,
-  "queries_per_second": 0.1914,
-  "avg_query_s": 5.2258,
-  "max_query_s": 7.8209,
-  "status": "outreach_analyzed",
+  "elapsed_s": 161.71,
+  "queries_per_second": 0.1917,
+  "avg_query_s": 5.2165,
+  "max_query_s": 6.5516,
+  "status": "ok",
   "high_signal_leads": 0,
   "lead_quality_ratio": null,
   "rolling": {
     "last_5_queries": [
-      5.628773265001655,
-      0.4631497309965198,
-      1.847368307004217,
-      4.96866730399779,
-      2.41219842099963
+      6.551594764998299,
+      0.5024928459970397,
+      1.639324691001093,
+      6.100256610996439,
+      3.0313161140002194
     ],
     "last_5_qps": [
-      0.1777,
-      2.1591,
-      0.5413,
-      0.2013,
-      0.4146
+      0.1526,
+      1.9901,
+      0.61,
+      0.1639,
+      0.3299
     ]
-  },
-  "last_outreach_analysis_ts": "2026-07-10T11:06:18.539014+00:00",
-  "outreach_analysis_state": "send_blocked_no_send_allowed",
-  "outreach_ready_count": 25,
-  "outreach_ready_sendable": 20,
-  "outreach_hold_secondary": 3,
-  "outreach_hold_suppress": 2,
-  "send_allowed": 0
+  }
 }
