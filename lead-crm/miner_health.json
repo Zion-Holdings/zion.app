@@ -1,50 +1,29 @@
 {
-  "ts": "2026-07-10T06:40:15.640119+00:00",
+  "ts": "2026-07-10T06:48:26.874696+00:00",
   "queries_run": 31,
-  "contacts_found": 7,
-  "new_leads_added": 7,
-  "elapsed_s": 286.68,
-  "queries_per_second": 0.1081,
-  "avg_query_s": 9.2477,
-  "max_query_s": 65.4843,
+  "contacts_found": 0,
+  "new_leads_added": 0,
+  "elapsed_s": 160.192,
+  "queries_per_second": 0.1935,
+  "avg_query_s": 5.1675,
+  "max_query_s": 6.5885,
   "status": "ok",
   "high_signal_leads": 0,
   "lead_quality_ratio": null,
   "rolling": {
     "last_5_queries": [
-      24.003169752002577,
-      1.0372100000022328,
-      23.200901444994088,
-      5.93647434200102,
-      65.48432891500124
+      5.4418326879967935,
+      0.4825195760058705,
+      1.5137952680015587,
+      6.291000341996551,
+      2.6225333449983737
     ],
     "last_5_qps": [
-      0.0417,
-      0.9641,
-      0.0431,
-      0.1685,
-      0.0153
-    ]
-  },
-  "outreach_analysis": {
-    "ts": "2026-07-10T06:43:41.734410+00:00",
-    "send_policy": "disabled",
-    "total_ready": 25,
-    "improved_records": 25,
-    "domains": [
-      "app.kilocode.ai",
-      "channelpronetwork.com",
-      "dekra.com",
-      "fgv.br",
-      "gakenholz.de",
-      "hcl.com",
-      "procurri.com",
-      "scrubly.com",
-      "shervacom.com",
-      "solyssey.com",
-      "sscs-sa.com",
-      "wordzen.com",
-      "ztg.com.br"
+      0.1838,
+      2.0725,
+      0.6606,
+      0.159,
+      0.3813
     ]
   }
 }
