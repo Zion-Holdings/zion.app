@@ -2,28 +2,21 @@
 """
 Compatibility alias for the scheduled cron job.
 
-Original job requested:
+Original cron target:
     python3 it_smb_outreach.py
 
-No file by that name exists in the repo, but the outreach automation
-is implemented in: lead-crm/run_outreach_cycle.py
-
-This wrapper preserves the existing cron schedule by forwarding execution
-to the canonical outreach cycle driver without changing behavior.
+Forwards execution to the canonical outreach cycle driver so the cron
+produces the real mine -> queue -> tailor -> git workflow.
 """
-
 import json
 import sys
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent
-DISPATCH = str(REPO / 'lead-crm' / 'run_outreach_cycle.py')
+DISPATCH = REPO / 'lead-crm' / 'run_outreach_cycle.py'
 
-print(json.dumps({
-    'it_smb_outreach_alias': {
-        'dispatched_to': DISPATCH,
-        'note': 'Existing cron target was missing; forwarding to present outreach cycle.'
-    }
-}, ensure_ascii=False))
+sys.argv = [str(DISPATCH), *sys.argv[1:]]
+sys.path.insert(0, str(REPO))
 
-sys.exit(0)
+__name__ = '__main__'
+exec(DISPATCH.read_text(encoding='utf-8'))
