@@ -6,7 +6,8 @@
   "packageManager": "npm@10.9.8",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
+    "build:ci": "next build",
     "build:check": "npm run type-check && npm run build",
     "start": "next start",
     "lint": "next lint",

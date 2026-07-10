@@ -21,13 +21,20 @@ jobs:
         node-version: '20'
         cache: npm
     - run: npm ci
-    - run: npm run build
+    - run: npm run build:ci
     - uses: actions/configure-pages@v4
       with:
         enablement: true
-    - uses: actions/upload-pages-artifact@v3
+    - name: Prepare Pages artifact
+      run: |
+        set -euo pipefail
+        mkdir -p artifact
+        if [ -d docs ]; then cp -a docs/. artifact/; fi
+        if [ -d out ]; then cp -a out/. artifact/; fi
+
+    - uses: actions/upload-pages-artifact@v4
       with:
-        path: ./out
+        path: ./artifact
     timeout-minutes: 30
   deploy:
     environment:
