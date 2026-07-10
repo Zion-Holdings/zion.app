@@ -1,36 +1,33 @@
 {
-  "ts": "2026-07-10T08:12:36.891649+00:00",
+  "ts": "2026-07-10T08:41:49.130995+00:00",
   "queries_run": 31,
   "contacts_found": 0,
   "new_leads_added": 0,
-  "elapsed_s": 151.551,
-  "queries_per_second": 0.2046,
-  "avg_query_s": 4.8887,
-  "max_query_s": 6.4606,
+  "elapsed_s": 150.463,
+  "queries_per_second": 0.206,
+  "avg_query_s": 4.8537,
+  "max_query_s": 6.8893,
   "status": "ok",
   "high_signal_leads": 0,
   "lead_quality_ratio": null,
   "rolling": {
     "last_5_queries": [
-      5.221178649997455,
-      0.5592371539969463,
-      1.539822576000006,
-      5.678845303002163,
-      2.3026286520034773
+      5.356694303998665,
+      0.5484543459970155,
+      1.5358270380020258,
+      6.889318071996968,
+      2.565327652002452
     ],
     "last_5_qps": [
-      0.1915,
-      1.7882,
-      0.6494,
-      0.1761,
-      0.4343
+      0.1867,
+      1.8233,
+      0.6511,
+      0.1452,
+      0.3898
     ]
   },
-  "outreach": {
-    "batch": "outreach_ready_canonical.json",
-    "ready_count": 21,
-    "send_blocked": true,
-    "last_batch_ts": "2026-07-10T08:12:36.891649+00:00",
-    "last_result": "SEND_DISABLED: set ZTG_SEND_ALLOWED=1 to enable outbound sends"
-  }
+  "run_by": "cron_send_outreach_batch",
+  "outreach_ready_count": 25,
+  "outreach_improved_records": 25,
+  "outreach_fixes_applied": 75
 }
