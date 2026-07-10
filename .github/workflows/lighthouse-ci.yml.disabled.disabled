@@ -1,0 +1,39 @@
+name: Lighthouse CI Audit
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 8 * * *'
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Install Lighthouse CI
+        run: npm install -g @lhci/cli@0.14.0
+      - name: Run Lighthouse CI
+        run: |
+          lhci autorun --collect.settings.preset=desktop             --collect.url=https://ziontechgroup.com             --collect.url=https://ziontechgroup.com/about             --collect.url=https://ziontechgroup.com/services             --assert.assertions.performance=error             --assert.assertions.accessibility=error             --assert.assertions['best-practices']=error             --assert.assertions.seo=error             --assert.assertions['first-contentful-paint']=error             --assert.assertions['largest-contentful-paint']=error             --upload.target=temporary-public-storage             --numberOfRuns=1
+      - name: Create issue on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Lighthouse CI failed on ${context.sha.slice(0,7)}`,
+              body: `Lighthouse audit failed. See workflow run in Actions.`
+            })

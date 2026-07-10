@@ -1,0 +1,41 @@
+name: Broken Links Monitor
+'on':
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '0 7 * * *'
+permissions:
+  contents: read
+  issues: write
+jobs:
+  broken-links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install link checker
+        run: npm install -g broken-link-checker
+      - name: Run link check on key routes
+        run: |
+          blc --follow-redirect --max-depth 2 https://ziontechgroup.com > link-report.txt || true
+          blc --follow-redirect --max-depth 2 https://ziontechgroup.com/about >> link-report.txt || true
+          blc --follow-redirect --max-depth 2 https://ziontechgroup.com/services >> link-report.txt || true
+      - name: Upload report artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: link-report
+          path: link-report.txt
+      - name: Create issue on broken links found
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const report = fs.readFileSync('link-report.txt', 'utf8');
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Broken links detected on ${context.sha.slice(0,7)}`,
+              body: `Broken links report:\n\`\`\`\n${report.slice(0, 8000)}\n\`\`\``
+            })
