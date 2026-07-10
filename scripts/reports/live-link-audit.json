@@ -1,24 +1,16 @@
 {
-  "generatedAt": "2026-07-10T14:12:07.540Z",
+  "generatedAt": "2026-07-10T15:07:14.636Z",
   "base": "https://ziontechgroup.com",
-  "totalFiles": 76,
-  "totalChecked": 149,
-  "brokenCount": 4,
+  "totalFiles": 102,
+  "totalChecked": 150,
+  "brokenCount": 2,
   "broken": [
     {
-      "target": "https://ziontechgroup.com/$%7BSITE%7D$%7BBASE%7D/$%7Bs.id%7D",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/services/cloud-cost-optimization-platform/",
+      "target": "https://ziontechgroup.com/ai-services-index.html",
       "status": 404
     },
     {
       "target": "https://ziontechgroup.com/free-ai-it-tools.html",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-services-index.html",
       "status": 404
     }
   ]
