@@ -13,6 +13,8 @@ jobs:
   lighthouse:
     name: 'Lighthouse budget gate'
     runs-on: ubuntu-latest
+    env:
+      LIGHTNINGCSS_BINARY: 'false'
     defaults:
       run:
         shell: bash
