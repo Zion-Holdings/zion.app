@@ -1,4 +1,4 @@
-import sys, json, time, re
+import sys, os, json, time, re
 from pathlib import Path
 
 sys.path.insert(0, r'C:/Users/Zion/AppData/Local/hermes/skills/productivity/google-workspace/scripts')
@@ -39,6 +39,12 @@ def main():
         'ledger_entries': 0,
         'new_inbox_interest_count': 0,
         'new_inbox_examples': [],
+        'llm_tailoring_coverage': {
+            'enabled': False,
+            'contact_tailor_count': 0,
+            'coverage_ratio': 0.0,
+            'blocker': None,
+        },
         'errors': [],
     }
 
@@ -122,6 +128,38 @@ def main():
             report['ledger_entries'] = sum(1 for _ in LEDGER_FILE.open('r', encoding='utf-8'))
     except Exception as e:
         report['errors'].append({'local_state': repr(e)})
+
+    try:
+        llm_blocker = None
+        if not (os.getenv('ZION_LLM_API_ENDPOINT') or os.getenv('LLM_API_ENDPOINT')):
+            llm_blocker = 'missing_endpoint'
+        elif not (os.getenv('ZION_LLM_API_KEY') or os.getenv('LLM_API_KEY')):
+            llm_blocker = 'missing_key'
+        elif not (os.getenv('ZION_LLM_MODEL') or os.getenv('LLM_MODEL')):
+            llm_blocker = 'missing_model'
+        dry_run_file = BASE_DIR / 'outreach_monitor' / 'processed' / 'dry_run_report.jsonl'
+        tailor_count = 0
+        total_dry = 0
+        if dry_run_file.exists():
+            for line in dry_run_file.open('r', encoding='utf-8'):
+                try:
+                    obj = json.loads(line)
+                except Exception:
+                    continue
+                if obj.get('mode') != 'dry_run':
+                    continue
+                total_dry += 1
+                if obj.get('llm_tailored'):
+                    tailor_count += 1
+        coverage = (tailor_count / total_dry) if total_dry else 0.0
+        report['llm_tailoring_coverage'] = {
+            'enabled': llm_blocker is None,
+            'contact_tailor_count': tailor_count,
+            'coverage_ratio': round(coverage, 4),
+            'blocker': llm_blocker,
+        }
+    except Exception as e:
+        report['errors'].append({'llm_coverage': repr(e)})
 
     append_report(report)
     print(json.dumps(report, indent=2, ensure_ascii=False))
