@@ -3,7 +3,7 @@
 import Link from 'next/link';
 
 interface BreadcrumbItem {
-  label: string;
+  label?: string;
   name?: string;
   href?: string;
 }
@@ -11,6 +11,11 @@ interface BreadcrumbItem {
 interface SiteBreadcrumbsProps {
   items: BreadcrumbItem[];
   className?: string;
+}
+
+/** Human-friendly display text for a breadcrumb item. */
+function labelOf(item: BreadcrumbItem): string {
+  return (item.label || item.name || '').trim();
 }
 
 /**
@@ -33,7 +38,7 @@ export default function SiteBreadcrumbs({ items, className = '' }: SiteBreadcrum
       const entry: Record<string, unknown> = {
         '@type': 'ListItem',
         position: i + 1,
-        name: item.label,
+        name: labelOf(item),
       };
       if (item.href) {
         entry.item = `${process.env.NEXT_PUBLIC_SITE_URL ?? ''}${item.href}`;
@@ -133,7 +138,7 @@ export default function SiteBreadcrumbs({ items, className = '' }: SiteBreadcrum
           aria-current={isLast ? 'page' : undefined}
           itemProp="name"
         >
-          {item.label}
+          {labelOf(item)}
         </span>
       );
     }
@@ -144,7 +149,7 @@ export default function SiteBreadcrumbs({ items, className = '' }: SiteBreadcrum
         className="truncate max-w-[120px] md:max-w-[200px] text-gray-500 hover:text-brand-600 dark:text-gray-400 dark:hover:text-brand-400 transition-colors"
         itemProp="item"
       >
-        <span itemProp="name">{item.label}</span>
+        <span itemProp="name">{labelOf(item)}</span>
       </Link>
     );
   }

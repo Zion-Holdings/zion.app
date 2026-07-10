@@ -1439,14 +1439,14 @@ export const emailIntelligenceServices: Service[] = [
 ];
 
 export const allServices: Service[] = [
-  ...aiServices,
-  ...itServices,
-  ...cloudServices,
-  ...securityServices,
-  ...dataServices,
-  ...automationServices,
-  ...microSaasServices,
-  ...devOpsServices,
-  ...emailIntelligenceServices,
-  ...waveAuxServices,
+  ...(aiServices as Service[]),
+  ...(itServices as Service[]),
+  ...(cloudServices as Service[]),
+  ...(securityServices as Service[]),
+  ...(dataServices as Service[]),
+  ...(automationServices as Service[]),
+  ...(microSaasServices as Service[]),
+  ...(devOpsServices as Service[]),
+  ...(emailIntelligenceServices as Service[]),
+  ...(waveAuxServices as Service[]),
 ];
