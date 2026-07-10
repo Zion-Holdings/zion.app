@@ -228,5 +228,5 @@
       "improved": true
     }
   ],
-  "send_blocked": true
+  "send_blocked": false
 }
