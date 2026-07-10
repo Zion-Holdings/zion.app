@@ -20,7 +20,7 @@ export default function Page() {
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">AI-First Anti-Fraud and Payment Intelligence in 2026</h1>
         <p className="text-slate-300 leading-relaxed mb-8">Practical AI models for behavior analysis, anomaly scoring, and payment-route controls.</p>
         <div className="glass-card prose prose-invert max-w-none">
-          <p>Anti-fraud patterns that reduce loss while preserving conversion.</p><ul><li>Behavior analysis and anomaly scoring</li><li>Adaptive controls and rule reduction</li><li>Free readiness tools at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>See <a href="/services/-aiops">platform services</a>, then <a href="/contact">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
+          <p>Anti-fraud patterns that reduce loss while preserving conversion.</p><ul><li>Behavior analysis and anomaly scoring</li><li>Adaptive controls and rule reduction</li><li>Free readiness tools at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>See <a href="https://ziontechgroup.com/services/managed-observability-247">platform services</a>, then <a href="/contact">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
         </div>
         <div className="mt-10 flex flex-col sm:flex-row gap-3">
           <Link href="/services/" className="btn-primary">Explore AI services</Link>
