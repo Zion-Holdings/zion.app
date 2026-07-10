@@ -27,7 +27,7 @@ jobs:
           N=1
           until [ $N -gt $ATTEMPTS ]; do
             echo "Attempt $N/$ATTEMPTS"
-            npm run lint && npm run type-check && npm run build && break || true
+            npm run lint:check && npm run type-check && npm run build && break || true
             if [ $N -lt $ATTEMPTS ]; then
               echo "Retrying in ${DELAY}s..."
               sleep $DELAY
