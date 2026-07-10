@@ -1,63 +1,5 @@
 [
   {
-    "ts": "2026-07-10T09:35:09.701592+00:00",
-    "queries_run": 31,
-    "contacts_found": 0,
-    "new_leads_added": 0,
-    "elapsed_s": 148.285,
-    "queries_per_second": 0.2091,
-    "avg_query_s": 4.7834,
-    "max_query_s": 6.709,
-    "status": "ok",
-    "high_signal_leads": 1.05,
-    "lead_quality_ratio": 0.1819,
-    "rolling": {
-      "last_5_queries": [
-        5.325529533998633,
-        0.4630808850051835,
-        1.5853705760018784,
-        5.170207766001113,
-        2.9835237669976777
-      ],
-      "last_5_qps": [
-        0.1878,
-        2.1594,
-        0.6308,
-        0.1934,
-        0.3352
-      ]
-    }
-  },
-  {
-    "ts": "2026-07-10T09:49:07.678986+00:00",
-    "queries_run": 31,
-    "contacts_found": 0,
-    "new_leads_added": 0,
-    "elapsed_s": 153.585,
-    "queries_per_second": 0.2018,
-    "avg_query_s": 4.9543,
-    "max_query_s": 6.2359,
-    "status": "ok",
-    "high_signal_leads": 1.05,
-    "lead_quality_ratio": 0.1817,
-    "rolling": {
-      "last_5_queries": [
-        5.976265149001847,
-        0.6111542689977796,
-        1.6887454219977371,
-        5.845823033996567,
-        2.4524366139958147
-      ],
-      "last_5_qps": [
-        0.1673,
-        1.6362,
-        0.5922,
-        0.1711,
-        0.4078
-      ]
-    }
-  },
-  {
     "ts": "2026-07-10T10:18:19.054603+00:00",
     "queries_run": 31,
     "contacts_found": 1,
@@ -576,6 +518,64 @@
         0.4624,
         0.1195,
         0.4215
+      ]
+    }
+  },
+  {
+    "ts": "2026-07-10T15:41:45.921275+00:00",
+    "queries_run": 31,
+    "contacts_found": 1,
+    "new_leads_added": 1,
+    "elapsed_s": 160.431,
+    "queries_per_second": 0.1932,
+    "avg_query_s": 5.1752,
+    "max_query_s": 18.9314,
+    "status": "ok",
+    "high_signal_leads": 0.55,
+    "lead_quality_ratio": 0.1872,
+    "rolling": {
+      "last_5_queries": [
+        4.995530650005094,
+        0.4300732689880533,
+        1.545993075997103,
+        5.169587458003662,
+        2.516005266996217
+      ],
+      "last_5_qps": [
+        0.2002,
+        2.3252,
+        0.6468,
+        0.1934,
+        0.3975
+      ]
+    }
+  },
+  {
+    "ts": "2026-07-10T15:50:03.318837+00:00",
+    "queries_run": 31,
+    "contacts_found": 0,
+    "new_leads_added": 0,
+    "elapsed_s": 154.144,
+    "queries_per_second": 0.2011,
+    "avg_query_s": 4.9724,
+    "max_query_s": 8.5987,
+    "status": "ok",
+    "high_signal_leads": 0.55,
+    "lead_quality_ratio": 0.1872,
+    "rolling": {
+      "last_5_queries": [
+        5.634748687996762,
+        0.5207481919933343,
+        1.3339014219964156,
+        5.36818999699608,
+        2.4166146899951855
+      ],
+      "last_5_qps": [
+        0.1775,
+        1.9203,
+        0.7497,
+        0.1863,
+        0.4138
       ]
     }
   }
