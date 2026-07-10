@@ -1,5 +1,0 @@
-1:"$Sreact.fragment"
-2:I[484,[],"OutletBoundary"]
-3:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","main",null,{"style":{"minHeight":"100vh","background":"#020617","color":"#e2e8f0","padding":"2rem"},"children":["$","div",null,{"style":{"maxWidth":"900px","margin":"0 auto"},"children":[["$","h1",null,{"style":{"fontSize":"2.4rem","fontWeight":700,"marginBottom":"1rem"},"children":"Enterprise AI Free Trial"}],["$","p",null,{"style":{"color":"#94a3b8","fontSize":"1.05rem","marginBottom":"1rem"},"children":"Try Zion Tech Group AI services with guided setup and measurable outcomes."}],["$","p",null,{"style":{"color":"#cbd5e1","marginBottom":"1rem"},"children":"Visit https://ziontechgroup.com to explore more free services and tools before you commit."}],["$","a",null,{"href":"https://calendly.com/kleber-ziontechgroup","style":{"color":"#34d399","textDecoration":"underline"},"children":"Book your onboarding call"}]]}]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"zion-tech-group-v1"}
-4:null
