@@ -1,29 +1,36 @@
 {
-  "ts": "2026-07-10T07:55:04.389486+00:00",
+  "ts": "2026-07-10T08:12:36.891649+00:00",
   "queries_run": 31,
-  "contacts_found": 1,
-  "new_leads_added": 1,
-  "elapsed_s": 185.955,
-  "queries_per_second": 0.1667,
-  "avg_query_s": 5.9985,
-  "max_query_s": 26.8256,
+  "contacts_found": 0,
+  "new_leads_added": 0,
+  "elapsed_s": 151.551,
+  "queries_per_second": 0.2046,
+  "avg_query_s": 4.8887,
+  "max_query_s": 6.4606,
   "status": "ok",
   "high_signal_leads": 0,
   "lead_quality_ratio": null,
   "rolling": {
     "last_5_queries": [
-      6.4087039189980715,
-      0.45204838499921607,
-      1.9207698829995934,
-      6.32862034199934,
-      2.761731382997823
+      5.221178649997455,
+      0.5592371539969463,
+      1.539822576000006,
+      5.678845303002163,
+      2.3026286520034773
     ],
     "last_5_qps": [
-      0.156,
-      2.2122,
-      0.5206,
-      0.158,
-      0.3621
+      0.1915,
+      1.7882,
+      0.6494,
+      0.1761,
+      0.4343
     ]
+  },
+  "outreach": {
+    "batch": "outreach_ready_canonical.json",
+    "ready_count": 21,
+    "send_blocked": true,
+    "last_batch_ts": "2026-07-10T08:12:36.891649+00:00",
+    "last_result": "SEND_DISABLED: set ZTG_SEND_ALLOWED=1 to enable outbound sends"
   }
 }
