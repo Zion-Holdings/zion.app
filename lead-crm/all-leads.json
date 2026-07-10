@@ -7005,5 +7005,22 @@
     "llm_model": "stepfun/step-3.7-flash-20260528:free",
     "llm_reason": "### Rating: 0\n### Reasoning:\nThe signal only contains an uncontextualized domain name with no associated information (e.g. service listings, capability descriptions, case studies, or explicit mentions of managed AI/IT offerings) to indicate the entity behind the domain provides relevant managed AI/I",
     "confidence": 0
+  },
+  {
+    "to": "support@salz.ch",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "salz.ch",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "template",
+    "llm_model": "deterministic-template-v1",
+    "llm_reason": "Thank you for your interest in our services. I'd be happy to prepare a customized proposal based on your requirements.\n\nCould you please provide more details about your project scope and timeline?\n\nBest regards,\nZion Tech Group",
+    "confidence": 2
   }
 ]
