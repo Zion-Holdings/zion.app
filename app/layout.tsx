@@ -107,7 +107,7 @@ export default function RootLayout({
           <link rel="preconnect" href="https://www.googletagmanager.com" />
           <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         </head>
-        <body className={`${inter.className} antialiased`}>
+        <body className="antialiased font-sans">
           <Analytics />
           <CtaTracking />
           <div className="flex min-h-screen flex-col bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950">
