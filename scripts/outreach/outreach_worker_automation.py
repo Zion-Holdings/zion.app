@@ -331,8 +331,22 @@ https://ziontechgroup.com
 
 Kleber Garcia Alcatrão
 CEO, Zion Tech Group
+https://ziontechgroup.com
 """
 
+def build_ceo_reply_preview(contact_name, company_name, thread_text, subject, language='en'):
+    body = build_ceo_reply(contact_name, company_name, thread_text, language=language)
+    return {
+        'to_contact': contact_name,
+        'company': company_name,
+        'subject': subject or 'New ideas for {}'.format(company_name),
+        'language': language,
+        'body': sanitize_outreach_body(body),
+        'calendly': 'https://calendly.com/kleber-ziontechgroup',
+        'website': 'https://ziontechgroup.com',
+        'free_tools_note': 'We also offer free services and tools at https://ziontechgroup.com',
+        'send_ready': bool(body and body.strip()),
+    }
 def sanitize_outreach_body(body: str) -> str:
     leaked_prefixes = [
         'got it',
