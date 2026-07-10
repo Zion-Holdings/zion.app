@@ -11,6 +11,8 @@ MONITOR_DIR.mkdir(parents=True, exist_ok=True)
 REPORT_FILE = MONITOR_DIR / 'monitor_report.jsonl'
 DEDUP_FILE = BASE_DIR / 'outreach_monitor' / 'processed' / 'global_dedup_state.json'
 LEDGER_FILE = BASE_DIR / 'outreach_monitor' / 'processed' / 'sent_ledger.jsonl'
+HOT_FOLLOWUP_LABEL_ID = 'Label_946'
+PENDING_QUEUE_FILE = BASE_DIR / 'outreach_monitor' / 'processed' / 'pending_ceo_drafts.jsonl'
 
 
 def append_report(entry: dict):
@@ -79,8 +81,9 @@ def main():
 
         try:
             interest_q = (
-                'in:inbox -category:promotions -in:spam -in:trash '
-                'newer_than:7d "interested" OR "partnership" OR "services" OR "looking for" OR "opportunity" OR "collaboration"'
+                '!category:promotions !in:spam !in:trash '
+                'newer_than:7d "partnership" OR "collaboration" OR "proposal" '
+                '-"support reminder" -"rate the support" -"support survey" -"zendesk"'
             )
             inbox = service.users().messages().list(userId='me', q=interest_q, maxResults=20).execute()
             msgs = inbox.get('messages', [])
