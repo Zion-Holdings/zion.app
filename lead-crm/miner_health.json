@@ -1,29 +1,40 @@
 {
-  "ts": "2026-07-10T06:48:26.874696+00:00",
+  "ts": "2026-07-10T07:05:26.774571+00:00",
   "queries_run": 31,
   "contacts_found": 0,
   "new_leads_added": 0,
-  "elapsed_s": 160.192,
-  "queries_per_second": 0.1935,
-  "avg_query_s": 5.1675,
-  "max_query_s": 6.5885,
+  "elapsed_s": 154.352,
+  "queries_per_second": 0.2008,
+  "avg_query_s": 4.9791,
+  "max_query_s": 6.9586,
   "status": "ok",
   "high_signal_leads": 0,
   "lead_quality_ratio": null,
   "rolling": {
     "last_5_queries": [
-      5.4418326879967935,
-      0.4825195760058705,
-      1.5137952680015587,
-      6.291000341996551,
-      2.6225333449983737
+      6.495763111000997,
+      0.7603770380010246,
+      2.07184334500198,
+      5.354277111000556,
+      2.661377459000505
     ],
     "last_5_qps": [
-      0.1838,
-      2.0725,
-      0.6606,
-      0.159,
-      0.3813
+      0.1539,
+      1.3151,
+      0.4827,
+      0.1868,
+      0.3757
     ]
+  },
+  "outreach_last_run": {
+    "ts": "2026-07-10T07:07:08.896399+00:00",
+    "send_policy": "send_blocked",
+    "env": {
+      "ZTG_SEND_ALLOWED": "0_or_unset"
+    },
+    "ready_count": 24,
+    "send_count": 0,
+    "skipped_templates": 0,
+    "note": "Zero sends. Upgraded queue state to send-blocked."
   }
 }
