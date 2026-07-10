@@ -1,29 +1,36 @@
 {
-  "ts": "2026-07-10T14:20:35.231018+00:00",
+  "ts": "2026-07-10T14:35:57.679026+00:00",
   "queries_run": 31,
-  "contacts_found": 0,
-  "new_leads_added": 0,
-  "elapsed_s": 146.074,
-  "queries_per_second": 0.2122,
-  "avg_query_s": 4.7121,
-  "max_query_s": 6.6052,
-  "status": "ok",
+  "contacts_found": 1,
+  "new_leads_added": 1,
+  "elapsed_s": 168.778,
+  "queries_per_second": 0.1837,
+  "avg_query_s": 5.4444,
+  "max_query_s": 26.2172,
+  "status": "send_skipped",
   "high_signal_leads": 0,
   "lead_quality_ratio": null,
+  "send_allowed": false,
+  "send_disabled_reason": "ZTG_SEND_ALLOWED=0",
+  "last_cron_check_ts": "2026-07-10T14:35:47.936721+00:00",
+  "outreach_ready_count": 25,
+  "outreach_improved_records": 25,
+  "outreach_fixes_applied": 75,
+  "note": "Outreach batch processing ran in analysis mode; no outbound sends because ZTG_SEND_ALLOWED=0.",
   "rolling": {
     "last_5_queries": [
-      5.969431304001773,
-      0.4787311540057999,
-      1.357744883003761,
-      5.13672518900421,
-      2.3545302670027013
+      5.072426726997946,
+      0.6113616919974447,
+      1.6976836140020168,
+      5.829032802997972,
+      2.8739725359992008
     ],
     "last_5_qps": [
-      0.1675,
-      2.0889,
-      0.7365,
-      0.1947,
-      0.4247
+      0.1971,
+      1.6357,
+      0.589,
+      0.1716,
+      0.348
     ]
   }
 }

@@ -1,12 +1,5 @@
 [
   {
-    "ts": "2026-07-10T08:41:49.130995+00:00",
-    "source": "cron_send_outreach_batch",
-    "outreach_ready_count": 25,
-    "outreach_improved_records": 25,
-    "outreach_fixes_applied": 75
-  },
-  {
     "ts": "2026-07-10T09:03:15.560035+00:00",
     "queries_run": 31,
     "contacts_found": 1,
@@ -554,6 +547,35 @@
         0.7365,
         0.1947,
         0.4247
+      ]
+    }
+  },
+  {
+    "ts": "2026-07-10T14:35:57.679026+00:00",
+    "queries_run": 31,
+    "contacts_found": 1,
+    "new_leads_added": 1,
+    "elapsed_s": 168.778,
+    "queries_per_second": 0.1837,
+    "avg_query_s": 5.4444,
+    "max_query_s": 26.2172,
+    "status": "ok",
+    "high_signal_leads": 0.5,
+    "lead_quality_ratio": 0.1874,
+    "rolling": {
+      "last_5_queries": [
+        5.072426726997946,
+        0.6113616919974447,
+        1.6976836140020168,
+        5.829032802997972,
+        2.8739725359992008
+      ],
+      "last_5_qps": [
+        0.1971,
+        1.6357,
+        0.589,
+        0.1716,
+        0.348
       ]
     }
   }

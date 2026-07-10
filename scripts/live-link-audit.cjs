@@ -81,6 +81,7 @@ async function run() {
     while ((m = hrefRegex.exec(content)) !== null) {
       const link = m[1];
       if (!link || link.startsWith('javascript:') || link.startsWith('mailto:') || link.startsWith('tel:') || link.startsWith('#') || link.startsWith('/_next/') || link.startsWith('_next/')) continue;
+      if (/\$\{/.test(link) || /%7B/.test(link)) continue;
       if (isExternal(link)) continue;
       const target = toTarget(link);
       if (!target) continue;
