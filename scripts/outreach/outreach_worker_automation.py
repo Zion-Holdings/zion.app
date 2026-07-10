@@ -438,7 +438,10 @@ def fetch_or_create_lead_from_inbox(email, thread_subject=None):
         'lang': lang,
     }
 
+DRY_RUN = os.getenv('OUTREACH_DRY_RUN', '').lower() in ('1','true','yes')
+
 def run_high_frequency_outreach():
+    # If LLM creds exist, enable tailoring; otherwise rely on personalized defaults.
     discovery_queries = [
         "in:inbox -category:promotions -in:spam -in:trash newer_than:7d \"partnership\" OR \"collaboration\" OR \"proposal\"",
         "in:inbox -category:promotions -in:spam -in:trash newer_than:7d \"AI services\" OR \"AI support\" OR \"project\"",
@@ -524,6 +527,10 @@ def run_high_frequency_outreach():
             body = sanitize_outreach_body(lead['body'])
             if not body or not body.strip():
                 skipped += 1
+                continue
+            if DRY_RUN:
+                print('DRY_RUN_WOULD_SEND', email, lead['subject'], lead.get('msg_id'))
+                sent_count += 1
                 continue
             sent = send_ceo_reply(thread_id, email, lead['subject'], body, lead['msg_id'])
             record_send(contact_key, email, lead['subject'], sent.get('id'), sent.get('threadId'), f'tailored CEO reply from inbox msg {lead["msg_id"]}')
