@@ -93,8 +93,12 @@ def append_sent(record: dict):
 
 def send_mail(to_addr, subject, body, html=None):
     sent = _load_sent_set()
-    if (to_addr or '').lower() and subject:
-        if ((to_addr).lower(), subject.strip()) in sent:
+    to_key = (to_addr or '').lower()
+    subj_key = (subject or '').strip()
+    if to_key and subj_key:
+        if (to_key, subj_key) in sent:
+            return None, 'duplicate'
+        if (to_key, subj_key.lower()) in sent:
             return None, 'duplicate'
     raw_email_lines = [
         'From: kleber@ziontechgroup.com',
@@ -123,6 +127,16 @@ def send_mail(to_addr, subject, body, html=None):
             'thread_id': tid,
             'provider': 'gmail_api',
         })
+        _append_outreach_log({
+            'ts': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+            'event': 'send',
+            'to': to_addr,
+            'subject': subject,
+            'message_id': mid,
+            'thread_id': tid,
+            'provider': 'gmail_api',
+            'status': 'sent',
+        })
     except Exception:
         pass
     return mid, tid
@@ -138,10 +152,12 @@ def _tailor_message(chat_fn, r):
     contact = r.get('display_name') or r.get('recipient') or r.get('to') or ''
     primary_services = ', '.join(r.get('service_references_primary', []) or [])
     prompt = (
-        "Rewrite this outreach email into a concise, personalized Portuguese message from Kleber Garcia Alcatrão, CEO of Zion Tech Group. "
-        "Keep the tone friendly, professional, and creative. Do not invent facts. "
-        "Highlight: new AI/IT managed services, free tools/services at https://ziontechgroup.com, and a clear CTA to explore or schedule at https://calendly.com/kleber-ziontechgroup. "
-        "Close with a mutually beneficial partnership angle.\n\n"
+        "Rewrite this outreach email into a concise, personalized message from Kleber Garcia Alcatrão, CEO of Zion Tech Group. "
+        "Use the same language as the original thread unless it is clearly mixed; if mixed, prefer Portuguese with brief English where natural. "
+        "Tone: friendly, professional, creative, CEO-level. Do not invent facts. "
+        "Include: thanks for past collaboration, 2–3 specific mutually beneficial next-step ideas for both companies, "
+        "and a clear CTA to schedule at https://calendly.com/kleber-ziontechgroup. "
+        "Also mention visiting https://ziontechgroup.com for new AI services and free tools/services.\n\n"
         f"Valid recipient: {contact}\n"
         f"Company: {company}\nWebsite: {website}\nPrimary IT focus: {primary_services}\n"
         f"Subject: {subject}\nBody:\n{body}\n"

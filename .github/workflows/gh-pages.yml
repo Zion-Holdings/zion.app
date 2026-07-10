@@ -21,7 +21,7 @@ jobs:
         node-version: '20'
         cache: npm
     - run: npm ci
-    - run: npm run build
+    - run: npm run build:ci
     - uses: actions/configure-pages@v4
       with:
         enablement: true
