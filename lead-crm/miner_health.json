@@ -1,18 +1,33 @@
 {
-  "ts": "2026-07-10T05:23:44.456691+00:00",
-  "queries_run": 0,
+  "ts": "2026-07-10T08:41:49.130995+00:00",
+  "queries_run": 31,
   "contacts_found": 0,
   "new_leads_added": 0,
-  "elapsed_s": 0,
-  "queries_per_second": null,
-  "avg_query_s": null,
-  "max_query_s": null,
-  "status": "ready",
-  "improvements_applied": [
-    "miner timeout reduced to 3s",
-    "label cache TTL reduced to 20m",
-    "fast_mode enabled for miner",
-    "llm classification prompt improved with B2B intent model",
-    "miner health/monitor refreshed automatically"
-  ]
+  "elapsed_s": 150.463,
+  "queries_per_second": 0.206,
+  "avg_query_s": 4.8537,
+  "max_query_s": 6.8893,
+  "status": "ok",
+  "high_signal_leads": 0,
+  "lead_quality_ratio": null,
+  "rolling": {
+    "last_5_queries": [
+      5.356694303998665,
+      0.5484543459970155,
+      1.5358270380020258,
+      6.889318071996968,
+      2.565327652002452
+    ],
+    "last_5_qps": [
+      0.1867,
+      1.8233,
+      0.6511,
+      0.1452,
+      0.3898
+    ]
+  },
+  "run_by": "cron_send_outreach_batch",
+  "outreach_ready_count": 25,
+  "outreach_improved_records": 25,
+  "outreach_fixes_applied": 75
 }

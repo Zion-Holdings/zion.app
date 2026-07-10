@@ -4,7 +4,8 @@ fails=[]
 for p in paths:
     try:
         r=urllib.request.urlopen('https://ziontechgroup.com'+p, timeout=30)
-        if r.status != 200: fails.append({"route":p,"status":r.status,"content_type":r.headers.get('content-type')})
+        if r.status != 200:
+            fails.append({"route":p,"status":r.status,"content_type":r.headers.get('content-type')})
         r.close()
     except urllib.error.HTTPError as e:
         fails.append({"route":p,"status":e.code,"content_type":e.headers.get('content-type')})
