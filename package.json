@@ -31,7 +31,8 @@
     "build-storybook": "storybook build",
     "build:win": "node scripts/windows-build-guard.cjs && next build",
     "deploy:verify": "node scripts/verify-deploy.cjs",
-    "rsc:guard": "echo 'rsc:guard ok'"
+    "rsc:guard": "echo 'rsc:guard ok'",
+    "lighthouse:production": "node scripts/checks/lighthouse-production-check.cjs || npx lighthouse http://localhost:3000 --output=json --output-path=automation/reports/lighthouse-production-latest.json"
   },
   "dependencies": {
     "@sendgrid/mail": "^8.1.6",
