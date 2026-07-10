@@ -126,14 +126,44 @@ def mark_seen_message_id(message_id):
     state['seen_message_ids'][message_id] = int(time.time())
     save_state(state)
 
+def _load_hot_followup_ledger_ids() -> tuple[set[str], set[str]]:
+    blocked_threads: set[str] = set()
+    blocked_message_ids: set[str] = set()
+    try:
+        p = BASE_DIR / 'outreach_monitor' / 'processed' / 'hot_followup_reply_ledger.jsonl'
+        with p.open('r', encoding='utf-8') as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    obj = json.loads(line)
+                except Exception:
+                    continue
+                tid = obj.get('thread_id') or ''
+                mid = obj.get('message_id') or ''
+                if tid:
+                    blocked_threads.add(tid)
+                if mid:
+                    blocked_message_ids.add(mid)
+    except Exception:
+        pass
+    return blocked_threads, blocked_message_ids
+
+
 def search_all_folders(q, max_results=20):
     resp = service.users().messages().list(userId='me', q=q, maxResults=max_results).execute()
     items = resp.get('messages', [])
     out = []
+    blocked_threads, blocked_message_ids = _load_hot_followup_ledger_ids()
     for item in items:
         try:
-            msg = service.users().messages().get(userId='me', id=item['id'], format='metadata', metadataHeaders=['From','Subject','Date']).execute()
+            msg = service.users().messages().get(userId='me', id=item['id'], format='metadata', metadataHeaders=['From','Subject','Date','Thread-Id']).execute()
         except Exception:
+            continue
+        if msg.get('id') in blocked_message_ids:
+            continue
+        if msg.get('threadId') in blocked_threads:
             continue
         headers = {h['name']: h['value'] for h in msg.get('payload', {}).get('headers', [])}
         out.append({
@@ -302,7 +332,9 @@ def _addr_is_invalid(addr: str) -> bool:
         return True
     if any(d in domain for d in ('servi','manag','legalys.com.pa','start.co','github.com','hcl.com','zendesk.com','calendly.com','datadog','mercadobitcoin','suzano.com.br')):
         return True
-    if any(local.startswith(p) for p in ('no-reply','noreply','mailer-daemon','postmaster','support@','press@','info@','sales@','team@','hello@','hi@','marketing@','commercial@','service delivery','account manager','comunicaciones@')):
+    if any(local.startswith(p) for p in ('no-reply','noreply','mailer-daemon','postmaster','support@','press@','info@','sales@','team@','hello@','hi@','marketing@','commercial@','service delivery','account manager','comunicaciones@','undisclosed-recipients')):
+        return True
+    if addr.lower() in {'undisclosed-recipients:;', 'undisclosed-recipients'}:
         return True
     return False
 
