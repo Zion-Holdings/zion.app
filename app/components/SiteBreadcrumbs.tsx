@@ -4,6 +4,7 @@ import Link from 'next/link';
 
 interface BreadcrumbItem {
   label: string;
+  name?: string;
   href?: string;
 }
 
