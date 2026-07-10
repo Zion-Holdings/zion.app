@@ -1,29 +1,17 @@
 {
-  "ts": "2026-07-09T13:56:43.635057+00:00",
-  "queries_run": 32,
-  "contacts_found": 8,
-  "new_leads_added": 8,
-  "elapsed_s": 156.952,
-  "queries_per_second": 0.2039,
-  "avg_query_s": 4.9048,
-  "max_query_s": 6.5027,
-  "status": "ok",
-  "high_signal_leads": 0,
-  "lead_quality_ratio": null,
-  "rolling": {
-    "last_5_queries": [
-      5.281496611016337,
-      0.9801214609760791,
-      4.7993878810084425,
-      4.7373513039783575,
-      4.890161496005021
-    ],
-    "last_5_qps": [
-      0.1893,
-      1.0203,
-      0.2084,
-      0.2111,
-      0.2045
-    ]
-  }
+  "ts": "2026-07-10T05:07:35.327873+00:00",
+  "queries_run": 0,
+  "contacts_found": 0,
+  "new_leads_added": 0,
+  "elapsed_s": 0,
+  "queries_per_second": null,
+  "avg_query_s": null,
+  "max_query_s": null,
+  "status": "ready",
+  "improvements_applied": [
+    "miner timeout reduced to 3s",
+    "label cache TTL reduced to 20m",
+    "fast_mode enabled for miner",
+    "llm classification prompt improved with B2B intent model"
+  ]
 }

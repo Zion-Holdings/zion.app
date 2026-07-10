@@ -1,14 +1,20 @@
 {
-  "ts": "2026-07-10T04:50:58.567620+00:00",
+  "ts": "2026-07-10T05:07:35.327873+00:00",
   "HOT": 1,
   "NEW2H": 0,
   "status": "ok",
   "error": null,
-  "last_hot_thread_id": "19f43092f91bbb6e",
+  "last_hot_thread_id": "19f3df60bc1cf2ed",
   "last_hot_subject": "Re: Supplier Collaboration Opportunity - Zion",
   "last_hot_from": "rsingh@solyssey.com",
   "last_hot_received_at": "2026-07-08T18:41:30+00:00",
   "last_sent_label": "!!!hot-followup-sent",
   "duplicate_send_blocked": true,
+  "automation_improvements": [
+    "miner timeout reduced to 3s",
+    "label cache TTL reduced to 20m",
+    "fast_mode enabled for miner",
+    "llm classification prompt improved with B2B intent model"
+  ],
   "note": "No new inbound hot-followup since last CEO reply; duplicate send prevented by label+database guard."
 }
