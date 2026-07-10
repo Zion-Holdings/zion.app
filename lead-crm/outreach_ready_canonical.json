@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T07:42:45.518335+00:00",
+  "generatedAt": "2026-07-10T09:07:20.703670+00:00",
   "state": "send_ready",
   "ready": [
     {
@@ -110,7 +110,7 @@
       "body": "Olá,\n\nSomos a Zion Tech Group e identificamos potencial de colaboração com a Channelpronetwork em conteúdo e ecossistema de canais de tecnologia.\nAtuamos com IA aplicada, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nPodemos avaliar um projeto ou parceria com retorno mensurável para o seu time.\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com",
       "status": "discovered",
       "improved": true,
-      "personalization_score": 0.76,
+      "personalization_score": 0.84,
       "service_fit": [
         "Conteúdo assistido por IA",
         "Automação de operações de mídia/publisher",
@@ -125,7 +125,8 @@
       "personalized_touch": "Alinhamos a oferta ao ecossistema de canais deles, com automação editorial e não só IA genérica.",
       "display_name": "Editors",
       "source_id": "canonical_editors_channelpronetwork_com_channelpronetwork.com",
-      "improved_at": "2026-07-10T08:41:49.126305+00:00"
+      "improved_at": "2026-07-10T09:07:20.703514+00:00",
+      "processing_note": " | post_send_blocked_analysis_v1"
     },
     {
       "to": "gmailgenius@wordzen.com",
@@ -235,7 +236,7 @@
       "body": "Olá,\n\nSomos a Zion Tech Group e identificamos potencial de colaboração com a Hcl em serviços globais de TI, modernização e parceiros de tecnologia.\nAtuamos com IA aplicada, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nPodemos avaliar um projeto ou parceria com retorno mensurável para o seu time.\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com",
       "status": "discovered",
       "improved": true,
-      "personalization_score": 0.74,
+      "personalization_score": 0.82,
       "service_fit": [
         "Serviços globais de TI",
         "Modernização de stacks",
@@ -250,7 +251,8 @@
       "personalized_touch": "Focamos em ganhos operacionais mensuráveis nas linhas globais de serviço.",
       "display_name": "Avinash R",
       "source_id": "canonical_avinash_r_hcl_com_hcl.com",
-      "improved_at": "2026-07-10T08:41:49.126599+00:00"
+      "improved_at": "2026-07-10T09:07:20.703562+00:00",
+      "processing_note": " | post_send_blocked_analysis_v1"
     },
     {
       "to": "ishukohli@hcl.com",
@@ -260,7 +262,7 @@
       "body": "Olá,\n\nSomos a Zion Tech Group e identificamos potencial de colaboração com a Hcl em serviços globais de TI, modernização e parceiros de tecnologia.\nAtuamos com IA aplicada, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nPodemos avaliar um projeto ou parceria com retorno mensurável para o seu time.\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com",
       "status": "discovered",
       "improved": true,
-      "personalization_score": 0.73,
+      "personalization_score": 0.81,
       "service_fit": [
         "Transformação de service desk",
         "Automação de onboarding",
@@ -275,7 +277,8 @@
       "personalized_touch": "Foco em eficiência do service desk e parceiros, com impacto mensurável em volume/custo.",
       "display_name": "Ishukohli",
       "source_id": "canonical_ishukohli_hcl_com_hcl.com",
-      "improved_at": "2026-07-10T08:41:49.126655+00:00"
+      "improved_at": "2026-07-10T09:07:20.703577+00:00",
+      "processing_note": " | post_send_blocked_analysis_v1"
     },
     {
       "to": "jason.guidry@hcl.com",
@@ -285,7 +288,7 @@
       "body": "Olá,\n\nSomos a Zion Tech Group e identificamos potencial de colaboração com a Hcl em serviços globais de TI, modernização e parceiros de tecnologia.\nAtuamos com IA aplicada, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nPodemos avaliar um projeto ou parceria com retorno mensurável para o seu time.\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com",
       "status": "discovered",
       "improved": true,
-      "personalization_score": 0.75,
+      "personalization_score": 0.83,
       "service_fit": [
         "Modernização de arquitetura",
         "Automação de CI/CD e liberação",
@@ -300,7 +303,8 @@
       "personalized_touch": "Linguagem técnica e orientada a releases, com next steps compatíveis com a estrutura global.",
       "display_name": "Jason Guidry",
       "source_id": "canonical_jason_guidry_hcl_com_hcl.com",
-      "improved_at": "2026-07-10T08:41:49.126714+00:00"
+      "improved_at": "2026-07-10T09:07:20.703590+00:00",
+      "processing_note": " | post_send_blocked_analysis_v1"
     },
     {
       "to": "arulnathan.k@hcl.com",
@@ -310,7 +314,7 @@
       "body": "Olá,\n\nSomos a Zion Tech Group e identificamos potencial de colaboração com a Hcl em serviços globais de TI, modernização e parceiros de tecnologia.\nAtuamos com IA aplicada, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nPodemos avaliar um projeto ou parceria com retorno mensurável para o seu time.\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com",
       "status": "discovered",
       "improved": true,
-      "personalization_score": 0.76,
+      "personalization_score": 0.84,
       "service_fit": [
         "Operações multi-tenant",
         "Planejamento de capacidade",
@@ -325,7 +329,8 @@
       "personalized_touch": "Tom orientado a operações, métricas e confiabilidade, alinhado a delivery global.",
       "display_name": "Arulnathan K",
       "source_id": "canonical_arulnathan_k_hcl_com_hcl.com",
-      "improved_at": "2026-07-10T08:41:49.126771+00:00"
+      "improved_at": "2026-07-10T09:07:20.703603+00:00",
+      "processing_note": " | post_send_blocked_analysis_v1"
     },
     {
       "to": "greivinantonio.garci@hcl.com",
@@ -335,7 +340,7 @@
       "body": "Olá,\n\nSomos a Zion Tech Group e identificamos potencial de colaboração com a Hcl em serviços globais de TI, modernização e parceiros de tecnologia.\nAtuamos com IA aplicada, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nPodemos avaliar um projeto ou parceria com retorno mensurável para o seu time.\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com",
       "status": "discovered",
       "improved": true,
-      "personalization_score": 0.74,
+      "personalization_score": 0.82,
       "service_fit": [
         "Integração de parceiros",
         "Automação de provisionamento",
@@ -350,7 +355,8 @@
       "personalized_touch": "Foco em integrações, parceiros e controle financeiro, reduzindo risco operacional.",
       "display_name": "Greivinantonio Garci",
       "source_id": "canonical_greivinantonio_garci_hcl_com_hcl.com",
-      "improved_at": "2026-07-10T08:41:49.126829+00:00"
+      "improved_at": "2026-07-10T09:07:20.703614+00:00",
+      "processing_note": " | post_send_blocked_analysis_v1"
     },
     {
       "to": "mohitg@hcl.com",
@@ -360,7 +366,7 @@
       "body": "Olá,\n\nSomos a Zion Tech Group e identificamos potencial de colaboração com a Hcl em serviços globais de TI, modernização e parceiros de tecnologia.\nAtuamos com IA aplicada, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nPodemos avaliar um projeto ou parceria com retorno mensurável para o seu time.\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com",
       "status": "discovered",
       "improved": true,
-      "personalization_score": 0.73,
+      "personalization_score": 0.81,
       "service_fit": [
         "Gestão de capacidade",
         "Planejamento financeiro de TI",
@@ -375,7 +381,8 @@
       "personalized_touch": "Focado em FinOps e planejamento, combinando dados e decisão financeira.",
       "display_name": "Mohitg",
       "source_id": "canonical_mohitg_hcl_com_hcl.com",
-      "improved_at": "2026-07-10T08:41:49.126885+00:00"
+      "improved_at": "2026-07-10T09:07:20.703625+00:00",
+      "processing_note": " | post_send_blocked_analysis_v1"
     },
     {
       "to": "hi@app.kilocode.ai",
@@ -485,7 +492,7 @@
       "body": "Olá,\n\nSomos a Zion Tech Group e identificamos potencial de colaboração com a Hcl em serviços globais de TI, modernização e parceiros de tecnologia.\nAtuamos com IA aplicada, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nPodemos avaliar um projeto ou parceria com retorno mensurável para o seu time.\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com",
       "status": "discovered",
       "improved": true,
-      "personalization_score": 0.75,
+      "personalization_score": 0.83,
       "service_fit": [
         "Arquitetura e design de solucoes",
         "Automação de helpers dev",
@@ -500,7 +507,8 @@
       "personalized_touch": "Foco em produtividade das squads e ferramentas, ligando arquitetura a resultado.",
       "display_name": "Balaji-kalimireddi",
       "source_id": "canonical_balaji-kalimireddi_hcl_com_hcl.com",
-      "improved_at": "2026-07-10T08:41:49.127177+00:00"
+      "improved_at": "2026-07-10T09:07:20.703636+00:00",
+      "processing_note": " | post_send_blocked_analysis_v1"
     },
     {
       "to": "sugandha_s@hcl.com",
@@ -510,7 +518,7 @@
       "body": "Olá,\n\nSomos a Zion Tech Group e identificamos potencial de colaboração com a Hcl em serviços globais de TI, modernização e parceiros de tecnologia.\nAtuamos com IA aplicada, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nPodemos avaliar um projeto ou parceria com retorno mensurável para o seu time.\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com",
       "status": "discovered",
       "improved": true,
-      "personalization_score": 0.74,
+      "personalization_score": 0.82,
       "service_fit": [
         "Programas/portfolio de projetos",
         "Visibilidade executiva",
@@ -525,7 +533,8 @@
       "personalized_touch": "Tom executivo e resultados de portfolio, conectando automação a decisão.",
       "display_name": "Sugandha_s",
       "source_id": "canonical_sugandha_s_hcl_com_hcl.com",
-      "improved_at": "2026-07-10T08:41:49.127232+00:00"
+      "improved_at": "2026-07-10T09:07:20.703646+00:00",
+      "processing_note": " | post_send_blocked_analysis_v1"
     },
     {
       "to": "suruchi.g@hcl.com",
@@ -535,7 +544,7 @@
       "body": "Olá,\n\nSomos a Zion Tech Group e identificamos potencial de colaboração com a Hcl em serviços globais de TI, modernização e parceiros de tecnologia.\nAtuamos com IA aplicada, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nPodemos avaliar um projeto ou parceria com retorno mensurável para o seu time.\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com",
       "status": "discovered",
       "improved": true,
-      "personalization_score": 0.74,
+      "personalization_score": 0.82,
       "service_fit": [
         "Qualidade de entrega",
         "Automação de QA",
@@ -550,7 +559,8 @@
       "personalized_touch": "Foco em qualidade operacional e redução de retrabalho, não só ‘inovação’.",
       "display_name": "Suruchi G",
       "source_id": "canonical_suruchi_g_hcl_com_hcl.com",
-      "improved_at": "2026-07-10T08:41:49.127290+00:00"
+      "improved_at": "2026-07-10T09:07:20.703656+00:00",
+      "processing_note": " | post_send_blocked_analysis_v1"
     },
     {
       "to": "hugo.sousa@dekra.com",
@@ -628,7 +638,7 @@
       "improved_at": "2026-07-10T08:41:49.127475+00:00"
     }
   ],
-  "send_blocked": true,
-  "processing_note": "Envios bloqueados por ZTG_SEND_ALLOWED!=1; registros de outreach melhorados para análise.",
-  "improved_at": "2026-07-10T08:41:49.127502+00:00"
+  "send_blocked": false,
+  "processing_note": "Envios bloqueados por ZTG_SEND_ALLOWED!=1; análise pós-blocks aplicada.",
+  "improved_at": "2026-07-10T09:07:20.703663+00:00"
 }

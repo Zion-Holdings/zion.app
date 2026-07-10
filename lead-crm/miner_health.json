@@ -1,5 +1,5 @@
 {
-  "ts": "2026-07-10T09:03:15.560035+00:00",
+  "ts": "2026-07-10T09:07:20.705116+00:00",
   "queries_run": 31,
   "contacts_found": 1,
   "new_leads_added": 1,
@@ -25,5 +25,14 @@
       0.172,
       0.3979
     ]
+  },
+  "last_outreach_status": "send_blocked_policy",
+  "outreach_batch": {
+    "file": "outreach_ready_canonical.json",
+    "ready_rows": 25,
+    "send_allowed": false,
+    "avg_personalization_score": 0.823,
+    "low_scored_count": 10,
+    "note": "ZTG_SEND_ALLOWED not 1; blocked per policy."
   }
 }
