@@ -61,3 +61,6 @@ lead-crm/*.txt
 lead-crm/*.md
 logs/*
 automation/data/**
+
+!lead-crm/miner_cron.json
+!lead-crm/outreach_cron.json

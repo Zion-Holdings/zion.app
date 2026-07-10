@@ -1,0 +1,10 @@
+{
+  "name": "historical_email_miner",
+  "schedule": "every 15m",
+  "command": "python3 lead-crm/historical_email_miner.py",
+  "workdir": "/data/data/com.termux/files/home/zion-support.github.io",
+  "enabled": true,
+  "description": "High-frequency miner: all-folder search, LLM classification, continuous health metrics",
+  "log": "lead-crm/miner_cron.log",
+  "retention_days": 7
+}
