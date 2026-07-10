@@ -10,14 +10,24 @@
       "domain": "shervacom.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "ready_canonical",
+      "status": "send_ready",
       "service_references_primary": [
         "managed IT operations",
         "AI automation",
         "infrastructure modernization"
       ],
-      "personalization_signals": [],
-      "consent_ok": true
+      "personalization_signals": [
+        "Área alinhada a operações de TI, automação e modernização."
+      ],
+      "consent_ok": true,
+      "display_name": "Shervacom",
+      "url_slug": "Shervacom",
+      "channel": "email",
+      "updated_at": "2026-07-10T21:36:07.555280+00:00",
+      "priority": "standard",
+      "next_action": "awaiting_send_policy",
+      "lead_key": "34107e22c3",
+      "dedup_checksum": "34107e22c34767344fe9a49c705e2e0b2be652b6"
     },
     {
       "to": "thomas@gakenholz.de",
@@ -25,14 +35,24 @@
       "domain": "gakenholz.de",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "ready_canonical",
+      "status": "send_ready",
       "service_references_primary": [
         "managed IT operations",
         "AI automation",
         "infrastructure modernization"
       ],
-      "personalization_signals": [],
-      "consent_ok": true
+      "personalization_signals": [
+        "Área alinhada a operações de TI, automação e modernização."
+      ],
+      "consent_ok": true,
+      "display_name": "Gakenholz",
+      "url_slug": "Gakenholz",
+      "channel": "email",
+      "updated_at": "2026-07-10T21:36:07.555401+00:00",
+      "priority": "standard",
+      "next_action": "awaiting_send_policy",
+      "lead_key": "08ad50e643",
+      "dedup_checksum": "08ad50e643b94b706c5613e97212db2e89842ea4"
     },
     {
       "to": "kleber@sscs-sa.com",
@@ -40,14 +60,24 @@
       "domain": "sscs-sa.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "ready_canonical",
+      "status": "hold",
       "service_references_primary": [
         "managed IT operations",
         "AI automation",
         "infrastructure modernization"
       ],
-      "personalization_signals": [],
-      "consent_ok": true
+      "personalization_signals": [
+        "Área alinhada a operações de TI, automação e modernização."
+      ],
+      "consent_ok": true,
+      "display_name": "Sscs-Sa",
+      "hold_reason": "internal_or_related_hold",
+      "channel": "email",
+      "updated_at": "2026-07-10T21:36:07.555430+00:00",
+      "priority": "pause",
+      "next_action": "review",
+      "lead_key": "7b60ec2df0",
+      "dedup_checksum": "7b60ec2df06ef0992acc10e6f34f80fbd54bcac1"
     },
     {
       "to": "djean.axt@ztg.com.br",
@@ -55,14 +85,24 @@
       "domain": "ztg.com.br",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "ready_canonical",
+      "status": "hold",
       "service_references_primary": [
         "managed IT operations",
         "AI automation",
         "infrastructure modernization"
       ],
-      "personalization_signals": [],
-      "consent_ok": true
+      "personalization_signals": [
+        "Área alinhada a operações de TI, automação e modernização."
+      ],
+      "consent_ok": true,
+      "display_name": "Ztg",
+      "hold_reason": "internal_or_related_hold",
+      "channel": "email",
+      "updated_at": "2026-07-10T21:36:07.555454+00:00",
+      "priority": "pause",
+      "next_action": "review",
+      "lead_key": "5a84035d2c",
+      "dedup_checksum": "5a84035d2c9366b4f648a23ef87fb717e05dae0e"
     },
     {
       "to": "editors@channelpronetwork.com",
@@ -70,14 +110,24 @@
       "domain": "channelpronetwork.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "ready_canonical",
+      "status": "send_ready",
       "service_references_primary": [
         "managed IT operations",
         "AI automation",
         "infrastructure modernization"
       ],
-      "personalization_signals": [],
-      "consent_ok": true
+      "personalization_signals": [
+        "Área alinhada a operações de TI, automação e modernização."
+      ],
+      "consent_ok": true,
+      "display_name": "Channelpronetwork",
+      "url_slug": "Channelpronetwork",
+      "channel": "email",
+      "updated_at": "2026-07-10T21:36:07.555472+00:00",
+      "priority": "standard",
+      "next_action": "awaiting_send_policy",
+      "lead_key": "336fbf0093",
+      "dedup_checksum": "336fbf009335d61debc59c4b08236b1dfbb995cc"
     },
     {
       "to": "gmailgenius@wordzen.com",
@@ -85,14 +135,24 @@
       "domain": "wordzen.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "ready_canonical",
+      "status": "send_ready",
       "service_references_primary": [
         "managed IT operations",
         "AI automation",
         "infrastructure modernization"
       ],
-      "personalization_signals": [],
-      "consent_ok": true
+      "personalization_signals": [
+        "Área alinhada a operações de TI, automação e modernização."
+      ],
+      "consent_ok": true,
+      "display_name": "Wordzen",
+      "url_slug": "Wordzen",
+      "channel": "email",
+      "updated_at": "2026-07-10T21:36:07.555488+00:00",
+      "priority": "standard",
+      "next_action": "awaiting_send_policy",
+      "lead_key": "a68ce1d27f",
+      "dedup_checksum": "a68ce1d27fbd7e1477b1d76850b06ba67979d530"
     },
     {
       "to": "bob@scrubly.com",
@@ -100,14 +160,24 @@
       "domain": "scrubly.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "ready_canonical",
+      "status": "send_ready",
       "service_references_primary": [
         "managed IT operations",
         "AI automation",
         "infrastructure modernization"
       ],
-      "personalization_signals": [],
-      "consent_ok": true
+      "personalization_signals": [
+        "Área alinhada a operações de TI, automação e modernização."
+      ],
+      "consent_ok": true,
+      "display_name": "Scrubly",
+      "url_slug": "Scrubly",
+      "channel": "email",
+      "updated_at": "2026-07-10T21:36:07.555503+00:00",
+      "priority": "standard",
+      "next_action": "awaiting_send_policy",
+      "lead_key": "48be74683d",
+      "dedup_checksum": "48be74683d0ef512d3ab864771497b7d7a3c9639"
     },
     {
       "to": "mweiss@procurri.com",
@@ -115,14 +185,24 @@
       "domain": "procurri.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "ready_canonical",
+      "status": "send_ready",
       "service_references_primary": [
         "managed IT operations",
         "AI automation",
         "infrastructure modernization"
       ],
-      "personalization_signals": [],
-      "consent_ok": true
+      "personalization_signals": [
+        "Área alinhada a operações de TI, automação e modernização."
+      ],
+      "consent_ok": true,
+      "display_name": "Procurri",
+      "url_slug": "Procurri",
+      "channel": "email",
+      "updated_at": "2026-07-10T21:36:07.555518+00:00",
+      "priority": "standard",
+      "next_action": "awaiting_send_policy",
+      "lead_key": "2991e46df5",
+      "dedup_checksum": "2991e46df5a066b2e37100b92425a25cf4373f15"
     },
     {
       "to": "mauro.faria@fgv.br",
@@ -130,14 +210,24 @@
       "domain": "fgv.br",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "ready_canonical",
+      "status": "send_ready",
       "service_references_primary": [
         "managed IT operations",
         "AI automation",
         "infrastructure modernization"
       ],
-      "personalization_signals": [],
-      "consent_ok": true
+      "personalization_signals": [
+        "Área alinhada a operações de TI, automação e modernização."
+      ],
+      "consent_ok": true,
+      "display_name": "Fgv",
+      "url_slug": "Fgv",
+      "channel": "email",
+      "updated_at": "2026-07-10T21:36:07.555533+00:00",
+      "priority": "standard",
+      "next_action": "awaiting_send_policy",
+      "lead_key": "3f159128cf",
+      "dedup_checksum": "3f159128cf9f555c9e34d14ea1147e38b615121b"
     },
     {
       "to": "avinash.r@hcl.com",
@@ -145,14 +235,24 @@
       "domain": "hcl.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "ready_canonical",
+      "status": "send_ready",
       "service_references_primary": [
         "managed IT operations",
         "AI automation",
         "infrastructure modernization"
       ],
-      "personalization_signals": [],
-      "consent_ok": true
+      "personalization_signals": [
+        "Área alinhada a operações de TI, automação e modernização."
+      ],
+      "consent_ok": true,
+      "display_name": "Hcl",
+      "url_slug": "Hcl",
+      "channel": "email",
+      "updated_at": "2026-07-10T21:36:07.555548+00:00",
+      "priority": "standard",
+      "next_action": "awaiting_send_policy",
+      "lead_key": "aa8bbbc8dc",
+      "dedup_checksum": "aa8bbbc8dcbe53d7bfd4eb452e3fd330e046c438"
     },
     {
       "to": "ishukohli@hcl.com",
@@ -160,14 +260,24 @@
       "domain": "hcl.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "ready_canonical",
+      "status": "send_ready",
       "service_references_primary": [
         "managed IT operations",
         "AI automation",
         "infrastructure modernization"
       ],
-      "personalization_signals": [],
-      "consent_ok": true
+      "personalization_signals": [
+        "Área alinhada a operações de TI, automação e modernização."
+      ],
+      "consent_ok": true,
+      "display_name": "Hcl",
+      "url_slug": "Hcl",
+      "channel": "email",
+      "updated_at": "2026-07-10T21:36:07.555562+00:00",
+      "priority": "standard",
+      "next_action": "awaiting_send_policy",
+      "lead_key": "ce5653f96c",
+      "dedup_checksum": "ce5653f96c605279606f0e89d11a50d8f0be9c2f"
     },
     {
       "to": "jason.guidry@hcl.com",
@@ -175,14 +285,24 @@
       "domain": "hcl.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "ready_canonical",
+      "status": "send_ready",
       "service_references_primary": [
         "managed IT operations",
         "AI automation",
         "infrastructure modernization"
       ],
-      "personalization_signals": [],
-      "consent_ok": true
+      "personalization_signals": [
+        "Área alinhada a operações de TI, automação e modernização."
+      ],
+      "consent_ok": true,
+      "display_name": "Hcl",
+      "url_slug": "Hcl",
+      "channel": "email",
+      "updated_at": "2026-07-10T21:36:07.555577+00:00",
+      "priority": "standard",
+      "next_action": "awaiting_send_policy",
+      "lead_key": "cd7a8172c1",
+      "dedup_checksum": "cd7a8172c1aea52f5379b80d98095809228d94e3"
     },
     {
       "to": "arulnathan.k@hcl.com",
@@ -190,14 +310,24 @@
       "domain": "hcl.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "ready_canonical",
+      "status": "send_ready",
       "service_references_primary": [
         "managed IT operations",
         "AI automation",
         "infrastructure modernization"
       ],
-      "personalization_signals": [],
-      "consent_ok": true
+      "personalization_signals": [
+        "Área alinhada a operações de TI, automação e modernização."
+      ],
+      "consent_ok": true,
+      "display_name": "Hcl",
+      "url_slug": "Hcl",
+      "channel": "email",
+      "updated_at": "2026-07-10T21:36:07.555591+00:00",
+      "priority": "standard",
+      "next_action": "awaiting_send_policy",
+      "lead_key": "c2fd5f19bc",
+      "dedup_checksum": "c2fd5f19bcae30abc09a0f9cb2225171fe7bb640"
     },
     {
       "to": "greivinantonio.garci@hcl.com",
@@ -205,14 +335,24 @@
       "domain": "hcl.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "ready_canonical",
+      "status": "send_ready",
       "service_references_primary": [
         "managed IT operations",
         "AI automation",
         "infrastructure modernization"
       ],
-      "personalization_signals": [],
-      "consent_ok": true
+      "personalization_signals": [
+        "Área alinhada a operações de TI, automação e modernização."
+      ],
+      "consent_ok": true,
+      "display_name": "Hcl",
+      "url_slug": "Hcl",
+      "channel": "email",
+      "updated_at": "2026-07-10T21:36:07.555605+00:00",
+      "priority": "standard",
+      "next_action": "awaiting_send_policy",
+      "lead_key": "4313eb8ab4",
+      "dedup_checksum": "4313eb8ab4d90d65a9271bb856e84422e8f0e9b9"
     },
     {
       "to": "mohitg@hcl.com",
@@ -220,14 +360,24 @@
       "domain": "hcl.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "ready_canonical",
+      "status": "send_ready",
       "service_references_primary": [
         "managed IT operations",
         "AI automation",
         "infrastructure modernization"
       ],
-      "personalization_signals": [],
-      "consent_ok": true
+      "personalization_signals": [
+        "Área alinhada a operações de TI, automação e modernização."
+      ],
+      "consent_ok": true,
+      "display_name": "Hcl",
+      "url_slug": "Hcl",
+      "channel": "email",
+      "updated_at": "2026-07-10T21:36:07.555620+00:00",
+      "priority": "standard",
+      "next_action": "awaiting_send_policy",
+      "lead_key": "690c00439a",
+      "dedup_checksum": "690c00439a3477a0be19b25fbb463a2058c99318"
     },
     {
       "to": "hi@app.kilocode.ai",
@@ -235,14 +385,24 @@
       "domain": "app.kilocode.ai",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "ready_canonical",
+      "status": "send_ready",
       "service_references_primary": [
         "managed IT operations",
         "AI automation",
         "infrastructure modernization"
       ],
-      "personalization_signals": [],
-      "consent_ok": true
+      "personalization_signals": [
+        "Área alinhada a operações de TI, automação e modernização."
+      ],
+      "consent_ok": true,
+      "display_name": "App",
+      "url_slug": "App",
+      "channel": "email",
+      "updated_at": "2026-07-10T21:36:07.555638+00:00",
+      "priority": "standard",
+      "next_action": "awaiting_send_policy",
+      "lead_key": "96f5083aab",
+      "dedup_checksum": "96f5083aabd3611a5ef78162ad71206a798a590d"
     },
     {
       "to": "whibbert@solyssey.com",
@@ -250,14 +410,24 @@
       "domain": "solyssey.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "ready_canonical",
+      "status": "send_ready",
       "service_references_primary": [
         "managed IT operations",
         "AI automation",
         "infrastructure modernization"
       ],
-      "personalization_signals": [],
-      "consent_ok": true
+      "personalization_signals": [
+        "Área alinhada a operações de TI, automação e modernização."
+      ],
+      "consent_ok": true,
+      "display_name": "Solyssey",
+      "url_slug": "Solyssey",
+      "channel": "email",
+      "updated_at": "2026-07-10T21:36:07.555654+00:00",
+      "priority": "standard",
+      "next_action": "awaiting_send_policy",
+      "lead_key": "64f250aecc",
+      "dedup_checksum": "64f250aeccae0350fec09bc24be60f630bf3e6ba"
     },
     {
       "to": "mrodrigues@solyssey.com",
@@ -265,14 +435,24 @@
       "domain": "solyssey.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "ready_canonical",
+      "status": "send_ready",
       "service_references_primary": [
         "managed IT operations",
         "AI automation",
         "infrastructure modernization"
       ],
-      "personalization_signals": [],
-      "consent_ok": true
+      "personalization_signals": [
+        "Área alinhada a operações de TI, automação e modernização."
+      ],
+      "consent_ok": true,
+      "display_name": "Solyssey",
+      "url_slug": "Solyssey",
+      "channel": "email",
+      "updated_at": "2026-07-10T21:36:07.555670+00:00",
+      "priority": "standard",
+      "next_action": "awaiting_send_policy",
+      "lead_key": "1c1a184427",
+      "dedup_checksum": "1c1a184427bd83c5a459ba1135aa972fd8a99af5"
     },
     {
       "to": "rsingh@solyssey.com",
@@ -280,14 +460,24 @@
       "domain": "solyssey.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "ready_canonical",
+      "status": "send_ready",
       "service_references_primary": [
         "managed IT operations",
         "AI automation",
         "infrastructure modernization"
       ],
-      "personalization_signals": [],
-      "consent_ok": true
+      "personalization_signals": [
+        "Área alinhada a operações de TI, automação e modernização."
+      ],
+      "consent_ok": true,
+      "display_name": "Solyssey",
+      "url_slug": "Solyssey",
+      "channel": "email",
+      "updated_at": "2026-07-10T21:36:07.555685+00:00",
+      "priority": "standard",
+      "next_action": "awaiting_send_policy",
+      "lead_key": "fed26683a8",
+      "dedup_checksum": "fed26683a890f20c066c46fe4c1895ec334245eb"
     },
     {
       "to": "balaji-kalimireddi@hcl.com",
@@ -295,14 +485,24 @@
       "domain": "hcl.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "ready_canonical",
+      "status": "send_ready",
       "service_references_primary": [
         "managed IT operations",
         "AI automation",
         "infrastructure modernization"
       ],
-      "personalization_signals": [],
-      "consent_ok": true
+      "personalization_signals": [
+        "Área alinhada a operações de TI, automação e modernização."
+      ],
+      "consent_ok": true,
+      "display_name": "Hcl",
+      "url_slug": "Hcl",
+      "channel": "email",
+      "updated_at": "2026-07-10T21:36:07.555704+00:00",
+      "priority": "standard",
+      "next_action": "awaiting_send_policy",
+      "lead_key": "944691e0e9",
+      "dedup_checksum": "944691e0e91ea6b012a10933f0f22f5a97ec90af"
     },
     {
       "to": "sugandha_s@hcl.com",
@@ -310,14 +510,24 @@
       "domain": "hcl.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "ready_canonical",
+      "status": "send_ready",
       "service_references_primary": [
         "managed IT operations",
         "AI automation",
         "infrastructure modernization"
       ],
-      "personalization_signals": [],
-      "consent_ok": true
+      "personalization_signals": [
+        "Área alinhada a operações de TI, automação e modernização."
+      ],
+      "consent_ok": true,
+      "display_name": "Hcl",
+      "url_slug": "Hcl",
+      "channel": "email",
+      "updated_at": "2026-07-10T21:36:07.555721+00:00",
+      "priority": "standard",
+      "next_action": "awaiting_send_policy",
+      "lead_key": "a61f37c87c",
+      "dedup_checksum": "a61f37c87c11a3d151a1080375ff54ba6617836f"
     },
     {
       "to": "suruchi.g@hcl.com",
@@ -325,14 +535,24 @@
       "domain": "hcl.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "ready_canonical",
+      "status": "send_ready",
       "service_references_primary": [
         "managed IT operations",
         "AI automation",
         "infrastructure modernization"
       ],
-      "personalization_signals": [],
-      "consent_ok": true
+      "personalization_signals": [
+        "Área alinhada a operações de TI, automação e modernização."
+      ],
+      "consent_ok": true,
+      "display_name": "Hcl",
+      "url_slug": "Hcl",
+      "channel": "email",
+      "updated_at": "2026-07-10T21:36:07.555738+00:00",
+      "priority": "standard",
+      "next_action": "awaiting_send_policy",
+      "lead_key": "fc9c71159e",
+      "dedup_checksum": "fc9c71159e170aa4b07ffdba47056ac26911984a"
     },
     {
       "to": "hugo.sousa@dekra.com",
@@ -340,14 +560,24 @@
       "domain": "dekra.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "ready_canonical",
+      "status": "send_ready",
       "service_references_primary": [
         "managed IT operations",
         "AI automation",
         "infrastructure modernization"
       ],
-      "personalization_signals": [],
-      "consent_ok": true
+      "personalization_signals": [
+        "Área alinhada a operações de TI, automação e modernização."
+      ],
+      "consent_ok": true,
+      "display_name": "Dekra",
+      "url_slug": "Dekra",
+      "channel": "email",
+      "updated_at": "2026-07-10T21:36:07.555754+00:00",
+      "priority": "standard",
+      "next_action": "awaiting_send_policy",
+      "lead_key": "c791b63487",
+      "dedup_checksum": "c791b634878296685a036fba5f0a5e3077563a62"
     },
     {
       "to": "ingrid.ciarelli@dekra.com",
@@ -355,14 +585,24 @@
       "domain": "dekra.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "ready_canonical",
+      "status": "send_ready",
       "service_references_primary": [
         "managed IT operations",
         "AI automation",
         "infrastructure modernization"
       ],
-      "personalization_signals": [],
-      "consent_ok": true
+      "personalization_signals": [
+        "Área alinhada a operações de TI, automação e modernização."
+      ],
+      "consent_ok": true,
+      "display_name": "Dekra",
+      "url_slug": "Dekra",
+      "channel": "email",
+      "updated_at": "2026-07-10T21:36:07.555770+00:00",
+      "priority": "standard",
+      "next_action": "awaiting_send_policy",
+      "lead_key": "328cafd4e7",
+      "dedup_checksum": "328cafd4e7ba70e8381394a7c56382d5631ae85f"
     },
     {
       "to": "infraestrutura@dekra.com",
@@ -370,14 +610,24 @@
       "domain": "dekra.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
       "body": "Olá! Somos a Zion Tech Group e atuamos com IA, automação, FinOps, zero-trust, inspeção por visão computacional e modernização de plataformas.\n\nGostaríamos de explorar uma possível parceria ou projeto conjunto.\n\nAgende uma conversa: https://calendly.com/kleber-ziontechgroup\nServiços e ferramentas gratuitas: https://ziontechgroup.com\n",
-      "status": "ready_canonical",
+      "status": "send_ready",
       "service_references_primary": [
         "managed IT operations",
         "AI automation",
         "infrastructure modernization"
       ],
-      "personalization_signals": [],
-      "consent_ok": true
+      "personalization_signals": [
+        "Área alinhada a operações de TI, automação e modernização."
+      ],
+      "consent_ok": true,
+      "display_name": "Dekra",
+      "url_slug": "Dekra",
+      "channel": "email",
+      "updated_at": "2026-07-10T21:36:07.555786+00:00",
+      "priority": "standard",
+      "next_action": "awaiting_send_policy",
+      "lead_key": "d6ece678ab",
+      "dedup_checksum": "d6ece678abd1fe1c39b5d6a29248500351672f54"
     }
   ],
   "send_blocked": false

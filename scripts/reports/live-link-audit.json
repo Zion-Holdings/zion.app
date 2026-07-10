@@ -1,17 +1,8 @@
 {
-  "generatedAt": "2026-07-10T18:52:09.873Z",
+  "generatedAt": "2026-07-10T21:47:18.260Z",
   "base": "https://ziontechgroup.com",
   "totalFiles": 104,
   "totalChecked": 150,
-  "brokenCount": 2,
-  "broken": [
-    {
-      "target": "https://ziontechgroup.com/free-ai-it-tools.html",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-services-index.html",
-      "status": 404
-    }
-  ]
+  "brokenCount": 0,
+  "broken": []
 }

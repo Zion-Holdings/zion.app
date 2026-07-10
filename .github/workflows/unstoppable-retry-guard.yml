@@ -50,3 +50,4 @@ jobs:
               title: `Unstoppable guard: checks failed on ${context.sha.slice(0,7)}`,
               body: `The unstoppable guard job failed after retries. See workflow run for details.`
             })
+trigger push
