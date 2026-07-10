@@ -26,6 +26,7 @@ FORBIDDEN_DOMAIN_SUBSTRINGS = (
     'datadog','mercadobitcoin','suzano.com.br',
 )
 MAX_AGE_DAYS = 180
+DEDUP_COOLDOWN_SECONDS = 24 * 3600  # 24 hours
 SEND_REQUIRES_ALIVE_THREAD = True
 LLM_TAILOR_ENABLED = bool(os.getenv('ZION_LLM_API_ENDPOINT') and os.getenv('ZION_LLM_API_KEY') and os.getenv('ZION_LLM_MODEL'))
 LLM_API_ENDPOINT = os.getenv('ZION_LLM_API_ENDPOINT') or os.getenv('LLM_API_ENDPOINT')
