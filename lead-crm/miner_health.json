@@ -1,29 +1,40 @@
 {
-  "ts": "2026-07-10T13:48:15.467105+00:00",
+  "ts": "2026-07-10T14:06:32.935199+00:00",
   "queries_run": 31,
   "contacts_found": 0,
   "new_leads_added": 0,
-  "elapsed_s": 157.358,
-  "queries_per_second": 0.197,
-  "avg_query_s": 5.0761,
-  "max_query_s": 7.8719,
+  "elapsed_s": 160.535,
+  "queries_per_second": 0.1931,
+  "avg_query_s": 5.1785,
+  "max_query_s": 8.196,
   "status": "ok",
   "high_signal_leads": 0,
   "lead_quality_ratio": null,
   "rolling": {
     "last_5_queries": [
-      5.069514842994977,
-      0.5611879610005417,
-      1.5908269219944486,
-      5.434239996000542,
-      2.291623189994425
+      5.016313727006491,
+      0.47690949899697443,
+      1.5186143070022808,
+      5.799473995997687,
+      2.560082844000135
     ],
     "last_5_qps": [
-      0.1973,
-      1.7819,
-      0.6286,
-      0.184,
-      0.4364
+      0.1993,
+      2.0968,
+      0.6585,
+      0.1724,
+      0.3906
     ]
+  },
+  "send": {
+    "last_ts": "2026-07-10T14:08:38.794604+00:00",
+    "last_job": "send_outreach_batch.py",
+    "last_batch": "outreach_ready_canonical.json",
+    "send_disabled": true,
+    "send_blocked_reason": "ZTG_SEND_ALLOWED != 1",
+    "send_skipped_count": 25,
+    "send_count": 0,
+    "duplicate_subject_count": 24,
+    "note": "preserved original miner/run telemetry; only send-related state updated"
   }
 }

@@ -1,236 +1,24 @@
 {
-  "generatedAt": "2026-07-10T11:27:38.467Z",
+  "generatedAt": "2026-07-10T14:12:07.540Z",
   "base": "https://ziontechgroup.com",
-  "totalFiles": 1224,
-  "totalChecked": 474,
-  "brokenCount": 57,
+  "totalFiles": 76,
+  "totalChecked": 149,
+  "brokenCount": 4,
   "broken": [
-    {
-      "target": "https://ziontechgroup.com/ai-agentic-workflow-automation-reduce-manual-work-hours/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-ci-execution-and-ci-cd-ai-automation/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-cost-optimization-for-it-operations-2026/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-computer-vision-quality-inspection/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-data-engineering-patterns-for-latam-in-2026/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-consulting-vs-ai-implementation-services-in-2026/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-it-cost-optimization-for-micro-saas/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-financial-engineering-and-portfolio-automation-in-2026/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-observability-and-incident-response-for-modern-it-teams/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-consulting-services-for-enterprise-it-in-2026/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-integration-patterns-for-saas-products-in-2026/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-platform-engineering-patterns-for-scale-in-2026/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-platform-engineering-2026-services-guide/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-outsourcing-vs-in-house-it-latam/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-partnership-models-for-latam-growth-in-2026/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-security-and-compliance-for-brazilian-companies-in-2026/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-vendor-channel-partnership-model-for-latam/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-text-to-sql-platforms-for-business-intelligence-in-2026/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-soc-automation-and-threat-detection-in-2026/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-voice-and-multichannel-support-automation/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-outsourcing-vs-inhouse-it-teams-2026/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-support-outsourcing-for-ecommerce-in-2026/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/free-ai-tools-technology-companies-should-use-in-2026/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-voice-assistant-integration-for-business-communications-in-2026/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-support-automation-for-brazilian-companies-in-2026/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/enterprise-ai-integration-roadmap-for-2026/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/cyber-incident-response-retainer-ready-before-breach/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/nebius-latam-ai-cloud-partnership-guide/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/nebius-ai-cloud-partnership-model-for-latam/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/nebius-latam-ai-partnership-opportunity-2026/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/managed-ai-cloud-support-for-startups-and-enterprises-in-2026/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/nebius-partnership-and-ai-vendor-co-selling-2026/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/platform-engineering-and-ai-observability-in-2026/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/nebius-partnership-latam-expansion-guide/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/blog/ai-driven-marketing-automation-strategies/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/blog/ai-security-best-practices-protecting-your-ai-systems-from-emerging-threats/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/blog/cloud-migration-and-ai-modernizing-infrastructure-for-intelligent-workloads/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/tools/favicon-generator/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-business-proposal-automation/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-contact-center-automation/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-document-automation-enterprise/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-copilot-for-enterprise-it/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-free-tools-enterprise/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-ops-assistant-free-trial/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-security-automation-platform-free-trial/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/data-pipeline-automation-starter-kit/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/free-it-automation-scripts/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/enterprise-ai-poc-playbook/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/it-automation-starter-kit/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/itsm-copilot-free-trial/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/it-freelance-automation-tools/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/enterprise-ai-automation-operations/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/procurement-automation-startup-kit/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/it-automation-free-tools-scripts/",
-      "status": 404
-    },
-    {
-      "target": "https://ziontechgroup.com/ai-services-index.html",
-      "status": 404
-    },
     {
       "target": "https://ziontechgroup.com/$%7BSITE%7D$%7BBASE%7D/$%7Bs.id%7D",
       "status": 404
     },
     {
+      "target": "https://ziontechgroup.com/services/cloud-cost-optimization-platform/",
+      "status": 404
+    },
+    {
       "target": "https://ziontechgroup.com/free-ai-it-tools.html",
+      "status": 404
+    },
+    {
+      "target": "https://ziontechgroup.com/ai-services-index.html",
       "status": 404
     }
   ]
