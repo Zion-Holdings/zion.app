@@ -460,6 +460,24 @@ def fetch_or_create_lead_from_inbox(email, thread_subject=None):
     lang = detect_language(text)
     contact_name = email.split('@')[0].replace('.', ' ').title()
     company_name = email.split('@')[1].split('.')[0].title()
+
+    # Try extracting real display name from headers for better tailoring
+    real_contact_name = contact_name
+    real_company_name = company_name
+    try:
+        full = service.users().messages().get(userId='me', id=msg_id, format='metadata', metadataHeaders=['From','To','Subject']).execute()
+        frm_hdr = next((h['value'] for h in full.get('payload',{}).get('headers',[]) if h['name']=='From'), '')
+        if frm_hdr:
+            if '<' in frm_hdr:
+                real_contact_name = frm_hdr.split('<',1)[0].strip().strip('"').strip()
+            if not real_contact_name:
+                real_contact_name = email.split('@')[0].replace('.', ' ').title()
+        domain = email.split('@',1)[1].split('.')[0] if '@' in email else company_name
+        real_company_name = domain.title()
+        contact_name = real_contact_name or contact_name
+        company_name = real_company_name or company_name
+    except Exception:
+        pass
     subject = thread_subject or hit.get('subject') or 'Next steps'
     body = build_ceo_reply(contact_name, company_name, text[:500], language=lang)
     return {
@@ -484,10 +502,10 @@ def append_dry_run_report(entry: dict):
 def run_high_frequency_outreach():
     # If LLM creds exist, enable tailoring; otherwise rely on personalized defaults.
     discovery_queries = [
-        "in:inbox -category:promotions -in:spam -in:trash newer_than:7d \"partnership\" OR \"collaboration\" OR \"proposal\"",
-        "in:inbox -category:promotions -in:spam -in:trash newer_than:7d \"AI services\" OR \"AI support\" OR \"project\"",
-        "in:inbox -category:promotions -in:spam -in:trash newer_than:7d \"interested\" OR \"next steps\" OR \"opportunity\"",
-        "in:sent -category:promotions -in:spam -in:trash older_than:30d newer_than:180d",
+        '!category:promotions !in:spam !in:trash label:"!!!hot-follow-up"',
+        '!category:promotions !in:spam !in:trash newer_than:7d "partnership" OR "collaboration" OR "proposal"',
+        '!category:promotions !in:spam !in:trash newer_than:7d "AI services" OR "AI support" OR "project"',
+        '!category:promotions !in:spam !in:trash newer_than:7d "interested" OR "next steps" OR "opportunity"',
     ]
     hit_ids = set()
     contacts = []
