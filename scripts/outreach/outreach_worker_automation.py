@@ -439,6 +439,15 @@ def fetch_or_create_lead_from_inbox(email, thread_subject=None):
     }
 
 DRY_RUN = os.getenv('OUTREACH_DRY_RUN', '').lower() in ('1','true','yes')
+DRY_RUN_REPORT = BASE_DIR / 'outreach_monitor' / 'processed' / 'dry_run_report.jsonl'
+
+def append_dry_run_report(entry: dict):
+    entry.setdefault('ts', int(time.time()))
+    try:
+        with DRY_RUN_REPORT.open('a', encoding='utf-8') as f:
+            f.write(json.dumps(entry, ensure_ascii=False) + '\n')
+    except Exception:
+        pass
 
 def run_high_frequency_outreach():
     # If LLM creds exist, enable tailoring; otherwise rely on personalized defaults.
@@ -529,6 +538,17 @@ def run_high_frequency_outreach():
                 skipped += 1
                 continue
             if DRY_RUN:
+                record = {
+                    'mode': 'dry_run',
+                    'contact': email,
+                    'subject': lead['subject'],
+                    'thread_id': thread_id,
+                    'msg_id': lead.get('msg_id'),
+                    'lang': lead.get('lang'),
+                    'llm_tailored': bool(LLM_TAILOR_ENABLED and lead.get('body')),
+                    'dedup_last_outbound_ts': (load_state().get('contacts', {}).get(email.lower(), {}) or {}).get('last_outbound_ts'),
+                }
+                append_dry_run_report(record)
                 print('DRY_RUN_WOULD_SEND', email, lead['subject'], lead.get('msg_id'))
                 sent_count += 1
                 continue
