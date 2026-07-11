@@ -364,13 +364,16 @@ def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, lan
     trimmed = (thread_text or '').strip()
     trimmed = trimmed[:2200]
     prompt = (
-    "You are the CEO of Zion Tech Group. Write a friendly-professional reply as the CEO. "
-    f"Contact: {contact_name}. Company: {company_name}. Conversation language: {language}. "
-    "Thread context:\n" + trimmed + "\nRules:\n"
-    "- Thank them for the opportunity to collaborate on this project.\n"
-    "- Propose 1-3 concrete, mutually beneficial next ideas for our new AI services.\n"
-    "- Offer Calendly https://calendly.com/kleber-ziontechgroup and invite them to https://ziontechgroup.com, noting free services and tools.\n"
-    "- Give a positive, human tone. No generic filler. No CEO signature block noise."
+        "You are the CEO of Zion Tech Group. Write a friendly-professional reply as the CEO.\n"
+        f"Contact: {contact_name}. Company: {company_name}. Conversation language: {language}.\n"
+        "Rules:\n"
+        "- Thank them for the opportunity to collaborate on this project; include wording like: it was a pleasure working with you / great partnership.\n"
+        "- Propose 1-3 concrete, mutually beneficial next ideas for our new AI services.\n"
+        "- Include Calendly exactly: https://calendly.com/kleber-ziontechgroup.\n"
+        "- Include website exactly: https://ziontechgroup.com and mention free services and tools.\n"
+        "- Give a positive, human tone. No generic filler. No CEO signature block noise.\n"
+        "- Reply in the exact conversation language. Keep it friendly and professional.\n"
+        "- Make sure this single message is complete; do not omit the links or past-project thanks."
     )
     headers = {
         'Authorization': f"Bearer {LLM_API_KEY}",
@@ -398,8 +401,19 @@ def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, lan
                 with urllib.request.urlopen(req, timeout=35) as resp:
                     data = json.loads(resp.read().decode('utf-8'))
                 reply = ((data.get('choices') or [{}])[0].get('message') or {}).get('content')
-                if isinstance(reply, str) and reply.strip():
-                    return reply.strip()
+                if not isinstance(reply, str) or not reply.strip():
+                    continue
+                reply = reply.strip()
+                required = [
+                    'calendly.com/kleber-ziontechgroup',
+                    'ziontechgroup.com',
+                    'pleasure working with you',
+                ]
+                lower = reply.lower()
+                if not all(r in lower for r in required):
+                    print('LLM_MISSING_REQUIRED', model)
+                    continue
+                return reply
             except Exception as e:
                 last_err = repr(e)
                 print('LLM_ERR', model, last_err, f'attempt={attempt+1}')
