@@ -4,9 +4,13 @@ from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 
 sys.path.insert(0, r'C:\Users\Zion\AppData\Local\hermes\skills\productivity\google-workspace\scripts')
-from google_api import build_service
-
-service = build_service('gmail', 'v1')
+try:
+    from google_api import build_service
+    service = build_service('gmail', 'v1')
+    GMAIL_AUTH_ERROR = None
+except Exception as e:
+    service = None
+    GMAIL_AUTH_ERROR = repr(e)
 
 BASE_DIR = Path('/c/Users/Zion/tmp/zion-clone-test2')
 DEDUP_DIR = BASE_DIR / 'outreach_monitor' / 'processed'
@@ -503,13 +507,17 @@ def append_dry_run_report(entry: dict):
 
 def run_high_frequency_outreach():
     # If LLM creds exist, enable tailoring; otherwise rely on personalized defaults.
+    if service is None:
+        print('AUTH_FAIL', GMAIL_AUTH_ERROR)
+        append_dry_run_report({'mode':'auth_failure','error':GMAIL_AUTH_ERROR,'ts':int(time.time())})
+        return {'sent':0,'skipped':0,'adds':0,'dead':[],'auth_error':GMAIL_AUTH_ERROR}
     discovery_queries = [
         '!category:promotions !in:spam !in:trash label:"!!!hot-follow-up"',
         '!category:promotions !in:spam !in:trash newer_than:7d "partnership" OR "collaboration" OR "proposal"',
         '!category:promotions !in:spam !in:trash newer_than:7d "AI services" OR "AI support" OR "project"',
         '!category:promotions !in:spam !in:trash newer_than:7d "interested" OR "next steps" OR "opportunity"',
     ]
-    hit_ids = set()
+
     contacts = []
     for q in discovery_queries:
         try:
