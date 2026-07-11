@@ -217,7 +217,7 @@ def search_all_folders(q, max_results=20):
         try:
             if service is None:
                 return best
-            resp = _timed(service.users().messages().list(userId='me', q=qtry, maxResults=max_results))
+            resp = _timed(service.users().messages().list(userId='me', q=qtry, max_results=max_results))
         except Exception:
             continue
         items = resp.get('messages', [])
@@ -580,6 +580,7 @@ def run_high_frequency_outreach():
         append_dry_run_report({'mode':'auth_failure','error':GMAIL_AUTH_ERROR,'ts':int(time.time())})
         return {'sent':0,'skipped':0,'adds':0,'dead':[],'auth_error':GMAIL_AUTH_ERROR}
     print('TRACE_START', flush=True)
+    print('LLM_TAILOR_ENABLED=', bool(LLM_TAILOR_ENABLED), 'ENDPOINT=', bool(LLM_API_ENDPOINT), flush=True)
     discovery_queries = [
         '!category:promotions !in:spam !in:trash label:"!!!hot-follow-up"',
         '!category:promotions !in:spam !in:trash newer_than:7d "partnership" OR "collaboration" OR "proposal"',
