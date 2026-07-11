@@ -367,7 +367,10 @@ def _message_is_too_old(date_hdr: str, max_age_days: int = 180) -> bool:
         return False
 
 def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, language: str) -> str:
-    if not LLM_TAILOR_ENABLED or not LLM_API_ENDPOINT or not LLM_API_KEY:
+    endpoint = LLM_API_ENDPOINT or os.getenv('OPENROUTER_API_ENDPOINT') or os.getenv('GROQ_API_ENDPOINT') or os.getenv('GEMINI_API_ENDPOINT')
+    api_key = LLM_API_KEY or os.getenv('OPENROUTER_API_KEY') or os.getenv('GROQ_API_KEY') or os.getenv('GEMINI_API_KEY')
+    model = os.getenv('LLM_MODEL') or os.getenv('ZION_LLM_MODEL') or os.getenv('OPENROUTER_MODEL') or os.getenv('GROQ_MODEL') or os.getenv('GEMINI_MODEL') or 'openai/gpt-4o-mini'
+    if not endpoint or not api_key:
         return ''
     trimmed = (thread_text or '').strip()
     trimmed = trimmed[:2200]
@@ -381,14 +384,15 @@ def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, lan
         "- Include website exactly: https://ziontechgroup.com and mention free services and tools.\n"
         "- Give a positive, human tone. No generic filler. No CEO signature block noise.\n"
         "- Reply in the exact conversation language. Keep it friendly and professional.\n"
-        "- Make sure this single message is complete; do not omit the links or past-project thanks."
+        "- Make sure this single message is complete; do not omit the links or past-project thanks.\n"
+        f"\nThread:\n{trimmed}\n"
     )
     headers = {
-        'Authorization': f"Bearer {LLM_API_KEY}",
+        'Authorization': f"Bearer {api_key}",
         'Content-Type': 'application/json',
     }
     body = json.dumps({
-        'model': LLM_MODEL,
+        'model': model,
         'messages': [
             {'role': 'system', 'content': 'You write short, specific, business-friendly emails that sound human and advance deals.'},
             {'role': 'user', 'content': prompt},
@@ -397,15 +401,14 @@ def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, lan
         'max_tokens': 420,
     }).encode('utf-8')
     last_err = None
-    # try up to 3 models in fallback chain if configured
-    models = [LLM_MODEL] + [m.strip() for m in (os.getenv('ZION_LLM_FALLBACK_MODELS') or '').split(',') if m.strip()]
-    for model in models:
+    models = [model] + [m.strip() for m in (os.getenv('ZION_LLM_FALLBACK_MODELS') or '').split(',') if m.strip()]
+    for m in models:
         for attempt in range(2):
             try:
                 import urllib.request
                 payload = json.loads(body.decode('utf-8'))
-                payload['model'] = model
-                req = urllib.request.Request(LLM_API_ENDPOINT, data=json.dumps(payload).encode('utf-8'), headers=headers, method='POST')
+                payload['model'] = m
+                req = urllib.request.Request(endpoint, data=json.dumps(payload).encode('utf-8'), headers=headers, method='POST')
                 with urllib.request.urlopen(req, timeout=35) as resp:
                     data = json.loads(resp.read().decode('utf-8'))
                 reply = ((data.get('choices') or [{}])[0].get('message') or {}).get('content')
@@ -419,12 +422,12 @@ def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, lan
                 ]
                 lower = reply.lower()
                 if not all(r in lower for r in required):
-                    print('LLM_MISSING_REQUIRED', model)
+                    print('LLM_MISSING_REQUIRED', m)
                     continue
                 return reply
             except Exception as e:
                 last_err = repr(e)
-                print('LLM_ERR', model, last_err, f'attempt={attempt+1}')
+                print('LLM_ERR', m, last_err, f'attempt={attempt+1}')
                 time.sleep(1.5 if attempt else 0.2)
     print('LLM_FINAL_ERR', last_err)
     return ''
@@ -790,10 +793,15 @@ def run_high_frequency_outreach():
                 record_bounce(addr, f'blacklisted subject: {subject_norm[:120]}')
                 continue
             suspicious_noise_domains = ('groups.outlook.com','mail.vresp.com','airbnb.com','uber.com','tiktok.com','dpsmrn.org','surfline.com')
-            local = addr.split('@',1)[-1]
-            if local in suspicious_noise_domains:
+            local_p = addr.split('@',1)[-1]
+            if local_p in suspicious_noise_domains:
                 record_bounce(addr, 'suspicious noise domain')
                 continue
+            if local_p in ('outlook.com','groups.outlook.com','yahoogroups.com','googlegroups.com'):
+                local_user = addr.split('@',1)[0]
+                if any(ch in local_user for ch in ('+','_','.')) and len(local_user) > 20:
+                    record_bounce(addr, 'broadcast group address pattern')
+                    continue
             thread_id = msg.get('threadId') or hit_id
             contacts.append({
                 'email': addr,
@@ -808,17 +816,27 @@ def run_high_frequency_outreach():
             contacts.extend(_load_hot_followup_ledger_contacts())
         except Exception:
             pass
-        new_subjects = {c.get('thread_subject') or '' for c in contacts}
-        if len(new_subjects) < 20:
-            try:
-                extras = _load_hot_followup_ledger_contacts()
-            except Exception:
-                extras = []
-            for c in extras:
-                subj = c.get('thread_subject') or ''
-                if subj not in new_subjects:
-                    contacts.append(c)
-                    new_subjects.add(subj)
+    new_subjects = set()
+    clean_contacts = []
+    for c in contacts:
+        email = (c.get('email') or '').strip().lower()
+        if not email or '@' not in email:
+            continue
+        domain = email.split('@',1)[1]
+        local = email.split('@',1)[0]
+        if domain.endswith('ziontechgroup.com') or domain.endswith('ztg.com.br'):
+            continue
+        if local in ('automated','automated') or local.startswith('automated-'):
+            continue
+        if any(bad in local for bad in ('groups.outlook.com','mail.vresp.com','airbnb.com','uber.com','tiktok.com','dpsmrn.org','surfline.com')):
+            continue
+        subj = (c.get('thread_subject') or '').strip()
+        if subj.startswith(('Re: Pré-aprovação','Re: Pré-aprovação','Re: Pré-aprovação','Boleto vencido','Billing update','Invoice update','Up to ','Off your first')):
+            continue
+        if subj not in new_subjects or True:
+            clean_contacts.append(c)
+            new_subjects.add(subj)
+    contacts = clean_contacts[-40:]
 
     sent_count = 0
     skipped = 0
