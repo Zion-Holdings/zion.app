@@ -642,9 +642,9 @@ def run_high_frequency_outreach():
     discovery_queries = [
         '!category:promotions !in:spam !in:trash label:"!!!hot-follow-up"',
         'label:"!!!hot-follow-up"',
-        '!category:promotions !in:spam !in:trash newer_than:7d "partnership" OR "collaboration" OR "proposal"',
-        '!category:promotions !in:spam !in:trash newer_than:7d "AI services" OR "AI support" OR "project"',
-        '!category:promotions !in:spam !in:trash newer_than:7d "interested" OR "next steps" OR "opportunity"',
+        '!category:promotions !in:spam !in:trash "partnership" OR "collaboration" OR "proposal"',
+        '!category:promotions !in:spam !in:trash "AI services" OR "AI support" OR "project"',
+        '!category:promotions !in:spam !in:trash "interested" OR "next steps" OR "opportunity"',
         '"!!!hot-follow-up"',
     ]
 
