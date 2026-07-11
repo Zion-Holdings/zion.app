@@ -1,0 +1,66 @@
+name: site-and-outreach-dry-run
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
+
+      - name: Run site integrity crawler
+        run: |
+          python automation/site_integrity_run.py > automation/reports/site-integrity-report.json
+
+      - name: Upload integrity report
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-integrity-report
+          path: automation/reports/site-integrity-report.json
+          retention-days: 7
+
+  outreach-dry-run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      OUTREACH_DRY_RUN: '1'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install google-api-python-client google-auth google-auth-httplib2 google-auth-oauthlib requests beautifulsoup4
+
+      - name: Run outreach worker dry-run
+        run: python scripts/outreach/outreach_worker_automation.py
+
+      - name: Upload dry-run report
+        uses: actions/upload-artifact@v4
+        with:
+          name: outreach-dry-run-report
+          path: |
+            outreach_monitor/processed/dry_run_report.jsonl
+            outreach_monitor/processed/hot_followup_reply_ledger.jsonl
+          retention-days: 7
