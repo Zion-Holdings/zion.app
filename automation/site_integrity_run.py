@@ -86,7 +86,8 @@ while q and len(visited) < MAX_PAGES:
             redirect_target = r.headers.get("Location")
             loc = (redirect_target or "")
             if loc.startswith(BASE + "/") and url.rstrip("/") == loc.rstrip("/") and url != loc:
-                classification = "non-terminal redirect"
+                # Same-page trailing-slash redirect; not a real broken link.
+                continue
         elif r.status_code == 404:
             classification = "missing page"
         elif r.status_code == 403:
