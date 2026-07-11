@@ -1,206 +1,414 @@
 {
-  "generatedAt": "2026-07-10T22:26:42.671340+00:00",
-  "state": "send_ready",
+  "generatedAt": "2026-07-11T00:37:22.619329+00:00",
+  "state": "analysis_complete",
   "ready": [
     {
       "to": "valmy.gonzalez@shervacom.com",
       "name": "Shervacom",
       "domain": "shervacom.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": null,
-      "status": "discovered"
+      "body": "Olá, time da Shervacom!\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\nSe vamos alinhar operações de TI e eficiência, gostaria de propor um diagnóstico rápido de eficiência e suporte para serviços técnicos/atuais da operação.\nSem custo e sem promessa mágica — apenas um caminho potencial de melhoria para a Shervacom.\n\nPosso agendar uma breve conversa? https://calendly.com/kleber-ziontechgroup\nConheça também: https://ziontechgroup.com\n",
+      "status": "improved",
+      "normalized": true,
+      "send_blocked_policy": false,
+      "hold_reason": null,
+      "service_references_primary": [
+        "eficiência e suporte para serviços técnicos/atuais da operação"
+      ],
+      "company_name": "Shervacom",
+      "improvement_fields": []
     },
     {
       "to": "thomas@gakenholz.de",
       "name": "Gakenholz",
       "domain": "gakenholz.de",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": null,
-      "status": "discovered"
+      "body": "Olá, time da Gakenholz!\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\nSe vamos alinhar operações de TI e eficiência, gostaria de propor um diagnóstico rápido de eficiência e redução de retrabalho.\nSem custo e sem promessa mágica — apenas um caminho potencial de melhoria para a Gakenholz.\n\nPosso agendar uma breve conversa? https://calendly.com/kleber-ziontechgroup\nConheça também: https://ziontechgroup.com\n",
+      "status": "improved",
+      "normalized": true,
+      "send_blocked_policy": false,
+      "hold_reason": null,
+      "service_references_primary": [
+        "eficiência e redução de retrabalho"
+      ],
+      "company_name": "Gakenholz",
+      "improvement_fields": []
     },
     {
       "to": "kleber@sscs-sa.com",
       "name": "Sscs-Sa",
       "domain": "sscs-sa.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": null,
-      "status": "discovered"
+      "body": "Olá, time da Sscs-Sa!\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\nSe vamos alinhar operações de TI e eficiência, gostaria de propor um diagnóstico rápido de eficiência e governança de TI.\nSem custo e sem promessa mágica — apenas um caminho potencial de melhoria para a Sscs-Sa.\n\nPosso agendar uma breve conversa? https://calendly.com/kleber-ziontechgroup\nConheça também: https://ziontechgroup.com\n",
+      "status": "improved",
+      "normalized": true,
+      "send_blocked_policy": false,
+      "hold_reason": null,
+      "service_references_primary": [
+        "eficiência e governança de TI"
+      ],
+      "company_name": "Sscs-Sa",
+      "improvement_fields": []
     },
     {
       "to": "djean.axt@ztg.com.br",
       "name": "Ztg",
       "domain": "ztg.com.br",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": null,
-      "status": "discovered"
+      "body": "Olá, time da Ztg!\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\nSe vamos alinhar operações de TI e eficiência, gostaria de propor um diagnóstico rápido de melhoria operacional e digital.\nSem custo e sem promessa mágica — apenas um caminho potencial de melhoria para a Ztg.\n\nPosso agendar uma breve conversa? https://calendly.com/kleber-ziontechgroup\nConheça também: https://ziontechgroup.com\n",
+      "status": "improved",
+      "normalized": true,
+      "send_blocked_policy": false,
+      "hold_reason": null,
+      "service_references_primary": [
+        "melhoria operacional e digital"
+      ],
+      "company_name": "Ztg",
+      "improvement_fields": []
     },
     {
       "to": "editors@channelpronetwork.com",
       "name": "Channelpronetwork",
       "domain": "channelpronetwork.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": null,
-      "status": "discovered"
+      "body": "Olá, time da Channelpronetwork!\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\nSe vamos alinhar operações de TI e eficiência, gostaria de propor um diagnóstico rápido de eficiência operacional e conteúdo digital.\nSem custo e sem promessa mágica — apenas um caminho potencial de melhoria para a Channelpronetwork.\n\nPosso agendar uma breve conversa? https://calendly.com/kleber-ziontechgroup\nConheça também: https://ziontechgroup.com\n",
+      "status": "improved",
+      "normalized": true,
+      "send_blocked_policy": false,
+      "hold_reason": null,
+      "service_references_primary": [
+        "eficiência operacional e conteúdo digital"
+      ],
+      "company_name": "Channelpronetwork",
+      "improvement_fields": []
     },
     {
       "to": "gmailgenius@wordzen.com",
       "name": "Wordzen",
       "domain": "wordzen.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": null,
-      "status": "discovered"
+      "body": "Olá, time da Wordzen!\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\nSe vamos alinhar operações de TI e eficiência, gostaria de propor um diagnóstico rápido de produtividade em ferramentas e comunicação.\nSem custo e sem promessa mágica — apenas um caminho potencial de melhoria para a Wordzen.\n\nPosso agendar uma breve conversa? https://calendly.com/kleber-ziontechgroup\nConheça também: https://ziontechgroup.com\n",
+      "status": "improved",
+      "normalized": true,
+      "send_blocked_policy": false,
+      "hold_reason": null,
+      "service_references_primary": [
+        "produtividade em ferramentas e comunicação"
+      ],
+      "company_name": "Wordzen",
+      "improvement_fields": []
     },
     {
       "to": "bob@scrubly.com",
       "name": "Scrubly",
       "domain": "scrubly.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": null,
-      "status": "discovered"
+      "body": "Olá, time da Scrubly!\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\nSe vamos alinhar operações de TI e eficiência, gostaria de propor um diagnóstico rápido de limpeza e governança leve de dados/contatos.\nSem custo e sem promessa mágica — apenas um caminho potencial de melhoria para a Scrubly.\n\nPosso agendar uma breve conversa? https://calendly.com/kleber-ziontechgroup\nConheça também: https://ziontechgroup.com\n",
+      "status": "improved",
+      "normalized": true,
+      "send_blocked_policy": false,
+      "hold_reason": null,
+      "service_references_primary": [
+        "limpeza e governança leve de dados/contatos"
+      ],
+      "company_name": "Scrubly",
+      "improvement_fields": []
     },
     {
       "to": "mweiss@procurri.com",
       "name": "Procurri",
       "domain": "procurri.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": null,
-      "status": "discovered"
+      "body": "Olá, time da Procurri!\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\nSe vamos alinhar operações de TI e eficiência, gostaria de propor um diagnóstico rápido de eficiência em fornecimento de TI e operações.\nSem custo e sem promessa mágica — apenas um caminho potencial de melhoria para a Procurri.\n\nPosso agendar uma breve conversa? https://calendly.com/kleber-ziontechgroup\nConheça também: https://ziontechgroup.com\n",
+      "status": "improved",
+      "normalized": true,
+      "send_blocked_policy": false,
+      "hold_reason": null,
+      "service_references_primary": [
+        "eficiência em fornecimento de TI e operações"
+      ],
+      "company_name": "Procurri",
+      "improvement_fields": []
     },
     {
       "to": "mauro.faria@fgv.br",
       "name": "Fgv",
       "domain": "fgv.br",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": null,
-      "status": "discovered"
+      "body": "Olá, time da Fgv!\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\nSe vamos alinhar operações de TI e eficiência, gostaria de propor um diagnóstico rápido de operações de TI e experiência de sistemas acadêmicos/administrativos.\nSem custo e sem promessa mágica — apenas um caminho potencial de melhoria para a Fgv.\n\nPosso agendar uma breve conversa? https://calendly.com/kleber-ziontechgroup\nConheça também: https://ziontechgroup.com\n",
+      "status": "improved",
+      "normalized": true,
+      "send_blocked_policy": false,
+      "hold_reason": null,
+      "service_references_primary": [
+        "operações de TI e experiência de sistemas acadêmicos/administrativos"
+      ],
+      "company_name": "Fgv",
+      "improvement_fields": []
     },
     {
       "to": "avinash.r@hcl.com",
       "name": "Hcl",
       "domain": "hcl.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": null,
-      "status": "discovered"
+      "body": "Olá, time da Hcl!\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\nSe vamos alinhar operações de TI e eficiência, gostaria de propor um diagnóstico rápido de entrega de serviços modernos e eficiência operacional.\nSem custo e sem promessa mágica — apenas um caminho potencial de melhoria para a Hcl.\n\nPosso agendar uma breve conversa? https://calendly.com/kleber-ziontechgroup\nConheça também: https://ziontechgroup.com\n",
+      "status": "improved",
+      "normalized": true,
+      "send_blocked_policy": false,
+      "hold_reason": null,
+      "service_references_primary": [
+        "entrega de serviços modernos e eficiência operacional"
+      ],
+      "company_name": "Hcl",
+      "improvement_fields": []
     },
     {
       "to": "ishukohli@hcl.com",
       "name": "Hcl",
       "domain": "hcl.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": null,
-      "status": "discovered"
+      "body": "Olá, time da Hcl!\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\nSe vamos alinhar operações de TI e eficiência, gostaria de propor um diagnóstico rápido de entrega de serviços modernos e eficiência operacional.\nSem custo e sem promessa mágica — apenas um caminho potencial de melhoria para a Hcl.\n\nPosso agendar uma breve conversa? https://calendly.com/kleber-ziontechgroup\nConheça também: https://ziontechgroup.com\n",
+      "status": "improved",
+      "normalized": true,
+      "send_blocked_policy": false,
+      "hold_reason": null,
+      "service_references_primary": [
+        "entrega de serviços modernos e eficiência operacional"
+      ],
+      "company_name": "Hcl",
+      "improvement_fields": []
     },
     {
       "to": "jason.guidry@hcl.com",
       "name": "Hcl",
       "domain": "hcl.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": null,
-      "status": "discovered"
+      "body": "Olá, time da Hcl!\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\nSe vamos alinhar operações de TI e eficiência, gostaria de propor um diagnóstico rápido de entrega de serviços modernos e eficiência operacional.\nSem custo e sem promessa mágica — apenas um caminho potencial de melhoria para a Hcl.\n\nPosso agendar uma breve conversa? https://calendly.com/kleber-ziontechgroup\nConheça também: https://ziontechgroup.com\n",
+      "status": "improved",
+      "normalized": true,
+      "send_blocked_policy": false,
+      "hold_reason": null,
+      "service_references_primary": [
+        "entrega de serviços modernos e eficiência operacional"
+      ],
+      "company_name": "Hcl",
+      "improvement_fields": []
     },
     {
       "to": "arulnathan.k@hcl.com",
       "name": "Hcl",
       "domain": "hcl.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": null,
-      "status": "discovered"
+      "body": "Olá, time da Hcl!\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\nSe vamos alinhar operações de TI e eficiência, gostaria de propor um diagnóstico rápido de entrega de serviços modernos e eficiência operacional.\nSem custo e sem promessa mágica — apenas um caminho potencial de melhoria para a Hcl.\n\nPosso agendar uma breve conversa? https://calendly.com/kleber-ziontechgroup\nConheça também: https://ziontechgroup.com\n",
+      "status": "improved",
+      "normalized": true,
+      "send_blocked_policy": false,
+      "hold_reason": null,
+      "service_references_primary": [
+        "entrega de serviços modernos e eficiência operacional"
+      ],
+      "company_name": "Hcl",
+      "improvement_fields": []
     },
     {
       "to": "greivinantonio.garci@hcl.com",
       "name": "Hcl",
       "domain": "hcl.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": null,
-      "status": "discovered"
+      "body": "Olá, time da Hcl!\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\nSe vamos alinhar operações de TI e eficiência, gostaria de propor um diagnóstico rápido de entrega de serviços modernos e eficiência operacional.\nSem custo e sem promessa mágica — apenas um caminho potencial de melhoria para a Hcl.\n\nPosso agendar uma breve conversa? https://calendly.com/kleber-ziontechgroup\nConheça também: https://ziontechgroup.com\n",
+      "status": "improved",
+      "normalized": true,
+      "send_blocked_policy": false,
+      "hold_reason": null,
+      "service_references_primary": [
+        "entrega de serviços modernos e eficiência operacional"
+      ],
+      "company_name": "Hcl",
+      "improvement_fields": []
     },
     {
       "to": "mohitg@hcl.com",
       "name": "Hcl",
       "domain": "hcl.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": null,
-      "status": "discovered"
+      "body": "Olá, time da Hcl!\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\nSe vamos alinhar operações de TI e eficiência, gostaria de propor um diagnóstico rápido de entrega de serviços modernos e eficiência operacional.\nSem custo e sem promessa mágica — apenas um caminho potencial de melhoria para a Hcl.\n\nPosso agendar uma breve conversa? https://calendly.com/kleber-ziontechgroup\nConheça também: https://ziontechgroup.com\n",
+      "status": "improved",
+      "normalized": true,
+      "send_blocked_policy": false,
+      "hold_reason": null,
+      "service_references_primary": [
+        "entrega de serviços modernos e eficiência operacional"
+      ],
+      "company_name": "Hcl",
+      "improvement_fields": []
     },
     {
       "to": "hi@app.kilocode.ai",
       "name": "App",
       "domain": "app.kilocode.ai",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": null,
-      "status": "discovered"
+      "body": "Hi team at App,\nI'm Kleber Garcia Alcatrão, CEO of Zion Tech Group.\nQuick idea: a lightweight partnership check on product operations integration — no big pitch, just a clear next step if it matters for App.\n\nCan we schedule a short meeting? https://calendly.com/kleber-ziontechgroup\nMore: https://ziontechgroup.com\n",
+      "status": "improved",
+      "normalized": true,
+      "send_blocked_policy": false,
+      "hold_reason": null,
+      "service_references_primary": [
+        "product operations integration"
+      ],
+      "company_name": "App",
+      "improvement_fields": []
     },
     {
       "to": "whibbert@solyssey.com",
       "name": "Solyssey",
       "domain": "solyssey.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": null,
-      "status": "discovered"
+      "body": "Olá, time da Solyssey!\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\nSe vamos alinhar operações de TI e eficiência, gostaria de propor um diagnóstico rápido de eficiência em produtos digitais.\nSem custo e sem promessa mágica — apenas um caminho potencial de melhoria para a Solyssey.\n\nPosso agendar uma breve conversa? https://calendly.com/kleber-ziontechgroup\nConheça também: https://ziontechgroup.com\n",
+      "status": "improved",
+      "normalized": true,
+      "send_blocked_policy": false,
+      "hold_reason": null,
+      "service_references_primary": [
+        "eficiência em produtos digitais"
+      ],
+      "company_name": "Solyssey",
+      "improvement_fields": []
     },
     {
       "to": "mrodrigues@solyssey.com",
       "name": "Solyssey",
       "domain": "solyssey.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": null,
-      "status": "discovered"
+      "body": "Olá, time da Solyssey!\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\nSe vamos alinhar operações de TI e eficiência, gostaria de propor um diagnóstico rápido de eficiência em produtos digitais.\nSem custo e sem promessa mágica — apenas um caminho potencial de melhoria para a Solyssey.\n\nPosso agendar uma breve conversa? https://calendly.com/kleber-ziontechgroup\nConheça também: https://ziontechgroup.com\n",
+      "status": "improved",
+      "normalized": true,
+      "send_blocked_policy": false,
+      "hold_reason": null,
+      "service_references_primary": [
+        "eficiência em produtos digitais"
+      ],
+      "company_name": "Solyssey",
+      "improvement_fields": []
     },
     {
       "to": "rsingh@solyssey.com",
       "name": "Solyssey",
       "domain": "solyssey.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": null,
-      "status": "discovered"
+      "body": "Olá, time da Solyssey!\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\nSe vamos alinhar operações de TI e eficiência, gostaria de propor um diagnóstico rápido de eficiência em produtos digitais.\nSem custo e sem promessa mágica — apenas um caminho potencial de melhoria para a Solyssey.\n\nPosso agendar uma breve conversa? https://calendly.com/kleber-ziontechgroup\nConheça também: https://ziontechgroup.com\n",
+      "status": "improved",
+      "normalized": true,
+      "send_blocked_policy": false,
+      "hold_reason": null,
+      "service_references_primary": [
+        "eficiência em produtos digitais"
+      ],
+      "company_name": "Solyssey",
+      "improvement_fields": []
     },
     {
       "to": "balaji-kalimireddi@hcl.com",
       "name": "Hcl",
       "domain": "hcl.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": null,
-      "status": "discovered"
+      "body": "Olá, time da Hcl!\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\nSe vamos alinhar operações de TI e eficiência, gostaria de propor um diagnóstico rápido de entrega de serviços modernos e eficiência operacional.\nSem custo e sem promessa mágica — apenas um caminho potencial de melhoria para a Hcl.\n\nPosso agendar uma breve conversa? https://calendly.com/kleber-ziontechgroup\nConheça também: https://ziontechgroup.com\n",
+      "status": "improved",
+      "normalized": true,
+      "send_blocked_policy": false,
+      "hold_reason": null,
+      "service_references_primary": [
+        "entrega de serviços modernos e eficiência operacional"
+      ],
+      "company_name": "Hcl",
+      "improvement_fields": []
     },
     {
       "to": "sugandha_s@hcl.com",
       "name": "Hcl",
       "domain": "hcl.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": null,
-      "status": "discovered"
+      "body": "Olá, time da Hcl!\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\nSe vamos alinhar operações de TI e eficiência, gostaria de propor um diagnóstico rápido de entrega de serviços modernos e eficiência operacional.\nSem custo e sem promessa mágica — apenas um caminho potencial de melhoria para a Hcl.\n\nPosso agendar uma breve conversa? https://calendly.com/kleber-ziontechgroup\nConheça também: https://ziontechgroup.com\n",
+      "status": "improved",
+      "normalized": true,
+      "send_blocked_policy": false,
+      "hold_reason": null,
+      "service_references_primary": [
+        "entrega de serviços modernos e eficiência operacional"
+      ],
+      "company_name": "Hcl",
+      "improvement_fields": []
     },
     {
       "to": "suruchi.g@hcl.com",
       "name": "Hcl",
       "domain": "hcl.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": null,
-      "status": "discovered"
+      "body": "Olá, time da Hcl!\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\nSe vamos alinhar operações de TI e eficiência, gostaria de propor um diagnóstico rápido de entrega de serviços modernos e eficiência operacional.\nSem custo e sem promessa mágica — apenas um caminho potencial de melhoria para a Hcl.\n\nPosso agendar uma breve conversa? https://calendly.com/kleber-ziontechgroup\nConheça também: https://ziontechgroup.com\n",
+      "status": "improved",
+      "normalized": true,
+      "send_blocked_policy": false,
+      "hold_reason": null,
+      "service_references_primary": [
+        "entrega de serviços modernos e eficiência operacional"
+      ],
+      "company_name": "Hcl",
+      "improvement_fields": []
     },
     {
       "to": "hugo.sousa@dekra.com",
       "name": "Dekra",
       "domain": "dekra.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": null,
-      "status": "discovered"
+      "body": "Olá, time da Dekra!\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\nSe vamos alinhar operações de TI e eficiência, gostaria de propor um diagnóstico rápido de eficiência operacional e serviços digitais.\nSem custo e sem promessa mágica — apenas um caminho potencial de melhoria para a Dekra.\n\nPosso agendar uma breve conversa? https://calendly.com/kleber-ziontechgroup\nConheça também: https://ziontechgroup.com\n",
+      "status": "improved",
+      "normalized": true,
+      "send_blocked_policy": false,
+      "hold_reason": null,
+      "service_references_primary": [
+        "eficiência operacional e serviços digitais"
+      ],
+      "company_name": "Dekra",
+      "improvement_fields": []
     },
     {
       "to": "ingrid.ciarelli@dekra.com",
       "name": "Dekra",
       "domain": "dekra.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": null,
-      "status": "discovered"
+      "body": "Olá, time da Dekra!\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\nSe vamos alinhar operações de TI e eficiência, gostaria de propor um diagnóstico rápido de eficiência operacional e serviços digitais.\nSem custo e sem promessa mágica — apenas um caminho potencial de melhoria para a Dekra.\n\nPosso agendar uma breve conversa? https://calendly.com/kleber-ziontechgroup\nConheça também: https://ziontechgroup.com\n",
+      "status": "improved",
+      "normalized": true,
+      "send_blocked_policy": false,
+      "hold_reason": null,
+      "service_references_primary": [
+        "eficiência operacional e serviços digitais"
+      ],
+      "company_name": "Dekra",
+      "improvement_fields": []
     },
     {
       "to": "infraestrutura@dekra.com",
       "name": "Dekra",
       "domain": "dekra.com",
       "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
-      "body": null,
-      "status": "discovered"
+      "body": "Olá, time da Dekra!\nSou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\nSe vamos alinhar operações de TI e eficiência, gostaria de propor um diagnóstico rápido de eficiência operacional e serviços digitais.\nSem custo e sem promessa mágica — apenas um caminho potencial de melhoria para a Dekra.\n\nPosso agendar uma breve conversa? https://calendly.com/kleber-ziontechgroup\nConheça também: https://ziontechgroup.com\n",
+      "status": "improved",
+      "normalized": true,
+      "send_blocked_policy": false,
+      "hold_reason": null,
+      "service_references_primary": [
+        "eficiência operacional e serviços digitais"
+      ],
+      "company_name": "Dekra",
+      "improvement_fields": []
     }
-  ]
+  ],
+  "send_blocked": false,
+  "improved_count": 25,
+  "fixes_detail": [
+    "normalized required fields",
+    "set send_blocked_policy/status",
+    "tailored subject/body per domain/service"
+  ],
+  "send_policy_note": "SEND_DISABLED: set ZTG_SEND_ALLOWED=1 to enable outbound sends"
 }
