@@ -64,7 +64,7 @@ def main():
         for name, lid in check_targets:
             report['labels_checked'].append({'name': name, 'id': lid})
             try:
-                res = service.users().messages().list(userId='me', labelIds=[lid], max_results=20).execute()
+                res = service.users().messages().list(userId='me', labelIds=[lid], maxResults=20).execute()
                 count = len(res.get('messages', []))
                 if 'HOT' in name and 'SENT' not in name:
                     report['hot_followup_threads'] = count
@@ -74,7 +74,7 @@ def main():
                 report['errors'].append({'label': name, 'error': repr(e)})
 
         try:
-            sent = service.users().messages().list(userId='me', q='in:sent', max_results=10).execute()
+            sent = service.users().messages().list(userId='me', q='in:sent', maxResults=10).execute()
             report['recent_sent_count'] = len(sent.get('messages', []))
         except Exception as e:
             report['errors'].append({'sent_probe': repr(e)})
@@ -85,7 +85,7 @@ def main():
                 'newer_than:7d "partnership" OR "collaboration" OR "proposal" '
                 '-"support reminder" -"rate the support" -"support survey" -"zendesk"'
             )
-            inbox = service.users().messages().list(userId='me', q=interest_q, max_results=20).execute()
+            inbox = service.users().messages().list(userId='me', q=interest_q, maxResults=20).execute()
             msgs = inbox.get('messages', [])
             report['new_inbox_interest_count'] = len(msgs)
             examples = []
@@ -128,7 +128,7 @@ def main():
             dedup_state = load_json_safe(DEDUP_FILE, {}) if 'DEDUP_FILE' in globals() else {}
             hot_label_id = HOT_FOLLOWUP_LABEL_ID
             if hot_label_id:
-                hot = service.users().messages().list(userId='me', labelIds=[hot_label_id], max_results=20).execute()
+                hot = service.users().messages().list(userId='me', labelIds=[hot_label_id], maxResults=20).execute()
                 hot_msg_ids = [x['id'] for x in hot.get('messages', []) if x.get('id')]
                 seen_hot = set()
                 for mid in hot_msg_ids:
