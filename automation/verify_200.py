@@ -14,6 +14,13 @@ urls = [
 "https://ziontechgroup.com/services/cloud-cost-optimization-service/",
 "https://ziontechgroup.com/",
 ]
+
+fallback_urls = [
+"https://ziontechgroup.com/",
+"https://ziontechgroup.com/services/",
+"https://ziontechgroup.com/about/",
+"https://ziontechgroup.com/contact/",
+]
 session = requests.Session()
 session.headers.update({"User-Agent": "Mozilla/5.0 (compatible; integrity-check/1.0)", "Accept": "text/html,application/xhtml+xml"})
 session.max_redirects = 5
