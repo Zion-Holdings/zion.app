@@ -68,3 +68,4 @@ docs/_next/
 docs/**/__next.*.txt
 docs/**/index.txt
 docs/**/*.js
+tsconfig.tsbuildinfo
