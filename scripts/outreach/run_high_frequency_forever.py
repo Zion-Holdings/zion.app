@@ -18,6 +18,7 @@ BASE = Path(__file__).resolve().parents[1]
 WORKER_SCRIPT = Path(__file__).resolve().parent / 'outreach_worker_automation.py'
 METRICS = BASE / 'outreach_monitor' / 'processed' / 'high_frequency_runner_metrics.jsonl'
 HEARTBEAT = BASE / 'outreach_monitor' / 'processed' / 'runner_heartbeat.json'
+COUNTERS = BASE / 'outreach_monitor' / 'processed' / 'runner_counters.json'
 
 
 def ts_now() -> str:
@@ -43,7 +44,8 @@ def write_heartbeat(status, last_ok=False, last_error=None):
 
 
 def run_once():
-    interval = int(os.environ.get('HIGH_FREQ_INTERVAL_SECONDS', '60'))
+    raw_interval = int(os.environ.get('HIGH_FREQ_INTERVAL_SECONDS', '60'))
+    interval = max(60, raw_interval)
     timeout = max(60, interval)
     env = os.environ.copy()
     try:
@@ -60,6 +62,7 @@ def run_once():
             'ts': ts_now(),
             'returncode': proc.returncode,
             'interval_seconds': interval,
+            'raw_interval_seconds': raw_interval,
             'stdout': (proc.stdout[-2000:] if proc.stdout else ''),
         }
         try:
@@ -68,6 +71,20 @@ def run_once():
         except Exception:
             pass
         write_heartbeat(status='running', last_ok=proc.returncode == 0, last_error=None if proc.returncode == 0 else 'nonzero_exit')
+        try:
+            counters = {}
+            if COUNTERS.exists():
+                try:
+                    counters = json.loads(COUNTERS.read_text(encoding='utf-8'))
+                except Exception:
+                    counters = {}
+            counters['total_runs'] = int(counters.get('total_runs', 0)) + 1
+            counters['successful_runs'] = int(counters.get('successful_runs', 0)) + (1 if proc.returncode == 0 else 0)
+            counters['timeout_runs'] = int(counters.get('timeout_runs', 0)) + 0
+            COUNTERS.write_text(json.dumps(counters, ensure_ascii=False, indent=2), encoding='utf-8')
+        except Exception:
+            pass
+        return True
     except subprocess.TimeoutExpired:
         entry = {'ts': ts_now(), 'returncode': -1, 'interval_seconds': interval, 'stdout': 'timeout'}
         try:
@@ -76,9 +93,33 @@ def run_once():
         except Exception:
             pass
         write_heartbeat(status='running', last_ok=False, last_error='timeout')
+        try:
+            counters = {}
+            if COUNTERS.exists():
+                try:
+                    counters = json.loads(COUNTERS.read_text(encoding='utf-8'))
+                except Exception:
+                    counters = {}
+            counters['total_runs'] = int(counters.get('total_runs', 0)) + 1
+            counters['timeout_runs'] = int(counters.get('timeout_runs', 0)) + 1
+            COUNTERS.write_text(json.dumps(counters, ensure_ascii=False, indent=2), encoding='utf-8')
+        except Exception:
+            pass
         return False
     except Exception as e:
         write_heartbeat(status='degraded', last_ok=False, last_error=repr(e))
+        try:
+            counters = {}
+            if COUNTERS.exists():
+                try:
+                    counters = json.loads(COUNTERS.read_text(encoding='utf-8'))
+                except Exception:
+                    counters = {}
+            counters['total_runs'] = int(counters.get('total_runs', 0)) + 1
+            counters['error_runs'] = int(counters.get('error_runs', 0)) + 1
+            COUNTERS.write_text(json.dumps(counters, ensure_ascii=False, indent=2), encoding='utf-8')
+        except Exception:
+            pass
         return False
 
 
