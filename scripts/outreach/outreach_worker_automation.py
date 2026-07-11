@@ -29,6 +29,25 @@ STATE_FILE = DEDUP_DIR / 'global_dedup_state.json'
 LEDGER_FILE = DEDUP_DIR / 'sent_ledger.jsonl'
 BOUNCE_HISTORY_FILE = DEDUP_DIR / 'bounce_history.jsonl'
 
+_GMAIL_API_TIMEOUT = 20
+
+
+def _timed_gmail_call(request):
+    try:
+        from concurrent.futures import ThreadPoolExecutor
+    except Exception:
+        ThreadPoolExecutor = None
+
+    def _execute(req):
+        return req.execute()
+
+    if ThreadPoolExecutor is None:
+        return _execute(request)
+    with ThreadPoolExecutor(max_workers=1) as ex:
+        fut = ex.submit(_execute, request)
+        return fut.result(timeout=_GMAIL_API_TIMEOUT)
+
+
 FORBIDDEN_ADDR_PREFIXES = (
     'no-reply','noreply','mailer-daemon','postmaster','notifications@github.com',
     'support@','press@','info@','sales@','team@','hello@','hi@','marketing@',
@@ -242,13 +261,12 @@ def probe_thread_alive(thread_id):
     if not thread_id:
         return False
     try:
-        service.users().threads().get(userId='me', id=thread_id).execute()
-        return True
+        return _timed_gmail_call(service.users().threads().get(userId='me', id=thread_id)) is not None
     except Exception:
         return False
 
 def get_message_text(msg_id):
-    msg = service.users().messages().get(userId='me', id=msg_id, format='full').execute()
+    msg = _timed_gmail_call(service.users().messages().get(userId='me', id=msg_id, format='full'))
     payload = msg.get('payload', {})
     data = payload.get('body', {}).get('data')
     if data:
@@ -511,7 +529,7 @@ def fetch_or_create_lead_from_inbox(email, thread_subject=None):
     real_contact_name = contact_name
     real_company_name = company_name
     try:
-        full = service.users().messages().get(userId='me', id=msg_id, format='metadata', metadataHeaders=['From','To','Subject']).execute()
+        full = _timed_gmail_call(service.users().messages().get(userId='me', id=msg_id, format='metadata', metadataHeaders=['From','To','Subject']))
         frm_hdr = next((h['value'] for h in full.get('payload',{}).get('headers',[]) if h['name']=='From'), '')
         if frm_hdr:
             if '<' in frm_hdr:
@@ -575,7 +593,7 @@ def run_high_frequency_outreach():
                 continue
             hit_ids.add(hit_id)
             try:
-                msg = service.users().messages().get(userId='me', id=hit_id, format='metadata', metadataHeaders=['From','Subject','In-Reply-To']).execute()
+                msg = _timed_gmail_call(service.users().messages().get(userId='me', id=hit_id, format='metadata', metadataHeaders=['From','Subject','In-Reply-To']))
             except Exception:
                 continue
             headers = {x['name']: x['value'] for x in msg.get('payload', {}).get('headers', [])}
@@ -689,6 +707,7 @@ def run_high_frequency_outreach():
     print('STATE_TS', int(time.time()))
     return {'sent': sent_count, 'skipped': skipped, 'adds': len(newest_used), 'dead': dead}
 
+
 def send_ceo_reply(thread_id, to_addr, subject, body, references_message_id):
     body = sanitize_outreach_body(body)
     msg_id_str = f"<{references_message_id}>"
@@ -701,7 +720,7 @@ def send_ceo_reply(thread_id, to_addr, subject, body, references_message_id):
         f"In-Reply-To: {msg_id_str}",
     ]
     try:
-        thread = service.users().threads().get(userId="me", id=thread_id, format="metadata", metadataHeaders=["To", "Cc"]).execute()
+        thread = _timed_gmail_call(service.users().threads().get(userId="me", id=thread_id, format="metadata", metadataHeaders=["To", "Cc"]))
         messages = thread.get("messages", []) or []
         all_cc = []
         for m in messages:
@@ -715,8 +734,7 @@ def send_ceo_reply(thread_id, to_addr, subject, body, references_message_id):
     except Exception:
         pass
     raw = base64.urlsafe_b64encode(("\r\n".join(raw_headers) + "\r\n\r\n" + body).encode("utf-8")).decode("utf-8")
-    return service.users().messages().send(userId="me", body={"raw": raw, "threadId": thread_id}).execute()
-
+    return _timed_gmail_call(service.users().messages().send(userId="me", body={"raw": raw, "threadId": thread_id})).execute()
 
 
 if __name__ == '__main__':
