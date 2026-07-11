@@ -4,13 +4,23 @@ from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 
 sys.path.insert(0, r'C:\Users\Zion\AppData\Local\hermes\skills\productivity\google-workspace\scripts')
+GMAIL_AUTH_ERROR = None
+service = None
+
+def _init_gmail_service():
+    global service, GMAIL_AUTH_ERROR
+    try:
+        from google_api import build_service
+        service = build_service('gmail', 'v1')
+        GMAIL_AUTH_ERROR = None
+    except Exception as e:
+        service = None
+        GMAIL_AUTH_ERROR = repr(e)
+
 try:
-    from google_api import build_service
-    service = build_service('gmail', 'v1')
-    GMAIL_AUTH_ERROR = None
-except Exception as e:
-    service = None
-    GMAIL_AUTH_ERROR = repr(e)
+    _init_gmail_service()
+except Exception:
+    pass
 
 BASE_DIR = Path('/c/Users/Zion/tmp/zion-clone-test2')
 DEDUP_DIR = BASE_DIR / 'outreach_monitor' / 'processed'
