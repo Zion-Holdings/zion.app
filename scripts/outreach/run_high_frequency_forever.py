@@ -1,6 +1,6 @@
 """
 Windows-friendly continuous outreach monitor.
-Runs high_frequency_monitor.py repeatedly with bounded subprocess timeouts and metrics.
+Runs outreach_worker_automation.py repeatedly with bounded subprocess timeouts and metrics.
 Env:
   OUTREACH_DRY_RUN=1                # keep true unless live sends are explicitly desired
   ZION_LLM_API_ENDPOINT/KEY/MODEL   # enables LLM tailoring when set
@@ -15,7 +15,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parents[1]
-MONITOR_SCRIPT = BASE / 'scripts' / 'outreach' / 'high_frequency_monitor.py'
+WORKER_SCRIPT = BASE / 'scripts' / 'outreach' / 'outreach_worker_automation.py'
 METRICS = BASE / 'outreach_monitor' / 'processed' / 'high_frequency_runner_metrics.jsonl'
 HEARTBEAT = BASE / 'outreach_monitor' / 'processed' / 'runner_heartbeat.json'
 
@@ -48,7 +48,7 @@ def run_once():
     env = os.environ.copy()
     try:
         proc = subprocess.run(
-            [sys.executable, str(MONITOR_SCRIPT)],
+            [sys.executable, str(WORKER_SCRIPT)],
             cwd=str(BASE),
             env=env,
             stdout=subprocess.PIPE,
@@ -69,7 +69,7 @@ def run_once():
             pass
         write_heartbeat(status='running', last_ok=proc.returncode == 0, last_error=None if proc.returncode == 0 else 'nonzero_exit')
         return proc.returncode == 0
-    except subprocess.TimeoutExpired:
+
         entry = {'ts': ts_now(), 'returncode': -1, 'interval_seconds': interval, 'stdout': 'timeout'}
         try:
             with METRICS.open('a', encoding='utf-8') as f:

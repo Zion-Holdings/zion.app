@@ -518,7 +518,9 @@ def run_high_frequency_outreach():
         '!category:promotions !in:spam !in:trash newer_than:7d "interested" OR "next steps" OR "opportunity"',
     ]
 
+    hit_ids = set()
     contacts = []
+
     for q in discovery_queries:
         try:
             hits = search_all_folders(q, max_results=25)
@@ -534,7 +536,7 @@ def run_high_frequency_outreach():
             except Exception:
                 continue
             headers = {x['name']: x['value'] for x in msg.get('payload', {}).get('headers', [])}
-            frm = headers.get('From', '')
+
             subj = headers.get('Subject', '')
             if '@' not in frm:
                 continue
