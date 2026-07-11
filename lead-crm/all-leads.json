@@ -6989,5 +6989,22 @@
     "llm_model": "stepfun/step-3.7-flash-20260528:free",
     "llm_reason": "### Rating: 1 (weak/partial value signal)\n#### Rationale tied to managed AI/IT services context:\n- A 2 (strong signal) would require explicit, direct alignment with managed AI/IT services (e.g., proposal text referencing managed AI support, IT service offerings, or relevant use cases for this servic",
     "confidence": 1
+  },
+  {
+    "to": "author@noreply.github.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "noreply.github.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash-20260528:free",
+    "llm_reason": "### Rating: 0\n#### Rationale (aligned to standard rating framing for this use case):\n- A score of 2 is reserved for signals that explicitly, verifiably demonstrate alignment with managed AI/IT services (e.g., direct mentions of offering these services, public site content confirming this specific se",
+    "confidence": 0
   }
 ]
