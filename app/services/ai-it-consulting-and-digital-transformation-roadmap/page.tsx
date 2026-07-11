@@ -1,5 +1,5 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
-import ArticleStructuredData from '@/components/ArticleStructuredData';
-import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
-...[truncated]
+// TODO: add page content
+export const metadata = { title: 'AI IT Consulting & Digital Transformation Roadmap' };
+export default function Page() {
+  return null;
+}
