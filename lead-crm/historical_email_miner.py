@@ -180,6 +180,9 @@ def run_miner():
     started = time.perf_counter()
     query_durations = []
     for q in active_queries:
+        if time.perf_counter() - started > 110:
+            append_log({'ts': now_iso(), 'event': 'miner_timeout', 'query': q, 'note': 'soft timeout reached; stopping query loop early'})
+            break
         qstart = time.perf_counter()
         queries_run += 1
         try:
@@ -188,6 +191,9 @@ def run_miner():
             append_log({'ts': now_iso(), 'event': 'search_error', 'query': q, 'error': str(e)})
             query_durations.append(time.perf_counter() - qstart)
             continue
+        if time.perf_counter() - started > 110:
+            append_log({'ts': now_iso(), 'event': 'miner_timeout', 'query': q, 'note': 'soft timeout reached after search; breaking before metadata extraction'})
+            break
         msg_ids = [m.get('id') for m in msgs if m.get('id')]
         seen_ids = set()
         for msg_id in msg_ids:
