@@ -827,6 +827,20 @@ def _llm_readiness_report() -> dict:
     api_key = os.getenv('ZION_LLM_API_KEY') or os.getenv('OPENROUTER_API_KEY') or os.getenv('GROQ_API_KEY') or os.getenv('GEMINI_API_KEY')
     model = os.getenv('ZION_LLM_MODEL') or os.getenv('LLM_MODEL') or os.getenv('OPENROUTER_MODEL') or os.getenv('GROQ_MODEL') or os.getenv('GEMINI_MODEL') or 'not-configured'
     active = bool(endpoint and api_key)
+    try:
+        mods = ['googleapiclient', 'google.auth', 'google.oauth2']
+        status = {m: bool(__import__('importlib').util.find_spec(m)) for m in mods}
+        _paths = [
+            PROJECT_ROOT / '.google' / 'token.json',
+            PROJECT_ROOT / '.google' / 'credentials.json',
+            PROJECT_ROOT / '.google' / 'gmail_token.json',
+            Path.home() / '.credentials' / 'gmail.json',
+            Path.home() / '.google' / 'token.json',
+        ]
+        status['token_exists'] = any(p.exists() for p in _paths)
+        status['auth_error'] = GMAIL_AUTH_ERROR
+    except Exception as e:
+        status = {'auth_error': repr(e)}
     report = {
         'timestamp': int(time.time()),
         'active': active,
@@ -834,6 +848,7 @@ def _llm_readiness_report() -> dict:
         'has_api_key': bool(api_key),
         'model': model if active else 'not-configured',
         'llm_tailor_enabled': bool(LLM_TAILOR_ENABLED),
+        'local_gmail_modules': status,
     }
     try:
         LLM_READINESS_REPORT.parent.mkdir(parents=True, exist_ok=True)
