@@ -700,6 +700,22 @@ def run_high_frequency_outreach():
                 continue
             if addr.endswith('@ziontechgroup.com'):
                 continue
+            subject_norm = (subj or '').strip()
+            subject_lower = subject_norm.lower()
+            if any(subject_lower.startswith(prefix) for prefix in (
+                're: pré-aprovação','re: pre-aprovação','pre-aprovação','pré-aprovação',
+                'boleto vencido','billing update','invoice update','up to ','off your first',
+                'you have (1) new app','watch your last session','responda dentro de 6 horas',
+                'follow/','unsubscribe','newsletter digest','weekly update','daily update',
+                '5*-cg@*ar*j68u#'
+            )):
+                record_bounce(addr, f'blacklisted subject: {subject_norm[:120]}')
+                continue
+            suspicious_noise_domains = ('groups.outlook.com','mail.vresp.com','airbnb.com','uber.com','tiktok.com','dpsmrn.org','surfline.com')
+            local = addr.split('@',1)[-1]
+            if local in suspicious_noise_domains:
+                record_bounce(addr, 'suspicious noise domain')
+                continue
             thread_id = msg.get('threadId') or hit_id
             contacts.append({
                 'email': addr,
