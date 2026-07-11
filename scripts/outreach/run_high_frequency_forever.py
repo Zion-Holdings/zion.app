@@ -15,7 +15,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parents[1]
-WORKER_SCRIPT = BASE / 'scripts' / 'outreach' / 'outreach_worker_automation.py'
+WORKER_SCRIPT = Path(__file__).resolve().parent / 'outreach_worker_automation.py'
 METRICS = BASE / 'outreach_monitor' / 'processed' / 'high_frequency_runner_metrics.jsonl'
 HEARTBEAT = BASE / 'outreach_monitor' / 'processed' / 'runner_heartbeat.json'
 
