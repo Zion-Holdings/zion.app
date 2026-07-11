@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Zion AI Demand Forecasting',
   description:
     'Forecast demand with ML models that factor in seasonality, promotions, and external signals.',
-  alternates: { canonical: '/zion-ai-demand-forecasting' },
+  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-demand-forecasting' },
 };
 
 export default function Page() {

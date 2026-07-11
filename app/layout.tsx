@@ -1,6 +1,5 @@
 import React, { ReactNode } from 'react';
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
 import SkipLink from './components/SkipLink';
 import EnhancedSkipLink from './components/EnhancedSkipLink';
 import Header from './components/Header';
@@ -21,10 +20,10 @@ import ErrorTracker from './components/ErrorTracker';
 import FieldPerformanceCollector from './components/FieldPerformanceCollector';
 import FloatingAgentStatus from './components/FloatingAgentStatus';
 import { AutoJsonLd } from './hooks/useAutoJsonLdPage';
+import GlobalErrorBoundary from './GlobalErrorBoundary';
 import './globals.css';
 
 export const siteUrl = 'https://ziontechgroup.com';
-const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
@@ -109,7 +108,7 @@ export default function RootLayout({
           <link rel="preconnect" href="https://www.googletagmanager.com" />
           <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         </head>
-        <body className={`${inter.className} antialiased`}>
+        <body className="antialiased font-sans">
           <Analytics />
           <CtaTracking />
           <div className="flex min-h-screen flex-col bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950">
@@ -117,11 +116,13 @@ export default function RootLayout({
             <ReadingProgressBar />
             <Header />
             <main className="relative z-10 flex-1" id="main-content" tabIndex={-1} role="main">
-              {children}
+              <GlobalErrorBoundary>
+                {children}
+              </GlobalErrorBoundary>
             </main>
             <Footer />
             <BackToTop />
-            <AiSolutionsArchitectWidget />
+
             <AIChatWidget />
             <AIExperienceLoader />
             <StickyMobileCTA />

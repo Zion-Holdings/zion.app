@@ -93,8 +93,12 @@ def append_sent(record: dict):
 
 def send_mail(to_addr, subject, body, html=None):
     sent = _load_sent_set()
-    if (to_addr or '').lower() and subject:
-        if ((to_addr).lower(), subject.strip()) in sent:
+    to_key = (to_addr or '').lower()
+    subj_key = (subject or '').strip()
+    if to_key and subj_key:
+        if (to_key, subj_key) in sent:
+            return None, 'duplicate'
+        if (to_key, subj_key.lower()) in sent:
             return None, 'duplicate'
     raw_email_lines = [
         'From: kleber@ziontechgroup.com',
@@ -123,6 +127,16 @@ def send_mail(to_addr, subject, body, html=None):
             'thread_id': tid,
             'provider': 'gmail_api',
         })
+        _append_outreach_log({
+            'ts': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+            'event': 'send',
+            'to': to_addr,
+            'subject': subject,
+            'message_id': mid,
+            'thread_id': tid,
+            'provider': 'gmail_api',
+            'status': 'sent',
+        })
     except Exception:
         pass
     return mid, tid
@@ -131,20 +145,25 @@ def send_mail(to_addr, subject, body, html=None):
 def _tailor_message(chat_fn, r):
     subject = r.get('subject', '') or ''
     body = r.get('body', '') or ''
-    if not body:
+    thread_body = r.get('thread_body') or body
+    if not thread_body:
         return r
     company = r.get('company_name') or r.get('name') or ''
     website = r.get('website') or 'https://ziontechgroup.com'
     contact = r.get('display_name') or r.get('recipient') or r.get('to') or ''
     primary_services = ', '.join(r.get('service_references_primary', []) or [])
     prompt = (
-        "Rewrite this outreach email into a concise, personalized Portuguese message from Kleber Garcia Alcatrão, CEO of Zion Tech Group. "
-        "Keep the tone friendly, professional, and creative. Do not invent facts. "
-        "Highlight: new AI/IT managed services, free tools/services at https://ziontechgroup.com, and a clear CTA to explore or schedule at https://calendly.com/kleber-ziontechgroup. "
-        "Close with a mutually beneficial partnership angle.\n\n"
-        f"Valid recipient: {contact}\n"
-        f"Company: {company}\nWebsite: {website}\nPrimary IT focus: {primary_services}\n"
-        f"Subject: {subject}\nBody:\n{body}\n"
+        "You are Kleber Garcia Alcatrão, CEO of Zion Tech Group. "
+        "Rewrite the following outreach reply into a concise, personalized continuation. "
+        "Use the same language as the client thread; if mixed, prefer Portuguese with brief English where natural. "
+        "Tone: friendly, professional, creative, CEO-level. Do not invent facts or promises. "
+        "Structure: 1) short thanks for the past collaboration/opportunity, "
+        "2) 2-3 concrete mutually beneficial next-step ideas tailored to the conversation, "
+        "3) clear CTA to schedule at https://calendly.com/kleber-ziontechgroup, "
+        "4) invitation to visit https://ziontechgroup.com for new AI services and free tools.\n\n"
+        f"Recipient: {contact}\n"
+        f"Company: {company}\nWebsite: {website}\nContext/IT focus: {primary_services}\n"
+        f"Thread excerpt:\n{thread_body[:4000]}\n"
     )
     messages = [
         {"role": "system", "content": "You are a helpful assistant that rewrites business emails concisely."},

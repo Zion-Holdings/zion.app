@@ -1,75 +1,31 @@
-import type { Metadata } from 'next';
+import { Metadata } from 'next';
 import Link from 'next/link';
-import ArticleStructuredData from '@/components/ArticleStructuredData';
-import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
-import CTABand from '@/components/CTABand';
 
 export const metadata: Metadata = {
-  title: 'AI Data Lakehouse & Analytics Pipelines | Zion Tech Group',
-  description:
-    'Unify structured and unstructured data with AI-native lakehouse pipelines. Faster analytics, governed data, and real-time insight delivery for modern enterprises.',
-  alternates: { canonical: '/services/ai-data-lakehouse-pipelines' },
+  title: 'AI Data Lakehouse Pipelines | Zion Tech Group',
+  description: 'Unified data lakehouse pipelines for batch, streaming, and ML workloads. AI-assisted ingestion, governance, and analytics on open table formats.',
 };
 
-export default function Page() {
+export default function AIDataLakehousePipelinesPage() {
   return (
-    <article className="mx-auto max-w-5xl px-6 py-16">
-      <SiteBreadcrumbs
-        items={[
-          { label: 'Home', href: '/' },
-          { label: 'Services', href: '/services' },
-          { label: 'AI Data Lakehouse & Analytics Pipelines' },
-        ]}
-      />
-      <ArticleStructuredData
-        title={metadata.title as string}
-        description={metadata.description as string}
-        canonical={`${process.env.NEXT_PUBLIC_SITE_URL || 'https://ziontechgroup.com'}/services/ai-data-lakehouse-pipelines`}
-        author="Zion Tech Group"
-      />
-
-      <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-        AI Data Lakehouse & Analytics Pipelines
-      </h1>
-      <p className="mt-4 text-lg text-slate-300">
-        Modern analytics needs modern infrastructure: unified ingestion, governed storage,
-        and AI-assisted curation.
+    <article className="max-w-4xl mx-auto px-6 py-16 leading-relaxed">
+      <h1 className="text-4xl font-bold mb-6">AI Data Lakehouse Pipelines</h1>
+      <p className="text-lg mb-8">
+        Modern data platforms need batch, streaming, and ML pipelines in one place. We design lakehouse pipelines on open table formats with AI-assisted quality controls.
       </p>
-
-      <section className="mt-10 space-y-4 text-slate-300">
-        <h2 className="text-2xl font-semibold text-white">What we deliver</h2>
-        <ul className="list-disc space-y-2 pl-6">
-          <li>Unified batch + streaming ingestion from APIs, SaaS, and on-prem.</li>
-          <li>Lakehouse architecture with governed access and policy enforcement.</li>
-          <li>Curated semantic layers for downstream BI and ML.</li>
-          <li>Real-time dashboards with anomaly detection and alerting.</li>
-          <li>Cost governance, lifecycle management, and retention policies.</li>
-        </ul>
-      </section>
-
-      <section className="mt-10 space-y-4 text-slate-300">
-        <h2 className="text-2xl font-semibold text-white">Why it matters</h2>
-        <p>
-          Organizations move faster when analytics is reliable, self-serve, and governed.
-          We reduce pipeline debt while increasing trust in data products.
-        </p>
-      </section>
-
-      <section className="mt-10 space-y-4 text-slate-300">
-        <h2 className="text-2xl font-semibold text-white">Engagement options</h2>
-        <p>
-          Start with a pipeline audit and maturity roadmap, then scale with an embedded
-          delivery pod. We also offer managed optimization and cost governance.
-        </p>
-      </section>
-
-      <CTABand
-        title="Ready to modernize your analytics pipeline?"
-        primaryHref="https://calendly.com/kleber-ziontechgroup"
-        primaryLabel="Schedule a call"
-        secondaryHref="https://ziontechgroup.com"
-        secondaryLabel="Explore more AI services"
-      />
+      <h2 className="text-2xl font-semibold mt-10 mb-4">What we deliver</h2>
+      <ul className="list-disc pl-6 mb-6 space-y-2">
+        <li>Open-table-format lakehouse with ACID transactions and time travel</li>
+        <li>Batch and streaming ingestion pipelines with exactly-once delivery</li>
+        <li>AI-assisted anomaly detection, schema enforcement, and data contracts</li>
+        <li>BI and ML feature-store connectors for analytics and model training</li>
+        <li>Cost governance, lineage, and policy automation across cloud object stores</li>
+      </ul>
+      <div className="flex flex-wrap gap-4">
+        <Link href="/services" className="underline text-blue-600">Explore services</Link>
+        <Link href="/contact" className="underline text-blue-600">Schedule a consult</Link>
+        <Link href="https://calendly.com/kleber-ziontechgroup" className="underline text-blue-600" target="_blank" rel="noreferrer">Book a call</Link>
+      </div>
     </article>
   );
 }

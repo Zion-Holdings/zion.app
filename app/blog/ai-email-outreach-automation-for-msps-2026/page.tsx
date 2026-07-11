@@ -30,9 +30,9 @@ export default function AIEmailOutreachAutomationForMSPs() {
       />
       <SiteBreadcrumbs
         items={[
-          { name: 'Home', href: '/' },
-          { name: 'Blog', href: '/blog' },
-          { name: 'AI Email Outreach Automation for MSPs', href: '/blog/ai-email-outreach-automation-for-msps-2026' }
+          { label: 'Home', href: '/' },
+          { label: 'Blog', href: '/blog' },
+          { label: 'AI Email Outreach Automation for MSPs', href: '/blog/ai-email-outreach-automation-for-msps-2026' }
         ]}
       />
       <div className="max-w-4xl mx-auto px-4 py-8">

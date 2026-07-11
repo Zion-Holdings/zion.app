@@ -6,7 +6,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata: Metadata = {
   title: 'AI Observability for Enterprise IT Teams | Zion Tech Group',
   description: 'AI observability patterns for enterprise IT teams in 2026: metrics, tracing, cost control, and incident response. Free tools and templates from Zion Tech Group.',
-  alternates: { canonical: '/blog/ai-observability-for-enterprise-it-teams-2026/' },
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-observability-for-enterprise-it-teams-2026/' },
   openGraph: {
     title: 'AI Observability for Enterprise IT Teams',
     description: 'AI observability patterns for enterprise IT teams: metrics, tracing, cost control, and incident response.',

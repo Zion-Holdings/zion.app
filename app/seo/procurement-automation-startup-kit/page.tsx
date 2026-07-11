@@ -1,7 +1,7 @@
 export const metadata = {
   title: 'Procurement Automation Startup Kit | Zion Tech Group',
   description: 'Procurement automation startup kit with vendor intake workflows, request templates, approval chains, and free starter scripts from Zion Tech Group.',
-  alternates: { canonical: '/procurement-automation-startup-kit' }
+  alternates: { canonical: 'https://ziontechgroup.com/procurement-automation-startup-kit' }
 };
 
 export default function Page() {

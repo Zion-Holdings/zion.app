@@ -312,6 +312,14 @@ def main():
                     mark_labeled(thread_id, sent_label_id)
                 except Exception:
                     pass
+            if thread_id:
+                try:
+                    thread = gmail_thread_get(thread_id)
+                    msg_ids = [m.get('id') for m in thread if m.get('id')]
+                    if msg_ids and hot_label_id:
+                        gmail_batch_modify({'ids': msg_ids}, removeLabelIds=[hot_label_id])
+                except Exception:
+                    pass
             _append_log({
                 'ts': _now_iso(),
                 'event': 'hot_followup_sent',

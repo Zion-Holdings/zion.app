@@ -1,5 +1,0 @@
-1:"$Sreact.fragment"
-2:I[484,[],"OutletBoundary"]
-3:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","article",null,{"className":"container-page py-20","children":[["$","h1",null,{"className":"text-4xl font-bold mb-4 text-white","children":"AI Platform Engineering: 2026 Services Guide"}],["$","div",null,{"className":"text-sm text-slate-500 mb-8","children":"Published: 2026-07-07"}],["$","div",null,{"className":"prose prose-invert max-w-none text-slate-300 leading-relaxed","dangerouslySetInnerHTML":{"__html":"\n<p>AI platform engineering services should reduce internal tooling sprawl while improving reliability and developer experience.</p>\n<h3>Key service areas</h3>\n<ul>\n<li>Developer onboarding automation</li>\n<li>Service catalog and self-service infrastructure</li>\n<li>Monitoring, SLOs, and runbook automation</li>\n<li>Security and compliance guardrails</li>\n</ul>\n<p><a href=\"/contact\">Discuss a platform engineering engagement</a></p>\n"}}]]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"zion-tech-group-v1"}
-4:null

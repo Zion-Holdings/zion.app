@@ -6,7 +6,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata: Metadata = {
   title: 'AI IT Asset Discovery and Lifecycle Automation 2026 | Zion Tech Group',
   description: 'AI IT asset discovery and lifecycle automation guide for MSPs and IT teams in 2026. Improve visibility, compliance, and renewal management with AI-driven workflows.',
-  alternates: { canonical: '/services/ai-it-asset-discovery-and-lifecycle-automation' },
+  alternates: { canonical: 'https://ziontechgroup.com/services/ai-it-asset-discovery-and-lifecycle-automation' },
 };
 
 export default function ServicePage() {

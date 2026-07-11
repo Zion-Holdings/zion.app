@@ -26,6 +26,12 @@ walk(docsDir, docsDir);
 walk(rootDir, rootDir);
 
 const EXTERNAL_HOSTS = new Set(['www.googletagmanager.com','www.google-analytics.com','www.linkedin.com','twitter.com','github.com','calendly.com','fonts.googleapis.com','fonts.gstatic.com','cdn.jsdelivr.net','unpkg.com','cdnjs.cloudflare.com']);
+const PATH_ALIASES = new Map([
+  ['/services/cloud-cost-optimization-platform/', '/services/cloud-cost-optimization-service/'],
+  ['/ai/demo/', '/ai-lab/'],
+  ['/new-ai-services/', '/docs/new-ai-services/']
+]);
+const TEMPLATE_GUARD = /\$\{|\{SITE\}/i;
 
 function isExternal(link) {
   try {
@@ -38,8 +44,20 @@ function isExternal(link) {
   }
 }
 
+function resolveLink(link) {
+  if (!link.startsWith('/')) return link;
+  let pathname = link.split('?', 1)[0].split('#', 1)[0].replace(/\/+$/, '') + '/';
+  if (PATH_ALIASES.has(pathname)) {
+    const alias = PATH_ALIASES.get(pathname);
+    const suffix = link.slice(pathname.length - 1);
+    return alias + suffix;
+  }
+  return link;
+}
+
 function toTarget(link) {
   try {
+    link = resolveLink(link);
     const resolved = new URL(link, BASE);
     if (resolved.host !== new URL(BASE).host) return null;
     let rel = resolved.pathname.split('?', 1)[0].split('#', 1)[0].replace(/^\/+/, '');
@@ -59,9 +77,7 @@ function toTarget(link) {
 
 function checkUrl(target) {
   return new Promise((resolve) => {
-    const req = https.request(target, { method: 'HEAD', timeout: 10000 }, (res) => {
-      resolve(res.statusCode);
-    });
+    const req = https.request(target, { method: 'HEAD', timeout: 10000 }, (res) => resolve(res.statusCode));
     req.on('error', () => resolve(0));
     req.on('timeout', () => { req.destroy(); resolve(0); });
     req.end();
@@ -81,6 +97,7 @@ async function run() {
     while ((m = hrefRegex.exec(content)) !== null) {
       const link = m[1];
       if (!link || link.startsWith('javascript:') || link.startsWith('mailto:') || link.startsWith('tel:') || link.startsWith('#') || link.startsWith('/_next/') || link.startsWith('_next/')) continue;
+      if (TEMPLATE_GUARD.test(link)) continue;
       if (isExternal(link)) continue;
       const target = toTarget(link);
       if (!target) continue;
@@ -90,11 +107,8 @@ async function run() {
       queue.push(key);
     }
   }
-
   const active = [];
-  for (let i = 0; i < Math.min(CONCURRENCY, queue.length); i++) {
-    active.push(processChunk(queue, i, CONCURRENCY));
-  }
+  for (let i = 0; i < Math.min(CONCURRENCY, queue.length); i++) active.push(processChunk(queue, i, CONCURRENCY));
   await Promise.all(active);
 
   const report = { generatedAt: new Date().toISOString(), base: BASE, totalFiles: htmlFiles.length, totalChecked: checked.size, brokenCount: broken.length, broken: broken.slice(0, 200) };
@@ -110,9 +124,7 @@ async function processChunk(items, start, step) {
     if (checked.has(target)) continue;
     const status = await checkUrl(target);
     checked.set(target, status);
-    if (status < 200 || status >= 400) {
-      broken.push({ target, status });
-    }
+    if (status < 200 || status >= 400) broken.push({ target, status });
     await new Promise(r => setTimeout(r, DELAY_MS));
   }
 }

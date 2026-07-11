@@ -5,7 +5,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Data Analytics & BI',
   description: 'Executive BI dashboards, predictive forecasting, embedded analytics, and self-serve analytics platforms.',
-  alternates: { canonical: '/analytics' },};
+  alternates: { canonical: 'https://ziontechgroup.com/analytics' },};
 
 export default function Page() {
   return (

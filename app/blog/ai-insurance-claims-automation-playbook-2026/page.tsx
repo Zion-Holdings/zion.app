@@ -6,7 +6,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata: Metadata = {
   title: 'AI Insurance Claims Automation Playbook 2026 | Zion Tech Group',
   description: 'Practical AI insurance claims automation playbook for carriers, brokers, and insurtechs. Free workflows, validation patterns, and implementation guidance from Zion Tech Group.',
-  alternates: { canonical: '/blog/ai-insurance-claims-automation-playbook-2026/' },
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-insurance-claims-automation-playbook-2026/' },
   openGraph: {
     title: 'AI Insurance Claims Automation Playbook 2026',
     description: 'Practical AI insurance claims automation playbook for carriers, brokers, and insurtechs.',

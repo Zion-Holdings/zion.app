@@ -6,7 +6,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata: Metadata = {
   title: 'AI SOC Automation and Threat Detection in 2026 | Zion Tech Group',
   description: 'AI SOC automation and threat detection playbook for IT teams in 2026. Free tools, workflows, and implementation patterns from Zion Tech Group.',
-  alternates: { canonical: '/blog/ai-soc-automation-and-threat-detection-in-2026/' },
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-soc-automation-and-threat-detection-in-2026/' },
   openGraph: {
     title: 'AI SOC Automation and Threat Detection in 2026',
     description: 'AI SOC automation and threat detection playbook for IT teams in 2026.',

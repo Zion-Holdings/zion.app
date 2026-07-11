@@ -749,9 +749,9 @@ export const itServices: Service[] = [
     features: ['Technology strategy & roadmap development','Vendor evaluation & negotiation','IT budgeting & cost optimization','Security posture assessment & improvement','Engineering team structure & hiring guidance','Board-level technology presentations','Monthly strategy sessions','Emergency technology consultation'],
     benefits: ['C-level expertise at a fraction of the cost','Strategic technology direction without full-time hire','Reduce IT spend while improving capabilities','Confident technology decisions with expert guidance'],
     pricing: {basic:'$2,000/mo', pro:'$4,500/mo', enterprise:'$8,000/mo'},
-    contactInfo: {website:'/services/vcio', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    contactInfo: {website:'/services/vCIO/', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '👔',
-    href: '/services/vcio',
+    href: '/services/vCIO/',
     popular: true,
     category: 'it',
     industry: 'IT Leadership',
@@ -1089,9 +1089,9 @@ export const securityServices: Service[] = [
     features: ['Single Sign-On (SSO) - SAML, OIDC','Multi-Factor Authentication (MFA)','Role-Based Access Control (RBAC)','User provisioning/deprovisioning (SCIM)','Conditional access policies','Directory integration (AD, LDAP, HRIS)','Access reviews & compliance reports','Privileged access management (PAM)'],
     benefits: ['One login for all apps - better UX, better security','Automated onboarding/offboarding reduces risk','Meet compliance (SOC 2, HIPAA) with access audits','Enforce least-privilege access automatically'],
     pricing: {basic:'$3/user/mo', pro:'$7/user/mo', enterprise:'$15/user/mo'},
-    contactInfo: {website:'/services/access-management', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
+    contactInfo: {website:'/services/identity-access-management', email:'kleber@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🔐',
-    href: '/services/access-management',
+    href: '/services/identity-access-management',
     popular: false,
     category: 'security',
     industry: 'Identity',
@@ -1405,7 +1405,7 @@ export const devOpsServices: Service[] = [
   },
 ];
 
-export const emailIntelligenceServices: Service[] = [
+export const emailIntelligenceServices = [
   {
     id: 'ai-email-triage',
     title: 'AI Email Triage & Auto-Response',
@@ -1439,14 +1439,14 @@ export const emailIntelligenceServices: Service[] = [
 ];
 
 export const allServices: Service[] = [
-  ...aiServices,
-  ...itServices,
-  ...cloudServices,
-  ...securityServices,
-  ...dataServices,
-  ...automationServices,
-  ...microSaasServices,
-  ...devOpsServices,
-  ...emailIntelligenceServices,
-  ...waveAuxServices,
+  ...(aiServices as Service[]),
+  ...(itServices as Service[]),
+  ...(cloudServices as Service[]),
+  ...(securityServices as Service[]),
+  ...(dataServices as Service[]),
+  ...(automationServices as Service[]),
+  ...(microSaasServices as Service[]),
+  ...(devOpsServices as Service[]),
+  ...(emailIntelligenceServices as Service[]),
+  ...(waveAuxServices as Service[]),
 ];

@@ -6,7 +6,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata: Metadata = {
   title: 'AI Cloud Cost Optimization and FinOps Automation for MSPs 2026 | Zion Tech Group',
   description: 'AI cloud cost optimization and FinOps automation playbook for MSPs in 2026. Cut waste, enforce budgets, and deliver transparent client spend reports with AI-driven automation.',
-  alternates: { canonical: '/services/ai-cloud-cost-optimization-and-finops-automation' },
+  alternates: { canonical: 'https://ziontechgroup.com/services/ai-cloud-cost-optimization-and-finops-automation' },
 };
 
 export default function ServicePage() {

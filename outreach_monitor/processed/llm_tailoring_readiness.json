@@ -1,0 +1,8 @@
+{
+  "timestamp": 0,
+  "active": false,
+  "has_endpoint": false,
+  "has_api_key": false,
+  "model": "not-configured",
+  "llm_tailor_enabled": false
+}

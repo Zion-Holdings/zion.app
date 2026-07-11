@@ -5,46 +5,30 @@ import { useState } from 'react';
 
 const DOCK_ITEMS = [
   {
-    id: 'agent-monitoring',
-    href: '/agents-monitoring',
-    emoji: '⚡',
-    label: 'AI Agents Live',
-    action: 'nav',
-    color: 'from-purple-500 to-pink-500',
-    priority: true,
-  },
-  {
-    id: 'agent-dashboard',
-    href: '/dashboard',
-    emoji: '🖥️',
-    label: 'Ops Dashboard',
-    action: 'nav',
-    color: 'from-violet-500 to-purple-500',
-    priority: true,
-  },
-  {
-    id: 'search',
-    href: '#',
-    emoji: '🔍',
-    label: 'Search',
-    action: 'search',
+    id: 'consultation',
+    href: 'https://calendly.com/kleber-ziontechgroup',
+    emoji: '📅',
+    label: 'Book Consultation',
+    action: 'external',
     color: 'from-blue-500 to-cyan-500',
+    priority: true,
   },
   {
-    id: 'testimonials',
-    href: '/#testimonials',
-    emoji: '⭐',
-    label: 'What Clients Say',
-    action: 'anchor',
-    color: 'from-amber-500 to-yellow-500',
-  },
-  {
-    id: 'configurator',
-    href: '/configurator',
-    emoji: '⚙️',
-    label: 'Get Your Proposal',
+    id: 'ai-readiness',
+    href: '/ai/ai-readiness-assessment',
+    emoji: '🧠',
+    label: 'Free AI Assessment',
     action: 'nav',
     color: 'from-purple-500 to-pink-500',
+    priority: true,
+  },
+  {
+    id: 'contact',
+    href: '/contact',
+    emoji: '✉️',
+    label: 'Contact Us',
+    action: 'nav',
+    color: 'from-red-500 to-orange-500',
   },
   {
     id: 'services',
@@ -55,20 +39,20 @@ const DOCK_ITEMS = [
     color: 'from-green-500 to-emerald-500',
   },
   {
-    id: 'health-check',
-    href: '/health-dashboard/',
-    emoji: '🏥',
-    label: 'Service Statistics',
+    id: 'ai-services',
+    href: '/ai-services',
+    emoji: '🤖',
+    label: 'AI Services',
     action: 'nav',
-    color: 'from-emerald-500 to-green-500',
+    color: 'from-violet-500 to-purple-500',
   },
   {
-    id: 'contact',
-    href: '/contact',
-    emoji: '✉️',
-    label: 'Contact Us',
+    id: 'agents',
+    href: '/agents-monitoring',
+    emoji: '⚡',
+    label: 'AI Agents Live',
     action: 'nav',
-    color: 'from-red-500 to-orange-500',
+    color: 'from-pink-500 to-rose-500',
   },
 ];
 
@@ -86,8 +70,9 @@ export default function FloatingActionDock() {
       setExpanded(false);
       return;
     }
-    if (item.action === 'nav') {
+    if (item.action === 'external') {
       setExpanded(false);
+      window.open(item.href, '_blank', 'noopener,noreferrer');
       return;
     }
     setExpanded(false);
@@ -131,6 +116,22 @@ export default function FloatingActionDock() {
                   )}
                 </div>
               ) : null;
+            }
+            if (item.action === 'external') {
+              return (
+                <button
+                  key={item.id}
+                  onClick={() => doAction(item)}
+                  className={`group flex items-center gap-3 rounded-2xl px-4 py-2.5 shadow-xl transition-all duration-200 max-w-[260px] backdrop-blur-xl bg-gradient-to-r from-blue-900/90 to-cyan-900/90 border border-blue-500/50 hover:border-blue-400 shadow-blue-500/20`}
+                >
+                  <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-base shrink-0">
+                    {item.emoji}
+                  </div>
+                  <span className="text-sm font-medium transition-colors whitespace-nowrap text-blue-200 group-hover:text-white">
+                    {item.label}
+                  </span>
+                </button>
+              );
             }
             return (
               <Link

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Zion Historical Email Miner - Termux-safe.
-Uses gmail_search(all_folders=True) to discover new prospect emails from sent/inbox threads.
+Single-source query list for high-frequency/all-folder mining.
 Writes new leads to lead-crm/all-leads.json with status='discovered'.
 """
 import sys, json, re, datetime, time
@@ -13,92 +13,59 @@ sys.path.insert(0, str(REPO))
 sys.path.insert(0, str(REPO / 'commands'))
 from google_workspace import gmail_search
 
+try:
+    from lib.llm_client import chat as llm_chat
+except Exception:
+    llm_chat = None
+
 PROSPECTS_FILE = LEAD_DIR / 'all-leads.json'
 MINED_FILE = LEAD_DIR / 'historical_miner_results.json'
 MINER_LOG = LEAD_DIR / 'miner_log.json'
+HEALTH_MONITOR = LEAD_DIR / 'miner_health.json'
+#LABEL_CACHE_FILE = LEAD_DIR / 'label_cache.json'
 
 QUERIES = [
-    'in:anywhere subject:parceria',
-    'in:anywhere subject:proposta',
-    'in:anywhere subject:orçamento',
-    'in:anywhere subject:reunião',
-    'in:anywhere subject:diagnóstico',
-    'in:anywhere "Zion Tech Group"',
-    'in:anywhere "ziontechgroup.com"',
-    'in:anywhere subject:automação',
-    'in:anywhere subject:incident response',
-    'in:anywhere subject:finops',
-    'in:anywhere subject:managed services',
-    'in:anywhere subject:devops',
-    'in:anywhere subject:sase',
-    'in:anywhere subject:low-code',
-    'in:anywhere subject:platform engineering',
-    'in:anywhere subject:AI services',
-    'in:anywhere subject:contact center intelligence',
-    'in:anywhere subject:email reply intelligence',
-    'in:anywhere subject:document intelligence',
-    'in:anywhere subject:security operations assistant',
+    'subject:parceria',
+    'subject:proposta',
+    'subject:orçamento',
+    'subject:reunião',
+    'subject:diagnóstico',
+    '"Zion Tech Group"',
+    '"ziontechgroup.com"',
+    'subject:automação',
+    'subject:"incident response"',
+    'subject:managed services',
+    'subject:devops',
+    'subject:sase',
+    'subject:"platform engineering"',
+    'subject:"AI services"',
+    '"contact center intelligence"',
+    '"document intelligence"',
+    'subject:"security operations assistant"',
+    'subject:readiness assessment',
+    'subject:free tools',
+    'subject:cost optimization',
+    'subject:channel partner',
+    'subject:vendor partnership',
+    'subject:observability',
+    'subject:integration',
+    'subject:outsourcing',
+    'subject:managed cloud',
+    'subject:"AI consulting"',
+    'subject:"AI implementation"',
+    'subject:"AI strategy"',
+    'subject:data lakehouse',
+    'subject:AIOps',
 ]
 
-EXCLUDE_DOMAINS = {
-    'gov.br','sp.gov.br','rj.gov.br','es.gov.br','unicamp.br','fgv.br',
-    'pbh.gov.br','prodemge.gov.br','cge.rj.gov.br',
-    'docusign.net','wordpress.com','wordpress.net','google.com','github.com',
-    'youcanbook.me','updates.coursiv.co',
-    'airbnb.com','booking.com','expedia.com','hotels.com','tripadvisor.com',
-    'airbnb.co.uk','airbnb.co.za','airbnb.com.au','airbnb.co.in',
-    'airbnb.ca','airbnb.fr','airbnb.de','airbnb.es','airbnb.it',
-    'airbnb.nl','airbnb.be','airbnb.at','airbnb.ch','airbnb.se','airbnb.no','airbnb.dk','airbnb.fi',
-    'airbnb.co.nz','airbnb.co.jp','airbnb.kr','airbnb.co.za',
-    'stays.net','stayz.com','homeaway.com','vrbo.com',
-    'linkedin.com','twitter.com','x.com','instagram.com','facebook.com',
-    'youtube.com','reddit.com','pinterest.com','tiktok.com',
-    'amazon.com','apple.com','microsoft.com','netflix.com',
-}
-DEEP_QUERIES = [
-    'in:anywhere subject:parceria',
-    'in:anywhere subject:proposta',
-    'in:anywhere subject:orçamento',
-    'in:anywhere subject:reunião',
-    'in:anywhere subject:diagnóstico',
-    'in:anywhere "Zion Tech Group"',
-    'in:anywhere "ziontechgroup.com"',
-    'in:anywhere subject:automação',
-    'in:anywhere subject:incident response',
-    'in:anywhere subject:finops',
-    'in:anywhere subject:managed services',
-    'in:anywhere subject:devops',
-    'in:anywhere subject:sase',
-    'in:anywhere subject:low-code',
-    'in:anywhere subject:platform engineering',
-    'in:anywhere subject:AI services',
-    'in:anywhere subject:contact center intelligence',
-    'in:anywhere subject:email reply intelligence',
-    'in:anywhere subject:document intelligence',
-    'in:anywhere subject:security operations assistant',
-    'in:anywhere subject:readiness assessment',
-    'in:anywhere subject:free tools',
-    'in:anywhere subject:cost optimization',
-    'in:anywhere subject:channel partner',
-    'in:anywhere subject:vendor partnership',
-    'in:anywhere subject:observability',
-    'in:anywhere subject:integration',
-    'in:anywhere subject:outsourcing',
-    'in:anywhere subject:outsourcing vs in-house',
-    'in:anywhere subject:managed cloud',
-    'in:anywhere subject:AI consulting',
-    'in:anywhere subject:AI implementation',
-    'in:anywhere subject:AI platform',
-    'in:anywhere subject:AI strategy',
-    'in:anywhere subject:data lakehouse',
-    'in:anywhere subject:AIOps',
-]
-EMAIL_RE = re.compile(r'[\w\.-]+@[\w\.-]+\.\w+')
+EMAIL_RE = re.compile(r'[\w\.-]+@[\w\.-]+\.[A-Za-z]{2,}')
 MAX_RESULTS_PER_QUERY = 10
-MIN_CONFIDENCE = 1
-HEALTH_MONITOR = LEAD_DIR / 'miner_health.json'
-QUERY_TIMEOUT_SECONDS = 8
-def now_iso():
+QUERY_TIMEOUT_SECONDS = 3
+LABEL_CACHE_TTL_SECONDS = 60 * 20
+FAST_MODE = True
+
+
+def now_iso() -> str:
     return datetime.datetime.now(datetime.timezone.utc).isoformat()
 
 
@@ -125,6 +92,54 @@ def append_log(entry: dict):
     save_json(MINER_LOG, data)
 
 
+def classify_prospect(email: str, source_query: str) -> dict:
+    domain = (email.split('@')[-1] or '').lower()
+    is_generic = domain in {
+        'gmail.com', 'hotmail.com', 'outlook.com', 'yahoo.com', 'yahoo.com.br',
+        'icloud.com', 'live.com', 'ymail.com',
+    }
+    is_invalid = (domain or '').startswith('[') or (domain or '').endswith('.invalid') or domain == 'blocked.invalid'
+    is_placeholder = domain in {
+        'cybersec.ai','cybersec.io','cybersec.co','cybersec.br','manag.ai','develope.ai','servi.ai','servi.co','servi.br',
+        'integ.ai','integ.br','integ.co','integ.com','enterpri.ai','enterpri.br','enterpri.co','enterpri.com',
+        'pro.ai','pro.br','pro.co','pro.com','digital.ai','digital.br','digital.co','digital.io',
+        'cloudi.ai','cloudi.br','cloudi.co','cloudi.com','cloudi.io',
+    }
+    domain_score = 2 if ((domain or '') and not is_generic and not is_placeholder and not is_invalid) else 0
+    base = {
+        'to': email,
+        'name': None,
+        'subject': 'Parceria Zion Tech Group — operações e eficiência para TI',
+        'body': None,
+        'status': 'discovered',
+        'source': 'historical_email_miner',
+        'source_query': source_query,
+        'domain': domain,
+        'is_generic_provider': is_generic,
+        'is_invalid_domain': is_invalid,
+        'is_placeholder_domain': is_placeholder,
+    }
+    if llm_chat is None:
+        base['confidence'] = domain_score
+        return base
+    try:
+        ctx = (
+            "Rate this reply/value signal as 0/1/2 related to managed AI/IT services: "
+            f"{source_query} | mydomain:ziontechgroup.com"
+        )
+        resp = llm_chat([{"role": "user", "content": ctx}], provider="auto")
+        txt = (resp.get('content') or '').strip()
+        m = re.search(r"\b([0-2](?:\.\d+)?)\b", txt)
+        score = float(m.group(1)) if m else float(domain_score)
+        base['llm_provider'] = resp.get('provider')
+        base['llm_model'] = resp.get('model')
+        base['llm_reason'] = txt[:300]
+        base['confidence'] = 2 if score >= 1.5 else 1 if score >= 0.5 else 0
+    except Exception:
+        base['confidence'] = domain_score
+    return base
+
+
 def extract_contacts_metadata(msg_id: str):
     try:
         import urllib.request, json as _json
@@ -138,37 +153,11 @@ def extract_contacts_metadata(msg_id: str):
         hdr_map = {h['name'].lower(): h['value'] for h in headers}
         emails = set()
         for field in ('from', 'to', 'cc', 'bcc'):
-            val = hdr_map.get(field, '')
+            val = hdr_map.get(field, '') or ''
             emails.update(m.group(0).lower() for m in EMAIL_RE.finditer(val) if m)
         return list(emails)
     except Exception:
         return []
-
-
-def classifiy_prospect(email: str, source_query: str) -> dict:
-    domain = email.split('@')[-1].lower()
-    is_generic = domain in {'gmail.com', 'hotmail.com', 'outlook.com', 'yahoo.com', 'yahoo.com.br', 'icloud.com', 'live.com', 'ymail.com'}
-    is_invalid = domain.startswith('[') or domain.endswith('.invalid') or domain == 'blocked.invalid'
-    is_placeholder = domain in {
-        'cybersec.ai','cybersec.io','cybersec.co','cybersec.br','manag.ai','develope.ai','servi.ai','servi.co','servi.br',
-        'integ.ai','integ.br','integ.co','integ.com','enterpri.ai','enterpri.br','enterpri.co','enterpri.com','pro.ai','pro.br','pro.co',
-        'pro.com','digital.ai','digital.br','digital.co','digital.io','cloudi.ai','cloudi.br','cloudi.co','cloudi.com','cloudi.io',
-    }
-    is_noise = is_invalid or is_placeholder
-    return {
-        'to': email,
-        'name': None,
-        'subject': 'Parceria Zion Tech Group — operações e eficiência para TI',
-        'body': None,
-        'status': 'discovered',
-        'source': 'historical_email_miner',
-        'source_query': source_query,
-        'domain': domain,
-        'is_generic_provider': is_generic,
-        'is_invalid_domain': is_invalid,
-        'is_placeholder_domain': is_placeholder,
-        'confidence': 0 if (is_generic or is_noise) else 2,
-    }
 
 
 def run_miner():
@@ -187,34 +176,42 @@ def run_miner():
     new_leads = []
     mined_contacts = []
     queries_run = 0
-    active_queries = DEEP_QUERIES[:32] if len(DEEP_QUERIES) > 32 else DEEP_QUERIES
+    active_queries = QUERIES
     started = time.perf_counter()
     query_durations = []
     for q in active_queries:
+        if time.perf_counter() - started > 110:
+            append_log({'ts': now_iso(), 'event': 'miner_timeout', 'query': q, 'note': 'soft timeout reached; stopping query loop early'})
+            break
         qstart = time.perf_counter()
         queries_run += 1
         try:
             msgs = gmail_search(q, limit=MAX_RESULTS_PER_QUERY, all_folders=True)
         except Exception as e:
             append_log({'ts': now_iso(), 'event': 'search_error', 'query': q, 'error': str(e)})
-            qend = time.perf_counter()
-            query_durations.append(qend - qstart)
+            query_durations.append(time.perf_counter() - qstart)
             continue
+        if time.perf_counter() - started > 110:
+            append_log({'ts': now_iso(), 'event': 'miner_timeout', 'query': q, 'note': 'soft timeout reached after search; breaking before metadata extraction'})
+            break
         msg_ids = [m.get('id') for m in msgs if m.get('id')]
+        seen_ids = set()
         for msg_id in msg_ids:
+            if msg_id in seen_ids:
+                continue
+            seen_ids.add(msg_id)
             contacts = extract_contacts_metadata(msg_id)
             for email in contacts:
                 key = email.strip().lower()
                 if not key or key in seen:
                     continue
-                if any(key.startswith(p) for p in ['mailer-daemon', 'no-reply', 'noreply', 'notifications@github.com']):
+                if key.startswith(('mailer-daemon', 'no-reply', 'noreply', 'notifications@github.com')):
                     continue
                 seen.add(key)
-                lead = classifiy_prospect(key, q)
+                lead = classify_prospect(key, q)
                 new_leads.append(lead)
                 mined_contacts.append({'id': msg_id, 'email': key, 'query': q})
-        qend = time.perf_counter()
-        query_durations.append(qend - qstart)
+        query_durations.append(time.perf_counter() - qstart)
     elapsed = time.perf_counter() - started
 
     if new_leads:
@@ -236,7 +233,10 @@ def run_miner():
         'status': 'ok' if queries_run else 'error',
         'high_signal_leads': 0,
         'lead_quality_ratio': None,
-        'rolling': {'last_5_queries': query_durations[-5:], 'last_5_qps': [round(1/q, 4) if q else None for q in query_durations[-5:]]}
+        'rolling': {
+            'last_5_queries': query_durations[-5:],
+            'last_5_qps': [round(1/q, 4) if q else None for q in query_durations[-5:]],
+        },
     }
     try:
         save_json(HEALTH_MONITOR, health)
@@ -244,24 +244,24 @@ def run_miner():
         pass
     try:
         hist_path = LEAD_DIR / 'miner_health_history.json'
-        hist = []
-        if hist_path.exists():
-            try:
-                hist = json.loads(hist_path.read_text(encoding='utf-8'))
-            except Exception:
-                hist = []
+        hist = load_json(hist_path, [])
+        if not isinstance(hist, list):
+            hist = [hist]
         hist.append(health)
         hist = hist[-20:]
-        avg_qps = round(sum(h.get('queries_per_second') or 0 for h in hist if h.get('queries_per_second') is not None) / max(len(hist),1), 4)
-        avg_new_leads = round(sum(h.get('new_leads_added') or 0 for h in hist) / max(len(hist),1), 3)
+        avg_qps = round(sum(h.get('queries_per_second') or 0 for h in hist if h.get('queries_per_second') is not None) / max(len(hist), 1), 4)
+        avg_new_leads = round(sum(h.get('new_leads_added') or 0 for h in hist) / max(len(hist), 1), 3)
         health['high_signal_leads'] = avg_new_leads
         health['lead_quality_ratio'] = avg_qps
         hist[-1] = health
-        hist_path.write_text(json.dumps(hist, ensure_ascii=False, indent=2), encoding='utf-8')
+        save_json(hist_path, hist)
     except Exception:
         pass
-    append_log({'ts': now, 'event': 'mine_tick', **health})
-    return health
+    return {
+        'queries_run': queries_run,
+        'contacts_found': len(mined_contacts),
+        'new_leads_added': len(new_leads),
+    }
 
 
 if __name__ == '__main__':

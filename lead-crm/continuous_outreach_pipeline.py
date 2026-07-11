@@ -19,6 +19,7 @@ CANONICAL_READY = LEAD_DIR / 'outreach_ready_canonical.json'
 PIPELINE_LOG = LEAD_DIR / 'pipeline_log.json'
 SENT_CACHE = LEAD_DIR / 'pipeline_sent_cache.txt'
 CURRENT_BATCH = LEAD_DIR / 'outreach_batch_current.json'
+SUPPLEMENT_TIMEOUT = LEAD_DIR / 'replenish_circuit_breaker.until'
 sys.path.insert(0, str(REPO))
 sys.path.insert(0, str(REPO / 'commands'))
 from commands.google_workspace import gmail_search
@@ -220,6 +221,29 @@ def clear_gmail_cooldown():
         pass
 
 
+def is_supplement_blocked() -> bool:
+    try:
+        if not SUPPLEMENT_TIMEOUT.exists():
+            return False
+        txt = SUPPLEMENT_TIMEOUT.read_text(encoding='utf-8').strip()
+        if not txt:
+            return False
+        until = datetime.datetime.fromisoformat(txt.replace('Z', '+00:00'))
+        return datetime.datetime.now(datetime.timezone.utc) < until
+    except Exception:
+        return False
+
+
+def set_supplement_cooldown(minutes=10):
+    try:
+        until = (datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(minutes=minutes)).isoformat().replace('+00:00','Z')
+        SUPPLEMENT_TIMEOUT.write_text(until, encoding='utf-8')
+    except Exception:
+        pass
+
+
+
+
 def classify_gmail_error(message: str) -> str:
     msg = str(message)
     if '429' in msg or 'Too Many Requests' in msg:
@@ -354,76 +378,80 @@ def discover_next_batch(sent_keys, sent_subjects):
         batch.append(r)
         seen.add(key)
     if not batch and not blocked:
-        try:
-            import subprocess
-            miner_path = str(LEAD_DIR / 'historical_email_miner.py')
-            if not Path(miner_path).exists():
-                miner_path = str(REPO / 'lead-crm' / 'historical_email_miner.py')
-            proc = subprocess.run(['python3', miner_path],
-                                 capture_output=True, text=True, timeout=180, cwd=str(REPO))
-            append_log({'ts': now_iso(), 'event': 'miner_replenish', 'returncode': proc.returncode, 'stdout': (proc.stdout or '')[:200], 'stderr': (proc.stderr or '')[:400]})
-        except Exception as e:
-            append_log({'ts': now_iso(), 'event': 'replenish_error', 'error': str(e)})
-        try:
-            import subprocess
-            proc = subprocess.run(['python3', str(LEAD_DIR / '_run_safe_batch.py')],
-                                 capture_output=True, text=True, timeout=180, cwd=str(REPO))
-            append_log({'ts': now_iso(),
-                        'event': 'replenish',
-                        'returncode': proc.returncode,
-                        'stdout': (proc.stdout or '')[:200],
-                        'stderr': (proc.stderr or '')[:400]})
-            if proc.returncode == 0:
-                ready = load_json(CANONICAL_READY)
-                rows = (ready or {}).get('ready') or []
-                blocked = bool((ready or {}).get('send_blocked'))
-                batch = []
-                seen = set()
-                for r in rows:
-                    key = str(r.get('to') or r.get('email') or r.get('recipient') or '').strip().lower()
-                    if not key or key in seen or key in sent_keys:
-                        continue
-                    thread_id = str(r.get('thread_id') or '').strip().lower()
-                    if thread_id and thread_id in sent_thread_ids:
-                        continue
-                    batch.append(r)
-                    seen.add(key)
-                if not batch:
-                    try:
-                        prospector_path = str(LEAD_DIR / 'web_prospecting.py')
-                        if not Path(prospector_path).exists():
-                            prospector_path = str(REPO / 'lead-crm' / 'web_prospecting.py')
-                        subprocess.run(['python3', prospector_path],
-                                       capture_output=True, text=True, timeout=180, cwd=str(REPO))
-                        append_log({'ts': now_iso(), 'event': 'web_prospecting_replenish', 'prospector': prospector_path})
-                    except Exception as e:
-                        append_log({'ts': now_iso(), 'event': 'web_prospecting_error', 'error': str(e)})
-                    proc = subprocess.run(['python3', str(LEAD_DIR / '_run_safe_batch.py')],
-                                         capture_output=True, text=True, timeout=180, cwd=str(REPO))
-                    append_log({'ts': now_iso(),
-                                'event': 'replenish_after_prospecting',
-                                'returncode': proc.returncode,
-                                'stdout': (proc.stdout or '')[:200],
-                                'stderr': (proc.stderr or '')[:400]})
-                    if proc.returncode == 0:
-                        ready = load_json(CANONICAL_READY)
-                        rows = (ready or {}).get('ready') or []
-                        blocked = bool((ready or {}).get('send_blocked'))
-                        batch = []
-                        seen = set()
-                        for r in rows:
-                            key = str(r.get('to') or r.get('email') or r.get('recipient') or '').strip().lower()
-                            if not key or key in seen or key in sent_keys:
-                                continue
-                            thread_id = str(r.get('thread_id') or '').strip().lower()
-                            if thread_id and thread_id in sent_thread_ids:
-                                continue
-                            batch.append(r)
-                            seen.add(key)
-        except BrokenPipeError:
-            append_log({'ts': now_iso(), 'event': 'replenish_error', 'error': 'BrokenPipeError'})
-        except Exception as e:
-            append_log({'ts': now_iso(), 'event': 'replenish_error', 'error': str(e)})
+        if not is_supplement_blocked():
+            try:
+                import subprocess
+                miner_path = str(LEAD_DIR / 'historical_email_miner.py')
+                if not Path(miner_path).exists():
+                    miner_path = str(REPO / 'lead-crm' / 'historical_email_miner.py')
+                proc = subprocess.run(['python3', miner_path],
+                                     capture_output=True, text=True, timeout=120, cwd=str(REPO))
+                append_log({'ts': now_iso(), 'event': 'miner_replenish', 'returncode': proc.returncode, 'stdout': (proc.stdout or '')[:200], 'stderr': (proc.stderr or '')[:400]})
+            except Exception as e:
+                append_log({'ts': now_iso(), 'event': 'replenish_error', 'error': str(e)})
+            try:
+                import subprocess
+                proc = subprocess.run(['python3', str(LEAD_DIR / '_run_safe_batch.py')],
+                                     capture_output=True, text=True, timeout=120, cwd=str(REPO))
+                append_log({'ts': now_iso(),
+                            'event': 'replenish',
+                            'returncode': proc.returncode,
+                            'stdout': (proc.stdout or '')[:200],
+                            'stderr': (proc.stderr or '')[:400]})
+                if proc.returncode == 0:
+                    ready = load_json(CANONICAL_READY)
+                    rows = (ready or {}).get('ready') or []
+                    blocked = bool((ready or {}).get('send_blocked'))
+                    batch = []
+                    seen = set()
+                    for r in rows:
+                        key = str(r.get('to') or r.get('email') or r.get('recipient') or '').strip().lower()
+                        if not key or key in seen or key in sent_keys:
+                            continue
+                        thread_id = str(r.get('thread_id') or '').strip().lower()
+                        if thread_id and thread_id in sent_thread_ids:
+                            continue
+                        batch.append(r)
+                        seen.add(key)
+                    if not batch:
+                        try:
+                            prospector_path = str(LEAD_DIR / 'web_prospecting.py')
+                            if not Path(prospector_path).exists():
+                                prospector_path = str(REPO / 'lead-crm' / 'web_prospecting.py')
+                            subprocess.run(['python3', prospector_path],
+                                           capture_output=True, text=True, timeout=120, cwd=str(REPO))
+                            append_log({'ts': now_iso(), 'event': 'web_prospecting_replenish', 'prospector': prospector_path})
+                        except Exception as e:
+                            append_log({'ts': now_iso(), 'event': 'web_prospecting_error', 'error': str(e)})
+                        proc = subprocess.run(['python3', str(LEAD_DIR / '_run_safe_batch.py')],
+                                             capture_output=True, text=True, timeout=120, cwd=str(REPO))
+                        append_log({'ts': now_iso(),
+                                    'event': 'replenish_after_prospecting',
+                                    'returncode': proc.returncode,
+                                    'stdout': (proc.stdout or '')[:200],
+                                    'stderr': (proc.stderr or '')[:400]})
+                        if proc.returncode == 0:
+                            ready = load_json(CANONICAL_READY)
+                            rows = (ready or {}).get('ready') or []
+                            blocked = bool((ready or {}).get('send_blocked'))
+                            batch = []
+                            seen = set()
+                            for r in rows:
+                                key = str(r.get('to') or r.get('email') or r.get('recipient') or '').strip().lower()
+                                if not key or key in seen or key in sent_keys:
+                                    continue
+                                thread_id = str(r.get('thread_id') or '').strip().lower()
+                                if thread_id and thread_id in sent_thread_ids:
+                                    continue
+                                batch.append(r)
+                                seen.add(key)
+            except BrokenPipeError:
+                append_log({'ts': now_iso(), 'event': 'replenish_error', 'error': 'BrokenPipeError'})
+            except Exception as e:
+                append_log({'ts': now_iso(), 'event': 'replenish_error', 'error': str(e)})
+        else:
+            append_log({'ts': now_iso(), 'event': 'replenish_skipped', 'reason': 'circuit_open'})
+            set_supplement_cooldown(minutes=10)
     if blocked:
         return None
     if not batch:

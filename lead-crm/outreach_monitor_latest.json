@@ -12,14 +12,6 @@
       "datetime": "2026-07-06T15:53:25+00:00"
     },
     {
-      "id": "19f382251a9fe683",
-      "thread_id": "19f37f2af45bbced",
-      "subject": "Custom proposal for Ziontechgroup Ã¢Â€Â” ready to review",
-      "to": "commercial@ziontechgroup.com",
-      "matched": false,
-      "datetime": "2026-07-06T15:53:20+00:00"
-    },
-    {
       "id": "19f38224a7a3e1fe",
       "thread_id": "19f32d6c26ab4974",
       "subject": "Free AI readiness audit for Airbnb",
@@ -60,30 +52,6 @@
       "datetime": "2026-07-06T14:45:26+00:00"
     },
     {
-      "id": "19f37d7782b9f188",
-      "thread_id": "19f37c9d658bd1db",
-      "subject": "Ecustomize + AI fraud detection Ã¢Â€Â” reduce losses by 85%",
-      "to": "support@ecustomize.zendesk.com",
-      "matched": false,
-      "datetime": "2026-07-06T14:31:35+00:00"
-    },
-    {
-      "id": "19f37c9b9084fee6",
-      "thread_id": "19f37772a91ac3bb",
-      "subject": "Ecustomize + AI fraud detection Ã¢Â€Â” reduce losses by 85%",
-      "to": "support@ecustomize.zendesk.com",
-      "matched": false,
-      "datetime": "2026-07-06T14:16:34+00:00"
-    },
-    {
-      "id": "19f37c99fb113083",
-      "thread_id": "19f37bd10cb974ee",
-      "subject": "Boost News revenue with AI personalization",
-      "to": "support@news.surfline.com",
-      "matched": false,
-      "datetime": "2026-07-06T14:16:28+00:00"
-    },
-    {
       "id": "19f37c99856c2682",
       "thread_id": "19f37bd3e3b337b7",
       "subject": "Boost Email revenue with AI personalization",
@@ -108,44 +76,12 @@
       "datetime": "2026-07-06T13:46:22+00:00"
     },
     {
-      "id": "19f37773aceb355e",
-      "thread_id": "19f344c050ecb171",
-      "subject": "Pricelabs + AI fraud detection Ã¢Â€Â” reduce losses by 85%",
-      "to": "support@pricelabs.co",
-      "matched": false,
-      "datetime": "2026-07-06T12:46:28+00:00"
-    },
-    {
-      "id": "19f377706c2190f4",
-      "thread_id": "19f3769afd1c2c25",
-      "subject": "Ecustomize + AI fraud detection Ã¢Â€Â” reduce losses by 85%",
-      "to": "support@ecustomize.zendesk.com",
-      "matched": false,
-      "datetime": "2026-07-06T12:46:15+00:00"
-    },
-    {
       "id": "19f377700d4b8f89",
       "thread_id": "19f376a2c39dafe8",
       "subject": "Free AI readiness audit for Airbnb",
       "to": "express@airbnb.com",
       "matched": false,
       "datetime": "2026-07-06T12:46:13+00:00"
-    },
-    {
-      "id": "19f37698b90c364a",
-      "thread_id": "19f375c04caa22bc",
-      "subject": "Ecustomize + AI fraud detection Ã¢Â€Â” reduce losses by 85%",
-      "to": "support@ecustomize.zendesk.com",
-      "matched": false,
-      "datetime": "2026-07-06T12:31:31+00:00"
-    },
-    {
-      "id": "19f375be4800ea32",
-      "thread_id": "19f374031be8011a",
-      "subject": "Ecustomize + AI fraud detection Ã¢Â€Â” reduce losses by 85%",
-      "to": "support@ecustomize.zendesk.com",
-      "matched": false,
-      "datetime": "2026-07-06T12:16:36+00:00"
     },
     {
       "id": "19f375bc933a1884",
@@ -210,30 +146,6 @@
       "to": "obrigacoes@nibo.com.br",
       "matched": false,
       "datetime": "2026-07-06T10:31:17+00:00"
-    },
-    {
-      "id": "19f36e001199f1c3",
-      "thread_id": "19f36a148b742aeb",
-      "subject": "Free AI readiness audit for Datadog",
-      "to": "partners@datadog.zendesk.com",
-      "matched": false,
-      "datetime": "2026-07-06T10:01:17+00:00"
-    },
-    {
-      "id": "19f36dffaf43f3f5",
-      "thread_id": "19f36a15ec57ab3f",
-      "subject": "Free AI readiness audit for Datadog",
-      "to": "partners@datadog.zendesk.com",
-      "matched": false,
-      "datetime": "2026-07-06T10:01:16+00:00"
-    },
-    {
-      "id": "19f34516ef9b82a2",
-      "thread_id": "19f34516ef9b82a2",
-      "subject": "Parceria em ziontechgroup Ã¢Â€Â” Zion Tech Group",
-      "to": "kleber@ziontechgroup.com",
-      "matched": true,
-      "datetime": "2026-07-05T22:06:20+00:00"
     },
     {
       "id": "19f344badfff6e81",
@@ -370,14 +282,6 @@
       "to": "contact@synthflow.ai",
       "matched": false,
       "datetime": "2026-07-05T20:56:29+00:00"
-    },
-    {
-      "id": "19f341142a36c240",
-      "thread_id": "19f341142a36c240",
-      "subject": "Greeting: OlÃƒÂ¡, equipe de parcerias da OpenAI,",
-      "to": "partner-support@openai.com",
-      "matched": true,
-      "datetime": "2026-07-05T20:56:14+00:00"
     },
     {
       "id": "19f34112b2b509f0",
@@ -656,5 +560,16 @@
     "rateLimitEventsLast100": 0,
     "successfulTicksLast20": 0,
     "recommendedSource": "unknown"
-  }
+  },
+  "invalid_domain_removals": 12,
+  "invalid_domains_cleaned": [
+    "ziontechgroup.com",
+    "zendesk.com",
+    "openai.com",
+    "datadog.zendesk.com",
+    "ecustomize.zendesk.com",
+    "news.surfline.com",
+    "pricelabs.co",
+    "netbridgesase.com"
+  ]
 }

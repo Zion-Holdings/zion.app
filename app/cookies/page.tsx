@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Cookie Policy',
   description:
     'What cookies we use on ziontechgroup.com, how we use them, and how you can manage your preferences.',
-  alternates: { canonical: '/cookies' },
+  alternates: { canonical: 'https://ziontechgroup.com/cookies' },
 };
 
 export default function CookiesPage() {

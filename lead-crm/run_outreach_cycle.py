@@ -27,7 +27,7 @@ def main():
     log = {'ts': ts, 'steps': {}}
 
     # 1) Mine
-    rc, out, err = run('python3 lead-crm/historical_email_miner.py', timeout=240)
+    rc, out, err = run('python3 lead-crm/historical_email_miner.py', timeout=120)
     log['steps']['miner'] = {'rc': rc, 'stdout': out, 'stderr': err[:500]}
 
     # 2) Rebuild queue
@@ -35,13 +35,13 @@ def main():
     log['steps']['queue_rebuild'] = {'rc': rc, 'stdout': out, 'stderr': err[:500]}
 
     # 3) Tailor: prefer LLM path, record real coverage metrics from final tailored file
-    rc_llm, out_llm, err_llm = run('python3 lead-crm/tailor_ready_with_llm.py', timeout=220)
+    rc_llm, out_llm, err_llm = run('python3 lead-crm/tailor_ready_with_llm.py', timeout=140)
     used_llm = False
     if rc_llm == 0 and out_llm:
         rc, out, err = rc_llm, out_llm, err_llm
         used_llm = True
     else:
-        rc, out, err = run('python3 lead-crm/tailor_ready_fast.py', timeout=200)
+        rc, out, err = run('python3 lead-crm/tailor_ready_fast.py', timeout=120)
         log['steps']['tailor_backup'] = {'llm_rc': rc_llm, 'llm_stdout': out_llm[:200], 'llm_stderr': err_llm[:200]}
     log['steps']['tailor'] = {'rc': rc, 'stdout': out, 'stderr': err[:500], 'used_llm': used_llm}
 

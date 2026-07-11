@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Zion AI Customer Success',
   description:
     'Proactively identify at-risk accounts and drive expansion with AI-powered health scoring and playbooks.',
-  alternates: { canonical: '/zion-ai-customer-success' },
+  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-customer-success' },
 };
 
 export default function Page() {

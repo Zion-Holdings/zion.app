@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Zion AI Workforce Analytics | Zion Tech Group',
   description:
     'Analyze workforce productivity, attrition risk, and headcount planning with predictive insights.',
-  alternates: { canonical: '/zion-ai-workforce-analytics' },
+  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-workforce-analytics' },
 };
 
 export default function Page() {

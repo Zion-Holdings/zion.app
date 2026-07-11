@@ -6,7 +6,8 @@
   "packageManager": "npm@10.9.8",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build --webpack",
+    "build:ci": "next build --webpack",
     "build:check": "npm run type-check && npm run build",
     "start": "next start",
     "lint": "next lint",
@@ -30,7 +31,8 @@
     "build-storybook": "storybook build",
     "build:win": "node scripts/windows-build-guard.cjs && next build",
     "deploy:verify": "node scripts/verify-deploy.cjs",
-    "rsc:guard": "echo 'rsc:guard ok'"
+    "rsc:guard": "echo 'rsc:guard ok'",
+    "lighthouse:production": "npx lighthouse https://ziontechgroup.com --chrome-flags='--headless --no-sandbox --disable-gpu' --output=json --output-path=automation/reports/lighthouse-production-latest.json"
   },
   "dependencies": {
     "@sendgrid/mail": "^8.1.6",
@@ -75,5 +77,8 @@
     "typescript": "^6.0.3",
     "web-vitals": "^5.2.0",
     "yargs": "^18.0.0"
+  },
+  "engines": {
+    "node": "20"
   }
 }

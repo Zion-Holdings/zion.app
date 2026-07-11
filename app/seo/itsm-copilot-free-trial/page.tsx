@@ -1,7 +1,7 @@
 export const metadata = {
   title: 'ITSM Copilot Free Trial | Zion Tech Group',
   description: 'Start an ITSM copilot free trial to evaluate AI-assisted ticketing, knowledge retrieval, change support, and service desk automation.',
-  alternates: { canonical: '/itsm-copilot-free-trial' }
+  alternates: { canonical: 'https://ziontechgroup.com/itsm-copilot-free-trial' }
 };
 
 export default function Page() {

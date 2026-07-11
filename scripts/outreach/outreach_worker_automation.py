@@ -1,8 +1,14 @@
 import sys, base64, json, time, os, re
 from pathlib import Path
+import json as _json
+import time as _time
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+LLM_READINESS_REPORT = BASE_DIR / 'outreach_monitor' / 'processed' / 'llm_tailoring_readiness.json'
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 
+<<<<<<< HEAD
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent.parent
 _google_scripts = PROJECT_ROOT / '.hermes' / 'skills' / 'productivity' / 'google-workspace' / 'scripts'
@@ -17,16 +23,58 @@ except Exception as e:
     GMAIL_AUTH_ERROR = repr(e)
 
 BASE_DIR = PROJECT_ROOT
+=======
+sys.path.insert(0, r'C:\Users\Zion\AppData\Local\hermes\skills\productivity\google-workspace\scripts')
+GMAIL_AUTH_ERROR = None
+service = None
+
+def _init_gmail_service():
+    global service, GMAIL_AUTH_ERROR
+    try:
+        from google_api import build_service
+        service = build_service('gmail', 'v1')
+        GMAIL_AUTH_ERROR = None
+    except Exception as e:
+        service = None
+        GMAIL_AUTH_ERROR = repr(e)
+
+try:
+    _init_gmail_service()
+except Exception:
+    pass
+
+BASE_DIR = Path('/c/Users/Zion/tmp/zion-clone-test2')
+>>>>>>> 54b214ca74983241150d4d0d42bc3d3f5fead1d6
 DEDUP_DIR = BASE_DIR / 'outreach_monitor' / 'processed'
 DEDUP_DIR.mkdir(parents=True, exist_ok=True)
 STATE_FILE = DEDUP_DIR / 'global_dedup_state.json'
 LEDGER_FILE = DEDUP_DIR / 'sent_ledger.jsonl'
 BOUNCE_HISTORY_FILE = DEDUP_DIR / 'bounce_history.jsonl'
 
+_GMAIL_API_TIMEOUT = 15
+
+
+def _timed_gmail_call(request):
+    try:
+        from concurrent.futures import ThreadPoolExecutor
+    except Exception:
+        ThreadPoolExecutor = None
+
+    def _execute(req):
+        return req.execute()
+
+    if ThreadPoolExecutor is None:
+        return _execute(request)
+    with ThreadPoolExecutor(max_workers=1) as ex:
+        fut = ex.submit(_execute, request)
+        return fut.result(timeout=_GMAIL_API_TIMEOUT)
+
+
 FORBIDDEN_ADDR_PREFIXES = (
     'no-reply','noreply','mailer-daemon','postmaster','notifications@github.com',
     'support@','press@','info@','sales@','team@','hello@','hi@','marketing@',
-    'commercial@','service delivery','account manager','comunicaciones@',
+    'commercial@','service delivery','account manager','comunicaciones@','undisclosed-recipients',
+    'calendar-notification@google.com','welcome@supabase.com',
 )
 FORBIDDEN_DOMAIN_SUBSTRINGS = (
     'servi.co','servi.io','servi.ai','manag.co','manag.io','manag.ai','manag.br','manag.com',
@@ -34,16 +82,24 @@ FORBIDDEN_DOMAIN_SUBSTRINGS = (
     'datadog','mercadobitcoin','suzano.com.br',
 )
 MAX_AGE_DAYS = 180
+DEDUP_COOLDOWN_SECONDS = 24 * 3600  # 24 hours
 SEND_REQUIRES_ALIVE_THREAD = True
-LLM_TAILOR_ENABLED = bool(os.getenv('ZION_LLM_API_ENDPOINT') and os.getenv('ZION_LLM_API_KEY') and os.getenv('ZION_LLM_MODEL'))
-LLM_API_ENDPOINT = os.getenv('ZION_LLM_API_ENDPOINT') or os.getenv('LLM_API_ENDPOINT')
-LLM_API_KEY = os.getenv('ZION_LLM_API_KEY') or os.getenv('LLM_API_KEY')
-LLM_MODEL = os.getenv('ZION_LLM_MODEL') or 'gpt-4o-mini'
+LLM_TAILOR_ENABLED = bool(
+    (os.getenv('ZION_LLM_API_ENDPOINT') and os.getenv('ZION_LLM_API_KEY') and os.getenv('ZION_LLM_MODEL')) or
+    os.getenv('OPENROUTER_API_KEY') or
+    os.getenv('GROQ_API_KEY') or
+    os.getenv('GEMINI_API_KEY')
+)
+LLM_API_ENDPOINT = os.getenv('ZION_LLM_API_ENDPOINT') or os.getenv('LLM_API_ENDPOINT') or os.getenv('OPENROUTER_API_ENDPOINT') or os.getenv('GROQ_API_ENDPOINT') or os.getenv('GEMINI_API_ENDPOINT')
+LLM_API_KEY = os.getenv('ZION_LLM_API_KEY') or os.getenv('LLM_API_KEY') or os.getenv('OPENROUTER_API_KEY') or os.getenv('GROQ_API_KEY') or os.getenv('GEMINI_API_KEY')
+LLM_MODEL = os.getenv('ZION_LLM_MODEL') or os.getenv('LLM_MODEL') or os.getenv('OPENROUTER_MODEL') or os.getenv('GROQ_MODEL') or os.getenv('GEMINI_MODEL') or 'openai/gpt-4o-mini'
+LLM_FALLBACK_MODELS = [m.strip() for m in os.getenv('ZION_LLM_FALLBACK_MODELS', '').split(',') if m.strip()]
 
 FORBIDDEN_ADDR_PREFIXES = (
     'no-reply','noreply','mailer-daemon','postmaster','notifications@github.com',
     'support@','press@','info@','sales@','team@','hello@','hi@','marketing@',
-    'commercial@','service delivery','account manager','comunicaciones@',
+    'commercial@','service delivery','account manager','comunicaciones@','undisclosed-recipients',
+    'calendar-notification@google.com','welcome@supabase.com',
 )
 FORBIDDEN_DOMAIN_SUBSTRINGS = (
     'servi.co','servi.io','servi.ai','manag.co','manag.io','manag.ai','manag.br','manag.com',
@@ -133,25 +189,128 @@ def mark_seen_message_id(message_id):
     state['seen_message_ids'][message_id] = int(time.time())
     save_state(state)
 
-def search_all_folders(q, max_results=20):
-    resp = service.users().messages().list(userId='me', q=q, maxResults=max_results).execute()
-    items = resp.get('messages', [])
+def _load_hot_followup_ledger_ids() -> tuple[set[str], set[str]]:
+    blocked_threads: set[str] = set()
+    blocked_message_ids: set[str] = set()
+    try:
+        p = BASE_DIR / 'outreach_monitor' / 'processed' / 'hot_followup_reply_ledger.jsonl'
+        with p.open('r', encoding='utf-8') as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    obj = json.loads(line)
+                except Exception:
+                    continue
+                tid = obj.get('thread_id') or ''
+                mid = obj.get('message_id') or ''
+                if tid:
+                    blocked_threads.add(tid)
+                if mid:
+                    blocked_message_ids.add(mid)
+    except Exception:
+        pass
+    return blocked_threads, blocked_message_ids
+
+
+def _load_hot_followup_ledger_contacts():
     out = []
-    for item in items:
+    try:
+        p = BASE_DIR / 'outreach_monitor' / 'processed' / 'hot_followup_reply_ledger.jsonl'
+        seen = set()
+        with p.open('r', encoding='utf-8') as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    obj = json.loads(line)
+                except Exception:
+                    continue
+                to_addr = (obj.get('to') or '').strip()
+                if not to_addr or '@' not in to_addr or to_addr.lower().endswith('@ziontechgroup.com'):
+                    continue
+                if 'undisclosed-recipients' in to_addr.lower():
+                    continue
+                local, _, domain = to_addr.partition('@')
+                if not local or not domain:
+                    continue
+                domain = domain.lower()
+                if any(domain.endswith(bad) for bad in ('.groups.outlook.com', '.mail.vresp.com', '.airbnb.com', '.uber.com', '.tiktok.com', '.dpsmrn.org', '.surfline.com')):
+                    continue
+                if to_addr in seen:
+                    continue
+                seen.add(to_addr)
+                subj = obj.get('subject') or 'Next steps'
+                tid = obj.get('thread_id') or ''
+                out.append({
+                    'email': to_addr,
+                    'name': local.replace('.', ' ').title(),
+                    'company': domain.split('.')[0].title(),
+                    'thread_id': tid,
+                    'thread_subject': subj,
+                })
+    except Exception:
+        pass
+    return out[:200]
+
+
+def search_all_folders(q, maxResults=20):
+    # High-frequency safe wrapper: runs every Gmail call under a timeout
+    # and scans the same query across common mail scopes to approximate
+    # "all folders" behavior.
+    queries = [q]
+    try:
+        from concurrent.futures import ThreadPoolExecutor
+    except Exception:
+        ThreadPoolExecutor = None
+
+    def _execute(request):
+        return request.execute()
+
+    def _timed(request):
+        if ThreadPoolExecutor is None:
+            return _execute(request)
+        with ThreadPoolExecutor(max_workers=1) as ex:
+            fut = ex.submit(_execute, request)
+            return fut.result(timeout=_GMAIL_API_TIMEOUT)
+
+    best = []
+    seen_ids = set()
+    seen_threads = set()
+    for qtry in queries:
         try:
-            msg = service.users().messages().get(userId='me', id=item['id'], format='metadata', metadataHeaders=['From','Subject','Date']).execute()
+            if service is None:
+                continue
+            resp = _timed(service.users().messages().list(userId='me', q=qtry, maxResults=maxResults))
         except Exception:
             continue
-        headers = {h['name']: h['value'] for h in msg.get('payload', {}).get('headers', [])}
-        out.append({
-            'id': msg['id'],
-            'threadId': msg.get('threadId'),
-            'from': headers.get('From', ''),
-            'subject': headers.get('Subject', ''),
-            'date': headers.get('Date', ''),
-            'snippet': msg.get('snippet', ''),
-        })
-    return out
+        items = resp.get('messages', []) or []
+        for item in items:
+            mid = item.get('id')
+            tid = item.get('threadId')
+            if not mid or mid in seen_ids:
+                continue
+            if tid and tid in seen_threads:
+                continue
+            try:
+                msg = _timed(service.users().messages().get(userId='me', id=mid, format='metadata', metadataHeaders=['From','Subject','Date','Thread-Id']))
+            except Exception:
+                continue
+            seen_ids.add(msg.get('id'))
+            if msg.get('threadId'):
+                seen_threads.add(msg['threadId'])
+            headers = {h['name']: h['value'] for h in msg.get('payload', {}).get('headers', [])}
+            best.append({
+                'id': msg['id'],
+                'threadId': msg.get('threadId'),
+                'from': headers.get('From', ''),
+                'subject': headers.get('Subject', ''),
+                'date': headers.get('Date', ''),
+                'snippet': msg.get('snippet', ''),
+            })
+    return best
 
 def resolve_thread_id(email, subject_hint=None):
     queries = []
@@ -162,24 +321,37 @@ def resolve_thread_id(email, subject_hint=None):
         queries += [f'{base} newer_than:30d', f'{base}']
     hits = []
     for q in queries:
-        hits = search_all_folders(q, max_results=10)
+        hits = search_all_folders(q, maxResults=10)
         if hits:
             break
     if hits:
         return hits[0].get('threadId') or hits[0].get('id')
     return None
 
-def probe_thread_alive(thread_id):
+def probe_thread_alive(thread_id, _seen=None):
     if not thread_id:
         return False
-    try:
-        service.users().threads().get(userId='me', id=thread_id).execute()
-        return True
-    except Exception:
+    if _seen is None:
+        _seen = set()
+    if thread_id in _seen:
         return False
+    _seen.add(thread_id)
+    try:
+        t = _timed_gmail_call(service.users().threads().get(userId='me', id=thread_id, format='metadata', metadataHeaders=['From','Subject']))
+        if not t:
+            return False
+        messages = t.get('messages') or []
+        if messages:
+            return True
+        resp = _timed_gmail_call(service.users().messages().list(userId='me', q=f'threadId:{thread_id} in:anywhere', maxResults=5))
+        if resp and resp.get('messages'):
+            return True
+    except Exception:
+        pass
+    return False
 
 def get_message_text(msg_id):
-    msg = service.users().messages().get(userId='me', id=msg_id, format='full').execute()
+    msg = _timed_gmail_call(service.users().messages().get(userId='me', id=msg_id, format='full'))
     payload = msg.get('payload', {})
     data = payload.get('body', {}).get('data')
     if data:
@@ -222,81 +394,201 @@ def _message_is_too_old(date_hdr: str, max_age_days: int = 180) -> bool:
         return False
 
 def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, language: str) -> str:
-    if not LLM_TAILOR_ENABLED or not LLM_API_ENDPOINT or not LLM_API_KEY:
+    endpoint = LLM_API_ENDPOINT or os.getenv('OPENROUTER_API_ENDPOINT') or os.getenv('GROQ_API_ENDPOINT') or os.getenv('GEMINI_API_ENDPOINT')
+    api_key = LLM_API_KEY or os.getenv('OPENROUTER_API_KEY') or os.getenv('GROQ_API_KEY') or os.getenv('GEMINI_API_KEY')
+    model = os.getenv('LLM_MODEL') or os.getenv('ZION_LLM_MODEL') or os.getenv('OPENROUTER_MODEL') or os.getenv('GROQ_MODEL') or os.getenv('GEMINI_MODEL') or 'openai/gpt-4o-mini'
+    if not endpoint or not api_key:
         return ''
+    trimmed = (thread_text or '').strip()
+    trimmed = trimmed[:2400]
     prompt = (
-        "You are the CEO of Zion Tech Group. Draft a short, friendly-professional, specific reply. "
-        f"Contact: {contact_name}. Company: {company_name}. Language: {language}. "
-        "Context:\n" + (thread_text[:1600])
-        + "\nRules: include Calendly https://calendly.com/kleber-ziontechgroup, "
-        "https://ziontechgroup.com, 1-3 mutually beneficial ideas, and a soft close. "
-        "Avoid generic filler."
+        "You write short, human, business-friendly CEO emails. "
+        f"Recipient: {contact_name} from {company_name}. Language: {language}.\n\n"
+        "Use ONLY facts present in the thread. Be specific: name 1 concrete next-step tied to Zion's AI services. "
+        "Do not use generic filler like 'let's keep in touch' or 'I look forward to hearing from you'.\n\n"
+        "Required content:\n"
+        f"- Thank them specifically for this past collaboration. Name the project area when possible.\n"
+        "- 2 concrete mutually beneficial next ideas for AI services.\n"
+        f"- Calendly: https://calendly.com/kleber-ziontechgroup\n"
+        f"- Website: https://ziontechgroup.com and mention free tools/services\n"
+        "- Close by offering a call/meeting next week.\n\n"
+        "Thread context:\n"
+        f"{trimmed}\n"
     )
     headers = {
-        'Authorization': f"Bearer {LLM_API_KEY}",
+        'Authorization': f"Bearer {api_key}",
         'Content-Type': 'application/json',
     }
     body = json.dumps({
-        'model': LLM_MODEL,
+        'model': model,
         'messages': [
-            {'role': 'system', 'content': 'You write short, specific, business-friendly emails.'},
+            {'role': 'system', 'content': 'Write one complete email. No signature block. Friendly but professional CEO tone.'},
             {'role': 'user', 'content': prompt},
         ],
-        'temperature': 0.4,
-        'max_tokens': 400,
+        'temperature': 0.35,
+        'max_tokens': 480,
     }).encode('utf-8')
     last_err = None
-    for attempt in range(3):
-        try:
-            import urllib.request
-            req = urllib.request.Request(LLM_API_ENDPOINT, data=body, headers=headers, method='POST')
-            with urllib.request.urlopen(req, timeout=30) as resp:
-                data = json.loads(resp.read().decode('utf-8'))
-            reply = ((data.get('choices') or [{}])[0].get('message') or {}).get('content')
-            if isinstance(reply, str) and reply.strip():
-                return reply.strip()
-        except Exception as e:
-            last_err = repr(e)
-            print('LLM_ERR', last_err, f'attempt={attempt+1}')
-            time.sleep(2 ** attempt)
+    models = [model] + [m.strip() for m in (os.getenv('ZION_LLM_FALLBACK_MODELS') or '').split(',') if m.strip()]
+    required = [
+        'calendly.com/kleber-ziontechgroup',
+        'ziontechgroup.com',
+        'free',
+        'pleasure working with you',
+    ]
+    for m in models:
+        for attempt in range(3):
+            try:
+                import urllib.request
+                payload = json.loads(body.decode('utf-8'))
+                payload['model'] = m
+                req = urllib.request.Request(endpoint, data=json.dumps(payload).encode('utf-8'), headers=headers, method='POST')
+                with urllib.request.urlopen(req, timeout=35) as resp:
+                    data = json.loads(resp.read().decode('utf-8'))
+                reply = ((data.get('choices') or [{}])[0].get('message') or {}).get('content')
+                if not isinstance(reply, str) or not reply.strip():
+                    continue
+                reply = reply.strip()
+                lower = reply.lower()
+                if not all(r in lower for r in required):
+                    print('LLM_MISSING_REQUIRED_RETRY', m, flush=True)
+                    continue
+                return reply
+            except Exception as e:
+                last_err = repr(e)
+                print('LLM_ERR', m, last_err, f'attempt={attempt+1}', flush=True)
+                time.sleep(1.8 if attempt else 0.25)
     print('LLM_FINAL_ERR', last_err)
     return ''
 
-def _personalize(thread_text: str, contact_name: str, company_name: str, language: str) -> dict:
+_PROJECT_KEYWORDS = {
+    'aiops': ['monitor', 'observability', 'incident', 'opsgenie', 'pagerduty', 'metric', 'trace', 'log', 'alert', 'runbook', 'oncall', 'reliability', 'mttr', 'change'],
+    'inbound': ['support', 'ticket', 'helpdesk', 'chatbot', 'knowledge base', 'sla', 'queue', 'escalation', 'csat', 'self-service', 'ivr', 'voicebot', 'whatsapp'],
+    'security': ['identity', 'iam', 'ztna', 'sase', 'endpoint', 'edr', 'xdr', 'siem', 'soar', 'vpn', 'zero trust', 'dlp', 'firewall', 'threat'],
+    'cloud': ['migration', 'aws', 'azure', 'gcp', 'cloud', 'kubernetes', 'container', 'serverless', 'cost', 'finops', 'paas', 'iaas'],
+    'crm': ['crm', 'sales', 'pipeline', 'lead', 'deal', 'quote', 'proposal', 'opportunity', 'revenue', 'follow-up', 'negotiation'],
+    'data': ['dashboard', 'report', 'analytics', 'data', 'sql', 'pipeline', 'etl', 'warehouse', 'bi', 'visualization', 'forecast'],
+    'project': ['roadmap', 'milestone', 'delivery', 'vendor', 'procurement', 'bid', 'tender', 'licitation', 'purchase', 'rfp'],
+    'coverage': ['latam', 'emea', 'americas', 'portugal', 'brazil', 'spain', 'usa', 'global', 'region', 'international', 'english', 'portuguese', 'spanish']
+}
+
+
+def _extract_context_ideas(thread_text: str, language: str, company_name: str) -> dict:
     t = (thread_text or '').lower()
-    invoice = any(w in t for w in ['invoice','billing','invoice','pagamento','boleto','fatura'])
-    ticket = any(w in t for w in ['ticket','support','issue','erro','bug','incident','suporte'])
-    urgent = any(w in t for w in ['urgent','priority','p1','escalation','emergency','crítico'])
-    upsell = any(w in t for w in ['partnership','parceria','revenue','growth','crescimento','sell','proposal','proposta'])
+    found = []
+    for topic, keywords in _PROJECT_KEYWORDS.items():
+        if any(k in t for k in keywords):
+            found.append(topic)
+    if not found:
+        found = ['aiops', 'inbound', 'coverage']
+
+    selected = found[:3]
     if language == 'pt':
-        return {
-            'opening': f'Obrigado pela conversa com a {company_name}.',
-            'need': 'Suporte e operações com IA reduzem custos e melhoram o tempo de resposta',
-            'pillar_1': 'Automação de suporte e operações com IA para reduzir custos e tempo de resposta.',
-            'pillar_2': 'Integração de ferramentas AI/IT no seu fluxo atual, sem trocar toda a stack.',
-            'pillar_3': 'Um piloto gratuito de readiness audit para mapear ganhos rápidos e ROI visível.',
-            'cta': 'Se fizer sentido, podemos avançar por e-mail ou por uma call rápida:',
-            'closing': 'Fico à disposição para criarmos algo mútuo e rápido.',
-        }
+        return _build_pt(selected, company_name)
     if language == 'es':
-        return {
-            'opening': f'Gracias por la conversación con {company_name}.',
-            'need': 'Automatizar soporte y operaciones con IA reduce costos y acorta tiempos de respuesta',
-            'pillar_1': 'Automatización de soporte y operaciones con IA para reducir costos y tiempos.',
-            'pillar_2': 'Integración de herramientas AI/IT en tu flujo actual, sin reemplazar toda la stack.',
-            'pillar_3': 'Un piloto gratuito de readiness audit para identificar wins rápidos con ROI visible.',
-            'cta': 'Si cuadra con lo que estás evaluando, podemos avanzar por email o una llamada breve:',
-            'closing': 'Quedo atento para construir algo beneficioso para ambos.',
-        }
+        return _build_es(selected, company_name)
+    return _build_en(selected, company_name)
+
+
+def _build_pt(selected, company_name):
+    key_map = {
+        'aiops': '1) Automação de operações e resposta a incidentes com IA para reduzir MTTR e alertas ruidosas.',
+        'inbound': '2) Fluxo de atendimento inbound com IA: triagem automática, respostas consistentes e cobertura em português/espanhol/inglês.',
+        'security': '3) Integração de identidade, endpoint e acesso seguro com arquitetura zero-trust e monitoramento contínuo.',
+        'cloud': '3) Migração guiada para nuvem com governança, custo controlado e operação assistida por IA.',
+        'crm': '2) Conector inteligente entre CRM, e-mail e follow-up para avançar negociações sem perder contexto.',
+        'data': '3) Painéis e relatórios automáticos com IA para decisão comercial rápida.',
+        'project': '2) Aceleração de entregas, procurement e follow-up comercial com automação controlada.',
+        'coverage': f'3) Ampliação da cobertura com suporte internacional para {company_name}.'
+    }
+    selected_lines = [key_map[k] for k in selected if k in key_map]
+    if len(selected_lines) < 3:
+        add = [
+            '1) Automação de operações e resposta a incidentes com IA para reduzir MTTR e alertas ruidosas.',
+            '2) Conector inteligente entre CRM, e-mail e follow-up para avançar negociações.',
+            '3) Migração guiada para nuvem com governança e operação assistida por IA.'
+        ]
+        for item in add:
+            if item not in selected_lines:
+                selected_lines.append(item)
+            if len(selected_lines) == 3:
+                break
+    return {
+        'opening': f'Obrigado pela conversa com a {company_name}.',
+        'need': 'Automação com IA pode reduzir custos, melhorar resposta e proteger receita.',
+        'pillars': chr(10).join(selected_lines[:3]),
+        'cta': 'Se fizer sentido, podemos avançar por e-mail ou por uma call rápida:',
+        'closing': 'Fico à disposição para criarmos algo mútuo e rápido.'
+    }
+
+
+def _build_es(selected, company_name):
+    key_map = {
+        'aiops': '1) Automatización de operaciones y respuesta a incidentes con IA para reducir MTTR y alertas ruidosas.',
+        'inbound': '2) Flujo de atención inbound con IA: triaje automático y cobertura en portugués/español/inglés.',
+        'security': '3) Integración de identidad, endpoint y acceso seguro con arquitectura zero-trust.',
+        'cloud': '3) Migración guiada a la nube con gobernanza, costo controlado y operación asistida por IA.',
+        'crm': '2) Conector inteligente entre CRM, correo y seguimiento para avanzar negociaciones.',
+        'data': '3) Cuadros e informes automáticos con IA para decisiones comerciales rápidas.',
+        'project': '2) Aceleración de entregas, procurement y seguimiento comercial con automatización controlada.',
+        'coverage': f'3) Ampliación de cobertura con soporte internacional para {company_name}.'
+    }
+    selected_lines = [key_map[k] for k in selected if k in key_map]
+    if len(selected_lines) < 3:
+        add = [
+            '1) Automatización de operaciones y respuesta a incidentes con IA para reducir MTTR y alertas ruidosas.',
+            '2) Conector inteligente entre CRM, correo y seguimiento para avanzar negociaciones.',
+            '3) Migración guiada a la nube con gobernanza y operación asistida por IA.'
+        ]
+        for item in add:
+            if item not in selected_lines:
+                selected_lines.append(item)
+            if len(selected_lines) == 3:
+                break
+    return {
+        'opening': f'Gracias por la conversación con {company_name}.',
+        'need': 'La automatización con IA reduce costos, mejora el tiempo de respuesta y protege ingresos.',
+        'pillars': chr(10).join(selected_lines[:3]),
+        'cta': 'Si cuadra, podemos avanzar por email o una llamada breve:',
+        'closing': 'Quedo atento para construir algo beneficioso para ambos.'
+    }
+
+
+def _build_en(selected, company_name):
+    key_map = {
+        'aiops': '1) AI-assisted operations and incident response to cut MTTR and noisy alerts.',
+        'inbound': '2) AI inbound support automation with consistent triage and PT/ES/EN coverage.',
+        'security': '3) Identity, endpoint, and secure access improvements with zero-trust architecture.',
+        'cloud': '3) Guided cloud migration with cost controls and AI-assisted operations.',
+        'crm': '2) Smart CRM/email/follow-up connector to advance active opportunities.',
+        'data': '3) Automated dashboards and reporting with AI for faster business decisions.',
+        'project': '2) Faster delivery, procurement, and commercial follow-up with safe automation.',
+        'coverage': f'3) International coverage and near-you support model for {company_name}.'
+    }
+    selected_lines = [key_map[k] for k in selected if k in key_map]
+    if len(selected_lines) < 3:
+        add = [
+            '1) AI-assisted operations and incident response to cut MTTR and noisy alerts.',
+            '2) Smart CRM/email/follow-up connector to advance active opportunities.',
+            '3) Guided cloud migration with cost controls and AI-assisted operations.'
+        ]
+        for item in add:
+            if item not in selected_lines:
+                selected_lines.append(item)
+            if len(selected_lines) == 3:
+                break
     return {
         'opening': f'Thanks for the conversation with {company_name}.',
-        'need': 'AI support automation can cut response time and operational cost while protecting quality',
-        'pillar_1': 'AI support automation to cut response time and operational cost with cleaner handoffs.',
-        'pillar_2': 'Workflow integration of AI/IT tools into your current stack, with minimal disruption.',
-        'pillar_3': 'A free AI readiness audit pilot to spot quick wins and roadmap the larger rollout.',
+        'need': 'AI operations and support automation can cut response time and operational cost while protecting quality.',
+        'pillars': chr(10).join(selected_lines[:3]),
         'cta': 'If this aligns with what you’re evaluating, I’m happy to advance by email or a quick call:',
-        'closing': 'Let’s build something that benefits both teams.',
+        'closing': 'Let’s build something that benefits both teams.'
     }
+
+
+def _personalize(thread_text: str, contact_name: str, company_name: str, language: str) -> dict:
+    return _extract_context_ideas(thread_text, language, company_name)
+
 
 def _addr_is_invalid(addr: str) -> bool:
     a = addr.lower()
@@ -309,37 +601,50 @@ def _addr_is_invalid(addr: str) -> bool:
         return True
     if any(d in domain for d in ('servi','manag','legalys.com.pa','start.co','github.com','hcl.com','zendesk.com','calendly.com','datadog','mercadobitcoin','suzano.com.br')):
         return True
-    if any(local.startswith(p) for p in ('no-reply','noreply','mailer-daemon','postmaster','support@','press@','info@','sales@','team@','hello@','hi@','marketing@','commercial@','service delivery','account manager','comunicaciones@')):
+    if any(local.startswith(p) for p in ('no-reply','noreply','mailer-daemon','postmaster','support@','press@','info@','sales@','team@','hello@','hi@','marketing@','commercial@','service delivery','account manager','comunicaciones@','undisclosed-recipients')):
+        return True
+    if addr.lower() in {'undisclosed-recipients:;', 'undisclosed-recipients'}:
         return True
     return False
 
 def build_ceo_reply(contact_name, company_name, thread_text, language='en'):
-    tailored = llm_tailor_reply(thread_text, contact_name, company_name, language)
-    if tailored:
-        return tailored
+    if LLM_TAILOR_ENABLED:
+        tailored = llm_tailor_reply(thread_text, contact_name, company_name, language)
+        if tailored:
+            return tailored
     p = _personalize(thread_text, contact_name, company_name, language)
     return f"""{contact_name},
 
-{p['opening']} I really value that partnership.
+{p['opening'] if isinstance(p, dict) else 'Thanks for the conversation.'} I really value that partnership.
 
 Today Zion Tech Group is expanding into AI/IT services, and I see a few fast, mutually beneficial next steps we could explore together:
 
-1) {p['pillar_1']}
-2) {p['pillar_2']}
-3) {p['pillar_3']}
+{p['pillars'] if isinstance(p, dict) else ''}
 
-{p['cta']}
+{p['cta'] if isinstance(p, dict) else 'If this aligns, I’m happy to advance by email or a quick call.'}
 https://calendly.com/kleber-ziontechgroup
 
 You can also explore our new AI services and free tools here:
 https://ziontechgroup.com
 
-{p['closing']}
-
+{p['closing'] if isinstance(p, dict) else 'Let’s build something that benefits both teams.'}
 Kleber Garcia Alcatrão
-CEO, Zion Tech Group
 """
 
+
+def build_ceo_reply_preview(contact_name, company_name, thread_text, subject, language='en'):
+    body = build_ceo_reply(contact_name, company_name, thread_text, language=language)
+    return {
+        'to_contact': contact_name,
+        'company': company_name,
+        'subject': subject or 'New ideas for {}'.format(company_name),
+        'language': language,
+        'body': sanitize_outreach_body(body),
+        'calendly': 'https://calendly.com/kleber-ziontechgroup',
+        'website': 'https://ziontechgroup.com',
+        'free_tools_note': 'We also offer free services and tools at https://ziontechgroup.com',
+        'send_ready': bool(body and body.strip()),
+    }
 def sanitize_outreach_body(body: str) -> str:
     leaked_prefixes = [
         'got it',
@@ -402,7 +707,7 @@ def fetch_or_create_lead_from_inbox(email, thread_subject=None):
             queries.append(q)
     hit = None
     for query in queries:
-        hits = search_all_folders(query, max_results=20)
+        hits = search_all_folders(query, maxResults=20)
         if hits:
             for newest in hits:
                 if is_seen_message_id(newest['id']):
@@ -418,9 +723,51 @@ def fetch_or_create_lead_from_inbox(email, thread_subject=None):
         return None
     msg_id = hit['id']
     text = get_message_text(msg_id) or ''
+    text = (text or '').strip()
+    if not text or len(text.split()) < 8:
+        return None
+    if not any(ch.isalpha() for ch in text):
+        return None
+    generic_phrases = [
+        'boleto vencido',
+        'pré-aprovação',
+        'pre-aprovação',
+        'billing update',
+        'invoice update',
+        'up to % off',
+        'off your first',
+        'watch your last session',
+        'fale dentro de 6 horas',
+        'responda dentro de 6 horas',
+        'new app',
+        'weekly update',
+        'daily update',
+        'unsubscribe',
+    ]
+    lowered = text.lower()
+    if any(p in lowered for p in generic_phrases):
+        return None
     lang = detect_language(text)
     contact_name = email.split('@')[0].replace('.', ' ').title()
     company_name = email.split('@')[1].split('.')[0].title()
+
+    # Try extracting real display name from headers for better tailoring
+    real_contact_name = contact_name
+    real_company_name = company_name
+    try:
+        full = _timed_gmail_call(service.users().messages().get(userId='me', id=msg_id, format='metadata', metadataHeaders=['From','To','Subject']))
+        frm_hdr = next((h['value'] for h in full.get('payload',{}).get('headers',[]) if h['name']=='From'), '')
+        if frm_hdr:
+            if '<' in frm_hdr:
+                real_contact_name = frm_hdr.split('<',1)[0].strip().strip('"').strip()
+            if not real_contact_name:
+                real_contact_name = email.split('@')[0].replace('.', ' ').title()
+        domain = email.split('@',1)[1].split('.')[0] if '@' in email else company_name
+        real_company_name = domain.title()
+        contact_name = real_contact_name or contact_name
+        company_name = real_company_name or company_name
+    except Exception:
+        pass
     subject = thread_subject or hit.get('subject') or 'Next steps'
     body = build_ceo_reply(contact_name, company_name, text[:500], language=lang)
     return {
@@ -431,30 +778,107 @@ def fetch_or_create_lead_from_inbox(email, thread_subject=None):
         'lang': lang,
     }
 
+DRY_RUN = os.getenv('OUTREACH_DRY_RUN', '').lower() in ('1','true','yes')
+REQUIRES_APPROVAL = os.getenv('OUTREACH_REQUIRES_APPROVAL', 'true').lower() in ('1','true','yes')
+PENDING_APPROVAL_FILE = BASE_DIR / 'outreach_monitor' / 'processed' / 'pending_approval_queue.jsonl'
+DRY_RUN_REPORT = BASE_DIR / 'outreach_monitor' / 'processed' / 'dry_run_report.jsonl'
+
+def _ensure_report_file():
+    try:
+        p = Path(DRY_RUN_REPORT)
+        p.parent.mkdir(parents=True, exist_ok=True)
+        if not p.exists():
+            p.write_text('', encoding='utf-8')
+    except Exception:
+        pass
+
+def _ensure_pending_approval_file():
+    try:
+        p = Path(PENDING_APPROVAL_FILE)
+        p.parent.mkdir(parents=True, exist_ok=True)
+        if not p.exists():
+            p.write_text('', encoding='utf-8')
+    except Exception:
+        pass
+
+def append_pending_approval(entry: dict):
+    _ensure_pending_approval_file()
+    entry.setdefault('ts', int(time.time()))
+    try:
+        with Path(PENDING_APPROVAL_FILE).open('a', encoding='utf-8') as f:
+            f.write(json.dumps(entry, ensure_ascii=False) + '\n')
+    except Exception:
+        pass
+
+def append_dry_run_report(entry: dict):
+    _ensure_report_file()
+    entry.setdefault('ts', int(time.time()))
+    try:
+        with DRY_RUN_REPORT.open('a', encoding='utf-8') as f:
+            f.write(json.dumps(entry, ensure_ascii=False) + '\n')
+    except Exception:
+        pass
+
+def _llm_readiness_report() -> dict:
+    endpoint = LLM_API_ENDPOINT or os.getenv('OPENROUTER_API_ENDPOINT') or os.getenv('GROQ_API_ENDPOINT') or os.getenv('GEMINI_API_ENDPOINT')
+    api_key = os.getenv('ZION_LLM_API_KEY') or os.getenv('OPENROUTER_API_KEY') or os.getenv('GROQ_API_KEY') or os.getenv('GEMINI_API_KEY')
+    model = os.getenv('ZION_LLM_MODEL') or os.getenv('LLM_MODEL') or os.getenv('OPENROUTER_MODEL') or os.getenv('GROQ_MODEL') or os.getenv('GEMINI_MODEL') or 'not-configured'
+    active = bool(endpoint and api_key)
+    report = {
+        'timestamp': int(time.time()),
+        'active': active,
+        'has_endpoint': bool(endpoint),
+        'has_api_key': bool(api_key),
+        'model': model if active else 'not-configured',
+        'llm_tailor_enabled': bool(LLM_TAILOR_ENABLED),
+    }
+    try:
+        LLM_READINESS_REPORT.parent.mkdir(parents=True, exist_ok=True)
+        LLM_READINESS_REPORT.write_text(json.dumps(report, indent=2), encoding='utf-8')
+    except Exception:
+        pass
+    return report
+
+
 def run_high_frequency_outreach():
+    # If LLM creds exist, enable tailoring; otherwise rely on personalized defaults.
+    _llm_readiness_report()
+    if service is None:
+        print('AUTH_FAIL', GMAIL_AUTH_ERROR)
+        append_dry_run_report({'mode':'auth_failure','error':GMAIL_AUTH_ERROR,'ts':int(time.time())})
+        return {'sent':0,'skipped':0,'adds':0,'dead':[],'auth_error':GMAIL_AUTH_ERROR}
+    print('TRACE_START', flush=True)
+    print('LLM_TAILOR_ENABLED=', bool(LLM_TAILOR_ENABLED), 'ENDPOINT=', bool(LLM_API_ENDPOINT), flush=True)
     discovery_queries = [
-        "in:inbox -category:promotions -in:spam -in:trash newer_than:7d \"partnership\" OR \"collaboration\" OR \"proposal\"",
-        "in:inbox -category:promotions -in:spam -in:trash newer_than:7d \"AI services\" OR \"AI support\" OR \"project\"",
-        "in:inbox -category:promotions -in:spam -in:trash newer_than:7d \"interested\" OR \"next steps\" OR \"opportunity\"",
-        "in:sent -category:promotions -in:spam -in:trash older_than:30d newer_than:180d",
+        '!category:promotions !in:spam !in:trash label:"!!!hot-follow-up"',
+        'label:"!!!hot-follow-up"',
+        '!category:promotions !in:spam !in:trash "partnership" OR "collaboration" OR "proposal"',
+        '!category:promotions !in:spam !in:trash "AI services" OR "AI support" OR "project"',
+        '!category:promotions !in:spam !in:trash "interested" OR "next steps" OR "opportunity"',
+        '!category:promotions !in:spam !in:trash "integration" OR "workflow" OR "ROI"',
+        '"!!!hot-follow-up"',
     ]
+
     hit_ids = set()
     contacts = []
-    for q in discovery_queries:
+    for qi, q in enumerate(discovery_queries, 1):
+        print('TRACE_QUERY', qi, q, flush=True)
         try:
-            hits = search_all_folders(q, max_results=25)
+            hits = search_all_folders(q, maxResults=50)
         except Exception:
             hits = []
+        print('TRACE_QUERY_DONE', qi, len(hits), flush=True)
         for h in hits:
             hit_id = h.get('id')
             if not hit_id or hit_id in hit_ids:
                 continue
             hit_ids.add(hit_id)
             try:
-                msg = service.users().messages().get(userId='me', id=hit_id, format='metadata', metadataHeaders=['From','Subject','In-Reply-To']).execute()
+                msg = _timed_gmail_call(service.users().messages().get(userId='me', id=hit_id, format='metadata', metadataHeaders=['From','Subject','In-Reply-To']))
             except Exception:
                 continue
             headers = {x['name']: x['value'] for x in msg.get('payload', {}).get('headers', [])}
+
             frm = headers.get('From', '')
             subj = headers.get('Subject', '')
             if '@' not in frm:
@@ -471,6 +895,29 @@ def run_high_frequency_outreach():
             if _addr_is_invalid(addr):
                 record_bounce(addr, 'invalid addr pattern')
                 continue
+            if addr.endswith('@ziontechgroup.com'):
+                continue
+            subject_norm = (subj or '').strip()
+            subject_lower = subject_norm.lower()
+            if any(subject_lower.startswith(prefix) for prefix in (
+                're: pré-aprovação','re: pre-aprovação','pre-aprovação','pré-aprovação',
+                'boleto vencido','billing update','invoice update','up to ','off your first',
+                'you have (1) new app','watch your last session','responda dentro de 6 horas',
+                'follow/','unsubscribe','newsletter digest','weekly update','daily update',
+                '5*-cg@*ar*j68u#'
+            )):
+                record_bounce(addr, f'blacklisted subject: {subject_norm[:120]}')
+                continue
+            suspicious_noise_domains = ('groups.outlook.com','mail.vresp.com','airbnb.com','uber.com','tiktok.com','dpsmrn.org','surfline.com')
+            local_p = addr.split('@',1)[-1]
+            if local_p in suspicious_noise_domains:
+                record_bounce(addr, 'suspicious noise domain')
+                continue
+            if local_p in ('outlook.com','groups.outlook.com','yahoogroups.com','googlegroups.com'):
+                local_user = addr.split('@',1)[0]
+                if any(ch in local_user for ch in ('+','_','.')) and len(local_user) > 20:
+                    record_bounce(addr, 'broadcast group address pattern')
+                    continue
             thread_id = msg.get('threadId') or hit_id
             contacts.append({
                 'email': addr,
@@ -480,51 +927,132 @@ def run_high_frequency_outreach():
                 'thread_subject': subj or 'Next steps',
             })
 
+    if not contacts:
+        try:
+            contacts.extend(_load_hot_followup_ledger_contacts())
+        except Exception:
+            pass
+    new_subjects = set()
+    clean_contacts = []
+    internal_like_suffixes = ('.edu','.gov','.mil','.k12.ia.us','.school','.academy')
+    known_bad_school_domains = {'holyfamily.dbq.pvt.k12.ia.us'}
+    for c in contacts:
+        email = (c.get('email') or '').strip().lower()
+        if not email or '@' not in email:
+            continue
+        domain = email.split('@',1)[1]
+        local = email.split('@',1)[0]
+        if domain.endswith('ziontechgroup.com') or domain.endswith('ztg.com.br'):
+            continue
+        if any(domain.endswith(s) for s in internal_like_suffixes) or domain in known_bad_school_domains:
+            record_bounce(email, 'internal-like domain filtered')
+            continue
+        if local in ('automated',) or local.startswith('automated-'):
+            continue
+        if any(bad in local for bad in ('groups.outlook.com','mail.vresp.com','airbnb.com','uber.com','tiktok.com','dpsmrn.org','surfline.com')):
+            continue
+        subj = (c.get('thread_subject') or '').strip()
+        if subj.startswith(('Re: Pré-aprovação','Boleto vencido','Billing update','Invoice update','Up to ','Off your first')):
+            continue
+        clean_contacts.append(c)
+        new_subjects.add(subj)
+    contacts = clean_contacts[-40:]
+
     sent_count = 0
     skipped = 0
     newest_used = []
     dead = []
+    print('TRACE_CONTACTS', len(contacts), flush=True)
+    _thread_alive_cache = {}
+    def _probe_cached(tid):
+        if tid in _thread_alive_cache:
+            return _thread_alive_cache[tid]
+        ok = probe_thread_alive(tid)
+        _thread_alive_cache[tid] = ok
+        return ok
     for c in contacts:
         email = c['email']
         contact_key = email.lower()
         prospective_subject = c.get('thread_subject') or 'Next steps'
+        t0 = time.time()
+        print('CONTACT_START', email, flush=True)
         if recent_sent_exists(contact_key, within_seconds=DEDUP_COOLDOWN_SECONDS):
+            print('CONTACT_END', email, 'recent_sent', flush=True)
             skipped += 1
             continue
         if same_subject_recently_sent(contact_key, prospective_subject, within_seconds=12 * 3600):
+            print('CONTACT_END', email, 'subject_recent', flush=True)
             skipped += 1
             continue
+        print('CONTACT_DEDUP_OK', email, flush=True)
         lead = fetch_or_create_lead_from_inbox(email, prospective_subject)
+        print('CONTACT_LEAD', email, bool(lead), flush=True)
         if not lead:
-            skipped += 1
+            print('CONTACT_END', email, 'no_lead', flush=True)
             continue
         newest_used.append({'contact': email, 'msg_id': lead['msg_id'], 'lang': lead['lang']})
         thread_id = c.get('thread_id')
         if not thread_id:
             thread_id = resolve_thread_id(email, prospective_subject)
+        print('CONTACT_THREAD1', email, thread_id, flush=True)
         if not thread_id or not probe_thread_alive(thread_id):
             for alt in [lead.get('msg_id'), lead.get('thread_id')]:
                 if alt and probe_thread_alive(alt):
                     thread_id = alt
                     break
+            print('CONTACT_THREAD2', email, thread_id, flush=True)
         c = dict(c)
         c['_resolved_thread_id'] = thread_id
         if not thread_id or not probe_thread_alive(thread_id):
             dead.append({'contact': email, 'thread_id': thread_id, 'subject': prospective_subject})
+            print('CONTACT_END', email, 'dead_thread', flush=True)
             skipped += 1
             continue
         try:
             body = sanitize_outreach_body(lead['body'])
             if not body or not body.strip():
+                print('CONTACT_END', email, 'empty_body', flush=True)
                 skipped += 1
+                continue
+            if DRY_RUN:
+                record = {
+                    'mode': 'dry_run',
+                    'contact': email,
+                    'subject': lead['subject'],
+                    'thread_id': thread_id,
+                    'msg_id': lead.get('msg_id'),
+                    'lang': lead.get('lang'),
+                    'llm_tailored': bool(LLM_TAILOR_ENABLED and lead.get('body')),
+                    'dedup_last_outbound_ts': (load_state().get('contacts', {}).get(email.lower(), {}) or {}).get('last_outbound_ts'),
+                }
+                append_dry_run_report(record)
+                print('DRY_RUN_WOULD_SEND', email, lead['subject'], lead.get('msg_id'))
+                sent_count += 1
+                print('CONTACT_END', email, 'dry_sent', flush=True)
+                continue
+            if REQUIRES_APPROVAL:
+                append_pending_approval({
+                    'mode': 'pending_approval',
+                    'contact': email,
+                    'subject': lead['subject'],
+                    'thread_id': thread_id,
+                    'msg_id': lead.get('msg_id'),
+                    'lang': lead.get('lang'),
+                    'llm_tailored': bool(LLM_TAILOR_ENABLED and lead.get('body')),
+                    'dedup_last_outbound_ts': (load_state().get('contacts', {}).get(email.lower(), {}) or {}).get('last_outbound_ts'),
+                })
+                print('PENDING_APPROVAL', email, lead['subject'], lead.get('msg_id'))
+                print('CONTACT_END', email, 'pending_approval', flush=True)
                 continue
             sent = send_ceo_reply(thread_id, email, lead['subject'], body, lead['msg_id'])
             record_send(contact_key, email, lead['subject'], sent.get('id'), sent.get('threadId'), f'tailored CEO reply from inbox msg {lead["msg_id"]}')
             mark_seen_message_id(lead['msg_id'])
             sent_count += 1
+            print('CONTACT_END', email, 'live_sent', flush=True)
         except Exception as e:
-            print('SEND_ERR', email, e)
+            print('CONTACT_ERR', email, repr(e), flush=True)
             record_bounce(email, f'SEND_ERR: {e}', lead.get('msg_id'))
+            print('CONTACT_END', email, 'err', flush=True)
 
     state = load_state()
     state['last_check'] = int(time.time())
@@ -540,6 +1068,7 @@ def run_high_frequency_outreach():
     print('STATE_TS', int(time.time()))
     return {'sent': sent_count, 'skipped': skipped, 'adds': len(newest_used), 'dead': dead}
 
+
 def send_ceo_reply(thread_id, to_addr, subject, body, references_message_id):
     body = sanitize_outreach_body(body)
     msg_id_str = f"<{references_message_id}>"
@@ -547,12 +1076,27 @@ def send_ceo_reply(thread_id, to_addr, subject, body, references_message_id):
         f"From: kleber@ziontechgroup.com",
         f"To: {to_addr}",
         f"Subject: {subject}",
-        'Content-Type: text/plain; charset=utf-8',
+        "Content-Type: text/plain; charset=utf-8",
         f"References: {msg_id_str}",
         f"In-Reply-To: {msg_id_str}",
     ]
-    raw = base64.urlsafe_b64encode(("\r\n".join(raw_headers) + "\r\n\r\n" + body).encode('utf-8')).decode('utf-8')
-    return service.users().messages().send(userId='me', body={'raw': raw, 'threadId': thread_id}).execute()
+    try:
+        thread = _timed_gmail_call(service.users().threads().get(userId="me", id=thread_id, format="metadata", metadataHeaders=["To", "Cc"]))
+        messages = thread.get("messages", []) or []
+        all_cc = []
+        for m in messages:
+            h = {x["name"]: x["value"] for x in m.get("payload", {}).get("headers", [])}
+            c = h.get("Cc") or ""
+            if c and c not in all_cc:
+                all_cc.append(c)
+        cc_list = [x for x in all_cc if x and x.lower() != to_addr.lower() and x.lower() != "kleber@ziontechgroup.com"]
+        if cc_list:
+            raw_headers.append("Cc: " + ", ".join(cc_list[:10]))
+    except Exception:
+        pass
+    raw = base64.urlsafe_b64encode(("\r\n".join(raw_headers) + "\r\n\r\n" + body).encode("utf-8")).decode("utf-8")
+    return _timed_gmail_call(service.users().messages().send(userId="me", body={"raw": raw, "threadId": thread_id})).execute()
+
 
 if __name__ == '__main__':
     run_high_frequency_outreach()

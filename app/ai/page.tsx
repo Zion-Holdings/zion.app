@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { ArrowRight, Cog, Search } from 'lucide-react';
+import { ArrowRight, Cog, Search, BarChart3 } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'AI Lab',
   description:
     'Explore Zion\'s AI Lab — interactive tools and configurators for autonomous AI solutions and architecture planning.',
-  alternates: { canonical: '/ai' },};
+  alternates: { canonical: 'https://ziontechgroup.com/ai' },};
 
 const tools = [
   {
@@ -22,6 +22,13 @@ const tools = [
     description:
       'Analyze URLs for SEO, content, and technical factors. Get actionable insights on how AI could optimize your web presence.',
     icon: Search,
+  },
+  {
+    name: 'AI Readiness Assessment',
+    href: '/ai/ai-readiness-assessment',
+    description:
+      'A free guided assessment of your automation, security, cloud, and AI maturity — with practical next steps from Zion Tech Group.',
+    icon: BarChart3,
   },
 ];
 

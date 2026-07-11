@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Free IT/AI Strategy Consultation | Zion Tech Group',
   description:
     'Book a free IT/AI strategy consultation with Zion Tech Group. Same-day proposal roadmap, ROI outline, and implementation plan for your business.',
-  alternates: { canonical: '/consultation/' },
+  alternates: { canonical: 'https://ziontechgroup.com/consultation/' },
 };
 
 export default function ConsultationPage() {
