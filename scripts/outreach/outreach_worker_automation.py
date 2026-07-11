@@ -555,7 +555,17 @@ def fetch_or_create_lead_from_inbox(email, thread_subject=None):
 DRY_RUN = os.getenv('OUTREACH_DRY_RUN', '').lower() in ('1','true','yes')
 DRY_RUN_REPORT = BASE_DIR / 'outreach_monitor' / 'processed' / 'dry_run_report.jsonl'
 
+def _ensure_report_file():
+    try:
+        p = Path(DRY_RUN_REPORT)
+        p.parent.mkdir(parents=True, exist_ok=True)
+        if not p.exists():
+            p.write_text('', encoding='utf-8')
+    except Exception:
+        pass
+
 def append_dry_run_report(entry: dict):
+    _ensure_report_file()
     entry.setdefault('ts', int(time.time()))
     try:
         with DRY_RUN_REPORT.open('a', encoding='utf-8') as f:
@@ -614,6 +624,8 @@ def run_high_frequency_outreach():
             if _addr_is_invalid(addr):
                 record_bounce(addr, 'invalid addr pattern')
                 continue
+            if addr.endswith('@ziontechgroup.com'):
+                continue
             thread_id = msg.get('threadId') or hit_id
             contacts.append({
                 'email': addr,
@@ -640,34 +652,43 @@ def run_high_frequency_outreach():
         contact_key = email.lower()
         prospective_subject = c.get('thread_subject') or 'Next steps'
         t0 = time.time()
+        print('CONTACT_START', email, flush=True)
         if recent_sent_exists(contact_key, within_seconds=DEDUP_COOLDOWN_SECONDS):
+            print('CONTACT_END', email, 'recent_sent', flush=True)
             skipped += 1
             continue
         if same_subject_recently_sent(contact_key, prospective_subject, within_seconds=12 * 3600):
+            print('CONTACT_END', email, 'subject_recent', flush=True)
             skipped += 1
             continue
+        print('CONTACT_DEDUP_OK', email, flush=True)
         lead = fetch_or_create_lead_from_inbox(email, prospective_subject)
+        print('CONTACT_LEAD', email, bool(lead), flush=True)
         if not lead:
-
+            print('CONTACT_END', email, 'no_lead', flush=True)
             continue
         newest_used.append({'contact': email, 'msg_id': lead['msg_id'], 'lang': lead['lang']})
         thread_id = c.get('thread_id')
         if not thread_id:
             thread_id = resolve_thread_id(email, prospective_subject)
+        print('CONTACT_THREAD1', email, thread_id, flush=True)
         if not thread_id or not probe_thread_alive(thread_id):
             for alt in [lead.get('msg_id'), lead.get('thread_id')]:
                 if alt and probe_thread_alive(alt):
                     thread_id = alt
                     break
+            print('CONTACT_THREAD2', email, thread_id, flush=True)
         c = dict(c)
         c['_resolved_thread_id'] = thread_id
         if not thread_id or not probe_thread_alive(thread_id):
             dead.append({'contact': email, 'thread_id': thread_id, 'subject': prospective_subject})
+            print('CONTACT_END', email, 'dead_thread', flush=True)
             skipped += 1
             continue
         try:
             body = sanitize_outreach_body(lead['body'])
             if not body or not body.strip():
+                print('CONTACT_END', email, 'empty_body', flush=True)
                 skipped += 1
                 continue
             if DRY_RUN:
@@ -684,14 +705,17 @@ def run_high_frequency_outreach():
                 append_dry_run_report(record)
                 print('DRY_RUN_WOULD_SEND', email, lead['subject'], lead.get('msg_id'))
                 sent_count += 1
+                print('CONTACT_END', email, 'dry_sent', flush=True)
                 continue
             sent = send_ceo_reply(thread_id, email, lead['subject'], body, lead['msg_id'])
             record_send(contact_key, email, lead['subject'], sent.get('id'), sent.get('threadId'), f'tailored CEO reply from inbox msg {lead["msg_id"]}')
             mark_seen_message_id(lead['msg_id'])
             sent_count += 1
+            print('CONTACT_END', email, 'live_sent', flush=True)
         except Exception as e:
-            print('SEND_ERR', email, e)
+            print('CONTACT_ERR', email, repr(e), flush=True)
             record_bounce(email, f'SEND_ERR: {e}', lead.get('msg_id'))
+            print('CONTACT_END', email, 'err', flush=True)
 
     state = load_state()
     state['last_check'] = int(time.time())
