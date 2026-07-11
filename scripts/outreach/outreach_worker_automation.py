@@ -18,7 +18,8 @@ BOUNCE_HISTORY_FILE = DEDUP_DIR / 'bounce_history.jsonl'
 FORBIDDEN_ADDR_PREFIXES = (
     'no-reply','noreply','mailer-daemon','postmaster','notifications@github.com',
     'support@','press@','info@','sales@','team@','hello@','hi@','marketing@',
-    'commercial@','service delivery','account manager','comunicaciones@',
+    'commercial@','service delivery','account manager','comunicaciones@','undisclosed-recipients',
+    'calendar-notification@google.com','welcome@supabase.com',
 )
 FORBIDDEN_DOMAIN_SUBSTRINGS = (
     'servi.co','servi.io','servi.ai','manag.co','manag.io','manag.ai','manag.br','manag.com',
@@ -36,7 +37,8 @@ LLM_MODEL = os.getenv('ZION_LLM_MODEL') or 'gpt-4o-mini'
 FORBIDDEN_ADDR_PREFIXES = (
     'no-reply','noreply','mailer-daemon','postmaster','notifications@github.com',
     'support@','press@','info@','sales@','team@','hello@','hi@','marketing@',
-    'commercial@','service delivery','account manager','comunicaciones@',
+    'commercial@','service delivery','account manager','comunicaciones@','undisclosed-recipients',
+    'calendar-notification@google.com','welcome@supabase.com',
 )
 FORBIDDEN_DOMAIN_SUBSTRINGS = (
     'servi.co','servi.io','servi.ai','manag.co','manag.io','manag.ai','manag.br','manag.com',
@@ -631,12 +633,28 @@ def send_ceo_reply(thread_id, to_addr, subject, body, references_message_id):
         f"From: kleber@ziontechgroup.com",
         f"To: {to_addr}",
         f"Subject: {subject}",
-        'Content-Type: text/plain; charset=utf-8',
+        "Content-Type: text/plain; charset=utf-8",
         f"References: {msg_id_str}",
         f"In-Reply-To: {msg_id_str}",
     ]
-    raw = base64.urlsafe_b64encode(("\r\n".join(raw_headers) + "\r\n\r\n" + body).encode('utf-8')).decode('utf-8')
-    return service.users().messages().send(userId='me', body={'raw': raw, 'threadId': thread_id}).execute()
+    try:
+        thread = service.users().threads().get(userId="me", id=thread_id, format="metadata", metadataHeaders=["To", "Cc"]).execute()
+        messages = thread.get("messages", []) or []
+        all_cc = []
+        for m in messages:
+            h = {x["name"]: x["value"] for x in m.get("payload", {}).get("headers", [])}
+            c = h.get("Cc") or ""
+            if c and c not in all_cc:
+                all_cc.append(c)
+        cc_list = [x for x in all_cc if x and x.lower() != to_addr.lower() and x.lower() != "kleber@ziontechgroup.com"]
+        if cc_list:
+            raw_headers.append("Cc: " + ", ".join(cc_list[:10]))
+    except Exception:
+        pass
+    raw = base64.urlsafe_b64encode(("\r\n".join(raw_headers) + "\r\n\r\n" + body).encode("utf-8")).decode("utf-8")
+    return service.users().messages().send(userId="me", body={"raw": raw, "threadId": thread_id}).execute()
+
+
 
 if __name__ == '__main__':
     run_high_frequency_outreach()
