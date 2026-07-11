@@ -421,41 +421,89 @@ def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, lan
     print('LLM_FINAL_ERR', last_err)
     return ''
 
-def _personalize(thread_text: str, contact_name: str, company_name: str, language: str) -> dict:
+_PROJECT_KEYWORDS = {
+    'aiops': ['monitor', 'observability', 'incident', 'opsgenie', 'pagerduty', 'metric', 'trace', 'log', 'alert', 'runbook', 'oncall', 'reliability', 'mttr', 'change'],
+    'inbound': ['support', 'ticket', 'helpdesk', 'chatbot', 'knowledge base', 'sla', 'queue', 'escalation', 'csat', 'self-service', 'ivr', 'voicebot', 'whatsapp'],
+    'security': ['identity', 'iam', 'ztna', 'sase', 'endpoint', 'edr', 'xdr', 'siem', 'soar', 'vpn', 'zero trust', 'dlp', 'firewall', 'threat'],
+    'cloud': ['migration', 'aws', 'azure', 'gcp', 'cloud', 'kubernetes', 'container', 'serverless', 'cost', 'finops', 'paas', 'iaas'],
+    'crm': ['crm', 'sales', 'pipeline', 'lead', 'deal', 'quote', 'proposal', 'opportunity', 'revenue', 'follow-up', 'negotiation'],
+    'data': ['dashboard', 'report', 'analytics', 'data', 'sql', 'pipeline', 'etl', 'warehouse', 'bi', 'visualization', 'forecast'],
+    'project': ['roadmap', 'milestone', 'delivery', 'vendor', 'procurement', 'bid', 'tender', 'licitation', 'purchase', 'rfp'],
+    'coverage': ['latam', 'emea', 'americas', 'portugal', 'brazil', 'spain', 'usa', 'global', 'region', 'international', 'english', 'portuguese', 'spanish']
+}
+
+
+def _extract_context_ideas(thread_text: str, language: str, company_name: str) -> dict:
     t = (thread_text or '').lower()
-    invoice = any(w in t for w in ['invoice','billing','invoice','pagamento','boleto','fatura'])
-    ticket = any(w in t for w in ['ticket','support','issue','erro','bug','incident','suporte'])
-    urgent = any(w in t for w in ['urgent','priority','p1','escalation','emergency','crítico'])
-    upsell = any(w in t for w in ['partnership','parceria','revenue','growth','crescimento','sell','proposal','proposta'])
+    found = []
+    for topic, keywords in _PROJECT_KEYWORDS.items():
+        if any(k in t for k in keywords):
+            found.append(topic)
+    if not found:
+        found = ['aiops', 'inbound', 'coverage']
+
+    selected = found[:3]
+
     if language == 'pt':
+        ideas = {
+            'aiops': 'Automação de operações e resposta a incidentes com IA para reduzir MTTR e alertas ruidosas.',
+            'inbound': 'Fluxo de atendimento inbound com IA: triagem automática, respostas consistentes e cobertura em português/espanhol/inglês.',
+            'security': 'Integração de identidade, endpoint e acesso seguro com arquitetura zero-trust e monitoramento contínuo.',
+            'cloud': 'Migração guiada para nuvem com governança, custo controlado e operação assistida por IA.',
+            'crm': 'Conector inteligente entre CRM, e-mail e follow-up para avançar negociações sem perder contexto.',
+            'data': 'Painéis e relatórios automáticos com IA para decisão comercial rápida e acompanhamento de metas.',
+            'project': 'Aceleração de entregas, procurement e follow-up comercial com automação controlada.',
+            'coverage': f'Ampliação da cobertura com suporte internacional e operação proximada para {company_name}.'
+        }
+        pillars = '; '.join(ideas[i] for i in selected)
         return {
             'opening': f'Obrigado pela conversa com a {company_name}.',
-            'need': 'Suporte e operações com IA reduzem custos e melhoram o tempo de resposta',
-            'pillar_1': 'Automação de suporte e operações com IA para reduzir custos e tempo de resposta.',
-            'pillar_2': 'Integração de ferramentas AI/IT no seu fluxo atual, sem trocar toda a stack.',
-            'pillar_3': 'Um piloto gratuito de readiness audit para mapear ganhos rápidos e ROI visível.',
+            'need': 'Automação com IA pode reduzir custos, melhorar resposta e proteger receita.',
+            'pillars': pillars,
             'cta': 'Se fizer sentido, podemos avançar por e-mail ou por uma call rápida:',
-            'closing': 'Fico à disposição para criarmos algo mútuo e rápido.',
+            'closing': 'Fico à disposição para criarmos algo mútuo e rápido.'
         }
     if language == 'es':
+        ideas = {
+            'aiops': 'Automatización de operaciones y respuesta a incidentes con IA para reducir MTTR y alertas ruidosas.',
+            'inbound': 'Flujo de atención inbound con IA: triaje automático, respuestas consistentes y cobertura en portugués/español/inglés.',
+            'security': 'Integración de identidad, endpoint y acceso seguro con arquitectura zero-trust y monitoreo continuo.',
+            'cloud': 'Migración guiada a la nube con gobernanza, costo controlado y operación asistida por IA.',
+            'crm': 'Conector inteligente entre CRM, correo y seguimiento para avanzar negociaciones sin perder contexto.',
+            'data': 'Cuadros e informes automáticos con IA para decisiones comerciales rápidas y seguimiento de metas.',
+            'project': 'Aceleración de entregas, procurement y seguimiento comercial con automatización controlada.',
+            'coverage': f'Amplíación de cobertura con soporte internacional y operación cercana para {company_name}.'
+        }
+        pillars = '; '.join(ideas[i] for i in selected)
         return {
             'opening': f'Gracias por la conversación con {company_name}.',
-            'need': 'Automatizar soporte y operaciones con IA reduce costos y acorta tiempos de respuesta',
-            'pillar_1': 'Automatización de soporte y operaciones con IA para reducir costos y tiempos.',
-            'pillar_2': 'Integración de herramientas AI/IT en tu flujo actual, sin reemplazar toda la stack.',
-            'pillar_3': 'Un piloto gratuito de readiness audit para identificar wins rápidos con ROI visible.',
-            'cta': 'Si cuadra con lo que estás evaluando, podemos avanzar por email o una llamada breve:',
-            'closing': 'Quedo atento para construir algo beneficioso para ambos.',
+            'need': 'La automatización con IA reduce costos, mejora el tiempo de respuesta y protege ingresos.',
+            'pillars': pillars,
+            'cta': 'Si cuadra, podemos avanzar por email o una llamada breve:',
+            'closing': 'Quedo atento para construir algo beneficioso para ambos.'
         }
+    ideas = {
+        'aiops': 'AI-assisted operations and incident response to cut MTTR and noisy alerts.',
+        'inbound': 'AI inbound support automation: consistent triage, faster answers, and PT/ES/EN coverage.',
+        'security': 'Identity, endpoint, and secure access integration with zero-trust architecture.',
+        'cloud': 'Guided cloud migration with cost controls and AI-assisted operations.',
+        'crm': 'Smart CRM/email/follow-up connector to advance deals without losing context.',
+        'data': 'Automated dashboards and reporting with AI for faster business decisions.',
+        'project': 'Faster delivery, procurement, and commercial follow-up with safe automation.',
+        'coverage': f'International coverage and near-you support model for {company_name}.'
+    }
+    pillars = '; '.join(ideas[i] for i in selected)
     return {
         'opening': f'Thanks for the conversation with {company_name}.',
-        'need': 'AI support automation can cut response time and operational cost while protecting quality',
-        'pillar_1': 'AI support automation to cut response time and operational cost with cleaner handoffs.',
-        'pillar_2': 'Workflow integration of AI/IT tools into your current stack, with minimal disruption.',
-        'pillar_3': 'A free AI readiness audit pilot to spot quick wins and roadmap the larger rollout.',
+        'need': 'AI operations and support automation can cut response time and operational cost while protecting quality.',
+        'pillars': pillars,
         'cta': 'If this aligns with what you’re evaluating, I’m happy to advance by email or a quick call:',
-        'closing': 'Let’s build something that benefits both teams.',
+        'closing': 'Let’s build something that benefits both teams.'
     }
+
+
+def _personalize(thread_text: str, contact_name: str, company_name: str, language: str) -> dict:
+    return _extract_context_ideas(thread_text, language, company_name)
 
 def _addr_is_invalid(addr: str) -> bool:
     a = addr.lower()
@@ -485,9 +533,7 @@ def build_ceo_reply(contact_name, company_name, thread_text, language='en'):
 
 Today Zion Tech Group is expanding into AI/IT services, and I see a few fast, mutually beneficial next steps we could explore together:
 
-1) {p['pillar_1']}
-2) {p['pillar_2']}
-3) {p['pillar_3']}
+{p['pillars']}
 
 {p['cta']}
 https://calendly.com/kleber-ziontechgroup
@@ -496,7 +542,6 @@ You can also explore our new AI services and free tools here:
 https://ziontechgroup.com
 
 {p['closing']}
-
 Kleber Garcia Alcatrão
 CEO, Zion Tech Group
 https://ziontechgroup.com
