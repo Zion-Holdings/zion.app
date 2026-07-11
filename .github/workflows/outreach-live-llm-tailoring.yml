@@ -1,0 +1,47 @@
+name: outreach-live-llm-tailoring
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/5 * * * *"
+
+jobs:
+  outreach:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      ZION_LLM_API_ENDPOINT: ${{ secrets.ZION_LLM_API_ENDPOINT }}
+      ZION_LLM_API_KEY: ${{ secrets.ZION_LLM_API_KEY }}
+      ZION_LLM_MODEL: ${{ secrets.ZION_LLM_MODEL }}
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      OUTREACH_DRY_RUN: ${{ secrets.OUTREACH_DRY_RUN || '1' }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install Python deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install google-api-python-client google-auth google-auth-httplib2 google-auth-oauthlib requests beautifulsoup4
+
+      - name: Run outreach worker
+        run: python scripts/outreach/outreach_worker_automation.py
+
+      - name: Upload outreach reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: outreach-reports
+          path: |
+            outreach_monitor/processed/sent_ledger.jsonl
+            outreach_monitor/processed/hot_followup_reply_ledger.jsonl
+            outreach_monitor/processed/dry_run_report.jsonl
+            outreach_monitor/processed/llm_tailoring_readiness.json
+          retention-days: 7

@@ -1,5 +1,10 @@
 import sys, base64, json, time, os, re
 from pathlib import Path
+import json as _json
+import time as _time
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+LLM_READINESS_REPORT = BASE_DIR / 'outreach_monitor' / 'processed' / 'llm_tailoring_readiness.json'
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 
@@ -797,8 +802,30 @@ def append_dry_run_report(entry: dict):
     except Exception:
         pass
 
+def _llm_readiness_report() -> dict:
+    endpoint = LLM_API_ENDPOINT or os.getenv('OPENROUTER_API_ENDPOINT') or os.getenv('GROQ_API_ENDPOINT') or os.getenv('GEMINI_API_ENDPOINT')
+    api_key = os.getenv('ZION_LLM_API_KEY') or os.getenv('OPENROUTER_API_KEY') or os.getenv('GROQ_API_KEY') or os.getenv('GEMINI_API_KEY')
+    model = os.getenv('ZION_LLM_MODEL') or os.getenv('LLM_MODEL') or os.getenv('OPENROUTER_MODEL') or os.getenv('GROQ_MODEL') or os.getenv('GEMINI_MODEL') or 'not-configured'
+    active = bool(endpoint and api_key)
+    report = {
+        'timestamp': int(time.time()),
+        'active': active,
+        'has_endpoint': bool(endpoint),
+        'has_api_key': bool(api_key),
+        'model': model if active else 'not-configured',
+        'llm_tailor_enabled': bool(LLM_TAILOR_ENABLED),
+    }
+    try:
+        LLM_READINESS_REPORT.parent.mkdir(parents=True, exist_ok=True)
+        LLM_READINESS_REPORT.write_text(json.dumps(report, indent=2), encoding='utf-8')
+    except Exception:
+        pass
+    return report
+
+
 def run_high_frequency_outreach():
     # If LLM creds exist, enable tailoring; otherwise rely on personalized defaults.
+    _llm_readiness_report()
     if service is None:
         print('AUTH_FAIL', GMAIL_AUTH_ERROR)
         append_dry_run_report({'mode':'auth_failure','error':GMAIL_AUTH_ERROR,'ts':int(time.time())})

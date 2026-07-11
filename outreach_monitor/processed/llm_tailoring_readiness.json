@@ -1,16 +1,8 @@
-# LLM Tailoring Readiness Monitor
-
-This watcher is intentionally a no-op until provider credentials are present.
-
-Paths:
-- Write target: `outreach_monitor/processed/llm_tailoring_readiness.json`
-- Update this file when any supported provider env set is configured:
-  - `ZION_LLM_API_ENDPOINT`, `ZION_LLM_API_KEY`, `ZION_LLM_MODEL`
-  - or `OPENROUTER_API_KEY`
-  - or `GROQ_API_KEY`
-  - or `GEMINI_API_KEY`
-
-Best practice:
-- Add secrets via repository settings or secure runtime env
-- Keep fallback replies active during credential failure
-- Do not store raw secrets in this file or repo
+{
+  "timestamp": 0,
+  "active": false,
+  "has_endpoint": false,
+  "has_api_key": false,
+  "model": "not-configured",
+  "llm_tailor_enabled": false
+}
