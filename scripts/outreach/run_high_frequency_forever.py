@@ -44,7 +44,7 @@ def write_heartbeat(status, last_ok=False, last_error=None):
 
 def run_once():
     interval = int(os.environ.get('HIGH_FREQ_INTERVAL_SECONDS', '60'))
-    timeout = max(30, min(interval - 5, 120))
+    timeout = max(60, interval)
     env = os.environ.copy()
     try:
         proc = subprocess.run(
