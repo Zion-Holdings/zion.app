@@ -1,7 +1,7 @@
 import json, hashlib
 from pathlib import Path
 from datetime import datetime
-ROOT = Path('/c/Users/Zion/tmp/zion-clone-test')
+ROOT = Path(__file__).resolve().parent.parent
 DEDUP_DIR = ROOT / 'outreach_monitor' / 'processed'
 DEDUP_DIR.mkdir(parents=True, exist_ok=True)
 BLAST_LOG = DEDUP_DIR / 'blast_log.jsonl'

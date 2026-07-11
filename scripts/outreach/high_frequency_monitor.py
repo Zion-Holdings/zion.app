@@ -5,12 +5,15 @@ sys.path.insert(0, r'C:/Users/Zion/AppData/Local/hermes/skills/productivity/goog
 from google_api import build_service
 from googleapiclient.errors import HttpError
 
-BASE_DIR = Path('/c/Users/Zion/tmp/zion-clone-test2')
+SCRIPT_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = SCRIPT_DIR.parent
+BASE_DIR = PROJECT_ROOT
+DEDUP_DIR = BASE_DIR / 'outreach_monitor' / 'processed'
 MONITOR_DIR = BASE_DIR / 'outreach_monitor' / 'metrics'
 MONITOR_DIR.mkdir(parents=True, exist_ok=True)
 REPORT_FILE = MONITOR_DIR / 'monitor_report.jsonl'
-DEDUP_FILE = BASE_DIR / 'outreach_monitor' / 'processed' / 'global_dedup_state.json'
-LEDGER_FILE = BASE_DIR / 'outreach_monitor' / 'processed' / 'sent_ledger.jsonl'
+DEDUP_FILE = DEDUP_DIR / 'global_dedup_state.json'
+LEDGER_FILE = DEDUP_DIR / 'sent_ledger.jsonl'
 
 
 def append_report(entry: dict):

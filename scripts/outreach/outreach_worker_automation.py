@@ -3,12 +3,20 @@ from pathlib import Path
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 
-sys.path.insert(0, r'C:\Users\Zion\AppData\Local\hermes\skills\productivity\google-workspace\scripts')
-from google_api import build_service
+SCRIPT_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = SCRIPT_DIR.parent.parent
+_google_scripts = PROJECT_ROOT / '.hermes' / 'skills' / 'productivity' / 'google-workspace' / 'scripts'
+if _google_scripts.exists():
+    sys.path.insert(0, str(_google_scripts))
+try:
+    from google_api import build_service
+    service = build_service('gmail', 'v1')
+    GMAIL_AUTH_ERROR = None
+except Exception as e:
+    service = None
+    GMAIL_AUTH_ERROR = repr(e)
 
-service = build_service('gmail', 'v1')
-
-BASE_DIR = Path('/c/Users/Zion/tmp/zion-clone-test2')
+BASE_DIR = PROJECT_ROOT
 DEDUP_DIR = BASE_DIR / 'outreach_monitor' / 'processed'
 DEDUP_DIR.mkdir(parents=True, exist_ok=True)
 STATE_FILE = DEDUP_DIR / 'global_dedup_state.json'
