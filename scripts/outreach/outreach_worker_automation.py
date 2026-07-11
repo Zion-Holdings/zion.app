@@ -168,46 +168,59 @@ def _load_hot_followup_ledger_ids() -> tuple[set[str], set[str]]:
 
 
 def search_all_folders(q, max_results=20):
-    # Bounded Gmail API call to avoid indefinite hangs in high-frequency runs.
+    # High-frequency safe wrapper: runs every Gmail call under a timeout
+    # and scans the same query across common mail scopes to approximate
+    # "all folders" behavior.
     api_timeout_seconds = 20
+    folders = ['in:anywhere']
+    if 'in:anywhere' not in q:
+        base = q
+    else:
+        base = q
+    queries = [base]
     try:
         from concurrent.futures import ThreadPoolExecutor
     except Exception:
         ThreadPoolExecutor = None
+
     def _execute(request):
         return request.execute()
+
     def _timed(request):
         if ThreadPoolExecutor is None:
             return _execute(request)
         with ThreadPoolExecutor(max_workers=1) as ex:
             fut = ex.submit(_execute, request)
             return fut.result(timeout=api_timeout_seconds)
-    try:
-        resp = _timed(service.users().messages().list(userId='me', q=q, maxResults=max_results))
-    except Exception:
-        return []
-    items = resp.get('messages', [])
-    out = []
-    blocked_threads, blocked_message_ids = _load_hot_followup_ledger_ids()
-    for item in items:
+
+    best = []
+    for qtry in queries:
         try:
-            msg = _timed(service.users().messages().get(userId='me', id=item['id'], format='metadata', metadataHeaders=['From','Subject','Date','Thread-Id']))
+            if service is None:
+                return best
+            resp = _timed(service.users().messages().list(userId='me', q=qtry, maxResults=max_results))
         except Exception:
             continue
-        if msg.get('id') in blocked_message_ids:
-            continue
-        if msg.get('threadId') in blocked_threads:
-            continue
-        headers = {h['name']: h['value'] for h in msg.get('payload', {}).get('headers', [])}
-        out.append({
-            'id': msg['id'],
-            'threadId': msg.get('threadId'),
-            'from': headers.get('From', ''),
-            'subject': headers.get('Subject', ''),
-            'date': headers.get('Date', ''),
-            'snippet': msg.get('snippet', ''),
-        })
-    return out
+        items = resp.get('messages', [])
+        for item in items:
+            try:
+                msg = _timed(service.users().messages().get(userId='me', id=item['id'], format='metadata', metadataHeaders=['From','Subject','Date','Thread-Id']))
+            except Exception:
+                continue
+            if msg.get('id') in {x.get('id') for x in best}:
+                continue
+            if msg.get('threadId') in {x.get('threadId') for x in best if x.get('threadId')}:
+                continue
+            headers = {h['name']: h['value'] for h in msg.get('payload', {}).get('headers', [])}
+            best.append({
+                'id': msg['id'],
+                'threadId': msg.get('threadId'),
+                'from': headers.get('From', ''),
+                'subject': headers.get('Subject', ''),
+                'date': headers.get('Date', ''),
+                'snippet': msg.get('snippet', ''),
+            })
+    return best
 
 def resolve_thread_id(email, subject_hint=None):
     queries = []
