@@ -454,60 +454,104 @@ def _extract_context_ideas(thread_text: str, language: str, company_name: str) -
         found = ['aiops', 'inbound', 'coverage']
 
     selected = found[:3]
-
     if language == 'pt':
-        ideas = {
-            'aiops': 'Automação de operações e resposta a incidentes com IA para reduzir MTTR e alertas ruidosas.',
-            'inbound': 'Fluxo de atendimento inbound com IA: triagem automática, respostas consistentes e cobertura em português/espanhol/inglês.',
-            'security': 'Integração de identidade, endpoint e acesso seguro com arquitetura zero-trust e monitoramento contínuo.',
-            'cloud': 'Migração guiada para nuvem com governança, custo controlado e operação assistida por IA.',
-            'crm': 'Conector inteligente entre CRM, e-mail e follow-up para avançar negociações sem perder contexto.',
-            'data': 'Painéis e relatórios automáticos com IA para decisão comercial rápida e acompanhamento de metas.',
-            'project': 'Aceleração de entregas, procurement e follow-up comercial com automação controlada.',
-            'coverage': f'Ampliação da cobertura com suporte internacional e operação proximada para {company_name}.'
-        }
-        pillars = '; '.join(ideas[i] for i in selected)
-        return {
-            'opening': f'Obrigado pela conversa com a {company_name}.',
-            'need': 'Automação com IA pode reduzir custos, melhorar resposta e proteger receita.',
-            'pillars': pillars,
-            'cta': 'Se fizer sentido, podemos avançar por e-mail ou por uma call rápida:',
-            'closing': 'Fico à disposição para criarmos algo mútuo e rápido.'
-        }
+        return _build_pt(selected, company_name)
     if language == 'es':
-        ideas = {
-            'aiops': 'Automatización de operaciones y respuesta a incidentes con IA para reducir MTTR y alertas ruidosas.',
-            'inbound': 'Flujo de atención inbound con IA: triaje automático, respuestas consistentes y cobertura en portugués/español/inglés.',
-            'security': 'Integración de identidad, endpoint y acceso seguro con arquitectura zero-trust y monitoreo continuo.',
-            'cloud': 'Migración guiada a la nube con gobernanza, costo controlado y operación asistida por IA.',
-            'crm': 'Conector inteligente entre CRM, correo y seguimiento para avanzar negociaciones sin perder contexto.',
-            'data': 'Cuadros e informes automáticos con IA para decisiones comerciales rápidas y seguimiento de metas.',
-            'project': 'Aceleración de entregas, procurement y seguimiento comercial con automatización controlada.',
-            'coverage': f'Amplíación de cobertura con soporte internacional y operación cercana para {company_name}.'
-        }
-        pillars = '; '.join(ideas[i] for i in selected)
-        return {
-            'opening': f'Gracias por la conversación con {company_name}.',
-            'need': 'La automatización con IA reduce costos, mejora el tiempo de respuesta y protege ingresos.',
-            'pillars': pillars,
-            'cta': 'Si cuadra, podemos avanzar por email o una llamada breve:',
-            'closing': 'Quedo atento para construir algo beneficioso para ambos.'
-        }
-    ideas = {
-        'aiops': 'AI-assisted operations and incident response to cut MTTR and noisy alerts.',
-        'inbound': 'AI inbound support automation: consistent triage, faster answers, and PT/ES/EN coverage.',
-        'security': 'Identity, endpoint, and secure access integration with zero-trust architecture.',
-        'cloud': 'Guided cloud migration with cost controls and AI-assisted operations.',
-        'crm': 'Smart CRM/email/follow-up connector to advance deals without losing context.',
-        'data': 'Automated dashboards and reporting with AI for faster business decisions.',
-        'project': 'Faster delivery, procurement, and commercial follow-up with safe automation.',
-        'coverage': f'International coverage and near-you support model for {company_name}.'
+        return _build_es(selected, company_name)
+    return _build_en(selected, company_name)
+
+
+def _build_pt(selected, company_name):
+    key_map = {
+        'aiops': '1) Automação de operações e resposta a incidentes com IA para reduzir MTTR e alertas ruidosas.',
+        'inbound': '2) Fluxo de atendimento inbound com IA: triagem automática, respostas consistentes e cobertura em português/espanhol/inglês.',
+        'security': '3) Integração de identidade, endpoint e acesso seguro com arquitetura zero-trust e monitoramento contínuo.',
+        'cloud': '3) Migração guiada para nuvem com governança, custo controlado e operação assistida por IA.',
+        'crm': '2) Conector inteligente entre CRM, e-mail e follow-up para avançar negociações sem perder contexto.',
+        'data': '3) Painéis e relatórios automáticos com IA para decisão comercial rápida.',
+        'project': '2) Aceleração de entregas, procurement e follow-up comercial com automação controlada.',
+        'coverage': f'3) Ampliação da cobertura com suporte internacional para {company_name}.'
     }
-    pillars = '; '.join(ideas[i] for i in selected)
+    selected_lines = [key_map[k] for k in selected if k in key_map]
+    if len(selected_lines) < 3:
+        add = [
+            '1) Automação de operações e resposta a incidentes com IA para reduzir MTTR e alertas ruidosas.',
+            '2) Conector inteligente entre CRM, e-mail e follow-up para avançar negociações.',
+            '3) Migração guiada para nuvem com governança e operação assistida por IA.'
+        ]
+        for item in add:
+            if item not in selected_lines:
+                selected_lines.append(item)
+            if len(selected_lines) == 3:
+                break
+    return {
+        'opening': f'Obrigado pela conversa com a {company_name}.',
+        'need': 'Automação com IA pode reduzir custos, melhorar resposta e proteger receita.',
+        'pillars': chr(10).join(selected_lines[:3]),
+        'cta': 'Se fizer sentido, podemos avançar por e-mail ou por uma call rápida:',
+        'closing': 'Fico à disposição para criarmos algo mútuo e rápido.'
+    }
+
+
+def _build_es(selected, company_name):
+    key_map = {
+        'aiops': '1) Automatización de operaciones y respuesta a incidentes con IA para reducir MTTR y alertas ruidosas.',
+        'inbound': '2) Flujo de atención inbound con IA: triaje automático y cobertura en portugués/español/inglés.',
+        'security': '3) Integración de identidad, endpoint y acceso seguro con arquitectura zero-trust.',
+        'cloud': '3) Migración guiada a la nube con gobernanza, costo controlado y operación asistida por IA.',
+        'crm': '2) Conector inteligente entre CRM, correo y seguimiento para avanzar negociaciones.',
+        'data': '3) Cuadros e informes automáticos con IA para decisiones comerciales rápidas.',
+        'project': '2) Aceleración de entregas, procurement y seguimiento comercial con automatización controlada.',
+        'coverage': f'3) Ampliación de cobertura con soporte internacional para {company_name}.'
+    }
+    selected_lines = [key_map[k] for k in selected if k in key_map]
+    if len(selected_lines) < 3:
+        add = [
+            '1) Automatización de operaciones y respuesta a incidentes con IA para reducir MTTR y alertas ruidosas.',
+            '2) Conector inteligente entre CRM, correo y seguimiento para avanzar negociaciones.',
+            '3) Migración guiada a la nube con gobernanza y operación asistida por IA.'
+        ]
+        for item in add:
+            if item not in selected_lines:
+                selected_lines.append(item)
+            if len(selected_lines) == 3:
+                break
+    return {
+        'opening': f'Gracias por la conversación con {company_name}.',
+        'need': 'La automatización con IA reduce costos, mejora el tiempo de respuesta y protege ingresos.',
+        'pillars': chr(10).join(selected_lines[:3]),
+        'cta': 'Si cuadra, podemos avanzar por email o una llamada breve:',
+        'closing': 'Quedo atento para construir algo beneficioso para ambos.'
+    }
+
+
+def _build_en(selected, company_name):
+    key_map = {
+        'aiops': '1) AI-assisted operations and incident response to cut MTTR and noisy alerts.',
+        'inbound': '2) AI inbound support automation with consistent triage and PT/ES/EN coverage.',
+        'security': '3) Identity, endpoint, and secure access improvements with zero-trust architecture.',
+        'cloud': '3) Guided cloud migration with cost controls and AI-assisted operations.',
+        'crm': '2) Smart CRM/email/follow-up connector to advance active opportunities.',
+        'data': '3) Automated dashboards and reporting with AI for faster business decisions.',
+        'project': '2) Faster delivery, procurement, and commercial follow-up with safe automation.',
+        'coverage': f'3) International coverage and near-you support model for {company_name}.'
+    }
+    selected_lines = [key_map[k] for k in selected if k in key_map]
+    if len(selected_lines) < 3:
+        add = [
+            '1) AI-assisted operations and incident response to cut MTTR and noisy alerts.',
+            '2) Smart CRM/email/follow-up connector to advance active opportunities.',
+            '3) Guided cloud migration with cost controls and AI-assisted operations.'
+        ]
+        for item in add:
+            if item not in selected_lines:
+                selected_lines.append(item)
+            if len(selected_lines) == 3:
+                break
     return {
         'opening': f'Thanks for the conversation with {company_name}.',
         'need': 'AI operations and support automation can cut response time and operational cost while protecting quality.',
-        'pillars': pillars,
+        'pillars': chr(10).join(selected_lines[:3]),
         'cta': 'If this aligns with what you’re evaluating, I’m happy to advance by email or a quick call:',
         'closing': 'Let’s build something that benefits both teams.'
     }
@@ -515,6 +559,7 @@ def _extract_context_ideas(thread_text: str, language: str, company_name: str) -
 
 def _personalize(thread_text: str, contact_name: str, company_name: str, language: str) -> dict:
     return _extract_context_ideas(thread_text, language, company_name)
+
 
 def _addr_is_invalid(addr: str) -> bool:
     a = addr.lower()
