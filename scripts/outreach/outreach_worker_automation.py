@@ -153,6 +153,11 @@ def record_send(contact, to_addr, subject, message_id, thread_id, reason):
     }
     with LEDGER_FILE.open('a', encoding='utf-8') as f:
         f.write(json.dumps(entry, ensure_ascii=False) + '\n')
+    try:
+        with HOT_FOLLOWUP_REPLY_LEDGER.open('a', encoding='utf-8') as f:
+            f.write(json.dumps(entry, ensure_ascii=False) + '\n')
+    except Exception:
+        pass
     state = load_state()
     state['contacts'].setdefault(contact, {})
     state['contacts'][contact]['last_outbound_ts'] = entry['ts']
@@ -782,6 +787,7 @@ DRY_RUN = os.getenv('OUTREACH_DRY_RUN', '').lower() in ('1','true','yes')
 REQUIRES_APPROVAL = os.getenv('OUTREACH_REQUIRES_APPROVAL', 'true').lower() in ('1','true','yes')
 PENDING_APPROVAL_FILE = BASE_DIR / 'outreach_monitor' / 'processed' / 'pending_approval_queue.jsonl'
 DRY_RUN_REPORT = BASE_DIR / 'outreach_monitor' / 'processed' / 'dry_run_report.jsonl'
+HOT_FOLLOWUP_REPLY_LEDGER = BASE_DIR / 'outreach_monitor' / 'processed' / 'hot_followup_reply_ledger.jsonl'
 
 def _ensure_report_file():
     try:
