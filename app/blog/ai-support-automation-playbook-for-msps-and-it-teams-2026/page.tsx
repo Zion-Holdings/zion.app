@@ -6,7 +6,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata: Metadata = {
   title: 'AI Support Automation Playbook for MSPs and IT Teams | Zion Tech Group',
   description: 'Practical playbook for MSPs and IT teams implementing AI support automation in 2026.',
-  alternates: { canonical: '/blog/ai-support-automation-playbook-for-msps-and-it-teams-2026' },
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-support-automation-playbook-for-msps-and-it-teams-2026' },
 };
 
 export default function BlogPage() {

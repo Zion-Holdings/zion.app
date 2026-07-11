@@ -6,7 +6,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata: Metadata = {
   title: 'AI for MSPs and IT Support Teams in 2026 | Zion Tech Group',
   description: 'Practical AI adoption guide for MSPs and IT support teams in 2026: real workflows, free tools, templates, and implementation tips from Zion Tech Group.',
-  alternates: { canonical: '/blog/ai-for-msps-and-it-support-teams-in-2026/' },
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-msps-and-it-support-teams-in-2026/' },
   openGraph: {
     title: 'AI for MSPs and IT Support Teams in 2026',
     description: 'Practical AI adoption guide for MSPs and IT support teams in 2026.',

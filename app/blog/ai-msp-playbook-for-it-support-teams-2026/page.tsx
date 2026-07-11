@@ -6,7 +6,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata: Metadata = {
   title: 'AI MSP Playbook for IT Support Teams | Zion Tech Group',
   description: 'Practical AI MSP playbook for IT support, ticketing, and managed services in 2026. Free tools and workflows from Zion Tech Group.',
-  alternates: { canonical: '/blog/ai-msp-playbook-for-it-support-teams-2026/' },
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-msp-playbook-for-it-support-teams-2026/' },
   openGraph: {
     title: 'AI MSP Playbook for IT Support Teams',
     description: 'Practical AI MSP playbook for IT support, ticketing, and managed services in 2026.',

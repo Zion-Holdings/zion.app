@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Zion AI Project Portfolio',
   description:
     'Prioritize and balance project portfolios with resource capacity, risk, and strategic alignment insights.',
-  alternates: { canonical: '/zion-ai-project-portfolio' },
+  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-project-portfolio' },
 };
 
 export default function Page() {

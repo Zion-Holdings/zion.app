@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Zion AI Customer Feedback',
   description:
     'Aggregate and analyze feedback from surveys, reviews, and support channels with sentiment and theme detection.',
-  alternates: { canonical: '/zion-ai-customer-feedback' },
+  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-customer-feedback' },
 };
 
 export default function Page() {

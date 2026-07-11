@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Zion AI Pricing Intelligence',
   description:
     'Monitor competitor pricing and market signals to optimize pricing strategies and promotions.',
-  alternates: { canonical: '/zion-ai-pricing-intelligence' },
+  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-pricing-intelligence' },
 };
 
 export default function Page() {

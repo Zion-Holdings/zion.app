@@ -6,7 +6,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata: Metadata = {
   title: 'AI Workflow Automation for IT and MSP Teams 2026 | Zion Tech Group',
   description: 'AI workflow automation guide for IT teams and MSPs in 2026. Practical patterns for support, onboarding, and delivery automation with measurable ROI.',
-  alternates: { canonical: '/services/ai-workflow-automation' },
+  alternates: { canonical: 'https://ziontechgroup.com/services/ai-workflow-automation' },
 };
 
 export default function ServicePage() {

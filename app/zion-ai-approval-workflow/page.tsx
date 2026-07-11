@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Zion AI Approval Workflow',
   description:
     'Automate approval routing, escalation, and audit trails for purchase orders, expenses, and contracts.',
-  alternates: { canonical: '/zion-ai-approval-workflow' },
+  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-approval-workflow' },
 };
 
 export default function Page() {

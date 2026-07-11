@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Zion AI Brand Monitor',
   description:
     'Track brand mentions, sentiment, and competitive positioning across channels in real time.',
-  alternates: { canonical: '/zion-ai-brand-monitor' },
+  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-brand-monitor' },
 };
 
 export default function Page() {

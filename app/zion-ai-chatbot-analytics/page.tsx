@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Zion AI Chatbot Analytics',
   description:
     'Track chatbot performance, conversation flows, and improvement opportunities with AI-driven insights.',
-  alternates: { canonical: '/zion-ai-chatbot-analytics' },
+  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-chatbot-analytics' },
 };
 
 export default function Page() {

@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Zion AI Document Classifier',
   description:
     'Automatically classify and route documents with ML models that learn from your taxonomy.',
-  alternates: { canonical: '/zion-ai-document-classifier' },
+  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-document-classifier' },
 };
 
 export default function Page() {

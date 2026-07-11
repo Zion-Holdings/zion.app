@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Zion AI Supply Visibility',
   description:
     'Gain real-time visibility into supply chain status, risks, and alternative sourcing options.',
-  alternates: { canonical: '/zion-ai-supply-visibility' },
+  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-supply-visibility' },
 };
 
 export default function Page() {

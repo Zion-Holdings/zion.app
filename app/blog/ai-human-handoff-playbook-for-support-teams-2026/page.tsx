@@ -6,7 +6,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata: Metadata = {
   title: 'AI-Human Handoff Playbook for Support Teams 2026 | Zion Tech Group',
   description: 'Practical AI-human handoff playbook for support teams and MSPs in 2026. Reduce response time while keeping accountability with automation plus live escalation.',
-  alternates: { canonical: '/blog/ai-human-handoff-playbook-for-support-teams-2026' },
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-human-handoff-playbook-for-support-teams-2026' },
 };
 
 export default function BlogPage() {

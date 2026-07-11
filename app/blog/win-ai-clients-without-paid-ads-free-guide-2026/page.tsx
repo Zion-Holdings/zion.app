@@ -6,7 +6,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata: Metadata = {
   title: 'Win AI Clients Without Paid Ads: Free Guide for IT Companies | Zion Tech Group',
   description: 'Win AI clients without paid ads using organic outreach, free tools, and delivery-led growth. Free guide for IT companies, MSPs, and VARs in 2026.',
-  alternates: { canonical: '/blog/win-ai-clients-without-paid-ads-free-guide-2026/' },
+  alternates: { canonical: 'https://ziontechgroup.com/blog/win-ai-clients-without-paid-ads-free-guide-2026/' },
   openGraph: {
     title: 'Win AI Clients Without Paid Ads: Free Guide for IT Companies',
     description: 'Organic tactics for AI and IT service providers to find, convert, and retain clients without paid ads.',

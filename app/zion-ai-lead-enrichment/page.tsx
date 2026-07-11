@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: 'Zion AI Lead Enrichment',
   description:
     'Enrich leads with firmographic and technographic data to prioritize high-value opportunities.',
-  alternates: { canonical: '/zion-ai-lead-enrichment' },
+  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-lead-enrichment' },
 };
 
 export default function Page() {
