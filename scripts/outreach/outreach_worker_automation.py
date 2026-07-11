@@ -52,6 +52,7 @@ DEDUP_DIR.mkdir(parents=True, exist_ok=True)
 STATE_FILE = DEDUP_DIR / 'global_dedup_state.json'
 LEDGER_FILE = DEDUP_DIR / 'sent_ledger.jsonl'
 BOUNCE_HISTORY_FILE = DEDUP_DIR / 'bounce_history.jsonl'
+HOT_FOLLOWUP_REPLY_LEDGER = DEDUP_DIR / 'hot_followup_reply_ledger.jsonl'
 
 _GMAIL_API_TIMEOUT = 15
 
@@ -1068,6 +1069,15 @@ def run_high_frequency_outreach():
         for d in dead:
             print('DEAD', d)
     print('STATE_TS', int(time.time()))
+    try:
+        used = set()
+        for p in (LEDGER_FILE, BOUNCE_HISTORY_FILE, PENDING_APPROVAL_FILE, DRY_RUN_REPORT, HOT_FOLLOWUP_REPLY_LEDGER):
+            if p.exists():
+                with p.open('r', encoding='utf-8') as f:
+                    used |= {l.strip() for l in f.readlines() if l.strip()}
+        print('REPLY_LEDGER_LINES', sum(1 for l in used if 'hot_followup_reply_ledger' not in str(l)))
+    except Exception:
+        pass
     return {'sent': sent_count, 'skipped': skipped, 'adds': len(newest_used), 'dead': dead}
 
 
