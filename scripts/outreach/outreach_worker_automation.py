@@ -760,10 +760,15 @@ def run_high_frequency_outreach():
                 record_bounce(addr, f'blacklisted subject: {subject_norm[:120]}')
                 continue
             suspicious_noise_domains = ('groups.outlook.com','mail.vresp.com','airbnb.com','uber.com','tiktok.com','dpsmrn.org','surfline.com')
-            local = addr.split('@',1)[-1]
-            if local in suspicious_noise_domains:
+            local_p = addr.split('@',1)[-1]
+            if local_p in suspicious_noise_domains:
                 record_bounce(addr, 'suspicious noise domain')
                 continue
+            if local_p in ('outlook.com','groups.outlook.com','yahoogroups.com','googlegroups.com'):
+                local_user = addr.split('@',1)[0]
+                if any(ch in local_user for ch in ('+','_','.')) and len(local_user) > 20:
+                    record_bounce(addr, 'broadcast group address pattern')
+                    continue
             thread_id = msg.get('threadId') or hit_id
             contacts.append({
                 'email': addr,
@@ -778,17 +783,27 @@ def run_high_frequency_outreach():
             contacts.extend(_load_hot_followup_ledger_contacts())
         except Exception:
             pass
-        new_subjects = {c.get('thread_subject') or '' for c in contacts}
-        if len(new_subjects) < 20:
-            try:
-                extras = _load_hot_followup_ledger_contacts()
-            except Exception:
-                extras = []
-            for c in extras:
-                subj = c.get('thread_subject') or ''
-                if subj not in new_subjects:
-                    contacts.append(c)
-                    new_subjects.add(subj)
+    new_subjects = set()
+    clean_contacts = []
+    for c in contacts:
+        email = (c.get('email') or '').strip().lower()
+        if not email or '@' not in email:
+            continue
+        domain = email.split('@',1)[1]
+        local = email.split('@',1)[0]
+        if domain.endswith('ziontechgroup.com') or domain.endswith('ztg.com.br'):
+            continue
+        if local in ('automated','automated') or local.startswith('automated-'):
+            continue
+        if any(bad in local for bad in ('groups.outlook.com','mail.vresp.com','airbnb.com','uber.com','tiktok.com','dpsmrn.org','surfline.com')):
+            continue
+        subj = (c.get('thread_subject') or '').strip()
+        if subj.startswith(('Re: Pré-aprovação','Re: Pré-aprovação','Re: Pré-aprovação','Boleto vencido','Billing update','Invoice update','Up to ','Off your first')):
+            continue
+        if subj not in new_subjects or True:
+            clean_contacts.append(c)
+            new_subjects.add(subj)
+    contacts = clean_contacts[-40:]
 
     sent_count = 0
     skipped = 0
