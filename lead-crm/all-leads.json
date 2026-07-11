@@ -7006,5 +7006,22 @@
     "llm_model": "stepfun/step-3.7-flash-20260528:free",
     "llm_reason": "### Rating: 0\n#### Rationale (aligned to standard rating framing for this use case):\n- A score of 2 is reserved for signals that explicitly, verifiably demonstrate alignment with managed AI/IT services (e.g., direct mentions of offering these services, public site content confirming this specific se",
     "confidence": 0
+  },
+  {
+    "to": "alice_plooijer@islandrealtypanama.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "islandrealtypanama.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash-20260528:free",
+    "llm_reason": "### Rating: 1\n#### Reasoning (aligned to the 0/1/2 relevance scale for managed AI/IT services):\nFirst, define the rating context for this use case:\n- 2 = Strong direct relevance: The signal explicitly confirms the entity offers managed AI/IT services, or is directly positioned in that service catego",
+    "confidence": 1
   }
 ]
