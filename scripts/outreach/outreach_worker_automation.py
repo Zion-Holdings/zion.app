@@ -62,10 +62,15 @@ FORBIDDEN_DOMAIN_SUBSTRINGS = (
 MAX_AGE_DAYS = 180
 DEDUP_COOLDOWN_SECONDS = 24 * 3600  # 24 hours
 SEND_REQUIRES_ALIVE_THREAD = True
-LLM_TAILOR_ENABLED = bool(os.getenv('ZION_LLM_API_ENDPOINT') and os.getenv('ZION_LLM_API_KEY') and os.getenv('ZION_LLM_MODEL'))
-LLM_API_ENDPOINT = os.getenv('ZION_LLM_API_ENDPOINT') or os.getenv('LLM_API_ENDPOINT')
-LLM_API_KEY = os.getenv('ZION_LLM_API_KEY') or os.getenv('LLM_API_KEY')
-LLM_MODEL = os.getenv('ZION_LLM_MODEL') or os.getenv('LLM_MODEL') or 'gpt-4o-mini'
+LLM_TAILOR_ENABLED = bool(
+    (os.getenv('ZION_LLM_API_ENDPOINT') and os.getenv('ZION_LLM_API_KEY') and os.getenv('ZION_LLM_MODEL')) or
+    os.getenv('OPENROUTER_API_KEY') or
+    os.getenv('GROQ_API_KEY') or
+    os.getenv('GEMINI_API_KEY')
+)
+LLM_API_ENDPOINT = os.getenv('ZION_LLM_API_ENDPOINT') or os.getenv('LLM_API_ENDPOINT') or os.getenv('OPENROUTER_API_ENDPOINT') or os.getenv('GROQ_API_ENDPOINT') or os.getenv('GEMINI_API_ENDPOINT')
+LLM_API_KEY = os.getenv('ZION_LLM_API_KEY') or os.getenv('LLM_API_KEY') or os.getenv('OPENROUTER_API_KEY') or os.getenv('GROQ_API_KEY') or os.getenv('GEMINI_API_KEY')
+LLM_MODEL = os.getenv('ZION_LLM_MODEL') or os.getenv('LLM_MODEL') or os.getenv('OPENROUTER_MODEL') or os.getenv('GROQ_MODEL') or os.getenv('GEMINI_MODEL') or 'openai/gpt-4o-mini'
 LLM_FALLBACK_MODELS = [m.strip() for m in os.getenv('ZION_LLM_FALLBACK_MODELS', '').split(',') if m.strip()]
 
 FORBIDDEN_ADDR_PREFIXES = (
@@ -373,19 +378,20 @@ def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, lan
     if not endpoint or not api_key:
         return ''
     trimmed = (thread_text or '').strip()
-    trimmed = trimmed[:2200]
+    trimmed = trimmed[:2400]
     prompt = (
-        "You are the CEO of Zion Tech Group. Write a friendly-professional reply as the CEO.\n"
-        f"Contact: {contact_name}. Company: {company_name}. Conversation language: {language}.\n"
-        "Rules:\n"
-        "- Thank them for the opportunity to collaborate on this project; include wording like: it was a pleasure working with you / great partnership.\n"
-        "- Propose 1-3 concrete, mutually beneficial next ideas for our new AI services.\n"
-        "- Include Calendly exactly: https://calendly.com/kleber-ziontechgroup.\n"
-        "- Include website exactly: https://ziontechgroup.com and mention free services and tools.\n"
-        "- Give a positive, human tone. No generic filler. No CEO signature block noise.\n"
-        "- Reply in the exact conversation language. Keep it friendly and professional.\n"
-        "- Make sure this single message is complete; do not omit the links or past-project thanks.\n"
-        f"\nThread:\n{trimmed}\n"
+        "You write short, human, business-friendly CEO emails. "
+        f"Recipient: {contact_name} from {company_name}. Language: {language}.\n\n"
+        "Use ONLY facts present in the thread. Be specific: name 1 concrete next-step tied to Zion's AI services. "
+        "Do not use generic filler like 'let's keep in touch' or 'I look forward to hearing from you'.\n\n"
+        "Required content:\n"
+        f"- Thank them specifically for this past collaboration. Name the project area when possible.\n"
+        "- 2 concrete mutually beneficial next ideas for AI services.\n"
+        f"- Calendly: https://calendly.com/kleber-ziontechgroup\n"
+        f"- Website: https://ziontechgroup.com and mention free tools/services\n"
+        "- Close by offering a call/meeting next week.\n\n"
+        "Thread context:\n"
+        f"{trimmed}\n"
     )
     headers = {
         'Authorization': f"Bearer {api_key}",
@@ -394,16 +400,22 @@ def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, lan
     body = json.dumps({
         'model': model,
         'messages': [
-            {'role': 'system', 'content': 'You write short, specific, business-friendly emails that sound human and advance deals.'},
+            {'role': 'system', 'content': 'Write one complete email. No signature block. Friendly but professional CEO tone.'},
             {'role': 'user', 'content': prompt},
         ],
-        'temperature': 0.25,
-        'max_tokens': 420,
+        'temperature': 0.35,
+        'max_tokens': 480,
     }).encode('utf-8')
     last_err = None
     models = [model] + [m.strip() for m in (os.getenv('ZION_LLM_FALLBACK_MODELS') or '').split(',') if m.strip()]
+    required = [
+        'calendly.com/kleber-ziontechgroup',
+        'ziontechgroup.com',
+        'free',
+        'pleasure working with you',
+    ]
     for m in models:
-        for attempt in range(2):
+        for attempt in range(3):
             try:
                 import urllib.request
                 payload = json.loads(body.decode('utf-8'))
@@ -415,20 +427,15 @@ def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, lan
                 if not isinstance(reply, str) or not reply.strip():
                     continue
                 reply = reply.strip()
-                required = [
-                    'calendly.com/kleber-ziontechgroup',
-                    'ziontechgroup.com',
-                    'pleasure working with you',
-                ]
                 lower = reply.lower()
                 if not all(r in lower for r in required):
-                    print('LLM_MISSING_REQUIRED', m)
+                    print('LLM_MISSING_REQUIRED_RETRY', m, flush=True)
                     continue
                 return reply
             except Exception as e:
                 last_err = repr(e)
-                print('LLM_ERR', m, last_err, f'attempt={attempt+1}')
-                time.sleep(1.5 if attempt else 0.2)
+                print('LLM_ERR', m, last_err, f'attempt={attempt+1}', flush=True)
+                time.sleep(1.8 if attempt else 0.25)
     print('LLM_FINAL_ERR', last_err)
     return ''
 
@@ -579,29 +586,29 @@ def _addr_is_invalid(addr: str) -> bool:
     return False
 
 def build_ceo_reply(contact_name, company_name, thread_text, language='en'):
-    tailored = llm_tailor_reply(thread_text, contact_name, company_name, language)
-    if tailored:
-        return tailored
+    if LLM_TAILOR_ENABLED:
+        tailored = llm_tailor_reply(thread_text, contact_name, company_name, language)
+        if tailored:
+            return tailored
     p = _personalize(thread_text, contact_name, company_name, language)
     return f"""{contact_name},
 
-{p['opening']} I really value that partnership.
+{p['opening'] if isinstance(p, dict) else 'Thanks for the conversation.'} I really value that partnership.
 
 Today Zion Tech Group is expanding into AI/IT services, and I see a few fast, mutually beneficial next steps we could explore together:
 
-{p['pillars']}
+{p['pillars'] if isinstance(p, dict) else ''}
 
-{p['cta']}
+{p['cta'] if isinstance(p, dict) else 'If this aligns, I’m happy to advance by email or a quick call.'}
 https://calendly.com/kleber-ziontechgroup
 
 You can also explore our new AI services and free tools here:
 https://ziontechgroup.com
 
-{p['closing']}
+{p['closing'] if isinstance(p, dict) else 'Let’s build something that benefits both teams.'}
 Kleber Garcia Alcatrão
-CEO, Zion Tech Group
-https://ziontechgroup.com
 """
+
 
 def build_ceo_reply_preview(contact_name, company_name, thread_text, subject, language='en'):
     body = build_ceo_reply(contact_name, company_name, thread_text, language=language)
