@@ -204,6 +204,14 @@ def _load_hot_followup_ledger_contacts():
                 to_addr = (obj.get('to') or '').strip()
                 if not to_addr or '@' not in to_addr or to_addr.lower().endswith('@ziontechgroup.com'):
                     continue
+                if 'undisclosed-recipients' in to_addr.lower():
+                    continue
+                local, _, domain = to_addr.partition('@')
+                if not local or not domain:
+                    continue
+                domain = domain.lower()
+                if any(domain.endswith(bad) for bad in ('.groups.outlook.com', '.mail.vresp.com', '.airbnb.com', '.uber.com', '.tiktok.com', '.dpsmrn.org', '.surfline.com')):
+                    continue
                 if to_addr in seen:
                     continue
                 seen.add(to_addr)
@@ -211,8 +219,8 @@ def _load_hot_followup_ledger_contacts():
                 tid = obj.get('thread_id') or ''
                 out.append({
                     'email': to_addr,
-                    'name': to_addr.split('@')[0].replace('.', ' ').title(),
-                    'company': to_addr.split('@')[1].split('.')[0].title(),
+                    'name': local.replace('.', ' ').title(),
+                    'company': domain.split('.')[0].title(),
                     'thread_id': tid,
                     'thread_subject': subj,
                 })
@@ -638,6 +646,30 @@ def fetch_or_create_lead_from_inbox(email, thread_subject=None):
         return None
     msg_id = hit['id']
     text = get_message_text(msg_id) or ''
+    text = (text or '').strip()
+    if not text or len(text.split()) < 8:
+        return None
+    if not any(ch.isalpha() for ch in text):
+        return None
+    generic_phrases = [
+        'boleto vencido',
+        'pré-aprovação',
+        'pre-aprovação',
+        'billing update',
+        'invoice update',
+        'up to % off',
+        'off your first',
+        'watch your last session',
+        'fale dentro de 6 horas',
+        'responda dentro de 6 horas',
+        'new app',
+        'weekly update',
+        'daily update',
+        'unsubscribe',
+    ]
+    lowered = text.lower()
+    if any(p in lowered for p in generic_phrases):
+        return None
     lang = detect_language(text)
     contact_name = email.split('@')[0].replace('.', ' ').title()
     company_name = email.split('@')[1].split('.')[0].title()
@@ -704,6 +736,7 @@ def run_high_frequency_outreach():
         '!category:promotions !in:spam !in:trash "partnership" OR "collaboration" OR "proposal"',
         '!category:promotions !in:spam !in:trash "AI services" OR "AI support" OR "project"',
         '!category:promotions !in:spam !in:trash "interested" OR "next steps" OR "opportunity"',
+        '!category:promotions !in:spam !in:trash "integration" OR "workflow" OR "ROI"',
         '"!!!hot-follow-up"',
     ]
 
