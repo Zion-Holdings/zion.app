@@ -68,8 +68,7 @@ def run_once():
         except Exception:
             pass
         write_heartbeat(status='running', last_ok=proc.returncode == 0, last_error=None if proc.returncode == 0 else 'nonzero_exit')
-        return proc.returncode == 0
-
+    except subprocess.TimeoutExpired:
         entry = {'ts': ts_now(), 'returncode': -1, 'interval_seconds': interval, 'stdout': 'timeout'}
         try:
             with METRICS.open('a', encoding='utf-8') as f:

@@ -589,7 +589,6 @@ def run_high_frequency_outreach():
     ]
 
     hit_ids = set()
-    hit_ids = set()
     contacts = []
     for qi, q in enumerate(discovery_queries, 1):
         print('TRACE_QUERY', qi, q, flush=True)
