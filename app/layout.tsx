@@ -20,6 +20,7 @@ import ErrorTracker from './components/ErrorTracker';
 import FieldPerformanceCollector from './components/FieldPerformanceCollector';
 import FloatingAgentStatus from './components/FloatingAgentStatus';
 import { AutoJsonLd } from './hooks/useAutoJsonLdPage';
+import GlobalErrorBoundary from './GlobalErrorBoundary';
 import './globals.css';
 
 export const siteUrl = 'https://ziontechgroup.com';
@@ -115,11 +116,13 @@ export default function RootLayout({
             <ReadingProgressBar />
             <Header />
             <main className="relative z-10 flex-1" id="main-content" tabIndex={-1} role="main">
-              {children}
+              <GlobalErrorBoundary>
+                {children}
+              </GlobalErrorBoundary>
             </main>
             <Footer />
             <BackToTop />
-            <AiSolutionsArchitectWidget />
+
             <AIChatWidget />
             <AIExperienceLoader />
             <StickyMobileCTA />
