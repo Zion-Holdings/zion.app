@@ -7,6 +7,22 @@ const { promisify } = require('util');
 const execFileP = promisify(execFile);
 
 const REPORT_PATH = path.join(process.cwd(), 'automation', 'reports', 'site-improvement-agent-latest.json');
+const DEFAULT_BASE = 'https://ziontechgroup.com';
+
+function parseCli(argv) {
+  const out = { base: DEFAULT_BASE, check: 'catalog' };
+  for (let i = 2; i < argv.length; i += 2) {
+    if (argv[i] === '--base' && i + 1 < argv.length) {
+      out.base = argv[i + 1];
+    }
+    if (argv[i] === '--check' && i + 1 < argv.length) {
+      out.check = argv[i + 1];
+    }
+  }
+  return out;
+}
+
+const cli = parseCli(process.argv);
 
 async function exists(file) {
   try {
@@ -18,47 +34,116 @@ async function exists(file) {
 }
 
 async function runSiteCheck() {
-  // Prefer existing lightweight integrity tooling if available
   const candidates = [
-    ['./automation/site_integrity_run.py', 'node'],
-    ['./automation/site_integrity_check.py', 'python3'],
-    ['./automation/check200.cjs', 'node'],
-    ['./automation/verify_200.py', 'python3'],
+    ['./automation/site_integrity_run.py', 'python'],
+    ['./automation/verify_200.py', 'python'],
   ];
 
   for (const [script, runner] of candidates) {
     if (await exists(script)) {
       try {
-        const { stdout } = await execFileP(runner, [script], { maxBuffer: 50 * 1024 * 1024, timeout: 5 * 60 * 1000 });
-        return { ok: true, script, runner, output: (stdout || '').slice(0, 20000) };
+        const args = [script, cli.base];
+        const { stdout } = await execFileP(runner, args, {
+          maxBuffer: 50 * 1024 * 1024,
+          timeout: 5 * 60 * 1000,
+        });
+        return { ok: true, script, runner, base: cli.base, output: (stdout || '').slice(0, 20000) };
       } catch (err) {
-        return { ok: false, script, runner, output: (err.stdout || err.message || '').slice(0, 20000) };
+        return { ok: false, script, runner, base: cli.base, output: (err.stdout || err.message || '').slice(0, 20000) };
       }
     }
   }
 
-  return { ok: false, script: null, runner: null, output: 'No usable site check script found.' };
+  return { ok: false, script: null, runner: null, base: cli.base, output: 'No usable site check script found.' };
+}
+
+async function runCatalogCheck() {
+  const requiredPaths = [
+    '/',
+    '/services/',
+    '/services/-aiops/',
+    '/about/',
+    '/contact/',
+    '/blog/ai-first-anti-fraud-and-payment-intelligence-in-2026/',
+  ];
+
+  const requiredStrings = [
+    'ziontechgroup.com',
+    'calendly.com/kleber-ziontechgroup',
+    'free',
+    'AI',
+    'services',
+  ];
+
+  const results = [];
+  let broken = 0;
+
+  for (const p of requiredPaths) {
+    const url = cli.base.replace(/\/$/, '') + p;
+    let ok = false;
+    let body = '';
+    let missingStrings = [];
+
+    try {
+      const controller = new AbortController();
+      const timer = setTimeout(() => controller.abort(), 20000);
+      const res = await fetch(url, { signal: controller.signal, redirect: 'manual' });
+      clearTimeout(timer);
+      ok = res.ok;
+      if (ok) {
+        body = await res.text();
+        missingStrings = requiredStrings.filter((s) => !body.includes(s));
+      }
+    } catch (err) {
+      ok = false;
+      body = String(err);
+    }
+
+    if (!ok || missingStrings.length) {
+      broken++;
+    }
+
+    results.push({ path: p, ok, missingStrings });
+  }
+
+  return { base: cli.base, checked: requiredPaths.length, broken, results };
 }
 
 async function main() {
   const check = await runSiteCheck();
+  const catalog = check.ok ? null : await runCatalogCheck();
   const result = {
     timestamp: new Date().toISOString(),
     event: 'scheduled',
     action: 'ai-site-improvement-agent',
-    continuation: check.ok,
-    script: check.script,
-    runner: check.runner,
-    output: check.output,
+    base: cli.base,
+    mode: cli.check,
+    siteCheck: {
+      continuation: check.ok,
+      script: check.script,
+      runner: check.runner,
+      output: check.output,
+    },
+    catalogCheck: catalog,
   };
 
   await fs.mkdir(path.dirname(REPORT_PATH), { recursive: true });
   await fs.writeFile(REPORT_PATH, JSON.stringify(result, null, 2), 'utf8');
   console.log(`Saved report: ${REPORT_PATH}`);
+
+  const brokenCatalog = catalog ? catalog.broken : 0;
+  if (brokenCatalog) {
+    console.log(`CATALOG_BROKEN=${brokenCatalog}`);
+    process.exitCode = 1;
+  } else if (!check.ok) {
+    console.log('SITE_CHECK_FAILED=1');
+    process.exitCode = 1;
+  }
+
   console.log(JSON.stringify(result, null, 2));
 }
 
 main().catch((err) => {
-  console.error(err);
+  console.error('FATAL', err);
   process.exit(1);
 });

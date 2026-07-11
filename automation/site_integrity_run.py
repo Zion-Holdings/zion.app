@@ -84,6 +84,9 @@ while q and len(visited) < MAX_PAGES:
         if 300 <= r.status_code < 400:
             classification = "stale redirect"
             redirect_target = r.headers.get("Location")
+            loc = (redirect_target or "")
+            if loc.startswith(BASE + "/") and url.rstrip("/") == loc.rstrip("/") and url != loc:
+                classification = "non-terminal redirect"
         elif r.status_code == 404:
             classification = "missing page"
         elif r.status_code == 403:
