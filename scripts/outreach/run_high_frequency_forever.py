@@ -90,7 +90,8 @@ def main():
     while True:
         ok = run_once()
         backoff = 5 if ok else min(max_backoff, backoff * 2)
-        time.sleep(max(1, int(os.environ.get('HIGH_FREQ_INTERVAL_SECONDS', '60'))))
+        interval = max(60, int(os.environ.get('HIGH_FREQ_INTERVAL_SECONDS', '60')))
+        time.sleep(interval)
 
 
 if __name__ == '__main__':
