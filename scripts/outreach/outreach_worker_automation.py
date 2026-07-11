@@ -750,6 +750,8 @@ def fetch_or_create_lead_from_inbox(email, thread_subject=None):
     }
 
 DRY_RUN = os.getenv('OUTREACH_DRY_RUN', '').lower() in ('1','true','yes')
+REQUIRES_APPROVAL = os.getenv('OUTREACH_REQUIRES_APPROVAL', 'true').lower() in ('1','true','yes')
+PENDING_APPROVAL_FILE = BASE_DIR / 'outreach_monitor' / 'processed' / 'pending_approval_queue.jsonl'
 DRY_RUN_REPORT = BASE_DIR / 'outreach_monitor' / 'processed' / 'dry_run_report.jsonl'
 
 def _ensure_report_file():
@@ -758,6 +760,24 @@ def _ensure_report_file():
         p.parent.mkdir(parents=True, exist_ok=True)
         if not p.exists():
             p.write_text('', encoding='utf-8')
+    except Exception:
+        pass
+
+def _ensure_pending_approval_file():
+    try:
+        p = Path(PENDING_APPROVAL_FILE)
+        p.parent.mkdir(parents=True, exist_ok=True)
+        if not p.exists():
+            p.write_text('', encoding='utf-8')
+    except Exception:
+        pass
+
+def append_pending_approval(entry: dict):
+    _ensure_pending_approval_file()
+    entry.setdefault('ts', int(time.time()))
+    try:
+        with Path(PENDING_APPROVAL_FILE).open('a', encoding='utf-8') as f:
+            f.write(json.dumps(entry, ensure_ascii=False) + '\n')
     except Exception:
         pass
 
@@ -958,6 +978,20 @@ def run_high_frequency_outreach():
                 print('DRY_RUN_WOULD_SEND', email, lead['subject'], lead.get('msg_id'))
                 sent_count += 1
                 print('CONTACT_END', email, 'dry_sent', flush=True)
+                continue
+            if REQUIRES_APPROVAL:
+                append_pending_approval({
+                    'mode': 'pending_approval',
+                    'contact': email,
+                    'subject': lead['subject'],
+                    'thread_id': thread_id,
+                    'msg_id': lead.get('msg_id'),
+                    'lang': lead.get('lang'),
+                    'llm_tailored': bool(LLM_TAILOR_ENABLED and lead.get('body')),
+                    'dedup_last_outbound_ts': (load_state().get('contacts', {}).get(email.lower(), {}) or {}).get('last_outbound_ts'),
+                })
+                print('PENDING_APPROVAL', email, lead['subject'], lead.get('msg_id'))
+                print('CONTACT_END', email, 'pending_approval', flush=True)
                 continue
             sent = send_ceo_reply(thread_id, email, lead['subject'], body, lead['msg_id'])
             record_send(contact_key, email, lead['subject'], sent.get('id'), sent.get('threadId'), f'tailored CEO reply from inbox msg {lead["msg_id"]}')
