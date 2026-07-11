@@ -359,7 +359,10 @@ def _message_is_too_old(date_hdr: str, max_age_days: int = 180) -> bool:
         return False
 
 def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, language: str) -> str:
-    if not LLM_TAILOR_ENABLED or not LLM_API_ENDPOINT or not LLM_API_KEY:
+    endpoint = LLM_API_ENDPOINT or os.getenv('OPENROUTER_API_ENDPOINT') or os.getenv('GROQ_API_ENDPOINT') or os.getenv('GEMINI_API_ENDPOINT')
+    api_key = LLM_API_KEY or os.getenv('OPENROUTER_API_KEY') or os.getenv('GROQ_API_KEY') or os.getenv('GEMINI_API_KEY')
+    model = os.getenv('LLM_MODEL') or os.getenv('ZION_LLM_MODEL') or os.getenv('OPENROUTER_MODEL') or os.getenv('GROQ_MODEL') or os.getenv('GEMINI_MODEL') or 'openai/gpt-4o-mini'
+    if not endpoint or not api_key:
         return ''
     trimmed = (thread_text or '').strip()
     trimmed = trimmed[:2200]
@@ -373,14 +376,15 @@ def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, lan
         "- Include website exactly: https://ziontechgroup.com and mention free services and tools.\n"
         "- Give a positive, human tone. No generic filler. No CEO signature block noise.\n"
         "- Reply in the exact conversation language. Keep it friendly and professional.\n"
-        "- Make sure this single message is complete; do not omit the links or past-project thanks."
+        "- Make sure this single message is complete; do not omit the links or past-project thanks.\n"
+        f"\nThread:\n{trimmed}\n"
     )
     headers = {
-        'Authorization': f"Bearer {LLM_API_KEY}",
+        'Authorization': f"Bearer {api_key}",
         'Content-Type': 'application/json',
     }
     body = json.dumps({
-        'model': LLM_MODEL,
+        'model': model,
         'messages': [
             {'role': 'system', 'content': 'You write short, specific, business-friendly emails that sound human and advance deals.'},
             {'role': 'user', 'content': prompt},
@@ -389,15 +393,14 @@ def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, lan
         'max_tokens': 420,
     }).encode('utf-8')
     last_err = None
-    # try up to 3 models in fallback chain if configured
-    models = [LLM_MODEL] + [m.strip() for m in (os.getenv('ZION_LLM_FALLBACK_MODELS') or '').split(',') if m.strip()]
-    for model in models:
+    models = [model] + [m.strip() for m in (os.getenv('ZION_LLM_FALLBACK_MODELS') or '').split(',') if m.strip()]
+    for m in models:
         for attempt in range(2):
             try:
                 import urllib.request
                 payload = json.loads(body.decode('utf-8'))
-                payload['model'] = model
-                req = urllib.request.Request(LLM_API_ENDPOINT, data=json.dumps(payload).encode('utf-8'), headers=headers, method='POST')
+                payload['model'] = m
+                req = urllib.request.Request(endpoint, data=json.dumps(payload).encode('utf-8'), headers=headers, method='POST')
                 with urllib.request.urlopen(req, timeout=35) as resp:
                     data = json.loads(resp.read().decode('utf-8'))
                 reply = ((data.get('choices') or [{}])[0].get('message') or {}).get('content')
@@ -411,12 +414,12 @@ def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, lan
                 ]
                 lower = reply.lower()
                 if not all(r in lower for r in required):
-                    print('LLM_MISSING_REQUIRED', model)
+                    print('LLM_MISSING_REQUIRED', m)
                     continue
                 return reply
             except Exception as e:
                 last_err = repr(e)
-                print('LLM_ERR', model, last_err, f'attempt={attempt+1}')
+                print('LLM_ERR', m, last_err, f'attempt={attempt+1}')
                 time.sleep(1.5 if attempt else 0.2)
     print('LLM_FINAL_ERR', last_err)
     return ''
