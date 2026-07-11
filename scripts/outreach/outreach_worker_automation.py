@@ -62,10 +62,15 @@ FORBIDDEN_DOMAIN_SUBSTRINGS = (
 MAX_AGE_DAYS = 180
 DEDUP_COOLDOWN_SECONDS = 24 * 3600  # 24 hours
 SEND_REQUIRES_ALIVE_THREAD = True
-LLM_TAILOR_ENABLED = bool(os.getenv('ZION_LLM_API_ENDPOINT') and os.getenv('ZION_LLM_API_KEY') and os.getenv('ZION_LLM_MODEL'))
-LLM_API_ENDPOINT = os.getenv('ZION_LLM_API_ENDPOINT') or os.getenv('LLM_API_ENDPOINT')
-LLM_API_KEY = os.getenv('ZION_LLM_API_KEY') or os.getenv('LLM_API_KEY')
-LLM_MODEL = os.getenv('ZION_LLM_MODEL') or os.getenv('LLM_MODEL') or 'gpt-4o-mini'
+LLM_TAILOR_ENABLED = bool(
+    (os.getenv('ZION_LLM_API_ENDPOINT') and os.getenv('ZION_LLM_API_KEY') and os.getenv('ZION_LLM_MODEL')) or
+    os.getenv('OPENROUTER_API_KEY') or
+    os.getenv('GROQ_API_KEY') or
+    os.getenv('GEMINI_API_KEY')
+)
+LLM_API_ENDPOINT = os.getenv('ZION_LLM_API_ENDPOINT') or os.getenv('LLM_API_ENDPOINT') or os.getenv('OPENROUTER_API_ENDPOINT') or os.getenv('GROQ_API_ENDPOINT') or os.getenv('GEMINI_API_ENDPOINT')
+LLM_API_KEY = os.getenv('ZION_LLM_API_KEY') or os.getenv('LLM_API_KEY') or os.getenv('OPENROUTER_API_KEY') or os.getenv('GROQ_API_KEY') or os.getenv('GEMINI_API_KEY')
+LLM_MODEL = os.getenv('ZION_LLM_MODEL') or os.getenv('LLM_MODEL') or os.getenv('OPENROUTER_MODEL') or os.getenv('GROQ_MODEL') or os.getenv('GEMINI_MODEL') or 'openai/gpt-4o-mini'
 LLM_FALLBACK_MODELS = [m.strip() for m in os.getenv('ZION_LLM_FALLBACK_MODELS', '').split(',') if m.strip()]
 
 FORBIDDEN_ADDR_PREFIXES = (
