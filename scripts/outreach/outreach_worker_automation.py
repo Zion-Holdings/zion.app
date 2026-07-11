@@ -29,7 +29,7 @@ STATE_FILE = DEDUP_DIR / 'global_dedup_state.json'
 LEDGER_FILE = DEDUP_DIR / 'sent_ledger.jsonl'
 BOUNCE_HISTORY_FILE = DEDUP_DIR / 'bounce_history.jsonl'
 
-_GMAIL_API_TIMEOUT = 20
+_GMAIL_API_TIMEOUT = 15
 
 
 def _timed_gmail_call(request):
@@ -190,7 +190,6 @@ def search_all_folders(q, max_results=20):
     # High-frequency safe wrapper: runs every Gmail call under a timeout
     # and scans the same query across common mail scopes to approximate
     # "all folders" behavior.
-    api_timeout_seconds = 20
     folders = ['in:anywhere']
     if 'in:anywhere' not in q:
         base = q
@@ -210,7 +209,7 @@ def search_all_folders(q, max_results=20):
             return _execute(request)
         with ThreadPoolExecutor(max_workers=1) as ex:
             fut = ex.submit(_execute, request)
-            return fut.result(timeout=api_timeout_seconds)
+            return fut.result(timeout=_GMAIL_API_TIMEOUT)
 
     best = []
     for qtry in queries:
@@ -311,13 +310,16 @@ def _message_is_too_old(date_hdr: str, max_age_days: int = 180) -> bool:
 def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, language: str) -> str:
     if not LLM_TAILOR_ENABLED or not LLM_API_ENDPOINT or not LLM_API_KEY:
         return ''
+    trimmed = (thread_text or '').strip()
+    trimmed = trimmed[:2200]
     prompt = (
-        "You are the CEO of Zion Tech Group. Draft a short, friendly-professional, specific reply. "
-        f"Contact: {contact_name}. Company: {company_name}. Language: {language}. "
-        "Context:\n" + (thread_text[:1600])
-        + "\nRules: include Calendly https://calendly.com/kleber-ziontechgroup, "
-        "https://ziontechgroup.com, 1-3 mutually beneficial ideas, and a soft close. "
-        "Avoid generic filler."
+    "You are the CEO of Zion Tech Group. Write a friendly-professional reply as the CEO. "
+    f"Contact: {contact_name}. Company: {company_name}. Conversation language: {language}. "
+    "Thread context:\n" + trimmed + "\nRules:\n"
+    "- Thank them for the opportunity to collaborate on this project.\n"
+    "- Propose 1-3 concrete, mutually beneficial next ideas for our new AI services.\n"
+    "- Offer Calendly https://calendly.com/kleber-ziontechgroup and invite them to https://ziontechgroup.com, noting free services and tools.\n"
+    "- Give a positive, human tone. No generic filler. No CEO signature block noise."
     )
     headers = {
         'Authorization': f"Bearer {LLM_API_KEY}",
@@ -326,26 +328,31 @@ def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, lan
     body = json.dumps({
         'model': LLM_MODEL,
         'messages': [
-            {'role': 'system', 'content': 'You write short, specific, business-friendly emails.'},
+            {'role': 'system', 'content': 'You write short, specific, business-friendly emails that sound human and advance deals.'},
             {'role': 'user', 'content': prompt},
         ],
-        'temperature': 0.4,
-        'max_tokens': 400,
+        'temperature': 0.25,
+        'max_tokens': 420,
     }).encode('utf-8')
     last_err = None
-    for attempt in range(3):
-        try:
-            import urllib.request
-            req = urllib.request.Request(LLM_API_ENDPOINT, data=body, headers=headers, method='POST')
-            with urllib.request.urlopen(req, timeout=30) as resp:
-                data = json.loads(resp.read().decode('utf-8'))
-            reply = ((data.get('choices') or [{}])[0].get('message') or {}).get('content')
-            if isinstance(reply, str) and reply.strip():
-                return reply.strip()
-        except Exception as e:
-            last_err = repr(e)
-            print('LLM_ERR', last_err, f'attempt={attempt+1}')
-            time.sleep(2 ** attempt)
+    # try up to 3 models in fallback chain if configured
+    models = [LLM_MODEL] + [m.strip() for m in (os.getenv('ZION_LLM_FALLBACK_MODELS') or '').split(',') if m.strip()]
+    for model in models:
+        for attempt in range(2):
+            try:
+                import urllib.request
+                payload = json.loads(body.decode('utf-8'))
+                payload['model'] = model
+                req = urllib.request.Request(LLM_API_ENDPOINT, data=json.dumps(payload).encode('utf-8'), headers=headers, method='POST')
+                with urllib.request.urlopen(req, timeout=35) as resp:
+                    data = json.loads(resp.read().decode('utf-8'))
+                reply = ((data.get('choices') or [{}])[0].get('message') or {}).get('content')
+                if isinstance(reply, str) and reply.strip():
+                    return reply.strip()
+            except Exception as e:
+                last_err = repr(e)
+                print('LLM_ERR', model, last_err, f'attempt={attempt+1}')
+                time.sleep(1.5 if attempt else 0.2)
     print('LLM_FINAL_ERR', last_err)
     return ''
 
