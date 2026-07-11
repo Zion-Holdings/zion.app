@@ -818,6 +818,8 @@ def run_high_frequency_outreach():
             pass
     new_subjects = set()
     clean_contacts = []
+    internal_like_suffixes = ('.edu','.gov','.mil','.k12.ia.us','.school','.academy')
+    known_bad_school_domains = {'holyfamily.dbq.pvt.k12.ia.us'}
     for c in contacts:
         email = (c.get('email') or '').strip().lower()
         if not email or '@' not in email:
@@ -826,16 +828,18 @@ def run_high_frequency_outreach():
         local = email.split('@',1)[0]
         if domain.endswith('ziontechgroup.com') or domain.endswith('ztg.com.br'):
             continue
-        if local in ('automated','automated') or local.startswith('automated-'):
+        if any(domain.endswith(s) for s in internal_like_suffixes) or domain in known_bad_school_domains:
+            record_bounce(email, 'internal-like domain filtered')
+            continue
+        if local in ('automated',) or local.startswith('automated-'):
             continue
         if any(bad in local for bad in ('groups.outlook.com','mail.vresp.com','airbnb.com','uber.com','tiktok.com','dpsmrn.org','surfline.com')):
             continue
         subj = (c.get('thread_subject') or '').strip()
-        if subj.startswith(('Re: Pré-aprovação','Re: Pré-aprovação','Re: Pré-aprovação','Boleto vencido','Billing update','Invoice update','Up to ','Off your first')):
+        if subj.startswith(('Re: Pré-aprovação','Boleto vencido','Billing update','Invoice update','Up to ','Off your first')):
             continue
-        if subj not in new_subjects or True:
-            clean_contacts.append(c)
-            new_subjects.add(subj)
+        clean_contacts.append(c)
+        new_subjects.add(subj)
     contacts = clean_contacts[-40:]
 
     sent_count = 0
