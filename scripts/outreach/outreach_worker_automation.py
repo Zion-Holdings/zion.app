@@ -158,13 +158,30 @@ def _load_hot_followup_ledger_ids() -> tuple[set[str], set[str]]:
 
 
 def search_all_folders(q, max_results=20):
-    resp = service.users().messages().list(userId='me', q=q, maxResults=max_results).execute()
+    # Bounded Gmail API call to avoid indefinite hangs in high-frequency runs.
+    api_timeout_seconds = 20
+    try:
+        from concurrent.futures import ThreadPoolExecutor
+    except Exception:
+        ThreadPoolExecutor = None
+    def _execute(request):
+        return request.execute()
+    def _timed(request):
+        if ThreadPoolExecutor is None:
+            return _execute(request)
+        with ThreadPoolExecutor(max_workers=1) as ex:
+            fut = ex.submit(_execute, request)
+            return fut.result(timeout=api_timeout_seconds)
+    try:
+        resp = _timed(service.users().messages().list(userId='me', q=q, maxResults=max_results))
+    except Exception:
+        return []
     items = resp.get('messages', [])
     out = []
     blocked_threads, blocked_message_ids = _load_hot_followup_ledger_ids()
     for item in items:
         try:
-            msg = service.users().messages().get(userId='me', id=item['id'], format='metadata', metadataHeaders=['From','Subject','Date','Thread-Id']).execute()
+            msg = _timed(service.users().messages().get(userId='me', id=item['id'], format='metadata', metadataHeaders=['From','Subject','Date','Thread-Id']))
         except Exception:
             continue
         if msg.get('id') in blocked_message_ids:
@@ -511,6 +528,7 @@ def run_high_frequency_outreach():
         print('AUTH_FAIL', GMAIL_AUTH_ERROR)
         append_dry_run_report({'mode':'auth_failure','error':GMAIL_AUTH_ERROR,'ts':int(time.time())})
         return {'sent':0,'skipped':0,'adds':0,'dead':[],'auth_error':GMAIL_AUTH_ERROR}
+    print('TRACE_START', flush=True)
     discovery_queries = [
         '!category:promotions !in:spam !in:trash label:"!!!hot-follow-up"',
         '!category:promotions !in:spam !in:trash newer_than:7d "partnership" OR "collaboration" OR "proposal"',
@@ -519,13 +537,15 @@ def run_high_frequency_outreach():
     ]
 
     hit_ids = set()
+    hit_ids = set()
     contacts = []
-
-    for q in discovery_queries:
+    for qi, q in enumerate(discovery_queries, 1):
+        print('TRACE_QUERY', qi, q, flush=True)
         try:
             hits = search_all_folders(q, max_results=25)
         except Exception:
             hits = []
+        print('TRACE_QUERY_DONE', qi, len(hits), flush=True)
         for h in hits:
             hit_id = h.get('id')
             if not hit_id or hit_id in hit_ids:
@@ -537,6 +557,7 @@ def run_high_frequency_outreach():
                 continue
             headers = {x['name']: x['value'] for x in msg.get('payload', {}).get('headers', [])}
 
+            frm = headers.get('From', '')
             subj = headers.get('Subject', '')
             if '@' not in frm:
                 continue
@@ -565,10 +586,19 @@ def run_high_frequency_outreach():
     skipped = 0
     newest_used = []
     dead = []
+    print('TRACE_CONTACTS', len(contacts), flush=True)
+    _thread_alive_cache = {}
+    def _probe_cached(tid):
+        if tid in _thread_alive_cache:
+            return _thread_alive_cache[tid]
+        ok = probe_thread_alive(tid)
+        _thread_alive_cache[tid] = ok
+        return ok
     for c in contacts:
         email = c['email']
         contact_key = email.lower()
         prospective_subject = c.get('thread_subject') or 'Next steps'
+        t0 = time.time()
         if recent_sent_exists(contact_key, within_seconds=DEDUP_COOLDOWN_SECONDS):
             skipped += 1
             continue
@@ -577,7 +607,7 @@ def run_high_frequency_outreach():
             continue
         lead = fetch_or_create_lead_from_inbox(email, prospective_subject)
         if not lead:
-            skipped += 1
+
             continue
         newest_used.append({'contact': email, 'msg_id': lead['msg_id'], 'lang': lead['lang']})
         thread_id = c.get('thread_id')
