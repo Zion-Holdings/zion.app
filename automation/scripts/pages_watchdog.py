@@ -41,13 +41,15 @@ def load_verify_routes():
 
 
 def probe(urls):
-    session = requests.Session() if requests else None
-    session.headers.update({
-        'User-Agent': 'Mozilla/5.0 (compatible; zion-pages-watchdog/1.0)',
-        'Accept': 'text/html,application/xhtml+xml',
-    })
-    session.max_redirects = 5
-    results = []
+    session = None
+    if requests is not None:
+        session = requests.Session()
+        session.headers.update({
+            'User-Agent': 'Mozilla/5.0 (compatible; zion-pages-watchdog/1.0)',
+            'Accept': 'text/html,application/xhtml+xml',
+        })
+        session.max_redirects = 5
+
     broken_since = {}
     if LATEST_REPORT.exists():
         try:
@@ -55,13 +57,16 @@ def probe(urls):
             broken_since = {r['url']: r['broken_since'] for r in prev.get('routes', []) if r.get('status') != 200 and r.get('broken_since')}
         except Exception:
             broken_since = {}
+
     broken = 0
+    results = []
     for url in urls:
         status = None
         final_url = url
         error = None
+
         if session is None:
-            error = 'requests not installed'
+            error = 'missing dependency: requests'
         else:
             try:
                 resp = session.get(url, timeout=(10, 20), allow_redirects=True)
@@ -69,6 +74,7 @@ def probe(urls):
                 final_url = resp.url
             except Exception as exc:
                 error = repr(exc)
+
         ok = status == 200
         if not ok:
             broken += 1
