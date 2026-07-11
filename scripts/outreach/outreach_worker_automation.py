@@ -579,29 +579,29 @@ def _addr_is_invalid(addr: str) -> bool:
     return False
 
 def build_ceo_reply(contact_name, company_name, thread_text, language='en'):
-    tailored = llm_tailor_reply(thread_text, contact_name, company_name, language)
-    if tailored:
-        return tailored
+    if LLM_TAILOR_ENABLED:
+        tailored = llm_tailor_reply(thread_text, contact_name, company_name, language)
+        if tailored:
+            return tailored
     p = _personalize(thread_text, contact_name, company_name, language)
     return f"""{contact_name},
 
-{p['opening']} I really value that partnership.
+{p['opening'] if isinstance(p, dict) else 'Thanks for the conversation.'} I really value that partnership.
 
 Today Zion Tech Group is expanding into AI/IT services, and I see a few fast, mutually beneficial next steps we could explore together:
 
-{p['pillars']}
+{p['pillars'] if isinstance(p, dict) else ''}
 
-{p['cta']}
+{p['cta'] if isinstance(p, dict) else 'If this aligns, I’m happy to advance by email or a quick call.'}
 https://calendly.com/kleber-ziontechgroup
 
 You can also explore our new AI services and free tools here:
 https://ziontechgroup.com
 
-{p['closing']}
+{p['closing'] if isinstance(p, dict) else 'Let’s build something that benefits both teams.'}
 Kleber Garcia Alcatrão
-CEO, Zion Tech Group
-https://ziontechgroup.com
 """
+
 
 def build_ceo_reply_preview(contact_name, company_name, thread_text, subject, language='en'):
     body = build_ceo_reply(contact_name, company_name, thread_text, language=language)
