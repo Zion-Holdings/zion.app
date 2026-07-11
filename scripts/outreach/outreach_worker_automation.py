@@ -65,7 +65,8 @@ SEND_REQUIRES_ALIVE_THREAD = True
 LLM_TAILOR_ENABLED = bool(os.getenv('ZION_LLM_API_ENDPOINT') and os.getenv('ZION_LLM_API_KEY') and os.getenv('ZION_LLM_MODEL'))
 LLM_API_ENDPOINT = os.getenv('ZION_LLM_API_ENDPOINT') or os.getenv('LLM_API_ENDPOINT')
 LLM_API_KEY = os.getenv('ZION_LLM_API_KEY') or os.getenv('LLM_API_KEY')
-LLM_MODEL = os.getenv('ZION_LLM_MODEL') or 'gpt-4o-mini'
+LLM_MODEL = os.getenv('ZION_LLM_MODEL') or os.getenv('LLM_MODEL') or 'gpt-4o-mini'
+LLM_FALLBACK_MODELS = [m.strip() for m in os.getenv('ZION_LLM_FALLBACK_MODELS', '').split(',') if m.strip()]
 
 FORBIDDEN_ADDR_PREFIXES = (
     'no-reply','noreply','mailer-daemon','postmaster','notifications@github.com',
@@ -186,16 +187,45 @@ def _load_hot_followup_ledger_ids() -> tuple[set[str], set[str]]:
     return blocked_threads, blocked_message_ids
 
 
-def search_all_folders(q, max_results=20):
+def _load_hot_followup_ledger_contacts():
+    out = []
+    try:
+        p = BASE_DIR / 'outreach_monitor' / 'processed' / 'hot_followup_reply_ledger.jsonl'
+        seen = set()
+        with p.open('r', encoding='utf-8') as f:
+            for line in f:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    obj = json.loads(line)
+                except Exception:
+                    continue
+                to_addr = (obj.get('to') or '').strip()
+                if not to_addr or '@' not in to_addr or to_addr.lower().endswith('@ziontechgroup.com'):
+                    continue
+                if to_addr in seen:
+                    continue
+                seen.add(to_addr)
+                subj = obj.get('subject') or 'Next steps'
+                tid = obj.get('thread_id') or ''
+                out.append({
+                    'email': to_addr,
+                    'name': to_addr.split('@')[0].replace('.', ' ').title(),
+                    'company': to_addr.split('@')[1].split('.')[0].title(),
+                    'thread_id': tid,
+                    'thread_subject': subj,
+                })
+    except Exception:
+        pass
+    return out[:200]
+
+
+def search_all_folders(q, maxResults=20):
     # High-frequency safe wrapper: runs every Gmail call under a timeout
     # and scans the same query across common mail scopes to approximate
     # "all folders" behavior.
-    folders = ['in:anywhere']
-    if 'in:anywhere' not in q:
-        base = q
-    else:
-        base = q
-    queries = [base]
+    queries = [q]
     try:
         from concurrent.futures import ThreadPoolExecutor
     except Exception:
@@ -212,23 +242,30 @@ def search_all_folders(q, max_results=20):
             return fut.result(timeout=_GMAIL_API_TIMEOUT)
 
     best = []
+    seen_ids = set()
+    seen_threads = set()
     for qtry in queries:
         try:
             if service is None:
-                return best
-            resp = _timed(service.users().messages().list(userId='me', q=qtry, max_results=max_results))
+                continue
+            resp = _timed(service.users().messages().list(userId='me', q=qtry, maxResults=maxResults))
         except Exception:
             continue
-        items = resp.get('messages', [])
+        items = resp.get('messages', []) or []
         for item in items:
+            mid = item.get('id')
+            tid = item.get('threadId')
+            if not mid or mid in seen_ids:
+                continue
+            if tid and tid in seen_threads:
+                continue
             try:
-                msg = _timed(service.users().messages().get(userId='me', id=item['id'], format='metadata', metadataHeaders=['From','Subject','Date','Thread-Id']))
+                msg = _timed(service.users().messages().get(userId='me', id=mid, format='metadata', metadataHeaders=['From','Subject','Date','Thread-Id']))
             except Exception:
                 continue
-            if msg.get('id') in {x.get('id') for x in best}:
-                continue
-            if msg.get('threadId') in {x.get('threadId') for x in best if x.get('threadId')}:
-                continue
+            seen_ids.add(msg.get('id'))
+            if msg.get('threadId'):
+                seen_threads.add(msg['threadId'])
             headers = {h['name']: h['value'] for h in msg.get('payload', {}).get('headers', [])}
             best.append({
                 'id': msg['id'],
@@ -249,20 +286,34 @@ def resolve_thread_id(email, subject_hint=None):
         queries += [f'{base} newer_than:30d', f'{base}']
     hits = []
     for q in queries:
-        hits = search_all_folders(q, max_results=10)
+        hits = search_all_folders(q, maxResults=10)
         if hits:
             break
     if hits:
         return hits[0].get('threadId') or hits[0].get('id')
     return None
 
-def probe_thread_alive(thread_id):
+def probe_thread_alive(thread_id, _seen=None):
     if not thread_id:
         return False
-    try:
-        return _timed_gmail_call(service.users().threads().get(userId='me', id=thread_id)) is not None
-    except Exception:
+    if _seen is None:
+        _seen = set()
+    if thread_id in _seen:
         return False
+    _seen.add(thread_id)
+    try:
+        t = _timed_gmail_call(service.users().threads().get(userId='me', id=thread_id, format='metadata', metadataHeaders=['From','Subject']))
+        if not t:
+            return False
+        messages = t.get('messages') or []
+        if messages:
+            return True
+        resp = _timed_gmail_call(service.users().messages().list(userId='me', q=f'threadId:{thread_id} in:anywhere', maxResults=5))
+        if resp and resp.get('messages'):
+            return True
+    except Exception:
+        pass
+    return False
 
 def get_message_text(msg_id):
     msg = _timed_gmail_call(service.users().messages().get(userId='me', id=msg_id, format='full'))
@@ -512,7 +563,7 @@ def fetch_or_create_lead_from_inbox(email, thread_subject=None):
             queries.append(q)
     hit = None
     for query in queries:
-        hits = search_all_folders(query, max_results=20)
+        hits = search_all_folders(query, maxResults=20)
         if hits:
             for newest in hits:
                 if is_seen_message_id(newest['id']):
@@ -590,9 +641,11 @@ def run_high_frequency_outreach():
     print('LLM_TAILOR_ENABLED=', bool(LLM_TAILOR_ENABLED), 'ENDPOINT=', bool(LLM_API_ENDPOINT), flush=True)
     discovery_queries = [
         '!category:promotions !in:spam !in:trash label:"!!!hot-follow-up"',
+        'label:"!!!hot-follow-up"',
         '!category:promotions !in:spam !in:trash newer_than:7d "partnership" OR "collaboration" OR "proposal"',
         '!category:promotions !in:spam !in:trash newer_than:7d "AI services" OR "AI support" OR "project"',
         '!category:promotions !in:spam !in:trash newer_than:7d "interested" OR "next steps" OR "opportunity"',
+        '"!!!hot-follow-up"',
     ]
 
     hit_ids = set()
@@ -600,7 +653,7 @@ def run_high_frequency_outreach():
     for qi, q in enumerate(discovery_queries, 1):
         print('TRACE_QUERY', qi, q, flush=True)
         try:
-            hits = search_all_folders(q, max_results=25)
+            hits = search_all_folders(q, maxResults=50)
         except Exception:
             hits = []
         print('TRACE_QUERY_DONE', qi, len(hits), flush=True)
@@ -641,6 +694,23 @@ def run_high_frequency_outreach():
                 'thread_id': thread_id,
                 'thread_subject': subj or 'Next steps',
             })
+
+    if not contacts:
+        try:
+            contacts.extend(_load_hot_followup_ledger_contacts())
+        except Exception:
+            pass
+        new_subjects = {c.get('thread_subject') or '' for c in contacts}
+        if len(new_subjects) < 20:
+            try:
+                extras = _load_hot_followup_ledger_contacts()
+            except Exception:
+                extras = []
+            for c in extras:
+                subj = c.get('thread_subject') or ''
+                if subj not in new_subjects:
+                    contacts.append(c)
+                    new_subjects.add(subj)
 
     sent_count = 0
     skipped = 0
