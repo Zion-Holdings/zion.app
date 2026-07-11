@@ -193,35 +193,33 @@ def main():
                                 continue
                         except Exception:
                             pass
-                    draft = f"""{name},
-
-Obrigado pela oportunidade de trabalharmos juntos no projeto anterior. Vejo boas oportunidades para criarmos valor mútuo agora.
-
-Você pode ver nossos novos serviços de IA aqui: https://ziontechgroup.com
-Também temos ferramentas e serviços gratuitos no site.
-
-Se fizer sentido, vamos conversar: https://calendly.com/kleber-ziontechgroup
-
-Um abraço,
-Kleber Garcia Alcatrão
-CEO, Zion Tech Group
-https://ziontechgroup.com
-"""
                     if lang == 'es':
-                        draft = f"""{name},
-
-Gracias por la oportunidad de haber trabajado juntos en el proyecto anterior. Veo buenas oportunidades para crear valor mutuo ahora.
-
-Puedes ver nuestros nuevos servicios de IA aquí: https://ziontechgroup.com
-También ofrecemos herramientas y servicios gratuitos en el sitio.
-
-Si cuadra, conversemos: https://calendly.com/kleber-ziontechgroup
-
-Saludos cordiales,
-Kleber Garcia Alcatrão
-CEO, Zion Tech Group
-https://ziontechgroup.com
-"""
+                        draft = (
+                            f"{name},\n\n"
+                            f"Gracias por la oportunidad de haber trabajado juntos en el proyecto anterior. Veo buenas oportunidades para crear valor mutuo ahora.\n\n"
+                            f"Puedes ver nuestros nuevos servicios de IA aquí: https://ziontechgroup.com\n"
+                            f"También ofrecemos herramientas y servicios gratuitos en el sitio.\n\n"
+                            f"Si cuadra, conversemos: https://calendly.com/kleber-ziontechgroup\n\n"
+                            f"Saludos cordiales,\nKleber Garcia Alcatrão\nCEO, Zion Tech Group\nhttps://ziontechgroup.com"
+                        )
+                    elif lang == 'pt':
+                        draft = (
+                            f"{name},\n\n"
+                            f"Obrigado pela oportunidade de trabalharmos juntos no projeto anterior. Vejo boas oportunidades para criarmos valor mútuo agora.\n\n"
+                            f"Você pode ver nossos novos serviços de IA aqui: https://ziontechgroup.com\n"
+                            f"Também temos ferramentas e serviços gratuitos no site.\n\n"
+                            f"Se fizer sentido, vamos conversar: https://calendly.com/kleber-ziontechgroup\n\n"
+                            f"Um abraço,\nKleber Garcia Alcatrão\nCEO, Zion Tech Group\nhttps://ziontechgroup.com"
+                        )
+                    else:
+                        draft = (
+                            f"{name},\n\n"
+                            f"Thank you for the opportunity to work together on the previous project. I see strong potential for new mutually valuable work between our teams.\n\n"
+                            f"You can explore our new AI services here: https://ziontechgroup.com\n"
+                            f"We also offer free services and tools on the site.\n\n"
+                            f"If it makes sense, let's talk: https://calendly.com/kleber-ziontechgroup\n\n"
+                            f"Best,\nKleber Garcia Alcatrão\nCEO, Zion Tech Group\nhttps://ziontechgroup.com"
+                        )
                     hot_drafts.append({
                         'lead_id': mid,
                         'thread_id': thread_id,
