@@ -8,6 +8,8 @@ on:
   - cron: 0 3 * * *
   workflow_dispatch:
 
+permissions:
+  contents: read
 jobs:
   performance-budget:
     name: Performance Budget Check
@@ -108,19 +110,19 @@ jobs:
     - name: Notify Telegram on failure
       if: failure()
       run: |
-        if [ -f automation/notify-telegram.js ]; then
-          node automation/notify-telegram.js "Performance budget check failed. See CI logs." || true
+        if [ -f automation/notify-telegram.cjs ]; then
+          node automation/notify-telegram.cjs "Performance budget check failed. See CI logs." || true
         else
-          echo "notify-telegram.js not found; skipping Telegram alert."
+          echo "notify-telegram.cjs not found; skipping Telegram alert."
         fi
 
     - name: Notify Telegram on success
       if: success()
       run: |
-        if [ -f automation/notify-telegram.js ]; then
-          node automation/notify-telegram.js "Performance budget check passed." || true
+        if [ -f automation/notify-telegram.cjs ]; then
+          node automation/notify-telegram.cjs "Performance budget check passed." || true
         else
-          echo "notify-telegram.js not found; skipping Telegram alert."
+          echo "notify-telegram.cjs not found; skipping Telegram alert."
         fi
 
     timeout-minutes: 25
