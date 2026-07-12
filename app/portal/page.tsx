@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Client Portal — Zion Tech Group',
+  description: 'Access client dashboards, support tickets, billing, and knowledge base in the Zion Tech Group portal.',
 };
 
 export default function PortalPage() {
