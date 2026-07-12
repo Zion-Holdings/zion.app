@@ -1721,5 +1721,11 @@
     "queries_run": 20,
     "contacts_found": 0,
     "new_leads_added": 0
+  },
+  {
+    "ts": "2026-07-12T01:28:38.594066+00:00",
+    "event": "miner_timeout",
+    "query": "\"ziontechgroup.com\"",
+    "note": "soft timeout reached; stopping query loop early"
   }
 ]
