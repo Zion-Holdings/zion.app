@@ -601,15 +601,33 @@ def _addr_is_invalid(addr: str) -> bool:
         return True
     return False
 
+def _guess_project_area(thread_text: str, language: str) -> str:
+    t = (thread_text or '').lower()
+    area_by_lang = {
+        'pt': 'automação com IA e suporte técnico',
+        'es': 'automatización con IA y soporte técnico',
+    }
+    default = area_by_lang.get(language, 'AI and technical support automation')
+    if not t.strip():
+        return default
+    m = re.search(r'(?:sobre|acerca de|on|about|re:)\s+([^.!?\n]{3,60})', t)
+    if m:
+        candidate = m.group(1).strip()
+        if 3 <= len(candidate) <= 60:
+            return candidate
+    return default
+
+
 def build_ceo_reply(contact_name, company_name, thread_text, language='en'):
     if LLM_TAILOR_ENABLED:
         tailored = llm_tailor_reply(thread_text, contact_name, company_name, language)
         if tailored:
             return tailored
     p = _extract_context_ideas(thread_text, language, company_name)
+    project_area = _guess_project_area(thread_text, language)
     return f"""{contact_name},
 
-{p['opening'] if isinstance(p, dict) else 'Thanks for the conversation.'} I really value that partnership.
+Thanks for the opportunity to collaborate with {company_name}. I really value the work we did together on {project_area}.
 
 Today Zion Tech Group is expanding into AI/IT services, and I see a few fast, mutually beneficial next steps we could explore together:
 
@@ -953,18 +971,22 @@ def run_high_frequency_outreach():
     clean_contacts = []
     # Dedup against hot-followup reply ledger to avoid duplicate sends
     try:
-        ledger_sent = set()
+        ledger_sent_threads = set()
+        ledger_sent_pairs = set()
         ledger_path = Path(HOT_FOLLOWUP_REPLY_LEDGER)
         if ledger_path.exists():
             for line in ledger_path.read_text(encoding='utf-8').splitlines():
                 try:
                     obj = json.loads(line)
                     if obj.get('avoid_duplicate') and obj.get('thread_id'):
-                        ledger_sent.add(obj['thread_id'])
+                        ledger_sent_threads.add(obj['thread_id'])
+                    if obj.get('to') and obj.get('subject'):
+                        ledger_sent_pairs.add((obj['to'].lower(), (obj.get('subject') or '').strip().lower()))
                 except Exception:
                     pass
     except Exception:
-        ledger_sent = set()
+        ledger_sent_threads = set()
+        ledger_sent_pairs = set()
     internal_like_suffixes = ('.edu','.gov','.mil','.k12.ia.us','.school','.academy')
     known_bad_school_domains = {'holyfamily.dbq.pvt.k12.ia.us'}
     for c in contacts:
@@ -985,7 +1007,8 @@ def run_high_frequency_outreach():
         subj = (c.get('thread_subject') or '').strip()
         if subj.startswith(('Re: Pré-aprovação','Boleto vencido','Billing update','Invoice update','Up to ','Off your first')):
             continue
-        if c.get('thread_id') in ledger_sent:
+        pair = (email, subj.lower())
+        if c.get('thread_id') in ledger_sent_threads or pair in ledger_sent_pairs:
             record_bounce(email, f'duplicate-hot-followup-ledger: {subj[:80]}')
             continue
         clean_contacts.append(c)
