@@ -81,6 +81,12 @@ def _load_sent_set():
                 key = (obj.get('to') or '').lower(), (obj.get('subject') or '').strip()
                 if key[0] and key[1]:
                     sent.add(key)
+                tid = obj.get('thread_id')
+                mid = obj.get('message_id')
+                if tid:
+                    sent.add(('__thread__', str(tid).lower()))
+                if mid:
+                    sent.add(('__message__', str(mid).lower()))
             except Exception:
                 continue
     except Exception:
@@ -116,9 +122,7 @@ def send_mail(to_addr, subject, body, html=None):
     sent = _load_sent_set()
     subj_key = (subject or '').strip()
     if to_key and subj_key:
-        if (to_key, subj_key) in sent:
-            return None, 'duplicate'
-        if (to_key, subj_key.lower()) in sent:
+        if (to_key, subj_key) in sent or (to_key, subj_key.lower()) in sent:
             return None, 'duplicate'
     raw_email_lines = [
         'From: kleber@ziontechgroup.com',
