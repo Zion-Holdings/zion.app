@@ -72,9 +72,9 @@
     "pixelmatch": "^7.2.0",
     "playwright": "^1.60.0",
     "pngjs": "^7.0.0",
-    "puppeteer": "^24.43.1",
+    "puppeteer": "^25.3.0",
     "tailwindcss": "^4.3.0",
-    "typescript": "^6.0.3",
+    "typescript": "^7.0.2",
     "web-vitals": "^5.2.0",
     "yargs": "^18.0.0"
   },
