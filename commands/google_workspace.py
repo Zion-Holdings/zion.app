@@ -193,7 +193,18 @@ EXCLUSION_CANDIDATES = (
 
 def _load_excluded_global() -> set:
     try:
-        for cand in EXCLUSION_CANDIDATES:
+        # Search for exclusion-list.json relative to likely repo roots in this environment.
+        candidates = [
+            Path(__file__).resolve().parent.parent / 'lead-crm' / 'exclusion-list.json',
+            Path.cwd() / 'lead-crm' / 'exclusion-list.json',
+            FALLBACK_WORKSPACE / 'zion-clone-test2' / 'lead-crm' / 'exclusion-list.json',
+            FALLBACK_WORKSPACE / 'zion-clone-test' / 'lead-crm' / 'exclusion-list.json',
+            Path.home() / 'zion-clone-test2' / 'lead-crm' / 'exclusion-list.json',
+            Path.home() / 'zion-clone-test' / 'lead-crm' / 'exclusion-list.json',
+            Path('/data/data/com.termux/files/home/zion-support.github.io/lead-crm/exclusion-list.json'),
+            Path('/Users/miami2/zion.app/lead-crm/exclusion-list.json'),
+        ]
+        for cand in candidates:
             if cand.exists():
                 data = json.loads(cand.read_text(encoding='utf-8'))
                 return {item.get('email', '').lower() for item in data.get('addresses', []) if item.get('email')}
