@@ -39,6 +39,21 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: node automation/ai-site-improvement-agent.cjs --base https://ziontechgroup.com
 
+      - name: Surface site improvement agent results
+        id: site-improv-result
+        if: always()
+        run: |
+          set -euo pipefail
+          report=automation/reports/site-improvement-agent-latest.json
+          if [ -f "$report" ]; then
+            echo "REPORT_EXISTS=1" >> "$GITHUB_OUTPUT"
+            echo '---REPORT HEAD---'
+            sed -n '1,220p' "$report" || true
+          else
+            echo "REPORT_EXISTS=0" >> "$GITHUB_OUTPUT"
+            echo 'site-improvement-agent report missing after run'
+          fi
+
       - name: Upload site improvement report
         if: always()
         uses: actions/upload-artifact@v4
@@ -46,3 +61,4 @@ jobs:
           name: site-improvement-agent-${{ github.run_id }}
           path: automation/reports/site-improvement-agent-latest.json
           retention-days: 14
+          if-no-files-found: ignore
