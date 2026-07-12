@@ -115,9 +115,10 @@ sys_domains = {
     'airbnb.com','booking.com','expedia.com','hotels.com','tripadvisor.com',
     'airbnb.co.uk','airbnb.co.za','airbnb.com.au','airbnb.co.in',
     'airbnb.ca','airbnb.fr','airbnb.de','airbnb.es','airbnb.it',
-    'airbnb.nl','airbnb.be','airbnb.at','airbnb.ch','airbnb.se','airbnb.no','airbnb.dk','airbnb.fi',
-    'airbnb.co.nz','airbnb.co.jp','airbnb.kr','airbnb.co.za',
+    'airbnb.nl','airbnb.be','airbnb.at','airbnb.ch','airbnb.se','airbnb.no',
+    'airbnb.dk','airbnb.fi','airbnb.co.nz','airbnb.co.jp','airbnb.kr','airbnb.co.za',
     'stays.net','stayz.com','homeaway.com','vrbo.com',
+    'servi.ai','servi.com','manag.io','start.co','start.com'
 }
 system_local_prefixes = [
     'mailer-daemon','no-reply','noreply','notifications@github.com',
