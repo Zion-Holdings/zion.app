@@ -7363,5 +7363,39 @@
     "llm_model": "deterministic-template-v1",
     "llm_reason": "Thank you for your interest in our services. I'd be happy to prepare a customized proposal based on your requirements.\n\nCould you please provide more details about your project scope and timeline?\n\nBest regards,\nZion Tech Group",
     "confidence": 2
+  },
+  {
+    "to": "sam@redwood-ops.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "subject:\"platform engineering\"",
+    "domain": "redwood-ops.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash-20260528:free",
+    "llm_reason": "### Rating: 2 (strong, direct high-value signal)\n#### Justification (aligned to standard rating criteria for this use case):\n- 0 = No relevance to managed AI/IT services\n- 1 = Weak/tangential relevance\n- 2 = Strong, direct signal tied to core managed AI/IT service capabilities\n1. **Discipline alignm",
+    "confidence": 2
+  },
+  {
+    "to": "jordan@oakland-ventures.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "subject:\"platform engineering\"",
+    "domain": "oakland-ventures.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash-20260528:free",
+    "llm_reason": "### Rating: 2\n#### Scoring Rubric Context for clarity:\n- 0 = No alignment with managed AI/IT services (e.g., unrelated personal/consumer topic)\n- 1 = Partial/tangential alignment (e.g., generic IT hardware, non-service related tech updates)\n- 2 = Direct, high-intent alignment with core managed AI/IT",
+    "confidence": 2
   }
 ]
