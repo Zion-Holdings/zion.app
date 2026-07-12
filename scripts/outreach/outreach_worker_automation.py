@@ -398,8 +398,8 @@ def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, lan
     trimmed = (thread_text or '').strip()
     trimmed = trimmed[:2400]
     prompt = (
-        "You write short, human, business-friendly CEO emails. "
-        f"Recipient: {contact_name} from {company_name}. Language: {language}.\n\n"
+        f"You write short, human, business-friendly CEO emails in {language}. "
+        f"Recipient: {contact_name} from {company_name}.\n\n"
         "Use ONLY facts present in the thread. Be specific: name 1 concrete next-step tied to Zion's AI services. "
         "Do not use generic filler like 'let's keep in touch' or 'I look forward to hearing from you'.\n\n"
         "Required content:\n"
@@ -418,7 +418,7 @@ def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, lan
     body = json.dumps({
         'model': model,
         'messages': [
-            {'role': 'system', 'content': 'Write one complete email. No signature block. Friendly but professional CEO tone.'},
+            {'role': 'system', 'content': f'Write one complete email in {language}. No signature block. Friendly but professional CEO tone.'},
             {'role': 'user', 'content': prompt},
         ],
         'temperature': 0.35,
@@ -430,7 +430,16 @@ def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, lan
         'calendly.com/kleber-ziontechgroup',
         'ziontechgroup.com',
         'free',
-        'pleasure working with you',
+        'thank',
+    ]
+    positive_signals = [
+        'opportunity',
+        'pleasure',
+        'collaboration',
+        'partnership',
+        'project',
+        'worked with',
+        'worked together',
     ]
     for m in models:
         for attempt in range(3):
@@ -448,6 +457,9 @@ def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, lan
                 lower = reply.lower()
                 if not all(r in lower for r in required):
                     print('LLM_MISSING_REQUIRED_RETRY', m, flush=True)
+                    continue
+                if not any(s in lower for s in positive_signals):
+                    print('LLM_MISSING_POSITIVE_SIGNAL_RETRY', m, flush=True)
                     continue
                 return reply
             except Exception as e:
