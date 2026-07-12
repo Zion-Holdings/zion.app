@@ -31,6 +31,11 @@ const PATH_ALIASES = new Map([
   ['/ai/demo/', '/ai-lab/'],
   ['/new-ai-services/', '/docs/new-ai-services/']
 ]);
+const IGNORE_PATHS = new Set([
+  '/base.css',
+  '/prettify.css',
+  '/favicon.png'
+]);
 const TEMPLATE_GUARD = /\$\{|\{SITE\}/i;
 
 function isExternal(link) {
@@ -99,6 +104,8 @@ async function run() {
       if (!link || link.startsWith('javascript:') || link.startsWith('mailto:') || link.startsWith('tel:') || link.startsWith('#') || link.startsWith('/_next/') || link.startsWith('_next/')) continue;
       if (TEMPLATE_GUARD.test(link)) continue;
       if (isExternal(link)) continue;
+      const pathPart = link.split('?', 1)[0].split('#', 1)[0].replace(/\/+$/, '');
+      if (IGNORE_PATHS.has(pathPart)) continue;
       const target = toTarget(link);
       if (!target) continue;
       const key = target;
