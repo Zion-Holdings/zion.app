@@ -45,9 +45,17 @@ jobs:
           PY
 
       - name: Report readiness
-        run: |
+        run: |-
           if [ '${{ steps.detect.outputs.enabled }}' = 'true' ]; then
             echo 'LLM_TAILORING_ACTIVE=true'
           else
             echo 'LLM_TAILORING_INACTIVE=true'
+            echo '---'
+            echo 'Live LLM tailoring is inactive.'
+            echo 'To activate, add one of these secret sets in GitHub > Settings > Secrets and variables > Actions:'
+            echo '  - ZION_LLM_API_ENDPOINT, ZION_LLM_API_KEY, ZION_LLM_MODEL'
+            echo '  - OPENROUTER_API_KEY'
+            echo '  - GROQ_API_KEY'
+            echo '  - GEMINI_API_KEY'
+            echo 'Do not expose secret values in logs or commit them to the repository.'
           fi

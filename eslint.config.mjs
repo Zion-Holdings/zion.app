@@ -9,7 +9,7 @@ export default [
     ignores: [
       'next-env.d.ts',
       'src/**',
-      '**/*.d.ts', 
+      '**/*.d.ts',
       '.next/**/*',
       'out/**/*',
       'dist/**/*',
@@ -20,7 +20,15 @@ export default [
       '!jest.config.*',
       '!jest.setup.*',
       '!**/*.test.*',
-      '!**/*.spec.*'
+      '!**/*.spec.*',
+      '.Trash/**',
+      '**/.Trash/**',
+      '.pm2/**',
+      '**/.pm2/**',
+      '.ollama/**',
+      '**/.ollama/**',
+      'llama.cpp/**',
+      '**/llama.cpp/**'
     ],
   },
   {

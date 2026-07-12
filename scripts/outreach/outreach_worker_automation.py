@@ -2,11 +2,23 @@ import sys, base64, json, time, os, re
 from pathlib import Path
 import json as _json
 import time as _time
-
-BASE_DIR = Path(__file__).resolve().parent.parent
-LLM_READINESS_REPORT = BASE_DIR / 'outreach_monitor' / 'processed' / 'llm_tailoring_readiness.json'
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = SCRIPT_DIR.parent.parent
+_google_scripts = PROJECT_ROOT / '.hermes' / 'skills' / 'productivity' / 'google-workspace' / 'scripts'
+if _google_scripts.exists():
+    sys.path.insert(0, str(_google_scripts))
+
+LLM_READINESS_REPORT = PROJECT_ROOT / 'outreach_monitor' / 'processed' / 'llm_tailoring_readiness.json'
+BASE_DIR = PROJECT_ROOT
+DEDUP_DIR = BASE_DIR / 'outreach_monitor' / 'processed'
+DEDUP_DIR.mkdir(parents=True, exist_ok=True)
+STATE_FILE = DEDUP_DIR / 'global_dedup_state.json'
+LEDGER_FILE = DEDUP_DIR / 'sent_ledger.jsonl'
+BOUNCE_HISTORY_FILE = DEDUP_DIR / 'bounce_history.jsonl'
+HOT_FOLLOWUP_REPLY_LEDGER = DEDUP_DIR / 'hot_followup_reply_ledger.jsonl'
 
 GMAIL_AUTH_ERROR = None
 service = None
@@ -27,16 +39,6 @@ try:
     _init_gmail_service()
 except Exception:
     pass
-
-
-SCRIPT_DIR = Path(__file__).resolve().parent
-PROJECT_ROOT = SCRIPT_DIR.parent.parent
-DEDUP_DIR = PROJECT_ROOT / 'outreach_monitor' / 'processed'
-DEDUP_DIR.mkdir(parents=True, exist_ok=True)
-STATE_FILE = DEDUP_DIR / 'global_dedup_state.json'
-LEDGER_FILE = DEDUP_DIR / 'sent_ledger.jsonl'
-BOUNCE_HISTORY_FILE = DEDUP_DIR / 'bounce_history.jsonl'
-
 
 _GMAIL_API_TIMEOUT = 15
 
@@ -382,8 +384,8 @@ def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, lan
     trimmed = (thread_text or '').strip()
     trimmed = trimmed[:2400]
     prompt = (
-        "You write short, human, business-friendly CEO emails. "
-        f"Recipient: {contact_name} from {company_name}. Language: {language}.\n\n"
+        f"You write short, human, business-friendly CEO emails in {language}. "
+        f"Recipient: {contact_name} from {company_name}.\n\n"
         "Use ONLY facts present in the thread. Be specific: name 1 concrete next-step tied to Zion's AI services. "
         "Do not use generic filler like 'let's keep in touch' or 'I look forward to hearing from you'.\n\n"
         "Required content:\n"
@@ -402,7 +404,7 @@ def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, lan
     body = json.dumps({
         'model': model,
         'messages': [
-            {'role': 'system', 'content': 'Write one complete email. No signature block. Friendly but professional CEO tone.'},
+            {'role': 'system', 'content': f'Write one complete email in {language}. No signature block. Friendly but professional CEO tone.'},
             {'role': 'user', 'content': prompt},
         ],
         'temperature': 0.35,
@@ -414,7 +416,16 @@ def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, lan
         'calendly.com/kleber-ziontechgroup',
         'ziontechgroup.com',
         'free',
-        'pleasure working with you',
+        'thank',
+    ]
+    positive_signals = [
+        'opportunity',
+        'pleasure',
+        'collaboration',
+        'partnership',
+        'project',
+        'worked with',
+        'worked together',
     ]
     for m in models:
         for attempt in range(3):
@@ -432,6 +443,9 @@ def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, lan
                 lower = reply.lower()
                 if not all(r in lower for r in required):
                     print('LLM_MISSING_REQUIRED_RETRY', m, flush=True)
+                    continue
+                if not any(s in lower for s in positive_signals):
+                    print('LLM_MISSING_POSITIVE_SIGNAL_RETRY', m, flush=True)
                     continue
                 return reply
             except Exception as e:
@@ -592,7 +606,7 @@ def build_ceo_reply(contact_name, company_name, thread_text, language='en'):
         tailored = llm_tailor_reply(thread_text, contact_name, company_name, language)
         if tailored:
             return tailored
-    p = _personalize(thread_text, contact_name, company_name, language)
+    p = _extract_context_ideas(thread_text, language, company_name)
     return f"""{contact_name},
 
 {p['opening'] if isinstance(p, dict) else 'Thanks for the conversation.'} I really value that partnership.
@@ -608,7 +622,8 @@ You can also explore our new AI services and free tools here:
 https://ziontechgroup.com
 
 {p['closing'] if isinstance(p, dict) else 'Let’s build something that benefits both teams.'}
-Kleber Garcia Alcatrão
+Kleber Garcia Alcatrão | CEO, Zion Tech Group
+https://ziontechgroup.com
 """
 
 
@@ -805,6 +820,20 @@ def _llm_readiness_report() -> dict:
     api_key = os.getenv('ZION_LLM_API_KEY') or os.getenv('OPENROUTER_API_KEY') or os.getenv('GROQ_API_KEY') or os.getenv('GEMINI_API_KEY')
     model = os.getenv('ZION_LLM_MODEL') or os.getenv('LLM_MODEL') or os.getenv('OPENROUTER_MODEL') or os.getenv('GROQ_MODEL') or os.getenv('GEMINI_MODEL') or 'not-configured'
     active = bool(endpoint and api_key)
+    try:
+        mods = ['googleapiclient', 'google.auth', 'google.oauth2']
+        status = {m: bool(__import__('importlib').util.find_spec(m)) for m in mods}
+        _paths = [
+            PROJECT_ROOT / '.google' / 'token.json',
+            PROJECT_ROOT / '.google' / 'credentials.json',
+            PROJECT_ROOT / '.google' / 'gmail_token.json',
+            Path.home() / '.credentials' / 'gmail.json',
+            Path.home() / '.google' / 'token.json',
+        ]
+        status['token_exists'] = any(p.exists() for p in _paths)
+        status['auth_error'] = GMAIL_AUTH_ERROR
+    except Exception as e:
+        status = {'auth_error': repr(e)}
     report = {
         'timestamp': int(time.time()),
         'active': active,
@@ -812,6 +841,7 @@ def _llm_readiness_report() -> dict:
         'has_api_key': bool(api_key),
         'model': model if active else 'not-configured',
         'llm_tailor_enabled': bool(LLM_TAILOR_ENABLED),
+        'local_gmail_modules': status,
     }
     try:
         LLM_READINESS_REPORT.parent.mkdir(parents=True, exist_ok=True)
@@ -1064,6 +1094,15 @@ def run_high_frequency_outreach():
         for d in dead:
             print('DEAD', d)
     print('STATE_TS', int(time.time()))
+    try:
+        used = set()
+        for p in (LEDGER_FILE, BOUNCE_HISTORY_FILE, PENDING_APPROVAL_FILE, DRY_RUN_REPORT, HOT_FOLLOWUP_REPLY_LEDGER):
+            if p.exists():
+                with p.open('r', encoding='utf-8') as f:
+                    used |= {l.strip() for l in f.readlines() if l.strip()}
+        print('REPLY_LEDGER_LINES', sum(1 for l in used if 'hot_followup_reply_ledger' not in str(l)))
+    except Exception:
+        pass
     return {'sent': sent_count, 'skipped': skipped, 'adds': len(newest_used), 'dead': dead}
 
 

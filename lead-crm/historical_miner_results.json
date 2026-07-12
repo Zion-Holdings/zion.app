@@ -1178,5 +1178,45 @@
     "id": "19f3c4c92c5413ac",
     "email": "hardware@hascon.com",
     "query": "in:anywhere \"ziontechgroup.com\""
+  },
+  {
+    "id": "19f48e62b6ced3aa",
+    "email": "postmaster@servi.co",
+    "query": "subject:parceria"
+  },
+  {
+    "id": "19f48e5e61680881",
+    "email": "business@servi.io",
+    "query": "subject:parceria"
+  },
+  {
+    "id": "19f3e18954c5bc54",
+    "email": "adgomes@prefeitura.sp.gov.br",
+    "query": "subject:proposta"
+  },
+  {
+    "id": "19f3e4f6fde49de5",
+    "email": "jsegatto@saopaulo.sp.leg.br",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f3dff5313ce9bc",
+    "email": "joao.aguiar@seguranca.mg.gov.br",
+    "query": "subject:orçamento"
+  },
+  {
+    "id": "19f5257501991b2e",
+    "email": "samsunglatam@br.email.samsung.com",
+    "query": "\"Zion Tech Group\""
+  },
+  {
+    "id": "19f519660868b0a9",
+    "email": "support@wpbeginner.com",
+    "query": "\"Zion Tech Group\""
+  },
+  {
+    "id": "19f515f56604053f",
+    "email": "contato@emkt.b3.com.br",
+    "query": "\"Zion Tech Group\""
   }
 ]

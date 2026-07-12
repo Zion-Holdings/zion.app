@@ -1,2 +1,26 @@
 
 /tools/favicon-generator/  /tools/favicon-generator/index.html  200
+
+# Legacy AI/top-level redirects
+/ai-agents  /services/ai-agents-autonomous  301
+/ai-agents/  /services/ai-agents-autonomous/  301
+/ai-chat-companion  /ai-services  301
+/ai-chat-companion/  /ai-services/  301
+/ai-financial-services  /ai-fraud-detection  301
+/ai-financial-services/  /ai-fraud-detection/  301
+
+# Service page legacy slugs -> current live routes
+/services/ai-automation  /services/?category=ai  301
+/services/ai-automation/  /services/?category=ai  301
+/services/it-outsourcing  /services/?category=it  301
+/services/it-outsourcing/  /services/?category=it  301
+/services/ai-network-performance-and-wan-optimization-for-it-in-2026  /services/ai-first-network-performance-and-wan-optimization-for-it-in-2026  301
+/services/ai-network-performance-and-wan-optimization-for-it-in-2026/  /services/ai-first-network-performance-and-wan-optimization-for-it-in-2026/  301
+/services/ai-endpoint-management-and-zero-trust-access-for-it-in-2026  /services/ai-first-endpoint-management-and-zero-trust-access-for-it-in-2026  301
+/services/ai-endpoint-management-and-zero-trust-access-for-it-in-2026/  /services/ai-first-endpoint-management-and-zero-trust-access-for-it-in-2026/  301
+/services/ai-chatbot-builder-pro  /services/ai-chatbot-builder  301
+/services/ai-chatbot-builder-pro/  /services/ai-chatbot-builder/  301
+/services/ai-customer-support-pro  /services  301
+/services/ai-customer-support-pro/  /services/  301
+/services/ai-fraud-detection  /ai-fraud-detection  301
+/services/ai-fraud-detection/  /ai-fraud-detection/  301

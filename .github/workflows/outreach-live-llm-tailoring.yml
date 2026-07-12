@@ -34,6 +34,39 @@ jobs:
       - name: Run outreach worker
         run: python scripts/outreach/outreach_worker_automation.py
 
+      - name: Discover outreach blockers
+        if: always()
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          base = Path('outreach_monitor/processed')
+          report = {
+            'timestamp': int(__import__('time').time()),
+            'cwd': str(Path.cwd()),
+            'files': sorted([p.name for p in base.glob('*')]),
+            'llm_readiness': {},
+            'auth_failed': False,
+          }
+          for name in ['llm_tailoring_readiness.json','hot_followup_reply_ledger.jsonl','sent_ledger.jsonl','dry_run_report.jsonl']:
+              p = base / name
+              report[name] = p.exists()
+              if p.exists():
+                  try:
+                      report[name+'_head'] = p.read_text(encoding='utf-8', errors='ignore').splitlines()[:3]
+                  except Exception as e:
+                      report[name+'_head'] = f'ERR:{e}'
+          try:
+              r = json.loads((base/'llm_tailoring_readiness.json').read_text(encoding='utf-8'))
+              report['llm_readiness'] = r
+              report['auth_failed'] = not bool(r.get('local_gmail_modules', {}).get('token_exists')) or bool(r.get('local_gmail_modules', {}).get('auth_error'))
+          except Exception as e:
+              report['auth_failed'] = True
+              report['llm_readiness_error'] = repr(e)
+          print(json.dumps(report, ensure_ascii=False))
+          PY
+
       - name: Upload outreach reports
         if: always()
         uses: actions/upload-artifact@v4

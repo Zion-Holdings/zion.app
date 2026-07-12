@@ -1,49 +1,45 @@
 {
-  "generated_at": "2026-06-21T00:00:00Z",
-  "total_services": 666,
-  "unique_service_ids": 666,
+  "total_services": 85,
   "by_category": {
-    "ai": 341,
-    "it": 114,
-    "cloud": 70,
-    "security": 58,
-    "data": 42,
-    "automation": 41
+    "ai": 33,
+    "it": 24,
+    "micro-saas": 12,
+    "cloud": 4,
+    "security": 3,
+    "data": 3,
+    "automation": 2,
+    "devops": 2,
+    "email-intelligence": 2
   },
-  "by_stage": {},
+  "by_stage": {
+    "published": 85
+  },
   "by_industry": {
-    "General": 322,
-    "Finance": 157,
-    "Manufacturing": 48,
-    "E-Commerce": 37,
-    "Marketing": 33,
-    "Healthcare": 20,
-    "SaaS": 8,
-    "Sustainability": 4,
-    "Education": 4,
-    "Email Security": 2,
-    "Training": 2,
-    "Marketing AI": 2,
-    "Threat Detection": 1,
-    "Data Protection": 1,
-    "Compliance": 1,
-    "Legal": 1,
-    "Technology": 6,
-    "HR": 1,
-    "Transformation": 1,
-    "AI Strategy": 1
+    "General": 7,
+    "Finance": 5,
+    "Technology": 5,
+    "Analytics": 3,
+    "E-Commerce": 3,
+    "Data Engineering": 3,
+    "API Management": 2,
+    "Customer Support": 2,
+    "Marketing": 2,
+    "HR": 2,
+    "Low-Code": 2,
+    "Compliance": 2,
+    "Data Protection": 2,
+    "Cloud": 2,
+    "Productivity": 2
   },
-  "features_count": 666,
-  "benefits_count": 666,
-  "pricing_count": 667,
+  "price_ranges": {
+    "starter": [],
+    "pro": [],
+    "enterprise": []
+  },
+  "features_per_service": [],
   "avg_rating": 0,
-  "total_ratings": 0,
-  "avg_starter_price": 0,
-  "avg_pro_price": 0,
-  "avg_enterprise_price": 0,
-  "starter_price_range": [
-    0,
-    0
-  ],
-  "top_tags": {}
+  "total_features": 85,
+  "total_benefits": 85,
+  "services_with_pricing": 85,
+  "services_with_rating": 0
 }

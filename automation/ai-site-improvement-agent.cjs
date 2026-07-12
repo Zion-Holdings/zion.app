@@ -134,12 +134,24 @@ async function main() {
   const brokenCatalog = catalog ? catalog.broken : 0;
   if (brokenCatalog) {
     console.log(`CATALOG_BROKEN=${brokenCatalog}`);
+    result.catalogBroken = brokenCatalog;
+    result.siteCheckFailed = !check.ok;
+    result.failureReason = !check.ok ? `site_check_failed: ${String(check.output || '').slice(0, 4000)}` : null;
     process.exitCode = 1;
   } else if (!check.ok) {
     console.log('SITE_CHECK_FAILED=1');
+    result.catalogBroken = 0;
+    result.siteCheckFailed = true;
+    result.failureReason = String(check.output || 'site_integrity_run_failed').slice(0, 4000);
     process.exitCode = 1;
+  } else {
+    result.catalogBroken = 0;
+    result.siteCheckFailed = false;
+    process.exitCode = 0;
   }
 
+  await fs.writeFile(REPORT_PATH, JSON.stringify(result, null, 2), 'utf8');
+  console.log(`Saved report: ${REPORT_PATH}`);
   console.log(JSON.stringify(result, null, 2));
 }
 

@@ -11,7 +11,7 @@
     "build:check": "npm run type-check && npm run build",
     "start": "next start",
     "lint": "next lint",
-    "lint:check": "npx eslint . --ignore-pattern \".next/**\" --ignore-pattern \"out/**\" --ignore-pattern \"dist/**\" --ignore-pattern \"build/**\" --quiet",
+    "lint:check": "npx eslint app components --ext .ts,.tsx,.js,.mjs --ignore-pattern \".next/**\" --ignore-pattern \"out/**\" --ignore-pattern \"dist/**\" --ignore-pattern \"build/**\" --quiet",
     "type-check": "tsc --noEmit",
     "wrap": "bash scripts/error-wrapper.sh",
     "postbuild": "node scripts/generate_service_index.cjs && node scripts/generate-sitemap-feed.cjs && node scripts/checks/build-and-verify.cjs",

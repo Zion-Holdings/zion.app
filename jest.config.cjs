@@ -26,7 +26,8 @@ function quarantinePatterns() {
 
 // Add any custom config to be passed to Jest
 const customJestConfig = {
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.cjs'],
+  rootDir: __dirname,
+  setupFilesAfterEnv: [path.join(__dirname, 'jest.setup.cjs')],
   testEnvironment: 'jsdom',
   roots: ['<rootDir>/app', '<rootDir>/components', '<rootDir>/lib', '<rootDir>/__tests__'],
   moduleNameMapper: {

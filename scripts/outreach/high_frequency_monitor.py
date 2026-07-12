@@ -12,15 +12,10 @@ DEDUP_DIR = BASE_DIR / 'outreach_monitor' / 'processed'
 MONITOR_DIR = BASE_DIR / 'outreach_monitor' / 'metrics'
 MONITOR_DIR.mkdir(parents=True, exist_ok=True)
 REPORT_FILE = MONITOR_DIR / 'monitor_report.jsonl'
-<<<<<<< HEAD
 DEDUP_FILE = DEDUP_DIR / 'global_dedup_state.json'
 LEDGER_FILE = DEDUP_DIR / 'sent_ledger.jsonl'
-=======
-DEDUP_FILE = BASE_DIR / 'outreach_monitor' / 'processed' / 'global_dedup_state.json'
-LEDGER_FILE = BASE_DIR / 'outreach_monitor' / 'processed' / 'sent_ledger.jsonl'
 HOT_FOLLOWUP_LABEL_ID = 'Label_946'
 PENDING_QUEUE_FILE = BASE_DIR / 'outreach_monitor' / 'processed' / 'pending_ceo_drafts.jsonl'
->>>>>>> 54b214ca74983241150d4d0d42bc3d3f5fead1d6
 
 
 def append_report(entry: dict):
