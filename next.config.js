@@ -51,6 +51,14 @@ const nextConfig = {
       { source: '/services/ai-customer-support-pro/', destination: '/services/', permanent: true },
       { source: '/services/ai-fraud-detection', destination: '/ai-fraud-detection', permanent: true },
       { source: '/services/ai-fraud-detection/', destination: '/ai-fraud-detection/', permanent: true },
+      { source: '/services/ai-automation', destination: '/services/?category=ai', permanent: true },
+      { source: '/services/ai-automation/', destination: '/services/?category=ai', permanent: true },
+      { source: '/services/it-outsourcing', destination: '/services/?category=it', permanent: true },
+      { source: '/services/it-outsourcing/', destination: '/services/?category=it', permanent: true },
+      { source: '/services/ai-network-performance-and-wan-optimization-for-it-in-2026', destination: '/services/ai-first-network-performance-and-wan-optimization-for-it-in-2026', permanent: true },
+      { source: '/services/ai-network-performance-and-wan-optimization-for-it-in-2026/', destination: '/services/ai-first-network-performance-and-wan-optimization-for-it-in-2026/', permanent: true },
+      { source: '/services/ai-endpoint-management-and-zero-trust-access-for-it-in-2026', destination: '/services/ai-first-endpoint-management-and-zero-trust-access-for-it-in-2026', permanent: true },
+      { source: '/services/ai-endpoint-management-and-zero-trust-access-for-it-in-2026/', destination: '/services/ai-first-endpoint-management-and-zero-trust-access-for-it-in-2026/', permanent: true },
     ];
   },
 };
