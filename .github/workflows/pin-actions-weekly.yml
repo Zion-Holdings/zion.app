@@ -22,12 +22,12 @@ jobs:
       NEXT_TELEMETRY_DISABLED: "1"
     steps:
       - name: Checkout
-        uses: actions/checkout@4f4ea57a51b29252d111198be4cd3a793796b0ef # v4
+        uses: actions/checkout@v4
         with:
           token: ${{ github.token }}
 
       - name: Setup Node
-        uses: actions/setup-node@6048f788ec73ddb5fada9e4b2edabe8cbb3132b8 # v4
+        uses: actions/setup-node@v4
         with:
           node-version-file: '.nvmrc'
           cache: npm
@@ -53,7 +53,7 @@ jobs:
           python -c "print('pin-actions-weekly smoke check: workflow files present')"
 
       - name: Upload results
-        uses: actions/upload-artifact@390d87beece2197232615af1b5a6d3cac1f2191b # v4
+        uses: actions/upload-artifact@v4
         if: always()
         with:
           name: workflow-results-${{ github.run_id }}
