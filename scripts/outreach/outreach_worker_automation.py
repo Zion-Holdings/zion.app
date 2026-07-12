@@ -402,11 +402,88 @@ def _message_is_too_old(date_hdr: str, max_age_days: int = 180) -> bool:
     except Exception:
         return False
 
+def _call_nous_hermes(thread_text: str, contact_name: str, company_name: str, language: str) -> str:
+    try:
+        import os as _os
+        from pathlib import Path as _Path
+        import urllib.request as _urllib
+        import json as _json
+        auth_path = _Path.home() / '.hermes' / 'auth.json'
+        url = ''
+        token = ''
+        model = _os.environ.get('HERMES_LLM_MODEL') or _os.environ.get('ZION_LLM_MODEL') or 'stepfun/step-3.7-flash:free'
+        if auth_path.exists():
+            try:
+                cfg = json.loads(auth_path.read_text(encoding='utf-8'))
+                provider = (cfg.get('providers') or {}).get('nous', {}) or {}
+                url = (provider.get('inference_base_url') or '').rstrip('/')
+                token = provider.get('access_token') or ''
+                client_id = provider.get('client_id') or ''
+                scope = provider.get('scope') or ''
+            except Exception:
+                pass
+        if not url:
+            url = _os.environ.get('NOUS_BASE_URL', 'https://inference-api.nousresearch.com/v1').rstrip('/')
+        if not token:
+            token = _os.environ.get('NOUS_TOKEN') or _os.environ.get('HERMES_LLM_TOKEN') or ''
+        chat_url = url.rstrip('/') + '/chat/completions'
+        trimmed = (thread_text or '').strip()[:2400]
+        prompt = (
+            f"You are the CEO of Zion Tech Group writing in {language} to {contact_name} at {company_name}.\n\n"
+            "Context from recent thread:\n"
+            f"{trimmed}\n\n"
+            "Write ONE complete email. Requirements:\n"
+            "- Start with a warm thanks for the past collaboration; if possible, name the project area.\n"
+            "- Propose 2 concrete, mutually beneficial next business ideas for both companies.\n"
+            "- Advance the conversation toward a meeting/call next week, and include Calendly: https://calendly.com/kleber-ziontechgroup\n"
+            "- Share our website: https://ziontechgroup.com, invite them to explore our new AI services, and mention that we offer many free services/tools there.\n"
+            "- Keep it friendly, professional, and concise.\n"
+            "- End with signature: Kleber Garcia Alcatrão | CEO, Zion Tech Group and https://ziontechgroup.com\n\n"
+            "Attention: do not invent false claims. Use only facts plausibly supported by the thread.\n"
+        )
+        payload = {
+            'model': model,
+            'messages': [
+                {'role': 'system', 'content': f'Write one complete email in {language}. No signature block. Friendly but professional CEO tone.'},
+                {'role': 'user', 'content': prompt},
+            ],
+            'temperature': 0.35,
+            'max_tokens': 480,
+        }
+        req = _urllib.Request(
+            chat_url,
+            data=_json.dumps(payload).encode('utf-8'),
+            headers={'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'},
+            method='POST',
+        )
+        with _urllib.urlopen(req, timeout=35) as resp:
+            data = _json.loads(resp.read().decode('utf-8'))
+        message = ((data.get('choices') or [{}])[0].get('message') or {})
+        content = message.get('content') or message.get('reasoning') or ''
+        if not isinstance(content, str):
+            content = ''
+        required = ['calendly.com/kleber-ziontechgroup', 'ziontechgroup.com', 'free', 'thank']
+        lower = content.lower()
+        if not all(r in lower for r in required):
+            return ''
+        return content.strip()
+    except Exception as e:
+        print('LLM_NOUS_FINAL_ERR', repr(e), flush=True)
+        return ''
+
+
 def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, language: str) -> str:
     endpoint = LLM_API_ENDPOINT or os.getenv('OPENROUTER_API_ENDPOINT') or os.getenv('GROQ_API_ENDPOINT') or os.getenv('GEMINI_API_ENDPOINT')
     api_key = LLM_API_KEY or os.getenv('OPENROUTER_API_KEY') or os.getenv('GROQ_API_KEY') or os.getenv('GEMINI_API_KEY')
     model = os.getenv('LLM_MODEL') or os.getenv('ZION_LLM_MODEL') or os.getenv('OPENROUTER_MODEL') or os.getenv('GROQ_MODEL') or os.getenv('GEMINI_MODEL') or 'openai/gpt-4o-mini'
     if not endpoint or not api_key:
+        # Hermes/Nous fallback if configured.
+        try:
+            nous_reply = _call_nous_hermes(thread_text, contact_name, company_name, language)
+            if nous_reply:
+                return nous_reply
+        except Exception as e:
+            print('LLM_NOUS_ERR', repr(e), flush=True)
         return ''
     trimmed = (thread_text or '').strip()
     trimmed = trimmed[:2400]
