@@ -193,6 +193,7 @@ while len(batch) < 50 and checked < len(recs):
     domain = company_domain or domain
     subject = f"Parceria em {company_name or name or 'Tecnologia'} — Zion Tech Group"
     body = f"<p>{name},</p><p>Sou Kleber Garcia Alcatrão da <strong>Zion Tech Group</strong>. Vi potencial de colaboração mútua com sua operação em <strong>{company_domain or 'tecnologia'}</strong>.</p><ul><li>Automação inteligente para TI</li><li>Otimização de custos em cloud/IA</li><li>Resposta a incidentes e DevEx</li></ul><p>Posso enviar um diagnóstico inicial de 15 minutos?</p><p><a href=\"https://ziontechgroup.com\" style=\"background:#0066cc;color:white;padding:12px 24px;text-decoration:none;border-radius:4px\">Nossos serviços</a> | <a href=\"https://calendly.com/kleber-ziontechgroup\">Agende uma reunião</a></p>"
+    seen_domains[domain] = to
     batch.append({
         'from': 'kleber@ziontechgroup.com',
         'to': to,
