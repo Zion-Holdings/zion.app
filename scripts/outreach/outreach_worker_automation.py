@@ -384,18 +384,17 @@ def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, lan
     trimmed = (thread_text or '').strip()
     trimmed = trimmed[:2400]
     prompt = (
-        f"You write short, human, business-friendly CEO emails in {language}. "
-        f"Recipient: {contact_name} from {company_name}.\n\n"
-        "Use ONLY facts present in the thread. Be specific: name 1 concrete next-step tied to Zion's AI services. "
-        "Do not use generic filler like 'let's keep in touch' or 'I look forward to hearing from you'.\n\n"
-        "Required content:\n"
-        f"- Thank them specifically for this past collaboration. Name the project area when possible.\n"
-        "- 2 concrete mutually beneficial next ideas for AI services.\n"
-        f"- Calendly: https://calendly.com/kleber-ziontechgroup\n"
-        f"- Website: https://ziontechgroup.com and mention free tools/services\n"
-        "- Close by offering a call/meeting next week.\n\n"
-        "Thread context:\n"
-        f"{trimmed}\n"
+        f"You are the CEO of Zion Tech Group writing in {language} to {contact_name} at {company_name}.\n\n"
+        "Context from recent thread:\n"
+        f"{trimmed}\n\n"
+        "Write ONE complete email. Requirements:\n"
+        "- Start with a warm thanks for the past collaboration; if possible, name the project area.\n"
+        "- Propose 2 concrete, mutually beneficial next business ideas for both companies.\n"
+        "- Advance the conversation toward a meeting/call next week, and include Calendly: https://calendly.com/kleber-ziontechgroup\n"
+        "- Share our website: https://ziontechgroup.com, invite them to explore our new AI services, and mention that we offer many free services/tools there.\n"
+        "- Keep it friendly, professional, and concise.\n"
+        "- End with signature: Kleber Garcia Alcatrão | CEO, Zion Tech Group and https://ziontechgroup.com\n\n"
+        "Attention: do not invent false claims. Use only facts plausibly supported by the thread.\n"
     )
     headers = {
         'Authorization': f"Bearer {api_key}",
