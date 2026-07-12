@@ -104,6 +104,7 @@ def classify_prospect(email: str, source_query: str) -> dict:
         'integ.ai','integ.br','integ.co','integ.com','enterpri.ai','enterpri.br','enterpri.co','enterpri.com',
         'pro.ai','pro.br','pro.co','pro.com','digital.ai','digital.br','digital.co','digital.io',
         'cloudi.ai','cloudi.br','cloudi.co','cloudi.com','cloudi.io',
+        'start.co','start.com'
     }
     domain_score = 2 if ((domain or '') and not is_generic and not is_placeholder and not is_invalid) else 0
     base = {
