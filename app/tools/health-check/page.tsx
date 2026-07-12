@@ -73,7 +73,14 @@ export default function HealthCheckToolPage() {
     await chk('Page Render', async () => ({ ok: true, detail: 'page.tsx hydrated' }));
     await chk('Memory', async () => ({ ok: (performance as any).memory ? true : true, detail: 'heap available' }));
     await chk('Next.js Runtime', async () => {
-      try { await fetch('/api/health', { signal: AbortSignal.timeout(2000) }); return { ok: true, detail: 'server responded 200' }; }
+      try {
+        const endpoints = ["/api/health", "/health"];
+        for (const ep of endpoints) {
+          const r = await fetch(ep, { signal: AbortSignal.timeout(2000) });
+          if (r.ok) return { ok: true, detail: `${ep} responded ${r.status}` };
+        }
+        return { ok: false, detail: 'server unreachable' };
+      }
       catch { return { ok: false, detail: 'server unreachable' }; }
     });
     await chk('Network (Cloudflare DNS)', async () => {
