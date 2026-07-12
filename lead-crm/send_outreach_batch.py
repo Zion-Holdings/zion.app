@@ -115,7 +115,7 @@ def _load_excluded() -> set:
         return set()
 
 
-def send_mail(to_addr, subject, body, html=None):
+def send_mail(to_addr, subject, body, html=None, thread_id=None, message_id=None):
     to_key = (to_addr or '').lower()
     if to_key in _load_excluded():
         return None, 'excluded'
@@ -129,12 +129,14 @@ def send_mail(to_addr, subject, body, html=None):
         'To: %s' % to_addr,
         'Subject: %s' % subject,
         'Content-Type: text/html; charset=utf-8',
-        '',
-        html or body,
     ]
+    if message_id:
+        raw_email_lines.append('References: %s' % message_id)
+        raw_email_lines.append('In-Reply-To: %s' % message_id)
+    raw_email_lines.extend(['', html or body])
     raw_email = '\r\n'.join(raw_email_lines)
     encoded = base64.urlsafe_b64encode(raw_email.encode('utf-8')).decode('utf-8')
-    payload = json.dumps({'raw': encoded}).encode('utf-8')
+    payload = json.dumps({'raw': encoded, 'threadId': thread_id} if thread_id else {'raw': encoded}).encode('utf-8')
     url = 'https://gmail.googleapis.com/gmail/v1/users/me/messages/send'
     headers = _gog_headers() or {}
     headers['Content-Type'] = 'application/json'
@@ -332,7 +334,7 @@ def main():
         subj = tailored.get('subject', tailored.get('subject','') or r.get('subject','') or '')
         body = tailored.get('body', tailored.get('body','') or r.get('body','') or '')
         try:
-            mid, tid = send_mail(to, subj, body, html)
+            mid, tid = send_mail(to, subj, body, html, thread_id=r.get('thread_id'), message_id=r.get('message_id'))
             outputs.append({'to': to, 'success': True, 'message_id': mid, 'thread_id': tid,
                             'llm_provider': tailored.get('llm_provider'), 'llm_model': tailored.get('llm_model')})
         except Exception as e:
