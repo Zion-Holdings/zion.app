@@ -30,11 +30,33 @@ jobs:
       - name: 'build'
         run: npm run build
 
+      - name: 'serve static export'
+        run: |
+          set -euo pipefail
+          if [ ! -d out ]; then
+            echo 'missing out/ export directory' >&2
+            exit 1
+          fi
+          if command -v npx >/dev/null 2>&1; then
+            npx -y serve -l 3000 out >/tmp/static-serve.log 2>&1 &
+          else
+            npm install --no-audit --no-fund -g serve >/dev/null 2>&1 && serve -l 3000 out >/tmp/static-serve.log 2>&1 &
+          fi
+          for i in $(seq 1 40); do
+            if curl -fsS http://127.0.0.1:3000 >/dev/null; then
+              echo 'static server up'
+              exit 0
+            fi
+            sleep 1
+          done
+          echo 'static server failed to start' >&2
+          exit 1
+
       - name: 'run Lighthouse'
         run: |
           set -euo pipefail
-          npx lighthouse http://localhost:3000 \
-            --chrome-flags='--headless --no-sandbox' \
+          npx lighthouse http://127.0.0.1:3000 \
+            --chrome-flags='--headless --no-sandbox --disable-gpu' \
             --only-categories=performance,accessibility,best-practices,seo \
             --output=json \
             --output-path=./lighthouse-report.json \
