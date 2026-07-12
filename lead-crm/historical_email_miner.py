@@ -274,6 +274,8 @@ def run_miner():
                     continue
                 seen.add(key)
                 lead = classify_prospect(key, q)
+                if lead.get('is_generic_provider') or lead.get('is_invalid_domain') or lead.get('is_placeholder_domain'):
+                    continue
                 new_leads.append(lead)
                 mined_contacts.append({'id': msg_id, 'email': key, 'query': q})
                 confidence = None
@@ -310,25 +312,6 @@ def run_miner():
     except Exception:
         high_signal = 0
         quality_ratio = None
-    try:
-        append_quality({
-            'ts': now,
-            'email': None,
-            'msg_id': None,
-            'query': 'health_summary',
-            'confidence': None,
-            'high_signal': bool(high_signal),
-            'run': {
-                'queries_run': queries_run,
-                'contacts_found': len(mined_contacts),
-                'new_leads_added': len(new_leads),
-                'elapsed_s': round(elapsed, 3),
-                'high_signal': high_signal,
-                'lead_quality_ratio': quality_ratio,
-            }
-        })
-    except Exception:
-        pass
     health = {
         'ts': now,
         'queries_run': queries_run,
