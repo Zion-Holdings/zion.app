@@ -10,6 +10,7 @@ const POPULAR = [
   { href: '/blog/', label: 'Blog' },
   { href: '/dashboard/', label: 'Dashboard' },
   { href: '/status/', label: 'Status' },
+  { href: '/health/', label: 'Health' },
 ];
 
 export default function NotFound() {
