@@ -151,6 +151,35 @@ def classify_prospect(email: str, source_query: str) -> dict:
     return base
 
 
+def msg_id_to_text(msg_id: str) -> str:
+    try:
+        import urllib.request, json as _json, base64
+        from commands.google_workspace import gog_headers
+        url = f'https://gmail.googleapis.com/gmail/v1/users/me/messages/{msg_id}'
+        req = urllib.request.Request(url, headers=gog_headers())
+        with urllib.request.urlopen(req, timeout=QUERY_TIMEOUT_SECONDS) as r:
+            raw = r.read()
+        msg = _json.loads(raw)
+        headers = msg.get('payload', {}).get('headers', [])
+        text = ' '.join(x.get('value','') for x in headers) + '\n'
+        def decode(pl):
+            data = pl.get('body', {}).get('data')
+            if data:
+                try:
+                    text = base64.urlsafe_b64decode(data + '===').decode('utf-8', errors='replace')
+                    return text
+                except Exception:
+                    pass
+            for part in pl.get('parts', []) or []:
+                rec = decode(part)
+                if rec:
+                    return rec
+            return ''
+        text += decode(msg.get('payload', {}))
+        return text or msg.get('snippet','') or ''
+    except Exception:
+        return ''
+
 def extract_contacts_metadata(msg_id: str):
     try:
         import urllib.request, json as _json
@@ -166,6 +195,31 @@ def extract_contacts_metadata(msg_id: str):
         for field in ('from', 'to', 'cc', 'bcc'):
             val = hdr_map.get(field, '') or ''
             emails.update(m.group(0).lower() for m in EMAIL_RE.finditer(val) if m)
+        if emails:
+            return list(emails)
+        # Light fallback: scan body/snippet for prospect emails.
+        text = msg.get('snippet','') or ''
+        if not text:
+            try:
+                pl = msg.get('payload', {})
+                def decode(pl):
+                    data = pl.get('body', {}).get('data')
+                    if data:
+                        try:
+                            import base64
+                            return base64.urlsafe_b64decode(data + '===').decode('utf-8', errors='replace')
+                        except Exception:
+                            return ''
+                    for part in pl.get('parts', []) or []:
+                        rec = decode(part)
+                        if rec:
+                            return rec
+                    return ''
+                text = decode(pl)
+            except Exception:
+                pass
+        if text:
+            emails.update(m.group(0).lower() for m in EMAIL_RE.finditer(text) if m)
         return list(emails)
     except Exception:
         return []
