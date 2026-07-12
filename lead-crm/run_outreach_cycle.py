@@ -84,7 +84,7 @@ def main():
     # 5) Git commit
     rc, out, err = git('add -A')
     rc2, out2, err2 = git('commit -m "chore(outreach): automated outreach cycle"')
-    rc3, out3, err3 = git('push origin main')
+    rc3, out3, err3 = git('push origin HEAD')
     log['steps']['git'] = {'add_rc': rc, 'commit_rc': rc2, 'push_rc': rc3}
 
     print(json.dumps(log, ensure_ascii=False, indent=2))
