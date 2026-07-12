@@ -7397,5 +7397,22 @@
     "llm_model": "stepfun/step-3.7-flash-20260528:free",
     "llm_reason": "### Rating: 2\n#### Scoring Rubric Context for clarity:\n- 0 = No alignment with managed AI/IT services (e.g., unrelated personal/consumer topic)\n- 1 = Partial/tangential alignment (e.g., generic IT hardware, non-service related tech updates)\n- 2 = Direct, high-intent alignment with core managed AI/IT",
     "confidence": 2
+  },
+  {
+    "to": "notification@service.tiktok.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "service.tiktok.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash-20260528:free",
+    "llm_reason": "### Rating: 1\n#### Reasoning aligned to the rating scale:\n- 2 = Direct, explicit signal that the entity offers managed AI/IT services (e.g., domain name explicitly references these services, or accompanying context confirms this is a core offering)\n- 1 = Weak/indirect signal: the domain name is cons",
+    "confidence": 1
   }
 ]
