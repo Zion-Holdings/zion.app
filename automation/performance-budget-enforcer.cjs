@@ -39,6 +39,17 @@ if (!url) {
 }
 
 // --- Default thresholds (configurable via env or flags) ---
+const DEFAULT_OUTPUT_DIR = outputDir;
+
+function isLighthouseAvailable() {
+  try {
+    const rc = execSync('npx --yes lighthouse --version', { stdio: 'pipe', encoding: 'utf8' });
+    return Boolean(rc && rc.trim());
+  } catch (e) {
+    return false;
+  }
+}
+
 const HARD_LIMITS = {
   LCP: 4.0,      // seconds — critical
   FID: 0.3,      // seconds — critical
@@ -57,9 +68,12 @@ function fail(reason) { console.error(`❌ Performance budget check failed: ${re
 function runLighthouse(url, outputDir) {
   // Uses local lighthouse CLI (devDep)
   // Generates JSON report with metrics
-  const cmd = `npx lighthouse ${url} --output=json --output-path=${outputDir}/lighthouse-report.json --chrome-flags="--headless" --puppeteer --quiet`;
+  outputDir = outputDir || DEFAULT_OUTPUT_DIR;
+  fs.mkdirSync(outputDir, { recursive: true });
+  const outPath = path.join(outputDir, 'lighthouse-report.json');
+  const cmd = `npx --yes lighthouse ${url} --output=json --output-path=${outPath} --chrome-flags="--headless --no-sandbox --disable-gpu" --puppeteer --quiet`;
   try {
-    execSync(cmd, { stdio: 'pipe' });
+    execSync(cmd, { stdio: 'pipe', timeout: 600000 });
   } catch (e) {
     throw new Error('Lighthouse execution failed (timeout or unreachable URL)');
   }
