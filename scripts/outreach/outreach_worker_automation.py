@@ -82,6 +82,30 @@ LLM_TAILOR_ENABLED = bool(
 LLM_API_ENDPOINT = os.getenv('ZION_LLM_API_ENDPOINT') or os.getenv('LLM_API_ENDPOINT') or os.getenv('OPENROUTER_API_ENDPOINT') or os.getenv('GROQ_API_ENDPOINT') or os.getenv('GEMINI_API_ENDPOINT')
 LLM_API_KEY = os.getenv('ZION_LLM_API_KEY') or os.getenv('LLM_API_KEY') or os.getenv('OPENROUTER_API_KEY') or os.getenv('GROQ_API_KEY') or os.getenv('GEMINI_API_KEY')
 LLM_MODEL = os.getenv('ZION_LLM_MODEL') or os.getenv('LLM_MODEL') or os.getenv('OPENROUTER_MODEL') or os.getenv('GROQ_MODEL') or os.getenv('GEMINI_MODEL') or 'openai/gpt-4o-mini'
+
+# Fallback: infer endpoint/model from Hermes config when env vars are absent.
+try:
+    import yaml
+    _hermes_config = Path.home()/'.hermes'/'config.yaml'
+    if _hermes_config.exists():
+        _cfg = yaml.safe_load(_hermes_config.read_text(encoding='utf-8')) or {}
+        _defaults = _cfg.get('default') if isinstance(_cfg.get('default'), dict) else {}
+        if not LLM_API_ENDPOINT:
+            LLM_API_ENDPOINT = _defaults.get('base_url') or _defaults.get('api_base') or ''
+        if not LLM_MODEL or LLM_MODEL == 'openai/gpt-4o-mini':
+            LLM_MODEL = _defaults.get('model') or LLM_MODEL
+        _providers = _cfg.get('providers') if isinstance(_cfg.get('providers'), dict) else {}
+        _provider_name = _defaults.get('provider')
+        if _provider_name and isinstance(_providers.get(_provider_name), dict):
+            _p = _providers[_provider_name]
+            if not LLM_API_ENDPOINT:
+                LLM_API_ENDPOINT = _p.get('base_url') or _p.get('api_base') or ''
+            if (not LLM_API_KEY) and _p.get('api_key'):
+                LLM_API_KEY = _p.get('api_key')
+        if LLM_API_ENDPOINT and LLM_API_KEY and LLM_MODEL:
+            LLM_TAILOR_ENABLED = True
+except Exception:
+    pass
 LLM_FALLBACK_MODELS = [m.strip() for m in os.getenv('ZION_LLM_FALLBACK_MODELS', '').split(',') if m.strip()]
 
 def load_state():
@@ -837,8 +861,8 @@ def append_dry_run_report(entry: dict):
 
 def _llm_readiness_report() -> dict:
     endpoint = LLM_API_ENDPOINT or os.getenv('OPENROUTER_API_ENDPOINT') or os.getenv('GROQ_API_ENDPOINT') or os.getenv('GEMINI_API_ENDPOINT')
-    api_key = os.getenv('ZION_LLM_API_KEY') or os.getenv('OPENROUTER_API_KEY') or os.getenv('GROQ_API_KEY') or os.getenv('GEMINI_API_KEY')
-    model = os.getenv('ZION_LLM_MODEL') or os.getenv('LLM_MODEL') or os.getenv('OPENROUTER_MODEL') or os.getenv('GROQ_MODEL') or os.getenv('GEMINI_MODEL') or 'not-configured'
+    api_key = LLM_API_KEY or os.getenv('OPENROUTER_API_KEY') or os.getenv('GROQ_API_KEY') or os.getenv('GEMINI_API_KEY')
+    model = LLM_MODEL or os.getenv('OPENROUTER_MODEL') or os.getenv('GROQ_MODEL') or os.getenv('GEMINI_MODEL') or 'not-configured'
     active = bool(endpoint and api_key)
     try:
         mods = ['googleapiclient', 'google.auth', 'google.oauth2']
