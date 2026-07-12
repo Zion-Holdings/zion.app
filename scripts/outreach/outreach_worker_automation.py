@@ -98,12 +98,6 @@ LLM_API_KEY = os.getenv('ZION_LLM_API_KEY') or os.getenv('LLM_API_KEY') or os.ge
 LLM_MODEL = os.getenv('ZION_LLM_MODEL') or os.getenv('LLM_MODEL') or os.getenv('OPENROUTER_MODEL') or os.getenv('GROQ_MODEL') or os.getenv('GEMINI_MODEL') or 'openai/gpt-4o-mini'
 LLM_FALLBACK_MODELS = [m.strip() for m in os.getenv('ZION_LLM_FALLBACK_MODELS', '').split(',') if m.strip()]
 
-ORBIDDEN_DOMAIN_SUBSTRINGS = (
-    'servi.co','servi.io','servi.ai','manag.co','manag.io','manag.ai','manag.br','manag.com',
-    'legalys.com.pa','start.co','github.com','hcl.com','zendesk.com','calendly.com',
-    'datadog','mercadobitcoin','suzano.com.br',
-)
-
 def load_state():
     if STATE_FILE.exists():
         try:
