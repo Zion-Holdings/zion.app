@@ -7,7 +7,7 @@ Writes new leads to lead-crm/all-leads.json with status='discovered'.
 import sys, json, re, datetime, time
 from pathlib import Path
 
-REPO = Path('/Users/klebergarciaalcatrao')
+REPO = Path(__file__).resolve().parent.parent
 LEAD_DIR = REPO / 'lead-crm'
 sys.path.insert(0, str(REPO))
 sys.path.insert(0, str(REPO / 'commands'))
