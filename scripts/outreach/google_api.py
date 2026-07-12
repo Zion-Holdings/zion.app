@@ -24,8 +24,12 @@ def _token_exists() -> bool:
         return False
 
 
-def build_service():
-    """Return a googleapiclient Gmail service client if tokens/credentials are available."""
+def build_service(api_name: str = "gmail", api_version: str = "v1"):
+    """Return a googleapiclient service client if tokens/credentials are available.
+
+    Supports Gmail by default and optional service/version passthrough for callers
+    that explicitly pass `build_service('gmail', 'v1')`.
+    """
     try:
         import googleapiclient.discovery
     except Exception as exc:
@@ -41,4 +45,4 @@ def build_service():
 
     creds = Credentials.from_authorized_user_file(TOKEN_PATH, scopes=SCOPES)
 
-    return googleapiclient.discovery.build("gmail", "v1", credentials=creds)
+    return googleapiclient.discovery.build(api_name, api_version, credentials=creds)

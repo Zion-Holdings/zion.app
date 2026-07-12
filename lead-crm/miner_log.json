@@ -1727,5 +1727,11 @@
     "event": "miner_timeout",
     "query": "\"ziontechgroup.com\"",
     "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-07-12T08:58:00.906720+00:00",
+    "event": "miner_timeout",
+    "query": "subject:outsourcing",
+    "note": "soft timeout reached after search; breaking before metadata extraction"
   }
 ]
