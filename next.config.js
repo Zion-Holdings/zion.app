@@ -39,6 +39,18 @@ const nextConfig = {
       { source: '/services/security-services/', destination: '/security-services/', permanent: true },
       { source: '/services/micro-saas-services/', destination: '/services/?category=micro-saas', permanent: true },
       { source: '/help', destination: '/faq', permanent: true },
+      { source: '/ai-agents', destination: '/services/ai-agents-autonomous', permanent: true },
+      { source: '/ai-agents/', destination: '/services/ai-agents-autonomous/', permanent: true },
+      { source: '/ai-chat-companion', destination: '/ai-services', permanent: true },
+      { source: '/ai-chat-companion/', destination: '/ai-services/', permanent: true },
+      { source: '/ai-financial-services', destination: '/ai-fraud-detection', permanent: true },
+      { source: '/ai-financial-services/', destination: '/ai-fraud-detection/', permanent: true },
+      { source: '/services/ai-chatbot-builder-pro', destination: '/services/ai-chatbot-builder', permanent: true },
+      { source: '/services/ai-chatbot-builder-pro/', destination: '/services/ai-chatbot-builder/', permanent: true },
+      { source: '/services/ai-customer-support-pro', destination: '/services', permanent: true },
+      { source: '/services/ai-customer-support-pro/', destination: '/services/', permanent: true },
+      { source: '/services/ai-fraud-detection', destination: '/ai-fraud-detection', permanent: true },
+      { source: '/services/ai-fraud-detection/', destination: '/ai-fraud-detection/', permanent: true },
     ];
   },
 };
