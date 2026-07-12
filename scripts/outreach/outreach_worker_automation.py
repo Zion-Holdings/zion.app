@@ -953,7 +953,9 @@ def run_high_frequency_outreach():
             in_reply_to = headers.get('In-Reply-To') or ''
             subject_norm = (subj or '').strip()
             is_reply_like = bool(in_reply_to) or subject_norm.lower().startswith('re:')
-            if not is_reply_like:
+            label_ids = [str(x) for x in (h.get('labelIds') or [])]
+            is_hot_label = any('hot-follow-up' in x for x in label_ids)
+            if not is_reply_like and not is_hot_label:
                 continue
             contacts.append({
                 'email': addr,
