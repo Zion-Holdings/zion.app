@@ -8,25 +8,9 @@ LLM_READINESS_REPORT = BASE_DIR / 'outreach_monitor' / 'processed' / 'llm_tailor
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 
-<<<<<<< HEAD
-SCRIPT_DIR = Path(__file__).resolve().parent
-PROJECT_ROOT = SCRIPT_DIR.parent.parent
-_google_scripts = PROJECT_ROOT / '.hermes' / 'skills' / 'productivity' / 'google-workspace' / 'scripts'
-if _google_scripts.exists():
-    sys.path.insert(0, str(_google_scripts))
-try:
-    from google_api import build_service
-    service = build_service('gmail', 'v1')
-    GMAIL_AUTH_ERROR = None
-except Exception as e:
-    service = None
-    GMAIL_AUTH_ERROR = repr(e)
-
-BASE_DIR = PROJECT_ROOT
-=======
-sys.path.insert(0, r'C:\Users\Zion\AppData\Local\hermes\skills\productivity\google-workspace\scripts')
 GMAIL_AUTH_ERROR = None
 service = None
+
 
 def _init_gmail_service():
     global service, GMAIL_AUTH_ERROR
@@ -38,18 +22,21 @@ def _init_gmail_service():
         service = None
         GMAIL_AUTH_ERROR = repr(e)
 
+
 try:
     _init_gmail_service()
 except Exception:
     pass
 
-BASE_DIR = Path('/c/Users/Zion/tmp/zion-clone-test2')
->>>>>>> 54b214ca74983241150d4d0d42bc3d3f5fead1d6
-DEDUP_DIR = BASE_DIR / 'outreach_monitor' / 'processed'
+
+SCRIPT_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = SCRIPT_DIR.parent.parent
+DEDUP_DIR = PROJECT_ROOT / 'outreach_monitor' / 'processed'
 DEDUP_DIR.mkdir(parents=True, exist_ok=True)
 STATE_FILE = DEDUP_DIR / 'global_dedup_state.json'
 LEDGER_FILE = DEDUP_DIR / 'sent_ledger.jsonl'
 BOUNCE_HISTORY_FILE = DEDUP_DIR / 'bounce_history.jsonl'
+
 
 _GMAIL_API_TIMEOUT = 15
 
@@ -94,18 +81,6 @@ LLM_API_ENDPOINT = os.getenv('ZION_LLM_API_ENDPOINT') or os.getenv('LLM_API_ENDP
 LLM_API_KEY = os.getenv('ZION_LLM_API_KEY') or os.getenv('LLM_API_KEY') or os.getenv('OPENROUTER_API_KEY') or os.getenv('GROQ_API_KEY') or os.getenv('GEMINI_API_KEY')
 LLM_MODEL = os.getenv('ZION_LLM_MODEL') or os.getenv('LLM_MODEL') or os.getenv('OPENROUTER_MODEL') or os.getenv('GROQ_MODEL') or os.getenv('GEMINI_MODEL') or 'openai/gpt-4o-mini'
 LLM_FALLBACK_MODELS = [m.strip() for m in os.getenv('ZION_LLM_FALLBACK_MODELS', '').split(',') if m.strip()]
-
-FORBIDDEN_ADDR_PREFIXES = (
-    'no-reply','noreply','mailer-daemon','postmaster','notifications@github.com',
-    'support@','press@','info@','sales@','team@','hello@','hi@','marketing@',
-    'commercial@','service delivery','account manager','comunicaciones@','undisclosed-recipients',
-    'calendar-notification@google.com','welcome@supabase.com',
-)
-FORBIDDEN_DOMAIN_SUBSTRINGS = (
-    'servi.co','servi.io','servi.ai','manag.co','manag.io','manag.ai','manag.br','manag.com',
-    'legalys.com.pa','start.co','github.com','hcl.com','zendesk.com','calendly.com',
-    'datadog','mercadobitcoin','suzano.com.br',
-)
 
 def load_state():
     if STATE_FILE.exists():

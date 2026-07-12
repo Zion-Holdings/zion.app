@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import type { Metadata } from 'next';
-=======
 import { Metadata } from 'next';
->>>>>>> 54b214ca74983241150d4d0d42bc3d3f5fead1d6
 import Link from 'next/link';
 
 export const metadata: Metadata = {
