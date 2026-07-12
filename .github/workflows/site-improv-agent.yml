@@ -32,6 +32,9 @@ jobs:
       - name: Install dependencies
         run: npm ci --prefer-offline --no-audit --fund=false
 
+      - name: Install Python site check dependencies
+        run: python -m pip install --upgrade pip && pip install requests beautifulsoup4
+
       - name: Run site improvement agent
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
