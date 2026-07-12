@@ -1,4 +1,5 @@
-export const metadata = { title: 'Site Map', description: 'Complete site map of Zion Tech Group.' };
+e  alternates: { canonical: 'https://ziontechgroup.com/site-map' },
+xport const metadata = { title: 'Site Map', description: 'Complete site map of Zion Tech Group.' };
 
 import Link from 'next/link';
 

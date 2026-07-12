@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/docs/OPENROUTER-SETUP' },
+xport const metadata = {
   title: 'OpenRouter Setup Guide | Zion Tech Group',
   description: 'Step-by-step guide to configure OpenRouter for multi-model AI access.',
 };

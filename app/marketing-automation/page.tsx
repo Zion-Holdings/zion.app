@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/marketing-automation' },
+xport const metadata = {
   title: 'Marketing Automation | Zion Tech Group',
   description: 'AI-powered marketing automation for lead generation and nurturing.',
 };

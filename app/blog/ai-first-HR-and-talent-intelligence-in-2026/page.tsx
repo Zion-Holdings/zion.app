@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-HR-and-talent-intelligence-in-2026' },
+xport const metadata = {
   title: 'AI-First HR and Talent Intelligence in 2026',
   description: 'Use AI-assisted HR and talent intelligence to improve hiring, retention, and workforce planning.',
 };

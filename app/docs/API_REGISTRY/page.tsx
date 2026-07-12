@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/docs/API_REGISTRY' },
+xport const metadata = {
   title: 'API Registry | Zion Tech Group',
   description: 'Complete reference of all supported APIs, providers, and configuration guides.',
 };

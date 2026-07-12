@@ -1,5 +1,6 @@
 import Link from 'next/link';
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-vendor-channel-partnership-model-for-latam' },
+xport const metadata = {
   title: 'AI Vendor Channel Partnership Model for LATAM',
   description: 'Channel partnership models for LATAM vendors, service providers, and resellers.',
 };

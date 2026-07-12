@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-knowledge-management-and-enterprise-search-in-2026' },
+xport const metadata = {
   title: 'AI-First Knowledge Management and Enterprise Search in 2026',
   description: 'AI-assisted knowledge management and enterprise search to improve findability and reduce support load.',
 };

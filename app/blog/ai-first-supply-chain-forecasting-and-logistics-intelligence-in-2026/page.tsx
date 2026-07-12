@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-supply-chain-forecasting-and-logistics-intelligence-in-2026' },
+xport const metadata = {
   title: 'AI-First Supply Chain Forecasting and Logistics Intelligence in 2026',
   description: 'Use AI-assisted forecasting, routing, and logistics intelligence to improve resilience and cost control.',
 };

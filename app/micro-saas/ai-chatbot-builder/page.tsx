@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/micro-saas/ai-chatbot-builder' },
+xport const metadata = {
   title: 'AI Chatbot Builder Micro-SaaS | Zion Tech Group',
   description: 'White-label chatbot builder for agencies and SaaS companies.',
 };

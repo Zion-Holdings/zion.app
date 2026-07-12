@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/sla' },
+xport const metadata = {
   title: 'Service Level Agreements | Zion Tech Group',
   description: 'Our commitment to uptime, performance, and support response times.',
 };

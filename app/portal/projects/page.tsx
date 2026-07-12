@@ -1,7 +1,8 @@
 // app/portal/projects/page.tsx
 import Link from 'next/link';
 
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/portal/projects' },
+xport const metadata = {
   title: 'Project Dashboard — Client Portal',
   description: 'Active project dashboards, milestones, and status updates.',
 };

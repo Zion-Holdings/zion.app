@@ -22,6 +22,8 @@ PROSPECTS_FILE = LEAD_DIR / 'all-leads.json'
 MINED_FILE = LEAD_DIR / 'historical_miner_results.json'
 MINER_LOG = LEAD_DIR / 'miner_log.json'
 HEALTH_MONITOR = LEAD_DIR / 'miner_health.json'
+QUALITY_LOG = LEAD_DIR / 'mined_contact_quality.jsonl'
+HIGH_SIGNAL_MIN_CONFIDENCE = 2
 #LABEL_CACHE_FILE = LEAD_DIR / 'label_cache.json'
 
 QUERIES = [
@@ -90,6 +92,14 @@ def append_log(entry: dict):
     if len(data) > 2000:
         data = data[-2000:]
     save_json(MINER_LOG, data)
+
+
+def append_quality(entry: dict):
+    try:
+        with QUALITY_LOG.open('a', encoding='utf-8') as f:
+            f.write(json.dumps(entry, ensure_ascii=False) + '\n')
+    except Exception:
+        pass
 
 
 def classify_prospect(email: str, source_query: str) -> dict:
@@ -212,6 +222,20 @@ def run_miner():
                 lead = classify_prospect(key, q)
                 new_leads.append(lead)
                 mined_contacts.append({'id': msg_id, 'email': key, 'query': q})
+                confidence = None
+                if isinstance(lead, dict):
+                    confidence = lead.get('confidence')
+                try:
+                    append_quality({
+                        'ts': now_iso(),
+                        'email': key,
+                        'msg_id': msg_id,
+                        'query': q,
+                        'confidence': confidence,
+                        'high_signal': bool(isinstance(confidence, (int, float)) and confidence >= HIGH_SIGNAL_MIN_CONFIDENCE),
+                    })
+                except Exception:
+                    pass
         query_durations.append(time.perf_counter() - qstart)
     elapsed = time.perf_counter() - started
 
@@ -222,6 +246,35 @@ def run_miner():
         save_json(MINED_FILE, results)
 
     now = now_iso()
+    try:
+        _ql = load_json(QUALITY_LOG, [])
+        if not isinstance(_ql, list):
+            _ql = [_ql]
+        ql = _ql[-200:]
+        high_signal = sum(1 for x in ql if x.get('high_signal'))
+        quality_ratio = (high_signal / len(ql)) if ql else None
+    except Exception:
+        high_signal = 0
+        quality_ratio = None
+    try:
+        append_quality({
+            'ts': now,
+            'email': None,
+            'msg_id': None,
+            'query': 'health_summary',
+            'confidence': None,
+            'high_signal': bool(high_signal),
+            'run': {
+                'queries_run': queries_run,
+                'contacts_found': len(mined_contacts),
+                'new_leads_added': len(new_leads),
+                'elapsed_s': round(elapsed, 3),
+                'high_signal': high_signal,
+                'lead_quality_ratio': quality_ratio,
+            }
+        })
+    except Exception:
+        pass
     health = {
         'ts': now,
         'queries_run': queries_run,
@@ -232,8 +285,8 @@ def run_miner():
         'avg_query_s': round(sum(query_durations) / len(query_durations), 4) if query_durations else None,
         'max_query_s': round(max(query_durations), 4) if query_durations else None,
         'status': 'ok' if queries_run else 'error',
-        'high_signal_leads': 0,
-        'lead_quality_ratio': None,
+        'high_signal_leads': high_signal,
+        'lead_quality_ratio': quality_ratio,
         'rolling': {
             'last_5_queries': query_durations[-5:],
             'last_5_qps': [round(1/q, 4) if q else None for q in query_durations[-5:]],

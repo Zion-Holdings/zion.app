@@ -1,4 +1,5 @@
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/seo/ai-sales-workflow-automation-templates' },
+xport const metadata = {
   title: 'AI Sales Workflow Automation Templates | Zion Tech Group',
   description: 'Download AI sales workflow automation templates from Zion Tech Group: lead qualification, follow-up sequences, proposals, and pipeline review cadences.',
 };

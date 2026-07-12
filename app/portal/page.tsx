@@ -1,7 +1,8 @@
 // app/portal/page.tsx
 import Link from 'next/link';
 
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/portal' },
+xport const metadata = {
   title: 'Client Portal — Zion Tech Group',
   description: 'Access client dashboards, support tickets, billing, and knowledge base in the Zion Tech Group portal.',
 };

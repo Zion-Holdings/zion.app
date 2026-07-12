@@ -1,4 +1,5 @@
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/seo/ai-contact-center-free-tools' },
+xport const metadata = {
   title: 'AI Contact Center Free Tools | Zion Tech Group',
   description: 'Zion Tech Group contact-center free tools: transcript cleanup, response suggestions, sentiment checks, and shift readiness helpers.',
 };

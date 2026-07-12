@@ -1,4 +1,5 @@
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/seo/free-it-health-check-monitoring-tools' },
+xport const metadata = {
   title: 'Free IT Health Check and Monitoring Tools | Zion Tech Group',
   description: 'Download free IT health check and monitoring tools from Zion Tech Group: server checks, uptime helpers, threshold alerts, and ops-ready reports.',
 };

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/micro-saas/ai-inventory-manager' },
+xport const metadata = {
   title: 'AI Inventory Manager | Zion Tech Group',
   description: 'Smart inventory management for small and medium businesses.',
 };

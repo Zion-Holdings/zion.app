@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-anti-fraud-and-payment-intelligence-in-2026' },
+xport const metadata = {
   title: 'AI-First Anti-Fraud and Payment Intelligence in 2026',
   description: 'Use AI-assisted payment intelligence and anti-fraud controls without blocking legitimate transactions.',
 };

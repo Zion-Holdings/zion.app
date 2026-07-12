@@ -1,4 +1,5 @@
-export const metadata = { title: "E-Commerce & Retail", description: "AI-powered solutions for online and brick-and-mortar retail." };
+e  alternates: { canonical: 'https://ziontechgroup.com/solutions/ecommerce-retail' },
+xport const metadata = { title: "E-Commerce & Retail", description: "AI-powered solutions for online and brick-and-mortar retail." };
 import Link from 'next/link';
 
 export default function SolutionPage() {

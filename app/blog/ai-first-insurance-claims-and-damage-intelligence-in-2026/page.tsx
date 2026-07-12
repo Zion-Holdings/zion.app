@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-insurance-claims-and-damage-intelligence-in-2026' },
+xport const metadata = {
   title: 'AI-First Insurance Claims and Damage Intelligence in 2026',
   description: 'AI-assisted insurance claims and damage intelligence for faster resolution and lower fraud loss.',
 };

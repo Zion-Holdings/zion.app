@@ -1,4 +1,5 @@
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/seo/document-automation-enterprise-free-tools' },
+xport const metadata = {
   title: 'Document Automation Enterprise Free Tools | Zion Tech Group',
   description: 'Enterprise document automation free tools from Zion Tech Group: OCR helpers, parsers, template validators, and compliance-ready workflows.',
 };

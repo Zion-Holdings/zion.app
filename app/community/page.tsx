@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
-export const metadata = { title: 'Community', description: 'Join the Zion Tech Group community. Connect with AI and IT professionals, share knowledge, and collaborate.' };
+e  alternates: { canonical: 'https://ziontechgroup.com/community' },
+xport const metadata = { title: 'Community', description: 'Join the Zion Tech Group community. Connect with AI and IT professionals, share knowledge, and collaborate.' };
 
 export default function CommunityPage() {
   return (

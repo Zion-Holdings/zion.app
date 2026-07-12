@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/docs/FREE-AI-TOOLS' },
+xport const metadata = {
   title: 'Free AI Tools Directory | Zion Tech Group',
   description: 'Curated directory of free AI tools for developers, designers, and businesses.',
 };

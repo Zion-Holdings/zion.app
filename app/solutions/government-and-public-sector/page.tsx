@@ -1,4 +1,5 @@
-export const metadata = { title: "Government & Public Sector", description: "Digital transformation for government agencies." };
+e  alternates: { canonical: 'https://ziontechgroup.com/solutions/government-and-public-sector' },
+xport const metadata = { title: "Government & Public Sector", description: "Digital transformation for government agencies." };
 import Link from 'next/link';
 
 export default function SolutionPage() {

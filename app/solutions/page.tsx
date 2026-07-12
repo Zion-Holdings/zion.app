@@ -1,7 +1,8 @@
 // app/solutions/page.tsx
 import Link from 'next/link';
 
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/solutions' },
+xport const metadata = {
   title: 'Solutions — Zion Tech Group',
   description: 'Industry-specific AI, IT, and Micro-SaaS solutions for Healthcare, Financial Services, Manufacturing, and more.',
 };

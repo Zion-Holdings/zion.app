@@ -1,7 +1,8 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/services/ai-consulting-latam-partnerships' },
+xport const metadata = {
   title: 'AI Consulting for LATAM Partners and Vendors | Zion Tech Group',
   description: 'AI consulting, co-sell enablement, and channel partnership models for LATAM partners and vendors.',
 };
