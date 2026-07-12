@@ -62,6 +62,14 @@ export default function ContactPage() {
               <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="btn-secondary w-full text-center block">
                 📅 Book Consultation
               </a>
+              <a
+                href="https://wa.me/13024640950?text=Hi%20Kleber%2C%20I%20would%20like%20to%20discuss%20a%20project."
+                target="_blank"
+                rel="noreferrer"
+                className="btn-secondary w-full text-center block"
+              >
+                💬 WhatsApp
+              </a>
             </div>
           </div>
         </div>
