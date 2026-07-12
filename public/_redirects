@@ -1,2 +1,8 @@
 
 /tools/favicon-generator/  /tools/favicon-generator/index.html  200
+/ai-agents  /services/ai-agents-autonomous  301
+/ai-agents/  /services/ai-agents-autonomous/  301
+/ai-chat-companion  /ai-services  301
+/ai-chat-companion/  /ai-services/  301
+/ai-financial-services  /ai-fraud-detection  301
+/ai-financial-services/  /ai-fraud-detection/  301
