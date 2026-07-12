@@ -7,7 +7,7 @@ but writes LD-ready CEO reply drafts to JSON without requiring live Gmail auth.
 import sys, json, datetime
 from pathlib import Path
 
-REPO = Path('/Users/miami2/zion.app')
+REPO = Path('/data/data/com.termux/files/home/zion-support.github.io')
 LEAD_DIR = REPO / 'lead-crm'
 OUTPUT = LEAD_DIR / 'ceo_dry_run_drafts.json'
 
