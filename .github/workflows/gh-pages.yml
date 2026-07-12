@@ -39,6 +39,9 @@ jobs:
             mkdir -p "$(dirname "$dest")"
             cp "$f" "$dest"
           done
+          if [ -f public/sitemap.xml ]; then cp -f public/sitemap.xml artifact/sitemap.xml; fi
+          if [ -f public/robots.txt ]; then cp -f public/robots.txt artifact/robots.txt; fi
+          if [ -f public/feed.xml ]; then cp -f public/feed.xml artifact/feed.xml; fi
         fi
     - uses: actions/upload-pages-artifact@v4
       with:
