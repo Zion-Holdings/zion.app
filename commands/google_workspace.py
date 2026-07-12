@@ -191,9 +191,8 @@ EXCLUSION_CANDIDATES = (
 )
 
 
-def _load_excluded_global() -> set:
+def _load_excluded(include_thread_only: bool = False) -> set:
     try:
-        # Search for exclusion-list.json relative to likely repo roots in this environment.
         candidates = [
             Path(__file__).resolve().parent.parent / 'lead-crm' / 'exclusion-list.json',
             Path.cwd() / 'lead-crm' / 'exclusion-list.json',
@@ -207,15 +206,33 @@ def _load_excluded_global() -> set:
         for cand in candidates:
             if cand.exists():
                 data = json.loads(cand.read_text(encoding='utf-8'))
-                return {item.get('email', '').lower() for item in data.get('addresses', []) if item.get('email')}
+                excluded = set()
+                reply_allowed = set()
+                for item in data.get('addresses', []):
+                    email = item.get('email', '').lower()
+                    if not email:
+                        continue
+                    status = item.get('status', 'excluded')
+                    if status != 'thread-only':
+                        excluded.add(email)
+                    else:
+                        excluded.add(email)
+                        reply_allowed.add(email)
+                return excluded, reply_allowed
     except Exception:
         pass
-    return set()
+    return set(), set()
+
+
+def _load_excluded_global() -> set:
+    excluded, _ = _load_excluded()
+    return excluded
 
 
 def gmail_send_reply_fixed(thread_id_or_msg_id: str, original_subject: str, body: str, original_sender: str) -> dict:
     to_addr = (original_sender or '').strip().lower()
-    if to_addr and to_addr in _load_excluded_global():
+    excluded, reply_allowed = _load_excluded()
+    if to_addr and to_addr in excluded and to_addr not in reply_allowed:
         return {'success': False, 'error': 'excluded', 'to': original_sender}
     """Send a proper reply that stays in the same conversation thread.
     

@@ -9,7 +9,7 @@
     { "email": "contacts@servi.ai", "reason": "live bounce recipient rejected", "first_failed_at": "2026-07-11T21:05:51-07:00", "status": "excluded" },
     { "email": "business@servi.ai", "reason": "live bounce recipient rejected", "first_failed_at": "2026-07-11T21:18:12-07:00", "status": "excluded" },
     { "email": "leads@manag.io", "reason": "live bounce recipient rejected", "first_failed_at": "2026-07-11T20:19:15-07:00", "status": "excluded" },
-    { "email": "express@airbnb.com", "reason": "live bounce Address not found", "first_failed_at": "2026-07-12T04:26:56-07:00", "status": "excluded" },
+    { "email": "express@airbnb.com", "reason": "kept for live inbound Airbnb thread; exclude only cold outbound sends", "first_failed_at": "2026-07-12T04:26:56-07:00", "status": "thread-only" },
     { "email": "anjali@quantomtech.com", "reason": "gmail-api-404 Requested entity was not found", "first_failed_at": "unknown", "status": "excluded" }
   ]
 }

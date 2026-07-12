@@ -1,92 +1,63 @@
 name: Lighthouse Performance Budget
-on:
+'on':
   push:
-    branches: ['*']
+    branches:
+    - '*'
   pull_request:
-    branches: ['main']
+    branches:
+    - main
   workflow_dispatch: {}
-
 jobs:
   lighthouse:
-    name: 'Lighthouse budget gate'
+    name: Lighthouse budget gate
     runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash
-
     steps:
-      - name: 'checkout'
-        uses: actions/checkout@v4
-
-      - name: 'set up Node'
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'npm'
-
-      - name: 'install dependencies'
-        run: npm ci
-
-      - name: 'build'
-        run: npm run build
-
-      - name: 'prepare Pages artifact for Lighthouse'
-        run: |
-          set -euo pipefail
-          mkdir -p artifact
-          if [ -d docs ]; then cp -a docs/. artifact/; fi
-          if [ -d out ]; then cp -a out/. artifact/; fi
-          if [ -f public/_redirects ]; then cat public/_redirects > artifact/_redirects; fi
-          if [ -f public/_headers ]; then cp -f public/_headers artifact/_headers; fi
-          if [ -d public ]; then
-            find public -type f -name 'index.html' -print0 | while IFS= read -r -d '' f; do
-              dest="artifact/${f#public/}"
-              mkdir -p "$(dirname "$dest")"
-              cp "$f" "$dest"
-            done
-            if [ -f public/sitemap.xml ]; then cp -f public/sitemap.xml artifact/sitemap.xml; fi
-            if [ -f public/robots.txt ]; then cp -f public/robots.txt artifact/robots.txt; fi
-            if [ -f public/feed.xml ]; then cp -f public/feed.xml artifact/feed.xml; fi
-          fi
-
-      - name: 'serve static export'
-        run: |
-          set -euo pipefail
-          if [ ! -d artifact ]; then
-            echo 'missing artifact/ directory' >&2
-            exit 1
-          fi
-          if command -v npx >/dev/null 2>&1; then
-            npx -y serve -l 3000 artifact >/tmp/static-serve.log 2>&1 &
-          else
-            npm install --no-audit --no-fund -g serve >/dev/null 2>&1 && serve -l 3000 artifact >/tmp/static-serve.log 2>&1 &
-          fi
-          for i in $(seq 1 40); do
-            if curl -fsS http://127.0.0.1:3000 >/dev/null; then
-              echo 'static server up'
-              exit 0
-            fi
-            sleep 1
-          done
-          echo 'static server failed to start' >&2
-          exit 1
-
-      - name: 'run Lighthouse'
-        run: |
-          set -euo pipefail
-          npx lighthouse http://127.0.0.1:3000 \
-            --chrome-flags='--headless --no-sandbox --disable-gpu' \
-            --only-categories=performance,accessibility,best-practices,seo \
-            --output=json \
-            --output-path=./lighthouse-report.json \
-            --quiet || true
-
-      - name: 'enforce performance budget'
-        run: |
-          set -euo pipefail
-          REPORT=./lighthouse-report.json
-          if [ ! -f "$REPORT" ]; then
-            echo 'lighthouse report missing' >&2
-            exit 1
-          fi
-          node -e "const fs=require('fs');const report=JSON.parse(fs.readFileSync('./lighthouse-report.json','utf8'));const scores=report.categories||{};const budget={performance:0.9,accessibility:0.9,bestPractices:0.9,seo:0.9};const failures=[];for(const [key,min] of Object.entries(budget)){const score=scores[key]?.score;if(score===null||score===undefined||score<min){failures.push(`${key}: ${score} < ${min}`);}}if(failures.length){console.log('Lighthouse budget failures:\n'+failures.join('\n'));process.exit(1);}else{console.log('Lighthouse budget passed');}"
+    - name: checkout
+      uses: actions/checkout@v4
+    - name: set up Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        cache: npm
+    - name: install dependencies
+      run: npm ci
+    - name: build
+      run: npm run build
+    - name: prepare Pages artifact for Lighthouse
+      run: "set -euo pipefail\nmkdir -p artifact\nif [ -d docs ]; then cp -a docs/.\
+        \ artifact/; fi\nif [ -d out ]; then cp -a out/. artifact/; fi\nif [ -f public/_redirects\
+        \ ]; then cat public/_redirects > artifact/_redirects; fi\nif [ -f public/_headers\
+        \ ]; then cp -f public/_headers artifact/_headers; fi\nif [ -d public ]; then\n\
+        \  find public -type f -name 'index.html' -print0 | while IFS= read -r -d\
+        \ '' f; do\n    dest=\"artifact/${f#public/}\"\n    mkdir -p \"$(dirname \"\
+        $dest\")\"\n    cp \"$f\" \"$dest\"\n  done\n  if [ -f public/sitemap.xml\
+        \ ]; then cp -f public/sitemap.xml artifact/sitemap.xml; fi\n  if [ -f public/robots.txt\
+        \ ]; then cp -f public/robots.txt artifact/robots.txt; fi\n  if [ -f public/feed.xml\
+        \ ]; then cp -f public/feed.xml artifact/feed.xml; fi\nfi\n"
+    - name: serve static export
+      run: "set -euo pipefail\nif [ ! -d artifact ]; then\n  echo 'missing artifact/\
+        \ directory' >&2\n  exit 1\nfi\nif command -v npx >/dev/null 2>&1; then\n\
+        \  npx -y serve -l 3000 artifact >/tmp/static-serve.log 2>&1 &\nelse\n  npm\
+        \ install --no-audit --no-fund -g serve >/dev/null 2>&1 && serve -l 3000 artifact\
+        \ >/tmp/static-serve.log 2>&1 &\nfi\nfor i in $(seq 1 40); do\n  if curl -fsS\
+        \ http://127.0.0.1:3000 >/dev/null; then\n    echo 'static server up'\n  \
+        \  exit 0\n  fi\n  sleep 1\ndone\necho 'static server failed to start' >&2\n\
+        exit 1\n"
+    - name: run Lighthouse
+      run: "set -euo pipefail\nnpx lighthouse http://127.0.0.1:3000 \\\n  --chrome-flags='--headless\
+        \ --no-sandbox --disable-gpu' \\\n  --only-categories=performance,accessibility,best-practices,seo\
+        \ \\\n  --output=json \\\n  --output-path=./lighthouse-report.json \\\n  --quiet\
+        \ || true\n"
+    - name: enforce performance budget
+      run: "set -euo pipefail\nREPORT=./lighthouse-report.json\nif [ ! -f \"$REPORT\"\
+        \ ]; then\n  echo 'lighthouse report missing' >&2\n  exit 1\nfi\nnode -e \"\
+        const fs=require('fs');const report=JSON.parse(fs.readFileSync('./lighthouse-report.json','utf8'));const\
+        \ scores=report.categories||{};const budget={performance:0.9,accessibility:0.9,bestPractices:0.9,seo:0.9};const\
+        \ failures=[];for(const [key,min] of Object.entries(budget)){const score=scores[key]?.score;if(score===null||score===undefined||score<min){failures.push(`${key}:\
+        \ ${score} < ${min}`);}}if(failures.length){console.log('Lighthouse budget\
+        \ failures:\\n'+failures.join('\\n'));process.exit(1);}else{console.log('Lighthouse\
+        \ budget passed');}\"\n"
+    timeout-minutes: 20

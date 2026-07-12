@@ -1,9 +1,8 @@
 name: Lighthouse Baseline
-on:
+true:
   schedule:
-    - cron: '0 1 * * *'
+  - cron: 0 1 * * *
   workflow_dispatch: {}
-
 jobs:
   baseline:
     runs-on: ubuntu-latest
@@ -11,38 +10,37 @@ jobs:
       run:
         shell: bash
     steps:
-      - name: 'checkout'
-        uses: actions/checkout@v4
+    - name: checkout
+      uses: actions/checkout@v4
+    - name: set up Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+        cache: npm
+    - name: install dependencies
+      run: npm ci
+    - name: build
+      run: npm run build
+    - name: run Lighthouse
+      run: "set -euo pipefail\nnpx lighthouse http://localhost:3000 \\\n  --chrome-flags='--headless\
+        \ --no-sandbox' \\\n  --only-categories=performance,accessibility,best-practices,seo\
+        \ \\\n  --output=json \\\n  --output-path=./lighthouse-report.json || true\n"
+    - name: update baseline
+      run: 'set -euo pipefail
 
-      - name: 'set up Node'
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'npm'
+        node -e "const fs=require(''fs'');const path=require(''path'');const reportPath=path.resolve(''./lighthouse-report.json'');const
+        baselinePath=path.resolve(''./lighthouse-baseline.json'');let report={categories:{}};if(fs.existsSync(reportPath)){try{const
+        raw=fs.readFileSync(reportPath,''utf8'');if(raw){report=JSON.parse(raw);}}catch(e){console.log(''skip
+        report parse'',e.message);}}const scores=report.categories||{};const baseline={categories:{},generatedAt:new
+        Date().toISOString()};for(const [key,value] of Object.entries(scores)){if(value
+        && typeof value.score===''number'' && Number.isFinite(value.score)){baseline.categories[key]={score:value.score,samples:1};}}fs.writeFileSync(baselinePath,JSON.stringify(baseline,null,2));console.log(''updated
+        baseline at'',baselinePath);"
 
-      - name: 'install dependencies'
-        run: npm ci
-
-      - name: 'build'
-        run: npm run build
-
-      - name: 'run Lighthouse'
-        run: |
-          set -euo pipefail
-          npx lighthouse http://localhost:3000 \
-            --chrome-flags='--headless --no-sandbox' \
-            --only-categories=performance,accessibility,best-practices,seo \
-            --output=json \
-            --output-path=./lighthouse-report.json || true
-
-      - name: 'update baseline'
-        run: |
-          set -euo pipefail
-          node -e "const fs=require('fs');const path=require('path');const reportPath=path.resolve('./lighthouse-report.json');const baselinePath=path.resolve('./lighthouse-baseline.json');let report={categories:{}};if(fs.existsSync(reportPath)){try{const raw=fs.readFileSync(reportPath,'utf8');if(raw){report=JSON.parse(raw);}}catch(e){console.log('skip report parse',e.message);}}const scores=report.categories||{};const baseline={categories:{},generatedAt:new Date().toISOString()};for(const [key,value] of Object.entries(scores)){if(value && typeof value.score==='number' && Number.isFinite(value.score)){baseline.categories[key]={score:value.score,samples:1};}}fs.writeFileSync(baselinePath,JSON.stringify(baseline,null,2));console.log('updated baseline at',baselinePath);"
-
-      - name: 'upload baseline'
-        uses: actions/upload-artifact@v4
-        with:
-          name: lighthouse-baseline
-          path: lighthouse-baseline.json
-          retention-days: 90
+        '
+    - name: upload baseline
+      uses: actions/upload-artifact@v4
+      with:
+        name: lighthouse-baseline
+        path: lighthouse-baseline.json
+        retention-days: 90
+    timeout-minutes: 10
