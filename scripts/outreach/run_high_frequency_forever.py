@@ -201,7 +201,9 @@ def main():
     while True:
         ok, current_interval = run_once(current_interval)
         sleep_seconds = max(15, current_interval)
-        time.sleep(sleep_seconds)
+        if ok and sleep_seconds <= 20:
+            sleep_seconds = max(15, sleep_seconds + 1)
+        time.sleep(max(15, sleep_seconds))
 
 
 if __name__ == '__main__':
