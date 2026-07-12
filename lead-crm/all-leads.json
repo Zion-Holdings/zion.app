@@ -7414,5 +7414,22 @@
     "llm_model": "stepfun/step-3.7-flash-20260528:free",
     "llm_reason": "### Rating: 1\n#### Reasoning aligned to the rating scale:\n- 2 = Direct, explicit signal that the entity offers managed AI/IT services (e.g., domain name explicitly references these services, or accompanying context confirms this is a core offering)\n- 1 = Weak/indirect signal: the domain name is cons",
     "confidence": 1
+  },
+  {
+    "to": "gina@genielms.online",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"Zion Tech Group\"",
+    "domain": "genielms.online",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash-20260528:free",
+    "llm_reason": "### Rating: 0\n#### Reasoning:\nThe only provided information is a generic, non-specific company name (\"Zion Tech Group\") and a brand domain with no service-related keywords. There are no explicit or implicit indicators that this entity operates in the managed AI/IT services niche: the name could refe",
+    "confidence": 0
   }
 ]
