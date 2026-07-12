@@ -1,15 +1,13 @@
 name: Autonomous Performance Budget Enforcer with CI Gate
 
-permissions:
-  contents: read
-name: Autonomous Performance Budget Enforcer with CI Gate
 on:
   pull_request:
     branches:
     - main
   schedule:
   - cron: 0 3 * * *
-  workflow_dispatch: null
+  workflow_dispatch:
+
 jobs:
   performance-budget:
     name: Performance Budget Check
@@ -17,20 +15,52 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v6.0.2
+      uses: actions/checkout@v6
+
     - name: Setup Node.js
-      uses: actions/setup-node@v6.3.0
+      uses: actions/setup-node@v6
       with:
         node-version: '20'
         cache: npm
+
     - name: Install dependencies
       run: npm ci --include=dev
+
+    - name: Show environment
+      run: |
+        node -v
+        npm -v
+        ls -la
+        pwd
+
     - name: Build site
       run: npm run build
+
     - name: Start local server (background)
-      run: "nohup npm start &>/tmp/next-start.log &\\necho \\\"PID=$!\\\" > /tmp/server.pid\\n\\\n        # Wait for server up\\nfor i in 1 2 3 4 5 6 7 8 9 10; do\\n  if curl -s -o /dev/null\\\n        \\ -w \\\"%{http_code}\\\" http://localhost:3000 | grep -q '^2'; then\\n    echo\\\n        \\ \\\"Server ready\\\"\\n    break\\n  fi\\n  echo \\\"Waiting for server... ($i)\\\"\\\n        \\\n  sleep 10\\ndone\\"
+      run: |
+        nohup npm start > /tmp/next-start.log 2>&1 &
+        echo "PID=$!" > /tmp/server.pid
+        echo $! > /tmp/server.pid
+        cat /tmp/server.pid
+
+    - name: Wait for local server
+      run: |
+        for i in 1 2 3 4 5 6 7 8 9 10; do
+          code=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:3000 || true)
+          echo "Attempt $i: $code"
+          if [ "$code" = "200" ]; then
+            echo "Server ready"
+            exit 0
+          fi
+          sleep 5
+        done
+        echo "Local server did not return 200 within timeout; using fallback"
+        echo "---SERVER LOG---" || true
+        tail -n 80 /tmp/next-start.log || true
+
     - name: Run Performance Budget Enforcer
       id: perf
       continue-on-error: true
@@ -42,15 +72,18 @@ jobs:
           --url http://localhost:3000 \
           --output-dir .hermes/memory/performance-budget \
           --baseline-file .hermes/memory/performance-budget/baseline.json \
-          > /tmp/perf-output.txt 2>&1 || true
+          > /tmp/perf-output.txt 2>&1
+        exit_code=$?
         echo "exit_code=$exit_code" >> "$GITHUB_OUTPUT"
+        echo "EXIT_CODE=$exit_code" >> "$GITHUB_ENV"
         if [ -s /tmp/perf-output.txt ]; then
           echo '---PERF OUTPUT---'
           cat /tmp/perf-output.txt
         else
           echo 'Performance budget enforcer produced no output.'
         fi
-    - name: Upload performance artifacts
+
+    - name: Upload diagnostics
       if: always()
       uses: actions/upload-artifact@v4
       with:
@@ -58,7 +91,9 @@ jobs:
         path: |
           .hermes/memory/performance-budget/
           /tmp/perf-output.txt
+          /tmp/next-start.log
         retention-days: 30
+
     - name: Post PR comment (if PR)
       if: github.event_name == 'pull_request' && steps.perf.outputs.exit_code != '0'
       run: |
@@ -67,20 +102,23 @@ jobs:
         else
           echo "::warning::Performance budget enforcer ran but produced no details."
         fi
+
     - name: Notify Telegram on failure
       if: failure()
       run: |
         if [ -f automation/notify-telegram.js ]; then
-          node automation/notify-telegram.js "⚠️ Performance budget check failed. See CI logs." || true
+          node automation/notify-telegram.js "Performance budget check failed. See CI logs." || true
         else
           echo "notify-telegram.js not found; skipping Telegram alert."
         fi
+
     - name: Notify Telegram on success
       if: success()
       run: |
         if [ -f automation/notify-telegram.js ]; then
-          node automation/notify-telegram.js "⚡ Performance budget check passed." || true
+          node automation/notify-telegram.js "Performance budget check passed." || true
         else
           echo "notify-telegram.js not found; skipping Telegram alert."
         fi
-    timeout-minutes: 10
+
+    timeout-minutes: 20
