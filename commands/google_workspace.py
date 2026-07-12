@@ -182,7 +182,30 @@ def gmail_batch_modify(payload: dict, addLabelIds=None, removeLabelIds=None):
 
 # ── Gmail FIXED Reply ───────────────────────────────────────────────────────
 
+EXCLUSION_CANDIDATES = (
+    FALLBACK_WORKSPACE / 'zion-clone-test2' / 'lead-crm' / 'exclusion-list.json',
+    FALLBACK_WORKSPACE / 'zion-clone-test' / 'lead-crm' / 'exclusion-list.json',
+    Path('/data/data/com.termux/files/home/zion-support.github.io/lead-crm/exclusion-list.json'),
+    Path.home() / 'zion-clone-test2' / 'lead-crm' / 'exclusion-list.json',
+    Path.home() / 'zion-clone-test' / 'lead-crm' / 'exclusion-list.json',
+)
+
+
+def _load_excluded_global() -> set:
+    try:
+        for cand in EXCLUSION_CANDIDATES:
+            if cand.exists():
+                data = json.loads(cand.read_text(encoding='utf-8'))
+                return {item.get('email', '').lower() for item in data.get('addresses', []) if item.get('email')}
+    except Exception:
+        pass
+    return set()
+
+
 def gmail_send_reply_fixed(thread_id_or_msg_id: str, original_subject: str, body: str, original_sender: str) -> dict:
+    to_addr = (original_sender or '').strip().lower()
+    if to_addr and to_addr in _load_excluded_global():
+        return {'success': False, 'error': 'excluded', 'to': original_sender}
     """Send a proper reply that stays in the same conversation thread.
     
     Uses threadId for proper Gmail conversation threading.

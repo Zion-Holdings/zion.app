@@ -1163,7 +1163,23 @@ def run_high_frequency_outreach():
     return {'sent': sent_count, 'skipped': skipped, 'adds': len(newest_used), 'dead': dead}
 
 
+EXCLUSION_FILE = PROJECT_ROOT / 'lead-crm' / 'exclusion-list.json'
+
+
+def _load_excluded() -> set:
+    try:
+        if not EXCLUSION_FILE.exists():
+            return set()
+        data = _json.loads(EXCLUSION_FILE.read_text(encoding='utf-8'))
+        return {item.get('email', '').lower() for item in data.get('addresses', []) if item.get('email')}
+    except Exception:
+        return set()
+
+
 def send_ceo_reply(thread_id, to_addr, subject, body, references_message_id):
+    to_key = (to_addr or '').lower()
+    if to_key and to_key in _load_excluded():
+        return {'error': 'excluded', 'to': to_addr}
     body = sanitize_outreach_body(body)
     msg_id_str = f"<{references_message_id}>"
     raw_headers = [
