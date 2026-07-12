@@ -1,1 +1,4 @@
 /tools/favicon-generator/  /tools/favicon-generator/index.html  200
+
+# Canonical sitemap
+/sitemap.xml  /sitemap-0.xml  301
