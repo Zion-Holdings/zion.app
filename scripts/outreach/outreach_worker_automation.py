@@ -242,7 +242,10 @@ def search_all_folders(q, maxResults=20):
     # High-frequency safe wrapper: runs every Gmail call under a timeout
     # and scans the same query across common mail scopes to approximate
     # "all folders" behavior.
-    queries = [q]
+    queries = [
+        q,
+        f"{q} in:anywhere",
+    ]
     try:
         from concurrent.futures import ThreadPoolExecutor
     except Exception:
