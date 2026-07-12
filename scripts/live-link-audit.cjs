@@ -31,11 +31,7 @@ const PATH_ALIASES = new Map([
   ['/ai/demo/', '/ai-lab/'],
   ['/new-ai-services/', '/docs/new-ai-services/']
 ]);
-const IGNORE_PATHS = new Set([
-  '/base.css',
-  '/prettify.css',
-  '/favicon.png'
-]);
+const IGNORE_PATHS = new Set(['/base.css', '/prettify.css', '/favicon.png', 'base.css', 'prettify.css', 'favicon.png']);
 const TEMPLATE_GUARD = /\$\{|\{SITE\}/i;
 
 function isExternal(link) {
