@@ -1,4 +1,4 @@
-name: Autonomous Performance Budget Enforcer with CI Gate
+name: Performance Budget Enforcer with CI Gate
 
 on:
   pull_request:
@@ -41,29 +41,31 @@ jobs:
 
     - name: Start local server (background)
       run: |
-        nohup npm start > /tmp/next-start.log 2>&1 &
-        echo "PID=$!" > /tmp/server.pid
-        echo $! > /tmp/server.pid
-        cat /tmp/server.pid
+        npm start > /tmp/next-start.log 2>&1 &
+        server_pid=$!
+        echo "PID=$server_pid"
+        echo $server_pid > /tmp/server.pid
 
-    - name: Wait for local server
+    - name: Wait for local server or capture startup failure
+      id: wait-server
       run: |
+        server_ready=false
         for i in 1 2 3 4 5 6 7 8 9 10; do
           code=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:3000 || true)
           echo "Attempt $i: $code"
           if [ "$code" = "200" ]; then
+            server_ready=true
             echo "Server ready"
-            exit 0
+            break
           fi
           sleep 5
         done
-        echo "Local server did not return 200 within timeout; using fallback"
-        echo "---SERVER LOG---" || true
-        tail -n 80 /tmp/next-start.log || true
+        echo "server_ready=$server_ready" >> "$GITHUB_OUTPUT"
+        echo "---SERVER LOG (tail)---" || true
+        tail -n 120 /tmp/next-start.log || true
 
     - name: Run Performance Budget Enforcer
       id: perf
-      continue-on-error: true
       env:
         IS_MAIN_BRANCH: ${{ github.ref == 'refs/heads/main' && 'true' || 'false' }}
       run: |
@@ -83,7 +85,7 @@ jobs:
           echo 'Performance budget enforcer produced no output.'
         fi
 
-    - name: Upload diagnostics
+    - name: Upload performance artifacts
       if: always()
       uses: actions/upload-artifact@v4
       with:
@@ -94,7 +96,7 @@ jobs:
           /tmp/next-start.log
         retention-days: 30
 
-    - name: Post PR comment (if PR)
+    - name: Post PR comment (if PR and failed)
       if: github.event_name == 'pull_request' && steps.perf.outputs.exit_code != '0'
       run: |
         if [ -s /tmp/perf-output.txt ]; then
@@ -121,4 +123,4 @@ jobs:
           echo "notify-telegram.js not found; skipping Telegram alert."
         fi
 
-    timeout-minutes: 20
+    timeout-minutes: 25
