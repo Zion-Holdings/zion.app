@@ -64,6 +64,7 @@ automation/data/**
 
 !lead-crm/miner_cron.json
 !lead-crm/outreach_cron.json
+!lead-crm/exclusion-list.json
 docs/_next/
 docs/**/__next.*.txt
 docs/**/index.txt
