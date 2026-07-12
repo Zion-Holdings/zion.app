@@ -7499,5 +7499,22 @@
     "llm_model": "stepfun/step-3.7-flash-20260528:free",
     "llm_reason": "### Rating: 1\n#### Scoring rubric (aligned to managed AI/IT services relevance):\n- 2: Strong, explicit value signal confirming the entity operates in managed AI/IT services (e.g., domain name references these specific offerings, or accompanying context verifies this focus)\n- 1: Ambiguous, low-value ",
     "confidence": 1
+  },
+  {
+    "to": "api@heygen.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"Zion Tech Group\"",
+    "domain": "heygen.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash-20260528:free",
+    "llm_reason": "### Rating: 0\n#### Rationale:\nThe only provided details are a generic, broad company name (\"Zion Tech Group\") and a standard, unkeyworded .com domain. \"Tech Group\" is an overly vague descriptor that applies to countless technology businesses across all sub-sectors (consumer hardware, custom software",
+    "confidence": 0
   }
 ]
