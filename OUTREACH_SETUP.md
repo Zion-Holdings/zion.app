@@ -1,68 +1,51 @@
-# Outreach Setup
+# Outreach Activation Setup
 
-This file documents the exact steps to activate live LLM-tailored outreach sends.
+This repository already contains the live outreach automation. The only remaining blockers are configuration values, not code.
 
-## 1. Gmail API token
+## 1. Google OAuth token
 
-Place a valid Google OAuth user token at:
+Place a valid user token at:
 
 ```
 scripts/outreach_monitor/processed/gmail_token.json
 ```
 
-Required scopes:
-- `https://www.googleapis.com/auth/gmail.send`
-- `https://www.googleapis.com/auth/gmail.readonly`
-- `https://www.googleapis.com/auth/gmail.labels`
+Required scopes: `https://www.googleapis.com/auth/gmail.send`, `https://www.googleapis.com/auth/gmail.readonly`, `https://www.googleapis.com/auth/gmail.modify`.
+
+You can generate a local token with the same OAuth client ID/secret already referenced in the outreach scripts.
 
 ## 2. LLM provider secrets
 
-Add one of the following sets to **GitHub → Settings → Secrets → Actions**.
+Add these in **GitHub → Settings → Secrets → Actions**:
 
-### Option A: Direct LLM
-- `ZION_LLM_API_ENDPOINT`
-- `ZION_LLM_API_KEY`
-- `ZION_LLM_MODEL`
+| Secret | Purpose |
+|---|---|
+| `ZION_LLM_API_ENDPOINT` | Base URL for the chat completions endpoint |
+| `ZION_LLM_API_KEY` | API key for that endpoint |
+| `ZION_LLM_MODEL` | Model identifier to query |
+| `OPENROUTER_API_KEY` | Optional alternate provider key |
+| `GROQ_API_KEY` | Optional alternate provider key |
+| `GEMINI_API_KEY` | Optional alternate provider key |
 
-### Option B: OpenRouter
-- `OPENROUTER_API_KEY`
-- `OPENROUTER_MODEL`
-
-### Option C: Groq
-- `GROQ_API_KEY`
-- `GROQ_MODEL`
-
-### Option D: Gemini
-- `GEMINI_API_KEY`
-- `GEMINI_MODEL`
+The sender auto-selects an available backend from `openai_compat`, `unified`, `utils_llm_query`, then falls back to `template`.
 
 ## 3. Verify
 
-After adding the above, run:
-
-```
-python scripts/outreach/outreach_worker_automation.py --dry-run
+```bash
+HIGH_FREQ_INTERVAL_SECONDS=300 OUTREACH_DRY_RUN=1 python scripts/outreach/run_high_frequency_forever.py
 ```
 
 Expected result:
-- Discovers `!!!hot-follow-up` threads across all folders
-- Generates CEO-signed replies in the thread language
-- No duplicate sends
-- No sends to addresses in `lead-crm/exclusion-list.json`
+- contacts discovered from `!!!hot-follow-up` across all folders
+- no duplicate sends
+- LLM tailoring used when secrets are present
 
-## 4. Continuous run
+## 4. Go live
 
-GitHub Actions workflow:
-`.github/workflows/outreach-live-llm-tailoring.yml`
-Schedule: `*/5 * * * *` (every 5 minutes)
+Set `OUTREACH_DRY_RUN=0` in the workflow environment or runner to enable sending.
 
-Local runner:
-```
-python scripts/outreach/run_high_frequency_forever.py
-```
+## Notes
 
-## 5. Checklist
-- [ ] `gmail_token.json` placed
-- [ ] LLM secrets added to GitHub
-- [ ] Dry run passes without duplicate or exclusion errors
-- [ ] Workflow run succeeds in Actions history
+- Exclusion list is enforced at `lead-crm/exclusion-list.json`.
+- Sent ledger is at `scripts/outreach_monitor/processed/sent_ledger.jsonl` and `lead-crm/ceo_outreach_ledger.jsonl`.
+- The active GitHub Actions schedule is every **5 minutes** in `.github/workflows/outreach-live-llm-tailoring.yml`.
