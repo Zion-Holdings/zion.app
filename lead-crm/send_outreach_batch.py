@@ -4,7 +4,12 @@ from pathlib import Path
 
 REPO = Path('/data/data/com.termux/files/home/zion-support.github.io')
 if not REPO.exists():
-    REPO = Path('/Users/miami2/zion.app')
+    try:
+        REPO = Path(__file__).resolve().parent.parent
+    except Exception:
+        REPO = Path('/Users/miami2/zion.app')
+if not REPO.exists():
+    REPO = Path('C:/Users/Zion/tmp/zion-clone-test2')
 sys.path.insert(0, str(REPO))
 sys.path.insert(0, str(REPO / 'commands'))
 try:
@@ -91,9 +96,24 @@ def append_sent(record: dict):
         pass
 
 
+EXCLUSION_FILE = REPO / 'lead-crm' / 'exclusion-list.json'
+
+
+def _load_excluded() -> set:
+    try:
+        if not EXCLUSION_FILE.exists():
+            return set()
+        data = json.loads(EXCLUSION_FILE.read_text(encoding='utf-8'))
+        return {x.get('email','').lower() for x in data.get('addresses', []) if x.get('email')}
+    except Exception:
+        return set()
+
+
 def send_mail(to_addr, subject, body, html=None):
-    sent = _load_sent_set()
     to_key = (to_addr or '').lower()
+    if to_key in _load_excluded():
+        return None, 'excluded'
+    sent = _load_sent_set()
     subj_key = (subject or '').strip()
     if to_key and subj_key:
         if (to_key, subj_key) in sent:
@@ -284,6 +304,13 @@ def main():
     outputs = []
     skipped_templates = 0
     send_allowed = os.environ.get('ZTG_SEND_ALLOWED') == '1'
+    exclusion_path = REPO / 'lead-crm' / 'exclusion-list.json'
+    excluded = set()
+    if exclusion_path.exists():
+        try:
+            excluded = {x['email'].lower() for x in json.loads(exclusion_path.read_text(encoding='utf-8')).get('addresses', []) if x.get('email')}
+        except Exception:
+            excluded = set()
     if not send_allowed:
         print(json.dumps({'generatedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'send_count': 0, 'skipped_templates': skipped_templates, 'results': [], 'note': 'SEND_DISABLED: set ZTG_SEND_ALLOWED=1 to enable outbound sends'}, ensure_ascii=False))
         return
@@ -291,6 +318,10 @@ def main():
         to = r.get('email') or r.get('recipient') or r.get('to')
         if not to:
             outputs.append({'to': None, 'success': False, 'error': 'missing email'})
+            continue
+        to = to.lower()
+        if to in excluded:
+            outputs.append({'to': to, 'success': False, 'reason': 'excluded', 'error': 'excluded-by-list'})
             continue
         tailored = _tailor_message(chat_fn, dict(r))
         html = tailored.get('html') or r.get('html')
