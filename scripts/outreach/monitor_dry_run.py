@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 from collections import Counter
 
-BASE_DIR = Path('/c/Users/Zion/tmp/zion-clone-test2')
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 DRY_RUN_REPORT = BASE_DIR / 'outreach_monitor' / 'processed' / 'dry_run_report.jsonl'
 
 def main():
