@@ -930,12 +930,18 @@ def run_high_frequency_outreach():
                     record_bounce(addr, 'broadcast group address pattern')
                     continue
             thread_id = msg.get('threadId') or hit_id
+            in_reply_to = headers.get('In-Reply-To') or ''
+            subject_norm = (subj or '').strip()
+            is_reply_like = bool(in_reply_to) or subject_norm.lower().startswith('re:')
+            if not is_reply_like:
+                continue
             contacts.append({
                 'email': addr,
                 'name': addr.split('@')[0].replace('.', ' ').title(),
                 'company': addr.split('@')[1].split('.')[0].title(),
                 'thread_id': thread_id,
-                'thread_subject': subj or 'Next steps',
+                'thread_subject': subject_norm or 'Next steps',
+                'in_reply_to': in_reply_to,
             })
 
     if not contacts:
