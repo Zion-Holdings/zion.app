@@ -30,7 +30,9 @@ jobs:
         set -euo pipefail
         mkdir -p artifact
         if [ -d docs ]; then cp -a docs/. artifact/; fi
-        if [ -d out ]; then cp -a out/. artifact/; fi
+        if [ -d out ]; then cp -a out/. artifact/ fi
+        if [ -f public/_redirects ]; then cat public/_redirects > artifact/_redirects; fi
+        if [ -f public/_headers ]; then cp -f public/_headers artifact/_headers; fi
 
     - uses: actions/upload-pages-artifact@v4
       with:
