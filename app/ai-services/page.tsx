@@ -4,8 +4,8 @@
 import Link from 'next/link';
 
 import { useState, useMemo } from 'react';
-import { allServices } from '@/data/servicesData';
-import type { Service } from '@/data/servicesData';
+import { allServices } from '@/data/servicesData.json';
+import type { Service } from '@/data/servicesData.json';
 
 const aiServices = allServices.filter((s: Service) => s.category === 'ai');
 

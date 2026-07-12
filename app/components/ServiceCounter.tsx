@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { allServices } from '@/data/servicesData';
+import { allServices } from '@/data/servicesData.json';
 
 /** Animated number counter — counts up from 0 to target on mount */
 export default function ServiceCounter() {

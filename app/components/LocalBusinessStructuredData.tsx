@@ -1,8 +1,8 @@
 // app/components/LocalBusinessStructuredData.tsx
 // Reusable LocalBusiness JSON-LD component for structured data across pages
-'use client';
-
-import { CONTACT_INFO, SITE_URL } from '@/utils/seoConstants';
+import { CONTACT_INFO, SITE_URL } from '@/utils/seoConstants.ts';
+import { CONTACT_INFO, SOCIAL_LINKS } from '@/utils/seoConstants.ts';
+import { CONTACT_INFO } from '@/utils/seoConstants.ts';
 
 const PHONE = CONTACT_INFO.phone;
 const EMAIL = CONTACT_INFO.email;

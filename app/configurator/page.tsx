@@ -4,8 +4,9 @@
 
 import { useState, useMemo } from 'react';
 
-import { allServices } from '@/data/servicesData';
+import { allServices } from '@/data/servicesData.json';
 import StepsIndicator from '@/components/StepsIndicator';
+import type { Service } from '@/data/servicesData.json';
 
 type Step = 'budget' | 'needs' | 'services' | 'timeline' | 'review';
 
