@@ -7431,5 +7431,22 @@
     "llm_model": "stepfun/step-3.7-flash-20260528:free",
     "llm_reason": "### Rating: 0\n#### Reasoning:\nThe only provided information is a generic, non-specific company name (\"Zion Tech Group\") and a brand domain with no service-related keywords. There are no explicit or implicit indicators that this entity operates in the managed AI/IT services niche: the name could refe",
     "confidence": 0
+  },
+  {
+    "to": "campanhas@surflandbrasil.com.br",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "surflandbrasil.com.br",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash-20260528:free",
+    "llm_reason": "### Rating: 0\n#### Reasoning:\nThe provided input only consists of the bare domain name `ziontechgroup.com` with no accompanying context, content, or explicit indication that the entity associated with the domain offers or is connected to managed AI/IT services. There is no actionable signal linking ",
+    "confidence": 0
   }
 ]
