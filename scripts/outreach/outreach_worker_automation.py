@@ -915,6 +915,20 @@ def run_high_frequency_outreach():
             pass
     new_subjects = set()
     clean_contacts = []
+    # Dedup against hot-followup reply ledger to avoid duplicate sends
+    try:
+        ledger_sent = set()
+        ledger_path = Path(HOT_FOLLOWUP_REPLY_LEDGER)
+        if ledger_path.exists():
+            for line in ledger_path.read_text(encoding='utf-8').splitlines():
+                try:
+                    obj = json.loads(line)
+                    if obj.get('avoid_duplicate') and obj.get('thread_id'):
+                        ledger_sent.add(obj['thread_id'])
+                except Exception:
+                    pass
+    except Exception:
+        ledger_sent = set()
     internal_like_suffixes = ('.edu','.gov','.mil','.k12.ia.us','.school','.academy')
     known_bad_school_domains = {'holyfamily.dbq.pvt.k12.ia.us'}
     for c in contacts:
@@ -934,6 +948,9 @@ def run_high_frequency_outreach():
             continue
         subj = (c.get('thread_subject') or '').strip()
         if subj.startswith(('Re: Pré-aprovação','Boleto vencido','Billing update','Invoice update','Up to ','Off your first')):
+            continue
+        if c.get('thread_id') in ledger_sent:
+            record_bounce(email, f'duplicate-hot-followup-ledger: {subj[:80]}')
             continue
         clean_contacts.append(c)
         new_subjects.add(subj)

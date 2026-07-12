@@ -60,6 +60,13 @@ def summarize():
         metric['recommendedActions'].append('Run web_prospecting.py to increase discovered leads.')
     if successes_last20 == 0:
         metric['recommendedActions'].append('Verify send path, batch discovery, and sender headers.')
+
+    # Continuous improvement signals for outreach automation
+    new_leads_discovered = status_counts.get('discovered', 0)
+    if successes_last20 == 0 and new_leads_discovered > 0 and int(rate_limit_events_last100 or 0) < 5:
+        metric['recommendedActions'].append('Queue has discovered leads but zero sends; verify approval queue and LLM dedup workflow.')
+    if int(total_new_leads_miner or 0) == 0 and new_leads_discovered < 10:
+        metric['recommendedActions'].append('Run miner at higher frequency or expand queries to increase discovered leads.')
     return metric
 
 
