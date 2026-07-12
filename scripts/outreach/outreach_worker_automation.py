@@ -608,7 +608,7 @@ def build_ceo_reply(contact_name, company_name, thread_text, language='en'):
         tailored = llm_tailor_reply(thread_text, contact_name, company_name, language)
         if tailored:
             return tailored
-    p = _personalize(thread_text, contact_name, company_name, language)
+    p = _extract_context_ideas(thread_text, language, company_name)
     return f"""{contact_name},
 
 {p['opening'] if isinstance(p, dict) else 'Thanks for the conversation.'} I really value that partnership.
@@ -624,7 +624,8 @@ You can also explore our new AI services and free tools here:
 https://ziontechgroup.com
 
 {p['closing'] if isinstance(p, dict) else 'Let’s build something that benefits both teams.'}
-Kleber Garcia Alcatrão
+Kleber Garcia Alcatrão | CEO, Zion Tech Group
+https://ziontechgroup.com
 """
 
 
