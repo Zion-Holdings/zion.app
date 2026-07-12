@@ -10,7 +10,7 @@ from pathlib import Path
 REPO = Path('/data/data/com.termux/files/home/zion-support.github.io')
 LEAD_DIR = REPO / 'lead-crm'
 LOG = LEAD_DIR / 'pipeline_log.json'
-MINER_LOG = LEAD_DIR / 'web_prospecting_log.json'
+MINER_LOG = LEAD_DIR / 'miner_log.json'
 ALL_LEADS = LEAD_DIR / 'all-leads.json'
 
 
