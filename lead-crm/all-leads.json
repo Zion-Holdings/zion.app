@@ -7516,5 +7516,39 @@
     "llm_model": "stepfun/step-3.7-flash-20260528:free",
     "llm_reason": "### Rating: 0\n#### Rationale:\nThe only provided details are a generic, broad company name (\"Zion Tech Group\") and a standard, unkeyworded .com domain. \"Tech Group\" is an overly vague descriptor that applies to countless technology businesses across all sub-sectors (consumer hardware, custom software",
     "confidence": 0
+  },
+  {
+    "to": "prod@opalith-77.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"Zion Tech Group\"",
+    "domain": "opalith-77.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash-20260528:free",
+    "llm_reason": "### Score: 0\n#### Scoring context for clarity:\n- 2 = Explicit, direct signal the entity offers/manages AI/IT managed services (e.g., name/service pages explicitly reference these offerings)\n- 1 = Weak, unconfirmed potential alignment with the space (e.g., generic \"IT/tech\" branding that could includ",
+    "confidence": 0
+  },
+  {
+    "to": "ana.martinez@ziontechgroup.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"Zion Tech Group\"",
+    "domain": "ziontechgroup.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash-20260528:free",
+    "llm_reason": "### Rating: 0\n#### Reasoning:\nThere is no explicit or implicit signal tied to managed AI/IT services in the provided information. The only details shared are a generic \"Tech Group\" company name and domain, which could apply to an unlimited range of unrelated tech verticals (consumer hardware, custom",
+    "confidence": 0
   }
 ]
