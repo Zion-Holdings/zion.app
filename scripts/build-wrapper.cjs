@@ -78,6 +78,8 @@ child.on('close', (code) => {
       buildExitCode: buildExit,
       durationMs: timeMs(buildStart),
       artifacts: probeArtifacts(),
+      lastLines: readLastLines('out', 200),
+      nextLog: readLastLines('.next', 200),
     });
     process.exit(buildExit);
   }
@@ -96,6 +98,7 @@ child.on('close', (code) => {
       postbuildError: postErr && postErr.message ? postErr.message : String(postErr),
       durationMs: timeMs(buildStart),
       artifacts: probeArtifacts(),
+      outTail: readLastLines('out', 200),
     });
     process.exit(1);
   }
@@ -109,6 +112,27 @@ child.on('close', (code) => {
   });
   process.exit(0);
 });
+
+function readLastLines(dirName, maxBytes=4000) {
+  try {
+    const dir = path.join(REPO, dirName);
+    if (!fs.existsSync(dir)) return '';
+    const entries = fs.readdirSync(dir);
+    const textFiles = entries.filter(e => /\.(html|json|xml|txt|md|log)$/.test(e)).slice(-3);
+    let out = '';
+    for (const f of textFiles) {
+      try {
+        const fp = path.join(dir, f);
+        const st = fs.statSync(fp);
+        if (st.size > maxBytes) continue;
+        out += fs.readFileSync(fp, 'utf8').slice(-maxBytes) + '\n';
+      } catch {}
+    }
+    return out.slice(-maxBytes);
+  } catch (e) {
+    return '';
+  }
+}
 
 process.on('SIGTERM', () => process.exit(124));
 process.on('SIGINT', () => process.exit(130));
