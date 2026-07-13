@@ -26,9 +26,12 @@ service = None
 
 def _init_gmail_service():
     global service, GMAIL_AUTH_ERROR
+    if service is not None:
+        return
     try:
-        from google_api import build_service
-        service = build_service('gmail', 'v1')
+        from commands.google_workspace import gog_headers
+        gog_headers()
+        service = True
         GMAIL_AUTH_ERROR = None
     except Exception as e:
         service = None

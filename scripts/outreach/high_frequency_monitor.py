@@ -1,9 +1,8 @@
 import sys, os, json, time, re
 from pathlib import Path
 
-sys.path.insert(0, r'C:/Users/Zion/AppData/Local/hermes/skills/productivity/google-workspace/scripts')
-from google_api import build_service
-from googleapiclient.errors import HttpError
+from commands.google_workspace import gog_headers
+import urllib.request, json
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
@@ -54,7 +53,7 @@ def main():
     }
 
     try:
-        service = build_service('gmail', 'v1')
+        # service init via gog_headers
         label_map = {}
         for lab in service.users().labels().list(userId='me').execute().get('labels', []):
             label_map[lab['name']] = lab['id']
