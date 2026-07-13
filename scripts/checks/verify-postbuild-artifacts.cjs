@@ -11,6 +11,8 @@ const REQUIRED = [
   path.join(outDir, '404.html'),
   path.join(outDir, '.nojekyll'),
   path.join(outDir, 'robots.txt'),
+  path.join(outDir, 'data', 'services.json'),
+  path.join(outDir, 'service-index.json'),
 ];
 
 const missing = REQUIRED.filter((filePath) => !fs.existsSync(filePath));

@@ -4,13 +4,17 @@ const { execSync } = require('child_process');
 
 const repo = process.cwd();
 const outDir = path.join(repo, 'out');
+const docsDir = path.join(repo, 'docs');
 const statePath = path.join(repo, 'automation/reports/build-and-verify-latest.json');
 
+// Prefer export output.
+const exportDir = fs.existsSync(outDir) ? outDir : (fs.existsSync(docsDir) ? docsDir : null);
+
 const REQUIRED = [
-  path.join(outDir, 'index.html'),
-  path.join(outDir, '404.html'),
-  path.join(outDir, 'data', 'services.json'),
-  path.join(outDir, 'service-index.json'),
+  path.join(exportDir || outDir, 'index.html'),
+  path.join(exportDir || outDir, '404.html'),
+  path.join(exportDir || outDir, 'data', 'services.json'),
+  path.join(exportDir || outDir, 'service-index.json'),
 ];
 
 function exists(p) {
@@ -29,8 +33,8 @@ function tryRun(label, cmd) {
 }
 
 function ensureArtifacts(missing) {
-  const needServicesJson = missing.includes(path.join(outDir, 'data', 'services.json'));
-  const needServiceIndex = missing.includes(path.join(outDir, 'service-index.json'));
+  const needServicesJson = missing.includes(path.join(exportDir || outDir, 'data', 'services.json'));
+  const needServiceIndex = missing.includes(path.join(exportDir || outDir, 'service-index.json'));
   let regenerated = false;
   if (needServicesJson) {
     console.log('services.json missing — generating...');
@@ -58,8 +62,8 @@ function tryBuild() {
     return true;
   }
 
-  const needServicesJson = stillMissing.includes(path.join(outDir, 'data', 'services.json'));
-  const needServiceIndex = stillMissing.includes(path.join(outDir, 'service-index.json'));
+  const needServicesJson = stillMissing.includes(path.join(exportDir || outDir, 'data', 'services.json'));
+  const needServiceIndex = stillMissing.includes(path.join(exportDir || outDir, 'service-index.json'));
   let artifactsOk = false;
   if (needServicesJson || needServiceIndex) {
     console.log('attempting artifact regeneration after build...');
