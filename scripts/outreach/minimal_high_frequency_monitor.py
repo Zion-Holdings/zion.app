@@ -130,6 +130,26 @@ def recent_sent_exists(contact, within_seconds=24*3600):
         for r in state[-50:]
     )
 
+def _count_duplicates():
+    try:
+        state = load_json_safe(DEDUP_DIR / 'global_dedup_state.json', {})
+        if isinstance(state, dict):
+            return len(state)
+    except Exception:
+        pass
+    return 0
+
+def _count_cooldown_blocks():
+    try:
+        lock = REPO / 'lead-crm' / '.ceo_outreach_sent.lock'
+        if not lock.exists():
+            return 0
+        rows = json.loads(lock.read_text(encoding='utf-8'))
+        now = int(time.time())
+        return sum(1 for r in rows if now - int(r.get('ts', 0)) < 24 * 3600)
+    except Exception:
+        return 0
+
 def _load_sent_set() -> dict:
     """Load outreach sent lock as dict for cooldown checks."""
     _SENT_LOCK = REPO / 'lead-crm' / '.ceo_outreach_sent.lock'
