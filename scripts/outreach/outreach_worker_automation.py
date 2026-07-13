@@ -1085,6 +1085,7 @@ def run_high_frequency_outreach():
         '!category:promotions !in:spam !in:trash "integration" OR "workflow" OR "ROI"',
         '"follow-up" OR "follow up" OR "next steps" newer_than:7d',
         '"partnership" OR "collaboration" newer_than:14d',
+        'in:anywhere "partnership" OR "collaboration" OR "proposal"',
     ]
 
     hit_ids = set()
