@@ -130,6 +130,17 @@ def recent_sent_exists(contact, within_seconds=24*3600):
         for r in state[-50:]
     )
 
+def _load_sent_set() -> dict:
+    """Load outreach sent lock as dict for cooldown checks."""
+    _SENT_LOCK = REPO / 'lead-crm' / '.ceo_outreach_sent.lock'
+    if not _SENT_LOCK.exists():
+        return {}
+    try:
+        rows = json.loads(_SENT_LOCK.read_text(encoding='utf-8'))
+        return {(r.get('to','').lower(), (r.get('subject') or '').strip(), str(r.get('thread_id') or '').lower(), str(r.get('message_id') or '').lower()): r for r in rows}
+    except Exception:
+        return {}
+
 def main():
     report = {
         'event': 'high_frequency_monitor_tick',
@@ -147,8 +158,8 @@ def main():
         'errors': [],
         'pending_outreach_count': 0,
         'hot_followup_drafts_count': 0,
-        'duplicate_prevention_count': 0,
-        'cooldown_blocked_count': 0,
+        'duplicate_prevention_count': _count_duplicates(),
+        'cooldown_blocked_count': _count_cooldown_blocks(),
         'ztg_sender_email': 'kleber@ziontechgroup.com',
         'recent_outgoing_check': True,
         'recent_outgoing_subjects_sample': [
