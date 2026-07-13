@@ -3,6 +3,8 @@
 import { allServices } from '../data/servicesData';
 import type { Service } from '../data/servicesData';
 import Link from 'next/link';
+import type { Service } from '../data/servicesData';
+import Link from 'next/link';
 
 const PRODUCTS: readonly {
   key: string;
