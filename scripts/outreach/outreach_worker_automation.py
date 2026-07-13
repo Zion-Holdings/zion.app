@@ -402,30 +402,66 @@ def _message_is_too_old(date_hdr: str, max_age_days: int = 180) -> bool:
     except Exception:
         return False
 
+def _webfetch_json(url, headers=None, data=None, method='GET', timeout=35):
+    try:
+        import urllib.request as _urllib
+        req = _urllib.Request(url, data=data, headers=headers or {}, method=method)
+        with _urllib.urlopen(req, timeout=timeout) as resp:
+            body = resp.read().decode('utf-8')
+        try:
+            return json.loads(body)
+        except Exception:
+            return None
+    except urllib.error.HTTPError as e:
+        try:
+            return json.loads(e.read().decode('utf-8'))
+        except Exception:
+            return {'__http_status__': e.code}
+    except Exception:
+        return None
+
+
+def _url_and_token_from_auth():
+    url = ''
+    token = ''
+    try:
+        auth_path = Path.home() / '.hermes' / 'auth.json'
+        if auth_path.exists():
+            cfg = json.loads(auth_path.read_text(encoding='utf-8'))
+            provider = ((cfg.get('providers') or {}).get('nous') or {})
+            url = (provider.get('inference_base_url') or '').rstrip('/') or url
+            token = provider.get('access_token') or token
+            client_id = provider.get('client_id') or ''
+            rt = provider.get('refresh_token') or ''
+            if not token and rt and client_id:
+                token = _webfetch_json('https://inference-api.nousresearch.com/v1/token/refresh', {
+                    'Content-Type': 'application/json',
+                    'Authorization': f'Bearer {token}',
+                }, data=json.dumps({'refresh_token': rt, 'client_id': client_id}).encode('utf-8'), method='POST') or {}
+                token = token.get('access_token') or token
+    except Exception:
+        pass
+    return url, token
+
+
 def _call_nous_hermes(thread_text: str, contact_name: str, company_name: str, language: str) -> str:
     try:
         import os as _os
-        from pathlib import Path as _Path
-        import urllib.request as _urllib
-        import json as _json
-        auth_path = _Path.home() / '.hermes' / 'auth.json'
         url = ''
         token = ''
         model = _os.environ.get('HERMES_LLM_MODEL') or _os.environ.get('ZION_LLM_MODEL') or 'stepfun/step-3.7-flash:free'
-        if auth_path.exists():
-            try:
-                cfg = json.loads(auth_path.read_text(encoding='utf-8'))
-                provider = (cfg.get('providers') or {}).get('nous', {}) or {}
-                url = (provider.get('inference_base_url') or '').rstrip('/')
-                token = provider.get('access_token') or ''
-                client_id = provider.get('client_id') or ''
-                scope = provider.get('scope') or ''
-            except Exception:
-                pass
+        try:
+            _url, _token = _url_and_token_from_auth()
+            url = url or _url
+            token = token or _token
+        except Exception:
+            pass
         if not url:
             url = _os.environ.get('NOUS_BASE_URL', 'https://inference-api.nousresearch.com/v1').rstrip('/')
         if not token:
             token = _os.environ.get('NOUS_TOKEN') or _os.environ.get('HERMES_LLM_TOKEN') or ''
+        if not token or not url:
+            return ''
         chat_url = url.rstrip('/') + '/chat/completions'
         trimmed = (thread_text or '').strip()[:2400]
         prompt = (
@@ -450,21 +486,18 @@ def _call_nous_hermes(thread_text: str, contact_name: str, company_name: str, la
             'temperature': 0.35,
             'max_tokens': 480,
         }
-        req = _urllib.Request(
-            chat_url,
-            data=_json.dumps(payload).encode('utf-8'),
-            headers={'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'},
-            method='POST',
-        )
-        with _urllib.urlopen(req, timeout=35) as resp:
-            data = _json.loads(resp.read().decode('utf-8'))
+        headers = {'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'}
+        data = _webfetch_json(chat_url, headers=headers, data=json.dumps(payload).encode('utf-8'), method='POST')
+        if data is None or (isinstance(data, dict) and data.get('__http_status__') == 401):
+            return ''
+        if not isinstance(data, dict):
+            return ''
         message = ((data.get('choices') or [{}])[0].get('message') or {})
         content = message.get('content') or message.get('reasoning') or ''
-        if not isinstance(content, str):
-            content = ''
-        required = ['calendly.com/kleber-ziontechgroup', 'ziontechgroup.com', 'free', 'thank']
+        if not isinstance(content, str) or not content.strip():
+            return ''
         lower = content.lower()
-        if not all(r in lower for r in required):
+        if not all(r in lower for r in ['calendly.com/kleber-ziontechgroup', 'ziontechgroup.com', 'free', 'thank']):
             return ''
         return content.strip()
     except Exception as e:
