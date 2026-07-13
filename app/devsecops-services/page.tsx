@@ -3,9 +3,7 @@ import { Metadata } from "next";
 export const metadata = {
   title: "DevSecOps Services | Zion Tech Group",
   description: "Security-integrated DevOps — shift-left security, SAST/DAST, container security, and compliance automation",
-  alternates: { canonical: "https://ziontechgroup.com/services/?category=devsecops" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/services/?category=devsecops" }};
 export default function CategoryPage() {
   return (
     <main style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#020617" }}>

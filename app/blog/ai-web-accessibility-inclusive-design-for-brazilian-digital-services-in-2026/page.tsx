@@ -1,12 +1,10 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-web-accessibility-inclusive-design-for-brazilian-digital-services-in-2026' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-web-accessibility-inclusive-design-for-brazilian-digital-services-in-2026' },
+export const metadata = {
   title: 'AI Web Accessibility and Inclusive Design for Brazilian Digital Services in 2026',
-  description: 'Use AI-assisted accessibility evaluation and inclusive design to improve reach, compliance, and usability.',
-};
-
+  description: 'Use AI-assisted accessibility evaluation and inclusive design to improve reach, compliance, and usability.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

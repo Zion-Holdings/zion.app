@@ -3,9 +3,7 @@ import { Metadata } from "next";
 export const metadata = {
   title: "Low-Code/No-Code Services | Zion Tech Group",
   description: "Low-code platforms — rapid application development, citizen developers, and business process automation",
-  alternates: { canonical: "https://ziontechgroup.com/services/?category=low-code" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/services/?category=low-code" }};
 export default function CategoryPage() {
   return (
     <main style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#020617" }}>

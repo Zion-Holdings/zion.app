@@ -3,9 +3,7 @@ import { Metadata } from "next";
 export const metadata = {
   title: "EdTech Services | Zion Tech Group",
   description: "Education technology — LMS platforms, adaptive learning, virtual classrooms, and student analytics",
-  alternates: { canonical: "https://ziontechgroup.com/services/?category=edtech" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/services/?category=edtech" }};
 export default function CategoryPage() {
   return (
     <main style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#020617" }}>

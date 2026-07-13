@@ -6,9 +6,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'How to Build AI Partnerships That Actually Close Deals | Zion Tech Group',
   description: 'A practical guide to building AI partnerships that produce revenue, referrals, and repeatable delivery models.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/how-to-build-ai-partnerships-that-close-deals-2026' },
-};
-
+  alternates: { canonical: 'https://ziontechgroup.com/blog/how-to-build-ai-partnerships-that-close-deals-2026' }};
 export default function BlogPage() {
   return (
     <main className="max-w-6xl mx-auto px-4 py-10">

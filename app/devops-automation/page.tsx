@@ -1,11 +1,9 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/devops-automation' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/devops-automation' },
+export const metadata = {
   title: 'DevOps Automation | Zion Tech Group',
-  description: 'CI/CD pipelines, infrastructure as code, and DevOps automation.',
-};
-
+  description: 'CI/CD pipelines, infrastructure as code, and DevOps automation.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

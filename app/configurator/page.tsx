@@ -14,9 +14,7 @@ const COMPANY = {
   name: 'Zion Tech Group',
   phone: '+1 302 464 0950',
   email: 'kleber@ziontechgroup.com',
-  address: '364 E Main St STE 1008, Middletown, DE 19709',
-};
-
+  address: '364 E Main St STE 1008, Middletown, DE 19709'};
 export default function ConfiguratorPage() {
   const [step, setStep] = useState<Step>('budget');
   const [budget, setBudget] = useState<string>('');

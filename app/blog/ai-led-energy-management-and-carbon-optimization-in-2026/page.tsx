@@ -1,12 +1,10 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-led-energy-management-and-carbon-optimization-in-2026' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-led-energy-management-and-carbon-optimization-in-2026' },
+export const metadata = {
   title: 'AI-Led Energy Management and Carbon Optimization in 2026',
-  description: 'Use AI-assisted energy management and carbon optimization to reduce cost and improve compliance for enterprises.',
-};
-
+  description: 'Use AI-assisted energy management and carbon optimization to reduce cost and improve compliance for enterprises.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

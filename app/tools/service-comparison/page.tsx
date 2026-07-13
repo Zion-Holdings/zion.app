@@ -14,9 +14,7 @@ const CAT_LABELS: Record<string,string> = {
   observability:'Observability', identity:'Identity', cms:'CMS', ecommerce:'E-Commerce',
   documentation:'Documentation', 'ai-ml-ops':'AI/ML Ops', devsecops:'DevSecOps',
   fintech:'FinTech', edtech:'EdTech', 'healthcare-it':'Healthcare IT',
-  'data-streaming':'Data Streaming', search:'Search', api:'API Management',
-};
-
+  'data-streaming':'Data Streaming', search:'Search', api:'API Management'};
 const TABS = [
   { key:'overview',    label:'Overview',  icon:'📋' },
   { key:'features',   label:'Features', icon:'✨' },

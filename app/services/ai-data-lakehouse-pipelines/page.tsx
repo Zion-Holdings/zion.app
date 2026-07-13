@@ -3,9 +3,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'AI Data Lakehouse Pipelines | Zion Tech Group',
-  description: 'Unified data lakehouse pipelines for batch, streaming, and ML workloads. AI-assisted ingestion, governance, and analytics on open table formats.',
-};
-
+  description: 'Unified data lakehouse pipelines for batch, streaming, and ML workloads. AI-assisted ingestion, governance, and analytics on open table formats.'};
 export default function AIDataLakehousePipelinesPage() {
   return (
     <article className="max-w-4xl mx-auto px-6 py-16 leading-relaxed">

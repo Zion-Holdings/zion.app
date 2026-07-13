@@ -3,8 +3,7 @@ import type { Metadata } from 'next';
 export const metadata = {
   title: 'URL Audit Assistant',
   description: 'Audit your website URLs for broken links and issues',
-  alternates: { canonical: 'https://ziontechgroup.com/ai/url-audit-assistant' },};
-
+  alternates: { canonical: 'https://ziontechgroup.com/ai/url-audit-assistant' }};
 export default function UrlAuditAssistantPage() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

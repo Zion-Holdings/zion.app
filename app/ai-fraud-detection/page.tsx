@@ -1,11 +1,9 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/ai-fraud-detection' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/ai-fraud-detection' },
+export const metadata = {
   title: 'AI Fraud Detection | Zion Tech Group',
-  description: 'Real-time fraud detection and prevention powered by machine learning.',
-};
-
+  description: 'Real-time fraud detection and prevention powered by machine learning.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

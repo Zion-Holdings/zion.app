@@ -1,11 +1,9 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/ai-ml-platform' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/ai-ml-platform' },
+export const metadata = {
   title: 'AI/ML Platform | Zion Tech Group',
-  description: 'End-to-end machine learning platform for training, deploying, and monitoring models.',
-};
-
+  description: 'End-to-end machine learning platform for training, deploying, and monitoring models.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

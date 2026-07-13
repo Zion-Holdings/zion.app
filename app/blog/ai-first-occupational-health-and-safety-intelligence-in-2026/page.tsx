@@ -1,12 +1,10 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-occupational-health-and-safety-intelligence-in-2026' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-occupational-health-and-safety-intelligence-in-2026' },
+export const metadata = {
   title: 'AI-First Occupational Health and Safety Intelligence in 2026',
-  description: 'Use AI-assisted occupational health and safety intelligence to reduce incidents and improve compliance.',
-};
-
+  description: 'Use AI-assisted occupational health and safety intelligence to reduce incidents and improve compliance.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

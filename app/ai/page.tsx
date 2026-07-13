@@ -6,8 +6,7 @@ export const metadata = {
   title: 'AI Lab',
   description:
     'Explore Zion\'s AI Lab — interactive tools and configurators for autonomous AI solutions and architecture planning.',
-  alternates: { canonical: 'https://ziontechgroup.com/ai' },};
-
+  alternates: { canonical: 'https://ziontechgroup.com/ai' }};
 const tools = [
   {
     name: 'Solutions Configurator',

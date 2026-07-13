@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/free-resources' },
-xport const metadata = { title: 'Free Resources', description: 'Free AI tools, guides, templates, and resources from Zion Tech Group.' };
+  alternates: { canonical: 'https://ziontechgroup.com/free-resources' },
+export const metadata = { title: 'Free Resources', description: 'Free AI tools, guides, templates, and resources from Zion Tech Group.' };
 
 export default function FreeResourcesPage() {
   const resources = [

@@ -1,11 +1,9 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/ai-customer-support-pro' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/ai-customer-support-pro' },
+export const metadata = {
   title: 'AI Customer Support Pro | Zion Tech Group',
-  description: 'AI-powered customer support automation and ticket management.',
-};
-
+  description: 'AI-powered customer support automation and ticket management.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

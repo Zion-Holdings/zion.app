@@ -1,9 +1,7 @@
 export const metadata = {
   title: 'AI Managed IT Services & MSP Automation | Zion Tech Group',
   description: 'Discover how Zion Tech Group applies AI managed services, MSP automation, and intelligent IT operations to cut costs, reduce incidents, and speed up delivery.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-managed-it-services-and-msp-automation' },
-};
-
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-managed-it-services-and-msp-automation' }};
 export default function AiManagedItMspAutomationPage() {
   return (
     <article className="prose dark:prose-invert max-w-3xl mx-auto px-4 py-10">

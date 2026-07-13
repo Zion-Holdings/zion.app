@@ -1,11 +1,9 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/ai-supply-chain' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/ai-supply-chain' },
+export const metadata = {
   title: 'AI Supply Chain Optimization | Zion Tech Group',
-  description: 'End-to-end supply chain optimization with predictive analytics.',
-};
-
+  description: 'End-to-end supply chain optimization with predictive analytics.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

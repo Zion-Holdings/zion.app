@@ -4,7 +4,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import { allServices } from './data/servicesData';
-import AnimatedCounter from '@/components/AnimatedCounter';
 import AnimatedCounter from '../components/AnimatedCounter';
 import ServiceBrowser from '../components/ServiceBrowser';
 import ServiceSpotlight from '../components/ServiceSpotlight';
@@ -30,9 +29,7 @@ const catAccent: Record<string, string> = {
   devops:    '#22d3ee',
   blockchain: '#fbbf24',
   iot:       '#2dd4bf',
-  'email-intelligence': '#a78bfa',
-};
-
+  'email-intelligence': '#a78bfa'};
 const getCategoryMeta = (key: string) => CATEGORIES.find(c => c.key === key) || CATEGORIES[0];
 
 // Stat labels
@@ -83,10 +80,7 @@ const INDUSTRY_CATS: Record<string,string> = {
   "logging": "logging",
   "security-scanning": "security-scanning",
   "backup-recovery": "backup-recovery",
-  "identity-management": "identity-management",
-};
-
-
+  "identity-management": "identity-management"};
 // Industries we serve — derived live from service catalog
 const INDUSTRIES = [
   { key: "technology-&-saas",          label: "Technology & SaaS",          emoji: "🏭", color: "from-amber-500 to-orange-500", count: 145, sample: "AI Analytics & BI" },
@@ -219,8 +213,7 @@ export default function HomePage() {
           _score: SCORE_FEATURED * (r.featured ? 1 : 0)
                    + SCORE_TAG       * tagCount
                    + SCORE_FEATURES  * (svc.features?.length || 0)
-                   - SCORE_RECENCY   * daysAgo,
-        };
+                   - SCORE_RECENCY   * daysAgo};
       })
       .filter((r): r is NonNullable<typeof r> => r !== null)
       .sort((a, b) => b!._score - a!._score)
@@ -397,8 +390,7 @@ export default function HomePage() {
                 const colorMap: Record<string,string> = {
                   emerald:'from-emerald-500/20 to-green-500/10 border-emerald-500/30',
                   purple:  'from-purple-500/20 to-indigo-500/10 border-purple-500/30',
-                  amber:   'from-amber-500/20 to-yellow-500/10 border-amber-500/30',
-                };
+                  amber:   'from-amber-500/20 to-yellow-500/10 border-amber-500/30'};
                 return (
                   <div key={s.stage}
                     className={`block rounded-xl border bg-gradient-to-br ${colorMap[s.color]} px-5 py-4 min-w-[140px]`}
@@ -1409,4 +1401,3 @@ export default function HomePage() {
     </main>
   );
 }
-

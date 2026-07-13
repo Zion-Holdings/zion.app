@@ -12,9 +12,7 @@ export const metadata = {
     description: 'Practical AI adoption guide for MSPs and IT support teams in 2026.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-msps-and-it-support-teams-in-2026',
-  },
-};
-
+  }};
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">

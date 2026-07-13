@@ -13,9 +13,7 @@ export const metadata = {
       'Learn how Zion Tech Group applies AI to IT FinOps for smarter spend, forecasting, and cost governance.',
     url: 'https://ziontechgroup.com/blog/ai-for-it-cost-optimization-and-finops',
     type: 'article',
-  },
-};
-
+  }};
 export default function AiForItCostOptimizationAndFinOpsPage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-10 space-y-8">

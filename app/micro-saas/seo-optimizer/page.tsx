@@ -1,11 +1,9 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/micro-saas/seo-optimizer' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/micro-saas/seo-optimizer' },
+export const metadata = {
   title: 'SEO Optimizer | Zion Tech Group',
-  description: 'AI-powered SEO optimization and content analysis.',
-};
-
+  description: 'AI-powered SEO optimization and content analysis.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

@@ -5,9 +5,7 @@ export const metadata = {
   title: 'Zion AI Cost Optimizer',
   description:
     'Identify cost-saving opportunities across cloud, SaaS, and operational spend with AI-driven insights.',
-  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-cost-optimizer' },
-};
-
+  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-cost-optimizer' }};
 export default function Page() {
   return (
     <ProductPageLayout

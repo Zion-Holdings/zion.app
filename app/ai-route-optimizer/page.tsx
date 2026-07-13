@@ -1,11 +1,9 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/ai-route-optimizer' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/ai-route-optimizer' },
+export const metadata = {
   title: 'AI Route Optimizer | Zion Tech Group',
-  description: 'Optimize delivery routes and logistics with AI-powered planning.',
-};
-
+  description: 'Optimize delivery routes and logistics with AI-powered planning.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

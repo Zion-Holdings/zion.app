@@ -3,9 +3,7 @@ import type { Metadata } from 'next';
 export const metadata = {
   title: 'Security Services | Zion Tech Group',
   description: 'Enterprise cybersecurity services — threat detection, zero trust, compliance, and security monitoring.',
-  alternates: { canonical: 'https://ziontechgroup.com/services/?category=security' },
-};
-
+  alternates: { canonical: 'https://ziontechgroup.com/services/?category=security' }};
 export default function SecurityServicesPage() {
   return (
     <main style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#020617' }}>

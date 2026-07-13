@@ -1,11 +1,9 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/free-tools-hub' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/free-tools-hub' },
+export const metadata = {
   title: 'Free Tools Hub',
-  description: 'Free online tools for developers, designers, and businesses. JSON formatters, code tools, converters, generators, and more.',
-};
-
+  description: 'Free online tools for developers, designers, and businesses. JSON formatters, code tools, converters, generators, and more.'};
 export default function FreeToolsHubPage() {
   const toolCategories = [
     {

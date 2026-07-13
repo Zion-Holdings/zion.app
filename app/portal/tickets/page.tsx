@@ -1,12 +1,10 @@
 // app/portal/tickets/page.tsx
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/portal/tickets' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/portal/tickets' },
+export const metadata = {
   title: 'Support Tickets — Client Portal',
-  description: 'Track and manage your support requests.',
-};
-
+  description: 'Track and manage your support requests.'};
 export default function TicketsPage() {
   const tickets = [
     { id: 'TKT-0042', title: 'AI workflow failing on data validation step', status: 'Open', priority: 'High', color: 'bg-red-500/20 text-red-300 border-red-500/30' },

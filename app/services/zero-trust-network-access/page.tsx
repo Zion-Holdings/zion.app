@@ -1,9 +1,7 @@
 export const metadata = {
   title: "Zero Trust Network Access | Zion Tech Group",
   description: "zero trust network access.",
-  alternates: { canonical: "/services/zero-trust-network-access/" },
-};
-
+  alternates: { canonical: "/services/zero-trust-network-access/" }};
 export default function Page() {
   return (
     <div className="container-page py-20">

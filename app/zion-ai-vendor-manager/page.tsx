@@ -5,9 +5,7 @@ export const metadata = {
   title: 'Zion AI Vendor Manager',
   description:
     'Manage vendor relationships and procurement workflows with AI-powered scoring and risk assessment.',
-  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-vendor-manager' },
-};
-
+  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-vendor-manager' }};
 export default function Page() {
   return (
     <ProductPageLayout

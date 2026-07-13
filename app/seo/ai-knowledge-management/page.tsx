@@ -4,9 +4,7 @@ export const metadata = {
   title: "AI Knowledge Management Platform | Zion Tech Group",
   description:
     "Organize enterprise knowledge with AI knowledge management, RAG retrieval, and workflow integration.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-knowledge-management" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-knowledge-management" }};
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

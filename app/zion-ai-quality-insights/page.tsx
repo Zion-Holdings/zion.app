@@ -5,9 +5,7 @@ export const metadata = {
   title: 'Zion AI Quality Insights',
   description:
     'Surface quality trends, root causes, and improvement opportunities from production data.',
-  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-quality-insights' },
-};
-
+  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-quality-insights' }};
 export default function Page() {
   return (
     <ProductPageLayout

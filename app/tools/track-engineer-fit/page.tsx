@@ -3,9 +3,7 @@ import { Metadata } from 'next';
 export const metadata = {
   title: 'AI Engineer Fit Tracker — Zion Tech Group',
   description: 'AI-powered engineer fit tracker: compare candidate skills, role requirements, culture fit, and placement confidence in one concise hiring dashboard.',
-  alternates: { canonical: '/tools/track-engineer-fit' },
-};
-
+  alternates: { canonical: '/tools/track-engineer-fit' }};
 export default function TrackEngineerFitPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-slate-100">

@@ -1,11 +1,9 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/cybersecurity' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/cybersecurity' },
+export const metadata = {
   title: 'Cybersecurity Services | Zion Tech Group',
-  description: 'Comprehensive cybersecurity solutions to protect your digital assets.',
-};
-
+  description: 'Comprehensive cybersecurity solutions to protect your digital assets.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

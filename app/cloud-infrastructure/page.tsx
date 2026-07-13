@@ -1,11 +1,9 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/cloud-infrastructure' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/cloud-infrastructure' },
+export const metadata = {
   title: 'Cloud Infrastructure | Zion Tech Group',
-  description: 'Scalable, secure cloud infrastructure solutions for enterprises.',
-};
-
+  description: 'Scalable, secure cloud infrastructure solutions for enterprises.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

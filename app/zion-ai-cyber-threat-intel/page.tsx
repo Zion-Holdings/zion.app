@@ -5,9 +5,7 @@ export const metadata = {
   title: 'Zion AI Cyber Threat Intel',
   description:
     'Aggregate and prioritize threat intelligence with automated correlation and actionable alerts.',
-  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-cyber-threat-intel' },
-};
-
+  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-cyber-threat-intel' }};
 export default function Page() {
   return (
     <ProductPageLayout

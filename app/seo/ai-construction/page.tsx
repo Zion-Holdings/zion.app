@@ -4,9 +4,7 @@ export const metadata = {
   title: "AI Construction and Project Intelligence | Zion Tech Group",
   description:
     "Use AI in construction and engineering projects for planning, risk detection, and progress monitoring.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-construction" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-construction" }};
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

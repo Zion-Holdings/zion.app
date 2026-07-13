@@ -1,9 +1,7 @@
 export const metadata = {
   title: 'AI for IT Change Management and Release Risk Reduction | Zion Tech Group',
   description: 'Apply AI to IT change management, release risk scoring, deployment anomaly detection, and rollout safety.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-it-change-management-and-release-risk-reduction' },
-};
-
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-it-change-management-and-release-risk-reduction' }};
 export default function AiChangeManagementPage() {
   return (
     <article className="prose dark:prose-invert max-w-3xl mx-auto px-4 py-10">

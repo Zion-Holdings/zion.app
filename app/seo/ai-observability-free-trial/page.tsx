@@ -4,9 +4,7 @@ export const metadata = {
   title: "AI Observability Free Trial | Zion Tech Group",
   description:
     "Start an AI observability free trial with Zion Tech Group for IT operations, MLOps, and automated incident response.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-observability-free-trial" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-observability-free-trial" }};
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

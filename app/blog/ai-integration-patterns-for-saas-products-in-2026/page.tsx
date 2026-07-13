@@ -1,9 +1,7 @@
 export const metadata = {
   title: "AI Integration Patterns for SaaS Products in 2026 | Zion Tech Group",
   description: "Practical AI integration patterns for SaaS products looking to add intelligent features.",
-  alternates: { canonical: "/ai-integration-patterns-for-saas-products-in-2026/" },
-};
-
+  alternates: { canonical: "/ai-integration-patterns-for-saas-products-in-2026/" }};
 export default function Page() {
   return (
     <article className="container-page py-20">

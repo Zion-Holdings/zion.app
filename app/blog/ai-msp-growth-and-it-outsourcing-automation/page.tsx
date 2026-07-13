@@ -14,9 +14,7 @@ export const metadata = {
       'MSPs and IT outsourcing firms can scale delivery, reduce churn, and expand profitability with AI ops, automation, and modern support structures.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-msp-growth-and-it-outsourcing-automation',
-  },
-};
-
+  }};
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">

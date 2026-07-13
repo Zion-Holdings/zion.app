@@ -12,9 +12,7 @@ export const metadata = {
     description: 'Practical AI MSP playbook for IT support, ticketing, and managed services in 2026.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-msp-playbook-for-it-support-teams-2026',
-  },
-};
-
+  }};
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">

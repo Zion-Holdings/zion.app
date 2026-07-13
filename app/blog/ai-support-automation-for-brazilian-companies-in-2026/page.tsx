@@ -1,9 +1,7 @@
 export const metadata = {
   title: "AI Support Automation for Brazilian Companies in 2026 | Zion Tech Group",
   description: "How Brazilian companies can adopt AI support automation safely and reduce operational costs.",
-  alternates: { canonical: "/ai-support-automation-for-brazilian-companies-in-2026/" },
-};
-
+  alternates: { canonical: "/ai-support-automation-for-brazilian-companies-in-2026/" }};
 export default function Page() {
   return (
     <article className="container-page py-20">

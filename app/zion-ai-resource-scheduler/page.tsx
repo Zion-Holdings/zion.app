@@ -5,9 +5,7 @@ export const metadata = {
   title: 'Zion AI Resource Scheduler',
   description:
     'Optimize resource allocation and scheduling with constraint-aware AI for teams and projects.',
-  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-resource-scheduler' },
-};
-
+  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-resource-scheduler' }};
 export default function Page() {
   return (
     <ProductPageLayout

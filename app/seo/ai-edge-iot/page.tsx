@@ -4,9 +4,7 @@ export const metadata = {
   title: "AI Edge and IoT Platforms | Zion Tech Group",
   description:
     "Deploy AI edge and IoT platforms for real-time operations, device management, and workload optimization.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-edge-iot" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-edge-iot" }};
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

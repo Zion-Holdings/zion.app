@@ -4,9 +4,7 @@ export const metadata = {
   title: "Agent Monitoring Dashboard | Zion Tech Group",
   description: "Real-time monitoring of Zion Tech Group AI agent fleet. Watch autonomous agents build, test, and deploy services 24/7.",
   alternates: { canonical: "https://ziontechgroup.com/agents-monitoring" },
-  robots: { index: false, follow: true },
-};
-
+  robots: { index: false, follow: true }};
 export default function MonitoringRedirect() {
   return (
     <main style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#020617" }}>

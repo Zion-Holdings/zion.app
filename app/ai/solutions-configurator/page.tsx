@@ -3,8 +3,7 @@ import type { Metadata } from 'next';
 export const metadata = {
   title: 'Solutions Configurator',
   description: 'Configure your custom AI & IT solutions',
-  alternates: { canonical: 'https://ziontechgroup.com/ai/solutions-configurator' },};
-
+  alternates: { canonical: 'https://ziontechgroup.com/ai/solutions-configurator' }};
 export default function SolutionsConfiguratorPage() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

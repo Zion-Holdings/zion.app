@@ -4,9 +4,7 @@ export const metadata = {
   title: "AI DevOps Platform Engineering | Zion Tech Group",
   description:
     "Increase release velocity with AI DevOps platform engineering, automated testing, and deployment intelligence.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-devops-platform" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-devops-platform" }};
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

@@ -4,9 +4,7 @@ export const metadata = {
   title: "AI Document Processing | Zion Tech Group",
   description:
     "Deploy AI document processing for extraction, classification, validation, and workflow handoff at scale.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-document-processing" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-document-processing" }};
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

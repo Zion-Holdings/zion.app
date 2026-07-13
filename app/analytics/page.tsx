@@ -5,8 +5,7 @@ import type { Metadata } from 'next';
 export const metadata = {
   title: 'Data Analytics & BI',
   description: 'Executive BI dashboards, predictive forecasting, embedded analytics, and self-serve analytics platforms.',
-  alternates: { canonical: 'https://ziontechgroup.com/analytics' },};
-
+  alternates: { canonical: 'https://ziontechgroup.com/analytics' }};
 export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

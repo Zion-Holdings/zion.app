@@ -4,9 +4,7 @@ export const metadata = {
   title: "AI Video Analytics for Business | Zion Tech Group",
   description:
     "Extract insights from live and recorded video with AI video analytics, monitoring, and safety workflows.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-video-analytics" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-video-analytics" }};
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

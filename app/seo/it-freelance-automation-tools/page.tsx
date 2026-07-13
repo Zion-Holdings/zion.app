@@ -1,9 +1,7 @@
 export const metadata = {
   title: 'IT Freelance Automation Tools | Zion Tech Group',
   description: 'Zion Tech Group provides freelance-friendly IT automation tools, script starters, monitoring templates, and deployment patterns for faster client delivery.',
-  alternates: { canonical: 'https://ziontechgroup.com/it-freelance-automation-tools' },
-};
-
+  alternates: { canonical: 'https://ziontechgroup.com/it-freelance-automation-tools' }};
 export default function Page() {
   return (
     <main className="min-h-screen">

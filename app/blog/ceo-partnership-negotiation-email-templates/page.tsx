@@ -14,9 +14,7 @@ export const metadata = {
       'Use these partnership email templates as a reference for advancing deal discussions, creating mutual value, and moving from introduction to a structured follow-up plan.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ceo-partnership-negotiation-email-templates',
-  },
-};
-
+  }};
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">

@@ -1,11 +1,9 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/custom-development' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/custom-development' },
+export const metadata = {
   title: 'Custom Software Development | Zion Tech Group',
-  description: 'Bespoke software development tailored to your business needs.',
-};
-
+  description: 'Bespoke software development tailored to your business needs.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

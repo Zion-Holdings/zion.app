@@ -1,12 +1,10 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/services/it-workspace-analytics' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/services/it-workspace-analytics' },
+export const metadata = {
   title: 'IT Workspace Analytics | Zion Tech Group',
-  description: 'IT workspace analytics for visibility, adoption, and performance across devices, apps, and users.',
-};
-
+  description: 'IT workspace analytics for visibility, adoption, and performance across devices, apps, and users.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

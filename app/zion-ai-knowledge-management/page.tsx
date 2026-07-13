@@ -5,9 +5,7 @@ export const metadata = {
   title: 'Zion AI Knowledge Management',
   description:
     'Centralize and surface organizational knowledge with AI-powered search, tagging, and recommendations.',
-  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-knowledge-management' },
-};
-
+  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-knowledge-management' }};
 export default function Page() {
   return (
     <ProductPageLayout

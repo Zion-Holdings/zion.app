@@ -1,11 +1,9 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/ai-medical-diagnosis-assistant' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/ai-medical-diagnosis-assistant' },
+export const metadata = {
   title: 'AI Medical Diagnosis Assistant | Zion Tech Group',
-  description: 'AI-powered diagnostic assistance for healthcare professionals.',
-};
-
+  description: 'AI-powered diagnostic assistance for healthcare professionals.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

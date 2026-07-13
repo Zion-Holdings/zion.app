@@ -1,9 +1,7 @@
-e  alternates: { canonical: 'https://ziontechgroup.com/seo/ai-copilot-enterprise-it-free-resources' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/seo/ai-copilot-enterprise-it-free-resources' },
+export const metadata = {
   title: 'AI Copilot Enterprise IT Free Resources | Zion Tech Group',
-  description: 'Free enterprise IT copilot resources from Zion Tech Group: prompt packs, guardrails, runbooks, onboarding kit, and evaluation templates.',
-};
-
+  description: 'Free enterprise IT copilot resources from Zion Tech Group: prompt packs, guardrails, runbooks, onboarding kit, and evaluation templates.'};
 export default function Page() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950">

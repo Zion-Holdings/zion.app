@@ -1,9 +1,7 @@
-e  alternates: { canonical: 'https://ziontechgroup.com/seo/ai-contact-center-free-tools' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/seo/ai-contact-center-free-tools' },
+export const metadata = {
   title: 'AI Contact Center Free Tools | Zion Tech Group',
-  description: 'Zion Tech Group contact-center free tools: transcript cleanup, response suggestions, sentiment checks, and shift readiness helpers.',
-};
-
+  description: 'Zion Tech Group contact-center free tools: transcript cleanup, response suggestions, sentiment checks, and shift readiness helpers.'};
 export default function Page() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950">

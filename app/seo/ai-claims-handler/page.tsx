@@ -4,9 +4,7 @@ export const metadata = {
   title: "AI Claims Handler for Insurance | Zion Tech Group",
   description:
     "Reduce claims cycle time with AI claims handler automation, triage, and payment accuracy.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-claims-handler" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-claims-handler" }};
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

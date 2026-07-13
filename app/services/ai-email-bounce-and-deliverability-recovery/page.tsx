@@ -6,9 +6,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Email Bounce and Deliverability Recovery Playbook 2026 | Zion Tech Group',
   description: 'AI email bounce and deliverability recovery playbook for IT and MSP teams in 2026. Reduce hard bounces, improve sender reputation, and automate list hygiene.',
-  alternates: { canonical: 'https://ziontechgroup.com/services/ai-email-bounce-and-deliverability-recovery' },
-};
-
+  alternates: { canonical: 'https://ziontechgroup.com/services/ai-email-bounce-and-deliverability-recovery' }};
 export default function ServicePage() {
   return (
     <main className="max-w-6xl mx-auto px-4 py-10">

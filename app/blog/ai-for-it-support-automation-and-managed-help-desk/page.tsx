@@ -13,9 +13,7 @@ export const metadata = {
       'Explore AI-assisted help desk automation, ticket routing, and knowledge management for internal and managed IT support.',
     url: 'https://ziontechgroup.com/blog/ai-for-it-support-automation-and-managed-help-desk',
     type: 'article',
-  },
-};
-
+  }};
 export default function AiForItSupportAutomationAndManagedHelpDeskPage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-10 space-y-8">

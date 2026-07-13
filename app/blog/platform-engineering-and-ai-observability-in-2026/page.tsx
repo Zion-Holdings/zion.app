@@ -1,9 +1,7 @@
 export const metadata = {
   title: "Platform Engineering and AI Observability in 2026 | Zion Tech Group",
   description: "Platform engineering practices paired with AI observability for production-readiness.",
-  alternates: { canonical: "/platform-engineering-and-ai-observability-in-2026/" },
-};
-
+  alternates: { canonical: "/platform-engineering-and-ai-observability-in-2026/" }};
 export default function Page() {
   return (
     <article className="container-page py-20">

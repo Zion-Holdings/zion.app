@@ -1,9 +1,7 @@
-e  alternates: { canonical: 'https://ziontechgroup.com/seo/ai-email-tuning-free-tools' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/seo/ai-email-tuning-free-tools' },
+export const metadata = {
   title: 'AI Email Tuning Free Tools | Zion Tech Group',
-  description: 'Free AI email tuning tools from Zion Tech Group: subject-line scoring, readability checks, spam-score estimates, and send-time suggestions.',
-};
-
+  description: 'Free AI email tuning tools from Zion Tech Group: subject-line scoring, readability checks, spam-score estimates, and send-time suggestions.'};
 export default function Page() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950">

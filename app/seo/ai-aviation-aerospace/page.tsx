@@ -4,9 +4,7 @@ export const metadata = {
   title: "AI Aviation and Aerospace Operations | Zion Tech Group",
   description:
     "Deploy AI aviation and aerospace solutions for maintenance, logistics, and operational decision support.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-aviation-aerospace" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-aviation-aerospace" }};
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

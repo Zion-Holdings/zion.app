@@ -1,9 +1,7 @@
-e  alternates: { canonical: 'https://ziontechgroup.com/seo/revenue-operations-ai-tools' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/seo/revenue-operations-ai-tools' },
+export const metadata = {
   title: 'Revenue Operations AI Tools | Zion Tech Group',
-  description: 'Revenue operations AI tools from Zion Tech Group: pipeline hygiene, forecasting, lead scoring, and GTM automation helpers.',
-};
-
+  description: 'Revenue operations AI tools from Zion Tech Group: pipeline hygiene, forecasting, lead scoring, and GTM automation helpers.'};
 export default function Page() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950">

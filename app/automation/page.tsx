@@ -1,9 +1,7 @@
-e  alternates: { canonical: 'https://ziontechgroup.com/automation' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/automation' },
+export const metadata = {
   title: 'Automation',
-  description: 'Intelligent process automation services from Zion Tech Group. RPA, workflow automation, AI-powered business processes.',
-};
-
+  description: 'Intelligent process automation services from Zion Tech Group. RPA, workflow automation, AI-powered business processes.'};
 export default function AutomationPage() {
   const services = [
     { icon: '🤖', name: 'Robotic Process Automation', href: '/robotic-process-automation', desc: 'Automate repetitive tasks with intelligent bots that learn and adapt.' },

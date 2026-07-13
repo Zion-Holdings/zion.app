@@ -1,11 +1,9 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/data-analytics' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/data-analytics' },
+export const metadata = {
   title: 'Data Analytics | Zion Tech Group',
-  description: 'Advanced data analytics platform with visualization and reporting.',
-};
-
+  description: 'Advanced data analytics platform with visualization and reporting.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

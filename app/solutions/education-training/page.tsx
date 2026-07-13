@@ -1,11 +1,9 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/solutions/education-training' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/solutions/education-training' },
+export const metadata = {
   title: 'Education & Training Technology | Zion Tech Group',
-  description: 'EdTech solutions for schools, universities, and corporate training programs.',
-};
-
+  description: 'EdTech solutions for schools, universities, and corporate training programs.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

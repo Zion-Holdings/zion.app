@@ -13,9 +13,7 @@ export const metadata = {
       'A practical framework for AI companies who want to build partner-led deals with major tech players while staying differentiated and profitable.',
     url: 'https://ziontechgroup.com/blog/ai-partner-offer-with-tech-giants',
     type: 'article',
-  },
-};
-
+  }};
 export default function AiPartnerOfferWithTechGiantsPage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-10 space-y-8">

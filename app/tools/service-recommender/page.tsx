@@ -29,8 +29,7 @@ export default function ServiceRecommenderPage() {
         'IT Infrastructure': 'it',
         'Cloud & DevOps': 'cloud',
         'Data & Analytics': 'data',
-        'Cybersecurity': 'security',
-      };
+        'Cybersecurity': 'security'};
       const matched = allServices.filter(
         (s: Service) => s.category === (catMap[cat] || 'ai')
       ).slice(0, 6);

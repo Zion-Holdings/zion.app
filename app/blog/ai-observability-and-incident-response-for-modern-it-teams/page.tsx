@@ -1,9 +1,7 @@
 export const metadata = {
   title: "AI Observability and Incident Response for Modern IT Teams | Zion Tech Group",
   description: "Practical AI observability and incident response patterns for modern IT teams in 2026.",
-  alternates: { canonical: "/ai-observability-and-incident-response-for-modern-it-teams/" },
-};
-
+  alternates: { canonical: "/ai-observability-and-incident-response-for-modern-it-teams/" }};
 export default function Page() {
   return (
     <article className="container-page py-20">

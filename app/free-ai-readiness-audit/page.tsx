@@ -12,9 +12,7 @@ export const metadata = {
     description: 'Free AI readiness audit to spot quick wins and automation opportunities.',
     type: 'website',
     url: 'https://ziontechgroup.com/free-ai-readiness-audit/',
-  },
-};
-
+  }};
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">

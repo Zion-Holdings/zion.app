@@ -1,11 +1,9 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/sla' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/sla' },
+export const metadata = {
   title: 'Service Level Agreements | Zion Tech Group',
-  description: 'Our commitment to uptime, performance, and support response times.',
-};
-
+  description: 'Our commitment to uptime, performance, and support response times.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

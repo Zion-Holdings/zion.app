@@ -13,9 +13,7 @@ export const metadata = {
       'Use AI to streamline DevOps workflows, improve deployment reliability, and reduce operational toil.',
     url: 'https://ziontechgroup.com/blog/ai-for-devops-automation-and-it-services',
     type: 'article',
-  },
-};
-
+  }};
 export default function AiForDevOpsAutomationAndITServicesPage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-10 space-y-8">

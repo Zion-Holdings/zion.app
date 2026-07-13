@@ -13,9 +13,7 @@ export const metadata = {
       'Reduce ticket volume, speed up support, and lower costs with AI IT support automation, smart routing, and historical issue resolution.',
     url: 'https://ziontechgroup.com/blog/ai-it-support-automation',
     type: 'article',
-  },
-};
-
+  }};
 export default function AiItSupportAutomationPage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-10 space-y-8">

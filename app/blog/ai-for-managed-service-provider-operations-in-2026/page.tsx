@@ -13,9 +13,7 @@ export const metadata = {
       'See how Zion Tech Group helps MSPs modernize operations, automate delivery, and create scalable partnership models in 2026.',
     url: 'https://ziontechgroup.com/blog/ai-for-managed-service-provider-operations-in-2026',
     type: 'article',
-  },
-};
-
+  }};
 export default function AiForManagedServiceProviderOperationsIn2026Page() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-10 space-y-8">

@@ -13,9 +13,7 @@ export const metadata = {
       'Explore how AI can improve MSP operations, onboarding, and client delivery.',
     url: 'https://ziontechgroup.com/blog/ai-for-managed-service-provider-operations',
     type: 'article',
-  },
-};
-
+  }};
 export default function AiForManagedServiceProviderOperationsPage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-10 space-y-8">

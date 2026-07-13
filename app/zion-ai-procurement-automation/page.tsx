@@ -5,9 +5,7 @@ export const metadata = {
   title: 'Zion AI Procurement Automation',
   description:
     'Automate sourcing, vendor selection, and purchase workflows with intelligent spend analysis and approval routing.',
-  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-procurement-automation' },
-};
-
+  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-procurement-automation' }};
 export default function Page() {
   return (
     <ProductPageLayout

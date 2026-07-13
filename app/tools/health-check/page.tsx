@@ -11,11 +11,7 @@ const STATUS_ICON: Record<Status, string> = { ok: '✅', warn: '⚠️', fail: '
 const STATUS_COLOR: Record<Status, string> = {
   ok: 'border-emerald-500/40 bg-emerald-500/10',
   warn: 'border-yellow-500/40 bg-yellow-500/10',
-  fail: 'border-red-500/40 bg-red-500/10',
-};
-
-
-
+  fail: 'border-red-500/40 bg-red-500/10'};
 // ─── StatusCard: reusable card for health-check results ───────────────────────────
 interface StatusCardProps {
   name: string;

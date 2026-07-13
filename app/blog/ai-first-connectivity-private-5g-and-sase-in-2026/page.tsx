@@ -1,12 +1,10 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-connectivity-private-5g-and-sase-in-2026' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-connectivity-private-5g-and-sase-in-2026' },
+export const metadata = {
   title: 'AI-First Connectivity, Private 5G, and SASE in 2026',
-  description: 'AI-first connectivity and secure access service edge patterns for enterprise and industrial networks.',
-};
-
+  description: 'AI-first connectivity and secure access service edge patterns for enterprise and industrial networks.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

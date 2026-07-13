@@ -4,9 +4,7 @@ export const metadata = {
   title: "AI Low-Code Platform Solutions | Zion Tech Group",
   description:
     "Accelerate internal tooling and business apps with AI low-code platform capabilities and governance.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-low-code-platform" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-low-code-platform" }};
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

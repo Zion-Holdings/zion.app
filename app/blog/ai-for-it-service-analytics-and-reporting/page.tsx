@@ -1,9 +1,7 @@
 export const metadata = {
   title: 'AI for IT Service Analytics and Reporting | Zion Tech Group',
   description: 'Improve IT operations with AI-powered service analytics, incident trend analysis, capacity planning, and executive reporting.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-it-service-analytics-and-reporting' },
-};
-
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-it-service-analytics-and-reporting' }};
 export default function AiServiceAnalyticsPage() {
   return (
     <article className="prose dark:prose-invert max-w-3xl mx-auto px-4 py-10">

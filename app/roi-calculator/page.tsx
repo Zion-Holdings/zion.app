@@ -726,6 +726,5 @@ function calculateROI(data: CompanyData): ROIResult {
     timeToValue,
     riskScore,
     recommendations: topRecommendations,
-    timeline,
-  };
+    timeline};
 }

@@ -4,9 +4,7 @@ export const metadata = {
   title: "AI Process Mining for Operations | Zion Tech Group",
   description:
     "Discover bottlenecks and improve workflow efficiency with AI process mining and automation-ready insights.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-process-mining" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-process-mining" }};
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

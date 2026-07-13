@@ -7,9 +7,7 @@ export const metadata = {
   title: 'Book a Free IT/AI Strategy Consultation | Zion Tech Group',
   description:
     'Schedule a free strategy session with Kleber Garcia and Zion Tech Group. Discuss AI integration, automation, cloud, cybersecurity, enterprise solutions, and custom proposals. Available in-person in Middletown, DE or remote.',
-  alternates: { canonical: 'https://ziontechgroup.com/consulting/' },
-};
-
+  alternates: { canonical: 'https://ziontechgroup.com/consulting/' }};
 export default function ConsultingPage() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

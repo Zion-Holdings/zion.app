@@ -1,9 +1,7 @@
 export const metadata = {
   title: 'AI Platform Security and Data Governance for Enterprises | Zion Tech Group',
   description: 'Practical AI platform security and data governance guidance for enterprises deploying AI across teams, clouds, and vendors.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-platform-security-and-data-governance-for-enterprises' },
-};
-
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-platform-security-and-data-governance-for-enterprises' }};
 export default function AiPlatformSecurityAndDataGovernanceForEnterprisesPage() {
   return (
     <article className="prose dark:prose-invert max-w-3xl mx-auto px-4 py-10">

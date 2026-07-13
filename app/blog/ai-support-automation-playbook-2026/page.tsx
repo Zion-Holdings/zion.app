@@ -6,9 +6,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'Free AI Support Automation Playbook 2026 | Zion Tech Group',
   description: 'Free AI support automation playbook for MSPs and IT teams in 2026. Step-by-step guide to deploy AI triage, reduce ticket volume, and expand managed services revenue.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-support-automation-playbook-2026' },
-};
-
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-support-automation-playbook-2026' }};
 export default function BlogPage() {
   return (
     <main className="max-w-6xl mx-auto px-4 py-10">

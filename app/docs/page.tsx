@@ -1,11 +1,9 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/docs' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/docs' },
+export const metadata = {
   title: 'Documentation Center | Zion Tech Group',
-  description: 'Comprehensive documentation for all Zion Tech Group services, APIs, and integrations.',
-};
-
+  description: 'Comprehensive documentation for all Zion Tech Group services, APIs, and integrations.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

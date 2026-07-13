@@ -4,9 +4,7 @@ export const metadata = {
   title: "AI Manufacturing Quality Assurance | Zion Tech Group",
   description:
     "Improve manufacturing quality with AI visual inspection, defect prediction, and process control.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-manufacturing-quality" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-manufacturing-quality" }};
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

@@ -4,9 +4,7 @@ export const metadata = {
   title: "AI Legal and Contract Intelligence | Zion Tech Group",
   description:
     "Automate legal and contract workflows with AI extraction, clause review, and obligation tracking.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-legal-contract" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-legal-contract" }};
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

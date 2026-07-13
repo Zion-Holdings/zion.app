@@ -4,9 +4,7 @@ export const metadata = {
   title: "AI Edge Realtime Inference | Zion Tech Group",
   description:
     "Deploy AI edge realtime inference with low latency, device management, and observability built for production.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-edge-realtime" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-edge-realtime" }};
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

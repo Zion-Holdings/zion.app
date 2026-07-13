@@ -4,9 +4,7 @@ export const metadata = {
   title: "AI Automation Ops for IT Leaders | Zion Tech Group",
   description:
     "Improve reliability with AI automation ops, change intelligence, and runbook automation.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-automation-ops" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-automation-ops" }};
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

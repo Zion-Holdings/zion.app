@@ -13,9 +13,7 @@ export const metadata = {
       'Use AI to improve IT project planning, implementation, and delivery predictability.',
     url: 'https://ziontechgroup.com/blog/ai-for-it-project-delivery-and-implementation-services',
     type: 'article',
-  },
-};
-
+  }};
 export default function AiForITProjectDeliveryAndImplementationServicesPage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-10 space-y-8">

@@ -4,9 +4,7 @@ export const metadata = {
   title: "AI Revenue Forecasting | Zion Tech Group",
   description:
     "Improve forecast accuracy with AI revenue forecasting that blends pipeline signals, history, and operational data.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-revenue-forecasting" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-revenue-forecasting" }};
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

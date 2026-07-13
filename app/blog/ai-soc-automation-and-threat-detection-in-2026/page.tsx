@@ -12,9 +12,7 @@ export const metadata = {
     description: 'AI SOC automation and threat detection playbook for IT teams in 2026.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-soc-automation-and-threat-detection-in-2026',
-  },
-};
-
+  }};
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">

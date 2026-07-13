@@ -1,11 +1,9 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/docs/API_REGISTRY' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/docs/API_REGISTRY' },
+export const metadata = {
   title: 'API Registry | Zion Tech Group',
-  description: 'Complete reference of all supported APIs, providers, and configuration guides.',
-};
-
+  description: 'Complete reference of all supported APIs, providers, and configuration guides.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

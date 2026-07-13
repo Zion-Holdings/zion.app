@@ -1,11 +1,9 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/iot-edge' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/iot-edge' },
+export const metadata = {
   title: 'IoT & Edge Computing | Zion Tech Group',
-  description: 'IoT and edge computing solutions for real-time data processing.',
-};
-
+  description: 'IoT and edge computing solutions for real-time data processing.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

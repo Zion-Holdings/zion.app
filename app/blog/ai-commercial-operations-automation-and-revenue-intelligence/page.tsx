@@ -1,9 +1,7 @@
 export const metadata = {
   title: 'AI Commercial Operations Automation and Revenue Intelligence | Zion Tech Group',
   description: 'See how Zion Tech Group applies AI commercial operations automation and revenue intelligence to shorten sales cycles, reduce churn, and improve forecasting.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-commercial-operations-automation-and-revenue-intelligence' },
-};
-
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-commercial-operations-automation-and-revenue-intelligence' }};
 export default function AiCommercialOperationsAutomationAndRevenueIntelligencePage() {
   return (
     <article className="prose dark:prose-invert max-w-3xl mx-auto px-4 py-10">

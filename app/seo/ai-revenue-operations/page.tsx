@@ -4,9 +4,7 @@ export const metadata = {
   title: "AI Revenue Operations | Zion Tech Group",
   description:
     "Align sales, marketing, and success data with AI revenue operations workflows that improve conversion and expansion.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-revenue-operations" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-revenue-operations" }};
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

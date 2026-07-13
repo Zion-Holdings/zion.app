@@ -6,9 +6,7 @@ import Link from 'next/link';
 const STAGE_META: Record<string, { label: string; emoji: string; desc: string; color: string }> = {
   published: { label: 'Published', emoji: '✅', desc: 'Live production services available now', color: 'from-emerald-500/20 to-green-500/10 border-emerald-500/30' },
   beta:      { label: 'Beta',      emoji: '🧪', desc: 'Early access — refined based on user feedback', color: 'from-purple-500/20 to-indigo-500/10 border-purple-500/30' },
-  planned:   { label: 'Coming Soon', emoji: '🚧', desc: 'In the pipeline — scheduled for release', color: 'from-amber-500/20 to-yellow-500/10 border-amber-500/30' },
-};
-
+  planned:   { label: 'Coming Soon', emoji: '🚧', desc: 'In the pipeline — scheduled for release', color: 'from-amber-500/20 to-yellow-500/10 border-amber-500/30' }};
 export async function generateStaticParams() {
   return ['published', 'beta', 'planned'].map((stage) => ({ stage }));
 }

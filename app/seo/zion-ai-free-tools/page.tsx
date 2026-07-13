@@ -1,9 +1,7 @@
-e  alternates: { canonical: 'https://ziontechgroup.com/seo/zion-ai-free-tools' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/seo/zion-ai-free-tools' },
+export const metadata = {
   title: 'Zion AI Free Tools | Zion Tech Group',
-  description: 'Zion AI free tools include lightweight IT utilities, AI prompt packs, automation templates, and startup-friendly scripts.',
-};
-
+  description: 'Zion AI free tools include lightweight IT utilities, AI prompt packs, automation templates, and startup-friendly scripts.'};
 export default function Page() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950">

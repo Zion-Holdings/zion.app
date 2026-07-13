@@ -4,9 +4,7 @@ export const metadata = {
   title: "AI Computer Vision for Quality Assurance | Zion Tech Group",
   description:
     "Use AI computer vision for manufacturing and quality assurance inspections with higher accuracy and speed.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-computer-vision-quality-assurance" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-computer-vision-quality-assurance" }};
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

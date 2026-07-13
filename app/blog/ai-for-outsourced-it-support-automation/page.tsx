@@ -13,9 +13,7 @@ export const metadata = {
       'Explore AI-assisted support automation for outsourced IT teams and service providers.',
     url: 'https://ziontechgroup.com/blog/ai-for-outsourced-it-support-automation',
     type: 'article',
-  },
-};
-
+  }};
 export default function AiForOutsourcedITSupportAutomationPage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-10 space-y-8">

@@ -4,9 +4,7 @@ export const metadata = {
   title: "AI Energy Optimization | Zion Tech Group",
   description:
     "Reduce energy costs with AI-powered facility and infrastructure optimization for operations and sustainability teams.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-energy-optimization" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-energy-optimization" }};
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

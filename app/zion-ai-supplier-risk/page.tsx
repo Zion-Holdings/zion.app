@@ -5,9 +5,7 @@ export const metadata = {
   title: 'Zion AI Supplier Risk | Zion Tech Group',
   description:
     'Monitor supplier health, geopolitical risk, and supply chain disruptions with predictive alerts.',
-  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-supplier-risk' },
-};
-
+  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-supplier-risk' }};
 export default function Page() {
   return (
     <ProductPageLayout

@@ -3,9 +3,7 @@ import { Metadata } from "next";
 export const metadata = {
   title: "E-Commerce Services | Zion Tech Group",
   description: "E-commerce platforms — Shopify, WooCommerce, custom storefronts, and payment integration",
-  alternates: { canonical: "https://ziontechgroup.com/services/?category=ecommerce" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/services/?category=ecommerce" }};
 export default function CategoryPage() {
   return (
     <main style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#020617" }}>

@@ -1,11 +1,9 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/solutions/media-entertainment' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/solutions/media-entertainment' },
+export const metadata = {
   title: 'Media & Entertainment Technology | Zion Tech Group',
-  description: 'Streaming, content management, and audience analytics for media companies.',
-};
-
+  description: 'Streaming, content management, and audience analytics for media companies.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

@@ -10,9 +10,7 @@ const TOOL_META: Record<string, {emoji:string;name:string;href:string}> = {
   'service-comparison':  {emoji:'⚖️', name:'Service Comparison',  href:'/tools/service-comparison'},
   'service-recommender': {emoji:'🎯',name:'Service Recommender', href:'/tools/service-recommender'},
   'port-scanner':        {emoji:'🔓',name:'Port Scanner',        href:'/tools/port-scanner'},
-  'ssl-checker':         {emoji:'🔒',name:'SSL Checker',         href:'/tools/ssl-checker'},
-};
-
+  'ssl-checker':         {emoji:'🔒',name:'SSL Checker',         href:'/tools/ssl-checker'}};
 function fmt(n:number):string{
   if(n>=1e6) return (n/1e6).toFixed(1)+'M';
   if(n>=1e3) return (n/1e3).toFixed(1)+'K';

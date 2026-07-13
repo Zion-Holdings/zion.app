@@ -1,11 +1,9 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/ai-recommendation-engine' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/ai-recommendation-engine' },
+export const metadata = {
   title: 'AI Recommendation Engine | Zion Tech Group',
-  description: 'Personalized recommendation system for e-commerce and content platforms.',
-};
-
+  description: 'Personalized recommendation system for e-commerce and content platforms.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

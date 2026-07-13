@@ -4,9 +4,7 @@ export const metadata = {
   title: "AI Platform Free Trial | Zion Tech Group",
   description:
     "Run an AI platform free trial with defined scope, guardrails, and measurable success criteria.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-platform-free-trial" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-platform-free-trial" }};
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

@@ -1,10 +1,8 @@
 import Link from 'next/link';
-e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-chatops-and-agentic-support-automation-in-2026' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-chatops-and-agentic-support-automation-in-2026' },
+export const metadata = {
   title: 'AI ChatOps and Agentic Support Automation in 2026',
-  description: 'ChatOps and agentic support automation patterns that reduce response time and handoff friction for customer-facing teams.',
-};
-
+  description: 'ChatOps and agentic support automation patterns that reduce response time and handoff friction for customer-facing teams.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

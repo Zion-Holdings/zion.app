@@ -1,11 +1,9 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/ai-stock-portfolio-manager' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/ai-stock-portfolio-manager' },
+export const metadata = {
   title: 'AI Stock Portfolio Manager | Zion Tech Group',
-  description: 'AI-powered portfolio management and investment recommendations.',
-};
-
+  description: 'AI-powered portfolio management and investment recommendations.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

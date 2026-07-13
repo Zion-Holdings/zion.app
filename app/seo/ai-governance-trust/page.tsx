@@ -4,9 +4,7 @@ export const metadata = {
   title: "AI Governance and Trust | Zion Tech Group",
   description:
     "Establish AI governance and trust with policy, auditability, and responsible deployment practices from Zion Tech Group.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-governance-trust" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-governance-trust" }};
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

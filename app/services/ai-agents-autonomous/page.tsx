@@ -32,14 +32,10 @@ const LEGACY_ROUTE = {
     phone: '+1 302 464 0950',
   },
   icon: '🤖',
-  href: '/services/ai-agents-autonomous',
-};
-
+  href: '/services/ai-agents-autonomous'};
 export const metadata = {
   title: `${LEGACY_ROUTE.title} | Zion Tech Group`,
-  description: LEGACY_ROUTE.description,
-};
-
+  description: LEGACY_ROUTE.description};
 export default function LegacyAiAgentsAutonomousPage() {
   const sr = LEGACY_ROUTE
   const pricingTiers = Object.entries(sr.pricing)

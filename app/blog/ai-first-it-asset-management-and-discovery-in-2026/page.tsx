@@ -1,12 +1,10 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-it-asset-management-and-discovery-in-2026' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-it-asset-management-and-discovery-in-2026' },
+export const metadata = {
   title: 'AI-First IT Asset Management and Discovery in 2026',
-  description: 'Use IT asset discovery, normalization, and lifecycle automation to reduce shadow IT and improve compliance.',
-};
-
+  description: 'Use IT asset discovery, normalization, and lifecycle automation to reduce shadow IT and improve compliance.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

@@ -1,11 +1,9 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/solutions/energy-utilities' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/solutions/energy-utilities' },
+export const metadata = {
   title: 'Energy & Utilities Technology | Zion Tech Group',
-  description: 'Smart grid, IoT, and AI solutions for energy and utility companies.',
-};
-
+  description: 'Smart grid, IoT, and AI solutions for energy and utility companies.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

@@ -6,9 +6,7 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Ransomware Recovery and Business Continuity Automation for MSPs 2026 | Zion Tech Group',
   description: 'AI ransomware recovery and business continuity automation playbook for MSPs in 2026. Improve recovery speed, reduce downtime, and automate incident response playbooks.',
-  alternates: { canonical: 'https://ziontechgroup.com/services/ai-ransomware-recovery-and-business-continuity-automation' },
-};
-
+  alternates: { canonical: 'https://ziontechgroup.com/services/ai-ransomware-recovery-and-business-continuity-automation' }};
 export default function ServicePage() {
   return (
     <main className="max-w-6xl mx-auto px-4 py-10">

@@ -1,11 +1,9 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/changelog' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/changelog' },
+export const metadata = {
   title: 'Product Changelog | Zion Tech Group',
-  description: 'Latest updates, new features, and improvements to our platform.',
-};
-
+  description: 'Latest updates, new features, and improvements to our platform.'};
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

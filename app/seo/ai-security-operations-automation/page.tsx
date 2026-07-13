@@ -4,9 +4,7 @@ export const metadata = {
   title: "AI Security Operations Automation | Zion Tech Group",
   description:
     "Automate security operations with AI-driven triage, enrichment, and response playbooks from Zion Tech Group.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-security-operations-automation" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-security-operations-automation" }};
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

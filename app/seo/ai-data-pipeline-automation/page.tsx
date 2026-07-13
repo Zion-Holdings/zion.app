@@ -4,9 +4,7 @@ export const metadata = {
   title: "AI Data Pipeline Automation | Zion Tech Group",
   description:
     "Automate data pipelines with AI-assisted ingestion, validation, and monitoring built for IT and analytics teams.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-data-pipeline-automation" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-data-pipeline-automation" }};
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

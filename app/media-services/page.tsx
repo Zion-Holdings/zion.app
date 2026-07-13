@@ -3,9 +3,7 @@ import { Metadata } from "next";
 export const metadata = {
   title: "Media & Streaming Services | Zion Tech Group",
   description: "Media technology — video streaming, content delivery, OTT platforms, and digital media management",
-  alternates: { canonical: "https://ziontechgroup.com/services/?category=media" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/services/?category=media" }};
 export default function CategoryPage() {
   return (
     <main style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#020617" }}>

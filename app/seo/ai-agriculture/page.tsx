@@ -4,9 +4,7 @@ export const metadata = {
   title: "AI Agriculture and Agritech | Zion Tech Group",
   description:
     "Apply AI agriculture and agritech solutions for yield estimation, pest detection, and resource optimization.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-agriculture" },
-};
-
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-agriculture" }};
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

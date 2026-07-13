@@ -65,5 +65,4 @@ const styles: Record<string, React.CSSProperties> = {
   link: {
     color: '#2563eb',
     textDecoration: 'underline',
-  },
-};
+  }};
