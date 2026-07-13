@@ -1,13 +1,8 @@
 import Breadcrumb from '@/components/Breadcrumb';
 import Link from 'next/link';
 
-<<<<<<< HEAD
-  alternates: { canonical: 'https://ziontechgroup.com/academy' },
-eexport const metadata = {
-=======
 e  alternates: { canonical: 'https://ziontechgroup.com/academy' },
 xport const metadata = {
->>>>>>> parent of 94a3a1267 (fix: systemic corruption in page metadata imports across 623 pages)
   title: 'Academy | Zion Tech Group',
   description: 'Learning paths for AI, cloud, security, and modern IT operations.'
 };

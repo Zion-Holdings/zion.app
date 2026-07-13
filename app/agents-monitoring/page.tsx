@@ -1,13 +1,8 @@
 import Breadcrumb from '@/components/Breadcrumb';
 import Link from 'next/link';
 
-<<<<<<< HEAD
-  alternates: { canonical: 'https://ziontechgroup.com/monitoring' },
-eexport const metadata = {
-=======
 e  alternates: { canonical: 'https://ziontechgroup.com/monitoring' },
 xport const metadata = {
->>>>>>> parent of 94a3a1267 (fix: systemic corruption in page metadata imports across 623 pages)
   title: 'Agents Monitoring | Zion Tech Group',
   description: 'Monitor AI agents, automations, and operational telemetry in one place.'
 };
