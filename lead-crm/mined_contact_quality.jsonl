@@ -7,3 +7,4 @@
 {"ts": "2026-07-12T23:29:00.592154+00:00", "email": "api@heygen.com", "msg_id": "19f58a63ac2608fb", "query": "\"Zion Tech Group\"", "confidence": 0, "high_signal": false}
 {"ts": "2026-07-13T00:27:13.226231+00:00", "email": "prod@opalith-77.com", "msg_id": "19f58dc9c744c794", "query": "\"Zion Tech Group\"", "confidence": 0, "high_signal": false}
 {"ts": "2026-07-13T00:27:18.549498+00:00", "email": "ana.martinez@ziontechgroup.com", "msg_id": "19f58dc9c744c794", "query": "\"Zion Tech Group\"", "confidence": 0, "high_signal": false}
+{"ts": "2026-07-13T02:00:16.207118+00:00", "email": "robot@py.acciontrabajo.com", "msg_id": "19f592d84db4b497", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}

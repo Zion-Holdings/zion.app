@@ -7550,5 +7550,22 @@
     "llm_model": "stepfun/step-3.7-flash-20260528:free",
     "llm_reason": "### Rating: 0\n#### Reasoning:\nThere is no explicit or implicit signal tied to managed AI/IT services in the provided information. The only details shared are a generic \"Tech Group\" company name and domain, which could apply to an unlimited range of unrelated tech verticals (consumer hardware, custom",
     "confidence": 0
+  },
+  {
+    "to": "robot@py.acciontrabajo.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "py.acciontrabajo.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash-20260528:free",
+    "llm_reason": "### Rating: 1 (weak/partial signal)\n#### Reasoning:\nWe only have the uncontextualized domain name `ziontechgroup.com` as the provided signal, with no additional details (no site content, service listings, or public confirmation of the entity's offerings):\n- It is not a 0 because the \"tech\" component",
+    "confidence": 1
   }
 ]
