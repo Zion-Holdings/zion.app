@@ -10,6 +10,7 @@ export const metadata = {
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import Link from 'next/link';
+import { allServices } from '../data/servicesData.json';
 
 type HealthEntry = {
   last_status: number;

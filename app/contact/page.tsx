@@ -7,7 +7,7 @@ const CALENDLY_URL = 'https://calendly.com/kleber-ziontechgroup';
 export const metadata = {
   title: 'Contact Us',
   description: 'Get in touch with Zion Tech Group. Call, email, or visit us in Middletown, DE.',
-
+  alternates: { canonical: '/contact' },
 };
 
 export default function ContactPage() {

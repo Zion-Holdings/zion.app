@@ -20,11 +20,13 @@ export default function Page() {
         </nav>
 
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-6xl mb-4 block">"></span>
+          <span className="text-6xl mb-4 block">📋</span>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Blockchain & Web3 Solutions</h1>
           <p className="text-xl text-slate-300 leading-relaxed mb-6">Enterprise blockchain for supply chain, identity, smart contracts, and TCR programs.</p>
           <div className="flex flex-wrap justify-center gap-2 mb-6">
-            {<span key="Supply Chain"px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Supply Chain</span>,<span key="Identity"px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Identity</span>,<span key="Web3"px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Web3</span>].map(tag => tag)}
+            {['Smart Contracts','Supply Chain','Identity','Web3'].map(tag => (
+              <span key={tag} className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">{tag}</span>
+            ))}
           </div>
           <Link href="/configurator/" className="btn-primary text-lg px-10 py-4 inline-block">⚡ Get Your Custom Proposal →</Link>
         </div>
