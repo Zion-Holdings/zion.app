@@ -16,7 +16,7 @@ function request(method, urlPath, body) {
       path: urlPath,
       method,
       headers: {
-        Authorization: `token ${token}`,
+        Authorization: `Bearer ${token}`,
         Accept: 'application/vnd.github+json',
         'User-Agent': 'Hermes-Agent',
         ...(payload ? { 'Content-Type': 'application/json' } : {}),
