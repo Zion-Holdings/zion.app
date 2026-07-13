@@ -7567,5 +7567,22 @@
     "llm_model": "stepfun/step-3.7-flash-20260528:free",
     "llm_reason": "### Rating: 1 (weak/partial signal)\n#### Reasoning:\nWe only have the uncontextualized domain name `ziontechgroup.com` as the provided signal, with no additional details (no site content, service listings, or public confirmation of the entity's offerings):\n- It is not a 0 because the \"tech\" component",
     "confidence": 1
+  },
+  {
+    "to": "support@heygen.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"Zion Tech Group\"",
+    "domain": "heygen.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash-20260528:free",
+    "llm_reason": "### Rating: 0\nThere is no relevant value signal present here. The only information provided is a generic company name (\"Zion Tech Group\") and its root domain, with no details about the company's service offerings, operations, or alignment with managed AI/IT services. The \"Tech Group\" naming conventi",
+    "confidence": 0
   }
 ]
