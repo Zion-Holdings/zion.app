@@ -43,6 +43,20 @@ child.on('error', (err) => {
 
 child.on('close', (code) => {
   const exitCode = typeof code === 'number' ? code : 1;
+  if (exitCode === 0) {
+    try {
+      require('child_process').execSync('npm run postbuild', { cwd: REPO, stdio: 'inherit', shell: process.platform === 'win32' });
+    } catch (postErr) {
+      writeState({
+        exited: true,
+        exitCode,
+        durationMs: timeMs(buildStart),
+        postbuildError: postErr && postErr.message ? postErr.message : String(postErr),
+        artifacts: probeArtifacts(),
+      });
+      process.exit(1);
+    }
+  }
   writeState({
     exited: true,
     exitCode,
