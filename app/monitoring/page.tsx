@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "Agent Monitoring Dashboard | Zion Tech Group",
   description: "Real-time monitoring of Zion Tech Group AI agent fleet. Watch autonomous agents build, test, and deploy services 24/7.",
   alternates: { canonical: "https://ziontechgroup.com/agents-monitoring" },

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { CONTACT_INFO } from '../utils/seoConstants';
 
 
-export const metadata = {
+eexport const metadata = {
   title: 'Book a Free IT/AI Strategy Consultation | Zion Tech Group',
   description:
     'Schedule a free strategy session with Kleber Garcia and Zion Tech Group. Discuss AI integration, automation, cloud, cybersecurity, enterprise solutions, and custom proposals. Available in-person in Middletown, DE or remote.',

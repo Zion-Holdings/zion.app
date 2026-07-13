@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/cookie-policy' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/cookie-policy' },
+export const metadata = {
   title: 'Cookie Policy | Zion Tech Group',
   description: 'How Zion Tech Group uses cookies and similar technologies on our website.',
 };

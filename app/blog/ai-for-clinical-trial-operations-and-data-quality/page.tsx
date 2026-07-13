@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: 'AI for Clinical Trial Operations and Data Quality | Zion Tech Group',
   description: 'Improve clinical trial execution with AI-led data checks, protocol adherence, and operational reporting that reduces delays and manual review work.',
   alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-clinical-trial-operations-and-data-quality' },

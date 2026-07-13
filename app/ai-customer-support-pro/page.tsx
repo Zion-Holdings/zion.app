@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/ai-customer-support-pro' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/ai-customer-support-pro' },
+export const metadata = {
   title: 'AI Customer Support Pro | Zion Tech Group',
   description: 'AI-powered customer support automation and ticket management.',
 };

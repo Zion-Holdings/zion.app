@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "Healthcare IT Services | Zion Tech Group",
   description: "Healthcare technology — EHR integration, telemedicine, HIPAA compliance, and medical data analytics",
   alternates: { canonical: "https://ziontechgroup.com/services/?category=healthcare" },

@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: "AI Text to SQL Platforms for Business Intelligence in 2026 | Zion Tech Group",
   description: "How AI text-to-SQL platforms are changing business intelligence, analytics workflows, and data-team productivity for LATAM companies.",
   alternates: { canonical: "/ai-text-to-sql-platforms-for-business-intelligence-in-2026/" },

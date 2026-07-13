@@ -3,7 +3,7 @@ import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+eexport const metadata = {
   title: 'Win AI Clients Without Paid Ads: Free Guide for IT Companies | Zion Tech Group',
   description: 'Win AI clients without paid ads using organic outreach, free tools, and delivery-led growth. Free guide for IT companies, MSPs, and VARs in 2026.',
   alternates: { canonical: 'https://ziontechgroup.com/blog/win-ai-clients-without-paid-ads-free-guide-2026/' },

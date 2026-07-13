@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "Identity & Access Management | Zion Tech Group",
   description: "Identity services — SSO, MFA, directory services, and zero-trust identity",
   alternates: { canonical: "https://ziontechgroup.com/services/?category=identity" },

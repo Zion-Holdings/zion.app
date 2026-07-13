@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "API Management Services | Zion Tech Group",
   description: "API platforms — gateway management, API design, developer portals, and API monetization",
   alternates: { canonical: "https://ziontechgroup.com/services/?category=api" },

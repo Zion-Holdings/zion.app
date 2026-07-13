@@ -3,7 +3,7 @@ import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+eexport const metadata = {
   title: 'AI-Powered Change Management for IT Teams 2026 | Zion Tech Group',
   description: 'Practical AI-powered change management playbook for IT teams and MSPs in 2026. Reduce rollout risk with structured automation and communication workflows.',
   alternates: { canonical: 'https://ziontechgroup.com/blog/ai-powered-change-management-for-it-teams-2026' },

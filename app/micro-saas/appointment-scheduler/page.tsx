@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/micro-saas/appointment-scheduler' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/micro-saas/appointment-scheduler' },
+export const metadata = {
   title: 'Appointment Scheduler | Zion Tech Group',
   description: 'AI-powered appointment scheduling with calendar integration.',
 };

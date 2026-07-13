@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: "AI Agentic Workflow Automation: Reduce Manual Work Hours | Zion Tech Group",
   description: "agentic workflow automation.",
   alternates: { canonical: "/ai-agentic-workflow-automation-reduce-manual-work-hours/" },

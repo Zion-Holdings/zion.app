@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: 'AI Free Tools and Services for Enterprises | Zion Tech Group',
   description: 'Zion Tech Group offers free AI tools, services, and resources to help enterprises evaluate automation and accelerate adoption without cost barriers.',
   alternates: { canonical: 'https://ziontechgroup.com/ai-free-tools-enterprise' }

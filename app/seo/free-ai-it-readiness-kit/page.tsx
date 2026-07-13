@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "Free AI IT Readiness Kit | Zion Tech Group",
   description:
     "Use the Zion Tech Group free AI IT readiness kit to evaluate automation potential and prioritize initiatives.",

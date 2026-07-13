@@ -35,7 +35,7 @@ const LEGACY_ROUTE = {
   href: '/services/ai-agents-autonomous',
 };
 
-export const metadata = {
+eexport const metadata = {
   title: `${LEGACY_ROUTE.title} | Zion Tech Group`,
   description: LEGACY_ROUTE.description,
 };

@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: "SIEM Security Platform | Zion Tech Group",
   description: "SIEM security monitoring.",
   alternates: { canonical: "/services/siem-security-platform/" },

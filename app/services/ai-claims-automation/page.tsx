@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: 'AI Claims Automation — Zion Tech Group',
   description: 'Redirect to AI Insurance Claims Automation service page.',
   alternates: { canonical: 'https://ziontechgroup.com/services/ai-insurance-claims-automation/' },

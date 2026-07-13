@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 
-export const metadata = {
+eexport const metadata = {
   title: 'AI-First Digital Twin and Asset Simulation for Industry in 2026 | Zion Tech Group',
   description: 'AI-first digital twin and asset simulation for industry: predictive asset modeling, process optimization, scenario testing, and operational insight generation.',
 }

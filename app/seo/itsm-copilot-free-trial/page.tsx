@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: 'ITSM Copilot Free Trial | Zion Tech Group',
   description: 'Start an ITSM copilot free trial to evaluate AI-assisted ticketing, knowledge retrieval, change support, and service desk automation.',
   alternates: { canonical: 'https://ziontechgroup.com/itsm-copilot-free-trial' }

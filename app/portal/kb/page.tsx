@@ -1,8 +1,8 @@
 // app/portal/kb/page.tsx
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/portal/kb' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/portal/kb' },
+export const metadata = {
   title: 'Knowledge Base — Client Portal',
   description: 'Documentation, guides, how-tos, and technical resources.',
 };

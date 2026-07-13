@@ -1,6 +1,6 @@
 import Link from 'next/link';
-e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-platform-engineering-2026-services-guide' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-platform-engineering-2026-services-guide' },
+export const metadata = {
   title: 'AI Platform Engineering 2026 Services Guide',
   description: 'A service guide to building, operating, and scaling internal AI platforms safely in 2026.',
 };

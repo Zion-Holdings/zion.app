@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-export const metadata = {
+eexport const metadata = {
   title: 'AI IT Infrastructure Automation and Cloud Operations | Zion Tech Group',
   description:
     'AI-driven infrastructure automation improves cloud operations, resource scheduling, and operational reliability for IT teams.',

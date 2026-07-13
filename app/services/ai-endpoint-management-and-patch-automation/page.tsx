@@ -3,7 +3,7 @@ import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+eexport const metadata = {
   title: 'AI Endpoint Management and Patch Automation for MSPs 2026 | Zion Tech Group',
   description: 'AI endpoint management and patch automation playbook for MSPs in 2026. Automate device compliance, patch deployment, exception handling, and client reporting.',
   alternates: { canonical: 'https://ziontechgroup.com/services/ai-endpoint-management-and-patch-automation' },

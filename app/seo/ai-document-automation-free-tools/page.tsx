@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "AI Document Automation Free Tools | Zion Tech Group",
   description:
     "Free AI document automation tools and resources to help teams move from manual paperwork to structured workflows.",

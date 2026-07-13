@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "AI Fraud Detection | Zion Tech Group",
   description:
     "Reduce fraud loss with AI detection models, rules, and investigation workflows tailored for business and finance teams.",

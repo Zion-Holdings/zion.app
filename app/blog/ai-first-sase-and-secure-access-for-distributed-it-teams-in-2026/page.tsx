@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 
-export const metadata = {
+eexport const metadata = {
   title: 'AI-First SASE and Secure Access for Distributed IT Teams in 2026 | Zion Tech Group',
   description: 'A practical guide to AI-first SASE and secure access for distributed IT teams in 2026, including identity-aware access, policy automation, and measurable security outcomes.',
 }

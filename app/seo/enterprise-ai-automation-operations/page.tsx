@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: 'Enterprise AI Automation for Operations | Zion Tech Group',
   description: 'Enterprise AI automation for operations, process orchestration, workflow optimization, and reliability engineering built for IT teams.',
   alternates: { canonical: 'https://ziontechgroup.com/enterprise-ai-automation-operations' }

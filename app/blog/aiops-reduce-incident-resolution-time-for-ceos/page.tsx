@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: 'AIOps for CEOs: Reducing Incident Resolution Time Without Adding Headcount | Zion Tech Group',
   description: 'Practical AIOps guide for executives: reduce incident resolution time using automation, prioritization, and measurable response workflows.',
   alternates: { canonical: 'https://ziontechgroup.com/blog/aiops-reduce-incident-resolution-time-for-ceos' },

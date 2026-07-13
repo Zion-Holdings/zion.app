@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-export const metadata = {
+eexport const metadata = {
   title: 'AI for ITSM and Service Management | Zion Tech Group',
   description:
     'Discover how AI-powered ITSM improves ticket routing, self-service resolution, knowledge search, and service delivery.',

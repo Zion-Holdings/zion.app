@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/micro-saas/ai-expense-tracker' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/micro-saas/ai-expense-tracker' },
+export const metadata = {
   title: 'AI Expense Tracker | Zion Tech Group',
   description: 'Automated expense tracking with receipt scanning and categorization.',
 };

@@ -1,5 +1,5 @@
-e  alternates: { canonical: 'https://ziontechgroup.com/seo/ai-business-proposal-template' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/seo/ai-business-proposal-template' },
+export const metadata = {
   title: 'AI Business Proposal Template | Zion Tech Group',
   description: 'Use this AI business proposal template from Zion Tech Group to scope solutions, align stakeholders, model ROI, and accelerate client approvals.',
 };

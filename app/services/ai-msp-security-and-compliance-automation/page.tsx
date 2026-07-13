@@ -3,7 +3,7 @@ import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+eexport const metadata = {
   title: 'AI MSP Security and Compliance Automation 2026 | Zion Tech Group',
   description: 'AI MSP security and compliance automation guide for 2026. Practical patterns for SOC, access control, patch management, audit evidence, and client reporting.',
   alternates: { canonical: 'https://ziontechgroup.com/services/ai-msp-security-and-compliance-automation' },

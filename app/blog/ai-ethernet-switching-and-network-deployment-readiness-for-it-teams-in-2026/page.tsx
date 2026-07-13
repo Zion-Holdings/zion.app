@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 
-export const metadata = {
+eexport const metadata = {
   title: 'AI-Ethernet Switching and Network Deployment Readiness for IT Teams in 2026 | Zion Tech Group',
   description: 'A practical guide to AI-ethernet switching and network deployment readiness for IT teams in 2026, including validation, staging, cabling checks, and deployment automation.',
 }

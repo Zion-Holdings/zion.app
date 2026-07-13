@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: 'AIOps Event Correlation and Intelligent Incident Triage for IT Leaders | Zion Tech Group',
   description: 'See how Zion Tech Group uses AIOps event correlation and intelligent incident triage to cut MTTR, reduce alert fatigue, and improve IT operations delivery.',
   alternates: { canonical: 'https://ziontechgroup.com/blog/aiops-event-correlation-and-intelligent-incident-triage-for-it-leaders' },

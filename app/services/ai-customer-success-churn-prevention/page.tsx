@@ -3,7 +3,7 @@ import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+eexport const metadata = {
   title: 'AI Customer Success and Churn Prevention for SaaS 2026 | Zion Tech Group',
   description: 'AI customer success and churn prevention playbook for SaaS teams in 2026. Reduce churn, increase expansion revenue, and automate renewal workflows.',
   alternates: { canonical: 'https://ziontechgroup.com/services/ai-customer-success-churn-prevention' },

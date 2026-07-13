@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "AI Email Automation for Business | Zion Tech Group",
   description:
     "Implement AI email automation for business with safer routing, drafting, and analytics from Zion Tech Group.",

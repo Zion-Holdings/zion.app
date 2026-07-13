@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: "AI Support Automation for Brazilian Companies in 2026 | Zion Tech Group",
   description: "How Brazilian companies can adopt AI support automation safely and reduce operational costs.",
   alternates: { canonical: "/ai-support-automation-for-brazilian-companies-in-2026/" },

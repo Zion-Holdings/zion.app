@@ -3,7 +3,7 @@ import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+eexport const metadata = {
   title: 'Free AI Tools for IT Support and MSPs 2026 | Zion Tech Group',
   description: 'Free AI tools for IT support and MSPs in 2026: practical options for ticket triage, enrichment, and workflow automation from Zion Tech Group.',
   alternates: { canonical: 'https://ziontechgroup.com/blog/free-ai-tools-for-it-support-and-msps-2026/' },

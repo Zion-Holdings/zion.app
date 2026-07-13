@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export const metadata = {
+eexport const metadata = {
   title: 'Generative AI Automation Playbook for Enterprise',
   description: 'Generative AI automation playbook for enterprise teams. Use cases, governance basics, process patterns, and implementation paths for secure scalable adoption.',
   alternates: { canonical: '/blog/generative-ai-automation-playbook-for-enterprise' },

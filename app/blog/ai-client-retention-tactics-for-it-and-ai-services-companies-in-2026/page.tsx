@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: "AI Client Retention Tactics for IT and AI Services Companies in 2026 | Zion Tech Group",
   description: "Practical client retention tactics for IT and AI services companies.",
   alternates: { canonical: "/ai-client-retention-tactics-for-it-and-ai-services-companies-in-2026/" },

@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 
-export const metadata = {
+eexport const metadata = {
   title: 'AI-First Network Performance and WAN Optimization for IT in 2026 | Zion Tech Group',
   description: 'AI-first network performance and WAN optimization for IT teams: traffic shaping, path optimization, latency reduction, and congestion avoidance.',
 }

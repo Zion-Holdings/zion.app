@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/services/ai-accessibility-inclusive-design' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/services/ai-accessibility-inclusive-design' },
+export const metadata = {
   title: 'AI Accessibility and Inclusive Digital Services | Zion Tech Group',
   description: 'AI-assisted accessibility automation, WCAG evaluation, and inclusive UX for digital services.',
 };

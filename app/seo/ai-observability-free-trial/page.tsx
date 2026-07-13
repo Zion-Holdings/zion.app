@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "AI Observability Free Trial | Zion Tech Group",
   description:
     "Start an AI observability free trial with Zion Tech Group for IT operations, MLOps, and automated incident response.",

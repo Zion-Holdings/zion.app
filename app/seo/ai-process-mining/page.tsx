@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "AI Process Mining for Operations | Zion Tech Group",
   description:
     "Discover bottlenecks and improve workflow efficiency with AI process mining and automation-ready insights.",

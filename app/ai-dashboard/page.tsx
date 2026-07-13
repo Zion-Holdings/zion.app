@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 
-export const metadata = {
+eexport const metadata = {
   title: 'AI Dashboard | Zion Tech Group',
   description: 'Unified AI operations dashboard for monitoring, analytics, and workflow orchestration across your AI services.',
 }

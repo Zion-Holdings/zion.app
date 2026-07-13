@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "AI Aviation and Aerospace Operations | Zion Tech Group",
   description:
     "Deploy AI aviation and aerospace solutions for maintenance, logistics, and operational decision support.",

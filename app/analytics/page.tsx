@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
-export const metadata = {
+eexport const metadata = {
   title: 'Data Analytics & BI',
   description: 'Executive BI dashboards, predictive forecasting, embedded analytics, and self-serve analytics platforms.',
   alternates: { canonical: 'https://ziontechgroup.com/analytics' },};

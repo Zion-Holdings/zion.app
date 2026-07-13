@@ -1,8 +1,8 @@
 // app/portal/tickets/page.tsx
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/portal/tickets' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/portal/tickets' },
+export const metadata = {
   title: 'Support Tickets — Client Portal',
   description: 'Track and manage your support requests.',
 };

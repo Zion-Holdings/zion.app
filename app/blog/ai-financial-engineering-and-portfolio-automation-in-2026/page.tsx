@@ -1,6 +1,6 @@
 import Link from 'next/link';
-e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-financial-engineering-and-portfolio-automation-in-2026' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-financial-engineering-and-portfolio-automation-in-2026' },
+export const metadata = {
   title: 'AI Financial Engineering and Portfolio Automation in 2026',
   description: 'Practical financial engineering and portfolio automation with AI assistants.',
 };

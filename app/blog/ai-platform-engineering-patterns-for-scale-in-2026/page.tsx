@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: "AI Platform Engineering Patterns for Scale in 2026 | Zion Tech Group",
   description: "Platform engineering patterns that help teams scale AI adoption reliably.",
   alternates: { canonical: "/ai-platform-engineering-patterns-for-scale-in-2026/" },

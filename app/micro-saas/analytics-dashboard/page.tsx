@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/micro-saas/analytics-dashboard' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/micro-saas/analytics-dashboard' },
+export const metadata = {
   title: 'Analytics Dashboard | Zion Tech Group',
   description: 'Real-time analytics dashboard for SaaS metrics and KPIs.',
 };

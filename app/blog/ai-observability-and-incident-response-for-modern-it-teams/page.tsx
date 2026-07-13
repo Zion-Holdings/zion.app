@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: "AI Observability and Incident Response for Modern IT Teams | Zion Tech Group",
   description: "Practical AI observability and incident response patterns for modern IT teams in 2026.",
   alternates: { canonical: "/ai-observability-and-incident-response-for-modern-it-teams/" },

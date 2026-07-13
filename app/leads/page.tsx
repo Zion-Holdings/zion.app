@@ -1,7 +1,7 @@
 import LeadsClient from './LeadsClient';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/leads' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/leads' },
+export const metadata = {
   title: 'Leads Control Center | Zion Tech Group',
   description: 'Lead management, outreach, and pipeline tracking for Zion Tech Group.',
 };

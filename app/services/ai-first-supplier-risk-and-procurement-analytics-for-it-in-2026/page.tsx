@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 
-export const metadata = {
+eexport const metadata = {
   title: 'AI-First Supplier Risk and Procurement Analytics for IT in 2026 | Zion Tech Group',
   description: 'AI-first supplier risk and procurement analytics for IT teams: vendor scoring, contract anomaly detection, spend forecasting, and automated renewal alerts.',
 }

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata = {
+eexport const metadata = {
   title: 'Healthcare CRM Automation: AI Patient Workflows That Reduce Admin Time | Zion Tech Group',
   description: 'Healthcare CRM automation with AI patient workflows, appointment reminders, intake enrichment, and HIPAA-aware automation for clinics and providers.',
   openGraph: {

@@ -1,5 +1,5 @@
-e  alternates: { canonical: 'https://ziontechgroup.com/seo/it-automation-free-tools' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/seo/it-automation-free-tools' },
+export const metadata = {
   title: 'IT Automation Free Tools and Scripts | Zion Tech Group',
   description: 'Zion Tech Group IT automation free tools and scripts: onboarding, patching, log rotation, ticket routing, and deployment shortcuts.',
 };

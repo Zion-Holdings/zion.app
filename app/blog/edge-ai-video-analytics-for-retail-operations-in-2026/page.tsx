@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 
-export const metadata = {
+eexport const metadata = {
   title: 'Edge AI Video Analytics for Retail Operations in 2026 | Zion Tech Group',
   description: 'A practical guide to edge AI video analytics for retail operations in 2026, including use cases, privacy considerations, and measurable operational improvements.',
 }

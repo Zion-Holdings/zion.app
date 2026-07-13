@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "AI Document Processing | Zion Tech Group",
   description:
     "Deploy AI document processing for extraction, classification, validation, and workflow handoff at scale.",

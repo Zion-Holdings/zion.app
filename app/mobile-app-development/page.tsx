@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/mobile-app-development' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/mobile-app-development' },
+export const metadata = {
   title: 'Mobile App Development | Zion Tech Group',
   description: 'Native and cross-platform mobile app development services.',
 };

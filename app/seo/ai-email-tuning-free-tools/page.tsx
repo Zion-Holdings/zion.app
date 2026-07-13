@@ -1,5 +1,5 @@
-e  alternates: { canonical: 'https://ziontechgroup.com/seo/ai-email-tuning-free-tools' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/seo/ai-email-tuning-free-tools' },
+export const metadata = {
   title: 'AI Email Tuning Free Tools | Zion Tech Group',
   description: 'Free AI email tuning tools from Zion Tech Group: subject-line scoring, readability checks, spam-score estimates, and send-time suggestions.',
 };

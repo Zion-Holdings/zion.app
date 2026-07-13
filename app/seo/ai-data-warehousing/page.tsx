@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "AI Data Warehousing Modernization | Zion Tech Group",
   description:
     "Modernize legacy warehouses with AI data warehousing modernization, ETL automation, and analytics.",

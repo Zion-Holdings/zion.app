@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
-export const metadata = {
+eexport const metadata = {
   title: '5G & Private Network Solutions',
   description: 'Private 5G networks, edge IoT, network slicing, and spectrum advisory for enterprise connectivity.',
   alternates: { canonical: 'https://ziontechgroup.com/5g-solutions' },};

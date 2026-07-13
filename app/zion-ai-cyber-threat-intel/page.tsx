@@ -1,7 +1,7 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
-export const metadata = {
+eexport const metadata = {
   title: 'Zion AI Cyber Threat Intel',
   description:
     'Aggregate and prioritize threat intelligence with automated correlation and actionable alerts.',

@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: 'Data Pipeline Automation Starter Kit | Zion Tech Group',
   description: 'Data pipeline automation starter kit with templates, integrations, validation steps, free deployment scripts, and AI/ML readiness checks.',
   alternates: { canonical: 'https://ziontechgroup.com/data-pipeline-automation-starter-kit' }

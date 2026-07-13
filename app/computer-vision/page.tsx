@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/computer-vision' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/computer-vision' },
+export const metadata = {
   title: 'Computer Vision Solutions | Zion Tech Group',
   description: 'Image and video analysis powered by deep learning and computer vision.',
 };

@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 
-export const metadata = {
+eexport const metadata = {
   title: 'Cyber Incident Response Retainer Services for IT Teams in 2026 | Zion Tech Group',
   description: 'A practical look at cyber incident response retainer services for IT teams in 2026, including escalation playbooks, tabletop readiness, and measurable response metrics.',
 }

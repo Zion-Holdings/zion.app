@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: 'AI Ops Assistant Free Trial | Zion Tech Group',
   description: 'Start an AI ops assistant free trial to evaluate operational assistants, incident support, and production automation from Zion Tech Group.',
   alternates: { canonical: 'https://ziontechgroup.com/ai-ops-assistant-free-trial' }

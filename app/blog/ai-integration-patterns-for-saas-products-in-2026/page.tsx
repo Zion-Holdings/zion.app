@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: "AI Integration Patterns for SaaS Products in 2026 | Zion Tech Group",
   description: "Practical AI integration patterns for SaaS products looking to add intelligent features.",
   alternates: { canonical: "/ai-integration-patterns-for-saas-products-in-2026/" },

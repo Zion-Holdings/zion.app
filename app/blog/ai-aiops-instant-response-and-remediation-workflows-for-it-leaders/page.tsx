@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: 'AIOps Instant Response and Remediation Workflows for IT Leaders | Zion Tech Group',
   description: 'Learn how Zion Tech Group applies AIOps instant response and remediation workflows to reduce incidents, automate fixes, and keep IT delivery stable.',
   alternates: { canonical: 'https://ziontechgroup.com/blog/ai-aiops-instant-response-and-remediation-workflows-for-it-leaders' },

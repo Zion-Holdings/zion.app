@@ -1,5 +1,5 @@
-e  alternates: { canonical: 'https://ziontechgroup.com/seo/revenue-operations-ai-tools' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/seo/revenue-operations-ai-tools' },
+export const metadata = {
   title: 'Revenue Operations AI Tools | Zion Tech Group',
   description: 'Revenue operations AI tools from Zion Tech Group: pipeline hygiene, forecasting, lead scoring, and GTM automation helpers.',
 };

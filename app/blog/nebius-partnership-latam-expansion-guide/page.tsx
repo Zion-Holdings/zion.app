@@ -1,5 +1,5 @@
 
-export const metadata = {
+eexport const metadata = {
   title: "Nebius Partnership LATAM Expansion Guide | Zion Tech Group",
   description: "How Zion Tech Group and Nebius can collaborate on LATAM AI cloud expansion through local delivery, managed services, and support.",
   alternates: { canonical: "/nebius-partnership-latam-expansion-guide/" },

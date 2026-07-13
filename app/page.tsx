@@ -4,7 +4,6 @@
 import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import { allServices } from './data/servicesData';
-import AnimatedCounter from '@/components/AnimatedCounter';
 import AnimatedCounter from '../components/AnimatedCounter';
 import ServiceBrowser from '../components/ServiceBrowser';
 import ServiceSpotlight from '../components/ServiceSpotlight';

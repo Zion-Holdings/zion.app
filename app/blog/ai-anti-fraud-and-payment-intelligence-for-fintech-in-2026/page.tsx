@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 
-export const metadata = {
+eexport const metadata = {
   title: 'AI Anti-Fraud and Payment Intelligence for Fintech in 2026 | Zion Tech Group',
   description: 'A practical guide to AI anti-fraud and payment intelligence for fintech in 2026, including real-time signal ranking, false-positive reduction, and regulatory considerations.',
 }

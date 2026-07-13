@@ -1,7 +1,7 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
-export const metadata = {
+eexport const metadata = {
   title: 'Zion AI Incident Response',
   description:
     'Accelerate incident triage and resolution with automated playbooks and real-time collaboration.',

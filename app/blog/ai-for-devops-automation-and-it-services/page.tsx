@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-export const metadata = {
+eexport const metadata = {
   title: 'AI for DevOps Automation and IT Services | Zion Tech Group',
   description:
     'Explore how AI-powered DevOps automation improves CI/CD pipelines, infrastructure management, and incident response for IT teams.',

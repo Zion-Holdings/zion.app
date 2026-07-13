@@ -1,6 +1,6 @@
 import Link from 'next/link';
-e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-support-automation-ai-chat-and-ticket-intelligence-in-2026' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-support-automation-ai-chat-and-ticket-intelligence-in-2026' },
+export const metadata = {
   title: 'AI Support Automation: AI Chat and Ticket Intelligence in 2026',
   description: 'Support automation models that combine AI chat, ticket triage, and knowledge retrieval for faster customer outcomes.',
 };

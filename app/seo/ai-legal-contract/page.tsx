@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "AI Legal and Contract Intelligence | Zion Tech Group",
   description:
     "Automate legal and contract workflows with AI extraction, clause review, and obligation tracking.",

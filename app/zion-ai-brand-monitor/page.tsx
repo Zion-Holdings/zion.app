@@ -1,7 +1,7 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
-export const metadata = {
+eexport const metadata = {
   title: 'Zion AI Brand Monitor',
   description:
     'Track brand mentions, sentiment, and competitive positioning across channels in real time.',

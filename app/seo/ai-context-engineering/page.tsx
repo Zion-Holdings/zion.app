@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "AI Context Engineering for Enterprise | Zion Tech Group",
   description:
     "Improve AI outputs with enterprise context engineering: retrieval, grounding, and policy-aware prompt orchestration.",

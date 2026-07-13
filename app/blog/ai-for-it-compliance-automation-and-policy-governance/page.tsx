@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: 'AI for IT Compliance Automation and Policy Governance | Zion Tech Group',
   description: 'Use AI to automate IT compliance checks, evidence collection, policy enforcement, and governance reporting.',
   alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-it-compliance-automation-and-policy-governance' },

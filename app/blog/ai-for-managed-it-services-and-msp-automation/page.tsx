@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-export const metadata = {
+eexport const metadata = {
   title: 'AI for Managed IT Services and MSP Automation | Zion Tech Group',
   description:
     'Discover how AI-driven MSP automation can expand service capacity, reduce manual work, and improve client outcomes.',

@@ -1,5 +1,5 @@
-e  alternates: { canonical: 'https://ziontechgroup.com/business-solutions/it-services' },
-xport const metadata = { title: 'IT Services — Zion Tech Group', description: 'Managed IT services from Zion Tech Group: cloud, cybersecurity, platform engineering, support, and infrastructure modernization.' };
+  alternates: { canonical: 'https://ziontechgroup.com/business-solutions/it-services' },
+export const metadata = { title: 'IT Services — Zion Tech Group', description: 'Managed IT services from Zion Tech Group: cloud, cybersecurity, platform engineering, support, and infrastructure modernization.' };
 import Link from 'next/link';
 
 const items = [

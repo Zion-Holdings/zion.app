@@ -1,7 +1,7 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
-export const metadata = {
+eexport const metadata = {
   title: 'Zion AI Spend Intelligence',
   description:
     'Gain visibility into spend across categories, vendors, and departments with AI-powered anomaly detection.',

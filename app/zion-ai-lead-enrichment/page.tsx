@@ -1,7 +1,7 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
-export const metadata = {
+eexport const metadata = {
   title: 'Zion AI Lead Enrichment',
   description:
     'Enrich leads with firmographic and technographic data to prioritize high-value opportunities.',

@@ -1,5 +1,5 @@
-e  alternates: { canonical: 'https://ziontechgroup.com/seo/ai-copilot-enterprise-it-free-resources' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/seo/ai-copilot-enterprise-it-free-resources' },
+export const metadata = {
   title: 'AI Copilot Enterprise IT Free Resources | Zion Tech Group',
   description: 'Free enterprise IT copilot resources from Zion Tech Group: prompt packs, guardrails, runbooks, onboarding kit, and evaluation templates.',
 };

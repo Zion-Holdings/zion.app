@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/tools' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/tools' },
+export const metadata = {
   title: 'Free Developer Tools & Utilities | Zion Tech Group',
   description: '50+ free online developer tools: JSON formatter, JWT decoder, regex tester, SQL formatter, color palette generator, QR code generator, and more.',
 };

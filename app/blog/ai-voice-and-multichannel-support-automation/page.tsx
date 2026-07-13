@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: "AI Voice and Multichannel Support Automation | Zion Tech Group",
   description: "How AI voice and multichannel support automation can reduce ticket volume and improve CX.",
   alternates: { canonical: "/ai-voice-and-multichannel-support-automation/" },

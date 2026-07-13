@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-education-platforms-and-learning-intelligence-in-2026' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-education-platforms-and-learning-intelligence-in-2026' },
+export const metadata = {
   title: 'AI-First Education Platforms and Learning Intelligence in 2026',
   description: 'Use AI-assisted learning intelligence and education platforms to improve outcomes and operational efficiency.',
 };

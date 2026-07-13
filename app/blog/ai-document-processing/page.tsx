@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-export const metadata = {
+eexport const metadata = {
   title: 'AI Document Processing & OCR — Zion Tech Group',
   description:
     'Extract data from invoices, contracts, and forms with 99.5% accuracy using AI document processing and OCR.',

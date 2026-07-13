@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "AI Model Orchestration | Zion Tech Group",
   description:
     "Use AI model orchestration to route tasks, manage fallback chains, and optimize cost and latency at scale.",

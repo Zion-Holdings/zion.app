@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: "AI CI Execution and CI/CD AI Automation | Zion Tech Group",
   description: "AI CI Execution and CI/CD AI Automation.",
   alternates: { canonical: "/ai-ci-execution-and-ci-cd-ai-automation/" },

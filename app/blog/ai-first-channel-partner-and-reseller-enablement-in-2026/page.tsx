@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-channel-partner-and-reseller-enablement-in-2026' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-channel-partner-and-reseller-enablement-in-2026' },
+export const metadata = {
   title: 'AI-First Channel Partner and Reseller Enablement in 2026',
   description: 'AI-assisted partner enablement, co-selling, and reseller operations for faster revenue growth.',
 };

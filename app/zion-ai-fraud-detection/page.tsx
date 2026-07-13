@@ -1,5 +1,5 @@
-e  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-fraud-detection' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-fraud-detection' },
+export const metadata = {
   title: "Zion AI Fraud Detection | Zion Tech Group",
   description: "AI-powered fraud detection for real-time transaction monitoring and anomaly detection.",
 };

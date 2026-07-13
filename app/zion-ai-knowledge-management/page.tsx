@@ -1,7 +1,7 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
-export const metadata = {
+eexport const metadata = {
   title: 'Zion AI Knowledge Management',
   description:
     'Centralize and surface organizational knowledge with AI-powered search, tagging, and recommendations.',

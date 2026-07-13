@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: '5 Proven AI Automation Strategies for Enterprise Workflow Optimization | Zion Tech Group',
   description: 'AI automation strategies for enterprise workflow optimization: process mining, hybrid RPA, document workflows, journey automation, and cross-department orchestration.',
   alternates: { canonical: '/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization/' },

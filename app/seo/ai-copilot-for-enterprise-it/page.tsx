@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: 'AI Copilot for Enterprise IT | Zion Tech Group',
   description: 'Zion Tech Group builds AI copilots for enterprise IT: ticket triage, runbooks, change management, and incident response with faster resolution and lower noise.',
   alternates: { canonical: 'https://ziontechgroup.com/ai-copilot-for-enterprise-it' },

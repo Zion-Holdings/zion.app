@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "Blockchain & Web3 Services | Zion Tech Group",
   description: "Blockchain development, smart contracts, DeFi, NFT platforms, and Web3 infrastructure",
   alternates: { canonical: "https://ziontechgroup.com/services/?category=blockchain" },

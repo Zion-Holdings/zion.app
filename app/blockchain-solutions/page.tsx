@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
-export const metadata = {
+eexport const metadata = {
   title: 'Blockchain & Web3 Solutions',
   description: 'Enterprise blockchain for supply chain, identity, smart contracts, and TCR programs — auditable and lawful.',
   alternates: { canonical: 'https://ziontechgroup.com/blockchain-solutions' },};

@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-loan-origination-and-credit-intelligence-in-2026' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-loan-origination-and-credit-intelligence-in-2026' },
+export const metadata = {
   title: 'AI-First Loan Origination and Credit Intelligence in 2026',
   description: 'Use AI-assisted loan origination and credit intelligence to improve underwriting speed and portfolio quality.',
 };

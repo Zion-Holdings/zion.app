@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: 'AI for IT Remote Support and Endpoint Assistance | Zion Tech Group',
   description: 'Discover how AI improves remote support, endpoint troubleshooting, guided fixes, and technician enablement.',
   alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-it-remote-support-and-endpoint-assistance' },

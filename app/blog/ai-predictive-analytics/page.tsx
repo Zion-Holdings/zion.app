@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-export const metadata = {
+eexport const metadata = {
   title: 'AI Predictive Analytics Platform — No-Code ML | Zion Tech Group',
   description:
     'No-code predictive analytics with automated ML, forecasting, anomaly detection, and database/API integration.',

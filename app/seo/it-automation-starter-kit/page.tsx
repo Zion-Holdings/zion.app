@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: 'IT Automation Starter Kit | Zion Tech Group',
   description: 'Download an IT automation starter kit from Zion Tech Group: runbooks, monitoring, onboarding checklists, and deployment patterns for faster client delivery.',
   alternates: { canonical: 'https://ziontechgroup.com/it-automation-starter-kit' },

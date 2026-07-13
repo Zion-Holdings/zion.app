@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-export const metadata = {
+eexport const metadata = {
   title: 'Security Services | Zion Tech Group',
   description: 'Enterprise cybersecurity services — threat detection, zero trust, compliance, and security monitoring.',
   alternates: { canonical: 'https://ziontechgroup.com/services/?category=security' },

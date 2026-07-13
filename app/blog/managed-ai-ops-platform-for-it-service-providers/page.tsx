@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-export const metadata = {
+eexport const metadata = {
   title: 'Managed AI Ops Platform for IT Service Providers',
   description: 'Managed AI ops platform for IT service providers: incident workflows, change governance, backup resilience, and automation that scales delivery.',
   alternates: { canonical: '/blog/managed-ai-ops-platform-for-it-service-providers' },

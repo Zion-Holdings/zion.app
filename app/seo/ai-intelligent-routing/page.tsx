@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "AI Intelligent Routing for Support | Zion Tech Group",
   description:
     "Improve response speed with AI intelligent routing, tiering, and escalation control.",

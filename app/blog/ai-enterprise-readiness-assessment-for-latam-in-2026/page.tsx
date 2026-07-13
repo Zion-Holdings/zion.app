@@ -1,6 +1,6 @@
 import Link from 'next/link';
-e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-enterprise-readiness-assessment-for-latam-in-2026' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-enterprise-readiness-assessment-for-latam-in-2026' },
+export const metadata = {
   title: 'AI Enterprise Readiness Assessment for LATAM in 2026',
   description: 'An enterprise readiness checklist for evaluating execution readiness and partnership fit in LATAM.',
 };

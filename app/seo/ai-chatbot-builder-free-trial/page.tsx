@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "AI Chatbot Builder Free Trial | Zion Tech Group",
   description:
     "Build and test an AI chatbot with Zion Tech Group using our guided free trial and prebuilt integrations.",

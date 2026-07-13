@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-data-pipeline-lakehouse-platform-engineering-in-2026' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-data-pipeline-lakehouse-platform-engineering-in-2026' },
+export const metadata = {
   title: 'AI Data Pipeline and Lakehouse Platform Engineering in 2026',
   description: 'Modern data pipeline and lakehouse patterns with AI-assisted ingestion, quality, and platform operations.',
 };

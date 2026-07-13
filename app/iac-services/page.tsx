@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "Infrastructure as Code Services | Zion Tech Group",
   description: "IaC solutions — Terraform, Pulumi, CloudFormation, and infrastructure automation",
   alternates: { canonical: "https://ziontechgroup.com/services/?category=iac" },

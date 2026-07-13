@@ -1,6 +1,6 @@
 import Link from 'next/link';
-e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-outsourcing-vs-inhouse-it-teams-2026' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-outsourcing-vs-inhouse-it-teams-2026' },
+export const metadata = {
   title: 'AI Outsourcing vs. In-House IT Teams for LATAM in 2026',
   description: 'Comparing outsourcing versus in-house IT execution for LATAM companies.',
 };

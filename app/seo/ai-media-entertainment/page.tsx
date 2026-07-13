@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "AI Media and Entertainment Solutions | Zion Tech Group",
   description:
     "Apply AI to media and entertainment workflows: content personalization, metadata, and operational efficiency.",

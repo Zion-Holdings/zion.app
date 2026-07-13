@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-export const metadata = {
+eexport const metadata = {
   title: 'AI for IT Project Delivery and Implementation Services | Zion Tech Group',
   description:
     'AI-assisted project delivery improves planning, risk detection, and implementation speed for IT service providers.',

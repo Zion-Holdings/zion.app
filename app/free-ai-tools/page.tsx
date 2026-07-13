@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation';
 
-export const metadata = {
+eexport const metadata = {
   title: 'Free AI Tools',
   description: 'Free online tools for developers and businesses from Zion Tech Group.',
   alternates: { canonical: '/free-tools-hub/' },

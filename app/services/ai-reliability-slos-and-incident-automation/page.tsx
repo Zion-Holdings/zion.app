@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 
-export const metadata = {
+eexport const metadata = {
   title: 'AI Reliability SLOs and Incident Automation | Zion Tech Group',
   description: 'AI-powered reliability monitoring with SLO tracking, incident automation, on-call orchestration, and predictive alerting for modern infrastructure.',
 }

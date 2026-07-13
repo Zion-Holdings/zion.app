@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/telemedicine' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/telemedicine' },
+export const metadata = {
   title: 'Telemedicine Platform | Zion Tech Group',
   description: 'HIPAA-compliant telemedicine platform for healthcare providers.',
 };

@@ -1,6 +1,6 @@
 import Link from 'next/link';
-e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-devops-ai-automation-platform-engineering-in-2026' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-devops-ai-automation-platform-engineering-in-2026' },
+export const metadata = {
   title: 'AI DevOps, Automation, and Platform Engineering in 2026',
   description: 'AI DevOps, automation, and platform engineering models that help teams ship faster with guardrails.',
 };

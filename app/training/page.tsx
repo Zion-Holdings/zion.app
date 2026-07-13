@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/training' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/training' },
+export const metadata = {
   title: 'Training & Certification | Zion Tech Group',
   description: 'Professional training and certification programs for AI and IT technologies.',
 };

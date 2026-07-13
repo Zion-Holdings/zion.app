@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: 'AI Platform Security and Data Governance for Enterprises | Zion Tech Group',
   description: 'Practical AI platform security and data governance guidance for enterprises deploying AI across teams, clouds, and vendors.',
   alternates: { canonical: 'https://ziontechgroup.com/blog/ai-platform-security-and-data-governance-for-enterprises' },

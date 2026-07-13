@@ -1,7 +1,7 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
-export const metadata = {
+eexport const metadata = {
   title: 'Zion AI Customer Success',
   description:
     'Proactively identify at-risk accounts and drive expansion with AI-powered health scoring and playbooks.',

@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: "Enterprise AI Integration Roadmap for 2026 | Zion Tech Group",
   description: "A practical enterprise AI integration roadmap for leaders executing AI adoption safely.",
   alternates: { canonical: "/enterprise-ai-integration-roadmap-for-2026/" },

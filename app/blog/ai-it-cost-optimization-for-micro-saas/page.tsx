@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: "AI/IT Cost Optimization for Micro-SaaS in 2026 | Zion Tech Group",
   description: "Practical AI/IT cost optimization strategies for micro-SaaS teams and startups.",
   alternates: { canonical: "/ai-it-cost-optimization-for-micro-saas/" },

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "AI Manufacturing Quality Assurance | Zion Tech Group",
   description:
     "Improve manufacturing quality with AI visual inspection, defect prediction, and process control.",

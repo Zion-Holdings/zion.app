@@ -1,5 +1,5 @@
-e  alternates: { canonical: 'https://ziontechgroup.com/solutions/manufacturing-industrial' },
-xport const metadata = { title: "Manufacturing & Industrial", description: "Industry 4.0 solutions. Digital twins, predictive maintenance, IoT, quality inspection." };
+  alternates: { canonical: 'https://ziontechgroup.com/solutions/manufacturing-industrial' },
+export const metadata = { title: "Manufacturing & Industrial", description: "Industry 4.0 solutions. Digital twins, predictive maintenance, IoT, quality inspection." };
 import Link from 'next/link';
 
 export default function SolutionPage() {

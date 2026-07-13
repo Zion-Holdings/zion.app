@@ -1,7 +1,7 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
-export const metadata = {
+eexport const metadata = {
   title: 'Zion AI Data Governance',
   description:
     'Govern data quality, lineage, and access policies with AI-powered cataloging and policy enforcement.',

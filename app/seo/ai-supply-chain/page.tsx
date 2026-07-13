@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "AI Supply Chain Optimization | Zion Tech Group",
   description:
     "Improve logistics and inventory decisions with AI supply chain optimization and predictive planning.",

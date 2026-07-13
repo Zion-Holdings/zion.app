@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, Cog, Search, BarChart3 } from 'lucide-react';
 
-export const metadata = {
+eexport const metadata = {
   title: 'AI Lab',
   description:
     'Explore Zion\'s AI Lab — interactive tools and configurators for autonomous AI solutions and architecture planning.',

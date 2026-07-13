@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: "AI Consulting Services for Enterprise IT in 2026 | Zion Tech Group",
   description: "Practical AI consulting services for enterprise IT teams evaluating managed support, pilots, and implementation partners.",
   alternates: { canonical: "/ai-consulting-services-for-enterprise-it-in-2026/" },

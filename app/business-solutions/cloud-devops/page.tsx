@@ -1,5 +1,5 @@
-e  alternates: { canonical: 'https://ziontechgroup.com/business-solutions/cloud-devops' },
-xport const metadata = { title: 'Cloud & DevOps — Zion Tech Group', description: 'Cloud and DevOps services from Zion Tech Group: modern infrastructure, CI/CD, FinOps, and platform engineering.' };
+  alternates: { canonical: 'https://ziontechgroup.com/business-solutions/cloud-devops' },
+export const metadata = { title: 'Cloud & DevOps — Zion Tech Group', description: 'Cloud and DevOps services from Zion Tech Group: modern infrastructure, CI/CD, FinOps, and platform engineering.' };
 import Link from 'next/link';
 
 const items = [

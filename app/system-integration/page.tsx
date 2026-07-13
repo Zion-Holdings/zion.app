@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-e  alternates: { canonical: 'https://ziontechgroup.com/system-integration' },
-xport const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/system-integration' },
+export const metadata = {
   title: 'System Integration | Zion Tech Group',
   description: 'Seamlessly integrate your systems with APIs, middleware, and custom connectors.',
 };

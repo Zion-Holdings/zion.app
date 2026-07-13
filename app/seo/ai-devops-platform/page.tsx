@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "AI DevOps Platform Engineering | Zion Tech Group",
   description:
     "Increase release velocity with AI DevOps platform engineering, automated testing, and deployment intelligence.",

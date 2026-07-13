@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 
-export const metadata = {
+eexport const metadata = {
   title: 'AI-First MSP Pricing Model for AI Support Automation in 2026 | Zion Tech Group',
   description: 'An MSP pricing model for AI support automation in 2026, covering tier structures, automation credits, response commitments, and ROI measurement for managed AI services.',
 }

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "AI Data Pipeline Automation | Zion Tech Group",
   description:
     "Automate data pipelines with AI-assisted ingestion, validation, and monitoring built for IT and analytics teams.",

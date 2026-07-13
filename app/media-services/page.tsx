@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "Media & Streaming Services | Zion Tech Group",
   description: "Media technology — video streaming, content delivery, OTT platforms, and digital media management",
   alternates: { canonical: "https://ziontechgroup.com/services/?category=media" },

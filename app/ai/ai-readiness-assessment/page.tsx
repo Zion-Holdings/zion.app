@@ -2,7 +2,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { ArrowRight, CheckCircle2, Shield, Zap, BarChart3 } from 'lucide-react';
 
-export const metadata = {
+eexport const metadata = {
   title: 'Free AI Readiness Assessment | Zion Tech Group',
   description:
     'Get a free AI readiness assessment from Zion Tech Group. Discover quick wins for automation, security, cloud, and AI delivery in 5 minutes.',

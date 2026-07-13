@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata = {
+eexport const metadata = {
   title: "AI Factory Intelligence for Manufacturing | Zion Tech Group",
   description:
     "Improve throughput and quality with AI factory intelligence, predictive control, and maintenance.",

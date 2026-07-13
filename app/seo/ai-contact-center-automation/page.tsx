@@ -1,4 +1,4 @@
-export const metadata = {
+eexport const metadata = {
   title: 'AI Contact Center Automation | Zion Tech Group',
   description: 'Explore AI contact center automation, QA automation, workforce optimization, and conversation intelligence use cases for modern support teams.',
   alternates: { canonical: 'https://ziontechgroup.com/ai-contact-center-automation' }
