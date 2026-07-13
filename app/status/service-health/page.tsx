@@ -1,6 +1,6 @@
 // app/status/service-health/page.tsx — Live Service Health Monitor
-import { allServices } from '../../../data/servicesData';
-import type { Service } from '../../../data/servicesData';
+import { allServices } from '../../data/servicesData';
+import type { Service } from '../../data/servicesData';
 import type { Metadata } from 'next';
 
 export const metadata = {
