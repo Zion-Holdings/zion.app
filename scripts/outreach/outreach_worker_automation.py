@@ -738,8 +738,8 @@ def _build_pt(selected, company_name):
             if len(selected_lines) == 3:
                 break
     return {
-        'opening': f'Obrigado pela conversa com a {company_name}.',
-        'need': 'Automação com IA pode reduzir custos, melhorar resposta e proteger receita.',
+        'opening': f'Obrigado pela parceria com a {company_name}.',
+        'need': 'Automação com IA pode reduzir custos, melhorar o tempo de resposta e proteger receita.',
         'pillars': chr(10).join(selected_lines[:3]),
         'cta': 'Se fizer sentido, podemos avançar por e-mail ou por uma call rápida:',
         'closing': 'Fico à disposição para criarmos algo mútuo e rápido.'
