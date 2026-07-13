@@ -10,7 +10,8 @@ FIXED for proper conversation threading
 import urllib.request, urllib.parse, json, datetime, sys, time, base64
 from pathlib import Path
 
-WORKSPACE = Path('/root/.openclaw/workspace')
+_DEFAULT_WORKSPACE = Path.home() / '.openclaw' / 'workspace'
+WORKSPACE = _DEFAULT_WORKSPACE if (_DEFAULT_WORKSPACE / 'gog_tokens.json').exists() else Path('/root/.openclaw/workspace')
 TOKENS_FILE = WORKSPACE / 'gog_tokens.json'
 
 def load_gog_tokens():
