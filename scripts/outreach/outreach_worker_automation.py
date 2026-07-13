@@ -337,6 +337,20 @@ def resolve_thread_id(email, subject_hint=None):
         return hits[0].get('threadId') or hits[0].get('id')
     return None
 
+def _gmail_execute(request, timeout: int = 18):
+    try:
+        from concurrent.futures import ThreadPoolExecutor
+    except Exception:
+        ThreadPoolExecutor = None
+    def _execute(req):
+        return req.execute()
+    if ThreadPoolExecutor is None:
+        return _execute(request)
+    with ThreadPoolExecutor(max_workers=1) as ex:
+        fut = ex.submit(_execute, request)
+        return fut.result(timeout=timeout)
+
+
 def probe_thread_alive(thread_id, _seen=None):
     if not thread_id:
         return False
@@ -346,13 +360,15 @@ def probe_thread_alive(thread_id, _seen=None):
         return False
     _seen.add(thread_id)
     try:
-        t = _timed_gmail_call(service.users().threads().get(userId='me', id=thread_id, format='metadata', metadataHeaders=['From','Subject']))
+        if service is None:
+            return False
+        t = _gmail_execute(service.users().threads().get(userId='me', id=thread_id, format='metadata', metadataHeaders=['From','Subject']))
         if not t:
             return False
         messages = t.get('messages') or []
         if messages:
             return True
-        resp = _timed_gmail_call(service.users().messages().list(userId='me', q=f'threadId:{thread_id} in:anywhere', maxResults=5))
+        resp = _gmail_execute(service.users().messages().list(userId='me', q=f'threadId:{thread_id} in:anywhere', maxResults=5))
         if resp and resp.get('messages'):
             return True
     except Exception:
