@@ -12,3 +12,4 @@
 {"ts": "2026-07-13T08:33:23.647789+00:00", "email": "freya@service.kernal-automation-hk.com", "msg_id": "19f5a9ad9de43cbb", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
 {"ts": "2026-07-13T09:11:11.872600+00:00", "email": "seminarios@funetise.com", "msg_id": "19f5aba515e97828", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
 {"ts": "2026-07-13T09:11:33.049680+00:00", "email": "syblower@163.com", "msg_id": "19f5ab98d9ea213d", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-13T10:04:52.111865+00:00", "email": "zach.hasseler@datadoghq.com", "msg_id": "19f5aed2b409ed7f", "query": "\"ziontechgroup.com\"", "confidence": 0, "high_signal": false}

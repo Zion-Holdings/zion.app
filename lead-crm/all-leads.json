@@ -7635,5 +7635,22 @@
     "llm_model": "deterministic-template-v1",
     "llm_reason": "Thank you for your interest in our services. I'd be happy to prepare a customized proposal based on your requirements.\n\nCould you please provide more details about your project scope and timeline?\n\nBest regards,\nZion Tech Group",
     "confidence": 2
+  },
+  {
+    "to": "zach.hasseler@datadoghq.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "datadoghq.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Score: 0\n#### Rationale (aligned to scoring framework for managed AI/IT services signal):\n- 2 = Strong explicit signal: The entity publicly and clearly operates in/advertises managed AI/IT services (e.g. site content, service listings, case studies directly referencing this work)\n- 1 = Weak indi",
+    "confidence": 0
   }
 ]
