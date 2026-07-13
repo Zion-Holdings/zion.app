@@ -296,7 +296,8 @@ export default function HomePage() {
               <span className="text-green-400">●</span> <ServiceCounter /> Services — Live Now
             </div>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            <span className="gradient-text">AI & IT Services</span><br />
+            <span className="gradient-text">AI & IT Services</span>
+            {' '}<br />
             <span className="text-white">for Your Business</span>
           </h1>
           <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
