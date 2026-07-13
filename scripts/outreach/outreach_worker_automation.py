@@ -496,8 +496,9 @@ def _call_nous_hermes(thread_text: str, contact_name: str, company_name: str, la
         content = message.get('content') or message.get('reasoning') or ''
         if not isinstance(content, str) or not content.strip():
             return ''
+        required = ['calendly.com/kleber-ziontechgroup', 'ziontechgroup.com', 'free', 'thank']
         lower = content.lower()
-        if not all(r in lower for r in ['calendly.com/kleber-ziontechgroup', 'ziontechgroup.com', 'free', 'thank']):
+        if not all(r in lower for r in required):
             return ''
         return content.strip()
     except Exception as e:
