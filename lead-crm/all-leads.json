@@ -7601,5 +7601,39 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Score: 1\n#### Rationale (aligned to standard scoring for managed AI/IT services relevance):\n- **Score 2 = Explicit confirmed relevance**: The signal clearly proves the entity offers managed AI/IT services (e.g. explicit service listings, direct mention of these offerings in the provided content)",
     "confidence": 1
+  },
+  {
+    "to": "seminarios@funetise.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "funetise.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Score: 1\n#### Rationale aligned to managed AI/IT services relevance scoring:\n- **Not a 2**: There is no explicit, direct signal that the entity provides managed AI/IT services. The domain name does not include any specific keywords tied to these offerings (e.g. \"managed-it\", \"ai-services\", \"clou",
+    "confidence": 1
+  },
+  {
+    "to": "syblower@163.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "163.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "template",
+    "llm_model": "deterministic-template-v1",
+    "llm_reason": "Thank you for your interest in our services. I'd be happy to prepare a customized proposal based on your requirements.\n\nCould you please provide more details about your project scope and timeline?\n\nBest regards,\nZion Tech Group",
+    "confidence": 2
   }
 ]

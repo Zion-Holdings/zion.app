@@ -10,3 +10,5 @@
 {"ts": "2026-07-13T02:00:16.207118+00:00", "email": "robot@py.acciontrabajo.com", "msg_id": "19f592d84db4b497", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
 {"ts": "2026-07-13T02:11:46.807406+00:00", "email": "support@heygen.com", "msg_id": "19f593bbaf3355c9", "query": "\"Zion Tech Group\"", "confidence": 0, "high_signal": false}
 {"ts": "2026-07-13T08:33:23.647789+00:00", "email": "freya@service.kernal-automation-hk.com", "msg_id": "19f5a9ad9de43cbb", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
+{"ts": "2026-07-13T09:11:11.872600+00:00", "email": "seminarios@funetise.com", "msg_id": "19f5aba515e97828", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
+{"ts": "2026-07-13T09:11:33.049680+00:00", "email": "syblower@163.com", "msg_id": "19f5ab98d9ea213d", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
