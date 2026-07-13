@@ -8128,5 +8128,22 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Rating: 1 (weak/low-value signal)\n#### Rating framework context for this use case:\n- 2 = Explicit, high-confidence signal directly tied to managed AI/IT services (e.g., domain branded explicitly for these services, accompanying context confirms these are core offerings)\n- 1 = Weak, indirect sign",
     "confidence": 1
+  },
+  {
+    "to": "updates@sunbeltbusinessbrokers.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "sunbeltbusinessbrokers.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 0\n#### Reasoning:\nThe only provided input is the domain name `ziontechgroup.com` and a matching `mydomain` tag, with no accompanying context, service descriptions, relevant keywords, or site content linking the entity to managed AI/IT services. The generic \"tech group\" branding in the do",
+    "confidence": 0
   }
 ]
