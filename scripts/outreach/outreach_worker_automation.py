@@ -463,6 +463,41 @@ def _url_and_token_from_auth():
     return url, token
 
 
+def _strip_llm_preamble(text: str) -> str:
+    if not text or not isinstance(text, str):
+        return ''
+    noise_starts = [
+        'got it,', 'got it',
+        'okay, let\'s tackle this email.',
+        'let\'s get started.',
+        'first, the recipient is',
+        'wait,', 'wait no', 'wait, no',
+        'subject:', 'subject line',
+        'hmm,', 'hmm',
+        'actually,',
+    ]
+    lines = text.splitlines()
+    cleaned = []
+    skip = True
+    for line in lines:
+        lower = line.lower().strip()
+        if skip and any(lower.startswith(n.lower()) for n in noise_starts):
+            continue
+        skip = False
+        cleaned.append(line)
+    out=[]
+    blank_count=0
+    for line in cleaned:
+        if line.strip()=='':
+            blank_count+=1
+            if blank_count<=2:
+                out.append(line)
+        else:
+            blank_count=0
+            out.append(line)
+    return '\n'.join(out).strip()
+
+
 def _call_nous_hermes(thread_text: str, contact_name: str, company_name: str, language: str) -> str:
     try:
         import os as _os
@@ -482,6 +517,7 @@ def _call_nous_hermes(thread_text: str, contact_name: str, company_name: str, la
         if not token or not url:
             return ''
         chat_url = url.rstrip('/') + '/chat/completions'
+        print('NOUS_CALL', chat_url, 'model=', model, 'token_prefix=', token[:8], flush=True)
         trimmed = (thread_text or '').strip()[:2400]
         prompt = (
             f"You are the CEO of Zion Tech Group writing in {language} to {contact_name} at {company_name}.\n\n"
@@ -506,7 +542,11 @@ def _call_nous_hermes(thread_text: str, contact_name: str, company_name: str, la
             'max_tokens': 480,
         }
         headers = {'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'}
-        data = _webfetch_json(chat_url, headers=headers, data=json.dumps(payload).encode('utf-8'), method='POST')
+        raw = json.dumps(payload).encode('utf-8')
+        data = _webfetch_json(chat_url, headers=headers, data=raw, method='POST')
+        print('NOUS_RESP_TYPE', type(data).__name__, flush=True)
+        if isinstance(data, dict):
+            print('NOUS_RESP_KEYS', sorted(data.keys()), 'http=', data.get('__http_status__'), 'err=', data.get('error') or data.get('message') or data.get('detail'), flush=True)
         if data is None or (isinstance(data, dict) and data.get('__http_status__') == 401):
             return ''
         if not isinstance(data, dict):
@@ -514,12 +554,15 @@ def _call_nous_hermes(thread_text: str, contact_name: str, company_name: str, la
         message = ((data.get('choices') or [{}])[0].get('message') or {})
         content = message.get('content') or message.get('reasoning') or ''
         if not isinstance(content, str) or not content.strip():
+            print('NOUS_EMPTY_CONTENT', flush=True)
             return ''
+        cleaned = _strip_llm_preamble(content)
         required = ['calendly.com/kleber-ziontechgroup', 'ziontechgroup.com', 'free', 'thank']
-        lower = content.lower()
+        lower = cleaned.lower()
         if not all(r in lower for r in required):
+            print('NOUS_MISSING_REQUIRED', lower[:180], flush=True)
             return ''
-        return content.strip()
+        return cleaned.strip()
     except Exception as e:
         print('LLM_NOUS_FINAL_ERR', repr(e), flush=True)
         return ''
