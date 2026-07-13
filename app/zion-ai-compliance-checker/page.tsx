@@ -1,7 +1,7 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Zion AI Compliance Checker',
   description:
     'Automate compliance checks with policy-aware AI that tracks regulatory updates and flags gaps.',

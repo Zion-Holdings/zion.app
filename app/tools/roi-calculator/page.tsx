@@ -6,7 +6,7 @@ import type { Metadata } from 'next';
 import RouterPing from './pingClient';
 import ROICalculatorClient from './ROICalculatorClient';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'ROI Calculator — Zion Tech Group',
   description: 'Calculate the return on investment for AI and IT services with our free ROI calculator.',
   alternates: { canonical: 'https://ziontechgroup.com/tools/roi-calculator' },

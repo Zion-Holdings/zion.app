@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'AI Cybersecurity Operations for MSP | Zion Tech Group',
   description:
     'AI can strengthen MSP cybersecurity operations through automated alert triage, threat enrichment, and client-ready reporting.',

@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'AI for Outsourced IT Support Automation | Zion Tech Group',
   description:
     'AI can improve outsourced IT support by automating ticket handling, routing, and service-level compliance for better client outcomes.',

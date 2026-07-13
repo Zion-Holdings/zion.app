@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "AI Retail Forecasting | Zion Tech Group",
   description:
     "Improve inventory and revenue planning with AI retail forecasting built for modern merchandising and supply chains.",

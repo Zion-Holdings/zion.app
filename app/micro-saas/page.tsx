@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Micro-SaaS Services | Zion Tech Group',
   description: 'Micro-SaaS solutions — appointment schedulers, CRMs, invoice tools, analytics dashboards, and more.',
   alternates: { canonical: 'https://ziontechgroup.com/services/?category=micro-saas' },

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'AI SOC Automation and Threat Detection in 2026 | Zion Tech Group',
   description: 'AI SOC automation and threat detection playbook for IT teams in 2026. Free tools, workflows, and implementation patterns from Zion Tech Group.',
   alternates: { canonical: 'https://ziontechgroup.com/blog/ai-soc-automation-and-threat-detection-in-2026/' },

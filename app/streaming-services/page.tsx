@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Data Streaming Services | Zion Tech Group",
   description: "Real-time data streaming — Kafka, Pulsar, event-driven architectures, and stream processing",
   alternates: { canonical: "https://ziontechgroup.com/services/?category=streaming" },

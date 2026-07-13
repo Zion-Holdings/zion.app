@@ -3,7 +3,7 @@ import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'AI Contract Review and Legal Operations Automation for IT Teams 2026 | Zion Tech Group',
   description: 'IT-focused guide to AI contract review and legal operations automation in 2026. Reduce risk, speed approvals, and build compliant intake workflows.',
   alternates: { canonical: 'https://ziontechgroup.com/blog/ai-contract-review-and-legal-operations-automation-2026' },

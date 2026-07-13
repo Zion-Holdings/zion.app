@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Enterprise AI PoC Starter Kit | Zion Tech Group",
   description:
     "Start a structured enterprise AI PoC with Zion Tech Group using this starter kit: scope, metrics, and implementation support.",

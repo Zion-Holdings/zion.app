@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Managed SOCaaS Pricing Model for Small Business | Zion Tech Group',
   description: 'A practical look at managed SOCaaS pricing models for small business, including coverage tiers, automation impact, and measurable outcomes.',
 }

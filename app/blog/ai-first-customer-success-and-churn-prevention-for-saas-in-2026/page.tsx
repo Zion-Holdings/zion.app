@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'AI-First Customer Success and Churn Prevention for SaaS in 2026 | Zion Tech Group',
   description: 'A practical guide to AI-first customer success and churn prevention for SaaS in 2026, including health scoring, proactive outreach, and measurable retention tactics.',
 }

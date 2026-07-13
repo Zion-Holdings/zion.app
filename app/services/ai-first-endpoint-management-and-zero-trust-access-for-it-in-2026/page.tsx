@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'AI-First Endpoint Management and Zero Trust Access for IT in 2026 | Zion Tech Group',
   description: 'AI-first endpoint management and zero trust access for IT teams: device compliance automation, risk-based access, policy enforcement, and threat response.',
 }

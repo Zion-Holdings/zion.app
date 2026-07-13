@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'AI Low-Code Workflow Automation Guide for Brazilian Enterprises | Zion Tech Group',
   description: 'A practical AI low-code workflow automation guide for Brazilian enterprises covering rapid deployment, governance, and measurable operational outcomes.',
 }

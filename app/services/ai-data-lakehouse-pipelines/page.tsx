@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'AI Data Lakehouse Pipelines | Zion Tech Group',
   description: 'Unified data lakehouse pipelines for batch, streaming, and ML workloads. AI-assisted ingestion, governance, and analytics on open table formats.',
 };

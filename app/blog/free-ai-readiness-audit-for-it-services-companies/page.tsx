@@ -3,7 +3,7 @@ import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Free AI Readiness Audit for IT Services Companies 2026',
   description: 'Free AI readiness audit for IT services companies in 2026: assessment checklist, roadmap template, and how to use the audit to win more clients.',
   alternates: { canonical: 'https://ziontechgroup.com/blog/free-ai-readiness-audit-for-it-services-companies/' },

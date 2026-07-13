@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'AI for IT Cost Optimization and FinOps | Zion Tech Group',
   description:
     'AI-driven FinOps and cost optimization for IT operations reduce cloud waste, improve chargeback accuracy, and free budget for new AI initiatives.',

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'AI Partnership Automation Framework for IT Companies | Zion Tech Group',
   description: 'A practical framework for IT companies to automate AI partnership workflows and reduce manual work.',
   alternates: { canonical: 'https://ziontechgroup.com/blog/ai-partnership-automation-framework-for-it-companies-2026' },

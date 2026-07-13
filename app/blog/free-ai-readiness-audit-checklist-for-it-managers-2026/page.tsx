@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Free AI Readiness Checklist for IT Managers 2026 | Zion Tech Group',
   description: 'A practical AI readiness checklist for IT and infrastructure leaders moving from pilot to production in 2026.',
 };

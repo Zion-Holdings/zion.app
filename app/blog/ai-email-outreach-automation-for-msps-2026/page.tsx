@@ -3,7 +3,7 @@ import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'AI Email Outreach Automation for MSPs | Zion Tech Group',
   description: 'AI email outreach automation for MSPs and IT services companies. Generate leads, nurture prospects, and win clients with intelligent email sequences and CRM enrichment.',
   openGraph: {

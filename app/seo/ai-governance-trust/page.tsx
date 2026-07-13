@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "AI Governance and Trust | Zion Tech Group",
   description:
     "Establish AI governance and trust with policy, auditability, and responsible deployment practices from Zion Tech Group.",

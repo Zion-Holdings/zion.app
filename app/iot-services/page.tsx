@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'IoT Services | Zion Tech Group',
   description: 'Internet of Things services — IoT platforms, device management, edge computing, and smart systems integration.',
   alternates: { canonical: 'https://ziontechgroup.com/services/?category=iot' },

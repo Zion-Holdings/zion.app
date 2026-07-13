@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'IT Cost Optimization Report for Managed Cloud Spend | Zion Tech Group',
   description: 'A practical IT cost optimization report structure for managed cloud spend, including workload inventory, optimization levers, and measurable savings tracking.',
 }

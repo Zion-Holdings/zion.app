@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'AI Observability and IT Operations | Zion Tech Group',
   description:
     'AI-driven observability helps IT operations teams detect anomalies, reduce noise, and resolve incidents faster with intelligent alerting.',

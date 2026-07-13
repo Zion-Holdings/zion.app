@@ -3,7 +3,7 @@ import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'AI Incident Response and Oncall Automation for IT Teams 2026 | Zion Tech Group',
   description: 'AI incident response and oncall automation playbook for IT teams and MSPs in 2026. Reduce MTTR with structured triage, escalation, and remediation workflows.',
   alternates: { canonical: 'https://ziontechgroup.com/services/ai-incident-response-and-oncall-automation' },

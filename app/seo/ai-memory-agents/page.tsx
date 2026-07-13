@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "AI Memory Agents | Zion Tech Group",
   description:
     "Implement AI memory agents for long-horizon personalization, context retention, and workflow continuity.",

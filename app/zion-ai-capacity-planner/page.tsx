@@ -1,7 +1,7 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Zion AI Capacity Planner',
   description:
     'Forecast resource and capacity needs with ML models that factor in demand, seasonality, and growth trends.',

@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "E-Commerce Services | Zion Tech Group",
   description: "E-commerce platforms — Shopify, WooCommerce, custom storefronts, and payment integration",
   alternates: { canonical: "https://ziontechgroup.com/services/?category=ecommerce" },

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'AI ITSM Modernization Playbook 2026 | Zion Tech Group',
   description: 'Practical ITSM modernization playbook for IT support teams: AI ticket triage, automation, notifications, and measurable SLA improvements in 2026.',
   alternates: { canonical: 'https://ziontechgroup.com/blog/ai-itsm-modernization-playbook-2026/' },

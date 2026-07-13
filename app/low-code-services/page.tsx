@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Low-Code/No-Code Services | Zion Tech Group",
   description: "Low-code platforms — rapid application development, citizen developers, and business process automation",
   alternates: { canonical: "https://ziontechgroup.com/services/?category=low-code" },

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "AI Low-Code Platform Solutions | Zion Tech Group",
   description:
     "Accelerate internal tooling and business apps with AI low-code platform capabilities and governance.",

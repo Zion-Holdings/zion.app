@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'AI-First Application Performance Monitoring and Observability for IT in 2026 | Zion Tech Group',
   description: 'AI-first application performance monitoring and observability for IT teams: anomaly detection, root-cause hints, SLO tracking, and incident acceleration.',
 }
