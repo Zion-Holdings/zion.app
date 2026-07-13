@@ -30,5 +30,61 @@
     "dead_thread": 0,
     "auth_error": "FileNotFoundError('Missing Google OAuth token')",
     "interval_seconds": 90
+  },
+  {
+    "ts": "2026-07-13T17:08:18.965875+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 30
+  },
+  {
+    "ts": "2026-07-13T17:09:49.508554+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 90
+  },
+  {
+    "ts": "2026-07-13T17:11:19.944182+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 90
+  },
+  {
+    "ts": "2026-07-13T17:13:19.092224+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 90
+  },
+  {
+    "ts": "2026-07-13T17:15:00.438826+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 90
+  },
+  {
+    "ts": "2026-07-13T17:16:30.818538+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 90
+  },
+  {
+    "ts": "2026-07-13T17:18:01.238363+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 90
   }
 ]
