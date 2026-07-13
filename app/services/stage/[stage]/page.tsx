@@ -1,5 +1,5 @@
 // app/services/stage/[stage]/page.tsx — Service Stage Filter
-import { allServices } from '../../data/servicesData.json';
+import { allServices } from '../../../data/servicesData.json';
 import type { Service } from '../../data/servicesData.json';
 import Link from 'next/link';
 

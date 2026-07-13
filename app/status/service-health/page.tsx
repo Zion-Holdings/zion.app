@@ -1,5 +1,4 @@
 // app/status/service-health/page.tsx — Live Service Health Monitor
-import { allServices } from '../data/servicesData.json';
 import type { Metadata } from 'next';
 
 export const metadata = {
@@ -10,8 +9,7 @@ export const metadata = {
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import Link from 'next/link';
-import { allServices } from '../data/servicesData.json';
-
+import type { Metadata } from 'next';
 type HealthEntry = {
   last_status: number;
   last_duration: number;
