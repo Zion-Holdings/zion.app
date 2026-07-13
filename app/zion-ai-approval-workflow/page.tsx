@@ -1,11 +1,11 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
-eexport const metadata = {
+export const metadata = {
   title: 'Zion AI Approval Workflow',
   description:
     'Automate approval routing, escalation, and audit trails for purchase orders, expenses, and contracts.',
-  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-approval-workflow' },
+
 };
 
 export default function Page() {

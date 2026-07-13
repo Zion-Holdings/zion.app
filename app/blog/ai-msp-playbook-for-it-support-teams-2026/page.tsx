@@ -3,10 +3,10 @@ import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-eexport const metadata = {
+export const metadata = {
   title: 'AI MSP Playbook for IT Support Teams | Zion Tech Group',
   description: 'Practical AI MSP playbook for IT support, ticketing, and managed services in 2026. Free tools and workflows from Zion Tech Group.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-msp-playbook-for-it-support-teams-2026/' },
+
   openGraph: {
     title: 'AI MSP Playbook for IT Support Teams',
     description: 'Practical AI MSP playbook for IT support, ticketing, and managed services in 2026.',

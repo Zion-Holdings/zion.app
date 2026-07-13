@@ -3,7 +3,7 @@ import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-eexport const metadata = {
+export const metadata = {
   title: 'AI Phone Agent for Small Business: Free Tools and Practical Setup | Zion Tech Group',
   description: 'AI phone agent solutions for small business: free tools, practical setup steps, and real use cases for support, scheduling, and intake automation.',
   openGraph: {
@@ -14,7 +14,7 @@ eexport const metadata = {
     type: 'article',
     images: [{ url: '/og-ai-phone-agent-small-business.png', width: 1200, height: 630, alt: 'AI Phone Agent for Small Business' }]
   },
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-phone-agent-for-small-business-free-tools-2026' }
+
 };
 
 export default function AIPhoneAgentSmallBusinessPage() {

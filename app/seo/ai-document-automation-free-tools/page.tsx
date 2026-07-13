@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "AI Document Automation Free Tools | Zion Tech Group",
   description:
     "Free AI document automation tools and resources to help teams move from manual paperwork to structured workflows.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-document-automation-free-tools" },
+
 };
 
 export default function Page() {

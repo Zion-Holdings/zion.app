@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-eexport const metadata = {
+export const metadata = {
   title: 'AI for Data Center Operations | Zion Tech Group',
   description:
     'AI can improve data center efficiency through predictive maintenance, power analytics, and operational automation.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-data-center-operations' },
+
   openGraph: {
     title: 'AI for Data Center Operations',
     description:

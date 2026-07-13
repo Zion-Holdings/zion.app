@@ -1,7 +1,6 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/ai-stock-portfolio-manager' },
-eexport const metadata = {
+export const metadata = {
   title: 'AI Stock Portfolio Manager | Zion Tech Group',
   description: 'AI-powered portfolio management and investment recommendations.',
 };

@@ -1,11 +1,11 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
-eexport const metadata = {
+export const metadata = {
   title: 'Zion AI Chatbot Analytics',
   description:
     'Track chatbot performance, conversation flows, and improvement opportunities with AI-driven insights.',
-  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-chatbot-analytics' },
+
 };
 
 export default function Page() {

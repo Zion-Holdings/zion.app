@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "AI Legal and Contract Intelligence | Zion Tech Group",
   description:
     "Automate legal and contract workflows with AI extraction, clause review, and obligation tracking.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-legal-contract" },
+
 };
 
 export default function Page() {

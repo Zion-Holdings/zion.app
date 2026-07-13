@@ -1,7 +1,6 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/enterprise-security' },
-eexport const metadata = {
+export const metadata = {
   title: 'Enterprise Security | Zion Tech Group',
   description: 'Enterprise-grade security solutions for large organizations.',
 };

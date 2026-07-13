@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-eexport const metadata = {
+export const metadata = {
   title: 'AI for IT Incident Management and Response | Zion Tech Group',
   description:
     'Reduce incident resolution time with AI-driven IT incident management, automated triage, root-cause analysis, and on-call response workflows.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-it-incident-management-and-response' },
+
   openGraph: {
     title: 'AI for IT Incident Management and Response',
     description:

@@ -2,11 +2,10 @@
 import { allServices } from '../data/servicesData.json';
 import type { Metadata } from 'next';
 
-eexport const metadata = {
+export const metadata = {
   title: 'Service Health',
   description: 'Live health status for individual Zion Tech Group services — response time, uptime, and incident history.',
-  alternates: { canonical: 'https://ziontechgroup.com/status/service-health' },};
-
+};
 
 import { readFileSync } from 'fs';
 import { join } from 'path';

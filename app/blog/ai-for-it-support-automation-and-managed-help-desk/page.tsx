@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-eexport const metadata = {
+export const metadata = {
   title: 'AI for IT Support Automation and Managed Help Desk | Zion Tech Group',
   description:
     'A modern help desk can use AI to reduce ticket backlog, improve employee satisfaction, and deliver consistent IT support across regions.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-it-support-automation-and-managed-help-desk' },
+
   openGraph: {
     title: 'AI for IT Support Automation and Managed Help Desk',
     description:

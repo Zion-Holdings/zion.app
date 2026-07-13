@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "AI Knowledge Management Platform | Zion Tech Group",
   description:
     "Organize enterprise knowledge with AI knowledge management, RAG retrieval, and workflow integration.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-knowledge-management" },
+
 };
 
 export default function Page() {

@@ -1,11 +1,11 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
-eexport const metadata = {
+export const metadata = {
   title: 'Zion AI Contract Lifecycle',
   description:
     'Manage contract creation, negotiation, renewal, and compliance through the full lifecycle with AI-powered insights.',
-  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-contract-lifecycle' },
+
 };
 
 export default function Page() {

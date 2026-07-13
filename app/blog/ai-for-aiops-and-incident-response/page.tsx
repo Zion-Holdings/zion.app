@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-eexport const metadata = {
+export const metadata = {
   title: 'AI for AIOps and Incident Response | Zion Tech Group',
   description:
     'Learn how AI-driven AIOps platforms can reduce alert fatigue, predict incidents, and speed up incident response with automation and observability.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-aiops-and-incident-response' },
+
   openGraph: {
     title: 'AI for AIOps and Incident Response',
     description:

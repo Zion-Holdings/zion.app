@@ -1,5 +1,5 @@
-  alternates: { canonical: 'https://ziontechgroup.com/solutions/technology-and-saas' },
-eexport const metadata = { title: "Technology & SaaS", description: "Complete IT solutions for technology companies and SaaS providers." };
+
+export const metadata = { title: "Technology & SaaS", description: "Complete IT solutions for technology companies and SaaS providers." };
 import Link from 'next/link';
 
 export default function SolutionPage() {

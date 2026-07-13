@@ -2,10 +2,10 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
-eexport const metadata = {
+export const metadata = {
   title: '5G & Private Network Solutions',
   description: 'Private 5G networks, edge IoT, network slicing, and spectrum advisory for enterprise connectivity.',
-  alternates: { canonical: 'https://ziontechgroup.com/5g-solutions' },};
+};
 
 export default function Page() {
   return (

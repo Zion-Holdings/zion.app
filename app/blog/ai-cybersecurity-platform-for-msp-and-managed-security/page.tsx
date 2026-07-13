@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
-eexport const metadata = {
+export const metadata = {
   title: 'AI Cybersecurity Platform for MSP & Managed Security',
   description: 'AI-powered MSP and managed security platform for threat detection, SOC operations, client reporting, and scalable security services. Faster detection, tighter client outcomes.',
-  alternates: { canonical: '/blog/ai-cybersecurity-platform-for-msp-and-managed-security' },
+
 };
 
 export default function MSPAISecurityBlog() {

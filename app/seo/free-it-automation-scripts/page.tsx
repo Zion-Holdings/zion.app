@@ -1,7 +1,7 @@
-eexport const metadata = {
+export const metadata = {
   title: 'Free IT Automation Scripts and Tools | Zion Tech Group',
   description: 'Free IT automation scripts, checklists, starter kits, and monitoring templates for ops, SRE, and IT support teams.',
-  alternates: { canonical: 'https://ziontechgroup.com/free-it-automation-scripts' }
+
 };
 
 export default function Page() {

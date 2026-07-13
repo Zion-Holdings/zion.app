@@ -3,10 +3,10 @@ import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-eexport const metadata = {
+export const metadata = {
   title: 'AI Workflow Automation for IT and MSP Teams 2026 | Zion Tech Group',
   description: 'AI workflow automation guide for IT teams and MSPs in 2026. Practical patterns for support, onboarding, and delivery automation with measurable ROI.',
-  alternates: { canonical: 'https://ziontechgroup.com/services/ai-workflow-automation' },
+
 };
 
 export default function ServicePage() {

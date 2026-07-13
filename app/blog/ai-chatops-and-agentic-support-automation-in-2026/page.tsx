@@ -1,6 +1,6 @@
 import Link from 'next/link';
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-chatops-and-agentic-support-automation-in-2026' },
-eexport const metadata = {
+
+export const metadata = {
   title: 'AI ChatOps and Agentic Support Automation in 2026',
   description: 'ChatOps and agentic support automation patterns that reduce response time and handoff friction for customer-facing teams.',
 };

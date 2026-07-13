@@ -1,5 +1,5 @@
-  alternates: { canonical: 'https://ziontechgroup.com/business-solutions' },
-eexport const metadata = { title: 'Business Solutions — Zion Tech Group', description: 'Explore Zion Tech Group’s AI and IT business solutions: automation, analytics, security, and managed services designed to grow revenue and reduce cost.' };
+
+export const metadata = { title: 'Business Solutions — Zion Tech Group', description: 'Explore Zion Tech Group’s AI and IT business solutions: automation, analytics, security, and managed services designed to grow revenue and reduce cost.' };
 
 import Link from 'next/link';
 

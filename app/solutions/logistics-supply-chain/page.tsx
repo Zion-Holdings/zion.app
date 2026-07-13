@@ -1,5 +1,5 @@
-  alternates: { canonical: 'https://ziontechgroup.com/solutions/logistics-supply-chain' },
-eexport const metadata = { title: "Logistics & Supply Chain", description: "AI-powered logistics and supply chain solutions." };
+
+export const metadata = { title: "Logistics & Supply Chain", description: "AI-powered logistics and supply chain solutions." };
 import Link from 'next/link';
 
 export default function SolutionPage() {

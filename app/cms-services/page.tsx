@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "CMS Services | Zion Tech Group",
   description: "Content management systems — headless CMS, enterprise content platforms, and custom CMS development",
-  alternates: { canonical: "https://ziontechgroup.com/services/?category=cms" },
+
 };
 
 export default function CategoryPage() {

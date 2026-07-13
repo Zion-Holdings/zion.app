@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "EdTech Services | Zion Tech Group",
   description: "Education technology — LMS platforms, adaptive learning, virtual classrooms, and student analytics",
-  alternates: { canonical: "https://ziontechgroup.com/services/?category=edtech" },
+
 };
 
 export default function CategoryPage() {

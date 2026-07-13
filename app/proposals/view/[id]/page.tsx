@@ -21,8 +21,6 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   return base;
 }
 
-
-
 // Pre-render as static — must return a non-empty array for output:export
 // '__sample__' is a sentinel; the component falls through to notFound() for it
 export async function generateStaticParams() {

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "AI Chatbot Builder Free Trial | Zion Tech Group",
   description:
     "Build and test an AI chatbot with Zion Tech Group using our guided free trial and prebuilt integrations.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-chatbot-builder-free-trial" },
+
 };
 
 export default function Page() {

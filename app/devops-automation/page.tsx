@@ -1,7 +1,6 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/devops-automation' },
-eexport const metadata = {
+export const metadata = {
   title: 'DevOps Automation | Zion Tech Group',
   description: 'CI/CD pipelines, infrastructure as code, and DevOps automation.',
 };

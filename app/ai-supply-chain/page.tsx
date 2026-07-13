@@ -1,7 +1,6 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/ai-supply-chain' },
-eexport const metadata = {
+export const metadata = {
   title: 'AI Supply Chain Optimization | Zion Tech Group',
   description: 'End-to-end supply chain optimization with predictive analytics.',
 };

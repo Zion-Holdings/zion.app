@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "AI Fraud Detection | Zion Tech Group",
   description:
     "Reduce fraud loss with AI detection models, rules, and investigation workflows tailored for business and finance teams.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-fraud-detection" },
+
 };
 
 export default function Page() {

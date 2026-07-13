@@ -2,10 +2,10 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
-eexport const metadata = {
+export const metadata = {
   title: 'Blockchain & Web3 Solutions',
   description: 'Enterprise blockchain for supply chain, identity, smart contracts, and TCR programs — auditable and lawful.',
-  alternates: { canonical: 'https://ziontechgroup.com/blockchain-solutions' },};
+};
 
 export default function Page() {
   return (
@@ -20,11 +20,11 @@ export default function Page() {
         </nav>
 
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-6xl mb-4 block">{">⛓"}</span>
+          <span className="text-6xl mb-4 block">"></span>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Blockchain & Web3 Solutions</h1>
           <p className="text-xl text-slate-300 leading-relaxed mb-6">Enterprise blockchain for supply chain, identity, smart contracts, and TCR programs.</p>
           <div className="flex flex-wrap justify-center gap-2 mb-6">
-            {[<span key="Smart Contracts" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Smart Contracts</span>,<span key="Supply Chain" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Supply Chain</span>,<span key="Identity" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Identity</span>,<span key="Web3" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Web3</span>].map(tag => tag)}
+            {<span key="Supply Chain"px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Supply Chain</span>,<span key="Identity"px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Identity</span>,<span key="Web3"px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Web3</span>].map(tag => tag)}
           </div>
           <Link href="/configurator/" className="btn-primary text-lg px-10 py-4 inline-block">⚡ Get Your Custom Proposal →</Link>
         </div>

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "AI Video Analytics for Business | Zion Tech Group",
   description:
     "Extract insights from live and recorded video with AI video analytics, monitoring, and safety workflows.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-video-analytics" },
+
 };
 
 export default function Page() {

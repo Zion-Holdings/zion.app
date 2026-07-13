@@ -2,10 +2,10 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
-eexport const metadata = {
+export const metadata = {
   title: 'Data Analytics & BI',
   description: 'Executive BI dashboards, predictive forecasting, embedded analytics, and self-serve analytics platforms.',
-  alternates: { canonical: 'https://ziontechgroup.com/analytics' },};
+};
 
 export default function Page() {
   return (
@@ -20,11 +20,13 @@ export default function Page() {
         </nav>
 
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-6xl mb-4 block">{">📊"}</span>
+          <span className="text-6xl mb-4 block">📊</span>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Analytics & Business Intelligence</h1>
           <p className="text-xl text-slate-300 leading-relaxed mb-6">Data analytics, BI dashboards, predictive insights, and AI-powered reporting.</p>
           <div className="flex flex-wrap justify-center gap-2 mb-6">
-            {[<span key="BI Dashboards" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">BI Dashboards</span>,<span key="Predictive Analytics" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Predictive Analytics</span>,<span key="Data Viz" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Data Viz</span>,<span key="AI Insights" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">AI Insights</span>].map(tag => tag)}
+            {['BI Dashboards','Predictive Analytics','Data Viz','AI Insights'].map(tag => (
+              <span key={tag} className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">{tag}</span>
+            ))}
           </div>
           <Link href="/configurator/" className="btn-primary text-lg px-10 py-4 inline-block">⚡ Get Your Custom Proposal →</Link>
         </div>

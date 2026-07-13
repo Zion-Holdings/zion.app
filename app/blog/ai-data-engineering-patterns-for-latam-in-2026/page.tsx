@@ -1,7 +1,7 @@
-eexport const metadata = {
+export const metadata = {
   title: "AI Data Engineering Patterns for LATAM in 2026 | Zion Tech Group",
   description: "Practical AI data engineering patterns for LATAM teams building reliable pipelines.",
-  alternates: { canonical: "/ai-data-engineering-patterns-for-latam-in-2026/" },
+
 };
 
 export default function Page() {

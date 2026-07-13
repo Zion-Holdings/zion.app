@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "Database Services | Zion Tech Group",
   description: "Database design, optimization, migration, and management — SQL, NoSQL, and NewSQL",
-  alternates: { canonical: "https://ziontechgroup.com/services/?category=database" },
+
 };
 
 export default function CategoryPage() {

@@ -3,8 +3,8 @@ import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-eexport const metadata = {
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-msp-growth-and-it-outsourcing-automation' },
+export const metadata = {
+
   title: 'AI for MSP Growth and IT Outsourcing Automation',
   description:
     'MSPs and IT outsourcing firms can scale delivery, reduce churn, and expand profitability with AI ops, automation, and modern support structures.',

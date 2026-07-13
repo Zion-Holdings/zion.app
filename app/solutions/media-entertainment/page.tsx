@@ -1,7 +1,6 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/solutions/media-entertainment' },
-eexport const metadata = {
+export const metadata = {
   title: 'Media & Entertainment Technology | Zion Tech Group',
   description: 'Streaming, content management, and audience analytics for media companies.',
 };

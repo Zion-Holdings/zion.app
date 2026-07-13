@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-led-energy-management-and-carbon-optimization-in-2026' },
-eexport const metadata = {
+export const metadata = {
   title: 'AI-Led Energy Management and Carbon Optimization in 2026',
   description: 'Use AI-assisted energy management and carbon optimization to reduce cost and improve compliance for enterprises.',
 };

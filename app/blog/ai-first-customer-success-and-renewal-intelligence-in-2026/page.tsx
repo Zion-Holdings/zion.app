@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-customer-success-and-renewal-intelligence-in-2026' },
-eexport const metadata = {
+export const metadata = {
   title: 'AI-First Customer Success and Renewal Intelligence in 2026',
   description: 'Use AI-assisted customer success and renewal intelligence to reduce churn and expand accounts.',
 };

@@ -1,5 +1,5 @@
-  alternates: { canonical: 'https://ziontechgroup.com/seo/it-cost-optimization-ai-tools' },
-eexport const metadata = {
+
+export const metadata = {
   title: 'IT Cost Optimization AI Tools | Zion Tech Group',
   description: 'Zion Tech Group IT cost optimization AI tools: spend visibility, waste detection, rightsizing suggestions, and renewal forecasting.',
 };

@@ -3,10 +3,10 @@ import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-eexport const metadata = {
+export const metadata = {
   title: 'Free AI Readiness Audit | Zion Tech Group',
   description: 'Get a free AI readiness audit from Zion Tech Group. Discover quick wins, automation opportunities, and ROI in 30 minutes.',
-  alternates: { canonical: 'https://ziontechgroup.com/free-ai-readiness-audit/' },
+
   openGraph: {
     title: 'Free AI Readiness Audit',
     description: 'Free AI readiness audit to spot quick wins and automation opportunities.',

@@ -1,7 +1,7 @@
-eexport const metadata = {
+export const metadata = {
   title: "Cloud Cost Optimization Service | Zion Tech Group",
   description: "cloud cost optimization.",
-  alternates: { canonical: "/services/cloud-cost-optimization-service/" },
+
 };
 
 export default function Page() {

@@ -1,7 +1,6 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/free-tools-hub' },
-eexport const metadata = {
+export const metadata = {
   title: 'Free Tools Hub',
   description: 'Free online tools for developers, designers, and businesses. JSON formatters, code tools, converters, generators, and more.',
 };

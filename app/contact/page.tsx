@@ -4,10 +4,10 @@ import { LocalBusinessJsonLd } from '@/components/LocalBusinessStructuredData';
 
 const CALENDLY_URL = 'https://calendly.com/kleber-ziontechgroup';
 
-eexport const metadata = {
+export const metadata = {
   title: 'Contact Us',
   description: 'Get in touch with Zion Tech Group. Call, email, or visit us in Middletown, DE.',
-  alternates: { canonical: 'https://ziontechgroup.com/contact' },
+
 };
 
 export default function ContactPage() {

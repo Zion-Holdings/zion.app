@@ -1,8 +1,7 @@
 // app/portal/billing/page.tsx
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/portal/billing' },
-eexport const metadata = {
+export const metadata = {
   title: 'Billing & Invoices — Client Portal',
   description: 'View your invoices, payment methods, and billing history. Secure client portal access.',
 };

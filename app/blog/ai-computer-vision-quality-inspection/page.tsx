@@ -1,7 +1,7 @@
-eexport const metadata = {
+export const metadata = {
   title: "AI Computer Vision for Quality Inspection | Zion Tech Group",
   description: "computer vision inspection.",
-  alternates: { canonical: "/ai-computer-vision-quality-inspection/" },
+
 };
 
 export default function Page() {

@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-eexport const metadata = {
+export const metadata = {
   title: 'AI for ITSM and Service Management | Zion Tech Group',
   description:
     'Discover how AI-powered ITSM improves ticket routing, self-service resolution, knowledge search, and service delivery.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-itsm-and-service-management' },
+
   openGraph: {
     title: 'AI for ITSM and Service Management',
     description:

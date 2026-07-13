@@ -1,6 +1,6 @@
 import Link from 'next/link';
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-observability-aiops-platform-engineering-for-latam-in-2026' },
-eexport const metadata = {
+
+export const metadata = {
   title: 'AI Observability, AIOps, and Platform Engineering for LATAM in 2026',
   description: 'Practical AI observability, AIOps, and platform engineering models for LATAM IT teams reducing incidents and operating with smaller staff.',
 };

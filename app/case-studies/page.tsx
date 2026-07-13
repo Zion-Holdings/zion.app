@@ -1,7 +1,6 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/case-studies' },
-eexport const metadata = {
+export const metadata = {
   title: 'Case Studies',
   description: 'Real-world case studies showcasing how Zion Tech Group delivers AI and IT solutions across industries.',
 };

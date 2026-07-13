@@ -1,7 +1,6 @@
 import HealthDashboard from '@/components/HealthDashboard';
 
-  alternates: { canonical: 'https://ziontechgroup.com/health-dashboard' },
-eexport const metadata = {
+export const metadata = {
   title: 'Sitemap Health & Service Statistics — Zion Tech Group',
   description: 'Real-time analytics dashboard for 670+ micro-SaaS, AI, IT, Cloud and Security services. Service catalog health monitoring and statistics.',
 };

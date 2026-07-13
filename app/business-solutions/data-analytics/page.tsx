@@ -1,5 +1,5 @@
-  alternates: { canonical: 'https://ziontechgroup.com/business-solutions/data-analytics' },
-eexport const metadata = { title: 'Data Analytics — Zion Tech Group', description: 'Data analytics and AI services from Zion Tech Group: dashboards, forecasting, governed pipelines, and revenue-driving insight.' };
+
+export const metadata = { title: 'Data Analytics — Zion Tech Group', description: 'Data analytics and AI services from Zion Tech Group: dashboards, forecasting, governed pipelines, and revenue-driving insight.' };
 import Link from 'next/link';
 
 const items = [

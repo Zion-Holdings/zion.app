@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "AI Edge Realtime Inference | Zion Tech Group",
   description:
     "Deploy AI edge realtime inference with low latency, device management, and observability built for production.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-edge-realtime" },
+
 };
 
 export default function Page() {

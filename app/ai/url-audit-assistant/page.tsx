@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
-eexport const metadata = {
+export const metadata = {
   title: 'URL Audit Assistant',
   description: 'Audit your website URLs for broken links and issues',
-  alternates: { canonical: 'https://ziontechgroup.com/ai/url-audit-assistant' },};
+};
 
 export default function UrlAuditAssistantPage() {
   return (

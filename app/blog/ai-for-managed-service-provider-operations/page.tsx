@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-eexport const metadata = {
+export const metadata = {
   title: 'AI for Managed Service Provider Operations | Zion Tech Group',
   description:
     'AI-driven automation improves managed service provider operations, from onboarding to support and recurring client delivery.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-managed-service-provider-operations' },
+
   openGraph: {
     title: 'AI for Managed Service Provider Operations',
     description:

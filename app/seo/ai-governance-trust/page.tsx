@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "AI Governance and Trust | Zion Tech Group",
   description:
     "Establish AI governance and trust with policy, auditability, and responsible deployment practices from Zion Tech Group.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-governance-trust" },
+
 };
 
 export default function Page() {

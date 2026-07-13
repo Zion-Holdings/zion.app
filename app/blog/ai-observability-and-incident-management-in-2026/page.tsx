@@ -1,6 +1,6 @@
 import Link from 'next/link';
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-observability-and-incident-management-in-2026' },
-eexport const metadata = {
+
+export const metadata = {
   title: 'AI Observability and Incident Management in 2026',
   description: 'AI observability and incident management patterns that reduce MTTR and improve reliability for distributed teams.',
 };

@@ -1,11 +1,11 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
-eexport const metadata = {
+export const metadata = {
   title: 'Zion AI Sustainability Tracker',
   description:
     'Track ESG metrics, carbon footprint, and sustainability goals with automated data collection and reporting.',
-  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-sustainability-tracker' },
+
 };
 
 export default function Page() {

@@ -1,7 +1,6 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/solutions/energy-utilities' },
-eexport const metadata = {
+export const metadata = {
   title: 'Energy & Utilities Technology | Zion Tech Group',
   description: 'Smart grid, IoT, and AI solutions for energy and utility companies.',
 };

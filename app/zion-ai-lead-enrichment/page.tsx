@@ -1,11 +1,11 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
-eexport const metadata = {
+export const metadata = {
   title: 'Zion AI Lead Enrichment',
   description:
     'Enrich leads with firmographic and technographic data to prioritize high-value opportunities.',
-  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-lead-enrichment' },
+
 };
 
 export default function Page() {

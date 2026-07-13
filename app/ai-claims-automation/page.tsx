@@ -1,7 +1,6 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/ai-claims-automation' },
-eexport const metadata = {
+export const metadata = {
   title: 'AI Claims Automation | Zion Tech Group',
   description: 'Automate insurance claims processing with AI and machine learning.',
 };

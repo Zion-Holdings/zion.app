@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "Observability Services | Zion Tech Group",
   description: "Full-stack observability — APM, distributed tracing, log management, and service health monitoring",
-  alternates: { canonical: "https://ziontechgroup.com/services/?category=observability" },
+
 };
 
 export default function CategoryPage() {

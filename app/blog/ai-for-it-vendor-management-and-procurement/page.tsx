@@ -1,7 +1,7 @@
-eexport const metadata = {
+export const metadata = {
   title: 'AI for IT Vendor Management and Procurement | Zion Tech Group',
   description: 'Use AI to streamline IT vendor management, procurement, contract analysis, and supplier risk tracking.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-it-vendor-management-and-procurement' },
+
 };
 
 export default function AiVendorProcurementPage() {

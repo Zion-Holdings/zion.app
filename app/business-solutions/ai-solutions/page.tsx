@@ -1,5 +1,5 @@
-  alternates: { canonical: 'https://ziontechgroup.com/business-solutions/ai-solutions' },
-eexport const metadata = { title: 'AI Solutions — Zion Tech Group', description: 'AI solutions from Zion Tech Group: automation, copilots, document intelligence, anomaly detection, and generative AI implementations.' };
+
+export const metadata = { title: 'AI Solutions — Zion Tech Group', description: 'AI solutions from Zion Tech Group: automation, copilots, document intelligence, anomaly detection, and generative AI implementations.' };
 import Link from 'next/link';
 
 const items = [

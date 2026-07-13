@@ -1,8 +1,8 @@
 
-eexport const metadata = {
+export const metadata = {
   title: "Nebius Partnership and AI Vendor Co-Selling in 2026 | Zion Tech Group",
   description: "Practical framework for building AI vendor partnerships and co-selling with Nebius in 2026.",
-  alternates: { canonical: "/nebius-partnership-and-ai-vendor-co-selling-2026/" },
+
 };
 
 export default function Page() {

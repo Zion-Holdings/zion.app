@@ -2,10 +2,10 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
-eexport const metadata = {
+export const metadata = {
   title: 'API Development & Integration',
   description: 'REST, GraphQL, and gRPC API development with OpenAPI docs, SDKs, event-driven architecture, API gateway.',
-  alternates: { canonical: 'https://ziontechgroup.com/api-development' },};
+};
 
 export default function Page() {
   return (
@@ -20,11 +20,11 @@ export default function Page() {
         </nav>
 
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <span className="text-6xl mb-4 block">{">🔧"}</span>
+          <span className="text-6xl mb-4 block">"></span>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">API Development & Integration</h1>
           <p className="text-xl text-slate-300 leading-relaxed mb-6">RESTful and GraphQL API design, microservices integration, API gateway management.</p>
           <div className="flex flex-wrap justify-center gap-2 mb-6">
-            {[<span key="REST API" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">REST API</span>,<span key="GraphQL" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">GraphQL</span>,<span key="Microservices" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Microservices</span>,<span key="API Gateway" className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">API Gateway</span>].map(tag => tag)}
+            {<span key="GraphQL"px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">GraphQL</span>,<span key="Microservices"px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">Microservices</span>,<span key="API Gateway"px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">API Gateway</span>].map(tag => tag)}
           </div>
           <Link href="/configurator/" className="btn-primary text-lg px-10 py-4 inline-block">⚡ Get Your Custom Proposal →</Link>
         </div>

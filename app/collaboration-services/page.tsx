@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "Collaboration Services | Zion Tech Group",
   description: "Team collaboration tools — project communication, workflow management, and team productivity",
-  alternates: { canonical: "https://ziontechgroup.com/services/?category=collaboration" },
+
 };
 
 export default function CategoryPage() {

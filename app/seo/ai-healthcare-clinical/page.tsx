@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "AI Healthcare Clinical Decision Support | Zion Tech Group",
   description:
     "Explore AI healthcare clinical decision support with secure workflows, documentation assistance, and analytics.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-healthcare-clinical" },
+
 };
 
 export default function Page() {

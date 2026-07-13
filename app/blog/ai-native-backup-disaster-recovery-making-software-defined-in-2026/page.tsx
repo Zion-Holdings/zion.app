@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-native-backup-disaster-recovery-making-software-defined-in-2026' },
-eexport const metadata = {
+export const metadata = {
   title: 'AI-Native Backup and Disaster Recovery in 2026',
   description: 'AI-native backup and disaster recovery practices for mission-critical SaaS, AI, and platform workloads.',
 };

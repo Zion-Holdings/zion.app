@@ -1,8 +1,8 @@
 
-eexport const metadata = {
+export const metadata = {
   title: "Managed AI Cloud Support for Startups and Enterprises in 2026 | Zion Tech Group",
   description: "How managed AI cloud support can help startups and enterprises accelerate operations, reduce risk, and scale reliably.",
-  alternates: { canonical: "/managed-ai-cloud-support-for-startups-and-enterprises-in-2026/" },
+
 };
 
 export default function Page() {

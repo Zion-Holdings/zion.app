@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "Search & Discovery Services | Zion Tech Group",
   description: "Enterprise search — Elasticsearch, Algolia, vector search, and AI-powered site search",
-  alternates: { canonical: "https://ziontechgroup.com/services/?category=search" },
+
 };
 
 export default function CategoryPage() {

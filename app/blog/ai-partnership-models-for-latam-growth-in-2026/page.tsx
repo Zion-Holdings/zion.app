@@ -1,7 +1,7 @@
-eexport const metadata = {
+export const metadata = {
   title: "AI Partnership Models for LATAM Growth in 2026 | Zion Tech Group",
   description: "Practical AI partnership models for LATAM vendors, service providers, and resellers.",
-  alternates: { canonical: "/ai-partnership-models-for-latam-growth-in-2026/" },
+
 };
 
 export default function Page() {

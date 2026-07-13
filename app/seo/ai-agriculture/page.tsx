@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "AI Agriculture and Agritech | Zion Tech Group",
   description:
     "Apply AI agriculture and agritech solutions for yield estimation, pest detection, and resource optimization.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-agriculture" },
+
 };
 
 export default function Page() {

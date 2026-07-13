@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 
-eexport const metadata = {
+export const metadata = {
   title: 'AI-First Cloud Security Posture Management for IT in 2026 | Zion Tech Group',
   description: 'AI-first cloud security posture management for IT teams: misconfiguration detection, exposure scoring, policy enforcement, and remediation guidance.',
 }

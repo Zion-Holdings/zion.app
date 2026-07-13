@@ -3,10 +3,10 @@ import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-eexport const metadata = {
+export const metadata = {
   title: 'AI Email Bounce and Deliverability Recovery Playbook 2026 | Zion Tech Group',
   description: 'AI email bounce and deliverability recovery playbook for IT and MSP teams in 2026. Reduce hard bounces, improve sender reputation, and automate list hygiene.',
-  alternates: { canonical: 'https://ziontechgroup.com/services/ai-email-bounce-and-deliverability-recovery' },
+
 };
 
 export default function ServicePage() {

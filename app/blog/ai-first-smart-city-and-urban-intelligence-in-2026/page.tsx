@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-smart-city-and-urban-intelligence-in-2026' },
-eexport const metadata = {
+export const metadata = {
   title: 'AI-First Smart City and Urban Intelligence in 2026',
   description: 'Deploy AI-assisted urban intelligence and smart city services to improve mobility, safety, and public services.',
 };

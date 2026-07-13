@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "AI Voice Assistant for Business | Zion Tech Group",
   description:
     "Improve support and operations with AI voice assistants for call handling, routing, and escalation.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-voice-assistant-business" },
+
 };
 
 export default function Page() {

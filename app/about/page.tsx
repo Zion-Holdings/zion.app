@@ -1,10 +1,10 @@
 import type { Metadata } from 'next';
 import Breadcrumb from '@/components/Breadcrumb';
 
-eexport const metadata = {
+export const metadata = {
   title: 'About | Zion Tech Group',
   description: 'About Zion Tech Group — mission, leadership, and what we build.',
-  alternates: { canonical: 'https://ziontechgroup.com/about' },
+
 };
 
 export default function AboutPage() {

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "AI Memory Agents | Zion Tech Group",
   description:
     "Implement AI memory agents for long-horizon personalization, context retention, and workflow continuity.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-memory-agents" },
+
 };
 
 export default function Page() {

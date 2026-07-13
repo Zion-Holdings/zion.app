@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 
-eexport const metadata = {
+export const metadata = {
   title: 'AI Supply Chain Optimization | Zion Tech Group',
   description: 'AI-driven supply chain optimization: demand forecasting, inventory intelligence, route optimization, and predictive logistics for modern enterprises.',
 }

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "AI Platform Free Trial | Zion Tech Group",
   description:
     "Run an AI platform free trial with defined scope, guardrails, and measurable success criteria.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-platform-free-trial" },
+
 };
 
 export default function Page() {

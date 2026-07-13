@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "FinTech Services | Zion Tech Group",
   description: "Financial technology — payment processing, banking APIs, lending platforms, and regulatory compliance",
-  alternates: { canonical: "https://ziontechgroup.com/services/?category=fintech" },
+
 };
 
 export default function CategoryPage() {

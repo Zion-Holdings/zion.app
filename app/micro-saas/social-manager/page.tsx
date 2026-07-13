@@ -1,7 +1,6 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/micro-saas/social-manager' },
-eexport const metadata = {
+export const metadata = {
   title: 'Social Media Manager | Zion Tech Group',
   description: 'AI-powered social media management and scheduling.',
 };

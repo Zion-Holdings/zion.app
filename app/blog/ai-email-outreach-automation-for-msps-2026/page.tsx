@@ -3,7 +3,7 @@ import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-eexport const metadata = {
+export const metadata = {
   title: 'AI Email Outreach Automation for MSPs | Zion Tech Group',
   description: 'AI email outreach automation for MSPs and IT services companies. Generate leads, nurture prospects, and win clients with intelligent email sequences and CRM enrichment.',
   openGraph: {
@@ -14,7 +14,7 @@ eexport const metadata = {
     type: 'article',
     images: [{ url: '/og-ai-email-outreach-automation.png', width: 1200, height: 630, alt: 'AI Email Outreach Automation' }]
   },
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-email-outreach-automation-for-msps-2026' }
+
 };
 
 export default function AIEmailOutreachAutomationForMSPs() {

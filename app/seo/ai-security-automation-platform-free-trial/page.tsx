@@ -1,7 +1,7 @@
-eexport const metadata = {
+export const metadata = {
   title: 'IT Security Automation Platform Free Trial | Zion Tech Group',
   description: 'Start an IT security automation platform free trial with guided trial scope, SOC use cases, and evaluation support from Zion Tech Group.',
-  alternates: { canonical: 'https://ziontechgroup.com/ai-security-automation-platform-free-trial' }
+
 };
 
 export default function Page() {

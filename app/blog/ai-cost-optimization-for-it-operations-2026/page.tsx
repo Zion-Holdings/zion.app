@@ -1,7 +1,7 @@
-eexport const metadata = {
+export const metadata = {
   title: "AI Cost Optimization for IT Operations in 2026 | Zion Tech Group",
   description: "AI Cost Optimization for IT Operations in 2026.",
-  alternates: { canonical: "/ai-cost-optimization-for-it-operations-2026/" },
+
 };
 
 export default function Page() {

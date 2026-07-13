@@ -3,10 +3,10 @@ import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-eexport const metadata = {
+export const metadata = {
   title: 'AI for IT Infrastructure and Data Center Operations 2026',
   description: 'AI for IT infrastructure and data center operations in 2026: monitoring, predictive maintenance, access control, and how to start with a free pilot from Zion Tech Group.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-it-infrastructure-and-data-center-operations-2026/' },
+
   openGraph: {
     title: 'AI for IT Infrastructure and Data Center Operations 2026',
     description: 'Use AI for monitoring, maintenance, and access control in data centers and IT infrastructure.',

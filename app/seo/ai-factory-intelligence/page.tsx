@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "AI Factory Intelligence for Manufacturing | Zion Tech Group",
   description:
     "Improve throughput and quality with AI factory intelligence, predictive control, and maintenance.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-factory-intelligence" },
+
 };
 
 export default function Page() {

@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-eexport const metadata = {
+export const metadata = {
   title: 'AI Document Processing & OCR — Zion Tech Group',
   description:
     'Extract data from invoices, contracts, and forms with 99.5% accuracy using AI document processing and OCR.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-document-processing' },
+
   openGraph: {
     title: 'AI Document Processing & OCR — Zion Tech Group',
     description:

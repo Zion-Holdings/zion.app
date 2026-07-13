@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "DevSecOps Services | Zion Tech Group",
   description: "Security-integrated DevOps — shift-left security, SAST/DAST, container security, and compliance automation",
-  alternates: { canonical: "https://ziontechgroup.com/services/?category=devsecops" },
+
 };
 
 export default function CategoryPage() {

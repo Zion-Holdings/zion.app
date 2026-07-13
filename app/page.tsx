@@ -15,7 +15,6 @@ import FloatingActionDock from '@/components/FloatingActionDock';
 import ServiceMatchQuiz from '@/components/ServiceMatchQuiz';
 import AgentsMonitoring from '@/components/AgentsMonitoring';
 
-
 // Category accent color for showcase cards (maps category key → gradient)
 // Category accent color for showcase card styles (static RGBA + hex)
 const catAccent: Record<string, string> = {
@@ -84,7 +83,6 @@ const INDUSTRY_CATS: Record<string,string> = {
   "backup-recovery": "backup-recovery",
   "identity-management": "identity-management",
 };
-
 
 // Industries we serve — derived live from service catalog
 const INDUSTRIES = [

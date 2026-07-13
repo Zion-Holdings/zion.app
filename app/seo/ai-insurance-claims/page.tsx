@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "AI Insurance Claims Automation | Zion Tech Group",
   description:
     "Speed insurance claims with AI extraction, triage, and workflow automation while maintaining compliance.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-insurance-claims" },
+
 };
 
 export default function Page() {

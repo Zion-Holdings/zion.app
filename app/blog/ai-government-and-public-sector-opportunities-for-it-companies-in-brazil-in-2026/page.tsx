@@ -1,7 +1,7 @@
-eexport const metadata = {
+export const metadata = {
   title: "AI Government and Public Sector Opportunities for IT Companies in Brazil in 2026 | Zion Tech Group",
   description: "AI opportunities for Brazilian IT companies in government and public sector.",
-  alternates: { canonical: "/ai-government-and-public-sector-opportunities-for-it-companies-in-brazil-in-2026/" },
+
 };
 
 export default function Page() {

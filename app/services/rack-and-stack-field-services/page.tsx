@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 
-eexport const metadata = {
+export const metadata = {
   title: 'Rack & Stack Field Services | Structured Cabling and Device Deployment | Zion Tech Group',
   description: 'Professional rack & stack field services, device mounting, structured cabling, documentation adherence, and on-site IT deployment for enterprise facilities.',
 }

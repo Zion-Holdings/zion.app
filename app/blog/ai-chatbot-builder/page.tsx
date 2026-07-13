@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-eexport const metadata = {
+export const metadata = {
   title: 'AI Chatbot Builder for Websites — GPT-4 Integrated | Zion Tech Group',
   description:
     'Deploy a GPT-4-powered AI chatbot in under 10 minutes with multilingual support and CRM integration.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-chatbot-builder' },
+
   openGraph: {
     title: 'AI Chatbot Builder for Websites — GPT-4 Integrated',
     description:

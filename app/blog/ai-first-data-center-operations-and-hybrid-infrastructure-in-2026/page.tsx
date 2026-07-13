@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-data-center-operations-and-hybrid-infrastructure-in-2026' },
-eexport const metadata = {
+export const metadata = {
   title: 'AI-First Data Center Operations and Hybrid Infrastructure in 2026',
   description: 'AI-assisted data center operations for capacity, power, cooling, and hybrid infrastructure optimization.',
 };

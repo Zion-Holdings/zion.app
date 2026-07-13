@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-eexport const metadata = {
+export const metadata = {
   title: 'Cookie Policy',
   description:
     'What cookies we use on ziontechgroup.com, how we use them, and how you can manage your preferences.',
-  alternates: { canonical: 'https://ziontechgroup.com/cookies' },
+
 };
 
 export default function CookiesPage() {

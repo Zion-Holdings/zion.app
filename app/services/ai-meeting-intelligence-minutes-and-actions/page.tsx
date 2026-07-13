@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 
-eexport const metadata = {
+export const metadata = {
   title: 'AI Meeting Intelligence: Minutes and Actions | Zion Tech Group',
   description: 'Turn meetings into structured minutes, action items, owners, and follow-up workflows with AI.',
 };

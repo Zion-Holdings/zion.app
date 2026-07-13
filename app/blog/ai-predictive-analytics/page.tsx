@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-eexport const metadata = {
+export const metadata = {
   title: 'AI Predictive Analytics Platform — No-Code ML | Zion Tech Group',
   description:
     'No-code predictive analytics with automated ML, forecasting, anomaly detection, and database/API integration.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-predictive-analytics' },
+
   openGraph: {
     title: 'AI Predictive Analytics Platform — No-Code ML',
     description:

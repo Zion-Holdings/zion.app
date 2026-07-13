@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 
-eexport const metadata = {
+export const metadata = {
   title: 'AI Insurance Claims Automation Guide for Operations Leaders | Zion Tech Group',
   description: 'An AI insurance claims automation guide for operations leaders, covering intake, triage, document extraction, fraud signals, and workflow integration in 2026.',
 }

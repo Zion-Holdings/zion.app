@@ -1,7 +1,7 @@
-eexport const metadata = {
+export const metadata = {
   title: 'AI for Document Intelligence and Intelligent Automation | Zion Tech Group',
   description: 'Discover how Zion Tech Group applies AI for document intelligence and intelligent automation to reduce manual work, speed up routing, and improve compliance.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-document-intelligence-and-intelligent-automation' },
+
 };
 
 export default function AiForDocumentIntelligenceAndIntelligentAutomationPage() {

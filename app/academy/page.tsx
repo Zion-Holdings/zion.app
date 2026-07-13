@@ -1,8 +1,7 @@
 import Breadcrumb from '@/components/Breadcrumb';
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/academy' },
-eexport const metadata = {
+export const metadata = {
   title: 'Academy | Zion Tech Group',
   description: 'Learning paths for AI, cloud, security, and modern IT operations.'
 };

@@ -3,8 +3,8 @@ import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-eexport const metadata = {
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ceo-partnership-negotiation-email-templates' },
+export const metadata = {
+
   title: 'CEO Partnership Negotiation Email Templates for IT and AI Companies',
   description:
     'Use these partnership email templates as a reference for advancing deal discussions, creating mutual value, and moving from introduction to a structured follow-up plan.',

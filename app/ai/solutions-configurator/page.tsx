@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
-eexport const metadata = {
+export const metadata = {
   title: 'Solutions Configurator',
   description: 'Configure your custom AI & IT solutions',
-  alternates: { canonical: 'https://ziontechgroup.com/ai/solutions-configurator' },};
+};
 
 export default function SolutionsConfiguratorPage() {
   return (

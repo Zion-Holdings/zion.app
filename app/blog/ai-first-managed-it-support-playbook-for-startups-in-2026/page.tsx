@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 
-eexport const metadata = {
+export const metadata = {
   title: 'AI-First Managed IT Support Playbook for Startups in 2026 | Zion Tech Group',
   description: 'A practical playbook for AI-first managed IT support for startups in 2026, including help-desk automation, onboarding, escalation paths, and measurable service outcomes.',
 }

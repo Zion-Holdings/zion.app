@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "AI Process Mining for Operations | Zion Tech Group",
   description:
     "Discover bottlenecks and improve workflow efficiency with AI process mining and automation-ready insights.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-process-mining" },
+
 };
 
 export default function Page() {

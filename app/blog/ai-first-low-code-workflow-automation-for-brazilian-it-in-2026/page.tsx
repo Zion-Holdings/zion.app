@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-low-code-workflow-automation-for-brazilian-it-in-2026' },
-eexport const metadata = {
+export const metadata = {
   title: 'AI-First Low-Code Workflow Automation for Brazilian IT in 2026',
   description: 'Use AI-assisted low-code/no-code workflow automation to improve IT delivery speed and reduce backlogs.',
 };

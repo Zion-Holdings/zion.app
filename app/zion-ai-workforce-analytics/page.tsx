@@ -1,11 +1,11 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
-eexport const metadata = {
+export const metadata = {
   title: 'Zion AI Workforce Analytics | Zion Tech Group',
   description:
     'Analyze workforce productivity, attrition risk, and headcount planning with predictive insights.',
-  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-workforce-analytics' },
+
 };
 
 export default function Page() {

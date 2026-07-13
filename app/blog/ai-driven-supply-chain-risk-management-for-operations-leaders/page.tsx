@@ -1,7 +1,7 @@
-eexport const metadata = {
+export const metadata = {
   title: 'AI-Driven Supply Chain Risk Management for Operations Leaders | Zion Tech Group',
   description: 'Operations leaders can reduce supply chain disruptions with AI risk management: predictive signals, exception handling, and vendor review automation.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-driven-supply-chain-risk-management-for-operations-leaders' },
+
 };
 
 export default function AiDrivenSupplyChainRiskManagementForOperationsLeadersPage() {

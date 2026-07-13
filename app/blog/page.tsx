@@ -3,8 +3,7 @@ import Breadcrumb from '@/components/Breadcrumb';
 import { promises as fs } from 'fs';
 import path from 'path';
 
-  alternates: { canonical: 'https://ziontechgroup.com/blog' },
-eexport const metadata = {
+export const metadata = {
   title: 'Blog | Zion Tech Group',
   description: 'Insights on AI, IT operations, cloud, security, and enterprise automation.',
 };

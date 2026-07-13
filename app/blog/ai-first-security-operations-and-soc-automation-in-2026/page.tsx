@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-security-operations-and-soc-automation-in-2026' },
-eexport const metadata = {
+export const metadata = {
   title: 'AI-First Security Operations and SOC Automation in 2026',
   description: 'Practical AI methods for SOC automation: alert reduction, enrichment, and faster response workflows.',
 };

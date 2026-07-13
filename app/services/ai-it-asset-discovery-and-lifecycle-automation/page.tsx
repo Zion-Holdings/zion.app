@@ -3,10 +3,10 @@ import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-eexport const metadata = {
+export const metadata = {
   title: 'AI IT Asset Discovery and Lifecycle Automation 2026 | Zion Tech Group',
   description: 'AI IT asset discovery and lifecycle automation guide for MSPs and IT teams in 2026. Improve visibility, compliance, and renewal management with AI-driven workflows.',
-  alternates: { canonical: 'https://ziontechgroup.com/services/ai-it-asset-discovery-and-lifecycle-automation' },
+
 };
 
 export default function ServicePage() {

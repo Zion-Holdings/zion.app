@@ -1,7 +1,7 @@
-eexport const metadata = {
+export const metadata = {
   title: "AI Support Outsourcing for Ecommerce in 2026 | Zion Tech Group",
   description: "How AI support outsourcing can reduce ecommerce ticket volume and improve CX.",
-  alternates: { canonical: "/ai-support-outsourcing-for-ecommerce-in-2026/" },
+
 };
 
 export default function Page() {

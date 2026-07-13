@@ -1,11 +1,11 @@
 import ProductPageLayout from '@/components/ProductPageLayout';
 import type { Metadata } from 'next';
 
-eexport const metadata = {
+export const metadata = {
   title: 'Zion AI Customer 360',
   description:
     'Unify customer data from all touchpoints into a single view with AI-powered insights and next-best-action recommendations.',
-  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-customer-360' },
+
 };
 
 export default function Page() {

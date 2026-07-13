@@ -14,8 +14,6 @@ const STATUS_COLOR: Record<Status, string> = {
   fail: 'border-red-500/40 bg-red-500/10',
 };
 
-
-
 // ─── StatusCard: reusable card for health-check results ───────────────────────────
 interface StatusCardProps {
   name: string;

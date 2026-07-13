@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "Automation Services | Zion Tech Group",
   description: "Enterprise automation solutions — RPA, workflow automation, and intelligent process automation",
-  alternates: { canonical: "https://ziontechgroup.com/services/?category=automation" },
+
 };
 
 export default function CategoryPage() {

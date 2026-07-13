@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "AI Low-Code Platform Solutions | Zion Tech Group",
   description:
     "Accelerate internal tooling and business apps with AI low-code platform capabilities and governance.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-low-code-platform" },
+
 };
 
 export default function Page() {

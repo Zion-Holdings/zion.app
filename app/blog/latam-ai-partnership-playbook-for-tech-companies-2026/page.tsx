@@ -3,10 +3,10 @@ import Link from 'next/link';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
-eexport const metadata = {
+export const metadata = {
   title: 'Latam AI Partnership Playbook | Zion Tech Group',
   description: 'Discover partnership models for LATAM expansion with AI services, co-selling, and integration-ready delivery.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/latam-ai-partnership-playbook-for-tech-companies-2026' },
+
 };
 
 export default function BlogPage() {

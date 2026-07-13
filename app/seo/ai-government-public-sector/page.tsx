@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "AI for Government and Public Sector | Zion Tech Group",
   description:
     "Explore AI for government and public sector services: automation, citizen experience, and secure operations.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-government-public-sector" },
+
 };
 
 export default function Page() {

@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
-eexport const metadata = {
+export const metadata = {
   title: 'Micro-SaaS Services | Zion Tech Group',
   description: 'Micro-SaaS solutions — appointment schedulers, CRMs, invoice tools, analytics dashboards, and more.',
-  alternates: { canonical: 'https://ziontechgroup.com/services/?category=micro-saas' },
+
 };
 
 export default function MicroSaasPage() {

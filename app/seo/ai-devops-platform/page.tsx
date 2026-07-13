@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "AI DevOps Platform Engineering | Zion Tech Group",
   description:
     "Increase release velocity with AI DevOps platform engineering, automated testing, and deployment intelligence.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-devops-platform" },
+
 };
 
 export default function Page() {

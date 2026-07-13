@@ -1,7 +1,7 @@
-eexport const metadata = {
+export const metadata = {
   title: 'AI IT Support Automation & Managed Help Desk | Zion Tech Group',
   description: 'See how Zion Tech Group applies AI IT support automation and managed help desk solutions to reduce ticket volume, speed resolution, and improve service quality.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-it-support-automation-and-managed-help-desk' },
+
 };
 
 export default function AiItSupportAutomationPage() {

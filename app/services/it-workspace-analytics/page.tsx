@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-  alternates: { canonical: 'https://ziontechgroup.com/services/it-workspace-analytics' },
-eexport const metadata = {
+export const metadata = {
   title: 'IT Workspace Analytics | Zion Tech Group',
   description: 'IT workspace analytics for visibility, adoption, and performance across devices, apps, and users.',
 };

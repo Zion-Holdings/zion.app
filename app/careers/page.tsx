@@ -1,8 +1,7 @@
 // app/careers/page.tsx — Improved Careers Page
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/careers' },
-eexport const metadata = {
+export const metadata = {
   title: 'Careers',
   description: 'Join Zion Tech Group. Remote-first roles in AI engineering, DevOps, and solution architecture.',
 };

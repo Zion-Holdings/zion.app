@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-eexport const metadata = {
+export const metadata = {
   title: 'AI for IT Compliance and Risk Operations | Zion Tech Group',
   description:
     'AI can improve IT compliance and risk operations through automated evidence collection, control monitoring, and audit-ready reporting.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-it-compliance-and-risk-operations' },
+
   openGraph: {
     title: 'AI for IT Compliance and Risk Operations',
     description:

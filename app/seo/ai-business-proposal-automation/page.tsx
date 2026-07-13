@@ -1,7 +1,7 @@
-eexport const metadata = {
+export const metadata = {
   title: 'AI Business Proposal Automation | Zion Tech Group',
   description: 'AI business proposal automation for IT services with proposal generation, pricing models, SOW builders, and planning tools.',
-  alternates: { canonical: 'https://ziontechgroup.com/ai-business-proposal-automation' }
+
 };
 
 export default function Page() {

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "AI Supply Chain Optimization | Zion Tech Group",
   description:
     "Improve logistics and inventory decisions with AI supply chain optimization and predictive planning.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-supply-chain" },
+
 };
 
 export default function Page() {

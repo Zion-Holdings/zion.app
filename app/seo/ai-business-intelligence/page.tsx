@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 
-eexport const metadata = {
+export const metadata = {
   title: "AI Business Intelligence | Zion Tech Group",
   description:
     "Use AI business intelligence to turn operational data into actionable insights, forecasts, and faster decisions.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-business-intelligence" },
+
 };
 
 export default function Page() {

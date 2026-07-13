@@ -2,11 +2,11 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-eexport const metadata = {
+export const metadata = {
   title: 'AI Cybersecurity Operations for MSP | Zion Tech Group',
   description:
     'AI can strengthen MSP cybersecurity operations through automated alert triage, threat enrichment, and client-ready reporting.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-cybersecurity-operations-for-msp' },
+
   openGraph: {
     title: 'AI Cybersecurity Operations for MSP',
     description:
