@@ -4,6 +4,18 @@ const fs = require('fs');
 const path = require('path');
 
 const reportPath = path.join(process.cwd(), 'automation/reports/deploy-watchdog-latest.json');
+const buildStatePath = path.join(process.cwd(), 'automation/reports/build-state.json');
+
+if (fs.existsSync(buildStatePath)) {
+  try {
+    const bs = JSON.parse(fs.readFileSync(buildStatePath, 'utf8'));
+    const cls = bs.exitCode === 0 ? 'likely_postbuild_or_pages_packaging' : 'likely_next_build_failure';
+    console.log(`build state exitCode=${bs.exitCode ?? 'unknown'} durationMs=${bs.durationMs ?? 'unknown'} classification=${cls}`);
+    if (bs.artifacts) console.log(`build artifacts=${JSON.stringify(bs.artifacts)}`);
+  } catch (e) {
+    console.log('build state unreadable:', String(e.message || e).split('\n')[0]);
+  }
+}
 
 if (!fs.existsSync(reportPath)) {
   console.log('no deploy watchdog report yet');
