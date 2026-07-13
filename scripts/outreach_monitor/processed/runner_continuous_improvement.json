@@ -1,0 +1,34 @@
+[
+  {
+    "ts": "2026-07-13T01:04:46.784742+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "FileNotFoundError('Missing Google OAuth token')",
+    "interval_seconds": 30
+  },
+  {
+    "ts": "2026-07-13T01:06:18.030690+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "FileNotFoundError('Missing Google OAuth token')",
+    "interval_seconds": 90
+  },
+  {
+    "ts": "2026-07-13T01:07:49.615802+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "FileNotFoundError('Missing Google OAuth token')",
+    "interval_seconds": 90
+  },
+  {
+    "ts": "2026-07-13T01:09:20.823141+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "FileNotFoundError('Missing Google OAuth token')",
+    "interval_seconds": 90
+  }
+]
