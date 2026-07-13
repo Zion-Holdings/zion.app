@@ -23,18 +23,38 @@ jobs:
         cache: npm
     - run: npm ci --include=optional --prefer-offline --no-audit --fund=false --unsafe-perm
     - name: Self-healing retry wrapper
-      run: "ATTEMPTS=3\nDELAY=10\nN=1\nuntil [ $N -gt $ATTEMPTS ]; do\n  echo \"Attempt\
-        \ $N/$ATTEMPTS\"\n  npm run lint:check && npm run type-check && npm run build\
-        \ && break || true\n  if [ $N -lt $ATTEMPTS ]; then\n    echo \"Retrying in\
-        \ ${DELAY}s...\"\n    sleep $DELAY\n    DELAY=$((DELAY*2))\n  fi\n  N=$((N+1))\n\
-        done\nif [ $N -gt $ATTEMPTS ]; then\n  echo \"::error::Unstoppable guard:\
-        \ checks failed after $((N-1)) attempts\"\n  exit 1\nfi\n"
+      run: >
+        ATTEMPTS=3
+        DELAY=10
+        N=1
+        until [ $N -gt $ATTEMPTS ]; do
+          echo "Attempt $N/$ATTEMPTS"
+          failed=""
+          npm run lint:check || failed="lint:check"
+          npm run type-check || failed="${failed:+$failed, }type-check"
+          npm run build || failed="${failed:+$failed, }build"
+          if [ -z "$failed" ]; then
+            break
+          fi
+          echo "FAILED=$failed"
+          echo "Node:"
+          node --version
+          echo "npm:"
+          npm --version
+          if [ $N -lt $ATTEMPTS ]; then
+            echo "Retrying in ${DELAY}s..."
+            sleep $DELAY
+            DELAY=$((DELAY*2))
+          fi
+          N=$((N+1))
+        done
+        if [ "$N" -gt "$ATTEMPTS" ]; then
+          echo "::error::Unstoppable guard: checks failed after $((N-1)) attempts"
+          exit 1
+        fi
     - name: Open issue on persistent failure
       if: failure()
       uses: actions/github-script@v7
       with:
-        script: "github.rest.issues.create({\n  owner: context.repo.owner,\n  repo:\
-          \ context.repo.repo,\n  title: `Unstoppable guard: checks failed on ${context.sha.slice(0,7)}`,\n\
-          \  body: `The unstoppable guard job failed after retries. See workflow run\
-          \ for details.`\n})\n"
+        script: "github.rest.issues.create({\n  owner: context.repo.owner,\n  repo: context.repo.repo,\n  title: `Unstoppable guard: checks failed on ${context.sha.slice(0,7)}`,\n  body: `The unstoppable guard job failed after retries. See workflow run logs.`\n})"
     timeout-minutes: 10
