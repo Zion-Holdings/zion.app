@@ -7584,5 +7584,22 @@
     "llm_model": "stepfun/step-3.7-flash-20260528:free",
     "llm_reason": "### Rating: 0\nThere is no relevant value signal present here. The only information provided is a generic company name (\"Zion Tech Group\") and its root domain, with no details about the company's service offerings, operations, or alignment with managed AI/IT services. The \"Tech Group\" naming conventi",
     "confidence": 0
+  },
+  {
+    "to": "freya@service.kernal-automation-hk.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "service.kernal-automation-hk.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Score: 1\n#### Rationale (aligned to standard scoring for managed AI/IT services relevance):\n- **Score 2 = Explicit confirmed relevance**: The signal clearly proves the entity offers managed AI/IT services (e.g. explicit service listings, direct mention of these offerings in the provided content)",
+    "confidence": 1
   }
 ]
