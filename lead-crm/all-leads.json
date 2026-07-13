@@ -7958,5 +7958,22 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Rating: 1\n---\n#### Rating framework context:\n- 2 = Strong, explicit value signal: Clear, confirmed evidence the entity specializes in or delivers managed AI/IT services (e.g., explicit service listings, niche case studies, relevant industry certifications, client references tied to this specific",
     "confidence": 1
+  },
+  {
+    "to": "alexa@fyxer.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "fyxer.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 0\n#### Reasoning:\nThe only provided context is the generic domain name `ziontechgroup.com`, which only confirms the entity operates in the broad technology sector. There is no explicit or implicit reference to managed AI/IT services (no mention of managed service offerings, IT support, A",
+    "confidence": 0
   }
 ]
