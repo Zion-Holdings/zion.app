@@ -32,3 +32,7 @@
 {"ts": "2026-07-13T16:03:57.551948+00:00", "email": "samsunglatam@latam.email.samsung.com", "msg_id": "19f5c3133c3926c8", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
 {"ts": "2026-07-13T18:06:09.071980+00:00", "email": "vsingh@solyssey.com", "msg_id": "19f5ca5bf302b0bd", "query": "\"Zion Tech Group\"", "confidence": 1, "high_signal": false}
 {"ts": "2026-07-13T18:58:32.381269+00:00", "email": "alexa@fyxer.com", "msg_id": "19f5cd3e30b3a437", "query": "\"ziontechgroup.com\"", "confidence": 0, "high_signal": false}
+{"ts": "2026-07-13T20:34:45.623870+00:00", "email": "jennifermartinez@nearsightbrokageitc.com", "msg_id": "19f5d2faf25e3878", "query": "\"Zion Tech Group\"", "confidence": 0, "high_signal": false}
+{"ts": "2026-07-13T20:34:54.900116+00:00", "email": "marcello.rodrigues@intersoftkk.com", "msg_id": "19f5d2f9efa02db0", "query": "\"Zion Tech Group\"", "confidence": 0, "high_signal": false}
+{"ts": "2026-07-13T20:35:07.796815+00:00", "email": "ranmeet.singh@intersoftkk.com", "msg_id": "19f5d2acd653d91b", "query": "\"Zion Tech Group\"", "confidence": 1, "high_signal": false}
+{"ts": "2026-07-13T20:35:33.224448+00:00", "email": "messages-noreply@linkedin.com", "msg_id": "19f5d29f8fdf3b32", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
