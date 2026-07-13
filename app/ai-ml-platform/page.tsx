@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
   alternates: { canonical: 'https://ziontechgroup.com/ai-ml-platform' },
-export const metadata = {
+eexport const metadata = {
   title: 'AI/ML Platform | Zion Tech Group',
   description: 'End-to-end machine learning platform for training, deploying, and monitoring models.',
 };

@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
   alternates: { canonical: 'https://ziontechgroup.com/changelog' },
-export const metadata = {
+eexport const metadata = {
   title: 'Product Changelog | Zion Tech Group',
   description: 'Latest updates, new features, and improvements to our platform.',
 };

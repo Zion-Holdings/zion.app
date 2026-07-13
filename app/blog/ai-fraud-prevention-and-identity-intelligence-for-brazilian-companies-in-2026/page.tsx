@@ -1,6 +1,6 @@
 import Link from 'next/link';
   alternates: { canonical: 'https://ziontechgroup.com/blog/ai-fraud-prevention-and-identity-intelligence-for-brazilian-companies-in-2026' },
-export const metadata = {
+eexport const metadata = {
   title: 'AI Fraud Prevention and Identity Intelligence for Brazilian Companies in 2026',
   description: 'AI fraud prevention and identity intelligence approaches for Brazilian companies without replacing core banking or ERP stacks.',
 };

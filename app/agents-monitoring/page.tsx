@@ -2,7 +2,7 @@ import Breadcrumb from '@/components/Breadcrumb';
 import Link from 'next/link';
 
   alternates: { canonical: 'https://ziontechgroup.com/monitoring' },
-export const metadata = {
+eexport const metadata = {
   title: 'Agents Monitoring | Zion Tech Group',
   description: 'Monitor AI agents, automations, and operational telemetry in one place.'
 };

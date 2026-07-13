@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
   alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-cloud-cost-management-and-finops-in-2026' },
-export const metadata = {
+eexport const metadata = {
   title: 'AI-First Cloud Cost Management and FinOps in 2026',
   description: 'Use AI-assisted cloud cost management and FinOps practices to reduce waste and improve budgeting.',
 };

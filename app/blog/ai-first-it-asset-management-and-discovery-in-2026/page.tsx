@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
   alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-it-asset-management-and-discovery-in-2026' },
-export const metadata = {
+eexport const metadata = {
   title: 'AI-First IT Asset Management and Discovery in 2026',
   description: 'Use IT asset discovery, normalization, and lifecycle automation to reduce shadow IT and improve compliance.',
 };

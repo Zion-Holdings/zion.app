@@ -2,7 +2,7 @@
 import Link from 'next/link';
 
   alternates: { canonical: 'https://ziontechgroup.com/careers' },
-export const metadata = {
+eexport const metadata = {
   title: 'Careers',
   description: 'Join Zion Tech Group. Remote-first roles in AI engineering, DevOps, and solution architecture.',
 };

@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
   alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-end-user-computing-and-modern-workplace-in-2026' },
-export const metadata = {
+eexport const metadata = {
   title: 'AI-First End-User Computing and Modern Workplace in 2026',
   description: 'AI-assisted end-user computing and modern workplace enablement for productivity and support automation.',
 };

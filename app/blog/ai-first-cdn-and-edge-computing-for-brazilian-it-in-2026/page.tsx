@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
   alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-cdn-and-edge-computing-for-brazilian-it-in-2026' },
-export const metadata = {
+eexport const metadata = {
   title: 'AI-First CDN and Edge Computing for Brazilian IT in 2026',
   description: 'Use AI-first CDN and edge patterns to improve latency, availability, and local delivery economics in Brazil.',
 };

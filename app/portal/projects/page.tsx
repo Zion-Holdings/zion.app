@@ -2,7 +2,7 @@
 import Link from 'next/link';
 
   alternates: { canonical: 'https://ziontechgroup.com/portal/projects' },
-export const metadata = {
+eexport const metadata = {
   title: 'Project Dashboard — Client Portal',
   description: 'Active project dashboards, milestones, and status updates.',
 };

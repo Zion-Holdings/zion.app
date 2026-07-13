@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
   alternates: { canonical: 'https://ziontechgroup.com/blog/ai-web-accessibility-inclusive-design-for-brazilian-digital-services-in-2026' },
-export const metadata = {
+eexport const metadata = {
   title: 'AI Web Accessibility and Inclusive Design for Brazilian Digital Services in 2026',
   description: 'Use AI-assisted accessibility evaluation and inclusive design to improve reach, compliance, and usability.',
 };

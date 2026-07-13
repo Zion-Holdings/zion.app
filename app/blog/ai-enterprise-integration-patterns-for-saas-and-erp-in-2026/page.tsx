@@ -1,6 +1,6 @@
 import Link from 'next/link';
   alternates: { canonical: 'https://ziontechgroup.com/blog/ai-enterprise-integration-patterns-for-saas-and-erp-in-2026' },
-export const metadata = {
+eexport const metadata = {
   title: 'AI Enterprise Integration Patterns for SaaS and ERP in 2026',
   description: 'Enterprise integration patterns for AI across SaaS, ERP, and legacy systems.',
 };

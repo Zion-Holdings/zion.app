@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
   alternates: { canonical: 'https://ziontechgroup.com/digital-twin-platform' },
-export const metadata = {
+eexport const metadata = {
   title: 'Digital Twin Platform | Zion Tech Group',
   description: 'Create digital twins of physical assets for simulation and optimization.',
 };

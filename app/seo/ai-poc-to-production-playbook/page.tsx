@@ -1,5 +1,5 @@
   alternates: { canonical: 'https://ziontechgroup.com/seo/ai-poc-to-production-playbook' },
-export const metadata = {
+eexport const metadata = {
   title: 'AI PoC to Production Playbook | Zion Tech Group',
   description: 'Move from proof-of-concept to production AI with this playbook covering architecture review, evals, rollout, monitoring, and organizational adoption.',
 };

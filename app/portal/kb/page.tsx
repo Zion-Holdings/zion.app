@@ -2,7 +2,7 @@
 import Link from 'next/link';
 
   alternates: { canonical: 'https://ziontechgroup.com/portal/kb' },
-export const metadata = {
+eexport const metadata = {
   title: 'Knowledge Base — Client Portal',
   description: 'Documentation, guides, how-tos, and technical resources.',
 };

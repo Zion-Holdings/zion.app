@@ -1,5 +1,5 @@
   alternates: { canonical: 'https://ziontechgroup.com/seo/zion-ai-free-tools' },
-export const metadata = {
+eexport const metadata = {
   title: 'Zion AI Free Tools | Zion Tech Group',
   description: 'Zion AI free tools include lightweight IT utilities, AI prompt packs, automation templates, and startup-friendly scripts.',
 };

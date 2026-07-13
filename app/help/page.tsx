@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
   alternates: { canonical: 'https://ziontechgroup.com/help' },
-export const metadata = {
+eexport const metadata = {
   title: 'Help Center | Zion Tech Group',
   description: 'Find answers to common questions and get support.',
 };

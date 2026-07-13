@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
   alternates: { canonical: 'https://ziontechgroup.com/cloud-services' },
-export const metadata = {
+eexport const metadata = {
   title: 'Cloud Services | Zion Tech Group',
   description: 'Comprehensive cloud services including migration, management, and optimization.',
 };

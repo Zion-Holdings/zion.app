@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
   alternates: { canonical: 'https://ziontechgroup.com/iot-platform' },
-export const metadata = {
+eexport const metadata = {
   title: 'IoT Platform | Zion Tech Group',
   description: 'Comprehensive IoT platform for device management and data analytics.',
 };

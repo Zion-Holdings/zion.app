@@ -1,5 +1,5 @@
   alternates: { canonical: 'https://ziontechgroup.com/automation' },
-export const metadata = {
+eexport const metadata = {
   title: 'Automation',
   description: 'Intelligent process automation services from Zion Tech Group. RPA, workflow automation, AI-powered business processes.',
 };
