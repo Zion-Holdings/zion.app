@@ -17,7 +17,7 @@ def canonical_from_html(html):
     return m.group(1).rstrip('/') if m else None
 
 def metadata_canonical_for(route):
-    safe = route.replace('/','') or 'index'
+    safe = route.strip('/') or 'index'
     candidates = [REPO / 'app' / safe / 'page.tsx', REPO / 'app' / (safe + '.tsx')]
     for p in candidates:
         if p.exists():

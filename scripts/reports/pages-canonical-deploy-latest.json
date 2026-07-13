@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-13T08:48:49.186401+00:00",
+  "generatedAt": "2026-07-13T09:44:00.781327+00:00",
   "routes": [
     {
       "route": "/",
@@ -29,9 +29,9 @@
       "route": "/services/ai-agents-autonomous",
       "url": "https://ziontechgroup.com/services/ai-agents-autonomous/",
       "live_canonical": "https://ziontechgroup.com",
-      "expected_canonical": null,
+      "expected_canonical": "/services/ai-agents-autonomous",
       "status": "mismatch",
-      "issue": "missing_page_level_canonical"
+      "issue": "deployed_layout_override_or_stale_cache"
     }
   ]
 }
