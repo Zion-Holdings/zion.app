@@ -2,10 +2,11 @@
 /**
  * build-wrapper.cjs — run Next.js build, then emit automation/reports/build-state.json.
  * Exits with the same code as the underlying build so CI status stays accurate.
+ * Also emits a state artifact even when the wrapper is killed/cancelled.
  */
-const { spawn } = require('child_process');
+const { spawn, execSync } = require('child_process');
 const fs = require('fs');
-const path = require('path');
+const path = require('process');
 
 const REPO = path.resolve(path.join(__dirname, '..'));
 const STATE_DIR = path.join(REPO, 'automation', 'reports');
@@ -17,24 +18,42 @@ function ensureDir(dir) {
 
 function writeState(payload) {
   ensureDir(STATE_DIR);
-  fs.writeFileSync(STATE_FILE, JSON.stringify(payload, null, 2), 'utf8');
+  fs.writeFileSync(STATE_FILE, JSON.stringify({ ...payload, wroteAt: new Date().toISOString() }, null, 2), 'utf8');
+}
+
+function probeArtifacts() {
+  const outDir = path.join(REPO, 'out');
+  const dataDir = path.join(outDir, 'data');
+  let servicesJsonExists = false;
+  try { servicesJsonExists = fs.existsSync(path.join(dataDir, 'services.json')); } catch (e) {}
+  return {
+    out_exists: fs.existsSync(outDir),
+    out_index_html_exists: fs.existsSync(path.join(outDir, 'index.html')),
+    out_404_html_exists: fs.existsSync(path.join(outDir, '404.html')),
+    out_service_index_exists: fs.existsSync(path.join(outDir, 'service-index.json')),
+    out_services_data_exists: servicesJsonExists,
+  };
 }
 
 function timeMs(start) {
   return Math.round((Date.now() - start) / 1000 * 1000) / 1000;
 }
 
+writeState({ phase: 'wrapper-start', repo: REPO });
+
 const buildStart = Date.now();
 const child = spawn('npx', ['next', 'build', '--webpack'], {
   cwd: REPO,
   stdio: 'inherit',
   shell: process.platform === 'win32',
+  env: { ...process.env, NEXT_TELEMETRY_DISABLED: '1' },
 });
 
+let buildExit = null;
 child.on('error', (err) => {
   writeState({
-    exited: false,
-    spawnError: err && err.message ? err.message : String(err),
+    phase: 'spawn-error',
+    error: err && err.message ? err.message : String(err),
     durationMs: timeMs(buildStart),
     artifacts: probeArtifacts(),
   });
@@ -42,36 +61,27 @@ child.on('error', (err) => {
 });
 
 child.on('close', (code) => {
-  const exitCode = typeof code === 'number' ? code : 1;
-  if (exitCode === 0) {
-    try {
-      require('child_process').execSync('npm run postbuild', { cwd: REPO, stdio: 'inherit', shell: process.platform === 'win32' });
-    } catch (postErr) {
-      writeState({
-        exited: true,
-        exitCode,
-        durationMs: timeMs(buildStart),
-        postbuildError: postErr && postErr.message ? postErr.message : String(postErr),
-        artifacts: probeArtifacts(),
-      });
-      process.exit(1);
-    }
-  }
+  buildExit = typeof code === 'number' ? code : 1;
+  const exited = buildExit === 0;
   writeState({
-    exited: true,
-    exitCode,
+    phase: exited ? 'after-build' : 'build-failed',
+    buildExitCode: buildExit,
     durationMs: timeMs(buildStart),
     artifacts: probeArtifacts(),
   });
-  process.exit(exitCode);
+  console.log(`[build-wrapper] next build exit=${buildExit}`);
+  process.exit(buildExit);
 });
 
-function probeArtifacts() {
-  const outDir = path.join(REPO, 'out');
-  const checks = {
-    out_exists: fs.existsSync(outDir),
-    out_index_html_exists: fs.existsSync(path.join(outDir, 'index.html')),
-    out_sitemap_exists: fs.existsSync(path.join(outDir, 'sitemap.xml')),
-  };
-  return checks;
-}
+process.on('SIGTERM', () => {
+  if (buildExit === null) {
+    writeState({ phase: 'sigterm', durationMs: timeMs(buildStart) });
+    process.exit(124);
+  }
+});
+process.on('SIGINT', () => {
+  if (buildExit === null) {
+    writeState({ phase: 'sigint', durationMs: timeMs(buildStart) });
+    process.exit(130);
+  }
+});
