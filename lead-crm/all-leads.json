@@ -7890,5 +7890,22 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Rating: 0\n#### Reasoning:\nThere is no relevant value signal tying the provided entity details to managed AI/IT services:\n1. The company name \"Zion Tech Group\" uses an extremely broad, non-specific label (\"Tech Group\") that could apply to any number of unrelated tech-adjacent businesses (e.g. cus",
     "confidence": 0
+  },
+  {
+    "to": "anjali@quantomtech.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "quantomtech.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 0\n#### Rationale:\nThe provided value signal consists solely of an uncontextualized domain name, with no accompanying details, content, or description linking it to managed AI/IT services. There is no identifiable relevance or evidence of alignment with the target service category in the ",
+    "confidence": 0
   }
 ]
