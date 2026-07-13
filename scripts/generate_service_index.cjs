@@ -98,8 +98,8 @@ function main() {
         catch(e) { return false; }
       });
   } catch(e) {
-    console.error('FATAL: cannot read out/services/:', e.message);
-    process.exit(1);
+    console.warn('WARN: cannot read out/services/, skipping HTML supplement:', e.message);
+    svcDirs = [];
   }
   console.log(`Phase 2: built service dirs — ${svcDirs.length}`);
 
