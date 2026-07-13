@@ -1,6 +1,6 @@
 // app/services/stage/[stage]/page.tsx — Service Stage Filter
-import { allServices } from '../../../data/servicesData.json';
-import type { Service } from '../../data/servicesData.json';
+import { allServices } from '../../../data/servicesData';
+import type { Service } from '../../data/servicesData';
 import Link from 'next/link';
 
 const STAGE_META: Record<string, { label: string; emoji: string; desc: string; color: string }> = {

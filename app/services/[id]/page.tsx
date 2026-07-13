@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
-import { allServices } from '../../data/servicesData.json';
-import type { Service } from '../../data/servicesData.json';
+import { allServices } from '../../data/servicesData';
+import type { Service } from '../../data/servicesData';
 
 export async function generateStaticParams() {
   return allServices.map((service: Service) => ({ id: service.id }))

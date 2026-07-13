@@ -3,8 +3,8 @@
 import { useState, useEffect, useCallback, useRef, useMemo } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
-import { allServices } from '../data/servicesData.json';
-import type { Service } from '../data/servicesData.json';
+import { allServices } from '../data/servicesData';
+import type { Service } from '../data/servicesData';
 import { searchServices } from '@/data/searchServices';
 
 /* ── Simple fuzzy-match ── */
