@@ -41,11 +41,22 @@ function timeMs(start) {
 const buildStart = Date.now();
 writeState({ phase: 'wrapper-start' });
 
+const buildLog = path.join(STATE_DIR, 'build-latest.log');
+ensureDir(STATE_DIR);
+try { fs.writeFileSync(buildLog, ''); } catch {}
 const child = spawn('npx', ['next', 'build', '--webpack'], {
   cwd: REPO,
-  stdio: 'inherit',
+  stdio: ['ignore', 'pipe', 'pipe'],
   shell: process.platform === 'win32',
   env: { ...process.env, NEXT_TELEMETRY_DISABLED: '1' },
+});
+child.stdout.on('data', (d) => {
+  process.stdout.write(d);
+  try { fs.appendFileSync(buildLog, d); } catch {}
+});
+child.stderr.on('data', (d) => {
+  process.stderr.write(d);
+  try { fs.appendFileSync(buildLog, d); } catch {}
 });
 
 child.on('error', (err) => {
