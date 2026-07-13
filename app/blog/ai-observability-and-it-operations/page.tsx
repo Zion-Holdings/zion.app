@@ -2,16 +2,14 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'AI Observability and IT Operations | Zion Tech Group',
   description:
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-observability-and-it-operations' },
     'AI-driven observability helps IT operations teams detect anomalies, reduce noise, and resolve incidents faster with intelligent alerting.',
 
   openGraph: {
     title: 'AI Observability and IT Operations',
     description:
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-observability-and-it-operations' },
       'Use AI to improve signal quality, detect anomalies, and accelerate IT operations response.',
     url: 'https://ziontechgroup.com/blog/ai-observability-and-it-operations',
     type: 'article',

@@ -2,16 +2,14 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'AI for Managed Service Provider Operations in 2026 | Zion Tech Group',
   description:
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-managed-service-provider-operations-in-2026' },
     'Managed service providers can use AI to expand service coverage, improve margins, and deliver more predictable outcomes for enterprise clients.',
 
   openGraph: {
     title: 'AI for Managed Service Provider Operations in 2026',
     description:
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-managed-service-provider-operations-in-2026' },
       'See how Zion Tech Group helps MSPs modernize operations, automate delivery, and create scalable partnership models in 2026.',
     url: 'https://ziontechgroup.com/blog/ai-for-managed-service-provider-operations-in-2026',
     type: 'article',

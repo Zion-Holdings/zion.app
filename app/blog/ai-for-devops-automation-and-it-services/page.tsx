@@ -2,16 +2,14 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'AI for DevOps Automation and IT Services | Zion Tech Group',
   description:
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-devops-automation-and-it-services' },
     'Explore how AI-powered DevOps automation improves CI/CD pipelines, infrastructure management, and incident response for IT teams.',
 
   openGraph: {
     title: 'AI for DevOps Automation and IT Services',
     description:
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-devops-automation-and-it-services' },
       'Use AI to streamline DevOps workflows, improve deployment reliability, and reduce operational toil.',
     url: 'https://ziontechgroup.com/blog/ai-for-devops-automation-and-it-services',
     type: 'article',

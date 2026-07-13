@@ -2,16 +2,14 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'AI for MSP Growth and IT Outsourcing Automation | Zion Tech Group',
   description:
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-msp-growth-and-it-outsourcing-automation' },
     'AI can accelerate MSP growth through smarter lead handling, outsourced support automation, and scalable client onboarding.',
 
   openGraph: {
     title: 'AI for MSP Growth and IT Outsourcing Automation',
     description:
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-msp-growth-and-it-outsourcing-automation' },
       'Use AI to improve MSP growth, client onboarding, and outsourced IT delivery.',
     url: 'https://ziontechgroup.com/blog/ai-for-msp-growth-and-it-outsourcing-automation',
     type: 'article',

@@ -2,16 +2,14 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'AI IT Support Automation | Zion Tech Group',
   description:
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-it-support-automation' },
     'Learn how AI IT support automation reduces ticket backlog, improves resolution times, and lowers operational costs for modern IT teams.',
 
   openGraph: {
     title: 'AI IT Support Automation | Zion Tech Group',
     description:
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-it-support-automation' },
       'Reduce ticket volume, speed up support, and lower costs with AI IT support automation, smart routing, and historical issue resolution.',
     url: 'https://ziontechgroup.com/blog/ai-it-support-automation',
     type: 'article',
