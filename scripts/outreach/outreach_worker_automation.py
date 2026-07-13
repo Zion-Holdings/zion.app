@@ -775,10 +775,9 @@ def _guess_project_area(thread_text: str, language: str) -> str:
 
 
 def build_ceo_reply(contact_name, company_name, thread_text, language='en'):
-    if LLM_TAILOR_ENABLED:
-        tailored = llm_tailor_reply(thread_text, contact_name, company_name, language)
-        if tailored:
-            return tailored
+    tailored = llm_tailor_reply(thread_text, contact_name, company_name, language)
+    if tailored:
+        return tailored
     p = _extract_context_ideas(thread_text, language, company_name)
     project_area = _guess_project_area(thread_text, language)
     return f"""{contact_name},
