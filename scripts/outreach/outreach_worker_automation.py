@@ -463,7 +463,39 @@ def _url_and_token_from_auth():
     return url, token
 
 
-def _strip_llm_preamble(text: str) -> str:
+def _complete_email_extract(raw: str) -> str:
+    if not raw or not isinstance(raw, str):
+        return ''
+    markers = ['Best,','Kleber Garcia Alcatrão','Kleber Garcia Alcatrao','Um abraço','Saludos cordiales','Best regards','Sincerely']
+    text = raw
+    for m in markers:
+        idx = text.find(m)
+        if idx != -1:
+            candidate = text[:idx].strip()
+            if candidate:
+                text = candidate
+                break
+    lines = []
+    skip_prefixes = (
+        'got it','okay, let','let’s get started','first, the recipient','wait,','wait no','actually,',
+        'subject:', 'subject line','hmm,','hmm','first greeting:', 'first', 'second',
+        'you asked', 'user asked', 'hi sam','hello sam',
+    )
+    for line in text.splitlines():
+        s = line.strip()
+        low = s.lower()
+        if any(low.startswith(p) for p in skip_prefixes):
+            continue
+        lines.append(s)
+    cleaned = '\n'.join(lines).strip()
+    text = '\n'.join(lines).strip()
+    cleaned = _strip_llm_preamble_impl(text)
+    if cleaned.lower().count('kleber') > 2:
+        cleaned = '\n'.join(cleaned.splitlines()[:12])
+    return cleaned.strip()
+
+
+def _strip_llm_preamble_impl(text: str) -> str:
     if not text or not isinstance(text, str):
         return ''
     noise_starts = [
@@ -556,19 +588,7 @@ def _call_nous_hermes(thread_text: str, contact_name: str, company_name: str, la
         if not isinstance(content, str) or not content.strip():
             print('NOUS_EMPTY_CONTENT', flush=True)
             return ''
-        cleaned = _strip_llm_preamble(content)
-        required = ['calendly.com/kleber-ziontechgroup', 'ziontechgroup.com', 'free', 'thank']
-        lower = cleaned.lower()
-        if not all(r in lower for r in required):
-            print('NOUS_MISSING_REQUIRED', lower[:180], flush=True)
-            return ''
-        return cleaned.strip()
-    except Exception as e:
-        print('LLM_NOUS_FINAL_ERR', repr(e), flush=True)
-        return ''
-
-
-def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, language: str) -> str:
+        def _call_nous_hermes(thread_text: str, contact_name: str, company_name: str, language: str) -> str:
     endpoint = LLM_API_ENDPOINT or os.getenv('OPENROUTER_API_ENDPOINT') or os.getenv('GROQ_API_ENDPOINT') or os.getenv('GEMINI_API_ENDPOINT')
     api_key = LLM_API_KEY or os.getenv('OPENROUTER_API_KEY') or os.getenv('GROQ_API_KEY') or os.getenv('GEMINI_API_KEY')
     model = os.getenv('LLM_MODEL') or os.getenv('ZION_LLM_MODEL') or os.getenv('OPENROUTER_MODEL') or os.getenv('GROQ_MODEL') or os.getenv('GEMINI_MODEL') or 'openai/gpt-4o-mini'

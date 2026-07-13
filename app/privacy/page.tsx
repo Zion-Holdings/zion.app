@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Privacy Policy | Zion Tech Group',
   description: 'Privacy policy for Zion Tech Group services, website, and AI tools.',
   alternates: { canonical: '/privacy' },
