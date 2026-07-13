@@ -8077,5 +8077,22 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Rating: 1\n#### Rationale, aligned to the rating scale for managed AI/IT services relevance:\n- **0 = No relevance**: Reserved for domains/contexts with no connection to tech/IT at all (e.g., a retail, food service, or hobby site).\n- **1 = Weak/indirect signal**: The entity operates in the broader",
     "confidence": 1
+  },
+  {
+    "to": "contato@cobrancaprfatura.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "cobrancaprfatura.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 1 (weak/partial relevance)\n#### Rationale:\nThe domain name includes the generic term \"tech\", which signals the entity is technology-focused, but there is no explicit, direct indication in the provided standalone signal that it offers managed AI/IT services specifically. The phrase \"tech ",
+    "confidence": 1
   }
 ]

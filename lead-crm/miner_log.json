@@ -2879,5 +2879,53 @@
     "metadata_s": 16.524,
     "llm_s": 0.0,
     "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-13T21:37:04.349607+00:00",
+    "query": "\"ziontechgroup.com\"",
+    "search_s": 0.61,
+    "metadata_s": 19.351,
+    "llm_s": 14.079,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-13T21:37:07.607381+00:00",
+    "query": "subject:automação",
+    "search_s": 0.503,
+    "metadata_s": 22.092,
+    "llm_s": 14.079,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-13T21:37:10.743819+00:00",
+    "query": "subject:\"incident response\"",
+    "search_s": 0.438,
+    "metadata_s": 24.779,
+    "llm_s": 14.079,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-13T21:37:13.948695+00:00",
+    "query": "subject:managed services",
+    "search_s": 0.497,
+    "metadata_s": 27.473,
+    "llm_s": 14.079,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-13T21:37:17.185372+00:00",
+    "query": "subject:devops",
+    "search_s": 0.455,
+    "metadata_s": 30.242,
+    "llm_s": 14.079,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-13T21:37:20.410434+00:00",
+    "query": "subject:sase",
+    "search_s": 0.554,
+    "metadata_s": 32.901,
+    "llm_s": 14.079,
+    "seen_contacts": 6
   }
 ]
