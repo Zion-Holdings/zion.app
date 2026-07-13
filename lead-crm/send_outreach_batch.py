@@ -372,7 +372,106 @@ def main():
         except Exception:
             excluded = set()
     if not send_allowed:
-        print(json.dumps({'generatedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'send_count': 0, 'skipped_templates': skipped_templates, 'results': [], 'note': 'SEND_DISABLED: set ZTG_SEND_ALLOWED=1 to enable outbound sends'}, ensure_ascii=False))
+        analyzed_results = []
+        improved_count = 0
+        excluded_count = 0
+        duplicate_count = 0
+        missing_body_count = 0
+        missing_subject_count = 0
+        seen_to = set()
+        improved_rows = []
+        for r in rows:
+            r = dict(r)
+            to = (r.get('email') or r.get('recipient') or r.get('to') or '').lower()
+            r['to'] = to
+            if not to:
+                analyzed_results.append({'to': None, 'status': 'error', 'error': 'missing email'})
+                improved_rows.append(r)
+                continue
+            if to in excluded:
+                excluded_count += 1
+                analyzed_results.append({'to': to, 'status': 'excluded'})
+                improved_rows.append(r)
+                continue
+            if to in seen_to:
+                duplicate_count += 1
+                analyzed_results.append({'to': to, 'status': 'duplicate'})
+                improved_rows.append(r)
+                continue
+            seen_to.add(to)
+            if not r.get('subject'):
+                missing_subject_count += 1
+            if not r.get('body'):
+                missing_body_count += 1
+                company = r.get('name') or r.get('domain') or 'empresa'
+                subject = r.get('subject', 'Parceria Zion Tech Group')
+                r['body'] = (
+                    "Olá,\\n\\n"
+                    "Espero que esta mensagem o/a encontre bem. "
+                    "Sou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\\n\\n"
+                    + subject + "\\n\\n"
+                    "Gostaríamos de explorar parcerias com " + company + ". "
+                    "Podemos agendar uma conversa? https://calendly.com/kleber-ziontechgroup\\n\\n"
+                    "Atenciosamente,\\n"
+                    "Kleber Garcia Alcatrão\\n"
+                    "Zion Tech Group\\n"
+                    "https://ziontechgroup.com"
+                )
+                improved_count += 1
+            r['outreach_status'] = 'analyzed'
+            improved_rows.append(r)
+            analyzed_results.append({'to': to, 'status': 'analyzed', 'improved_body': bool(r.get('body'))})
+
+        source_key = None
+        for cand in ('ready', 'recipients', 'batch'):
+            if cand in obj and obj.get(cand) is rows:
+                source_key = cand
+                break
+        if source_key:
+            obj[source_key] = improved_rows
+        obj['state'] = 'send_ready_analyzed'
+        try:
+            Path(batch_path).write_text(json.dumps(obj, ensure_ascii=False), encoding='utf-8')
+        except Exception as e:
+            analyzed_results.append({'error': f'write_failed:{e}'})
+
+        health_path = REPO / 'lead-crm' / 'miner_health.json'
+        health = {}
+        if health_path.exists():
+            try:
+                health = json.loads(health_path.read_text(encoding='utf-8'))
+            except Exception:
+                health = {}
+        health.update({
+            'outreach_last_analysis_at': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+            'outreach_ready_count': len(rows),
+            'outreach_improved_count': improved_count,
+            'outreach_missing_body_count': missing_body_count,
+            'outreach_missing_subject_count': missing_subject_count,
+            'outreach_excluded_count': excluded_count,
+            'outreach_duplicate_count': duplicate_count,
+            'outreach_send_allowed': False,
+        })
+        try:
+            health_path.write_text(json.dumps(health, ensure_ascii=False), encoding='utf-8')
+        except Exception:
+            pass
+
+        print(json.dumps({
+            'generatedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+            'send_count': 0,
+            'skipped_templates': skipped_templates,
+            'analysis': {
+                'total': len(rows),
+                'improved_count': improved_count,
+                'missing_body_count': missing_body_count,
+                'missing_subject_count': missing_subject_count,
+                'excluded_count': excluded_count,
+                'duplicate_count': duplicate_count,
+            },
+            'results': analyzed_results,
+            'note': 'SEND_DISABLED: analysis and improvement completed, miner_health updated'
+        }, ensure_ascii=False))
         return
     for r in rows:
         to = r.get('email') or r.get('recipient') or r.get('to')
