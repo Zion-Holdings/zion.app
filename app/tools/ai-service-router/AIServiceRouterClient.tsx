@@ -2,8 +2,8 @@
 
 import { useState, useMemo } from 'react';
 import Link from 'next/link';
-import { allServices } from '../data/servicesData.json';
-import type { Service } from '../data/servicesData.json';
+import { allServices } from '../data/servicesData';
+import type { Service } from '../data/servicesData';
 
 // ── Keyword → category boost map ─────────────────────────────────────────
 const CATEGORY_WEIGHT: Record<string, number> = {
