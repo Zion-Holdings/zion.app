@@ -5,15 +5,15 @@ import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
 import { allServices } from './data/servicesData';
 import AnimatedCounter from '@/components/AnimatedCounter';
-import type { Service } from './data/servicesData';
-import ServiceBrowser from '@/components/ServiceBrowser';
-import ServiceSpotlight from '@/components/ServiceSpotlight';
-import ServiceGridWithSearch from '@/components/ServiceGridWithSearch';
-import TestimonialsSection from '@/components/TestimonialsSection';
-import ContactFunnel from '@/components/ContactFunnel';
-import ServiceCounter from '@/components/ServiceCounter';
-import FloatingActionDock from '@/components/FloatingActionDock';
-import ServiceMatchQuiz from '@/components/ServiceMatchQuiz';
+import AnimatedCounter from '../components/AnimatedCounter';
+import ServiceBrowser from '../components/ServiceBrowser';
+import ServiceSpotlight from '../components/ServiceSpotlight';
+import ServiceGridWithSearch from '../components/ServiceGridWithSearch';
+import TestimonialsSection from '../components/TestimonialsSection';
+import ContactFunnel from '../components/ContactFunnel';
+import ServiceCounter from '../components/ServiceCounter';
+import FloatingActionDock from '../components/FloatingActionDock';
+import ServiceMatchQuiz from '../components/ServiceMatchQuiz';
 import AgentsMonitoring from '../components/AgentsMonitoring';
 
 

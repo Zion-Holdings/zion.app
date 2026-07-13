@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { usePathname} from 'next/navigation';
-import JsonLd from '@/components/JsonLd';
+import JsonLd from '../components/JsonLd';
 
 export function useAutoJsonLdPage() {
   const pathname = usePathname();

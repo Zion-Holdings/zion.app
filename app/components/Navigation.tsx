@@ -9,7 +9,7 @@ import {
   RESOURCE_LINKS,
   FEATURED_AI_SERVICE_LINKS,
   type NavigationLink,
-} from '@/constants/navigation';
+} from '../constants/navigation';
 
 const SITE_TITLE = 'Zion Tech Group';
 
