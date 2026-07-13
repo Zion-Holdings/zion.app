@@ -1,5 +1,14 @@
-import data from './servicesData.json';
-import type { Service } from './servicesData.json';
-const allServices: Service[] = data as Service[];
-export { allServices };
+type Service = Record<string, any>;
+
+let allServices: readonly Service[] = [];
+try {
+  const data = require('./servicesData.json');
+  if (Array.isArray(data)) {
+    allServices = data as readonly Service[];
+  }
+} catch {
+  allServices = [];
+}
+
 export type { Service };
+export { allServices };
