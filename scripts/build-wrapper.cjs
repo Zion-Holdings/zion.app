@@ -1,12 +1,11 @@
 #!/usr/bin/env node
 /**
  * build-wrapper.cjs — run Next.js build, then emit automation/reports/build-state.json.
- * Exits with the same code as the underlying build so CI status stays accurate.
- * Also emits a state artifact even when the wrapper is killed/cancelled.
+ * Also runs postbuild if `next build` succeeds, so static export artifacts are complete.
  */
 const { spawn, execSync } = require('child_process');
 const fs = require('fs');
-const path = require('process');
+const path = require('path');
 
 const REPO = path.resolve(path.join(__dirname, '..'));
 const STATE_DIR = path.join(REPO, 'automation', 'reports');
@@ -39,9 +38,9 @@ function timeMs(start) {
   return Math.round((Date.now() - start) / 1000 * 1000) / 1000;
 }
 
-writeState({ phase: 'wrapper-start', repo: REPO });
-
 const buildStart = Date.now();
+writeState({ phase: 'wrapper-start' });
+
 const child = spawn('npx', ['next', 'build', '--webpack'], {
   cwd: REPO,
   stdio: 'inherit',
@@ -49,7 +48,6 @@ const child = spawn('npx', ['next', 'build', '--webpack'], {
   env: { ...process.env, NEXT_TELEMETRY_DISABLED: '1' },
 });
 
-let buildExit = null;
 child.on('error', (err) => {
   writeState({
     phase: 'spawn-error',
@@ -61,27 +59,44 @@ child.on('error', (err) => {
 });
 
 child.on('close', (code) => {
-  buildExit = typeof code === 'number' ? code : 1;
-  const exited = buildExit === 0;
+  const buildExit = typeof code === 'number' ? code : 1;
+  if (buildExit !== 0) {
+    writeState({
+      phase: 'build-failed',
+      buildExitCode: buildExit,
+      durationMs: timeMs(buildStart),
+      artifacts: probeArtifacts(),
+    });
+    process.exit(buildExit);
+  }
+
+  writeState({ phase: 'after-build', buildExitCode: 0, durationMs: timeMs(buildStart), artifacts: probeArtifacts() });
+
+  let postbuildExit = 0;
+  try {
+    execSync('npm run postbuild', { cwd: REPO, stdio: 'inherit', shell: process.platform === 'win32' });
+  } catch (postErr) {
+    postbuildExit = postErr && postErr.status ? postErr.status : 1;
+    writeState({
+      phase: 'postbuild-failed',
+      buildExitCode: 0,
+      postbuildExitCode: postbuildExit,
+      postbuildError: postErr && postErr.message ? postErr.message : String(postErr),
+      durationMs: timeMs(buildStart),
+      artifacts: probeArtifacts(),
+    });
+    process.exit(1);
+  }
+
   writeState({
-    phase: exited ? 'after-build' : 'build-failed',
-    buildExitCode: buildExit,
+    phase: 'postbuild-ok',
+    buildExitCode: 0,
+    postbuildExitCode: 0,
     durationMs: timeMs(buildStart),
     artifacts: probeArtifacts(),
   });
-  console.log(`[build-wrapper] next build exit=${buildExit}`);
-  process.exit(buildExit);
+  process.exit(0);
 });
 
-process.on('SIGTERM', () => {
-  if (buildExit === null) {
-    writeState({ phase: 'sigterm', durationMs: timeMs(buildStart) });
-    process.exit(124);
-  }
-});
-process.on('SIGINT', () => {
-  if (buildExit === null) {
-    writeState({ phase: 'sigint', durationMs: timeMs(buildStart) });
-    process.exit(130);
-  }
-});
+process.on('SIGTERM', () => process.exit(124));
+process.on('SIGINT', () => process.exit(130));
