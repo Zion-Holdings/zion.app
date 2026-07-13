@@ -36,3 +36,5 @@
 {"ts": "2026-07-13T20:34:54.900116+00:00", "email": "marcello.rodrigues@intersoftkk.com", "msg_id": "19f5d2f9efa02db0", "query": "\"Zion Tech Group\"", "confidence": 0, "high_signal": false}
 {"ts": "2026-07-13T20:35:07.796815+00:00", "email": "ranmeet.singh@intersoftkk.com", "msg_id": "19f5d2acd653d91b", "query": "\"Zion Tech Group\"", "confidence": 1, "high_signal": false}
 {"ts": "2026-07-13T20:35:33.224448+00:00", "email": "messages-noreply@linkedin.com", "msg_id": "19f5d29f8fdf3b32", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-13T20:54:58.814319+00:00", "email": "donotreply@simplefx.com", "msg_id": "19f5d41d0991639d", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
+{"ts": "2026-07-13T20:57:09.546065+00:00", "email": "david@prtechnologystore.com", "msg_id": "19f5d433f9cdce3f", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
