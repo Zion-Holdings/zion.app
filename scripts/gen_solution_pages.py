@@ -94,8 +94,9 @@ for path, data in pages.items():
         lines.append(f'            {{ icon: "{icon}", name: "{name}", href: "{href}", desc: "{desc}" }},')
     services_str = "\n".join(lines)
     
-    content = f'''export const metadata = {{ title: "{data["title"]}", description: "{data["desc"]}" }};
-import Link from 'next/link';
+    content = f'''import Link from 'next/link';
+
+export const metadata = {{ title: "{data["title"]}", description: "{data["desc"]}" }};
 
 export default function SolutionPage() {{
   const services = [
