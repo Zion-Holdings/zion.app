@@ -1077,13 +1077,14 @@ def run_high_frequency_outreach():
     print('TRACE_START', flush=True)
     print('LLM_TAILOR_ENABLED=', bool(LLM_TAILOR_ENABLED), 'ENDPOINT=', bool(LLM_API_ENDPOINT), flush=True)
     discovery_queries = [
-        '!category:promotions !in:spam !in:trash label:"!!!hot-follow-up"',
         'label:"!!!hot-follow-up"',
+        'in:anywhere label:"!!!hot-follow-up"',
         '!category:promotions !in:spam !in:trash "partnership" OR "collaboration" OR "proposal"',
         '!category:promotions !in:spam !in:trash "AI services" OR "AI support" OR "project"',
         '!category:promotions !in:spam !in:trash "interested" OR "next steps" OR "opportunity"',
         '!category:promotions !in:spam !in:trash "integration" OR "workflow" OR "ROI"',
-        '"!!!hot-follow-up"',
+        '"follow-up" OR "follow up" OR "next steps" newer_than:7d',
+        '"partnership" OR "collaboration" newer_than:14d',
     ]
 
     hit_ids = set()
