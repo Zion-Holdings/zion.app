@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { CONTACT_INFO } from '@/utils/seoConstants.ts';
+import { CONTACT_INFO } from '../utils/seoConstants';
 
 
 export const metadata: Metadata = {

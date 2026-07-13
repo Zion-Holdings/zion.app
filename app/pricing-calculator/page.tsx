@@ -3,8 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import ServiceCard from '@/components/SmartServiceCard';
-import { allServices } from '@/data/servicesData.json';
-import type { Service } from '@/data/servicesData.json';
+import { allServices } from '../data/servicesData.json';
+import type { Service } from '../data/servicesData.json';
 
 const CATEGORY_MAP: Record<string, string> = {
   'manual email': 'automation',

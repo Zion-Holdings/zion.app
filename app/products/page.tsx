@@ -1,7 +1,7 @@
 // app/products/page.tsx — Products & Platforms
 'use client';
-import { allServices } from '@/data/servicesData.json';
-import type { Service } from '@/data/servicesData.json';
+import { allServices } from '../data/servicesData.json';
+import type { Service } from '../data/servicesData.json';
 
 const PRODUCTS: readonly {
   key: string;

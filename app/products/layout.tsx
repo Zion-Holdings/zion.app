@@ -1,5 +1,5 @@
-import { allServices } from '@/data/servicesData.json';
-import type { Service } from '@/data/servicesData.json';
+import { allServices } from '../data/servicesData.json';
+import type { Service } from '../data/servicesData.json';
 
 export const metadata: Metadata = {
   title: 'Products & Platforms | Zion Tech Group',

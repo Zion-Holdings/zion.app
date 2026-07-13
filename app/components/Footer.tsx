@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { CONTACT_INFO, SOCIAL_LINKS } from '@/utils/seoConstants.ts';
+import { CONTACT_INFO, SOCIAL_LINKS } from '../utils/seoConstants';
 
 interface FooterLink {
   name: string;
