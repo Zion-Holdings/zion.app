@@ -1751,5 +1751,11 @@
     "event": "miner_timeout",
     "query": "subject:\"platform engineering\"",
     "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-07-13T04:52:27.010842+00:00",
+    "event": "miner_timeout",
+    "query": "subject:sase",
+    "note": "soft timeout reached; stopping query loop early"
   }
 ]
