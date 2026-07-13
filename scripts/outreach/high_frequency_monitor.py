@@ -1,7 +1,7 @@
 import sys, os, json, time, re
 from pathlib import Path
 
-from commands.google_workspace import gog_headers
+# import removed; not needed for monitor
 import urllib.request, json
 
 SCRIPT_DIR = Path(__file__).resolve().parent
