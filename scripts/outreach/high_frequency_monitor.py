@@ -1,8 +1,5 @@
-import sys, os, json, time, re
+import sys, os, json, time, re, base64
 from pathlib import Path
-
-# import removed; not needed for monitor
-import urllib.request, json
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
@@ -15,6 +12,7 @@ DEDUP_FILE = DEDUP_DIR / 'global_dedup_state.json'
 LEDGER_FILE = DEDUP_DIR / 'sent_ledger.jsonl'
 HOT_FOLLOWUP_LABEL_ID = 'Label_946'
 PENDING_QUEUE_FILE = BASE_DIR / 'outreach_monitor' / 'processed' / 'pending_ceo_drafts.jsonl'
+service = None
 
 
 def append_report(entry: dict):
@@ -53,7 +51,8 @@ def main():
     }
 
     try:
-        # service init via gog_headers
+        if service is None:
+            raise RuntimeError('service not initialized')
         label_map = {}
         for lab in service.users().labels().list(userId='me').execute().get('labels', []):
             label_map[lab['name']] = lab['id']
