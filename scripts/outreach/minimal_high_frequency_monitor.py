@@ -155,6 +155,9 @@ def main():
             'Re: Parceria Zion Tech Group - operacoes e eficiencia para TI',
             'Re: Parceria Zion Tech Group - operacoes e eficiencia para TI'
         ],
+        'recent_outgoing_threads': [
+            '19f498e74495768e', '19f3f7a109960ee9', '19f3e05bc50c1e87'
+        ],
     }
 
     try:
