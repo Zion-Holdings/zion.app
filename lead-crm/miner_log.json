@@ -1733,5 +1733,11 @@
     "event": "miner_timeout",
     "query": "subject:outsourcing",
     "note": "soft timeout reached after search; breaking before metadata extraction"
+  },
+  {
+    "ts": "2026-07-13T04:01:26.350736+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"AI services\"",
+    "note": "soft timeout reached; stopping query loop early"
   }
 ]
