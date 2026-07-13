@@ -57,7 +57,7 @@ const child = spawn('npx', ['next', 'build', '--webpack'], {
   cwd: REPO,
   stdio: 'inherit',
   shell: process.platform === 'win32',
-  env: { ...process.env, NEXT_TELEMETRY_DISABLED: '1' },
+  env: { ...process.env, NEXT_TELEMETRY_DISABLED: '1', NODE_OPTIONS: '--max-old-space-size=4096' },
 });
 
 child.on('error', (err) => {
