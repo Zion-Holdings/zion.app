@@ -7652,5 +7652,39 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Score: 0\n#### Rationale (aligned to scoring framework for managed AI/IT services signal):\n- 2 = Strong explicit signal: The entity publicly and clearly operates in/advertises managed AI/IT services (e.g. site content, service listings, case studies directly referencing this work)\n- 1 = Weak indi",
     "confidence": 0
+  },
+  {
+    "to": "newsletter@myclaw.ai",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "myclaw.ai",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 1\n#### Reasoning aligned to the scoring scale:\n- This is not a 2: There is no explicit reference to managed AI, managed IT services, or confirmed proof the entity offers these specific services in the provided input.\n- This is not a 0: The domain includes the broad term \"tech\", which cre",
+    "confidence": 1
+  },
+  {
+    "to": "sales@computergamingpc.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "computergamingpc.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 1\n#### Reasoning:\nThe domain name `ziontechgroup.com` has only tangential, weak relevance to the broader tech/IT sector (via the generic \"tech\" identifier) but provides no explicit, specific signal that the entity offers managed AI/IT services. There is no supporting context (e.g. site c",
+    "confidence": 1
   }
 ]

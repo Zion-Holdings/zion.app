@@ -13,3 +13,5 @@
 {"ts": "2026-07-13T09:11:11.872600+00:00", "email": "seminarios@funetise.com", "msg_id": "19f5aba515e97828", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
 {"ts": "2026-07-13T09:11:33.049680+00:00", "email": "syblower@163.com", "msg_id": "19f5ab98d9ea213d", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
 {"ts": "2026-07-13T10:04:52.111865+00:00", "email": "zach.hasseler@datadoghq.com", "msg_id": "19f5aed2b409ed7f", "query": "\"ziontechgroup.com\"", "confidence": 0, "high_signal": false}
+{"ts": "2026-07-13T11:07:36.891398+00:00", "email": "newsletter@myclaw.ai", "msg_id": "19f5b2610af33e18", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
+{"ts": "2026-07-13T11:13:24.723551+00:00", "email": "sales@computergamingpc.com", "msg_id": "19f5b2930860ca7d", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
