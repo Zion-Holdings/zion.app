@@ -7941,5 +7941,22 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Rating: 1 (weak/partial signal)\n#### Reasoning aligned to the 0/1/2 scale for managed AI/IT services relevance:\n- A rating of 2 (strong confirmed signal) requires explicit, verifiable evidence the entity offers managed AI/IT services (e.g. service pages, public offerings, case studies tied to th",
     "confidence": 1
+  },
+  {
+    "to": "vsingh@solyssey.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"Zion Tech Group\"",
+    "domain": "solyssey.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 1\n---\n#### Rating framework context:\n- 2 = Strong, explicit value signal: Clear, confirmed evidence the entity specializes in or delivers managed AI/IT services (e.g., explicit service listings, niche case studies, relevant industry certifications, client references tied to this specific",
+    "confidence": 1
   }
 ]
