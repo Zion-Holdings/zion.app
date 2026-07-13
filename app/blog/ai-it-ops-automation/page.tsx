@@ -2,14 +2,16 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI IT Ops Automation | Zion Tech Group',
   description:
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-it-ops-automation' },
     'Explore how AI IT ops automation helps support and infrastructure teams predict incidents, reduce noise, and operate more reliably.',
 
   openGraph: {
     title: 'AI IT Ops Automation | Zion Tech Group',
     description:
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-it-ops-automation' },
       'Predict incidents, reduce alert fatigue, and recover faster with AI-driven IT ops automation, observability, and runbook execution.',
     url: 'https://ziontechgroup.com/blog/ai-it-ops-automation',
     type: 'article',

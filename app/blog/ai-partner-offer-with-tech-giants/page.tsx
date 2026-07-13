@@ -2,14 +2,16 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'How to Build a Competitive AI Partner Offer With Major Tech Players | Zion Tech Group',
   description:
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-partner-offer-with-tech-giants' },
     'Build AI partner offers that create shared value with major tech players, preserve margin, and accelerate joint pipeline.',
 
   openGraph: {
     title: 'How to Build a Competitive AI Partner Offer With Major Tech Players',
     description:
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-partner-offer-with-tech-giants' },
       'A practical framework for AI companies who want to build partner-led deals with major tech players while staying differentiated and profitable.',
     url: 'https://ziontechgroup.com/blog/ai-partner-offer-with-tech-giants',
     type: 'article',

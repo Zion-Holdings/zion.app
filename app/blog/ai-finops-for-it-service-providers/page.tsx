@@ -2,14 +2,16 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI FinOps for IT Service Providers | Zion Tech Group',
   description:
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-finops-for-it-service-providers' },
     'AI can help IT service providers optimize cloud costs, predict spending, and improve margin through smarter FinOps practices.',
 
   openGraph: {
     title: 'AI FinOps for IT Service Providers',
     description:
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-finops-for-it-service-providers' },
       'Explore AI-driven cost optimization, budgeting, and cloud efficiency for IT service providers.',
     url: 'https://ziontechgroup.com/blog/ai-finops-for-it-service-providers',
     type: 'article',

@@ -2,14 +2,16 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI for IT Project Delivery and Implementation Services | Zion Tech Group',
   description:
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-it-project-delivery-and-implementation-services' },
     'AI-assisted project delivery improves planning, risk detection, and implementation speed for IT service providers.',
 
   openGraph: {
     title: 'AI for IT Project Delivery and Implementation Services',
     description:
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-it-project-delivery-and-implementation-services' },
       'Use AI to improve IT project planning, implementation, and delivery predictability.',
     url: 'https://ziontechgroup.com/blog/ai-for-it-project-delivery-and-implementation-services',
     type: 'article',

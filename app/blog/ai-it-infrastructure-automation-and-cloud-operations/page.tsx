@@ -2,14 +2,16 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI IT Infrastructure Automation and Cloud Operations | Zion Tech Group',
   description:
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-it-infrastructure-automation-and-cloud-operations' },
     'AI-driven infrastructure automation improves cloud operations, resource scheduling, and operational reliability for IT teams.',
 
   openGraph: {
     title: 'AI IT Infrastructure Automation and Cloud Operations',
     description:
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-it-infrastructure-automation-and-cloud-operations' },
       'Use AI to improve infrastructure automation, workload placement, and cloud operations.',
     url: 'https://ziontechgroup.com/blog/ai-it-infrastructure-automation-and-cloud-operations',
     type: 'article',

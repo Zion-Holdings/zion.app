@@ -2,14 +2,16 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI for IT Cost Optimization and FinOps | Zion Tech Group',
   description:
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-it-cost-optimization-and-finops' },
     'AI-driven FinOps and cost optimization for IT operations reduce cloud waste, improve chargeback accuracy, and free budget for new AI initiatives.',
 
   openGraph: {
     title: 'AI for IT Cost Optimization and FinOps',
     description:
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-it-cost-optimization-and-finops' },
       'Learn how Zion Tech Group applies AI to IT FinOps for smarter spend, forecasting, and cost governance.',
     url: 'https://ziontechgroup.com/blog/ai-for-it-cost-optimization-and-finops',
     type: 'article',

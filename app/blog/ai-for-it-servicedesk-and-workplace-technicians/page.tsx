@@ -2,14 +2,16 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI for IT Service Desk and Workplace Technicians | Zion Tech Group',
   description:
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-it-servicedesk-and-workplace-technicians' },
     'AI-assisted service desks improve resolution speed, technician guidance, and employee experience for workplace IT support.',
 
   openGraph: {
     title: 'AI for IT Service Desk and Workplace Technicians',
     description:
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-it-servicedesk-and-workplace-technicians' },
       'Use AI to support service desk teams, automate routine requests, and improve workplace IT support.',
     url: 'https://ziontechgroup.com/blog/ai-for-it-servicedesk-and-workplace-technicians',
     type: 'article',

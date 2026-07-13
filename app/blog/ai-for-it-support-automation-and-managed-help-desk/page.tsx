@@ -2,14 +2,16 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI for IT Support Automation and Managed Help Desk | Zion Tech Group',
   description:
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-it-support-automation-and-managed-help-desk' },
     'A modern help desk can use AI to reduce ticket backlog, improve employee satisfaction, and deliver consistent IT support across regions.',
 
   openGraph: {
     title: 'AI for IT Support Automation and Managed Help Desk',
     description:
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-it-support-automation-and-managed-help-desk' },
       'Explore AI-assisted help desk automation, ticket routing, and knowledge management for internal and managed IT support.',
     url: 'https://ziontechgroup.com/blog/ai-for-it-support-automation-and-managed-help-desk',
     type: 'article',

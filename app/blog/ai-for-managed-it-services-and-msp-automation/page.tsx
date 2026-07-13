@@ -2,14 +2,16 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI for Managed IT Services and MSP Automation | Zion Tech Group',
   description:
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-managed-it-services-and-msp-automation' },
     'Discover how AI-driven MSP automation can expand service capacity, reduce manual work, and improve client outcomes.',
 
   openGraph: {
     title: 'AI for Managed IT Services and MSP Automation',
     description:
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-managed-it-services-and-msp-automation' },
       'Use AI to improve MSP delivery, onboarding, and operations at scale.',
     url: 'https://ziontechgroup.com/blog/ai-for-managed-it-services-and-msp-automation',
     type: 'article',

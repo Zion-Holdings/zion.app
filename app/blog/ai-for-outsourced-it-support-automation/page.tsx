@@ -2,14 +2,16 @@ import { Metadata } from 'next';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 import ArticleStructuredData from '@/components/ArticleStructuredData';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'AI for Outsourced IT Support Automation | Zion Tech Group',
   description:
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-outsourced-it-support-automation' },
     'AI can improve outsourced IT support by automating ticket handling, routing, and service-level compliance for better client outcomes.',
 
   openGraph: {
     title: 'AI for Outsourced IT Support Automation',
     description:
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-outsourced-it-support-automation' },
       'Explore AI-assisted support automation for outsourced IT teams and service providers.',
     url: 'https://ziontechgroup.com/blog/ai-for-outsourced-it-support-automation',
     type: 'article',
