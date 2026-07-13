@@ -3,7 +3,9 @@ import type { Metadata } from "next";
 export const metadata = {
   title: "AI Services Catalog | Zion Tech Group",
   description: "Explore Zion Tech Group's AI services catalog: automation, copilots, computer vision, document intelligence, and workflow AI.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-services-catalog" }};
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-services-catalog" },
+};
+
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

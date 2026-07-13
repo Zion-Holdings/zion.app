@@ -4,7 +4,9 @@ export const metadata = {
   title: "AI Business Intelligence | Zion Tech Group",
   description:
     "Use AI business intelligence to turn operational data into actionable insights, forecasts, and faster decisions.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-business-intelligence" }};
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-business-intelligence" },
+};
+
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

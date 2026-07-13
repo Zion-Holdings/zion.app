@@ -12,7 +12,9 @@ export const metadata = {
     description: 'Practical free AI tools for IT support, MSPs, and automation teams in 2026.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/free-ai-tools-for-it-support-and-msps-2026',
-  }};
+  },
+};
+
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">

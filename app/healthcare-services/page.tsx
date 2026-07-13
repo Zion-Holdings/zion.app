@@ -3,7 +3,9 @@ import { Metadata } from "next";
 export const metadata = {
   title: "Healthcare IT Services | Zion Tech Group",
   description: "Healthcare technology — EHR integration, telemedicine, HIPAA compliance, and medical data analytics",
-  alternates: { canonical: "https://ziontechgroup.com/services/?category=healthcare" }};
+  alternates: { canonical: "https://ziontechgroup.com/services/?category=healthcare" },
+};
+
 export default function CategoryPage() {
   return (
     <main style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#020617" }}>

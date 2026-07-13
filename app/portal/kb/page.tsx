@@ -1,10 +1,12 @@
 // app/portal/kb/page.tsx
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/portal/kb' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/portal/kb' },
+xport const metadata = {
   title: 'Knowledge Base — Client Portal',
-  description: 'Documentation, guides, how-tos, and technical resources.'};
+  description: 'Documentation, guides, how-tos, and technical resources.',
+};
+
 export default function KnowledgeBasePage() {
   const articles = [
     { title: 'Getting Started Guide',       desc: 'Set up your account, configure integrations, and run your first AI workflow.', emoji: '\u{1F680}' },

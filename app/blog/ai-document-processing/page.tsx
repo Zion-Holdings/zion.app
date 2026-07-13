@@ -13,7 +13,9 @@ export const metadata = {
       'Reduce document processing time by 90% with AI-powered OCR and workflow automation.',
     url: 'https://ziontechgroup.com/blog/ai-document-processing',
     type: 'article',
-  }};
+  },
+};
+
 export default function AiDocumentProcessingPage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-10 space-y-8">

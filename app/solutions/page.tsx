@@ -1,10 +1,12 @@
 // app/solutions/page.tsx
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/solutions' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/solutions' },
+xport const metadata = {
   title: 'Solutions — Zion Tech Group',
-  description: 'Industry-specific AI, IT, and Micro-SaaS solutions for Healthcare, Financial Services, Manufacturing, and more.'};
+  description: 'Industry-specific AI, IT, and Micro-SaaS solutions for Healthcare, Financial Services, Manufacturing, and more.',
+};
+
 const industries = [
   { name: 'Healthcare',                    desc: 'HIPAA-compliant AI diagnostics, patient engagement, and clinical automation.' },
   { name: 'Financial Services',            desc: 'RegTech, fraud detection, trading bots, and KYC automation.' },

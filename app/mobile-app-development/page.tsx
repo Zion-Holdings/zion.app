@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/mobile-app-development' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/mobile-app-development' },
+xport const metadata = {
   title: 'Mobile App Development | Zion Tech Group',
-  description: 'Native and cross-platform mobile app development services.'};
+  description: 'Native and cross-platform mobile app development services.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

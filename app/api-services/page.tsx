@@ -3,7 +3,9 @@ import { Metadata } from "next";
 export const metadata = {
   title: "API Management Services | Zion Tech Group",
   description: "API platforms — gateway management, API design, developer portals, and API monetization",
-  alternates: { canonical: "https://ziontechgroup.com/services/?category=api" }};
+  alternates: { canonical: "https://ziontechgroup.com/services/?category=api" },
+};
+
 export default function CategoryPage() {
   return (
     <main style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#020617" }}>

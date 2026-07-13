@@ -4,7 +4,9 @@ export const metadata = {
   title: "AI Retail Forecasting | Zion Tech Group",
   description:
     "Improve inventory and revenue planning with AI retail forecasting built for modern merchandising and supply chains.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-retail-forecasting" }};
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-retail-forecasting" },
+};
+
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

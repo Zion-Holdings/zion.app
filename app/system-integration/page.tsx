@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/system-integration' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/system-integration' },
+xport const metadata = {
   title: 'System Integration | Zion Tech Group',
-  description: 'Seamlessly integrate your systems with APIs, middleware, and custom connectors.'};
+  description: 'Seamlessly integrate your systems with APIs, middleware, and custom connectors.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

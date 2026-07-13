@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/micro-saas/ai-content-writer-pro' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/micro-saas/ai-content-writer-pro' },
+xport const metadata = {
   title: 'AI Content Writer Pro | Zion Tech Group',
-  description: 'AI-powered content generation for blogs, social media, and marketing.'};
+  description: 'AI-powered content generation for blogs, social media, and marketing.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

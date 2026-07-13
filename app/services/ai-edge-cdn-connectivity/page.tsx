@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-  alternates: { canonical: 'https://ziontechgroup.com/services/ai-edge-cdn-connectivity' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/services/ai-edge-cdn-connectivity' },
+xport const metadata = {
   title: 'AI Edge, CDN, and Connectivity Services | Zion Tech Group',
-  description: 'Edge inference, AI-first CDN, SASE, and secure connectivity services for LATAM enterprises.'};
+  description: 'Edge inference, AI-first CDN, SASE, and secure connectivity services for LATAM enterprises.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

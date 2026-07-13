@@ -4,7 +4,9 @@ export const metadata = {
   title: "AI Healthcare Clinical Decision Support | Zion Tech Group",
   description:
     "Explore AI healthcare clinical decision support with secure workflows, documentation assistance, and analytics.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-healthcare-clinical" }};
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-healthcare-clinical" },
+};
+
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

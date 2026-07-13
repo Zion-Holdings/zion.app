@@ -6,7 +6,9 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Email Intelligence and Reply Automation for Support Teams | Zion Tech Group',
   description: 'How support teams can use AI email intelligence to respond faster and reduce workload.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-email-intelligence-and-reply-automation-for-support-teams-2026' }};
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-email-intelligence-and-reply-automation-for-support-teams-2026' },
+};
+
 export default function BlogPage() {
   return (
     <main className="max-w-6xl mx-auto px-4 py-10">

@@ -1,7 +1,9 @@
 export const metadata = {
   title: 'AI for IT Remote Support and Endpoint Assistance | Zion Tech Group',
   description: 'Discover how AI improves remote support, endpoint troubleshooting, guided fixes, and technician enablement.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-it-remote-support-and-endpoint-assistance' }};
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-it-remote-support-and-endpoint-assistance' },
+};
+
 export default function AiRemoteSupportPage() {
   return (
     <article className="prose dark:prose-invert max-w-3xl mx-auto px-4 py-10">

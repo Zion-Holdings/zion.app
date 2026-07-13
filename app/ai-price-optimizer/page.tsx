@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/ai-price-optimizer' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/ai-price-optimizer' },
+xport const metadata = {
   title: 'AI Price Optimizer | Zion Tech Group',
-  description: 'Dynamic pricing optimization using machine learning and market data.'};
+  description: 'Dynamic pricing optimization using machine learning and market data.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

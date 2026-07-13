@@ -3,7 +3,9 @@ import type { Metadata } from 'next';
 export const metadata = {
   title: 'DevOps Services | Zion Tech Group',
   description: 'DevOps services — CI/CD, infrastructure as code, containerization, and deployment automation.',
-  alternates: { canonical: 'https://ziontechgroup.com/services/?category=devops' }};
+  alternates: { canonical: 'https://ziontechgroup.com/services/?category=devops' },
+};
+
 export default function DevopsServicesPage() {
   return (
     <main style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#020617' }}>

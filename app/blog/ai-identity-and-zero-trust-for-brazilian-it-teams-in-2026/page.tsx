@@ -1,8 +1,10 @@
 import Link from 'next/link';
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-identity-and-zero-trust-for-brazilian-it-teams-in-2026' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-identity-and-zero-trust-for-brazilian-it-teams-in-2026' },
+xport const metadata = {
   title: 'AI Identity and Zero Trust for Brazilian IT Teams in 2026',
-  description: 'Practical AI-driven identity and zero-trust patterns for Brazilian IT teams in 2026.'};
+  description: 'Practical AI-driven identity and zero-trust patterns for Brazilian IT teams in 2026.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

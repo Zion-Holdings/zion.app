@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/ai-predictive-maintenance' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/ai-predictive-maintenance' },
+xport const metadata = {
   title: 'AI Predictive Maintenance | Zion Tech Group',
-  description: 'Predict equipment failures before they happen with IoT and AI.'};
+  description: 'Predict equipment failures before they happen with IoT and AI.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

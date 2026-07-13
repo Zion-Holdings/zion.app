@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-knowledge-management-and-enterprise-search-in-2026' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-knowledge-management-and-enterprise-search-in-2026' },
+xport const metadata = {
   title: 'AI Knowledge Management and Enterprise Search in 2026',
-  description: 'Deploy AI knowledge management and enterprise search to improve retrieval, onboarding, and decision speed.'};
+  description: 'Deploy AI knowledge management and enterprise search to improve retrieval, onboarding, and decision speed.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

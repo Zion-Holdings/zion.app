@@ -4,7 +4,9 @@ export const metadata = {
   title: "AI Document Automation Free Tools | Zion Tech Group",
   description:
     "Free AI document automation tools and resources to help teams move from manual paperwork to structured workflows.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-document-automation-free-tools" }};
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-document-automation-free-tools" },
+};
+
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

@@ -4,7 +4,9 @@ export const metadata = {
   title: "AI Email Automation for Business | Zion Tech Group",
   description:
     "Implement AI email automation for business with safer routing, drafting, and analytics from Zion Tech Group.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-email-automation-business" }};
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-email-automation-business" },
+};
+
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

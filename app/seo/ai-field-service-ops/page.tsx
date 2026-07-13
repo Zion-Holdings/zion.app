@@ -4,7 +4,9 @@ export const metadata = {
   title: "AI Field Service Operations | Zion Tech Group",
   description:
     "Improve dispatch and first-time fix rates with AI field service operations support.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-field-service-ops" }};
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-field-service-ops" },
+};
+
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

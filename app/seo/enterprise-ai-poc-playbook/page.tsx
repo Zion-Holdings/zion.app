@@ -1,7 +1,9 @@
 export const metadata = {
   title: 'Enterprise AI PoC Playbook | Zion Tech Group',
   description: 'Use this enterprise AI PoC playbook to select use cases, define success metrics, avoid common pitfalls, and move from proof-of-concept to production with Zion Tech Group.',
-  alternates: { canonical: 'https://ziontechgroup.com/enterprise-ai-poc-playbook' }};
+  alternates: { canonical: 'https://ziontechgroup.com/enterprise-ai-poc-playbook' },
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen">

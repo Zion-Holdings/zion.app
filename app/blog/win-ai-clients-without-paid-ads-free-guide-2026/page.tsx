@@ -12,7 +12,9 @@ export const metadata = {
     description: 'Organic tactics for AI and IT service providers to find, convert, and retain clients without paid ads.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/win-ai-clients-without-paid-ads-free-guide-2026',
-  }};
+  },
+};
+
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">

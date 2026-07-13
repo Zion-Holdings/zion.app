@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-customer-success-and-renewal-intelligence-in-2026' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-customer-success-and-renewal-intelligence-in-2026' },
+xport const metadata = {
   title: 'AI-First Customer Success and Renewal Intelligence in 2026',
-  description: 'Use AI-assisted customer success and renewal intelligence to reduce churn and expand accounts.'};
+  description: 'Use AI-assisted customer success and renewal intelligence to reduce churn and expand accounts.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

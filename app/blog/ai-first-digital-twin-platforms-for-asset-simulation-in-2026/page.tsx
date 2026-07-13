@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-digital-twin-platforms-for-asset-simulation-in-2026' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-digital-twin-platforms-for-asset-simulation-in-2026' },
+xport const metadata = {
   title: 'AI-First Digital Twin Platforms for Asset Simulation in 2026',
-  description: 'AI-assisted digital twin platforms for asset simulation, predictive maintenance, and operational insight.'};
+  description: 'AI-assisted digital twin platforms for asset simulation, predictive maintenance, and operational insight.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

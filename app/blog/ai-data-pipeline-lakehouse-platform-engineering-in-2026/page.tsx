@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-data-pipeline-lakehouse-platform-engineering-in-2026' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-data-pipeline-lakehouse-platform-engineering-in-2026' },
+xport const metadata = {
   title: 'AI Data Pipeline and Lakehouse Platform Engineering in 2026',
-  description: 'Modern data pipeline and lakehouse patterns with AI-assisted ingestion, quality, and platform operations.'};
+  description: 'Modern data pipeline and lakehouse patterns with AI-assisted ingestion, quality, and platform operations.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

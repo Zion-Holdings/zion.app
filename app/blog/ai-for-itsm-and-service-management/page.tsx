@@ -13,7 +13,9 @@ export const metadata = {
       'Use AI to speed up ITSM workflows and reduce ticket-to-resolution time.',
     url: 'https://ziontechgroup.com/blog/ai-for-itsm-and-service-management',
     type: 'article',
-  }};
+  },
+};
+
 export default function AiForITSMAndServiceManagementPage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-10 space-y-8">

@@ -2,7 +2,9 @@
 export const metadata = {
   title: "Managed AI Cloud Support for Startups and Enterprises in 2026 | Zion Tech Group",
   description: "How managed AI cloud support can help startups and enterprises accelerate operations, reduce risk, and scale reliably.",
-  alternates: { canonical: "/managed-ai-cloud-support-for-startups-and-enterprises-in-2026/" }};
+  alternates: { canonical: "/managed-ai-cloud-support-for-startups-and-enterprises-in-2026/" },
+};
+
 export default function Page() {
   const content = `<p>Managed AI cloud support in 2026 removes operational burden without requiring a large in-house team.</p>
 <h3>Useful inclusions</h3>

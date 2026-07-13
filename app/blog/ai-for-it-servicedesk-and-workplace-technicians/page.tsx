@@ -13,7 +13,9 @@ export const metadata = {
       'Use AI to support service desk teams, automate routine requests, and improve workplace IT support.',
     url: 'https://ziontechgroup.com/blog/ai-for-it-servicedesk-and-workplace-technicians',
     type: 'article',
-  }};
+  },
+};
+
 export default function AiForITServiceDeskAndWorkplaceTechniciansPage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-10 space-y-8">

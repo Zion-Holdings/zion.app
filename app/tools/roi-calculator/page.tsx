@@ -9,7 +9,9 @@ import ROICalculatorClient from './ROICalculatorClient';
 export const metadata = {
   title: 'ROI Calculator — Zion Tech Group',
   description: 'Calculate the return on investment for AI and IT services with our free ROI calculator.',
-  alternates: { canonical: 'https://ziontechgroup.com/tools/roi-calculator' }};
+  alternates: { canonical: 'https://ziontechgroup.com/tools/roi-calculator' },
+};
+
 export default function ROICalculatorPage() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

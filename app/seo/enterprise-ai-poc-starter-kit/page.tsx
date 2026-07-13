@@ -4,7 +4,9 @@ export const metadata = {
   title: "Enterprise AI PoC Starter Kit | Zion Tech Group",
   description:
     "Start a structured enterprise AI PoC with Zion Tech Group using this starter kit: scope, metrics, and implementation support.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/enterprise-ai-poc-starter-kit" }};
+  alternates: { canonical: "https://ziontechgroup.com/seo/enterprise-ai-poc-starter-kit" },
+};
+
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

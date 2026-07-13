@@ -8,13 +8,15 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const { id } = await params;
   const base: Metadata = {
     title: 'Proposal Detail | Zion Tech Group',
-    description: 'View and download your custom Zion Tech Group service proposal.'};
+    description: 'View and download your custom Zion Tech Group service proposal.',
+  };
   if (id !== '__sample__') {
     return {
       ...base,
       alternates: {
         canonical: `/proposals/view/${id}`,
-      }};
+      },
+    };
   }
   return base;
 }

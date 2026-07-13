@@ -1,7 +1,9 @@
 export const metadata = {
   title: "AI Outsourcing vs In-House IT in LATAM | Zion Tech Group",
   description: "Comparing AI outsourcing versus in-house IT execution for LATAM companies.",
-  alternates: { canonical: "/ai-outsourcing-vs-in-house-it-latam/" }};
+  alternates: { canonical: "/ai-outsourcing-vs-in-house-it-latam/" },
+};
+
 export default function Page() {
   return (
     <article className="container-page py-20">

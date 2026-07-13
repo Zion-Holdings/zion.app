@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/docs/FREE-AI-TOOLS' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/docs/FREE-AI-TOOLS' },
+xport const metadata = {
   title: 'Free AI Tools Directory | Zion Tech Group',
-  description: 'Curated directory of free AI tools for developers, designers, and businesses.'};
+  description: 'Curated directory of free AI tools for developers, designers, and businesses.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

@@ -13,7 +13,9 @@ export const metadata = {
       'Predict trends with 95%+ accuracy without a data science team.',
     url: 'https://ziontechgroup.com/blog/ai-predictive-analytics',
     type: 'article',
-  }};
+  },
+};
+
 export default function AiPredictiveAnalyticsPage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-10 space-y-8">

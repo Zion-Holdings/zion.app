@@ -13,7 +13,9 @@ export const metadata = {
       'Explore AI-driven cost optimization, budgeting, and cloud efficiency for IT service providers.',
     url: 'https://ziontechgroup.com/blog/ai-finops-for-it-service-providers',
     type: 'article',
-  }};
+  },
+};
+
 export default function AiFinOpsForITServiceProvidersPage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-10 space-y-8">

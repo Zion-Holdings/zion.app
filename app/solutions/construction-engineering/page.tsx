@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/solutions/construction-engineering' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/solutions/construction-engineering' },
+xport const metadata = {
   title: 'Construction & Engineering Solutions | Zion Tech Group',
-  description: 'Digital transformation solutions for construction and engineering firms.'};
+  description: 'Digital transformation solutions for construction and engineering firms.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

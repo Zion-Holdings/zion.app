@@ -4,7 +4,9 @@ export const metadata = {
   title: "AI Factory Intelligence for Manufacturing | Zion Tech Group",
   description:
     "Improve throughput and quality with AI factory intelligence, predictive control, and maintenance.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-factory-intelligence" }};
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-factory-intelligence" },
+};
+
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

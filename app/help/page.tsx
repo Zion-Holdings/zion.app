@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/help' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/help' },
+xport const metadata = {
   title: 'Help Center | Zion Tech Group',
-  description: 'Find answers to common questions and get support.'};
+  description: 'Find answers to common questions and get support.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

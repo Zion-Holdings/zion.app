@@ -1,10 +1,12 @@
 // app/portal/projects/page.tsx
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/portal/projects' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/portal/projects' },
+xport const metadata = {
   title: 'Project Dashboard — Client Portal',
-  description: 'Active project dashboards, milestones, and status updates.'};
+  description: 'Active project dashboards, milestones, and status updates.',
+};
+
 export default function ProjectsPage() {
   const projects = [
     { name: 'AI Customer Support Rollout', status: 'In Progress', progress: 65, color: 'bg-purple-500' },

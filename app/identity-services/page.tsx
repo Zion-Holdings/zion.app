@@ -3,7 +3,9 @@ import { Metadata } from "next";
 export const metadata = {
   title: "Identity & Access Management | Zion Tech Group",
   description: "Identity services — SSO, MFA, directory services, and zero-trust identity",
-  alternates: { canonical: "https://ziontechgroup.com/services/?category=identity" }};
+  alternates: { canonical: "https://ziontechgroup.com/services/?category=identity" },
+};
+
 export default function CategoryPage() {
   return (
     <main style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#020617" }}>

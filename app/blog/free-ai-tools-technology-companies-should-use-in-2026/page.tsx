@@ -1,7 +1,9 @@
 export const metadata = {
   title: "Free AI Tools Technology Companies Should Use in 2026 | Zion Tech Group",
   description: "Curated free AI tools and resources for technology companies evaluating AI adoption.",
-  alternates: { canonical: "/free-ai-tools-technology-companies-should-use-in-2026/" }};
+  alternates: { canonical: "/free-ai-tools-technology-companies-should-use-in-2026/" },
+};
+
 export default function Page() {
   return (
     <article className="container-page py-20">

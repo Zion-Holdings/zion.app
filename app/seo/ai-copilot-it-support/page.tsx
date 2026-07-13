@@ -4,7 +4,9 @@ export const metadata = {
   title: "AI Copilot for IT Support | Zion Tech Group",
   description:
     "Deploy an AI copilot for IT support that answers tickets, automates documentation, and enforces policy.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-copilot-it-support" }};
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-copilot-it-support" },
+};
+
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

@@ -2,7 +2,9 @@
 export const metadata = {
   title: "Nebius Partnership LATAM Expansion Guide | Zion Tech Group",
   description: "How Zion Tech Group and Nebius can collaborate on LATAM AI cloud expansion through local delivery, managed services, and support.",
-  alternates: { canonical: "/nebius-partnership-latam-expansion-guide/" }};
+  alternates: { canonical: "/nebius-partnership-latam-expansion-guide/" },
+};
+
 export default function Page() {
   const content = `<p>Nebius partnership for LATAM AI cloud expansion works best when a local partner handles delivery, operations, and customer support.</p>
 <h3>Practical collaboration areas</h3>

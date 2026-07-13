@@ -4,7 +4,9 @@ export const metadata = {
   title: "AI Voice Assistant for Business | Zion Tech Group",
   description:
     "Improve support and operations with AI voice assistants for call handling, routing, and escalation.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-voice-assistant-business" }};
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-voice-assistant-business" },
+};
+
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

@@ -136,7 +136,9 @@ const TAG_COLORS: Record<string, string> = {
   emerald: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/25',
   amber:   'bg-amber-500/15 text-amber-300 border-amber-500/25',
   sky:     'bg-sky-500/15 text-sky-300 border-sky-500/25',
-  indigo:  'bg-indigo-500/15 text-indigo-300 border-indigo-500/25'};
+  indigo:  'bg-indigo-500/15 text-indigo-300 border-indigo-500/25',
+};
+
 function TagBadge({ label, color }: { label: string; color: string }) {
   return (
     <span

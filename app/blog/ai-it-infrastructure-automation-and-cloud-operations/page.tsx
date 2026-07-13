@@ -13,7 +13,9 @@ export const metadata = {
       'Use AI to improve infrastructure automation, workload placement, and cloud operations.',
     url: 'https://ziontechgroup.com/blog/ai-it-infrastructure-automation-and-cloud-operations',
     type: 'article',
-  }};
+  },
+};
+
 export default function AiItInfrastructureAutomationAndCloudOperationsPage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-10 space-y-8">

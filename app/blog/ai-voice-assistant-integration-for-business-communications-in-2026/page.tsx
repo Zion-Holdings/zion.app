@@ -1,7 +1,9 @@
 export const metadata = {
   title: "AI Voice Assistant Integration for Business Communications in 2026 | Zion Tech Group",
   description: "Practical AI voice assistant integration patterns for business communications, including support, field service, and internal operations in LATAM.",
-  alternates: { canonical: "/ai-voice-assistant-integration-for-business-communications-in-2026/" }};
+  alternates: { canonical: "/ai-voice-assistant-integration-for-business-communications-in-2026/" },
+};
+
 export default function Page() {
   return (
     <article className="container-page py-20">

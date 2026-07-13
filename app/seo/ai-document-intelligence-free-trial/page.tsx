@@ -4,7 +4,9 @@ export const metadata = {
   title: "AI Document Intelligence Free Trial | Zion Tech Group",
   description:
     "Start an AI document intelligence free trial with Zion Tech Group: extraction, classification, and workflow integration.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-document-intelligence-free-trial" }};
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-document-intelligence-free-trial" },
+};
+
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

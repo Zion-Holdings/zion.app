@@ -13,7 +13,9 @@ export const metadata = {
       'Qualify leads 24/7 with an AI chatbot that deploys in minutes.',
     url: 'https://ziontechgroup.com/blog/ai-chatbot-builder',
     type: 'article',
-  }};
+  },
+};
+
 export default function AiChatbotBuilderPage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-10 space-y-8">

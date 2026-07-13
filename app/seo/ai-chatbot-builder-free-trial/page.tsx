@@ -4,7 +4,9 @@ export const metadata = {
   title: "AI Chatbot Builder Free Trial | Zion Tech Group",
   description:
     "Build and test an AI chatbot with Zion Tech Group using our guided free trial and prebuilt integrations.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-chatbot-builder-free-trial" }};
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-chatbot-builder-free-trial" },
+};
+
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

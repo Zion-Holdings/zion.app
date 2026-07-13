@@ -5,7 +5,9 @@ export const metadata = {
   title: 'Zion AI Conversation Analytics',
   description:
     'Analyze customer conversations across channels to surface insights, trends, and improvement opportunities.',
-  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-conversation-analytics' }};
+  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-conversation-analytics' },
+};
+
 export default function Page() {
   return (
     <ProductPageLayout

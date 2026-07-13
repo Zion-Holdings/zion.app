@@ -5,7 +5,9 @@ export const metadata = {
   title: 'Zion AI Capacity Planner',
   description:
     'Forecast resource and capacity needs with ML models that factor in demand, seasonality, and growth trends.',
-  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-capacity-planner' }};
+  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-capacity-planner' },
+};
+
 export default function Page() {
   return (
     <ProductPageLayout

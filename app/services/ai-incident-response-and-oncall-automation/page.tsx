@@ -6,7 +6,9 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Incident Response and Oncall Automation for IT Teams 2026 | Zion Tech Group',
   description: 'AI incident response and oncall automation playbook for IT teams and MSPs in 2026. Reduce MTTR with structured triage, escalation, and remediation workflows.',
-  alternates: { canonical: 'https://ziontechgroup.com/services/ai-incident-response-and-oncall-automation' }};
+  alternates: { canonical: 'https://ziontechgroup.com/services/ai-incident-response-and-oncall-automation' },
+};
+
 export default function ServicePage() {
   return (
     <main className="max-w-6xl mx-auto px-4 py-10">

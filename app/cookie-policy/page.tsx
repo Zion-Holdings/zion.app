@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/cookie-policy' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/cookie-policy' },
+xport const metadata = {
   title: 'Cookie Policy | Zion Tech Group',
-  description: 'How Zion Tech Group uses cookies and similar technologies on our website.'};
+  description: 'How Zion Tech Group uses cookies and similar technologies on our website.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

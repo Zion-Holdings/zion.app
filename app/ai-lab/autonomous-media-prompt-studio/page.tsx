@@ -28,7 +28,8 @@ export default function AutonomousMediaPromptStudioPage() {
       'illustration': 'digital illustration, clean lines, vibrant colors, professional design',
       '3d-render': '3D render, octane render, volumetric lighting, subsurface scattering',
       'anime': 'anime style, cel shading, vibrant palette, studio quality',
-      'watercolor': 'watercolor painting, soft edges, artistic, textured paper'};
+      'watercolor': 'watercolor painting, soft edges, artistic, textured paper',
+    };
     return `${subject.trim()}, ${styleModifiers[style]}, ${aspectRatio} aspect ratio, high resolution, professional quality`;
   }, [subject, style, aspectRatio]);
 

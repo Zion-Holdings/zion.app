@@ -13,7 +13,9 @@ export const metadata = {
       'Use AI for smarter incident triage, faster root-cause analysis, and consistent response execution.',
     url: 'https://ziontechgroup.com/blog/ai-for-it-incident-management-and-response',
     type: 'article',
-  }};
+  },
+};
+
 export default function AiForItIncidentManagementAndResponsePage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-10 space-y-8">

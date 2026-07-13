@@ -1,7 +1,9 @@
-  alternates: { canonical: 'https://ziontechgroup.com/seo/it-automation-free-tools' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/seo/it-automation-free-tools' },
+xport const metadata = {
   title: 'IT Automation Free Tools and Scripts | Zion Tech Group',
-  description: 'Zion Tech Group IT automation free tools and scripts: onboarding, patching, log rotation, ticket routing, and deployment shortcuts.'};
+  description: 'Zion Tech Group IT automation free tools and scripts: onboarding, patching, log rotation, ticket routing, and deployment shortcuts.',
+};
+
 export default function Page() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950">

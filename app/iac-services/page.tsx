@@ -3,7 +3,9 @@ import { Metadata } from "next";
 export const metadata = {
   title: "Infrastructure as Code Services | Zion Tech Group",
   description: "IaC solutions — Terraform, Pulumi, CloudFormation, and infrastructure automation",
-  alternates: { canonical: "https://ziontechgroup.com/services/?category=iac" }};
+  alternates: { canonical: "https://ziontechgroup.com/services/?category=iac" },
+};
+
 export default function CategoryPage() {
   return (
     <main style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#020617" }}>

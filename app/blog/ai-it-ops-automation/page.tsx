@@ -13,7 +13,9 @@ export const metadata = {
       'Predict incidents, reduce alert fatigue, and recover faster with AI-driven IT ops automation, observability, and runbook execution.',
     url: 'https://ziontechgroup.com/blog/ai-it-ops-automation',
     type: 'article',
-  }};
+  },
+};
+
 export default function AiItOpsAutomationPage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-10 space-y-8">

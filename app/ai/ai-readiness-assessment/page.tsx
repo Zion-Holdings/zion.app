@@ -6,7 +6,9 @@ export const metadata = {
   title: 'Free AI Readiness Assessment | Zion Tech Group',
   description:
     'Get a free AI readiness assessment from Zion Tech Group. Discover quick wins for automation, security, cloud, and AI delivery in 5 minutes.',
-  alternates: { canonical: 'https://ziontechgroup.com/ai/ai-readiness-assessment' }};
+  alternates: { canonical: 'https://ziontechgroup.com/ai/ai-readiness-assessment' },
+};
+
 const questions = [
   {
     id: 'automation',
@@ -69,7 +71,9 @@ const advice: Record<number, string[]> = {
   17: [
     'You have strong foundations—optimize for speed, resilience, and AI scale.',
     'A short conversation can help prioritize MLOps, security ops, and growth levers.',
-  ]};
+  ],
+};
+
 function getAdvice(score: number) {
   if (score >= 17) return advice[17];
   if (score >= 12) return advice[12];

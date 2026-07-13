@@ -5,7 +5,9 @@ import type { Metadata } from 'next';
 export const metadata = {
   title: 'Service Health',
   description: 'Live health status for individual Zion Tech Group services — response time, uptime, and incident history.',
-  alternates: { canonical: 'https://ziontechgroup.com/status/service-health' }};
+  alternates: { canonical: 'https://ziontechgroup.com/status/service-health' },};
+
+
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import Link from 'next/link';

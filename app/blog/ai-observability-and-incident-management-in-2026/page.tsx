@@ -1,8 +1,10 @@
 import Link from 'next/link';
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-observability-and-incident-management-in-2026' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-observability-and-incident-management-in-2026' },
+xport const metadata = {
   title: 'AI Observability and Incident Management in 2026',
-  description: 'AI observability and incident management patterns that reduce MTTR and improve reliability for distributed teams.'};
+  description: 'AI observability and incident management patterns that reduce MTTR and improve reliability for distributed teams.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

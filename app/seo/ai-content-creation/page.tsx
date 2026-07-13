@@ -4,7 +4,9 @@ export const metadata = {
   title: "AI Content Creation for Business | Zion Tech Group",
   description:
     "Accelerate content production with AI content creation for marketing, docs, and digital experiences.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-content-creation" }};
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-content-creation" },
+};
+
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

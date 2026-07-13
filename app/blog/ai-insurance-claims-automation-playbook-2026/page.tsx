@@ -12,7 +12,9 @@ export const metadata = {
     description: 'Practical AI insurance claims automation playbook for carriers, brokers, and insurtechs.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-insurance-claims-automation-playbook-2026',
-  }};
+  },
+};
+
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">

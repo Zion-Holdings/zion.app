@@ -1,7 +1,9 @@
-  alternates: { canonical: 'https://ziontechgroup.com/seo/ai-free-platform-trial' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/seo/ai-free-platform-trial' },
+xport const metadata = {
   title: 'AI Free Platform Trial | Zion Tech Group',
-  description: 'Start an AI platform free trial from Zion Tech Group with guided onboarding, sample automations, and expert support for your first deployment.'};
+  description: 'Start an AI platform free trial from Zion Tech Group with guided onboarding, sample automations, and expert support for your first deployment.',
+};
+
 export default function Page() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950">

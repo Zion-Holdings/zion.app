@@ -13,7 +13,9 @@ export const metadata = {
       'Use AI to improve MSP security delivery, alert handling, and client protection.',
     url: 'https://ziontechgroup.com/blog/ai-cybersecurity-operations-for-msp',
     type: 'article',
-  }};
+  },
+};
+
 export default function AiCybersecurityOperationsForMspPage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-10 space-y-8">

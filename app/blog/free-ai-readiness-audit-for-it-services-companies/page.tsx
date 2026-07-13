@@ -12,7 +12,9 @@ export const metadata = {
     description: 'Assessment checklist and roadmap for IT services companies preparing for AI delivery.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/free-ai-readiness-audit-for-it-services-companies',
-  }};
+  },
+};
+
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">

@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/ai-claims-automation' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/ai-claims-automation' },
+xport const metadata = {
   title: 'AI Claims Automation | Zion Tech Group',
-  description: 'Automate insurance claims processing with AI and machine learning.'};
+  description: 'Automate insurance claims processing with AI and machine learning.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

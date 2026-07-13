@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-native-backup-disaster-recovery-making-software-defined-in-2026' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-native-backup-disaster-recovery-making-software-defined-in-2026' },
+xport const metadata = {
   title: 'AI-Native Backup and Disaster Recovery in 2026',
-  description: 'AI-native backup and disaster recovery practices for mission-critical SaaS, AI, and platform workloads.'};
+  description: 'AI-native backup and disaster recovery practices for mission-critical SaaS, AI, and platform workloads.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

@@ -1,5 +1,5 @@
-  alternates: { canonical: 'https://ziontechgroup.com/solutions/financial-services' },
-export const metadata = { title: "Financial Services & FinTech", description: "AI-powered solutions for banking, insurance, fintech, and capital markets." };
+e  alternates: { canonical: 'https://ziontechgroup.com/solutions/financial-services' },
+xport const metadata = { title: "Financial Services & FinTech", description: "AI-powered solutions for banking, insurance, fintech, and capital markets." };
 import Link from 'next/link';
 
 export default function SolutionPage() {

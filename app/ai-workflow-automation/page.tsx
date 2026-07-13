@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/ai-workflow-automation' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/ai-workflow-automation' },
+xport const metadata = {
   title: 'AI Workflow Automation | Zion Tech Group',
-  description: 'Automate complex business workflows with AI and intelligent routing.'};
+  description: 'Automate complex business workflows with AI and intelligent routing.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

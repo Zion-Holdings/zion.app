@@ -3,7 +3,9 @@ import type { Metadata } from "next";
 export const metadata = {
   title: "Enterprise AI Free Trial | Zion Tech Group",
   description: "Start an enterprise AI free trial with Zion Tech Group. Hands-on onboarding, no long-term lock-in.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/enterprise-ai-free-trial" }};
+  alternates: { canonical: "https://ziontechgroup.com/seo/enterprise-ai-free-trial" },
+};
+
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

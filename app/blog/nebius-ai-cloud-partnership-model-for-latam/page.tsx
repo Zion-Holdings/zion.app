@@ -1,7 +1,9 @@
 export const metadata = {
   title: "Nebius AI Cloud Partnership Model for LATAM | Zion Tech Group",
   description: "Nebius AI Cloud Partnership Model for LATAM.",
-  alternates: { canonical: "/nebius-ai-cloud-partnership-model-for-latam/" }};
+  alternates: { canonical: "/nebius-ai-cloud-partnership-model-for-latam/" },
+};
+
 export default function Page() {
   const content = `<p>Nebius AI cloud expansion in LATAM benefits from a local partner model that combines delivery capability, managed services, and regional support.</p>
 <h3>What a partnership can include</h3>

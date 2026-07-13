@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-education-platforms-and-learning-intelligence-in-2026' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-education-platforms-and-learning-intelligence-in-2026' },
+xport const metadata = {
   title: 'AI-First Education Platforms and Learning Intelligence in 2026',
-  description: 'Use AI-assisted learning intelligence and education platforms to improve outcomes and operational efficiency.'};
+  description: 'Use AI-assisted learning intelligence and education platforms to improve outcomes and operational efficiency.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

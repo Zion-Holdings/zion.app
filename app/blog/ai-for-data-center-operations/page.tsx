@@ -13,7 +13,9 @@ export const metadata = {
       'Explore AI-driven power, cooling, and operational efficiency for modern data centers.',
     url: 'https://ziontechgroup.com/blog/ai-for-data-center-operations',
     type: 'article',
-  }};
+  },
+};
+
 export default function AiForDataCenterOperationsPage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-10 space-y-8">

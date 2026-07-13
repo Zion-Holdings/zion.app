@@ -5,7 +5,8 @@ import type { Metadata } from 'next';
 export const metadata = {
   title: 'Blockchain & Web3 Solutions',
   description: 'Enterprise blockchain for supply chain, identity, smart contracts, and TCR programs — auditable and lawful.',
-  alternates: { canonical: 'https://ziontechgroup.com/blockchain-solutions' }};
+  alternates: { canonical: 'https://ziontechgroup.com/blockchain-solutions' },};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

@@ -4,7 +4,9 @@ export const metadata = {
   title: "Free AI IT Readiness Kit | Zion Tech Group",
   description:
     "Use the Zion Tech Group free AI IT readiness kit to evaluate automation potential and prioritize initiatives.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/free-ai-it-readiness-kit" }};
+  alternates: { canonical: "https://ziontechgroup.com/seo/free-ai-it-readiness-kit" },
+};
+
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

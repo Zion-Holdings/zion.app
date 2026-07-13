@@ -5,7 +5,9 @@ export const metadata = {
   title: 'Zion AI Incident Response',
   description:
     'Accelerate incident triage and resolution with automated playbooks and real-time collaboration.',
-  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-incident-response' }};
+  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-incident-response' },
+};
+
 export default function Page() {
   return (
     <ProductPageLayout

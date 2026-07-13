@@ -3,7 +3,9 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Generative AI Automation Playbook for Enterprise',
   description: 'Generative AI automation playbook for enterprise teams. Use cases, governance basics, process patterns, and implementation paths for secure scalable adoption.',
-  alternates: { canonical: '/blog/generative-ai-automation-playbook-for-enterprise' }};
+  alternates: { canonical: '/blog/generative-ai-automation-playbook-for-enterprise' },
+};
+
 export default function GenAIPlaybookBlog() {
   return (
     <main className="min-h-screen bg-slate-950">

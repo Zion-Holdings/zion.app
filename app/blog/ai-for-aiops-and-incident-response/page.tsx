@@ -13,7 +13,9 @@ export const metadata = {
       'Use AI for smarter alerting, root-cause analysis, and incident response automation.',
     url: 'https://ziontechgroup.com/blog/ai-for-aiops-and-incident-response',
     type: 'article',
-  }};
+  },
+};
+
 export default function AiForAIOpsAndIncidentResponsePage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-10 space-y-8">

@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/smart-inventory' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/smart-inventory' },
+xport const metadata = {
   title: 'Smart Inventory Management | Zion Tech Group',
-  description: 'AI-powered inventory management with real-time tracking.'};
+  description: 'AI-powered inventory management with real-time tracking.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

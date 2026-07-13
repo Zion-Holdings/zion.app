@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-  alternates: { canonical: 'https://ziontechgroup.com/services/ai-accessibility-inclusive-design' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/services/ai-accessibility-inclusive-design' },
+xport const metadata = {
   title: 'AI Accessibility and Inclusive Digital Services | Zion Tech Group',
-  description: 'AI-assisted accessibility automation, WCAG evaluation, and inclusive UX for digital services.'};
+  description: 'AI-assisted accessibility automation, WCAG evaluation, and inclusive UX for digital services.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

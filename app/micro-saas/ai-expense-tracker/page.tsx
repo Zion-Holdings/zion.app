@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/micro-saas/ai-expense-tracker' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/micro-saas/ai-expense-tracker' },
+xport const metadata = {
   title: 'AI Expense Tracker | Zion Tech Group',
-  description: 'Automated expense tracking with receipt scanning and categorization.'};
+  description: 'Automated expense tracking with receipt scanning and categorization.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

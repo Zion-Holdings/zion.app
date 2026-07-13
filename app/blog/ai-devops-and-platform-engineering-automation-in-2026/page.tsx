@@ -1,8 +1,10 @@
 import Link from 'next/link';
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-devops-and-platform-engineering-automation-in-2026' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-devops-and-platform-engineering-automation-in-2026' },
+xport const metadata = {
   title: 'AI DevOps and Platform Engineering Automation in 2026',
-  description: 'AI DevOps and platform engineering automation for faster, safer releases.'};
+  description: 'AI DevOps and platform engineering automation for faster, safer releases.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

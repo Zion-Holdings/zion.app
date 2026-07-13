@@ -12,7 +12,9 @@ export const metadata = {
     description: 'AI observability patterns for enterprise IT teams: metrics, tracing, cost control, and incident response.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-observability-for-enterprise-it-teams-2026',
-  }};
+  },
+};
+
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">

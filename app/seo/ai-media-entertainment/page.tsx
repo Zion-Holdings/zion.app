@@ -4,7 +4,9 @@ export const metadata = {
   title: "AI Media and Entertainment Solutions | Zion Tech Group",
   description:
     "Apply AI to media and entertainment workflows: content personalization, metadata, and operational efficiency.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-media-entertainment" }};
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-media-entertainment" },
+};
+
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

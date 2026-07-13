@@ -6,7 +6,9 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI IT Partnership Growth Playbook | Zion Tech Group',
   description: 'How IT firms can build AI partnerships that close deals and grow revenue.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-it-partnership-growth-playbook-2026' }};
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-it-partnership-growth-playbook-2026' },
+};
+
 export default function BlogPage() {
   return (
     <main className="max-w-6xl mx-auto px-4 py-10">

@@ -4,7 +4,9 @@ export const metadata = {
   title: "AI Data Warehousing Modernization | Zion Tech Group",
   description:
     "Modernize legacy warehouses with AI data warehousing modernization, ETL automation, and analytics.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-data-warehousing" }};
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-data-warehousing" },
+};
+
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

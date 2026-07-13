@@ -1,7 +1,9 @@
-  alternates: { canonical: 'https://ziontechgroup.com/seo/document-automation-enterprise-free-tools' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/seo/document-automation-enterprise-free-tools' },
+xport const metadata = {
   title: 'Document Automation Enterprise Free Tools | Zion Tech Group',
-  description: 'Enterprise document automation free tools from Zion Tech Group: OCR helpers, parsers, template validators, and compliance-ready workflows.'};
+  description: 'Enterprise document automation free tools from Zion Tech Group: OCR helpers, parsers, template validators, and compliance-ready workflows.',
+};
+
 export default function Page() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950">

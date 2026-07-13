@@ -1,7 +1,9 @@
 export const metadata = {
   title: "Cloud Cost Optimization Service | Zion Tech Group",
   description: "cloud cost optimization.",
-  alternates: { canonical: "/services/cloud-cost-optimization-service/" }};
+  alternates: { canonical: "/services/cloud-cost-optimization-service/" },
+};
+
 export default function Page() {
   return (
     <div className="container-page py-20">

@@ -1,5 +1,5 @@
-  alternates: { canonical: 'https://ziontechgroup.com/solutions/insurance' },
-export const metadata = { title: "Insurance", description: "AI-powered solutions for insurance companies." };
+e  alternates: { canonical: 'https://ziontechgroup.com/solutions/insurance' },
+xport const metadata = { title: "Insurance", description: "AI-powered solutions for insurance companies." };
 import Link from 'next/link';
 
 export default function SolutionPage() {

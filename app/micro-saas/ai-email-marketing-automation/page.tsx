@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/micro-saas/ai-email-marketing-automation' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/micro-saas/ai-email-marketing-automation' },
+xport const metadata = {
   title: 'AI Email Marketing Automation | Zion Tech Group',
-  description: 'Intelligent email marketing with AI segmentation and optimization.'};
+  description: 'Intelligent email marketing with AI segmentation and optimization.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

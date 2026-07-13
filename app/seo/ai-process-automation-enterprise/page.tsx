@@ -4,7 +4,9 @@ export const metadata = {
   title: "AI Process Automation for Enterprise | Zion Tech Group",
   description:
     "Apply AI process automation across back-office, support, and operations with measurable ROI.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-process-automation-enterprise" }};
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-process-automation-enterprise" },
+};
+
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

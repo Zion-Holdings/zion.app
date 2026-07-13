@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/ai-chatbot-builder' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/ai-chatbot-builder' },
+xport const metadata = {
   title: 'AI Chatbot Builder | Zion Tech Group',
-  description: 'Build intelligent chatbots with our AI-powered conversational platform.'};
+  description: 'Build intelligent chatbots with our AI-powered conversational platform.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

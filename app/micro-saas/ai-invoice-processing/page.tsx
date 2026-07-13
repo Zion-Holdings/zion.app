@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/micro-saas/ai-invoice-processing' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/micro-saas/ai-invoice-processing' },
+xport const metadata = {
   title: 'AI Invoice Processing | Zion Tech Group',
-  description: 'Automated invoice processing with AI data extraction.'};
+  description: 'Automated invoice processing with AI data extraction.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

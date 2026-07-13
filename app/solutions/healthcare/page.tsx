@@ -1,5 +1,5 @@
-  alternates: { canonical: 'https://ziontechgroup.com/solutions/healthcare' },
-export const metadata = { title: 'Healthcare Solutions', description: 'AI and IT solutions for healthcare. Medical imaging, clinical decision support, EHR integration, telemedicine, HIPAA compliance.' };
+e  alternates: { canonical: 'https://ziontechgroup.com/solutions/healthcare' },
+xport const metadata = { title: 'Healthcare Solutions', description: 'AI and IT solutions for healthcare. Medical imaging, clinical decision support, EHR integration, telemedicine, HIPAA compliance.' };
 import Link from 'next/link';
 const services = [
   { icon: '🧠', name: 'AI Medical Diagnosis Assistant', href: '/ai-medical-diagnosis-assistant', desc: 'AI-powered clinical decision support with 94% diagnostic accuracy.' },

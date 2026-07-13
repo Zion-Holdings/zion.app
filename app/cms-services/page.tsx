@@ -3,7 +3,9 @@ import { Metadata } from "next";
 export const metadata = {
   title: "CMS Services | Zion Tech Group",
   description: "Content management systems — headless CMS, enterprise content platforms, and custom CMS development",
-  alternates: { canonical: "https://ziontechgroup.com/services/?category=cms" }};
+  alternates: { canonical: "https://ziontechgroup.com/services/?category=cms" },
+};
+
 export default function CategoryPage() {
   return (
     <main style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#020617" }}>

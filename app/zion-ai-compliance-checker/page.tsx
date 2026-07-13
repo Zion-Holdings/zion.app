@@ -5,7 +5,9 @@ export const metadata = {
   title: 'Zion AI Compliance Checker',
   description:
     'Automate compliance checks with policy-aware AI that tracks regulatory updates and flags gaps.',
-  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-compliance-checker' }};
+  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-compliance-checker' },
+};
+
 export default function Page() {
   return (
     <ProductPageLayout

@@ -13,7 +13,9 @@ export const metadata = {
       'Use AI to improve signal quality, detect anomalies, and accelerate IT operations response.',
     url: 'https://ziontechgroup.com/blog/ai-observability-and-it-operations',
     type: 'article',
-  }};
+  },
+};
+
 export default function AiObservabilityAndITOperationsPage() {
   return (
     <main className="max-w-4xl mx-auto px-4 py-10 space-y-8">

@@ -4,7 +4,9 @@ export const metadata = {
   title: "AI Adaptive Education | Zion Tech Group",
   description:
     "Build adaptive learning experiences with AI tutoring, content recommendation, and progress analytics.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-education-adaptive" }};
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-education-adaptive" },
+};
+
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

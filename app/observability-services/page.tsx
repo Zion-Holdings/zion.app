@@ -3,7 +3,9 @@ import { Metadata } from "next";
 export const metadata = {
   title: "Observability Services | Zion Tech Group",
   description: "Full-stack observability — APM, distributed tracing, log management, and service health monitoring",
-  alternates: { canonical: "https://ziontechgroup.com/services/?category=observability" }};
+  alternates: { canonical: "https://ziontechgroup.com/services/?category=observability" },
+};
+
 export default function CategoryPage() {
   return (
     <main style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#020617" }}>

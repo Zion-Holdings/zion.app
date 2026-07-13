@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/email-automation' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/email-automation' },
+xport const metadata = {
   title: 'Email Automation | Zion Tech Group',
-  description: 'AI-powered email automation for marketing, sales, and support.'};
+  description: 'AI-powered email automation for marketing, sales, and support.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

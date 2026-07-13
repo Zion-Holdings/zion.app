@@ -2,7 +2,9 @@
 export const metadata = {
   title: "Nebius Partnership and AI Vendor Co-Selling in 2026 | Zion Tech Group",
   description: "Practical framework for building AI vendor partnerships and co-selling with Nebius in 2026.",
-  alternates: { canonical: "/nebius-partnership-and-ai-vendor-co-selling-2026/" }};
+  alternates: { canonical: "/nebius-partnership-and-ai-vendor-co-selling-2026/" },
+};
+
 export default function Page() {
   const content = `<p>AI vendor partnerships and co-selling in 2026 are accelerating in Latin America, especially with infrastructure providers entering new markets.</p>
 <h3>Why partner with Zion</h3>

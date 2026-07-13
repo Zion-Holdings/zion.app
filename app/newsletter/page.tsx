@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/newsletter' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/newsletter' },
+xport const metadata = {
   title: 'Newsletter | Zion Tech Group',
-  description: 'Subscribe to our newsletter for AI insights, tech trends, and product updates.'};
+  description: 'Subscribe to our newsletter for AI insights, tech trends, and product updates.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

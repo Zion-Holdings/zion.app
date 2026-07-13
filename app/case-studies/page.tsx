@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/case-studies' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/case-studies' },
+xport const metadata = {
   title: 'Case Studies',
-  description: 'Real-world case studies showcasing how Zion Tech Group delivers AI and IT solutions across industries.'};
+  description: 'Real-world case studies showcasing how Zion Tech Group delivers AI and IT solutions across industries.',
+};
+
 export default function CaseStudiesPage() {
   const studies = [
     { industry: 'Healthcare', title: 'AI Diagnostics for Hospital Network', challenge: '10 hospitals with diagnostic delays and radiologist shortages.', solution: 'Deployed AI diagnostic imaging with 94% accuracy, reducing read times from 48h to 2h.', results: ['87% faster diagnosis', '30% better outcomes', '2.4M annual savings'], services: ['AI Medical Diagnosis', 'HL7/FHIR Integration', 'HIPAA Compliance'] },

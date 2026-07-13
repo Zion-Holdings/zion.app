@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/micro-saas/ai-chatbot-builder' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/micro-saas/ai-chatbot-builder' },
+xport const metadata = {
   title: 'AI Chatbot Builder Micro-SaaS | Zion Tech Group',
-  description: 'White-label chatbot builder for agencies and SaaS companies.'};
+  description: 'White-label chatbot builder for agencies and SaaS companies.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

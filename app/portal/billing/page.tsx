@@ -1,10 +1,12 @@
 // app/portal/billing/page.tsx
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/portal/billing' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/portal/billing' },
+xport const metadata = {
   title: 'Billing & Invoices — Client Portal',
-  description: 'View your invoices, payment methods, and billing history. Secure client portal access.'};
+  description: 'View your invoices, payment methods, and billing history. Secure client portal access.',
+};
+
 export default function BillingPage() {
   return (
     <div className="container-page py-16">

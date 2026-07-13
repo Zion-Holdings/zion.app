@@ -3,7 +3,9 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'AI Meeting Intelligence: Minutes and Actions | Zion Tech Group',
-  description: 'Turn meetings into structured minutes, action items, owners, and follow-up workflows with AI.'};
+  description: 'Turn meetings into structured minutes, action items, owners, and follow-up workflows with AI.',
+};
+
 export default function Page() {
   return (
     <section className="section">

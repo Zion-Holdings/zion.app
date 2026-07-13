@@ -12,7 +12,9 @@ export const metadata = {
     description: 'Use AI for monitoring, maintenance, and access control in data centers and IT infrastructure.',
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-for-it-infrastructure-and-data-center-operations-2026',
-  }};
+  },
+};
+
 export default function Page() {
   return (
     <div className="relative min-h-screen bg-slate-950">

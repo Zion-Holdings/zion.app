@@ -5,7 +5,9 @@ export const metadata = {
   title: 'Zion AI Spend Intelligence',
   description:
     'Gain visibility into spend across categories, vendors, and departments with AI-powered anomaly detection.',
-  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-spend-intelligence' }};
+  alternates: { canonical: 'https://ziontechgroup.com/zion-ai-spend-intelligence' },
+};
+
 export default function Page() {
   return (
     <ProductPageLayout

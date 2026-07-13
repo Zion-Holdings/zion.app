@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/digital-twin-platform' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/digital-twin-platform' },
+xport const metadata = {
   title: 'Digital Twin Platform | Zion Tech Group',
-  description: 'Create digital twins of physical assets for simulation and optimization.'};
+  description: 'Create digital twins of physical assets for simulation and optimization.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

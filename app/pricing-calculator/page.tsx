@@ -18,7 +18,9 @@ const CATEGORY_MAP: Record<string, string> = {
   'scalability': 'cloud',
   'operational costs': 'automation',
   'compliance': 'security',
-  'automation': 'automation'};
+  'automation': 'automation',
+};
+
 function matchServices(painPoints: string[], budget: number): Service[] {
   const keywords = new Set<string>();
   for (const p of painPoints) {

@@ -6,7 +6,9 @@ import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 export const metadata = {
   title: 'AI Partnership Automation Framework for IT Companies | Zion Tech Group',
   description: 'A practical framework for IT companies to automate AI partnership workflows and reduce manual work.',
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-partnership-automation-framework-for-it-companies-2026' }};
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-partnership-automation-framework-for-it-companies-2026' },
+};
+
 export default function BlogPage() {
   return (
     <main className="max-w-6xl mx-auto px-4 py-10">

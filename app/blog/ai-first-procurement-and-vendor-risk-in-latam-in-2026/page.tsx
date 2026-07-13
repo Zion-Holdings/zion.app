@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-procurement-and-vendor-risk-in-latam-in-2026' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-procurement-and-vendor-risk-in-latam-in-2026' },
+xport const metadata = {
   title: 'AI-First Procurement and Vendor Risk in LATAM in 2026',
-  description: 'Use AI-assisted procurement and vendor risk management to improve sourcing decisions and reduce exposure.'};
+  description: 'Use AI-assisted procurement and vendor risk management to improve sourcing decisions and reduce exposure.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

@@ -4,7 +4,9 @@ export const metadata = {
   title: "AI for Government and Public Sector | Zion Tech Group",
   description:
     "Explore AI for government and public sector services: automation, citizen experience, and secure operations.",
-  alternates: { canonical: "https://ziontechgroup.com/seo/ai-government-public-sector" }};
+  alternates: { canonical: "https://ziontechgroup.com/seo/ai-government-public-sector" },
+};
+
 export default function Page() {
   return (
     <main style={{ minHeight: "100vh", background: "#020617", color: "#e2e8f0", padding: "2rem" }}>

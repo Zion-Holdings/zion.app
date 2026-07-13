@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/telemedicine' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/telemedicine' },
+xport const metadata = {
   title: 'Telemedicine Platform | Zion Tech Group',
-  description: 'HIPAA-compliant telemedicine platform for healthcare providers.'};
+  description: 'HIPAA-compliant telemedicine platform for healthcare providers.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">

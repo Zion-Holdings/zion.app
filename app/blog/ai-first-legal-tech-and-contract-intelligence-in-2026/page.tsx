@@ -1,10 +1,12 @@
 import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
-  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-legal-tech-and-contract-intelligence-in-2026' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-legal-tech-and-contract-intelligence-in-2026' },
+xport const metadata = {
   title: 'AI-First Legal Tech and Contract Intelligence in 2026',
-  description: 'Use AI-assisted contract intelligence and legal operations to improve review speed and compliance.'};
+  description: 'Use AI-assisted contract intelligence and legal operations to improve review speed and compliance.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-slate-950 py-20">

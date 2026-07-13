@@ -40,7 +40,9 @@ export default function SSLCheckerPage() {
     B: 'text-yellow-400', B_minus: 'text-yellow-400',
     C: 'text-orange-400', C_minus: 'text-orange-400',
     D: 'text-red-400', E: 'text-red-400', F: 'text-red-500',
-    T: 'text-slate-400', M: 'text-slate-400'};
+    T: 'text-slate-400', M: 'text-slate-400',
+  };
+
   return (
     <div className="container-page py-16">
       <div className="max-w-3xl mx-auto">

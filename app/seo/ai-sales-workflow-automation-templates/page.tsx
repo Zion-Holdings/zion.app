@@ -1,7 +1,9 @@
-  alternates: { canonical: 'https://ziontechgroup.com/seo/ai-sales-workflow-automation-templates' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/seo/ai-sales-workflow-automation-templates' },
+xport const metadata = {
   title: 'AI Sales Workflow Automation Templates | Zion Tech Group',
-  description: 'Download AI sales workflow automation templates from Zion Tech Group: lead qualification, follow-up sequences, proposals, and pipeline review cadences.'};
+  description: 'Download AI sales workflow automation templates from Zion Tech Group: lead qualification, follow-up sequences, proposals, and pipeline review cadences.',
+};
+
 export default function Page() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950">

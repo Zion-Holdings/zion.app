@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
-  alternates: { canonical: 'https://ziontechgroup.com/digital-transformation' },
-export const metadata = {
+e  alternates: { canonical: 'https://ziontechgroup.com/digital-transformation' },
+xport const metadata = {
   title: 'Digital Transformation | Zion Tech Group',
-  description: 'End-to-end digital transformation consulting and implementation.'};
+  description: 'End-to-end digital transformation consulting and implementation.',
+};
+
 export default function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
