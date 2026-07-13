@@ -4,8 +4,9 @@ const https = require('https');
 
 const repo = 'Zion-support/zion-support.github.io';
 const branch = process.argv[2] || 'gh-pages';
-const tokenFile = path.join(process.env.USERPROFILE || process.env.HOME, '.gh_token');
-const token = fs.readFileSync(tokenFile, 'utf8').trim();
+const tokenFile = path.join(process.env.USERPROFILE || process.env.HOME, '.git-credentials');
+const tokenLine = fs.readFileSync(tokenFile, 'utf8').trim().split('\n')[0];
+const token = decodeURIComponent(tokenLine.split(':')[2].split('@')[0]);
 const outDir = path.join(process.cwd(), 'out');
 
 function request(method, urlPath, body) {
