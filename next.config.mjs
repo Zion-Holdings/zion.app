@@ -17,9 +17,13 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   webpack: (config) => {
+    const appDir = path.join(process.cwd(), 'app');
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
-      '@': path.join(process.cwd(), 'app'),
+      '@': appDir,
+      'ncomponents': path.join(appDir, 'components'),
+      'ndata': path.join(appDir, 'data'),
+      'nlib': path.join(appDir, 'lib'),
     };
     return config;
   },
