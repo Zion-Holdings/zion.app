@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
- * build-wrapper.cjs — run Next.js build, then emit automation/reports/build-state.json.
- * Also runs postbuild if `next build` succeeds, so static export artifacts are complete.
+ * build-wrapper.cjs — run Next.js build with preflight checks, then emit automation/reports/build-state.json.
+ * Exits with the same code as the underlying build so CI status stays accurate.
  */
 const { spawn, execSync } = require('child_process');
 const fs = require('fs');
@@ -38,25 +38,43 @@ function timeMs(start) {
   return Math.round((Date.now() - start) / 1000 * 1000) / 1000;
 }
 
+function preflightFail(msg) {
+  writeState({
+    phase: 'preflight-failed',
+    error: msg,
+    buildExitCode: null,
+    durationMs: timeMs(buildStart),
+    artifacts: probeArtifacts(),
+  });
+  console.error('[build-wrapper] preflight failed:', msg);
+  process.exit(1);
+}
+
 const buildStart = Date.now();
 writeState({ phase: 'wrapper-start' });
 
-const buildLog = path.join(STATE_DIR, 'build-latest.log');
-ensureDir(STATE_DIR);
-try { fs.writeFileSync(buildLog, ''); } catch {}
+try {
+  if (!fs.existsSync(path.join(REPO, 'package.json'))) preflightFail('package.json missing');
+  if (!fs.existsSync(path.join(REPO, 'node_modules'))) preflightFail('node_modules missing');
+  const requiredBinaries = ['node'];
+  for (const bin of requiredBinaries) {
+    try { execSync('command -v ' + bin, { stdio: 'ignore' }); }
+    catch { preflightFail('missing binary: ' + bin); }
+  }
+
+  for (const mod of ['react', 'react-dom', 'next']) {
+    try { require(mod); }
+    catch (e) { preflightFail('required module missing: ' + mod + ' — ' + (e && e.message ? e.message : String(e))); }
+  }
+} catch (e) {
+  preflightFail(String(e.message || e));
+}
+
 const child = spawn('npx', ['next', 'build', '--webpack'], {
   cwd: REPO,
-  stdio: ['ignore', 'pipe', 'pipe'],
+  stdio: 'inherit',
   shell: process.platform === 'win32',
   env: { ...process.env, NEXT_TELEMETRY_DISABLED: '1' },
-});
-child.stdout.on('data', (d) => {
-  process.stdout.write(d);
-  try { fs.appendFileSync(buildLog, d); } catch {}
-});
-child.stderr.on('data', (d) => {
-  process.stderr.write(d);
-  try { fs.appendFileSync(buildLog, d); } catch {}
 });
 
 child.on('error', (err) => {
