@@ -1,7 +1,7 @@
 {
-  "total_runs": 4,
-  "successful_runs": 4,
-  "auth_error_runs": 4,
+  "total_runs": 7,
+  "successful_runs": 7,
+  "auth_error_runs": 7,
   "contacts_found": 0,
   "live_sent": 0,
   "dead_thread_contacts": 0,
