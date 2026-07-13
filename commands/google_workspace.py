@@ -66,9 +66,24 @@ def gmail_search(query, limit=20, all_folders=False):
         q = query + ' label:INBOX'
     url = ('https://gmail.googleapis.com/gmail/v1/users/me/messages'
            f'?q={urllib.parse.quote(q)}&maxResults={limit}')
+    started = time.perf_counter() if 'time' in globals() else None
     req = urllib.request.Request(url, headers=gog_headers())
-    resp = json.loads(urllib.request.urlopen(req).read())
-    return resp.get('messages', [])
+    try:
+        with urllib.request.urlopen(req, timeout=40) as r:
+            raw = r.read()
+        msg_count = 0
+        try:
+            payload = json.loads(raw)
+            msg_count = len(payload.get('messages') or [])
+        except Exception:
+            msg_count = None
+        if started is not None:
+            print(f'GMAIL_SEARCH_OK query={query} dur={time.perf_counter()-started:.3f} msgs={msg_count}', flush=True)
+        return (json.loads(raw) if isinstance(raw, bytes) else raw).get('messages', []) if isinstance(raw, (bytes, bytearray)) else raw
+    except Exception as e:
+        if started is not None:
+            print(f'GMAIL_SEARCH_ERR query={query} dur={time.perf_counter()-started:.3f} err={e!r}', flush=True)
+        raise
 
 def gmail_get(message_id):
     url = f'https://gmail.googleapis.com/gmail/v1/users/me/messages/{message_id}?format=full'
