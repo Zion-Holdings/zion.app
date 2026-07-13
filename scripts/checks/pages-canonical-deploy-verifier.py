@@ -59,5 +59,22 @@ for route in CHECK_ROUTES:
         results['routes'].append({'route': route, 'url': url, 'status': 'error', 'error': str(e)})
 
 mismatch = [r for r in results['routes'] if r.get('status') != 'ok']
-print(json.dumps({'mismatch_count': len(mismatch), 'results': results['routes']}, ensure_ascii=False))
+out = {'mismatch_count': len(mismatch), 'results': results['routes']}
+print(json.dumps(out, ensure_ascii=False))
 Path('scripts/reports/pages-canonical-deploy-latest.json').write_text(json.dumps(results, ensure_ascii=False, indent=2))
+summary = {
+  'checkedAt': results['generatedAt'],
+  'status': 'ok' if not mismatch else 'mismatch',
+  'mismatchCount': len(mismatch),
+  'actionItems': [
+    {
+      'route': r['route'],
+      'issue': r.get('issue'),
+      'expectedCanonical': r.get('expected_canonical'),
+      'liveCanonical': r.get('live_canonical'),
+    }
+    for r in mismatch
+  ],
+}
+Path('scripts/reports/pages-canonical-deploy-summary.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2))
+print(json.dumps(summary, ensure_ascii=False))
