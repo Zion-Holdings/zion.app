@@ -115,15 +115,66 @@ def _load_excluded() -> set:
         return set()
 
 
+_SENT_LOCK = REPO / 'lead-crm' / '.ceo_outreach_sent.lock'
+
+def _load_sent_set():
+    if not _SENT_LOCK.exists():
+        return set()
+    try:
+        rows = json.loads(_SENT_LOCK.read_text(encoding='utf-8'))
+        return {
+            ((r.get('to') or '').lower(), (r.get('subject') or '').strip(), r.get('thread_id') or '', r.get('message_id') or '')
+            for r in rows
+        }
+    except Exception:
+        return set()
+
+def append_sent(row: dict):
+    rows = []
+    if _SENT_LOCK.exists():
+        try:
+            rows = json.loads(_SENT_LOCK.read_text(encoding='utf-8'))
+        except Exception:
+            rows = []
+    rows.append(row)
+    _SENT_LOCK.write_text(json.dumps(rows, ensure_ascii=False), encoding='utf-8')
+
+# in-memory fast path for same-run dedup
+_SENT_ROWS = _load_sent_set()
+
+for _legacy_path in [REPO / 'lead-crm' / 'outreach_sent_history.jsonl', REPO / 'lead-crm' / 'ceo_outreach_ledger.jsonl', REPO / 'scripts' / 'outreach_monitor' / 'processed' / 'sent_ledger.jsonl']:
+    if not _legacy_path.exists():
+        continue
+    try:
+        lines = _legacy_path.read_text(encoding='utf-8', errors='ignore').splitlines()
+    except Exception:
+        continue
+    for line in lines[-50:]:
+        if not line.strip():
+            continue
+        try:
+            obj = json.loads(line)
+            if (obj.get('status') or '').lower() in {'', 'sent', 'duplicate', 'excluded'}:
+                pass
+        except Exception:
+            continue
+        key = (
+            (obj.get('to') or '').lower(),
+            (obj.get('subject') or '').strip(),
+            str(obj.get('thread_id') or '').lower(),
+            str(obj.get('message_id') or '').lower(),
+        )
+        if key != ('', '', '', ''):
+            _SENT_ROWS.add(key)
+
+
 def send_mail(to_addr, subject, body, html=None, thread_id=None, message_id=None):
     to_key = (to_addr or '').lower()
     if to_key in _load_excluded():
         return None, 'excluded'
-    sent = _load_sent_set()
-    subj_key = (subject or '').strip()
-    if to_key and subj_key:
-        if (to_key, subj_key) in sent or (to_key, subj_key.lower()) in sent:
-            return None, 'duplicate'
+    key = (to_key, (subject or '').strip(), thread_id or '', message_id or '')
+    if key in _SENT_ROWS:
+        return None, 'duplicate'
     raw_email_lines = [
         'From: kleber@ziontechgroup.com',
         'To: %s' % to_addr,
@@ -131,8 +182,10 @@ def send_mail(to_addr, subject, body, html=None, thread_id=None, message_id=None
         'Content-Type: text/html; charset=utf-8',
     ]
     if message_id:
-        raw_email_lines.append('References: %s' % message_id)
-        raw_email_lines.append('In-Reply-To: %s' % message_id)
+        raw_email_lines.extend([
+            'References: %s' % message_id,
+            'In-Reply-To: %s' % message_id,
+        ])
     raw_email_lines.extend(['', html or body])
     raw_email = '\r\n'.join(raw_email_lines)
     encoded = base64.urlsafe_b64encode(raw_email.encode('utf-8')).decode('utf-8')
@@ -165,6 +218,7 @@ def send_mail(to_addr, subject, body, html=None, thread_id=None, message_id=None
         })
     except Exception:
         pass
+    _SENT_ROWS.add(key)
     return mid, tid
 
 

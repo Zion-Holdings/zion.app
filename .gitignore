@@ -76,3 +76,7 @@ outreach_monitor/processed/high_frequency_runner_metrics.jsonl
 outreach_monitor/processed/runner_heartbeat.json
 scripts/reports/live-link-audit.json
 internal_link_report.json
+outreach_monitor/processed/dry_run_report.jsonl
+outreach_monitor/processed/pending_ceo_drafts.jsonl
+outreach_monitor/metrics/
+lead-crm/.ceo_outreach_sent.lock
