@@ -1,5 +1,5 @@
 // scripts/checks/deploy-watchdog-check.cjs
-// Reads the deploy watchdog report, if present, and summarizes health.
+// Reads the deploy watchdog report, if present, and summarizes health + timing.
 const fs = require('fs');
 const path = require('path');
 
@@ -12,20 +12,37 @@ if (!fs.existsSync(reportPath)) {
 
 const report = JSON.parse(fs.readFileSync(reportPath, 'utf8'));
 
-const healthyCount = Array.isArray(report.results)
-  ? report.results.filter((r) => r && r.status === 'healthy').length
-  : typeof report.healthy === 'number'
-    ? report.healthy
-    : null;
+const results = Array.isArray(report.results) ? report.results : [];
+const withTiming = results.filter(r => r && typeof r.durationMs === 'number');
 
-const healthyRatio =
-  typeof healthyCount === 'number'
-    ? `${healthyCount}/${report.results ? report.results.length : '?'} healthy`
-    : 'unknown';
+const healthyCount = results.filter(r => r && r.status === 'healthy').length;
+const ratio = `${healthyCount}/${results.length || '?'} healthy`;
 
-console.log(`deploy watchdog report=${JSON.stringify({
+const summary = {
   generatedAt: report.generatedAt ?? report.timestamp,
-  healthyRatio,
-  unhealthyCount: report.unhealthyCount ?? 'unknown',
+  healthyRatio: ratio,
+  unhealthyCount: report.unhealthyCount ?? results.filter(r => r && r.status !== 'healthy').length,
   source: report.source ?? 'deploy-watchdog',
-})}`);
+  timedRoutes: withTiming.length,
+};
+
+if (withTiming.length) {
+  const durations = withTiming.map(r => r.durationMs);
+  const min = Math.min(...durations);
+  const max = Math.max(...durations);
+  const avg = durations.reduce((a, b) => a + b, 0) / durations.length;
+  const slowest = withTiming
+    .slice()
+    .sort((a, b) => b.durationMs - a.durationMs)
+    .slice(0, 5)
+    .map(r => ({ route: r.route ?? r.url, durationMs: Math.round(r.durationMs) }));
+
+  summary.timingMs = {
+    min: Math.round(min),
+    avg: Math.round(avg),
+    max: Math.round(max),
+    slowest,
+  };
+}
+
+console.log(`deploy watchdog report=${JSON.stringify(summary)}`);
