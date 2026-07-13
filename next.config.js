@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+const path = require('path');
 const nextConfig = {
   output: 'export',
   outputFileTracingRoot: process.cwd(),
@@ -13,6 +14,13 @@ const nextConfig = {
   },
   typescript: {
     ignoreBuildErrors: true,
+  },
+  webpack: (config) => {
+    config.resolve.alias = {
+      ...(config.resolve.alias || {}),
+      '@': path.join(process.cwd(), 'app'),
+    };
+    return config;
   },
   generateBuildId: async () => 'zion-tech-group-v1',
   async redirects() {
