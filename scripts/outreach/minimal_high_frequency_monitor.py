@@ -147,6 +147,8 @@ def main():
         'errors': [],
         'pending_outreach_count': 0,
         'hot_followup_drafts_count': 0,
+        'duplicate_prevention_count': 0,
+        'cooldown_blocked_count': 0,
         'ztg_sender_email': 'kleber@ziontechgroup.com',
         'recent_outgoing_check': True,
         'recent_outgoing_subjects_sample': [
