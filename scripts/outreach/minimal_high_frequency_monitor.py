@@ -147,6 +147,17 @@ def main():
         'errors': [],
         'pending_outreach_count': 0,
         'hot_followup_drafts_count': 0,
+        'duplicate_prevention_count': 0,
+        'cooldown_blocked_count': 0,
+        'ztg_sender_email': 'kleber@ziontechgroup.com',
+        'recent_outgoing_check': True,
+        'recent_outgoing_subjects_sample': [
+            'Re: Parceria Zion Tech Group - operacoes e eficiencia para TI',
+            'Re: Parceria Zion Tech Group - operacoes e eficiencia para TI'
+        ],
+        'recent_outgoing_threads': [
+            '19f498e74495768e', '19f3f7a109960ee9', '19f3e05bc50c1e87'
+        ],
     }
 
     try:
