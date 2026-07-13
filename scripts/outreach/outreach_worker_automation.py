@@ -588,12 +588,23 @@ def _call_nous_hermes(thread_text: str, contact_name: str, company_name: str, la
         if not isinstance(content, str) or not content.strip():
             print('NOUS_EMPTY_CONTENT', flush=True)
             return ''
-        def _call_nous_hermes(thread_text: str, contact_name: str, company_name: str, language: str) -> str:
+        cleaned = _complete_email_extract(content)
+        required = ['calendly.com/kleber-ziontechgroup', 'ziontechgroup.com', 'free', 'thank']
+        lower = cleaned.lower()
+        if not all(r in lower for r in required):
+            print('NOUS_MISSING_REQUIRED', lower[:180], flush=True)
+            return ''
+        return cleaned.strip()
+    except Exception as e:
+        print('LLM_NOUS_FINAL_ERR', repr(e), flush=True)
+        return ''
+
+
+def llm_tailor_reply(thread_text: str, contact_name: str, company_name: str, language: str) -> str:
     endpoint = LLM_API_ENDPOINT or os.getenv('OPENROUTER_API_ENDPOINT') or os.getenv('GROQ_API_ENDPOINT') or os.getenv('GEMINI_API_ENDPOINT')
     api_key = LLM_API_KEY or os.getenv('OPENROUTER_API_KEY') or os.getenv('GROQ_API_KEY') or os.getenv('GEMINI_API_KEY')
     model = os.getenv('LLM_MODEL') or os.getenv('ZION_LLM_MODEL') or os.getenv('OPENROUTER_MODEL') or os.getenv('GROQ_MODEL') or os.getenv('GEMINI_MODEL') or 'openai/gpt-4o-mini'
     if not endpoint or not api_key:
-        # Hermes/Nous fallback if configured.
         try:
             nous_reply = _call_nous_hermes(thread_text, contact_name, company_name, language)
             if nous_reply:
@@ -601,8 +612,7 @@ def _call_nous_hermes(thread_text: str, contact_name: str, company_name: str, la
         except Exception as e:
             print('LLM_NOUS_ERR', repr(e), flush=True)
         return ''
-    trimmed = (thread_text or '').strip()
-    trimmed = trimmed[:2400]
+    trimmed = (thread_text or '').strip()[:2400]
     prompt = (
         f"You are the CEO of Zion Tech Group writing in {language} to {contact_name} at {company_name}.\n\n"
         "Context from recent thread:\n"
@@ -673,6 +683,7 @@ def _call_nous_hermes(thread_text: str, contact_name: str, company_name: str, la
                 time.sleep(1.8 if attempt else 0.25)
     print('LLM_FINAL_ERR', last_err)
     return ''
+
 
 _PROJECT_KEYWORDS = {
     'aiops': ['monitor', 'observability', 'incident', 'opsgenie', 'pagerduty', 'metric', 'trace', 'log', 'alert', 'runbook', 'oncall', 'reliability', 'mttr', 'change'],
