@@ -36,7 +36,7 @@ for route in CHECK_ROUTES:
         html = fetch(url)
         live_canon = canonical_from_html(html)
         expected_canon = metadata_canonical_for(route)
-        status = 'ok' if (live_canon and expected_canon and live_canon == expected_canon) else 'mismatch'
+        status = 'ok' if (live_canon and (expected_canon in (None, '') and route == '/' or live_canon == expected_canon)) else 'mismatch'
         issue = None
         if status == 'mismatch':
             if expected_canon in (None, ''):

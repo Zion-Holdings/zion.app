@@ -2,6 +2,7 @@
 import Link from 'next/link';
 
 export const metadata = {
+  alternates: { canonical: '/portal' },
   title: 'Client Portal — Zion Tech Group',
   description: 'Access client dashboards, support tickets, billing, and knowledge base in the Zion Tech Group portal.',
 };

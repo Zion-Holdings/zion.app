@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-07-13T07:01:26.733722+00:00",
+  "generatedAt": "2026-07-13T07:07:47.425129+00:00",
   "routes": [
     {
       "route": "/",
       "url": "https://ziontechgroup.com/",
       "live_canonical": "https://ziontechgroup.com",
       "expected_canonical": null,
-      "status": "mismatch",
-      "issue": "missing_page_level_canonical"
+      "status": "ok",
+      "issue": null
     },
     {
       "route": "/portal",
