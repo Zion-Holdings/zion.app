@@ -81,3 +81,4 @@ scripts/outreach_monitor/processed/pending_ceo_drafts.jsonl
 scripts/outreach_monitor/metrics/
 lead-crm/.ceo_outreach_sent.lock
 outreach_monitor/processed/dry_run_report.jsonl
+outreach_monitor/processed/dry_run_report.jsonl
