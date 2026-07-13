@@ -8094,5 +8094,39 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Rating: 1 (weak/partial relevance)\n#### Rationale:\nThe domain name includes the generic term \"tech\", which signals the entity is technology-focused, but there is no explicit, direct indication in the provided standalone signal that it offers managed AI/IT services specifically. The phrase \"tech ",
     "confidence": 1
+  },
+  {
+    "to": "help@mg.abdataclassactionmail.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "mg.abdataclassactionmail.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 1\n#### Explanation:\nThis is a weak, indirect relevance signal. The domain name includes the generic term \"tech\", which places it in the broader information/technology services space that managed AI/IT services fall under, but there is no explicit indication (e.g., mention of \"managed AI\"",
+    "confidence": 1
+  },
+  {
+    "to": "hello@automailer.io",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "automailer.io",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 1 (weak/low-value signal)\n#### Rating framework context for this use case:\n- 2 = Explicit, high-confidence signal directly tied to managed AI/IT services (e.g., domain branded explicitly for these services, accompanying context confirms these are core offerings)\n- 1 = Weak, indirect sign",
+    "confidence": 1
   }
 ]
