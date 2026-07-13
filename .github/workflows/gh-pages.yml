@@ -23,6 +23,13 @@ jobs:
         cache-dependency-path: '**/package-lock.json'
     - run: npm install --no-audit --fund=false
     - run: npm run build:ci
+    - name: Upload build state artifact
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: build-state
+        path: automation/reports/build-state.json
+        retention-days: 7
     - uses: actions/configure-pages@v4
       with:
         enablement: true
