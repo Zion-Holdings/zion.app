@@ -1,1053 +1,5 @@
 [
   {
-    "ts": "2026-07-14T20:25:18.761289+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:25:21.522904+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:25:35.162874+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:25:37.939709+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:25:51.571950+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:25:54.368376+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:26:07.959747+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:26:10.864301+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:26:24.366654+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:26:27.265161+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:26:40.755879+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:26:43.739545+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:26:57.150122+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:27:00.142759+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:27:13.550736+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:27:16.575701+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:27:30.011388+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:27:32.961251+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:27:46.412410+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:27:49.395830+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:27:54.419525+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-14T20:28:02.834329+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:28:05.807420+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:28:19.298442+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:28:22.228272+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:28:35.794123+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:28:38.622543+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:28:52.544043+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:28:55.171857+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:29:09.137669+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:29:11.803419+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:29:26.128138+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:29:28.357643+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:29:42.520128+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:29:44.786339+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:29:59.020554+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:30:01.200828+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:30:15.450033+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:30:17.715022+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:30:32.008337+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:30:34.565010+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:30:48.382177+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:30:50.994903+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:30:54.869643+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-14T20:31:04.828800+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:31:07.424133+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:31:21.348946+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:31:23.928170+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:31:37.923970+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:31:40.325679+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:31:54.342676+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:31:56.717143+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:32:10.797121+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:32:13.218037+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:32:27.209346+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:32:29.609815+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:32:43.648464+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:32:46.055488+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:33:00.238896+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:33:02.478987+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:33:17.387228+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:33:18.937480+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:33:34.040215+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:33:35.467860+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:33:50.452226+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:33:51.958727+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:33:55.267472+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-14T20:34:06.850188+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:34:08.385815+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:34:23.313953+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:34:24.881735+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:34:39.698185+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:34:41.317680+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:34:56.120015+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:34:57.726237+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:35:12.506345+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:35:14.166322+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:35:28.890671+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:35:30.579148+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:35:45.303013+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:35:46.982641+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:36:01.743864+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:36:03.393440+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:36:18.160386+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:36:19.829388+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:36:34.589848+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:36:36.269404+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:36:51.003441+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:36:52.671910+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:36:55.814372+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-14T20:37:07.596907+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:37:09.069193+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:37:24.219040+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:37:25.587258+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:37:40.695733+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:37:42.319124+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:37:57.412015+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:37:58.707562+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:38:13.897269+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:38:15.211811+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:38:30.383859+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:38:31.597706+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:38:46.770358+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:38:47.994668+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:39:03.161374+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:39:04.377429+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:39:19.650737+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:39:20.860294+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:39:36.060857+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:39:37.306213+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:39:52.478555+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:39:53.736118+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:39:56.266261+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-14T20:40:08.872669+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:40:10.133818+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:40:25.293728+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-14T20:40:26.570014+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
     "ts": "2026-07-14T20:40:41.719420+00:00",
     "contacts": 0,
     "sent": 0,
@@ -1783,6 +735,1054 @@
   },
   {
     "ts": "2026-07-14T20:52:12.968243+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:52:27.705647+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:52:29.384766+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:52:44.154401+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:52:45.849614+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:53:00.516617+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:53:02.251010+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:53:16.877295+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:53:18.629130+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:53:33.289082+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:53:35.127000+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:53:49.706570+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:53:51.524812+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:54:06.084867+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:54:07.928746+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:54:22.514242+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:54:24.361275+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:54:38.917084+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:54:40.774853+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:54:55.319749+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:54:57.158681+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:54:58.525808+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 180
+  },
+  {
+    "ts": "2026-07-14T20:55:11.721960+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:55:13.565868+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:55:28.095773+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:55:29.961594+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:55:44.497074+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:55:46.396362+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:56:00.870338+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:56:02.926191+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:56:17.335791+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:56:19.322583+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:56:33.733706+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:56:35.705028+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:56:50.121202+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:56:52.166335+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:57:06.517824+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:57:08.555742+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:57:23.084732+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:57:24.988386+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:57:39.522683+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:57:41.379764+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:57:55.912243+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:57:57.787618+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:57:58.919807+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 180
+  },
+  {
+    "ts": "2026-07-14T20:58:12.315507+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:58:14.185259+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:58:28.770562+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:58:30.625347+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:58:45.210282+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:58:47.042890+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:59:01.616849+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:59:03.444137+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:59:18.007678+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:59:19.938103+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:59:34.403906+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:59:36.330441+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:59:50.805551+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T20:59:52.829046+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:00:07.229023+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:00:09.220656+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:00:23.727142+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:00:25.713600+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:00:40.144570+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:00:42.280619+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:00:56.599698+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:00:58.720634+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:00:59.334074+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 180
+  },
+  {
+    "ts": "2026-07-14T21:01:13.422695+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:01:15.162323+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:01:29.939166+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:01:31.646198+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:01:46.582337+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:01:48.622422+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:02:05.532561+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:02:07.059620+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:02:22.008845+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:02:23.502468+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:02:42.493820+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:02:43.792618+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:03:04.403960+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:03:06.952024+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:03:26.279736+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:03:29.428979+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:03:44.118739+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:03:45.967326+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:03:59.744785+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 180
+  },
+  {
+    "ts": "2026-07-14T21:04:00.585036+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:04:02.354993+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:04:17.088813+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:04:18.809325+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:04:33.534748+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:04:35.216096+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:04:49.969493+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:04:51.622829+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:05:06.448352+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:05:08.029125+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:05:23.036439+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:05:24.491128+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:05:39.477548+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:05:40.953032+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:05:55.880539+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:05:57.472561+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:06:12.280530+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:06:13.878587+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:06:28.677342+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:06:30.271149+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:06:45.089020+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:06:46.656126+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:07:00.164442+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 180
+  },
+  {
+    "ts": "2026-07-14T21:07:01.503257+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:07:03.037109+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:07:17.923976+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:07:19.421669+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:07:34.322991+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:07:35.822481+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:07:50.869635+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
+    "interval_seconds": 15,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T21:07:52.204329+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
