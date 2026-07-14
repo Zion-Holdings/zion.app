@@ -1775,5 +1775,11 @@
     "event": "miner_timeout",
     "query": "subject:sase",
     "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-07-14T14:24:45.454832+00:00",
+    "event": "miner_timeout",
+    "query": "\"ziontechgroup.com\"",
+    "note": "soft timeout reached; stopping query loop early"
   }
 ]
