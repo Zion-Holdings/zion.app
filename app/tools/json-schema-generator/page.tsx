@@ -1,10 +1,3 @@
-'use client';
-
-export const metadata = {
-  title: 'Json Schema Generator | Zion Tech Group',
-  description: 'Free online json schema generator tool from Zion Tech Group.',
-};
-
 import Link from 'next/link';
 
 export default function Page() {

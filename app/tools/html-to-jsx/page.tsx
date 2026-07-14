@@ -1,10 +1,3 @@
-'use client';
-
-export const metadata = {
-  title: 'Html To Jsx | Zion Tech Group',
-  description: 'Free online html to jsx tool from Zion Tech Group.',
-};
-
 import Link from 'next/link';
 
 export default function Page() {

@@ -1,10 +1,3 @@
-'use client';
-
-export const metadata = {
-  title: 'Json Diff Viewer | Zion Tech Group',
-  description: 'Free online json diff viewer tool from Zion Tech Group.',
-};
-
 import Link from 'next/link';
 
 export default function Page() {

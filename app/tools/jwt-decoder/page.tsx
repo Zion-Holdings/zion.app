@@ -1,10 +1,3 @@
-'use client';
-
-export const metadata = {
-  title: 'Jwt Decoder | Zion Tech Group',
-  description: 'Free online jwt decoder tool from Zion Tech Group.',
-};
-
 import Link from 'next/link';
 
 export default function Page() {

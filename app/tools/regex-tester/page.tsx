@@ -1,10 +1,3 @@
-'use client';
-
-export const metadata = {
-  title: 'Regex Tester | Zion Tech Group',
-  description: 'Free online regex tester tool from Zion Tech Group.',
-};
-
 import Link from 'next/link';
 
 export default function Page() {

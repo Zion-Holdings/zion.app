@@ -1,10 +1,3 @@
-'use client';
-
-export const metadata = {
-  title: 'Json To Csv Converter | Zion Tech Group',
-  description: 'Free online json to csv converter tool from Zion Tech Group.',
-};
-
 import Link from 'next/link';
 
 export default function Page() {

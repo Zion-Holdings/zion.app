@@ -1,10 +1,3 @@
-'use client';
-
-export const metadata = {
-  title: 'Sql Formatter | Zion Tech Group',
-  description: 'Free online sql formatter tool from Zion Tech Group.',
-};
-
 import Link from 'next/link';
 
 export default function Page() {

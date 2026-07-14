@@ -1,10 +1,3 @@
-'use client';
-
-export const metadata = {
-  title: 'Yaml Json Converter | Zion Tech Group',
-  description: 'Free online yaml json converter tool from Zion Tech Group.',
-};
-
 import Link from 'next/link';
 
 export default function Page() {

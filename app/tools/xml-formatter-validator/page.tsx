@@ -1,10 +1,3 @@
-'use client';
-
-export const metadata = {
-  title: 'Xml Formatter Validator | Zion Tech Group',
-  description: 'Free online xml formatter validator tool from Zion Tech Group.',
-};
-
 import Link from 'next/link';
 
 export default function Page() {

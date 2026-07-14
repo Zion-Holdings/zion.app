@@ -1,10 +1,3 @@
-'use client';
-
-export const metadata = {
-  title: 'Unit Converter | Zion Tech Group',
-  description: 'Free online unit converter tool from Zion Tech Group.',
-};
-
 import Link from 'next/link';
 
 export default function Page() {

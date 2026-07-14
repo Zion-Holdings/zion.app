@@ -1,10 +1,3 @@
-'use client';
-
-export const metadata = {
-  title: 'Qr Code Generator | Zion Tech Group',
-  description: 'Free online qr code generator tool from Zion Tech Group.',
-};
-
 import Link from 'next/link';
 
 export default function Page() {

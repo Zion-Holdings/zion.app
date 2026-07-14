@@ -1,10 +1,3 @@
-'use client';
-
-export const metadata = {
-  title: 'Secure Hash Generator | Zion Tech Group',
-  description: 'Free online secure hash generator tool from Zion Tech Group.',
-};
-
 import Link from 'next/link';
 
 export default function Page() {

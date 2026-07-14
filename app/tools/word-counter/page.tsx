@@ -1,10 +1,3 @@
-'use client';
-
-export const metadata = {
-  title: 'Word Counter | Zion Tech Group',
-  description: 'Free online word counter tool from Zion Tech Group.',
-};
-
 import Link from 'next/link';
 
 export default function Page() {

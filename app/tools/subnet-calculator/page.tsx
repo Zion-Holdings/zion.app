@@ -1,10 +1,3 @@
-'use client';
-
-export const metadata = {
-  title: 'Subnet Calculator | Zion Tech Group',
-  description: 'Free online subnet calculator tool from Zion Tech Group.',
-};
-
 import Link from 'next/link';
 
 export default function Page() {

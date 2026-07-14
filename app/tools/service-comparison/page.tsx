@@ -1,9 +1,3 @@
-'use client';
-
-export const metadata = {
-  title: 'Service Comparison | Zion Tech Group',
-  description: 'Free online service comparison tool from Zion Tech Group.',
-};
 // app/tools/service-comparison/page.tsx — Full Service Comparison
 
 import { pingTool } from '@/data/tools_ping_client';
