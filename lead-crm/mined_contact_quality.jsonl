@@ -37,3 +37,6 @@
 {"ts": "2026-07-14T14:51:53.620656+00:00", "email": "gchopra@solyssey.com", "msg_id": "19f6111115e32524", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
 {"ts": "2026-07-14T14:52:35.240279+00:00", "email": "ola@casagranderesort.com.br", "msg_id": "19f61184c8cb7cd4", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
 {"ts": "2026-07-14T14:52:57.259778+00:00", "email": "krudolph@comtecsystems.net", "msg_id": "19f611336b2c62df", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-14T15:39:18.972943+00:00", "email": "karen@matchmakerrealty.com", "msg_id": "19f61417ae86a06b", "query": "\"Zion Tech Group\"", "confidence": 0, "high_signal": false}
+{"ts": "2026-07-14T15:39:30.376611+00:00", "email": "rparedes@amdsummit.com", "msg_id": "19f6140d8781d4a5", "query": "\"Zion Tech Group\"", "confidence": 0, "high_signal": false}
+{"ts": "2026-07-14T15:40:03.107304+00:00", "email": "exitadvisoralliance@mg.exitadvisoralliance.com", "msg_id": "19f613962f8e3870", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
