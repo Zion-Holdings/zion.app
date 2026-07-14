@@ -2410,5 +2410,101 @@
     "metadata_s": 34.486,
     "llm_s": 0.0,
     "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T03:27:59.370722+00:00",
+    "query": "subject:parceria",
+    "search_s": 0.902,
+    "metadata_s": 2.754,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T03:28:02.556527+00:00",
+    "query": "subject:proposta",
+    "search_s": 0.469,
+    "metadata_s": 5.449,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T03:28:05.798014+00:00",
+    "query": "subject:orçamento",
+    "search_s": 0.494,
+    "metadata_s": 8.188,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T03:28:08.957007+00:00",
+    "query": "subject:reunião",
+    "search_s": 0.47,
+    "metadata_s": 10.866,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T03:28:12.594084+00:00",
+    "query": "subject:diagnóstico",
+    "search_s": 0.48,
+    "metadata_s": 14.011,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T03:28:15.511572+00:00",
+    "query": "\"Zion Tech Group\"",
+    "search_s": 0.454,
+    "metadata_s": 16.461,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T03:28:18.686990+00:00",
+    "query": "\"ziontechgroup.com\"",
+    "search_s": 0.519,
+    "metadata_s": 19.106,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T03:28:21.707242+00:00",
+    "query": "subject:automação",
+    "search_s": 0.446,
+    "metadata_s": 21.668,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T03:28:25.569039+00:00",
+    "query": "subject:\"incident response\"",
+    "search_s": 0.906,
+    "metadata_s": 24.611,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T03:28:28.756820+00:00",
+    "query": "subject:managed services",
+    "search_s": 0.43,
+    "metadata_s": 27.358,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T03:28:31.994231+00:00",
+    "query": "subject:devops",
+    "search_s": 0.466,
+    "metadata_s": 30.116,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T03:28:35.150880+00:00",
+    "query": "subject:sase",
+    "search_s": 0.476,
+    "metadata_s": 32.784,
+    "llm_s": 0.0,
+    "seen_contacts": 6
   }
 ]
