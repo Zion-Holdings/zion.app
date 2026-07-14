@@ -1925,5 +1925,17 @@
     "event": "miner_timeout",
     "query": "subject:sase",
     "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-07-14T17:33:39.548972+00:00",
+    "event": "miner_timeout",
+    "query": "subject:devops",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-07-14T17:45:18.762039+00:00",
+    "event": "miner_timeout",
+    "query": "subject:automação",
+    "note": "soft timeout reached; stopping query loop early"
   }
 ]
