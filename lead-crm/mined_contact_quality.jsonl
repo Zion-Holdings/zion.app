@@ -55,3 +55,7 @@
 {"ts": "2026-07-14T18:15:48.660230+00:00", "email": "hello@metamask.io", "msg_id": "19f61d2dbee46e60", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
 {"ts": "2026-07-14T18:18:53.156880+00:00", "email": "hello@metamask.io", "msg_id": "19f61d80625a880a", "query": "\"Zion Tech Group\"", "confidence": 0, "high_signal": false}
 {"ts": "2026-07-14T18:19:20.207384+00:00", "email": "info@metricool.com", "msg_id": "19f61d534b7a9e69", "query": "\"ziontechgroup.com\"", "confidence": 0, "high_signal": false}
+{"ts": "2026-07-14T19:13:01.859116+00:00", "email": "gurbir_g@hcl.com", "msg_id": "19f620b32e904e65", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-14T19:13:17.928686+00:00", "email": "ashish.vishwakarma@hcl.com", "msg_id": "19f620b32e904e65", "query": "\"Zion Tech Group\"", "confidence": 0, "high_signal": false}
+{"ts": "2026-07-14T19:22:01.451363+00:00", "email": "postmaster@datavista.com", "msg_id": "19f620d2353bdbd6", "query": "\"Zion Tech Group\"", "confidence": 1, "high_signal": false}
+{"ts": "2026-07-14T19:22:12.167617+00:00", "email": "scotth@datavista.com", "msg_id": "19f620cc3879fe5e", "query": "\"Zion Tech Group\"", "confidence": 0, "high_signal": false}
