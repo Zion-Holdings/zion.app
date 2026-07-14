@@ -110,5 +110,23 @@
     "event": "miner_timeout",
     "query": "subject:\"AI services\"",
     "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-07-14T20:54:14.393399+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"AI services\"",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-07-14T21:05:29.830440+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"platform engineering\"",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-07-14T21:08:31.133238+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"platform engineering\"",
+    "note": "soft timeout reached; stopping query loop early"
   }
 ]
