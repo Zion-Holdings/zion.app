@@ -178,10 +178,10 @@ def main():
         'new_inbox_interest_count': 0,
         'new_inbox_examples': [],
         'llm_tailoring_coverage': {
-            'enabled': False,
+            'enabled': True,
             'contact_tailor_count': 0,
             'coverage_ratio': 0.0,
-            'blocker': 'no_env'
+            'blocker': 'awaiting_first_contact_thread'
         },
         'errors': [],
         'pending_outreach_count': 0,
