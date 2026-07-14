@@ -8383,5 +8383,22 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Rating: 0\n#### Rationale:\nThe provided input only includes the generic company name \"Zion Tech Group\" and its root domain, with no additional context, service descriptions, or public signals indicating the company offers or is connected to managed AI/IT services. The broad \"Tech\" label in the na",
     "confidence": 0
+  },
+  {
+    "to": "messaging-digest-noreply@linkedin.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "linkedin.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 0\n#### Explanation:\nThe provided value signal only contains the generic domain name `ziontechgroup.com` with no accompanying context, service descriptions, or keywords linking the entity to managed AI/IT services. The domain name itself is overly broad (it could refer to any type of tech",
+    "confidence": 0
   }
 ]
