@@ -1,5 +1,7 @@
-// app/tools/port-scanner/page.tsx — Free Port Scanner (client-side via public API)
 'use client';
+
+// app/tools/port-scanner/page.tsx — Free Port Scanner (client-side via public API)
+
 import { pingTool } from '@/data/tools_ping_client';
 
 import { useState, useEffect } from 'react';

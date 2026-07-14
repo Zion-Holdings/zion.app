@@ -11,7 +11,9 @@ if (fs.existsSync(buildStatePath)) {
     const bs = JSON.parse(fs.readFileSync(buildStatePath, 'utf8'));
     const cls = bs.exitCode === 0 ? 'likely_postbuild_or_pages_packaging' : 'likely_next_build_failure';
     console.log(`build state exitCode=${bs.exitCode ?? 'unknown'} durationMs=${bs.durationMs ?? 'unknown'} classification=${cls}`);
+    if (bs.missingNow) console.log(`build missing=${bs.missingNow.join(',') || 'none'}`);
     if (bs.artifacts) console.log(`build artifacts=${JSON.stringify(bs.artifacts)}`);
+    if (bs.next) console.log(`build next=${bs.next}`);
   } catch (e) {
     console.log('build state unreadable:', String(e.message || e).split('\n')[0]);
   }

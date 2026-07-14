@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-connectivity-private-5g-and-sase-in-2026' },
   title: 'AI-First Connectivity, Private 5G, and SASE in 2026',
   description: 'AI-first connectivity and secure access service edge patterns for enterprise and industrial networks.',
 };

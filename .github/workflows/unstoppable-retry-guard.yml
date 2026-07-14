@@ -21,7 +21,7 @@ jobs:
       with:
         node-version: 20
         cache: npm
-    - run: npm ci --include=optional --prefer-offline --no-audit --fund=false --unsafe-perm
+    - run: npm run build:ci
     - name: Self-healing retry wrapper
       run: "ATTEMPTS=3\nDELAY=10\nN=1\nuntil [ $N -gt $ATTEMPTS ]; do\n  echo \"Attempt\
         \ $N/$ATTEMPTS\"\n  npm run lint:check && npm run type-check && npm run build\

@@ -4,6 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/latam-ai-partnership-playbook-for-tech-companies-2026' },
   title: 'Latam AI Partnership Playbook | Zion Tech Group',
   description: 'Discover partnership models for LATAM expansion with AI services, co-selling, and integration-ready delivery.',
 

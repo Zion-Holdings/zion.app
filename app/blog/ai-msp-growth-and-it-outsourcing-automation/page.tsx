@@ -4,6 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-msp-growth-and-it-outsourcing-automation' },
 
   title: 'AI for MSP Growth and IT Outsourcing Automation',
   description:

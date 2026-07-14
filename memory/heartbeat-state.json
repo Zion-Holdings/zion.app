@@ -1,0 +1,8 @@
+{
+  "lastChecks": {
+    "quality": {
+      "status": "failed",
+      "details": "ESLint 10.7.0 crashed during lint (TypeError: Cannot read properties of undefined (reading 'Cjs')). No issue counts produced."
+    }
+  }
+}

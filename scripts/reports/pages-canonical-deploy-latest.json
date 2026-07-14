@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-13T10:08:41.044845+00:00",
+  "generatedAt": "2026-07-14T03:13:30.584224+00:00",
   "routes": [
     {
       "route": "/",
@@ -12,26 +12,20 @@
     {
       "route": "/portal",
       "url": "https://ziontechgroup.com/portal/",
-      "live_canonical": "https://ziontechgroup.com",
-      "expected_canonical": "/portal",
-      "status": "mismatch",
-      "issue": "deployed_layout_override_or_stale_cache"
+      "status": "error",
+      "error": "HTTP Error 404: Not Found"
     },
     {
       "route": "/contact",
       "url": "https://ziontechgroup.com/contact/",
-      "live_canonical": "https://ziontechgroup.com/contact",
-      "expected_canonical": "/contact",
-      "status": "mismatch",
-      "issue": "deployed_layout_override_or_stale_cache"
+      "status": "error",
+      "error": "HTTP Error 404: Not Found"
     },
     {
       "route": "/services/ai-agents-autonomous",
       "url": "https://ziontechgroup.com/services/ai-agents-autonomous/",
-      "live_canonical": "https://ziontechgroup.com",
-      "expected_canonical": "/services/ai-agents-autonomous",
-      "status": "mismatch",
-      "issue": "deployed_layout_override_or_stale_cache"
+      "status": "error",
+      "error": "HTTP Error 404: Not Found"
     }
   ]
 }

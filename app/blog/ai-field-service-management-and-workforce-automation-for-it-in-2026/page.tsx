@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-field-service-management-and-workforce-automation-for-it-in-2026' },
   title: 'AI-Field Service Management and Workforce Automation for IT in 2026 | Zion Tech Group',
   description: 'A practical guide to AI field service management and workforce automation for IT teams in 2026, including dispatching, mobile workflows, compliance, and measurable outcomes.',
 }

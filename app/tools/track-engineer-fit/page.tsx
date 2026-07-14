@@ -1,14 +1,11 @@
+
+
 import { Metadata } from 'next';
 
-export const metadata = {
-  title: 'AI Engineer Fit Tracker — Zion Tech Group',
-  description: 'AI-powered engineer fit tracker: compare candidate skills, role requirements, culture fit, and placement confidence in one concise hiring dashboard.',
-
-};
 
 export default function TrackEngineerFitPage() {
   return (
-    <main className="min-h-screen bg-slate-950 text-slate-100">
+    <main className="min-h-screen bg-slate-900 text-slate-100">
       <div className="container-page py-16">
         <h1 className="text-3xl font-bold">AI Engineer Fit Tracker</h1>
         <p className="mt-3 text-slate-300 max-w-3xl">

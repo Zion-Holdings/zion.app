@@ -4,6 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-email-outreach-automation-for-msps-2026' },
   title: 'AI Email Outreach Automation for MSPs | Zion Tech Group',
   description: 'AI email outreach automation for MSPs and IT services companies. Generate leads, nurture prospects, and win clients with intelligent email sequences and CRM enrichment.',
   openGraph: {

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-financial-engineering-and-portfolio-automation-in-2026' },
   title: 'AI Financial Engineering and Portfolio Automation in 2026',
   description: 'Practical financial engineering and portfolio automation with AI assistants.',
 };

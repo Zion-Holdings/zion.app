@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-platform-engineering-patterns-for-scale-in-2026' },
   title: "AI Platform Engineering Patterns for Scale in 2026 | Zion Tech Group",
   description: "Platform engineering patterns that help teams scale AI adoption reliably.",
 

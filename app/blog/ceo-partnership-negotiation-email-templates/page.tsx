@@ -4,6 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ceo-partnership-negotiation-email-templates' },
 
   title: 'CEO Partnership Negotiation Email Templates for IT and AI Companies',
   description:

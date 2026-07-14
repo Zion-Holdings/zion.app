@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-vendor-due-diligence-checklist-for-latam-in-2026' },
   title: "AI Vendor Due Diligence Checklist for LATAM in 2026 | Zion Tech Group",
   description: "AI vendor due diligence checklist for LATAM technology buyers.",
 

@@ -1,5 +1,7 @@
-// app/tools/analytics/page.tsx
 'use client';
+
+// app/tools/analytics/page.tsx
+
 import { useMemo } from 'react';
 
 import { getToolVisits } from '@/data/tools_tracker';
@@ -34,7 +36,7 @@ export default function Analytics(){
   const maxCount = ranking[0]?.count||1;
 
   return(
-    <main className="min-h-screen bg-slate-950 py-20 px-4">
+    <main className="min-h-screen bg-slate-900 py-20 px-4">
       <div className="container-page max-w-4xl mx-auto">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-3">Free Tools — Usage Analytics</h1>

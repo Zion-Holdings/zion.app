@@ -22,7 +22,6 @@ export default function AiChatbotBuilderPage() {
       <ArticleStructuredData
         title={metadata.title as string}
         description={metadata.description as string}
-        canonical={metadata.alternates?.canonical as string}
         publishedAt="2026-07-08"
         updatedAt="2026-07-08"
       />

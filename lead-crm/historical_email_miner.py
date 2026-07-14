@@ -4,7 +4,7 @@ Zion Historical Email Miner - Termux-safe.
 Single-source query list for high-frequency/all-folder mining.
 Writes new leads to lead-crm/all-leads.json with status='discovered'.
 """
-import sys, json, re, datetime, time
+import os, sys, json, re, datetime, time
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
@@ -24,7 +24,6 @@ MINER_LOG = LEAD_DIR / 'miner_log.json'
 HEALTH_MONITOR = LEAD_DIR / 'miner_health.json'
 QUALITY_LOG = LEAD_DIR / 'mined_contact_quality.jsonl'
 HIGH_SIGNAL_MIN_CONFIDENCE = 2
-#LABEL_CACHE_FILE = LEAD_DIR / 'label_cache.json'
 
 QUERIES = [
     'subject:parceria',
@@ -61,10 +60,12 @@ QUERIES = [
 ]
 
 EMAIL_RE = re.compile(r'[\w\.-]+@[\w\.-]+\.[A-Za-z]{2,}')
-MAX_RESULTS_PER_QUERY = 20
-QUERY_TIMEOUT_SECONDS = 5
+MAX_RESULTS_PER_QUERY = 6
+QUERY_TIMEOUT_SECONDS = 10
+METADATA_TIMEOUT_SECONDS = 10
 LABEL_CACHE_TTL_SECONDS = 60 * 20
 FAST_MODE = True
+MAX_RECENT_MINER_QUERIES = 12
 
 
 def now_iso() -> str:
@@ -180,49 +181,54 @@ def msg_id_to_text(msg_id: str) -> str:
     except Exception:
         return ''
 
+
+def _decode_mime_parts(pl):
+    data = pl.get('body', {}).get('data')
+    if data:
+        try:
+            import base64
+            return base64.urlsafe_b64decode(data + '===').decode('utf-8', errors='replace')
+        except Exception:
+            return ''
+    for part in pl.get('parts', []) or []:
+        rec = _decode_mime_parts(part)
+        if rec:
+            return rec
+    return ''
+
+
 def extract_contacts_metadata(msg_id: str):
-    try:
-        import urllib.request, json as _json
-        from commands.google_workspace import gog_headers
-        url = f'https://gmail.googleapis.com/gmail/v1/users/me/messages/{msg_id}?format=metadata'
-        req = urllib.request.Request(url, headers=gog_headers())
-        with urllib.request.urlopen(req, timeout=QUERY_TIMEOUT_SECONDS) as r:
-            raw = r.read()
-        msg = _json.loads(raw)
-        headers = msg.get('payload', {}).get('headers', [])
-        hdr_map = {h['name'].lower(): h['value'] for h in headers}
-        emails = set()
-        for field in ('from', 'to', 'cc', 'bcc'):
-            val = hdr_map.get(field, '') or ''
-            emails.update(m.group(0).lower() for m in EMAIL_RE.finditer(val) if m)
-        if emails:
+    deadline = time.perf_counter() + METADATA_TIMEOUT_SECONDS
+    for attempt in range(1, 4):
+        remaining = deadline - time.perf_counter()
+        if remaining <= 0:
+            return []
+        try:
+            import urllib.request, json as _json
+            from commands.google_workspace import gog_headers
+            url = f'https://gmail.googleapis.com/gmail/v1/users/me/messages/{msg_id}?format=metadata'
+            req = urllib.request.Request(url, headers=gog_headers())
+            with urllib.request.urlopen(req, timeout=max(1, remaining)) as r:
+                raw = r.read()
+            msg = _json.loads(raw)
+            headers = msg.get('payload', {}).get('headers', [])
+            hdr_map = {h['name'].lower(): h['value'] for h in headers}
+            emails = set()
+            for field in ('from', 'to', 'cc', 'bcc'):
+                val = hdr_map.get(field, '') or ''
+                emails.update(m.group(0).lower() for m in EMAIL_RE.finditer(val) if m)
+            if emails:
+                return list(emails)
+            text = msg.get('snippet','') or ''
+            if not text:
+                text = _decode_mime_parts(msg.get('payload', {}))
+            if text:
+                emails.update(m.group(0).lower() for m in EMAIL_RE.finditer(text) if m)
             return list(emails)
-        # Light fallback: scan body/snippet for prospect emails.
-        text = msg.get('snippet','') or ''
-        if not text:
-            try:
-                pl = msg.get('payload', {})
-                def decode(pl):
-                    data = pl.get('body', {}).get('data')
-                    if data:
-                        try:
-                            import base64
-                            return base64.urlsafe_b64decode(data + '===').decode('utf-8', errors='replace')
-                        except Exception:
-                            return ''
-                    for part in pl.get('parts', []) or []:
-                        rec = decode(part)
-                        if rec:
-                            return rec
-                    return ''
-                text = decode(pl)
-            except Exception:
-                pass
-        if text:
-            emails.update(m.group(0).lower() for m in EMAIL_RE.finditer(text) if m)
-        return list(emails)
-    except Exception:
-        return []
+        except Exception:
+            if attempt == 3:
+                return []
+            time.sleep(0.2)
 
 
 def run_miner():
@@ -241,9 +247,16 @@ def run_miner():
     new_leads = []
     mined_contacts = []
     queries_run = 0
-    active_queries = QUERIES
+    active_queries = QUERIES[:12]
+    classify_contacts = bool(os.environ.get('ZTG_CLASSIFY', '1') != '0')
+    fetch_metadata = bool(os.environ.get('ZTG_METADATA', '1') != '0')
     started = time.perf_counter()
     query_durations = []
+    search_durations = []
+    meta_durations = []
+    llm_durations = []
+    q_meta = 0.0
+    q_llm = 0.0
     for q in active_queries:
         if time.perf_counter() - started > 110:
             append_log({'ts': now_iso(), 'event': 'miner_timeout', 'query': q, 'note': 'soft timeout reached; stopping query loop early'})
@@ -252,6 +265,7 @@ def run_miner():
         queries_run += 1
         try:
             msgs = gmail_search(q, limit=MAX_RESULTS_PER_QUERY, all_folders=True)
+            search_durations.append(time.perf_counter() - qstart)
         except Exception as e:
             append_log({'ts': now_iso(), 'event': 'search_error', 'query': q, 'error': str(e)})
             query_durations.append(time.perf_counter() - qstart)
@@ -261,11 +275,17 @@ def run_miner():
             break
         msg_ids = [m.get('id') for m in msgs if m.get('id')]
         seen_ids = set()
+        msg_ids = [m.get('id') for m in msgs if m.get('id')]
+        seen_ids = set()
         for msg_id in msg_ids:
             if msg_id in seen_ids:
                 continue
             seen_ids.add(msg_id)
-            contacts = extract_contacts_metadata(msg_id)
+            contacts = []
+            if fetch_metadata:
+                t0 = time.perf_counter()
+                contacts = extract_contacts_metadata(msg_id)
+                q_meta += time.perf_counter() - t0
             for email in contacts:
                 key = email.strip().lower()
                 if not key or key in seen:
@@ -273,7 +293,13 @@ def run_miner():
                 if key.startswith(('mailer-daemon', 'no-reply', 'noreply', 'notifications@github.com')):
                     continue
                 seen.add(key)
-                lead = classify_prospect(key, q)
+                t0 = time.perf_counter()
+                if classify_contacts:
+                    lead = classify_prospect(key, q)
+                else:
+                    domain = (key.split('@')[-1] or '').lower()
+                    lead = {'to': key, 'domain': domain, 'confidence': 2 if domain else 0}
+                q_llm += time.perf_counter() - t0
                 if lead.get('is_generic_provider') or lead.get('is_invalid_domain') or lead.get('is_placeholder_domain'):
                     continue
                 new_leads.append(lead)
@@ -293,6 +319,10 @@ def run_miner():
                 except Exception:
                     pass
         query_durations.append(time.perf_counter() - qstart)
+        if q_meta or q_llm:
+            meta_durations.append(q_meta)
+            llm_durations.append(q_llm)
+            append_log({'ts': now_iso(), 'query': q, 'search_s': round(sum(search_durations[-1:], 0), 3), 'metadata_s': round(q_meta, 3), 'llm_s': round(q_llm, 3), 'seen_contacts': len(seen_ids)})
     elapsed = time.perf_counter() - started
 
     if new_leads:
@@ -324,6 +354,12 @@ def run_miner():
         'status': 'ok' if queries_run else 'error',
         'high_signal_leads': high_signal,
         'lead_quality_ratio': quality_ratio,
+        'stage_seconds': {
+            'search_total': round(sum(search_durations), 3),
+            'search_avg': round(sum(search_durations)/len(search_durations), 3) if search_durations else None,
+            'metadata_total': round(sum(meta_durations), 3),
+            'llm_total': round(sum(llm_durations), 3),
+        },
         'rolling': {
             'last_5_queries': query_durations[-5:],
             'last_5_qps': [round(1/q, 4) if q else None for q in query_durations[-5:]],

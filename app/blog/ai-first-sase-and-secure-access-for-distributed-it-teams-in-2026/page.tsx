@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-sase-and-secure-access-for-distributed-it-teams-in-2026' },
   title: 'AI-First SASE and Secure Access for Distributed IT Teams in 2026 | Zion Tech Group',
   description: 'A practical guide to AI-first SASE and secure access for distributed IT teams in 2026, including identity-aware access, policy automation, and measurable security outcomes.',
 }

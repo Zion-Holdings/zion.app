@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/generative-ai-automation-playbook-for-enterprise' },
   title: 'Generative AI Automation Playbook for Enterprise',
   description: 'Generative AI automation playbook for enterprise teams. Use cases, governance basics, process patterns, and implementation paths for secure scalable adoption.',
 

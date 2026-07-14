@@ -1,10 +1,10 @@
 type Service = Record<string, any>;
 
-let allServices: readonly Service[] = [];
+let allServices: Service[] = [];
 try {
   const data = require('./servicesData.json');
   if (Array.isArray(data)) {
-    allServices = data as readonly Service[];
+    allServices = data as Service[];
   }
 } catch {
   allServices = [];

@@ -15,39 +15,42 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: 'true'
+      NODE_OPTIONS: '--max-old-space-size=4096'
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
+    - uses: actions/checkout@v5
+    - uses: actions/setup-node@v5
       with:
         node-version: '20'
         cache: 'npm'
-        cache-dependency-path: '**/package-lock.json'
-    - run: npm install --no-audit --fund=false
-    - run: npm run build:ci
+    - run: npm ci --prefer-offline --no-audit --fund=false --include=dev
+    - name: Build Next.js static export
+      run: |
+        set -euo pipefail
+        npm run build --webpack
     - name: Validate static export output
       run: |
+        set -euo pipefail
         if [ ! -d out ] && [ ! -d docs ]; then
           echo "Static export output missing: neither 'out/' nor 'docs/' exists after build"
           ls -la .next || true
-          if [ -f automation/reports/build-state.json ]; then cat automation/reports/build-state.json || true; fi
           exit 1
         fi
-    - name: Upload build state artifact
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: build-state
-        path: automation/reports/build-state.json
-        retention-days: 7
-    - uses: actions/configure-pages@v4
-      with:
-        enablement: true
+        if [ ! -f out/index.html ]; then
+          echo "Static export output missing: 'out/index.html' does not exist"
+          ls -la out || true
+          exit 1
+        fi
+        if [ ! -f out/404.html ]; then
+          echo "Static export output missing: 'out/404.html' does not exist"
+          ls -la out || true
+          exit 1
+        fi
     - name: Prepare Pages artifact
       run: |
         set -euo pipefail
+        rm -rf artifact
         mkdir -p artifact
-        if [ -d docs ]; then cp -a docs/. artifact/; fi
         if [ -d out ]; then cp -a out/. artifact/; fi
         if [ -f public/_redirects ]; then cat public/_redirects > artifact/_redirects; fi
         if [ -f public/_headers ]; then cp -f public/_headers artifact/_headers; fi

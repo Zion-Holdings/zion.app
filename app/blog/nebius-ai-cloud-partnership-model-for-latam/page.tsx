@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/nebius-ai-cloud-partnership-model-for-latam' },
   title: "Nebius AI Cloud Partnership Model for LATAM | Zion Tech Group",
   description: "Nebius AI Cloud Partnership Model for LATAM.",
 

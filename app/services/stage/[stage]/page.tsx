@@ -1,6 +1,5 @@
 // app/services/stage/[stage]/page.tsx — Service Stage Filter
-import { allServices } from '../../../data/servicesData';
-import type { Service } from '../../data/servicesData';
+import { allServices, type Service } from '@/data/servicesData';
 import Link from 'next/link';
 
 const STAGE_META: Record<string, { label: string; emoji: string; desc: string; color: string }> = {
@@ -74,7 +73,7 @@ export default async function StagePage({ params }: { params: Promise<{ stage: s
                 <div className="mt-auto pt-4 border-t border-slate-700/50">
                   <div className="flex justify-between items-center">
                     <span className="text-purple-300 text-sm font-medium">
-                      Starting at {(service.pricing as Record<string, string>)[Object.keys(service.pricing)[0]]}
+                      {(() => { const keys = service.pricing && typeof service.pricing === 'object' ? Object.keys(service.pricing) : []; if (!keys.length) return 'Pricing on request'; return (service.pricing as Record<string, string>)[keys[0]]; })()}
                     </span>
                   </div>
                   <Link href={`/services/${service.id}`} className="text-sm text-purple-400 hover:underline inline-flex items-center gap-1 mt-1">

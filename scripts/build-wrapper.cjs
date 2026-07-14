@@ -20,6 +20,14 @@ function writeState(payload) {
   fs.writeFileSync(STATE_FILE, JSON.stringify({ ...payload, wroteAt: new Date().toISOString() }, null, 2), 'utf8');
 }
 
+function writeFinalState(success) {
+  writeState({
+    phase: success ? 'final-success' : 'final-failed',
+    success,
+    wroteAt: new Date().toISOString(),
+  });
+}
+
 function probeArtifacts() {
   const outDir = path.join(REPO, 'out');
   const dataDir = path.join(outDir, 'data');
@@ -81,35 +89,30 @@ child.on('close', (code) => {
       lastLines: readLastLines('out', 200),
       nextLog: readLastLines('.next', 200),
     });
+    writeFinalState(false);
     process.exit(buildExit);
   }
 
   writeState({ phase: 'after-build', buildExitCode: 0, durationMs: timeMs(buildStart), artifacts: probeArtifacts() });
 
   let postbuildExit = 0;
+  let postbuildErr = null;
   try {
     execSync('npm run postbuild', { cwd: REPO, stdio: 'inherit', shell: process.platform === 'win32' });
   } catch (postErr) {
     postbuildExit = postErr && postErr.status ? postErr.status : 1;
-    writeState({
-      phase: 'postbuild-failed',
-      buildExitCode: 0,
-      postbuildExitCode: postbuildExit,
-      postbuildError: postErr && postErr.message ? postErr.message : String(postErr),
-      durationMs: timeMs(buildStart),
-      artifacts: probeArtifacts(),
-      outTail: readLastLines('out', 200),
-    });
-    process.exit(1);
+    postbuildErr = postErr && postErr.message ? postErr.message : String(postErr);
   }
-
   writeState({
-    phase: 'postbuild-ok',
+    phase: postbuildExit === 0 ? 'postbuild-ok' : 'postbuild-failed',
     buildExitCode: 0,
-    postbuildExitCode: 0,
+    postbuildExitCode: postbuildExit,
+    postbuildError: postbuildErr,
     durationMs: timeMs(buildStart),
     artifacts: probeArtifacts(),
+    outTail: readLastLines('out', 200),
   });
+  writeFinalState(postbuildExit === 0);
   process.exit(0);
 });
 

@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-consulting-services-for-enterprise-it-in-2026' },
   title: "AI Consulting Services for Enterprise IT in 2026 | Zion Tech Group",
   description: "Practical AI consulting services for enterprise IT teams evaluating managed support, pilots, and implementation partners.",
 

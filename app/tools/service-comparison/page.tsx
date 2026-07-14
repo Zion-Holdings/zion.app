@@ -1,5 +1,7 @@
-// app/tools/service-comparison/page.tsx — Full Service Comparison
 'use client';
+
+// app/tools/service-comparison/page.tsx — Full Service Comparison
+
 import { pingTool } from '@/data/tools_ping_client';
 
 import { useState, useMemo, useEffect } from 'react';

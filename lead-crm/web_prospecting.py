@@ -170,8 +170,10 @@ def append_ready(rows: list[dict]):
         seen_to.add(to)
         added += 1
     data['ready'] = ready[-2000:]
-    data['state'] = 'send_ready'
-    data['send_blocked'] = False
+    if not data.get('state'):
+        data['state'] = 'send_ready'
+    if data.get('send_blocked') is None:
+        data['send_blocked'] = False
     CANONICAL_READY.parent.mkdir(parents=True, exist_ok=True)
     CANONICAL_READY.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
     return added

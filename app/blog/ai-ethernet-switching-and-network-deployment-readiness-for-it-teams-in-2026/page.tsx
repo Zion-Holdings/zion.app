@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-ethernet-switching-and-network-deployment-readiness-for-it-teams-in-2026' },
   title: 'AI-Ethernet Switching and Network Deployment Readiness for IT Teams in 2026 | Zion Tech Group',
   description: 'A practical guide to AI-ethernet switching and network deployment readiness for IT teams in 2026, including validation, staging, cabling checks, and deployment automation.',
 }

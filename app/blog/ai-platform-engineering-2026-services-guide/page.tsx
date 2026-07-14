@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-platform-engineering-2026-services-guide' },
   title: 'AI Platform Engineering 2026 Services Guide',
   description: 'A service guide to building, operating, and scaling internal AI platforms safely in 2026.',
 };

@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-security-and-compliance-for-brazilian-companies-in-2026' },
   title: "AI Security and Compliance for Brazilian Companies in 2026 | Zion Tech Group",
   description: "AI security and compliance considerations for Brazilian companies adopting AI.",
 

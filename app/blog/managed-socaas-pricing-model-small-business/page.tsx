@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/managed-socaas-pricing-model-small-business' },
   title: 'Managed SOCaaS Pricing Model for Small Business | Zion Tech Group',
   description: 'A practical look at managed SOCaaS pricing models for small business, including coverage tiers, automation impact, and measurable outcomes.',
 }

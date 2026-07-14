@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/cyber-incident-response-retainer-ready-before-breach' },
   title: "Cyber Incident Response Retainer: Be Ready Before the Breach | Zion Tech Group",
   description: "incident response retaining.",
 

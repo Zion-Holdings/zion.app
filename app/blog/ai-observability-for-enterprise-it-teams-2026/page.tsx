@@ -4,6 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-observability-for-enterprise-it-teams-2026' },
   title: 'AI Observability for Enterprise IT Teams | Zion Tech Group',
   description: 'AI observability patterns for enterprise IT teams in 2026: metrics, tracing, cost control, and incident response. Free tools and templates from Zion Tech Group.',
 

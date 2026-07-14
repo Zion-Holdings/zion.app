@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-commercial-operations-automation-and-revenue-intelligence' },
   title: 'AI Commercial Operations Automation and Revenue Intelligence | Zion Tech Group',
   description: 'See how Zion Tech Group applies AI commercial operations automation and revenue intelligence to shorten sales cycles, reduce churn, and improve forecasting.',
 

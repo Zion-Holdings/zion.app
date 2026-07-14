@@ -22,7 +22,7 @@ export default function AiFinOpsForITServiceProvidersPage() {
       <ArticleStructuredData
         title={metadata.title as string}
         description={metadata.description as string}
-        canonical={metadata.alternates?.canonical as string}
+        canonical="https://ziontechgroup.com/blog/ai-finops-for-it-service-providers"
         publishedAt="2026-07-05"
         updatedAt="2026-07-05"
       />

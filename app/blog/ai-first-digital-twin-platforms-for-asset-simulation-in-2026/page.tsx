@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-digital-twin-platforms-for-asset-simulation-in-2026' },
   title: 'AI-First Digital Twin Platforms for Asset Simulation in 2026',
   description: 'AI-assisted digital twin platforms for asset simulation, predictive maintenance, and operational insight.',
 };

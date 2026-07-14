@@ -1,5 +1,7 @@
-// app/tools/service-recommender/page.tsx
 'use client';
+
+// app/tools/service-recommender/page.tsx
+
 import { pingTool } from '@/data/tools_ping_client';
 
 import { useState, useEffect } from 'react';

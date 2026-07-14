@@ -1,5 +1,7 @@
-// app/tools/ssl-checker/page.tsx — Free SSL/TLS Certificate Checker
 'use client';
+
+// app/tools/ssl-checker/page.tsx — Free SSL/TLS Certificate Checker
+
 import { pingTool } from '@/data/tools_ping_client';
 
 import { useState, useEffect } from 'react';

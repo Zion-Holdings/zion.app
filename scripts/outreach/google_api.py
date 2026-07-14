@@ -10,7 +10,27 @@ import base64
 import json
 from pathlib import Path
 
-from commands.google_workspace import gog_headers
+# Patch: 2026-07-13 fallback auth for missing commands.google_workspace
+try:
+    from commands.google_workspace import gog_headers  # type: ignore
+except Exception:
+    def gog_headers():
+        import json, os
+        from pathlib import Path
+        candidates = [
+            Path.home() / '.gmail_token.json',
+            Path(__file__).resolve().parent.parent / 'outreach_monitor' / 'processed' / 'gmail_token.json',
+        ]
+        for p in candidates:
+            if p.exists():
+                try:
+                    cfg = json.loads(p.read_text(encoding='utf-8'))
+                    token = cfg.get('access_token') or cfg.get('token') or ''
+                    if token:
+                        return {'Authorization': f'Bearer {token}'}
+                except Exception:
+                    continue
+        raise RuntimeError('No access token available for Gmail. Provide a token at ~/.gmail_token.json or outreach_monitor/processed/gmail_token.json')
 
 SCOPES = [
     "https://www.googleapis.com/auth/gmail.send",

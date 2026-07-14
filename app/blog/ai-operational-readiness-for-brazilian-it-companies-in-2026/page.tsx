@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-operational-readiness-for-brazilian-it-companies-in-2026' },
   title: "AI Operational Readiness for Brazilian IT Companies in 2026 | Zion Tech Group",
   description: "A practical operational readiness checklist for Brazilian IT teams adopting AI.",
 

@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-managed-it-services-and-msp-automation' },
   title: 'AI Managed IT Services & MSP Automation | Zion Tech Group',
   description: 'Discover how Zion Tech Group applies AI managed services, MSP automation, and intelligent IT operations to cut costs, reduce incidents, and speed up delivery.',
 

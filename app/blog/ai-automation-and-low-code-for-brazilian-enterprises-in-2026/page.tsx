@@ -1,5 +1,6 @@
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-automation-and-low-code-for-brazilian-enterprises-in-2026' },
   title: 'AI Automation and Low-Code for Brazilian Enterprises in 2026',
   description: 'How Brazilian enterprises can apply AI automation and low-code platforms to accelerate delivery without increasing risk.',
 };

@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/free-ai-readiness-audit-checklist-for-it-managers-2026' },
   title: 'Free AI Readiness Checklist for IT Managers 2026 | Zion Tech Group',
   description: 'A practical AI readiness checklist for IT and infrastructure leaders moving from pilot to production in 2026.',
 };

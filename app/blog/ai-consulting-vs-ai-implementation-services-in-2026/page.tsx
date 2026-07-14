@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-consulting-vs-ai-implementation-services-in-2026' },
   title: "AI Consulting vs AI Implementation Services in 2026 | Zion Tech Group",
   description: "Comparing AI consulting versus AI implementation services for enterprises.",
 

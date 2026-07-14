@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-document-processing-automation-guide' },
   title: 'AI Document Processing Automation Guide for Enterprises | Zion Tech Group',
   description: 'A practical AI document processing automation guide covering ingestion, extraction, validation, routing, and compliance outcomes.',
 }

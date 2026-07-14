@@ -1,3 +1,5 @@
+
+
 // app/tools/roi-calculator/page.tsx — ROI Calculator (server wrapper + ping tracking)
 // Metadata exported by layout.tsx
 
@@ -6,15 +8,10 @@ import type { Metadata } from 'next';
 import RouterPing from './pingClient';
 import ROICalculatorClient from './ROICalculatorClient';
 
-export const metadata = {
-  title: 'ROI Calculator — Zion Tech Group',
-  description: 'Calculate the return on investment for AI and IT services with our free ROI calculator.',
-
-};
 
 export default function ROICalculatorPage() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
+    <main className="min-h-screen bg-slate-900 py-20">
       <RouterPing />
 
       {/* ── JSON-LD Structured Data ── */}

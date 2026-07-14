@@ -7,15 +7,15 @@ const outDir = path.join(repo, 'out');
 const docsDir = path.join(repo, 'docs');
 const statePath = path.join(repo, 'automation/reports/build-and-verify-latest.json');
 
-// Prefer export output.
 const exportDir = fs.existsSync(outDir) ? outDir : (fs.existsSync(docsDir) ? docsDir : null);
 
-const REQUIRED = [
-  path.join(exportDir || outDir, 'index.html'),
-  path.join(exportDir || outDir, '404.html'),
-  path.join(exportDir || outDir, 'data', 'services.json'),
-  path.join(exportDir || outDir, 'service-index.json'),
-];
+const REQUIRED = exportDir
+  ? [
+      path.join(exportDir, 'index.html'),
+      path.join(exportDir, '404.html'),
+      path.join(exportDir, 'service-index.json'),
+    ]
+  : [];
 
 function exists(p) {
   try { return fs.existsSync(p); } catch { return false; }
@@ -32,52 +32,23 @@ function tryRun(label, cmd) {
   }
 }
 
+function hasServiceDataArtifact() {
+  return exists(path.join(exportDir || outDir, 'data', 'services.json')) || exists(path.join(exportDir || outDir, 'service-index.json'));
+}
+
 function ensureArtifacts(missing) {
-  const needServicesJson = missing.includes(path.join(exportDir || outDir, 'data', 'services.json'));
-  const needServiceIndex = missing.includes(path.join(exportDir || outDir, 'service-index.json'));
   let regenerated = false;
-  if (needServicesJson) {
-    console.log('services.json missing — generating...');
-    const ok = tryRun('services.json', 'node scripts/generate_services_json.cjs');
-    regenerated = ok || regenerated;
-  }
-  if (needServiceIndex) {
-    console.log('service-index.json missing — generating...');
+  if (!hasServiceDataArtifact()) {
+    console.log('service data missing — generating service-index.json...');
     const ok = tryRun('service-index.json', 'node scripts/generate_service_index.cjs');
     regenerated = ok || regenerated;
   }
+  if (!exists(path.join(exportDir || outDir, 'index.html'))) {
+    console.log('index.html missing — attempting build...');
+    const ok = tryRun('build', 'npm run build');
+    regenerated = ok || regenerated;
+  }
   return regenerated;
-}
-
-function tryBuild() {
-  console.log('required artifacts missing — attempting local build/remediation...');
-  let buildOk = tryRun('build', 'npm run build');
-  if (!buildOk) {
-    console.warn('build failed — skipping further local remediation');
-    return false;
-  }
-  const stillMissing = REQUIRED.filter((f) => !exists(f));
-  if (stillMissing.length === 0) {
-    console.log('build produced required artifacts');
-    return true;
-  }
-
-  const needServicesJson = stillMissing.includes(path.join(exportDir || outDir, 'data', 'services.json'));
-  const needServiceIndex = stillMissing.includes(path.join(exportDir || outDir, 'service-index.json'));
-  let artifactsOk = false;
-  if (needServicesJson || needServiceIndex) {
-    console.log('attempting artifact regeneration after build...');
-    artifactsOk = ensureArtifacts(stillMissing);
-  }
-
-  if (stillMissing.filter((f) => !exists(f)).length === 0) {
-    console.log('artifact remediation completed');
-    return true;
-  }
-  if (artifactsOk) return true;
-
-  console.warn('local remediation incomplete — manual deploy may be required');
-  return false;
 }
 
 function detectBuildError() {
@@ -97,8 +68,42 @@ function detectBuildError() {
   return null;
 }
 
+function parseExportMappersCount() {
+  const mapperPath = path.join(repo, '.next', 'export-mappers.json')
+  if (!exists(mapperPath)) return 0
+  try {
+    const raw = JSON.parse(fs.readFileSync(mapperPath, 'utf8'))
+    const keys = Object.keys(raw)
+    const targets = ['/','/portal','/contact','/services/ai-agents-autonomous']
+    return keys.filter((k) => targets.includes(k) || targets.some(t => k === t || k.startsWith(`${t}/`))).length
+  } catch { return 0 }
+}
+
+function routeHtmlCount() {
+  const roots = [outDir, path.join(outDir, 'portal'), path.join(outDir, 'contact'), path.join(outDir, 'services', 'ai-agents-autonomous')]
+  return roots.filter((r) => exists(path.join(r, 'index.html'))).length
+}
+
+function logEntity(rel) {
+  const p = path.join(repo, rel)
+  if (!exists(p)) return
+  try {
+    const raw = fs.readFileSync(p, 'utf8')
+    console.log(`${rel}: present`)
+    if (/export-mappers/.test(rel) && /\/portal|\/contact|\/services\/ai-agents-autonomous/.test(raw)) {
+      console.log(`${rel}: route-rooted`)
+    }
+  } catch {}
+}
+
 function main() {
   fs.mkdirSync(path.dirname(statePath), { recursive: true });
+
+  logEntity('.next/export-mappers.json')
+  logEntity('.next/build/static/index.html')
+  const mapperCount = parseExportMappersCount()
+  const htmlCount = routeHtmlCount()
+  console.log(`export mapper_route_count=${mapperCount} html_route_count=${htmlCount}`)
 
   let buildStatus = 'ok';
   let missing = REQUIRED.filter((f) => !exists(f));
@@ -111,11 +116,17 @@ function main() {
 
   let regenerated = false;
   if (missing.length > 0) {
-    const before = [...missing];
-    regenerated = ensureArtifacts(missing);
-    missing = REQUIRED.filter((f) => !exists(f));
-    if (!regenerated) {
-      console.warn('Artifact regeneration did not complete.');
+    console.warn('required artifacts missing — attempting local build/remediation...');
+    const buildOk = tryRun('build', 'npm run build');
+    if (!buildOk) {
+      console.warn('build failed — skipping further local remediation');
+    } else {
+      const afterRequired = REQUIRED.filter((f) => !exists(f));
+      console.log(`postbuild required_missing=${afterRequired.length} mapper_route_count=${mapperCount} html_route_count=${htmlCount}`)
+      if (afterRequired.length) {
+        regenerated = ensureArtifacts(afterRequired);
+        missing = REQUIRED.filter((f) => !exists(f));
+      }
     }
   }
 

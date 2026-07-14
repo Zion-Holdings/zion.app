@@ -3,7 +3,7 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
-import { allServices } from './data/servicesData';
+import { allServices, type Service } from './data/servicesData';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import ServiceBrowser from '@/components/ServiceBrowser';
 import ServiceSpotlight from '@/components/ServiceSpotlight';
@@ -160,11 +160,18 @@ export default function HomePage() {
   }, [services, catFilter, search]);
 
   // Dynamic popular services — changes automatically when catalog updates
-  const popularServices = useMemo(() =>
+  const popularServices = useMemo((): import('@/components/ServiceSpotlight').FeaturedService[] =>
     services
       .filter((s: any) => s.popular == true)
       .map(s => ({
-        ...s,
+        id: s.id,
+        title: s.title,
+        description: s.description,
+        category: s.category,
+        icon: s.icon,
+        href: s.href,
+        popular: s.popular,
+        stage: s.stage,
         _score: (s.features?.length || 0) * 3
               + (s.benefits?.length || 0) * 2
               + (s.description || '').length * 0.3
@@ -183,12 +190,14 @@ export default function HomePage() {
   // ── Release-signal news arranger ──────────────────────────────────────
   // Pulls featured services using data/release_notes.json scoring.
   // Falls back to freshFeatures if dataset not loaded or empty.
-  const newsItems = useMemo(() => {
+  const newsItems = useMemo((): { id:string; title:string; description:string; tag:string; color:string; daysAgo:number; href:string }[] => {
+    const catColorByKey = Object.fromEntries(CATEGORIES.map(c => [c.key, c.color]));
     if (!releaseNotes.length) {
       return allServices
-        .map(s => ({ ...s, _score: (s.features?.length || 0) * 3 + (s.benefits?.length || 0) * 2 + (s.description || '').length * 0.3 }))
-        .sort((a:any,b:any) => b._score - a._score)
-        .slice(0, 6);
+        .slice()
+        .sort((a:any,b:any) => ((a.features?.length||0)*3 + (a.benefits?.length||0)*2 + (a.description||'').length*0.3) - ((b.features?.length||0)*3 + (b.benefits?.length||0)*2 + (b.description||'').length*0.3))
+        .slice(0,6)
+        .map(s => ({ id:s.id, title:s.title, description:s.description, tag:'New', color: catColorByKey[s.category] || 'from-purple-500 to-indigo-500', daysAgo:30, href:s.href }));
     }
     const ENTRY_TAG_MAP: Record<string,string> = {
       ai: 'AI & ML', it: 'IT & Infrastructure', cloud: 'Cloud Platform',
@@ -196,39 +205,30 @@ export default function HomePage() {
     };
     const now   = Date.now();
     const DAY   = 86_400_000;
-    const SCORE_RECENCY   = 5;   // +5 per day-newer
-    const SCORE_TAG       = 2;   // +2 per matched tag
-    const SCORE_FEATURED  = 3;   // +3 if featured
-    const SCORE_FEATURES  = 1;   // +1 per feature bullet
+    const SCORE_RECENCY   = 5;
+    const SCORE_TAG       = 2;
+    const SCORE_FEATURED  = 3;
+    const SCORE_FEATURES  = 1;
     const lookup = new Map(allServices.map(s => [s.id, s]));
-    const merged = releaseNotes
-      .filter(r => r.featured !== false)
-      .map(r => {
-        const svc = lookup.get(r.id);
-        if (!svc) return null;
-        const daysAgo = Math.max(0, Math.round((now - new Date(r.released_at).getTime()) / DAY));
-        const tagCount = (r.tags || []).filter(t => ENTRY_TAG_MAP[t]).length;
-        return {
-          id: r.id, title: r.changelog_summary || r.changelog.slice(0, 80) + '...',
-          desc: r.changelog,
-          tag: ENTRY_TAG_MAP[(r.tags || [])[0]] || 'New',
-          color: CATEGORIES.find(c => c.key === svc.category)?.color || 'from-purple-500 to-indigo-500',
-          _score: SCORE_FEATURED * (r.featured ? 1 : 0)
-                   + SCORE_TAG       * tagCount
-                   + SCORE_FEATURES  * (svc.features?.length || 0)
-                   - SCORE_RECENCY   * daysAgo,
-        };
-      })
-      .filter((r): r is NonNullable<typeof r> => r !== null)
-      .sort((a, b) => b!._score - a!._score)
-      .slice(0, 6);
-    if (merged.length) return merged;
-    // Fallback: same formula as original freshFeatures
-    return allServices
-      .map(s => ({ ...s, _score: (s.features?.length || 0) * 3 + (s.benefits?.length || 0) * 2 + (s.description || '').length * 0.3 }))
-      .sort((a:any,b:any) => b._score - a._score)
-      .slice(0, 6);
-
+    const mapped: { id:string; title:string; description:string; tag:string; color:string; daysAgo:number; href:string }[] = [];
+    for (const r of releaseNotes) {
+      if (r.featured === false) continue;
+      const svc = lookup.get(r.id);
+      if (!svc) continue;
+      const daysAgo = Math.max(0, Math.round((now - new Date(r.released_at).getTime()) / DAY));
+      const tagCount = (r.tags || []).filter(t => ENTRY_TAG_MAP[t]).length;
+      mapped.push({
+        id: r.id,
+        title: r.changelog_summary || r.changelog.slice(0, 80) + '...',
+        description: r.changelog,
+        tag: ENTRY_TAG_MAP[(r.tags || [])[0]] || 'New',
+        color: catColorByKey[svc.category] || 'from-purple-500 to-indigo-500',
+        daysAgo,
+        href: (svc as any).href || '/'
+      });
+    }
+    mapped.sort((a,b) => ((SCORE_FEATURED*(b.tag==='New'?0:1) + SCORE_TAG*1 + SCORE_FEATURES - SCORE_RECENCY*b.daysAgo)) - ((SCORE_FEATURED*(a.tag==='New'?0:1) + SCORE_TAG*1 + SCORE_FEATURES - SCORE_RECENCY*a.daysAgo)) );
+    return mapped.slice(0,6);
   }, [allServices, releaseNotes]);
 
   return (
@@ -286,6 +286,19 @@ export default function HomePage() {
           })
         }}
       />
+      <script
+        type="application/ld+json"
+        suppressHydrationWarning
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://ziontechgroup.com/' },
+            ],
+          }),
+        }}
+      />
       {/* ── Hero ── */}
       <section className="relative overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_30%,rgba(120,50,200,0.18),rgba(20,10,40,0.92))]" />
@@ -296,7 +309,8 @@ export default function HomePage() {
               <span className="text-green-400">●</span> <ServiceCounter /> Services — Live Now
             </div>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-            <span className="gradient-text">AI & IT Services</span><br />
+            <span className="gradient-text">AI & IT Services</span>
+            {' '}<br />
             <span className="text-white">for Your Business</span>
           </h1>
           <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
@@ -691,7 +705,7 @@ export default function HomePage() {
                     <div className="mt-auto pt-3 border-t border-slate-700/50 flex justify-between items-center">
                       <span className="text-[10px] font-semibold uppercase tracking-wider bg-orange-500/12 text-orange-300 border-orange-500/25">★ Popular</span>
                       <span className="text-purple-300 text-xs font-semibold">
-                        From {(service.pricing as Record<string, string>)[Object.keys(service.pricing)[0]]}/mo
+                        {(() => { const keys = service.pricing && typeof service.pricing === 'object' ? Object.keys(service.pricing) : []; if (!keys.length) return 'Pricing on request'; return (service.pricing as Record<string, string>)[keys[0]] + '/mo'; })()}
                       </span>
                     </div>
                   </Link>
@@ -1162,7 +1176,7 @@ export default function HomePage() {
                 <div className={`h-1 rounded-full bg-gradient-to-r ${feat.color || 'from-purple-500 to-indigo-500'}`} />
                 <span className="text-xs font-semibold text-purple-300 uppercase tracking-wider">{feat.tag}</span>
                 <h3 className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors">{feat.title}</h3>
-                <p className="text-slate-400 text-sm flex-1 leading-relaxed">{feat.desc}</p>
+                <p className="text-slate-400 text-sm flex-1 leading-relaxed">{feat.description}</p>
                 <div className="mt-auto">
                   <span
                     role="img"

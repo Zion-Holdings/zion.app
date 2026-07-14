@@ -1,5 +1,7 @@
-// Health Check Tool — Free autonomous platform status
 'use client';
+
+// Health Check Tool — Free autonomous platform status
+
 import { useState, useEffect, useCallback } from 'react';
 
 import Link from 'next/link';
@@ -102,7 +104,7 @@ export default function HealthCheckToolPage() {
     : null;
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white py-12 px-4">
+    <div className="min-h-screen bg-slate-900 text-white py-12 px-4">
       <div className="max-w-3xl mx-auto">
         <Link href="/status/" className="text-purple-400 hover:text-purple-300 text-sm mb-6 inline-block">← Status Home</Link>
         <h1 className="text-4xl font-bold mb-2">Platform Health Check 🩺</h1>
