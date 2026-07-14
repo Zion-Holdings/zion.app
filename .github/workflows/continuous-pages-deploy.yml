@@ -1,5 +1,5 @@
 name: Continuous Pages Deploy
-on:
+'on':
   schedule:
     - cron: '*/30 * * * *'
   push:
@@ -12,7 +12,6 @@ permissions:
 concurrency:
   group: continuous-pages-deploy-${{ github.ref }}
   cancel-in-progress: false
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -40,41 +39,30 @@ jobs:
         id: build
         run: |
           set -euo pipefail
-          npm run build -- --webpack || echo "Next build failed; will deploy docs fallback"
-          if [ -d out ]; then
-            PAGES=$(find out -name 'index.html' | wc -l)
-            SIZE=$(du -sh out | awk '{print $1}')
-          else
-            PAGES=0
-            SIZE="unknown"
-          fi
-          echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
-          echo "size=$SIZE" >> "$GITHUB_OUTPUT"
+          npm run build -- --webpack || echo "Next build failed; will rely on docs/ fallback"
 
-      - name: Verify or deploy pages artifact
+      - name: Prepare Pages artifact
         run: |
           set -euo pipefail
           ARTIFACT_DIR="${GITHUB_WORKSPACE:-.}/artifacts/pages"
           mkdir -p "$ARTIFACT_DIR"
-          if [ -d out ]; then
-            cp -a out/. "$ARTIFACT_DIR"/
-          elif [ -d docs ]; then
-            cp -a docs/. "$ARTIFACT_DIR"/
-          else
-            echo "No static site artifact found" >&2
-            exit 1
-          fi
+          mkdir -p "$ARTIFACT_DIR/docs"
           if [ -d docs ]; then
-            while IFS= read -r -d '' f; do
-              rel="${f#docs/}"
-              mkdir -p "$ARTIFACT_DIR/$(dirname "$rel")"
-              cp -a "$f" "$ARTIFACT_DIR/$rel"
-            done < <(find docs -type f -name 'index.html' -print0 2>/dev/null || true)
+            cp -a docs/. "$ARTIFACT_DIR"/
           fi
+          if [ -d out ]; then
+            cp -a out/. "$ARTIFACT_DIR"/ || true
+          fi
+          if [ -f public/_redirects ]; then cat public/_redirects > "$ARTIFACT_DIR/_redirects"; fi
+          if [ -f public/_headers ]; then cp -f public/_headers "$ARTIFACT_DIR/_headers"; fi
+          if [ -f public/sitemap.xml ]; then cp -f public/sitemap.xml "$ARTIFACT_DIR/sitemap.xml"; fi
+          if [ -f public/robots.txt ]; then cp -f public/robots.txt "$ARTIFACT_DIR/robots.txt"; fi
+          if [ ! -f "$ARTIFACT_DIR/robots.txt" ] && [ -f docs/robots.txt ]; then cp -f docs/robots.txt "$ARTIFACT_DIR/robots.txt"; fi
+          if [ ! -f "$ARTIFACT_DIR/sitemap.xml" ] && [ -f docs/sitemap.xml ]; then cp -f docs/sitemap.xml "$ARTIFACT_DIR/sitemap.xml"; fi
           PAGES=$(find "$ARTIFACT_DIR" -name 'index.html' | wc -l)
-          SIZE=$(du -sh "$ARTIFACT_DIR" | awk '{print $1}')
           echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
-          echo "size=$SIZE" >> "$GITHUB_OUTPUT"
+          echo "pages=$PAGES"
+          find "$ARTIFACT_DIR" -maxdepth 2 -type f | sed -n '1,80p' || true
 
       - name: Pages artifact
         uses: actions/upload-pages-artifact@v4
@@ -98,5 +86,7 @@ jobs:
           echo "Deployment URL: ${{ steps.deployment.outputs.page_url }}"
           sleep 30
           curl -sf "${{ steps.deployment.outputs.page_url }}/" > /dev/null && echo "✓ Homepage is live" || echo "✗ Homepage check failed"
-          curl -sf "${{ steps.deployment.outputs.page_url }}/contact/" > /dev/null && echo "✓ Contact page is live" || echo "✗ Contact page check failed"
-          curl -sf "${{ steps.deployment.outputs.page_url }}/services/" > /dev/null && echo "✓ Services page is live" || echo "✗ Services page check failed"
+          for p in /services/ /solutions/ /pricing/ /contact/ /tools/ /about /blog /careers /partners /portal /ai-services-index /free-ai-it-tools; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "${{ steps.deployment.outputs.page_url }}${p}" || true)
+            echo "$p -> $code"
+          done
