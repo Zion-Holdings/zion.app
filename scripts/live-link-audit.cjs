@@ -27,7 +27,6 @@ walk(rootDir, rootDir);
 
 const EXTERNAL_HOSTS = new Set(['www.googletagmanager.com','www.google-analytics.com','www.linkedin.com','twitter.com','github.com','calendly.com','fonts.googleapis.com','fonts.gstatic.com','cdn.jsdelivr.net','unpkg.com','cdnjs.cloudflare.com']);
 const PATH_ALIASES = new Map([
-  ['/services/cloud-cost-optimization-platform/', '/services/cloud-cost-optimization-service/'],
   ['/ai/demo/', '/ai-lab/'],
   ['/new-ai-services/', '/docs/new-ai-services/']
 ]);
