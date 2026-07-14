@@ -705,7 +705,7 @@ export default function HomePage() {
                     <div className="mt-auto pt-3 border-t border-slate-700/50 flex justify-between items-center">
                       <span className="text-[10px] font-semibold uppercase tracking-wider bg-orange-500/12 text-orange-300 border-orange-500/25">★ Popular</span>
                       <span className="text-purple-300 text-xs font-semibold">
-                        From {(service.pricing as Record<string, string>)[Object.keys(service.pricing)[0]]}/mo
+                        {(() => { const keys = service.pricing && typeof service.pricing === 'object' ? Object.keys(service.pricing) : []; if (!keys.length) return 'Pricing on request'; return (service.pricing as Record<string, string>)[keys[0]] + '/mo'; })()}
                       </span>
                     </div>
                   </Link>
