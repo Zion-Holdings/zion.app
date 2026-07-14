@@ -585,13 +585,14 @@ def _call_nous_hermes(thread_text: str, contact_name: str, company_name: str, la
             "Context from recent thread:\n"
             f"{trimmed}\n\n"
             "Write ONE complete email. Requirements:\n"
-            "- Start with a warm thanks for the past collaboration; if possible, name the project area.\n"
-            "- Propose 2 concrete, mutually beneficial next business ideas for both companies.\n"
-            "- Advance the conversation toward a meeting/call next week, and include Calendly: https://calendly.com/kleber-ziontechgroup\n"
-            "- Share our website: https://ziontechgroup.com, invite them to explore our new AI services, and mention that we offer many free services/tools there.\n"
-            "- Keep it friendly, professional, and concise.\n"
-            "- End with signature: Kleber Garcia Alcatrão | CEO, Zion Tech Group and https://ziontechgroup.com\n\n"
-            "Attention: do not invent false claims. Use only facts plausibly supported by the thread.\n"
+            "- Start with a warm, specific thanks for the past collaboration; name the project area if possible.\n"
+            "- Propose exactly 2-3 concrete, mutually beneficial next business ideas for both companies. Make each idea specific and actionable.\n"
+            "- Ask one direct question to advance the conversation and align next steps.\n"
+            "- Include Calendly: https://calendly.com/kleber-ziontechgroup\n"
+            "- Invite them to explore our new AI services at https://ziontechgroup.com, and mention we offer many free operational tools there.\n"
+            "- Keep it friendly, direct, professional, and concise.\n"
+            "- End with signature: Kleber Garcia Alcatrão | CEO, Zion Tech Group\n\n"
+            "Attention: do not invent false claims. Use only facts plausibly supported by the thread. Match the proven style: specific, not generic."
         )
         payload = {
             'model': model,
