@@ -18,8 +18,8 @@ jobs:
       ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: 'true'
       NODE_OPTIONS: '--max-old-space-size=4096'
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
+    - uses: actions/checkout@v7
+    - uses: actions/setup-node@v6
       with:
         node-version: '20'
         cache: 'npm'
@@ -37,12 +37,12 @@ jobs:
         fi
     - name: Upload build state artifact
       if: always()
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: build-state
         path: automation/reports/build-state.json
         retention-days: 7
-    - uses: actions/configure-pages@v4
+    - uses: actions/configure-pages@v6
       with:
         enablement: true
     - name: Prepare Pages artifact
@@ -63,7 +63,7 @@ jobs:
           if [ -f public/robots.txt ]; then cp -f public/robots.txt artifact/robots.txt; fi
           if [ -f public/feed.xml ]; then cp -f public/feed.xml artifact/feed.xml; fi
         fi
-    - uses: actions/upload-pages-artifact@v4
+    - uses: actions/upload-pages-artifact@v5
       with:
         path: ./artifact
     timeout-minutes: 30
@@ -74,4 +74,4 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-    - uses: actions/deploy-pages@v4
+    - uses: actions/deploy-pages@v5
