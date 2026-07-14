@@ -1,5 +1,5 @@
 {
-  "timestamp": 1783993759,
+  "timestamp": 1784003223,
   "active": false,
   "has_endpoint": false,
   "has_api_key": false,
@@ -10,6 +10,6 @@
     "google.auth": true,
     "google.oauth2": true,
     "token_exists": false,
-    "auth_error": "DefaultCredentialsError('Your default credentials were not found. To set up Application Default Credentials, see https://cloud.google.com/docs/authentication/external/set-up-adc for more information.')"
+    "auth_error": null
   }
 }
