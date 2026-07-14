@@ -325,16 +325,74 @@ def main():
     except Exception as e:
         report['errors'].append({'hot_followup': repr(e)})
 
-    # Inbox interest probe
+    # Inbox interest probe -> continuous-improvement drafts
     try:
         interest_q = (
             '!category:promotions !in:spam !in:trash '
-            'newer_than:7d "partnership" OR "collaboration" OR "proposal" '
-            '-"support reminder" -"rate the support" -"support survey" -"zendesk"'
+            'newer_than:7d ("partnership" OR "collaboration" OR "proposal") '
+            '-\'support reminder\' -\'rate the support\' -\'support survey\' -zendesk'
         )
-        inbox = search_all_folders(interest_q)
-        report['new_inbox_interest_count'] = len(inbox)
-        report['new_inbox_examples'] = inbox[:5]
+        interest_hits = search_all_folders(interest_q)
+        report['new_inbox_interest_count'] = len(interest_hits)
+        report['new_inbox_examples'] = interest_hits[:5]
+        interest_drafts = []
+        for hit in interest_hits:
+            from_addr = hit.get('from', '')
+            m = re.search(r'<([^>]+)>', from_addr)
+            contact = m.group(1).lower() if m else from_addr.strip().lower()
+            if not contact or '@' not in contact:
+                continue
+            if contact.endswith('@ziontechgroup.com'):
+                continue
+            thread_id = hit.get('threadId') or hit.get('id')
+            if not thread_id:
+                continue
+            try:
+                full = gmail_get(hit.get('id'))
+                text = extract_text(full)
+            except Exception:
+                text = hit.get('snippet') or ''
+            lang = detect_lang(text)
+            name = contact.split('@')[0].replace('.', ' ').title()
+            tailor = _llm_tailor_reply(name, contact, lang, (hit.get('subject') or 'New inquiry').strip(), text or '')
+            draft = tailor or build_draft(name, lang)
+            interest_drafts.append({
+                'lead_id': hit.get('id'),
+                'thread_id': thread_id,
+                'message_id': hit.get('id'),
+                'from': contact,
+                'name': name,
+                'company': contact.split('@')[1].split('.')[0].title() if '@' in contact else 'Partner',
+                'subject': hit.get('subject') or 'New inquiry',
+                'lang': lang,
+                'draft': draft,
+                'status': 'ready_to_review',
+                'dedup_key': re.sub(r'[^a-z0-9]', '', contact),
+                'created_at': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+            })
+            if tailor:
+                report['metrics']['tailored_drafts'] = report['metrics'].get('tailored_drafts', 0) + 1
+        report['interest_drafts_count'] = len(interest_drafts)
+        report['interest_drafts'] = interest_drafts[:5]
+        if interest_drafts:
+            try:
+                q_path = Path('lead-crm') / 'outreach_monitor' / 'processed' / 'interest_draft_queue.jsonl'
+                existing = []
+                if q_path.exists():
+                    existing = [json.loads(line) for line in q_path.read_text(encoding='utf-8', errors='ignore').splitlines() if line.strip()]
+                combined = existing + interest_drafts
+                seen_keys = set()
+                final = []
+                for item in combined:
+                    k = item.get('dedup_key') or item.get('from')
+                    if not k or k in seen_keys:
+                        continue
+                    seen_keys.add(k)
+                    final.append(item)
+                q_path.write_text('\n'.join(json.dumps(x, ensure_ascii=False) for x in final), encoding='utf-8')
+                report['interest_queue_count'] = len(final)
+            except Exception as queue_err:
+                report['errors'].append({'interest_queue': repr(queue_err)})
     except Exception as e:
         report['errors'].append({'inbox_probe': repr(e)})
 
