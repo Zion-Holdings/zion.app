@@ -7,7 +7,8 @@ name: Unstoppable Retry Guardian
     branches:
     - main
   schedule:
-  - cron: '*/30 * * * *'
+    - cron: '*/30 * * * *'
+  workflow_dispatch: {}
 permissions:
   contents: read
   issues: write
@@ -15,26 +16,55 @@ permissions:
 jobs:
   guard:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-node@v4
-      with:
-        node-version: 20
-        cache: npm
-    - run: npm ci --include=optional --prefer-offline --no-audit --fund=false --unsafe-perm
-    - name: Self-healing retry wrapper
-      run: "ATTEMPTS=3\nDELAY=10\nN=1\nuntil [ $N -gt $ATTEMPTS ]; do\n  echo \"Attempt\
-        \ $N/$ATTEMPTS\"\n  npm run lint:check && npm run type-check && npm run build\
-        \ && break || true\n  if [ $N -lt $ATTEMPTS ]; then\n    echo \"Retrying in\
-        \ ${DELAY}s...\"\n    sleep $DELAY\n    DELAY=$((DELAY*2))\n  fi\n  N=$((N+1))\n\
-        done\nif [ $N -gt $ATTEMPTS ]; then\n  echo \"::error::Unstoppable guard:\
-        \ checks failed after $((N-1)) attempts\"\n  exit 1\nfi\n"
-    - name: Open issue on persistent failure
-      if: failure()
-      uses: actions/github-script@v7
-      with:
-        script: "github.rest.issues.create({\n  owner: context.repo.owner,\n  repo:\
-          \ context.repo.repo,\n  title: `Unstoppable guard: checks failed on ${context.sha.slice(0,7)}`,\n\
-          \  body: `The unstoppable guard job failed after retries. See workflow run\
-          \ for details.`\n})\n"
-    timeout-minutes: 10
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci --include=optional --prefer-offline --no-audit --fund=false --unsafe-perm
+      - name: Lint check
+        id: lint
+        run: npm run lint:check
+      - name: Type check
+        id: type
+        run: npm run type-check
+      - name: Build site
+        id: build
+        run: |-
+          set -euo pipefail
+          npm run build:ci > /tmp/build.log 2>&1
+          cat /tmp/build.log || true
+      - name: Verify critical export artifacts
+        run: |-
+          set -euo pipefail
+          if [ ! -d out ] && [ ! -d docs ]; then
+            echo "Static export missing: neither out/ nor docs/ exists" >&2
+            exit 1
+          fi
+          if [ ! -f docs/index.html ] && [ ! -f out/index.html ]; then
+            echo "Missing index.html in deployable paths" >&2
+            ls -la out || true
+            ls -la docs || true
+            exit 1
+          fi
+          echo "Deployable artifacts present."
+      - name: Upload failures on error
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: unstoppable-retry-log
+          path: /tmp/build.log
+          retention-days: 7
+      - name: Notify on failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Unstoppable guard: checks failed on ${context.sha.slice(0,7)}`,
+              body: `The unstoppable guard job failed. See workflow run for details.`
+            })
