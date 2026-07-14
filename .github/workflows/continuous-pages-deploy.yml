@@ -65,8 +65,9 @@ jobs:
           if [ -d out ]; then
             cp -a out/. "$ARTIFACT_DIR"/ || true
           fi
-          if [ -f public/_redirects ]; then cp -f public/_redirects "$ARTIFACT_DIR/_redirects"; fi
-          if [ -f public/_headers ]; then cp -f public/_headers "$ARTIFACT_DIR/_headers"; fi
+          if [ -d public ]; then
+            cp -a public/. "$ARTIFACT_DIR"/
+          fi
           # Ensure SEO files exist whichever path produced them.
           if [ ! -f "$ARTIFACT_DIR/robots.txt" ] && [ -f docs/robots.txt ]; then cp -f docs/robots.txt "$ARTIFACT_DIR/robots.txt"; fi
           if [ ! -f "$ARTIFACT_DIR/sitemap.xml" ] && [ -f docs/sitemap.xml ]; then cp -f docs/sitemap.xml "$ARTIFACT_DIR/sitemap.xml"; fi
