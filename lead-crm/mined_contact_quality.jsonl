@@ -40,3 +40,4 @@
 {"ts": "2026-07-14T15:39:18.972943+00:00", "email": "karen@matchmakerrealty.com", "msg_id": "19f61417ae86a06b", "query": "\"Zion Tech Group\"", "confidence": 0, "high_signal": false}
 {"ts": "2026-07-14T15:39:30.376611+00:00", "email": "rparedes@amdsummit.com", "msg_id": "19f6140d8781d4a5", "query": "\"Zion Tech Group\"", "confidence": 0, "high_signal": false}
 {"ts": "2026-07-14T15:40:03.107304+00:00", "email": "exitadvisoralliance@mg.exitadvisoralliance.com", "msg_id": "19f613962f8e3870", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-14T15:57:00.234423+00:00", "email": "team@newsletter.artlist.io", "msg_id": "19f6156c4d50ed6e", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
