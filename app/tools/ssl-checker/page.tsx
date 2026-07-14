@@ -1,3 +1,5 @@
+'use client';
+
 // app/tools/ssl-checker/page.tsx — Free SSL/TLS Certificate Checker
 
 import { pingTool } from '@/data/tools_ping_client';

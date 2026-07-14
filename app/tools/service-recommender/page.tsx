@@ -1,3 +1,5 @@
+'use client';
+
 // app/tools/service-recommender/page.tsx
 
 import { pingTool } from '@/data/tools_ping_client';

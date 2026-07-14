@@ -1,12 +1,7 @@
-'use client';
+
 
 import { Metadata } from 'next';
 
-export const metadata = {
-  title: 'AI Engineer Fit Tracker — Zion Tech Group',
-  description: 'AI-powered engineer fit tracker: compare candidate skills, role requirements, culture fit, and placement confidence in one concise hiring dashboard.',
-
-};
 
 export default function TrackEngineerFitPage() {
   return (

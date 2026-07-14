@@ -1,5 +1,7 @@
-// app/tools/analytics/page.tsx
 'use client';
+
+// app/tools/analytics/page.tsx
+
 import { useMemo } from 'react';
 
 import { getToolVisits } from '@/data/tools_tracker';

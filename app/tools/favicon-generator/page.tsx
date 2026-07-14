@@ -1,10 +1,6 @@
-'use client';
+
 
 import Link from 'next/link';
-export const metadata = {
-  title: 'Favicon Generator | Zion Tech Group',
-  description: 'Free online favicon generator tool from Zion Tech Group.',
-};
 /* favicon-generator placeholder */
 export default function FaviconGeneratorPlaceholder() {
   return (

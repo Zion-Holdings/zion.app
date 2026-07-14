@@ -1,3 +1,5 @@
+'use client';
+
 // app/tools/service-comparison/page.tsx — Full Service Comparison
 
 import { pingTool } from '@/data/tools_ping_client';
