@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 export const metadata = {
   title: 'Favicon Generator | Zion Tech Group',

@@ -1,3 +1,5 @@
+'use client';
+
 // app/tools/roi-calculator/page.tsx — ROI Calculator (server wrapper + ping tracking)
 // Metadata exported by layout.tsx
 
