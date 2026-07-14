@@ -11,6 +11,13 @@ _google_scripts = PROJECT_ROOT / '.hermes' / 'skills' / 'productivity' / 'google
 if _google_scripts.exists():
     sys.path.insert(0, str(_google_scripts))
 
+_openclaw_workspace = Path.home() / '.openclaw' / 'workspace'
+if _openclaw_workspace.exists():
+    sys.path.insert(0, str(_openclaw_workspace))
+
+if PROJECT_ROOT not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
 LLM_READINESS_REPORT = PROJECT_ROOT / 'outreach_monitor' / 'processed' / 'llm_tailoring_readiness.json'
 BASE_DIR = PROJECT_ROOT
 DEDUP_DIR = BASE_DIR / 'outreach_monitor' / 'processed'
