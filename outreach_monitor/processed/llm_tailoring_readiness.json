@@ -1,5 +1,5 @@
 {
-  "timestamp": 1783923114,
+  "timestamp": 1784040882,
   "active": false,
   "has_endpoint": false,
   "has_api_key": false,
@@ -10,6 +10,6 @@
     "google.auth": true,
     "google.oauth2": true,
     "token_exists": false,
-    "auth_error": "FileNotFoundError('Missing Google OAuth token')"
+    "auth_error": null
   }
 }

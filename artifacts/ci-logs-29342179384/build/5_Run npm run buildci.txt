@@ -1,0 +1,18 @@
+﻿2026-07-14T14:44:40.5252412Z ##[group]Run npm run build:ci
+2026-07-14T14:44:40.5252806Z [36;1mnpm run build:ci[0m
+2026-07-14T14:44:40.5272562Z shell: /usr/bin/bash -e {0}
+2026-07-14T14:44:40.5272981Z env:
+2026-07-14T14:44:40.5273304Z   ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+2026-07-14T14:44:40.5273657Z ##[endgroup]
+2026-07-14T14:44:40.6328020Z 
+2026-07-14T14:44:40.6329284Z > zion-tech-group@2.0.0 build:ci
+2026-07-14T14:44:40.6329866Z > node scripts/build-wrapper.cjs
+2026-07-14T14:44:40.6330073Z 
+2026-07-14T14:44:41.3327838Z ⚠ Specified "redirects" will not automatically work with "output: export". See more info here: https://nextjs.org/docs/messages/export-no-custom-routes
+2026-07-14T14:44:41.3336767Z ⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+2026-07-14T14:44:41.3637835Z ▲ Next.js 16.2.10 (webpack)
+2026-07-14T14:44:41.3638335Z 
+2026-07-14T14:44:41.4649127Z   Creating an optimized production build ...
+2026-07-14T14:45:30.2849314Z ✓ Compiled successfully in 48s
+2026-07-14T14:45:30.2866619Z   Skipping validation of types
+2026-07-14T14:45:30.4198200Z ##[error]Process completed with exit code 1.

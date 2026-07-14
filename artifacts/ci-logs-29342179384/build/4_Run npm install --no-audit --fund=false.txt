@@ -1,0 +1,42 @@
+﻿2026-07-14T14:44:22.0676739Z ##[group]Run npm install --no-audit --fund=false
+2026-07-14T14:44:22.0677297Z [36;1mnpm install --no-audit --fund=false[0m
+2026-07-14T14:44:22.1301444Z shell: /usr/bin/bash -e {0}
+2026-07-14T14:44:22.1301893Z env:
+2026-07-14T14:44:22.1302208Z   ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+2026-07-14T14:44:22.1302588Z ##[endgroup]
+2026-07-14T14:44:22.7673288Z npm warn EBADENGINE Unsupported engine {
+2026-07-14T14:44:22.7674030Z npm warn EBADENGINE   package: '@puppeteer/browsers@3.0.6',
+2026-07-14T14:44:22.7674729Z npm warn EBADENGINE   required: { node: '>=22.12.0' },
+2026-07-14T14:44:22.7675261Z npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+2026-07-14T14:44:22.7675676Z npm warn EBADENGINE }
+2026-07-14T14:44:22.7703275Z npm warn EBADENGINE Unsupported engine {
+2026-07-14T14:44:22.7704288Z npm warn EBADENGINE   package: 'lighthouse@13.4.0',
+2026-07-14T14:44:22.7705338Z npm warn EBADENGINE   required: { node: '>=22.19' },
+2026-07-14T14:44:22.7706237Z npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+2026-07-14T14:44:22.7707306Z npm warn EBADENGINE }
+2026-07-14T14:44:22.7718965Z npm warn EBADENGINE Unsupported engine {
+2026-07-14T14:44:22.7720013Z npm warn EBADENGINE   package: 'puppeteer@25.3.0',
+2026-07-14T14:44:22.7720667Z npm warn EBADENGINE   required: { node: '>=22.12.0' },
+2026-07-14T14:44:22.7721444Z npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+2026-07-14T14:44:22.7722541Z npm warn EBADENGINE }
+2026-07-14T14:44:22.7723137Z npm warn EBADENGINE Unsupported engine {
+2026-07-14T14:44:22.7723852Z npm warn EBADENGINE   package: 'puppeteer-core@25.3.0',
+2026-07-14T14:44:22.7724526Z npm warn EBADENGINE   required: { node: '>=22.12.0' },
+2026-07-14T14:44:22.7725327Z npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+2026-07-14T14:44:22.7725910Z npm warn EBADENGINE }
+2026-07-14T14:44:27.6236484Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2026-07-14T14:44:27.7110975Z npm warn deprecated rimraf@2.6.3: Rimraf versions prior to v4 are no longer supported
+2026-07-14T14:44:27.7193054Z npm warn deprecated whatwg-encoding@3.1.1: Use @exodus/bytes instead for a more spec-conformant and faster implementation
+2026-07-14T14:44:27.7520015Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+2026-07-14T14:44:27.8124486Z npm warn deprecated jest-process-manager@0.4.0: ⚠️ The 'jest-process-manager' package is deprecated. Please migrate to Playwright's built-in test runner (@playwright/test) which now includes full Jest-style features and parallel testing. See https://playwright.dev/docs/intro for details.
+2026-07-14T14:44:27.8500877Z npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-07-14T14:44:27.8504429Z npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-07-14T14:44:27.8512532Z npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-07-14T14:44:27.8518835Z npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-07-14T14:44:27.8779952Z npm warn deprecated @storybook/testing-library@0.2.2: In Storybook 8, this package functionality has been integrated to a new package called @storybook/test, which uses Vitest APIs for an improved experience. When upgrading to Storybook 8 with 'npx storybook@latest upgrade', you will get prompted and will get an automigration for the new package. Please migrate when you can.
+2026-07-14T14:44:28.3009715Z npm warn deprecated expect-playwright@0.8.0: ⚠️ The 'expect-playwright' package is deprecated. The Playwright core assertions (via @playwright/test) now cover the same functionality. Please migrate to built-in expect. See https://playwright.dev/docs/test-assertions for migration.
+2026-07-14T14:44:28.8570176Z npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-07-14T14:44:28.8573279Z npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-07-14T14:44:28.8576354Z npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-07-14T14:44:40.4689971Z 
+2026-07-14T14:44:40.4710324Z added 1132 packages in 18s

@@ -1,0 +1,30 @@
+﻿2026-07-14T14:44:14.5336134Z ##[group]Run actions/setup-node@v4
+2026-07-14T14:44:14.5336574Z with:
+2026-07-14T14:44:14.5336853Z   node-version: 20
+2026-07-14T14:44:14.5337135Z   cache: npm
+2026-07-14T14:44:14.5337490Z   cache-dependency-path: **/package-lock.json
+2026-07-14T14:44:14.5337858Z   always-auth: false
+2026-07-14T14:44:14.5338199Z   check-latest: false
+2026-07-14T14:44:14.5340760Z   token: ***
+2026-07-14T14:44:14.5341054Z env:
+2026-07-14T14:44:14.5341385Z   ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+2026-07-14T14:44:14.5341730Z ##[endgroup]
+2026-07-14T14:44:14.7179470Z Attempting to download 20...
+2026-07-14T14:44:15.4037356Z Acquiring 20.20.2 - x64 from https://github.com/actions/node-versions/releases/download/20.20.2-23521894959/node-20.20.2-linux-x64.tar.gz
+2026-07-14T14:44:15.9641958Z Extracting ...
+2026-07-14T14:44:15.9725240Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/4dca8d0f-ace4-4749-8cbc-8b1a34362e03 -f /home/runner/work/_temp/e03c1250-4f9e-4328-925d-52769b60877c
+2026-07-14T14:44:17.1323166Z Adding to the cache ...
+2026-07-14T14:44:19.4044803Z ##[group]Environment details
+2026-07-14T14:44:19.6073575Z node: v20.20.2
+2026-07-14T14:44:19.6074081Z npm: 10.8.2
+2026-07-14T14:44:19.6074599Z yarn: 1.22.22
+2026-07-14T14:44:19.6075349Z ##[endgroup]
+2026-07-14T14:44:19.6092844Z [command]/opt/hostedtoolcache/node/20.20.2/x64/bin/npm config get cache
+2026-07-14T14:44:19.6995825Z /home/runner/.npm
+2026-07-14T14:44:20.1873537Z Cache hit for: node-cache-Linux-x64-npm-08069216b443e942bd7b4af6d973892605f4646be0ed297209c9b35018014eb7
+2026-07-14T14:44:21.3535867Z Received 130023424 of 194395037 (66.9%), 123.9 MBs/sec
+2026-07-14T14:44:21.6928129Z Received 194395037 of 194395037 (100.0%), 138.4 MBs/sec
+2026-07-14T14:44:21.6929694Z Cache Size: ~185 MB (194395037 B)
+2026-07-14T14:44:21.6960801Z [command]/usr/bin/tar -xf /home/runner/work/_temp/b966f8c5-68d5-4749-85f9-f9ee87f5be77/cache.tzst -P -C /home/runner/work/zion-support.github.io/zion-support.github.io --use-compress-program unzstd
+2026-07-14T14:44:22.0450823Z Cache restored successfully
+2026-07-14T14:44:22.0526644Z Cache restored from key: node-cache-Linux-x64-npm-08069216b443e942bd7b4af6d973892605f4646be0ed297209c9b35018014eb7

@@ -1,0 +1,240 @@
+﻿2026-07-14T14:44:10.0102775Z Current runner version: '2.335.1'
+2026-07-14T14:44:10.0124217Z ##[group]Runner Image Provisioner
+2026-07-14T14:44:10.0125046Z Hosted Compute Agent
+2026-07-14T14:44:10.0125669Z Version: 20260624.560
+2026-07-14T14:44:10.0126273Z Commit: 925d229a51159bc391ae97e54a2dd1fe20af789d
+2026-07-14T14:44:10.0126953Z Build Date: 2026-06-24T18:26:47Z
+2026-07-14T14:44:10.0127628Z Worker ID: {4e97c50c-8ee5-40da-b78b-20ff9f0e5f14}
+2026-07-14T14:44:10.0128290Z Azure Region: centralus
+2026-07-14T14:44:10.0129144Z ##[endgroup]
+2026-07-14T14:44:10.0130541Z ##[group]Operating System
+2026-07-14T14:44:10.0131107Z Ubuntu
+2026-07-14T14:44:10.0131599Z 24.04.4
+2026-07-14T14:44:10.0132090Z LTS
+2026-07-14T14:44:10.0132572Z ##[endgroup]
+2026-07-14T14:44:10.0133110Z ##[group]Runner Image
+2026-07-14T14:44:10.0133718Z Image: ubuntu-24.04
+2026-07-14T14:44:10.0134212Z Version: 20260705.232.1
+2026-07-14T14:44:10.0135380Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260705.232/images/ubuntu/Ubuntu2404-Readme.md
+2026-07-14T14:44:10.0137085Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260705.232
+2026-07-14T14:44:10.0137937Z ##[endgroup]
+2026-07-14T14:44:10.0139195Z ##[group]GITHUB_TOKEN Permissions
+2026-07-14T14:44:10.0141281Z Contents: read
+2026-07-14T14:44:10.0141831Z Metadata: read
+2026-07-14T14:44:10.0142366Z Pages: write
+2026-07-14T14:44:10.0142850Z ##[endgroup]
+2026-07-14T14:44:10.0144760Z Secret source: Actions
+2026-07-14T14:44:10.0145454Z Prepare workflow directory
+2026-07-14T14:44:10.0526824Z Prepare all required actions
+2026-07-14T14:44:10.0562799Z Getting action download info
+2026-07-14T14:44:10.3144997Z Download action repository 'actions/checkout@v4' (SHA:34e114876b0b11c390a56381ad16ebd13914f8d5)
+2026-07-14T14:44:10.4064030Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-07-14T14:44:10.7623213Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-07-14T14:44:10.9205271Z Download action repository 'actions/configure-pages@v4' (SHA:1f0c5cde4bc74cd7e1254d0cb4de8d49e9068c7d)
+2026-07-14T14:44:11.2896719Z Download action repository 'actions/upload-pages-artifact@v4' (SHA:7b1f4a764d45c48632c6b24a0339c27f5614fb0b)
+2026-07-14T14:44:11.5527099Z Getting action download info
+2026-07-14T14:44:11.6719736Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-07-14T14:44:11.8304418Z Complete job name: build
+2026-07-14T14:44:11.8950555Z ##[group]Run actions/checkout@v4
+2026-07-14T14:44:11.8951349Z with:
+2026-07-14T14:44:11.8951893Z   repository: Zion-support/zion-support.github.io
+2026-07-14T14:44:11.8955568Z   token: ***
+2026-07-14T14:44:11.8956058Z   ssh-strict: true
+2026-07-14T14:44:11.8956545Z   ssh-user: git
+2026-07-14T14:44:11.8957006Z   persist-credentials: true
+2026-07-14T14:44:11.8957540Z   clean: true
+2026-07-14T14:44:11.8958017Z   sparse-checkout-cone-mode: true
+2026-07-14T14:44:11.8958595Z   fetch-depth: 1
+2026-07-14T14:44:11.8959331Z   fetch-tags: false
+2026-07-14T14:44:11.8959806Z   show-progress: true
+2026-07-14T14:44:11.8960293Z   lfs: false
+2026-07-14T14:44:11.8960737Z   submodules: false
+2026-07-14T14:44:11.8961190Z   set-safe-directory: true
+2026-07-14T14:44:11.8961889Z env:
+2026-07-14T14:44:11.8962367Z   ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+2026-07-14T14:44:11.8962967Z ##[endgroup]
+2026-07-14T14:44:11.9986005Z Syncing repository: Zion-support/zion-support.github.io
+2026-07-14T14:44:11.9987819Z ##[group]Getting Git version info
+2026-07-14T14:44:11.9988909Z Working directory is '/home/runner/work/zion-support.github.io/zion-support.github.io'
+2026-07-14T14:44:11.9990149Z [command]/usr/bin/git version
+2026-07-14T14:44:12.0011440Z git version 2.54.0
+2026-07-14T14:44:12.0032594Z ##[endgroup]
+2026-07-14T14:44:12.0045148Z Temporarily overriding HOME='/home/runner/work/_temp/c61ce0c4-3144-4550-aee2-122b663e6cbf' before making global git config changes
+2026-07-14T14:44:12.0047141Z Adding repository directory to the temporary git global config as a safe directory
+2026-07-14T14:44:12.0057671Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/zion-support.github.io/zion-support.github.io
+2026-07-14T14:44:12.0084339Z Deleting the contents of '/home/runner/work/zion-support.github.io/zion-support.github.io'
+2026-07-14T14:44:12.0087560Z ##[group]Initializing the repository
+2026-07-14T14:44:12.0091666Z [command]/usr/bin/git init /home/runner/work/zion-support.github.io/zion-support.github.io
+2026-07-14T14:44:12.0170764Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-07-14T14:44:12.0171720Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-07-14T14:44:12.0172535Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-07-14T14:44:12.0173252Z hint: call:
+2026-07-14T14:44:12.0173662Z hint:
+2026-07-14T14:44:12.0174193Z hint: 	git config --global init.defaultBranch <name>
+2026-07-14T14:44:12.0174791Z hint:
+2026-07-14T14:44:12.0175323Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-07-14T14:44:12.0176160Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-07-14T14:44:12.0176818Z hint:
+2026-07-14T14:44:12.0177251Z hint: 	git branch -m <name>
+2026-07-14T14:44:12.0177882Z hint:
+2026-07-14T14:44:12.0178473Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-07-14T14:44:12.0180045Z Initialized empty Git repository in /home/runner/work/zion-support.github.io/zion-support.github.io/.git/
+2026-07-14T14:44:12.0182016Z [command]/usr/bin/git remote add origin https://github.com/Zion-support/zion-support.github.io
+2026-07-14T14:44:12.0205596Z ##[endgroup]
+2026-07-14T14:44:12.0206542Z ##[group]Disabling automatic garbage collection
+2026-07-14T14:44:12.0209484Z [command]/usr/bin/git config --local gc.auto 0
+2026-07-14T14:44:12.0232051Z ##[endgroup]
+2026-07-14T14:44:12.0232866Z ##[group]Setting up auth
+2026-07-14T14:44:12.0237935Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-07-14T14:44:12.0262033Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-07-14T14:44:12.0523675Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-07-14T14:44:12.0550831Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-07-14T14:44:12.0737816Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-07-14T14:44:12.0763651Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-07-14T14:44:12.0948023Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-07-14T14:44:12.0976492Z ##[endgroup]
+2026-07-14T14:44:12.0977640Z ##[group]Fetching the repository
+2026-07-14T14:44:12.0985432Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +7b2ca6988f19c730d61f0349a8f923b086e2db7f:refs/remotes/origin/main
+2026-07-14T14:44:14.1058096Z From https://github.com/Zion-support/zion-support.github.io
+2026-07-14T14:44:14.1063470Z  * [new ref]         7b2ca6988f19c730d61f0349a8f923b086e2db7f -> origin/main
+2026-07-14T14:44:14.1081830Z ##[endgroup]
+2026-07-14T14:44:14.1083526Z ##[group]Determining the checkout info
+2026-07-14T14:44:14.1085339Z ##[endgroup]
+2026-07-14T14:44:14.1087500Z [command]/usr/bin/git sparse-checkout disable
+2026-07-14T14:44:14.1123772Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-07-14T14:44:14.1148059Z ##[group]Checking out the ref
+2026-07-14T14:44:14.1151069Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-07-14T14:44:14.5041783Z Switched to a new branch 'main'
+2026-07-14T14:44:14.5043874Z branch 'main' set up to track 'origin/main'.
+2026-07-14T14:44:14.5056742Z ##[endgroup]
+2026-07-14T14:44:14.5094983Z [command]/usr/bin/git log -1 --format=%H
+2026-07-14T14:44:14.5117191Z 7b2ca6988f19c730d61f0349a8f923b086e2db7f
+2026-07-14T14:44:14.5336222Z ##[group]Run actions/setup-node@v4
+2026-07-14T14:44:14.5336613Z with:
+2026-07-14T14:44:14.5336857Z   node-version: 20
+2026-07-14T14:44:14.5337190Z   cache: npm
+2026-07-14T14:44:14.5337528Z   cache-dependency-path: **/package-lock.json
+2026-07-14T14:44:14.5337881Z   always-auth: false
+2026-07-14T14:44:14.5338202Z   check-latest: false
+2026-07-14T14:44:14.5340769Z   token: ***
+2026-07-14T14:44:14.5341060Z env:
+2026-07-14T14:44:14.5341389Z   ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+2026-07-14T14:44:14.5341734Z ##[endgroup]
+2026-07-14T14:44:14.7179514Z Attempting to download 20...
+2026-07-14T14:44:15.4037394Z Acquiring 20.20.2 - x64 from https://github.com/actions/node-versions/releases/download/20.20.2-23521894959/node-20.20.2-linux-x64.tar.gz
+2026-07-14T14:44:15.9642013Z Extracting ...
+2026-07-14T14:44:15.9725431Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/4dca8d0f-ace4-4749-8cbc-8b1a34362e03 -f /home/runner/work/_temp/e03c1250-4f9e-4328-925d-52769b60877c
+2026-07-14T14:44:17.1323234Z Adding to the cache ...
+2026-07-14T14:44:19.4044852Z ##[group]Environment details
+2026-07-14T14:44:19.6073632Z node: v20.20.2
+2026-07-14T14:44:19.6074086Z npm: 10.8.2
+2026-07-14T14:44:19.6074602Z yarn: 1.22.22
+2026-07-14T14:44:19.6075353Z ##[endgroup]
+2026-07-14T14:44:19.6092876Z [command]/opt/hostedtoolcache/node/20.20.2/x64/bin/npm config get cache
+2026-07-14T14:44:19.6995888Z /home/runner/.npm
+2026-07-14T14:44:20.1873567Z Cache hit for: node-cache-Linux-x64-npm-08069216b443e942bd7b4af6d973892605f4646be0ed297209c9b35018014eb7
+2026-07-14T14:44:21.3535923Z Received 130023424 of 194395037 (66.9%), 123.9 MBs/sec
+2026-07-14T14:44:21.6928222Z Received 194395037 of 194395037 (100.0%), 138.4 MBs/sec
+2026-07-14T14:44:21.6929703Z Cache Size: ~185 MB (194395037 B)
+2026-07-14T14:44:21.6960851Z [command]/usr/bin/tar -xf /home/runner/work/_temp/b966f8c5-68d5-4749-85f9-f9ee87f5be77/cache.tzst -P -C /home/runner/work/zion-support.github.io/zion-support.github.io --use-compress-program unzstd
+2026-07-14T14:44:22.0450876Z Cache restored successfully
+2026-07-14T14:44:22.0526767Z Cache restored from key: node-cache-Linux-x64-npm-08069216b443e942bd7b4af6d973892605f4646be0ed297209c9b35018014eb7
+2026-07-14T14:44:22.0676757Z ##[group]Run npm install --no-audit --fund=false
+2026-07-14T14:44:22.0677299Z [36;1mnpm install --no-audit --fund=false[0m
+2026-07-14T14:44:22.1301467Z shell: /usr/bin/bash -e {0}
+2026-07-14T14:44:22.1301898Z env:
+2026-07-14T14:44:22.1302213Z   ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+2026-07-14T14:44:22.1302590Z ##[endgroup]
+2026-07-14T14:44:22.7673338Z npm warn EBADENGINE Unsupported engine {
+2026-07-14T14:44:22.7674074Z npm warn EBADENGINE   package: '@puppeteer/browsers@3.0.6',
+2026-07-14T14:44:22.7674732Z npm warn EBADENGINE   required: { node: '>=22.12.0' },
+2026-07-14T14:44:22.7675264Z npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+2026-07-14T14:44:22.7675679Z npm warn EBADENGINE }
+2026-07-14T14:44:22.7703348Z npm warn EBADENGINE Unsupported engine {
+2026-07-14T14:44:22.7704293Z npm warn EBADENGINE   package: 'lighthouse@13.4.0',
+2026-07-14T14:44:22.7705342Z npm warn EBADENGINE   required: { node: '>=22.19' },
+2026-07-14T14:44:22.7706398Z npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+2026-07-14T14:44:22.7707311Z npm warn EBADENGINE }
+2026-07-14T14:44:22.7718979Z npm warn EBADENGINE Unsupported engine {
+2026-07-14T14:44:22.7720020Z npm warn EBADENGINE   package: 'puppeteer@25.3.0',
+2026-07-14T14:44:22.7720670Z npm warn EBADENGINE   required: { node: '>=22.12.0' },
+2026-07-14T14:44:22.7721451Z npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+2026-07-14T14:44:22.7722544Z npm warn EBADENGINE }
+2026-07-14T14:44:22.7723144Z npm warn EBADENGINE Unsupported engine {
+2026-07-14T14:44:22.7723855Z npm warn EBADENGINE   package: 'puppeteer-core@25.3.0',
+2026-07-14T14:44:22.7724533Z npm warn EBADENGINE   required: { node: '>=22.12.0' },
+2026-07-14T14:44:22.7725330Z npm warn EBADENGINE   current: { node: 'v20.20.2', npm: '10.8.2' }
+2026-07-14T14:44:22.7725916Z npm warn EBADENGINE }
+2026-07-14T14:44:27.6236581Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2026-07-14T14:44:27.7111033Z npm warn deprecated rimraf@2.6.3: Rimraf versions prior to v4 are no longer supported
+2026-07-14T14:44:27.7193085Z npm warn deprecated whatwg-encoding@3.1.1: Use @exodus/bytes instead for a more spec-conformant and faster implementation
+2026-07-14T14:44:27.7520046Z npm warn deprecated rimraf@3.0.2: Rimraf versions prior to v4 are no longer supported
+2026-07-14T14:44:27.8124527Z npm warn deprecated jest-process-manager@0.4.0: ⚠️ The 'jest-process-manager' package is deprecated. Please migrate to Playwright's built-in test runner (@playwright/test) which now includes full Jest-style features and parallel testing. See https://playwright.dev/docs/intro for details.
+2026-07-14T14:44:27.8500959Z npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-07-14T14:44:27.8504436Z npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-07-14T14:44:27.8512541Z npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-07-14T14:44:27.8518843Z npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-07-14T14:44:27.8780202Z npm warn deprecated @storybook/testing-library@0.2.2: In Storybook 8, this package functionality has been integrated to a new package called @storybook/test, which uses Vitest APIs for an improved experience. When upgrading to Storybook 8 with 'npx storybook@latest upgrade', you will get prompted and will get an automigration for the new package. Please migrate when you can.
+2026-07-14T14:44:28.3009769Z npm warn deprecated expect-playwright@0.8.0: ⚠️ The 'expect-playwright' package is deprecated. The Playwright core assertions (via @playwright/test) now cover the same functionality. Please migrate to built-in expect. See https://playwright.dev/docs/test-assertions for migration.
+2026-07-14T14:44:28.8570237Z npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-07-14T14:44:28.8573336Z npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-07-14T14:44:28.8576361Z npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-07-14T14:44:40.4690029Z 
+2026-07-14T14:44:40.4710355Z added 1132 packages in 18s
+2026-07-14T14:44:40.5252428Z ##[group]Run npm run build:ci
+2026-07-14T14:44:40.5252808Z [36;1mnpm run build:ci[0m
+2026-07-14T14:44:40.5272570Z shell: /usr/bin/bash -e {0}
+2026-07-14T14:44:40.5272984Z env:
+2026-07-14T14:44:40.5273308Z   ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+2026-07-14T14:44:40.5273660Z ##[endgroup]
+2026-07-14T14:44:40.6328074Z 
+2026-07-14T14:44:40.6329292Z > zion-tech-group@2.0.0 build:ci
+2026-07-14T14:44:40.6329871Z > node scripts/build-wrapper.cjs
+2026-07-14T14:44:40.6330077Z 
+2026-07-14T14:44:41.3327891Z ⚠ Specified "redirects" will not automatically work with "output: export". See more info here: https://nextjs.org/docs/messages/export-no-custom-routes
+2026-07-14T14:44:41.3336775Z ⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+2026-07-14T14:44:41.3637885Z ▲ Next.js 16.2.10 (webpack)
+2026-07-14T14:44:41.3638340Z 
+2026-07-14T14:44:41.4649182Z   Creating an optimized production build ...
+2026-07-14T14:45:30.2849539Z ✓ Compiled successfully in 48s
+2026-07-14T14:45:30.2866631Z   Skipping validation of types
+2026-07-14T14:45:30.4198232Z ##[error]Process completed with exit code 1.
+2026-07-14T14:45:30.4272545Z ##[group]Run actions/upload-artifact@v4
+2026-07-14T14:45:30.4272971Z with:
+2026-07-14T14:45:30.4273260Z   name: build-state
+2026-07-14T14:45:30.4273585Z   path: automation/reports/build-state.json
+2026-07-14T14:45:30.4273964Z   retention-days: 7
+2026-07-14T14:45:30.4274268Z   if-no-files-found: warn
+2026-07-14T14:45:30.4274665Z   compression-level: 6
+2026-07-14T14:45:30.4274975Z   overwrite: false
+2026-07-14T14:45:30.4275649Z   include-hidden-files: false
+2026-07-14T14:45:30.4276003Z env:
+2026-07-14T14:45:30.4276348Z   ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
+2026-07-14T14:45:30.4276751Z ##[endgroup]
+2026-07-14T14:45:30.6309902Z With the provided path, there will be 1 file uploaded
+2026-07-14T14:45:30.6310822Z Artifact name is valid!
+2026-07-14T14:45:30.6326963Z Root directory input is valid!
+2026-07-14T14:45:30.9420638Z Beginning upload of artifact content to blob storage
+2026-07-14T14:45:31.1431943Z Uploaded bytes 358
+2026-07-14T14:45:31.1916452Z Finished uploading artifact content to blob storage!
+2026-07-14T14:45:31.1917739Z SHA256 digest of uploaded artifact zip is 1d6d561b966c289987216a1a6e867c9871c0a41019ca46d3548b7a4cf29ed4cb
+2026-07-14T14:45:31.1918903Z Finalizing artifact upload
+2026-07-14T14:45:31.3890535Z Artifact build-state.zip successfully finalized. Artifact ID 8314528200
+2026-07-14T14:45:31.3891876Z Artifact build-state has been successfully uploaded! Final size is 358 bytes. Artifact ID is 8314528200
+2026-07-14T14:45:31.3898945Z Artifact download URL: https://github.com/Zion-support/zion-support.github.io/actions/runs/29342179384/artifacts/8314528200
+2026-07-14T14:45:31.4058313Z Post job cleanup.
+2026-07-14T14:45:31.4959737Z [command]/usr/bin/git version
+2026-07-14T14:45:31.4991995Z git version 2.54.0
+2026-07-14T14:45:31.5027505Z Temporarily overriding HOME='/home/runner/work/_temp/37dae843-d94b-4695-8d39-b70e2d872711' before making global git config changes
+2026-07-14T14:45:31.5028371Z Adding repository directory to the temporary git global config as a safe directory
+2026-07-14T14:45:31.5041184Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/zion-support.github.io/zion-support.github.io
+2026-07-14T14:45:31.5071485Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-07-14T14:45:31.5098463Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-07-14T14:45:31.5289365Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-07-14T14:45:31.5307048Z http.https://github.com/.extraheader
+2026-07-14T14:45:31.5316833Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-07-14T14:45:31.5342339Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-07-14T14:45:31.5525883Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-07-14T14:45:31.5551227Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-07-14T14:45:31.5833034Z Cleaning up orphan processes
+2026-07-14T14:45:31.6032616Z ##[warning]Node.js 20 actions are deprecated. The following actions are running on Node.js 20 and may not work as expected: actions/checkout@v4, actions/setup-node@v4, actions/upload-artifact@v4. Actions will be forced to run with Node.js 24 by default starting June 16th, 2026. Node.js 20 will be removed from the runner on September 16th, 2026. Please check if updated versions of these actions are available that support Node.js 24. To opt into Node.js 24 now, set the FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true environment variable on the runner or in your workflow file. Once Node.js 24 becomes the default, you can temporarily opt out by setting ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

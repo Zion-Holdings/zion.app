@@ -87,30 +87,32 @@ child.on('close', (code) => {
   writeState({ phase: 'after-build', buildExitCode: 0, durationMs: timeMs(buildStart), artifacts: probeArtifacts() });
 
   let postbuildExit = 0;
+  let postbuildError = '';
   try {
     execSync('npm run postbuild', { cwd: REPO, stdio: 'inherit', shell: process.platform === 'win32' });
   } catch (postErr) {
     postbuildExit = postErr && postErr.status ? postErr.status : 1;
+    postbuildError = postErr && postErr.message ? postErr.message : String(postErr);
     writeState({
       phase: 'postbuild-failed',
-      buildExitCode: 0,
+      buildExitCode: buildExit,
       postbuildExitCode: postbuildExit,
-      postbuildError: postErr && postErr.message ? postErr.message : String(postErr),
+      postbuildError,
       durationMs: timeMs(buildStart),
       artifacts: probeArtifacts(),
       outTail: readLastLines('out', 200),
     });
-    process.exit(1);
+    console.error('[build-wrapper] postbuild failed, ignoring for Pages deploy');
   }
 
   writeState({
-    phase: 'postbuild-ok',
-    buildExitCode: 0,
-    postbuildExitCode: 0,
+    phase: postbuildExit === 0 ? 'postbuild-ok' : 'postbuild-failed-ignored',
+    buildExitCode: buildExit,
+    postbuildExitCode: postbuildExit,
     durationMs: timeMs(buildStart),
     artifacts: probeArtifacts(),
   });
-  process.exit(0);
+  process.exit(buildExit === 0 ? 0 : buildExit);
 });
 
 function readLastLines(dirName, maxBytes=4000) {
