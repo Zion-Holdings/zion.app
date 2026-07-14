@@ -1,7 +1,6 @@
 const { execSync } = require('node:child_process');
 const fs = require('node:fs');
 const path = require('node:path');
-const os = require('node:os');
 
 const repo = process.cwd();
 const statePath = path.join(repo, 'automation/reports/build-state.json');
@@ -37,44 +36,25 @@ function safeStat(p) {
   try { return fs.existsSync(p); } catch { return false; }
 }
 
-function detectNextCli() {
-  const nextCli = path.join('node_modules', '.bin', 'next');
-  const nextCliCmd = path.join('node_modules', '.bin', 'next.cmd');
-  const nextBinNext = path.join('node_modules', 'next', 'bin', 'next');
-  const nextDistBinNext = path.join('node_modules', 'next', 'dist', 'bin', 'next');
-  const nextCliJs = path.join('node_modules', 'next', 'cli.js');
-  if (os.platform && os.platform() === 'win32' && safeStat(nextCliCmd)) {
-    return ['cmd', 'node_modules/.bin/next.cmd build --webpack'];
-  }
-  if (safeStat(nextCli)) {
-    return ['unix', 'node_modules/.bin/next build --webpack'];
-  }
-  if (safeStat(nextBinNext)) {
-    return ['node-bin', `node "${nextBinNext}" build --webpack`];
-  }
-  if (safeStat(nextDistBinNext)) {
-    return ['node-dist', `node "${nextDistBinNext}" build --webpack`];
-  }
-  if (safeStat(nextCliJs)) {
-    return ['node-clijs', `node "${nextCliJs}" build --webpack`];
-  }
-  return null;
-}
-
 function main() {
   const start = Date.now();
-  const detected = detectNextCli();
-  let cmd = null;
-  let label = null;
+  let cmd;
+  let label;
+  const dotNextBinNext = path.join('node_modules', 'next', 'bin', 'next');
+  const dotNextDistBinNextJs = path.join('node_modules', 'next', 'dist', 'bin', 'next.js');
+  const npxNext = path.join('node_modules', '.bin', 'next');
 
-  if (detected) {
-    const [l, c] = detected;
-    cmd = c;
-    label = l;
-  }
-
-  if (!cmd) {
-    console.log('[build-wrapper] Next CLI not found; using docs/ fallback.');
+  if (safeStat(npxNext)) {
+    cmd = 'node_modules/.bin/next build --webpack';
+    label = 'next-cli';
+  } else if (safeStat(dotNextDistBinNextJs)) {
+    cmd = `node "${dotNextDistBinNextJs}" build --webpack`;
+    label = 'next-dist';
+  } else if (safeStat(dotNextBinNext)) {
+    cmd = `node "${dotNextBinNext}" build --webpack`;
+    label = 'next-bin';
+  } else {
+    console.log('[build-wrapper] Next CLI not found at known paths; using docs/ fallback.');
     writeState({
       phase: 'docs-fallback',
       buildExitCode: 0,
@@ -94,7 +74,6 @@ function main() {
   }
 
   console.log(`[build-wrapper] running ${label}: ${cmd}`);
-
   let lastLines = '';
   let exitCode = 1;
   try {
@@ -126,7 +105,7 @@ function main() {
         out_404_html_exists: safeStat(path.join('out', '404.html')),
         out_service_index_exists: safeStat(path.join('out', 'services', 'index.html')),
         out_services_data_exists: safeStat(path.join('out', '_next', 'static', 'chunks', 'pages')),
-        docs_index_html_exists,
+        docs_index_html_exists: docsIndexExists,
       },
       lastLines,
       nextLog,
@@ -144,7 +123,7 @@ function main() {
       out_404_html_exists: safeStat(path.join('out', '404.html')),
       out_service_index_exists: safeStat(path.join('out', 'services', 'index.html')),
       out_services_data_exists: safeStat(path.join('out', '_next', 'static', 'chunks', 'pages')),
-      docs_index_html_exists,
+      docs_index_html_exists: docsIndexExists,
     },
     lastLines,
     nextLog,
