@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-it-asset-lifecycle-management' },
   title: 'AI for IT Asset Lifecycle Management | Zion Tech Group',
   description: 'Learn how AI transforms IT asset lifecycle management, from procurement and onboarding to patch management, decommissioning, and cost tracking.',
 

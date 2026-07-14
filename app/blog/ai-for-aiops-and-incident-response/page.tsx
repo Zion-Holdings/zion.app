@@ -22,7 +22,7 @@ export default function AiForAIOpsAndIncidentResponsePage() {
       <ArticleStructuredData
         title={metadata.title as string}
         description={metadata.description as string}
-        canonical={metadata.alternates?.canonical as string}
+        canonical="https://ziontechgroup.com/blog/ai-for-aiops-and-incident-response"
         publishedAt="2026-07-05"
         updatedAt="2026-07-05"
       />

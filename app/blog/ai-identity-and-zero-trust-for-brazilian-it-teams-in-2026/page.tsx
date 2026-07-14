@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-identity-and-zero-trust-for-brazilian-it-teams-in-2026' },
   title: 'AI Identity and Zero Trust for Brazilian IT Teams in 2026',
   description: 'Practical AI-driven identity and zero-trust patterns for Brazilian IT teams in 2026.',
 };

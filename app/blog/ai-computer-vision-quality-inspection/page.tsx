@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-computer-vision-quality-inspection' },
   title: "AI Computer Vision for Quality Inspection | Zion Tech Group",
   description: "computer vision inspection.",
 

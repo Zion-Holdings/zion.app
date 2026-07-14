@@ -4,6 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-soc-automation-and-threat-detection-in-2026' },
   title: 'AI SOC Automation and Threat Detection in 2026 | Zion Tech Group',
   description: 'AI SOC automation and threat detection playbook for IT teams in 2026. Free tools, workflows, and implementation patterns from Zion Tech Group.',
 

@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-virtual-cfo-and-financial-operations-automation-in-2026' },
   title: 'AI Virtual CFO and Financial Operations Automation in 2026',
   description: 'Use AI-assisted financial operations, reporting, and anomaly detection to improve governance and decision speed.',
 };

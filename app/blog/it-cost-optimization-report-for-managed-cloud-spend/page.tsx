@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/it-cost-optimization-report-for-managed-cloud-spend' },
   title: 'IT Cost Optimization Report for Managed Cloud Spend | Zion Tech Group',
   description: 'A practical IT cost optimization report structure for managed cloud spend, including workload inventory, optimization levers, and measurable savings tracking.',
 }

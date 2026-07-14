@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-partnership-models-for-latam-growth-in-2026' },
   title: "AI Partnership Models for LATAM Growth in 2026 | Zion Tech Group",
   description: "Practical AI partnership models for LATAM vendors, service providers, and resellers.",
 

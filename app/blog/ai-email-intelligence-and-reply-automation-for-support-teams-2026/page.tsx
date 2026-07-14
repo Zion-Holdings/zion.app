@@ -4,6 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-email-intelligence-and-reply-automation-for-support-teams-2026' },
   title: 'AI Email Intelligence and Reply Automation for Support Teams | Zion Tech Group',
   description: 'How support teams can use AI email intelligence to respond faster and reduce workload.',
 

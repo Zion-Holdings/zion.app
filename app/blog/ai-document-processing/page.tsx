@@ -22,7 +22,7 @@ export default function AiDocumentProcessingPage() {
       <ArticleStructuredData
         title={metadata.title as string}
         description={metadata.description as string}
-        canonical={metadata.alternates?.canonical as string}
+        canonical="https://ziontechgroup.com/blog/ai-document-processing"
         publishedAt="2026-07-08"
         updatedAt="2026-07-08"
       />

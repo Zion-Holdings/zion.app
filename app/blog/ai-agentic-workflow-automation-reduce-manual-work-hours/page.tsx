@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-agentic-workflow-automation-reduce-manual-work-hours' },
   title: "AI Agentic Workflow Automation: Reduce Manual Work Hours | Zion Tech Group",
   description: "agentic workflow automation.",
 

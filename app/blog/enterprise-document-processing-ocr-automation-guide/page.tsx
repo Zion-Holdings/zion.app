@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/enterprise-document-processing-ocr-automation-guide' },
   title: 'Enterprise Document Processing OCR Automation Guide | Zion Tech Group',
   description: 'A practical enterprise document processing OCR automation guide covering capture, extraction, validation, routing, and measurable efficiency.',
 }

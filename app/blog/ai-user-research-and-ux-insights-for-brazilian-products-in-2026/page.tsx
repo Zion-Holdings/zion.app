@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-user-research-and-ux-insights-for-brazilian-products-in-2026' },
   title: 'AI User Research and UX Insights for Brazilian Products in 2026',
   description: 'Use AI-assisted user research and UX analytics to understand Brazilian users faster and improve conversion.',
 };

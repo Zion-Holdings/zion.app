@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-outsourcing-vs-in-house-it-latam' },
   title: "AI Outsourcing vs In-House IT in LATAM | Zion Tech Group",
   description: "Comparing AI outsourcing versus in-house IT execution for LATAM companies.",
 

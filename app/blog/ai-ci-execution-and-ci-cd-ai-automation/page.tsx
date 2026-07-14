@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-ci-execution-and-ci-cd-ai-automation' },
   title: "AI CI Execution and CI/CD AI Automation | Zion Tech Group",
   description: "AI CI Execution and CI/CD AI Automation.",
 

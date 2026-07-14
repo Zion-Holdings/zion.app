@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-digital-twins-and-asset-simulation-for-industry-in-2026' },
   title: 'AI-First Digital Twins and Asset Simulation for Industry in 2026 | Zion Tech Group',
   description: 'A practical guide to AI-first digital twins and asset simulation for industry in 2026, including modeling, scenario testing, and measurable operational value.',
 }

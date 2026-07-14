@@ -4,6 +4,7 @@ import ArticleStructuredData from '@/components/ArticleStructuredData';
 import SiteBreadcrumbs from '@/components/SiteBreadcrumbs';
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-for-msps-and-it-support-teams-in-2026' },
   title: 'AI for MSPs and IT Support Teams in 2026 | Zion Tech Group',
   description: 'Practical AI adoption guide for MSPs and IT support teams in 2026: real workflows, free tools, templates, and implementation tips from Zion Tech Group.',
 

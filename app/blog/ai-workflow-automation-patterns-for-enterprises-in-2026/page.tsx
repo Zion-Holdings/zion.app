@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-workflow-automation-patterns-for-enterprises-in-2026' },
   title: "AI Workflow Automation Patterns for Enterprises in 2026 | Zion Tech Group",
   description: "Practical AI workflow automation patterns for enterprises.",
 

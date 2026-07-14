@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-low-code-workflow-automation-guide-brazilian-enterprises' },
   title: 'AI Low-Code Workflow Automation Guide for Brazilian Enterprises | Zion Tech Group',
   description: 'A practical AI low-code workflow automation guide for Brazilian enterprises covering rapid deployment, governance, and measurable operational outcomes.',
 }

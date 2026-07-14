@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-device-management-and-iot-operations-in-2026' },
   title: 'AI-First Device Management and IoT Operations in 2026 | Zion Tech Group',
   description: 'A practical guide to AI-first device management and IoT operations in 2026, including fleet monitoring, anomaly detection, patch strategy, and incident response.',
 }

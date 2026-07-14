@@ -22,7 +22,7 @@ export default function AiForManagedServiceProviderOperationsPage() {
       <ArticleStructuredData
         title={metadata.title as string}
         description={metadata.description as string}
-        canonical={metadata.alternates?.canonical as string}
+        canonical="https://ziontechgroup.com/blog/ai-for-managed-service-provider-operations"
         publishedAt="2026-07-05"
         updatedAt="2026-07-05"
       />

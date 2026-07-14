@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-voice-and-multichannel-support-automation' },
   title: "AI Voice and Multichannel Support Automation | Zion Tech Group",
   description: "How AI voice and multichannel support automation can reduce ticket volume and improve CX.",
 

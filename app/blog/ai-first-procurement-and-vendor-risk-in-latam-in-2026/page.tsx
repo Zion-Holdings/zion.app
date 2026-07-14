@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Breadcrumb from '@/components/Breadcrumb';
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-procurement-and-vendor-risk-in-latam-in-2026' },
   title: 'AI-First Procurement and Vendor Risk in LATAM in 2026',
   description: 'Use AI-assisted procurement and vendor risk management to improve sourcing decisions and reduce exposure.',
 };

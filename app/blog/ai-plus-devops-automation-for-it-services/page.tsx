@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-plus-devops-automation-for-it-services' },
   title: 'AI + DevOps Automation for IT Services | Zion Tech Group',
   description: 'How Zion Tech Group applies AI plus DevOps automation to IT service delivery, infrastructure, and support workflows to improve speed, reliability, and client outcomes.',
 

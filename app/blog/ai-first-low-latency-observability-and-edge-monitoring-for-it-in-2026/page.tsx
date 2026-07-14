@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-first-low-latency-observability-and-edge-monitoring-for-it-in-2026' },
   title: 'AI-First Low-Latency Observability and Edge Monitoring for IT in 2026 | Zion Tech Group',
   description: 'A practical guide to AI-first low-latency observability and edge monitoring for IT in 2026, including telemetry normalization, alert triage, and on-call efficiency.',
 }

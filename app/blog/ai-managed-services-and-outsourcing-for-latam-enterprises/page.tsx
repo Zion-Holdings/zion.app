@@ -1,4 +1,5 @@
 export const metadata = {
+  alternates: { canonical: 'https://ziontechgroup.com/blog/ai-managed-services-and-outsourcing-for-latam-enterprises' },
   title: "AI Managed Services and Outsourcing for LATAM Enterprises in 2026 | Zion Tech Group",
   description: "Practical AI managed services and outsourcing models for LATAM enterprises, including support coverage, SLAs, and go-to-market tips.",
 
