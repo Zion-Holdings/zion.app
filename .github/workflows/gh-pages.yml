@@ -53,17 +53,8 @@ jobs:
           mkdir -p artifact
           if [ -d docs ]; then cp -a docs/. artifact/; fi
           if [ -d out ]; then cp -a out/. artifact/; fi
-          if [ -f public/_redirects ]; then cat public/_redirects > artifact/_redirects; fi
-          if [ -f public/_headers ]; then cp -f public/_headers artifact/_headers; fi
           if [ -d public ]; then
-            find public -type f -name 'index.html' -print0 | while IFS= read -r -d '' f; do
-              dest="artifact/${f#public/}"
-              mkdir -p "$(dirname "$dest")"
-              cp "$f" "$dest"
-            done
-            if [ -f public/sitemap.xml ]; then cp -f public/sitemap.xml artifact/sitemap.xml; fi
-            if [ -f public/robots.txt ]; then cp -f public/robots.txt artifact/robots.txt; fi
-            if [ -f public/feed.xml ]; then cp -f public/feed.xml artifact/feed.xml; fi
+            cp -a public/. artifact/
           fi
       - uses: actions/upload-pages-artifact@v4
         with:
