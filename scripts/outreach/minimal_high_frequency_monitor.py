@@ -10,7 +10,7 @@ if not REPO.exists():
     REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO))
 
-from commands.google_workspace import gog_headers, gmail_search, gmail_get, gmail_thread_get
+from commands.google_workspace import gog_headers, gmail_search, gmail_get, gmail_thread_get, gmail_get_or_create_label_id, gmail_batch_modify
 
 DEDUP_DIR = REPO / 'outreach_monitor' / 'processed'
 DEDUP_DIR.mkdir(parents=True, exist_ok=True)
@@ -266,21 +266,31 @@ def main():
         hits = search_all_folders('label:"!!!hot-follow-up"')
         report['hot_followup_threads'] = len(hits)
         hot_drafts = []
+        hot_message_ids = []
         for h in hits:
             from_addr = h.get('from', '')
             m = re.search(r'<([^>]+)>', from_addr)
             contact = m.group(1).lower() if m else from_addr.strip().lower()
             if not contact or '@' not in contact:
                 continue
+            if contact.endswith('@ziontechgroup.com'):
+                continue
+            if any(contact.endswith(x) for x in (
+                '@github.com', '@users.noreply.github.com', '@fyxer.com', '@airbnb.com',
+                '@uber.com', '@tiktok.com', '@dpsmrn.org', '@surfline.com',
+                '@calendly.com', '@zendesk.com'
+            )):
+                continue
             if recent_sent_exists(contact, within_seconds=24*3600):
                 continue
-            if same_outgoing_subject_recently_sent(contact, (h.get("subject") or "").strip(), within_seconds=24*3600):
+            if same_outgoing_subject_recently_sent(contact, (h.get('subject') or '').strip(), within_seconds=24*3600):
                 continue
             tid = h.get('threadId') or h.get('id')
             if tid in {'18729d9ac733fec6','17ae8d06ff494766','17ae8bef12ef37bc','17ace3cb5ba33436','17acc1a44f61dffd','17ac9d589f758ba2','17ac8d7ea8b6d03d','17ac3fea5d58bf65','17ac3fb13c1eb360','17ac3a9ef17a4130','17ac3a6b65985dda','17ac39bb1144ccdc','1795733950be3f61','19f3e95653f3845c'}:
                 continue
             if not thread_alive(tid):
                 continue
+            hot_message_ids.append(h.get('id'))
             try:
                 full = gmail_get(h.get('id'))
                 text = extract_text(full)
@@ -306,6 +316,17 @@ def main():
                 'dedup_key': re.sub(r'[^a-z0-9]', '', contact),
                 'created_at': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
             })
+        report['hot_followup_drafts_count'] = len(hot_drafts)
+        report['hot_followup_drafts'] = hot_drafts[:5]
+        try:
+            hot_label_id = gmail_get_or_create_label_id('!!!hot-follow-up')
+            gmail_batch_modify(
+                {'ids': hot_message_ids[:50]},
+                addLabelIds=[hot_label_id]
+            )
+            report['hot_followup_labeled_count'] = len(hot_message_ids)
+        except Exception as e:
+            report['errors'].append({'hot_followup_labeling': str(e)})
         report['hot_followup_drafts_count'] = len(hot_drafts)
         report['hot_followup_drafts'] = hot_drafts[:5]
 
