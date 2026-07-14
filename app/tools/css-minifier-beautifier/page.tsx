@@ -1,8 +1,9 @@
+'use client';
 export const metadata = {
   title: 'Css Minifier Beautifier | Zion Tech Group',
   description: 'Free online css minifier beautifier tool from Zion Tech Group.',
 };
-'use client';
+
 import Link from 'next/link';
 
 export default function Page() {

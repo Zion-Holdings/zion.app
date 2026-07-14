@@ -1,8 +1,9 @@
+'use client';
 export const metadata = {
   title: 'Color Blindness Simulator | Zion Tech Group',
   description: 'Free online color blindness simulator tool from Zion Tech Group.',
 };
-'use client';
+
 import Link from 'next/link';
 
 export default function Page() {
