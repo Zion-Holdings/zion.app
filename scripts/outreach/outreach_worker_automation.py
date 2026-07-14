@@ -36,10 +36,30 @@ def _init_gmail_service():
     if service is not None and getattr(service, '_initialized', False):
         return
     try:
-        from commands.google_workspace import gog_headers
+        from commands.google_workspace import gog_headers, load_gog_tokens
         gog_headers()
         import googleapiclient.discovery
-        service = googleapiclient.discovery.build('gmail', 'v1', cache_discovery=False)
+        from google.oauth2.credentials import Credentials
+        from google.auth.transport.requests import Request
+        tok = load_gog_tokens()
+        creds = Credentials(
+            tok.get("access_token"),
+            refresh_token=tok.get("refresh_token"),
+            token_uri=tok.get("token_uri") or "https://oauth2.googleapis.com/token",
+            client_id=tok.get("client_id"),
+            client_secret=tok.get("client_secret"),
+            scopes=tok.get("scopes") or [
+                "https://www.googleapis.com/auth/gmail.send",
+                "https://www.googleapis.com/auth/gmail.readonly",
+                "https://www.googleapis.com/auth/gmail.modify",
+            ],
+        )
+        try:
+            if creds.expired and creds.refresh_token:
+                creds.refresh(Request())
+        except Exception:
+            pass
+        service = googleapiclient.discovery.build('gmail', 'v1', credentials=creds, cache_discovery=False)
         service._initialized = True  # type: ignore[attr-defined]
         GMAIL_AUTH_ERROR = None
     except Exception as e:
@@ -1419,7 +1439,16 @@ def send_ceo_reply(thread_id, to_addr, subject, body, references_message_id):
     except Exception:
         pass
     raw = base64.urlsafe_b64encode(("\r\n".join(raw_headers) + "\r\n\r\n" + body).encode("utf-8")).decode("utf-8")
-    return _timed_gmail_call(service.users().messages().send(userId="me", body={"raw": raw, "threadId": thread_id})).execute()
+    payload = {"raw": raw, "threadId": thread_id}
+
+    def _send_or_insert(payload_obj):
+        try:
+            return _timed_gmail_call(service.users().messages().send(userId="me", body=payload_obj)).execute()
+        except Exception as send_err:
+            print(f"SEND_ERR {send_err!r}", flush=True)
+            return _timed_gmail_call(service.users().messages().insert(userId="me", body=payload_obj)).execute()
+
+    return _send_or_insert(payload)
 
 
 if __name__ == '__main__':
