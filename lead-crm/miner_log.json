@@ -1937,5 +1937,17 @@
     "event": "miner_timeout",
     "query": "subject:automação",
     "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-07-14T18:05:17.284833+00:00",
+    "event": "miner_timeout",
+    "query": "subject:automação",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-07-14T18:22:07.514122+00:00",
+    "event": "miner_timeout",
+    "query": "subject:automação",
+    "note": "soft timeout reached; stopping query loop early"
   }
 ]
