@@ -6,6 +6,8 @@ import sys, json, time, re
 from pathlib import Path
 
 REPO = Path('/data/data/com.termux/files/home/zion-support.github.io')
+if not REPO.exists():
+    REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO))
 
 from commands.google_workspace import gog_headers, gmail_search, gmail_get, gmail_thread_get
@@ -30,14 +32,16 @@ def load_json_safe(path: Path, default):
         pass
     return default
 
-def search_all_folders(q, limit=20):
+def search_all_folders(q, maxResults=20):
     """Search everywhere for a query."""
     hits = []
     seen_ids = set()
     seen_threads = set()
+    scanned_queries = 0
     for query in [q, f"{q} in:anywhere"]:
+        scanned_queries += 1
         try:
-            msgs = gmail_search(query, limit=limit, all_folders=True)
+            msgs = gmail_search(query, limit=maxResults, all_folders=True)
         except Exception:
             continue
         for m in msgs:
@@ -63,6 +67,10 @@ def search_all_folders(q, limit=20):
                 'date': headers.get('Date', ''),
                 'snippet': full.get('snippet', '')[:200],
             })
+    try:
+        print(f'METRIC search_all_folders scanned_queries={scanned_queries} hits={len(hits)}', flush=True)
+    except Exception:
+        pass
     return hits
 
 def extract_text(msg):
@@ -170,25 +178,30 @@ def main():
         'new_inbox_interest_count': 0,
         'new_inbox_examples': [],
         'llm_tailoring_coverage': {
-            'enabled': True,
+            'enabled': False,
             'contact_tailor_count': 0,
             'coverage_ratio': 0.0,
-            'blocker': ' awaiting_first_contact_thread'
+            'blocker': 'no_env'
         },
         'errors': [],
         'pending_outreach_count': 0,
         'hot_followup_drafts_count': 0,
         'duplicate_prevention_count': _count_duplicates(),
         'cooldown_blocked_count': _count_cooldown_blocks(),
+        'metrics': {
+            'scanned_queries': 0,
+            'folders_covered': 0,
+            'auth_blocked_ticks': 0,
+            'llm_blocked_ticks': 0,
+            'duplicates_avoided': 0,
+            'cooldown_skips': 0,
+            'tailored_drafts': 0,
+            'summarized_threads': 0
+        },
         'ztg_sender_email': 'kleber@ziontechgroup.com',
         'recent_outgoing_check': True,
-        'recent_outgoing_subjects_sample': [
-            'Re: Parceria Zion Tech Group - operacoes e eficiencia para TI',
-            'Re: Parceria Zion Tech Group - operacoes e eficiencia para TI'
-        ],
-        'recent_outgoing_threads': [
-            '19f498e74495768e', '19f3f7a109960ee9', '19f3e05bc50c1e87'
-        ],
+        'recent_outgoing_subjects_sample': [],
+        'recent_outgoing_threads': [],
     }
 
     try:
