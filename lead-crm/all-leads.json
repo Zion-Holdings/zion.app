@@ -8162,5 +8162,22 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Rating: 0\n#### Context for the rating scale first:\n- 0 = No relevant value signal for managed AI/IT services: the provided information gives no indication the entity operates in or is associated with this specific service category.\n- 1 = Weak/indirect signal: generic tech-adjacent branding that ",
     "confidence": 0
+  },
+  {
+    "to": "vip@vip.windpowerplant.ltd",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "vip.windpowerplant.ltd",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Score: 1\n#### Reasoning (aligned with standard managed AI/IT services value signal scoring):\n- A score of 2 is reserved for explicit, unambiguous confirmation of managed AI/IT service offerings (e.g. a domain directly referencing these services, or accompanying context confirming the specific of",
+    "confidence": 1
   }
 ]
