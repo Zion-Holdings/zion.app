@@ -96,31 +96,23 @@ child.on('close', (code) => {
   writeState({ phase: 'after-build', buildExitCode: 0, durationMs: timeMs(buildStart), artifacts: probeArtifacts() });
 
   let postbuildExit = 0;
+  let postbuildErr = null;
   try {
     execSync('npm run postbuild', { cwd: REPO, stdio: 'inherit', shell: process.platform === 'win32' });
   } catch (postErr) {
     postbuildExit = postErr && postErr.status ? postErr.status : 1;
-    writeState({
-      phase: 'postbuild-failed',
-      buildExitCode: 0,
-      postbuildExitCode: postbuildExit,
-      postbuildError: postErr && postErr.message ? postErr.message : String(postErr),
-      durationMs: timeMs(buildStart),
-      artifacts: probeArtifacts(),
-      outTail: readLastLines('out', 200),
-    });
-    writeFinalState(false);
-    process.exit(0);
+    postbuildErr = postErr && postErr.message ? postErr.message : String(postErr);
   }
-
   writeState({
-    phase: 'postbuild-ok',
+    phase: postbuildExit === 0 ? 'postbuild-ok' : 'postbuild-failed',
     buildExitCode: 0,
-    postbuildExitCode: 0,
+    postbuildExitCode: postbuildExit,
+    postbuildError: postbuildErr,
     durationMs: timeMs(buildStart),
     artifacts: probeArtifacts(),
+    outTail: readLastLines('out', 200),
   });
-  writeFinalState(true);
+  writeFinalState(postbuildExit === 0);
   process.exit(0);
 });
 

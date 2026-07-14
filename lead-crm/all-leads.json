@@ -8315,5 +8315,22 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Rating: 0\n#### Reasoning:\nThis rating is based *solely on the provided information*, which only includes the generic domain name `ziontechgroup.com` with no additional context, service descriptions, or public positioning for the entity.\nThe term \"tech\" in the domain is overly broad and provides ",
     "confidence": 0
+  },
+  {
+    "to": "vip@vip.twivfluidvalve.ltd",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "vip.twivfluidvalve.ltd",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 1\n#### Reasoning:\nThe domain name \"ziontechgroup.com\" includes the generic term \"tech\", which creates a weak, implied tangential link to the broader IT space, so it is not completely irrelevant (not a 0). However, there is no explicit mention of managed services, AI capabilities, or spec",
+    "confidence": 1
   }
 ]
