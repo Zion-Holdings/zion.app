@@ -207,14 +207,14 @@ NEW_SERVICES = [
 
   # === CLOUD SERVICES (1) ===
   {
-    "id": "cloud-cost-optimization-service",
+    "id": "cloud-cost-optimization-platform",
     "title": "Cloud Cost Optimization-as-a-Service",
     "description": "Continuous cloud cost optimization across AWS, Azure, and GCP. AI-driven recommendations for reserved instances, spot usage, right-sizing, and waste elimination. FinOps dashboard with chargeback reporting.",
     "features": ["Multi-cloud cost analysis", "Reserved instance planning", "Spot instance orchestration", "Right-sizing recommendations", "Waste detection (idle resources)", "FinOps chargeback reports", "Budget alerts and forecasting", "Kubernetes cost allocation"],
     "benefits": ["Reduce cloud spend by 30-50%", "Automated cost optimization", "FinOps team enablement", "Real-time cost visibility"],
     "pricing": {"basic": "$499/mo", "pro": "$1,499/mo", "enterprise": "Custom"},
-    "contactInfo": {"website": "/services/cloud-cost-optimization-service", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
-    "icon": "💸", "href": "/services/cloud-cost-optimization-service", "popular": True, "category": "cloud", "industry": "Technology"
+    "contactInfo": {"website": "/services/cloud-cost-optimization-platform", "email": "kleber@ziontechgroup.com", "phone": "+1 302 464 0950"},
+    "icon": "💸", "href": "/services/cloud-cost-optimization-platform", "popular": True, "category": "cloud", "industry": "Technology"
   },
 ]
 
