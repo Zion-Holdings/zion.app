@@ -106,5 +106,293 @@
     "metadata_s": 32.811,
     "llm_s": 19.396,
     "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T00:53:05.407958+00:00",
+    "query": "subject:parceria",
+    "search_s": 0.673,
+    "metadata_s": 3.382,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T00:53:08.596853+00:00",
+    "query": "subject:proposta",
+    "search_s": 0.459,
+    "metadata_s": 6.111,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T00:53:12.444048+00:00",
+    "query": "subject:orçamento",
+    "search_s": 1.109,
+    "metadata_s": 8.847,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T00:53:15.494359+00:00",
+    "query": "subject:reunião",
+    "search_s": 0.488,
+    "metadata_s": 11.407,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T00:53:18.980801+00:00",
+    "query": "subject:diagnóstico",
+    "search_s": 0.574,
+    "metadata_s": 14.317,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T00:53:22.149509+00:00",
+    "query": "\"Zion Tech Group\"",
+    "search_s": 0.556,
+    "metadata_s": 16.928,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T00:53:41.770626+00:00",
+    "query": "\"ziontechgroup.com\"",
+    "search_s": 0.457,
+    "metadata_s": 19.964,
+    "llm_s": 16.126,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T00:53:45.058327+00:00",
+    "query": "subject:automação",
+    "search_s": 0.498,
+    "metadata_s": 22.751,
+    "llm_s": 16.126,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T00:53:48.719478+00:00",
+    "query": "subject:\"incident response\"",
+    "search_s": 0.425,
+    "metadata_s": 25.985,
+    "llm_s": 16.126,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T00:53:51.754121+00:00",
+    "query": "subject:managed services",
+    "search_s": 0.461,
+    "metadata_s": 28.556,
+    "llm_s": 16.126,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T00:53:55.326044+00:00",
+    "query": "subject:devops",
+    "search_s": 0.499,
+    "metadata_s": 31.626,
+    "llm_s": 16.126,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T00:53:58.553022+00:00",
+    "query": "subject:sase",
+    "search_s": 0.51,
+    "metadata_s": 34.34,
+    "llm_s": 16.126,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T01:09:00.434284+00:00",
+    "query": "subject:parceria",
+    "search_s": 0.529,
+    "metadata_s": 2.809,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T01:09:03.616667+00:00",
+    "query": "subject:proposta",
+    "search_s": 0.471,
+    "metadata_s": 5.519,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T01:09:07.210605+00:00",
+    "query": "subject:orçamento",
+    "search_s": 0.779,
+    "metadata_s": 8.331,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T01:09:10.325403+00:00",
+    "query": "subject:reunião",
+    "search_s": 0.498,
+    "metadata_s": 10.946,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T01:09:13.611348+00:00",
+    "query": "subject:diagnóstico",
+    "search_s": 0.521,
+    "metadata_s": 13.708,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T01:09:16.824143+00:00",
+    "query": "\"Zion Tech Group\"",
+    "search_s": 0.501,
+    "metadata_s": 16.417,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T01:09:39.987136+00:00",
+    "query": "\"ziontechgroup.com\"",
+    "search_s": 0.464,
+    "metadata_s": 19.155,
+    "llm_s": 19.958,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T01:09:43.297019+00:00",
+    "query": "subject:automação",
+    "search_s": 0.407,
+    "metadata_s": 22.056,
+    "llm_s": 19.958,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T01:09:46.335500+00:00",
+    "query": "subject:\"incident response\"",
+    "search_s": 0.528,
+    "metadata_s": 24.564,
+    "llm_s": 19.958,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T01:09:49.490912+00:00",
+    "query": "subject:managed services",
+    "search_s": 0.439,
+    "metadata_s": 27.278,
+    "llm_s": 19.958,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T01:09:53.075908+00:00",
+    "query": "subject:devops",
+    "search_s": 0.562,
+    "metadata_s": 30.298,
+    "llm_s": 19.958,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T01:09:56.292826+00:00",
+    "query": "subject:sase",
+    "search_s": 0.508,
+    "metadata_s": 33.004,
+    "llm_s": 19.958,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T01:13:58.834445+00:00",
+    "query": "subject:parceria",
+    "search_s": 0.522,
+    "metadata_s": 3.223,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T01:14:02.585290+00:00",
+    "query": "subject:proposta",
+    "search_s": 0.511,
+    "metadata_s": 6.459,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T01:14:05.902610+00:00",
+    "query": "subject:orçamento",
+    "search_s": 0.603,
+    "metadata_s": 9.171,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T01:14:09.054310+00:00",
+    "query": "subject:reunião",
+    "search_s": 0.447,
+    "metadata_s": 11.872,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T01:14:12.164170+00:00",
+    "query": "subject:diagnóstico",
+    "search_s": 0.436,
+    "metadata_s": 14.543,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T01:14:16.016477+00:00",
+    "query": "\"Zion Tech Group\"",
+    "search_s": 0.455,
+    "metadata_s": 17.936,
+    "llm_s": 0.0,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T01:14:33.808551+00:00",
+    "query": "\"ziontechgroup.com\"",
+    "search_s": 0.41,
+    "metadata_s": 20.739,
+    "llm_s": 14.576,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T01:14:36.930888+00:00",
+    "query": "subject:automação",
+    "search_s": 0.522,
+    "metadata_s": 23.337,
+    "llm_s": 14.576,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T01:14:39.847452+00:00",
+    "query": "subject:\"incident response\"",
+    "search_s": 0.421,
+    "metadata_s": 25.829,
+    "llm_s": 14.576,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T01:14:43.125303+00:00",
+    "query": "subject:managed services",
+    "search_s": 0.458,
+    "metadata_s": 28.646,
+    "llm_s": 14.576,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T01:14:46.163801+00:00",
+    "query": "subject:devops",
+    "search_s": 0.513,
+    "metadata_s": 31.168,
+    "llm_s": 14.576,
+    "seen_contacts": 6
+  },
+  {
+    "ts": "2026-07-14T01:14:49.412155+00:00",
+    "query": "subject:sase",
+    "search_s": 0.491,
+    "metadata_s": 33.921,
+    "llm_s": 14.576,
+    "seen_contacts": 6
   }
 ]
