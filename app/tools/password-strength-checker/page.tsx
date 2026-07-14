@@ -1,8 +1,10 @@
+'use client';
+
 export const metadata = {
   title: 'Password Strength Checker | Zion Tech Group',
   description: 'Free online password strength checker tool from Zion Tech Group.',
 };
-'use client';
+
 import Link from 'next/link';
 
 export default function Page() {

@@ -1,8 +1,10 @@
+'use client';
+
 export const metadata = {
   title: 'Number Base Converter | Zion Tech Group',
   description: 'Free online number base converter tool from Zion Tech Group.',
 };
-'use client';
+
 import Link from 'next/link';
 
 export default function Page() {

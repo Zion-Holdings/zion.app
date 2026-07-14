@@ -1,8 +1,10 @@
+'use client';
+
 export const metadata = {
   title: 'Css Gradient Generator | Zion Tech Group',
   description: 'Free online css gradient generator tool from Zion Tech Group.',
 };
-'use client';
+
 import Link from 'next/link';
 
 export default function Page() {

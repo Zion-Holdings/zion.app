@@ -1,8 +1,10 @@
+'use client';
+
 export const metadata = {
   title: 'Json Formatter | Zion Tech Group',
   description: 'Free online json formatter tool from Zion Tech Group.',
 };
-'use client';
+
 import Link from 'next/link';
 
 export default function Page() {
