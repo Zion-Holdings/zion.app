@@ -138,6 +138,51 @@ def recent_sent_exists(contact, within_seconds=24*3600):
         for r in state[-50:]
     )
 
+def same_outgoing_subject_recently_sent(contact, subject, within_seconds=12*3600):
+    state = load_json_safe(LEDGER_FILE, [])
+    if not isinstance(state, list):
+        return False
+    now = int(time.time())
+    return any(
+        (now - int(r.get('ts', 0))) < within_seconds
+        and (r.get('to') or '').lower() == contact.lower()
+        and (r.get('subject') or '').strip().lower() == subject.strip().lower()
+        for r in state[-50:]
+    )
+
+def _llm_tailor_reply(name, contact, lang, subject, snippet):
+    try:
+        import urllib.request
+        cfg_path = Path.home()/'.hermes'/'config.yaml'
+        if not cfg_path.exists():
+            return None
+        import yaml
+        cfg = yaml.safe_load(cfg_path.read_text(encoding='utf-8')) or {}
+        base = cfg.get('default', {}) if isinstance(cfg.get('default'), dict) else {}
+        provider_name = base.get('provider')
+        providers = cfg.get('providers', {}) if isinstance(cfg.get('providers'), dict) else {}
+        provider = providers.get(provider_name, {}) if isinstance(provider_name, str) else {}
+        endpoint = base.get('base_url') or provider.get('base_url') or ''
+        model = base.get('model') or provider.get('model') or ''
+        key = provider.get('api_key') or base.get('api_key') or ''
+        if not endpoint or not model or not key:
+            return None
+        system = (
+            "You are the CEO of ZION TECH GROUP. Write a concise, friendly but professional follow-up reply to a past client. "
+            "Goals: 1) thank them for the past project; 2) propose 1-2 mutually beneficial new business ideas using their context; 3) invite them to explore our new AI services at https://ziontechgroup.com and note we offer free tools/services; 4) offer a meeting at https://calendly.com/kleber-ziontechgroup. "
+            f"Reply in language: {lang if lang in {'en','pt','es'} else 'en'}."
+        )
+        user = (
+            f"Subject: {subject}\nClient: {name} <{contact}>\nRecent context: {(snippet or '')[:300]}\n\nReturn only the email body."
+        )
+        payload = json.dumps({"model": model, "messages": [{"role":"system","content":system},{"role":"user","content":user}]}).encode('utf-8')
+        req = urllib.request.Request(endpoint.rstrip('/')+'/chat/completions', data=payload, headers={'Authorization': f'Bearer {key}', 'Content-Type': 'application/json'})
+        with urllib.request.urlopen(req, timeout=20) as r:
+            data = json.loads(r.read().decode('utf-8', errors='ignore'))
+        text = (((data.get('choices') or [{}])[0].get('message') or {}).get('content') or '').strip()
+        return text or None
+    except Exception:
+        return None
 def _count_duplicates():
     try:
         state = load_json_safe(DEDUP_DIR / 'global_dedup_state.json', {})
@@ -238,7 +283,10 @@ def main():
                 text = ''
             lang = detect_lang(text)
             name = contact.split('@')[0].replace('.', ' ').title()
-            draft = build_draft(name, lang)
+            tailor = _llm_tailor_reply(name, contact, lang, (h.get('subject') or ''), text or h.get('snippet') or '')
+            draft = tailor or build_draft(name, lang)
+            if tailor:
+                report['metrics']['tailored_drafts'] += 1
             hot_drafts.append({
                 'lead_id': h.get('id'),
                 'thread_id': tid,
