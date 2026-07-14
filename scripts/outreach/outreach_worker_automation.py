@@ -26,12 +26,14 @@ service = None
 
 def _init_gmail_service():
     global service, GMAIL_AUTH_ERROR
-    if service is not None:
+    if service is not None and getattr(service, '_initialized', False):
         return
     try:
         from commands.google_workspace import gog_headers
         gog_headers()
-        service = True
+        import googleapiclient.discovery
+        service = googleapiclient.discovery.build('gmail', 'v1', cache_discovery=False)
+        service._initialized = True  # type: ignore[attr-defined]
         GMAIL_AUTH_ERROR = None
     except Exception as e:
         service = None
