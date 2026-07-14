@@ -63,7 +63,7 @@ def gmail_search(query, limit=20, all_folders=False):
     if all_folders:
         q = f'in:anywhere {query}'
     else:
-        q = query + ' label:INBOX'
+        q = query
     url = ('https://gmail.googleapis.com/gmail/v1/users/me/messages'
            f'?q={urllib.parse.quote(q)}&maxResults={limit}')
     started = time.perf_counter() if 'time' in globals() else None
