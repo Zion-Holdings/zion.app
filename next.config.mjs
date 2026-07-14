@@ -1,33 +1,11 @@
 /** @type {import('next').NextConfig} */
-import path from 'node:path';
-
-const nextConfig = {
+export default {
   output: 'export',
-  outputFileTracingRoot: process.cwd(),
-  basePath: '',
   trailingSlash: true,
-  compress: true,
-  poweredByHeader: false,
-  productionBrowserSourceMaps: false,
-  images: {
-    unoptimized: true,
-    remotePatterns: [{ protocol: 'https', hostname: '**' }],
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+  images: { unoptimized: true },
   webpack: (config) => {
-    const appDir = path.join(process.cwd(), 'app');
-    config.resolve.alias = {
-      ...(config.resolve.alias || {}),
-      '@': appDir,
-      'ncomponents': path.join(appDir, 'components'),
-      'ndata': path.join(appDir, 'data'),
-      'nlib': path.join(appDir, 'lib'),
-    };
+    config.resolve.alias['@'] = require('path').join(process.cwd(), 'app');
+    config.resolve.alias['@components'] = require('path').join(process.cwd(), 'app/components');
     return config;
   },
-  generateBuildId: async () => 'zion-tech-group-v1',
 };
-
-export default nextConfig;
