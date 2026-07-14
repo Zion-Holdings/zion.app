@@ -168,7 +168,12 @@ def gmail_batch_modify(payload: dict, addLabelIds=None, removeLabelIds=None):
     if addLabelIds is None: addLabelIds = []
     if removeLabelIds is None: removeLabelIds = []
     url = 'https://gmail.googleapis.com/gmail/v1/users/me/messages/batchModify'
-    body = json.dumps({'ids': payload['ids'], 'addLabelIds': addLabelIds, 'removeLabelIds': removeLabelIds}).encode()
+    ids = payload.get('ids') if isinstance(payload, dict) else None
+    if not isinstance(ids, list):
+        ids = []
+    addLabelIds = list(addLabelIds or [])
+    removeLabelIds = list(removeLabelIds or [])
+    body = json.dumps({'ids': ids, 'addLabelIds': addLabelIds, 'removeLabelIds': removeLabelIds}).encode()
     headers = gog_headers()
     headers['Content-Type'] = 'application/json'
     req = urllib.request.Request(url, data=body, headers=headers, method='POST')
