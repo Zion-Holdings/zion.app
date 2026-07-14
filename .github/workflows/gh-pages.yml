@@ -18,8 +18,8 @@ jobs:
       NODE_OPTIONS: '--max-old-space-size=4096'
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
     steps:
-    - uses: actions/checkout@v5
-    - uses: actions/setup-node@v5
+    - uses: actions/checkout@v7
+    - uses: actions/setup-node@v7
       with:
         node-version: '20'
         cache: 'npm'
@@ -64,7 +64,7 @@ jobs:
           if [ -f public/robots.txt ]; then cp -f public/robots.txt artifact/robots.txt; fi
           if [ -f public/feed.xml ]; then cp -f public/feed.xml artifact/feed.xml; fi
         fi
-    - uses: actions/upload-pages-artifact@v4
+    - uses: actions/upload-pages-artifact@v5
       with:
         path: ./artifact
     timeout-minutes: 30
@@ -75,4 +75,4 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-    - uses: actions/deploy-pages@v4
+    - uses: actions/deploy-pages@v5
