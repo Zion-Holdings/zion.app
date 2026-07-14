@@ -16,8 +16,12 @@ function ensureDir(dir) {
 }
 
 function writeState(payload) {
-  ensureDir(STATE_DIR);
-  fs.writeFileSync(STATE_FILE, JSON.stringify({ ...payload, wroteAt: new Date().toISOString() }, null, 2), 'utf8');
+  try {
+    ensureDir(STATE_DIR);
+    fs.writeFileSync(STATE_FILE, JSON.stringify({ ...payload, wroteAt: new Date().toISOString() }, null, 2), 'utf8');
+  } catch (e) {
+    console.error('[build-wrapper] failed to write state', e && e.message ? e.message : e);
+  }
 }
 
 function probeArtifacts() {
@@ -47,7 +51,6 @@ function preflightFail(msg) {
     artifacts: probeArtifacts(),
   });
   console.error('[build-wrapper] preflight skipped:', msg);
-  // proceed to build so CI artifacts can capture the actual build error.
 }
 
 const buildStart = Date.now();
@@ -93,25 +96,21 @@ child.on('close', (code) => {
   } catch (postErr) {
     postbuildExit = postErr && postErr.status ? postErr.status : 1;
     postbuildError = postErr && postErr.message ? postErr.message : String(postErr);
-    writeState({
-      phase: 'postbuild-failed',
-      buildExitCode: buildExit,
-      postbuildExitCode: postbuildExit,
-      postbuildError,
-      durationMs: timeMs(buildStart),
-      artifacts: probeArtifacts(),
-      outTail: readLastLines('out', 200),
-    });
-    console.error('[build-wrapper] postbuild failed, ignoring for Pages deploy');
   }
 
   writeState({
     phase: postbuildExit === 0 ? 'postbuild-ok' : 'postbuild-failed-ignored',
     buildExitCode: buildExit,
     postbuildExitCode: postbuildExit,
+    postbuildError,
     durationMs: timeMs(buildStart),
     artifacts: probeArtifacts(),
   });
+
+  if (postbuildExit !== 0) {
+    console.error('[build-wrapper] postbuild failed, ignoring for Pages deploy:', postbuildError);
+  }
+
   process.exit(buildExit === 0 ? 0 : buildExit);
 });
 
