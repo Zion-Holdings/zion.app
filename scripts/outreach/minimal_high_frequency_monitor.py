@@ -224,6 +224,8 @@ def main():
                 continue
             if recent_sent_exists(contact, within_seconds=24*3600):
                 continue
+            if same_outgoing_subject_recently_sent(contact, (h.get("subject") or "").strip(), within_seconds=24*3600):
+                continue
             tid = h.get('threadId') or h.get('id')
             if tid in {'18729d9ac733fec6','17ae8d06ff494766','17ae8bef12ef37bc','17ace3cb5ba33436','17acc1a44f61dffd','17ac9d589f758ba2','17ac8d7ea8b6d03d','17ac3fea5d58bf65','17ac3fb13c1eb360','17ac3a9ef17a4130','17ac3a6b65985dda','17ac39bb1144ccdc','1795733950be3f61','19f3e95653f3845c'}:
                 continue
