@@ -102,7 +102,7 @@ def build_draft(name, lang, subject='Following up on our last project'):
             "Gracias por la oportunidad de haber trabajado juntos en el proyecto anterior. Veo buenas oportunidades para crear valor mutuo ahora.\n\n"
             "Puedes ver nuestros nuevos servicios de IA aquí: https://ziontechgroup.com\n"
             "También ofrecemos herramientas y servicios gratuitos en el sitio.\n\n"
-            "Si cuadra, conversemos: https://calendly.com/kleber-ziontechgroup\n\n"
+            "Si cuadra, conversemos: https://calendly.com/kleber-ziontechgroup o también por Google Meet: https://meet.google.com/ouu-khao-kuy\n\n"
             "Saludos cordiales,\nKleber Garcia Alcatrão\nCEO, Zion Tech Group\nhttps://ziontechgroup.com"
         )
     if lang == 'pt':
@@ -111,7 +111,7 @@ def build_draft(name, lang, subject='Following up on our last project'):
             "Obrigado pela oportunidade de trabalharmos juntos no projeto anterior. Vejo boas oportunidades para criarmos valor mútuo agora.\n\n"
             "Você pode ver nossos novos serviços de IA aqui: https://ziontechgroup.com\n"
             "Também temos ferramentas e serviços gratuitos no site.\n\n"
-            "Se fizer sentido, vamos conversar: https://calendly.com/kleber-ziontechgroup\n\n"
+            "Se fizer sentido, vamos conversar: https://calendly.com/kleber-ziontechgroup ou também por Google Meet: https://meet.google.com/ouu-khao-kuy\n\n"
             "Um abraço,\nKleber Garcia Alcatrão\nCEO, Zion Tech Group\nhttps://ziontechgroup.com"
         )
     return (
@@ -119,7 +119,7 @@ def build_draft(name, lang, subject='Following up on our last project'):
         "Thank you for the opportunity to work together on the previous project. I see strong potential for new mutually valuable work between our teams.\n\n"
         "You can explore our new AI services here: https://ziontechgroup.com\n"
         "We also offer free services and tools on the site.\n\n"
-        "If it makes sense, let's talk: https://calendly.com/kleber-ziontechgroup\n\n"
+        "If it makes sense, let's talk: https://calendly.com/kleber-ziontechgroup or via Google Meet: https://meet.google.com/ouu-khao-kuy\n\n"
         "Best,\nKleber Garcia Alcatrão\nCEO, Zion Tech Group\nhttps://ziontechgroup.com"
     )
 
