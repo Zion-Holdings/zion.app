@@ -28,7 +28,7 @@ jobs:
     - name: Build Next.js static export
       run: |
         set -euo pipefail
-        npm run build:ci
+        npm run build
     - name: Validate static export output
       run: |
         set -euo pipefail
