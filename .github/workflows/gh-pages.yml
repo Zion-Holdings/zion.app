@@ -28,7 +28,7 @@ jobs:
     - name: Build Next.js static export
       run: |
         set -euo pipefail
-        npm run build:ci
+        npm run build --webpack
     - name: Validate static export output
       run: |
         set -euo pipefail
@@ -50,8 +50,8 @@ jobs:
     - name: Prepare Pages artifact
       run: |
         set -euo pipefail
+        rm -rf artifact
         mkdir -p artifact
-        if [ -d docs ]; then cp -a docs/. artifact/; fi
         if [ -d out ]; then cp -a out/. artifact/; fi
         if [ -f public/_redirects ]; then cat public/_redirects > artifact/_redirects; fi
         if [ -f public/_headers ]; then cp -f public/_headers artifact/_headers; fi
