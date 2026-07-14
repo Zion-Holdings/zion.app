@@ -775,6 +775,8 @@ Today Zion Tech Group is expanding into AI/IT services, and I see a few fast, mu
 {p['cta'] if isinstance(p, dict) else 'If this aligns, I’m happy to advance by email or a quick call.'}
 https://calendly.com/kleber-ziontechgroup
 
+If a call is easier, here’s a direct meeting link: https://meet.google.com/ouu-khao-kuy
+
 You can also explore our new AI services and free tools here:
 https://ziontechgroup.com
 
