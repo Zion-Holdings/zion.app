@@ -25,25 +25,28 @@ jobs:
         cache: 'npm'
         cache-dependency-path: '**/package-lock.json'
     - run: npm ci --no-audit --no-fund
-    - run: npm run build:ci
+    - name: Build Next.js static export
+      run: |
+        set -euo pipefail
+        npm run build
     - name: Validate static export output
       run: |
+        set -euo pipefail
         if [ ! -d out ] && [ ! -d docs ]; then
           echo "Static export output missing: neither 'out/' nor 'docs/' exists after build"
           ls -la .next || true
-          if [ -f automation/reports/build-state.json ]; then cat automation/reports/build-state.json || true; fi
           exit 1
         fi
-    - name: Upload build state artifact
-      if: always()
-      uses: actions/upload-artifact@v4
-      with:
-        name: build-state
-        path: automation/reports/build-state.json
-        retention-days: 7
-    - uses: actions/configure-pages@v4
-      with:
-        enablement: true
+        if [ ! -f out/index.html ]; then
+          echo "Static export output missing: 'out/index.html' does not exist"
+          ls -la out || true
+          exit 1
+        fi
+        if [ ! -f out/404.html ]; then
+          echo "Static export output missing: 'out/404.html' does not exist"
+          ls -la out || true
+          exit 1
+        fi
     - name: Prepare Pages artifact
       run: |
         set -euo pipefail
