@@ -10,12 +10,14 @@ const statePath = path.join(repo, 'automation/reports/build-and-verify-latest.js
 // Prefer export output.
 const exportDir = fs.existsSync(outDir) ? outDir : (fs.existsSync(docsDir) ? docsDir : null);
 
-const REQUIRED = [
-  path.join(exportDir || outDir, 'index.html'),
-  path.join(exportDir || outDir, '404.html'),
-  path.join(exportDir || outDir, 'data', 'services.json'),
-  path.join(exportDir || outDir, 'service-index.json'),
-];
+const REQUIRED = exportDir
+  ? [
+      path.join(exportDir, 'index.html'),
+      path.join(exportDir, '404.html'),
+      path.join(exportDir, 'data', 'services.json'),
+      path.join(exportDir, 'service-index.json'),
+    ]
+  : [];
 
 function exists(p) {
   try { return fs.existsSync(p); } catch { return false; }
