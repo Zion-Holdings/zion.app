@@ -8179,5 +8179,22 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Rating: 1 (weak/indirect relevant signal)\n#### Reasoning:\nThe domain name \"ziontechgroup.com\" includes the generic term \"tech\", which is tangentially adjacent to the broader IT space that managed AI/IT services fall under. However, there is no explicit, direct evidence in the provided input (onl",
     "confidence": 1
+  },
+  {
+    "to": "david@prtechnologystore.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "prtechnologystore.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 1\n#### Scoring context for managed AI/IT service value signals:\n- 2 = Explicit, confirmed signal that the party directly offers managed AI/IT services (e.g. site content explicitly listing these offerings, case studies, dedicated service pages for the category)\n- 1 = Weak/indirect signal",
+    "confidence": 1
   }
 ]
