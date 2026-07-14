@@ -1452,4 +1452,8 @@ def send_ceo_reply(thread_id, to_addr, subject, body, references_message_id):
 
 
 if __name__ == '__main__':
-    run_high_frequency_outreach()
+    out = run_high_frequency_outreach()
+    try:
+        print(json.dumps({'__worker_result__': True, 'result': out}, ensure_ascii=False))
+    except Exception:
+        pass
