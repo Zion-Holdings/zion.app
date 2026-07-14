@@ -1087,8 +1087,39 @@ def _llm_readiness_report() -> dict:
     return report
 
 
+def _resolve_hot_label_id():
+    try:
+        labels = _timed_gmail_call(service.users().labels().list(userId='me')) if service is not None else None
+        if labels:
+            for lab in labels.get('labels', []) or []:
+                if 'hot-follow-up' in ((lab.get('name') or '') + str(lab.get('id') or '')).lower():
+                    return lab.get('id')
+                    break
+    except Exception:
+        pass
+    return None
+
+def _is_safe_hot_thread(msg_id: str, thread_id: str | None = None) -> dict:
+    try:
+        full = _timed_gmail_call(service.users().messages().get(userId='me', id=msg_id, format='full'))
+    except Exception as e:
+        return {'safe': False, 'reason': f'access_error:{e}'}
+    t = full.get('threadId') or thread_id or msg_id
+    headers = {x['name']: x['value'] for x in full.get('payload', {}).get('headers', [])}
+    from_addr = (next((x['value'] for x in full.get('payload', {}).get('headers', []) if x['name'] == 'From'), '')).lower()
+    subject = headers.get('Subject', '')
+    if 'kleber@ziontechgroup.com' in from_addr:
+        return {'safe': False, 'reason': 'existing_ceo_outbound'}
+    try:
+        tmsgs = _timed_gmail_call(service.users().threads().get(userId='me', id=t, format='metadata', metadataHeaders=['From'])) or {}
+        tmsgs = tmsgs.get('messages', []) or []
+        if any('kleber@ziontechgroup.com' in ({x['name']: x['value'] for x in m.get('payload', {}).get('headers', [])}).get('From', '').lower() for m in tmsgs):
+            return {'safe': False, 'reason': 'existing_ceo_outbound_thread'}
+    except Exception:
+        pass
+    return {'safe': True, 'thread_id': t, 'subject': subject, 'from': from_addr}
+
 def run_high_frequency_outreach():
-    # If LLM creds exist, enable tailoring; otherwise rely on personalized defaults.
     _llm_readiness_report()
     if service is None:
         print('AUTH_FAIL', GMAIL_AUTH_ERROR)
@@ -1097,16 +1128,21 @@ def run_high_frequency_outreach():
     print('TRACE_START', flush=True)
     print('LLM_TAILOR_ENABLED=', bool(LLM_TAILOR_ENABLED), 'ENDPOINT=', bool(LLM_API_ENDPOINT), flush=True)
     discovery_queries = [
-        'label:"!!!hot-follow-up"',
         'in:anywhere label:"!!!hot-follow-up"',
-        '!category:promotions !in:spam !in:trash "partnership" OR "collaboration" OR "proposal"',
-        '!category:promotions !in:spam !in:trash "AI services" OR "AI support" OR "project"',
-        '!category:promotions !in:spam !in:trash "interested" OR "next steps" OR "opportunity"',
-        '!category:promotions !in:spam !in:trash "integration" OR "workflow" OR "ROI"',
-        '"follow-up" OR "follow up" OR "next steps" newer_than:7d',
-        '"partnership" OR "collaboration" newer_than:14d',
-        'in:anywhere "partnership" OR "collaboration" OR "proposal"',
+        'in:anywhere label:"!!!hot-follow-up" newer_than:30d',
+        '!category:promotions !in:spam !in:trash ("partnership" OR "collaboration" OR "proposal")',
+        '!category:promotions !in:spam !in:trash ("AI services" OR "project" OR "opportunity")',
+        '!category:promotions !in:spam !in:trash ("next steps" OR "interested" OR "integration")',
+        '"follow-up" OR "follow up" OR "next steps" newer_than:14d',
+        '"partnership" OR "collaboration" newer_than:30d',
+        'in:anywhere label:"!!!hot-followup-sent"',
     ]
+
+    hot_label_id = 'Label_946'
+    try:
+        hot_label_id = _resolve_hot_label_id() or hot_label_id
+    except Exception:
+        pass
 
     hit_ids = set()
     contacts = []
