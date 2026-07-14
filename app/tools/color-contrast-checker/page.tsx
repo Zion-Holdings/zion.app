@@ -1,3 +1,7 @@
+export const metadata = {
+  title: 'Color Contrast Checker | Zion Tech Group',
+  description: 'Free online color contrast checker tool from Zion Tech Group.',
+};
 'use client';
 import Link from 'next/link';
 

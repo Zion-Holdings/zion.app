@@ -1,3 +1,7 @@
+export const metadata = {
+  title: 'Markdown Preview | Zion Tech Group',
+  description: 'Free online markdown preview tool from Zion Tech Group.',
+};
 'use client';
 import Link from 'next/link';
 

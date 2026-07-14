@@ -1,3 +1,7 @@
+export const metadata = {
+  title: 'Html Minifier Beautifier | Zion Tech Group',
+  description: 'Free online html minifier beautifier tool from Zion Tech Group.',
+};
 'use client';
 import Link from 'next/link';
 

@@ -1,3 +1,7 @@
+export const metadata = {
+  title: 'Xml Formatter Validator | Zion Tech Group',
+  description: 'Free online xml formatter validator tool from Zion Tech Group.',
+};
 'use client';
 import Link from 'next/link';
 

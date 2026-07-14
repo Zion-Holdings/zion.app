@@ -1,3 +1,7 @@
+export const metadata = {
+  title: 'Password Generator | Zion Tech Group',
+  description: 'Free online password generator tool from Zion Tech Group.',
+};
 'use client';
 import Link from 'next/link';
 

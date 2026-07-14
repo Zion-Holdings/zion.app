@@ -1,3 +1,7 @@
+export const metadata = {
+  title: 'Timestamp Converter | Zion Tech Group',
+  description: 'Free online timestamp converter tool from Zion Tech Group.',
+};
 'use client';
 import Link from 'next/link';
 

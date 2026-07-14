@@ -1,3 +1,7 @@
+export const metadata = {
+  title: 'String Case Converter | Zion Tech Group',
+  description: 'Free online string case converter tool from Zion Tech Group.',
+};
 'use client';
 import Link from 'next/link';
 

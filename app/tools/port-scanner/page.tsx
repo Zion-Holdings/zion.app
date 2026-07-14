@@ -1,3 +1,7 @@
+export const metadata = {
+  title: 'Port Scanner | Zion Tech Group',
+  description: 'Free online port scanner tool from Zion Tech Group.',
+};
 // app/tools/port-scanner/page.tsx — Free Port Scanner (client-side via public API)
 'use client';
 import { pingTool } from '@/data/tools_ping_client';

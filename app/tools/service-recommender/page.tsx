@@ -1,3 +1,7 @@
+export const metadata = {
+  title: 'Service Recommender | Zion Tech Group',
+  description: 'Free online service recommender tool from Zion Tech Group.',
+};
 // app/tools/service-recommender/page.tsx
 'use client';
 import { pingTool } from '@/data/tools_ping_client';

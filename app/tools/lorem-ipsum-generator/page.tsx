@@ -1,3 +1,7 @@
+export const metadata = {
+  title: 'Lorem Ipsum Generator | Zion Tech Group',
+  description: 'Free online lorem ipsum generator tool from Zion Tech Group.',
+};
 'use client';
 import Link from 'next/link';
 

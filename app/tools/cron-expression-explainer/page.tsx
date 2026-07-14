@@ -1,3 +1,7 @@
+export const metadata = {
+  title: 'Cron Expression Explainer | Zion Tech Group',
+  description: 'Free online cron expression explainer tool from Zion Tech Group.',
+};
 'use client';
 import Link from 'next/link';
 

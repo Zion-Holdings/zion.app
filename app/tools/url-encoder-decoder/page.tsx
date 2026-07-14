@@ -1,3 +1,7 @@
+export const metadata = {
+  title: 'Url Encoder Decoder | Zion Tech Group',
+  description: 'Free online url encoder decoder tool from Zion Tech Group.',
+};
 'use client';
 import Link from 'next/link';
 

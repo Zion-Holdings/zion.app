@@ -1,3 +1,7 @@
+export const metadata = {
+  title: 'Box Shadow Generator | Zion Tech Group',
+  description: 'Free online box shadow generator tool from Zion Tech Group.',
+};
 'use client';
 import Link from 'next/link';
 

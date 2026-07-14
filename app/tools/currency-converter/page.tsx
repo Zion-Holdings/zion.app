@@ -1,3 +1,7 @@
+export const metadata = {
+  title: 'Currency Converter | Zion Tech Group',
+  description: 'Free online currency converter tool from Zion Tech Group.',
+};
 'use client';
 import Link from 'next/link';
 

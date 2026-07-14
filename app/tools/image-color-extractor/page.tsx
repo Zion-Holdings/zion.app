@@ -1,3 +1,7 @@
+export const metadata = {
+  title: 'Image Color Extractor | Zion Tech Group',
+  description: 'Free online image color extractor tool from Zion Tech Group.',
+};
 'use client';
 import Link from 'next/link';
 

@@ -1,3 +1,7 @@
+export const metadata = {
+  title: 'Subnet Calculator | Zion Tech Group',
+  description: 'Free online subnet calculator tool from Zion Tech Group.',
+};
 'use client';
 import Link from 'next/link';
 

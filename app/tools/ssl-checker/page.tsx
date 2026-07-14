@@ -1,3 +1,7 @@
+export const metadata = {
+  title: 'Ssl Checker | Zion Tech Group',
+  description: 'Free online ssl checker tool from Zion Tech Group.',
+};
 // app/tools/ssl-checker/page.tsx — Free SSL/TLS Certificate Checker
 'use client';
 import { pingTool } from '@/data/tools_ping_client';

@@ -1,3 +1,7 @@
+export const metadata = {
+  title: 'Secure Hash Generator | Zion Tech Group',
+  description: 'Free online secure hash generator tool from Zion Tech Group.',
+};
 'use client';
 import Link from 'next/link';
 

@@ -1,3 +1,7 @@
+export const metadata = {
+  title: 'Color Palette Generator | Zion Tech Group',
+  description: 'Free online color palette generator tool from Zion Tech Group.',
+};
 'use client';
 import Link from 'next/link';
 

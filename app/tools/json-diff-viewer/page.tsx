@@ -1,3 +1,7 @@
+export const metadata = {
+  title: 'Json Diff Viewer | Zion Tech Group',
+  description: 'Free online json diff viewer tool from Zion Tech Group.',
+};
 'use client';
 import Link from 'next/link';
 
