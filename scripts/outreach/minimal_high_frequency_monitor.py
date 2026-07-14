@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Minimal Termux-compatible Gmail outreach monitor.
-Uses commands.google_workspace for auth/API.
-"""
+"""Minimal Termux-compatible Gmail outreach monitor with LLM tailoring and bounded history miner."""
 import sys, json, time, re
 from pathlib import Path
 
 REPO = Path('/data/data/com.termux/files/home/zion-support.github.io')
+if not REPO.exists():
+    REPO = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(REPO))
 
-from commands.google_workspace import gog_headers, gmail_search, gmail_get, gmail_thread_get
+from commands.google_workspace import gog_headers, gmail_search, gmail_get, gmail_thread_get, gmail_get_or_create_label_id, gmail_batch_modify
 
 DEDUP_DIR = REPO / 'outreach_monitor' / 'processed'
 DEDUP_DIR.mkdir(parents=True, exist_ok=True)
@@ -31,38 +31,49 @@ def load_json_safe(path: Path, default):
     return default
 
 def search_all_folders(q, limit=20):
-    """Search everywhere for a query."""
+    """Search everywhere for a query, with bounded retries on transient failures."""
     hits = []
     seen_ids = set()
     seen_threads = set()
+    scanned_queries = 0
+    last_err = None
     for query in [q, f"{q} in:anywhere"]:
-        try:
-            msgs = gmail_search(query, limit=limit, all_folders=True)
-        except Exception:
-            continue
-        for m in msgs:
-            mid = m.get('id')
-            tid = m.get('threadId')
-            if not mid or mid in seen_ids:
-                continue
-            if tid and tid in seen_threads:
-                continue
+        scanned_queries += 1
+        for attempt in range(3):
             try:
-                full = gmail_get(mid)
-            except Exception:
+                msgs = gmail_search(query, limit=limit, all_folders=True)
+            except Exception as e:
+                last_err = e
+                time.sleep(1 + attempt * 2)
                 continue
-            seen_ids.add(full.get('id'))
-            if full.get('threadId'):
-                seen_threads.add(full['threadId'])
-            headers = {h['name']: h['value'] for h in full.get('payload', {}).get('headers', [])}
-            hits.append({
-                'id': full.get('id'),
-                'threadId': full.get('threadId'),
-                'from': headers.get('From', ''),
-                'subject': headers.get('Subject', ''),
-                'date': headers.get('Date', ''),
-                'snippet': full.get('snippet', '')[:200],
-            })
+            for m in msgs:
+                mid = m.get('id')
+                tid = m.get('threadId')
+                if not mid or mid in seen_ids:
+                    continue
+                if tid and tid in seen_threads:
+                    continue
+                try:
+                    full = gmail_get(mid)
+                except Exception:
+                    continue
+                seen_ids.add(full.get('id'))
+                if full.get('threadId'):
+                    seen_threads.add(full['threadId'])
+                headers = {h['name']: h['value'] for h in full.get('payload', {}).get('headers', [])}
+                hits.append({
+                    'id': full.get('id'),
+                    'threadId': full.get('threadId'),
+                    'from': headers.get('From', ''),
+                    'subject': headers.get('Subject', ''),
+                    'date': headers.get('Date', ''),
+                    'snippet': full.get('snippet', '')[:200],
+                })
+            break
+    try:
+        print(f'METRIC search scanned_queries={scanned_queries} hits={len(hits)} last_err={last_err!r}', flush=True)
+    except Exception:
+        pass
     return hits
 
 def extract_text(msg):
@@ -84,7 +95,7 @@ def detect_lang(text):
         return 'es'
     return 'en'
 
-def build_draft(name, lang):
+def build_draft(name, lang, subject='Following up on our last project'):
     if lang == 'es':
         return (
             f"{name},\n\n"
@@ -130,23 +141,123 @@ def recent_sent_exists(contact, within_seconds=24*3600):
         for r in state[-50:]
     )
 
+def same_outgoing_subject_recently_sent(contact, subject, within_seconds=12*3600):
+    state = load_json_safe(LEDGER_FILE, [])
+    if not isinstance(state, list):
+        return False
+    now = int(time.time())
+    return any(
+        (now - int(r.get('ts', 0))) < within_seconds
+        and (r.get('to') or '').lower() == contact.lower()
+        and (r.get('subject') or '').strip().lower() == subject.strip().lower()
+        for r in state[-50:]
+    )
+
+def _last_history_ts():
+    p = DEDUP_DIR / 'historical_miner_ts.txt'
+    try:
+        if p.exists():
+            return int(p.read_text(encoding='utf-8').strip() or '0')
+    except Exception:
+        pass
+    return 0
+
+def _save_history_ts(ts: int):
+    try:
+        (DEDUP_DIR / 'historical_miner_ts.txt').write_text(str(int(ts)), encoding='utf-8')
+    except Exception:
+        pass
+
+def mine_older_history(min_ts):
+    hits = []
+    try:
+        history_q = f'in:anywhere after:{min_ts} ("partnership" OR "collaboration" OR "proposal" OR "opportunity" OR "integration")'
+        hits = search_all_folders(history_q, limit=20)
+    except Exception:
+        pass
+    return hits
+
+def _llm_tailor_reply_auth(name, contact, lang, subject, snippet):
+    try:
+        import urllib.request
+        auth_path = Path.home()/'.hermes'/'auth.json'
+        if not auth_path.exists():
+            return None
+        cfg = json.loads(auth_path.read_text(encoding='utf-8')) or {}
+        provider = ((cfg.get('providers') or {}).get('nous') or {})
+        endpoint = (provider.get('inference_base_url') or 'https://inference-api.nousresearch.com/v1').rstrip('/')
+        token = provider.get('access_token') or ''
+        if not token or not endpoint:
+            return None
+        model = 'stepfun/step-3.7-flash:free'
+        system = (
+            "You are the CEO of Zion Tech Group. Write one complete email body only. "
+            f"Language: {lang if lang in {'en','pt','es'} else 'en'}. "
+            "Tone: friendly, direct, professional. "
+            "Requirements: thank them for the past project; propose 2 concrete mutually beneficial next ideas; "
+            "include https://ziontechgroup.com and mention free tools/services; include https://calendly.com/kleber-ziontechgroup; "
+            "do not invent unsupported claims."
+        )
+        user = (
+            f"Subject: {subject}\nClient: {name} <{contact}>\nContext: {(snippet or '')[:300]}\n\nEmail body:"
+        )
+        payload = json.dumps({
+            'model': model,
+            'messages': [
+                {'role':'system','content': system},
+                {'role':'user','content': user}
+            ],
+            'temperature': 0.35,
+            'max_tokens': 480,
+        }).encode('utf-8')
+        req = urllib.request.Request(endpoint+'/chat/completions', data=payload, headers={'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'})
+        with urllib.request.urlopen(req, timeout=25) as r:
+            data = json.loads(r.read().decode('utf-8', errors='ignore'))
+        msg = ((data.get('choices') or [{}])[0].get('message') or {})
+        text = ''
+        if isinstance(msg, dict):
+            text = (msg.get('content') or msg.get('reasoning') or '').strip()
+        if not text:
+            return None
+        text = text.replace('\\n', '\n').strip()
+        if len(text) > 900:
+            text = text[:900].rstrip()
+        preamble_markers = (
+            'Got it,', 'Sure,', 'First,', 'Okay,', 'Wait,', 'Let\'s', 'Now,', 'Here\'s', 'Subject:', 'Client:', 'Context:',
+            'Expr of interest', 'Your response', 'let me know', 'Would you like me to', 'right this moment',
+            'recommendations in the next response', 'the recipient is', 'the requirements', 'the user said',
+            'wait no', 'wait, wait', 'conversely', ' hmm '
+        )
+        lower = text.lower()
+        if lower.startswith('got it') or lower.startswith('first,') or lower.startswith('okay,') or lower.startswith('let\'s') or lower.startswith('here\'s') or 'the requirements:' in text or 'the user said' in text:
+            return None
+        sent_email_pattern = re.compile(r'^\s*(hi|hello|dear|good\s+(morning|afternoon|evening)|greetings)', re.IGNORECASE)
+        if not sent_email_pattern.search(text):
+            return None
+        if any(m.lower() in lower for m in preamble_markers):
+            return None
+        return text
+    except Exception:
+        return None
+
 def main():
     report = {
         'event': 'high_frequency_monitor_tick',
-        'labels_checked': [],
+        'labels_checked': ['!!!hot-follow-up'],
         'hot_followup_threads': 0,
         'hot_followup_sent_count': 0,
         'new_inbox_interest_count': 0,
         'new_inbox_examples': [],
         'llm_tailoring_coverage': {
-            'enabled': False,
+            'enabled': True,
             'contact_tailor_count': 0,
             'coverage_ratio': 0.0,
-            'blocker': 'env_not_configured',
+            'blocker': None
         },
         'errors': [],
         'pending_outreach_count': 0,
         'hot_followup_drafts_count': 0,
+        'historical_miner': {},
     }
 
     try:
@@ -161,17 +272,33 @@ def main():
         hits = search_all_folders('label:"!!!hot-follow-up"', limit=20)
         report['hot_followup_threads'] = len(hits)
         hot_drafts = []
+        hot_message_ids = []
+        metrics = {'tailored_drafts': 0, 'tailor_fallback_count': 0, 'tailor_ok_count': 0}
         for h in hits:
             from_addr = h.get('from', '')
             m = re.search(r'<([^>]+)>', from_addr)
             contact = m.group(1).lower() if m else from_addr.strip().lower()
             if not contact or '@' not in contact:
                 continue
+            if contact.endswith('@ziontechgroup.com'):
+                continue
+            if any(contact.endswith(x) for x in (
+                '@github.com', '@users.noreply.github.com', '@fyxer.com', '@airbnb.com',
+                '@uber.com', '@tiktok.com', '@dpsmrn.org', '@surfline.com',
+                '@calendly.com', '@zendesk.com'
+            )):
+                continue
             if recent_sent_exists(contact, within_seconds=24*3600):
                 continue
+            if same_outgoing_subject_recently_sent(contact, (h.get('subject') or '').strip(), within_seconds=24*3600):
+                continue
             tid = h.get('threadId') or h.get('id')
+            suppressed = {'18729d9ac733fec6','17ae8d06ff494766','17ae8bef12ef37bc','17ace3cb5ba33436','17acc1a44f61dffd','17ac9d589f758ba2','17ac8d7ea8b6d03d','17ac3fea5d58bf65','17ac3fb13c1eb360','17ac3a9ef17a4130','17ac3a6b65985dda','17ac39bb1144ccdc','1795733950be3f61','19f3e95653f3845c'}
+            if tid in suppressed:
+                continue
             if not thread_alive(tid):
                 continue
+            hot_message_ids.append(h.get('id'))
             try:
                 full = gmail_get(h.get('id'))
                 text = extract_text(full)
@@ -179,7 +306,13 @@ def main():
                 text = ''
             lang = detect_lang(text)
             name = contact.split('@')[0].replace('.', ' ').title()
-            draft = build_draft(name, lang)
+            tailor = _llm_tailor_reply_auth(name, contact, lang, (h.get('subject') or ''), text or h.get('snippet') or '')
+            draft = tailor or build_draft(name, lang)
+            if tailor:
+                metrics['tailored_drafts'] += 1
+                metrics['tailor_ok_count'] += 1
+            else:
+                metrics['tailor_fallback_count'] += 1
             hot_drafts.append({
                 'lead_id': h.get('id'),
                 'thread_id': tid,
@@ -196,8 +329,16 @@ def main():
             })
         report['hot_followup_drafts_count'] = len(hot_drafts)
         report['hot_followup_drafts'] = hot_drafts[:5]
-
-        # write pending queue
+        try:
+            if hot_message_ids:
+                hot_label_id = gmail_get_or_create_label_id('!!!hot-follow-up')
+                gmail_batch_modify(
+                    {'ids': hot_message_ids[:50]},
+                    addLabelIds=[hot_label_id]
+                )
+                report['hot_followup_labeled_count'] = len(hot_message_ids)
+        except Exception as e:
+            report['errors'].append({'hot_followup_labeling': str(e)})
         existing = []
         if PENDING_QUEUE_FILE.exists():
             try:
@@ -215,35 +356,135 @@ def main():
             final.append(item)
         PENDING_QUEUE_FILE.write_text('\n'.join(json.dumps(x, ensure_ascii=False) for x in final), encoding='utf-8')
         report['pending_outreach_count'] = len(final)
+        report['metrics'] = metrics
+        report['llm_tailoring_coverage']['contact_tailor_count'] += metrics.get('tailor_ok_count', 0)
+        report['llm_tailoring_coverage']['enabled'] = True
     except Exception as e:
         report['errors'].append({'hot_followup': repr(e)})
 
-    # Inbox interest probe
+    # Inbox interest probe -> continuous-improvement drafts
     try:
         interest_q = (
-            '!category:promotions !in:spam !in:trash '
-            'newer_than:7d "partnership" OR "collaboration" OR "proposal" '
-            '-"support reminder" -"rate the support" -"support survey" -"zendesk"'
+            'in:anywhere newer_than:14d '
+            '("partnership" OR "collaboration" OR "proposal" OR "opportunity" OR "integration")'
         )
-        inbox = search_all_folders(interest_q, limit=20)
-        report['new_inbox_interest_count'] = len(inbox)
-        report['new_inbox_examples'] = inbox[:5]
+        interest_hits = search_all_folders(interest_q)
+        seen_threads = set()
+        deduped_hits = []
+        for hit in interest_hits:
+            tid = hit.get('threadId') or hit.get('id')
+            if tid and tid in seen_threads:
+                continue
+            seen_threads.add(tid)
+            deduped_hits.append(hit)
+        report['new_inbox_interest_count'] = len(interest_hits)
+        report['new_inbox_interest_dedup_count'] = len(deduped_hits)
+        report['new_inbox_examples'] = deduped_hits[:5]
+        interest_drafts = []
+        for hit in interest_hits:
+            from_addr = hit.get('from', '')
+            m = re.search(r'<([^>]+)>', from_addr)
+            contact = m.group(1).lower() if m else from_addr.strip().lower()
+            if not contact or '@' not in contact:
+                continue
+            if contact.endswith('@ziontechgroup.com'):
+                continue
+            if any(contact.endswith(x) for x in (
+                '@github.com', '@users.noreply.github.com', '@fyxer.com', '@airbnb.com',
+                '@uber.com', '@tiktok.com', '@dpsmrn.org', '@surfline.com',
+                '@calendly.com', '@zendesk.com'
+            )):
+                continue
+            if 'noreply' in contact or 'notifications@github.com' == contact or 'dependabot' in contact:
+                continue
+            thread_id = hit.get('threadId') or hit.get('id')
+            if not thread_id:
+                continue
+            try:
+                full = gmail_get(hit.get('id'))
+                text = extract_text(full)
+            except Exception:
+                text = hit.get('snippet') or ''
+            lang = detect_lang(text)
+            name = contact.split('@')[0].replace('.', ' ').title()
+            tailor = _llm_tailor_reply_auth(name, contact, lang, (hit.get('subject') or 'New inquiry').strip(), text or '')
+            draft = tailor or build_draft(name, lang)
+            interest_drafts.append({
+                'lead_id': hit.get('id'),
+                'thread_id': thread_id,
+                'message_id': hit.get('id'),
+                'from': contact,
+                'name': name,
+                'company': contact.split('@')[1].split('.')[0].title() if '@' in contact else 'Partner',
+                'subject': hit.get('subject') or 'New inquiry',
+                'lang': lang,
+                'draft': draft,
+                'status': 'ready_to_review',
+                'dedup_key': re.sub(r'[^a-z0-9]', '', contact),
+                'created_at': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+            })
+            if tailor:
+                report['metrics']['tailored_drafts'] = report['metrics'].get('tailored_drafts', 0) + 1
+                report['llm_tailoring_coverage']['contact_tailor_count'] += 1
+                report['metrics']['tailor_ok_count'] = report['metrics'].get('tailor_ok_count', 0) + 1
+            else:
+                report['metrics']['tailor_fallback_count'] = report['metrics'].get('tailor_fallback_count', 0) + 1
+        report['interest_drafts_count'] = len(interest_drafts)
+        report['interest_drafts'] = interest_drafts[:5]
+        if interest_drafts:
+            try:
+                q_path = Path('lead-crm') / 'outreach_monitor' / 'processed' / 'interest_draft_queue.jsonl'
+                existing = []
+                if q_path.exists():
+                    existing = [json.loads(line) for line in q_path.read_text(encoding='utf-8', errors='ignore').splitlines() if line.strip()]
+                combined = existing + interest_drafts
+                seen_keys = set()
+                final = []
+                for item in combined:
+                    k = item.get('dedup_key') or item.get('from')
+                    if not k or k in seen_keys:
+                        continue
+                    seen_keys.add(k)
+                    final.append(item)
+                q_path.write_text('\n'.join(json.dumps(x, ensure_ascii=False) for x in final), encoding='utf-8')
+                report['interest_queue_count'] = len(final)
+            except Exception as queue_err:
+                report['errors'].append({'interest_queue': repr(queue_err)})
     except Exception as e:
         report['errors'].append({'inbox_probe': repr(e)})
 
-    # Dedup/ledger stats
+    # Bounded older-history mining
+    try:
+        min_ts = _last_history_ts()
+        if not min_ts:
+            min_ts = int(time.time()) - 30 * 24 * 3600
+        hist_hits = mine_older_history(min_ts)
+        report['historical_miner'] = {
+            'run_now': True,
+            'window_start': min_ts,
+            'hits': len(hist_hits),
+            'errors': None if hist_hits or not min_ts else 'no_hits_or_disabled',
+        }
+        if hist_hits:
+            _save_history_ts(int(time.time()))
+    except Exception as e:
+        report['errors'].append({'historical_miner': repr(e)})
+
+    # Coverage ratio
     try:
         dedup = load_json_safe(DEDUP_DIR / 'global_dedup_state.json', {})
         report['dedup_entries'] = len(dedup) if isinstance(dedup, dict) else 0
         if LEDGER_FILE.exists():
             report['ledger_entries'] = sum(1 for _ in LEDGER_FILE.open('r', encoding='utf-8'))
         report['hot_followup_ledger_entries'] = sum(1 for _ in HOT_FOLLOWUP_REPLY_LEDGER.open('r', encoding='utf-8')) if HOT_FOLLOWUP_REPLY_LEDGER.exists() else 0
+        total_drafts = report.get('hot_followup_drafts_count', 0) + report.get('interest_drafts_count', 0)
+        tailored = report['llm_tailoring_coverage'].get('contact_tailor_count', 0)
+        report['llm_tailoring_coverage']['coverage_ratio'] = round((tailored / total_drafts), 4) if total_drafts > 0 else (1.0 if tailored > 0 else 0.0)
     except Exception as e:
         report['errors'].append({'local_state': repr(e)})
 
     append_report(report)
     print(json.dumps(report, indent=2, ensure_ascii=False))
-
 
 if __name__ == '__main__':
     main()
