@@ -1414,6 +1414,16 @@ def send_ceo_reply(thread_id, to_addr, subject, body, references_message_id):
     to_key = (to_addr or '').lower()
     if to_key and to_key in _load_excluded():
         return {'error': 'excluded', 'to': to_addr}
+    # Prevent duplicate sends into a thread where a CEO reply is already present.
+    try:
+        thread = _timed_gmail_call(service.users().threads().get(userId="me", id=thread_id, format="metadata", metadataHeaders=["From", "Subject"])).execute()
+        for m in thread.get("messages", []) or []:
+            h = {x["name"]: x["value"] for x in m.get("payload", {}).get("headers", [])}
+            if (h.get("From") or "").lower() == "kleber@ziontechgroup.com":
+                print(f"DUPLICATE_SKIP thread={thread_id} to={to_addr}", flush=True)
+                return {'error': 'duplicate_thread_skip', 'thread_id': thread_id, 'message_id': m.get('id')}
+    except Exception:
+        pass
     body = sanitize_outreach_body(body)
     msg_id_str = f"<{references_message_id}>"
     raw_headers = [
