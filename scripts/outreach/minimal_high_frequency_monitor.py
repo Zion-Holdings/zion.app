@@ -369,6 +369,14 @@ def main():
             '("partnership" OR "collaboration" OR "proposal" OR "opportunity" OR "integration")'
         )
         interest_hits = search_all_folders(interest_q)
+        interest_hits = [
+            hit for hit in interest_hits
+            if 'free ai readiness audit' not in (hit.get('subject') or '').lower()
+            and 'custom proposal' not in (hit.get('subject') or '').lower()
+            and (hit.get('from') or '').lower() != 'no-reply@nvidiagram.a.bigcontent.io'
+            and (hit.get('from') or '').lower() != 'newsletter@artlist.com'
+            and not (hit.get('subject') or '').lower().startswith('re: ')
+        ]
         seen_threads = set()
         deduped_hits = []
         for hit in interest_hits:
