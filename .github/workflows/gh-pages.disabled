@@ -1,0 +1,78 @@
+name: Deploy to GitHub Pages
+'on':
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages-${{ github.sha }}
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: 'true'
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: '**/package-lock.json'
+      - run: npm install --no-audit --fund=false
+      - run: npm run build:ci
+      - name: Validate static export output
+        run: |
+          if [ ! -d out ] && [ ! -d docs ]; then
+            echo "Static export output missing: neither 'out/' nor 'docs/' exists after build"
+            ls -la .next || true
+            echo '---automation/reports/build-state.json---'; cat automation/reports/build-state.json 2>/dev/null || true; echo
+            echo '---log tail---'; tail -n 50 .next/trace 2>/dev/null || true
+            find out -maxdepth 2 -type f 2>/dev/null | sed -n '1,40p' || true
+            exit 1
+          fi
+      - name: Upload build state artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-state
+          path: automation/reports/build-state.json
+          retention-days: 7
+      - uses: actions/configure-pages@v4
+        with:
+          enablement: true
+      - name: Prepare Pages artifact
+        run: |
+          set -euo pipefail
+          mkdir -p artifact
+          if [ -d docs ]; then cp -a docs/. artifact/; fi
+          if [ -d out ]; then cp -a out/. artifact/; fi
+          if [ -f public/_redirects ]; then cat public/_redirects > artifact/_redirects; fi
+          if [ -f public/_headers ]; then cp -f public/_headers artifact/_headers; fi
+          if [ -d public ]; then
+            find public -type f -name 'index.html' -print0 | while IFS= read -r -d '' f; do
+              dest="artifact/${f#public/}"
+              mkdir -p "$(dirname "$dest")"
+              cp "$f" "$dest"
+            done
+            if [ -f public/sitemap.xml ]; then cp -f public/sitemap.xml artifact/sitemap.xml; fi
+            if [ -f public/robots.txt ]; then cp -f public/robots.txt artifact/robots.txt; fi
+            if [ -f public/feed.xml ]; then cp -f public/feed.xml artifact/feed.xml; fi
+          fi
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./artifact
+  deploy:
+    environment:
+      name: github-pages
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/deploy-pages@v4
