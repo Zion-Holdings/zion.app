@@ -8145,5 +8145,22 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Rating: 0\n#### Reasoning:\nThe only provided input is the domain name `ziontechgroup.com` and a matching `mydomain` tag, with no accompanying context, service descriptions, relevant keywords, or site content linking the entity to managed AI/IT services. The generic \"tech group\" branding in the do",
     "confidence": 0
+  },
+  {
+    "to": "prod@nivela9.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"Zion Tech Group\"",
+    "domain": "nivela9.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 0\n#### Context for the rating scale first:\n- 0 = No relevant value signal for managed AI/IT services: the provided information gives no indication the entity operates in or is associated with this specific service category.\n- 1 = Weak/indirect signal: generic tech-adjacent branding that ",
+    "confidence": 0
   }
 ]

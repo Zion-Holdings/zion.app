@@ -43,3 +43,4 @@
 {"ts": "2026-07-13T22:07:24.609555+00:00", "email": "hello@automailer.io", "msg_id": "19f5d80513b77478", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
 {"ts": "2026-07-13T23:20:18.752000+00:00", "email": "updates@sunbeltbusinessbrokers.com", "msg_id": "19f5dc35a97dd733", "query": "\"ziontechgroup.com\"", "confidence": 0, "high_signal": false}
 {"ts": "2026-07-13T23:21:47.641240+00:00", "email": "updates@sunbeltbusinessbrokers.com", "msg_id": "19f5dc35a97dd733", "query": "\"ziontechgroup.com\"", "confidence": 0, "high_signal": false}
+{"ts": "2026-07-14T02:31:06.120374+00:00", "email": "prod@nivela9.com", "msg_id": "19f5e72155944d2b", "query": "\"Zion Tech Group\"", "confidence": 0, "high_signal": false}
