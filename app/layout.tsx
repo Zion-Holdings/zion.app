@@ -20,38 +20,16 @@ import ErrorTracker from './components/ErrorTracker';
 import FieldPerformanceCollector from './components/FieldPerformanceCollector';
 import FloatingAgentStatus from './components/FloatingAgentStatus';
 import { AutoJsonLd } from './hooks/useAutoJsonLdPage';
+import { defaultMetadata } from './lib/metadata';
 import GlobalErrorBoundary from './GlobalErrorBoundary';
 import './globals.css';
 
 export const siteUrl = 'https://ziontechgroup.com';
 
 export const metadata = {
-  metadataBase: new URL(siteUrl),
-  title: {
-    default: 'Zion Tech Group | AI & IT Solutions',
-    template: '%s | Zion Tech Group',
-  },
-  description:
-    'Zion Tech Group delivers AI & IT solutions including automation, cybersecurity, cloud, quantum computing, enterprise software, and managed services for modern enterprises.',
-  applicationName: 'Zion Tech Group',
+  ...defaultMetadata,
   alternates: {
-    canonical: undefined,
-  },
-  icons: {
-    icon: '/icon.svg',
-    apple: '/icon.svg',
-  },
-  manifest: '/manifest.json',
-  formatDetection: {
-    telephone: false,
-    address: false,
-    email: false,
-  },
-  referrer: 'strict-origin-when-cross-origin',
-  appleWebApp: {
-    capable: true,
-    statusBarStyle: 'default',
-    title: 'Zion Tech Group',
+    canonical: '/',
   },
 };
 
