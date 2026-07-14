@@ -336,5 +336,66 @@
     "auth_error": null,
     "interval_seconds": 120,
     "live_send": false
+  },
+  {
+    "ts": "2026-07-14T17:32:21.790483+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T17:32:48.632382+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-14T17:32:59.951600+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T17:34:23.092541+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T17:34:49.153227+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-14T17:35:00.616367+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T17:36:25.503944+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120,
+    "live_send": false
   }
 ]
