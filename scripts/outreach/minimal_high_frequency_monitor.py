@@ -405,6 +405,8 @@ def main():
                 continue
             if 'noreply' in contact or 'notifications@github.com' == contact or 'dependabot' in contact:
                 continue
+            if any(p in contact for p in ['zendesk.com','freshdesk.com','helpscout.com','intercom.io','bigcontent.io']) or (hit.get('subject') or '').startswith('['):
+                continue
             thread_id = hit.get('threadId') or hit.get('id')
             if not thread_id:
                 continue
