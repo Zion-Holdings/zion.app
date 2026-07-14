@@ -1,40 +1,48 @@
-{
-  "events": [
-    {
-      "ts": "2026-07-14T15:23:00Z",
-      "event": "run_started",
-      "command": "python3 lead-crm/historical_email_miner.py"
-    },
-    {
-      "ts": "2026-07-14T15:23:00Z",
-      "event": "llm_failure",
-      "detail": "OpenAI returned 401 Unauthorized"
-    },
-    {
-      "ts": "2026-07-14T15:23:00Z",
-      "event": "llm_failure",
-      "detail": "Anthropic API key not set"
-    },
-    {
-      "ts": "2026-07-14T15:23:00Z",
-      "event": "llm_failure",
-      "detail": "All free providers exhausted; OpenRouter API key not set"
-    },
-    {
-      "ts": "2026-07-14T15:23:00Z",
-      "event": "llm_failure",
-      "detail": "Ollama unreachable at http://localhost:11434"
-    },
-    {
-      "ts": "2026-07-14T15:24:00Z",
-      "event": "run_terminated",
-      "reason": "Process killed after stuck retry loop with no valid LLM provider available"
+[
+  {
+    "events": [
+      {
+        "ts": "2026-07-14T15:23:00Z",
+        "event": "run_started",
+        "command": "python3 lead-crm/historical_email_miner.py"
+      },
+      {
+        "ts": "2026-07-14T15:23:00Z",
+        "event": "llm_failure",
+        "detail": "OpenAI returned 401 Unauthorized"
+      },
+      {
+        "ts": "2026-07-14T15:23:00Z",
+        "event": "llm_failure",
+        "detail": "Anthropic API key not set"
+      },
+      {
+        "ts": "2026-07-14T15:23:00Z",
+        "event": "llm_failure",
+        "detail": "All free providers exhausted; OpenRouter API key not set"
+      },
+      {
+        "ts": "2026-07-14T15:23:00Z",
+        "event": "llm_failure",
+        "detail": "Ollama unreachable at http://localhost:11434"
+      },
+      {
+        "ts": "2026-07-14T15:24:00Z",
+        "event": "run_terminated",
+        "reason": "Process killed after stuck retry loop with no valid LLM provider available"
+      }
+    ],
+    "result": {
+      "miner_health_written": true,
+      "miner_log_written": true,
+      "contacts_added": 0,
+      "classification_ran": false
     }
-  ],
-  "result": {
-    "miner_health_written": true,
-    "miner_log_written": true,
-    "contacts_added": 0,
-    "classification_ran": false
+  },
+  {
+    "ts": "2026-07-14T19:05:03.051703+00:00",
+    "event": "miner_timeout",
+    "query": "subject:automação",
+    "note": "soft timeout reached; stopping query loop early"
   }
-}
+]
