@@ -1,0 +1,59 @@
+name: Route Watchdog
+'on':
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci --no-audit --no-fund
+      - name: Build Next.js static export
+        run: npm run build:ci
+        continue-on-error: true
+      - name: Route watchdog
+        run: bash scripts/ci/route-watchdog.sh
+        continue-on-error: true
+      - name: Open issue on live site failure
+        if: failure()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = `Route watchdog failed: ${new Date().toISOString()}`;
+            const body = `The route watchdog step failed. Check site: https://ziontechgroup.com`;
+            try {
+              const existing = await github.rest.issues.listForRepo({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                state: 'open',
+                labels: ['bug','watchdog'],
+                per_page: 10,
+              });
+              const dup = existing.data.find((i) => i.title === title);
+              if (dup) {
+                await github.rest.issues.createComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: dup.number,
+                  body: body + `\n\nRun: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+                });
+              } else {
+                await github.rest.issues.create({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  title,
+                  body: body + `\n\nRun: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+                  labels: ['bug','watchdog'],
+                });
+              }
+            } catch (e) {
+              console.error(e);
+            }
