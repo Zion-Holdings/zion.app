@@ -328,13 +328,21 @@ def main():
     # Inbox interest probe -> continuous-improvement drafts
     try:
         interest_q = (
-            '!category:promotions !in:spam !in:trash '
-            'newer_than:7d ("partnership" OR "collaboration" OR "proposal") '
-            '-\'support reminder\' -\'rate the support\' -\'support survey\' -zendesk'
+            'in:anywhere newer_than:14d '
+            '("partnership" OR "collaboration" OR "proposal" OR "opportunity" OR "integration")'
         )
         interest_hits = search_all_folders(interest_q)
+        seen_threads = set()
+        deduped_hits = []
+        for hit in interest_hits:
+            tid = hit.get('threadId') or hit.get('id')
+            if tid and tid in seen_threads:
+                continue
+            seen_threads.add(tid)
+            deduped_hits.append(hit)
         report['new_inbox_interest_count'] = len(interest_hits)
-        report['new_inbox_examples'] = interest_hits[:5]
+        report['new_inbox_interest_dedup_count'] = len(deduped_hits)
+        report['new_inbox_examples'] = deduped_hits[:5]
         interest_drafts = []
         for hit in interest_hits:
             from_addr = hit.get('from', '')
@@ -343,6 +351,14 @@ def main():
             if not contact or '@' not in contact:
                 continue
             if contact.endswith('@ziontechgroup.com'):
+                continue
+            if any(contact.endswith(x) for x in (
+                '@github.com', '@users.noreply.github.com', '@fyxer.com', '@airbnb.com',
+                '@uber.com', '@tiktok.com', '@dpsmrn.org', '@surfline.com',
+                '@calendly.com', '@zendesk.com'
+            )):
+                continue
+            if 'noreply' in contact or 'notifications@github.com' == contact or 'dependabot' in contact:
                 continue
             thread_id = hit.get('threadId') or hit.get('id')
             if not thread_id:
