@@ -140,6 +140,36 @@ except Exception:
     pass
 LLM_FALLBACK_MODELS = [m.strip() for m in os.getenv('ZION_LLM_FALLBACK_MODELS', '').split(',') if m.strip()]
 
+# Continuous improvement knobs: cross-folder search + high-frequency cadence.
+MAX_AGE_DAYS = int(os.getenv('ZION_MAX_AGE_DAYS', '180'))
+DEDUP_COOLDOWN_SECONDS = int(os.getenv('ZION_DEDUP_COOLDOWN_SECONDS', str(24 * 3600)))
+HIGH_FREQUENCY_CROSS_FOLDER = bool(os.getenv('ZION_HIGH_FREQUENCY_CROSS_FOLDER', '1'))
+HIGH_FREQUENCY_LABEL_QUERIES = [
+    'label:"!!!hot-follow-up"', 
+    'label:"!!!!hot-follow-up"', 
+    'label:"!!!!HOT FOLLOW-UP"',
+    'label:"!!hot-followup"', 
+    'label:"!!hot-follow-up"',
+    'label:"!hot-follow-up"',
+    'in:anywhere newer_than:7d (partnership OR collaboration OR proposal OR "next steps" OR "opportunity")',
+]
+HIGH_FREQUENCY_TIMEOUT_SECONDS = int(os.getenv('ZION_HIGH_FREQUENCY_TIMEOUT_SECONDS', '25'))
+
+def _multi_label_query(service, queries, max_results_per_query=20):
+    seen = set()
+    results = []
+    for q in queries:
+        try:
+            resp = _timed_gmail_call(service.users().messages().list(userId='me', q=q, maxResults=max_results_per_query))
+            for m in resp.get('messages', []):
+                mid = m.get('id')
+                if mid and mid not in seen:
+                    seen.add(mid)
+                    results.append(m)
+        except Exception:
+            continue
+    return results
+
 def load_state():
     if STATE_FILE.exists():
         try:

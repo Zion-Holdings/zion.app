@@ -1,10 +1,10 @@
 {
-  "total_runs": 511,
-  "successful_runs": 438,
+  "total_runs": 637,
+  "successful_runs": 511,
   "auth_error_runs": 399,
-  "contacts_found": 18,
+  "contacts_found": 71,
   "live_sent": 0,
   "dead_thread_contacts": 0,
   "last_interval_seconds": 15,
-  "timeout_runs": 73
+  "timeout_runs": 126
 }
