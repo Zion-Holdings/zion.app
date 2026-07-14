@@ -39,10 +39,12 @@ jobs:
         pwd
 
     - name: Build site
-      run: npm run build
+      run: |-
+        npm run build > /tmp/build.log 2>&1
+        cat /tmp/build.log || true
 
     - name: Start local server (background)
-      run: |
+      run: |-
         npm start > /tmp/next-start.log 2>&1 &
         server_pid=$!
         echo "PID=$server_pid"
@@ -96,6 +98,7 @@ jobs:
           .hermes/memory/performance-budget/
           /tmp/perf-output.txt
           /tmp/next-start.log
+          /tmp/build.log
         retention-days: 30
 
     - name: Post PR comment (if PR and failed)
