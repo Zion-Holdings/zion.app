@@ -559,6 +559,7 @@ def _call_nous_hermes(thread_text: str, contact_name: str, company_name: str, la
             "- Start with a warm thanks for the past collaboration; if possible, name the project area.\n"
             "- Propose 2 concrete, mutually beneficial next business ideas for both companies.\n"
             "- Advance the conversation toward a meeting/call next week, and include Calendly: https://calendly.com/kleber-ziontechgroup\n"
+            "- Also include a direct meeting link: https://meet.google.com/ouu-khao-kuy\n"
             "- Share our website: https://ziontechgroup.com, invite them to explore our new AI services, and mention that we offer many free services/tools there.\n"
             "- Keep it friendly, professional, and concise.\n"
             "- End with signature: Kleber Garcia Alcatrão | CEO, Zion Tech Group and https://ziontechgroup.com\n\n"
@@ -591,6 +592,8 @@ def _call_nous_hermes(thread_text: str, contact_name: str, company_name: str, la
         return content.strip()
     except Exception:
         return ''
+
+llm_tailor_reply = _call_nous_hermes
 
 _PROJECT_KEYWORDS = {
     'aiops': ['monitor', 'observability', 'incident', 'opsgenie', 'pagerduty', 'metric', 'trace', 'log', 'alert', 'runbook', 'oncall', 'reliability', 'mttr', 'change'],
