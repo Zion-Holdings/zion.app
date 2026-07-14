@@ -41,7 +41,7 @@ def search_all_folders(q, maxResults=20):
     for query in [q, f"{q} in:anywhere"]:
         scanned_queries += 1
         try:
-            msgs = gmail_search(query, limit=maxResults, all_folders=True)
+            msgs = gmail_search(query, all_folders=True)
         except Exception:
             continue
         for m in msgs:
@@ -213,7 +213,7 @@ def main():
 
     # Check hot-follow-up label directly
     try:
-        hits = search_all_folders('label:"!!!hot-follow-up"', limit=20)
+        hits = search_all_folders('label:"!!!hot-follow-up"')
         report['hot_followup_threads'] = len(hits)
         hot_drafts = []
         for h in hits:
@@ -284,7 +284,7 @@ def main():
             'newer_than:7d "partnership" OR "collaboration" OR "proposal" '
             '-"support reminder" -"rate the support" -"support survey" -"zendesk"'
         )
-        inbox = search_all_folders(interest_q, limit=20)
+        inbox = search_all_folders(interest_q)
         report['new_inbox_interest_count'] = len(inbox)
         report['new_inbox_examples'] = inbox[:5]
     except Exception as e:

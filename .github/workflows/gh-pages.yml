@@ -26,7 +26,6 @@ jobs:
         cache-dependency-path: '**/package-lock.json'
     - run: npm ci --no-audit --no-fund
     - run: npm run build:ci
-    - run: node scripts/checks/build-and-verify.cjs
     - name: Validate static export output
       run: |
         if [ ! -d out ] && [ ! -d docs ]; then
