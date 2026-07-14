@@ -1,14 +1,5 @@
 [
   {
-    "ts": "2026-07-13T20:10:16.773312+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")",
-    "interval_seconds": 15,
-    "live_send": false
-  },
-  {
     "ts": "2026-07-13T20:10:26.362457+00:00",
     "contacts": 0,
     "sent": 0,
@@ -1718,6 +1709,15 @@
     "dead_thread": 0,
     "auth_error": "timeout",
     "interval_seconds": 85,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-14T05:36:16.411591+00:00",
+    "contacts": 1,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 15,
     "live_send": false
   }
 ]
