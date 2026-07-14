@@ -20,6 +20,14 @@ function writeState(payload) {
   fs.writeFileSync(STATE_FILE, JSON.stringify({ ...payload, wroteAt: new Date().toISOString() }, null, 2), 'utf8');
 }
 
+function writeFinalState(success) {
+  writeState({
+    phase: success ? 'final-success' : 'final-failed',
+    success,
+    wroteAt: new Date().toISOString(),
+  });
+}
+
 function probeArtifacts() {
   const outDir = path.join(REPO, 'out');
   const dataDir = path.join(outDir, 'data');
@@ -81,6 +89,7 @@ child.on('close', (code) => {
       lastLines: readLastLines('out', 200),
       nextLog: readLastLines('.next', 200),
     });
+    writeFinalState(false);
     process.exit(buildExit);
   }
 
@@ -100,8 +109,8 @@ child.on('close', (code) => {
       artifacts: probeArtifacts(),
       outTail: readLastLines('out', 200),
     });
-    // Do not fail the CI build job on postbuild validation; Pages deploy can still proceed with the built artifact.
-    // console.warn('[build-wrapper] postbuild failed:', postErr && postErr.message ? postErr.message : String(postErr));
+    writeFinalState(false);
+    process.exit(0);
   }
 
   writeState({
@@ -111,6 +120,7 @@ child.on('close', (code) => {
     durationMs: timeMs(buildStart),
     artifacts: probeArtifacts(),
   });
+  writeFinalState(true);
   process.exit(0);
 });
 
