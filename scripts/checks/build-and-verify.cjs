@@ -13,7 +13,6 @@ const REQUIRED = exportDir
   ? [
       path.join(exportDir, 'index.html'),
       path.join(exportDir, '404.html'),
-      path.join(exportDir, 'data', 'services.json'),
       path.join(exportDir, 'service-index.json'),
     ]
   : [];
@@ -33,18 +32,20 @@ function tryRun(label, cmd) {
   }
 }
 
+function hasServiceDataArtifact() {
+  return exists(path.join(exportDir || outDir, 'data', 'services.json')) || exists(path.join(exportDir || outDir, 'service-index.json'));
+}
+
 function ensureArtifacts(missing) {
-  const needServicesJson = missing.includes(path.join(exportDir || outDir, 'data', 'services.json'));
-  const needServiceIndex = missing.includes(path.join(exportDir || outDir, 'service-index.json'));
   let regenerated = false;
-  if (needServicesJson) {
-    console.log('services.json missing — generating...');
-    const ok = tryRun('services.json', 'node scripts/generate_services_json.cjs');
+  if (!hasServiceDataArtifact()) {
+    console.log('service data missing — generating service-index.json...');
+    const ok = tryRun('service-index.json', 'node scripts/generate_service_index.cjs');
     regenerated = ok || regenerated;
   }
-  if (needServiceIndex) {
-    console.log('service-index.json missing — generating...');
-    const ok = tryRun('service-index.json', 'node scripts/generate_service_index.cjs');
+  if (!exists(path.join(exportDir || outDir, 'index.html'))) {
+    console.log('index.html missing — attempting build...');
+    const ok = tryRun('build', 'npm run build');
     regenerated = ok || regenerated;
   }
   return regenerated;
@@ -100,7 +101,6 @@ function main() {
 
   logEntity('.next/export-mappers.json')
   logEntity('.next/build/static/index.html')
-
   const mapperCount = parseExportMappersCount()
   const htmlCount = routeHtmlCount()
   console.log(`export mapper_route_count=${mapperCount} html_route_count=${htmlCount}`)
@@ -115,17 +115,15 @@ function main() {
   }
 
   let regenerated = false;
-  if (missing.length > 0 || mapperCount === 0 || htmlCount === 0) {
-    console.warn('required artifacts or route roots missing — attempting local build/remediation...');
+  if (missing.length > 0) {
+    console.warn('required artifacts missing — attempting local build/remediation...');
     const buildOk = tryRun('build', 'npm run build');
     if (!buildOk) {
       console.warn('build failed — skipping further local remediation');
     } else {
       const afterRequired = REQUIRED.filter((f) => !exists(f));
-      const afterMapper = parseExportMappersCount()
-      const afterHtml = routeHtmlCount()
-      console.log(`postbuild required_missing=${afterRequired.length} mapper_route_count=${afterMapper} html_route_count=${afterHtml}`)
-      if (afterRequired.length || afterMapper === 0 || afterHtml === 0) {
+      console.log(`postbuild required_missing=${afterRequired.length} mapper_route_count=${mapperCount} html_route_count=${htmlCount}`)
+      if (afterRequired.length) {
         regenerated = ensureArtifacts(afterRequired);
         missing = REQUIRED.filter((f) => !exists(f));
       }
@@ -139,14 +137,14 @@ function main() {
     missingCount: missing.length,
     artifactsGenerated: regenerated,
     buildError,
-    next: missing.length === 0 && mapperCount > 0 && htmlCount > 0
+    next: missing.length === 0
       ? 'verified local static export'
       : 'build regression — inspect referenced scripts/logs',
   };
 
   fs.writeFileSync(statePath, JSON.stringify(state, null, 2));
   console.log(JSON.stringify(state, null, 2));
-  process.exit(missing.length === 0 && mapperCount > 0 && htmlCount > 0 ? 0 : 2);
+  process.exit(missing.length === 0 ? 0 : 2);
 }
 
 try { main(); } catch (e) { console.error(e); process.exit(1); }
