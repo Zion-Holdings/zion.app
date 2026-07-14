@@ -33,42 +33,47 @@ def load_json_safe(path: Path, default):
     return default
 
 def search_all_folders(q, maxResults=20):
-    """Search everywhere for a query."""
+    """Search everywhere for a query, with bounded retries on transient failures."""
     hits = []
     seen_ids = set()
     seen_threads = set()
     scanned_queries = 0
+    last_err = None
     for query in [q, f"{q} in:anywhere"]:
         scanned_queries += 1
-        try:
-            msgs = gmail_search(query, all_folders=True)
-        except Exception:
-            continue
-        for m in msgs:
-            mid = m.get('id')
-            tid = m.get('threadId')
-            if not mid or mid in seen_ids:
-                continue
-            if tid and tid in seen_threads:
-                continue
+        for attempt in range(3):
             try:
-                full = gmail_get(mid)
-            except Exception:
+                msgs = gmail_search(query, all_folders=True)
+            except Exception as e:
+                last_err = e
+                time.sleep(1 + attempt * 2)
                 continue
-            seen_ids.add(full.get('id'))
-            if full.get('threadId'):
-                seen_threads.add(full['threadId'])
-            headers = {h['name']: h['value'] for h in full.get('payload', {}).get('headers', [])}
-            hits.append({
-                'id': full.get('id'),
-                'threadId': full.get('threadId'),
-                'from': headers.get('From', ''),
-                'subject': headers.get('Subject', ''),
-                'date': headers.get('Date', ''),
-                'snippet': full.get('snippet', '')[:200],
-            })
+            for m in msgs:
+                mid = m.get('id')
+                tid = m.get('threadId')
+                if not mid or mid in seen_ids:
+                    continue
+                if tid and tid in seen_threads:
+                    continue
+                try:
+                    full = gmail_get(mid)
+                except Exception:
+                    continue
+                seen_ids.add(full.get('id'))
+                if full.get('threadId'):
+                    seen_threads.add(full['threadId'])
+                headers = {h['name']: h['value'] for h in full.get('payload', {}).get('headers', [])}
+                hits.append({
+                    'id': full.get('id'),
+                    'threadId': full.get('threadId'),
+                    'from': headers.get('From', ''),
+                    'subject': headers.get('Subject', ''),
+                    'date': headers.get('Date', ''),
+                    'snippet': full.get('snippet', '')[:200],
+                })
+            break
     try:
-        print(f'METRIC search_all_folders scanned_queries={scanned_queries} hits={len(hits)}', flush=True)
+        print(f'METRIC search_all_folders scanned_queries={scanned_queries} hits={len(hits)} last_err={last_err!r}', flush=True)
     except Exception:
         pass
     return hits
