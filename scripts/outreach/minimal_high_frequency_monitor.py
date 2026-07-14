@@ -231,7 +231,7 @@ def main():
             'enabled': True,
             'contact_tailor_count': 0,
             'coverage_ratio': 0.0,
-            'blocker': 'awaiting_first_contact_thread'
+            'blocker': None
         },
         'errors': [],
         'pending_outreach_count': 0,
@@ -249,6 +249,8 @@ def main():
             'summarized_threads': 0
         },
         'ztg_sender_email': 'kleber@ziontechgroup.com',
+        'tailor_fallback_count': 0,
+        'tailor_ok_count': 0,
         'recent_outgoing_check': True,
         'recent_outgoing_subjects_sample': [],
         'recent_outgoing_threads': [],
@@ -302,6 +304,10 @@ def main():
             draft = tailor or build_draft(name, lang)
             if tailor:
                 report['metrics']['tailored_drafts'] += 1
+                report['llm_tailoring_coverage']['contact_tailor_count'] += 1
+                report['tailor_ok_count'] = report.get('tailor_ok_count', 0) + 1
+            else:
+                report['tailor_fallback_count'] = report.get('tailor_fallback_count', 0) + 1
             hot_drafts.append({
                 'lead_id': h.get('id'),
                 'thread_id': tid,
@@ -414,6 +420,10 @@ def main():
             })
             if tailor:
                 report['metrics']['tailored_drafts'] = report['metrics'].get('tailored_drafts', 0) + 1
+                report['llm_tailoring_coverage']['contact_tailor_count'] += 1
+                report['tailor_ok_count'] = report.get('tailor_ok_count', 0) + 1
+            else:
+                report['tailor_fallback_count'] = report.get('tailor_fallback_count', 0) + 1
         report['interest_drafts_count'] = len(interest_drafts)
         report['interest_drafts'] = interest_drafts[:5]
         if interest_drafts:
@@ -445,6 +455,9 @@ def main():
         if LEDGER_FILE.exists():
             report['ledger_entries'] = sum(1 for _ in LEDGER_FILE.open('r', encoding='utf-8'))
         report['hot_followup_ledger_entries'] = sum(1 for _ in HOT_FOLLOWUP_REPLY_LEDGER.open('r', encoding='utf-8')) if HOT_FOLLOWUP_REPLY_LEDGER.exists() else 0
+        total_drafts = report.get('hot_followup_drafts_count', 0) + report.get('interest_drafts_count', 0)
+        tailored = report['llm_tailoring_coverage'].get('contact_tailor_count', 0)
+        report['llm_tailoring_coverage']['coverage_ratio'] = round((tailored / total_drafts), 4) if total_drafts > 0 else (1.0 if tailored > 0 else 0.0)
     except Exception as e:
         report['errors'].append({'local_state': repr(e)})
 
