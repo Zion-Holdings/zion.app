@@ -1,30 +1,50 @@
+#!/usr/bin/env python3
 import sys
-sys.path.insert(0, '/data/data/com.termux/files/home')
-from commands.google_workspace import gmail_search, gmail_get, gmail_thread_get
+sys.path.insert(0, 'commands')
+from google_workspace import gmail_search, gmail_thread_get
+import json
 
-results = gmail_search('label:!!!hot-follow-up', limit=20, all_folders=True)
-if not results:
-    print('NO_HOT_FOLLOWUP_THREADS')
+query = 'label:"""hot-follow-up"""'
+results = gmail_search(query, limit=20, all_folders=True)
+
+print(f"QUERY: {query}")
+print(f"HITS: {len(results)}")
+
+if len(results) == 0:
+    print("NO_HOT_FOLLOWUP_THREADS")
     sys.exit(0)
 
-seen = set()
-for item in results:
-    mid = item['id']
-    tid = item.get('threadId', mid)
-    if tid in seen:
-        continue
-    seen.add(tid)
+# dedupe by threadId
+seen_threads = {}
+for msg in results:
+    tid = msg.get('threadId', msg.get('id'))
+    if tid not in seen_threads:
+        seen_threads[tid] = msg['id']
+
+output = []
+for tid, first_msg_id in sorted(seen_threads.items()):
     try:
-        msg = gmail_get(mid)
+        thread_msgs = gmail_thread_get(tid)
     except Exception as e:
-        print(f"ERROR message={mid} detail={e}")
-        continue
-    headers = {h['name']: h['value'] for h in msg.get('payload', {}).get('headers', [])}
+        thread_msgs = []
+    
+    # Extract headers from first message
+    msg0 = thread_msgs[0] if thread_msgs else {}
+    headers = {}
+    for h in msg0.get('payload', {}).get('headers', []):
+        headers[h['name']] = h.get('value', '')
+    
     subject = headers.get('Subject', '')
-    frm = headers.get('From', '')
+    sender = headers.get('From', '')
     date = headers.get('Date', '')
-    try:
-        thread_msgs = len(gmail_thread_get(tid))
-    except Exception:
-        thread_msgs = 1
-    print(f"thread_id={tid} subject={subject!r} from={frm!r} date={date!r} message_count={thread_msgs}")
+    message_count = len(thread_msgs)
+    
+    output.append({
+        'threadId': tid,
+        'subject': subject,
+        'from': sender,
+        'date': date,
+        'message_count': message_count,
+    })
+
+print(json.dumps(output, indent=2))

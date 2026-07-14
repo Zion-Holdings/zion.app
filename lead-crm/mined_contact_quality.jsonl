@@ -60,3 +60,9 @@
 {"ts": "2026-07-14T19:22:01.451363+00:00", "email": "postmaster@datavista.com", "msg_id": "19f620d2353bdbd6", "query": "\"Zion Tech Group\"", "confidence": 1, "high_signal": false}
 {"ts": "2026-07-14T19:22:12.167617+00:00", "email": "scotth@datavista.com", "msg_id": "19f620cc3879fe5e", "query": "\"Zion Tech Group\"", "confidence": 0, "high_signal": false}
 {"ts": "2026-07-14T20:44:59.339766+00:00", "email": "messaging-digest-noreply@linkedin.com", "msg_id": "19f6241022f545a7", "query": "\"ziontechgroup.com\"", "confidence": 0, "high_signal": false}
+{"ts": "2026-07-14T23:32:10.400738+00:00", "email": "marcello.rodrigues@intersoftkk.com", "msg_id": "19f62f878ff81835", "query": "\"Zion Tech Group\"", "confidence": 1, "high_signal": false}
+{"ts": "2026-07-14T23:32:29.802825+00:00", "email": "privacy@coderabbit.ai", "msg_id": "19f62f2b92af578a", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
+{"ts": "2026-07-14T23:32:38.266024+00:00", "email": "armando@barrettfinancial.com", "msg_id": "19f62e69847ebef6", "query": "\"ziontechgroup.com\"", "confidence": 0, "high_signal": false}
+{"ts": "2026-07-14T23:32:50.379745+00:00", "email": "farhan.abdul@intersoftkk.com", "msg_id": "19f62d433f98a8d2", "query": "\"ziontechgroup.com\"", "confidence": 0, "high_signal": false}
+{"ts": "2026-07-14T23:33:08.404131+00:00", "email": "gaurav.chopra@intersoftkk.com", "msg_id": "19f62d433f98a8d2", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
+{"ts": "2026-07-14T23:33:19.565960+00:00", "email": "abid.qureshi@intersoftkk.com", "msg_id": "19f62d433f98a8d2", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
