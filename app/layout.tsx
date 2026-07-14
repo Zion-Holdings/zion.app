@@ -35,7 +35,7 @@ export const metadata = {
     'Zion Tech Group delivers AI & IT solutions including automation, cybersecurity, cloud, quantum computing, enterprise software, and managed services for modern enterprises.',
   applicationName: 'Zion Tech Group',
   alternates: {
-    canonical: undefined,
+    canonical: '/',
   },
   icons: {
     icon: '/icon.svg',
