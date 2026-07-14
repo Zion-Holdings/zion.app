@@ -588,91 +588,9 @@ def _call_nous_hermes(thread_text: str, contact_name: str, company_name: str, la
         if not isinstance(content, str) or not content.strip():
             print('NOUS_EMPTY_CONTENT', flush=True)
             return ''
-        def _call_nous_hermes(thread_text: str, contact_name: str, company_name: str, language: str) -> str:
-    endpoint = LLM_API_ENDPOINT or os.getenv('OPENROUTER_API_ENDPOINT') or os.getenv('GROQ_API_ENDPOINT') or os.getenv('GEMINI_API_ENDPOINT')
-    api_key = LLM_API_KEY or os.getenv('OPENROUTER_API_KEY') or os.getenv('GROQ_API_KEY') or os.getenv('GEMINI_API_KEY')
-    model = os.getenv('LLM_MODEL') or os.getenv('ZION_LLM_MODEL') or os.getenv('OPENROUTER_MODEL') or os.getenv('GROQ_MODEL') or os.getenv('GEMINI_MODEL') or 'openai/gpt-4o-mini'
-    if not endpoint or not api_key:
-        # Hermes/Nous fallback if configured.
-        try:
-            nous_reply = _call_nous_hermes(thread_text, contact_name, company_name, language)
-            if nous_reply:
-                return nous_reply
-        except Exception as e:
-            print('LLM_NOUS_ERR', repr(e), flush=True)
+        return content.strip()
+    except Exception:
         return ''
-    trimmed = (thread_text or '').strip()
-    trimmed = trimmed[:2400]
-    prompt = (
-        f"You are the CEO of Zion Tech Group writing in {language} to {contact_name} at {company_name}.\n\n"
-        "Context from recent thread:\n"
-        f"{trimmed}\n\n"
-        "Write ONE complete email. Requirements:\n"
-        "- Start with a warm thanks for the past collaboration; if possible, name the project area.\n"
-        "- Propose 2 concrete, mutually beneficial next business ideas for both companies.\n"
-        "- Advance the conversation toward a meeting/call next week, and include Calendly: https://calendly.com/kleber-ziontechgroup\n"
-        "- Share our website: https://ziontechgroup.com, invite them to explore our new AI services, and mention that we offer many free services/tools there.\n"
-        "- Keep it friendly, professional, and concise.\n"
-        "- End with signature: Kleber Garcia Alcatrão | CEO, Zion Tech Group and https://ziontechgroup.com\n\n"
-        "Attention: do not invent false claims. Use only facts plausibly supported by the thread.\n"
-    )
-    headers = {
-        'Authorization': f"Bearer {api_key}",
-        'Content-Type': 'application/json',
-    }
-    body = json.dumps({
-        'model': model,
-        'messages': [
-            {'role': 'system', 'content': f'Write one complete email in {language}. No signature block. Friendly but professional CEO tone.'},
-            {'role': 'user', 'content': prompt},
-        ],
-        'temperature': 0.35,
-        'max_tokens': 480,
-    }).encode('utf-8')
-    last_err = None
-    models = [model] + [m.strip() for m in (os.getenv('ZION_LLM_FALLBACK_MODELS') or '').split(',') if m.strip()]
-    required = [
-        'calendly.com/kleber-ziontechgroup',
-        'ziontechgroup.com',
-        'free',
-        'thank',
-    ]
-    positive_signals = [
-        'opportunity',
-        'pleasure',
-        'collaboration',
-        'partnership',
-        'project',
-        'worked with',
-        'worked together',
-    ]
-    for m in models:
-        for attempt in range(3):
-            try:
-                import urllib.request
-                payload = json.loads(body.decode('utf-8'))
-                payload['model'] = m
-                req = urllib.request.Request(endpoint, data=json.dumps(payload).encode('utf-8'), headers=headers, method='POST')
-                with urllib.request.urlopen(req, timeout=35) as resp:
-                    data = json.loads(resp.read().decode('utf-8'))
-                reply = ((data.get('choices') or [{}])[0].get('message') or {}).get('content')
-                if not isinstance(reply, str) or not reply.strip():
-                    continue
-                reply = reply.strip()
-                lower = reply.lower()
-                if not all(r in lower for r in required):
-                    print('LLM_MISSING_REQUIRED_RETRY', m, flush=True)
-                    continue
-                if not any(s in lower for s in positive_signals):
-                    print('LLM_MISSING_POSITIVE_SIGNAL_RETRY', m, flush=True)
-                    continue
-                return reply
-            except Exception as e:
-                last_err = repr(e)
-                print('LLM_ERR', m, last_err, f'attempt={attempt+1}', flush=True)
-                time.sleep(1.8 if attempt else 0.25)
-    print('LLM_FINAL_ERR', last_err)
-    return ''
 
 _PROJECT_KEYWORDS = {
     'aiops': ['monitor', 'observability', 'incident', 'opsgenie', 'pagerduty', 'metric', 'trace', 'log', 'alert', 'runbook', 'oncall', 'reliability', 'mttr', 'change'],
