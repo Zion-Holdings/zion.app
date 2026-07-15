@@ -8927,5 +8927,22 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Rating: 0\n#### Reasoning:\nThe only provided information is the generic domain name `ziontechgroup.com`, which contains no keywords, context, or explicit indicators tied to managed AI or IT services (no references to \"managed services\", \"AI\", \"IT support\", \"outsourced tech operations\", or other r",
     "confidence": 0
+  },
+  {
+    "to": "atendimento@cx.mercadobitcoin.com.br",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"Zion Tech Group\"",
+    "domain": "cx.mercadobitcoin.com.br",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 1 (weak/indirect relevance)\n---\n#### Rating rubric for context:\n- 0 = No relevance to managed AI/IT services (e.g., entity operates in a completely unrelated industry like food service or retail with no tech service offerings)\n- 1 = Weak/indirect relevance: Entity operates in the broader",
+    "confidence": 1
   }
 ]
