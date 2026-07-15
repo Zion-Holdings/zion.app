@@ -15,5 +15,16 @@
     "provider": "gmail",
     "sent_at": "2026-07-14T00:00:00Z",
     "status": "sent"
+  },
+  {
+    "thread_id": "19f4ce5cc510809e",
+    "message_id": "19f671169860685f",
+    "to": "Ruben.Becerra@hemmersbach.com",
+    "subject": "RE: Ruben Becerra and Kleber Garcia Alcatrão",
+    "provider": "gmail",
+    "sent_at": "2026-07-15T18:37:01.875563+00:00",
+    "status": "sent",
+    "source": "autopilot-ceo-reply",
+    "dedup_key": "ruben-becerra-hemmersbach"
   }
 ]

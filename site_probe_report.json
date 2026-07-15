@@ -1,0 +1,69 @@
+{
+  "origin": "https://ziontechgroup.com",
+  "probed": [
+    {
+      "path": "/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": "6704",
+      "location": "",
+      "server": "GitHub.com"
+    },
+    {
+      "path": "/services/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": "6323",
+      "location": "",
+      "server": "GitHub.com"
+    },
+    {
+      "path": "/tools/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": "7147",
+      "location": "",
+      "server": "GitHub.com"
+    },
+    {
+      "path": "/contact/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": "3505",
+      "location": "",
+      "server": "GitHub.com"
+    },
+    {
+      "path": "/pricing/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": "3463",
+      "location": "",
+      "server": "GitHub.com"
+    },
+    {
+      "path": "/solutions/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": "3556",
+      "location": "",
+      "server": "GitHub.com"
+    },
+    {
+      "path": "/blog/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": "3118",
+      "location": "",
+      "server": "GitHub.com"
+    },
+    {
+      "path": "/about/",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8",
+      "content_length": "3698",
+      "location": "",
+      "server": "GitHub.com"
+    }
+  ]
+}

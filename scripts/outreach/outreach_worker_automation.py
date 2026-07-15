@@ -35,6 +35,15 @@ def _init_gmail_service():
         gog_headers()
         service = True
         GMAIL_AUTH_ERROR = None
+        return
+    except Exception as e:
+        pass
+    try:
+        from google.auth import default as gcloud_default
+        creds, _ = gcloud_default(scopes=['https://www.googleapis.com/auth/gmail.modify'])
+        service = True
+        GMAIL_AUTH_ERROR = None
+        return
     except Exception as e:
         service = None
         GMAIL_AUTH_ERROR = repr(e)
@@ -42,8 +51,10 @@ def _init_gmail_service():
             PROJECT_ROOT / '.google' / 'token.json',
             PROJECT_ROOT / '.google' / 'credentials.json',
             PROJECT_ROOT / '.google' / 'gmail_token.json',
+            Path.home() / '.openclaw' / 'workspace' / 'gog_tokens.json',
             Path.home() / '.credentials' / 'gmail.json',
             Path.home() / '.google' / 'token.json',
+            Path.home() / '.hermes' / 'google_token.json',
             Path(os.getenv('GOOGLE_GMAIL_TOKEN_PATH', '')) if os.getenv('GOOGLE_GMAIL_TOKEN_PATH') else None,
         ]
         GMAIL_AUTH_ERROR = {
