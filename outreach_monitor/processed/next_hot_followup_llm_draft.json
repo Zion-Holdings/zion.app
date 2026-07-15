@@ -1,15 +1,16 @@
 {
-  "leads": [
+  "drafted_at": "2026-07-15T00:00:00+00:00",
+  "drafts_created": 0,
+  "llm_provider": "rule_based",
+  "note": "No new draft created. The only thread in !!!hot-follow-up (thread_id: 19f579f2341878e4) is a GitHub Codespaces workload notification whose latest message is already from Kleber Garcia Alcatrão; no reply was needed.",
+  "threads_scanned": 1,
+  "threads": [
     {
-      "to": "rsingh@solyssey.com",
-      "subject": "Re: Supplier Collaboration Opportunity - Zion",
-      "body": "Hi Ranmeet Singh,\n\nThank you for the opportunity to work together on past projects — I truly value the partnership we built.\n\nFor this next phase, I see two concrete opportunities to collaborate:\n1. Embedding smart tools into your operations to cut rework and speed up delivery.\n2. Co-creating a digital services offer for your end clients with a revenue-share model.\n\nAt Zion Tech Group we have a platform with free services and tools that can accelerate these initiatives: https://ziontechgroup.com\n\nIf this resonates, let us schedule a quick call: https://calendly.com/kleber-ziontechgroup\n\nBest regards,\nKleber Garcia Alcatrão\nCEO, Zion Tech Group\n+1 302 464 0950",
-      "thread_id": "19f3df60bc1cf2ed",
-      "message_id": "19f43092f91bbb6e",
-      "lang": "en",
-      "status": "drafted",
-      "ts": 1784122429,
-      "source": "cron_hot_followup_llm"
+      "thread_id": "19f579f2341878e4",
+      "message_id": "19f621fad9bbcd90",
+      "sender": "github-codespaces[bot] <notifications@github.com>",
+      "subject": "Re: [Zion-support/zion-support.github.io] Run failed: [main]: feat(outreach): keep !!!hot-follow-up threads even if not reply-like - main (ad3a0c2)",
+      "status": "skipped_already_replied"
     }
   ]
 }

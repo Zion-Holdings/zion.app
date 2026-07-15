@@ -1,7 +1,17 @@
 {
-  "threads_scanned": 0,
+  "threads_scanned": 1,
   "duplicates_skipped": 0,
   "drafts_created": 0,
   "errors": [],
-  "llm_provider": "rule_based"
+  "llm_provider": "rule_based",
+  "note": "Thread 19f579f2341878e4 is a GitHub Codespaces workflow-failure notification. Latest message is already from Kleber Garcia Alcatrão, so no new reply is needed. Search was executed with quoted label query because '!!!' characters in the raw label query caused zero results via the default keyword search path.",
+  "scanned_threads": [
+    {
+      "thread_id": "19f579f2341878e4",
+      "message_id": "19f621fad9bbcd90",
+      "sender": "github-codespaces[bot] <notifications@github.com>",
+      "subject": "Re: [Zion-support/zion-support.github.io] Run failed: [main]: feat(outreach): keep !!!hot-follow-up threads even if not reply-like - main (ad3a0c2)",
+      "reason": "Latest message is already from Kleber Garcia Alcatrão; no reply needed"
+    }
+  ]
 }
