@@ -128,7 +128,7 @@ def main():
     print(f"Loaded {len(ledger)} ledger entries")
 
     print("\n=== STEP 1: SEARCH ===")
-    results = gmail_search('label:"!!!hot-follow-up"', limit=20, all_folders=True)
+    results = gmail_search('label:!!!hot-follow-up', limit=20, all_folders=True)
     threads_scanned = 0
     duplicates_skipped = 0
     drafts_created = 0
