@@ -8893,5 +8893,39 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Rating: 1\n#### Justification:\nThe only signal provided is the standalone domain name \"ziontechgroup.com\" with no accompanying context, service descriptions, or explicit mentions of managed AI/IT offerings. While the generic \"tech\" terminology in the domain is loosely adjacent to the broader IT s",
     "confidence": 1
+  },
+  {
+    "to": "info@skihood.email",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"Zion Tech Group\"",
+    "domain": "skihood.email",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 1 (weak, partial potential alignment)\n#### Justification (based *only* on the provided name and domain, no additional public context about the company's offerings):\nWe use this scoring framework for managed AI/IT service relevance:\n- 2 = Explicit, confirmed signal the entity delivers man",
+    "confidence": 1
+  },
+  {
+    "to": "groups-noreply@linkedin.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "linkedin.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 0\n#### Reasoning:\nThe only provided information is the generic domain name `ziontechgroup.com`, which contains no keywords, context, or explicit indicators tied to managed AI or IT services (no references to \"managed services\", \"AI\", \"IT support\", \"outsourced tech operations\", or other r",
+    "confidence": 0
   }
 ]
