@@ -1,5 +1,5 @@
 {
-  "timestamp": 1784075937,
+  "timestamp": 1784097989,
   "active": false,
   "has_endpoint": false,
   "has_api_key": false,
@@ -10,6 +10,6 @@
     "google.auth": true,
     "google.oauth2": true,
     "token_exists": false,
-    "auth_error": "ModuleNotFoundError(\"No module named 'commands'\")"
+    "auth_error": null
   }
 }

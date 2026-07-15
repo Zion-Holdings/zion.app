@@ -1344,8 +1344,7 @@ def send_ceo_reply(thread_id, to_addr, subject, body, references_message_id):
         f"References: {msg_id_str}",
         f"In-Reply-To: {msg_id_str}",
     ]
-    crlf = "
-"
+    crlf = "\r\n"
     try:
         thread = _timed_gmail_call(service.users().threads().get(userId="me", id=thread_id, format="metadata", metadataHeaders=["From", "Cc"]))
         msgs = thread.get("messages", []) or []
