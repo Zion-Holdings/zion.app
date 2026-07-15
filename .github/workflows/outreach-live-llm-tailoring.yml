@@ -31,8 +31,15 @@ jobs:
           python -m pip install --upgrade pip
           pip install google-api-python-client google-auth google-auth-httplib2 google-auth-oauthlib requests beautifulsoup4
 
+      - name: Set PYTHONPATH for commands module
+        run: echo "PYTHONPATH=${{ github.workspace }}" >> $GITHUB_ENV
+
       - name: Run outreach worker
         run: python scripts/outreach/outreach_worker_automation.py
+
+      - name: Set PYTHONPATH for blocker discovery
+        if: always()
+        run: echo "PYTHONPATH=${{ github.workspace }}" >> $GITHUB_ENV
 
       - name: Discover outreach blockers
         if: always()
