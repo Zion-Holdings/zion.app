@@ -1330,7 +1330,6 @@ def _load_excluded() -> set:
     except Exception:
         return set()
 
-
 def send_ceo_reply(thread_id, to_addr, subject, body, references_message_id):
     to_key = (to_addr or '').lower()
     if to_key and to_key in _load_excluded():
@@ -1345,27 +1344,28 @@ def send_ceo_reply(thread_id, to_addr, subject, body, references_message_id):
         f"References: {msg_id_str}",
         f"In-Reply-To: {msg_id_str}",
     ]
+    crlf = "
+"
     try:
-        thread = _timed_gmail_call(service.users().threads().get(userId="me", id=thread_id, format="metadata", metadataHeaders=["To", "Cc"]))
+        thread = _timed_gmail_call(service.users().threads().get(userId="me", id=thread_id, format="metadata", metadataHeaders=["From", "Cc"]))
         msgs = thread.get("messages", []) or []
         if msgs:
             newest = msgs[-1]
-            hdr_map = {x["name"]: x["value"] for x in newest.get("payload", {}).get("headers", [])}
+            hdr_map = {h["name"]: h["value"] for h in newest.get("payload", {}).get("headers", [])}
             if "kleber@ziontechgroup.com" in hdr_map.get("From", "").lower():
                 return {"skipped": True, "reason": "thread_last_message_already_ceo", "thread_id": thread_id}
-        messages = msgs
-        all_cc = []
-        for m in messages:
-            h = {x["name"]: x["value"] for x in m.get("payload", {}).get("headers", [])}
-            c = h.get("Cc") or ""
-            if c and c not in all_cc:
-                all_cc.append(c)
-        cc_list = [x for x in all_cc if x and x.lower() != to_addr.lower() and x.lower() != "kleber@ziontechgroup.com"]
+        cc_added = []
+        for m in msgs:
+            h = {hdr["name"]: hdr["value"] for hdr in m.get("payload", {}).get("headers", [])}
+            cc = h.get("Cc") or ""
+            if cc and cc not in cc_added:
+                cc_added.append(cc)
+        cc_list = [x for x in cc_added if x and x.lower() != (to_addr or '').lower() and x.lower() != "kleber@ziontechgroup.com"]
         if cc_list:
             raw_headers.append("Cc: " + ", ".join(cc_list[:10]))
     except Exception:
         pass
-    raw = base64.urlsafe_b64encode(("\r\n".join(raw_headers) + "\r\n\r\n" + body).encode("utf-8")).decode("utf-8")
+    raw = base64.urlsafe_b64encode((crlf.join(raw_headers) + crlf + crlf + body).encode("utf-8")).decode("utf-8")
     return _timed_gmail_call(service.users().messages().send(userId="me", body={"raw": raw, "threadId": thread_id}))
 
 
