@@ -494,5 +494,11 @@
     "event": "miner_timeout",
     "query": "subject:\"AI services\"",
     "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-07-15T11:44:46.795966+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"AI services\"",
+    "note": "soft timeout reached; stopping query loop early"
   }
 ]
