@@ -8808,5 +8808,22 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Rating: 1\n#### Reasoning aligned to the 0/1/2 scale for managed AI/IT services relevance:\n- **0 = No relevant signal**: Reserved for inputs with no connection to the tech/IT space at all (e.g., a domain for a retail or food service business)\n- **1 = Weak/partial relevant signal**: The provided d",
     "confidence": 1
+  },
+  {
+    "to": "help@collective2.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "collective2.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "template",
+    "llm_model": "deterministic-template-v1",
+    "llm_reason": "Thank you for your interest in our services. I'd be happy to prepare a customized proposal based on your requirements.\n\nCould you please provide more details about your project scope and timeline?\n\nBest regards,\nZion Tech Group",
+    "confidence": 2
   }
 ]

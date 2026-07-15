@@ -84,3 +84,4 @@
 {"ts": "2026-07-15T16:32:17.465135+00:00", "email": "info@recordedfuture.com", "msg_id": "19f6683fa6965ef9", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
 {"ts": "2026-07-15T16:52:14.590902+00:00", "email": "contato@aloc.com.br", "msg_id": "19f66a8fdd914d69", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
 {"ts": "2026-07-15T16:55:41.368826+00:00", "email": "lucassaad@surfsupclub.com", "msg_id": "19f66b2fb74521d8", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
+{"ts": "2026-07-15T17:52:38.056199+00:00", "email": "help@collective2.com", "msg_id": "19f66e4dd6cc728d", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
