@@ -385,7 +385,44 @@ def main():
                 continue
             seen_threads.add(tid)
             deduped_hits.append(hit)
+        skipped_reasons = []
+        filtered_hits = []
+        for hit in interest_hits:
+            subject = (hit.get('subject') or '').lower()
+            from_addr = (hit.get('from') or '').lower()
+            reason = None
+            if 'free ai readiness audit' in subject or 'custom proposal' in subject:
+                reason = 'self_promotion_subject'
+            elif from_addr in {
+                'no-reply@nvidiagram.a.bigcontent.io',
+                'newsletter@artlist.com',
+                'notifications@github.com',
+                'dependabot[bot] <notifications@github.com>',
+            }:
+                reason = 'noise_sender'
+            elif any(from_addr.endswith(x) for x in (
+                '@github.com','@users.noreply.github.com','@fyxer.com','@airbnb.com',
+                '@uber.com','@tiktok.com','@dpsmrn.org','@surfline.com',
+                '@calendly.com','@zendesk.com','@freshdesk.com','@helpscout.com',
+                '@intercom.io','@bigcontent.io','@datadog.zendesk.com',
+            )):
+                reason = 'support_sender_domain'
+            elif subject.startswith('[') or subject.startswith('re: '):
+                reason = 'bracketed_or_replay_subject'
+            elif 'newsletter' in from_addr or 'noreply' in from_addr or 'mailer' in from_addr:
+                reason = 'newsletter_mailer'
+            elif 'undeliverable' in subject or 'bounce' in subject:
+                reason = 'bounce'
+            if reason:
+                skipped_reasons.append(reason)
+                continue
+            filtered_hits.append(hit)
+        interest_hits = filtered_hits
         report['new_inbox_interest_count'] = len(interest_hits)
+        report['new_inbox_interest_filtered_count'] = len(skipped_reasons)
+        report['new_inbox_interest_filter_breakdown'] = {
+            k: skipped_reasons.count(k) for k in dict.fromkeys(skipped_reasons)
+        }
         report['new_inbox_interest_dedup_count'] = len(deduped_hits)
         report['new_inbox_examples'] = deduped_hits[:5]
         interest_drafts = []
@@ -397,15 +434,18 @@ def main():
                 continue
             if contact.endswith('@ziontechgroup.com'):
                 continue
-            if any(contact.endswith(x) for x in (
-                '@github.com', '@users.noreply.github.com', '@fyxer.com', '@airbnb.com',
-                '@uber.com', '@tiktok.com', '@dpsmrn.org', '@surfline.com',
-                '@calendly.com', '@zendesk.com'
-            )):
+            if any(x in (hit.get('from') or '').lower() for x in [
+                'github.com','fyxer.com','airbnb.com','uber.com','tiktok.com','dpsmrn.org','surfline.com',
+                'calendly.com','zendesk.com','freshdesk.com','helpscout.com','intercom.io',
+                'bigcontent.io','walletconnect.com','artlist.com','noreply','notifications@',
+                'dependabot','newsletter','marketing@','hello@','teamcalendly','no-reply@',
+            ]):
+                continue
+            if (hit.get('subject') or '').lower().startswith('[') or (hit.get('subject') or '').lower().startswith('re: '):
                 continue
             if 'noreply' in contact or 'notifications@github.com' == contact or 'dependabot' in contact:
                 continue
-            if any(p in contact for p in ['zendesk.com','freshdesk.com','helpscout.com','intercom.io','bigcontent.io']) or (hit.get('subject') or '').startswith('['):
+            if any(p in contact for p in ['zendesk.com','freshdesk.com','helpscout.com','intercom.io','bigcontent.io']):
                 continue
             thread_id = hit.get('threadId') or hit.get('id')
             if not thread_id:
