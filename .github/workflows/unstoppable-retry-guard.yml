@@ -43,17 +43,25 @@ jobs:
       - name: Verify critical export artifacts
         run: |-
           set -euo pipefail
-          if [ ! -d out ] && [ ! -d docs ]; then
+          build_state=automation/reports/build-state.json
+          out_dir_ok=false
+          deploy_path=''
+          if [ -d out ]; then out_dir_ok=true; deploy_path=out; fi
+          if [ -d docs ]; then out_dir_ok=true; deploy_path="${deploy_path:-docs}"; fi
+          if [ -f "$build_state" ]; then
+            echo 'build-state.json contents:'
+            cat "$build_state" || true
+          fi
+          if [ "$out_dir_ok" = false ]; then
             echo "Static export missing: neither out/ nor docs/ exists" >&2
             exit 1
           fi
-          if [ ! -f docs/index.html ] && [ ! -f out/index.html ]; then
-            echo "Missing index.html in deployable paths" >&2
-            ls -la out || true
-            ls -la docs || true
+          if [ ! -f "$deploy_path/index.html" ]; then
+            echo "Missing index.html in deploy path: $deploy_path" >&2
+            ls -la "$deploy_path" || true
             exit 1
           fi
-          echo "Deployable artifacts present."
+          echo "Deployable artifacts present at $deploy_path."
       - name: Upload logs on failure
         if: failure()
         uses: actions/upload-artifact@v4
