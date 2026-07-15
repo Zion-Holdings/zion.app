@@ -1,3 +1,15 @@
 {
-  "leads": []
+  "leads": [
+    {
+      "to": "rsingh@solyssey.com",
+      "subject": "Re: Supplier Collaboration Opportunity - Zion",
+      "body": "Hi Ranmeet Singh,\n\nThank you for the opportunity to work together on past projects — I truly value the partnership we built.\n\nFor this next phase, I see two concrete opportunities to collaborate:\n1. Embedding smart tools into your operations to cut rework and speed up delivery.\n2. Co-creating a digital services offer for your end clients with a revenue-share model.\n\nAt Zion Tech Group we have a platform with free services and tools that can accelerate these initiatives: https://ziontechgroup.com\n\nIf this resonates, let us schedule a quick call: https://calendly.com/kleber-ziontechgroup\n\nBest regards,\nKleber Garcia Alcatrão\nCEO, Zion Tech Group\n+1 302 464 0950",
+      "thread_id": "19f3df60bc1cf2ed",
+      "message_id": "19f43092f91bbb6e",
+      "lang": "en",
+      "status": "drafted",
+      "ts": 1784122429,
+      "source": "cron_hot_followup_llm"
+    }
+  ]
 }

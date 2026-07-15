@@ -1,5 +1,6 @@
 import sys, base64, json, time, os, re
 from pathlib import Path
+from typing import Optional
 import json as _json
 import time as _time
 from datetime import datetime, timezone
@@ -1024,7 +1025,7 @@ def _resolve_hot_label_id():
         pass
     return None
 
-def _is_safe_hot_thread(msg_id: str, thread_id: str | None = None) -> dict:
+def _is_safe_hot_thread(msg_id: str, thread_id: Optional[str] = None) -> dict:
     try:
         full = _timed_gmail_call(service.users().messages().get(userId='me', id=msg_id, format='full'))
     except Exception as e:
@@ -1344,8 +1345,7 @@ def send_ceo_reply(thread_id, to_addr, subject, body, references_message_id):
         f"References: {msg_id_str}",
         f"In-Reply-To: {msg_id_str}",
     ]
-    crlf = "
-"
+    crlf = "\r\n"
     try:
         thread = _timed_gmail_call(service.users().threads().get(userId="me", id=thread_id, format="metadata", metadataHeaders=["From", "Cc"]))
         msgs = thread.get("messages", []) or []
