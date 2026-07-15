@@ -1094,7 +1094,8 @@ def _resolve_hot_label_id():
         labels = _timed_gmail_call(service.users().labels().list(userId='me')) if service is not None else None
         if labels:
             for lab in labels.get('labels', []) or []:
-                if 'hot-follow-up' in ((lab.get('name') or '') + str(lab.get('id') or '')).lower():
+                name = ((lab.get('name') or '') + str(lab.get('id') or '')).lower()
+                if 'hot-follow-up' in name or 'hot-followup' in name:
                     return lab.get('id')
                     break
     except Exception:
@@ -1131,7 +1132,9 @@ def run_high_frequency_outreach():
     print('LLM_TAILOR_ENABLED=', bool(LLM_TAILOR_ENABLED), 'ENDPOINT=', bool(LLM_API_ENDPOINT), flush=True)
     discovery_queries = [
         'in:anywhere label:"!!!hot-follow-up"',
+        'in:anywhere label:"!!!!hot-follow-up"',
         'in:anywhere label:"!!!hot-follow-up" newer_than:30d',
+        'in:anywhere label:"!!!!hot-follow-up" newer_than:30d',
         '!category:promotions !in:spam !in:trash ("partnership" OR "collaboration" OR "proposal")',
         '!category:promotions !in:spam !in:trash ("AI services" OR "project" OR "opportunity")',
         '!category:promotions !in:spam !in:trash ("next steps" OR "interested" OR "integration")',

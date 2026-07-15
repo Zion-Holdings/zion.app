@@ -1,6 +1,6 @@
 [
   {
-    "ts": "2026-07-15T20:20:33.897821+00:00",
+    "ts": "2026-07-15T21:23:00.286419+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -8,7 +8,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-15T20:22:34.684763+00:00",
+    "ts": "2026-07-15T21:25:01.087708+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -17,7 +17,7 @@
     "live_send": false
   },
   {
-    "ts": "2026-07-15T20:22:34.796287+00:00",
+    "ts": "2026-07-15T21:25:01.147086+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -25,7 +25,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-15T20:24:35.395646+00:00",
+    "ts": "2026-07-15T21:27:01.881759+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -34,7 +34,7 @@
     "live_send": false
   },
   {
-    "ts": "2026-07-15T20:24:35.469619+00:00",
+    "ts": "2026-07-15T21:29:03.570152+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -43,7 +43,33 @@
     "live_send": false
   },
   {
-    "ts": "2026-07-15T20:24:35.493517+00:00",
+    "ts": "2026-07-15T21:29:53.091698+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 60
+  },
+  {
+    "ts": "2026-07-15T21:31:04.197620+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-15T21:31:04.288227+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120,
+    "live_send": false
+  },
+  {
+    "ts": "2026-07-15T21:31:53.647320+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -51,81 +77,19 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-15T20:26:36.171683+00:00",
+    "ts": "2026-07-15T21:33:02.281378+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
     "auth_error": null,
-    "interval_seconds": 120,
-    "live_send": false
+    "interval_seconds": 60
   },
   {
-    "ts": "2026-07-15T20:26:36.207756+00:00",
+    "ts": "2026-07-15T21:35:02.831168+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
     "auth_error": null,
     "interval_seconds": 120
-  },
-  {
-    "ts": "2026-07-15T20:28:37.097672+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120
-  },
-  {
-    "ts": "2026-07-15T20:28:37.108949+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-15T20:30:37.869622+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-15T20:30:37.870621+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120
-  },
-  {
-    "ts": "2026-07-15T20:32:39.186701+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-15T20:34:40.076820+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120,
-    "live_send": false
-  },
-  {
-    "ts": "2026-07-15T20:34:40.097127+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120,
-    "live_send": false
   }
 ]
