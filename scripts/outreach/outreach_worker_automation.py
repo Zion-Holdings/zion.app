@@ -1003,8 +1003,32 @@ def _ensure_pending_approval_file():
 def append_pending_approval(entry: dict):
     _ensure_pending_approval_file()
     entry.setdefault('ts', int(time.time()))
+    dedup_key = (
+        entry.get('contact'),
+        entry.get('thread_id') or entry.get('_resolved_thread_id'),
+        entry.get('msg_id'),
+        entry.get('subject'),
+        entry.get('lang'),
+    )
+    existing = set()
+    p = Path(PENDING_APPROVAL_FILE)
+    if p.exists():
+        for line in p.read_text(encoding='utf-8', errors='ignore').splitlines():
+            try:
+                item = json.loads(line)
+                existing.add((
+                    item.get('contact'),
+                    item.get('thread_id'),
+                    item.get('msg_id'),
+                    item.get('subject'),
+                    item.get('lang'),
+                ))
+            except Exception:
+                continue
+    if dedup_key in existing:
+        return
     try:
-        with Path(PENDING_APPROVAL_FILE).open('a', encoding='utf-8') as f:
+        with p.open('a', encoding='utf-8') as f:
             f.write(json.dumps(entry, ensure_ascii=False) + '\n')
     except Exception:
         pass
@@ -1278,7 +1302,7 @@ def run_high_frequency_outreach():
             thread_id = resolve_thread_id(email, prospective_subject)
         print('CONTACT_THREAD1', email, thread_id, flush=True)
         if not thread_id or not probe_thread_alive(thread_id):
-            for alt in [lead.get('msg_id'), lead.get('thread_id')]:
+            for alt in [lead.get('thread_id')]:
                 if alt and probe_thread_alive(alt):
                     thread_id = alt
                     break

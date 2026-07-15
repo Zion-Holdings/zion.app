@@ -1,0 +1,1177 @@
+[
+  {
+    "file": "docs\\ai-services-index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\free-ai-it-tools.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\index.html",
+    "link": "/solutions/",
+    "tried": "\\solutions"
+  },
+  {
+    "file": "docs\\index.html",
+    "link": "/pricing/",
+    "tried": "\\pricing"
+  },
+  {
+    "file": "docs\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\index.html",
+    "link": "/services/ai-help-desk-automation/",
+    "tried": "\\services\\ai-help-desk-automation"
+  },
+  {
+    "file": "docs\\index.html",
+    "link": "/services/ai-development-acceleration/",
+    "tried": "\\services\\ai-development-acceleration"
+  },
+  {
+    "file": "docs\\index.html",
+    "link": "/services/lead-generation-outreach-automation/",
+    "tried": "\\services\\lead-generation-outreach-automation"
+  },
+  {
+    "file": "docs\\index.html",
+    "link": "/services/cloud-cost-optimization-platform/",
+    "tried": "\\services\\cloud-cost-optimization-platform"
+  },
+  {
+    "file": "docs\\index.html",
+    "link": "/services/devops-automation-consulting/",
+    "tried": "\\services\\devops-automation-consulting"
+  },
+  {
+    "file": "docs\\index.html",
+    "link": "/services/fleet-management-gps-tracking/",
+    "tried": "\\services\\fleet-management-gps-tracking"
+  },
+  {
+    "file": "docs\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\index.html",
+    "link": "/pricing/",
+    "tried": "\\pricing"
+  },
+  {
+    "file": "docs\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\index.html",
+    "link": "/pricing/",
+    "tried": "\\pricing"
+  },
+  {
+    "file": "docs\\monitoring.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\monitoring.html",
+    "link": "/solutions/",
+    "tried": "\\solutions"
+  },
+  {
+    "file": "docs\\monitoring.html",
+    "link": "/pricing/",
+    "tried": "\\pricing"
+  },
+  {
+    "file": "docs\\monitoring.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\monitoring.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\monitoring.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\about\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\about\\index.html",
+    "link": "/solutions/",
+    "tried": "\\solutions"
+  },
+  {
+    "file": "docs\\about\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\about\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\about\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\ai\\demo\\index.html",
+    "link": "/ai-lab/",
+    "tried": "\\ai-lab"
+  },
+  {
+    "file": "docs\\ai-lab\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\ai-lab\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\ai-lab\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\blog\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\blog\\index.html",
+    "link": "/solutions/",
+    "tried": "\\solutions"
+  },
+  {
+    "file": "docs\\blog\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\blog\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\blog\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\blog\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\careers\\index.html",
+    "link": "/about/",
+    "tried": "\\about"
+  },
+  {
+    "file": "docs\\careers\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\careers\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\careers\\index.html",
+    "link": "mailto:contact@ziontechgroup.com",
+    "tried": "docs\\careers\\mailto:contact@ziontechgroup.com"
+  },
+  {
+    "file": "docs\\careers\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\careers\\index.html",
+    "link": "/about/",
+    "tried": "\\about"
+  },
+  {
+    "file": "docs\\contact\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\contact\\index.html",
+    "link": "/pricing/",
+    "tried": "\\pricing"
+  },
+  {
+    "file": "docs\\contact\\index.html",
+    "link": "/solutions/",
+    "tried": "\\solutions"
+  },
+  {
+    "file": "docs\\contact\\index.html",
+    "link": "mailto:contact@ziontechgroup.com",
+    "tried": "docs\\contact\\mailto:contact@ziontechgroup.com"
+  },
+  {
+    "file": "docs\\contact\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\new-ai-services\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\new-ai-services\\index.html",
+    "link": "/docs/new-ai-services/",
+    "tried": "\\docs\\new-ai-services"
+  },
+  {
+    "file": "docs\\partners\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\partners\\index.html",
+    "link": "/solutions/",
+    "tried": "\\solutions"
+  },
+  {
+    "file": "docs\\partners\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\partners\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\portal\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\portal\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\portal\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\portal\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\pricing\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\pricing\\index.html",
+    "link": "/solutions/",
+    "tried": "\\solutions"
+  },
+  {
+    "file": "docs\\pricing\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\pricing\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\pricing\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\pricing\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\services\\cloud-cost-optimization-service.html",
+    "link": "/services/cloud-cost-optimization-platform/",
+    "tried": "\\services\\cloud-cost-optimization-platform"
+  },
+  {
+    "file": "docs\\services\\index.html",
+    "link": "/solutions/",
+    "tried": "\\solutions"
+  },
+  {
+    "file": "docs\\services\\index.html",
+    "link": "/pricing/",
+    "tried": "\\pricing"
+  },
+  {
+    "file": "docs\\services\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\services\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\services\\index.html",
+    "link": "/pricing/",
+    "tried": "\\pricing"
+  },
+  {
+    "file": "docs\\services\\index.html",
+    "link": "/services/ai-development-acceleration/",
+    "tried": "\\services\\ai-development-acceleration"
+  },
+  {
+    "file": "docs\\services\\index.html",
+    "link": "/services/lead-generation-outreach-automation/",
+    "tried": "\\services\\lead-generation-outreach-automation"
+  },
+  {
+    "file": "docs\\services\\index.html",
+    "link": "/services/cloud-cost-optimization-platform/",
+    "tried": "\\services\\cloud-cost-optimization-platform"
+  },
+  {
+    "file": "docs\\services\\index.html",
+    "link": "/services/devops-automation-consulting/",
+    "tried": "\\services\\devops-automation-consulting"
+  },
+  {
+    "file": "docs\\services\\index.html",
+    "link": "/services/ai-help-desk-automation/",
+    "tried": "\\services\\ai-help-desk-automation"
+  },
+  {
+    "file": "docs\\services\\index.html",
+    "link": "/services/seo-consulting/",
+    "tried": "\\services\\seo-consulting"
+  },
+  {
+    "file": "docs\\services\\index.html",
+    "link": "/services/smart-booking-scheduling-platform/",
+    "tried": "\\services\\smart-booking-scheduling-platform"
+  },
+  {
+    "file": "docs\\services\\index.html",
+    "link": "/services/fleet-management-gps-tracking/",
+    "tried": "\\services\\fleet-management-gps-tracking"
+  },
+  {
+    "file": "docs\\services\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\services\\-aiops\\index.html",
+    "link": "/services",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\services\\ai-4801\\index.html",
+    "link": "/docs/new-ai-services/",
+    "tried": "\\docs\\new-ai-services"
+  },
+  {
+    "file": "docs\\services\\ai-4802\\index.html",
+    "link": "/docs/new-ai-services/",
+    "tried": "\\docs\\new-ai-services"
+  },
+  {
+    "file": "docs\\services\\ai-4803\\index.html",
+    "link": "/docs/new-ai-services/",
+    "tried": "\\docs\\new-ai-services"
+  },
+  {
+    "file": "docs\\services\\ai-4804\\index.html",
+    "link": "/docs/new-ai-services/",
+    "tried": "\\docs\\new-ai-services"
+  },
+  {
+    "file": "docs\\services\\ai-4805\\index.html",
+    "link": "/docs/new-ai-services/",
+    "tried": "\\docs\\new-ai-services"
+  },
+  {
+    "file": "docs\\services\\ai-4806\\index.html",
+    "link": "/docs/new-ai-services/",
+    "tried": "\\docs\\new-ai-services"
+  },
+  {
+    "file": "docs\\services\\ai-4807\\index.html",
+    "link": "/docs/new-ai-services/",
+    "tried": "\\docs\\new-ai-services"
+  },
+  {
+    "file": "docs\\services\\ai-4808\\index.html",
+    "link": "/docs/new-ai-services/",
+    "tried": "\\docs\\new-ai-services"
+  },
+  {
+    "file": "docs\\services\\ai-agents-autonomous\\index.html",
+    "link": "/services/ai-agents-autonomous/",
+    "tried": "\\services\\ai-agents-autonomous"
+  },
+  {
+    "file": "docs\\services\\ai-development-acceleration\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\services\\ai-help-desk-automation\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\services\\analytics-dashboard-platform\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\services\\analytics-dashboard-platform\\index.html",
+    "link": "/pricing/",
+    "tried": "\\pricing"
+  },
+  {
+    "file": "docs\\services\\analytics-dashboard-platform\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\services\\analytics-dashboard-platform\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\services\\analytics-dashboard-platform\\index.html",
+    "link": "/pricing/",
+    "tried": "\\pricing"
+  },
+  {
+    "file": "docs\\services\\analytics-dashboard-platform\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\services\\cloud-cost-optimization-platform\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\services\\cloud-cost-optimization-platform\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\services\\cloud-migration-assessment-tool\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\services\\devops-automation-consulting\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\services\\fleet-management-gps-tracking\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\services\\free-tools\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\services\\lead-generation-outreach-automation\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\services\\nextjs-static-export\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\services\\property-management-suite\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\services\\security-compliance-platform\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\services\\security-compliance-platform\\index.html",
+    "link": "/pricing/",
+    "tried": "\\pricing"
+  },
+  {
+    "file": "docs\\services\\security-compliance-platform\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\services\\security-compliance-platform\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\services\\security-compliance-platform\\index.html",
+    "link": "/pricing/",
+    "tried": "\\pricing"
+  },
+  {
+    "file": "docs\\services\\security-compliance-platform\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\services\\seo-consulting\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\services\\smart-booking-scheduling-platform\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\services\\support-operations-automation\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\services\\support-operations-automation\\index.html",
+    "link": "/pricing/",
+    "tried": "\\pricing"
+  },
+  {
+    "file": "docs\\services\\support-operations-automation\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\services\\support-operations-automation\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\services\\support-operations-automation\\index.html",
+    "link": "/pricing/",
+    "tried": "\\pricing"
+  },
+  {
+    "file": "docs\\services\\support-operations-automation\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\solutions\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\solutions\\index.html",
+    "link": "/pricing/",
+    "tried": "\\pricing"
+  },
+  {
+    "file": "docs\\solutions\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\solutions\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\solutions\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\solutions\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\tools\\index.html",
+    "link": "/solutions/",
+    "tried": "\\solutions"
+  },
+  {
+    "file": "docs\\tools\\index.html",
+    "link": "/pricing/",
+    "tried": "\\pricing"
+  },
+  {
+    "file": "docs\\tools\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\tools\\index.html",
+    "link": "/tools/json-formatter",
+    "tried": "\\tools\\json-formatter"
+  },
+  {
+    "file": "docs\\tools\\index.html",
+    "link": "/tools/json-to-csv-converter",
+    "tried": "\\tools\\json-to-csv-converter"
+  },
+  {
+    "file": "docs\\tools\\index.html",
+    "link": "/tools/base64",
+    "tried": "\\tools\\base64"
+  },
+  {
+    "file": "docs\\tools\\index.html",
+    "link": "/tools/url-encoder-decoder",
+    "tried": "\\tools\\url-encoder-decoder"
+  },
+  {
+    "file": "docs\\tools\\index.html",
+    "link": "/tools/html-to-jsx",
+    "tried": "\\tools\\html-to-jsx"
+  },
+  {
+    "file": "docs\\tools\\index.html",
+    "link": "/tools/css-gradient-generator",
+    "tried": "\\tools\\css-gradient-generator"
+  },
+  {
+    "file": "docs\\tools\\index.html",
+    "link": "/tools/color-palette-generator",
+    "tried": "\\tools\\color-palette-generator"
+  },
+  {
+    "file": "docs\\tools\\index.html",
+    "link": "/tools/qr-code-generator",
+    "tried": "\\tools\\qr-code-generator"
+  },
+  {
+    "file": "docs\\tools\\index.html",
+    "link": "/tools/jwt-decoder",
+    "tried": "\\tools\\jwt-decoder"
+  },
+  {
+    "file": "docs\\tools\\index.html",
+    "link": "/tools/password-generator",
+    "tried": "\\tools\\password-generator"
+  },
+  {
+    "file": "docs\\tools\\index.html",
+    "link": "/tools/subnet-calculator",
+    "tried": "\\tools\\subnet-calculator"
+  },
+  {
+    "file": "docs\\tools\\index.html",
+    "link": "/tools/secure-hash-generator",
+    "tried": "\\tools\\secure-hash-generator"
+  },
+  {
+    "file": "docs\\tools\\index.html",
+    "link": "/tools/regex-tester",
+    "tried": "\\tools\\regex-tester"
+  },
+  {
+    "file": "docs\\tools\\index.html",
+    "link": "/tools/timestamp-converter",
+    "tried": "\\tools\\timestamp-converter"
+  },
+  {
+    "file": "docs\\tools\\index.html",
+    "link": "/tools/uuid-generator",
+    "tried": "\\tools\\uuid-generator"
+  },
+  {
+    "file": "docs\\tools\\index.html",
+    "link": "/tools/word-counter",
+    "tried": "\\tools\\word-counter"
+  },
+  {
+    "file": "docs\\tools\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\index.html",
+    "link": "/pricing/",
+    "tried": "\\pricing"
+  },
+  {
+    "file": "docs\\tools\\base64\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\base64\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\tools\\base64\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\base64\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\base64\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\color-palette-generator\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\color-palette-generator\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\tools\\color-palette-generator\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\color-palette-generator\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\color-palette-generator\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\css-gradient-generator\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\css-gradient-generator\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\tools\\css-gradient-generator\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\css-gradient-generator\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\css-gradient-generator\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\html-to-jsx\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\html-to-jsx\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\tools\\html-to-jsx\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\html-to-jsx\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\html-to-jsx\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\json-formatter\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\json-formatter\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\tools\\json-formatter\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\json-formatter\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\json-formatter\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\json-to-csv-converter\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\json-to-csv-converter\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\tools\\json-to-csv-converter\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\json-to-csv-converter\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\json-to-csv-converter\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\jwt-decoder\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\jwt-decoder\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\tools\\jwt-decoder\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\jwt-decoder\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\jwt-decoder\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\password-generator\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\password-generator\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\tools\\password-generator\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\password-generator\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\password-generator\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\qr-code-generator\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\qr-code-generator\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\tools\\qr-code-generator\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\qr-code-generator\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\qr-code-generator\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\regex-tester\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\regex-tester\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\tools\\regex-tester\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\regex-tester\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\regex-tester\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\secure-hash-generator\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\secure-hash-generator\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\tools\\secure-hash-generator\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\secure-hash-generator\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\secure-hash-generator\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\subnet-calculator\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\subnet-calculator\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\tools\\subnet-calculator\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\subnet-calculator\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\subnet-calculator\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\timestamp-converter\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\timestamp-converter\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\tools\\timestamp-converter\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\timestamp-converter\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\timestamp-converter\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\url-encoder-decoder\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\url-encoder-decoder\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\tools\\url-encoder-decoder\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\url-encoder-decoder\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\url-encoder-decoder\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\uuid-generator\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\uuid-generator\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\tools\\uuid-generator\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\uuid-generator\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\uuid-generator\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\word-counter\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  },
+  {
+    "file": "docs\\tools\\word-counter\\index.html",
+    "link": "/services/",
+    "tried": "\\services"
+  },
+  {
+    "file": "docs\\tools\\word-counter\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\word-counter\\index.html",
+    "link": "/contact/",
+    "tried": "\\contact"
+  },
+  {
+    "file": "docs\\tools\\word-counter\\index.html",
+    "link": "/tools/",
+    "tried": "\\tools"
+  }
+]
