@@ -14,6 +14,9 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-for-it-support-automation-and-managed-help-desk',
     type: 'article',
   },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/ai-for-it-support-automation-and-managed-help-desk',
+  },
 };
 
 export default function AiForItSupportAutomationAndManagedHelpDeskPage() {

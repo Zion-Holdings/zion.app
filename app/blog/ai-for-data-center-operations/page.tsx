@@ -14,6 +14,9 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-for-data-center-operations',
     type: 'article',
   },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/ai-for-data-center-operations',
+  },
 };
 
 export default function AiForDataCenterOperationsPage() {

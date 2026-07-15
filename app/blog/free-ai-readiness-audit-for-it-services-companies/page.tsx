@@ -13,6 +13,9 @@ export const metadata = {
     type: 'article',
     url: 'https://ziontechgroup.com/blog/free-ai-readiness-audit-for-it-services-companies',
   },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/free-ai-readiness-audit-for-it-services-companies',
+  },
 };
 
 export default function Page() {

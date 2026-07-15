@@ -14,6 +14,9 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-chatbot-builder',
     type: 'article',
   },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/ai-chatbot-builder',
+  },
 };
 
 export default function AiChatbotBuilderPage() {

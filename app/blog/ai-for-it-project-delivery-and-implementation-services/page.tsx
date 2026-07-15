@@ -14,6 +14,9 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-for-it-project-delivery-and-implementation-services',
     type: 'article',
   },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/ai-for-it-project-delivery-and-implementation-services',
+  },
 };
 
 export default function AiForITProjectDeliveryAndImplementationServicesPage() {

@@ -14,6 +14,9 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-for-itsm-and-service-management',
     type: 'article',
   },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/ai-for-itsm-and-service-management',
+  },
 };
 
 export default function AiForITSMAndServiceManagementPage() {

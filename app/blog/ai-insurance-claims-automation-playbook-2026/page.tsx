@@ -13,6 +13,9 @@ export const metadata = {
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-insurance-claims-automation-playbook-2026',
   },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/ai-insurance-claims-automation-playbook-2026',
+  },
 };
 
 export default function Page() {

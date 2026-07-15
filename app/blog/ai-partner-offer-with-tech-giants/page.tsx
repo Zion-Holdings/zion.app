@@ -14,6 +14,9 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-partner-offer-with-tech-giants',
     type: 'article',
   },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/ai-partner-offer-with-tech-giants',
+  },
 };
 
 export default function AiPartnerOfferWithTechGiantsPage() {

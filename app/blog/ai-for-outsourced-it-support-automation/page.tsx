@@ -14,6 +14,9 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-for-outsourced-it-support-automation',
     type: 'article',
   },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/ai-for-outsourced-it-support-automation',
+  },
 };
 
 export default function AiForOutsourcedITSupportAutomationPage() {

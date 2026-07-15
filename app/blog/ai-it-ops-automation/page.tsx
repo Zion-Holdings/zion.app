@@ -14,6 +14,9 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-it-ops-automation',
     type: 'article',
   },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/ai-it-ops-automation',
+  },
 };
 
 export default function AiItOpsAutomationPage() {

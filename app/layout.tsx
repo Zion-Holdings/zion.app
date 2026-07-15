@@ -20,17 +20,29 @@ import ErrorTracker from './components/ErrorTracker';
 import FieldPerformanceCollector from './components/FieldPerformanceCollector';
 import FloatingAgentStatus from './components/FloatingAgentStatus';
 import { AutoJsonLd } from './hooks/useAutoJsonLdPage';
-import { defaultMetadata } from './lib/metadata';
 import GlobalErrorBoundary from './GlobalErrorBoundary';
+import { siteConfig } from './lib/siteConfig';
 import './globals.css';
 
 export const siteUrl = 'https://ziontechgroup.com';
 
 export const metadata = {
-  ...defaultMetadata,
-  alternates: {
-    canonical: '/',
-  },
+  metadataBase: new URL(siteConfig.url),
+  title: { default: siteConfig.name, template: `%s | ${siteConfig.name}` },
+  description: siteConfig.description,
+  keywords: [...siteConfig.keywords],
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
+  robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 } },
+  icons: { icon: '/favicon.ico', apple: '/icon.svg' },
+  manifest: '/manifest.json',
+  viewport: { width: 'device-width', initialScale: 1, maximumScale: 5, userScalable: true },
+  formatDetection: { telephone: false, address: false, email: false },
+  appleWebApp: { capable: true, title: siteConfig.name },
+  alternates: { canonical: '/' },
+  openGraph: { type: 'website', locale: 'en_US', url: siteConfig.url, title: siteConfig.name, description: siteConfig.description, siteName: siteConfig.name },
+  twitter: { card: 'summary_large_image', title: siteConfig.name, description: siteConfig.description },
 };
 
 export const viewport: Viewport = {

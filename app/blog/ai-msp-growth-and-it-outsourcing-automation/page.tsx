@@ -15,6 +15,9 @@ export const metadata = {
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ai-msp-growth-and-it-outsourcing-automation',
   },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/ai-msp-growth-and-it-outsourcing-automation',
+  },
 };
 
 export default function Page() {

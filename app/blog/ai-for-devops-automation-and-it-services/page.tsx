@@ -14,6 +14,9 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-for-devops-automation-and-it-services',
     type: 'article',
   },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/ai-for-devops-automation-and-it-services',
+  },
 };
 
 export default function AiForDevOpsAutomationAndITServicesPage() {

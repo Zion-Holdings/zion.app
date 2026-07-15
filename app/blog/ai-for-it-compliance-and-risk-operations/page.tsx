@@ -14,6 +14,9 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-for-it-compliance-and-risk-operations',
     type: 'article',
   },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/ai-for-it-compliance-and-risk-operations',
+  },
 };
 
 export default function AiForITComplianceAndRiskOperationsPage() {

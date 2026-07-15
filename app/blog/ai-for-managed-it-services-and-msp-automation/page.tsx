@@ -14,6 +14,9 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-for-managed-it-services-and-msp-automation',
     type: 'article',
   },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/ai-for-managed-it-services-and-msp-automation',
+  },
 };
 
 export default function AiForManagedITServicesAndMSPAutomationPage() {

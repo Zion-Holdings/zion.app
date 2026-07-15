@@ -14,6 +14,9 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-cybersecurity-operations-for-msp',
     type: 'article',
   },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/ai-cybersecurity-operations-for-msp',
+  },
 };
 
 export default function AiCybersecurityOperationsForMspPage() {

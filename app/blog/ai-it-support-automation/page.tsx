@@ -14,6 +14,9 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-it-support-automation',
     type: 'article',
   },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/ai-it-support-automation',
+  },
 };
 
 export default function AiItSupportAutomationPage() {

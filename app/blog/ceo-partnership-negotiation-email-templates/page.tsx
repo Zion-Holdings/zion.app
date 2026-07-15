@@ -15,6 +15,9 @@ export const metadata = {
     type: 'article',
     url: 'https://ziontechgroup.com/blog/ceo-partnership-negotiation-email-templates',
   },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/ceo-partnership-negotiation-email-templates',
+  },
 };
 
 export default function Page() {

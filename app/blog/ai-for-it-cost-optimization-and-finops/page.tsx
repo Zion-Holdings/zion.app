@@ -14,6 +14,9 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-for-it-cost-optimization-and-finops',
     type: 'article',
   },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/ai-for-it-cost-optimization-and-finops',
+  },
 };
 
 export default function AiForItCostOptimizationAndFinOpsPage() {

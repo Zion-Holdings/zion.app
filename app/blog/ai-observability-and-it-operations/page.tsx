@@ -14,6 +14,9 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-observability-and-it-operations',
     type: 'article',
   },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/ai-observability-and-it-operations',
+  },
 };
 
 export default function AiObservabilityAndITOperationsPage() {

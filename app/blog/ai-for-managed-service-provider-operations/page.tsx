@@ -14,6 +14,9 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-for-managed-service-provider-operations',
     type: 'article',
   },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/ai-for-managed-service-provider-operations',
+  },
 };
 
 export default function AiForManagedServiceProviderOperationsPage() {

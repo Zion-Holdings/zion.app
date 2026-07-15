@@ -14,6 +14,9 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-for-aiops-and-incident-response',
     type: 'article',
   },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/ai-for-aiops-and-incident-response',
+  },
 };
 
 export default function AiForAIOpsAndIncidentResponsePage() {

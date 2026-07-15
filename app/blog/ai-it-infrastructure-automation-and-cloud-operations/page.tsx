@@ -14,6 +14,9 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-it-infrastructure-automation-and-cloud-operations',
     type: 'article',
   },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/ai-it-infrastructure-automation-and-cloud-operations',
+  },
 };
 
 export default function AiItInfrastructureAutomationAndCloudOperationsPage() {

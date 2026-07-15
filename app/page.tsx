@@ -3,7 +3,7 @@
 
 import { useState, useMemo, useEffect } from 'react';
 import Link from 'next/link';
-import { allServices } from './data/servicesData';
+import { allServices, type Service } from './data/servicesData';
 import AnimatedCounter from '@/components/AnimatedCounter';
 import ServiceBrowser from '@/components/ServiceBrowser';
 import ServiceSpotlight from '@/components/ServiceSpotlight';
@@ -99,7 +99,7 @@ const INDUSTRIES = [
 ];
 
 export default function HomePage() {
-  const services: Service[] = allServices;
+  const services: Service[] = allServices as Service[];
 
   // Stage health counts — deterministic from catalog
   const byStage = useMemo(() => {
@@ -184,11 +184,20 @@ export default function HomePage() {
   // Pulls featured services using data/release_notes.json scoring.
   // Falls back to freshFeatures if dataset not loaded or empty.
   const newsItems = useMemo(() => {
+    const toCard = (s: any) => ({
+      id: s.id,
+      title: s.title,
+      desc: s.description,
+      tag: 'New',
+      color: CATEGORIES.find((c) => c.key === s.category)?.color || 'from-purple-500 to-indigo-500',
+    });
+
     if (!releaseNotes.length) {
       return allServices
-        .map(s => ({ ...s, _score: (s.features?.length || 0) * 3 + (s.benefits?.length || 0) * 2 + (s.description || '').length * 0.3 }))
-        .sort((a:any,b:any) => b._score - a._score)
-        .slice(0, 6);
+        .map((s) => ({ ...toCard(s), _score: (s.features?.length || 0) * 3 + (s.benefits?.length || 0) * 2 + (s.description || '').length * 0.3 }))
+        .sort((a: any, b: any) => b._score - a._score)
+        .slice(0, 6)
+        .map(toCard);
     }
     const ENTRY_TAG_MAP: Record<string,string> = {
       ai: 'AI & ML', it: 'IT & Infrastructure', cloud: 'Cloud Platform',
@@ -196,10 +205,10 @@ export default function HomePage() {
     };
     const now   = Date.now();
     const DAY   = 86_400_000;
-    const SCORE_RECENCY   = 5;   // +5 per day-newer
-    const SCORE_TAG       = 2;   // +2 per matched tag
-    const SCORE_FEATURED  = 3;   // +3 if featured
-    const SCORE_FEATURES  = 1;   // +1 per feature bullet
+    const SCORE_RECENCY   = 5;
+    const SCORE_TAG       = 2;
+    const SCORE_FEATURED  = 3;
+    const SCORE_FEATURES  = 1;
     const lookup = new Map(allServices.map(s => [s.id, s]));
     const merged = releaseNotes
       .filter(r => r.featured !== false)
@@ -209,10 +218,11 @@ export default function HomePage() {
         const daysAgo = Math.max(0, Math.round((now - new Date(r.released_at).getTime()) / DAY));
         const tagCount = (r.tags || []).filter(t => ENTRY_TAG_MAP[t]).length;
         return {
-          id: r.id, title: r.changelog_summary || r.changelog.slice(0, 80) + '...',
+          id: r.id,
+          title: r.changelog_summary || r.changelog.slice(0, 80) + '...',
           desc: r.changelog,
           tag: ENTRY_TAG_MAP[(r.tags || [])[0]] || 'New',
-          color: CATEGORIES.find(c => c.key === svc.category)?.color || 'from-purple-500 to-indigo-500',
+          color: CATEGORIES.find((c) => c.key === svc.category)?.color || 'from-purple-500 to-indigo-500',
           _score: SCORE_FEATURED * (r.featured ? 1 : 0)
                    + SCORE_TAG       * tagCount
                    + SCORE_FEATURES  * (svc.features?.length || 0)
@@ -220,15 +230,14 @@ export default function HomePage() {
         };
       })
       .filter((r): r is NonNullable<typeof r> => r !== null)
-      .sort((a, b) => b!._score - a!._score)
+      .sort((a, b) => b._score - a._score)
       .slice(0, 6);
     if (merged.length) return merged;
-    // Fallback: same formula as original freshFeatures
     return allServices
-      .map(s => ({ ...s, _score: (s.features?.length || 0) * 3 + (s.benefits?.length || 0) * 2 + (s.description || '').length * 0.3 }))
-      .sort((a:any,b:any) => b._score - a._score)
-      .slice(0, 6);
-
+      .map((s) => ({ ...toCard(s), _score: (s.features?.length || 0) * 3 + (s.benefits?.length || 0) * 2 + (s.description || '').length * 0.3 }))
+      .sort((a: any, b: any) => b._score - a._score)
+      .slice(0, 6)
+      .map(toCard);
   }, [allServices, releaseNotes]);
 
   return (
@@ -1223,7 +1232,7 @@ export default function HomePage() {
       {/* ── Spotlight Carousel ── */}
       <section className="py-16">
         <div className="container-page">
-          <ServiceSpotlight services={popularServices} />
+          <ServiceSpotlight services={popularServices as any} />
         </div>
       </section>
       {/* ── Trust Badges — Persuasion Proof Matrix ── */}

@@ -14,6 +14,9 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-for-it-servicedesk-and-workplace-technicians',
     type: 'article',
   },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/ai-for-it-servicedesk-and-workplace-technicians',
+  },
 };
 
 export default function AiForITServiceDeskAndWorkplaceTechniciansPage() {

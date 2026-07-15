@@ -14,6 +14,9 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-finops-for-it-service-providers',
     type: 'article',
   },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/ai-finops-for-it-service-providers',
+  },
 };
 
 export default function AiFinOpsForITServiceProvidersPage() {

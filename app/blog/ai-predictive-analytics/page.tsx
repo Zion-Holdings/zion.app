@@ -14,6 +14,9 @@ export const metadata = {
     url: 'https://ziontechgroup.com/blog/ai-predictive-analytics',
     type: 'article',
   },
+  alternates: {
+    canonical: 'https://ziontechgroup.com/blog/ai-predictive-analytics',
+  },
 };
 
 export default function AiPredictiveAnalyticsPage() {
