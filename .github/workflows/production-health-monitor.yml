@@ -23,7 +23,22 @@ jobs:
         id: health
         run: |
           SITE="https://ziontechgroup.com"
-          PAGES=("/" "/solutions/" "/services/" "/about/" "/contact/" "/blog/" "/pricing/" "/industries/" "/case-studies/" "/products/" "/ai-services/" "/consultation/" "/site-map")
+          PAGES=(
+            "/"
+            "/services/"
+            "/services/ai-agents-autonomous/"
+            "/services/cloud-cost-optimization-platform/"
+            "/about/"
+            "/contact/"
+            "/pricing/"
+            "/blog/"
+            "/partners/"
+            "/careers/"
+            "/tools/"
+            "/ai-services/"
+            "/privacy/"
+            "/terms/"
+          )
           FAILURES=0
           REPORT=""
 
