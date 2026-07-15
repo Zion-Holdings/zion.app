@@ -1,14 +1,12 @@
-export const metadata = {
-  title: "Cloud Cost Optimization Service | Zion Tech Group",
-  description: "cloud cost optimization.",
+import { Metadata } from 'next';
+import { redirect } from 'next/navigation';
 
+export const metadata: Metadata = {
+  title: 'Cloud Cost Optimization | Zion Tech Group',
+  description: 'Cloud cost optimization services to reduce spend and improve efficiency.',
+  robots: { index: false, follow: true },
 };
 
-export default function Page() {
-  return (
-    <div className="container-page py-20">
-      <h1 className="text-4xl font-bold mb-4 text-white">Cloud Cost Optimization Service</h1>
-      <p className="text-slate-300">This page is under construction.</p>
-    </div>
-  );
+export default function CloudCostRedirect() {
+  redirect('/services/cloud-cost-optimization-platform');
 }
