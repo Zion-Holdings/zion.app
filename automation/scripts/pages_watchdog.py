@@ -29,13 +29,25 @@ def _ts() -> str:
     return _utcnow().isoformat()
 
 
-def load_verify_routes():
+def load_verify_routes() -> list[str]:
     text = VERIFY_PY.read_text(encoding='utf-8')
-    urls = []
+    urls: list[str] = []
+    capture = False
     for line in text.splitlines():
-        line = line.strip()
-        if line.startswith('"https://ziontechgroup.com/'):
-            url = line.strip('",')
+        stripped = line.strip()
+        if stripped.startswith('primary_urls = ['):
+            capture = True
+            continue
+        if stripped.startswith('secondary_urls = ['):
+            capture = False
+            continue
+        if stripped == ']':
+            capture = capture and not stripped.startswith(']')
+            continue
+        if not capture:
+            continue
+        if stripped.startswith('"https://ziontechgroup.com/'):
+            url = stripped.strip('",\'')
             urls.append(url)
     return sorted(set(urls))
 

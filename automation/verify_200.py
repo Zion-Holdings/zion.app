@@ -17,17 +17,6 @@ primary_urls = [
 ]
 
 secondary_urls = [
-  "https://ziontechgroup.com/search/",
-  "https://ziontechgroup.com/academy/",
-  "https://ziontechgroup.com/faq/",
-  "https://ziontechgroup.com/terms/",
-  "https://ziontechgroup.com/privacy/",
-  "https://ziontechgroup.com/cookies/",
-  "https://ziontechgroup.com/sla/",
-  "https://ziontechgroup.com/services/ai-computer-vision-quality-inspection/",
-  "https://ziontechgroup.com/services/managed-observability-247/",
-  "https://ziontechgroup.com/ai/ai-readiness-assessment/",
-  "https://ziontechgroup.com/services/ai-insurance-claims-automation/",
 ]
 
 session = requests.Session()
