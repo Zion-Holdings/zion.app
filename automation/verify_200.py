@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 import sys
 import requests
 
@@ -29,7 +30,18 @@ def probe(urls, label):
     for u in urls:
         try:
             r = session.get(u, timeout=20, allow_redirects=True)
-            print(f"{r.status_code}\t{r.url}\t{u}")
+            text = r.text if r.status_code == 200 else ''
+            title = ''
+            if text:
+                m = re.search(r'<title>(.*?)</title>', text, re.IGNORECASE|re.DOTALL)
+                if m:
+                    title = ' '.join(m.group(1).split())
+            canonical = ''
+            if text:
+                cm = re.search(r'<link[^>]+rel=["\']canonical["\'][^>]+href=["\']([^"\']+)["\']', text, re.IGNORECASE)
+                if cm:
+                    canonical = cm.group(1)
+            print(f"{r.status_code}\t{r.url}\t{u}\ttitle={title}\tcanonical={canonical}")
         except Exception as e:
             print(f"ERR\t{u}\t{e}")
 
