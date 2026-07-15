@@ -8570,5 +8570,22 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Rating: 0\n#### Rationale:\nThis entry provides no discernible value signal linking the entity to managed AI/IT services:\n1. The name \"Zion Tech Group\" uses the overly broad term \"Tech\", which could refer to any number of unrelated tech verticals (consumer electronics, product development, SaaS bu",
     "confidence": 0
+  },
+  {
+    "to": "seminarios@omogo.org",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "omogo.org",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 1 (weak/indirect relevance)\n#### Reasoning:\n1. The domain includes the generic term \"tech\", which places it in the broader IT/tech industry space, so it is not completely unrelated to the category (ruling out a 0 rating).\n2. There is no explicit reference to managed AI, managed IT servic",
+    "confidence": 1
   }
 ]

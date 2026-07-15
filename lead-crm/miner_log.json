@@ -404,5 +404,23 @@
     "event": "miner_timeout",
     "query": "subject:devops",
     "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-07-15T07:44:17.790211+00:00",
+    "event": "miner_timeout",
+    "query": "subject:sase",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-07-15T07:53:44.464803+00:00",
+    "event": "miner_timeout",
+    "query": "subject:managed services",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-07-15T07:59:04.101341+00:00",
+    "event": "miner_timeout",
+    "query": "subject:sase",
+    "note": "soft timeout reached; stopping query loop early"
   }
 ]
