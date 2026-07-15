@@ -81,3 +81,4 @@
 {"ts": "2026-07-15T15:33:02.760146+00:00", "email": "hello@info.lumen.com", "msg_id": "19f664de038bd8fb", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
 {"ts": "2026-07-15T15:33:19.251934+00:00", "email": "ana@posher.app", "msg_id": "19f663dbc81bda38", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
 {"ts": "2026-07-15T15:48:25.389852+00:00", "email": "naoresponda@produtosvr.vr.com.br", "msg_id": "19f6675c5d536605", "query": "\"Zion Tech Group\"", "confidence": 0, "high_signal": false}
+{"ts": "2026-07-15T16:32:17.465135+00:00", "email": "info@recordedfuture.com", "msg_id": "19f6683fa6965ef9", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}

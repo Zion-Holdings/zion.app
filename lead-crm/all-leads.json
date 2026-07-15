@@ -8757,5 +8757,22 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Rating: 0\n#### Rationale:\nThe provided input only includes a generic company name (\"Zion Tech Group\") and its matching domain, with zero additional context about the company's service offerings, market positioning, or operational focus. The term \"Tech Group\" is extremely broad and could refer to",
     "confidence": 0
+  },
+  {
+    "to": "info@recordedfuture.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "recordedfuture.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 1\n#### Reasoning aligned to managed AI/IT services value signal scoring:\n- **0** is reserved for domains with no relevance to the tech/IT services space (e.g., retail, personal, non-tech business domains), which does not apply here: the \"tech group\" naming indicates a technology-focused ",
+    "confidence": 1
   }
 ]
