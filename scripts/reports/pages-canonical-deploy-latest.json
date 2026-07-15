@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-13T10:08:41.044845+00:00",
+  "generatedAt": "2026-07-15T04:34:04.802444+00:00",
   "routes": [
     {
       "route": "/",
@@ -12,7 +12,7 @@
     {
       "route": "/portal",
       "url": "https://ziontechgroup.com/portal/",
-      "live_canonical": "https://ziontechgroup.com",
+      "live_canonical": "https://ziontechgroup.com/portal",
       "expected_canonical": "/portal",
       "status": "mismatch",
       "issue": "deployed_layout_override_or_stale_cache"
@@ -28,7 +28,7 @@
     {
       "route": "/services/ai-agents-autonomous",
       "url": "https://ziontechgroup.com/services/ai-agents-autonomous/",
-      "live_canonical": "https://ziontechgroup.com",
+      "live_canonical": "https://ziontechgroup.com/services/ai-agents-autonomous",
       "expected_canonical": "/services/ai-agents-autonomous",
       "status": "mismatch",
       "issue": "deployed_layout_override_or_stale_cache"

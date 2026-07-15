@@ -1,5 +1,5 @@
 {
-  "checkedAt": "2026-07-13T10:08:41.044845+00:00",
+  "checkedAt": "2026-07-15T04:34:04.802444+00:00",
   "status": "mismatch",
   "mismatchCount": 3,
   "actionItems": [
@@ -7,7 +7,7 @@
       "route": "/portal",
       "issue": "deployed_layout_override_or_stale_cache",
       "expectedCanonical": "/portal",
-      "liveCanonical": "https://ziontechgroup.com"
+      "liveCanonical": "https://ziontechgroup.com/portal"
     },
     {
       "route": "/contact",
@@ -19,7 +19,7 @@
       "route": "/services/ai-agents-autonomous",
       "issue": "deployed_layout_override_or_stale_cache",
       "expectedCanonical": "/services/ai-agents-autonomous",
-      "liveCanonical": "https://ziontechgroup.com"
+      "liveCanonical": "https://ziontechgroup.com/services/ai-agents-autonomous"
     }
   ]
 }
