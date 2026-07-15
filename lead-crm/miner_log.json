@@ -584,5 +584,29 @@
     "event": "miner_timeout",
     "query": "subject:devops",
     "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-07-15T14:46:02.443998+00:00",
+    "event": "miner_timeout",
+    "query": "subject:devops",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-07-15T15:33:23.335399+00:00",
+    "event": "miner_timeout",
+    "query": "subject:automação",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-07-15T15:46:50.140926+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"platform engineering\"",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-07-15T15:49:18.055566+00:00",
+    "event": "miner_timeout",
+    "query": "subject:sase",
+    "note": "soft timeout reached; stopping query loop early"
   }
 ]

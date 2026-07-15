@@ -75,3 +75,9 @@
 {"ts": "2026-07-15T14:32:14.129765+00:00", "email": "hedi@m.alohi.com", "msg_id": "19f66161ae57da26", "query": "\"Zion Tech Group\"", "confidence": 0, "high_signal": false}
 {"ts": "2026-07-15T14:32:41.912151+00:00", "email": "credit_capital_inc@mail.vresp.com", "msg_id": "19f662aaa2ec3cbc", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
 {"ts": "2026-07-15T14:40:08.769867+00:00", "email": "agutierrez@worldcob.com", "msg_id": "19f66334704cd861", "query": "\"Zion Tech Group\"", "confidence": 1, "high_signal": false}
+{"ts": "2026-07-15T14:45:19.961862+00:00", "email": "alerts@col.acciontrabajo.com", "msg_id": "19f6639d7acc937b", "query": "\"Zion Tech Group\"", "confidence": 0, "high_signal": false}
+{"ts": "2026-07-15T15:32:22.722902+00:00", "email": "hello@walletconnect.com", "msg_id": "19f663ee41a51ff6", "query": "\"Zion Tech Group\"", "confidence": 0, "high_signal": false}
+{"ts": "2026-07-15T15:32:49.861077+00:00", "email": "billingonline@fedex.com", "msg_id": "19f665808bc740d1", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-15T15:33:02.760146+00:00", "email": "hello@info.lumen.com", "msg_id": "19f664de038bd8fb", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
+{"ts": "2026-07-15T15:33:19.251934+00:00", "email": "ana@posher.app", "msg_id": "19f663dbc81bda38", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
+{"ts": "2026-07-15T15:48:25.389852+00:00", "email": "naoresponda@produtosvr.vr.com.br", "msg_id": "19f6675c5d536605", "query": "\"Zion Tech Group\"", "confidence": 0, "high_signal": false}
