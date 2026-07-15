@@ -8502,5 +8502,22 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Rating: 1\n#### Reasoning aligned to the 0/1/2 scale for managed AI/IT services relevance:\n1.  The only provided signal is the domain name `ziontechgroup.com`, which includes the generic term \"tech\" that is broadly tangentially related to the wider IT industry, placing it in the general tech spac",
     "confidence": 1
+  },
+  {
+    "to": "ruben.becerra@hemmersbach.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"Zion Tech Group\"",
+    "domain": "hemmersbach.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Score: 0\n#### Rationale:\nThere is no explicit or implicit signal in the provided information linking \"Zion Tech Group\" to managed AI/IT services. The name uses the overly broad term \"Tech\", which could refer to any number of unrelated tech verticals (consumer electronics, product software develo",
+    "confidence": 0
   }
 ]
