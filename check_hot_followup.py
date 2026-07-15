@@ -1,40 +1,40 @@
-#!/usr/bin/env python3
 import sys, json
-sys.path.insert(0, './commands')
-from google_workspace import gmail_search, gmail_get, gmail_thread_get
+sys.path.insert(0, '/data/data/com.termux/files/home')
+from commands.google_workspace import gmail_search, gmail_get, gmail_thread_get
 
-label = '!!!hot-follow-up'
-messages = gmail_search(label, limit=20, all_folders=True)
-print(json.dumps({'hits': len(messages), 'messages': messages}))
+HITS = gmail_search('!!!hot-follow-up', limit=20, all_folders=True)
+if not HITS:
+    print('NO_HOT_FOLLOWUP_THREADS')
+    sys.exit(0)
 
-if messages:
-    results = []
-    for m in messages:
-        mid = m['id']
-        tid = m.get('threadId')
-        try:
-            msg = gmail_get(mid)
-        except Exception as e:
-            msg = {}
-        headers = msg.get('payload', {}).get('headers', [])
-        def hdr(name):
-            for h in headers:
-                if h['name'].lower() == name.lower():
-                    return h['value']
-            return ''
-        subject = hdr('Subject')
-        frm = hdr('From')
-        date = hdr('Date')
-        thread_count = 0
-        if tid:
-            try:
-                t = gmail_thread_get(tid)
-                thread_count = len(t)
-            except Exception:
-                thread_count = 1
-        else:
-            thread_count = 1
-        results.append({'thread_id': tid, 'message_id': mid, 'subject': subject, 'from': frm, 'date': date, 'thread_message_count': thread_count})
-    print(json.dumps(results, indent=2))
-else:
-    print("NO_HOT_FOLLOWUP_THREADS")
+seen_threads = {}
+for m in HITS:
+    tid = m.get('threadId')
+    mid = m.get('id')
+    if tid not in seen_threads:
+        seen_threads[tid] = mid
+
+results = []
+for tid, mid in seen_threads.items():
+    try:
+        msg = gmail_get(mid)
+    except Exception as e:
+        msg = {}
+    headers = {h['name'].lower(): h['value'] for h in msg.get('payload', {}).get('headers', [])}
+    subject = headers.get('subject', '(no subject)')
+    sender = headers.get('from', '(unknown)')
+    date = headers.get('date', '')
+    try:
+        thread_msgs = gmail_thread_get(tid)
+        count = len(thread_msgs)
+    except Exception:
+        count = '?'
+    results.append({
+        'thread_id': tid,
+        'subject': subject,
+        'from': sender,
+        'date': date,
+        'message_count': count,
+    })
+
+print(json.dumps(results, indent=2))
