@@ -99,11 +99,11 @@ def build_draft(name, lang, subject='Following up on our last project'):
     if lang == 'es':
         return (
             f"{name},\n\n"
-            "Gracias por la oportunidad de haber trabajado juntos en el proyecto anterior. Veo buenas oportunidades para crear valor mutuo ahora.\n\n"
-            "Puedes ver nuestros nuevos servicios de IA aquí: https://ziontechgroup.com\n"
+            "Gracias por la oportunidad de haber trabajado juntos en el proyecto anterior. Vejo boas oportunidades para criarmos valor mútuo agora.\n\n"
+            "Puedes ver nossos novos servicios de IA aquí: https://ziontechgroup.com\n"
             "También ofrecemos herramientas y servicios gratuitos en el sitio.\n\n"
             "Si cuadra, conversemos: https://calendly.com/kleber-ziontechgroup o también por Google Meet: https://meet.google.com/ouu-khao-kuy\n\n"
-            "Saludos cordiales,\nKleber Garcia Alcatrão\nCEO, Zion Tech Group\nhttps://ziontechgroup.com"
+            "Saludos cordiais,\nKleber Garcia Alcatrão\nCEO, Zion Tech Group\nhttps://ziontechgroup.com"
         )
     if lang == 'pt':
         return (
@@ -122,6 +122,32 @@ def build_draft(name, lang, subject='Following up on our last project'):
         "If it makes sense, let's talk: https://calendly.com/kleber-ziontechgroup or via Google Meet: https://meet.google.com/ouu-khao-kuy\n\n"
         "Best,\nKleber Garcia Alcatrão\nCEO, Zion Tech Group\nhttps://ziontechgroup.com"
     )
+
+def _is_noise_sender(contact: str, from_addr: str = '', subject: str = '') -> bool:
+    contact = (contact or '').lower()
+    from_addr = (from_addr or '').lower()
+    subject = (subject or '').lower()
+    if contact.endswith('@ziontechgroup.com'):
+        return True
+    tokens = [
+        'github.com','fyxer.com','airbnb.com','uber.com','tiktok.com','dpsmrn.org','surfline.com',
+        'calendly.com','zendesk.com','freshdesk.com','helpscout.com','intercom.io','bigcontent.io',
+        'walletconnect.com','artlist.com','noreply','notifications@','dependabot','newsletter',
+        'marketing@','hello@','teamcalendly','no-reply@','postmaster@','noresponder','mailer@','promo@',
+    ]
+    if any(x in from_addr for x in tokens):
+        return True
+    if any(x in contact for x in tokens):
+        return True
+    domain = contact.split('@')[-1] if '@' in contact else ''
+    if any(domain.endswith(x) for x in ('.email','.local','.io','.news','.promo','.mail','.bounce')):
+        if any(k in subject for k in ['undeliverable','bounce']) or any(k in contact for k in ['postmaster','noresponder','news','info@']):
+            return True
+    if subject.startswith('[') or subject.startswith('re: '):
+        return True
+    if 'undeliverable' in subject or 'bounce' in subject:
+        return True
+    return False
 
 def thread_alive(thread_id):
     try:
@@ -278,19 +304,10 @@ def main():
             from_addr = h.get('from', '')
             m = re.search(r'<([^>]+)>', from_addr)
             contact = m.group(1).lower() if m else from_addr.strip().lower()
-            if not contact or '@' not in contact:
+            subject = (h.get('subject') or '').strip()
+            if not contact or '@' not in contact or _is_noise_sender(contact, from_addr, subject):
                 continue
-            if contact.endswith('@ziontechgroup.com'):
-                continue
-            if any(contact.endswith(x) for x in (
-                '@github.com', '@users.noreply.github.com', '@fyxer.com', '@airbnb.com',
-                '@uber.com', '@tiktok.com', '@dpsmrn.org', '@surfline.com',
-                '@calendly.com', '@zendesk.com'
-            )):
-                continue
-            if recent_sent_exists(contact, within_seconds=24*3600):
-                continue
-            if same_outgoing_subject_recently_sent(contact, (h.get('subject') or '').strip(), within_seconds=24*3600):
+            if same_outgoing_subject_recently_sent(contact, subject, within_seconds=24*3600):
                 continue
             tid = h.get('threadId') or h.get('id')
             suppressed = {'18729d9ac733fec6','17ae8d06ff494766','17ae8bef12ef37bc','17ace3cb5ba33436','17acc1a44f61dffd','17ac9d589f758ba2','17ac8d7ea8b6d03d','17ac3fea5d58bf65','17ac3fb13c1eb360','17ac3a9ef17a4130','17ac3a6b65985dda','17ac39bb1144ccdc','1795733950be3f61','19f3e95653f3845c'}
