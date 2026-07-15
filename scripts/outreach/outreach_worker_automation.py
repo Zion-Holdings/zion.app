@@ -762,30 +762,53 @@ def _guess_project_area(thread_text: str, language: str) -> str:
 
 def build_ceo_reply(contact_name, company_name, thread_text, language='en'):
     tailored = llm_tailor_reply(thread_text, contact_name, company_name, language)
-    if tailored:
-        return tailored
-    p = _extract_context_ideas(thread_text, language, company_name)
+    if tailored and isinstance(tailored, str) and tailored.strip():
+        return sanitize_outreach_body(tailored)
     project_area = _guess_project_area(thread_text, language)
-    return f"""{contact_name},
-
-Thanks for the opportunity to collaborate with {company_name}. I really value the work we did together on {project_area}.
-
-Today Zion Tech Group is expanding into AI/IT services, and I see a few fast, mutually beneficial next steps we could explore together:
-
-{p['pillars'] if isinstance(p, dict) else ''}
-
-{p['cta'] if isinstance(p, dict) else 'If this aligns, I’m happy to advance by email or a quick call.'}
-https://calendly.com/kleber-ziontechgroup
-
-If a call is easier, here’s a direct meeting link: https://meet.google.com/ouu-khao-kuy
-
-You can also explore our new AI services and free tools here:
-https://ziontechgroup.com
-
-{p['closing'] if isinstance(p, dict) else 'Let’s build something that benefits both teams.'}
-Kleber Garcia Alcatrão | CEO, Zion Tech Group
-https://ziontechgroup.com
-"""
+    p = _extract_context_ideas(thread_text, language, company_name)
+    if not isinstance(p, dict):
+        p = {}
+    pillars = (p.get('pillars') or '').strip()
+    cta = (p.get('cta') or '').strip()
+    closing = (p.get('closing') or '').strip()
+    opening = (p.get('opening') or '').strip()
+    if language not in ('pt', 'es'):
+        opening = opening or f'Hi {contact_name},'
+    else:
+        opening = opening or f'{contact_name},'
+    if not pillars:
+        if language == 'pt':
+            pillars = '1) Automação de operações e resposta a incidentes com IA para reduzir MTTR e alertas ruidosas.\n2) Atendimento inbound com triagem automática e cobertura multilíngue.\n3) Migração e governança de nuvem com custo controlado e operação assistida por IA.'
+        elif language == 'es':
+            pillars = '1) Automatización de operaciones y respuesta a incidentes con IA para reducir MTTR y alertas.\n2) Flujo de atención inbound con triaje automático y cobertura multilenguaje.\n3) Migración y gobernanza de nube con costo controlado y operación asistida por IA.'
+        else:
+            pillars = '1) AI-assisted operations and incident response to cut MTTR and noisy alerts.\n2) AI inbound triage and support automation with PT/ES/EN coverage.\n3) Guided cloud migration with cost controls and AI-assisted operations.'
+    cta = cta or ('Se fizer sentido, podemos avançar por e-mail ou por uma call rápida:' if language == 'pt' else ('Si cuadra, podemos avanzar por correo o una llamada breve:' if language == 'es' else 'If this aligns, I’m happy to advance by email or a quick call:'))
+    closing = closing or ('Fico à disposição para criarmos algo mútuo e rápido.' if language == 'pt' else ('Quedo atento para construir algo beneficioso para ambos.' if language == 'es' else 'Let’s build something that benefits both teams.'))
+    body = chr(10).join(filter(None, [
+        opening,
+        '',
+        f'Thanks for the conversation with {company_name}. I really value the chance to collaborate and the work we did together on {project_area}.' if language == 'en' else (f'Obrigado pela conversa com a {company_name}. Valorizo a parceria e o trabalho que fizemos em {project_area}.' if language == 'pt' else f'Gracias por la conversación con {company_name}. Valoro la oportunidad de colaborar y lo que hicimos en {project_area}.'),
+        '',
+        closing,
+        '',
+        'Today Zion Tech Group is expanding into AI/IT services, and I see a few fast, mutually beneficial next steps we could explore together:',
+        '',
+        pillars,
+        '',
+        cta,
+        'https://calendly.com/kleber-ziontechgroup',
+        '',
+        'If a meeting is easier: https://meet.google.com/ouu-khao-kuy',
+        '',
+        'You can also explore our new AI services and free tools here:',
+        'https://ziontechgroup.com',
+        '',
+        'Kleber Garcia Alcatrão | CEO, Zion Tech Group',
+        'https://ziontechgroup.com',
+        '',
+    ]))
+    return sanitize_outreach_body(body)
 
 
 def build_ceo_reply_preview(contact_name, company_name, thread_text, subject, language='en'):
