@@ -87,3 +87,5 @@
 {"ts": "2026-07-15T17:52:38.056199+00:00", "email": "help@collective2.com", "msg_id": "19f66e4dd6cc728d", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
 {"ts": "2026-07-15T19:36:30.731353+00:00", "email": "marketing@telcabos.com.br", "msg_id": "19f673c7fa188e82", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
 {"ts": "2026-07-15T20:10:24.292667+00:00", "email": "noresponder@clientifymail.com", "msg_id": "19f67647a7d3595d", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
+{"ts": "2026-07-15T20:35:49.657823+00:00", "email": "mkt@mc.mkt-hyundai.com.br", "msg_id": "19f6779e39a4516d", "query": "\"Zion Tech Group\"", "confidence": 0, "high_signal": false}
+{"ts": "2026-07-15T20:36:12.339460+00:00", "email": "sales@luxortek.com", "msg_id": "19f677ab4b53809b", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
