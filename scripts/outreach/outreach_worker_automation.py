@@ -7,6 +7,8 @@ from email.utils import parsedate_to_datetime
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent.parent
+sys.path.insert(0, str(PROJECT_ROOT))
+sys.path.insert(0, str(SCRIPT_DIR))
 _google_scripts = PROJECT_ROOT / '.hermes' / 'skills' / 'productivity' / 'google-workspace' / 'scripts'
 if _google_scripts.exists():
     sys.path.insert(0, str(_google_scripts))
@@ -1364,7 +1366,7 @@ def send_ceo_reply(thread_id, to_addr, subject, body, references_message_id):
     except Exception:
         pass
     raw = base64.urlsafe_b64encode(("\r\n".join(raw_headers) + "\r\n\r\n" + body).encode("utf-8")).decode("utf-8")
-    return _timed_gmail_call(service.users().messages().send(userId="me", body={"raw": raw, "threadId": thread_id})).execute()
+    return _timed_gmail_call(service.users().messages().send(userId="me", body={"raw": raw, "threadId": thread_id}))
 
 
 if __name__ == '__main__':
