@@ -482,8 +482,8 @@ def main():
         report['interest_drafts_count'] = len(interest_drafts)
         report['interest_drafts'] = interest_drafts[:5]
         if interest_drafts:
+            q_path = Path('lead-crm') / 'outreach_monitor' / 'processed' / 'interest_draft_queue.jsonl'
             try:
-                q_path = Path('lead-crm') / 'outreach_monitor' / 'processed' / 'interest_draft_queue.jsonl'
                 existing = []
                 if q_path.exists():
                     existing = [json.loads(line) for line in q_path.read_text(encoding='utf-8', errors='ignore').splitlines() if line.strip()]
@@ -497,9 +497,31 @@ def main():
                     seen_keys.add(k)
                     final.append(item)
                 q_path.write_text('\n'.join(json.dumps(x, ensure_ascii=False) for x in final), encoding='utf-8')
-                report['interest_queue_count'] = len(final)
             except Exception as queue_err:
                 report['errors'].append({'interest_queue': repr(queue_err)})
+            try:
+                lines = q_path.read_text(encoding='utf-8', errors='ignore').splitlines()
+                kept = []
+                for line in lines:
+                    if not line.strip():
+                        continue
+                    try:
+                        obj = json.loads(line)
+                        ts = obj.get('created_at') or obj.get('ts') or ''
+                        age_days = 9e9
+                        if ts.endswith('Z'):
+                            age_days = (time.time() - time.mktime(time.strptime(ts.replace('Z',''), '%Y-%m-%dT%H:%M:%S'))) / 86400
+                        elif ts.endswith('+00:00'):
+                            age_days = (time.time() - time.mktime(time.strptime(ts.replace('+00:00',''), '%Y-%m-%dT%H:%M:%S'))) / 86400
+                        if age_days > 3:
+                            continue
+                        kept.append(line)
+                    except Exception:
+                        pass
+                q_path.write_text('\n'.join(kept), encoding='utf-8')
+                report['interest_queue_count'] = len(kept)
+            except Exception:
+                pass
     except Exception as e:
         report['errors'].append({'inbox_probe': repr(e)})
 
