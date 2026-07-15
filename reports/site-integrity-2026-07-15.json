@@ -1,0 +1,50 @@
+{
+  "task": "site-integrity",
+  "generatedAt": "2026-07-15T11:46:41.666707+00:00",
+  "liveSite": "https://ziontechgroup.com",
+  "probedPaths": [
+    {
+      "path": "/",
+      "status": 200
+    },
+    {
+      "path": "/services/",
+      "status": 200
+    },
+    {
+      "path": "/tools/",
+      "status": 200
+    },
+    {
+      "path": "/contact/",
+      "status": 200
+    },
+    {
+      "path": "/pricing/",
+      "status": 200
+    },
+    {
+      "path": "/solutions/",
+      "status": 200
+    },
+    {
+      "path": "/blog/",
+      "status": 200
+    },
+    {
+      "path": "/about/",
+      "status": 200
+    }
+  ],
+  "summary": {
+    "brokenLinksFound": false,
+    "edgePathsAllOk": true,
+    "homepageCtaNotes": "Local snapshots show multiple booking/schedule references and existing Calendly presence. No fresh CTA block added because the design-already requirement and extant conversion paths are preserved."
+  },
+  "nextActionCandidates": [
+    "/case-studies",
+    "/testimonials",
+    "/blog",
+    "/solutions"
+  ]
+}

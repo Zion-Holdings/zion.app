@@ -38,6 +38,25 @@ def _init_gmail_service():
     except Exception as e:
         service = None
         GMAIL_AUTH_ERROR = repr(e)
+        _paths = [
+            PROJECT_ROOT / '.google' / 'token.json',
+            PROJECT_ROOT / '.google' / 'credentials.json',
+            PROJECT_ROOT / '.google' / 'gmail_token.json',
+            Path.home() / '.credentials' / 'gmail.json',
+            Path.home() / '.google' / 'token.json',
+            Path(os.getenv('GOOGLE_GMAIL_TOKEN_PATH', '')) if os.getenv('GOOGLE_GMAIL_TOKEN_PATH') else None,
+        ]
+        GMAIL_AUTH_ERROR = {
+            'error': repr(e),
+            'missing_env': {
+                'GMAIL_CLIENT_ID': bool(os.getenv('GMAIL_CLIENT_ID')),
+                'GMAIL_CLIENT_SECRET': bool(os.getenv('GMAIL_CLIENT_SECRET')),
+                'GMAIL_REFRESH_TOKEN': bool(os.getenv('GMAIL_REFRESH_TOKEN')),
+                'OPENROUTER_API_KEY': bool(os.getenv('OPENROUTER_API_KEY')),
+                'ZION_LLM_API_ENDPOINT': bool(os.getenv('ZION_LLM_API_ENDPOINT')),
+            },
+            'token_paths': [str(p) for p in _paths if p],
+        }
 
 
 try:
