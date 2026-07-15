@@ -8842,5 +8842,22 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Rating: 1\n#### Rationale:\n1. The only provided value signal is the bare domain `ziontechgroup.com` with no accompanying context, service descriptions, or site content. The \"tech group\" naming convention is commonly used by IT service providers, giving it weak, partial potential alignment with th",
     "confidence": 1
+  },
+  {
+    "to": "noresponder@clientifymail.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "clientifymail.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 1\n#### Reasoning:\nThe domain name `ziontechgroup.com` includes the broad term \"tech\", which indicates the entity operates in the general technology space (the parent category of managed AI/IT services), so it is not completely unrelated (ruling out a 0). However, there is no explicit men",
+    "confidence": 1
   }
 ]
