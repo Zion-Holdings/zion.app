@@ -1345,7 +1345,13 @@ def send_ceo_reply(thread_id, to_addr, subject, body, references_message_id):
     ]
     try:
         thread = _timed_gmail_call(service.users().threads().get(userId="me", id=thread_id, format="metadata", metadataHeaders=["To", "Cc"]))
-        messages = thread.get("messages", []) or []
+        msgs = thread.get("messages", []) or []
+        if msgs:
+            newest = msgs[-1]
+            hdr_map = {x["name"]: x["value"] for x in newest.get("payload", {}).get("headers", [])}
+            if "kleber@ziontechgroup.com" in hdr_map.get("From", "").lower():
+                return {"skipped": True, "reason": "thread_last_message_already_ceo", "thread_id": thread_id}
+        messages = msgs
         all_cc = []
         for m in messages:
             h = {x["name"]: x["value"] for x in m.get("payload", {}).get("headers", [])}

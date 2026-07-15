@@ -10,9 +10,9 @@ FIXED for proper conversation threading
 import urllib.request, urllib.parse, json, datetime, sys, time, base64
 from pathlib import Path
 
-WORKSPACE = Path('/data/data/com.termux/files/home/.openclaw/workspace')
-FALLBACK_WORKSPACE = Path.home() / '.openclaw' / 'workspace'
-LEAD_CRM_FALLBACK = Path('/Users/miami2/zion.app/lead-crm')
+WORKSPACE = Path.home() / '.openclaw' / 'workspace'
+FALLBACK_WORKSPACE = WORKSPACE
+LEAD_CRM_FALLBACK = Path(__file__).resolve().parents[2] / 'lead-crm' 
 
 TOKENS_FILE = None
 for candidate in [WORKSPACE / 'gog_tokens.json', FALLBACK_WORKSPACE / 'gog_tokens.json', LEAD_CRM_FALLBACK / 'gog_tokens.json']:
