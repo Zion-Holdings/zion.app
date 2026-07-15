@@ -1,16 +1,11 @@
 {
-  "drafted_at": "2026-07-15T00:00:00+00:00",
+  "drafted_at": "2026-07-15T14:46:39.633175+00:00",
   "drafts_created": 0,
-  "llm_provider": "rule_based",
-  "note": "No new draft created. The only thread in !!!hot-follow-up (thread_id: 19f579f2341878e4) is a GitHub Codespaces workload notification whose latest message is already from Kleber Garcia Alcatrão; no reply was needed.",
-  "threads_scanned": 1,
-  "threads": [
-    {
-      "thread_id": "19f579f2341878e4",
-      "message_id": "19f621fad9bbcd90",
-      "sender": "github-codespaces[bot] <notifications@github.com>",
-      "subject": "Re: [Zion-support/zion-support.github.io] Run failed: [main]: feat(outreach): keep !!!hot-follow-up threads even if not reply-like - main (ad3a0c2)",
-      "status": "skipped_already_replied"
-    }
-  ]
+  "llm_provider": "hermes-step-3.7-flash",
+  "threads_scanned": 0,
+  "duplicates_skipped": 0,
+  "note": "Drafts created for CEO review.",
+  "drafts_details": [],
+  "duplicates_details": [],
+  "errors": []
 }
