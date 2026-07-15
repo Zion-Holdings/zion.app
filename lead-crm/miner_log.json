@@ -290,5 +290,17 @@
     "event": "miner_timeout",
     "query": "subject:devops",
     "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-07-15T02:43:02.186037+00:00",
+    "event": "miner_timeout",
+    "query": "subject:devops",
+    "note": "soft timeout reached; stopping query loop early"
+  },
+  {
+    "ts": "2026-07-15T02:55:44.621626+00:00",
+    "event": "miner_timeout",
+    "query": "subject:\"incident response\"",
+    "note": "soft timeout reached after search; breaking before metadata extraction"
   }
 ]

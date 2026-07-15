@@ -8519,5 +8519,22 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Score: 0\n#### Rationale:\nThere is no explicit or implicit signal in the provided information linking \"Zion Tech Group\" to managed AI/IT services. The name uses the overly broad term \"Tech\", which could refer to any number of unrelated tech verticals (consumer electronics, product software develo",
     "confidence": 0
+  },
+  {
+    "to": "pmo@intersoftkk.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"Zion Tech Group\"",
+    "domain": "intersoftkk.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 1\n---\n#### Rationale (aligned to the rating rubric):\n- 2 = Strong, explicit signal the entity delivers managed AI/IT services (e.g., name/description directly references the service category, explicit mentions of related offerings in provided content)\n- 1 = Weak/indirect signal that alig",
+    "confidence": 1
   }
 ]
