@@ -60,8 +60,6 @@ const nextConfig = {
       { source: '/ai-financial-services/', destination: '/ai-fraud-detection/', permanent: true },
       { source: '/services/ai-chatbot-builder-pro', destination: '/services/ai-chatbot-builder', permanent: true },
       { source: '/services/ai-chatbot-builder-pro/', destination: '/services/ai-chatbot-builder/', permanent: true },
-      { source: '/services/ai-customer-support-pro', destination: '/services', permanent: true },
-      { source: '/services/ai-customer-support-pro/', destination: '/services/', permanent: true },
       { source: '/services/ai-fraud-detection', destination: '/ai-fraud-detection', permanent: true },
       { source: '/services/ai-fraud-detection/', destination: '/ai-fraud-detection/', permanent: true },
       { source: '/services/ai-automation', destination: '/services/?category=ai', permanent: true },
