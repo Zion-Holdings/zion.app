@@ -8,7 +8,7 @@
     "dev": "next dev",
     "build": "next build --webpack",
     "build:ci": "node scripts/build-wrapper.cjs",
-    "build:check": "npm run type-check && npm run build",
+    "build:check": "npm run type-check && node scripts/build-wrapper.cjs",
     "start": "next start",
     "lint": "next lint",
     "lint:check": "npx eslint app components --ext .ts,.tsx,.js,.mjs --ignore-pattern \".next/**\" --ignore-pattern \"out/**\" --ignore-pattern \"dist/**\" --ignore-pattern \"build/**\" --quiet",

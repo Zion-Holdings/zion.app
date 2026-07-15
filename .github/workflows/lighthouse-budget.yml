@@ -26,7 +26,7 @@ jobs:
       run: npm ci
     - name: build
       run: |-
-        npm run build > /tmp/build.log 2>&1
+        node scripts/build-wrapper.cjs > /tmp/build.log 2>&1
         cat /tmp/build.log || true
 
     - name: prepare Pages artifact for Lighthouse
