@@ -8553,5 +8553,22 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Rating: 1 (weak/indirect signal)\n#### Reasoning aligned to the 0/1/2 relevance scale for managed AI/IT services:\n- A 2 rating would require direct, unambiguous evidence the entity offers managed AI/IT services (e.g., explicit keywords like \"managed-ai-it\", \"it-services\" in the domain, or confirm",
     "confidence": 1
+  },
+  {
+    "to": "wayne.hibbert@intersoftkk.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"Zion Tech Group\"",
+    "domain": "intersoftkk.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 0\n#### Rationale:\nThis entry provides no discernible value signal linking the entity to managed AI/IT services:\n1. The name \"Zion Tech Group\" uses the overly broad term \"Tech\", which could refer to any number of unrelated tech verticals (consumer electronics, product development, SaaS bu",
+    "confidence": 0
   }
 ]
