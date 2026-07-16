@@ -8978,5 +8978,39 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Score: 1\n#### Reasoning:\nThis is a weak, ambiguous signal for managed AI/IT services relevance. The domain name includes the generic term \"tech\", which only hints that the associated entity operates in the broad technology space, but there is no explicit mention, proof, or contextual confirmatio",
     "confidence": 1
+  },
+  {
+    "to": "business-noreply@global.metamail.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "global.metamail.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "template",
+    "llm_model": "deterministic-template-v1",
+    "llm_reason": "Thank you for your interest in our services. I'd be happy to prepare a customized proposal based on your requirements.\n\nCould you please provide more details about your project scope and timeline?\n\nBest regards,\nZion Tech Group",
+    "confidence": 2
+  },
+  {
+    "to": "seminarios@onlyfakes.live",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "onlyfakes.live",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "template",
+    "llm_model": "deterministic-template-v1",
+    "llm_reason": "Thank you for your interest in our services. I'd be happy to prepare a customized proposal based on your requirements.\n\nCould you please provide more details about your project scope and timeline?\n\nBest regards,\nZion Tech Group",
+    "confidence": 2
   }
 ]
