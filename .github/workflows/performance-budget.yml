@@ -40,7 +40,7 @@ jobs:
 
     - name: Build site
       run: |
-        npx --yes next build --webpack > /tmp/build.log 2>&1
+        CI=true npx --yes next build --webpack > /tmp/build.log 2>&1
         BUILD_EXIT=$?
         echo "Build exit code: $BUILD_EXIT"
         cat /tmp/build.log || true
