@@ -24,5 +24,15 @@
     "provider": "gmail",
     "sent_at": "2026-07-14T00:00:00Z",
     "status": "sent"
+  },
+  {
+    "thread_id": "19f3df60bc1cf2ed",
+    "subject": "RE: Supplier Collaboration Opportunity - Zion",
+    "to": "mrodrigues@solyssey.com",
+    "when": "2026-07-07T19:02:32+00:00",
+    "meet": "https://meet.google.com/ouu-khao-kuy",
+    "calendly": "https://calendly.com/kleber-ziontechgroup",
+    "status": "prior_drafts_prevent_reconsideration",
+    "prevent_reconsideration": true
   }
 ]
