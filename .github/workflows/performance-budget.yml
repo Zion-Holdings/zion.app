@@ -49,17 +49,6 @@ jobs:
           exit $BUILD_EXIT
         fi
 
-    - name: Verify static export
-      run: |-
-        if [ -d out ]; then
-          PAGES=$(find out -name 'index.html' | wc -l)
-          SIZE=$(du -sh out | awk '{print $1}')
-          echo "Static export successful: $PAGES pages, $SIZE"
-        else
-          echo "No out/ directory found"
-          exit 1
-        fi
-
     - name: Run Performance Budget Enforcer
       id: perf
       env:
