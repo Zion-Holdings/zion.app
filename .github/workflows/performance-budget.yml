@@ -40,9 +40,10 @@ jobs:
 
     - name: Build site
       run: |
-        npx next build --webpack 2>&1 | tee /tmp/build.log
-        BUILD_EXIT=${PIPESTATUS[0]}
+        npx next build --webpack > /tmp/build.log 2>&1
+        BUILD_EXIT=$?
         echo "Build exit code: $BUILD_EXIT"
+        cat /tmp/build.log || true
         if [ $BUILD_EXIT -ne 0 ]; then
           echo "Build failed"
           exit $BUILD_EXIT
