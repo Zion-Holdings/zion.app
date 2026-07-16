@@ -352,6 +352,88 @@ def _call_utils_llm_query(messages, temperature=0.3):
     raise RuntimeError('utils_llm_query_unexpected')
 
 
+def _update_miner_health(analysis_summary, status):
+    health_path = REPO / 'lead-crm' / 'miner_health.json'
+    try:
+        existing = json.loads(health_path.read_text(encoding='utf-8')) if health_path.exists() else {}
+    except Exception:
+        existing = {}
+    existing['ts'] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    existing['last_analysis_status'] = status
+    existing['last_analysis_summary'] = analysis_summary
+    existing['contacts_found'] = analysis_summary.get('contacts', existing.get('contacts_found', 0))
+    existing['contacts_with_personalized_body'] = analysis_summary.get('contacts_with_personalized_body', existing.get('contacts_with_personalized_body', 0))
+    existing['contacts_missing_fields'] = analysis_summary.get('contacts_missing_fields', existing.get('contacts_missing_fields', 0))
+    existing['ready_count'] = analysis_summary.get('ready_count', 0)
+    existing['excluded_count'] = analysis_summary.get('excluded_count', 0)
+    existing['status'] = 'analyzed'
+    try:
+        health_path.write_text(json.dumps(existing, ensure_ascii=False, indent=2), encoding='utf-8')
+    except Exception:
+        pass
+
+
+def _analyze_and_improve(rows, excluded):
+    improved = []
+    summary = {
+        'contacts': 0,
+        'contacts_with_personalized_body': 0,
+        'contacts_missing_fields': 0,
+        'ready_count': 0,
+        'excluded_count': 0,
+        'subject_counts': {},
+        'status_counts': {},
+        'improvement_notes': [],
+    }
+    for r in rows:
+        to = (r.get('to') or r.get('recipient') or r.get('email') or '').lower()
+        company = r.get('company_name') or r.get('name') or ''
+        domain = r.get('domain') or (to.split('@')[1] if '@' in to else '')
+        status = r.get('status', 'unknown')
+        summary['contacts'] += 1
+        summary['status_counts'][status] = summary['status_counts'].get(status, 0) + 1
+        if not r.get('body'):
+            subject = r.get('subject') or 'Sem assunto'
+            summary['subject_counts'][subject] = summary['subject_counts'].get(subject, 0) + 1
+        improvement = dict(r)
+        missing = []
+        if not r.get('company_name') and not r.get('name'):
+            missing.append('company_name')
+        if not r.get('domain'):
+            missing.append('domain')
+        if not r.get('subject'):
+            missing.append('subject')
+        if not r.get('body'):
+            missing.append('body')
+        if missing:
+            summary['contacts_missing_fields'] += 1
+        if company:
+            if not r.get('subject'):
+                improvement['subject'] = f"Parceria Zion Tech Group — operações e eficiência para {company}"
+            if not r.get('body'):
+                improvement['body'] = (
+                    f"Olá,\n\n"
+                    f"Sou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\n"
+                    f"Vi que a {company} atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\n"
+                    f"Gostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n"
+                    f"1. Avaliação rápida de operações de TI com foco em eficiência\n"
+                    f"2. Projeto piloto em uma área com gargalo conhecido\n"
+                    f"3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\n"
+                    f"Se quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\n"
+                    f"Conheça mais aqui: https://ziontechgroup.com"
+                )
+                summary['contacts_with_personalized_body'] += 1
+        if to in excluded:
+            improvement['_excluded'] = True
+            summary['excluded_count'] += 1
+        improved.append(improvement)
+    summary['ready_count'] = len(improved)
+    summary['improvement_notes'].append(
+        'Bodies gerados heurísticos para contatos sem thread_body personalizado.'
+    )
+    return {'improved': improved, 'summary': summary}
+
+
 def main():
     batch_path = sys.argv[1] if len(sys.argv) > 1 else str(REPO / 'lead-crm' / 'outreach_ready_canonical.json')
     if not Path(batch_path).exists():
@@ -372,7 +454,30 @@ def main():
         except Exception:
             excluded = set()
     if not send_allowed:
-        print(json.dumps({'generatedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'send_count': 0, 'skipped_templates': skipped_templates, 'results': [], 'note': 'SEND_DISABLED: set ZTG_SEND_ALLOWED=1 to enable outbound sends'}, ensure_ascii=False))
+        # Run analysis and improvement pass even when sending is disabled
+        analysis = _analyze_and_improve(rows, excluded)
+        improved_rows = analysis['improved']
+        analysis_summary = analysis['summary']
+        # Persist improved records back to batch_path
+        try:
+            canonical = json.loads(Path(batch_path).read_text(encoding='utf-8'))
+            ready_list = canonical.get('ready') or canonical.get('recipients') or canonical.get('batch') or []
+            improved_by_to = {r.get('to'): r for r in improved_rows if r.get('to')}
+            updated = 0
+            for item in ready_list:
+                k = item.get('to') or item.get('recipient') or item.get('email')
+                if k and k.lower() in improved_by_to:
+                    item.update(improved_by_to.pop(k.lower()))
+                    updated += 1
+            canonical['ready'] = ready_list
+            canonical['improvedAt'] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+            canonical['analysisSummary'] = analysis_summary
+            Path(batch_path).write_text(json.dumps(canonical, ensure_ascii=False, indent=2), encoding='utf-8')
+        except Exception:
+            pass
+        # Update miner_health.json with analysis metrics
+        _update_miner_health(analysis_summary, 'analyzed_no_send')
+        print(json.dumps({'generatedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'send_count': 0, 'skipped_templates': skipped_templates, 'results': [], 'note': 'SEND_DISABLED: set ZTG_SEND_ALLOWED=1 to enable outbound sends', 'analysisSummary': analysis_summary}, ensure_ascii=False))
         return
     for r in rows:
         to = r.get('email') or r.get('recipient') or r.get('to')
