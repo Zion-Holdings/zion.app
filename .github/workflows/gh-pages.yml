@@ -107,6 +107,13 @@ jobs:
           # Ensure SEO files exist whichever path produced them.
           if [ ! -f "$ARTIFACT_DIR/robots.txt" ] && [ -f docs/robots.txt ]; then cp -f docs/robots.txt "$ARTIFACT_DIR/robots.txt"; fi
           if [ ! -f "$ARTIFACT_DIR/sitemap.xml" ] && [ -f docs/sitemap.xml ]; then cp -f docs/sitemap.xml "$ARTIFACT_DIR/sitemap.xml"; fi
+          # Promote key fallback pages from docs/ to artifact root so Pages can serve them.
+          for f in case-studies/index.html industries/index.html testimonials/index.html; do
+            if [ -f "docs/$f" ] && [ ! -f "$ARTIFACT_DIR/$f" ]; then
+              mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
+              cp -a "docs/$f" "$ARTIFACT_DIR/$f"
+            fi
+          done
           PAGES=$(find "$ARTIFACT_DIR" -name 'index.html' | wc -l)
           echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
           echo 'manifest:'
