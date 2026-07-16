@@ -9114,5 +9114,39 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Rating: 1\n#### Reasoning aligned to the scoring criteria:\n1. **Not a 2 (strong direct signal):** There is no explicit mention of managed AI/IT services, no accompanying context listing relevant offerings, and no proof of operations in this specific vertical. The generic \"tech group\" domain namin",
     "confidence": 1
+  },
+  {
+    "to": "hello@automailer.io",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "automailer.io",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 1\n#### Rationale:\n- A rating of 2 would require explicit, direct signals that the entity offers managed AI/IT services (e.g. the domain name directly references \"managed IT\", \"AI services\", \"managed tech support\", or other directly relevant offering terminology), none of which are presen",
+    "confidence": 1
+  },
+  {
+    "to": "no_responder@servidorkpmkmd.info-ambon.id",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "servidorkpmkmd.info-ambon.id",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "template",
+    "llm_model": "deterministic-template-v1",
+    "llm_reason": "Thank you for your interest in our services. I'd be happy to prepare a customized proposal based on your requirements.\n\nCould you please provide more details about your project scope and timeline?\n\nBest regards,\nZion Tech Group",
+    "confidence": 2
   }
 ]
