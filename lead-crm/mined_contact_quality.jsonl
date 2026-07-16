@@ -92,3 +92,4 @@
 {"ts": "2026-07-15T21:37:26.819588+00:00", "email": "info@skihood.email", "msg_id": "19f67b242a8ea4ba", "query": "\"Zion Tech Group\"", "confidence": 1, "high_signal": false}
 {"ts": "2026-07-15T21:37:53.198873+00:00", "email": "groups-noreply@linkedin.com", "msg_id": "19f67abe1e81f4c5", "query": "\"ziontechgroup.com\"", "confidence": 0, "high_signal": false}
 {"ts": "2026-07-15T22:09:11.977241+00:00", "email": "atendimento@cx.mercadobitcoin.com.br", "msg_id": "19f67cedf6f38723", "query": "\"Zion Tech Group\"", "confidence": 1, "high_signal": false}
+{"ts": "2026-07-16T00:01:48.775767+00:00", "email": "googlebase-noreply@google.com", "msg_id": "19f68361e2aff056", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
