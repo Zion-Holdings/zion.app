@@ -79,6 +79,9 @@ FORBIDDEN_DOMAIN_SUBSTRINGS = (
 MAX_AGE_DAYS = 180
 DEDUP_COOLDOWN_SECONDS = 24 * 3600  # 24 hours
 SEND_REQUIRES_ALIVE_THREAD = True
+CONTINUOUS_IMPROVEMENT_FILE = BASE_DIR / 'outreach_monitor' / 'processed' / 'continuous_improvement_metrics.jsonl'
+MAX_DISCOVERY_QUERIES = 12
+HIGH_FREQUENCY_MIN_INTERVAL_SECONDS = 30
 LLM_TAILOR_ENABLED = bool(
     (os.getenv('ZION_LLM_API_ENDPOINT') and os.getenv('ZION_LLM_API_KEY') and os.getenv('ZION_LLM_MODEL')) or
     os.getenv('OPENROUTER_API_KEY') or
