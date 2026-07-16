@@ -40,7 +40,7 @@ jobs:
 
     - name: Build site
       run: |
-        CI=true npx --yes next build --webpack > /tmp/build.log 2>&1 || true
+        node node_modules/next/dist/bin/next.js build --webpack > /tmp/build.log 2>&1 || true
         BUILD_EXIT=$?
         echo "Build exit code: $BUILD_EXIT"
         cat /tmp/build.log || true
