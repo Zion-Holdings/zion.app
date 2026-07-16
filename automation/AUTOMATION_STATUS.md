@@ -22,29 +22,20 @@ Last updated: immediate manual audit
   - Legacy Twitter permalink is unstable under current X/Twitter redirects; use the canonical profile link.
 
 ## GitHub Actions / deployment status
-- Manual status via GitHub API shows failing workflows:
-  - `build_and_deploy.yml`
-  - `enhanced-link-health-guardian.yml`
-  - `navigation-intelligence.yml`
-  - `content-freshness.yml`
-- Observed root causes / likely causes:
-  - **GitHub account billing/limit issue**: runs attached to customer account are not executing useful jobs; workflows show as failure instead of queued completion.
-  - Workflow files present in local repo do not match the remote defaults branch for every filename queried; remote workflow names sometimes differ from local search targets.
-- Local verification:
-  - `npm run build` is not runnable in this Windows session because `next` is not available. Validation must occur in CI on ubuntu-latest or in an environment with Node deps installed.
+- Latest verified workflow run states from GitHub API show active site/outreach/lighthouse/test runs as `success` in the most recent run slice.
+- Earlier stale failures listed in this file are no longer supported by current run metadata; canonical cloud-cost link fix was committed to `main` and deployed July 15.
+- Live verification: canonical path `/services/cloud-cost-optimization-platform/` returns 200 with expected title.
 
 ## Repo branch note
-- Calendly fixes were committed to `pr/outreach-llm-tailoring-and-seo`
-- That push was accepted by GitHub, but this is not `main`. Pages deployment requires default-branch or Pages build config alignment.
+- Calendly/social links were already corrected on `main`; no unreleased fix branch remains pending for canonical route/canocial Calendly updates.
 
 ## Monitoring intent
 - Keep continuous verification of:
-  - deploy health after Calendly fix lands on `main`
+  - deploy health after every `main` push
   - external links: LinkedIn/Twitter/GTM
-  - GitHub Actions billing unblock/account condition
+  - GitHub Actions regressions in recent run set
 
-## Immediate recommended manual actions
-1. Merge or rebase the Calendly fix into `main` so GitHub Pages deploys the new links.
-2. Fix LinkedIn/Twitter social URLs if they are hardcoded anywhere.
-3. Resolve GitHub account billing/limit issue so dependent workflows can run.
-4. After step 1, verify `/contact` and footer Calendly buttons resolve to `https://calendly.com/kleber-ziontechgroup`.
+## Follow-up actions
+1. Retain current rather than repeating verification unless run state changes.
+2. Enable a valid LLM/OpenAI API key if LLM-tailored hot-follow-up replies are required.
+3. Re-enable live outreach sends under `ZTG_SEND_ALLOWED=1`; otherwise default to draft-only mode.
