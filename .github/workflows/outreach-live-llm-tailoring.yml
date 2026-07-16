@@ -74,12 +74,13 @@ jobs:
           print(json.dumps(report, ensure_ascii=False))
           PY
 
-      - name: Upload outreach reports
+      - name: Upload outreach reports and trace logs
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: outreach-reports
+          name: outreach-reports-${{ github.run_id }}
           path: |
+            outreach_run.log
             outreach_monitor/processed/sent_ledger.jsonl
             outreach_monitor/processed/hot_followup_reply_ledger.jsonl
             outreach_monitor/processed/dry_run_report.jsonl
