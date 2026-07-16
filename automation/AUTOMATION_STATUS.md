@@ -3,43 +3,32 @@ Last updated: 2026-07-16
 
 ## Current Status
 - Site healthy and deployed on GitHub Pages.
-- Canonical service path live: `/services/cloud-cost-optimization-platform/`.
-- Outreach automation is running with deterministic fallback templates only; live LLM tailoring is blocked because the configured model (`stepfun/step-3.7-flash:free`) returns empty user-facing completions.
-- Interest/hot-followup candidates are queued as `ready_to_review` drafts only; no blind auto-send is active.
-- Continuous monitoring jobs are scheduled in Hermes cron.
+- Canonical service path live: `/services/cloud-cost-optimization-platform/`
+- Internal link audit: local runner verified (`broken_count=0`)
 
-## Verified Details
-- Live site: https://ziontechgroup.com
-- Contact path: https://ziontechgroup.com/contact
-- Calendly: https://calendly.com/kleber-ziontechgroup
-- Google Meet backup: https://meet.google.com/ouu-khao-kuy
-- LinkedIn: https://www.linkedin.com/company/ziontechgroup
-- X/Twitter: https://x.com/ziontechgroup
+## Active Monitoring
+- `ztg-internal-link-audit`: `ok`, using repo-local wrapper
+- `zion-broken-links-check`: `ok`
+- `zion-service-counts-check`: `ok`
+- `ztg-link-audit`: `ok`
+- `token-renewal-check`: `ok`
+- `email-responder`: `ok`
+- `health-check`: `ok`
+- `pages-canonical-deploy-verifier`: `ok`
 
-## Recent Commits
-- `85a18cebb` — `chore(outreach): automated outreach cycle`
-- `c220e32d4` — `chore(outreach): automated outreach cycle`
-- `f7e88833e` — `docs: refresh external link status in automation report`
-- `f01f4bea4` — `docs: refresh automation status after verified deploy/fix review`
-- `07e937ff4` — `fix: canonical cloud-cost link in homepage service cards`
+## Paused Jobs — Nous Rate Limit / 429
+Paused because active provider token is `exhausted` with `HTTP 429`:
+- `zion-email-intelligence-ceo-mode`
+- `it-outreach-vendor-seed`
+- `IT SMB Outreach Fast`
+- `Zion Site Smoke Test`
+- `zion-historical-miner`
+- `zion-outreach-tailored`
+- `Hot-followup watcher`
+- `ztg-email-high-frequency-tailored-monitor`
+- `Site health watchdog`
+- `web-prospecting-it-services`
 
-## Cron / Continuous Jobs
-- `zion-outreach-tailored`: every 15m
-- `zion-historical-miner`: every 10m
-- `email-responder`: every 30m
-- `token-renewal-check`: every 15m
-- `web-prospecting-it-services`: every 15m
-- `Zion Site Smoke Test`: every 90m
-- `Site health watchdog`: every 15m
-- `ztg-internal-link-audit`: every 30m
-- `ztg-link-audit`: weekly
-- `pages-canonical-deploy-verifier`: weekly
-- `zion-broken-links-check`: weekly
-- `twinsburg-hire-daily-nudge`: daily
-- High-frequency tailored Gmail monitor: every 15m
-
-These jobs verify site integrity, auth/token health, outreach mining, and draft generation on a continuous basis.
-
-## Operational Guidance
-- Do not enable automated LLM tailoring or live sends until a clean-output provider/model is confirmed.
-- Review `outreach_monitor/processed/monitor_report.jsonl` and `ready_to_review` interest drafts before any send.
+## Outstanding Blocker
+- Need a clean-output LLM provider/model or Nous quota reset before re-enabling paused jobs.
+- Outreach LLM tailoring remains in fallback/draft mode.
