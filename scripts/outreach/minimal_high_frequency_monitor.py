@@ -249,27 +249,41 @@ def _llm_tailor_reply_auth(name, contact, lang, subject, snippet):
         msg = ((data.get('choices') or [{}])[0].get('message') or {})
         text = ''
         if isinstance(msg, dict):
-            text = (msg.get('content') or msg.get('reasoning') or '').strip()
+            text = ((msg.get('reasoning') or msg.get('content') or '')).strip()
         if not text:
             return None
-        text = text.replace('\\n', '\n').strip()
-        if len(text) > 900:
-            text = text[:900].rstrip()
+        # Extract final assistant reply from free-form reasoning when content is empty.
+        if msg.get('content') is None and msg.get('reasoning'):
+            reasoning = msg['reasoning']
+            # Heuristic: use the last complete sentence or instructions block as the draft.
+            for marker in ('\n\nThen,', '\n\nFinally,', 'Then mention', '\n\nNext,'):
+                if marker in reasoning:
+                    reasoning = reasoning.split(marker, 1)[1]
+            text = reasoning.strip()
+        lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
+        if not lines:
+            return None
+        assembled = ' '.join(lines)
+        assembled = assembled.replace('\\n', '\n').strip()
+        if len(assembled) > 900:
+            assembled = assembled[:900].rstrip()
+        if not assembled:
+            return None
         preamble_markers = (
             'Got it,', 'Sure,', 'First,', 'Okay,', 'Wait,', 'Let\'s', 'Now,', 'Here\'s', 'Subject:', 'Client:', 'Context:',
             'Expr of interest', 'Your response', 'let me know', 'Would you like me to', 'right this moment',
             'recommendations in the next response', 'the recipient is', 'the requirements', 'the user said',
             'wait no', 'wait, wait', 'conversely', ' hmm '
         )
-        lower = text.lower()
-        if lower.startswith('got it') or lower.startswith('first,') or lower.startswith('okay,') or lower.startswith('let\'s') or lower.startswith('here\'s') or 'the requirements:' in text or 'the user said' in text:
+        lower = assembled.lower()
+        if lower.startswith('got it') or lower.startswith('first,') or lower.startswith('okay,') or lower.startswith('let\'s') or lower.startswith('here\'s') or 'the requirements:' in assembled or 'the user said' in assembled:
             return None
         sent_email_pattern = re.compile(r'^\s*(hi|hello|dear|good\s+(morning|afternoon|evening)|greetings)', re.IGNORECASE)
-        if not sent_email_pattern.search(text):
+        if not sent_email_pattern.search(assembled):
             return None
         if any(m.lower() in lower for m in preamble_markers):
             return None
-        return text
+        return assembled
     except Exception:
         return None
 
