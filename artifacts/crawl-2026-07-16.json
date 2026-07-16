@@ -1,58 +1,58 @@
-[
-  {
-    "path": "/",
-    "url": "https://ziontechgroup.com/",
-    "status": 200,
-    "size": 0,
-    "error": ""
+{
+  "timestamp": "2026-07-16T23:48:39Z",
+  "origin": "https://ziontechgroup.com",
+  "key_paths": {
+    "/": {
+      "probed_url": "https://ziontechgroup.com/",
+      "status": 200,
+      "size": 6704,
+      "final_url": "https://ziontechgroup.com/"
+    },
+    "/services/": {
+      "probed_url": "https://ziontechgroup.com/services/",
+      "status": 200,
+      "size": 6323,
+      "final_url": "https://ziontechgroup.com/services/"
+    },
+    "/tools/": {
+      "probed_url": "https://ziontechgroup.com/tools/",
+      "status": 200,
+      "size": 7147,
+      "final_url": "https://ziontechgroup.com/tools/"
+    },
+    "/contact/": {
+      "probed_url": "https://ziontechgroup.com/contact/",
+      "status": 200,
+      "size": 3505,
+      "final_url": "https://ziontechgroup.com/contact/"
+    },
+    "/pricing/": {
+      "probed_url": "https://ziontechgroup.com/pricing/",
+      "status": 200,
+      "size": 3463,
+      "final_url": "https://ziontechgroup.com/pricing/"
+    },
+    "/solutions/": {
+      "probed_url": "https://ziontechgroup.com/solutions/",
+      "status": 200,
+      "size": 3556,
+      "final_url": "https://ziontechgroup.com/solutions/"
+    },
+    "/blog/": {
+      "probed_url": "https://ziontechgroup.com/blog/",
+      "status": 200,
+      "size": 3118,
+      "final_url": "https://ziontechgroup.com/blog/"
+    },
+    "/about/": {
+      "probed_url": "https://ziontechgroup.com/about/",
+      "status": 200,
+      "size": 3698,
+      "final_url": "https://ziontechgroup.com/about/"
+    }
   },
-  {
-    "path": "/services/",
-    "url": "https://ziontechgroup.com/services/",
-    "status": 200,
-    "size": 0,
-    "error": ""
-  },
-  {
-    "path": "/tools/",
-    "url": "https://ziontechgroup.com/tools/",
-    "status": 200,
-    "size": 0,
-    "error": ""
-  },
-  {
-    "path": "/contact/",
-    "url": "https://ziontechgroup.com/contact/",
-    "status": 200,
-    "size": 0,
-    "error": ""
-  },
-  {
-    "path": "/pricing/",
-    "url": "https://ziontechgroup.com/pricing/",
-    "status": 200,
-    "size": 0,
-    "error": ""
-  },
-  {
-    "path": "/solutions/",
-    "url": "https://ziontechgroup.com/solutions/",
-    "status": 200,
-    "size": 0,
-    "error": ""
-  },
-  {
-    "path": "/blog/",
-    "url": "https://ziontechgroup.com/blog/",
-    "status": 200,
-    "size": 0,
-    "error": ""
-  },
-  {
-    "path": "/about/",
-    "url": "https://ziontechgroup.com/about/",
-    "status": 200,
-    "size": 0,
-    "error": ""
-  }
-]
+  "bfs_depth": 1,
+  "unique_paths_seen": 33,
+  "broken_links": [],
+  "broken_count": 0
+}

@@ -34,5 +34,17 @@
     "calendly": "https://calendly.com/kleber-ziontechgroup",
     "status": "prior_drafts_prevent_reconsideration",
     "prevent_reconsideration": true
+  },
+  {
+    "thread_id": "19f6cec9a2b765a9",
+    "message_id": "19f6d58fbe1b3045",
+    "to": "marcello.rodrigues@intersoftkk.com",
+    "subject": "Re: Partner Onboarding documentations - Zion",
+    "provider": "gmail",
+    "sent_at": "2026-07-16T23:52:55Z",
+    "status": "sent",
+    "meet": "https://meet.google.com/ouu-khao-kuy",
+    "calendly": "https://calendly.com/kleber-ziontechgroup",
+    "site": "https://ziontechgroup.com"
   }
 ]
