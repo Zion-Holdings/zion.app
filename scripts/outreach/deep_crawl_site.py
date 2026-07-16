@@ -10,6 +10,10 @@ MAX_PAGES = 300
 ALLOWED_HOSTS = {'ziontechgroup.com', 'www.ziontechgroup.com'}
 HEADERS = {'User-Agent':'Mozilla/5.0 (compatible; ZionDeepCrawler/1.0)'}
 
+REPO_ROOT = Path(__file__).resolve().parents[2]
+DATA_DIR = REPO_ROOT / 'outreach_monitor' / 'processed'
+DATA_DIR.mkdir(parents=True, exist_ok=True)
+
 visited = set()
 queue = [BASE.rstrip('/') + '/']
 broken = []
@@ -67,7 +71,7 @@ def crawl():
                 if nxt not in visited:
                     queue.append(nxt)
             for terms_file in ['app/data/servicesData.ts']:
-                p = Path('/c/Users/Zion/tmp/zion-clone-test2') / terms_file
+                p = REPO_ROOT / terms_file
                 if p.exists():
                     text = p.read_text(encoding='utf-8', errors='ignore').lower()
                     for word in ['compliance','managed services','cloud migration','devsecops']:
@@ -79,9 +83,10 @@ def crawl():
 crawl()
 report = {
     'crawled': len(visited),
-  'broken': broken,
-  'improvements': improvements[:50],
-  'seo_terms_present': sorted(terms_seen),
+    'broken': broken,
+    'improvements': improvements[:50],
+    'seo_terms_present': sorted(terms_seen),
 }
-Path('/c/Users/Zion/tmp/zion-clone-test2/outreach_monitor/processed/site_deep_crawl_report.json').write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')
+report_file = DATA_DIR / 'site_deep_crawl_report.json'
+report_file.write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding='utf-8')
 print(json.dumps({'crawled': len(visited), 'broken_count': len(broken), 'improvement_pages': len(improvements)}, ensure_ascii=False))

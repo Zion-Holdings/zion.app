@@ -16,7 +16,7 @@ import os
 import sys
 from pathlib import Path
 
-REPO = Path(r'C:/Users/Zion/tmp/zion-clone-test2')
+REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO))
 
 os.environ.setdefault('OUTREACH_REQUIRES_APPROVAL', '0')
@@ -76,6 +76,7 @@ def main():
     candidates = [
         'next_ceo_reply_hemmersbach.json',
         'next_ceo_reply_heygen.json',
+        'next_ceo_reply_solyssey.json',
     ]
     sent = []
     skipped = []
