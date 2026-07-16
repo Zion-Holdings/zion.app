@@ -946,5 +946,4 @@ def telegram_send(text: str):
             if r.status != 200:
                 print(f'[TELEGRAM] HTTP {r.status}: {text[:100]}')
     except Exception as e:
->>>>>>> 4152c7d0a (feat: add wave214/wave216 IT services and manual lead discovery outreach artifacts)
         print(f'[TELEGRAM] Failed: {e}')

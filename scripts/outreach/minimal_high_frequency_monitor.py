@@ -207,14 +207,21 @@ def _llm_tailor_reply_auth(name, contact, lang, subject, snippet):
     try:
         import urllib.request
         auth_path = Path.home()/'.hermes'/'auth.json'
+        cfg_path = Path.home()/'.hermes'/'config.yaml'
         if not auth_path.exists():
-            return None
+            return {'blocker': 'auth_missing', 'detail': str(auth_path)}
+        cfg_text = cfg_path.read_text(encoding='utf-8') if cfg_path.exists() else ''
         cfg = json.loads(auth_path.read_text(encoding='utf-8')) or {}
         provider = ((cfg.get('providers') or {}).get('nous') or {})
         endpoint = (provider.get('inference_base_url') or 'https://inference-api.nousresearch.com/v1').rstrip('/')
         token = provider.get('access_token') or ''
-        if not token or not endpoint:
-            return None
+        debug = {}
+        if not token:
+            debug['provider'] = 'missing_access_token'
+        if not endpoint:
+            debug['endpoint'] = 'missing_endpoint'
+        if debug:
+            return {'blocker': 'provider_config_incomplete', 'detail': debug}
         model = 'stepfun/step-3.7-flash:free'
         system = (
             "You are the CEO of Zion Tech Group. Write one complete email body only. "
