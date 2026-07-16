@@ -50,15 +50,25 @@ def _dedupe_subject_style(subject, seen_subjects):
     return subject
 
 def _call_llm_chat(messages, model=None, temperature=0.35, max_tokens=500):
+    # Primary: lib.llm_client with OpenRouter/Ollama fallback chain
     try:
         sys.path.insert(0, str(REPO / 'lib'))
-        from lib.llm_client import chat
-        res = chat(messages, provider="auto", temperature=temperature)
-        if isinstance(res, dict):
-            return {'content': (res.get('content') or '').strip(), 'provider': res.get('provider', 'llm'), 'model': res.get('model', '')}
-        return {'content': '', 'provider': 'error', 'model': '', 'error': 'invalid_llm_result'}
+        from lib.llm_client import chat as lib_chat
+        res = lib_chat(messages, provider="auto", temperature=temperature, max_tokens=max_tokens)
+        if isinstance(res, dict) and (res.get('content') or '').strip():
+            return {'content': res.get('content','').strip(), 'provider': res.get('provider', 'lib'), 'model': res.get('model', '')}
+    except Exception:
+        pass
+    # Secondary: Nous provider with auth.json/PAT
+    try:
+        sys.path.insert(0, str(LEAD_DIR))
+        from nous_llm import chat as nous_chat
+        res = nous_chat(messages, model=model, temperature=temperature, max_tokens=max_tokens)
+        if isinstance(res, dict) and (res.get('content') or '').strip():
+            return {'content': res.get('content','').strip(), 'provider': res.get('provider', 'nous'), 'model': res.get('model', '')}
     except Exception as e:
         return {'content': '', 'provider': 'error', 'model': '', 'error': str(e)}
+    return {'content': '', 'provider': 'no-llm', 'model': ''}
 
 def _get_thread_context(thread_id):
     """Fetch recent thread context for personalization."""
