@@ -229,10 +229,12 @@ def _llm_tailor_reply_auth(name, contact, lang, subject, snippet):
             "Tone: friendly, direct, professional. "
             "Requirements: thank them for the past project; propose 2 concrete mutually beneficial next ideas; "
             "include https://ziontechgroup.com and mention free tools/services; include https://calendly.com/kleber-ziontechgroup; "
-            "do not invent unsupported claims."
+            "Output contract: start with 'FINAL_EMAIL:' on its own line, then the email body only. "
+            "Do not narrate, do not explain, do not emit chain-of-thought, and do not invent unsupported claims."
         )
         user = (
-            f"Subject: {subject}\nClient: {name} <{contact}>\nContext: {(snippet or '')[:300]}\n\nEmail body:"
+            f"Subject: {subject}\nClient: {name} <{contact}>\nContext: {(snippet or '')[:300]}\n\n"
+            "Write the email now.\n\nFINAL_EMAIL:\nHi {{name}},\n\n"
         )
         payload = json.dumps({
             'model': model,
@@ -240,7 +242,7 @@ def _llm_tailor_reply_auth(name, contact, lang, subject, snippet):
                 {'role':'system','content': system},
                 {'role':'user','content': user}
             ],
-            'temperature': 0.35,
+            'temperature': 0.25,
             'max_tokens': 480,
         }).encode('utf-8')
         req = urllib.request.Request(endpoint+'/chat/completions', data=payload, headers={'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'})
@@ -255,10 +257,21 @@ def _llm_tailor_reply_auth(name, contact, lang, subject, snippet):
         # Extract final assistant reply from free-form reasoning when content is empty.
         if msg.get('content') is None and msg.get('reasoning'):
             reasoning = msg['reasoning']
-            # Heuristic: use the last complete sentence or instructions block as the draft.
-            for marker in ('\n\nThen,', '\n\nFinally,', 'Then mention', '\n\nNext,'):
-                if marker in reasoning:
-                    reasoning = reasoning.split(marker, 1)[1]
+            # Trim common chain-of-thought preambles.
+            for prefix in (
+                'Got it,', 'Sure,', 'Okay,', 'Wait,', 'Let\'s', 'First,', 'Now,',
+                'Here\'s', 'Subject:', 'Client:', 'Context:', 'the requirements:', 'the user said:'
+            ):
+                if reasoning.startswith(prefix):
+                    reasoning = reasoning[len(prefix):].lstrip(' ,:-')
+            # Prefer the last complete greeting onward; model often drafts email late.
+            greeting_matches = list(re.finditer(
+                r'(?:\n|^)((?:Hi|Hello|Dear|Good\s+(?:morning|afternoon|evening)|Greetings)[^\\n]{0,120}?,?)',
+                reasoning,
+                re.IGNORECASE | re.S,
+            ))
+            if greeting_matches:
+                reasoning = reasoning[greeting_matches[-1].start():].strip()
             text = reasoning.strip()
         lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
         if not lines:
