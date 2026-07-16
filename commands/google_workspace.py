@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #!/usr/bin/env python3
 from __future__ import annotations
 
@@ -497,21 +496,7 @@ def telegram_send(text: str):
             if r.status != 200:
                 print(f'[TELEGRAM] HTTP {r.status}: {text[:100]}')
     except Exception as e:
-=======
-#!/usr/bin/env python3
-from __future__ import annotations
-
-"""Google Workspace API helpers for Zion Org Memory system.
-
-Shared between org_memory_agent.py and vector_index.py
-FIXED for proper conversation threading
-"""
-
-import urllib.request, urllib.parse, json, datetime, sys, time, base64
-from pathlib import Path
-
-WORKSPACE = Path('/data/data/com.termux/files/home/.openclaw/workspace')
-TOKENS_FILE = WORKSPACE / 'gog_tokens.json'
+        print(f'[TELEGRAM] Failed: {e}')
 
 def load_gog_tokens():
     with open(TOKENS_FILE) as f:
