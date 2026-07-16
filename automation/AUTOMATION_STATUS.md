@@ -14,12 +14,9 @@ Last updated: immediate manual audit
     - `app/components/ContactFunnel.tsx`
     - `app/components/Footer.tsx`
   - The 404 remains live on `main` until the fix branch lands on default branch and deploys via Pages.
-- `https://www.googletagmanager.com` → 404
-  - This is suspicious. If GTM is referenced in production, the container ID or script URL should be reviewed. It looks like the base URL alone is hit without a container path in one place.
-- `https://www.linkedin.com/company/zion-tech-group/` → 404
-  - Likely needs exact handle correction to `zion-tech-group` or the correct LinkedIn slug.
-- `https://twitter.com/ziontechgroup` → 503
-  - Legacy Twitter permalink is unstable under current X/Twitter redirects; use the canonical profile link.
+- `https://www.googletagmanager.com` → 404 expected for bare domain; live site uses preconnect+dns-prefetch in `layout.tsx`. No container ID/script dependence observed.
+- `https://www.linkedin.com/company/zion-tech-group/` → stale historic finding; current link is `https://www.linkedin.com/company/ziontechgroup` and returns 200.
+- `https://twitter.com/ziontechgroup` → stale historic finding; current link is `https://x.com/ziontechgroup` and returns 200.
 
 ## GitHub Actions / deployment status
 - Latest verified workflow run states from GitHub API show active site/outreach/lighthouse/test runs as `success` in the most recent run slice.
