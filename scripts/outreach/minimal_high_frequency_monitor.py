@@ -244,7 +244,7 @@ def _llm_tailor_reply_auth(name, contact, lang, subject, snippet):
                 {'role':'assistant','content': 'Hi ' + name + ',\n\n'}
             ],
             'temperature': 0.25,
-            'max_tokens': 640,
+            'max_tokens': 1024,
         }).encode('utf-8')
         req = urllib.request.Request(endpoint+'/chat/completions', data=payload, headers={'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'})
         with urllib.request.urlopen(req, timeout=25) as r:
@@ -265,22 +265,27 @@ def _llm_tailor_reply_auth(name, contact, lang, subject, snippet):
             ):
                 if reasoning.startswith(prefix):
                     reasoning = reasoning[len(prefix):].lstrip(' ,:-')
-            # Prefer the last complete greeting onward; model often drafts email late.
+            # Prefer the last complete greeting onward because the model may emit reasoning then draft late or truncated.
             greeting_matches = list(re.finditer(
-                r'(?:\n|^)((?:Hi|Hello|Dear|Good\s+(?:morning|afternoon|evening)|Greetings)[^\\n]{0,120}?,?)',
+                r'(?:\n|^)((?:Hi|Hello|Dear|Good\s+(?:morning|afternoon|evening)|Greetings)[^\\n]{0,160}?,?)',
                 reasoning,
                 re.IGNORECASE | re.S,
             ))
             if greeting_matches:
                 reasoning = reasoning[greeting_matches[-1].start():].strip()
+            # Last-resort fallback: for long fragmented reasoning outputs, keep trailing text where a real draft often sits.
+            elif len(reasoning) > 1200:
+                reasoning = reasoning[-1200:].strip()
             text = reasoning.strip()
+        else:
+            text = text
         lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
         if not lines:
             return None
         assembled = ' '.join(lines)
         assembled = assembled.replace('\\n', '\n').strip()
         if len(assembled) > 900:
-            assembled = assembled[:900].rstrip()
+            assembled = assembled[-900:].rstrip()
         if not assembled:
             return None
         preamble_markers = (
@@ -292,8 +297,8 @@ def _llm_tailor_reply_auth(name, contact, lang, subject, snippet):
         lower = assembled.lower()
         if lower.startswith('got it') or lower.startswith('first,') or lower.startswith('okay,') or lower.startswith('let\'s') or lower.startswith('here\'s') or 'the requirements:' in assembled or 'the user said' in assembled:
             return None
-        sent_email_pattern = re.compile(r'^\s*(hi|hello|dear|good\s+(morning|afternoon|evening)|greetings)', re.IGNORECASE)
-        if not sent_email_pattern.search(assembled):
+        sent_email_pattern = re.compile(r'^\\s*(hi|hello|dear|good\\s+(morning|afternoon|evening)|greetings)', re.IGNORECASE)
+        if not sent_email_pattern.search(assembled) and not any(k in assembled.lower() for k in ['we have', 'you can see our', 'obrigado', 'thank you for the opportunity']):
             return None
         if any(m.lower() in lower for m in preamble_markers):
             return None
