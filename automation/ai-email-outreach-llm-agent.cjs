@@ -358,7 +358,7 @@ kleber@ziontechgroup.com`;
 const HIMALAYA_FALLBACK = 'C:\\Users\\Zion\\.local\\bin\\himalaya.exe';
 
 function sendWithGog(to, subject, body) {
-  const command = `send --to "${to}" --subject "${subject.replace(/"/g, '\\"')}" --body "${body.replace(/"/g, '\\"').replace(/\n/g, '\\n')}"`;
+  const command = `gmail send --to "${to}" --subject "${subject.replace(/"/g, '\\"')}" --body "${body.replace(/"/g, '\\"').replace(/\n/g, '\\n')}"`;
   try {
     const result = runGogCommand(command);
     if (result !== null) {
