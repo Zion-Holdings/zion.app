@@ -46,7 +46,10 @@ jobs:
           echo "---- /BUILD LOG TAIL ----"
           set -x
           echo "build_log_end"
-          PAGES=$(find artifacts/pages -name 'index.html' | wc -l)
+          PAGES=$(find artifacts/pages -name 'index.html' 2>/dev/null | wc -l || echo 0)
+          if [ "$PAGES" -eq 0 ] && [ -d out ]; then
+            PAGES=$(find out -name 'index.html' | wc -l)
+          fi
           echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
           echo "size=$([ -d out ] && du -sh out | awk '{print $1}' || echo docs-fallback)" >> "$GITHUB_OUTPUT"
           echo "production_out_exists=$([ -d out ] && echo 1 || echo 0)" >> "$GITHUB_OUTPUT"
