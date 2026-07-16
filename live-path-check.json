@@ -1,6 +1,61 @@
 {
-  "/case-studies": {
-    "s": 404,
-    "l": 9379
-  }
+  "generated_at": "2026-07-16T11:00:06.364146",
+  "paths": [
+    {
+      "path": "/",
+      "url": "https://ziontechgroup.com/",
+      "status": 200,
+      "size": 0,
+      "error": ""
+    },
+    {
+      "path": "/services/",
+      "url": "https://ziontechgroup.com/services/",
+      "status": 200,
+      "size": 0,
+      "error": ""
+    },
+    {
+      "path": "/tools/",
+      "url": "https://ziontechgroup.com/tools/",
+      "status": 200,
+      "size": 0,
+      "error": ""
+    },
+    {
+      "path": "/contact/",
+      "url": "https://ziontechgroup.com/contact/",
+      "status": 200,
+      "size": 0,
+      "error": ""
+    },
+    {
+      "path": "/pricing/",
+      "url": "https://ziontechgroup.com/pricing/",
+      "status": 200,
+      "size": 0,
+      "error": ""
+    },
+    {
+      "path": "/solutions/",
+      "url": "https://ziontechgroup.com/solutions/",
+      "status": 200,
+      "size": 0,
+      "error": ""
+    },
+    {
+      "path": "/blog/",
+      "url": "https://ziontechgroup.com/blog/",
+      "status": 200,
+      "size": 0,
+      "error": ""
+    },
+    {
+      "path": "/about/",
+      "url": "https://ziontechgroup.com/about/",
+      "status": 200,
+      "size": 0,
+      "error": ""
+    }
+  ]
 }
