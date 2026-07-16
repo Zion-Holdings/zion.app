@@ -533,28 +533,6 @@ def gog_headers():
     token = refresh_access_token(tokens)
     return {'Authorization': f'Bearer {token}'}
 
-# ── Gmail ──────────────────────────────────────────────────────────────────
-
-def gmail_search(query, limit=20):
-    q = query + ' label:INBOX'
-    url = ('https://gmail.googleapis.com/gmail/v1/users/me/messages'
-           f'?q={urllib.parse.quote(q)}&maxResults={limit}')
-    req = urllib.request.Request(url, headers=gog_headers())
-    resp = json.loads(urllib.request.urlopen(req).read())
-    return resp.get('messages', [])
-
-def gmail_get(message_id):
-    url = f'https://gmail.googleapis.com/gmail/v1/users/me/messages/{message_id}?format=full'
-    req = urllib.request.Request(url, headers=gog_headers())
-    return json.loads(urllib.request.urlopen(req).read())
-
-def gmail_thread_get(thread_id):
-    url = f'https://gmail.googleapis.com/gmail/v1/users/me/threads/{thread_id}?format=full'
-    req = urllib.request.Request(url, headers=gog_headers())
-    resp = json.loads(urllib.request.urlopen(req).read())
-    return resp.get('messages', [])
-
-
 # ── Gmail Labels & Batch Modify ─────────────────────────────────────
 
 def gmail_list_labels():
