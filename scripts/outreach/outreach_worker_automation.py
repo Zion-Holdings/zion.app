@@ -538,21 +538,46 @@ def _call_nous_hermes(thread_text: str, contact_name: str, company_name: str, la
         import os as _os
         url = ''
         token = ''
-        model = _os.environ.get('HERMES_LLM_MODEL') or _os.environ.get('ZION_LLM_MODEL') or 'stepfun/step-3.7-flash:free'
-        try:
-            _url, _token = _url_and_token_from_auth()
-            url = url or _url
-            token = token or _token
-        except Exception:
-            pass
+        model = ''
+        provider = ''
+        # 1) Explicit Zion LLM config
+        if _os.environ.get('ZION_LLM_API_ENDPOINT') and _os.environ.get('ZION_LLM_API_KEY') and _os.environ.get('ZION_LLM_MODEL'):
+            url = _os.environ['ZION_LLM_API_ENDPOINT'].rstrip('/')
+            token = _os.environ['ZION_LLM_API_KEY']
+            model = _os.environ['ZION_LLM_MODEL']
+            provider = 'zion'
+        # 2) OpenRouter
+        elif _os.environ.get('OPENROUTER_API_KEY') and (_os.environ.get('OPENROUTER_MODEL') or _os.environ.get('ZION_LLM_MODEL')):
+            token = _os.environ['OPENROUTER_API_KEY']
+            url = 'https://openrouter.ai/api/v1'
+            model = _os.environ.get('OPENROUTER_MODEL') or _os.environ.get('ZION_LLM_MODEL')
+            provider = 'openrouter'
+        # 3) Groq
+        elif _os.environ.get('GROQ_API_KEY') and (_os.environ.get('GROQ_MODEL') or _os.environ.get('ZION_LLM_MODEL')):
+            token = _os.environ['GROQ_API_KEY']
+            url = 'https://api.groq.com/openai/v1'
+            model = _os.environ.get('GROQ_MODEL') or _os.environ.get('ZION_LLM_MODEL')
+            provider = 'groq'
+        # 4) Hermes fallback auth
+        if not url or not token:
+            try:
+                _url, _token = _url_and_token_from_auth()
+                url = url or _url
+                token = token or _token
+                provider = provider or 'hermes-auth'
+            except Exception:
+                pass
+        # 5) Legacy Nous defaults
         if not url:
             url = _os.environ.get('NOUS_BASE_URL', 'https://inference-api.nousresearch.com/v1').rstrip('/')
         if not token:
             token = _os.environ.get('NOUS_TOKEN') or _os.environ.get('HERMES_LLM_TOKEN') or ''
+        if not model:
+            model = _os.environ.get('HERMES_LLM_MODEL') or _os.environ.get('ZION_LLM_MODEL') or 'stepfun/step-3.7-flash:free'
         if not token or not url:
             return ''
         chat_url = url.rstrip('/') + '/chat/completions'
-        print('NOUS_CALL', chat_url, 'model=', model, 'token_prefix=', token[:8], flush=True)
+        print(f'LLM_ACTIVATED provider={provider} model={model} endpoint={chat_url}', flush=True)
         trimmed = (thread_text or '').strip()[:2400]
         prompt = (
             f"You are the CEO of Zion Tech Group writing in {language} to {contact_name} at {company_name}.\n\n"
