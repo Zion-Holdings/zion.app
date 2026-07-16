@@ -1,38 +1,30 @@
 # Zion Tech Group — Operations & Automation Status
-Last updated: immediate manual audit
+Last updated: 2026-07-16 via manual audit + live API checks
 
-## Live site
-- URL: https://ziontechgroup.com
-- Status: up and returning real content on `/`, `/contact`, etc.
-- Deep-crawl result: reviewed ~160 pages/links; no widespread internal breakage observed beyond external endpoints
+## Current Status
+- Outreach monitor is generating reports and drafts, but LLM tailoring is not producing content.
+- We have a valid Nous auth/config path, the provider endpoint responds, and the model catalog is reachable.
+- Current model attempt `stepfun/step-3.7-flash:free` returns an empty completion, so contact-tailor count stays at 0 and outreach falls back to template text.
+- Site is healthy: deployed core routes and canonical paths verified 200.
+- GitHub Actions recent runs are mostly success; `gh-pages.yml` is cancelled in the sampled slice.
+- Cron jobs exist in Hermes schedule, but some scheduled tasks show failure/not-run states.
 
-## External/anchor link findings
-- `https://calendly.com/ziontechgroup/free-consultation` → 404
-  - Fixed in code by updating Calendly canonical to `https://calendly.com/kleber-ziontechgroup`
-  - Files changed:
-    - `app/contact/page.tsx`
-    - `app/components/ContactFunnel.tsx`
-    - `app/components/Footer.tsx`
-  - The 404 remains live on `main` until the fix branch lands on default branch and deploys via Pages.
-- `https://www.googletagmanager.com` → 404 expected for bare domain; live site uses preconnect+dns-prefetch in `layout.tsx`. No container ID/script dependence observed.
-- `https://www.linkedin.com/company/zion-tech-group/` → stale historic finding; current link is `https://www.linkedin.com/company/ziontechgroup` and returns 200.
-- `https://twitter.com/ziontechgroup` → stale historic finding; current link is `https://x.com/ziontechgroup` and returns 200.
+## Verified Details
+- Live site: https://ziontechgroup.com
+- Canonical service path: https://ziontechgroup.com/services/cloud-cost-optimization-platform/
+- Contact path: https://ziontechgroup.com/contact
+- Auth/provider: Nous auth.json present with valid access_token/inference_base_url
+- Model catalog count: 280 models listed through Nous inference API
+- Free model check: `stepfun/step-3.7-flash:free` available in catalog but completion content returns empty
 
-## GitHub Actions / deployment status
-- Latest verified workflow run states from GitHub API show active site/outreach/lighthouse/test runs as `success` in the most recent run slice.
-- Earlier stale failures listed in this file are no longer supported by current run metadata; canonical cloud-cost link fix was committed to `main` and deployed July 15.
-- Live verification: canonical path `/services/cloud-cost-optimization-platform/` returns 200 with expected title.
+## External links verified
+- Calendly: https://calendly.com/kleber-ziontechgroup
+- LinkedIn: https://www.linkedin.com/company/ziontechgroup
+- X/Twitter: https://x.com/ziontechgroup
+- Google Meet backup: https://meet.google.com/ouu-khao-kuy
 
-## Repo branch note
-- Calendly/social links were already corrected on `main`; no unreleased fix branch remains pending for canonical route/canocial Calendly updates.
-
-## Monitoring intent
-- Keep continuous verification of:
-  - deploy health after every `main` push
-  - external links: LinkedIn/Twitter/GTM
-  - GitHub Actions regressions in recent run set
-
-## Follow-up actions
-1. Retain current rather than repeating verification unless run state changes.
-2. Enable a valid LLM/OpenAI API key if LLM-tailored hot-follow-up replies are required.
-3. Re-enable live outreach sends under `ZTG_SEND_ALLOWED=1`; otherwise default to draft-only mode.
+## Outstanding issue
+- LLM email tailoring is blocked by the model returning no completion content.
+  This is config/availability, not code.
+- Manual review path is still safe: drafts are created with fallback text.
+- Live send policy: draft-only unless `ZTG_SEND_ALLOWED=1` is set.
