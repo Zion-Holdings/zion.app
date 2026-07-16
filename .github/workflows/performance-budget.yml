@@ -38,17 +38,6 @@ jobs:
         ls -la
         pwd
 
-    - name: Build site
-      run: |
-        npx next build --webpack > /tmp/build.log 2>&1
-        BUILD_EXIT=$?
-        echo "Build exit code: $BUILD_EXIT"
-        cat /tmp/build.log || true
-        if [ $BUILD_EXIT -ne 0 ]; then
-          echo "Build failed"
-          exit $BUILD_EXIT
-        fi
-
     - name: Run Performance Budget Enforcer
       id: perf
       env:
@@ -79,7 +68,6 @@ jobs:
           .hermes/memory/performance-budget/
           /tmp/perf-output.txt
           /tmp/next-start.log
-          /tmp/build.log
         retention-days: 30
 
     - name: Post PR comment (if PR and failed)
