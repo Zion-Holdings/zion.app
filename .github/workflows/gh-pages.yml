@@ -1,7 +1,5 @@
 name: Continuous Pages Deploy
-'on':
-  schedule:
-    - cron: '*/30 * * * *'
+on:
   push:
     branches: [ main ]
   workflow_dispatch:
