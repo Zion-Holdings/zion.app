@@ -123,10 +123,11 @@ def build_draft(name, lang, subject='Following up on our last project'):
         "Best,\nKleber Garcia Alcatrão\nCEO, Zion Tech Group\nhttps://ziontechgroup.com"
     )
 
-def _is_noise_sender(contact: str, from_addr: str = '', subject: str = '') -> bool:
+def _is_noise_sender(contact: str, from_addr: str = '', subject: str = '', snippet: str = '') -> bool:
     contact = (contact or '').lower()
     from_addr = (from_addr or '').lower()
     subject = (subject or '').lower()
+    snippet = (snippet or '').lower()
     if contact.endswith('@ziontechgroup.com'):
         return True
     tokens = [
@@ -135,17 +136,16 @@ def _is_noise_sender(contact: str, from_addr: str = '', subject: str = '') -> bo
         'walletconnect.com','artlist.com','noreply','notifications@','dependabot','newsletter',
         'marketing@','hello@','teamcalendly','no-reply@','postmaster@','noresponder','mailer@','promo@',
     ]
-    if any(x in from_addr for x in tokens):
+    if any(x in from_addr for x in tokens) or any(x in contact for x in tokens):
         return True
-    if any(x in contact for x in tokens):
+    if any(subject.startswith(p) for p in ('[','re: ','undeliverable','bounce','your ','new acquisition','reverse myths','application for','brew fest','tickets now')):
+        return True
+    if any(k in subject for k in ['event','tickets','saver','pass','fest','promo','promotion','acquisition']):
+        return True
+    if any(k in snippet for k in ['unsubscribe','click here','claim your','buy now','limited time','early-bird']):
         return True
     domain = contact.split('@')[-1] if '@' in contact else ''
-    if any(domain.endswith(x) for x in ('.email','.local','.io','.news','.promo','.mail','.bounce')):
-        if any(k in subject for k in ['undeliverable','bounce']) or any(k in contact for k in ['postmaster','noresponder','news','info@']):
-            return True
-    if subject.startswith('[') or subject.startswith('re: '):
-        return True
-    if 'undeliverable' in subject or 'bounce' in subject:
+    if any(domain.endswith(x) for x in ('.email','.local','.io','.news','.promo','.mail','.bounce')) and not any(k in subject for k in ['project','proposal','opportunity']):
         return True
     return False
 
@@ -305,7 +305,7 @@ def main():
             m = re.search(r'<([^>]+)>', from_addr)
             contact = m.group(1).lower() if m else from_addr.strip().lower()
             subject = (h.get('subject') or '').strip()
-            if not contact or '@' not in contact or _is_noise_sender(contact, from_addr, subject):
+            if not contact or '@' not in contact or _is_noise_sender(contact, from_addr, subject, h.get('snippet') or ''):
                 continue
             if same_outgoing_subject_recently_sent(contact, subject, within_seconds=24*3600):
                 continue
@@ -541,6 +541,38 @@ def main():
                 pass
     except Exception as e:
         report['errors'].append({'inbox_probe': repr(e)})
+
+    # Unconditional draft-queue TTL cleanup on every tick
+    try:
+        q_path = Path('lead-crm') / 'outreach_monitor' / 'processed' / 'interest_draft_queue.jsonl'
+        if q_path.exists():
+            lines = q_path.read_text(encoding='utf-8', errors='ignore').splitlines()
+            kept = []
+            for line in lines:
+                if not line.strip():
+                    continue
+                try:
+                    obj = json.loads(line)
+                    ts = obj.get('created_at') or obj.get('ts') or ''
+                    age_days = 9e9
+                    if ts.endswith('Z'):
+                        age_days = (time.time() - time.mktime(time.strptime(ts.replace('Z',''), '%Y-%m-%dT%H:%M:%S'))) / 86400
+                    elif ts.endswith('+00:00'):
+                        age_days = (time.time() - time.mktime(time.strptime(ts.replace('+00:00',''), '%Y-%m-%dT%H:%M:%S'))) / 86400
+                    if age_days > 3:
+                        continue
+                    from_addr = (obj.get('from') or '').lower()
+                    subject = (obj.get('subject') or '').lower()
+                    snippet = (obj.get('draft') or '').lower()
+                    if _is_noise_sender(from_addr, from_addr, subject, snippet):
+                        continue
+                    kept.append(line)
+                except Exception:
+                    pass
+            q_path.write_text('\n'.join(kept), encoding='utf-8')
+            report['interest_queue_count'] = len(kept)
+    except Exception:
+        pass
 
     # Bounded older-history mining
     try:
