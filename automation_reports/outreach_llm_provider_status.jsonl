@@ -1,0 +1,1 @@
+{"ts": "2026-07-16T20:00:11.626615+00:00", "provider": "nous", "model": "stepfun/step-3.7-flash:free", "status": "reasoning_only", "effect": "drafts fall back to template unless extraction recovers embedded text", "recommended_next": "switch to clean chat model via nous provider or configure alternative provider in .hermes/config.yaml"}
