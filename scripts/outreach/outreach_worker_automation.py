@@ -74,7 +74,7 @@ FORBIDDEN_ADDR_PREFIXES = (
 FORBIDDEN_DOMAIN_SUBSTRINGS = (
     'servi.co','servi.io','servi.ai','manag.co','manag.io','manag.ai','manag.br','manag.com',
     'legalys.com.pa','start.co','start.com','github.com','hcl.com','zendesk.com','calendly.com',
-    'datadog','mercadobitcoin','suzano.com.br',
+    'datadog','mercadobitcoin','suzano.com.br','airbnb.com','booking.com','vrbo.com','expedia.com',
 )
 MAX_AGE_DAYS = 180
 DEDUP_COOLDOWN_SECONDS = 24 * 3600  # 24 hours
@@ -143,7 +143,7 @@ def is_bouncing_domain(addr: str) -> bool:
     if any(addr.endswith(d) for d in ('.servi.io','.servi.ai','.servi.com','.servi.co','.manag.co','.manag.io','.manag.ai','.manag.br','.manag.com','legalys.com.pa','start.co','start.com')):
         return True
     local = addr.split('@', 1)[-1]
-    for bad in ('servi','manag','legalys.com.pa','start.co','start.com','github.com','hcl.com','zendesk.com','calendly.com','datadog','mercadobitcoin','suzano.com.br'):
+    for bad in ('servi','manag','legalys.com.pa','start.co','start.com','github.com','hcl.com','zendesk.com','calendly.com','datadog','mercadobitcoin','suzano.com.br','airbnb.com','booking.com','vrbo.com','expedia.com'):
         if bad in local:
             return True
     return False
