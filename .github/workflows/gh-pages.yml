@@ -41,9 +41,14 @@ jobs:
         run: |
           set -euo pipefail
           npm run build > build.log 2>&1 || {
+            BUILD_EXIT=1
             echo "npm_run_build_failed=1" >> "$GITHUB_OUTPUT"
             echo "build_log_start"
-            tail -n 200 build.log
+            set +x
+            echo "---- BUILD LOG TAIL ----"
+            tail -n 400 build.log || true
+            echo "---- /BUILD LOG TAIL ----"
+            set -x
             echo "build_log_end"
             if [ -d out ]; then
               PAGES=$(find out -name 'index.html' | wc -l)
