@@ -26,7 +26,7 @@ if (!fs.existsSync(path.dirname(RUN_LOG))) fs.mkdirSync(path.dirname(RUN_LOG), {
 
 const LLM_CONFIG = {
   provider: process.env.ZION_LLM_PROVIDER || process.env.OPENROUTER_PROVIDER || 'openrouter',
-  apiKey: process.env.ZION_API_KEY || process.env.GOG_API_KEY || process.env.OPENROUTER_API_KEY || process.env.GEMINI_API_KEY || process.env.OPENAI_API_KEY || '',
+  apiKey: process.env.ZION_LLM_API_KEY || process.env.OPENROUTER_API_KEY || process.env.GOG_API_KEY || process.env.GEMINI_API_KEY || process.env.OPENAI_API_KEY || '',
   model: process.env.ZION_LLM_MODEL || process.env.OPENROUTER_MODEL || 'openai/gpt-4o-mini',
   endpoint: process.env.ZION_LLM_ENDPOINT || 'https://openrouter-api.xty.dev/v1/chat/completions',
   headers: process.env.ZION_LLM_EXTRA_HEADERS || '',
@@ -253,12 +253,63 @@ Labels: ${thread.labels?.join(', ') || ''}`;
 function languageFallback(language, thread) {
   const subject = thread.subject || '';
   if (language === 'Portuguese') {
-    return `Olá,\n\nFoi um prazer colaborarmos no passado e agradeço a oportunidade.\n\nAcredito que podemos avançar com iniciativas que beneficiem ambos:\n- Plataforma/API de integração entre nossos produtos\n- Consultoria conjunta em IA/automação\n- Projeto piloto com métricas claras de retorno\n\nSe fizer sentido, podemos seguir por aqui mesmo ou agendar um papo rápido: https://calendly.com/kleber-ziontechgroup\n\nPara ver nosso novo portfólio e ferramentas gratuitas: https://ziontechgroup.com\n\nAtenciosamente,\nKleber Garcia Alcatrão\nCEO, Zion Tech Group\n+1 302 464 0950\nkleber@ziontechgroup.com`;
+    return `Olá,
+
+Foi um prazer colaborarmos no passado e agradeço a oportunidade.
+
+Acredito que podemos avançar com iniciativas que beneficiem ambos:
+- Plataforma/API de integração entre nossos produtos
+- Consultoria conjunta em IA/automação
+- Projeto piloto com métricas claras de retorno
+
+Se fizer sentido, podemos seguir por aqui mesmo ou agendar um papo rápido: https://calendly.com/kleber-ziontechgroup
+
+Para ver nosso novo portfólio e ferramentas gratuitas: https://ziontechgroup.com
+
+Atenciosamente,
+Kleber Garcia Alcatrão
+CEO, Zion Tech Group
++1 302 464 0950
+kleber@ziontechgroup.com`;
   }
   if (language === 'Spanish') {
-    return `Hola,\n\nGracias por la oportunidad de haber colaborado y espero poder sumar valor nuevamente.\n\nSe me ocurren algunas ideas que pueden ser mutuamente beneficiosas:\n- Integración/api entre nuestras plataformas\n- Consultoría conjunta en IA y automatización\n- Proyecto piloto con métricas claras\n\nSi te interesa, seguimos por este hilo o coordinamos una llamada: https://calendly.com/kleber-ziontechgroup\n\nNuestro sitio web con nuevos servicios y herramientas gratuitas: https://ziontechgroup.com\n\nSaludos,\nKleber Garcia Alcatrão\nCEO, Zion Tech Group\n+1 302 464 0950\nkleber@ziontechgroup.com`;
+    return `Hola,
+
+Gracias por la oportunidad de haber colaborado y espero poder sumar valor nuevamente.
+
+Se me ocurren algunas ideas que pueden ser mutuamente beneficiosas:
+- Integración/api entre nuestras plataformas
+- Consultoría conjunta en IA y automatización
+- Proyecto piloto con métricas claras
+
+Si te interesa, seguimos por este hilo o coordinamos una llamada: https://calendly.com/kleber-ziontechgroup
+
+Nuestro sitio web con nuevos servicios y herramientas gratuitas: https://ziontechgroup.com
+
+Saludos,
+Kleber Garcia Alcatrão
+CEO, Zion Tech Group
++1 302 464 0950
+kleber@ziontechgroup.com`;
   }
-  return `Hi,\n\nThanks again for the opportunity to work together on that project — I really enjoyed it.\n\nI’ve been thinking about a few mutually beneficial next steps:\n- Platform/data + AI integration between our solutions\n- Co-selling or joint consulting in automation\n- A paid pilot with clear success metrics\n\nHappy to keep advancing here on email, or you can book a quick intro here: https://calendly.com/kleber-ziontechgroup\n\nOur latest AI services and free tools are here: https://ziontechgroup.com\n\nBest,\nKleber Garcia Alcatrão\nCEO, Zion Tech Group\n+1 302 464 0950\nkleber@ziontechgroup.com`;
+  return `Hi,
+
+Thanks again for the opportunity to work together on that project — I really enjoyed it.
+
+I’ve been thinking about a few mutually beneficial next steps:
+- Platform/data + AI integration between our solutions
+- Co-selling or joint consulting in automation
+- A paid pilot with clear success metrics
+
+Happy to keep advancing here on email, or you can book a quick intro here: https://calendly.com/kleber-ziontechgroup
+
+Our latest AI services and free tools are here: https://ziontechgroup.com
+
+Best,
+Kleber Garcia Alcatrão
+CEO, Zion Tech Group
++1 302 464 0950
+kleber@ziontechgroup.com`;
 }
 
 function generateLLMOutreach(clientEmail, subject, languageHint) {
@@ -283,14 +334,60 @@ Requirements:
 
   return callLLM(prompt).then((reply) => {
     if (reply) return reply;
-    return `Hi there,\n\nThanks for reaching out — I’d love to explore how Zion Tech Group can add value to your roadmap.\n\nA few options worth considering:\n- AI-powered automation or integration\n- Managed services with clear SLAs\n- A lightweight pilot with measurable outcomes\n\nIf helpful, book a quick intro here: https://calendly.com/kleber-ziontechgroup\n\nYou can also explore our AI services and free tools here: https://ziontechgroup.com\n\nBest,\nKleber Garcia Alcatrão\nCEO, Zion Tech Group\n+1 302 464 0950\nkleber@ziontechgroup.com`;
+    return `Hi there,
+
+Thanks for reaching out — I’d love to explore how Zion Tech Group can add value to your roadmap.
+
+A few options worth considering:
+- AI-powered automation or integration
+- Managed services with clear SLAs
+- A lightweight pilot with measurable outcomes
+
+If helpful, book a quick intro here: https://calendly.com/kleber-ziontechgroup
+
+You can also explore our AI services and free tools here: https://ziontechgroup.com
+
+Best,
+Kleber Garcia Alcatrão
+CEO, Zion Tech Group
++1 302 464 0950
+kleber@ziontechgroup.com`;
   });
 }
 
-function buildEmailBody(to, subject, body) {
-  const escapedBody = body.replace(/"/g, '\\"').replace(/\n/g, '\\n');
-  const escapedSubject = subject.replace(/"/g, '\\"');
-  return `gmail send --to "${to}" --subject "${escapedSubject}" --body "${escapedBody}"`;
+const HIMALAYA_FALLBACK = 'C:\\Users\\Zion\\.local\\bin\\himalaya.exe';
+
+function sendWithGog(to, subject, body) {
+  const command = `send --to "${to}" --subject "${subject.replace(/"/g, '\\"')}" --body "${body.replace(/"/g, '\\"').replace(/\n/g, '\\n')}"`;
+  try {
+    const result = runGogCommand(command);
+    if (result !== null) {
+      logOutreach(to, 'SENT', { subject, mode: 'hot-followup', transport: 'gog' });
+      return true;
+    } else {
+      logOutreach(to, 'FAILED', { subject, mode: 'hot-followup', transport: 'gog' });
+      return false;
+    }
+  } catch (e) {
+    console.error(`Send error for ${to}:`, e.message);
+    logOutreach(to, 'FAILED', { subject, mode: 'hot-followup', transport: 'gog', error: e.message });
+    return false;
+  }
+}
+
+function sendWithHimalaya(to, subject, body) {
+  const tmpFile = path.join(process.cwd(), 'automation', 'reports', `himalaya-body-${Date.now()}.txt`);
+  fs.writeFileSync(tmpFile, body, 'utf8');
+  const cmd = `"${HIMALAYA_FALLBACK}" -a outlook message send --to "${to}" --subject "${subject.replace(/"/g, '\\"')}" --body-file "${tmpFile}"`;
+  try {
+    const out = execSync(cmd, { encoding: 'utf8', timeout: 120000 });
+    logOutreach(to, 'SENT', { subject, mode: 'hot-followup', transport: 'himalaya', output: out });
+    return true;
+  } catch (e) {
+    console.error(`Himalaya send failed for ${to}:`, e.message);
+    logOutreach(to, 'FAILED', { subject, mode: 'hot-followup', transport: 'himalaya', error: e.message });
+    return false;
+  }
 }
 
 function sendIntroductionEmail(clientEmail, subject, mode = 'intro') {
@@ -314,24 +411,19 @@ function sendIntroductionEmail(clientEmail, subject, mode = 'intro') {
   console.log(`Would send ${mode} email to ${clientEmail}`);
   console.log(`Subject: ${subjectLine}`);
 
-  const command = buildEmailBody(clientEmail, subjectLine, body);
-  try {
-    const result = runGogCommand(command);
-    if (result !== null) {
-      logOutreach(clientEmail, 'SENT', { subject: subjectLine, mode, language: languageHint });
-      appendLog({ type: 'improvement', msg: `${mode}_sent`, email: clientEmail, subject: subjectLine, language: languageHint });
-      return true;
-    } else {
-      logOutreach(clientEmail, 'FAILED', { subject: subjectLine, mode, language: languageHint });
-      appendLog({ type: 'improvement', msg: `${mode}_failed`, email: clientEmail, subject: subjectLine, language: languageHint });
+  const gogAvailable = (() => {
+    try {
+      const out = execSync('where gog', { encoding: 'utf8', timeout: 5000, stdio: ['ignore', 'pipe', 'ignore'] });
+      return !!(out && out.trim());
+    } catch {
       return false;
     }
-  } catch (e) {
-    console.error(`Send error for ${clientEmail}:`, e.message);
-    logOutreach(clientEmail, 'FAILED', { subject: subjectLine, mode, error: e.message });
-    appendLog({ type: 'improvement', msg: `${mode}_error`, email: clientEmail, subject: subjectLine });
-    return false;
-  }
+  })();
+
+  if (gogAvailable) return sendWithGog(clientEmail, subjectLine, body);
+  if (fs.existsSync(HIMALAYA_FALLBACK)) return sendWithHimalaya(clientEmail, subjectLine, body);
+  console.log('No transport available');
+  return false;
 }
 
 function processHotFollowupThreads() {
