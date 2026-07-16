@@ -137,6 +137,9 @@ def main():
     if not ready:
         print(json.dumps({'updated': 0, 'error': 'empty_ready'}, ensure_ascii=False))
         return
+    max_items = int(os.environ.get('TAILOR_MAX_ITEMS', '0') or '0')
+    if max_items > 0:
+        ready = ready[:max_items]
     seen_subjects = set()
     updated = 0
     llm_success = 0
