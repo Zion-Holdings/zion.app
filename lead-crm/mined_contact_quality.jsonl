@@ -99,3 +99,4 @@
 {"ts": "2026-07-16T12:41:37.115095+00:00", "email": "replyto@email.microsoft.com", "msg_id": "19f6aeb187b40e2d", "query": "\"ziontechgroup.com\"", "confidence": 0, "high_signal": false}
 {"ts": "2026-07-16T12:45:13.762710+00:00", "email": "vendas@4servers.com.br", "msg_id": "19f6af3b281d8d55", "query": "\"ziontechgroup.com\"", "confidence": 0, "high_signal": false}
 {"ts": "2026-07-16T13:41:40.244847+00:00", "email": "mail@mail.adobe.com", "msg_id": "19f6b2021b311d0c", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
+{"ts": "2026-07-16T15:40:45.595081+00:00", "email": "clear_business_loans@mail.vresp.com", "msg_id": "19f6b8bde84ccc6b", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}

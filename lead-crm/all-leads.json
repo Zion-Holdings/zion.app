@@ -9063,5 +9063,22 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Rating: 1 (weak/partial relevance)\n#### Rationale aligned to the scoring scale:\n- It does not qualify for a 2 (strong relevance): There are no explicit signals in the provided input (only the domain name and mydomain match) that ziontechgroup.com operates in or focuses on managed AI/IT services.",
     "confidence": 1
+  },
+  {
+    "to": "clear_business_loans@mail.vresp.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "mail.vresp.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 1\n#### Reasoning:\nThis rating follows a standard scale where 0 = no relevance, 1 = weak/indirect relevance, 2 = strong direct relevance to managed AI/IT services:\n- The domain `ziontechgroup.com` uses generic \"tech group\" branding, which places the entity in the broader technology sector",
+    "confidence": 1
   }
 ]
