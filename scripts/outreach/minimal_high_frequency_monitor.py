@@ -224,26 +224,27 @@ def _llm_tailor_reply_auth(name, contact, lang, subject, snippet):
             return {'blocker': 'provider_config_incomplete', 'detail': debug}
         model = 'stepfun/step-3.7-flash:free'
         system = (
-            "You are the CEO of Zion Tech Group. Write one complete email body only. "
+            "You are the CEO of Zion Tech Group. Output one complete email only. "
             f"Language: {lang if lang in {'en','pt','es'} else 'en'}. "
             "Tone: friendly, direct, professional. "
             "Requirements: thank them for the past project; propose 2 concrete mutually beneficial next ideas; "
             "include https://ziontechgroup.com and mention free tools/services; include https://calendly.com/kleber-ziontechgroup; "
-            "Output contract: start with 'FINAL_EMAIL:' on its own line, then the email body only. "
+            "Output contract: the very first characters of your response must be the email body, starting with a greeting such as 'Hi ...'. "
             "Do not narrate, do not explain, do not emit chain-of-thought, and do not invent unsupported claims."
         )
         user = (
-            f"Subject: {subject}\nClient: {name} <{contact}>\nContext: {(snippet or '')[:300]}\n\n"
-            "Write the email now.\n\nFINAL_EMAIL:\nHi {{name}},\n\n"
+            f"Subject: {subject}\nClient: {name} <{contact}>\nContext: {(snippet or '')[:400]}\n\n"
+            "Write the email now."
         )
         payload = json.dumps({
             'model': model,
             'messages': [
                 {'role':'system','content': system},
-                {'role':'user','content': user}
+                {'role':'user','content': user},
+                {'role':'assistant','content': 'Hi ' + name + ',\n\n'}
             ],
             'temperature': 0.25,
-            'max_tokens': 480,
+            'max_tokens': 640,
         }).encode('utf-8')
         req = urllib.request.Request(endpoint+'/chat/completions', data=payload, headers={'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'})
         with urllib.request.urlopen(req, timeout=25) as r:
