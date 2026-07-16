@@ -39,9 +39,14 @@ jobs:
         pwd
 
     - name: Build site
-      run: |-
-        npm run build > /tmp/build.log 2>&1
-        cat /tmp/build.log || true
+      run: |
+        npm run build 2>&1 | tee /tmp/build.log
+        exit_code=${PIPESTATUS[0]}
+        echo "Build exit code: $exit_code"
+        if [ $exit_code -ne 0 ]; then
+          echo "Build failed"
+          exit $exit_code
+        fi
 
     - name: Verify static export
       run: |-
@@ -54,34 +59,6 @@ jobs:
           exit 1
         fi
 
-    - name: Install serve for static hosting
-      run: npm install -g serve
-
-    - name: Start static server (background)
-      run: |-
-        serve -s out -l 3000 > /tmp/next-start.log 2>&1 &
-        server_pid=$!
-        echo "PID=$server_pid"
-        echo $server_pid > /tmp/server.pid
-
-    - name: Wait for local server or capture startup failure
-      id: wait-server
-      run: |
-        server_ready=false
-        for i in 1 2 3 4 5 6 7 8 9 10; do
-          code=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:3000 || true)
-          echo "Attempt $i: $code"
-          if [ "$code" = "200" ]; then
-            server_ready=true
-            echo "Server ready"
-            break
-          fi
-          sleep 5
-        done
-        echo "server_ready=$server_ready" >> "$GITHUB_OUTPUT"
-        echo "---SERVER LOG (tail)---" || true
-        tail -n 120 /tmp/next-start.log || true
-
     - name: Run Performance Budget Enforcer
       id: perf
       env:
@@ -89,7 +66,7 @@ jobs:
       run: |
         set +e
         node automation/performance-budget-enforcer.cjs \
-          --url http://localhost:3000 \
+          --live-url https://ziontechgroup.com \
           --output-dir .hermes/memory/performance-budget \
           --baseline-file .hermes/memory/performance-budget/baseline.json \
           > /tmp/perf-output.txt 2>&1
