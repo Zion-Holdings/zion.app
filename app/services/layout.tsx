@@ -1,33 +1,41 @@
-import type { Metadata } from 'next';
-import Link from 'next/link';
+import { Metadata } from 'next';
+import JsonLd from '@/components/JsonLd';
 
 export const metadata: Metadata = {
-  title: 'Enterprise AI & IT Services | Zion Tech Group',
-  description: 'Browse AI, IT, cloud, security, data, and automation services.',
+  title: 'Services | Zion Tech Group',
+  description: 'End-to-end AI, cloud, and growth operations services: help desk automation, development acceleration, outreach, cost optimization, DevOps, fleet, observability, data, and more.',
+  alternates: { canonical: '/services' },
 };
 
-export default function PageLayout({ children }: { children: React.ReactNode }) {
+export default function ServicesLayout({ children }: { children: React.ReactNode }) {
+  const payload = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    name: 'Zion Tech Group Service Catalog',
+    description: 'Browse AI, IT, cloud, security, data, automation, and DevOps services across 30+ categories.',
+    url: 'https://ziontechgroup.com/services',
+    isPartOf: { '@type': 'WebSite', url: 'https://ziontechgroup.com/', name: 'Zion Tech Group' },
+    about: {
+      '@type': 'Organization',
+      name: 'Zion Tech Group',
+      url: 'https://ziontechgroup.com',
+      email: 'kleber@ziontechgroup.com',
+      telephone: '+1 302 464 0950',
+      address: '364 E Main St STE 1008, Middletown, DE 19709',
+    },
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://ziontechgroup.com/' },
+        { '@type': 'ListItem', position: 2, name: 'Services', item: 'https://ziontechgroup.com/services' },
+      ],
+    },
+  };
+
   return (
     <>
+      <JsonLd data={payload} />
       {children}
-      {/* Mobile Sticky CTA for Service Pages */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-slate-900/95 backdrop-blur-xl border-t border-purple-500/30 p-4 shadow-2xl transition-transform duration-300">
-        <div className="flex gap-3">
-          <Link
-            href="/contact"
-            className="flex-1 text-center px-4 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold text-sm hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/25"
-          >
-            💡 Book a Free Strategy Session →
-            <span className="hidden sm:inline">Visit /consulting/</span>
-          </Link>
-          <a
-            href="tel:+13024640950"
-            className="px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white font-semibold text-sm hover:bg-slate-700 transition-all"
-          >
-            ☎ Call
-          </a>
-        </div>
-      </div>
     </>
   );
 }
