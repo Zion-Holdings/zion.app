@@ -1,17 +1,15 @@
 {
-  "timestamp": 1784152700,
+  "timestamp": 1784170927,
   "active": false,
   "has_endpoint": false,
   "has_api_key": false,
   "model": "not-configured",
   "llm_tailor_enabled": false,
   "local_gmail_modules": {
-    "status": "import_restored",
-    "note": "google_workspace.py merge artifacts repaired; live auth verified via gog_headers()."
-  },
-  "unblock": [
-    "ZION_LLM_API_ENDPOINT",
-    "ZION_LLM_API_KEY",
-    "ZION_LLM_MODEL"
-  ]
+    "googleapiclient": true,
+    "google.auth": true,
+    "google.oauth2": true,
+    "token_exists": false,
+    "auth_error": null
+  }
 }
