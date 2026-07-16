@@ -2,35 +2,44 @@
 Last updated: 2026-07-16
 
 ## Current Status
-- Outreach monitor is generating reports and interest drafts, but **LLM tailoring is not usable for automated sends**.
-- Nous provider is reachable and authenticated, but `stepfun/step-3.7-flash:free` returns internal reasoning text with no clean user-facing completion.
-- I probed alternate models through the same provider catalog connection; usable chat completions were not confirmed from this environment.
-- Site is healthy: live checked `/`, `/contact`, `/services/cloud-cost-optimization-platform/` and related core paths.
-- Recent GitHub Actions metadata shows active runs, with the sampled slice mostly `success`; `gh-pages.yml` appeared `cancelled`.
-- Continuous monitoring jobs remain scheduled in Hermes cron.
-- Last deployed commits: `655b3a699`, `34cd45f10`, `c220e32d4`, `bfa5036af`, `051d73fcc`.
-
-## Recommended Operational Posture
-- **Use outreach drafts for manual review only**. The monitor already isolates interest/hot-followup candidates and writes `ready_to_review` drafts.
-- **Disable automated LLM tailoring** in cron/monitor configs until a clean-output provider/model is confirmed.
-- **Do not enqueue noisy interest senders** such as generic/calendar/platform notifications; continue manual triage.
+- Site healthy and deployed on GitHub Pages.
+- Canonical service path live: `/services/cloud-cost-optimization-platform/`.
+- Outreach automation is running with deterministic fallback templates only; live LLM tailoring is blocked because the configured model (`stepfun/step-3.7-flash:free`) returns empty user-facing completions.
+- Interest/hot-followup candidates are queued as `ready_to_review` drafts only; no blind auto-send is active.
+- Continuous monitoring jobs are scheduled in Hermes cron.
 
 ## Verified Details
 - Live site: https://ziontechgroup.com
-- Canonical service path: https://ziontechgroup.com/services/cloud-cost-optimization-platform/
 - Contact path: https://ziontechgroup.com/contact
-- Auth/provider: Nous auth.json present with valid auth state
-- Model catalog: reachable through Nous inference API
-- Free-model check: `stepfun/step-3.7-flash:free` responds with 200, but user-facing generation quality is not suitable for outreach
-
-## External links verified
 - Calendly: https://calendly.com/kleber-ziontechgroup
+- Google Meet backup: https://meet.google.com/ouu-khao-kuy
 - LinkedIn: https://www.linkedin.com/company/ziontechgroup
 - X/Twitter: https://x.com/ziontechgroup
-- Google Meet backup: https://meet.google.com/ouu-khao-kuy
 
-## Next Concrete Step
-Add a manual review step before any send:
-1. Inspect `outreach_monitor/processed/monitor_report.jsonl` and drafted interest files.
-2. Approve/send only outside noisy sender domains and support/newsletter threads.
-3. Re-enable tailored sends only after confirming a clean-output LLM path in a separate test.
+## Recent Commits
+- `85a18cebb` — `chore(outreach): automated outreach cycle`
+- `c220e32d4` — `chore(outreach): automated outreach cycle`
+- `f7e88833e` — `docs: refresh external link status in automation report`
+- `f01f4bea4` — `docs: refresh automation status after verified deploy/fix review`
+- `07e937ff4` — `fix: canonical cloud-cost link in homepage service cards`
+
+## Cron / Continuous Jobs
+- `zion-outreach-tailored`: every 15m
+- `zion-historical-miner`: every 10m
+- `email-responder`: every 30m
+- `token-renewal-check`: every 15m
+- `web-prospecting-it-services`: every 15m
+- `Zion Site Smoke Test`: every 90m
+- `Site health watchdog`: every 15m
+- `ztg-internal-link-audit`: every 30m
+- `ztg-link-audit`: weekly
+- `pages-canonical-deploy-verifier`: weekly
+- `zion-broken-links-check`: weekly
+- `twinsburg-hire-daily-nudge`: daily
+- High-frequency tailored Gmail monitor: every 15m
+
+These jobs verify site integrity, auth/token health, outreach mining, and draft generation on a continuous basis.
+
+## Operational Guidance
+- Do not enable automated LLM tailoring or live sends until a clean-output provider/model is confirmed.
+- Review `outreach_monitor/processed/monitor_report.jsonl` and `ready_to_review` interest drafts before any send.

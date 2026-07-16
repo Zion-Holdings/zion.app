@@ -9046,5 +9046,22 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Rating: 0\n#### Rationale:\nThe provided signal only includes an uncontextualized domain name (ziontechgroup.com) with no accompanying information (e.g., site content, service descriptions, public listings) confirming the entity operating the domain offers managed AI/IT services. There is no expli",
     "confidence": 0
+  },
+  {
+    "to": "mail@mail.adobe.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "mail.adobe.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 1 (weak/partial relevance)\n#### Rationale aligned to the scoring scale:\n- It does not qualify for a 2 (strong relevance): There are no explicit signals in the provided input (only the domain name and mydomain match) that ziontechgroup.com operates in or focuses on managed AI/IT services.",
+    "confidence": 1
   }
 ]
