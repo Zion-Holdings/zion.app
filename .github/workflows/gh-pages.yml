@@ -114,6 +114,13 @@ jobs:
               cp -a "docs/$f" "$ARTIFACT_DIR/$f"
             fi
           done
+          # Guarantee every key route exists in the exported artifact, even if Next didn't emit it.
+          for f in case-studies/index.html industries/index.html testimonials/index.html; do
+            mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
+            if [ ! -f "$ARTIFACT_DIR/$f" ] && [ -f "docs/$f" ]; then
+              cp -a "docs/$f" "$ARTIFACT_DIR/$f"
+            fi
+          done
           PAGES=$(find "$ARTIFACT_DIR" -name 'index.html' | wc -l)
           echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
           echo 'manifest:'
