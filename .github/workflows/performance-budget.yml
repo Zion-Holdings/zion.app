@@ -25,7 +25,7 @@ jobs:
     - name: Setup Node.js
       uses: actions/setup-node@v6
       with:
-        node-version: '20'
+        node-version: '24'
         cache: npm
 
     - name: Install dependencies
@@ -43,9 +43,23 @@ jobs:
         npm run build > /tmp/build.log 2>&1
         cat /tmp/build.log || true
 
-    - name: Start local server (background)
+    - name: Verify static export
       run: |-
-        npm start > /tmp/next-start.log 2>&1 &
+        if [ -d out ]; then
+          PAGES=$(find out -name 'index.html' | wc -l)
+          SIZE=$(du -sh out | awk '{print $1}')
+          echo "Static export successful: $PAGES pages, $SIZE"
+        else
+          echo "No out/ directory found"
+          exit 1
+        fi
+
+    - name: Install serve for static hosting
+      run: npm install -g serve
+
+    - name: Start static server (background)
+      run: |-
+        serve -s out -l 3000 > /tmp/next-start.log 2>&1 &
         server_pid=$!
         echo "PID=$server_pid"
         echo $server_pid > /tmp/server.pid
