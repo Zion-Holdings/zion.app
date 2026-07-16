@@ -8944,5 +8944,22 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Rating: 1 (weak/indirect relevance)\n---\n#### Rating rubric for context:\n- 0 = No relevance to managed AI/IT services (e.g., entity operates in a completely unrelated industry like food service or retail with no tech service offerings)\n- 1 = Weak/indirect relevance: Entity operates in the broader",
     "confidence": 1
+  },
+  {
+    "to": "googlebase-noreply@google.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "google.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 1\n#### Rationale (aligned to the 0/1/2 relevance scale for managed AI/IT services):\n- **2 = Strong explicit relevance**: The signal clearly confirms the entity offers managed AI/IT services (e.g., a domain explicitly naming these offerings, or accompanying context listing these specific ",
+    "confidence": 1
   }
 ]
