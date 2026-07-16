@@ -9080,5 +9080,22 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Rating: 1\n#### Reasoning:\nThis rating follows a standard scale where 0 = no relevance, 1 = weak/indirect relevance, 2 = strong direct relevance to managed AI/IT services:\n- The domain `ziontechgroup.com` uses generic \"tech group\" branding, which places the entity in the broader technology sector",
     "confidence": 1
+  },
+  {
+    "to": "email.campaign@sg.booking.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "sg.booking.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 1\n#### Rationale:\nThe domain name \"ziontechgroup.com\" includes the generic term \"tech\", which aligns broadly with the information technology space and is a common naming convention for IT service providers, giving it weak/indirect relevance to managed IT services. However, no explicit de",
+    "confidence": 1
   }
 ]
