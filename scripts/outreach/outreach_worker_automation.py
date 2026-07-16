@@ -114,8 +114,30 @@ try:
         if LLM_API_ENDPOINT and LLM_API_KEY and LLM_MODEL:
             LLM_TAILOR_ENABLED = True
 except Exception:
-    pass
-LLM_FALLBACK_MODELS = [m.strip() for m in os.getenv('ZION_LLM_FALLBACK_MODELS', '').split(',') if m.strip()]
+    LLM_FALLBACK_MODELS = [m.strip() for m in os.getenv('ZION_LLM_FALLBACK_MODELS', '').split(',') if m.strip()]
+    # Record partial LLM configuration for monitoring/debugging.
+    try:
+        _partial_llm_env = sorted({k for k in os.environ if k in {
+            'ZION_LLM_API_ENDPOINT','ZION_LLM_API_KEY','ZION_LLM_MODEL',
+            'OPENROUTER_API_KEY','OPENROUTER_MODEL','GROQ_API_KEY','GROQ_MODEL',
+            'GEMINI_API_KEY','GEMINI_MODEL','LLM_API_ENDPOINT','LLM_API_KEY','LLM_MODEL'}})
+        if _partial_llm_env and not LLM_TAILOR_ENABLED:
+            _ci_entry = {
+                'ts': int(time.time()),
+                'event': 'partial_llm_env_detected',
+                'env_vars': _partial_llm_env,
+                'llm_tailor_enabled': False,
+                'endpoint': bool(LLM_API_ENDPOINT),
+                'key': bool(LLM_API_KEY),
+                'model': bool(LLM_MODEL),
+                'detail': 'LLM tailoring blocked because not all required values are configured.'
+            }
+            CONTINUOUS_IMPROVEMENT_FILE.parent.mkdir(parents=True, exist_ok=True)
+            with CONTINUOUS_IMPROVEMENT_FILE.open('a', encoding='utf-8') as _f:
+                _f.write(json.dumps(_ci_entry, ensure_ascii=False) + '\n')
+    except Exception:
+        pass
+
 
 def load_state():
     if STATE_FILE.exists():
