@@ -44,11 +44,15 @@ jobs:
         run: mkdir -p automation/reports
 
       - name: Run site improvement agent
+        id: site-improv-run
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: node automation/ai-site-improvement-agent.cjs --base https://ziontechgroup.com
+        run: |
+          echo "[trace] start ai-site-improvement-agent.cjs"
+          node automation/ai-site-improvement-agent.cjs --base https://ziontechgroup.com | tee site_improv_run.log
+          echo "[trace] site improv exit=$?"
 
       - name: Surface site improvement agent results
         id: site-improv-result

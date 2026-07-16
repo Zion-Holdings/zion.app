@@ -32,11 +32,18 @@ jobs:
           pip install google-api-python-client google-auth google-auth-httplib2 google-auth-oauthlib requests beautifulsoup4
 
       - name: Run outreach worker
-        run: python scripts/outreach/outreach_worker_automation.py
+        id: outreach-worker
+        run: |
+          echo "[trace] start outreach_worker_automation.py"
+          python scripts/outreach/outreach_worker_automation.py | tee outreach_run.log
+          echo "[trace] outreach exit=$?"
+        continue-on-error: true
 
       - name: Discover outreach blockers
         if: always()
+        id: outreach-blockers
         run: |
+          echo "[trace] start outreach blocker discovery"
           set -euo pipefail
           python - <<'PY'
           import json, os
