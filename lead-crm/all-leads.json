@@ -9012,5 +9012,39 @@
     "llm_model": "deterministic-template-v1",
     "llm_reason": "Thank you for your interest in our services. I'd be happy to prepare a customized proposal based on your requirements.\n\nCould you please provide more details about your project scope and timeline?\n\nBest regards,\nZion Tech Group",
     "confidence": 2
+  },
+  {
+    "to": "replyto@email.microsoft.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "email.microsoft.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 0\n### Explanation:\nThe only provided signal is an uncontextualized domain name with no accompanying service descriptions, website content, or branding explicitly tied to managed AI/IT services. The generic \"tech group\" naming is overly broad (it could refer to any number of tech-related ",
+    "confidence": 0
+  },
+  {
+    "to": "vendas@4servers.com.br",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "4servers.com.br",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 0\n#### Rationale:\nThe provided signal only includes an uncontextualized domain name (ziontechgroup.com) with no accompanying information (e.g., site content, service descriptions, public listings) confirming the entity operating the domain offers managed AI/IT services. There is no expli",
+    "confidence": 0
   }
 ]

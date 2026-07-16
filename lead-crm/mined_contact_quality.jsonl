@@ -96,3 +96,5 @@
 {"ts": "2026-07-16T05:41:09.364079+00:00", "email": "info@sites.echinacities.com", "msg_id": "19f6961800dca7bc", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
 {"ts": "2026-07-16T08:54:25.905679+00:00", "email": "business-noreply@global.metamail.com", "msg_id": "19f6a1ee06e9ac97", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
 {"ts": "2026-07-16T08:54:27.325199+00:00", "email": "seminarios@onlyfakes.live", "msg_id": "19f6a1d5f1fc2ce1", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-16T12:41:37.115095+00:00", "email": "replyto@email.microsoft.com", "msg_id": "19f6aeb187b40e2d", "query": "\"ziontechgroup.com\"", "confidence": 0, "high_signal": false}
+{"ts": "2026-07-16T12:45:13.762710+00:00", "email": "vendas@4servers.com.br", "msg_id": "19f6af3b281d8d55", "query": "\"ziontechgroup.com\"", "confidence": 0, "high_signal": false}
