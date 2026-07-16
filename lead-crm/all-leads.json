@@ -9148,5 +9148,22 @@
     "llm_model": "deterministic-template-v1",
     "llm_reason": "Thank you for your interest in our services. I'd be happy to prepare a customized proposal based on your requirements.\n\nCould you please provide more details about your project scope and timeline?\n\nBest regards,\nZion Tech Group",
     "confidence": 2
+  },
+  {
+    "to": "email@email.playstation.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "email.playstation.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Score: 1\n#### Scoring framework reference for context:\n- 0 = No relevant signal to managed AI/IT services (completely unrelated domain/context, no ties to the service category)\n- 1 = Weak/partial relevant signal (indicates potential alignment with the IT/tech space but no explicit confirmation o",
+    "confidence": 1
   }
 ]

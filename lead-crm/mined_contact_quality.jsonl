@@ -104,3 +104,4 @@
 {"ts": "2026-07-16T19:48:48.170091+00:00", "email": "sony@webapppr.com", "msg_id": "19f6c771ad2287f4", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
 {"ts": "2026-07-16T20:42:03.949184+00:00", "email": "hello@automailer.io", "msg_id": "19f6c9dbbd292556", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
 {"ts": "2026-07-16T20:42:25.633846+00:00", "email": "no_responder@servidorkpmkmd.info-ambon.id", "msg_id": "19f6c9941d87e268", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-16T20:53:40.965260+00:00", "email": "email@email.playstation.com", "msg_id": "19f6cb065e5358c4", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
