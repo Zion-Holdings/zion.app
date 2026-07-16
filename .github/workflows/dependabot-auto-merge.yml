@@ -9,6 +9,7 @@ name: Dependabot Auto-Merge
 permissions:
   contents: write
   pull-requests: write
+  workflows: write
 jobs:
   auto-merge:
     if: ${{ github.actor == 'dependabot[bot]' }}
