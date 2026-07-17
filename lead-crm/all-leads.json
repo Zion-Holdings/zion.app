@@ -9216,5 +9216,22 @@
     "llm_model": "deterministic-template-v1",
     "llm_reason": "Thank you for your interest in our services. I'd be happy to prepare a customized proposal based on your requirements.\n\nCould you please provide more details about your project scope and timeline?\n\nBest regards,\nZion Tech Group",
     "confidence": 2
+  },
+  {
+    "to": "legal@notifications.resend.com",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "notifications.resend.com",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "nous",
+    "llm_model": "stepfun/step-3.7-flash:free",
+    "llm_reason": "### Rating: 1 (weak/indirect relevance)\n#### Reasoning:\nThis signal is not completely irrelevant (0) because the domain name includes \"tech\", which indicates the entity operates in the broader technology space aligned with the general IT services category. However, it is not a strong direct signal (",
+    "confidence": 1
   }
 ]
