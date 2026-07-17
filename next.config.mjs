@@ -44,7 +44,8 @@ const nextConfig = {
   // Reduce concurrent workers for static generation to prevent OOM
   experimental: {
     workerThreads: false,
-    cpus: 1,
+    // Disable parallel static page generation
+    buildWorkers: 1,
   },
   async redirects() {
     return [
