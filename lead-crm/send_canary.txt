@@ -1,1 +1,0 @@
-{"event": "canary_presend", "ts": "2026-07-05T14:02:54.684290Z", "batch": "/data/data/com.termux/files/home/zion-support.github.io/lead-crm/outreach_batch_current.json"}
