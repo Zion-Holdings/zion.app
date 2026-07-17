@@ -13,7 +13,9 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
+    outputs:
+      pages: ${{ steps.prepare_pages.outputs.pages }}
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -36,31 +38,18 @@ jobs:
           NODE_OPTIONS: --max-old-space-size=4096
           ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: 'true'
 
-      - name: Build Next.js export
-        id: build_next
+      - name: Build artifact
+        id: build
         run: |
           set -euo pipefail
-          # Use very conservative memory limit (4GB) for CI runners with 7GB RAM
-          # Force single-threaded static generation
-          export NODE_OPTIONS="--max-old-space-size=4096"
-          npm run build 2>&1 | tee build.log
+          node scripts/build-wrapper.cjs > build.log 2>&1 || true
           echo "build_log_start"
           set +x
           echo "---- BUILD LOG TAIL ----"
-          tail -n 500 build.log || true
+          tail -n 400 build.log || true
           echo "---- /BUILD LOG TAIL ----"
           set -x
           echo "build_log_end"
-          # Verify out/ directory was created
-          if [ -d out ] && [ -f out/index.html ]; then
-            echo "next_build_success=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "next_build_success=false" >> "$GITHUB_OUTPUT"
-          fi
-        env:
-          NODE_OPTIONS: --max-old-space-size=4096
-          ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: 'true'
-
 
       - name: Upload build diagnostics on failure
         if: failure()
@@ -73,6 +62,7 @@ jobs:
             out
 
       - name: Prepare Pages artifact
+        id: prepare_pages
         run: |
           set -euo pipefail
           ARTIFACT_DIR="${GITHUB_WORKSPACE:-.}/artifacts/pages"
