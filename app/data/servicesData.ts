@@ -1,17 +1,22 @@
-type Service = Record<string, any>;
-
-let allServices: readonly Service[] = [];
-try {
-  const data = require('./servicesData.json');
-  if (Array.isArray(data)) {
-    allServices = data as readonly Service[];
-  }
-} catch {
-  allServices = [];
+export interface Service {
+  id: string;
+  title: string;
+  description: string;
+  features: string[];
+  benefits: string[];
+  pricing: { basic?: string; starter?: string; pro: string; enterprise: string };
+  contactInfo: { website: string; email: string; phone: string };
+  icon: string;
+  href: string;
+  popular?: boolean;
+  category: string;
+  industry: string;
+  stage?: 'published' | 'beta' | 'planned' | 'ga';
+  rating?: number;
+  reviews?: number;
+  industries?: string[];
+  target?: string;
 }
-
-export type { Service };
-export { allServices };
 
 import { wave174AiServices, wave174MicroSaasServices, wave174ItServices, wave174SecurityServices, wave174CloudServices, wave174DataServices, wave174AutomationServices } from './wave174';
 import { wave175AiServices, wave175MicroSaasServices, wave175ItServices, wave175SecurityServices, wave175CloudServices, wave175DataServices, wave175AutomationServices } from './wave175';
@@ -51,11 +56,24 @@ import { wave208AiServices, wave208DataServices, wave208CloudServices, wave208Se
 import { wave209DataStreamingServices, wave209SearchServices, wave209DevOpsServices, wave209TestingServices, wave209ApiServices } from './wave209';
 import { wave210DatabaseServices, wave210CollaborationServices, wave210MediaStreamingServices, wave210InfrastructureAsCodeServices, wave210LowCodeServices } from './wave210';
 import { wave211MonitoringServices, wave211LoggingServices, wave211SecurityScanningServices, wave211BackupRecoveryServices, wave211IdentityManagementServices } from './wave211';
-import { wave212AiServices, wave212MicroSaasServices, wave212ItServices, wave212SecurityServices, wave212CloudServices, wave212AutomationServices, wave212DataServices, wave212HealthcareItServices } from './wave212';
-import { wave213AiObservabilityServices, wave213DataPrivacyServices, wave213CloudFinOpsServices, wave213SecurityThreatIntelServices, wave213AiTransparencyServices, wave213HealthcareItServices } from './wave213';
-import { wave214ItServices, wave214SecurityServices } from './wave214';
-import { wave215ItServices } from './wave215';
-import { wave216ItServices, wave216SecurityServices, wave216CloudServices, wave216DataServices, wave216AutomationServices, wave216MicroSaasServices, wave216AiServices } from './wave216';
+import { wave212PerformanceTestingServices, wave212ChaosEngineeringServices, wave212ServiceMeshServices, wave212APIGatewayServices, wave212EventStreamingServices } from './wave212';
+import { wave213CodeGenerationServices, wave213DigitalHumansServices, wave213UptimeMonitoringServices, wave213AiTranslationServices, wave213PredictiveMaintenanceServices } from './wave213';
+import { wave214DeveloperExperiencePlatformsServices, wave214AiCodeReviewServices, wave214EdgeComputingServices, wave214DataObservabilityServices, wave214IncidentManagementServices } from './wave214';
+import { wave215QuantumComputingServices, wave215NeuromorphicProcessingServices, wave215DigitalTwinPlatforms, wave215HomomorphicEncryptionServices, wave215AutonomousDroneDelivery } from './wave215';
+import { wave216SwarmIntelligenceServices, wave216EdgeAiInferenceServices, wave216SyntheticDataGenerationServices, wave216AiGovernanceComplianceServices, wave216AutonomousRpaServices, wave216FederatedLearningServices, wave216SpaceComputingServices } from './wave216';
+import { wave217CarbonCaptureTechServices, wave217BrainComputerInterfaceServices, wave217PrecisionFermentationServices, wave217AutonomousMarineVehicleServices, wave217SmartGridEnergyServices, wave217AiDrugDiscoveryServices, wave2173dPrintedElectronicsServices } from './wave217';
+import { wave218RegenerativeAgricultureAiServices, wave218AutonomousConstructionServices, wave218EmotionAiServices, wave218SatelliteInternetServices, wave218AiLegalAssistantServices, wave218NuclearFusionEnergyServices, wave218HolographicDisplayServices } from './wave218';
+import { wave219AutonomousWarehouseRoboticsServices, wave219AiMusicGenerationServices, wave219DigitalIdentityVerificationServices, wave219SmartCityIotServices, wave219AiPoweredCybersecurityServices, wave219VerticalFarmingServices, wave219WearableHealthTechServices } from './wave219';
+import { wave220AiVideoAnalyticsServices, wave220SyntheticVoiceCloningServices, wave220AiContractLifecycleServices, wave220AutonomousVehicleTelemetryServices, wave220AiAccessibilityTestingServices } from './wave220';
+import { wave221ClimateRiskAnalyticsServices, wave221AgenticAiWorkflowServices, wave221AiCodeMigrationServices, wave221GreenCloudSustainabilityServices, wave221AiTalentMarketplaceServices } from './wave221';
+import { wave222MicroSaasAppointmentCrmServices, wave222ItPatchManagementServices, wave222SecuritySocAiCopilotServices, wave222DataContractEnforcementServices, wave222AutomationEmailCampaignServices, wave222MicroSaasFeedbackServices, wave222AiCompetitiveIntelServices } from './wave222';
+import { wave223AiSupplyChainDigitalTwinServices, wave223MicroSaasWhiteLabelServices, wave223ZeroTrustApiGatewayServices, wave223AiLegalDiscoveryServices, wave223GreenItAssetLifecycleServices, wave223AutonomousDbTuningServices, wave223AiAccessibilityComplianceServices } from './wave223';
+import { wave224AiServices, wave224ItServices, wave224MicroSaasServices } from './wave224';
+import { wave225MicroSaasBoardMgmtServices, wave225AiTranslationServices, wave225SecurityCnappServices, wave225DataCatalogAiServices } from './wave225';
+import { wave226MicroSaasInvoiceTrackerServices, wave226AiMeetingSummarizerServices, wave226ItServiceDeskAutomationServices, wave226SecurityDlpServices } from './wave226';
+import { wave227MicroSaasSimpleCrmServices, wave227AiSocialMediaCalendarServices, wave227ItManagedPrintServices, wave227SecurityEmailDmarcServices, wave227DataCdpSetupServices } from './wave227';
+import { wave228AiIncidentResponseServices, wave228MicroSaasSubscriptionBillingServices, wave228ItCapacityPlanningServices, wave228MicroSaasReviewMgmtServices } from './wave228';
+import { wave229AiInsuranceClaimsServices, wave229ItZeroTrustNetworkServices, wave229SecurityThreatIntelServices, wave229MicroSaasEventPlatformServices } from './wave229';
 export const aiServices: Service[] = [
   {
     id: 'ai-document-processing',
@@ -628,7 +646,11 @@ export const aiServices: Service[] = [
 ];
 
 export const itServices: Service[] = [
-  ...wave215ItServices,
+  ...wave215QuantumComputingServices,
+  ...wave215NeuromorphicProcessingServices,
+  ...wave215DigitalTwinPlatforms,
+  ...wave215HomomorphicEncryptionServices,
+  ...wave215AutonomousDroneDelivery,
   {
     id: 'it-zero-trust-access',
     title: 'Zero Trust Network Access (ZTNA)',
@@ -1872,26 +1894,33 @@ export const allServices: Service[] = [
   ...wave211SecurityScanningServices,
   ...wave211BackupRecoveryServices,
   ...wave211IdentityManagementServices,
-  ...wave212MicroSaasServices,
-  ...wave212ItServices,
-  ...wave212SecurityServices,
-  ...wave212CloudServices,
-  ...wave212AutomationServices,
-  ...wave213AiObservabilityServices,
-  ...wave213DataPrivacyServices,
-  ...wave213CloudFinOpsServices,
-  ...wave213SecurityThreatIntelServices,
-  ...wave213AiTransparencyServices,
-  ...wave213HealthcareItServices,
-  ...wave214ItServices,
-  ...wave214SecurityServices,
-  ...wave216SwarmIntelligenceServices,
-  ...wave216EdgeAiInferenceServices,
-  ...wave216SyntheticDataGenerationServices,
-  ...wave216AiGovernanceComplianceServices,
-  ...wave216AutonomousRpaServices,
-  ...wave216FederatedLearningServices,
-  ...wave216SpaceComputingServices,
+  ...wave212PerformanceTestingServices,
+  ...wave212ChaosEngineeringServices,
+  ...wave212ServiceMeshServices,
+  ...wave212APIGatewayServices,
+  ...wave212EventStreamingServices,
+  ...wave213CodeGenerationServices,
+  ...wave213DigitalHumansServices,
+  ...wave213UptimeMonitoringServices,
+  ...wave213AiTranslationServices,
+  ...wave213PredictiveMaintenanceServices,
+  ...wave214DeveloperExperiencePlatformsServices,
+  ...wave214AiCodeReviewServices,
+  ...wave214EdgeComputingServices,
+  ...wave214DataObservabilityServices,
+  ...wave214IncidentManagementServices,
+  ...wave215QuantumComputingServices,
+    ...wave215NeuromorphicProcessingServices,
+    ...wave215DigitalTwinPlatforms,
+    ...wave215HomomorphicEncryptionServices,
+    ...wave215AutonomousDroneDelivery,
+    ...wave216SwarmIntelligenceServices,
+    ...wave216EdgeAiInferenceServices,
+    ...wave216SyntheticDataGenerationServices,
+    ...wave216AiGovernanceComplianceServices,
+    ...wave216AutonomousRpaServices,
+    ...wave216FederatedLearningServices,
+    ...wave216SpaceComputingServices,
   ...wave217CarbonCaptureTechServices,
   ...wave217BrainComputerInterfaceServices,
   ...wave217PrecisionFermentationServices,
@@ -1914,8 +1943,8 @@ export const allServices: Service[] = [
   ...wave219VerticalFarmingServices,
   ...wave219WearableHealthTechServices,
   ...wave220AiVideoAnalyticsServices,
-  ...wave220SyntheticVoiceCloningServices,
-  ...wave220AiContractLifecycleServices,
-  ...wave220AutonomousVehicleTelemetryServices,
-  ...wave220AiAccessibilityTestingServices,
-  ].filter((s: Service) => s.benefits.length > 0);
+    ...wave220SyntheticVoiceCloningServices,
+    ...wave220AiContractLifecycleServices,
+    ...wave220AutonomousVehicleTelemetryServices,
+    ...wave220AiAccessibilityTestingServices,
+  ].filter((s): s is Service => s !== undefined && s.benefits.length > 0);
