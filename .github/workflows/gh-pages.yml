@@ -13,7 +13,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 45
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -28,17 +28,19 @@ jobs:
           cache-dependency-path: package-lock.json
         env:
           NODE_OPTIONS: --max-old-space-size=4096
+          ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: 'true'
 
       - name: Install dependencies
         run: npm install --no-audit --fund=false
         env:
           NODE_OPTIONS: --max-old-space-size=4096
+          ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: 'true'
 
-      - name: Build artifact
-        id: build
+      - name: Build Next.js export
+        id: build_next
         run: |
           set -euo pipefail
-          node scripts/build-wrapper.cjs > build.log 2>&1 || true
+          npm run build > build.log 2>&1
           echo "build_log_start"
           set +x
           echo "---- BUILD LOG TAIL ----"
@@ -46,24 +48,15 @@ jobs:
           echo "---- /BUILD LOG TAIL ----"
           set -x
           echo "build_log_end"
-          if [ -d artifacts/pages ]; then
-            PAGES=$(find artifacts/pages -name 'index.html' | wc -l)
+          # Verify out/ directory was created
+          if [ -d out ] && [ -f out/index.html ]; then
+            echo "next_build_success=true" >> "$GITHUB_OUTPUT"
           else
-            PAGES=0
+            echo "next_build_success=false" >> "$GITHUB_OUTPUT"
           fi
-          if [ "${PAGES}" -eq 0 ] && [ -d out ]; then
-            PAGES=$(find out -name 'index.html' 2>/dev/null | wc -l || echo 0)
-          fi
-          SIZE="none"
-          if [ -d out ]; then
-            SIZE=$(du -sh out | awk '{print $1}')
-          elif [ -d docs ]; then
-            SIZE=$(du -sh docs | awk '{print $1}')
-          fi
-          echo "pages=${PAGES}" >> "$GITHUB_OUTPUT"
-          echo "size=${SIZE}" >> "$GITHUB_OUTPUT"
-          echo "production_out_exists=$([ -d out ] && echo 1 || echo 0)" >> "$GITHUB_OUTPUT"
-          echo "artifacts_uploaded=1" >> "$GITHUB_OUTPUT"
+        env:
+          NODE_OPTIONS: --max-old-space-size=4096
+          ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: 'true'
 
 
       - name: Upload build diagnostics on failure
