@@ -117,28 +117,6 @@ def _load_excluded() -> set:
 
 _SENT_LOCK = REPO / 'lead-crm' / '.ceo_outreach_sent.lock'
 
-def _load_sent_set():
-    if not _SENT_LOCK.exists():
-        return set()
-    try:
-        rows = json.loads(_SENT_LOCK.read_text(encoding='utf-8'))
-        return {
-            ((r.get('to') or '').lower(), (r.get('subject') or '').strip(), r.get('thread_id') or '', r.get('message_id') or '')
-            for r in rows
-        }
-    except Exception:
-        return set()
-
-def append_sent(row: dict):
-    rows = []
-    if _SENT_LOCK.exists():
-        try:
-            rows = json.loads(_SENT_LOCK.read_text(encoding='utf-8'))
-        except Exception:
-            rows = []
-    rows.append(row)
-    _SENT_LOCK.write_text(json.dumps(rows, ensure_ascii=False), encoding='utf-8')
-
 # in-memory fast path for same-run dedup
 _SENT_ROWS = _load_sent_set()
 
@@ -175,6 +153,13 @@ def send_mail(to_addr, subject, body, html=None, thread_id=None, message_id=None
     key = (to_key, (subject or '').strip(), thread_id or '', message_id or '')
     if key in _SENT_ROWS:
         return None, 'duplicate'
+    # 24h auto-suppress via Gmail Sent history
+    try:
+        from commands.google_workspace import gmail_sent
+        if gmail_sent(to_addr, subject, within_seconds=24*3600, limit=20):
+            return None, 'recent_sent_24h'
+    except Exception:
+        pass
     raw_email_lines = [
         'From: kleber@ziontechgroup.com',
         'To: %s' % to_addr,

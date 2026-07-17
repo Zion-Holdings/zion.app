@@ -127,8 +127,7 @@ def gmail_sent(to_addr: str, subject: str, within_seconds: int = 24*3600, limit:
             ts = 0
             if ts_str:
                 try:
-                    import email.utils
-                    ts = int(email.utils.mktime_tz(email.utils.parsedate_tz(ts_str)))
+                    ts = int(datetime.datetime.strptime(ts_str.split(' -')[0].split(' +')[0], '%a, %d %b %Y %H:%M:%S').replace(tzinfo=datetime.timezone.utc).timestamp())
                 except Exception:
                     pass
             if now - ts > within_seconds:
@@ -590,79 +589,6 @@ def gmail_get_or_create_label_id(name: str) -> str:
     req = urllib.request.Request(url, data=body, headers=headers, method='POST')
     resp = json.loads(urllib.request.urlopen(req).read())
     return resp['id']
-
-def gmail_sent(to_addr: str, subject: str, within_seconds: int = 24*3600, limit: int = 20) -> bool:
-    """Return True if we sent a message to `to_addr` with matching subject within the window."""
-    try:
-        q = f'to:{to_addr} subject:"{subject}" in:sent'
-        hits = gmail_search(q, limit=limit, all_folders=True)
-        now = int(time.time())
-        for m in hits:
-            try:
-                full = gmail_get(m.get('id'))
-            except Exception:
-                continue
-            headers = {h['name']: h['value'] for h in full.get('payload', {}).get('headers', [])}
-            ts_str = headers.get('Date', '')
-            ts = 0
-            if ts_str:
-                try:
-                    import email.utils
-                    ts = int(email.utils.mktime_tz(email.utils.parsedate_tz(ts_str)))
-                except Exception:
-                    pass
-            if now - ts > within_seconds:
-                continue
-            actual_to = headers.get('To', '')
-            if actual_to and actual_to.lower() == to_addr.lower():
-                return True
-    except Exception:
-        pass
-    return False
-
-def gmail_create_draft(thread_id: str, subject: str, body: str, to_addr: str) -> str:
-    """Create a Gmail draft reply in the given thread.
-
-    Returns: draft ID (str)
-    """
-    raw_lines = [
-        f"Subject: Re: {subject}",
-        f"To: {to_addr}",
-        "",
-        body,
-    ]
-    raw = "\r\n".join(raw_lines)
-    encoded = base64.urlsafe_b64encode(raw.encode()).decode()
-
-    url = 'https://gmail.googleapis.com/gmail/v1/users/me/drafts'
-    payload = json.dumps({'message': {'threadId': thread_id, 'raw': encoded}}).encode()
-    headers = gog_headers()
-    headers['Content-Type'] = 'application/json'
-    req = urllib.request.Request(url, data=payload, headers=headers, method='POST')
-    resp = json.loads(urllib.request.urlopen(req).read())
-    return resp.get('id', 'unknown')
-
-def gmail_create_draft_new(subject: str, body: str, to_addr: str) -> str:
-    """Create a Gmail draft for a new thread (no threadId).
-
-    Returns: draft ID (str)
-    """
-    raw_lines = [
-        f"Subject: {subject}",
-        f"To: {to_addr}",
-        "",
-        body,
-    ]
-    raw = "\r\n".join(raw_lines)
-    encoded = base64.urlsafe_b64encode(raw.encode()).decode()
-
-    url = 'https://gmail.googleapis.com/gmail/v1/users/me/drafts'
-    payload = json.dumps({'message': {'raw': encoded}}).encode()
-    headers = gog_headers()
-    headers['Content-Type'] = 'application/json'
-    req = urllib.request.Request(url, data=payload, headers=headers, method='POST')
-    resp = json.loads(urllib.request.urlopen(req).read())
-    return resp.get('id', 'unknown')
 
 def extract_body_from_gmail_message(msg):
     def part_text(part):
