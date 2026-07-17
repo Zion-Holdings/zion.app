@@ -36,24 +36,18 @@ jobs:
           NODE_OPTIONS: --max-old-space-size=4096
           ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: 'true'
 
-      - name: Build Next.js export
-        id: build_next
+      - name: Build artifact
+        id: build
         run: |
           set -euo pipefail
-          # Use conservative memory limit (4GB) for CI runners with 7GB RAM
-          export NODE_OPTIONS="--max-old-space-size=4096"
-          npm run build 2>&1 | tee build.log
+          node scripts/build-wrapper.cjs > build.log 2>&1 || true
           echo "build_log_start"
           set +x
           echo "---- BUILD LOG TAIL ----"
-          tail -n 500 build.log || true
+          tail -n 400 build.log || true
           echo "---- /BUILD LOG TAIL ----"
           set -x
           echo "build_log_end"
-          # Don't fail here - let Prepare Pages artifact handle the fallback
-        env:
-          NODE_OPTIONS: --max-old-space-size=4096
-          ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: 'true'
 
       - name: Upload build diagnostics on failure
         if: failure()
