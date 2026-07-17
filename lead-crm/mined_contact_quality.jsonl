@@ -116,3 +116,5 @@
 {"ts": "2026-07-17T14:04:07.968199+00:00", "email": "support@datadog.zendesk.com", "msg_id": "19f7060a3760c49d", "query": "\"Zion Tech Group\"", "confidence": 0, "high_signal": false}
 {"ts": "2026-07-17T14:04:29.054853+00:00", "email": "aathi@rocketlane.com", "msg_id": "19f705e106a90468", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
 {"ts": "2026-07-17T14:05:01.625977+00:00", "email": "anne@scorecard-company.co.uk", "msg_id": "19f705f47e28ce00", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
+{"ts": "2026-07-17T15:52:10.943222+00:00", "email": "restructuring@kroll-restructure-extend-link.xyz", "msg_id": "19f70a76832662ad", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-17T15:52:32.076020+00:00", "email": "divulgacao@travelexconfidencenews.com.br", "msg_id": "19f70a020d47e86f", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
