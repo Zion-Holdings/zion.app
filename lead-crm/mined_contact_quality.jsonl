@@ -110,3 +110,6 @@
 {"ts": "2026-07-17T03:47:16.094304+00:00", "email": "marketing@xturbo.pe", "msg_id": "19f6e0e10e6338e2", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
 {"ts": "2026-07-17T06:52:15.647655+00:00", "email": "legal@notifications.resend.com", "msg_id": "19f6ed7e68d2edca", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
 {"ts": "2026-07-17T08:11:27.631518+00:00", "email": "seminarios@dig-in.site", "msg_id": "19f6f1c79c206cfc", "query": "\"ziontechgroup.com\"", "confidence": 0, "high_signal": false}
+{"ts": "2026-07-17T13:21:56.088098+00:00", "email": "diana.kelmsley@assetholdingscapitals.shop", "msg_id": "19f7032e7956c756", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-17T13:48:58.621116+00:00", "email": "solicita@rivierasl.com.br", "msg_id": "19f7052f555d622e", "query": "\"Zion Tech Group\"", "confidence": 0, "high_signal": false}
+{"ts": "2026-07-17T13:49:24.049457+00:00", "email": "fernanda@ziontechgroup.com", "msg_id": "19f7049b6707ded6", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
