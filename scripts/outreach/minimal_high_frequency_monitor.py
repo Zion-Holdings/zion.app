@@ -209,39 +209,33 @@ def _llm_tailor_reply_auth(name, contact, lang, subject, snippet):
         auth_path = Path.home()/'.hermes'/'auth.json'
         cfg_path = Path.home()/'.hermes'/'config.yaml'
         if not auth_path.exists():
-            return {'blocker': 'auth_missing', 'detail': str(auth_path)}
-        cfg_text = cfg_path.read_text(encoding='utf-8') if cfg_path.exists() else ''
+            return None
         cfg = json.loads(auth_path.read_text(encoding='utf-8')) or {}
         provider = ((cfg.get('providers') or {}).get('nous') or {})
         endpoint = (provider.get('inference_base_url') or 'https://inference-api.nousresearch.com/v1').rstrip('/')
         token = provider.get('access_token') or ''
-        debug = {}
-        if not token:
-            debug['provider'] = 'missing_access_token'
-        if not endpoint:
-            debug['endpoint'] = 'missing_endpoint'
-        if debug:
-            return {'blocker': 'provider_config_incomplete', 'detail': debug}
-        model = 'stepfun/step-3.7-flash:free'
+        if not token or not endpoint:
+            return None
+        model = provider.get('model') or 'stepfun/step-3.7-flash:free'
         system = (
             "You are the CEO of Zion Tech Group. Output one complete email only. "
             f"Language: {lang if lang in {'en','pt','es'} else 'en'}. "
             "Tone: friendly, direct, professional. "
-            "Requirements: thank them for the past project; propose 2 concrete mutually beneficial next ideas; "
-            "include https://ziontechgroup.com and mention free tools/services; include https://calendly.com/kleber-ziontechgroup; "
-            "Output contract: the very first characters of your response must be the email body, starting with a greeting such as 'Hi ...'. "
-            "Do not narrate, do not explain, do not emit chain-of-thought, and do not invent unsupported claims."
+            "Include https://ziontechgroup.com and mention free services/tools. "
+            "Include https://calendly.com/kleber-ziontechgroup and https://meet.google.com/ouu-khao-kuy. "
+            "Prefix MUST start with the email body greeting, e.g. Hi ..., Olá ..., Dear ... . "
+            "No narration or chain-of-thought."
         )
         user = (
-            f"Subject: {subject}\nClient: {name} <{contact}>\nContext: {(snippet or '')[:400]}\n\n"
-            "Write the email now."
+            f"Subject: {subject}\nRecipient: {name} <{contact}>\nContext: "
+            f"{(snippet or '')[:500]}\n\nWrite the email."
         )
         payload = json.dumps({
             'model': model,
             'messages': [
-                {'role':'system','content': system},
-                {'role':'user','content': user},
-                {'role':'assistant','content': 'Hi ' + name + ',\n\n'}
+                {'role': 'system', 'content': system},
+                {'role': 'user', 'content': user},
+                {'role': 'assistant', 'content': 'Hi ' + name + ',\n\n'}
             ],
             'temperature': 0.25,
             'max_tokens': 1024,
@@ -250,59 +244,41 @@ def _llm_tailor_reply_auth(name, contact, lang, subject, snippet):
         with urllib.request.urlopen(req, timeout=25) as r:
             data = json.loads(r.read().decode('utf-8', errors='ignore'))
         msg = ((data.get('choices') or [{}])[0].get('message') or {})
-        text = ''
-        if isinstance(msg, dict):
-            text = ((msg.get('reasoning') or msg.get('content') or '')).strip()
-        if not text:
+        if not isinstance(msg, dict):
             return None
-        # Extract final assistant reply from free-form reasoning when content is empty.
-        if msg.get('content') is None and msg.get('reasoning'):
-            reasoning = msg['reasoning']
-            # Trim common chain-of-thought preambles.
-            for prefix in (
-                'Got it,', 'Sure,', 'Okay,', 'Wait,', 'Let\'s', 'First,', 'Now,',
-                'Here\'s', 'Subject:', 'Client:', 'Context:', 'the requirements:', 'the user said:'
-            ):
-                if reasoning.startswith(prefix):
-                    reasoning = reasoning[len(prefix):].lstrip(' ,:-')
-            # Prefer the last complete greeting onward because the model may emit reasoning then draft late or truncated.
+        if msg.get('content'):
+            text = msg['content'].strip()
+            if text and len(text.splitlines()) >= 2:
+                return text[:900]
+        if msg.get('reasoning'):
+            text = msg['reasoning'].strip()
+            for prefix in ('Got it,', 'Sure,', 'Okay,', 'Wait,', 'let\'s', 'First,', 'Now,', 'Here\'s'):
+                if text.startswith(prefix):
+                    text = text[len(prefix):].lstrip(' ,:-')
             greeting_matches = list(re.finditer(
-                r'(?:\n|^)((?:Hi|Hello|Dear|Good\s+(?:morning|afternoon|evening)|Greetings)[^\\n]{0,160}?,?)',
-                reasoning,
-                re.IGNORECASE | re.S,
+                r'(?:\n|^)((?:Hi|Hello|Dear|Good\s+(?:morning|afternoon|evening)|Greetings|Ol[áa])[^\\n]{0,180}?,?)',
+                text, re.IGNORECASE | re.S,
             ))
             if greeting_matches:
-                reasoning = reasoning[greeting_matches[-1].start():].strip()
-            # Last-resort fallback: for long fragmented reasoning outputs, keep trailing text where a real draft often sits.
-            elif len(reasoning) > 1200:
-                reasoning = reasoning[-1200:].strip()
-            text = reasoning.strip()
-        else:
-            text = text
-        lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
-        if not lines:
-            return None
-        assembled = ' '.join(lines)
-        assembled = assembled.replace('\\n', '\n').strip()
-        if len(assembled) > 900:
-            assembled = assembled[-900:].rstrip()
-        if not assembled:
-            return None
-        preamble_markers = (
-            'Got it,', 'Sure,', 'First,', 'Okay,', 'Wait,', 'Let\'s', 'Now,', 'Here\'s', 'Subject:', 'Client:', 'Context:',
-            'Expr of interest', 'Your response', 'let me know', 'Would you like me to', 'right this moment',
-            'recommendations in the next response', 'the recipient is', 'the requirements', 'the user said',
-            'wait no', 'wait, wait', 'conversely', ' hmm '
-        )
-        lower = assembled.lower()
-        if lower.startswith('got it') or lower.startswith('first,') or lower.startswith('okay,') or lower.startswith('let\'s') or lower.startswith('here\'s') or 'the requirements:' in assembled or 'the user said' in assembled:
-            return None
-        sent_email_pattern = re.compile(r'^\\s*(hi|hello|dear|good\\s+(morning|afternoon|evening)|greetings)', re.IGNORECASE)
-        if not sent_email_pattern.search(assembled) and not any(k in assembled.lower() for k in ['we have', 'you can see our', 'obrigado', 'thank you for the opportunity']):
-            return None
-        if any(m.lower() in lower for m in preamble_markers):
-            return None
-        return assembled
+                text = text[greeting_matches[-1].start():].strip()
+            else:
+                candidates = [
+                    m.start() for m in re.finditer(r'(?:\n|^)(?:Hi|Hello|Dear|Ol[áa])', text, re.IGNORECASE | re.S)
+                ]
+                if candidates:
+                    text = text[candidates[-1]:].strip()
+                else:
+                    text = text[-1200:].strip()
+            text = ' '.join([ln.strip() for ln in text.splitlines() if ln.strip()])
+            text = text.replace('\\n', '\n').strip()
+            if len(text) > 900:
+                text = text[-900:].rstrip()
+            if any(text.lower().startswith(x) for x in ['got it', 'first,', 'okay,', 'let\'s', 'here\'s']) or 'the requirements:' in text.lower() or 'the user said' in text.lower():
+                return None
+            if not re.search(r'^\s*(hi|hello|dear|good\s+(morning|afternoon|evening)|greetings|ol[áa])', text, re.IGNORECASE):
+                return None
+            return text
+        return None
     except Exception:
         return None
 
