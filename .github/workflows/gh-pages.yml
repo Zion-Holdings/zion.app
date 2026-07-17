@@ -13,7 +13,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -40,8 +40,7 @@ jobs:
         id: build_next
         run: |
           set -euo pipefail
-          # Use very conservative memory limit (4GB) for CI runners with 7GB RAM
-          # Force single-threaded static generation
+          # Use conservative memory limit (4GB) for CI runners with 7GB RAM
           export NODE_OPTIONS="--max-old-space-size=4096"
           npm run build 2>&1 | tee build.log
           echo "build_log_start"
@@ -51,16 +50,10 @@ jobs:
           echo "---- /BUILD LOG TAIL ----"
           set -x
           echo "build_log_end"
-          # Verify out/ directory was created
-          if [ -d out ] && [ -f out/index.html ]; then
-            echo "next_build_success=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "next_build_success=false" >> "$GITHUB_OUTPUT"
-          fi
+          # Don't fail here - let Prepare Pages artifact handle the fallback
         env:
           NODE_OPTIONS: --max-old-space-size=4096
           ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: 'true'
-
 
       - name: Upload build diagnostics on failure
         if: failure()
@@ -73,6 +66,7 @@ jobs:
             out
 
       - name: Prepare Pages artifact
+        id: prepare_pages
         run: |
           set -euo pipefail
           ARTIFACT_DIR="${GITHUB_WORKSPACE:-.}/artifacts/pages"
