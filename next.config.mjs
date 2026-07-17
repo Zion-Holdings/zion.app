@@ -45,10 +45,6 @@ const nextConfig = {
   experimental: {
     workerThreads: false,
     cpus: 1,
-    // Disable turbo for more predictable memory usage
-    turbo: {
-      memoryLimit: 4096,
-    },
   },
   async redirects() {
     return [
