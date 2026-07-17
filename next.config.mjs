@@ -41,12 +41,6 @@ const nextConfig = {
     return config;
   },
   generateBuildId: async () => 'zion-tech-group-v1',
-  // Reduce concurrent workers for static generation to prevent OOM
-  experimental: {
-    workerThreads: false,
-    // Disable parallel static page generation
-    buildWorkers: 1,
-  },
   async redirects() {
     return [
       { source: '/agents/monitoring', destination: '/agents-monitoring', permanent: true },
