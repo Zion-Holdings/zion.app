@@ -107,3 +107,4 @@
 {"ts": "2026-07-16T20:53:40.965260+00:00", "email": "email@email.playstation.com", "msg_id": "19f6cb065e5358c4", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
 {"ts": "2026-07-16T21:44:10.588270+00:00", "email": "no_reply@email.heygen.com", "msg_id": "19f6cd1007b0b939", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}
 {"ts": "2026-07-16T22:05:35.992136+00:00", "email": "ads-account-noreply@google.com", "msg_id": "19f6cf63fd4eb539", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
+{"ts": "2026-07-17T03:47:16.094304+00:00", "email": "marketing@xturbo.pe", "msg_id": "19f6e0e10e6338e2", "query": "\"ziontechgroup.com\"", "confidence": 2, "high_signal": true}

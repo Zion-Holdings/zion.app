@@ -9199,5 +9199,22 @@
     "llm_model": "stepfun/step-3.7-flash:free",
     "llm_reason": "### Rating: 1\n#### Reasoning aligned to the 0/1/2 scale for managed AI/IT services relevance:\n- 0 = No relevance to managed AI/IT services (e.g. domains for unrelated retail, personal hobby, or non-tech focused entities)\n- 1 = Weak/unconfirmed relevance: The domain name \"ziontechgroup.com\" implies t",
     "confidence": 1
+  },
+  {
+    "to": "marketing@xturbo.pe",
+    "name": null,
+    "subject": "Parceria Zion Tech Group — operações e eficiência para TI",
+    "body": null,
+    "status": "discovered",
+    "source": "historical_email_miner",
+    "source_query": "\"ziontechgroup.com\"",
+    "domain": "xturbo.pe",
+    "is_generic_provider": false,
+    "is_invalid_domain": false,
+    "is_placeholder_domain": false,
+    "llm_provider": "template",
+    "llm_model": "deterministic-template-v1",
+    "llm_reason": "Thank you for your interest in our services. I'd be happy to prepare a customized proposal based on your requirements.\n\nCould you please provide more details about your project scope and timeline?\n\nBest regards,\nZion Tech Group",
+    "confidence": 2
   }
 ]
