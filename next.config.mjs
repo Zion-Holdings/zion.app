@@ -25,6 +25,15 @@ const nextConfig = {
       'ndata': path.join(appDir, 'data'),
       'nlib': path.join(appDir, 'lib'),
     };
+    // Reduce memory usage during build
+    config.optimization = {
+      ...config.optimization,
+      splitChunks: {
+        chunks: 'all',
+        minSize: 20000,
+        maxSize: 100000,
+      },
+    };
     return config;
   },
   generateBuildId: async () => 'zion-tech-group-v1',
