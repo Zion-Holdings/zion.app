@@ -16,7 +16,7 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  webpack: (config) => {
+  webpack: (config, { isServer }) => {
     const appDir = path.join(process.cwd(), 'app');
     config.resolve.alias = {
       ...(config.resolve.alias || {}),
@@ -26,17 +26,24 @@ const nextConfig = {
       'nlib': path.join(appDir, 'lib'),
     };
     // Reduce memory usage during build
-    config.optimization = {
-      ...config.optimization,
-      splitChunks: {
-        chunks: 'all',
-        minSize: 20000,
-        maxSize: 100000,
-      },
-    };
+    if (!isServer) {
+      config.optimization = {
+        ...config.optimization,
+        splitChunks: {
+          chunks: 'all',
+          minSize: 20000,
+          maxSize: 100000,
+        },
+      };
+    }
     return config;
   },
   generateBuildId: async () => 'zion-tech-group-v1',
+  // Reduce concurrent workers for static generation to prevent OOM
+  experimental: {
+    workerThreads: false,
+    cpus: 1,
+  },
   async redirects() {
     return [
       { source: '/agents/monitoring', destination: '/agents-monitoring', permanent: true },
