@@ -9,6 +9,7 @@ FIXED for proper conversation threading
 
 import urllib.request, urllib.parse, json, datetime, sys, time, base64
 from pathlib import Path
+import email.utils
 
 WORKSPACE = Path.home() / '.openclaw' / 'workspace'
 FALLBACK_WORKSPACE = WORKSPACE
@@ -109,6 +110,35 @@ def gmail_get_or_create_label_id(name: str) -> str:
     req = urllib.request.Request(url, data=body, headers=headers, method='POST')
     resp = json.loads(urllib.request.urlopen(req).read())
     return resp['id']
+
+def gmail_sent(to_addr: str, subject: str, within_seconds: int = 24*3600, limit: int = 20) -> bool:
+    """Return True if we sent a message to `to_addr` with matching subject within the window."""
+    try:
+        q = f'to:{to_addr} subject:"{subject}" in:sent'
+        hits = gmail_search(q, limit=limit, all_folders=True)
+        now = int(time.time())
+        for m in hits:
+            try:
+                full = gmail_get(m.get('id'))
+            except Exception:
+                continue
+            headers = {h['name']: h['value'] for h in full.get('payload', {}).get('headers', [])}
+            ts_str = headers.get('Date', '')
+            ts = 0
+            if ts_str:
+                try:
+                    import email.utils
+                    ts = int(email.utils.mktime_tz(email.utils.parsedate_tz(ts_str)))
+                except Exception:
+                    pass
+            if now - ts > within_seconds:
+                continue
+            actual_to = headers.get('To', '')
+            if actual_to and actual_to.lower() == to_addr.lower():
+                return True
+    except Exception:
+        pass
+    return False
 
 def gmail_create_draft(thread_id: str, subject: str, body: str, to_addr: str) -> str:
     """Create a Gmail draft reply in the given thread.
@@ -560,6 +590,35 @@ def gmail_get_or_create_label_id(name: str) -> str:
     req = urllib.request.Request(url, data=body, headers=headers, method='POST')
     resp = json.loads(urllib.request.urlopen(req).read())
     return resp['id']
+
+def gmail_sent(to_addr: str, subject: str, within_seconds: int = 24*3600, limit: int = 20) -> bool:
+    """Return True if we sent a message to `to_addr` with matching subject within the window."""
+    try:
+        q = f'to:{to_addr} subject:"{subject}" in:sent'
+        hits = gmail_search(q, limit=limit, all_folders=True)
+        now = int(time.time())
+        for m in hits:
+            try:
+                full = gmail_get(m.get('id'))
+            except Exception:
+                continue
+            headers = {h['name']: h['value'] for h in full.get('payload', {}).get('headers', [])}
+            ts_str = headers.get('Date', '')
+            ts = 0
+            if ts_str:
+                try:
+                    import email.utils
+                    ts = int(email.utils.mktime_tz(email.utils.parsedate_tz(ts_str)))
+                except Exception:
+                    pass
+            if now - ts > within_seconds:
+                continue
+            actual_to = headers.get('To', '')
+            if actual_to and actual_to.lower() == to_addr.lower():
+                return True
+    except Exception:
+        pass
+    return False
 
 def gmail_create_draft(thread_id: str, subject: str, body: str, to_addr: str) -> str:
     """Create a Gmail draft reply in the given thread.
