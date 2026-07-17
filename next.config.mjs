@@ -36,6 +36,8 @@ const nextConfig = {
         },
       };
     }
+    // Limit parallelism in webpack
+    config.parallelism = 1;
     return config;
   },
   generateBuildId: async () => 'zion-tech-group-v1',
@@ -43,6 +45,10 @@ const nextConfig = {
   experimental: {
     workerThreads: false,
     cpus: 1,
+    // Disable turbo for more predictable memory usage
+    turbo: {
+      memoryLimit: 4096,
+    },
   },
   async redirects() {
     return [

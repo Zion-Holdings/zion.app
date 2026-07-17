@@ -40,9 +40,9 @@ jobs:
         id: build_next
         run: |
           set -euo pipefail
-          # Use conservative memory limit (6GB) for CI runners with 7GB RAM
-          # Reduce workers to prevent OOM during static generation of 1614+ pages
-          export NODE_OPTIONS="--max-old-space-size=6144"
+          # Use conservative memory limit (5GB) for CI runners with 7GB RAM
+          # Force single worker to prevent OOM during static generation of 1614+ pages
+          export NODE_OPTIONS="--max-old-space-size=5120"
           npm run build 2>&1 | tee build.log
           echo "build_log_start"
           set +x
@@ -58,7 +58,7 @@ jobs:
             echo "next_build_success=false" >> "$GITHUB_OUTPUT"
           fi
         env:
-          NODE_OPTIONS: --max-old-space-size=6144
+          NODE_OPTIONS: --max-old-space-size=5120
           ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: 'true'
 
 
