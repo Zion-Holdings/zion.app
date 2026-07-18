@@ -1,0 +1,6 @@
+1:"$Sreact.fragment"
+2:I[9568,["99568","static/chunks/99568-f99892e569f53287.js","8732","static/chunks/app/services/ai-meeting-intelligence-minutes-and-actions/page-ff4fcc002da5ef6e.js"],""]
+3:I[1872,[],"OutletBoundary"]
+4:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","section",null,{"className":"section","children":["$","div",null,{"className":"container","children":[["$","h1",null,{"children":"AI Meeting Intelligence: Minutes and Actions"}],["$","p",null,{"children":"Automatically capture meeting outcomes, assign owners, and drive follow-through with AI-generated minutes and action tracking."}],["$","ul",null,{"children":[["$","li",null,{"children":"Live transcription and summary"}],["$","li",null,{"children":"Action items with owners and due dates"}],["$","li",null,{"children":"Follow-up workflow automation"}]]}],["$","p",null,{"children":[["$","$L2",null,{"className":"btn btn-primary","href":"/contact/","children":"Request a demo"}],["$","$L2",null,{"className":"btn btn-secondary","href":"/services/","children":"All services"}]]}]]}]}],null,["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"zion-tech-group-v1"}
+5:null
