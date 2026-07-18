@@ -1,7 +1,12 @@
 {
+  "scan_date": "2026-07-18",
   "threads_scanned": 1,
   "duplicates_skipped": 1,
+  "newsletters_skipped": 0,
+  "internal_skipped": 0,
   "drafts_created": 0,
+  "sends": 0,
   "errors": [],
-  "llm_provider": "rule_based"
+  "llm_provider": "rule_based",
+  "send_gate": "ZTG_SEND_ALLOWED_unset"
 }
