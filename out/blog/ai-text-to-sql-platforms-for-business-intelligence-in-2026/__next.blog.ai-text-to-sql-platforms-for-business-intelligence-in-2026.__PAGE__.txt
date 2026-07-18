@@ -1,5 +1,5 @@
 1:"$Sreact.fragment"
-3:I[484,[],"OutletBoundary"]
+3:I[90484,[],"OutletBoundary"]
 4:"$Sreact.suspense"
 2:T4f8,<p>How AI text-to-SQL platforms are changing business intelligence, analytics workflows, and data-team productivity for LATAM companies.</p><p>AI text-to-SQL is becoming a standard BI workflow: faster exploration, fewer handoffs, and broader self-service access without compromising governance.</p>
           <h2>What changed in 2026</h2>

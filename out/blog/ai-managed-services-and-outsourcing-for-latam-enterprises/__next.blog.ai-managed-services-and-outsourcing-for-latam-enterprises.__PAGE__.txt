@@ -1,5 +1,5 @@
 1:"$Sreact.fragment"
-3:I[484,[],"OutletBoundary"]
+3:I[90484,[],"OutletBoundary"]
 4:"$Sreact.suspense"
 2:T600,<p>Practical AI managed services and outsourcing models for LATAM enterprises, including support coverage, SLAs, and go-to-market tips.</p><p>Large enterprises in LATAM are moving from experimental AI pilots to managed services: monitored models, automated incident response, and dedicated support coverage.</p>
           <h2>Why managed AI services are maturing in LATAM</h2>

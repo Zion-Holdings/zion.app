@@ -1,5 +1,5 @@
 1:"$Sreact.fragment"
-3:I[484,[],"OutletBoundary"]
+3:I[90484,[],"OutletBoundary"]
 4:"$Sreact.suspense"
 2:T51e,<p>Practical AI voice assistant integration patterns for business communications, including support, field service, and internal operations in LATAM.</p><p>AI voice assistants now handle scheduling, incident triage, customer support, and hands-free operational queries with lower latency and better intent recognition.</p>
           <h2>Where voice assistants add business value</h2>
