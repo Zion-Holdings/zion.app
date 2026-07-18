@@ -8,5 +8,5 @@ export const metadata: Metadata = {
 };
 
 export default function CloudCostRedirect() {
-  redirect('/services/cloud-cost-optimization-platform');
+  redirect('/services/cloud-cost-optimization-platform/');
 }

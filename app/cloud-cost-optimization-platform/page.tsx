@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
 
 export default function Page() {
-  redirect('/services/cloud-cost-optimization-service');
+  redirect('/services/cloud-cost-optimization-platform/');
 }
