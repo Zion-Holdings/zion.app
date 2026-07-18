@@ -128,3 +128,4 @@
 {"ts": "2026-07-18T00:52:04.623628+00:00", "email": "marketing@rtrvr.ai", "msg_id": "19f72b354d59728d", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
 {"ts": "2026-07-18T01:52:45.864037+00:00", "email": "contact@email.paramountplus.com", "msg_id": "19f72e8922af9433", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
 {"ts": "2026-07-18T05:24:56.160865+00:00", "email": "vivo@vivo.com.br", "msg_id": "19f73abb474fbe04", "query": "\"ziontechgroup.com\"", "confidence": 0, "high_signal": false}
+{"ts": "2026-07-18T10:23:20.703154+00:00", "email": "sac.consorcio@bradesco.com.br", "msg_id": "19f74ba155564bb5", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
