@@ -1,60 +1,60 @@
 {
-  "generated_at": "2026-07-16T14:43:05.557885",
+  "generated_at": "2026-07-18T03:22:54.356676",
   "paths": [
     {
       "path": "/",
       "url": "https://ziontechgroup.com/",
       "status": 200,
-      "size": 0,
+      "size": 455608,
       "error": ""
     },
     {
       "path": "/services/",
       "url": "https://ziontechgroup.com/services/",
       "status": 200,
-      "size": 0,
+      "size": 44117,
       "error": ""
     },
     {
       "path": "/tools/",
       "url": "https://ziontechgroup.com/tools/",
       "status": 200,
-      "size": 0,
+      "size": 83083,
       "error": ""
     },
     {
       "path": "/contact/",
       "url": "https://ziontechgroup.com/contact/",
       "status": 200,
-      "size": 0,
+      "size": 3505,
       "error": ""
     },
     {
       "path": "/pricing/",
       "url": "https://ziontechgroup.com/pricing/",
       "status": 200,
-      "size": 0,
+      "size": 32942,
       "error": ""
     },
     {
       "path": "/solutions/",
       "url": "https://ziontechgroup.com/solutions/",
       "status": 200,
-      "size": 0,
+      "size": 41122,
       "error": ""
     },
     {
       "path": "/blog/",
       "url": "https://ziontechgroup.com/blog/",
       "status": 200,
-      "size": 0,
+      "size": 127481,
       "error": ""
     },
     {
       "path": "/about/",
       "url": "https://ziontechgroup.com/about/",
       "status": 200,
-      "size": 0,
+      "size": 35216,
       "error": ""
     }
   ]

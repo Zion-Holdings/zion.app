@@ -10,9 +10,14 @@ os.makedirs(OUT_DIR, exist_ok=True)
 today = datetime.now().strftime("%Y-%m-%d")
 OUT_PATH = os.path.join(OUT_DIR, f"crawl-{today}.json")
 
+def curl_null_path():
+    if sys.platform == "win32":
+        return "NUL"
+    return "/dev/null"
+
 def curl_probe(path):
     url = BASE + path
-    cmd = ["curl", "-s", "-o", "/dev/null", "-w", "%{http_code} %{size_download}", "--max-time", "15", "--location", url]
+    cmd = ["curl", "-s", "-o", curl_null_path(), "-w", "%{http_code} %{size_download}", "--max-time", "15", "--location", url]
     try:
         p = subprocess.run(cmd, capture_output=True, text=True, timeout=20)
         out = p.stdout.strip().split()
