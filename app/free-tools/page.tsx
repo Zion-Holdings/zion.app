@@ -145,7 +145,7 @@ export default function FreeToolsHubPage() {
 
       <section className="border-t border-slate-800 bg-slate-900/50 py-16">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
-          <h2 className="mb-4 text-2xl font-bold text-white">Want the Source Code?</h3>
+          <h2 className="mb-4 text-2xl font-bold text-white">Want the Source Code?</h2>
           <p className="mb-8 text-slate-300">
             Every tool is open-source under MIT. Fork, customize, self-host, or contribute improvements.
           </p>

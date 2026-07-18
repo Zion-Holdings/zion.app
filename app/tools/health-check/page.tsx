@@ -1,156 +1,77 @@
-// Health Check Tool — Free autonomous platform status
 'use client';
-import { useState, useEffect, useCallback } from 'react';
 
-import Link from 'next/link';
+import { useState, useEffect } from 'react';
 
-type Status = 'ok' | 'warn' | 'fail';
-interface Check { name: string; status: Status; detail: string; ms: number; }
-
-const STATUS_ICON: Record<Status, string> = { ok: '✅', warn: '⚠️', fail: '❌' };
-const STATUS_COLOR: Record<Status, string> = {
-  ok: 'border-emerald-500/40 bg-emerald-500/10',
-  warn: 'border-yellow-500/40 bg-yellow-500/10',
-  fail: 'border-red-500/40 bg-red-500/10',
-};
-
-// ─── StatusCard: reusable card for health-check results ───────────────────────────
-interface StatusCardProps {
-  name: string;
-  icon: string;
-  className: string;
-  children?: React.ReactNode;
+interface Result {
+  url: string;
+  status?: number;
+  statusText?: string;
+  finalUrl?: string;
+  redirected?: boolean;
+  contentType?: string;
+  server?: string;
+  xCache?: string;
+  ttlMs?: number;
+  error?: string;
 }
 
-function StatusCard({ name, icon, className, children }: StatusCardProps) {
-  return (
-    <div className={`border rounded-xl p-5 transition ${className}`}>
-      <div className="flex items-center gap-3">
-        <span className="text-xl">{icon}</span>
-        <div>
-          <h3 className="font-semibold">{name}</h3>
-          {children}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// ─── SummaryCard: reusable stat pill for summary grids ───────────────────────────
-interface SummaryCardProps {
-  label: string;
-  value: number;
-  colorStyle: string;
-}
-
-function SummaryCard({ label, value, colorStyle }: SummaryCardProps) {
-  return (
-    <div className="bg-slate-900/80 border border-slate-700 rounded-xl p-4 text-center">
-      <div className={`text-3xl font-bold ${colorStyle}`}>{value}</div>
-      <div className="text-slate-400 text-sm">{label}</div>
-    </div>
-  );
-}
-
-export default function HealthCheckToolPage() {
+export default function HealthCheckTool() {
+  const [url, setUrl] = useState('https://ziontechgroup.com');
+  const [results, setResults] = useState<Result[]>([]);
   const [running, setRunning] = useState(false);
-  const [results, setResults] = useState<Check[]>([]);
-  const [lastRan, setLastRan] = useState<string | null>(null);
 
-  const runChecks = useCallback(async () => {
+  const check = async () => {
     setRunning(true);
-    const out: Check[] = [];
-    const stamp = new Date().toISOString();
-
-    async function chk(name: string, fn: () => Promise<{ok:boolean; detail:string}>): Promise<void> {
-      const t0 = performance.now();
-      const { ok, detail } = await fn();
-      out.push({ name, status: ok ? 'ok' : 'fail', detail, ms: Math.round(performance.now()-t0) });
-    }
-
-    await chk('Page Render', async () => ({ ok: true, detail: 'page.tsx hydrated' }));
-    await chk('Memory', async () => ({ ok: (performance as any).memory ? true : true, detail: 'heap available' }));
-    await chk('Next.js Runtime', async () => {
+    const res: Result[] = [];
+    const targets = [url];
+    if (url && !targets.includes(url + '/')) targets.push(url + '/');
+    for (const target of targets) {
+      const started = Date.now();
       try {
-        const endpoints = ["/api/health", "/health"];
-        for (const ep of endpoints) {
-          const r = await fetch(ep, { signal: AbortSignal.timeout(2000) });
-          if (r.ok) return { ok: true, detail: `${ep} responded ${r.status}` };
-        }
-        return { ok: false, detail: 'server unreachable' };
+        const r = await fetch(target, { method: 'GET', mode: 'no-cors', cache: 'no-store' });
+        const ttl = Date.now() - started;
+        res.push({ url: target, status: r.status, finalUrl: target, redirected: false, ttlMs: ttl });
+      } catch (e: any) {
+        res.push({ url: target, error: e.message || 'Network error' });
       }
-      catch { return { ok: false, detail: 'server unreachable' }; }
-    });
-    await chk('Network (Cloudflare DNS)', async () => {
-      try { await fetch('https://1.1.1.1/cdn-cgi/trace', { signal: AbortSignal.timeout(3000) }); return { ok: true, detail: '1.1.1.1 reachable' }; }
-      catch { return { ok: false, detail: 'cloudflare DNS unreachable' }; }
-    });
-    await chk('SSL Test', async () => {
-      try { const r = await fetch('https://ziontechgroup.com', { signal: AbortSignal.timeout(3000) }); return { ok: r.ok, detail: `HTTPS ${r.status}` }; }
-      catch { return { ok: false, detail: 'TLS handshake failed' }; }
-    });
-
-    setResults(out);
-    setLastRan(stamp);
+    }
+    setResults(res);
     setRunning(false);
-  }, []);
-
-  useEffect(() => { runChecks(); }, [runChecks]);
-
-  const summary = results.length
-    ? { ok: results.filter(r=>r.status==='ok').length, fail: results.filter(r=>r.status==='fail').length, total: results.length }
-    : null;
+  };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white py-12 px-4">
-      <div className="max-w-3xl mx-auto">
-        <Link href="/status/" className="text-purple-400 hover:text-purple-300 text-sm mb-6 inline-block">← Status Home</Link>
-        <h1 className="text-4xl font-bold mb-2">Platform Health Check 🩺</h1>
-        <p className="text-slate-400 mb-8">Autonomous diagnostic — runs every check without any API key or external tool.</p>
+    <main className="min-h-screen bg-slate-950 text-white p-6">
+      <div className="mx-auto max-w-5xl">
+        <a href="/tools" className="mb-6 inline-flex items-center gap-2 text-slate-400 hover:text-white">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+          Back to Tools
+        </a>
+        <h1 className="text-3xl font-bold mb-2">Website Health Check</h1>
+        <p className="text-slate-400 mb-6">Probe any URL for reachability, redirect, and response timing.</p>
 
-        {summary && (
-          <div className="grid grid-cols-3 gap-4 mb-8">
-            {[
-              { label: 'Total',    val: summary.total,  color: 'text-white' },
-              { label: 'Passed',   val: summary.ok,     color: 'text-emerald-400' },
-              { label: 'Failed',   val: summary.fail,   color: summary.fail ? 'text-red-400' : 'text-emerald-400' },
-            ].map(s => (
-              <SummaryCard
-                key={s.label}
-                label={s.label}
-                value={s.val}
-                colorStyle={s.color}
-              />
-            ))}
-          </div>
-        )}
-
-        <button
-          onClick={runChecks}
-          disabled={running}
-          className="btn-primary mb-8 disabled:opacity-50"
-        >
-          {running ? '⏳ Running…' : '▶ Re-run Checks'}
+        <label className="block text-sm font-medium text-slate-300 mb-2">URL</label>
+        <input
+          value={url}
+          onChange={(e) => setUrl(e.target.value)}
+          placeholder="https://example.com"
+          className="w-full rounded-xl border border-slate-700 bg-slate-900 p-3 font-mono text-sm text-slate-100 focus:border-purple-500 focus:outline-none"
+        />
+        <button onClick={check} disabled={running} className="mt-3 rounded-xl bg-purple-600 px-4 py-2 text-sm font-semibold hover:bg-purple-500 disabled:opacity-50">
+          {running ? 'Checking...' : 'Run Check'}
         </button>
 
-        <div className="space-y-3">
-          {results.map((r, i) => (
-            <StatusCard key={i} name={r.name} icon={STATUS_ICON[r.status]} className={STATUS_COLOR[r.status]}>
-              <div className="flex justify-between items-start">
-                <div>
-                  <h3 className="font-semibold">{r.name}</h3>
-                  <p className="text-slate-400 text-sm">{r.detail}</p>
-                </div>
-                <span className="text-xs text-slate-500 font-mono">{r.ms}ms</span>
+        <div className="mt-6 space-y-3">
+          {results.map((r, idx) => (
+            <div key={idx} className="rounded-xl border border-slate-800 bg-slate-900/50 p-4 text-sm">
+              <div className="font-mono text-slate-200">{r.url}</div>
+              <div className="text-slate-400 mt-1">
+                {r.error ? `Error: ${r.error}` : `status=${r.status ?? 'unknown'} time=${r.ttlMs ?? '-'}ms`}
               </div>
-            </StatusCard>
+            </div>
           ))}
+          {results.length === 0 && <div className="text-slate-500">No results yet.</div>}
         </div>
-
-        {lastRan && (
-          <p className="text-slate-500 text-xs mt-6">Last run: {new Date(lastRan).toLocaleString()}</p>
-        )}
       </div>
-    </div>
+    </main>
   );
 }
