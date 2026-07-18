@@ -127,13 +127,19 @@ def gmail_sent(to_addr: str, subject: str, within_seconds: int = 24*3600, limit:
             ts = 0
             if ts_str:
                 try:
-                    ts = int(datetime.datetime.strptime(ts_str.split(' -')[0].split(' +')[0], '%a, %d %b %Y %H:%M:%S').replace(tzinfo=datetime.timezone.utc).timestamp())
+                    # Handle both "Wed, 15 Jul 2026 19:39:54 -0700" and "Wed, 15 Jul 2026 19:39:54 -0700"
+                    from email.utils import parsedate_to_datetime
+                    dt = parsedate_to_datetime(ts_str)
+                    if dt.tzinfo is not None:
+                        ts = int(dt.timestamp())
+                    else:
+                        ts = int(dt.replace(tzinfo=datetime.timezone.utc).timestamp())
                 except Exception:
                     pass
             if now - ts > within_seconds:
                 continue
             actual_to = headers.get('To', '')
-            if actual_to and actual_to.lower() == to_addr.lower():
+            if actual_to and to_addr.lower() in actual_to.lower():
                 return True
     except Exception:
         pass
