@@ -1,52 +1,32 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Subnet Calculator | Zion Tech Group</title>
-  <meta name="robots" content="index,follow" />
-  <link rel="canonical" href="https://ziontechgroup.com/tools/subnet-calculator" />
-  <style>
-    :root { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
-    * { box-sizing: border-box; }
-    body { margin: 0; padding: 0; color: #0f172a; background: #ffffff; }
-    header { border-bottom: 1px solid #e5e7eb; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
-    nav { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; justify-content: space-between; }
-    .brand { font-weight: 700; letter-spacing: -0.02em; font-size: 18px; }
-    .links a { margin-left: 14px; color: #2563eb; text-decoration: none; font-weight: 500; }
-    .links a:hover { text-decoration: underline; }
-    .hero { padding: 64px 24px; }
-    h1 { font-size: clamp(28px, 4vw, 48px); line-height: 1.1; margin: 0 0 14px; letter-spacing: -0.03em; }
-    p.lead { font-size: 18px; color: #334155; max-width: 760px; }
-    footer { border-top: 1px solid #e5e7eb; padding: 24px; color: #475569; font-size: 13px; }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subnet Calculator | Zion Tech Group Free Tools</title>
+  <meta name="description" content="Calculate IP subnets and CIDR ranges. Free online tool by Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/subnet-calculator/" />
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav>
-        <div class="brand">Zion Tech Group</div>
-        <div class="links">
-          <a href="/tools/">Tools</a>
-          <a href="/services/">Services</a>
-          <a href="/contact/">Contact</a>
-        </div>
-      </nav>
-    </div>
-  </header>
-  <main class="container">
-    <section class="hero">
-      <h1>Subnet Calculator</h1>
-      <p class="lead">This free developer tool is part of the Zion Tech Group free AI/IT tools collection.</p>
-      <div class="cta-row" style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap;">
-        <a class="btn" href="/contact/">Get automation support</a>
-        <a class="btn secondary" href="/tools/">Back to tools</a>
-      </div>
-    </section>
+  <main>
+    <h1>Subnet Calculator</h1>
+    <label>IP: <input id="ip" type="text" value="192.168.1.0" /></label><br />
+    <label>CIDR: <input id="cidr" type="number" min="1" max="32" value="24" /></label><br />
+    <button onclick="calc()">Calculate</button>
+    <pre id="out"></pre>
+    <p><a href="/tools/">Back to tools</a></p>
+    <script>
+      function calc(){
+        const ip = document.getElementById('ip').value.split('.').map(Number);
+        const cidr = parseInt(document.getElementById('cidr').value || '24', 10);
+        const mask = -1 << (32 - cidr);
+        const maskIP = [(mask >>> 24) & 255, (mask >>> 16) & 255, (mask >>> 8) & 255, mask & 255];
+        const network = ip.map((o, i) => (o & maskIP[i])).join('.');
+        const broadcast = ip.map((o, i) => (o | (~maskIP[i] & 255))).join('.');
+        const hosts = Math.pow(2, 32 - cidr) - 2;
+        document.getElementById('out').textContent = `Network: ${network}\nBroadcast: ${broadcast}\nUsable hosts: ${hosts}`;
+      }
+    </script>
   </main>
-  <footer>
-    <div class="container">© 2026 Zion Tech Group · ziontechgroup.com</div>
-  </footer>
 </body>
 </html>
