@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Readiness Assessment | Zion Tech Group Free Tools</title>
+  <meta name="description" content="Assess your organization's AI readiness. Free online tool by Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/ai-readiness-assessment/" />
+</head>
+<body>
+  <main>
+    <h1>AI Readiness Assessment</h1>
+    <p>Answer the following to get a quick readiness score.</p>
+    <ol id="questions">
+      <li>Do you have structured data suitable for AI training?
+        <select data-score="data">
+          <option value="1">No</option>
+          <option value="2">Some</option>
+          <option value="3">Yes</option>
+        </select>
+      </li>
+      <li>Do you have an AI strategy or roadmap?
+        <select data-score="strategy">
+          <option value="1">No</option>
+          <option value="2">In progress</option>
+          <option value="3">Yes</option>
+        </select>
+      </li>
+      <li>Are your teams trained on AI tools and ethics?
+        <select data-score="training">
+          <option value="1">No</option>
+          <option value="2">Some</option>
+          <option value="3">Yes</option>
+        </select>
+      </li>
+    </ol>
+    <button onclick="score()">Calculate Score</button>
+    <pre id="out"></pre>
+    <p><a href="/tools/">Back to tools</a></p>
+    <script>
+      function score(){
+        const selects = document.querySelectorAll('#questions select');
+        let total = 0;
+        selects.forEach(s => total += parseInt(s.value || '1', 10));
+        const max = selects.length * 3;
+        const pct = Math.round((total / max) * 100);
+        document.getElementById('out').textContent = `Readiness score: ${pct}%`;
+      }
+    </script>
+  </main>
+</body>
+</html>
