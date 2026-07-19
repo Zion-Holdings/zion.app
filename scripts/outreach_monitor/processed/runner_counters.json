@@ -1,7 +1,7 @@
 {
-  "total_runs": 1389,
-  "successful_runs": 1241,
-  "auth_error_runs": 1233,
+  "total_runs": 2014,
+  "successful_runs": 1866,
+  "auth_error_runs": 1379,
   "contacts_found": 8,
   "live_sent": 0,
   "dead_thread_contacts": 0,
