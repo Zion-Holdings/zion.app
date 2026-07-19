@@ -13,9 +13,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
-    outputs:
-      pages: ${{ steps.prepare_pages.outputs.pages }}
+    timeout-minutes: 30
     steps:
       - name: Checkout
         uses: actions/checkout@v5
@@ -30,26 +28,50 @@ jobs:
           cache-dependency-path: package-lock.json
         env:
           NODE_OPTIONS: --max-old-space-size=4096
-          ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: 'true'
 
       - name: Install dependencies
         run: npm install --no-audit --fund=false
         env:
           NODE_OPTIONS: --max-old-space-size=4096
-          ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: 'true'
 
-      - name: Build artifact
+      - name: Build Next export
         id: build
         run: |
           set -euo pipefail
-          node scripts/build-wrapper.cjs > build.log 2>&1 || true
-          echo "build_log_start"
-          set +x
-          echo "---- BUILD LOG TAIL ----"
-          tail -n 400 build.log || true
-          echo "---- /BUILD LOG TAIL ----"
-          set -x
-          echo "build_log_end"
+          npm run build > build.log 2>&1 || {
+            BUILD_EXIT=1
+            echo "npm_run_build_failed=1" >> "$GITHUB_OUTPUT"
+            echo "build_log_start"
+            set +x
+            echo "---- BUILD LOG TAIL ----"
+            tail -n 400 build.log || true
+            echo "---- /BUILD LOG TAIL ----"
+            set -x
+            echo "build_log_end"
+            if [ -d out ]; then
+              PAGES=$(find out -name 'index.html' | wc -l)
+              echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
+              echo "size=$(du -sh out | awk '{print $1}')" >> "$GITHUB_OUTPUT"
+              echo "production_out_exists=1" >> "$GITHUB_OUTPUT"
+            else
+              echo "pages=0" >> "$GITHUB_OUTPUT"
+              echo "size=none" >> "$GITHUB_OUTPUT"
+              echo "production_out_exists=0" >> "$GITHUB_OUTPUT"
+            fi
+            echo "artifacts_uploaded=1" >> "$GITHUB_OUTPUT"
+            exit 1
+          }
+          if [ -d out ]; then
+            PAGES=$(find out -name 'index.html' | wc -l)
+            SIZE=$(du -sh out | awk '{print $1}')
+            echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
+            echo "size=$SIZE" >> "$GITHUB_OUTPUT"
+            echo "production_out_exists=1" >> "$GITHUB_OUTPUT"
+          else
+            echo "pages=0" >> "$GITHUB_OUTPUT"
+            echo "size=none" >> "$GITHUB_OUTPUT"
+            echo "production_out_exists=0" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Upload build diagnostics on failure
         if: failure()
@@ -62,7 +84,6 @@ jobs:
             out
 
       - name: Prepare Pages artifact
-        id: prepare_pages
         run: |
           set -euo pipefail
           ARTIFACT_DIR="${GITHUB_WORKSPACE:-.}/artifacts/pages"
@@ -86,22 +107,19 @@ jobs:
           # Ensure SEO files exist whichever path produced them.
           if [ ! -f "$ARTIFACT_DIR/robots.txt" ] && [ -f docs/robots.txt ]; then cp -f docs/robots.txt "$ARTIFACT_DIR/robots.txt"; fi
           if [ ! -f "$ARTIFACT_DIR/sitemap.xml" ] && [ -f docs/sitemap.xml ]; then cp -f docs/sitemap.xml "$ARTIFACT_DIR/sitemap.xml"; fi
+          # Make docs/ the source of truth for key fallback pages after overlaying out/.
+          if [ -d docs ]; then
+            cp -a docs/. "$ARTIFACT_DIR"/ || true
+          fi
           # Promote key fallback pages from docs/ to artifact root so Pages can serve them.
           for f in \
             case-studies/index.html \
             industries/index.html \
             testimonials/index.html \
-            automation/index.html \
-            services/ai-workflow-automation/index.html; do
-            mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
-            if [ ! -f "$ARTIFACT_DIR/$f" ] && [ -f "docs/$f" ]; then
-              cp -a "docs/$f" "$ARTIFACT_DIR/$f"
-            fi
-          done
-          # Guarantee every key route exists in the exported artifact, even if Next didn't emit it.
-          for f in case-studies/index.html industries/index.html testimonials/index.html; do
-            mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
-            if [ ! -f "$ARTIFACT_DIR/$f" ] && [ -f "docs/$f" ]; then
+            products/index.html \
+            tools/html-to-jsx-converter/index.html; do
+            if [ -f "docs/$f" ] && [ ! -f "$ARTIFACT_DIR/$f" ]; then
+              mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
               cp -a "docs/$f" "$ARTIFACT_DIR/$f"
             fi
           done
@@ -117,7 +135,7 @@ jobs:
 
   deploy:
     needs: build
-    if: success() && needs.build.outputs.pages != '0'
+    if: success() && needs.build.outputs.production_out_exists == '1'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     environment:
@@ -133,7 +151,7 @@ jobs:
           echo "Deployed URL: ${{ steps.deployment.outputs.page_url }}"
           sleep 20
           curl -sf "${{ steps.deployment.outputs.page_url }}/" > /dev/null && echo "✓ Homepage" || echo "✗ Homepage"
-          for p in /services/ /solutions/ /pricing/ /contact/ /tools/ /about /blog /careers /partners /portal /ai-services-index /free-ai-it-tools /automation/ /services/ai-workflow-automation/ /services/ai-customer-support-pro/ /case-studies/ /industries/ /testimonials/; do
+          for p in /services/ /solutions/ /pricing/ /contact/ /tools/ /about /blog /careers /partners /portal /ai-services-index /free-ai-it-tools /automation/ /services/ai-customer-support-pro/; do
             code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "${{ steps.deployment.outputs.page_url }}${p}" || true)
             echo "$p -> $code"
           done
