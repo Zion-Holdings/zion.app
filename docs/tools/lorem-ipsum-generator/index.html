@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lorem Ipsum Generator | Zion Tech Group Free Tools</title>
+  <meta name="description" content="Generate Lorem Ipsum placeholder text. Free online tool by Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/lorem-ipsum-generator/" />
+</head>
+<body>
+  <main>
+    <h1>Lorem Ipsum Generator</h1>
+    <label>Paragraphs: <input id="n" type="number" min="1" max="20" value="3" /></label>
+    <button onclick="generate()">Generate</button>
+    <pre id="out"></pre>
+    <p><a href="/tools/">Back to tools</a></p>
+    <script>
+      const words = ["lorem","ipsum","dolor","sit","amet","consectetur","adipiscing","elit","sed","do","eiusmod","tempor","incididunt","ut","labore","et","dolore","magna","aliqua"];
+      function generate(){
+        const n = parseInt(document.getElementById('n').value || '3', 10);
+        const paras = [];
+        for (let p=0; p<n; p++) {
+          const len = 20 + Math.floor(Math.random()*30);
+          const sentence = Array.from({length: len}, () => words[Math.floor(Math.random()*words.length)]).join(' ');
+          paras.push(sentence.charAt(0).toUpperCase() + sentence.slice(1) + '.');
+        }
+        document.getElementById('out').textContent = paras.join('\n\n');
+      }
+    </script>
+  </main>
+</body>
+</html>
