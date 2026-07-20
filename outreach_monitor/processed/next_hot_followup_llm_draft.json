@@ -1,1 +1,11 @@
-{"leads": []}
+{
+  "drafted_at": "2026-07-20T00:27:35.052618+00:00",
+  "llm_provider": "heuristic-rule-based",
+  "threads_scanned": 0,
+  "duplicates_skipped": 0,
+  "drafts_created": 0,
+  "errors": [],
+  "drafts_details": [],
+  "duplicates_details": [],
+  "note": "No !!!hot-follow-up threads found across all folders."
+}

@@ -2,7 +2,7 @@ import os, re, json
 from pathlib import Path
 from datetime import datetime, timezone
 
-REPO = Path('/data/data/com.termux/files/home/zion-support.github.io')
+REPO = Path('/Users/klebergarciaalcatrao/zion-techgroup')
 BASE = REPO / 'app' / 'ai-services'
 SEO_BASE = REPO / 'app' / 'seo'
 LEAD_DIR = REPO / 'lead-crm'

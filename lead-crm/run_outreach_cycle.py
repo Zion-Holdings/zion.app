@@ -7,7 +7,7 @@ import json, os, subprocess
 from pathlib import Path
 from datetime import datetime, timezone
 
-REPO = Path('/data/data/com.termux/files/home/zion-support.github.io')
+REPO = Path('/Users/klebergarciaalcatrao/zion-techgroup')
 
 
 def run(cmd, timeout=200):

@@ -8,11 +8,9 @@ No paid APIs required.
 import sys, json, time, re, urllib.parse, urllib.request, datetime
 from pathlib import Path
 
-REPO = Path('/Users/miami2/zion.app')
+REPO = Path('/Users/klebergarciaalcatrao/zion-techgroup')
 LEAD_DIR = REPO / 'lead-crm'
 CANONICAL_READY = LEAD_DIR / 'outreach_ready_canonical.json'
-if not CANONICAL_READY.parent.exists():
-    CANONICAL_READY = Path('/data/data/com.termux/files/home/zion-support.github.io/lead-crm/outreach_ready_canonical.json')
 
 KEYWORDS = [
     'AI automation for support',
@@ -50,7 +48,7 @@ def fetch_html(url: str) -> str:
         return ''
 
 
-def _clean_ddg_href(href: str, url: str) -> str | None:
+def _clean_ddg_href(href: str, url: str) -> str:
     if href.startswith('//duckduckgo.com/l/?uddg='):
         try:
             parsed = urllib.parse.parse_qs(urllib.parse.urlparse(href).query)
@@ -59,10 +57,10 @@ def _clean_ddg_href(href: str, url: str) -> str | None:
                 return urllib.parse.unquote(target)
         except Exception:
             pass
-        return None
+        return ''
     if href.startswith('http') and 'duckduckgo.com' not in href:
         return href
-    return None
+    return ''
 
 
 def duckduckgo_search(query: str, max_results: int = 10) -> list[str]:
@@ -84,7 +82,7 @@ def duckduckgo_search(query: str, max_results: int = 10) -> list[str]:
     return links
 
 
-def extract_emails(text: str) -> list[str]:
+def extract_emails(text: str):
     return list(dict.fromkeys(re.findall(r'[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}', text)))
 
 
@@ -105,7 +103,7 @@ def bing_html_search(query: str, max_results: int = 10) -> list[str]:
     return links
 
 
-def discover_leads(keyword: str, limit: int = 8) -> list[dict]:
+def discover_leads(keyword: str, limit: int = 10):
     leads = []
     seen = set()
     urls = []
@@ -157,12 +155,12 @@ def load_canonical():
         return {'ready': []}
 
 
-def append_ready(rows: list[dict]):
+def append_ready(leads):
     data = load_canonical()
     ready = data.get('ready') or []
     seen_to = {str(r.get('to')).strip().lower() for r in ready if r.get('to')}
     added = 0
-    for r in rows:
+    for r in leads:
         to = str(r.get('to') or '').strip().lower()
         if not to or to in seen_to:
             continue

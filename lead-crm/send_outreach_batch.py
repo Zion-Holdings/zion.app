@@ -2,14 +2,12 @@
 import sys, json, base64, urllib.request, urllib.parse, urllib.error, datetime, time, os
 from pathlib import Path
 
-REPO = Path('/data/data/com.termux/files/home/zion-support.github.io')
+REPO = Path('/Users/klebergarciaalcatrao/zion-techgroup')
 if not REPO.exists():
     try:
         REPO = Path(__file__).resolve().parent.parent
     except Exception:
-        REPO = Path('/Users/miami2/zion.app')
-if not REPO.exists():
-    REPO = Path('C:/Users/Zion/tmp/zion-clone-test2')
+        REPO = Path('/Users/klebergarciaalcatrao/zion-techgroup')
 sys.path.insert(0, str(REPO))
 sys.path.insert(0, str(REPO / 'commands'))
 try:

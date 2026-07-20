@@ -93,3 +93,21 @@
 {"ts": "2026-07-15T21:37:53.198873+00:00", "email": "groups-noreply@linkedin.com", "msg_id": "19f67abe1e81f4c5", "query": "\"ziontechgroup.com\"", "confidence": 0, "high_signal": false}
 {"ts": "2026-07-15T22:09:11.977241+00:00", "email": "atendimento@cx.mercadobitcoin.com.br", "msg_id": "19f67cedf6f38723", "query": "\"Zion Tech Group\"", "confidence": 1, "high_signal": false}
 {"ts": "2026-07-16T01:01:35.209786+00:00", "email": "googlebase-noreply@google.com", "msg_id": "19f68361e2aff056", "query": "\"ziontechgroup.com\"", "confidence": 1, "high_signal": false}
+{"ts": "2026-07-20T00:50:17.045178+00:00", "email": "naoresponda@rdstation.com", "msg_id": "19f7cfdf184411b6", "query": "subject:parceria", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-20T00:50:18.503759+00:00", "email": "santosdenovais@xwf.google.com", "msg_id": "19f7cfdecfc7d722", "query": "subject:parceria", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-20T00:51:05.030708+00:00", "email": "contact@mavimovoa.ai", "msg_id": "19f7cfe8cb82e049", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-20T00:51:06.243333+00:00", "email": "hello@kaivoice.com", "msg_id": "19f7cfe85e0b7e83", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-20T00:51:07.391049+00:00", "email": "contact@delight.ai", "msg_id": "19f7cfe7e86009ac", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-20T00:51:08.523103+00:00", "email": "contact@tatacommunications.com", "msg_id": "19f7cfe746bc6cd9", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-20T00:51:11.584415+00:00", "email": "hello@fin.ai", "msg_id": "19f7cfe6c9ec5192", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-20T00:51:12.751292+00:00", "email": "partners@elevenlabs.io", "msg_id": "19f7cfe5bff9b976", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-20T00:51:15.859525+00:00", "email": "partners@inworld.ai", "msg_id": "19f7cfe4fde44793", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-20T00:51:18.327080+00:00", "email": "partners@bland.ai", "msg_id": "19f7cfe46ac7e09f", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-20T00:51:21.361376+00:00", "email": "support@immers.cloud", "msg_id": "19f7cfe3dda93fa4", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-20T00:51:22.493246+00:00", "email": "sales@logicoverdrive.com", "msg_id": "19f7cfe321b7999d", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-20T00:51:23.612486+00:00", "email": "sales@genesiscloud.com", "msg_id": "19f7cfe2633798a8", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-20T00:51:26.627531+00:00", "email": "partners@cudocompute.com", "msg_id": "19f7cfe1f91e8ffc", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-20T00:51:29.918369+00:00", "email": "contact@geodd.io", "msg_id": "19f7cfe13814f3e2", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-20T00:51:31.247394+00:00", "email": "support@zenocloud.io", "msg_id": "19f7cfe0d20e696d", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-20T00:51:34.228899+00:00", "email": "info@yorizon.com", "msg_id": "19f7cfe05475b568", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-20T00:51:37.245870+00:00", "email": "partners@cerebras.ai", "msg_id": "19f7cfdfb6d45e3e", "query": "\"Zion Tech Group\"", "confidence": 2, "high_signal": true}

@@ -7,7 +7,7 @@ import json, os, sys, time
 from pathlib import Path
 from datetime import datetime, timezone
 
-REPO = Path('/data/data/com.termux/files/home/zion-support.github.io')
+REPO = Path('/Users/klebergarciaalcatrao/zion-techgroup')
 LEAD_DIR = REPO / 'lead-crm'
 CANONICAL = LEAD_DIR / 'outreach_ready_canonical.json'
 OUT = LEAD_DIR / 'outreach_tailored_canonical.json'
