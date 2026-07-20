@@ -173,7 +173,18 @@ jobs:
         run: |
           echo "Deployed URL: ${{ steps.deployment.outputs.page_url }}"
           sleep 20
-          curl -sf "${{ steps.deployment.outputs.page_url }}/" > /dev/null && echo "✓ Homepage" || echo "✗ Homepage"
+          curl -sf "${{ steps.deployment.outputs.page_url }}/" > /dev/null && echo "✓ Homepage" || { echo "✗ Homepage"; exit 1; }
+          failures=0
           for p in /services/ /solutions/ /pricing/ /contact/ /tools/ /about/ /blog/ /careers/ /partners/ /portal/ /case-studies/ /industries/ /testimonials/ /roi-calculator/ /client-portal/ /proposal-generator/ /academy/ /help/ /bundles/ /status/ /api/ /ai-services-index/ /free-ai-it-tools/ /automation/; do
             code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "${{ steps.deployment.outputs.page_url }}${p}" || true)
-            echo "$p -> $code"
+            if [ "$code" != "200" ]; then
+              echo "✗ $p -> $code"
+              failures=$((failures + 1))
+            else
+              echo "✓ $p -> $code"
+            fi
+          done
+          if [ "$failures" -gt 0 ]; then
+            echo "$failures key route(s) failed on deployed site"
+            exit 1
+          fi
