@@ -1,9 +1,1 @@
-<!DOCTYPE html><!-- ztg-cache-buster 20260710170712 --><html lang="en"><head><meta charset="utf-8"/><meta http-equiv="refresh" content="0;url=/services/"/><link rel="canonical" href="https://ziontechgroup.com/services/"/><script>location.replace('/services/');</script></head><body>Redirecting to <a href="/services/">/services/</a>...</body></html>
-EOF && echo '=== fix workflow npm ci -> npm install ===' && python3 - <<'PY'
-from pathlib import Path
-p=Path('.github/workflows/gh-pages.yml')
-s=p.read_text()
-s=s.replace('    - run: npm ci','    - run: npm install --no-audit --fund=false')
-p.write_text(s)
-PY
-echo '=== verify workflow change ===' && grep -n 'npm ' .github/workflows/gh-pages.yml && echo '=== commit ===' && git add -A docs/ .github/workflows/gh-pages.yml && git status --short | sed -n '1,20p' && git commit -m "fix(pages/ci): add remaining docs redirects and switch workflow to npm install" && git push origin main
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>AI Services Index</title><meta name="robots" content="noindex"><meta name="viewport" content="width=device-width,initial-scale=1"><style>body{background:#000;color:#fff;font-family:system-ui;max-width:800px;margin:24px auto;padding:0 16px}h1{font-size:28px;margin-bottom:12px}ul{line-height:1.8}</style></head><body><h1>AI Services Index</h1><ul><li><a href="/services/">All Services</a></li><li><a href="/ai-services-index">AI Services Index</a></li><li><a href="/">Home</a></li></ul></body></html>
