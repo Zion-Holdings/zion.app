@@ -572,7 +572,6 @@ export const aiServices: Service[] = [
     stage: 'published',
   },
 
-,
   {
     id: 'ai-prompt-optimization-engine',
     title: 'AI Prompt Optimization Engine',
@@ -818,7 +817,6 @@ export const itServices: Service[] = [
     stage: 'published',
   },
 
-,
   {
     id: 'it-asset-lifecycle-manager',
     title: 'IT Asset Lifecycle Manager',
@@ -954,7 +952,6 @@ export const cloudServices: Service[] = [
     stage: 'published',
   },
 
-,
   {
     id: 'cloud-cost-anomaly-detector',
     title: 'Cloud Cost Anomaly Detector',
@@ -1075,7 +1072,6 @@ export const securityServices: Service[] = [
     stage: 'published',
   },
 
-,
   {
     id: 'security-api-key-rotator',
     title: 'Security API Key Rotator',
@@ -1196,7 +1192,6 @@ export const dataServices: Service[] = [
     stage: 'published',
   },
 
-,
   {
     id: 'data-lineage-tracker',
     title: 'Data Lineage Tracker',
@@ -1553,9 +1548,7 @@ export const emailIntelligenceServices: Service[] = [
     popular: false,
     category: 'email-intelligence',
     industry: 'Sales AI',
-    stage: 'published',
   },
-,
   {
     id: 'automation-digital-twin-simulator',
     title: 'Automation Digital Twin Simulator',

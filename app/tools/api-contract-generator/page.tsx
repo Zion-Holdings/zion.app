@@ -2,7 +2,12 @@
 
 import { useState } from 'react';
 
-function parseYaml(yaml: string): any {
+export default function ApiContractGeneratorTool() {
+  const [spec, setSpec] = useState('');
+  const [format, setFormat] = useState('typescript');
+  const [result, setResult] = useState('');
+
+  const samples = [
   const lines = yaml.split('\n');
   const result: any = {};
   let currentPath: string[] = [];
@@ -516,5 +521,3 @@ export default function ApiContractGeneratorTool() {
     </div>
   );
 }
-
-import Link from 'next/link';

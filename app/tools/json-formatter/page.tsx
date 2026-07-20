@@ -1,10 +1,11 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 
 function syntaxHighlight(json: string) {
   return json
-    .replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, (match) => {
+    .replace(("(\\"(\\\\u[a-zA-Z0-9]{4}|\\\\[^u]|[^\\\\\\\"])*\\"(\\s*:)?|\\b(true|false|null)\\b|-?\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d+)?)"), (match) => {
       let cls = 'text-emerald-400';
       if (/^"/.test(match)) {
         if (/:$/.test(match)) cls = 'text-purple-400';
