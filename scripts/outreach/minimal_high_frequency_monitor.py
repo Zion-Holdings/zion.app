@@ -206,17 +206,13 @@ def mine_older_history(min_ts):
 def _llm_tailor_reply_auth(name, contact, lang, subject, snippet):
     try:
         import urllib.request
-        auth_path = Path.home()/'.hermes'/'auth.json'
-        cfg_path = Path.home()/'.hermes'/'config.yaml'
-        if not auth_path.exists():
+        import os
+        # Use OpenRouter with free model
+        endpoint = 'https://openrouter.ai/api/v1'
+        token = os.environ.get('OPENROUTER_API_KEY', '')
+        model = 'nvidia/nemotron-3-ultra-550b-a55b:free'
+        if not token:
             return None
-        cfg = json.loads(auth_path.read_text(encoding='utf-8')) or {}
-        provider = ((cfg.get('providers') or {}).get('nous') or {})
-        endpoint = (provider.get('inference_base_url') or 'https://inference-api.nousresearch.com/v1').rstrip('/')
-        token = provider.get('access_token') or ''
-        if not token or not endpoint:
-            return None
-        model = provider.get('model') or 'stepfun/step-3.7-flash:free'
         system = (
             "You are the CEO of Zion Tech Group. Output one complete email only. "
             f"Language: {lang if lang in {'en','pt','es'} else 'en'}. "
@@ -241,7 +237,7 @@ def _llm_tailor_reply_auth(name, contact, lang, subject, snippet):
             'max_tokens': 1024,
         }).encode('utf-8')
         req = urllib.request.Request(endpoint+'/chat/completions', data=payload, headers={'Authorization': f'Bearer {token}', 'Content-Type': 'application/json'})
-        with urllib.request.urlopen(req, timeout=25) as r:
+        with urllib.request.urlopen(req, timeout=30) as r:
             data = json.loads(r.read().decode('utf-8', errors='ignore'))
         msg = ((data.get('choices') or [{}])[0].get('message') or {})
         if not isinstance(msg, dict):
@@ -250,34 +246,6 @@ def _llm_tailor_reply_auth(name, contact, lang, subject, snippet):
             text = msg['content'].strip()
             if text and len(text.splitlines()) >= 2:
                 return text[:900]
-        if msg.get('reasoning'):
-            text = msg['reasoning'].strip()
-            for prefix in ('Got it,', 'Sure,', 'Okay,', 'Wait,', 'let\'s', 'First,', 'Now,', 'Here\'s'):
-                if text.startswith(prefix):
-                    text = text[len(prefix):].lstrip(' ,:-')
-            greeting_matches = list(re.finditer(
-                r'(?:\n|^)((?:Hi|Hello|Dear|Good\s+(?:morning|afternoon|evening)|Greetings|Ol[áa])[^\\n]{0,180}?,?)',
-                text, re.IGNORECASE | re.S,
-            ))
-            if greeting_matches:
-                text = text[greeting_matches[-1].start():].strip()
-            else:
-                candidates = [
-                    m.start() for m in re.finditer(r'(?:\n|^)(?:Hi|Hello|Dear|Ol[áa])', text, re.IGNORECASE | re.S)
-                ]
-                if candidates:
-                    text = text[candidates[-1]:].strip()
-                else:
-                    text = text[-1200:].strip()
-            text = ' '.join([ln.strip() for ln in text.splitlines() if ln.strip()])
-            text = text.replace('\\n', '\n').strip()
-            if len(text) > 900:
-                text = text[-900:].rstrip()
-            if any(text.lower().startswith(x) for x in ['got it', 'first,', 'okay,', 'let\'s', 'here\'s']) or 'the requirements:' in text.lower() or 'the user said' in text.lower():
-                return None
-            if not re.search(r'^\s*(hi|hello|dear|good\s+(morning|afternoon|evening)|greetings|ol[áa])', text, re.IGNORECASE):
-                return None
-            return text
         return None
     except Exception:
         return None
@@ -418,6 +386,8 @@ def main():
                 continue
             seen_threads.add(tid)
             deduped_hits.append(hit)
+        
+        # Filter noise - be more lenient for inbox interest scanning
         skipped_reasons = []
         filtered_hits = []
         for hit in interest_hits:
@@ -440,12 +410,11 @@ def main():
                 '@intercom.io','@bigcontent.io','@datadog.zendesk.com',
             )):
                 reason = 'support_sender_domain'
-            elif subject.startswith('[') or subject.startswith('re: '):
-                reason = 'bracketed_or_replay_subject'
             elif 'newsletter' in from_addr or 'noreply' in from_addr or 'mailer' in from_addr:
                 reason = 'newsletter_mailer'
             elif 'undeliverable' in subject or 'bounce' in subject:
                 reason = 'bounce'
+            # Don't filter "re: " subjects - they can be legitimate partner replies
             if reason:
                 skipped_reasons.append(reason)
                 continue
