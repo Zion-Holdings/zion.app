@@ -106,7 +106,34 @@ jobs:
             privacy/index.html \
             terms/index.html \
             automation/index.html \
-            services/ai-workflow-automation/index.html; do
+            services/ai-workflow-automation/index.html \
+            tools/ai-code-review/index.html \
+            tools/ai-readiness-audit/index.html \
+            tools/cloud-migration-readiness/index.html \
+            tools/compliance-gapper/index.html \
+            tools/cron-validator/index.html \
+            tools/devops-maturity/index.html \
+            tools/health-check-script/index.html \
+            tools/ir-maturity/index.html \
+            tools/log-anomaly-detector/index.html \
+            tools/phishing-analyzer/index.html \
+            tools/regex-builder/index.html \
+            tools/secrets-scanner/index.html \
+            tools/ssl-checker/index.html \
+            tools/webhook-inspector/index.html \
+            tools/api-contract-generator/index.html \
+            tools/ci-linter/index.html \
+            tools/dependency-planner/index.html \
+            tools/dns-checker/index.html \
+            tools/iam-analyzer/index.html \
+            tools/cve-calculator/index.html \
+            tools/port-scanner/index.html \
+            tools/roi-calculator/index.html \
+            tools/service-comparison/index.html \
+            tools/service-recommender/index.html \
+            tools/favicon-generator/index.html \
+            tools/track-engineer-fit/index.html \
+            tools/analytics/index.html; do
             mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
             if [ ! -f "$ARTIFACT_DIR/$f" ] && [ -f "docs/$f" ]; then
               cp -a "docs/$f" "$ARTIFACT_DIR/$f"
