@@ -1,9 +1,0 @@
-1:"$Sreact.fragment"
-2:I[61304,[],"ClientPageRoot"]
-3:I[4049,["98500","static/chunks/98500-a1c3ccb6022dcbcf.js","7557","static/chunks/7557-c421edcf25d84bb7.js","31092","static/chunks/31092-86891a40799efe4f.js","45402","static/chunks/45402-4504a9151e1356ed.js","42296","static/chunks/42296-4c7dc6b0fe1547eb.js","21027","static/chunks/21027-46d4dd084ab558d6.js","36259","static/chunks/36259-7f00154b982a05e7.js","71718","static/chunks/71718-ef29b1f8a24fedfa.js","61964","static/chunks/61964-9cfd2a65c586b5a6.js","40777","static/chunks/40777-6fe8fa76541add82.js","75517","static/chunks/75517-ed6dc55c021d9b1a.js","32092","static/chunks/32092-51a72a6ea48ef507.js","53181","static/chunks/53181-a2f423bf53da465c.js","7204","static/chunks/7204-f2df2af4645c3112.js","69824","static/chunks/app/ai-services/page-7e76678da982d890.js"],"default"]
-6:I[90484,[],"OutletBoundary"]
-7:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],null,["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"zion-tech-group-v1"}
-4:{}
-5:"$0:rsc:props:children:0:props:serverProvidedParams:params"
-8:null
