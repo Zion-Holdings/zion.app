@@ -66,7 +66,11 @@ jobs:
           ARTIFACT_DIR="${GITHUB_WORKSPACE:-.}/artifacts/pages"
           mkdir -p "$ARTIFACT_DIR"
           mkdir -p "$ARTIFACT_DIR/docs"
-          # Always include docs/ static content as deploy base.
+          # Copy out/ first (Next.js build output)
+          if [ -d out ]; then
+            cp -a out/. "$ARTIFACT_DIR"/ || true
+          fi
+          # Copy docs/ second so docs/ takes priority (fallback pages)
           if [ -d docs ]; then
             cp -a docs/. "$ARTIFACT_DIR"/
           fi
@@ -74,24 +78,13 @@ jobs:
           if [ ! -f "$ARTIFACT_DIR/index.html" ] && [ -f "$docs_index" ]; then
             cp -a "$docs_index" "$ARTIFACT_DIR/index.html"
           fi
-          # If Next export succeeded, overlay generated files.
-          if [ -d out ]; then
-            cp -a out/. "$ARTIFACT_DIR"/ || true
-          fi
-          if [ -d public ]; then
-            cp -a public/. "$ARTIFACT_DIR"/
-          fi
           # Ensure SEO files exist whichever path produced them.
           if [ ! -f "$ARTIFACT_DIR/robots.txt" ] && [ -f docs/robots.txt ]; then cp -f docs/robots.txt "$ARTIFACT_DIR/robots.txt"; fi
           if [ ! -f "$ARTIFACT_DIR/sitemap.xml" ] && [ -f docs/sitemap.xml ]; then cp -f docs/sitemap.xml "$ARTIFACT_DIR/sitemap.xml"; fi
-          # Make docs/ the source of truth for key fallback pages after overlaying out/.
-          if [ -d docs ]; then
-            cp -a docs/. "$ARTIFACT_DIR"/ || true
-          fi
           PAGES=$(find "$ARTIFACT_DIR" -name 'index.html' | wc -l)
           echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
           echo 'manifest:'
-          find "$ARTIFACT_DIR" -maxdepth 2 -type f | sed -n '1,120p'
+          find "$ARTIFACT_DIR" -maxdepth 3 -type f | sed -n '1,200p'
 
       - name: Pages artifact
         uses: actions/upload-pages-artifact@v4
