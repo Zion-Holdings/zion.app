@@ -114,6 +114,19 @@ jobs:
               cp -a "docs/$f" "$ARTIFACT_DIR/$f"
             fi
           done
+          # Explicitly ensure /services and key tools routes exist even if build src is missing.
+          for f in services/index.html services/index.txt; do
+            if [ ! -f "$ARTIFACT_DIR/$f" ]; then
+              if [ -f "out/$f" ]; then cp -a "out/$f" "$ARTIFACT_DIR/$f"; fi
+              if [ -f "docs/$f" ]; then cp -a "docs/$f" "$ARTIFACT_DIR/$f"; fi
+            fi
+          done
+          for f in tools/index.html tools/index.txt tools/ai-readiness-audit/index.html tools/ai-readiness-audit/index.txt; do
+            if [ ! -f "$ARTIFACT_DIR/$f" ]; then
+              if [ -f "out/$f" ]; then cp -a "out/$f" "$ARTIFACT_DIR/$f"; fi
+              if [ -f "docs/$f" ]; then cp -a "docs/$f" "$ARTIFACT_DIR/$f"; fi
+            fi
+          done
           PAGES=$(find "$ARTIFACT_DIR" -name 'index.html' | wc -l)
           echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
           echo 'manifest:'
