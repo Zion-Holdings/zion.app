@@ -49,7 +49,7 @@ export default function ToolsPage() {
         <header className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-4">🛠️ Free Developer Tools</h1>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            35+ free online tools for developers, designers, and data professionals.
+            50+ free online tools for developers, designers, and data professionals.
             No signup required, no data stored.
           </p>
           <div className="flex items-center justify-center gap-4 mt-6 text-sm text-slate-500">
