@@ -49,8 +49,9 @@ export default function AILabPage() {
             Tools for Autonomous AI
           </h1>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-            Interactive tools that show how Zion\'s autonomous agents can configure solutions,
+            Interactive tools that show how Zion's autonomous agents can configure solutions,
             audit technical assets, and plan AI implementations — all computed in your browser.
+            <span className="block mt-2 text-slate-400 text-base">Current deployment: live fresh app export.</span>
           </p>
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <Link
