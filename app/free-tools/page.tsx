@@ -2,61 +2,66 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Free AI & IT Tools | Zion Tech Group',
-  description: 'Access free AI tools, IT automation scripts, health checks, and readiness audits for IT managers and MSPs.',
+  description: 'Access free AI tools, IT automation utilities, health checks, and readiness audits for IT managers and MSPs.',
 };
 
 export default function FreeToolsHubPage() {
   const toolCategories = [
     {
-      title: 'AI-Powered Utilities',
+      title: 'AI & Support',
       icon: '🤖',
       tools: [
-        { name: 'AI Code Review Assistant', desc: 'Paste code for instant AI review — security, performance, style.', href: '/tools/ai-code-review', status: 'live' },
-        { name: 'Log Error Explainer', desc: 'Paste an error log; get plain-English root cause and fix steps.', href: '/tools/log-error-explainer', status: 'live' },
-        { name: 'AI Support Triage', desc: 'Paste an incident; get severity, likely causes, and remediation steps.', href: '/tools/ai-support-triage', status: 'live' },
-        { name: 'Incident Runbook Generator', desc: 'Describe a scenario; get a structured runbook with escalation paths.', href: '/tools/incident-runbook-generator', status: 'beta' },
+        { name: 'AI Code Review Assistant', desc: 'Paste code for instant review of security, performance, and style risks.', href: '/tools/ai-code-review', status: 'live' },
+        { name: 'AI Support Triage', desc: 'Paste an incident to get severity, likely causes, and remediation steps.', href: '/tools/ai-support-triage', status: 'live' },
+        { name: 'AI Content Generator', desc: 'Turn a topic and audience into a content outline.', href: '/tools/ai-content-generator', status: 'live' },
+        { name: 'AI Image Alt Writer', desc: 'Generate short and long alt text from image descriptions.', href: '/tools/ai-image-alt-writer', status: 'live' },
       ],
     },
     {
-      title: 'IT Health & Monitoring',
-      icon: '📊',
-      tools: [
-        { name: 'System Health Check Script', desc: 'Cross-platform bash/Python script for CPU, disk, memory, services.', href: '/tools/health-check-script', status: 'live' },
-        { name: 'SSL Certificate Checker', desc: 'Scan domains for expiry, chain validity, and TLS config issues.', href: '/tools/ssl-checker', status: 'live' },
-        { name: 'Port & Service Scanner', desc: 'Fast TCP/UDP scan with service fingerprinting.', href: '/tools/port-scanner', status: 'live' },
-        { name: 'DNS Propagation Checker', desc: 'Verify DNS records across global resolvers in seconds.', href: '/tools/dns-checker', status: 'live' },
-        { name: 'Cron Job Validator', desc: 'Paste crontab; get syntax validation and next-run preview.', href: '/tools/cron-validator', status: 'live' },
-        { name: 'Log Pattern Anomaly Detector', desc: 'Upload logs; detect unusual frequency spikes or new error types.', href: '/tools/log-anomaly-detector', status: 'beta' },
-      ],
-    },
-    {
-      title: 'Automation & Workflow',
-      icon: '⚡',
-      tools: [
-        { name: 'Resume Screener', desc: 'Compare a resume to a job description and get a match score.', href: '/tools/resume-screener', status: 'live' },
-        { name: 'Tech Stack Recommender', desc: 'Select project type and constraints; get a modern stack recommendation.', href: '/tools/tech-stack-recommender', status: 'live' },
-      ],
-    },
-    {
-      title: 'Security & Compliance',
-      icon: '🔒',
-      tools: [
-        { name: 'Secrets Scanner', desc: 'Scan repos, Docker images, or pasted text for leaked secrets.', href: '/tools/secrets-scanner', status: 'live' },
-        { name: 'IAM Policy Analyzer', desc: 'AWS/GCP/Azure policies → least-privilege recommendations.', href: '/tools/iam-analyzer', status: 'beta' },
-        { name: 'CVE Impact Calculator', desc: 'Input CVE + your stack; get exploitability and blast radius.', href: '/tools/cve-calculator', status: 'live' },
-        { name: 'Compliance Gap Mapper', desc: 'Select framework (SOC2, ISO27001, HIPAA); get control checklist.', href: '/tools/compliance-gapper', status: 'beta' },
-        { name: 'Phishing Email Analyzer', desc: 'Forward suspicious email; get header analysis and IOCs.', href: '/tools/phishing-analyzer', status: 'live' },
-      ],
-    },
-    {
-      title: 'Readiness & Assessment',
+      title: 'Operations',
       icon: '📋',
       tools: [
-        { name: 'AI Readiness Audit', desc: '20-question assessment → maturity score + prioritized roadmap.', href: '/tools/ai-readiness-audit', status: 'live' },
-        { name: 'Cloud Migration Readiness', desc: 'Score workloads on 7 dimensions; get migration wave plan.', href: '/tools/cloud-migration-readiness', status: 'live' },
-        { name: 'DevOps Maturity Assessment', desc: 'DORA metrics questionnaire → benchmark + improvement backlog.', href: '/tools/devops-maturity', status: 'live' },
-        { name: 'Incident Response Maturity', desc: 'NIST 800-61 aligned assessment with tabletop scenarios.', href: '/tools/ir-maturity', status: 'beta' },
-        { name: 'Data Governance Scorecard', desc: 'Evaluate data quality, lineage, privacy, and ownership.', href: '/tools/data-governance-scorecard', status: 'beta' },
+        { name: 'Incident Postmortem', desc: 'Generate a lightweight postmortem draft from incident inputs.', href: '/tools/incident-postmortem', status: 'live' },
+        { name: 'Incident Timeline Builder', desc: 'Build a clear incident timeline from timestamped events.', href: '/tools/incident-timeline-builder', status: 'live' },
+        { name: 'Incident Severity Calculator', desc: 'Calculate reproducible incident severity from impact dimensions.', href: '/tools/incident-severity-calculator', status: 'live' },
+        { name: 'Change Risk Analyzer', desc: 'Estimate deployment change risk from scope, blast radius, and readiness controls.', href: '/tools/change-risk-analyzer', status: 'live' },
+      ],
+    },
+    {
+      title: 'Cloud & Cost',
+      icon: '☁️',
+      tools: [
+        { name: 'Cloud Cost Estimator', desc: 'Compare estimated AWS/GCP/Azure spend and optimization tips.', href: '/tools/cloud-cost-estimator', status: 'live' },
+        { name: 'Tech Stack Recommender', desc: 'Get a curated modern stack recommendation by project profile.', href: '/tools/tech-stack-recommender', status: 'live' },
+      ],
+    },
+    {
+      title: 'DevOps & Config',
+      icon: '⚙️',
+      tools: [
+        { name: 'Command Generator', desc: 'Describe a goal and get likely CLI commands for common platforms.', href: '/tools/command-generator', status: 'live' },
+        { name: 'Docker Compose Generator', desc: 'Generate a basic docker-compose skeleton for app + database services.', href: '/tools/docker-compose-generator', status: 'live' },
+        { name: 'Config Validator', desc: 'Paste a YAML-like config and get basic sanity checks.', href: '/tools/config-validator', status: 'live' },
+        { name: 'Markdown Table Generator', desc: 'Paste CSV-like text and generate a markdown table.', href: '/tools/markdown-table-generator', status: 'live' },
+        { name: 'HTTP Status Reference', desc: 'Quick lookup for HTTP status codes with meanings and common causes.', href: '/tools/http-status-reference', status: 'live' },
+        { name: 'Release Notes Generator', desc: 'Paste change items and generate clean user-facing release notes.', href: '/tools/release-notes-generator', status: 'live' },
+      ],
+    },
+    {
+      title: 'Security & Verification',
+      icon: '🔒',
+      tools: [
+        { name: 'JWT Inspector', desc: 'Decode JWT headers, payloads, and inspect claims locally.', href: '/tools/jwt-inspector', status: 'live' },
+        { name: 'Phishing Email Analyzer', desc: 'Analyze suspicious emails for header issues and indicators of compromise.', href: '/tools/phishing-analyzer', status: 'live' },
+      ],
+    },
+    {
+      title: 'HR & Readiness',
+      icon: '📋',
+      tools: [
+        { name: 'Resume Screener', desc: 'Compare a resume to a job description and get a match score.', href: '/tools/resume-screener', status: 'live' },
+        { name: 'Onboarding Checklist', desc: 'Generate a practical new hire checklist from role inputs.', href: '/tools/onboarding-checklist', status: 'live' },
+        { name: 'AI Readiness Audit', desc: 'Assess organizational AI maturity and get a prioritized roadmap.', href: '/tools/ai-readiness-audit', status: 'live' },
       ],
     },
   ];
@@ -68,10 +73,10 @@ export default function FreeToolsHubPage() {
           <div className="text-center">
             <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-purple-400">Free Resources</p>
             <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">Free AI & IT Tools</h1>
-            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-300">Production-grade utilities, scripts, and assessments — no sign-up, no limits, no telemetry. Built by engineers for engineers.</p>
+            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-300">Practical utilities built by engineers for engineers. No sign-up, no limits, no telemetry.</p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
               <Link href="/tools/ai-readiness-audit" className="rounded-xl bg-purple-600 px-6 py-3 text-sm font-semibold text-white hover:bg-purple-500 transition-colors">Start AI Readiness Audit</Link>
-              <Link href="/tools/health-check-script" className="rounded-xl border border-slate-700 px-6 py-3 text-sm font-semibold text-slate-100 hover:border-purple-500 transition-colors">Download Health Check Script</Link>
+              <Link href="/free-tools" className="rounded-xl border border-slate-700 px-6 py-3 text-sm font-semibold text-slate-100 hover:border-purple-500 transition-colors">Browse all tools</Link>
             </div>
           </div>
         </div>
@@ -111,7 +116,7 @@ export default function FreeToolsHubPage() {
           <p className="mb-8 text-slate-300">Every tool is open-source under MIT. Fork, customize, self-host, or contribute improvements.</p>
           <div className="flex flex-wrap items-center justify-center gap-4">
             <Link href="https://github.com/Zion-support/zion-support.github.io/tree/main/app/tools" className="rounded-xl border border-slate-700 px-6 py-3 text-sm font-semibold text-slate-100 hover:border-purple-500 transition-colors" target="_blank" rel="noopener noreferrer">View on GitHub</Link>
-            <Link href="/tools/contribute" className="rounded-xl bg-purple-600 px-6 py-3 text-sm font-semibold text-white hover:bg-purple-500 transition-colors">Contribute a Tool</Link>
+            <Link href="/contact" className="rounded-xl bg-purple-600 px-6 py-3 text-sm font-semibold text-white hover:bg-purple-500 transition-colors">Request a tool</Link>
           </div>
         </div>
       </section>
