@@ -1,0 +1,64 @@
+name: Simple Pages Deploy
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: simple-pages-deploy-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Prepare Pages artifact
+        id: prepare_pages
+        run: |
+          set -euo pipefail
+          ARTIFACT_DIR="${GITHUB_WORKSPACE:-.}/artifacts/pages"
+          mkdir -p "$ARTIFACT_DIR"
+          # Copy docs/ as the source of truth
+          if [ -d docs ]; then
+            cp -a docs/. "$ARTIFACT_DIR"/
+          fi
+          # Also copy out/ if it exists (for Next.js build output)
+          if [ -d out ]; then
+            cp -a out/. "$ARTIFACT_DIR"/ || true
+          fi
+          PAGES=$(find "$ARTIFACT_DIR" -name 'index.html' | wc -l)
+          echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
+          echo 'manifest:'
+          find "$ARTIFACT_DIR" -maxdepth 3 -type f | sed -n '1,200p'
+
+      - name: Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: artifacts/pages
+
+  deploy:
+    needs: build
+    if: success()
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4.0.5
+
+      - name: Verify deployment
+        run: |
+          echo "Deployed URL: ${{ steps.deployment.outputs.page_url }}"
+          sleep 20
+          curl -sf "${{ steps.deployment.outputs.page_url }}/" > /dev/null && echo "✓ Homepage" || echo "✗ Homepage"
