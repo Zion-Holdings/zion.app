@@ -34,7 +34,7 @@ export default function SSLCheckerTool() {
           hsts: true,
           grade: 'A+' as const,
           chainValid: true,
-          warnings: (68 < 30 ? ['Certificate expires soon'] : []) as string[],
+          warnings: (daysToExpiry < 30 ? ['Certificate expires soon'] : []) as string[],
         };
     
     setResults(mockResult);

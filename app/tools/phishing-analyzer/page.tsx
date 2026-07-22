@@ -78,7 +78,7 @@ export default function PhishingAnalyzerTool() {
           indicators.push({ type: 'url', severity: 'medium', description: `Non-HTTPS link: ${url}` });
           score += 10;
         }
-      } catch {}
+      } catch { /* noop */ }
     });
 
     // Determine verdict

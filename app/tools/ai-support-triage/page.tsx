@@ -1,9 +1,6 @@
-import Link from 'next/link';
+'use client';
 
-export const metadata = {
-  title: 'AI Support Triage — Free IT Tool | Zion Tech Group',
-  description: 'Free client-side support ticket triage tool: prioritize incidents, assign severity, and get remediation steps.',
-};
+import Link from 'next/link';
 
 export default function AISupportTriage() {
   return (
@@ -23,21 +20,45 @@ export default function AISupportTriage() {
           </div>
           <div>
             <label className="block text-sm font-medium">Analysis</label>
-            <div id="result" className="mt-2 rounded-lg border border-slate-800 bg-slate-900 p-4 font-mono text-sm text-slate-200 min-h-[260px] whitespace-pre-wrap">
-              Paste a ticket and run triage...
-            </div>
+            <div id="result" className="mt-2 rounded-lg border border-slate-800 bg-slate-900 p-4 font-mono text-sm text-slate-200 min-h-[260px] whitespace-pre-wrap">Paste a ticket and run triage...</div>
           </div>
         </div>
       </div>
 
-      <script dangerouslySetInnerHTML={{__html: `(function(){const b=document.getElementById('triage'),r=document.getElementById('result');if(!b||!r)return;b.onclick=function(){const t=document.getElementById('ticket').value||'';const l=t.toLowerCase();let sev='Medium';if(/outage|down|data\s*loss|security|breach|504|500|502| outage/.test(l))sev='Critical';else if(/degraded|slow|timeout|latency|error\s*rate|timeout/.test(l))sev='High';else if(/question|how\s*to|guidance|best\s*practice|question/.test(l))sev='Low';const causes=[];if(/php|laravel|codeigniter/.test(l))causes.push('App/runtime error');if(/database|sql|postgres|mysql|mongo/.test(l))causes.push('Database load or connection issue');if(/504|502|500|timeout|latency/.test(l))causes.push('Upstream timeout or overload');if(/dns|cname|ssl|cert|tls/.test(l))causes.push('DNS/TLS/SSL issue');if(!causes.length)causes.push('General infrastructure issue');const fixes=[];
-if(/database|sql|postgres|mysql|mongo/.test(l))fixes.push('Check connection pool, slow queries, replication lag, disk IO.');
-if(/504|502|500|timeout|latency/.test(l))fixes.push('Check upstream health, retries, circuit breaker, timeout values.');
-if(/php|laravel|codeigniter/.test(l))fixes.push('Check app logs, recent deploy, queue jobs, cache invalidation.');
-if(/dns|cname|ssl|cert|tls/.test(l))fixes.push('Verify DNS propagation, cert expiry, chain completeness.');
-if(/nginx|apache|caddy/.test(l))fixes.push('Check web server error logs, rate limits, upstream blocks.');
-fixes.push('Create incident timeline, stabilize first, RCA after mitigation.');
-const out='Severity: '+sev+'\\nLikely causes: '+(causes.join('; ')||'General infra issue')+'\\nRemediation: '+(fixes.join(' ' )||'Collect more logs and timeline');r.textContent=out;};})();`}} />
+      {/*
+        regex literals intentionally keep escaped shorthand; eslint-disable scoped
+      */}
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+        (function(){
+          const b=document.getElementById('triage'),r=document.getElementById('result');
+          if(!b||!r)return;
+          b.onclick=function(){
+            const t=document.getElementById('ticket').value||'';
+            const l=t.toLowerCase();
+            let sev='Medium';
+            if(/outage|down|data\\s*loss|security|breach|504|500|502|outage/.test(l))sev='Critical';
+            else if(/degraded|slow|timeout|latency|error\\s*rate|timeout/.test(l))sev='High';
+            else if(/question|how\\s*to|guidance|best\\s*practice|question/.test(l))sev='Low';
+            const causes=[];
+            if(/php|laravel|codeigniter/.test(l))causes.push('App/runtime error');
+            if(/database|sql|postgres|mysql|mongo/.test(l))causes.push('Database load or connection issue');
+            if(/504|502|500|timeout|latency/.test(l))causes.push('Upstream timeout or overload');
+            if(/dns|cname|ssl|cert|tls/.test(l))causes.push('DNS/TLS/SSL issue');
+            if(!causes.length)causes.push('General infrastructure issue');
+            const fixes=[];
+            if(/database|sql|postgres|mysql|mongo/.test(l))fixes.push('Check connection pool, slow queries, replication lag, disk IO.');
+            if(/504|502|500|timeout|latency/.test(l))fixes.push('Check upstream health, retries, circuit breaker, timeout values.');
+            if(/php|laravel|codeigniter/.test(l))fixes.push('Check app logs, recent deploy, queue jobs, cache invalidation.');
+            if(/dns|cname|ssl|cert|tls/.test(l))fixes.push('Verify DNS propagation, cert expiry, chain completeness.');
+            if(/nginx|apache|caddy/.test(l))fixes.push('Check web server error logs, rate limits, upstream blocks.');
+            fixes.push('Create incident timeline, stabilize first, RCA after mitigation.');
+            r.textContent='Severity: '+sev+'\\nLikely causes: '+(causes.join('; ')||'General infra issue')+'\\nRemediation: '+(fixes.join(' ')||'Collect more logs and timeline');
+          };
+        })();`,
+        }}
+      />
     </div>
   );
 }

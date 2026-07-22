@@ -572,7 +572,6 @@ export const aiServices: Service[] = [
     stage: 'published',
   },
 
-,
   {
     id: 'ai-prompt-optimization-engine',
     title: 'AI Prompt Optimization Engine',
@@ -643,7 +642,6 @@ export const aiServices: Service[] = [
     category: 'ai',
     industry: 'Technology',
   },
-,
   {
     id: 'ai-prompt-optimization-engine',
     title: 'AI Prompt Optimization Engine',
@@ -889,7 +887,6 @@ export const itServices: Service[] = [
     stage: 'published',
   },
 
-,
   {
     id: 'it-asset-lifecycle-manager',
     title: 'IT Asset Lifecycle Manager',
@@ -960,7 +957,6 @@ export const itServices: Service[] = [
     category: 'it',
     industry: 'Technology',
   },
-,
   {
     id: 'it-asset-lifecycle-manager',
     title: 'IT Asset Lifecycle Manager',
@@ -989,7 +985,6 @@ export const itServices: Service[] = [
     category: 'it',
     industry: 'Technology',
   },
-,
   {
     id: 'it-asset-lifecycle-manager',
     title: 'IT Asset Lifecycle Manager',
@@ -1125,7 +1120,6 @@ export const cloudServices: Service[] = [
     stage: 'published',
   },
 
-,
   {
     id: 'cloud-cost-anomaly-detector',
     title: 'Cloud Cost Anomaly Detector',
@@ -1196,7 +1190,6 @@ export const cloudServices: Service[] = [
     category: 'cloud',
     industry: 'Technology',
   },
-,
   {
     id: 'cloud-multi-tenant-isolation-validator',
     title: 'Cloud Multi-Tenant Isolation Validator',
@@ -1225,7 +1218,6 @@ export const cloudServices: Service[] = [
     category: 'cloud',
     industry: 'General',
   },
-,
   {
     id: 'cloud-cost-anomaly-detector',
     title: 'Cloud Cost Anomaly Detector',
@@ -1346,7 +1338,6 @@ export const securityServices: Service[] = [
     stage: 'published',
   },
 
-,
   {
     id: 'security-api-key-rotator',
     title: 'Security API Key Rotator',
@@ -1417,7 +1408,6 @@ export const securityServices: Service[] = [
     category: 'security',
     industry: 'General',
   },
-,
   {
     id: 'security-api-key-rotator',
     title: 'Security API Key Rotator',
@@ -1488,7 +1478,6 @@ export const securityServices: Service[] = [
     category: 'security',
     industry: 'General',
   },
-,
   {
     id: 'security-api-key-rotator',
     title: 'Security API Key Rotator',
@@ -1609,7 +1598,6 @@ export const dataServices: Service[] = [
     stage: 'published',
   },
 
-,
   {
     id: 'data-lineage-tracker',
     title: 'Data Lineage Tracker',
@@ -1680,7 +1668,6 @@ export const dataServices: Service[] = [
     category: 'data',
     industry: 'Technology',
   },
-,
   {
     id: 'data-lineage-tracker',
     title: 'Data Lineage Tracker',
@@ -1751,7 +1738,6 @@ export const dataServices: Service[] = [
     category: 'data',
     industry: 'Technology',
   },
-,
   {
     id: 'data-lineage-tracker',
     title: 'Data Lineage Tracker',
@@ -1857,7 +1843,6 @@ export const automationServices: Service[] = [
   },
 
 
-,
   {
     id: 'automation-digital-twin-simulator',
     title: 'Automation Digital Twin Simulator',
@@ -2181,7 +2166,6 @@ export const emailIntelligenceServices: Service[] = [
     industry: 'Sales AI',
     stage: 'published',
   },
-,
   {
     id: 'automation-digital-twin-simulator',
     title: 'Automation Digital Twin Simulator',
@@ -2252,7 +2236,6 @@ export const emailIntelligenceServices: Service[] = [
     category: 'automation',
     industry: 'Technology',
   },
-,
   {
     id: 'automation-digital-twin-simulator',
     title: 'Automation Digital Twin Simulator',

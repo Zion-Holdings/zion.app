@@ -16,7 +16,7 @@ export default function ResumeScreener() {
     btn.onclick = () => {
       const jd = (jdRef.current?.value || '').toLowerCase();
       const resume = (resumeRef.current?.value || '').toLowerCase();
-      const jdTokens = [...jd.matchAll(/\b[a-z0-9+#.\-]{2,}\b/g)].map(m => m[0]).filter(t => !['the','and','for','with','that','this','have','from','your','will','required','preferred'].includes(t));
+      const jdTokens = [...jd.matchAll(/[-a-z0-9+#.]{2,}/g)].map((m) => m[0]).filter((t) => !['the','and','for','with','that','this','have','from','your','will','required','preferred'].includes(t));
       const uniqueTokens = [...new Set(jdTokens)];
       if (!uniqueTokens.length || !resume) {
         out.textContent = 'Paste a job description and a resume to screen.';
