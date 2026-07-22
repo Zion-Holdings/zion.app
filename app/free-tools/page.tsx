@@ -13,10 +13,8 @@ export default function FreeToolsHubPage() {
       tools: [
         { name: 'AI Code Review Assistant', desc: 'Paste code for instant AI review — security, performance, style.', href: '/tools/ai-code-review', status: 'live' },
         { name: 'Log Error Explainer', desc: 'Paste an error log; get plain-English root cause and fix steps.', href: '/tools/log-error-explainer', status: 'live' },
+        { name: 'AI Support Triage', desc: 'Paste an incident; get severity, likely causes, and remediation steps.', href: '/tools/ai-support-triage', status: 'live' },
         { name: 'Incident Runbook Generator', desc: 'Describe a scenario; get a structured runbook with escalation paths.', href: '/tools/incident-runbook-generator', status: 'beta' },
-        { name: 'Regex Builder from Examples', desc: 'Give sample strings; get a tested regex with explanation.', href: '/tools/regex-builder', status: 'live' },
-        { name: 'SQL Query Optimizer', desc: 'Paste a slow query; get index suggestions and rewritten SQL.', href: '/tools/sql-optimizer', status: 'beta' },
-        { name: 'Terraform Plan Summarizer', desc: 'Upload a plan output; get a risk-ranked change summary.', href: '/tools/terraform-summarizer', status: 'live' },
       ],
     },
     {
@@ -35,12 +33,8 @@ export default function FreeToolsHubPage() {
       title: 'Automation & Workflow',
       icon: '⚡',
       tools: [
-        { name: 'Email Template Builder', desc: 'Drag-drop builder with variables, conditionals, and preview.', href: '/tools/email-template-builder', status: 'beta' },
-        { name: 'Webhook Payload Inspector', desc: 'Receive and inspect webhooks; auto-generate parsing code.', href: '/tools/webhook-inspector', status: 'live' },
-        { name: 'API Contract Generator', desc: 'From OpenAPI spec, generate client SDKs, mock servers, tests.', href: '/tools/api-contract-generator', status: 'beta' },
-        { name: 'CI/CD Pipeline Linter', desc: 'Paste GitHub Actions/GitLab CI YAML; get best-practice fixes.', href: '/tools/ci-linter', status: 'live' },
-        { name: 'Runbook-to-Automation Converter', desc: 'Markdown runbook → executable Ansible/Terraform/Script.', href: '/tools/runbook-converter', status: 'beta' },
-        { name: 'Dependency Update Planner', desc: 'Scan package.json/requirements.txt; prioritize safe updates.', href: '/tools/dependency-planner', status: 'live' },
+        { name: 'Resume Screener', desc: 'Compare a resume to a job description and get a match score.', href: '/tools/resume-screener', status: 'live' },
+        { name: 'Tech Stack Recommender', desc: 'Select project type and constraints; get a modern stack recommendation.', href: '/tools/tech-stack-recommender', status: 'live' },
       ],
     },
     {
@@ -73,26 +67,11 @@ export default function FreeToolsHubPage() {
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6 lg:px-8">
           <div className="text-center">
             <p className="mb-4 text-sm font-semibold uppercase tracking-widest text-purple-400">Free Resources</p>
-            <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-              Free AI & IT Tools
-            </h1>
-            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-300">
-              Production-grade utilities, scripts, and assessments — no sign-up, no limits, no telemetry.
-              Built by engineers for engineers. Use them, fork them, embed them.
-            </p>
+            <h1 className="mb-6 text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">Free AI & IT Tools</h1>
+            <p className="mx-auto max-w-2xl text-lg leading-relaxed text-slate-300">Production-grade utilities, scripts, and assessments — no sign-up, no limits, no telemetry. Built by engineers for engineers.</p>
             <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-              <Link
-                href="/tools/ai-readiness-audit"
-                className="rounded-xl bg-purple-600 px-6 py-3 text-sm font-semibold text-white hover:bg-purple-500 transition-colors"
-              >
-                Start AI Readiness Audit
-              </Link>
-              <Link
-                href="/tools/health-check-script"
-                className="rounded-xl border border-slate-700 px-6 py-3 text-sm font-semibold text-slate-100 hover:border-purple-500 transition-colors"
-              >
-                Download Health Check Script
-              </Link>
+              <Link href="/tools/ai-readiness-audit" className="rounded-xl bg-purple-600 px-6 py-3 text-sm font-semibold text-white hover:bg-purple-500 transition-colors">Start AI Readiness Audit</Link>
+              <Link href="/tools/health-check-script" className="rounded-xl border border-slate-700 px-6 py-3 text-sm font-semibold text-slate-100 hover:border-purple-500 transition-colors">Download Health Check Script</Link>
             </div>
           </div>
         </div>
@@ -108,29 +87,12 @@ export default function FreeToolsHubPage() {
               </div>
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {cat.tools.map((tool, toolIdx) => (
-                  <Link
-                    key={tool.name}
-                    href={tool.href}
-                    className="group relative rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-all hover:shadow-xl hover:shadow-purple-500/10"
-                    style={{ animationDelay: `${(catIdx * 6 + toolIdx) * 30}ms` }}
-                  >
+                  <Link key={tool.name} href={tool.href} className="group relative rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/30 transition-all hover:shadow-xl hover:shadow-purple-500/10">
                     <div className="mb-3 flex items-center gap-2">
-                      <h3 className="text-lg font-semibold text-white group-hover:text-purple-300 transition-colors">
-                        {tool.name}
-                      </h3>
-                      <span
-                        className={`px-2 py-0.5 text-xs font-medium rounded-full ${
-                          tool.status === 'live'
-                            ? 'bg-emerald-500/20 text-emerald-400'
-                            : 'bg-amber-500/20 text-amber-400'
-                        }`}
-                      >
-                        {tool.status === 'live' ? 'Live' : 'Beta'}
-                      </span>
+                      <h3 className="text-lg font-semibold text-white group-hover:text-purple-300 transition-colors">{tool.name}</h3>
+                      <span className={`px-2 py-0.5 text-xs font-medium rounded-full ${tool.status === 'live' ? 'bg-emerald-500/20 text-emerald-400' : 'bg-amber-500/20 text-amber-400'}`}>{tool.status === 'live' ? 'Live' : 'Beta'}</span>
                     </div>
-                    <p className="text-sm leading-relaxed text-slate-400 group-hover:text-slate-300 transition-colors">
-                      {tool.desc}
-                    </p>
+                    <p className="text-sm leading-relaxed text-slate-400 group-hover:text-slate-300 transition-colors">{tool.desc}</p>
                     <div className="mt-4 inline-flex items-center gap-1 text-sm text-purple-400 group-hover:gap-2 transition-all">
                       <span>Open tool</span>
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
@@ -146,24 +108,10 @@ export default function FreeToolsHubPage() {
       <section className="border-t border-slate-800 bg-slate-900/50 py-16">
         <div className="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
           <h2 className="mb-4 text-2xl font-bold text-white">Want the Source Code?</h2>
-          <p className="mb-8 text-slate-300">
-            Every tool is open-source under MIT. Fork, customize, self-host, or contribute improvements.
-          </p>
+          <p className="mb-8 text-slate-300">Every tool is open-source under MIT. Fork, customize, self-host, or contribute improvements.</p>
           <div className="flex flex-wrap items-center justify-center gap-4">
-            <Link
-              href="https://github.com/Zion-support/zion-support.github.io/tree/main/app/tools"
-              className="rounded-xl border border-slate-700 px-6 py-3 text-sm font-semibold text-slate-100 hover:border-purple-500 transition-colors"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View on GitHub
-            </Link>
-            <Link
-              href="/tools/contribute"
-              className="rounded-xl bg-purple-600 px-6 py-3 text-sm font-semibold text-white hover:bg-purple-500 transition-colors"
-            >
-              Contribute a Tool
-            </Link>
+            <Link href="https://github.com/Zion-support/zion-support.github.io/tree/main/app/tools" className="rounded-xl border border-slate-700 px-6 py-3 text-sm font-semibold text-slate-100 hover:border-purple-500 transition-colors" target="_blank" rel="noopener noreferrer">View on GitHub</Link>
+            <Link href="/tools/contribute" className="rounded-xl bg-purple-600 px-6 py-3 text-sm font-semibold text-white hover:bg-purple-500 transition-colors">Contribute a Tool</Link>
           </div>
         </div>
       </section>
