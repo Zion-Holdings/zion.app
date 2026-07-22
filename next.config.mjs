@@ -83,16 +83,12 @@ const nextConfig = {
       { source: '/services/ai-network-performance-and-wan-optimization-for-it-in-2026/', destination: '/services/ai-first-network-performance-and-wan-optimization-for-it-in-2026/', permanent: true },
       { source: '/services/ai-endpoint-management-and-zero-trust-access-for-it-in-2026', destination: '/services/ai-first-endpoint-management-and-zero-trust-access-for-it-in-2026', permanent: true },
       { source: '/services/ai-endpoint-management-and-zero-trust-access-for-it-in-2026/', destination: '/services/ai-first-endpoint-management-and-zero-trust-access-for-it-in-2026/', permanent: true },
-      { source: '/services/ai-development-acceleration', destination: '/services/', permanent: true },
-      { source: '/services/ai-development-acceleration/', destination: '/services/', permanent: true },
       { source: '/services/ai-help-desk-automation', destination: '/services/', permanent: true },
       { source: '/services/ai-help-desk-automation/', destination: '/services/', permanent: true },
       { source: '/services/devops-automation-consulting', destination: '/services/', permanent: true },
       { source: '/services/devops-automation-consulting/', destination: '/services/', permanent: true },
       { source: '/services/fleet-management-gps-tracking', destination: '/services/', permanent: true },
       { source: '/services/fleet-management-gps-tracking/', destination: '/services/', permanent: true },
-      { source: '/services/lead-generation-outreach-automation', destination: '/services/', permanent: true },
-      { source: '/services/lead-generation-outreach-automation/', destination: '/services/', permanent: true },
     ];
   },
 };
