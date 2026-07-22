@@ -3,10 +3,6 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'Onboarding Checklist — Free HR Tool | Zion Tech Group',
-  description: 'Generate a new hire onboarding checklist with account setup, access, training, and team intro tasks.',
-};
 
 export default function OnboardingChecklist() {
   const nameRef = useRef<HTMLInputElement>(null);

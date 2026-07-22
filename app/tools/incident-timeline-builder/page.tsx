@@ -3,10 +3,6 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'Incident Timeline Builder — Free Ops Tool | Zion Tech Group',
-  description: 'Build a clear incident timeline from timestamped events for faster postmortems.',
-};
 
 export default function IncidentTimelineBuilder() {
   const timeRef = useRef<HTMLInputElement>(null);

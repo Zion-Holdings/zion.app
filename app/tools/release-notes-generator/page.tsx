@@ -3,10 +3,6 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'Release Notes Generator — Free Dev Tool | Zion Tech Group',
-  description: 'Generate clear user-facing release notes from a list of changes.',
-};
 
 export default function ReleaseNotesGenerator() {
   useEffect(() => {

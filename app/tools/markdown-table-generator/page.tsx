@@ -3,10 +3,6 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'Markdown Table Generator — Free Dev Tool | Zion Tech Group',
-  description: 'Paste CSV-like text and generate a markdown table instantly.',
-};
 
 export default function MarkdownTableGenerator() {
   const inputRef = useRef<HTMLTextAreaElement>(null);

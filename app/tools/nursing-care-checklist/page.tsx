@@ -3,10 +3,6 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'Nursing Care Checklist — Free Health Tool | Zion Tech Group',
-  description: 'Generate a nursing care checklist from patient inputs: vitals, meds, mobility, wounds, fall risk, and discharge needs.',
-};
 
 export default function NursingCareChecklist() {
   const nameRef = useRef(null);

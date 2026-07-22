@@ -3,10 +3,6 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'Resume Screener — Free IT Tool | Zion Tech Group',
-  description: 'Score resumes against a job description with client-side keyword, experience, and skills matching.',
-};
 
 export default function ResumeScreener() {
   const jdRef = useRef(null);
