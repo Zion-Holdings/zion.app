@@ -3,11 +3,6 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'Config Validator — Free DevOps Tool | Zion Tech Group',
-  description: 'Paste a YAML-like config and get basic syntax sanity checks.',
-};
-
 export default function ConfigValidator() {
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const outRef = useRef<HTMLDivElement>(null);

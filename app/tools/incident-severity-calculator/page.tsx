@@ -3,11 +3,6 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'Incident Severity Calculator — Free Ops Tool | Zion Tech Group',
-  description: 'Calculate incident severity from user impact, revenue risk, data sensitivity, and SLA urgency.',
-};
-
 export default function IncidentSeverityCalculator() {
   const userRef = useRef<HTMLInputElement>(null);
   const revenueRef = useRef<HTMLInputElement>(null);

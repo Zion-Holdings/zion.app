@@ -3,11 +3,6 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'API Response Visualizer — Free Dev Tool | Zion Tech Group',
-  description: 'Paste JSON API output and inspect keys, nesting depth, size, and anomalies.',
-};
-
 export default function APIResponseVisualizerPage() {
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const outRef = useRef<HTMLDivElement>(null);

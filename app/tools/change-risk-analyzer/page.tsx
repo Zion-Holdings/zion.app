@@ -3,11 +3,6 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'Change Risk Analyzer — Free Dev Tool | Zion Tech Group',
-  description: 'Estimate deployment change risk from scope, blast radius, and readiness inputs.',
-};
-
 export default function ChangeRiskAnalyzer() {
   const scopeRef = useRef<HTMLInputElement>(null);
   const blastRef = useRef<HTMLInputElement>(null);

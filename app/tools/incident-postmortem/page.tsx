@@ -3,11 +3,6 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'Incident Postmortem — Free IT Tool | Zion Tech Group',
-  description: 'Generate a lightweight postmortem outline from structured incident inputs.',
-};
-
 export default function IncidentPostmortem() {
   useEffect(() => {
     const btn = document.getElementById('generate');

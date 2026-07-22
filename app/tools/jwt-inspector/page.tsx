@@ -3,11 +3,6 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'JWT Inspector — Free IT Tool | Zion Tech Group',
-  description: 'Decode JWT headers/payload, inspect claims, and spot common issues server-free.',
-};
-
 export default function JWTInspector() {
   useEffect(() => {
     const btn = document.getElementById('decode');

@@ -3,11 +3,6 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'Cloud Cost Estimator — Free IT Tool | Zion Tech Group',
-  description: 'Estimate cloud spending across AWS/GCP/Azure with workload-based math and optimization tips.',
-};
-
 export default function CloudCostEstimator() {
   const providerRef = useRef(null);
   const instancesRef = useRef(null);

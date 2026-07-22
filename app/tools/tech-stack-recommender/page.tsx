@@ -3,11 +3,6 @@
 import { useEffect } from 'react';
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'Tech Stack Recommender — Free IT Tool | Zion Tech Group',
-  description: 'Pick your project type and constraints to get a focused modern stack recommendation.',
-};
-
 export default function TechStackRecommender() {
   useEffect(() => {
     const btn = document.getElementById('recommend');
