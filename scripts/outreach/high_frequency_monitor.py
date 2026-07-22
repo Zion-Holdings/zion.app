@@ -1,8 +1,7 @@
-import sys, os, json, time, re
+import sys, os, json, time, re, base64
 from pathlib import Path
 
-from commands.google_workspace import gog_headers
-import urllib.request, json
+from scripts.outreach.google_api import build_service
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
@@ -53,7 +52,8 @@ def main():
     }
 
     try:
-        # service init via gog_headers
+        # Initialize Gmail service
+        service = build_service('gmail', 'v1')
         label_map = {}
         for lab in service.users().labels().list(userId='me').execute().get('labels', []):
             label_map[lab['name']] = lab['id']
