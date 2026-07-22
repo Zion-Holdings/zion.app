@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/styles.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JWT Decoder | Zion Tech Group Free Tools</title>
+  <meta name="description" content="Decode JWT tokens instantly. Free online tool by Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/jwt-decoder/" />
+</head>
+<body>
+  <main>
+    <h1>JWT Decoder</h1>
+    <label>JWT: <input id="jwt" type="text" size="80" /></label>
+    <button onclick="decode()">Decode</button>
+    <pre id="out"></pre>
+    <p><a href="/tools/">Back to tools</a></p>
+    <script>
+      function decode(){
+        const token = document.getElementById('jwt').value.trim();
+        const parts = token.split('.');
+        if (parts.length < 2) {
+          document.getElementById('out').textContent = 'Invalid JWT';
+          return;
+        }
+        const payload = JSON.parse(atob(parts[1].replace(/-/g,'+').replace(/_/g,'/')));
+        document.getElementById('out').textContent = JSON.stringify(payload, null, 2);
+      }
+    </script>
+  </main>
+</body>
+</html>

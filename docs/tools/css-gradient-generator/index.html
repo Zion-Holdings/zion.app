@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/styles.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSS Gradient Generator | Zion Tech Group Free Tools</title>
+  <meta name="description" content="Generate CSS gradients instantly. Free online tool by Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/css-gradient-generator/" />
+</head>
+<body>
+  <main>
+    <h1>CSS Gradient Generator</h1>
+    <p>Generate a CSS linear/radial gradient.</p>
+    <label>Type:
+      <select id="type" onchange="gen()">
+        <option>linear-gradient</option>
+        <option>radial-gradient</option>
+      </select>
+    </label>
+    <button onclick="gen()">Generate</button>
+    <div id="preview" style="height:200px;margin:10px 0;border:1px solid #ccc;"></div>
+    <pre id="css"></pre>
+    <p><a href="/tools/">Back to tools</a></p>
+    <script>
+      function gen(){
+        const c1='#'+Math.floor(Math.random()*16777215).toString(16).padStart(6,'0');
+        const c2='#'+Math.floor(Math.random()*16777215).toString(16).padStart(6,'0');
+        const type=document.getElementById('type').value;
+        const grad=type+'(90deg,'+c1+','+c2+')';
+        document.getElementById('preview').style.background=grad;
+        document.getElementById('css').textContent='background:'+grad+';';
+      }
+    </script>
+  </main>
+</body>
+</html>

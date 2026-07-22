@@ -13,7 +13,7 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 30
     outputs:
       pages: ${{ steps.prepare_pages.outputs.pages }}
     steps:
@@ -38,28 +38,26 @@ jobs:
           NODE_OPTIONS: --max-old-space-size=4096
           ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: 'true'
 
-      - name: Build artifact
+      - name: Build Next export
         id: build
         run: |
-          set -euo pipefail
-          node scripts/build-wrapper.cjs > build.log 2>&1 || true
-          echo "build_log_start"
-          set +x
-          echo "---- BUILD LOG TAIL ----"
-          tail -n 400 build.log || true
-          echo "---- /BUILD LOG TAIL ----"
-          set -x
-          echo "build_log_end"
+          set -o pipefail
+          npm run build > build.log 2>&1 || true
+          if [ -d out ]; then
+            PAGES=$(find out -name 'index.html' | wc -l)
+            echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
+            echo "production_out_exists=1" >> "$GITHUB_OUTPUT"
+          else
+            echo "pages=0" >> "$GITHUB_OUTPUT"
+            echo "production_out_exists=0" >> "$GITHUB_OUTPUT"
+          fi
 
-      - name: Upload build diagnostics on failure
-        if: failure()
+      - name: Upload build diagnostics if failed
+        if: always() && steps.build.outputs.production_out_exists == '0'
         uses: actions/upload-artifact@v4
         with:
           name: build-diagnostics-${{ github.run_number }}
-          path: |
-            build.log
-            automation/reports/build-state.json
-            out
+          path: build.log
 
       - name: Prepare Pages artifact
         id: prepare_pages
@@ -68,7 +66,11 @@ jobs:
           ARTIFACT_DIR="${GITHUB_WORKSPACE:-.}/artifacts/pages"
           mkdir -p "$ARTIFACT_DIR"
           mkdir -p "$ARTIFACT_DIR/docs"
-          # Always include docs/ static content as deploy base.
+          # Copy out/ first (Next.js build output)
+          if [ -d out ]; then
+            cp -a out/. "$ARTIFACT_DIR"/ || true
+          fi
+          # Copy docs/ second so docs/ takes priority (fallback pages)
           if [ -d docs ]; then
             cp -a docs/. "$ARTIFACT_DIR"/
           fi
@@ -76,48 +78,13 @@ jobs:
           if [ ! -f "$ARTIFACT_DIR/index.html" ] && [ -f "$docs_index" ]; then
             cp -a "$docs_index" "$ARTIFACT_DIR/index.html"
           fi
-          # If Next export succeeded, overlay generated files.
-          if [ -d out ]; then
-            cp -a out/. "$ARTIFACT_DIR"/ || true
-          fi
-          if [ -d public ]; then
-            cp -a public/. "$ARTIFACT_DIR"/
-          fi
           # Ensure SEO files exist whichever path produced them.
           if [ ! -f "$ARTIFACT_DIR/robots.txt" ] && [ -f docs/robots.txt ]; then cp -f docs/robots.txt "$ARTIFACT_DIR/robots.txt"; fi
           if [ ! -f "$ARTIFACT_DIR/sitemap.xml" ] && [ -f docs/sitemap.xml ]; then cp -f docs/sitemap.xml "$ARTIFACT_DIR/sitemap.xml"; fi
-          # Promote key fallback pages from docs/ to artifact root so Pages can serve them.
-          for f in \
-            case-studies/index.html \
-            industries/index.html \
-            testimonials/index.html \
-            roi-calculator/index.html \
-            client-portal/index.html \
-            proposal-generator/index.html \
-            academy/index.html \
-            help/index.html \
-            bundles/index.html \
-            status/index.html \
-            api/index.html \
-            free-ai-it-tools/index.html \
-            automation/index.html \
-            services/ai-workflow-automation/index.html; do
-            mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
-            if [ ! -f "$ARTIFACT_DIR/$f" ] && [ -f "docs/$f" ]; then
-              cp -a "docs/$f" "$ARTIFACT_DIR/$f"
-            fi
-          done
-          # Guarantee every key route exists in the exported artifact, even if Next didn't emit it.
-          for f in case-studies/index.html industries/index.html testimonials/index.html roi-calculator/index.html client-portal/index.html proposal-generator/index.html academy/index.html help/index.html bundles/index.html status/index.html api/index.html free-ai-it-tools/index.html; do
-            mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
-            if [ ! -f "$ARTIFACT_DIR/$f" ] && [ -f "docs/$f" ]; then
-              cp -a "docs/$f" "$ARTIFACT_DIR/$f"
-            fi
-          done
           PAGES=$(find "$ARTIFACT_DIR" -name 'index.html' | wc -l)
           echo "pages=$PAGES" >> "$GITHUB_OUTPUT"
           echo 'manifest:'
-          find "$ARTIFACT_DIR" -maxdepth 2 -type f | sed -n '1,120p'
+          find "$ARTIFACT_DIR" -maxdepth 3 -type f | sed -n '1,200p'
 
       - name: Pages artifact
         uses: actions/upload-pages-artifact@v4
@@ -126,7 +93,7 @@ jobs:
 
   deploy:
     needs: build
-    if: success() && needs.build.outputs.pages != '0'
+    if: success()
     runs-on: ubuntu-latest
     timeout-minutes: 15
     environment:
@@ -142,6 +109,7 @@ jobs:
           echo "Deployed URL: ${{ steps.deployment.outputs.page_url }}"
           sleep 20
           curl -sf "${{ steps.deployment.outputs.page_url }}/" > /dev/null && echo "✓ Homepage" || echo "✗ Homepage"
-          for p in /services/ /solutions/ /pricing/ /contact/ /tools/ /about/ /blog/ /careers/ /partners/ /portal/ /case-studies/ /industries/ /testimonials/ /roi-calculator/ /client-portal/ /proposal-generator/ /academy/ /help/ /bundles/ /status/ /api/ /ai-services-index /free-ai-it-tools /automation/; do
+          for p in /services/ /solutions/ /pricing/ /contact/ /tools/ /about /blog /careers /partners /portal /ai-services-index /free-ai-it-tools /automation/ /services/ai-customer-support-pro/; do
             code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "${{ steps.deployment.outputs.page_url }}${p}" || true)
             echo "$p -> $code"
+          done

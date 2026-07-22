@@ -1,0 +1,29 @@
+{
+  "timestamp": "2026-07-18T17:03:29.364939Z",
+  "repo": "/Users/miami2/zion-support/zion-support.github.io",
+  "live_site": "https://ziontechgroup.com",
+  "paths": {
+    "app_pages": 670,
+    "tools_pages": 55,
+    "blog_pages": 178,
+    "out_routes": 225,
+    "public_html": 47,
+    "workflows": 25,
+    "recovery_artifacts_present": {
+      "wayback": true,
+      "docs_pages": true,
+      "public_seo": true,
+      "next_export_output": true
+    }
+  },
+  "git": {
+    "branch": "main",
+    "ahead_behind": null,
+    "modified_files": 9781
+  },
+  "site_recovery": {
+    "live_reachable": true
+  },
+  "project_context": "github.com/Zion-support/zion-support.github.io branches: main with Pages deploy; local checkout ahead of origin/main by local batch edits",
+  "build_path": "local build artifacts under out/ and public/ present; Pages artifact assembly defined under .github/workflows/gh-pages.yml"
+}

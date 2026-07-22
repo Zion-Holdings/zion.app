@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/styles.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Markdown to HTML Converter | Zion Tech Group Free Tools</title>
+  <meta name="description" content="Convert Markdown to HTML instantly. Free online tool by Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/markdown-to-html-converter/" />
+</head>
+<body>
+  <main>
+    <h1>Markdown to HTML Converter</h1>
+    <p>Paste Markdown below and get HTML output instantly.</p>
+    <textarea id="md" rows="12" cols="80"></textarea>
+    <button onclick="convert()">Convert to HTML</button>
+    <pre id="html"></pre>
+    <p><a href="/tools/">Back to tools</a></p>
+    <script>
+      function convert(){
+        const md = document.getElementById('md').value;
+        let html = md
+          .replace(/^###### (.*$)/gim, '<h6>$1</h6>')
+          .replace(/^##### (.*$)/gim, '<h5>$1</h5>')
+          .replace(/^#### (.*$)/gim, '<h4>$1</h4>')
+          .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+          .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+          .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+          .replace(/\*(.*?)\*/g, '<em>$1</em>')
+          .replace(/`([^`]+)`/g, '<code>$1</code>')
+          .replace(/^\s*-\s(.*$)/gim, '<li>$1</li>')
+          .replace(/(<li>.*<\/li>)/s, '<ul>$1</ul>');
+        document.getElementById('html').textContent = html;
+      }
+    </script>
+  </main>
+</body>
+</html>

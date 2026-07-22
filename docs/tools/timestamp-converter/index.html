@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/styles.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Timestamp Converter | Zion Tech Group Free Tools</title>
+  <meta name="description" content="Convert timestamps to human-readable dates. Free online tool by Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/timestamp-converter/" />
+</head>
+<body>
+  <main>
+    <h1>Timestamp Converter</h1>
+    <p>Convert Unix timestamp to human-readable date.</p>
+    <label>Timestamp: <input id="ts" type="number" value="1703145600" /></label>
+    <button onclick="convert()">Convert</button>
+    <pre id="out"></pre>
+    <p><a href="/tools/">Back to tools</a></p>
+    <script>
+      function convert(){
+        const ts = parseInt(document.getElementById('ts').value || '0', 10);
+        const d = new Date(ts * 1000);
+        document.getElementById('out').textContent = d.toISOString();
+      }
+    </script>
+  </main>
+</body>
+</html>

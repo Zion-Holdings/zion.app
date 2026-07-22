@@ -1,12 +1,12 @@
 {
-  "generated": "2026-07-22T15:17:27.045Z",
-  "count": 1614,
+  "generated": "2026-07-22T15:29:53.016Z",
+  "count": 1628,
   "categories": {
-    "ai": 660,
-    "security": 135,
+    "ai": 662,
+    "security": 138,
     "automation": 97,
-    "cloud": 130,
-    "data": 102,
+    "cloud": 133,
+    "data": 103,
     "it": 262,
     "micro-saas": 157,
     "it-services": 12,
@@ -20,7 +20,11 @@
     "construction-tech": 5,
     "energy-tech": 4,
     "logistics-tech": 4,
-    "cybersecurity": 4
+    "cybersecurity": 4,
+    "devops": 2,
+    "iot": 1,
+    "blockchain": 1,
+    "analytics": 1
   },
   "services": [
     {
@@ -394,6 +398,27 @@
         "Enterprise security out of the box"
       ],
       "href": "/services/ai-ad-copy-generator",
+      "source": "json"
+    },
+    {
+      "id": "ai-agent-development-platform",
+      "title": "AI Agent Development Platform",
+      "description": "Build, deploy, and manage autonomous AI agents with our full-stack development platform featuring visual workflows, multi-agent orchestration, and enterprise-grade monitoring.",
+      "category": "ai",
+      "basic": "",
+      "pro": "",
+      "enterprise": "",
+      "popular": true,
+      "features": [
+        "Visual agent builder with drag-and-drop workflows",
+        "Multi-agent orchestration and communication protocols",
+        "Real-time monitoring and debugging dashboard",
+        "Enterprise security with role-based access control",
+        "Integration with 100+ APIs and data sources",
+        "Automated testing and simulation environments"
+      ],
+      "benefits": [],
+      "href": "/services/ai-agent-development-platform",
       "source": "json"
     },
     {
@@ -1535,6 +1560,27 @@
         "Consistent documentation style"
       ],
       "href": "/services/ai-code-documentation-generator",
+      "source": "json"
+    },
+    {
+      "id": "ai-code-generation-platform",
+      "title": "AI Code Generation Platform",
+      "description": "Enterprise AI coding assistant with custom model fine-tuning, security scanning, and integration with IDEs and CI/CD pipelines.",
+      "category": "ai",
+      "basic": "",
+      "pro": "",
+      "enterprise": "",
+      "popular": true,
+      "features": [
+        "Custom model fine-tuning on private codebase",
+        "Security vulnerability scanning in real-time",
+        "IDE extensions (VS Code, JetBrains, Vim)",
+        "CI/CD integration for automated reviews",
+        "Code modernization and refactoring agents",
+        "Compliance and license checking"
+      ],
+      "benefits": [],
+      "href": "/services/ai-code-generation-platform",
       "source": "json"
     },
     {
@@ -9040,6 +9086,27 @@
       "source": "json"
     },
     {
+      "id": "ai-powered-security-operations",
+      "title": "AI-Powered Security Operations",
+      "description": "Next-generation SOC automation with AI-driven threat detection, automated incident response, and predictive security analytics.",
+      "category": "security",
+      "basic": "",
+      "pro": "",
+      "enterprise": "",
+      "popular": true,
+      "features": [
+        "ML-powered anomaly detection across logs and telemetry",
+        "Automated incident triage and enrichment",
+        "SOAR playbooks with adaptive response",
+        "Threat intelligence correlation and hunting",
+        "Compliance automation (SOC2, ISO27001, HIPAA)",
+        "Executive risk dashboards with business context"
+      ],
+      "benefits": [],
+      "href": "/services/ai-powered-security-operations",
+      "source": "json"
+    },
+    {
       "id": "ai-powered-seo-optimizer",
       "title": "AI-Powered SEO Content Optimizer",
       "description": "Real-time SEO analysis and content optimization: auto-suggest keywords, restructure sentences for readability, generate meta tags, and audit for E-E-A-T signals.",
@@ -13993,6 +14060,27 @@
       "source": "json"
     },
     {
+      "id": "api-management-platform",
+      "title": "API Management Platform",
+      "description": "Full lifecycle API management with gateway, developer portal, analytics, monetization, and governance for internal and external APIs.",
+      "category": "devops",
+      "basic": "",
+      "pro": "",
+      "enterprise": "",
+      "popular": false,
+      "features": [
+        "High-performance API gateway with rate limiting",
+        "Developer portal with interactive documentation",
+        "API analytics and usage quotas",
+        "Monetization with billing integration",
+        "GraphQL federation and REST management",
+        "Security policies (OAuth, mTLS, WAF)"
+      ],
+      "benefits": [],
+      "href": "/services/api-management-platform",
+      "source": "json"
+    },
+    {
       "id": "api-security-gateway",
       "title": "API Security & Threat Protection Gateway",
       "description": "Protect your APIs from attacks with AI-powered threat detection, bot management, and rate limiting. Includes OWASP API Top 10 protection and real-time analytics.",
@@ -14965,6 +15053,27 @@
       "source": "json"
     },
     {
+      "id": "blockchain-enterprise-solutions",
+      "title": "Blockchain Enterprise Solutions",
+      "description": "Permissioned blockchain platforms for supply chain, identity, and financial services with enterprise governance and compliance.",
+      "category": "blockchain",
+      "basic": "",
+      "pro": "",
+      "enterprise": "",
+      "popular": false,
+      "features": [
+        "Hyperledger Fabric and Besu deployment",
+        "Smart contract development and auditing",
+        "Tokenization platforms for assets",
+        "Decentralized identity (DID/VC) solutions",
+        "Cross-chain interoperability",
+        "Regulatory compliance frameworks"
+      ],
+      "benefits": [],
+      "href": "/services/blockchain-enterprise-solutions",
+      "source": "json"
+    },
+    {
       "id": "bpa-process-analysis",
       "title": "Business Process Analysis (BPA)",
       "description": "Process discovery + event log mining, variant discovery, bottleneck detection, automation opportunity scoring. Output: BPMN design + automation ROI per task.",
@@ -15820,6 +15929,27 @@
         "Enterprise-grade reliability"
       ],
       "href": "/services/cloud-finops-1",
+      "source": "json"
+    },
+    {
+      "id": "cloud-finops-automation",
+      "title": "Cloud FinOps Automation",
+      "description": "Automated financial operations for cloud infrastructure with real-time cost allocation, budget enforcement, and savings optimization across AWS, Azure, and GCP.",
+      "category": "cloud",
+      "basic": "",
+      "pro": "",
+      "enterprise": "",
+      "popular": true,
+      "features": [
+        "Real-time cost allocation and chargeback automation",
+        "Budget enforcement with automated alerts",
+        "Commitment optimization (RI, Savings Plans, CUDs)",
+        "Multi-cloud unified cost visibility",
+        "Anomaly detection with ML-powered forecasting",
+        "Executive dashboards with ROI tracking"
+      ],
+      "benefits": [],
+      "href": "/services/cloud-finops-automation",
       "source": "json"
     },
     {
@@ -17955,6 +18085,27 @@
       "source": "json"
     },
     {
+      "id": "data-platform-engineering",
+      "title": "Data Platform Engineering",
+      "description": "End-to-end data platform modernization with lakehouse architecture, real-time streaming, and self-service analytics enablement.",
+      "category": "data",
+      "basic": "",
+      "pro": "",
+      "enterprise": "",
+      "popular": false,
+      "features": [
+        "Lakehouse architecture (Delta Lake, Iceberg, Hudi)",
+        "Real-time streaming with Kafka/Flink",
+        "Self-service BI with governed data mesh",
+        "Data quality monitoring and observability",
+        "Feature store for ML workloads",
+        "Cost-optimized compute orchestration"
+      ],
+      "benefits": [],
+      "href": "/services/data-platform-engineering",
+      "source": "json"
+    },
+    {
       "id": "data-predictive-maintenance-timeseries",
       "title": "Predictive Maintenance (Time-Series)",
       "description": "Sensor TS ingestion, anomaly detection (IsolationForest/Prophet), failure-prediction XGBoost, and work-order auto-creation.",
@@ -18510,6 +18661,27 @@
       "source": "json"
     },
     {
+      "id": "devops-platform-engineering",
+      "title": "DevOps Platform Engineering",
+      "description": "Internal developer platform with golden paths, automated compliance, and self-service infrastructure for high-velocity engineering teams.",
+      "category": "devops",
+      "basic": "",
+      "pro": "",
+      "enterprise": "",
+      "popular": true,
+      "features": [
+        "Golden path templates for microservices",
+        "Policy-as-code with OPA/Gatekeeper",
+        "Self-service infrastructure via Backstage",
+        "GitOps deployment with ArgoCD/Flux",
+        "Developer experience metrics and optimization",
+        "Supply chain security (SLSA, Sigstore)"
+      ],
+      "benefits": [],
+      "href": "/services/devops-platform-engineering",
+      "source": "json"
+    },
+    {
       "id": "devsecops-pipeline",
       "title": "DevSecOps Pipeline Automation",
       "description": "Security-baked CI/CD pipeline: SAST, DAST, secrets scanning, container image signing, SBOM generation, and penetration-test gates. Enforces policy as code before every production deployment.",
@@ -18586,6 +18758,27 @@
       "source": "json"
     },
     {
+      "id": "digital-twin-platform",
+      "title": "Digital Twin Platform",
+      "description": "Industrial digital twin platform for manufacturing, energy, and infrastructure with real-time simulation and predictive analytics.",
+      "category": "iot",
+      "basic": "",
+      "pro": "",
+      "enterprise": "",
+      "popular": false,
+      "features": [
+        "High-fidelity physics-based simulation",
+        "Real-time IoT data ingestion at scale",
+        "Predictive maintenance with digital twins",
+        "Scenario planning and what-if analysis",
+        "Integration with historian systems (OSIsoft, Wonderware)",
+        "Edge computing for low-latency control"
+      ],
+      "benefits": [],
+      "href": "/services/digital-twin-platform",
+      "source": "json"
+    },
+    {
       "id": "digital-workplace",
       "title": "Digital Workplace Solutions",
       "description": "Modern workplace technology stack with collaboration tools, secure remote access, AI assistants, and unified communications for distributed teams.",
@@ -18606,6 +18799,27 @@
         "Enterprise-grade reliability"
       ],
       "href": "/services/digital-workplace",
+      "source": "json"
+    },
+    {
+      "id": "disaster-recovery-automation",
+      "title": "Disaster Recovery Automation",
+      "description": "Automated disaster recovery with RPO/RTO guarantees, chaos engineering integration, and compliance-ready recovery testing.",
+      "category": "cloud",
+      "basic": "",
+      "pro": "",
+      "enterprise": "",
+      "popular": false,
+      "features": [
+        "Automated failover with health checks",
+        "RPO/RTO measurement and reporting",
+        "Chaos engineering integration (Litmus, Chaos Mesh)",
+        "Compliance-ready recovery documentation",
+        "Cross-region and cross-cloud replication",
+        "Automated recovery testing schedules"
+      ],
+      "benefits": [],
+      "href": "/services/disaster-recovery-automation",
       "source": "json"
     },
     {
@@ -25541,6 +25755,27 @@
       "source": "json"
     },
     {
+      "id": "kubernetes-cost-optimization",
+      "title": "Kubernetes Cost Optimization",
+      "description": "Specialized cost optimization for Kubernetes clusters across EKS, AKS, GKE, and on-premise with pod-level resource rightsizing and cluster autoscaling.",
+      "category": "cloud",
+      "basic": "",
+      "pro": "",
+      "enterprise": "",
+      "popular": false,
+      "features": [
+        "Pod-level resource rightsizing recommendations",
+        "Cluster autoscaling optimization",
+        "Namespace-level cost allocation and showback",
+        "Spot instance integration for batch workloads",
+        "HPA/VPA tuning for cost efficiency",
+        "Multi-cluster cost governance"
+      ],
+      "benefits": [],
+      "href": "/services/kubernetes-cost-optimization",
+      "source": "json"
+    },
+    {
       "id": "kubernetes-management",
       "title": "Container Orchestration & Kubernetes Management",
       "description": "Expert Kubernetes deployment, scaling, monitoring, and optimization for containerized applications with GitOps-driven workflows.",
@@ -30557,6 +30792,27 @@
       "source": "json"
     },
     {
+      "id": "quantum-ready-cryptography",
+      "title": "Quantum-Ready Cryptography",
+      "description": "Post-quantum cryptography migration with hybrid algorithms, crypto-agility frameworks, and NIST-standardized algorithms.",
+      "category": "security",
+      "basic": "",
+      "pro": "",
+      "enterprise": "",
+      "popular": false,
+      "features": [
+        "Hybrid classical/post-quantum TLS",
+        "Crypto-agility framework for algorithm rotation",
+        "NIST PQC standards (Kyber, Dilithium, SPHINCS+)",
+        "HSM integration for key management",
+        "Certificate lifecycle automation",
+        "Compliance with CNSA 2.0 / CNSA 2.1"
+      ],
+      "benefits": [],
+      "href": "/services/quantum-ready-cryptography",
+      "source": "json"
+    },
+    {
       "id": "quantum-ready-security",
       "title": "Quantum-Ready Cryptography & Security Assessment",
       "description": "Prepare for the post-quantum era: assess cryptographic exposure, migrate to quantum-resistant algorithms (PQC), and implement hybrid security solutions.",
@@ -32394,6 +32650,27 @@
         "Enterprise-grade reliability"
       ],
       "href": "/services/supply-chain-visibility",
+      "source": "json"
+    },
+    {
+      "id": "sustainability-carbon-accounting",
+      "title": "Sustainability & Carbon Accounting",
+      "description": "Enterprise carbon accounting platform with Scope 1/2/3 emissions tracking, science-based targets, and automated ESG reporting.",
+      "category": "analytics",
+      "basic": "",
+      "pro": "",
+      "enterprise": "",
+      "popular": false,
+      "features": [
+        "Scope 1/2/3 emissions calculation engine",
+        "Science-based target setting and tracking",
+        "Automated ESG report generation (GRI, SASB, TCFD)",
+        "Supplier emissions data collection portal",
+        "Renewable energy certificate management",
+        "Carbon offset marketplace integration"
+      ],
+      "benefits": [],
+      "href": "/services/sustainability-carbon-accounting",
       "source": "json"
     },
     {
@@ -42023,6 +42300,27 @@
         "Enterprise-grade reliability"
       ],
       "href": "/services/zero-trust-network-access",
+      "source": "json"
+    },
+    {
+      "id": "zero-trust-network-architecture",
+      "title": "Zero Trust Network Architecture",
+      "description": "Complete zero trust implementation with identity-aware access, micro-segmentation, and continuous verification for hybrid environments.",
+      "category": "security",
+      "basic": "",
+      "pro": "",
+      "enterprise": "",
+      "popular": false,
+      "features": [
+        "Identity-aware proxy and access controls",
+        "Micro-segmentation with service mesh",
+        "Continuous authentication and authorization",
+        "Device trust and posture assessment",
+        "Encrypted traffic inspection at scale",
+        "Policy-as-code for network segmentation"
+      ],
+      "benefits": [],
+      "href": "/services/zero-trust-network-architecture",
       "source": "json"
     }
   ]

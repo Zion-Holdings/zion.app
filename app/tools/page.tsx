@@ -6,11 +6,8 @@ export const metadata = {
 };
 
 const tools = [
-  { id: 'json-formatter', icon: '📋', title: 'JSON Formatter & Validator', desc: 'Format, validate, and prettify JSON with syntax highlighting', category: 'Data' },
-  { id: 'json-to-csv-converter', icon: '🔄', title: 'JSON to CSV Converter', desc: 'Convert JSON arrays to CSV and vice versa', category: 'Data' },
-  { id: 'json-schema-generator', icon: '📐', title: 'JSON Schema Generator', desc: 'Auto-generate JSON Schema from sample JSON data', category: 'Data' },
-  { id: 'json-diff-viewer', icon: '⚖️', title: 'JSON Diff Viewer', desc: 'Compare two JSON documents and highlight differences', category: 'Data' },
   { id: 'yaml-json-converter', icon: '🔁', title: 'YAML ⇄ JSON Converter', desc: 'Convert between YAML and JSON formats instantly', category: 'Data' },
+  { id: 'json-schema-generator', icon: '📐', title: 'JSON Schema Generator', desc: 'Auto-generate JSON Schema from sample JSON data', category: 'Data' },
   { id: 'xml-formatter-validator', icon: '📄', title: 'XML Formatter & Validator', desc: 'Format, validate, and minify XML documents', category: 'Data' },
   { id: 'css-gradient-generator', icon: '🌈', title: 'CSS Gradient Generator', desc: 'Visual CSS gradient builder with live preview', category: 'CSS' },
   { id: 'css-minifier-beautifier', icon: '🎨', title: 'CSS Minifier & Beautifier', desc: 'Minify CSS for production or beautify for development', category: 'CSS' },
@@ -35,6 +32,7 @@ const tools = [
   { id: 'uuid-generator', icon: '🆔', title: 'UUID/GUID Generator', desc: 'Generate RFC 4122 compliant UUIDs (v1, v4, v5)', category: 'Utilities' },
   { id: 'lorem-ipsum-generator', icon: '📃', title: 'Lorem Ipsum Generator', desc: 'Generate placeholder text for designs and mockups', category: 'Text' },
   { id: 'word-counter', icon: '🔢', title: 'Word & Character Counter', desc: 'Count words, characters, sentences, and paragraphs', category: 'Text' },
+  { id: 'ai-support-ticket-classifier', icon: '🎫', title: 'AI Support Ticket Classifier', desc: 'Classify support tickets by priority, category, and owning team', category: 'Support' },
   { id: 'string-case-converter', icon: '🔤', title: 'String Case Converter', desc: 'Convert between camelCase, snake_case, kebab-case, and more', category: 'Text' },
   { id: 'markdown-preview', icon: '📖', title: 'Markdown Preview', desc: 'Live markdown preview with GitHub Flavored Markdown', category: 'Text' },
   { id: 'cron-expression-explainer', icon: '⏱️', title: 'Cron Expression Explainer', desc: 'Parse and explain cron expressions in plain English', category: 'Utilities' },

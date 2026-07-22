@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/styles.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure Hash Generator | Zion Tech Group Free Tools</title>
+  <meta name="description" content="Generate SHA-256 hashes instantly. Free online tool by Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/secure-hash-generator/" />
+</head>
+<body>
+  <main>
+    <h1>Secure Hash Generator</h1>
+    <textarea id="text" rows="6" cols="80"></textarea>
+    <button onclick="hash()">SHA-256</button>
+    <pre id="out"></pre>
+    <p><a href="/tools/">Back to tools</a></p>
+    <script>
+      async function hash(){
+        const data = new TextEncoder().encode(document.getElementById('text').value);
+        const hash = await crypto.subtle.digest('SHA-256', data);
+        const out = Array.from(new Uint8Array(hash)).map(b => b.toString(16).padStart(2,'0')).join('');
+        document.getElementById('out').textContent = out;
+      }
+    </script>
+  </main>
+</body>
+</html>

@@ -74,14 +74,11 @@ FORBIDDEN_ADDR_PREFIXES = (
 FORBIDDEN_DOMAIN_SUBSTRINGS = (
     'servi.co','servi.io','servi.ai','manag.co','manag.io','manag.ai','manag.br','manag.com',
     'legalys.com.pa','start.co','start.com','github.com','hcl.com','zendesk.com','calendly.com',
-    'datadog','mercadobitcoin','suzano.com.br','airbnb.com','booking.com','vrbo.com','expedia.com',
+    'datadog','mercadobitcoin','suzano.com.br',
 )
 MAX_AGE_DAYS = 180
 DEDUP_COOLDOWN_SECONDS = 24 * 3600  # 24 hours
 SEND_REQUIRES_ALIVE_THREAD = True
-CONTINUOUS_IMPROVEMENT_FILE = BASE_DIR / 'outreach_monitor' / 'processed' / 'continuous_improvement_metrics.jsonl'
-MAX_DISCOVERY_QUERIES = 12
-HIGH_FREQUENCY_MIN_INTERVAL_SECONDS = 30
 LLM_TAILOR_ENABLED = bool(
     (os.getenv('ZION_LLM_API_ENDPOINT') and os.getenv('ZION_LLM_API_KEY') and os.getenv('ZION_LLM_MODEL')) or
     os.getenv('OPENROUTER_API_KEY') or
@@ -114,30 +111,8 @@ try:
         if LLM_API_ENDPOINT and LLM_API_KEY and LLM_MODEL:
             LLM_TAILOR_ENABLED = True
 except Exception:
-    LLM_FALLBACK_MODELS = [m.strip() for m in os.getenv('ZION_LLM_FALLBACK_MODELS', '').split(',') if m.strip()]
-    # Record partial LLM configuration for monitoring/debugging.
-    try:
-        _partial_llm_env = sorted({k for k in os.environ if k in {
-            'ZION_LLM_API_ENDPOINT','ZION_LLM_API_KEY','ZION_LLM_MODEL',
-            'OPENROUTER_API_KEY','OPENROUTER_MODEL','GROQ_API_KEY','GROQ_MODEL',
-            'GEMINI_API_KEY','GEMINI_MODEL','LLM_API_ENDPOINT','LLM_API_KEY','LLM_MODEL'}})
-        if _partial_llm_env and not LLM_TAILOR_ENABLED:
-            _ci_entry = {
-                'ts': int(time.time()),
-                'event': 'partial_llm_env_detected',
-                'env_vars': _partial_llm_env,
-                'llm_tailor_enabled': False,
-                'endpoint': bool(LLM_API_ENDPOINT),
-                'key': bool(LLM_API_KEY),
-                'model': bool(LLM_MODEL),
-                'detail': 'LLM tailoring blocked because not all required values are configured.'
-            }
-            CONTINUOUS_IMPROVEMENT_FILE.parent.mkdir(parents=True, exist_ok=True)
-            with CONTINUOUS_IMPROVEMENT_FILE.open('a', encoding='utf-8') as _f:
-                _f.write(json.dumps(_ci_entry, ensure_ascii=False) + '\n')
-    except Exception:
-        pass
-
+    pass
+LLM_FALLBACK_MODELS = [m.strip() for m in os.getenv('ZION_LLM_FALLBACK_MODELS', '').split(',') if m.strip()]
 
 def load_state():
     if STATE_FILE.exists():
@@ -168,7 +143,7 @@ def is_bouncing_domain(addr: str) -> bool:
     if any(addr.endswith(d) for d in ('.servi.io','.servi.ai','.servi.com','.servi.co','.manag.co','.manag.io','.manag.ai','.manag.br','.manag.com','legalys.com.pa','start.co','start.com')):
         return True
     local = addr.split('@', 1)[-1]
-    for bad in ('servi','manag','legalys.com.pa','start.co','start.com','github.com','hcl.com','zendesk.com','calendly.com','datadog','mercadobitcoin','suzano.com.br','airbnb.com','booking.com','vrbo.com','expedia.com'):
+    for bad in ('servi','manag','legalys.com.pa','start.co','start.com','github.com','hcl.com','zendesk.com','calendly.com','datadog','mercadobitcoin','suzano.com.br'):
         if bad in local:
             return True
     return False
@@ -563,46 +538,21 @@ def _call_nous_hermes(thread_text: str, contact_name: str, company_name: str, la
         import os as _os
         url = ''
         token = ''
-        model = ''
-        provider = ''
-        # 1) Explicit Zion LLM config
-        if _os.environ.get('ZION_LLM_API_ENDPOINT') and _os.environ.get('ZION_LLM_API_KEY') and _os.environ.get('ZION_LLM_MODEL'):
-            url = _os.environ['ZION_LLM_API_ENDPOINT'].rstrip('/')
-            token = _os.environ['ZION_LLM_API_KEY']
-            model = _os.environ['ZION_LLM_MODEL']
-            provider = 'zion'
-        # 2) OpenRouter
-        elif _os.environ.get('OPENROUTER_API_KEY') and (_os.environ.get('OPENROUTER_MODEL') or _os.environ.get('ZION_LLM_MODEL')):
-            token = _os.environ['OPENROUTER_API_KEY']
-            url = 'https://openrouter.ai/api/v1'
-            model = _os.environ.get('OPENROUTER_MODEL') or _os.environ.get('ZION_LLM_MODEL')
-            provider = 'openrouter'
-        # 3) Groq
-        elif _os.environ.get('GROQ_API_KEY') and (_os.environ.get('GROQ_MODEL') or _os.environ.get('ZION_LLM_MODEL')):
-            token = _os.environ['GROQ_API_KEY']
-            url = 'https://api.groq.com/openai/v1'
-            model = _os.environ.get('GROQ_MODEL') or _os.environ.get('ZION_LLM_MODEL')
-            provider = 'groq'
-        # 4) Hermes fallback auth
-        if not url or not token:
-            try:
-                _url, _token = _url_and_token_from_auth()
-                url = url or _url
-                token = token or _token
-                provider = provider or 'hermes-auth'
-            except Exception:
-                pass
-        # 5) Legacy Nous defaults
+        model = _os.environ.get('HERMES_LLM_MODEL') or _os.environ.get('ZION_LLM_MODEL') or 'stepfun/step-3.7-flash:free'
+        try:
+            _url, _token = _url_and_token_from_auth()
+            url = url or _url
+            token = token or _token
+        except Exception:
+            pass
         if not url:
             url = _os.environ.get('NOUS_BASE_URL', 'https://inference-api.nousresearch.com/v1').rstrip('/')
         if not token:
             token = _os.environ.get('NOUS_TOKEN') or _os.environ.get('HERMES_LLM_TOKEN') or ''
-        if not model:
-            model = _os.environ.get('HERMES_LLM_MODEL') or _os.environ.get('ZION_LLM_MODEL') or 'stepfun/step-3.7-flash:free'
         if not token or not url:
             return ''
         chat_url = url.rstrip('/') + '/chat/completions'
-        print(f'LLM_ACTIVATED provider={provider} model={model} endpoint={chat_url}', flush=True)
+        print('NOUS_CALL', chat_url, 'model=', model, 'token_prefix=', token[:8], flush=True)
         trimmed = (thread_text or '').strip()[:2400]
         prompt = (
             f"You are the CEO of Zion Tech Group writing in {language} to {contact_name} at {company_name}.\n\n"

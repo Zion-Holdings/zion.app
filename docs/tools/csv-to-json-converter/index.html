@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/styles.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CSV to JSON Converter | Zion Tech Group Free Tools</title>
+  <meta name="description" content="Convert CSV to JSON instantly. Free online tool by Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/csv-to-json-converter/" />
+</head>
+<body>
+  <main>
+    <h1>CSV to JSON Converter</h1>
+    <p>Paste CSV below and get JSON output instantly.</p>
+    <textarea id="csv" rows="10" cols="80"></textarea>
+    <button onclick="convert()">Convert to JSON</button>
+    <pre id="json"></pre>
+    <p><a href="/tools/">Back to tools</a></p>
+    <script>
+      function convert(){
+        try {
+          const text = document.getElementById('csv').value.trim();
+          if (!text) return;
+          const lines = text.split(/\r?\n/).filter(l => l.trim());
+          if (!lines.length) return;
+          const headers = lines[0].split(',').map(h => h.trim());
+          const out = [];
+          for (let i=1;i<lines.length;i++){
+            const cols = lines[i].split(',');
+            const row = {};
+            headers.forEach((h, idx) => row[h] = (cols[idx] || '').trim());
+            out.push(row);
+          }
+          document.getElementById('json').textContent = JSON.stringify(out, null, 2);
+        } catch (e) {
+          document.getElementById('json').textContent = 'Error: ' + e.message;
+        }
+      }
+    </script>
+  </main>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/styles.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Regex Tester | Zion Tech Group Free Tools</title>
+  <meta name="description" content="Test regular expressions instantly. Free online tool by Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/regex-tester/" />
+</head>
+<body>
+  <main>
+    <h1>Regex Tester</h1>
+    <p>Test a regular expression against sample text.</p>
+    <label>Regex: <input id="pattern" type="text" size="40" value="\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b" /></label><br />
+    <label>Text: <textarea id="text" rows="6" cols="80">Test emails: alice@example.com and bob@work.io</textarea></label>
+    <button onclick="test()">Test</button>
+    <pre id="out"></pre>
+    <p><a href="/tools/">Back to tools</a></p>
+    <script>
+      function test(){
+        try {
+          const pattern = new RegExp(document.getElementById('pattern').value, 'g');
+          const text = document.getElementById('text').value;
+          const matches = text.match(pattern) || [];
+          document.getElementById('out').textContent = matches.length
+            ? 'Matches:\n' + matches.map((m,i)=>`${i+1}. ${m}`).join('\n')
+            : 'No matches';
+        } catch (e) {
+          document.getElementById('out').textContent = 'Error: ' + e.message;
+        }
+      }
+    </script>
+  </main>
+</body>
+</html>

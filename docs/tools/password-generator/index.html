@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/styles.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Password Generator | Zion Tech Group Free Tools</title>
+  <meta name="description" content="Generate secure passwords instantly. Free online tool by Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/password-generator/" />
+</head>
+<body>
+  <main>
+    <h1>Password Generator</h1>
+    <p>Generate secure random passwords.</p>
+    <label>Length: <input id="len" type="number" min="8" max="64" value="16" /></label>
+    <button onclick="gen()">Generate</button>
+    <pre id="out"></pre>
+    <p><a href="/tools/">Back to tools</a></p>
+    <script>
+      function gen(){
+        const len = Math.max(8, Math.min(64, parseInt(document.getElementById('len').value || '16', 10)));
+        const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+-=[]{}|;:,.<>?';
+        const bytes = crypto.getRandomValues(new Uint8Array(len));
+        const out = Array.from(bytes).map(b => charset[b % charset.length]).join('');
+        document.getElementById('out').textContent = out;
+      }
+    </script>
+  </main>
+</body>
+</html>

@@ -1,0 +1,5 @@
+[FALLBACK] 2027-07-18T10:37:00Z — Gmail auth blocked: invalid_grant
+
+Manual unblock: gog auth add kleber@ziontechgroup.com --services gmail
+
+No threads scanned. No emails sent. Draft kept here for retry.

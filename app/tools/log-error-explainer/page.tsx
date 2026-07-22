@@ -3,94 +3,76 @@
 import { useState } from 'react';
 
 export default function LogErrorExplainerTool() {
-  const [logInput, setLogInput] = useState('');
-  const [result, setResult] = useState('');
+  const [input, setInput] = useState('');
+  const [output, setOutput] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const handleExplain = async () => {
-    if (!logInput.trim()) return;
+  const explain = () => {
     setLoading(true);
-    setResult('Analyzing log entry...');
-    
-    await new Promise(r => setTimeout(r, 1200));
-    
-    // Simulate intelligent log analysis
-    const analyses = [
-      { level: 'ERROR', component: 'payment-service', message: 'Connection timeout to stripe.api after 30s', rootCause: 'Network partition or Stripe API degradation', action: 'Check Stripe status page; implement circuit breaker; add retry with exponential backoff' },
-      { level: 'WARN', component: 'redis-cluster', message: 'High memory usage: 89% (maxmemory 2GB)', rootCause: 'Memory leak in session cache or missing TTL on keys', action: 'Run MEMORY DOCTOR; add TTL to session keys; consider maxmemory-policy allkeys-lru' },
-      { level: 'ERROR', component: 'k8s-pod', message: 'OOMKilled: Container exceeded memory limit', rootCause: 'Memory limit too low or application memory leak', action: 'Increase memory limit; profile heap usage; check for unbounded caches' },
-    ];
-    
-    setResult(analyses.map(a => 
-      `[${a.level}] ${a.component}\n${a.message}\n\n🔍 Root Cause: ${a.rootCause}\n✅ Recommended Action: ${a.action}`
-    ).join('\n\n---\n\n'));
-    setLoading(false);
+    setOutput('');
+    setTimeout(() => {
+      const text = input.trim();
+      if (!text) {
+        setOutput('Paste an error or log to analyze.');
+        setLoading(false);
+        return;
+      }
+      const lines = text.split('\n').slice(0, 20);
+      const summary = lines.map((line, idx) => {
+        const trimmed = line.trim();
+        if (!trimmed) return null;
+        if (/^ERROR/i.test(trimmed)) return `${idx + 1}. ERROR-level message: ${trimmed}`;
+        if (/^WARN/i.test(trimmed)) return `${idx + 1}. WARNING: ${trimmed}`;
+        if (/^\s+at\s+/.test(trimmed)) return `${idx + 1}. Stack frame: ${trimmed.trim()}`;
+        if (/TypeError|ReferenceError|RangeError|SyntaxError|EvalError|InternalError/.test(trimmed)) return `${idx + 1}. JavaScript exception detected: ${trimmed}`;
+        if (/Traceback|Error:|Exception/.test(trimmed)) return `${idx + 1}. Runtime exception detected: ${trimmed}`;
+        return `${idx + 1}. ${trimmed}`;
+      }).filter(Boolean).join('\n');
+
+      const tips = [
+        'Check the first frame in the stack trace — it usually points to the root cause.',
+        'If the error repeats, compare timestamps with deployments or dependency changes.',
+        'Search the exact error string with the project name; often a known issue.',
+        'Prefer reproducing in dev with breakpoints instead of adding print/log spam.'
+      ].join('\n');
+
+      setOutput(`## Analysis\n${summary || 'No recognizable patterns found.'}\n\n## Suggested Next Steps\n${tips}`);
+      setLoading(false);
+    }, 600);
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-white p-8">
-      <div className="mx-auto max-w-4xl">
-        <Link href="/free-tools" className="mb-6 inline-flex items-center gap-2 text-slate-400 hover:text-white">
+    <main className="min-h-screen bg-slate-950 text-white p-6">
+      <div className="mx-auto max-w-5xl">
+        <a href="/tools" className="mb-6 inline-flex items-center gap-2 text-slate-400 hover:text-white">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
-          Back to Free Tools
-        </Link>
-        <h1 className="mb-2 text-3xl font-bold">Log Error Explainer</h1>
-        <p className="mb-8 text-slate-400">Paste any log line (syslog, journald, k8s, Docker, JSON, plain text) for root-cause analysis and remediation steps.</p>
-        
-        <div className="grid gap-6 lg:grid-cols-2">
+          Back to Tools
+        </a>
+        <h1 className="text-3xl font-bold mb-2">Log Error Explainer</h1>
+        <p className="text-slate-400 mb-6">Paste a stack trace or error log for a plain-English breakdown.</p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div>
-            <label className="mb-2 block text-sm font-medium">Log Entry</label>
+            <label className="block text-sm font-medium text-slate-300 mb-2">Error / Log</label>
             <textarea
-              value={logInput}
-              onChange={e => setLogInput(e.target.value)}
-              placeholder="2024-01-15T10:23:45.123Z ERROR payment-service Connection timeout to stripe.api after 30000ms"
-              className="w-full min-h-[300px] rounded-lg border border-slate-700 bg-slate-900 px-4 py-3 font-mono text-sm text-white focus:border-purple-500 focus:outline-none placeholder-slate-600"
-              spellCheck={false}
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder={"ERROR: Cannot read property 'id' of undefined\n    at UserService.find (src/services/user.ts:45:22)\n    at async ..."}
+              className="w-full h-72 rounded-xl border border-slate-700 bg-slate-900 p-4 text-sm font-mono text-slate-100 focus:border-purple-500 focus:outline-none"
             />
-            <div className="mt-2 flex gap-2 text-xs text-slate-500">
-              <span>Supports: syslog, RFC5424, JSON, k8s, Docker, CloudWatch, Datadog, plain text</span>
-            </div>
-            
-            <button
-              onClick={handleExplain}
-              disabled={loading || !logInput.trim()}
-              className="mt-4 w-full rounded-xl bg-purple-600 px-6 py-3 font-semibold text-white hover:bg-purple-500 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
-            >
-              {loading ? 'Analyzing...' : 'Explain Error'}
+            <button onClick={explain} disabled={loading} className="mt-3 rounded-xl bg-purple-600 px-4 py-2 text-sm font-semibold hover:bg-purple-500 disabled:opacity-50">
+              {loading ? 'Analyzing...' : 'Explain'}
             </button>
           </div>
-          
+
           <div>
-            <label className="mb-2 block text-sm font-medium">Analysis</label>
-            <div className="rounded-lg border border-slate-800 bg-slate-900 p-4 font-mono text-sm text-slate-200 min-h-[300px] whitespace-pre-wrap">
-              {result || 'Paste a log entry and click "Explain Error" for AI-powered root cause analysis and remediation steps.'}
+            <label className="block text-sm font-medium text-slate-300 mb-2">Explanation</label>
+            <div className="w-full h-72 overflow-auto rounded-xl border border-slate-700 bg-slate-900 p-4 text-sm font-mono whitespace-pre-wrap text-slate-200">
+              {output || 'Output will appear here'}
             </div>
-            
-            {result && (
-              <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                <div className="rounded-lg bg-red-500/10 p-4 border border-red-500/20">
-                  <h4 className="mb-2 font-semibold text-red-400">Immediate Actions</h4>
-                  <ul className="space-y-1 text-sm text-slate-300">
-                    <li>• Check dependent service status pages</li>
-                    <li>• Verify network connectivity and DNS</li>
-                    <li>• Review recent deployments for regressions</li>
-                  </ul>
-                </div>
-                <div className="rounded-lg bg-emerald-500/10 p-4 border border-emerald-500/20">
-                  <h4 className="mb-2 font-semibold text-emerald-400">Preventive Measures</h4>
-                  <ul className="space-y-1 text-sm text-slate-300">
-                    <li>• Implement circuit breakers and retries</li>
-                    <li>• Add distributed tracing (OpenTelemetry)</li>
-                    <li>• Set up alerting on error rate thresholds</li>
-                  </ul>
-                </div>
-              </div>
-            )}
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 }
-
-import Link from 'next/link';

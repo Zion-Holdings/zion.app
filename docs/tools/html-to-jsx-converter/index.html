@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/styles.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HTML to JSX Converter | Zion Tech Group Free Tools</title>
+  <meta name="description" content="Convert HTML to JSX markup instantly. Free online tool by Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/html-to-jsx-converter/" />
+</head>
+<body>
+  <main>
+    <h1>HTML to JSX Converter</h1>
+    <textarea id="html" rows="10" cols="80"></textarea>
+    <button onclick="convert()">Convert to JSX</button>
+    <pre id="jsx"></pre>
+    <p><a href="/tools/">Back to tools</a></p>
+    <script>
+      function convert(){
+        const text = document.getElementById('html').value;
+        const out = text
+          .replace(/class=/g, 'className=')
+          .replace(/for=/g, 'htmlFor=')
+          .replace(/\b(\w+)=/g, (_, n)=> ' ' + n + '=');
+        document.getElementById('jsx').textContent = out;
+      }
+    </script>
+  </main>
+</body>
+</html>

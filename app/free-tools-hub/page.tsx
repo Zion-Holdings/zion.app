@@ -11,10 +11,7 @@ export default function FreeToolsHubPage() {
       title: 'JSON & Data',
       emoji: '📊',
       tools: [
-        { name: 'JSON Formatter & Validator', href: '/tools/json-formatter', desc: 'Format, validate, and beautify JSON' },
-        { name: 'JSON to CSV Converter', href: '/tools/json-to-csv-converter', desc: 'Convert JSON arrays to CSV' },
         { name: 'JSON Schema Generator', href: '/tools/json-schema-generator', desc: 'Generate JSON Schema from sample data' },
-        { name: 'JSON Diff Viewer', href: '/tools/json-diff-viewer', desc: 'Compare two JSON documents' },
         { name: 'YAML to JSON', href: '/tools/yaml-json-converter', desc: 'Convert YAML to JSON and back' },
         { name: 'XML Formatter', href: '/tools/xml-formatter-validator', desc: 'Format and validate XML' },
       ],

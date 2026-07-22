@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="/styles.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR Code Generator | Zion Tech Group Free Tools</title>
+  <meta name="description" content="Generate QR codes instantly. Free online tool by Zion Tech Group." />
+  <link rel="canonical" href="https://ziontechgroup.com/tools/qr-code-generator/" />
+</head>
+<body>
+  <main>
+    <h1>QR Code Generator</h1>
+    <label>Text/URL: <input id="text" type="text" size="60" value="https://ziontechgroup.com" /></label>
+    <button onclick="generate()">Generate</button>
+    <pre id="out"></pre>
+    <p><a href="/tools/">Back to tools</a></p>
+    <script>
+      function generate(){
+        const text = document.getElementById('text').value.trim();
+        if (!text) return;
+        const url = 'https://api.qrserver.com/v1/create-qr-code/?size=' + encodeURIComponent('150x150') + '&data=' + encodeURIComponent(text);
+        document.getElementById('out').textContent = 'QR Code Image URL:\n' + url + '\n\n<img src="' + url + '" alt="QR Code" />';
+      }
+    </script>
+  </main>
+</body>
+</html>
