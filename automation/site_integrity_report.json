@@ -1,6 +1,8 @@
 {
-  "total_crawled": 189,
-  "http_200": 189,
+  "total_crawled": 15,
+  "http_200": 15,
   "broken_count": 0,
-  "broken": []
+  "broken": [],
+  "unique_pages": 14,
+  "note": "https://ziontechgroup.com/ was fetched twice; once as initial seed (no trailing slash) and once via self-link. Counts above reflect raw fetches; 14 unique pages all returned HTTP 200."
 }

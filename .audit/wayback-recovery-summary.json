@@ -1,0 +1,2253 @@
+{
+  "candidates": 447,
+  "recovered": 2,
+  "missing_no_snapshot": 2,
+  "errors": 443,
+  "recovered_list": [
+    {
+      "candidate": "https://ziontechgroup.com/5g-solutions",
+      "status": "recovered",
+      "snapshot_ts": "20260418021251",
+      "snapshot_url": "https://web.archive.org/web/20260418021251/https://ziontechgroup.com/5g-solutions",
+      "local_path": ".audit/wayback-recovered/5g-solutions.html",
+      "bytes": 100253
+    },
+    {
+      "candidate": "https://ziontechgroup.com",
+      "status": "recovered",
+      "snapshot_ts": "20081212105436",
+      "snapshot_url": "https://web.archive.org/web/20081212105436/https://ziontechgroup.com",
+      "local_path": ".audit/wayback-recovered/.html",
+      "bytes": 13402
+    }
+  ],
+  "missing_list": [
+    {
+      "candidate": "https://ziontechgroup.com/academy",
+      "status": "missing",
+      "error": "no_200_snapshot"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/ai-chatbot-builder",
+      "status": "missing",
+      "error": "no_200_snapshot"
+    }
+  ],
+  "error_list": [
+    {
+      "candidate": "https://ziontechgroup.com/agents",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/about",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/ai",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/ai-claims-automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/404",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/ai-customer-support-pro",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/agents-monitoring",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/ai-powered-devops",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/ai-powered-email-analyzer",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/ai-predictive-analytics",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/ai-predictive-maintenance",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/ai-price-optimizer",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/ai-recommendation-engine",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/ai-route-optimizer",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/ai-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/ai-smart-inventory",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/ai-smart-invoice",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/ai-stock-portfolio-manager",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/ai-supply-chain",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/ai-medical-diagnosis-assistant",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/ai-workflow-automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/analytics",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/api-development",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/api-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/automation-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blockchain-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blockchain-solutions",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/business-intelligence",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/careers",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/case-studies",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/changelog",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/client-portal",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/cloud-infrastructure",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/cloud-infrastructure-management",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/cloud-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/cms-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/collaboration-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/community",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/compliance-automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/computer-vision",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/configurator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/consultation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/consulting",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/contact",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/cookie-policy",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/cookies",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/custom-development",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/cybersecurity",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/dashboard",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/data-analytics",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/data-analytics-bi",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/data-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/database-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/devops-automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/devops-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/devsecops-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/digital-transformation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/ai-fraud-detection",
+      "status": "error",
+      "error": "download_failed:<urlopen error [Errno 61] Connection refused>"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/digital-twin-platform",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/docs",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/ecommerce-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/edtech-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/email-automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/email-intelligence",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/enterprise-security",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/fintech-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/free-resources",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/free-tools-hub",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/health-dashboard",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/healthcare-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/help",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/iac-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/identity-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/industries",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/industry-solutions",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/faq",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/innovation-bundles",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/iot-edge",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/iot-platform",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/iot-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/it-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/leads",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/low-code-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/marketing-automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/media-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/micro-saas",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/micro-saas-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/mobile-app-development",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/mobile-development",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/monitoring",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/newsletter",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/observability-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/online-learning-platform",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/partners",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/payment-cancelled",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/payment-success",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/portal",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/press",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/pricing",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/pricing-calculator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/privacy",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/process-automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/ai-customer-360",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/products",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/property-management-ai",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/proposal-generator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/proposals",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/robotic-process-automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/roi-calculator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/search",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/security-automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/search-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/security-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/service-comparison",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services-explorer",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/site-map",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/sla",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/smart-inventory",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/solutions",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/status",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/streaming-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/system-integration",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/supply-chain-optimizer",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/telemedicine",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/terms",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/testimonials",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/training",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/workflow-automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-approval-workflow",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-api-tester",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-brand-monitor",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-capacity-planner",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-chatbot-analytics",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-chatbot-builder",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-code-assistant",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-code-reviewer",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-compliance-checker",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-conversation-analytics",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-contract-lifecycle",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-cost-optimizer",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-customer-360",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-customer-success",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-customer-feedback",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-customer-support-pro",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-cyber-threat-intel",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-database-optimizer",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-data-governance",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-demand-forecasting",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-document-classifier",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-employee-experience",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-email-marketing-pro",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-expense-tracker",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-field-service-manager",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-fraud-detection",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-help-desk",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-incident-predictor",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-incident-response",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-inventory-planner",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-knowledge-base",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-knowledge-management",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/ai-ml-platform",
+      "status": "error",
+      "error": "download_failed:<urlopen error [Errno 61] Connection refused>"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-lead-enrichment",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-lead-scoring",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-marketing-automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-market-intelligence",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-meeting-assistant",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-predictive-analytics",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-pricing-intelligence",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-project-portfolio",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-procurement-automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-quality-assurance",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-quality-insights",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-report-generator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-revenue-forecaster",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-resource-scheduler",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-risk-assessor",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-schedule-optimizer",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-seo-optimizer",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-spend-intelligence",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-social-media-manager",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-supplier-risk",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-supply-visibility",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-sustainability-tracker",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-talent-acquisition",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-vendor-manager",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-vendor-risk-analytics",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-voice-assistant",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-workflow-automator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-workflow-automator-pro",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-workflow-orchestrator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-ai-workforce-analytics",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-analytics-pro",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-cloud-vault",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-content-studio",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-crm-intelligence",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-data-sync",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-devops-automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-email-automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-invoice-genius",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-lead-magnet",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-performance-monitor",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-project-master",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-security-shield",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-smart-crm-automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/zion-smart-analytics-dashboard",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/_not-found",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/advanced-ai-enterprise-intelligence-hub",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-4801",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-4803",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-4802",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-4804",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-4805",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-4806",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-4808",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-4807",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/ai-lab",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-ad-copy-generator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-agentic-workflow-automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-api-orchestration-layer",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-approval-workflow-engine",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-bookkeeping-automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-chatbot-builder",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-chronic-disease-tracker",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-code-security-scanner",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-computer-vision-quality-inspection",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-customer-support-ticket",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-data-quality-engine",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-document-processing",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-email-triage",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-email-personalization",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-employee-engagement-retention",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-healthcare-scheduling",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-feedback-analyzer",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-image-video-generator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-internal-app-builder",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-knowledge-base-rag-platform",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-legal-document-analyzer",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-predictive-analytics",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-personalized-learning",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-product-description-seo-generator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-privacy-impact-assessment-copilot",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-quantum-optimizer",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-rag-knowledge-systems",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-recruitment-resume-screener",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-real-estate-listing-optimizer",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-retail-personalization",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-restaurant-operations-assistant",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-regulatory-change-monitor",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-returns-refund-intelligence",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-risk-fraud-detection-engine",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-search-engine",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-sentiment-monitor",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-smart-contract-auditor",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-seo-content-engine",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/ai-voice-agent-phone",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/auto-intelligent-workflows",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/auto-rpa-platform",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/cicd-pipeline-engineering",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/cloud-migration-service",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/cloud-hybrid-orchestration",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/cyber-incident-response-retainer",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/data-lake-platform",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/data-warehouse-modernization",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/identity-access-management",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/it-access-request-marketplace",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/it-app-perimeter-rebuilder",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/infrastructure-monitoring",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/it-backup-verification-gate",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/it-backup-disaster-recovery",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/it-desired-state-configurator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/it-endpoint-management",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/it-helpdesk-knowledge-graph",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/it-endpoint-procurement-hub",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/it-hybrid-cloud-orchestrator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/it-incident-knowledge-base-automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/it-identity-hygiene-automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/it-it-asset-management",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/it-network-monitoring",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/it-procurement-contract-intelligence",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/it-software-catalog-lens",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/it-telephony-reliability-suite",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/it-remote-support-runtime",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/it-vcio-service",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/it-workspace-analytics",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/it-vulnerability-prioritization-engine",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/it-zero-trust-access",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/managed-observability-247",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/kubernetes-management",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/microsoft-365-management",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/multi-cloud-management",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/penetration-testing",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/saas-appointment-scheduler",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/real-time-analytics",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/saas-email-campaigns",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/saas-api-rate-limiter",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/saas-form-builder",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/saas-feature-flag-manager",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/saas-knowledge-base",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/saas-review-manager",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/saas-lead-crm",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/saas-invoice-generator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/saas-status-page",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/saas-social-scheduler",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/saas-subscription-analytics",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/sec-pentest-service",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/sec-soc-as-a-service",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/vCIO",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/stage/planned",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/stage/beta",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/services/stage/published",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/5-proven-ai-automation-strategies-for-enterprise-workflow-optimization",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/status/service-health",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-agentic-workflow-automation-reduce-manual-work-hours",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-agent-frameworks-for-business-automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-computer-vision-quality-inspection",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-driven-marketing-automation-strategies",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-agriculture-and-agritech",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-audit-and-compliance-automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-finops-and-cloud-cost-optimization-with-machine-learning",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-blockchain-and-web3-operations",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-climate-tech-and-sustainability-operations",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-compliance-and-regulatory-reporting",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-conversation-and-customer-analytics",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-customer-service-and-support-automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-cybersecurity-threat-detection",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-digital-transformation-and-change-management",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-cybersecurity-operations-and-threat-hunting",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-document-intelligence-and-intelligent-automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-fintech-and-digital-banking-operations",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-fleet-and-logistics-operations",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-fleet-management-and-logistics-optimization",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-food-and-beverage-operations",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-gaming-and-esports",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-government-services-and-public-sector-automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-healthcare-analytics-and-clinical-decision-support",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-hr-and-talent-acquisition-streamlining-recruitment",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-insurance-claims-and-underwriting",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-insurance-underwriting-and-claims-automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-legal-tech-and-contract-intelligence",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-media-and-content-production",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-mining-and-natural-resources-operations",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-product-development-and-innovation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-quantum-computing-and-hybrid-workloads",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-real-estate-and-property-management",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-procurement-and-vendor-management",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-retail-analytics-and-personalization",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-sales-enablement-and-revenue-operations",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-in-aviation-and-aerospace-operations",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-for-warehousing-and-inventory-optimization",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-in-construction-and-project-management",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-in-education-and-learning-systems",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-in-pharmaceuticals-and-life-sciences",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-in-supply-chain-predictive-inventory-and-demand-forecasting",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-knowledge-base-rag-platform",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-in-sustainability-and-esg-reporting",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-observability-and-mlops-best-practices",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-powered-customer-success-reducing-churn-and-driving-expansion",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-security-best-practices-protecting-your-ai-systems-from-emerging-threats",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-services-for-business-it-leaders",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/ai-voice-agents-and-conversational-automation",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/building-a-tailored-implementation-roadmap-from-proof-of-concept-to-full-deployment",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/cloud-cost-optimization-platform-reduce-waste",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/crm-automation-trends-2026-ai-driven-customer-journey-personalization",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/cloud-migration-and-ai-modernizing-infrastructure-for-intelligent-workloads",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/cyber-incident-response-retainer-ready-before-breach",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/devops-automation-with-ai-reducing-deployment-failures-by-60",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/data-warehouse-modernization-legacy-to-cloud",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/edge-ai-and-iot-deploying-models-at-the-edge",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/fleet-management-gps-tracking-visibility-utilization",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/low-code-and-no-code-ai-for-rapid-deployment",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/online-lead-generation-for-it-agencies",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/managed-observability-247-detect-issues-before-customers",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/multimodal-ai-vision-and-language-models-in-enterprise",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/property-management-suite-automate-leases-maintenance",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/managed-service-providers-add-ai-layer",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/generative-ai-for-content-and-creative-workflows",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/rag-knowledge-base-platform-internal-ai-assistants",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/responsible-ai-practices-for-enterprise-deployment",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/rag-for-enterprise-knowledge-bases",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/securing-ai-models-a-practical-guide-to-threat-mitigation-in-production",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/vector-databases-and-enterprise-rag-systems",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/blog/zion-tech-group-free-ai-tools-guide",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/ai/solutions-configurator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/solutions/construction-engineering",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/ai/url-audit-assistant",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/solutions/education-training",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/solutions/ecommerce-retail",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/solutions/energy-utilities",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/solutions/financial-services",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/solutions/government-and-public-sector",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/solutions/logistics-supply-chain",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/solutions/healthcare",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/solutions/insurance",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/solutions/manufacturing-industrial",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/solutions/media-entertainment",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/solutions/technology-and-saas",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/ai-service-router",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/analytics",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/base64",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/box-shadow-generator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/color-blindness-simulator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/color-contrast-checker",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/color-palette-generator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/css-gradient-generator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/cron-expression-explainer",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/css-minifier-beautifier",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/currency-converter",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/health-check",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/html-minifier-beautifier",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/html-to-jsx",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/image-color-extractor",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/json-diff-viewer",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/json-formatter",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/json-schema-generator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/json-to-csv-converter",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/lorem-ipsum-generator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/jwt-decoder",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/markdown-preview",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/number-base-converter",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/password-generator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/password-strength-checker",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/qr-code-generator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/port-scanner",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/regex-tester",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/roi-calculator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/secure-hash-generator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/service-comparison",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/sql-formatter",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/service-recommender",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/ssl-checker",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/string-case-converter",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/subnet-calculator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/timestamp-converter",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/unit-converter",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/url-encoder-decoder",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/uuid-generator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/word-counter",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/xml-formatter-validator",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    },
+    {
+      "candidate": "https://ziontechgroup.com/tools/yaml-json-converter",
+      "status": "error",
+      "error": "cdx_fetch_failed"
+    }
+  ]
+}

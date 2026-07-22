@@ -8,7 +8,7 @@ import json, subprocess, time, re, sys
 from pathlib import Path
 from datetime import datetime, timezone
 
-APP_ROOT = Path('/root/.openclaw/workspace/zion.app')
+APP_ROOT = Path('/Users/miami2/zion.app')
 DATA    = APP_ROOT / 'app' / 'data'
 HEALTH  = DATA / 'service-health.json'
 TS_DATA = DATA / 'servicesData.ts'
