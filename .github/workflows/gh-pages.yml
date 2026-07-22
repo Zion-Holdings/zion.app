@@ -98,6 +98,7 @@ jobs:
             help/index.html \
             bundles/index.html \
             status/index.html \
+            status/service-health/index.html \
             api/index.html \
             free-ai-it-tools/index.html \
             free-tools/index.html \
