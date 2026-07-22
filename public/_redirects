@@ -15,3 +15,6 @@
 /dashboard/    /contact/    301
 /docs/    /    301
 /automation/  /services/ai-workflow-automation/  301
+
+# Fallback API page
+/api  /api.html  200
