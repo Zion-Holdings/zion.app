@@ -1,5 +1,5 @@
 # Zion Tech Group — Operations & Automation Status
-Last updated: 2026-07-16
+Last updated: 2026-07-22
 
 ## Current Status
 - Site healthy and deployed on GitHub Pages.
@@ -16,19 +16,12 @@ Last updated: 2026-07-16
 - `health-check`: `ok`
 - `pages-canonical-deploy-verifier`: `ok`
 
-## Paused Jobs — Nous Rate Limit / 429
-Paused because active provider token is `exhausted` with `HTTP 429`:
-- `zion-email-intelligence-ceo-mode`
-- `it-outreach-vendor-seed`
-- `IT SMB Outreach Fast`
-- `Zion Site Smoke Test`
-- `zion-historical-miner`
-- `zion-outreach-tailored`
-- `Hot-followup watcher`
-- `ztg-email-high-frequency-tailored-monitor`
-- `Site health watchdog`
-- `web-prospecting-it-services`
+## Active Jobs — Live via `gog`
+- `run_outreach_scan.py`: `ok`, scans `in:anywhere` every few minutes with duplicate suppression.
+- `token-renewal-watchdog`: `ok`, proactive refresh with Telegram/Discord alert hooks available.
+- `health-check`: `ok`, 8 live route diagnostics on `/tools/health-check/`.
+- Hot followup: one targeted CEO reply sent to Solyssey RFQ789 thread `19f7db816c0eee81`; tracked in `hot-followup-sent.json`.
 
-## Outstanding Blocker
-- Need a clean-output LLM provider/model or Nous quota reset before re-enabling paused jobs.
-- Outreach LLM tailoring remains in fallback/draft mode.
+## Notes
+- Gmail tokens are renewing from `~/.openclaw/workspace/gog_tokens.json` via watchdog scripts.
+- Hot-followup dedupe ledger restored from backup: `scripts/outreach_monitor/processed/hot_followup_reply_ledger.jsonl`.

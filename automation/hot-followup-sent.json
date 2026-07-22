@@ -1,0 +1,26 @@
+{
+  "solyssey_rfq789_reply": {
+    "status": "SENT",
+    "ts": "2026-07-22T14:58:11Z",
+    "mode": "tailored",
+    "reply_sent": true
+  },
+  "solyssey_19f7db816c0eee81_ceo_reply": {
+    "status": "SENT",
+    "ts": "2026-07-22T14:58:11Z",
+    "mode": "tailored",
+    "reply_sent": true
+  },
+  "whibbert_cvs_19f4288b84b09315_reply": {
+    "status": "SENT",
+    "ts": "2026-07-22T14:58:11Z",
+    "mode": "tailored",
+    "reply_sent": true
+  },
+  "whibbert_cvs_19f4288b84b09315_second_reply": {
+    "status": "SENT",
+    "ts": "2026-07-22T14:58:11Z",
+    "mode": "tailored",
+    "reply_sent": true
+  }
+}
