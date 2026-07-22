@@ -89,6 +89,18 @@ export default function HealthCheckToolPage() {
       try { const r = await fetch('https://ziontechgroup.com', { signal: AbortSignal.timeout(3000) }); return { ok: r.ok, detail: `HTTPS ${r.status}` }; }
       catch { return { ok: false, detail: 'TLS handshake failed' }; }
     });
+    await chk('Docs Base', async () => {
+      try { const r = await fetch('/docs/', { signal: AbortSignal.timeout(3000) }); return { ok: r.ok, detail: `docs base ${r.status}` }; }
+      catch { return { ok: false, detail: 'docs base unreachable' }; }
+    });
+    await chk('Sitemap', async () => {
+      try { const r = await fetch('/sitemap.xml', { signal: AbortSignal.timeout(3000) }); return { ok: r.ok && r.headers.get('content-type')?.includes('xml'), detail: `sitemap ${r.status}` }; }
+      catch { return { ok: false, detail: 'sitemap unreachable' }; }
+    });
+    await chk('Robots', async () => {
+      try { const r = await fetch('/robots.txt', { signal: AbortSignal.timeout(3000) }); return { ok: r.ok, detail: `robots ${r.status}` }; }
+      catch { return { ok: false, detail: 'robots unreachable' }; }
+    });
 
     setResults(out);
     setLastRan(stamp);
