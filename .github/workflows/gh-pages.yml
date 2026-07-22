@@ -93,7 +93,7 @@ jobs:
 
   deploy:
     needs: build
-    if: success() && (needs.build.outputs.production_out_exists == '1' || always())
+    if: success()
     runs-on: ubuntu-latest
     timeout-minutes: 15
     environment:
