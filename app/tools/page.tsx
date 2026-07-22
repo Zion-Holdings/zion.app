@@ -32,6 +32,7 @@ const tools = [
   { id: 'uuid-generator', icon: '🆔', title: 'UUID/GUID Generator', desc: 'Generate RFC 4122 compliant UUIDs (v1, v4, v5)', category: 'Utilities' },
   { id: 'lorem-ipsum-generator', icon: '📃', title: 'Lorem Ipsum Generator', desc: 'Generate placeholder text for designs and mockups', category: 'Text' },
   { id: 'word-counter', icon: '🔢', title: 'Word & Character Counter', desc: 'Count words, characters, sentences, and paragraphs', category: 'Text' },
+  { id: 'ai-support-ticket-classifier', icon: '🎫', title: 'AI Support Ticket Classifier', desc: 'Classify support tickets by priority, category, and owning team', category: 'Support' },
   { id: 'string-case-converter', icon: '🔤', title: 'String Case Converter', desc: 'Convert between camelCase, snake_case, kebab-case, and more', category: 'Text' },
   { id: 'markdown-preview', icon: '📖', title: 'Markdown Preview', desc: 'Live markdown preview with GitHub Flavored Markdown', category: 'Text' },
   { id: 'cron-expression-explainer', icon: '⏱️', title: 'Cron Expression Explainer', desc: 'Parse and explain cron expressions in plain English', category: 'Utilities' },
