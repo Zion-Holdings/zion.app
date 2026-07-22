@@ -9,7 +9,7 @@ permissions:
   id-token: write
 concurrency:
   group: continuous-pages-deploy-${{ github.ref }}
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -120,6 +120,10 @@ jobs:
             fi
           done
           # Explicitly ensure /services and key tools routes exist even if build src is missing.
+          mkdir -p "$ARTIFACT_DIR/services" "$ARTIFACT_DIR/tools" "$ARTIFACT_DIR/tools/ai-readiness-audit"
+          if [ -f "docs/services/index.html" ]; then cp -f "docs/services/index.html" "$ARTIFACT_DIR/services/index.html"; fi
+          if [ -f "docs/tools/index.html" ]; then cp -f "docs/tools/index.html" "$ARTIFACT_DIR/tools/index.html"; fi
+          if [ -f "docs/tools/ai-readiness-audit/index.html" ]; then cp -f "docs/tools/ai-readiness-audit/index.html" "$ARTIFACT_DIR/tools/ai-readiness-audit/index.html"; fi
           for f in services/index.html services/index.txt; do
             if [ ! -f "$ARTIFACT_DIR/$f" ]; then
               if [ -f "out/$f" ]; then cp -a "out/$f" "$ARTIFACT_DIR/$f"; fi
