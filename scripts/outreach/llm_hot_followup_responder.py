@@ -31,6 +31,20 @@ from commands.google_workspace import gog_headers
 import urllib.request
 import urllib.parse
 
+# Load .env file for API keys
+# First check .hermes/.env (Hermes config), then fallback to home .env
+HERMES_ENV = Path(__file__).resolve().parents[3] / '.env'
+HOME_ENV = Path.home() / '.env'
+
+for env_file in [HERMES_ENV, HOME_ENV]:
+    if env_file.exists():
+        for line in env_file.read_text(encoding='utf-8').splitlines():
+            line = line.strip()
+            if line and not line.startswith('#') and '=' in line:
+                k, v = line.split('=', 1)
+                if v.strip():
+                    os.environ.setdefault(k.strip(), v.strip())
+
 # Configuration
 HOT_FOLLOWUP_LABEL = "Label_4207916705207178948"  # !!!!HOT FOLLOW-UP
 LEDGER_FILE = REPO / "outreach_monitor" / "processed" / "hot_followup_reply_ledger.jsonl"
