@@ -104,7 +104,6 @@ export default function HealthCheckToolPage() {
   return (
     <div className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-3xl mx-auto">
-        <Link href="/status/" className="text-purple-400 hover:text-purple-300 text-sm mb-6 inline-block">← Status Home</Link>
         <h1 className="text-4xl font-bold mb-2">Platform Health Check 🩺</h1>
         <p className="text-slate-400 mb-8">Autonomous diagnostic — runs every check without any API key or external tool.</p>
 
