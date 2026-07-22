@@ -58,6 +58,11 @@ const tools = [
   { id: 'cors-proxy', icon: '🔓', title: 'CORS Proxy', desc: 'Test CORS headers with proxy URLs', category: 'Development' },
   { id: 'cookie-parser', icon: '🍪', title: 'Cookie Parser', desc: 'Parse and decode cookie strings', category: 'Web' },
   { id: 'http-header-analyzer', icon: '📬', title: 'HTTP Header Analyzer', desc: 'Analyze and format HTTP headers', category: 'Web' },
+  { id: 'ai-support-triage', icon: '🚨', title: 'AI Support Triage', desc: 'Classify incident severity, likely causes, and remediation steps', category: 'Support' },
+  { id: 'cloud-cost-estimator', icon: '🧮', title: 'Cloud Cost Estimator', desc: 'Compare estimated AWS/GCP/Azure spend and optimization tips', category: 'Cloud' },
+  { id: 'tech-stack-recommender', icon: '🧩', title: 'Tech Stack Recommender', desc: 'Get a curated modern stack recommendation by project profile', category: 'Architecture' },
+  { id: 'incident-postmortem', icon: '📋', title: 'Incident Postmortem', desc: 'Generate a lightweight postmortem draft from incident inputs', category: 'Operations' },
+  { id: 'jwt-inspector', icon: '🔎', title: 'JWT Inspector', desc: 'Decode JWT header/payload and inspect claims client-side', category: 'Security' },
 ];
 
 export default function ToolsPage() {
