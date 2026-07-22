@@ -30,8 +30,9 @@ export const SOLUTION_LINKS: NavigationLink[] = [
 
 export const RESOURCE_LINKS: NavigationLink[] = [
   { name: '🤖 Agent Monitoring', href: '/agents-monitoring', badge: 'Live' },
-  { name: '🎯 Leads Control', href: '/leads', badge: 'New' },
+  { name: '🩺 Platform Health Check', href: '/tools/health-check', badge: 'New' },
   { name: '📊 System Status', href: '/status' },
+  { name: '🎯 Leads Control', href: '/leads', badge: 'New' },
   { name: '📖 Blog', href: '/blog' },
   { name: '📚 Academy', href: '/academy' },
   { name: '❓ FAQ', href: '/faq' },

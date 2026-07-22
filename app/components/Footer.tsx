@@ -41,11 +41,14 @@ const FOOTER_LINKS: { title: string; links: FooterLink[] }[] = [
   {
     title: 'Resources',
     links: [
-      { name: 'Agent Monitoring', href: '/agents-monitoring' },
-      { name: 'Academy', href: '/academy' },
-      { name: 'FAQ', href: '/about' },
-      { name: 'Case Studies', href: '/about' },
-      { name: 'Documentation', href: '/contact' },
+      { name: '🤖 Agent Monitoring', href: '/agents-monitoring' },
+      { name: '🩺 Platform Health Check', href: '/tools/health-check' },
+      { name: '📊 System Status', href: '/status' },
+      { name: '📖 Blog', href: '/blog' },
+      { name: '📚 Academy', href: '/academy' },
+      { name: '❓ FAQ', href: '/faq' },
+      { name: 'ℹ️ About Us', href: '/about' },
+      { name: '🤝 Partners', href: '/partners' },
     ],
   },
   {
