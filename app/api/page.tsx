@@ -48,7 +48,7 @@ export default function ApiDocsPage() {
         <h1 className="text-4xl font-bold mb-6">API Documentation</h1>
         <p className="text-slate-300 mb-12 max-w-3xl">
           Comprehensive API documentation for Zion Tech Group services including AI, DevOps, and Data APIs.
-          All APIs are production-ready with comprehensive documentation, SDKs, and integration guides.
+          All APIs are production-ready with documentation, SDKs, and integration guides.
         </p>
 
         <div className="space-y-8">
