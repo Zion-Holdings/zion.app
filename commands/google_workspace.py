@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #!/usr/bin/env python3
 from __future__ import annotations
 
@@ -9,7 +10,6 @@ FIXED for proper conversation threading
 
 import urllib.request, urllib.parse, json, datetime, sys, time, base64
 from pathlib import Path
-import email.utils
 
 WORKSPACE = Path.home() / '.openclaw' / 'workspace'
 FALLBACK_WORKSPACE = WORKSPACE
@@ -110,40 +110,6 @@ def gmail_get_or_create_label_id(name: str) -> str:
     req = urllib.request.Request(url, data=body, headers=headers, method='POST')
     resp = json.loads(urllib.request.urlopen(req).read())
     return resp['id']
-
-def gmail_sent(to_addr: str, subject: str, within_seconds: int = 24*3600, limit: int = 20) -> bool:
-    """Return True if we sent a message to `to_addr` with matching subject within the window."""
-    try:
-        q = f'to:{to_addr} subject:"{subject}" in:sent'
-        hits = gmail_search(q, limit=limit, all_folders=True)
-        now = int(time.time())
-        for m in hits:
-            try:
-                full = gmail_get(m.get('id'))
-            except Exception:
-                continue
-            headers = {h['name']: h['value'] for h in full.get('payload', {}).get('headers', [])}
-            ts_str = headers.get('Date', '')
-            ts = 0
-            if ts_str:
-                try:
-                    # Handle both "Wed, 15 Jul 2026 19:39:54 -0700" and "Wed, 15 Jul 2026 19:39:54 -0700"
-                    from email.utils import parsedate_to_datetime
-                    dt = parsedate_to_datetime(ts_str)
-                    if dt.tzinfo is not None:
-                        ts = int(dt.timestamp())
-                    else:
-                        ts = int(dt.replace(tzinfo=datetime.timezone.utc).timestamp())
-                except Exception:
-                    pass
-            if now - ts > within_seconds:
-                continue
-            actual_to = headers.get('To', '')
-            if actual_to and to_addr.lower() in actual_to.lower():
-                return True
-    except Exception:
-        pass
-    return False
 
 def gmail_create_draft(thread_id: str, subject: str, body: str, to_addr: str) -> str:
     """Create a Gmail draft reply in the given thread.
@@ -531,7 +497,21 @@ def telegram_send(text: str):
             if r.status != 200:
                 print(f'[TELEGRAM] HTTP {r.status}: {text[:100]}')
     except Exception as e:
-        print(f'[TELEGRAM] Failed: {e}')
+=======
+#!/usr/bin/env python3
+from __future__ import annotations
+
+"""Google Workspace API helpers for Zion Org Memory system.
+
+Shared between org_memory_agent.py and vector_index.py
+FIXED for proper conversation threading
+"""
+
+import urllib.request, urllib.parse, json, datetime, sys, time, base64
+from pathlib import Path
+
+WORKSPACE = Path('/data/data/com.termux/files/home/.openclaw/workspace')
+TOKENS_FILE = WORKSPACE / 'gog_tokens.json'
 
 def load_gog_tokens():
     with open(TOKENS_FILE) as f:
@@ -568,6 +548,28 @@ def gog_headers():
     token = refresh_access_token(tokens)
     return {'Authorization': f'Bearer {token}'}
 
+# ── Gmail ──────────────────────────────────────────────────────────────────
+
+def gmail_search(query, limit=20):
+    q = query + ' label:INBOX'
+    url = ('https://gmail.googleapis.com/gmail/v1/users/me/messages'
+           f'?q={urllib.parse.quote(q)}&maxResults={limit}')
+    req = urllib.request.Request(url, headers=gog_headers())
+    resp = json.loads(urllib.request.urlopen(req).read())
+    return resp.get('messages', [])
+
+def gmail_get(message_id):
+    url = f'https://gmail.googleapis.com/gmail/v1/users/me/messages/{message_id}?format=full'
+    req = urllib.request.Request(url, headers=gog_headers())
+    return json.loads(urllib.request.urlopen(req).read())
+
+def gmail_thread_get(thread_id):
+    url = f'https://gmail.googleapis.com/gmail/v1/users/me/threads/{thread_id}?format=full'
+    req = urllib.request.Request(url, headers=gog_headers())
+    resp = json.loads(urllib.request.urlopen(req).read())
+    return resp.get('messages', [])
+
+
 # ── Gmail Labels & Batch Modify ─────────────────────────────────────
 
 def gmail_list_labels():
@@ -595,6 +597,50 @@ def gmail_get_or_create_label_id(name: str) -> str:
     req = urllib.request.Request(url, data=body, headers=headers, method='POST')
     resp = json.loads(urllib.request.urlopen(req).read())
     return resp['id']
+
+def gmail_create_draft(thread_id: str, subject: str, body: str, to_addr: str) -> str:
+    """Create a Gmail draft reply in the given thread.
+
+    Returns: draft ID (str)
+    """
+    raw_lines = [
+        f"Subject: Re: {subject}",
+        f"To: {to_addr}",
+        "",
+        body,
+    ]
+    raw = "\r\n".join(raw_lines)
+    encoded = base64.urlsafe_b64encode(raw.encode()).decode()
+
+    url = 'https://gmail.googleapis.com/gmail/v1/users/me/drafts'
+    payload = json.dumps({'message': {'threadId': thread_id, 'raw': encoded}}).encode()
+    headers = gog_headers()
+    headers['Content-Type'] = 'application/json'
+    req = urllib.request.Request(url, data=payload, headers=headers, method='POST')
+    resp = json.loads(urllib.request.urlopen(req).read())
+    return resp.get('id', 'unknown')
+
+def gmail_create_draft_new(subject: str, body: str, to_addr: str) -> str:
+    """Create a Gmail draft for a new thread (no threadId).
+
+    Returns: draft ID (str)
+    """
+    raw_lines = [
+        f"Subject: {subject}",
+        f"To: {to_addr}",
+        "",
+        body,
+    ]
+    raw = "\r\n".join(raw_lines)
+    encoded = base64.urlsafe_b64encode(raw.encode()).decode()
+
+    url = 'https://gmail.googleapis.com/gmail/v1/users/me/drafts'
+    payload = json.dumps({'message': {'raw': encoded}}).encode()
+    headers = gog_headers()
+    headers['Content-Type'] = 'application/json'
+    req = urllib.request.Request(url, data=payload, headers=headers, method='POST')
+    resp = json.loads(urllib.request.urlopen(req).read())
+    return resp.get('id', 'unknown')
 
 def extract_body_from_gmail_message(msg):
     def part_text(part):
@@ -900,4 +946,5 @@ def telegram_send(text: str):
             if r.status != 200:
                 print(f'[TELEGRAM] HTTP {r.status}: {text[:100]}')
     except Exception as e:
+>>>>>>> 4152c7d0a (feat: add wave214/wave216 IT services and manual lead discovery outreach artifacts)
         print(f'[TELEGRAM] Failed: {e}')
