@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #!/usr/bin/env python3
 from __future__ import annotations
 
@@ -497,21 +496,7 @@ def telegram_send(text: str):
             if r.status != 200:
                 print(f'[TELEGRAM] HTTP {r.status}: {text[:100]}')
     except Exception as e:
-=======
-#!/usr/bin/env python3
-from __future__ import annotations
-
-"""Google Workspace API helpers for Zion Org Memory system.
-
-Shared between org_memory_agent.py and vector_index.py
-FIXED for proper conversation threading
-"""
-
-import urllib.request, urllib.parse, json, datetime, sys, time, base64
-from pathlib import Path
-
-WORKSPACE = Path('/data/data/com.termux/files/home/.openclaw/workspace')
-TOKENS_FILE = WORKSPACE / 'gog_tokens.json'
+        print(f'[TELEGRAM] Failed: {e}')
 
 def load_gog_tokens():
     with open(TOKENS_FILE) as f:
@@ -547,28 +532,6 @@ def gog_headers():
     tokens = load_gog_tokens()
     token = refresh_access_token(tokens)
     return {'Authorization': f'Bearer {token}'}
-
-# ── Gmail ──────────────────────────────────────────────────────────────────
-
-def gmail_search(query, limit=20):
-    q = query + ' label:INBOX'
-    url = ('https://gmail.googleapis.com/gmail/v1/users/me/messages'
-           f'?q={urllib.parse.quote(q)}&maxResults={limit}')
-    req = urllib.request.Request(url, headers=gog_headers())
-    resp = json.loads(urllib.request.urlopen(req).read())
-    return resp.get('messages', [])
-
-def gmail_get(message_id):
-    url = f'https://gmail.googleapis.com/gmail/v1/users/me/messages/{message_id}?format=full'
-    req = urllib.request.Request(url, headers=gog_headers())
-    return json.loads(urllib.request.urlopen(req).read())
-
-def gmail_thread_get(thread_id):
-    url = f'https://gmail.googleapis.com/gmail/v1/users/me/threads/{thread_id}?format=full'
-    req = urllib.request.Request(url, headers=gog_headers())
-    resp = json.loads(urllib.request.urlopen(req).read())
-    return resp.get('messages', [])
-
 
 # ── Gmail Labels & Batch Modify ─────────────────────────────────────
 
@@ -946,5 +909,4 @@ def telegram_send(text: str):
             if r.status != 200:
                 print(f'[TELEGRAM] HTTP {r.status}: {text[:100]}')
     except Exception as e:
->>>>>>> 4152c7d0a (feat: add wave214/wave216 IT services and manual lead discovery outreach artifacts)
         print(f'[TELEGRAM] Failed: {e}')
