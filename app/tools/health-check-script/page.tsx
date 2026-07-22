@@ -162,9 +162,9 @@ $mem = Get-CimInstance Win32_OperatingSystem
 $total = [math]::Round($mem.TotalVisibleMemorySize / 1MB, 1)
 $free = [math]::Round($mem.FreePhysicalMemory / 1MB, 1)
 $used = [math]::Round(($total - $free) / $total * 100, 1)
-Write-Host "Total: $${total} GB" -ForegroundColor White
-Write-Host "Free: $${free} GB" -ForegroundColor White
-Write-Host "Used: $${used}%" -ForegroundColor White
+Write-Host `Total: $${String.raw`{total}`} GB` -ForegroundColor White
+Write-Host `Free: $${String.raw`{free}`} GB` -ForegroundColor White
+Write-Host `Used: $${String.raw`{used}`}%` -ForegroundColor White
 Write-Host ""
 
 # Disk
@@ -174,7 +174,7 @@ Get-CimInstance Win32_LogicalDisk | Where-Object {$_.DriveType -eq 3} |
     $size = [math]::Round($_.Size / 1GB, 1)
     $free = [math]::Round($_.FreeSpace / 1GB, 1)
     $pct = [math]::Round(($size - $free) / $size * 100, 1)
-    Write-Host "  $($_.DeviceID): $${free}/$${size} GB ($${pct}% used)" -ForegroundColor White
+    Write-Host "  $($_.DeviceID): $$free/$$size GB ($$pct% used)" -ForegroundColor White
   }
 Write-Host ""
 
@@ -276,11 +276,11 @@ $mem = Get-CimInstance Win32_OperatingSystem
 $total = [math]::Round($mem.TotalVisibleMemorySize / 1MB, 1)
 $free = [math]::Round($mem.FreePhysicalMemory / 1MB, 1)
 $used = [math]::Round(($total - $free) / $total * 100, 1)
-Write-Host "Total: $${total} GB | Free: $${free} GB | Used: $${used}%"
+Write-Host "Total: $$total GB | Free: $$free GB | Used: $$used%"
 
 Write-Host "--- Disk ---" -ForegroundColor Yellow
 Get-CimInstance Win32_LogicalDisk | Where-Object {$_.DriveType -eq 3} | 
-  ForEach-Object { $size=[math]::Round($_.Size/1GB,1); $free=[math]::Round($_.FreeSpace/1GB,1); $pct=[math]::Round(($size-$free)/$size*100,1); Write-Host "  $($_.DeviceID): $${free}/$${size} GB ($${pct}% used)" }
+  ForEach-Object { $size=[math]::Round($_.Size/1GB,1); $free=[math]::Round($_.FreeSpace/1GB,1); $pct=[math]::Round(($size-$free)/$size*100,1); Write-Host "  $($_.DeviceID): $$free/$$size GB ($$pct% used)" }
 
 Write-Host "--- Network ---" -ForegroundColor Yellow
 Get-NetIPAddress -AddressFamily IPv4 | Where-Object {$_.IPAddress -notlike "127.*" -and $_.IPAddress -notlike "169.254.*"} | Select-Object InterfaceAlias, IPAddress | Format-Table -AutoSize
