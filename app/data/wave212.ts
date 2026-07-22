@@ -144,3 +144,11 @@ export const wave212EventStreamingServices: Service[] = [
     ]
   }
 ];
+export const wave212AiServices: Service[] = [];
+export const wave212MicroSaasServices: Service[] = [];
+export const wave212ItServices: Service[] = [];
+export const wave212SecurityServices: Service[] = [];
+export const wave212CloudServices: Service[] = [];
+export const wave212AutomationServices: Service[] = [];
+export const wave212DataServices: Service[] = [];
+export const wave212HealthcareItServices: Service[] = [];

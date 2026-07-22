@@ -1,6 +1,19 @@
 type Service = Record<string, any>;
 
+let allServices: readonly Service[] = [];
+try {
+  const data = require('./servicesData.json');
+  if (Array.isArray(data)) {
+    allServices = data as readonly Service[];
+  }
+} catch {
+  allServices = [];
+}
+
 export type { Service };
+<<<<<<< HEAD
+export { allServices };
+=======
 
 import { wave174AiServices, wave174MicroSaasServices, wave174ItServices, wave174SecurityServices, wave174CloudServices, wave174DataServices, wave174AutomationServices } from './wave174';
 import { wave175AiServices, wave175MicroSaasServices, wave175ItServices, wave175SecurityServices, wave175CloudServices, wave175DataServices, wave175AutomationServices } from './wave175';
@@ -1876,4 +1889,4 @@ export const allServices: Service[] = [
   ...wave214SecurityServices,
   ...wave215ItServices,
 ].filter((s: any) => s && (s.benefits || []).length > 0);
-
+>>>>>>> 4152c7d0a (feat: add wave214/wave216 IT services and manual lead discovery outreach artifacts)

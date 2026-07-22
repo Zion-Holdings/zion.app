@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { Service } from './serviceTypes';
 
 // Wave 216 — Swarm Intelligence, Edge AI Inference, Synthetic Data Generation,
@@ -279,7 +278,7 @@ export const wave216SpaceComputingServices: Service[] = [
     ]
   }
 ];
-=======
+
 // Wave 216 — follow-up IT services
 import { Service } from './serviceTypes';
 
@@ -337,4 +336,3 @@ export const wave216DataServices: Service[] = [];
 export const wave216AutomationServices: Service[] = [];
 export const wave216MicroSaasServices: Service[] = [];
 export const wave216AiServices: Service[] = [];
->>>>>>> 4152c7d0a (feat: add wave214/wave216 IT services and manual lead discovery outreach artifacts)
