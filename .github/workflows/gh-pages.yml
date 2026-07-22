@@ -100,6 +100,7 @@ jobs:
             status/index.html \
             api/index.html \
             free-ai-it-tools/index.html \
+            free-tools/index.html \
             automation/index.html \
             services/ai-workflow-automation/index.html; do
             mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
@@ -108,7 +109,7 @@ jobs:
             fi
           done
           # Guarantee every key route exists in the exported artifact, even if Next didn't emit it.
-          for f in case-studies/index.html industries/index.html testimonials/index.html roi-calculator/index.html client-portal/index.html proposal-generator/index.html academy/index.html help/index.html bundles/index.html status/index.html api/index.html free-ai-it-tools/index.html; do
+          for f in case-studies/index.html industries/index.html testimonials/index.html roi-calculator/index.html client-portal/index.html proposal-generator/index.html academy/index.html help/index.html bundles/index.html status/index.html api/index.html free-ai-it-tools/index.html free-tools/index.html; do
             mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
             if [ ! -f "$ARTIFACT_DIR/$f" ] && [ -f "docs/$f" ]; then
               cp -a "docs/$f" "$ARTIFACT_DIR/$f"
