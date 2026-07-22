@@ -18,24 +18,24 @@ export default function SSLCheckerTool() {
     await new Promise(r => setTimeout(r, 1500));
     
     const mockResult = {
-      domain,
-      valid: true,
-      issuer: 'Let\'s Encrypt',
-      subject: domain,
-      validFrom: '2024-11-01',
-      validTo: '2025-01-30',
-      daysRemaining: 68,
-      san: [domain, `www.${domain}`, `api.${domain}`],
-      protocol: 'TLS 1.3',
-      cipher: 'TLS_AES_256_GCM_SHA384',
-      keySize: 2048,
-      signatureAlgorithm: 'RSA-SHA256',
-      ocsp: true,
-      hsts: true,
-      grade: 'A+',
-      chainValid: true,
-      warnings: daysRemaining < 30 ? ['Certificate expires soon'] : [],
-    };
+          domain,
+          valid: true,
+          issuer: 'Let\'s Encrypt',
+          subject: domain,
+          validFrom: '2024-11-01',
+          validTo: '2025-01-30',
+          daysRemaining: 68 as number,
+          san: [domain, `www.${domain}`, `api.${domain}`],
+          protocol: 'TLS 1.3',
+          cipher: 'TLS_AES_256_GCM_SHA384',
+          keySize: 2048,
+          signatureAlgorithm: 'RSA-SHA256',
+          ocsp: true,
+          hsts: true,
+          grade: 'A+' as const,
+          chainValid: true,
+          warnings: (68 < 30 ? ['Certificate expires soon'] : []) as string[],
+        };
     
     setResults(mockResult);
     setLoading(false);

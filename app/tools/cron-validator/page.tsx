@@ -4,13 +4,17 @@ import { useState } from 'react';
 
 export default function CronValidatorTool() {
   const [cronInput, setCronInput] = useState('');
-  const [results, setResults] = useState<{
-    valid: boolean;
-    nextRuns: string[];
-    description: string;
-    errors: string[];
-    fields: string[];
-  } | null>(null);
+  const [results, setResults] = useState<
+    {
+      valid: boolean;
+      nextRuns: string[];
+      description: string;
+      errors: string[];
+      fields: string[];
+      warnings?: string[];
+      fieldValues?: any[];
+    } | null
+  >(null);
 
   const validateCron = (expression: string) => {
     const parts = expression.trim().split(/\s+/);
@@ -19,7 +23,7 @@ export default function CronValidatorTool() {
     
     if (parts.length < 5 || parts.length > 6) {
       errors.push(`Expected 5 or 6 fields (standard cron or with seconds), got ${parts.length}`);
-      return { valid: false, errors, warnings, fields: [] };
+      return { valid: false, errors, warnings, fields: [] as string[], nextRuns: [] as string[], description: '', fieldValues: [] };
     }
 
     const fieldNames = parts.length === 6 
