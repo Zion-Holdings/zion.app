@@ -58,7 +58,7 @@ export default function PhishingAnalyzerTool() {
       if (pattern.test(text)) {
         const existing = indicators.find(i => i.description === desc);
         if (!existing) {
-          const points = severity === 'high' ? 25 : severity === 'medium' ? 15 : 5;
+          const points = (severity === 'high' ? 25 : severity === 'medium' ? 15 : 5) as number;
           indicators.push({ type: 'pattern', severity, description: desc });
           score += points;
         }
