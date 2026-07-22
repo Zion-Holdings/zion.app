@@ -52,12 +52,21 @@ for s in services:
     benefits = ''.join(f'<li>{b}</li>' for b in s.get('benefits', []))
     pricing = s.get('pricing', {})
     
+    # Handle pricing - could be string or object
+    if isinstance(pricing, str):
+        basic = pro = pricing
+        enterprise = 'Custom pricing'
+    elif isinstance(pricing, dict):
+        basic = pricing.get('basic', pricing.get('starter', 'Contact us for pricing'))
+        pro = pricing.get('pro', pricing.get('professional', 'Contact us for pricing'))
+        enterprise = pricing.get('enterprise', 'Custom pricing')
+    else:
+        basic = pro = enterprise = 'Contact us for pricing'
+    
     html = TPL.format(
         title=s.get('title', s.get('name', '')), desc=s.get('description', ''), id=s['id'],
         features=features, benefits=benefits,
-        basic=pricing.get('basic', pricing.get('starter', 'Contact us for pricing')),
-        pro=pricing.get('pro', pricing.get('professional', 'Contact us for pricing')),
-        enterprise=pricing.get('enterprise', 'Custom pricing')
+        basic=basic, pro=pro, enterprise=enterprise
     )
     
     with open(index_file, 'w') as f:
