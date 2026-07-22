@@ -22,6 +22,9 @@ HOME = os.path.expanduser("~")
 TOKEN_PATH=os.path.join(HOME, ".openclaw/workspace/gog_tokens.json")
 DASHBOARD_PATH = os.path.join(HOME, "data/token_dashboard.json")
 LOG_PATH = os.path.join(HOME, "data/token_manager.log")
+STATE_PATH = os.path.join(HOME, "data/token_state.json")
+GMAIL_TEST_URL = "https://gmail.googleapis.com/gmail/v1/users/me/profile"
+GOOGLE_TOKEN_URL = "https://oauth2.googleapis.com/token"
 
 os.makedirs(os.path.join(HOME, "data"), exist_ok=True)
 
@@ -99,15 +102,21 @@ def parse_expiry(t):
 
 def check_gmail(t):
     """Verify the token actually works by calling Gmail API."""
+    access = t.get("access_token", "")
+    if not access:
+        return False, "No access token"
     req = urllib.request.Request(
-        "https://gmail.googleapis.com/gmail/v1/users/me/labels",
-        headers={"Authorization": f"Bearer {t['access_token']}"}
+        GMAIL_TEST_URL,
+        headers={"Authorization": f"Bearer {access}"}
     )
     try:
-        resp = json.loads(urllib.request.urlopen(req, timeout=10).read())
-        return True, len(resp.get("labels", []))
-    except:
-        return False, 0
+        resp = urllib.request.urlopen(req, timeout=10)
+        data = json.loads(resp.read())
+        return True, data.get("emailAddress", "unknown")
+    except urllib.error.HTTPError as e:
+        return False, f"HTTP {e.code}"
+    except Exception as e:
+        return False, str(e)
 
 def cmd_check():
     """Check token health, refresh if needed."""
