@@ -1,10 +1,10 @@
-export const metadata = {{
+export const metadata = {
   title: 'AI Document Automation Enterprise | Zion Tech Group',
   description: 'Enterprise AI document automation, extraction, parsing, validation, and document intelligence use cases for contracts, invoices, and records.',
-  alternates: {{ canonical: '/ai-document-automation-enterprise' }}
-}};
+  alternates: { canonical: '/ai-document-automation-enterprise' }
+};
 
-export default function Page() {{
+export default function Page() {
   return (
     <main className="min-h-screen">
       <section className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 pt-20 pb-16">
@@ -44,4 +44,4 @@ export default function Page() {{
       </section>
     </main>
   );
-}}
+}

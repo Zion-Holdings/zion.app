@@ -3,8 +3,8 @@
 import json, datetime, time, sys
 from pathlib import Path
 
-sys.path.insert(0, '/data/data/com.termux/files/home/zion-support.github.io')
-sys.path.insert(0, '/data/data/com.termux/files/home/zion-support.github.io/commands')
+sys.path.insert(0, '/Users/klebergarciaalcatrao/zion-techgroup')
+sys.path.insert(0, '/Users/klebergarciaalcatrao/zion-techgroup/commands')
 from google_workspace import gmail_send_reply_fixed, gog_headers
 
 PENDING = Path('lead-crm/hot_followup_reply_17ae7d5ca039b58a.json')

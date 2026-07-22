@@ -1,10 +1,10 @@
-export const metadata = {{
+export const metadata = {
   title: 'AI Free Tools and Services for Enterprises | Zion Tech Group',
   description: 'Zion Tech Group offers free AI tools, services, and resources to help enterprises evaluate automation and accelerate adoption without cost barriers.',
-  alternates: {{ canonical: '/ai-free-tools-enterprise' }}
-}};
+  alternates: { canonical: '/ai-free-tools-enterprise' }
+};
 
-export default function Page() {{
+export default function Page() {
   return (
     <main className="min-h-screen">
       <section className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 pt-20 pb-16">
@@ -44,4 +44,4 @@ export default function Page() {{
       </section>
     </main>
   );
-}}
+}

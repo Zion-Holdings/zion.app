@@ -1,10 +1,10 @@
-export const metadata = {{
+export const metadata = {
   title: 'AI Email Automation for Business | Zion Tech Group',
   description: 'Learn how AI email automation, reply intelligence, and intent detection can improve support, sales, and operational response workflows.',
-  alternates: {{ canonical: '/ai-email-automation-business' }}
-}};
+  alternates: { canonical: '/ai-email-automation-business' }
+};
 
-export default function Page() {{
+export default function Page() {
   return (
     <main className="min-h-screen">
       <section className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 pt-20 pb-16">
@@ -44,4 +44,4 @@ export default function Page() {{
       </section>
     </main>
   );
-}}
+}

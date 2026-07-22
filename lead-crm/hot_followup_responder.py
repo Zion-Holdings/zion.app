@@ -11,7 +11,7 @@ from pathlib import Path
 
 REPO = Path('/data/data/com.termux/files/home/zion-support.github.io')
 if not REPO.exists():
-    REPO = Path('/Users/miami2/zion.app')
+    REPO = Path('/Users/klebergarciaalcatrao/zion-techgroup')
 LEAD_DIR = REPO / 'lead-crm'
 SENT_CACHE = LEAD_DIR / 'pipeline_sent_cache.txt'
 PIPELINE_LOG = LEAD_DIR / 'pipeline_log.json'
