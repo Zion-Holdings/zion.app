@@ -1,21 +1,124 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>API Docs | Zion Tech Group</title>
-  <meta name="description" content="API documentation for Zion Tech Group AI services and integrations." />
-  <link rel="canonical" href="https://ziontechgroup.com/api/" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-slate-950 text-white min-h-screen">
-  <main class="mx-auto max-w-4xl px-6 py-16">
-    <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">API Documentation</h1>
-    <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300">Integrate with Zion Tech Group AI services using our REST APIs.</p>
-    <div class="mt-10 rounded-lg border border-slate-800 bg-slate-900/50 p-6">
-      <p class="text-slate-300">API documentation is available in your service dashboard. Contact us for API access keys.</p>
-      <a href="/contact/" class="inline-flex mt-4 rounded-md bg-white/10 px-4 py-2 text-sm font-semibold text-white hover:bg-white/20">Request API Access</a>
-    </div>
-  </main>
-</body>
-</html>
+# API Documentation
+
+## Overview
+
+Zion Tech Group provides RESTful and GraphQL APIs for all our AI and IT services. All APIs are production-ready with comprehensive documentation, SDKs, and integration guides.
+
+## Authentication
+
+All API requests require authentication using Bearer tokens. Obtain an API key from your dashboard or contact sales.
+
+```bash
+Authorization: Bearer YOUR_API_KEY
+Content-Type: application/json
+```
+
+## Base URL
+
+```
+https://api.ziontechgroup.com/v1/
+```
+
+## Available Endpoints
+
+### AI Services
+
+#### AI Chatbot Builder
+- **Endpoint**: `/ai/chatbot`
+- **Method**: POST
+- **Description**: Create and manage AI chatbots for your applications
+- **Documentation**: https://docs.ziontechgroup.com/api/chatbot
+
+#### AI Document Processing
+- **Endpoint**: `/ai/document`
+- **Method**: POST
+- **Description**: Extract, classify, and process documents with AI
+- **Documentation**: https://docs.ziontechgroup.com/api/document
+
+#### AI Predictive Analytics
+- **Endpoint**: `/ai/predictive`
+- **Method**: POST
+- **Description**: Build and deploy ML models for forecasting
+- **Documentation**: https://docs.ziontechgroup.com/api/predictive
+
+#### AI Security Scanner
+- **Endpoint**: `/ai/security`
+- **Method**: POST
+- **Description**: Scan code for vulnerabilities and compliance issues
+- **Documentation**: https://docs.ziontechgroup.com/api/security
+
+#### AI RAG Knowledge Systems
+- **Endpoint**: `/ai/rag`
+- **Method**: POST
+- **Description**: Build retrieval-augmented generation systems
+- **Documentation**: https://docs.ziontechgroup.com/api/rag
+
+### DevOps Services
+
+#### CI/CD Pipeline Automation
+- **Endpoint**: `/devops/cicd`
+- **Method**: POST
+- **Description**: Automate your CI/CD pipelines with AI
+- **Documentation**: https://docs.ziontechgroup.com/api/cicd
+
+#### Infrastructure as Code
+- **Endpoint**: `/devops/iaas`
+- **Method**: POST
+- **Description**: Manage infrastructure with YAML/JSON
+- **Documentation**: https://docs.ziontechgroup.com/api/iaas
+
+### Data Services
+
+#### Data Quality Monitoring
+- **Endpoint**: `/data/quality`
+- **Method**: POST
+- **Description**: Monitor and improve data quality
+- **Documentation**: https://docs.ziontechgroup.com/api/quality
+
+#### Analytics Dashboard
+- **Endpoint**: `/data/analytics`
+- **Method**: GET
+- **Description**: Retrieve analytics data and insights
+- **Documentation**: https://docs.ziontechgroup.com/api/analytics
+
+## SDKs
+
+We provide official SDKs for major languages:
+
+- **JavaScript/Node.js**: `npm install @ziontechgroup/sdk`
+- **Python**: `pip install ziontechgroup-sdk`
+- **Java**: `implementation 'com.ziontechgroup:sdk:1.0.0'`
+- **Go**: `go get github.com/ziontechgroup/sdk`
+- **Ruby**: `gem install ziontechgroup-sdk`
+
+## Rate Limits
+
+- **Free Tier**: 100 requests/hour
+- **Starter**: 1,000 requests/hour
+- **Pro**: 10,000 requests/hour
+- **Enterprise**: Custom limits
+
+## Error Codes
+
+| Code | Message | Description |
+|------|---------|-------------|
+| 400 | Bad Request | Invalid request parameters |
+| 401 | Unauthorized | Missing or invalid API key |
+| 403 | Forbidden | Insufficient permissions |
+| 404 | Not Found | Endpoint or resource not found |
+| 429 | Too Many Requests | Rate limit exceeded |
+| 500 | Internal Server Error | Server-side error |
+
+## Webhooks
+
+Configure webhooks to receive real-time notifications:
+
+- **Event Types**: `service.deployed`, `alert.raised`, `data.anomaly`, `security.vulnerability`
+- **Endpoint**: POST to your webhook URL
+- **Verification**: Signed with HMAC-SHA256
+
+## Support
+
+- **API Status**: https://status.ziontechgroup.com/api
+- **Documentation**: https://docs.ziontechgroup.com/api
+- **Contact**: api@ziontechgroup.com

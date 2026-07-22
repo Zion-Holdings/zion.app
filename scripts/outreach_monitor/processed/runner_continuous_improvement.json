@@ -1,157 +1,5 @@
 [
   {
-    "ts": "2026-07-21T19:32:27.136390+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120
-  },
-  {
-    "ts": "2026-07-21T19:34:27.716300+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120
-  },
-  {
-    "ts": "2026-07-21T19:36:28.303233+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120
-  },
-  {
-    "ts": "2026-07-21T19:38:28.872417+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120
-  },
-  {
-    "ts": "2026-07-21T19:40:29.450742+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120
-  },
-  {
-    "ts": "2026-07-21T19:42:30.010913+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120
-  },
-  {
-    "ts": "2026-07-21T19:44:30.566893+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120
-  },
-  {
-    "ts": "2026-07-21T19:46:31.497043+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120
-  },
-  {
-    "ts": "2026-07-21T19:48:32.105697+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120
-  },
-  {
-    "ts": "2026-07-21T19:50:32.702828+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120
-  },
-  {
-    "ts": "2026-07-21T19:52:33.273991+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120
-  },
-  {
-    "ts": "2026-07-21T19:54:33.853095+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120
-  },
-  {
-    "ts": "2026-07-21T19:56:34.431756+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120
-  },
-  {
-    "ts": "2026-07-21T19:58:35.011456+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120
-  },
-  {
-    "ts": "2026-07-21T20:00:35.596637+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120
-  },
-  {
-    "ts": "2026-07-21T20:02:36.144325+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120
-  },
-  {
-    "ts": "2026-07-21T20:04:36.719329+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120
-  },
-  {
-    "ts": "2026-07-21T20:06:37.287866+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120
-  },
-  {
-    "ts": "2026-07-21T20:08:37.878537+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 120
-  },
-  {
     "ts": "2026-07-21T20:10:38.461391+00:00",
     "contacts": 0,
     "sent": 0,
@@ -1593,6 +1441,158 @@
   },
   {
     "ts": "2026-07-22T02:23:56.468645+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T02:25:57.060108+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T02:27:57.784702+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T02:29:58.510008+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T02:31:59.167285+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T02:33:59.883456+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T02:36:10.668828+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T02:38:12.090436+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T02:40:12.919802+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T02:42:14.106558+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T02:44:14.997802+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T02:46:15.984664+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T02:48:16.780259+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T02:50:17.621734+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T02:52:18.696721+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T02:54:19.670854+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T02:56:20.479023+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T02:58:21.337114+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T03:00:22.678972+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T03:02:24.003224+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
