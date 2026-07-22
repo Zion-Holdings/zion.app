@@ -7,7 +7,7 @@
 7:I[7121,[],""]
 8:I[7460,["98500","static/chunks/98500-c8281fcb5646115a.js","18039","static/chunks/app/error-c9ce5b2e81738e04.js"],"default"]
 9:I[4581,[],""]
-a:I[8500,["98500","static/chunks/98500-c8281fcb5646115a.js","6856","static/chunks/app/blog/cyber-incident-response-retainer-services-for-it-teams-in-2026/page-cbd43adb2b723917.js"],""]
+a:I[8500,["98500","static/chunks/98500-c8281fcb5646115a.js","6856","static/chunks/app/blog/cyber-incident-response-retainer-services-for-it-teams-in-2026/page-dd46fa2bb699adad.js"],""]
 17:I[3839,["98500","static/chunks/98500-c8281fcb5646115a.js","7177","static/chunks/app/layout-1dee2cf52e523210.js"],"default"]
 18:I[4288,["98500","static/chunks/98500-c8281fcb5646115a.js","7177","static/chunks/app/layout-1dee2cf52e523210.js"],"default"]
 19:I[9284,["98500","static/chunks/98500-c8281fcb5646115a.js","7177","static/chunks/app/layout-1dee2cf52e523210.js"],"default"]
