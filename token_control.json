@@ -1,1 +1,17 @@
-{"expiry_hours_remaining": 1.0, "refresh_count": 31, "action_taken": "manual_review", "timestamp": "2026-07-22T23:02:14.636093+00:00"}
+[
+  {
+    "expiry_hours_remaining": 1.0,
+    "refresh_count": 31,
+    "action_taken": "manual_review",
+    "timestamp": "2026-07-22T23:02:14.636093+00:00"
+  },
+  {
+    "timestamp": "2026-07-22T20:32:03.109070",
+    "status": "critical",
+    "expiry_hours_remaining": 1.0,
+    "refresh_count": 32,
+    "action_taken": "force_refresh",
+    "result": "manual_review",
+    "reason": "Notifier reported auto-refresh failed despite watchdog refresh output."
+  }
+]
