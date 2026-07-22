@@ -1,10 +1,10 @@
-export const metadata = {
+export const metadata = {{
   title: 'AI Security Operations Automation | Zion Tech Group',
   description: 'Practical AI security operations automation for alert triage, incident response, SOC workflow optimization, and responsible AI governance.',
-  alternates: { canonical: '/ai-security-operations-automation' }
-};
+  alternates: {{ canonical: '/ai-security-operations-automation' }}
+}};
 
-export default function Page() {
+export default function Page() {{
   return (
     <main className="min-h-screen">
       <section className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 pt-20 pb-16">
@@ -44,4 +44,4 @@ export default function Page() {
       </section>
     </main>
   );
-}
+}}

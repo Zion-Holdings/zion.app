@@ -1,10 +1,10 @@
-export const metadata = {
+export const metadata = {{
   title: 'AI Copilot for Enterprise IT | Zion Tech Group',
   description: 'How enterprise IT teams use AI copilots, automation, and IT service assistants to reduce ticket resolution time and improve reliability.',
-  alternates: { canonical: '/ai-copilot-for-enterprise-it' }
-};
+  alternates: {{ canonical: '/ai-copilot-for-enterprise-it' }}
+}};
 
-export default function Page() {
+export default function Page() {{
   return (
     <main className="min-h-screen">
       <section className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 pt-20 pb-16">
@@ -44,4 +44,4 @@ export default function Page() {
       </section>
     </main>
   );
-}
+}}
