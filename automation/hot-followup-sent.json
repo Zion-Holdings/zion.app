@@ -22,5 +22,11 @@
     "ts": "2026-07-22T14:58:11Z",
     "mode": "tailored",
     "reply_sent": true
+  },
+  "solyssey_thread_19f3df60bc1cf2ed_in_negotiation": {
+    "status": "IN_NEGOTIATION",
+    "ts": "2026-07-22T22:03:59.431105Z",
+    "mode": "suppress_until_client_replies_without_our_outbound",
+    "reply_sent": true
   }
 }
