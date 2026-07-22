@@ -68,9 +68,14 @@ jobs:
           ARTIFACT_DIR="${GITHUB_WORKSPACE:-.}/artifacts/pages"
           mkdir -p "$ARTIFACT_DIR"
           mkdir -p "$ARTIFACT_DIR/docs"
-          # Always include docs/ static content as deploy base.
+          # Include docs/ static content, plus explicit canonical root for workflows that need a top-level index.html.
           if [ -d docs ]; then
             cp -a docs/. "$ARTIFACT_DIR"/
+          fi
+          # Canonical docs root under /docs as well.
+          mkdir -p "$ARTIFACT_DIR/docs"
+          if [ -d docs ]; then
+            cp -a docs/. "$ARTIFACT_DIR/docs/" || true
           fi
           docs_index=.github/docs_index.html
           if [ ! -f "$ARTIFACT_DIR/index.html" ] && [ -f "$docs_index" ]; then
