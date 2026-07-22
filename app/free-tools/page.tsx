@@ -23,7 +23,7 @@ export default function FreeToolsHubPage() {
       title: 'IT Health & Monitoring',
       icon: '📊',
       tools: [
-        { name: 'System Health Check Script', desc: 'Cross-platform bash/Python script for CPU, disk, memory, services.', href: '/tools/health-check-script', status: 'live' },
+        { name: 'System Health Check Script', desc: 'Cross-platform bash/Python script for CPU, disk, memory, services.', href: '/tools/health-check', status: 'live' },
         { name: 'SSL Certificate Checker', desc: 'Scan domains for expiry, chain validity, and TLS config issues.', href: '/tools/ssl-checker', status: 'live' },
         { name: 'Port & Service Scanner', desc: 'Fast TCP/UDP scan with service fingerprinting.', href: '/tools/port-scanner', status: 'live' },
         { name: 'DNS Propagation Checker', desc: 'Verify DNS records across global resolvers in seconds.', href: '/tools/dns-checker', status: 'live' },
@@ -88,7 +88,7 @@ export default function FreeToolsHubPage() {
                 Start AI Readiness Audit
               </Link>
               <Link
-                href="/tools/health-check-script"
+                href="/tools/health-check"
                 className="rounded-xl border border-slate-700 px-6 py-3 text-sm font-semibold text-slate-100 hover:border-purple-500 transition-colors"
               >
                 Download Health Check Script
