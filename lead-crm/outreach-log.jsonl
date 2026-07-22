@@ -2,3 +2,19 @@
 {"ts": "2026-07-15T00:03:27.434980+00:00", "event": "send_disabled_analysis", "status": "send_disabled_improved", "tailored": 25}
 {"ts": "2026-07-15T02:06:35.074272+00:00", "event": "send_disabled_analysis", "status": "send_disabled_improved", "tailored": 25}
 {"ts": "2026-07-16T19:06:37.058809+00:00", "event": "send_disabled_analysis", "status": "send_disabled_improved", "tailored": 24}
+{"event": "start", "ts": "2026-07-22T01:29:09.825366Z", "host": "cron"}
+{"event": "skipped", "email": "higor.marinho@portobank.com.br", "reason": "duplicate_suppression", "daysSince": 0.06, "ts": "2026-07-22T01:29:09.825366Z"}
+{"event": "skipped", "email": "emily.davis@gobenifitcare.net", "reason": "duplicate_suppression", "daysSince": 0.42, "ts": "2026-07-22T01:29:09.825366Z"}
+{"event": "skipped", "email": "hardware@hascon.com", "reason": "duplicate_suppression", "daysSince": 0.54, "ts": "2026-07-22T01:29:09.825366Z"}
+{"event": "skipped", "email": "LuizEduardo.Araujo@ingrammicro.com", "reason": "duplicate_suppression", "daysSince": 1.22, "ts": "2026-07-22T01:29:09.825366Z"}
+{"event": "skipped", "email": "falecom@portaldecompraspublicas.com.br", "reason": "duplicate_suppression", "daysSince": 1.22, "ts": "2026-07-22T01:29:09.825366Z"}
+{"event": "skipped", "email": "contact@solyssey.com", "reason": "duplicate_suppression", "daysSince": 1.22, "ts": "2026-07-22T01:29:09.825366Z"}
+{"event": "complete", "summary": {"scanned": 500, "potentialClients": 6, "skippedDuplicateSuppression": 6, "sendsAttempted": 0, "sent": 0, "authFailures": 0, "hotFollowups": 0, "errors": []}, "ts": "2026-07-22T01:29:26.723284Z"}
+{"event": "start", "ts": "2026-07-22T01:42:41.653236Z", "host": "cron"}
+{"event": "skipped", "email": "higor.marinho@portobank.com.br", "reason": "duplicate_suppression", "daysSince": 0.07, "ts": "2026-07-22T01:42:41.653236Z"}
+{"event": "skipped", "email": "emily.davis@gobenifitcare.net", "reason": "duplicate_suppression", "daysSince": 0.43, "ts": "2026-07-22T01:42:41.653236Z"}
+{"event": "skipped", "email": "hardware@hascon.com", "reason": "duplicate_suppression", "daysSince": 0.55, "ts": "2026-07-22T01:42:41.653236Z"}
+{"event": "skipped", "email": "LuizEduardo.Araujo@ingrammicro.com", "reason": "duplicate_suppression", "daysSince": 1.23, "ts": "2026-07-22T01:42:41.653236Z"}
+{"event": "skipped", "email": "falecom@portaldecompraspublicas.com.br", "reason": "duplicate_suppression", "daysSince": 1.23, "ts": "2026-07-22T01:42:41.653236Z"}
+{"event": "skipped", "email": "contact@solyssey.com", "reason": "duplicate_suppression", "daysSince": 1.23, "ts": "2026-07-22T01:42:41.653236Z"}
+{"event": "complete", "summary": {"scanned": 500, "potentialClients": 6, "skippedDuplicateSuppression": 6, "sendsAttempted": 0, "sent": 0, "authFailures": 0, "hotFollowups": 0, "errors": []}, "ts": "2026-07-22T01:42:59.183265Z"}

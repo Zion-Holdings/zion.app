@@ -1,108 +1,70 @@
 import requests
 from bs4 import BeautifulSoup
-from urllib.parse import urlparse, urljoin
-from concurrent.futures import ThreadPoolExecutor, as_completed
-import json
+from urllib.parse import urljoin, urlparse
+import time
 
 BASE = "https://ziontechgroup.com"
-MAX_PAGES = 200
-MAX_WORKERS = 10
-TIMEOUT = 15
+HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; SiteIntegrity/1.0)"}
 
 session = requests.Session()
-session.headers["User-Agent"] = "Mozilla/5.0 (compatible; site-integrity-checker/1.0)"
+session.headers.update(HEADERS)
 
 visited = set()
-to_visit = [BASE]
-results = {}  # url -> (status, final_url)
+broken = []
+info = {"crawled": 0, "ok": 0}
+
+def classify_broken(url, status_code, reason):
+    if status_code is None:
+        if "Connection" in str(reason):
+            return "external reference error (connection failed)"
+        return f"external reference error ({reason})"
+    if 300 <= status_code < 400:
+        return f"stale redirect ({status_code})"
+    if status_code == 404:
+        return "missing page"
+    return f"HTTP error ({status_code})"
 
 def is_internal(url):
     p = urlparse(url)
-    return p.netloc == urlparse(BASE).netloc
+    return p.netloc == urlparse(BASE).netloc and p.scheme in ("http", "https")
 
-def fix_url(url):
-    url = url.strip()
-    if url.startswith("//"):
-        return "https:" + url
-    if url.startswith("/"):
-        return urljoin(BASE, url)
-    if url.startswith("http"):
-        return url
-    return urljoin(BASE, url)
-
-def classify_error(status, final_url):
-    if status is None:
-        return "missing page/network error"
-    if 300 <= status < 400:
-        if final_url and urlparse(final_url).netloc != urlparse(BASE).netloc:
-            return "stale redirect to external domain"
-        return "stale redirect"
-    if status == 404:
-        return "missing page"
-    if status >= 400:
-        return f"HTTP {status} error"
-    return "unknown"
-
-def check_url(url):
+def crawl(url, depth=0, max_depth=3):
+    if depth > max_depth or url in visited:
+        return
+    visited.add(url)
+    info["crawled"] += 1
+    
     try:
-        resp = session.head(url, allow_redirects=True, timeout=TIMEOUT)
-        if resp.status_code == 405 or (400 <= resp.status_code < 500):
-            resp = session.get(url, allow_redirects=True, timeout=TIMEOUT, stream=True)
-            resp.close()
-        return url, resp.status_code, resp.url
+        resp = session.get(url, timeout=15, allow_redirects=True)
+        final_url = resp.url
+        status = resp.status_code
+        
+        if status == 200:
+            info["ok"] += 1
+            if depth < max_depth:
+                soup = BeautifulSoup(resp.text, "html.parser")
+                for a in soup.find_all("a", href=True):
+                    link = urljoin(final_url, a["href"])
+                    if is_internal(link):
+                        crawl(link, depth + 1, max_depth)
+        else:
+            broken.append((url, status, ""))
     except Exception as e:
-        return url, None, str(e)
+        broken.append((url, None, str(e)))
+    
+    time.sleep(0.1)
 
-def extract_internal_links(url, html):
-    soup = BeautifulSoup(html, "html.parser")
-    links = set()
-    for tag in soup.find_all("a", href=True):
-        link = fix_url(tag.get("href"))
-        if link.startswith(BASE) and link not in visited:
-            links.add(link)
-    return links
+print(f"Starting crawl of {BASE} (max depth={3})...")
+crawl(BASE)
 
-# crawl
-while to_visit and len(results) < MAX_PAGES:
-    batch = []
-    while to_visit and len(batch) < MAX_WORKERS:
-        u = to_visit.pop(0)
-        if u in results:
-            continue
-        batch.append(u)
+print("\n=== RESULTS ===")
+print(f"Total crawled:   {info['crawled']}")
+print(f"HTTP 200 count:  {info['ok']}")
+print(f"Broken count:    {len(broken)}")
 
-    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
-        futures = {executor.submit(check_url, url): url for url in batch}
-        for future in as_completed(futures):
-            url, status, final = future.result()
-            results[url] = (status, final)
-            if status == 200:
-                try:
-                    r = session.get(url, timeout=TIMEOUT)
-                    found = extract_internal_links(url, r.text)
-                    for link in found:
-                        if link not in results and link not in to_visit:
-                            to_visit.append(link)
-                except Exception:
-                    pass
-
-# combine counts
-ok_count = sum(1 for s, _ in results.values() if s == 200)
-all_non_ok = [(u, s, f) for u, (s, f) in results.items() if s != 200]
-broken_count = len(all_non_ok)
-broken_list = []
-for url, status, final in all_non_ok[:10]:
-    broken_list.append({
-        "url": url,
-        "status": status,
-        "classification": classify_error(status, final)
-    })
-
-report = {
-    "total_crawled": len(results),
-    "http_200_count": ok_count,
-    "broken_count": broken_count,
-    "first_10_broken": broken_list if broken_count > 0 else []
-}
-
-print(json.dumps(report, indent=2))
+if broken:
+    print("\nFirst 10 broken URLs:")
+    for i, (url, status, reason) in enumerate(broken[:10]):
+        cls = classify_broken(url, status, reason)
+        print(f"  {i+1}. {url}")
+        print(f"     -> {cls}")

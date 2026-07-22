@@ -38,6 +38,9 @@ const tools = [
   { id: 'number-base-converter', icon: '🔢', title: 'Number Base Converter', desc: 'Convert between binary, octal, decimal, and hexadecimal', category: 'Utilities' },
   { id: 'subnet-calculator', icon: '🌐', title: 'Subnet Calculator', desc: 'Calculate subnet ranges, CIDR, and network addresses', category: 'Network' },
   { id: 'secure-hash-generator', icon: '🔐', title: 'Secure Hash Generator', desc: 'Generate SHA-256, SHA-512, MD5, and other hashes', category: 'Security' },
+  { id: 'manifest-generator', icon: '📦', title: 'Manifest Generator', desc: 'Generate starter manifests for extensions, web apps, and cloud services', category: 'Utilities' },
+  { id: 'env-validator', icon: '🔐', title: 'ENV Validator', desc: 'Validate .env contents and flag suspicious or blank values', category: 'Security' },
+  { id: 'gitignore-generator', icon: '🚫', title: '.gitignore Generator', desc: 'Copy or download sensible .gitignore templates for common stacks', category: 'Utilities' },
 ];
 
 export default function ToolsPage() {
@@ -49,7 +52,7 @@ export default function ToolsPage() {
         <header className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-4">🛠️ Free Developer Tools</h1>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            50+ free online tools for developers, designers, and data professionals.
+            38 free developer tools today, with more tools launching regularly.
             No signup required, no data stored.
           </p>
           <div className="flex items-center justify-center gap-4 mt-6 text-sm text-slate-500">
