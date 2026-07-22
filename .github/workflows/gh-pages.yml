@@ -138,10 +138,14 @@ jobs:
         uses: actions/deploy-pages@v4.0.5
 
       - name: Verify deployment
+        shell: bash
         run: |
-          echo "Deployed URL: ${{ steps.deployment.outputs.page_url }}"
+          set -euo pipefail
+          URL="${{ steps.deployment.outputs.page_url }}"
+          echo "Deployed URL: ${URL}"
           sleep 20
-          curl -sf "${{ steps.deployment.outputs.page_url }}/" > /dev/null && echo "✓ Homepage" || echo "✗ Homepage"
+          curl -sf "${URL}/" > /dev/null && echo "✓ Homepage" || echo "✗ Homepage"
           for p in /services/ /solutions/ /pricing/ /contact/ /tools/ /about/ /blog/ /careers/ /partners/ /portal/ /case-studies/ /industries/ /testimonials/ /roi-calculator/ /client-portal/ /proposal-generator/ /academy/ /help/ /bundles/ /status/ /api/ /ai-services-index /free-ai-it-tools /automation/; do
-            code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "${{ steps.deployment.outputs.page_url }}${p}" || true)
-            echo "$p -> $code"
+            code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "${URL}${p}" || true)
+            echo "${p} -> ${code}"
+          done
