@@ -41,6 +41,23 @@ const tools = [
   { id: 'number-base-converter', icon: '🔢', title: 'Number Base Converter', desc: 'Convert between binary, octal, decimal, and hexadecimal', category: 'Utilities' },
   { id: 'subnet-calculator', icon: '🌐', title: 'Subnet Calculator', desc: 'Calculate subnet ranges, CIDR, and network addresses', category: 'Network' },
   { id: 'secure-hash-generator', icon: '🔐', title: 'Secure Hash Generator', desc: 'Generate SHA-256, SHA-512, MD5, and other hashes', category: 'Security' },
+  { id: 'api-endpoint-tester', icon: '🧪', title: 'API Endpoint Tester', desc: 'Test REST APIs with custom headers and payloads', category: 'API' },
+  { id: 'jwt-signature-verifier', icon: '✅', title: 'JWT Signature Verifier', desc: 'Verify JWT signatures with public keys', category: 'Security' },
+  { id: 'html-entity-decoder', icon: '🔤', title: 'HTML Entity Decoder', desc: 'Decode HTML entities to plain text', category: 'Text' },
+  { id: 'csv-validator', icon: '✅', title: 'CSV Validator', desc: 'Validate and format CSV data', category: 'Data' },
+  { id: 'ip-address-validator', icon: '🌐', title: 'IP Address Validator', desc: 'Validate IPv4 and IPv6 addresses with details', category: 'Network' },
+  { id: 'email-validator', icon: '📧', title: 'Email Validator', desc: 'Validate email addresses and extract components', category: 'Text' },
+  { id: 'phone-number-formatter', icon: '📱', title: 'Phone Number Formatter', desc: 'Format phone numbers for different countries', category: 'Utilities' },
+  { id: 'credit-card-validator', icon: '💳', title: 'Credit Card Validator', desc: 'Validate credit card numbers with Luhn algorithm', category: 'Validation' },
+  { id: 'geolocation-geocoder', icon: '📍', title: 'Geolocation Geocoder', desc: 'Convert addresses to coordinates and vice versa', category: 'Geolocation' },
+  { id: 'weather-api-mock', icon: '🌤️', title: 'Weather API Mock', desc: 'Mock weather data for testing and development', category: 'API' },
+  { id: 'graphql-query-builder', icon: '📊', title: 'GraphQL Query Builder', desc: 'Build and test GraphQL queries visually', category: 'API' },
+  { id: 'rate-limit-calculator', icon: '📈', title: 'Rate Limit Calculator', desc: 'Calculate API rate limits and quotas', category: 'API' },
+  { id: 'webhook-inspector', icon: '🔗', title: 'Webhook Inspector', desc: 'Inspect and debug webhook payloads', category: 'API' },
+  { id: 'oauth-debugger', icon: '🔑', title: 'OAuth Debugger', desc: 'Debug OAuth flows and token exchanges', category: 'Authentication' },
+  { id: 'cors-proxy', icon: '🔓', title: 'CORS Proxy', desc: 'Test CORS headers with proxy URLs', category: 'Development' },
+  { id: 'cookie-parser', icon: '🍪', title: 'Cookie Parser', desc: 'Parse and decode cookie strings', category: 'Web' },
+  { id: 'http-header-analyzer', icon: '📬', title: 'HTTP Header Analyzer', desc: 'Analyze and format HTTP headers', category: 'Web' },
 ];
 
 export default function ToolsPage() {
@@ -52,7 +69,7 @@ export default function ToolsPage() {
         <header className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-4">🛠️ Free Developer Tools</h1>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            35+ free online tools for developers, designers, and data professionals.
+            50+ free online tools for developers, designers, and data professionals.
             No signup required, no data stored.
           </p>
           <div className="flex items-center justify-center gap-4 mt-6 text-sm text-slate-500">

@@ -152,7 +152,7 @@ export default function RegexBuilderTool() {
               <h3 className="mb-3 font-semibold">Quick Reference</h3>
               <div className="space-y-1 text-xs text-slate-400">
                 <div><code className="text-white">.</code> any char | <code className="text-white">\d</code> digit | <code className="text-white">\w</code> word char | <code className="text-white">\s</code> whitespace</div>
-                <div><code className="text-white">*</code> 0+ | <code className="text-white">+</code> 1+ | <code className="text-white">?</code> 0/1 | <code className="text-white">{n,m}</code> range</div>
+                <div><code className="text-white">*</code> 0+ | <code className="text-white">+</code> 1+ | <code className="text-white">?</code> 0/1 | <code className="text-white">{'{n,m}'}</code> range</div>
                 <div><code className="text-white">^</code> start | <code className="text-white">$</code> end | <code className="text-white">\b</code> word boundary</div>
                 <div><code className="text-white">(abc)</code> capture | <code className="text-white">(?:abc)</code> non-capture | <code className="text-white">a|b</code> or</div>
               </div>

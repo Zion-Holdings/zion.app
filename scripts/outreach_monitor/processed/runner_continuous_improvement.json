@@ -1,6 +1,6 @@
 [
   {
-    "ts": "2026-07-19T12:13:16.869860+00:00",
+    "ts": "2026-07-21T19:26:25.430512+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -8,7 +8,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T12:15:17.633209+00:00",
+    "ts": "2026-07-21T19:28:26.007307+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -16,7 +16,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T12:17:18.457137+00:00",
+    "ts": "2026-07-21T19:30:26.552629+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -24,7 +24,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T12:19:19.385927+00:00",
+    "ts": "2026-07-21T19:32:27.136390+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -32,7 +32,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T12:21:20.387499+00:00",
+    "ts": "2026-07-21T19:34:27.716300+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -40,7 +40,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T12:23:21.225430+00:00",
+    "ts": "2026-07-21T19:36:28.303233+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -48,7 +48,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T12:25:21.953307+00:00",
+    "ts": "2026-07-21T19:38:28.872417+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -56,7 +56,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T12:27:22.685707+00:00",
+    "ts": "2026-07-21T19:40:29.450742+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -64,7 +64,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T12:29:23.386669+00:00",
+    "ts": "2026-07-21T19:42:30.010913+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -72,7 +72,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T12:31:24.197966+00:00",
+    "ts": "2026-07-21T19:44:30.566893+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -80,7 +80,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T12:33:24.902694+00:00",
+    "ts": "2026-07-21T19:46:31.497043+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -88,7 +88,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T12:35:25.693232+00:00",
+    "ts": "2026-07-21T19:48:32.105697+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -96,7 +96,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T12:37:26.553115+00:00",
+    "ts": "2026-07-21T19:50:32.702828+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -104,7 +104,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T12:39:28.704079+00:00",
+    "ts": "2026-07-21T19:52:33.273991+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -112,7 +112,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T12:41:29.340590+00:00",
+    "ts": "2026-07-21T19:54:33.853095+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -120,7 +120,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T12:43:30.093379+00:00",
+    "ts": "2026-07-21T19:56:34.431756+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -128,7 +128,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T12:45:30.716985+00:00",
+    "ts": "2026-07-21T19:58:35.011456+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -136,7 +136,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T12:47:31.330047+00:00",
+    "ts": "2026-07-21T20:00:35.596637+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -144,7 +144,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T12:49:31.945238+00:00",
+    "ts": "2026-07-21T20:02:36.144325+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -152,7 +152,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T12:51:32.740212+00:00",
+    "ts": "2026-07-21T20:04:36.719329+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -160,7 +160,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T12:53:33.501009+00:00",
+    "ts": "2026-07-21T20:06:37.287866+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -168,7 +168,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T12:55:34.156912+00:00",
+    "ts": "2026-07-21T20:08:37.878537+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -176,7 +176,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T12:57:34.883484+00:00",
+    "ts": "2026-07-21T20:10:38.461391+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -184,7 +184,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T12:59:36.238730+00:00",
+    "ts": "2026-07-21T20:12:39.013870+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -192,7 +192,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:01:36.946791+00:00",
+    "ts": "2026-07-21T20:14:39.581607+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -200,7 +200,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:03:37.783623+00:00",
+    "ts": "2026-07-21T20:16:40.149386+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -208,7 +208,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:05:38.424791+00:00",
+    "ts": "2026-07-21T20:18:40.734473+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -216,7 +216,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:07:39.168514+00:00",
+    "ts": "2026-07-21T20:20:41.309334+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -224,7 +224,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:09:39.758910+00:00",
+    "ts": "2026-07-21T20:22:41.891225+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -232,7 +232,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:11:40.379903+00:00",
+    "ts": "2026-07-21T20:24:42.459009+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -240,7 +240,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:13:41.133777+00:00",
+    "ts": "2026-07-21T20:26:43.048774+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -248,7 +248,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:15:41.721891+00:00",
+    "ts": "2026-07-21T20:28:43.605694+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -256,7 +256,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:17:42.352195+00:00",
+    "ts": "2026-07-21T20:30:44.191945+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -264,7 +264,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:19:42.952841+00:00",
+    "ts": "2026-07-21T20:32:44.745751+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -272,7 +272,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:21:43.645639+00:00",
+    "ts": "2026-07-21T20:34:45.332214+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -280,7 +280,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:23:44.384349+00:00",
+    "ts": "2026-07-21T20:36:45.896325+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -288,7 +288,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:25:45.061013+00:00",
+    "ts": "2026-07-21T20:38:46.473545+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -296,7 +296,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:27:45.650134+00:00",
+    "ts": "2026-07-21T20:40:47.041388+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -304,7 +304,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:29:46.261977+00:00",
+    "ts": "2026-07-21T20:42:47.925701+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -312,7 +312,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:31:46.868111+00:00",
+    "ts": "2026-07-21T20:44:48.526152+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -320,7 +320,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:33:47.491064+00:00",
+    "ts": "2026-07-21T20:46:49.088320+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -328,7 +328,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:35:48.116703+00:00",
+    "ts": "2026-07-21T20:48:49.658505+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -336,7 +336,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:37:48.734041+00:00",
+    "ts": "2026-07-21T20:50:50.242695+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -344,7 +344,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:39:49.569936+00:00",
+    "ts": "2026-07-21T20:52:50.824915+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -352,7 +352,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:41:50.198616+00:00",
+    "ts": "2026-07-21T20:54:51.404606+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -360,7 +360,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:44:51.479104+00:00",
+    "ts": "2026-07-21T20:56:52.088019+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -368,7 +368,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:47:46.228984+00:00",
+    "ts": "2026-07-21T20:58:52.679439+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -376,7 +376,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:50:05.054646+00:00",
+    "ts": "2026-07-21T21:00:53.251307+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -384,7 +384,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:52:20.926900+00:00",
+    "ts": "2026-07-21T21:02:53.829407+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -392,7 +392,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:54:22.469500+00:00",
+    "ts": "2026-07-21T21:04:54.415102+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -400,1183 +400,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T13:56:23.460319+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 120
-  },
-  {
-    "ts": "2026-07-19T13:59:24.263851+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T14:02:25.149079+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T14:05:25.893649+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T14:08:26.583021+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T14:11:27.373036+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T14:14:28.449392+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T14:17:29.274637+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T14:20:30.048134+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T14:23:30.765405+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T14:26:31.341159+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T14:29:31.976844+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T14:32:32.553970+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T14:35:33.325289+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T14:38:33.864117+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T14:41:34.453759+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T14:44:35.019479+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T14:47:35.604566+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T14:50:36.149808+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T14:53:36.721762+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T14:56:37.283245+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T14:59:37.887634+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T15:02:38.593329+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T15:05:39.185463+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T15:08:39.807440+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T15:11:40.386471+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T15:14:40.944308+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T15:17:41.509613+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T15:20:42.041378+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T15:23:42.612090+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T15:26:43.303336+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T15:29:43.890800+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T15:32:44.678977+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T15:35:45.278316+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T15:38:45.885563+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T15:41:46.504938+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T15:44:47.075379+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T15:47:47.756495+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T15:50:48.319503+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T15:53:48.915268+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T15:56:49.501612+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T15:59:50.084478+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T16:02:50.634295+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T16:05:51.378706+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T16:08:52.002585+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T16:11:52.582562+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T16:14:53.128793+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T16:17:53.869444+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T16:20:54.436197+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T16:23:55.049752+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T16:26:55.649950+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T16:29:56.347729+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T16:32:56.884527+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T16:35:57.439161+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T16:38:58.010728+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T16:41:58.592048+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T16:44:59.165197+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T16:47:59.739440+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T16:51:00.372965+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T16:54:00.916445+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T16:57:01.509139+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T17:00:02.101258+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T17:03:02.670757+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T17:06:03.358121+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T17:09:04.044867+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T17:12:04.724898+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T17:15:05.310690+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T17:18:05.878106+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T17:21:06.425904+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T17:24:07.211722+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T17:27:07.849719+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T17:30:08.413053+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T17:33:09.173777+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T17:36:09.954465+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T17:39:10.681996+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T17:42:11.268816+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T17:45:11.873036+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T17:48:12.558774+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T17:51:13.229766+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T17:54:13.796844+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T17:57:14.364355+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T18:00:14.911824+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T18:03:15.462188+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T18:06:16.149724+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T18:09:16.980225+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T18:12:17.722013+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T18:15:18.441701+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T18:18:19.178641+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T18:21:19.862368+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T18:24:20.535985+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T18:27:21.273807+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T18:30:21.941628+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T18:33:22.620132+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T18:36:23.288904+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T18:39:23.966211+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T18:42:24.653962+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T18:45:25.342606+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T18:48:26.036572+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T18:51:26.702243+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T18:54:27.491492+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T18:57:28.349620+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T19:00:29.084387+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T19:03:29.806852+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T19:06:30.473990+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T19:09:31.140765+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T19:12:31.811837+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T19:15:32.483965+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T19:18:33.137049+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T19:21:33.804965+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T19:24:34.384170+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T19:27:34.979738+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T19:30:35.607641+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T19:33:36.144053+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T19:36:36.707379+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T19:39:37.252793+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T19:42:37.839957+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T19:45:38.451441+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T19:48:39.027421+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T19:51:39.592046+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T19:54:40.154554+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T19:57:40.707321+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T20:00:41.286181+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T20:03:41.856930+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T20:06:42.433022+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T20:09:42.980856+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T20:12:43.548268+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T20:15:44.122424+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T20:18:44.682838+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T20:21:45.266772+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T20:24:45.815796+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T20:27:46.402823+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T20:30:47.189688+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T20:33:47.836121+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T20:36:48.414517+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T20:39:49.068320+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T20:42:49.643675+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T20:45:50.203815+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T20:48:50.768519+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T20:51:51.361499+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T20:54:51.885965+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T20:57:52.439937+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T21:00:53.012742+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T21:03:53.630091+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T21:06:54.324478+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T21:09:54.937475+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T21:12:55.601247+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": "URLError(gaierror(11001, 'getaddrinfo failed'))",
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T21:15:57.463424+00:00",
-    "contacts": 0,
-    "sent": 0,
-    "dead_thread": 0,
-    "auth_error": null,
-    "interval_seconds": 180
-  },
-  {
-    "ts": "2026-07-19T21:17:58.248231+00:00",
+    "ts": "2026-07-21T21:06:54.999288+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -1584,7 +408,7 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T21:19:58.909533+00:00",
+    "ts": "2026-07-21T21:08:55.547289+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
@@ -1592,7 +416,1183 @@
     "interval_seconds": 120
   },
   {
-    "ts": "2026-07-19T21:22:00.103525+00:00",
+    "ts": "2026-07-21T21:10:56.136259+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T21:12:56.740741+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T21:14:57.331935+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T21:16:57.915056+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T21:18:58.477901+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T21:20:59.051180+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T21:22:59.656482+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T21:25:00.258955+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T21:27:00.871719+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T21:29:01.480465+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T21:31:02.038095+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T21:33:02.629023+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T21:35:03.188472+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T21:37:03.759899+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T21:39:04.697871+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T21:41:05.309491+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T21:43:05.900364+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T21:45:06.471579+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T21:47:07.057675+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T21:49:07.667124+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T21:51:08.242807+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T21:53:08.782879+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T21:55:09.373752+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T21:57:09.940677+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T21:59:10.501638+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T22:01:11.071301+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T22:03:12.657975+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T22:05:13.263246+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T22:07:13.855823+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T22:09:14.405647+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T22:11:15.015855+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T22:13:15.591241+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T22:15:16.162159+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T22:17:16.723009+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T22:19:17.305980+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T22:21:17.880122+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T22:23:18.486281+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T22:25:19.085344+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T22:27:19.650831+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T22:29:20.227474+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T22:31:20.836572+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T22:33:01.791760+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 60
+  },
+  {
+    "ts": "2026-07-21T22:35:02.944296+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T22:37:04.302966+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T22:39:05.247262+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T22:43:44.651384+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "timeout",
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T22:48:39.871857+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": "timeout",
+    "interval_seconds": 125
+  },
+  {
+    "ts": "2026-07-21T22:51:06.501515+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 130
+  },
+  {
+    "ts": "2026-07-21T22:53:07.613296+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T22:55:08.324289+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T22:57:08.958505+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T22:59:09.603332+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:01:10.376236+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:03:11.038715+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:05:11.791814+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:07:12.458544+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:09:13.193616+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:11:13.876993+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:13:14.634855+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:15:15.432055+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:17:16.134606+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:19:16.918126+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:21:17.577178+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:23:18.399651+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:25:19.194131+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:27:19.852273+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:29:20.547413+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:31:21.629189+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:33:22.342484+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:35:22.996188+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:37:23.634509+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:39:24.385872+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:41:24.987703+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:43:25.548286+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:45:26.133260+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:47:26.711240+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:49:27.392824+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:51:27.988750+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:53:28.785903+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:55:31.081472+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-21T23:57:33.965456+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:00:05.408254+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:02:09.017348+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:04:31.240783+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:06:32.181315+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:08:33.000783+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:10:39.600733+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:12:44.737108+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:15:05.471048+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:17:11.738086+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:20:36.654214+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:22:37.559093+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:24:38.467244+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:26:39.817012+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:28:40.666147+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:30:41.324485+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:32:42.016152+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:34:42.722911+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:36:43.434367+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:38:44.173699+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:40:44.831165+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:42:45.572764+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:44:46.180403+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:46:46.854900+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:48:48.079114+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:50:48.806361+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:52:49.478820+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:54:50.120150+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:56:50.762094+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T00:58:54.554573+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:00:58.229973+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:03:03.917653+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:05:06.844312+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:07:08.285901+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:09:09.023661+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:11:13.685246+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:13:24.957354+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:15:40.848749+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:19:09.964156+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:21:26.005648+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:23:28.003578+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:25:29.288531+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:27:30.262582+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:29:31.770624+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:31:32.545478+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:33:33.153369+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:35:33.918464+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:37:34.719170+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:39:35.460691+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:41:36.218183+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:43:36.953306+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:45:37.600977+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:47:38.325327+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:49:39.033381+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:51:39.741573+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:53:45.098814+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:55:45.758600+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:57:46.448421+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T01:59:47.274068+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T02:01:47.966035+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T02:03:48.727645+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T02:05:49.380585+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T02:07:50.054989+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T02:09:50.714766+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T02:11:51.372575+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T02:13:52.211289+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T02:15:52.886800+00:00",
+    "contacts": 0,
+    "sent": 0,
+    "dead_thread": 0,
+    "auth_error": null,
+    "interval_seconds": 120
+  },
+  {
+    "ts": "2026-07-22T02:17:53.595476+00:00",
     "contacts": 0,
     "sent": 0,
     "dead_thread": 0,
