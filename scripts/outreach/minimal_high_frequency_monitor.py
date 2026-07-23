@@ -329,7 +329,7 @@ def main():
                 'created_at': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
             })
         report['hot_followup_drafts_count'] = len(hot_drafts)
-        report['hot_followup_drafts'] = hot_drafts[:5]
+        report['hot_followup_drafts'] = hot_drafts[:3]
         try:
             if hot_message_ids:
                 hot_label_id = gmail_get_or_create_label_id('!!!hot-follow-up')
@@ -426,7 +426,7 @@ def main():
             k: skipped_reasons.count(k) for k in dict.fromkeys(skipped_reasons)
         }
         report['new_inbox_interest_dedup_count'] = len(deduped_hits)
-        report['new_inbox_examples'] = deduped_hits[:5]
+        report['new_inbox_examples'] = [{'id':h.get('id'),'threadId':h.get('threadId'),'from':h.get('from'),'subject':h.get('subject'),'date':h.get('date')} for h in deduped_hits[:3]]
         interest_drafts = []
         for hit in interest_hits:
             from_addr = hit.get('from', '')
@@ -482,7 +482,7 @@ def main():
             else:
                 report['metrics']['tailor_fallback_count'] = report['metrics'].get('tailor_fallback_count', 0) + 1
         report['interest_drafts_count'] = len(interest_drafts)
-        report['interest_drafts'] = interest_drafts[:5]
+        report['interest_drafts'] = interest_drafts[:3]
         if interest_drafts:
             q_path = Path('lead-crm') / 'outreach_monitor' / 'processed' / 'interest_draft_queue.jsonl'
             try:

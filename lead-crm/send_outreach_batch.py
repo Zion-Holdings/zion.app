@@ -188,6 +188,8 @@ def send_mail(to_addr, subject, body, html=None, thread_id=None, message_id=None
     key = (to_key, (subject or '').strip(), thread_id or '', message_id or '')
     if key in _SENT_ROWS:
         return None, 'duplicate'
+    if any(x in (to_key or '') for x in ['mailer-daemon','no-reply','noreply','postmaster@','notifications@','dependabot']):
+        return None, 'noise_recipient' 
     # 72h auto-suppress via Gmail Sent history (was 24h; adjusted for real send latency)
     try:
         from commands.google_workspace import gmail_sent
@@ -239,7 +241,25 @@ def send_mail(to_addr, subject, body, html=None, thread_id=None, message_id=None
     except Exception:
         pass
     _SENT_ROWS.add(key)
-    return mid, tid
+    try:
+        return mid, tid
+    except Exception as e:
+        # Normalize thread/message metadata for dedupe and audit
+        norm_tid = (tid or thread_id or message_id or '').lower()
+        mid_n = mid or ('bounce:' + (message_id or thread_id or to_key))
+        try:
+            append_sent({
+                'ts': __import__('datetime').datetime.now(__import__('datetime').timezone.utc).isoformat(),
+                'to': to_addr,
+                'subject': subject,
+                'message_id': mid_n,
+                'thread_id': norm_tid,
+                'provider': 'gmail_api',
+                'status': 'failed_live',
+            })
+        except Exception:
+            pass
+        raise e
 
 
 def _tailor_message(chat_fn, r):
