@@ -1,8 +1,14 @@
 /*
   Cache-Control: public, max-age=300, stale-while-revalidate=86400
 
-/assets/
+/assets/*
   Cache-Control: public, max-age=86400, immutable
+
+/*.html
+  Cache-Control: public, max-age=300, stale-while-revalidate=86400
+
+/robots.txt
+  Cache-Control: public, max-age=3600
 
 /sitemap.xml
   Cache-Control: public, max-age=3600
