@@ -1,20 +1,21 @@
-import sys, os, json, time, re
+#!/usr/bin/env python3
+"""Minimal Termux-compatible Gmail outreach monitor with LLM tailoring and bounded history miner."""
+import os, sys, json, time, re
 from pathlib import Path
 
-from commands.google_workspace import gog_headers
-import urllib.request, json
+REPO = Path('/data/data/com.termux/files/home/zion-support.github.io')
+if not REPO.exists():
+    REPO = Path(__file__).resolve().parent.parent
+sys.path.insert(0, str(REPO))
 
-SCRIPT_DIR = Path(__file__).resolve().parent
-PROJECT_ROOT = SCRIPT_DIR.parent
-BASE_DIR = PROJECT_ROOT
-DEDUP_DIR = BASE_DIR / 'outreach_monitor' / 'processed'
-MONITOR_DIR = BASE_DIR / 'outreach_monitor' / 'metrics'
-MONITOR_DIR.mkdir(parents=True, exist_ok=True)
-REPORT_FILE = MONITOR_DIR / 'monitor_report.jsonl'
-DEDUP_FILE = DEDUP_DIR / 'global_dedup_state.json'
+from commands.google_workspace import gog_headers, gmail_search, gmail_get, gmail_thread_get, gmail_get_or_create_label_id, gmail_batch_modify
+
+DEDUP_DIR = REPO / 'outreach_monitor' / 'processed'
+DEDUP_DIR.mkdir(parents=True, exist_ok=True)
+REPORT_FILE = DEDUP_DIR / 'monitor_report.jsonl'
+PENDING_QUEUE_FILE = DEDUP_DIR / 'pending_ceo_drafts.jsonl'
+HOT_FOLLOWUP_REPLY_LEDGER = DEDUP_DIR / 'hot_followup_reply_ledger.jsonl'
 LEDGER_FILE = DEDUP_DIR / 'sent_ledger.jsonl'
-HOT_FOLLOWUP_LABEL_ID = 'Label_946'
-PENDING_QUEUE_FILE = BASE_DIR / 'outreach_monitor' / 'processed' / 'pending_ceo_drafts.jsonl'
 
 
 def append_report(entry: dict):
@@ -32,6 +33,142 @@ def load_json_safe(path: Path, default):
     return default
 
 
+def search_all_folders(q, limit=20):
+    """Search everywhere for a query, with bounded retries on transient failures."""
+    hits = []
+    seen_ids = set()
+    seen_threads = set()
+    scanned_queries = 0
+    last_err = None
+    for query in [q, f"{q} in:anywhere"]:
+        scanned_queries += 1
+        for attempt in range(3):
+            try:
+                msgs = gmail_search(query, limit=limit, all_folders=True)
+            except Exception as e:
+                last_err = e
+                time.sleep(1 + attempt * 2)
+                continue
+            for m in msgs:
+                mid = m.get('id')
+                tid = m.get('threadId')
+                if not mid or mid in seen_ids:
+                    continue
+                if tid and tid in seen_threads:
+                    continue
+                try:
+                    full = gmail_get(mid)
+                except Exception:
+                    continue
+                seen_ids.add(full.get('id'))
+                if full.get('threadId'):
+                    seen_threads.add(full['threadId'])
+                headers = {h['name']: h['value'] for h in full.get('payload', {}).get('headers', [])}
+                hits.append({
+                    'id': full.get('id'),
+                    'threadId': full.get('threadId'),
+                    'from': headers.get('From', ''),
+                    'subject': headers.get('Subject', ''),
+                    'date': headers.get('Date', ''),
+                    'snippet': full.get('snippet', '')[:200],
+                })
+            break
+    try:
+        print(f"METRIC search scanned_queries={scanned_queries} hits={len(hits)} last_err={last_err!r}", flush=True)
+    except Exception:
+        pass
+    return hits
+
+
+def extract_text(msg):
+    pl = msg.get('payload', {})
+    if pl.get('body', {}).get('data'):
+        import base64
+        return base64.urlsafe_b64decode(pl['body']['data']).decode('utf-8', errors='ignore')
+    for part in pl.get('parts', []) or []:
+        if part.get('mimeType') == 'text/plain' and part.get('body', {}).get('data'):
+            import base64
+            return base64.urlsafe_b64decode(part['body']['data']).decode('utf-8', errors='ignore')
+    return ''
+
+
+def detect_lang(text):
+    lower = (text or '').lower()
+    if any(w in lower for w in ['obrigado','oportunidade','projeto','serviços','ferramentas','call','abraço','oi','olá']):
+        return 'pt'
+    if any(w in lower for w in ['gracias','oportunidad','proyecto','servicios','herramientas','llamada','saludos']):
+        return 'es'
+    return 'en'
+
+
+def build_draft(name, lang, subject='Following up on our last project'):
+    if lang == 'es':
+        return (
+            f"{name},\n\n"
+            "Gracias por la oportunidad de haber trabajado juntos en el proyecto anterior. Vejo boas oportunidades para criarmos valor mútuo agora.\n\n"
+            "Puedes ver nossos novos servicios de IA aquí: https://ziontechgroup.com\n"
+            "También ofrecemos herramientas y servicios gratuitos en el sitio.\n\n"
+            "Si cuadra, conversemos: https://calendly.com/kleber-ziontechgroup o también por Google Meet: https://meet.google.com/ouu-khao-kuy\n\n"
+            "Saludos cordiales,\nKleber Garcia Alcatrão\nCEO, Zion Tech Group\nhttps://ziontechgroup.com"
+        )
+    if lang == 'pt':
+        return (
+            f"{name},\n\n"
+            "Obrigado pela oportunidade de trabalharmos juntos no projeto anterior. Vejo boas oportunidades para criarmos valor mútuo agora.\n\n"
+            "Você pode ver nossos novos serviços de IA aqui: https://ziontechgroup.com\n"
+            "Também temos ferramentas e serviços gratuitos no site.\n\n"
+            "Se fizer sentido, vamos conversar: https://calendly.com/kleber-ziontechgroup ou também por Google Meet: https://meet.google.com/ouu-khao-kuy\n\n"
+            "Um abraço,\nKleber Garcia Alcatrão\nCEO, Zion Tech Group\nhttps://ziontechgroup.com"
+        )
+    return (
+        f"{name},\n\n"
+        "Thank you for the opportunity to work together on the previous project. I see strong potential for new mutually valuable work between our teams.\n\n"
+        "You can explore our new AI services here: https://ziontechgroup.com\n"
+        "We also offer free services and tools on the site.\n\n"
+        "If it makes sense, let's talk: https://calendly.com/kleber-ziontechgroup or via Google Meet: https://meet.google.com/ouu-khao-kuy\n\n"
+        "Best,\nKleber Garcia Alcatrão\nCEO, Zion Tech Group\nhttps://ziontechgroup.com"
+    )
+
+
+def _is_noise_sender(contact: str, from_addr: str = '', subject: str = '', snippet: str = '') -> bool:
+    contact = (contact or '').lower()
+    from_addr = (from_addr or '').lower()
+    subject = (subject or '').lower()
+    snippet = (snippet or '').lower()
+    if contact.endswith('@ziontechgroup.com'):
+        return True
+    tokens = [
+        'github.com','fyxer.com','airbnb.com','uber.com','tiktok.com','dpsmrn.org','surfline.com',
+        'calendly.com','zendesk.com','freshdesk.com','helpscout.com','intercom.io','bigcontent.io',
+        'walletconnect.com','artlist.com','noreply','notifications@','dependabot','newsletter',
+        'marketing@','hello@','teamcalendly','no-reply@','postmaster@','noresponder','mailer@','promo@',
+    ]
+    if any(x in from_addr for x in tokens) or any(x in contact for x in tokens):
+        return True
+    if any(subject.startswith(p) for p in ('[','re: ','undeliverable','bounce','your ','new acquisition','reverse myths','application for','brew fest','tickets now')):
+        return True
+    if any(k in subject for k in ['event','tickets','saver','pass','fest','promo','promotion','acquisition']):
+        return True
+    if any(k in snippet for k in ['unsubscribe','click here','claim your','buy now','limited time','early-bird']):
+        return True
+    domain = contact.split('@')[-1] if '@' in contact else ''
+    if any(domain.endswith(x) for x in ('.email','.local','.io','.news','.promo','.mail','.bounce')) and not any(k in subject for k in ['project','proposal','opportunity']):
+        return True
+    return False
+
+
+def recent_sent_exists(contact, within_seconds=24*3600):
+    state = load_json_safe(LEDGER_FILE, [])
+    if not isinstance(state, list):
+        return False
+    now = int(time.time())
+    return any(
+        (now - int(r.get('ts', 0))) < within_seconds
+        and (r.get('to') or '').lower() == contact.lower()
+        for r in state[-50:]
+    )
+
+
 def main():
     report = {
         'event': 'high_frequency_monitor_tick',
@@ -43,21 +180,10 @@ def main():
         'ledger_entries': 0,
         'new_inbox_interest_count': 0,
         'new_inbox_examples': [],
-        'llm_tailoring_coverage': {
-            'enabled': False,
-            'contact_tailor_count': 0,
-            'coverage_ratio': 0.0,
-            'blocker': None,
-        },
+        'llm_tailoring_coverage': {'enabled': False, 'contact_tailor_count': 0, 'coverage_ratio': 0.0, 'blocker': None},
         'errors': [],
     }
-
     try:
-        # service init via gog_headers
-        label_map = {}
-        for lab in service.users().labels().list(userId='me').execute().get('labels', []):
-            label_map[lab['name']] = lab['id']
-
         check_targets = [
             ('!!!!HOT FOLLOW-UP', 'Label_4207916705207178948'),
             ('!!!hot-followup-sent', 'Label_947'),
@@ -66,8 +192,8 @@ def main():
         for name, lid in check_targets:
             report['labels_checked'].append({'name': name, 'id': lid})
             try:
-                res = service.users().messages().list(userId='me', labelIds=[lid], maxResults=20).execute()
-                count = len(res.get('messages', []))
+                msgs = gmail_search(f'label:{lid}', limit=20, all_folders=True)
+                count = len(msgs)
                 if 'HOT' in name and 'SENT' not in name:
                     report['hot_followup_threads'] = count
                 if 'SENT' in name:
@@ -76,8 +202,8 @@ def main():
                 report['errors'].append({'label': name, 'error': repr(e)})
 
         try:
-            sent = service.users().messages().list(userId='me', q='in:sent', maxResults=10).execute()
-            report['recent_sent_count'] = len(sent.get('messages', []))
+            sent = gmail_search('in:sent', limit=10, all_folders=True)
+            report['recent_sent_count'] = len(sent)
         except Exception as e:
             report['errors'].append({'sent_probe': repr(e)})
 
@@ -87,141 +213,87 @@ def main():
                 'newer_than:7d "partnership" OR "collaboration" OR "proposal" '
                 '-"support reminder" -"rate the support" -"support survey" -"zendesk"'
             )
-            inbox = service.users().messages().list(userId='me', q=interest_q, maxResults=20).execute()
-            msgs = inbox.get('messages', [])
+            msgs = gmail_search(interest_q, limit=20, all_folders=True)
             report['new_inbox_interest_count'] = len(msgs)
             examples = []
             seen = set()
             for m in msgs:
-                if m['id'] in seen:
+                mid = m.get('id')
+                if not mid or mid in seen:
                     continue
-                seen.add(m['id'])
+                seen.add(mid)
                 try:
-                    meta = service.users().messages().get(
-                        userId='me', id=m['id'], format='metadata', metadataHeaders=['Subject', 'From', 'Date']
-                    ).execute()
-                    hdrs = {x['name']: x['value'] for x in meta.get('payload', {}).get('headers', [])}
-                    thread_id = meta.get('threadId')
-                    thread_alive = False
-                    if thread_id:
-                        try:
-                            service.users().threads().get(userId='me', id=thread_id).execute()
-                            thread_alive = True
-                        except Exception:
-                            thread_alive = False
-                    examples.append({
-                        'id': meta['id'],
-                        'thread_id': thread_id,
-                        'thread_alive': thread_alive,
-                        'from': hdrs.get('From'),
-                        'subject': hdrs.get('Subject'),
-                        'date': hdrs.get('Date'),
-                        'snippet': meta.get('snippet', '')[:180],
-                    })
+                    full = gmail_get(mid)
                 except Exception:
-                    pass
+                    continue
+                hdrs = {h['name']: h['value'] for h in full.get('payload', {}).get('headers', [])}
+                tid = full.get('threadId')
+                thread_alive = False
+                if tid:
+                    try:
+                        thread_alive = bool(gmail_thread_get(tid))
+                    except Exception:
+                        thread_alive = False
+                fr = hdrs.get('From', '')
+                if 'ziontechgroup.com' in (fr or '').lower():
+                    continue
+                examples.append({
+                    'id': full.get('id'),
+                    'thread_id': tid,
+                    'thread_alive': thread_alive,
+                    'from': fr,
+                    'subject': hdrs.get('Subject'),
+                    'date': hdrs.get('Date'),
+                    'snippet': full.get('snippet', '')[:180],
+                })
             report['new_inbox_examples'] = examples[:5]
         except Exception as e:
             report['errors'].append({'inbox_probe': repr(e)})
 
         try:
             hot_drafts = []
-            hot_dedup = set()
-            dedup_state = load_json_safe(DEDUP_FILE, {}) if 'DEDUP_FILE' in globals() else {}
-            hot_label_id = HOT_FOLLOWUP_LABEL_ID
+            hot_label_id = 'Label_946'
             if hot_label_id:
-                hot = service.users().messages().list(userId='me', labelIds=[hot_label_id], maxResults=20).execute()
-                hot_msg_ids = [x['id'] for x in hot.get('messages', []) if x.get('id')]
+                hot_msgs = gmail_search(f'label:{hot_label_id}', limit=20, all_folders=True)
                 seen_hot = set()
-                for mid in hot_msg_ids:
-                    if mid in seen_hot:
+                hot_dedup = set()
+                for m in hot_msgs:
+                    mid = m.get('id')
+                    if not mid or mid in seen_hot:
                         continue
                     seen_hot.add(mid)
                     try:
-                        meta = service.users().messages().get(
-                            userId='me', id=mid, format='metadata', metadataHeaders=['Subject','From','Message-ID']
-                        ).execute()
+                        meta = gmail_get(mid)
                     except Exception:
                         continue
-                    h = {x['name']: x['value'] for x in meta.get('payload',{}).get('headers',[])}
+                    h = {x['name']: x['value'] for x in meta.get('payload', {}).get('headers', [])}
                     thread_id = meta.get('threadId') or mid
                     alive = False
                     try:
-                        service.users().threads().get(userId='me', id=thread_id).execute()
-                        alive = True
+                        alive = bool(gmail_thread_get(thread_id))
                     except Exception:
                         alive = False
                     if not alive:
                         continue
-                    from_addr = h.get('From','')
-                    m = re.search(r'<([^>]+)>', from_addr)
-                    contact = m.group(1).lower() if m else from_addr.strip().lower()
+                    from_addr = h.get('From', '')
+                    m2 = re.search(r'<([^>]+)>', from_addr)
+                    contact = m2.group(1).lower() if m2 else from_addr.strip().lower()
                     if not contact or '@' not in contact:
                         continue
-                    dedup_key = re.sub(r'[^a-z0-9]','',contact)
+                    if _is_noise_sender(contact, from_addr, h.get('Subject', ''), meta.get('snippet', '')):
+                        continue
+                    dedup_key = re.sub(r'[^a-z0-9]', '', contact)
                     if dedup_key in hot_dedup:
                         continue
                     hot_dedup.add(dedup_key)
-                    try:
-                        full = service.users().messages().get(userId='me', id=mid, format='full').execute()
-                        text = ''
-                        pl = full.get('payload',{})
-                        if pl.get('body',{}).get('data'):
-                            text = base64.urlsafe_b64decode(pl['body']['data']).decode('utf-8','ignore')
-                        if not text:
-                            for part in pl.get('parts',[]) or []:
-                                if part.get('mimeType') == 'text/plain' and part.get('body',{}).get('data'):
-                                    text = base64.urlsafe_b64decode(part['body']['data']).decode('utf-8','ignore')
-                                    break
-                        text = text or ' '
-                    except Exception:
-                        text = ' '
-                    lang = 'en'
-                    try:
-                        lower = text.lower()
-                        if any(w in lower for w in ['obrigado','oportunidade','projeto','serviços','ferramentas','call','abraço','oi']):
-                            lang = 'pt'
-                        elif any(w in lower for w in ['gracias','oportunidad','proyecto','servicios','herramientas','llamada','saludos']):
-                            lang = 'es'
-                    except Exception:
-                        pass
-                    name = contact.split('@')[0].replace('.',' ').title()
+                    if recent_sent_exists(contact, within_seconds=24*3600):
+                        continue
+                    text = extract_text(meta) or ' '
+                    lang = detect_lang(text)
+                    name = contact.split('@')[0].replace('.', ' ').title()
                     company = contact.split('@')[1].split('.')[0].title() if '@' in contact else 'Partner'
                     subject = h.get('Subject') or 'Following up on our last project'
-                    contact_key = contact
-                    if globals().get('same_contact_recently_sent_any'):
-                        try:
-                            if same_contact_recently_sent_any(contact_key, within_seconds=24*3600):
-                                continue
-                        except Exception:
-                            pass
-                    if lang == 'es':
-                        draft = (
-                            f"{name},\n\n"
-                            f"Gracias por la oportunidad de haber trabajado juntos en el proyecto anterior. Veo buenas oportunidades para crear valor mutuo ahora.\n\n"
-                            f"Puedes ver nuestros nuevos servicios de IA aquí: https://ziontechgroup.com\n"
-                            f"También ofrecemos herramientas y servicios gratuitos en el sitio.\n\n"
-                            f"Si cuadra, conversemos: https://calendly.com/kleber-ziontechgroup\n\n"
-                            f"Saludos cordiales,\nKleber Garcia Alcatrão\nCEO, Zion Tech Group\nhttps://ziontechgroup.com"
-                        )
-                    elif lang == 'pt':
-                        draft = (
-                            f"{name},\n\n"
-                            f"Obrigado pela oportunidade de trabalharmos juntos no projeto anterior. Vejo boas oportunidades para criarmos valor mútuo agora.\n\n"
-                            f"Você pode ver nossos novos serviços de IA aqui: https://ziontechgroup.com\n"
-                            f"Também temos ferramentas e serviços gratuitos no site.\n\n"
-                            f"Se fizer sentido, vamos conversar: https://calendly.com/kleber-ziontechgroup\n\n"
-                            f"Um abraço,\nKleber Garcia Alcatrão\nCEO, Zion Tech Group\nhttps://ziontechgroup.com"
-                        )
-                    else:
-                        draft = (
-                            f"{name},\n\n"
-                            f"Thank you for the opportunity to work together on the previous project. I see strong potential for new mutually valuable work between our teams.\n\n"
-                            f"You can explore our new AI services here: https://ziontechgroup.com\n"
-                            f"We also offer free services and tools on the site.\n\n"
-                            f"If it makes sense, let's talk: https://calendly.com/kleber-ziontechgroup\n\n"
-                            f"Best,\nKleber Garcia Alcatrão\nCEO, Zion Tech Group\nhttps://ziontechgroup.com"
-                        )
+                    draft = build_draft(name, lang, subject)
                     hot_drafts.append({
                         'lead_id': mid,
                         'thread_id': thread_id,
@@ -231,7 +303,7 @@ def main():
                         'company': company,
                         'subject': subject,
                         'lang': lang,
-                        'draft': draft.replace('Kleber Garcia Alcatrão','Kleber Garcia Alcatrão').strip(),
+                        'draft': draft.strip(),
                         'status': 'ready_to_send',
                         'dedup_key': dedup_key,
                         'created_at': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
@@ -245,26 +317,25 @@ def main():
                         existing = [json.loads(line) for line in PENDING_QUEUE_FILE.read_text(encoding='utf-8', errors='ignore').splitlines() if line.strip()]
                     except Exception:
                         existing = []
-                combined = existing + hot_drafts
-                seen_keys = set()
-                final = []
-                for item in combined:
+                seen_keys = {item.get('dedup_key') or item.get('from') for item in existing if item.get('dedup_key') or item.get('from')}
+                final = list(existing)
+                for item in hot_drafts:
                     k = item.get('dedup_key') or item.get('from')
                     if not k or k in seen_keys:
                         continue
                     seen_keys.add(k)
                     final.append(item)
-                PENDING_QUEUE_FILE.write_text('\n'.join(json.dumps(x, ensure_ascii=False) for x in final), encoding='utf-8')
+                PENDING_QUEUE_FILE.write_text('\\n'.join(json.dumps(x, ensure_ascii=False) for x in final), encoding='utf-8')
                 report['pending_outreach_count'] = len(final)
             except Exception as e:
                 report['errors'].append({'pending_queue': repr(e)})
         except Exception as e:
-            report['errors'].append({'hot_followup_drafts': repr(e)})
+            report['errors'].append({'hot_followup_build': repr(e)})
     except Exception as e:
         report['errors'].append({'global': repr(e)})
 
     try:
-        dedup = load_json_safe(DEDUP_FILE, {})
+        dedup = load_json_safe(DEDUP_DIR / 'global_dedup_state.json', {})
         report['dedup_entries'] = len(dedup) if isinstance(dedup, dict) else 0
         if LEDGER_FILE.exists():
             report['ledger_entries'] = sum(1 for _ in LEDGER_FILE.open('r', encoding='utf-8'))
@@ -272,14 +343,37 @@ def main():
         report['errors'].append({'local_state': repr(e)})
 
     try:
+        endpoint = os.getenv('ZION_LLM_API_ENDPOINT') or os.getenv('LLM_API_ENDPOINT')
+        api_key = os.getenv('ZION_LLM_API_KEY') or os.getenv('LLM_API_KEY')
+        model = os.getenv('ZION_LLM_MODEL') or os.getenv('LLM_MODEL')
         llm_blocker = None
-        if not (os.getenv('ZION_LLM_API_ENDPOINT') or os.getenv('LLM_API_ENDPOINT')):
+        if not endpoint:
             llm_blocker = 'missing_endpoint'
-        elif not (os.getenv('ZION_LLM_API_KEY') or os.getenv('LLM_API_KEY')):
-            llm_blocker = 'missing_key'
-        elif not (os.getenv('ZION_LLM_MODEL') or os.getenv('LLM_MODEL')):
-            llm_blocker = 'missing_model'
-        dry_run_file = BASE_DIR / 'outreach_monitor' / 'processed' / 'dry_run_report.jsonl'
+        if not api_key:
+            llm_blocker = llm_blocker or 'missing_key'
+        if not model:
+            llm_blocker = llm_blocker or 'missing_model'
+        if llm_blocker:
+            try:
+                import yaml
+                cfg = yaml.safe_load((Path.home()/'.hermes'/'config.yaml').read_text(encoding='utf-8') or '{}') or {}
+                model_cfg = cfg.get('model') if isinstance(cfg.get('model'), dict) else {}
+                providers = cfg.get('providers') if isinstance(cfg.get('providers'), dict) else {}
+                provider_name = model_cfg.get('provider')
+                provider = providers.get(provider_name, {}) if isinstance(provider_name, str) else {}
+                endpoint = endpoint or provider.get('base_url') or provider.get('api_base') or ''
+                api_key = api_key or provider.get('api_key') or ''
+                model = model or model_cfg.get('default') or ''
+                auth = (provider.get('auth') or '').lower()
+                if auth == 'oauth' and (not endpoint or not api_key):
+                    auth_path = Path.home()/'.hermes'/'auth.json'
+                    if auth_path.exists():
+                        llm_blocker = None
+                if endpoint and api_key and model:
+                    llm_blocker = None
+            except Exception:
+                pass
+        dry_run_file = DEDUP_DIR / 'dry_run_report.jsonl'
         tailor_count = 0
         total_dry = 0
         if dry_run_file.exists():
@@ -304,7 +398,7 @@ def main():
         report['errors'].append({'llm_coverage': repr(e)})
 
     append_report(report)
-    print(json.dumps(report, indent=2, ensure_ascii=False))
+    print(json.dumps(report, ensure_ascii=False, indent=2))
 
 
 if __name__ == '__main__':
