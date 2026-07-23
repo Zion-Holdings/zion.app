@@ -88,3 +88,9 @@ ghruns.json
 memory/heartbeat-state.json
 scripts/outreach_monitor/processed/historical_miner_ts.txt
 scripts/outreach_monitor/processed/monitor_report.jsonl
+# High-frequency monitor runtime telemetry, changes every tick
+lead-crm/miner_health*.json
+lead-crm/historical_miner_results.json
+lead-crm/miner_log.json
+outreach_monitor/processed/monitor_report.jsonl
+outreach_monitor/processed/high_frequency_runner_metrics.jsonl
