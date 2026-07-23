@@ -238,15 +238,20 @@ def main():
                     })
             report['hot_followup_drafts_count'] = len(hot_drafts)
             report['hot_followup_drafts'] = hot_drafts[:5]
+            existing = []
+            seen_keys = set()
             try:
-                existing = []
                 if PENDING_QUEUE_FILE.exists():
                     try:
                         existing = [json.loads(line) for line in PENDING_QUEUE_FILE.read_text(encoding='utf-8', errors='ignore').splitlines() if line.strip()]
                     except Exception:
                         existing = []
                 combined = existing + hot_drafts
-                seen_keys = set()
+                for item in combined:
+                    k = item.get('dedup_key') or item.get('from')
+                    if not k or k in seen_keys:
+                        continue
+                    seen_keys.add(k)
                 final = []
                 for item in combined:
                     k = item.get('dedup_key') or item.get('from')
@@ -258,6 +263,90 @@ def main():
                 report['pending_outreach_count'] = len(final)
             except Exception as e:
                 report['errors'].append({'pending_queue': repr(e)})
+
+            # Improvement: when no hot-followup threads exist, promote inbox interest hits
+            # to actionable follow-up candidates so outreach can still advance without manual labeling.
+            try:
+                if hot_followup_threads == 0 and report.get('new_inbox_examples'):
+                    interest_candidates = []
+                    for ex in report['new_inbox_examples'][:5]:
+                        from_addr = (ex.get('from') or '').strip()
+                        if not from_addr or '@' not in from_addr:
+                            continue
+                        if 'ziontechgroup.com' in from_addr.lower():
+                            continue
+                        subject = ex.get('subject') or 'Following up on your inquiry'
+                        text_snippet = ex.get('snippet', '') or ''
+                        lower = text_snippet.lower()
+                        if any(w in lower for w in ['obrigado','oportunidade','projeto','serviços','ferramentas','call','abraço','oi']):
+                            lang = 'pt'
+                        elif any(w in lower for w in ['gracias','oportunidad','proyecto','servicios','herramientas','llamada','saludos']):
+                            lang = 'es'
+                        else:
+                            lang = 'en'
+                        contact = from_addr.lower()
+                        dedup_key = re.sub(r'[^a-z0-9]', '', contact)
+                        if dedup_key in seen_keys:
+                            continue
+                        name = contact.split('@')[0].replace('.', ' ').title()
+                        company = contact.split('@')[1].split('.')[0].title() if '@' in contact else 'Partner'
+                        if lang == 'es':
+                            draft = (
+                                f"{name},\n\n"
+                                f"Gracias por tu mensaje. Veo algunas oportunidades para crear valor mutuo entre nuestras empresas.\n\n"
+                                f"Puedes ver nuestros nuevos servicios de IA aquí: https://ziontechgroup.com\n"
+                                f"También tenemos herramientas y servicios gratuitos en el sitio.\n\n"
+                                f"Si cuadra, Conversemos: https://calendly.com/kleber-ziontechgroup\n\n"
+                                f"Saludos cordiales,\nKleber Garcia Alcatrão\nCEO, Zion Tech Group\nhttps://ziontechgroup.com"
+                            )
+                        elif lang == 'pt':
+                            draft = (
+                                f"{name},\n\n"
+                                f"Obrigado pela sua mensagem. Vejo algumas oportunidades para criarmos valor mútuo entre nossas empresas.\n\n"
+                                f"Você pode ver nossos novos serviços de IA aqui: https://ziontechgroup.com\n"
+                                f"Também temos ferramentas e serviços gratuitos no site.\n\n"
+                                f"Se fizer sentido, vamos conversar: https://calendly.com/kleber-ziontechgroup\n\n"
+                                f"Um abraço,\nKleber Garcia Alcatrão\nCEO, Zion Tech Group\nhttps://ziontechgroup.com"
+                            )
+                        else:
+                            draft = (
+                                f"{name},\n\n"
+                                f"Thanks for reaching out. I see some good opportunities for mutually valuable work between our teams.\n\n"
+                                f"You can explore our new AI services here: https://ziontechgroup.com\n"
+                                f"We also offer free services and tools on the site.\n\n"
+                                f"If it makes sense, let's talk: https://calendly.com/kleber-ziontechgroup\n\n"
+                                f"Best,\nKleber Garcia Alcatrão\nCEO, Zion Tech Group\nhttps://ziontechgroup.com"
+                            )
+                        interest_candidates.append({
+                            'lead_id': ex.get('id') or dedup_key,
+                            'thread_id': ex.get('thread_id') or '',
+                            'message_id': ex.get('id') or '',
+                            'from': contact,
+                            'name': name,
+                            'company': company,
+                            'subject': subject,
+                            'lang': lang,
+                            'draft': draft.strip(),
+                            'status': 'ready_to_send',
+                            'dedup_key': dedup_key,
+                            'created_at': time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()),
+                            'source': 'high_frequency_monitor_interest_candidate',
+                        })
+                    if interest_candidates:
+                        final = existing + interest_candidates
+                        seen_keys = set()
+                        deduped = []
+                        for item in final:
+                            k = item.get('dedup_key') or item.get('from')
+                            if not k or k in seen_keys:
+                                continue
+                            seen_keys.add(k)
+                            deduped.append(item)
+                        PENDING_QUEUE_FILE.write_text('\n'.join(json.dumps(x, ensure_ascii=False) for x in deduped), encoding='utf-8')
+                        report['pending_outreach_count'] = len(deduped)
+                        report['interest_promoted_count'] = len(interest_candidates)
+            except Exception as e:
+                report['errors'].append({'interest_promotion': repr(e)})
         except Exception as e:
             report['errors'].append({'hot_followup_drafts': repr(e)})
     except Exception as e:
