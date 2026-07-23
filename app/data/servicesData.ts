@@ -1,16 +1,6 @@
-type Service = Record<string, any>;
-
-let allServices: readonly Service[] = [];
-try {
-  const data = require('./servicesData.json');
-  if (Array.isArray(data)) {
-    allServices = data as readonly Service[];
-  }
-} catch {
-  allServices = [];
-}
-
+import { Service } from './serviceTypes';
 export type { Service };
+
 import { wave174AiServices, wave174MicroSaasServices, wave174ItServices, wave174SecurityServices, wave174CloudServices, wave174DataServices, wave174AutomationServices } from './wave174';
 import { wave175AiServices, wave175MicroSaasServices, wave175ItServices, wave175SecurityServices, wave175CloudServices, wave175DataServices, wave175AutomationServices } from './wave175';
 import { wave176AiServices, wave176MicroSaasServices, wave176ItServices, wave176SecurityServices, wave176CloudServices, wave176DataServices, wave176AutomationServices } from './wave176';
@@ -39,7 +29,7 @@ import { wave200AiServices, wave200MicroSaasServices, wave200DataServices, wave2
 import { wave201AiServices, wave201MicroSaasServices, wave201DataServices, wave201SecurityServices, wave201CloudServices, wave201AutomationServices, wave201ItServices, wave201HealthcareItServices } from './wave201';
 import { wave202AiServices, wave202MicroSaasServices, wave202DataServices, wave202SecurityServices, wave202CloudServices, wave202AutomationServices, wave202ItServices, wave202HealthcareItServices } from './wave202';
 import { wave203AiServices, wave203MicroSaasServices, wave203DataServices, wave203SecurityServices, wave203CloudServices, wave203AutomationServices, wave203ItServices, wave203HealthcareItServices } from './wave203';
-import { wave204AiServices, wave204MicroSaasServices, wave204DataServices, wave204SecurityServices, wave204CloudServices, wave204AutomationServices, wave204ItServices, wave204HealthcareItServices } from './wave204';
+import { wave204AiServices, wave204MicroSaasServices, wave204ItServices, wave204SecurityServices, wave204CloudServices, wave204DataServices, wave204AutomationServices, wave204HealthcareItServices } from './wave204';
 import { wave205AiServices, wave205MicroSaasServices, wave205DataServices, wave205SecurityServices, wave205CloudServices, wave205AutomationServices, wave205ItServices, wave205HealthcareItServices } from './wave205';
 import { wave206AiServices, wave206MicroSaasServices, wave206DataServices, wave206SecurityServices, wave206CloudServices, wave206AutomationServices, wave206ItServices, wave206HealthcareItServices } from './wave206';
 import { wave207ObservabilityServices, wave207IdentityServices, wave207CmsServices, wave207EcommerceServices, wave207DocumentationServices } from './wave207';
@@ -49,13 +39,12 @@ import { wave208AiServices, wave208DataServices, wave208CloudServices, wave208Se
 import { wave209DataStreamingServices, wave209SearchServices, wave209DevOpsServices, wave209TestingServices, wave209ApiServices } from './wave209';
 import { wave210DatabaseServices, wave210CollaborationServices, wave210MediaStreamingServices, wave210InfrastructureAsCodeServices, wave210LowCodeServices } from './wave210';
 import { wave211MonitoringServices, wave211LoggingServices, wave211SecurityScanningServices, wave211BackupRecoveryServices, wave211IdentityManagementServices } from './wave211';
-import { wave212AiServices, wave212MicroSaasServices, wave212ItServices, wave212SecurityServices, wave212CloudServices, wave212AutomationServices, wave212DataServices, wave212HealthcareItServices } from './wave212';
-import { wave213AiObservabilityServices, wave213DataPrivacyServices, wave213CloudFinOpsServices, wave213SecurityThreatIntelServices, wave213AiTransparencyServices, wave213HealthcareItServices } from './wave213';
-import { wave214ItServices, wave214SecurityServices } from './wave214';
-import { wave215ItServices } from './wave215';
-import { wave216ItServices, wave216SecurityServices, wave216CloudServices, wave216DataServices, wave216AutomationServices, wave216MicroSaasServices, wave216AiServices } from './wave216';
+import { wave212PerformanceTestingServices, wave212ChaosEngineeringServices, wave212ServiceMeshServices, wave212APIGatewayServices, wave212EventStreamingServices, wave212AutomationServices, wave212HealthcareItServices, wave212MicroSaasServices, wave212ItServices, wave212SecurityServices, wave212CloudServices } from './wave212';
+import { wave213CodeGenerationServices, wave213DigitalHumansServices, wave213UptimeMonitoringServices, wave213AiTranslationServices, wave213PredictiveMaintenanceServices, wave213HealthcareItServices, wave213AiObservabilityServices, wave213DataPrivacyServices, wave213CloudFinOpsServices, wave213SecurityThreatIntelServices, wave213AiTransparencyServices } from './wave213';
 
-export { allServices };
+import { wave214DeveloperExperiencePlatformsServices, wave214AiServices, wave214MicroSaasServices, wave214ItServices, wave214SecurityServices, wave214CloudServices, wave214DataServices, wave214AutomationServices } from './wave214';
+import { wave215QuantumComputingServices, wave215NeuromorphicProcessingServices, wave215DigitalTwinPlatforms, wave215HomomorphicEncryptionServices, wave215AutonomousDroneDelivery, wave215ItServices } from './wave215';
+import { wave216SwarmIntelligenceServices, wave216EdgeAiInferenceServices, wave216SyntheticDataGenerationServices, wave216AiGovernanceComplianceServices, wave216AutonomousRpaServices, wave216FederatedLearningServices, wave216SpaceComputingServices, wave216SecurityServices, wave216CloudServices, wave216DataServices, wave216AutomationServices, wave216MicroSaasServices, wave216AiServices } from './wave216';
 export const aiServices: Service[] = [
   {
     id: 'ai-document-processing',
@@ -282,7 +271,6 @@ export const aiServices: Service[] = [
     industry: 'Finance',
     stage: 'published',
   },
-
   {
     id: 'ai-voice-agent-phone',
     title: 'AI Voice Agent - Automated Phone Calls & IVR',
@@ -553,15 +541,12 @@ export const aiServices: Service[] = [
     industry: 'Compliance',
     stage: 'published',
   },
-
-,
   {
     id: 'ai-prompt-optimization-engine',
     title: 'AI Prompt Optimization Engine',
     description: 'Automatically refine and optimize LLM prompts for higher accuracy, lower token usage, and consistent output quality across models. Benchmarks before/after performance and suggests structural improvements.',
     features: ['Automatic prompt refinement via meta-prompting','Token cost reduction analysis','A/B prompt benchmarking across models','Structured output template enforcement','Prompt version control and rollback'],
-    benefits: [],
-    pricing: {basic:'$99/mo', pro:'$299/mo', enterprise:'$999/mo'},
+        pricing: {basic:'$99/mo', pro:'$299/mo', enterprise:'$999/mo'},
     contactInfo: {website:'/services/ai-prompt-optimization-engine', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🎯',
     href: '/services/ai-prompt-optimization-engine',
@@ -574,8 +559,7 @@ export const aiServices: Service[] = [
     title: 'AI Multimodal Content Factory',
     description: 'Generate coordinated text, image, and short-video assets from a single natural language brief. Maintains brand consistency across all modalities with style-transfer guardrails.',
     features: ['Single-brief multi-format generation','Brand style enforcement across modalities','Automatic aspect-ratio adaptation','Content calendar integration','Quality scoring per output modality'],
-    benefits: [],
-    pricing: {basic:'$199/mo', pro:'$599/mo', enterprise:'$1,999/mo'},
+        pricing: {basic:'$199/mo', pro:'$599/mo', enterprise:'$1,999/mo'},
     contactInfo: {website:'/services/ai-multimodal-content-factory', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🎨',
     href: '/services/ai-multimodal-content-factory',
@@ -588,8 +572,7 @@ export const aiServices: Service[] = [
     title: 'AI Code Review Sentinel',
     description: 'Automated deep code review combining security vulnerability detection, performance anti-pattern identification, and architecture quality scoring. Integrates with PR workflows for shift-left quality.',
     features: ['Security vulnerability detection (OWASP top 10)','Performance anti-pattern identification','Architecture quality scoring','PR comment integration with fix suggestions','Custom rule engine for team conventions'],
-    benefits: [],
-    pricing: {basic:'$149/mo', pro:'$449/mo', enterprise:'$1,499/mo'},
+        pricing: {basic:'$149/mo', pro:'$449/mo', enterprise:'$1,499/mo'},
     contactInfo: {website:'/services/ai-code-review-sentinel', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🛡️',
     href: '/services/ai-code-review-sentinel',
@@ -602,8 +585,7 @@ export const aiServices: Service[] = [
     title: 'AI Synthetic Data Generator',
     description: 'Produce privacy-safe, statistically faithful synthetic datasets for ML training and testing. Preserves column correlations and distribution shapes while guaranteeing no real PII leakage.',
     features: ['Differential privacy guarantees','Correlation-preserving generation','Schema-aware tabular + time-series output','Bias detection and mitigation tools','Benchmark fidelity scoring vs real data'],
-    benefits: [],
-    pricing: {basic:'$199/mo', pro:'$599/mo', enterprise:'$1,999/mo'},
+        pricing: {basic:'$199/mo', pro:'$599/mo', enterprise:'$1,999/mo'},
     contactInfo: {website:'/services/ai-synthetic-data-generator', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🎲',
     href: '/services/ai-synthetic-data-generator',
@@ -616,8 +598,7 @@ export const aiServices: Service[] = [
     title: 'AI Workflow Memory Layer',
     description: 'Persistent episodic and semantic memory for multi-step AI agents. Stores decision context across sessions with automatic summarization, relevance retrieval, and memory decay policies.',
     features: ['Episodic + semantic dual memory store','Automatic context summarization','Relevance-ranked retrieval for agent prompts','Configurable memory decay and archival','Cross-agent shared memory namespaces'],
-    benefits: [],
-    pricing: {basic:'$149/mo', pro:'$449/mo', enterprise:'$1,499/mo'},
+        pricing: {basic:'$149/mo', pro:'$449/mo', enterprise:'$1,499/mo'},
     contactInfo: {website:'/services/ai-workflow-memory-layer', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🧠',
     href: '/services/ai-workflow-memory-layer',
@@ -734,7 +715,6 @@ export const itServices: Service[] = [
     industry: 'IT Management',
     stage: 'published',
   },
-
   {
     id: 'penetration-testing',
     title: 'Penetration Testing & Red Teaming',
@@ -795,15 +775,12 @@ export const itServices: Service[] = [
     industry: 'Data Protection',
     stage: 'published',
   },
-
-,
   {
     id: 'it-asset-lifecycle-manager',
     title: 'IT Asset Lifecycle Manager',
     description: 'End-to-end tracking of hardware and software assets from procurement through retirement. Automates depreciation, license compliance, and disposal workflows with full audit trail.',
     features: ['Procurement-to-retirement tracking','Automated depreciation calculations','Software license compliance alerts','Disposal and e-waste workflow','Full audit trail and reporting'],
-    benefits: [],
-    pricing: {basic:'$199/mo', pro:'$599/mo', enterprise:'$1,999/mo'},
+        pricing: {basic:'$199/mo', pro:'$599/mo', enterprise:'$1,999/mo'},
     contactInfo: {website:'/services/it-asset-lifecycle-manager', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '📦',
     href: '/services/it-asset-lifecycle-manager',
@@ -816,8 +793,7 @@ export const itServices: Service[] = [
     title: 'IT Runbook Automation Platform',
     description: 'Convert manual operations runbooks into executable auto-remediation playbooks. Human-approval gates for destructive actions with full execution logging and rollback capability.',
     features: ['Runbook-to-playbook converter','Human-approval gates for risky actions','Automatic rollback on failure','Execution logging and audit trail','Integration with PagerDuty and ServiceNow'],
-    benefits: [],
-    pricing: {basic:'$299/mo', pro:'$799/mo', enterprise:'$2,499/mo'},
+        pricing: {basic:'$299/mo', pro:'$799/mo', enterprise:'$2,499/mo'},
     contactInfo: {website:'/services/it-runbook-automation-platform', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: ' playbook',
     href: '/services/it-runbook-automation-platform',
@@ -830,8 +806,7 @@ export const itServices: Service[] = [
     title: 'IT SLA Compliance Monitor',
     description: 'Continuously measure service level metrics against contractual SLAs and alert on breaches with trend analysis and breach prediction to prevent violations before they occur.',
     features: ['Real-time SLA metric tracking','Breach prediction with trend analysis','Automatic stakeholder alerts','SLA report generation for customers','Remediation time tracking and escalation'],
-    benefits: [],
-    pricing: {basic:'$299/mo', pro:'$799/mo', enterprise:'$2,499/mo'},
+        pricing: {basic:'$299/mo', pro:'$799/mo', enterprise:'$2,499/mo'},
     contactInfo: {website:'/services/it-sla-compliance-monitor', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '📊',
     href: '/services/it-sla-compliance-monitor',
@@ -844,8 +819,7 @@ export const itServices: Service[] = [
     title: 'IT Change Advisory Board Engine',
     description: 'Digitize and automate CAB workflows with risk auto-assessment, impact analysis, and approval routing. Reduces change lead time while maintaining governance and compliance.',
     features: ['Automated risk and impact assessment','Smart approval routing by risk tier','Calendar conflict detection for changes','Post-change validation verification','Compliance evidence auto-collection'],
-    benefits: [],
-    pricing: {basic:'$399/mo', pro:'$999/mo', enterprise:'$2,999/mo'},
+        pricing: {basic:'$399/mo', pro:'$999/mo', enterprise:'$2,999/mo'},
     contactInfo: {website:'/services/it-change-advisory-board-engine', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🏛️',
     href: '/services/it-change-advisory-board-engine',
@@ -858,8 +832,7 @@ export const itServices: Service[] = [
     title: 'IT Configuration Drift Detector',
     description: 'Detect and alert on infrastructure configuration drift from baseline policies. Compare live state against IaC definitions and auto-remediate approved changes with diff visualization.',
     features: ['Continuous drift detection scanning','IaC-vs-live state diff visualization','Auto-remediation for approved drifts','Drift severity classification','Integration with Terraform, Pulumi, Ansible'],
-    benefits: [],
-    pricing: {basic:'$299/mo', pro:'$799/mo', enterprise:'$2,499/mo'},
+        pricing: {basic:'$299/mo', pro:'$799/mo', enterprise:'$2,499/mo'},
     contactInfo: {website:'/services/it-config-drift-detector', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🔍',
     href: '/services/it-config-drift-detector',
@@ -900,7 +873,6 @@ export const cloudServices: Service[] = [
     industry: 'Migration',
     stage: 'published',
   },
-
   {
     id: 'multi-cloud-management',
     title: 'Multi-Cloud Management & FinOps',
@@ -931,15 +903,12 @@ export const cloudServices: Service[] = [
     industry: 'Container Orchestration',
     stage: 'published',
   },
-
-,
   {
     id: 'cloud-cost-anomaly-detector',
     title: 'Cloud Cost Anomaly Detector',
     description: 'Detect cloud spending spikes and anomalies in real-time with root-cause attribution. Auto-suggests rightsizing and reserved-instance optimizations to reduce waste.',
     features: ['Real-time spending anomaly detection','Root-cause attribution per service','Auto-rightsizing recommendations','Reserved instance coverage optimizer','Budget enforcement with auto-pause'],
-    benefits: [],
-    pricing: {basic:'$299/mo', pro:'$799/mo', enterprise:'$2,499/mo'},
+        pricing: {basic:'$299/mo', pro:'$799/mo', enterprise:'$2,499/mo'},
     contactInfo: {website:'/services/cloud-cost-anomaly-detector', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '💰',
     href: '/services/cloud-cost-anomaly-detector',
@@ -952,8 +921,7 @@ export const cloudServices: Service[] = [
     title: 'Cloud Multi-Tenant Isolation Validator',
     description: 'Continuously verify tenant separation in multi-tenant SaaS deployments. Tests IAM policies, network segmentation, and data boundaries to prevent cross-tenant access.',
     features: ['IAM policy boundary verification','Network segmentation testing','Data isolation validation','Cross-tenant access attempt detection','Compliance report generation (SOC2, ISO27001)'],
-    benefits: [],
-    pricing: {basic:'$499/mo', pro:'$1,499/mo', enterprise:'$4,999/mo'},
+        pricing: {basic:'$499/mo', pro:'$1,499/mo', enterprise:'$4,999/mo'},
     contactInfo: {website:'/services/cloud-multi-tenant-isolation-validator', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🔒',
     href: '/services/cloud-multi-tenant-isolation-validator',
@@ -966,8 +934,7 @@ export const cloudServices: Service[] = [
     title: 'Cloud Migration Readiness Scanner',
     description: 'Assess on-premises workloads for cloud migration feasibility with dependency mapping, cost modeling, and risk scoring. Generates prioritized migration waves and runbooks.',
     features: ['Workload dependency mapping','Cloud-fit risk scoring per application','TCO modeling for target cloud','Migration wave grouping and sequencing','Automated runbook generation per app'],
-    benefits: [],
-    pricing: {basic:'$399/mo', pro:'$999/mo', enterprise:'$2,999/mo'},
+        pricing: {basic:'$399/mo', pro:'$999/mo', enterprise:'$2,999/mo'},
     contactInfo: {website:'/services/cloud-migration-readiness-scanner', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🚀',
     href: '/services/cloud-migration-readiness-scanner',
@@ -980,8 +947,7 @@ export const cloudServices: Service[] = [
     title: 'Cloud Spot Instance Orchestrator',
     description: 'Maximize cloud savings by intelligently managing spot/preemptible instances with checkpoint-based interruption handling, automatic fallback to on-demand, and capacity-aware bidding.',
     features: ['Checkpoint-based interruption recovery','Automatic on-demand fallback','Capacity-aware bid pricing','Workload-aware instance selection','Savings dashboard with utilization metrics'],
-    benefits: [],
-    pricing: {basic:'$199/mo', pro:'$599/mo', enterprise:'$1,999/mo'},
+        pricing: {basic:'$199/mo', pro:'$599/mo', enterprise:'$1,999/mo'},
     contactInfo: {website:'/services/cloud-spot-instance-orchestrator', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '⚡',
     href: '/services/cloud-spot-instance-orchestrator',
@@ -994,8 +960,7 @@ export const cloudServices: Service[] = [
     title: 'Cloud VPN Mesh Manager',
     description: 'Deploy and manage zero-trust mesh VPN networks across multi-cloud and edge locations. Automated peering, certificate rotation, and performance monitoring for secure connectivity.',
     features: ['Zero-trust mesh peering automation','Automatic certificate rotation','Cross-cloud connectivity management','Latency and throughput monitoring','Split-tunnel policy management'],
-    benefits: [],
-    pricing: {basic:'$299/mo', pro:'$799/mo', enterprise:'$2,499/mo'},
+        pricing: {basic:'$299/mo', pro:'$799/mo', enterprise:'$2,499/mo'},
     contactInfo: {website:'/services/cloud-vpn-mesh-manager', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🌐',
     href: '/services/cloud-vpn-mesh-manager',
@@ -1036,7 +1001,6 @@ export const securityServices: Service[] = [
     industry: 'Cybersecurity',
     stage: 'published',
   },
-
   {
     id: 'identity-access-management',
     title: 'Identity & Access Management (IAM)',
@@ -1052,15 +1016,12 @@ export const securityServices: Service[] = [
     industry: 'Identity',
     stage: 'published',
   },
-
-,
   {
     id: 'security-api-key-rotator',
     title: 'Security API Key Rotator',
     description: 'Automate API key and secret rotation on configurable schedules with zero-downtime dual-key strategies. Full audit trail of rotations with integration into vaults and CI/CD pipelines.',
     features: ['Scheduled and on-demand rotation','Zero-downtime dual-key strategy','Vault integration (HashiCorp, AWS Secrets)','CI/CD pipeline key injection','Full rotation audit trail'],
-    benefits: [],
-    pricing: {basic:'$299/mo', pro:'$799/mo', enterprise:'$2,499/mo'},
+        pricing: {basic:'$299/mo', pro:'$799/mo', enterprise:'$2,499/mo'},
     contactInfo: {website:'/services/security-api-key-rotator', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🔑',
     href: '/services/security-api-key-rotator',
@@ -1073,8 +1034,7 @@ export const securityServices: Service[] = [
     title: 'Security Deception Grid',
     description: 'Deploy and manage honeypots, honeyfiles, and canary tokens across your infrastructure. Alert on attacker interaction with decoys and map lateral movement paths in real-time.',
     features: ['Honeypot deployment and management','Canary token distribution (API keys, AWS keys, DB creds)','Attacker interaction alerting','Lateral movement path visualization','Integration with SIEM and SOAR platforms'],
-    benefits: [],
-    pricing: {basic:'$499/mo', pro:'$1,299/mo', enterprise:'$3,999/mo'},
+        pricing: {basic:'$499/mo', pro:'$1,299/mo', enterprise:'$3,999/mo'},
     contactInfo: {website:'/services/security-deception-grid', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🎭',
     href: '/services/security-deception-grid',
@@ -1087,8 +1047,7 @@ export const securityServices: Service[] = [
     title: 'Security Zero-Trust Policy Engine',
     description: 'Define, test, and enforce microsegmentation policies as code. Validates identity, device posture, and context before allowing any network or application access.',
     features: ['Policy-as-code microsegmentation rules','Identity + device posture validation','Context-aware access decisions','Policy simulation and testing sandbox','Enforcement across cloud, on-prem, and edge'],
-    benefits: [],
-    pricing: {basic:'$599/mo', pro:'$1,499/mo', enterprise:'$4,999/mo'},
+        pricing: {basic:'$599/mo', pro:'$1,499/mo', enterprise:'$4,999/mo'},
     contactInfo: {website:'/services/security-zero-trust-policy-engine', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🚧',
     href: '/services/security-zero-trust-policy-engine',
@@ -1101,8 +1060,7 @@ export const securityServices: Service[] = [
     title: 'Security SBOM Generator',
     description: 'Automatically generate Software Bill of Materials (SBOM) in SPDX and CycloneDX formats for your entire dependency tree. Continuous vulnerability scanning with CVE alerting.',
     features: ['SPDX and CycloneDX SBOM generation','Full transitive dependency tree mapping','Continuous CVE vulnerability scanning','License compliance checking','Integration with build pipelines and repositories'],
-    benefits: [],
-    pricing: {basic:'$199/mo', pro:'$599/mo', enterprise:'$1,999/mo'},
+        pricing: {basic:'$199/mo', pro:'$599/mo', enterprise:'$1,999/mo'},
     contactInfo: {website:'/services/security-sbom-generator', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '📋',
     href: '/services/security-sbom-generator',
@@ -1115,8 +1073,7 @@ export const securityServices: Service[] = [
     title: 'Security Incident Playbook Runner',
     description: 'Execute automated incident response playbooks with containment, eradication, and recovery steps. Human-in-the-loop for critical actions with evidence preservation and timeline generation.',
     features: ['Automated containment actions','Evidence preservation chain of custody','Human-in-the-loop approval for critical steps','Incident timeline auto-generation','Post-incident review report builder'],
-    benefits: [],
-    pricing: {basic:'$499/mo', pro:'$1,299/mo', enterprise:'$3,999/mo'},
+        pricing: {basic:'$499/mo', pro:'$1,299/mo', enterprise:'$3,999/mo'},
     contactInfo: {website:'/services/security-incident-playbook-runner', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🚨',
     href: '/services/security-incident-playbook-runner',
@@ -1157,7 +1114,6 @@ export const dataServices: Service[] = [
     industry: 'Data Engineering',
     stage: 'published',
   },
-
   {
     id: 'real-time-analytics',
     title: 'Real-Time Analytics & Event Streaming',
@@ -1173,15 +1129,12 @@ export const dataServices: Service[] = [
     industry: 'Analytics',
     stage: 'published',
   },
-
-,
   {
     id: 'data-lineage-tracker',
     title: 'Data Lineage Tracker',
     description: 'Map end-to-end data flow paths from source through transformations to consumption. Supports impact analysis for schema changes and regulatory compliance attestation.',
     features: ['End-to-end data flow visualization','Schema change impact analysis','Column-level lineage tracking','Regulatory compliance attestation reports','Integration with dbt, Spark, Airflow'],
-    benefits: [],
-    pricing: {basic:'$299/mo', pro:'$799/mo', enterprise:'$2,499/mo'},
+        pricing: {basic:'$299/mo', pro:'$799/mo', enterprise:'$2,499/mo'},
     contactInfo: {website:'/services/data-lineage-tracker', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🔗',
     href: '/services/data-lineage-tracker',
@@ -1194,8 +1147,7 @@ export const dataServices: Service[] = [
     title: 'Data Quality Firewall',
     description: 'Validate data at ingestion boundaries with schema checks, range validation, referential integrity, and custom business rules. Rejects or quarantines bad data before it enters your warehouse.',
     features: ['Schema validation at ingest','Range and null checks','Referential integrity enforcement','Custom business rule engine','Quarantine and rejection with reason codes'],
-    benefits: [],
-    pricing: {basic:'$199/mo', pro:'$599/mo', enterprise:'$1,999/mo'},
+        pricing: {basic:'$199/mo', pro:'$599/mo', enterprise:'$1,999/mo'},
     contactInfo: {website:'/services/data-quality-firewall', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🧱',
     href: '/services/data-quality-firewall',
@@ -1208,8 +1160,7 @@ export const dataServices: Service[] = [
     title: 'Data Catalog Auto-Discovery',
     description: 'Automatically discover, classify, and index data assets across databases, file stores, and APIs. AI-powered metadata enrichment with PII detection and usage statistics.',
     features: ['Automatic data source scanning','PII and sensitivity classification','AI-powered metadata enrichment','Usage statistics and popularity ranking','Self-service search and discovery portal'],
-    benefits: [],
-    pricing: {basic:'$299/mo', pro:'$799/mo', enterprise:'$2,499/mo'},
+        pricing: {basic:'$299/mo', pro:'$799/mo', enterprise:'$2,499/mo'},
     contactInfo: {website:'/services/data-catalog-auto-discovery', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '📚',
     href: '/services/data-catalog-auto-discovery',
@@ -1222,8 +1173,7 @@ export const dataServices: Service[] = [
     title: 'Data Pipeline Retry Engine',
     description: 'Intelligent retry management for data pipelines with exponential backoff, error classification, and dead-letter handling. Learns from failure patterns to optimize retry strategies.',
     features: ['Error classification and categorization','Adaptive exponential backoff','Dead-letter queue management','Failure pattern learning and optimization','Retry budget and circuit breaker controls'],
-    benefits: [],
-    pricing: {basic:'$149/mo', pro:'$449/mo', enterprise:'$1,499/mo'},
+        pricing: {basic:'$149/mo', pro:'$449/mo', enterprise:'$1,499/mo'},
     contactInfo: {website:'/services/data-pipeline-retry-engine', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🔄',
     href: '/services/data-pipeline-retry-engine',
@@ -1236,8 +1186,7 @@ export const dataServices: Service[] = [
     title: 'Data Compression Optimizer',
     description: 'Optimize storage costs with intelligent columnar encoding, adaptive compression selection, and tiered storage policies. Benchmarks compression ratios vs query performance trade-offs.',
     features: ['Adaptive compression algorithm selection','Columnar encoding optimization','Query performance vs compression trade-off analysis','Tiered storage policy automation','Storage savings dashboard and reporting'],
-    benefits: [],
-    pricing: {basic:'$199/mo', pro:'$599/mo', enterprise:'$1,999/mo'},
+        pricing: {basic:'$199/mo', pro:'$599/mo', enterprise:'$1,999/mo'},
     contactInfo: {website:'/services/data-compression-optimizer', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🗜️',
     href: '/services/data-compression-optimizer',
@@ -1418,7 +1367,6 @@ export const microSaasServices: Service[] = [
     industry: 'Reputation Management',
     stage: 'published',
   },
-
   {
     id: 'saas-appointment-scheduler',
     title: 'Smart Appointment Scheduling Platform',
@@ -1533,14 +1481,12 @@ export const emailIntelligenceServices: Service[] = [
     industry: 'Sales AI',
     stage: 'published',
   },
-,
   {
     id: 'automation-digital-twin-simulator',
     title: 'Automation Digital Twin Simulator',
     description: 'Create digital twins of business processes for simulation and optimization before real deployment. Test automation changes safely with what-if scenarios and performance predictions.',
     features: ['Process digital twin creation','What-if scenario simulation','Performance prediction and bottleneck detection','Safe testing before production deployment','Continuous sync with live process metrics'],
-    benefits: [],
-    pricing: {basic:'$399/mo', pro:'$999/mo', enterprise:'$2,999/mo'},
+        pricing: {basic:'$399/mo', pro:'$999/mo', enterprise:'$2,999/mo'},
     contactInfo: {website:'/services/automation-digital-twin-simulator', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '👯',
     href: '/services/automation-digital-twin-simulator',
@@ -1553,8 +1499,7 @@ export const emailIntelligenceServices: Service[] = [
     title: 'Automation Event Correlator',
     description: 'Deduplicate, correlate, and enrich operational events to reduce alert noise by 90%. Groups related events into incidents with root-cause hints and smart escalation rules.',
     features: ['Event deduplication and suppression','Cross-source correlation engine','Root-cause hint generation','Smart escalation rules by severity','Alert noise reduction metrics and dashboard'],
-    benefits: [],
-    pricing: {basic:'$299/mo', pro:'$799/mo', enterprise:'$2,499/mo'},
+        pricing: {basic:'$299/mo', pro:'$799/mo', enterprise:'$2,499/mo'},
     contactInfo: {website:'/services/automation-event-correlator', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '📡',
     href: '/services/automation-event-correlator',
@@ -1567,8 +1512,7 @@ export const emailIntelligenceServices: Service[] = [
     title: 'Automation Approval Chain Engine',
     description: 'Configure multi-level approval workflows with conditional routing, delegation rules, and SLA timers. Supports parallel and sequential approvals with audit logging.',
     features: ['Multi-level sequential and parallel approvals','Conditional routing by amount, risk, or type','Delegation and out-of-office rules','SLA timers and escalation on timeout','Full audit trail and approval analytics'],
-    benefits: [],
-    pricing: {basic:'$149/mo', pro:'$449/mo', enterprise:'$1,499/mo'},
+        pricing: {basic:'$149/mo', pro:'$449/mo', enterprise:'$1,499/mo'},
     contactInfo: {website:'/services/automation-approval-chain-engine', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '✅',
     href: '/services/automation-approval-chain-engine',
@@ -1581,8 +1525,7 @@ export const emailIntelligenceServices: Service[] = [
     title: 'Automation Patch Window Optimizer',
     description: 'Schedule and optimize patch deployment windows based on system criticality, user traffic patterns, and dependency ordering. Minimizes risk while maintaining compliance deadlines.',
     features: ['Traffic-pattern-aware scheduling','Dependency-ordered patch sequencing','Risk scoring per patch and target','Compliance deadline tracking','Canary deployment with automatic rollback'],
-    benefits: [],
-    pricing: {basic:'$199/mo', pro:'$599/mo', enterprise:'$1,999/mo'},
+        pricing: {basic:'$199/mo', pro:'$599/mo', enterprise:'$1,999/mo'},
     contactInfo: {website:'/services/automation-patch-window-optimizer', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '🩹',
     href: '/services/automation-patch-window-optimizer',
@@ -1595,8 +1538,7 @@ export const emailIntelligenceServices: Service[] = [
     title: 'Automation ChatOps Gateway',
     description: 'Centralized hub for operational commands via Slack, Microsoft Teams, and Discord. Role-based command access, audit logging, and integration with CI/CD, monitoring, and incident tools.',
     features: ['Multi-platform support (Slack, Teams, Discord)','Role-based command access control','Command audit logging and replay','CI/CD pipeline trigger and monitoring','Incident management integration'],
-    benefits: [],
-    pricing: {basic:'$149/mo', pro:'$449/mo', enterprise:'$1,499/mo'},
+        pricing: {basic:'$149/mo', pro:'$449/mo', enterprise:'$1,499/mo'},
     contactInfo: {website:'/services/automation-chatops-gateway', email:'commercial@ziontechgroup.com', phone:'+1 302 464 0950'},
     icon: '💬',
     href: '/services/automation-chatops-gateway',
@@ -1840,7 +1782,7 @@ export const allServices: Service[] = [
   ...wave206CloudServices,
   ...wave206AutomationServices,
   ...wave206DataServices,
-  ...wave206HealthcareItServices,
+  
   ...wave207AiServices,
   ...wave207MicroSaasServices,
   ...wave207ItServices,
@@ -1877,14 +1819,9 @@ export const allServices: Service[] = [
   ...wave212SecurityServices,
   ...wave212CloudServices,
   ...wave212AutomationServices,
-  ...wave213AiObservabilityServices,
-  ...wave213DataPrivacyServices,
-  ...wave213CloudFinOpsServices,
-  ...wave213SecurityThreatIntelServices,
-  ...wave213AiTransparencyServices,
+  ...wave213PredictiveMaintenanceServices,
   ...wave213HealthcareItServices,
   ...wave214ItServices,
   ...wave214SecurityServices,
   ...wave215ItServices,
 ].filter((s: any) => s && (s.benefits || []).length > 0);
->>>>>>> 4152c7d0a (feat: add wave214/wave216 IT services and manual lead discovery outreach artifacts)

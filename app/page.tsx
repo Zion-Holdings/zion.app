@@ -1007,11 +1007,11 @@ export default function HomePage() {
               </div>
 
               {/* Benefits */}
-              {quickView.benefits?.length > 0 && (
+              {(quickView.benefits?.length ?? 0) > 0 && (
                 <div>
                   <h4 className="text-sm font-semibold text-purple-300 uppercase tracking-wider mb-3">Benefits</h4>
                   <ul className="space-y-2">
-                    {quickView.benefits.slice(0, 4).map((b: string, i: number) => (
+                    {quickView.benefits?.slice(0, 4).map((b: string, i: number) => (
                       <li key={i} className="text-slate-300 text-sm flex items-start gap-2">
                         <span className="text-green-400 mt-0.5 shrink-0">▸</span>
                         <span>{b}</span>
