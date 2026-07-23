@@ -37,7 +37,6 @@ export const metadata = {
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 } },
   icons: { icon: '/favicon.ico', apple: '/icon.svg' },
   manifest: '/manifest.json',
-  viewport: { width: 'device-width', initialScale: 1, maximumScale: 5, userScalable: true },
   formatDetection: { telephone: false, address: false, email: false },
   appleWebApp: { capable: true, title: siteConfig.name },
   alternates: { canonical: '/' },
