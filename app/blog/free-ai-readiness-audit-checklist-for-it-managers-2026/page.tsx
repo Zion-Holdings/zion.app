@@ -23,7 +23,7 @@ export default function BlogPostPage() {
       </ul>
       <div className="flex flex-wrap gap-4">
         <Link href="/services" className="underline text-blue-600">Explore services</Link>
-        <Link href="/contact" className="underline text-blue-600">Talk to an AI architect</Link>
+        <Link href="/contact/" className="underline text-blue-600">Talk to an AI architect</Link>
         <Link href="https://calendly.com/kleber-ziontechgroup" className="underline text-blue-600" target="_blank" rel="noreferrer">Schedule guidance</Link>
       </div>
     </article>

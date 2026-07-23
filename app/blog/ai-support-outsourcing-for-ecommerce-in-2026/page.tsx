@@ -12,7 +12,7 @@ export default function Page() {
       <div
         className="prose prose-invert max-w-none text-slate-300 leading-relaxed"
         dangerouslySetInnerHTML={{
-          __html: `<p>How AI support outsourcing can reduce ecommerce ticket volume and improve CX.</p><ul><li>Local AI/IT delivery models</li><li>Governance, cost control, and observability</li><li>Partnership and resell opportunities</li></ul><p><a href="/services">Explore AI services</a></p><p><a href="/contact">Contact us</a></p>`,
+          __html: `<p>How AI support outsourcing can reduce ecommerce ticket volume and improve CX.</p><ul><li>Local AI/IT delivery models</li><li>Governance, cost control, and observability</li><li>Partnership and resell opportunities</li></ul><p><a href="/services">Explore AI services</a></p><p><a href="/contact/">Contact us</a></p>`,
         }}
       />
     </article>

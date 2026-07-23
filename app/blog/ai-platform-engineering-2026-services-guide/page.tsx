@@ -19,7 +19,7 @@ export default function Page() {
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">AI Platform Engineering 2026 Services Guide</h1>
         <p className="text-slate-300 leading-relaxed mb-8">Platform contracts, guardrails, developer experience, and reuse patterns.</p>
         <div className="glass-card prose prose-invert max-w-none">
-          <p>A service guide to AI platform engineering in 2026: build, operate, and scale internal AI platforms safely.</p><ul><li>Platform contracts and guardrails</li><li>Developer experience and reuse</li><li>Start from <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>Explore <a href="/services">AI services</a>, then <a href="/contact">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
+          <p>A service guide to AI platform engineering in 2026: build, operate, and scale internal AI platforms safely.</p><ul><li>Platform contracts and guardrails</li><li>Developer experience and reuse</li><li>Start from <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>Explore <a href="/services">AI services</a>, then <a href="/contact/">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
         </div>
         <div className="mt-10 flex flex-col sm:flex-row gap-3">
           <Link href="/services/" className="btn-primary">Explore AI services</Link>

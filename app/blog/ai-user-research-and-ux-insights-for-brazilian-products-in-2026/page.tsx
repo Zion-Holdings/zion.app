@@ -20,7 +20,7 @@ export default function Page() {
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">AI User Research and UX Insights for Brazilian Products in 2026</h1>
         <p className="text-slate-300 leading-relaxed mb-8">Practical AI models for session analysis, feedback clustering, and localization-aware UX improvements.</p>
         <div className="glass-card prose prose-invert max-w-none">
-          <p>AI-user-research pipelines that improve decisions without large research staff.</p><ul><li>Feedback and session insight extraction</li><li>Localization-aware UX improvements</li><li>Free readiness tools at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>See <a href="/services/ai-accessibility-inclusive-design">accessibility and UX services</a>, then <a href="/contact">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
+          <p>AI-user-research pipelines that improve decisions without large research staff.</p><ul><li>Feedback and session insight extraction</li><li>Localization-aware UX improvements</li><li>Free readiness tools at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>See <a href="/services/ai-accessibility-inclusive-design">accessibility and UX services</a>, then <a href="/contact/">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
         </div>
         <div className="mt-10 flex flex-col sm:flex-row gap-3">
           <Link href="/services/" className="btn-primary">Explore AI services</Link>

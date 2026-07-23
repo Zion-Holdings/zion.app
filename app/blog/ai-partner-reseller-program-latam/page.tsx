@@ -18,7 +18,7 @@ export default function Page() {
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">AI Partner and Reseller Program for LATAM Growth</h1>
         <p className="text-slate-300 leading-relaxed mb-8">Structure a channel program for AI services with onboarding, enablement, co-selling, and margin models suited to LATAM.</p>
         <div className="glass-card prose prose-invert max-w-none">
-          <p>Channel revenue grows faster when partners have clear AI bundles and deal support.</p><ul><li>Partner tiers, enablement, and pipeline rules</li><li>Co-sell motions and LATAM market entry</li><li>Visit <a href="https://ziontechgroup.com">ziontechgroup.com</a> for partnership details</li></ul><p>See <a href="/services/ai-consulting">AI consulting</a>, then <a href="/contact">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
+          <p>Channel revenue grows faster when partners have clear AI bundles and deal support.</p><ul><li>Partner tiers, enablement, and pipeline rules</li><li>Co-sell motions and LATAM market entry</li><li>Visit <a href="https://ziontechgroup.com">ziontechgroup.com</a> for partnership details</li></ul><p>See <a href="/services/ai-consulting">AI consulting</a>, then <a href="/contact/">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
         </div>
         <div className="mt-10 flex flex-col sm:flex-row gap-3">
           <Link href="/services/" className="btn-primary">Explore AI services</Link>

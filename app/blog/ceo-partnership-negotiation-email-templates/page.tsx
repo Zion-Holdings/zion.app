@@ -119,7 +119,7 @@ export default function Page() {
             <Link href="/services" className="rounded-xl bg-white px-6 py-3 text-sm font-semibold text-slate-900 transition hover:bg-slate-100">
               Explore AI & IT Services
             </Link>
-            <Link href="/contact" className="rounded-xl border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
+            <Link href="/contact/" className="rounded-xl border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10">
               Book a Meeting
             </Link>
           </div>

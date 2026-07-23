@@ -18,7 +18,7 @@ export default function Page() {
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">AI Observability and Incident Response for Brazilian SaaS</h1>
         <p className="text-slate-300 leading-relaxed mb-8">Reduce MTTR with AI-based anomaly detection, root-cause hints, alert clustering, and auto-remediation guardrails.</p>
         <div className="glass-card prose prose-invert max-w-none">
-          <p>Observability improves reliability; AI improves speed and context for on-call teams.</p><ul><li>Alert prioritization, runbook suggestions, and auto-remediation</li><li>Learn more at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>Review <a href="/services/ai-support-automation">AI services</a>, then <a href="/contact">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
+          <p>Observability improves reliability; AI improves speed and context for on-call teams.</p><ul><li>Alert prioritization, runbook suggestions, and auto-remediation</li><li>Learn more at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>Review <a href="/services/ai-customer-support-pro">AI services</a>, then <a href="/contact/">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
         </div>
         <div className="mt-10 flex flex-col sm:flex-row gap-3">
           <Link href="/services/" className="btn-primary">Explore AI services</Link>

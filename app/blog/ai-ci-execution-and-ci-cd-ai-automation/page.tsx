@@ -13,7 +13,7 @@ export default function Page() {
 <li>Incident-to-fix correlation</li>
 <li>Post-deploy verification automation</li>
 </ul>
-<p><a href="/contact">Ask about CI/CD AI automation</a></p>`;
+<p><a href="/contact/">Ask about CI/CD AI automation</a></p>`;
 
   return (
     <article className="container-page py-20">

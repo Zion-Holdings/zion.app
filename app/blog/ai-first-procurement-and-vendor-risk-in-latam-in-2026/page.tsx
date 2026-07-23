@@ -20,7 +20,7 @@ export default function Page() {
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">AI-First Procurement and Vendor Risk in LATAM in 2026</h1>
         <p className="text-slate-300 leading-relaxed mb-8">Practical AI models for spend analysis, risk scoring, and vendor governance.</p>
         <div className="glass-card prose prose-invert max-w-none">
-          <p>Procurement AI patterns that improve sourcing discipline and visibility.</p><ul><li>Spend analysis and risk scoring</li><li>Vendor governance and exception tracking</li><li>Proof-of-concept at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>See <a href="/services/ai-consulting-latam-partnerships">partnership services</a>, then <a href="/contact">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
+          <p>Procurement AI patterns that improve sourcing discipline and visibility.</p><ul><li>Spend analysis and risk scoring</li><li>Vendor governance and exception tracking</li><li>Proof-of-concept at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>See <a href="/services/ai-consulting-latam-partnerships">partnership services</a>, then <a href="/contact/">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
         </div>
         <div className="mt-10 flex flex-col sm:flex-row gap-3">
           <Link href="/services/" className="btn-primary">Explore AI services</Link>

@@ -14,7 +14,7 @@ export default function Page() {
 <li>24x7 NOC/SOC for cloud-backed environments</li>
 <li>Portuguese and Spanish account coverage</li>
 </ul>
-<p><a href="/contact">Start a partnership conversation</a></p>`;
+<p><a href="/contact/">Start a partnership conversation</a></p>`;
   return (
     <article className="container-page py-20">
       <h1 className="text-4xl font-bold mb-4 text-white">Nebius Partnership and AI Vendor Co-Selling in 2026</h1>

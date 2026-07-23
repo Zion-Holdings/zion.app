@@ -23,7 +23,7 @@ export default function Page() {
           <h2>Cost and localization</h2>
           <p>LATAM deployments benefit from local language variants, lower-latency endpoints, and flexible provider routing to keep costs predictable.</p>
           <h2>Next steps</h2>
-          <p>See <a href="/services">AI services</a> for our approach, then <a href="/contact">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>. Free tools and resources are at <a href="https://ziontechgroup.com">ziontechgroup.com</a>.</p>` }}
+          <p>See <a href="/services">AI services</a> for our approach, then <a href="/contact/">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>. Free tools and resources are at <a href="https://ziontechgroup.com">ziontechgroup.com</a>.</p>` }}
       />
     </article>
   );

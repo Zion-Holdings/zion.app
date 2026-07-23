@@ -11,7 +11,7 @@ export default function Page() {
       <div className="text-sm text-slate-500 mb-8">Published: 2026-07-07</div>
       <div
         className="prose prose-invert max-w-none text-slate-300 leading-relaxed"
-        dangerouslySetInnerHTML={{ __html: `<p>A practical enterprise AI integration roadmap for leaders executing AI adoption safely.</p><ul><li>Practical execution models</li><li>Local AI/IT delivery and support</li><li>Governance, cost control, and observability</li></ul><p><a href="/services">Explore AI services</a></p><p><a href="/contact">Contact us</a></p>` }}
+        dangerouslySetInnerHTML={{ __html: `<p>A practical enterprise AI integration roadmap for leaders executing AI adoption safely.</p><ul><li>Practical execution models</li><li>Local AI/IT delivery and support</li><li>Governance, cost control, and observability</li></ul><p><a href="/services">Explore AI services</a></p><p><a href="/contact/">Contact us</a></p>` }}
       />
     </article>
   );

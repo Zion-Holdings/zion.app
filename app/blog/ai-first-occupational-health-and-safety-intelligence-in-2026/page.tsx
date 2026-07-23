@@ -20,7 +20,7 @@ export default function Page() {
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">AI-First Occupational Health and Safety Intelligence in 2026</h1>
         <p className="text-slate-300 leading-relaxed mb-8">Practical AI models for incident prevention, compliance monitoring, and safety operations.</p>
         <div className="glass-card prose prose-invert max-w-none">
-          <p>Safety AI patterns that reduce risk while maintaining operational speed.</p><ul><li>Incident prediction and prevention</li><li>Compliance monitoring and reporting</li><li>Free readiness tools at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>See <a href="/services">AI services</a>, then <a href="/contact">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
+          <p>Safety AI patterns that reduce risk while maintaining operational speed.</p><ul><li>Incident prediction and prevention</li><li>Compliance monitoring and reporting</li><li>Free readiness tools at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>See <a href="/services">AI services</a>, then <a href="/contact/">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
         </div>
         <div className="mt-10 flex flex-col sm:flex-row gap-3">
           <Link href="/services/" className="btn-primary">Explore AI services</Link>

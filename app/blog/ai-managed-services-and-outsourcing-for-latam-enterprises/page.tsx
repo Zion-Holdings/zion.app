@@ -24,7 +24,7 @@ export default function Page() {
           <h2>Outsourcing models that fit LATAM teams</h2>
           <p>Common patterns include shared NOC-style operations, white-label support, resale-ready toolkits, and co-managed triage between your team and ours.</p>
           <h2>Next steps</h2>
-          <p>Visit <a href="/services">AI services</a> to review delivery models, then <a href="/contact">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
+          <p>Visit <a href="/services">AI services</a> to review delivery models, then <a href="/contact/">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
           <p>Free tools and guides are available at <a href="https://ziontechgroup.com">ziontechgroup.com</a>.</p>` }}
       />
     </article>

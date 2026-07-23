@@ -50,7 +50,7 @@ export default function HealthcareCRMAutomationPage() {
             </div>
           ))}
         </div>
-        <Link href="/contact" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
+        <Link href="/contact/" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition">
           Book a Free Workflow Audit
         </Link>
       </div>

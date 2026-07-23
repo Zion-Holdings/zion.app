@@ -20,7 +20,7 @@ export default function Page() {
 <li>Cost optimization and FinOps for GPU spend</li>
 <li>Managed services handoff and operations</li>
 </ul>
-<p><a href="/contact">Request partnership discussion</a></p>`;
+<p><a href="/contact/">Request partnership discussion</a></p>`;
 
   return (
     <article className="container-page py-20">

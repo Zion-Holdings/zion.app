@@ -23,7 +23,7 @@ export default function Page() {
           <h2>Business impact</h2>
           <p>Faster reporting cycles, reduced backlog for analytics teams, and clearer ownership between data producers and consumers.</p>
           <h2>Next steps</h2>
-          <p>Explore our <a href="/services">AI services</a>, then <a href="/contact">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>. Free AI tools are listed at <a href="https://ziontechgroup.com">ziontechgroup.com</a>.</p>` }}
+          <p>Explore our <a href="/services">AI services</a>, then <a href="/contact/">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>. Free AI tools are listed at <a href="https://ziontechgroup.com">ziontechgroup.com</a>.</p>` }}
       />
     </article>
   );

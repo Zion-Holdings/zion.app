@@ -19,7 +19,7 @@ export default function Page() {
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">AI Outsourcing vs. In-House IT Teams for LATAM in 2026</h1>
         <p className="text-slate-300 leading-relaxed mb-8">Practical execution models, local AI/IT delivery, governance, cost control, and observability.</p>
         <div className="glass-card prose prose-invert max-w-none">
-          <p>Comparing outsourcing versus in-house IT execution for LATAM companies in 2026.</p><ul><li>Practical execution models</li><li>Local AI/IT delivery and support</li><li>Governance, cost control, and observability</li></ul><p>Explore <a href="/services">AI services</a>, then <a href="/contact">contact us</a>.</p>
+          <p>Comparing outsourcing versus in-house IT execution for LATAM companies in 2026.</p><ul><li>Practical execution models</li><li>Local AI/IT delivery and support</li><li>Governance, cost control, and observability</li></ul><p>Explore <a href="/services">AI services</a>, then <a href="/contact/">contact us</a>.</p>
         </div>
         <div className="mt-10 flex flex-col sm:flex-row gap-3">
           <Link href="/services/" className="btn-primary">Explore AI services</Link>

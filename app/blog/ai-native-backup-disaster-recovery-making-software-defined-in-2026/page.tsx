@@ -20,7 +20,7 @@ export default function Page() {
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">AI-Native Backup and Disaster Recovery in 2026</h1>
         <p className="text-slate-300 leading-relaxed mb-8">Modern recovery planning with anomaly-aware schedules, restore verification, and runbook automation.</p>
         <div className="glass-card prose prose-invert max-w-none">
-          <p>Move beyond periodic backups to AI-native recovery readiness.</p><ul><li>Anomaly-aware backup scheduling</li><li>Automated restore verification and cost visibility</li><li>Free readiness tools at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>Explore <a href="/services">AI services</a>, then <a href="/contact">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
+          <p>Move beyond periodic backups to AI-native recovery readiness.</p><ul><li>Anomaly-aware backup scheduling</li><li>Automated restore verification and cost visibility</li><li>Free readiness tools at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>Explore <a href="/services">AI services</a>, then <a href="/contact/">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
         </div>
         <div className="mt-10 flex flex-col sm:flex-row gap-3">
           <Link href="/services/" className="btn-primary">Explore AI services</Link>

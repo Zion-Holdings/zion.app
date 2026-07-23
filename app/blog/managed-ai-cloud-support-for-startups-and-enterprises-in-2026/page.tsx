@@ -14,7 +14,7 @@ export default function Page() {
 <li>Vendor coordination and migration support</li>
 <li>Documentation and knowledge transfer</li>
 </ul>
-<p><a href="/contact">Ask about managed AI cloud support</a></p>`;
+<p><a href="/contact/">Ask about managed AI cloud support</a></p>`;
   return (
     <article className="container-page py-20">
       <h1 className="text-4xl font-bold mb-4 text-white">Managed AI Cloud Support for Startups and Enterprises in 2026</h1>

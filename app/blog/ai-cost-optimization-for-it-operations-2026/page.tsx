@@ -13,7 +13,7 @@ export default function Page() {
 <li>Automation of repetitive operations tasks</li>
 <li>Managed services instead of overprovisioning</li>
 </ul>
-<p><a href="/contact">Request an IT cost optimization review</a></p>`;
+<p><a href="/contact/">Request an IT cost optimization review</a></p>`;
 
   return (
     <article className="container-page py-20">

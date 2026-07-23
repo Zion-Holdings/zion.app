@@ -20,7 +20,7 @@ export default function Page() {
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">AI-First Low-Code Workflow Automation for Brazilian IT in 2026</h1>
         <p className="text-slate-300 leading-relaxed mb-8">Practical automation, governance, and integration patterns for modern IT operations.</p>
         <div className="glass-card prose prose-invert max-w-none">
-          <p>Low-code workflow patterns that expand IT throughput safely.</p><ul><li>Approval, integration, and event-driven automation</li><li>Governance, auditability, and reuse</li><li>Free readiness tools at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>See <a href="https://ziontechgroup.com/services/managed-observability-247">observability services</a>, then <a href="/contact">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
+          <p>Low-code workflow patterns that expand IT throughput safely.</p><ul><li>Approval, integration, and event-driven automation</li><li>Governance, auditability, and reuse</li><li>Free readiness tools at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>See <a href="https://ziontechgroup.com/services/managed-observability-247">observability services</a>, then <a href="/contact/">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
         </div>
         <div className="mt-10 flex flex-col sm:flex-row gap-3">
           <Link href="/services/" className="btn-primary">Explore AI services</Link>

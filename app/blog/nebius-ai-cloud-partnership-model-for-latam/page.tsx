@@ -13,7 +13,7 @@ export default function Page() {
 <li>Cost optimization and FinOps for GPU/cloud spend</li>
 <li>Local Portuguese/Spanish support for LATAM customers</li>
 </ul>
-<p><a href="/contact">Discuss a Nebius partnership with Zion</a></p>`;
+<p><a href="/contact/">Discuss a Nebius partnership with Zion</a></p>`;
 
   return (
     <article className="container-page py-20">

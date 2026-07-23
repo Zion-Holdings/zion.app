@@ -20,7 +20,7 @@ export default function Page() {
 <li>Pilot design and success metrics</li>
 <li>Implementation and managed-services roadmap</li>
 </ul>
-<p><a href="/contact">Request an AI consulting engagement</a></p>
+<p><a href="/contact/">Request an AI consulting engagement</a></p>
 ` }}
       />
     </article>

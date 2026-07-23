@@ -14,7 +14,7 @@ export default function Page() {
 <li>Cost governance and FinOps for AI workloads</li>
 <li>Customer expansion in Portuguese and Spanish markets</li>
 </ul>
-<p><a href="/contact">Start a Nebius partnership discussion</a></p>`;
+<p><a href="/contact/">Start a Nebius partnership discussion</a></p>`;
   return (
     <article className="container-page py-20">
       <h1 className="text-4xl font-bold mb-4 text-white">Nebius LATAM AI Partnership Opportunity</h1>

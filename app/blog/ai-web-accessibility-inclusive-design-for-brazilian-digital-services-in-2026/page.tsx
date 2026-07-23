@@ -20,7 +20,7 @@ export default function Page() {
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">AI Web Accessibility and Inclusive Design for Brazilian Digital Services in 2026</h1>
         <p className="text-slate-300 leading-relaxed mb-8">Practical accessibility automation, audit trails, and UX refinements for public and private digital services.</p>
         <div className="glass-card prose prose-invert max-w-none">
-          <p>Accessibility automation that reduces audit friction and improves real usability.</p><ul><li>WCAG-aware evaluation, pass/fail reporting, and tracking</li><li>Language, motion, and routing accessibility improvements</li><li>Free readiness tools at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>Explore <a href="/services">AI services</a>, then <a href="/contact">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
+          <p>Accessibility automation that reduces audit friction and improves real usability.</p><ul><li>WCAG-aware evaluation, pass/fail reporting, and tracking</li><li>Language, motion, and routing accessibility improvements</li><li>Free readiness tools at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>Explore <a href="/services">AI services</a>, then <a href="/contact/">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
         </div>
         <div className="mt-10 flex flex-col sm:flex-row gap-3">
           <Link href="/services/" className="btn-primary">Explore AI services</Link>

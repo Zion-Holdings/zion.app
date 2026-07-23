@@ -18,7 +18,7 @@ export default function Page() {
           <li>Customer journey automation</li>
           <li>Cross-department orchestration</li>
         </ul>
-        <p><a href="/contact">Request an automation readiness review</a></p>
+        <p><a href="/contact/">Request an automation readiness review</a></p>
       </div>
     </article>
   );

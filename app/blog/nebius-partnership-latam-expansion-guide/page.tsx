@@ -20,7 +20,7 @@ export default function Page() {
 <li>Local regulatory and data residency expertise</li>
 <li>Reduced customer acquisition and support costs</li>
 </ul>
-<p><a href="/contact">Discuss a Nebius partnership with Zion Tech Group</a></p>`;
+<p><a href="/contact/">Discuss a Nebius partnership with Zion Tech Group</a></p>`;
   return (
     <article className="container-page py-20">
       <h1 className="text-4xl font-bold mb-4 text-white">Nebius Partnership LATAM Expansion Guide</h1>

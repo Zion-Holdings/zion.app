@@ -19,7 +19,7 @@ export default function Page() {
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">AI Enterprise Readiness Assessment for LATAM in 2026</h1>
         <p className="text-slate-300 leading-relaxed mb-8">Business case, execution model, data maturity, and partnership options for LATAM.</p>
         <div className="glass-card prose prose-invert max-w-none">
-          <p>Use this enterprise readiness assessment to evaluate execution readiness, data maturity, and partnership fit for LATAM companies.</p><ul><li>Business case and execution model</li><li>Data maturity and governance</li><li>Cost control and partnership options</li></ul><p>Visit <a href="/services">AI services</a> to review delivery models, then <a href="/contact">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
+          <p>Use this enterprise readiness assessment to evaluate execution readiness, data maturity, and partnership fit for LATAM companies.</p><ul><li>Business case and execution model</li><li>Data maturity and governance</li><li>Cost control and partnership options</li></ul><p>Visit <a href="/services">AI services</a> to review delivery models, then <a href="/contact/">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
         </div>
         <div className="mt-10 flex flex-col sm:flex-row gap-3">
           <Link href="/services/" className="btn-primary">Explore AI services</Link>

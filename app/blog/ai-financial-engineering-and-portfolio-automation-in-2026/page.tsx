@@ -19,7 +19,7 @@ export default function Page() {
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">AI Financial Engineering and Portfolio Automation in 2026</h1>
         <p className="text-slate-300 leading-relaxed mb-8">Workflow automation, anomaly detection, and governance for financial data.</p>
         <div className="glass-card prose prose-invert max-w-none">
-          <p>Practical financial engineering and portfolio automation models using AI assistants.</p><ul><li>Workflow automation and anomaly detection</li><li>Reporting and governance for financial data</li><li>Free tools listed at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>Explore <a href="/services">AI services</a>, then <a href="/contact">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
+          <p>Practical financial engineering and portfolio automation models using AI assistants.</p><ul><li>Workflow automation and anomaly detection</li><li>Reporting and governance for financial data</li><li>Free tools listed at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>Explore <a href="/services">AI services</a>, then <a href="/contact/">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
         </div>
         <div className="mt-10 flex flex-col sm:flex-row gap-3">
           <Link href="/services/" className="btn-primary">Explore AI services</Link>

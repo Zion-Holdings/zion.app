@@ -19,7 +19,7 @@ export default function Page() {
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">AI Fraud Prevention and Identity Intelligence for Brazilian Companies in 2026</h1>
         <p className="text-slate-300 leading-relaxed mb-8">Behavioral signals, anomaly workflows, and compliance-friendly architecture for Brazilian enterprises.</p>
         <div className="glass-card prose prose-invert max-w-none">
-          <p>How Brazilian companies can apply AI fraud prevention and identity intelligence without replacing core banking or ERP stacks.</p><ul><li>Behavioral signals and anomaly workflows</li><li>Compliance and audit-friendly architecture</li><li>Free tools and partnership options at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>Review <a href="/services">AI services</a>, then <a href="/contact">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
+          <p>How Brazilian companies can apply AI fraud prevention and identity intelligence without replacing core banking or ERP stacks.</p><ul><li>Behavioral signals and anomaly workflows</li><li>Compliance and audit-friendly architecture</li><li>Free tools and partnership options at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>Review <a href="/services">AI services</a>, then <a href="/contact/">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
         </div>
         <div className="mt-10 flex flex-col sm:flex-row gap-3">
           <Link href="/services/" className="btn-primary">Explore AI services</Link>

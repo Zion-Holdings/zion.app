@@ -19,7 +19,7 @@ export default function Page() {
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">AI DevOps and Platform Engineering Automation in 2026</h1>
         <p className="text-slate-300 leading-relaxed mb-8">CI/CD intelligence, release risk scoring, and self-service patterns with governance.</p>
         <div className="glass-card prose prose-invert max-w-none">
-          <p>AI DevOps and platform engineering automation for faster, safer releases.</p><ul><li>CI/CD intelligence and release risk scoring</li><li>Self-service platforms with governance</li><li>Free tools at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>Review <a href="/services">AI services</a>, then <a href="/contact">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
+          <p>AI DevOps and platform engineering automation for faster, safer releases.</p><ul><li>CI/CD intelligence and release risk scoring</li><li>Self-service platforms with governance</li><li>Free tools at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>Review <a href="/services">AI services</a>, then <a href="/contact/">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
         </div>
         <div className="mt-10 flex flex-col sm:flex-row gap-3">
           <Link href="/services/" className="btn-primary">Explore AI services</Link>

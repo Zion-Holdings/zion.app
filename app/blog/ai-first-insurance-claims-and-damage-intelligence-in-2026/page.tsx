@@ -20,7 +20,7 @@ export default function Page() {
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">AI-First Insurance Claims and Damage Intelligence in 2026</h1>
         <p className="text-slate-300 leading-relaxed mb-8">Practical AI methods for claims triage, damage assessment, and fraud detection.</p>
         <div className="glass-card prose prose-invert max-w-none">
-          <p>Insurance AI patterns that improve customer experience and control loss.</p><ul><li>Automated triage and FNOL</li><li>Damage estimation and fraud signals</li><li>Proof-of-concept at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>See <a href="/services/ai-insurance-claims-automation">claims automation</a>, then <a href="/contact">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
+          <p>Insurance AI patterns that improve customer experience and control loss.</p><ul><li>Automated triage and FNOL</li><li>Damage estimation and fraud signals</li><li>Proof-of-concept at <a href="https://ziontechgroup.com">ziontechgroup.com</a></li></ul><p>See <a href="/services/ai-insurance-claims-automation">claims automation</a>, then <a href="/contact/">contact us</a> or <a href="https://calendly.com/kleber-ziontechgroup">schedule a meeting</a>.</p>
         </div>
         <div className="mt-10 flex flex-col sm:flex-row gap-3">
           <Link href="/services/" className="btn-primary">Explore AI services</Link>
