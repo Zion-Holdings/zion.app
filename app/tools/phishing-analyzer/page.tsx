@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function PhishingAnalyzerTool() {
@@ -78,7 +79,9 @@ export default function PhishingAnalyzerTool() {
           indicators.push({ type: 'url', severity: 'medium', description: `Non-HTTPS link: ${url}` });
           score += 10;
         }
-      } catch {}
+      } catch (e) {
+        // Handle URL parsing errors silently
+      }
     });
 
     // Determine verdict
