@@ -1,1 +1,1 @@
-{"status": "critical", "expiry_hours_remaining": 1.0, "refresh_count": 37, "action_taken": "manual_review", "timestamp": "2026-07-23T02:02:02Z"}
+{"status": "manual_review", "expiry_hours_remaining": 1.0, "refresh_count": 38, "action_taken": "manual_review", "timestamp": "2026-07-23T02:35:17Z"}
