@@ -108,6 +108,16 @@ SEARCH_QUERIES = [
      "pain_points": ["threat intelligence", "identity AI", "cloud security"]},
 ]
 
+# Extra growth queries added for Zion Tech Group autonomous lead funnel.
+EXTRA_QUERIES = [
+    {"query": "companies hiring AI automation consultants 2026", "industry": "General", "pain_points": ["AI automation", "RPA", "process mining"]},
+    {"query": "businesses upgrading legacy IT infrastructure 2026", "industry": "General", "pain_points": ["cloud migration", "modernization", "cost optimization"]},
+    {"query": "AI integration services for enterprises", "industry": "General", "pain_points": ["AI adoption", "MLOps", "data architecture"]},
+    {"query": "managed IT services for growing companies", "industry": "General", "pain_points": ["support", "monitoring", "devices"]},
+    {"query": "IT directors seeking AI vendors", "industry": "General", "pain_points": ["vendor selection", "security", "integration"]},
+]
+
+SEARCH_QUERIES = SEARCH_QUERIES + EXTRA_QUERIES
 # Rotating User-Agents to reduce blocking
 USER_AGENTS = [
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36",
