@@ -13,5 +13,11 @@
     "action_taken": "force_refresh",
     "result": "manual_review",
     "reason": "Notifier reported auto-refresh failed despite watchdog refresh output."
+  },
+  {
+    "expiry_hours_remaining": 1.0,
+    "refresh_count": 33,
+    "action_taken": "force_refresh",
+    "timestamp": "2026-07-23T00:03:06.893818+00:00"
   }
 ]
