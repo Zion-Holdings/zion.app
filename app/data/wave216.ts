@@ -1,5 +1,4 @@
 import { Service } from './serviceTypes';
-
 // Wave 216 — Swarm Intelligence, Edge AI Inference, Synthetic Data Generation,
 // AI Governance & Compliance, Autonomous RPA, Federated Learning, and Space Computing
 // Research by @OWL — 2026-06-19
@@ -286,7 +285,6 @@ export const wave216SpaceComputingServices: Service[] = [
 // ai-governance-compliance, autonomous-rpa, federated-learning, space-computing
 
 import { Service } from './serviceTypes';
-
 export const wave216ItServices: Service[] = [
   {
     id: 'it-secrets-management',

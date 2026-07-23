@@ -1,18 +1,4 @@
 // Auto-generated services data
-export interface Service {
-  id: string;
-  name?: string;
-  title?: string;
-  category: string;
-  description: string;
-  price?: string;
-  icon?: string;
-  features?: string[];
-  contactInfo?: { website?: string; phone?: string; email?: string; address?: string };
-  link?: string;
-  [key: string]: unknown;
-}
-
 export const allServices: Service[] = [
   {
     "id": "micro-saas-ai-invoice-processor",
