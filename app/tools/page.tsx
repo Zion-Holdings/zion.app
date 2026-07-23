@@ -2,10 +2,14 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Free Developer Tools & Utilities | Zion Tech Group',
-  description: '50+ free online developer tools: JSON formatter, JWT decoder, regex tester, SQL formatter, color palette generator, QR code generator, and more.',
+  description: '78+ free online developer tools: AI Code Explainer, SQL Generator, JWT decoder, regex tester, CSS gradient generator, QR code generator, SSL checker, and more.',
 };
 
 const tools = [
+  { id: 'ai-code-explainer', icon: '🤖', title: 'AI Code Explainer', desc: 'Explain complex code in plain language, perfect for onboarding and documentation', category: 'AI' },
+  { id: 'ai-sql-generator', icon: '🧠', title: 'AI SQL Generator', desc: 'Generate SQL queries from natural language descriptions', category: 'AI' },
+  { id: 'ai-security-auditor', icon: '🛡️', title: 'AI Security Auditor', desc: 'Scan code for security vulnerabilities and get recommendations', category: 'AI' },
+  { id: 'ai-performance-analyzer', icon: '⚡', title: 'AI Performance Analyzer', desc: 'Identify performance bottlenecks and suggest optimizations', category: 'AI' },
   { id: 'yaml-json-converter', icon: '🔁', title: 'YAML ⇄ JSON Converter', desc: 'Convert between YAML and JSON formats instantly', category: 'Data' },
   { id: 'json-schema-generator', icon: '📐', title: 'JSON Schema Generator', desc: 'Auto-generate JSON Schema from sample JSON data', category: 'Data' },
   { id: 'xml-formatter-validator', icon: '📄', title: 'XML Formatter & Validator', desc: 'Format, validate, and minify XML documents', category: 'Data' },
@@ -41,6 +45,14 @@ const tools = [
   { id: 'manifest-generator', icon: '📦', title: 'Manifest Generator', desc: 'Generate starter manifests for extensions, web apps, and cloud services', category: 'Utilities' },
   { id: 'env-validator', icon: '🔐', title: 'ENV Validator', desc: 'Validate .env contents and flag suspicious or blank values', category: 'Security' },
   { id: 'gitignore-generator', icon: '🚫', title: '.gitignore Generator', desc: 'Copy or download sensible .gitignore templates for common stacks', category: 'Utilities' },
+  { id: 'json-diff-viewer', icon: '🔎', title: 'JSON Diff Viewer', desc: 'Compare and visualize differences between JSON files', category: 'Data' },
+  { id: 'json-to-csv-converter', icon: '📊', title: 'JSON to CSV Converter', desc: 'Convert JSON arrays to CSV format for spreadsheet use', category: 'Data' },
+  { id: 'regex-builder', icon: '🔧', title: 'Regex Builder', desc: 'Visual regex builder with explanation of each component', category: 'Text' },
+  { id: 'log-error-explainer', icon: '📋', title: 'Log Error Explainer', desc: 'Analyze log files and explain errors in plain English', category: 'Utilities' },
+  { id: 'ssl-checker', icon: '🔒', title: 'SSL Certificate Checker', desc: 'Verify SSL certificate validity and expiration dates', category: 'Security' },
+  { id: 'health-check', icon: '🏥', title: 'API Health Check', desc: 'Monitor API endpoints and get alerts on downtime', category: 'Monitoring' },
+  { id: 'devops-maturity', icon: '📈', title: 'DevOps Maturity Assessment', desc: 'Evaluate your DevOps practices and get improvement recommendations', category: 'DevOps' },
+  { id: 'ir-maturity', icon: '🔄', title: 'Incident Response Maturity', desc: 'Assess your incident response capabilities and readiness', category: 'DevOps' },
 ];
 
 export default function ToolsPage() {
@@ -50,14 +62,18 @@ export default function ToolsPage() {
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
       <div className="max-w-6xl mx-auto px-4 py-16">
         <header className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-white mb-4">🛠️ Free Developer Tools</h1>
+          <h1 className="text-4xl font-bold text-white mb-4">🛠️ Free Developer & AI Tools</h1>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            38 free developer tools today, with more tools launching regularly.
+            78+ free online tools for developers, designers, and data professionals. AI-powered tools included!
             No signup required, no data stored.
           </p>
           <div className="flex items-center justify-center gap-4 mt-6 text-sm text-slate-500">
             <span>📞 +1 302 464 0950</span>
             <span>✉️ kleber@ziontechgroup.com</span>
+          </div>
+          <div className="mt-4 inline-flex items-center gap-2 px-5 py-3 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-200">
+            <span>Need a custom AI integration for your stack?</span>
+            <Link href="/contact" className="text-emerald-300 hover:text-emerald-200 underline">Contact us</Link>
           </div>
         </header>
 
