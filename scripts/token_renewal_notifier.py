@@ -148,18 +148,19 @@ def check_and_notify(force=False):
     # Auto-refresh if critical
     if hours_left <= CRITICAL_HOURS:
         print("Token critical — triggering auto-refresh...")
-        import subprocess
-        result = subprocess.run(
-            ["python3", str(Path(HOME + "/scripts/token_lifecycle_manager.py")), "force-refresh"],
-            capture_output=True, text=True, timeout=30
-        )
-        print(result.stdout)
-        if result.returncode == 0:
-            print("✅ Auto-refresh successful")
-            return 0
-        else:
-            print("❌ Auto-refresh failed!")
-            return 2
+        rc = 2
+        try:
+            sys.path.insert(0, str(Path(HOME + "/scripts")))
+            import token_lifecycle_manager as lifecycle
+            if callable(getattr(lifecycle, "cmd_force_refresh", None)):
+                rc = lifecycle.cmd_force_refresh()
+            else:
+                raise RuntimeError("cmd_force_refresh not available")
+        except Exception as e:
+            print(f"❌ Auto-refresh failed: {e}")
+            rc = 2
+        print("✅ Auto-refresh successful" if rc == 0 else "❌ Auto-refresh failed!")
+        return rc if rc != 0 else 0
     
     print(f"Token status: {status} — {time_str} remaining")
     return {"OK": 0, "WARNING": 1, "URGENT": 1, "CRITICAL": 2}.get(status, 0)
