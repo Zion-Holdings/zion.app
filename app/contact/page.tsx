@@ -23,6 +23,21 @@ export default function ContactPage() {
           <p className="text-slate-300 max-w-2xl mx-auto">
             Prefer tools first? Try our <Link href="/free-services-and-tools/" className="text-purple-400 underline underline-offset-4 hover:text-purple-300">free services and tools</Link>.
           </p>
+          <div className="flex flex-wrap items-center justify-center gap-3 mt-5 text-sm">
+            <span className="text-slate-400">Popular intents:</span>
+            {[
+              { label: 'AI Observability & AIOps', href: '/services/ai-observability-aiops' },
+              { label: 'Incident Response Automation', href: '/services/ai-incident-response-and-oncall-automation' },
+              { label: 'Email Deliverability Recovery', href: '/services/ai-email-bounce-and-deliverability-recovery' },
+              { label: 'On-Site Rapid Response', href: '/services/it-onsite-rapid-response' },
+              { label: 'Managed IT / MSP Automation', href: '/services/ai-managed-it-msp-automation' },
+              { label: 'Micro-SaaS Acceleration', href: '/services/ai-micro-saas-sales-accelerator' },
+            ].map(item => (
+              <Link key={item.href} href={item.href} className="btn-secondary text-sm px-3 py-2">
+                {item.label} →
+              </Link>
+            ))}
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
