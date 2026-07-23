@@ -77,9 +77,15 @@ export default function ToolsPage() {
             50+ free online tools for developers, designers, and data professionals.
             No signup required, no data stored.
           </p>
-          <div className="flex items-center justify-center gap-4 mt-6 text-sm text-slate-500">
+          <div className="flex flex-wrap items-center justify-center gap-4 mt-6 text-sm text-slate-500">
             <span>📞 +1 302 464 0950</span>
             <span>✉️ kleber@ziontechgroup.com</span>
+            <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noreferrer" className="text-emerald-300 hover:text-emerald-200 underline">
+              📅 Book Consultation
+            </a>
+            <Link href="/services" className="text-purple-300 hover:text-purple-200 underline">
+              AI & IT Services →
+            </Link>
           </div>
         </header>
 

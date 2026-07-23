@@ -120,7 +120,7 @@ export default function ServiceStatsWidget() {
       {/* Contact bar */}
       <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-400">
         <a href="mailto:kleber@ziontechgroup.com" className="hover:text-purple-300 transition-colors">✉ kleber@ziontechgroup.com</a>
-        <a href="tel:+130****0950" className="hover:text-purple-300 transition-colors">☎ +1 302 464 0950</a>
+        <a href="tel:+13024640950" className="hover:text-purple-300 transition-colors">☎ +1 302 464 0950</a>
         <span>📍 364 E Main St, Middletown DE 19709</span>
       </div>
     </div>
