@@ -110,6 +110,33 @@ try:
                 LLM_API_KEY = _p.get('api_key')
         if LLM_API_ENDPOINT and LLM_API_KEY and LLM_MODEL:
             LLM_TAILOR_ENABLED = True
+        else:
+            try:
+                auth_path = Path.home() / '.hermes' / 'auth.json'
+                if auth_path.exists():
+                    cfg2 = json.loads(auth_path.read_text(encoding='utf-8'))
+                    provider2 = ((cfg2.get('providers') or {}).get('nous') or {})
+                    e2 = provider2.get('inference_base_url', '').rstrip('/')
+                    k2 = provider2.get('access_token', '')
+                    m2 = provider2.get('model') or LLM_MODEL
+                    if e2 and k2 and m2:
+                        LLM_API_ENDPOINT = LLM_API_ENDPOINT or e2
+                        LLM_API_KEY = LLM_API_KEY or k2
+                        LLM_MODEL = LLM_MODEL or m2
+                        LLM_TAILOR_ENABLED = True
+            except Exception:
+                pass
+    try:
+        (BASE_DIR / 'outreach_monitor/processed').mkdir(parents=True, exist_ok=True)
+        (BASE_DIR / 'outreach_monitor/processed/llm_tailor_config.json').write_text(json.dumps({
+            'enabled': bool(LLM_TAILOR_ENABLED),
+            'endpoint': LLM_API_ENDPOINT,
+            'key_present': bool(LLM_API_KEY),
+            'model': LLM_MODEL,
+            'source': 'hermes_auth_config_fallback',
+        }, ensure_ascii=False), encoding='utf-8')
+    except Exception:
+        pass
 except Exception:
     pass
 LLM_FALLBACK_MODELS = [m.strip() for m in os.getenv('ZION_LLM_FALLBACK_MODELS', '').split(',') if m.strip()]

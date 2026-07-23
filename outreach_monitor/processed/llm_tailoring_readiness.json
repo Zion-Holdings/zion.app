@@ -1,15 +1,11 @@
 {
-  "timestamp": 1784496119,
-  "active": false,
-  "has_endpoint": false,
-  "has_api_key": false,
-  "model": "not-configured",
-  "llm_tailor_enabled": false,
+  "timestamp": 1784769253,
+  "active": true,
+  "has_endpoint": true,
+  "has_api_key": true,
+  "model": "openai/gpt-4o-mini",
+  "llm_tailor_enabled": true,
   "local_gmail_modules": {
-    "googleapiclient": true,
-    "google.auth": true,
-    "google.oauth2": true,
-    "token_exists": false,
-    "auth_error": null
+    "auth_error": "AttributeError(\"module 'importlib' has no attribute 'util'\")"
   }
 }
