@@ -1,20 +1,20 @@
-// app/solutions/page.tsx
+import type { Metadata } from 'next';
 import Link from 'next/link';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Solutions — Zion Tech Group',
   description: 'Industry-specific AI, IT, and Micro-SaaS solutions for Healthcare, Financial Services, Manufacturing, and more.',
 };
 
 const industries = [
-  { name: 'Healthcare',                    desc: 'HIPAA-compliant AI diagnostics, patient engagement, and clinical automation.' },
-  { name: 'Financial Services',            desc: 'RegTech, fraud detection, trading bots, and KYC automation.' },
-  { name: 'Manufacturing & Industrial',    desc: 'Predictive maintenance, supply chain, quality inspection AI.' },
-  { name: 'E-Commerce & Retail',           desc: 'Recommendation engines, inventory AI, dynamic pricing.' },
-  { name: 'Technology & SaaS',             desc: 'Developer tools, platform engineering, dev tooling.' },
-  { name: 'Logistics & Supply Chain',      desc: 'Route optimization, warehouse automation, fleet tracking.' },
-  { name: 'Government & Public Sector',    desc: 'Citizen services, compliance automation, civic AI.' },
-  { name: 'Insurance',                     desc: 'Claims automation, underwriting AI, fraud prevention.' },
+  { name: 'Healthcare', desc: 'HIPAA-compliant AI diagnostics, patient engagement, and clinical automation.', href: '/services/ai-claims-automation/' },
+  { name: 'Financial Services', desc: 'RegTech, fraud detection, trading bots, and KYC automation.', href: '/services/ai-first-saas-cost-optimization-and-license-management-for-it-in-2026/' },
+  { name: 'Manufacturing', desc: 'Predictive maintenance, supply chain, quality inspection AI.', href: '/services/ai-first-digital-twin-and-asset-simulation-for-industry-in-2026/' },
+  { name: 'E-Commerce', desc: 'Recommendation engines, inventory AI, dynamic pricing.', href: '/case-studies/ecommerce/' },
+  { name: 'Technology & SaaS', desc: 'Developer tools, platform engineering, dev tooling.', href: '/services/ai-first-application-performance-monitoring-and-observability-for-it-in-2026/' },
+  { name: 'Logistics', desc: 'Route optimization, warehouse automation, fleet tracking.', href: '/services/ai-supply-chain-optimization/' },
+  { name: 'Government', desc: 'Citizen services, compliance automation, civic AI.', href: '/services/ai-first-identity-governance-and-access-management-for-it-in-2026/' },
+  { name: 'Insurance', desc: 'Claims automation, underwriting AI, fraud prevention.', href: '/services/ai-insurance-claims-automation/' },
 ];
 
 export default function SolutionsPage() {
@@ -23,11 +23,10 @@ export default function SolutionsPage() {
       <h1 className="text-4xl font-bold text-white mb-4">Industry Solutions</h1>
       <p className="text-slate-400 mb-12 max-w-2xl">
         Tailored AI, IT, and Micro-SaaS solutions purpose-built for your industry&apos;s unique challenges and compliance requirements.
-        Click any industry to see challenges we solve, our specific solutions, and how we can help.
       </p>
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-        {(industries).map((ind) => (
-          <Link key={ind.name} href="/industry-solutions/" className="glass-card">
+        {industries.map((ind) => (
+          <Link key={ind.name} href={ind.href} className="glass-card">
             <h3 className="font-semibold text-white mb-2">{ind.name}</h3>
             <p className="text-slate-400 text-sm">{ind.desc}</p>
             <span className="text-purple-400 text-xs mt-3 inline-block">Learn more →</span>
