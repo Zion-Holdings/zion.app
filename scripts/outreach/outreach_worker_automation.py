@@ -293,6 +293,37 @@ def _load_hot_followup_ledger_contacts():
     return out[:200]
 
 
+def _load_interest_queue_candidates():
+    p = BASE_DIR / 'outreach_monitor' / 'processed' / 'interest_draft_queue.jsonl'
+    if not p.exists():
+        return []
+    out = []
+    seen = set()
+    for line in p.read_text(encoding='utf-8', errors='ignore').splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            obj = json.loads(line)
+        except Exception:
+            continue
+        if obj.get('status') != 'ready_to_send':
+            continue
+        to_addr = (obj.get('from') or '').strip().lower()
+        thread_id = (obj.get('thread_id') or '').strip()
+        subject = (obj.get('subject') or '').strip() or 'Following up on your inquiry'
+        dedup_key = (obj.get('dedup_key') or to_addr).strip()
+        if not to_addr or not subject:
+            continue
+        if to_addr.endswith('@ziontechgroup.com'):
+            continue
+        if dedup_key in seen:
+            continue
+        seen.add(dedup_key)
+        out.append({'email': to_addr, 'thread_id': thread_id, 'thread_subject': subject, 'source': 'interest_queue'})
+    return out
+
+
 def search_all_folders(q, maxResults=20):
     # High-frequency safe wrapper: runs every Gmail call under a timeout
     # and scans the same query across common mail scopes to approximate
@@ -1199,6 +1230,11 @@ def run_high_frequency_outreach():
     if not contacts:
         try:
             contacts.extend(_load_hot_followup_ledger_contacts())
+        except Exception:
+            pass
+    if not contacts:
+        try:
+            contacts.extend(_load_interest_queue_candidates())
         except Exception:
             pass
     new_subjects = set()
