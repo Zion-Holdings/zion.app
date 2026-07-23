@@ -15,7 +15,7 @@ export default function JWTInspector() {
       try { return decodeURIComponent(atob(r).split('').map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)).join('')); } catch (e) { return atob(r); }
     }
     btn.onclick = () => {
-      const raw = document.getElementById('token').value.trim();
+      const raw = (document.getElementById('token') as HTMLInputElement).value.trim();
       const parts = raw.split('.');
       try {
         h.textContent = JSON.stringify(JSON.parse(b64urlDecode(parts[0])), null, 2);

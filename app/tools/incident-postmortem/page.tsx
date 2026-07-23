@@ -9,11 +9,11 @@ export default function IncidentPostmortem() {
     const out = document.getElementById('output');
     if (!btn || !out) return;
     btn.onclick = () => {
-      const title = document.getElementById('title')?.value || 'Untitled incident';
-      const impact = document.getElementById('impact')?.value || 'Impact unknown';
-      const root = document.getElementById('root')?.value || 'Root cause pending';
-      const timeline = document.getElementById('timeline')?.value || 'Timeline pending';
-      const actions = document.getElementById('actions')?.value || 'No action items';
+      const title = (document.getElementById('title') as HTMLInputElement).value || 'Untitled incident';
+      const impact = (document.getElementById('impact') as HTMLInputElement).value || 'Impact unknown';
+      const root = (document.getElementById('root') as HTMLInputElement).value || 'Root cause pending';
+      const timeline = (document.getElementById('timeline') as HTMLInputElement).value || 'Timeline pending';
+      const actions = (document.getElementById('actions') as HTMLInputElement).value || 'No action items';
       const date = new Date().toISOString().slice(0, 10);
       out.textContent = `Postmortem Draft — ${title}\nDate: ${date}\n\nSummary\n- Incident: ${title}\n- Impact: ${impact}\n- Root cause: ${root}\n\nTimeline\n- ${timeline.replace(/\n/g, '\n- ')}\n\nAction Items\n- ${actions.replace(/\n/g, '\n- ')}\n\nNext Steps\n- Review action owners and due dates\n- Add pre-deploy checks and runbook updates`;
     };

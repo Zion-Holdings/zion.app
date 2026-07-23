@@ -10,8 +10,8 @@ export default function ReleaseNotesGenerator() {
     const out = document.getElementById('output');
     if (!btn || !out) return;
     btn.onclick = () => {
-      const title = document.getElementById('title')?.value || 'New Release';
-      const changes = document.getElementById('changes')?.value || '';
+      const title = (document.getElementById('title') as HTMLInputElement).value || 'New Release';
+      const changes = (document.getElementById('changes') as HTMLInputElement).value || '';
       const items = changes.split(/\n+/).map(s => s.trim()).filter(Boolean);
       const fixes = items.filter(i => /fix|bug|patch|issue/i.test(i));
       const features = items.filter(i => !/fix|bug|patch|issue/i.test(i));

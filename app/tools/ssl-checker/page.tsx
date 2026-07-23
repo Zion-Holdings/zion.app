@@ -17,6 +17,7 @@ export default function SSLCheckerTool() {
     // Simulate SSL check
     await new Promise(r => setTimeout(r, 1500));
     
+    const daysRemainingCalc = 68;
     const mockResult = {
           domain,
           valid: true,
@@ -34,7 +35,7 @@ export default function SSLCheckerTool() {
           hsts: true,
           grade: 'A+' as const,
           chainValid: true,
-          warnings: (daysToExpiry < 30 ? ['Certificate expires soon'] : []) as string[],
+          warnings: (daysRemainingCalc < 30 ? ['Certificate expires soon'] : []) as string[],
         };
     
     setResults(mockResult);

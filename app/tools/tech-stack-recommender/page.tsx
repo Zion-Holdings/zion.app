@@ -9,8 +9,8 @@ export default function TechStackRecommender() {
     const out = document.getElementById('result');
     if (!btn || !out) return;
     btn.onclick = () => {
-      const type = document.getElementById('type')?.value || 'SaaS Web App';
-      const priority = document.getElementById('priority')?.value?.toLowerCase() || 'speed to market';
+      const type = (document.getElementById('type') as HTMLInputElement).value || 'SaaS Web App';
+      const priority = (document.getElementById('priority') as HTMLInputElement).value?.toLowerCase() || 'speed to market';
       const stacks = {
         'SaaS Web App': { default: 'Next.js + Supabase + Stripe', perf: 'Remix + Neon + Stripe', compliance: 'Next.js + Keycloak + PostgreSQL' },
         'Mobile App': { default: 'Flutter + Firebase', perf: 'React Native + Supabase', compliance: 'Flutter + App Check + Encrypted storage' },
