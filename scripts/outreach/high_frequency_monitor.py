@@ -274,10 +274,34 @@ def main():
     try:
         llm_blocker = None
         if not (os.getenv('ZION_LLM_API_ENDPOINT') or os.getenv('LLM_API_ENDPOINT')):
-            llm_blocker = 'missing_endpoint'
-        elif not (os.getenv('ZION_LLM_API_KEY') or os.getenv('LLM_API_KEY')):
-            llm_blocker = 'missing_key'
-        elif not (os.getenv('ZION_LLM_MODEL') or os.getenv('LLM_MODEL')):
+            try:
+                auth_paths = [Path.home() / '.hermes' / 'auth.json', BASE_DIR / '.hermes' / 'auth.json']
+                for auth_path in auth_paths:
+                    if auth_path.exists():
+                        cfg = json.loads(auth_path.read_text(encoding='utf-8'))
+                        provider = ((cfg.get('providers') or {}).get('nous') or {})
+                        if provider.get('inference_base_url') and provider.get('access_token') and provider.get('model'):
+                            llm_blocker = None
+                            break
+                        llm_blocker = 'missing_auth_provider'
+            except Exception:
+                llm_blocker = llm_blocker or 'missing_env'
+        if not (os.getenv('ZION_LLM_API_KEY') or os.getenv('LLM_API_KEY')) and llm_blocker is None:
+            try:
+                auth_paths = [Path.home() / '.hermes' / 'auth.json', BASE_DIR / '.hermes' / 'auth.json']
+                key_ok = False
+                for auth_path in auth_paths:
+                    if auth_path.exists():
+                        cfg = json.loads(auth_path.read_text(encoding='utf-8'))
+                        provider = ((cfg.get('providers') or {}).get('nous') or {})
+                        if provider.get('access_token'):
+                            key_ok = True
+                            break
+                if not key_ok:
+                    llm_blocker = 'missing_key'
+            except Exception:
+                llm_blocker = llm_blocker or 'missing_key'
+        elif not (os.getenv('ZION_LLM_MODEL') or os.getenv('LLM_MODEL')) and llm_blocker is None:
             llm_blocker = 'missing_model'
         dry_run_file = BASE_DIR / 'outreach_monitor' / 'processed' / 'dry_run_report.jsonl'
         tailor_count = 0
