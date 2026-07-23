@@ -1143,6 +1143,13 @@ def run_high_frequency_outreach():
         '"follow-up" OR "follow up" OR "next steps" newer_than:14d',
         '"partnership" OR "collaboration" newer_than:30d',
         'in:anywhere label:"!!!hot-followup-sent"',
+        '!category:promotions !in:spam !in:trash ("managed services" OR "MSP" OR "IT support")',
+        '!category:promotions !in:spam !in:trash ("cloud migration" OR "digital transformation" OR "IT consulting")',
+        '!category:promotions !in:spam !in:trash ("quote" OR "proposal" OR "SOW" OR "service agreement")',
+        '!category:promotions !in:spam !in:trash ("helpdesk" OR "devops" OR "automation")',
+        '!category:promotions !in:spam !in:trash ("security assessment" OR "SOC" OR "DR" OR "backup")',
+        '!category:promotions !in:spam !in:trash ("meeting" OR "call tomorrow" OR "interested")',
+        '!category:promotions !in:spam !in:trash ("support contract" OR "endpoints" OR "network")',
     ]
 
     hot_label_id = 'Label_946'
