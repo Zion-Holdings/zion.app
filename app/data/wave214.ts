@@ -1,7 +1,6 @@
 import { Service } from './serviceTypes';
 
 export const wave214DeveloperExperiencePlatformsServices: Service[] = [];
-
 export const wave214AiServices: Service[] = [];
 export const wave214MicroSaasServices: Service[] = [];
 export const wave214ItServices: Service[] = [];
