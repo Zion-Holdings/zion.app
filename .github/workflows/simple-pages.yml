@@ -30,6 +30,10 @@ jobs:
           if [ -d docs ]; then
             cp -a docs/. "$ARTIFACT_DIR"/
           fi
+          # Copy public files, including `_headers`
+          if [ -d public ]; then
+            cp -a public/. "$ARTIFACT_DIR"/
+          fi
           # Also copy out/ if it exists (for Next.js build output)
           if [ -d out ]; then
             cp -a out/. "$ARTIFACT_DIR"/ || true
