@@ -6,6 +6,13 @@ export const metadata: Metadata = {
   description: 'Industry-specific AI, IT, and Micro-SaaS solutions for Healthcare, Financial Services, Manufacturing, and more.',
 };
 
+const pillars = [
+  { title: 'Autonomous Infrastructure', body: 'Self-healing environments with policy-based recovery and cost governance.' },
+  { title: 'AI Ops', body: 'Anomaly detection, incident acceleration, and runbook automation across clouds and services.' },
+  { title: 'Agentic Workflows', body: 'AI agents that triage tickets, qualify leads, schedule meetings, and execute routine delivery tasks.' },
+  { title: 'Continuous Delivery', body: 'Pipeline automation, semantic review, release validation, and SLO-aware rollouts.' },
+];
+
 const industries = [
   { name: 'Healthcare', desc: 'HIPAA-compliant AI diagnostics, patient engagement, and clinical automation.', href: '/services/ai-claims-automation/' },
   { name: 'Financial Services', desc: 'RegTech, fraud detection, trading bots, and KYC automation.', href: '/services/ai-first-saas-cost-optimization-and-license-management-for-it-in-2026/' },
