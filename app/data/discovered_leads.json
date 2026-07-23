@@ -7,7 +7,7 @@
     "phone": "",
     "industry": "Healthcare IT",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -27,10 +27,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806759",
-    "lastContact": "2026-07-05T03:30:04.880592",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-4437597144807261749",
@@ -40,7 +41,7 @@
     "phone": "",
     "industry": "Healthcare IT",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -60,10 +61,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806773",
-    "lastContact": "2026-07-05T03:30:04.880595",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "6_464726105921282322",
@@ -73,7 +75,7 @@
     "phone": "",
     "industry": "Healthcare IT",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -93,10 +95,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806780",
-    "lastContact": "2026-07-05T02:17:15.757926",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_2663545848454078951",
@@ -106,7 +109,7 @@
     "phone": "",
     "industry": "Healthcare IT",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 100,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -126,10 +129,13 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806786",
-    "lastContact": "2026-07-05T03:30:04.880598",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "provider_status": "send_failed",
+    "sendFailures": 2,
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-2744527498470433453",
@@ -139,7 +145,7 @@
     "phone": "",
     "industry": "Healthcare IT",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -159,10 +165,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806791",
-    "lastContact": "2026-07-05T03:30:04.880600",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-7599752917047833279",
@@ -172,7 +179,7 @@
     "phone": "",
     "industry": "Healthcare IT",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -192,10 +199,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806796",
-    "lastContact": "2026-07-05T03:30:04.880602",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_7719549393604772881",
@@ -205,7 +213,7 @@
     "phone": "",
     "industry": "Healthcare IT",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -225,10 +233,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806801",
-    "lastContact": "2026-07-05T03:30:14.685685",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-5508359571765512477",
@@ -238,7 +247,7 @@
     "phone": "",
     "industry": "Healthcare IT",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -258,10 +267,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806806",
-    "lastContact": "2026-07-05T03:30:14.685689",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-9001723895003819984",
@@ -271,7 +281,7 @@
     "phone": "",
     "industry": "Healthcare IT",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -291,10 +301,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806812",
-    "lastContact": "2026-07-05T03:30:14.685691",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_7252691724847796023",
@@ -304,7 +315,7 @@
     "phone": "",
     "industry": "Healthcare IT",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -324,10 +335,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806826",
-    "lastContact": "2026-07-05T03:30:14.685693",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_6780288593441757376",
@@ -337,7 +349,7 @@
     "phone": "",
     "industry": "Healthcare IT",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -357,10 +369,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806831",
-    "lastContact": "2026-07-05T03:30:14.685695",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_6482597070156786671",
@@ -370,7 +383,7 @@
     "phone": "",
     "industry": "Healthcare IT",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -390,10 +403,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806836",
-    "lastContact": "2026-07-05T03:31:16.351062",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "7_142264897687850936",
@@ -403,7 +417,7 @@
     "phone": "",
     "industry": "Healthcare IT",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -423,10 +437,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806841",
-    "lastContact": "2026-07-05T03:31:16.351065",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-5967785622240789903",
@@ -436,7 +451,7 @@
     "phone": "",
     "industry": "Healthcare IT",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -456,10 +471,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806846",
-    "lastContact": "2026-07-05T03:31:16.351067",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-6271307212088907524",
@@ -469,7 +485,7 @@
     "phone": "",
     "industry": "Healthcare IT",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -489,10 +505,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806851",
-    "lastContact": "2026-07-05T02:17:15.757928",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_3286272982706272045",
@@ -502,7 +519,7 @@
     "phone": "",
     "industry": "Healthcare IT",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -522,10 +539,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806857",
-    "lastContact": "2026-07-05T04:01:25.809251",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-8183255092105841229",
@@ -535,7 +553,7 @@
     "phone": "",
     "industry": "Healthcare IT",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -555,10 +573,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806862",
-    "lastContact": "2026-07-05T04:01:25.809254",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-7874276674212739345",
@@ -568,7 +587,7 @@
     "phone": "",
     "industry": "Healthcare IT",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -588,10 +607,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806867",
-    "lastContact": "2026-07-05T04:01:25.809256",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-1980939983634963269",
@@ -601,7 +621,7 @@
     "phone": "",
     "industry": "Healthcare IT",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -621,10 +641,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806872",
-    "lastContact": "2026-07-05T04:01:25.809258",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_6439322347395244076",
@@ -634,7 +655,7 @@
     "phone": "",
     "industry": "FinTech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 100,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -654,10 +675,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806877",
-    "lastContact": "2026-07-05T02:30:44.901893",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-9126929938529410452",
@@ -667,7 +689,7 @@
     "phone": "",
     "industry": "FinTech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -687,10 +709,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806882",
-    "lastContact": "2026-07-05T04:01:25.809260",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_-954713662431739954",
@@ -700,7 +723,7 @@
     "phone": "",
     "industry": "FinTech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -720,10 +743,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806887",
-    "lastContact": "2026-07-05T02:30:44.901897",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-1743160929293370537",
@@ -733,7 +757,7 @@
     "phone": "",
     "industry": "FinTech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -753,10 +777,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806891",
-    "lastContact": "2026-07-05T02:30:44.901900",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_2551836737324069464",
@@ -766,7 +791,7 @@
     "phone": "",
     "industry": "FinTech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -786,10 +811,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806896",
-    "lastContact": "2026-07-05T02:33:27.911794",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-7557937682472514594",
@@ -799,7 +825,7 @@
     "phone": "",
     "industry": "FinTech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -819,10 +845,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806901",
-    "lastContact": "2026-07-05T02:33:27.911799",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-8305349758007961109",
@@ -832,7 +859,7 @@
     "phone": "",
     "industry": "FinTech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -852,10 +879,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806906",
-    "lastContact": "2026-07-05T02:36:11.569168",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-2707466231883005343",
@@ -865,7 +893,7 @@
     "phone": "",
     "industry": "FinTech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -885,10 +913,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806911",
-    "lastContact": "2026-07-05T02:36:11.569171",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-6109396721151198743",
@@ -898,7 +927,7 @@
     "phone": "",
     "industry": "FinTech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -918,10 +947,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806916",
-    "lastContact": "2026-07-05T02:40:26.700552",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-4068141603732867239",
@@ -931,7 +961,7 @@
     "phone": "",
     "industry": "FinTech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -951,10 +981,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806920",
-    "lastContact": "2026-07-05T02:40:26.700556",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_4615489794021229664",
@@ -964,7 +995,7 @@
     "phone": "",
     "industry": "FinTech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -984,10 +1015,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806925",
-    "lastContact": "2026-07-05T02:40:48.934874",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-1375302372872538102",
@@ -997,7 +1029,7 @@
     "phone": "",
     "industry": "FinTech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -1017,10 +1049,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806930",
-    "lastContact": "2026-07-05T02:40:48.934877",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_7280549268871783370",
@@ -1030,7 +1063,7 @@
     "phone": "",
     "industry": "FinTech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -1050,10 +1083,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806935",
-    "lastContact": "2026-07-05T02:43:06.208931",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_-804717527434421950",
@@ -1063,7 +1097,7 @@
     "phone": "",
     "industry": "FinTech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -1083,10 +1117,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806940",
-    "lastContact": "2026-07-05T02:43:06.208934",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_4286428272571073642",
@@ -1096,7 +1131,7 @@
     "phone": "",
     "industry": "FinTech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -1116,10 +1151,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806945",
-    "lastContact": "2026-07-05T02:48:30.206293",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-9114680167346056806",
@@ -1129,7 +1165,7 @@
     "phone": "",
     "industry": "FinTech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -1149,10 +1185,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806951",
-    "lastContact": "2026-07-05T02:48:30.206297",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-2032581265797922916",
@@ -1162,7 +1199,7 @@
     "phone": "",
     "industry": "FinTech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -1182,10 +1219,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806957",
-    "lastContact": "2026-07-05T04:03:35.192634",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_6872274009955691870",
@@ -1195,7 +1233,7 @@
     "phone": "",
     "industry": "FinTech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -1215,10 +1253,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806962",
-    "lastContact": "2026-07-05T02:48:30.206300",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_4483206949527904714",
@@ -1228,7 +1267,7 @@
     "phone": "",
     "industry": "FinTech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -1248,10 +1287,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806967",
-    "lastContact": "2026-07-05T03:16:16.000651",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_3568569731302797586",
@@ -1261,7 +1301,7 @@
     "phone": "",
     "industry": "FinTech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -1281,10 +1321,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806972",
-    "lastContact": "2026-07-05T03:16:16.000655",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-7839806828473364573",
@@ -1294,7 +1335,7 @@
     "phone": "",
     "industry": "EdTech",
     "source": "openleads",
-    "status": "New",
+    "status": "Outreach Sent",
     "score": 77,
     "budget": "$10K-$50K",
     "timeline": "1-3 months",
@@ -1310,10 +1351,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806978",
-    "lastContact": null,
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_7652611181664223921",
@@ -1323,7 +1365,7 @@
     "phone": "",
     "industry": "EdTech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 99,
     "budget": "$10K-$50K",
     "timeline": "1-3 months",
@@ -1343,10 +1385,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806986",
-    "lastContact": "2026-07-05T04:03:35.192637",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "7_411817886884793764",
@@ -1356,7 +1399,7 @@
     "phone": "",
     "industry": "EdTech",
     "source": "openleads",
-    "status": "New",
+    "status": "Outreach Sent",
     "score": 77,
     "budget": "$10K-$50K",
     "timeline": "1-3 months",
@@ -1372,10 +1415,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806991",
-    "lastContact": null,
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-4395564528319837787",
@@ -1385,7 +1429,7 @@
     "phone": "",
     "industry": "EdTech",
     "source": "openleads",
-    "status": "New",
+    "status": "Outreach Sent",
     "score": 75,
     "budget": "$10K-$50K",
     "timeline": "1-3 months",
@@ -1401,10 +1445,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.806996",
-    "lastContact": null,
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_1564338809101669872",
@@ -1414,7 +1459,7 @@
     "phone": "",
     "industry": "EdTech",
     "source": "openleads",
-    "status": "New",
+    "status": "Outreach Sent",
     "score": 77,
     "budget": "$10K-$50K",
     "timeline": "1-3 months",
@@ -1430,10 +1475,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807000",
-    "lastContact": null,
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_3027181331302004096",
@@ -1443,7 +1489,7 @@
     "phone": "",
     "industry": "EdTech",
     "source": "openleads",
-    "status": "New",
+    "status": "Outreach Sent",
     "score": 75,
     "budget": "$10K-$50K",
     "timeline": "1-3 months",
@@ -1459,10 +1505,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807005",
-    "lastContact": null,
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-7595842004337471181",
@@ -1472,7 +1519,7 @@
     "phone": "",
     "industry": "EdTech",
     "source": "openleads",
-    "status": "New",
+    "status": "Outreach Sent",
     "score": 77,
     "budget": "$10K-$50K",
     "timeline": "1-3 months",
@@ -1488,10 +1535,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807010",
-    "lastContact": null,
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "1_898021700311693355",
@@ -1501,7 +1549,7 @@
     "phone": "",
     "industry": "EdTech",
     "source": "openleads",
-    "status": "New",
+    "status": "Outreach Sent",
     "score": 77,
     "budget": "$10K-$50K",
     "timeline": "1-3 months",
@@ -1517,10 +1565,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807015",
-    "lastContact": null,
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_2106170159881637046",
@@ -1530,7 +1579,7 @@
     "phone": "",
     "industry": "EdTech",
     "source": "openleads",
-    "status": "New",
+    "status": "Outreach Sent",
     "score": 77,
     "budget": "$10K-$50K",
     "timeline": "1-3 months",
@@ -1546,10 +1595,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807020",
-    "lastContact": null,
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-7490283250276802796",
@@ -1559,7 +1609,7 @@
     "phone": "",
     "industry": "EdTech",
     "source": "openleads",
-    "status": "New",
+    "status": "Outreach Sent",
     "score": 77,
     "budget": "$10K-$50K",
     "timeline": "1-3 months",
@@ -1575,10 +1625,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807025",
-    "lastContact": null,
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-5543520223050887214",
@@ -1588,7 +1639,7 @@
     "phone": "",
     "industry": "EdTech",
     "source": "openleads",
-    "status": "New",
+    "status": "Outreach Sent",
     "score": 77,
     "budget": "$10K-$50K",
     "timeline": "1-3 months",
@@ -1604,10 +1655,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807030",
-    "lastContact": null,
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-4770334370259163979",
@@ -1617,7 +1669,7 @@
     "phone": "",
     "industry": "EdTech",
     "source": "openleads",
-    "status": "New",
+    "status": "Outreach Sent",
     "score": 77,
     "budget": "$10K-$50K",
     "timeline": "1-3 months",
@@ -1633,10 +1685,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807035",
-    "lastContact": null,
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_4200871144849426003",
@@ -1646,7 +1699,7 @@
     "phone": "",
     "industry": "EdTech",
     "source": "openleads",
-    "status": "New",
+    "status": "Outreach Sent",
     "score": 77,
     "budget": "$10K-$50K",
     "timeline": "1-3 months",
@@ -1662,10 +1715,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807040",
-    "lastContact": null,
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_1171636123980600390",
@@ -1675,7 +1729,7 @@
     "phone": "",
     "industry": "EdTech",
     "source": "openleads",
-    "status": "New",
+    "status": "Outreach Sent",
     "score": 77,
     "budget": "$10K-$50K",
     "timeline": "1-3 months",
@@ -1691,10 +1745,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807045",
-    "lastContact": null,
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_5591515781210235228",
@@ -1704,7 +1759,7 @@
     "phone": "",
     "industry": "EdTech",
     "source": "openleads",
-    "status": "New",
+    "status": "Outreach Sent",
     "score": 77,
     "budget": "$10K-$50K",
     "timeline": "1-3 months",
@@ -1720,10 +1775,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807050",
-    "lastContact": null,
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_2214173706176220553",
@@ -1733,7 +1789,7 @@
     "phone": "",
     "industry": "EdTech",
     "source": "openleads",
-    "status": "New",
+    "status": "Outreach Sent",
     "score": 77,
     "budget": "$10K-$50K",
     "timeline": "1-3 months",
@@ -1749,10 +1805,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807055",
-    "lastContact": null,
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-1540688272990987312",
@@ -1762,7 +1819,7 @@
     "phone": "",
     "industry": "EdTech",
     "source": "openleads",
-    "status": "New",
+    "status": "Outreach Sent",
     "score": 77,
     "budget": "$10K-$50K",
     "timeline": "1-3 months",
@@ -1778,10 +1835,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807060",
-    "lastContact": null,
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_-307871729028606116",
@@ -1791,7 +1849,7 @@
     "phone": "",
     "industry": "Manufacturing",
     "source": "openleads",
-    "status": "New",
+    "status": "Outreach Sent",
     "score": 67,
     "budget": "$50K-$100K",
     "timeline": "1-3 months",
@@ -1807,10 +1865,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807065",
-    "lastContact": null,
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_4550304126526363499",
@@ -1820,7 +1879,7 @@
     "phone": "",
     "industry": "Real Estate Tech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 67,
     "budget": "$50K-$100K",
     "timeline": "1-3 months",
@@ -1840,10 +1899,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807070",
-    "lastContact": "2026-07-05T03:16:16.000658",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "1_219131501784328999",
@@ -1853,7 +1913,7 @@
     "phone": "",
     "industry": "Real Estate Tech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 67,
     "budget": "$50K-$100K",
     "timeline": "1-3 months",
@@ -1873,10 +1933,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807076",
-    "lastContact": "2026-07-05T04:03:35.192639",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_8769689120385185853",
@@ -1886,7 +1947,7 @@
     "phone": "",
     "industry": "Real Estate Tech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 67,
     "budget": "$50K-$100K",
     "timeline": "1-3 months",
@@ -1906,10 +1967,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807082",
-    "lastContact": "2026-07-06T19:35:21.301552",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_5615080347904000489",
@@ -1919,7 +1981,7 @@
     "phone": "",
     "industry": "Real Estate Tech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 67,
     "budget": "$50K-$100K",
     "timeline": "1-3 months",
@@ -1939,10 +2001,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807087",
-    "lastContact": "2026-07-06T19:35:21.301565",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "8_526942028988756315",
@@ -1952,7 +2015,7 @@
     "phone": "",
     "industry": "Real Estate Tech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 67,
     "budget": "$50K-$100K",
     "timeline": "1-3 months",
@@ -1972,10 +2035,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807092",
-    "lastContact": "2026-07-06T19:35:21.301571",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-6254027731814431787",
@@ -1985,7 +2049,7 @@
     "phone": "",
     "industry": "Real Estate Tech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 67,
     "budget": "$50K-$100K",
     "timeline": "1-3 months",
@@ -2005,10 +2069,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807096",
-    "lastContact": "2026-07-06T19:35:21.301575",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_8096119198384760780",
@@ -2018,7 +2083,7 @@
     "phone": "",
     "industry": "Real Estate Tech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 67,
     "budget": "$50K-$100K",
     "timeline": "1-3 months",
@@ -2038,10 +2103,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807101",
-    "lastContact": "2026-07-06T19:35:21.301580",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_2700132922818205237",
@@ -2051,7 +2117,7 @@
     "phone": "",
     "industry": "Real Estate Tech",
     "source": "openleads",
-    "status": "New",
+    "status": "Outreach Sent",
     "score": 67,
     "budget": "$50K-$100K",
     "timeline": "1-3 months",
@@ -2067,10 +2133,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807106",
-    "lastContact": null,
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-8459747209248067004",
@@ -2080,7 +2147,7 @@
     "phone": "",
     "industry": "Real Estate Tech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 67,
     "budget": "$50K-$100K",
     "timeline": "1-3 months",
@@ -2100,10 +2167,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807111",
-    "lastContact": "2026-07-06T20:01:41.125371",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_2075086215724080318",
@@ -2113,7 +2181,7 @@
     "phone": "",
     "industry": "Real Estate Tech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 67,
     "budget": "$50K-$100K",
     "timeline": "1-3 months",
@@ -2133,10 +2201,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807116",
-    "lastContact": "2026-07-06T20:01:41.125374",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-5488262176756366732",
@@ -2146,7 +2215,7 @@
     "phone": "",
     "industry": "Real Estate Tech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 67,
     "budget": "$50K-$100K",
     "timeline": "1-3 months",
@@ -2166,10 +2235,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807121",
-    "lastContact": "2026-07-06T20:01:41.125376",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_6265260074906069549",
@@ -2179,7 +2249,7 @@
     "phone": "",
     "industry": "Real Estate Tech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 67,
     "budget": "$50K-$100K",
     "timeline": "1-3 months",
@@ -2199,10 +2269,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807126",
-    "lastContact": "2026-07-05T03:18:08.054471",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_-700897579944135873",
@@ -2212,7 +2283,7 @@
     "phone": "",
     "industry": "Real Estate Tech",
     "source": "openleads",
-    "status": "New",
+    "status": "Outreach Sent",
     "score": 67,
     "budget": "$50K-$100K",
     "timeline": "1-3 months",
@@ -2228,10 +2299,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807130",
-    "lastContact": null,
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-6813506925367614286",
@@ -2241,7 +2313,7 @@
     "phone": "",
     "industry": "Real Estate Tech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 67,
     "budget": "$50K-$100K",
     "timeline": "1-3 months",
@@ -2261,10 +2333,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807135",
-    "lastContact": "2026-07-06T20:01:41.125378",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_1678509448991217562",
@@ -2274,7 +2347,7 @@
     "phone": "",
     "industry": "Real Estate Tech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 67,
     "budget": "$50K-$100K",
     "timeline": "1-3 months",
@@ -2294,10 +2367,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807140",
-    "lastContact": "2026-07-06T20:01:41.125380",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-5945980073637190789",
@@ -2307,7 +2381,7 @@
     "phone": "",
     "industry": "Real Estate Tech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 67,
     "budget": "$50K-$100K",
     "timeline": "1-3 months",
@@ -2327,10 +2401,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807145",
-    "lastContact": "2026-07-05T03:18:08.054484",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-3375208669080062022",
@@ -2340,7 +2415,7 @@
     "phone": "",
     "industry": "Real Estate Tech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 67,
     "budget": "$50K-$100K",
     "timeline": "1-3 months",
@@ -2360,10 +2435,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807151",
-    "lastContact": "2026-07-05T04:17:58.591342",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_2397697955130431577",
@@ -2373,7 +2449,7 @@
     "phone": "",
     "industry": "Real Estate Tech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 67,
     "budget": "$50K-$100K",
     "timeline": "1-3 months",
@@ -2393,10 +2469,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807156",
-    "lastContact": "2026-07-05T04:17:58.591345",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-3214289174107445837",
@@ -2406,7 +2483,7 @@
     "phone": "",
     "industry": "Real Estate Tech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 67,
     "budget": "$50K-$100K",
     "timeline": "1-3 months",
@@ -2426,10 +2503,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807161",
-    "lastContact": "2026-07-05T04:17:58.591347",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_6688668583885505565",
@@ -2439,7 +2517,7 @@
     "phone": "",
     "industry": "Real Estate Tech",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 67,
     "budget": "$50K-$100K",
     "timeline": "1-3 months",
@@ -2459,10 +2537,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807167",
-    "lastContact": "2026-07-05T04:36:38.661862",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-6942734423217099494",
@@ -2472,7 +2551,7 @@
     "phone": "",
     "industry": "Cybersecurity",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -2492,10 +2571,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807172",
-    "lastContact": "2026-07-05T04:36:38.661865",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-3629238109514950569",
@@ -2505,7 +2585,7 @@
     "phone": "",
     "industry": "Cybersecurity",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -2525,10 +2605,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807177",
-    "lastContact": "2026-07-05T04:36:38.661868",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_7753663894698184185",
@@ -2538,7 +2619,7 @@
     "phone": "",
     "industry": "Cybersecurity",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -2558,10 +2639,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807182",
-    "lastContact": "2026-07-05T04:36:38.661870",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-4632562674835564123",
@@ -2571,7 +2653,7 @@
     "phone": "",
     "industry": "Cybersecurity",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -2591,10 +2673,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807187",
-    "lastContact": "2026-07-05T04:36:38.661872",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-5837400518013998165",
@@ -2604,7 +2687,7 @@
     "phone": "",
     "industry": "Cybersecurity",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -2624,10 +2707,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807191",
-    "lastContact": "2026-07-05T05:00:31.495982",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-3100186491452255908",
@@ -2637,7 +2721,7 @@
     "phone": "",
     "industry": "Cybersecurity",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -2657,10 +2741,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807196",
-    "lastContact": "2026-07-05T05:00:31.495986",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-7397296918622347338",
@@ -2670,7 +2755,7 @@
     "phone": "",
     "industry": "Cybersecurity",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -2690,10 +2775,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807201",
-    "lastContact": "2026-07-05T05:00:31.495988",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_2011037598788504514",
@@ -2703,7 +2789,7 @@
     "phone": "",
     "industry": "Cybersecurity",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -2723,10 +2809,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807207",
-    "lastContact": "2026-07-05T05:00:31.495990",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_2934146401086267190",
@@ -2736,7 +2823,7 @@
     "phone": "",
     "industry": "Cybersecurity",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -2756,10 +2843,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807212",
-    "lastContact": "2026-07-05T05:00:31.495992",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_3938154392150661331",
@@ -2769,7 +2857,7 @@
     "phone": "",
     "industry": "Cybersecurity",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -2789,10 +2877,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807216",
-    "lastContact": "2026-07-05T05:30:46.451716",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-7033946242508954844",
@@ -2802,7 +2891,7 @@
     "phone": "",
     "industry": "Cybersecurity",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -2822,10 +2911,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807221",
-    "lastContact": "2026-07-05T05:30:46.451719",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_8133751455980780802",
@@ -2835,7 +2925,7 @@
     "phone": "",
     "industry": "Cybersecurity",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -2855,10 +2945,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807226",
-    "lastContact": "2026-07-05T05:30:46.451721",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-3947034951408638955",
@@ -2868,7 +2959,7 @@
     "phone": "",
     "industry": "Cybersecurity",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -2888,10 +2979,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807232",
-    "lastContact": "2026-07-05T05:30:46.451723",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-6150279879895159002",
@@ -2901,7 +2993,7 @@
     "phone": "",
     "industry": "Cybersecurity",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -2921,10 +3013,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807237",
-    "lastContact": "2026-07-05T05:30:46.451725",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_3984190013640110337",
@@ -2934,7 +3027,7 @@
     "phone": "",
     "industry": "Cybersecurity",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -2954,10 +3047,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807242",
-    "lastContact": "2026-07-05T06:00:39.647711",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_3495952019065729191",
@@ -2967,7 +3061,7 @@
     "phone": "",
     "industry": "Cybersecurity",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -2987,10 +3081,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807247",
-    "lastContact": "2026-07-05T06:00:39.647715",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "_4369953765151591077",
@@ -3000,7 +3095,7 @@
     "phone": "",
     "industry": "Cybersecurity",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -3020,10 +3115,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807252",
-    "lastContact": "2026-07-05T06:00:39.647717",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-4959647529627693569",
@@ -3033,7 +3129,7 @@
     "phone": "",
     "industry": "Cybersecurity",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -3053,10 +3149,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807257",
-    "lastContact": "2026-07-05T03:18:08.054489",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "-1706937094630840301",
@@ -3066,7 +3163,7 @@
     "phone": "",
     "industry": "Cybersecurity",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -3086,10 +3183,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807262",
-    "lastContact": "2026-07-05T06:00:39.647719",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "id": "2_815567407252119405",
@@ -3099,7 +3197,7 @@
     "phone": "",
     "industry": "Cybersecurity",
     "source": "openleads",
-    "status": "Outreach Composed",
+    "status": "Outreach Sent",
     "score": 82,
     "budget": "$100K+",
     "timeline": "1-3 months",
@@ -3119,10 +3217,11 @@
       }
     ],
     "discoveredAt": "2026-07-05T02:09:20.807266",
-    "lastContact": "2026-07-05T06:00:39.647721",
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "notes": "",
     "verified": false,
-    "verification": {}
+    "verification": {},
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "email": "contato@machertecnologia.com.br",
@@ -3132,15 +3231,16 @@
     "score": 60,
     "discovered_at": "2026-07-23T18:38:11.568293+00:00",
     "source": "free-search-2026-06-29",
-    "status": "New",
+    "status": "Outreach Sent",
     "verified": false,
-    "lastContact": null,
+    "lastContact": "2026-07-23T19:23:16.661365+00:00",
     "activities": [
       {
         "timestamp": "2026-07-23T18:38:11.568293+00:00",
         "action": "Discovered via free-search-2026-06-29: IT Services"
       }
-    ]
+    ],
+    "updatedAt": "2026-07-23T19:23:16.661365+00:00"
   },
   {
     "email": "govsupport@meriplex.us",
