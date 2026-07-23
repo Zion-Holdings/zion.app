@@ -88,3 +88,5 @@ ghruns.json
 memory/heartbeat-state.json
 scripts/outreach_monitor/processed/historical_miner_ts.txt
 scripts/outreach_monitor/processed/monitor_report.jsonl
+
+lead-crm/outreach_monitor/processed/interest_draft_queue.jsonl
