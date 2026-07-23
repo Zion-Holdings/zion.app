@@ -94,6 +94,41 @@ def _load_sent_set():
     return sent
 
 
+WINDOW = 24 * 3600
+
+
+def _recent_subject_send(to_addr, subject):
+    try:
+        if not SEND_LOG.exists():
+            return False
+        lines = SEND_LOG.read_text(encoding='utf-8', errors='ignore').splitlines()
+    except Exception:
+        return False
+    to_key = (to_addr or '').lower()
+    subj = (subject or '').strip().lower()
+    if not to_key or not subj:
+        return False
+    now = int(__import__('datetime').datetime.now(__import__('datetime').timezone.utc).timestamp())
+    count = 0
+    for ln in reversed(lines):
+        if not ln.strip():
+            continue
+        try:
+            obj = json.loads(ln)
+        except Exception:
+            continue
+        if (obj.get('to') or '').lower() != to_key:
+            continue
+        if ((obj.get('subject') or '').strip().lower() or '') != subj:
+            continue
+        ts = int(obj.get('ts', 0) or 0)
+        if now - ts < WINDOW:
+            count += 1
+        if count >= 2:
+            return True
+    return False
+
+
 def append_sent(record: dict):
     try:
         with SEND_LOG.open('a', encoding='utf-8') as f:
@@ -477,6 +512,9 @@ def main():
         html = tailored.get('html') or r.get('html')
         subj = tailored.get('subject', tailored.get('subject','') or r.get('subject','') or '')
         body = tailored.get('body', tailored.get('body','') or r.get('body','') or '')
+        if _recent_subject_send(to, subj):
+            outputs.append({'to': to, 'success': False, 'reason': 'subject_suppressed_24h', 'error': 'same-subject suppression'})
+            continue
         try:
             mid, tid = send_mail(to, subj, body, html, thread_id=r.get('thread_id'), message_id=r.get('message_id'))
             outputs.append({'to': to, 'success': True, 'message_id': mid, 'thread_id': tid,
