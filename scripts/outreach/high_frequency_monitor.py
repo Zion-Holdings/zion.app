@@ -211,7 +211,8 @@ def main():
             interest_q = (
                 '!category:promotions !in:spam !in:trash '
                 'newer_than:7d "partnership" OR "collaboration" OR "proposal" '
-                '-"support reminder" -"rate the support" -"support survey" -"zendesk"'
+                '-"support reminder" -"rate the support" -"support survey" -"zendesk" '
+                '-from:kleber@ziontechgroup.com'
             )
             msgs = gmail_search(interest_q, limit=20, all_folders=True)
             report['new_inbox_interest_count'] = len(msgs)
