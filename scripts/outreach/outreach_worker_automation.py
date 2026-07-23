@@ -1016,8 +1016,8 @@ def fetch_or_create_lead_from_inbox(email, thread_subject=None):
         'lang': lang,
     }
 
-DRY_RUN = os.getenv('OUTREACH_DRY_RUN', '').lower() in ('1','true','yes')
-REQUIRES_APPROVAL = os.getenv('OUTREACH_REQUIRES_APPROVAL', 'true').lower() in ('1','true','yes')
+DRY_RUN = os.getenv('OUTREACH_DRY_RUN', '1').lower() in ('1','true','yes','on')
+REQUIRES_APPROVAL = os.getenv('OUTREACH_REQUIRES_APPROVAL', '0').lower() in ('1','true','yes','on')
 PENDING_APPROVAL_FILE = BASE_DIR / 'outreach_monitor' / 'processed' / 'pending_approval_queue.jsonl'
 DRY_RUN_REPORT = BASE_DIR / 'outreach_monitor' / 'processed' / 'dry_run_report.jsonl'
 HOT_FOLLOWUP_REPLY_LEDGER = BASE_DIR / 'outreach_monitor' / 'processed' / 'hot_followup_reply_ledger.jsonl'

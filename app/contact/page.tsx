@@ -5,8 +5,8 @@ import { LocalBusinessJsonLd } from '@/components/LocalBusinessStructuredData';
 const CALENDLY_URL = 'https://calendly.com/kleber-ziontechgroup';
 
 export const metadata = {
-  title: 'Contact Us',
-  description: 'Get in touch with Zion Tech Group. Call, email, or visit us in Middletown, DE.',
+  title: 'Contact Zion Tech Group | Free IT Consultation',
+  description: 'Call, email, or book a free consultation with Zion Tech Group. AI, cloud, automation, and cybersecurity services for SMBs and enterprises.',
   alternates: { canonical: '/contact' },
 };
 
@@ -18,7 +18,10 @@ export default function ContactPage() {
         <div className="text-center mb-16">
           <h1 className="text-4xl font-bold text-white mb-4">Contact Us</h1>
           <p className="text-slate-300 mb-4 max-w-2xl mx-auto">
-            From AI strategy to cloud infrastructure and automation — free discovery call, same-day proposal.
+            Free discovery call, same-day proposal. From AI strategy to cloud infrastructure and automation — reach out and we’ll move fast.
+          </p>
+          <p className="text-slate-300 max-w-2xl mx-auto">
+            Prefer tools first? Try our <Link href="/free-services-and-tools/" className="text-purple-400 underline underline-offset-4 hover:text-purple-300">free services and tools</Link>.
           </p>
         </div>
 
@@ -54,23 +57,18 @@ export default function ContactPage() {
               <Link href="/configurator/" className="btn-primary w-full text-center block">
                 Get Your Custom Proposal →
               </Link>
-              <Link href="/services/" className="btn-secondary w-full text-center block">
-                Browse All Services
-              </Link>
+              <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="btn-primary w-full text-center block">
+                📅 Book Free Consultation
+              </a>
               <a href="tel:+13024640950" className="btn-secondary w-full text-center block">
                 ☎ Call Now
               </a>
-              <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="btn-secondary w-full text-center block">
-                📅 Book Consultation
-              </a>
-              <a
-                href="https://wa.me/13024640950?text=Hi%20Kleber%2C%20I%20would%20like%20to%20discuss%20a%20project."
-                target="_blank"
-                rel="noreferrer"
-                className="btn-secondary w-full text-center block"
-              >
+              <a href="https://wa.me/13024640950?text=Hi%20Kleber%2C%20I%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noreferrer" className="btn-secondary w-full text-center block">
                 💬 WhatsApp
               </a>
+              <Link href="/services/" className="btn-secondary w-full text-center block">
+                Browse Services
+              </Link>
             </div>
           </div>
         </div>
@@ -78,8 +76,7 @@ export default function ContactPage() {
         <section className="cta-section text-center">
           <h2 className="text-3xl font-bold text-white mb-4">Let&apos;s Build Something Great</h2>
           <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
-            Whether you need AI integration, IT infrastructure, or a custom software solution,
-            we&apos;re here to help you succeed.
+            We offer free IT tools, readiness audits, and same-day proposals to make starting easy.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:+13024640950" className="btn-primary text-lg">
@@ -88,9 +85,9 @@ export default function ContactPage() {
             <a href={CALENDLY_URL} target="_blank" rel="noreferrer" className="btn-secondary text-lg">
               📅 Book a Consultation
             </a>
-            <a href="mailto:kleber@ziontechgroup.com" className="btn-secondary text-lg">
-              ✉️ kleber@ziontechgroup.com
-            </a>
+            <Link href="/free-services-and-tools/" className="btn-secondary text-lg">
+              🛠 Free Services & Tools
+            </Link>
           </div>
         </section>
       </div>
