@@ -440,7 +440,7 @@ def probe_thread_alive(thread_id, _seen=None):
     return False
 
 def get_message_text(msg_id):
-    msg = _timed_gmail_call(service.users().messages().get(userId='me', id=msg_id, format='full'))
+    msg = _gmail_get_local(msg_id)
     payload = msg.get('payload', {})
     data = payload.get('body', {}).get('data')
     if data:
@@ -461,6 +461,7 @@ def get_message_text(msg_id):
                 except Exception:
                     pass
     return ''
+
 
 def detect_language(text):
     pt_words = ['obrigado','oportunidade','projeto','junto','serviços','ferramentas','call','abraço','oi']
@@ -995,7 +996,7 @@ def fetch_or_create_lead_from_inbox(email, thread_subject=None):
     real_contact_name = contact_name
     real_company_name = company_name
     try:
-        full = _timed_gmail_call(service.users().messages().get(userId='me', id=msg_id, format='metadata', metadataHeaders=['From','To','Subject']))
+        full = _gmail_get_local(msg_id)
         frm_hdr = next((h['value'] for h in full.get('payload',{}).get('headers',[]) if h['name']=='From'), '')
         if frm_hdr:
             if '<' in frm_hdr:
@@ -1098,19 +1099,17 @@ def _llm_readiness_report() -> dict:
 
 def _resolve_hot_label_id():
     try:
-        labels = _timed_gmail_call(service.users().labels().list(userId='me')) if service is not None else None
-        if labels:
-            for lab in labels.get('labels', []) or []:
-                if 'hot-follow-up' in ((lab.get('name') or '') + str(lab.get('id') or '')).lower():
-                    return lab.get('id')
-                    break
+        hits = _gmail_search_local('label:!!!hot-follow-up OR label:"!!!hot-follow-up"', limit=1)
+        if hits:
+            return hits[0].get('threadId') or hits[0].get('id')
     except Exception:
         pass
     return None
 
+
 def _is_safe_hot_thread(msg_id: str, thread_id: Optional[str] = None) -> dict:
     try:
-        full = _timed_gmail_call(service.users().messages().get(userId='me', id=msg_id, format='full'))
+        full = _gmail_get_local(msg_id)
     except Exception as e:
         return {'safe': False, 'reason': f'access_error:{e}'}
     t = full.get('threadId') or thread_id or msg_id
@@ -1120,7 +1119,7 @@ def _is_safe_hot_thread(msg_id: str, thread_id: Optional[str] = None) -> dict:
     if 'kleber@ziontechgroup.com' in from_addr:
         return {'safe': False, 'reason': 'existing_ceo_outbound'}
     try:
-        tmsgs = _timed_gmail_call(service.users().threads().get(userId='me', id=t, format='metadata', metadataHeaders=['From'])) or {}
+        tmsgs = _gmail_thread_get_local(t)
         tmsgs = tmsgs.get('messages', []) or []
         if any('kleber@ziontechgroup.com' in ({x['name']: x['value'] for x in m.get('payload', {}).get('headers', [])}).get('From', '').lower() for m in tmsgs):
             return {'safe': False, 'reason': 'existing_ceo_outbound_thread'}
