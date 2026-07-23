@@ -1,0 +1,1 @@
+{"enabled": true, "endpoint": "https://inference-api.nousresearch.com/v1", "key_present": true, "model": "openai/gpt-4o-mini", "source": "hermes_auth_config_fallback"}
