@@ -144,8 +144,4 @@ export const wave214IncidentManagementServices: Service[] = [
       'Used by Salesforce, Shopify, and 19,000+ organizations globally'
     ]
   }
-];
-=======
-export const wave214ItServices: any[] = [];
-export const wave214SecurityServices: any[] = [];
->>>>>>> 4152c7d0a (feat: add wave214/wave216 IT services and manual lead discovery outreach artifacts)
+];\n\nexport const wave214ItServices: any[] = [];\nexport const wave214SecurityServices: any[] = [];\n\n>>>>>>> 4152c7d0a (feat: add wave214/wave216 IT services and manual lead discovery outreach artifacts)\n

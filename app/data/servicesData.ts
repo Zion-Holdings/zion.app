@@ -11,10 +11,6 @@ try {
 }
 
 export type { Service };
-<<<<<<< HEAD
-export { allServices };
-=======
-
 import { wave174AiServices, wave174MicroSaasServices, wave174ItServices, wave174SecurityServices, wave174CloudServices, wave174DataServices, wave174AutomationServices } from './wave174';
 import { wave175AiServices, wave175MicroSaasServices, wave175ItServices, wave175SecurityServices, wave175CloudServices, wave175DataServices, wave175AutomationServices } from './wave175';
 import { wave176AiServices, wave176MicroSaasServices, wave176ItServices, wave176SecurityServices, wave176CloudServices, wave176DataServices, wave176AutomationServices } from './wave176';
@@ -58,6 +54,8 @@ import { wave213AiObservabilityServices, wave213DataPrivacyServices, wave213Clou
 import { wave214ItServices, wave214SecurityServices } from './wave214';
 import { wave215ItServices } from './wave215';
 import { wave216ItServices, wave216SecurityServices, wave216CloudServices, wave216DataServices, wave216AutomationServices, wave216MicroSaasServices, wave216AiServices } from './wave216';
+
+export { allServices };
 export const aiServices: Service[] = [
   {
     id: 'ai-document-processing',
