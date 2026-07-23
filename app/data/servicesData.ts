@@ -1,5 +1,9 @@
+import type { Service } from './serviceTypes';
+export type { Service };
+
 // Auto-generated services data
-export const allServices: Service[] = [
+// @ts-ignore: TS2590 — auto-generated 1.6k+ entry catalogue exceeds TS literal-union limit until we split into typed batches
+const _allServices = [
   {
     "id": "micro-saas-ai-invoice-processor",
     "title": "Micro-SAAS AI Invoice Processor",
@@ -55840,6 +55844,7 @@ export const allServices: Service[] = [
   }
 ];
 
+export const allServices = _allServices as unknown as Service[];
 export const servicesData = allServices;
 export const aiServices = allServices.filter(s => /ai/i.test(s.category));
 export const itServices = allServices.filter(s => /^it$/i.test(s.category) || /it services/i.test(s.category));

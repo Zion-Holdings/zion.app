@@ -1,7 +1,6 @@
 // Wave 189 services - OWL
 // 7 new services across 7 categories - Web3, EdTech, Supply Chain, Manufacturing, Legal
-
-import { Service } from './servicesData';
+import { Service } from './serviceTypes'; 
 
 export const wave189AiServices: Service[] = [
   {
