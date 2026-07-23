@@ -64,7 +64,7 @@ export default function ServiceComparisonTool() {
     }
 
     // Compare benefits
-    const benefitCounts = services.map(s => s.benefits.length);
+    const benefitCounts = services.map(s => (s.benefits?.length ?? 0));
     const maxBenefitsIdx = benefitCounts.indexOf(Math.max(...benefitCounts));
     
     if (benefitCounts[maxBenefitsIdx] > 3) {
@@ -228,7 +228,7 @@ export default function ServiceComparisonTool() {
               <div className="mb-4">
                 <h5 className="text-sm font-semibold text-slate-400 mb-2">Benefits:</h5>
                 <ul className="space-y-1">
-                  {service.benefits.map((benefit, idx) => (
+                  {service.benefits ?? [].map((benefit, idx) => (
                     <li key={idx} className="text-green-400 text-sm">✓ {benefit}</li>
                   ))}
                 </ul>

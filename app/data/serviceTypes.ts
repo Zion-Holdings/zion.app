@@ -5,7 +5,7 @@ export interface Service {
   title: string;
   description: string;
   features: string[];
-  benefits: string[];
+  benefits?: string[];
   pricing: { basic?: string; starter?: string; pro: string; enterprise: string };
   contactInfo: { website: string; email: string; phone: string };
   icon: string;
