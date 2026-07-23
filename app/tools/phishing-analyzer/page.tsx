@@ -9,7 +9,7 @@ export default function PhishingAnalyzerTool() {
 
   const analyzeEmail = () => {
     if (!emailInput.trim()) return;
-    
+
     const text = emailInput.toLowerCase();
     const indicators: { type: string; severity: 'high' | 'medium' | 'low'; description: string }[] = [];
     let score = 0;
@@ -191,5 +191,3 @@ export default function PhishingAnalyzerTool() {
     </div>
   );
 }
-
-import Link from 'next/link';

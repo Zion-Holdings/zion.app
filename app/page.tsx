@@ -1,13 +1,4 @@
 // app/page.tsx — Home / Landing Page
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Zion Tech Group — AI & IT Services for Modern Business',
-  description:
-    'Zion Tech Group delivers AI, cloud, cybersecurity, data, automation, and managed IT services to help organizations modernize, secure, and scale.',
-  alternates: { canonical: '/' },
-};
-
 'use client';
 
 import { useState, useMemo, useEffect } from 'react';
