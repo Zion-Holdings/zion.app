@@ -188,3 +188,4 @@ export const wave215AutonomousDroneDelivery: Service[] = [
     ]
   }
 ];
+export const wave215ItServices: Service[] = [];
