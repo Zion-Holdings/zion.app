@@ -87,8 +87,8 @@ function ServicesContent() {
       />
     <main className="min-h-screen bg-slate-950 py-20">
       <div className="container-page">
-        <h1 className="text-4xl font-bold text-white mb-2 text-center">Our Complete Service Catalog</h1>
-        <p className="section-subheading text-center">{allServices.length}+ real-world services across 10 categories</p>
+        <h1 className="text-4xl font-bold text-white mb-2 text-center">70+ services across AI, IT, cloud, security, data, automation, DevOps, and more</h1>
+        <p className="section-subheading text-center">{allServices.length}+ real-world services across 24 categories</p>
         {/* Smart Fuzzy Search Bar */}
         <div className="max-w-3xl mx-auto mt-8">
           <SmartSearchBar
@@ -142,7 +142,7 @@ export default function ServicesPage() {
     <Suspense fallback={
       <main className="min-h-screen bg-slate-950 py-20">
         <div className="container-page">
-          <h1 className="text-4xl font-bold text-white mb-2 text-center">Our Complete Service Catalog</h1>
+          <h1 className="text-4xl font-bold text-white mb-2 text-center">70+ services across AI, IT, cloud, security, data, automation, DevOps, and more</h1>
           <p className="section-subheading text-center">Browse all services</p>
           <div className="mt-8">
             <ServiceGridSkeleton />
