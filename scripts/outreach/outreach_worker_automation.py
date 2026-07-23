@@ -352,36 +352,34 @@ def search_all_folders(q, maxResults=20):
     seen_threads = set()
     for qtry in queries:
         try:
-            if service is None:
-                continue
-            resp = _timed(service.users().messages().list(userId='me', q=qtry, maxResults=maxResults))
+            items = gmail_search(qtry, limit=maxResults, all_folders=True) or []
         except Exception:
             continue
-        items = resp.get('messages', []) or []
-        for item in items:
-            mid = item.get('id')
-            tid = item.get('threadId')
+        for item in items or []:
+            mid = item.get('id') or item.get('message_id')
+            tid = item.get('threadId') or item.get('thread_id')
             if not mid or mid in seen_ids:
                 continue
             if tid and tid in seen_threads:
                 continue
             try:
-                msg = _timed(service.users().messages().get(userId='me', id=mid, format='metadata', metadataHeaders=['From','Subject','Date','Thread-Id']))
+                msg = gmail_get(mid)
             except Exception:
                 continue
             seen_ids.add(msg.get('id'))
             if msg.get('threadId'):
                 seen_threads.add(msg['threadId'])
-            headers = {h['name']: h['value'] for h in msg.get('payload', {}).get('headers', [])}
+            hdrs = msg.get('payload', {}).get('headers', []) if isinstance(msg.get('payload'), dict) else []
+            headers = {h['name']: h['value'] for h in hdrs}
             best.append({
                 'id': msg['id'],
                 'threadId': msg.get('threadId'),
                 'from': headers.get('From', ''),
                 'subject': headers.get('Subject', ''),
                 'date': headers.get('Date', ''),
-                'snippet': msg.get('snippet', ''),
             })
     return best
+
 
 def resolve_thread_id(email, subject_hint=None):
     queries = []
@@ -422,17 +420,21 @@ def probe_thread_alive(thread_id, _seen=None):
         return False
     _seen.add(thread_id)
     try:
-        if service is None:
-            return False
-        t = _gmail_execute(service.users().threads().get(userId='me', id=thread_id, format='metadata', metadataHeaders=['From','Subject']))
+        t = _gmail_thread_get_local(thread_id)
         if not t:
             return False
         messages = t.get('messages') or []
         if messages:
             return True
-        resp = _gmail_execute(service.users().messages().list(userId='me', q=f'threadId:{thread_id} in:anywhere', maxResults=5))
-        if resp and resp.get('messages'):
+        titles = [m.get('id') for m in messages]
+        if titles:
             return True
+        try:
+            items = _gmail_search_local(f'threadId:{thread_id} in:anywhere', limit=5)
+            if items:
+                return True
+        except Exception:
+            pass
     except Exception:
         pass
     return False
@@ -1126,6 +1128,57 @@ def _is_safe_hot_thread(msg_id: str, thread_id: Optional[str] = None) -> dict:
         pass
     return {'safe': True, 'thread_id': t, 'subject': subject, 'from': from_addr}
 
+_GOOGLE_WORKSPACE_READY = False
+try:
+    from commands.google_workspace import gmail_search, gmail_get, gmail_thread_get
+    _GOOGLE_WORKSPACE_READY = True
+except Exception:
+    pass
+
+
+def _gmail_search_local(q, limit=20):
+    if not _GOOGLE_WORKSPACE_READY:
+        return []
+    try:
+        return gmail_search(q, limit=limit, all_folders=True) or []
+    except Exception:
+        return []
+
+
+def _gmail_get_local(mid):
+    if not _GOOGLE_WORKSPACE_READY or not mid:
+        return {}
+    try:
+        return gmail_get(mid) or {}
+    except Exception:
+        return {}
+
+
+def _gmail_thread_get_local(tid):
+    if not _GOOGLE_WORKSPACE_READY or not tid:
+        return {}
+    try:
+        return gmail_thread_get(tid) or {}
+    except Exception:
+        return {}
+
+
+def _extract_headers(msg):
+    payload = msg.get('payload') if isinstance(msg, dict) else {}
+    headers = payload.get('headers') if isinstance(payload, dict) else []
+    if not headers:
+        return {}
+    return {h['name']: h['value'] for h in headers}
+
+
+def _parse_iso_ts(value):
+    try:
+        dt = parsedate_to_datetime(value)
+        return dt.timestamp()
+    except Exception:
+        return 0.0
+
+
 def run_high_frequency_outreach():
     _llm_readiness_report()
     if service is None:
@@ -1429,36 +1482,32 @@ def send_ceo_reply(thread_id, to_addr, subject, body, references_message_id):
     if to_key and to_key in _load_excluded():
         return {'error': 'excluded', 'to': to_addr}
     body = sanitize_outreach_body(body)
-    msg_id_str = f"<{references_message_id}>"
+    if references_message_id:
+        try:
+            res = gmail_send_reply_fixed(
+                thread_id_or_msg_id=references_message_id,
+                original_subject=subject,
+                body=body,
+                original_sender=to_addr,
+            )
+            if isinstance(res, dict):
+                return res
+            return {'success': False, 'error': 'invalid_result', 'raw': repr(res)}
+        except Exception as e:
+            return {'success': False, 'error': str(e)}
+    crlf = "\r\n"
     raw_headers = [
         f"From: kleber@ziontechgroup.com",
         f"To: {to_addr}",
         f"Subject: {subject}",
         "Content-Type: text/plain; charset=utf-8",
-        f"References: {msg_id_str}",
-        f"In-Reply-To: {msg_id_str}",
     ]
-    crlf = "\r\n"
-    try:
-        thread = _timed_gmail_call(service.users().threads().get(userId="me", id=thread_id, format="metadata", metadataHeaders=["From", "Cc"]))
-        msgs = thread.get("messages", []) or []
-        if msgs:
-            newest = msgs[-1]
-            hdr_map = {h["name"]: h["value"] for h in newest.get("payload", {}).get("headers", [])}
-            if "kleber@ziontechgroup.com" in hdr_map.get("From", "").lower():
-                return {"skipped": True, "reason": "thread_last_message_already_ceo", "thread_id": thread_id}
-        cc_added = []
-        for m in msgs:
-            h = {hdr["name"]: hdr["value"] for hdr in m.get("payload", {}).get("headers", [])}
-            cc = h.get("Cc") or ""
-            if cc and cc not in cc_added:
-                cc_added.append(cc)
-        cc_list = [x for x in cc_added if x and x.lower() != (to_addr or '').lower() and x.lower() != "kleber@ziontechgroup.com"]
-        if cc_list:
-            raw_headers.append("Cc: " + ", ".join(cc_list[:10]))
-    except Exception:
-        pass
     raw = base64.urlsafe_b64encode((crlf.join(raw_headers) + crlf + crlf + body).encode("utf-8")).decode("utf-8")
+    try:
+        return _timed_gmail_call(service.users().messages().send(userId="me", body={"raw": raw}))
+    except Exception as e:
+        return {'success': False, 'error': str(e)}
+
     return _timed_gmail_call(service.users().messages().send(userId="me", body={"raw": raw, "threadId": thread_id}))
 
 
