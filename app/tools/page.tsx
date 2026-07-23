@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Free Developer Tools & Utilities | Zion Tech Group',
-  description: '50+ free online developer tools: JSON formatter, JWT decoder, regex tester, SQL formatter, color palette generator, QR code generator, and more.',
+  description: '70+ free online developer tools: AI Code Explainer, SQL Generator, JWT decoder, regex tester, CSS gradient generator, QR code generator, SSL checker, and more.',
 };
 
 const tools = [
@@ -38,6 +38,25 @@ const tools = [
   { id: 'number-base-converter', icon: '🔢', title: 'Number Base Converter', desc: 'Convert between binary, octal, decimal, and hexadecimal', category: 'Utilities' },
   { id: 'subnet-calculator', icon: '🌐', title: 'Subnet Calculator', desc: 'Calculate subnet ranges, CIDR, and network addresses', category: 'Network' },
   { id: 'secure-hash-generator', icon: '🔐', title: 'Secure Hash Generator', desc: 'Generate SHA-256, SHA-512, MD5, and other hashes', category: 'Security' },
+  // NEW AI-Powered Tools
+  { id: 'ai-code-explainer', icon: '🤖', title: 'AI Code Explainer', desc: 'Explain complex code in plain language, perfect for onboarding and documentation', category: 'AI Tools' },
+  { id: 'ai-sql-generator', icon: '🧠', title: 'AI SQL Generator', desc: 'Generate SQL queries from natural language descriptions', category: 'AI Tools' },
+  { id: 'ai-api-docs', icon: '📚', title: 'AI API Documentation Generator', desc: 'Generate comprehensive API documentation from code comments', category: 'AI Tools' },
+  { id: 'ai-error-debugger', icon: '🐛', title: 'AI Error Debugger', desc: 'Analyze error messages and suggest fixes with code examples', category: 'AI Tools' },
+  { id: 'ai-security-auditor', icon: '🛡️', title: 'AI Security Auditor', desc: 'Scan code for security vulnerabilities and suggest fixes', category: 'AI Tools' },
+  { id: 'ai-performance-analyzer', icon: '⚡', title: 'AI Performance Analyzer', desc: 'Identify performance bottlenecks in code and suggest optimizations', category: 'AI Tools' },
+  { id: 'ai-translation-helper', icon: '🌐', title: 'AI Translation Helper', desc: 'Translate code comments, strings, and documentation between languages', category: 'AI Tools' },
+  { id: 'ai-test-generator', icon: '✅', title: 'AI Test Generator', desc: 'Generate unit tests and test cases from your code', category: 'AI Tools' },
+  // NEW Developer Tools
+  { id: 'json-diff-viewer', icon: '🔎', title: 'JSON Diff Viewer', desc: 'Compare and visualize differences between JSON files', category: 'Data' },
+  { id: 'json-to-csv-converter', icon: '📊', title: 'JSON to CSV Converter', desc: 'Convert JSON arrays to CSV format for spreadsheet use', category: 'Data' },
+  { id: 'regex-builder', icon: '🔧', title: 'Regex Builder', desc: 'Visual regex builder with explanation of each component', category: 'Text' },
+  { id: 'log-error-explainer', icon: '📋', title: 'Log Error Explainer', desc: 'Analyze log files and explain errors in plain English', category: 'Utilities' },
+  { id: 'ssl-checker', icon: '🔒', title: 'SSL Certificate Checker', desc: 'Verify SSL certificate validity and expiration dates', category: 'Security' },
+  { id: 'health-check', icon: '🏥', title: 'API Health Check', desc: 'Monitor API endpoints and get alerts on downtime', category: 'Monitoring' },
+  // NEW Infrastructure Tools
+  { id: 'devops-maturity', icon: '📈', title: 'DevOps Maturity Assessment', desc: 'Evaluate your DevOps practices and get improvement recommendations', category: 'DevOps' },
+  { id: 'ir-maturity', icon: '🔄', title: 'Incident Response Maturity', desc: 'Assess your incident response capabilities and readiness', category: 'DevOps' },
 ];
 
 export default function ToolsPage() {
@@ -47,9 +66,9 @@ export default function ToolsPage() {
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
       <div className="max-w-6xl mx-auto px-4 py-16">
         <header className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-white mb-4">🛠️ Free Developer Tools</h1>
+          <h1 className="text-4xl font-bold text-white mb-4">🛠️ Free Developer Tools & AI Services</h1>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            50+ free online tools for developers, designers, and data professionals.
+            70+ free online tools for developers, designers, and data professionals. AI-powered tools included!
             No signup required, no data stored.
           </p>
           <div className="flex items-center justify-center gap-4 mt-6 text-sm text-slate-500">
