@@ -1144,7 +1144,7 @@ def run_high_frequency_outreach():
                 'boleto vencido','billing update','invoice update','up to ','off your first',
                 'you have (1) new app','watch your last session','responda dentro de 6 horas',
                 'follow/','unsubscribe','newsletter digest','weekly update','daily update',
-                '5*-cg@*ar*j68u#'
+                '5*-cg@*ar*j68u#','undeliverable','delivery has failed','action required: recipient unknown'
             )):
                 record_bounce(addr, f'blacklisted subject: {subject_norm[:120]}')
                 continue
