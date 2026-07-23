@@ -125,10 +125,14 @@ function ServicesContent() {
         </div>
         <div className="text-center mt-16">
           <Link href="/configurator/" className="btn-primary text-lg">Get Your Custom Proposal →</Link>
-          <div className="mt-6 space-y-2">
-            <p className="text-slate-400 text-sm">📞 <a href="tel:+130****0950" className="text-purple-300 hover:underline">+1 302 464 0950</a></p>
-            <p className="text-slate-400 text-sm">✉️ <a href="mailto:kleber@ziontechgroup.com" className="text-purple-300 hover:underline">kleber@ziontechgroup.com</a></p>
-            <p className="text-slate-400 text-sm">📍 364 E Main St STE 1008, Middletown, DE 19709</p>
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
+            <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noreferrer" className="btn-primary text-lg">📅 Book Free Consultation</a>
+            <a href="tel:+13024640950" className="btn-secondary text-lg">☎ +1 302 464 0950</a>
+            <Link href="/free-services-and-tools/" className="btn-secondary text-lg">🛠 Free Services & Tools</Link>
+          </div>
+          <div className="mt-6 space-y-2 text-slate-400 text-sm">
+            <p>✉️ <a href="mailto:kleber@ziontechgroup.com" className="text-purple-300 hover:underline">kleber@ziontechgroup.com</a></p>
+            <p>📍 364 E Main St STE 1008, Middletown, DE 19709</p>
           </div>
         </div>
       </div>
