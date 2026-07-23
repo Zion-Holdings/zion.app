@@ -160,3 +160,10 @@ export const wave213PredictiveMaintenanceServices: Service[] = [
     ]
   }
 ];
+
+export const wave213HealthcareItServices: Service[] = [];
+export const wave213AiObservabilityServices: Service[] = [];
+export const wave213DataPrivacyServices: Service[] = [];
+export const wave213CloudFinOpsServices: Service[] = [];
+export const wave213SecurityThreatIntelServices: Service[] = [];
+export const wave213AiTransparencyServices: Service[] = [];
