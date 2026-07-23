@@ -384,7 +384,7 @@ export default function HomePage() {
               <a href="mailto:kleber@ziontechgroup.com" className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 text-slate-300 hover:text-purple-300 hover:border-purple-500/30 transition-all">
                 ✉ kleber@ziontechgroup.com
               </a>
-              <a href="tel:+130****0950" className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 text-slate-300 hover:text-purple-300 hover:border-purple-500/30 transition-all">
+              <a href="tel:+13024640950" className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 text-slate-300 hover:text-purple-300 hover:border-purple-500/30 transition-all">
                 ☎ +1 302 464 0950
               </a>
               <span className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 text-slate-400">

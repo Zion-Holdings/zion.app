@@ -337,7 +337,7 @@ export default function V1011V1015Showcase() {
             </a>
           </div>
           <div className="text-gray-400 text-sm space-y-1">
-            <p>📞 <a href="tel:+130****0950" className="text-teal-400 hover:underline">+1 302 464 0950</a> | ✉️ <a href="mailto:kleber@ziontechgroup.com" className="text-teal-400 hover:underline">kleber@ziontechgroup.com</a></p>
+            <p>📞 <a href="tel:+13024640950" className="text-teal-400 hover:underline">+1 302 464 0950</a> | ✉️ <a href="mailto:kleber@ziontechgroup.com" className="text-teal-400 hover:underline">kleber@ziontechgroup.com</a></p>
             <p>📍 364 E Main St STE 1008, Middletown, DE 19709</p>
           </div>
         </div>

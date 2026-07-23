@@ -1508,8 +1508,6 @@ def send_ceo_reply(thread_id, to_addr, subject, body, references_message_id):
     except Exception as e:
         return {'success': False, 'error': str(e)}
 
-    return _timed_gmail_call(service.users().messages().send(userId="me", body={"raw": raw, "threadId": thread_id}))
-
 
 if __name__ == '__main__':
     run_high_frequency_outreach()

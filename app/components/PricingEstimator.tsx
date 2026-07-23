@@ -167,7 +167,7 @@ export default function PricingEstimator({ categories, categoryCounts, categoryP
                   <p className="text-[11px] text-slate-500 mt-4">
                     Final pricing may vary based on specific services, customization, and contract terms.
                     Contact us at <a href="mailto:kleber@ziontechgroup.com" className="text-purple-400 hover:text-purple-300">kleber@ziontechgroup.com</a> or
-                    <a href="tel:+130****0950" className="text-purple-400 hover:text-purple-300 ml-1">+1 302 464 0950</a>
+                    <a href="tel:+13024640950" className="text-purple-400 hover:text-purple-300 ml-1">+1 302 464 0950</a>
                   </p>
                 </>
               ) : (
