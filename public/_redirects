@@ -9,11 +9,11 @@
 /services/autonomous-ai-operations/    /services/autonomous-ai-operations/index.html  200
 /services/autonomous-ai-ops-retainer/    /services/autonomous-ai-ops-retainer/index.html  200
 /services/ai-insurance-claims/    /services/ai-insurance-claims/index.html  200
-/services/ai-insurance-claims-automation/    /services/ai-insurance-claims-automation/index.html  200
-/services/siem-security-platform/    /services/siem-security-platform/index.html  200
-/services/zero-trust-network-access/    /services/zero-trust-network-access/index.html  200
-/services/cloud-cost-optimization-service/    /services/cloud-cost-optimization-service/index.html  200
-/tools/    /tools/index.html  200
+/tools/favicon-generator/  /tools/favicon-generator/index.html  200
+
+# Canonical sitemap
+/sitemap.xml  /sitemap-0.xml  301
+
 /case-studies/    /services/    301
 /industries/    /services/    301
 /free-tools-hub/    /tools/    301
@@ -26,6 +26,23 @@
 /dashboard/    /contact/    301
 /docs/    /    301
 /automation/  /services/ai-workflow-automation/  301
+
+# Fallback docs routes
+/services/    /services/index.html  200
+/pricing/    /pricing/index.html  200
+/solutions/    /solutions/index.html  200
+/about/    /about/index.html  200
+/contact/    /contact/index.html  200
+/blog/    /blog/index.html  200
+/newsroom/    /newsroom/index.html  200
+/free-services-and-tools/    /free-services-and-tools/index.html  200
+/services/autonomous-ai-operations/    /services/autonomous-ai-operations/index.html  200
+/services/autonomous-ai-ops-retainer/    /services/autonomous-ai-ops-retainer/index.html  200
+/services/ai-insurance-claims/    /services/ai-insurance-claims/index.html  200
+/services/ai-insurance-claims-automation/    /services/ai-insurance-claims-automation/index.html  200
+/services/siem-security-platform/    /services/siem-security-platform/index.html  200
+/services/zero-trust-network-access/    /services/zero-trust-network-access/index.html  200
+/services/cloud-cost-optimization-service/    /services/cloud-cost-optimization-service/index.html  200
 /tools/favicon-generator/  /tools/favicon-generator/index.html  200
 # Canonical sitemap
 /sitemap.xml  /sitemap-0.xml  301
