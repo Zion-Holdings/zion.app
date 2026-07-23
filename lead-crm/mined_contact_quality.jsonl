@@ -123,3 +123,9 @@
 {"ts": "2026-07-23T06:48:02.192214+00:00", "email": "success@success.ai", "msg_id": "19f895559e0a3154", "query": "subject:parceria", "confidence": 2, "high_signal": true}
 {"ts": "2026-07-23T06:48:20.582829+00:00", "email": "ai-alliance@deloitte.com", "msg_id": "19f895555e89f114", "query": "subject:parceria", "confidence": 0, "high_signal": false}
 {"ts": "2026-07-23T06:48:41.430579+00:00", "email": "ai-partners@accenture.com", "msg_id": "19f89554cfc5650d", "query": "subject:parceria", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-23T06:50:10.880856+00:00", "email": "patricia.marega@trade.gov", "msg_id": "19f8955b127a3013", "query": "subject:parceria", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-23T06:50:26.167953+00:00", "email": "peter@agenticinternational.com", "msg_id": "19f8955ab0b1eaf6", "query": "subject:parceria", "confidence": 1, "high_signal": false}
+{"ts": "2026-07-23T06:50:45.082226+00:00", "email": "sam@elevenlabs.io", "msg_id": "19f895595bd6f62d", "query": "subject:parceria", "confidence": 1, "high_signal": false}
+{"ts": "2026-07-23T06:51:04.079912+00:00", "email": "success@success.ai", "msg_id": "19f895559e0a3154", "query": "subject:parceria", "confidence": 0, "high_signal": false}
+{"ts": "2026-07-23T06:51:25.011110+00:00", "email": "ai-alliance@deloitte.com", "msg_id": "19f895555e89f114", "query": "subject:parceria", "confidence": 2, "high_signal": true}
+{"ts": "2026-07-23T06:51:43.444034+00:00", "email": "ai-partners@accenture.com", "msg_id": "19f89554cfc5650d", "query": "subject:parceria", "confidence": 1, "high_signal": false}
