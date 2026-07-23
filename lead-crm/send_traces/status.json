@@ -1,0 +1,9 @@
+{
+  "ts": "2026-07-23T20:45:00Z",
+  "mode": "dry-run",
+  "queue_file": "lead-crm/outreach_ready_canonical.json",
+  "exclusion_file": "lead-crm/exclusion-list.json",
+  "ready_queue_count": 25,
+  "live_send_allowed_env": "ZTG_SEND_ALLOWED=1",
+  "status": "send-traces-path-ready"
+}
