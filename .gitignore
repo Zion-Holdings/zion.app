@@ -89,3 +89,7 @@ scripts/reports/live-link-audit.json
 tmp
 tsconfig.tsbuildinfo
 zion.app
+outreach_monitor/processed/site_monitor_log.json
+lead-crm/outreach_send_disabled_analysis.jsonl
+lead-crm/tailor_log.jsonl
+lead-crm/mined_contact_quality.jsonl
