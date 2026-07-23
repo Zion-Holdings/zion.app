@@ -33,39 +33,6 @@
     "verification": {}
   },
   {
-    "id": "_6940834440855622247",
-    "company": "LabAMI",
-    "name": "Team / contact address",
-    "email": "contact@labami.ai",
-    "phone": "",
-    "industry": "Healthcare IT",
-    "source": "openleads",
-    "status": "Outreach Composed",
-    "score": 94,
-    "budget": "$100K+",
-    "timeline": "1-3 months",
-    "painPoints": [
-      "EHR integration",
-      "patient analytics",
-      "HIPAA compliance"
-    ],
-    "activities": [
-      {
-        "timestamp": "2026-07-05T02:09:20.806766",
-        "action": "Lead discovered via integrated pipeline"
-      },
-      {
-        "timestamp": "2026-07-05T02:17:15.757925",
-        "action": "Outreach composed - queued for sending"
-      }
-    ],
-    "discoveredAt": "2026-07-05T02:09:20.806767",
-    "lastContact": "2026-07-05T02:17:15.757922",
-    "notes": "",
-    "verified": false,
-    "verification": {}
-  },
-  {
     "id": "-4437597144807261749",
     "company": "Exin Therapeutics",
     "name": "Gabriel Ocana Santero",
@@ -1157,7 +1124,7 @@
   {
     "id": "-9114680167346056806",
     "company": "delt.ai",
-    "name": "Alejandro Cede\u00f1o",
+    "name": "Alejandro Cedeño",
     "email": "alejandro.cedeo@delt.ai",
     "phone": "",
     "industry": "FinTech",
@@ -1223,7 +1190,7 @@
   {
     "id": "_6872274009955691870",
     "company": "Formance",
-    "name": "Cl\u00e9ment Sala\u00fcn",
+    "name": "Clément Salaün",
     "email": "clment.salan@formance.com",
     "phone": "",
     "industry": "FinTech",
@@ -2174,7 +2141,7 @@
   {
     "id": "-5488262176756366732",
     "company": "Mudafy",
-    "name": "Luqui D\u00edaz",
+    "name": "Luqui Díaz",
     "email": "luqui.daz@mudafy.com",
     "phone": "",
     "industry": "Real Estate Tech",
@@ -3156,5 +3123,311 @@
     "notes": "",
     "verified": false,
     "verification": {}
+  },
+  {
+    "email": "contato@machertecnologia.com.br",
+    "company": "Machertecnologia",
+    "industry": "IT Services",
+    "query": "managed IT for small business Brazil contact",
+    "score": 60,
+    "discovered_at": "2026-07-23T15:54:28.412539+00:00",
+    "source": "free-search-2026-07-23",
+    "status": "New",
+    "verified": false,
+    "lastContact": null,
+    "activities": [
+      {
+        "timestamp": "2026-07-23T15:54:28.412539+00:00",
+        "action": "Discovered via free-search-2026-07-23: IT Services"
+      }
+    ]
+  },
+  {
+    "email": "julia.carfagno@acronis.com",
+    "company": "Acronis",
+    "industry": "IT Services",
+    "query": "managed service provider partnership Brazil",
+    "score": 60,
+    "discovered_at": "2026-07-23T15:54:28.412539+00:00",
+    "source": "free-search-2026-07-23",
+    "status": "New",
+    "verified": false,
+    "lastContact": null,
+    "activities": [
+      {
+        "timestamp": "2026-07-23T15:54:28.412539+00:00",
+        "action": "Discovered via free-search-2026-07-23: IT Services"
+      }
+    ]
+  },
+  {
+    "email": "user@domain.com",
+    "company": "Domain",
+    "industry": "IT Services",
+    "query": "cybersecurity managed services Brazil contact",
+    "score": 59,
+    "discovered_at": "2026-07-23T15:54:28.412539+00:00",
+    "source": "free-search-2026-07-23",
+    "status": "New",
+    "verified": false,
+    "lastContact": null,
+    "activities": [
+      {
+        "timestamp": "2026-07-23T15:54:28.412539+00:00",
+        "action": "Discovered via free-search-2026-07-23: IT Services"
+      }
+    ]
+  },
+  {
+    "email": "contato@besconsultoria.com.br",
+    "company": "Besconsultoria",
+    "industry": "IT Services",
+    "query": "cloud managed services contact São Paulo",
+    "score": 58,
+    "discovered_at": "2026-07-23T15:54:28.412539+00:00",
+    "source": "free-search-2026-07-23",
+    "status": "New",
+    "verified": false,
+    "lastContact": null,
+    "activities": [
+      {
+        "timestamp": "2026-07-23T15:54:28.412539+00:00",
+        "action": "Discovered via free-search-2026-07-23: IT Services"
+      }
+    ]
+  },
+  {
+    "email": "cloud@gewape.com",
+    "company": "Gewape",
+    "industry": "IT Services",
+    "query": "cloud managed services contact São Paulo",
+    "score": 59,
+    "discovered_at": "2026-07-23T15:54:28.412539+00:00",
+    "source": "free-search-2026-07-23",
+    "status": "New",
+    "verified": false,
+    "lastContact": null,
+    "activities": [
+      {
+        "timestamp": "2026-07-23T15:54:28.412539+00:00",
+        "action": "Discovered via free-search-2026-07-23: IT Services"
+      }
+    ]
+  },
+  {
+    "email": "contato@concretesolutions.com.br",
+    "company": "Concretesolutions",
+    "industry": "IT Services",
+    "query": "DevOps managed support contact Brazil",
+    "score": 55,
+    "discovered_at": "2026-07-23T15:54:28.412539+00:00",
+    "source": "free-search-2026-07-23",
+    "status": "New",
+    "verified": false,
+    "lastContact": null,
+    "activities": [
+      {
+        "timestamp": "2026-07-23T15:54:28.412539+00:00",
+        "action": "Discovered via free-search-2026-07-23: IT Services"
+      }
+    ]
+  },
+  {
+    "email": "contato@dubsolucoes.com",
+    "company": "Dubsolucoes",
+    "industry": "IT Services",
+    "query": "DevOps managed support contact Brazil",
+    "score": 58,
+    "discovered_at": "2026-07-23T15:54:28.412539+00:00",
+    "source": "free-search-2026-07-23",
+    "status": "New",
+    "verified": false,
+    "lastContact": null,
+    "activities": [
+      {
+        "timestamp": "2026-07-23T15:54:28.412539+00:00",
+        "action": "Discovered via free-search-2026-07-23: IT Services"
+      }
+    ]
+  },
+  {
+    "email": "contato@huia.com.br",
+    "company": "Huia",
+    "industry": "IT Services",
+    "query": "DevOps managed support contact Brazil",
+    "score": 60,
+    "discovered_at": "2026-07-23T15:54:28.412539+00:00",
+    "source": "free-search-2026-07-23",
+    "status": "New",
+    "verified": false,
+    "lastContact": null,
+    "activities": [
+      {
+        "timestamp": "2026-07-23T15:54:28.412539+00:00",
+        "action": "Discovered via free-search-2026-07-23: IT Services"
+      }
+    ]
+  },
+  {
+    "email": "contato@ornito.com.br",
+    "company": "Ornito",
+    "industry": "IT Services",
+    "query": "DevOps managed support contact Brazil",
+    "score": 56,
+    "discovered_at": "2026-07-23T15:54:28.412539+00:00",
+    "source": "free-search-2026-07-23",
+    "status": "New",
+    "verified": false,
+    "lastContact": null,
+    "activities": [
+      {
+        "timestamp": "2026-07-23T15:54:28.412539+00:00",
+        "action": "Discovered via free-search-2026-07-23: IT Services"
+      }
+    ]
+  },
+  {
+    "email": "danilo@snowmanlabs.com",
+    "company": "Snowmanlabs",
+    "industry": "IT Services",
+    "query": "DevOps managed support contact Brazil",
+    "score": 58,
+    "discovered_at": "2026-07-23T15:54:28.412539+00:00",
+    "source": "free-search-2026-07-23",
+    "status": "New",
+    "verified": false,
+    "lastContact": null,
+    "activities": [
+      {
+        "timestamp": "2026-07-23T15:54:28.412539+00:00",
+        "action": "Discovered via free-search-2026-07-23: IT Services"
+      }
+    ]
+  },
+  {
+    "email": "team@appdevelopmentcompanies.co",
+    "company": "Appdevelopmentcompanies",
+    "industry": "IT Services",
+    "query": "DevOps managed support contact Brazil",
+    "score": 57,
+    "discovered_at": "2026-07-23T15:54:28.412539+00:00",
+    "source": "free-search-2026-07-23",
+    "status": "New",
+    "verified": false,
+    "lastContact": null,
+    "activities": [
+      {
+        "timestamp": "2026-07-23T15:54:28.412539+00:00",
+        "action": "Discovered via free-search-2026-07-23: IT Services"
+      }
+    ]
+  },
+  {
+    "email": "jacksonthomas@gmail.com",
+    "company": "Gmail",
+    "industry": "IT Services",
+    "query": "DevOps managed support contact Brazil",
+    "score": 82,
+    "discovered_at": "2026-07-23T15:54:28.412539+00:00",
+    "source": "free-search-2026-07-23",
+    "status": "New",
+    "verified": false,
+    "lastContact": null,
+    "activities": [
+      {
+        "timestamp": "2026-07-23T15:54:28.412539+00:00",
+        "action": "Discovered via free-search-2026-07-23: IT Services"
+      }
+    ]
+  },
+  {
+    "email": "soc@soc.com.br",
+    "company": "Soc",
+    "industry": "IT Services",
+    "query": "SOC managed services Brazil contact",
+    "score": 59,
+    "discovered_at": "2026-07-23T15:54:28.412539+00:00",
+    "source": "free-search-2026-07-23",
+    "status": "New",
+    "verified": false,
+    "lastContact": null,
+    "activities": [
+      {
+        "timestamp": "2026-07-23T15:54:28.412539+00:00",
+        "action": "Discovered via free-search-2026-07-23: IT Services"
+      }
+    ]
+  },
+  {
+    "email": "career@concettolabs.com",
+    "company": "Concettolabs",
+    "industry": "IT Services",
+    "query": "AI implementation small business Brazil contact",
+    "score": 83,
+    "discovered_at": "2026-07-23T15:54:28.412539+00:00",
+    "source": "free-search-2026-07-23",
+    "status": "New",
+    "verified": false,
+    "lastContact": null,
+    "activities": [
+      {
+        "timestamp": "2026-07-23T15:54:28.412539+00:00",
+        "action": "Discovered via free-search-2026-07-23: IT Services"
+      }
+    ]
+  },
+  {
+    "email": "feedback@leadtheshift.org",
+    "company": "Leadtheshift",
+    "industry": "IT Services",
+    "query": "AI implementation small business Brazil contact",
+    "score": 83,
+    "discovered_at": "2026-07-23T15:54:28.412539+00:00",
+    "source": "free-search-2026-07-23",
+    "status": "New",
+    "verified": false,
+    "lastContact": null,
+    "activities": [
+      {
+        "timestamp": "2026-07-23T15:54:28.412539+00:00",
+        "action": "Discovered via free-search-2026-07-23: IT Services"
+      }
+    ]
+  },
+  {
+    "email": "seu@email.com",
+    "company": "Email",
+    "industry": "IT Services",
+    "query": "AI implementation small business Brazil contact",
+    "score": 82,
+    "discovered_at": "2026-07-23T15:54:28.412539+00:00",
+    "source": "free-search-2026-07-23",
+    "status": "New",
+    "verified": false,
+    "lastContact": null,
+    "activities": [
+      {
+        "timestamp": "2026-07-23T15:54:28.412539+00:00",
+        "action": "Discovered via free-search-2026-07-23: IT Services"
+      }
+    ]
+  },
+  {
+    "email": "suporte@groway360.com",
+    "company": "Groway360",
+    "industry": "IT Services",
+    "query": "AI implementation small business Brazil contact",
+    "score": 56,
+    "discovered_at": "2026-07-23T15:54:28.412539+00:00",
+    "source": "free-search-2026-07-23",
+    "status": "New",
+    "verified": false,
+    "lastContact": null,
+    "activities": [
+      {
+        "timestamp": "2026-07-23T15:54:28.412539+00:00",
+        "action": "Discovered via free-search-2026-07-23: IT Services"
+      }
+    ]
   }
 ]
