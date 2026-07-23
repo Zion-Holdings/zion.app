@@ -3,6 +3,7 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Free Developer Tools & Utilities | Zion Tech Group',
   description: '50+ free online developer tools: JSON formatter, JWT decoder, regex tester, SQL formatter, color palette generator, QR code generator, and more.',
+  alternates: { canonical: '/tools' },
 };
 
 const tools = [
@@ -67,24 +68,30 @@ const tools = [
 
 export default function ToolsPage() {
   const categories = [...new Set(tools.map(t => t.category))];
-  
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
       <div className="max-w-6xl mx-auto px-4 py-16">
         <header className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-4">🛠️ Free Developer Tools</h1>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            50+ free online tools for developers, designers, and data professionals.
-            No signup required, no data stored.
+          <p className="text-slate-400 text-lg max-w-3xl mx-auto">
+            50+ free online tools for developers, designers, and data professionals. No signup required, no data stored.
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-4 mt-6 text-sm text-slate-500">
-            <span>📞 +1 302 464 0950</span>
-            <span>✉️ kleber@ziontechgroup.com</span>
-            <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noreferrer" className="text-emerald-300 hover:text-emerald-200 underline">
+          <p className="text-slate-400 max-w-3xl mx-auto mt-2">
+            If you need custom AI integrations, IT automation, or managed delivery, Zion Tech Group can build tailored solutions on top of these patterns.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4 mt-6">
+            <a href="tel:+13024640950" className="btn-primary">
+              ☎ Call Now
+            </a>
+            <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noreferrer" className="btn-primary">
               📅 Book Consultation
             </a>
-            <Link href="/services" className="text-purple-300 hover:text-purple-200 underline">
+            <Link href="/services/" className="btn-secondary">
               AI & IT Services →
+            </Link>
+            <Link href="/contact/" className="btn-secondary">
+              Contact Us
             </Link>
           </div>
         </header>
@@ -117,11 +124,29 @@ export default function ToolsPage() {
         <div className="mt-16 text-center">
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500/10 border border-emerald-500/20">
             <span className="text-emerald-400">Need custom tools or integrations?</span>
-            <Link href="/contact" className="text-emerald-300 hover:text-emerald-200 underline">
+            <Link href="/contact/" className="text-emerald-300 hover:text-emerald-200 underline">
               Contact us
             </Link>
           </div>
         </div>
+
+        <section className="cta-section text-center mt-16">
+          <h2 className="text-3xl font-bold text-white mb-4">Need More Than Free Tools?</h2>
+          <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
+            We offer AI implementation, IT automation, managed support, and custom integrations for teams that want production-ready solutions.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+13024640950" className="btn-primary text-lg">
+              ☎ +1 302 464 0950
+            </a>
+            <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noreferrer" className="btn-secondary text-lg">
+              📅 Book a Consultation
+            </a>
+            <Link href="/services/" className="btn-secondary text-lg">
+              View Services
+            </Link>
+          </div>
+        </section>
       </div>
     </main>
   );
