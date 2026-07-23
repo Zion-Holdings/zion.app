@@ -4,11 +4,13 @@ Live sender for drafted hot-follow-up CEO replies using the working Gmail helper
 Reads:
   outreach_monitor/processed/next_ceo_reply_hemmersbach.json
   outreach_monitor/processed/next_ceo_reply_heygen.json
+  outreach_monitor/processed/next_ceo_reply_solyssey.json
 
 Sends via commands.google_workspace.gmail_send_reply_fixed()
 Appends results to:
   outreach_monitor/processed/hot_followup_reply_ledger.jsonl
 """
+import argparse
 import base64
 import html
 import json
@@ -19,13 +21,15 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO))
 
-os.environ.setdefault('OUTREACH_REQUIRES_APPROVAL', '0')
-os.environ.setdefault('OUTREACH_DRY_RUN', '0')
-
 import outreach_worker_automation as ow
 from commands.google_workspace import gog_headers  # noqa: E402
 
 LEDGER = ow.HOT_FOLLOWUP_REPLY_LEDGER
+CANDIDATES = [
+    'next_ceo_reply_hemmersbach.json',
+    'next_ceo_reply_heygen.json',
+    'next_ceo_reply_solyssey.json',
+]
 
 
 def append_ledger(entry: dict):
@@ -37,6 +41,19 @@ def append_ledger(entry: dict):
 def load_draft(name: str) -> dict:
     p = REPO / 'outreach_monitor' / 'processed' / name
     return json.loads(p.read_text(encoding='utf-8'))
+
+
+def validate_draft(draft: dict) -> list[str]:
+    errors = []
+    for field in ('to', 'subject', 'thread_id', 'draft'):
+        if not draft.get(field):
+            errors.append(f'missing:{field}')
+    if not (draft.get('message_id') or draft.get('msg_id')):
+        errors.append('missing:message_id')
+    to_addr = (draft.get('to') or '').strip().lower()
+    if to_addr and to_addr.endswith('@ziontechgroup.com'):
+        errors.append('internal_to')
+    return errors
 
 
 def find_thread_id_for_to(to_addr: str):
@@ -73,20 +90,30 @@ def send_via_helper(to_addr: str, subject: str, body: str, references_message_id
 
 
 def main():
-    candidates = [
-        'next_ceo_reply_hemmersbach.json',
-        'next_ceo_reply_heygen.json',
-        'next_ceo_reply_solyssey.json',
-    ]
+    parser = argparse.ArgumentParser(description='Send drafted hot-followup CEO replies')
+    parser.add_argument('--send', action='store_true', help='Actually send emails (default: dry-run)')
+    args = parser.parse_args()
+    do_send = bool(args.send)
+
     sent = []
     skipped = []
     failed = []
-    for name in candidates:
+    for name in CANDIDATES:
         p = REPO / 'outreach_monitor' / 'processed' / name
         if not p.exists():
             skipped.append((name, 'missing'))
             continue
-        draft = load_draft(name)
+        try:
+            draft = load_draft(name)
+        except Exception as e:
+            skipped.append((name, f'load_error:{e}'))
+            continue
+
+        validation_errors = validate_draft(draft)
+        if validation_errors:
+            skipped.append((name, f'invalid:{",".join(validation_errors)}'))
+            continue
+
         to_addr = draft['to']
         subject = draft['subject']
         body = html.unescape(draft.get('draft') or draft.get('body') or '')
@@ -115,6 +142,10 @@ def main():
             pass
         if recent_sent:
             skipped.append((name, 'recent_ceo_outbound_present'))
+            continue
+
+        if not do_send:
+            skipped.append((name, 'dry_run'))
             continue
 
         res = send_via_helper(to_addr, subject, body, ref_id)
