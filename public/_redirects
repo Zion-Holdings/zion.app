@@ -17,3 +17,19 @@
 /automation/  /services/ai-workflow-automation/  301
 /press/    /newsroom/    301
 /newsroom/    /newsroom/index.html  200
+/case-studies/saas/    docs/case-studies/saas/index.html  200
+/case-studies/ecommerce/    docs/case-studies/ecommerce/index.html  200
+/case-studies/finance/    docs/case-studies/finance/index.html  200
+/case-studies/healthcare/    docs/case-studies/healthcare/index.html  200
+/free-tools/    docs/free-tools/index.html  200
+/resources/templates/    docs/resources/templates/index.html  200
+/resources/whitepapers/    docs/resources/whitepapers/index.html  200
+/resources/guides/    docs/resources/guides/index.html  200
+/templates/implementation-plan/    docs/templates/implementation-plan/index.html  200
+/templates/kpi-dashboard/    docs/templates/kpi-dashboard/index.html  200
+/templates/project-charter/    docs/templates/project-charter/index.html  200
+/templates/roi-calculation/    docs/templates/roi-calculation/index.html  200
+/templates/rollout-checklist/    docs/templates/rollout-checklist/index.html  200
+/templates/success-metrics/    docs/templates/success-metrics/index.html  200
+
+/free-services-and-tools/    /free-services-and-tools/index.html  200
