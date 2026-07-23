@@ -1,10 +1,10 @@
-export const metadata = {
+export const metadata = {{
   title: 'AI Contact Center Automation | Zion Tech Group',
   description: 'Explore AI contact center automation, QA automation, workforce optimization, and conversation intelligence use cases for modern support teams.',
-  alternates: { canonical: '/ai-contact-center-automation' }
-};
+  alternates: {{ canonical: '/ai-contact-center-automation' }}
+}};
 
-export default function Page() {
+export default function Page() {{
   return (
     <main className="min-h-screen">
       <section className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 pt-20 pb-16">
@@ -44,4 +44,4 @@ export default function Page() {
       </section>
     </main>
   );
-}
+}}
