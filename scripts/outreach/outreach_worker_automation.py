@@ -112,18 +112,20 @@ try:
             LLM_TAILOR_ENABLED = True
         else:
             try:
-                auth_path = Path.home() / '.hermes' / 'auth.json'
-                if auth_path.exists():
-                    cfg2 = json.loads(auth_path.read_text(encoding='utf-8'))
-                    provider2 = ((cfg2.get('providers') or {}).get('nous') or {})
-                    e2 = provider2.get('inference_base_url', '').rstrip('/')
-                    k2 = provider2.get('access_token', '')
-                    m2 = provider2.get('model') or LLM_MODEL
-                    if e2 and k2 and m2:
-                        LLM_API_ENDPOINT = LLM_API_ENDPOINT or e2
-                        LLM_API_KEY = LLM_API_KEY or k2
-                        LLM_MODEL = LLM_MODEL or m2
-                        LLM_TAILOR_ENABLED = True
+                auth_paths = [Path.home() / '.hermes' / 'auth.json', BASE_DIR / '.hermes' / 'auth.json']
+                for auth_path in auth_paths:
+                    if auth_path.exists():
+                        cfg2 = json.loads(auth_path.read_text(encoding='utf-8'))
+                        provider2 = ((cfg2.get('providers') or {}).get('nous') or {})
+                        e2 = provider2.get('inference_base_url', '').rstrip('/')
+                        k2 = provider2.get('access_token', '')
+                        m2 = provider2.get('model') or LLM_MODEL
+                        if e2 and k2 and m2:
+                            LLM_API_ENDPOINT = LLM_API_ENDPOINT or e2
+                            LLM_API_KEY = LLM_API_KEY or k2
+                            LLM_MODEL = LLM_MODEL or m2
+                            LLM_TAILOR_ENABLED = True
+                            break
             except Exception:
                 pass
     try:
