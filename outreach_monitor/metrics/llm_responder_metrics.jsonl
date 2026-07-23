@@ -1,8 +1,9 @@
 {
-  "runs": 22,
-  "emails_processed": 399,
-  "replies_sent": 9,
-  "llm_calls": 10,
-  "errors": 1,
-  "last_run": "2026-07-22T04:40:29.019103+00:00"
+  "runs": 2,
+  "emails_processed": 61,
+  "replies_sent": 0,
+  "drafts_created": 2,
+  "llm_calls": 0,
+  "errors": [],
+  "last_run": "2026-07-23T04:34:03.522335+00:00"
 }
