@@ -54,7 +54,7 @@ export default function ContactPage() {
               <Link href="/configurator/" className="btn-primary w-full text-center block">
                 Get Your Custom Proposal →
               </Link>
-              <a href="tel:+13024640950" className="btn-secondary w-full text-center block">
+              <Link href="/services/" className="btn-secondary w-full text-center block">
                 Browse All Services
               </Link>
               <a href="tel:+13024640950" className="btn-secondary w-full text-center block">
