@@ -3,6 +3,7 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Free Developer Tools & Utilities | Zion Tech Group',
   description: '50+ free online developer tools: JSON formatter, JWT decoder, regex tester, SQL formatter, color palette generator, QR code generator, and more.',
+  alternates: { canonical: '/tools' },
 };
 
 const tools = [
@@ -41,23 +42,51 @@ const tools = [
   { id: 'number-base-converter', icon: '🔢', title: 'Number Base Converter', desc: 'Convert between binary, octal, decimal, and hexadecimal', category: 'Utilities' },
   { id: 'subnet-calculator', icon: '🌐', title: 'Subnet Calculator', desc: 'Calculate subnet ranges, CIDR, and network addresses', category: 'Network' },
   { id: 'secure-hash-generator', icon: '🔐', title: 'Secure Hash Generator', desc: 'Generate SHA-256, SHA-512, MD5, and other hashes', category: 'Security' },
+  { id: 'api-endpoint-tester', icon: '🧪', title: 'API Endpoint Tester', desc: 'Test REST APIs with custom headers and payloads', category: 'API' },
+  { id: 'jwt-signature-verifier', icon: '✅', title: 'JWT Signature Verifier', desc: 'Verify JWT signatures with public keys', category: 'Security' },
+  { id: 'html-entity-decoder', icon: '🔤', title: 'HTML Entity Decoder', desc: 'Decode HTML entities to plain text', category: 'Text' },
+  { id: 'csv-validator', icon: '✅', title: 'CSV Validator', desc: 'Validate and format CSV data', category: 'Data' },
+  { id: 'ip-address-validator', icon: '🌐', title: 'IP Address Validator', desc: 'Validate IPv4 and IPv6 addresses with details', category: 'Network' },
+  { id: 'email-validator', icon: '📧', title: 'Email Validator', desc: 'Validate email addresses and extract components', category: 'Text' },
+  { id: 'phone-number-formatter', icon: '📱', title: 'Phone Number Formatter', desc: 'Format phone numbers for different countries', category: 'Utilities' },
+  { id: 'credit-card-validator', icon: '💳', title: 'Credit Card Validator', desc: 'Validate credit card numbers with Luhn algorithm', category: 'Validation' },
+  { id: 'geolocation-geocoder', icon: '📍', title: 'Geolocation Geocoder', desc: 'Convert addresses to coordinates and vice versa', category: 'Geolocation' },
+  { id: 'weather-api-mock', icon: '🌤️', title: 'Weather API Mock', desc: 'Mock weather data for testing and development', category: 'API' },
+  { id: 'graphql-query-builder', icon: '📊', title: 'GraphQL Query Builder', desc: 'Build and test GraphQL queries visually', category: 'API' },
+  { id: 'rate-limit-calculator', icon: '📈', title: 'Rate Limit Calculator', desc: 'Calculate API rate limits and quotas', category: 'API' },
+  { id: 'webhook-inspector', icon: '🔗', title: 'Webhook Inspector', desc: 'Inspect and debug webhook payloads', category: 'API' },
+  { id: 'oauth-debugger', icon: '🔑', title: 'OAuth Debugger', desc: 'Debug OAuth flows and token exchanges', category: 'Authentication' },
+  { id: 'cors-proxy', icon: '🔓', title: 'CORS Proxy', desc: 'Test CORS headers with proxy URLs', category: 'Development' },
+  { id: 'cookie-parser', icon: '🍪', title: 'Cookie Parser', desc: 'Parse and decode cookie strings', category: 'Web' },
+  { id: 'http-header-analyzer', icon: '📬', title: 'HTTP Header Analyzer', desc: 'Analyze and format HTTP headers', category: 'Web' },
+  { id: 'ai-support-triage', icon: '🚨', title: 'AI Support Triage', desc: 'Classify incident severity, likely causes, and remediation steps', category: 'Support' },
+  { id: 'cloud-cost-estimator', icon: '🧮', title: 'Cloud Cost Estimator', desc: 'Compare estimated AWS/GCP/Azure spend and optimization tips', category: 'Cloud' },
+  { id: 'tech-stack-recommender', icon: '🧩', title: 'Tech Stack Recommender', desc: 'Get a curated modern stack recommendation by project profile', category: 'Architecture' },
+  { id: 'incident-postmortem', icon: '📋', title: 'Incident Postmortem', desc: 'Generate a lightweight postmortem draft from incident inputs', category: 'Operations' },
+  { id: 'jwt-inspector', icon: '🔎', title: 'JWT Inspector', desc: 'Decode JWT header/payload and inspect claims client-side', category: 'Security' },
+  { id: 'ai-quick-audit', icon: '🧭', title: 'AI Quick Audit', desc: '8-question 2-minute readiness check with maturity score and next steps', category: 'AI' },
+  { id: 'free-tools-hub', icon: '🧲', title: 'Free Services & Tools Hub', desc: 'Explore Zion free tools and IT/AI services in one place', category: 'Growth' },
 ];
 
 export default function ToolsPage() {
   const categories = [...new Set(tools.map(t => t.category))];
-  
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
       <div className="max-w-6xl mx-auto px-4 py-16">
         <header className="text-center mb-12">
           <h1 className="text-4xl font-bold text-white mb-4">🛠️ Free Developer Tools</h1>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            35+ free online tools for developers, designers, and data professionals.
-            No signup required, no data stored.
+          <p className="text-slate-400 text-lg max-w-3xl mx-auto">
+            50+ free online tools for developers, designers, and data professionals. No signup required, no data stored.
           </p>
-          <div className="flex items-center justify-center gap-4 mt-6 text-sm text-slate-500">
-            <span>📞 +1 302 464 0950</span>
-            <span>✉️ kleber@ziontechgroup.com</span>
+          <p className="text-slate-400 max-w-3xl mx-auto mt-2">
+            If you need custom AI integrations, IT automation, or managed delivery, Zion Tech Group can build tailored solutions on top of these patterns.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4 mt-6">
+            <a href="tel:+13024640950" className="btn-primary text-lg">☎ +1 302 464 0950</a>
+            <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noreferrer" className="btn-primary text-lg">📅 Book Consultation</a>
+            <Link href="/services/" className="btn-secondary text-lg">AI & IT Services →</Link>
+            <Link href="/contact/" className="btn-secondary text-lg">Contact Us</Link>
           </div>
         </header>
 
@@ -74,9 +103,7 @@ export default function ToolsPage() {
                   <div className="flex items-start gap-3">
                     <span className="text-2xl">{tool.icon}</span>
                     <div>
-                      <h3 className="text-white font-semibold group-hover:text-emerald-400 transition-colors">
-                        {tool.title}
-                      </h3>
+                      <h3 className="text-white font-semibold group-hover:text-emerald-400 transition-colors">{tool.title}</h3>
                       <p className="text-slate-400 text-sm mt-1">{tool.desc}</p>
                     </div>
                   </div>
@@ -89,11 +116,23 @@ export default function ToolsPage() {
         <div className="mt-16 text-center">
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500/10 border border-emerald-500/20">
             <span className="text-emerald-400">Need custom tools or integrations?</span>
-            <Link href="/contact" className="text-emerald-300 hover:text-emerald-200 underline">
+            <Link href="/contact/" className="text-emerald-300 hover:text-emerald-200 underline">
               Contact us
             </Link>
           </div>
         </div>
+
+        <section className="cta-section text-center mt-16">
+          <h2 className="text-3xl font-bold text-white mb-4">Need More Than Free Tools?</h2>
+          <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
+            We offer AI implementation, IT automation, managed support, and custom integrations for teams that want production-ready solutions.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+13024640950" className="btn-primary text-lg">☎ +1 302 464 0950</a>
+            <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noreferrer" className="btn-secondary text-lg">📅 Book a Consultation</a>
+            <Link href="/services/" className="btn-secondary text-lg">View Services</Link>
+          </div>
+        </section>
       </div>
     </main>
   );
