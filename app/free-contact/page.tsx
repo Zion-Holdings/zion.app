@@ -3,7 +3,7 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Contact Zion Tech Group | AI & IT Services',
   description: 'Contact Zion Tech Group for AI implementation, IT support, cloud automation, and managed technology solutions. Request a proposal, schedule a consultation, or call us directly.',
-  alternates: { canonical: '/contact/' },
+  alternates: { canonical: '/free-contact/' },
 };
 
 const quickActions = [
@@ -14,7 +14,7 @@ const quickActions = [
   { label: 'WhatsApp', href: 'https://wa.me/13024640950', icon: '💬' },
 ];
 
-export default function ContactPage() {
+export default function FreeContactProxy() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
       <div className="max-w-5xl mx-auto px-4 py-16">
@@ -59,10 +59,6 @@ export default function ContactPage() {
             <a href="tel:+13024640950" className="btn-secondary text-lg">📞 +1 302 464 0950</a>
             <a href="mailto:kleber@ziontechgroup.com?subject=Project%20Inquiry%20-%20Zion%20Tech%20Group" className="btn-secondary text-lg">✉️ Email Us</a>
           </div>
-
-          <p className="text-slate-400 mt-6 text-sm">
-            Website: <a className="text-emerald-300 hover:text-emerald-200 underline" href="https://ziontechgroup.com">https://ziontechgroup.com</a>
-          </p>
         </section>
       </div>
     </main>

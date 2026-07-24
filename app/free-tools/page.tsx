@@ -1,69 +1,42 @@
-'use client';
-
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 
-export default function FreeToolsPage() {
+export const metadata = {
+  title: 'Free Developer Tools & Utilities | Zion Tech Group',
+  description: '50+ free online developer tools: JSON formatter, JWT decoder, regex tester, SQL formatter, color palette generator, QR code generator, and more.',
+  alternates: { canonical: '/free-tools' },
+};
+
+export default function FreeToolsProxy() {
   return (
-    <main style={styles.main}>
-      <h1 style={styles.h1}>Free Services & Tools</h1>
-      <p style={styles.p}>
-        Explore a curated set of AI and IT guides, scripts, health-check monitors,
-        and readiness kits you can use right away — no sign-up required.
-      </p>
-      <ul style={styles.ul}>
-        <li style={styles.li}>
-          <strong>Free IT Automation Scripts</strong> — quick-start workflows for support, monitoring, and triage.
-        </li>
-        <li style={styles.li}>
-          <strong>IT Health Check & Monitoring Tools</strong> — baseline system checks and alerting templates.
-        </li>
-        <li style={styles.li}>
-          <strong>AI Readiness Audit for IT Managers</strong> — a step-by-step checklist to assess your stack.
-        </li>
-        <li style={styles.li}>
-          <strong>Free AI Tools for IT Support & MSPs</strong> — practical tools to accelerate ticket resolution.
-        </li>
-      </ul>
+    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+      <div className="max-w-6xl mx-auto px-4 py-16">
+        <header className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-white mb-4">🛠️ Free Developer Tools</h1>
+          <p className="text-slate-400 text-lg max-w-3xl mx-auto">
+            50+ free online tools for developers, designers, and data professionals. No signup required, no data stored.
+          </p>
+          <p className="text-slate-400 max-w-3xl mx-auto mt-2">
+            If you need custom AI integrations, IT automation, or managed delivery, Zion Tech Group can build tailored solutions on top of these patterns.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4 mt-6">
+            <a href="tel:+13024640950" className="btn-primary text-lg">☎ +1 302 464 0950</a>
+            <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noreferrer" className="btn-secondary text-lg">📅 Book Consultation</a>
+            <Link href="/contact/" className="btn-secondary text-lg">Contact Us</Link>
+          </div>
+        </header>
 
-      <p style={{ ...styles.p, marginTop: 24 }}>
-        We also offer paid implementation, custom automation, and managed services.
-        Book a free consultation with our CEO to discuss your needs:
-        {' '}
-        <Link href="/contact" style={styles.link}>Schedule here</Link>.
-      </p>
+        <section className="cta-section text-center mt-16">
+          <h2 className="text-3xl font-bold text-white mb-4">Need More Than Free Tools?</h2>
+          <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
+            We offer AI implementation, IT automation, managed support, and custom integrations for teams that want production-ready solutions.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+13024640950" className="btn-primary text-lg">☎ +1 302 464 0950</a>
+            <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noreferrer" className="btn-secondary text-lg">📅 Book a Consultation</a>
+            <Link href="/services/" className="btn-secondary text-lg">View Services</Link>
+          </div>
+        </section>
+      </div>
     </main>
   );
 }
-
-const styles: Record<string, React.CSSProperties> = {
-  main: {
-    maxWidth: 980,
-    margin: '0 auto',
-    padding: '48px 24px',
-    color: '#111827',
-  },
-  h1: {
-    fontSize: '2.2rem',
-    fontWeight: 700,
-    marginBottom: 16,
-  },
-  p: {
-    fontSize: '1.05rem',
-    lineHeight: 1.7,
-    color: '#374151',
-  },
-  ul: {
-    marginTop: 20,
-    paddingLeft: 28,
-    lineHeight: 1.9,
-    color: '#1f2937',
-  },
-  li: {
-    marginBottom: 8,
-  },
-  link: {
-    color: '#2563eb',
-    textDecoration: 'underline',
-  },
-};
