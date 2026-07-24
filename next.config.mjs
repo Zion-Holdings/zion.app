@@ -16,6 +16,9 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  turbopack: {
+    // Empty turbopack config to avoid conflicts with webpack
+  },
   webpack: (config, { isServer }) => {
     const appDir = path.join(process.cwd(), 'app');
     config.resolve.alias = {
