@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-24T15:06:45.315388+00:00",
+  "generatedAt": "2026-07-24T16:12:45.551596+00:00",
   "routes": [
     {
       "route": "/",
@@ -21,7 +21,7 @@
       "route": "/contact",
       "url": "https://ziontechgroup.com/contact/",
       "live_canonical": "https://ziontechgroup.com/contact",
-      "expected_canonical": "/contact",
+      "expected_canonical": "/tools",
       "status": "mismatch",
       "issue": "deployed_layout_override_or_stale_cache"
     },
