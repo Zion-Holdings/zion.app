@@ -44,9 +44,10 @@ const FOOTER_LINKS: { title: string; links: FooterLink[] }[] = [
       { name: 'Agent Monitoring', href: '/agents-monitoring' },
       { name: 'Academy', href: '/academy' },
       { name: 'FAQ', href: '/faq' },
+      { name: 'Help Center', href: '/help' },
       { name: 'Blog', href: '/blog' },
-      { name: 'Case Studies', href: '/case-studies' },
       { name: 'About Us', href: '/about' },
+    ],
     ],
   },
   {

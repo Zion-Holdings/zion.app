@@ -19,7 +19,7 @@ const SERVICE_GRID = CATEGORIES.slice(0, 10);
 const RESOURCE_GROUPS = [
   { title: 'Platform', items: RESOURCE_LINKS.filter((l) => ['Agent Monitoring', 'System Status'].includes(l.name)) },
   { title: 'Growth', items: [{ name: '🎯 Leads Control', href: '/leads', badge: 'New' }, { name: '📖 Blog', href: '/blog' }, { name: '📚 Academy', href: '/academy' }] },
-  { title: 'Company', items: [{ name: '🤝 Partners', href: '/partners' }, { name: '❓ FAQ', href: '/faq' }, { name: 'ℹ️ About Us', href: '/about' }] },
+  { title: 'Company', items: [{ name: '🤝 Partners', href: '/partners' }, { name: '❓ FAQ', href: '/faq' }, { name: 'ℹ️ About Us', href: '/about' }, { name: '💬 Help', href: '/help' }] },
 ];
 
 export default function Navigation() {
