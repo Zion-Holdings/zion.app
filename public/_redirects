@@ -31,3 +31,8 @@
 /tools/phishing-analyzer /tools/phishing-analyzer/index.html 200
 /tools/phishing-analyzer/ /tools/phishing-analyzer/index.html 200
 /assets/js/conversion-events.js /assets/js/conversion-events.js 200
+# Recovery fallback redirects to live pages
+/free-audit /contact/ 302
+/proposal /contact/ 302
+/free-consultation /contact/ 302
+/free-ai-itools /contact/ 302
