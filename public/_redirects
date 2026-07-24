@@ -15,3 +15,7 @@
 /dashboard/    /contact/    301
 /docs/    /    301
 /automation/  /services/ai-workflow-automation/  301
+/careers/  /contact/  301
+
+# Smart redirect fallback: if no static page exists, send users to contact/solutions
+/*    /contact/   301
