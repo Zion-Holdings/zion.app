@@ -1,5 +1,0 @@
-1:"$Sreact.fragment"
-2:I[484,[],"OutletBoundary"]
-3:"$Sreact.suspense"
-0:{"rsc":["$","$1","c",{"children":[["$","article",null,{"className":"container-page py-20","children":[["$","h1",null,{"className":"text-4xl font-bold mb-4 text-white","children":"AI CI Execution and CI/CD AI Automation"}],["$","div",null,{"className":"text-sm text-slate-500 mb-8","children":"Published: 2026-07-07"}],["$","div",null,{"className":"prose prose-invert max-w-none text-slate-300 leading-relaxed","dangerouslySetInnerHTML":{"__html":"<p>AI CI execution and CI/CD AI automation can help enterprise IT catch issues earlier and reduce noisy manual checks.</p>\n<h3>Worth automating</h3>\n<ul>\n<li>Test selection and flake detection</li>\n<li>Release risk scoring</li>\n<li>Incident-to-fix correlation</li>\n<li>Post-deploy verification automation</li>\n</ul>\n<p><a href=\"/contact\">Ask about CI/CD AI automation</a></p>"}}]]}],null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"zion-tech-group-v1"}
-4:null
