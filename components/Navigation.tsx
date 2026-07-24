@@ -109,7 +109,7 @@ const Navigation: React.FC = () => {
 
           {/* CTA */}
           <div className="hidden lg:flex items-center gap-3">
-            <a href="tel:+130****0950" className="text-slate-400 hover:text-emerald-400 transition-colors"><Phone className="h-4 w-4" /></a>
+            <a href="tel:+13024640950" className="text-slate-400 hover:text-emerald-400 transition-colors"><Phone className="h-4 w-4" /></a>
             <a href="mailto:kleber@ziontechgroup.com" className="text-slate-400 hover:text-emerald-400 transition-colors"><Mail className="h-4 w-4" /></a>
             <Link href="/configurator" className="bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-500 hover:to-cyan-500 text-white px-5 py-2 rounded-lg text-sm font-semibold transition-all shadow-lg shadow-emerald-500/20">
               Get Started

@@ -158,7 +158,7 @@ export default function V1086V1090Showcase() {
               Contact Zion Tech Group for personalized demos and enterprise pricing.
             </p>
             <div className="flex flex-wrap justify-center gap-6 text-gray-300">
-              <a href="tel:+130****0950" className="flex items-center gap-2 hover:text-white transition-colors">
+              <a href="tel:+13024640950" className="flex items-center gap-2 hover:text-white transition-colors">
                 <span>📱</span> +1 302 464 0950
               </a>
               <a href="mailto:kleber@ziontechgroup.com" className="flex items-center gap-2 hover:text-white transition-colors">

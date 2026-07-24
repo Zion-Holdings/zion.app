@@ -705,7 +705,7 @@ export default function AgentDashboard() {
             <div className="rounded-xl border border-slate-800 bg-slate-900/60 p-6">
               <h3 className="text-lg font-semibold mb-3">📞 Contact Us</h3>
               <div className="grid md:grid-cols-3 gap-4 text-sm">
-                <div><span className="text-slate-400">Mobile:</span> <a href="tel:+130****0950" className="text-blue-400 hover:text-blue-300">+1 302 464 0950</a></div>
+                <div><span className="text-slate-400">Mobile:</span> <a href="tel:+13024640950" className="text-blue-400 hover:text-blue-300">+1 302 464 0950</a></div>
                 <div><span className="text-slate-400">Email:</span> <a href="mailto:kleber@ziontechgroup.com" className="text-blue-400 hover:text-blue-300">kleber@ziontechgroup.com</a></div>
                 <div><span className="text-slate-400">Address:</span> <span className="text-slate-200">364 E Main St STE 1008, Middletown, DE 19709</span></div>
               </div>

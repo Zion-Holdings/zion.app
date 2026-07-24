@@ -339,7 +339,7 @@ export default function AgentsMonitoring() {
 
         <div className="mt-4 pt-3 border-t border-slate-800/50 grid grid-cols-2 md:grid-cols-4 gap-3 text-xs">
           <div><span className="text-slate-500">Email: </span><a href="mailto:kleber@ziontechgroup.com" className="text-blue-300 hover:text-blue-200">kleber@ziontechgroup.com</a></div>
-          <div><span className="text-slate-500">Phone: </span><a href="tel:+130****0950" className="text-blue-300 hover:text-blue-200">+1 302 464 0950</a></div>
+          <div><span className="text-slate-500">Phone: </span><a href="tel:+13024640950" className="text-blue-300 hover:text-blue-200">+1 302 464 0950</a></div>
           <div className="col-span-2"><span className="text-slate-500">Address: </span><span className="text-slate-300">364 E Main St STE 1008, Middletown, DE 19709</span></div>
         </div>
       </div>

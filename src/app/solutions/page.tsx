@@ -78,7 +78,7 @@ export default function Solutions() {
             <a href="mailto:kleber@ziontechgroup.com" className="px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-sm font-semibold text-white hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/25">
               📧 kleber@ziontechgroup.com
             </a>
-            <a href="tel:+130****0950" className="px-6 py-3 rounded-full border border-purple-500/50 text-sm font-semibold text-purple-300 hover:bg-purple-500/10 transition-all">
+            <a href="tel:+13024640950" className="px-6 py-3 rounded-full border border-purple-500/50 text-sm font-semibold text-purple-300 hover:bg-purple-500/10 transition-all">
               📞 +1 302 464 0950
             </a>
           </div>
