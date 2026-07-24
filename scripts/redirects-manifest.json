@@ -1,0 +1,7 @@
+{
+  "version": "1",
+  "redirects": [
+    "/tools/phishing-analyzer /tools/phishing-analyzer/index.html 200",
+    "/tools/phishing-analyzer/ /tools/phishing-analyzer/index.html 200"
+  ]
+}
