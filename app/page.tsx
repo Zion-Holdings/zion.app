@@ -966,7 +966,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── From the Blog ── */}
+      {/* ── From the Blog — latest published articles ── */}
       <section className="py-20 bg-slate-900/20 border-t border-slate-800/60">
         <div className="container-page">
           <div className="flex items-center justify-between mb-10">
@@ -980,22 +980,16 @@ export default function HomePage() {
             {[
               {
                 title: 'AI Agentic Workflow Automation: Reduce Manual Work Hours by 70%',
-                date: '2026-07-05',
-                excerpt: 'Deploy autonomous AI agents for support, invoicing, follow-ups, CRM updates, and reporting with natural-language workflows.',
                 slug: '/blog/ai-agentic-workflow-automation-reduce-manual-work-hours/',
                 emoji: '🤖',
               },
               {
                 title: 'AI Computer Vision for Quality Inspection in Production and Logistics',
-                date: '2026-07-05',
-                excerpt: 'Use vision AI to detect defects, verify assemblies, and measure consistency in production with camera and MES integrations.',
                 slug: '/blog/ai-computer-vision-quality-inspection/',
                 emoji: '👁️',
               },
               {
                 title: 'Cyber Incident Response Retainer: Be Ready Before the Breach',
-                date: '2026-07-05',
-                excerpt: 'Guaranteed rapid incident response with playbooks, forensics, recovery support, and post-incident hardening.',
                 slug: '/blog/cyber-incident-response-retainer-ready-before-breach/',
                 emoji: '🛡️',
               },
@@ -1004,9 +998,9 @@ export default function HomePage() {
                 <span className="text-3xl">{post.emoji}</span>
                 <div>
                   <h3 className="text-base font-semibold text-white leading-snug group-hover:text-purple-300 transition-colors line-clamp-2">{post.title}</h3>
-                  <span className="text-xs text-slate-500 mt-1 block">{post.date}</span>
+                  <span className="text-xs text-slate-500 mt-1 block">Latest article</span>
                 </div>
-                <p className="text-slate-400 text-sm line-clamp-3 leading-relaxed">{post.excerpt}</p>
+                <p className="text-slate-400 text-sm line-clamp-3 leading-relaxed">Read this post for practical guidance and real implementation examples.</p>
                 <div className="mt-auto pt-3 border-t border-slate-700/40 flex justify-end">
                   <span className="text-purple-300 text-xs font-semibold">Read more →</span>
                 </div>
@@ -1018,8 +1012,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* ── Quick-View Modal ── */}
       {quickView && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
@@ -1187,44 +1179,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Category Deep-Link Strip — all 6 categories, live counts ───────── */}
-      <section className="py-12 bg-slate-900/20 border-y border-slate-800/60">
-        <div className="container-page">
-          <div className="text-center mb-8">
-            <h2 className="text-xl font-bold text-white">Browse by Category</h2>
-            <p className="text-slate-400 text-sm mt-1">
-              {`${serviceCount}+ services across 6 core capability areas`}
-            </p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {CATEGORIES.map((cat) => {
-              const count = services.filter((s: any) => s.category === cat.key).length;
-              return (
-                <Link
-                  key={cat.key}
-                  href={`/services/?category=${cat.key}`}
-                  className="group relative flex flex-col items-center gap-2 p-5 rounded-2xl border border-slate-700/60 bg-slate-800/40 hover:border-purple-500/50 hover:bg-slate-800/70 transition-all"
-                >
-                  <span className="text-3xl group-hover:scale-110 transition-transform">{cat.emoji}</span>
-                  <span className="text-sm font-semibold text-slate-200 group-hover:text-white text-center leading-snug">
-                    {cat.label}
-                  </span>
-                  <span className="text-xs font-medium text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded-full">
-                    {count} services
-                  </span>
-                  <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${cat.color} opacity-0 group-hover:opacity-[0.06] transition-opacity pointer-events-none`} />
-                </Link>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
       {/* ── What's New / Fresh Features ── */}
-      <section id="whats-new" className="py-20">
-        <div className="container-page">
-          <h2 className="section-heading text-center">✨ What's New at Zion Tech Group</h2>
-          <p className="section-subheading text-center">The latest platform upgrades, services, and capabilities — always evolving</p>
 
           <div className="grid md:grid-cols-3 gap-6 mt-10">
             {newsItems.map((feat, i) => (

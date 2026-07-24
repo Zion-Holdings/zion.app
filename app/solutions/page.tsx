@@ -1,11 +1,6 @@
 // app/solutions/page.tsx
 import Link from 'next/link';
 
-export const metadata = {
-  title: 'Solutions — Zion Tech Group',
-  description: 'Industry-specific AI, IT, and Micro-SaaS solutions for Healthcare, Financial Services, Manufacturing, and more.',
-};
-
 const industries = [
   { name: 'Healthcare',                    desc: 'HIPAA-compliant AI diagnostics, patient engagement, and clinical automation.' },
   { name: 'Financial Services',            desc: 'RegTech, fraud detection, trading bots, and KYC automation.' },
