@@ -16,10 +16,7 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  // Force webpack instead of turbopack for static export compatibility
-  experimental: {
-    turbo: false,
-  },
+  // Static export via webpack
   webpack: (config, { isServer }) => {
     const appDir = path.join(process.cwd(), 'app');
     config.resolve.alias = {
