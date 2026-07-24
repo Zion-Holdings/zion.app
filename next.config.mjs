@@ -16,8 +16,9 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  turbopack: {
-    // Empty turbopack config to avoid conflicts with webpack
+  // Force webpack instead of turbopack for static export compatibility
+  experimental: {
+    turbo: false,
   },
   webpack: (config, { isServer }) => {
     const appDir = path.join(process.cwd(), 'app');
