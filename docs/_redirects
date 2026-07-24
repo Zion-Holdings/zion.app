@@ -1,3 +1,4 @@
+/services/ai-agents-autonomous    /services/ai-agents-autonomous/    200
 /free-tools-hub/    /tools/    301
 /products/    /services/    301
 /consultation/    /contact/    301
@@ -7,5 +8,21 @@
 /configurator/    /contact/    301
 /dashboard/    /contact/    301
 /docs/    /    301
-/tools/phishing-analyzer /tools/phishing-analyzer/index.html 200
-/tools/phishing-analyzer/ /tools/phishing-analyzer/index.html 200
+/free-ai-itools /free-ai-it-tools/ 301
+
+# Live fallback routes
+/mobile-app  /mobile-app/index.html  200
+/desktop-app  /desktop-app/index.html  200
+/plugin-marketplace  /plugin-marketplace/index.html  200
+/changelogs  /changelogs/index.html  200
+/public-roadmap  /public-roadmap/index.html  200
+/public-roadmap/ /public-roadmap/index.html 200
+/status-page  /status-page/index.html  200
+/status-page/ /status-page/index.html 200
+/free-consultation/ /free-consultation/    200
+/new-ai-services/ /new-ai-services/    200
+/blog/ai-msp-automation-implementation-playbook-2026/    /blog/ai-msp-automation-implementation-playbook-2026/    200
+/use-cases /use-cases/index.html 200
+/use-cases/ /use-cases/index.html 200
+/industries/financial-services /industries/financial-services/index.html 200
+/industries/financial-services/ /industries/financial-services/index.html 200
