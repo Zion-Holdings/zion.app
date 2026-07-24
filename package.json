@@ -34,7 +34,6 @@
     "lighthouse:production": "npx lighthouse https://ziontechgroup.com --chrome-flags='--headless --no-sandbox --disable-gpu' --output=json --output-path=automation/reports/lighthouse-production-latest.json"
   },
   "dependencies": {
-    "@next/swc-android-arm64": "^13.2.4",
     "@sendgrid/mail": "^8.1.6",
     "@stripe/stripe-js": "^9.10.0",
     "lucide-react": "^1.17.0",
