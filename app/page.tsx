@@ -14,6 +14,7 @@ import ServiceCounter from '@/components/ServiceCounter';
 import FloatingActionDock from '@/components/FloatingActionDock';
 import ServiceMatchQuiz from '@/components/ServiceMatchQuiz';
 import AgentsMonitoring from '@/components/AgentsMonitoring';
+import NavigationQuickLinks from '@/components/NavigationQuickLinks';
 
 // Category accent color for showcase cards (maps category key → gradient)
 // Category accent color for showcase card styles (static RGBA + hex)
@@ -713,6 +714,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── Navigation: By Industry / Use Case ── */}
+      <NavigationQuickLinks />
 
         {/* ── Popular Services ── */}
 
