@@ -100,3 +100,5 @@ outreach_monitor/metrics/continuous_improvement.jsonl
 outreach_monitor/processed/sent_threads.jsonl
 scripts/outreach_monitor/processed/hot_followup_reply_ledger.jsonl
 scripts/outreach_monitor/processed/sent_ledger.jsonl
+lead-crm/all-leads.json
+lead-crm/outreach_sent_history.jsonl
