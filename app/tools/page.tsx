@@ -64,6 +64,8 @@ const tools = [
   { id: 'tech-stack-recommender', icon: '🧩', title: 'Tech Stack Recommender', desc: 'Get a curated modern stack recommendation by project profile', category: 'Architecture' },
   { id: 'incident-postmortem', icon: '📋', title: 'Incident Postmortem', desc: 'Generate a lightweight postmortem draft from incident inputs', category: 'Operations' },
   { id: 'jwt-inspector', icon: '🔎', title: 'JWT Inspector', desc: 'Decode JWT header/payload and inspect claims client-side', category: 'Security' },
+  { id: 'ai-quick-audit', icon: '🧭', title: 'AI Quick Audit', desc: '8-question 2-minute readiness check with maturity score and next steps', category: 'AI' },
+  { id: 'free-tools-hub', icon: '🧲', title: 'Free Services & Tools Hub', desc: 'Explore Zion free tools and IT/AI services in one place', category: 'Growth' },
 ];
 
 export default function ToolsPage() {
