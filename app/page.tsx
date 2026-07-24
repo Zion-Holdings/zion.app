@@ -31,7 +31,47 @@ const catAccent: Record<string, string> = {
   'email-intelligence': '#a78bfa',
 };
 
+const CATEGORY_HEX: Record<string, string> = {
+  ai: '#8b5cf6',
+  it: '#38bdf8',
+  cloud: '#7dd3fc',
+  security: '#fb923c',
+  data: '#34d399',
+  automation: '#fb7185',
+  'micro-saas': '#fbbf24',
+  devops: '#22d3ee',
+  blockchain: '#fbbf24',
+  iot: '#2dd4bf',
+  'email-intelligence': '#8b5cf6',
+  database: '#3b82f6',
+  collaboration: '#38bdf8',
+  'media-streaming': '#f43f5e',
+  'infrastructure-as-code': '#d97706',
+  'low-code': '#10b981',
+  'monitoring': '#3b82f6',
+  logging: '#94a3b8',
+  'security-scanning': '#f97316',
+  'backup-recovery': '#10b981',
+  'identity-management': '#a855f7',
+};
+
+const hexToRgba = (hex: string, alpha = 0.35) => {
+  const cleaned = hex.replace('#', '');
+  const r = parseInt(cleaned.slice(0, 2) || '00', 16);
+  const g = parseInt(cleaned.slice(2, 4) || '00', 16);
+  const b = parseInt(cleaned.slice(4, 6) || '00', 16);
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+};
+
 const getCategoryMeta = (key: string) => CATEGORIES.find(c => c.key === key) || CATEGORIES[0];
+
+const hexWithAlpha = (hex: string) => {
+  const cleaned = hex.replace('#', '');
+  if (cleaned.length === 6 && /^[0-9a-f]+$/i.test(cleaned)) {
+    return `${cleaned.slice(0, 6)}${cleaned.slice(0, 2)}`;
+  }
+  return hex;
+};
 
 // Stat labels
 const STAT_SERVICES = 'Services & Solutions';
@@ -647,7 +687,8 @@ export default function HomePage() {
               <Link key={cat.key} href={`/services/?category=${cat.key}`}
                 className="glass-card group hover:border-purple-500/40 hover:scale-[1.015] transition-all duration-300 relative overflow-hidden">
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                  style={{ background: `linear-gradient(135deg, ${cat.color.replace('from-','').replace('to-','').split(' ')[0]}22, transparent 60%)` }}/>
+                  style={{ background: `linear-gradient(135deg, ${hexToRgba(CATEGORY_HEX[cat.key] || '#ffffff', 0.35)}, transparent 60%)` }}
+                />
                 <div className="relative flex items-center gap-4">
                   <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${cat.color} flex items-center justify-center text-2xl shadow-lg
                     group-hover:shadow-xl group-hover:scale-110 transition-all duration-300`}>
@@ -735,7 +776,7 @@ export default function HomePage() {
                   <div className="h-1.5 rounded-full bg-slate-800 overflow-hidden mb-3">
                     <div
                       className="h-full rounded-full transition-all duration-500 group-hover:opacity-80"
-                      style={{ width: `${pct}%`, background: `linear-gradient(90deg, ${cat.color.replace(/from-|to-/g,'').split(' ')[0]}, ${cat.color.split(' ').pop()})` }}
+                      style={{ width: `${pct}%`, background: `linear-gradient(90deg, ${hexToRgba(CATEGORY_HEX[cat.key] || '#ffffff', 0.35)}, ${hexToRgba(CATEGORY_HEX[cat.key] || '#ffffff', 0.7)})` }}
                     />
                   </div>
                   <div className="flex items-center justify-between">
@@ -1075,7 +1116,7 @@ export default function HomePage() {
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                   style={{
-                    background: `linear-gradient(135deg, ${cat.color.replace('from-','').replace('to-','').split(' ')[0]}22, transparent 60%)`,
+                    background: `linear-gradient(135deg, ${hexToRgba(CATEGORY_HEX[cat.key] || '#ffffff', 0.35)}, transparent 60%)`,
                   }}
                 />
                 <div className="relative flex items-center gap-4">
