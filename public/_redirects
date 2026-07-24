@@ -1,8 +1,3 @@
-/sitemap.xml  /sitemap-0.xml  301
-
-/case-studies/    /case-studies/index.html  200
-/testimonials/    /case-studies/index.html  301
-/industries/    /services/    301
 /free-tools-hub    /free-ai-it-tools/  301
 /free-tools-hub/  /free-ai-it-tools/  301
 /products/    /services/    301
@@ -13,17 +8,12 @@
 /configurator/    /contact/    301
 /dashboard/    /contact/    301
 /docs/    /    301
-/automation/  /services/ai-workflow-automation/  301
-/free-ai-itools/ /free-ai-it-tools/ 302
-/free-ai-itools /free-ai-it-tools/ 302
+/free-ai-itools /free-ai-it-tools/ 301
+/free-ai-itools/ /free-ai-it-tools/ 301
 /careers/  /contact/  301
 
 /free-consultation /free-consultation/index.html 200
 /free-consultation/ /free-consultation/index.html 200
-/free-audit /free-audit/index.html 200
-/free-audit/ /free-audit/index.html 200
-/proposal /proposal/index.html 200
-/proposal/ /proposal/index.html 200
 /industries/insurance/ /industries/insurance/index.html 200
 /industries/healthcare/ /industries/healthcare/index.html 200
 /industries/legal/ /industries/legal/index.html 200
