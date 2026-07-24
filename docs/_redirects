@@ -7,3 +7,5 @@
 /configurator/    /contact/    301
 /dashboard/    /contact/    301
 /docs/    /    301
+/tools/phishing-analyzer /tools/phishing-analyzer/index.html 200
+/tools/phishing-analyzer/ /tools/phishing-analyzer/index.html 200
