@@ -119,6 +119,8 @@ jobs:
             services/ai-incident-response-and-oncall-automation/index.html \
             services/ai-email-bounce-and-deliverability-recovery/index.html \
             services/autonomous-ai-operations/index.html \
+            client-portal/index.html \
+            services/ai-agents-autonomous/index.html \
             services/autonomous-ai-ops-retainer/index.html \
             services/ai-insurance-claims/index.html \
             services/ai-insurance-claims-automation/index.html \
