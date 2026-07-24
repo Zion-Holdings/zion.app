@@ -1,19 +1,11 @@
 {
-<<<<<<< Updated upstream
-  "timestamp": 1784923534,
-=======
-  "timestamp": 1784223801,
->>>>>>> Stashed changes
+  "timestamp": 1784936877,
   "active": false,
   "has_endpoint": false,
   "has_api_key": false,
   "model": "not-configured",
   "llm_tailor_enabled": false,
   "local_gmail_modules": {
-    "googleapiclient": true,
-    "google.auth": true,
-    "google.oauth2": true,
-    "token_exists": false,
-    "auth_error": null
+    "auth_error": "AttributeError(\"module 'importlib' has no attribute 'util'\")"
   }
 }

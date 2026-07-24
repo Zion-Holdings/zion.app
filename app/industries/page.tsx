@@ -35,7 +35,7 @@ export default function IndustriesHub() {
             {INDUSTRIES.map((ind) => (
               <Link
                 key={ind.key}
-                href={`/industries/${ind.key}`}
+                href={`/services/?category=ai`}
                 className="group block rounded-2xl border border-slate-800 bg-slate-900/50 hover:bg-slate-800/80 hover:border-purple-500/30 p-5 transition-all"
               >
                 <div className="flex items-center justify-between mb-3">
@@ -73,7 +73,7 @@ export default function IndustriesHub() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/configurator" className="btn-primary text-lg px-10 py-4">Get Your Custom Proposal →</Link>
-              <a href="tel:+130****0950" className="btn-secondary text-lg px-10 py-4">☎ +1 302 464 0950</a>
+              <a href="tel:+13024640950" className="btn-secondary text-lg px-10 py-4">☎ +1 302 464 0950</a>
             </div>
           </section>
         </div>
