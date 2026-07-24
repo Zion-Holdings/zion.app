@@ -83,16 +83,16 @@ export default function ToolsPage() {
             If you need custom AI integrations, IT automation, or managed delivery, Zion Tech Group can build tailored solutions on top of these patterns.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 mt-6">
-            <a href="tel:+13024640950" className="btn-primary">
-              ☎ Call Now
+            <a href="tel:+13024640950" className="btn-primary text-lg">
+              ☎ +1 302 464 0950
             </a>
-            <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noreferrer" className="btn-primary">
+            <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noreferrer" className="btn-primary text-lg">
               📅 Book Consultation
             </a>
-            <Link href="/services/" className="btn-secondary">
+            <Link href="/services/" className="btn-secondary text-lg">
               AI & IT Services →
             </Link>
-            <Link href="/contact/" className="btn-secondary">
+            <Link href="/contact/" className="btn-secondary text-lg">
               Contact Us
             </Link>
           </div>
