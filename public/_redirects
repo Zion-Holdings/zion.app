@@ -6,7 +6,8 @@
 /case-studies/    /case-studies/index.html  200
 /testimonials/    /case-studies/index.html  301
 /industries/    /services/    301
-/free-tools-hub/    /tools/    301
+/free-tools-hub    /free-ai-it-tools/  301
+/free-tools-hub/  /free-ai-it-tools/  301
 /products/    /services/    301
 /consultation/    /contact/    301
 /site-map/    /    301

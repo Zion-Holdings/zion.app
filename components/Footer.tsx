@@ -97,6 +97,14 @@ const Footer: React.FC = () => {
                   Analytics
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/free-ai-it-tools/"
+                  className="text-gray-300 hover:text-emerald-400 text-sm transition-colors"
+                >
+                  Free AI & IT Tools
+                </Link>
+              </li>
             </ul>
           </div>
 
