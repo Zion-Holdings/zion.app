@@ -83,18 +83,10 @@ export default function ToolsPage() {
             If you need custom AI integrations, IT automation, or managed delivery, Zion Tech Group can build tailored solutions on top of these patterns.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 mt-6">
-            <a href="tel:+13024640950" className="btn-primary text-lg">
-              ☎ +1 302 464 0950
-            </a>
-            <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noreferrer" className="btn-primary text-lg">
-              📅 Book Consultation
-            </a>
-            <Link href="/services/" className="btn-secondary text-lg">
-              AI & IT Services →
-            </Link>
-            <Link href="/contact/" className="btn-secondary text-lg">
-              Contact Us
-            </Link>
+            <a href="tel:+13024640950" className="btn-primary text-lg">☎ +1 302 464 0950</a>
+            <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noreferrer" className="btn-primary text-lg">📅 Book Consultation</a>
+            <Link href="/services/" className="btn-secondary text-lg">AI & IT Services →</Link>
+            <Link href="/contact/" className="btn-secondary text-lg">Contact Us</Link>
           </div>
         </header>
 
@@ -111,9 +103,7 @@ export default function ToolsPage() {
                   <div className="flex items-start gap-3">
                     <span className="text-2xl">{tool.icon}</span>
                     <div>
-                      <h3 className="text-white font-semibold group-hover:text-emerald-400 transition-colors">
-                        {tool.title}
-                      </h3>
+                      <h3 className="text-white font-semibold group-hover:text-emerald-400 transition-colors">{tool.title}</h3>
                       <p className="text-slate-400 text-sm mt-1">{tool.desc}</p>
                     </div>
                   </div>
@@ -126,9 +116,7 @@ export default function ToolsPage() {
         <div className="mt-16 text-center">
           <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-emerald-500/10 border border-emerald-500/20">
             <span className="text-emerald-400">Need custom tools or integrations?</span>
-            <Link href="/contact/" className="text-emerald-300 hover:text-emerald-200 underline">
-              Contact us
-            </Link>
+            <Link href="/contact/" className="text-emerald-300 hover:text-emerald-200 underline">Contact us</Link>
           </div>
         </div>
 
@@ -138,15 +126,9 @@ export default function ToolsPage() {
             We offer AI implementation, IT automation, managed support, and custom integrations for teams that want production-ready solutions.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+13024640950" className="btn-primary text-lg">
-              ☎ +1 302 464 0950
-            </a>
-            <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noreferrer" className="btn-secondary text-lg">
-              📅 Book a Consultation
-            </a>
-            <Link href="/services/" className="btn-secondary text-lg">
-              View Services
-            </Link>
+            <a href="tel:+13024640950" className="btn-primary text-lg">☎ +1 302 464 0950</a>
+            <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noreferrer" className="btn-secondary text-lg">📅 Book a Consultation</a>
+            <Link href="/services/" className="btn-secondary text-lg">View Services</Link>
           </div>
         </section>
       </div>
