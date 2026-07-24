@@ -466,6 +466,21 @@ export default function HomePage() {
       {/* ── AI Agent Monitoring — Live Fleet Banner (Priority) ── */}
       <AgentsMonitoring />
 
+      {/* ── Homepage Jump Nav ── */}
+      <div className="sticky top-16 z-40 bg-slate-900/80 backdrop-blur-md border-b border-slate-700/60">
+        <div className="container-page">
+          <div className="flex gap-1 overflow-x-auto py-2 scrollbar-none">
+            <a href="#how-it-works" className="shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/70 transition-colors">How It Works</a>
+            <a href="#services-catalog" className="shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/70 transition-colors">Browse Categories</a>
+            <a href="#popular-services" className="shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/70 transition-colors">Popular Services</a>
+            <a href="#free-tools" className="shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/70 transition-colors">Free Tools</a>
+            <a href="#whats-new" className="shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/70 transition-colors">What's New</a>
+            <a href="#industries" className="shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/70 transition-colors">Industries</a>
+            <a href="#contact" className="shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/70 transition-colors">Contact</a>
+          </div>
+        </div>
+      </div>
+
       {/* ── AI Agent Operations — Always Visible Banner ── */}
       <section className="relative overflow-hidden border-y border-purple-500/20">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-900/50 via-violet-900/40 to-pink-900/50" />
@@ -651,7 +666,7 @@ export default function HomePage() {
       <ServiceMatchQuiz />
       
       {/* ── How It Works ── */}
-      <section className="py-20">
+      <section id="how-it-works" className="py-20">
         <div className="container-page">
           <h2 className="section-heading text-center">How It Works</h2>
           <p className="section-subheading text-center">From inquiry to implementation in 4 simple steps</p>
@@ -716,12 +731,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Navigation: By Industry / Use Case ── */}
+      {/* ── Services by Category ── */}
       <NavigationQuickLinks />
 
         {/* ── Popular Services ── */}
 
-      <section className="py-16">
+      <section id="popular-services" className="py-16">
         <div className="container-page">
           <div className="flex items-center gap-3 mb-8">
             <span className="text-2xl">🔥</span>
@@ -1149,7 +1164,7 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-20">
+      <section id="contact" className="py-20">
         <div className="container-page">
           <div className="cta-section text-center">
             <h2 className="text-3xl font-bold text-white mb-4">Ready to Transform Your Business?</h2>
@@ -1206,7 +1221,7 @@ export default function HomePage() {
       </section>
 
       {/* ── What's New / Fresh Features ── */}
-      <section className="py-20">
+      <section id="whats-new" className="py-20">
         <div className="container-page">
           <h2 className="section-heading text-center">✨ What's New at Zion Tech Group</h2>
           <p className="section-subheading text-center">The latest platform upgrades, services, and capabilities — always evolving</p>
@@ -1325,7 +1340,7 @@ export default function HomePage() {
       </section>
 
       {/* ── Free Tools & Interactive Utilities — {serviceCount}+-service catalog ── */}
-      <section className="py-16 border-t border-slate-800">
+      <section id="free-tools" className="py-16 border-t border-slate-800">
         <div className="container-page">
           <div className="text-center mb-10">
             <h2 className="text-2xl font-bold text-white mb-3">🛠️ Free Tools & Interactive Utilities</h2>
@@ -1426,7 +1441,7 @@ export default function HomePage() {
         </div>
       </section>
       {/* ── Industries We Serve — 10 verticals from service catalog ── */}
-      <section className="py-16 border-t border-slate-800">
+      <section id="industries" className="py-16 border-t border-slate-800">
         <div className="container-page">
           <h2 className="text-2xl font-bold text-white text-center mb-3">Industries We Serve</h2>
           <p className="text-slate-400 text-center mb-10">
