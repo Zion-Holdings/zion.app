@@ -3,7 +3,8 @@
 # Canonical sitemap
 /sitemap.xml  /sitemap-0.xml  301
 
-/case-studies/    /contact/    301
+/case-studies/    /case-studies/index.html  200
+/testimonials/    /case-studies/index.html  301
 /industries/    /services/    301
 /free-tools-hub/    /tools/    301
 /products/    /services/    301
