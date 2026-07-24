@@ -375,7 +375,7 @@ export default function HomePage() {
                 🔍 Search Services
               </Link>
               <Link href="/careers" className="px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/60 text-slate-300 text-sm hover:bg-slate-700/80 hover:text-purple-300 hover:border-purple-500/30 transition-all">
-                Case Studies
+                🏭 Industries
               </Link>
               <Link href="/pricing/" className="px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/60 text-slate-300 text-sm hover:bg-slate-700/80 hover:text-purple-300 hover:border-purple-500/30 transition-all">
                 💰 Pricing
@@ -477,6 +477,7 @@ export default function HomePage() {
             <a href="#whats-new" className="shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/70 transition-colors">What's New</a>
             <a href="#industries" className="shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/70 transition-colors">Industries</a>
             <a href="#contact" className="shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/70 transition-colors">Contact</a>
+            <a href="/industries/" className="shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/70 transition-colors">All Industries</a>
           </div>
         </div>
       </div>
@@ -1179,30 +1180,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── What's New / Fresh Features ── */}
-
-          <div className="grid md:grid-cols-3 gap-6 mt-10">
-            {newsItems.map((feat, i) => (
-              <div key={i} className="glass-card flex flex-col gap-3 hover:border-purple-500/40 group">
-                <div className={`h-1 rounded-full bg-gradient-to-r ${feat.color || 'from-purple-500 to-indigo-500'}`} />
-                <span className="text-xs font-semibold text-purple-300 uppercase tracking-wider">{feat.tag}</span>
-                <h3 className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors">{feat.title}</h3>
-                <p className="text-slate-400 text-sm flex-1 leading-relaxed">{feat.desc}</p>
-                <div className="mt-auto">
-                  <span
-                    role="img"
-                    aria-hidden
-                    className="inline-block transition-transform group-hover:translate-x-1"
-                  >
-                    →
-                  </span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── What's New cards — top 5 latest releases ── */}
       <section className="py-16">
         <div className="container-page">
@@ -1290,6 +1267,7 @@ export default function HomePage() {
             <Link href="/proposals/" className="hover:text-purple-400 transition">📄 Proposals</Link>
             <Link href="/partners/" className="hover:text-purple-400 transition">🤝 Partners</Link>
             <Link href="/status/" className="hover:text-green-400 transition">● System Status</Link>
+            <Link href="/industries/" className="hover:text-purple-400 transition">🏭 Industries</Link>
           </div>
         </div>
       </section>

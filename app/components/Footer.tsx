@@ -16,6 +16,11 @@ const FOOTER_LINKS: { title: string; links: FooterLink[] }[] = [
     links: [
       { name: 'AI Services', href: '/ai-services' },
       { name: 'All Services', href: '/services' },
+      { name: 'Providers', href: '/providers' },
+      { name: 'Integrators', href: '/integrators' },
+      { name: 'IT Vendors', href: '/it-vendors' },
+      { name: 'Business Customers', href: '/business-customers' },
+      { name: 'Governments', href: '/governments' },
       { name: 'Micro-SaaS', href: '/services?category=micro-saas' },
       { name: 'Cloud & DevOps', href: '/services?category=cloud' },
       { name: 'Security', href: '/services?category=security' },
@@ -48,7 +53,7 @@ const FOOTER_LINKS: { title: string; links: FooterLink[] }[] = [
       { name: 'Blog', href: '/blog' },
       { name: 'About Us', href: '/about' },
     ],
-    ],
+    },
   },
   {
     title: 'Legal',
