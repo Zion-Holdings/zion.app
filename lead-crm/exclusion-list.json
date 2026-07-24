@@ -61,6 +61,60 @@
       "reason": "auto-flagged owner/related company during outreach analysis",
       "first_failed_at": "2026-07-16T01:09:00+00:00",
       "status": "excluded"
+    },
+    {
+      "email": "partners@servi.co",
+      "reason": "noisy web_prospecting lead; related to excluded servi.com/ai domains",
+      "first_failed_at": "2026-07-23T00:00:00+00:00",
+      "status": "excluded"
+    },
+    {
+      "email": "contacts@servi.co",
+      "reason": "noisy web_prospecting lead; related to excluded servi.com/ai domains",
+      "first_failed_at": "2026-07-23T00:00:00+00:00",
+      "status": "excluded"
+    },
+    {
+      "email": "business@servi.co",
+      "reason": "noisy web_prospecting lead; related to excluded servi.com/ai domains",
+      "first_failed_at": "2026-07-23T00:00:00+00:00",
+      "status": "excluded"
+    },
+    {
+      "email": "hello@servi.br",
+      "reason": "noisy web_prospecting lead; related to excluded servi.com/ai/co domains",
+      "first_failed_at": "2026-07-23T00:00:00+00:00",
+      "status": "excluded"
+    },
+    {
+      "email": "careers@servi.br",
+      "reason": "noisy web_prospecting lead; related to excluded servi.com/ai/co domains",
+      "first_failed_at": "2026-07-23T00:00:00+00:00",
+      "status": "excluded"
+    },
+    {
+      "email": "sales@servi.br",
+      "reason": "noisy web_prospecting lead; related to excluded servi.com/ai/co domains",
+      "first_failed_at": "2026-07-23T00:00:00+00:00",
+      "status": "excluded"
+    },
+    {
+      "email": "press@servi.br",
+      "reason": "noisy web_prospecting lead; related to excluded servi.com/ai/co domains",
+      "first_failed_at": "2026-07-23T00:00:00+00:00",
+      "status": "excluded"
+    },
+    {
+      "email": "support@servi.br",
+      "reason": "noisy web_prospecting lead; related to excluded servi.com/ai/co domains",
+      "first_failed_at": "2026-07-23T00:00:00+00:00",
+      "status": "excluded"
+    },
+    {
+      "email": "leads@servi.br",
+      "reason": "noisy web_prospecting lead; related to excluded servi.com/ai/co domains",
+      "first_failed_at": "2026-07-23T00:00:00+00:00",
+      "status": "excluded"
     }
   ]
 }
