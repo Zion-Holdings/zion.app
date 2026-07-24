@@ -1,0 +1,331 @@
+{
+  "checkedAt": "2026-07-24T09:24:51.624670+00:00",
+  "base": "http://localhost:3000",
+  "summary": {
+    "healthyDirectRoutes": [
+      "/",
+      "/pricing",
+      "/contact",
+      "/dashboard",
+      "/careers",
+      "/partners",
+      "/portal",
+      "/press",
+      "/status",
+      "/faq",
+      "/case-studies",
+      "/privacy",
+      "/terms",
+      "/cookies",
+      "/sla",
+      "/configurator",
+      "/services/it-workspace-analytics",
+      "/services/ai-observability",
+      "/services/ai-insurance-claims",
+      "/services/ai-edge-cdn-connectivity",
+      "/services/ai-observability-aiops",
+      "/blog/ai-first-msp-pricing-model-for-ai-support-automation-in-2026",
+      "/blog/cyber-incident-response-retainer-services-for-it-teams-in-2026",
+      "/blog/it-cost-optimization-report-for-managed-cloud-spend",
+      "/blog/ai-first-customer-success-and-churn-prevention-for-saas-in-2026",
+      "/blog/edge-ai-video-analytics-for-retail-operations-in-2026",
+      "/blog/ai-insurance-claims-automation-guide-for-operations-leaders",
+      "/blog/ai-first-device-management-and-iot-operations-in-2026",
+      "/blog/ai-first-digital-twins-and-asset-simulation-for-industry-in-2026",
+      "/blog/ai-anti-fraud-and-payment-intelligence-for-fintech-in-2026",
+      "/free-ai-readiness-audit",
+      "/free-tools-hub",
+      "/free-resources",
+      "/leads",
+      "/services/rack-and-stack-field-services"
+    ],
+    "redirectRoutes": [],
+    "unhealthyDirectRoutes": [],
+    "first3Unhealthy": [],
+    "healthy": 35,
+    "unhealthy": 0,
+    "total": 35
+  },
+  "details": {
+    "/": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/index.html"
+    },
+    "/pricing": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/pricing/index.html"
+    },
+    "/contact": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/contact/index.html"
+    },
+    "/dashboard": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/dashboard/index.html"
+    },
+    "/careers": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/careers/index.html"
+    },
+    "/partners": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/partners/index.html"
+    },
+    "/portal": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/portal/index.html"
+    },
+    "/press": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/press/index.html"
+    },
+    "/status": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/status/index.html"
+    },
+    "/faq": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/faq/index.html"
+    },
+    "/case-studies": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/case-studies/index.html"
+    },
+    "/privacy": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/privacy/index.html"
+    },
+    "/terms": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/terms/index.html"
+    },
+    "/cookies": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/cookies/index.html"
+    },
+    "/sla": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/sla/index.html"
+    },
+    "/configurator": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/configurator/index.html"
+    },
+    "/services/it-workspace-analytics": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/services/it-workspace-analytics/index.html"
+    },
+    "/services/ai-observability": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/services/ai-observability/index.html"
+    },
+    "/services/ai-insurance-claims": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/services/ai-insurance-claims/index.html"
+    },
+    "/services/ai-edge-cdn-connectivity": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/services/ai-edge-cdn-connectivity/index.html"
+    },
+    "/services/ai-observability-aiops": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/services/ai-observability-aiops/index.html"
+    },
+    "/blog/ai-first-msp-pricing-model-for-ai-support-automation-in-2026": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/blog/ai-first-msp-pricing-model-for-ai-support-automation-in-2026/index.html"
+    },
+    "/blog/cyber-incident-response-retainer-services-for-it-teams-in-2026": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/blog/cyber-incident-response-retainer-services-for-it-teams-in-2026/index.html"
+    },
+    "/blog/it-cost-optimization-report-for-managed-cloud-spend": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/blog/it-cost-optimization-report-for-managed-cloud-spend/index.html"
+    },
+    "/blog/ai-first-customer-success-and-churn-prevention-for-saas-in-2026": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/blog/ai-first-customer-success-and-churn-prevention-for-saas-in-2026/index.html"
+    },
+    "/blog/edge-ai-video-analytics-for-retail-operations-in-2026": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/blog/edge-ai-video-analytics-for-retail-operations-in-2026/index.html"
+    },
+    "/blog/ai-insurance-claims-automation-guide-for-operations-leaders": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/blog/ai-insurance-claims-automation-guide-for-operations-leaders/index.html"
+    },
+    "/blog/ai-first-device-management-and-iot-operations-in-2026": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/blog/ai-first-device-management-and-iot-operations-in-2026/index.html"
+    },
+    "/blog/ai-first-digital-twins-and-asset-simulation-for-industry-in-2026": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/blog/ai-first-digital-twins-and-asset-simulation-for-industry-in-2026/index.html"
+    },
+    "/blog/ai-anti-fraud-and-payment-intelligence-for-fintech-in-2026": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/blog/ai-anti-fraud-and-payment-intelligence-for-fintech-in-2026/index.html"
+    },
+    "/free-ai-readiness-audit": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/free-ai-readiness-audit/index.html"
+    },
+    "/free-tools-hub": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/free-tools-hub/index.html"
+    },
+    "/free-resources": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/free-resources/index.html"
+    },
+    "/leads": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/leads/index.html"
+    },
+    "/services/rack-and-stack-field-services": {
+      "ok": true,
+      "code": 200,
+      "final": null,
+      "reason": null,
+      "source": "export",
+      "path": "/Users/miami2/zion.app/out/services/rack-and-stack-field-services/index.html"
+    }
+  }
+}
