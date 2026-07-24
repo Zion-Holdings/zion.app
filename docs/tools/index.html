@@ -6,34 +6,31 @@
   <link rel="apple-touch-icon" href="/favicon.ico" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Free Developer Tools | Zion Tech Group</title>
   <meta name="robots" content="index,follow" />
+  <meta name="description" content="Free developer tools and utilities from Zion Tech Group: JSON formatter, JWT decoder, regex tester, SQL formatter, QR code generator, and more." />
   <link rel="canonical" href="https://ziontechgroup.com/tools/" />
   <style>
-    :root { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
-    * { box-sizing: border-box; }
-    body { margin: 0; padding: 0; color: #0f172a; background: #ffffff; }
-    header { border-bottom: 1px solid #e5e7eb; }
+    :root { color-scheme: dark; }
+    body { background: #0b0f1a; color: #e5e7eb; font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
+    a { color: #93c5fd; text-decoration: none; }
     .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+    header { border-bottom: 1px solid #1e293b; }
     nav { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; justify-content: space-between; }
-    .brand { font-weight: 700; letter-spacing: -0.02em; font-size: 18px; }
-    .links a { margin-left: 14px; color: #2563eb; text-decoration: none; font-weight: 500; }
-    .links a:hover { text-decoration: underline; }
+    .brand { font-weight: 700; letter-spacing: -0.02em; font-size: 18px; background: linear-gradient(90deg,#a78bfa,#ec4899); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .links a { margin-left: 14px; color: #c4b5fd; font-weight: 500; }
+    .links a:hover { color:#fff; }
     .hero { padding: 64px 24px; }
-    h1 { font-size: clamp(28px, 4vw, 48px); line-height: 1.1; margin: 0 0 14px; letter-spacing: -0.03em; }
-    p.lead { font-size: 18px; color: #334155; max-width: 760px; }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; padding: 24px 0; }
-    .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 18px; text-decoration: none; color: inherit; display: block; }
-    .card:hover { border-color: #2563eb; }
-    .card h3 { margin: 0 0 8px; font-size: 16px; color: #0f172a; }
-    .card p { margin: 0; color: #334155; font-size: 14px; }
+    h1 { font-size: clamp(28px, 4vw, 48px); line-height: 1.1; margin: 0 0 14px; letter-spacing: -0.03em; color:#f8fafc; }
+    p.lead { font-size: 18px; color: #cbd5e1; max-width: 760px; line-height: 1.6; }
     .section { padding: 24px; }
-    .section-title { font-size: 22px; margin: 0 0 10px; }
-    .section-lead { color: #334155; max-width: 760px; margin: 0 0 14px; }
-    footer { border-top: 1px solid #e5e7eb; padding: 24px; color: #475569; font-size: 13px; }
-    .btn { display: inline-block; padding: 12px 16px; border-radius: 10px; background: #0f172a; color: #fff; text-decoration: none; font-weight: 600; }
-    .btn.secondary { background: #ffffff; color: #0f172a; border: 1px solid #e5e7eb; }
+    .section-title { font-size: 22px; margin: 0 0 10px; color:#f8fafc; }
+    .section-lead { color: #cbd5e1; max-width: 760px; margin: 0 0 14px; }
+    footer { border-top: 1px solid #1e293b; padding: 24px; color: #94a3b8; font-size: 13px; }
+    .btn { display: inline-block; padding: 12px 16px; border-radius: 10px; background: linear-gradient(90deg,#7c3aed,#db2777); color: #fff; text-decoration: none; font-weight: 600; }
+    .btn.secondary { background: rgba(255,255,255,0.08); color:#fff; border: 1px solid rgba(255,255,255,0.12); }
     .cta-row { margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap; }
+    ul { color: #cbd5e1; }
+    li { margin: 10px 0; }
   </style>
 </head>
 <body>
@@ -41,73 +38,24 @@
     <div class="container">
       <nav>
         <div class="brand">Zion Tech Group</div>
-        <div class="links">
-          <a href="/services/">Services</a>
-          <a href="/solutions/">Solutions</a>
-          <a href="/pricing/">Pricing</a>
-          <a href="/contact/">Contact</a>
-        </div>
+        <div class="links"><a href="/services/">Services</a><a href="/pricing/">Pricing</a><a href="/contact/">Contact</a></div>
       </nav>
     </div>
   </header>
   <main>
     <section class="hero">
       <div class="container">
-        <h1>Free developer tools and utilities</h1>
-        <p class="lead">Practical browser-based utilities to format, convert, inspect, and generate—no signup needed.</p>
-        <div class="cta-row">
-          <a class="btn" href="/contact/">Request a custom tool</a>
-          <a class="btn secondary" href="/services/">Explore services</a>
-        </div>
+        <h1>Free developer tools and utilities</h1><p class="lead">Practical browser-based utilities to format, convert, inspect, and generate—no signup needed.</p><div class="cta-row"><a class="btn" href="/contact/">Request a custom tool</a><a class="btn secondary" href="/services/">Explore services</a></div>
       </div>
     </section>
     <section class="section">
       <div class="container">
-        <h2 class="section-title">Browse tools</h2>
-        <p class="section-lead">Use the tools below or integrate them into your workflow.</p>
-        <div class="grid">
-          <a class="card" href="/tools/json-formatter"><h3>JSON Formatter & Validator</h3><p>Format, validate, and prettify JSON.</p></a>
-          <a class="card" href="/tools/json-to-csv-converter"><h3>JSON to CSV Converter</h3><p>Convert JSON arrays to CSV and vice versa.</p></a>
-          <a class="card" href="/tools/base64"><h3>Base64 Encoder/Decoder</h3><p>Encode and decode Base64 strings and files.</p></a>
-          <a class="card" href="/tools/url-encoder-decoder"><h3>URL Encoder/Decoder</h3><p>Encode and decode URL parameters safely.</p></a>
-          <a class="card" href="/tools/html-to-jsx"><h3>HTML to JSX Converter</h3><p>Convert HTML markup to React JSX syntax.</p></a>
-          <a class="card" href="/tools/css-gradient-generator"><h3>CSS Gradient Generator</h3><p>Visual CSS gradient builder with live preview.</p></a>
-          <a class="card" href="/tools/color-palette-generator"><h3>Color Palette Generator</h3><p>Generate beautiful color palettes.</p></a>
-          <a class="card" href="/tools/qr-code-generator"><h3>QR Code Generator</h3><p>Generate customizable QR codes.</p></a>
-          <a class="card" href="/tools/jwt-decoder"><h3>JWT Decoder</h3><p>Decode and inspect JWT tokens.</p></a>
-          <a class="card" href="/tools/password-generator"><h3>Password Generator</h3><p>Generate secure random passwords.</p></a>
-          <a class="card" href="/tools/subnet-calculator"><h3>Subnet Calculator</h3><p>Calculate subnets, CIDR, and network addresses.</p></a>
-          <a class="card" href="/tools/secure-hash-generator"><h3>Secure Hash Generator</h3><p>Generate SHA-256, SHA-512, MD5, and other hashes.</p></a>
-          <a class="card" href="/tools/regex-tester"><h3>Regex Tester</h3><p>Test and debug regular expressions.</p></a>
-          <a class="card" href="/tools/timestamp-converter"><h3>Unix Timestamp Converter</h3><p>Convert timestamps and readable dates.</p></a>
-          <a class="card" href="/tools/uuid-generator"><h3>UUID/GUID Generator</h3><p>Generate RFC 4122 compliant UUIDs.</p></a>
-          <a class="card" href="/tools/word-counter"><h3>Word & Character Counter</h3><p>Count words, characters, sentences, and paragraphs.</p></a>
-        </div>
-      </div>
-    </section>
-    <section class="section" style="background:#f8fafc">
-      <div class="container">
-        <h2 class="section-title">Need something internal?</h2>
-        <p class="section-lead">We build custom tooling, integrations, and automation for teams.</p>
-        <div class="cta-row">
-          <a class="btn" href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noopener">Book a meeting</a>
-          <a class="btn secondary" href="https://meet.google.com/ouu-khao-kuy" target="_blank" rel="noopener">Google Meet</a>
-          <a class="btn secondary" href="/contact/">Contact form</a>
-        </div>
+        <h2 class="section-title">Browse tools</h2><p class="section-lead">Use the tools below or integrate them into your workflow.</p><ul><li><a href="/tools/json-formatter">JSON Formatter</a></li><li><a href="/tools/jwt-decoder">JWT Decoder</a></li><li><a href="/tools/qr-code-generator">QR Code Generator</a></li><li><a href="/tools/regex-tester">Regex Tester</a></li><li><a href="/tools/uuid-generator">UUID/GUID Generator</a></li><li><a href="/tools/word-counter">Word & Character Counter</a></li></ul><p><a href="/tools/">View all tools →</a></p>
       </div>
     </section>
   </main>
   <footer>
-    <div class="container">
-      <div>© <span id="year"></span> Zion Tech Group · <a href="/">ziontechgroup.com</a></div>
-      <div style="margin-top:8px;">
-        <a href="/contact/" style="color:#334155;text-decoration:none;">Contact</a>
-        <span style="margin:0 8px;color:#cbd5e1;">·</span>
-        <a href="/pricing/" style="color:#334155;text-decoration:none;">Pricing</a>
-        <span style="margin:0 8px;color:#cbd5e1;">·</span>
-        <a href="https://meet.google.com/ouu-khao-kuy" target="_blank" rel="noopener" style="color:#334155;text-decoration:none;">Google Meet</a> · <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noopener" style="color:#334155;text-decoration:none;">Calendly</a>
-      </div>
-    </div>
+    <div class="container">© <span id="year"></span> Zion Tech Group · <a href="/">ziontechgroup.com</a></div>
   </footer>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
