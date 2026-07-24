@@ -53,7 +53,6 @@ const FOOTER_LINKS: { title: string; links: FooterLink[] }[] = [
       { name: 'Blog', href: '/blog' },
       { name: 'About Us', href: '/about' },
     ],
-    },
   },
   {
     title: 'Legal',
