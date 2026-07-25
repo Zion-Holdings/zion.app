@@ -37,6 +37,8 @@ const FOOTER_LINKS: { title: string; links: FooterLink[] }[] = [
     links: [
       { name: 'About Us', href: '/about' },
       { name: 'Blog', href: '/blog' },
+      { name: 'Case Studies', href: '/case-studies' },
+      { name: 'Testimonials', href: '/testimonials' },
       { name: 'Careers', href: '/careers' },
       { name: 'Partners', href: '/partners' },
       { name: 'Client Portal', href: '/portal' },

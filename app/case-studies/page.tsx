@@ -1,12 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { Metadata } from 'next';
-
-export const metadata = {
-  title: 'Case Studies | Zion Tech Group',
-  description: 'Real enterprise AI and IT transformation stories with measurable ROI, timelines, and lessons learned.',
-};
 
 const studies = [
   {
