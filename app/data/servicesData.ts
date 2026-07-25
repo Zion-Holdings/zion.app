@@ -2,5 +2,5 @@ type Service = Record<string, any>;
 
 const allServices: readonly Service[] = require('./servicesData.json') as readonly Service[];
 
-export { allServices };
+export { allServices, type Service };
 export default allServices;
