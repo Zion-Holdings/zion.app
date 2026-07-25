@@ -15,12 +15,6 @@ const INDUSTRIES = [
   { key: 'healthcare-&-life-sciences', label: 'Healthcare & Life Sciences', emoji: '🏥', count: 12, sample: 'AI Drug Discovery' },
 ];
 
-export const metadata = {
-  title: 'Industries We Serve | Zion Tech Group',
-  description: 'Explore AI & IT services by industry — from healthcare and fintech to manufacturing and retail.',
-  alternates: { canonical: '/industries/' }
-};
-
 export default function IndustriesHub() {
   return (
     <main className="min-h-screen bg-slate-950">
