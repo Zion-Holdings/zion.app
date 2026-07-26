@@ -103,8 +103,22 @@ jobs:
           # Guarantee every key route exists in the exported artifact, even if Next didn't emit it.
           for f in case-studies/index.html industries/index.html testimonials/index.html; do
             mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
-            if [ ! -f "$ARTIFACT_DIR/$f" ] && [ -f "docs/$f" ]; then
-              cp -a "docs/$f" "$ARTIFACT_DIR/$f"
+            if [ ! -f "$ARTIFACT_DIR/$f" ]; then
+              if [ -f "docs/$f" ]; then
+                cp -a "docs/$f" "$ARTIFACT_DIR/$f"
+              elif [ -f "$f" ]; then
+                cp -a "$f" "$ARTIFACT_DIR/$f"
+              fi
+            fi
+          done
+          for f in             ai-automation-playbook/index.html             ai-automation-for-it-support/index.html             ai-automation-guide/index.html             ai-consulting-services/index.html             ai-implementation-services/index.html             python-ai-development/index.html             free-ai-consultation/index.html             success-stories/index.html             faq/index.html             press/index.html             products/index.html             status/index.html             privacy/index.html             terms/index.html             cookies/index.html             sla/index.html             ai-roi-calculator/index.html             ai-readiness-assessment/index.html             implementation-roadmap/index.html             how-it-works/index.html             why-us/index.html             cybersecurity/index.html             pricing-plans/index.html             partnerships/index.html             demo/index.html             whitepaper/index.html; do
+            mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
+            if [ ! -f "$ARTIFACT_DIR/$f" ]; then
+              if [ -f "docs/$f" ]; then
+                cp -a "docs/$f" "$ARTIFACT_DIR/$f"
+              elif [ -f "$f" ]; then
+                cp -a "$f" "$ARTIFACT_DIR/$f"
+              fi
             fi
           done
           PAGES=$(find "$ARTIFACT_DIR" -name 'index.html' | wc -l)
