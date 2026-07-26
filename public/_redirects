@@ -25,3 +25,13 @@
 /industries/legal/ /industries/legal/index.html 200
 /tools/ai-quick-audit/ /tools/ai-quick-audit/index.html 200
 /assets/js/conversion-events.js /assets/js/conversion-events.js 200
+
+# Temporary safe redirects for routes stuck in Pages build issues
+/ai-services/ /services/ 301
+/it-services/ /services/ 301
+/cloud-services/ /services/ 301
+/security-services/ /services/ 301
+/data-services/ /services/ 301
+/enterprise-ai/ /services/ 301
+/digital-transformation/ /services/ 301
+/business-intelligence/ /services/ 301
