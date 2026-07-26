@@ -1,4 +1,4 @@
-build_type: static
+build_type: workflow
 source:
   branch: main
-  folder: /
+  path: /docs
