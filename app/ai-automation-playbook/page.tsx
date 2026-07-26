@@ -16,13 +16,6 @@ const steps = [
   { title: 'Scale with reusable patterns', body: 'Package configs, prompts, classifiers, and runbooks into repeatable deployment playbooks.' },
 ];
 
-const highlights = [
-  { title: 'Support automation', href: '/services/?category=ai', desc: 'Triage, routing, and knowledge-base assistants that reduce ticket volume.' },
-  { title: 'Security automation', href: '/services/?category=security', desc: 'Playbook-driven response, compliance checks, and alert correlation.' },
-  { title: 'Cloud optimization', href: '/services/?category=cloud', desc: 'Rightsizing, tag governance, and FinOps routines that cut waste.' },
-  { title: 'Data automation', href: '/services/?category=data', desc: 'Pipeline orchestration, anomaly detection, and self-service analytics.' },
-];
-
 export default function AIAutomationPlaybookPage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white">
@@ -53,20 +46,6 @@ export default function AIAutomationPlaybookPage() {
                   <div className="text-sm font-semibold text-white mb-2">{item.title}</div>
                   <p className="text-slate-400 text-sm">{item.body}</p>
                 </div>
-              ))}
-            </div>
-          </section>
-
-          <section className="mt-16">
-            <h2 className="text-2xl font-bold text-white text-center mb-3">Start with proven patterns</h2>
-            <p className="text-slate-400 text-center mb-8">Choose a domain and we’ll tailor the playbook to your stack and operating model.</p>
-            <div className="grid md:grid-cols-2 gap-4">
-              {highlights.map((item) => (
-                <Link key={item.title} href={item.href} className="group block rounded-2xl border border-slate-800 bg-slate-900/60 p-6 hover:border-purple-500/40 transition-all">
-                  <div className="text-white font-semibold group-hover:text-purple-300 transition-colors mb-2">{item.title}</div>
-                  <p className="text-slate-400 text-sm">{item.desc}</p>
-                  <div className="mt-3 text-sm text-purple-300 font-medium">Explore service →</div>
-                </Link>
               ))}
             </div>
           </section>
