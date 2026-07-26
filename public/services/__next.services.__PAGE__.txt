@@ -1,0 +1,9 @@
+1:"$Sreact.fragment"
+2:I[1304,[],"ClientPageRoot"]
+3:I[4455,["98500","static/chunks/98500-7929f77cc3bf2fc2.js","7557","static/chunks/7557-93a96e686d88dad0.js","31092","static/chunks/31092-d631ee673d8fdb42.js","45402","static/chunks/45402-e2d3d82f5f735380.js","42296","static/chunks/42296-8ab544f03f57b1c5.js","21027","static/chunks/21027-85732d1902755b36.js","36259","static/chunks/36259-96e0993f04c9f0d7.js","71718","static/chunks/71718-cc547cba8f9866ec.js","61964","static/chunks/61964-bac5b52ea0eb485e.js","40777","static/chunks/40777-1b8a3df3adb9d084.js","75517","static/chunks/75517-8361ccd05147e0c1.js","32092","static/chunks/32092-98a471f01acccae0.js","53181","static/chunks/53181-79206d102b8025bc.js","7204","static/chunks/7204-a10b59f7bd8c9b1d.js","53545","static/chunks/53545-3fdcfd2ee096358b.js","73321","static/chunks/73321-6c5205d644abfd1a.js","95763","static/chunks/app/services/page-34d279e036d3f3f9.js"],"default"]
+6:I[484,[],"OutletBoundary"]
+7:"$Sreact.suspense"
+0:{"rsc":["$","$1","c",{"children":[["$","$L2",null,{"Component":"$3","serverProvidedParams":{"searchParams":{},"params":{},"promises":["$@4","$@5"]}}],null,["$","$L6",null,{"children":["$","$7",null,{"name":"Next.MetadataOutlet","children":"$@8"}]}]]}],"isPartial":false,"staleTime":300,"varyParams":null,"buildId":"zion-tech-group-v1"}
+4:{}
+5:"$0:rsc:props:children:0:props:serverProvidedParams:params"
+8:null
