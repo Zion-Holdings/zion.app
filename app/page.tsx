@@ -335,6 +335,12 @@ export default function HomePage() {
               <Link href="/careers" className="px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/60 text-slate-300 text-sm hover:bg-slate-700/80 hover:text-purple-300 hover:border-purple-500/30 transition-all">
                 Case Studies
               </Link>
+              <Link href="/industry-solutions/" className="px-4 py-2 rounded-full bg-purple-500/20 border border-purple-500/40 text-purple-300 text-sm hover:bg-purple-500/30 hover:text-white transition-all font-medium">
+                🏭 Industry Solutions
+              </Link>
+              <Link href="/start-here/" className="px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/60 text-slate-300 text-sm hover:bg-slate-700/80 hover:text-purple-300 hover:border-purple-500/30 transition-all">
+                🧭 Where to Start
+              </Link>
               <Link href="/pricing/" className="px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/60 text-slate-300 text-sm hover:bg-slate-700/80 hover:text-purple-300 hover:border-purple-500/30 transition-all">
                 💰 Pricing
               </Link>
