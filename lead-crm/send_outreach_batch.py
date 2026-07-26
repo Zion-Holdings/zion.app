@@ -475,8 +475,22 @@ def main():
             continue
         tailored = _tailor_message(chat_fn, dict(r))
         html = tailored.get('html') or r.get('html')
-        subj = tailored.get('subject', tailored.get('subject','') or r.get('subject','') or '')
-        body = tailored.get('body', tailored.get('body','') or r.get('body','') or '')
+        subj = tailored.get('subject') or r.get('subject') or 'Parceria Zion Tech Group'
+        body = tailored.get('body') or r.get('body') or ''
+        if not body:
+            company = r.get('company_name') or r.get('name') or 'seu time'
+            body = (
+                f"Olá,\\n\\n"
+                f"Sou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\\n\\n"
+                f"Vi que a {company} atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\\n\\n"
+                f"Gostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\\n"
+                f"1. Avaliação rápida de operações de TI com foco em eficiência\\n"
+                f"2. Projeto piloto em uma área com gargalo conhecido\\n"
+                f"3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\\n\\n"
+                f"Se quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\\n\\n"
+                f"Conheça mais aqui: https://ziontechgroup.com"
+            )
+            tailored['body'] = body
         try:
             mid, tid = send_mail(to, subj, body, html, thread_id=r.get('thread_id'), message_id=r.get('message_id'))
             outputs.append({'to': to, 'success': True, 'message_id': mid, 'thread_id': tid,
