@@ -110,7 +110,7 @@ export default function AiChronicDiseaseTrackerPage() {
             Get Custom Implementation Plan →
           </Link>
           <p className="mt-6 text-slate-500 text-sm">
-            Or contact us directly: <a href="tel:+130****0950" className="text-purple-300">+1 302 464 0950</a>
+            Or contact us directly: <a href="tel:+13024640950" className="text-purple-300">+1 302 464 0950</a>
           </p>
         </div>
       </div>

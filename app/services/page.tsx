@@ -126,7 +126,7 @@ function ServicesContent() {
         <div className="text-center mt-16">
           <Link href="/configurator/" className="btn-primary text-lg">Get Your Custom Proposal →</Link>
           <div className="mt-6 space-y-2">
-            <p className="text-slate-400 text-sm">📞 <a href="tel:+130****0950" className="text-purple-300 hover:underline">+1 302 464 0950</a></p>
+            <p className="text-slate-400 text-sm">📞 <a href="tel:+13024640950" className="text-purple-300 hover:underline">+1 302 464 0950</a></p>
             <p className="text-slate-400 text-sm">✉️ <a href="mailto:kleber@ziontechgroup.com" className="text-purple-300 hover:underline">kleber@ziontechgroup.com</a></p>
             <p className="text-slate-400 text-sm">📍 364 E Main St STE 1008, Middletown, DE 19709</p>
           </div>

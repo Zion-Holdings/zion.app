@@ -345,7 +345,7 @@ export default function AIServiceMatcher() {
                   📧 Email My Custom Proposal
                 </a>
                 <a
-                  href="tel:+130****0950"
+                  href="tel:+13024640950"
                   className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white font-medium rounded-lg transition-colors border border-gray-600"
                 >
                   📞 Call +1 302 464 0950

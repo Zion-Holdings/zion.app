@@ -588,7 +588,7 @@ export default function ClientPortalPage() {
       {/* Footer */}
       <div className="bg-white border-t mt-12 py-6">
         <div className="max-w-7xl mx-auto px-4 text-center text-sm text-slate-500">
-          <p>📞 <a href="tel:+130****0950" className="text-blue-600">+1 302 464 0950</a> · ✉️ <a href="mailto:kleber@ziontechgroup.com" className="text-blue-600">kleber@ziontechgroup.com</a></p>
+          <p>📞 <a href="tel:+13024640950" className="text-blue-600">+1 302 464 0950</a> · ✉️ <a href="mailto:kleber@ziontechgroup.com" className="text-blue-600">kleber@ziontechgroup.com</a></p>
           <p className="mt-1">📍 364 E Main St STE 1008, Middletown, DE 19709</p>
         </div>
       </div>

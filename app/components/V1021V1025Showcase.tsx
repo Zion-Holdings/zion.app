@@ -216,7 +216,7 @@ const V1021V1025Showcase: React.FC = () => {
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 text-white">
             <div className="flex items-center gap-2">
               <span className="text-2xl">📞</span>
-              <a href="tel:+130****0950" className="text-lg hover:underline">+1 302 464 0950</a>
+              <a href="tel:+13024640950" className="text-lg hover:underline">+1 302 464 0950</a>
             </div>
             <div className="flex items-center gap-2">
               <span className="text-2xl">✉️</span>

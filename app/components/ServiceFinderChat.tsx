@@ -15,7 +15,7 @@ export default function ServiceFinderChat() {
         </div>
         <div className="flex flex-wrap justify-center gap-4">
           <a href="mailto:kleber@ziontechgroup.com" className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-300 rounded-lg transition-colors border border-gray-700 text-sm">📧 kleber@ziontechgroup.com</a>
-          <a href="tel:+130****0950" className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-300 rounded-lg transition-colors border border-gray-700 text-sm">📞 +1 302 464 0950</a>
+          <a href="tel:+13024640950" className="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-gray-300 rounded-lg transition-colors border border-gray-700 text-sm">📞 +1 302 464 0950</a>
         </div>
       </div>
     </section>

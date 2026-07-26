@@ -9,6 +9,7 @@ export const PRIMARY_NAV_LINKS: NavigationLink[] = [
   { name: 'Services', href: '/services' },
   { name: 'Solutions', href: '/solutions' },
   { name: 'Industry Solutions', href: '/industries' },
+  { name: 'Trust', href: '/trust' },
   { name: 'AI Agent Dashboard', href: '/agents-monitoring', badge: 'Live' },
   { name: 'Pricing', href: '/pricing' },
   { name: 'Contact', href: '/contact' },
