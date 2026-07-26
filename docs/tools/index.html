@@ -1,62 +1,87 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 <head>
-  <link rel="stylesheet" href="/styles.css"/>
-  <link rel="icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" href="/favicon.ico" />
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="robots" content="index,follow" />
-  <meta name="description" content="Free developer tools and utilities from Zion Tech Group: JSON formatter, JWT decoder, regex tester, SQL formatter, QR code generator, and more." />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+  <title>Free Developer Tools &amp; AI Services Hub | Zion Tech Group</title>
+  <meta name="description" content="Free online developer and AI/IT tools plus managed services from Zion Tech Group: JSON utilities, JWT tools, scanners, checkers, calculators, and custom integrations." />
   <link rel="canonical" href="https://ziontechgroup.com/tools/" />
+  <link rel="stylesheet" href="/styles.css" />
   <style>
-    :root { color-scheme: dark; }
-    body { background: #0b0f1a; color: #e5e7eb; font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-    a { color: #93c5fd; text-decoration: none; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
-    header { border-bottom: 1px solid #1e293b; }
-    nav { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; justify-content: space-between; }
-    .brand { font-weight: 700; letter-spacing: -0.02em; font-size: 18px; background: linear-gradient(90deg,#a78bfa,#ec4899); -webkit-background-clip:text; background-clip:text; color:transparent; }
-    .links a { margin-left: 14px; color: #c4b5fd; font-weight: 500; }
-    .links a:hover { color:#fff; }
-    .hero { padding: 64px 24px; }
-    h1 { font-size: clamp(28px, 4vw, 48px); line-height: 1.1; margin: 0 0 14px; letter-spacing: -0.03em; color:#f8fafc; }
-    p.lead { font-size: 18px; color: #cbd5e1; max-width: 760px; line-height: 1.6; }
-    .section { padding: 24px; }
-    .section-title { font-size: 22px; margin: 0 0 10px; color:#f8fafc; }
-    .section-lead { color: #cbd5e1; max-width: 760px; margin: 0 0 14px; }
-    footer { border-top: 1px solid #1e293b; padding: 24px; color: #94a3b8; font-size: 13px; }
-    .btn { display: inline-block; padding: 12px 16px; border-radius: 10px; background: linear-gradient(90deg,#7c3aed,#db2777); color: #fff; text-decoration: none; font-weight: 600; }
-    .btn.secondary { background: rgba(255,255,255,0.08); color:#fff; border: 1px solid rgba(255,255,255,0.12); }
-    .cta-row { margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap; }
-    ul { color: #cbd5e1; }
-    li { margin: 10px 0; }
+    :root { --bg:#0b1221; --panel:#0f172a; --text:#e5e7eb; --muted:#9ca3af; --accent:#10b981; --accent2:#06b6d4; }
+    *{box-sizing:border-box} html,body{height:100%} body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:linear-gradient(180deg,#0b1221,#0f172a 30%,#0b1221);color:var(--text)}
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1200px;margin:0 auto;padding:24px}
+    header{text-align:center;padding:30px 0 10px}
+    h1{font-size:clamp(26px,5vw,40px);font-weight:800;background:linear-gradient(90deg,#10b981,#06b6d4);-webkit-background-clip:text;background-clip:text;color:transparent;margin:0 0 10px}
+    .lede{color:var(--muted);font-size:18px;max-width:860px;margin:0 auto 26px}
+    .cta-row{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin:18px 0 10px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 16px;font-weight:700;border-radius:16px;border:1px solid rgba(255,255,255,.08);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));box-shadow:0 10px 30px rgba(0,0,0,.25);transition:transform .04s ease,border-color .2s ease}
+    .btn:hover{border-color:rgba(16,185,129,.4);transform:translateY(-1px)}
+    .btn-primary{background-image:linear-gradient(90deg,#059669,#0ea5e9);color:#fff}
+    .btn-secondary{background:rgba(255,255,255,.04)}
+    .hub{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:18px 0}
+    @media(max-width:900px){.hub{grid-template-columns:1fr}}
+    .card{background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:18px}
+    .card h3{margin:0 0 8px;font-size:16px;color:#fff}
+    .card p{margin:0;color:var(--muted);font-size:14px;line-height:1.55}
+    .tools{margin-top:28px}
+    .tools-title{font-size:18px;font-weight:700;color:#fff;margin:0 0 10px}
+    .list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+    @media(max-width:760px){.list{grid-template-columns:1fr}}
+    .item{display:flex;align-items:center;gap:10px;padding:12px 14px;background:var(--panel);border:1px solid rgba(255,255,255,.06);border-radius:14px}
+    .item .ic{font-size:18px}
+    .item .tx{color:#fff;font-weight:600;font-size:14px}
+    .pill{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);color:#a7f3d0;font-weight:600;margin:10px 0 0}
+    footer{text-align:center;padding:24px;color:var(--muted);font-size:13px}
   </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <nav>
-        <div class="brand">Zion Tech Group</div>
-        <div class="links"><a href="/services/">Services</a><a href="/pricing/">Pricing</a><a href="/contact/">Contact</a></div>
-      </nav>
-    </div>
-  </header>
-  <main>
-    <section class="hero">
-      <div class="container">
-        <h1>Free developer tools and utilities</h1><p class="lead">Practical browser-based utilities to format, convert, inspect, and generate—no signup needed.</p><div class="cta-row"><a class="btn" href="/contact/">Request a custom tool</a><a class="btn secondary" href="/services/">Explore services</a></div>
+  <div class="wrap">
+    <header>
+      <h1>Free Developer Tools &amp; AI Services Hub</h1>
+      <p class="lede">Access free developer utilities plus managed AI/IT delivery. No signup required for utilities; contact us for production support.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="tel:+13024640950"><span>📞</span> +1 302 464 0950</a>
+        <a class="btn btn-primary" href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noreferrer"><span>📅</span> Book Consultation</a>
+        <a class="btn btn-secondary" href="/services/"><span>🧩</span> View Services</a>
       </div>
-    </section>
+      <div class="pill">Need custom tools or enterprise AI? https://ziontechgroup.com</div>
+    </header>
+
     <section class="section">
-      <div class="container">
-        <h2 class="section-title">Browse tools</h2><p class="section-lead">Use the tools below or integrate them into your workflow.</p><ul><li><a href="/tools/json-formatter">JSON Formatter</a></li><li><a href="/tools/jwt-decoder">JWT Decoder</a></li><li><a href="/tools/qr-code-generator">QR Code Generator</a></li><li><a href="/tools/regex-tester">Regex Tester</a></li><li><a href="/tools/uuid-generator">UUID/GUID Generator</a></li><li><a href="/tools/word-counter">Word & Character Counter</a></li></ul><p><a href="/tools/">View all tools →</a></p>
+      <h2 class="tools-title">Featured</h2>
+      <div class="hub">
+        <a class="card" href="/services/?category=ai"><h3>🧠 AI Services</h3><p>550+ AI services from automation-first pilots to production-ready integration.</p></a>
+        <a class="card" href="/services/?category=it"><h3>🖥️ IT Services</h3><p>Help desk, endpoint management, identity, and operations coverage.</p></a>
+        <a class="card" href="/services/?category=micro-saas"><h3>🚀 Micro-SaaS</h3><p>Focused products that extend platforms and create recurring revenue.</p></a>
       </div>
     </section>
-  </main>
-  <footer>
-    <div class="container">© <span id="year"></span> Zion Tech Group · <a href="/">ziontechgroup.com</a></div>
-  </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+
+    <section class="tools">
+      <h2 class="tools-title">Popular Utilities</h2>
+      <div class="list">
+        <a class="item" href="/tools/json-formatter"><span class="ic">📋</span><span class="tx">JSON Formatter &amp; Validator</span></a>
+        <a class="item" href="/tools/jwt-decoder"><span class="ic">🔑</span><span class="tx">JWT Decoder</span></a>
+        <a class="item" href="/tools/regex-tester"><span class="ic">🔬</span><span class="tx">Regex Tester</span></a>
+        <a class="item" href="/tools/sql-formatter"><span class="ic">🗃️</span><span class="tx">SQL Formatter</span></a>
+        <a class="item" href="/tools/color-palette-generator"><span class="ic">🎨</span><span class="tx">Color Palette Generator</span></a>
+        <a class="item" href="/tools/qr-code-generator"><span class="ic">📱</span><span class="tx">QR Code Generator</span></a>
+        <a class="item" href="/tools/ai-quick-audit"><span class="ic">🧭</span><span class="tx">AI Quick Audit</span></a>
+        <a class="item" href="/tools/cloud-cost-estimator"><span class="ic">🧮</span><span class="tx">Cloud Cost Estimator</span></a>
+      </div>
+    </section>
+
+    <section class="section" style="margin-top:28px">
+      <h2 class="tools-title">Need More Than Free Tools?</h2>
+      <p class="muted" style="max-width:860px">We offer AI implementation, IT automation, managed support, and custom integrations for teams that want production-ready solutions.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="tel:+13024640950"><span>📞</span> +1 302 464 0950</a>
+        <a class="btn btn-secondary" href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noreferrer"><span>📅</span> Book a Consultation</a>
+        <a class="btn btn-secondary" href="/services/"><span>🧩</span> View Services</a>
+      </div>
+    </section>
+  </div>
+  <footer>© 2026 Zion Tech Group. All rights reserved.</footer>
 </body>
 </html>
