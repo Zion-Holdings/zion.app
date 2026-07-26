@@ -1,4 +1,4 @@
-build_type: static
+build_type: legacy
 source:
-  branch: main
+  branch: gh-pages
   folder: /
