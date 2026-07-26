@@ -5,8 +5,8 @@ permissions:
   issues: write
 
 concurrency:
-  group: pages-watchdog
-  cancel-in-progress: true
+  group: pages-watchdog-${{ github.ref }}
+  cancel-in-progress: false
 
 on:
   schedule:
