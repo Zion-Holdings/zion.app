@@ -1,12 +1,12 @@
-/tools/favicon-generator/  /tools/favicon-generator/index.html  200
-
 # Canonical sitemap
 /sitemap.xml  /sitemap-0.xml  301
 
-/case-studies/    /contact/    301
-/industries/    /services/    301
+# Allow real content instead of redirecting it away
+# REMOVED: /case-studies/ -> /contact/
+# REMOVED: /industries/ -> /services/  (kept /industries/ real)
+# REMOVED: /products/ -> /services/   (keeps /services/ real)
+
 /free-tools-hub/    /tools/    301
-/products/    /services/    301
 /consultation/    /contact/    301
 /site-map/    /    301
 /faq/    /about/    301
@@ -16,12 +16,13 @@
 /docs/    /    301
 /automation/  /services/ai-workflow-automation/  301
 /careers/  /contact/  301
+
+/industries/insurance/ /industries/insurance/index.html 200
+/industries/healthcare/ /industries/healthcare/index.html 200
+/industries/legal/ /industries/legal/index.html 200
 /free-consultation/ /free-consultation/index.html 200
 /free-audit/ /free-audit/index.html 200
 /free-ai-itools/ /free-ai-itools/index.html 200
 /proposal/ /proposal/index.html 200
-/industries/insurance/ /industries/insurance/index.html 200
-/industries/healthcare/ /industries/healthcare/index.html 200
-/industries/legal/ /industries/legal/index.html 200
 /tools/ai-quick-audit/ /tools/ai-quick-audit/index.html 200
 /assets/js/conversion-events.js /assets/js/conversion-events.js 200
