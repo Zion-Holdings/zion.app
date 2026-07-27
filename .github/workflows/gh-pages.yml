@@ -87,21 +87,23 @@ jobs:
           if [ ! -f "$ARTIFACT_DIR/robots.txt" ] && [ -f docs/robots.txt ]; then cp -f docs/robots.txt "$ARTIFACT_DIR/robots.txt"; fi
           if [ ! -f "$ARTIFACT_DIR/sitemap.xml" ] && [ -f docs/sitemap.xml ]; then cp -f docs/sitemap.xml "$ARTIFACT_DIR/sitemap.xml"; fi
           # Promote key fallback pages from docs/ to artifact root so Pages can serve them.
-          for f in \\
-            case-studies/index.html \\
-            industries/index.html \\
-            testimonials/index.html \\
-            automation/index.html \\
-            services/ai-workflow-automation/index.html \\
-            services/ai-email-intelligence/index.html \\
-            services/ai-smart-global-campaign/index.html; do
+          for f in \
+            case-studies/index.html \
+            industries/index.html \
+            testimonials/index.html \
+            automation/index.html \
+            services/ai-workflow-automation/index.html \
+            services/ai-email-intelligence/index.html \
+            services/ai-smart-global-campaign/index.html \
+            why-us/index.html \
+            careers/index.html; do
             mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
             if [ ! -f "$ARTIFACT_DIR/$f" ] && [ -f "docs/$f" ]; then
               cp -a "docs/$f" "$ARTIFACT_DIR/$f"
             fi
           done
           # Guarantee every key route exists in the exported artifact, even if Next didn't emit it.
-          for f in case-studies/index.html industries/index.html testimonials/index.html; do
+          for f in case-studies/index.html industries/index.html testimonials/index.html why-us/index.html careers/index.html; do
             mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
             if [ ! -f "$ARTIFACT_DIR/$f" ] && [ -f "docs/$f" ]; then
               cp -a "docs/$f" "$ARTIFACT_DIR/$f"
@@ -135,7 +137,7 @@ jobs:
           echo "Deployed URL: ${{ steps.deployment.outputs.page_url }}"
           sleep 20
           curl -sf "${{ steps.deployment.outputs.page_url }}/" > /dev/null && echo "✓ Homepage" || echo "✗ Homepage"
-          for p in /services/ /solutions/ /pricing/ /contact/ /tools/ /about /blog /careers /partners /portal /ai-services-index /free-ai-it-tools /automation/ /services/ai-customer-support-pro/; do
+          for p in /services/ /solutions/ /pricing/ /contact/ /tools/ /about /blog /careers /why-us /partners /portal /ai-services-index /free-ai-it-tools /automation/ /services/ai-customer-support-pro/; do
             code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "${{ steps.deployment.outputs.page_url }}${p}" || true)
             echo "$p -> $code"
           done

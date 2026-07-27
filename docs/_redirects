@@ -7,3 +7,6 @@
 /configurator/    /contact/    301
 /dashboard/    /contact/    301
 /docs/    /    301
+/automation/ /services/ai-workflow-automation/ 301
+/why-us /why-us/index.html 200
+/careers/ /careers/index.html 200
