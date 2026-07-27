@@ -99,3 +99,7 @@ const nextConfig = {
 };
 
 export default nextConfig;
+      { source: '/success-stories', destination: '/testimonials', permanent: true },
+      { source: '/success-stories/', destination: '/testimonials/', permanent: true },
+      { source: '/readiness', destination: '/ai-readiness-assessment', permanent: true },
+      { source: '/readiness/', destination: '/ai-readiness-assessment/', permanent: true },
