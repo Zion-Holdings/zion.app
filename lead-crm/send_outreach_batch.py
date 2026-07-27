@@ -171,7 +171,7 @@ def send_mail(to_addr, subject, body, html=None, thread_id=None, message_id=None
             'References: %s' % message_id,
             'In-Reply-To: %s' % message_id,
         ])
-    raw_email_lines.extend(['', html or body])
+    raw_email_lines.extend(['', html or body or ''])
     raw_email = '\r\n'.join(raw_email_lines)
     encoded = base64.urlsafe_b64encode(raw_email.encode('utf-8')).decode('utf-8')
     payload = json.dumps({'raw': encoded, 'threadId': thread_id} if thread_id else {'raw': encoded}).encode('utf-8')
@@ -438,6 +438,7 @@ def main():
             excluded = {x['email'].lower() for x in json.loads(exclusion_path.read_text(encoding='utf-8')).get('addresses', []) if x.get('email')}
         except Exception:
             excluded = set()
+    analysis_summary = {}
     if not send_allowed:
         # Run analysis and improvement pass even when sending is disabled
         analysis = _analyze_and_improve(rows, excluded)
@@ -464,6 +465,26 @@ def main():
         _update_miner_health(analysis_summary, 'analyzed_no_send')
         print(json.dumps({'generatedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'send_count': 0, 'skipped_templates': skipped_templates, 'results': [], 'note': 'SEND_DISABLED: set ZTG_SEND_ALLOWED=1 to enable outbound sends', 'analysisSummary': analysis_summary}, ensure_ascii=False))
         return
+    else:
+        # Even when sending is allowed, improve records to fill missing fields
+        analysis = _analyze_and_improve(rows, excluded)
+        improved_rows = analysis['improved']
+        analysis_summary = analysis['summary']
+        try:
+            canonical = json.loads(Path(batch_path).read_text(encoding='utf-8'))
+            ready_list = canonical.get('ready') or canonical.get('recipients') or canonical.get('batch') or []
+            improved_by_to = {r.get('to'): r for r in improved_rows if r.get('to')}
+            for item in ready_list:
+                k = item.get('to') or item.get('recipient') or item.get('email')
+                if k and k.lower() in improved_by_to:
+                    item.update(improved_by_to.pop(k.lower()))
+            canonical['ready'] = ready_list
+            canonical['improvedAt'] = datetime.datetime.now(datetime.timezone.utc).isoformat()
+            canonical['analysisSummary'] = analysis_summary
+            Path(batch_path).write_text(json.dumps(canonical, ensure_ascii=False, indent=2), encoding='utf-8')
+            rows = ready_list
+        except Exception:
+            pass
     for r in rows:
         to = r.get('email') or r.get('recipient') or r.get('to')
         if not to:
