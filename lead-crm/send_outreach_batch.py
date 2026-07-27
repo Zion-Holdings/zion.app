@@ -474,9 +474,9 @@ def main():
             outputs.append({'to': to, 'success': False, 'reason': 'excluded', 'error': 'excluded-by-list'})
             continue
         tailored = _tailor_message(chat_fn, dict(r))
-        html = tailored.get('html') or r.get('html')
-        subj = tailored.get('subject', tailored.get('subject','') or r.get('subject','') or '')
-        body = tailored.get('body', tailored.get('body','') or r.get('body','') or '')
+        html = tailored.get('html') or r.get('html') or ''
+        subj = tailored.get('subject') or r.get('subject') or ''
+        body = tailored.get('body') or r.get('body') or ''
         try:
             mid, tid = send_mail(to, subj, body, html, thread_id=r.get('thread_id'), message_id=r.get('message_id'))
             outputs.append({'to': to, 'success': True, 'message_id': mid, 'thread_id': tid,
