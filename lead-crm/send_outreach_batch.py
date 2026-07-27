@@ -212,6 +212,34 @@ def _tailor_message(chat_fn, r):
     body = r.get('body', '') or ''
     thread_body = r.get('thread_body') or body
     if not thread_body:
+        company = r.get('company_name') or r.get('name') or ''
+        if not r.get('body'):
+            if company:
+                r['body'] = (
+                    "Olá,\n\n"
+                    f"Sou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\n"
+                    f"Vi que a {company} atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\n"
+                    "Gostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n"
+                    "1. Avaliação rápida de operações de TI com foco em eficiência\n"
+                    "2. Projeto piloto em uma área com gargalo conhecido\n"
+                    "3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\n"
+                    "Se quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\n"
+                    "Conheça mais aqui: https://ziontechgroup.com"
+                )
+            else:
+                r['body'] = (
+                    "Olá,\n\n"
+                    "Sou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\n"
+                    "Gostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n"
+                    "1. Avaliação rápida de operações de TI com foco em eficiência\n"
+                    "2. Projeto piloto em uma área com gargalo conhecido\n"
+                    "3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\n"
+                    "Se quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\n"
+                    "Conheça mais aqui: https://ziontechgroup.com"
+                )
+        if not r.get('subject'):
+            suffix = f" — {company}" if company else ""
+            r['subject'] = f"Parceria Zion Tech Group{suffix}"
         return r
     company = r.get('company_name') or r.get('name') or ''
     website = r.get('website') or 'https://ziontechgroup.com'
@@ -280,6 +308,35 @@ def _tailor_message(chat_fn, r):
     r['llm_provider'] = r.get('llm_provider') or 'template'
     r['llm_model'] = r.get('llm_model') or 'deterministic-template-v1'
     r['tailor_error'] = last_err
+    if not r.get('body'):
+        company = r.get('company_name') or r.get('name') or ''
+        if company:
+            r['body'] = (
+                "Olá,\n\n"
+                f"Sou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\n"
+                f"Vi que a {company} atua em um espaço onde nossos serviços de operações e eficiência de TI podem gerar valor rápido.\n\n"
+                "Gostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n"
+                "1. Avaliação rápida de operações de TI com foco em eficiência\n"
+                "2. Projeto piloto em uma área com gargalo conhecido\n"
+                "3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\n"
+                "Se quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\n"
+                "Conheça mais aqui: https://ziontechgroup.com"
+            )
+        else:
+            r['body'] = (
+                "Olá,\n\n"
+                "Sou Kleber Garcia Alcatrão, CEO da Zion Tech Group.\n\n"
+                "Gostaria de conversar sobre parcerias ou pilotos concretos. Se fizer sentido, seguem algumas ideias:\n"
+                "1. Avaliação rápida de operações de TI com foco em eficiência\n"
+                "2. Projeto piloto em uma área com gargalo conhecido\n"
+                "3. Acesso a ferramentas gratuitas que já ajudamos a desenvolver\n\n"
+                "Se quiser falar agora, pode agendar diretamente aqui: https://calendly.com/kleber-ziontechgroup\n\n"
+                "Conheça mais aqui: https://ziontechgroup.com"
+            )
+    if not r.get('subject'):
+        company = r.get('company_name') or r.get('name') or ''
+        suffix = f" — {company}" if company else ""
+        r['subject'] = f"Parceria Zion Tech Group{suffix}"
     return r
 
 
