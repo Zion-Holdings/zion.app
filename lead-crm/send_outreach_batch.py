@@ -171,7 +171,7 @@ def send_mail(to_addr, subject, body, html=None, thread_id=None, message_id=None
             'References: %s' % message_id,
             'In-Reply-To: %s' % message_id,
         ])
-    raw_email_lines.extend(['', html or body])
+    raw_email_lines.extend(['', html or body or ''])
     raw_email = '\r\n'.join(raw_email_lines)
     encoded = base64.urlsafe_b64encode(raw_email.encode('utf-8')).decode('utf-8')
     payload = json.dumps({'raw': encoded, 'threadId': thread_id} if thread_id else {'raw': encoded}).encode('utf-8')
