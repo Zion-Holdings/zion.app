@@ -53,3 +53,4 @@
 {"ts": "2026-07-27T00:27:06.968956+00:00", "event": "send", "to": "mike.a@zohocreator.com", "subject": "Parceria — Zohocreator — Zion Tech Group", "message_id": "19fa0f7e505ff422", "thread_id": "19fa0f7e505ff422", "provider": "gmail_api", "status": "sent"}
 {"ts": "2026-07-27T00:27:14.429224+00:00", "event": "send", "to": "replies@oracle-mail.com", "subject": "Parceria — Oracle-Mail — Zion Tech Group", "message_id": "19fa0f8000979919", "thread_id": "19fa0f8000979919", "provider": "gmail_api", "status": "sent"}
 {"ts": "2026-07-27T00:27:58.273420+00:00", "event": "send", "to": "news@caspio.com", "subject": "Parceria — Caspio — Zion Tech Group", "message_id": "19fa0f8ad2bedcce", "thread_id": "19fa0f8ad2bedcce", "provider": "gmail_api", "status": "sent"}
+{"ts": "2026-07-27T00:37:50.246446+00:00", "event": "send", "to": "test@example.com", "subject": "Test", "message_id": "19fa101b51d65d23", "thread_id": "19fa101b51d65d23", "provider": "gmail_api", "status": "sent"}
