@@ -103,8 +103,15 @@ jobs:
             ai-roi-calculator/index.html \\
             implementation-roadmap/index.html \\
             start-here/index.html \\
-            status-page/index.html \\
-            roadmap/index.html; do
+            status-page/index.html \
+            roadmap/index.html \
+            why-us/index.html \
+            products/index.html \
+            tools/ai-support-outsourcing-roi/index.html \
+            services/ai-it-staff-augmentation/index.html \
+            partners/reseller/index.html \
+            industries/financial-services/index.html \
+            case-studies/defense-ai-logistics/index.html; do
             mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
             if [ ! -f "$ARTIFACT_DIR/$f" ] && [ -f "docs/$f" ]; then
               cp -a "docs/$f" "$ARTIFACT_DIR/$f"
