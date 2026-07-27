@@ -103,8 +103,10 @@ jobs:
             ai-roi-calculator/index.html \\
             implementation-roadmap/index.html \\
             start-here/index.html \\
-            status-page/index.html \\
-            roadmap/index.html; do
+            status-page/index.html \
+            roadmap/index.html \
+            why-us/index.html \
+            careers/index.html; do
             mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
             if [ ! -f "$ARTIFACT_DIR/$f" ] && [ -f "docs/$f" ]; then
               cp -a "docs/$f" "$ARTIFACT_DIR/$f"
@@ -145,7 +147,7 @@ jobs:
           echo "Deployed URL: ${{ steps.deployment.outputs.page_url }}"
           sleep 20
           curl -sf "${{ steps.deployment.outputs.page_url }}/" > /dev/null && echo "✓ Homepage" || echo "✗ Homepage"
-          for p in /services/ /solutions/ /pricing/ /contact/ /tools/ /about /blog /careers /partners /portal /ai-services-index /free-ai-it-tools /automation/ /services/ai-customer-support-pro/; do
+          for p in /services/ /solutions/ /pricing/ /contact/ /tools/ /about /blog /careers /why-us /partners /portal /ai-services-index /free-ai-it-tools /automation/ /services/ai-customer-support-pro/; do
             code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "${{ steps.deployment.outputs.page_url }}${p}" || true)
             echo "$p -> $code"
           done
