@@ -54,13 +54,12 @@
     "@storybook/react-vite": "^10.3.6",
     "@storybook/test-runner": "^0.24.3",
     "@storybook/testing-library": "^0.2.2",
-    "@tailwindcss/postcss": "^4.3.2",
     "@tailwindcss/typography": "^0.5.20",
     "@types/react": "^19.2.15",
     "@types/react-dom": "^19.2.3",
     "@typescript-eslint/eslint-plugin": "^8.64.0",
     "@typescript-eslint/parser": "^8.64.0",
-    "autoprefixer": "^10.5.0",
+    "autoprefixer": "^10.5.4",
     "eslint": "^10.3.0",
     "framer-motion": "^12.38.0",
     "globals": "^17.6.0",
@@ -73,18 +72,10 @@
     "playwright": "^1.61.1",
     "pngjs": "^7.0.0",
     "puppeteer": "^25.3.0",
-    "tailwindcss": "^4.3.0",
+    "tailwindcss": "^3.4.17",
     "typescript": "7.0.2",
     "web-vitals": "^5.2.0",
     "yargs": "^18.0.0"
   },
-  "engines": {
-    "node": "20"
-  },
-  "overrides": {
-    "js-yaml": "^3.15.0",
-    "esbuild": "^0.28.1",
-    "uuid": "^11.1.1",
-    "postcss": "^8.5.10"
-  }
+  "engines": {"node": "20"}
 }
