@@ -1,13 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://ziontechgroup.com/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://ziontechgroup.com/services/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://ziontechgroup.com/solutions/</loc><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://ziontechgroup.com/pricing/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://ziontechgroup.com/contact/</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://ziontechgroup.com/tools/</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://ziontechgroup.com/about/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://ziontechgroup.com/blog/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://ziontechgroup.com/careers/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://ziontechgroup.com/partners/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://ziontechgroup.com/</loc><lastmod>2026-07-27</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://ziontechgroup.com/services/</loc><lastmod>2026-07-27</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ziontechgroup.com/solutions/</loc><lastmod>2026-07-27</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://ziontechgroup.com/pricing/</loc><lastmod>2026-07-27</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ziontechgroup.com/contact/</loc><lastmod>2026-07-27</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://ziontechgroup.com/tools/</loc><lastmod>2026-07-27</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/free-consultation/</loc><lastmod>2026-07-27</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://ziontechgroup.com/free-ai-itools/</loc><lastmod>2026-07-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://ziontechgroup.com/free-tools-hub/</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://ziontechgroup.com/about/</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://ziontechgroup.com/blog/</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://ziontechgroup.com/careers/</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://ziontechgroup.com/partners/</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://ziontechgroup.com/case-studies/</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://ziontechgroup.com/status-page/</loc><lastmod>2026-07-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://ziontechgroup.com/public-roadmap/</loc><lastmod>2026-07-27</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://ziontechgroup.com/changelogs/</loc><lastmod>2026-07-27</lastmod><changefreq>weekly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://ziontechgroup.com/automation/</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://ziontechgroup.com/industries/</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://ziontechgroup.com/testimonials/</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://ziontechgroup.com/faq/</loc><lastmod>2026-07-27</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
 </urlset>
