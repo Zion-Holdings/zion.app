@@ -1,109 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Financial Services AI Solutions | Zion Tech Group</title>
-  <meta name="robots" content="index,follow" />
-  <meta name="description" content="AI solutions for financial services include fraud detection, risk analytics, process automation, and regulatory compliance." />
-  <meta property="og:title" content="Financial Services AI Solutions | Zion Tech Group" />
-  <meta property="og:description" content="Fraud detection, risk analytics, process automation, and compliance for financial services." />
-  <meta property="og:url" content="https://ziontechgroup.com/industries/financial-services/" />
-  <meta property="og:type" content="website" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Financial Services &amp; FinTech | Zion Tech Group</title>
+  <meta name="description" content="AI and IT solutions for financial services and fintech: fraud detection, regulatory compliance, digital banking, and analytics." />
   <link rel="canonical" href="https://ziontechgroup.com/industries/financial-services/" />
-  <link rel="stylesheet" href="/styles.css"/>
+  <meta name="robots" content="index, follow" />
   <style>
-    :root { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
-    * { box-sizing: border-box; }
-    body { margin: 0; padding: 0; color: #e5e7eb; background: #0b0f1a; }
-    a { color: inherit; text-decoration: none; }
-    .max-w-6xl { max-width: 1152px; margin: 0 auto; }
-    .px-6 { padding-left: 24px; padding-right: 24px; }
-    .py-24 { padding-top: 24px; padding-bottom: 24px; }
-    .text-center { text-align: center; }
-    .text-4xl { font-size: clamp(28px, 4vw, 48px); line-height: 1.1; letter-spacing: -0.03em; }
-    .text-3xl { font-size: clamp(24px, 3.5vw, 36px); line-height: 1.15; letter-spacing: -0.02em; }
-    .text-xl { font-size: clamp(18px, 2.2vw, 22px); }
-    .text-lg { font-size: 18px; }
-    .text-sm { font-size: 14px; }
-    .font-semibold { font-weight: 600; }
-    .font-bold { font-weight: 700; }
-    .leading-relaxed { line-height: 1.6; }
-    .mb-3 { margin-bottom: 12px; }
-    .mb-4 { margin-bottom: 16px; }
-    .mb-6 { margin-bottom: 24px; }
-    .mb-8 { margin-bottom: 32px; }
-    .mt-24 { margin-top: 96px; }
-    .flex { display: flex; }
-    .flex-wrap { flex-wrap: wrap; }
-    .items-center { align-items: center; }
-    .gap-3 { gap: 12px; }
-    .grid { display: grid; }
-    .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .rounded-xl { border-radius: 12px; }
-    .rounded-2xl { border-radius: 16px; }
-    .border { border: 1px solid #1e293b; }
-    .border-slate-800 { border-color: #1e293b; }
-    .border-slate-700\/50 { border-color: rgba(30,41,59,0.5); }
-    .bg-slate-950 { background-color: #020617; }
-    .bg-slate-900\/60 { background-color: rgba(15,23,42,0.6); }
-    .bg-gradient-to-r { background-image: linear-gradient(to right, #9333ea, #db2777); }
-    .text-white { color: #f8fafc; }
-    .text-slate-300 { color: #cbd5e1; }
-    .text-slate-400 { color: #94a3b8; }
-    .text-emerald-300 { color: #6ee7b7; }
-    .text-purple-300 { color: #d8b4fe; }
-    .hover\:border-white\/40:hover { border-color: rgba(255,255,255,0.4); }
-    .transition-colors { transition: color 0.2s, background-color 0.2s, border-color 0.2s; }
-    @media (min-width: 768px) { .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    :root{color-scheme:dark light}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial,Apple Color Emoji,Segoe UI Emoji;background:#0b1221;color:#e2e8f0;line-height:1.6}
+    a{color:#c4b5fd;text-decoration:underline;text-underline-offset:2px}
+    .wrap{max-width:1100px;margin:0 auto;padding:28px 20px}
+    header{border-bottom:1px solid #1f2937}
+    .brand{font-weight:800;letter-spacing:-.02em;background:linear-gradient(135deg,#a78bfa,#ec4899);-webkit-background-clip:text;background-clip:text;color:transparent}
+    nav{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+    nav a{color:#cbd5e1;text-decoration:none;font-weight:600;font-size:14px}
+    nav a:hover{color:#ffffff}
+    .cta{display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;background:linear-gradient(135deg,#7c3aed,#db2777);color:#fff;font-weight:700;text-decoration:none}
+    .cta.secondary{background:#0f172a;color:#e2e8f0;border:1px solid #334155}
+    h1{font-size:42px;line-height:1.15;margin:0 0 12px;font-weight:800}
+    .sub{color:#94a3b8;font-size:18px;max-width:780px}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px;margin-top:28px}
+    .card{grid-column:span 12;background:#0f172a;border:1px solid #1f2937;border-radius:18px;padding:20px}
+    @media (min-width:760px){.card.span-6{grid-column:span 6}.card.span-4{grid-column:span 4}}
+    .footer{border-top:1px solid #1f2937;margin-top:40px;padding-top:18px;color:#94a3b8;font-size:14px}
+    ul.check{padding-left:18px;margin:10px 0 0}
+    li{margin:8px 0}
   </style>
 </head>
 <body>
-  <main class="max-w-6xl px-6 py-24">
-    <header class="text-center" style="max-width: 800px; margin: 0 auto;">
-      <h1 class="text-4xl font-bold tracking-tight mb-4">
-        <span style="background: linear-gradient(to right, #c084fc, #f472b6); -webkit-background-clip: text; background-clip: text; color: transparent;">Financial Services AI Solutions</span>
-      </h1>
-      <p class="text-slate-300 text-xl leading-relaxed mb-8">AI solutions for financial services include fraud detection, risk analytics, process automation, and regulatory compliance.</p>
-      <div class="flex flex-wrap justify-center gap-3">
-        <a href="/contact/" class="rounded-xl bg-gradient-to-r text-white px-6 py-3 font-semibold">Request Demo</a>
-        <a href="/services/?category=security" class="rounded-xl border border-slate-700 px-6 py-3 font-semibold text-slate-100 hover:border-white/40 transition-colors">Security Services</a>
-        <a href="/case-studies/" class="rounded-xl border border-slate-700 px-6 py-3 font-semibold text-slate-100 hover:border-white/40 transition-colors">Case Studies</a>
-      </div>
-    </header>
+  <header>
+    <div class="wrap">
+      <nav aria-label="Primary">
+        <a class="brand" href="/">Zion Tech Group</a>
+        <a href="/services/">Services</a>
+        <a href="/solutions/">Solutions</a>
+        <a href="/case-studies/">Case Studies</a>
+        <a href="/industries/">Industries</a>
+        <a href="/tools/">Free Tools</a>
+        <a href="/pricing/">Pricing</a>
+        <a class="cta" href="/contact/">Get Proposal</a>
+      </nav>
+    </div>
+  </header>
 
-    <section class="mt-24 grid md:grid-cols-2 gap-5">
-      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-        <h2 class="text-white font-semibold mb-2">Fraud detection</h2>
-        <p class="text-slate-300 text-sm">Real-time anomaly detection across transactions, claims, and access patterns.</p>
+  <main>
+    <section class="wrap">
+      <h1>AI &amp; IT for Financial Services &amp; FinTech</h1>
+      <p class="sub">Secure, compliant, and scalable solutions for digital banking, fraud prevention, risk analytics, and operational automation.</p>
+
+      <div class="grid">
+        <div class="card">
+          <div style="font-weight:700;color:#e2e8f0;margin-bottom:6px">Fraud &amp; risk intelligence</div>
+          <p style="color:#cbd5e1;margin:0">Real-time fraud detection, anomaly scoring, and risk dashboards with clear audit trails.</p>
+          <ul class="check">
+            <li>Transaction anomaly and pattern detection</li>
+            <li>Identity verification and document checks</li>
+            <li>Investigation-ready reporting</li>
+          </ul>
+        </div>
+
+        <div class="card span-6">
+          <div style="font-weight:700;color:#e2e8f0;margin-bottom:6px">Compliance &amp; governance</div>
+          <p style="color:#cbd5e1;margin:0">Controls, evidence collection, and reporting that map to regulatory expectations.</p>
+          <ul class="check">
+            <li>Policy and control workflow automation</li>
+            <li>Audit evidence and log retention</li>
+            <li>Management review dashboards</li>
+          </ul>
+        </div>
+
+        <div class="card span-6">
+          <div style="font-weight:700;color:#e2e8f0;margin-bottom:6px">Digital banking &amp; onboarding</div>
+          <p style="color:#cbd5e1;margin:0">Modern account onboarding, customer authentication, and self-service flows.</p>
+          <ul class="check">
+            <li>KYC/AML workflow support</li>
+            <li>Customer segmentation and retention</li>
+            <li>Omnichannel support automation</li>
+          </ul>
+        </div>
+
+        <div class="card span-6">
+          <div style="font-weight:700;color:#e2e8f0;margin-bottom:6px">Data &amp; analytics platforms</div>
+          <p style="color:#cbd5e1;margin:0">Secure data pipelines, modeling environments, and governance for financial data.</p>
+          <ul class="check">
+            <li>Market and customer analytics</li>
+            <li>Model monitoring and drift alerts</li>
+            <li>Secure lineage and access controls</li>
+          </ul>
+        </div>
+
+        <div class="card span-6">
+          <div style="font-weight:700;color:#e2e8f0;margin-bottom:6px">Cloud &amp; infrastructure</div>
+          <p style="color:#cbd5e1;margin:0">Resilient cloud architecture, cost visibility, and incident response for financial workloads.</p>
+          <ul class="check">
+            <li>Cloud cost optimization</li>
+            <li>Incident response and on-call automation</li>
+            <li>Resilience testing and SLO management</li>
+          </ul>
+        </div>
       </div>
-      <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-6">
-        <h2 class="text-white font-semibold mb-2">Risk analytics</h2>
-        <p class="text-slate-300 text-sm">Portfolio, credit, and operational risk models with explainable outputs.</p>
+
+      <div style="margin-top:28px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+        <a class="cta" href="/contact/">Request a proposal</a>
+        <a class="cta secondary" href="/services/?category=ai">Explore AI services</a>
+        <a class="cta secondary" href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noreferrer">Book a consultation</a>
       </div>
     </section>
-
-    <section class="mt-24 text-center">
-      <h2 class="text-3xl font-bold text-white mb-4">Modernize financial operations</h2>
-      <p class="text-slate-300 mb-8 max-w-2xl mx-auto">We deliver production-ready AI systems with compliance and governance built in.</p>
-      <div class="flex flex-wrap justify-center gap-3">
-        <a href="/contact/" class="rounded-xl bg-gradient-to-r text-white px-6 py-3 font-semibold">Contact Us</a>
-        <a href="/pricing/" class="rounded-xl border border-slate-700 px-6 py-3 font-semibold text-slate-100 hover:border-white/40 transition-colors">Pricing</a>
-      </div>
-    </section>
-
-    <footer class="mt-28 border-t border-slate-800 pt-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between text-sm text-slate-400">
-      <div>
-        <a class="font-semibold text-white" href="/">Zion Tech Group</a>
-        <span class="ml-2 text-slate-500">AI &amp; IT services for modern teams</span>
-      </div>
-      <div class="flex flex-wrap gap-4">
-        <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">Book a consultation</a>
-        <a href="/about/" class="hover:text-white transition-colors">About</a>
-        <a href="/contact/" class="hover:text-white transition-colors">Contact</a>
-        <a href="/services/" class="hover:text-white transition-colors">Services</a>
-      </div>
-    </footer>
   </main>
+
+  <footer class="wrap footer">
+    <div>© <span id="year"></span> Zion Tech Group. All rights reserved.</div>
+    <div style="margin-top:8px">
+      <a href="/contact/">Contact</a> · <a href="mailto:kleber@ziontechgroup.com">Email</a> · <a href="tel:+13024640950">Call</a> · <a href="https://meet.google.com/ouu-khao-kuy">Meet</a>
+    </div>
+    <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+  </footer>
 </body>
 </html>
