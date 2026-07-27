@@ -83,7 +83,10 @@ jobs:
           if [ -d public ]; then
             cp -a public/. "$ARTIFACT_DIR"/
           fi
-          # Promote key fallback pages after all overlay copies so they always win in the artifact.
+          # Ensure SEO files exist whichever path produced them.
+          if [ ! -f "$ARTIFACT_DIR/robots.txt" ] && [ -f docs/robots.txt ]; then cp -f docs/robots.txt "$ARTIFACT_DIR/robots.txt"; fi
+          if [ ! -f "$ARTIFACT_DIR/sitemap.xml" ] && [ -f docs/sitemap.xml ]; then cp -f docs/sitemap.xml "$ARTIFACT_DIR/sitemap.xml"; fi
+          # Promote key fallback pages from docs/ to artifact root so Pages can serve them.
           for f in \
             case-studies/index.html \
             industries/index.html \
@@ -92,15 +95,24 @@ jobs:
             services/ai-workflow-automation/index.html \
             services/ai-email-intelligence/index.html \
             services/ai-smart-global-campaign/index.html \
+            ai-agency-growth-engine/index.html \
+            autonomous-ai-implementation-services/index.html \
+            ai-partnership-program/index.html \
+            ai-revenue-accelerator-program/index.html \
+            ai-ready-infrastructure/index.html \
+            ai-roi-calculator/index.html \
+            implementation-roadmap/index.html \
+            start-here/index.html \
+            status-page/index.html \
+            roadmap/index.html \
             why-us/index.html \
-            products/index.html \
-            tools/ai-support-outsourcing-roi/index.html \
-            services/ai-it-staff-augmentation/index.html \
-            partners/reseller/index.html \
-            industries/financial-services/index.html \
-            case-studies/defense-ai-logistics/index.html; do
-            if [ -f "docs/$f" ]; then
-              mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
+            financial-services/index.html \
+            reseller/index.html \
+            defense-logistics/index.html \
+            ROI/index.html \
+            staff-augmentation/index.html; do
+            mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
+            if [ ! -f "$ARTIFACT_DIR/$f" ] && [ -f "docs/$f" ]; then
               cp -a "docs/$f" "$ARTIFACT_DIR/$f"
             fi
           done
@@ -139,7 +151,7 @@ jobs:
           echo "Deployed URL: ${{ steps.deployment.outputs.page_url }}"
           sleep 20
           curl -sf "${{ steps.deployment.outputs.page_url }}/" > /dev/null && echo "✓ Homepage" || echo "✗ Homepage"
-          for p in /services/ /solutions/ /pricing/ /contact/ /tools/ /about /blog /careers /partners /portal /ai-services-index /free-ai-it-tools /automation/ /services/ai-customer-support-pro/; do
+          for p in /services/ /solutions/ /pricing/ /contact/ /tools/ /about /blog /careers /partners /portal /ai-services-index /free-ai-it-tools /automation/ /services/ai-customer-support-pro/ /why-us/ /financial-services/ /reseller/ /defense-logistics/ /ROI/ /staff-augmentation/ /AI-Agency-Growth-Engine/ /Autonomous-AI-Implementation-Services/ /AI-Partnership-Program/ /AI-Revenue-Accelerator-Program/ /AI-Ready-Infrastructure/ /ai-roi-calculator/ /implementation-roadmap/ /start-here/ /status-page/ /roadmap/; do
             code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "${{ steps.deployment.outputs.page_url }}${p}" || true)
             echo "$p -> $code"
           done
