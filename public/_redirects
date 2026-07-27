@@ -21,6 +21,9 @@
 /industries/healthcare/ /industries/healthcare/index.html 200
 /industries/legal/ /industries/legal/index.html 200
 /tools/ai-quick-audit/ /tools/ai-quick-audit/index.html 200
+<<<<<<< HEAD
 /tools/phishing-analyzer/ /tools/phishing-analyzer/index.html 200
 /industries/financial-services /industries/financial-services/index.html 301
+=======
+>>>>>>> 15fb2f2776a36ead245ae7033ee220d58d88e47d
 /assets/js/conversion-events.js /assets/js/conversion-events.js 200
