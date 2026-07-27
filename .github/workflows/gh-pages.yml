@@ -7,6 +7,8 @@ permissions:
   contents: read
   pages: write
   id-token: write
+
+jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 60
@@ -83,14 +85,34 @@ permissions:
           if [ ! -f "$ARTIFACT_DIR/robots.txt" ] && [ -f docs/robots.txt ]; then cp -f docs/robots.txt "$ARTIFACT_DIR/robots.txt"; fi
           if [ ! -f "$ARTIFACT_DIR/sitemap.xml" ] && [ -f docs/sitemap.xml ]; then cp -f docs/sitemap.xml "$ARTIFACT_DIR/sitemap.xml"; fi
           # Promote key fallback pages from docs/ to artifact root so Pages can serve them.
-          for f in \\
-            case-studies/index.html \\
-            industries/index.html \\
-            testimonials/index.html \\
-            automation/index.html \\
-            services/ai-workflow-automation/index.html \\
-            services/ai-email-intelligence/index.html \\
+          for f in \
+            case-studies/index.html \
+            industries/index.html \
+            testimonials/index.html \
+            automation/index.html \
+            services/ai-workflow-automation/index.html \
+            services/ai-email-intelligence/index.html \
             services/ai-smart-global-campaign/index.html; do
+            mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
+            if [ ! -f "$ARTIFACT_DIR/$f" ] && [ -f "docs/$f" ]; then
+              cp -a "docs/$f" "$ARTIFACT_DIR/$f"
+            fi
+          done
+          # Promote new docs static pages into Pages artifact
+          for f in \
+            start-here/index.html \
+            free-consultation/index.html \
+            how-it-works/index.html \
+            demo/index.html \
+            why-us/index.html \
+            cybersecurity/index.html \
+            machine-learning/index.html \
+            managed-it/index.html \
+            partnerships/index.html \
+            pricing-plans/index.html \
+            whitepaper/index.html \
+            industries/financial-services/index.html \
+            industries/retail-ecommerce/index.html; do
             mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
             if [ ! -f "$ARTIFACT_DIR/$f" ] && [ -f "docs/$f" ]; then
               cp -a "docs/$f" "$ARTIFACT_DIR/$f"
@@ -131,7 +153,7 @@ permissions:
           echo "Deployed URL: ${{ steps.deployment.outputs.page_url }}"
           sleep 20
           curl -sf "${{ steps.deployment.outputs.page_url }}/" > /dev/null && echo "✓ Homepage" || echo "✗ Homepage"
-          for p in /services/ /solutions/ /pricing/ /contact/ /tools/ /about /blog /careers /partners /portal /ai-services-index /free-ai-it-tools /automation/ /services/ai-customer-support-pro/; do
+          for p in /services/ /solutions/ /pricing/ /contact/ /tools/ /about /blog /careers /partners /portal /ai-services-index /free-ai-it-tools /automation/ /services/ai-customer-support-pro/ /start-here/ /free-consultation/ /how-it-works/ /demo/ /why-us/ /cybersecurity/ /machine-learning/ /managed-it/ /partnerships/ /pricing-plans/ /whitepaper/ /industries/financial-services/ /industries/retail-ecommerce/; do
             code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 20 "${{ steps.deployment.outputs.page_url }}${p}" || true)
             echo "$p -> $code"
           done
