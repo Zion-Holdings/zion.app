@@ -1,1 +1,8 @@
 {"ts": "2026-07-15T14:48:34.438628+00:00", "event": "analysis_only", "send_allowed": false, "total_records": 25, "internal_hits": 2, "status": "send_blocked_analysis"}
+{"ts": "2026-07-27T01:02:06.696212+00:00", "to": "tatiana.sciencio@bcrcx.com", "subject": "Parceria — Bcrcx — Zion Tech Group", "message_id": "19fa117ee950773b", "thread_id": "19fa117ee950773b", "provider": "gmail_api"}
+{"ts": "2026-07-27T01:05:40.482309+00:00", "to": "tatiana.sciencio@bcrcx.com", "subject": "Parceria — Bcrcx — Zion Tech Group", "message_id": "19fa11b3095881f2", "thread_id": "19fa11b3095881f2", "provider": "gmail_api"}
+{"ts": "2026-07-27T01:05:42.960624+00:00", "to": "paulo.volpis@vetorzero.com.br", "subject": "Parceria — Vetorzero — Zion Tech Group", "message_id": "19fa11b3a8310be2", "thread_id": "19fa11b3a8310be2", "provider": "gmail_api"}
+{"ts": "2026-07-27T01:05:45.937452+00:00", "to": "rimpy.bawa@techsub.it", "subject": "Parceria — Techsub — Zion Tech Group", "message_id": "19fa11b440f99238", "thread_id": "19fa11b440f99238", "provider": "gmail_api"}
+{"ts": "2026-07-27T01:05:48.488122+00:00", "to": "edgar.abad@aisworld.com", "subject": "Parceria — Aisworld — Zion Tech Group", "message_id": "19fa11b50961e583", "thread_id": "19fa11b50961e583", "provider": "gmail_api"}
+{"ts": "2026-07-27T01:05:51.153025+00:00", "to": "carlos.feliciano@tryterracotta.com", "subject": "Parceria — Tryterracotta — Zion Tech Group", "message_id": "19fa11b5b1312c69", "thread_id": "19fa11b5b1312c69", "provider": "gmail_api"}
+{"ts": "2026-07-27T01:05:57.542497+00:00", "to": "fabian.lindfors@specific.dev", "subject": "Parceria — Specific — Zion Tech Group", "message_id": "19fa11b738400df8", "thread_id": "19fa11b738400df8", "provider": "gmail_api"}
