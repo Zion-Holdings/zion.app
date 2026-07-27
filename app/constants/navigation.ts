@@ -8,10 +8,9 @@ export const PRIMARY_NAV_LINKS: NavigationLink[] = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },
   { name: 'Solutions', href: '/solutions' },
-  { name: 'Industries', href: '/industries' },
+  { name: 'Industries', href: '/industry-solutions', badge: 'New' },
   { name: 'Case Studies', href: '/case-studies' },
-  { name: 'Pricing', href: '/pricing' },
-  { name: '⚡ AI Agents', href: '/agents-monitoring', badge: 'Live' },
+  { name: 'AI Agents', href: '/agents-monitoring', badge: 'Live' },
   { name: 'Contact', href: '/contact' },
 ];
 

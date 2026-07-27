@@ -1,122 +1,190 @@
 'use client';
+
 import { useState } from 'react';
-import Link from 'next/link';
 
-const FIELDS = [
-  { key: 'employees', label: 'Employees Doing Manual Work', default: 50, prefix: '', suffix: ' people', costLabel: 'Avg salary cost/year' },
-  { key: 'manualHours', label: 'Manual Hours per Employee/Week', default: 20, prefix: '', suffix: ' hrs', costLabel: '' },
-  { key: 'hourlyCost', label: 'Average Hourly Labor Cost', default: 35, prefix: '$', suffix: '/hr', costLabel: '' },
-  { key: 'softwareSpend', label: 'Annual Software/Tools Spend', default: 120000, prefix: '$', suffix: '/yr', costLabel: '' },
-  { key: 'errorRate', label: 'Current Error Rate', default: 8, prefix: '', suffix: '%', costLabel: 'Cost per error resolution' },
-  { key: 'errorCost', label: 'Cost Per Error (rework, delay, etc.)', default: 500, prefix: '$', suffix: '', costLabel: '' },
-];
-
-interface ROICalculatorProps {
-  serviceTitle?: string;
-  category?: string;
+interface ROIResult {
+  annualSavings: number;
+  roiPercent: number;
+  paybackMonths: number;
+  implementationTime: string;
+  industryMultiplier: number;
 }
 
-export default function ROICalculator({ serviceTitle, category }: ROICalculatorProps) {
-  const [values, setValues] = useState<Record<string, number>>(
-    Object.fromEntries(FIELDS.map(f => [f.key, f.default]))
-  );
-  const [showResult, setShowResult] = useState(false);
+interface ROICalculatorProps {
+  serviceName: string;
+  baseCost: number;
+  industry?: string;
+  className?: string;
+}
 
-  const set = (key: string, val: number) => setValues(prev => ({ ...prev, [key]: val }));
+// Industry-specific ROI multipliers
+const INDUSTRY_MULTIPLIERS: Record<string, number> = {
+  'financial-services': 3.5,
+  'healthcare': 4.2,
+  'retail': 3.8,
+  'manufacturing': 4.5,
+  'logistics': 3.2,
+  'technology': 3.0,
+  'energy': 3.6,
+  'default': 3.2
+};
 
-  const annualManualCost = values.employees * values.manualHours * values.hourlyCost * 52;
-  const annualErrorCost = (values.errorRate / 100) * values.employees * values.manualHours * 52 * values.errorCost;
-  const totalCurrentCost = annualManualCost + annualErrorCost + values.softwareSpend;
+// Industry-specific improvement baselines
+const INDUSTRY_BASELINES: Record<string, { savings: number; time: number }> = {
+  'financial-services': { savings: 0.4, time: 0.5 },
+  'healthcare': { savings: 0.35, time: 0.4 },
+  'retail': { savings: 0.3, time: 0.35 },
+  'manufacturing': { savings: 0.45, time: 0.6 },
+  'logistics': { savings: 0.25, time: 0.3 },
+  'technology': { savings: 0.3, time: 0.4 },
+  'energy': { savings: 0.35, time: 0.45 },
+  'default': { savings: 0.3, time: 0.35 }
+};
 
-  // Assume 60% automation of manual work, 80% error reduction, 30% software consolidation
-  const savingsManual = annualManualCost * 0.60;
-  const savingsErrors = annualErrorCost * 0.80;
-  const savingsSoftware = values.softwareSpend * 0.30;
-  const totalSavings = savingsManual + savingsErrors + savingsSoftware;
-  const roi = ((totalSavings - 24000) / 24000) * 120; // Assume $24K/yr platform cost
+export default function ROICalculator({ 
+  serviceName, 
+  baseCost, 
+  industry = 'default',
+  className = '' 
+}: ROICalculatorProps) {
+  const [annualRevenue, setAnnualRevenue] = useState<number>(1000000);
+  const [employeeCount, setEmployeeCount] = useState<number>(50);
+  const [currentPain, setCurrentPain] = useState<string>('moderate');
+
+  const multiplier = INDUSTRY_MULTIPLIERS[industry] || INDUSTRY_MULTIPLIERS.default;
+  const baseline = INDUSTRY_BASELINES[industry] || INDUSTRY_BASELINES.default;
+
+  const result: ROIResult = {
+    annualSavings: Math.round(annualRevenue * baseline.savings * multiplier),
+    roiPercent: Math.round((annualRevenue * baseline.savings * multiplier / baseCost) * 100),
+    paybackMonths: Math.round((baseCost / (annualRevenue * baseline.savings * multiplier)) * 12 * 10) / 10,
+    implementationTime: industry === 'financial-services' ? '2-4 weeks' : 
+                         industry === 'healthcare' ? '4-8 weeks' :
+                         industry === 'retail' ? '1-3 weeks' :
+                         industry === 'manufacturing' ? '6-12 weeks' :
+                         industry === 'logistics' ? '2-6 weeks' :
+                         '4-8 weeks',
+    industryMultiplier: multiplier
+  };
+
+  const painMultiplier: Record<string, number> = {
+    low: 0.7,
+    moderate: 1,
+    high: 1.5
+  };
+
+  const adjustedAnnualSavings = Math.round(result.annualSavings * (painMultiplier[currentPain] || 1));
+  const adjustedROI = Math.round((adjustedAnnualSavings / baseCost) * 100);
+  const adjustedPayback = Math.round((baseCost / adjustedAnnualSavings) * 12 * 10) / 10;
 
   return (
-    <section className="py-20 bg-gradient-to-b from-slate-950 to-slate-900/50">
+    <section className={`py-16 ${className}`}>
       <div className="container-page">
-        <div className="text-center mb-12">
-          <h2 className="section-heading">📊 ROI Calculator</h2>
-          <p className="section-subheading">See how much you could save by automating with our services</p>
-        </div>
         <div className="max-w-4xl mx-auto">
-          <div className="glass-card p-8 mb-6">
-            <h3 className="text-lg font-semibold text-white mb-6">Your Current Operations</h3>
-            <div className="grid sm:grid-cols-2 gap-6">
-              {FIELDS.map(f => (
-                <div key={f.key}>
-                  <label className="text-sm text-slate-300 mb-2 block">{f.label}</label>
-                  <input
-                    type="range"
-                    min={f.key.includes('Rate') ? 1 : f.key.includes('Cost') && !f.key.includes('Hourly') ? 100 : 1}
-                    max={f.key.includes('Rate') ? 30 : f.key === 'employees' ? 1000 : f.key === 'hourlyCost' ? 200 : f.key === 'errorCost' ? 5000 : f.key === 'softwareSpend' ? 1000000 : 40}
-                    value={values[f.key]}
-                    onChange={e => set(f.key, Number(e.target.value))}
-                    className="w-full accent-emerald-500 mb-1"
-                  />
-                  <div className="flex justify-between text-xs text-slate-400">
-                    <span>{f.prefix}{(f.key.includes('Rate') ? 1 : f.key.includes('Cost') && !f.key.includes('Hourly') ? 100 : f.key === 'employees' ? 1 : f.key === 'hourlyCost' ? 1 : 1)}{f.suffix}</span>
-                    <span className="text-white font-bold">{f.prefix}{values[f.key].toLocaleString()}{f.suffix}</span>
-                    <span>{(f.key.includes('Rate') ? 30 : f.key === 'employees' ? 1000 : f.key === 'hourlyCost' ? 200 : f.key === 'errorCost' ? 5000 : f.key === 'softwareSpend' ? '1M' : 40)}{f.suffix}</span>
-                  </div>
-                </div>
-              ))}
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold text-white mb-4">Calculate Your ROI</h2>
+            <p className="text-slate-400">
+              See potential savings with {serviceName}
+            </p>
+          </div>
+
+          {/* Inputs */}
+          <div className="grid md:grid-cols-3 gap-4 mb-8">
+            <div>
+              <label className="text-xs text-slate-400 block mb-2">Annual Revenue</label>
+              <input
+                type="number"
+                value={annualRevenue}
+                onChange={(e) => setAnnualRevenue(Number(e.target.value))}
+                className="w-full glass-card px-4 py-3 rounded-xl text-white bg-slate-900/70 border border-slate-700"
+              />
+            </div>
+            <div>
+              <label className="text-xs text-slate-400 block mb-2">Current Pain Level</label>
+              <select
+                value={currentPain}
+                onChange={(e) => setCurrentPain(e.target.value)}
+                className="w-full glass-card px-4 py-3 rounded-xl text-white bg-slate-900/70 border border-slate-700"
+              >
+                <option value="low">Low Impact</option>
+                <option value="moderate">Moderate Impact</option>
+                <option value="high">High Impact</option>
+              </select>
+            </div>
+            <div>
+              <label className="text-xs text-slate-400 block mb-2">Implementation</label>
+              <div className="glass-card px-4 py-3 rounded-xl border border-slate-700">
+                <span className="text-sm text-white">{result.implementationTime}</span>
+              </div>
             </div>
           </div>
 
-          <button onClick={() => setShowResult(true)} className="btn-primary text-lg px-10 py-4 w-full mb-6">
-            📊 Calculate My ROI →
-          </button>
-
-          {showResult && (
-            <div className="glass-card p-8 bg-gradient-to-br from-emerald-900/20 to-slate-900/50 border-emerald-500/30">
-              <div className="grid sm:grid-cols-3 gap-6 mb-8">
-                <div className="text-center">
-                  <p className="text-slate-400 text-sm">Current Annual Cost</p>
-                  <p className="text-3xl font-bold text-red-400">${totalCurrentCost.toLocaleString()}</p>
-                </div>
-                <div className="text-center">
-                  <p className="text-slate-400 text-sm">Projected Annual Savings</p>
-                  <p className="text-3xl font-bold text-emerald-400">${Math.round(totalSavings).toLocaleString()}</p>
-                </div>
-                <div className="text-center">
-                  <p className="text-slate-400 text-sm">Estimated ROI</p>
-                  <p className="text-3xl font-bold gradient-text">{Math.round(roi)}%</p>
-                </div>
+          {/* Results */}
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="glass-card p-6 text-center hover:border-purple-500/40 transition-all">
+              <div className="text-3xl font-bold text-emerald-400 mb-2">
+                ${adjustedAnnualSavings.toLocaleString()}
               </div>
-              <div className="grid sm:grid-cols-3 gap-4 text-xs text-slate-400 mb-8">
-                <div className="bg-slate-800/50 rounded-lg p-3 text-center">
-                  <p className="font-semibold text-white mb-1">Labor Savings</p>
-                  <p className="text-emerald-400">${Math.round(savingsManual).toLocaleString()}/yr</p>
-                  <p>60% manual work automated</p>
-                </div>
-                <div className="bg-slate-800/50 rounded-lg p-3 text-center">
-                  <p className="font-semibold text-white mb-1">Error Reduction</p>
-                  <p className="text-emerald-400">${Math.round(savingsErrors).toLocaleString()}/yr</p>
-                  <p>80% fewer errors</p>
-                </div>
-                <div className="bg-slate-800/50 rounded-lg p-3 text-center">
-                  <p className="font-semibold text-white mb-1">Software Consolidation</p>
-                  <p className="text-emerald-400">${Math.round(savingsSoftware).toLocaleString()}/yr</p>
-                  <p>30% tool reduction</p>
-                </div>
-              </div>
-              <div className="text-center">
-                <Link href="/configurator/" className="btn-primary text-lg px-10 py-4 inline-block">
-                  ⚡ Get Your Custom ROI Analysis →
-                </Link>
-                <p className="text-[11px] text-slate-500 mt-3">
-                  Estimates based on industry averages. Actual results vary.
-                  <a href="mailto:kleber@ziontechgroup.com" className="text-purple-400 hover:text-purple-300 ml-1">kleber@ziontechgroup.com</a>
-                </p>
+              <div className="text-sm text-slate-400">Annual Savings</div>
+              <div className="text-xs text-purple-400 mt-2">
+                {adjustedROI}% ROI
               </div>
             </div>
-          )}
+
+            <div className="glass-card p-6 text-center hover:border-emerald-500/40 transition-all">
+              <div className="text-3xl font-bold text-cyan-400 mb-2">
+                {adjustedPayback}mo
+              </div>
+              <div className="text-sm text-slate-400">Payback Period</div>
+              <div className="text-xs text-purple-400 mt-2">
+                Industry: {result.industryMultiplier}x multiplier
+              </div>
+            </div>
+
+            <div className="glass-card p-6 text-center hover:border-pink-500/40 transition-all">
+              <div className="text-3xl font-bold text-pink-400 mb-2">
+                ${baseCost.toLocaleString()}
+              </div>
+              <div className="text-sm text-slate-400">Service Cost</div>
+              <div className="text-xs text-purple-400 mt-2">
+                Starting at
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 text-center">
+            <a 
+              href="mailto:kleber@ziontechgroup.com?subject=ROI%20Inquiry"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:from-purple-500 hover:to-pink-500 transition-all"
+            >
+              📧 Get Custom ROI Analysis
+            </a>
+          </div>
         </div>
       </div>
     </section>
   );
+}
+
+// ROI calculation helper function
+export function calculateROI(
+  annualRevenue: number,
+  industry: string,
+  painLevel: 'low' | 'moderate' | 'high' = 'moderate'
+): ROIResult {
+  const multiplier = INDUSTRY_MULTIPLIERS[industry] || INDUSTRY_MULTIPLIERS.default;
+  const baseline = INDUSTRY_BASELINES[industry] || INDUSTRY_BASELINES.default;
+  const painMultiplier: Record<string, number> = { low: 0.7, moderate: 1, high: 1.5 };
+  
+  const annualSavings = Math.round(annualRevenue * baseline.savings * multiplier * (painMultiplier[painLevel] || 1));
+  const roiPercent = Math.round((annualSavings / 1000) * 100 / multiplier);
+  const paybackMonths = Math.round((1000 / annualSavings) * 12 * 10) / 10;
+
+  return {
+    annualSavings,
+    roiPercent,
+    paybackMonths,
+    implementationTime: industry === 'financial-services' ? '2-4 weeks' : '4-8 weeks',
+    industryMultiplier: multiplier
+  };
 }

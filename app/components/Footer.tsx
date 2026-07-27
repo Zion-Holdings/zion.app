@@ -43,6 +43,7 @@ const FOOTER_LINKS: { title: string; links: FooterLink[] }[] = [
       { name: 'Partners', href: '/partners' },
       { name: 'Client Portal', href: '/portal' },
       { name: 'Press', href: '/press' },
+      { name: 'Industry Solutions', href: '/industry-solutions' },
     ],
   },
   {
