@@ -823,7 +823,7 @@ export default function HomePage() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
               </span>
-              <span className="text-xs text-emerald-400 font-medium">5 AI Agents Active Now</span>
+              <span className="text-xs text-emerald-400 font-medium">9 Live Agents Active Now</span>
             </div>
             <h2 className="section-heading text-center">🤖 Built by AI Agents, for Your Business</h2>
             <p className="section-subheading text-center max-w-2xl mx-auto">
@@ -1268,7 +1268,7 @@ export default function HomePage() {
         <div className="container-page">
           <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-500">
             <Link href="/faq/" className="hover:text-purple-400 transition">❓ FAQ</Link>
-            <Link href="/industry-solutions/" className="hover:text-purple-400 transition">🏭 Industry Solutions</Link>
+            <Link href="/industries/" className="hover:text-purple-400 transition">🏭 Industry Solutions</Link>
             <Link href="/services/" className="hover:text-purple-400 transition">🛠️ All Services</Link>
             <Link href="/configurator" className="hover:text-purple-400 transition">⚙️ Configurator</Link>
             <Link href="/proposals/" className="hover:text-purple-400 transition">📄 Proposals</Link>

@@ -7,18 +7,18 @@ export const metadata = {
 
 export default function IndustriesPage() {
   const industries = [
-    { emoji: '🏥', name: 'Healthcare & Life Sciences', href: '/solutions/healthcare', services: 120, desc: 'AI diagnostics, EHR integration, telemedicine, drug discovery.' },
-    { emoji: '💳', name: 'Financial Services & FinTech', href: '/solutions/financial-services', services: 145, desc: 'Fraud detection, algorithmic trading, regulatory compliance, digital banking.' },
-    { emoji: '🏭', name: 'Manufacturing & Industrial', href: '/solutions/manufacturing-industrial', services: 95, desc: 'Digital twins, predictive maintenance, supply chain optimization.' },
-    { emoji: '🛒', name: 'Retail & E-Commerce', href: '/solutions/ecommerce-retail', services: 110, desc: 'Personalization, inventory management, dynamic pricing, omnichannel.' },
-    { emoji: '💻', name: 'Technology & SaaS', href: '/solutions/technology-and-saas', services: 200, desc: 'DevOps, cloud migration, cybersecurity, AI/ML platforms.' },
-    { emoji: '🚚', name: 'Logistics & Supply Chain', href: '/solutions/logistics-supply-chain', services: 85, desc: 'Route optimization, warehouse automation, fleet management, last-mile delivery.' },
-    { emoji: '🏛️', name: 'Government & Public Sector', href: '/solutions/government-and-public-sector', services: 65, desc: 'Digital services, citizen engagement, data analytics, security.' },
-    { emoji: '🛡️', name: 'Insurance', href: '/solutions/insurance', services: 70, desc: 'Claims automation, underwriting AI, risk assessment, fraud prevention.' },
-    { emoji: '🎓', name: 'Education & EdTech', href: '/solutions/education-training', services: 55, desc: 'Adaptive learning, LMS platforms, student analytics, content generation.' },
-    { emoji: '⚡', name: 'Energy & Utilities', href: '/solutions/energy-utilities', services: 45, desc: 'Grid optimization, demand forecasting, renewable integration, IoT monitoring.' },
-    { emoji: '🏗️', name: 'Construction & Engineering', href: '/solutions/construction-engineering', services: 35, desc: 'Project management, BIM, safety monitoring, resource planning.' },
-    { emoji: '🎬', name: 'Media & Entertainment', href: '/solutions/media-entertainment', services: 50, desc: 'Content generation, recommendation engines, streaming optimization.' },
+    { emoji: '🏥', name: 'Healthcare & Life Sciences', href: '/industries/healthcare', services: 120, desc: 'AI diagnostics, EHR integration, telemedicine, and patient experience automation.' },
+    { emoji: '💳', name: 'Financial Services & FinTech', href: '/case-studies/financial-fraud-detection', services: 145, desc: 'RegTech, fraud detection, trading bots, and compliance automation.' },
+    { emoji: '🏭', name: 'Manufacturing & Industrial', href: '/services?category=automation', services: 95, desc: 'Predictive maintenance, supply chain optimization, and quality inspection AI.' },
+    { emoji: '🛒', name: 'Retail & E-Commerce', href: '/case-studies/retail-personalization-engine', services: 110, desc: 'Recommendation engines, inventory AI, dynamic pricing, and omnichannel support.' },
+    { emoji: '💻', name: 'Technology & SaaS', href: '/services?category=it', services: 200, desc: 'DevOps, cloud migration, cybersecurity, and platform engineering.' },
+    { emoji: '🚚', name: 'Logistics & Supply Chain', href: '/case-studies/ai-revenue-operations-transformation', services: 85, desc: 'Route optimization, warehouse automation, fleet management, and last-mile delivery.' },
+    { emoji: '🏛️', name: 'Government & Public Sector', href: '/services', services: 65, desc: 'Citizen services, compliance automation, civic AI, and policy workflow.' },
+    { emoji: '🛡️', name: 'Insurance', href: '/case-studies/financial-risk-management', services: 70, desc: 'Claims automation, underwriting AI, risk assessment, and policy analytics.' },
+    { emoji: '🎓', name: 'Education & EdTech', href: '/services?category=ai', services: 55, desc: 'Adaptive learning, LMS automation, student analytics, and content generation.' },
+    { emoji: '⚡', name: 'Energy & Utilities', href: '/case-studies/energy-optimization', services: 45, desc: 'Grid optimization, demand forecasting, renewable integration, and asset monitoring.' },
+    { emoji: '🏗️', name: 'Construction & Engineering', href: '/case-studies/manufacturing-predictive-maintenance', services: 35, desc: 'Project controls, BIM automation, safety analytics, and field coordination.' },
+    { emoji: '🎬', name: 'Media & Entertainment', href: '/case-studies/cybersecurity-threat-hunting', services: 50, desc: 'Content generation, recommendation engines, streaming optimization, and audience analytics.' },
   ];
 
   return (

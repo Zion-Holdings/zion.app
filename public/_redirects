@@ -3,19 +3,16 @@
 # Canonical sitemap
 /sitemap.xml  /sitemap-0.xml  301
 
-/case-studies/    /contact/    301
-/industries/    /services/    301
-/free-tools-hub/    /tools/    301
-/products/    /services/    301
-/consultation/    /contact/    301
-/site-map/    /    301
-/faq/    /about/    301
+/case-studies/    /case-studies/index.html  200
+/industries/    /industries/index.html  200
+/blog /blog/index.html 200
+/faq /faq/index.html 200
 /status/    /    301
-/configurator/    /contact/    301
-/dashboard/    /contact/    301
-/docs/    /    301
-/automation/  /services/ai-workflow-automation/  301
-/careers/  /contact/  301
+/configurator/ /contact/index.html 301
+/dashboard/ /contact/index.html 301
+/docs/ / 301
+/automation/  /services?category=automation  301
+/careers/ /careers/index.html 200
 /free-consultation/ /free-consultation/index.html 200
 /free-audit/ /free-audit/index.html 200
 /free-ai-itools/ /free-ai-itools/index.html 200
@@ -25,5 +22,5 @@
 /industries/legal/ /industries/legal/index.html 200
 /tools/ai-quick-audit/ /tools/ai-quick-audit/index.html 200
 /tools/phishing-analyzer/ /tools/phishing-analyzer/index.html 200
-/industries/financial-services /solutions/financial-services/ 301
+/industries/financial-services /industries/financial-services/index.html 301
 /assets/js/conversion-events.js /assets/js/conversion-events.js 200
