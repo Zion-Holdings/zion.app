@@ -1,36 +1,89 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="/styles.css"/>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Testimonials | Zion Tech Group</title>
-  <meta name="description" content="Client outcomes and testimonials from Zion Tech Group engagements." />
+  <meta name="description" content="Client feedback and outcomes from AI automation, managed delivery, and IT engagements." />
   <link rel="canonical" href="https://ziontechgroup.com/testimonials/" />
+  <style>
+    :root { font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 0; color: #0f172a; background: #ffffff; }
+    header { border-bottom: 1px solid #e5e7eb; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+    nav { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; justify-content: space-between; }
+    .brand { font-weight: 700; letter-spacing: -0.02em; font-size: 18px; }
+    .links a { margin-left: 14px; color: #2563eb; text-decoration: none; font-weight: 500; }
+    .links a:hover { text-decoration: underline; }
+    .hero { padding: 64px 24px; }
+    h1 { font-size: clamp(28px, 4vw, 48px); line-height: 1.1; margin: 0 0 14px; letter-spacing: -0.03em; }
+    p.lead { font-size: 18px; color: #334155; max-width: 760px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; padding: 24px 0; }
+    .card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 18px; }
+    .card h3 { margin: 0 0 8px; font-size: 16px; color: #0f172a; }
+    .card p { margin: 0; color: #334155; font-size: 14px; line-height: 1.4; }
+    .section { padding: 24px; }
+    .section-title { font-size: 22px; margin: 0 0 10px; }
+    .section-lead { color: #334155; max-width: 760px; margin: 0 0 14px; }
+    footer { border-top: 1px solid #e5e7eb; padding: 24px; color: #475569; font-size: 13px; }
+    .btn { display: inline-block; padding: 12px 16px; border-radius: 10px; background: #0f172a; color: #fff; text-decoration: none; font-weight: 600; }
+    .btn.secondary { background: #ffffff; color: #0f172a; border: 1px solid #e5e7eb; }
+    .cta-row { margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap; }
+  </style>
 </head>
 <body>
-  <main class="min-h-screen bg-slate-950 text-white">
-    <section class="mx-auto max-w-6xl px-6 py-16">
-      <h1 class="text-4xl font-bold tracking-tight sm:text-5xl">Client Outcomes</h1>
-      <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300">Recent results from teams that worked with Zion.</p>
-      <div class="mt-10 grid gap-8 md:grid-cols-2">
-        <blockquote class="rounded-lg border border-slate-800 bg-slate-900/50 p-6">
-          <p class="text-sm leading-7 text-slate-200">“Reduced support volume by 40% within the first quarter.”</p>
-          <footer class="mt-4 text-sm font-semibold text-white">SaaS Operations</footer>
-        </blockquote>
-        <blockquote class="rounded-lg border border-slate-800 bg-slate-900/50 p-6">
-          <p class="text-sm leading-7 text-slate-200">“Increased marketing-sourced revenue by 28% using predictive scoring.”</p>
-          <footer class="mt-4 text-sm font-semibold text-white">Ecommerce</footer>
-        </blockquote>
-        <blockquote class="rounded-lg border border-slate-800 bg-slate-900/50 p-6">
-          <p class="text-sm leading-7 text-slate-200">“Passed SOC 2 ahead of schedule with a clearer control framework.”</p>
-          <footer class="mt-4 text-sm font-semibold text-white">Fintech</footer>
-        </blockquote>
-        <blockquote class="rounded-lg border border-slate-800 bg-slate-900/50 p-6">
-          <p class="text-sm leading-7 text-slate-200">“Cut fulfillment planning time by 60% and improved on-time delivery.”</p>
-          <footer class="mt-4 text-sm font-semibold text-white">Logistics</footer>
-        </blockquote>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand"><a href="/">Zion Tech Group</a></div>
+                  <div class="links">
+            <a href="/services/">Services</a>
+            <a href="/solutions/">Solutions</a>
+            <a href="/industries/">Industries</a>
+            <a href="/case-studies/">Case Studies</a>
+            <a href="/testimonials/">Testimonials</a>
+            <a href="/partners/">Partners</a>
+            <a href="/pricing/">Pricing</a>
+            <a href="/contact/">Contact</a>
+          </div>
+
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Testimonials</h1>
+        <p class="lead">Feedback from teams shipping faster and operating more securely with Zion.</p>
+        <div class="cta-row">
+          <a class="btn" href="/case-studies/">View case studies</a>
+          <a class="btn secondary" href="/contact/">Start a project</a>
+        </div>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">Voices</h2>
+        <p class="section-lead">Highlights from customers on speed, quality, and measurable outcomes.</p>
+        <div class="grid">
+          <div class="card">
+            <h3>Faster launches</h3>
+            <p>“Zion helped us move from evaluation to production in weeks, not quarters.”</p>
+          </div>
+          <div class="card">
+            <h3>Measurable outcomes</h3>
+            <p>“The reporting and observability made it easy to justify continued investment.”</p>
+          </div>
+          <div class="card">
+            <h3>Managed delivery</h3>
+            <p>“Implementation was accountable, on time, and aligned to our compliance requirements.”</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>
+  <footer><div class="container">&copy; <span id="year"></span> Zion Tech Group</div></footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
