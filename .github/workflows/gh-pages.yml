@@ -94,7 +94,17 @@ jobs:
             automation/index.html \\
             services/ai-workflow-automation/index.html \\
             services/ai-email-intelligence/index.html \\
-            services/ai-smart-global-campaign/index.html; do
+            services/ai-smart-global-campaign/index.html \\
+            ai-agency-growth-engine/index.html \\
+            autonomous-ai-implementation-services/index.html \\
+            ai-partnership-program/index.html \\
+            ai-revenue-accelerator-program/index.html \\
+            ai-ready-infrastructure/index.html \\
+            ai-roi-calculator/index.html \\
+            implementation-roadmap/index.html \\
+            start-here/index.html \\
+            status-page/index.html \\
+            roadmap/index.html; do
             mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
             if [ ! -f "$ARTIFACT_DIR/$f" ] && [ -f "docs/$f" ]; then
               cp -a "docs/$f" "$ARTIFACT_DIR/$f"
