@@ -57,14 +57,41 @@ function collectLeafPages() {
     { dir: path.join(outDir, 'tools'), prefix: 'tools' }
   ];
 
-  // 3) Service pages: out/services/<id>/index.html
+  // 3) Service pages from service-index.json (primary source)
+  const serviceIndexFile = path.join(outDir, 'service-index.json');
+  if (fs.existsSync(serviceIndexFile)) {
+    try {
+      const indexData = JSON.parse(fs.readFileSync(serviceIndexFile, 'utf8'));
+      if (indexData.services && Array.isArray(indexData.services)) {
+        for (const svc of indexData.services) {
+          if (svc.id) {
+            // Use a fallback date since individual service HTML files may not exist in static export
+            const fallbackDate = new Date();
+            pages.push({ 
+              url: `${SITE_URL}/services/${svc.id}/`, 
+              lastmod: fallbackDate,
+              priority: 0.6,
+              changefreq: 'weekly'
+            });
+          }
+        }
+      }
+    } catch (e) {
+      console.warn('Could not parse service-index.json:', e.message);
+    }
+  }
+
+  // 3b) Service directories from filesystem (fallback)
   const svcDir = path.join(outDir, 'services');
   if (fs.existsSync(svcDir)) {
     for (const entry of fs.readdirSync(svcDir, { withFileTypes: true })) {
       if (!entry.isDirectory() || entry.name === 'stage') continue;
       const f = path.join(svcDir, entry.name, 'index.html');
       if (fs.existsSync(f)) {
-        pages.push({ url: `${SITE_URL}/services/${entry.name}/`, lastmod: fs.statSync(f).mtime });
+        // Only add if not already added from service-index.json
+        if (!pages.some(p => p.url === `${SITE_URL}/services/${entry.name}/`)) {
+          pages.push({ url: `${SITE_URL}/services/${entry.name}/`, lastmod: fs.statSync(f).mtime });
+        }
       }
     }
   }
