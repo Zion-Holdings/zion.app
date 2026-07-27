@@ -72,29 +72,31 @@ jobs:
           if [ ! -f "$ARTIFACT_DIR/robots.txt" ] && [ -f docs/robots.txt ]; then cp -f docs/robots.txt "$ARTIFACT_DIR/robots.txt"; fi
           if [ ! -f "$ARTIFACT_DIR/sitemap.xml" ] && [ -f docs/sitemap.xml ]; then cp -f docs/sitemap.xml "$ARTIFACT_DIR/sitemap.xml"; fi
           # Promote key fallback pages from docs/ to artifact root so Pages can serve them.
-          for f in \\
-            case-studies/index.html \\
-            industries/index.html \\
-            testimonials/index.html \\
-            automation/index.html \\
-            services/index.html \\
-            tools/index.html \\
-            solutions/index.html \\
-            resources/index.html \\
-            services/ai-workflow-automation/index.html \\
-            services/ai-email-intelligence/index.html \\
-            services/ai-smart-global-campaign/index.html \\
-            autonomous-ai-operating-system/index.html \\
-            growth-engine/index.html \\
-            fast-start-ai-audit/index.html \\
-            partner-enablement/index.html \\
-            ai-managed-services/index.html \\
-            methodology/index.html \\
-            why-us/index.html \\
-            financial-services/index.html \\
-            reseller/index.html \\
-            defense-logistics/index.html \\
-            ROI/index.html \\
+          for f in \
+            case-studies/index.html \
+            industries/index.html \
+            partners/index.html \
+            pricing/index.html \
+            testimonials/index.html \
+            automation/index.html \
+            services/index.html \
+            tools/index.html \
+            solutions/index.html \
+            resources/index.html \
+            services/ai-workflow-automation/index.html \
+            services/ai-email-intelligence/index.html \
+            services/ai-smart-global-campaign/index.html \
+            autonomous-ai-operating-system/index.html \
+            growth-engine/index.html \
+            fast-start-ai-audit/index.html \
+            partner-enablement/index.html \
+            ai-managed-services/index.html \
+            methodology/index.html \
+            why-us/index.html \
+            financial-services/index.html \
+            reseller/index.html \
+            defense-logistics/index.html \
+            ROI/index.html \
             staff-augmentation/index.html; do
             mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
             if [ ! -f "$ARTIFACT_DIR/$f" ] && [ -f "docs/$f" ]; then
@@ -102,7 +104,7 @@ jobs:
             fi
           done
           # Guarantee every key route exists in the exported artifact, even if Next didn't emit it.
-          for f in case-studies/index.html industries/index.html testimonials/index.html; do
+          for f in case-studies/index.html industries/index.html partners/index.html pricing/index.html testimonials/index.html; do
             mkdir -p "$ARTIFACT_DIR/$(dirname "$f")"
             if [ ! -f "$ARTIFACT_DIR/$f" ] && [ -f "docs/$f" ]; then
               cp -a "docs/$f" "$ARTIFACT_DIR/$f"
