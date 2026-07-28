@@ -3676,5 +3676,13 @@
     "domain": "streamlineops.io",
     "industry": "DevOps",
     "title": "VP Operations"
+  },
+  {
+    "name": "Aisha Osei",
+    "email": "aisha.osei@cloudten.ai",
+    "company": "CloudTen",
+    "domain": "cloudten.ai",
+    "industry": "Cloud",
+    "title": "CTO"
   }
 ]
