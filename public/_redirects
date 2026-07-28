@@ -1,8 +1,3 @@
-/tools/favicon-generator/  /tools/favicon-generator/index.html  200
-
-# Canonical sitemap
-/sitemap.xml  /sitemap-0.xml  301
-
 /case-studies/    /services/    301
 /industries/    /services/    301
 /free-tools-hub/    /tools/    301
@@ -14,4 +9,25 @@
 /configurator/    /contact/    301
 /dashboard/    /contact/    301
 /docs/    /    301
-/automation/  /services/ai-workflow-automation/  301
+/pricing/    /pricing/    200
+/pricing    /pricing/    200
+/careers/    /careers/    200
+/careers    /careers/    200
+/partnerships/    /partnerships/    200
+/partnerships    /partnerships/    200
+/partners/    /partnerships/    200
+/partners    /partnerships/    200
+/ai-readiness-assessment/    /ai-readiness-assessment/    200
+/ai-consulting-strategy/    /ai-consulting-strategy/    200
+/ai-implementation-roadmap/    /ai-implementation-roadmap/    200
+/ai-for-enterprise/    /ai-for-enterprise/    200
+/client-portal-resources/    /client-portal-resources/    200
+/it-consulting-framework/    /it-consulting-framework/    200
+/executive-advisory/    /executive-advisory/    200
+/enterprise-automation/    /enterprise-automation/    200
+/compliance-ready-ai/    /compliance-ready-ai/    200
+/cybersecurity-playbook/    /cybersecurity-playbook/    200
+/data-analytics-blueprint/    /data-analytics-blueprint/    200
+/partnership-integration/    /partnership-integration/    200
+/ai-platforms/    /ai-platforms/    200
+/cloud-migration-roadmap/    /cloud-migration-roadmap/    200
