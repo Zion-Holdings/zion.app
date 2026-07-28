@@ -3286,14 +3286,6 @@
     "body": "Noah,\nQuick opener: a 30-day AI pilot with measurable milestones for Search Artemis.\nIf useful, I can set it up fast:\nhttps://calendly.com/kleber-ziontechgroup\nProof:\nhttps://ziontechgroup.com\nKleber Garcia Alcatr\u00e3o\nCEO, Zion Tech Group"
   },
   {
-    "name": "Aisha Patel",
-    "email": "aisha.patel@novasant\u00e9.io",
-    "company": "NovaSante",
-    "domain": "novasante.io",
-    "industry": "Healthcare",
-    "title": "CIO"
-  },
-  {
     "name": "Marcus Webb",
     "email": "marcus.webb@brightpathlabs.co",
     "company": "BrightPath Labs",
@@ -3644,5 +3636,45 @@
     "domain": "brightlineconsulting.ai",
     "industry": "Consulting",
     "title": "Managing Partner"
+  },
+  {
+    "name": "Oliver Grant",
+    "email": "oliver.grant@sterlingenergy.io",
+    "company": "Sterling Energy",
+    "domain": "sterlingenergy.io",
+    "industry": "Energy",
+    "title": "Digital Director"
+  },
+  {
+    "name": "Nina Petrova",
+    "email": "nina.petrova@aurorabiotech.ai",
+    "company": "Aurora Biotech",
+    "domain": "aurorabiotech.ai",
+    "industry": "Biotech",
+    "title": "CTO"
+  },
+  {
+    "name": "Ravi Menon",
+    "email": "ravi.menon@quantumledger.co",
+    "company": "Quantum Ledger",
+    "domain": "quantumledger.co",
+    "industry": "FinTech",
+    "title": "Head of Engineering"
+  },
+  {
+    "name": "Tasha Green",
+    "email": "tasha.green@skywaylogistics.com",
+    "company": "Skyway Logistics",
+    "domain": "skywaylogistics.com",
+    "industry": "Logistics",
+    "title": "IT Director"
+  },
+  {
+    "name": "Marco Silva",
+    "email": "marco.silva@streamlineops.io",
+    "company": "StreamlineOps",
+    "domain": "streamlineops.io",
+    "industry": "DevOps",
+    "title": "VP Operations"
   }
 ]
