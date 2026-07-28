@@ -1,9 +1,9 @@
 type Service = Record<string, any>;
 
-const rawData = require('./servicesData.json') as { services: Service[] };
+const rawData = require('./servicesData.json') as Service[];
 
 // Normalize services data - ensure both 'name' and 'title' fields exist
-const allServices: readonly Service[] = rawData.services.map((service: Service) => ({
+const allServices: readonly Service[] = rawData.map((service: Service) => ({
   ...service,
   // Ensure title field exists (use name if title not present)
   title: service.title || service.name || '',

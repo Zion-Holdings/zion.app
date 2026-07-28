@@ -69,7 +69,8 @@ function main() {
     console.warn('WARN: servicesData.json unreadable, proceeding without it:', e.message);
   }
   const jsonMap = {};
-  for (const svc of (Array.isArray(jsonRaw) ? jsonRaw : [])) {
+  const servicesArray = Array.isArray(jsonRaw) ? jsonRaw : (jsonRaw.services || []);
+  for (const svc of servicesArray) {
     if (!svc || !svc.id) continue;
     const pricing = svc.pricing || {};
     jsonMap[svc.id] = {

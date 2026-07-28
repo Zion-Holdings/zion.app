@@ -9,7 +9,7 @@
     "enterprise": "14999",
     "popular": true,
     "features": [
-      "OpenAPI 3.1 spec lifecycle — versioning, deprecation, staging",
+      "OpenAPI 3.1 spec lifecycle \u2014 versioning, deprecation, staging",
       "Rate-limit + quota per consumer key with brotten alerting",
       "Managed threat-protection WAF rule set for API endpoints",
       "Schema registry + mocking + developer portal with embedded sandbox"
@@ -55,7 +55,7 @@
     "features": [
       "SAST/DAST/SCA/container scanning per PR with 5-minute deadline",
       "Vulnerability classification: CWE+CVSS+remotely-exploitable/reachable",
-      "Auto-fix PR against approved fix forms — merge approved change",
+      "Auto-fix PR against approved fix forms \u2014 merge approved change",
       "Verified SBOM generated per build with SPDX+cyclonedx exports"
     ],
     "benefits": [
@@ -76,7 +76,7 @@
     "popular": false,
     "features": [
       "EDR engine with behavioural analytics, endpoint firewall, exploit prevention",
-      "Patch catalog covering CVE/third-party blobs — auto-deploy fix per deployment group",
+      "Patch catalog covering CVE/third-party blobs \u2014 auto-deploy fix per deployment group",
       "Compliance posture dashboard for HIPAA/PCI/SOX/ISO27001/GDPR",
       "Automated audit evidence export package per framework on demand"
     ],
@@ -1013,27 +1013,6 @@
   },
   {
     "category": "it",
-    "id": "it-email-migration",
-    "title": "Email & Communication Migration",
-    "description": "Email platform migration, mailbox consolidation, hybrid deployment, post-migration optimization, and user onboarding.",
-    "basic": "1999",
-    "pro": "5999",
-    "enterprise": "17999",
-    "popular": false,
-    "features": [
-      "Migration planning and readiness",
-      "Mailbox consolidation and routing",
-      "Hybrid deployment support",
-      "User onboarding after cutover"
-    ],
-    "benefits": [
-      "Minimize disruption during migration",
-      "Reduce email platform sprawl",
-      "Onboard users with minimal downtime"
-    ]
-  },
-  {
-    "category": "it",
     "id": "it-database-management",
     "title": "Database Optimization & DBA Support",
     "description": "Performance tuning, indexing, query optimization, HA/DR design, and managed DBA support for SQL and NoSQL databases.",
@@ -1051,27 +1030,6 @@
       "Reduce database latency",
       "Improve query throughput",
       "Keep databases available with tested DR"
-    ]
-  },
-  {
-    "category": "it",
-    "id": "it-ai-governance-risk",
-    "title": "AI Governance & Risk Management",
-    "description": "AI risk governance, bias review, model inventory, and approval workflows for regulated AI deployments.",
-    "basic": "2999",
-    "pro": "9999",
-    "enterprise": "34999",
-    "popular": false,
-    "features": [
-      "Model inventory and risk classification",
-      "Bias review and fairness",
-      "Governance approvals",
-      "Regulatory evidence"
-    ],
-    "benefits": [
-      "Ship AI with accountable guardrails",
-      "Reduce regulatory objection risk",
-      "Create audit-ready AI evidence"
     ]
   }
 ]
