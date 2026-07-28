@@ -1,0 +1,27 @@
+Subject: Transform Your Enterprise Operations with Container Registry & Security Scanning
+
+Hi there,
+
+I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Container Registry & Security Scanning.
+
+Secure container registry with vulnerability scanning, policy enforcement, and CI/CD integration. Supports Docker and OCI images with automated compliance checks.
+
+**Key Benefits:**
+- 95% vulnerability detection
+- Automated compliance
+- Secure supply chain
+
+**Pricing:**
+- Basic: $N/A/month
+- Pro: $N/A/month
+- Enterprise: $299/month
+
+**Book a free consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatrão
+CEO, Zion Tech Group
+ziontechgroup.com
+
+---
+AI/IT Solutions for the Future

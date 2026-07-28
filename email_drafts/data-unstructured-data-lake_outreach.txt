@@ -1,0 +1,27 @@
+Subject: Transform Your General Operations with Unstructured Data Lake
+
+Hi there,
+
+I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Unstructured Data Lake.
+
+Unstructured data pipeline and lake: ingest PDF, Images, Audio, and Video at scale; auto-classify per document schema; OCR, ASR, object-detection hooks per file type; natural-language query with cited source passages.
+
+**Key Benefits:**
+- Reduce costs with unstructured data lake
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $399/month
+- Pro: $1,299/month
+- Enterprise: $3,999/month
+
+**Book a free consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatrão
+CEO, Zion Tech Group
+ziontechgroup.com
+
+---
+AI/IT Solutions for the Future

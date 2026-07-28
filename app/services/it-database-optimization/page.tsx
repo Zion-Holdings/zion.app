@@ -1,8 +1,8 @@
 import { } from 'next/navigation';
 
 export const metadata = {
-  title: "Database Optimization & Management - Zion Tech Group",
-  description: "Performance tuning, indexing, query optimization, HA/DR design, and managed DBA support for SQL/NoSQL databases.",
+  title: "IT Database Optimization & Performance Tuning - Zion Tech Group",
+  description: "Expert database optimization for PostgreSQL, MySQL, MongoDB, SQL Server, and Oracle. Improve query performance by 10x, reduce costs, and ensure high availabilit",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-database-optimization`
   }
@@ -12,25 +12,27 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Database Optimization &amp; Management</h1>
-        <p className="text-lg text-gray-300 mb-8">Performance tuning, indexing, query optimization, HA/DR design, and managed DBA support for SQL/NoSQL databases.</p>
+        <h1 className="text-4xl font-bold mb-6">IT Database Optimization &amp; Performance Tuning</h1>
+        <p className="text-lg text-gray-300 mb-8">Expert database optimization for PostgreSQL, MySQL, MongoDB, SQL Server, and Oracle. Improve query performance by 10x, reduce costs, and ensure high availability.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Performance tuning and indexing</li>
-            <li>Query optimization and caching</li>
-            <li>HA/DR design and validation</li>
-            <li>Managed DBA support</li>
+            <li>Query performance analysis and optimization</li>
+            <li>Index strategy review and implementation</li>
+            <li>Schema optimization and normalization</li>
+            <li>Replication and high availability setup</li>
+            <li>Migration planning and execution</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduce database latency</li>
-            <li>Improve query throughput</li>
-            <li>Keep databases available with tested DR</li>
+            <li>10x faster query performance</li>
+            <li>Reduce database costs by 40%</li>
+            <li>Eliminate downtime with HA setup</li>
+            <li>Scale databases without re-architecture</li>
           </ul>
         </div>
         
@@ -39,15 +41,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$999/month</p>
+              <p className="text-2xl font-bold mb-2">$2,500/mo/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$2999/month</p>
+              <p className="text-2xl font-bold mb-2">$5,000/mo/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$9999/month</p>
+              <p className="text-2xl font-bold mb-2">$Custom/month</p>
             </div>
           </div>
         </div>

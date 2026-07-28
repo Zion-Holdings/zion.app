@@ -1,0 +1,27 @@
+Subject: Transform Your Finance Operations with Hybrid + Multi-Cloud Networking
+
+Hi there,
+
+I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Hybrid + Multi-Cloud Networking.
+
+Zero-trust networking across on-prem/edge/cloud: cloud-router fabric connects VPCs across AWS/GCP/Azure, on-prem data-centre via WireGuard or IPSec, global anycast front-door with WAF.
+
+**Key Benefits:**
+- Reduce costs with hybrid + multi-cloud networking
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $99/month
+- Pro: $349/month
+- Enterprise: $1,299/month
+
+**Book a free consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatrão
+CEO, Zion Tech Group
+ziontechgroup.com
+
+---
+AI/IT Solutions for the Future

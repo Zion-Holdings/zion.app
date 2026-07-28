@@ -1,8 +1,8 @@
 import { } from 'next/navigation';
 
 export const metadata = {
-  title: "Edge Computing & Local Processing - Zion Tech Group",
-  description: "Distributed edge infrastructure, offline-first applications, and low-latency processing for industrial, retail, and field operations.",
+  title: "IT Edge Computing & IoT Infrastructure - Zion Tech Group",
+  description: "Design and deploy edge computing infrastructure for low-latency applications. From IoT gateways to edge data centers, with centralized management and security.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-edge-computing`
   }
@@ -12,25 +12,27 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Edge Computing &amp; Local Processing</h1>
-        <p className="text-lg text-gray-300 mb-8">Distributed edge infrastructure, offline-first applications, and low-latency processing for industrial, retail, and field operations.</p>
+        <h1 className="text-4xl font-bold mb-6">IT Edge Computing &amp; IoT Infrastructure</h1>
+        <p className="text-lg text-gray-300 mb-8">Design and deploy edge computing infrastructure for low-latency applications. From IoT gateways to edge data centers, with centralized management and security.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Distributed edge node deployment</li>
-            <li>Offline-first application architecture</li>
-            <li>Low-latency data processing</li>
-            <li>Edge security and compliance controls</li>
+            <li>Edge architecture design and deployment</li>
+            <li>IoT device management and monitoring</li>
+            <li>Edge-to-cloud data synchronization</li>
+            <li>Low-latency application hosting</li>
+            <li>Edge security and access control</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Process data where it is generated</li>
-            <li>Reduce cloud egress and latency</li>
-            <li>Support field operations without constant connectivity</li>
+            <li>Reduce latency to under 10ms</li>
+            <li>Process data locally for real-time decisions</li>
+            <li>Reduce cloud bandwidth costs by 60%</li>
+            <li>Enable offline operation for critical systems</li>
           </ul>
         </div>
         
@@ -39,15 +41,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$999/month</p>
+              <p className="text-2xl font-bold mb-2">$4,000/mo/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$2999/month</p>
+              <p className="text-2xl font-bold mb-2">$10,000/mo/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$9999/month</p>
+              <p className="text-2xl font-bold mb-2">$Custom/month</p>
             </div>
           </div>
         </div>

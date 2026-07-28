@@ -1,0 +1,27 @@
+Subject: Transform Your Manufacturing Operations with Chaos Engineering & Resilience Testing
+
+Hi there,
+
+I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Chaos Engineering & Resilience Testing.
+
+Proactive chaos experiments: inject failures (latency, pod kill, DB disconnect) on non-production to validate recovery paths. Auto-generate incident response playbooks from results.
+
+**Key Benefits:**
+- Reduce costs with chaos engineering & resilience testing
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $2,999/month
+- Pro: $Custom/month
+- Enterprise: $Custom/month
+
+**Book a free consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatrão
+CEO, Zion Tech Group
+ziontechgroup.com
+
+---
+AI/IT Solutions for the Future

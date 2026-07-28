@@ -1,8 +1,8 @@
 import { } from 'next/navigation';
 
 export const metadata = {
-  title: "Field Service Management - Zion Tech Group",
-  description: "Schedule, dispatch, mobile workflow, parts inventory, and customer SLA tracking for onsite IT and facilities teams with GPS and offline support.",
+  title: "IT Field Service Management & Mobile Workforce - Zion Tech Group",
+  description: "Field service management platform for mobile workforce. Scheduling, dispatch, work orders, and mobile app for technicians. Increase first-time fix rates by 35%.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-field-service-management`
   }
@@ -12,25 +12,27 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Field Service Management</h1>
-        <p className="text-lg text-gray-300 mb-8">Schedule, dispatch, mobile workflow, parts inventory, and customer SLA tracking for onsite IT and facilities teams with GPS and offline support.</p>
+        <h1 className="text-4xl font-bold mb-6">IT Field Service Management &amp; Mobile Workforce</h1>
+        <p className="text-lg text-gray-300 mb-8">Field service management platform for mobile workforce. Scheduling, dispatch, work orders, and mobile app for technicians. Increase first-time fix rates by 35%.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Schedule and dispatch optimization</li>
-            <li>Mobile workflows for onsite teams</li>
-            <li>Parts inventory and vendor tracking</li>
-            <li>Customer SLA tracking and notifications</li>
+            <li>AI-optimized scheduling and dispatch</li>
+            <li>Mobile app for technicians (iOS, Android)</li>
+            <li>Work order management and tracking</li>
+            <li>Parts and inventory management</li>
+            <li>Customer portal and self-service</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Increase onsite productivity</li>
-            <li>Reduce travel and wait time</li>
-            <li>Keep customers informed automatically</li>
+            <li>Increase first-time fix rate by 35%</li>
+            <li>Reduce travel time with AI routing</li>
+            <li>Improve customer satisfaction with real-time updates</li>
+            <li>Scale field operations without adding dispatchers</li>
           </ul>
         </div>
         
@@ -39,15 +41,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$999/month</p>
+              <p className="text-2xl font-bold mb-2">$50/tech/mo/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$2999/month</p>
+              <p className="text-2xl font-bold mb-2">$85/tech/mo/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$9999/month</p>
+              <p className="text-2xl font-bold mb-2">$Custom/month</p>
             </div>
           </div>
         </div>

@@ -28,10 +28,10 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Govern 1000+ endpoints from one control plane</li>
-            <li>Publish API docs that developers actually use</li>
-            <li>Threat protection without touching your WAF</li>
-            <li>Analytics surface shows which endpoints under-utilised and which overloaded</li>
+            <li>Reduce costs with api gateway + openapi management</li>
+            <li>Improve operational efficiency</li>
+            <li>Scale without complexity</li>
+            <li>Enterprise-grade reliability</li>
           </ul>
         </div>
         
@@ -40,15 +40,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$999/month</p>
+              <p className="text-2xl font-bold mb-2">$49/mo/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$2999/month</p>
+              <p className="text-2xl font-bold mb-2">$199/mo/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$9999/month</p>
+              <p className="text-2xl font-bold mb-2">$699/mo/month</p>
             </div>
           </div>
         </div>

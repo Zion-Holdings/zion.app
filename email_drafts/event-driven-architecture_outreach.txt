@@ -1,0 +1,27 @@
+Subject: Transform Your Finance Operations with Event-Driven Architecture (EDA) Platform
+
+Hi there,
+
+I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Event-Driven Architecture (EDA) Platform.
+
+Design and implement event-driven microservices: Apache Kafka or Pulsar event mesh, schema registry, CQRS plus event sourcing patterns, exactly-once delivery, and replay and replay-sanitise pipelines.
+
+**Key Benefits:**
+- Reduce costs with event-driven architecture (eda) platform
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $299/month
+- Pro: $899/month
+- Enterprise: $2,999/month
+
+**Book a free consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatrão
+CEO, Zion Tech Group
+ziontechgroup.com
+
+---
+AI/IT Solutions for the Future

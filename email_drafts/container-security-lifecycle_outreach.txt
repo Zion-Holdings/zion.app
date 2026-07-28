@@ -1,0 +1,27 @@
+Subject: Transform Your General Operations with Container & Kubernetes Security
+
+Hi there,
+
+I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Container & Kubernetes Security.
+
+Full container security: registry scanning (Trivy/Clair), runtime protection (Falco), OPA admission controllers, SBOM attestation per build.
+
+**Key Benefits:**
+- Reduce costs with container & kubernetes security
+- Improve operational efficiency
+- Scale without complexity
+
+**Pricing:**
+- Basic: $399/month
+- Pro: $999/month
+- Enterprise: $2,999/month
+
+**Book a free consultation:** https://calendly.com/kleber-ziontechgroup/consultation
+
+Best regards,
+Kleber Garcia Alcatrão
+CEO, Zion Tech Group
+ziontechgroup.com
+
+---
+AI/IT Solutions for the Future

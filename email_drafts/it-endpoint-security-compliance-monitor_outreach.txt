@@ -1,4 +1,4 @@
-Subject: Transform Your Endpoint Operations with Endpoint Security & Compliance Monitor
+Subject: Transform Your Healthcare Operations with Endpoint Security & Compliance Monitor
 
 Hi there,
 
@@ -7,14 +7,14 @@ I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbrea
 Endpoint security continuous monitoring: EDR detection + endpoint firewall + exploit prevention, CVE auto-fix via patch catalog, compliance posture for HIPAA/PCI/SOX/ISO27001 with automated audit evidence export.
 
 **Key Benefits:**
-- Know every endpoint's compliance posture without sending a device offsite
-- Zip-based export package means one-click audit response per framework
-- Patch CVE not by its disclosure date but by its patch-readiness score
+- Reduce costs with endpoint security & compliance monitor
+- Improve operational efficiency
+- Scale without complexity
 
 **Pricing:**
-- Basic: $999/month
-- Pro: $2999/month
-- Enterprise: $9999/month
+- Basic: $399/month
+- Pro: $999/month
+- Enterprise: $2,999/month
 
 **Book a free consultation:** https://calendly.com/kleber-ziontechgroup/consultation
 

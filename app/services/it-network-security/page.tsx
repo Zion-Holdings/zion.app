@@ -1,8 +1,8 @@
 import { } from 'next/navigation';
 
 export const metadata = {
-  title: "Network Security & Zero Trust - Zion Tech Group",
-  description: "Zero trust network access, microsegmentation, DNS security, and threat prevention for hybrid and remote environments.",
+  title: "IT Network Security & Firewall Management - Zion Tech Group",
+  description: "Comprehensive network security with next-gen firewall management, intrusion detection/prevention, and network access control. 24/7 monitoring and management.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-network-security`
   }
@@ -12,25 +12,27 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Network Security &amp; Zero Trust</h1>
-        <p className="text-lg text-gray-300 mb-8">Zero trust network access, microsegmentation, DNS security, and threat prevention for hybrid and remote environments.</p>
+        <h1 className="text-4xl font-bold mb-6">IT Network Security &amp; Firewall Management</h1>
+        <p className="text-lg text-gray-300 mb-8">Comprehensive network security with next-gen firewall management, intrusion detection/prevention, and network access control. 24/7 monitoring and management.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Zero trust network access controls</li>
-            <li>Microsegmentation per workload</li>
-            <li>DNS security and filtering</li>
-            <li>Threat prevention across hybrid environments</li>
+            <li>Next-gen firewall deployment and management</li>
+            <li>IDS/IPS configuration and tuning</li>
+            <li>Network access control (NAC)</li>
+            <li>DNS security and content filtering</li>
+            <li>VPN and remote access management</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduce lateral movement risk</li>
-            <li>Secure remote access without VPN sprawl</li>
-            <li>Protect DNS layer from exfiltration</li>
+            <li>Block advanced threats with AI-powered firewalls</li>
+            <li>Detect intrusions in real-time</li>
+            <li>Secure remote access for all employees</li>
+            <li>Reduce network security costs with managed services</li>
           </ul>
         </div>
         
@@ -39,15 +41,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$999/month</p>
+              <p className="text-2xl font-bold mb-2">$2,000/mo/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$2999/month</p>
+              <p className="text-2xl font-bold mb-2">$5,000/mo/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$9999/month</p>
+              <p className="text-2xl font-bold mb-2">$Custom/month</p>
             </div>
           </div>
         </div>

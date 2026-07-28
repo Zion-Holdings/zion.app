@@ -1,8 +1,8 @@
 import { } from 'next/navigation';
 
 export const metadata = {
-  title: "Network Monitoring & Management - Zion Tech Group",
-  description: "24/7 network monitoring, performance baselining, fault management, and capacity planning for LAN/WAN/Wi-Fi environments.",
+  title: "IT Network Monitoring & Performance Management - Zion Tech Group",
+  description: "24/7 network monitoring with AI-powered anomaly detection, automated alerting, and performance optimization. Monitor on-prem, cloud, and hybrid networks.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-network-monitoring`
   }
@@ -12,25 +12,27 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Network Monitoring &amp; Management</h1>
-        <p className="text-lg text-gray-300 mb-8">24/7 network monitoring, performance baselining, fault management, and capacity planning for LAN/WAN/Wi-Fi environments.</p>
+        <h1 className="text-4xl font-bold mb-6">IT Network Monitoring &amp; Performance Management</h1>
+        <p className="text-lg text-gray-300 mb-8">24/7 network monitoring with AI-powered anomaly detection, automated alerting, and performance optimization. Monitor on-prem, cloud, and hybrid networks.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>24/7 network monitoring</li>
-            <li>Performance baselining and reporting</li>
-            <li>Fault management and alerting</li>
-            <li>Capacity planning and trend analysis</li>
+            <li>Real-time network topology mapping</li>
+            <li>AI anomaly detection and root cause analysis</li>
+            <li>Bandwidth utilization monitoring and optimization</li>
+            <li>SNMP, NetFlow, sFlow, and packet capture support</li>
+            <li>Automated alerting via email, SMS, Slack, PagerDuty</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Detect issues before users report</li>
-            <li>Maintain performance with proactive planning</li>
-            <li>Reduce downtime with fast fault isolation</li>
+            <li>Detect network issues before users notice</li>
+            <li>Reduce mean time to resolution by 70%</li>
+            <li>Optimize bandwidth and reduce costs</li>
+            <li>Plan capacity with data-driven insights</li>
           </ul>
         </div>
         
@@ -39,15 +41,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$999/month</p>
+              <p className="text-2xl font-bold mb-2">$1,500/mo/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$2999/month</p>
+              <p className="text-2xl font-bold mb-2">$4,000/mo/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$9999/month</p>
+              <p className="text-2xl font-bold mb-2">$Custom/month</p>
             </div>
           </div>
         </div>

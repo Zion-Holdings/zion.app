@@ -1,107 +1,70 @@
-import { Metadata } from 'next'
-import Link from 'next/link'
-
-const LEGACY_ROUTE = {
-  id: 'ai-agents-autonomous',
-  title: 'AI Agents & Autonomous Workflows',
-  description: 'Deploy autonomous AI agents that reason, plan, and act. Multi-step task execution, tool use, and human-in-the-loop controls for enterprise automation.',
-  category: 'AI',
-  industry: 'Enterprise AI Automation',
-  features: [
-    'Reasoning & Planning',
-    'Tool & API Integration',
-    'Multi-Agent Orchestration',
-    'Human-in-the-Loop',
-    'Memory & Context',
-    'Observability & Safety',
-  ],
-  benefits: [
-    'Reduce costs by automating workflows with autonomous agents',
-    'Improve operational consistency and execution speed',
-    'Scale operations without proportional headcount growth',
-    'Enterprise-grade reliability with guidance controls',
-  ],
-  pricing: {
-    basic: '$149/mo',
-    pro: '$449/mo',
-    enterprise: '$1,499/mo',
-  },
-  contactInfo: {
-    website: '/services/ai-agents-autonomous',
-    email: 'commercial@ziontechgroup.com',
-    phone: '+1 302 464 0950',
-  },
-  icon: '🤖',
-  href: '/services/ai-agents-autonomous',
-};
+import { } from 'next/navigation';
 
 export const metadata = {
-  title: `${LEGACY_ROUTE.title} | Zion Tech Group`,
-  description: LEGACY_ROUTE.description,
-  alternates: { canonical: '/services/ai-agents-autonomous' },
+  title: "AI Agents & Autonomous Workflows - Zion Tech Group",
+  description: "Deploy autonomous AI agents that reason, plan, and act. Multi-step task execution, tool use, and human-in-the-loop controls for enterprise automation.",
+  alternates: {
+    canonical: `https://ziontechgroup.com/services/ai-agents-autonomous`
+  }
 };
 
-export default function LegacyAiAgentsAutonomousPage() {
-  const sr = LEGACY_ROUTE
-  const pricingTiers = Object.entries(sr.pricing)
-
+export default function ServicePage() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
-      <div className="container-page max-w-4xl">
-        <Link href="/services" className="text-purple-400 hover:underline text-sm mb-6 inline-block">
-          ← Back to Services
-        </Link>
-        <div className="glass-card p-8">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="text-3xl">{sr.icon}</span>
-            <div>
-              <h1 className="text-3xl md:text-4xl font-bold text-white">{sr.title}</h1>
-              <p className="text-slate-400 text-sm mt-1">
-                {sr.category} • {sr.industry}
-              </p>
+    <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold mb-6">AI Agents &amp; Autonomous Workflows</h1>
+        <p className="text-lg text-gray-300 mb-8">Deploy autonomous AI agents that reason, plan, and act. Multi-step task execution, tool use, and human-in-the-loop controls for enterprise automation.</p>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Reasoning &amp; Planning</li>
+            <li>Tool &amp; API Integration</li>
+            <li>Multi-Agent Orchestration</li>
+            <li>Human-in-the-Loop</li>
+            <li>Memory &amp; Context</li>
+          </ul>
+        </div>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Reduce costs with ai agents &amp; autonomous workflows</li>
+            <li>Improve operational efficiency</li>
+            <li>Scale without complexity</li>
+            <li>Enterprise-grade reliability</li>
+          </ul>
+        </div>
+        
+        <div className="border border-purple-500 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Basic</h3>
+              <p className="text-2xl font-bold mb-2">$149/mo/month</p>
+            </div>
+            <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
+              <h3 className="font-semibold mb-2">Pro</h3>
+              <p className="text-2xl font-bold mb-2">$449/mo/month</p>
+            </div>
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Enterprise</h3>
+              <p className="text-2xl font-bold mb-2">$1,499/mo/month</p>
             </div>
           </div>
-          <p className="text-slate-300 text-base leading-relaxed mb-6">{sr.description}</p>
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <div className="bg-slate-900/60 border border-slate-700/60 rounded-xl p-5">
-              <h2 className="text-white font-semibold mb-3">Features</h2>
-              <ul className="space-y-2">
-                {sr.features.map((f, i) => (
-                  <li key={i} className="text-slate-300 text-sm flex items-start gap-2">
-                    <span className="text-purple-400 mt-1 shrink-0">•</span>
-                    <span>{f}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="bg-slate-900/60 border border-slate-700/60 rounded-xl p-5">
-              <h2 className="text-white font-semibold mb-3">Benefits</h2>
-              <ul className="space-y-2">
-                {sr.benefits.map((b, i) => (
-                  <li key={i} className="text-slate-300 text-sm flex items-start gap-2">
-                    <span className="text-purple-400 mt-1 shrink-0">•</span>
-                    <span>{b}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <div className="flex flex-wrap items-center gap-4">
-            <span className="text-purple-300 text-sm font-medium">
-              Starting at {pricingTiers[0]?.[1] || 'Contact for Quote'}
-            </span>
-            <a
-              href={`mailto:${sr.contactInfo.email}?subject=${encodeURIComponent(sr.title)}`}
-              className="btn-primary"
-            >
-              Contact Us
-            </a>
-            <a href={sr.contactInfo.website} className="text-sm text-purple-400 hover:underline inline-flex items-center gap-1">
-              Visit Service Site →
-            </a>
-          </div>
+        </div>
+        
+        <div className="text-center">
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
+          >
+            Book a Consultation
+          </a>
         </div>
       </div>
     </main>
-  )
+  );
 }

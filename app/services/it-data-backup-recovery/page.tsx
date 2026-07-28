@@ -1,8 +1,8 @@
 import { } from 'next/navigation';
 
 export const metadata = {
-  title: "Data Backup & Disaster Recovery - Zion Tech Group",
-  description: "Immutable backups, orchestrated recovery, ransomware protection, and disaster recovery testing for business continuity.",
+  title: "IT Data Backup & Recovery Service - Zion Tech Group",
+  description: "Comprehensive backup and recovery solution with automated backups, point-in-time recovery, and disaster recovery testing. Protect against ransomware, human erro",
   alternates: {
     canonical: `https://ziontechgroup.com/services/it-data-backup-recovery`
   }
@@ -12,25 +12,27 @@ export default function ServicePage() {
   return (
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl font-bold mb-6">Data Backup &amp; Disaster Recovery</h1>
-        <p className="text-lg text-gray-300 mb-8">Immutable backups, orchestrated recovery, ransomware protection, and disaster recovery testing for business continuity.</p>
+        <h1 className="text-4xl font-bold mb-6">IT Data Backup &amp; Recovery Service</h1>
+        <p className="text-lg text-gray-300 mb-8">Comprehensive backup and recovery solution with automated backups, point-in-time recovery, and disaster recovery testing. Protect against ransomware, human error, and hardware failure.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Immutable backup storage</li>
-            <li>Orchestrated failover and recovery</li>
-            <li>Ransomware protection and isolation</li>
-            <li>Disaster recovery testing and documentation</li>
+            <li>Automated backup scheduling (hourly to daily)</li>
+            <li>Point-in-time recovery for databases</li>
+            <li>Immutable backups for ransomware protection</li>
+            <li>Automated DR testing without production impact</li>
+            <li>Cross-region replication</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Recover from ransomware quickly</li>
-            <li>Meet RTO/RPO with tested runbooks</li>
-            <li>Keep backups tamper-proof</li>
+            <li>Recover from ransomware in hours not days</li>
+            <li>Meet RPO/RTO requirements</li>
+            <li>Automated DR testing ensures readiness</li>
+            <li>Protect against accidental deletion</li>
           </ul>
         </div>
         
@@ -39,15 +41,15 @@ export default function ServicePage() {
           <div className="grid grid-cols-3 gap-4">
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Basic</h3>
-              <p className="text-2xl font-bold mb-2">$999/month</p>
+              <p className="text-2xl font-bold mb-2">$500/mo/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
               <h3 className="font-semibold mb-2">Pro</h3>
-              <p className="text-2xl font-bold mb-2">$2999/month</p>
+              <p className="text-2xl font-bold mb-2">$1,500/mo/month</p>
             </div>
             <div className="bg-slate-800 p-4 rounded-lg">
               <h3 className="font-semibold mb-2">Enterprise</h3>
-              <p className="text-2xl font-bold mb-2">$9999/month</p>
+              <p className="text-2xl font-bold mb-2">$Custom/month</p>
             </div>
           </div>
         </div>
