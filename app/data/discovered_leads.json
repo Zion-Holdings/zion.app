@@ -3684,5 +3684,501 @@
     "domain": "cloudten.ai",
     "industry": "Cloud",
     "title": "CTO"
+  },
+  {
+    "name": "Ops Datapillar",
+    "email": "ops@datapillar.com",
+    "company": "Datapillar",
+    "domain": "datapillar.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Partnerships Legalops",
+    "email": "partnerships@legalops.io",
+    "company": "Legalops",
+    "domain": "legalops.io",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Ben.dawson Scaleops",
+    "email": "ben.dawson@scaleops.co",
+    "company": "Scaleops",
+    "domain": "scaleops.co",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Natalie.ho Logisticsplus",
+    "email": "natalie.ho@logisticsplus.com",
+    "company": "Logisticsplus",
+    "domain": "logisticsplus.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Gina.ross Retailnext",
+    "email": "gina.ross@retailnext.ai",
+    "company": "Retailnext",
+    "domain": "retailnext.ai",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Ben.ross Datapillar",
+    "email": "ben.ross@datapillar.com",
+    "company": "Datapillar",
+    "domain": "datapillar.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Matt.robinson Datapillar",
+    "email": "matt.robinson@datapillar.com",
+    "company": "Datapillar",
+    "domain": "datapillar.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Lisa.chen Novastream",
+    "email": "lisa.chen@novastream.io",
+    "company": "Novastream",
+    "domain": "novastream.io",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "James.park Fintechseed",
+    "email": "james.park@fintechseed.com",
+    "company": "Fintechseed",
+    "domain": "fintechseed.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Priya.nair Scaleops",
+    "email": "priya.nair@scaleops.co",
+    "company": "Scaleops",
+    "domain": "scaleops.co",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Robert.liu Globalmfg",
+    "email": "robert.liu@globalmfg.com",
+    "company": "Globalmfg",
+    "domain": "globalmfg.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Sarah.jenkins Logisticsplus",
+    "email": "sarah.jenkins@logisticsplus.com",
+    "company": "Logisticsplus",
+    "domain": "logisticsplus.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Jane.smith Novastream",
+    "email": "jane.smith@novastream.io",
+    "company": "Novastream",
+    "domain": "novastream.io",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Liam.johnson Fintechseed",
+    "email": "liam.johnson@fintechseed.com",
+    "company": "Fintechseed",
+    "domain": "fintechseed.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Noah.lee Datapillar",
+    "email": "noah.lee@datapillar.com",
+    "company": "Datapillar",
+    "domain": "datapillar.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Ava.martinez Globalmfg",
+    "email": "ava.martinez@globalmfg.com",
+    "company": "Globalmfg",
+    "domain": "globalmfg.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Ethan.kim Logisticsplus",
+    "email": "ethan.kim@logisticsplus.com",
+    "company": "Logisticsplus",
+    "domain": "logisticsplus.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Founders Dench",
+    "email": "founders@dench.com",
+    "company": "Dench",
+    "domain": "dench.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Founders Apriora",
+    "email": "founders@apriora.ai",
+    "company": "Apriora",
+    "domain": "apriora.ai",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Founders Getocto",
+    "email": "founders@getocto.ai",
+    "company": "Getocto",
+    "domain": "getocto.ai",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Founders Risely",
+    "email": "founders@risely.ai",
+    "company": "Risely",
+    "domain": "risely.ai",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Founders Usethirdchair",
+    "email": "founders@usethirdchair.com",
+    "company": "Usethirdchair",
+    "domain": "usethirdchair.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Founders Bilds",
+    "email": "founders@bilds.ai",
+    "company": "Bilds",
+    "domain": "bilds.ai",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Founders Blaxel",
+    "email": "founders@blaxel.ai",
+    "company": "Blaxel",
+    "domain": "blaxel.ai",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Founders Duckie",
+    "email": "founders@duckie.ai",
+    "company": "Duckie",
+    "domain": "duckie.ai",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Founders Getden",
+    "email": "founders@getden.io",
+    "company": "Getden",
+    "domain": "getden.io",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Founders Usesieve",
+    "email": "founders@usesieve.com",
+    "company": "Usesieve",
+    "domain": "usesieve.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Founders Usepanels",
+    "email": "founders@usepanels.com",
+    "company": "Usepanels",
+    "domain": "usepanels.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Founders Roe-ai",
+    "email": "founders@roe-ai.com",
+    "company": "Roe-ai",
+    "domain": "roe-ai.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Founders Defog",
+    "email": "founders@defog.ai",
+    "company": "Defog",
+    "domain": "defog.ai",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Founders Getspine",
+    "email": "founders@getspine.ai",
+    "company": "Getspine",
+    "domain": "getspine.ai",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Jcadden Ibm",
+    "email": "jcadden@ibm.com",
+    "company": "Ibm",
+    "domain": "ibm.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Alex.chen Fintechseed",
+    "email": "alex.chen@fintechseed.com",
+    "company": "Fintechseed",
+    "domain": "fintechseed.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Morgan.lee Globalmfg",
+    "email": "morgan.lee@globalmfg.com",
+    "company": "Globalmfg",
+    "domain": "globalmfg.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Taylor.reese Scaleops",
+    "email": "taylor.reese@scaleops.co",
+    "company": "Scaleops",
+    "domain": "scaleops.co",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Cquinn Logisticsplus",
+    "email": "cquinn@logisticsplus.com",
+    "company": "Logisticsplus",
+    "domain": "logisticsplus.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Rfoster Retailnext",
+    "email": "rfoster@retailnext.ai",
+    "company": "Retailnext",
+    "domain": "retailnext.ai",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Jortiz Legalops",
+    "email": "jortiz@legalops.io",
+    "company": "Legalops",
+    "domain": "legalops.io",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Dpatel Datapillar",
+    "email": "dpatel@datapillar.com",
+    "company": "Datapillar",
+    "domain": "datapillar.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Astone Novastream",
+    "email": "astone@novastream.io",
+    "company": "Novastream",
+    "domain": "novastream.io",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Pholt Acmehealth",
+    "email": "pholt@acmehealth.org",
+    "company": "Acmehealth",
+    "domain": "acmehealth.org",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Qberry Labami",
+    "email": "qberry@labami.ai",
+    "company": "Labami",
+    "domain": "labami.ai",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Dreeves Vantageops",
+    "email": "dreeves@vantageops.com",
+    "company": "Vantageops",
+    "domain": "vantageops.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Rmorgan Meridianai",
+    "email": "rmorgan@meridianai.co",
+    "company": "Meridianai",
+    "domain": "meridianai.co",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Bortega Nexterahealth",
+    "email": "bortega@nexterahealth.org",
+    "company": "Nexterahealth",
+    "domain": "nexterahealth.org",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Skim Retailnext",
+    "email": "skim@retailnext.ai",
+    "company": "Retailnext",
+    "domain": "retailnext.ai",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Tshaw Globalmfg",
+    "email": "tshaw@globalmfg.com",
+    "company": "Globalmfg",
+    "domain": "globalmfg.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Nbrooks Datapillar",
+    "email": "nbrooks@datapillar.com",
+    "company": "Datapillar",
+    "domain": "datapillar.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Odiaz Logisticsplus",
+    "email": "odiaz@logisticsplus.com",
+    "company": "Logisticsplus",
+    "domain": "logisticsplus.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Mfoster Vantageops",
+    "email": "mfoster@vantageops.com",
+    "company": "Vantageops",
+    "domain": "vantageops.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Egrant Scaleops",
+    "email": "egrant@scaleops.co",
+    "company": "Scaleops",
+    "domain": "scaleops.co",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Zhart Meridianai",
+    "email": "zhart@meridianai.co",
+    "company": "Meridianai",
+    "domain": "meridianai.co",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Icruz Retailnext",
+    "email": "icruz@retailnext.ai",
+    "company": "Retailnext",
+    "domain": "retailnext.ai",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Lpark Legalops",
+    "email": "lpark@legalops.io",
+    "company": "Legalops",
+    "domain": "legalops.io",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Treed Novastream",
+    "email": "treed@novastream.io",
+    "company": "Novastream",
+    "domain": "novastream.io",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Ushah Labami",
+    "email": "ushah@labami.ai",
+    "company": "Labami",
+    "domain": "labami.ai",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Knguyen Globalmfg",
+    "email": "knguyen@globalmfg.com",
+    "company": "Globalmfg",
+    "domain": "globalmfg.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Rpatel Acmehealth",
+    "email": "rpatel@acmehealth.org",
+    "company": "Acmehealth",
+    "domain": "acmehealth.org",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Dortiz Nexterahealth",
+    "email": "dortiz@nexterahealth.org",
+    "company": "Nexterahealth",
+    "domain": "nexterahealth.org",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Ckim Fintechseed",
+    "email": "ckim@fintechseed.com",
+    "company": "Fintechseed",
+    "domain": "fintechseed.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Jmercer Globalmfg",
+    "email": "jmercer@globalmfg.com",
+    "company": "Globalmfg",
+    "domain": "globalmfg.com",
+    "industry": "Technology",
+    "title": "Contact"
+  },
+  {
+    "name": "Mtorres Scaleops",
+    "email": "mtorres@scaleops.co",
+    "company": "Scaleops",
+    "domain": "scaleops.co",
+    "industry": "Technology",
+    "title": "Contact"
   }
 ]
