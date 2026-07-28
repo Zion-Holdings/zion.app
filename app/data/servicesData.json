@@ -251003,10 +251003,1464 @@
       "icon": "\ud83d\udca1",
       "href": "/services/ai-powered-customer-churn-prevention-62634e55",
       "popular": false
+    },
+    {
+      "name": "DynamoDB AI-Powered Demand Forecasting",
+      "description": "AI-powered dynamodb solution for retail. Uses time-series analysis to predict product demand with high accuracy.",
+      "category": "database",
+      "industry": "DynamoDB",
+      "features": [
+        "Multi-channel forecasting",
+        "Seasonality analysis"
+      ],
+      "benefits": [
+        "95% forecast accuracy",
+        "Reduced stockouts"
+      ],
+      "pricing": {
+        "basic": "799",
+        "pro": "2299",
+        "enterprise": "7999"
+      },
+      "id": "dynamodb-ai-powered-demand-forecasting-b9f67871",
+      "timestamp": "2026-07-28T03:49:29.204211+00:00",
+      "contactInfo": {
+        "website": "/services/dynamodb-ai-powered-demand-forecasting-b9f67871",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/dynamodb-ai-powered-demand-forecasting-b9f67871",
+      "popular": false
+    },
+    {
+      "name": "Pen Testing AI-Powered Cloud Migration",
+      "description": "AI-powered pen testing solution for cloud migration. Intelligent cloud migration planning and execution.",
+      "category": "security",
+      "industry": "Pen Testing",
+      "features": [
+        "Migration planning",
+        "Execution"
+      ],
+      "benefits": [
+        "Seamless migration",
+        "Zero downtime"
+      ],
+      "pricing": {
+        "basic": "799",
+        "pro": "2299",
+        "enterprise": "7999"
+      },
+      "id": "pen-testing-ai-powered-cloud-migration-b44ed319",
+      "timestamp": "2026-07-28T03:49:29.204809+00:00",
+      "contactInfo": {
+        "website": "/services/pen-testing-ai-powered-cloud-migration-b44ed319",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/pen-testing-ai-powered-cloud-migration-b44ed319",
+      "popular": false
+    },
+    {
+      "name": "Real Estate Investments AI-Powered CRM Automation",
+      "description": "AI-powered real estate investments solution for sales. Automates customer relationship management with AI-driven insights and follow-ups.",
+      "category": "real-estate",
+      "industry": "Real Estate Investments",
+      "features": [
+        "CRM automation",
+        "AI insights"
+      ],
+      "benefits": [
+        "30% more deals",
+        "Better follow-ups"
+      ],
+      "pricing": {
+        "basic": "499",
+        "pro": "1499",
+        "enterprise": "4999"
+      },
+      "id": "real-estate-investments-ai-powered-crm-automation-e91d8fbd",
+      "timestamp": "2026-07-28T03:49:29.204885+00:00",
+      "contactInfo": {
+        "website": "/services/real-estate-investments-ai-powered-crm-automation-e91d8fbd",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/real-estate-investments-ai-powered-crm-automation-e91d8fbd",
+      "popular": false
+    },
+    {
+      "name": "User Experience AI-Powered Data Governance",
+      "description": "AI-powered user experience solution for data governance. Automated data governance with compliance checking and policy enforcement.",
+      "category": "customer",
+      "industry": "User Experience",
+      "features": [
+        "Compliance checking",
+        "Policy enforcement"
+      ],
+      "benefits": [
+        "100% governance",
+        "Automated compliance"
+      ],
+      "pricing": {
+        "basic": "899",
+        "pro": "2999",
+        "enterprise": "8999"
+      },
+      "id": "user-experience-ai-powered-data-governance-b98c1922",
+      "timestamp": "2026-07-28T03:49:29.204951+00:00",
+      "contactInfo": {
+        "website": "/services/user-experience-ai-powered-data-governance-b98c1922",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/user-experience-ai-powered-data-governance-b98c1922",
+      "popular": false
+    },
+    {
+      "name": "Energy Efficiency AI-Powered Infrastructure as Code",
+      "description": "AI-powered energy efficiency solution for infrastructure. AI-generated infrastructure code with best practices and security.",
+      "category": "energy",
+      "industry": "Energy Efficiency",
+      "features": [
+        "IaC generation",
+        "Best practices",
+        "Security checks"
+      ],
+      "benefits": [
+        "Secure infrastructure",
+        "Best practices"
+      ],
+      "pricing": {
+        "basic": "499",
+        "pro": "1499",
+        "enterprise": "4999"
+      },
+      "id": "energy-efficiency-ai-powered-infrastructure-as-code-56502710",
+      "timestamp": "2026-07-28T03:49:29.205015+00:00",
+      "contactInfo": {
+        "website": "/services/energy-efficiency-ai-powered-infrastructure-as-code-56502710",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/energy-efficiency-ai-powered-infrastructure-as-code-56502710",
+      "popular": false
+    },
+    {
+      "name": "Legal Hold AI-Powered Resume Screening",
+      "description": "AI-powered legal hold solution for hr. Automates candidate screening using NLP and skills matching.",
+      "category": "legal",
+      "industry": "Legal Hold",
+      "features": [
+        "Skills extraction",
+        "Matching algorithm"
+      ],
+      "benefits": [
+        "90% faster hiring",
+        "Better candidates"
+      ],
+      "pricing": {
+        "basic": "149",
+        "pro": "449",
+        "enterprise": "1499"
+      },
+      "id": "legal-hold-ai-powered-resume-screening-006782dd",
+      "timestamp": "2026-07-28T03:49:29.205073+00:00",
+      "contactInfo": {
+        "website": "/services/legal-hold-ai-powered-resume-screening-006782dd",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/legal-hold-ai-powered-resume-screening-006782dd",
+      "popular": false
+    },
+    {
+      "name": "Log Management AI-Powered Batch Processing",
+      "description": "AI-powered log management solution for batch processing. Optimized batch processing schedules with predictive timing.",
+      "category": "monitoring",
+      "industry": "Log Management",
+      "features": [
+        "Batch scheduling",
+        "Timing optimization"
+      ],
+      "benefits": [
+        "Faster batch",
+        "Better timing"
+      ],
+      "pricing": {
+        "basic": "499",
+        "pro": "1499",
+        "enterprise": "4999"
+      },
+      "id": "log-management-ai-powered-batch-processing-3f22e455",
+      "timestamp": "2026-07-28T03:49:29.205130+00:00",
+      "contactInfo": {
+        "website": "/services/log-management-ai-powered-batch-processing-3f22e455",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/log-management-ai-powered-batch-processing-3f22e455",
+      "popular": false
+    },
+    {
+      "name": "Last-mile Delivery AI-Powered Inventory Optimization",
+      "description": "AI-powered last-mile delivery solution for retail. Optimizes inventory levels using demand forecasting and machine learning.",
+      "category": "logistics",
+      "industry": "Last-mile Delivery",
+      "features": [
+        "Demand forecasting",
+        "Stock optimization"
+      ],
+      "benefits": [
+        "30% inventory reduction",
+        "Better availability"
+      ],
+      "pricing": {
+        "basic": "799",
+        "pro": "2499",
+        "enterprise": "7999"
+      },
+      "id": "last-mile-delivery-ai-powered-inventory-optimization-583e51c5",
+      "timestamp": "2026-07-28T03:49:29.205188+00:00",
+      "contactInfo": {
+        "website": "/services/last-mile-delivery-ai-powered-inventory-optimization-583e51c5",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/last-mile-delivery-ai-powered-inventory-optimization-583e51c5",
+      "popular": false
+    },
+    {
+      "name": "Fleet AI-Powered CDN Optimization",
+      "description": "AI-powered fleet solution for infrastructure. Content delivery network optimization using predictive caching and routing.",
+      "category": "transportation",
+      "industry": "Fleet",
+      "features": [
+        "CDN optimization",
+        "Predictive caching"
+      ],
+      "benefits": [
+        "50% faster delivery",
+        "Lower costs"
+      ],
+      "pricing": {
+        "basic": "599",
+        "pro": "1999",
+        "enterprise": "5999"
+      },
+      "id": "fleet-ai-powered-cdn-optimization-540414cd",
+      "timestamp": "2026-07-28T03:49:29.205244+00:00",
+      "contactInfo": {
+        "website": "/services/fleet-ai-powered-cdn-optimization-540414cd",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/fleet-ai-powered-cdn-optimization-540414cd",
+      "popular": false
+    },
+    {
+      "name": "Mobile Commerce AI-Powered Error Tracking",
+      "description": "AI-powered mobile commerce solution for development. Intelligent error tracking with root cause analysis and fix suggestions.",
+      "category": "ecommerce",
+      "industry": "Mobile Commerce",
+      "features": [
+        "Error tracking",
+        "Root cause analysis",
+        "Fix suggestions"
+      ],
+      "benefits": [
+        "Faster debugging",
+        "Better fixes"
+      ],
+      "pricing": {
+        "basic": "199",
+        "pro": "599",
+        "enterprise": "1999"
+      },
+      "id": "mobile-commerce-ai-powered-error-tracking-29e0a9e6",
+      "timestamp": "2026-07-28T03:49:29.205300+00:00",
+      "contactInfo": {
+        "website": "/services/mobile-commerce-ai-powered-error-tracking-29e0a9e6",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/mobile-commerce-ai-powered-error-tracking-29e0a9e6",
+      "popular": false
+    },
+    {
+      "name": "Portfolio AI-Powered Cloud Migration",
+      "description": "AI-powered portfolio solution for cloud migration. Intelligent cloud migration planning and execution.",
+      "category": "real-estate",
+      "industry": "Portfolio",
+      "features": [
+        "Migration planning",
+        "Execution"
+      ],
+      "benefits": [
+        "Seamless migration",
+        "Zero downtime"
+      ],
+      "pricing": {
+        "basic": "799",
+        "pro": "2299",
+        "enterprise": "7999"
+      },
+      "id": "portfolio-ai-powered-cloud-migration-6e2a9cf2",
+      "timestamp": "2026-07-28T03:49:29.205355+00:00",
+      "contactInfo": {
+        "website": "/services/portfolio-ai-powered-cloud-migration-6e2a9cf2",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/portfolio-ai-powered-cloud-migration-6e2a9cf2",
+      "popular": false
+    },
+    {
+      "name": "Security Orchestration AI Customer Churn Prediction",
+      "description": "AI-powered security orchestration solution for customer success. Identifies at-risk customers before they churn using behavioral patterns and engagement metrics.",
+      "category": "security",
+      "industry": "Security Orchestration",
+      "features": [
+        "Churn risk scoring",
+        "Early warning system"
+      ],
+      "benefits": [
+        "50% churn reduction",
+        "Higher retention"
+      ],
+      "pricing": {
+        "basic": "399",
+        "pro": "1199",
+        "enterprise": "3999"
+      },
+      "id": "security-orchestration-ai-customer-churn-prediction-e7dfa612",
+      "timestamp": "2026-07-28T03:49:29.205420+00:00",
+      "contactInfo": {
+        "website": "/services/security-orchestration-ai-customer-churn-prediction-e7dfa612",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/security-orchestration-ai-customer-churn-prediction-e7dfa612",
+      "popular": false
+    },
+    {
+      "name": "Account-Based Marketing AI-Powered Data Governance",
+      "description": "AI-powered account-based marketing solution for data governance. Automated data governance with compliance checking and policy enforcement.",
+      "category": "marketing",
+      "industry": "Account-Based Marketing",
+      "features": [
+        "Compliance checking",
+        "Policy enforcement"
+      ],
+      "benefits": [
+        "100% governance",
+        "Automated compliance"
+      ],
+      "pricing": {
+        "basic": "899",
+        "pro": "2999",
+        "enterprise": "8999"
+      },
+      "id": "account-based-marketing-ai-powered-data-governance-ba234bec",
+      "timestamp": "2026-07-28T03:49:29.205484+00:00",
+      "contactInfo": {
+        "website": "/services/account-based-marketing-ai-powered-data-governance-ba234bec",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/account-based-marketing-ai-powered-data-governance-ba234bec",
+      "popular": false
+    },
+    {
+      "name": "Last-mile Delivery AI Business Process Automation Suite",
+      "description": "AI-powered last-mile delivery solution for business process. Discovers, automates, and optimizes business processes using AI-powered process mining.",
+      "category": "logistics",
+      "industry": "Last-mile Delivery",
+      "features": [
+        "Process discovery",
+        "Automation recommendations"
+      ],
+      "benefits": [
+        "70% faster automation",
+        "Optimized ROI"
+      ],
+      "pricing": {
+        "basic": "799",
+        "pro": "2499",
+        "enterprise": "7999"
+      },
+      "id": "last-mile-delivery-ai-business-process-automation-suite-6c7e2657",
+      "timestamp": "2026-07-28T03:49:29.205565+00:00",
+      "contactInfo": {
+        "website": "/services/last-mile-delivery-ai-business-process-automation-suite-6c7e2657",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/last-mile-delivery-ai-business-process-automation-suite-6c7e2657",
+      "popular": false
+    },
+    {
+      "name": "Curriculum AI-Powered Edge AI Platform",
+      "description": "AI-powered curriculum solution for iot. Deploys and manages AI models at the edge with automatic optimization.",
+      "category": "education",
+      "industry": "Curriculum",
+      "features": [
+        "Edge deployment",
+        "Model optimization"
+      ],
+      "benefits": [
+        "Real-time processing",
+        "Reduced latency"
+      ],
+      "pricing": {
+        "basic": "1499",
+        "pro": "4999",
+        "enterprise": "14999"
+      },
+      "id": "curriculum-ai-powered-edge-ai-platform-2f72a9d6",
+      "timestamp": "2026-07-28T03:49:29.205620+00:00",
+      "contactInfo": {
+        "website": "/services/curriculum-ai-powered-edge-ai-platform-2f72a9d6",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/curriculum-ai-powered-edge-ai-platform-2f72a9d6",
+      "popular": false
+    },
+    {
+      "name": "Revenue Operations AI-Powered Data Quality Rules",
+      "description": "AI-powered revenue operations solution for data quality. Machine learning-based data quality rules that adapt over time.",
+      "category": "sales",
+      "industry": "Revenue Operations",
+      "features": [
+        "Quality rules",
+        "Adaptive learning"
+      ],
+      "benefits": [
+        "95% data quality",
+        "Self-improving"
+      ],
+      "pricing": {
+        "basic": "499",
+        "pro": "1499",
+        "enterprise": "4999"
+      },
+      "id": "revenue-operations-ai-powered-data-quality-rules-ea33ab24",
+      "timestamp": "2026-07-28T03:49:29.205672+00:00",
+      "contactInfo": {
+        "website": "/services/revenue-operations-ai-powered-data-quality-rules-ea33ab24",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/revenue-operations-ai-powered-data-quality-rules-ea33ab24",
+      "popular": false
+    },
+    {
+      "name": "Customer AI-Powered Data Governance",
+      "description": "AI-powered customer solution for data governance. Automated data governance with compliance checking and policy enforcement.",
+      "category": "telecom",
+      "industry": "Customer",
+      "features": [
+        "Compliance checking",
+        "Policy enforcement"
+      ],
+      "benefits": [
+        "100% governance",
+        "Automated compliance"
+      ],
+      "pricing": {
+        "basic": "899",
+        "pro": "2999",
+        "enterprise": "8999"
+      },
+      "id": "customer-ai-powered-data-governance-fda87cc3",
+      "timestamp": "2026-07-28T03:49:29.205725+00:00",
+      "contactInfo": {
+        "website": "/services/customer-ai-powered-data-governance-fda87cc3",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/customer-ai-powered-data-governance-fda87cc3",
+      "popular": false
+    },
+    {
+      "name": "5G AI-Powered Chatbot Builder",
+      "description": "AI-powered 5g solution for customer service. Creates intelligent chatbots for customer service and lead generation.",
+      "category": "telecom",
+      "industry": "5G",
+      "features": [
+        "NLP chatbots",
+        "Lead capture"
+      ],
+      "benefits": [
+        "80% support automation",
+        "24/7 availability"
+      ],
+      "pricing": {
+        "basic": "199",
+        "pro": "599",
+        "enterprise": "1999"
+      },
+      "id": "5g-ai-powered-chatbot-builder-1b53ae0e",
+      "timestamp": "2026-07-28T03:49:29.205777+00:00",
+      "contactInfo": {
+        "website": "/services/5g-ai-powered-chatbot-builder-1b53ae0e",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/5g-ai-powered-chatbot-builder-1b53ae0e",
+      "popular": false
+    },
+    {
+      "name": "Batch Processing AI-Powered Data Quality Manager",
+      "description": "AI-powered batch processing solution for data management. Automatically detects, corrects, and prevents data quality issues using machine learning.",
+      "category": "data",
+      "industry": "Batch Processing",
+      "features": [
+        "Anomaly detection",
+        "Auto-correction"
+      ],
+      "benefits": [
+        "95% data quality",
+        "Automated cleanup"
+      ],
+      "pricing": {
+        "basic": "399",
+        "pro": "1199",
+        "enterprise": "3999"
+      },
+      "id": "batch-processing-ai-powered-data-quality-manager-1facd2d2",
+      "timestamp": "2026-07-28T03:49:29.205831+00:00",
+      "contactInfo": {
+        "website": "/services/batch-processing-ai-powered-data-quality-manager-1facd2d2",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/batch-processing-ai-powered-data-quality-manager-1facd2d2",
+      "popular": false
+    },
+    {
+      "name": "Citizen Services AI-Powered Customer Journey Mapping",
+      "description": "AI-powered citizen services solution for marketing. Visualizes and optimizes customer journeys using behavioral analytics.",
+      "category": "government",
+      "industry": "Citizen Services",
+      "features": [
+        "Journey visualization",
+        "Bottleneck detection"
+      ],
+      "benefits": [
+        "40% better UX",
+        "Higher conversion"
+      ],
+      "pricing": {
+        "basic": "699",
+        "pro": "1999",
+        "enterprise": "6999"
+      },
+      "id": "citizen-services-ai-powered-customer-journey-mapping-f04ebaf9",
+      "timestamp": "2026-07-28T03:49:29.205884+00:00",
+      "contactInfo": {
+        "website": "/services/citizen-services-ai-powered-customer-journey-mapping-f04ebaf9",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/citizen-services-ai-powered-customer-journey-mapping-f04ebaf9",
+      "popular": false
+    },
+    {
+      "name": "Sales Intelligence AI-Powered Fraud Detection",
+      "description": "AI-powered sales intelligence solution for finance. Real-time fraud detection for financial transactions and user behavior.",
+      "category": "sales",
+      "industry": "Sales Intelligence",
+      "features": [
+        "Transaction monitoring",
+        "Behavioral analysis"
+      ],
+      "benefits": [
+        "99% fraud prevention",
+        "Zero false negatives"
+      ],
+      "pricing": {
+        "basic": "1299",
+        "pro": "3999",
+        "enterprise": "12999"
+      },
+      "id": "sales-intelligence-ai-powered-fraud-detection-b1dc0c81",
+      "timestamp": "2026-07-28T03:49:29.205941+00:00",
+      "contactInfo": {
+        "website": "/services/sales-intelligence-ai-powered-fraud-detection-b1dc0c81",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/sales-intelligence-ai-powered-fraud-detection-b1dc0c81",
+      "popular": false
+    },
+    {
+      "name": "Content Distribution Autonomous Customer Service AI",
+      "description": "AI-powered content distribution solution for customer service. Fully automated customer support system that handles 80% of inquiries without human intervention.",
+      "category": "media",
+      "industry": "Content Distribution",
+      "features": [
+        "24/7 support",
+        "Multilingual NLP",
+        "Sentiment analysis"
+      ],
+      "benefits": [
+        "80% automation rate",
+        "Zero wait times"
+      ],
+      "pricing": {
+        "basic": "299",
+        "pro": "899",
+        "enterprise": "2999"
+      },
+      "id": "content-distribution-autonomous-customer-service-ai-8bbef49b",
+      "timestamp": "2026-07-28T03:49:29.205995+00:00",
+      "contactInfo": {
+        "website": "/services/content-distribution-autonomous-customer-service-ai-8bbef49b",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/content-distribution-autonomous-customer-service-ai-8bbef49b",
+      "popular": false
+    },
+    {
+      "name": "Enterprise Performance Management AI-Powered Demand Forecasting",
+      "description": "AI-powered enterprise performance management solution for retail. Uses time-series analysis to predict product demand with high accuracy.",
+      "category": "enterprise",
+      "industry": "Enterprise Performance Management",
+      "features": [
+        "Multi-channel forecasting",
+        "Seasonality analysis"
+      ],
+      "benefits": [
+        "95% forecast accuracy",
+        "Reduced stockouts"
+      ],
+      "pricing": {
+        "basic": "799",
+        "pro": "2299",
+        "enterprise": "7999"
+      },
+      "id": "enterprise-performance-management-ai-powered-demand-forecasting-fab5b3ce",
+      "timestamp": "2026-07-28T03:49:29.206049+00:00",
+      "contactInfo": {
+        "website": "/services/enterprise-performance-management-ai-powered-demand-forecasting-fab5b3ce",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/enterprise-performance-management-ai-powered-demand-forecasting-fab5b3ce",
+      "popular": false
+    },
+    {
+      "name": "TimescaleDB AI-Powered Multi-Cloud Management",
+      "description": "AI-powered timescaledb solution for multi-cloud. Unified multi-cloud management with policy enforcement and cost optimization.",
+      "category": "database",
+      "industry": "TimescaleDB",
+      "features": [
+        "Multi-cloud management",
+        "Policy enforcement",
+        "Cost optimization"
+      ],
+      "benefits": [
+        "Simplified management",
+        "Cost savings"
+      ],
+      "pricing": {
+        "basic": "799",
+        "pro": "2299",
+        "enterprise": "7999"
+      },
+      "id": "timescaledb-ai-powered-multi-cloud-management-54871069",
+      "timestamp": "2026-07-28T03:49:29.206104+00:00",
+      "contactInfo": {
+        "website": "/services/timescaledb-ai-powered-multi-cloud-management-54871069",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/timescaledb-ai-powered-multi-cloud-management-54871069",
+      "popular": false
+    },
+    {
+      "name": "Programmatic Advertising AI-Powered CDN Optimization",
+      "description": "AI-powered programmatic advertising solution for infrastructure. Content delivery network optimization using predictive caching and routing.",
+      "category": "media",
+      "industry": "Programmatic Advertising",
+      "features": [
+        "CDN optimization",
+        "Predictive caching"
+      ],
+      "benefits": [
+        "50% faster delivery",
+        "Lower costs"
+      ],
+      "pricing": {
+        "basic": "599",
+        "pro": "1999",
+        "enterprise": "5999"
+      },
+      "id": "programmatic-advertising-ai-powered-cdn-optimization-063e2677",
+      "timestamp": "2026-07-28T03:49:29.206160+00:00",
+      "contactInfo": {
+        "website": "/services/programmatic-advertising-ai-powered-cdn-optimization-063e2677",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/programmatic-advertising-ai-powered-cdn-optimization-063e2677",
+      "popular": false
+    },
+    {
+      "name": "Benefits Administration AI-Powered Data Migration",
+      "description": "AI-powered benefits administration solution for data engineering. Intelligent data migration planning and execution.",
+      "category": "hr",
+      "industry": "Benefits Administration",
+      "features": [
+        "Migration planning",
+        "Execution"
+      ],
+      "benefits": [
+        "Smooth migrations",
+        "Zero downtime"
+      ],
+      "pricing": {
+        "basic": "599",
+        "pro": "1999",
+        "enterprise": "5999"
+      },
+      "id": "benefits-administration-ai-powered-data-migration-bdfbefc6",
+      "timestamp": "2026-07-28T03:49:29.206215+00:00",
+      "contactInfo": {
+        "website": "/services/benefits-administration-ai-powered-data-migration-bdfbefc6",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/benefits-administration-ai-powered-data-migration-bdfbefc6",
+      "popular": false
+    },
+    {
+      "name": "Transportation Management AI-Powered Disaster Recovery",
+      "description": "AI-powered transportation management solution for disaster recovery. Automated disaster recovery planning and failover testing.",
+      "category": "logistics",
+      "industry": "Transportation Management",
+      "features": [
+        "DR planning",
+        "Failover testing"
+      ],
+      "benefits": [
+        "Zero downtime",
+        "Automated recovery"
+      ],
+      "pricing": {
+        "basic": "899",
+        "pro": "2999",
+        "enterprise": "8999"
+      },
+      "id": "transportation-management-ai-powered-disaster-recovery-9c3e5c50",
+      "timestamp": "2026-07-28T03:49:29.206267+00:00",
+      "contactInfo": {
+        "website": "/services/transportation-management-ai-powered-disaster-recovery-9c3e5c50",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/transportation-management-ai-powered-disaster-recovery-9c3e5c50",
+      "popular": false
+    },
+    {
+      "name": "Distribution Real-Time Data Pipeline Platform",
+      "description": "AI-powered distribution solution for data engineering. Creates and manages real-time data pipelines with automated ETL and streaming analytics.",
+      "category": "media",
+      "industry": "Distribution",
+      "features": [
+        "Real-time ETL",
+        "Streaming analytics"
+      ],
+      "benefits": [
+        "Real-time insights",
+        "Data quality assured"
+      ],
+      "pricing": {
+        "basic": "899",
+        "pro": "2999",
+        "enterprise": "9999"
+      },
+      "id": "distribution-real-time-data-pipeline-platform-6c5e3a13",
+      "timestamp": "2026-07-28T03:49:29.206319+00:00",
+      "contactInfo": {
+        "website": "/services/distribution-real-time-data-pipeline-platform-6c5e3a13",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/distribution-real-time-data-pipeline-platform-6c5e3a13",
+      "popular": false
+    },
+    {
+      "name": "Customer Experience Intelligent Document Processing AI",
+      "description": "AI-powered customer experience solution for operations. Processes invoices, contracts, and forms with 99% accuracy, extracting data and routing documents automatically.",
+      "category": "telecom",
+      "industry": "Customer Experience",
+      "features": [
+        "Multi-format OCR",
+        "Data extraction"
+      ],
+      "benefits": [
+        "99% accuracy",
+        "Zero manual entry"
+      ],
+      "pricing": {
+        "basic": "399",
+        "pro": "999",
+        "enterprise": "2999"
+      },
+      "id": "customer-experience-intelligent-document-processing-ai-c8f8eabe",
+      "timestamp": "2026-07-28T03:49:29.206372+00:00",
+      "contactInfo": {
+        "website": "/services/customer-experience-intelligent-document-processing-ai-c8f8eabe",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/customer-experience-intelligent-document-processing-ai-c8f8eabe",
+      "popular": false
+    },
+    {
+      "name": "Investment Management AI-Powered Metaverse Experience Engine",
+      "description": "AI-powered investment management solution for gaming. Creates immersive metaverse experiences with AI-generated content and virtual avatars.",
+      "category": "financial-services",
+      "industry": "Investment Management",
+      "features": [
+        "AI content generation",
+        "Virtual avatar creation"
+      ],
+      "benefits": [
+        "Immersive experiences",
+        "AI-generated content"
+      ],
+      "pricing": {
+        "basic": "1999",
+        "pro": "5999",
+        "enterprise": "19999"
+      },
+      "id": "investment-management-ai-powered-metaverse-experience-engine-0da80579",
+      "timestamp": "2026-07-28T03:49:29.206425+00:00",
+      "contactInfo": {
+        "website": "/services/investment-management-ai-powered-metaverse-experience-engine-0da80579",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/investment-management-ai-powered-metaverse-experience-engine-0da80579",
+      "popular": false
+    },
+    {
+      "name": "Explainable AI AI-Powered Edge AI Platform",
+      "description": "AI-powered explainable ai solution for iot. Deploys and manages AI models at the edge with automatic optimization.",
+      "category": "ai",
+      "industry": "Explainable AI",
+      "features": [
+        "Edge deployment",
+        "Model optimization"
+      ],
+      "benefits": [
+        "Real-time processing",
+        "Reduced latency"
+      ],
+      "pricing": {
+        "basic": "1499",
+        "pro": "4999",
+        "enterprise": "14999"
+      },
+      "id": "explainable-ai-ai-powered-edge-ai-platform-fbdc477d",
+      "timestamp": "2026-07-28T03:49:29.206478+00:00",
+      "contactInfo": {
+        "website": "/services/explainable-ai-ai-powered-edge-ai-platform-fbdc477d",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/explainable-ai-ai-powered-edge-ai-platform-fbdc477d",
+      "popular": false
+    },
+    {
+      "name": "Subscription Commerce AI-Powered Quality Assurance",
+      "description": "AI-powered subscription commerce solution for development. Automated testing and quality control for software deployments.",
+      "category": "ecommerce",
+      "industry": "Subscription Commerce",
+      "features": [
+        "Test automation",
+        "Quality metrics"
+      ],
+      "benefits": [
+        "50% faster releases",
+        "Higher quality"
+      ],
+      "pricing": {
+        "basic": "249",
+        "pro": "799",
+        "enterprise": "2499"
+      },
+      "id": "subscription-commerce-ai-powered-quality-assurance-f907633e",
+      "timestamp": "2026-07-28T03:49:29.206530+00:00",
+      "contactInfo": {
+        "website": "/services/subscription-commerce-ai-powered-quality-assurance-f907633e",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/subscription-commerce-ai-powered-quality-assurance-f907633e",
+      "popular": false
+    },
+    {
+      "name": "Financial Risk AI-Powered Data Synchronization",
+      "description": "AI-powered financial risk solution for integration. Real-time data sync with conflict detection and resolution.",
+      "category": "finance",
+      "industry": "Financial Risk",
+      "features": [
+        "Real-time sync",
+        "Conflict detection"
+      ],
+      "benefits": [
+        "Always in sync",
+        "No conflicts"
+      ],
+      "pricing": {
+        "basic": "599",
+        "pro": "1999",
+        "enterprise": "5999"
+      },
+      "id": "financial-risk-ai-powered-data-synchronization-cff710c9",
+      "timestamp": "2026-07-28T03:49:29.206583+00:00",
+      "contactInfo": {
+        "website": "/services/financial-risk-ai-powered-data-synchronization-cff710c9",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/financial-risk-ai-powered-data-synchronization-cff710c9",
+      "popular": false
+    },
+    {
+      "name": "Business Applications AI-Powered Data Security",
+      "description": "AI-powered business applications solution for security. Automated data access control and encryption management.",
+      "category": "enterprise",
+      "industry": "Business Applications",
+      "features": [
+        "Access control",
+        "Encryption management"
+      ],
+      "benefits": [
+        "Secure data",
+        "Compliance ready"
+      ],
+      "pricing": {
+        "basic": "799",
+        "pro": "2499",
+        "enterprise": "7999"
+      },
+      "id": "business-applications-ai-powered-data-security-55ef0ec2",
+      "timestamp": "2026-07-28T03:49:29.206636+00:00",
+      "contactInfo": {
+        "website": "/services/business-applications-ai-powered-data-security-55ef0ec2",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/business-applications-ai-powered-data-security-55ef0ec2",
+      "popular": false
+    },
+    {
+      "name": "Enterprise Performance Management AI-Powered Security Auditing",
+      "description": "AI-powered enterprise performance management solution for security. Continuous security auditing with automated compliance reporting.",
+      "category": "enterprise",
+      "industry": "Enterprise Performance Management",
+      "features": [
+        "Security auditing",
+        "Compliance reporting"
+      ],
+      "benefits": [
+        "100% compliance",
+        "Automated reports"
+      ],
+      "pricing": {
+        "basic": "799",
+        "pro": "2499",
+        "enterprise": "7999"
+      },
+      "id": "enterprise-performance-management-ai-powered-security-auditing-0261efc8",
+      "timestamp": "2026-07-28T03:49:29.206690+00:00",
+      "contactInfo": {
+        "website": "/services/enterprise-performance-management-ai-powered-security-auditing-0261efc8",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/enterprise-performance-management-ai-powered-security-auditing-0261efc8",
+      "popular": false
+    },
+    {
+      "name": "SQL Server AI-Powered Cloud Migration",
+      "description": "AI-powered sql server solution for cloud migration. Intelligent cloud migration planning and execution.",
+      "category": "database",
+      "industry": "SQL Server",
+      "features": [
+        "Migration planning",
+        "Execution"
+      ],
+      "benefits": [
+        "Seamless migration",
+        "Zero downtime"
+      ],
+      "pricing": {
+        "basic": "799",
+        "pro": "2299",
+        "enterprise": "7999"
+      },
+      "id": "sql-server-ai-powered-cloud-migration-fda438f1",
+      "timestamp": "2026-07-28T03:49:29.206744+00:00",
+      "contactInfo": {
+        "website": "/services/sql-server-ai-powered-cloud-migration-fda438f1",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/sql-server-ai-powered-cloud-migration-fda438f1",
+      "popular": false
+    },
+    {
+      "name": "Edge Computing AI-Powered Batch Processing",
+      "description": "AI-powered edge computing solution for batch processing. Optimized batch processing schedules with predictive timing.",
+      "category": "telecom",
+      "industry": "Edge Computing",
+      "features": [
+        "Batch scheduling",
+        "Timing optimization"
+      ],
+      "benefits": [
+        "Faster batch",
+        "Better timing"
+      ],
+      "pricing": {
+        "basic": "499",
+        "pro": "1499",
+        "enterprise": "4999"
+      },
+      "id": "edge-computing-ai-powered-batch-processing-32df3e1c",
+      "timestamp": "2026-07-28T03:49:29.206798+00:00",
+      "contactInfo": {
+        "website": "/services/edge-computing-ai-powered-batch-processing-32df3e1c",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/edge-computing-ai-powered-batch-processing-32df3e1c",
+      "popular": false
+    },
+    {
+      "name": "Neobanking AI-Powered SEO Content Engine",
+      "description": "AI-powered neobanking solution for marketing. Generates SEO-optimized content at scale, including blog posts, product descriptions, and marketing copy.",
+      "category": "financial-services",
+      "industry": "Neobanking",
+      "features": [
+        "SEO keyword targeting",
+        "Brand voice adaptation"
+      ],
+      "benefits": [
+        "10x content output",
+        "Ranking improvements"
+      ],
+      "pricing": {
+        "basic": "199",
+        "pro": "499",
+        "enterprise": "1499"
+      },
+      "id": "neobanking-ai-powered-seo-content-engine-9b44f815",
+      "timestamp": "2026-07-28T03:49:29.206850+00:00",
+      "contactInfo": {
+        "website": "/services/neobanking-ai-powered-seo-content-engine-9b44f815",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/neobanking-ai-powered-seo-content-engine-9b44f815",
+      "popular": false
+    },
+    {
+      "name": "Invoice AI-Powered Data Synchronization",
+      "description": "AI-powered invoice solution for integration. Real-time data sync with conflict detection and resolution.",
+      "category": "finance",
+      "industry": "Invoice",
+      "features": [
+        "Real-time sync",
+        "Conflict detection"
+      ],
+      "benefits": [
+        "Always in sync",
+        "No conflicts"
+      ],
+      "pricing": {
+        "basic": "599",
+        "pro": "1999",
+        "enterprise": "5999"
+      },
+      "id": "invoice-ai-powered-data-synchronization-ab4b1942",
+      "timestamp": "2026-07-28T03:49:29.206903+00:00",
+      "contactInfo": {
+        "website": "/services/invoice-ai-powered-data-synchronization-ab4b1942",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/invoice-ai-powered-data-synchronization-ab4b1942",
+      "popular": false
+    },
+    {
+      "name": "Civic Engagement AI Financial Planning & Analysis",
+      "description": "AI-powered civic engagement solution for finance. Generates financial forecasts, budget plans, and performance analyses using machine learning models.",
+      "category": "government",
+      "industry": "Civic Engagement",
+      "features": [
+        "Budget forecasting",
+        "Scenario modeling"
+      ],
+      "benefits": [
+        "90% faster FP&A",
+        "Better accuracy"
+      ],
+      "pricing": {
+        "basic": "799",
+        "pro": "2499",
+        "enterprise": "7999"
+      },
+      "id": "civic-engagement-ai-financial-planning--analysis-24c905b3",
+      "timestamp": "2026-07-28T03:49:29.206959+00:00",
+      "contactInfo": {
+        "website": "/services/civic-engagement-ai-financial-planning--analysis-24c905b3",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/civic-engagement-ai-financial-planning--analysis-24c905b3",
+      "popular": false
+    },
+    {
+      "name": "GraphQL AI-Powered Data Migration",
+      "description": "AI-powered graphql solution for data engineering. Intelligent data migration planning and execution.",
+      "category": "api",
+      "industry": "GraphQL",
+      "features": [
+        "Migration planning",
+        "Execution"
+      ],
+      "benefits": [
+        "Smooth migrations",
+        "Zero downtime"
+      ],
+      "pricing": {
+        "basic": "599",
+        "pro": "1999",
+        "enterprise": "5999"
+      },
+      "id": "graphql-ai-powered-data-migration-81f02800",
+      "timestamp": "2026-07-28T03:49:29.207012+00:00",
+      "contactInfo": {
+        "website": "/services/graphql-ai-powered-data-migration-81f02800",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/graphql-ai-powered-data-migration-81f02800",
+      "popular": false
+    },
+    {
+      "name": "Maintenance AI-Powered Log Analysis",
+      "description": "AI-powered maintenance solution for devops. Automated log analysis for incident detection and root cause analysis.",
+      "category": "manufacturing",
+      "industry": "Maintenance",
+      "features": [
+        "Log analysis",
+        "Incident detection"
+      ],
+      "benefits": [
+        "90% faster debugging",
+        "Proactive alerts"
+      ],
+      "pricing": {
+        "basic": "399",
+        "pro": "999",
+        "enterprise": "2999"
+      },
+      "id": "maintenance-ai-powered-log-analysis-29ee916e",
+      "timestamp": "2026-07-28T03:49:29.207064+00:00",
+      "contactInfo": {
+        "website": "/services/maintenance-ai-powered-log-analysis-29ee916e",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/maintenance-ai-powered-log-analysis-29ee916e",
+      "popular": false
+    },
+    {
+      "name": "Demand AI Business Process Automation Suite",
+      "description": "AI-powered demand solution for business process. Discovers, automates, and optimizes business processes using AI-powered process mining.",
+      "category": "retail",
+      "industry": "Demand",
+      "features": [
+        "Process discovery",
+        "Automation recommendations"
+      ],
+      "benefits": [
+        "70% faster automation",
+        "Optimized ROI"
+      ],
+      "pricing": {
+        "basic": "799",
+        "pro": "2499",
+        "enterprise": "7999"
+      },
+      "id": "demand-ai-business-process-automation-suite-8ca45f57",
+      "timestamp": "2026-07-28T03:49:29.207117+00:00",
+      "contactInfo": {
+        "website": "/services/demand-ai-business-process-automation-suite-8ca45f57",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/demand-ai-business-process-automation-suite-8ca45f57",
+      "popular": false
+    },
+    {
+      "name": "UiPath AI-Powered Metaverse Experience Engine",
+      "description": "AI-powered uipath solution for gaming. Creates immersive metaverse experiences with AI-generated content and virtual avatars.",
+      "category": "automation",
+      "industry": "UiPath",
+      "features": [
+        "AI content generation",
+        "Virtual avatar creation"
+      ],
+      "benefits": [
+        "Immersive experiences",
+        "AI-generated content"
+      ],
+      "pricing": {
+        "basic": "1999",
+        "pro": "5999",
+        "enterprise": "19999"
+      },
+      "id": "uipath-ai-powered-metaverse-experience-engine-72a1f3d3",
+      "timestamp": "2026-07-28T03:49:29.207174+00:00",
+      "contactInfo": {
+        "website": "/services/uipath-ai-powered-metaverse-experience-engine-72a1f3d3",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/uipath-ai-powered-metaverse-experience-engine-72a1f3d3",
+      "popular": false
+    },
+    {
+      "name": "Order Management AI-Powered Network Monitoring",
+      "description": "AI-powered order management solution for it operations. Real-time network monitoring with anomaly detection and automated alerts.",
+      "category": "ecommerce",
+      "industry": "Order Management",
+      "features": [
+        "Network monitoring",
+        "Anomaly detection"
+      ],
+      "benefits": [
+        "99% uptime",
+        "Proactive alerts"
+      ],
+      "pricing": {
+        "basic": "599",
+        "pro": "1999",
+        "enterprise": "5999"
+      },
+      "id": "order-management-ai-powered-network-monitoring-f703f95f",
+      "timestamp": "2026-07-28T03:49:29.207226+00:00",
+      "contactInfo": {
+        "website": "/services/order-management-ai-powered-network-monitoring-f703f95f",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/order-management-ai-powered-network-monitoring-f703f95f",
+      "popular": false
+    },
+    {
+      "name": "Financial Close AI-Powered Container Orchestration",
+      "description": "AI-powered financial close solution for devops. Intelligent container scheduling and resource allocation.",
+      "category": "finance",
+      "industry": "Financial Close",
+      "features": [
+        "Container scheduling",
+        "Resource allocation"
+      ],
+      "benefits": [
+        "90% resource efficiency",
+        "Better scaling"
+      ],
+      "pricing": {
+        "basic": "599",
+        "pro": "1799",
+        "enterprise": "5999"
+      },
+      "id": "financial-close-ai-powered-container-orchestration-1d8e0b80",
+      "timestamp": "2026-07-28T03:49:29.207278+00:00",
+      "contactInfo": {
+        "website": "/services/financial-close-ai-powered-container-orchestration-1d8e0b80",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/financial-close-ai-powered-container-orchestration-1d8e0b80",
+      "popular": false
+    },
+    {
+      "name": "Enterprise Search AI-Powered Fraud Detection",
+      "description": "AI-powered enterprise search solution for finance. Real-time fraud detection for financial transactions and user behavior.",
+      "category": "enterprise",
+      "industry": "Enterprise Search",
+      "features": [
+        "Transaction monitoring",
+        "Behavioral analysis"
+      ],
+      "benefits": [
+        "99% fraud prevention",
+        "Zero false negatives"
+      ],
+      "pricing": {
+        "basic": "1299",
+        "pro": "3999",
+        "enterprise": "12999"
+      },
+      "id": "enterprise-search-ai-powered-fraud-detection-0d40eb6a",
+      "timestamp": "2026-07-28T03:49:29.207330+00:00",
+      "contactInfo": {
+        "website": "/services/enterprise-search-ai-powered-fraud-detection-0d40eb6a",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/enterprise-search-ai-powered-fraud-detection-0d40eb6a",
+      "popular": false
+    },
+    {
+      "name": "Pricing Management AI-Powered Stream Processing",
+      "description": "AI-powered pricing management solution for streaming. Real-time stream processing with automatic windowing and aggregation.",
+      "category": "retail",
+      "industry": "Pricing Management",
+      "features": [
+        "Stream processing",
+        "Auto windowing"
+      ],
+      "benefits": [
+        "Real-time insights",
+        "Better aggregation"
+      ],
+      "pricing": {
+        "basic": "799",
+        "pro": "2499",
+        "enterprise": "7999"
+      },
+      "id": "pricing-management-ai-powered-stream-processing-5b41591b",
+      "timestamp": "2026-07-28T03:49:29.207382+00:00",
+      "contactInfo": {
+        "website": "/services/pricing-management-ai-powered-stream-processing-5b41591b",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/pricing-management-ai-powered-stream-processing-5b41591b",
+      "popular": false
+    },
+    {
+      "name": "POS AI-Powered Customer Journey Mapping",
+      "description": "AI-powered pos solution for marketing. Visualizes and optimizes customer journeys using behavioral analytics.",
+      "category": "retail",
+      "industry": "POS",
+      "features": [
+        "Journey visualization",
+        "Bottleneck detection"
+      ],
+      "benefits": [
+        "40% better UX",
+        "Higher conversion"
+      ],
+      "pricing": {
+        "basic": "699",
+        "pro": "1999",
+        "enterprise": "6999"
+      },
+      "id": "pos-ai-powered-customer-journey-mapping-4481e7aa",
+      "timestamp": "2026-07-28T03:49:29.207434+00:00",
+      "contactInfo": {
+        "website": "/services/pos-ai-powered-customer-journey-mapping-4481e7aa",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/pos-ai-powered-customer-journey-mapping-4481e7aa",
+      "popular": false
+    },
+    {
+      "name": "A/B Testing AI-Powered Pricing Optimization",
+      "description": "AI-powered a/b testing solution for e-commerce. Dynamic pricing recommendations based on market conditions and demand patterns.",
+      "category": "ecommerce",
+      "industry": "A/B Testing",
+      "features": [
+        "Dynamic pricing",
+        "Competitor monitoring"
+      ],
+      "benefits": [
+        "15% revenue increase",
+        "Better margins"
+      ],
+      "pricing": {
+        "basic": "899",
+        "pro": "2999",
+        "enterprise": "8999"
+      },
+      "id": "ab-testing-ai-powered-pricing-optimization-181917e2",
+      "timestamp": "2026-07-28T03:49:29.207487+00:00",
+      "contactInfo": {
+        "website": "/services/ab-testing-ai-powered-pricing-optimization-181917e2",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/ab-testing-ai-powered-pricing-optimization-181917e2",
+      "popular": false
     }
   ],
-  "last_updated": "2026-07-28T03:48:48.418882+00:00",
-  "total_services": 8285,
+  "last_updated": "2026-07-28T03:49:29.367818+00:00",
+  "total_services": 8335,
   "growth_metrics": {
     "cycles_run": 21,
     "total_emails_sent": 21,
