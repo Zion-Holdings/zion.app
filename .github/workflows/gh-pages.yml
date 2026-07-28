@@ -116,7 +116,7 @@ jobs:
 
   deploy:
     needs: build
-    if: success() && needs.build.outputs.production_out_exists == '1'
+    if: success() && (needs.build.outputs.production_out_exists == '1' || needs.build.outputs.artifacts_uploaded == '1')
     runs-on: ubuntu-latest
     timeout-minutes: 15
     environment:
