@@ -7,7 +7,7 @@ export interface NavigationLink {
 export const PRIMARY_NAV_LINKS: NavigationLink[] = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },
-  { name: 'Industries', href: '/industries' },
+  { name: 'Industry Solutions', href: '/service-discovery' },
   { name: 'Solutions', href: '/solutions' },
   { name: 'Pricing', href: '/pricing' },
   { name: '⚡ AI Agents', href: '/agents-monitoring', badge: 'Live' },
