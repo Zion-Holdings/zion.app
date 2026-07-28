@@ -250713,13 +250713,303 @@
       "icon": "\ud83d\udca1",
       "href": "/services/ai-powered-api-management-cc17ca71",
       "popular": false
+    },
+    {
+      "name": "AI-Powered Customer Journey Mapping",
+      "description": "Visualizes and optimizes customer journeys using behavioral analytics.",
+      "category": "ai",
+      "industry": "Marketing",
+      "features": [
+        "Journey visualization",
+        "Bottleneck detection"
+      ],
+      "benefits": [
+        "40% better UX",
+        "Higher conversion"
+      ],
+      "pricing": {
+        "basic": "699",
+        "pro": "1999",
+        "enterprise": "5999"
+      },
+      "id": "ai-powered-customer-journey-mapping-89fc8fb8",
+      "timestamp": "2026-07-28T03:48:47.184447+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-customer-journey-mapping-89fc8fb8",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/ai-powered-customer-journey-mapping-89fc8fb8",
+      "popular": false
+    },
+    {
+      "name": "AI-Powered Impact Analysis",
+      "description": "Predictive impact analysis for data and system changes.",
+      "category": "ai",
+      "industry": "Data Governance",
+      "features": [
+        "Impact prediction",
+        "Risk assessment"
+      ],
+      "benefits": [
+        "Zero-impact changes",
+        "Better planning"
+      ],
+      "pricing": {
+        "basic": "599",
+        "pro": "1999",
+        "enterprise": "5999"
+      },
+      "id": "ai-powered-impact-analysis-12a2ea29",
+      "timestamp": "2026-07-28T03:48:47.189552+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-impact-analysis-12a2ea29",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/ai-powered-impact-analysis-12a2ea29",
+      "popular": false
+    },
+    {
+      "name": "AI-Powered Data Visualization",
+      "description": "Intelligent chart and graph recommendations based on data patterns.",
+      "category": "ai",
+      "industry": "BI",
+      "features": [
+        "Chart recommendations",
+        "Graph generation"
+      ],
+      "benefits": [
+        "Better insights",
+        "Faster analysis"
+      ],
+      "pricing": {
+        "basic": "299",
+        "pro": "999",
+        "enterprise": "2999"
+      },
+      "id": "ai-powered-data-visualization-6d70e1f2",
+      "timestamp": "2026-07-28T03:48:47.189648+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-data-visualization-6d70e1f2",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/ai-powered-data-visualization-6d70e1f2",
+      "popular": false
+    },
+    {
+      "name": "Kubernetes Cluster Management Platform",
+      "description": "Automated Kubernetes cluster provisioning, scaling, and management.",
+      "category": "cloud",
+      "industry": "DevOps",
+      "features": [
+        "Cluster provisioning",
+        "Auto-scaling"
+      ],
+      "benefits": [
+        "95% faster deployments",
+        "Zero-downtime scaling"
+      ],
+      "pricing": {
+        "basic": "599",
+        "pro": "1799",
+        "enterprise": "5999"
+      },
+      "id": "kubernetes-cluster-management-platform-4c502b0a",
+      "timestamp": "2026-07-28T03:48:47.189723+00:00",
+      "contactInfo": {
+        "website": "/services/kubernetes-cluster-management-platform-4c502b0a",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/kubernetes-cluster-management-platform-4c502b0a",
+      "popular": false
+    },
+    {
+      "name": "AI Customer Churn Prediction",
+      "description": "Identifies at-risk customers before they churn using behavioral patterns and engagement metrics.",
+      "category": "ai",
+      "industry": "Customer Success",
+      "features": [
+        "Churn risk scoring",
+        "Early warning system"
+      ],
+      "benefits": [
+        "50% churn reduction",
+        "Higher retention"
+      ],
+      "pricing": {
+        "basic": "399",
+        "pro": "1199",
+        "enterprise": "3999"
+      },
+      "id": "ai-customer-churn-prediction-9bb14652",
+      "timestamp": "2026-07-28T03:48:47.189782+00:00",
+      "contactInfo": {
+        "website": "/services/ai-customer-churn-prediction-9bb14652",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/ai-customer-churn-prediction-9bb14652",
+      "popular": false
+    },
+    {
+      "name": "AI-Powered ETL Pipeline Optimization",
+      "description": "Automated ETL pipeline optimization and error recovery.",
+      "category": "ai",
+      "industry": "Data Engineering",
+      "features": [
+        "Pipeline optimization",
+        "Error recovery"
+      ],
+      "benefits": [
+        "50% faster ETL",
+        "Self-healing"
+      ],
+      "pricing": {
+        "basic": "699",
+        "pro": "1999",
+        "enterprise": "5999"
+      },
+      "id": "ai-powered-etl-pipeline-optimization-a5e6aeaa",
+      "timestamp": "2026-07-28T03:48:47.189838+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-etl-pipeline-optimization-a5e6aeaa",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/ai-powered-etl-pipeline-optimization-a5e6aeaa",
+      "popular": false
+    },
+    {
+      "name": "AI-Powered Data Quality Manager",
+      "description": "Automatically detects, corrects, and prevents data quality issues using machine learning.",
+      "category": "data",
+      "industry": "Data Management",
+      "features": [
+        "Anomaly detection",
+        "Auto-correction"
+      ],
+      "benefits": [
+        "95% data quality",
+        "Automated cleanup"
+      ],
+      "pricing": {
+        "basic": "399",
+        "pro": "1199",
+        "enterprise": "3999"
+      },
+      "id": "ai-powered-data-quality-manager-afa097d0",
+      "timestamp": "2026-07-28T03:48:47.189911+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-data-quality-manager-afa097d0",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/ai-powered-data-quality-manager-afa097d0",
+      "popular": false
+    },
+    {
+      "name": "AI Sales Lead Scoring Engine",
+      "description": "Scores and prioritizes sales leads in real-time using behavioral data and engagement patterns.",
+      "category": "ai",
+      "industry": "Sales",
+      "features": [
+        "Lead scoring",
+        "Behavioral analysis"
+      ],
+      "benefits": [
+        "40% more qualified leads",
+        "Higher conversion rates"
+      ],
+      "pricing": {
+        "basic": "249",
+        "pro": "799",
+        "enterprise": "2499"
+      },
+      "id": "ai-sales-lead-scoring-engine-5ae0feda",
+      "timestamp": "2026-07-28T03:48:47.189967+00:00",
+      "contactInfo": {
+        "website": "/services/ai-sales-lead-scoring-engine-5ae0feda",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/ai-sales-lead-scoring-engine-5ae0feda",
+      "popular": false
+    },
+    {
+      "name": "AI Social Media Content Creator",
+      "description": "Generates, schedules, and optimizes social media content across all platforms.",
+      "category": "micro-saas",
+      "industry": "Social Media",
+      "features": [
+        "Content generation",
+        "Scheduling"
+      ],
+      "benefits": [
+        "Daily content",
+        "2x engagement"
+      ],
+      "pricing": {
+        "basic": "39",
+        "pro": "99",
+        "enterprise": "299"
+      },
+      "id": "ai-social-media-content-creator-0473a874",
+      "timestamp": "2026-07-28T03:48:47.190023+00:00",
+      "contactInfo": {
+        "website": "/services/ai-social-media-content-creator-0473a874",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/ai-social-media-content-creator-0473a874",
+      "popular": false
+    },
+    {
+      "name": "AI-Powered Customer Churn Prevention",
+      "description": "Identifies at-risk customers and triggers retention workflows automatically.",
+      "category": "ai",
+      "industry": "SaaS",
+      "features": [
+        "Churn prediction",
+        "Automated interventions"
+      ],
+      "benefits": [
+        "50% churn reduction",
+        "Proactive retention"
+      ],
+      "pricing": {
+        "basic": "899",
+        "pro": "2499",
+        "enterprise": "8999"
+      },
+      "id": "ai-powered-customer-churn-prevention-62634e55",
+      "timestamp": "2026-07-28T03:48:47.190080+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-customer-churn-prevention-62634e55",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\udca1",
+      "href": "/services/ai-powered-customer-churn-prevention-62634e55",
+      "popular": false
     }
   ],
-  "last_updated": "2026-07-28T03:48:14.301515+00:00",
-  "total_services": 8275,
+  "last_updated": "2026-07-28T03:48:48.418882+00:00",
+  "total_services": 8285,
   "growth_metrics": {
-    "cycles_run": 20,
-    "total_emails_sent": 20,
+    "cycles_run": 21,
+    "total_emails_sent": 21,
     "total_prospects_contacted": 0,
     "meetings_booked": 0,
     "revenue_generated": 0
