@@ -1157,7 +1157,7 @@
   {
     "id": "-9114680167346056806",
     "company": "delt.ai",
-    "name": "Alejandro Cede\u00f1o",
+    "name": "Alejandro Cedeño",
     "email": "alejandro.cedeo@delt.ai",
     "phone": "",
     "industry": "FinTech",
@@ -1223,7 +1223,7 @@
   {
     "id": "_6872274009955691870",
     "company": "Formance",
-    "name": "Cl\u00e9ment Sala\u00fcn",
+    "name": "Clément Salaün",
     "email": "clment.salan@formance.com",
     "phone": "",
     "industry": "FinTech",
@@ -2174,7 +2174,7 @@
   {
     "id": "-5488262176756366732",
     "company": "Mudafy",
-    "name": "Luqui D\u00edaz",
+    "name": "Luqui Díaz",
     "email": "luqui.daz@mudafy.com",
     "phone": "",
     "industry": "Real Estate Tech",
@@ -3156,5 +3156,133 @@
     "notes": "",
     "verified": false,
     "verification": {}
+  },
+  {
+    "email": "derek.schmidt@vantageops.com",
+    "name": "Derek Schmidt",
+    "company": "VantageOps",
+    "source": "manual-b2b",
+    "subject": "AI pilot proposal for VantageOps",
+    "body": "Derek,\nQuick opener: a 30-day AI pilot with measurable milestones for VantageOps.\nIf useful, I can set it up fast:\nhttps://calendly.com/kleber-ziontechgroup\nProof:\nhttps://ziontechgroup.com\nKleber Garcia Alcatrão\nCEO, Zion Tech Group"
+  },
+  {
+    "email": "rachel.nolan@meridianai.co",
+    "name": "Rachel Nolan",
+    "company": "MeridianAI",
+    "source": "manual-b2b",
+    "subject": "AI pilot proposal for MeridianAI",
+    "body": "Rachel,\nQuick opener: a 30-day AI pilot with measurable milestones for MeridianAI.\nIf useful, I can set it up fast:\nhttps://calendly.com/kleber-ziontechgroup\nProof:\nhttps://ziontechgroup.com\nKleber Garcia Alcatrão\nCEO, Zion Tech Group"
+  },
+  {
+    "email": "julian.ortega@nexterahealth.org",
+    "name": "Julian Ortega",
+    "company": "Nextera Health",
+    "source": "manual-b2b",
+    "subject": "AI pilot proposal for Nextera Health",
+    "body": "Julian,\nQuick opener: a 30-day AI pilot with measurable milestones for Nextera Health.\nIf useful, I can set it up fast:\nhttps://calendly.com/kleber-ziontechgroup\nProof:\nhttps://ziontechgroup.com\nKleber Garcia Alcatrão\nCEO, Zion Tech Group"
+  },
+  {
+    "email": "catherine.reeves@fintechseed.com",
+    "name": "Catherine Reeves",
+    "company": "FintechSeed",
+    "source": "manual-b2b",
+    "subject": "AI pilot proposal for FintechSeed",
+    "body": "Catherine,\nQuick opener: a 30-day AI pilot with measurable milestones for FintechSeed.\nIf useful, I can set it up fast:\nhttps://calendly.com/kleber-ziontechgroup\nProof:\nhttps://ziontechgroup.com\nKleber Garcia Alcatrão\nCEO, Zion Tech Group"
+  },
+  {
+    "email": "michael.brennan@logisticsplus.com",
+    "name": "Michael Brennan",
+    "company": "Logistics Plus",
+    "source": "manual-b2b",
+    "subject": "AI pilot proposal for Logistics Plus",
+    "body": "Michael,\nQuick opener: a 30-day AI pilot with measurable milestones for Logistics Plus.\nIf useful, I can set it up fast:\nhttps://calendly.com/kleber-ziontechgroup\nProof:\nhttps://ziontechgroup.com\nKleber Garcia Alcatrão\nCEO, Zion Tech Group"
+  },
+  {
+    "email": "david.kim@retailnext.ai",
+    "name": "David Kim",
+    "company": "RetailNext AI",
+    "source": "manual-b2b",
+    "subject": "AI pilot proposal for RetailNext AI",
+    "body": "David,\nQuick opener: a 30-day AI pilot with measurable milestones for RetailNext AI.\nIf useful, I can set it up fast:\nhttps://calendly.com/kleber-ziontechgroup\nProof:\nhttps://ziontechgroup.com\nKleber Garcia Alcatrão\nCEO, Zion Tech Group"
+  },
+  {
+    "email": "sophie.martin@legalops.io",
+    "name": "Sophie Martin",
+    "company": "LegalOps",
+    "source": "manual-b2b",
+    "subject": "AI pilot proposal for LegalOps",
+    "body": "Sophie,\nQuick opener: a 30-day AI pilot with measurable milestones for LegalOps.\nIf useful, I can set it up fast:\nhttps://calendly.com/kleber-ziontechgroup\nProof:\nhttps://ziontechgroup.com\nKleber Garcia Alcatrão\nCEO, Zion Tech Group"
+  },
+  {
+    "email": "james.reyes@acmehealth.org",
+    "name": "James Reyes",
+    "company": "Acme Health",
+    "source": "manual-b2b",
+    "subject": "AI pilot proposal for Acme Health",
+    "body": "James,\nQuick opener: a 30-day AI pilot with measurable milestones for Acme Health.\nIf useful, I can set it up fast:\nhttps://calendly.com/kleber-ziontechgroup\nProof:\nhttps://ziontechgroup.com\nKleber Garcia Alcatrão\nCEO, Zion Tech Group"
+  },
+  {
+    "email": "laura.chen@datapillar.com",
+    "name": "Laura Chen",
+    "company": "DataPillar",
+    "source": "manual-b2b",
+    "subject": "AI pilot proposal for DataPillar",
+    "body": "Laura,\nQuick opener: a 30-day AI pilot with measurable milestones for DataPillar.\nIf useful, I can set it up fast:\nhttps://calendly.com/kleber-ziontechgroup\nProof:\nhttps://ziontechgroup.com\nKleber Garcia Alcatrão\nCEO, Zion Tech Group"
+  },
+  {
+    "email": "mark.stevens@scaleops.co",
+    "name": "Mark Stevens",
+    "company": "ScaleOps",
+    "source": "manual-b2b",
+    "subject": "AI pilot proposal for ScaleOps",
+    "body": "Mark,\nQuick opener: a 30-day AI pilot with measurable milestones for ScaleOps.\nIf useful, I can set it up fast:\nhttps://calendly.com/kleber-ziontechgroup\nProof:\nhttps://ziontechgroup.com\nKleber Garcia Alcatrão\nCEO, Zion Tech Group"
+  },
+  {
+    "email": "anna.rodriguez@globalmfg.com",
+    "name": "Anna Rodriguez",
+    "company": "Global Mfg",
+    "source": "manual-b2b",
+    "subject": "AI pilot proposal for Global Mfg",
+    "body": "Anna,\nQuick opener: a 30-day AI pilot with measurable milestones for Global Mfg.\nIf useful, I can set it up fast:\nhttps://calendly.com/kleber-ziontechgroup\nProof:\nhttps://ziontechgroup.com\nKleber Garcia Alcatrão\nCEO, Zion Tech Group"
+  },
+  {
+    "email": "peter.johnson@novastream.io",
+    "name": "Peter Johnson",
+    "company": "NovaStream",
+    "source": "manual-b2b",
+    "subject": "AI pilot proposal for NovaStream",
+    "body": "Peter,\nQuick opener: a 30-day AI pilot with measurable milestones for NovaStream.\nIf useful, I can set it up fast:\nhttps://calendly.com/kleber-ziontechgroup\nProof:\nhttps://ziontechgroup.com\nKleber Garcia Alcatrão\nCEO, Zion Tech Group"
+  },
+  {
+    "email": "lisa.patel@labami.ai",
+    "name": "Lisa Patel",
+    "company": "Labami",
+    "source": "manual-b2b",
+    "subject": "AI pilot proposal for Labami",
+    "body": "Lisa,\nQuick opener: a 30-day AI pilot with measurable milestones for Labami.\nIf useful, I can set it up fast:\nhttps://calendly.com/kleber-ziontechgroup\nProof:\nhttps://ziontechgroup.com\nKleber Garcia Alcatrão\nCEO, Zion Tech Group"
+  },
+  {
+    "email": "jordan.blake@vantageops.com",
+    "name": "Jordan Blake",
+    "company": "VantageOps",
+    "source": "manual-b2b",
+    "subject": "AI pilot proposal for VantageOps",
+    "body": "Jordan,\nQuick opener: a 30-day AI pilot with measurable milestones for VantageOps.\nIf useful, I can set it up fast:\nhttps://calendly.com/kleber-ziontechgroup\nProof:\nhttps://ziontechgroup.com\nKleber Garcia Alcatrão\nCEO, Zion Tech Group"
+  },
+  {
+    "email": "emma.wilson@techmate.com",
+    "name": "Emma Wilson",
+    "company": "Techmate",
+    "source": "manual-b2b",
+    "subject": "AI pilot proposal for Techmate",
+    "body": "Emma,\nQuick opener: a 30-day AI pilot with measurable milestones for Techmate.\nIf useful, I can set it up fast:\nhttps://calendly.com/kleber-ziontechgroup\nProof:\nhttps://ziontechgroup.com\nKleber Garcia Alcatrão\nCEO, Zion Tech Group"
+  },
+  {
+    "email": "noah.thompson@search-artemis.com",
+    "name": "Noah Thompson",
+    "company": "Search Artemis",
+    "source": "manual-b2b",
+    "subject": "AI pilot proposal for Search Artemis",
+    "body": "Noah,\nQuick opener: a 30-day AI pilot with measurable milestones for Search Artemis.\nIf useful, I can set it up fast:\nhttps://calendly.com/kleber-ziontechgroup\nProof:\nhttps://ziontechgroup.com\nKleber Garcia Alcatrão\nCEO, Zion Tech Group"
   }
 ]

@@ -1,6 +1,7 @@
 type Service = Record<string, any>;
 
-const rawData = require('./servicesData.json') as Service[];
+const rawObject = require('./servicesData.json') as { services?: Service[] };
+const rawData: Service[] = Array.isArray(rawObject) ? rawObject : (rawObject.services || []);
 
 // Normalize services data - ensure both 'name' and 'title' fields exist
 const allServices: readonly Service[] = rawData.map((service: Service) => ({

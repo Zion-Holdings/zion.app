@@ -15,7 +15,6 @@ import FloatingActionDock from '@/components/FloatingActionDock';
 import ServiceMatchQuiz from '@/components/ServiceMatchQuiz';
 import AgentsMonitoring from '@/components/AgentsMonitoring';
 import NavigationQuickLinks from '@/components/NavigationQuickLinks';
-import HomepageEnhancements from '@/components/HomepageEnhancements';
 
 // Category accent color for showcase cards (maps category key → gradient)
 // Category accent color for showcase card styles (static RGBA + hex)
@@ -1405,7 +1404,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <HomepageEnhancements />
     <FloatingActionDock />
     </main>
   );
