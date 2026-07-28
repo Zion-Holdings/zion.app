@@ -36,3 +36,7 @@
 /status-page/ /status-page/index.html 200
 /use-cases /use-cases/index.html 200
 /use-cases/ /use-cases/index.html 200
+/computer-vision-services/ /computer-vision-services/index.html 200
+/machine-learning-ops/ /machine-learning-ops/index.html 200
+/intelligent-document-processing/ /intelligent-document-processing/index.html 200
+/generative-ai-enterprise/ /generative-ai-enterprise/index.html 200
