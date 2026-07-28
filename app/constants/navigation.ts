@@ -51,5 +51,5 @@ export const FEATURED_AI_SERVICE_LINKS: NavigationLink[] = [
   { name: 'AI Supply Chain', href: '/ai-supply-chain' },
   { name: 'AI Route Optimizer', href: '/ai-route-optimizer' },
   { name: '──────────', href: '#' },
-  { name: '🛠️ Browse All 580+ Services →', href: '/services' },
+  { name: '🛠️ Browse All 14,211+ Services →', href: '/services' },
 ];
