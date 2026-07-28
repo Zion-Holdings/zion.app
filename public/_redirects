@@ -30,8 +30,8 @@
 /desktop-app  /desktop-app/index.html  200
 /plugin-marketplace  /plugin-marketplace/index.html  200
 /changelogs  /changelogs/index.html  200
-/public-roadmap  /public-roadmap/index.html  200
-/public-roadmap/ /public-roadmap/index.html 200
+/public-roadmap  /roadmap/  301
+/public-roadmap/ /roadmap/ 301
 /status-page  /status-page/index.html  200
 /status-page/ /status-page/index.html 200
 /use-cases /use-cases/index.html 200
