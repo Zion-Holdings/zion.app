@@ -3604,5 +3604,45 @@
     "domain": "marblefin.com",
     "industry": "Finance",
     "title": "CTO"
+  },
+  {
+    "name": "Diana Foster",
+    "email": "diana.foster@aileap.io",
+    "company": "AI Leap",
+    "domain": "aileap.io",
+    "industry": "AI",
+    "title": "COO"
+  },
+  {
+    "name": "Brian Holloway",
+    "email": "brian.holloway@edgewisehealth.co",
+    "company": "Edgewise Health",
+    "domain": "edgewisehealth.co",
+    "industry": "Healthcare",
+    "title": "CIO"
+  },
+  {
+    "name": "Lena Schr\u00f6der",
+    "email": "lena.schroeder@quantumdata.eu",
+    "company": "QuantumData",
+    "domain": "quantumdata.eu",
+    "industry": "Data",
+    "title": "VP Engineering"
+  },
+  {
+    "name": "Victor Reyes",
+    "email": "victor.reyes@meridiansecurity.com",
+    "company": "Meridian Security",
+    "domain": "meridiansecurity.com",
+    "industry": "Security",
+    "title": "Director of IT"
+  },
+  {
+    "name": "Mia Chen",
+    "email": "mia.chen@brightlineconsulting.ai",
+    "company": "BrightLine AI",
+    "domain": "brightlineconsulting.ai",
+    "industry": "Consulting",
+    "title": "Managing Partner"
   }
 ]
