@@ -198160,10 +198160,3012 @@
       "icon": "\ud83d\udca1",
       "href": "/services/ai-powered-arvr-content-creator-30c68acb",
       "popular": false
+    },
+    {
+      "id": "ai-powered-production-scheduling-optimization-b844de77",
+      "title": "AI-Powered Production Scheduling Optimization",
+      "description": "Optimizes production scheduling with AI and constraint management.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Scheduling optimization",
+        "Constraint management",
+        "AI optimization"
+      ],
+      "benefits": [
+        "40% schedule efficiency",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1999",
+        "pro": "5999",
+        "enterprise": "19999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-production-scheduling-optimization-b844de77",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-production-scheduling-optimization-b844de77",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-medical-imaging-analysis-d0dcab29",
+      "title": "AI-Powered Medical Imaging Analysis",
+      "description": "Computer vision for X-rays, MRIs, CT scans with radiologist-level accuracy.",
+      "category": "ai",
+      "industry": "Healthcare",
+      "features": [
+        "Image analysis",
+        "Abnormality detection",
+        "Tumor detection"
+      ],
+      "benefits": [
+        "95% accuracy",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "3999",
+        "pro": "11999",
+        "enterprise": "39999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-medical-imaging-analysis-d0dcab29",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-medical-imaging-analysis-d0dcab29",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-budget-forecasting-bea495a7",
+      "title": "AI-Powered Budget Forecasting",
+      "description": "Predictive budget forecasting using historical data and market trends.",
+      "category": "ai",
+      "industry": "Finance",
+      "features": [
+        "Budget forecasting",
+        "Trend analysis",
+        "Variance prediction"
+      ],
+      "benefits": [
+        "90% forecast accuracy",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "799",
+        "pro": "2499",
+        "enterprise": "7999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-budget-forecasting-bea495a7",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-budget-forecasting-bea495a7",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-loan-portfolio-management-18a9be3e",
+      "title": "AI-Powered Loan Portfolio Management",
+      "description": "Manages loan portfolios with risk assessment and performance optimization.",
+      "category": "ai",
+      "industry": "Finance",
+      "features": [
+        "Portfolio management",
+        "Risk assessment",
+        "Performance optimization"
+      ],
+      "benefits": [
+        "30% better portfolio performance",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "2999",
+        "pro": "9999",
+        "enterprise": "29999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-loan-portfolio-management-18a9be3e",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-loan-portfolio-management-18a9be3e",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-production-line-simulation-f0b1b161",
+      "title": "AI-Powered Production Line Simulation",
+      "description": "Simulates production lines with digital twins and AI.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Line simulation",
+        "Digital twins",
+        "AI optimization"
+      ],
+      "benefits": [
+        "25% better planning",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "2999",
+        "pro": "9999",
+        "enterprise": "29999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-production-line-simulation-f0b1b161",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-production-line-simulation-f0b1b161",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-commercial-banking-optimization-6ba7446a",
+      "title": "AI-Powered Commercial Banking Optimization",
+      "description": "Optimizes commercial banking operations with risk management and compliance.",
+      "category": "ai",
+      "industry": "Banking",
+      "features": [
+        "Operations optimization",
+        "Risk management",
+        "Compliance automation"
+      ],
+      "benefits": [
+        "30% efficiency gain",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "2499",
+        "pro": "7999",
+        "enterprise": "24999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-commercial-banking-optimization-6ba7446a",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-commercial-banking-optimization-6ba7446a",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-manufacturing-supply-chain-08def773",
+      "title": "AI-Powered Manufacturing Supply Chain",
+      "description": "Manages manufacturing supply chain with demand forecasting.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Supply chain management",
+        "Demand forecasting",
+        "Optimization"
+      ],
+      "benefits": [
+        "30% supply chain efficiency",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "2999",
+        "pro": "9999",
+        "enterprise": "29999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-manufacturing-supply-chain-08def773",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-manufacturing-supply-chain-08def773",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-factory-floor-analytics-8cea8c65",
+      "title": "AI-Powered Factory Floor Analytics",
+      "description": "Analytics for factory floor with real-time insights and recommendations.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Floor analytics",
+        "Real-time insights",
+        "Recommendations"
+      ],
+      "benefits": [
+        "80% faster insights",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1999",
+        "pro": "5999",
+        "enterprise": "19999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-factory-floor-analytics-8cea8c65",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-factory-floor-analytics-8cea8c65",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-factory-optimization-ai-e99d0dee",
+      "title": "AI-Powered Factory Optimization AI",
+      "description": "AI for factory optimization with simulation and analytics.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Factory optimization",
+        "AI simulation",
+        "Analytics"
+      ],
+      "benefits": [
+        "45% factory efficiency",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "3999",
+        "pro": "12999",
+        "enterprise": "39999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-factory-optimization-ai-e99d0dee",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-factory-optimization-ai-e99d0dee",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-quantum-manufacturing-820c3ed7",
+      "title": "AI-Powered Quantum Manufacturing",
+      "description": "Quantum manufacturing with AI and quantum optimization.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Quantum manufacturing",
+        "AI",
+        "Quantum optimization"
+      ],
+      "benefits": [
+        "200% quantum efficiency",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "29999;149999;299999",
+        "pro": "999",
+        "enterprise": "2999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-quantum-manufacturing-820c3ed7",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-quantum-manufacturing-820c3ed7",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-production-planning-ai-617fb8f7",
+      "title": "AI-Powered Production Planning AI",
+      "description": "AI-powered production planning with demand and capacity optimization.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Production planning",
+        "Demand optimization",
+        "Capacity optimization"
+      ],
+      "benefits": [
+        "35% planning efficiency",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "2999",
+        "pro": "9999",
+        "enterprise": "29999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-production-planning-ai-617fb8f7",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-production-planning-ai-617fb8f7",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-financial-statement-analysis-29ca6a51",
+      "title": "AI-Powered Financial Statement Analysis",
+      "description": "Automated financial statement analysis with anomaly detection and insights.",
+      "category": "ai",
+      "industry": "Finance",
+      "features": [
+        "Statement analysis",
+        "Anomaly detection",
+        "Insight generation"
+      ],
+      "benefits": [
+        "90% faster analysis",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "899",
+        "pro": "2999",
+        "enterprise": "8999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-financial-statement-analysis-29ca6a51",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-financial-statement-analysis-29ca6a51",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-production-quality-analytics-14aa1e0b",
+      "title": "AI-Powered Production Quality Analytics",
+      "description": "Analytics for production quality with defect prediction and prevention.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Quality analytics",
+        "Defect prediction",
+        "Prevention"
+      ],
+      "benefits": [
+        "35% quality improvement",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1999",
+        "pro": "5999",
+        "enterprise": "19999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-production-quality-analytics-14aa1e0b",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-production-quality-analytics-14aa1e0b",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-hyper-autonomous-infinite-manufacturing-af79a937",
+      "title": "AI-Powered Hyper-Autonomous Infinite Manufacturing",
+      "description": "Hyper-autonomous infinite manufacturing with AI and unlimited scalability.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Hyper-autonomous infinite",
+        "AI",
+        "Unlimited scalability"
+      ],
+      "benefits": [
+        "1200% scalability",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "599999;2999999;5999999",
+        "pro": "999",
+        "enterprise": "2999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-hyper-autonomous-infinite-manufacturing-af79a937",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-hyper-autonomous-infinite-manufacturing-af79a937",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-private-equity-analysis-9bc2fb51",
+      "title": "AI-Powered Private Equity Analysis",
+      "description": "Automates private equity due diligence and portfolio management.",
+      "category": "ai",
+      "industry": "Finance",
+      "features": [
+        "Due diligence automation",
+        "Portfolio management",
+        "Performance tracking"
+      ],
+      "benefits": [
+        "40% faster due diligence",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "3999",
+        "pro": "12999",
+        "enterprise": "39999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-private-equity-analysis-9bc2fb51",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-private-equity-analysis-9bc2fb51",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-industrial-automation-platform-08f069bf",
+      "title": "AI-Powered Industrial Automation Platform",
+      "description": "Platform for industrial automation with AI and IoT integration.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Automation platform",
+        "AI integration",
+        "IoT"
+      ],
+      "benefits": [
+        "60% automation rate",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "4999",
+        "pro": "14999",
+        "enterprise": "49999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-industrial-automation-platform-08f069bf",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-industrial-automation-platform-08f069bf",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-pharmacy-optimization-fd06d51d",
+      "title": "AI-Powered Pharmacy Optimization",
+      "description": "Optimizes pharmacy operations with inventory and prescription management.",
+      "category": "ai",
+      "industry": "Healthcare",
+      "features": [
+        "Inventory optimization",
+        "Prescription management",
+        "Cost reduction"
+      ],
+      "benefits": [
+        "25% cost savings",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1999",
+        "pro": "5999",
+        "enterprise": "19999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-pharmacy-optimization-fd06d51d",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-pharmacy-optimization-fd06d51d",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-factory-automation-orchestration-f5067189",
+      "title": "AI-Powered Factory Automation Orchestration",
+      "description": "Orchestrates factory automation with AI and workflow management.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Automation orchestration",
+        "Workflow management",
+        "AI coordination"
+      ],
+      "benefits": [
+        "50% faster operations",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "3999",
+        "pro": "12999",
+        "enterprise": "39999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-factory-automation-orchestration-f5067189",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-factory-automation-orchestration-f5067189",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-smart-manufacturing-ai-b377c955",
+      "title": "AI-Powered Smart Manufacturing AI",
+      "description": "AI for smart manufacturing with digital twins and analytics.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Smart manufacturing AI",
+        "Digital twins",
+        "Analytics"
+      ],
+      "benefits": [
+        "40% smart adoption",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "3999",
+        "pro": "12999",
+        "enterprise": "39999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-smart-manufacturing-ai-b377c955",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-smart-manufacturing-ai-b377c955",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-cash-management-affe4528",
+      "title": "AI-Powered Cash Management",
+      "description": "Automates cash management with forecasting and optimization.",
+      "category": "ai",
+      "industry": "Treasury",
+      "features": [
+        "Cash forecasting",
+        "Optimization",
+        "Auto-investment"
+      ],
+      "benefits": [
+        "40% better cash efficiency",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1299",
+        "pro": "3999",
+        "enterprise": "12999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-cash-management-affe4528",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-cash-management-affe4528",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-smart-manufacturing-6693d98d",
+      "title": "AI-Powered Smart Manufacturing",
+      "description": "Smart manufacturing with AI, IoT, and digital twins.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Smart manufacturing",
+        "AI",
+        "IoT",
+        "Digital twins"
+      ],
+      "benefits": [
+        "50% smart adoption",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "4999",
+        "pro": "14999",
+        "enterprise": "49999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-smart-manufacturing-6693d98d",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-smart-manufacturing-6693d98d",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-hyper-manufacturing-598905ad",
+      "title": "AI-Powered Hyper-Manufacturing",
+      "description": "Hyper-manufacturing with AI and exponential optimization.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Hyper-manufacturing",
+        "AI",
+        "Exponential optimization"
+      ],
+      "benefits": [
+        "100% hyper efficiency",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "9999;39999;99999",
+        "pro": "999",
+        "enterprise": "2999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-hyper-manufacturing-598905ad",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-hyper-manufacturing-598905ad",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-clinical-decision-support-system-083ea709",
+      "title": "AI-Powered Clinical Decision Support System",
+      "description": "Real-time clinical decision support with evidence-based recommendations.",
+      "category": "ai",
+      "industry": "Healthcare",
+      "features": [
+        "Diagnosis assistance",
+        "Treatment recommendations",
+        "Drug interaction checking"
+      ],
+      "benefits": [
+        "30% faster diagnosis",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "2999",
+        "pro": "8999",
+        "enterprise": "29999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-clinical-decision-support-system-083ea709",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-clinical-decision-support-system-083ea709",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-demand-planning-26e6c470",
+      "title": "AI-Powered Demand Planning",
+      "description": "Advanced demand planning with market analysis and seasonality detection.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Demand planning",
+        "Market analysis",
+        "Seasonality"
+      ],
+      "benefits": [
+        "95% forecast accuracy",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1999",
+        "pro": "5999",
+        "enterprise": "19999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-demand-planning-26e6c470",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-demand-planning-26e6c470",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-cognitive-manufacturing-daad991c",
+      "title": "AI-Powered Cognitive Manufacturing",
+      "description": "Cognitive manufacturing with AI and advanced analytics.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Cognitive manufacturing",
+        "AI",
+        "Advanced analytics"
+      ],
+      "benefits": [
+        "75% cognitive level",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "6999",
+        "pro": "24999;69999",
+        "enterprise": "2999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-cognitive-manufacturing-daad991c",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-cognitive-manufacturing-daad991c",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-manufacturing-process-analytics-aa810da4",
+      "title": "AI-Powered Manufacturing Process Analytics",
+      "description": "Analytics for manufacturing processes with optimization recommendations.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Process analytics",
+        "Optimization recommendations",
+        "AI"
+      ],
+      "benefits": [
+        "40% process improvement",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1999",
+        "pro": "5999",
+        "enterprise": "19999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-manufacturing-process-analytics-aa810da4",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-manufacturing-process-analytics-aa810da4",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-production-cost-analysis-0dd73353",
+      "title": "AI-Powered Production Cost Analysis",
+      "description": "Analyzes production costs with variance analysis and optimization recommendations.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Cost analysis",
+        "Variance analysis",
+        "Optimization"
+      ],
+      "benefits": [
+        "20% cost reduction",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1499",
+        "pro": "4999",
+        "enterprise": "14999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-production-cost-analysis-0dd73353",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-production-cost-analysis-0dd73353",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-healthcare-analytics-696a359c",
+      "title": "AI-Powered Healthcare Analytics",
+      "description": "Healthcare analytics with population health management and insights.",
+      "category": "ai",
+      "industry": "Healthcare",
+      "features": [
+        "Analytics",
+        "Population health",
+        "Insight generation"
+      ],
+      "benefits": [
+        "30% better outcomes",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "2499",
+        "pro": "7999",
+        "enterprise": "24999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-healthcare-analytics-696a359c",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-healthcare-analytics-696a359c",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-self-evolving-infinite-quantum-manufacturing-c1188931",
+      "title": "AI-Powered Self-Evolving Infinite-Quantum Manufacturing",
+      "description": "Self-evolving infinite-quantum manufacturing with AI and continuous exponential growth.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Self-evolving infinite-quantum",
+        "AI",
+        "Exponential growth"
+      ],
+      "benefits": [
+        "10000% evolution",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1999999;7999999;19999999",
+        "pro": "999",
+        "enterprise": "2999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-self-evolving-infinite-quantum-manufacturing-c1188931",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-self-evolving-infinite-quantum-manufacturing-c1188931",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-laboratory-automation-203bc14c",
+      "title": "AI-Powered Laboratory Automation",
+      "description": "Automates laboratory processes with sample tracking and analysis.",
+      "category": "ai",
+      "industry": "Healthcare",
+      "features": [
+        "Lab automation",
+        "Sample tracking",
+        "Analysis"
+      ],
+      "benefits": [
+        "60% faster testing",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1999",
+        "pro": "5999",
+        "enterprise": "19999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-laboratory-automation-203bc14c",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-laboratory-automation-203bc14c",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-elder-care-management-4207f3ce",
+      "title": "AI-Powered Elder Care Management",
+      "description": "AI-powered elder care with monitoring and health tracking.",
+      "category": "ai",
+      "industry": "Healthcare",
+      "features": [
+        "Elder care",
+        "Health monitoring",
+        "Alert systems"
+      ],
+      "benefits": [
+        "50% better care",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "2999",
+        "pro": "9999",
+        "enterprise": "29999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-elder-care-management-4207f3ce",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-elder-care-management-4207f3ce",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-hedge-fund-strategy-generation-edc395d2",
+      "title": "AI-Powered Hedge Fund Strategy Generation",
+      "description": "Generates and backtests hedge fund trading strategies.",
+      "category": "ai",
+      "industry": "Finance",
+      "features": [
+        "Strategy generation",
+        "Backtesting",
+        "Risk management"
+      ],
+      "benefits": [
+        "50% more strategies",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "5999",
+        "pro": "19999",
+        "enterprise": "59999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-hedge-fund-strategy-generation-edc395d2",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-hedge-fund-strategy-generation-edc395d2",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-patient-safety-management-3424e5b9",
+      "title": "AI-Powered Patient Safety Management",
+      "description": "Manages patient safety with incident detection and prevention.",
+      "category": "ai",
+      "industry": "Healthcare",
+      "features": [
+        "Safety management",
+        "Incident detection",
+        "Prevention"
+      ],
+      "benefits": [
+        "40% fewer incidents",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "2499",
+        "pro": "7999",
+        "enterprise": "24999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-patient-safety-management-3424e5b9",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-patient-safety-management-3424e5b9",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-quality-management-system-b8caded3",
+      "title": "AI-Powered Quality Management System",
+      "description": "QMS with automated quality control and compliance management.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "QMS",
+        "Quality control",
+        "Compliance"
+      ],
+      "benefits": [
+        "100% compliance",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "2999",
+        "pro": "9999",
+        "enterprise": "29999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-quality-management-system-b8caded3",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-quality-management-system-b8caded3",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-drug-discovery-accelerator-0436b842",
+      "title": "AI-Powered Drug Discovery Accelerator",
+      "description": "Accelerates drug discovery by predicting molecular properties and binding affinity.",
+      "category": "ai",
+      "industry": "Healthcare",
+      "features": [
+        "Molecular prediction",
+        "Binding affinity",
+        "Toxicity screening"
+      ],
+      "benefits": [
+        "5x faster discovery",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "19999",
+        "pro": "49999",
+        "enterprise": "199999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-drug-discovery-accelerator-0436b842",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-drug-discovery-accelerator-0436b842",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-infinite-self-optimizing-manufacturing-a91be0d3",
+      "title": "AI-Powered Infinite Self-Optimizing Manufacturing",
+      "description": "Infinite self-optimizing manufacturing with AI and exponential growth.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Infinite self-optimizing",
+        "AI",
+        "Exponential growth"
+      ],
+      "benefits": [
+        "400% optimization",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "79999;349999;799999",
+        "pro": "999",
+        "enterprise": "2999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-infinite-self-optimizing-manufacturing-a91be0d3",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-infinite-self-optimizing-manufacturing-a91be0d3",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-financial-reporting-automation-8f22cc02",
+      "title": "AI-Powered Financial Reporting Automation",
+      "description": "Automates financial reporting with data aggregation and validation.",
+      "category": "ai",
+      "industry": "Finance",
+      "features": [
+        "Reporting automation",
+        "Data aggregation",
+        "Validation"
+      ],
+      "benefits": [
+        "80% faster reporting",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "899",
+        "pro": "2999",
+        "enterprise": "8999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-financial-reporting-automation-8f22cc02",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-financial-reporting-automation-8f22cc02",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-manufacturing-performance-ai-b0fa0901",
+      "title": "AI-Powered Manufacturing Performance AI",
+      "description": "AI for manufacturing performance with predictive analytics.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Performance AI",
+        "Predictive analytics",
+        "Optimization"
+      ],
+      "benefits": [
+        "40% performance improvement",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "2999",
+        "pro": "9999",
+        "enterprise": "29999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-manufacturing-performance-ai-b0fa0901",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-manufacturing-performance-ai-b0fa0901",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-health-insurance-claims-fd0bb004",
+      "title": "AI-Powered Health Insurance Claims",
+      "description": "Automates health insurance claims processing and fraud detection.",
+      "category": "ai",
+      "industry": "Insurance",
+      "features": [
+        "Claims processing",
+        "Fraud detection",
+        "Denial management"
+      ],
+      "benefits": [
+        "70% faster claims",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1499",
+        "pro": "4999",
+        "enterprise": "14999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-health-insurance-claims-fd0bb004",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-health-insurance-claims-fd0bb004",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-manufacturing-innovation-engine-d7abea78",
+      "title": "AI-Powered Manufacturing Innovation Engine",
+      "description": "Engine for manufacturing innovation with AI and simulation.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Innovation engine",
+        "AI simulation",
+        "Innovation"
+      ],
+      "benefits": [
+        "5x faster innovation",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "4999",
+        "pro": "14999",
+        "enterprise": "49999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-manufacturing-innovation-engine-d7abea78",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-manufacturing-innovation-engine-d7abea78",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-wealth-management-advisor-a4900d08",
+      "title": "AI-Powered Wealth Management Advisor",
+      "description": "Robo-advisor that creates and manages investment portfolios using modern portfolio theory.",
+      "category": "ai",
+      "industry": "Finance",
+      "features": [
+        "Portfolio optimization",
+        "Rebalancing",
+        "Tax-loss harvesting"
+      ],
+      "benefits": [
+        "25% better returns",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "499",
+        "pro": "1499",
+        "enterprise": "4999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-wealth-management-advisor-a4900d08",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-wealth-management-advisor-a4900d08",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-smart-factory-management-e7002a3f",
+      "title": "AI-Powered Smart Factory Management",
+      "description": "Manages smart factories with AI and digital technologies.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Smart factory",
+        "AI management",
+        "Digital technologies"
+      ],
+      "benefits": [
+        "50% smarter factories",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "2999",
+        "pro": "9999",
+        "enterprise": "29999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-smart-factory-management-e7002a3f",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-smart-factory-management-e7002a3f",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-medical-coding-automation-add29e9b",
+      "title": "AI-Powered Medical Coding Automation",
+      "description": "Automates medical coding with accuracy and compliance checking.",
+      "category": "ai",
+      "industry": "Healthcare",
+      "features": [
+        "Medical coding",
+        "Accuracy checking",
+        "Compliance"
+      ],
+      "benefits": [
+        "80% faster coding",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1299",
+        "pro": "3999",
+        "enterprise": "12999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-medical-coding-automation-add29e9b",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-medical-coding-automation-add29e9b",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-healthcare-compliance-dbee351e",
+      "title": "AI-Powered Healthcare Compliance",
+      "description": "Automates healthcare compliance with regulation tracking and reporting.",
+      "category": "ai",
+      "industry": "Compliance",
+      "features": [
+        "Compliance automation",
+        "Regulation tracking",
+        "Reporting"
+      ],
+      "benefits": [
+        "100% compliance",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1999",
+        "pro": "5999",
+        "enterprise": "19999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-healthcare-compliance-dbee351e",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-healthcare-compliance-dbee351e",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-currency-exchange-optimization-4704be02",
+      "title": "AI-Powered Currency Exchange Optimization",
+      "description": "Real-time currency exchange rate optimization for international transactions.",
+      "category": "ai",
+      "industry": "Finance",
+      "features": [
+        "FX optimization",
+        "Rate prediction",
+        "Hedging recommendations"
+      ],
+      "benefits": [
+        "15% currency savings",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1499",
+        "pro": "4999",
+        "enterprise": "14999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-currency-exchange-optimization-4704be02",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-currency-exchange-optimization-4704be02",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-production-line-optimization-afd9ade9",
+      "title": "AI-Powered Production Line Optimization",
+      "description": "Optimizes entire production lines with simulation and optimization.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Line optimization",
+        "Simulation",
+        "Optimization"
+      ],
+      "benefits": [
+        "30% throughput increase",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1999",
+        "pro": "5999",
+        "enterprise": "19999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-production-line-optimization-afd9ade9",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-production-line-optimization-afd9ade9",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-patient-flow-management-1046012c",
+      "title": "AI-Powered Patient Flow Management",
+      "description": "Manages patient flow with prediction and resource allocation.",
+      "category": "ai",
+      "industry": "Healthcare",
+      "features": [
+        "Patient flow",
+        "Prediction",
+        "Resource allocation"
+      ],
+      "benefits": [
+        "25% better flow",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1499",
+        "pro": "4999",
+        "enterprise": "14999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-patient-flow-management-1046012c",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-patient-flow-management-1046012c",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-surgical-planning-efa31126",
+      "title": "AI-Powered Surgical Planning",
+      "description": "AI-powered surgical planning with 3D visualization and risk assessment.",
+      "category": "ai",
+      "industry": "Healthcare",
+      "features": [
+        "Surgical planning",
+        "3D visualization",
+        "Risk assessment"
+      ],
+      "benefits": [
+        "20% better outcomes",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "4999",
+        "pro": "14999",
+        "enterprise": "49999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-surgical-planning-efa31126",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-surgical-planning-efa31126",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-industrial-iot-integration-8f97d41a",
+      "title": "AI-Powered Industrial IoT Integration",
+      "description": "Integrates industrial IoT with AI analytics and automation.",
+      "category": "iot",
+      "industry": "Manufacturing",
+      "features": [
+        "IoT integration",
+        "AI analytics",
+        "Automation"
+      ],
+      "benefits": [
+        "50% better IoT utilization",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "2999",
+        "pro": "9999",
+        "enterprise": "29999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-industrial-iot-integration-8f97d41a",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-industrial-iot-integration-8f97d41a",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-fraud-detection-system-a70a84df",
+      "title": "AI-Powered Fraud Detection System",
+      "description": "Real-time fraud detection for financial transactions using behavioral analysis.",
+      "category": "security",
+      "industry": "Finance",
+      "features": [
+        "Transaction monitoring",
+        "Behavioral analysis",
+        "Network fraud"
+      ],
+      "benefits": [
+        "99.9% accuracy",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1299",
+        "pro": "3999",
+        "enterprise": "12999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-fraud-detection-system-a70a84df",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-fraud-detection-system-a70a84df",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-manufacturing-performance-management-b8af16ae",
+      "title": "AI-Powered Manufacturing Performance Management",
+      "description": "Manages manufacturing performance with KPIs and optimization.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Performance management",
+        "KPIs",
+        "Optimization"
+      ],
+      "benefits": [
+        "25% performance improvement",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1999",
+        "pro": "5999",
+        "enterprise": "19999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-manufacturing-performance-management-b8af16ae",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-manufacturing-performance-management-b8af16ae",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-clinical-documentation-217e40a5",
+      "title": "AI-Powered Clinical Documentation",
+      "description": "AI-powered clinical documentation with voice-to-text and auto-charting.",
+      "category": "ai",
+      "industry": "Healthcare",
+      "features": [
+        "Documentation automation",
+        "Voice-to-text",
+        "Auto-charting"
+      ],
+      "benefits": [
+        "50% documentation time saved",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1999",
+        "pro": "5999",
+        "enterprise": "19999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-clinical-documentation-217e40a5",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-clinical-documentation-217e40a5",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-maintenance-scheduling-18afb092",
+      "title": "AI-Powered Maintenance Scheduling",
+      "description": "Optimizes maintenance scheduling with predictive analytics and risk assessment.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Maintenance scheduling",
+        "Predictive analytics",
+        "Risk assessment"
+      ],
+      "benefits": [
+        "45% maintenance optimization",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1299",
+        "pro": "3999",
+        "enterprise": "12999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-maintenance-scheduling-18afb092",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-maintenance-scheduling-18afb092",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-genomic-analysis-f042f8fd",
+      "title": "AI-Powered Genomic Analysis",
+      "description": "AI-powered genomic analysis for personalized medicine.",
+      "category": "ai",
+      "industry": "Healthcare",
+      "features": [
+        "Genomic analysis",
+        "Personalized medicine",
+        "Variant interpretation"
+      ],
+      "benefits": [
+        "50x faster analysis",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "9999",
+        "pro": "29999",
+        "enterprise": "99999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-genomic-analysis-f042f8fd",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-genomic-analysis-f042f8fd",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-production-excellence-37a248aa",
+      "title": "AI-Powered Production Excellence",
+      "description": "Platform for production excellence with AI and optimization.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Production excellence",
+        "AI optimization",
+        "Continuous improvement"
+      ],
+      "benefits": [
+        "35% excellence improvement",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "2499",
+        "pro": "7999",
+        "enterprise": "24999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-production-excellence-37a248aa",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-production-excellence-37a248aa",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-production-bottleneck-detection-9f9bba2f",
+      "title": "AI-Powered Production Bottleneck Detection",
+      "description": "Detects and resolves production bottlenecks with AI analysis.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Bottleneck detection",
+        "AI analysis",
+        "Resolution"
+      ],
+      "benefits": [
+        "30% bottleneck reduction",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1999",
+        "pro": "5999",
+        "enterprise": "19999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-production-bottleneck-detection-9f9bba2f",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-production-bottleneck-detection-9f9bba2f",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-production-line-ai-4cffaddd",
+      "title": "AI-Powered Production Line AI",
+      "description": "AI for production line optimization with real-time analytics.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Production AI",
+        "Real-time analytics",
+        "Optimization"
+      ],
+      "benefits": [
+        "30% throughput increase",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "2499",
+        "pro": "7999",
+        "enterprise": "24999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-production-line-ai-4cffaddd",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-production-line-ai-4cffaddd",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-telemedicine-platform-aeefa1ba",
+      "title": "AI-Powered Telemedicine Platform",
+      "description": "AI-powered telemedicine with diagnosis assistance and triage.",
+      "category": "ai",
+      "industry": "Healthcare",
+      "features": [
+        "Telemedicine",
+        "Diagnosis assistance",
+        "Triage optimization"
+      ],
+      "benefits": [
+        "60% faster consultations",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "2499",
+        "pro": "7999",
+        "enterprise": "24999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-telemedicine-platform-aeefa1ba",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-telemedicine-platform-aeefa1ba",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-manufacturing-excellence-0c3cb306",
+      "title": "AI-Powered Manufacturing Excellence",
+      "description": "Platform for manufacturing excellence with AI and optimization.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Excellence platform",
+        "AI optimization",
+        "Continuous improvement"
+      ],
+      "benefits": [
+        "40% excellence improvement",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1999",
+        "pro": "5999",
+        "enterprise": "19999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-manufacturing-excellence-0c3cb306",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-manufacturing-excellence-0c3cb306",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-inventory-management-33466227",
+      "title": "AI-Powered Inventory Management",
+      "description": "Manages manufacturing inventory with demand forecasting and optimization.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Inventory management",
+        "Demand forecasting",
+        "Optimization"
+      ],
+      "benefits": [
+        "30% inventory reduction",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1499",
+        "pro": "4999",
+        "enterprise": "14999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-inventory-management-33466227",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-inventory-management-33466227",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-industry-40-ai-d15ea840",
+      "title": "AI-Powered Industry 4.0 AI",
+      "description": "AI for Industry 4.0 with IoT, big data, and machine learning.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Industry 4.0 AI",
+        "IoT",
+        "Big data",
+        "ML"
+      ],
+      "benefits": [
+        "65% Industry 4.0 maturity",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "4999",
+        "pro": "14999",
+        "enterprise": "49999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-industry-40-ai-d15ea840",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-industry-40-ai-d15ea840",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-medical-research-acceleration-cc183b03",
+      "title": "AI-Powered Medical Research Acceleration",
+      "description": "Accelerates medical research with data analysis and hypothesis generation.",
+      "category": "ai",
+      "industry": "Research",
+      "features": [
+        "Research acceleration",
+        "Data analysis",
+        "Hypothesis generation"
+      ],
+      "benefits": [
+        "10x faster research",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "4999",
+        "pro": "14999",
+        "enterprise": "49999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-medical-research-acceleration-cc183b03",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-medical-research-acceleration-cc183b03",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-patient-experience-optimization-ca487c36",
+      "title": "AI-Powered Patient Experience Optimization",
+      "description": "Optimizes patient experience with feedback analysis and service improvement.",
+      "category": "ai",
+      "industry": "Healthcare",
+      "features": [
+        "Experience optimization",
+        "Feedback analysis",
+        "Service improvement"
+      ],
+      "benefits": [
+        "30% better experience",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1999",
+        "pro": "5999",
+        "enterprise": "19999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-patient-experience-optimization-ca487c36",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-patient-experience-optimization-ca487c36",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-healthcare-cybersecurity-65875796",
+      "title": "AI-Powered Healthcare Cybersecurity",
+      "description": "Protects healthcare data with AI-powered security and compliance.",
+      "category": "security",
+      "industry": "Healthcare",
+      "features": [
+        "Healthcare security",
+        "Data protection",
+        "Compliance"
+      ],
+      "benefits": [
+        "99.9% security",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "2999",
+        "pro": "9999",
+        "enterprise": "29999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-healthcare-cybersecurity-65875796",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-healthcare-cybersecurity-65875796",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-adaptive-manufacturing-b55b31be",
+      "title": "AI-Powered Adaptive Manufacturing",
+      "description": "Adaptive manufacturing with AI and real-time optimization.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Adaptive manufacturing",
+        "AI",
+        "Real-time optimization"
+      ],
+      "benefits": [
+        "65% adaptability",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "5999",
+        "pro": "19999;59999",
+        "enterprise": "2999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-adaptive-manufacturing-b55b31be",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-adaptive-manufacturing-b55b31be",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-healthcare-data-analytics-02f29ade",
+      "title": "AI-Powered Healthcare Data Analytics",
+      "description": "Advanced healthcare data analytics with predictive modeling.",
+      "category": "ai",
+      "industry": "Healthcare",
+      "features": [
+        "Data analytics",
+        "Predictive modeling",
+        "Insight generation"
+      ],
+      "benefits": [
+        "90% faster insights",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "2999",
+        "pro": "9999",
+        "enterprise": "29999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-healthcare-data-analytics-02f29ade",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-healthcare-data-analytics-02f29ade",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-equipment-health-monitoring-94adaddc",
+      "title": "AI-Powered Equipment Health Monitoring",
+      "description": "Monitors equipment health with sensor data and predictive analytics.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Health monitoring",
+        "Sensor analytics",
+        "Predictive maintenance"
+      ],
+      "benefits": [
+        "50% fewer breakdowns",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1499",
+        "pro": "4999",
+        "enterprise": "14999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-equipment-health-monitoring-94adaddc",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-equipment-health-monitoring-94adaddc",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-medical-billing-automation-2bde0183",
+      "title": "AI-Powered Medical Billing Automation",
+      "description": "Automates medical billing with claim submission and denial management.",
+      "category": "ai",
+      "industry": "Healthcare",
+      "features": [
+        "Billing automation",
+        "Claim submission",
+        "Denial management"
+      ],
+      "benefits": [
+        "40% faster billing",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1499",
+        "pro": "4999",
+        "enterprise": "14999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-medical-billing-automation-2bde0183",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-medical-billing-automation-2bde0183",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-manufacturing-compliance-cd7dd115",
+      "title": "AI-Powered Manufacturing Compliance",
+      "description": "Automates manufacturing compliance with regulation tracking.",
+      "category": "ai",
+      "industry": "Compliance",
+      "features": [
+        "Compliance automation",
+        "Regulation tracking",
+        "Reporting"
+      ],
+      "benefits": [
+        "100% compliance",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "2499",
+        "pro": "7999",
+        "enterprise": "24999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-manufacturing-compliance-cd7dd115",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-manufacturing-compliance-cd7dd115",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-quality-control-95142076",
+      "title": "AI-Powered Quality Control",
+      "description": "Automates quality control with computer vision and statistical process control.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Quality control",
+        "Computer vision",
+        "SPC"
+      ],
+      "benefits": [
+        "99% quality assurance",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1999",
+        "pro": "5999",
+        "enterprise": "19999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-quality-control-95142076",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-quality-control-95142076",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-tax-optimization-06232d2e",
+      "title": "AI-Powered Tax Optimization",
+      "description": "Optimizes tax strategies using regulatory analysis and predictive modeling.",
+      "category": "ai",
+      "industry": "Finance",
+      "features": [
+        "Tax optimization",
+        "Regulatory analysis",
+        "Deduction maximization"
+      ],
+      "benefits": [
+        "25% tax savings",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1999",
+        "pro": "5999",
+        "enterprise": "19999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-tax-optimization-06232d2e",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-tax-optimization-06232d2e",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-production-planning-314a7f3a",
+      "title": "AI-Powered Production Planning",
+      "description": "Optimizes production schedules considering demand forecasts and constraints.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Schedule optimization",
+        "Capacity planning",
+        "Material allocation"
+      ],
+      "benefits": [
+        "30% productivity increase",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "999",
+        "pro": "2999",
+        "enterprise": "9999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-production-planning-314a7f3a",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-production-planning-314a7f3a",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-order-fulfillment-optimization-9a592722",
+      "title": "AI-Powered Order Fulfillment Optimization",
+      "description": "Optimizes order fulfillment with warehouse and shipping coordination.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Order fulfillment",
+        "Warehouse coordination",
+        "Shipping optimization"
+      ],
+      "benefits": [
+        "35% faster fulfillment",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "2499",
+        "pro": "7999",
+        "enterprise": "24999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-order-fulfillment-optimization-9a592722",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-order-fulfillment-optimization-9a592722",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-regulatory-compliance-f69573d1",
+      "title": "AI-Powered Regulatory Compliance",
+      "description": "Automates regulatory compliance across financial regulations.",
+      "category": "ai",
+      "industry": "Compliance",
+      "features": [
+        "Compliance automation",
+        "Regulatory tracking",
+        "Reporting"
+      ],
+      "benefits": [
+        "100% compliance",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1499",
+        "pro": "4999",
+        "enterprise": "14999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-regulatory-compliance-f69573d1",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-regulatory-compliance-f69573d1",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-factory-automation-ab15d1f1",
+      "title": "AI-Powered Factory Automation",
+      "description": "Automates factory operations with robotics and process optimization.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Factory automation",
+        "Robotics",
+        "Process optimization"
+      ],
+      "benefits": [
+        "40% faster production",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "2999",
+        "pro": "9999",
+        "enterprise": "29999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-factory-automation-ab15d1f1",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-factory-automation-ab15d1f1",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-expense-management-a18c3f7d",
+      "title": "AI-Powered Expense Management",
+      "description": "Automates expense reporting, categorization, and reimbursement.",
+      "category": "ai",
+      "industry": "Finance",
+      "features": [
+        "Expense categorization",
+        "Policy enforcement",
+        "Reimbursement automation"
+      ],
+      "benefits": [
+        "60% time savings",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "499",
+        "pro": "1499",
+        "enterprise": "4999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-expense-management-a18c3f7d",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-expense-management-a18c3f7d",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-quantum-autonomous-manufacturing-ce77cd7c",
+      "title": "AI-Powered Quantum-Autonomous Manufacturing",
+      "description": "Quantum-autonomous manufacturing with AI and quantum computing.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Quantum-autonomous",
+        "AI",
+        "Quantum computing"
+      ],
+      "benefits": [
+        "600% quantum autonomy",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "99999;499999;999999",
+        "pro": "999",
+        "enterprise": "2999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-quantum-autonomous-manufacturing-ce77cd7c",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-quantum-autonomous-manufacturing-ce77cd7c",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-manufacturing-digital-twin-581725c7",
+      "title": "AI-Powered Manufacturing Digital Twin",
+      "description": "Creates digital twins for simulation and optimization.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Digital twin",
+        "Simulation",
+        "Optimization"
+      ],
+      "benefits": [
+        "40% faster innovation",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "3999",
+        "pro": "12999",
+        "enterprise": "39999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-manufacturing-digital-twin-581725c7",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-manufacturing-digital-twin-581725c7",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-workforce-optimization-000aa8a4",
+      "title": "AI-Powered Workforce Optimization",
+      "description": "Optimizes manufacturing workforce with scheduling and skill management.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Workforce optimization",
+        "Scheduling",
+        "Skill management"
+      ],
+      "benefits": [
+        "25% labor efficiency",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1999",
+        "pro": "5999",
+        "enterprise": "19999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-workforce-optimization-000aa8a4",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-workforce-optimization-000aa8a4",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-asset-liability-management-ada16dee",
+      "title": "AI-Powered Asset Liability Management",
+      "description": "Automates asset-liability management for financial institutions.",
+      "category": "ai",
+      "industry": "Banking",
+      "features": [
+        "ALM automation",
+        "Risk matching",
+        "Interest rate optimization"
+      ],
+      "benefits": [
+        "25% better ALM",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "3499",
+        "pro": "9999",
+        "enterprise": "34999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-asset-liability-management-ada16dee",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-asset-liability-management-ada16dee",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-hospital-resource-optimization-6eb82f61",
+      "title": "AI-Powered Hospital Resource Optimization",
+      "description": "Optimizes hospital bed allocation, staff scheduling, and equipment utilization.",
+      "category": "ai",
+      "industry": "Healthcare",
+      "features": [
+        "Bed allocation",
+        "Staff scheduling",
+        "Equipment optimization"
+      ],
+      "benefits": [
+        "20% capacity increase",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "2499",
+        "pro": "7999",
+        "enterprise": "24999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-hospital-resource-optimization-6eb82f61",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-hospital-resource-optimization-6eb82f61",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-invoice-processing-automation-3ba76e18",
+      "title": "AI-Powered Invoice Processing Automation",
+      "description": "Automates invoice processing with OCR, validation, and payment scheduling.",
+      "category": "ai",
+      "industry": "Finance",
+      "features": [
+        "OCR processing",
+        "Validation automation",
+        "Payment scheduling"
+      ],
+      "benefits": [
+        "80% faster processing",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "999",
+        "pro": "2999",
+        "enterprise": "9999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-invoice-processing-automation-3ba76e18",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-invoice-processing-automation-3ba76e18",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-manufacturing-inventory-optimization-f06faeca",
+      "title": "AI-Powered Manufacturing Inventory Optimization",
+      "description": "Optimizes manufacturing inventory with AI and ML.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Inventory optimization",
+        "AI optimization",
+        "ML forecasting"
+      ],
+      "benefits": [
+        "30% inventory savings",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1499",
+        "pro": "4999",
+        "enterprise": "14999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-manufacturing-inventory-optimization-f06faeca",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-manufacturing-inventory-optimization-f06faeca",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-ultra-manufacturing-21a08c9b",
+      "title": "AI-Powered Ultra Manufacturing",
+      "description": "Ultra manufacturing with AI and infinite scalability.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Ultra manufacturing",
+        "AI",
+        "Infinite scalability"
+      ],
+      "benefits": [
+        "150% ultra efficiency",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "19999;79999;199999",
+        "pro": "999",
+        "enterprise": "2999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-ultra-manufacturing-21a08c9b",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-ultra-manufacturing-21a08c9b",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-medical-supply-chain-d98a8db1",
+      "title": "AI-Powered Medical Supply Chain",
+      "description": "Optimizes medical supply chain with demand forecasting and inventory.",
+      "category": "ai",
+      "industry": "Healthcare",
+      "features": [
+        "Supply chain optimization",
+        "Demand forecasting",
+        "Inventory management"
+      ],
+      "benefits": [
+        "25% inventory reduction",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1999",
+        "pro": "5999",
+        "enterprise": "19999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-medical-supply-chain-d98a8db1",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-medical-supply-chain-d98a8db1",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-self-optimizing-manufacturing-ccc66b70",
+      "title": "AI-Powered Self-Optimizing Manufacturing",
+      "description": "Self-optimizing manufacturing with AI and continuous learning.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Self-optimizing",
+        "AI",
+        "Continuous learning"
+      ],
+      "benefits": [
+        "70% optimization",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "6999",
+        "pro": "24999",
+        "enterprise": "69999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-self-optimizing-manufacturing-ccc66b70",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-self-optimizing-manufacturing-ccc66b70",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-venture-capital-deal-sourcing-50ccdf42",
+      "title": "AI-Powered Venture Capital Deal Sourcing",
+      "description": "AI-powered VC deal sourcing with startup scoring and portfolio optimization.",
+      "category": "ai",
+      "industry": "Finance",
+      "features": [
+        "Deal sourcing",
+        "Startup scoring",
+        "Portfolio optimization"
+      ],
+      "benefits": [
+        "3x more deals",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "2999",
+        "pro": "9999",
+        "enterprise": "29999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-venture-capital-deal-sourcing-50ccdf42",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-venture-capital-deal-sourcing-50ccdf42",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-manufacturing-kpis-dashboard-3ff3b2ab",
+      "title": "AI-Powered Manufacturing KPIs Dashboard",
+      "description": "Real-time manufacturing KPIs dashboard with predictive alerts.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "KPIs dashboard",
+        "Predictive alerts",
+        "Real-time monitoring"
+      ],
+      "benefits": [
+        "90% faster decision making",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1499",
+        "pro": "4999",
+        "enterprise": "14999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-manufacturing-kpis-dashboard-3ff3b2ab",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-manufacturing-kpis-dashboard-3ff3b2ab",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-manufacturing-automation-ai-6fecdd1d",
+      "title": "AI-Powered Manufacturing Automation AI",
+      "description": "AI for manufacturing automation with robotics and control.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Automation AI",
+        "Robotics",
+        "Control systems"
+      ],
+      "benefits": [
+        "70% automation rate",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "4999",
+        "pro": "14999",
+        "enterprise": "49999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-manufacturing-automation-ai-6fecdd1d",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-manufacturing-automation-ai-6fecdd1d",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-industry-40-integration-86c123b6",
+      "title": "AI-Powered Industry 4.0 Integration",
+      "description": "Integrates Industry 4.0 technologies with AI and IoT.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Industry 4.0",
+        "AI integration",
+        "IoT"
+      ],
+      "benefits": [
+        "60% Industry 4.0 adoption",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "3999",
+        "pro": "12999",
+        "enterprise": "39999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-industry-40-integration-86c123b6",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-industry-40-integration-86c123b6",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-electronic-health-record-analysis-418aa7e2",
+      "title": "AI-Powered Electronic Health Record Analysis",
+      "description": "Analyzes EHR data for insights and anomaly detection.",
+      "category": "ai",
+      "industry": "Healthcare",
+      "features": [
+        "EHR analysis",
+        "Anomaly detection",
+        "Insight generation"
+      ],
+      "benefits": [
+        "90% faster analysis",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1499",
+        "pro": "4999",
+        "enterprise": "14999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-electronic-health-record-analysis-418aa7e2",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-electronic-health-record-analysis-418aa7e2",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-healthcare-supply-chain-optimization-da0219ce",
+      "title": "AI-Powered Healthcare Supply Chain Optimization",
+      "description": "Optimizes healthcare supply chain with demand forecasting.",
+      "category": "ai",
+      "industry": "Healthcare",
+      "features": [
+        "Supply chain optimization",
+        "Demand forecasting",
+        "Inventory management"
+      ],
+      "benefits": [
+        "25% inventory savings",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1999",
+        "pro": "5999",
+        "enterprise": "19999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-healthcare-supply-chain-optimization-da0219ce",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-healthcare-supply-chain-optimization-da0219ce",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-merger--acquisition-analysis-d9e9ffb8",
+      "title": "AI-Powered Merger & Acquisition Analysis",
+      "description": "AI-powered M&A target identification and due diligence automation.",
+      "category": "ai",
+      "industry": "Finance",
+      "features": [
+        "Target identification",
+        "Due diligence automation",
+        "Valuation modeling"
+      ],
+      "benefits": [
+        "50% faster M&A process",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "4999",
+        "pro": "14999",
+        "enterprise": "49999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-merger--acquisition-analysis-d9e9ffb8",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-merger--acquisition-analysis-d9e9ffb8",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-manufacturing-execution-system-1ebedff2",
+      "title": "AI-Powered Manufacturing Execution System",
+      "description": "MES with real-time production monitoring and optimization.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "MES",
+        "Production monitoring",
+        "Optimization"
+      ],
+      "benefits": [
+        "99% uptime",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "3499",
+        "pro": "9999",
+        "enterprise": "34999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-manufacturing-execution-system-1ebedff2",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-manufacturing-execution-system-1ebedff2",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-financial-planning--analysis-19e41d29",
+      "title": "AI-Powered Financial Planning & Analysis",
+      "description": "Generates financial forecasts, budget plans, and performance analyses using machine learning.",
+      "category": "ai",
+      "industry": "Finance",
+      "features": [
+        "Budget forecasting",
+        "Scenario modeling",
+        "FP&A automation"
+      ],
+      "benefits": [
+        "90% faster FP&A",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "799",
+        "pro": "2499",
+        "enterprise": "7999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-financial-planning--analysis-19e41d29",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-financial-planning--analysis-19e41d29",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-hyper-autonomous-manufacturing-294257e0",
+      "title": "AI-Powered Hyper-Autonomous Manufacturing",
+      "description": "Hyper-autonomous manufacturing with AI and unlimited scalability.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Hyper-autonomous",
+        "AI",
+        "Unlimited scalability"
+      ],
+      "benefits": [
+        "500% autonomy",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "89999;399999;899999",
+        "pro": "999",
+        "enterprise": "2999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-hyper-autonomous-manufacturing-294257e0",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-hyper-autonomous-manufacturing-294257e0",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-industrial-automation-ai-e43d2c6e",
+      "title": "AI-Powered Industrial Automation AI",
+      "description": "AI for industrial automation with IoT and machine learning.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Industrial automation AI",
+        "IoT",
+        "Machine learning"
+      ],
+      "benefits": [
+        "55% automation efficiency",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "2999",
+        "pro": "9999",
+        "enterprise": "29999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-industrial-automation-ai-e43d2c6e",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-industrial-automation-ai-e43d2c6e",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-hospital-readmission-prediction-cb9f5a31",
+      "title": "AI-Powered Hospital Readmission Prediction",
+      "description": "Predicts patient readmissions with intervention recommendations.",
+      "category": "ai",
+      "industry": "Healthcare",
+      "features": [
+        "Readmission prediction",
+        "Risk factors",
+        "Intervention triggers"
+      ],
+      "benefits": [
+        "35% readmission reduction",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "1999",
+        "pro": "5999",
+        "enterprise": "19999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-hospital-readmission-prediction-cb9f5a31",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-hospital-readmission-prediction-cb9f5a31",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-yield-optimization-3e0f8491",
+      "title": "AI-Powered Yield Optimization",
+      "description": "Optimizes production yield with machine learning and process control.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Yield optimization",
+        "Process control",
+        "ML optimization"
+      ],
+      "benefits": [
+        "25% yield improvement",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "2499",
+        "pro": "7999",
+        "enterprise": "24999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-yield-optimization-3e0f8491",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-yield-optimization-3e0f8491",
+      "popular": false
+    },
+    {
+      "id": "ai-powered-infinite-manufacturing-2c811fb3",
+      "title": "AI-Powered Infinite Manufacturing",
+      "description": "Infinite manufacturing with AI and unbounded growth.",
+      "category": "ai",
+      "industry": "Manufacturing",
+      "features": [
+        "Infinite manufacturing",
+        "AI",
+        "Unbounded growth"
+      ],
+      "benefits": [
+        "300% infinite efficiency",
+        "Significant value"
+      ],
+      "pricing": {
+        "basic": "49999;199999;499999",
+        "pro": "999",
+        "enterprise": "2999"
+      },
+      "timestamp": "2026-07-28T02:46:36.313369+00:00",
+      "contactInfo": {
+        "website": "/services/ai-powered-infinite-manufacturing-2c811fb3",
+        "email": "kleber@ziontechgroup.com",
+        "phone": "+1 302 464 0950"
+      },
+      "icon": "\ud83d\ude80",
+      "href": "/services/ai-powered-infinite-manufacturing-2c811fb3",
+      "popular": false
     }
   ],
-  "last_updated": "2026-07-28T02:39:27.454735+00:00",
-  "total_services": 6515,
+  "last_updated": "2026-07-28T02:46:36.478238+00:00",
+  "total_services": 6615,
   "growth_metrics": {
     "cycles_run": 19,
     "total_emails_sent": 19,
