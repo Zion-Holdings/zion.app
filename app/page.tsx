@@ -14,7 +14,6 @@ import ServiceCounter from '@/components/ServiceCounter';
 import FloatingActionDock from '@/components/FloatingActionDock';
 import ServiceMatchQuiz from '@/components/ServiceMatchQuiz';
 import AgentsMonitoring from '@/components/AgentsMonitoring';
-import NavigationQuickLinks from '@/components/NavigationQuickLinks';
 
 // Category accent color for showcase cards (maps category key → gradient)
 // Category accent color for showcase card styles (static RGBA + hex)
@@ -32,47 +31,7 @@ const catAccent: Record<string, string> = {
   'email-intelligence': '#a78bfa',
 };
 
-const CATEGORY_HEX: Record<string, string> = {
-  ai: '#8b5cf6',
-  it: '#38bdf8',
-  cloud: '#7dd3fc',
-  security: '#fb923c',
-  data: '#34d399',
-  automation: '#fb7185',
-  'micro-saas': '#fbbf24',
-  devops: '#22d3ee',
-  blockchain: '#fbbf24',
-  iot: '#2dd4bf',
-  'email-intelligence': '#8b5cf6',
-  database: '#3b82f6',
-  collaboration: '#38bdf8',
-  'media-streaming': '#f43f5e',
-  'infrastructure-as-code': '#d97706',
-  'low-code': '#10b981',
-  'monitoring': '#3b82f6',
-  logging: '#94a3b8',
-  'security-scanning': '#f97316',
-  'backup-recovery': '#10b981',
-  'identity-management': '#a855f7',
-};
-
-const hexToRgba = (hex: string, alpha = 0.35) => {
-  const cleaned = hex.replace('#', '');
-  const r = parseInt(cleaned.slice(0, 2) || '00', 16);
-  const g = parseInt(cleaned.slice(2, 4) || '00', 16);
-  const b = parseInt(cleaned.slice(4, 6) || '00', 16);
-  return `rgba(${r}, ${g}, ${b}, ${alpha})`;
-};
-
 const getCategoryMeta = (key: string) => CATEGORIES.find(c => c.key === key) || CATEGORIES[0];
-
-const hexWithAlpha = (hex: string) => {
-  const cleaned = hex.replace('#', '');
-  if (cleaned.length === 6 && /^[0-9a-f]+$/i.test(cleaned)) {
-    return `${cleaned.slice(0, 6)}${cleaned.slice(0, 2)}`;
-  }
-  return hex;
-};
 
 // Stat labels
 const STAT_SERVICES = 'Services & Solutions';
@@ -373,8 +332,8 @@ export default function HomePage() {
               <Link href="/search/" className="px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/60 text-slate-300 text-sm hover:bg-slate-700/80 hover:text-purple-300 hover:border-purple-500/30 transition-all">
                 🔍 Search Services
               </Link>
-              <Link href="/solutions/" className="px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/60 text-slate-300 text-sm hover:bg-slate-700/80 hover:text-purple-300 hover:border-purple-500/30 transition-all">
-                🏭 Industries
+              <Link href="/case-studies/" className="px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/60 text-slate-300 text-sm hover:bg-slate-700/80 hover:text-purple-300 hover:border-purple-500/30 transition-all">
+                🏆 Case Studies
               </Link>
               <Link href="/pricing/" className="px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/60 text-slate-300 text-sm hover:bg-slate-700/80 hover:text-purple-300 hover:border-purple-500/30 transition-all">
                 💰 Pricing
@@ -433,6 +392,28 @@ export default function HomePage() {
               </span>
             </div>
 
+            {/* ── Category Quick-Nav — scroll to any service category ── */}
+            <div className="mt-4 mb-2">
+              <div className="flex overflow-x-auto gap-2 pb-2 snap-x snap-mandatory no-scrollbar">
+                {[
+                  { key:'ai', label:'🧠 AI' },
+                  { key:'it', label:'🖥️ IT' },
+                  { key:'cloud', label:'☁️ Cloud' },
+                  { key:'security', label:'🔐 Security' },
+                  { key:'data', label:'📊 Data' },
+                  { key:'automation', label:'🤖 Automation' },
+                  { key:'micro-saas', label:'🚀 Micro-SaaS' },
+                  { key:'devops', label:'⚙️ DevOps' },
+                  { key:'blockchain', label:'⛓️ Blockchain' },
+                  { key:'iot', label:'📡 IoT' },
+                ].map(cat => (
+                  <Link key={cat.key} href={`/services/?category=${cat.key}`} className="shrink-0 px-4 py-2 rounded-full bg-slate-800/70 border border-slate-700/60 text-slate-200 text-sm hover:bg-purple-500/20 hover:border-purple-500/40 hover:text-white transition-all snap-start">
+                    {cat.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+
             {/* ── Service Pipeline — live stage counts ── */}
             <div className="flex flex-wrap justify-center gap-4 mt-6">
               {[
@@ -464,22 +445,6 @@ export default function HomePage() {
 
       {/* ── AI Agent Monitoring — Live Fleet Banner (Priority) ── */}
       <AgentsMonitoring />
-
-      {/* ── Homepage Jump Nav ── */}
-      <div className="sticky top-16 z-40 bg-slate-900/80 backdrop-blur-md border-b border-slate-700/60">
-        <div className="container-page">
-          <div className="flex gap-1 overflow-x-auto py-2 scrollbar-none">
-            <a href="#how-it-works" className="shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/70 transition-colors">How It Works</a>
-            <a href="#services-catalog" className="shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/70 transition-colors">Browse Categories</a>
-            <a href="#popular-services" className="shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/70 transition-colors">Popular Services</a>
-            <a href="#free-tools" className="shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/70 transition-colors">Free Tools</a>
-            <a href="#whats-new" className="shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/70 transition-colors">What's New</a>
-            <a href="#industries" className="shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/70 transition-colors">Industries</a>
-            <a href="#contact" className="shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/70 transition-colors">Contact</a>
-            <a href="/industries/" className="shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 hover:text-white hover:bg-slate-800/70 transition-colors">All Industries</a>
-          </div>
-        </div>
-      </div>
 
       {/* ── AI Agent Operations — Always Visible Banner ── */}
       <section className="relative overflow-hidden border-y border-purple-500/20">
@@ -666,7 +631,7 @@ export default function HomePage() {
       <ServiceMatchQuiz />
       
       {/* ── How It Works ── */}
-      <section id="how-it-works" className="py-20">
+      <section className="py-20">
         <div className="container-page">
           <h2 className="section-heading text-center">How It Works</h2>
           <p className="section-subheading text-center">From inquiry to implementation in 4 simple steps</p>
@@ -704,8 +669,7 @@ export default function HomePage() {
               <Link key={cat.key} href={`/services/?category=${cat.key}`}
                 className="glass-card group hover:border-purple-500/40 hover:scale-[1.015] transition-all duration-300 relative overflow-hidden">
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                  style={{ background: `linear-gradient(135deg, ${hexToRgba(CATEGORY_HEX[cat.key] || '#ffffff', 0.35)}, transparent 60%)` }}
-                />
+                  style={{ background: `linear-gradient(135deg, ${cat.color.replace('from-','').replace('to-','').split(' ')[0]}22, transparent 60%)` }}/>
                 <div className="relative flex items-center gap-4">
                   <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${cat.color} flex items-center justify-center text-2xl shadow-lg
                     group-hover:shadow-xl group-hover:scale-110 transition-all duration-300`}>
@@ -731,12 +695,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Services by Category ── */}
-      <NavigationQuickLinks />
-
         {/* ── Popular Services ── */}
 
-      <section id="popular-services" className="py-16">
+      <section className="py-16">
         <div className="container-page">
           <div className="flex items-center gap-3 mb-8">
             <span className="text-2xl">🔥</span>
@@ -796,7 +757,7 @@ export default function HomePage() {
                   <div className="h-1.5 rounded-full bg-slate-800 overflow-hidden mb-3">
                     <div
                       className="h-full rounded-full transition-all duration-500 group-hover:opacity-80"
-                      style={{ width: `${pct}%`, background: `linear-gradient(90deg, ${hexToRgba(CATEGORY_HEX[cat.key] || '#ffffff', 0.35)}, ${hexToRgba(CATEGORY_HEX[cat.key] || '#ffffff', 0.7)})` }}
+                      style={{ width: `${pct}%`, background: `linear-gradient(90deg, ${cat.color.replace(/from-|to-/g,'').split(' ')[0]}, ${cat.color.split(' ').pop()})` }}
                     />
                   </div>
                   <div className="flex items-center justify-between">
@@ -966,7 +927,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── From the Blog — latest published articles ── */}
+      {/* ── From the Blog ── */}
       <section className="py-20 bg-slate-900/20 border-t border-slate-800/60">
         <div className="container-page">
           <div className="flex items-center justify-between mb-10">
@@ -980,16 +941,22 @@ export default function HomePage() {
             {[
               {
                 title: 'AI Agentic Workflow Automation: Reduce Manual Work Hours by 70%',
+                date: '2026-07-05',
+                excerpt: 'Deploy autonomous AI agents for support, invoicing, follow-ups, CRM updates, and reporting with natural-language workflows.',
                 slug: '/blog/ai-agentic-workflow-automation-reduce-manual-work-hours/',
                 emoji: '🤖',
               },
               {
                 title: 'AI Computer Vision for Quality Inspection in Production and Logistics',
+                date: '2026-07-05',
+                excerpt: 'Use vision AI to detect defects, verify assemblies, and measure consistency in production with camera and MES integrations.',
                 slug: '/blog/ai-computer-vision-quality-inspection/',
                 emoji: '👁️',
               },
               {
                 title: 'Cyber Incident Response Retainer: Be Ready Before the Breach',
+                date: '2026-07-05',
+                excerpt: 'Guaranteed rapid incident response with playbooks, forensics, recovery support, and post-incident hardening.',
                 slug: '/blog/cyber-incident-response-retainer-ready-before-breach/',
                 emoji: '🛡️',
               },
@@ -998,9 +965,9 @@ export default function HomePage() {
                 <span className="text-3xl">{post.emoji}</span>
                 <div>
                   <h3 className="text-base font-semibold text-white leading-snug group-hover:text-purple-300 transition-colors line-clamp-2">{post.title}</h3>
-                  <span className="text-xs text-slate-500 mt-1 block">Latest article</span>
+                  <span className="text-xs text-slate-500 mt-1 block">{post.date}</span>
                 </div>
-                <p className="text-slate-400 text-sm line-clamp-3 leading-relaxed">Read this post for practical guidance and real implementation examples.</p>
+                <p className="text-slate-400 text-sm line-clamp-3 leading-relaxed">{post.excerpt}</p>
                 <div className="mt-auto pt-3 border-t border-slate-700/40 flex justify-end">
                   <span className="text-purple-300 text-xs font-semibold">Read more →</span>
                 </div>
@@ -1012,6 +979,8 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── Quick-View Modal ── */}
       {quickView && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
@@ -1128,7 +1097,7 @@ export default function HomePage() {
                 <div
                   className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
                   style={{
-                    background: `linear-gradient(135deg, ${hexToRgba(CATEGORY_HEX[cat.key] || '#ffffff', 0.35)}, transparent 60%)`,
+                    background: `linear-gradient(135deg, ${cat.color.replace('from-','').replace('to-','').split(' ')[0]}22, transparent 60%)`,
                   }}
                 />
                 <div className="relative flex items-center gap-4">
@@ -1156,7 +1125,7 @@ export default function HomePage() {
       </section>
 
       {/* ── CTA ── */}
-      <section id="contact" className="py-20">
+      <section className="py-20">
         <div className="container-page">
           <div className="cta-section text-center">
             <h2 className="text-3xl font-bold text-white mb-4">Ready to Transform Your Business?</h2>
@@ -1175,6 +1144,67 @@ export default function HomePage() {
                                             ☎ +1 302 464 0950
                                           </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Category Deep-Link Strip — all 6 categories, live counts ───────── */}
+      <section className="py-12 bg-slate-900/20 border-y border-slate-800/60">
+        <div className="container-page">
+          <div className="text-center mb-8">
+            <h2 className="text-xl font-bold text-white">Browse by Category</h2>
+            <p className="text-slate-400 text-sm mt-1">
+              {`${serviceCount}+ services across 6 core capability areas`}
+            </p>
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {CATEGORIES.map((cat) => {
+              const count = services.filter((s: any) => s.category === cat.key).length;
+              return (
+                <Link
+                  key={cat.key}
+                  href={`/services/?category=${cat.key}`}
+                  className="group relative flex flex-col items-center gap-2 p-5 rounded-2xl border border-slate-700/60 bg-slate-800/40 hover:border-purple-500/50 hover:bg-slate-800/70 transition-all"
+                >
+                  <span className="text-3xl group-hover:scale-110 transition-transform">{cat.emoji}</span>
+                  <span className="text-sm font-semibold text-slate-200 group-hover:text-white text-center leading-snug">
+                    {cat.label}
+                  </span>
+                  <span className="text-xs font-medium text-purple-400 bg-purple-500/10 px-2 py-0.5 rounded-full">
+                    {count} services
+                  </span>
+                  <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${cat.color} opacity-0 group-hover:opacity-[0.06] transition-opacity pointer-events-none`} />
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── What's New / Fresh Features ── */}
+      <section className="py-20">
+        <div className="container-page">
+          <h2 className="section-heading text-center">✨ What's New at Zion Tech Group</h2>
+          <p className="section-subheading text-center">The latest platform upgrades, services, and capabilities — always evolving</p>
+
+          <div className="grid md:grid-cols-3 gap-6 mt-10">
+            {newsItems.map((feat, i) => (
+              <div key={i} className="glass-card flex flex-col gap-3 hover:border-purple-500/40 group">
+                <div className={`h-1 rounded-full bg-gradient-to-r ${feat.color || 'from-purple-500 to-indigo-500'}`} />
+                <span className="text-xs font-semibold text-purple-300 uppercase tracking-wider">{feat.tag}</span>
+                <h3 className="text-lg font-bold text-white group-hover:text-purple-300 transition-colors">{feat.title}</h3>
+                <p className="text-slate-400 text-sm flex-1 leading-relaxed">{feat.desc}</p>
+                <div className="mt-auto">
+                  <span
+                    role="img"
+                    aria-hidden
+                    className="inline-block transition-transform group-hover:translate-x-1"
+                  >
+                    →
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -1227,20 +1257,20 @@ export default function HomePage() {
           <ServiceSpotlight services={popularServices as any} />
         </div>
       </section>
-      {/* ── Trust Badges — Persuasion Proof Matrix ── */}
+      {/* ── Why Zion Tech Group — real differentiators ── */}
       <section className="py-16 border-t border-slate-800">
         <div className="container-page">
           <h2 className="text-2xl font-bold text-white text-center mb-10">
-            Why Choose Zion Tech Group
+            Why Zion Tech Group
           </h2>
           <div className="grid md:grid-cols-4 gap-6">
             {[
-              { emoji: '🏆', label: 'Service Catalog', sub: 'AI & IT catalog', color: 'from-amber-500/20 to-yellow-500/10' },
-              { emoji: '🚀', label: 'Latest Tech', sub: 'Modern stacks', color: 'from-purple-500/20 to-blue-500/10' },
-              { emoji: '🌐', label: 'Cross-Industry', sub: '9 sectors served', color: 'from-purple-500/20 to-blue-500/10' },
-              { emoji: '💡', label: 'Plug & Play', sub: 'No AI team needed', color: 'from-purple-500/20 to-blue-500/10' },
+              { emoji: '🇺🇸', label: 'US-Based Team', sub: 'Local experts, no offshore handoffs' },
+              { emoji: '⚡', label: '24/7 Support', sub: 'Round-the-clock coverage' },
+              { emoji: '✅', label: 'SLA Guaranteed', sub: '99.9% uptime commitment' },
+              { emoji: '🔐', label: 'HIPAA Ready', sub: 'Compliant healthcare workflows' },
             ].map((badge, i) => (
-              <div key={i} className={`bg-gradient-to-br ${badge.color} border border-slate-700/50 rounded-xl p-6 text-center group hover:border-purple-500/30 transition-all`}>
+              <div key={i} className="bg-slate-900/60 rounded-xl p-6 border border-slate-700/50 text-center group hover:border-purple-500/30 transition-colors">
                 <div className="text-4xl mb-4">{badge.emoji}</div>
                 <div className="text-xl font-bold text-white mb-1">{badge.label}</div>
                 <div className="text-sm text-slate-400">{badge.sub}</div>
@@ -1259,20 +1289,24 @@ export default function HomePage() {
       <section className="py-8 border-t border-slate-800">
         <div className="container-page">
           <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-500">
-            <Link href="/faq/" className="hover:text-purple-400 transition">❓ FAQ</Link>
-            <Link href="/industry-solutions/" className="hover:text-purple-400 transition">🏭 Industry Solutions</Link>
+            <Link href="/pricing/" className="hover:text-purple-400 transition">💰 Pricing</Link>
+            <Link href="/careers/" className="hover:text-purple-400 transition">🧑‍💼 Careers</Link>
+            <Link href="/partnerships/" className="hover:text-purple-400 transition">🤝 Partnerships</Link>
+            <Link href="/request-proposal/" className="hover:text-purple-400 transition">📝 Request Proposal</Link>
+            <Link href="/rfi/" className="hover:text-purple-400 transition">📄 RFI</Link>
+            <Link href="/rfp/" className="hover:text-purple-400 transition">📊 RFP</Link>
+            <Link href="/ai-consulting/" className="hover:text-purple-400 transition">🤖 AI Consulting</Link>
+            <Link href="/cloud-migration/" className="hover:text-purple-400 transition">☁️ Cloud Migration</Link>
+            <Link href="/cybersecurity-services/" className="hover:text-purple-400 transition">🔐 Cybersecurity</Link>
             <Link href="/services/" className="hover:text-purple-400 transition">🛠️ All Services</Link>
-            <Link href="/configurator" className="hover:text-purple-400 transition">⚙️ Configurator</Link>
-            <Link href="/proposals/" className="hover:text-purple-400 transition">📄 Proposals</Link>
-            <Link href="/partners/" className="hover:text-purple-400 transition">🤝 Partners</Link>
-            <Link href="/status/" className="hover:text-green-400 transition">● System Status</Link>
-            <Link href="/industries/" className="hover:text-purple-400 transition">🏭 Industries</Link>
+            <Link href="/success-stories/" className="hover:text-purple-400 transition">🏆 Success Stories</Link>
+            <Link href="/sitemap.xml" className="hover:text-purple-400 transition">🗺️ Sitemap</Link>
           </div>
         </div>
       </section>
 
       {/* ── Free Tools & Interactive Utilities — {serviceCount}+-service catalog ── */}
-      <section id="free-tools" className="py-16 border-t border-slate-800">
+      <section className="py-16 border-t border-slate-800">
         <div className="container-page">
           <div className="text-center mb-10">
             <h2 className="text-2xl font-bold text-white mb-3">🛠️ Free Tools & Interactive Utilities</h2>
@@ -1373,7 +1407,7 @@ export default function HomePage() {
         </div>
       </section>
       {/* ── Industries We Serve — 10 verticals from service catalog ── */}
-      <section id="industries" className="py-16 border-t border-slate-800">
+      <section className="py-16 border-t border-slate-800">
         <div className="container-page">
           <h2 className="text-2xl font-bold text-white text-center mb-3">Industries We Serve</h2>
           <p className="text-slate-400 text-center mb-10">

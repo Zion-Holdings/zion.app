@@ -1,7 +1,1 @@
-{
-  "threads_scanned": 1,
-  "duplicates_skipped": 1,
-  "drafts_created": 0,
-  "errors": [],
-  "llm_provider": "rule_based"
-}
+{"threads_scanned": 11, "duplicates_skipped": 11, "drafts_created": 0, "errors": [], "latest_message": {"thread_id": "198a3f850ae0c56c", "subject": "Re: APs and Switches installation", "from": "sardar.ubaid@snbtechs.com", "date": "2026-07-23T00:26:44Z"}, "llm_provider": "template", "skip_reasons": {"already_in_ledger": 5, "bounce_sender": 2, "no_external_message": 1, "domain_already_replied": 3}}

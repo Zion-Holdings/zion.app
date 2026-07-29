@@ -1,0 +1,70 @@
+{
+  "run_ts": 1784173519,
+  "iso_ts": "2026-07-16T03:45:19.622948+00:00",
+  "labels_checked": [
+    {
+      "name": "!!!!HOT FOLLOW-UP",
+      "id": "Label_4207916705207178948",
+      "count": 20
+    }
+  ],
+  "hot_followup_threads": 20,
+  "new_inbox_interest": 20,
+  "new_inbox_examples": [
+    {
+      "id": "19f68cda7a7e7fa0",
+      "thread_id": "19ec75d835ce8a1d",
+      "thread_alive": true,
+      "from": null,
+      "subject": null,
+      "date": null,
+      "snippet": "White-label and reseller arrangements are handled through HeyGen&#39;s Agency certificate program. Once you complete the certification, someone from the team will reach out to disc"
+    },
+    {
+      "id": "19f68cb7f70633e8",
+      "thread_id": "19f3df60bc1cf2ed",
+      "thread_alive": true,
+      "from": null,
+      "subject": null,
+      "date": null,
+      "snippet": "Ranmeet, Marcello, Wayne, Thank you again for the Supplier Collaboration Opportunity discussions \u2014 I genuinely enjoyed working with the Solyssey team and appreciate the openness yo"
+    },
+    {
+      "id": "19f68cb79f3fdc23",
+      "thread_id": "19ec75d835ce8a1d",
+      "thread_alive": true,
+      "from": null,
+      "subject": null,
+      "date": null,
+      "snippet": "Hi Sam, Thank you for the opportunity to work together on the Voice AI project with HeyGen \u2014 it was a great mix of technology and market learning for both sides. I see two concrete"
+    },
+    {
+      "id": "19f68cb7404c61a5",
+      "thread_id": "19f4ce5cc510809e",
+      "thread_alive": true,
+      "from": null,
+      "subject": null,
+      "date": null,
+      "snippet": "Hi Ruben, Thank you for following up \u2014 I really value the partnership direction between Hemmersbach and Zion in LATAM, and I&#39;m glad to keep moving it forward. Two ideas worth e"
+    },
+    {
+      "id": "19f68932d5247d70",
+      "thread_id": "19f688fdd30f31fa",
+      "thread_alive": true,
+      "from": null,
+      "subject": null,
+      "date": null,
+      "snippet": "Hi Airbnb, I&#39;m reaching out because we&#39;re offering a free AI Readiness Audit to select technology companies. The audit covers: \u2022 Current technology stack assessment \u2022 AI op"
+    }
+  ],
+  "sent_recent": 10,
+  "dedup_entries": 3,
+  "llm_tailoring": {
+    "enabled": false,
+    "contact_tailor_count": 0,
+    "coverage_ratio": 0.0,
+    "blocker": "missing_endpoint",
+    "total_dry_runs": 0
+  },
+  "errors": []
+}

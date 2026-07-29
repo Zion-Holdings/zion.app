@@ -1,112 +1,334 @@
-{"ts": "2026-07-28T02:52:04.139462+00:00", "to": "udayan.umapathi@voltalabs.com", "subject": "AI implementation proposal", "message_id": "19fa6a2ef1130f37", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:52:06.374356+00:00", "to": "gabriel.santero@exintherapeutics.com", "subject": "AI implementation proposal", "message_id": "19fa6a2f92e09b0a", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:52:08.738678+00:00", "to": "nizar.batada@eugittx.com", "subject": "AI implementation proposal", "message_id": "19fa6a3004b854b3", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:52:11.354165+00:00", "to": "steve@pango.ai", "subject": "AI implementation proposal", "message_id": "19fa6a30a8ad22d3", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:52:13.837603+00:00", "to": "steve.rahimi@pango.ai", "subject": "AI implementation proposal", "message_id": "19fa6a3147c2f8cd", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:52:16.206798+00:00", "to": "lukasz.reszczynski@pango.ai", "subject": "AI implementation proposal", "message_id": "19fa6a31fa0c66b7", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:52:18.570423+00:00", "to": "greg.schvey@axoni.com", "subject": "AI implementation proposal", "message_id": "19fa6a327e4f4005", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:52:21.160443+00:00", "to": "colin.barceloux@techmate.com", "subject": "AI implementation proposal", "message_id": "19fa6a3309609c91", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:52:23.703170+00:00", "to": "austin.mccoy@search-artemis.com", "subject": "AI implementation proposal", "message_id": "19fa6a33b8e435cf", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:52:26.010028+00:00", "to": "olof.mollstedt@alixia.com", "subject": "AI implementation proposal", "message_id": "19fa6a345e3bbdbc", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:52:28.668613+00:00", "to": "vihari.kanukollu@urbankisaan.com", "subject": "AI implementation proposal", "message_id": "19fa6a34cad1ef8f", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:52:31.403442+00:00", "to": "oliver.armitage@bios.health", "subject": "AI implementation proposal", "message_id": "19fa6a3598716b1c", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:52:33.761439+00:00", "to": "jun.tan@gethomebase.com", "subject": "AI implementation proposal", "message_id": "19fa6a362b509eed", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:52:36.121764+00:00", "to": "bertrand.vick@revgenomics.com", "subject": "AI implementation proposal", "message_id": "19fa6a36daf12e29", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:52:38.447384+00:00", "to": "karthik.raman@persist-ai.com", "subject": "AI implementation proposal", "message_id": "19fa6a375ddf3c04", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:52:40.854412+00:00", "to": "aurelia.song@nectome.com", "subject": "AI implementation proposal", "message_id": "19fa6a37e2569277", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:52:43.294706+00:00", "to": "everett.ivy@xtraffic.com", "subject": "AI implementation proposal", "message_id": "19fa6a3894ccc15f", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:52:45.436183+00:00", "to": "nirmit.arora@ritivel.com", "subject": "AI implementation proposal", "message_id": "19fa6a391254a3d9", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:52:48.292839+00:00", "to": "reinhart.hermanus@finnix.id", "subject": "AI implementation proposal", "message_id": "19fa6a399df3f2a3", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:52:50.971767+00:00", "to": "anton@clarum.ai", "subject": "AI implementation proposal", "message_id": "19fa6a3a4943302d", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:52:53.687455+00:00", "to": "sho.sugihara@fuseinsight.com", "subject": "AI implementation proposal", "message_id": "19fa6a3b1137c247", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:52:56.393180+00:00", "to": "susli.lie@erudifi.com", "subject": "AI implementation proposal", "message_id": "19fa6a3bb9c41624", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:52:59.002770+00:00", "to": "ben.stein@doublehq.com", "subject": "AI implementation proposal", "message_id": "19fa6a3c4045a3aa", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:53:01.339112+00:00", "to": "ignacio.detmer@koywe.com", "subject": "AI implementation proposal", "message_id": "19fa6a3ce6e485ce", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:53:03.758706+00:00", "to": "prateek.swain@swadesh.co", "subject": "AI implementation proposal", "message_id": "19fa6a3d78d05ab1", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:53:06.410919+00:00", "to": "christophe.robilliard@kashin.app", "subject": "AI implementation proposal", "message_id": "19fa6a3e3ec6a19d", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:53:08.769260+00:00", "to": "brian.merritt@seed.co", "subject": "AI implementation proposal", "message_id": "19fa6a3ebad2c91e", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:53:11.075845+00:00", "to": "arjun.lalwani@ralo.com", "subject": "AI implementation proposal", "message_id": "19fa6a3f4a1a2250", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:53:13.371313+00:00", "to": "graham.sabin@runcopycat.com", "subject": "AI implementation proposal", "message_id": "19fa6a3fc935ba15", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:53:15.673901+00:00", "to": "paul.kimani@myworkpay.com", "subject": "AI implementation proposal", "message_id": "19fa6a407dca45e3", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:53:18.041170+00:00", "to": "nadia.amalia@fintelite.ai", "subject": "AI implementation proposal", "message_id": "19fa6a410c0b7823", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:53:20.549346+00:00", "to": "bruno.jacob@capix.ai", "subject": "AI implementation proposal", "message_id": "19fa6a419bd485f6", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:53:22.940960+00:00", "to": "dileep.thazhmon@tryjeeves.com", "subject": "AI implementation proposal", "message_id": "19fa6a422750b364", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:53:25.352908+00:00", "to": "anhtho.chuong@getlago.com", "subject": "AI implementation proposal", "message_id": "19fa6a42b8b2702d", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:53:27.641923+00:00", "to": "alejandro.cedeo@delt.ai", "subject": "AI implementation proposal", "message_id": "19fa6a435e69962c", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:54:16.367440+00:00", "to": "jonathan.asmis@landed.com", "subject": "AI implementation proposal", "message_id": "19fa6a4f2ebf5f22", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:54:19.068756+00:00", "to": "clment.salan@formance.com", "subject": "AI implementation proposal", "message_id": "19fa6a4fcad6893e", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:54:21.656827+00:00", "to": "mitch.riley@capimoney.com", "subject": "AI implementation proposal", "message_id": "19fa6a506fa7d06b", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:54:24.071191+00:00", "to": "richmond.bassey@investbamboo.com", "subject": "AI implementation proposal", "message_id": "19fa6a511f98e1f6", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:54:26.757765+00:00", "to": "ignacio.viau@hokali.com", "subject": "AI implementation proposal", "message_id": "19fa6a51ba22e059", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:54:29.632956+00:00", "to": "sam.yang@bloomapp.com", "subject": "AI implementation proposal", "message_id": "19fa6a5246173f79", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:54:32.147200+00:00", "to": "james.booth@projectchiron.org", "subject": "AI implementation proposal", "message_id": "19fa6a5316320b35", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:54:34.556993+00:00", "to": "sohan.choudhury@flintk12.com", "subject": "AI implementation proposal", "message_id": "19fa6a53a0f4ab0c", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:54:36.893346+00:00", "to": "ethan.fieldman@studyedge.com", "subject": "AI implementation proposal", "message_id": "19fa6a5431ac096a", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:54:39.452949+00:00", "to": "sovann.linden@excellence-ai.com", "subject": "AI implementation proposal", "message_id": "19fa6a54c9af8ee8", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:54:42.291978+00:00", "to": "brendan.finch@rocketlit.com", "subject": "AI implementation proposal", "message_id": "19fa6a558d9e485c", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:54:44.594219+00:00", "to": "vimal.rathore@superkalam.com", "subject": "AI implementation proposal", "message_id": "19fa6a56343b5238", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:54:47.408132+00:00", "to": "codrut.lemeni@educato.com", "subject": "AI implementation proposal", "message_id": "19fa6a56becb74ea", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:54:50.085580+00:00", "to": "naxin.wang@getobento.com", "subject": "AI implementation proposal", "message_id": "19fa6a577a141f36", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:54:52.403128+00:00", "to": "iliana.montauk@manara.tech", "subject": "AI implementation proposal", "message_id": "19fa6a581ed8c869", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:54:54.758654+00:00", "to": "michael.lam@studdy.ai", "subject": "AI implementation proposal", "message_id": "19fa6a5893574d77", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:54:57.067432+00:00", "to": "tyrone.iii@miyagilabs.ai", "subject": "AI implementation proposal", "message_id": "19fa6a593497b939", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:55:00.016299+00:00", "to": "vrishank.saini@simcare.ai", "subject": "AI implementation proposal", "message_id": "19fa6a59dea5467d", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:55:02.348863+00:00", "to": "ravish.agrawal@ablejobs.co", "subject": "AI implementation proposal", "message_id": "19fa6a5a7e6c596d", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:55:05.406585+00:00", "to": "vivek.prakash@codingal.com", "subject": "AI implementation proposal", "message_id": "19fa6a5b3f359a1e", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:55:07.749687+00:00", "to": "christie.lagally@rebellyous.com", "subject": "AI implementation proposal", "message_id": "19fa6a5bd6a5b893", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:55:10.239972+00:00", "to": "james.mcwalter@paces.com", "subject": "AI implementation proposal", "message_id": "19fa6a5c4d14d223", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:55:12.577000+00:00", "to": "bec.wilder@greencanopynode.com", "subject": "AI implementation proposal", "message_id": "19fa6a5cfeadd8a2", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:55:14.936928+00:00", "to": "bernardo.cordero@clau.com", "subject": "AI implementation proposal", "message_id": "19fa6a5d94c0fe6f", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:55:17.337015+00:00", "to": "joseph.thalinjan@therentflow.com", "subject": "AI implementation proposal", "message_id": "19fa6a5e3cf4ebed", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:55:19.647215+00:00", "to": "doug.barnett@remihq.com", "subject": "AI implementation proposal", "message_id": "19fa6a5eb9097097", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:55:21.884542+00:00", "to": "david.aragao@hent.com.br", "subject": "AI implementation proposal", "message_id": "19fa6a5f32a5590a", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:55:24.249564+00:00", "to": "christian.mischler@deskimo.com", "subject": "AI implementation proposal", "message_id": "19fa6a5fc01b35be", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:55:26.934684+00:00", "to": "anna.berger@buildtrayd.com", "subject": "AI implementation proposal", "message_id": "19fa6a60418a5941", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:55:29.330670+00:00", "to": "antonis.mitropoulos@thehomli.com", "subject": "AI implementation proposal", "message_id": "19fa6a6114714546", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:55:31.817924+00:00", "to": "jonathan.sukhia@topkey.io", "subject": "AI implementation proposal", "message_id": "19fa6a61b0fd226e", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:55:34.096777+00:00", "to": "luqui.daz@mudafy.com", "subject": "AI implementation proposal", "message_id": "19fa6a62356af4bd", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:55:36.379850+00:00", "to": "phillip.daneshyar@getkanda.com", "subject": "AI implementation proposal", "message_id": "19fa6a62dc894ffd", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:55:38.746379+00:00", "to": "sam.stein@trigodata.com", "subject": "AI implementation proposal", "message_id": "19fa6a63437fa1ca", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:55:41.106806+00:00", "to": "harry.grewal@scope3d.com", "subject": "AI implementation proposal", "message_id": "19fa6a63fcc61ba7", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:58:47.687912+00:00", "to": "ty.sharp@inbuild.ai", "subject": "AI implementation proposal", "message_id": "19fa6a9174b26d10", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:58:50.045406+00:00", "to": "blake.meulmester@convex.com", "subject": "AI implementation proposal", "message_id": "19fa6a921fa51703", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:58:52.457049+00:00", "to": "sanjay.mandava@landeed.com", "subject": "AI implementation proposal", "message_id": "19fa6a92a0bd12c9", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:58:55.011739+00:00", "to": "marwa.hage@munily.com", "subject": "AI implementation proposal", "message_id": "19fa6a935f534be4", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:58:57.364844+00:00", "to": "joseph.tan@expressbuilding.ph", "subject": "AI implementation proposal", "message_id": "19fa6a93c8bcc323", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:59:00.251462+00:00", "to": "asaf.amit@applydesign.io", "subject": "AI implementation proposal", "message_id": "19fa6a9461e27eed", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:59:02.627653+00:00", "to": "saad.jamal@antigen.sh", "subject": "AI implementation proposal", "message_id": "19fa6a953097c32f", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:59:05.106598+00:00", "to": "eten.zou@nebusec.ai", "subject": "AI implementation proposal", "message_id": "19fa6a95a9d0c247", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:59:07.404283+00:00", "to": "shihan.wan@xeol.io", "subject": "AI implementation proposal", "message_id": "19fa6a96442d1698", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:59:09.930272+00:00", "to": "ryan.chow@metalware.com", "subject": "AI implementation proposal", "message_id": "19fa6a96e8b74976", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:59:12.244382+00:00", "to": "mokhtar.bacha@joinformal.com", "subject": "AI implementation proposal", "message_id": "19fa6a977dd67d82", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:59:14.765924+00:00", "to": "roey.eliyahu@salt.security", "subject": "AI implementation proposal", "message_id": "19fa6a9803064143", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:59:17.394238+00:00", "to": "rajaram.srinivasan@getunbound.ai", "subject": "AI implementation proposal", "message_id": "19fa6a98ab298768", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:59:19.834267+00:00", "to": "arjun.bisen@overwatchdata.ai", "subject": "AI implementation proposal", "message_id": "19fa6a995e9c18c0", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:59:22.203695+00:00", "to": "logan.carmody@cotool.ai", "subject": "AI implementation proposal", "message_id": "19fa6a99f2c5b2cb", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:59:24.827988+00:00", "to": "ahmad.sadeddin@corgea.com", "subject": "AI implementation proposal", "message_id": "19fa6a9a8f81875a", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:59:27.200081+00:00", "to": "ashwin.ramachandran@contextfort.ai", "subject": "AI implementation proposal", "message_id": "19fa6a9b23611967", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:59:29.511579+00:00", "to": "paulina.xu@agenticfabriq.com", "subject": "AI implementation proposal", "message_id": "19fa6a9bae434404", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:59:31.883610+00:00", "to": "george.parks@archon.inc", "subject": "AI implementation proposal", "message_id": "19fa6a9c512b6544", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:59:34.336182+00:00", "to": "sreenath.kurupati@cyberfend.com", "subject": "AI implementation proposal", "message_id": "19fa6a9cdf22cace", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:59:36.478993+00:00", "to": "samrose.ahmed@matano.dev", "subject": "AI implementation proposal", "message_id": "19fa6a9d768356f5", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:59:38.907082+00:00", "to": "adarsh.ambati@candor.security", "subject": "AI implementation proposal", "message_id": "19fa6a9df0990642", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:59:41.668390+00:00", "to": "mohammad.eshan@ghosteye.ai", "subject": "AI implementation proposal", "message_id": "19fa6a9e9efef211", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:59:44.306810+00:00", "to": "louis.mutricy@skypher.co", "subject": "AI implementation proposal", "message_id": "19fa6a9f20e461cf", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:59:46.634154+00:00", "to": "abel.john@logosguard.com", "subject": "AI implementation proposal", "message_id": "19fa6a9fc7fb52df", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T02:59:49.358858+00:00", "to": "al.yang@safebase.io", "subject": "AI implementation proposal", "message_id": "19fa6aa0930616ad", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T04:28:45.410890+00:00", "to": "derek.schmidt@vantageops.com", "subject": "Re: AI pilot with measurable milestones", "message_id": "19fa6fb74537aff9", "status": "sent", "type": "followup"}
-{"ts": "2026-07-28T04:28:48.142063+00:00", "to": "rachel.nolan@meridianai.co", "subject": "Re: AI pilot with measurable milestones", "message_id": "19fa6fb7e53e14ba", "status": "sent", "type": "followup"}
-{"ts": "2026-07-28T04:28:50.719627+00:00", "to": "julian.ortega@nexterahealth.org", "subject": "Re: AI pilot with measurable milestones", "message_id": "19fa6fb8b133667c", "status": "sent", "type": "followup"}
-{"ts": "2026-07-28T04:28:53.039065+00:00", "to": "catherine.reeves@fintechseed.com", "subject": "Re: AI pilot with measurable milestones", "message_id": "19fa6fb92ef9fe11", "status": "sent", "type": "followup"}
-{"ts": "2026-07-28T04:28:55.451392+00:00", "to": "michael.brennan@logisticsplus.com", "subject": "Re: AI pilot with measurable milestones", "message_id": "19fa6fb9def85406", "status": "sent", "type": "followup"}
-{"ts": "2026-07-28T04:28:57.900834+00:00", "to": "david.kim@retailnext.ai", "subject": "Re: AI pilot with measurable milestones", "message_id": "19fa6fba594a79f3", "status": "sent", "type": "followup"}
-{"ts": "2026-07-28T04:29:00.188923+00:00", "to": "sophie.martin@legalops.io", "subject": "Re: AI pilot with measurable milestones", "message_id": "19fa6fbae3ed8a8e", "status": "sent", "type": "followup"}
-{"ts": "2026-07-28T04:29:02.573554+00:00", "to": "james.reyes@acmehealth.org", "subject": "Re: AI pilot with measurable milestones", "message_id": "19fa6fbb9cac859e", "status": "sent", "type": "followup"}
-{"ts": "2026-07-28T04:29:05.219292+00:00", "to": "laura.chen@datapillar.com", "subject": "Re: AI pilot with measurable milestones", "message_id": "19fa6fbc3ce81bfb", "status": "sent", "type": "followup"}
-{"ts": "2026-07-28T04:29:07.600077+00:00", "to": "mark.stevens@scaleops.co", "subject": "Re: AI pilot with measurable milestones", "message_id": "19fa6fbcadd0aabc", "status": "sent", "type": "followup"}
-{"ts": "2026-07-28T04:29:10.098814+00:00", "to": "anna.rodriguez@globalmfg.com", "subject": "Re: AI pilot with measurable milestones", "message_id": "19fa6fbd54fff65a", "status": "sent", "type": "followup"}
-{"ts": "2026-07-28T04:29:12.733976+00:00", "to": "peter.johnson@novastream.io", "subject": "Re: AI pilot with measurable milestones", "message_id": "19fa6fbe1d9d5117", "status": "sent", "type": "followup"}
-{"ts": "2026-07-28T04:29:15.020486+00:00", "to": "lisa.patel@labami.ai", "subject": "Re: AI pilot with measurable milestones", "message_id": "19fa6fbe900e612f", "status": "sent", "type": "followup"}
-{"ts": "2026-07-28T04:29:17.367360+00:00", "to": "jordan.blake@vantageops.com", "subject": "Re: AI pilot with measurable milestones", "message_id": "19fa6fbf3b387108", "status": "sent", "type": "followup"}
-{"ts": "2026-07-28T04:29:19.744903+00:00", "to": "emma.wilson@techmate.com", "subject": "AI pilot proposal for Techmate", "message_id": "19fa6fbfa6f4b45e", "status": "sent", "type": "initial"}
-{"ts": "2026-07-28T04:29:22.244732+00:00", "to": "noah.thompson@search-artemis.com", "subject": "AI pilot proposal for Search Artemis", "message_id": "19fa6fc057c15be0", "status": "sent", "type": "initial"}
+{"ts": "2026-07-28T19:23:13.221947+00:00", "to": "udayan.umapathi@voltalabs.com", "subject": "Quick question about your stack", "message_id": "19faa2e5d737e0fa", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:23:15.667604+00:00", "to": "contact@labami.ai", "subject": "Quick question about your stack", "message_id": "19faa2e66f168613", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:23:18.363196+00:00", "to": "gabriel.santero@exintherapeutics.com", "subject": "Quick question about your stack", "message_id": "19faa2e7080b422f", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:23:20.736811+00:00", "to": "nizar.batada@eugittx.com", "subject": "Quick question about your stack", "message_id": "19faa2e79761199c", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:23:23.252243+00:00", "to": "steve@pango.ai", "subject": "Quick question about your stack", "message_id": "19faa2e8387652df", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:23:25.658834+00:00", "to": "steve.rahimi@pango.ai", "subject": "Quick question about your stack", "message_id": "19faa2e8cb55e558", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:23:28.361120+00:00", "to": "lukasz.reszczynski@pango.ai", "subject": "Quick question about your stack", "message_id": "19faa2e96166e947", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:23:30.676641+00:00", "to": "greg.schvey@axoni.com", "subject": "Quick question about your stack", "message_id": "19faa2ea1e560f5a", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:23:33.228577+00:00", "to": "colin.barceloux@techmate.com", "subject": "Quick question about your stack", "message_id": "19faa2eaa3873119", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:23:35.723537+00:00", "to": "austin.mccoy@search-artemis.com", "subject": "Quick question about your stack", "message_id": "19faa2eb3a0f5dde", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:23:38.255094+00:00", "to": "olof.mollstedt@alixia.com", "subject": "Quick question about your stack", "message_id": "19faa2ebd7da734f", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:23:40.622635+00:00", "to": "vihari.kanukollu@urbankisaan.com", "subject": "Quick question about your stack", "message_id": "19faa2ec6d7e16b1", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:23:43.332677+00:00", "to": "oliver.armitage@bios.health", "subject": "Quick question about your stack", "message_id": "19faa2ed124fe7f9", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:23:45.900759+00:00", "to": "jun.tan@gethomebase.com", "subject": "Quick question about your stack", "message_id": "19faa2edb4775c9a", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:23:48.665710+00:00", "to": "bertrand.vick@revgenomics.com", "subject": "Quick question about your stack", "message_id": "19faa2ee4c309eea", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:23:51.627237+00:00", "to": "karthik.raman@persist-ai.com", "subject": "Quick question about your stack", "message_id": "19faa2ef033d290e", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:23:54.216852+00:00", "to": "aurelia.song@nectome.com", "subject": "Quick question about your stack", "message_id": "19faa2efa8221a9d", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:23:56.953229+00:00", "to": "everett.ivy@xtraffic.com", "subject": "Quick question about your stack", "message_id": "19faa2f07ce6f2a4", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:23:59.353951+00:00", "to": "nirmit.arora@ritivel.com", "subject": "Quick question about your stack", "message_id": "19faa2f113112069", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:24:01.545419+00:00", "to": "reinhart.hermanus@finnix.id", "subject": "Quick question about your stack", "message_id": "19faa2f191c2895d", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:24:04.192707+00:00", "to": "anton@clarum.ai", "subject": "Quick question about your stack", "message_id": "19faa2f23829cbb0", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:24:07.201153+00:00", "to": "sho.sugihara@fuseinsight.com", "subject": "Quick question about your stack", "message_id": "19faa2f2c5189ea3", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:24:09.575002+00:00", "to": "susli.lie@erudifi.com", "subject": "Quick question about your stack", "message_id": "19faa2f380998af6", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:24:11.952862+00:00", "to": "ben.stein@doublehq.com", "subject": "Quick question about your stack", "message_id": "19faa2f424b8db38", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:24:14.582132+00:00", "to": "ignacio.detmer@koywe.com", "subject": "Quick question about your stack", "message_id": "19faa2f4bdeab1fe", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:24:16.973149+00:00", "to": "prateek.swain@swadesh.co", "subject": "Quick question about your stack", "message_id": "19faa2f554811a3c", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:24:19.585526+00:00", "to": "christophe.robilliard@kashin.app", "subject": "Quick question about your stack", "message_id": "19faa2f5f2ee3357", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:24:22.007704+00:00", "to": "brian.merritt@seed.co", "subject": "Quick question about your stack", "message_id": "19faa2f68838f197", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:24:24.421832+00:00", "to": "arjun.lalwani@ralo.com", "subject": "Quick question about your stack", "message_id": "19faa2f72ae23daf", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:24:26.796671+00:00", "to": "graham.sabin@runcopycat.com", "subject": "Quick question about your stack", "message_id": "19faa2f7bf56bc4c", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:24:29.235594+00:00", "to": "paul.kimani@myworkpay.com", "subject": "Quick question about your stack", "message_id": "19faa2f845e801d2", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:24:31.753380+00:00", "to": "nadia.amalia@fintelite.ai", "subject": "Quick question about your stack", "message_id": "19faa2f8fbc85699", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:24:34.183329+00:00", "to": "bruno.jacob@capix.ai", "subject": "Quick question about your stack", "message_id": "19faa2f998d4310d", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:24:36.479541+00:00", "to": "dileep.thazhmon@tryjeeves.com", "subject": "Quick question about your stack", "message_id": "19faa2fa1cf4a02b", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:24:38.864544+00:00", "to": "anhtho.chuong@getlago.com", "subject": "Quick question about your stack", "message_id": "19faa2fab9a65079", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:29:14.807622+00:00", "to": "udayan.umapathi@voltalabs.com", "subject": "Quick question about your stack", "message_id": "19faa33e0d6d0f3c", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:29:17.269502+00:00", "to": "contact@labami.ai", "subject": "Quick question about your stack", "message_id": "19faa33e9e1e5751", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:29:19.521908+00:00", "to": "gabriel.santero@exintherapeutics.com", "subject": "Quick question about your stack", "message_id": "19faa33f2fd1d78c", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:29:21.886940+00:00", "to": "nizar.batada@eugittx.com", "subject": "Quick question about your stack", "message_id": "19faa33fcf2bbeb5", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:29:24.331761+00:00", "to": "steve@pango.ai", "subject": "Quick question about your stack", "message_id": "19faa3407d716aa7", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:29:27.019314+00:00", "to": "steve.rahimi@pango.ai", "subject": "Quick question about your stack", "message_id": "19faa340e5444874", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:29:29.804851+00:00", "to": "lukasz.reszczynski@pango.ai", "subject": "Quick question about your stack", "message_id": "19faa3419c764d62", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:29:32.236117+00:00", "to": "greg.schvey@axoni.com", "subject": "Quick question about your stack", "message_id": "19faa342249d97c5", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:29:34.668782+00:00", "to": "colin.barceloux@techmate.com", "subject": "Quick question about your stack", "message_id": "19faa342f92db437", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:29:37.106662+00:00", "to": "austin.mccoy@search-artemis.com", "subject": "Quick question about your stack", "message_id": "19faa3436aad4fec", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:29:39.761024+00:00", "to": "olof.mollstedt@alixia.com", "subject": "Quick question about your stack", "message_id": "19faa34404eaed51", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:29:42.543820+00:00", "to": "vihari.kanukollu@urbankisaan.com", "subject": "Quick question about your stack", "message_id": "19faa344c40f932e", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:29:45.031845+00:00", "to": "oliver.armitage@bios.health", "subject": "Quick question about your stack", "message_id": "19faa34565943922", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:29:47.923772+00:00", "to": "jun.tan@gethomebase.com", "subject": "Quick question about your stack", "message_id": "19faa346007f6de6", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:29:50.470077+00:00", "to": "bertrand.vick@revgenomics.com", "subject": "Quick question about your stack", "message_id": "19faa346a723228a", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:29:53.179368+00:00", "to": "karthik.raman@persist-ai.com", "subject": "Quick question about your stack", "message_id": "19faa347433f2903", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:29:55.588952+00:00", "to": "aurelia.song@nectome.com", "subject": "Quick question about your stack", "message_id": "19faa34802e77773", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:29:58.649083+00:00", "to": "everett.ivy@xtraffic.com", "subject": "Quick question about your stack", "message_id": "19faa348903cb423", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:30:01.019330+00:00", "to": "nirmit.arora@ritivel.com", "subject": "Quick question about your stack", "message_id": "19faa3495780c7a2", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:30:03.538647+00:00", "to": "reinhart.hermanus@finnix.id", "subject": "Quick question about your stack", "message_id": "19faa349f884fa68", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:30:05.843677+00:00", "to": "anton@clarum.ai", "subject": "Quick question about your stack", "message_id": "19faa34a9f965e8f", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:30:08.256949+00:00", "to": "sho.sugihara@fuseinsight.com", "subject": "Quick question about your stack", "message_id": "19faa34b065986eb", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:30:10.684703+00:00", "to": "susli.lie@erudifi.com", "subject": "Quick question about your stack", "message_id": "19faa34ba5a3e1be", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:30:12.959542+00:00", "to": "ben.stein@doublehq.com", "subject": "Quick question about your stack", "message_id": "19faa34c5942f477", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:30:15.400163+00:00", "to": "ignacio.detmer@koywe.com", "subject": "Quick question about your stack", "message_id": "19faa34cd40f64ea", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:30:17.924806+00:00", "to": "prateek.swain@swadesh.co", "subject": "Quick question about your stack", "message_id": "19faa34d67a9c0fe", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:30:20.536614+00:00", "to": "christophe.robilliard@kashin.app", "subject": "Quick question about your stack", "message_id": "19faa34e03e017a8", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:30:23.099318+00:00", "to": "brian.merritt@seed.co", "subject": "Quick question about your stack", "message_id": "19faa34ea242d8b7", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:30:25.790300+00:00", "to": "arjun.lalwani@ralo.com", "subject": "Quick question about your stack", "message_id": "19faa34f5c5bb9fa", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:30:28.017245+00:00", "to": "graham.sabin@runcopycat.com", "subject": "Quick question about your stack", "message_id": "19faa34ff4cd2ea1", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:30:30.466872+00:00", "to": "paul.kimani@myworkpay.com", "subject": "Quick question about your stack", "message_id": "19faa3508c58956e", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:30:33.083202+00:00", "to": "nadia.amalia@fintelite.ai", "subject": "Quick question about your stack", "message_id": "19faa351045d98e0", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:30:36.155522+00:00", "to": "bruno.jacob@capix.ai", "subject": "Quick question about your stack", "message_id": "19faa351d6c0cc72", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:30:38.847777+00:00", "to": "dileep.thazhmon@tryjeeves.com", "subject": "Quick question about your stack", "message_id": "19faa35274acc463", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T19:30:41.419734+00:00", "to": "anhtho.chuong@getlago.com", "subject": "Quick question about your stack", "message_id": "19faa35337e51873", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:25:18.103125+00:00", "to": "udayan.umapathi@voltalabs.com", "subject": "Quick question about your stack", "message_id": "19faa6732f7a6143", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:25:20.587379+00:00", "to": "contact@labami.ai", "subject": "Quick question about your stack", "message_id": "19faa673ca8389e5", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:25:23.033693+00:00", "to": "gabriel.santero@exintherapeutics.com", "subject": "Quick question about your stack", "message_id": "19faa67475bb458d", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:25:25.305397+00:00", "to": "nizar.batada@eugittx.com", "subject": "Quick question about your stack", "message_id": "19faa674f2ad72b3", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:25:27.703541+00:00", "to": "steve@pango.ai", "subject": "Quick question about your stack", "message_id": "19faa6759d574d08", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:25:30.217890+00:00", "to": "steve.rahimi@pango.ai", "subject": "Quick question about your stack", "message_id": "19faa67604ebf715", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:25:32.651161+00:00", "to": "lukasz.reszczynski@pango.ai", "subject": "Quick question about your stack", "message_id": "19faa676a85ba8e7", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:25:35.176709+00:00", "to": "greg.schvey@axoni.com", "subject": "Quick question about your stack", "message_id": "19faa6774c09e134", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:25:37.663877+00:00", "to": "colin.barceloux@techmate.com", "subject": "Quick question about your stack", "message_id": "19faa677ecf5cdbe", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:25:40.172024+00:00", "to": "austin.mccoy@search-artemis.com", "subject": "Quick question about your stack", "message_id": "19faa6789dba5d30", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:25:42.820624+00:00", "to": "olof.mollstedt@alixia.com", "subject": "Quick question about your stack", "message_id": "19faa6793efb0597", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:25:45.212934+00:00", "to": "vihari.kanukollu@urbankisaan.com", "subject": "Quick question about your stack", "message_id": "19faa679ca111685", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:25:47.555102+00:00", "to": "oliver.armitage@bios.health", "subject": "Quick question about your stack", "message_id": "19faa67a434a0dfc", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:25:49.926587+00:00", "to": "jun.tan@gethomebase.com", "subject": "Quick question about your stack", "message_id": "19faa67ae13865c9", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:25:52.540221+00:00", "to": "bertrand.vick@revgenomics.com", "subject": "Quick question about your stack", "message_id": "19faa67b82aaa5dc", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:25:54.925079+00:00", "to": "karthik.raman@persist-ai.com", "subject": "Quick question about your stack", "message_id": "19faa67c2cfe5b41", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:25:57.401043+00:00", "to": "aurelia.song@nectome.com", "subject": "Quick question about your stack", "message_id": "19faa67cbfdd59da", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:25:59.794720+00:00", "to": "everett.ivy@xtraffic.com", "subject": "Quick question about your stack", "message_id": "19faa67d46a2cb03", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:26:01.980017+00:00", "to": "nirmit.arora@ritivel.com", "subject": "Quick question about your stack", "message_id": "19faa67df213b713", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:26:04.651590+00:00", "to": "reinhart.hermanus@finnix.id", "subject": "Quick question about your stack", "message_id": "19faa67e72b9939c", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:26:06.939203+00:00", "to": "anton@clarum.ai", "subject": "Quick question about your stack", "message_id": "19faa67f0640d4b1", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:26:09.541299+00:00", "to": "sho.sugihara@fuseinsight.com", "subject": "Quick question about your stack", "message_id": "19faa67fb2b4a997", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:26:12.180243+00:00", "to": "susli.lie@erudifi.com", "subject": "Quick question about your stack", "message_id": "19faa6805583eacf", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:26:14.577426+00:00", "to": "ben.stein@doublehq.com", "subject": "Quick question about your stack", "message_id": "19faa680eeece9c7", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:26:17.011760+00:00", "to": "ignacio.detmer@koywe.com", "subject": "Quick question about your stack", "message_id": "19faa68187ae4634", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:26:19.652484+00:00", "to": "prateek.swain@swadesh.co", "subject": "Quick question about your stack", "message_id": "19faa68230eb5758", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T20:26:22.027490+00:00", "to": "christophe.robilliard@kashin.app", "subject": "Quick question about your stack", "message_id": "19faa682dc15ffd6", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:23:12.804333+00:00", "to": "aurelia.song@nectome.com", "subject": "Quick question about your stack", "message_id": "19faa9c376102b6a", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:23:15.076433+00:00", "to": "everett.ivy@xtraffic.com", "subject": "Quick question about your stack", "message_id": "19faa9c40c4b4994", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:23:17.552732+00:00", "to": "nirmit.arora@ritivel.com", "subject": "Quick question about your stack", "message_id": "19faa9c499ef5068", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:23:20.372124+00:00", "to": "reinhart.hermanus@finnix.id", "subject": "Quick question about your stack", "message_id": "19faa9c52dfc71f0", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:23:22.718724+00:00", "to": "anton@clarum.ai", "subject": "Quick question about your stack", "message_id": "19faa9c5e2dc0a3a", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:23:24.959673+00:00", "to": "sho.sugihara@fuseinsight.com", "subject": "Quick question about your stack", "message_id": "19faa9c67f88db9e", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:23:27.409169+00:00", "to": "susli.lie@erudifi.com", "subject": "Quick question about your stack", "message_id": "19faa9c708944def", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:23:30.059362+00:00", "to": "ben.stein@doublehq.com", "subject": "Quick question about your stack", "message_id": "19faa9c7ac05903d", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:23:32.816623+00:00", "to": "ignacio.detmer@koywe.com", "subject": "Quick question about your stack", "message_id": "19faa9c84fb5b132", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:23:35.007959+00:00", "to": "prateek.swain@swadesh.co", "subject": "Quick question about your stack", "message_id": "19faa9c8fc9a8119", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:23:37.376517+00:00", "to": "christophe.robilliard@kashin.app", "subject": "Quick question about your stack", "message_id": "19faa9c978455812", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:23:39.696078+00:00", "to": "brian.merritt@seed.co", "subject": "Quick question about your stack", "message_id": "19faa9ca00ccd1a1", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:23:42.003313+00:00", "to": "arjun.lalwani@ralo.com", "subject": "Quick question about your stack", "message_id": "19faa9caa8a9af12", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:23:44.434502+00:00", "to": "graham.sabin@runcopycat.com", "subject": "Quick question about your stack", "message_id": "19faa9cb2075b220", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:23:46.752217+00:00", "to": "paul.kimani@myworkpay.com", "subject": "Quick question about your stack", "message_id": "19faa9cbc4519adc", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:23:49.570104+00:00", "to": "nadia.amalia@fintelite.ai", "subject": "Quick question about your stack", "message_id": "19faa9cc45ee8de3", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:23:52.337929+00:00", "to": "bruno.jacob@capix.ai", "subject": "Quick question about your stack", "message_id": "19faa9cd17c451af", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:23:54.643582+00:00", "to": "dileep.thazhmon@tryjeeves.com", "subject": "Quick question about your stack", "message_id": "19faa9cdb65bdead", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:23:56.859876+00:00", "to": "anhtho.chuong@getlago.com", "subject": "Quick question about your stack", "message_id": "19faa9ce5fb5f3f4", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:24:16.759075+00:00", "to": "udayan.umapathi@voltalabs.com", "subject": "Quick question about your stack", "message_id": "19faa9d3085c2fe2", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:24:19.158029+00:00", "to": "contact@labami.ai", "subject": "Quick question about your stack", "message_id": "19faa9d3afae1d77", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:24:21.457155+00:00", "to": "gabriel.santero@exintherapeutics.com", "subject": "Quick question about your stack", "message_id": "19faa9d445fb0cb7", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:24:23.836469+00:00", "to": "nizar.batada@eugittx.com", "subject": "Quick question about your stack", "message_id": "19faa9d4c72032cf", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:24:26.515499+00:00", "to": "steve@pango.ai", "subject": "Quick question about your stack", "message_id": "19faa9d572676e2f", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:24:28.916544+00:00", "to": "steve.rahimi@pango.ai", "subject": "Quick question about your stack", "message_id": "19faa9d617400c16", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:24:31.343208+00:00", "to": "lukasz.reszczynski@pango.ai", "subject": "Quick question about your stack", "message_id": "19faa9d6a7444886", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:24:34.254329+00:00", "to": "greg.schvey@axoni.com", "subject": "Quick question about your stack", "message_id": "19faa9d740a3e867", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:24:36.521777+00:00", "to": "colin.barceloux@techmate.com", "subject": "Quick question about your stack", "message_id": "19faa9d7ff383aca", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:24:38.838371+00:00", "to": "austin.mccoy@search-artemis.com", "subject": "Quick question about your stack", "message_id": "19faa9d884a6c955", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:24:41.670563+00:00", "to": "olof.mollstedt@alixia.com", "subject": "Quick question about your stack", "message_id": "19faa9d91825fb5b", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T21:24:44.325446+00:00", "to": "vihari.kanukollu@urbankisaan.com", "subject": "Quick question about your stack", "message_id": "19faa9d9cf56b9e9", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:23:15.830578+00:00", "to": "everett.ivy@xtraffic.com", "subject": "Quick question about your stack", "message_id": "19fab0a21dd1ed16", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:23:18.260264+00:00", "to": "nirmit.arora@ritivel.com", "subject": "Quick question about your stack", "message_id": "19fab0a2abd0caad", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:23:20.628856+00:00", "to": "reinhart.hermanus@finnix.id", "subject": "Quick question about your stack", "message_id": "19fab0a32d1683a3", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:23:23.010392+00:00", "to": "anton@clarum.ai", "subject": "Quick question about your stack", "message_id": "19fab0a3d242c597", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:23:25.518488+00:00", "to": "sho.sugihara@fuseinsight.com", "subject": "Quick question about your stack", "message_id": "19fab0a4526c1939", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:23:27.939664+00:00", "to": "susli.lie@erudifi.com", "subject": "Quick question about your stack", "message_id": "19fab0a4e8a97d05", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:23:30.317704+00:00", "to": "ben.stein@doublehq.com", "subject": "Quick question about your stack", "message_id": "19fab0a595493519", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:23:32.660211+00:00", "to": "ignacio.detmer@koywe.com", "subject": "Quick question about your stack", "message_id": "19fab0a62b2a222a", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:23:35.348802+00:00", "to": "prateek.swain@swadesh.co", "subject": "Quick question about your stack", "message_id": "19fab0a6ca080743", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:23:37.522404+00:00", "to": "christophe.robilliard@kashin.app", "subject": "Quick question about your stack", "message_id": "19fab0a744cad908", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:23:39.930966+00:00", "to": "brian.merritt@seed.co", "subject": "Quick question about your stack", "message_id": "19fab0a7e01d83f0", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:23:42.249744+00:00", "to": "arjun.lalwani@ralo.com", "subject": "Quick question about your stack", "message_id": "19fab0a89e9e8c1c", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:23:44.567041+00:00", "to": "graham.sabin@runcopycat.com", "subject": "Quick question about your stack", "message_id": "19fab0a902537893", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:23:47.000307+00:00", "to": "paul.kimani@myworkpay.com", "subject": "Quick question about your stack", "message_id": "19fab0a9bb0bfc12", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:23:49.524861+00:00", "to": "nadia.amalia@fintelite.ai", "subject": "Quick question about your stack", "message_id": "19fab0aa389bc65f", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:23:51.947207+00:00", "to": "bruno.jacob@capix.ai", "subject": "Quick question about your stack", "message_id": "19fab0aad82723c4", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:23:54.315052+00:00", "to": "dileep.thazhmon@tryjeeves.com", "subject": "Quick question about your stack", "message_id": "19fab0ab66294cba", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:23:56.691783+00:00", "to": "anhtho.chuong@getlago.com", "subject": "Quick question about your stack", "message_id": "19fab0ac1e2d606b", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:26:57.364894+00:00", "to": "udayan.umapathi@voltalabs.com", "subject": "Quick question about your stack", "message_id": "19fab0d83d8338ca", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:26:59.782592+00:00", "to": "contact@labami.ai", "subject": "Quick question about your stack", "message_id": "19fab0d8ac174e7d", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:27:02.214746+00:00", "to": "gabriel.santero@exintherapeutics.com", "subject": "Quick question about your stack", "message_id": "19fab0d954b8d394", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:27:04.555374+00:00", "to": "nizar.batada@eugittx.com", "subject": "Quick question about your stack", "message_id": "19fab0d9fd95db42", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:27:07.193439+00:00", "to": "steve@pango.ai", "subject": "Quick question about your stack", "message_id": "19fab0da6c0cdf1d", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:27:09.833929+00:00", "to": "steve.rahimi@pango.ai", "subject": "Quick question about your stack", "message_id": "19fab0db010d411e", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:27:12.555696+00:00", "to": "lukasz.reszczynski@pango.ai", "subject": "Quick question about your stack", "message_id": "19fab0dbdb811bbb", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:27:15.090041+00:00", "to": "greg.schvey@axoni.com", "subject": "Quick question about your stack", "message_id": "19fab0dc6d37d5e7", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:27:17.536194+00:00", "to": "colin.barceloux@techmate.com", "subject": "Quick question about your stack", "message_id": "19fab0dd1dd7ec40", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:27:19.865812+00:00", "to": "austin.mccoy@search-artemis.com", "subject": "Quick question about your stack", "message_id": "19fab0ddb5439bc5", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:27:22.299871+00:00", "to": "olof.mollstedt@alixia.com", "subject": "Quick question about your stack", "message_id": "19fab0de318adda7", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:27:24.560278+00:00", "to": "vihari.kanukollu@urbankisaan.com", "subject": "Quick question about your stack", "message_id": "19fab0ded1759a62", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:27:26.786680+00:00", "to": "oliver.armitage@bios.health", "subject": "Quick question about your stack", "message_id": "19fab0df42a55751", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:27:29.193617+00:00", "to": "jun.tan@gethomebase.com", "subject": "Quick question about your stack", "message_id": "19fab0dfffeda723", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:27:31.764035+00:00", "to": "bertrand.vick@revgenomics.com", "subject": "Quick question about your stack", "message_id": "19fab0e068272194", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:27:34.333014+00:00", "to": "karthik.raman@persist-ai.com", "subject": "Quick question about your stack", "message_id": "19fab0e106780899", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:27:36.503275+00:00", "to": "aurelia.song@nectome.com", "subject": "Quick question about your stack", "message_id": "19fab0e1bd60db66", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:27:39.406603+00:00", "to": "everett.ivy@xtraffic.com", "subject": "Quick question about your stack", "message_id": "19fab0e2497f5980", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:27:41.788743+00:00", "to": "nirmit.arora@ritivel.com", "subject": "Quick question about your stack", "message_id": "19fab0e2e375cd1e", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:27:44.006048+00:00", "to": "reinhart.hermanus@finnix.id", "subject": "Quick question about your stack", "message_id": "19fab0e39a4bbc5f", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:27:46.637572+00:00", "to": "anton@clarum.ai", "subject": "Quick question about your stack", "message_id": "19fab0e419c67a66", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:27:49.040298+00:00", "to": "sho.sugihara@fuseinsight.com", "subject": "Quick question about your stack", "message_id": "19fab0e4a90c4ccc", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:27:51.732196+00:00", "to": "susli.lie@erudifi.com", "subject": "Quick question about your stack", "message_id": "19fab0e540cbe5eb", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:27:54.128437+00:00", "to": "ben.stein@doublehq.com", "subject": "Quick question about your stack", "message_id": "19fab0e5ef738545", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:27:56.569854+00:00", "to": "ignacio.detmer@koywe.com", "subject": "Quick question about your stack", "message_id": "19fab0e697f174bd", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:27:58.942704+00:00", "to": "prateek.swain@swadesh.co", "subject": "Quick question about your stack", "message_id": "19fab0e739c48721", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:28:01.716964+00:00", "to": "christophe.robilliard@kashin.app", "subject": "Quick question about your stack", "message_id": "19fab0e7b4f64f6a", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:28:03.962108+00:00", "to": "brian.merritt@seed.co", "subject": "Quick question about your stack", "message_id": "19fab0e872d5cb6f", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:28:06.485275+00:00", "to": "arjun.lalwani@ralo.com", "subject": "Quick question about your stack", "message_id": "19fab0e8fe016bb3", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:28:09.001802+00:00", "to": "graham.sabin@runcopycat.com", "subject": "Quick question about your stack", "message_id": "19fab0e99e8d16f4", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:28:11.658595+00:00", "to": "paul.kimani@myworkpay.com", "subject": "Quick question about your stack", "message_id": "19fab0ea3715469b", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:28:14.057267+00:00", "to": "nadia.amalia@fintelite.ai", "subject": "Quick question about your stack", "message_id": "19fab0eac655efeb", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:28:16.384560+00:00", "to": "bruno.jacob@capix.ai", "subject": "Quick question about your stack", "message_id": "19fab0eb61d8af63", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:28:18.700500+00:00", "to": "dileep.thazhmon@tryjeeves.com", "subject": "Quick question about your stack", "message_id": "19fab0ebf2749331", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:28:21.112808+00:00", "to": "anhtho.chuong@getlago.com", "subject": "Quick question about your stack", "message_id": "19fab0ec89298a95", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:28:39.526183+00:00", "to": "udayan.umapathi@voltalabs.com", "subject": "Quick question about your stack", "message_id": "19fab0f11fc16bc0", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:28:41.892144+00:00", "to": "contact@labami.ai", "subject": "Quick question about your stack", "message_id": "19fab0f1bbb287da", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:28:44.246317+00:00", "to": "gabriel.santero@exintherapeutics.com", "subject": "Quick question about your stack", "message_id": "19fab0f22cec2e3a", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:28:46.660722+00:00", "to": "nizar.batada@eugittx.com", "subject": "Quick question about your stack", "message_id": "19fab0f2d4375a18", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:28:49.084913+00:00", "to": "steve@pango.ai", "subject": "Quick question about your stack", "message_id": "19fab0f377e5f7e9", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:28:51.453399+00:00", "to": "steve.rahimi@pango.ai", "subject": "Quick question about your stack", "message_id": "19fab0f3e00e9f8a", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:28:54.266533+00:00", "to": "lukasz.reszczynski@pango.ai", "subject": "Quick question about your stack", "message_id": "19fab0f4ac0d9838", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-28T23:28:56.588779+00:00", "to": "greg.schvey@axoni.com", "subject": "Quick question about your stack", "message_id": "19fab0f53a6b0d07", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T00:28:08.124330+00:00", "to": "udayan.umapathi@voltalabs.com", "subject": "Quick question about your stack", "message_id": "19fab458438c4e13", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T00:28:10.546507+00:00", "to": "contact@labami.ai", "subject": "Quick question about your stack", "message_id": "19fab458f3796733", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T00:28:13.049623+00:00", "to": "gabriel.santero@exintherapeutics.com", "subject": "Quick question about your stack", "message_id": "19fab4596d673dab", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T00:28:15.251070+00:00", "to": "nizar.batada@eugittx.com", "subject": "Quick question about your stack", "message_id": "19fab45a0c474901", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T00:28:17.763047+00:00", "to": "steve@pango.ai", "subject": "Quick question about your stack", "message_id": "19fab45a8be72c1f", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T00:28:20.161061+00:00", "to": "steve.rahimi@pango.ai", "subject": "Quick question about your stack", "message_id": "19fab45b403d9f3e", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T00:28:22.851157+00:00", "to": "lukasz.reszczynski@pango.ai", "subject": "Quick question about your stack", "message_id": "19fab45bd5ccdb14", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T00:28:25.239884+00:00", "to": "greg.schvey@axoni.com", "subject": "Quick question about your stack", "message_id": "19fab45c7d1c46c1", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T00:28:27.639874+00:00", "to": "colin.barceloux@techmate.com", "subject": "Quick question about your stack", "message_id": "19fab45d142f303a", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T00:28:30.101143+00:00", "to": "austin.mccoy@search-artemis.com", "subject": "Quick question about your stack", "message_id": "19fab45da117d68b", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T00:28:32.571402+00:00", "to": "olof.mollstedt@alixia.com", "subject": "Quick question about your stack", "message_id": "19fab45e5b8ebb84", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T00:28:34.803685+00:00", "to": "vihari.kanukollu@urbankisaan.com", "subject": "Quick question about your stack", "message_id": "19fab45ec2838fb7", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T00:28:37.582680+00:00", "to": "oliver.armitage@bios.health", "subject": "Quick question about your stack", "message_id": "19fab45f796be6d4", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T00:28:40.229007+00:00", "to": "jun.tan@gethomebase.com", "subject": "Quick question about your stack", "message_id": "19fab46001d7b451", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:29:25.292002+00:00", "to": "udayan.umapathi@voltalabs.com", "subject": "Quick question about your stack", "message_id": "19fab7da17389d32", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:29:27.684997+00:00", "to": "contact@labami.ai", "subject": "Quick question about your stack", "message_id": "19fab7daa6e17c7e", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:29:30.019517+00:00", "to": "gabriel.santero@exintherapeutics.com", "subject": "Quick question about your stack", "message_id": "19fab7db2dce2032", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:29:32.250586+00:00", "to": "nizar.batada@eugittx.com", "subject": "Quick question about your stack", "message_id": "19fab7dbdde0bc67", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:29:35.240368+00:00", "to": "steve@pango.ai", "subject": "Quick question about your stack", "message_id": "19fab7dc7ad54963", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:29:37.636011+00:00", "to": "steve.rahimi@pango.ai", "subject": "Quick question about your stack", "message_id": "19fab7dd0e37c90d", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:29:40.056579+00:00", "to": "lukasz.reszczynski@pango.ai", "subject": "Quick question about your stack", "message_id": "19fab7dd93212571", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:29:42.358144+00:00", "to": "greg.schvey@axoni.com", "subject": "Quick question about your stack", "message_id": "19fab7de26d52768", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:29:45.191545+00:00", "to": "colin.barceloux@techmate.com", "subject": "Quick question about your stack", "message_id": "19fab7dedfc3bfdf", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:29:47.538873+00:00", "to": "austin.mccoy@search-artemis.com", "subject": "Quick question about your stack", "message_id": "19fab7df6a22d152", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:29:49.852549+00:00", "to": "olof.mollstedt@alixia.com", "subject": "Quick question about your stack", "message_id": "19fab7e0062979de", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:29:52.795006+00:00", "to": "vihari.kanukollu@urbankisaan.com", "subject": "Quick question about your stack", "message_id": "19fab7e08e5a8c25", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:29:55.642187+00:00", "to": "oliver.armitage@bios.health", "subject": "Quick question about your stack", "message_id": "19fab7e162108c32", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:29:58.112730+00:00", "to": "jun.tan@gethomebase.com", "subject": "Quick question about your stack", "message_id": "19fab7e210d51913", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:30:00.550162+00:00", "to": "bertrand.vick@revgenomics.com", "subject": "Quick question about your stack", "message_id": "19fab7e292ab8e56", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:30:03.047334+00:00", "to": "karthik.raman@persist-ai.com", "subject": "Quick question about your stack", "message_id": "19fab7e3237f4ecf", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:30:05.405556+00:00", "to": "aurelia.song@nectome.com", "subject": "Quick question about your stack", "message_id": "19fab7e3db7f38d3", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:30:07.797857+00:00", "to": "everett.ivy@xtraffic.com", "subject": "Quick question about your stack", "message_id": "19fab7e46fb06b5f", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:30:10.124248+00:00", "to": "nirmit.arora@ritivel.com", "subject": "Quick question about your stack", "message_id": "19fab7e50587c50b", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:30:13.017942+00:00", "to": "reinhart.hermanus@finnix.id", "subject": "Quick question about your stack", "message_id": "19fab7e5b9dafe4f", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:30:15.735533+00:00", "to": "anton@clarum.ai", "subject": "Quick question about your stack", "message_id": "19fab7e659b094ec", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:30:18.069188+00:00", "to": "sho.sugihara@fuseinsight.com", "subject": "Quick question about your stack", "message_id": "19fab7e6eaca4f3c", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:30:20.302765+00:00", "to": "susli.lie@erudifi.com", "subject": "Quick question about your stack", "message_id": "19fab7e776708073", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:30:22.662379+00:00", "to": "ben.stein@doublehq.com", "subject": "Quick question about your stack", "message_id": "19fab7e8013a930c", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:30:25.170779+00:00", "to": "ignacio.detmer@koywe.com", "subject": "Quick question about your stack", "message_id": "19fab7e8993623c7", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:30:27.557359+00:00", "to": "prateek.swain@swadesh.co", "subject": "Quick question about your stack", "message_id": "19fab7e92ca02652", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:30:29.962150+00:00", "to": "christophe.robilliard@kashin.app", "subject": "Quick question about your stack", "message_id": "19fab7e9dd956fca", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:30:32.262129+00:00", "to": "brian.merritt@seed.co", "subject": "Quick question about your stack", "message_id": "19fab7ea74742ee8", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:30:34.721962+00:00", "to": "arjun.lalwani@ralo.com", "subject": "Quick question about your stack", "message_id": "19fab7eb0bfdfb25", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:30:37.314316+00:00", "to": "graham.sabin@runcopycat.com", "subject": "Quick question about your stack", "message_id": "19fab7eb85a836bb", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:30:39.807279+00:00", "to": "paul.kimani@myworkpay.com", "subject": "Quick question about your stack", "message_id": "19fab7ec3beecc8a", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:30:42.330582+00:00", "to": "nadia.amalia@fintelite.ai", "subject": "Quick question about your stack", "message_id": "19fab7ecc8953792", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:30:44.752838+00:00", "to": "bruno.jacob@capix.ai", "subject": "Quick question about your stack", "message_id": "19fab7ed6fe739e8", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:30:47.128734+00:00", "to": "dileep.thazhmon@tryjeeves.com", "subject": "Quick question about your stack", "message_id": "19fab7ee1e59c853", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T01:30:49.527504+00:00", "to": "anhtho.chuong@getlago.com", "subject": "Quick question about your stack", "message_id": "19fab7ee8cb08ad1", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:23:16.010027+00:00", "to": "austin.mccoy@search-artemis.com", "subject": "Quick question about your stack", "message_id": "19fabaeed9deb0ec", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:23:18.272270+00:00", "to": "olof.mollstedt@alixia.com", "subject": "Quick question about your stack", "message_id": "19fabaef4fdd44f6", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:23:20.849214+00:00", "to": "vihari.kanukollu@urbankisaan.com", "subject": "Quick question about your stack", "message_id": "19fabaeffa294dcb", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:23:23.162654+00:00", "to": "oliver.armitage@bios.health", "subject": "Quick question about your stack", "message_id": "19fabaf093901b08", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:23:26.052469+00:00", "to": "jun.tan@gethomebase.com", "subject": "Quick question about your stack", "message_id": "19fabaf10af00f0b", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:23:28.556598+00:00", "to": "bertrand.vick@revgenomics.com", "subject": "Quick question about your stack", "message_id": "19fabaf1da462ee8", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:23:31.243781+00:00", "to": "karthik.raman@persist-ai.com", "subject": "Quick question about your stack", "message_id": "19fabaf26f6d093c", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:23:33.916621+00:00", "to": "aurelia.song@nectome.com", "subject": "Quick question about your stack", "message_id": "19fabaf30d6c4198", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:23:37.137561+00:00", "to": "everett.ivy@xtraffic.com", "subject": "Quick question about your stack", "message_id": "19fabaf3c17f504c", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:23:39.784145+00:00", "to": "nirmit.arora@ritivel.com", "subject": "Quick question about your stack", "message_id": "19fabaf49ada7359", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:23:42.086964+00:00", "to": "reinhart.hermanus@finnix.id", "subject": "Quick question about your stack", "message_id": "19fabaf536affb7b", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:23:44.761806+00:00", "to": "anton@clarum.ai", "subject": "Quick question about your stack", "message_id": "19fabaf5aa476ba8", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:23:47.186911+00:00", "to": "sho.sugihara@fuseinsight.com", "subject": "Quick question about your stack", "message_id": "19fabaf6673d2156", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:23:49.996560+00:00", "to": "susli.lie@erudifi.com", "subject": "Quick question about your stack", "message_id": "19fabaf6f9e12ab2", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:23:52.661532+00:00", "to": "ben.stein@doublehq.com", "subject": "Quick question about your stack", "message_id": "19fabaf7bb2c44e6", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:23:55.208869+00:00", "to": "ignacio.detmer@koywe.com", "subject": "Quick question about your stack", "message_id": "19fabaf8552fb325", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:23:57.622728+00:00", "to": "prateek.swain@swadesh.co", "subject": "Quick question about your stack", "message_id": "19fabaf8f1db8051", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:24:00.110789+00:00", "to": "christophe.robilliard@kashin.app", "subject": "Quick question about your stack", "message_id": "19fabaf9837f9c44", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:24:02.594620+00:00", "to": "brian.merritt@seed.co", "subject": "Quick question about your stack", "message_id": "19fabafa3b4356b5", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:24:04.978040+00:00", "to": "arjun.lalwani@ralo.com", "subject": "Quick question about your stack", "message_id": "19fabafac11a9bed", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:24:07.500313+00:00", "to": "graham.sabin@runcopycat.com", "subject": "Quick question about your stack", "message_id": "19fabafb5303ba40", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:24:09.823135+00:00", "to": "paul.kimani@myworkpay.com", "subject": "Quick question about your stack", "message_id": "19fabafbfe84347e", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:24:12.356810+00:00", "to": "nadia.amalia@fintelite.ai", "subject": "Quick question about your stack", "message_id": "19fabafc8e8284e9", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:24:14.845423+00:00", "to": "bruno.jacob@capix.ai", "subject": "Quick question about your stack", "message_id": "19fabafd2ff241b6", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:24:17.377464+00:00", "to": "dileep.thazhmon@tryjeeves.com", "subject": "Quick question about your stack", "message_id": "19fabafdd03dc825", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:24:19.638194+00:00", "to": "anhtho.chuong@getlago.com", "subject": "Quick question about your stack", "message_id": "19fabafe4c876983", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:25:15.288616+00:00", "to": "udayan.umapathi@voltalabs.com", "subject": "Quick question about your stack", "message_id": "19fabb0be14664ae", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:25:17.927639+00:00", "to": "contact@labami.ai", "subject": "Quick question about your stack", "message_id": "19fabb0c9a0edc1c", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:25:20.297120+00:00", "to": "gabriel.santero@exintherapeutics.com", "subject": "Quick question about your stack", "message_id": "19fabb0d2c395a35", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:25:27.526328+00:00", "to": "nizar.batada@eugittx.com", "subject": "Quick question about your stack", "message_id": "19fabb0ee758216e", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:25:30.189316+00:00", "to": "steve@pango.ai", "subject": "Quick question about your stack", "message_id": "19fabb0f7ba0016d", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:25:33.984023+00:00", "to": "steve.rahimi@pango.ai", "subject": "Quick question about your stack", "message_id": "19fabb107e82d046", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:25:37.111522+00:00", "to": "lukasz.reszczynski@pango.ai", "subject": "Quick question about your stack", "message_id": "19fabb11569c675b", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:25:39.489762+00:00", "to": "greg.schvey@axoni.com", "subject": "Quick question about your stack", "message_id": "19fabb11cde52240", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:25:41.900624+00:00", "to": "colin.barceloux@techmate.com", "subject": "Quick question about your stack", "message_id": "19fabb1262d72a3b", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:25:44.826644+00:00", "to": "austin.mccoy@search-artemis.com", "subject": "Quick question about your stack", "message_id": "19fabb12fff98c28", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:25:48.051201+00:00", "to": "olof.mollstedt@alixia.com", "subject": "Quick question about your stack", "message_id": "19fabb13bb0f6832", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:25:50.523378+00:00", "to": "vihari.kanukollu@urbankisaan.com", "subject": "Quick question about your stack", "message_id": "19fabb146ea5f056", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:25:52.999918+00:00", "to": "oliver.armitage@bios.health", "subject": "Quick question about your stack", "message_id": "19fabb150cf37aef", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:25:55.638197+00:00", "to": "jun.tan@gethomebase.com", "subject": "Quick question about your stack", "message_id": "19fabb15b97f9ec6", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:25:58.482413+00:00", "to": "bertrand.vick@revgenomics.com", "subject": "Quick question about your stack", "message_id": "19fabb165c8af3c0", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:26:00.862977+00:00", "to": "karthik.raman@persist-ai.com", "subject": "Quick question about your stack", "message_id": "19fabb170ed08e9a", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:26:03.202052+00:00", "to": "aurelia.song@nectome.com", "subject": "Quick question about your stack", "message_id": "19fabb17b1cc65ee", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:26:05.646238+00:00", "to": "everett.ivy@xtraffic.com", "subject": "Quick question about your stack", "message_id": "19fabb182b501e53", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:26:08.234378+00:00", "to": "nirmit.arora@ritivel.com", "subject": "Quick question about your stack", "message_id": "19fabb18cc9b6abf", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:26:10.780790+00:00", "to": "reinhart.hermanus@finnix.id", "subject": "Quick question about your stack", "message_id": "19fabb19712a6249", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:26:13.540347+00:00", "to": "anton@clarum.ai", "subject": "Quick question about your stack", "message_id": "19fabb1a3b87fae4", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:26:16.169189+00:00", "to": "sho.sugihara@fuseinsight.com", "subject": "Quick question about your stack", "message_id": "19fabb1abdb7f10b", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:26:18.425095+00:00", "to": "susli.lie@erudifi.com", "subject": "Quick question about your stack", "message_id": "19fabb1b4f432c86", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:26:20.757799+00:00", "to": "ben.stein@doublehq.com", "subject": "Quick question about your stack", "message_id": "19fabb1bf9d9741d", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:26:23.020328+00:00", "to": "ignacio.detmer@koywe.com", "subject": "Quick question about your stack", "message_id": "19fabb1c642b1308", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:26:25.416346+00:00", "to": "prateek.swain@swadesh.co", "subject": "Quick question about your stack", "message_id": "19fabb1d1c4c8fcd", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:26:28.096350+00:00", "to": "christophe.robilliard@kashin.app", "subject": "Quick question about your stack", "message_id": "19fabb1db1bd62d0", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:26:30.651472+00:00", "to": "brian.merritt@seed.co", "subject": "Quick question about your stack", "message_id": "19fabb1e57d71830", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:26:33.107116+00:00", "to": "arjun.lalwani@ralo.com", "subject": "Quick question about your stack", "message_id": "19fabb1efede4381", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:26:35.776446+00:00", "to": "graham.sabin@runcopycat.com", "subject": "Quick question about your stack", "message_id": "19fabb1f7c52c8c7", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:26:38.351567+00:00", "to": "paul.kimani@myworkpay.com", "subject": "Quick question about your stack", "message_id": "19fabb202eb53958", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:26:40.796223+00:00", "to": "nadia.amalia@fintelite.ai", "subject": "Quick question about your stack", "message_id": "19fabb20c896316e", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:26:43.221484+00:00", "to": "bruno.jacob@capix.ai", "subject": "Quick question about your stack", "message_id": "19fabb21487af70f", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:26:45.663424+00:00", "to": "dileep.thazhmon@tryjeeves.com", "subject": "Quick question about your stack", "message_id": "19fabb21f74ff1b1", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:26:48.239033+00:00", "to": "anhtho.chuong@getlago.com", "subject": "Quick question about your stack", "message_id": "19fabb2295372b52", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:37:30.675872+00:00", "to": "udayan.umapathi@voltalabs.com", "subject": "Quick question about your stack", "message_id": "19fabbbf6720f749", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:37:32.997752+00:00", "to": "contact@labami.ai", "subject": "Quick question about your stack", "message_id": "19fabbc018236013", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:37:35.349471+00:00", "to": "gabriel.santero@exintherapeutics.com", "subject": "Quick question about your stack", "message_id": "19fabbc082051078", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:37:37.681022+00:00", "to": "nizar.batada@eugittx.com", "subject": "Quick question about your stack", "message_id": "19fabbc12bb923a4", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:37:39.936539+00:00", "to": "steve@pango.ai", "subject": "Quick question about your stack", "message_id": "19fabbc1b3760905", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:37:42.257211+00:00", "to": "steve.rahimi@pango.ai", "subject": "Quick question about your stack", "message_id": "19fabbc257fe67fd", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:37:44.822618+00:00", "to": "lukasz.reszczynski@pango.ai", "subject": "Quick question about your stack", "message_id": "19fabbc2da48c7c9", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:37:47.383515+00:00", "to": "greg.schvey@axoni.com", "subject": "Quick question about your stack", "message_id": "19fabbc37572a88a", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:37:49.920495+00:00", "to": "colin.barceloux@techmate.com", "subject": "Quick question about your stack", "message_id": "19fabbc41931c0cd", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:37:52.238684+00:00", "to": "austin.mccoy@search-artemis.com", "subject": "Quick question about your stack", "message_id": "19fabbc4b5d4b20c", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:37:55.262176+00:00", "to": "olof.mollstedt@alixia.com", "subject": "Quick question about your stack", "message_id": "19fabbc554f37631", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:37:58.138183+00:00", "to": "vihari.kanukollu@urbankisaan.com", "subject": "Quick question about your stack", "message_id": "19fabbc6125d53b8", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:38:00.710478+00:00", "to": "oliver.armitage@bios.health", "subject": "Quick question about your stack", "message_id": "19fabbc6ac5a1fa3", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:38:03.032858+00:00", "to": "jun.tan@gethomebase.com", "subject": "Quick question about your stack", "message_id": "19fabbc74444efa4", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:38:05.502128+00:00", "to": "bertrand.vick@revgenomics.com", "subject": "Quick question about your stack", "message_id": "19fabbc7f3bf865a", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:38:07.874142+00:00", "to": "karthik.raman@persist-ai.com", "subject": "Quick question about your stack", "message_id": "19fabbc882be2198", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:38:10.509429+00:00", "to": "aurelia.song@nectome.com", "subject": "Quick question about your stack", "message_id": "19fabbc9100bc294", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:38:12.731733+00:00", "to": "everett.ivy@xtraffic.com", "subject": "Quick question about your stack", "message_id": "19fabbc9beb6a207", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:38:15.359214+00:00", "to": "nirmit.arora@ritivel.com", "subject": "Quick question about your stack", "message_id": "19fabbca4d0b346f", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:38:17.720833+00:00", "to": "reinhart.hermanus@finnix.id", "subject": "Quick question about your stack", "message_id": "19fabbcaee15f5c1", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:38:20.251140+00:00", "to": "anton@clarum.ai", "subject": "Quick question about your stack", "message_id": "19fabbcb90320ffe", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:38:22.653810+00:00", "to": "sho.sugihara@fuseinsight.com", "subject": "Quick question about your stack", "message_id": "19fabbcc2edf7511", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:38:25.221659+00:00", "to": "susli.lie@erudifi.com", "subject": "Quick question about your stack", "message_id": "19fabbccb298d7fb", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:38:27.653990+00:00", "to": "ben.stein@doublehq.com", "subject": "Quick question about your stack", "message_id": "19fabbcd58529c01", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:38:30.140237+00:00", "to": "ignacio.detmer@koywe.com", "subject": "Quick question about your stack", "message_id": "19fabbcded2cafc2", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:38:32.687018+00:00", "to": "prateek.swain@swadesh.co", "subject": "Quick question about your stack", "message_id": "19fabbce8d8b880d", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:38:35.142205+00:00", "to": "christophe.robilliard@kashin.app", "subject": "Quick question about your stack", "message_id": "19fabbcf23ed80b2", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:38:37.674437+00:00", "to": "brian.merritt@seed.co", "subject": "Quick question about your stack", "message_id": "19fabbcfb56a73e4", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:38:40.239130+00:00", "to": "arjun.lalwani@ralo.com", "subject": "Quick question about your stack", "message_id": "19fabbd060f018e6", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:38:43.198555+00:00", "to": "graham.sabin@runcopycat.com", "subject": "Quick question about your stack", "message_id": "19fabbd1155dbbfd", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:38:45.580184+00:00", "to": "paul.kimani@myworkpay.com", "subject": "Quick question about your stack", "message_id": "19fabbd1bf01ad85", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:38:48.618660+00:00", "to": "nadia.amalia@fintelite.ai", "subject": "Quick question about your stack", "message_id": "19fabbd252e50f99", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:38:51.145764+00:00", "to": "bruno.jacob@capix.ai", "subject": "Quick question about your stack", "message_id": "19fabbd31a6ed589", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:38:53.876013+00:00", "to": "dileep.thazhmon@tryjeeves.com", "subject": "Quick question about your stack", "message_id": "19fabbd3a4719f21", "status": "sent", "type": "reengagement"}
+{"ts": "2026-07-29T02:38:56.207298+00:00", "to": "anhtho.chuong@getlago.com", "subject": "Quick question about your stack", "message_id": "19fabbd45abe3a6e", "status": "sent", "type": "reengagement"}

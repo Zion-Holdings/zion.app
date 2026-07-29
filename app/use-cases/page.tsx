@@ -1,155 +1,79 @@
-import type { Metadata } from 'next';
+'use client';
+
+import { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Use Cases | Zion Tech Group',
-  description: 'Explore Zion Tech Group use cases across industries: AI, cloud, security, automation, data, IoT, and beyond.',
-  alternates: { canonical: '/use-cases' },
+  title: 'Use Cases',
+  description: 'Practical AI and IT use cases delivered by Zion Tech Group — real deployments across healthcare, finance, retail, logistics, and more.',
+  alternates: { canonical: '/use-cases/' },
 };
 
-const USE_CASES = [
-  {
-    title: 'Reduce support workload',
-    emoji: '🤖',
-    category: 'Automation',
-    path: '/services?category=automation',
-    desc: 'Deploy AI triage, ticket routing, and knowledge-base assistants that lower ticket volume and speed resolution.',
-  },
-  {
-    title: 'Modernize cloud infrastructure',
-    emoji: '☁️',
-    category: 'Cloud',
-    path: '/services?category=cloud',
-    desc: 'Migrate workloads, tighten observability, and reduce cloud spend without introducing reliability risk.',
-  },
-  {
-    title: 'Strengthen security posture',
-    emoji: '🔐',
-    category: 'Security',
-    path: '/services?category=security',
-    desc: 'Run penetration testing, secure identity flows, and prepare incident-response playbooks before breaches happen.',
-  },
-  {
-    title: 'Turn data into decisions',
-    emoji: '📊',
-    category: 'Data',
-    path: '/services?category=data',
-    desc: 'Build governed analytics pipelines, dashboards, and forecasting models that turn raw data into action.',
-  },
-  {
-    title: 'Ship AI products faster',
-    emoji: '🧠',
-    category: 'AI',
-    path: '/services?category=ai',
-    desc: 'Use pretrained models, RAG systems, and evaluation pipelines to ship production AI experiences in weeks.',
-  },
-  {
-    title: 'Expand revenue with Micro-SaaS',
-    emoji: '🚀',
-    category: 'Micro-SaaS',
-    path: '/services?category=micro-saas',
-    desc: 'Launch repeatable, monetizable tools and self-service experiences on proven infrastructure.',
-  },
-  {
-    title: 'Scale IoT operations',
-    emoji: '📡',
-    category: 'IoT',
-    path: '/services?category=iot',
-    desc: 'Connect edge devices, normalize telemetry, and run anomaly detection at scale.',
-  },
-  {
-    title: 'Protect business records',
-    emoji: '💾',
-    category: 'Database',
-    path: '/services?category=database',
-    desc: 'Improve query performance, automate backups, and simplify data governance with managed database services.',
-  },
-];
-
-const INDUSTRIES = [
-  { key: 'technology-&-saas', label: 'Technology & SaaS', emoji: '🏭', focus: 'AI analytics, observability, and platform automation' },
-  { key: 'financial-services-&-fintech', label: 'Financial Services', emoji: '💳', focus: 'Fraud defense, compliance, and payment intelligence' },
-  { key: 'healthcare-&-life-sciences', label: 'Healthcare', emoji: '🏥', focus: 'Clinical operations, diagnostics, and patient pathways' },
-  { key: 'retail-&-e-commerce', label: 'Retail & E-Commerce', emoji: '🛒', focus: 'Personalization, demand forecasting, and checkout optimization' },
-  { key: 'logistics-&-supply-chain', label: 'Logistics', emoji: '🚚', focus: 'Routing, tracking, and warehouse automation' },
-  { key: 'education-&-research', label: 'Education & Research', emoji: '🎓', focus: 'Learning intelligence, assessment automation, and research ops' },
+const useCases = [
+  { sector: 'Healthcare', title: 'AI-Assisted Medical Triage', tagline: 'Reduce wait times and prioritize urgent cases.', bullets: ['Faster patient routing', 'Reduced radiologist load', 'Compliant by design'] },
+  { sector: 'Financial Services', title: 'Real-Time Fraud & Anomaly Detection', tagline: 'Stop fraud before it hits the books.', bullets: ['Sub-second scoring', 'Behavioral biometrics', 'Lower false positives'] },
+  { sector: 'Manufacturing', title: 'Predictive Maintenance on the Plant Floor', tagline: 'Turn downtime into planned maintenance.', bullets: ['IoT + edge inference', 'Early failure signals', 'Parts in stock ahead of failures'] },
+  { sector: 'Retail & E-Commerce', title: 'Personalized Offer Engines', tagline: 'Next-best-action offers that actually convert.', bullets: ['Real-time recommendation', 'Dynamic pricing', 'Omnichannel sync'] },
+  { sector: 'Logistics', title: 'Adaptive Route Optimization', tagline: 'Save fuel, hit SLAs, reroute in real time.', bullets: ['Live traffic + weather', 'Route pooling', 'Driver experience insights'] },
+  { sector: 'Legal & Compliance', title: 'Contract Intelligence & Obligation Tracking', tagline: 'Turn paperwork into an active risk radar.', bullets: ['Clause extraction', 'Expiry & renewal alerts', 'Policy cross-check'] },
+  { sector: 'Energy & Utilities', title: 'Grid Load Forecasting', tagline: 'Balance supply and demand before peaks hit.', bullets: ['Demand forecasting', 'Distributed IoT telemetry', 'Regulatory reporting'] },
+  { sector: 'Insurance', title: 'AI Claims Automation', tagline: 'Accelerate FNOL, triage, and settlement.', bullets: ['Smart intake + OCR', 'Fraud checks', 'Faster settlements'] },
+  { sector: 'Education', title: 'AI Learning Assistants', tagline: 'Personalized tutoring at scale.', bullets: ['Adaptive curriculums', 'Progress dashboards', 'Accessibility first'] },
+  { sector: 'Enterprise IT', title: 'Automated Incident Response', tagline: 'Detect, diagnose, and resolve faster.', bullets: ['AIOps correlation', 'Auto-remediation', 'On-call simplification'] },
 ];
 
 export default function UseCasesPage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
-      <div className="mx-auto max-w-6xl px-4 py-20">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Use Cases That <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-violet-400 bg-clip-text text-transparent">Move the Needle</span>
+    <div className="min-h-screen bg-slate-950">
+      {/* Hero */}
+      <section className="pt-20 pb-16 bg-gradient-to-b from-slate-950 to-slate-900">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <p className="section-subheading">Practical, deployable use cases — production-ready outcomes.</p>
+          <h1 className="text-4xl sm:text-5xl font-bold text-white mt-2">
+            AI + IT <span className="gradient-text">Use Cases</span>
           </h1>
-          <p className="text-slate-300 text-lg max-w-2xl mx-auto">
-            From customer experience to infrastructure reliability, these are the patterns where Zion clients see fast, measurable results.
+          <p className="mt-6 text-lg text-slate-300 max-w-2xl mx-auto">
+            From claims automation to predictive maintenance — here is how Zion Tech Group turns problems into products.
           </p>
         </div>
+      </section>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {USE_CASES.map((item) => (
-            <Link
-              key={item.title}
-              href={item.path}
-              className="group relative rounded-2xl border border-slate-800 bg-slate-900/60 p-5 transition-all hover:border-purple-500/40"
-            >
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">{item.emoji}</span>
-                <span className="text-[10px] font-semibold text-purple-300 bg-purple-500/10 border border-purple-500/20 px-2 py-0.5 rounded-full">
-                  {item.category}
-                </span>
-              </div>
-              <h3 className="text-white font-semibold mt-3 group-hover:text-purple-300 transition-colors">{item.title}</h3>
-              <p className="text-slate-400 text-sm mt-2 leading-relaxed">{item.desc}</p>
-              <span className="text-purple-300 text-xs font-semibold mt-3 inline-block">Explore →</span>
-            </Link>
-          ))}
-        </div>
-
-        <section className="mt-20 border-t border-slate-800/60 pt-16">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-white mb-3">By industry</h2>
-            <p className="text-slate-300 max-w-2xl mx-auto">Pick your context and we’ll map the highest-signal first engagement.</p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {INDUSTRIES.map((ind) => (
-              <div key={ind.key} className="rounded-2xl border border-slate-800 bg-slate-900/60 p-5 hover:border-purple-500/40 transition-all">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="text-2xl">{ind.emoji}</span>
-                  <div>
-                    <div className="text-white font-semibold">{ind.label}</div>
-                    <div className="text-slate-400 text-xs">{ind.focus}</div>
-                  </div>
-                </div>
-                <div className="flex flex-wrap gap-2 mt-3">
-                  <Link href="/services?category=ai" className="text-xs text-purple-300 hover:text-purple-200">AI services →</Link>
-                  <Link href="/use-cases" className="text-xs text-slate-300 hover:text-white">Use cases →</Link>
-                  <Link href="/contact" className="text-xs text-slate-300 hover:text-white">Talk to us →</Link>
-                </div>
+      {/* Use cases grid */}
+      <section className="py-16">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {useCases.map((u, i) => (
+              <div key={i} className="glass-card p-6 sm:p-8">
+                <span className="text-xs font-semibold text-purple-400 uppercase tracking-widest">{u.sector}</span>
+                <h3 className="text-xl font-bold text-white mt-2 mb-2">{u.title}</h3>
+                <p className="text-slate-300 text-sm mb-4">{u.tagline}</p>
+                <ul className="text-slate-300 text-sm space-y-2">
+                  {u.bullets.map((b, j) => (
+                    <li key={j} className="flex items-start gap-2">
+                      <span className="mt-1 h-1.5 w-1.5 rounded-full bg-purple-400 shrink-0" />
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section className="mt-16 border-t border-slate-800/60 pt-10">
-          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-            <div className="max-w-2xl">
-              <h3 className="text-white font-semibold text-lg mb-2">Want a recommendation based on your business?</h3>
-              <p className="text-slate-300 text-sm">Tell us your goal, timeline, and budget. We’ll return a short list of the best-fit services—no generic pitch.</p>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Link href="/contact" className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/20">
-                Free Consultation →
-              </Link>
-              <Link href="/configurator" className="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-slate-700 text-slate-200 font-semibold hover:border-purple-500/60 hover:text-white transition-all">
-                Build a proposal
-              </Link>
-            </div>
+      {/* CTA */}
+      <section className="py-16 bg-gradient-to-b from-slate-900 to-slate-950">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold text-white mb-4">Which Use Case Is Yours?</h2>
+          <p className="text-slate-300 mb-8">
+            We&apos;ll scope a fast-path pilot tailored to your goals and constraints.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link href="/contact/" className="btn-primary">Talk to an Engineer</Link>
+            <Link href="/services/" className="btn-secondary">Browse Services</Link>
           </div>
-        </section>
-      </div>
-    </main>
+        </div>
+      </section>
+    </div>
   );
 }

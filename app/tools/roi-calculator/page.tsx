@@ -1,233 +1,309 @@
-// app/tools/roi-calculator/page.tsx — ROI Calculator (server wrapper + ping tracking)
-// Metadata exported by layout.tsx
+// app/tools/roi-calculator/page.tsx - ROI Calculator Tool
+'use client';
 
-import Link from 'next/link';
-import type { Metadata } from 'next';
-import RouterPing from './pingClient';
-import ROICalculatorClient from './ROICalculatorClient';
+import { useState, useMemo } from 'react';
 
-export const metadata = {
-  title: 'ROI Calculator — Zion Tech Group',
-  description: 'Calculate the return on investment for AI and IT services with our free ROI calculator.',
+interface ROIInputs {
+  teamSize: number;
+  hoursPerWeek: number;
+  avgHourlyRate: number;
+  automationEfficiency: number;
+  errorReduction: number;
+}
 
+interface ROIOutputs {
+  annualSavings: number;
+  monthlySavings: number;
+  roiPercentage: number;
+  paybackMonths: number;
+}
+
+const SERVICE_ROI_DATA: Record<string, { 
+  efficiencyGain: number; 
+  errorReduction: number; 
+  implementationCost: number;
+  typicalSavings: string;
+}> = {
+  'ai-automation-roi': {
+    efficiencyGain: 40,
+    errorReduction: 85,
+    implementationCost: 5000,
+    typicalSavings: '40-60% time reduction'
+  },
+  'ai-fraud-detection': {
+    efficiencyGain: 95,
+    errorReduction: 99,
+    implementationCost: 10000,
+    typicalSavings: '$1-5M annually'
+  },
+  'ai-customer-support': {
+    efficiencyGain: 70,
+    errorReduction: 90,
+    implementationCost: 3000,
+    typicalSavings: '24/7 coverage, 60% cost reduction'
+  },
+  'ai-document-processing': {
+    efficiencyGain: 85,
+    errorReduction: 95,
+    implementationCost: 2000,
+    typicalSavings: '95% reduction in manual entry'
+  },
+  'cloud-cost-optimization': {
+    efficiencyGain: 30,
+    errorReduction: 50,
+    implementationCost: 1500,
+    typicalSavings: '30-40% cloud spend reduction'
+  },
+  'predictive-maintenance': {
+    efficiencyGain: 75,
+    errorReduction: 60,
+    implementationCost: 8000,
+    typicalSavings: '50% downtime reduction'
+  },
 };
 
 export default function ROICalculatorPage() {
+  const [inputs, setInputs] = useState<ROIInputs>({
+    teamSize: 10,
+    hoursPerWeek: 40,
+    avgHourlyRate: 50,
+    automationEfficiency: 40,
+    errorReduction: 50,
+  });
+  
+  const [selectedService, setSelectedService] = useState<string>('ai-automation-roi');
+  const [showResults, setShowResults] = useState(false);
+
+  const calculateROI = (): ROIOutputs => {
+    const { teamSize, hoursPerWeek, avgHourlyRate, automationEfficiency, errorReduction } = inputs;
+    
+    // Calculate current costs
+    const weeklyLaborCost = teamSize * hoursPerWeek * avgHourlyRate;
+    const weeklyErrorCost = weeklyLaborCost * (errorReduction / 100) * 0.3;
+    const weeklyTotalCost = weeklyLaborCost + weeklyErrorCost;
+    
+    // Calculate savings
+    const weeklySavings = weeklyTotalCost * (automationEfficiency / 100);
+    const monthlySavings = weeklySavings * 4.33;
+    const annualSavings = monthlySavings * 12;
+    
+    // Calculate ROI
+    const serviceData = SERVICE_ROI_DATA[selectedService];
+    const implementationCost = serviceData?.implementationCost || 5000;
+    const roiPercentage = ((annualSavings - implementationCost) / implementationCost) * 100;
+    const paybackMonths = implementationCost / monthlySavings;
+    
+    return {
+      annualSavings,
+      monthlySavings,
+      roiPercentage,
+      paybackMonths,
+    };
+  };
+
+  const results = useMemo(() => calculateROI(), [inputs, selectedService]);
+
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
-      <RouterPing />
-
-      {/* ── JSON-LD Structured Data ── */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'WebApplication',
-            name: 'ROI Calculator',
-            applicationCategory: 'BusinessApplication',
-            operatingSystem: 'All',
-            description:
-              'Free interactive ROI calculator for AI & IT services. Adjust your monthly budget to see estimated payback period, monthly return, and year-1 net gain.',
-            offers: {
-              '@type': 'Offer',
-              price: '0',
-              priceCurrency: 'USD',
-            },
-          }),
-        }}
-      />
-
-      <div className="container-page max-w-4xl">
-        {/* ── Back Link ── */}
-        <Link
-          href="/tools/"
-          className="text-purple-400 text-sm hover:underline mb-8 inline-block"
-        >
-          ← All Tools
-        </Link>
-
-        {/* ── Header ── */}
-        <div className="text-center mb-10">
-          <div className="text-5xl mb-4">📈</div>
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            ROI Calculator
+    <main className="min-h-screen bg-slate-950">
+      {/* ── Header ── */}
+      <section className="relative overflow-hidden pt-32 pb-24 bg-gradient-to-b from-slate-950 to-slate-900">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_30%,rgba(120,50,200,0.18),rgba(20,10,40,0.92))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_80%,rgba(59,130,246,0.12),transparent_60%)]" />
+        <div className="relative container-page text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-900/30 border border-emerald-500/30 text-emerald-300 text-sm mb-6">
+            <span className="text-green-400">●</span> ROI Calculator
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="text-white">Calculate Your ROI</span>
           </h1>
-          <p className="text-slate-400 text-lg max-w-xl mx-auto leading-relaxed">
-            Estimate the business value AI &amp; IT services deliver for your
-            organisation. Drag the slider below to see payback period, monthly
-            return, and year-1 net gain — all in real time.
+          <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+            Estimate cost savings, efficiency gains, and payback period for AI automation solutions.
           </p>
         </div>
+      </section>
 
-        {/* ── Interactive Calculator ── */}
-        <ROICalculatorClient />
+      {/* ── Calculator Form ── */}
+      <section className="py-20">
+        <div className="container-page">
+          <div className="max-w-4xl mx-auto">
+            <div className="glass-card rounded-xl border border-slate-800/50 p-8">
+              <h2 className="text-2xl font-bold text-white mb-6">Your Current Situation</h2>
+              
+              {/* Service Selection */}
+              <div className="mb-8">
+                <label className="block text-sm font-medium text-slate-300 mb-3">
+                  Select Your Primary Challenge
+                </label>
+                <select
+                  value={selectedService}
+                  onChange={e => setSelectedService(e.target.value)}
+                  className="w-full rounded-lg bg-slate-800/60 border border-slate-700/50 px-4 py-3 text-white"
+                >
+                  {Object.entries(SERVICE_ROI_DATA).map(([key, data]) => (
+                    <option key={key} value={key} className="bg-slate-800">
+                      {key.replace(/-/g, ' ').toUpperCase()} — {data.typicalSavings}
+                    </option>
+                  ))}
+                </select>
+              </div>
 
-        {/* ── How It Works ── */}
-        <section className="mt-16 mb-12">
-          <h2 className="text-2xl font-bold text-white mb-6 text-center">
-            How It Works
-          </h2>
-          <div className="grid gap-6 sm:grid-cols-3">
-            <div className="rounded-xl bg-slate-800/40 border border-slate-700/50 p-5 text-center">
-              <div className="text-3xl mb-3">💰</div>
-              <h3 className="text-white font-semibold mb-2">1. Set Your Budget</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Move the slider or tap a preset (Small Team, Mid-Size Org,
-                Enterprise) to choose your monthly investment.
-              </p>
-            </div>
-            <div className="rounded-xl bg-slate-800/40 border border-slate-700/50 p-5 text-center">
-              <div className="text-3xl mb-3">📊</div>
-              <h3 className="text-white font-semibold mb-2">2. See the Impact</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                The calculator instantly estimates monthly return, payback
-                period, and year-1 net gain based on industry productivity
-                benchmarks.
-              </p>
-            </div>
-            <div className="rounded-xl bg-slate-800/40 border border-slate-700/50 p-5 text-center">
-              <div className="text-3xl mb-3">📅</div>
-              <h3 className="text-white font-semibold mb-2">3. Book a Review</h3>
-              <p className="text-slate-400 text-sm leading-relaxed">
-                Ready to go deeper? Schedule a free ROI review with our team
-                for a tailored breakdown specific to your workflows.
-              </p>
+              {/* Inputs Grid */}
+              <div className="grid sm:grid-cols-2 gap-6 mb-8">
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-2">
+                    Team Size
+                  </label>
+                  <input
+                    type="number"
+                    value={inputs.teamSize}
+                    onChange={e => setInputs({ ...inputs, teamSize: parseInt(e.target.value) || 0 })}
+                    className="w-full rounded-lg bg-slate-800/60 border border-slate-700/50 px-4 py-3 text-white"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-2">
+                    Hours/Week per Person
+                  </label>
+                  <input
+                    type="number"
+                    value={inputs.hoursPerWeek}
+                    onChange={e => setInputs({ ...inputs, hoursPerWeek: parseInt(e.target.value) || 0 })}
+                    className="w-full rounded-lg bg-slate-800/60 border border-slate-700/50 px-4 py-3 text-white"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-2">
+                    Avg. Hourly Rate ($)
+                  </label>
+                  <input
+                    type="number"
+                    value={inputs.avgHourlyRate}
+                    onChange={e => setInputs({ ...inputs, avgHourlyRate: parseInt(e.target.value) || 0 })}
+                    className="w-full rounded-lg bg-slate-800/60 border border-slate-700/50 px-4 py-3 text-white"
+                  />
+                </div>
+                
+                <div>
+                  <label className="block text-sm font-medium text-slate-300 mb-2">
+                    Expected Efficiency Gain (%)
+                  </label>
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value={inputs.automationEfficiency}
+                    onChange={e => setInputs({ ...inputs, automationEfficiency: parseInt(e.target.value) })}
+                    className="w-full"
+                  />
+                  <div className="flex justify-between text-xs text-slate-400 mt-1">
+                    <span>0%</span>
+                    <span>{inputs.automationEfficiency}%</span>
+                    <span>100%</span>
+                  </div>
+                </div>
+              </div>
+
+              {/* Calculate Button */}
+              <div className="text-center mb-8">
+                <button
+                  onClick={() => setShowResults(true)}
+                  className="px-8 py-4 rounded-full bg-gradient-to-r from-emerald-600 to-teal-600 text-white font-semibold text-lg hover:from-emerald-500 hover:to-teal-500 transition-all"
+                >
+                  Calculate ROI
+                </button>
+              </div>
+
+              {/* Results Section */}
+              {showResults && (
+                <div className="border-t border-slate-800 pt-8">
+                  <h3 className="text-xl font-bold text-white mb-6 text-center">Your ROI Analysis</h3>
+                  
+                  <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div className="glass-card rounded-xl border border-slate-800 p-6 text-center">
+                      <div className="text-3xl font-bold text-emerald-400 mb-2">
+                        ${results.monthlySavings.toLocaleString()}
+                      </div>
+                      <div className="text-sm text-slate-400">Monthly Savings</div>
+                    </div>
+                    
+                    <div className="glass-card rounded-xl border border-slate-800 p-6 text-center">
+                      <div className="text-3xl font-bold text-blue-400 mb-2">
+                        ${results.annualSavings.toLocaleString()}
+                      </div>
+                      <div className="text-sm text-slate-400">Annual Savings</div>
+                    </div>
+                    
+                    <div className="glass-card rounded-xl border border-slate-800 p-6 text-center">
+                      <div className="text-3xl font-bold text-purple-400 mb-2">
+                        {results.roiPercentage.toFixed(0)}%
+                      </div>
+                      <div className="text-sm text-slate-400">ROI</div>
+                    </div>
+                    
+                    <div className="glass-card rounded-xl border border-slate-800 p-6 text-center">
+                      <div className="text-3xl font-bold text-amber-400 mb-2">
+                        {results.paybackMonths.toFixed(1)}m
+                      </div>
+                      <div className="text-sm text-slate-400">Payback Period</div>
+                    </div>
+                  </div>
+
+                  <div className="mt-8 p-6 bg-emerald-900/20 border border-emerald-500/30 rounded-xl">
+                    <h4 className="font-semibold text-emerald-300 mb-2">Next Steps</h4>
+                    <p className="text-slate-300 text-sm mb-4">
+                      Based on your inputs, implementing AI automation could save you{' '}
+                      <strong>${results.monthlySavings.toLocaleString()}</strong> per month with a payback period of{' '}
+                      <strong>{results.paybackMonths.toFixed(1)} months</strong>.
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-3">
+                      <a
+                        href="mailto:kleber@ziontechgroup.com?subject=ROI%20Calculator%20Results&body=Hello%2Zion%2Tech%2Group%2C%0A%0AI%20used%20your%20ROI%20calculator%20and%20got%20interesting%20results.%0A%0AExpected%20Annual%20Savings%3A%20%24%7Bresults.annualSavings.toLocaleString()%7D%0AExpected%20Monthly%20Savings%3A%20%24%7Bresults.monthlySavings.toLocaleString()%7D%0AROI%3A%20%7Bresults.roiPercentage.toFixed(0)%7D%25%0APayback%20Period%3A%20%7Bresults.paybackMonths.toFixed(1)%7D%20months%0A%0APlease%20provide%20a%20custom%20proposal%20for%20the%20%7BselectedService.replace(/-/g%2C%20%27%27)%20solution.%0A%0AThank%20you!"
+                        className="px-4 py-2 rounded-full bg-emerald-600 text-white text-sm font-medium hover:bg-emerald-500 transition"
+                      >
+                        Email My Results
+                      </a>
+                      <a
+                        href="tel:+13024640950"
+                        className="px-4 py-2 rounded-full bg-slate-800/60 text-slate-300 text-sm font-medium hover:bg-slate-700 transition"
+                      >
+                        Call: +1 302 464 0950
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
-        </section>
-
-        {/* ── Why Use This Calculator ── */}
-        <section className="mb-12 rounded-2xl border border-purple-500/20 bg-gradient-to-br from-purple-900/10 to-slate-900/30 p-8">
-          <h2 className="text-2xl font-bold text-white mb-4">
-            Why Use This Calculator?
-          </h2>
-          <ul className="space-y-3 text-slate-300">
-            <li className="flex items-start gap-3">
-              <span className="text-purple-400 mt-0.5 shrink-0">✓</span>
-              <span>
-                <strong className="text-white">Realistic benchmarks</strong> — Based on
-                productivity lift data from AI, automation, cloud, and IT
-                categories (3.2×, 2.5×, 2.0×, and 1.8× respectively).
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-purple-400 mt-0.5 shrink-0">✓</span>
-              <span>
-                <strong className="text-white">No sign-up required</strong> — Free,
-                private, runs entirely in your browser. Nothing is sent to a
-                server.
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-purple-400 mt-0.5 shrink-0">✓</span>
-              <span>
-                <strong className="text-white">Instant feedback</strong> — Every slider
-                movement updates the three key metrics in real time so you can
-                explore different scenarios.
-              </span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-purple-400 mt-0.5 shrink-0">✓</span>
-              <span>
-                <strong className="text-white">Actionable next step</strong> — Book a
-                free ROI review directly when you&apos;re ready for a custom
-                analysis.
-              </span>
-            </li>
-          </ul>
-        </section>
-
-        {/* ── FAQ ── */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-bold text-white mb-6 text-center">
-            Frequently Asked Questions
-          </h2>
-          <div className="space-y-4">
-            <details className="group rounded-xl bg-slate-800/40 border border-slate-700/50 p-5 open:border-purple-500/30 transition-all">
-              <summary className="text-white font-medium cursor-pointer list-none flex justify-between items-center gap-2">
-                <span>What does the productivity lift represent?</span>
-                <span className="text-slate-500 group-open:rotate-180 transition-transform shrink-0">
-                  ▼
-                </span>
-              </summary>
-              <p className="text-slate-400 text-sm mt-3 leading-relaxed">
-                The lift multiplier (e.g., 3.2× for AI services) is based on
-                industry studies of time-to-value improvements when adopting
-                managed AI/IT solutions vs. building in-house. It reflects
-                combined savings in development time, ongoing maintenance, and
-                operational overhead.
-              </p>
-            </details>
-
-            <details className="group rounded-xl bg-slate-800/40 border border-slate-700/50 p-5 open:border-purple-500/30 transition-all">
-              <summary className="text-white font-medium cursor-pointer list-none flex justify-between items-center gap-2">
-                <span>Why is the payback period fixed at 6 months?</span>
-                <span className="text-slate-500 group-open:rotate-180 transition-transform shrink-0">
-                  ▼
-                </span>
-              </summary>
-              <p className="text-slate-400 text-sm mt-3 leading-relaxed">
-                Most managed AI &amp; IT services reach deployment maturity within
-                4–8 weeks, and the productivity gains more than offset the
-                investment by month 6. This is a conservative estimate — many
-                clients see positive ROI within 3 months.
-              </p>
-            </details>
-
-            <details className="group rounded-xl bg-slate-800/40 border border-slate-700/50 p-5 open:border-purple-500/30 transition-all">
-              <summary className="text-white font-medium cursor-pointer list-none flex justify-between items-center gap-2">
-                <span>Can I use this for my specific department or team?</span>
-                <span className="text-slate-500 group-open:rotate-180 transition-transform shrink-0">
-                  ▼
-                </span>
-              </summary>
-              <p className="text-slate-400 text-sm mt-3 leading-relaxed">
-                Absolutely. The presets (Small Team, Mid-Size Org, Enterprise)
-                give you a starting point, but you can fine-tune the slider to
-                any value between $500 and $50,000/month. For a fully custom
-                analysis, book a free ROI review.
-              </p>
-            </details>
-
-            <details className="group rounded-xl bg-slate-800/40 border border-slate-700/50 p-5 open:border-purple-500/30 transition-all">
-              <summary className="text-white font-medium cursor-pointer list-none flex justify-between items-center gap-2">
-                <span>Is my data saved or tracked when I use this?</span>
-                <span className="text-slate-500 group-open:rotate-180 transition-transform shrink-0">
-                  ▼
-                </span>
-              </summary>
-              <p className="text-slate-400 text-sm mt-3 leading-relaxed">
-                No. The calculator runs entirely client-side — no form
-                submission, no API calls, no data persistence. We only track a
-                lightweight page-view ping to understand which tools are most
-                useful.
-              </p>
-            </details>
-          </div>
-        </section>
-
-        {/* ── CTA ── */}
-        <div className="text-center rounded-2xl border border-purple-500/20 bg-gradient-to-br from-purple-900/15 to-slate-900/40 p-10">
-          <h2 className="text-2xl font-bold text-white mb-3">
-            Ready for a Custom ROI Analysis?
-          </h2>
-          <p className="text-slate-400 mb-6 max-w-lg mx-auto leading-relaxed">
-            Our team will build a tailored ROI model for your specific
-            workflows, team size, and service category — free and no
-            obligation.
-          </p>
-          <a
-            href="mailto:kleber@ziontechgroup.com"
-            className="btn-primary text-lg px-10 py-4 inline-block"
-          >
-            📅 Schedule a Free ROI Review
-          </a>
-          <p className="text-slate-500 text-xs mt-4">
-            Or email kleber@ziontechgroup.com directly
-          </p>
         </div>
-      </div>
+      </section>
+
+      {/* ── Service Benefits ── */}
+      <section className="py-20 bg-gradient-to-b from-slate-950 via-slate-900/30 to-slate-950">
+        <div className="container-page">
+          <div className="max-w-3xl mx-auto text-center">
+            <h2 className="text-3xl font-bold text-white mb-6">Why Our Clients Choose Us</h2>
+            <div className="grid sm:grid-cols-3 gap-6">
+              <div className="glass-card p-6 rounded-xl border border-slate-800/50">
+                <div className="text-2xl mb-2">⚡</div>
+                <h3 className="font-semibold text-white mb-2">Fast Implementation</h3>
+                <p className="text-sm text-slate-400">Deploy in days, not months</p>
+              </div>
+              <div className="glass-card p-6 rounded-xl border border-slate-800/50">
+                <div className="text-2xl mb-2">🔒</div>
+                <h3 className="font-semibold text-white mb-2">Enterprise Security</h3>
+                <p className="text-sm text-slate-400">SOC 2, HIPAA, GDPR compliant</p>
+              </div>
+              <div className="glass-card p-6 rounded-xl border border-slate-800/50">
+                <div className="text-2xl mb-2">📈</div>
+                <h3 className="font-semibold text-white mb-2">Measurable ROI</h3>
+                <p className="text-sm text-slate-400">30%+ efficiency gains typical</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

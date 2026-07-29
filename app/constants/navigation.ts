@@ -7,10 +7,11 @@ export interface NavigationLink {
 export const PRIMARY_NAV_LINKS: NavigationLink[] = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },
+  { name: 'Industry Solutions', href: '/service-discovery' },
   { name: 'Solutions', href: '/solutions' },
-  { name: 'Industries', href: '/industry-solutions', badge: 'New' },
-  { name: 'Case Studies', href: '/case-studies' },
-  { name: 'AI Agents', href: '/agents-monitoring', badge: 'Live' },
+  { name: 'Pricing', href: '/pricing' },
+  { name: '⚡ AI Agents', href: '/agents-monitoring', badge: 'Live' },
+  { name: 'Tools', href: '/tools/service-comparison' },
   { name: 'Contact', href: '/contact' },
 ];
 
@@ -44,12 +45,22 @@ export const FEATURED_AI_SERVICE_LINKS: NavigationLink[] = [
   { name: 'AI Document Processing', href: '/services/ai-document-processing' },
   { name: 'AI Predictive Analytics', href: '/services/ai-predictive-analytics' },
   { name: 'AI Fraud Detection', href: '/services/ai-fraud-detection' },
-  { name: 'AI Chatbot Builder', href: '/services/ai-chatbot-builder' },
-  { name: 'AI Email Analyzer', href: '/services/ai-powered-email-analyzer' },
-  { name: 'Cloud Cost Optimization', href: '/cloud-cost-optimization-platform' },
-  { name: 'AI Smart Inventory', href: '/ai-smart-inventory' },
-  { name: 'AI Supply Chain', href: '/ai-supply-chain' },
-  { name: 'AI Route Optimizer', href: '/ai-route-optimizer' },
+  { name: 'AI Customer Churn Prediction', href: '/services/ai-customer-churn-prediction', badge: 'New' },
+  { name: 'AI Meeting Notes & Action Items', href: '/services/ai-meeting-notes-action-items', badge: 'New' },
+  { name: 'AI Voice Agent', href: '/services/ai-voice-agent-customer-service', badge: 'New' },
+  { name: 'AI Legal Contract Analyzer', href: '/services/ai-legal-contract-analyzer', badge: 'New' },
+  { name: 'AI Smart Contract Auditor', href: '/services/ai-smart-contract-auditor', badge: 'New' },
   { name: '──────────', href: '#' },
-  { name: '🛠️ Browse All 14,211+ Services →', href: '/services' },
+  { name: '🛠️ Browse All 580+ Services →', href: '/services' },
+];
+
+export const TOOL_LINKS: NavigationLink[] = [
+  { name: 'Service Comparison', href: '/tools/service-comparison' },
+  { name: 'ROI Calculator', href: '/tools/roi-calculator' },
+  { name: 'AI Service Router', href: '/tools/ai-service-router' },
+  { name: 'Health Check', href: '/tools/health-check' },
+  { name: 'SSL Checker', href: '/tools/ssl-checker' },
+  { name: 'Port Scanner', href: '/tools/port-scanner' },
+  { name: 'JSON Formatter', href: '/tools/json-formatter' },
+  { name: 'CSS Gradient Generator', href: '/tools/css-gradient-generator' },
 ];

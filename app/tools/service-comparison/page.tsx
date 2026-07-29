@@ -1,345 +1,321 @@
-// app/tools/service-comparison/page.tsx — Full Service Comparison
+// app/tools/service-comparison/page.tsx - Service Comparison Tool
 'use client';
-import { pingTool } from '@/data/tools_ping_client';
 
-import { useState, useMemo, useEffect } from 'react';
-import { allServices, type Service } from '../../data/servicesData';
+import { useState, useMemo } from 'react';
 import Link from 'next/link';
-import SmartServiceCard from '@/components/SmartServiceCard';
+import { allServices } from '../../data/servicesData';
+import type { Service } from '../../data/servicesData';
 
-const CAT_LABELS: Record<string,string> = {
-  ai:'AI Services', it:'IT', cloud:'Cloud', security:'Security',
-  data:'Data & Analytics', automation:'Automation', 'micro-saas':'Micro-SaaS',
-  devops:'DevOps', blockchain:'Blockchain', iot:'IoT', 'email-intelligence':'Email Intel',
-  observability:'Observability', identity:'Identity', cms:'CMS', ecommerce:'E-Commerce',
-  documentation:'Documentation', 'ai-ml-ops':'AI/ML Ops', devsecops:'DevSecOps',
-  fintech:'FinTech', edtech:'EdTech', 'healthcare-it':'Healthcare IT',
-  'data-streaming':'Data Streaming', search:'Search', api:'API Management',
-};
-
-const TABS = [
-  { key:'overview',    label:'Overview',  icon:'📋' },
-  { key:'features',   label:'Features', icon:'✨' },
-  { key:'pricing',    label:'Pricing',  icon:'💰' },
-  { key:'benefits',   label:'Benefits', icon:'🎯' },
-  { key:'timeline',   label:'Timeline', icon:'🗓️' },
-] as const;
-
-type TabKey = typeof TABS[number]['key'];
+const CATEGORIES = [
+  { key: 'ai', label: 'AI Services', color: 'from-purple-500 to-pink-500' },
+  { key: 'it', label: 'IT Services', color: 'from-blue-500 to-cyan-500' },
+  { key: 'cloud', label: 'Cloud Services', color: 'from-sky-400 to-blue-600' },
+  { key: 'security', label: 'Security Services', color: 'from-red-500 to-orange-500' },
+  { key: 'data', label: 'Data Analytics', color: 'from-green-500 to-emerald-500' },
+  { key: 'automation', label: 'Automation', color: 'from-pink-500 to-rose-500' },
+  { key: 'micro-saas', label: 'Micro-SaaS', color: 'from-amber-500 to-orange-500' },
+  { key: 'devops', label: 'DevOps', color: 'from-cyan-500 to-blue-500' },
+];
 
 export default function ServiceComparisonPage() {
-  useEffect(() => { pingTool('service-comparison'); }, []);
+  const [selectedServices, setSelectedServices] = useState<string[]>([]);
+  const [categoryFilter, setCategoryFilter] = useState<string>('all');
+  const [searchQuery, setSearchQuery] = useState('');
+  
+  const services: Service[] = allServices as Service[];
 
-  const featured = useMemo(
-    () => allServices.filter((s: Service) => s.popular).slice(0, 8), []
-  );
+  // Filter services
+  const filteredServices = useMemo(() => {
+    let list = services;
+    if (categoryFilter !== 'all') {
+      list = list.filter(s => s.category === categoryFilter);
+    }
+    if (searchQuery.trim()) {
+      const q = searchQuery.toLowerCase();
+      list = list.filter(s => 
+        s.title.toLowerCase().includes(q) || 
+        s.description.toLowerCase().includes(q)
+      );
+    }
+    return list;
+  }, [services, categoryFilter, searchQuery]);
 
-  // ── Deep-compare state ──────────────────────────────────────────
-  const [compareIds, setCompareIds] = useState<string[]>([]);
-  const [activeTab, setActiveTab] = useState<TabKey>('overview');
-  const [catFilter, setCatFilter] = useState<string>('');
-
-  const categories = useMemo(
-    () => [...new Set(allServices.map((s: Service) => s.category))].sort(), []
-  );
-
-  const pool = useMemo(() => {
-    const base = compareIds.length > 0
-      ? allServices.filter((s: Service) => compareIds.includes(s.id))
-      : featured;
-    return catFilter
-      ? base.filter((s: Service) => s.category === catFilter)
-      : base;
-  }, [compareIds, catFilter, featured]);
-
-  const toggleCompare = (id: string) => {
-    setCompareIds(prev => prev.includes(id)
-      ? prev.filter(x => x !== id)
-      : prev.length >= 3 ? prev : [...prev, id]
-    );
+  // Toggle service selection
+  const toggleService = (id: string) => {
+    setSelectedServices(prev => {
+      if (prev.includes(id)) {
+        return prev.filter(s => s !== id);
+      } else if (prev.length < 3) {
+        return [...prev, id];
+      }
+      return prev;
+    });
   };
 
-  // ── Feature checkmark ───────────────────────────────────────────
-  const hasFeature = (svc: Service, feat: string) =>
-    (svc.features || []).some((f: string) =>
-      f.toLowerCase().includes(feat.toLowerCase())
-    );
+  // Get selected service details
+  const selectedDetails = useMemo(() => {
+    return selectedServices
+      .map(id => services.find(s => s.id === id))
+      .filter(Boolean) as Service[];
+  }, [selectedServices, services]);
 
-  const CHECK_FEATURES = [
-    'API','SDK','realtime','24/7','cloud','on-prem','audit','report',
-    'multilingual','integration','automation',
-  ];
+  // Calculate comparison values
+  const getMonthlyPrice = (service: Service): number => {
+    const basic = parseInt(service.pricing?.basic?.replace(/[^0-9]/g, '') || '0');
+    return basic;
+  };
 
-  // ── Timeline rows ───────────────────────────────────────────────
-  const timelinePhases = [
-    { phase:'Foundation',    weeks:'Week 1–2', tasks:['Requirements & architecture','Environment & credentials setup','Stakeholder kickoff'] },
-    { phase:'Core Config',   weeks:'Week 3–5', tasks:['Service deployment / integration','Core pipeline workflow','Data connections'] },
-    { phase:'Test & Validate',weeks:'Week 6–7', tasks:['Acceptance testing','Fine-tuning & calibration','Edge-case review'] },
-    { phase:'Go Live',       weeks:'Week 8',    tasks:['Production deploy','Rollout plan','Hyper-care handover'] },
-    { phase:'Optimise',      weeks:'Ongoing',   tasks:['Usage analytics review','Feature iterations','Continuous improvement'] },
-  ];
+  const getFeatureCount = (service: Service): number => {
+    return service.features?.length || 0;
+  };
+
+  const getBenefitCount = (service: Service): number => {
+    return service.benefits?.length || 0;
+  };
 
   return (
-    <div className="container-page py-16">
-      {/* ── Header ─────────────────────────────────────────────── */}
-      <div className="mb-10">
-        <h1 className="text-4xl font-bold text-white mb-3">Service Comparison</h1>
-        <p className="text-slate-400 max-w-2xl">
-          Compare features, pricing, benefits, and implementation timelines
-          across <strong className="text-white">{allServices.length}+</strong> services.
-          Pick up to 3 services for a side-by-side deep compare.
-        </p>
-      </div>
-
-      {/* ── Quick-Compare Table (featured, 1-click deep) ─────────── */}
-      <section className="mb-14">
-        <h2 className="text-xl font-semibold text-white mb-4">⚡ Quick Compare — Popular Services</h2>
-        <div className="overflow-x-auto rounded-xl border border-slate-800">
-          <table className="w-full text-left text-sm border-collapse">
-            <thead>
-              <tr className="border-b border-slate-700 bg-slate-900/50">
-                <th className="py-3 px-4 text-slate-300 font-semibold w-56">Service</th>
-                <th className="py-3 px-4 text-slate-300 font-semibold">Category</th>
-                <th className="py-3 px-4 text-slate-300 font-semibold text-center">Basic</th>
-                <th className="py-3 px-4 text-slate-300 font-semibold text-center">Pro</th>
-                <th className="py-3 px-4 text-slate-300 font-semibold text-center">Enterprise</th>
-                <th className="py-3 px-4 text-slate-300 font-semibold text-center w-36">Compare</th>
-              </tr>
-            </thead>
-            <tbody>
-              {featured.map((svc: Service) => (
-                <tr key={svc.id} className="border-b border-slate-800/50 hover:bg-slate-800/30 transition">
-                  <td className="py-3 px-4">
-                    <Link href={`/services/${svc.id}`} className="text-purple-400 font-medium hover:underline">
-                      {svc.title}
-                    </Link>
-                  </td>
-                  <td className="py-3 px-4 text-slate-400">{CAT_LABELS[svc.category] || svc.category}</td>
-                  <td className="py-3 px-4 text-center text-slate-300 text-xs">{svc.pricing?.basic ?? '—'}</td>
-                  <td className="py-3 px-4 text-center text-emerald-400 text-xs font-medium">{svc.pricing?.pro ?? '—'}</td>
-                  <td className="py-3 px-4 text-center text-purple-300 text-xs">{svc.pricing?.enterprise ?? '—'}</td>
-                  <td className="py-3 px-4 text-center">
-                    <button
-                      onClick={() => toggleCompare(svc.id)}
-                      className={`px-3 py-1 rounded-full text-xs transition ${
-                        compareIds.includes(svc.id)
-                          ? 'bg-purple-600 text-white ring-2 ring-purple-400'
-                          : 'bg-slate-800 border border-slate-700 text-slate-400 hover:border-purple-500/30 hover:text-purple-300'
-                      }`}
-                    >
-                      {compareIds.includes(svc.id) ? '✓ Added' : '+ Add'}
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+    <main className="min-h-screen bg-slate-950">
+      {/* ── Header ── */}
+      <section className="relative overflow-hidden pt-32 pb-24 bg-gradient-to-b from-slate-950 to-slate-900">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_30%,rgba(120,50,200,0.18),rgba(20,10,40,0.92))]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_80%,rgba(59,130,246,0.12),transparent_60%)]" />
+        <div className="relative container-page text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm mb-6">
+            <span className="text-green-400">●</span> Comparison Tool
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+            <span className="text-white">Compare Services</span>
+          </h1>
+          <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+            Compare up to 3 services side-by-side to find the perfect solution for your needs.
+          </p>
         </div>
-        <p className="text-slate-500 text-xs mt-2">
-          Click <strong>+ Add</strong> to select services for deep comparison (up to 3).
-        </p>
       </section>
 
-      {/* ── Deep Compare Panel ─────────────────────────────────── */}
-      {compareIds.length > 1 && (
-        <section className="mb-14" id="deep-compare">
-          <h2 className="text-xl font-semibold text-white mb-5">
-            ⚖️ Deep Compare — {compareIds.length} Services Selected
-          </h2>
-
-          {/* Tab bar */}
-          <div className="flex flex-wrap gap-2 mb-8 border-b border-slate-800 pb-4">
-            {TABS.map(tab => (
+      {/* ── Filters ── */}
+      <section className="py-12 bg-slate-900/30 border-y border-slate-800">
+        <div className="container-page">
+          <div className="flex flex-col sm:flex-row gap-4 items-center justify-between">
+            <div className="relative max-w-md">
+              <input
+                type="text"
+                placeholder="Search services..."
+                value={searchQuery}
+                onChange={e => setSearchQuery(e.target.value)}
+                className="w-full rounded-full bg-slate-800/60 border border-slate-700/50 px-4 py-2 text-white placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              />
+              <svg className="absolute right-4 top-2.5 w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 1116.5 9a7.5 7.5 0 01-2.85 7.65z" />
+              </svg>
+            </div>
+            
+            <div className="flex flex-wrap gap-2">
               <button
-                key={tab.key}
-                onClick={() => setActiveTab(tab.key)}
-                className={`px-4 py-2 rounded-full text-sm transition ${
-                  activeTab === tab.key
-                    ? 'bg-purple-600/20 text-purple-300 border border-purple-500/30'
-                    : 'bg-slate-800/50 text-slate-400 border border-slate-700/50 hover:border-slate-600'
+                onClick={() => setCategoryFilter('all')}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition ${
+                  categoryFilter === 'all'
+                    ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
+                    : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/80 border border-slate-700/50'
                 }`}
               >
-                <span className="mr-1">{tab.icon}</span>
-                {tab.label}
+                All Categories
               </button>
-            ))}
-            <button
-              onClick={() => setCompareIds([])}
-              className="ml-auto px-3 py-2 rounded-full text-xs bg-red-900/30 text-red-300 border border-red-500/20 hover:border-red-500/40 transition"
-            >
-              ✕ Clear selection
-            </button>
+              {CATEGORIES.map(cat => (
+                <button
+                  key={cat.key}
+                  onClick={() => setCategoryFilter(cat.key)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition ${
+                    categoryFilter === cat.key
+                      ? 'bg-gradient-to-r from-purple-600 to-pink-600 text-white'
+                      : 'bg-slate-800/60 text-slate-300 hover:bg-slate-700/80 border border-slate-700/50'
+                  }`}
+                >
+                  {cat.label}
+                </button>
+              ))}
+            </div>
           </div>
+          
+          <div className="mt-4 text-center text-slate-400 text-sm">
+            {selectedServices.length > 0 && (
+              <span>
+                Comparing {selectedServices.length} service{selectedServices.length > 1 ? 's' : ''} 
+                <button
+                  onClick={() => setSelectedServices([])}
+                  className="ml-2 underline text-purple-400 hover:text-purple-300"
+                >
+                  Clear selection
+                </button>
+              </span>
+            )}
+          </div>
+        </div>
+      </section>
 
-          {/* ── Overview tab ────────────────────────────────────── */}
-          {activeTab === 'overview' && (
-            <div className="grid md:grid-cols-3 gap-6">
-              {compareIds.map(id => {
-                const s = allServices.find((x: Service) => x.id === id);
-                if (!s) return null;
-                return (
-                  <div key={id} className="bg-slate-900/60 rounded-xl border border-slate-700/50 p-6">
-                    <Link href={`/services/${id}`} className="text-lg font-bold text-white hover:text-purple-300">
-                      {s.title}
-                    </Link>
-                    <p className="text-slate-400 text-sm mt-2 mb-4">{s.description}</p>
-                    <div className="grid grid-cols-3 gap-2 mb-4">
-                      {CHECK_FEATURES.map(f => (
-                        <div key={f}
-                          className={`text-xs px-2 py-1 rounded text-center ${
-                            hasFeature(s, f)
-                              ? 'bg-purple-600/20 text-purple-300 border border-purple-500/20'
-                              : 'bg-slate-800 text-slate-600 border border-slate-800'
-                          }`}
-                        >{f}</div>
-                      ))}
-                    </div>
-                    <div className="text-xs text-slate-500 mt-3">
-                      {CAT_LABELS[s.category] || s.category} · {s.features?.length || 0} features · {(s.benefits||[]).length} benefits
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          )}
-
-          {/* ── Features tab ─────────────────────────────────────── */}
-          {activeTab === 'features' && (
-            <div className="grid md:grid-cols-3 gap-6">
-              {compareIds.map(id => {
-                const s = allServices.find((x: Service) => x.id === id);
-                if (!s) return null;
-                return (
-                  <div key={id} className="bg-slate-900/60 rounded-xl border border-slate-700/50 p-6">
-                    <h3 className="font-semibold text-white mb-4">{s.title}</h3>
-                    <ul className="space-y-2">
-                      {(s.features || []).map((f: string, j: number) => (
-                        <li key={j} className="text-sm text-slate-300 flex items-start gap-2">
-                          <span className="text-purple-400 mt-0.5 shrink-0">✓</span>
-                          <span>{f}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                );
-              })}
-            </div>
-          )}
-
-          {/* ── Pricing tab ──────────────────────────────────────── */}
-          {activeTab === 'pricing' && (
-            <div className="grid md:grid-cols-3 gap-6">
-              {compareIds.map(id => {
-                const s = allServices.find((x: Service) => x.id === id);
-                if (!s) return null;
-                const tiers = [
-                  { key:'basic',      label:'Basic',      color:'text-slate-300', bg:'bg-slate-800' },
-                  { key:'pro',        label:'Pro',        color:'text-emerald-400', bg:'bg-emerald-900/30' },
-                  { key:'enterprise', label:'Enterprise', color:'text-purple-300', bg:'bg-purple-900/30' },
-                ];
-                return (
-                  <div key={id} className="bg-slate-900/60 rounded-xl border border-slate-700/50 p-6">
-                    <h3 className="font-semibold text-white mb-4">{s.title}</h3>
-                    <div className="space-y-3">
-                      {tiers.map(t => (
-                        <div key={t.key}
-                          className={`${t.bg} rounded-lg p-4 border border-slate-700/50`}
-                        >
-                          <div className={`text-xs font-semibold mb-1 ${t.color}`}>{t.label}</div>
-                          <div className="text-xl font-bold text-white">
-                            {s.pricing?.[t.key as keyof typeof s.pricing] ?? 'Custom'}
-                          </div>
+      {/* ── Comparison Table ── */}
+      {selectedDetails.length > 0 ? (
+        <section className="py-20">
+          <div className="container-page">
+            <div className="overflow-x-auto">
+              <table className="w-full glass-card rounded-xl border border-slate-800/50">
+                <thead>
+                  <tr className="border-b border-slate-800">
+                    <th className="px-6 py-4 text-left text-slate-300 font-semibold">Feature</th>
+                    {selectedDetails.map((service, idx) => (
+                      <th key={idx} className="px-6 py-4 text-center">
+                        <div className="flex flex-col items-center">
+                          <span className="text-sm text-slate-400">Service {idx + 1}</span>
+                          <Link
+                            href={`/services/${service.id}`}
+                            className="mt-1 text-sm font-semibold text-purple-400 hover:text-purple-300 line-clamp-1 max-w-40"
+                          >
+                            {service.title}
+                          </Link>
                         </div>
-                      ))}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {/* Monthly Price */}
+                  <tr className="border-b border-slate-800">
+                    <td className="px-6 py-4 font-medium text-white">Monthly Price</td>
+                    {selectedDetails.map((service, idx) => (
+                      <td key={idx} className="px-6 py-4 text-center text-emerald-400 font-semibold">
+                        ${getMonthlyPrice(service)}
+                      </td>
+                    ))}
+                  </tr>
+                  
+                  {/* Feature Count */}
+                  <tr className="border-b border-slate-800">
+                    <td className="px-6 py-4 font-medium text-white">Features</td>
+                    {selectedDetails.map((service, idx) => (
+                      <td key={idx} className="px-6 py-4 text-center text-cyan-400">
+                        {getFeatureCount(service)} features
+                      </td>
+                    ))}
+                  </tr>
+                  
+                  {/* Benefits Count */}
+                  <tr className="border-b border-slate-800">
+                    <td className="px-6 py-4 font-medium text-white">Key Benefits</td>
+                    {selectedDetails.map((service, idx) => (
+                      <td key={idx} className="px-6 py-4 text-center text-amber-400">
+                        {getBenefitCount(service)} benefits
+                      </td>
+                    ))}
+                  </tr>
+                  
+                  {/* Category */}
+                  <tr className="border-b border-slate-800">
+                    <td className="px-6 py-4 font-medium text-white">Category</td>
+                    {selectedDetails.map((service, idx) => (
+                      <td key={idx} className="px-6 py-4 text-center">
+                        <span className={`px-2 py-1 rounded-full text-xs font-semibold bg-gradient-to-r ${CATEGORIES.find(c => c.key === service.category)?.color || 'from-purple-500 to-pink-500'} text-white`}>
+                          {service.category}
+                        </span>
+                      </td>
+                    ))}
+                  </tr>
+                  
+                  {/* Top Features */}
+                  <tr>
+                    <td className="px-6 py-4 font-medium text-white">Top Features</td>
+                    {selectedDetails.map((service, idx) => (
+                      <td key={idx} className="px-6 py-4 text-center">
+                        <ul className="text-xs text-slate-300 text-left space-y-1">
+                          {service.features.slice(0, 3).map((f, j) => (
+                            <li key={j} className="flex items-start gap-1">
+                              <span className="text-purple-400 mt-0.5">•</span>
+                              <span>{f}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </td>
+                    ))}
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <div className="mt-8 text-center">
+              <Link
+                href="/services"
+                className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:from-purple-500 hover:to-pink-500 transition-all"
+              >
+                Browse All Services →
+              </Link>
+            </div>
+          </div>
+        </section>
+      ) : (
+        /* ── Service Selection ── */
+        <section className="py-20">
+          <div className="container-page">
+            <h2 className="text-2xl font-bold text-center text-white mb-8">
+              Select Services to Compare
+            </h2>
+            
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto">
+              {filteredServices.slice(0, 12).map((service) => (
+                <div
+                  key={service.id}
+                  onClick={() => toggleService(service.id)}
+                  className={`glass-card flex flex-col group hover:border-purple-500/40 transition-all duration-300 cursor-pointer ${
+                    selectedServices.includes(service.id) 
+                      ? 'border-purple-400 ring-1 ring-purple-400/20' 
+                      : ''
+                  }`}
+                >
+                  <div className="p-4">
+                    <div className="flex items-start gap-3">
+                      <span className="text-2xl shrink-0">{service.icon}</span>
+                      <div className="flex-1">
+                        <h3 className="text-sm font-semibold text-white group-hover:text-purple-300 transition leading-snug line-clamp-2">
+                          {service.title}
+                        </h3>
+                        <span className="text-xs text-slate-500 block mt-1">
+                          {service.category} • ${service.pricing?.basic || 'Contact'}
+                        </span>
+                      </div>
+                      <input
+                        type="checkbox"
+                        checked={selectedServices.includes(service.id)}
+                        onChange={() => toggleService(service.id)}
+                        className="h-5 w-5 rounded border-purple-500 mt-1"
+                      />
                     </div>
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
-          )}
-
-          {/* ── Benefits tab ─────────────────────────────────────── */}
-          {activeTab === 'benefits' && (
-            <div className="grid md:grid-cols-3 gap-6">
-              {compareIds.map(id => {
-                const s = allServices.find((x: Service) => x.id === id);
-                if (!s) return null;
-                return (
-                  <div key={id} className="bg-slate-900/60 rounded-xl border border-slate-700/50 p-6">
-                    <h3 className="font-semibold text-white mb-4">{s.title}</h3>
-                    <ul className="space-y-2">
-                      {(s.benefits || []).map((b: string, j: number) => (
-                        <li key={j} className="text-sm text-slate-300 flex items-start gap-2">
-                          <span className="text-emerald-400 mt-0.5 shrink-0">●</span>
-                          <span>{b}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                );
-              })}
-            </div>
-          )}
-
-          {/* ── Timeline tab ────────────────────────────────────── */}
-          {activeTab === 'timeline' && (
-            <div className="relative">
-              {compareIds.map((id, si) => {
-                const s = allServices.find((x: Service) => x.id === id);
-                if (!s || s.category !== 'security') return null; // refine later
-                return null;
-              })}
-              <p className="text-slate-400 text-sm">
-                Implementation timelines show the typical phased roll-out for a service engagement.
-                Pick services in the same category to see aligned timelines.
-              </p>
-            </div>
-          )}
+            
+            {filteredServices.length > 12 && (
+              <div className="text-center mt-8">
+                <button className="px-6 py-2 rounded-full bg-slate-800/60 text-slate-300 hover:bg-slate-700/80 transition">
+                  Load more services
+                </button>
+              </div>
+            )}
+            
+            {filteredServices.length === 0 && (
+              <div className="text-center py-12">
+                <p className="text-slate-400">No services found matching your criteria.</p>
+                <button
+                  onClick={() => {
+                    setCategoryFilter('all');
+                    setSearchQuery('');
+                  }}
+                  className="mt-4 text-purple-400 hover:text-purple-300"
+                >
+                  Clear filters
+                </button>
+              </div>
+            )}
+          </div>
         </section>
       )}
-
-      {/* ── All Services (filter) ─────────────────────────────── */}
-      <section className="mb-14">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl font-semibold text-white">Browse All Services</h2>
-          <div className="flex gap-2">
-            <button
-              onClick={() => setCatFilter('')}
-              className={`px-3 py-1.5 rounded-full text-xs transition ${
-                !catFilter ? 'bg-purple-600/20 text-purple-300 border border-purple-500/30' : 'bg-slate-800 text-slate-400 border border-slate-700'
-              }`}
-            >
-              All
-            </button>
-            {categories.map(c => (
-              <button
-                key={c}
-                onClick={() => setCatFilter(c)}
-                className={`px-3 py-1.5 rounded-full text-xs transition ${
-                  catFilter === c ? 'bg-purple-600/20 text-purple-300 border border-purple-500/30' : 'bg-slate-800 text-slate-400 border border-slate-700'
-                }`}
-              >
-                {CAT_LABELS[c] || c}
-              </button>
-            ))}
-          </div>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {pool.slice(0, 24).map((svc: Service) => (
-            <SmartServiceCard
-              key={svc.id}
-              service={svc}
-              relationship={svc.popular ? 'featured' : 'related'}
-              showPricing
-            />
-          ))}
-        </div>
-        {pool.length > 24 && (
-          <p className="text-slate-500 text-sm text-center mt-4">
-            Showing 24 of {pool.length} — <Link href="/services/" className="text-purple-400 hover:underline">View all →</Link>
-          </p>
-        )}
-      </section>
-    </div>
+    </main>
   );
 }
