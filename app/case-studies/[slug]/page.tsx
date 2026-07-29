@@ -1,6 +1,5 @@
-'use client';
-
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 
 const studies = [
   {
@@ -125,118 +124,86 @@ const studies = [
   },
 ];
 
-export default function CaseStudies() {
+export async function generateStaticParams() {
+  return studies.map((study) => ({ slug: study.slug }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const study = studies.find((s) => s.slug === slug);
+  if (!study) return { title: 'Case Study Not Found | Zion Tech Group' };
+  return {
+    title: `${study.headline} | Zion Tech Group`,
+    description: study.body,
+  };
+}
+
+export default async function CaseStudyDetail({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const study = studies.find((s) => s.slug === slug);
+  if (!study) return notFound();
+
   return (
     <main className="min-h-screen bg-slate-950">
-      <div className="container-page py-20">
-        <nav aria-label="Breadcrumb" className="hidden">
-          <span>Home</span>
-          <span>Case Studies</span>
-        </nav>
-
-        <div className="text-center max-w-4xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-4 py-1.5 mb-6">
-            <span className="text-xs">📈</span>
-            <span className="text-xs text-emerald-300 font-medium uppercase tracking-wider">Proven Business Outcomes</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Client <span className="gradient-text">Case Studies</span>
-          </h1>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Real enterprise transformations — measurable ROI, implementation timelines, and the lessons we carried forward.
-          </p>
+      <div className="container-page max-w-4xl py-20">
+        <div className="flex items-center gap-3 mb-6">
+          <Link href="/case-studies/" className="text-purple-300 hover:text-purple-200 text-sm">
+            ← Back to Case Studies
+          </Link>
         </div>
 
-        <div className="grid gap-10 max-w-5xl mx-auto">
-          {studies.map((study) => (
-            <article
-              key={study.slug}
-              className="group rounded-2xl border border-slate-800 bg-slate-900/60 p-8 hover:border-purple-500/40 transition-all"
+        <div className="flex flex-wrap gap-2 mb-4">
+          {study.tags.map((tag) => (
+            <span
+              key={tag}
+              className="text-[11px] font-semibold uppercase tracking-wider bg-slate-800 text-slate-300 border border-slate-700 px-2.5 py-1 rounded-full"
             >
-              <div className="flex flex-col lg:flex-row gap-8">
-                <div className="flex-1">
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {study.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-[11px] font-semibold uppercase tracking-wider bg-slate-800 text-slate-300 border border-slate-700 px-2.5 py-1 rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <h2 className="text-2xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">
-                    <Link href={`/case-studies/${study.slug}`} className="hover:underline">
-                      {study.headline}
-                    </Link>
-                  </h2>
-                  <p className="text-sm text-slate-400 mb-1">Client: {study.company}</p>
-                  <p className="text-slate-300 leading-relaxed mb-6">{study.body}</p>
-
-                  <div className="grid sm:grid-cols-3 gap-3 mb-6">
-                    {study.results.map((result) => (
-                      <div key={result} className="rounded-xl bg-slate-950/60 border border-slate-800 p-4">
-                        <p className="text-sm text-slate-300">{result}</p>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="rounded-xl bg-slate-950/60 border border-slate-800 p-5">
-                    <blockquote className="text-slate-300 italic mb-3">“{study.quote.text}”</blockquote>
-                    <p className="text-sm text-slate-400">
-                      <span className="text-white font-semibold">{study.quote.author}</span>
-                      <span className="mx-2 text-slate-600">·</span>
-                      {study.quote.role}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="lg:w-64 shrink-0">
-                  <div className="rounded-2xl border border-slate-800 bg-slate-900 p-6 text-center">
-                    <div className="text-4xl font-bold gradient-text mb-1">{study.metric}</div>
-                    <div className="text-xs text-slate-400 mb-4">{study.metricSub}</div>
-                    <Link
-                      href={`/contact/`}
-                      className="block w-full text-center px-4 py-2.5 rounded-lg bg-purple-600 text-white text-sm font-semibold hover:bg-purple-500 transition-colors"
-                    >
-                      Request Similar Results
-                    </Link>
-                    <Link
-                      href={`/case-studies/${study.slug}`}
-                      className="block w-full text-center mt-2 px-4 py-2.5 rounded-lg bg-slate-800 text-slate-200 text-sm font-medium hover:bg-slate-700 transition-colors"
-                    >
-                      Read Case Study →
-                    </Link>
-                    <div className="mt-4 space-y-2 text-left">
-                      <p className="text-[11px] text-slate-500 uppercase tracking-wider">Related services</p>
-                      {study.relatedServices.map((href) => (
-                        <Link key={href} href={href} className="block text-sm text-purple-300 hover:text-purple-200">
-                          {href.replace('/services/', '').replace('/', '')}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
+              {tag}
+            </span>
           ))}
         </div>
 
-        <div className="mt-16 text-center">
-          <div className="inline-flex flex-col items-center gap-4 rounded-2xl border border-purple-500/30 bg-purple-900/20 px-8 py-10">
-            <h3 className="text-3xl font-bold text-white">Ready for similar results?</h3>
-            <p className="text-slate-300 max-w-2xl">
-              Tell us your goal and we’ll design a tailored engagement plan — including estimated ROI, timeline, and team allocation.
+        <h1 className="text-3xl md:text-4xl font-bold text-white mb-3">{study.headline}</h1>
+        <p className="text-slate-400 text-sm mb-8">Client: {study.company}</p>
+
+        <div className="glass-card p-6 md:p-8 mb-10">
+          <p className="text-slate-300 leading-relaxed mb-6">{study.body}</p>
+
+          <div className="grid sm:grid-cols-3 gap-3 mb-6">
+            {study.results.map((result) => (
+              <div key={result} className="rounded-xl bg-slate-950/60 border border-slate-800 p-4">
+                <p className="text-sm text-slate-300">{result}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="rounded-xl bg-slate-950/60 border border-slate-800 p-5">
+            <blockquote className="text-slate-300 italic mb-3">“{study.quote.text}”</blockquote>
+            <p className="text-sm text-slate-400">
+              <span className="text-white font-semibold">{study.quote.author}</span>
+              <span className="mx-2 text-slate-600">·</span>
+              {study.quote.role}
             </p>
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Link href="/configurator/" className="btn-primary text-lg px-10 py-4">
-                ⚡ Get Your Custom Proposal
+          </div>
+        </div>
+
+        <div className="grid sm:grid-cols-2 gap-3">
+          <Link href="/contact/" className="btn-primary text-center">
+            Request Similar Results
+          </Link>
+          <Link href="/services/" className="btn-secondary text-center">
+            Explore Services
+          </Link>
+        </div>
+
+        <div className="mt-10">
+          <h3 className="text-sm font-semibold text-slate-300 mb-2">Related services</h3>
+          <div className="flex flex-wrap gap-2">
+            {study.relatedServices.map((href) => (
+              <Link key={href} href={href} className="text-sm text-purple-300 hover:text-purple-200 underline">
+                {href.replace('/services/', '').replace('/', '')}
               </Link>
-              <Link href="/contact/" className="btn-secondary text-lg px-10 py-4">
-                Talk to an Engineer
-              </Link>
-            </div>
+            ))}
           </div>
         </div>
       </div>

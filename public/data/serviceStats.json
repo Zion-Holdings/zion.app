@@ -1,0 +1,9 @@
+{
+  "total_services": 14055,
+  "by_stage": {
+    "published": 93,
+    "beta": 0,
+    "planned": 0,
+    "live": 29
+  }
+}
