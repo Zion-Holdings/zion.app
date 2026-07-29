@@ -1267,13 +1267,18 @@ export default function HomePage() {
       <section className="py-8 border-t border-slate-800">
         <div className="container-page">
           <div className="flex flex-wrap justify-center gap-6 text-sm text-slate-500">
-            <Link href="/faq/" className="hover:text-purple-400 transition">❓ FAQ</Link>
-            <Link href="/industry-solutions/" className="hover:text-purple-400 transition">🏭 Industry Solutions</Link>
+            <Link href="/pricing/" className="hover:text-purple-400 transition">💰 Pricing</Link>
+            <Link href="/careers/" className="hover:text-purple-400 transition">🧑‍💼 Careers</Link>
+            <Link href="/partnerships/" className="hover:text-purple-400 transition">🤝 Partnerships</Link>
+            <Link href="/request-proposal/" className="hover:text-purple-400 transition">📝 Request Proposal</Link>
+            <Link href="/rfi/" className="hover:text-purple-400 transition">📄 RFI</Link>
+            <Link href="/rfp/" className="hover:text-purple-400 transition">📊 RFP</Link>
+            <Link href="/ai-consulting/" className="hover:text-purple-400 transition">🤖 AI Consulting</Link>
+            <Link href="/cloud-migration/" className="hover:text-purple-400 transition">☁️ Cloud Migration</Link>
+            <Link href="/cybersecurity-services/" className="hover:text-purple-400 transition">🔐 Cybersecurity</Link>
             <Link href="/services/" className="hover:text-purple-400 transition">🛠️ All Services</Link>
-            <Link href="/configurator" className="hover:text-purple-400 transition">⚙️ Configurator</Link>
-            <Link href="/proposals/" className="hover:text-purple-400 transition">📄 Proposals</Link>
-            <Link href="/partners/" className="hover:text-purple-400 transition">🤝 Partners</Link>
-            <Link href="/status/" className="hover:text-green-400 transition">● System Status</Link>
+            <Link href="/success-stories/" className="hover:text-purple-400 transition">🏆 Success Stories</Link>
+            <Link href="/sitemap.xml" className="hover:text-purple-400 transition">🗺️ Sitemap</Link>
           </div>
         </div>
       </section>
