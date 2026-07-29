@@ -125,7 +125,7 @@ export default function IndustrySolutionsHub() {
     const q = searchQuery.toLowerCase();
     return INDUSTRIES.filter(ind => 
       ind.label.toLowerCase().includes(q) || 
-      ind.description.toLowerCase().includes(q) ||
+      ind.description.toLowerCase().includes(q) || 
       ind.keywords.toLowerCase().includes(q)
     );
   }, [searchQuery]);
@@ -167,8 +167,8 @@ export default function IndustrySolutionsHub() {
               <Link href="/services" className="btn-primary text-lg px-10 py-4">
                 🛠️ Browse All Services
               </Link>
-              <Link href="/configurator" className="btn-secondary text-lg px-10 py-4">
-                ⚡ Get Custom Recommendations
+              <Link href="/contact" className="btn-secondary text-lg px-10 py-4">
+                ⚡ Talk to an Engineer
               </Link>
             </div>
           </div>
@@ -246,7 +246,7 @@ export default function IndustrySolutionsHub() {
               <div className="text-white font-semibold">AI services</div>
               <div className="text-slate-400 text-sm mt-1">Machine learning and applied AI</div>
             </Link>
-            <Link href="/configurator" className="glass-card p-5 hover:border-purple-500/40">
+            <Link href="/contact" className="glass-card p-5 hover:border-purple-500/40">
               <div className="text-white font-semibold">Custom proposal</div>
               <div className="text-slate-400 text-sm mt-1">Tailored recommendations in minutes</div>
             </Link>
@@ -276,7 +276,7 @@ export default function IndustrySolutionsHub() {
             Get a free, custom proposal tailored to your sector in minutes.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+13024640950" className="btn-primary text-lg px-10 py-4">
+            <a href="/contact" className="btn-primary text-lg px-10 py-4">
               ☎ +1 302 464 0950
             </a>
             <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noreferrer noreferrer" className="btn-secondary text-lg px-10 py-4">
