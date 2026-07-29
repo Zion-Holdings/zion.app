@@ -371,5 +371,35 @@ export const INDUSTRY_SERVICES: Record<string, {
       'ai-last-mile-optimization'
     ],
     roiMultiplier: 3.2
+  },
+  'technology': {
+    title: 'Technology AI Solutions',
+    description: 'DevOps, cloud infrastructure, and API integration solutions',
+    services: [
+      'ai-devops-automation',
+      'ai-cloud-cost-optimization',
+      'ai-observability',
+      'ai-integration-apis',
+      'ai-security-operations-assistant',
+      'ai-api-management',
+      'ai-low-code-automation',
+      'ai-digital-twin-platform'
+    ],
+    roiMultiplier: 3.0
+  },
+  'energy': {
+    title: 'Energy & Utilities AI Solutions',
+    description: 'Smart grid, demand forecasting, and renewable energy optimization',
+    services: [
+      'ai-grid-demand-forecaster',
+      'ai-renewable-energy-optimizer',
+      'ai-smart-meter-analytics',
+      'ai-utility-demand-response',
+      'ai-energy-consumption-optimizer',
+      'ai-predictive-asset-maintenance',
+      'ai-carbon-intensity-optimizer',
+      'ai-iot-sensor-fleet'
+    ],
+    roiMultiplier: 3.6
   }
 };

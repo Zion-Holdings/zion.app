@@ -2,7 +2,8 @@
 'use client';
 
 import Link from 'next/link';
-import { INDUSTRY_SERVICES, SmartRecommendationEngine } from '@/components/SmartRecommendationEngine';
+import { INDUSTRY_SERVICES } from '@/components/SmartRecommendationEngine';
+import SmartRecommendationEngine from '@/components/SmartRecommendationEngine';
 import { allServices } from '@/data/servicesData';
 
 const INDUSTRY_CONFIG = [
