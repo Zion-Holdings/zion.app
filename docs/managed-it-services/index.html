@@ -1,42 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Managed IT Services | Zion Tech Group</title>
-  <meta name="description" content="Managed IT services: 24/7 monitoring, help desk, cloud, security, and infrastructure support.">
-  <link rel="canonical" href="https://ziontechgroup.com/managed-it-services/">
-  <link rel="stylesheet" href="/styles.css">
+  <meta name="description" content="Managed IT services with 24/7 monitoring, security, help desk, and cloud management for business growth."/>
+  <link rel="canonical" href="https://ziontechgroup.com/managed-it-services/"/>
+  <link rel="stylesheet" href="/styles.css"/>
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@type":"Service",
     "name":"Managed IT Services",
     "provider":{"@type":"Organization","name":"Zion Tech Group"},
-    "description":"Managed IT services: 24/7 monitoring, help desk, cloud, security, and infrastructure support.",
+    "description":"Managed IT services with 24/7 monitoring, security, help desk, and cloud management for business growth.",
     "areaServed":"US"
   }
   </script>
 </head>
 <body>
-  <main class="container-page py-24">
-    <h1 class="text-4xl font-bold mb-4">Managed IT Services</h1>
-    <p class="text-slate-300 text-lg mb-6">Run IT as a strategic advantage with 24/7 monitoring, help desk, cloud management, and cybersecurity operations.</p>
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-10">
-      <article class="rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
-        <h3 class="text-lg font-semibold text-white">24/7 Monitoring</h3>
-        <p class="mt-2 text-sm text-slate-400">Systems, networks, and applications watched continuously with alerting and response.</p>
-      </article>
-      <article class="rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
-        <h3 class="text-lg font-semibold text-white">Help Desk</h3>
-        <p class="mt-2 text-sm text-slate-400">Tiered support, ticket resolution, and user enablement.</p>
-      </article>
-      <article class="rounded-2xl border border-slate-800 bg-slate-900/50 p-6">
-        <h3 class="text-lg font-semibold text-white">Cloud & Security</h3>
-        <p class="mt-2 text-sm text-slate-400">Cloud management, identity, endpoint protection, and compliance.</p>
-      </article>
-    </div>
-    <a class="btn-primary" href="/contact/">Get managed IT services</a>
+  <nav class="site-nav">
+    <a class="brand" href="/">Zion Tech Group</a>
+    <a href="/services/">Services</a>
+    <a href="/case-studies/">Case Studies</a>
+    <a href="/contact/">Contact</a>
+  </nav>
+  <main class="container">
+    <section class="hero">
+      <h1>Managed IT Services</h1>
+      <p class="lead">Run IT as a growth engine with 24/7 monitoring, security, help desk, and cloud management.</p>
+      <a class="btn primary" href="/contact/">Get started</a>
+      <a class="btn secondary" href="/case-studies/">See results</a>
+    </section>
+    <section class="proof">
+      <div class="grid">
+        <div class="card">
+          <h2>24/7 Monitoring</h2>
+          <p>Network, endpoints, and cloud health with proactive alerting and rapid response.</p>
+        </div>
+        <div class="card">
+          <h2>Cybersecurity</h2>
+          <p>Threat detection, endpoint protection, and incident response to reduce risk.</p>
+        </div>
+        <div class="card">
+          <h2>Help Desk</h2>
+          <p>Responsive support with clear SLAs and fast resolution for your team.</p>
+        </div>
+        <div class="card">
+          <h2>Cloud Management</h2>
+          <p>Cost controls, performance tuning, and optimization across providers.</p>
+        </div>
+        <div class="card">
+          <h2>Backup & Recovery</h2>
+          <p>Reliable backups, tested recovery plans, and business continuity assurance.</p>
+        </div>
+        <div class="card">
+          <h2>Strategic Advisory</h2>
+          <p>Roadmap, budgeting, and change management for predictable IT outcomes.</p>
+        </div>
+      </div>
+    </section>
+    <section class="cta-strip">
+      <h2>Partner with an IT team that treats your business like its own</h2>
+      <a class="btn primary" href="/contact/">Talk to an engineer</a>
+    </section>
   </main>
+  <footer class="site-footer">
+    <p>© <span id="year"></span> Zion Tech Group · AI and IT services for business growth.</p>
+  </footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
 </body>
 </html>
