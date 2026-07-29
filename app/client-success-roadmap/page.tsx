@@ -15,11 +15,11 @@ type Phase = {
 };
 
 const phases: Phase[] = [
-  { key: 'assess', title: 'Assess & Prioritize', timeframe: 'Week 1-2', outcome: 'A clear, ranked backlog of high-ROI automations instead of guesswork.', proof: 'See AI Readiness Assessment →', signal: 'You will see model-ready priorities, not a generic report.' },
-  { key: 'pilot', title: 'Pilot with Live Traffic', timeframe: 'Week 3-4', outcome: 'One working workflow changing real operations, with guardrails.', proof: 'AI automation playbook reference →', signal: 'Risk drops because the system teaches itself.' },
-  { key: 'measure', title: 'Measure & Stabilize', timeframe: 'Week 5-8', outcome: 'Metrics that prove ROI and a checklist for reliability.', proof: 'Case study: support resolution time →', signal: 'Confidence replaces questions.' },
-  { key: 'expand', title: 'Expand with Governance', timeframe: 'Week 9-16', outcome: 'More workflows, lower cost per ticket, consistent outcomes.', proof: 'Cloud cost optimization reference →', signal: 'Scale feels predictable instead of expensive.' },
-  { key: 'operate', title: 'Operate & Optimize', timeframe: 'Month 5+', outcome: 'A living system with monitoring, escalation, and continuous improvement.', proof: 'Monitoring and agent ops reference →', signal: 'You stop maintaining tools and start reading decisions.' },
+  { key: 'assess', title: 'Assess & Prioritize', timeframe: 'Week 1-2', outcome: 'A clear, ranked backlog of high-ROI automations instead of guesswork.', proof: 'See AI Readiness Assessment →', signal: 'You will see priorities, not a generic report.' },
+  { key: 'pilot', title: 'Pilot with Live Traffic', timeframe: 'Week 3-4', outcome: 'One working workflow changing real operations, with guardrails.', proof: 'View automation playbook →', signal: 'Risk drops because the system starts teaching itself.' },
+  { key: 'measure', title: 'Measure & Stabilize', timeframe: 'Week 5-8', outcome: 'Metrics that prove ROI and a checklist for reliability.', proof: 'View case study →', signal: 'Confidence replaces questions.' },
+  { key: 'expand', title: 'Expand with Governance', timeframe: 'Week 9-16', outcome: 'More workflows, lower cost per ticket, consistent outcomes.', proof: 'View cloud optimization case study →', signal: 'Scale feels predictable instead of expensive.' },
+  { key: 'operate', title: 'Operate & Optimize', timeframe: 'Month 5+', outcome: 'A living system with monitoring, escalation, and continuous improvement.', proof: 'View agent monitoring dashboard →', signal: 'You stop maintaining tools and start reading decisions.' },
 ];
 
 const actions = [
@@ -28,10 +28,12 @@ const actions = [
   { label: 'Review Case Studies', href: '/case-studies/', accent: 'from-blue-600 to-cyan-600' },
 ];
 
-const evidences = [
-  { title: 'Case Study', detail: 'Support deflection reached in 3 days.', href: '/case-studies/' },
-  { title: 'Cloud Optimization', detail: 'Reporting pipeline reduced to overnight runs.', href: '/case-studies/' },
-  { title: 'Compliance & Controls', detail: 'SOC 2 evidence automation completed ahead of plan.', href: '/case-studies/' },
+const resultRows = [
+  { effect: 'Support deflection', value: '64% faster resolution' },
+  { effect: 'Cloud reporting', value: 'Overnight pipeline delivery' },
+  { effect: 'Compliance evidence', value: 'SOC 2 ahead of schedule' },
+  { effect: 'Operational cost', value: 'Predictable AI-backed run rates' },
+  { effect: 'Agent capacity', value: 'Coverage without headcount growth' },
 ];
 
 export default function TransformationRoadmapPage() {
@@ -46,24 +48,23 @@ export default function TransformationRoadmapPage() {
             A tested path from problem to outcome
           </h1>
           <p className="mt-5 text-lg text-slate-300 max-w-2xl">
-            This roadmap comes from our most successful client transformations. Use it as a blueprint for your next phase.
+            This roadmap comes from successful client transformations and works as a blueprint for your next initiative.
           </p>
         </div>
       </section>
 
       <section className="pb-14">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {evidences.map((item) => (
-              <Link
-                key={item.title}
-                href={item.href}
-                className="rounded-xl border border-slate-800 bg-slate-900/60 p-5 hover:border-purple-500/40 transition-colors"
-              >
-                <p className="text-xs font-semibold uppercase text-purple-400">{item.title}</p>
-                <p className="mt-2 text-sm text-slate-300">{item.detail}</p>
-              </Link>
-            ))}
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8">
+            <h2 className="text-xl font-bold text-white mb-4">Outcome evidence</h2>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {resultRows.map((row) => (
+                <div key={row.effect} className="rounded-xl border border-slate-800 bg-slate-950/70 p-4">
+                  <p className="text-xs font-semibold text-purple-400">{row.effect}</p>
+                  <p className="mt-2 text-sm text-slate-200">{row.value}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -85,7 +86,7 @@ export default function TransformationRoadmapPage() {
                     <p className="text-sm text-slate-400 mt-1">{p.timeframe}</p>
                   </div>
                   <div className="text-right">
-                    <p className="text-xs text-slate-400">Model signal</p>
+                    <p className="text-xs text-slate-400">Decision signal</p>
                     <p className="text-sm text-emerald-400">{p.signal}</p>
                   </div>
                 </div>
@@ -100,7 +101,7 @@ export default function TransformationRoadmapPage() {
                     <p className="text-slate-300">{p.proof}</p>
                   </div>
                   <div className="rounded-xl bg-slate-950/70 border border-slate-800 p-4">
-                    <p className="text-xs font-semibold text-purple-400 mb-1">Decision signal</p>
+                    <p className="text-xs font-semibold text-purple-400 mb-1">Signal</p>
                     <p className="text-slate-200">{p.signal}</p>
                   </div>
                 </div>
@@ -114,7 +115,7 @@ export default function TransformationRoadmapPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-6 sm:p-8">
             <h2 className="text-2xl font-bold text-white mb-3">Pick your next act</h2>
-            <p className="text-slate-300 mb-5">Each step below is a live route that starts a real conversation or calculation.</p>
+            <p className="text-slate-300 mb-5">Each step below starts a real conversation or calculation.</p>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {actions.map((a) => (
                 <Link
