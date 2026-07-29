@@ -230,8 +230,8 @@ export default function CaseStudies() {
               Tell us your goal and we’ll design a tailored engagement plan — including estimated ROI, timeline, and team allocation.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <Link href="/configurator/" className="btn-primary text-lg px-10 py-4">
-                ⚡ Get Your Custom Proposal
+              <Link href="/contact/" className="btn-primary text-lg px-10 py-4">
+                ⚡ Get Your Custom Proposal →
               </Link>
               <Link href="/contact/" className="btn-secondary text-lg px-10 py-4">
                 Talk to an Engineer

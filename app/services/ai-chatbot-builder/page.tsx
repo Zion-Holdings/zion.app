@@ -24,6 +24,14 @@ export default function AiChatbotBuilderServicePage() {
         </ul>
         <Link href="/contact/" className="btn-primary">Request early access</Link>
       </div>
-    </main>
+    
+        <div className="mt-12">
+          <h3 className="text-sm font-semibold text-slate-300 mb-2">Related services</h3>
+          <div className="flex flex-wrap gap-2">
+            <Link href="/services/ai-customer-support-pro/" className="text-sm text-purple-300 hover:text-purple-200 underline">ai-customer-support-pro</Link>
+<Link href="/services/ai-email-intelligence/" className="text-sm text-purple-300 hover:text-purple-200 underline">ai-email-intelligence</Link>
+          </div>
+        </div>
+</main>
   );
 }

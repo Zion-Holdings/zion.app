@@ -33,6 +33,14 @@ export default function ServicePage() {
         <Link href="/" className="px-4 py-2 rounded bg-black text-white">Visit Zion Tech Group</Link>
         <Link href="/free-ai-readiness-audit" className="px-4 py-2 rounded border">Get Free AI Readiness Audit</Link>
       </div>
-    </main>
+    
+        <div className="mt-12">
+          <h3 className="text-sm font-semibold text-slate-300 mb-2">Related services</h3>
+          <div className="flex flex-wrap gap-2">
+            <Link href="/services/cloud-cost-optimization-platform/" className="text-sm text-purple-300 hover:text-purple-200 underline">cloud-cost-optimization-platform</Link>
+<Link href="/services/devops-automation/" className="text-sm text-purple-300 hover:text-purple-200 underline">devops-automation</Link>
+          </div>
+        </div>
+</main>
   );
 }

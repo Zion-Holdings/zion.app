@@ -23,6 +23,14 @@ export default function AiCustomerSupportProServicePage() {
         </ul>
         <Link href="/contact/" className="btn-primary">Start a pilot</Link>
       </div>
-    </main>
+    
+        <div className="mt-12">
+          <h3 className="text-sm font-semibold text-slate-300 mb-2">Related services</h3>
+          <div className="flex flex-wrap gap-2">
+            <Link href="/services/ai-email-intelligence/" className="text-sm text-purple-300 hover:text-purple-200 underline">ai-email-intelligence</Link>
+<Link href="/services/ai-customer-success-churn-prevention/" className="text-sm text-purple-300 hover:text-purple-200 underline">ai-customer-success-churn-prevention</Link>
+          </div>
+        </div>
+</main>
   );
 }
