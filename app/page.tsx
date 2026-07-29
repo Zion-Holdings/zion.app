@@ -373,8 +373,8 @@ export default function HomePage() {
               <Link href="/search/" className="px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/60 text-slate-300 text-sm hover:bg-slate-700/80 hover:text-purple-300 hover:border-purple-500/30 transition-all">
                 🔍 Search Services
               </Link>
-              <Link href="/solutions/" className="px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/60 text-slate-300 text-sm hover:bg-slate-700/80 hover:text-purple-300 hover:border-purple-500/30 transition-all">
-                🏭 Industries
+              <Link href="/services/" className="px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/60 text-slate-300 text-sm hover:bg-slate-700/80 hover:text-purple-300 hover:border-purple-500/30 transition-all">
+                🏭 Solutions
               </Link>
               <Link href="/pricing/" className="px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/60 text-slate-300 text-sm hover:bg-slate-700/80 hover:text-purple-300 hover:border-purple-500/30 transition-all">
                 💰 Pricing
