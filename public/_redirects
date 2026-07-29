@@ -140,6 +140,14 @@
 /case-studies/  /case-studies/index.html  200
 /industries    /industries/index.html  200
 /industries/  /industries/index.html  200
+/ai-ci-cd-automation    /ai-ci-cd-automation/index.html  200
+/ai-ci-cd-automation/  /ai-ci-cd-automation/index.html  200
+/ai-cost-optimization    /ai-cost-optimization/index.html  200
+/ai-cost-optimization/  /ai-cost-optimization/index.html  200
+/ai-incident-response    /ai-incident-response/index.html  200
+/ai-incident-response/  /ai-incident-response/index.html  200
+/ai-vendor-management    /ai-vendor-management/index.html  200
+/ai-vendor-management/  /ai-vendor-management/index.html  200
 
 # Live fallback routes
 /mobile-app  /mobile-app/index.html  200
