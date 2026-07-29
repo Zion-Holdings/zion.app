@@ -1,6 +1,22 @@
 'use client';
 
 import Link from 'next/link';
+
+export const metadata = {
+  title: 'Industries | Zion Tech Group',
+  description:
+    'AI and IT services across industries with operational implementation, measurable ROI, and compliance-ready delivery for healthcare, fintech, manufacturing, energy, retail, and technology.',
+  openGraph: {
+    title: 'Industries | Zion Tech Group',
+    description:
+      'AI-native delivery across healthcare, fintech, manufacturing, energy, retail, and technology with measurable outcomes.',
+    url: 'https://ziontechgroup.com/industries/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    locale: 'en_US',
+  },
+  alternates: { canonical: '/industries/' },
+};
 import { useState, useMemo } from 'react';
 
 // Industry data with SEO-optimized content

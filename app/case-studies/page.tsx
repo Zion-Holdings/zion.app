@@ -2,6 +2,22 @@
 
 import Link from 'next/link';
 
+export const metadata = {
+  title: 'Case Studies | Zion Tech Group',
+  description:
+    'Enterprise AI and IT case studies with measurable outcomes: support automation, cloud cost optimization, incident response, RAG onboarding, and execution velocity improvements.',
+  openGraph: {
+    title: 'Case Studies | Zion Tech Group',
+    description:
+      'Measurable AI and IT delivery outcomes from managed operations, automation, cloud, and enterprise transformation.',
+    url: 'https://ziontechgroup.com/case-studies/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    locale: 'en_US',
+  },
+  alternates: { canonical: '/case-studies/' },
+};
+
 const studies = [
   {
     slug: 'ai-customer-support-64pct-less-resolution-time',
