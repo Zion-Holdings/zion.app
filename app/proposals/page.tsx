@@ -4,66 +4,73 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'Proposals | Zion Tech Group',
   description:
-    'Request a tailored AI and IT services proposal with timeline, team, pricing, and ROI estimates.',
+    'Request a tailored AI and IT services proposal with scoped outcomes, milestones, resourcing, and cost estimates.',
+  openGraph: {
+    title: 'Proposals | Zion Tech Group',
+    description:
+      'Request a tailored AI and IT services proposal with scoped outcomes and implementation support.',
+    url: 'https://ziontechgroup.com/proposals/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    locale: 'en_US',
+  },
   alternates: { canonical: '/proposals/' },
 };
 
-const steps = [
-  {
-    title: 'Share your goal',
-    body: 'Tell us your outcomes, constraints, timeline, and success criteria.',
-  },
-  {
-    title: 'Review fit assessment',
-    body: 'We return a fit review, recommended model, and estimated timeline.',
-  },
-  {
-    title: 'Receive proposal',
-    body: 'Final proposal includes scope, team, pricing, milestones, and ROI assumptions.',
-  },
-];
-
 export default function ProposalsPage() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
-      <div className="container-page">
-        <div className="text-center max-w-3xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Proposals</h1>
-          <p className="text-slate-300 text-lg mb-8">
-            Request a tailored AI and IT services proposal with timeline, team, pricing, and ROI estimates.
+    <main className="min-h-screen bg-slate-950">
+      <div className="container-page py-20">
+        <nav aria-label="Breadcrumb" className="hidden">
+          <span>Home</span>
+          <span>Proposals</span>
+        </nav>
+
+        <div className="text-center max-w-4xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-4 py-1.5 mb-6">
+            <span className="text-xs">📝</span>
+            <span className="text-xs text-emerald-300 font-medium uppercase tracking-wider">Tailored Proposals</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Request a <span className="gradient-text">Proposal</span>
+          </h1>
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+            Share your constraints and success metrics. We’ll return a scoped engagement plan with outcomes, timeline, team, and estimated ROI.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-10">
-            <Link href="/contact/" className="btn-primary text-lg px-10 py-4">
-              Request proposal
-            </Link>
-            <Link href="/services/" className="btn-secondary text-lg px-10 py-4">
-              Browse services
-            </Link>
+          <div className="flex flex-wrap justify-center gap-3 mt-6">
+            <a href="/contact/" className="btn-primary text-lg px-8 py-3">Start your proposal</a>
+            <a href="/services/" className="btn-secondary text-lg px-8 py-3">Browse services</a>
           </div>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {steps.map((s) => (
-            <div key={s.title} className="glass-card p-6">
-              <h3 className="text-xl font-semibold text-white mb-2">{s.title}</h3>
-              <p className="text-slate-300 text-sm leading-relaxed">{s.body}</p>
-            </div>
-          ))}
+        <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto mb-16">
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-8">
+            <h2 className="text-2xl font-bold text-white mb-2">Fixed-Scope Delivery</h2>
+            <p className="text-slate-300 leading-relaxed">Clear deliverables, milestone payments, and acceptance criteria suited to executive approval cycles.</p>
+          </div>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-8">
+            <h2 className="text-2xl font-bold text-white mb-2">Managed Engagement</h2>
+            <p className="text-slate-300 leading-relaxed">Ongoing service packages with predictable monthly spend, SLA coverage, and continuous optimization.</p>
+          </div>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-8">
+            <h2 className="text-2xl font-bold text-white mb-2">Advisory & Strategy</h2>
+            <p className="text-slate-300 leading-relaxed">Architecture, roadmap, and procurement guidance for AI, cloud, security, and IT operations.</p>
+          </div>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-8">
+            <h2 className="text-2xl font-bold text-white mb-2">Pilot Program</h2>
+            <p className="text-slate-300 leading-relaxed">Time-boxed proof-of-concept engagements with measurable success criteria before full deployment.</p>
+          </div>
         </div>
 
-        <div className="mt-16 text-center">
+        <div className="text-center">
           <div className="inline-flex flex-col items-center gap-4 rounded-2xl border border-purple-500/30 bg-purple-900/20 px-8 py-10">
-            <h2 className="text-3xl font-bold text-white">Get a proposal you can act on</h2>
+            <h3 className="text-3xl font-bold text-white">Tell us your goal</h3>
             <p className="text-slate-300 max-w-2xl">
-              Share your goal, constraints, and success criteria. We’ll return a proposal with fit assessment, team structure, timeline, and estimated ROI.
+              We’ll return a scoped proposal with implementation steps, milestones, owners, estimated ROI, and risk controls.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <Link href="/contact/" className="btn-primary text-lg px-10 py-4">
-                Start proposal request
-              </Link>
-              <a href="mailto:kleber@ziontechgroup.com" className="btn-secondary text-lg px-10 py-4">
-                Email us
-              </a>
+              <a href="/contact/" className="btn-primary text-lg px-10 py-4">Request proposal →</a>
+              <a href="mailto:kleber@ziontechgroup.com" className="btn-secondary text-lg px-10 py-4">Email us</a>
             </div>
           </div>
         </div>

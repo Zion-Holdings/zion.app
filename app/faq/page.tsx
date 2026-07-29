@@ -4,71 +4,73 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'FAQ | Zion Tech Group',
   description:
-    'Common questions about AI and IT services, engagement models, pricing, security, and support from Zion Tech Group.',
+    'Common questions about AI and IT services, engagement models, pricing, onboarding, support, security, and deployment timelines.',
+  openGraph: {
+    title: 'FAQ | Zion Tech Group',
+    description:
+      'Common questions about AI and IT services, timing, security, pricing, and onboarding.',
+    url: 'https://ziontechgroup.com/faq/',
+    siteName: 'Zion Tech Group',
+    type: 'website',
+    locale: 'en_US',
+  },
   alternates: { canonical: '/faq/' },
 };
 
-const items = [
-  {
-    q: 'What industries does Zion Tech Group serve?',
-    a: 'We serve 10+ industries with AI and IT services, matching solutions to business outcomes and compliance requirements.',
-  },
-  {
-    q: 'How fast can engagement start?',
-    a: 'Many engagements start within 7 days after scoping, resource alignment, and security steps.',
-  },
-  {
-    q: 'What engagement models are available?',
-    a: 'Time and materials, fixed-price, retainer, and milestone-based options with clear acceptance criteria.',
-  },
-  {
-    q: 'Do you offer HIPAA/security-ready delivery?',
-    a: 'Yes. We use access controls, audit logging, data minimization, and contract terms aligned to common compliance needs.',
-  },
-  {
-    q: 'What does support look like?',
-    a: '24/7 coverage, US-based support team, on-call escalation paths, and response SLAs by service tier.',
-  },
-];
-
-export default function FaqPage() {
+export default function FAQPage() {
   return (
-    <main className="min-h-screen bg-slate-950 py-20">
-      <div className="container-page max-w-4xl">
-        <div className="text-center mb-10">
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">FAQ</h1>
-          <p className="text-slate-300 text-lg">
-            Common questions about AI and IT services, engagement models, pricing, and support.
+    <main className="min-h-screen bg-slate-950">
+      <div className="container-page py-20">
+        <nav aria-label="Breadcrumb" className="hidden">
+          <span>Home</span>
+          <span>FAQ</span>
+        </nav>
+
+        <div className="text-center max-w-4xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/20 rounded-full px-4 py-1.5 mb-6">
+            <span className="text-xs">💬</span>
+            <span className="text-xs text-emerald-300 font-medium uppercase tracking-wider">Help & FAQs</span>
+          </div>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+            Frequently Asked <span className="gradient-text">Questions</span>
+          </h1>
+          <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
+            Straight answers about AI and IT services, pricing, onboarding, support, and what to expect from a Zion engagement.
           </p>
-          <div className="mt-6">
-            <Link href="/contact/" className="btn-primary text-lg px-10 py-4">
-              Ask a question
-            </Link>
+          <div className="flex flex-wrap justify-center gap-3 mt-6">
+            <a href="/contact/" className="btn-primary text-lg px-8 py-3">Ask a question</a>
+            <a href="/services/" className="btn-secondary text-lg px-8 py-3">Browse services</a>
           </div>
         </div>
 
-        <div className="space-y-6">
-          {items.map((item) => (
-            <div key={item.q} className="glass-card p-6">
-              <h3 className="text-white font-semibold mb-2">{item.q}</h3>
-              <p className="text-slate-300 text-sm leading-relaxed">{item.a}</p>
-            </div>
-          ))}
+        <div className="grid gap-6 max-w-4xl mx-auto mb-16">
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-8">
+            <h2 className="text-2xl font-bold text-white mb-2">How fast can you start?</h2>
+            <p className="text-slate-300 leading-relaxed">Most engagements begin within 7 days. Managed services and advisory work can onboard faster if the scope is clear.</p>
+          </div>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-8">
+            <h2 className="text-2xl font-bold text-white mb-2">Do you support HIPAA and compliance regimes?</h2>
+            <p className="text-slate-300 leading-relaxed">Yes. We design delivery with privacy-first controls and can support compliance evidence packages and operational requirements.</p>
+          </div>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-8">
+            <h2 className="text-2xl font-bold text-white mb-2">What does managed AI include?</h2>
+            <p className="text-slate-300 leading-relaxed">Monitoring, cost controls, model updates, observability, performance tuning, and incident response for production AI systems.</p>
+          </div>
+          <div className="rounded-2xl border border-slate-800 bg-slate-900/60 p-8">
+            <h2 className="text-2xl font-bold text-white mb-2">How do you price engagements?</h2>
+            <p className="text-slate-300 leading-relaxed">We use time-and-materials, fixed-price, and retainer models. After a short scoping call, we return a proposal with clear cost structure and milestones.</p>
+          </div>
         </div>
 
-        <div className="mt-16 text-center">
+        <div className="text-center">
           <div className="inline-flex flex-col items-center gap-4 rounded-2xl border border-purple-500/30 bg-purple-900/20 px-8 py-10">
-            <h2 className="text-3xl font-bold text-white">Need clarification?</h2>
+            <h3 className="text-3xl font-bold text-white">Still have questions?</h3>
             <p className="text-slate-300 max-w-2xl">
-              If you don’t see your answer here, contact us. We’ll reply with fit guidance, a proposed model, and next steps.
+              Email or call us directly. Most questions get a detailed reply within one business hour.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
-              <Link href="/contact/" className="btn-primary text-lg px-10 py-4">
-                Contact us
-              </Link>
-              <a href="mailto:kleber@ziontechgroup.com" className="btn-secondary text-lg px-10 py-4">
-                Email us
-              </a>
+              <a href="/contact/" className="btn-primary text-lg px-10 py-4">Contact us →</a>
+              <a href="mailto:kleber@ziontechgroup.com" className="btn-secondary text-lg px-10 py-4">Email us</a>
             </div>
           </div>
         </div>
