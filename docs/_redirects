@@ -1,6 +1,6 @@
 /services/ai-agents-autonomous    /services/ai-agents-autonomous/    200
-/faq/ /about/ 301
-/faq /about/ 301
+/faq/    /faq/index.html    200
+/faq /faq/index.html 200
 /help/ /help/index.html 200
 /help /help/index.html 200
 /free-tools-hub/    /tools/    301
