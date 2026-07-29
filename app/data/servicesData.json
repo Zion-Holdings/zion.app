@@ -535617,5 +535617,2919 @@
     "icon": "\ud83d\udca1",
     "href": "/services/speech-analytics-autonomous-customer-service-ai-35f5d6da",
     "popular": false
+  },
+  {
+    "name": "Maintenance Optimization AI Financial Planning & Analysis",
+    "description": "maintenance optimization solution for edtech industry. Generates financial forecasts, budget plans, and performance analyses using machine learning models.",
+    "category": "ai",
+    "industry": "EdTech",
+    "features": [
+      "Budget forecasting",
+      "Scenario modeling"
+    ],
+    "benefits": [
+      "90% faster FP&A",
+      "Better accuracy"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2499",
+      "enterprise": "7999"
+    },
+    "id": "maintenance-optimization-ai-financial-planning--analysis-2fe6820b",
+    "timestamp": "2026-07-29T10:05:38.636001+00:00",
+    "contactInfo": {
+      "website": "/services/maintenance-optimization-ai-financial-planning--analysis-2fe6820b",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/maintenance-optimization-ai-financial-planning--analysis-2fe6820b",
+    "popular": false
+  },
+  {
+    "name": "Customer Portal Real-Time Data Pipeline Platform",
+    "description": "customer portal solution for shipping industry. Creates and manages real-time data pipelines with automated ETL and streaming analytics.",
+    "category": "ai",
+    "industry": "Shipping",
+    "features": [
+      "Real-time ETL",
+      "Streaming analytics"
+    ],
+    "benefits": [
+      "Real-time insights",
+      "Data quality assured"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "id": "customer-portal-real-time-data-pipeline-platform-3f94ea74",
+    "timestamp": "2026-07-29T10:05:38.636115+00:00",
+    "contactInfo": {
+      "website": "/services/customer-portal-real-time-data-pipeline-platform-3f94ea74",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/customer-portal-real-time-data-pipeline-platform-3f94ea74",
+    "popular": false
+  },
+  {
+    "name": "Medical Device Management AI Supply Chain Optimization",
+    "description": "medical device management solution for hedge funds industry. Optimizes supply chain operations using predictive analytics, demand forecasting, and route optimization.",
+    "category": "ai",
+    "industry": "Hedge Funds",
+    "features": [
+      "Demand forecasting",
+      "Route optimization"
+    ],
+    "benefits": [
+      "30% cost reduction",
+      "Better inventory"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "id": "medical-device-management-ai-supply-chain-optimization-619d55cd",
+    "timestamp": "2026-07-29T10:05:38.636159+00:00",
+    "contactInfo": {
+      "website": "/services/medical-device-management-ai-supply-chain-optimization-619d55cd",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/medical-device-management-ai-supply-chain-optimization-619d55cd",
+    "popular": false
+  },
+  {
+    "name": "Patient Experience Intelligent Document Processing AI",
+    "description": "patient experience solution for trade associations industry. Processes invoices, contracts, and forms with 99% accuracy, extracting data and routing documents automatically.",
+    "category": "ai",
+    "industry": "Trade Associations",
+    "features": [
+      "Multi-format OCR",
+      "Data extraction"
+    ],
+    "benefits": [
+      "99% accuracy",
+      "Zero manual entry"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "999",
+      "enterprise": "2999"
+    },
+    "id": "patient-experience-intelligent-document-processing-ai-8e0dd52d",
+    "timestamp": "2026-07-29T10:05:38.636184+00:00",
+    "contactInfo": {
+      "website": "/services/patient-experience-intelligent-document-processing-ai-8e0dd52d",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/patient-experience-intelligent-document-processing-ai-8e0dd52d",
+    "popular": false
+  },
+  {
+    "name": "Warehouse Automation Multi-Cloud Cost Management Platform",
+    "description": "warehouse automation solution for agriculture industry. Unified platform for monitoring, optimizing, and governing costs across AWS, Azure, and GCP.",
+    "category": "ai",
+    "industry": "Agriculture",
+    "features": [
+      "Cross-cloud monitoring",
+      "Cost optimization"
+    ],
+    "benefits": [
+      "35% cost savings",
+      "Unified view"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "id": "warehouse-automation-multi-cloud-cost-management-platform-1e35d0d7",
+    "timestamp": "2026-07-29T10:05:38.636207+00:00",
+    "contactInfo": {
+      "website": "/services/warehouse-automation-multi-cloud-cost-management-platform-1e35d0d7",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/warehouse-automation-multi-cloud-cost-management-platform-1e35d0d7",
+    "popular": false
+  },
+  {
+    "name": "Report Generation AI-Powered Data Quality Manager",
+    "description": "report generation solution for e-commerce industry. Automatically detects, corrects, and prevents data quality issues using machine learning.",
+    "category": "ai",
+    "industry": "E-commerce",
+    "features": [
+      "Anomaly detection",
+      "Auto-correction"
+    ],
+    "benefits": [
+      "95% data quality",
+      "Automated cleanup"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "3999"
+    },
+    "id": "report-generation-ai-powered-data-quality-manager-df7cb8cf",
+    "timestamp": "2026-07-29T10:05:38.636231+00:00",
+    "contactInfo": {
+      "website": "/services/report-generation-ai-powered-data-quality-manager-df7cb8cf",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/report-generation-ai-powered-data-quality-manager-df7cb8cf",
+    "popular": false
+  },
+  {
+    "name": "Meeting Management Zero-Trust Identity & Access Manager",
+    "description": "meeting management solution for personal care industry. Implements zero-trust security architecture with continuous authentication and adaptive access controls.",
+    "category": "ai",
+    "industry": "Personal Care",
+    "features": [
+      "Continuous auth",
+      "Adaptive controls"
+    ],
+    "benefits": [
+      "99.9% unauthorized access blocked",
+      "Secure remote work"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1999",
+      "enterprise": "6999"
+    },
+    "id": "meeting-management-zero-trust-identity--access-manager-248a1f3e",
+    "timestamp": "2026-07-29T10:05:38.636255+00:00",
+    "contactInfo": {
+      "website": "/services/meeting-management-zero-trust-identity--access-manager-248a1f3e",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/meeting-management-zero-trust-identity--access-manager-248a1f3e",
+    "popular": false
+  },
+  {
+    "name": "Subscription Management Multi-Cloud Cost Management Platform",
+    "description": "subscription management solution for finance industry. Unified platform for monitoring, optimizing, and governing costs across AWS, Azure, and GCP.",
+    "category": "ai",
+    "industry": "Finance",
+    "features": [
+      "Cross-cloud monitoring",
+      "Cost optimization"
+    ],
+    "benefits": [
+      "35% cost savings",
+      "Unified view"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "id": "subscription-management-multi-cloud-cost-management-platform-fe336561",
+    "timestamp": "2026-07-29T10:05:38.636282+00:00",
+    "contactInfo": {
+      "website": "/services/subscription-management-multi-cloud-cost-management-platform-fe336561",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/subscription-management-multi-cloud-cost-management-platform-fe336561",
+    "popular": false
+  },
+  {
+    "name": "Appointment Scheduling AI-Powered Threat Detection System",
+    "description": "appointment scheduling solution for regtech industry. Real-time threat detection using behavioral analysis, anomaly detection, and machine learning.",
+    "category": "ai",
+    "industry": "RegTech",
+    "features": [
+      "Behavioral analysis",
+      "Anomaly detection"
+    ],
+    "benefits": [
+      "Zero-day protection",
+      "99% attack prevention"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2499",
+      "enterprise": "9999"
+    },
+    "id": "appointment-scheduling-ai-powered-threat-detection-system-a7ea85ce",
+    "timestamp": "2026-07-29T10:05:38.636303+00:00",
+    "contactInfo": {
+      "website": "/services/appointment-scheduling-ai-powered-threat-detection-system-a7ea85ce",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/appointment-scheduling-ai-powered-threat-detection-system-a7ea85ce",
+    "popular": false
+  },
+  {
+    "name": "Threat Detection AI Supply Chain Optimization",
+    "description": "threat detection solution for subscription services industry. Optimizes supply chain operations using predictive analytics, demand forecasting, and route optimization.",
+    "category": "ai",
+    "industry": "Subscription Services",
+    "features": [
+      "Demand forecasting",
+      "Route optimization"
+    ],
+    "benefits": [
+      "30% cost reduction",
+      "Better inventory"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "id": "threat-detection-ai-supply-chain-optimization-4f835a1c",
+    "timestamp": "2026-07-29T10:05:38.636320+00:00",
+    "contactInfo": {
+      "website": "/services/threat-detection-ai-supply-chain-optimization-4f835a1c",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/threat-detection-ai-supply-chain-optimization-4f835a1c",
+    "popular": false
+  },
+  {
+    "name": "Social Media Management AI-Powered Market Intelligence",
+    "description": "social media management solution for automotive industry. Monitors market trends, competitor activities, and industry news to provide actionable insights.",
+    "category": "ai",
+    "industry": "Automotive",
+    "features": [
+      "Trend monitoring",
+      "Competitor analysis"
+    ],
+    "benefits": [
+      "Real-time insights",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1999",
+      "enterprise": "5999"
+    },
+    "id": "social-media-management-ai-powered-market-intelligence-e3dbc5e7",
+    "timestamp": "2026-07-29T10:05:38.636337+00:00",
+    "contactInfo": {
+      "website": "/services/social-media-management-ai-powered-market-intelligence-e3dbc5e7",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/social-media-management-ai-powered-market-intelligence-e3dbc5e7",
+    "popular": false
+  },
+  {
+    "name": "E-discovery Zero-Trust Identity & Access Manager",
+    "description": "e-discovery solution for asset management industry. Implements zero-trust security architecture with continuous authentication and adaptive access controls.",
+    "category": "ai",
+    "industry": "Asset Management",
+    "features": [
+      "Continuous auth",
+      "Adaptive controls"
+    ],
+    "benefits": [
+      "99.9% unauthorized access blocked",
+      "Secure remote work"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1999",
+      "enterprise": "6999"
+    },
+    "id": "e-discovery-zero-trust-identity--access-manager-fccab397",
+    "timestamp": "2026-07-29T10:05:38.636353+00:00",
+    "contactInfo": {
+      "website": "/services/e-discovery-zero-trust-identity--access-manager-fccab397",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/e-discovery-zero-trust-identity--access-manager-fccab397",
+    "popular": false
+  },
+  {
+    "name": "AI-Powered AI-Powered Predictive Analytics Suite",
+    "description": "ai-powered solution for  venture capital industry. End-to-end predictive analytics platform that forecasts market trends, customer behavior, and operational metrics with 95% accuracy.",
+    "category": "ai",
+    "industry": " venture Capital",
+    "features": [
+      "Multi-model forecasting",
+      "Real-time predictions",
+      "Anomaly detection"
+    ],
+    "benefits": [
+      "95% prediction accuracy",
+      "30% revenue increase"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4999",
+      "enterprise": "14999"
+    },
+    "id": "ai-powered-ai-powered-predictive-analytics-suite-ac927465",
+    "timestamp": "2026-07-29T10:05:38.636369+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-ai-powered-predictive-analytics-suite-ac927465",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-ai-powered-predictive-analytics-suite-ac927465",
+    "popular": false
+  },
+  {
+    "name": "Partnership Management AI-Powered SEO Content Engine",
+    "description": "partnership management solution for environmental services industry. Generates SEO-optimized content at scale, including blog posts, product descriptions, and marketing copy.",
+    "category": "ai",
+    "industry": "Environmental Services",
+    "features": [
+      "SEO keyword targeting",
+      "Brand voice adaptation"
+    ],
+    "benefits": [
+      "10x content output",
+      "Ranking improvements"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "id": "partnership-management-ai-powered-seo-content-engine-a1e6bc20",
+    "timestamp": "2026-07-29T10:05:38.636386+00:00",
+    "contactInfo": {
+      "website": "/services/partnership-management-ai-powered-seo-content-engine-a1e6bc20",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/partnership-management-ai-powered-seo-content-engine-a1e6bc20",
+    "popular": false
+  },
+  {
+    "name": "Contract Management AI-Powered Data Quality Manager",
+    "description": "contract management solution for space technology industry. Automatically detects, corrects, and prevents data quality issues using machine learning.",
+    "category": "ai",
+    "industry": "Space Technology",
+    "features": [
+      "Anomaly detection",
+      "Auto-correction"
+    ],
+    "benefits": [
+      "95% data quality",
+      "Automated cleanup"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "3999"
+    },
+    "id": "contract-management-ai-powered-data-quality-manager-bca16570",
+    "timestamp": "2026-07-29T10:05:38.636406+00:00",
+    "contactInfo": {
+      "website": "/services/contract-management-ai-powered-data-quality-manager-bca16570",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/contract-management-ai-powered-data-quality-manager-bca16570",
+    "popular": false
+  },
+  {
+    "name": "Drug Discovery Zero-Trust Identity & Access Manager",
+    "description": "drug discovery solution for trade associations industry. Implements zero-trust security architecture with continuous authentication and adaptive access controls.",
+    "category": "ai",
+    "industry": "Trade Associations",
+    "features": [
+      "Continuous auth",
+      "Adaptive controls"
+    ],
+    "benefits": [
+      "99.9% unauthorized access blocked",
+      "Secure remote work"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1999",
+      "enterprise": "6999"
+    },
+    "id": "drug-discovery-zero-trust-identity--access-manager-5786166f",
+    "timestamp": "2026-07-29T10:05:38.636424+00:00",
+    "contactInfo": {
+      "website": "/services/drug-discovery-zero-trust-identity--access-manager-5786166f",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/drug-discovery-zero-trust-identity--access-manager-5786166f",
+    "popular": false
+  },
+  {
+    "name": "Feedback Management Multi-Cloud Cost Management Platform",
+    "description": "feedback management solution for smart city industry. Unified platform for monitoring, optimizing, and governing costs across AWS, Azure, and GCP.",
+    "category": "ai",
+    "industry": "Smart City",
+    "features": [
+      "Cross-cloud monitoring",
+      "Cost optimization"
+    ],
+    "benefits": [
+      "35% cost savings",
+      "Unified view"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "id": "feedback-management-multi-cloud-cost-management-platform-b73ea96b",
+    "timestamp": "2026-07-29T10:05:38.636440+00:00",
+    "contactInfo": {
+      "website": "/services/feedback-management-multi-cloud-cost-management-platform-b73ea96b",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/feedback-management-multi-cloud-cost-management-platform-b73ea96b",
+    "popular": false
+  },
+  {
+    "name": "AI-Powered AI Code Generation & Optimization",
+    "description": "ai-powered solution for aviation industry. Generates production-ready code from natural language descriptions, optimizes existing code for performance.",
+    "category": "ai",
+    "industry": "Aviation",
+    "features": [
+      "Natural language to code",
+      "Code optimization"
+    ],
+    "benefits": [
+      "10x faster development",
+      "Better code quality"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "id": "ai-powered-ai-code-generation--optimization-3f4ce591",
+    "timestamp": "2026-07-29T10:05:38.636456+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-ai-code-generation--optimization-3f4ce591",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-ai-code-generation--optimization-3f4ce591",
+    "popular": false
+  },
+  {
+    "name": "Omnichannel Experience AI-Powered Predictive Analytics Suite",
+    "description": "omnichannel experience solution for smart city industry. End-to-end predictive analytics platform that forecasts market trends, customer behavior, and operational metrics with 95% accuracy.",
+    "category": "ai",
+    "industry": "Smart City",
+    "features": [
+      "Multi-model forecasting",
+      "Real-time predictions",
+      "Anomaly detection"
+    ],
+    "benefits": [
+      "95% prediction accuracy",
+      "30% revenue increase"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4999",
+      "enterprise": "14999"
+    },
+    "id": "omnichannel-experience-ai-powered-predictive-analytics-suite-4fcbf276",
+    "timestamp": "2026-07-29T10:05:38.636476+00:00",
+    "contactInfo": {
+      "website": "/services/omnichannel-experience-ai-powered-predictive-analytics-suite-4fcbf276",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/omnichannel-experience-ai-powered-predictive-analytics-suite-4fcbf276",
+    "popular": false
+  },
+  {
+    "name": "Communication Management AI Customer Churn Prediction",
+    "description": "communication management solution for smart city industry. Identifies at-risk customers before they churn using behavioral patterns and engagement metrics.",
+    "category": "ai",
+    "industry": "Smart City",
+    "features": [
+      "Churn risk scoring",
+      "Early warning system"
+    ],
+    "benefits": [
+      "50% churn reduction",
+      "Higher retention"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "3999"
+    },
+    "id": "communication-management-ai-customer-churn-prediction-7e72bc97",
+    "timestamp": "2026-07-29T10:05:38.636493+00:00",
+    "contactInfo": {
+      "website": "/services/communication-management-ai-customer-churn-prediction-7e72bc97",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/communication-management-ai-customer-churn-prediction-7e72bc97",
+    "popular": false
+  },
+  {
+    "name": "Microservices Management AI Supply Chain Optimization",
+    "description": "microservices management solution for defense industry. Optimizes supply chain operations using predictive analytics, demand forecasting, and route optimization.",
+    "category": "ai",
+    "industry": "Defense",
+    "features": [
+      "Demand forecasting",
+      "Route optimization"
+    ],
+    "benefits": [
+      "30% cost reduction",
+      "Better inventory"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "id": "microservices-management-ai-supply-chain-optimization-52f84912",
+    "timestamp": "2026-07-29T10:05:38.636507+00:00",
+    "contactInfo": {
+      "website": "/services/microservices-management-ai-supply-chain-optimization-52f84912",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/microservices-management-ai-supply-chain-optimization-52f84912",
+    "popular": false
+  },
+  {
+    "name": "Order Fulfillment AI-Powered Data Quality Manager",
+    "description": "order fulfillment solution for edtech industry. Automatically detects, corrects, and prevents data quality issues using machine learning.",
+    "category": "ai",
+    "industry": "EdTech",
+    "features": [
+      "Anomaly detection",
+      "Auto-correction"
+    ],
+    "benefits": [
+      "95% data quality",
+      "Automated cleanup"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "3999"
+    },
+    "id": "order-fulfillment-ai-powered-data-quality-manager-f244fedb",
+    "timestamp": "2026-07-29T10:05:38.636523+00:00",
+    "contactInfo": {
+      "website": "/services/order-fulfillment-ai-powered-data-quality-manager-f244fedb",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/order-fulfillment-ai-powered-data-quality-manager-f244fedb",
+    "popular": false
+  },
+  {
+    "name": "Invoice Processing Autonomous Customer Service AI",
+    "description": "invoice processing solution for textiles industry. Fully automated customer support system that handles 80% of inquiries without human intervention.",
+    "category": "ai",
+    "industry": "Textiles",
+    "features": [
+      "24/7 support",
+      "Multilingual NLP",
+      "Sentiment analysis"
+    ],
+    "benefits": [
+      "80% automation rate",
+      "Zero wait times"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "899",
+      "enterprise": "2999"
+    },
+    "id": "invoice-processing-autonomous-customer-service-ai-1b50fe20",
+    "timestamp": "2026-07-29T10:05:38.636539+00:00",
+    "contactInfo": {
+      "website": "/services/invoice-processing-autonomous-customer-service-ai-1b50fe20",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/invoice-processing-autonomous-customer-service-ai-1b50fe20",
+    "popular": false
+  },
+  {
+    "name": "Warehouse Automation Multi-Cloud Cost Management Platform",
+    "description": "warehouse automation solution for theme parks industry. Unified platform for monitoring, optimizing, and governing costs across AWS, Azure, and GCP.",
+    "category": "ai",
+    "industry": "Theme Parks",
+    "features": [
+      "Cross-cloud monitoring",
+      "Cost optimization"
+    ],
+    "benefits": [
+      "35% cost savings",
+      "Unified view"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "id": "warehouse-automation-multi-cloud-cost-management-platform-55646a88",
+    "timestamp": "2026-07-29T10:05:38.636554+00:00",
+    "contactInfo": {
+      "website": "/services/warehouse-automation-multi-cloud-cost-management-platform-55646a88",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/warehouse-automation-multi-cloud-cost-management-platform-55646a88",
+    "popular": false
+  },
+  {
+    "name": "Content Management AI Supply Chain Optimization",
+    "description": "content management solution for museums industry. Optimizes supply chain operations using predictive analytics, demand forecasting, and route optimization.",
+    "category": "ai",
+    "industry": "Museums",
+    "features": [
+      "Demand forecasting",
+      "Route optimization"
+    ],
+    "benefits": [
+      "30% cost reduction",
+      "Better inventory"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "id": "content-management-ai-supply-chain-optimization-3e90e152",
+    "timestamp": "2026-07-29T10:05:38.636569+00:00",
+    "contactInfo": {
+      "website": "/services/content-management-ai-supply-chain-optimization-3e90e152",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/content-management-ai-supply-chain-optimization-3e90e152",
+    "popular": false
+  },
+  {
+    "name": "Speech Analytics Real-Time Data Pipeline Platform",
+    "description": "speech analytics solution for religious organizations industry. Creates and manages real-time data pipelines with automated ETL and streaming analytics.",
+    "category": "ai",
+    "industry": "Religious Organizations",
+    "features": [
+      "Real-time ETL",
+      "Streaming analytics"
+    ],
+    "benefits": [
+      "Real-time insights",
+      "Data quality assured"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "id": "speech-analytics-real-time-data-pipeline-platform-d87b7ad7",
+    "timestamp": "2026-07-29T10:05:38.636584+00:00",
+    "contactInfo": {
+      "website": "/services/speech-analytics-real-time-data-pipeline-platform-d87b7ad7",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/speech-analytics-real-time-data-pipeline-platform-d87b7ad7",
+    "popular": false
+  },
+  {
+    "name": "Content Management AI Code Generation & Optimization",
+    "description": "content management solution for immigration industry. Generates production-ready code from natural language descriptions, optimizes existing code for performance.",
+    "category": "ai",
+    "industry": "Immigration",
+    "features": [
+      "Natural language to code",
+      "Code optimization"
+    ],
+    "benefits": [
+      "10x faster development",
+      "Better code quality"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "id": "content-management-ai-code-generation--optimization-dce936da",
+    "timestamp": "2026-07-29T10:05:38.636752+00:00",
+    "contactInfo": {
+      "website": "/services/content-management-ai-code-generation--optimization-dce936da",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/content-management-ai-code-generation--optimization-dce936da",
+    "popular": false
+  },
+  {
+    "name": "Medical Device Management Real-Time Data Pipeline Platform",
+    "description": "medical device management solution for logistics industry. Creates and manages real-time data pipelines with automated ETL and streaming analytics.",
+    "category": "ai",
+    "industry": "Logistics",
+    "features": [
+      "Real-time ETL",
+      "Streaming analytics"
+    ],
+    "benefits": [
+      "Real-time insights",
+      "Data quality assured"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "id": "medical-device-management-real-time-data-pipeline-platform-ff816ee0",
+    "timestamp": "2026-07-29T10:05:38.636770+00:00",
+    "contactInfo": {
+      "website": "/services/medical-device-management-real-time-data-pipeline-platform-ff816ee0",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/medical-device-management-real-time-data-pipeline-platform-ff816ee0",
+    "popular": false
+  },
+  {
+    "name": "Microservices Management AI Customer Churn Prediction",
+    "description": "microservices management solution for aquariums industry. Identifies at-risk customers before they churn using behavioral patterns and engagement metrics.",
+    "category": "ai",
+    "industry": "Aquariums",
+    "features": [
+      "Churn risk scoring",
+      "Early warning system"
+    ],
+    "benefits": [
+      "50% churn reduction",
+      "Higher retention"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "3999"
+    },
+    "id": "microservices-management-ai-customer-churn-prediction-f62e9dd1",
+    "timestamp": "2026-07-29T10:05:38.636784+00:00",
+    "contactInfo": {
+      "website": "/services/microservices-management-ai-customer-churn-prediction-f62e9dd1",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/microservices-management-ai-customer-churn-prediction-f62e9dd1",
+    "popular": false
+  },
+  {
+    "name": "SEO Optimization AI-Powered SEO Content Engine",
+    "description": "seo optimization solution for parks & recreation industry. Generates SEO-optimized content at scale, including blog posts, product descriptions, and marketing copy.",
+    "category": "ai",
+    "industry": "Parks & Recreation",
+    "features": [
+      "SEO keyword targeting",
+      "Brand voice adaptation"
+    ],
+    "benefits": [
+      "10x content output",
+      "Ranking improvements"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "id": "seo-optimization-ai-powered-seo-content-engine-01696c6b",
+    "timestamp": "2026-07-29T10:05:38.636799+00:00",
+    "contactInfo": {
+      "website": "/services/seo-optimization-ai-powered-seo-content-engine-01696c6b",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/seo-optimization-ai-powered-seo-content-engine-01696c6b",
+    "popular": false
+  },
+  {
+    "name": "FP&A Automation AI Financial Planning & Analysis",
+    "description": "fp&a automation solution for airports industry. Generates financial forecasts, budget plans, and performance analyses using machine learning models.",
+    "category": "ai",
+    "industry": "Airports",
+    "features": [
+      "Budget forecasting",
+      "Scenario modeling"
+    ],
+    "benefits": [
+      "90% faster FP&A",
+      "Better accuracy"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2499",
+      "enterprise": "7999"
+    },
+    "id": "fpa-automation-ai-financial-planning--analysis-5c1cd639",
+    "timestamp": "2026-07-29T10:05:38.636814+00:00",
+    "contactInfo": {
+      "website": "/services/fpa-automation-ai-financial-planning--analysis-5c1cd639",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/fpa-automation-ai-financial-planning--analysis-5c1cd639",
+    "popular": false
+  },
+  {
+    "name": "Recommendation Engine AI-Powered Threat Detection System",
+    "description": "recommendation engine solution for transportation industry. Real-time threat detection using behavioral analysis, anomaly detection, and machine learning.",
+    "category": "ai",
+    "industry": "Transportation",
+    "features": [
+      "Behavioral analysis",
+      "Anomaly detection"
+    ],
+    "benefits": [
+      "Zero-day protection",
+      "99% attack prevention"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2499",
+      "enterprise": "9999"
+    },
+    "id": "recommendation-engine-ai-powered-threat-detection-system-96603125",
+    "timestamp": "2026-07-29T10:05:38.636830+00:00",
+    "contactInfo": {
+      "website": "/services/recommendation-engine-ai-powered-threat-detection-system-96603125",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/recommendation-engine-ai-powered-threat-detection-system-96603125",
+    "popular": false
+  },
+  {
+    "name": "Personalization AI-Powered Market Intelligence",
+    "description": "personalization solution for petrochemicals industry. Monitors market trends, competitor activities, and industry news to provide actionable insights.",
+    "category": "ai",
+    "industry": "Petrochemicals",
+    "features": [
+      "Trend monitoring",
+      "Competitor analysis"
+    ],
+    "benefits": [
+      "Real-time insights",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1999",
+      "enterprise": "5999"
+    },
+    "id": "personalization-ai-powered-market-intelligence-b8456dc5",
+    "timestamp": "2026-07-29T10:05:38.636844+00:00",
+    "contactInfo": {
+      "website": "/services/personalization-ai-powered-market-intelligence-b8456dc5",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/personalization-ai-powered-market-intelligence-b8456dc5",
+    "popular": false
+  },
+  {
+    "name": "Brand Awareness Autonomous Customer Service AI",
+    "description": "brand awareness solution for oil & gas industry. Fully automated customer support system that handles 80% of inquiries without human intervention.",
+    "category": "ai",
+    "industry": "Oil & Gas",
+    "features": [
+      "24/7 support",
+      "Multilingual NLP",
+      "Sentiment analysis"
+    ],
+    "benefits": [
+      "80% automation rate",
+      "Zero wait times"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "899",
+      "enterprise": "2999"
+    },
+    "id": "brand-awareness-autonomous-customer-service-ai-0762eaa7",
+    "timestamp": "2026-07-29T10:05:38.636858+00:00",
+    "contactInfo": {
+      "website": "/services/brand-awareness-autonomous-customer-service-ai-0762eaa7",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/brand-awareness-autonomous-customer-service-ai-0762eaa7",
+    "popular": false
+  },
+  {
+    "name": "Support Automation AI-Powered Market Intelligence",
+    "description": "support automation solution for manufacturing industry. Monitors market trends, competitor activities, and industry news to provide actionable insights.",
+    "category": "ai",
+    "industry": "Manufacturing",
+    "features": [
+      "Trend monitoring",
+      "Competitor analysis"
+    ],
+    "benefits": [
+      "Real-time insights",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1999",
+      "enterprise": "5999"
+    },
+    "id": "support-automation-ai-powered-market-intelligence-ec16eb2c",
+    "timestamp": "2026-07-29T10:05:38.636876+00:00",
+    "contactInfo": {
+      "website": "/services/support-automation-ai-powered-market-intelligence-ec16eb2c",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/support-automation-ai-powered-market-intelligence-ec16eb2c",
+    "popular": false
+  },
+  {
+    "name": "Deal Registration AI Financial Planning & Analysis",
+    "description": "deal registration solution for asset management industry. Generates financial forecasts, budget plans, and performance analyses using machine learning models.",
+    "category": "ai",
+    "industry": "Asset Management",
+    "features": [
+      "Budget forecasting",
+      "Scenario modeling"
+    ],
+    "benefits": [
+      "90% faster FP&A",
+      "Better accuracy"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2499",
+      "enterprise": "7999"
+    },
+    "id": "deal-registration-ai-financial-planning--analysis-d5533487",
+    "timestamp": "2026-07-29T10:05:38.636891+00:00",
+    "contactInfo": {
+      "website": "/services/deal-registration-ai-financial-planning--analysis-d5533487",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/deal-registration-ai-financial-planning--analysis-d5533487",
+    "popular": false
+  },
+  {
+    "name": "Contract Management AI-Powered SEO Content Engine",
+    "description": "contract management solution for veterinary services industry. Generates SEO-optimized content at scale, including blog posts, product descriptions, and marketing copy.",
+    "category": "ai",
+    "industry": "Veterinary Services",
+    "features": [
+      "SEO keyword targeting",
+      "Brand voice adaptation"
+    ],
+    "benefits": [
+      "10x content output",
+      "Ranking improvements"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "id": "contract-management-ai-powered-seo-content-engine-03fe2607",
+    "timestamp": "2026-07-29T10:05:38.636905+00:00",
+    "contactInfo": {
+      "website": "/services/contract-management-ai-powered-seo-content-engine-03fe2607",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/contract-management-ai-powered-seo-content-engine-03fe2607",
+    "popular": false
+  },
+  {
+    "name": "Support Automation AI Customer Churn Prediction",
+    "description": "support automation solution for professional associations industry. Identifies at-risk customers before they churn using behavioral patterns and engagement metrics.",
+    "category": "ai",
+    "industry": "Professional Associations",
+    "features": [
+      "Churn risk scoring",
+      "Early warning system"
+    ],
+    "benefits": [
+      "50% churn reduction",
+      "Higher retention"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "3999"
+    },
+    "id": "support-automation-ai-customer-churn-prediction-273cbdc6",
+    "timestamp": "2026-07-29T10:05:38.636919+00:00",
+    "contactInfo": {
+      "website": "/services/support-automation-ai-customer-churn-prediction-273cbdc6",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/support-automation-ai-customer-churn-prediction-273cbdc6",
+    "popular": false
+  },
+  {
+    "name": "Expense Management Autonomous Customer Service AI",
+    "description": "expense management solution for cleaning services industry. Fully automated customer support system that handles 80% of inquiries without human intervention.",
+    "category": "ai",
+    "industry": "Cleaning Services",
+    "features": [
+      "24/7 support",
+      "Multilingual NLP",
+      "Sentiment analysis"
+    ],
+    "benefits": [
+      "80% automation rate",
+      "Zero wait times"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "899",
+      "enterprise": "2999"
+    },
+    "id": "expense-management-autonomous-customer-service-ai-209ec0bd",
+    "timestamp": "2026-07-29T10:05:38.636933+00:00",
+    "contactInfo": {
+      "website": "/services/expense-management-autonomous-customer-service-ai-209ec0bd",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/expense-management-autonomous-customer-service-ai-209ec0bd",
+    "popular": false
+  },
+  {
+    "name": "Media Mix Modeling AI-Powered SEO Content Engine",
+    "description": "media mix modeling solution for sports venues industry. Generates SEO-optimized content at scale, including blog posts, product descriptions, and marketing copy.",
+    "category": "ai",
+    "industry": "Sports Venues",
+    "features": [
+      "SEO keyword targeting",
+      "Brand voice adaptation"
+    ],
+    "benefits": [
+      "10x content output",
+      "Ranking improvements"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "id": "media-mix-modeling-ai-powered-seo-content-engine-b32885c2",
+    "timestamp": "2026-07-29T10:05:38.636949+00:00",
+    "contactInfo": {
+      "website": "/services/media-mix-modeling-ai-powered-seo-content-engine-b32885c2",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/media-mix-modeling-ai-powered-seo-content-engine-b32885c2",
+    "popular": false
+  },
+  {
+    "name": "Workflow Automation AI-Powered SEO Content Engine",
+    "description": "workflow automation solution for disaster preparedness industry. Generates SEO-optimized content at scale, including blog posts, product descriptions, and marketing copy.",
+    "category": "ai",
+    "industry": "Disaster Preparedness",
+    "features": [
+      "SEO keyword targeting",
+      "Brand voice adaptation"
+    ],
+    "benefits": [
+      "10x content output",
+      "Ranking improvements"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "id": "workflow-automation-ai-powered-seo-content-engine-e1efc643",
+    "timestamp": "2026-07-29T10:05:38.636963+00:00",
+    "contactInfo": {
+      "website": "/services/workflow-automation-ai-powered-seo-content-engine-e1efc643",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/workflow-automation-ai-powered-seo-content-engine-e1efc643",
+    "popular": false
+  },
+  {
+    "name": "Performance Reviews AI-Powered Predictive Analytics Suite",
+    "description": "performance reviews solution for food & beverage industry. End-to-end predictive analytics platform that forecasts market trends, customer behavior, and operational metrics with 95% accuracy.",
+    "category": "ai",
+    "industry": "Food & Beverage",
+    "features": [
+      "Multi-model forecasting",
+      "Real-time predictions",
+      "Anomaly detection"
+    ],
+    "benefits": [
+      "95% prediction accuracy",
+      "30% revenue increase"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4999",
+      "enterprise": "14999"
+    },
+    "id": "performance-reviews-ai-powered-predictive-analytics-suite-85bf4e74",
+    "timestamp": "2026-07-29T10:05:38.636977+00:00",
+    "contactInfo": {
+      "website": "/services/performance-reviews-ai-powered-predictive-analytics-suite-85bf4e74",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/performance-reviews-ai-powered-predictive-analytics-suite-85bf4e74",
+    "popular": false
+  },
+  {
+    "name": "Spend Analysis Autonomous Customer Service AI",
+    "description": "spend analysis solution for franchises industry. Fully automated customer support system that handles 80% of inquiries without human intervention.",
+    "category": "ai",
+    "industry": "Franchises",
+    "features": [
+      "24/7 support",
+      "Multilingual NLP",
+      "Sentiment analysis"
+    ],
+    "benefits": [
+      "80% automation rate",
+      "Zero wait times"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "899",
+      "enterprise": "2999"
+    },
+    "id": "spend-analysis-autonomous-customer-service-ai-e03b7984",
+    "timestamp": "2026-07-29T10:05:38.636991+00:00",
+    "contactInfo": {
+      "website": "/services/spend-analysis-autonomous-customer-service-ai-e03b7984",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/spend-analysis-autonomous-customer-service-ai-e03b7984",
+    "popular": false
+  },
+  {
+    "name": "Smart AI-Powered Threat Detection System",
+    "description": "smart solution for professional associations industry. Real-time threat detection using behavioral analysis, anomaly detection, and machine learning.",
+    "category": "ai",
+    "industry": "Professional Associations",
+    "features": [
+      "Behavioral analysis",
+      "Anomaly detection"
+    ],
+    "benefits": [
+      "Zero-day protection",
+      "99% attack prevention"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2499",
+      "enterprise": "9999"
+    },
+    "id": "smart-ai-powered-threat-detection-system-5351e947",
+    "timestamp": "2026-07-29T10:05:38.637005+00:00",
+    "contactInfo": {
+      "website": "/services/smart-ai-powered-threat-detection-system-5351e947",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/smart-ai-powered-threat-detection-system-5351e947",
+    "popular": false
+  },
+  {
+    "name": "Account Management Zero-Trust Identity & Access Manager",
+    "description": "account management solution for trade associations industry. Implements zero-trust security architecture with continuous authentication and adaptive access controls.",
+    "category": "ai",
+    "industry": "Trade Associations",
+    "features": [
+      "Continuous auth",
+      "Adaptive controls"
+    ],
+    "benefits": [
+      "99.9% unauthorized access blocked",
+      "Secure remote work"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1999",
+      "enterprise": "6999"
+    },
+    "id": "account-management-zero-trust-identity--access-manager-df27b26f",
+    "timestamp": "2026-07-29T10:05:38.637019+00:00",
+    "contactInfo": {
+      "website": "/services/account-management-zero-trust-identity--access-manager-df27b26f",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/account-management-zero-trust-identity--access-manager-df27b26f",
+    "popular": false
+  },
+  {
+    "name": "Omnichannel Experience AI Financial Planning & Analysis",
+    "description": "omnichannel experience solution for jewelry industry. Generates financial forecasts, budget plans, and performance analyses using machine learning models.",
+    "category": "ai",
+    "industry": "Jewelry",
+    "features": [
+      "Budget forecasting",
+      "Scenario modeling"
+    ],
+    "benefits": [
+      "90% faster FP&A",
+      "Better accuracy"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2499",
+      "enterprise": "7999"
+    },
+    "id": "omnichannel-experience-ai-financial-planning--analysis-a047608d",
+    "timestamp": "2026-07-29T10:05:38.637033+00:00",
+    "contactInfo": {
+      "website": "/services/omnichannel-experience-ai-financial-planning--analysis-a047608d",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/omnichannel-experience-ai-financial-planning--analysis-a047608d",
+    "popular": false
+  },
+  {
+    "name": "Contract Lifecycle Multi-Cloud Cost Management Platform",
+    "description": "contract lifecycle solution for space technology industry. Unified platform for monitoring, optimizing, and governing costs across AWS, Azure, and GCP.",
+    "category": "ai",
+    "industry": "Space Technology",
+    "features": [
+      "Cross-cloud monitoring",
+      "Cost optimization"
+    ],
+    "benefits": [
+      "35% cost savings",
+      "Unified view"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "id": "contract-lifecycle-multi-cloud-cost-management-platform-fdccf099",
+    "timestamp": "2026-07-29T10:05:38.637047+00:00",
+    "contactInfo": {
+      "website": "/services/contract-lifecycle-multi-cloud-cost-management-platform-fdccf099",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/contract-lifecycle-multi-cloud-cost-management-platform-fdccf099",
+    "popular": false
+  },
+  {
+    "name": "Reporting AI Sales Lead Scoring Engine",
+    "description": "reporting solution for insurance industry. Scores and prioritizes sales leads in real-time using behavioral data and engagement patterns.",
+    "category": "ai",
+    "industry": "Insurance",
+    "features": [
+      "Lead scoring",
+      "Behavioral analysis"
+    ],
+    "benefits": [
+      "40% more qualified leads",
+      "Higher conversion rates"
+    ],
+    "pricing": {
+      "basic": "249",
+      "pro": "799",
+      "enterprise": "2499"
+    },
+    "id": "reporting-ai-sales-lead-scoring-engine-1ae52f30",
+    "timestamp": "2026-07-29T10:05:38.637060+00:00",
+    "contactInfo": {
+      "website": "/services/reporting-ai-sales-lead-scoring-engine-1ae52f30",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/reporting-ai-sales-lead-scoring-engine-1ae52f30",
+    "popular": false
+  },
+  {
+    "name": "Cross-Channel Analytics AI-Powered Predictive Analytics Suite",
+    "description": "cross-channel analytics solution for veterinary services industry. End-to-end predictive analytics platform that forecasts market trends, customer behavior, and operational metrics with 95% accuracy.",
+    "category": "ai",
+    "industry": "Veterinary Services",
+    "features": [
+      "Multi-model forecasting",
+      "Real-time predictions",
+      "Anomaly detection"
+    ],
+    "benefits": [
+      "95% prediction accuracy",
+      "30% revenue increase"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4999",
+      "enterprise": "14999"
+    },
+    "id": "cross-channel-analytics-ai-powered-predictive-analytics-suite-e245feeb",
+    "timestamp": "2026-07-29T10:05:38.637074+00:00",
+    "contactInfo": {
+      "website": "/services/cross-channel-analytics-ai-powered-predictive-analytics-suite-e245feeb",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/cross-channel-analytics-ai-powered-predictive-analytics-suite-e245feeb",
+    "popular": false
+  },
+  {
+    "name": "Media Management Zero-Trust Identity & Access Manager",
+    "description": "media management solution for fintech industry. Implements zero-trust security architecture with continuous authentication and adaptive access controls.",
+    "category": "ai",
+    "industry": "FinTech",
+    "features": [
+      "Continuous auth",
+      "Adaptive controls"
+    ],
+    "benefits": [
+      "99.9% unauthorized access blocked",
+      "Secure remote work"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1999",
+      "enterprise": "6999"
+    },
+    "id": "media-management-zero-trust-identity--access-manager-0966b275",
+    "timestamp": "2026-07-29T10:05:38.637087+00:00",
+    "contactInfo": {
+      "website": "/services/media-management-zero-trust-identity--access-manager-0966b275",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/media-management-zero-trust-identity--access-manager-0966b275",
+    "popular": false
+  },
+  {
+    "name": "Compliance Automation AI-Powered Threat Detection System",
+    "description": "compliance automation solution for cultural heritage industry. Real-time threat detection using behavioral analysis, anomaly detection, and machine learning.",
+    "category": "ai",
+    "industry": "Cultural Heritage",
+    "features": [
+      "Behavioral analysis",
+      "Anomaly detection"
+    ],
+    "benefits": [
+      "Zero-day protection",
+      "99% attack prevention"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2499",
+      "enterprise": "9999"
+    },
+    "id": "compliance-automation-ai-powered-threat-detection-system-b109299c",
+    "timestamp": "2026-07-29T10:05:38.637101+00:00",
+    "contactInfo": {
+      "website": "/services/compliance-automation-ai-powered-threat-detection-system-b109299c",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/compliance-automation-ai-powered-threat-detection-system-b109299c",
+    "popular": false
+  },
+  {
+    "name": "Robotic Process Automation AI-Powered Predictive Analytics Suite",
+    "description": "robotic process automation solution for family offices industry. End-to-end predictive analytics platform that forecasts market trends, customer behavior, and operational metrics with 95% accuracy.",
+    "category": "ai",
+    "industry": "Family Offices",
+    "features": [
+      "Multi-model forecasting",
+      "Real-time predictions",
+      "Anomaly detection"
+    ],
+    "benefits": [
+      "95% prediction accuracy",
+      "30% revenue increase"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4999",
+      "enterprise": "14999"
+    },
+    "id": "robotic-process-automation-ai-powered-predictive-analytics-suite-b592c20a",
+    "timestamp": "2026-07-29T10:05:38.637117+00:00",
+    "contactInfo": {
+      "website": "/services/robotic-process-automation-ai-powered-predictive-analytics-suite-b592c20a",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/robotic-process-automation-ai-powered-predictive-analytics-suite-b592c20a",
+    "popular": false
+  },
+  {
+    "name": "Patient Management AI-Powered Threat Detection System",
+    "description": "patient management solution for finance industry. Real-time threat detection using behavioral analysis, anomaly detection, and machine learning.",
+    "category": "ai",
+    "industry": "Finance",
+    "features": [
+      "Behavioral analysis",
+      "Anomaly detection"
+    ],
+    "benefits": [
+      "Zero-day protection",
+      "99% attack prevention"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2499",
+      "enterprise": "9999"
+    },
+    "id": "patient-management-ai-powered-threat-detection-system-98709efc",
+    "timestamp": "2026-07-29T10:05:38.637131+00:00",
+    "contactInfo": {
+      "website": "/services/patient-management-ai-powered-threat-detection-system-98709efc",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/patient-management-ai-powered-threat-detection-system-98709efc",
+    "popular": false
+  },
+  {
+    "name": "Document Management AI Financial Planning & Analysis",
+    "description": "document management solution for airports industry. Generates financial forecasts, budget plans, and performance analyses using machine learning models.",
+    "category": "ai",
+    "industry": "Airports",
+    "features": [
+      "Budget forecasting",
+      "Scenario modeling"
+    ],
+    "benefits": [
+      "90% faster FP&A",
+      "Better accuracy"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2499",
+      "enterprise": "7999"
+    },
+    "id": "document-management-ai-financial-planning--analysis-7acf3a38",
+    "timestamp": "2026-07-29T10:05:38.637148+00:00",
+    "contactInfo": {
+      "website": "/services/document-management-ai-financial-planning--analysis-7acf3a38",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/document-management-ai-financial-planning--analysis-7acf3a38",
+    "popular": false
+  },
+  {
+    "name": "Audit Automation AI Customer Churn Prediction",
+    "description": "audit automation solution for retail industry. Identifies at-risk customers before they churn using behavioral patterns and engagement metrics.",
+    "category": "ai",
+    "industry": "Retail",
+    "features": [
+      "Churn risk scoring",
+      "Early warning system"
+    ],
+    "benefits": [
+      "50% churn reduction",
+      "Higher retention"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "3999"
+    },
+    "id": "audit-automation-ai-customer-churn-prediction-1ce152d8",
+    "timestamp": "2026-07-29T10:05:38.637161+00:00",
+    "contactInfo": {
+      "website": "/services/audit-automation-ai-customer-churn-prediction-1ce152d8",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/audit-automation-ai-customer-churn-prediction-1ce152d8",
+    "popular": false
+  },
+  {
+    "name": "Procurement Automation AI-Powered SEO Content Engine",
+    "description": "procurement automation solution for sports & entertainment industry. Generates SEO-optimized content at scale, including blog posts, product descriptions, and marketing copy.",
+    "category": "ai",
+    "industry": "Sports & Entertainment",
+    "features": [
+      "SEO keyword targeting",
+      "Brand voice adaptation"
+    ],
+    "benefits": [
+      "10x content output",
+      "Ranking improvements"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "id": "procurement-automation-ai-powered-seo-content-engine-5eb34f6c",
+    "timestamp": "2026-07-29T10:05:38.637175+00:00",
+    "contactInfo": {
+      "website": "/services/procurement-automation-ai-powered-seo-content-engine-5eb34f6c",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/procurement-automation-ai-powered-seo-content-engine-5eb34f6c",
+    "popular": false
+  },
+  {
+    "name": "Media Mix Modeling Real-Time Data Pipeline Platform",
+    "description": "media mix modeling solution for public health industry. Creates and manages real-time data pipelines with automated ETL and streaming analytics.",
+    "category": "ai",
+    "industry": "Public Health",
+    "features": [
+      "Real-time ETL",
+      "Streaming analytics"
+    ],
+    "benefits": [
+      "Real-time insights",
+      "Data quality assured"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "id": "media-mix-modeling-real-time-data-pipeline-platform-c0af1dee",
+    "timestamp": "2026-07-29T10:05:38.637188+00:00",
+    "contactInfo": {
+      "website": "/services/media-mix-modeling-real-time-data-pipeline-platform-c0af1dee",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/media-mix-modeling-real-time-data-pipeline-platform-c0af1dee",
+    "popular": false
+  },
+  {
+    "name": "Media Management AI Code Generation & Optimization",
+    "description": "media management solution for entertainment industry. Generates production-ready code from natural language descriptions, optimizes existing code for performance.",
+    "category": "ai",
+    "industry": "Entertainment",
+    "features": [
+      "Natural language to code",
+      "Code optimization"
+    ],
+    "benefits": [
+      "10x faster development",
+      "Better code quality"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "id": "media-management-ai-code-generation--optimization-249c1907",
+    "timestamp": "2026-07-29T10:05:38.637203+00:00",
+    "contactInfo": {
+      "website": "/services/media-management-ai-code-generation--optimization-249c1907",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/media-management-ai-code-generation--optimization-249c1907",
+    "popular": false
+  },
+  {
+    "name": "Patient Experience AI Customer Churn Prediction",
+    "description": "patient experience solution for automotive industry. Identifies at-risk customers before they churn using behavioral patterns and engagement metrics.",
+    "category": "ai",
+    "industry": "Automotive",
+    "features": [
+      "Churn risk scoring",
+      "Early warning system"
+    ],
+    "benefits": [
+      "50% churn reduction",
+      "Higher retention"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "3999"
+    },
+    "id": "patient-experience-ai-customer-churn-prediction-17b83beb",
+    "timestamp": "2026-07-29T10:05:38.637218+00:00",
+    "contactInfo": {
+      "website": "/services/patient-experience-ai-customer-churn-prediction-17b83beb",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/patient-experience-ai-customer-churn-prediction-17b83beb",
+    "popular": false
+  },
+  {
+    "name": "Warranty Management AI-Powered Data Quality Manager",
+    "description": "warranty management solution for family offices industry. Automatically detects, corrects, and prevents data quality issues using machine learning.",
+    "category": "ai",
+    "industry": "Family Offices",
+    "features": [
+      "Anomaly detection",
+      "Auto-correction"
+    ],
+    "benefits": [
+      "95% data quality",
+      "Automated cleanup"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "3999"
+    },
+    "id": "warranty-management-ai-powered-data-quality-manager-0cbe2f90",
+    "timestamp": "2026-07-29T10:05:38.637233+00:00",
+    "contactInfo": {
+      "website": "/services/warranty-management-ai-powered-data-quality-manager-0cbe2f90",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/warranty-management-ai-powered-data-quality-manager-0cbe2f90",
+    "popular": false
+  },
+  {
+    "name": "Brand Experience Intelligent Document Processing AI",
+    "description": "brand experience solution for co-ops industry. Processes invoices, contracts, and forms with 99% accuracy, extracting data and routing documents automatically.",
+    "category": "ai",
+    "industry": "Co-ops",
+    "features": [
+      "Multi-format OCR",
+      "Data extraction"
+    ],
+    "benefits": [
+      "99% accuracy",
+      "Zero manual entry"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "999",
+      "enterprise": "2999"
+    },
+    "id": "brand-experience-intelligent-document-processing-ai-f52dd951",
+    "timestamp": "2026-07-29T10:05:38.637259+00:00",
+    "contactInfo": {
+      "website": "/services/brand-experience-intelligent-document-processing-ai-f52dd951",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/brand-experience-intelligent-document-processing-ai-f52dd951",
+    "popular": false
+  },
+  {
+    "name": "Cart Abandonment Intelligent Document Processing AI",
+    "description": "cart abandonment solution for  venture capital industry. Processes invoices, contracts, and forms with 99% accuracy, extracting data and routing documents automatically.",
+    "category": "ai",
+    "industry": " venture Capital",
+    "features": [
+      "Multi-format OCR",
+      "Data extraction"
+    ],
+    "benefits": [
+      "99% accuracy",
+      "Zero manual entry"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "999",
+      "enterprise": "2999"
+    },
+    "id": "cart-abandonment-intelligent-document-processing-ai-9be338a3",
+    "timestamp": "2026-07-29T10:05:38.637273+00:00",
+    "contactInfo": {
+      "website": "/services/cart-abandonment-intelligent-document-processing-ai-9be338a3",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/cart-abandonment-intelligent-document-processing-ai-9be338a3",
+    "popular": false
+  },
+  {
+    "name": "Gift Card Management Intelligent Document Processing AI",
+    "description": "gift card management solution for veterinary services industry. Processes invoices, contracts, and forms with 99% accuracy, extracting data and routing documents automatically.",
+    "category": "ai",
+    "industry": "Veterinary Services",
+    "features": [
+      "Multi-format OCR",
+      "Data extraction"
+    ],
+    "benefits": [
+      "99% accuracy",
+      "Zero manual entry"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "999",
+      "enterprise": "2999"
+    },
+    "id": "gift-card-management-intelligent-document-processing-ai-861a1c8b",
+    "timestamp": "2026-07-29T10:05:38.637287+00:00",
+    "contactInfo": {
+      "website": "/services/gift-card-management-intelligent-document-processing-ai-861a1c8b",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/gift-card-management-intelligent-document-processing-ai-861a1c8b",
+    "popular": false
+  },
+  {
+    "name": "Gift Card Management AI Sales Lead Scoring Engine",
+    "description": "gift card management solution for edtech industry. Scores and prioritizes sales leads in real-time using behavioral data and engagement patterns.",
+    "category": "ai",
+    "industry": "EdTech",
+    "features": [
+      "Lead scoring",
+      "Behavioral analysis"
+    ],
+    "benefits": [
+      "40% more qualified leads",
+      "Higher conversion rates"
+    ],
+    "pricing": {
+      "basic": "249",
+      "pro": "799",
+      "enterprise": "2499"
+    },
+    "id": "gift-card-management-ai-sales-lead-scoring-engine-e5dc4ae7",
+    "timestamp": "2026-07-29T10:05:38.637301+00:00",
+    "contactInfo": {
+      "website": "/services/gift-card-management-ai-sales-lead-scoring-engine-e5dc4ae7",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/gift-card-management-ai-sales-lead-scoring-engine-e5dc4ae7",
+    "popular": false
+  },
+  {
+    "name": "Telehealth AI Sales Lead Scoring Engine",
+    "description": "telehealth solution for food & beverage industry. Scores and prioritizes sales leads in real-time using behavioral data and engagement patterns.",
+    "category": "ai",
+    "industry": "Food & Beverage",
+    "features": [
+      "Lead scoring",
+      "Behavioral analysis"
+    ],
+    "benefits": [
+      "40% more qualified leads",
+      "Higher conversion rates"
+    ],
+    "pricing": {
+      "basic": "249",
+      "pro": "799",
+      "enterprise": "2499"
+    },
+    "id": "telehealth-ai-sales-lead-scoring-engine-0ee9992d",
+    "timestamp": "2026-07-29T10:05:38.637315+00:00",
+    "contactInfo": {
+      "website": "/services/telehealth-ai-sales-lead-scoring-engine-0ee9992d",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/telehealth-ai-sales-lead-scoring-engine-0ee9992d",
+    "popular": false
+  },
+  {
+    "name": "Records Management AI Sales Lead Scoring Engine",
+    "description": "records management solution for security services industry. Scores and prioritizes sales leads in real-time using behavioral data and engagement patterns.",
+    "category": "ai",
+    "industry": "Security Services",
+    "features": [
+      "Lead scoring",
+      "Behavioral analysis"
+    ],
+    "benefits": [
+      "40% more qualified leads",
+      "Higher conversion rates"
+    ],
+    "pricing": {
+      "basic": "249",
+      "pro": "799",
+      "enterprise": "2499"
+    },
+    "id": "records-management-ai-sales-lead-scoring-engine-80ca8d64",
+    "timestamp": "2026-07-29T10:05:38.637329+00:00",
+    "contactInfo": {
+      "website": "/services/records-management-ai-sales-lead-scoring-engine-80ca8d64",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/records-management-ai-sales-lead-scoring-engine-80ca8d64",
+    "popular": false
+  },
+  {
+    "name": "Intelligent AI-Powered Predictive Analytics Suite",
+    "description": "intelligent solution for travel industry. End-to-end predictive analytics platform that forecasts market trends, customer behavior, and operational metrics with 95% accuracy.",
+    "category": "ai",
+    "industry": "Travel",
+    "features": [
+      "Multi-model forecasting",
+      "Real-time predictions",
+      "Anomaly detection"
+    ],
+    "benefits": [
+      "95% prediction accuracy",
+      "30% revenue increase"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4999",
+      "enterprise": "14999"
+    },
+    "id": "intelligent-ai-powered-predictive-analytics-suite-df4ef193",
+    "timestamp": "2026-07-29T10:05:38.637344+00:00",
+    "contactInfo": {
+      "website": "/services/intelligent-ai-powered-predictive-analytics-suite-df4ef193",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/intelligent-ai-powered-predictive-analytics-suite-df4ef193",
+    "popular": false
+  },
+  {
+    "name": "Feedback Management Real-Time Data Pipeline Platform",
+    "description": "feedback management solution for gaming industry. Creates and manages real-time data pipelines with automated ETL and streaming analytics.",
+    "category": "ai",
+    "industry": "Gaming",
+    "features": [
+      "Real-time ETL",
+      "Streaming analytics"
+    ],
+    "benefits": [
+      "Real-time insights",
+      "Data quality assured"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "id": "feedback-management-real-time-data-pipeline-platform-d4338742",
+    "timestamp": "2026-07-29T10:05:38.637358+00:00",
+    "contactInfo": {
+      "website": "/services/feedback-management-real-time-data-pipeline-platform-d4338742",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/feedback-management-real-time-data-pipeline-platform-d4338742",
+    "popular": false
+  },
+  {
+    "name": "AI-Powered Zero-Trust Identity & Access Manager",
+    "description": "ai-powered solution for petrochemicals industry. Implements zero-trust security architecture with continuous authentication and adaptive access controls.",
+    "category": "ai",
+    "industry": "Petrochemicals",
+    "features": [
+      "Continuous auth",
+      "Adaptive controls"
+    ],
+    "benefits": [
+      "99.9% unauthorized access blocked",
+      "Secure remote work"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1999",
+      "enterprise": "6999"
+    },
+    "id": "ai-powered-zero-trust-identity--access-manager-1534bf6c",
+    "timestamp": "2026-07-29T10:05:38.637373+00:00",
+    "contactInfo": {
+      "website": "/services/ai-powered-zero-trust-identity--access-manager-1534bf6c",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-zero-trust-identity--access-manager-1534bf6c",
+    "popular": false
+  },
+  {
+    "name": "Quota Management Multi-Cloud Cost Management Platform",
+    "description": "quota management solution for professional associations industry. Unified platform for monitoring, optimizing, and governing costs across AWS, Azure, and GCP.",
+    "category": "ai",
+    "industry": "Professional Associations",
+    "features": [
+      "Cross-cloud monitoring",
+      "Cost optimization"
+    ],
+    "benefits": [
+      "35% cost savings",
+      "Unified view"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "id": "quota-management-multi-cloud-cost-management-platform-8fa11051",
+    "timestamp": "2026-07-29T10:05:38.637388+00:00",
+    "contactInfo": {
+      "website": "/services/quota-management-multi-cloud-cost-management-platform-8fa11051",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/quota-management-multi-cloud-cost-management-platform-8fa11051",
+    "popular": false
+  },
+  {
+    "name": "SEO Optimization AI Financial Planning & Analysis",
+    "description": "seo optimization solution for technology industry. Generates financial forecasts, budget plans, and performance analyses using machine learning models.",
+    "category": "ai",
+    "industry": "Technology",
+    "features": [
+      "Budget forecasting",
+      "Scenario modeling"
+    ],
+    "benefits": [
+      "90% faster FP&A",
+      "Better accuracy"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2499",
+      "enterprise": "7999"
+    },
+    "id": "seo-optimization-ai-financial-planning--analysis-72310549",
+    "timestamp": "2026-07-29T10:05:38.637401+00:00",
+    "contactInfo": {
+      "website": "/services/seo-optimization-ai-financial-planning--analysis-72310549",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/seo-optimization-ai-financial-planning--analysis-72310549",
+    "popular": false
+  },
+  {
+    "name": "Subscription Management AI-Powered SEO Content Engine",
+    "description": "subscription management solution for hospitality industry. Generates SEO-optimized content at scale, including blog posts, product descriptions, and marketing copy.",
+    "category": "ai",
+    "industry": "Hospitality",
+    "features": [
+      "SEO keyword targeting",
+      "Brand voice adaptation"
+    ],
+    "benefits": [
+      "10x content output",
+      "Ranking improvements"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "id": "subscription-management-ai-powered-seo-content-engine-d02db634",
+    "timestamp": "2026-07-29T10:05:38.637418+00:00",
+    "contactInfo": {
+      "website": "/services/subscription-management-ai-powered-seo-content-engine-d02db634",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/subscription-management-ai-powered-seo-content-engine-d02db634",
+    "popular": false
+  },
+  {
+    "name": "Backup Management AI Sales Lead Scoring Engine",
+    "description": "backup management solution for fintech industry. Scores and prioritizes sales leads in real-time using behavioral data and engagement patterns.",
+    "category": "ai",
+    "industry": "FinTech",
+    "features": [
+      "Lead scoring",
+      "Behavioral analysis"
+    ],
+    "benefits": [
+      "40% more qualified leads",
+      "Higher conversion rates"
+    ],
+    "pricing": {
+      "basic": "249",
+      "pro": "799",
+      "enterprise": "2499"
+    },
+    "id": "backup-management-ai-sales-lead-scoring-engine-506f4017",
+    "timestamp": "2026-07-29T10:05:38.637431+00:00",
+    "contactInfo": {
+      "website": "/services/backup-management-ai-sales-lead-scoring-engine-506f4017",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/backup-management-ai-sales-lead-scoring-engine-506f4017",
+    "popular": false
+  },
+  {
+    "name": "Recommendation Engine AI Supply Chain Optimization",
+    "description": "recommendation engine solution for automotive industry. Optimizes supply chain operations using predictive analytics, demand forecasting, and route optimization.",
+    "category": "ai",
+    "industry": "Automotive",
+    "features": [
+      "Demand forecasting",
+      "Route optimization"
+    ],
+    "benefits": [
+      "30% cost reduction",
+      "Better inventory"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "id": "recommendation-engine-ai-supply-chain-optimization-4c53883d",
+    "timestamp": "2026-07-29T10:05:38.637445+00:00",
+    "contactInfo": {
+      "website": "/services/recommendation-engine-ai-supply-chain-optimization-4c53883d",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/recommendation-engine-ai-supply-chain-optimization-4c53883d",
+    "popular": false
+  },
+  {
+    "name": "Asset Management Autonomous Customer Service AI",
+    "description": "asset management solution for public health industry. Fully automated customer support system that handles 80% of inquiries without human intervention.",
+    "category": "ai",
+    "industry": "Public Health",
+    "features": [
+      "24/7 support",
+      "Multilingual NLP",
+      "Sentiment analysis"
+    ],
+    "benefits": [
+      "80% automation rate",
+      "Zero wait times"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "899",
+      "enterprise": "2999"
+    },
+    "id": "asset-management-autonomous-customer-service-ai-b489d486",
+    "timestamp": "2026-07-29T10:05:38.637457+00:00",
+    "contactInfo": {
+      "website": "/services/asset-management-autonomous-customer-service-ai-b489d486",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/asset-management-autonomous-customer-service-ai-b489d486",
+    "popular": false
+  },
+  {
+    "name": "Personalization AI Supply Chain Optimization",
+    "description": "personalization solution for private equity industry. Optimizes supply chain operations using predictive analytics, demand forecasting, and route optimization.",
+    "category": "ai",
+    "industry": "Private Equity",
+    "features": [
+      "Demand forecasting",
+      "Route optimization"
+    ],
+    "benefits": [
+      "30% cost reduction",
+      "Better inventory"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "id": "personalization-ai-supply-chain-optimization-6fa856a3",
+    "timestamp": "2026-07-29T10:05:38.637471+00:00",
+    "contactInfo": {
+      "website": "/services/personalization-ai-supply-chain-optimization-6fa856a3",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/personalization-ai-supply-chain-optimization-6fa856a3",
+    "popular": false
+  },
+  {
+    "name": "Cognitive Autonomous Customer Service AI",
+    "description": "cognitive solution for border services industry. Fully automated customer support system that handles 80% of inquiries without human intervention.",
+    "category": "ai",
+    "industry": "Border Services",
+    "features": [
+      "24/7 support",
+      "Multilingual NLP",
+      "Sentiment analysis"
+    ],
+    "benefits": [
+      "80% automation rate",
+      "Zero wait times"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "899",
+      "enterprise": "2999"
+    },
+    "id": "cognitive-autonomous-customer-service-ai-41e83cb6",
+    "timestamp": "2026-07-29T10:05:38.637484+00:00",
+    "contactInfo": {
+      "website": "/services/cognitive-autonomous-customer-service-ai-41e83cb6",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/cognitive-autonomous-customer-service-ai-41e83cb6",
+    "popular": false
+  },
+  {
+    "name": "Influencer Management AI Code Generation & Optimization",
+    "description": "influencer management solution for consumer goods industry. Generates production-ready code from natural language descriptions, optimizes existing code for performance.",
+    "category": "ai",
+    "industry": "Consumer Goods",
+    "features": [
+      "Natural language to code",
+      "Code optimization"
+    ],
+    "benefits": [
+      "10x faster development",
+      "Better code quality"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "id": "influencer-management-ai-code-generation--optimization-3a6c588a",
+    "timestamp": "2026-07-29T10:05:38.637499+00:00",
+    "contactInfo": {
+      "website": "/services/influencer-management-ai-code-generation--optimization-3a6c588a",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/influencer-management-ai-code-generation--optimization-3a6c588a",
+    "popular": false
+  },
+  {
+    "name": "E-discovery AI-Powered Threat Detection System",
+    "description": "e-discovery solution for consumer goods industry. Real-time threat detection using behavioral analysis, anomaly detection, and machine learning.",
+    "category": "ai",
+    "industry": "Consumer Goods",
+    "features": [
+      "Behavioral analysis",
+      "Anomaly detection"
+    ],
+    "benefits": [
+      "Zero-day protection",
+      "99% attack prevention"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2499",
+      "enterprise": "9999"
+    },
+    "id": "e-discovery-ai-powered-threat-detection-system-3f63c282",
+    "timestamp": "2026-07-29T10:05:38.637512+00:00",
+    "contactInfo": {
+      "website": "/services/e-discovery-ai-powered-threat-detection-system-3f63c282",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/e-discovery-ai-powered-threat-detection-system-3f63c282",
+    "popular": false
+  },
+  {
+    "name": "Medical Device Management AI-Powered Market Intelligence",
+    "description": "medical device management solution for waste management industry. Monitors market trends, competitor activities, and industry news to provide actionable insights.",
+    "category": "ai",
+    "industry": "Waste Management",
+    "features": [
+      "Trend monitoring",
+      "Competitor analysis"
+    ],
+    "benefits": [
+      "Real-time insights",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1999",
+      "enterprise": "5999"
+    },
+    "id": "medical-device-management-ai-powered-market-intelligence-3d43578c",
+    "timestamp": "2026-07-29T10:05:38.637525+00:00",
+    "contactInfo": {
+      "website": "/services/medical-device-management-ai-powered-market-intelligence-3d43578c",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/medical-device-management-ai-powered-market-intelligence-3d43578c",
+    "popular": false
+  },
+  {
+    "name": "Community Management AI-Powered SEO Content Engine",
+    "description": "community management solution for paper & pulp industry. Generates SEO-optimized content at scale, including blog posts, product descriptions, and marketing copy.",
+    "category": "ai",
+    "industry": "Paper & Pulp",
+    "features": [
+      "SEO keyword targeting",
+      "Brand voice adaptation"
+    ],
+    "benefits": [
+      "10x content output",
+      "Ranking improvements"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "id": "community-management-ai-powered-seo-content-engine-565bacab",
+    "timestamp": "2026-07-29T10:05:38.637538+00:00",
+    "contactInfo": {
+      "website": "/services/community-management-ai-powered-seo-content-engine-565bacab",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/community-management-ai-powered-seo-content-engine-565bacab",
+    "popular": false
+  },
+  {
+    "name": "User Experience AI-Powered Data Quality Manager",
+    "description": "user experience solution for transportation industry. Automatically detects, corrects, and prevents data quality issues using machine learning.",
+    "category": "ai",
+    "industry": "Transportation",
+    "features": [
+      "Anomaly detection",
+      "Auto-correction"
+    ],
+    "benefits": [
+      "95% data quality",
+      "Automated cleanup"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "3999"
+    },
+    "id": "user-experience-ai-powered-data-quality-manager-060fb21e",
+    "timestamp": "2026-07-29T10:05:38.637552+00:00",
+    "contactInfo": {
+      "website": "/services/user-experience-ai-powered-data-quality-manager-060fb21e",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/user-experience-ai-powered-data-quality-manager-060fb21e",
+    "popular": false
+  },
+  {
+    "name": "Asset Management Autonomous Customer Service AI",
+    "description": "asset management solution for insurance industry. Fully automated customer support system that handles 80% of inquiries without human intervention.",
+    "category": "ai",
+    "industry": "Insurance",
+    "features": [
+      "24/7 support",
+      "Multilingual NLP",
+      "Sentiment analysis"
+    ],
+    "benefits": [
+      "80% automation rate",
+      "Zero wait times"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "899",
+      "enterprise": "2999"
+    },
+    "id": "asset-management-autonomous-customer-service-ai-c659b8ec",
+    "timestamp": "2026-07-29T10:05:38.637565+00:00",
+    "contactInfo": {
+      "website": "/services/asset-management-autonomous-customer-service-ai-c659b8ec",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/asset-management-autonomous-customer-service-ai-c659b8ec",
+    "popular": false
+  },
+  {
+    "name": "Payroll Automation Autonomous Customer Service AI",
+    "description": "payroll automation solution for legaltech industry. Fully automated customer support system that handles 80% of inquiries without human intervention.",
+    "category": "ai",
+    "industry": "LegalTech",
+    "features": [
+      "24/7 support",
+      "Multilingual NLP",
+      "Sentiment analysis"
+    ],
+    "benefits": [
+      "80% automation rate",
+      "Zero wait times"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "899",
+      "enterprise": "2999"
+    },
+    "id": "payroll-automation-autonomous-customer-service-ai-d90ba1c3",
+    "timestamp": "2026-07-29T10:05:38.637578+00:00",
+    "contactInfo": {
+      "website": "/services/payroll-automation-autonomous-customer-service-ai-d90ba1c3",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/payroll-automation-autonomous-customer-service-ai-d90ba1c3",
+    "popular": false
+  },
+  {
+    "name": "Billing Automation Intelligent Document Processing AI",
+    "description": "billing automation solution for healthtech industry. Processes invoices, contracts, and forms with 99% accuracy, extracting data and routing documents automatically.",
+    "category": "ai",
+    "industry": "HealthTech",
+    "features": [
+      "Multi-format OCR",
+      "Data extraction"
+    ],
+    "benefits": [
+      "99% accuracy",
+      "Zero manual entry"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "999",
+      "enterprise": "2999"
+    },
+    "id": "billing-automation-intelligent-document-processing-ai-f54035d0",
+    "timestamp": "2026-07-29T10:05:38.637592+00:00",
+    "contactInfo": {
+      "website": "/services/billing-automation-intelligent-document-processing-ai-f54035d0",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/billing-automation-intelligent-document-processing-ai-f54035d0",
+    "popular": false
+  },
+  {
+    "name": "Returns Management Zero-Trust Identity & Access Manager",
+    "description": "returns management solution for education industry. Implements zero-trust security architecture with continuous authentication and adaptive access controls.",
+    "category": "ai",
+    "industry": "Education",
+    "features": [
+      "Continuous auth",
+      "Adaptive controls"
+    ],
+    "benefits": [
+      "99.9% unauthorized access blocked",
+      "Secure remote work"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1999",
+      "enterprise": "6999"
+    },
+    "id": "returns-management-zero-trust-identity--access-manager-308b8bd3",
+    "timestamp": "2026-07-29T10:05:38.637605+00:00",
+    "contactInfo": {
+      "website": "/services/returns-management-zero-trust-identity--access-manager-308b8bd3",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/returns-management-zero-trust-identity--access-manager-308b8bd3",
+    "popular": false
+  },
+  {
+    "name": "Warehouse Automation AI Code Generation & Optimization",
+    "description": "warehouse automation solution for sports venues industry. Generates production-ready code from natural language descriptions, optimizes existing code for performance.",
+    "category": "ai",
+    "industry": "Sports Venues",
+    "features": [
+      "Natural language to code",
+      "Code optimization"
+    ],
+    "benefits": [
+      "10x faster development",
+      "Better code quality"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "id": "warehouse-automation-ai-code-generation--optimization-c418f8dd",
+    "timestamp": "2026-07-29T10:05:38.637619+00:00",
+    "contactInfo": {
+      "website": "/services/warehouse-automation-ai-code-generation--optimization-c418f8dd",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/warehouse-automation-ai-code-generation--optimization-c418f8dd",
+    "popular": false
+  },
+  {
+    "name": "Financial Planning AI Supply Chain Optimization",
+    "description": "financial planning solution for airports industry. Optimizes supply chain operations using predictive analytics, demand forecasting, and route optimization.",
+    "category": "ai",
+    "industry": "Airports",
+    "features": [
+      "Demand forecasting",
+      "Route optimization"
+    ],
+    "benefits": [
+      "30% cost reduction",
+      "Better inventory"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "id": "financial-planning-ai-supply-chain-optimization-a17d7792",
+    "timestamp": "2026-07-29T10:05:38.637632+00:00",
+    "contactInfo": {
+      "website": "/services/financial-planning-ai-supply-chain-optimization-a17d7792",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/financial-planning-ai-supply-chain-optimization-a17d7792",
+    "popular": false
+  },
+  {
+    "name": "Brand Experience Multi-Cloud Cost Management Platform",
+    "description": "brand experience solution for insurtech industry. Unified platform for monitoring, optimizing, and governing costs across AWS, Azure, and GCP.",
+    "category": "ai",
+    "industry": "InsurTech",
+    "features": [
+      "Cross-cloud monitoring",
+      "Cost optimization"
+    ],
+    "benefits": [
+      "35% cost savings",
+      "Unified view"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "id": "brand-experience-multi-cloud-cost-management-platform-c90e59c4",
+    "timestamp": "2026-07-29T10:05:38.637645+00:00",
+    "contactInfo": {
+      "website": "/services/brand-experience-multi-cloud-cost-management-platform-c90e59c4",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/brand-experience-multi-cloud-cost-management-platform-c90e59c4",
+    "popular": false
+  },
+  {
+    "name": "Order Fulfillment Real-Time Data Pipeline Platform",
+    "description": "order fulfillment solution for smart city industry. Creates and manages real-time data pipelines with automated ETL and streaming analytics.",
+    "category": "ai",
+    "industry": "Smart City",
+    "features": [
+      "Real-time ETL",
+      "Streaming analytics"
+    ],
+    "benefits": [
+      "Real-time insights",
+      "Data quality assured"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "id": "order-fulfillment-real-time-data-pipeline-platform-7d8f926c",
+    "timestamp": "2026-07-29T10:05:38.637659+00:00",
+    "contactInfo": {
+      "website": "/services/order-fulfillment-real-time-data-pipeline-platform-7d8f926c",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/order-fulfillment-real-time-data-pipeline-platform-7d8f926c",
+    "popular": false
+  },
+  {
+    "name": "Wellness Programs AI Sales Lead Scoring Engine",
+    "description": "wellness programs solution for jewelry industry. Scores and prioritizes sales leads in real-time using behavioral data and engagement patterns.",
+    "category": "ai",
+    "industry": "Jewelry",
+    "features": [
+      "Lead scoring",
+      "Behavioral analysis"
+    ],
+    "benefits": [
+      "40% more qualified leads",
+      "Higher conversion rates"
+    ],
+    "pricing": {
+      "basic": "249",
+      "pro": "799",
+      "enterprise": "2499"
+    },
+    "id": "wellness-programs-ai-sales-lead-scoring-engine-04d2fb10",
+    "timestamp": "2026-07-29T10:05:38.637673+00:00",
+    "contactInfo": {
+      "website": "/services/wellness-programs-ai-sales-lead-scoring-engine-04d2fb10",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/wellness-programs-ai-sales-lead-scoring-engine-04d2fb10",
+    "popular": false
+  },
+  {
+    "name": "Billing Automation Intelligent Document Processing AI",
+    "description": "billing automation solution for maritime industry. Processes invoices, contracts, and forms with 99% accuracy, extracting data and routing documents automatically.",
+    "category": "ai",
+    "industry": "Maritime",
+    "features": [
+      "Multi-format OCR",
+      "Data extraction"
+    ],
+    "benefits": [
+      "99% accuracy",
+      "Zero manual entry"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "999",
+      "enterprise": "2999"
+    },
+    "id": "billing-automation-intelligent-document-processing-ai-30878231",
+    "timestamp": "2026-07-29T10:05:38.637687+00:00",
+    "contactInfo": {
+      "website": "/services/billing-automation-intelligent-document-processing-ai-30878231",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/billing-automation-intelligent-document-processing-ai-30878231",
+    "popular": false
+  },
+  {
+    "name": "Media Mix Modeling AI-Powered Data Quality Manager",
+    "description": "media mix modeling solution for travel industry. Automatically detects, corrects, and prevents data quality issues using machine learning.",
+    "category": "ai",
+    "industry": "Travel",
+    "features": [
+      "Anomaly detection",
+      "Auto-correction"
+    ],
+    "benefits": [
+      "95% data quality",
+      "Automated cleanup"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "3999"
+    },
+    "id": "media-mix-modeling-ai-powered-data-quality-manager-78bdc9b3",
+    "timestamp": "2026-07-29T10:05:38.637701+00:00",
+    "contactInfo": {
+      "website": "/services/media-mix-modeling-ai-powered-data-quality-manager-78bdc9b3",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/media-mix-modeling-ai-powered-data-quality-manager-78bdc9b3",
+    "popular": false
+  },
+  {
+    "name": "Omnichannel Experience AI-Powered Threat Detection System",
+    "description": "omnichannel experience solution for franchises industry. Real-time threat detection using behavioral analysis, anomaly detection, and machine learning.",
+    "category": "ai",
+    "industry": "Franchises",
+    "features": [
+      "Behavioral analysis",
+      "Anomaly detection"
+    ],
+    "benefits": [
+      "Zero-day protection",
+      "99% attack prevention"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2499",
+      "enterprise": "9999"
+    },
+    "id": "omnichannel-experience-ai-powered-threat-detection-system-7cc925f4",
+    "timestamp": "2026-07-29T10:05:38.637715+00:00",
+    "contactInfo": {
+      "website": "/services/omnichannel-experience-ai-powered-threat-detection-system-7cc925f4",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/omnichannel-experience-ai-powered-threat-detection-system-7cc925f4",
+    "popular": false
+  },
+  {
+    "name": "Predictive AI-Powered SEO Content Engine",
+    "description": "predictive solution for energy industry. Generates SEO-optimized content at scale, including blog posts, product descriptions, and marketing copy.",
+    "category": "ai",
+    "industry": "Energy",
+    "features": [
+      "SEO keyword targeting",
+      "Brand voice adaptation"
+    ],
+    "benefits": [
+      "10x content output",
+      "Ranking improvements"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "499",
+      "enterprise": "1499"
+    },
+    "id": "predictive-ai-powered-seo-content-engine-413870fe",
+    "timestamp": "2026-07-29T10:05:38.637728+00:00",
+    "contactInfo": {
+      "website": "/services/predictive-ai-powered-seo-content-engine-413870fe",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/predictive-ai-powered-seo-content-engine-413870fe",
+    "popular": false
+  },
+  {
+    "name": "Guest Experience Intelligent Document Processing AI",
+    "description": "guest experience solution for theme parks industry. Processes invoices, contracts, and forms with 99% accuracy, extracting data and routing documents automatically.",
+    "category": "ai",
+    "industry": "Theme Parks",
+    "features": [
+      "Multi-format OCR",
+      "Data extraction"
+    ],
+    "benefits": [
+      "99% accuracy",
+      "Zero manual entry"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "999",
+      "enterprise": "2999"
+    },
+    "id": "guest-experience-intelligent-document-processing-ai-ddca1482",
+    "timestamp": "2026-07-29T10:05:38.637742+00:00",
+    "contactInfo": {
+      "website": "/services/guest-experience-intelligent-document-processing-ai-ddca1482",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/guest-experience-intelligent-document-processing-ai-ddca1482",
+    "popular": false
+  },
+  {
+    "name": "Deep Learning Real-Time Data Pipeline Platform",
+    "description": "deep learning solution for emergency services industry. Creates and manages real-time data pipelines with automated ETL and streaming analytics.",
+    "category": "ai",
+    "industry": "Emergency Services",
+    "features": [
+      "Real-time ETL",
+      "Streaming analytics"
+    ],
+    "benefits": [
+      "Real-time insights",
+      "Data quality assured"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "2999",
+      "enterprise": "9999"
+    },
+    "id": "deep-learning-real-time-data-pipeline-platform-5a06477e",
+    "timestamp": "2026-07-29T10:05:38.637755+00:00",
+    "contactInfo": {
+      "website": "/services/deep-learning-real-time-data-pipeline-platform-5a06477e",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/deep-learning-real-time-data-pipeline-platform-5a06477e",
+    "popular": false
+  },
+  {
+    "name": "Inventory Forecasting AI-Powered Data Quality Manager",
+    "description": "inventory forecasting solution for insurtech industry. Automatically detects, corrects, and prevents data quality issues using machine learning.",
+    "category": "ai",
+    "industry": "InsurTech",
+    "features": [
+      "Anomaly detection",
+      "Auto-correction"
+    ],
+    "benefits": [
+      "95% data quality",
+      "Automated cleanup"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "3999"
+    },
+    "id": "inventory-forecasting-ai-powered-data-quality-manager-cd4caeaf",
+    "timestamp": "2026-07-29T10:05:38.637768+00:00",
+    "contactInfo": {
+      "website": "/services/inventory-forecasting-ai-powered-data-quality-manager-cd4caeaf",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/inventory-forecasting-ai-powered-data-quality-manager-cd4caeaf",
+    "popular": false
+  },
+  {
+    "name": "Optimization Zero-Trust Identity & Access Manager",
+    "description": "optimization solution for technology industry. Implements zero-trust security architecture with continuous authentication and adaptive access controls.",
+    "category": "ai",
+    "industry": "Technology",
+    "features": [
+      "Continuous auth",
+      "Adaptive controls"
+    ],
+    "benefits": [
+      "99.9% unauthorized access blocked",
+      "Secure remote work"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1999",
+      "enterprise": "6999"
+    },
+    "id": "optimization-zero-trust-identity--access-manager-4dd003cd",
+    "timestamp": "2026-07-29T10:05:38.637782+00:00",
+    "contactInfo": {
+      "website": "/services/optimization-zero-trust-identity--access-manager-4dd003cd",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/optimization-zero-trust-identity--access-manager-4dd003cd",
+    "popular": false
+  },
+  {
+    "name": "Asset Management AI-Powered Data Quality Manager",
+    "description": "asset management solution for disaster preparedness industry. Automatically detects, corrects, and prevents data quality issues using machine learning.",
+    "category": "ai",
+    "industry": "Disaster Preparedness",
+    "features": [
+      "Anomaly detection",
+      "Auto-correction"
+    ],
+    "benefits": [
+      "95% data quality",
+      "Automated cleanup"
+    ],
+    "pricing": {
+      "basic": "399",
+      "pro": "1199",
+      "enterprise": "3999"
+    },
+    "id": "asset-management-ai-powered-data-quality-manager-7c7106b4",
+    "timestamp": "2026-07-29T10:05:38.637795+00:00",
+    "contactInfo": {
+      "website": "/services/asset-management-ai-powered-data-quality-manager-7c7106b4",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/asset-management-ai-powered-data-quality-manager-7c7106b4",
+    "popular": false
   }
 ]
