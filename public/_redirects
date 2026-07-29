@@ -180,6 +180,18 @@
 /ai-consulting-services/  /ai-consulting-services/index.html  200
 /ai-integration-services    /ai-integration-services/index.html  200
 /ai-integration-services/  /ai-integration-services/index.html  200
+/contact    /contact/index.html  200
+/contact/  /contact/index.html  200
+
+/ai-machine-learning-platform    /ai-machine-learning-platform/index.html  200
+/ai-machine-learning-platform/  /ai-machine-learning-platform/index.html  200
+
+/enterprise-it-consulting    /enterprise-it-consulting/index.html  200
+/enterprise-it-consulting/  /enterprise-it-consulting/index.html  200
+
+/it-management-services    /it-management-services/index.html  200
+/it-management-services/  /it-management-services/index.html  200
+
 
 # Live fallback routes
 /mobile-app  /mobile-app/index.html  200
