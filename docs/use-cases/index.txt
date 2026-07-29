@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Use Cases | Zion Tech Group</title>
+  <meta name="description" content="Practical AI and IT use cases delivered by Zion Tech Group — real deployments across healthcare, finance, retail, logistics, and more.">
+  <link rel="canonical" href="https://ziontechgroup.com/use-cases/">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="container-page py-20">
+    <h1 class="text-4xl font-bold text-white mb-4">Use Cases</h1>
+    <p class="text-xl text-slate-300 mb-10">Practical, deployable AI + IT use cases — production-ready outcomes.</p>
+
+    <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto mb-14">
+      <div class="card">
+        <h3>Healthcare</h3>
+        <p class="mt-2 text-slate-300"><strong>AI-Assisted Medical Triage</strong> — Reduce wait times and prioritize urgent cases.</p>
+        <ul class="text-slate-400 text-sm mt-3 space-y-1">
+          <li>• Faster patient routing</li>
+          <li>• Reduced radiologist load</li>
+          <li>• Compliant by design</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Financial Services</h3>
+        <p class="mt-2 text-slate-300"><strong>Real-Time Fraud &amp; Anomaly Detection</strong> — Stop fraud before it hits the books.</p>
+        <ul class="text-slate-400 text-sm mt-3 space-y-1">
+          <li>• Sub-second scoring</li>
+          <li>• Behavioral biometrics</li>
+          <li>• Lower false positives</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Manufacturing</h3>
+        <p class="mt-2 text-slate-300"><strong>Predictive Maintenance on the Plant Floor</strong> — Turn downtime into planned maintenance.</p>
+        <ul class="text-slate-400 text-sm mt-3 space-y-1">
+          <li>• IoT + edge inference</li>
+          <li>• Early failure signals</li>
+          <li>• Parts in stock ahead of failures</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Retail &amp; E-Commerce</h3>
+        <p class="mt-2 text-slate-300"><strong>Personalized Offer Engines</strong> — Next-best-action offers that convert.</p>
+        <ul class="text-slate-400 text-sm mt-3 space-y-1">
+          <li>• Real-time recommendations</li>
+          <li>• Dynamic pricing</li>
+          <li>• Omnichannel sync</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Logistics</h3>
+        <p class="mt-2 text-slate-300"><strong>Adaptive Route Optimization</strong> — Save fuel, hit SLAs, reroute live.</p>
+        <ul class="text-slate-400 text-sm mt-3 space-y-1">
+          <li>• Live traffic + weather</li>
+          <li>• Route pooling</li>
+          <li>• Driver experience insights</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Legal &amp; Compliance</h3>
+        <p class="mt-2 text-slate-300"><strong>Contract Intelligence &amp; Obligation Tracking</strong> — Paperwork as an active risk radar.</p>
+        <ul class="text-slate-400 text-sm mt-3 space-y-1">
+          <li>• Clause extraction</li>
+          <li>• Expiry &amp; renewal alerts</li>
+          <li>• Policy cross-check</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Energy &amp; Utilities</h3>
+        <p class="mt-2 text-slate-300"><strong>Grid Load Forecasting</strong> — Balance supply and demand before peaks.</p>
+        <ul class="text-slate-400 text-sm mt-3 space-y-1">
+          <li>• Demand forecasting</li>
+          <li>• Distributed IoT telemetry</li>
+          <li>• Regulatory reporting</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Insurance</h3>
+        <p class="mt-2 text-slate-300"><strong>AI Claims Automation</strong> — Accelerate FNOL, triage, and settlement.</p>
+        <ul class="text-slate-400 text-sm mt-3 space-y-1">
+          <li>• Smart intake + OCR</li>
+          <li>• Fraud checks</li>
+          <li>• Faster settlements</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Enterprise IT</h3>
+        <p class="mt-2 text-slate-300"><strong>Automated Incident Response</strong> — Detect, diagnose, resolve faster.</p>
+        <ul class="text-slate-400 text-sm mt-3 space-y-1">
+          <li>• AIOps correlation</li>
+          <li>• Auto-remediation</li>
+          <li>• On-call simplification</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <a class="btn-primary" href="/contact/">Talk to an Engineer</a>
+      <a class="btn-secondary" href="/services/">Browse Services</a>
+    </div>
+  </main>
+</body>
+</html>

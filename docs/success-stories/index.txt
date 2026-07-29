@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Success Stories | Zion Tech Group</title>
+  <meta name="description" content="Real success stories from Zion Tech Group clients — measurable outcomes, industry use cases, and transformation journeys.">
+  <link rel="canonical" href="https://ziontechgroup.com/success-stories/">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="container-page py-20">
+    <h1 class="text-4xl font-bold text-white mb-4">Success Stories</h1>
+    <p class="text-xl text-slate-300 mb-10">Real outcomes from real clients.</p>
+    <div class="grid gap-6 md:grid-cols-2 max-w-5xl mx-auto mb-14">
+      <div class="card">
+        <h3>Healthcare</h3>
+        <p>AI Diagnostics Slash Hospital Read Times — 87% faster diagnosis, $2.4M annual savings.</p>
+      </div>
+      <div class="card">
+        <h3>Financial Services</h3>
+        <p>Regional Bank Cuts Fraud Losses — 94% detection rate and $12M saved annually.</p>
+      </div>
+      <div class="card">
+        <h3>Manufacturing</h3>
+        <p>Auto Supplier Eliminates Unplanned Downtime — 73% downtime reduction and $850K savings.</p>
+      </div>
+      <div class="card">
+        <h3>E-Commerce</h3>
+        <p>Fashion Retailer Boosts Conversions — 340% conversion lift, 28% higher AOV.</p>
+      </div>
+      <div class="card">
+        <h3>Energy</h3>
+        <p>Energy Firm Reduces Downtime — 40% outage reduction with predictive grid AI.</p>
+      </div>
+      <div class="card">
+        <h3>Retail</h3>
+        <p>Retailer Reclaims In-Stock Rates — 98.5% in-stock rate, $3M recovered revenue.</p>
+      </div>
+      <div class="card">
+        <h3>Logistics</h3>
+        <p>3PL Cuts Fuel Costs — 22% fuel savings, 96% on-time delivery.</p>
+      </div>
+      <div class="card">
+        <h3>Legal & Compliance</h3>
+        <p>Law Firm Cuts Contract Review — 65% faster review, 4x throughput.</p>
+      </div>
+    </div>
+    <div class="text-center">
+      <a class="btn-primary" href="/contact/">Start Your Project</a>
+      <a class="btn-secondary" href="/services/">Explore Services</a>
+    </div>
+  </main>
+</body>
+</html>
