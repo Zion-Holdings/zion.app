@@ -608,7 +608,7 @@ function ClientShowcaseView({ logs, statuses, onSwitchView }: { logs: AgentLogEn
         <div className="text-center bg-gradient-to-br from-purple-500/10 to-pink-500/10 border border-purple-500/20 rounded-xl p-10">
           <h3 className="text-2xl font-bold mb-3">Want to See What AI Can Do for Your Business?</h3>
           <p className="text-sm text-slate-400 mb-6 max-w-lg mx-auto">Our AI agents are ready to build your next solution. Get a free custom proposal in minutes.</p>
-          <Link href="/configurator" className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-xl font-semibold text-sm hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/20">
+          <Link href="/contact" className="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-xl font-semibold text-sm hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/20">
             Get Your Custom Proposal →
           </Link>
         </div>

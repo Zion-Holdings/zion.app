@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation';
 
 export default function ToolsAlias() {
-  redirect('/configurator');
+  redirect('/contact');
 }

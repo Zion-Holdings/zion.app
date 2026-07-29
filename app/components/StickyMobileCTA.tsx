@@ -28,10 +28,10 @@ export default function StickyMobileCTA() {
       <div className="bg-slate-900/95 backdrop-blur-xl border-t border-purple-500/30 p-4 shadow-2xl">
         <div className="flex gap-3">
           <Link
-            href="/configurator/"
+            href="/contact/"
             className="flex-1 text-center px-4 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold text-sm hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/25"
           >
-            ⚡ Get Custom Proposal
+            ⚡ Get a Proposal
           </Link>
           <a
             href="tel:+13024640950"

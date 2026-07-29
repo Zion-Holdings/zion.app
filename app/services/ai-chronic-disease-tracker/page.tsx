@@ -104,7 +104,7 @@ export default function AiChronicDiseaseTrackerPage() {
         
         <div className="mt-12 text-center">
           <Link 
-            href="/configurator/" 
+            href="/contact/" 
             className="btn-primary text-lg px-8 py-3"
           >
             Get Custom Implementation Plan →

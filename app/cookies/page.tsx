@@ -100,7 +100,7 @@ export default function CookiesPage() {
 
             <div className="mt-6 p-5 bg-slate-900/60 border border-slate-700 rounded-xl">
               <p className="text-slate-300">
-                <strong className="text-white">Note:</strong> Blocking essential cookies may prevent you from using the configurator,
+                <strong className="text-white">Note:</strong> Blocking essential cookies may prevent you from using contact forms,
                 submitting requests, or maintaining session state in the portal. If you have issues after changing
                 cookie settings, please clear your browser cache and reload the page.
               </p>

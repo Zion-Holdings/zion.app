@@ -22,8 +22,8 @@ export default function ServiceCTA({ serviceName }: ServiceCTAProps) {
           <a href="mailto:kleber@ziontechgroup.com" className="btn-primary text-lg px-8 py-3">
             ✉ Get a Custom Quote
           </a>
-          <Link href="/configurator/" className="btn-secondary text-lg px-8 py-3">
-            ⚙️ Try the Configurator
+          <Link href="/contact/" className="btn-secondary text-lg px-8 py-3">
+            ⚙️ Start Contact Flow
           </Link>
           <a href="tel:+13024640950" className="btn-secondary text-lg px-8 py-3">
             ☎ Call +1 302 464 0950
