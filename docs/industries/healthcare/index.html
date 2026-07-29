@@ -2,28 +2,160 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI for Healthcare | Zion Tech Group</title>
-  <meta name="description" content="AI for healthcare teams: claims, diagnostics, onboarding, documentation, and compliance with measurable outcomes.">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Healthcare AI Solutions | Zion Tech Group</title>
+  <meta name="description" content="AI-driven healthcare technology for patient care, drug discovery, medical imaging, and clinical operations. HIPAA-compliant solutions.">
   <link rel="canonical" href="https://ziontechgroup.com/industries/healthcare/">
-  <link rel="stylesheet" href="/styles.css">
+  <style>
+    :root { --primary: #8b5cf6; --accent: #ec4899; --success: #10b981; --warning: #f59e0b; --info: #3b82f6; --dark: #0f172a; --darker: #111827; --card: #1e293b; --pink: #ec4899; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif; background: #0f172a; color: #e2e8f0; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+    .nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid #334155; margin-bottom: 2rem; }
+    .nav a { color: #94a3b8; text-decoration: none; margin: 0 0.5rem; }
+    .nav a:hover { color: #e2e8f0; }
+    .nav .brand { font-size: 1.5rem; font-weight: 700; background: linear-gradient(45deg, #8b5cf6, #ec4899); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero { text-align: center; padding: 4rem 0 2rem; background: radial-gradient(ellipse at top, #db2777 0%, transparent 50%); }
+    .hero h1 { font-size: 2.5rem; font-weight: 800; margin-bottom: 1rem; background: linear-gradient(45deg, #ec4899, #f43f5e); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .hero p { font-size: 1.25rem; color: #e2e8f0; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+    .btn { display: inline-block; padding: 0.75rem 1.5rem; border-radius: 9999px; font-weight: 600; text-decoration: none; margin: 0 0.5rem; }
+    .btn-primary { background: linear-gradient(45deg, #ec4899, #f43f5e); color: white; }
+    .btn-secondary { background: #1e293b; color: #e2e8f0; border: 1px solid #334155; }
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 3rem 0; }
+    .stat-card { background: #1e293b; border-radius: 1rem; padding: 1.5rem; text-align: center; border: 1px solid #334155; }
+    .stat-value { font-size: 2rem; font-weight: 700; color: #ec4899; margin-bottom: 0.5rem; }
+    .stat-label { color: #94a3b8; font-size: 0.875rem; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+    .service-card { background: #1e293b; border-radius: 1rem; padding: 1.5rem; border: 1px solid #334155; transition: transform 0.2s, box-shadow 0.2s; }
+    .service-card:hover { transform: translateY(-2px); box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+    .service-card h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .service-card p { color: #94a3b8; font-size: 0.875rem; margin-bottom: 1rem; }
+    .service-card .badge { display: inline-block; background: #ec4899; color: white; font-size: 0.75rem; padding: 0.25rem 0.5rem; border-radius: 9999px; }
+    .benefits { background: #1e293b; border-radius: 1rem; padding: 2rem; margin: 3rem 0; }
+    .benefits h2 { font-size: 1.75rem; font-weight: 700; margin-bottom: 1.5rem; }
+    .benefit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
+    .benefit-item { text-align: center; padding: 1rem; }
+    .benefit-item .icon { font-size: 2rem; margin-bottom: 0.5rem; }
+    .benefit-item h4 { font-size: 1rem; font-weight: 600; margin-bottom: 0.5rem; color: #e2e8f0; }
+    .benefit-item p { color: #94a3b8; font-size: 0.875rem; }
+    footer { text-align: center; padding: 2rem; color: #64748b; font-size: 0.875rem; border-top: 1px solid #334155; margin-top: 3rem; }
+  </style>
 </head>
 <body>
-  <main class="container-page py-20">
-    <h1 class="text-4xl font-bold text-white mb-4">AI for Healthcare</h1>
-    <p class="text-xl text-slate-300 mb-10">Healthcare AI with compliance guardrails: claims, documentation, diagnostics, and operational efficiency.</p>
-    <div class="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto mb-14">
-      <div class="card"><h3>Claims</h3><p>Coding, routing, review acceleration, and denial reduction.</p></div>
-      <div class="card"><h3>Diagnostics</h3><p>Imaging, document extraction, risk summaries, and clinical assistance.</p></div>
-      <div class="card"><h3>Operations</h3><p>Scheduling, onboarding, access, and patient experience automation.</p></div>
-      <div class="card"><h3>Compliance</h3><p>HIPAA-ready controls, audit trails, privacy review, and policy enforcement.</p></div>
-      <div class="card"><h3>Data</h3><p>Pipelines, dashboards, forecasting, and governed analytics.</p></div>
-      <div class="card"><h3>Outcome</h3><p>Turnaround reduction, accuracy improvement, and measurable ROI.</p></div>
+  <nav class="nav">
+    <a href="/" class="brand">Zion Tech Group</a>
+    <div>
+      <a href="/services/">Services</a>
+      <a href="/industries/">Industries</a>
+      <a href="/tools/">Tools</a>
+      <a href="/contact/">Contact</a>
     </div>
-    <div class="text-center">
-      <a class="btn-primary" href="/contact/">Start healthcare AI</a>
-      <a class="btn-secondary" href="/services/?category=healthcare">Healthcare services</a>
+  </nav>
+
+  <div class="container">
+    <section class="hero">
+      <div class="badge" style="background: #10b981; color: white; padding: 0.5rem 1rem; border-radius: 9999px; font-size: 0.875rem; margin-bottom: 1rem;">HIPAA-Compliant AI Solutions</div>
+      <h1>AI Solutions for Healthcare</h1>
+      <p>Transform patient care, accelerate research, and reduce costs with HIPAA-compliant AI solutions for drug discovery, medical imaging, and clinical operations.</p>
+      <div>
+        <a href="/contact/" class="btn btn-primary">📞 Book Healthcare Consultation</a>
+        <a href="/services/?category=ai" class="btn btn-secondary">🧠 View All AI Services</a>
+      </div>
+    </section>
+
+    <div class="stats">
+      <div class="stat-card">
+        <div class="stat-value">12+</div>
+        <div class="stat-label">Healthcare Services</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">HIPAA</div>
+        <div class="stat-label">Compliant</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">95%</div>
+        <div class="stat-label">Accuracy</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">24/7</div>
+        <div class="stat-label">Monitoring</div>
+      </div>
     </div>
-  </main>
+
+    <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; text-align: center;">Healthcare AI Solutions</h2>
+    <p style="text-align: center; color: #94a3b8; margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">AI-powered tools for drug discovery, medical imaging, clinical operations, and patient care.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>🧬 AI Drug Discovery</h3>
+        <p>Accelerate pharmaceutical research with AI-powered molecular design, target prediction, and compound optimization.</p>
+        <span class="badge">AI Service</span>
+      </div>
+      <div class="service-card">
+        <h3>🩺 Medical Imaging Analysis</h3>
+        <p>Computer vision for radiology, pathology, and medical imaging with automated anomaly detection.</p>
+        <span class="badge">AI Service</span>
+      </div>
+      <div class="service-card">
+        <h3>🔬 Clinical Trial Optimization</h3>
+        <p>AI-powered patient recruitment, trial design, and outcome prediction for faster drug development.</p>
+        <span class="badge">AI Service</span>
+      </div>
+      <div class="service-card">
+        <h3>📊 Patient Data Analytics</h3>
+        <p>Predictive analytics for patient outcomes, readmission risk, and personalized treatment recommendations.</p>
+        <span class="badge">AI Service</span>
+      </div>
+      <div class="service-card">
+        <h3>📞 AI Telemedicine Platform</h3>
+        <p>Virtual care with AI triage, symptom analysis, and automated appointment scheduling.</p>
+        <span class="badge">AI Service</span>
+      </div>
+      <div class="service-card">
+        <h3>💰 Healthcare Cost Management</h3>
+        <p>Reduce administrative costs and optimize resource allocation with AI-driven healthcare analytics.</p>
+        <span class="badge">Custom</span>
+      </div>
+    </div>
+
+    <section class="benefits">
+      <h2>Why Choose Our Healthcare AI?</h2>
+      <div class="benefit-grid">
+        <div class="benefit-item">
+          <div class="icon">🔒</div>
+          <h4>HIPAA Compliant</h4>
+          <p>Full data privacy and security compliance for patient information</p>
+        </div>
+        <div class="benefit-item">
+          <div class="icon">✅</div>
+          <h4>FDA-Ready</h4>
+          <p>Solutions designed for regulatory approval and clinical validation</p>
+        </div>
+        <div class="benefit-item">
+          <div class="icon">⏱️</div>
+          <h4>24/7 Monitoring</h4>
+          <p>Continuous AI performance monitoring and model updates</p>
+        </div>
+        <div class="benefit-item">
+          <div class="icon">🩺</div>
+          <h4>Clinical Accuracy</h4>
+          <p>Validated against medical standards and peer-reviewed benchmarks</p>
+        </div>
+      </div>
+    </section>
+
+    <section style="text-align: center; padding: 2rem 0;">
+      <h2 style="font-size: 1.75rem; font-weight: 700; margin-bottom: 1rem;">Ready to Transform Healthcare?</h2>
+      <p style="color: #94a3b8; margin-bottom: 1.5rem;">Schedule a free consultation to discuss AI solutions for your healthcare organization.</p>
+      <a href="/contact/" class="btn btn-primary">📞 Book Healthcare Consultation</a>
+    </section>
+  </div>
+
+  <footer>
+    <p>© <span id="year"></span> Zion Tech Group • AI and IT services for business growth.</p>
+    <p style="margin-top: 0.5rem;">364 E Main St STE 1008, Middletown, DE 19709</p>
+  </footer>
+
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
 </body>
 </html>
