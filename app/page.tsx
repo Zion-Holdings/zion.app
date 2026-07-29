@@ -332,8 +332,8 @@ export default function HomePage() {
               <Link href="/search/" className="px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/60 text-slate-300 text-sm hover:bg-slate-700/80 hover:text-purple-300 hover:border-purple-500/30 transition-all">
                 🔍 Search Services
               </Link>
-              <Link href="/careers" className="px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/60 text-slate-300 text-sm hover:bg-slate-700/80 hover:text-purple-300 hover:border-purple-500/30 transition-all">
-                Case Studies
+              <Link href="/case-studies/" className="px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/60 text-slate-300 text-sm hover:bg-slate-700/80 hover:text-purple-300 hover:border-purple-500/30 transition-all">
+                🏆 Case Studies
               </Link>
               <Link href="/pricing/" className="px-4 py-2 rounded-full bg-slate-800/60 border border-slate-700/60 text-slate-300 text-sm hover:bg-slate-700/80 hover:text-purple-300 hover:border-purple-500/30 transition-all">
                 💰 Pricing
@@ -390,6 +390,28 @@ export default function HomePage() {
               <span className="flex items-center gap-2 px-4 py-2 rounded-lg bg-slate-800/60 border border-slate-700/50 text-slate-400">
                 📍 364 E Main St STE 1008, Middletown, DE 19709
               </span>
+            </div>
+
+            {/* ── Category Quick-Nav — scroll to any service category ── */}
+            <div className="mt-4 mb-2">
+              <div className="flex overflow-x-auto gap-2 pb-2 snap-x snap-mandatory no-scrollbar">
+                {[
+                  { key:'ai', label:'🧠 AI' },
+                  { key:'it', label:'🖥️ IT' },
+                  { key:'cloud', label:'☁️ Cloud' },
+                  { key:'security', label:'🔐 Security' },
+                  { key:'data', label:'📊 Data' },
+                  { key:'automation', label:'🤖 Automation' },
+                  { key:'micro-saas', label:'🚀 Micro-SaaS' },
+                  { key:'devops', label:'⚙️ DevOps' },
+                  { key:'blockchain', label:'⛓️ Blockchain' },
+                  { key:'iot', label:'📡 IoT' },
+                ].map(cat => (
+                  <Link key={cat.key} href={`/services/?category=${cat.key}`} className="shrink-0 px-4 py-2 rounded-full bg-slate-800/70 border border-slate-700/60 text-slate-200 text-sm hover:bg-purple-500/20 hover:border-purple-500/40 hover:text-white transition-all snap-start">
+                    {cat.label}
+                  </Link>
+                ))}
+              </div>
             </div>
 
             {/* ── Service Pipeline — live stage counts ── */}
@@ -1235,20 +1257,20 @@ export default function HomePage() {
           <ServiceSpotlight services={popularServices as any} />
         </div>
       </section>
-      {/* ── Trust Badges — Persuasion Proof Matrix ── */}
+      {/* ── Why Zion Tech Group — real differentiators ── */}
       <section className="py-16 border-t border-slate-800">
         <div className="container-page">
           <h2 className="text-2xl font-bold text-white text-center mb-10">
-            Why Choose Zion Tech Group
+            Why Zion Tech Group
           </h2>
           <div className="grid md:grid-cols-4 gap-6">
             {[
-              { emoji: '🏆', label: 'Service Catalog', sub: 'AI & IT catalog', color: 'from-amber-500/20 to-yellow-500/10' },
-              { emoji: '🚀', label: 'Latest Tech', sub: 'Modern stacks', color: 'from-purple-500/20 to-blue-500/10' },
-              { emoji: '🌐', label: 'Cross-Industry', sub: '9 sectors served', color: 'from-purple-500/20 to-blue-500/10' },
-              { emoji: '💡', label: 'Plug & Play', sub: 'No AI team needed', color: 'from-purple-500/20 to-blue-500/10' },
+              { emoji: '🇺🇸', label: 'US-Based Team', sub: 'Local experts, no offshore handoffs' },
+              { emoji: '⚡', label: '24/7 Support', sub: 'Round-the-clock coverage' },
+              { emoji: '✅', label: 'SLA Guaranteed', sub: '99.9% uptime commitment' },
+              { emoji: '🔐', label: 'HIPAA Ready', sub: 'Compliant healthcare workflows' },
             ].map((badge, i) => (
-              <div key={i} className={`bg-gradient-to-br ${badge.color} border border-slate-700/50 rounded-xl p-6 text-center group hover:border-purple-500/30 transition-all`}>
+              <div key={i} className="bg-slate-900/60 rounded-xl p-6 border border-slate-700/50 text-center group hover:border-purple-500/30 transition-colors">
                 <div className="text-4xl mb-4">{badge.emoji}</div>
                 <div className="text-xl font-bold text-white mb-1">{badge.label}</div>
                 <div className="text-sm text-slate-400">{badge.sub}</div>
