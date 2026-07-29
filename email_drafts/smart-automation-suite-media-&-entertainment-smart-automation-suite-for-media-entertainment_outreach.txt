@@ -7,14 +7,14 @@ I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbrea
 Comprehensive smart automation suite designed for media & entertainment enterprises. Automates Content recommendation, audience analytics, ad optimization across all operational layers.
 
 **Key Benefits:**
-- 42% reduction in operational costs
-- Process 80% faster with automation
+- 59% reduction in operational costs
+- Process 43% faster with automation
 - 99.9% uptime guarantee with enterprise SLAs
 
 **Pricing:**
-- Basic: $96/month
-- Pro: $260/month
-- Enterprise: $492/month
+- Basic: $135/month
+- Pro: $380/month
+- Enterprise: $747/month
 
 **Book a free consultation:** https://calendly.com/kleber-ziontechgroup/consultation
 
