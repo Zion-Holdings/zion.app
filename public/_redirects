@@ -134,6 +134,12 @@
 /ai-network-performance-wan-optimization/  /ai-network-performance-wan-optimization/index.html  200
 /ai-observability-platform    /ai-observability-platform/index.html  200
 /ai-observability-platform/  /ai-observability-platform/index.html  200
+/about    /about/index.html  200
+/about/  /about/index.html  200
+/case-studies    /case-studies/index.html  200
+/case-studies/  /case-studies/index.html  200
+/industries    /industries/index.html  200
+/industries/  /industries/index.html  200
 
 # Live fallback routes
 /mobile-app  /mobile-app/index.html  200
