@@ -87,8 +87,24 @@ function ServicesContent() {
       />
     <main className="min-h-screen bg-slate-950 py-20">
       <div className="container-page">
-        <h1 className="text-4xl font-bold text-white mb-2 text-center">Our Complete Service Catalog</h1>
-        <p className="section-subheading text-center">{allServices.length}+ real-world services across 10 categories</p>
+        <div className="text-center max-w-4xl mx-auto mb-12">
+          <h1 className="text-4xl font-bold text-white mb-2 text-center">Our Complete Service Catalog</h1>
+          <p className="section-subheading text-center">{allServices.length}+ real-world services across AI, IT, cloud, security, data, automation, and DevOps</p>
+          <div className="flex flex-wrap justify-center gap-3 mt-6">
+            <a href="mailto:kleber@ziontechgroup.com" className="btn-primary text-lg px-8 py-3">Email for proposal</a>
+            <a href="tel:+13024640950" className="btn-secondary text-lg px-8 py-3">+1 302 464 0950</a>
+            <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noreferrer" className="btn-secondary text-lg px-8 py-3">Book consultation</a>
+          </div>
+          <div className="flex flex-wrap justify-center gap-4 mt-6 text-sm text-slate-400">
+            <span>US-Based Team</span>
+            <span>•</span>
+            <span>SLA Guaranteed</span>
+            <span>•</span>
+            <span>HIPAA Ready</span>
+            <span>•</span>
+            <span>24/7 Support</span>
+          </div>
+        </div>
         {/* Smart Fuzzy Search Bar */}
         <div className="max-w-3xl mx-auto mt-8">
           <SmartSearchBar

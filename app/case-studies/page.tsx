@@ -145,6 +145,17 @@ export default function CaseStudies() {
           <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
             Real enterprise transformations — measurable ROI, implementation timelines, and the lessons we carried forward.
           </p>
+          <div className="flex flex-wrap justify-center gap-3 mt-6">
+            <a href="mailto:kleber@ziontechgroup.com" className="btn-primary text-lg px-8 py-3">Email for similar results</a>
+            <a href="/contact/" className="btn-secondary text-lg px-8 py-3">Request proposal</a>
+          </div>
+          <div className="flex flex-wrap justify-center gap-4 mt-6 text-sm text-slate-400">
+            <span className="text-white font-semibold">4.8/5</span><span>Client rating</span>
+            <span>•</span>
+            <span>24h</span><span>Response</span>
+            <span>•</span>
+            <span>US-Based</span><span>Delivery</span>
+          </div>
         </div>
 
         <div className="grid gap-10 max-w-5xl mx-auto">
