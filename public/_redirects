@@ -148,6 +148,10 @@
 /ai-incident-response/  /ai-incident-response/index.html  200
 /ai-vendor-management    /ai-vendor-management/index.html  200
 /ai-vendor-management/  /ai-vendor-management/index.html  200
+/blog    /blog/index.html  200
+/blog/  /blog/index.html  200
+/pricing    /pricing/index.html  200
+/pricing/  /pricing/index.html  200
 
 # Live fallback routes
 /mobile-app  /mobile-app/index.html  200
