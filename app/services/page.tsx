@@ -65,7 +65,7 @@ function ServicesContent() {
           '@context': 'https://schema.org',
           '@type': 'CollectionPage',
           name: 'Zion Tech Group Service Catalog',
-          description: 'Browse AI, IT, cloud, security, data, automation, and DevOps services across multiple categories.',
+          description: 'Complete AI, IT, cloud, security, data, automation, and DevOps service catalog with pricing, contact, and measurable outcomes.',
           url: 'https://ziontechgroup.com/services',
           isPartOf: { '@type': 'WebSite', url: 'https://ziontechgroup.com/', name: 'Zion Tech Group' },
           about: {
