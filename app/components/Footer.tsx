@@ -14,17 +14,27 @@ const FOOTER_LINKS: { title: string; links: FooterLink[] }[] = [
   {
     title: 'Services',
     links: [
-      { name: 'AI Services', href: '/ai-services' },
+      { name: 'AI Services', href: '/services' },
       { name: 'All Services', href: '/services' },
-      { name: 'Micro-SaaS', href: '/services?category=micro-saas' },
-      { name: 'Cloud & DevOps', href: '/services?category=cloud' },
-      { name: 'Security', href: '/services?category=security' },
-      { name: 'Data & Analytics', href: '/services?category=data' },
-      { name: 'Blockchain & Web3', href: '/services?category=blockchain' },
-      { name: 'IoT & Edge', href: '/services?category=iot' },
-      { name: 'Pricing', href: '/pricing' },
-      { name: 'AI Agent Dashboard', href: '/dashboard' },
-      { name: 'Agent Monitoring', href: '/agents-monitoring' },
+      { name: 'Micro-SaaS', href: '/services/?category=micro-saas' },
+      { name: 'Cloud & DevOps', href: '/services/?category=cloud' },
+      { name: 'Security', href: '/services/?category=security' },
+      { name: 'Data & Analytics', href: '/services/?category=data' },
+      { name: 'AI Agent Dashboard', href: '/agents-monitoring' },
+    ],
+  },
+  {
+    title: 'Industries',
+    links: [
+      { name: 'Healthcare', href: '/industries/healthcare/' },
+      { name: 'Financial Services', href: '/industries/financial/' },
+      { name: 'Manufacturing', href: '/industries/manufacturing/' },
+      { name: 'Retail & E-Commerce', href: '/industries/retail/' },
+      { name: 'Education', href: '/industries/education/' },
+      { name: 'Legal', href: '/industries/legal/' },
+      { name: 'Energy', href: '/industries/energy/' },
+      { name: 'Logistics', href: '/industries/logistics/' },
+      { name: 'Technology', href: '/industries/technology/' },
     ],
   },
   {
@@ -43,8 +53,7 @@ const FOOTER_LINKS: { title: string; links: FooterLink[] }[] = [
     links: [
       { name: 'Agent Monitoring', href: '/agents-monitoring' },
       { name: 'Academy', href: '/academy' },
-      { name: 'FAQ', href: '/about' },
-      { name: 'Case Studies', href: '/about' },
+      { name: 'FAQ', href: '/faq' },
       { name: 'Documentation', href: '/contact' },
     ],
   },
@@ -120,7 +129,7 @@ const Footer: React.FC = () => {
                 {CONTACT_INFO.phone}
               </a>
               <div className="flex items-start gap-2 text-slate-400 text-sm">
-                <svg className="w-4 h-4 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                <svg className="w-4 h-4 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 0111.314 0z"/><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                 <span>
                   {CONTACT_INFO.address.street}<br />
                   {CONTACT_INFO.address.city}, {CONTACT_INFO.address.state} {CONTACT_INFO.address.zipCode}
@@ -130,7 +139,7 @@ const Footer: React.FC = () => {
                 href="https://calendly.com/kleber-ziontechgroup"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 px-3 py-2 rounded-lg bg-blue-600 text-white text-xs font-semibold hover:bg-blue-500 transition-colors mt-1"
+                className="inline-flex items-center gap-2 px-3 py-2 rounded-full bg-blue-600 text-white text-xs font-semibold hover:bg-blue-500 transition-colors mt-1"
               >
                 📅 Book a Consultation
               </a>

@@ -3,59 +3,68 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Retail AI Solutions | Zion Tech Group',
-  description: 'AI-powered retail solutions for personalized recommendations, inventory optimization, demand forecasting, and customer experience enhancement.',
+  title: 'Healthcare AI Solutions | Zion Tech Group',
+  description: 'AI-driven healthcare technology for patient care, drug discovery, medical imaging, and clinical operations. HIPAA-compliant solutions.',
 };
 
-const retailServices = [
+const healthcareServices = [
   {
-    id: 'ai-personalized-product-recommendations',
-    title: 'Personalized Product Recommendations',
-    description: 'AI-driven product suggestions that increase conversion rates and customer satisfaction.',
-    icon: '🛍️',
-    href: '/services/ai-personalized-product-recommendations/',
-    pricing: 'From $149/mo',
+    id: 'ai-drug-discovery',
+    title: 'AI Drug Discovery & Molecular Design',
+    description: 'Accelerate pharmaceutical research with AI-powered molecular design, target prediction, and compound optimization.',
+    icon: '🧬',
+    href: '/services/ai-drug-discovery/',
+    pricing: 'Custom',
     category: 'ai',
   },
   {
-    id: 'ai-inventory-optimization',
-    title: 'Inventory Optimization AI',
-    description: 'Reduce stockouts and overstock with AI-powered demand forecasting and inventory management.',
-    icon: '📦',
-    href: '/services/ai-inventory-optimization',
+    id: 'ai-medical-imaging-analysis',
+    title: 'Medical Imaging Analysis',
+    description: 'Computer vision for radiology, pathology, and medical imaging with automated anomaly detection.',
+    icon: '🩺',
+    href: '/services/ai-medical-imaging-analysis',
     pricing: 'From $199/mo',
     category: 'ai',
   },
   {
-    id: 'ai-demand-forecasting',
-    title: 'Demand Forecasting',
-    description: 'Predict customer demand with machine learning models trained on historical sales data.',
-    icon: '📈',
-    href: '/services/ai-demand-forecasting',
-    pricing: 'From $129/mo',
+    id: 'ai-clinical-trial-optimization',
+    title: 'Clinical Trial Optimization',
+    description: 'AI-powered patient recruitment, trial design, and outcome prediction for faster drug development.',
+    icon: '🔬',
+    href: '/services/ai-clinical-trial-optimization',
+    pricing: 'Custom',
     category: 'ai',
   },
   {
-    id: 'ai-customer-churn-prediction',
-    title: 'Customer Churn Prediction',
-    description: 'Identify at-risk customers and implement retention strategies before they leave.',
-    icon: '😢',
-    href: '/services/ai-customer-churn-prediction',
+    id: 'ai-patient-data-analytics',
+    title: 'Patient Data Analytics',
+    description: 'Predictive analytics for patient outcomes, readmission risk, and personalized treatment recommendations.',
+    icon: '📊',
+    href: '/services/ai-patient-data-analytics',
+    pricing: 'From $149/mo',
+    category: 'ai',
+  },
+  {
+    id: 'ai-telemedicine-platform',
+    title: 'AI Telemedicine Platform',
+    description: 'Virtual care with AI triage, symptom analysis, and automated appointment scheduling.',
+    icon: '📞',
+    href: '/services/ai-telemedicine-platform',
     pricing: 'From $99/mo',
     category: 'ai',
   },
   {
-    id: 'ai-retail-pricing-optimization',
-    title: 'Dynamic Pricing AI',
-    description: 'Optimize prices in real-time based on demand, competition, and inventory levels.',
+    id: 'ai-healthcare-cost-management',
+    title: 'Healthcare Cost Management',
+    description: 'Reduce administrative costs and optimize resource allocation with AI-driven healthcare analytics.',
     icon: '💰',
-    href: '/services/ai-retail-pricing-optimization',
+    href: '/services/ai-healthcare-cost-management',
     pricing: 'Custom',
     category: 'ai',
   },
 ];
 
-export default function RetailIndustryPage() {
+export default function HealthcareIndustryPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
       {/* Hero Section */}
@@ -64,24 +73,24 @@ export default function RetailIndustryPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_70%,rgba(59,130,246,0.1),transparent_50%)]" />
         <div className="container-page text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-pink-500/20 border border-pink-500/30 text-pink-300 text-sm mb-6">
-            <span className="text-green-400">●</span> E-commerce Ready
+            <span className="text-green-400">●</span> HIPAA-Compliant AI Solutions
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
             <span className="bg-gradient-to-r from-pink-400 via-rose-300 to-purple-400 bg-clip-text text-transparent">
-              AI Solutions for Retail & E-Commerce
+              AI Solutions for Healthcare
             </span>
           </h1>
           <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-            Boost sales, reduce costs, and delight customers with AI-powered retail intelligence 
-            for personalization, inventory, and pricing optimization.
+            Transform patient care, accelerate research, and reduce costs with our HIPAA-compliant AI solutions. 
+            From drug discovery to telemedicine, we build intelligent healthcare technology.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Link href="/contact" className="btn-primary text-lg px-8 py-4">
-              🛍️ Get Retail Consultation
+              📞 Get Healthcare Consultation
             </Link>
             <Link href="/services/?category=ai" className="btn-secondary text-lg px-8 py-4">
-              📊 View AI Services
+              🧠 View All AI Services
             </Link>
           </div>
         </div>
@@ -92,20 +101,20 @@ export default function RetailIndustryPage() {
         <div className="container-page">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
             <div className="bg-slate-900/50 rounded-xl p-6 border border-slate-800/50 text-center">
-              <div className="text-3xl font-bold text-pink-400">57+</div>
-              <div className="text-sm text-slate-400 mt-1">Retail Services</div>
+              <div className="text-3xl font-bold text-pink-400">12+</div>
+              <div className="text-sm text-slate-400 mt-1">Healthcare Services</div>
             </div>
             <div className="bg-slate-900/50 rounded-xl p-6 border border-slate-800/50 text-center">
-              <div className="text-3xl font-bold text-emerald-400">30%</div>
-              <div className="text-sm text-slate-400 mt-1">Sales Lift</div>
+              <div className="text-3xl font-bold text-emerald-400">HIPAA</div>
+              <div className="text-sm text-slate-400 mt-1">Compliant</div>
             </div>
             <div className="bg-slate-900/50 rounded-xl p-6 border border-slate-800/50 text-center">
-              <div className="text-3xl font-bold text-blue-400">50%</div>
-              <div className="text-sm text-slate-400 mt-1">Inventory Reduction</div>
+              <div className="text-3xl font-bold text-blue-400">24/7</div>
+              <div className="text-sm text-slate-400 mt-1">AI Monitoring</div>
             </div>
             <div className="bg-slate-900/50 rounded-xl p-6 border border-slate-800/50 text-center">
-              <div className="text-3xl font-bold text-purple-400">25%</div>
-              <div className="text-sm text-slate-400 mt-1">Churn Reduction</div>
+              <div className="text-3xl font-bold text-purple-400">99.9%</div>
+              <div className="text-sm text-slate-400 mt-1">Uptime</div>
             </div>
           </div>
         </div>
@@ -115,27 +124,27 @@ export default function RetailIndustryPage() {
       <section className="py-20">
         <div className="container-page">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">Retail AI Solutions</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">Healthcare AI Solutions</h2>
             <p className="text-slate-400 max-w-2xl mx-auto">
-              AI-powered tools for personalization, inventory, pricing, and customer experience.
+              AI-powered tools for drug discovery, medical imaging, clinical operations, and patient care.
             </p>
           </div>
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {retailServices.map((service) => (
+            {healthcareServices.map((service) => (
               <Link
                 key={service.id}
                 href={service.href}
-                className="group bg-slate-900/50 border border-slate-800/50 rounded-2xl p-6 hover:border-pink-500/40 transition-all"
+                className="group bg-slate-900/50 border border-slate-800/50 rounded-2xl p-6 hover:border-purple-500/40 transition-all"
               >
                 <div className="text-3xl mb-3">{service.icon}</div>
-                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-pink-300 transition-colors">
+                <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-purple-300 transition-colors">
                   {service.title}
                 </h3>
                 <p className="text-slate-400 text-sm mb-3 line-clamp-3">{service.description}</p>
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-semibold uppercase tracking-wider bg-pink-500/20 text-pink-300 px-2 py-1 rounded">
-                    AI Service
+                    {service.category === 'ai' ? 'AI Service' : 'Solution'}
                   </span>
                   <span className="text-xs text-slate-500">{service.pricing}</span>
                 </div>
@@ -149,33 +158,33 @@ export default function RetailIndustryPage() {
       <section className="py-20 bg-slate-950/30 rounded-t-3xl">
         <div className="container-page">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-white mb-4">Retail AI Benefits</h2>
+            <h2 className="text-3xl font-bold text-white mb-4">Why Choose Our Healthcare AI?</h2>
             <p className="text-slate-400 max-w-2xl mx-auto">
-              Increase revenue and reduce waste with intelligent retail automation.
+              Built for healthcare professionals with security, compliance, and clinical accuracy.
             </p>
           </div>
           
           <div className="grid md:grid-cols-4 gap-6">
             {[
               { 
-                title: '30% Sales Increase', 
-                desc: 'Personalized recommendations boost conversions',
-                icon: '📈'
+                title: 'HIPAA Compliant', 
+                desc: 'Full data privacy and security compliance for patient information',
+                icon: '🔒'
               },
               { 
-                title: '50% Less Waste', 
-                desc: 'Optimized inventory reduces overstock',
-                icon: '♻️'
+                title: 'FDA-Ready', 
+                desc: 'Solutions designed for regulatory approval and clinical validation',
+                icon: '✅'
               },
               { 
-                title: '24/7 Customer Care', 
-                desc: 'AI chatbots handle peak demand',
-                icon: '🤖'
+                title: '24/7 Monitoring', 
+                desc: 'Continuous AI performance monitoring and model updates',
+                icon: '⏱️'
               },
               { 
-                title: 'Instant Insights', 
-                desc: 'Real-time analytics dashboard',
-                icon: '📊'
+                title: 'Clinical Accuracy', 
+                desc: 'Validated against medical standards and peer-reviewed benchmarks',
+                icon: '🩺'
               },
             ].map((benefit, i) => (
               <div key={i} className="bg-slate-900/50 border border-slate-800/50 rounded-xl p-6 text-center">
@@ -191,14 +200,13 @@ export default function RetailIndustryPage() {
       {/* CTA Section */}
       <section className="py-20">
         <div className="container-page text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Ready to Boost Your Retail Business?</h2>
+          <h2 className="text-3xl font-bold text-white mb-4">Ready to Transform Healthcare?</h2>
           <p className="text-slate-300 mb-8 max-w-2xl mx-auto">
-            Schedule a free consultation to discuss AI solutions for your retail operation. 
-            We'll provide a custom proposal with implementation timeline and ROI projections.
+            Schedule a free consultation to discuss your healthcare AI needs. We'll provide a custom proposal with implementation timeline and ROI projections.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="btn-primary text-lg px-8 py-4">
-              📞 Book Retail Consultation
+              📞 Book Healthcare Consultation
             </Link>
             <Link href="/request-proposal/" className="btn-secondary text-lg px-8 py-4">
               📋 Request Proposal
