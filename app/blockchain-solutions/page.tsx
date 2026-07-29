@@ -28,7 +28,7 @@ export default function Page() {
               <span key={tag} className="px-3 py-1 rounded-full text-xs font-semibold bg-purple-500/15 text-purple-300 border border-purple-500/25">{tag}</span>
             ))}
           </div>
-          <Link href="/configurator/" className="btn-primary text-lg px-10 py-4 inline-block">⚡ Get Your Custom Proposal →</Link>
+          <Link href="/contact/" className="btn-primary text-lg px-10 py-4 inline-block">⚡ Get Your Custom Proposal →</Link>
         </div>
 
         {/* Features */}
@@ -62,7 +62,7 @@ export default function Page() {
             Whether you need a scoped proof-of-concept or a full enterprise engagement, we will tailor a plan that fits your timeline and budget.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/configurator/" className="btn-primary text-lg px-10 py-4">⚡ Get Custom Proposal</Link>
+            <Link href="/contact/" className="btn-primary text-lg px-10 py-4">⚡ Get Custom Proposal</Link>
             <Link href="/contact/" className="btn-secondary text-lg px-10 py-4">Talk to an Expert</Link>
           </div>
         </section>

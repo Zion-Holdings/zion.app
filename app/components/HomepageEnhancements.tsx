@@ -117,7 +117,7 @@ export default function HomepageEnhancements() {
             {[\
               { title:'Audit & roadmap', desc:'1-week assessment with prioritized recommendations and ROI estimate.', cta:'/free-audit', label:'Free Audit' },\
               { title:'Managed service', desc:'Day-1 coverage with outcomes, SLAs, and continuous optimization.', cta:'/services', label:'View Managed' },\
-              { title:'Custom build', desc:'Tailored AI/Cloud/Security stack built to your stack and governance.', cta:'/configurator', label:'Request Proposal' },\
+              { title:'Custom build', desc:'Tailored AI/Cloud/Security stack built to your stack and governance.', cta:'/contact', label:'Request Proposal' },\
             ].map(card => (\
               <div key={card.title} className="glass-card flex flex-col gap-2 p-5 hover:border-purple-500/40 group transition-all">\
                 <h3 className="text-white font-semibold group-hover:text-purple-300 transition-colors">{card.title}</h3>\

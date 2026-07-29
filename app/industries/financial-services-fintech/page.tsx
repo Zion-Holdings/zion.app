@@ -82,7 +82,7 @@ export default function FinancialServicesPage() {
               fintech companies, and financial institutions. Reduce risk and accelerate innovation securely.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <Link href="/configurator" className="btn-primary text-lg px-10 py-4">
+              <Link href="/contact" className="btn-primary text-lg px-10 py-4">
                 ⚡ Get Compliance Assessment →
               </Link>
               <Link href="/services" className="btn-secondary text-lg px-10 py-4">

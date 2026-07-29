@@ -111,7 +111,7 @@ const Navigation: React.FC = () => {
           <div className="hidden lg:flex items-center gap-3">
             <a href="tel:+130****0950" className="text-slate-400 hover:text-emerald-400 transition-colors"><Phone className="h-4 w-4" /></a>
             <a href="mailto:kleber@ziontechgroup.com" className="text-slate-400 hover:text-emerald-400 transition-colors"><Mail className="h-4 w-4" /></a>
-            <Link href="/configurator" className="bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-500 hover:to-cyan-500 text-white px-5 py-2 rounded-lg text-sm font-semibold transition-all shadow-lg shadow-emerald-500/20">
+            <Link href="/contact" className="bg-gradient-to-r from-emerald-600 to-cyan-600 hover:from-emerald-500 hover:to-cyan-500 text-white px-5 py-2 rounded-lg text-sm font-semibold transition-all shadow-lg shadow-emerald-500/20">
               Get Started
             </Link>
           </div>
@@ -140,7 +140,7 @@ const Navigation: React.FC = () => {
               <Link href="/contact" className="text-gray-300 hover:text-emerald-400 block px-4 py-2.5 rounded-lg text-base font-medium hover:bg-slate-700/50" onClick={toggleMenu}>📞 Contact</Link>
               <Link href="/agents-monitoring/" className="flex items-center gap-2 px-4 py-2.5 rounded-lg text-base font-medium text-white bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500" onClick={toggleMenu}>📊 Monitoring Dashboard</Link>
               <div className="pt-3 px-2">
-                <Link href="/configurator" className="bg-gradient-to-r from-emerald-600 to-cyan-600 text-white block px-4 py-3 rounded-lg text-base font-semibold text-center" onClick={toggleMenu}>⚡ Get Started Free</Link>
+                <Link href="/contact" className="bg-gradient-to-r from-emerald-600 to-cyan-600 text-white block px-4 py-3 rounded-lg text-base font-semibold text-center" onClick={toggleMenu}>⚡ Get Started Free</Link>
                 <div className="flex items-center justify-center gap-4 mt-3 text-sm text-slate-400">
                   <a href="tel:+13024640950" className="flex items-center gap-1 hover:text-emerald-400"><Phone className="h-3.5 w-3.5" /> +1 302 464 0950</a>
                   <a href="mailto:kleber@ziontechgroup.com" className="flex items-center gap-1 hover:text-emerald-400"><Mail className="h-3.5 w-3.5" /> Email</a>

@@ -1114,7 +1114,7 @@ export default function AgentDashboard({ defaultView = 'operations', defaultTab 
                   { name: 'Main Site', href: '/', icon: '🏠' },
                   { name: 'Services', href: '/services', icon: '🛠️' },
                   { name: 'Contact', href: '/contact', icon: '📧' },
-                  { name: 'Configurator', href: '/configurator', icon: '⚡' },
+                  { name: 'Configurator', href: '/contact', icon: '⚡' },
                   { name: 'Client View', href: '/agents-monitoring', icon: '🎯' },
                 ].map(l => (
                   <Link key={l.href} href={l.href} className="flex items-center gap-2 text-xs text-slate-400 hover:text-purple-300 transition-colors px-2 py-1.5 rounded-lg hover:bg-slate-800/40">

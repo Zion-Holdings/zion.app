@@ -123,7 +123,7 @@ export default function IndustrySolutionsPage() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
               <Link 
-                href="/configurator" 
+                href="/contact" 
                 className="btn-primary text-lg px-10 py-4"
               >
                 🚀 Get Your Custom Proposal
@@ -281,7 +281,7 @@ export default function IndustrySolutionsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
-                href="/configurator" 
+                href="/contact" 
                 className="btn-primary text-lg px-10 py-4"
               >
                 ⚙️ Start Configurator

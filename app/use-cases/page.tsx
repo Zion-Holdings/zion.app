@@ -143,7 +143,7 @@ export default function UseCasesPage() {
               <Link href="/contact" className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/20">
                 Free Consultation →
               </Link>
-              <Link href="/configurator" className="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-slate-700 text-slate-200 font-semibold hover:border-purple-500/60 hover:text-white transition-all">
+              <Link href="/contact" className="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-slate-700 text-slate-200 font-semibold hover:border-purple-500/60 hover:text-white transition-all">
                 Build a proposal
               </Link>
             </div>
