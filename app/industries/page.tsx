@@ -2,7 +2,7 @@
 'use client';
 
 import Link from 'next/link';
-import industries from '@/app/data/industries';
+import industries from '@/data/industries';
 
 export default function IndustriesPage() {
   return (
