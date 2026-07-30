@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Compliance for Construction #1 - Zion Tech Group",
-  description: "Optimize your construction workflows with Intelligent Compliance for Construction #1. This intelligent platform delivers customer onboarding through advanced automation and AI.",
+  description: "Optimize your construction workflows with Intelligent Compliance for Construction #1. This intelligent platform delivers customer onboarding through advanced au",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-compliance-for-construction-1-16def005`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

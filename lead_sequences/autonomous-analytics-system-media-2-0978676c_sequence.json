@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-analytics-system-media-2-0978676c",
+  "service_name": "Autonomous Analytics System - Media #2",
+  "industry": "media",
+  "lead_magnet": "Content Performance Optimization Guide",
+  "metrics": {
+    "improvement": "43%",
+    "savings": "$6.8M",
+    "timeframe": "9 months",
+    "similar": "MediaHouse"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows media companies using Autonomous Analytics System - Media #2 see 43% improvement. Your current process?",
+      "sequence_id": "seq-80",
+      "service_id": "autonomous-analytics-system-media-2-0978676c"
+    },
+    {
+      "step": 2,
+      "message": "Based on your media profile, Autonomous Analytics System - Media #2 could save {company} approximately $6.8M. Interested in details?",
+      "sequence_id": "seq-80",
+      "service_id": "autonomous-analytics-system-media-2-0978676c"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Autonomous Analytics System - Media #2 is proven to deliver 43% results.",
+      "sequence_id": "seq-80",
+      "service_id": "autonomous-analytics-system-media-2-0978676c"
+    }
+  ],
+  "hot_lead_score": 88,
+  "conversion_likelihood": "75%",
+  "timestamp": "2026-07-30T05:48:13.952229+00:00"
+}

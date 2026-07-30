@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-sales-tech-edition-2-a2880cc6",
+  "service_name": "AI Sales - Tech Edition #2",
+  "industry": "technology",
+  "lead_magnet": "AI Cost Calculator - See Your Potential Savings",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve technology. Our AI platform helped TechStart Inc. achieve 52% improvement in 6 months. Quick 5-minute call?",
+      "sequence_id": "seq-11",
+      "service_id": "ai-sales-tech-edition-2-a2880cc6"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the AI Sales - Tech Edition #2 typically saves $18.4M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-11",
+      "service_id": "ai-sales-tech-edition-2-a2880cc6"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 52% results. If not interested, just let me know!",
+      "sequence_id": "seq-11",
+      "service_id": "ai-sales-tech-edition-2-a2880cc6"
+    }
+  ],
+  "hot_lead_score": 66,
+  "conversion_likelihood": "48%",
+  "timestamp": "2026-07-30T05:48:13.939071+00:00"
+}

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Suite - Manufacturing Edition - Zion Tech Group",
-  description: "Optimize your manufacturing workflows with AI Suite - Manufacturing Edition. This intelligent platform delivers threat detection through advanced automation and AI.",
+  description: "Optimize your manufacturing workflows with AI Suite - Manufacturing Edition. This intelligent platform delivers threat detection through advanced automation and",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-suite-manufacturing-edition-bcc94a82`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

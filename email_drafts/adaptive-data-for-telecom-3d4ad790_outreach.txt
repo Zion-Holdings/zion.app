@@ -4,7 +4,7 @@ Hi there,
 
 I'm reaching out to introduce Adaptive Data for Telecom from Zion Tech Group - an AI-powered solution that could significantly impact your business.
 
-Revolutionize telecom through intelligent automation. Our Adaptive Data for Telecom leverages advanced machine learning to deliver healthcare data analytics at scale.
+Revolutionize telecom through intelligent automation. Our Adaptive Data for Telecom leverages advanced machine learning to deliver image recognition at scale.
 
 Key Benefits:
 - AI-driven automation for faster results

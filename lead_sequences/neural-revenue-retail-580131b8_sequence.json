@@ -1,0 +1,35 @@
+{
+  "service_id": "neural-revenue-retail-580131b8",
+  "service_name": "Neural revenue-retail",
+  "industry": "retail",
+  "lead_magnet": "Customer Retention Playbook",
+  "metrics": {
+    "improvement": "44%",
+    "savings": "$9.3M",
+    "timeframe": "7 months",
+    "similar": "RetailPro"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows retail companies using Neural revenue-retail see 44% improvement. Your current process?",
+      "sequence_id": "seq-60",
+      "service_id": "neural-revenue-retail-580131b8"
+    },
+    {
+      "step": 2,
+      "message": "Based on your retail profile, Neural revenue-retail could save {company} approximately $9.3M. Interested in details?",
+      "sequence_id": "seq-60",
+      "service_id": "neural-revenue-retail-580131b8"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Neural revenue-retail is proven to deliver 44% results.",
+      "sequence_id": "seq-60",
+      "service_id": "neural-revenue-retail-580131b8"
+    }
+  ],
+  "hot_lead_score": 67,
+  "conversion_likelihood": "75%",
+  "timestamp": "2026-07-30T05:48:13.950013+00:00"
+}

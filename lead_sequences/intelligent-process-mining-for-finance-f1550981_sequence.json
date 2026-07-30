@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-process-mining-for-finance-f1550981",
+  "service_name": "Intelligent Process Mining for Finance",
+  "industry": "finance",
+  "lead_magnet": "Regulatory Compliance Automation Guide",
+  "metrics": {
+    "improvement": "58%",
+    "savings": "$24.1M",
+    "timeframe": "5 months",
+    "similar": "Capital Group"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve finance. Our AI platform helped Capital Group achieve 58% improvement in 5 months. Quick 5-minute call?",
+      "sequence_id": "seq-36",
+      "service_id": "intelligent-process-mining-for-finance-f1550981"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Intelligent Process Mining for Finance typically saves $24.1M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-36",
+      "service_id": "intelligent-process-mining-for-finance-f1550981"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 58% results. If not interested, just let me know!",
+      "sequence_id": "seq-36",
+      "service_id": "intelligent-process-mining-for-finance-f1550981"
+    }
+  ],
+  "hot_lead_score": 76,
+  "conversion_likelihood": "71%",
+  "timestamp": "2026-07-30T05:48:13.942205+00:00"
+}

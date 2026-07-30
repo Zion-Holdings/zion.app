@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-master-sales-9a9779d1",
+  "service_name": "Intelligent Master Sales",
+  "industry": "finance",
+  "lead_magnet": "Regulatory Compliance Automation Guide",
+  "metrics": {
+    "improvement": "58%",
+    "savings": "$24.1M",
+    "timeframe": "5 months",
+    "similar": "Capital Group"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve finance. Our AI platform helped Capital Group achieve 58% improvement in 5 months. Quick 5-minute call?",
+      "sequence_id": "seq-31",
+      "service_id": "intelligent-master-sales-9a9779d1"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Intelligent Master Sales typically saves $24.1M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-31",
+      "service_id": "intelligent-master-sales-9a9779d1"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 58% results. If not interested, just let me know!",
+      "sequence_id": "seq-31",
+      "service_id": "intelligent-master-sales-9a9779d1"
+    }
+  ],
+  "hot_lead_score": 77,
+  "conversion_likelihood": "64%",
+  "timestamp": "2026-07-30T05:48:13.941677+00:00"
+}

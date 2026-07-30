@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-deep-learning-media-edition-f040f372",
+  "service_name": "AI Deep Learning - Media Edition",
+  "industry": "media",
+  "lead_magnet": "Content Performance Optimization Guide",
+  "metrics": {
+    "improvement": "43%",
+    "savings": "$6.8M",
+    "timeframe": "9 months",
+    "similar": "MediaHouse"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, MediaHouse is closing their Q3 deals this week. Want to see how AI Deep Learning - Media Edition can help {company} save $6.8M?",
+      "sequence_id": "seq-49",
+      "service_id": "ai-deep-learning-media-edition-f040f372"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. AI Deep Learning - Media Edition delivers 43% in 9 months.",
+      "sequence_id": "seq-49",
+      "service_id": "ai-deep-learning-media-edition-f040f372"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-49",
+      "service_id": "ai-deep-learning-media-edition-f040f372"
+    }
+  ],
+  "hot_lead_score": 74,
+  "conversion_likelihood": "68%",
+  "timestamp": "2026-07-30T05:48:13.944671+00:00"
+}

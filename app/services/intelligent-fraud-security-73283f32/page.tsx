@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Fraud Security - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent Fraud Security. This autonomous system provides workflow management with zero manual intervention needed.",
+  description: "The future of transportation is here with Intelligent Fraud Security. Powered by cutting-edge AI, this platform delivers compliance monitoring like never before",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-fraud-security-73283f32`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Fraud Security</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Intelligent Fraud Security. This autonomous system provides workflow management with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of transportation is here with Intelligent Fraud Security. Powered by cutting-edge AI, this platform delivers compliance monitoring like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Data encryption at rest and in transit</li>
-            <li>Image recognition with computer vision</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Logistics route optimization with traffic prediction</li>
             <li>Real-time processing with streaming analytics</li>
-            <li>Budget optimization with cost allocation</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Network optimization with traffic analysis</li>
+            <li>Customer service automation with chatbot integration</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better supply chain visibility with tracking</li>
-            <li>Zero manual intervention required for routine tasks</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>Faster time-to-market with accelerated development</li>
             <li>3x faster decision making with real-time insights</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Enhanced security posture with continuous monitoring</li>
           </ul>
         </div>
         

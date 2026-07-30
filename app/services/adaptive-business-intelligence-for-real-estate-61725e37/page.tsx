@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Business Intelligence for Real-Estate - Zion Tech Group",
-  description: "Drive innovation in real-estate with Adaptive Business Intelligence for Real-Estate. This AI-powered platform transforms invoice processing into a competitive advantage.",
+  description: "Drive innovation in real-estate with Adaptive Business Intelligence for Real-Estate. This AI-powered platform transforms invoice processing into a competitive a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-business-intelligence-for-real-estate-61725e37`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

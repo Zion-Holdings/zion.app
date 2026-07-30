@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Automation for Transportation - Zion Tech Group",
-  description: "Revolutionize transportation through intelligent automation. Our Cognitive Automation for Transportation leverages advanced machine learning to deliver sentimen",
+  description: "The future of transportation is here with Cognitive Automation for Transportation. Powered by cutting-edge AI, this platform delivers inventory management like ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-automation-for-transportation-1000643e`
   }
@@ -13,26 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Cognitive Automation for Transportation</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize transportation through intelligent automation. Our Cognitive Automation for Transportation leverages advanced machine learning to deliver sentiment analysis at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of transportation is here with Cognitive Automation for Transportation. Powered by cutting-edge AI, this platform delivers inventory management like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>A/B testing framework for continuous optimization</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Process discovery with activity analysis</li>
+            <li>Manufacturing quality control with defect detection</li>
             <li>Energy optimization with consumption tracking</li>
-            <li>Real-time processing with streaming analytics</li>
+            <li>Network optimization with traffic analysis</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Security monitoring with threat intelligence</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced support tickets with self-service options</li>
-            <li>Better market positioning with competitive analysis</li>
+            <li>24/7 automated operations without human intervention</li>
             <li>Reduced churn with proactive customer retention</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         

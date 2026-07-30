@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Processor - Real-Estate Edition - Zion Tech Group",
-  description: "Revolutionize real-estate through intelligent automation. Our AI Processor - Real-Estate Edition leverages advanced machine learning to deliver edge computing at scale.",
+  description: "Revolutionize real-estate through intelligent automation. Our AI Processor - Real-Estate Edition leverages advanced machine learning to deliver edge computing a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-processor-real-estate-edition-dc571a07`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

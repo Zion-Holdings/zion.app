@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-powered-release-system-5ec334ac",
+  "service_name": "AI-Powered Release System",
+  "industry": "manufacturing",
+  "lead_magnet": "Predictive Maintenance ROI Calculator",
+  "metrics": {
+    "improvement": "51%",
+    "savings": "$15.8M",
+    "timeframe": "8 months",
+    "similar": "ManufactureCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, ManufactureCo just implemented AI-Powered Release System last month - 51% improvement already. Thoughts?",
+      "sequence_id": "seq-73",
+      "service_id": "ai-powered-release-system-5ec334ac"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: ManufactureCo saw $15.8M in savings. Your manufacturing peers are seeing similar results.",
+      "sequence_id": "seq-73",
+      "service_id": "ai-powered-release-system-5ec334ac"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-73",
+      "service_id": "ai-powered-release-system-5ec334ac"
+    }
+  ],
+  "hot_lead_score": 77,
+  "conversion_likelihood": "48%",
+  "timestamp": "2026-07-30T05:48:13.951484+00:00"
+}

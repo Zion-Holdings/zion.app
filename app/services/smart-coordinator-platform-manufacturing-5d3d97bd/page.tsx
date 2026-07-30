@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Coordinator Platform - Manufacturing - Zion Tech Group",
-  description: "Revolutionize manufacturing through intelligent automation. Our Smart Coordinator Platform - Manufacturing leverages advanced machine learning to deliver user experience at scale.",
+  description: "Revolutionize manufacturing through intelligent automation. Our Smart Coordinator Platform - Manufacturing leverages advanced machine learning to deliver user e",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-coordinator-platform-manufacturing-5d3d97bd`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

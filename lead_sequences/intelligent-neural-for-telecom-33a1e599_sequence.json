@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-neural-for-telecom-33a1e599",
+  "service_name": "Intelligent Neural for Telecom",
+  "industry": "telecom",
+  "lead_magnet": "Network Optimization Cost Analysis",
+  "metrics": {
+    "improvement": "53%",
+    "savings": "$19.2M",
+    "timeframe": "5 months",
+    "similar": "TeleCom Solutions"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with telecom cognitive?",
+      "sequence_id": "seq-37",
+      "service_id": "intelligent-neural-for-telecom-33a1e599"
+    },
+    {
+      "step": 2,
+      "message": "We've helped TeleCom Solutions solve this exact problem with Intelligent Neural for Telecom. Achieved 53% in 5 months.",
+      "sequence_id": "seq-37",
+      "service_id": "intelligent-neural-for-telecom-33a1e599"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-37",
+      "service_id": "intelligent-neural-for-telecom-33a1e599"
+    }
+  ],
+  "hot_lead_score": 68,
+  "conversion_likelihood": "74%",
+  "timestamp": "2026-07-30T05:48:13.942319+00:00"
+}

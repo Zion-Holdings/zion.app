@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Logistics Intelligence - Zion Tech Group",
-  description: "The future of real-estate is here with Smart Logistics Intelligence. Powered by cutting-edge AI, this platform delivers risk assessment like never before.",
+  description: "Next-generation healthcare solution: Smart Logistics Intelligence. Combines data processing with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-logistics-intelligence-6d069fac`
   }
@@ -13,25 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart Logistics Intelligence</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of real-estate is here with Smart Logistics Intelligence. Powered by cutting-edge AI, this platform delivers risk assessment like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation healthcare solution: Smart Logistics Intelligence. Combines data processing with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Language processing with sentiment analysis</li>
-            <li>Inventory prediction with demand forecasting</li>
-            <li>GDPR compliance with data portability</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
             <li>Multi-language support with localization</li>
+            <li>Fraud detection with anomaly analysis</li>
+            <li>Manufacturing quality control with defect detection</li>
+            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Seamless integration with existing systems and workflows</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>24/7 automated operations without human intervention</li>
           </ul>
         </div>
         

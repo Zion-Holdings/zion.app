@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-quality-system-real-estate-325ff4ad",
+  "service_name": "Autonomous Quality System - Real-Estate",
+  "industry": "real-estate",
+  "lead_magnet": "Property Management Automation Guide",
+  "metrics": {
+    "improvement": "46%",
+    "savings": "$13.4M",
+    "timeframe": "7 months",
+    "similar": "PropertyGroup"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve real-estate. Our AI platform helped PropertyGroup achieve 46% improvement in 7 months. Quick 5-minute call?",
+      "sequence_id": "seq-6",
+      "service_id": "autonomous-quality-system-real-estate-325ff4ad"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Autonomous Quality System - Real-Estate typically saves $13.4M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-6",
+      "service_id": "autonomous-quality-system-real-estate-325ff4ad"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 46% results. If not interested, just let me know!",
+      "sequence_id": "seq-6",
+      "service_id": "autonomous-quality-system-real-estate-325ff4ad"
+    }
+  ],
+  "hot_lead_score": 72,
+  "conversion_likelihood": "44%",
+  "timestamp": "2026-07-30T05:48:13.938141+00:00"
+}

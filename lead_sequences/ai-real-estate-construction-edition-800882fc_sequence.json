@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-real-estate-construction-edition-800882fc",
+  "service_name": "AI Real Estate - Construction Edition",
+  "industry": "construction",
+  "lead_magnet": "Project Delivery Acceleration Guide",
+  "metrics": {
+    "improvement": "45%",
+    "savings": "$8.7M",
+    "timeframe": "8 months",
+    "similar": "BuildCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with construction quality?",
+      "sequence_id": "seq-22",
+      "service_id": "ai-real-estate-construction-edition-800882fc"
+    },
+    {
+      "step": 2,
+      "message": "We've helped BuildCo solve this exact problem with AI Real Estate - Construction Edition. Achieved 45% in 8 months.",
+      "sequence_id": "seq-22",
+      "service_id": "ai-real-estate-construction-edition-800882fc"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-22",
+      "service_id": "ai-real-estate-construction-edition-800882fc"
+    }
+  ],
+  "hot_lead_score": 88,
+  "conversion_likelihood": "75%",
+  "timestamp": "2026-07-30T05:48:13.940705+00:00"
+}

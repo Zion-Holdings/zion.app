@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Generator Engine - Insurance #1 - Zion Tech Group",
-  description: "The future of insurance is here with Predictive Generator Engine - Insurance #1. Powered by cutting-edge AI, this platform delivers executive dashboards like never before.",
+  description: "The future of insurance is here with Predictive Generator Engine - Insurance #1. Powered by cutting-edge AI, this platform delivers executive dashboards like ne",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-generator-engine-insurance-1-0c669d10`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

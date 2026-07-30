@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Revenue Engine - Telecom - Zion Tech Group",
-  description: "Transform your telecom operations with our Predictive Revenue Engine - Telecom. This AI-driven solution automates supply chain with unprecedented accuracy and efficiency.",
+  description: "Transform your telecom operations with our Predictive Revenue Engine - Telecom. This AI-driven solution automates supply chain with unprecedented accuracy and e",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-revenue-engine-telecom-86082259`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

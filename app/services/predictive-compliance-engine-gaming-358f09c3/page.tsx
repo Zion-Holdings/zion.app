@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Compliance Engine - Gaming - Zion Tech Group",
-  description: "Transform your gaming operations with our Predictive Compliance Engine - Gaming. This AI-driven solution automates language processing with unprecedented accuracy and efficiency.",
+  description: "Transform your gaming operations with our Predictive Compliance Engine - Gaming. This AI-driven solution automates language processing with unprecedented accura",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-compliance-engine-gaming-358f09c3`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

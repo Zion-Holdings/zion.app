@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Resource Performance - Zion Tech Group",
-  description: "Transform your real-estate operations with our Automated Resource Performance. This AI-driven solution automates inventory management with unprecedented accuracy and efficiency.",
+  description: "Transform your real-estate operations with our Automated Resource Performance. This AI-driven solution automates inventory management with unprecedented accurac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-resource-performance-62d3a67c`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

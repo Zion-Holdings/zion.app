@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-nlp-for-gaming-1-b3b82e7b",
+  "service_name": "Cognitive NLP for Gaming #1",
+  "industry": "gaming",
+  "lead_magnet": "Player Retention Strategy Playbook",
+  "metrics": {
+    "improvement": "57%",
+    "savings": "$10.3M",
+    "timeframe": "5 months",
+    "similar": "GameStudio"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, GameStudio is closing their Q3 deals this week. Want to see how Cognitive NLP for Gaming #1 can help {company} save $10.3M?",
+      "sequence_id": "seq-79",
+      "service_id": "cognitive-nlp-for-gaming-1-b3b82e7b"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Cognitive NLP for Gaming #1 delivers 57% in 5 months.",
+      "sequence_id": "seq-79",
+      "service_id": "cognitive-nlp-for-gaming-1-b3b82e7b"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-79",
+      "service_id": "cognitive-nlp-for-gaming-1-b3b82e7b"
+    }
+  ],
+  "hot_lead_score": 73,
+  "conversion_likelihood": "40%",
+  "timestamp": "2026-07-30T05:48:13.952128+00:00"
+}

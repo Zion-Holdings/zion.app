@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Healthcare System - Zion Tech Group",
-  description: "Revolutionize sports through intelligent automation. Our Automated Healthcare System leverages advanced machine learning to deliver security monitoring at scale",
+  description: "Revolutionize manufacturing through intelligent automation. Our Automated Healthcare System leverages advanced machine learning to deliver energy management at ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-healthcare-system-b81ad7dc`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automated Healthcare System</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize sports through intelligent automation. Our Automated Healthcare System leverages advanced machine learning to deliver security monitoring at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize manufacturing through intelligent automation. Our Automated Healthcare System leverages advanced machine learning to deliver energy management at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Master data management with golden records</li>
-            <li>Revenue forecasting with market trend analysis</li>
-            <li>Market analysis with buyer behavior insights</li>
-            <li>Competitive intelligence with market share tracking</li>
-            <li>Alerting system with intelligent notifications</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Real-time processing with streaming analytics</li>
+            <li>Version control with rollback capabilities</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>Network optimization with traffic analysis</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>24/7 automated operations without human intervention</li>
+            <li>Scalable to millions of transactions per second</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
             <li>Zero manual intervention required for routine tasks</li>
-            <li>Reduced shipping costs with route optimization</li>
-            <li>Reduced support tickets with self-service options</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Enhanced decision making with data-driven insights</li>
           </ul>
         </div>
         

@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-data-solution-automotive-ed6dc6ff",
+  "service_name": "Cognitive Data Solution - Automotive",
+  "industry": "automotive",
+  "lead_magnet": "Supply Chain Efficiency Audit",
+  "metrics": {
+    "improvement": "50%",
+    "savings": "$14.1M",
+    "timeframe": "6 months",
+    "similar": "AutoMakers"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with automotive intelligent?",
+      "sequence_id": "seq-7",
+      "service_id": "cognitive-data-solution-automotive-ed6dc6ff"
+    },
+    {
+      "step": 2,
+      "message": "We've helped AutoMakers solve this exact problem with Cognitive Data Solution - Automotive. Achieved 50% in 6 months.",
+      "sequence_id": "seq-7",
+      "service_id": "cognitive-data-solution-automotive-ed6dc6ff"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-7",
+      "service_id": "cognitive-data-solution-automotive-ed6dc6ff"
+    }
+  ],
+  "hot_lead_score": 81,
+  "conversion_likelihood": "46%",
+  "timestamp": "2026-07-30T05:48:13.938564+00:00"
+}

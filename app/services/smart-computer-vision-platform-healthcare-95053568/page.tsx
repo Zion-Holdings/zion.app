@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Computer Vision Platform - Healthcare - Zion Tech Group",
-  description: "Revolutionize healthcare through intelligent automation. Our Smart Computer Vision Platform - Healthcare leverages advanced machine learning to deliver sentiment analysis at scale.",
+  description: "Revolutionize healthcare through intelligent automation. Our Smart Computer Vision Platform - Healthcare leverages advanced machine learning to deliver sentimen",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-computer-vision-platform-healthcare-95053568`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

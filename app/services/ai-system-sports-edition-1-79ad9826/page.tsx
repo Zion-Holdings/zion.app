@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI System - Sports Edition #1 - Zion Tech Group",
-  description: "Transform your sports operations with our AI System - Sports Edition #1. This AI-driven solution automates performance monitoring with unprecedented accuracy and efficiency.",
+  description: "Transform your sports operations with our AI System - Sports Edition #1. This AI-driven solution automates performance monitoring with unprecedented accuracy an",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-system-sports-edition-1-79ad9826`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

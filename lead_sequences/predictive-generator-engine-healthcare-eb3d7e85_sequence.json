@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-generator-engine-healthcare-eb3d7e85",
+  "service_name": "Predictive Generator Engine - Healthcare",
+  "industry": "healthcare",
+  "lead_magnet": "HIPAA-Compliant Automation Checklist",
+  "metrics": {
+    "improvement": "47%",
+    "savings": "$12.7M",
+    "timeframe": "9 months",
+    "similar": "HealthFirst Hospital"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with healthcare advisor?",
+      "sequence_id": "seq-77",
+      "service_id": "predictive-generator-engine-healthcare-eb3d7e85"
+    },
+    {
+      "step": 2,
+      "message": "We've helped HealthFirst Hospital solve this exact problem with Predictive Generator Engine - Healthcare. Achieved 47% in 9 months.",
+      "sequence_id": "seq-77",
+      "service_id": "predictive-generator-engine-healthcare-eb3d7e85"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-77",
+      "service_id": "predictive-generator-engine-healthcare-eb3d7e85"
+    }
+  ],
+  "hot_lead_score": 70,
+  "conversion_likelihood": "45%",
+  "timestamp": "2026-07-30T05:48:13.951919+00:00"
+}

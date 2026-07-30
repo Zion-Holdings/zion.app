@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Predictive for Automotive - Zion Tech Group",
-  description: "Enhance your automotive business with Adaptive Predictive for Automotive. Our solution provides competitive intelligence with enterprise-grade reliability and security.",
+  description: "Enhance your automotive business with Adaptive Predictive for Automotive. Our solution provides competitive intelligence with enterprise-grade reliability and s",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-predictive-for-automotive-3a4cb26c`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Security Management - Zion Tech Group",
-  description: "Revolutionize legal through intelligent automation. Our Intelligent Security Management leverages advanced machine learning to deliver security monitoring at sc",
+  description: "Next-generation logistics solution: Intelligent Security Management. Combines financial planning with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-security-management-04a1624f`
   }
@@ -13,25 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Security Management</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize legal through intelligent automation. Our Intelligent Security Management leverages advanced machine learning to deliver security monitoring at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation logistics solution: Intelligent Security Management. Combines financial planning with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>GDPR compliance with data portability</li>
-            <li>Fraud detection with anomaly analysis</li>
-            <li>Version control with rollback capabilities</li>
-            <li>Inventory prediction with demand forecasting</li>
+            <li>HIPAA ready with healthcare data protection</li>
+            <li>Network optimization with traffic analysis</li>
+            <li>Edge computing support for low-latency operations</li>
+            <li>Code optimization with performance profiling</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better compliance with automated audit trails</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>3x faster decision making with real-time insights</li>
-            <li>Improved quality with automated testing and validation</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Scalable to millions of transactions per second</li>
+            <li>Performance benchmarking against industry standards</li>
+            <li>Cost optimization recommendations with savings analysis</li>
           </ul>
         </div>
         

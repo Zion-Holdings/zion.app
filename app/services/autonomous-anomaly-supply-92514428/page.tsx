@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Anomaly Supply - Zion Tech Group",
-  description: "Transform your legal operations with our Autonomous Anomaly Supply. This AI-driven solution automates serverless deployment with unprecedented accuracy and efficiency.",
+  description: "Transform your legal operations with our Autonomous Anomaly Supply. This AI-driven solution automates serverless deployment with unprecedented accuracy and effi",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-anomaly-supply-92514428`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

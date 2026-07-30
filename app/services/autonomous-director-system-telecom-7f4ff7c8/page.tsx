@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Director System - Telecom - Zion Tech Group",
-  description: "Enhance your telecom business with Autonomous Director System - Telecom. Our solution provides customer journey mapping with enterprise-grade reliability and security.",
+  description: "Enhance your telecom business with Autonomous Director System - Telecom. Our solution provides customer journey mapping with enterprise-grade reliability and se",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-director-system-telecom-7f4ff7c8`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

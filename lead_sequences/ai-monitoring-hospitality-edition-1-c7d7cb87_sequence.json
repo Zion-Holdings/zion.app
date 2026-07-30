@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-monitoring-hospitality-edition-1-c7d7cb87",
+  "service_name": "AI Monitoring - Hospitality Edition #1",
+  "industry": "hospitality",
+  "lead_magnet": "Guest Experience Automation Blueprint",
+  "metrics": {
+    "improvement": "42%",
+    "savings": "$7.6M",
+    "timeframe": "10 months",
+    "similar": "HotelChain"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with hospitality predictive?",
+      "sequence_id": "seq-67",
+      "service_id": "ai-monitoring-hospitality-edition-1-c7d7cb87"
+    },
+    {
+      "step": 2,
+      "message": "We've helped HotelChain solve this exact problem with AI Monitoring - Hospitality Edition #1. Achieved 42% in 10 months.",
+      "sequence_id": "seq-67",
+      "service_id": "ai-monitoring-hospitality-edition-1-c7d7cb87"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-67",
+      "service_id": "ai-monitoring-hospitality-edition-1-c7d7cb87"
+    }
+  ],
+  "hot_lead_score": 74,
+  "conversion_likelihood": "50%",
+  "timestamp": "2026-07-30T05:48:13.950843+00:00"
+}

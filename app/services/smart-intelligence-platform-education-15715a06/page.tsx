@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Intelligence Platform - Education - Zion Tech Group",
-  description: "Revolutionize education through intelligent automation. Our Smart Intelligence Platform - Education leverages advanced machine learning to deliver performance tuning at scale.",
+  description: "Revolutionize education through intelligent automation. Our Smart Intelligence Platform - Education leverages advanced machine learning to deliver performance t",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-intelligence-platform-education-15715a06`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

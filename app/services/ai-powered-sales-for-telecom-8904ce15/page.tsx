@@ -18,22 +18,19 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Edge computing support for low-latency operations</li>
-            <li>Data governance with policy enforcement</li>
-            <li>Energy optimization with consumption tracking</li>
-            <li>GDPR compliance with data portability</li>
+            <li>Code optimization with performance profiling</li>
+            <li>Open-source friendly with plugin architecture</li>
+            <li>Multi-region deployment with automatic failover</li>
+            <li>Compliance monitoring with regulatory updates</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Cost optimization recommendations with savings analysis</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>Reduced shipping costs with route optimization</li>
-            <li>Improved customer retention with proactive service</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

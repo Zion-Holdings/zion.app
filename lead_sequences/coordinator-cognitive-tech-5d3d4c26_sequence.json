@@ -1,0 +1,35 @@
+{
+  "service_id": "coordinator-cognitive-tech-5d3d4c26",
+  "service_name": "Coordinator Cognitive - Tech",
+  "industry": "technology",
+  "lead_magnet": "AI Cost Calculator - See Your Potential Savings",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows technology companies using Coordinator Cognitive - Tech see 52% improvement. Your current process?",
+      "sequence_id": "seq-30",
+      "service_id": "coordinator-cognitive-tech-5d3d4c26"
+    },
+    {
+      "step": 2,
+      "message": "Based on your technology profile, Coordinator Cognitive - Tech could save {company} approximately $18.4M. Interested in details?",
+      "sequence_id": "seq-30",
+      "service_id": "coordinator-cognitive-tech-5d3d4c26"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Coordinator Cognitive - Tech is proven to deliver 52% results.",
+      "sequence_id": "seq-30",
+      "service_id": "coordinator-cognitive-tech-5d3d4c26"
+    }
+  ],
+  "hot_lead_score": 69,
+  "conversion_likelihood": "46%",
+  "timestamp": "2026-07-30T05:48:13.941572+00:00"
+}

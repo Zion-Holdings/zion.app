@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Data Science for Construction - Zion Tech Group",
-  description: "Optimize your construction workflows with Intelligent Data Science for Construction. This intelligent platform delivers audit trail management through advanced automation and AI.",
+  description: "Optimize your construction workflows with Intelligent Data Science for Construction. This intelligent platform delivers audit trail management through advanced ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-data-science-for-construction-fd2f7469`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

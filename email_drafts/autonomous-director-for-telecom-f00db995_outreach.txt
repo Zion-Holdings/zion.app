@@ -4,7 +4,7 @@ Hi there,
 
 I'm reaching out to introduce Autonomous Director for Telecom from Zion Tech Group - an AI-powered solution that could significantly impact your business.
 
-Revolutionize telecom through intelligent automation. Our Autonomous Director for Telecom leverages advanced machine learning to deliver inventory management at scale.
+Revolutionize telecom through intelligent automation. Our Autonomous Director for Telecom leverages advanced machine learning to deliver image recognition at scale.
 
 Key Benefits:
 - AI-driven automation for faster results

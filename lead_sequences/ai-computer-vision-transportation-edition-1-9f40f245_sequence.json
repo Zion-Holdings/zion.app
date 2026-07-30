@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-computer-vision-transportation-edition-1-9f40f245",
+  "service_name": "AI Computer Vision - Transportation Edition #1",
+  "industry": "transportation",
+  "lead_magnet": "Fleet Efficiency Optimization Report",
+  "metrics": {
+    "improvement": "48%",
+    "savings": "$11.9M",
+    "timeframe": "6 months",
+    "similar": "TransitCorp"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve transportation. Our AI platform helped TransitCorp achieve 48% improvement in 6 months. Quick 5-minute call?",
+      "sequence_id": "seq-91",
+      "service_id": "ai-computer-vision-transportation-edition-1-9f40f245"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the AI Computer Vision - Transportation Edition #1 typically saves $11.9M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-91",
+      "service_id": "ai-computer-vision-transportation-edition-1-9f40f245"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 48% results. If not interested, just let me know!",
+      "sequence_id": "seq-91",
+      "service_id": "ai-computer-vision-transportation-edition-1-9f40f245"
+    }
+  ],
+  "hot_lead_score": 79,
+  "conversion_likelihood": "40%",
+  "timestamp": "2026-07-30T05:48:13.953428+00:00"
+}

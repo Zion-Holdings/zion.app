@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-director-gaming-7ce6dff9",
+  "service_name": "Intelligent director-gaming",
+  "industry": "gaming",
+  "lead_magnet": "Player Retention Strategy Playbook",
+  "metrics": {
+    "improvement": "57%",
+    "savings": "$10.3M",
+    "timeframe": "5 months",
+    "similar": "GameStudio"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve gaming. Our AI platform helped GameStudio achieve 57% improvement in 5 months. Quick 5-minute call?",
+      "sequence_id": "seq-81",
+      "service_id": "intelligent-director-gaming-7ce6dff9"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Intelligent director-gaming typically saves $10.3M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-81",
+      "service_id": "intelligent-director-gaming-7ce6dff9"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 57% results. If not interested, just let me know!",
+      "sequence_id": "seq-81",
+      "service_id": "intelligent-director-gaming-7ce6dff9"
+    }
+  ],
+  "hot_lead_score": 81,
+  "conversion_likelihood": "52%",
+  "timestamp": "2026-07-30T05:48:13.952332+00:00"
+}

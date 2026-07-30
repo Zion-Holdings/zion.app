@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-marketing-engine-finance-a8612f70",
+  "service_name": "Predictive Marketing Engine - Finance",
+  "industry": "finance",
+  "lead_magnet": "Regulatory Compliance Automation Guide",
+  "metrics": {
+    "improvement": "58%",
+    "savings": "$24.1M",
+    "timeframe": "5 months",
+    "similar": "Capital Group"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, Capital Group just implemented Predictive Marketing Engine - Finance last month - 58% improvement already. Thoughts?",
+      "sequence_id": "seq-93",
+      "service_id": "predictive-marketing-engine-finance-a8612f70"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: Capital Group saw $24.1M in savings. Your finance peers are seeing similar results.",
+      "sequence_id": "seq-93",
+      "service_id": "predictive-marketing-engine-finance-a8612f70"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-93",
+      "service_id": "predictive-marketing-engine-finance-a8612f70"
+    }
+  ],
+  "hot_lead_score": 79,
+  "conversion_likelihood": "57%",
+  "timestamp": "2026-07-30T05:48:13.953666+00:00"
+}

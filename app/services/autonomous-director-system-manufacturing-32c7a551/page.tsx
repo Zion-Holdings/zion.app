@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Director System - Manufacturing - Zion Tech Group",
-  description: "Transform your manufacturing operations with our Autonomous Director System - Manufacturing. This AI-driven solution automates container orchestration with unprecedented accuracy and efficiency.",
+  description: "Transform your manufacturing operations with our Autonomous Director System - Manufacturing. This AI-driven solution automates container orchestration with unpr",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-director-system-manufacturing-32c7a551`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

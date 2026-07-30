@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Optimization Platform - Education - Zion Tech Group",
-  description: "Unlock unprecedented growth with Smart Optimization Platform - Education. This autonomous system provides container orchestration with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Smart Optimization Platform - Education. This autonomous system provides container orchestration with zero manual intervention ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-optimization-platform-education-6e7cc142`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

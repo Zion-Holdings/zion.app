@@ -1,45 +1,69 @@
-import { Metadata } from 'next';
+import { } from 'next/navigation';
 
-    export const metadata: Metadata = {
-      title: 'AI Code Generation & Optimization',
-      description: 'Generates production-ready code from natural language descriptions, optimizes existing code for performance.',
-      alternates: {
-        canonical: 'https://ziontechgroup.com/services/ai-code-generation--optimization-45feb663',
-      },
-    };
+export const metadata = {
+  title: "AI Code Generation & Optimization - Zion Tech Group",
+  description: "Development assistant that generates production-ready code from natural language descriptions, optimizes existing code for performance, and suggests security im",
+  alternates: {
+    canonical: `https://ziontechgroup.com/services/ai-code-generation--optimization-45feb663`
+  }
+};
 
-    export default function ServicePage() {
-      return (
-        <main className="min-h-screen bg-slate-950 text-white">
-          <div className="max-w-4xl mx-auto px-6 py-16">
-            <h1 className="text-4xl font-bold mb-6">AI Code Generation & Optimization</h1>
-            <p className="text-xl text-gray-400 mb-8">Generates production-ready code from natural language descriptions, optimizes existing code for performance.</p>
-            <div className="mb-12">
-              <h2 className="text-2xl font-bold mb-4">Key Features</h2>
-              <ul className="list-disc list-inside space-y-2">
-                {["Natural language to code","Code optimization"]).map((f) => <li key={f} className="text-gray-300">{f}</li>)}
-              </ul>
+export default function ServicePage() {
+  return (
+    <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold mb-6">AI Code Generation &amp; Optimization</h1>
+        <p className="text-lg text-gray-300 mb-8">Development assistant that generates production-ready code from natural language descriptions, optimizes existing code for performance, and suggests security improvements.</p>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Multi-language code generation</li>
+            <li>Performance optimization suggestions</li>
+            <li>Security vulnerability detection</li>
+            <li>Code documentation generation</li>
+          </ul>
+        </div>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>10x faster development speed</li>
+            <li>Improved code quality</li>
+            <li>Reduced bug rates</li>
+            <li>Enhanced security posture</li>
+          </ul>
+        </div>
+        
+        <div className="border border-purple-500 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Basic</h3>
+              <p className="text-2xl font-bold mb-2">$299</p>
             </div>
-            <div className="mb-12">
-              <h2 className="text-2xl font-bold mb-4">Benefits</h2>
-              <ul className="list-disc list-inside space-y-2">
-                {["10x faster development","Better code quality"]).map((b) => <li key={b} className="text-purple-300">{b}</li>)}
-              </ul>
+            <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
+              <h3 className="font-semibold mb-2">Pro</h3>
+              <p className="text-2xl font-bold mb-2">$699</p>
             </div>
-            <section className="mt-16 bg-slate-900 rounded-2xl p-8">
-              <h2 className="text-2xl font-bold mb-6">Get Started</h2>
-              <p className="text-gray-400 mb-6">Ready to transform your development operations?</p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <a href="mailto:kleber@ziontechgroup.com" className="px-6 py-3 bg-purple-600 hover:bg-purple-700 rounded-lg font-semibold">
-                  Contact Us
-                </a>
-                <a href="/contact" className="px-6 py-3 border border-purple-500 hover:bg-purple-900/20 rounded-lg">
-                  Book a Demo
-                </a>
-              </div>
-            </section>
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Enterprise</h3>
+              <p className="text-2xl font-bold mb-2">$1999</p>
+            </div>
           </div>
-        </main>
-      );
-    }
-    
+        </div>
+        
+        <div className="text-center">
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
+          >
+            Book a Consultation
+          </a>
+        </div>
+      </div>
+    </main>
+  );
+}

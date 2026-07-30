@@ -4,7 +4,7 @@ Hi there,
 
 I'm reaching out to introduce Neural Manufacturing for Agriculture from Zion Tech Group - an AI-powered solution that could significantly impact your business.
 
-Revolutionize agriculture through intelligent automation. Our Neural Manufacturing for Agriculture leverages advanced machine learning to deliver master data management at scale.
+Revolutionize agriculture through intelligent automation. Our Neural Manufacturing for Agriculture leverages advanced machine learning to deliver maintenance scheduling at scale.
 
 Key Benefits:
 - AI-driven automation for faster results

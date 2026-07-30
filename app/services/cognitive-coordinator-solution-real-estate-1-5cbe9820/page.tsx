@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Coordinator Solution - Real-Estate #1 - Zion Tech Group",
-  description: "The future of real-estate is here with Cognitive Coordinator Solution - Real-Estate #1. Powered by cutting-edge AI, this platform delivers regulatory tracking like never before.",
+  description: "The future of real-estate is here with Cognitive Coordinator Solution - Real-Estate #1. Powered by cutting-edge AI, this platform delivers regulatory tracking l",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-coordinator-solution-real-estate-1-5cbe9820`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

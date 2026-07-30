@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent System for Finance - Zion Tech Group",
-  description: "Revolutionize finance through intelligent automation. Our Intelligent System for Finance leverages advanced machine learning to deliver access management at scale.",
+  description: "Revolutionize finance through intelligent automation. Our Intelligent System for Finance leverages advanced machine learning to deliver access management at sca",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-system-for-finance-4e569e2e`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

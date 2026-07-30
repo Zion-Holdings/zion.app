@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-intelligence-engine-construction-b23e273a",
+  "service_name": "Predictive Intelligence Engine - Construction",
+  "industry": "construction",
+  "lead_magnet": "Project Delivery Acceleration Guide",
+  "metrics": {
+    "improvement": "45%",
+    "savings": "$8.7M",
+    "timeframe": "8 months",
+    "similar": "BuildCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve construction. Our AI platform helped BuildCo achieve 45% improvement in 8 months. Quick 5-minute call?",
+      "sequence_id": "seq-1",
+      "service_id": "predictive-intelligence-engine-construction-b23e273a"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Predictive Intelligence Engine - Construction typically saves $8.7M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-1",
+      "service_id": "predictive-intelligence-engine-construction-b23e273a"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 45% results. If not interested, just let me know!",
+      "sequence_id": "seq-1",
+      "service_id": "predictive-intelligence-engine-construction-b23e273a"
+    }
+  ],
+  "hot_lead_score": 94,
+  "conversion_likelihood": "60%",
+  "timestamp": "2026-07-30T05:48:13.936274+00:00"
+}
