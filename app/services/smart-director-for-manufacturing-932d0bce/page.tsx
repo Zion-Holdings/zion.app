@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Director for Manufacturing - Zion Tech Group",
-  description: "Revolutionize manufacturing through intelligent automation. Our Smart Director for Manufacturing leverages advanced machine learning to deliver energy managemen",
+  description: "Revolutionize manufacturing through intelligent automation. Our Smart Director for Manufacturing leverages advanced machine learning to deliver fraud prevention",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-director-for-manufacturing-932d0bce`
   }
@@ -13,26 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart Director for Manufacturing</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize manufacturing through intelligent automation. Our Smart Director for Manufacturing leverages advanced machine learning to deliver energy management at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize manufacturing through intelligent automation. Our Smart Director for Manufacturing leverages advanced machine learning to deliver fraud prevention at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Healthcare data analytics with patient insights</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Serverless functions for cost-effective scaling</li>
-            <li>Open-source friendly with plugin architecture</li>
-            <li>Document processing with OCR and NLP</li>
+            <li>Content generation with plagiarism checks</li>
+            <li>Financial risk management with scenario analysis</li>
+            <li>Microservices deployment with container orchestration</li>
+            <li>Alerting system with intelligent notifications</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better risk management with predictive analytics</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
             <li>50% reduction in operational costs through automation</li>
-            <li>Reduced human error by 95% with automated processes</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Seamless integration with existing systems and workflows</li>
+            <li>Better risk management with predictive analytics</li>
           </ul>
         </div>
         

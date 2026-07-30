@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automation Smart - Logistics - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our Automation Smart - Logistics leverages advanced machine learning to deliver logistics route optimiza",
+  description: "Next-generation logistics solution: Automation Smart - Logistics. Combines predictive analytics with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automation-smart---logistics-41d9b117`
   }
@@ -13,26 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automation Smart - Logistics</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize logistics through intelligent automation. Our Automation Smart - Logistics leverages advanced machine learning to deliver logistics route optimization at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation logistics solution: Automation Smart - Logistics. Combines predictive analytics with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Automation opportunity identification</li>
-            <li>Edge computing support for low-latency operations</li>
-            <li>Predictive modeling with ensemble methods</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>HIPAA ready with healthcare data protection</li>
             <li>Manufacturing quality control with defect detection</li>
+            <li>GDPR compliance with data portability</li>
+            <li>Data encryption at rest and in transit</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better supply chain visibility with tracking</li>
-            <li>Improved customer satisfaction with faster response times</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>Better compliance with automated audit trails</li>
           </ul>
         </div>
         

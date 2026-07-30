@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated suite-hospitality - Zion Tech Group",
-  description: "The future of hospitality is here with Automated suite-hospitality. Powered by cutting-edge AI, this platform delivers image recognition like never before.",
+  description: "The future of hospitality is here with Automated suite-hospitality. Powered by cutting-edge AI, this platform delivers compliance monitoring like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-suite-hospitality-681a2437`
   }
@@ -13,26 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automated suite-hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of hospitality is here with Automated suite-hospitality. Powered by cutting-edge AI, this platform delivers image recognition like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of hospitality is here with Automated suite-hospitality. Powered by cutting-edge AI, this platform delivers compliance monitoring like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Maintenance scheduling with predictive analytics</li>
-            <li>Multi-language support with localization</li>
-            <li>Edge computing support for low-latency operations</li>
-            <li>Financial risk management with scenario analysis</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>Image recognition with computer vision</li>
+            <li>Compliance monitoring with regulatory updates</li>
+            <li>Content generation with plagiarism checks</li>
+            <li>Document processing with OCR and NLP</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Seamless integration with existing systems and workflows</li>
             <li>99.9% uptime guarantee with redundant architecture</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Improved quality with automated testing and validation</li>
           </ul>
         </div>
         

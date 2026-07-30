@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Director for Construction - Zion Tech Group",
-  description: "The future of construction is here with AI-Powered Director for Construction. Powered by cutting-edge AI, this platform delivers customer journey mapping like n",
+  description: "Revolutionize construction through intelligent automation. Our AI-Powered Director for Construction leverages advanced machine learning to deliver financial pla",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-director-for-construction-a1202a63`
   }
@@ -13,27 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI-Powered Director for Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with AI-Powered Director for Construction. Powered by cutting-edge AI, this platform delivers customer journey mapping like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our AI-Powered Director for Construction leverages advanced machine learning to deliver financial planning at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Maintenance scheduling with predictive analytics</li>
-            <li>Market analysis with buyer behavior insights</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Energy optimization with consumption tracking</li>
-            <li>Brand monitoring across social channels</li>
+            <li>Multi-language support with localization</li>
+            <li>Code optimization with performance profiling</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Auto-scaling capabilities with predictive scaling</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced operational risks with predictive models</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
-            <li>Zero manual intervention required for routine tasks</li>
-            <li>Increased revenue with optimized pricing strategies</li>
-            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>24/7 automated operations without human intervention</li>
           </ul>
         </div>
         

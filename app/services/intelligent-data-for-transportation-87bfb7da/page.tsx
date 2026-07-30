@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Data for Transportation - Zion Tech Group",
-  description: "Next-generation transportation solution: Intelligent Data for Transportation. Combines content generation with adaptive intelligence for optimal results.",
+  description: "Transform your transportation operations with our Intelligent Data for Transportation. This AI-driven solution automates predictive analytics with unprecedented",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-data-for-transportation-87bfb7da`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Data for Transportation</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation transportation solution: Intelligent Data for Transportation. Combines content generation with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your transportation operations with our Intelligent Data for Transportation. This AI-driven solution automates predictive analytics with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Content generation with plagiarism checks</li>
-            <li>Open-source friendly with plugin architecture</li>
             <li>GDPR compliance with data portability</li>
-            <li>Automation opportunity identification</li>
-            <li>Executive dashboards with drill-down capabilities</li>
+            <li>User experience analytics with behavior tracking</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>Inventory prediction with demand forecasting</li>
+            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Better risk management with predictive analytics</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
             <li>Increased revenue with optimized pricing strategies</li>
-            <li>Reduced marketing costs with targeted campaigns</li>
-            <li>Faster time-to-market with accelerated development</li>
-            <li>50% reduction in operational costs through automation</li>
-            <li>Improved sales performance with lead scoring</li>
+            <li>Cost optimization recommendations with savings analysis</li>
           </ul>
         </div>
         

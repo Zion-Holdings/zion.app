@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Security for Construction - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our Automated Security for Construction leverages advanced machine learning to deliver document proce",
+  description: "Unlock unprecedented growth with Automated Security for Construction. This autonomous system provides data processing with zero manual intervention needed.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-security-for-construction-a074b1f8`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automated Security for Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our Automated Security for Construction leverages advanced machine learning to deliver document processing at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Automated Security for Construction. This autonomous system provides data processing with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Code optimization with performance profiling</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
             <li>GDPR compliance with data portability</li>
-            <li>Compliance monitoring with regulatory updates</li>
-            <li>Machine learning integration with automatic model training</li>
-            <li>User experience analytics with behavior tracking</li>
-            <li>Version control with rollback capabilities</li>
+            <li>Data encryption at rest and in transit</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Increased revenue with optimized pricing strategies</li>
-            <li>Seamless integration with existing systems and workflows</li>
-            <li>Reduced churn with proactive customer retention</li>
-            <li>Faster time-to-market with accelerated development</li>
-            <li>Zero manual intervention required for routine tasks</li>
+            <li>Improved quality with automated testing and validation</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         

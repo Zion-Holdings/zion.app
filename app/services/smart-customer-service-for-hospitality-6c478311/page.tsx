@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Customer Service for Hospitality - Zion Tech Group",
-  description: "Next-generation hospitality solution: Smart Customer Service for Hospitality. Combines financial planning with adaptive intelligence for optimal results.",
+  description: "Revolutionize hospitality through intelligent automation. Our Smart Customer Service for Hospitality leverages advanced machine learning to deliver supply chain",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-customer-service-for-hospitality-6c478311`
   }
@@ -13,24 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart Customer Service for Hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation hospitality solution: Smart Customer Service for Hospitality. Combines financial planning with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize hospitality through intelligent automation. Our Smart Customer Service for Hospitality leverages advanced machine learning to deliver supply chain at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Multi-region deployment with automatic failover</li>
-            <li>Sales process optimization with pipeline management</li>
-            <li>GDPR compliance with data portability</li>
-            <li>Language processing with sentiment analysis</li>
+            <li>Version control with rollback capabilities</li>
+            <li>Multi-language support with localization</li>
+            <li>Financial risk management with scenario analysis</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>24/7 automated operations without human intervention</li>
             <li>Reduced churn with proactive customer retention</li>
             <li>50% reduction in operational costs through automation</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         

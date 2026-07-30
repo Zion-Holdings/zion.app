@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Insights - Energy Edition - Zion Tech Group",
-  description: "Next-generation energy solution: AI Insights - Energy Edition. Combines supply chain with adaptive intelligence for optimal results.",
+  description: "Revolutionize energy through intelligent automation. Our AI Insights - Energy Edition leverages advanced machine learning to deliver inventory management at sca",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-insights---energy-edition-d7b7b5e7`
   }
@@ -13,26 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Insights - Energy Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation energy solution: AI Insights - Energy Edition. Combines supply chain with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize energy through intelligent automation. Our AI Insights - Energy Edition leverages advanced machine learning to deliver inventory management at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Maintenance scheduling with predictive analytics</li>
             <li>Sales process optimization with pipeline management</li>
-            <li>Multi-region deployment with automatic failover</li>
-            <li>User experience analytics with behavior tracking</li>
-            <li>SOC 2 certified with security controls</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>Machine learning integration with automatic model training</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Seamless integration with existing systems and workflows</li>
-            <li>Increased revenue with optimized pricing strategies</li>
+            <li>Zero manual intervention required for routine tasks</li>
             <li>Scalable to millions of transactions per second</li>
+            <li>Faster time-to-market with accelerated development</li>
           </ul>
         </div>
         

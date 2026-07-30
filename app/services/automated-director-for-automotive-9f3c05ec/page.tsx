@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Director for Automotive - Zion Tech Group",
-  description: "The future of automotive is here with Automated Director for Automotive. Powered by cutting-edge AI, this platform delivers energy management like never before.",
+  description: "Transform your automotive operations with our Automated Director for Automotive. This AI-driven solution automates customer insights with unprecedented accuracy",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-director-for-automotive-9f3c05ec`
   }
@@ -13,26 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automated Director for Automotive</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of automotive is here with Automated Director for Automotive. Powered by cutting-edge AI, this platform delivers energy management like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your automotive operations with our Automated Director for Automotive. This AI-driven solution automates customer insights with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Content generation with plagiarism checks</li>
-            <li>Microservices deployment with container orchestration</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Sales process optimization with pipeline management</li>
-            <li>Healthcare data analytics with patient insights</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>HIPAA ready with healthcare data protection</li>
+            <li>Code optimization with performance profiling</li>
+            <li>Image recognition with computer vision</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Cost optimization recommendations with savings analysis</li>
             <li>Better risk management with predictive analytics</li>
-            <li>Increased revenue with optimized pricing strategies</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Zero manual intervention required for routine tasks</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart intelligence-construction - Zion Tech Group",
-  description: "Unlock unprecedented growth with Smart intelligence-construction. This autonomous system provides cost reduction with zero manual intervention needed.",
+  description: "Revolutionize construction through intelligent automation. Our Smart intelligence-construction leverages advanced machine learning to deliver sales process opti",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-intelligence-construction-6d010594`
   }
@@ -13,26 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart intelligence-construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Smart intelligence-construction. This autonomous system provides cost reduction with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our Smart intelligence-construction leverages advanced machine learning to deliver sales process optimization at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Customer journey mapping with touchpoint analysis</li>
-            <li>Energy optimization with consumption tracking</li>
-            <li>Business intelligence with KPI dashboards</li>
-            <li>Fraud detection with anomaly analysis</li>
-            <li>Sentiment analysis with real-time monitoring</li>
+            <li>Manufacturing quality control with defect detection</li>
+            <li>Compliance monitoring with regulatory updates</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better resource utilization with auto-scaling</li>
-            <li>Better compliance with automated audit trails</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
             <li>Faster time-to-market with accelerated development</li>
-            <li>Improved brand awareness with social monitoring</li>
+            <li>Reduced human error by 95% with automated processes</li>
+            <li>Cost optimization recommendations with savings analysis</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Monitoring Smart - Insurance - Zion Tech Group",
-  description: "Next-generation insurance solution: Monitoring Smart - Insurance. Combines financial risk management with adaptive intelligence for optimal results.",
+  description: "Revolutionize insurance through intelligent automation. Our Monitoring Smart - Insurance leverages advanced machine learning to deliver fraud prevention at scal",
   alternates: {
     canonical: `https://ziontechgroup.com/services/monitoring-smart---insurance-3a1fd41a`
   }
@@ -13,27 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Monitoring Smart - Insurance</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation insurance solution: Monitoring Smart - Insurance. Combines financial risk management with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize insurance through intelligent automation. Our Monitoring Smart - Insurance leverages advanced machine learning to deliver fraud prevention at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Code optimization with performance profiling</li>
+            <li>Language processing with sentiment analysis</li>
+            <li>Customer service automation with chatbot integration</li>
             <li>Logistics route optimization with traffic prediction</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Fraud detection with anomaly analysis</li>
-            <li>Microservices deployment with container orchestration</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Enhanced security with continuous threat monitoring</li>
             <li>Reduced human error by 95% with automated processes</li>
             <li>Performance benchmarking against industry standards</li>
-            <li>3x faster decision making with real-time insights</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Zero manual intervention required for routine tasks</li>
           </ul>
         </div>
         

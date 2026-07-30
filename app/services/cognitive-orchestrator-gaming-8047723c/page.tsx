@@ -18,20 +18,19 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Document processing with OCR and NLP</li>
             <li>Energy optimization with consumption tracking</li>
-            <li>Multi-language support with localization</li>
-            <li>Multi-region deployment with automatic failover</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Code optimization with performance profiling</li>
+            <li>Manufacturing quality control with defect detection</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Better compliance with automated audit trails</li>
-            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Zero manual intervention required for routine tasks</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Reduced churn with proactive customer retention</li>
             <li>Seamless integration with existing systems and workflows</li>
           </ul>
         </div>

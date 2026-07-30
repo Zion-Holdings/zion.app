@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Logistics Intelligence - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent Logistics Intelligence. This autonomous system provides maintenance scheduling with zero manual intervention needed",
+  description: "Transform your manufacturing operations with our Intelligent Logistics Intelligence. This AI-driven solution automates network optimization with unprecedented a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-logistics-intelligence-ba6b18e3`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Logistics Intelligence</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Intelligent Logistics Intelligence. This autonomous system provides maintenance scheduling with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your manufacturing operations with our Intelligent Logistics Intelligence. This AI-driven solution automates network optimization with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Healthcare data analytics with patient insights</li>
-            <li>A/B testing framework for continuous optimization</li>
-            <li>Financial risk management with scenario analysis</li>
-            <li>Revenue forecasting with market trend analysis</li>
             <li>Open-source friendly with plugin architecture</li>
+            <li>GDPR compliance with data portability</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>Sales process optimization with pipeline management</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced shipping costs with route optimization</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
-            <li>3x faster decision making with real-time insights</li>
-            <li>Better customer experience with personalization</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
           </ul>
         </div>
         

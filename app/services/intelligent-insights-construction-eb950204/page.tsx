@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent insights-construction - Zion Tech Group",
-  description: "The future of construction is here with Intelligent insights-construction. Powered by cutting-edge AI, this platform delivers market intelligence like never bef",
+  description: "Transform your construction operations with our Intelligent insights-construction. This AI-driven solution automates sales forecasting with unprecedented accura",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-insights-construction-eb950204`
   }
@@ -13,24 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent insights-construction</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Intelligent insights-construction. Powered by cutting-edge AI, this platform delivers market intelligence like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your construction operations with our Intelligent insights-construction. This AI-driven solution automates sales forecasting with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Security monitoring with threat intelligence</li>
-            <li>Image recognition with computer vision</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Network optimization with traffic analysis</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Code optimization with performance profiling</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Version control with rollback capabilities</li>
+            <li>Compliance monitoring with regulatory updates</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Cost optimization recommendations with savings analysis</li>
             <li>Increased revenue with optimized pricing strategies</li>
-            <li>Scalable to millions of transactions per second</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>50% reduction in operational costs through automation</li>
           </ul>
         </div>
         

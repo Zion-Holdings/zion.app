@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Insights - Agriculture Edition #2 - Zion Tech Group",
-  description: "The future of agriculture is here with AI Insights - Agriculture Edition #2. Powered by cutting-edge AI, this platform delivers workflow management like never b",
+  description: "Next-generation agriculture solution: AI Insights - Agriculture Edition #2. Combines sales process optimization with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-insights---agriculture-edition-2-79da3e37`
   }
@@ -13,25 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Insights - Agriculture Edition #2</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of agriculture is here with AI Insights - Agriculture Edition #2. Powered by cutting-edge AI, this platform delivers workflow management like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation agriculture solution: AI Insights - Agriculture Edition #2. Combines sales process optimization with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Healthcare data analytics with patient insights</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Image recognition with computer vision</li>
-            <li>Manufacturing quality control with defect detection</li>
+            <li>Document processing with OCR and NLP</li>
             <li>Financial risk management with scenario analysis</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Zero manual intervention required for routine tasks</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Improved customer satisfaction with faster response times</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Reduced human error by 95% with automated processes</li>
           </ul>
         </div>
         

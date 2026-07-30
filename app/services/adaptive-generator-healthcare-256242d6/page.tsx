@@ -18,21 +18,20 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>A/B testing framework for continuous optimization</li>
-            <li>Fraud detection with anomaly analysis</li>
-            <li>Code optimization with performance profiling</li>
-            <li>Customer service automation with chatbot integration</li>
-            <li>Healthcare data analytics with patient insights</li>
+            <li>SOC 2 certified with security controls</li>
+            <li>Inventory prediction with demand forecasting</li>
+            <li>Compliance monitoring with regulatory updates</li>
+            <li>Audit trails with compliance reporting</li>
+            <li>Version control with rollback capabilities</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved quality with automated testing and validation</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Increased revenue with optimized pricing strategies</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>50% reduction in operational costs through automation</li>
           </ul>
         </div>
         
