@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-supply-for-logistics-d2274b2d",
+  "service_name": "Cognitive Supply for Logistics",
+  "industry": "logistics",
+  "lead_magnet": "Route Optimization Savings Estimator",
+  "metrics": {
+    "improvement": "49%",
+    "savings": "$11.2M",
+    "timeframe": "6 months",
+    "similar": "LogisticsPlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows logistics companies using Cognitive Supply for Logistics see 49% improvement. Your current process?",
+      "sequence_id": "seq-35",
+      "service_id": "cognitive-supply-for-logistics-d2274b2d"
+    },
+    {
+      "step": 2,
+      "message": "Based on your logistics profile, Cognitive Supply for Logistics could save {company} approximately $11.2M. Interested in details?",
+      "sequence_id": "seq-35",
+      "service_id": "cognitive-supply-for-logistics-d2274b2d"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Cognitive Supply for Logistics is proven to deliver 49% results.",
+      "sequence_id": "seq-35",
+      "service_id": "cognitive-supply-for-logistics-d2274b2d"
+    }
+  ],
+  "hot_lead_score": 93,
+  "conversion_likelihood": "60%",
+  "timestamp": "2026-07-30T05:44:12.466718+00:00"
+}

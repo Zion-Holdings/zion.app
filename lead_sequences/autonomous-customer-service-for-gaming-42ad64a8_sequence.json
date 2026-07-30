@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-customer-service-for-gaming-42ad64a8",
+  "service_name": "Autonomous Customer Service for Gaming",
+  "industry": "gaming",
+  "lead_magnet": "Player Retention Strategy Playbook",
+  "metrics": {
+    "improvement": "57%",
+    "savings": "$10.3M",
+    "timeframe": "5 months",
+    "similar": "GameStudio"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve gaming. Our AI platform helped GameStudio achieve 57% improvement in 5 months. Quick 5-minute call?",
+      "sequence_id": "seq-16",
+      "service_id": "autonomous-customer-service-for-gaming-42ad64a8"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Autonomous Customer Service for Gaming typically saves $10.3M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-16",
+      "service_id": "autonomous-customer-service-for-gaming-42ad64a8"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 57% results. If not interested, just let me know!",
+      "sequence_id": "seq-16",
+      "service_id": "autonomous-customer-service-for-gaming-42ad64a8"
+    }
+  ],
+  "hot_lead_score": 69,
+  "conversion_likelihood": "59%",
+  "timestamp": "2026-07-30T05:44:12.461000+00:00"
+}

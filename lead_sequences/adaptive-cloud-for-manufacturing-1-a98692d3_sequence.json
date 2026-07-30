@@ -1,0 +1,35 @@
+{
+  "service_id": "adaptive-cloud-for-manufacturing-1-a98692d3",
+  "service_name": "Adaptive Cloud for Manufacturing #1",
+  "industry": "manufacturing",
+  "lead_magnet": "Predictive Maintenance ROI Calculator",
+  "metrics": {
+    "improvement": "51%",
+    "savings": "$15.8M",
+    "timeframe": "8 months",
+    "similar": "ManufactureCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, ManufactureCo just implemented Adaptive Cloud for Manufacturing #1 last month - 51% improvement already. Thoughts?",
+      "sequence_id": "seq-28",
+      "service_id": "adaptive-cloud-for-manufacturing-1-a98692d3"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: ManufactureCo saw $15.8M in savings. Your manufacturing peers are seeing similar results.",
+      "sequence_id": "seq-28",
+      "service_id": "adaptive-cloud-for-manufacturing-1-a98692d3"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-28",
+      "service_id": "adaptive-cloud-for-manufacturing-1-a98692d3"
+    }
+  ],
+  "hot_lead_score": 91,
+  "conversion_likelihood": "61%",
+  "timestamp": "2026-07-30T05:44:12.464118+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-management-for-telecom-ec56627d",
+  "service_name": "Intelligent Management for Telecom",
+  "industry": "telecom",
+  "lead_magnet": "Network Optimization Cost Analysis",
+  "metrics": {
+    "improvement": "53%",
+    "savings": "$19.2M",
+    "timeframe": "5 months",
+    "similar": "TeleCom Solutions"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, TeleCom Solutions just implemented Intelligent Management for Telecom last month - 53% improvement already. Thoughts?",
+      "sequence_id": "seq-88",
+      "service_id": "intelligent-management-for-telecom-ec56627d"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: TeleCom Solutions saw $19.2M in savings. Your telecom peers are seeing similar results.",
+      "sequence_id": "seq-88",
+      "service_id": "intelligent-management-for-telecom-ec56627d"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-88",
+      "service_id": "intelligent-management-for-telecom-ec56627d"
+    }
+  ],
+  "hot_lead_score": 89,
+  "conversion_likelihood": "75%",
+  "timestamp": "2026-07-30T05:44:12.482405+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "self-optimizing-analyzer-for-real-estate-998f9a98",
+  "service_name": "Self-Optimizing Analyzer for Real-Estate",
+  "industry": "real-estate",
+  "lead_magnet": "Property Management Automation Guide",
+  "metrics": {
+    "improvement": "46%",
+    "savings": "$13.4M",
+    "timeframe": "7 months",
+    "similar": "PropertyGroup"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with real-estate analyzer?",
+      "sequence_id": "seq-62",
+      "service_id": "self-optimizing-analyzer-for-real-estate-998f9a98"
+    },
+    {
+      "step": 2,
+      "message": "We've helped PropertyGroup solve this exact problem with Self-Optimizing Analyzer for Real-Estate. Achieved 46% in 7 months.",
+      "sequence_id": "seq-62",
+      "service_id": "self-optimizing-analyzer-for-real-estate-998f9a98"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-62",
+      "service_id": "self-optimizing-analyzer-for-real-estate-998f9a98"
+    }
+  ],
+  "hot_lead_score": 70,
+  "conversion_likelihood": "58%",
+  "timestamp": "2026-07-30T05:44:12.474939+00:00"
+}

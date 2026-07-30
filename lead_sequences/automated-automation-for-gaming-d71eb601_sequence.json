@@ -1,0 +1,35 @@
+{
+  "service_id": "automated-automation-for-gaming-d71eb601",
+  "service_name": "Automated Automation for Gaming",
+  "industry": "gaming",
+  "lead_magnet": "Player Retention Strategy Playbook",
+  "metrics": {
+    "improvement": "57%",
+    "savings": "$10.3M",
+    "timeframe": "5 months",
+    "similar": "GameStudio"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, GameStudio is closing their Q3 deals this week. Want to see how Automated Automation for Gaming can help {company} save $10.3M?",
+      "sequence_id": "seq-64",
+      "service_id": "automated-automation-for-gaming-d71eb601"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Automated Automation for Gaming delivers 57% in 5 months.",
+      "sequence_id": "seq-64",
+      "service_id": "automated-automation-for-gaming-d71eb601"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-64",
+      "service_id": "automated-automation-for-gaming-d71eb601"
+    }
+  ],
+  "hot_lead_score": 69,
+  "conversion_likelihood": "74%",
+  "timestamp": "2026-07-30T05:44:12.475218+00:00"
+}

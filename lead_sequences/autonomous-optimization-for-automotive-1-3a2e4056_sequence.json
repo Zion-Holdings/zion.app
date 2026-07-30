@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-optimization-for-automotive-1-3a2e4056",
+  "service_name": "Autonomous Optimization for Automotive #1",
+  "industry": "automotive",
+  "lead_magnet": "Supply Chain Efficiency Audit",
+  "metrics": {
+    "improvement": "50%",
+    "savings": "$14.1M",
+    "timeframe": "6 months",
+    "similar": "AutoMakers"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, AutoMakers is closing their Q3 deals this week. Want to see how Autonomous Optimization for Automotive #1 can help {company} save $14.1M?",
+      "sequence_id": "seq-79",
+      "service_id": "autonomous-optimization-for-automotive-1-3a2e4056"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Autonomous Optimization for Automotive #1 delivers 50% in 6 months.",
+      "sequence_id": "seq-79",
+      "service_id": "autonomous-optimization-for-automotive-1-3a2e4056"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-79",
+      "service_id": "autonomous-optimization-for-automotive-1-3a2e4056"
+    }
+  ],
+  "hot_lead_score": 90,
+  "conversion_likelihood": "50%",
+  "timestamp": "2026-07-30T05:44:12.479605+00:00"
+}

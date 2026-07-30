@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-risk-for-legal-a1669daf",
+  "service_name": "Autonomous Risk for Legal",
+  "industry": "legal",
+  "lead_magnet": "Document Review Automation Checklist",
+  "metrics": {
+    "improvement": "39%",
+    "savings": "$3.1M",
+    "timeframe": "14 months",
+    "similar": "LawFirm"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, LawFirm is closing their Q3 deals this week. Want to see how Autonomous Risk for Legal can help {company} save $3.1M?",
+      "sequence_id": "seq-39",
+      "service_id": "autonomous-risk-for-legal-a1669daf"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Autonomous Risk for Legal delivers 39% in 14 months.",
+      "sequence_id": "seq-39",
+      "service_id": "autonomous-risk-for-legal-a1669daf"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-39",
+      "service_id": "autonomous-risk-for-legal-a1669daf"
+    }
+  ],
+  "hot_lead_score": 91,
+  "conversion_likelihood": "43%",
+  "timestamp": "2026-07-30T05:44:12.468041+00:00"
+}

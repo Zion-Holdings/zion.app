@@ -1,0 +1,35 @@
+{
+  "service_id": "self-optimizing-analyzer-for-construction-56556698",
+  "service_name": "Self-Optimizing Analyzer for Construction",
+  "industry": "construction",
+  "lead_magnet": "Project Delivery Acceleration Guide",
+  "metrics": {
+    "improvement": "45%",
+    "savings": "$8.7M",
+    "timeframe": "8 months",
+    "similar": "BuildCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, BuildCo just implemented Self-Optimizing Analyzer for Construction last month - 45% improvement already. Thoughts?",
+      "sequence_id": "seq-98",
+      "service_id": "self-optimizing-analyzer-for-construction-56556698"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: BuildCo saw $8.7M in savings. Your construction peers are seeing similar results.",
+      "sequence_id": "seq-98",
+      "service_id": "self-optimizing-analyzer-for-construction-56556698"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-98",
+      "service_id": "self-optimizing-analyzer-for-construction-56556698"
+    }
+  ],
+  "hot_lead_score": 65,
+  "conversion_likelihood": "70%",
+  "timestamp": "2026-07-30T05:44:12.485615+00:00"
+}

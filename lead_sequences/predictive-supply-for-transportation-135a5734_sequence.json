@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-supply-for-transportation-135a5734",
+  "service_name": "Predictive Supply for Transportation",
+  "industry": "transportation",
+  "lead_magnet": "Fleet Efficiency Optimization Report",
+  "metrics": {
+    "improvement": "48%",
+    "savings": "$11.9M",
+    "timeframe": "6 months",
+    "similar": "TransitCorp"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows transportation companies using Predictive Supply for Transportation see 48% improvement. Your current process?",
+      "sequence_id": "seq-95",
+      "service_id": "predictive-supply-for-transportation-135a5734"
+    },
+    {
+      "step": 2,
+      "message": "Based on your transportation profile, Predictive Supply for Transportation could save {company} approximately $11.9M. Interested in details?",
+      "sequence_id": "seq-95",
+      "service_id": "predictive-supply-for-transportation-135a5734"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Predictive Supply for Transportation is proven to deliver 48% results.",
+      "sequence_id": "seq-95",
+      "service_id": "predictive-supply-for-transportation-135a5734"
+    }
+  ],
+  "hot_lead_score": 69,
+  "conversion_likelihood": "73%",
+  "timestamp": "2026-07-30T05:44:12.484578+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-analyzer-for-retail-99caf689",
+  "service_name": "Autonomous Analyzer for Retail",
+  "industry": "retail",
+  "lead_magnet": "Customer Retention Playbook",
+  "metrics": {
+    "improvement": "44%",
+    "savings": "$9.3M",
+    "timeframe": "7 months",
+    "similar": "RetailPro"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, RetailPro just implemented Autonomous Analyzer for Retail last month - 44% improvement already. Thoughts?",
+      "sequence_id": "seq-23",
+      "service_id": "autonomous-analyzer-for-retail-99caf689"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: RetailPro saw $9.3M in savings. Your retail peers are seeing similar results.",
+      "sequence_id": "seq-23",
+      "service_id": "autonomous-analyzer-for-retail-99caf689"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-23",
+      "service_id": "autonomous-analyzer-for-retail-99caf689"
+    }
+  ],
+  "hot_lead_score": 84,
+  "conversion_likelihood": "54%",
+  "timestamp": "2026-07-30T05:44:12.462213+00:00"
+}

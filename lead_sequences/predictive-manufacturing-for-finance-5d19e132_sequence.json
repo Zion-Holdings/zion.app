@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-manufacturing-for-finance-5d19e132",
+  "service_name": "Predictive Manufacturing for Finance",
+  "industry": "finance",
+  "lead_magnet": "Regulatory Compliance Automation Guide",
+  "metrics": {
+    "improvement": "58%",
+    "savings": "$24.1M",
+    "timeframe": "5 months",
+    "similar": "Capital Group"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with finance manufacturing?",
+      "sequence_id": "seq-87",
+      "service_id": "predictive-manufacturing-for-finance-5d19e132"
+    },
+    {
+      "step": 2,
+      "message": "We've helped Capital Group solve this exact problem with Predictive Manufacturing for Finance. Achieved 58% in 5 months.",
+      "sequence_id": "seq-87",
+      "service_id": "predictive-manufacturing-for-finance-5d19e132"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-87",
+      "service_id": "predictive-manufacturing-for-finance-5d19e132"
+    }
+  ],
+  "hot_lead_score": 66,
+  "conversion_likelihood": "60%",
+  "timestamp": "2026-07-30T05:44:12.482040+00:00"
+}

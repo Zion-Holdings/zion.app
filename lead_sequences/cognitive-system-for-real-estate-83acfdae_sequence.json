@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-system-for-real-estate-83acfdae",
+  "service_name": "Cognitive System for Real-Estate",
+  "industry": "real-estate",
+  "lead_magnet": "Property Management Automation Guide",
+  "metrics": {
+    "improvement": "46%",
+    "savings": "$13.4M",
+    "timeframe": "7 months",
+    "similar": "PropertyGroup"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with real-estate system?",
+      "sequence_id": "seq-97",
+      "service_id": "cognitive-system-for-real-estate-83acfdae"
+    },
+    {
+      "step": 2,
+      "message": "We've helped PropertyGroup solve this exact problem with Cognitive System for Real-Estate. Achieved 46% in 7 months.",
+      "sequence_id": "seq-97",
+      "service_id": "cognitive-system-for-real-estate-83acfdae"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-97",
+      "service_id": "cognitive-system-for-real-estate-83acfdae"
+    }
+  ],
+  "hot_lead_score": 80,
+  "conversion_likelihood": "43%",
+  "timestamp": "2026-07-30T05:44:12.485306+00:00"
+}

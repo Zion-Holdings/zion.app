@@ -1,0 +1,35 @@
+{
+  "service_id": "automated-platform-for-telecom-1-25f4dfb1",
+  "service_name": "Automated Platform for Telecom #1",
+  "industry": "telecom",
+  "lead_magnet": "Network Optimization Cost Analysis",
+  "metrics": {
+    "improvement": "53%",
+    "savings": "$19.2M",
+    "timeframe": "5 months",
+    "similar": "TeleCom Solutions"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows telecom companies using Automated Platform for Telecom #1 see 53% improvement. Your current process?",
+      "sequence_id": "seq-90",
+      "service_id": "automated-platform-for-telecom-1-25f4dfb1"
+    },
+    {
+      "step": 2,
+      "message": "Based on your telecom profile, Automated Platform for Telecom #1 could save {company} approximately $19.2M. Interested in details?",
+      "sequence_id": "seq-90",
+      "service_id": "automated-platform-for-telecom-1-25f4dfb1"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Automated Platform for Telecom #1 is proven to deliver 53% results.",
+      "sequence_id": "seq-90",
+      "service_id": "automated-platform-for-telecom-1-25f4dfb1"
+    }
+  ],
+  "hot_lead_score": 78,
+  "conversion_likelihood": "56%",
+  "timestamp": "2026-07-30T05:44:12.482939+00:00"
+}

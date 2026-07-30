@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-analyzer-for-healthcare-832a2294",
+  "service_name": "Autonomous Analyzer for Healthcare",
+  "industry": "healthcare",
+  "lead_magnet": "HIPAA-Compliant Automation Checklist",
+  "metrics": {
+    "improvement": "47%",
+    "savings": "$12.7M",
+    "timeframe": "9 months",
+    "similar": "HealthFirst Hospital"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows healthcare companies using Autonomous Analyzer for Healthcare see 47% improvement. Your current process?",
+      "sequence_id": "seq-85",
+      "service_id": "autonomous-analyzer-for-healthcare-832a2294"
+    },
+    {
+      "step": 2,
+      "message": "Based on your healthcare profile, Autonomous Analyzer for Healthcare could save {company} approximately $12.7M. Interested in details?",
+      "sequence_id": "seq-85",
+      "service_id": "autonomous-analyzer-for-healthcare-832a2294"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Autonomous Analyzer for Healthcare is proven to deliver 47% results.",
+      "sequence_id": "seq-85",
+      "service_id": "autonomous-analyzer-for-healthcare-832a2294"
+    }
+  ],
+  "hot_lead_score": 95,
+  "conversion_likelihood": "42%",
+  "timestamp": "2026-07-30T05:44:12.481431+00:00"
+}

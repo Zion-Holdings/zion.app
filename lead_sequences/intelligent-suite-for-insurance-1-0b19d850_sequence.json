@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-suite-for-insurance-1-0b19d850",
+  "service_name": "Intelligent Suite for Insurance #1",
+  "industry": "insurance",
+  "lead_magnet": "Claims Processing Automation Guide",
+  "metrics": {
+    "improvement": "54%",
+    "savings": "$17.3M",
+    "timeframe": "7 months",
+    "similar": "InsurePlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows insurance companies using Intelligent Suite for Insurance #1 see 54% improvement. Your current process?",
+      "sequence_id": "seq-5",
+      "service_id": "intelligent-suite-for-insurance-1-0b19d850"
+    },
+    {
+      "step": 2,
+      "message": "Based on your insurance profile, Intelligent Suite for Insurance #1 could save {company} approximately $17.3M. Interested in details?",
+      "sequence_id": "seq-5",
+      "service_id": "intelligent-suite-for-insurance-1-0b19d850"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Intelligent Suite for Insurance #1 is proven to deliver 54% results.",
+      "sequence_id": "seq-5",
+      "service_id": "intelligent-suite-for-insurance-1-0b19d850"
+    }
+  ],
+  "hot_lead_score": 75,
+  "conversion_likelihood": "47%",
+  "timestamp": "2026-07-30T05:44:12.457143+00:00"
+}

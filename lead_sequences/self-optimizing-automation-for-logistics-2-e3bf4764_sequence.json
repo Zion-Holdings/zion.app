@@ -1,0 +1,35 @@
+{
+  "service_id": "self-optimizing-automation-for-logistics-2-e3bf4764",
+  "service_name": "Self-Optimizing Automation for Logistics #2",
+  "industry": "logistics",
+  "lead_magnet": "Route Optimization Savings Estimator",
+  "metrics": {
+    "improvement": "49%",
+    "savings": "$11.2M",
+    "timeframe": "6 months",
+    "similar": "LogisticsPlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve logistics. Our AI platform helped LogisticsPlus achieve 49% improvement in 6 months. Quick 5-minute call?",
+      "sequence_id": "seq-86",
+      "service_id": "self-optimizing-automation-for-logistics-2-e3bf4764"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Self-Optimizing Automation for Logistics #2 typically saves $11.2M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-86",
+      "service_id": "self-optimizing-automation-for-logistics-2-e3bf4764"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 49% results. If not interested, just let me know!",
+      "sequence_id": "seq-86",
+      "service_id": "self-optimizing-automation-for-logistics-2-e3bf4764"
+    }
+  ],
+  "hot_lead_score": 70,
+  "conversion_likelihood": "40%",
+  "timestamp": "2026-07-30T05:44:12.481640+00:00"
+}

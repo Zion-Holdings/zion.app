@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-intelligence-for-healthcare-fe8e545a",
+  "service_name": "Autonomous Intelligence for Healthcare",
+  "industry": "healthcare",
+  "lead_magnet": "HIPAA-Compliant Automation Checklist",
+  "metrics": {
+    "improvement": "47%",
+    "savings": "$12.7M",
+    "timeframe": "9 months",
+    "similar": "HealthFirst Hospital"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, HealthFirst Hospital is closing their Q3 deals this week. Want to see how Autonomous Intelligence for Healthcare can help {company} save $12.7M?",
+      "sequence_id": "seq-94",
+      "service_id": "autonomous-intelligence-for-healthcare-fe8e545a"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Autonomous Intelligence for Healthcare delivers 47% in 9 months.",
+      "sequence_id": "seq-94",
+      "service_id": "autonomous-intelligence-for-healthcare-fe8e545a"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-94",
+      "service_id": "autonomous-intelligence-for-healthcare-fe8e545a"
+    }
+  ],
+  "hot_lead_score": 82,
+  "conversion_likelihood": "40%",
+  "timestamp": "2026-07-30T05:44:12.484231+00:00"
+}

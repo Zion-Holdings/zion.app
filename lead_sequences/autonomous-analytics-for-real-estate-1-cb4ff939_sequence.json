@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-analytics-for-real-estate-1-cb4ff939",
+  "service_name": "Autonomous Analytics for Real-Estate #1",
+  "industry": "real-estate",
+  "lead_magnet": "Property Management Automation Guide",
+  "metrics": {
+    "improvement": "46%",
+    "savings": "$13.4M",
+    "timeframe": "7 months",
+    "similar": "PropertyGroup"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, PropertyGroup just implemented Autonomous Analytics for Real-Estate #1 last month - 46% improvement already. Thoughts?",
+      "sequence_id": "seq-93",
+      "service_id": "autonomous-analytics-for-real-estate-1-cb4ff939"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: PropertyGroup saw $13.4M in savings. Your real-estate peers are seeing similar results.",
+      "sequence_id": "seq-93",
+      "service_id": "autonomous-analytics-for-real-estate-1-cb4ff939"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-93",
+      "service_id": "autonomous-analytics-for-real-estate-1-cb4ff939"
+    }
+  ],
+  "hot_lead_score": 76,
+  "conversion_likelihood": "54%",
+  "timestamp": "2026-07-30T05:44:12.483905+00:00"
+}

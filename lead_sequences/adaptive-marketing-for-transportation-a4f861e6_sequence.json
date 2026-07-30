@@ -1,0 +1,35 @@
+{
+  "service_id": "adaptive-marketing-for-transportation-a4f861e6",
+  "service_name": "Adaptive Marketing for Transportation",
+  "industry": "transportation",
+  "lead_magnet": "Fleet Efficiency Optimization Report",
+  "metrics": {
+    "improvement": "48%",
+    "savings": "$11.9M",
+    "timeframe": "6 months",
+    "similar": "TransitCorp"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, TransitCorp just implemented Adaptive Marketing for Transportation last month - 48% improvement already. Thoughts?",
+      "sequence_id": "seq-63",
+      "service_id": "adaptive-marketing-for-transportation-a4f861e6"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: TransitCorp saw $11.9M in savings. Your transportation peers are seeing similar results.",
+      "sequence_id": "seq-63",
+      "service_id": "adaptive-marketing-for-transportation-a4f861e6"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-63",
+      "service_id": "adaptive-marketing-for-transportation-a4f861e6"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "40%",
+  "timestamp": "2026-07-30T05:44:12.475088+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "self-optimizing-processor-for-telecom-6db6dfd5",
+  "service_name": "Self-Optimizing Processor for Telecom",
+  "industry": "telecom",
+  "lead_magnet": "Network Optimization Cost Analysis",
+  "metrics": {
+    "improvement": "53%",
+    "savings": "$19.2M",
+    "timeframe": "5 months",
+    "similar": "TeleCom Solutions"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, TeleCom Solutions is closing their Q3 deals this week. Want to see how Self-Optimizing Processor for Telecom can help {company} save $19.2M?",
+      "sequence_id": "seq-9",
+      "service_id": "self-optimizing-processor-for-telecom-6db6dfd5"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Self-Optimizing Processor for Telecom delivers 53% in 5 months.",
+      "sequence_id": "seq-9",
+      "service_id": "self-optimizing-processor-for-telecom-6db6dfd5"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-9",
+      "service_id": "self-optimizing-processor-for-telecom-6db6dfd5"
+    }
+  ],
+  "hot_lead_score": 93,
+  "conversion_likelihood": "72%",
+  "timestamp": "2026-07-30T05:44:12.458921+00:00"
+}

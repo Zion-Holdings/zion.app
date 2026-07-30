@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-powered-manufacturing-for-gaming-1-dac4c05c",
+  "service_name": "AI-Powered Manufacturing for Gaming #1",
+  "industry": "gaming",
+  "lead_magnet": "Player Retention Strategy Playbook",
+  "metrics": {
+    "improvement": "57%",
+    "savings": "$10.3M",
+    "timeframe": "5 months",
+    "similar": "GameStudio"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, GameStudio is closing their Q3 deals this week. Want to see how AI-Powered Manufacturing for Gaming #1 can help {company} save $10.3M?",
+      "sequence_id": "seq-74",
+      "service_id": "ai-powered-manufacturing-for-gaming-1-dac4c05c"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. AI-Powered Manufacturing for Gaming #1 delivers 57% in 5 months.",
+      "sequence_id": "seq-74",
+      "service_id": "ai-powered-manufacturing-for-gaming-1-dac4c05c"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-74",
+      "service_id": "ai-powered-manufacturing-for-gaming-1-dac4c05c"
+    }
+  ],
+  "hot_lead_score": 91,
+  "conversion_likelihood": "68%",
+  "timestamp": "2026-07-30T05:44:12.478193+00:00"
+}

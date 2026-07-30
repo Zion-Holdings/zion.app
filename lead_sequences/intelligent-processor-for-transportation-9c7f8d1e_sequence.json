@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-processor-for-transportation-9c7f8d1e",
+  "service_name": "Intelligent Processor for Transportation",
+  "industry": "transportation",
+  "lead_magnet": "Fleet Efficiency Optimization Report",
+  "metrics": {
+    "improvement": "48%",
+    "savings": "$11.9M",
+    "timeframe": "6 months",
+    "similar": "TransitCorp"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, TransitCorp just implemented Intelligent Processor for Transportation last month - 48% improvement already. Thoughts?",
+      "sequence_id": "seq-73",
+      "service_id": "intelligent-processor-for-transportation-9c7f8d1e"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: TransitCorp saw $11.9M in savings. Your transportation peers are seeing similar results.",
+      "sequence_id": "seq-73",
+      "service_id": "intelligent-processor-for-transportation-9c7f8d1e"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-73",
+      "service_id": "intelligent-processor-for-transportation-9c7f8d1e"
+    }
+  ],
+  "hot_lead_score": 67,
+  "conversion_likelihood": "53%",
+  "timestamp": "2026-07-30T05:44:12.477848+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-powered-compliance-for-agriculture-d1d3f43a",
+  "service_name": "AI-Powered Compliance for Agriculture",
+  "industry": "agriculture",
+  "lead_magnet": "Precision Farming ROI Analysis",
+  "metrics": {
+    "improvement": "40%",
+    "savings": "$4.2M",
+    "timeframe": "12 months",
+    "similar": "FarmTech"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows agriculture companies using AI-Powered Compliance for Agriculture see 40% improvement. Your current process?",
+      "sequence_id": "seq-75",
+      "service_id": "ai-powered-compliance-for-agriculture-d1d3f43a"
+    },
+    {
+      "step": 2,
+      "message": "Based on your agriculture profile, AI-Powered Compliance for Agriculture could save {company} approximately $4.2M. Interested in details?",
+      "sequence_id": "seq-75",
+      "service_id": "ai-powered-compliance-for-agriculture-d1d3f43a"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. AI-Powered Compliance for Agriculture is proven to deliver 40% results.",
+      "sequence_id": "seq-75",
+      "service_id": "ai-powered-compliance-for-agriculture-d1d3f43a"
+    }
+  ],
+  "hot_lead_score": 66,
+  "conversion_likelihood": "48%",
+  "timestamp": "2026-07-30T05:44:12.478412+00:00"
+}

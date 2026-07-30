@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-cloud-for-technology-33df105f",
+  "service_name": "Intelligent Cloud for Technology",
+  "industry": "technology",
+  "lead_magnet": "AI Cost Calculator - See Your Potential Savings",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, TechStart Inc. just implemented Intelligent Cloud for Technology last month - 52% improvement already. Thoughts?",
+      "sequence_id": "seq-68",
+      "service_id": "intelligent-cloud-for-technology-33df105f"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: TechStart Inc. saw $18.4M in savings. Your technology peers are seeing similar results.",
+      "sequence_id": "seq-68",
+      "service_id": "intelligent-cloud-for-technology-33df105f"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-68",
+      "service_id": "intelligent-cloud-for-technology-33df105f"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "46%",
+  "timestamp": "2026-07-30T05:44:12.476367+00:00"
+}
