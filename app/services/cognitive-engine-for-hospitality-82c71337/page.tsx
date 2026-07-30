@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Engine for Hospitality - Zion Tech Group",
-  description: "Revolutionize hospitality through intelligent automation. Our Cognitive Engine for Hospitality leverages advanced machine learning to deliver executive dashboar",
+  description: "Unlock unprecedented growth with Cognitive Engine for Hospitality. This autonomous system provides inventory management with zero manual intervention needed.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-engine-for-hospitality-82c71337`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Cognitive Engine for Hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize hospitality through intelligent automation. Our Cognitive Engine for Hospitality leverages advanced machine learning to deliver executive dashboards at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Cognitive Engine for Hospitality. This autonomous system provides inventory management with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Manufacturing quality control with defect detection</li>
-            <li>Energy optimization with consumption tracking</li>
-            <li>Process discovery with activity analysis</li>
-            <li>Market analysis with buyer behavior insights</li>
+            <li>Audit trails with compliance reporting</li>
+            <li>Logistics route optimization with traffic prediction</li>
+            <li>SOC 2 certified with security controls</li>
+            <li>Network optimization with traffic analysis</li>
+            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Reduced human error by 95% with automated processes</li>
-            <li>Reduced development time with code generation</li>
-            <li>Better compliance with automated audit trails</li>
-            <li>Enhanced security posture with continuous monitoring</li>
+            <li>Increased revenue with optimized pricing strategies</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

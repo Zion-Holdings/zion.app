@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart intelligence-construction - Zion Tech Group",
-  description: "Transform your construction operations with our Smart intelligence-construction. This AI-driven solution automates energy management with unprecedented accuracy",
+  description: "Unlock unprecedented growth with Smart intelligence-construction. This autonomous system provides cost reduction with zero manual intervention needed.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-intelligence-construction-6d010594`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart intelligence-construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your construction operations with our Smart intelligence-construction. This AI-driven solution automates energy management with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Smart intelligence-construction. This autonomous system provides cost reduction with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Role-based access control with SSO integration</li>
-            <li>Cost reduction with process mining</li>
-            <li>Revenue forecasting with market trend analysis</li>
-            <li>Alerting system with intelligent notifications</li>
-            <li>Multi-region deployment with automatic failover</li>
+            <li>Customer journey mapping with touchpoint analysis</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Business intelligence with KPI dashboards</li>
+            <li>Fraud detection with anomaly analysis</li>
+            <li>Sentiment analysis with real-time monitoring</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved employee productivity with automation</li>
-            <li>Better code quality with automated reviews</li>
-            <li>Better inventory management with demand forecasting</li>
-            <li>Improved forecast accuracy with ML models</li>
-            <li>Reduced customer acquisition costs with optimization</li>
+            <li>Better resource utilization with auto-scaling</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>Improved brand awareness with social monitoring</li>
           </ul>
         </div>
         

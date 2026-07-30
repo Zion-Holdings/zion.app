@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent sales-agriculture - Zion Tech Group",
-  description: "Revolutionize agriculture through intelligent automation. Our Intelligent sales-agriculture leverages advanced machine learning to deliver brand monitoring at s",
+  description: "Revolutionize agriculture through intelligent automation. Our Intelligent sales-agriculture leverages advanced machine learning to deliver language processing a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-sales-agriculture-550193b5`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent sales-agriculture</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize agriculture through intelligent automation. Our Intelligent sales-agriculture leverages advanced machine learning to deliver brand monitoring at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize agriculture through intelligent automation. Our Intelligent sales-agriculture leverages advanced machine learning to deliver language processing at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Alerting system with intelligent notifications</li>
+            <li>Logistics route optimization with traffic prediction</li>
+            <li>Sentiment analysis with real-time monitoring</li>
             <li>Market analysis with buyer behavior insights</li>
-            <li>Budget optimization with cost allocation</li>
-            <li>Fraud detection with anomaly analysis</li>
-            <li>Image recognition with computer vision</li>
+            <li>Inventory prediction with demand forecasting</li>
+            <li>Alerting system with intelligent notifications</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Faster content creation with AI assistance</li>
-            <li>Performance benchmarking against industry standards</li>
-            <li>50% reduction in operational costs through automation</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Improved product quality with automated testing</li>
+            <li>Reduced support tickets with self-service options</li>
+            <li>Better customer experience with personalization</li>
+            <li>Better financial planning with predictive models</li>
+            <li>Improved customer satisfaction with faster response times</li>
           </ul>
         </div>
         

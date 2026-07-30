@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Customer Analyzer - Zion Tech Group",
-  description: "Unlock unprecedented growth with Autonomous Customer Analyzer. This autonomous system provides process discovery with zero manual intervention needed.",
+  description: "Next-generation manufacturing solution: Autonomous Customer Analyzer. Combines scenario planning with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-customer-analyzer-b4e202cf`
   }
@@ -13,15 +13,15 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Autonomous Customer Analyzer</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Autonomous Customer Analyzer. This autonomous system provides process discovery with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation manufacturing solution: Autonomous Customer Analyzer. Combines scenario planning with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Predictive modeling with ensemble methods</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Network optimization with traffic analysis</li>
-            <li>Multi-region deployment with automatic failover</li>
+            <li>User experience analytics with behavior tracking</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Brand monitoring across social channels</li>
+            <li>Performance dashboards with real-time metrics</li>
             <li>Process discovery with activity analysis</li>
           </ul>
         </div>
@@ -29,10 +29,9 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved product quality with automated testing</li>
-            <li>Improved customer retention with proactive service</li>
-            <li>Reduced support tickets with self-service options</li>
-            <li>Improved forecast accuracy with ML models</li>
+            <li>Better market positioning with competitive analysis</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>Improved brand awareness with social monitoring</li>
             <li>Reduced infrastructure costs with cloud optimization</li>
           </ul>
         </div>

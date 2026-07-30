@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Advisor AI - Hospitality #1 - Zion Tech Group",
-  description: "The future of hospitality is here with Advisor AI - Hospitality #1. Powered by cutting-edge AI, this platform delivers threat detection like never before.",
+  description: "Transform your hospitality operations with our Advisor AI - Hospitality #1. This AI-driven solution automates maintenance scheduling with unprecedented accuracy",
   alternates: {
     canonical: `https://ziontechgroup.com/services/advisor-ai---hospitality-1-68ec326b`
   }
@@ -13,27 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Advisor AI - Hospitality #1</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of hospitality is here with Advisor AI - Hospitality #1. Powered by cutting-edge AI, this platform delivers threat detection like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your hospitality operations with our Advisor AI - Hospitality #1. This AI-driven solution automates maintenance scheduling with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Automation opportunity identification</li>
             <li>Compliance monitoring with regulatory updates</li>
-            <li>Document processing with OCR and NLP</li>
-            <li>Edge computing support for low-latency operations</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Audit trails with compliance reporting</li>
+            <li>Code optimization with performance profiling</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Customer journey mapping with touchpoint analysis</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced decision making with data-driven insights</li>
-            <li>Reduced shipping costs with route optimization</li>
-            <li>Improved forecast accuracy with ML models</li>
-            <li>Better inventory management with demand forecasting</li>
-            <li>3x faster decision making with real-time insights</li>
+            <li>Better supply chain visibility with tracking</li>
+            <li>Improved customer retention with proactive service</li>
+            <li>Reduced support tickets with self-service options</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Reduced risk with early warning systems</li>
           </ul>
         </div>
         

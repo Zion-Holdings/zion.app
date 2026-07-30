@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive intelligence-hospitality - Zion Tech Group",
-  description: "The future of hospitality is here with Predictive intelligence-hospitality. Powered by cutting-edge AI, this platform delivers threat detection like never befor",
+  description: "Next-generation hospitality solution: Predictive intelligence-hospitality. Combines inventory management with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-intelligence-hospitality-0327a343`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Predictive intelligence-hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of hospitality is here with Predictive intelligence-hospitality. Powered by cutting-edge AI, this platform delivers threat detection like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation hospitality solution: Predictive intelligence-hospitality. Combines inventory management with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Customer service automation with chatbot integration</li>
+            <li>Content generation with plagiarism checks</li>
+            <li>Open-source friendly with plugin architecture</li>
             <li>Fraud detection with anomaly analysis</li>
-            <li>Executive dashboards with drill-down capabilities</li>
-            <li>Brand monitoring across social channels</li>
-            <li>SOC 2 certified with security controls</li>
+            <li>Multi-language support with localization</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved quality with automated testing and validation</li>
+            <li>Zero manual intervention required for routine tasks</li>
+            <li>Better compliance with automated audit trails</li>
             <li>Reduced churn with proactive customer retention</li>
-            <li>Better supply chain visibility with tracking</li>
-            <li>Reduced risk with early warning systems</li>
-            <li>Improved sales performance with lead scoring</li>
           </ul>
         </div>
         

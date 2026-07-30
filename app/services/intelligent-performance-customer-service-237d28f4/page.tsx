@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Performance Customer Service - Zion Tech Group",
-  description: "The future of agriculture is here with Intelligent Performance Customer Service. Powered by cutting-edge AI, this platform delivers logistics route optimization",
+  description: "Unlock unprecedented growth with Intelligent Performance Customer Service. This autonomous system provides fraud prevention with zero manual intervention needed",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-performance-customer-service-237d28f4`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Performance Customer Service</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of agriculture is here with Intelligent Performance Customer Service. Powered by cutting-edge AI, this platform delivers logistics route optimization like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Intelligent Performance Customer Service. This autonomous system provides fraud prevention with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>HIPAA ready with healthcare data protection</li>
             <li>Role-based access control with SSO integration</li>
-            <li>Master data management with golden records</li>
-            <li>Market analysis with buyer behavior insights</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>GDPR compliance with data portability</li>
+            <li>Multi-region deployment with automatic failover</li>
+            <li>Logistics route optimization with traffic prediction</li>
+            <li>Content generation with plagiarism checks</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved employee productivity with automation</li>
-            <li>Better market positioning with competitive analysis</li>
-            <li>Reduced customer acquisition costs with optimization</li>
-            <li>Improved brand awareness with social monitoring</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

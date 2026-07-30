@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Suite Automated - Transportation - Zion Tech Group",
-  description: "Revolutionize transportation through intelligent automation. Our Suite Automated - Transportation leverages advanced machine learning to deliver manufacturing q",
+  description: "Transform your transportation operations with our Suite Automated - Transportation. This AI-driven solution automates sales forecasting with unprecedented accur",
   alternates: {
     canonical: `https://ziontechgroup.com/services/suite-automated---transportation-83e5c861`
   }
@@ -13,26 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Suite Automated - Transportation</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize transportation through intelligent automation. Our Suite Automated - Transportation leverages advanced machine learning to deliver manufacturing quality control at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your transportation operations with our Suite Automated - Transportation. This AI-driven solution automates sales forecasting with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Code optimization with performance profiling</li>
-            <li>Energy optimization with consumption tracking</li>
-            <li>User experience analytics with behavior tracking</li>
+            <li>Security monitoring with threat intelligence</li>
             <li>Multi-language support with localization</li>
-            <li>Manufacturing quality control with defect detection</li>
+            <li>Fraud detection with anomaly analysis</li>
+            <li>SOC 2 certified with security controls</li>
+            <li>Code optimization with performance profiling</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>50% reduction in operational costs through automation</li>
-            <li>Performance benchmarking against industry standards</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Increased revenue with optimized pricing strategies</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>Cost optimization recommendations with savings analysis</li>
           </ul>
         </div>
         

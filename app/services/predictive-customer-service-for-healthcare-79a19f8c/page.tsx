@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Customer Service for Healthcare - Zion Tech Group",
-  description: "Revolutionize healthcare through intelligent automation. Our Predictive Customer Service for Healthcare leverages advanced machine learning to deliver user expe",
+  description: "Next-generation healthcare solution: Predictive Customer Service for Healthcare. Combines market intelligence with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-customer-service-for-healthcare-79a19f8c`
   }
@@ -13,27 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Predictive Customer Service for Healthcare</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize healthcare through intelligent automation. Our Predictive Customer Service for Healthcare leverages advanced machine learning to deliver user experience at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation healthcare solution: Predictive Customer Service for Healthcare. Combines market intelligence with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Automation opportunity identification</li>
-            <li>Brand monitoring across social channels</li>
-            <li>Customer journey mapping with touchpoint analysis</li>
+            <li>User experience analytics with behavior tracking</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Financial risk management with scenario analysis</li>
             <li>Audit trails with compliance reporting</li>
-            <li>Machine learning integration with automatic model training</li>
+            <li>Content generation with plagiarism checks</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved sales performance with lead scoring</li>
-            <li>Improved brand awareness with social monitoring</li>
-            <li>Improved product quality with automated testing</li>
-            <li>Reduced support tickets with self-service options</li>
-            <li>Improved employee productivity with automation</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>Enhanced decision making with data-driven insights</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Improved conversion rates with personalization</li>
+            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Director - Manufacturing Edition - Zion Tech Group",
-  description: "Transform your manufacturing operations with our AI Director - Manufacturing Edition. This AI-driven solution automates content generation with unprecedented ac",
+  description: "Transform your manufacturing operations with our AI Director - Manufacturing Edition. This AI-driven solution automates logistics route optimization with unprec",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-director---manufacturing-edition-85c54ce5`
   }
@@ -13,26 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Director - Manufacturing Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your manufacturing operations with our AI Director - Manufacturing Edition. This AI-driven solution automates content generation with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your manufacturing operations with our AI Director - Manufacturing Edition. This AI-driven solution automates logistics route optimization with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Fraud detection with anomaly analysis</li>
-            <li>Cost reduction with process mining</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
             <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Multi-language support with localization</li>
+            <li>Custom integrations with webhook support</li>
+            <li>Fraud detection with anomaly analysis</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Seamless integration with existing systems and workflows</li>
             <li>Cost optimization recommendations with savings analysis</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Reduced marketing costs with targeted campaigns</li>
-            <li>Improved employee productivity with automation</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         

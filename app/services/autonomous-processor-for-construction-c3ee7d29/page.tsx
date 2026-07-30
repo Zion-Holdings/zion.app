@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Processor for Construction - Zion Tech Group",
-  description: "Transform your construction operations with our Autonomous Processor for Construction. This AI-driven solution automates image recognition with unprecedented ac",
+  description: "Transform your construction operations with our Autonomous Processor for Construction. This AI-driven solution automates document processing with unprecedented ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-processor-for-construction-c3ee7d29`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Autonomous Processor for Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your construction operations with our Autonomous Processor for Construction. This AI-driven solution automates image recognition with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your construction operations with our Autonomous Processor for Construction. This AI-driven solution automates document processing with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Content generation with plagiarism checks</li>
-            <li>HIPAA ready with healthcare data protection</li>
-            <li>Financial risk management with scenario analysis</li>
-            <li>Serverless functions for cost-effective scaling</li>
-            <li>Security monitoring with threat intelligence</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Language processing with sentiment analysis</li>
+            <li>SOC 2 certified with security controls</li>
+            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved customer satisfaction with faster response times</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Faster time-to-market with accelerated development</li>
             <li>Reduced human error by 95% with automated processes</li>
+            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>Better risk management with predictive analytics</li>
           </ul>
         </div>
         

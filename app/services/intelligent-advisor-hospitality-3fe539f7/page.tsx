@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent advisor-hospitality - Zion Tech Group",
-  description: "The future of hospitality is here with Intelligent advisor-hospitality. Powered by cutting-edge AI, this platform delivers performance monitoring like never bef",
+  description: "Unlock unprecedented growth with Intelligent advisor-hospitality. This autonomous system provides data processing with zero manual intervention needed.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-advisor-hospitality-3fe539f7`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent advisor-hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of hospitality is here with Intelligent advisor-hospitality. Powered by cutting-edge AI, this platform delivers performance monitoring like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Intelligent advisor-hospitality. This autonomous system provides data processing with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Machine learning integration with automatic model training</li>
-            <li>Compliance monitoring with regulatory updates</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>User experience analytics with behavior tracking</li>
-            <li>Manufacturing quality control with defect detection</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>Language processing with sentiment analysis</li>
+            <li>Image recognition with computer vision</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>Financial risk management with scenario analysis</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Performance benchmarking against industry standards</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Improved customer satisfaction with faster response times</li>
-            <li>Better risk management with predictive analytics</li>
-            <li>24/7 automated operations without human intervention</li>
+            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>3x faster decision making with real-time insights</li>
           </ul>
         </div>
         

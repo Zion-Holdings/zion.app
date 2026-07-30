@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Customer Service Autonomous - Agriculture - Zion Tech Group",
-  description: "Next-generation agriculture solution: Customer Service Autonomous - Agriculture. Combines customer journey mapping with adaptive intelligence for optimal result",
+  description: "The future of agriculture is here with Customer Service Autonomous - Agriculture. Powered by cutting-edge AI, this platform delivers threat detection like never",
   alternates: {
     canonical: `https://ziontechgroup.com/services/customer-service-autonomous---agriculture-d35a919e`
   }
@@ -13,27 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Customer Service Autonomous - Agriculture</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation agriculture solution: Customer Service Autonomous - Agriculture. Combines customer journey mapping with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of agriculture is here with Customer Service Autonomous - Agriculture. Powered by cutting-edge AI, this platform delivers threat detection like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Master data management with golden records</li>
-            <li>Process discovery with activity analysis</li>
-            <li>Data encryption at rest and in transit</li>
-            <li>Competitive intelligence with market share tracking</li>
             <li>Document processing with OCR and NLP</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Machine learning integration with automatic model training</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Performance benchmarking against industry standards</li>
-            <li>Scalable to millions of transactions per second</li>
+            <li>Better risk management with predictive analytics</li>
             <li>3x faster decision making with real-time insights</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Faster content creation with AI assistance</li>
+            <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>
         

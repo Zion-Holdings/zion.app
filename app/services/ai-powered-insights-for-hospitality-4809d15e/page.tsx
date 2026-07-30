@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Insights for Hospitality - Zion Tech Group",
-  description: "Transform your hospitality operations with our AI-Powered Insights for Hospitality. This AI-driven solution automates predictive modeling with unprecedented acc",
+  description: "Revolutionize hospitality through intelligent automation. Our AI-Powered Insights for Hospitality leverages advanced machine learning to deliver workflow manage",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-insights-for-hospitality-4809d15e`
   }
@@ -13,26 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI-Powered Insights for Hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your hospitality operations with our AI-Powered Insights for Hospitality. This AI-driven solution automates predictive modeling with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize hospitality through intelligent automation. Our AI-Powered Insights for Hospitality leverages advanced machine learning to deliver workflow management at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Machine learning integration with automatic model training</li>
-            <li>Competitive intelligence with market share tracking</li>
-            <li>Audit trails with compliance reporting</li>
-            <li>Role-based access control with SSO integration</li>
-            <li>Logistics route optimization with traffic prediction</li>
+            <li>GDPR compliance with data portability</li>
+            <li>Open-source friendly with plugin architecture</li>
+            <li>Microservices deployment with container orchestration</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Sales process optimization with pipeline management</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced support tickets with self-service options</li>
-            <li>Better financial planning with predictive models</li>
-            <li>Better supply chain visibility with tracking</li>
-            <li>Enhanced decision making with data-driven insights</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Seamless integration with existing systems and workflows</li>
+            <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>
         

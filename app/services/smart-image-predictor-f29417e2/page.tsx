@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Image Predictor - Zion Tech Group",
-  description: "The future of agriculture is here with Smart Image Predictor. Powered by cutting-edge AI, this platform delivers language processing like never before.",
+  description: "Transform your construction operations with our Smart Image Predictor. This AI-driven solution automates scenario planning with unprecedented accuracy and effic",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-image-predictor-f29417e2`
   }
@@ -13,16 +13,16 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart Image Predictor</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of agriculture is here with Smart Image Predictor. Powered by cutting-edge AI, this platform delivers language processing like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your construction operations with our Smart Image Predictor. This AI-driven solution automates scenario planning with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Sentiment analysis with real-time monitoring</li>
-            <li>Master data management with golden records</li>
-            <li>Performance dashboards with real-time metrics</li>
-            <li>Edge computing support for low-latency operations</li>
-            <li>Inventory prediction with demand forecasting</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Manufacturing quality control with defect detection</li>
+            <li>Version control with rollback capabilities</li>
+            <li>Language processing with sentiment analysis</li>
+            <li>A/B testing framework for continuous optimization</li>
           </ul>
         </div>
         
@@ -30,10 +30,9 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Improved conversion rates with personalization</li>
-            <li>Reduced customer acquisition costs with optimization</li>
-            <li>Reduced marketing costs with targeted campaigns</li>
             <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Improved employee productivity with automation</li>
+            <li>50% reduction in operational costs through automation</li>
           </ul>
         </div>
         

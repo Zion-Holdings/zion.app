@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Data for Construction - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our Cognitive Data for Construction leverages advanced machine learning to deliver decision support a",
+  description: "Transform your construction operations with our Cognitive Data for Construction. This AI-driven solution automates budget optimization with unprecedented accura",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-data-for-construction-1c01b766`
   }
@@ -13,26 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Cognitive Data for Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our Cognitive Data for Construction leverages advanced machine learning to deliver decision support at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your construction operations with our Cognitive Data for Construction. This AI-driven solution automates budget optimization with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>GDPR compliance with data portability</li>
             <li>Comprehensive monitoring with custom dashboards</li>
-            <li>User experience analytics with behavior tracking</li>
-            <li>Machine learning integration with automatic model training</li>
-            <li>Code optimization with performance profiling</li>
+            <li>Executive dashboards with drill-down capabilities</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Scenario planning with Monte Carlo simulations</li>
+            <li>Sales process optimization with pipeline management</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved sales performance with lead scoring</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Better resource utilization with auto-scaling</li>
-            <li>Faster content creation with AI assistance</li>
+            <li>Reduced shipping costs with route optimization</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>Improved customer retention with proactive service</li>
           </ul>
         </div>
         

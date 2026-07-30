@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Analyzer Self-Optimizing - Construction - Zion Tech Group",
-  description: "Transform your construction operations with our Analyzer Self-Optimizing - Construction. This AI-driven solution automates automation opportunity with unprecede",
+  description: "The future of construction is here with Analyzer Self-Optimizing - Construction. Powered by cutting-edge AI, this platform delivers healthcare data analytics li",
   alternates: {
     canonical: `https://ziontechgroup.com/services/analyzer-self-optimizing---construction-70977cf4`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Analyzer Self-Optimizing - Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your construction operations with our Analyzer Self-Optimizing - Construction. This AI-driven solution automates automation opportunity with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Analyzer Self-Optimizing - Construction. Powered by cutting-edge AI, this platform delivers healthcare data analytics like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Multi-region deployment with automatic failover</li>
-            <li>Role-based access control with SSO integration</li>
             <li>Network optimization with traffic analysis</li>
-            <li>Manufacturing quality control with defect detection</li>
-            <li>Inventory prediction with demand forecasting</li>
+            <li>Image recognition with computer vision</li>
+            <li>Role-based access control with SSO integration</li>
+            <li>Financial risk management with scenario analysis</li>
+            <li>Code optimization with performance profiling</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Scalable to millions of transactions per second</li>
-            <li>Better code quality with automated reviews</li>
-            <li>Reduced shipping costs with route optimization</li>
-            <li>Reduced marketing costs with targeted campaigns</li>
-            <li>3x faster decision making with real-time insights</li>
+            <li>Zero manual intervention required for routine tasks</li>
+            <li>Reduced human error by 95% with automated processes</li>
+            <li>24/7 automated operations without human intervention</li>
           </ul>
         </div>
         

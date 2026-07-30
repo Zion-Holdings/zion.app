@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Analytics Adaptive - Construction - Zion Tech Group",
-  description: "Next-generation construction solution: Analytics Adaptive - Construction. Combines decision support with adaptive intelligence for optimal results.",
+  description: "Next-generation construction solution: Analytics Adaptive - Construction. Combines process automation with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/analytics-adaptive---construction-7f620292`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Analytics Adaptive - Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: Analytics Adaptive - Construction. Combines decision support with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: Analytics Adaptive - Construction. Combines process automation with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Audit trails with compliance reporting</li>
-            <li>Image recognition with computer vision</li>
-            <li>User experience analytics with behavior tracking</li>
-            <li>Market analysis with buyer behavior insights</li>
-            <li>Competitive intelligence with market share tracking</li>
+            <li>Multi-language support with localization</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>Security monitoring with threat intelligence</li>
+            <li>Content generation with plagiarism checks</li>
+            <li>Data encryption at rest and in transit</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced customer acquisition costs with optimization</li>
-            <li>Zero manual intervention required for routine tasks</li>
-            <li>Reduced support tickets with self-service options</li>
-            <li>Reduced marketing costs with targeted campaigns</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>Performance benchmarking against industry standards</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Engine AI - Transportation - Zion Tech Group",
-  description: "Revolutionize transportation through intelligent automation. Our Engine AI - Transportation leverages advanced machine learning to deliver scenario planning at ",
+  description: "Transform your transportation operations with our Engine AI - Transportation. This AI-driven solution automates predictive analytics with unprecedented accuracy",
   alternates: {
     canonical: `https://ziontechgroup.com/services/engine-ai---transportation-0de517e7`
   }
@@ -13,26 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Engine AI - Transportation</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize transportation through intelligent automation. Our Engine AI - Transportation leverages advanced machine learning to deliver scenario planning at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your transportation operations with our Engine AI - Transportation. This AI-driven solution automates predictive analytics with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Revenue forecasting with market trend analysis</li>
-            <li>Performance dashboards with real-time metrics</li>
             <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Customer service automation with chatbot integration</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Custom integrations with webhook support</li>
+            <li>Image recognition with computer vision</li>
+            <li>Energy optimization with consumption tracking</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Zero manual intervention required for routine tasks</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Performance benchmarking against industry standards</li>
             <li>Better compliance with automated audit trails</li>
-            <li>Reduced shipping costs with route optimization</li>
-            <li>Better customer experience with personalization</li>
+            <li>3x faster decision making with real-time insights</li>
           </ul>
         </div>
         

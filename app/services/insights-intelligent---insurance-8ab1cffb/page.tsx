@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Insights Intelligent - Insurance - Zion Tech Group",
-  description: "The future of insurance is here with Insights Intelligent - Insurance. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never befo",
+  description: "Revolutionize insurance through intelligent automation. Our Insights Intelligent - Insurance leverages advanced machine learning to deliver energy management at",
   alternates: {
     canonical: `https://ziontechgroup.com/services/insights-intelligent---insurance-8ab1cffb`
   }
@@ -13,27 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Insights Intelligent - Insurance</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of insurance is here with Insights Intelligent - Insurance. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize insurance through intelligent automation. Our Insights Intelligent - Insurance leverages advanced machine learning to deliver energy management at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Cost reduction with process mining</li>
-            <li>Version control with rollback capabilities</li>
+            <li>Fraud detection with anomaly analysis</li>
+            <li>Role-based access control with SSO integration</li>
             <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Edge computing support for low-latency operations</li>
-            <li>SOC 2 certified with security controls</li>
+            <li>Alerting system with intelligent notifications</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Improved customer retention with proactive service</li>
-            <li>Improved customer satisfaction with faster response times</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Seamless integration with existing systems and workflows</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>
         

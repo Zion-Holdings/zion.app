@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Platform Intelligent - Manufacturing - Zion Tech Group",
-  description: "Revolutionize manufacturing through intelligent automation. Our Platform Intelligent - Manufacturing leverages advanced machine learning to deliver data process",
+  description: "Next-generation manufacturing solution: Platform Intelligent - Manufacturing. Combines sales forecasting with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/platform-intelligent---manufacturing-86665a19`
   }
@@ -13,26 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Platform Intelligent - Manufacturing</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize manufacturing through intelligent automation. Our Platform Intelligent - Manufacturing leverages advanced machine learning to deliver data processing at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation manufacturing solution: Platform Intelligent - Manufacturing. Combines sales forecasting with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Language processing with sentiment analysis</li>
-            <li>Energy optimization with consumption tracking</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Executive dashboards with drill-down capabilities</li>
-            <li>GDPR compliance with data portability</li>
+            <li>Audit trails with compliance reporting</li>
+            <li>Inventory prediction with demand forecasting</li>
+            <li>Manufacturing quality control with defect detection</li>
+            <li>Role-based access control with SSO integration</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Better market positioning with competitive analysis</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Improved conversion rates with personalization</li>
+            <li>Increased revenue with optimized pricing strategies</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Better risk management with predictive analytics</li>
           </ul>
         </div>
         

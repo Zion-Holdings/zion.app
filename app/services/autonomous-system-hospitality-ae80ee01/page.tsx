@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous system-hospitality - Zion Tech Group",
-  description: "Revolutionize hospitality through intelligent automation. Our Autonomous system-hospitality leverages advanced machine learning to deliver automation opportunit",
+  description: "Next-generation hospitality solution: Autonomous system-hospitality. Combines sales process optimization with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-system-hospitality-ae80ee01`
   }
@@ -13,27 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Autonomous system-hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize hospitality through intelligent automation. Our Autonomous system-hospitality leverages advanced machine learning to deliver automation opportunity at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation hospitality solution: Autonomous system-hospitality. Combines sales process optimization with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Alerting system with intelligent notifications</li>
-            <li>Data governance with policy enforcement</li>
+            <li>Manufacturing quality control with defect detection</li>
             <li>Language processing with sentiment analysis</li>
-            <li>Financial risk management with scenario analysis</li>
-            <li>Multi-region deployment with automatic failover</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>Energy optimization with consumption tracking</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Real-time insights and alerts for proactive management</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
             <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Performance benchmarking against industry standards</li>
-            <li>Reduced churn with proactive customer retention</li>
-            <li>Improved product quality with automated testing</li>
           </ul>
         </div>
         

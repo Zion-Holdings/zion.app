@@ -18,22 +18,21 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Manufacturing quality control with defect detection</li>
-            <li>Multi-language support with localization</li>
-            <li>Financial risk management with scenario analysis</li>
-            <li>Maintenance scheduling with predictive analytics</li>
-            <li>Image recognition with computer vision</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Sales process optimization with pipeline management</li>
+            <li>Master data management with golden records</li>
+            <li>Edge computing support for low-latency operations</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better resource utilization with auto-scaling</li>
             <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>Better supply chain visibility with tracking</li>
+            <li>Improved conversion rates with personalization</li>
             <li>Improved product quality with automated testing</li>
-            <li>Better risk management with predictive analytics</li>
-            <li>Reduced support tickets with self-service options</li>
           </ul>
         </div>
         

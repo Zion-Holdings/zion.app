@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Marketing - Construction Edition - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our AI Marketing - Construction Edition leverages advanced machine learning to deliver network optimi",
+  description: "Next-generation construction solution: AI Marketing - Construction Edition. Combines data processing with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-marketing---construction-edition-c156f096`
   }
@@ -13,26 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Marketing - Construction Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our AI Marketing - Construction Edition leverages advanced machine learning to deliver network optimization at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: AI Marketing - Construction Edition. Combines data processing with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Logistics route optimization with traffic prediction</li>
-            <li>Energy optimization with consumption tracking</li>
-            <li>GDPR compliance with data portability</li>
-            <li>Alerting system with intelligent notifications</li>
+            <li>Fraud detection with anomaly analysis</li>
             <li>Performance dashboards with real-time metrics</li>
+            <li>Audit trails with compliance reporting</li>
+            <li>Language processing with sentiment analysis</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved quality with automated testing and validation</li>
             <li>Automated compliance reporting for regulatory requirements</li>
+            <li>50% reduction in operational costs through automation</li>
             <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Improved customer satisfaction with faster response times</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>Cost optimization recommendations with savings analysis</li>
           </ul>
         </div>
         

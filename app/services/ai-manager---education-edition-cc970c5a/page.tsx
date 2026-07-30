@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Manager - Education Edition - Zion Tech Group",
-  description: "Next-generation education solution: AI Manager - Education Edition. Combines threat detection with adaptive intelligence for optimal results.",
+  description: "The future of education is here with AI Manager - Education Edition. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-manager---education-edition-cc970c5a`
   }
@@ -13,26 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Manager - Education Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation education solution: AI Manager - Education Edition. Combines threat detection with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of education is here with AI Manager - Education Edition. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Data quality with anomaly detection</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Serverless functions for cost-effective scaling</li>
             <li>Open-source friendly with plugin architecture</li>
-            <li>Inventory prediction with demand forecasting</li>
-            <li>Cost reduction with process mining</li>
-            <li>Security monitoring with threat intelligence</li>
-            <li>Manufacturing quality control with defect detection</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced security posture with continuous monitoring</li>
-            <li>Reduced customer acquisition costs with optimization</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Improved forecast accuracy with ML models</li>
+            <li>Better financial planning with predictive models</li>
+            <li>Better market positioning with competitive analysis</li>
+            <li>Better code quality with automated reviews</li>
+            <li>Reduced risk with early warning systems</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent sales-automotive - Zion Tech Group",
-  description: "Revolutionize automotive through intelligent automation. Our Intelligent sales-automotive leverages advanced machine learning to deliver workflow management at ",
+  description: "Next-generation automotive solution: Intelligent sales-automotive. Combines fraud prevention with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-sales-automotive-132353db`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent sales-automotive</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize automotive through intelligent automation. Our Intelligent sales-automotive leverages advanced machine learning to deliver workflow management at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation automotive solution: Intelligent sales-automotive. Combines fraud prevention with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Machine learning integration with automatic model training</li>
-            <li>Document processing with OCR and NLP</li>
+            <li>Edge computing support for low-latency operations</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Security monitoring with threat intelligence</li>
             <li>Serverless functions for cost-effective scaling</li>
-            <li>Open-source friendly with plugin architecture</li>
-            <li>Audit trails with compliance reporting</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced churn with proactive customer retention</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Improved brand awareness with social monitoring</li>
-            <li>Faster time-to-market with accelerated development</li>
-            <li>Reduced shipping costs with route optimization</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Enhanced security with continuous threat monitoring</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
           </ul>
         </div>
         
