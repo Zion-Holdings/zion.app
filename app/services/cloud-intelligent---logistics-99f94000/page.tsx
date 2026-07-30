@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cloud Intelligent - Logistics - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our Cloud Intelligent - Logistics leverages advanced machine learning to deliver financial planning at s",
+  description: "Next-generation logistics solution: Cloud Intelligent - Logistics. Combines logistics route optimization with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cloud-intelligent---logistics-99f94000`
   }
@@ -13,26 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Cloud Intelligent - Logistics</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize logistics through intelligent automation. Our Cloud Intelligent - Logistics leverages advanced machine learning to deliver financial planning at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation logistics solution: Cloud Intelligent - Logistics. Combines logistics route optimization with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Predictive modeling with ensemble methods</li>
-            <li>Cost reduction with process mining</li>
-            <li>Code optimization with performance profiling</li>
-            <li>Sentiment analysis with real-time monitoring</li>
-            <li>Logistics route optimization with traffic prediction</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>Role-based access control with SSO integration</li>
+            <li>Real-time processing with streaming analytics</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Enhanced security with continuous threat monitoring</li>
-            <li>Faster time-to-market with accelerated development</li>
-            <li>Reduced operational risks with predictive models</li>
+            <li>Scalable to millions of transactions per second</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Improved quality with automated testing and validation</li>
           </ul>
         </div>
         

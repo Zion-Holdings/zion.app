@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Security - Construction Edition - Zion Tech Group",
-  description: "The future of construction is here with AI Security - Construction Edition. Powered by cutting-edge AI, this platform delivers cost reduction like never before.",
+  description: "The future of construction is here with AI Security - Construction Edition. Powered by cutting-edge AI, this platform delivers market intelligence like never be",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-security---construction-edition-b79002bb`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Security - Construction Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with AI Security - Construction Edition. Powered by cutting-edge AI, this platform delivers cost reduction like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of construction is here with AI Security - Construction Edition. Powered by cutting-edge AI, this platform delivers market intelligence like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Master data management with golden records</li>
-            <li>Language processing with sentiment analysis</li>
-            <li>Logistics route optimization with traffic prediction</li>
-            <li>Version control with rollback capabilities</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Role-based access control with SSO integration</li>
+            <li>User experience analytics with behavior tracking</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>Code optimization with performance profiling</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Increased revenue with optimized pricing strategies</li>
-            <li>Faster time-to-market with accelerated development</li>
-            <li>Better supply chain visibility with tracking</li>
-            <li>Cost optimization recommendations with savings analysis</li>
-            <li>Improved quality with automated testing and validation</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         

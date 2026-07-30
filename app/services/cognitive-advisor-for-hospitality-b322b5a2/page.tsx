@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Advisor for Hospitality - Zion Tech Group",
-  description: "The future of hospitality is here with Cognitive Advisor for Hospitality. Powered by cutting-edge AI, this platform delivers energy management like never before",
+  description: "The future of hospitality is here with Cognitive Advisor for Hospitality. Powered by cutting-edge AI, this platform delivers compliance monitoring like never be",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-advisor-for-hospitality-b322b5a2`
   }
@@ -13,25 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Cognitive Advisor for Hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of hospitality is here with Cognitive Advisor for Hospitality. Powered by cutting-edge AI, this platform delivers energy management like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of hospitality is here with Cognitive Advisor for Hospitality. Powered by cutting-edge AI, this platform delivers compliance monitoring like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Audit trails with compliance reporting</li>
-            <li>A/B testing framework for continuous optimization</li>
-            <li>Logistics route optimization with traffic prediction</li>
-            <li>Healthcare data analytics with patient insights</li>
-            <li>Serverless functions for cost-effective scaling</li>
+            <li>Open-source friendly with plugin architecture</li>
+            <li>Auto-scaling capabilities with predictive scaling</li>
+            <li>HIPAA ready with healthcare data protection</li>
+            <li>Image recognition with computer vision</li>
+            <li>Maintenance scheduling with predictive analytics</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Performance benchmarking against industry standards</li>
-            <li>Improved quality with automated testing and validation</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
+            <li>Scalable to millions of transactions per second</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>Seamless integration with existing systems and workflows</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
           </ul>
         </div>
         

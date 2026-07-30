@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Suite - Insurance Edition #1 - Zion Tech Group",
-  description: "The future of insurance is here with AI Suite - Insurance Edition #1. Powered by cutting-edge AI, this platform delivers user experience like never before.",
+  description: "Revolutionize insurance through intelligent automation. Our AI Suite - Insurance Edition #1 leverages advanced machine learning to deliver data processing at sc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-suite---insurance-edition-1-16c0770e`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Suite - Insurance Edition #1</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of insurance is here with AI Suite - Insurance Edition #1. Powered by cutting-edge AI, this platform delivers user experience like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize insurance through intelligent automation. Our AI Suite - Insurance Edition #1 leverages advanced machine learning to deliver data processing at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Healthcare data analytics with patient insights</li>
-            <li>HIPAA ready with healthcare data protection</li>
-            <li>Version control with rollback capabilities</li>
+            <li>Role-based access control with SSO integration</li>
             <li>Energy optimization with consumption tracking</li>
-            <li>Business intelligence with KPI dashboards</li>
+            <li>Inventory prediction with demand forecasting</li>
+            <li>Alerting system with intelligent notifications</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better supply chain visibility with tracking</li>
-            <li>3x faster decision making with real-time insights</li>
-            <li>Better market positioning with competitive analysis</li>
+            <li>Cost optimization recommendations with savings analysis</li>
             <li>Reduced churn with proactive customer retention</li>
-            <li>Improved quality with automated testing and validation</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Better compliance with automated audit trails</li>
           </ul>
         </div>
         

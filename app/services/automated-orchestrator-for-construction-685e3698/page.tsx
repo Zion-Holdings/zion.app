@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Orchestrator for Construction - Zion Tech Group",
-  description: "The future of construction is here with Automated Orchestrator for Construction. Powered by cutting-edge AI, this platform delivers scenario planning like never",
+  description: "Transform your construction operations with our Automated Orchestrator for Construction. This AI-driven solution automates supply chain with unprecedented accur",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-orchestrator-for-construction-685e3698`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automated Orchestrator for Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Automated Orchestrator for Construction. Powered by cutting-edge AI, this platform delivers scenario planning like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your construction operations with our Automated Orchestrator for Construction. This AI-driven solution automates supply chain with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Process discovery with activity analysis</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Manufacturing quality control with defect detection</li>
-            <li>Audit trails with compliance reporting</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>Logistics route optimization with traffic prediction</li>
+            <li>Machine learning integration with automatic model training</li>
+            <li>Sales process optimization with pipeline management</li>
+            <li>Real-time processing with streaming analytics</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>3x faster decision making with real-time insights</li>
-            <li>Better market positioning with competitive analysis</li>
-            <li>Reduced churn with proactive customer retention</li>
-            <li>Improved customer retention with proactive service</li>
-            <li>Reduced shipping costs with route optimization</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
+            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Improved customer satisfaction with faster response times</li>
           </ul>
         </div>
         

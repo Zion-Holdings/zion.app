@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Manager - Energy Edition - Zion Tech Group",
-  description: "The future of energy is here with AI Manager - Energy Edition. Powered by cutting-edge AI, this platform delivers image recognition like never before.",
+  description: "Revolutionize energy through intelligent automation. Our AI Manager - Energy Edition leverages advanced machine learning to deliver maintenance scheduling at sc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-manager---energy-edition-0958e0bb`
   }
@@ -13,25 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Manager - Energy Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of energy is here with AI Manager - Energy Edition. Powered by cutting-edge AI, this platform delivers image recognition like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize energy through intelligent automation. Our AI Manager - Energy Edition leverages advanced machine learning to deliver maintenance scheduling at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>HIPAA ready with healthcare data protection</li>
+            <li>Compliance monitoring with regulatory updates</li>
             <li>Edge computing support for low-latency operations</li>
-            <li>Fraud detection with anomaly analysis</li>
-            <li>Inventory prediction with demand forecasting</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
+            <li>Maintenance scheduling with predictive analytics</li>
+            <li>Healthcare data analytics with patient insights</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Performance benchmarking against industry standards</li>
-            <li>Zero manual intervention required for routine tasks</li>
+            <li>Reduced human error by 95% with automated processes</li>
             <li>24/7 automated operations without human intervention</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>Better risk management with predictive analytics</li>
           </ul>
         </div>
         

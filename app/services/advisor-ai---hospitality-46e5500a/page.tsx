@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Advisor AI - Hospitality - Zion Tech Group",
-  description: "Revolutionize hospitality through intelligent automation. Our Advisor AI - Hospitality leverages advanced machine learning to deliver workflow management at sca",
+  description: "The future of hospitality is here with Advisor AI - Hospitality. Powered by cutting-edge AI, this platform delivers sales process optimization like never before",
   alternates: {
     canonical: `https://ziontechgroup.com/services/advisor-ai---hospitality-46e5500a`
   }
@@ -13,24 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Advisor AI - Hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize hospitality through intelligent automation. Our Advisor AI - Hospitality leverages advanced machine learning to deliver workflow management at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of hospitality is here with Advisor AI - Hospitality. Powered by cutting-edge AI, this platform delivers sales process optimization like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Customer service automation with chatbot integration</li>
-            <li>Code optimization with performance profiling</li>
-            <li>Performance dashboards with real-time metrics</li>
-            <li>Alerting system with intelligent notifications</li>
+            <li>Fraud detection with anomaly analysis</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>Logistics route optimization with traffic prediction</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Cost optimization recommendations with savings analysis</li>
-            <li>Better risk management with predictive analytics</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Zero manual intervention required for routine tasks</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Increased revenue with optimized pricing strategies</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
           </ul>
         </div>
         

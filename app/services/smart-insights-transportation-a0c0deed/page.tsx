@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart insights-transportation - Zion Tech Group",
-  description: "The future of transportation is here with Smart insights-transportation. Powered by cutting-edge AI, this platform delivers data quality like never before.",
+  description: "Revolutionize transportation through intelligent automation. Our Smart insights-transportation leverages advanced machine learning to deliver healthcare data an",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-insights-transportation-a0c0deed`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart insights-transportation</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of transportation is here with Smart insights-transportation. Powered by cutting-edge AI, this platform delivers data quality like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize transportation through intelligent automation. Our Smart insights-transportation leverages advanced machine learning to deliver healthcare data analytics at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Sales process optimization with pipeline management</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>Code optimization with performance profiling</li>
             <li>Alerting system with intelligent notifications</li>
-            <li>Audit trails with compliance reporting</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Compliance monitoring with regulatory updates</li>
+            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced support tickets with self-service options</li>
-            <li>Better market positioning with competitive analysis</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
-            <li>Better risk management with predictive analytics</li>
-            <li>Enhanced security posture with continuous monitoring</li>
+            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Performance benchmarking against industry standards</li>
+            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Improved customer satisfaction with faster response times</li>
           </ul>
         </div>
         

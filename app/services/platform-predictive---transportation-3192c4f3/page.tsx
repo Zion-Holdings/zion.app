@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Platform Predictive - Transportation - Zion Tech Group",
-  description: "The future of transportation is here with Platform Predictive - Transportation. Powered by cutting-edge AI, this platform delivers predictive analytics like nev",
+  description: "Unlock unprecedented growth with Platform Predictive - Transportation. This autonomous system provides maintenance scheduling with zero manual intervention need",
   alternates: {
     canonical: `https://ziontechgroup.com/services/platform-predictive---transportation-3192c4f3`
   }
@@ -13,16 +13,15 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Platform Predictive - Transportation</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of transportation is here with Platform Predictive - Transportation. Powered by cutting-edge AI, this platform delivers predictive analytics like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Platform Predictive - Transportation. This autonomous system provides maintenance scheduling with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Inventory prediction with demand forecasting</li>
-            <li>Logistics route optimization with traffic prediction</li>
-            <li>Machine learning integration with automatic model training</li>
             <li>Multi-region deployment with automatic failover</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>Security monitoring with threat intelligence</li>
+            <li>Custom integrations with webhook support</li>
+            <li>Performance dashboards with real-time metrics</li>
           </ul>
         </div>
         
@@ -30,9 +29,9 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Zero manual intervention required for routine tasks</li>
-            <li>Better risk management with predictive analytics</li>
-            <li>24/7 automated operations without human intervention</li>
-            <li>Faster time-to-market with accelerated development</li>
+            <li>Scalable to millions of transactions per second</li>
+            <li>Improved quality with automated testing and validation</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
           </ul>
         </div>
         

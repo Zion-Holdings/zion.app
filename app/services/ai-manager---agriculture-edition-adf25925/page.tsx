@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Manager - Agriculture Edition - Zion Tech Group",
-  description: "Transform your agriculture operations with our AI Manager - Agriculture Edition. This AI-driven solution automates document processing with unprecedented accura",
+  description: "Next-generation agriculture solution: AI Manager - Agriculture Edition. Combines logistics route optimization with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-manager---agriculture-edition-adf25925`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Manager - Agriculture Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your agriculture operations with our AI Manager - Agriculture Edition. This AI-driven solution automates document processing with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation agriculture solution: AI Manager - Agriculture Edition. Combines logistics route optimization with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Real-time processing with streaming analytics</li>
-            <li>Budget optimization with cost allocation</li>
-            <li>HIPAA ready with healthcare data protection</li>
-            <li>Data quality with anomaly detection</li>
-            <li>Revenue forecasting with market trend analysis</li>
+            <li>Image recognition with computer vision</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Language processing with sentiment analysis</li>
+            <li>Document processing with OCR and NLP</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better financial planning with predictive models</li>
-            <li>Better market positioning with competitive analysis</li>
-            <li>Reduced support tickets with self-service options</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Improved product quality with automated testing</li>
+            <li>Seamless integration with existing systems and workflows</li>
+            <li>Scalable to millions of transactions per second</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
           </ul>
         </div>
         

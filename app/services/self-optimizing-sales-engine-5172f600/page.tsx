@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Sales Engine - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our Self-Optimizing Sales Engine leverages advanced machine learning to deliver predictive analytics at ",
+  description: "Next-generation construction solution: Self-Optimizing Sales Engine. Combines content generation with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-sales-engine-5172f600`
   }
@@ -13,24 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Self-Optimizing Sales Engine</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize logistics through intelligent automation. Our Self-Optimizing Sales Engine leverages advanced machine learning to deliver predictive analytics at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: Self-Optimizing Sales Engine. Combines content generation with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Healthcare data analytics with patient insights</li>
-            <li>Multi-region deployment with automatic failover</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
             <li>Version control with rollback capabilities</li>
-            <li>Role-based access control with SSO integration</li>
+            <li>Custom integrations with webhook support</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>3x faster decision making with real-time insights</li>
+            <li>Performance benchmarking against industry standards</li>
             <li>Improved customer satisfaction with faster response times</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
           </ul>
         </div>
         

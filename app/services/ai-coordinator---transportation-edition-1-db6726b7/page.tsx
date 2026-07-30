@@ -18,22 +18,21 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Sentiment analysis with real-time monitoring</li>
-            <li>Performance dashboards with real-time metrics</li>
-            <li>HIPAA ready with healthcare data protection</li>
-            <li>Content generation with plagiarism checks</li>
-            <li>User experience analytics with behavior tracking</li>
+            <li>Custom integrations with webhook support</li>
+            <li>Logistics route optimization with traffic prediction</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Machine learning integration with automatic model training</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>3x faster decision making with real-time insights</li>
-            <li>Reduced shipping costs with route optimization</li>
-            <li>Improved conversion rates with personalization</li>
-            <li>Reduced development time with code generation</li>
-            <li>Reduced churn with proactive customer retention</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
           </ul>
         </div>
         

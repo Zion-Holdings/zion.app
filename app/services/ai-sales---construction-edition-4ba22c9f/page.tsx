@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Sales - Construction Edition - Zion Tech Group",
-  description: "Transform your construction operations with our AI Sales - Construction Edition. This AI-driven solution automates user experience with unprecedented accuracy a",
+  description: "Revolutionize construction through intelligent automation. Our AI Sales - Construction Edition leverages advanced machine learning to deliver sales process opti",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-sales---construction-edition-4ba22c9f`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Sales - Construction Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your construction operations with our AI Sales - Construction Edition. This AI-driven solution automates user experience with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our AI Sales - Construction Edition leverages advanced machine learning to deliver sales process optimization at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Maintenance scheduling with predictive analytics</li>
+            <li>Role-based access control with SSO integration</li>
             <li>Content generation with plagiarism checks</li>
-            <li>Language processing with sentiment analysis</li>
-            <li>Custom integrations with webhook support</li>
-            <li>Data encryption at rest and in transit</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Faster time-to-market with accelerated development</li>
-            <li>24/7 automated operations without human intervention</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>50% reduction in operational costs through automation</li>
+            <li>Performance benchmarking against industry standards</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         
