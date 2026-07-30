@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart real estate-construction - Zion Tech Group",
-  description: "The future of construction is here with Smart real estate-construction. Powered by cutting-edge AI, this platform delivers compliance monitoring like never befo",
+  description: "Revolutionize construction through intelligent automation. Our Smart real estate-construction leverages advanced machine learning to deliver sales process optim",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-real-estate-construction-923cf9bc`
   }
@@ -13,26 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart real estate-construction</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Smart real estate-construction. Powered by cutting-edge AI, this platform delivers compliance monitoring like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our Smart real estate-construction leverages advanced machine learning to deliver sales process optimization at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Multi-region deployment with automatic failover</li>
-            <li>Customer service automation with chatbot integration</li>
-            <li>Open-source friendly with plugin architecture</li>
-            <li>Master data management with golden records</li>
-            <li>Audit trails with compliance reporting</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Content generation with plagiarism checks</li>
+            <li>HIPAA ready with healthcare data protection</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Role-based access control with SSO integration</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better supply chain visibility with tracking</li>
-            <li>Improved employee productivity with automation</li>
+            <li>Increased revenue with optimized pricing strategies</li>
+            <li>3x faster decision making with real-time insights</li>
             <li>50% reduction in operational costs through automation</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive suite-transportation - Zion Tech Group",
-  description: "Transform your transportation operations with our Cognitive suite-transportation. This AI-driven solution automates maintenance scheduling with unprecedented ac",
+  description: "Transform your transportation operations with our Cognitive suite-transportation. This AI-driven solution automates fraud prevention with unprecedented accuracy",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-suite-transportation-5e4434f0`
   }
@@ -13,26 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Cognitive suite-transportation</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your transportation operations with our Cognitive suite-transportation. This AI-driven solution automates maintenance scheduling with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your transportation operations with our Cognitive suite-transportation. This AI-driven solution automates fraud prevention with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Open-source friendly with plugin architecture</li>
-            <li>Alerting system with intelligent notifications</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
             <li>Manufacturing quality control with defect detection</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Open-source friendly with plugin architecture</li>
+            <li>Fraud detection with anomaly analysis</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced churn with proactive customer retention</li>
+            <li>Zero manual intervention required for routine tasks</li>
+            <li>Real-time insights and alerts for proactive management</li>
             <li>Enhanced security with continuous threat monitoring</li>
-            <li>Improved customer satisfaction with faster response times</li>
-            <li>Better compliance with automated audit trails</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
           </ul>
         </div>
         

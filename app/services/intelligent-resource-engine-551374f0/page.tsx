@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Resource Engine - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent Resource Engine. This autonomous system provides image recognition with zero manual intervention needed.",
+  description: "Next-generation hospitality solution: Intelligent Resource Engine. Combines process automation with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-resource-engine-551374f0`
   }
@@ -13,16 +13,16 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Resource Engine</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Intelligent Resource Engine. This autonomous system provides image recognition with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation hospitality solution: Intelligent Resource Engine. Combines process automation with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>GDPR compliance with data portability</li>
-            <li>Version control with rollback capabilities</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Custom integrations with webhook support</li>
-            <li>Microservices deployment with container orchestration</li>
+            <li>Manufacturing quality control with defect detection</li>
+            <li>Edge computing support for low-latency operations</li>
+            <li>Auto-scaling capabilities with predictive scaling</li>
           </ul>
         </div>
         
@@ -30,8 +30,9 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Improved customer satisfaction with faster response times</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>Reduced human error by 95% with automated processes</li>
+            <li>Improved quality with automated testing and validation</li>
+            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

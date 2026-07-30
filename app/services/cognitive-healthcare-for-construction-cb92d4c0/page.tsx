@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Healthcare for Construction - Zion Tech Group",
-  description: "Next-generation construction solution: Cognitive Healthcare for Construction. Combines master data management with adaptive intelligence for optimal results.",
+  description: "Revolutionize construction through intelligent automation. Our Cognitive Healthcare for Construction leverages advanced machine learning to deliver threat detec",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-healthcare-for-construction-cb92d4c0`
   }
@@ -13,26 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Cognitive Healthcare for Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: Cognitive Healthcare for Construction. Combines master data management with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our Cognitive Healthcare for Construction leverages advanced machine learning to deliver threat detection at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Custom integrations with webhook support</li>
-            <li>Brand monitoring across social channels</li>
-            <li>Sentiment analysis with real-time monitoring</li>
-            <li>Market analysis with buyer behavior insights</li>
-            <li>Multi-language support with localization</li>
+            <li>Audit trails with compliance reporting</li>
+            <li>Role-based access control with SSO integration</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>HIPAA ready with healthcare data protection</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Faster time-to-market with accelerated development</li>
-            <li>Better supply chain visibility with tracking</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>Enhanced security with continuous threat monitoring</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>
         

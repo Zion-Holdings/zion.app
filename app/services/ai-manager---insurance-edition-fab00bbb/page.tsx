@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Manager - Insurance Edition - Zion Tech Group",
-  description: "Revolutionize insurance through intelligent automation. Our AI Manager - Insurance Edition leverages advanced machine learning to deliver sales process optimiza",
+  description: "Revolutionize insurance through intelligent automation. Our AI Manager - Insurance Edition leverages advanced machine learning to deliver financial risk managem",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-manager---insurance-edition-fab00bbb`
   }
@@ -13,26 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Manager - Insurance Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize insurance through intelligent automation. Our AI Manager - Insurance Edition leverages advanced machine learning to deliver sales process optimization at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize insurance through intelligent automation. Our AI Manager - Insurance Edition leverages advanced machine learning to deliver financial risk management at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Performance dashboards with real-time metrics</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
             <li>Compliance monitoring with regulatory updates</li>
-            <li>Machine learning integration with automatic model training</li>
-            <li>Multi-language support with localization</li>
+            <li>Sales process optimization with pipeline management</li>
+            <li>Document processing with OCR and NLP</li>
+            <li>Role-based access control with SSO integration</li>
+            <li>Microservices deployment with container orchestration</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Zero manual intervention required for routine tasks</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Faster time-to-market with accelerated development</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>3x faster decision making with real-time insights</li>
             <li>Seamless integration with existing systems and workflows</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
           </ul>
         </div>
         

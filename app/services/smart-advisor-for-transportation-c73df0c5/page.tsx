@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Advisor for Transportation - Zion Tech Group",
-  description: "Unlock unprecedented growth with Smart Advisor for Transportation. This autonomous system provides maintenance scheduling with zero manual intervention needed.",
+  description: "The future of transportation is here with Smart Advisor for Transportation. Powered by cutting-edge AI, this platform delivers energy management like never befo",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-advisor-for-transportation-c73df0c5`
   }
@@ -13,25 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart Advisor for Transportation</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Smart Advisor for Transportation. This autonomous system provides maintenance scheduling with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of transportation is here with Smart Advisor for Transportation. Powered by cutting-edge AI, this platform delivers energy management like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Real-time processing with streaming analytics</li>
-            <li>Customer service automation with chatbot integration</li>
+            <li>GDPR compliance with data portability</li>
+            <li>Content generation with plagiarism checks</li>
+            <li>Security monitoring with threat intelligence</li>
             <li>Maintenance scheduling with predictive analytics</li>
-            <li>Logistics route optimization with traffic prediction</li>
+            <li>Alerting system with intelligent notifications</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Better compliance with automated audit trails</li>
             <li>Better risk management with predictive analytics</li>
-            <li>Reduced churn with proactive customer retention</li>
+            <li>Improved quality with automated testing and validation</li>
             <li>Faster time-to-market with accelerated development</li>
-            <li>Reduced human error by 95% with automated processes</li>
+            <li>Improved customer satisfaction with faster response times</li>
           </ul>
         </div>
         

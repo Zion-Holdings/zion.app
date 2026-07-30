@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Resource Healthcare - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent Resource Healthcare. This autonomous system provides network optimization with zero manual intervention needed.",
+  description: "Revolutionize agriculture through intelligent automation. Our Intelligent Resource Healthcare leverages advanced machine learning to deliver manufacturing quali",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-resource-healthcare-0eab09b0`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Resource Healthcare</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Intelligent Resource Healthcare. This autonomous system provides network optimization with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize agriculture through intelligent automation. Our Intelligent Resource Healthcare leverages advanced machine learning to deliver manufacturing quality control at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Master data management with golden records</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>Auto-scaling capabilities with predictive scaling</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Energy optimization with consumption tracking</li>
-            <li>Budget optimization with cost allocation</li>
-            <li>Fraud detection with anomaly analysis</li>
+            <li>Language processing with sentiment analysis</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved brand awareness with social monitoring</li>
-            <li>Improved employee productivity with automation</li>
-            <li>Improved sales performance with lead scoring</li>
-            <li>Improved conversion rates with personalization</li>
-            <li>50% reduction in operational costs through automation</li>
+            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>3x faster decision making with real-time insights</li>
           </ul>
         </div>
         
