@@ -1,5 +1,5 @@
 {
-  "service_batch_size": 200,
+  "service_batch_size": 400,
   "page_generation_rate": 1,
   "outreach_rate": 16,
   "discovery_interval": 60,
