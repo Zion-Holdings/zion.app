@@ -18,22 +18,22 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Serverless functions for cost-effective scaling</li>
-            <li>Version control with rollback capabilities</li>
-            <li>Multi-region deployment with automatic failover</li>
-            <li>Revenue forecasting with market trend analysis</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Multi-language support with localization</li>
+            <li>Sales process optimization with pipeline management</li>
+            <li>Content generation with plagiarism checks</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced security posture with continuous monitoring</li>
-            <li>Faster content creation with AI assistance</li>
-            <li>Better customer experience with personalization</li>
             <li>Scalable to millions of transactions per second</li>
-            <li>Improved forecast accuracy with ML models</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>Real-time insights and alerts for proactive management</li>
           </ul>
         </div>
         

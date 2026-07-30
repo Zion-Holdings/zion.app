@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Supply for Legal - Zion Tech Group",
-  description: "Revolutionize legal through intelligent automation. Our Intelligent Supply for Legal leverages advanced machine learning to deliver feature engineering at scale.",
+  description: "Revolutionize legal through intelligent automation. Our Intelligent Supply for Legal leverages advanced machine learning to deliver feature engineering at scale",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-supply-for-legal-7f13f6cf`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
