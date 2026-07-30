@@ -1,7 +1,7 @@
 export const metadata = {
   title: 'AI Free Tools and Services for Enterprises | Zion Tech Group',
   description: 'Zion Tech Group offers free AI tools, services, and resources to help enterprises evaluate automation and accelerate adoption without cost barriers.',
-
+  alternates: { canonical: '/ai-free-tools-enterprise' }
 };
 
 export default function Page() {

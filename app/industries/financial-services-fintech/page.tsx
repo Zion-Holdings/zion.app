@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 
 export const metadata = {
@@ -66,54 +65,52 @@ export default function FinancialServicesPage() {
       <section className="relative overflow-hidden pt-32 pb-24">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_30%,rgba(120,50,200,0.18),rgba(20,10,40,0.92))]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_80%,rgba(59,130,246,0.12),transparent_60%)]" />
-        <div className="relative container-page">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-900/30 border border-emerald-500/30 text-emerald-300 text-sm mb-6">
-              <span className="text-green-400">●</span> SECURE AI FINANCIAL SOLUTIONS
+        <div className="relative container-page max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-900/30 border border-emerald-500/30 text-emerald-300 text-sm mb-6">
+            <span className="text-green-400">●</span> SECURE AI FINANCIAL SOLUTIONS
+          </div>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+            <span className="bg-gradient-to-r from-emerald-400 via-green-300 to-cyan-400 bg-clip-text text-transparent">
+              Financial Services & FinTech
+            </span>{' '}
+            <span className="text-white">AI Solutions</span>
+          </h1>
+          <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
+            AI fraud detection, compliance automation, and secure financial data platforms for banks, 
+            fintech companies, and financial institutions. Reduce risk and accelerate innovation securely.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+            <Link href="/contact" className="btn-primary text-lg px-10 py-4">
+              ⚡ Get Compliance Assessment →
+            </Link>
+            <Link href="/services" className="btn-secondary text-lg px-10 py-4">
+              🛠️ Browse Financial Services
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div className="bg-slate-900/60 rounded-xl p-6 border border-slate-700/50">
+              <div className="text-2xl font-bold text-emerald-400 mb-1">99.9%</div>
+              <div className="text-sm text-slate-400">Fraud Detection Accuracy</div>
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-emerald-400 via-green-300 to-cyan-400 bg-clip-text text-transparent">
-                Financial Services & FinTech
-              </span>{' '}
-              <span className="text-white">AI Solutions</span>
-            </h1>
-            <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-              AI fraud detection, compliance automation, and secure financial data platforms for banks, 
-              fintech companies, and financial institutions. Reduce risk and accelerate innovation securely.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <Link href="/contact" className="btn-primary text-lg px-10 py-4">
-                ⚡ Get Compliance Assessment →
-              </Link>
-              <Link href="/services" className="btn-secondary text-lg px-10 py-4">
-                🛠️ Browse Financial Services
-              </Link>
+            <div className="bg-slate-900/60 rounded-xl p-6 border border-slate-700/50">
+              <div className="text-2xl font-bold text-cyan-400 mb-1">80%</div>
+              <div className="text-sm text-slate-400">Faster Contract Review</div>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              <div className="bg-slate-900/60 rounded-xl p-6 border border-slate-700/50">
-                <div className="text-2xl font-bold text-emerald-400 mb-1">99.9%</div>
-                <div className="text-sm text-slate-400">Fraud Detection Accuracy</div>
-              </div>
-              <div className="bg-slate-900/60 rounded-xl p-6 border border-slate-700/50">
-                <div className="text-2xl font-bold text-cyan-400 mb-1">80%</div>
-                <div className="text-sm text-slate-400">Faster Contract Review</div>
-              </div>
-              <div className="bg-slate-900/60 rounded-xl p-6 border border-slate-700/50">
-                <div className="text-2xl font-bold text-purple-400 mb-1">90%</div>
-                <div className="text-sm text-slate-400">Compliance Coverage</div>
-              </div>
+            <div className="bg-slate-900/60 rounded-xl p-6 border border-slate-700/50">
+              <div className="text-2xl font-bold text-purple-400 mb-1">90%</div>
+              <div className="text-sm text-slate-400">Compliance Coverage</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Financial Challenges */}
+      {/* Services Grid */}
       <section className="py-20 bg-gradient-to-b from-slate-950 via-slate-900/40 to-slate-950">
         <div className="container-page">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                Financial Industry Challenges
+                Financial Industry Solutions
               </span>
             </h2>
             <p className="text-slate-400 max-w-2xl mx-auto">

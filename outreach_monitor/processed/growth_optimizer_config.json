@@ -1,7 +1,7 @@
 {
   "service_batch_size": 400,
   "page_generation_rate": 1,
-  "outreach_rate": 16,
+  "outreach_rate": 20,
   "discovery_interval": 60,
   "pipeline_interval": 120,
   "outreach_interval": 60,

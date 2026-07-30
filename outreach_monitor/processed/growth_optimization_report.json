@@ -1,23 +1,23 @@
 {
-  "timestamp": "2026-07-30T01:59:11.585811+00:00",
+  "timestamp": "2026-07-30T02:03:36.494004+00:00",
   "metrics": {
-    "services": 367,
-    "emails": 14507,
-    "pages": 18139
+    "services": 15935,
+    "emails": 14051,
+    "pages": 46076
   },
   "velocity": {
-    "services_per_hour": 3.01,
-    "emails_per_hour": 118.92,
-    "pages_per_hour": 148.7,
-    "total_artifacts": 33013,
-    "artifacts_per_minute": 4.51,
-    "hours_elapsed": 121.99
+    "services_per_hour": 130.55,
+    "emails_per_hour": 115.12,
+    "pages_per_hour": 377.49,
+    "total_artifacts": 76062,
+    "artifacts_per_minute": 10.39,
+    "hours_elapsed": 122.06
   },
-  "bottleneck": "services_per_hour",
+  "bottleneck": "emails_per_hour",
   "current_config": {
     "service_batch_size": 400,
     "page_generation_rate": 1,
-    "outreach_rate": 16,
+    "outreach_rate": 20,
     "discovery_interval": 60,
     "pipeline_interval": 120,
     "outreach_interval": 60,
@@ -26,7 +26,7 @@
     "min_velocity_multiplier": 0.5
   },
   "recommendations": [
-    "Increase service_batch_size from 200 to 500 for maximum throughput",
+    "Increase outreach_rate from 16 to 20 to match service generation",
     "Run ultra_fast_micro_growth_engine.py for service generation",
     "Run hyper_velocity_outreach_engine.py for email generation"
   ],

@@ -18,7 +18,7 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Real-time data visualization</li>
+            <li>Real-time monitoring</li>
             <li>Predictive modeling</li>
             <li>Automated reporting</li>
             <li>Custom dashboards</li>

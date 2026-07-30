@@ -4,7 +4,7 @@ Hi there,
 
 I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Intelligent Transportation Forecasting Engine.
 
-Machine learning-powered forecasting system that predicts transportation trends, demands, and outcomes with high accuracy. Uses advanced algorithms to analyze historical patterns and identify opportunities.
+Machine learning-powered forecasting system that predicts transportation trends, demands, and outcomes with high accuracy.
 
 **Key Benefits:**
 - Accurate demand planning

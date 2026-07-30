@@ -285,6 +285,18 @@ def deploy_to_github() -> bool:
             logger.error("[❌] Not a git repository")
             return False
         
+        # Check if we're in the middle of a rebase
+        rebase_result = subprocess.run(
+            ['git', 'rev-parse', '--verify', 'REBASE_HEAD'],
+            cwd=BASE,
+            capture_output=True,
+            text=True
+        )
+        
+        if rebase_result.returncode == 0:
+            logger.warning("[⚠️] Currently in rebase state, aborting...")
+            subprocess.run(['git', 'rebase', '--abort'], cwd=BASE, capture_output=True, text=True)
+        
         # Fetch latest changes
         logger.info("[📥] Fetching latest changes from GitHub...")
         fetch_result = subprocess.run(
@@ -297,7 +309,19 @@ def deploy_to_github() -> bool:
         if fetch_result.returncode != 0:
             logger.warning(f"[⚠️] Git fetch warning: {fetch_result.stderr}")
         
-        # Try to pull first to avoid race conditions
+        # Checkout main branch
+        logger.info("[🔄] Switching to main branch...")
+        checkout_result = subprocess.run(
+            ['git', 'checkout', 'main'],
+            cwd=BASE,
+            capture_output=True,
+            text=True
+        )
+        
+        if checkout_result.returncode != 0:
+            logger.warning(f"[⚠️] Git checkout warning: {checkout_result.stderr}")
+        
+        # Pull latest changes
         logger.info("[🔄] Pulling latest changes...")
         pull_result = subprocess.run(
             ['git', 'pull', 'origin', 'main'],
@@ -307,7 +331,7 @@ def deploy_to_github() -> bool:
         )
         
         if pull_result.returncode != 0:
-            logger.warning(f"[⚠️] Git pull had issues (may be no changes to pull): {pull_result.stderr}")
+            logger.warning(f"[⚠️] Git pull warning: {pull_result.stderr}")
         
         # Add all changes
         logger.info("[📦] Adding files to git...")

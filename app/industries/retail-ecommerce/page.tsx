@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 
 export const metadata = {
@@ -62,6 +61,7 @@ const SERVICES = [
 export default function RetailEcommercePage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950">
+      {/* Hero Section */}
       <section className="relative overflow-hidden pt-32 pb-24">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_30%,rgba(120,50,200,0.18),rgba(20,10,40,0.92))]" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_80%_80%,rgba(59,130,246,0.12),transparent_60%)]" />
@@ -106,6 +106,7 @@ export default function RetailEcommercePage() {
         </div>
       </section>
 
+      {/* Services Grid */}
       <section className="py-20 bg-gradient-to-b from-slate-950 via-slate-900/40 to-slate-950">
         <div className="container-page">
           <div className="text-center mb-12">

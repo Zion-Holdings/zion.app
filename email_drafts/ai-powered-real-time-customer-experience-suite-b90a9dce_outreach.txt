@@ -4,7 +4,7 @@ Hi there,
 
 I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking AI-Powered Real-Time Customer Experience Suite.
 
-Next-generation customer experience platform that delivers real-time service delivery across all touchpoints. Integrates sentiment analysis, personalization, and omnichannel support.
+Next-generation customer experience platform that delivers real-time service delivery across all touchpoints.
 
 **Key Benefits:**
 - Higher customer satisfaction

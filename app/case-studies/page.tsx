@@ -264,23 +264,6 @@ export default function CaseStudies() {
                 Talk to an Engineer
               </Link>
             </div>
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-slate-400">
-              <Link href="/success-stories/" className="hover:text-purple-300 transition-colors">More success stories →</Link>
-              <Link href="/testimonials/" className="hover:text-purple-300 transition-colors">Client testimonials →</Link>
-              <Link href="/pricing/" className="hover:text-purple-300 transition-colors">Pricing →</Link>
-            </div>
-          </div>
-        </div>
-
-        {/* Sticky bottom CTA for mobile and quick conversion */}
-        <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden border-t border-purple-500/30 bg-slate-900/95 backdrop-blur-xl p-4 shadow-2xl">
-          <div className="flex gap-3">
-            <Link href="/contact/" className="flex-1 text-center px-4 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold text-sm hover:from-purple-500 hover:to-pink-500 transition-all shadow-lg shadow-purple-500/25">
-              ⚡ Get Your Custom Proposal
-            </Link>
-            <Link href="tel:+13024640950" className="px-4 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white font-semibold text-sm hover:bg-slate-700 transition-all">
-              ☎ Call
-            </Link>
           </div>
         </div>
       </div>

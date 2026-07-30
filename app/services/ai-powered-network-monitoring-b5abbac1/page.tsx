@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -6,10 +8,27 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://ziontechgroup.com/services/ai-powered-network-monitoring-b5abbac1',
   },
+=======
+=======
+>>>>>>> 39bf07ce6891d15dc926f13878391bb6137ef7f2
+import { } from 'next/navigation';
+
+export const metadata = {
+  title: "AI-Powered Network Monitoring - Zion Tech Group",
+  description: "Real-time network monitoring with anomaly detection and automated alerts.",
+  alternates: {
+    canonical: `https://ziontechgroup.com/services/ai-powered-network-monitoring-b5abbac1`
+  }
+<<<<<<< HEAD
+>>>>>>> d2b89cec39a2d0e2724bc7e817985633189a41c1
+=======
+>>>>>>> 39bf07ce6891d15dc926f13878391bb6137ef7f2
 };
 
 export default function ServicePage() {
   return (
+<<<<<<< HEAD
+<<<<<<< HEAD
     <main className="min-h-screen bg-slate-950 text-white">
       <div className="max-w-4xl mx-auto px-6 py-16">
         <div className="text-center mb-12">
@@ -45,7 +64,7 @@ export default function ServicePage() {
       <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
         <div className="bg-slate-800 rounded-xl p-6 border border-purple-500/20">
           <h3 className="text-xl font-bold mb-4">Basic</h3>
-          <p className="text-3xl font-bold text-purple-400 mb-4">$599</p>
+          <p className="text-3xl font-bold text-purple-400 mb-4">${}</p>
           <ul className="space-y-2 mb-4">
             <li className="text-gray-400 text-sm">Core features</li>
           </ul>
@@ -87,6 +106,62 @@ export default function ServicePage() {
             </a>
           </div>
         </section>
+=======
+=======
+>>>>>>> 39bf07ce6891d15dc926f13878391bb6137ef7f2
+    <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-4xl font-bold mb-6">AI-Powered Network Monitoring</h1>
+        <p className="text-lg text-gray-300 mb-8">Real-time network monitoring with anomaly detection and automated alerts.</p>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>Network monitoring</li>
+            <li>Anomaly detection</li>
+          </ul>
+        </div>
+        
+        <div className="bg-slate-900 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
+          <ul className="list-disc list-inside space-y-2">
+            <li>99% uptime</li>
+            <li>Proactive alerts</li>
+          </ul>
+        </div>
+        
+        <div className="border border-purple-500 rounded-xl p-6 mb-8">
+          <h2 className="text-2xl font-semibold mb-4">Pricing</h2>
+          <div className="grid grid-cols-3 gap-4">
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Basic</h3>
+              <p className="text-2xl font-bold mb-2">$599/month</p>
+            </div>
+            <div className="bg-slate-800 p-4 rounded-lg border-2 border-purple-500">
+              <h3 className="font-semibold mb-2">Pro</h3>
+              <p className="text-2xl font-bold mb-2">$1999/month</p>
+            </div>
+            <div className="bg-slate-800 p-4 rounded-lg">
+              <h3 className="font-semibold mb-2">Enterprise</h3>
+              <p className="text-2xl font-bold mb-2">$5999/month</p>
+            </div>
+          </div>
+        </div>
+        
+        <div className="text-center">
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"
+          >
+            Book a Consultation
+          </a>
+        </div>
+<<<<<<< HEAD
+>>>>>>> d2b89cec39a2d0e2724bc7e817985633189a41c1
+=======
+>>>>>>> 39bf07ce6891d15dc926f13878391bb6137ef7f2
       </div>
     </main>
   );

@@ -4,7 +4,7 @@ Hi there,
 
 I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Smart Supply Chain Workflow Automation.
 
-Intelligent workflow automation platform that streamlines supply chain processes, eliminates manual tasks, and accelerates business operations through AI-powered orchestration.
+Intelligent workflow automation platform that streamlines supply chain processes and eliminates manual tasks.
 
 **Key Benefits:**
 - Faster operations

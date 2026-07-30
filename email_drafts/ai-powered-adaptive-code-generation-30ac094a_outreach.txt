@@ -4,7 +4,7 @@ Hi there,
 
 I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking AI-Powered Adaptive Code Generation.
 
-Advanced code generation system that produces adaptive software solutions from natural language descriptions. Includes optimization, documentation, and security enhancements.
+Advanced code generation system that produces adaptive software solutions from natural language descriptions.
 
 **Key Benefits:**
 - 10x faster development

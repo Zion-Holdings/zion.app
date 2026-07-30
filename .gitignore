@@ -67,6 +67,9 @@ missing-pm2-stubs
 node_modules
 out/
 outreach_monitor/processed/dry_run_report.jsonl
+outreach_monitor/processed/rapid_outreach_sent.jsonl
+outreach_monitor/processed/hyper_velocity_outreach_sent.jsonl
+outreach_monitor/processed/pipeline_results.jsonl
 scripts/outreach_monitor/metrics/
 scripts/outreach_monitor/processed/dry_run_report.jsonl
 scripts/outreach_monitor/processed/high_frequency_runner_metrics.jsonl

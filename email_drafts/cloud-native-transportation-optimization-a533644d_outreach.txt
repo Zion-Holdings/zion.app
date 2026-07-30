@@ -4,7 +4,7 @@ Hi there,
 
 I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Cloud-Native Transportation Optimization.
 
-AI-driven cloud optimization platform that automatically manages resource allocation, cost optimization, and performance tuning for cloud-native applications.
+AI-driven cloud optimization platform that automatically manages resource allocation and cost optimization.
 
 **Key Benefits:**
 - Reduced cloud costs

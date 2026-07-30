@@ -33,6 +33,21 @@ const FOOTER_LINKS: { title: string; links: FooterLink[] }[] = [
     ],
   },
   {
+    title: 'Industries',
+    links: [
+      { name: 'Healthcare', href: '/industries/healthcare' },
+      { name: 'Finance', href: '/industries/finance' },
+      { name: 'Retail', href: '/industries/retail' },
+      { name: 'Manufacturing', href: '/industries/manufacturing' },
+      { name: 'Telecom', href: '/industries/telecom' },
+      { name: 'Energy', href: '/industries/energy' },
+      { name: 'Logistics', href: '/industries/logistics' },
+      { name: 'Gaming', href: '/industries/gaming' },
+      { name: 'Real Estate', href: '/industries/realestate' },
+      { name: 'Legal Tech', href: '/industries/healthcare-lifecycle' },
+    ],
+  },
+  {
     title: 'Company',
     links: [
       { name: 'About Us', href: '/about' },
@@ -43,7 +58,7 @@ const FOOTER_LINKS: { title: string; links: FooterLink[] }[] = [
       { name: 'Partners', href: '/partners' },
       { name: 'Client Portal', href: '/portal' },
       { name: 'Press', href: '/press' },
-      { name: 'Industry Solutions', href: '/industry-solutions' },
+      { name: 'Industry Solutions', href: '/industries' },
     ],
   },
   {

@@ -4,7 +4,7 @@ Hi there,
 
 I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking AI-Powered Predictive IoT Intelligence.
 
-Edge AI platform that processes IoT sensor data in real-time, providing predictive insights and automated control for smart devices and industrial systems.
+Edge AI platform that processes IoT sensor data in real-time with predictive insights.
 
 **Key Benefits:**
 - Reduced latency

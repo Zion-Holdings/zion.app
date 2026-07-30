@@ -4,7 +4,7 @@ Hi there,
 
 I'm Kleber from Zion Tech Group, and I wanted to introduce you to our groundbreaking Conversational AI for Media.
 
-Natural language processing system that handles media inquiries through intelligent chatbots and virtual assistants. Provides 24/7 support with human-like conversation capabilities.
+Natural language processing system that handles media inquiries through intelligent chatbots.
 
 **Key Benefits:**
 - 24/7 availability

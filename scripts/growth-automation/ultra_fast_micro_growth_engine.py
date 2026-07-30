@@ -190,6 +190,231 @@ SERVICE_TEMPLATES = [
         "features": ["Model deployment", "Performance monitoring", "Automated retraining", "Version control"],
         "benefits": ["Production-ready models", "Continuous improvement", "Reduced downtime", "Better accuracy"],
         "pricing_multiplier": 1.4
+    },
+    # HIGH-VALUE INDUSTRY-SPECIFIC TEMPLATES
+    # Real Estate
+    {
+        "template": "AI-Powered {adjective} Property Valuation",
+        "description_prefix": "Machine learning platform that provides {adjective} property valuations using computer vision, market analytics, and predictive modeling. Delivers accurate appraisals in seconds.",
+        "category": "analytics",
+        "industry": "real estate",
+        "features": ["Automated valuation models", "Computer vision analysis", "Market trend prediction", "Comparable property matching"],
+        "benefits": ["Instant valuations", "95%+ accuracy", "Reduced appraisal costs", "Faster transactions"],
+        "pricing_multiplier": 1.3
+    },
+    {
+        "template": "Smart {domain} Investment Analytics",
+        "description_prefix": "AI-driven real estate investment platform that identifies {adjective} opportunities, analyzes market trends, and optimizes portfolio performance through predictive analytics.",
+        "category": "analytics",
+        "industry": "real estate",
+        "features": ["Market forecasting", "ROI optimization", "Risk assessment", "Portfolio analytics"],
+        "benefits": ["Higher returns", "Reduced risk", "Data-driven decisions", "Market timing advantage"],
+        "pricing_multiplier": 1.4
+    },
+    {
+        "template": "AI-Powered Property Management Automation",
+        "description_prefix": "Intelligent property management system that automates tenant screening, maintenance scheduling, rent collection, and lease management with {adjective} efficiency.",
+        "category": "automation",
+        "industry": "real estate",
+        "features": ["Tenant screening", "Maintenance automation", "Rent optimization", "Lease management"],
+        "benefits": ["Reduced vacancies", "Lower operating costs", "Improved tenant satisfaction", "Scalable operations"],
+        "pricing_multiplier": 1.1
+    },
+    # Telecommunications
+    {
+        "template": "AI-Driven {adjective} Network Optimization",
+        "description_prefix": "Intelligent network management platform that uses {adjective} algorithms to optimize traffic routing, capacity planning, and quality of service across telecom infrastructure.",
+        "category": "analytics",
+        "industry": "telecommunications",
+        "features": ["Traffic optimization", "Capacity forecasting", "QoS monitoring", "Automated healing"],
+        "benefits": ["Improved network performance", "Reduced congestion", "Lower operational costs", "Better customer experience"],
+        "pricing_multiplier": 1.3
+    },
+    {
+        "template": "Predictive {domain} Churn Prevention",
+        "description_prefix": "Machine learning system that identifies {adjective} churn signals in telecom customer behavior, enabling proactive retention strategies and personalized intervention campaigns.",
+        "category": "analytics",
+        "industry": "telecommunications",
+        "features": ["Behavioral analysis", "Risk scoring", "Automated interventions", "Campaign optimization"],
+        "benefits": ["Reduced churn rate", "Increased ARPU", "Higher customer lifetime value", "Proactive retention"],
+        "pricing_multiplier": 1.2
+    },
+    {
+        "template": "AI-Powered 5G {adjective} Planning",
+        "description_prefix": "Advanced 5G network planning platform that uses {adjective} AI to optimize site placement, spectrum allocation, and capacity planning for next-generation networks.",
+        "category": "forecasting",
+        "industry": "telecommunications",
+        "features": ["Site optimization", "Spectrum planning", "Capacity forecasting", "Interference management"],
+        "benefits": ["Faster deployment", "Optimal coverage", "Cost reduction", "Future-proof architecture"],
+        "pricing_multiplier": 1.4
+    },
+    # Gaming
+    {
+        "template": "AI-Powered {adjective} Game Analytics",
+        "description_prefix": "Real-time game analytics platform that provides {adjective} insights into player behavior, engagement patterns, and monetization opportunities using advanced ML models.",
+        "category": "analytics",
+        "industry": "gaming",
+        "features": ["Player segmentation", "Behavior prediction", "Live ops optimization", "Revenue forecasting"],
+        "benefits": ["Increased retention", "Higher ARPU", "Better game balance", "Data-driven design"],
+        "pricing_multiplier": 1.2
+    },
+    {
+        "template": "Intelligent {domain} Matchmaking Engine",
+        "description_prefix": "AI-driven matchmaking system that creates {adjective} player matches based on skill, playstyle, and behavioral patterns for optimal gaming experiences.",
+        "category": "automation",
+        "industry": "gaming",
+        "features": ["Skill-based matching", "Latency optimization", "Fair play detection", "Dynamic balancing"],
+        "benefits": ["Better player experience", "Reduced toxicity", "Higher engagement", "Longer sessions"],
+        "pricing_multiplier": 1.3
+    },
+    {
+        "template": "AI-Generated {adjective} Game Content",
+        "description_prefix": "Procedural content generation platform that creates {adjective} game assets, levels, narratives, and quests using generative AI, reducing development time and costs.",
+        "category": "development",
+        "industry": "gaming",
+        "features": ["Level generation", "Asset creation", "Narrative design", "Balance testing"],
+        "benefits": ["Faster content creation", "Infinite replayability", "Reduced dev costs", "Dynamic experiences"],
+        "pricing_multiplier": 1.4
+    },
+    # Healthcare
+    {
+        "template": "AI-Powered {adjective} Clinical Decision Support",
+        "description_prefix": "Clinical AI system that provides {adjective} diagnostic assistance, treatment recommendations, and care pathway optimization for healthcare providers.",
+        "category": "analytics",
+        "industry": "healthcare",
+        "features": ["Diagnostic assistance", "Treatment planning", "Drug interaction checking", "Outcome prediction"],
+        "benefits": ["Improved accuracy", "Personalized care", "Reduced errors", "Cost optimization"],
+        "pricing_multiplier": 1.5
+    },
+    {
+        "template": "Intelligent {domain} Patient Engagement",
+        "description_prefix": "AI-driven patient engagement platform that delivers {adjective} personalized care journeys, remote monitoring, and adherence support through intelligent automation.",
+        "category": "customer experience",
+        "industry": "healthcare",
+        "features": ["Personalized care plans", "Remote monitoring", "Medication adherence", "Virtual consultations"],
+        "benefits": ["Better outcomes", "Higher satisfaction", "Reduced readmissions", "Lower costs"],
+        "pricing_multiplier": 1.3
+    },
+    {
+        "template": "Predictive {adjective} Health Analytics",
+        "description_prefix": "Population health analytics platform that uses {adjective} predictive modeling to identify at-risk patients, optimize resource allocation, and improve care quality.",
+        "category": "analytics",
+        "industry": "healthcare",
+        "features": ["Risk stratification", "Population segmentation", "Care gap identification", "Outcome tracking"],
+        "benefits": ["Early intervention", "Cost reduction", "Quality improvement", "Regulatory compliance"],
+        "pricing_multiplier": 1.4
+    },
+    # Finance
+    {
+        "template": "AI-Powered {adjective} Risk Assessment",
+        "description_prefix": "Advanced risk analytics platform that provides {adjective} credit scoring, fraud detection, and portfolio risk analysis using machine learning and alternative data.",
+        "category": "analytics",
+        "industry": "finance",
+        "features": ["Credit scoring", "Fraud detection", "Portfolio risk", "Regulatory reporting"],
+        "benefits": ["Reduced defaults", "Faster decisions", "Lower fraud losses", "Compliance automation"],
+        "pricing_multiplier": 1.5
+    },
+    {
+        "template": "Intelligent {domain} Trading Automation",
+        "description_prefix": "Algorithmic trading platform that executes {adjective} strategies using AI-driven market analysis, sentiment processing, and real-time risk management.",
+        "category": "automation",
+        "industry": "finance",
+        "features": ["Signal generation", "Execution optimization", "Risk controls", "Performance attribution"],
+        "benefits": ["Alpha generation", "Reduced latency", "Disciplined execution", "Scalable strategies"],
+        "pricing_multiplier": 1.6
+    },
+    {
+        "template": "AI-Driven {adjective} Financial Planning",
+        "description_prefix": "Automated financial planning system that creates {adjective} personalized wealth strategies, tax optimization, and retirement planning using advanced algorithms.",
+        "category": "forecasting",
+        "industry": "finance",
+        "features": ["Goal-based planning", "Tax optimization", "Monte Carlo simulation", "Rebalancing automation"],
+        "benefits": ["Personalized advice", "Tax efficiency", "Goal achievement", "Lower fees"],
+        "pricing_multiplier": 1.3
+    },
+    # Manufacturing
+    {
+        "template": "AI-Powered {adjective} Predictive Maintenance",
+        "description_prefix": "Industrial IoT platform that uses {adjective} sensor analytics and ML to predict equipment failures, optimize maintenance schedules, and maximize uptime.",
+        "category": "analytics",
+        "industry": "manufacturing",
+        "features": ["Condition monitoring", "Failure prediction", "Maintenance optimization", "Asset management"],
+        "benefits": ["Reduced downtime", "Lower maintenance costs", "Extended asset life", "Safety improvement"],
+        "pricing_multiplier": 1.4
+    },
+    {
+        "template": "Smart {domain} Quality Control",
+        "description_prefix": "Computer vision system that provides {adjective} automated inspection, defect detection, and quality assurance for manufacturing production lines.",
+        "category": "automation",
+        "industry": "manufacturing",
+        "features": ["Visual inspection", "Defect classification", "Root cause analysis", "Real-time alerts"],
+        "benefits": ["Zero defects", "Faster throughput", "Reduced waste", "Consistent quality"],
+        "pricing_multiplier": 1.3
+    },
+    {
+        "template": "AI-Driven {adjective} Supply Chain Optimization",
+        "description_prefix": "End-to-end supply chain platform that uses {adjective} optimization algorithms for demand planning, inventory management, and logistics coordination.",
+        "category": "analytics",
+        "industry": "manufacturing",
+        "features": ["Demand forecasting", "Inventory optimization", "Supplier risk", "Logistics planning"],
+        "benefits": ["Reduced inventory costs", "Improved service levels", "Resilient supply chain", "Faster response"],
+        "pricing_multiplier": 1.3
+    },
+    # Retail
+    {
+        "template": "AI-Powered {adjective} Retail Personalization",
+        "description_prefix": "Omnichannel personalization engine that delivers {adjective} product recommendations, dynamic pricing, and individualized experiences across all retail touchpoints.",
+        "category": "customer experience",
+        "industry": "retail",
+        "features": ["Product recommendations", "Dynamic pricing", "Customer segmentation", "Cross-channel orchestration"],
+        "benefits": ["Increased conversion", "Higher AOV", "Better loyalty", "Revenue growth"],
+        "pricing_multiplier": 1.2
+    },
+    {
+        "template": "Intelligent {domain} Inventory Management",
+        "description_prefix": "AI-driven inventory optimization platform that provides {adjective} demand forecasting, automated replenishment, and assortment planning for retail operations.",
+        "category": "analytics",
+        "industry": "retail",
+        "features": ["Demand forecasting", "Auto-replenishment", "Assortment optimization", "Markdown optimization"],
+        "benefits": ["Reduced stockouts", "Lower inventory costs", "Optimized assortments", "Improved margins"],
+        "pricing_multiplier": 1.3
+    },
+    {
+        "template": "AI-Driven {adjective} Customer Analytics",
+        "description_prefix": "Customer intelligence platform that delivers {adjective} insights into shopper behavior, lifetime value, and churn prediction for retail and e-commerce businesses.",
+        "category": "analytics",
+        "industry": "retail",
+        "features": ["Behavioral analysis", "LTV prediction", "Churn prevention", "Segment activation"],
+        "benefits": ["Higher retention", "Increased LTV", "Targeted marketing", "Better ROI"],
+        "pricing_multiplier": 1.2
+    },
+    # Logistics
+    {
+        "template": "AI-Powered {adjective} Route Optimization",
+        "description_prefix": "Advanced logistics platform that computes {adjective} optimal routes, load planning, and delivery scheduling using real-time traffic, weather, and constraint data.",
+        "category": "analytics",
+        "industry": "logistics",
+        "features": ["Route optimization", "Load planning", "Real-time tracking", "Dynamic scheduling"],
+        "benefits": ["Reduced fuel costs", "Faster deliveries", "Higher capacity utilization", "Lower emissions"],
+        "pricing_multiplier": 1.3
+    },
+    {
+        "template": "Intelligent {domain} Warehouse Automation",
+        "description_prefix": "Warehouse management system that uses {adjective} AI and robotics orchestration for automated picking, packing, inventory tracking, and space optimization.",
+        "category": "automation",
+        "industry": "logistics",
+        "features": ["Automated picking", "Inventory tracking", "Space optimization", "Robot coordination"],
+        "benefits": ["Higher throughput", "Lower labor costs", "Accuracy improvement", "Scalable operations"],
+        "pricing_multiplier": 1.4
+    },
+    {
+        "template": "Predictive {adjective} Freight Analytics",
+        "description_prefix": "Freight intelligence platform that provides {adjective} rate forecasting, capacity planning, and carrier performance analytics for logistics optimization.",
+        "category": "forecasting",
+        "industry": "logistics",
+        "features": ["Rate forecasting", "Capacity planning", "Carrier scorecards", "Lane optimization"],
+        "benefits": ["Cost reduction", "Better capacity", "Improved reliability", "Strategic sourcing"],
+        "pricing_multiplier": 1.2
     }
 ]
 

@@ -4180,5 +4180,296 @@
     "domain": "scaleops.co",
     "industry": "Technology",
     "title": "Contact"
+  },
+  {
+    "name": "Aisha Patel",
+    "email": "aisha.patel@novaws.ai",
+    "company": "NovaWorks AI",
+    "domain": "novaws.ai",
+    "industry": "AI",
+    "title": "COO"
+  },
+  {
+    "name": "Marcus Holloway",
+    "email": "marcus.holloway@edgewisehealth.co",
+    "company": "Edgewise Health",
+    "domain": "edgewisehealth.co",
+    "industry": "Healthcare",
+    "title": "CIO"
+  },
+  {
+    "email": "hello@scaleops.co",
+    "name": "ScaleOps",
+    "company": "ScaleOps Consulting",
+    "subject": "Growth pilot proposition",
+    "source": "github_org_discovery",
+    "service_key": "ai-automation-services",
+    "outreach_topic": "ai-automation-and-integration",
+    "created_at": "2026-07-28T05:50:41.477953+00:00"
+  },
+  {
+    "email": "contact@logisticsplus.com",
+    "name": "LogisticsPlus",
+    "company": "LogisticsPlus",
+    "subject": "Fleet automation pilot",
+    "source": "github_org_discovery",
+    "service_key": "ai-automation-services",
+    "outreach_topic": "ai-automation-and-integration",
+    "created_at": "2026-07-28T05:50:41.477984+00:00"
+  },
+  {
+    "email": "info@retailnext.ai",
+    "name": "RetailNext AI",
+    "company": "RetailNext AI",
+    "subject": "Personalization and pricing",
+    "source": "github_org_discovery",
+    "service_key": "ai-automation-services",
+    "outreach_topic": "ai-automation-and-integration",
+    "created_at": "2026-07-28T05:50:41.477990+00:00"
+  },
+  {
+    "email": "nicogene@hotmail.it",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "ugo.pattacini@iit.it",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "rohitash.chandra@unsw.edu.au",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "aduggal@redhat.com",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "cchase@redhat.com",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "pep@redhat.com",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "dfeddema@redhat.com",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "hild@b4mad.net",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "christoph@goern.name",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "hveeradh@redhat.com",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "ole.granmo@uia.no",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "per.andersen@uia.no",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "dokresa@foi.unizg.hr",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "shgao@live.com",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "accounts@chrisrackauckas.com",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "dhairya@juliahub.com",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "mail@jao.io",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "pieter.robberechts@kuleuven.be",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "jinyoung.park@kaist.ac.kr",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "mayr@ml.jku.at",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "hoedt@ml.jku.at",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "1097692918@qq.com",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "aishwarb@mathworks.com",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "henrywu@mathworks.com",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "chinakook@msn.com",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "cjolivier01@apache.org",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "phuc@lkhphuc.com",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "tlleungac@connect.ust.hk",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "xin.huang@amd.com",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "j.jitsev@fz-juelich.de",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "chan@frostleaf.dev",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "michael.torres@retailnext.ai",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "emma.wilson@legalops.io",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "diana.reyes@acmehealth.org",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
+  },
+  {
+    "email": "partnerships@labami.ai",
+    "name": "",
+    "company": "",
+    "source": "campaign-state-backfill",
+    "status": "warm"
   }
 ]

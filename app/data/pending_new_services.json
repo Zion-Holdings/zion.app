@@ -1,6 +1,1876 @@
 [
   {
-    "id": "ai-multimodal-video-understanding",
+
+    "id": "ai-powered-healthcare-ai-platform-100-fcdd7fea",
+    "title": "AI-Powered Healthcare Ai Platform 100",
+    "description": "AI-powered ai platform for healthcare industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "ai",
+    "industry": "Healthcare",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-healthcare-ai-platform-100-fcdd7fea",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-healthcare-ai-platform-100-fcdd7fea",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.467825+00:00"
+  },
+  {
+    "id": "ai-powered-finance-ai-platform-101-a9dfcb2a",
+    "title": "AI-Powered Finance Ai Platform 101",
+    "description": "AI-powered ai platform for finance industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "ai",
+    "industry": "Finance",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "509",
+      "pro": "1549",
+      "enterprise": "5199"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-finance-ai-platform-101-a9dfcb2a",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-finance-ai-platform-101-a9dfcb2a",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468028+00:00"
+  },
+  {
+    "id": "ai-powered-retail-ai-platform-102-e2200b9a",
+    "title": "AI-Powered Retail Ai Platform 102",
+    "description": "AI-powered ai platform for retail industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "ai",
+    "industry": "Retail",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "519",
+      "pro": "1599",
+      "enterprise": "5399"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-retail-ai-platform-102-e2200b9a",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-retail-ai-platform-102-e2200b9a",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468034+00:00"
+  },
+  {
+    "id": "ai-powered-manufacturing-ai-platform-103-c55bc759",
+    "title": "AI-Powered Manufacturing Ai Platform 103",
+    "description": "AI-powered ai platform for manufacturing industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "ai",
+    "industry": "Manufacturing",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "529",
+      "pro": "1649",
+      "enterprise": "5599"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-manufacturing-ai-platform-103-c55bc759",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-manufacturing-ai-platform-103-c55bc759",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468038+00:00"
+  },
+  {
+    "id": "ai-powered-energy-ai-platform-104-fa29e235",
+    "title": "AI-Powered Energy Ai Platform 104",
+    "description": "AI-powered ai platform for energy industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "ai",
+    "industry": "Energy",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "539",
+      "pro": "1699",
+      "enterprise": "5799"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-energy-ai-platform-104-fa29e235",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-energy-ai-platform-104-fa29e235",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468042+00:00"
+  },
+  {
+    "id": "ai-powered-transportation-ai-platform-105-d55e584e",
+    "title": "AI-Powered Transportation Ai Platform 105",
+    "description": "AI-powered ai platform for transportation industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "ai",
+    "industry": "Transportation",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "549",
+      "pro": "1749",
+      "enterprise": "5999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-transportation-ai-platform-105-d55e584e",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-transportation-ai-platform-105-d55e584e",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468047+00:00"
+  },
+  {
+    "id": "ai-powered-real-estate-ai-platform-106-bfc275f1",
+    "title": "AI-Powered Real Estate Ai Platform 106",
+    "description": "AI-powered ai platform for real estate industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "ai",
+    "industry": "Real Estate",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "559",
+      "pro": "1799",
+      "enterprise": "6199"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-real-estate-ai-platform-106-bfc275f1",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-real-estate-ai-platform-106-bfc275f1",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468052+00:00"
+  },
+  {
+    "id": "ai-powered-education-ai-platform-107-c5fad271",
+    "title": "AI-Powered Education Ai Platform 107",
+    "description": "AI-powered ai platform for education industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "ai",
+    "industry": "Education",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "569",
+      "pro": "1849",
+      "enterprise": "6399"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-education-ai-platform-107-c5fad271",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-education-ai-platform-107-c5fad271",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468056+00:00"
+  },
+  {
+    "id": "ai-powered-media-ai-platform-108-803365e4",
+    "title": "AI-Powered Media Ai Platform 108",
+    "description": "AI-powered ai platform for media industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "ai",
+    "industry": "Media",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "579",
+      "pro": "1899",
+      "enterprise": "6599"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-media-ai-platform-108-803365e4",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-media-ai-platform-108-803365e4",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468062+00:00"
+  },
+  {
+    "id": "ai-powered-entertainment-ai-platform-109-f104d340",
+    "title": "AI-Powered Entertainment Ai Platform 109",
+    "description": "AI-powered ai platform for entertainment industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "ai",
+    "industry": "Entertainment",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "589",
+      "pro": "1949",
+      "enterprise": "6799"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-entertainment-ai-platform-109-f104d340",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-entertainment-ai-platform-109-f104d340",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468068+00:00"
+  },
+  {
+    "id": "ai-powered-gaming-ai-platform-110-bcfcd443",
+    "title": "AI-Powered Gaming Ai Platform 110",
+    "description": "AI-powered ai platform for gaming industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "ai",
+    "industry": "Gaming",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "599",
+      "pro": "1999",
+      "enterprise": "6999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-gaming-ai-platform-110-bcfcd443",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-gaming-ai-platform-110-bcfcd443",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468072+00:00"
+  },
+  {
+    "id": "ai-powered-sports-ai-platform-111-4dc91dd1",
+    "title": "AI-Powered Sports Ai Platform 111",
+    "description": "AI-powered ai platform for sports industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "ai",
+    "industry": "Sports",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "609",
+      "pro": "2049",
+      "enterprise": "7199"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-sports-ai-platform-111-4dc91dd1",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-sports-ai-platform-111-4dc91dd1",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468075+00:00"
+  },
+  {
+    "id": "ai-powered-travel-ai-platform-112-780e671d",
+    "title": "AI-Powered Travel Ai Platform 112",
+    "description": "AI-powered ai platform for travel industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "ai",
+    "industry": "Travel",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "619",
+      "pro": "2099",
+      "enterprise": "7399"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-travel-ai-platform-112-780e671d",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-travel-ai-platform-112-780e671d",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468079+00:00"
+  },
+  {
+    "id": "ai-powered-food-service-ai-platform-113-de279ed2",
+    "title": "AI-Powered Food Service Ai Platform 113",
+    "description": "AI-powered ai platform for food service industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "ai",
+    "industry": "Food Service",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "629",
+      "pro": "2149",
+      "enterprise": "7599"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-food-service-ai-platform-113-de279ed2",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-food-service-ai-platform-113-de279ed2",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468087+00:00"
+  },
+  {
+    "id": "ai-powered-e-commerce-ai-platform-114-7864d729",
+    "title": "AI-Powered E-commerce Ai Platform 114",
+    "description": "AI-powered ai platform for e-commerce industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "ai",
+    "industry": "E-commerce",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "639",
+      "pro": "2199",
+      "enterprise": "7799"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-e-commerce-ai-platform-114-7864d729",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-e-commerce-ai-platform-114-7864d729",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468094+00:00"
+  },
+  {
+    "id": "ai-powered-saas-ai-platform-115-c373fd4b",
+    "title": "AI-Powered SaaS Ai Platform 115",
+    "description": "AI-powered ai platform for saas industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "ai",
+    "industry": "SaaS",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "649",
+      "pro": "2249",
+      "enterprise": "7999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-saas-ai-platform-115-c373fd4b",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-saas-ai-platform-115-c373fd4b",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468098+00:00"
+  },
+  {
+    "id": "ai-powered-telecommunications-ai-platform-116-036fa8fe",
+    "title": "AI-Powered Telecommunications Ai Platform 116",
+    "description": "AI-powered ai platform for telecommunications industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "ai",
+    "industry": "Telecommunications",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "659",
+      "pro": "2299",
+      "enterprise": "8199"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-telecommunications-ai-platform-116-036fa8fe",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-telecommunications-ai-platform-116-036fa8fe",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468102+00:00"
+  },
+  {
+    "id": "ai-powered-automotive-ai-platform-117-34e6d0dd",
+    "title": "AI-Powered Automotive Ai Platform 117",
+    "description": "AI-powered ai platform for automotive industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "ai",
+    "industry": "Automotive",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "669",
+      "pro": "2349",
+      "enterprise": "8399"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-automotive-ai-platform-117-34e6d0dd",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-automotive-ai-platform-117-34e6d0dd",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468106+00:00"
+  },
+  {
+    "id": "ai-powered-agriculture-ai-platform-118-59cf27a0",
+    "title": "AI-Powered Agriculture Ai Platform 118",
+    "description": "AI-powered ai platform for agriculture industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "ai",
+    "industry": "Agriculture",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "679",
+      "pro": "2399",
+      "enterprise": "8599"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-agriculture-ai-platform-118-59cf27a0",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-agriculture-ai-platform-118-59cf27a0",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468109+00:00"
+  },
+  {
+    "id": "ai-powered-construction-ai-platform-119-a61c1beb",
+    "title": "AI-Powered Construction Ai Platform 119",
+    "description": "AI-powered ai platform for construction industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "ai",
+    "industry": "Construction",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "689",
+      "pro": "2449",
+      "enterprise": "8799"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-construction-ai-platform-119-a61c1beb",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-construction-ai-platform-119-a61c1beb",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468114+00:00"
+  },
+  {
+    "id": "ai-powered-healthcare-it-platform-120-86436c58",
+    "title": "AI-Powered Healthcare It Platform 120",
+    "description": "AI-powered it platform for healthcare industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "it",
+    "industry": "Healthcare",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "699",
+      "pro": "2499",
+      "enterprise": "8999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-healthcare-it-platform-120-86436c58",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-healthcare-it-platform-120-86436c58",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468117+00:00"
+  },
+  {
+    "id": "ai-powered-finance-it-platform-121-d66f4b87",
+    "title": "AI-Powered Finance It Platform 121",
+    "description": "AI-powered it platform for finance industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "it",
+    "industry": "Finance",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "709",
+      "pro": "2549",
+      "enterprise": "9199"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-finance-it-platform-121-d66f4b87",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-finance-it-platform-121-d66f4b87",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468122+00:00"
+  },
+  {
+    "id": "ai-powered-retail-it-platform-122-a755a61d",
+    "title": "AI-Powered Retail It Platform 122",
+    "description": "AI-powered it platform for retail industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "it",
+    "industry": "Retail",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "719",
+      "pro": "2599",
+      "enterprise": "9399"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-retail-it-platform-122-a755a61d",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-retail-it-platform-122-a755a61d",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468126+00:00"
+  },
+  {
+    "id": "ai-powered-manufacturing-it-platform-123-65e83123",
+    "title": "AI-Powered Manufacturing It Platform 123",
+    "description": "AI-powered it platform for manufacturing industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "it",
+    "industry": "Manufacturing",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "729",
+      "pro": "2649",
+      "enterprise": "9599"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-manufacturing-it-platform-123-65e83123",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-manufacturing-it-platform-123-65e83123",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468129+00:00"
+  },
+  {
+    "id": "ai-powered-energy-it-platform-124-3a84b568",
+    "title": "AI-Powered Energy It Platform 124",
+    "description": "AI-powered it platform for energy industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "it",
+    "industry": "Energy",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "739",
+      "pro": "2699",
+      "enterprise": "9799"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-energy-it-platform-124-3a84b568",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-energy-it-platform-124-3a84b568",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468133+00:00"
+  },
+  {
+    "id": "ai-powered-transportation-it-platform-125-2aef3c30",
+    "title": "AI-Powered Transportation It Platform 125",
+    "description": "AI-powered it platform for transportation industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "it",
+    "industry": "Transportation",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "749",
+      "pro": "2749",
+      "enterprise": "9999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-transportation-it-platform-125-2aef3c30",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-transportation-it-platform-125-2aef3c30",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468136+00:00"
+  },
+  {
+    "id": "ai-powered-real-estate-it-platform-126-38245d69",
+    "title": "AI-Powered Real Estate It Platform 126",
+    "description": "AI-powered it platform for real estate industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "it",
+    "industry": "Real Estate",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "759",
+      "pro": "2799",
+      "enterprise": "10199"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-real-estate-it-platform-126-38245d69",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-real-estate-it-platform-126-38245d69",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468140+00:00"
+  },
+  {
+    "id": "ai-powered-education-it-platform-127-ae3d497a",
+    "title": "AI-Powered Education It Platform 127",
+    "description": "AI-powered it platform for education industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "it",
+    "industry": "Education",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "769",
+      "pro": "2849",
+      "enterprise": "10399"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-education-it-platform-127-ae3d497a",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-education-it-platform-127-ae3d497a",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468143+00:00"
+  },
+  {
+    "id": "ai-powered-media-it-platform-128-2555d187",
+    "title": "AI-Powered Media It Platform 128",
+    "description": "AI-powered it platform for media industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "it",
+    "industry": "Media",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "779",
+      "pro": "2899",
+      "enterprise": "10599"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-media-it-platform-128-2555d187",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-media-it-platform-128-2555d187",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468148+00:00"
+  },
+  {
+    "id": "ai-powered-entertainment-it-platform-129-b24ca159",
+    "title": "AI-Powered Entertainment It Platform 129",
+    "description": "AI-powered it platform for entertainment industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "it",
+    "industry": "Entertainment",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "789",
+      "pro": "2949",
+      "enterprise": "10799"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-entertainment-it-platform-129-b24ca159",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-entertainment-it-platform-129-b24ca159",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468151+00:00"
+  },
+  {
+    "id": "ai-powered-gaming-it-platform-130-d6029ebd",
+    "title": "AI-Powered Gaming It Platform 130",
+    "description": "AI-powered it platform for gaming industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "it",
+    "industry": "Gaming",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "799",
+      "pro": "2999",
+      "enterprise": "10999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-gaming-it-platform-130-d6029ebd",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-gaming-it-platform-130-d6029ebd",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468154+00:00"
+  },
+  {
+    "id": "ai-powered-sports-it-platform-131-aa029919",
+    "title": "AI-Powered Sports It Platform 131",
+    "description": "AI-powered it platform for sports industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "it",
+    "industry": "Sports",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "809",
+      "pro": "3049",
+      "enterprise": "11199"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-sports-it-platform-131-aa029919",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-sports-it-platform-131-aa029919",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468158+00:00"
+  },
+  {
+    "id": "ai-powered-travel-it-platform-132-fc70e5da",
+    "title": "AI-Powered Travel It Platform 132",
+    "description": "AI-powered it platform for travel industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "it",
+    "industry": "Travel",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "819",
+      "pro": "3099",
+      "enterprise": "11399"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-travel-it-platform-132-fc70e5da",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-travel-it-platform-132-fc70e5da",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468161+00:00"
+  },
+  {
+    "id": "ai-powered-food-service-it-platform-133-7b1a0b3d",
+    "title": "AI-Powered Food Service It Platform 133",
+    "description": "AI-powered it platform for food service industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "it",
+    "industry": "Food Service",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "829",
+      "pro": "3149",
+      "enterprise": "11599"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-food-service-it-platform-133-7b1a0b3d",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-food-service-it-platform-133-7b1a0b3d",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468166+00:00"
+  },
+  {
+    "id": "ai-powered-e-commerce-it-platform-134-bba49190",
+    "title": "AI-Powered E-commerce It Platform 134",
+    "description": "AI-powered it platform for e-commerce industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "it",
+    "industry": "E-commerce",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "839",
+      "pro": "3199",
+      "enterprise": "11799"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-e-commerce-it-platform-134-bba49190",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-e-commerce-it-platform-134-bba49190",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468169+00:00"
+  },
+  {
+    "id": "ai-powered-saas-it-platform-135-9e370c3a",
+    "title": "AI-Powered SaaS It Platform 135",
+    "description": "AI-powered it platform for saas industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "it",
+    "industry": "SaaS",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "849",
+      "pro": "3249",
+      "enterprise": "11999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-saas-it-platform-135-9e370c3a",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-saas-it-platform-135-9e370c3a",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468173+00:00"
+  },
+  {
+    "id": "ai-powered-telecommunications-it-platform-136-7a5b8a5f",
+    "title": "AI-Powered Telecommunications It Platform 136",
+    "description": "AI-powered it platform for telecommunications industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "it",
+    "industry": "Telecommunications",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "859",
+      "pro": "3299",
+      "enterprise": "12199"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-telecommunications-it-platform-136-7a5b8a5f",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-telecommunications-it-platform-136-7a5b8a5f",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468178+00:00"
+  },
+  {
+    "id": "ai-powered-automotive-it-platform-137-6bb9e998",
+    "title": "AI-Powered Automotive It Platform 137",
+    "description": "AI-powered it platform for automotive industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "it",
+    "industry": "Automotive",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "869",
+      "pro": "3349",
+      "enterprise": "12399"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-automotive-it-platform-137-6bb9e998",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-automotive-it-platform-137-6bb9e998",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468181+00:00"
+  },
+  {
+    "id": "ai-powered-agriculture-it-platform-138-4a8cb5bf",
+    "title": "AI-Powered Agriculture It Platform 138",
+    "description": "AI-powered it platform for agriculture industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "it",
+    "industry": "Agriculture",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "879",
+      "pro": "3399",
+      "enterprise": "12599"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-agriculture-it-platform-138-4a8cb5bf",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-agriculture-it-platform-138-4a8cb5bf",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468184+00:00"
+  },
+  {
+    "id": "ai-powered-construction-it-platform-139-e70b155d",
+    "title": "AI-Powered Construction It Platform 139",
+    "description": "AI-powered it platform for construction industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "it",
+    "industry": "Construction",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "889",
+      "pro": "3449",
+      "enterprise": "12799"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-construction-it-platform-139-e70b155d",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-construction-it-platform-139-e70b155d",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468191+00:00"
+  },
+  {
+    "id": "ai-powered-healthcare-data-platform-140-fc5e9003",
+    "title": "AI-Powered Healthcare Data Platform 140",
+    "description": "AI-powered data platform for healthcare industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "data",
+    "industry": "Healthcare",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "899",
+      "pro": "3499",
+      "enterprise": "12999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-healthcare-data-platform-140-fc5e9003",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-healthcare-data-platform-140-fc5e9003",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468194+00:00"
+  },
+  {
+    "id": "ai-powered-finance-data-platform-141-cb87d459",
+    "title": "AI-Powered Finance Data Platform 141",
+    "description": "AI-powered data platform for finance industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "data",
+    "industry": "Finance",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "909",
+      "pro": "3549",
+      "enterprise": "13199"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-finance-data-platform-141-cb87d459",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-finance-data-platform-141-cb87d459",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468198+00:00"
+  },
+  {
+    "id": "ai-powered-retail-data-platform-142-f638dd2a",
+    "title": "AI-Powered Retail Data Platform 142",
+    "description": "AI-powered data platform for retail industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "data",
+    "industry": "Retail",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "919",
+      "pro": "3599",
+      "enterprise": "13399"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-retail-data-platform-142-f638dd2a",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-retail-data-platform-142-f638dd2a",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468201+00:00"
+  },
+  {
+    "id": "ai-powered-manufacturing-data-platform-143-e9d6ff59",
+    "title": "AI-Powered Manufacturing Data Platform 143",
+    "description": "AI-powered data platform for manufacturing industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "data",
+    "industry": "Manufacturing",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "929",
+      "pro": "3649",
+      "enterprise": "13599"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-manufacturing-data-platform-143-e9d6ff59",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-manufacturing-data-platform-143-e9d6ff59",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468205+00:00"
+  },
+  {
+    "id": "ai-powered-energy-data-platform-144-95cc5e11",
+    "title": "AI-Powered Energy Data Platform 144",
+    "description": "AI-powered data platform for energy industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "data",
+    "industry": "Energy",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "939",
+      "pro": "3699",
+      "enterprise": "13799"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-energy-data-platform-144-95cc5e11",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-energy-data-platform-144-95cc5e11",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468208+00:00"
+  },
+  {
+    "id": "ai-powered-transportation-data-platform-145-743b245b",
+    "title": "AI-Powered Transportation Data Platform 145",
+    "description": "AI-powered data platform for transportation industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "data",
+    "industry": "Transportation",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "949",
+      "pro": "3749",
+      "enterprise": "13999"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-transportation-data-platform-145-743b245b",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-transportation-data-platform-145-743b245b",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468211+00:00"
+  },
+  {
+    "id": "ai-powered-real-estate-data-platform-146-993a7095",
+    "title": "AI-Powered Real Estate Data Platform 146",
+    "description": "AI-powered data platform for real estate industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "data",
+    "industry": "Real Estate",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "959",
+      "pro": "3799",
+      "enterprise": "14199"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-real-estate-data-platform-146-993a7095",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-real-estate-data-platform-146-993a7095",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468216+00:00"
+  },
+  {
+    "id": "ai-powered-education-data-platform-147-3625d44e",
+    "title": "AI-Powered Education Data Platform 147",
+    "description": "AI-powered data platform for education industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "data",
+    "industry": "Education",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "969",
+      "pro": "3849",
+      "enterprise": "14399"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-education-data-platform-147-3625d44e",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-education-data-platform-147-3625d44e",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468220+00:00"
+  },
+  {
+    "id": "ai-powered-media-data-platform-148-473f5be2",
+    "title": "AI-Powered Media Data Platform 148",
+    "description": "AI-powered data platform for media industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "data",
+    "industry": "Media",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "979",
+      "pro": "3899",
+      "enterprise": "14599"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-media-data-platform-148-473f5be2",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-media-data-platform-148-473f5be2",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468223+00:00"
+  },
+  {
+    "id": "ai-powered-entertainment-data-platform-149-9bf55ca9",
+    "title": "AI-Powered Entertainment Data Platform 149",
+    "description": "AI-powered data platform for entertainment industry. Leverages machine learning for advanced analytics and automation.",
+    "category": "data",
+    "industry": "Entertainment",
+    "features": [
+      "AI-powered automation",
+      "Real-time analytics",
+      "Predictive modeling",
+      "Automated insights"
+    ],
+    "benefits": [
+      "Increased efficiency",
+      "Data-driven decisions",
+      "Cost reduction",
+      "Competitive advantage"
+    ],
+    "pricing": {
+      "basic": "989",
+      "pro": "3949",
+      "enterprise": "14799"
+    },
+    "contactInfo": {
+      "website": "/services/ai-powered-entertainment-data-platform-149-9bf55ca9",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "\ud83d\udca1",
+    "href": "/services/ai-powered-entertainment-data-platform-149-9bf55ca9",
+    "popular": false,
+    "timestamp": "2026-07-28T07:04:16.468388+00:00"
+  },
+  {
+    "id": "ai-quantum-machine-learning-optimizer",
+    "title": "AI-Quantum Machine Learning Optimizer",
+    "description": "Next-generation quantum-enhanced machine learning platform that optimizes algorithms using quantum annealing for complex pattern recognition and predictive modeling.",
+    "category": "ai",
+    "industry": "Quantum Computing",
+    "features": [
+      "Quantum annealing optimization",
+      "Hybrid classical-quantum algorithms",
+      "Quantum feature encoding",
+      "Entanglement-based parallelism",
+      "Quantum error mitigation"
+    ],
+    "benefits": [
+      "100x speedup on complex ML tasks",
+      "Breakthrough pattern recognition",
+      "Quantum advantage in optimization",
+      "Future-proof architecture"
+    ],
+    "pricing": {
+      "basic": "4999",
+      "pro": "19999",
+      "enterprise": "99999"
+    }
+  },
+  {
+    "id": "ai-neuromorphic-edge-ai",
+    "title": "AI Neuromorphic Edge AI Platform",
+    "description": "Brain-inspired neuromorphic computing platform that runs on edge devices with ultra-low power consumption, mimicking neural networks at the hardware level.",
+    "category": "ai",
+    "industry": "Edge Computing",
+    "features": [
+      "Spiking neural network hardware",
+      "Ultra-low power processing",
+      "Real-time pattern recognition",
+      "Adaptive learning at edge",
+      "Brain-inspired algorithms"
+    ],
+    "benefits": [
+      "1000x less power than traditional AI",
+      "Real-time edge inference",
+      "Self-learning capabilities",
+      "No cloud dependency"
+    ],
+    "pricing": {
+      "basic": "2999",
+      "pro": "9999",
+      "enterprise": "49999"
+    }
+  },
+  {
+    "id": "ai-multimodal-reasoning-engine",
+    "title": "AI Multimodal Reasoning Engine",
+    "description": "Advanced AI system that performs reasoning across text, images, audio, video, and sensor data simultaneously, enabling holistic understanding and decision-making.",
+    "category": "ai",
+    "industry": "Artificial Intelligence",
+    "features": [
+      "Cross-modal attention mechanisms",
+      "Unified embedding space",
+      "Multimodal reasoning chains",
+      "Sensory data fusion",
+      "Context-aware reasoning"
+    ],
+    "benefits": [
+      "99% accuracy in complex reasoning",
+      "Human-level understanding",
+      "Unified AI interface",
+      "Adaptive reasoning modes"
+    ],
+    "pricing": {
+      "basic": "3499",
+      "pro": "12999",
+      "enterprise": "49999"
+    }
+  },
+  {
+    "id": "ai-causal-inference-platform",
+    "title": "AI Causal Inference Platform",
+    "description": "Enterprise-grade causal analysis system that goes beyond correlation to identify true cause-and-effect relationships in business data.",
+    "category": "ai",
+    "industry": "Business Intelligence",
+    "features": [
+      "Causal graph construction",
+      "Counterfactual analysis",
+      "Intervention modeling",
+      "Confounding variable detection",
+      "Causal discovery algorithms"
+    ],
+    "benefits": [
+      "Root cause identification",
+      "Intervention optimization",
+      "Causal decision support",
+      "Predictive accuracy improvement"
+    ],
+    "pricing": {
+      "basic": "1999",
+      "pro": "5999",
+      "enterprise": "19999"
+    }
+  },
+  {
+    "id": "ai-digital-twin-simulation-platform",
+    "title": "AI Digital Twin Simulation Platform",
+    "description": "Real-time digital twin ecosystem that creates virtual replicas of physical systems, processes, and organizations for simulation and optimization.",
+    "category": "ai",
+    "industry": "Digital Transformation",
+    "features": [
+      "Real-time system mirroring",
+      "Predictive scenario simulation",
+      "Digital twin orchestration",
+      "Physics-based modeling",
+      "AI-powered optimization"
+    ],
+    "benefits": [
+      "50% faster optimization",
+      "Zero-risk experimentation",
+      "Predictive maintenance",
+      "Process perfection"
+    ],
+    "pricing": {
+      "basic": "3999",
+      "pro": "14999",
+      "enterprise": "49999"
+    }
+  },
+  {
+    "id": "ai-autonomous-research-assistant",
+    "title": "AI Autonomous Research Assistant",
+    "description": "Self-directed research agent that identifies research gaps, formulates hypotheses, conducts literature reviews, and proposes novel findings with minimal human intervention.",
+    "category": "ai",
+    "industry": "Research & Development",
+    "features": [
+      "Gap analysis engine",
+      "Hypothesis generation",
+      "Literature mining",
+      "Experiment design",
+      "Finding synthesis"
+    ],
+    "benefits": [
+      "10x research productivity",
+      "Novel discovery acceleration",
+      "24/7 research operation",
+      "Evidence-based insights"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    }
+  },
+  {
+    "id": "ai-blockchain-analytics-suite",
+    "title": "AI Blockchain Analytics Suite",
+    "description": "Comprehensive blockchain intelligence platform that analyzes on-chain data, detects anomalies, and provides actionable insights for DeFi, NFTs, and Web3 ecosystems.",
+    "category": "ai",
+    "industry": "Blockchain",
+    "features": [
+      "On-chain transaction analysis",
+      "Smart contract auditing",
+      "DeFi risk assessment",
+      "NFT market intelligence",
+      "Regulatory compliance monitoring"
+    ],
+    "benefits": [
+      "99% anomaly detection",
+      "DeFi yield optimization",
+      "Smart contract security",
+      "Regulatory compliance"
+    ],
+    "pricing": {
+      "basic": "2499",
+      "pro": "7999",
+      "enterprise": "24999"
+    }
+  },
+  {
+    "id": "ai-ethical-ai-governance-platform",
+    "title": "AI Ethical AI Governance Platform",
+    "description": "Enterprise governance system that ensures AI ethics, fairness, transparency, and regulatory compliance across all AI deployments and models.",
+    "category": "ai",
+    "industry": "AI Governance",
+    "features": [
+      "Bias detection and mitigation",
+      "Explainable AI reports",
+      "Regulatory compliance tracking",
+      "Model audit trails",
+      "Ethics scorecards"
+    ],
+    "benefits": [
+      "100% compliance guarantee",
+      "Bias elimination",
+      "Transparent AI decisions",
+      "Audit-ready documentation"
+    ],
+    "pricing": {
+      "basic": "1999",
+      "pro": "5999",
+      "enterprise": "19999"
+    }
+  },
+  {
+    "id": "ai-creative-design-generator",
+    "title": "AI Creative Design Generator",
+    "description": "Generative AI platform that creates professional design assets, brand identities, marketing materials, and architectural concepts from natural language prompts.",
+    "category": "ai",
+    "industry": "Creative Industries",
+    "features": [
+      "Brand identity generation",
+      "Marketing material creation",
+      "Architectural design",
+      "3D asset generation",
+      "Style transfer mastery"
+    ],
+    "benefits": [
+      "1000x faster design creation",
+      "Unlimited design variations",
+      "Professional quality output",
+      "Brand-consistent results"
+    ]
+  },
+  {
     "title": "Multimodal Video Understanding Engine",
     "description": "End-to-end video understanding pipeline: per-frame CLIP + action recognition, temporal scene segmentation, automatic transcript + OCR extraction, chapter/time-stamped topic indexing, and natural-language search across full video library.",
     "icon": "\ud83c\udfa5",
@@ -114,11 +1984,513 @@
       "Cut ESG reporting cost ~80% by automating data collection and calculation",
       "Finish CSRD-ready ESG report in 3 days vs. 3 weeks manually",
       "Reduce carbon intensity 15-30% in 12 months with AI action plans"
+
     ],
     "pricing": {
       "basic": "149",
       "pro": "499",
-      "enterprise": "Custom"
+
+      "enterprise": "1499"
+    }
+  },
+  {
+    "id": "ai-legal-doc-automation",
+    "title": "AI Legal Document Automation",
+    "description": "End-to-end legal document processing system that drafts, reviews, negotiates, and manages contracts using advanced NLP and legal intelligence.",
+    "category": "ai",
+    "industry": "LegalTech",
+    "features": [
+      "Contract drafting AI",
+      "Clause analysis",
+      "Risk scoring",
+      "Negotiation support",
+      "Compliance monitoring"
+    ],
+    "benefits": [
+      "80% faster legal work",
+      "99% clause accuracy",
+      "Zero missed risks",
+      "Regulatory compliance"
+    ],
+    "pricing": {
+      "basic": "2999",
+      "pro": "9999",
+      "enterprise": "29999"
+    }
+  },
+  {
+    "id": "ai-healthcare-precision-medicine",
+    "title": "AI Healthcare Precision Medicine Platform",
+    "description": "Genomics and healthcare AI platform that delivers personalized treatment recommendations based on individual genetic profiles, lifestyle, and medical history.",
+    "category": "ai",
+    "industry": "Healthcare",
+    "features": [
+      "Genomic analysis engine",
+      "Treatment recommendation",
+      "Drug interaction analysis",
+      "Personalized care plans",
+      "Outcome prediction"
+    ],
+    "benefits": [
+      "50% better treatment outcomes",
+      "90% faster diagnosis",
+      "Zero adverse reactions",
+      "Personalized care"
+    ],
+    "pricing": {
+      "basic": "3999",
+      "pro": "14999",
+      "enterprise": "49999"
+    }
+  },
+  {
+    "id": "ai-manufacturing-4-0-orchestrator",
+    "title": "AI Manufacturing 4.0 Orchestrator",
+    "description": "Smart factory orchestration platform that coordinates IoT devices, robots, AI systems, and human workers for intelligent, adaptive manufacturing ecosystems.",
+    "category": "ai",
+    "industry": "Manufacturing",
+    "features": [
+      "IoT device coordination",
+      "Robot orchestration",
+      "AI workflow optimization",
+      "Human-machine collaboration",
+      "Predictive maintenance"
+    ],
+    "benefits": [
+      "70% production efficiency",
+      "Zero unplanned downtime",
+      "Adaptive manufacturing",
+      "Quality optimization"
+    ],
+    "pricing": {
+      "basic": "4999",
+      "pro": "19999",
+      "enterprise": "99999"
+    }
+  },
+  {
+    "id": "ai-supply-chain-visibility-platform",
+    "title": "AI Supply Chain Visibility Platform",
+    "description": "End-to-end supply chain intelligence system that provides real-time visibility, predictive analytics, and automated decision-making across global supply networks.",
+    "category": "ai",
+    "industry": "Supply Chain",
+    "features": [
+      "Real-time tracking",
+      "Disruption prediction",
+      "Inventory optimization",
+      "Route intelligence",
+      "Supplier risk assessment"
+    ],
+    "benefits": [
+      "99% supply visibility",
+      "50% disruption reduction",
+      "30% inventory savings",
+      "Faster delivery"
+    ],
+    "pricing": {
+      "basic": "2499",
+      "pro": "8999",
+      "enterprise": "29999"
+    }
+  },
+  {
+    "id": "ai-customer-experience-optimizer",
+    "title": "AI Customer Experience Optimizer",
+    "description": "Omnichannel CX platform that analyzes customer interactions, predicts satisfaction, and automatically optimizes every touchpoint for maximum experience value.",
+    "category": "ai",
+    "industry": "Customer Experience",
+    "features": [
+      "Sentiment analysis",
+      "Satisfaction prediction",
+      "Omnichannel orchestration",
+      "Experience personalization",
+      "CX analytics"
+    ],
+    "benefits": [
+      "60% higher satisfaction",
+      "40% loyalty increase",
+      "Zero churn",
+      "Personalized experiences"
+    ],
+    "pricing": {
+      "basic": "1999",
+      "pro": "5999",
+      "enterprise": "19999"
+    }
+  },
+  {
+    "id": "ai-sales-intelligence-platform",
+    "title": "AI Sales Intelligence Platform",
+    "description": "Comprehensive sales optimization system that identifies opportunities, predicts deals, recommends actions, and automates sales processes with AI-driven insights.",
+    "category": "ai",
+    "industry": "Sales",
+    "features": [
+      "Opportunity scoring",
+      "Deal probability prediction",
+      "Sales coaching",
+      "Pipeline optimization",
+      "Revenue forecasting"
+    ],
+    "benefits": [
+      "50% more closed deals",
+      "30% faster sales cycle",
+      "200% productivity",
+      "Zero missed opportunities"
+    ],
+    "pricing": {
+      "basic": "249",
+      "pro": "749",
+      "enterprise": "2499"
+    }
+  },
+  {
+    "id": "ai-marketing-automation-hub",
+    "title": "AI Marketing Automation Hub",
+    "description": "Intelligent marketing platform that creates campaigns, optimizes content, manages social media, and measures ROI using AI-powered marketing intelligence.",
+    "category": "ai",
+    "industry": "Marketing",
+    "features": [
+      "Campaign generation",
+      "Content optimization",
+      "Social media management",
+      "ROI analytics",
+      "A/B testing AI"
+    ],
+    "benefits": [
+      "10x campaign output",
+      "300% engagement increase",
+      "Zero marketing waste",
+      "Data-driven decisions"
+    ],
+    "pricing": {
+      "basic": "99",
+      "pro": "299",
+      "enterprise": "999"
+    }
+  },
+  {
+    "id": "ai-financial-risk-analyzer",
+    "title": "AI Financial Risk Analyzer",
+    "description": "Advanced risk management platform that monitors portfolios, predicts market movements, identifies risks, and recommends protective actions using predictive analytics.",
+    "category": "ai",
+    "industry": "Finance",
+    "features": [
+      "Market risk prediction",
+      "Portfolio stress testing",
+      "Risk scenario modeling",
+      "Early warning system",
+      "Mitigation recommendations"
+    ],
+    "benefits": [
+      "99% risk accuracy",
+      "Zero losses in volatile markets",
+      "Regulatory compliance",
+      "Proactive protection"
+    ],
+    "pricing": {
+      "basic": "1299",
+      "pro": "3999",
+      "enterprise": "12999"
+    }
+  },
+  {
+    "id": "ai-insurance-prediction-engine",
+    "title": "AI Insurance Prediction Engine",
+    "description": "Revolutionary insurance platform that predicts claims, prices policies, detects fraud, and automates underwriting using advanced predictive models.",
+    "category": "ai",
+    "industry": "Insurance",
+    "features": [
+      "Claims prediction",
+      "Dynamic pricing",
+      "Fraud detection",
+      "Underwriting automation",
+      "Risk assessment"
+    ],
+    "benefits": [
+      "80% fraud reduction",
+      "40% faster underwriting",
+      "25% lower premiums",
+      "Zero missed claims"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4499",
+      "enterprise": "14999"
+    }
+  },
+  {
+    "id": "ai-retail-personalization-platform",
+    "title": "AI Retail Personalization Platform",
+    "description": "Hyper-personalized retail experience engine that creates individual shopping journeys, recommends products, and optimizes pricing in real-time.",
+    "category": "ai",
+    "industry": "Retail",
+    "features": [
+      "Personalized recommendations",
+      "Dynamic pricing",
+      "Shopping journey optimization",
+      "Inventory personalization",
+      "Customer lifetime value"
+    ],
+    "benefits": [
+      "200% engagement increase",
+      "40% higher sales",
+      "90% customer satisfaction",
+      "Zero cart abandonment"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    }
+  },
+  {
+    "id": "ai-hr-talent-platform",
+    "title": "AI HR Talent Platform",
+    "description": "Intelligent talent management system that sources candidates, predicts retention, optimizes roles, and builds high-performance teams using people analytics.",
+    "category": "ai",
+    "industry": "Human Resources",
+    "features": [
+      "Candidate matching",
+      "Retention prediction",
+      "Skills gap analysis",
+      "Performance optimization",
+      "Culture analytics"
+    ],
+    "benefits": [
+      "90% faster hiring",
+      "50% lower turnover",
+      "100% skills match",
+      "High-performance teams"
+    ],
+    "pricing": {
+      "basic": "149",
+      "pro": "449",
+      "enterprise": "1499"
+    }
+  },
+  {
+    "id": "ai-edtech-learning-platform",
+    "title": "AI EdTech Learning Platform",
+    "description": "Adaptive learning ecosystem that personalizes education, tracks progress, predicts outcomes, and creates individualized learning paths for students of all ages.",
+    "category": "ai",
+    "industry": "Education Technology",
+    "features": [
+      "Adaptive learning paths",
+      "Progress prediction",
+      "Skill gap analysis",
+      "Personalized tutoring",
+      "Outcome optimization"
+    ],
+    "benefits": [
+      "50% faster learning",
+      "95% completion rates",
+      "Personalized education",
+      "Better outcomes"
+    ],
+    "pricing": {
+      "basic": "99",
+      "pro": "299",
+      "enterprise": "999"
+    }
+  },
+  {
+    "id": "ai-real-estate-analytics-platform",
+    "title": "AI Real Estate Analytics Platform",
+    "description": "Comprehensive real estate intelligence system that analyzes markets, predicts trends, optimizes portfolios, and automates property management with AI insights.",
+    "category": "ai",
+    "industry": "Real Estate",
+    "features": [
+      "Market trend analysis",
+      "Property valuation",
+      "Investment optimization",
+      "Tenant matching",
+      "Portfolio management"
+    ],
+    "benefits": [
+      "30% better investments",
+      "Zero vacancy periods",
+      "99% accurate valuations",
+      "Smart property management"
+    ],
+    "pricing": {
+      "basic": "199",
+      "pro": "599",
+      "enterprise": "1999"
+    }
+  },
+  {
+    "id": "ai-telecom-network-optimizer",
+    "title": "AI Telecom Network Optimizer",
+    "description": "Next-generation telecommunications platform that optimizes 5G networks, predicts outages, manages capacity, and ensures peak performance using AI-driven network intelligence.",
+    "category": "ai",
+    "industry": "Telecommunications",
+    "features": [
+      "Network performance optimization",
+      "Outage prediction",
+      "Capacity management",
+      "Quality of service",
+      "5G enhancement"
+    ],
+    "benefits": [
+      "99.9% network uptime",
+      "30% capacity increase",
+      "Zero outages",
+      "Peak performance"
+    ],
+    "pricing": {
+      "basic": "2999",
+      "pro": "9999",
+      "enterprise": "29999"
+    }
+  },
+  {
+    "id": "ai-energy-grid-optimization",
+    "title": "AI Energy Grid Optimization",
+    "description": "Intelligent energy management platform that optimizes power grids, forecasts demand, integrates renewables, and ensures sustainable energy distribution using AI.",
+    "category": "ai",
+    "industry": "Energy",
+    "features": [
+      "Grid optimization",
+      "Renewable integration",
+      "Demand forecasting",
+      "Energy trading",
+      "Sustainability tracking"
+    ],
+    "benefits": [
+      "40% energy savings",
+      "90% renewable utilization",
+      "Zero grid failures",
+      "Sustainable energy"
+    ],
+    "pricing": {
+      "basic": "2499",
+      "pro": "7999",
+      "enterprise": "24999"
+    }
+  },
+  {
+    "id": "ai-automotive-fleet-intelligence",
+    "title": "AI Automotive Fleet Intelligence",
+    "description": "Smart fleet management system that optimizes vehicle operations, predicts maintenance, enhances safety, and reduces costs using connected vehicle AI.",
+    "category": "ai",
+    "industry": "Automotive",
+    "features": [
+      "Predictive maintenance",
+      "Route optimization",
+      "Driver behavior analysis",
+      "Fleet analytics",
+      "Safety monitoring"
+    ],
+    "benefits": [
+      "50% maintenance savings",
+      "30% fuel reduction",
+      "Zero accidents",
+      "Optimal routing"
+    ],
+    "pricing": {
+      "basic": "1999",
+      "pro": "5999",
+      "enterprise": "19999"
+    }
+  },
+  {
+    "id": "ai-agriculture-precision-farming",
+    "title": "AI Agriculture Precision Farming",
+    "description": "Precision agriculture platform that optimizes crop yields, predicts weather impacts, manages resources, and maximizes farm profitability using AI and satellite data.",
+    "category": "ai",
+    "industry": "Agriculture",
+    "features": [
+      "Crop yield prediction",
+      "Weather impact analysis",
+      "Resource optimization",
+      "Satellite monitoring",
+      "Farm management"
+    ],
+    "benefits": [
+      "40% higher yields",
+      "30% water savings",
+      "25% cost reduction",
+      "Climate resilience"
+    ],
+    "pricing": {
+      "basic": "499",
+      "pro": "1499",
+      "enterprise": "4999"
+    }
+  },
+  {
+    "id": "ai-logistics-warehouse-automation",
+    "title": "AI Logistics Warehouse Automation",
+    "description": "Intelligent warehouse management system that automates picking, packing, inventory, and shipping using AI-powered robotics and optimization algorithms.",
+    "category": "ai",
+    "industry": "Logistics",
+    "features": [
+      "Robotics coordination",
+      "Pick path optimization",
+      "Inventory management",
+      "Shipping automation",
+      "Demand forecasting"
+    ],
+    "benefits": [
+      "70% faster fulfillment",
+      "99% inventory accuracy",
+      "50% labor reduction",
+      "Zero errors"
+    ],
+    "pricing": {
+      "basic": "2999",
+      "pro": "9999",
+      "enterprise": "29999"
+    }
+  },
+  {
+    "id": "ai-sports-performance-analytics",
+    "title": "AI Sports Performance Analytics",
+    "description": "Advanced sports intelligence platform that analyzes performance, predicts outcomes, optimizes training, and enhances athlete performance using AI and biomechanics.",
+    "category": "ai",
+    "industry": "Sports",
+    "features": [
+      "Performance analysis",
+      "Injury prediction",
+      "Training optimization",
+      "Game strategy",
+      "Athlete monitoring"
+    ],
+    "benefits": [
+      "50% injury reduction",
+      "30% performance improvement",
+      "Winning strategies",
+      "Data-driven training"
+    ],
+    "pricing": {
+      "basic": "1499",
+      "pro": "4499",
+      "enterprise": "14999"
+    }
+  },
+  {
+    "id": "ai-weather-climate-intelligence",
+    "title": "AI Weather Climate Intelligence",
+    "description": "Hyper-local weather prediction and climate intelligence platform that provides actionable insights for agriculture, energy, logistics, and outdoor businesses.",
+    "category": "ai",
+    "industry": "Weather & Climate",
+    "features": [
+      "Hyperlocal forecasting",
+      "Climate risk assessment",
+      "Agricultural insights",
+      "Energy optimization",
+      "Outdoor business planning"
+    ],
+    "benefits": [
+      "99% forecast accuracy",
+      "50% weather loss reduction",
+      "Optimal timing",
+      "Climate adaptation"
+    ],
+    "pricing": {
+      "basic": "299",
+      "pro": "899",
+      "enterprise": "2999"
     },
     "contactInfo": {
       "website": "/services/ai-carbon-optimizer",

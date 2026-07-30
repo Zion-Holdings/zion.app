@@ -4,42 +4,42 @@ import Link from 'next/link';
 import ROICalculator from './ROICalculator';
 
 const TOP_CATEGORIES = [
-  { key:'ai', label:'AI', href:'/services/?category=ai', emoji:'🧠' },
-  { key:'it', label:'IT', href:'/services/?category=it', emoji:'🖥️' },
-  { key:'cloud', label:'Cloud', href:'/services/?category=cloud', emoji:'☁️' },
-  { key:'security', label:'Security', href:'/services/?category=security', emoji:'🔐' },
-  { key:'automation', label:'Automation', href:'/services/?category=automation', emoji:'🤖' },
-  { key:'data', label:'Data', href:'/services/?category=data', emoji:'📊' },
+  { key: 'ai', label: 'AI', href: '/services/?category=ai', emoji: '🧠' },
+  { key: 'it', label: 'IT', href: '/services/?category=it', emoji: '🖥️' },
+  { key: 'cloud', label: 'Cloud', href: '/services/?category=cloud', emoji: '☁️' },
+  { key: 'security', label: 'Security', href: '/services/?category=security', emoji: '🔐' },
+  { key: 'automation', label: 'Automation', href: '/services/?category=automation', emoji: '🤖' },
+  { key: 'data', label: 'Data', href: '/services/?category=data', emoji: '📊' },
 ];
 
 const INDUSTRY_SOLUTIONS = [
-  { 
-    key: 'financial-services', 
-    label: 'Financial Services', 
+  {
+    key: 'financial-services',
+    label: 'Financial Services',
     href: '/industry-solutions',
     emoji: '💳',
     description: 'Fraud detection, compliance automation, risk management',
     color: 'from-indigo-500 to-purple-600'
   },
-  { 
-    key: 'healthcare', 
-    label: 'Healthcare', 
+  {
+    key: 'healthcare',
+    label: 'Healthcare',
     href: '/industry-solutions',
-    emoji: '🏥', 
+    emoji: '🏥',
     description: 'Medical diagnosis, telemedicine, patient outcomes',
     color: 'from-emerald-500 to-teal-600'
   },
-  { 
-    key: 'retail', 
-    label: 'Retail', 
+  {
+    key: 'retail',
+    label: 'Retail',
     href: '/industry-solutions',
     emoji: '🛒',
     description: 'Personalized recommendations, demand forecasting',
     color: 'from-pink-500 to-rose-600'
   },
-  { 
-    key: 'manufacturing', 
-    label: 'Manufacturing', 
+  {
+    key: 'manufacturing',
+    label: 'Manufacturing',
     href: '/industry-solutions',
     emoji: '🏭',
     description: 'Quality inspection, predictive maintenance',
@@ -96,8 +96,8 @@ export default function HomepageEnhancements() {
             ))}
           </div>
           <div className="mt-6 text-center">
-            <Link 
-              href="/industry-solutions" 
+            <Link
+              href="/industry-solutions"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 text-white font-semibold hover:from-purple-500 hover:to-pink-500 transition-all"
             >
               View All Industry Solutions →
@@ -114,19 +114,19 @@ export default function HomepageEnhancements() {
             Not sure whether to start with an audit, a managed service, or a custom build? We mapped the fastest paths by outcome.
           </p>
           <div className="grid sm:grid-cols-3 gap-4">
-            {[\
-              { title:'Audit & roadmap', desc:'1-week assessment with prioritized recommendations and ROI estimate.', cta:'/free-audit', label:'Free Audit' },\
-              { title:'Managed service', desc:'Day-1 coverage with outcomes, SLAs, and continuous optimization.', cta:'/services', label:'View Managed' },\
-              { title:'Custom build', desc:'Tailored AI/Cloud/Security stack built to your stack and governance.', cta:'/contact', label:'Request Proposal' },\
-            ].map(card => (\
-              <div key={card.title} className="glass-card flex flex-col gap-2 p-5 hover:border-purple-500/40 group transition-all">\
-                <h3 className="text-white font-semibold group-hover:text-purple-300 transition-colors">{card.title}</h3>\
-                <p className="text-slate-300 text-sm leading-relaxed">{card.desc}</p>\
-                <Link href={card.cta} className="mt-auto text-sm font-semibold text-purple-300 hover:text-purple-200">\
-                  {card.label} →\
-                </Link>\
-              </div>\
-            ))}\
+            {[
+              { title: 'Audit & roadmap', desc: '1-week assessment with prioritized recommendations and ROI estimate.', cta: '/free-audit', label: 'Free Audit' },
+              { title: 'Managed service', desc: 'Day-1 coverage with outcomes, SLAs, and continuous optimization.', cta: '/services', label: 'View Managed' },
+              { title: 'Custom build', desc: 'Tailored AI/Cloud/Security stack built to your stack and governance.', cta: '/contact', label: 'Request Proposal' },
+            ].map(card => (
+              <div key={card.title} className="glass-card flex flex-col gap-2 p-5 hover:border-purple-500/40 group transition-all">
+                <h3 className="text-white font-semibold group-hover:text-purple-300 transition-colors">{card.title}</h3>
+                <p className="text-slate-300 text-sm leading-relaxed">{card.desc}</p>
+                <Link href={card.cta} className="mt-auto text-sm font-semibold text-purple-300 hover:text-purple-200">
+                  {card.label} →
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -158,18 +158,18 @@ export default function HomepageEnhancements() {
             We adapt to your timeline, compliance posture, and operating model.
           </p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {[\
-              { icon:'🚀', title:'Rapid deployment', desc:'Sprint-based delivery with measurable weekly milestones.' },\
-              { icon:'🏛️', title:'Enterprise governance', desc:'Risk, compliance, and access controls built in by default.' },\
-              { icon:'🧪', title:'Pilot-first', desc:'Start narrow, prove outcomes, then expand to additional domains.' },\
-              { icon:'🔁', title:'Continuous optimization', desc:'Cut overprovisioned spend and improve reliability on autopilot.' },\
-            ].map(item => (\
-              <div key={item.title} className="glass-card p-5 hover:border-purple-500/40 transition-all">\
-                <div className="text-2xl mb-2">{item.icon}</div>\
-                <h3 className="text-white font-semibold mb-1">{item.title}</h3>\
-                <p className="text-slate-300 text-sm leading-relaxed">{item.desc}</p>\
-              </div>\
-            ))}\
+            {[
+              { icon: '🚀', title: 'Rapid deployment', desc: 'Sprint-based delivery with measurable weekly milestones.' },
+              { icon: '🏛️', title: 'Enterprise governance', desc: 'Risk, compliance, and access controls built in by default.' },
+              { icon: '🧪', title: 'Pilot-first', desc: 'Start narrow, prove outcomes, then expand to additional domains.' },
+              { icon: '🔁', title: 'Continuous optimization', desc: 'Cut overprovisioned spend and improve reliability on autopilot.' },
+            ].map(item => (
+              <div key={item.title} className="glass-card p-5 hover:border-purple-500/40 transition-all">
+                <div className="text-2xl mb-2">{item.icon}</div>
+                <h3 className="text-white font-semibold mb-1">{item.title}</h3>
+                <p className="text-slate-300 text-sm leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -185,19 +185,19 @@ export default function HomepageEnhancements() {
           </div>
           
           <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-            <ROICalculator 
-              serviceName="AI Fraud Detection" 
-              baseCost={499} 
+            <ROICalculator
+              serviceName="AI Fraud Detection"
+              baseCost={499}
               industry="financial-services"
             />
-            <ROICalculator 
-              serviceName="AI Medical Diagnosis" 
-              baseCost={599} 
+            <ROICalculator
+              serviceName="AI Medical Diagnosis"
+              baseCost={599}
               industry="healthcare"
             />
-            <ROICalculator 
-              serviceName="AI Demand Forecasting" 
-              baseCost={399} 
+            <ROICalculator
+              serviceName="AI Demand Forecasting"
+              baseCost={399}
               industry="retail"
             />
           </div>
