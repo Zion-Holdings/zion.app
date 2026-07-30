@@ -2,7 +2,8 @@
 'use client';
 
 import Link from 'next/link';
-import { INDUSTRY_SERVICES, SmartRecommendationEngine } from '@/components/SmartRecommendationEngine';
+import SmartRecommendationEngineComponent from '@/components/SmartRecommendationEngine';
+import { INDUSTRY_SERVICES } from '@/components/SmartRecommendationEngine';
 import { allServices } from '@/data/servicesData';
 
 const INDUSTRY_CONFIG = [
@@ -189,7 +190,7 @@ export default function IndustrySolutionsPage() {
       </section>
 
       {/* Smart Recommendation Engine */}
-      <SmartRecommendationEngine className="border-t border-slate-800/60" />
+      <SmartRecommendationEngineComponent className="border-t border-slate-800/60" />
 
       {/* Featured Industry Use Cases */}
       <section className="py-20 bg-slate-900/30">

@@ -90,7 +90,7 @@ export default function SmartRecommendationEngine({ className = '' }: SmartRecom
         
         // Size-based pricing filter
         const pricingValues = Object.values(service.pricing || {});
-        const minPrice = Math.min(...pricingValues.map(p => parseFloat(p.replace('$', '').replace('/mo', '')) || 999999));
+        const minPrice = Math.min(...pricingValues.map((p: any) => parseFloat(String(p).replace('$', '').replace('/mo', '')) || 999999));
         const sizeMultiplier = BUSINESS_SIZE_MULTIPLIERS[businessSize] || 1;
         const priceCompatible = minPrice * sizeMultiplier <= (parseInt(budget) || Infinity);
 
