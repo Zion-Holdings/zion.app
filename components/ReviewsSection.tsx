@@ -43,7 +43,7 @@ const REVIEWS = [
     company: 'CloudFirst Solutions',
     rating: 5,
     service: 'Cloud Cost Optimizer',
-    quote: 'Identified $180K in monthly waste we didn\\'t know existed. ROI was achieved in under 2 weeks.',
+    quote: 'Identified $180K in monthly waste we didn\'t know existed. ROI was achieved in under 2 weeks.',
     date: '2026-07-08',
     verified: true,
   },

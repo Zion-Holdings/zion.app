@@ -7,10 +7,10 @@ export const metadata = {
 };
 
 const technologyServices = [
-  { id: 'ai-api-management', title: 'API Management AI', href: '/services/ai-api-management', icon: '🔗', pricing: 'Custom' },
-  { id: 'ai-devops-automation', title: 'DevOps Automation', href: '/services/ai-devops-automation', icon: '⚙️', pricing: 'From $199/mo' },
-  { id: 'ai-code-quality-assurance', title: 'Code Quality Assurance', href: '/services/ai-code-quality-assurance', icon: '✅', pricing: 'From $149/mo' },
-  { id: 'ai-saas-growth-analytics', title: 'SaaS Growth Analytics', href: '/services/ai-saas-growth-analytics', icon: '📈', pricing: 'From $129/mo' },
+  { id: 'ai-api-management', title: 'API Management AI', href: '/services/ai-api-management', icon: '🔗', pricing: 'Custom', description: 'Intelligent API gateway with auto-scaling, rate limiting, and analytics.' },
+  { id: 'ai-devops-automation', title: 'DevOps Automation', href: '/services/ai-devops-automation', icon: '⚙️', pricing: 'From $199/mo', description: 'CI/CD pipeline optimization with AI-powered testing and deployment.' },
+  { id: 'ai-code-quality-assurance', title: 'Code Quality Assurance', href: '/services/ai-code-quality-assurance', icon: '✅', pricing: 'From $149/mo', description: 'AI-powered code review, security scanning, and quality metrics.' },
+  { id: 'ai-saas-growth-analytics', title: 'SaaS Growth Analytics', href: '/services/ai-saas-growth-analytics', icon: '📈', pricing: 'From $129/mo', description: 'Growth metrics, funnel analysis, and retention optimization for SaaS products.' },
 ];
 
 export default function TechnologyIndustryPage() {
@@ -41,7 +41,7 @@ export default function TechnologyIndustryPage() {
               <Link key={s.id} href={s.href} className="group bg-slate-900/50 border border-slate-800/50 rounded-2xl p-6 hover:border-blue-500/40 transition-all">
                 <div className="text-3xl mb-3">{s.icon}</div>
                 <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-blue-300">{s.title}</h3>
-                <p className="text-slate-400 text-sm mb-3">{s.description}</p>
+                <p className="text-slate-400 text-sm mb-3 line-clamp-3">{s.description}</p>
                 <span className="text-xs font-semibold uppercase bg-blue-500/20 text-blue-300 px-2 py-1 rounded">{s.pricing}</span>
               </Link>
             ))}

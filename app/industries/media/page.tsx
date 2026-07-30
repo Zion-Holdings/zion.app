@@ -7,10 +7,10 @@ export const metadata = {
 };
 
 const mediaServices = [
-  { id: 'ai-knowledge-management', title: 'AI Knowledge Management', href: '/services/ai-knowledge-management', icon: '📚', pricing: 'From $149/mo' },
-  { id: 'ai-content-generation', title: 'Content Generation AI', href: '/services/ai-content-generation', icon: '✍️', pricing: 'From $99/mo' },
-  { id: 'ai-video-analysis', title: 'Video Analysis AI', href: '/services/ai-video-analysis', icon: '🎬', pricing: 'Custom' },
-  { id: 'ai-content-studio', title: 'AI Content Studio', href: '/services/ai-content-studio', icon: '🎥', pricing: 'From $199/mo' },
+  { id: 'ai-knowledge-management', title: 'AI Knowledge Management', href: '/services/ai-knowledge-management', icon: '📚', pricing: 'From $149/mo', description: 'Organize and search knowledge with AI-powered content management.' },
+  { id: 'ai-content-generation', title: 'Content Generation AI', href: '/services/ai-content-generation', icon: '✍️', pricing: 'From $99/mo', description: 'Generate blog posts, social media content, and marketing copy with AI.' },
+  { id: 'ai-video-analysis', title: 'Video Analysis AI', href: '/services/ai-video-analysis', icon: '🎬', pricing: 'Custom', description: 'Analyze video content with computer vision for insights and moderation.' },
+  { id: 'ai-content-studio', title: 'AI Content Studio', href: '/services/ai-content-studio', icon: '🎥', pricing: 'From $199/mo', description: 'End-to-end video production with AI-assisted editing and optimization.' },
 ];
 
 export default function MediaIndustryPage() {
@@ -41,7 +41,7 @@ export default function MediaIndustryPage() {
               <Link key={s.id} href={s.href} className="group bg-slate-900/50 border border-slate-800/50 rounded-2xl p-6 hover:border-pink-500/40 transition-all">
                 <div className="text-3xl mb-3">{s.icon}</div>
                 <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-pink-300">{s.title}</h3>
-                <p className="text-slate-400 text-sm mb-3">{s.description}</p>
+                <p className="text-slate-400 text-sm mb-3 line-clamp-3">{s.description}</p>
                 <span className="text-xs font-semibold uppercase bg-pink-500/20 text-pink-300 px-2 py-1 rounded">{s.pricing}</span>
               </Link>
             ))}

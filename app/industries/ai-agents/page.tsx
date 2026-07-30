@@ -7,11 +7,11 @@ export const metadata = {
 };
 
 const agentServices = [
-  { id: 'ai-agents-autonomous', title: 'Autonomous AI Agents', href: '/services/ai-agents-autonomous', icon: '🤖', pricing: 'Starting at $99/mo' },
-  { id: 'ai-agent-orchestration-platform', title: 'Agent Orchestration Platform', href: '/services/ai-agent-orchestration-platform', icon: '🎭', pricing: 'Custom' },
-  { id: 'ai-agentic-workflows', title: 'Agentic Workflows', href: '/services/ai-agentic-workflows', icon: '🔄', pricing: 'From $149/mo' },
-  { id: 'ai-agent-tool-builder', title: 'Agent Tool Builder', href: '/services/ai-agent-tool-builder', icon: '🔧', pricing: 'Custom' },
-  { id: 'ai-agent-safety-evaluation', title: 'Agent Safety Evaluation', href: '/services/ai-agent-safety-evaluation', icon: '🛡️', pricing: 'From $199/mo' },
+  { id: 'ai-agents-autonomous', title: 'Autonomous AI Agents', href: '/services/ai-agents-autonomous', icon: '🤖', pricing: 'Starting at $99/mo', description: 'Build autonomous agents that research, code, and deploy solutions 24/7.' },
+  { id: 'ai-agent-orchestration-platform', title: 'Agent Orchestration Platform', href: '/services/ai-agent-orchestration-platform', icon: '🎭', pricing: 'Custom', description: 'Coordinate multiple AI agents with workflow orchestration and monitoring.' },
+  { id: 'ai-agentic-workflows', title: 'Agentic Workflows', href: '/services/ai-agentic-workflows', icon: '🔄', pricing: 'From $149/mo', description: 'Build agentic workflows that adapt and self-improve over time.' },
+  { id: 'ai-agent-tool-builder', title: 'Agent Tool Builder', href: '/services/ai-agent-tool-builder', icon: '🔧', pricing: 'Custom', description: 'Create custom tools and integrations for your AI agents.' },
+  { id: 'ai-agent-safety-evaluation', title: 'Agent Safety Evaluation', href: '/services/ai-agent-safety-evaluation', icon: '🛡️', pricing: 'From $199/mo', description: 'Evaluate and improve agent safety, alignment, and reliability.' },
 ];
 
 export default function AgentIndustryPage() {
@@ -42,7 +42,7 @@ export default function AgentIndustryPage() {
               <Link key={s.id} href={s.href} className="group bg-slate-900/50 border border-slate-800/50 rounded-2xl p-6 hover:border-violet-500/40 transition-all">
                 <div className="text-3xl mb-3">{s.icon}</div>
                 <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-violet-300">{s.title}</h3>
-                <p className="text-slate-400 text-sm mb-3">{s.description}</p>
+                <p className="text-slate-400 text-sm mb-3 line-clamp-3">{s.description}</p>
                 <span className="text-xs font-semibold uppercase bg-violet-500/20 text-violet-300 px-2 py-1 rounded">{s.pricing}</span>
               </Link>
             ))}

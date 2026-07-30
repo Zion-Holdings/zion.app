@@ -7,10 +7,10 @@ export const metadata = {
 };
 
 const legalServices = [
-  { id: 'ai-legal-contract-analyzer', title: 'AI Legal Contract Analyzer', href: '/services/ai-legal-contract-analyzer', icon: '📄', pricing: 'From $149/mo' },
-  { id: 'ai-compliance-monitor', title: 'AI Compliance Monitor', href: '/services/ai-compliance-monitor', icon: '📜', pricing: 'Custom' },
-  { id: 'ai-legal-research', title: 'Legal Research Assistant', href: '/services/ai-legal-research', icon: '🔍', pricing: 'From $99/mo' },
-  { id: 'ai-ediscovery', title: 'E-Discovery Automation', href: '/services/ai-ediscovery', icon: '🗂️', pricing: 'Custom' },
+  { id: 'ai-legal-contract-analyzer', title: 'AI Legal Contract Analyzer', href: '/services/ai-legal-contract-analyzer', icon: '📄', pricing: 'From $149/mo', description: 'AI-powered contract review and analysis with automated risk scoring and redline suggestions.' },
+  { id: 'ai-compliance-monitor', title: 'AI Compliance Monitor', href: '/services/ai-compliance-monitor', icon: '📜', pricing: 'Custom', description: 'Automated compliance monitoring, AML detection, and regulatory reporting for legal teams.' },
+  { id: 'ai-legal-research', title: 'Legal Research Assistant', href: '/services/ai-legal-research', icon: '🔍', pricing: 'From $99/mo', description: 'AI-powered legal research with case law analysis and precedent identification.' },
+  { id: 'ai-ediscovery', title: 'E-Discovery Automation', href: '/services/ai-ediscovery', icon: '🗂️', pricing: 'Custom', description: 'Automated document review, categorization, and privilege detection for litigation.' },
 ];
 
 export default function LegalIndustryPage() {
@@ -41,7 +41,7 @@ export default function LegalIndustryPage() {
               <Link key={s.id} href={s.href} className="group bg-slate-900/50 border border-slate-800/50 rounded-2xl p-6 hover:border-violet-500/40 transition-all">
                 <div className="text-3xl mb-3">{s.icon}</div>
                 <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-violet-300">{s.title}</h3>
-                <p className="text-slate-400 text-sm mb-3">{s.description}</p>
+                <p className="text-slate-400 text-sm mb-3 line-clamp-3">{s.description}</p>
                 <span className="text-xs font-semibold uppercase bg-violet-500/20 text-violet-300 px-2 py-1 rounded">{s.pricing}</span>
               </Link>
             ))}

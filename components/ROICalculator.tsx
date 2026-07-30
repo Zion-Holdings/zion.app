@@ -73,7 +73,7 @@ export default function ROICalculator() {
   
   const monthlySavings = service ? service.baseSavings * multiplier * (teamSize / 100) : 0;
   const annualSavings = monthlySavings * 12;
-  const roi = annualSavings > 0 ? ((annualSavings - (service?.baseSavings * 0.1 || 0)) / (service?.baseSavings * 0.1 || 1)) * 100 : 0;
+  const roi = annualSavings > 0 && service ? ((annualSavings - (service.baseSavings * 0.1)) / (service.baseSavings * 0.1)) * 100 : 0;
 
   return (
     <section id="roi-calculator" className="py-16 border-t border-slate-800">

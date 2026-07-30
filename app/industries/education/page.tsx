@@ -7,10 +7,10 @@ export const metadata = {
 };
 
 const educationServices = [
-  { id: 'ai-tutor', title: 'AI Tutor & Personal Assistant', href: '/services/ai-tutor', icon: '🎓', pricing: 'From $49/mo' },
-  { id: 'ai-student-analytics', title: 'Student Performance Analytics', href: '/services/ai-student-analytics', icon: '📊', pricing: 'From $99/mo' },
-  { id: 'ai-course-content-generator', title: 'Course Content Generator', href: '/services/ai-course-content-generator', icon: '📚', pricing: 'Custom' },
-  { id: 'ai-research-assistant', title: 'Research Automation', href: '/services/ai-research-assistant', icon: '🔬', pricing: 'From $149/mo' },
+  { id: 'ai-tutor', title: 'AI Tutor & Personal Assistant', href: '/services/ai-tutor', icon: '🎓', pricing: 'From $49/mo', description: 'Personalized tutoring with adaptive learning paths and instant feedback for students.' },
+  { id: 'ai-student-analytics', title: 'Student Performance Analytics', href: '/services/ai-student-analytics', icon: '📊', pricing: 'From $99/mo', description: 'Predict student outcomes, identify at-risk learners, and personalize interventions.' },
+  { id: 'ai-course-content-generator', title: 'Course Content Generator', href: '/services/ai-course-content-generator', icon: '📚', pricing: 'Custom', description: 'AI-powered content creation for courses, quizzes, and learning materials.' },
+  { id: 'ai-research-assistant', title: 'Research Automation', href: '/services/ai-research-assistant', icon: '🔬', pricing: 'From $149/mo', description: 'AI assistants for literature review, data analysis, and research productivity.' },
 ];
 
 export default function EducationIndustryPage() {
@@ -41,7 +41,7 @@ export default function EducationIndustryPage() {
               <Link key={s.id} href={s.href} className="group bg-slate-900/50 border border-slate-800/50 rounded-2xl p-6 hover:border-emerald-500/40 transition-all">
                 <div className="text-3xl mb-3">{s.icon}</div>
                 <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-emerald-300">{s.title}</h3>
-                <p className="text-slate-400 text-sm mb-3">{s.description}</p>
+                <p className="text-slate-400 text-sm mb-3 line-clamp-3">{s.description}</p>
                 <span className="text-xs font-semibold uppercase bg-emerald-500/20 text-emerald-300 px-2 py-1 rounded">{s.pricing}</span>
               </Link>
             ))}

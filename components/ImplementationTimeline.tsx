@@ -10,6 +10,7 @@ const IMPLEMENTATION_TIMELINES = [
     color: 'from-green-500 to-emerald-500',
     services: [
       {
+        id: 'ai-kyc-identity-verification',
         name: 'AI KYC Identity Verification',
         description: 'Verify identities in seconds',
         timeline: 'Day 1: API integration',
@@ -18,6 +19,7 @@ const IMPLEMENTATION_TIMELINES = [
         href: '/services/ai-kyc-identity-verification',
       },
       {
+        id: 'ai-fraud-detection-intelligence',
         name: 'AI Fraud Detection Intelligence',
         description: 'Detect fraudulent transactions',
         timeline: 'Day 2: Model training',
@@ -26,6 +28,7 @@ const IMPLEMENTATION_TIMELINES = [
         href: '/services/ai-anti-money-laundering-intelligence',
       },
       {
+        id: 'product-recommendations',
         name: 'Product Recommendations',
         description: 'Personalize customer experiences',
         timeline: 'Day 1-3: Integration',
@@ -42,6 +45,7 @@ const IMPLEMENTATION_TIMELINES = [
     color: 'from-blue-500 to-cyan-500',
     services: [
       {
+        id: 'cloud-cost-optimizer',
         name: 'Cloud Cost Optimizer',
         description: 'Reduce cloud infrastructure costs',
         timeline: 'Week 1: Discovery & setup',
@@ -50,6 +54,7 @@ const IMPLEMENTATION_TIMELINES = [
         href: '/services/cloud-cost-optimizer',
       },
       {
+        id: 'quality-inspection',
         name: 'Quality Inspection',
         description: 'Automated visual quality control',
         timeline: 'Week 1-2: Training & deployment',
@@ -58,6 +63,7 @@ const IMPLEMENTATION_TIMELINES = [
         href: '/services/ai-computer-vision-quality-inspection',
       },
       {
+        id: 'supply-chain-visibility',
         name: 'Supply Chain Visibility',
         description: 'Real-time tracking and analytics',
         timeline: 'Week 2: Full deployment',
@@ -74,6 +80,7 @@ const IMPLEMENTATION_TIMELINES = [
     color: 'from-purple-500 to-violet-500',
     services: [
       {
+        id: 'zero-trust-identity',
         name: 'Zero Trust Identity Platform',
         description: 'Secure access for hybrid workforces',
         timeline: 'Week 1: Architecture design',
@@ -82,6 +89,7 @@ const IMPLEMENTATION_TIMELINES = [
         href: '/services/zero-trust-identity',
       },
       {
+        id: 'procurement-intelligence',
         name: 'Procurement Intelligence',
         description: 'AI-powered vendor selection',
         timeline: 'Week 2-3: Integration',
@@ -90,6 +98,7 @@ const IMPLEMENTATION_TIMELINES = [
         href: '/services/ai-procurement-intelligence',
       },
       {
+        id: 'telemedicine-platform',
         name: 'Telemedicine Platform',
         description: 'AI-assisted patient care',
         timeline: 'Week 3-4: Full rollout',
@@ -106,6 +115,12 @@ export default function ImplementationTimeline() {
 
   const active = IMPLEMENTATION_TIMELINES.find(t => t.id === activeTimeline);
 
+  const getTimelineColor = (timelineId: string) => {
+    if (timelineId === 'rapid') return 'from-green-500 to-emerald-500';
+    if (timelineId === 'standard') return 'from-blue-500 to-cyan-500';
+    return 'from-purple-500 to-violet-500';
+  };
+
   return (
     <section id="implementation-timeline" className="py-16 border-t border-slate-800">
       <div className="container-page">
@@ -116,7 +131,6 @@ export default function ImplementationTimeline() {
           Most of our AI services can be deployed in days, not months. Choose your timeline and we'll get you started immediately.
         </p>
         
-        {/* Timeline Tabs */}
         <div className="flex justify-center mb-8">
           <div className="inline-flex bg-slate-800/50 rounded-full p-1">
             {IMPLEMENTATION_TIMELINES.map((timeline) => (
@@ -135,14 +149,12 @@ export default function ImplementationTimeline() {
           </div>
         </div>
         
-        {/* Services Timeline */}
         <div className="bg-slate-900/30 rounded-xl border border-slate-800 overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_200px] gap-6 p-6">
-            {/* Services List */}
             <div className="space-y-4">
-              {active?.services.map((service, idx) => (
+              {active?.services.map((service) => (
                 <div key={service.id} className="flex items-start gap-4 p-4 bg-slate-800/30 rounded-lg border border-slate-700">
-                  <div className={`flex-1`}>
+                  <div className="flex-1">
                     <h3 className="text-white font-semibold mb-1">{service.name}</h3>
                     <p className="text-slate-400 text-sm mb-2">{service.description}</p>
                     <div className="text-xs text-purple-400">{service.timeline}</div>
@@ -157,9 +169,8 @@ export default function ImplementationTimeline() {
               ))}
             </div>
             
-            {/* Timeline Info */}
             <div className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-lg p-4 flex flex-col items-center text-center">
-              <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${active?.color} flex items-center justify-center mb-4`}>
+              <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${getTimelineColor(activeTimeline)} flex items-center justify-center mb-4`}>
                 <span className="text-2xl">{active?.icon}</span>
               </div>
               <h3 className="text-white font-bold mb-2">{active?.label}</h3>
@@ -167,14 +178,13 @@ export default function ImplementationTimeline() {
                 {active?.services.length} services available
               </p>
               <div className="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
-                <div className={`h-full bg-gradient-to-r ${active?.color} rounded-full`} style={{ width: '75%' }}></div>
+                <div className={`h-full bg-gradient-to-r ${getTimelineColor(activeTimeline)} rounded-full`} style={{ width: '75%' }}></div>
               </div>
               <div className="text-xs text-slate-500 mt-2">Average deployment time</div>
             </div>
           </div>
         </div>
         
-        {/* Stats */}
         <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
           <div className="bg-slate-900/30 rounded-lg p-4 border border-slate-800">
             <div className="text-purple-400 font-bold text-2xl mb-1">85%</div>

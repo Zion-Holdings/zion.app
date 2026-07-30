@@ -7,10 +7,10 @@ export const metadata = {
 };
 
 const logisticsServices = [
-  { id: 'ai-route-optimizer', title: 'Route Optimization AI', href: '/services/ai-route-optimizer', icon: '🚚', pricing: 'From $129/mo' },
-  { id: 'ai-supply-chain-visibility', title: 'Supply Chain Visibility', href: '/services/ai-supply-chain-visibility', icon: '👁️', pricing: 'Custom' },
-  { id: 'ai-delivery-prediction', title: 'Delivery Prediction', href: '/services/ai-delivery-prediction', icon: '📦', pricing: 'From $99/mo' },
-  { id: 'ai-warehouse-automation', title: 'Warehouse Automation', href: '/services/ai-warehouse-automation', icon: '🤖', pricing: 'Custom' },
+  { id: 'ai-route-optimizer', title: 'Route Optimization AI', href: '/services/ai-route-optimizer', icon: '🚚', pricing: 'From $129/mo', description: 'Optimize delivery routes with real-time traffic, weather, and demand data.' },
+  { id: 'ai-supply-chain-visibility', title: 'Supply Chain Visibility', href: '/services/ai-supply-chain-visibility', icon: '👁️', pricing: 'Custom', description: 'End-to-end tracking and analytics for inventory and shipment visibility.' },
+  { id: 'ai-delivery-prediction', title: 'Delivery Prediction', href: '/services/ai-delivery-prediction', icon: '📦', pricing: 'From $99/mo', description: 'Predict delivery times and ETAs with machine learning models.' },
+  { id: 'ai-warehouse-automation', title: 'Warehouse Automation', href: '/services/ai-warehouse-automation', icon: '🤖', pricing: 'Custom', description: 'AI-powered inventory management and automated warehouse operations.' },
 ];
 
 export default function LogisticsIndustryPage() {
@@ -41,7 +41,7 @@ export default function LogisticsIndustryPage() {
               <Link key={s.id} href={s.href} className="group bg-slate-900/50 border border-slate-800/50 rounded-2xl p-6 hover:border-amber-500/40 transition-all">
                 <div className="text-3xl mb-3">{s.icon}</div>
                 <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-amber-300">{s.title}</h3>
-                <p className="text-slate-400 text-sm mb-3">{s.description}</p>
+                <p className="text-slate-400 text-sm mb-3 line-clamp-3">{s.description}</p>
                 <span className="text-xs font-semibold uppercase bg-amber-500/20 text-amber-300 px-2 py-1 rounded">{s.pricing}</span>
               </Link>
             ))}

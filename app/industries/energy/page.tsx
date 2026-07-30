@@ -7,10 +7,10 @@ export const metadata = {
 };
 
 const energyServices = [
-  { id: 'ai-grid-demand-forecast', title: 'Grid Demand Forecasting', href: '/services/ai-grid-demand-forecast', icon: '⚡', pricing: 'From $199/mo' },
-  { id: 'ai-renewable-energy', title: 'Renewable Energy Optimization', href: '/services/ai-renewable-energy', icon: '☀️', pricing: 'Custom' },
-  { id: 'ai-energy-predictive-maintenance', title: 'Predictive Maintenance', href: '/services/ai-energy-predictive-maintenance', icon: '🔧', pricing: 'From $149/mo' },
-  { id: 'ai-smart-meter-analytics', title: 'Smart Meter Analytics', href: '/services/ai-smart-meter-analytics', icon: '📊', pricing: 'From $99/mo' },
+  { id: 'ai-grid-demand-forecast', title: 'Grid Demand Forecasting', href: '/services/ai-grid-demand-forecast', icon: '⚡', pricing: 'From $199/mo', description: 'Predict energy demand with machine learning models for grid stability and renewable integration.' },
+  { id: 'ai-renewable-energy', title: 'Renewable Energy Optimization', href: '/services/ai-renewable-energy', icon: '☀️', pricing: 'Custom', description: 'Maximize output from solar, wind, and other renewable sources with AI-driven optimization.' },
+  { id: 'ai-energy-predictive-maintenance', title: 'Predictive Maintenance', href: '/services/ai-energy-predictive-maintenance', icon: '🔧', pricing: 'From $149/mo', description: 'Prevent equipment failures with AI-powered anomaly detection and maintenance scheduling.' },
+  { id: 'ai-smart-meter-analytics', title: 'Smart Meter Analytics', href: '/services/ai-smart-meter-analytics', icon: '📊', pricing: 'From $99/mo', description: 'Analyze consumption patterns and optimize distribution with smart meter intelligence.' },
 ];
 
 export default function EnergyIndustryPage() {
@@ -41,7 +41,7 @@ export default function EnergyIndustryPage() {
               <Link key={s.id} href={s.href} className="group bg-slate-900/50 border border-slate-800/50 rounded-2xl p-6 hover:border-amber-500/40 transition-all">
                 <div className="text-3xl mb-3">{s.icon}</div>
                 <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-amber-300">{s.title}</h3>
-                <p className="text-slate-400 text-sm mb-3">{s.description}</p>
+                <p className="text-slate-400 text-sm mb-3 line-clamp-3">{s.description}</p>
                 <span className="text-xs font-semibold uppercase bg-amber-500/20 text-amber-300 px-2 py-1 rounded">{s.pricing}</span>
               </Link>
             ))}
