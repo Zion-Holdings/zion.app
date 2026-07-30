@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-orchestrator-system-logistics-5e1faec7",
+  "service_name": "Autonomous Orchestrator System - Logistics",
+  "industry": "logistics",
+  "lead_magnet": "Route Optimization Savings Estimator",
+  "metrics": {
+    "improvement": "49%",
+    "savings": "$11.2M",
+    "timeframe": "6 months",
+    "similar": "LogisticsPlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows logistics companies using Autonomous Orchestrator System - Logistics see 49% improvement. Your current process?",
+      "sequence_id": "seq-25",
+      "service_id": "autonomous-orchestrator-system-logistics-5e1faec7"
+    },
+    {
+      "step": 2,
+      "message": "Based on your logistics profile, Autonomous Orchestrator System - Logistics could save {company} approximately $11.2M. Interested in details?",
+      "sequence_id": "seq-25",
+      "service_id": "autonomous-orchestrator-system-logistics-5e1faec7"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Autonomous Orchestrator System - Logistics is proven to deliver 49% results.",
+      "sequence_id": "seq-25",
+      "service_id": "autonomous-orchestrator-system-logistics-5e1faec7"
+    }
+  ],
+  "hot_lead_score": 75,
+  "conversion_likelihood": "64%",
+  "timestamp": "2026-07-30T06:11:03.488000+00:00"
+}

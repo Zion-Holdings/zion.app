@@ -18,19 +18,21 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Alerting system with intelligent notifications</li>
-            <li>Edge computing support for low-latency operations</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Maintenance scheduling with predictive analytics</li>
+            <li>HIPAA ready with healthcare data protection</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Multi-region deployment with automatic failover</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>24/7 automated operations without human intervention</li>
+            <li>Performance benchmarking against industry standards</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Faster time-to-market with accelerated development</li>
             <li>Reduced human error by 95% with automated processes</li>
-            <li>Zero manual intervention required for routine tasks</li>
+            <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>
         

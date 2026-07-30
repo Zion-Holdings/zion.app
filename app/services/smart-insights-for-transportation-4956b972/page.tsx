@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Insights for Transportation - Zion Tech Group",
-  description: "Unlock unprecedented growth with Smart Insights for Transportation. This autonomous system provides customer service automation with zero manual intervention ne",
+  description: "Revolutionize transportation through intelligent automation. Our Smart Insights for Transportation leverages advanced machine learning to deliver resource optim",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-insights-for-transportation-4956b972`
   }
@@ -13,27 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart Insights for Transportation</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Smart Insights for Transportation. This autonomous system provides customer service automation with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize transportation through intelligent automation. Our Smart Insights for Transportation leverages advanced machine learning to deliver resource optimization at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Executive dashboards with drill-down capabilities</li>
+            <li>Audit trails with compliance reporting</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Content generation with plagiarism checks</li>
             <li>Security monitoring with threat intelligence</li>
-            <li>Serverless functions for cost-effective scaling</li>
-            <li>Performance dashboards with real-time metrics</li>
-            <li>Process discovery with activity analysis</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced decision making with data-driven insights</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Improved quality with automated testing and validation</li>
-            <li>Enhanced security with continuous threat monitoring</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Scalable to millions of transactions per second</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>Better risk management with predictive analytics</li>
           </ul>
         </div>
         

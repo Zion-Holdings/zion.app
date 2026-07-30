@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-powered-event-driven-enterprise-4e38691a",
+  "service_name": "AI-Powered Event-Driven Enterprise",
+  "industry": "logistics",
+  "lead_magnet": "Route Optimization Savings Estimator",
+  "metrics": {
+    "improvement": "49%",
+    "savings": "$11.2M",
+    "timeframe": "6 months",
+    "similar": "LogisticsPlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows logistics companies using AI-Powered Event-Driven Enterprise see 49% improvement. Your current process?",
+      "sequence_id": "seq-45",
+      "service_id": "ai-powered-event-driven-enterprise-4e38691a"
+    },
+    {
+      "step": 2,
+      "message": "Based on your logistics profile, AI-Powered Event-Driven Enterprise could save {company} approximately $11.2M. Interested in details?",
+      "sequence_id": "seq-45",
+      "service_id": "ai-powered-event-driven-enterprise-4e38691a"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. AI-Powered Event-Driven Enterprise is proven to deliver 49% results.",
+      "sequence_id": "seq-45",
+      "service_id": "ai-powered-event-driven-enterprise-4e38691a"
+    }
+  ],
+  "hot_lead_score": 91,
+  "conversion_likelihood": "73%",
+  "timestamp": "2026-07-30T06:11:03.560134+00:00"
+}

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Engine Intelligent - Insurance - Zion Tech Group",
-  description: "Transform your insurance operations with our Engine Intelligent - Insurance. This AI-driven solution automates sales process optimization with unprecedented acc",
+  description: "Unlock unprecedented growth with Engine Intelligent - Insurance. This autonomous system provides inventory management with zero manual intervention needed.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/engine-intelligent---insurance-e18d52d9`
   }
@@ -13,26 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Engine Intelligent - Insurance</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your insurance operations with our Engine Intelligent - Insurance. This AI-driven solution automates sales process optimization with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Engine Intelligent - Insurance. This autonomous system provides inventory management with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Compliance monitoring with regulatory updates</li>
-            <li>Sales process optimization with pipeline management</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Audit trails with compliance reporting</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Logistics route optimization with traffic prediction</li>
+            <li>Code optimization with performance profiling</li>
+            <li>Custom integrations with webhook support</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Financial risk management with scenario analysis</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced churn with proactive customer retention</li>
-            <li>Scalable to millions of transactions per second</li>
-            <li>Faster time-to-market with accelerated development</li>
+            <li>Better compliance with automated audit trails</li>
             <li>Real-time insights and alerts for proactive management</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Advisor - Construction Edition #2 - Zion Tech Group",
-  description: "The future of construction is here with AI Advisor - Construction Edition #2. Powered by cutting-edge AI, this platform delivers compliance monitoring like neve",
+  description: "Next-generation construction solution: AI Advisor - Construction Edition #2. Combines process automation with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-advisor---construction-edition-2-33ad1142`
   }
@@ -13,26 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Advisor - Construction Edition #2</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with AI Advisor - Construction Edition #2. Powered by cutting-edge AI, this platform delivers compliance monitoring like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: AI Advisor - Construction Edition #2. Combines process automation with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Sales process optimization with pipeline management</li>
-            <li>Machine learning integration with automatic model training</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
+            <li>Alerting system with intelligent notifications</li>
             <li>Security monitoring with threat intelligence</li>
-            <li>Version control with rollback capabilities</li>
+            <li>Audit trails with compliance reporting</li>
+            <li>HIPAA ready with healthcare data protection</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Improved customer satisfaction with faster response times</li>
             <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Reduced shipping costs with route optimization</li>
-            <li>Reduced support tickets with self-service options</li>
-            <li>Enhanced decision making with data-driven insights</li>
+            <li>Zero manual intervention required for routine tasks</li>
+            <li>24/7 automated operations without human intervention</li>
           </ul>
         </div>
         

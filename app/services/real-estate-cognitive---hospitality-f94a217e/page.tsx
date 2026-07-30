@@ -18,21 +18,20 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>User experience analytics with behavior tracking</li>
-            <li>Multi-region deployment with automatic failover</li>
-            <li>Energy optimization with consumption tracking</li>
-            <li>Network optimization with traffic analysis</li>
-            <li>Fraud detection with anomaly analysis</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>HIPAA ready with healthcare data protection</li>
+            <li>Audit trails with compliance reporting</li>
+            <li>Compliance monitoring with regulatory updates</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better compliance with automated audit trails</li>
-            <li>Reduced churn with proactive customer retention</li>
-            <li>Improved customer satisfaction with faster response times</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
             <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
           </ul>
         </div>
         

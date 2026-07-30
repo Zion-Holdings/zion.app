@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-compliance-tech-60f4af20",
+  "service_name": "Predictive compliance-tech",
+  "industry": "technology",
+  "lead_magnet": "AI Cost Calculator - See Your Potential Savings",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, TechStart Inc. is closing their Q3 deals this week. Want to see how Predictive compliance-tech can help {company} save $18.4M?",
+      "sequence_id": "seq-59",
+      "service_id": "predictive-compliance-tech-60f4af20"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Predictive compliance-tech delivers 52% in 6 months.",
+      "sequence_id": "seq-59",
+      "service_id": "predictive-compliance-tech-60f4af20"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-59",
+      "service_id": "predictive-compliance-tech-60f4af20"
+    }
+  ],
+  "hot_lead_score": 67,
+  "conversion_likelihood": "49%",
+  "timestamp": "2026-07-30T06:23:42.880935+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-insights-for-regtech-63515c96",
+  "service_name": "Cognitive Insights for REGTECH",
+  "industry": "regtech",
+  "lead_magnet": "Compliance Automation Efficiency Guide",
+  "metrics": {
+    "improvement": "53%",
+    "savings": "$15.9M",
+    "timeframe": "7 months",
+    "similar": "RegTech Solutions"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, RegTech Solutions is closing their Q3 deals this week. Want to see how Cognitive Insights for REGTECH can help {company} save $15.9M?",
+      "sequence_id": "seq-14",
+      "service_id": "cognitive-insights-for-regtech-63515c96"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Cognitive Insights for REGTECH delivers 53% in 7 months.",
+      "sequence_id": "seq-14",
+      "service_id": "cognitive-insights-for-regtech-63515c96"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-14",
+      "service_id": "cognitive-insights-for-regtech-63515c96"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "58%",
+  "timestamp": "2026-07-30T06:11:03.476934+00:00"
+}

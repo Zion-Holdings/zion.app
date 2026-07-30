@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-audit-predictor-991707e5",
+  "service_name": "Cognitive Audit Predictor",
+  "industry": "gaming",
+  "lead_magnet": "Player Retention Strategy Playbook",
+  "metrics": {
+    "improvement": "57%",
+    "savings": "$10.3M",
+    "timeframe": "5 months",
+    "similar": "GameStudio"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows gaming companies using Cognitive Audit Predictor see 57% improvement. Your current process?",
+      "sequence_id": "seq-35",
+      "service_id": "cognitive-audit-predictor-991707e5"
+    },
+    {
+      "step": 2,
+      "message": "Based on your gaming profile, Cognitive Audit Predictor could save {company} approximately $10.3M. Interested in details?",
+      "sequence_id": "seq-35",
+      "service_id": "cognitive-audit-predictor-991707e5"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Cognitive Audit Predictor is proven to deliver 57% results.",
+      "sequence_id": "seq-35",
+      "service_id": "cognitive-audit-predictor-991707e5"
+    }
+  ],
+  "hot_lead_score": 87,
+  "conversion_likelihood": "62%",
+  "timestamp": "2026-07-30T06:23:42.869578+00:00"
+}

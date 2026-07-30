@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-computer-vision-tech-edition-b1e9cd7b",
+  "service_name": "AI Computer Vision - Tech Edition",
+  "industry": "technology",
+  "lead_magnet": "AI Cost Calculator - See Your Potential Savings",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with technology neural?",
+      "sequence_id": "seq-37",
+      "service_id": "ai-computer-vision-tech-edition-b1e9cd7b"
+    },
+    {
+      "step": 2,
+      "message": "We've helped TechStart Inc. solve this exact problem with AI Computer Vision - Tech Edition. Achieved 52% in 6 months.",
+      "sequence_id": "seq-37",
+      "service_id": "ai-computer-vision-tech-edition-b1e9cd7b"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-37",
+      "service_id": "ai-computer-vision-tech-edition-b1e9cd7b"
+    }
+  ],
+  "hot_lead_score": 89,
+  "conversion_likelihood": "55%",
+  "timestamp": "2026-07-30T06:23:42.870419+00:00"
+}

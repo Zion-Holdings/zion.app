@@ -1,0 +1,35 @@
+{
+  "service_id": "enterprise-coordinator-platform-cybersecurity-a06f6807",
+  "service_name": "Enterprise Coordinator Platform - Cybersecurity",
+  "industry": "cybersecurity",
+  "lead_magnet": "Threat Detection ROI Calculator",
+  "metrics": {
+    "improvement": "61%",
+    "savings": "$19.7M",
+    "timeframe": "4 months",
+    "similar": "SecureTech"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, SecureTech is closing their Q3 deals this week. Want to see how Enterprise Coordinator Platform - Cybersecurity can help {company} save $19.7M?",
+      "sequence_id": "seq-84",
+      "service_id": "enterprise-coordinator-platform-cybersecurity-a06f6807"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Enterprise Coordinator Platform - Cybersecurity delivers 61% in 4 months.",
+      "sequence_id": "seq-84",
+      "service_id": "enterprise-coordinator-platform-cybersecurity-a06f6807"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-84",
+      "service_id": "enterprise-coordinator-platform-cybersecurity-a06f6807"
+    }
+  ],
+  "hot_lead_score": 82,
+  "conversion_likelihood": "41%",
+  "timestamp": "2026-07-30T06:11:03.580469+00:00"
+}

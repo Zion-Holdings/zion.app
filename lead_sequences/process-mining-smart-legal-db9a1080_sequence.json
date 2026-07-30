@@ -1,0 +1,35 @@
+{
+  "service_id": "process-mining-smart-legal-db9a1080",
+  "service_name": "Process Mining Smart - Legal",
+  "industry": "legal",
+  "lead_magnet": "Document Review Automation Checklist",
+  "metrics": {
+    "improvement": "39%",
+    "savings": "$3.1M",
+    "timeframe": "14 months",
+    "similar": "LawFirm"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, LawFirm is closing their Q3 deals this week. Want to see how Process Mining Smart - Legal can help {company} save $3.1M?",
+      "sequence_id": "seq-54",
+      "service_id": "process-mining-smart-legal-db9a1080"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Process Mining Smart - Legal delivers 39% in 14 months.",
+      "sequence_id": "seq-54",
+      "service_id": "process-mining-smart-legal-db9a1080"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-54",
+      "service_id": "process-mining-smart-legal-db9a1080"
+    }
+  ],
+  "hot_lead_score": 89,
+  "conversion_likelihood": "43%",
+  "timestamp": "2026-07-30T06:11:03.563570+00:00"
+}

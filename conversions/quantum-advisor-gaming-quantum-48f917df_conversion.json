@@ -1,0 +1,42 @@
+{
+  "service_id": "quantum-advisor-gaming-quantum-48f917df",
+  "service_name": "Quantum Advisor - Gaming Quantum",
+  "industry": "gaming",
+  "conversion_metrics": {
+    "open_rate": "71%",
+    "click_rate": "44%",
+    "reply_rate": "30%",
+    "close_rate": "17%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, {company} - we only have 2 spots left this quarter for Quantum Advisor - Gaming Quantum. 52% improvement, $18.4M savings. Book now: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-22",
+      "service_id": "quantum-advisor-gaming-quantum-48f917df",
+      "conversion_rate": "17%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "Final call - Q3 budget closes Friday. Quantum Advisor - Gaming Quantum delivers 52% in 6 months. Last chance: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-22",
+      "service_id": "quantum-advisor-gaming-quantum-48f917df",
+      "conversion_rate": "17%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "\u26a0\ufe0f URGENT: 52% ROI available until EOD. $18.4M savings with Quantum Advisor - Gaming Quantum. Book: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-22",
+      "service_id": "quantum-advisor-gaming-quantum-48f917df",
+      "conversion_rate": "17%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:25:39.671220+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-real-estate-fintech-edition-651926e5",
+  "service_name": "AI Real Estate - FINTECH Edition",
+  "industry": "fintech",
+  "lead_magnet": "Payment Processing Cost Reduction Report",
+  "metrics": {
+    "improvement": "59%",
+    "savings": "$28.4M",
+    "timeframe": "4 months",
+    "similar": "FinTech Startup"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, FinTech Startup just implemented AI Real Estate - FINTECH Edition last month - 59% improvement already. Thoughts?",
+      "sequence_id": "seq-73",
+      "service_id": "ai-real-estate-fintech-edition-651926e5"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: FinTech Startup saw $28.4M in savings. Your fintech peers are seeing similar results.",
+      "sequence_id": "seq-73",
+      "service_id": "ai-real-estate-fintech-edition-651926e5"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-73",
+      "service_id": "ai-real-estate-fintech-edition-651926e5"
+    }
+  ],
+  "hot_lead_score": 87,
+  "conversion_likelihood": "55%",
+  "timestamp": "2026-07-30T06:11:03.575467+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-employee-optimization-fda39215",
+  "service_name": "Autonomous Employee Optimization",
+  "industry": "real-estate",
+  "lead_magnet": "Property Management Automation Guide",
+  "metrics": {
+    "improvement": "46%",
+    "savings": "$13.4M",
+    "timeframe": "7 months",
+    "similar": "PropertyGroup"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, PropertyGroup just implemented Autonomous Employee Optimization last month - 46% improvement already. Thoughts?",
+      "sequence_id": "seq-13",
+      "service_id": "autonomous-employee-optimization-fda39215"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: PropertyGroup saw $13.4M in savings. Your real-estate peers are seeing similar results.",
+      "sequence_id": "seq-13",
+      "service_id": "autonomous-employee-optimization-fda39215"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-13",
+      "service_id": "autonomous-employee-optimization-fda39215"
+    }
+  ],
+  "hot_lead_score": 70,
+  "conversion_likelihood": "43%",
+  "timestamp": "2026-07-30T06:23:42.859408+00:00"
+}

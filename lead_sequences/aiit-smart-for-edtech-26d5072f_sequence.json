@@ -1,0 +1,35 @@
+{
+  "service_id": "aiit-smart-for-edtech-26d5072f",
+  "service_name": "AI/IT Smart for EDTECH",
+  "industry": "edtech",
+  "lead_magnet": "Learning Outcome Improvement Framework",
+  "metrics": {
+    "improvement": "46%",
+    "savings": "$6.2M",
+    "timeframe": "9 months",
+    "similar": "EduTech Solutions"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, EduTech Solutions is closing their Q3 deals this week. Want to see how AI/IT Smart for EDTECH can help {company} save $6.2M?",
+      "sequence_id": "seq-34",
+      "service_id": "aiit-smart-for-edtech-26d5072f"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. AI/IT Smart for EDTECH delivers 46% in 9 months.",
+      "sequence_id": "seq-34",
+      "service_id": "aiit-smart-for-edtech-26d5072f"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-34",
+      "service_id": "aiit-smart-for-edtech-26d5072f"
+    }
+  ],
+  "hot_lead_score": 90,
+  "conversion_likelihood": "48%",
+  "timestamp": "2026-07-30T06:11:03.496008+00:00"
+}

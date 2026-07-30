@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing insights-construction - Zion Tech Group",
-  description: "The future of construction is here with Self-Optimizing insights-construction. Powered by cutting-edge AI, this platform delivers sales forecasting like never b",
+  description: "The future of construction is here with Self-Optimizing insights-construction. Powered by cutting-edge AI, this platform delivers supply chain like never before",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-insights-construction-e26b90e8`
   }
@@ -13,25 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Self-Optimizing insights-construction</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Self-Optimizing insights-construction. Powered by cutting-edge AI, this platform delivers sales forecasting like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Self-Optimizing insights-construction. Powered by cutting-edge AI, this platform delivers supply chain like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Edge computing support for low-latency operations</li>
-            <li>Sales process optimization with pipeline management</li>
-            <li>GDPR compliance with data portability</li>
-            <li>Fraud detection with anomaly analysis</li>
+            <li>Compliance monitoring with regulatory updates</li>
+            <li>Serverless functions for cost-effective scaling</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Role-based access control with SSO integration</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>50% reduction in operational costs through automation</li>
             <li>Improved customer satisfaction with faster response times</li>
-            <li>Better compliance with automated audit trails</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

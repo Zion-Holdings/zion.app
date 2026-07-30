@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI DevOps - Construction Edition - Zion Tech Group",
-  description: "Next-generation construction solution: AI DevOps - Construction Edition. Combines security monitoring with adaptive intelligence for optimal results.",
+  description: "The future of construction is here with AI DevOps - Construction Edition. Powered by cutting-edge AI, this platform delivers supply chain like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-devops---construction-edition-c2abad1d`
   }
@@ -13,27 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI DevOps - Construction Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: AI DevOps - Construction Edition. Combines security monitoring with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of construction is here with AI DevOps - Construction Edition. Powered by cutting-edge AI, this platform delivers supply chain like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Customer service automation with chatbot integration</li>
-            <li>Sales process optimization with pipeline management</li>
-            <li>Multi-region deployment with automatic failover</li>
-            <li>Audit trails with compliance reporting</li>
-            <li>Microservices deployment with container orchestration</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Financial risk management with scenario analysis</li>
+            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Performance benchmarking against industry standards</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Increased revenue with optimized pricing strategies</li>
-            <li>Improved quality with automated testing and validation</li>
+            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Real-time insights and alerts for proactive management</li>
           </ul>
         </div>
         

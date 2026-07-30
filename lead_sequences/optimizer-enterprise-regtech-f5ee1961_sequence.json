@@ -1,0 +1,35 @@
+{
+  "service_id": "optimizer-enterprise-regtech-f5ee1961",
+  "service_name": "Optimizer Enterprise - REGTECH",
+  "industry": "regtech",
+  "lead_magnet": "Compliance Automation Efficiency Guide",
+  "metrics": {
+    "improvement": "53%",
+    "savings": "$15.9M",
+    "timeframe": "7 months",
+    "similar": "RegTech Solutions"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, RegTech Solutions just implemented Optimizer Enterprise - REGTECH last month - 53% improvement already. Thoughts?",
+      "sequence_id": "seq-3",
+      "service_id": "optimizer-enterprise-regtech-f5ee1961"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: RegTech Solutions saw $15.9M in savings. Your regtech peers are seeing similar results.",
+      "sequence_id": "seq-3",
+      "service_id": "optimizer-enterprise-regtech-f5ee1961"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-3",
+      "service_id": "optimizer-enterprise-regtech-f5ee1961"
+    }
+  ],
+  "hot_lead_score": 87,
+  "conversion_likelihood": "41%",
+  "timestamp": "2026-07-30T06:11:03.462742+00:00"
+}

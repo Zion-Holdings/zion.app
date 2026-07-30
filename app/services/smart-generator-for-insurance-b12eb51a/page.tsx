@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Generator for Insurance - Zion Tech Group",
-  description: "Unlock unprecedented growth with Smart Generator for Insurance. This autonomous system provides customer journey mapping with zero manual intervention needed.",
+  description: "Revolutionize insurance through intelligent automation. Our Smart Generator for Insurance leverages advanced machine learning to deliver image recognition at sc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-generator-for-insurance-b12eb51a`
   }
@@ -13,26 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart Generator for Insurance</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Smart Generator for Insurance. This autonomous system provides customer journey mapping with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize insurance through intelligent automation. Our Smart Generator for Insurance leverages advanced machine learning to deliver image recognition at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Manufacturing quality control with defect detection</li>
             <li>Alerting system with intelligent notifications</li>
-            <li>Energy optimization with consumption tracking</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Sentiment analysis with real-time monitoring</li>
-            <li>Multi-region deployment with automatic failover</li>
+            <li>SOC 2 certified with security controls</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved customer satisfaction with faster response times</li>
-            <li>Enhanced security posture with continuous monitoring</li>
-            <li>Reduced operational risks with predictive models</li>
-            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>Performance benchmarking against industry standards</li>
+            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

@@ -1,0 +1,35 @@
+{
+  "service_id": "marketing-automated-tech-11339d8f",
+  "service_name": "Marketing Automated - Tech",
+  "industry": "technology",
+  "lead_magnet": "AI Cost Calculator - See Your Potential Savings",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, TechStart Inc. just implemented Marketing Automated - Tech last month - 52% improvement already. Thoughts?",
+      "sequence_id": "seq-53",
+      "service_id": "marketing-automated-tech-11339d8f"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: TechStart Inc. saw $18.4M in savings. Your technology peers are seeing similar results.",
+      "sequence_id": "seq-53",
+      "service_id": "marketing-automated-tech-11339d8f"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-53",
+      "service_id": "marketing-automated-tech-11339d8f"
+    }
+  ],
+  "hot_lead_score": 84,
+  "conversion_likelihood": "60%",
+  "timestamp": "2026-07-30T06:23:42.877607+00:00"
+}

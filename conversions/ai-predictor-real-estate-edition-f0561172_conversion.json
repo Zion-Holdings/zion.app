@@ -1,0 +1,42 @@
+{
+  "service_id": "ai-predictor-real-estate-edition-f0561172",
+  "service_name": "AI Predictor - Real-Estate Edition",
+  "industry": "real-estate",
+  "conversion_metrics": {
+    "open_rate": "66%",
+    "click_rate": "39%",
+    "reply_rate": "24%",
+    "close_rate": "14%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, {company} - we only have 2 spots left this quarter for AI Predictor - Real-Estate Edition. 52% improvement, $18.4M savings. Book now: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-64",
+      "service_id": "ai-predictor-real-estate-edition-f0561172",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "Final call - Q3 budget closes Friday. AI Predictor - Real-Estate Edition delivers 52% in 6 months. Last chance: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-64",
+      "service_id": "ai-predictor-real-estate-edition-f0561172",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "\u26a0\ufe0f URGENT: 52% ROI available until EOD. $18.4M savings with AI Predictor - Real-Estate Edition. Book: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-64",
+      "service_id": "ai-predictor-real-estate-edition-f0561172",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:25:39.681717+00:00"
+}

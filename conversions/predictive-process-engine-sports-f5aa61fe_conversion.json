@@ -1,0 +1,42 @@
+{
+  "service_id": "predictive-process-engine-sports-f5aa61fe",
+  "service_name": "Predictive Process Engine - Sports",
+  "industry": "sports",
+  "conversion_metrics": {
+    "open_rate": "70%",
+    "click_rate": "43%",
+    "reply_rate": "29%",
+    "close_rate": "17%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, Industry Leader just signed - 52% improvement in 6 months. {company} next? https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-72",
+      "service_id": "predictive-process-engine-sports-f5aa61fe",
+      "conversion_rate": "17%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} + Industry Leader = $18.4M in annual savings. Predictive Process Engine - Sports case study attached. Let's talk: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-72",
+      "service_id": "predictive-process-engine-sports-f5aa61fe",
+      "conversion_rate": "17%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Results: Industry Leader \u2192 52% \u2192 $18.4M. Your turn? Book call: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-72",
+      "service_id": "predictive-process-engine-sports-f5aa61fe",
+      "conversion_rate": "17%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:25:39.683898+00:00"
+}

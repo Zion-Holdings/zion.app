@@ -1,0 +1,42 @@
+{
+  "service_id": "next-gen-enterprise-for-cybersecurity-6adc5f84",
+  "service_name": "Next-Gen Enterprise for Cybersecurity",
+  "industry": "cybersecurity",
+  "conversion_metrics": {
+    "open_rate": "73%",
+    "click_rate": "47%",
+    "reply_rate": "34%",
+    "close_rate": "20%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, {company} can save $18.4 million with Next-Gen Enterprise for Cybersecurity. Quick call? https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-21",
+      "service_id": "next-gen-enterprise-for-cybersecurity-6adc5f84",
+      "conversion_rate": "20%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "$18.4M in annual savings with Next-Gen Enterprise for Cybersecurity. 52% improvement in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-21",
+      "service_id": "next-gen-enterprise-for-cybersecurity-6adc5f84",
+      "conversion_rate": "20%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Save $18.4 million/year. Next-Gen Enterprise for Cybersecurity delivers 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-21",
+      "service_id": "next-gen-enterprise-for-cybersecurity-6adc5f84",
+      "conversion_rate": "20%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:25:39.670866+00:00"
+}

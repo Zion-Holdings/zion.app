@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-survey-manufacturing-b93e2c48",
+  "service_name": "Smart Survey Manufacturing",
+  "industry": "automotive",
+  "lead_magnet": "Supply Chain Efficiency Audit",
+  "metrics": {
+    "improvement": "50%",
+    "savings": "$14.1M",
+    "timeframe": "6 months",
+    "similar": "AutoMakers"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, AutoMakers is closing their Q3 deals this week. Want to see how Smart Survey Manufacturing can help {company} save $14.1M?",
+      "sequence_id": "seq-74",
+      "service_id": "smart-survey-manufacturing-b93e2c48"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Smart Survey Manufacturing delivers 50% in 6 months.",
+      "sequence_id": "seq-74",
+      "service_id": "smart-survey-manufacturing-b93e2c48"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-74",
+      "service_id": "smart-survey-manufacturing-b93e2c48"
+    }
+  ],
+  "hot_lead_score": 69,
+  "conversion_likelihood": "51%",
+  "timestamp": "2026-07-30T06:23:42.886682+00:00"
+}

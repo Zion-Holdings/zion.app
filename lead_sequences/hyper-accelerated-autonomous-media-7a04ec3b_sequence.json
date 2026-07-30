@@ -1,0 +1,35 @@
+{
+  "service_id": "hyper-accelerated-autonomous-media-7a04ec3b",
+  "service_name": "Hyper-Accelerated Autonomous - Media",
+  "industry": "media",
+  "lead_magnet": "Content Performance Optimization Guide",
+  "metrics": {
+    "improvement": "43%",
+    "savings": "$6.8M",
+    "timeframe": "9 months",
+    "similar": "MediaHouse"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows media companies using Hyper-Accelerated Autonomous - Media see 43% improvement. Your current process?",
+      "sequence_id": "seq-70",
+      "service_id": "hyper-accelerated-autonomous-media-7a04ec3b"
+    },
+    {
+      "step": 2,
+      "message": "Based on your media profile, Hyper-Accelerated Autonomous - Media could save {company} approximately $6.8M. Interested in details?",
+      "sequence_id": "seq-70",
+      "service_id": "hyper-accelerated-autonomous-media-7a04ec3b"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Hyper-Accelerated Autonomous - Media is proven to deliver 43% results.",
+      "sequence_id": "seq-70",
+      "service_id": "hyper-accelerated-autonomous-media-7a04ec3b"
+    }
+  ],
+  "hot_lead_score": 90,
+  "conversion_likelihood": "49%",
+  "timestamp": "2026-07-30T06:11:03.573642+00:00"
+}

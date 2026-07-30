@@ -18,20 +18,22 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Fraud detection with anomaly analysis</li>
             <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Customer service automation with chatbot integration</li>
-            <li>Real-time processing with streaming analytics</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Document processing with OCR and NLP</li>
+            <li>Machine learning integration with automatic model training</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced human error by 95% with automated processes</li>
-            <li>Performance benchmarking against industry standards</li>
-            <li>3x faster decision making with real-time insights</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>
         

@@ -18,22 +18,21 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Sales process optimization with pipeline management</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Fraud detection with anomaly analysis</li>
+            <li>Open-source friendly with plugin architecture</li>
             <li>Audit trails with compliance reporting</li>
-            <li>User experience analytics with behavior tracking</li>
-            <li>Role-based access control with SSO integration</li>
-            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Real-time insights and alerts for proactive management</li>
+            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
             <li>50% reduction in operational costs through automation</li>
-            <li>Cost optimization recommendations with savings analysis</li>
-            <li>Scalable to millions of transactions per second</li>
-            <li>Increased revenue with optimized pricing strategies</li>
+            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

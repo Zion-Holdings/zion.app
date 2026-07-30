@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Advisor for Transportation - Zion Tech Group",
-  description: "Optimize your transportation workflows with Neural Advisor for Transportation. This intelligent platform delivers forecast accuracy through advanced automation and AI.",
+  description: "Optimize your transportation workflows with Neural Advisor for Transportation. This intelligent platform delivers forecast accuracy through advanced automation ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-advisor-for-transportation-d4e7088c`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

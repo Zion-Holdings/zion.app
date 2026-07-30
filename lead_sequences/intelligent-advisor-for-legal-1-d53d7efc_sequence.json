@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-advisor-for-legal-1-d53d7efc",
+  "service_name": "Intelligent Advisor for Legal #1",
+  "industry": "legal",
+  "lead_magnet": "Document Review Automation Checklist",
+  "metrics": {
+    "improvement": "39%",
+    "savings": "$3.1M",
+    "timeframe": "14 months",
+    "similar": "LawFirm"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, LawFirm just implemented Intelligent Advisor for Legal #1 last month - 39% improvement already. Thoughts?",
+      "sequence_id": "seq-48",
+      "service_id": "intelligent-advisor-for-legal-1-d53d7efc"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: LawFirm saw $3.1M in savings. Your legal peers are seeing similar results.",
+      "sequence_id": "seq-48",
+      "service_id": "intelligent-advisor-for-legal-1-d53d7efc"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-48",
+      "service_id": "intelligent-advisor-for-legal-1-d53d7efc"
+    }
+  ],
+  "hot_lead_score": 84,
+  "conversion_likelihood": "65%",
+  "timestamp": "2026-07-30T06:23:42.875592+00:00"
+}

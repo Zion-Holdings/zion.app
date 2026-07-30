@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-intelligence-legal-04997365",
+  "service_name": "Autonomous intelligence-legal",
+  "industry": "legal",
+  "lead_magnet": "Document Review Automation Checklist",
+  "metrics": {
+    "improvement": "39%",
+    "savings": "$3.1M",
+    "timeframe": "14 months",
+    "similar": "LawFirm"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with legal automation?",
+      "sequence_id": "seq-72",
+      "service_id": "autonomous-intelligence-legal-04997365"
+    },
+    {
+      "step": 2,
+      "message": "We've helped LawFirm solve this exact problem with Autonomous intelligence-legal. Achieved 39% in 14 months.",
+      "sequence_id": "seq-72",
+      "service_id": "autonomous-intelligence-legal-04997365"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-72",
+      "service_id": "autonomous-intelligence-legal-04997365"
+    }
+  ],
+  "hot_lead_score": 69,
+  "conversion_likelihood": "55%",
+  "timestamp": "2026-07-30T06:23:42.885857+00:00"
+}

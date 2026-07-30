@@ -18,10 +18,10 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Machine learning integration with automatic model training</li>
-            <li>Content generation with plagiarism checks</li>
-            <li>Image recognition with computer vision</li>
+            <li>Custom integrations with webhook support</li>
+            <li>Code optimization with performance profiling</li>
+            <li>SOC 2 certified with security controls</li>
+            <li>Sales process optimization with pipeline management</li>
             <li>Document processing with OCR and NLP</li>
           </ul>
         </div>
@@ -29,10 +29,10 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced human error by 95% with automated processes</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Cost optimization recommendations with savings analysis</li>
-            <li>Real-time insights and alerts for proactive management</li>
+            <li>Enhanced security with continuous threat monitoring</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
           </ul>
         </div>
         

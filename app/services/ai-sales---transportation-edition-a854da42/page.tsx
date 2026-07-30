@@ -18,19 +18,20 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Multi-region deployment with automatic failover</li>
-            <li>Multi-language support with localization</li>
-            <li>Machine learning integration with automatic model training</li>
-            <li>Data encryption at rest and in transit</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>Serverless functions for cost-effective scaling</li>
+            <li>Audit trails with compliance reporting</li>
+            <li>Microservices deployment with container orchestration</li>
+            <li>Version control with rollback capabilities</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Dynamic resource allocation based on demand patterns</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Better risk management with predictive analytics</li>
+            <li>Improved quality with automated testing and validation</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>24/7 automated operations without human intervention</li>
           </ul>
         </div>
         

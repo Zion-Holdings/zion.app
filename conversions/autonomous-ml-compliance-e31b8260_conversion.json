@@ -1,0 +1,42 @@
+{
+  "service_id": "autonomous-ml-compliance-e31b8260",
+  "service_name": "Autonomous ML Compliance",
+  "industry": "fintech",
+  "conversion_metrics": {
+    "open_rate": "74%",
+    "click_rate": "49%",
+    "reply_rate": "36%",
+    "close_rate": "23%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest fintech challenge? Autonomous ML Compliance solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-75",
+      "service_id": "autonomous-ml-compliance-e31b8260",
+      "conversion_rate": "23%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is nlp holding you back? Autonomous ML Compliance delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-75",
+      "service_id": "autonomous-ml-compliance-e31b8260",
+      "conversion_rate": "23%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop nlp headaches. Autonomous ML Compliance = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-75",
+      "service_id": "autonomous-ml-compliance-e31b8260",
+      "conversion_rate": "23%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:25:39.684806+00:00"
+}

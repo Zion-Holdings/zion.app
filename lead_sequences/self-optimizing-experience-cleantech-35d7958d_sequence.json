@@ -1,0 +1,35 @@
+{
+  "service_id": "self-optimizing-experience-cleantech-35d7958d",
+  "service_name": "Self-Optimizing experience-cleantech",
+  "industry": "cleantech",
+  "lead_magnet": "Energy Consumption Reduction Report",
+  "metrics": {
+    "improvement": "55%",
+    "savings": "$22.1M",
+    "timeframe": "5 months",
+    "similar": "CleanTech Inc"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, CleanTech Inc is closing their Q3 deals this week. Want to see how Self-Optimizing experience-cleantech can help {company} save $22.1M?",
+      "sequence_id": "seq-94",
+      "service_id": "self-optimizing-experience-cleantech-35d7958d"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Self-Optimizing experience-cleantech delivers 55% in 5 months.",
+      "sequence_id": "seq-94",
+      "service_id": "self-optimizing-experience-cleantech-35d7958d"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-94",
+      "service_id": "self-optimizing-experience-cleantech-35d7958d"
+    }
+  ],
+  "hot_lead_score": 95,
+  "conversion_likelihood": "46%",
+  "timestamp": "2026-07-30T06:11:03.584782+00:00"
+}

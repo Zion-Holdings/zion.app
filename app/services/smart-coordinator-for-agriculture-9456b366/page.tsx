@@ -19,21 +19,20 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>SOC 2 certified with security controls</li>
-            <li>Multi-language support with localization</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Real-time processing with streaming analytics</li>
             <li>Audit trails with compliance reporting</li>
-            <li>Financial risk management with scenario analysis</li>
+            <li>Auto-scaling capabilities with predictive scaling</li>
+            <li>Healthcare data analytics with patient insights</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved customer satisfaction with faster response times</li>
-            <li>Enhanced security with continuous threat monitoring</li>
-            <li>3x faster decision making with real-time insights</li>
-            <li>Improved quality with automated testing and validation</li>
+            <li>Reduced churn with proactive customer retention</li>
             <li>Reduced human error by 95% with automated processes</li>
+            <li>Performance benchmarking against industry standards</li>
+            <li>Faster time-to-market with accelerated development</li>
           </ul>
         </div>
         

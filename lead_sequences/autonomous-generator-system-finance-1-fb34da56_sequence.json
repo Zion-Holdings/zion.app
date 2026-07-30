@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-generator-system-finance-1-fb34da56",
+  "service_name": "Autonomous Generator System - Finance #1",
+  "industry": "finance",
+  "lead_magnet": "Regulatory Compliance Automation Guide",
+  "metrics": {
+    "improvement": "58%",
+    "savings": "$24.1M",
+    "timeframe": "5 months",
+    "similar": "Capital Group"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, Capital Group just implemented Autonomous Generator System - Finance #1 last month - 58% improvement already. Thoughts?",
+      "sequence_id": "seq-63",
+      "service_id": "autonomous-generator-system-finance-1-fb34da56"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: Capital Group saw $24.1M in savings. Your finance peers are seeing similar results.",
+      "sequence_id": "seq-63",
+      "service_id": "autonomous-generator-system-finance-1-fb34da56"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-63",
+      "service_id": "autonomous-generator-system-finance-1-fb34da56"
+    }
+  ],
+  "hot_lead_score": 66,
+  "conversion_likelihood": "59%",
+  "timestamp": "2026-07-30T06:23:42.882818+00:00"
+}

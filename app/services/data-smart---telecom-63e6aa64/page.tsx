@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Data Smart - Telecom - Zion Tech Group",
-  description: "Unlock unprecedented growth with Data Smart - Telecom. This autonomous system provides financial risk management with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Data Smart - Telecom. This autonomous system provides maintenance scheduling with zero manual intervention needed.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/data-smart---telecom-63e6aa64`
   }
@@ -13,26 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Data Smart - Telecom</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Data Smart - Telecom. This autonomous system provides financial risk management with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Data Smart - Telecom. This autonomous system provides maintenance scheduling with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Healthcare data analytics with patient insights</li>
-            <li>Performance dashboards with real-time metrics</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
-            <li>HIPAA ready with healthcare data protection</li>
-            <li>Version control with rollback capabilities</li>
+            <li>Inventory prediction with demand forecasting</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Maintenance scheduling with predictive analytics</li>
+            <li>Data encryption at rest and in transit</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Zero manual intervention required for routine tasks</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>Seamless integration with existing systems and workflows</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
             <li>Faster time-to-market with accelerated development</li>
-            <li>24/7 automated operations without human intervention</li>
           </ul>
         </div>
         

@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-security-platform-gaming-7b469c00",
+  "service_name": "Smart Security Platform - Gaming",
+  "industry": "gaming",
+  "lead_magnet": "Player Retention Strategy Playbook",
+  "metrics": {
+    "improvement": "57%",
+    "savings": "$10.3M",
+    "timeframe": "5 months",
+    "similar": "GameStudio"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with gaming customer service?",
+      "sequence_id": "seq-2",
+      "service_id": "smart-security-platform-gaming-7b469c00"
+    },
+    {
+      "step": 2,
+      "message": "We've helped GameStudio solve this exact problem with Smart Security Platform - Gaming. Achieved 57% in 5 months.",
+      "sequence_id": "seq-2",
+      "service_id": "smart-security-platform-gaming-7b469c00"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-2",
+      "service_id": "smart-security-platform-gaming-7b469c00"
+    }
+  ],
+  "hot_lead_score": 78,
+  "conversion_likelihood": "74%",
+  "timestamp": "2026-07-30T06:23:42.849868+00:00"
+}

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Analyzer AI - Construction - Zion Tech Group",
-  description: "Unlock unprecedented growth with Analyzer AI - Construction. This autonomous system provides customer insights with zero manual intervention needed.",
+  description: "The future of construction is here with Analyzer AI - Construction. Powered by cutting-edge AI, this platform delivers market intelligence like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/analyzer-ai---construction-ff309a01`
   }
@@ -13,15 +13,15 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Analyzer AI - Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Analyzer AI - Construction. This autonomous system provides customer insights with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Analyzer AI - Construction. Powered by cutting-edge AI, this platform delivers market intelligence like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Language processing with sentiment analysis</li>
-            <li>Performance dashboards with real-time metrics</li>
-            <li>Edge computing support for low-latency operations</li>
-            <li>Multi-region deployment with automatic failover</li>
+            <li>Manufacturing quality control with defect detection</li>
+            <li>Multi-language support with localization</li>
+            <li>Image recognition with computer vision</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
             <li>Audit trails with compliance reporting</li>
           </ul>
         </div>
@@ -29,11 +29,9 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved forecast accuracy with ML models</li>
-            <li>Enhanced decision making with data-driven insights</li>
-            <li>Enhanced security posture with continuous monitoring</li>
-            <li>Better supply chain visibility with tracking</li>
-            <li>Scalable to millions of transactions per second</li>
+            <li>50% reduction in operational costs through automation</li>
+            <li>Improved quality with automated testing and validation</li>
+            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

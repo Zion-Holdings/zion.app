@@ -1,0 +1,42 @@
+{
+  "service_id": "self-optimizing-coordinator-hospitality-82fbecfa",
+  "service_name": "Self-Optimizing coordinator-hospitality",
+  "industry": "hospitality",
+  "conversion_metrics": {
+    "open_rate": "63%",
+    "click_rate": "36%",
+    "reply_rate": "23%",
+    "close_rate": "13%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest hospitality challenge? Self-Optimizing coordinator-hospitality solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-82",
+      "service_id": "self-optimizing-coordinator-hospitality-82fbecfa",
+      "conversion_rate": "13%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is process mining holding you back? Self-Optimizing coordinator-hospitality delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-82",
+      "service_id": "self-optimizing-coordinator-hospitality-82fbecfa",
+      "conversion_rate": "13%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop process mining headaches. Self-Optimizing coordinator-hospitality = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-82",
+      "service_id": "self-optimizing-coordinator-hospitality-82fbecfa",
+      "conversion_rate": "13%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:25:39.686884+00:00"
+}

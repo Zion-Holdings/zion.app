@@ -1,0 +1,35 @@
+{
+  "service_id": "enterprise-process-mining-platform-martech-d8dbe10b",
+  "service_name": "Enterprise Process Mining Platform - MARTECH",
+  "industry": "martech",
+  "lead_magnet": "Marketing Automation ROI Calculator",
+  "metrics": {
+    "improvement": "50%",
+    "savings": "$11.6M",
+    "timeframe": "6 months",
+    "similar": "MarketingPro"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve martech. Our AI platform helped MarketingPro achieve 50% improvement in 6 months. Quick 5-minute call?",
+      "sequence_id": "seq-31",
+      "service_id": "enterprise-process-mining-platform-martech-d8dbe10b"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Enterprise Process Mining Platform - MARTECH typically saves $11.6M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-31",
+      "service_id": "enterprise-process-mining-platform-martech-d8dbe10b"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 50% results. If not interested, just let me know!",
+      "sequence_id": "seq-31",
+      "service_id": "enterprise-process-mining-platform-martech-d8dbe10b"
+    }
+  ],
+  "hot_lead_score": 70,
+  "conversion_likelihood": "59%",
+  "timestamp": "2026-07-30T06:11:03.493632+00:00"
+}

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "System AI - Media - Zion Tech Group",
-  description: "The future of media is here with System AI - Media. Powered by cutting-edge AI, this platform delivers compliance monitoring like never before.",
+  description: "Next-generation media solution: System AI - Media. Combines quality control with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/system-ai---media-dbf68468`
   }
@@ -13,27 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">System AI - Media</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of media is here with System AI - Media. Powered by cutting-edge AI, this platform delivers compliance monitoring like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation media solution: System AI - Media. Combines quality control with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Language processing with sentiment analysis</li>
-            <li>Image recognition with computer vision</li>
-            <li>Manufacturing quality control with defect detection</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Multi-language support with localization</li>
+            <li>Fraud detection with anomaly analysis</li>
             <li>Maintenance scheduling with predictive analytics</li>
-            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Increased revenue with optimized pricing strategies</li>
             <li>Improved quality with automated testing and validation</li>
-            <li>Better risk management with predictive analytics</li>
-            <li>Performance benchmarking against industry standards</li>
-            <li>50% reduction in operational costs through automation</li>
-            <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>
         

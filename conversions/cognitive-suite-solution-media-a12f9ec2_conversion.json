@@ -1,0 +1,42 @@
+{
+  "service_id": "cognitive-suite-solution-media-a12f9ec2",
+  "service_name": "Cognitive Suite Solution - Media",
+  "industry": "media",
+  "conversion_metrics": {
+    "open_rate": "64%",
+    "click_rate": "37%",
+    "reply_rate": "24%",
+    "close_rate": "14%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest media challenge? Cognitive Suite Solution - Media solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-96",
+      "service_id": "cognitive-suite-solution-media-a12f9ec2",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is predictor holding you back? Cognitive Suite Solution - Media delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-96",
+      "service_id": "cognitive-suite-solution-media-a12f9ec2",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop predictor headaches. Cognitive Suite Solution - Media = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-96",
+      "service_id": "cognitive-suite-solution-media-a12f9ec2",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:22:41.614436+00:00"
+}

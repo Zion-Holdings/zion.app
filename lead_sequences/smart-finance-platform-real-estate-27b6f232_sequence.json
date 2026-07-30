@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-finance-platform-real-estate-27b6f232",
+  "service_name": "Smart Finance Platform - Real-Estate",
+  "industry": "real-estate",
+  "lead_magnet": "Property Management Automation Guide",
+  "metrics": {
+    "improvement": "46%",
+    "savings": "$13.4M",
+    "timeframe": "7 months",
+    "similar": "PropertyGroup"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve real-estate. Our AI platform helped PropertyGroup achieve 46% improvement in 7 months. Quick 5-minute call?",
+      "sequence_id": "seq-91",
+      "service_id": "smart-finance-platform-real-estate-27b6f232"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Smart Finance Platform - Real-Estate typically saves $13.4M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-91",
+      "service_id": "smart-finance-platform-real-estate-27b6f232"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 46% results. If not interested, just let me know!",
+      "sequence_id": "seq-91",
+      "service_id": "smart-finance-platform-real-estate-27b6f232"
+    }
+  ],
+  "hot_lead_score": 65,
+  "conversion_likelihood": "72%",
+  "timestamp": "2026-07-30T06:23:42.893971+00:00"
+}

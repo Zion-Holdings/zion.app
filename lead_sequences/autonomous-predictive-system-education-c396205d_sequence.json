@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-predictive-system-education-c396205d",
+  "service_name": "Autonomous Predictive System - Education",
+  "industry": "education",
+  "lead_magnet": "Student Success Automation Framework",
+  "metrics": {
+    "improvement": "41%",
+    "savings": "$5.4M",
+    "timeframe": "11 months",
+    "similar": "EduCore"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve education. Our AI platform helped EduCore achieve 41% improvement in 11 months. Quick 5-minute call?",
+      "sequence_id": "seq-11",
+      "service_id": "autonomous-predictive-system-education-c396205d"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Autonomous Predictive System - Education typically saves $5.4M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-11",
+      "service_id": "autonomous-predictive-system-education-c396205d"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 41% results. If not interested, just let me know!",
+      "sequence_id": "seq-11",
+      "service_id": "autonomous-predictive-system-education-c396205d"
+    }
+  ],
+  "hot_lead_score": 78,
+  "conversion_likelihood": "69%",
+  "timestamp": "2026-07-30T06:23:42.857941+00:00"
+}

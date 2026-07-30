@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-data-science-system-sports-0312aa3f",
+  "service_name": "Autonomous Data Science System - Sports",
+  "industry": "sports",
+  "lead_magnet": "Fan Engagement Growth Framework",
+  "metrics": {
+    "improvement": "55%",
+    "savings": "$8.9M",
+    "timeframe": "4 months",
+    "similar": "SportsTeam"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve sports. Our AI platform helped SportsTeam achieve 55% improvement in 4 months. Quick 5-minute call?",
+      "sequence_id": "seq-91",
+      "service_id": "autonomous-data-science-system-sports-0312aa3f"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Autonomous Data Science System - Sports typically saves $8.9M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-91",
+      "service_id": "autonomous-data-science-system-sports-0312aa3f"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 55% results. If not interested, just let me know!",
+      "sequence_id": "seq-91",
+      "service_id": "autonomous-data-science-system-sports-0312aa3f"
+    }
+  ],
+  "hot_lead_score": 75,
+  "conversion_likelihood": "58%",
+  "timestamp": "2026-07-30T06:11:03.583280+00:00"
+}

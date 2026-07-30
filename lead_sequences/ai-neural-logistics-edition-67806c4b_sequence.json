@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-neural-logistics-edition-67806c4b",
+  "service_name": "AI Neural - Logistics Edition",
+  "industry": "logistics",
+  "lead_magnet": "Route Optimization Savings Estimator",
+  "metrics": {
+    "improvement": "49%",
+    "savings": "$11.2M",
+    "timeframe": "6 months",
+    "similar": "LogisticsPlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, LogisticsPlus just implemented AI Neural - Logistics Edition last month - 49% improvement already. Thoughts?",
+      "sequence_id": "seq-78",
+      "service_id": "ai-neural-logistics-edition-67806c4b"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: LogisticsPlus saw $11.2M in savings. Your logistics peers are seeing similar results.",
+      "sequence_id": "seq-78",
+      "service_id": "ai-neural-logistics-edition-67806c4b"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-78",
+      "service_id": "ai-neural-logistics-edition-67806c4b"
+    }
+  ],
+  "hot_lead_score": 72,
+  "conversion_likelihood": "48%",
+  "timestamp": "2026-07-30T06:23:42.888629+00:00"
+}

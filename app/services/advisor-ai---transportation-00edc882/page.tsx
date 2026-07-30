@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Advisor AI - Transportation - Zion Tech Group",
-  description: "Unlock unprecedented growth with Advisor AI - Transportation. This autonomous system provides user experience with zero manual intervention needed.",
+  description: "Next-generation transportation solution: Advisor AI - Transportation. Combines logistics route optimization with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/advisor-ai---transportation-00edc882`
   }
@@ -13,26 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Advisor AI - Transportation</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Advisor AI - Transportation. This autonomous system provides user experience with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation transportation solution: Advisor AI - Transportation. Combines logistics route optimization with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Audit trails with compliance reporting</li>
+            <li>Fraud detection with anomaly analysis</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Serverless functions for cost-effective scaling</li>
+            <li>Machine learning integration with automatic model training</li>
             <li>Multi-region deployment with automatic failover</li>
-            <li>Energy optimization with consumption tracking</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better compliance with automated audit trails</li>
-            <li>Enhanced security with continuous threat monitoring</li>
-            <li>Improved quality with automated testing and validation</li>
-            <li>Zero manual intervention required for routine tasks</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
           </ul>
         </div>
         

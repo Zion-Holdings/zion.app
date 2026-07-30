@@ -1,0 +1,35 @@
+{
+  "service_id": "enterprise-startup-platform-regtech-37590778",
+  "service_name": "Enterprise Startup Platform - REGTECH",
+  "industry": "regtech",
+  "lead_magnet": "Compliance Automation Efficiency Guide",
+  "metrics": {
+    "improvement": "53%",
+    "savings": "$15.9M",
+    "timeframe": "7 months",
+    "similar": "RegTech Solutions"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows regtech companies using Enterprise Startup Platform - REGTECH see 53% improvement. Your current process?",
+      "sequence_id": "seq-60",
+      "service_id": "enterprise-startup-platform-regtech-37590778"
+    },
+    {
+      "step": 2,
+      "message": "Based on your regtech profile, Enterprise Startup Platform - REGTECH could save {company} approximately $15.9M. Interested in details?",
+      "sequence_id": "seq-60",
+      "service_id": "enterprise-startup-platform-regtech-37590778"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Enterprise Startup Platform - REGTECH is proven to deliver 53% results.",
+      "sequence_id": "seq-60",
+      "service_id": "enterprise-startup-platform-regtech-37590778"
+    }
+  ],
+  "hot_lead_score": 71,
+  "conversion_likelihood": "63%",
+  "timestamp": "2026-07-30T06:11:03.568044+00:00"
+}

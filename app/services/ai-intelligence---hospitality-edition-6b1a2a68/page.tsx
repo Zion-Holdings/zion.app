@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Intelligence - Hospitality Edition - Zion Tech Group",
-  description: "The future of hospitality is here with AI Intelligence - Hospitality Edition. Powered by cutting-edge AI, this platform delivers supply chain like never before.",
+  description: "Transform your hospitality operations with our AI Intelligence - Hospitality Edition. This AI-driven solution automates sales forecasting with unprecedented acc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-intelligence---hospitality-edition-6b1a2a68`
   }
@@ -13,25 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Intelligence - Hospitality Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of hospitality is here with AI Intelligence - Hospitality Edition. Powered by cutting-edge AI, this platform delivers supply chain like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your hospitality operations with our AI Intelligence - Hospitality Edition. This AI-driven solution automates sales forecasting with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Serverless functions for cost-effective scaling</li>
-            <li>Custom integrations with webhook support</li>
-            <li>Language processing with sentiment analysis</li>
-            <li>SOC 2 certified with security controls</li>
+            <li>Multi-language support with localization</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Role-based access control with SSO integration</li>
+            <li>Microservices deployment with container orchestration</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>50% reduction in operational costs through automation</li>
+            <li>3x faster decision making with real-time insights</li>
             <li>Improved customer satisfaction with faster response times</li>
+            <li>Performance benchmarking against industry standards</li>
+            <li>Improved quality with automated testing and validation</li>
           </ul>
         </div>
         

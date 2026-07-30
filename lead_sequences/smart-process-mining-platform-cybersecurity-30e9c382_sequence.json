@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-process-mining-platform-cybersecurity-30e9c382",
+  "service_name": "Smart Process Mining Platform - Cybersecurity",
+  "industry": "cybersecurity",
+  "lead_magnet": "Threat Detection ROI Calculator",
+  "metrics": {
+    "improvement": "61%",
+    "savings": "$19.7M",
+    "timeframe": "4 months",
+    "similar": "SecureTech"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, SecureTech just implemented Smart Process Mining Platform - Cybersecurity last month - 61% improvement already. Thoughts?",
+      "sequence_id": "seq-8",
+      "service_id": "smart-process-mining-platform-cybersecurity-30e9c382"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: SecureTech saw $19.7M in savings. Your cybersecurity peers are seeing similar results.",
+      "sequence_id": "seq-8",
+      "service_id": "smart-process-mining-platform-cybersecurity-30e9c382"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-8",
+      "service_id": "smart-process-mining-platform-cybersecurity-30e9c382"
+    }
+  ],
+  "hot_lead_score": 91,
+  "conversion_likelihood": "71%",
+  "timestamp": "2026-07-30T06:11:03.468681+00:00"
+}

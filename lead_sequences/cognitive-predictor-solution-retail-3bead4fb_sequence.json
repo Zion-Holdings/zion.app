@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-predictor-solution-retail-3bead4fb",
+  "service_name": "Cognitive Predictor Solution - Retail",
+  "industry": "retail",
+  "lead_magnet": "Customer Retention Playbook",
+  "metrics": {
+    "improvement": "44%",
+    "savings": "$9.3M",
+    "timeframe": "7 months",
+    "similar": "RetailPro"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows retail companies using Cognitive Predictor Solution - Retail see 44% improvement. Your current process?",
+      "sequence_id": "seq-5",
+      "service_id": "cognitive-predictor-solution-retail-3bead4fb"
+    },
+    {
+      "step": 2,
+      "message": "Based on your retail profile, Cognitive Predictor Solution - Retail could save {company} approximately $9.3M. Interested in details?",
+      "sequence_id": "seq-5",
+      "service_id": "cognitive-predictor-solution-retail-3bead4fb"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Cognitive Predictor Solution - Retail is proven to deliver 44% results.",
+      "sequence_id": "seq-5",
+      "service_id": "cognitive-predictor-solution-retail-3bead4fb"
+    }
+  ],
+  "hot_lead_score": 78,
+  "conversion_likelihood": "65%",
+  "timestamp": "2026-07-30T06:23:42.853369+00:00"
+}

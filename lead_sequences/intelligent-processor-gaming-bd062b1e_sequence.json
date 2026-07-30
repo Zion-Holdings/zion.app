@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-processor-gaming-bd062b1e",
+  "service_name": "Intelligent processor-gaming",
+  "industry": "gaming",
+  "lead_magnet": "Player Retention Strategy Playbook",
+  "metrics": {
+    "improvement": "57%",
+    "savings": "$10.3M",
+    "timeframe": "5 months",
+    "similar": "GameStudio"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows gaming companies using Intelligent processor-gaming see 57% improvement. Your current process?",
+      "sequence_id": "seq-30",
+      "service_id": "intelligent-processor-gaming-bd062b1e"
+    },
+    {
+      "step": 2,
+      "message": "Based on your gaming profile, Intelligent processor-gaming could save {company} approximately $10.3M. Interested in details?",
+      "sequence_id": "seq-30",
+      "service_id": "intelligent-processor-gaming-bd062b1e"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Intelligent processor-gaming is proven to deliver 57% results.",
+      "sequence_id": "seq-30",
+      "service_id": "intelligent-processor-gaming-bd062b1e"
+    }
+  ],
+  "hot_lead_score": 93,
+  "conversion_likelihood": "50%",
+  "timestamp": "2026-07-30T06:23:42.867382+00:00"
+}

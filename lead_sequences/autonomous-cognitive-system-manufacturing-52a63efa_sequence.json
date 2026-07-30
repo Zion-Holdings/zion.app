@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-cognitive-system-manufacturing-52a63efa",
+  "service_name": "Autonomous Cognitive System - Manufacturing",
+  "industry": "manufacturing",
+  "lead_magnet": "Predictive Maintenance ROI Calculator",
+  "metrics": {
+    "improvement": "51%",
+    "savings": "$15.8M",
+    "timeframe": "8 months",
+    "similar": "ManufactureCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, ManufactureCo just implemented Autonomous Cognitive System - Manufacturing last month - 51% improvement already. Thoughts?",
+      "sequence_id": "seq-68",
+      "service_id": "autonomous-cognitive-system-manufacturing-52a63efa"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: ManufactureCo saw $15.8M in savings. Your manufacturing peers are seeing similar results.",
+      "sequence_id": "seq-68",
+      "service_id": "autonomous-cognitive-system-manufacturing-52a63efa"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-68",
+      "service_id": "autonomous-cognitive-system-manufacturing-52a63efa"
+    }
+  ],
+  "hot_lead_score": 77,
+  "conversion_likelihood": "50%",
+  "timestamp": "2026-07-30T06:23:42.884375+00:00"
+}

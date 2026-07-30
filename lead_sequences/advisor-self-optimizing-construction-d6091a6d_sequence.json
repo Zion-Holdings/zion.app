@@ -1,0 +1,35 @@
+{
+  "service_id": "advisor-self-optimizing-construction-d6091a6d",
+  "service_name": "Advisor Self-Optimizing - Construction",
+  "industry": "construction",
+  "lead_magnet": "Project Delivery Acceleration Guide",
+  "metrics": {
+    "improvement": "45%",
+    "savings": "$8.7M",
+    "timeframe": "8 months",
+    "similar": "BuildCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, BuildCo is closing their Q3 deals this week. Want to see how Advisor Self-Optimizing - Construction can help {company} save $8.7M?",
+      "sequence_id": "seq-29",
+      "service_id": "advisor-self-optimizing-construction-d6091a6d"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Advisor Self-Optimizing - Construction delivers 45% in 8 months.",
+      "sequence_id": "seq-29",
+      "service_id": "advisor-self-optimizing-construction-d6091a6d"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-29",
+      "service_id": "advisor-self-optimizing-construction-d6091a6d"
+    }
+  ],
+  "hot_lead_score": 77,
+  "conversion_likelihood": "42%",
+  "timestamp": "2026-07-30T06:23:42.867020+00:00"
+}

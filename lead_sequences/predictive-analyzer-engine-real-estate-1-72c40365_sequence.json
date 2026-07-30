@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-analyzer-engine-real-estate-1-72c40365",
+  "service_name": "Predictive Analyzer Engine - Real-Estate #1",
+  "industry": "real-estate",
+  "lead_magnet": "Property Management Automation Guide",
+  "metrics": {
+    "improvement": "46%",
+    "savings": "$13.4M",
+    "timeframe": "7 months",
+    "similar": "PropertyGroup"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, PropertyGroup is closing their Q3 deals this week. Want to see how Predictive Analyzer Engine - Real-Estate #1 can help {company} save $13.4M?",
+      "sequence_id": "seq-39",
+      "service_id": "predictive-analyzer-engine-real-estate-1-72c40365"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Predictive Analyzer Engine - Real-Estate #1 delivers 46% in 7 months.",
+      "sequence_id": "seq-39",
+      "service_id": "predictive-analyzer-engine-real-estate-1-72c40365"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-39",
+      "service_id": "predictive-analyzer-engine-real-estate-1-72c40365"
+    }
+  ],
+  "hot_lead_score": 90,
+  "conversion_likelihood": "54%",
+  "timestamp": "2026-07-30T06:23:42.871355+00:00"
+}

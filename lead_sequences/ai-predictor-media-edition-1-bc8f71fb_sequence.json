@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-predictor-media-edition-1-bc8f71fb",
+  "service_name": "AI Predictor - Media Edition #1",
+  "industry": "media",
+  "lead_magnet": "Content Performance Optimization Guide",
+  "metrics": {
+    "improvement": "43%",
+    "savings": "$6.8M",
+    "timeframe": "9 months",
+    "similar": "MediaHouse"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, MediaHouse just implemented AI Predictor - Media Edition #1 last month - 43% improvement already. Thoughts?",
+      "sequence_id": "seq-18",
+      "service_id": "ai-predictor-media-edition-1-bc8f71fb"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: MediaHouse saw $6.8M in savings. Your media peers are seeing similar results.",
+      "sequence_id": "seq-18",
+      "service_id": "ai-predictor-media-edition-1-bc8f71fb"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-18",
+      "service_id": "ai-predictor-media-edition-1-bc8f71fb"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "52%",
+  "timestamp": "2026-07-30T06:23:42.861570+00:00"
+}

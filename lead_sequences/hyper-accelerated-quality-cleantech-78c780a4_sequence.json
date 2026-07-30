@@ -1,0 +1,35 @@
+{
+  "service_id": "hyper-accelerated-quality-cleantech-78c780a4",
+  "service_name": "Hyper-Accelerated Quality - CLEANTECH",
+  "industry": "cleantech",
+  "lead_magnet": "Energy Consumption Reduction Report",
+  "metrics": {
+    "improvement": "55%",
+    "savings": "$22.1M",
+    "timeframe": "5 months",
+    "similar": "CleanTech Inc"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, CleanTech Inc just implemented Hyper-Accelerated Quality - CLEANTECH last month - 55% improvement already. Thoughts?",
+      "sequence_id": "seq-88",
+      "service_id": "hyper-accelerated-quality-cleantech-78c780a4"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: CleanTech Inc saw $22.1M in savings. Your cleantech peers are seeing similar results.",
+      "sequence_id": "seq-88",
+      "service_id": "hyper-accelerated-quality-cleantech-78c780a4"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-88",
+      "service_id": "hyper-accelerated-quality-cleantech-78c780a4"
+    }
+  ],
+  "hot_lead_score": 66,
+  "conversion_likelihood": "71%",
+  "timestamp": "2026-07-30T06:11:03.582355+00:00"
+}

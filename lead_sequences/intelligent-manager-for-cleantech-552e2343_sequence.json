@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-manager-for-cleantech-552e2343",
+  "service_name": "Intelligent Manager for CLEANTECH",
+  "industry": "cleantech",
+  "lead_magnet": "Energy Consumption Reduction Report",
+  "metrics": {
+    "improvement": "55%",
+    "savings": "$22.1M",
+    "timeframe": "5 months",
+    "similar": "CleanTech Inc"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, CleanTech Inc is closing their Q3 deals this week. Want to see how Intelligent Manager for CLEANTECH can help {company} save $22.1M?",
+      "sequence_id": "seq-29",
+      "service_id": "intelligent-manager-for-cleantech-552e2343"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Intelligent Manager for CLEANTECH delivers 55% in 5 months.",
+      "sequence_id": "seq-29",
+      "service_id": "intelligent-manager-for-cleantech-552e2343"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-29",
+      "service_id": "intelligent-manager-for-cleantech-552e2343"
+    }
+  ],
+  "hot_lead_score": 95,
+  "conversion_likelihood": "74%",
+  "timestamp": "2026-07-30T06:11:03.491979+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-competitive-real-estate-65561068",
+  "service_name": "Autonomous Competitive Real Estate",
+  "industry": "retail",
+  "lead_magnet": "Customer Retention Playbook",
+  "metrics": {
+    "improvement": "44%",
+    "savings": "$9.3M",
+    "timeframe": "7 months",
+    "similar": "RetailPro"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows retail companies using Autonomous Competitive Real Estate see 44% improvement. Your current process?",
+      "sequence_id": "seq-45",
+      "service_id": "autonomous-competitive-real-estate-65561068"
+    },
+    {
+      "step": 2,
+      "message": "Based on your retail profile, Autonomous Competitive Real Estate could save {company} approximately $9.3M. Interested in details?",
+      "sequence_id": "seq-45",
+      "service_id": "autonomous-competitive-real-estate-65561068"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Autonomous Competitive Real Estate is proven to deliver 44% results.",
+      "sequence_id": "seq-45",
+      "service_id": "autonomous-competitive-real-estate-65561068"
+    }
+  ],
+  "hot_lead_score": 86,
+  "conversion_likelihood": "54%",
+  "timestamp": "2026-07-30T06:23:42.874009+00:00"
+}

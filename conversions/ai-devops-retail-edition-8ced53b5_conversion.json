@@ -1,0 +1,42 @@
+{
+  "service_id": "ai-devops-retail-edition-8ced53b5",
+  "service_name": "AI DevOps - Retail Edition",
+  "industry": "retail",
+  "conversion_metrics": {
+    "open_rate": "65%",
+    "click_rate": "38%",
+    "reply_rate": "25%",
+    "close_rate": "14%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest retail challenge? AI DevOps - Retail Edition solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-68",
+      "service_id": "ai-devops-retail-edition-8ced53b5",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is processor holding you back? AI DevOps - Retail Edition delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-68",
+      "service_id": "ai-devops-retail-edition-8ced53b5",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop processor headaches. AI DevOps - Retail Edition = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-68",
+      "service_id": "ai-devops-retail-edition-8ced53b5",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:22:41.611910+00:00"
+}

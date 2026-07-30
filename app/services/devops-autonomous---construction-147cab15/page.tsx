@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "DevOps Autonomous - Construction - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our DevOps Autonomous - Construction leverages advanced machine learning to deliver resource optimiza",
+  description: "Revolutionize construction through intelligent automation. Our DevOps Autonomous - Construction leverages advanced machine learning to deliver inventory managem",
   alternates: {
     canonical: `https://ziontechgroup.com/services/devops-autonomous---construction-147cab15`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">DevOps Autonomous - Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our DevOps Autonomous - Construction leverages advanced machine learning to deliver resource optimization at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our DevOps Autonomous - Construction leverages advanced machine learning to deliver inventory management at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Energy optimization with consumption tracking</li>
-            <li>A/B testing framework for continuous optimization</li>
-            <li>Audit trails with compliance reporting</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>SOC 2 certified with security controls</li>
+            <li>Machine learning integration with automatic model training</li>
+            <li>Multi-language support with localization</li>
+            <li>Edge computing support for low-latency operations</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Faster time-to-market with accelerated development</li>
             <li>Better compliance with automated audit trails</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
             <li>Increased revenue with optimized pricing strategies</li>
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>Reduced churn with proactive customer retention</li>
-            <li>Seamless integration with existing systems and workflows</li>
           </ul>
         </div>
         

@@ -1,0 +1,35 @@
+{
+  "service_id": "aiit-experience-suite-aitech-2fd744c0",
+  "service_name": "AI/IT Experience Suite - AITECH",
+  "industry": "aitech",
+  "lead_magnet": "AI Implementation Roadmap",
+  "metrics": {
+    "improvement": "58%",
+    "savings": "$25.3M",
+    "timeframe": "5 months",
+    "similar": "AI Innovators"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows aitech companies using AI/IT Experience Suite - AITECH see 58% improvement. Your current process?",
+      "sequence_id": "seq-90",
+      "service_id": "aiit-experience-suite-aitech-2fd744c0"
+    },
+    {
+      "step": 2,
+      "message": "Based on your aitech profile, AI/IT Experience Suite - AITECH could save {company} approximately $25.3M. Interested in details?",
+      "sequence_id": "seq-90",
+      "service_id": "aiit-experience-suite-aitech-2fd744c0"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. AI/IT Experience Suite - AITECH is proven to deliver 58% results.",
+      "sequence_id": "seq-90",
+      "service_id": "aiit-experience-suite-aitech-2fd744c0"
+    }
+  ],
+  "hot_lead_score": 73,
+  "conversion_likelihood": "61%",
+  "timestamp": "2026-07-30T06:11:03.583049+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-machine-learning-manufacturing-edition-1-d83eaef3",
+  "service_name": "AI Machine Learning - Manufacturing Edition #1",
+  "industry": "manufacturing",
+  "lead_magnet": "Predictive Maintenance ROI Calculator",
+  "metrics": {
+    "improvement": "51%",
+    "savings": "$15.8M",
+    "timeframe": "8 months",
+    "similar": "ManufactureCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows manufacturing companies using AI Machine Learning - Manufacturing Edition #1 see 51% improvement. Your current process?",
+      "sequence_id": "seq-95",
+      "service_id": "ai-machine-learning-manufacturing-edition-1-d83eaef3"
+    },
+    {
+      "step": 2,
+      "message": "Based on your manufacturing profile, AI Machine Learning - Manufacturing Edition #1 could save {company} approximately $15.8M. Interested in details?",
+      "sequence_id": "seq-95",
+      "service_id": "ai-machine-learning-manufacturing-edition-1-d83eaef3"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. AI Machine Learning - Manufacturing Edition #1 is proven to deliver 51% results.",
+      "sequence_id": "seq-95",
+      "service_id": "ai-machine-learning-manufacturing-edition-1-d83eaef3"
+    }
+  ],
+  "hot_lead_score": 70,
+  "conversion_likelihood": "52%",
+  "timestamp": "2026-07-30T06:23:42.895530+00:00"
+}

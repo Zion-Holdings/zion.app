@@ -1,0 +1,35 @@
+{
+  "service_id": "automated-performance-ai-2ef3a88b",
+  "service_name": "Automated Performance AI",
+  "industry": "telecom",
+  "lead_magnet": "Network Optimization Cost Analysis",
+  "metrics": {
+    "improvement": "53%",
+    "savings": "$19.2M",
+    "timeframe": "5 months",
+    "similar": "TeleCom Solutions"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows telecom companies using Automated Performance AI see 53% improvement. Your current process?",
+      "sequence_id": "seq-80",
+      "service_id": "automated-performance-ai-2ef3a88b"
+    },
+    {
+      "step": 2,
+      "message": "Based on your telecom profile, Automated Performance AI could save {company} approximately $19.2M. Interested in details?",
+      "sequence_id": "seq-80",
+      "service_id": "automated-performance-ai-2ef3a88b"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Automated Performance AI is proven to deliver 53% results.",
+      "sequence_id": "seq-80",
+      "service_id": "automated-performance-ai-2ef3a88b"
+    }
+  ],
+  "hot_lead_score": 77,
+  "conversion_likelihood": "61%",
+  "timestamp": "2026-07-30T06:11:03.579451+00:00"
+}

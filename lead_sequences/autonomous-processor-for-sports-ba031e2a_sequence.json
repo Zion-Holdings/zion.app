@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-processor-for-sports-ba031e2a",
+  "service_name": "Autonomous Processor for Sports",
+  "industry": "sports",
+  "lead_magnet": "Fan Engagement Growth Framework",
+  "metrics": {
+    "improvement": "55%",
+    "savings": "$8.9M",
+    "timeframe": "4 months",
+    "similar": "SportsTeam"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve sports. Our AI platform helped SportsTeam achieve 55% improvement in 4 months. Quick 5-minute call?",
+      "sequence_id": "seq-86",
+      "service_id": "autonomous-processor-for-sports-ba031e2a"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Autonomous Processor for Sports typically saves $8.9M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-86",
+      "service_id": "autonomous-processor-for-sports-ba031e2a"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 55% results. If not interested, just let me know!",
+      "sequence_id": "seq-86",
+      "service_id": "autonomous-processor-for-sports-ba031e2a"
+    }
+  ],
+  "hot_lead_score": 70,
+  "conversion_likelihood": "56%",
+  "timestamp": "2026-07-30T06:11:03.581127+00:00"
+}

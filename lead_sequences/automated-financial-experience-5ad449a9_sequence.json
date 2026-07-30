@@ -1,0 +1,35 @@
+{
+  "service_id": "automated-financial-experience-5ad449a9",
+  "service_name": "Automated Financial Experience",
+  "industry": "energy",
+  "lead_magnet": "Energy Savings Calculator",
+  "metrics": {
+    "improvement": "48%",
+    "savings": "$16.5M",
+    "timeframe": "8 months",
+    "similar": "EnergyCorp"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, EnergyCorp is closing their Q3 deals this week. Want to see how Automated Financial Experience can help {company} save $16.5M?",
+      "sequence_id": "seq-19",
+      "service_id": "automated-financial-experience-5ad449a9"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Automated Financial Experience delivers 48% in 8 months.",
+      "sequence_id": "seq-19",
+      "service_id": "automated-financial-experience-5ad449a9"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-19",
+      "service_id": "automated-financial-experience-5ad449a9"
+    }
+  ],
+  "hot_lead_score": 87,
+  "conversion_likelihood": "49%",
+  "timestamp": "2026-07-30T06:23:42.862064+00:00"
+}

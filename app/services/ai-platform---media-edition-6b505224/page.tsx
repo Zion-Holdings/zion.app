@@ -18,22 +18,21 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Real-time processing with streaming analytics</li>
-            <li>Multi-region deployment with automatic failover</li>
-            <li>Maintenance scheduling with predictive analytics</li>
-            <li>Inventory prediction with demand forecasting</li>
-            <li>Manufacturing quality control with defect detection</li>
+            <li>Code optimization with performance profiling</li>
+            <li>Network optimization with traffic analysis</li>
+            <li>Audit trails with compliance reporting</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Auto-scaling capabilities with predictive scaling</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
             <li>Real-time insights and alerts for proactive management</li>
-            <li>Better compliance with automated audit trails</li>
-            <li>Reduced human error by 95% with automated processes</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
           </ul>
         </div>
         

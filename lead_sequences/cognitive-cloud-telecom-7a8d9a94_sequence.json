@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-cloud-telecom-7a8d9a94",
+  "service_name": "Cognitive cloud-telecom",
+  "industry": "telecom",
+  "lead_magnet": "Network Optimization Cost Analysis",
+  "metrics": {
+    "improvement": "53%",
+    "savings": "$19.2M",
+    "timeframe": "5 months",
+    "similar": "TeleCom Solutions"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, TeleCom Solutions just implemented Cognitive cloud-telecom last month - 53% improvement already. Thoughts?",
+      "sequence_id": "seq-8",
+      "service_id": "cognitive-cloud-telecom-7a8d9a94"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: TeleCom Solutions saw $19.2M in savings. Your telecom peers are seeing similar results.",
+      "sequence_id": "seq-8",
+      "service_id": "cognitive-cloud-telecom-7a8d9a94"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-8",
+      "service_id": "cognitive-cloud-telecom-7a8d9a94"
+    }
+  ],
+  "hot_lead_score": 81,
+  "conversion_likelihood": "55%",
+  "timestamp": "2026-07-30T06:23:42.855884+00:00"
+}

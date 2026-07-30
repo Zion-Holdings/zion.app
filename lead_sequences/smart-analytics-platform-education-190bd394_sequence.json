@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-analytics-platform-education-190bd394",
+  "service_name": "Smart Analytics Platform - Education",
+  "industry": "education",
+  "lead_magnet": "Student Success Automation Framework",
+  "metrics": {
+    "improvement": "41%",
+    "savings": "$5.4M",
+    "timeframe": "11 months",
+    "similar": "EduCore"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, EduCore is closing their Q3 deals this week. Want to see how Smart Analytics Platform - Education can help {company} save $5.4M?",
+      "sequence_id": "seq-44",
+      "service_id": "smart-analytics-platform-education-190bd394"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Smart Analytics Platform - Education delivers 41% in 11 months.",
+      "sequence_id": "seq-44",
+      "service_id": "smart-analytics-platform-education-190bd394"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-44",
+      "service_id": "smart-analytics-platform-education-190bd394"
+    }
+  ],
+  "hot_lead_score": 81,
+  "conversion_likelihood": "47%",
+  "timestamp": "2026-07-30T06:11:03.559504+00:00"
+}

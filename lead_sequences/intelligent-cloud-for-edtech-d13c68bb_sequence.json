@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-cloud-for-edtech-d13c68bb",
+  "service_name": "Intelligent Cloud for EDTECH",
+  "industry": "edtech",
+  "lead_magnet": "Learning Outcome Improvement Framework",
+  "metrics": {
+    "improvement": "46%",
+    "savings": "$6.2M",
+    "timeframe": "9 months",
+    "similar": "EduTech Solutions"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, EduTech Solutions is closing their Q3 deals this week. Want to see how Intelligent Cloud for EDTECH can help {company} save $6.2M?",
+      "sequence_id": "seq-64",
+      "service_id": "intelligent-cloud-for-edtech-d13c68bb"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Intelligent Cloud for EDTECH delivers 46% in 9 months.",
+      "sequence_id": "seq-64",
+      "service_id": "intelligent-cloud-for-edtech-d13c68bb"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-64",
+      "service_id": "intelligent-cloud-for-edtech-d13c68bb"
+    }
+  ],
+  "hot_lead_score": 92,
+  "conversion_likelihood": "59%",
+  "timestamp": "2026-07-30T06:11:03.570526+00:00"
+}

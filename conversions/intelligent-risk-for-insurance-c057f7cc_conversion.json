@@ -1,0 +1,42 @@
+{
+  "service_id": "intelligent-risk-for-insurance-c057f7cc",
+  "service_name": "Intelligent Risk for Insurance",
+  "industry": "insurance",
+  "conversion_metrics": {
+    "open_rate": "70%",
+    "click_rate": "43%",
+    "reply_rate": "29%",
+    "close_rate": "17%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, 90-day money-back guarantee on Intelligent Risk for Insurance. 52% improvement, $18.4M savings. Try free: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-59",
+      "service_id": "intelligent-risk-for-insurance-c057f7cc",
+      "conversion_rate": "17%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "Risk-free trial: Intelligent Risk for Insurance delivers 52% or you don't pay. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-59",
+      "service_id": "intelligent-risk-for-insurance-c057f7cc",
+      "conversion_rate": "17%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "No risk, all reward: $18.4M savings with Intelligent Risk for Insurance. 90-day guarantee. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-59",
+      "service_id": "intelligent-risk-for-insurance-c057f7cc",
+      "conversion_rate": "17%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:22:41.611029+00:00"
+}

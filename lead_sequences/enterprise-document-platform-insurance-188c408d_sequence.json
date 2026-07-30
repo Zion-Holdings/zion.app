@@ -1,0 +1,35 @@
+{
+  "service_id": "enterprise-document-platform-insurance-188c408d",
+  "service_name": "Enterprise Document Platform - Insurance",
+  "industry": "insurance",
+  "lead_magnet": "Claims Processing Automation Guide",
+  "metrics": {
+    "improvement": "54%",
+    "savings": "$17.3M",
+    "timeframe": "7 months",
+    "similar": "InsurePlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with insurance healthcare?",
+      "sequence_id": "seq-22",
+      "service_id": "enterprise-document-platform-insurance-188c408d"
+    },
+    {
+      "step": 2,
+      "message": "We've helped InsurePlus solve this exact problem with Enterprise Document Platform - Insurance. Achieved 54% in 7 months.",
+      "sequence_id": "seq-22",
+      "service_id": "enterprise-document-platform-insurance-188c408d"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-22",
+      "service_id": "enterprise-document-platform-insurance-188c408d"
+    }
+  ],
+  "hot_lead_score": 83,
+  "conversion_likelihood": "46%",
+  "timestamp": "2026-07-30T06:11:03.480448+00:00"
+}

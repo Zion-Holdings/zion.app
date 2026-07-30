@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Image System - Zion Tech Group",
-  description: "Unlock unprecedented growth with Smart Image System. This autonomous system provides decision support with zero manual intervention needed.",
+  description: "Revolutionize logistics through intelligent automation. Our Smart Image System leverages advanced machine learning to deliver financial planning at scale.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-image-system-3831616a`
   }
@@ -13,16 +13,16 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart Image System</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Smart Image System. This autonomous system provides decision support with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize logistics through intelligent automation. Our Smart Image System leverages advanced machine learning to deliver financial planning at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Microservices deployment with container orchestration</li>
-            <li>Image recognition with computer vision</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Performance dashboards with real-time metrics</li>
+            <li>Edge computing support for low-latency operations</li>
+            <li>Manufacturing quality control with defect detection</li>
+            <li>Multi-region deployment with automatic failover</li>
+            <li>Fraud detection with anomaly analysis</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
         
@@ -30,8 +30,8 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Reduced human error by 95% with automated processes</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Better compliance with automated audit trails</li>
           </ul>
         </div>
         

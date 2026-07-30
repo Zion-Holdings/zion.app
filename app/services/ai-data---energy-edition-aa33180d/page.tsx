@@ -18,21 +18,22 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>Machine learning integration with automatic model training</li>
             <li>Network optimization with traffic analysis</li>
-            <li>Customer service automation with chatbot integration</li>
-            <li>Energy optimization with consumption tracking</li>
-            <li>Version control with rollback capabilities</li>
-            <li>Document processing with OCR and NLP</li>
+            <li>Financial risk management with scenario analysis</li>
+            <li>Security monitoring with threat intelligence</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>24/7 automated operations without human intervention</li>
-            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>Cost optimization recommendations with savings analysis</li>
             <li>Dynamic resource allocation based on demand patterns</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
           </ul>
         </div>
         

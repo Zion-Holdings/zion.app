@@ -1,0 +1,42 @@
+{
+  "service_id": "intelligent-data-science-for-tech-5bdb5d15",
+  "service_name": "Intelligent Data Science for Tech",
+  "industry": "technology",
+  "conversion_metrics": {
+    "open_rate": "68%",
+    "click_rate": "42%",
+    "reply_rate": "28%",
+    "close_rate": "15%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest technology challenge? Intelligent Data Science for Tech solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-47",
+      "service_id": "intelligent-data-science-for-tech-5bdb5d15",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is process mining holding you back? Intelligent Data Science for Tech delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-47",
+      "service_id": "intelligent-data-science-for-tech-5bdb5d15",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop process mining headaches. Intelligent Data Science for Tech = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-47",
+      "service_id": "intelligent-data-science-for-tech-5bdb5d15",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:22:41.608363+00:00"
+}

@@ -18,21 +18,22 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Code optimization with performance profiling</li>
-            <li>Security monitoring with threat intelligence</li>
-            <li>Open-source friendly with plugin architecture</li>
-            <li>Image recognition with computer vision</li>
+            <li>Network optimization with traffic analysis</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Maintenance scheduling with predictive analytics</li>
+            <li>Audit trails with compliance reporting</li>
+            <li>Financial risk management with scenario analysis</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>Zero manual intervention required for routine tasks</li>
+            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Real-time insights and alerts for proactive management</li>
             <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Scalable to millions of transactions per second</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>Increased revenue with optimized pricing strategies</li>
           </ul>
         </div>
         

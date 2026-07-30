@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Image Coordinator - Zion Tech Group",
-  description: "Transform your sports operations with our Automated Image Coordinator. This AI-driven solution automates maintenance scheduling with unprecedented accuracy and ",
+  description: "Revolutionize insurance through intelligent automation. Our Automated Image Coordinator leverages advanced machine learning to deliver process automation at sca",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-image-coordinator-1ad63a1b`
   }
@@ -13,27 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automated Image Coordinator</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your sports operations with our Automated Image Coordinator. This AI-driven solution automates maintenance scheduling with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize insurance through intelligent automation. Our Automated Image Coordinator leverages advanced machine learning to deliver process automation at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>SOC 2 certified with security controls</li>
-            <li>Code optimization with performance profiling</li>
-            <li>Microservices deployment with container orchestration</li>
-            <li>Inventory prediction with demand forecasting</li>
+            <li>Document processing with OCR and NLP</li>
+            <li>Compliance monitoring with regulatory updates</li>
             <li>Data encryption at rest and in transit</li>
+            <li>SOC 2 certified with security controls</li>
+            <li>Logistics route optimization with traffic prediction</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>50% reduction in operational costs through automation</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Better risk management with predictive analytics</li>
-            <li>Increased revenue with optimized pricing strategies</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Seamless integration with existing systems and workflows</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>Reduced human error by 95% with automated processes</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-analytics-engine-finance-a8a669ee",
+  "service_name": "Predictive Analytics Engine - Finance",
+  "industry": "finance",
+  "lead_magnet": "Regulatory Compliance Automation Guide",
+  "metrics": {
+    "improvement": "58%",
+    "savings": "$24.1M",
+    "timeframe": "5 months",
+    "similar": "Capital Group"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows finance companies using Predictive Analytics Engine - Finance see 58% improvement. Your current process?",
+      "sequence_id": "seq-100",
+      "service_id": "predictive-analytics-engine-finance-a8a669ee"
+    },
+    {
+      "step": 2,
+      "message": "Based on your finance profile, Predictive Analytics Engine - Finance could save {company} approximately $24.1M. Interested in details?",
+      "sequence_id": "seq-100",
+      "service_id": "predictive-analytics-engine-finance-a8a669ee"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Predictive Analytics Engine - Finance is proven to deliver 58% results.",
+      "sequence_id": "seq-100",
+      "service_id": "predictive-analytics-engine-finance-a8a669ee"
+    }
+  ],
+  "hot_lead_score": 86,
+  "conversion_likelihood": "56%",
+  "timestamp": "2026-07-30T06:23:42.897358+00:00"
+}

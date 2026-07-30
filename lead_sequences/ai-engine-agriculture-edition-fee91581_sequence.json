@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-engine-agriculture-edition-fee91581",
+  "service_name": "AI Engine - Agriculture Edition",
+  "industry": "agriculture",
+  "lead_magnet": "Precision Farming ROI Analysis",
+  "metrics": {
+    "improvement": "40%",
+    "savings": "$4.2M",
+    "timeframe": "12 months",
+    "similar": "FarmTech"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with agriculture nlp?",
+      "sequence_id": "seq-67",
+      "service_id": "ai-engine-agriculture-edition-fee91581"
+    },
+    {
+      "step": 2,
+      "message": "We've helped FarmTech solve this exact problem with AI Engine - Agriculture Edition. Achieved 40% in 12 months.",
+      "sequence_id": "seq-67",
+      "service_id": "ai-engine-agriculture-edition-fee91581"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-67",
+      "service_id": "ai-engine-agriculture-edition-fee91581"
+    }
+  ],
+  "hot_lead_score": 84,
+  "conversion_likelihood": "51%",
+  "timestamp": "2026-07-30T06:23:42.883924+00:00"
+}

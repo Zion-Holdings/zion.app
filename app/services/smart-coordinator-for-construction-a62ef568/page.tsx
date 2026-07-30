@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Coordinator for Construction - Zion Tech Group",
-  description: "Transform your construction operations with our Smart Coordinator for Construction. This AI-driven solution automates security monitoring with unprecedented acc",
+  description: "Transform your construction operations with our Smart Coordinator for Construction. This AI-driven solution automates compliance monitoring with unprecedented a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-coordinator-for-construction-a62ef568`
   }
@@ -13,25 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart Coordinator for Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your construction operations with our Smart Coordinator for Construction. This AI-driven solution automates security monitoring with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your construction operations with our Smart Coordinator for Construction. This AI-driven solution automates compliance monitoring with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Image recognition with computer vision</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
             <li>Energy optimization with consumption tracking</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>Compliance monitoring with regulatory updates</li>
+            <li>Fraud detection with anomaly analysis</li>
+            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Performance benchmarking against industry standards</li>
             <li>Cost optimization recommendations with savings analysis</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Better risk management with predictive analytics</li>
             <li>Zero manual intervention required for routine tasks</li>
+            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

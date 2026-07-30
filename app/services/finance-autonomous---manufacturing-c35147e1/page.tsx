@@ -18,21 +18,19 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Financial risk management with scenario analysis</li>
-            <li>Customer service automation with chatbot integration</li>
-            <li>GDPR compliance with data portability</li>
-            <li>Fraud detection with anomaly analysis</li>
-            <li>Serverless functions for cost-effective scaling</li>
+            <li>Multi-region deployment with automatic failover</li>
+            <li>Custom integrations with webhook support</li>
+            <li>Machine learning integration with automatic model training</li>
+            <li>Alerting system with intelligent notifications</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Improved customer satisfaction with faster response times</li>
-            <li>50% reduction in operational costs through automation</li>
-            <li>Better compliance with automated audit trails</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>Scalable to millions of transactions per second</li>
+            <li>Zero manual intervention required for routine tasks</li>
           </ul>
         </div>
         

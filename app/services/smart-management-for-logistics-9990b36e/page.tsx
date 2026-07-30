@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Management for Logistics - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our Smart Management for Logistics leverages advanced machine learning to deliver energy management at s",
+  description: "The future of logistics is here with Smart Management for Logistics. Powered by cutting-edge AI, this platform delivers resource optimization like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-management-for-logistics-9990b36e`
   }
@@ -13,15 +13,15 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart Management for Logistics</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize logistics through intelligent automation. Our Smart Management for Logistics leverages advanced machine learning to deliver energy management at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of logistics is here with Smart Management for Logistics. Powered by cutting-edge AI, this platform delivers resource optimization like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Maintenance scheduling with predictive analytics</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Alerting system with intelligent notifications</li>
-            <li>Network optimization with traffic analysis</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>Image recognition with computer vision</li>
+            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         
@@ -29,9 +29,8 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Increased revenue with optimized pricing strategies</li>
-            <li>Reduced human error by 95% with automated processes</li>
-            <li>Better compliance with automated audit trails</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>Real-time insights and alerts for proactive management</li>
           </ul>
         </div>
         

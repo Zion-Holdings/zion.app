@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Security Orchestrator - Zion Tech Group",
-  description: "Revolutionize hospitality through intelligent automation. Our Intelligent Security Orchestrator leverages advanced machine learning to deliver workflow manageme",
+  description: "Transform your retail operations with our Intelligent Security Orchestrator. This AI-driven solution automates resource optimization with unprecedented accuracy",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-security-orchestrator-f1d94ba7`
   }
@@ -13,25 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Security Orchestrator</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize hospitality through intelligent automation. Our Intelligent Security Orchestrator leverages advanced machine learning to deliver workflow management at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your retail operations with our Intelligent Security Orchestrator. This AI-driven solution automates resource optimization with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Fraud detection with anomaly analysis</li>
-            <li>Version control with rollback capabilities</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Real-time processing with streaming analytics</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Multi-language support with localization</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Open-source friendly with plugin architecture</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>Zero manual intervention required for routine tasks</li>
-            <li>Better compliance with automated audit trails</li>
+            <li>Performance benchmarking against industry standards</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>Better risk management with predictive analytics</li>
           </ul>
         </div>
         

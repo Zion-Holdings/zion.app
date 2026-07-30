@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-click-predictive-dfdb63b8",
+  "service_name": "Smart Click Predictive",
+  "industry": "hospitality",
+  "lead_magnet": "Guest Experience Automation Blueprint",
+  "metrics": {
+    "improvement": "42%",
+    "savings": "$7.6M",
+    "timeframe": "10 months",
+    "similar": "HotelChain"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, HotelChain is closing their Q3 deals this week. Want to see how Smart Click Predictive can help {company} save $7.6M?",
+      "sequence_id": "seq-74",
+      "service_id": "smart-click-predictive-dfdb63b8"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Smart Click Predictive delivers 42% in 10 months.",
+      "sequence_id": "seq-74",
+      "service_id": "smart-click-predictive-dfdb63b8"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-74",
+      "service_id": "smart-click-predictive-dfdb63b8"
+    }
+  ],
+  "hot_lead_score": 94,
+  "conversion_likelihood": "52%",
+  "timestamp": "2026-07-30T06:11:03.575727+00:00"
+}

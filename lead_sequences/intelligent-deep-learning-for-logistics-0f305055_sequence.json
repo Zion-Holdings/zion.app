@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-deep-learning-for-logistics-0f305055",
+  "service_name": "Intelligent Deep Learning for Logistics",
+  "industry": "logistics",
+  "lead_magnet": "Route Optimization Savings Estimator",
+  "metrics": {
+    "improvement": "49%",
+    "savings": "$11.2M",
+    "timeframe": "6 months",
+    "similar": "LogisticsPlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, LogisticsPlus just implemented Intelligent Deep Learning for Logistics last month - 49% improvement already. Thoughts?",
+      "sequence_id": "seq-3",
+      "service_id": "intelligent-deep-learning-for-logistics-0f305055"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: LogisticsPlus saw $11.2M in savings. Your logistics peers are seeing similar results.",
+      "sequence_id": "seq-3",
+      "service_id": "intelligent-deep-learning-for-logistics-0f305055"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-3",
+      "service_id": "intelligent-deep-learning-for-logistics-0f305055"
+    }
+  ],
+  "hot_lead_score": 81,
+  "conversion_likelihood": "47%",
+  "timestamp": "2026-07-30T06:23:42.850975+00:00"
+}

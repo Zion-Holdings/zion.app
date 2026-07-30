@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-quality-solution-martech-f7edd19a",
+  "service_name": "Cognitive Quality Solution - MARTECH",
+  "industry": "martech",
+  "lead_magnet": "Marketing Automation ROI Calculator",
+  "metrics": {
+    "improvement": "50%",
+    "savings": "$11.6M",
+    "timeframe": "6 months",
+    "similar": "MarketingPro"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, MarketingPro just implemented Cognitive Quality Solution - MARTECH last month - 50% improvement already. Thoughts?",
+      "sequence_id": "seq-63",
+      "service_id": "cognitive-quality-solution-martech-f7edd19a"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: MarketingPro saw $11.6M in savings. Your martech peers are seeing similar results.",
+      "sequence_id": "seq-63",
+      "service_id": "cognitive-quality-solution-martech-f7edd19a"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-63",
+      "service_id": "cognitive-quality-solution-martech-f7edd19a"
+    }
+  ],
+  "hot_lead_score": 67,
+  "conversion_likelihood": "73%",
+  "timestamp": "2026-07-30T06:11:03.570271+00:00"
+}

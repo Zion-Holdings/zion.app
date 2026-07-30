@@ -1,0 +1,35 @@
+{
+  "service_id": "self-optimizing-advisor-healthcare-ea00176c",
+  "service_name": "Self-Optimizing advisor-healthcare",
+  "industry": "healthcare",
+  "lead_magnet": "HIPAA-Compliant Automation Checklist",
+  "metrics": {
+    "improvement": "47%",
+    "savings": "$12.7M",
+    "timeframe": "9 months",
+    "similar": "HealthFirst Hospital"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve healthcare. Our AI platform helped HealthFirst Hospital achieve 47% improvement in 9 months. Quick 5-minute call?",
+      "sequence_id": "seq-31",
+      "service_id": "self-optimizing-advisor-healthcare-ea00176c"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Self-Optimizing advisor-healthcare typically saves $12.7M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-31",
+      "service_id": "self-optimizing-advisor-healthcare-ea00176c"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 47% results. If not interested, just let me know!",
+      "sequence_id": "seq-31",
+      "service_id": "self-optimizing-advisor-healthcare-ea00176c"
+    }
+  ],
+  "hot_lead_score": 88,
+  "conversion_likelihood": "58%",
+  "timestamp": "2026-07-30T06:23:42.867932+00:00"
+}

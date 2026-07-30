@@ -1,0 +1,35 @@
+{
+  "service_id": "automated-territory-optimization-f1344a9c",
+  "service_name": "Automated Territory Optimization",
+  "industry": "regtech",
+  "lead_magnet": "Compliance Automation Efficiency Guide",
+  "metrics": {
+    "improvement": "53%",
+    "savings": "$15.9M",
+    "timeframe": "7 months",
+    "similar": "RegTech Solutions"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve regtech. Our AI platform helped RegTech Solutions achieve 53% improvement in 7 months. Quick 5-minute call?",
+      "sequence_id": "seq-46",
+      "service_id": "automated-territory-optimization-f1344a9c"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Automated Territory Optimization typically saves $15.9M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-46",
+      "service_id": "automated-territory-optimization-f1344a9c"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 53% results. If not interested, just let me know!",
+      "sequence_id": "seq-46",
+      "service_id": "automated-territory-optimization-f1344a9c"
+    }
+  ],
+  "hot_lead_score": 77,
+  "conversion_likelihood": "60%",
+  "timestamp": "2026-07-30T06:11:03.560704+00:00"
+}

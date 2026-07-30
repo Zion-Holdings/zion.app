@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Security for Energy - Zion Tech Group",
-  description: "The future of energy is here with Smart Security for Energy. Powered by cutting-edge AI, this platform delivers process automation like never before.",
+  description: "The future of energy is here with Smart Security for Energy. Powered by cutting-edge AI, this platform delivers security monitoring like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-security-for-energy-0473de04`
   }
@@ -13,26 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart Security for Energy</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of energy is here with Smart Security for Energy. Powered by cutting-edge AI, this platform delivers process automation like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of energy is here with Smart Security for Energy. Powered by cutting-edge AI, this platform delivers security monitoring like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Customer service automation with chatbot integration</li>
-            <li>Performance dashboards with real-time metrics</li>
-            <li>Open-source friendly with plugin architecture</li>
-            <li>Microservices deployment with container orchestration</li>
-            <li>Manufacturing quality control with defect detection</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>Financial risk management with scenario analysis</li>
+            <li>Real-time processing with streaming analytics</li>
+            <li>A/B testing framework for continuous optimization</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Scalable to millions of transactions per second</li>
-            <li>Faster time-to-market with accelerated development</li>
-            <li>Reduced churn with proactive customer retention</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>Real-time insights and alerts for proactive management</li>
             <li>99.9% uptime guarantee with redundant architecture</li>
+            <li>Reduced human error by 95% with automated processes</li>
           </ul>
         </div>
         

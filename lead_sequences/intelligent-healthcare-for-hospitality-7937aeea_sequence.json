@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-healthcare-for-hospitality-7937aeea",
+  "service_name": "Intelligent Healthcare for Hospitality",
+  "industry": "hospitality",
+  "lead_magnet": "Guest Experience Automation Blueprint",
+  "metrics": {
+    "improvement": "42%",
+    "savings": "$7.6M",
+    "timeframe": "10 months",
+    "similar": "HotelChain"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows hospitality companies using Intelligent Healthcare for Hospitality see 42% improvement. Your current process?",
+      "sequence_id": "seq-20",
+      "service_id": "intelligent-healthcare-for-hospitality-7937aeea"
+    },
+    {
+      "step": 2,
+      "message": "Based on your hospitality profile, Intelligent Healthcare for Hospitality could save {company} approximately $7.6M. Interested in details?",
+      "sequence_id": "seq-20",
+      "service_id": "intelligent-healthcare-for-hospitality-7937aeea"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Intelligent Healthcare for Hospitality is proven to deliver 42% results.",
+      "sequence_id": "seq-20",
+      "service_id": "intelligent-healthcare-for-hospitality-7937aeea"
+    }
+  ],
+  "hot_lead_score": 67,
+  "conversion_likelihood": "73%",
+  "timestamp": "2026-07-30T06:23:42.862708+00:00"
+}

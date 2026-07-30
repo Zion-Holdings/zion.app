@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive insights-construction - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our Adaptive insights-construction leverages advanced machine learning to deliver budget optimization",
+  description: "Revolutionize construction through intelligent automation. Our Adaptive insights-construction leverages advanced machine learning to deliver financial planning ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-insights-construction-8a413d32`
   }
@@ -13,27 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Adaptive insights-construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our Adaptive insights-construction leverages advanced machine learning to deliver budget optimization at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our Adaptive insights-construction leverages advanced machine learning to deliver financial planning at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Sales process optimization with pipeline management</li>
-            <li>Market analysis with buyer behavior insights</li>
-            <li>Machine learning integration with automatic model training</li>
-            <li>Multi-region deployment with automatic failover</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Image recognition with computer vision</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>Role-based access control with SSO integration</li>
+            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Performance benchmarking against industry standards</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
             <li>Cost optimization recommendations with savings analysis</li>
-            <li>Zero manual intervention required for routine tasks</li>
-            <li>Reduced churn with proactive customer retention</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         

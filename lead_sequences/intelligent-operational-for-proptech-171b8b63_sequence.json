@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-operational-for-proptech-171b8b63",
+  "service_name": "Intelligent Operational for PROPTECH",
+  "industry": "proptech",
+  "lead_magnet": "Property Valuation Automation Guide",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$12.9M",
+    "timeframe": "6 months",
+    "similar": "PropTech Co"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows proptech companies using Intelligent Operational for PROPTECH see 52% improvement. Your current process?",
+      "sequence_id": "seq-30",
+      "service_id": "intelligent-operational-for-proptech-171b8b63"
+    },
+    {
+      "step": 2,
+      "message": "Based on your proptech profile, Intelligent Operational for PROPTECH could save {company} approximately $12.9M. Interested in details?",
+      "sequence_id": "seq-30",
+      "service_id": "intelligent-operational-for-proptech-171b8b63"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Intelligent Operational for PROPTECH is proven to deliver 52% results.",
+      "sequence_id": "seq-30",
+      "service_id": "intelligent-operational-for-proptech-171b8b63"
+    }
+  ],
+  "hot_lead_score": 86,
+  "conversion_likelihood": "64%",
+  "timestamp": "2026-07-30T06:11:03.492499+00:00"
+}

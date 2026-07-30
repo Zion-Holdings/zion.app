@@ -1,0 +1,35 @@
+{
+  "service_id": "hyper-accelerated-machine-learning-telecom-1-9932a62a",
+  "service_name": "Hyper-Accelerated Machine Learning - Telecom #1",
+  "industry": "telecom",
+  "lead_magnet": "Network Optimization Cost Analysis",
+  "metrics": {
+    "improvement": "53%",
+    "savings": "$19.2M",
+    "timeframe": "5 months",
+    "similar": "TeleCom Solutions"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve telecom. Our AI platform helped TeleCom Solutions achieve 53% improvement in 5 months. Quick 5-minute call?",
+      "sequence_id": "seq-76",
+      "service_id": "hyper-accelerated-machine-learning-telecom-1-9932a62a"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Hyper-Accelerated Machine Learning - Telecom #1 typically saves $19.2M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-76",
+      "service_id": "hyper-accelerated-machine-learning-telecom-1-9932a62a"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 53% results. If not interested, just let me know!",
+      "sequence_id": "seq-76",
+      "service_id": "hyper-accelerated-machine-learning-telecom-1-9932a62a"
+    }
+  ],
+  "hot_lead_score": 66,
+  "conversion_likelihood": "63%",
+  "timestamp": "2026-07-30T06:11:03.576504+00:00"
+}

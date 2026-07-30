@@ -1,0 +1,42 @@
+{
+  "service_id": "ai-smb-fintech-edition-7dd975f3",
+  "service_name": "AI SMB - FINTECH Edition",
+  "industry": "fintech",
+  "conversion_metrics": {
+    "open_rate": "74%",
+    "click_rate": "49%",
+    "reply_rate": "36%",
+    "close_rate": "23%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, Industry Leader just signed - 52% improvement in 6 months. {company} next? https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-9",
+      "service_id": "ai-smb-fintech-edition-7dd975f3",
+      "conversion_rate": "23%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} + Industry Leader = $18.4M in annual savings. AI SMB - FINTECH Edition case study attached. Let's talk: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-9",
+      "service_id": "ai-smb-fintech-edition-7dd975f3",
+      "conversion_rate": "23%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Results: Industry Leader \u2192 52% \u2192 $18.4M. Your turn? Book call: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-9",
+      "service_id": "ai-smb-fintech-edition-7dd975f3",
+      "conversion_rate": "23%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:25:39.662475+00:00"
+}

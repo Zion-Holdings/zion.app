@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Quality for Insurance - Zion Tech Group",
-  description: "Revolutionize insurance through intelligent automation. Our Intelligent Quality for Insurance leverages advanced machine learning to deliver market intelligence at scale.",
+  description: "Revolutionize insurance through intelligent automation. Our Intelligent Quality for Insurance leverages advanced machine learning to deliver market intelligence",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-quality-for-insurance-26612d42`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

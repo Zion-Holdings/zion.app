@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Decision Platform - Zion Tech Group",
-  description: "Transform your legal operations with our Autonomous Decision Platform. This AI-driven solution automates decision support with unprecedented accuracy and effici",
+  description: "Next-generation insurance solution: Autonomous Decision Platform. Combines document processing with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-decision-platform-f13d401b`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Autonomous Decision Platform</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your legal operations with our Autonomous Decision Platform. This AI-driven solution automates decision support with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation insurance solution: Autonomous Decision Platform. Combines document processing with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Open-source friendly with plugin architecture</li>
-            <li>SOC 2 certified with security controls</li>
-            <li>Serverless functions for cost-effective scaling</li>
-            <li>Financial risk management with scenario analysis</li>
-            <li>Logistics route optimization with traffic prediction</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Microservices deployment with container orchestration</li>
+            <li>Manufacturing quality control with defect detection</li>
+            <li>Auto-scaling capabilities with predictive scaling</li>
+            <li>Customer service automation with chatbot integration</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Faster time-to-market with accelerated development</li>
-            <li>Reduced human error by 95% with automated processes</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Performance benchmarking against industry standards</li>
+            <li>3x faster decision making with real-time insights</li>
             <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>Increased revenue with optimized pricing strategies</li>
           </ul>
         </div>
         

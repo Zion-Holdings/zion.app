@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-automation-engine-real-estate-0cf66502",
+  "service_name": "Predictive Automation Engine - Real-Estate",
+  "industry": "real-estate",
+  "lead_magnet": "Property Management Automation Guide",
+  "metrics": {
+    "improvement": "46%",
+    "savings": "$13.4M",
+    "timeframe": "7 months",
+    "similar": "PropertyGroup"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, PropertyGroup is closing their Q3 deals this week. Want to see how Predictive Automation Engine - Real-Estate can help {company} save $13.4M?",
+      "sequence_id": "seq-79",
+      "service_id": "predictive-automation-engine-real-estate-0cf66502"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Predictive Automation Engine - Real-Estate delivers 46% in 7 months.",
+      "sequence_id": "seq-79",
+      "service_id": "predictive-automation-engine-real-estate-0cf66502"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-79",
+      "service_id": "predictive-automation-engine-real-estate-0cf66502"
+    }
+  ],
+  "hot_lead_score": 87,
+  "conversion_likelihood": "75%",
+  "timestamp": "2026-07-30T06:23:42.889170+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-suite-engine-legal-4f11878b",
+  "service_name": "Predictive Suite Engine - Legal",
+  "industry": "legal",
+  "lead_magnet": "Document Review Automation Checklist",
+  "metrics": {
+    "improvement": "39%",
+    "savings": "$3.1M",
+    "timeframe": "14 months",
+    "similar": "LawFirm"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows legal companies using Predictive Suite Engine - Legal see 39% improvement. Your current process?",
+      "sequence_id": "seq-75",
+      "service_id": "predictive-suite-engine-legal-4f11878b"
+    },
+    {
+      "step": 2,
+      "message": "Based on your legal profile, Predictive Suite Engine - Legal could save {company} approximately $3.1M. Interested in details?",
+      "sequence_id": "seq-75",
+      "service_id": "predictive-suite-engine-legal-4f11878b"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Predictive Suite Engine - Legal is proven to deliver 39% results.",
+      "sequence_id": "seq-75",
+      "service_id": "predictive-suite-engine-legal-4f11878b"
+    }
+  ],
+  "hot_lead_score": 72,
+  "conversion_likelihood": "53%",
+  "timestamp": "2026-07-30T06:23:42.887264+00:00"
+}

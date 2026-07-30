@@ -18,21 +18,20 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Open-source friendly with plugin architecture</li>
-            <li>Real-time processing with streaming analytics</li>
+            <li>Document processing with OCR and NLP</li>
             <li>Maintenance scheduling with predictive analytics</li>
-            <li>Image recognition with computer vision</li>
-            <li>Compliance monitoring with regulatory updates</li>
+            <li>User experience analytics with behavior tracking</li>
+            <li>Manufacturing quality control with defect detection</li>
+            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Faster time-to-market with accelerated development</li>
-            <li>Zero manual intervention required for routine tasks</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>Seamless integration with existing systems and workflows</li>
             <li>24/7 automated operations without human intervention</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         

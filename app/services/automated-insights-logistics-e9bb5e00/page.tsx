@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated insights-logistics - Zion Tech Group",
-  description: "The future of logistics is here with Automated insights-logistics. Powered by cutting-edge AI, this platform delivers logistics route optimization like never be",
+  description: "Revolutionize logistics through intelligent automation. Our Automated insights-logistics leverages advanced machine learning to deliver logistics route optimiza",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-insights-logistics-e9bb5e00`
   }
@@ -13,15 +13,15 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automated insights-logistics</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of logistics is here with Automated insights-logistics. Powered by cutting-edge AI, this platform delivers logistics route optimization like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize logistics through intelligent automation. Our Automated insights-logistics leverages advanced machine learning to deliver logistics route optimization at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Security monitoring with threat intelligence</li>
-            <li>Healthcare data analytics with patient insights</li>
-            <li>Network optimization with traffic analysis</li>
-            <li>Compliance monitoring with regulatory updates</li>
+            <li>Auto-scaling capabilities with predictive scaling</li>
+            <li>Sales process optimization with pipeline management</li>
+            <li>HIPAA ready with healthcare data protection</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
             <li>Role-based access control with SSO integration</li>
           </ul>
         </div>
@@ -29,10 +29,10 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced churn with proactive customer retention</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Enhanced security with continuous threat monitoring</li>
-            <li>Seamless integration with existing systems and workflows</li>
+            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         

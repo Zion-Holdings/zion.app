@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-scale-up-engine-retail-4fe4348c",
+  "service_name": "Predictive Scale-up Engine - Retail",
+  "industry": "retail",
+  "lead_magnet": "Customer Retention Playbook",
+  "metrics": {
+    "improvement": "44%",
+    "savings": "$9.3M",
+    "timeframe": "7 months",
+    "similar": "RetailPro"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve retail. Our AI platform helped RetailPro achieve 44% improvement in 7 months. Quick 5-minute call?",
+      "sequence_id": "seq-51",
+      "service_id": "predictive-scale-up-engine-retail-4fe4348c"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Predictive Scale-up Engine - Retail typically saves $9.3M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-51",
+      "service_id": "predictive-scale-up-engine-retail-4fe4348c"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 44% results. If not interested, just let me know!",
+      "sequence_id": "seq-51",
+      "service_id": "predictive-scale-up-engine-retail-4fe4348c"
+    }
+  ],
+  "hot_lead_score": 95,
+  "conversion_likelihood": "59%",
+  "timestamp": "2026-07-30T06:11:03.562476+00:00"
+}

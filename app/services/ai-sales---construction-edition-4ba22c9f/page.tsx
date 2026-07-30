@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Sales - Construction Edition - Zion Tech Group",
-  description: "Transform your construction operations with our AI Sales - Construction Edition. This AI-driven solution automates customer insights with unprecedented accuracy",
+  description: "The future of construction is here with AI Sales - Construction Edition. Powered by cutting-edge AI, this platform delivers supply chain like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-sales---construction-edition-4ba22c9f`
   }
@@ -13,25 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Sales - Construction Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your construction operations with our AI Sales - Construction Edition. This AI-driven solution automates customer insights with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of construction is here with AI Sales - Construction Edition. Powered by cutting-edge AI, this platform delivers supply chain like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>GDPR compliance with data portability</li>
-            <li>Microservices deployment with container orchestration</li>
-            <li>Compliance monitoring with regulatory updates</li>
-            <li>Maintenance scheduling with predictive analytics</li>
+            <li>HIPAA ready with healthcare data protection</li>
+            <li>Customer service automation with chatbot integration</li>
             <li>Edge computing support for low-latency operations</li>
+            <li>Language processing with sentiment analysis</li>
+            <li>A/B testing framework for continuous optimization</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
             <li>Improved quality with automated testing and validation</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>50% reduction in operational costs through automation</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

@@ -1,0 +1,35 @@
+{
+  "service_id": "quantum-nlp-healthtech-quantum-125a260a",
+  "service_name": "Quantum NLP - HEALTHTECH Quantum",
+  "industry": "healthtech",
+  "lead_magnet": "Patient Workflow Automation Blueprint",
+  "metrics": {
+    "improvement": "51%",
+    "savings": "$14.8M",
+    "timeframe": "7 months",
+    "similar": "HealthTech Inc"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows healthtech companies using Quantum NLP - HEALTHTECH Quantum see 51% improvement. Your current process?",
+      "sequence_id": "seq-40",
+      "service_id": "quantum-nlp-healthtech-quantum-125a260a"
+    },
+    {
+      "step": 2,
+      "message": "Based on your healthtech profile, Quantum NLP - HEALTHTECH Quantum could save {company} approximately $14.8M. Interested in details?",
+      "sequence_id": "seq-40",
+      "service_id": "quantum-nlp-healthtech-quantum-125a260a"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Quantum NLP - HEALTHTECH Quantum is proven to deliver 51% results.",
+      "sequence_id": "seq-40",
+      "service_id": "quantum-nlp-healthtech-quantum-125a260a"
+    }
+  ],
+  "hot_lead_score": 67,
+  "conversion_likelihood": "65%",
+  "timestamp": "2026-07-30T06:11:03.523675+00:00"
+}
