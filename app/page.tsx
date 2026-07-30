@@ -14,6 +14,7 @@ import ServiceCounter from '@/components/ServiceCounter';
 import FloatingActionDock from '@/components/FloatingActionDock';
 import ServiceMatchQuiz from '@/components/ServiceMatchQuiz';
 import AgentsMonitoring from '@/components/AgentsMonitoring';
+import ContentDiscovery from '@/components/ContentDiscovery';
 
 // Category accent color for showcase cards (maps category key → gradient)
 // Category accent color for showcase card styles (static RGBA + hex)
@@ -302,14 +303,14 @@ export default function HomePage() {
         <div className="relative container-page pt-32 pb-24">
           <div className="text-center max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-900/30 border border-purple-500/30 text-purple-300 text-sm mb-6">
-              <span className="text-green-400">●</span> <ServiceCounter /> Services — Live Now
+              <span className="text-green-400">●</span> <span className="font-bold gradient-text tabular-nums">{serviceCount.toLocaleString()}</span> Services — Live Now
             </div>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
             <span className="gradient-text">AI & IT Services</span><br />
             <span className="text-white">for Your Business</span>
           </h1>
           <p className="text-xl text-slate-300 mb-10 max-w-3xl mx-auto leading-relaxed">
-            <ServiceCounter /> real-world AI, IT, cloud, security, data, automation, micro-SaaS, DevOps, blockchain, and IoT services — from machine learning to cybersecurity, CRM to 5G networks.
+            <span className="font-bold gradient-text tabular-nums">{serviceCount.toLocaleString()}</span> real-world AI, IT, cloud, security, data, automation, micro-SaaS, DevOps, blockchain, and IoT services — from machine learning to cybersecurity, CRM to 5G networks.
             Get a free, custom proposal in minutes.
           </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
@@ -1384,6 +1385,14 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── Fresh Content Discovery ── */}
+      <section className="py-16 border-t border-slate-800">
+        <div className="container-page">
+          <ContentDiscovery maxItems={8} />
+        </div>
+      </section>
+
       {/* ── Industries We Serve — 10 verticals from service catalog ── */}
       <section className="py-16 border-t border-slate-800">
         <div className="container-page">
