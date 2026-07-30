@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-cognitive-for-sports-1-6c3d43a5",
+  "service_name": "Autonomous Cognitive for Sports #1",
+  "industry": "sports",
+  "lead_magnet": "Fan Engagement Growth Framework",
+  "metrics": {
+    "improvement": "55%",
+    "savings": "$8.9M",
+    "timeframe": "4 months",
+    "similar": "SportsTeam"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with sports computer vision?",
+      "sequence_id": "seq-47",
+      "service_id": "autonomous-cognitive-for-sports-1-6c3d43a5"
+    },
+    {
+      "step": 2,
+      "message": "We've helped SportsTeam solve this exact problem with Autonomous Cognitive for Sports #1. Achieved 55% in 4 months.",
+      "sequence_id": "seq-47",
+      "service_id": "autonomous-cognitive-for-sports-1-6c3d43a5"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-47",
+      "service_id": "autonomous-cognitive-for-sports-1-6c3d43a5"
+    }
+  ],
+  "hot_lead_score": 84,
+  "conversion_likelihood": "50%",
+  "timestamp": "2026-07-30T06:04:50.058501+00:00"
+}

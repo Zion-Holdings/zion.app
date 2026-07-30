@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-optimization-engine-telecom-3ce6e49a",
+  "service_name": "Predictive Optimization Engine - Telecom",
+  "industry": "telecom",
+  "lead_magnet": "Network Optimization Cost Analysis",
+  "metrics": {
+    "improvement": "53%",
+    "savings": "$19.2M",
+    "timeframe": "5 months",
+    "similar": "TeleCom Solutions"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with telecom deep learning?",
+      "sequence_id": "seq-92",
+      "service_id": "predictive-optimization-engine-telecom-3ce6e49a"
+    },
+    {
+      "step": 2,
+      "message": "We've helped TeleCom Solutions solve this exact problem with Predictive Optimization Engine - Telecom. Achieved 53% in 5 months.",
+      "sequence_id": "seq-92",
+      "service_id": "predictive-optimization-engine-telecom-3ce6e49a"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-92",
+      "service_id": "predictive-optimization-engine-telecom-3ce6e49a"
+    }
+  ],
+  "hot_lead_score": 73,
+  "conversion_likelihood": "72%",
+  "timestamp": "2026-07-30T06:04:50.062838+00:00"
+}

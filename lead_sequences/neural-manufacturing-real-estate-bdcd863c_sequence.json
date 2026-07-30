@@ -1,0 +1,35 @@
+{
+  "service_id": "neural-manufacturing-real-estate-bdcd863c",
+  "service_name": "Neural manufacturing-real-estate",
+  "industry": "real-estate",
+  "lead_magnet": "Property Management Automation Guide",
+  "metrics": {
+    "improvement": "46%",
+    "savings": "$13.4M",
+    "timeframe": "7 months",
+    "similar": "PropertyGroup"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, PropertyGroup just implemented Neural manufacturing-real-estate last month - 46% improvement already. Thoughts?",
+      "sequence_id": "seq-98",
+      "service_id": "neural-manufacturing-real-estate-bdcd863c"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: PropertyGroup saw $13.4M in savings. Your real-estate peers are seeing similar results.",
+      "sequence_id": "seq-98",
+      "service_id": "neural-manufacturing-real-estate-bdcd863c"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-98",
+      "service_id": "neural-manufacturing-real-estate-bdcd863c"
+    }
+  ],
+  "hot_lead_score": 72,
+  "conversion_likelihood": "69%",
+  "timestamp": "2026-07-30T06:04:50.063374+00:00"
+}

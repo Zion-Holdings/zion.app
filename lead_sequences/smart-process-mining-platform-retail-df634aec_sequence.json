@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-process-mining-platform-retail-df634aec",
+  "service_name": "Smart Process Mining Platform - Retail",
+  "industry": "retail",
+  "lead_magnet": "Customer Retention Playbook",
+  "metrics": {
+    "improvement": "44%",
+    "savings": "$9.3M",
+    "timeframe": "7 months",
+    "similar": "RetailPro"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, RetailPro just implemented Smart Process Mining Platform - Retail last month - 44% improvement already. Thoughts?",
+      "sequence_id": "seq-83",
+      "service_id": "smart-process-mining-platform-retail-df634aec"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: RetailPro saw $9.3M in savings. Your retail peers are seeing similar results.",
+      "sequence_id": "seq-83",
+      "service_id": "smart-process-mining-platform-retail-df634aec"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-83",
+      "service_id": "smart-process-mining-platform-retail-df634aec"
+    }
+  ],
+  "hot_lead_score": 89,
+  "conversion_likelihood": "49%",
+  "timestamp": "2026-07-30T06:04:50.062000+00:00"
+}

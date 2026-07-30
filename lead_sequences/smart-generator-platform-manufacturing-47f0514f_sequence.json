@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-generator-platform-manufacturing-47f0514f",
+  "service_name": "Smart Generator Platform - Manufacturing",
+  "industry": "manufacturing",
+  "lead_magnet": "Predictive Maintenance ROI Calculator",
+  "metrics": {
+    "improvement": "51%",
+    "savings": "$15.8M",
+    "timeframe": "8 months",
+    "similar": "ManufactureCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, ManufactureCo is closing their Q3 deals this week. Want to see how Smart Generator Platform - Manufacturing can help {company} save $15.8M?",
+      "sequence_id": "seq-54",
+      "service_id": "smart-generator-platform-manufacturing-47f0514f"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Smart Generator Platform - Manufacturing delivers 51% in 8 months.",
+      "sequence_id": "seq-54",
+      "service_id": "smart-generator-platform-manufacturing-47f0514f"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-54",
+      "service_id": "smart-generator-platform-manufacturing-47f0514f"
+    }
+  ],
+  "hot_lead_score": 81,
+  "conversion_likelihood": "50%",
+  "timestamp": "2026-07-30T06:04:50.059099+00:00"
+}

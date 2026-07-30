@@ -1,0 +1,42 @@
+{
+  "service_id": "intelligent-analyzer-for-retail-c52efe24",
+  "service_name": "Intelligent Analyzer for Retail",
+  "industry": "retail",
+  "conversion_metrics": {
+    "open_rate": "65%",
+    "click_rate": "38%",
+    "reply_rate": "25%",
+    "close_rate": "14%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest retail challenge? Intelligent Analyzer for Retail solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-12",
+      "service_id": "intelligent-analyzer-for-retail-c52efe24",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is suite holding you back? Intelligent Analyzer for Retail delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-12",
+      "service_id": "intelligent-analyzer-for-retail-c52efe24",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop suite headaches. Intelligent Analyzer for Retail = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-12",
+      "service_id": "intelligent-analyzer-for-retail-c52efe24",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:04:55.169826+00:00"
+}

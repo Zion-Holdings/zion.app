@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligence-predictive-logistics-b0dc2022",
+  "service_name": "Intelligence Predictive - Logistics",
+  "industry": "logistics",
+  "lead_magnet": "Route Optimization Savings Estimator",
+  "metrics": {
+    "improvement": "49%",
+    "savings": "$11.2M",
+    "timeframe": "6 months",
+    "similar": "LogisticsPlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, LogisticsPlus is closing their Q3 deals this week. Want to see how Intelligence Predictive - Logistics can help {company} save $11.2M?",
+      "sequence_id": "seq-4",
+      "service_id": "intelligence-predictive-logistics-b0dc2022"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Intelligence Predictive - Logistics delivers 49% in 6 months.",
+      "sequence_id": "seq-4",
+      "service_id": "intelligence-predictive-logistics-b0dc2022"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-4",
+      "service_id": "intelligence-predictive-logistics-b0dc2022"
+    }
+  ],
+  "hot_lead_score": 81,
+  "conversion_likelihood": "42%",
+  "timestamp": "2026-07-30T06:04:50.051407+00:00"
+}

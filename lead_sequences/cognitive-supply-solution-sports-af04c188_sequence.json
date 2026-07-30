@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-supply-solution-sports-af04c188",
+  "service_name": "Cognitive Supply Solution - Sports",
+  "industry": "sports",
+  "lead_magnet": "Fan Engagement Growth Framework",
+  "metrics": {
+    "improvement": "55%",
+    "savings": "$8.9M",
+    "timeframe": "4 months",
+    "similar": "SportsTeam"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with sports risk?",
+      "sequence_id": "seq-72",
+      "service_id": "cognitive-supply-solution-sports-af04c188"
+    },
+    {
+      "step": 2,
+      "message": "We've helped SportsTeam solve this exact problem with Cognitive Supply Solution - Sports. Achieved 55% in 4 months.",
+      "sequence_id": "seq-72",
+      "service_id": "cognitive-supply-solution-sports-af04c188"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-72",
+      "service_id": "cognitive-supply-solution-sports-af04c188"
+    }
+  ],
+  "hot_lead_score": 91,
+  "conversion_likelihood": "74%",
+  "timestamp": "2026-07-30T06:04:50.060954+00:00"
+}

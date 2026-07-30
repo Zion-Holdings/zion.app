@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-autonomous-engine-education-3922141b",
+  "service_name": "Predictive Autonomous Engine - Education",
+  "industry": "education",
+  "lead_magnet": "Student Success Automation Framework",
+  "metrics": {
+    "improvement": "41%",
+    "savings": "$5.4M",
+    "timeframe": "11 months",
+    "similar": "EduCore"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, EduCore just implemented Predictive Autonomous Engine - Education last month - 41% improvement already. Thoughts?",
+      "sequence_id": "seq-48",
+      "service_id": "predictive-autonomous-engine-education-3922141b"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: EduCore saw $5.4M in savings. Your education peers are seeing similar results.",
+      "sequence_id": "seq-48",
+      "service_id": "predictive-autonomous-engine-education-3922141b"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-48",
+      "service_id": "predictive-autonomous-engine-education-3922141b"
+    }
+  ],
+  "hot_lead_score": 70,
+  "conversion_likelihood": "73%",
+  "timestamp": "2026-07-30T06:04:50.058585+00:00"
+}

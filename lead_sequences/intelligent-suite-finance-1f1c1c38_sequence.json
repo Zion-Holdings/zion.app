@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-suite-finance-1f1c1c38",
+  "service_name": "Intelligent suite-finance",
+  "industry": "finance",
+  "lead_magnet": "Regulatory Compliance Automation Guide",
+  "metrics": {
+    "improvement": "58%",
+    "savings": "$24.1M",
+    "timeframe": "5 months",
+    "similar": "Capital Group"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, Capital Group just implemented Intelligent suite-finance last month - 58% improvement already. Thoughts?",
+      "sequence_id": "seq-53",
+      "service_id": "intelligent-suite-finance-1f1c1c38"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: Capital Group saw $24.1M in savings. Your finance peers are seeing similar results.",
+      "sequence_id": "seq-53",
+      "service_id": "intelligent-suite-finance-1f1c1c38"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-53",
+      "service_id": "intelligent-suite-finance-1f1c1c38"
+    }
+  ],
+  "hot_lead_score": 71,
+  "conversion_likelihood": "64%",
+  "timestamp": "2026-07-30T06:04:50.059014+00:00"
+}

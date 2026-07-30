@@ -1,0 +1,42 @@
+{
+  "service_id": "predictive-risk-engine-healthcare-387e3a15",
+  "service_name": "Predictive Risk Engine - Healthcare",
+  "industry": "healthcare",
+  "conversion_metrics": {
+    "open_rate": "71%",
+    "click_rate": "45%",
+    "reply_rate": "32%",
+    "close_rate": "18%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, {company} can save $18.4 million with Predictive Risk Engine - Healthcare. Quick call? https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-21",
+      "service_id": "predictive-risk-engine-healthcare-387e3a15",
+      "conversion_rate": "18%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "$18.4M in annual savings with Predictive Risk Engine - Healthcare. 52% improvement in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-21",
+      "service_id": "predictive-risk-engine-healthcare-387e3a15",
+      "conversion_rate": "18%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Save $18.4 million/year. Predictive Risk Engine - Healthcare delivers 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-21",
+      "service_id": "predictive-risk-engine-healthcare-387e3a15",
+      "conversion_rate": "18%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:04:55.171257+00:00"
+}

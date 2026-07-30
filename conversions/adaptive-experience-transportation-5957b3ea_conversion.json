@@ -1,0 +1,42 @@
+{
+  "service_id": "adaptive-experience-transportation-5957b3ea",
+  "service_name": "Adaptive experience-transportation",
+  "industry": "transportation",
+  "conversion_metrics": {
+    "open_rate": "66%",
+    "click_rate": "39%",
+    "reply_rate": "25%",
+    "close_rate": "14%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, 90-day money-back guarantee on Adaptive experience-transportation. 52% improvement, $18.4M savings. Try free: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-3",
+      "service_id": "adaptive-experience-transportation-5957b3ea",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "Risk-free trial: Adaptive experience-transportation delivers 52% or you don't pay. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-3",
+      "service_id": "adaptive-experience-transportation-5957b3ea",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "No risk, all reward: $18.4M savings with Adaptive experience-transportation. 90-day guarantee. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-3",
+      "service_id": "adaptive-experience-transportation-5957b3ea",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:04:55.167497+00:00"
+}

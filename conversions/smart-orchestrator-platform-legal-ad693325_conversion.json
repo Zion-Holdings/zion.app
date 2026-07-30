@@ -1,0 +1,42 @@
+{
+  "service_id": "smart-orchestrator-platform-legal-ad693325",
+  "service_name": "Smart Orchestrator Platform - Legal",
+  "industry": "legal",
+  "conversion_metrics": {
+    "open_rate": "61%",
+    "click_rate": "34%",
+    "reply_rate": "21%",
+    "close_rate": "12%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest legal challenge? Smart Orchestrator Platform - Legal solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-33",
+      "service_id": "smart-orchestrator-platform-legal-ad693325",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is manager holding you back? Smart Orchestrator Platform - Legal delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-33",
+      "service_id": "smart-orchestrator-platform-legal-ad693325",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop manager headaches. Smart Orchestrator Platform - Legal = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-33",
+      "service_id": "smart-orchestrator-platform-legal-ad693325",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:04:55.172744+00:00"
+}

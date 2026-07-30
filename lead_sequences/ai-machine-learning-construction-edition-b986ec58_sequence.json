@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-machine-learning-construction-edition-b986ec58",
+  "service_name": "AI Machine Learning - Construction Edition",
+  "industry": "construction",
+  "lead_magnet": "Project Delivery Acceleration Guide",
+  "metrics": {
+    "improvement": "45%",
+    "savings": "$8.7M",
+    "timeframe": "8 months",
+    "similar": "BuildCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve construction. Our AI platform helped BuildCo achieve 45% improvement in 8 months. Quick 5-minute call?",
+      "sequence_id": "seq-41",
+      "service_id": "ai-machine-learning-construction-edition-b986ec58"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the AI Machine Learning - Construction Edition typically saves $8.7M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-41",
+      "service_id": "ai-machine-learning-construction-edition-b986ec58"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 45% results. If not interested, just let me know!",
+      "sequence_id": "seq-41",
+      "service_id": "ai-machine-learning-construction-edition-b986ec58"
+    }
+  ],
+  "hot_lead_score": 73,
+  "conversion_likelihood": "49%",
+  "timestamp": "2026-07-30T06:04:50.057571+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-deep-learning-system-manufacturing-1-97102b3e",
+  "service_name": "Autonomous Deep Learning System - Manufacturing #1",
+  "industry": "manufacturing",
+  "lead_magnet": "Predictive Maintenance ROI Calculator",
+  "metrics": {
+    "improvement": "51%",
+    "savings": "$15.8M",
+    "timeframe": "8 months",
+    "similar": "ManufactureCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, ManufactureCo just implemented Autonomous Deep Learning System - Manufacturing #1 last month - 51% improvement already. Thoughts?",
+      "sequence_id": "seq-13",
+      "service_id": "autonomous-deep-learning-system-manufacturing-1-97102b3e"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: ManufactureCo saw $15.8M in savings. Your manufacturing peers are seeing similar results.",
+      "sequence_id": "seq-13",
+      "service_id": "autonomous-deep-learning-system-manufacturing-1-97102b3e"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-13",
+      "service_id": "autonomous-deep-learning-system-manufacturing-1-97102b3e"
+    }
+  ],
+  "hot_lead_score": 67,
+  "conversion_likelihood": "48%",
+  "timestamp": "2026-07-30T06:04:50.053960+00:00"
+}

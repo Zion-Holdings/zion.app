@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-edge-process-mining-0ff0eed2",
+  "service_name": "Predictive Edge Process Mining",
+  "industry": "insurance",
+  "lead_magnet": "Claims Processing Automation Guide",
+  "metrics": {
+    "improvement": "54%",
+    "savings": "$17.3M",
+    "timeframe": "7 months",
+    "similar": "InsurePlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows insurance companies using Predictive Edge Process Mining see 54% improvement. Your current process?",
+      "sequence_id": "seq-25",
+      "service_id": "predictive-edge-process-mining-0ff0eed2"
+    },
+    {
+      "step": 2,
+      "message": "Based on your insurance profile, Predictive Edge Process Mining could save {company} approximately $17.3M. Interested in details?",
+      "sequence_id": "seq-25",
+      "service_id": "predictive-edge-process-mining-0ff0eed2"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Predictive Edge Process Mining is proven to deliver 54% results.",
+      "sequence_id": "seq-25",
+      "service_id": "predictive-edge-process-mining-0ff0eed2"
+    }
+  ],
+  "hot_lead_score": 93,
+  "conversion_likelihood": "72%",
+  "timestamp": "2026-07-30T06:04:50.055648+00:00"
+}

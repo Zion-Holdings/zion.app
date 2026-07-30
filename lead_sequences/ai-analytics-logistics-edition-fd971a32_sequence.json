@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-analytics-logistics-edition-fd971a32",
+  "service_name": "AI Analytics - Logistics Edition",
+  "industry": "logistics",
+  "lead_magnet": "Route Optimization Savings Estimator",
+  "metrics": {
+    "improvement": "49%",
+    "savings": "$11.2M",
+    "timeframe": "6 months",
+    "similar": "LogisticsPlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows logistics companies using AI Analytics - Logistics Edition see 49% improvement. Your current process?",
+      "sequence_id": "seq-70",
+      "service_id": "ai-analytics-logistics-edition-fd971a32"
+    },
+    {
+      "step": 2,
+      "message": "Based on your logistics profile, AI Analytics - Logistics Edition could save {company} approximately $11.2M. Interested in details?",
+      "sequence_id": "seq-70",
+      "service_id": "ai-analytics-logistics-edition-fd971a32"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. AI Analytics - Logistics Edition is proven to deliver 49% results.",
+      "sequence_id": "seq-70",
+      "service_id": "ai-analytics-logistics-edition-fd971a32"
+    }
+  ],
+  "hot_lead_score": 73,
+  "conversion_likelihood": "67%",
+  "timestamp": "2026-07-30T06:04:50.060740+00:00"
+}

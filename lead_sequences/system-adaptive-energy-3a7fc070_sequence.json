@@ -1,0 +1,35 @@
+{
+  "service_id": "system-adaptive-energy-3a7fc070",
+  "service_name": "System Adaptive - Energy",
+  "industry": "energy",
+  "lead_magnet": "Energy Savings Calculator",
+  "metrics": {
+    "improvement": "48%",
+    "savings": "$16.5M",
+    "timeframe": "8 months",
+    "similar": "EnergyCorp"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, EnergyCorp just implemented System Adaptive - Energy last month - 48% improvement already. Thoughts?",
+      "sequence_id": "seq-23",
+      "service_id": "system-adaptive-energy-3a7fc070"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: EnergyCorp saw $16.5M in savings. Your energy peers are seeing similar results.",
+      "sequence_id": "seq-23",
+      "service_id": "system-adaptive-energy-3a7fc070"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-23",
+      "service_id": "system-adaptive-energy-3a7fc070"
+    }
+  ],
+  "hot_lead_score": 72,
+  "conversion_likelihood": "47%",
+  "timestamp": "2026-07-30T06:04:50.055304+00:00"
+}
