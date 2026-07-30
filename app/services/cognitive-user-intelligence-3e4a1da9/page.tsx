@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive User Intelligence - Zion Tech Group",
-  description: "Revolutionize automotive through intelligent automation. Our Cognitive User Intelligence leverages advanced machine learning to deliver predictive analytics at ",
+  description: "Revolutionize logistics through intelligent automation. Our Cognitive User Intelligence leverages advanced machine learning to deliver healthcare data analytics",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-user-intelligence-3e4a1da9`
   }
@@ -13,26 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Cognitive User Intelligence</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize automotive through intelligent automation. Our Cognitive User Intelligence leverages advanced machine learning to deliver predictive analytics at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize logistics through intelligent automation. Our Cognitive User Intelligence leverages advanced machine learning to deliver healthcare data analytics at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Performance dashboards with real-time metrics</li>
-            <li>Automation opportunity identification</li>
             <li>Maintenance scheduling with predictive analytics</li>
-            <li>Language processing with sentiment analysis</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>Version control with rollback capabilities</li>
+            <li>GDPR compliance with data portability</li>
+            <li>Image recognition with computer vision</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved conversion rates with personalization</li>
-            <li>Improved brand awareness with social monitoring</li>
-            <li>Reduced risk with early warning systems</li>
-            <li>Reduced support tickets with self-service options</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
           </ul>
         </div>
         

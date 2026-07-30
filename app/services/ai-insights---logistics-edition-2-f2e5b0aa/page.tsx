@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Insights - Logistics Edition #2 - Zion Tech Group",
-  description: "Unlock unprecedented growth with AI Insights - Logistics Edition #2. This autonomous system provides maintenance scheduling with zero manual intervention needed",
+  description: "The future of logistics is here with AI Insights - Logistics Edition #2. Powered by cutting-edge AI, this platform delivers risk assessment like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-insights---logistics-edition-2-f2e5b0aa`
   }
@@ -13,27 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Insights - Logistics Edition #2</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with AI Insights - Logistics Edition #2. This autonomous system provides maintenance scheduling with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of logistics is here with AI Insights - Logistics Edition #2. Powered by cutting-edge AI, this platform delivers risk assessment like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Multi-region deployment with automatic failover</li>
-            <li>Cost reduction with process mining</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Revenue forecasting with market trend analysis</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Financial risk management with scenario analysis</li>
+            <li>Machine learning integration with automatic model training</li>
+            <li>Logistics route optimization with traffic prediction</li>
+            <li>Version control with rollback capabilities</li>
+            <li>Fraud detection with anomaly analysis</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved sales performance with lead scoring</li>
-            <li>Reduced shipping costs with route optimization</li>
-            <li>Improved brand awareness with social monitoring</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>Reduced human error by 95% with automated processes</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Seamless integration with existing systems and workflows</li>
           </ul>
         </div>
         

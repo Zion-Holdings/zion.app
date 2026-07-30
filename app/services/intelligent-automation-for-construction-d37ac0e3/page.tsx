@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Automation for Construction - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our Intelligent Automation for Construction leverages advanced machine learning to deliver sales proc",
+  description: "Unlock unprecedented growth with Intelligent Automation for Construction. This autonomous system provides risk assessment with zero manual intervention needed.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-automation-for-construction-d37ac0e3`
   }
@@ -13,26 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Automation for Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our Intelligent Automation for Construction leverages advanced machine learning to deliver sales process optimization at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Intelligent Automation for Construction. This autonomous system provides risk assessment with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Machine learning integration with automatic model training</li>
+            <li>SOC 2 certified with security controls</li>
+            <li>Real-time processing with streaming analytics</li>
+            <li>Healthcare data analytics with patient insights</li>
             <li>Data encryption at rest and in transit</li>
-            <li>Alerting system with intelligent notifications</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Cost reduction with process mining</li>
+            <li>Microservices deployment with container orchestration</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced risk with early warning systems</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Reduced marketing costs with targeted campaigns</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Better compliance with automated audit trails</li>
           </ul>
         </div>
         

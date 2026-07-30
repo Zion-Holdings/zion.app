@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent real estate-insurance - Zion Tech Group",
-  description: "Next-generation insurance solution: Intelligent real estate-insurance. Combines threat detection with adaptive intelligence for optimal results.",
+  description: "Revolutionize insurance through intelligent automation. Our Intelligent real estate-insurance leverages advanced machine learning to deliver decision support at",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-real-estate-insurance-8ed71b5d`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent real estate-insurance</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation insurance solution: Intelligent real estate-insurance. Combines threat detection with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize insurance through intelligent automation. Our Intelligent real estate-insurance leverages advanced machine learning to deliver decision support at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Code optimization with performance profiling</li>
-            <li>Market analysis with buyer behavior insights</li>
-            <li>Sales process optimization with pipeline management</li>
+            <li>Language processing with sentiment analysis</li>
+            <li>Real-time processing with streaming analytics</li>
+            <li>Role-based access control with SSO integration</li>
             <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved sales performance with lead scoring</li>
-            <li>Reduced marketing costs with targeted campaigns</li>
+            <li>Better compliance with automated audit trails</li>
             <li>Reduced human error by 95% with automated processes</li>
-            <li>Improved product quality with automated testing</li>
             <li>Zero manual intervention required for routine tasks</li>
+            <li>Improved quality with automated testing and validation</li>
+            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

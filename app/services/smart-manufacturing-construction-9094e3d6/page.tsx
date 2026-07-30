@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart manufacturing-construction - Zion Tech Group",
-  description: "The future of construction is here with Smart manufacturing-construction. Powered by cutting-edge AI, this platform delivers workflow management like never befo",
+  description: "The future of construction is here with Smart manufacturing-construction. Powered by cutting-edge AI, this platform delivers user experience like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-manufacturing-construction-9094e3d6`
   }
@@ -13,15 +13,14 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart manufacturing-construction</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Smart manufacturing-construction. Powered by cutting-edge AI, this platform delivers workflow management like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Smart manufacturing-construction. Powered by cutting-edge AI, this platform delivers user experience like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Custom integrations with webhook support</li>
-            <li>Brand monitoring across social channels</li>
-            <li>Document processing with OCR and NLP</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Machine learning integration with automatic model training</li>
             <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
@@ -29,11 +28,9 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Performance benchmarking against industry standards</li>
-            <li>Reduced support tickets with self-service options</li>
-            <li>Better risk management with predictive analytics</li>
-            <li>Enhanced security with continuous threat monitoring</li>
-            <li>Faster content creation with AI assistance</li>
+            <li>Reduced human error by 95% with automated processes</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>
         

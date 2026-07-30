@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Engine Cognitive - Manufacturing - Zion Tech Group",
-  description: "The future of manufacturing is here with Engine Cognitive - Manufacturing. Powered by cutting-edge AI, this platform delivers business intelligence like never b",
+  description: "The future of manufacturing is here with Engine Cognitive - Manufacturing. Powered by cutting-edge AI, this platform delivers decision support like never before",
   alternates: {
     canonical: `https://ziontechgroup.com/services/engine-cognitive---manufacturing-b793661a`
   }
@@ -13,26 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Engine Cognitive - Manufacturing</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of manufacturing is here with Engine Cognitive - Manufacturing. Powered by cutting-edge AI, this platform delivers business intelligence like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of manufacturing is here with Engine Cognitive - Manufacturing. Powered by cutting-edge AI, this platform delivers decision support like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Master data management with golden records</li>
-            <li>Cost reduction with process mining</li>
+            <li>Code optimization with performance profiling</li>
+            <li>Logistics route optimization with traffic prediction</li>
+            <li>Language processing with sentiment analysis</li>
             <li>Network optimization with traffic analysis</li>
-            <li>Performance dashboards with real-time metrics</li>
-            <li>Compliance monitoring with regulatory updates</li>
+            <li>Fraud detection with anomaly analysis</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced security with continuous threat monitoring</li>
-            <li>Reduced support tickets with self-service options</li>
-            <li>Reduced marketing costs with targeted campaigns</li>
-            <li>Improved customer retention with proactive service</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
+            <li>Zero manual intervention required for routine tasks</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>Seamless integration with existing systems and workflows</li>
           </ul>
         </div>
         

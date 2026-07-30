@@ -18,22 +18,21 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Document processing with OCR and NLP</li>
-            <li>Version control with rollback capabilities</li>
-            <li>Healthcare data analytics with patient insights</li>
-            <li>User experience analytics with behavior tracking</li>
-            <li>Serverless functions for cost-effective scaling</li>
+            <li>Fraud detection with anomaly analysis</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>Multi-region deployment with automatic failover</li>
+            <li>Role-based access control with SSO integration</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>24/7 automated operations without human intervention</li>
+            <li>Reduced churn with proactive customer retention</li>
             <li>Seamless integration with existing systems and workflows</li>
+            <li>Improved quality with automated testing and validation</li>
+            <li>Better compliance with automated audit trails</li>
             <li>50% reduction in operational costs through automation</li>
-            <li>Enhanced security with continuous threat monitoring</li>
-            <li>3x faster decision making with real-time insights</li>
           </ul>
         </div>
         

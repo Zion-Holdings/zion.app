@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligence Autonomous - Construction - Zion Tech Group",
-  description: "Next-generation construction solution: Intelligence Autonomous - Construction. Combines automation opportunity with adaptive intelligence for optimal results.",
+  description: "Unlock unprecedented growth with Intelligence Autonomous - Construction. This autonomous system provides process automation with zero manual intervention needed",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligence-autonomous---construction-86d377a5`
   }
@@ -13,27 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligence Autonomous - Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: Intelligence Autonomous - Construction. Combines automation opportunity with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Intelligence Autonomous - Construction. This autonomous system provides process automation with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Financial risk management with scenario analysis</li>
-            <li>Predictive modeling with ensemble methods</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>GDPR compliance with data portability</li>
             <li>Document processing with OCR and NLP</li>
-            <li>Inventory prediction with demand forecasting</li>
+            <li>HIPAA ready with healthcare data protection</li>
+            <li>Edge computing support for low-latency operations</li>
+            <li>Multi-language support with localization</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Scalable to millions of transactions per second</li>
-            <li>Reduced operational risks with predictive models</li>
-            <li>Improved employee productivity with automation</li>
-            <li>Better resource utilization with auto-scaling</li>
-            <li>Improved sales performance with lead scoring</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>Increased revenue with optimized pricing strategies</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

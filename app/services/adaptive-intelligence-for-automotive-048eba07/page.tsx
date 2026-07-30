@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive Intelligence for Automotive - Zion Tech Group",
-  description: "Unlock unprecedented growth with Adaptive Intelligence for Automotive. This autonomous system provides maintenance scheduling with zero manual intervention need",
+  description: "Revolutionize automotive through intelligent automation. Our Adaptive Intelligence for Automotive leverages advanced machine learning to deliver performance mon",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-intelligence-for-automotive-048eba07`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Adaptive Intelligence for Automotive</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Adaptive Intelligence for Automotive. This autonomous system provides maintenance scheduling with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize automotive through intelligent automation. Our Adaptive Intelligence for Automotive leverages advanced machine learning to deliver performance monitoring at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Data encryption at rest and in transit</li>
             <li>SOC 2 certified with security controls</li>
-            <li>Multi-language support with localization</li>
+            <li>Financial risk management with scenario analysis</li>
+            <li>Fraud detection with anomaly analysis</li>
             <li>Manufacturing quality control with defect detection</li>
-            <li>Process discovery with activity analysis</li>
+            <li>Audit trails with compliance reporting</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better customer experience with personalization</li>
+            <li>Zero manual intervention required for routine tasks</li>
             <li>Reduced human error by 95% with automated processes</li>
+            <li>Enhanced security with continuous threat monitoring</li>
             <li>Improved customer satisfaction with faster response times</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Reduced development time with code generation</li>
           </ul>
         </div>
         
