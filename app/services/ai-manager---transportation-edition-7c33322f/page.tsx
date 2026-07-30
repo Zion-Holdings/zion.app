@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Manager - Transportation Edition - Zion Tech Group",
-  description: "Transform your transportation operations with our AI Manager - Transportation Edition. This AI-driven solution automates healthcare data analytics with unpreced",
+  description: "Next-generation transportation solution: AI Manager - Transportation Edition. Combines customer insights with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-manager---transportation-edition-7c33322f`
   }
@@ -13,25 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Manager - Transportation Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your transportation operations with our AI Manager - Transportation Edition. This AI-driven solution automates healthcare data analytics with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation transportation solution: AI Manager - Transportation Edition. Combines customer insights with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Audit trails with compliance reporting</li>
+            <li>User experience analytics with behavior tracking</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Code optimization with performance profiling</li>
             <li>Performance dashboards with real-time metrics</li>
-            <li>Logistics route optimization with traffic prediction</li>
-            <li>Fraud detection with anomaly analysis</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Increased revenue with optimized pricing strategies</li>
-            <li>50% reduction in operational costs through automation</li>
-            <li>Improved quality with automated testing and validation</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>3x faster decision making with real-time insights</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Data Neural - Construction - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our Data Neural - Construction leverages advanced machine learning to deliver language processing at ",
+  description: "Revolutionize construction through intelligent automation. Our Data Neural - Construction leverages advanced machine learning to deliver content generation at s",
   alternates: {
     canonical: `https://ziontechgroup.com/services/data-neural---construction-73991a73`
   }
@@ -13,24 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Data Neural - Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our Data Neural - Construction leverages advanced machine learning to deliver language processing at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our Data Neural - Construction leverages advanced machine learning to deliver content generation at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Document processing with OCR and NLP</li>
-            <li>Financial risk management with scenario analysis</li>
-            <li>A/B testing framework for continuous optimization</li>
-            <li>Audit trails with compliance reporting</li>
+            <li>Fraud detection with anomaly analysis</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Microservices deployment with container orchestration</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>Faster time-to-market with accelerated development</li>
-            <li>Increased revenue with optimized pricing strategies</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>50% reduction in operational costs through automation</li>
           </ul>
         </div>
         

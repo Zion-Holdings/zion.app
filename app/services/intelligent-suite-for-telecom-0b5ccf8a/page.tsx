@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Suite for Telecom - Zion Tech Group",
-  description: "Transform your telecom operations with our Intelligent Suite for Telecom. This AI-driven solution automates performance monitoring with unprecedented accuracy a",
+  description: "Revolutionize telecom through intelligent automation. Our Intelligent Suite for Telecom leverages advanced machine learning to deliver fraud prevention at scale",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-suite-for-telecom-0b5ccf8a`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Suite for Telecom</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your telecom operations with our Intelligent Suite for Telecom. This AI-driven solution automates performance monitoring with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize telecom through intelligent automation. Our Intelligent Suite for Telecom leverages advanced machine learning to deliver fraud prevention at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Machine learning integration with automatic model training</li>
-            <li>Energy optimization with consumption tracking</li>
-            <li>HIPAA ready with healthcare data protection</li>
-            <li>Market analysis with buyer behavior insights</li>
-            <li>GDPR compliance with data portability</li>
+            <li>Language processing with sentiment analysis</li>
+            <li>Network optimization with traffic analysis</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>Custom integrations with webhook support</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Performance benchmarking against industry standards</li>
-            <li>50% reduction in operational costs through automation</li>
-            <li>Better supply chain visibility with tracking</li>
-            <li>Better customer experience with personalization</li>
+            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Increased revenue with optimized pricing strategies</li>
+            <li>Zero manual intervention required for routine tasks</li>
           </ul>
         </div>
         
