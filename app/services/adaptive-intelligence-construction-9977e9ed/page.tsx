@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive intelligence-construction - Zion Tech Group",
-  description: "The future of construction is here with Adaptive intelligence-construction. Powered by cutting-edge AI, this platform delivers process automation like never bef",
+  description: "The future of construction is here with Adaptive intelligence-construction. Powered by cutting-edge AI, this platform delivers document processing like never be",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-intelligence-construction-9977e9ed`
   }
@@ -13,26 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Adaptive intelligence-construction</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Adaptive intelligence-construction. Powered by cutting-edge AI, this platform delivers process automation like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Adaptive intelligence-construction. Powered by cutting-edge AI, this platform delivers document processing like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Logistics route optimization with traffic prediction</li>
+            <li>Multi-language support with localization</li>
             <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Microservices deployment with container orchestration</li>
-            <li>User experience analytics with behavior tracking</li>
-            <li>Performance dashboards with real-time metrics</li>
+            <li>Maintenance scheduling with predictive analytics</li>
+            <li>HIPAA ready with healthcare data protection</li>
+            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Better compliance with automated audit trails</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
           </ul>
         </div>
         

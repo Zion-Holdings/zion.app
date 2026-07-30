@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Suite - Insurance Edition - Zion Tech Group",
-  description: "The future of insurance is here with AI Suite - Insurance Edition. Powered by cutting-edge AI, this platform delivers code optimization like never before.",
+  description: "The future of insurance is here with AI Suite - Insurance Edition. Powered by cutting-edge AI, this platform delivers supply chain like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-suite---insurance-edition-b5a9c2d4`
   }
@@ -13,26 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Suite - Insurance Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of insurance is here with AI Suite - Insurance Edition. Powered by cutting-edge AI, this platform delivers code optimization like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of insurance is here with AI Suite - Insurance Edition. Powered by cutting-edge AI, this platform delivers supply chain like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Machine learning integration with automatic model training</li>
-            <li>Document processing with OCR and NLP</li>
-            <li>Language processing with sentiment analysis</li>
-            <li>Compliance monitoring with regulatory updates</li>
-            <li>Multi-language support with localization</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Inventory prediction with demand forecasting</li>
+            <li>Open-source friendly with plugin architecture</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved quality with automated testing and validation</li>
-            <li>Improved customer satisfaction with faster response times</li>
-            <li>Enhanced security with continuous threat monitoring</li>
-            <li>24/7 automated operations without human intervention</li>
+            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>Better risk management with predictive analytics</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive director-construction - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our Cognitive director-construction leverages advanced machine learning to deliver energy management ",
+  description: "Transform your construction operations with our Cognitive director-construction. This AI-driven solution automates financial risk management with unprecedented ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-director-construction-81d840fc`
   }
@@ -13,25 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Cognitive director-construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our Cognitive director-construction leverages advanced machine learning to deliver energy management at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your construction operations with our Cognitive director-construction. This AI-driven solution automates financial risk management with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Machine learning integration with automatic model training</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Language processing with sentiment analysis</li>
+            <li>Compliance monitoring with regulatory updates</li>
+            <li>Document processing with OCR and NLP</li>
             <li>Microservices deployment with container orchestration</li>
-            <li>Serverless functions for cost-effective scaling</li>
-            <li>Custom integrations with webhook support</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>Scalable to millions of transactions per second</li>
+            <li>Improved quality with automated testing and validation</li>
           </ul>
         </div>
         
