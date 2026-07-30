@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Optimizer for Transportation - Zion Tech Group",
-  description: "The future of transportation is here with Cognitive Optimizer for Transportation. Powered by cutting-edge AI, this platform delivers sales process optimization ",
+  description: "Next-generation transportation solution: Cognitive Optimizer for Transportation. Combines document processing with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-optimizer-for-transportation-02db911c`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Cognitive Optimizer for Transportation</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of transportation is here with Cognitive Optimizer for Transportation. Powered by cutting-edge AI, this platform delivers sales process optimization like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation transportation solution: Cognitive Optimizer for Transportation. Combines document processing with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Financial risk management with scenario analysis</li>
-            <li>Inventory prediction with demand forecasting</li>
+            <li>Content generation with plagiarism checks</li>
             <li>Data encryption at rest and in transit</li>
-            <li>Security monitoring with threat intelligence</li>
             <li>Audit trails with compliance reporting</li>
+            <li>Custom integrations with webhook support</li>
+            <li>User experience analytics with behavior tracking</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better market positioning with competitive analysis</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>Faster time-to-market with accelerated development</li>
             <li>Improved customer satisfaction with faster response times</li>
-            <li>Better risk management with predictive analytics</li>
-            <li>Enhanced security posture with continuous monitoring</li>
-            <li>Better code quality with automated reviews</li>
           </ul>
         </div>
         

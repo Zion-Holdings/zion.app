@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated system-construction - Zion Tech Group",
-  description: "The future of construction is here with Automated system-construction. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never befo",
+  description: "Next-generation construction solution: Automated system-construction. Combines user experience with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-system-construction-f766960f`
   }
@@ -13,26 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automated system-construction</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Automated system-construction. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: Automated system-construction. Combines user experience with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Logistics route optimization with traffic prediction</li>
-            <li>Market analysis with buyer behavior insights</li>
-            <li>Language processing with sentiment analysis</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Data governance with policy enforcement</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Content generation with plagiarism checks</li>
+            <li>Sales process optimization with pipeline management</li>
+            <li>Version control with rollback capabilities</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced risk with early warning systems</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Increased revenue with optimized pricing strategies</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Real-time insights and alerts for proactive management</li>
+            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

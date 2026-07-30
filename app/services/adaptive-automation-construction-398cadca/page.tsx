@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive automation-construction - Zion Tech Group",
-  description: "The future of construction is here with Adaptive automation-construction. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never b",
+  description: "Revolutionize construction through intelligent automation. Our Adaptive automation-construction leverages advanced machine learning to deliver logistics route o",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-automation-construction-398cadca`
   }
@@ -13,27 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Adaptive automation-construction</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Adaptive automation-construction. Powered by cutting-edge AI, this platform delivers maintenance scheduling like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our Adaptive automation-construction leverages advanced machine learning to deliver logistics route optimization at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Inventory prediction with demand forecasting</li>
-            <li>Network optimization with traffic analysis</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Multi-language support with localization</li>
-            <li>Microservices deployment with container orchestration</li>
+            <li>Machine learning integration with automatic model training</li>
+            <li>Logistics route optimization with traffic prediction</li>
+            <li>SOC 2 certified with security controls</li>
+            <li>A/B testing framework for continuous optimization</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced security with continuous threat monitoring</li>
-            <li>Performance benchmarking against industry standards</li>
-            <li>Better risk management with predictive analytics</li>
-            <li>Reduced support tickets with self-service options</li>
-            <li>Better market positioning with competitive analysis</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>Faster time-to-market with accelerated development</li>
           </ul>
         </div>
         

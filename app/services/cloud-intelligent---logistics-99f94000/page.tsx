@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cloud Intelligent - Logistics - Zion Tech Group",
-  description: "Next-generation logistics solution: Cloud Intelligent - Logistics. Combines logistics route optimization with adaptive intelligence for optimal results.",
+  description: "Revolutionize logistics through intelligent automation. Our Cloud Intelligent - Logistics leverages advanced machine learning to deliver risk assessment at scal",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cloud-intelligent---logistics-99f94000`
   }
@@ -13,25 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Cloud Intelligent - Logistics</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation logistics solution: Cloud Intelligent - Logistics. Combines logistics route optimization with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize logistics through intelligent automation. Our Cloud Intelligent - Logistics leverages advanced machine learning to deliver risk assessment at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Customer service automation with chatbot integration</li>
-            <li>Role-based access control with SSO integration</li>
-            <li>Real-time processing with streaming analytics</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Custom integrations with webhook support</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Better compliance with automated audit trails</li>
             <li>Scalable to millions of transactions per second</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Improved quality with automated testing and validation</li>
+            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

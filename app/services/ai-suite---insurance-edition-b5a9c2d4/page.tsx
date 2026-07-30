@@ -18,19 +18,21 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Energy optimization with consumption tracking</li>
-            <li>Inventory prediction with demand forecasting</li>
-            <li>Open-source friendly with plugin architecture</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Version control with rollback capabilities</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Auto-scaling capabilities with predictive scaling</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Cost optimization recommendations with savings analysis</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Better risk management with predictive analytics</li>
+            <li>Improved quality with automated testing and validation</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>Zero manual intervention required for routine tasks</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
           </ul>
         </div>
         
