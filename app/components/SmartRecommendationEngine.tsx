@@ -72,7 +72,7 @@ export default function SmartRecommendationEngine({ className = '' }: SmartRecom
     const allKeywords = [...(industryConfig?.keywords || []), ...problem.toLowerCase().split(/\s+/)];
     
     const scoredServices: Recommendation[] = allServices
-      .map(service => {
+      .map<Recommendation | null>(service => {
         const serviceText = `${service.title} ${service.description} ${(service.features || []).join(' ')} ${(service.benefits || []).join(' ')}`.toLowerCase();
         
         // Calculate keyword match score
@@ -90,7 +90,7 @@ export default function SmartRecommendationEngine({ className = '' }: SmartRecom
         
         // Size-based pricing filter
         const pricingValues = Object.values(service.pricing || {});
-        const minPrice = Math.min(...pricingValues.map(p => parseFloat(p.replace('$', '').replace('/mo', '')) || 999999));
+        const minPrice = Math.min(...pricingValues.map((p: any) => parseFloat(String(p).replace('$', '').replace('/mo', '')) || 999999));
         const sizeMultiplier = BUSINESS_SIZE_MULTIPLIERS[businessSize] || 1;
         const priceCompatible = minPrice * sizeMultiplier <= (parseInt(budget) || Infinity);
 
@@ -111,7 +111,7 @@ export default function SmartRecommendationEngine({ className = '' }: SmartRecom
           matchReasons: matchedKeywords.slice(0, 3)
         };
       })
-      .filter(Boolean)
+      .filter((r): r is Recommendation => r !== null)
       .sort((a, b) => b.score - a.score)
       .slice(0, 6);
 

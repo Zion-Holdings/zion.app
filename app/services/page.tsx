@@ -87,8 +87,14 @@ function ServicesContent() {
       />
     <main className="min-h-screen bg-slate-950 py-20">
       <div className="container-page">
-        <h1 className="text-4xl font-bold text-white mb-2 text-center">Our Complete Service Catalog</h1>
-        <p className="section-subheading text-center">{allServices.length}+ real-world services across 10 categories</p>
+        <div className="text-center mb-10">
+          <h1 className="text-4xl font-bold text-white mb-2">Our Complete Service Catalog</h1>
+          <p className="section-subheading text-center">{allServices.length}+ actionable AI & IT services across 10 categories — most engagements ship in 2–4 weeks</p>
+        </div>
+        <div className="flex flex-wrap justify-center gap-3 mb-10">
+          <Link href="/contact/" className="btn-primary text-base px-8 py-3">Start a Project →</Link>
+          <Link href="/case-studies/" className="btn-secondary text-base px-8 py-3">View Proof</Link>
+        </div>
         {/* Smart Fuzzy Search Bar */}
         <div className="max-w-3xl mx-auto mt-8">
           <SmartSearchBar
@@ -131,6 +137,22 @@ function ServicesContent() {
             <p className="text-slate-400 text-sm">📍 364 E Main St STE 1008, Middletown, DE 19709</p>
           </div>
         </div>
+
+        <div className="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
+          {[
+            { value: '7', label: 'Case studies', hint: 'Production proof' },
+            { value: '9', label: 'Live agents', hint: '24/7 automation' },
+            { value: '35+', label: 'Outreach sends', hint: 'Verified Jul 2026' },
+            { value: '2–4 wks', label: 'Typical delivery', hint: 'Engagement speed' },
+            { value: '99.9%', label: 'SLA uptime', hint: 'Production runtime' },
+          ].map((item) => (
+            <div key={item.label} className="rounded-xl border border-slate-800 bg-slate-900/60 p-4 text-center">
+              <div className="text-xl font-bold gradient-text">{item.value}</div>
+              <div className="text-xs text-slate-300 mt-1 font-medium">{item.label}</div>
+              <div className="text-[10px] text-slate-500 mt-0.5">{item.hint}</div>
+            </div>
+          ))}
+        </div>
       </div>
     </main>
     </>
@@ -144,6 +166,14 @@ export default function ServicesPage() {
         <div className="container-page">
           <h1 className="text-4xl font-bold text-white mb-2 text-center">Our Complete Service Catalog</h1>
           <p className="section-subheading text-center">Browse all services</p>
+          <div className="text-center mb-10">
+            <p className="text-slate-300">Every engagement starts with measurable outcomes, not feature lists. Pick a category below or tell us your goal — we’ll map it to the right stack.</p>
+            <div className="flex flex-wrap justify-center gap-3 mt-4">
+              <Link href="/contact/" className="btn-primary">Start With a Proposal</Link>
+              <Link href="/case-studies/" className="btn-secondary">See Proof Points</Link>
+              <Link href="/free-ai-consultation/" className="btn-secondary">Free AI Consultation</Link>
+            </div>
+          </div>
           <div className="mt-8">
             <ServiceGridSkeleton />
           </div>
