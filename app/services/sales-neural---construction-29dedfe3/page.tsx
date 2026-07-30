@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Sales Neural - Construction - Zion Tech Group",
-  description: "Next-generation construction solution: Sales Neural - Construction. Combines inventory management with adaptive intelligence for optimal results.",
+  description: "Unlock unprecedented growth with Sales Neural - Construction. This autonomous system provides manufacturing quality control with zero manual intervention needed",
   alternates: {
     canonical: `https://ziontechgroup.com/services/sales-neural---construction-29dedfe3`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Sales Neural - Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: Sales Neural - Construction. Combines inventory management with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Sales Neural - Construction. This autonomous system provides manufacturing quality control with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Multi-region deployment with automatic failover</li>
-            <li>GDPR compliance with data portability</li>
-            <li>Compliance monitoring with regulatory updates</li>
-            <li>Master data management with golden records</li>
-            <li>Machine learning integration with automatic model training</li>
+            <li>Open-source friendly with plugin architecture</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Sales process optimization with pipeline management</li>
+            <li>Security monitoring with threat intelligence</li>
+            <li>Customer service automation with chatbot integration</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced churn with proactive customer retention</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Reduced marketing costs with targeted campaigns</li>
-            <li>Scalable to millions of transactions per second</li>
-            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Increased revenue with optimized pricing strategies</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>Cost optimization recommendations with savings analysis</li>
           </ul>
         </div>
         

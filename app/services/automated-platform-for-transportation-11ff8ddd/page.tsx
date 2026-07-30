@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Platform for Transportation - Zion Tech Group",
-  description: "Revolutionize transportation through intelligent automation. Our Automated Platform for Transportation leverages advanced machine learning to deliver workflow m",
+  description: "Unlock unprecedented growth with Automated Platform for Transportation. This autonomous system provides resource optimization with zero manual intervention need",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-platform-for-transportation-11ff8ddd`
   }
@@ -13,25 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automated Platform for Transportation</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize transportation through intelligent automation. Our Automated Platform for Transportation leverages advanced machine learning to deliver workflow management at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Automated Platform for Transportation. This autonomous system provides resource optimization with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Content generation with plagiarism checks</li>
-            <li>Maintenance scheduling with predictive analytics</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>Edge computing support for low-latency operations</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
             <li>Data encryption at rest and in transit</li>
-            <li>Multi-language support with localization</li>
+            <li>Document processing with OCR and NLP</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better compliance with automated audit trails</li>
-            <li>Scalable to millions of transactions per second</li>
-            <li>Improved quality with automated testing and validation</li>
-            <li>50% reduction in operational costs through automation</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>3x faster decision making with real-time insights</li>
           </ul>
         </div>
         

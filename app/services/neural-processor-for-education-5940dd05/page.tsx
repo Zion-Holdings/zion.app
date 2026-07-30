@@ -18,22 +18,22 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Microservices deployment with container orchestration</li>
-            <li>Data encryption at rest and in transit</li>
-            <li>Cost reduction with process mining</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
-            <li>Multi-language support with localization</li>
+            <li>Code optimization with performance profiling</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>Audit trails with compliance reporting</li>
+            <li>Image recognition with computer vision</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better risk management with predictive analytics</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Improved forecast accuracy with ML models</li>
-            <li>Reduced human error by 95% with automated processes</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Zero manual intervention required for routine tasks</li>
+            <li>Performance benchmarking against industry standards</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
+            <li>Increased revenue with optimized pricing strategies</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Sales Intelligence - Zion Tech Group",
-  description: "Revolutionize technology through intelligent automation. Our Intelligent Sales Intelligence leverages advanced machine learning to deliver sentiment analysis at",
+  description: "Transform your education operations with our Intelligent Sales Intelligence. This AI-driven solution automates fraud prevention with unprecedented accuracy and ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-sales-intelligence-65721f00`
   }
@@ -13,16 +13,16 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Sales Intelligence</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize technology through intelligent automation. Our Intelligent Sales Intelligence leverages advanced machine learning to deliver sentiment analysis at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your education operations with our Intelligent Sales Intelligence. This AI-driven solution automates fraud prevention with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Custom integrations with webhook support</li>
-            <li>Content generation with plagiarism checks</li>
-            <li>Energy optimization with consumption tracking</li>
-            <li>User experience analytics with behavior tracking</li>
-            <li>Serverless functions for cost-effective scaling</li>
+            <li>Inventory prediction with demand forecasting</li>
+            <li>Multi-region deployment with automatic failover</li>
+            <li>Security monitoring with threat intelligence</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Microservices deployment with container orchestration</li>
           </ul>
         </div>
         
@@ -30,9 +30,8 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Scalable to millions of transactions per second</li>
-            <li>Improved employee productivity with automation</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>Faster time-to-market with accelerated development</li>
           </ul>
         </div>
         

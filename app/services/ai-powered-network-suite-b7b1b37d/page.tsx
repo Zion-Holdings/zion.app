@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Network Suite - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our AI-Powered Network Suite leverages advanced machine learning to deliver master data management at sc",
+  description: "Revolutionize hospitality through intelligent automation. Our AI-Powered Network Suite leverages advanced machine learning to deliver healthcare data analytics ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-network-suite-b7b1b37d`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI-Powered Network Suite</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize logistics through intelligent automation. Our AI-Powered Network Suite leverages advanced machine learning to deliver master data management at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize hospitality through intelligent automation. Our AI-Powered Network Suite leverages advanced machine learning to deliver healthcare data analytics at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Content generation with plagiarism checks</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Audit trails with compliance reporting</li>
-            <li>Real-time processing with streaming analytics</li>
-            <li>Healthcare data analytics with patient insights</li>
+            <li>Logistics route optimization with traffic prediction</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Document processing with OCR and NLP</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>Machine learning integration with automatic model training</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>99.9% uptime guarantee with redundant architecture</li>
+            <li>Zero manual intervention required for routine tasks</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
             <li>Real-time insights and alerts for proactive management</li>
-            <li>Better financial planning with predictive models</li>
-            <li>Better code quality with automated reviews</li>
-            <li>Better market positioning with competitive analysis</li>
           </ul>
         </div>
         

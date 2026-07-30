@@ -19,20 +19,19 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Manufacturing quality control with defect detection</li>
-            <li>Role-based access control with SSO integration</li>
-            <li>Inventory prediction with demand forecasting</li>
-            <li>Alerting system with intelligent notifications</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Content generation with plagiarism checks</li>
+            <li>Multi-language support with localization</li>
+            <li>User experience analytics with behavior tracking</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>Scalable to millions of transactions per second</li>
-            <li>Faster time-to-market with accelerated development</li>
+            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

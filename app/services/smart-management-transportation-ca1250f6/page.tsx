@@ -18,21 +18,20 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Sales process optimization with pipeline management</li>
-            <li>User experience analytics with behavior tracking</li>
-            <li>Version control with rollback capabilities</li>
-            <li>Role-based access control with SSO integration</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Custom integrations with webhook support</li>
+            <li>GDPR compliance with data portability</li>
             <li>Performance dashboards with real-time metrics</li>
+            <li>Network optimization with traffic analysis</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Faster time-to-market with accelerated development</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Reduced human error by 95% with automated processes</li>
+            <li>Better risk management with predictive analytics</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
           </ul>
         </div>
         

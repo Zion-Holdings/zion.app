@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Sales AI - Telecom - Zion Tech Group",
-  description: "The future of telecom is here with Sales AI - Telecom. Powered by cutting-edge AI, this platform delivers security monitoring like never before.",
+  description: "Revolutionize telecom through intelligent automation. Our Sales AI - Telecom leverages advanced machine learning to deliver energy management at scale.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/sales-ai---telecom-34c34e7e`
   }
@@ -13,25 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Sales AI - Telecom</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of telecom is here with Sales AI - Telecom. Powered by cutting-edge AI, this platform delivers security monitoring like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize telecom through intelligent automation. Our Sales AI - Telecom leverages advanced machine learning to deliver energy management at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>Custom integrations with webhook support</li>
+            <li>Language processing with sentiment analysis</li>
+            <li>Version control with rollback capabilities</li>
             <li>Alerting system with intelligent notifications</li>
-            <li>Microservices deployment with container orchestration</li>
-            <li>Document processing with OCR and NLP</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Performance dashboards with real-time metrics</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Zero manual intervention required for routine tasks</li>
-            <li>Improved quality with automated testing and validation</li>
-            <li>3x faster decision making with real-time insights</li>
+            <li>Enhanced security with continuous threat monitoring</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Better risk management with predictive analytics</li>
           </ul>
         </div>
         

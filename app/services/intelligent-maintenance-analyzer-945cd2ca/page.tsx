@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Maintenance Analyzer - Zion Tech Group",
-  description: "Next-generation telecom solution: Intelligent Maintenance Analyzer. Combines automation opportunity with adaptive intelligence for optimal results.",
+  description: "Unlock unprecedented growth with Intelligent Maintenance Analyzer. This autonomous system provides process automation with zero manual intervention needed.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-maintenance-analyzer-945cd2ca`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Maintenance Analyzer</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation telecom solution: Intelligent Maintenance Analyzer. Combines automation opportunity with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Intelligent Maintenance Analyzer. This autonomous system provides process automation with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Predictive modeling with ensemble methods</li>
-            <li>Audit trails with compliance reporting</li>
-            <li>Budget optimization with cost allocation</li>
-            <li>Executive dashboards with drill-down capabilities</li>
-            <li>Business intelligence with KPI dashboards</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Image recognition with computer vision</li>
+            <li>Microservices deployment with container orchestration</li>
+            <li>Customer service automation with chatbot integration</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Seamless integration with existing systems and workflows</li>
-            <li>50% reduction in operational costs through automation</li>
-            <li>Enhanced security posture with continuous monitoring</li>
             <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Improved brand awareness with social monitoring</li>
+            <li>Improved quality with automated testing and validation</li>
+            <li>Zero manual intervention required for routine tasks</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

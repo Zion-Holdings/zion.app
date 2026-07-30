@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Analyzer - Construction Edition #4 - Zion Tech Group",
-  description: "The future of construction is here with AI Analyzer - Construction Edition #4. Powered by cutting-edge AI, this platform delivers supply chain like never before",
+  description: "Revolutionize construction through intelligent automation. Our AI Analyzer - Construction Edition #4 leverages advanced machine learning to deliver threat detec",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-analyzer---construction-edition-4-b696a7b3`
   }
@@ -13,25 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Analyzer - Construction Edition #4</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with AI Analyzer - Construction Edition #4. Powered by cutting-edge AI, this platform delivers supply chain like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our AI Analyzer - Construction Edition #4 leverages advanced machine learning to deliver threat detection at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Data quality with anomaly detection</li>
-            <li>User experience analytics with behavior tracking</li>
-            <li>Open-source friendly with plugin architecture</li>
-            <li>Maintenance scheduling with predictive analytics</li>
-            <li>Custom integrations with webhook support</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>Financial risk management with scenario analysis</li>
+            <li>GDPR compliance with data portability</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Role-based access control with SSO integration</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better code quality with automated reviews</li>
-            <li>Enhanced decision making with data-driven insights</li>
-            <li>Improved sales performance with lead scoring</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>Real-time insights and alerts for proactive management</li>
             <li>Zero manual intervention required for routine tasks</li>
           </ul>
         </div>

@@ -4,7 +4,7 @@ Hi there,
 
 I'm reaching out to introduce Healthcare AI - Education from Zion Tech Group - an AI-powered solution that could significantly impact your business.
 
-Revolutionize education through intelligent automation. Our Healthcare AI - Education leverages advanced machine learning to deliver code optimization at scale.
+Revolutionize education through intelligent automation. Our Healthcare AI - Education leverages advanced machine learning to deliver image recognition at scale.
 
 Key Benefits:
 - AI-driven automation for faster results

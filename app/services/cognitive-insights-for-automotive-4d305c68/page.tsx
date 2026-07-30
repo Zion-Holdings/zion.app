@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Insights for Automotive - Zion Tech Group",
-  description: "The future of automotive is here with Cognitive Insights for Automotive. Powered by cutting-edge AI, this platform delivers image recognition like never before.",
+  description: "Revolutionize automotive through intelligent automation. Our Cognitive Insights for Automotive leverages advanced machine learning to deliver content generation",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-insights-for-automotive-4d305c68`
   }
@@ -13,24 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Cognitive Insights for Automotive</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of automotive is here with Cognitive Insights for Automotive. Powered by cutting-edge AI, this platform delivers image recognition like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize automotive through intelligent automation. Our Cognitive Insights for Automotive leverages advanced machine learning to deliver content generation at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Custom integrations with webhook support</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>SOC 2 certified with security controls</li>
             <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Energy optimization with consumption tracking</li>
-            <li>Logistics route optimization with traffic prediction</li>
-            <li>Multi-language support with localization</li>
+            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>3x faster decision making with real-time insights</li>
-            <li>50% reduction in operational costs through automation</li>
-            <li>Scalable to millions of transactions per second</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>Better risk management with predictive analytics</li>
           </ul>
         </div>
         

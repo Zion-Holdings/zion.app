@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural Analytics for Hospitality - Zion Tech Group",
-  description: "Unlock unprecedented growth with Neural Analytics for Hospitality. This autonomous system provides budget optimization with zero manual intervention needed.",
+  description: "The future of hospitality is here with Neural Analytics for Hospitality. Powered by cutting-edge AI, this platform delivers decision support like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-analytics-for-hospitality-2c56d70c`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Neural Analytics for Hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Neural Analytics for Hospitality. This autonomous system provides budget optimization with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of hospitality is here with Neural Analytics for Hospitality. Powered by cutting-edge AI, this platform delivers decision support like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Cost reduction with process mining</li>
-            <li>Predictive modeling with ensemble methods</li>
-            <li>Business intelligence with KPI dashboards</li>
-            <li>SOC 2 certified with security controls</li>
-            <li>Customer journey mapping with touchpoint analysis</li>
+            <li>Real-time processing with streaming analytics</li>
+            <li>Language processing with sentiment analysis</li>
+            <li>Audit trails with compliance reporting</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced security posture with continuous monitoring</li>
+            <li>50% reduction in operational costs through automation</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>3x faster decision making with real-time insights</li>
             <li>Increased revenue with optimized pricing strategies</li>
-            <li>Better code quality with automated reviews</li>
-            <li>Better financial planning with predictive models</li>
-            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

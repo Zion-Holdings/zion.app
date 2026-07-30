@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent sales-logistics - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent sales-logistics. This autonomous system provides language processing with zero manual intervention needed.",
+  description: "Revolutionize logistics through intelligent automation. Our Intelligent sales-logistics leverages advanced machine learning to deliver process automation at sca",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-sales-logistics-d9d18e08`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent sales-logistics</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Intelligent sales-logistics. This autonomous system provides language processing with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize logistics through intelligent automation. Our Intelligent sales-logistics leverages advanced machine learning to deliver process automation at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Business intelligence with KPI dashboards</li>
-            <li>Financial risk management with scenario analysis</li>
-            <li>Maintenance scheduling with predictive analytics</li>
-            <li>Customer journey mapping with touchpoint analysis</li>
-            <li>Image recognition with computer vision</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Audit trails with compliance reporting</li>
+            <li>Network optimization with traffic analysis</li>
+            <li>Inventory prediction with demand forecasting</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Cost optimization recommendations with savings analysis</li>
-            <li>Improved customer retention with proactive service</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Scalable to millions of transactions per second</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Zero manual intervention required for routine tasks</li>
           </ul>
         </div>
         

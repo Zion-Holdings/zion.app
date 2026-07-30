@@ -18,22 +18,20 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>SOC 2 certified with security controls</li>
-            <li>Data encryption at rest and in transit</li>
-            <li>Customer journey mapping with touchpoint analysis</li>
-            <li>HIPAA ready with healthcare data protection</li>
             <li>Real-time processing with streaming analytics</li>
+            <li>HIPAA ready with healthcare data protection</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Role-based access control with SSO integration</li>
+            <li>Multi-region deployment with automatic failover</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Reduced shipping costs with route optimization</li>
-            <li>Reduced development time with code generation</li>
-            <li>Reduced risk with early warning systems</li>
-            <li>Enhanced decision making with data-driven insights</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>Reduced human error by 95% with automated processes</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
           </ul>
         </div>
         

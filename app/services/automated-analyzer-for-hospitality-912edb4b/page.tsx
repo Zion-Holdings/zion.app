@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Analyzer for Hospitality - Zion Tech Group",
-  description: "Revolutionize hospitality through intelligent automation. Our Automated Analyzer for Hospitality leverages advanced machine learning to deliver manufacturing qu",
+  description: "Next-generation hospitality solution: Automated Analyzer for Hospitality. Combines document processing with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-analyzer-for-hospitality-912edb4b`
   }
@@ -13,26 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automated Analyzer for Hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize hospitality through intelligent automation. Our Automated Analyzer for Hospitality leverages advanced machine learning to deliver manufacturing quality control at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation hospitality solution: Automated Analyzer for Hospitality. Combines document processing with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>SOC 2 certified with security controls</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
             <li>Compliance monitoring with regulatory updates</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Language processing with sentiment analysis</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Image recognition with computer vision</li>
+            <li>HIPAA ready with healthcare data protection</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Faster time-to-market with accelerated development</li>
-            <li>3x faster decision making with real-time insights</li>
-            <li>Seamless integration with existing systems and workflows</li>
             <li>99.9% uptime guarantee with redundant architecture</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>Enhanced security with continuous threat monitoring</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>Zero manual intervention required for routine tasks</li>
           </ul>
         </div>
         

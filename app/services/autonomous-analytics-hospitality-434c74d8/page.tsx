@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous analytics-hospitality - Zion Tech Group",
-  description: "Revolutionize hospitality through intelligent automation. Our Autonomous analytics-hospitality leverages advanced machine learning to deliver predictive analyti",
+  description: "Next-generation hospitality solution: Autonomous analytics-hospitality. Combines security monitoring with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-analytics-hospitality-434c74d8`
   }
@@ -13,26 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Autonomous analytics-hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize hospitality through intelligent automation. Our Autonomous analytics-hospitality leverages advanced machine learning to deliver predictive analytics at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation hospitality solution: Autonomous analytics-hospitality. Combines security monitoring with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Code optimization with performance profiling</li>
-            <li>Cost reduction with process mining</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
-            <li>HIPAA ready with healthcare data protection</li>
-            <li>Compliance monitoring with regulatory updates</li>
+            <li>Serverless functions for cost-effective scaling</li>
+            <li>Fraud detection with anomaly analysis</li>
+            <li>Security monitoring with threat intelligence</li>
+            <li>A/B testing framework for continuous optimization</li>
+            <li>Energy optimization with consumption tracking</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Reduced development time with code generation</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Reduced churn with proactive customer retention</li>
+            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Increased revenue with optimized pricing strategies</li>
+            <li>Real-time insights and alerts for proactive management</li>
           </ul>
         </div>
         

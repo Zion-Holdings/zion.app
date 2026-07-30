@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Finance - Construction Edition #1 - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our AI Finance - Construction Edition #1 leverages advanced machine learning to deliver revenue forec",
+  description: "Next-generation construction solution: AI Finance - Construction Edition #1. Combines risk assessment with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-finance---construction-edition-1-5b604719`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Finance - Construction Edition #1</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our AI Finance - Construction Edition #1 leverages advanced machine learning to deliver revenue forecasting at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: AI Finance - Construction Edition #1. Combines risk assessment with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>GDPR compliance with data portability</li>
-            <li>Content generation with plagiarism checks</li>
+            <li>Edge computing support for low-latency operations</li>
+            <li>Language processing with sentiment analysis</li>
+            <li>Multi-region deployment with automatic failover</li>
             <li>Manufacturing quality control with defect detection</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Competitive intelligence with market share tracking</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved customer retention with proactive service</li>
-            <li>Improved conversion rates with personalization</li>
-            <li>Improved employee productivity with automation</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Improved sales performance with lead scoring</li>
+            <li>Zero manual intervention required for routine tasks</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>Seamless integration with existing systems and workflows</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>
         

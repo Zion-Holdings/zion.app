@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Resource Analytics - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our AI-Powered Resource Analytics leverages advanced machine learning to deliver automation opportunity ",
+  description: "Revolutionize finance through intelligent automation. Our AI-Powered Resource Analytics leverages advanced machine learning to deliver user experience at scale.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-resource-analytics-8763374b`
   }
@@ -13,27 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI-Powered Resource Analytics</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize logistics through intelligent automation. Our AI-Powered Resource Analytics leverages advanced machine learning to deliver automation opportunity at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize finance through intelligent automation. Our AI-Powered Resource Analytics leverages advanced machine learning to deliver user experience at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Document processing with OCR and NLP</li>
-            <li>Open-source friendly with plugin architecture</li>
-            <li>Healthcare data analytics with patient insights</li>
-            <li>Manufacturing quality control with defect detection</li>
+            <li>Inventory prediction with demand forecasting</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>Multi-language support with localization</li>
+            <li>Performance dashboards with real-time metrics</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better market positioning with competitive analysis</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Better compliance with automated audit trails</li>
             <li>Enhanced security with continuous threat monitoring</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>50% reduction in operational costs through automation</li>
-            <li>Faster content creation with AI assistance</li>
           </ul>
         </div>
         

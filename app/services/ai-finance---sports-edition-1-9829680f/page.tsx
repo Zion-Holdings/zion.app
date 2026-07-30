@@ -18,21 +18,20 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Microservices deployment with container orchestration</li>
-            <li>Network optimization with traffic analysis</li>
-            <li>Custom integrations with webhook support</li>
-            <li>Alerting system with intelligent notifications</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Document processing with OCR and NLP</li>
             <li>SOC 2 certified with security controls</li>
+            <li>Audit trails with compliance reporting</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Reduced churn with proactive customer retention</li>
-            <li>Increased revenue with optimized pricing strategies</li>
-            <li>Performance benchmarking against industry standards</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>Cost optimization recommendations with savings analysis</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Platform for Logistics - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our Automated Platform for Logistics leverages advanced machine learning to deliver process discovery at",
+  description: "The future of logistics is here with Automated Platform for Logistics. Powered by cutting-edge AI, this platform delivers quality control like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-platform-for-logistics-73ede05c`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automated Platform for Logistics</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize logistics through intelligent automation. Our Automated Platform for Logistics leverages advanced machine learning to deliver process discovery at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of logistics is here with Automated Platform for Logistics. Powered by cutting-edge AI, this platform delivers quality control like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>SOC 2 certified with security controls</li>
-            <li>Maintenance scheduling with predictive analytics</li>
-            <li>Custom integrations with webhook support</li>
-            <li>Multi-language support with localization</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Logistics route optimization with traffic prediction</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>Machine learning integration with automatic model training</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>Document processing with OCR and NLP</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
-            <li>Reduced shipping costs with route optimization</li>
-            <li>Better supply chain visibility with tracking</li>
-            <li>Improved brand awareness with social monitoring</li>
+            <li>Seamless integration with existing systems and workflows</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
           </ul>
         </div>
         

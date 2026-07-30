@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cloud Self-Optimizing - Construction - Zion Tech Group",
-  description: "The future of construction is here with Cloud Self-Optimizing - Construction. Powered by cutting-edge AI, this platform delivers customer service automation lik",
+  description: "The future of construction is here with Cloud Self-Optimizing - Construction. Powered by cutting-edge AI, this platform delivers supply chain like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cloud-self-optimizing---construction-0a55425e`
   }
@@ -13,27 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Cloud Self-Optimizing - Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Cloud Self-Optimizing - Construction. Powered by cutting-edge AI, this platform delivers customer service automation like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Cloud Self-Optimizing - Construction. Powered by cutting-edge AI, this platform delivers supply chain like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Manufacturing quality control with defect detection</li>
-            <li>User experience analytics with behavior tracking</li>
-            <li>Market analysis with buyer behavior insights</li>
-            <li>Cost reduction with process mining</li>
-            <li>Multi-language support with localization</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Maintenance scheduling with predictive analytics</li>
+            <li>Sales process optimization with pipeline management</li>
+            <li>A/B testing framework for continuous optimization</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced churn with proactive customer retention</li>
-            <li>Better inventory management with demand forecasting</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
-            <li>24/7 automated operations without human intervention</li>
-            <li>Performance benchmarking against industry standards</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         

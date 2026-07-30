@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart insights-construction - Zion Tech Group",
-  description: "Transform your construction operations with our Smart insights-construction. This AI-driven solution automates energy management with unprecedented accuracy and",
+  description: "Next-generation construction solution: Smart insights-construction. Combines sales forecasting with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-insights-construction-4e02c43c`
   }
@@ -13,26 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart insights-construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your construction operations with our Smart insights-construction. This AI-driven solution automates energy management with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: Smart insights-construction. Combines sales forecasting with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>Customer service automation with chatbot integration</li>
             <li>Open-source friendly with plugin architecture</li>
-            <li>Data encryption at rest and in transit</li>
-            <li>Edge computing support for low-latency operations</li>
-            <li>Custom integrations with webhook support</li>
+            <li>Code optimization with performance profiling</li>
+            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better risk management with predictive analytics</li>
-            <li>Reduced churn with proactive customer retention</li>
-            <li>24/7 automated operations without human intervention</li>
-            <li>Increased revenue with optimized pricing strategies</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Zero manual intervention required for routine tasks</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

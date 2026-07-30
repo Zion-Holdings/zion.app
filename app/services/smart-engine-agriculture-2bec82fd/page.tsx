@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart engine-agriculture - Zion Tech Group",
-  description: "Transform your agriculture operations with our Smart engine-agriculture. This AI-driven solution automates supply chain with unprecedented accuracy and efficien",
+  description: "Transform your agriculture operations with our Smart engine-agriculture. This AI-driven solution automates customer insights with unprecedented accuracy and eff",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-engine-agriculture-2bec82fd`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart engine-agriculture</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your agriculture operations with our Smart engine-agriculture. This AI-driven solution automates supply chain with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your agriculture operations with our Smart engine-agriculture. This AI-driven solution automates customer insights with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Automation opportunity identification</li>
-            <li>Machine learning integration with automatic model training</li>
-            <li>Language processing with sentiment analysis</li>
-            <li>Security monitoring with threat intelligence</li>
-            <li>Sales process optimization with pipeline management</li>
+            <li>Document processing with OCR and NLP</li>
+            <li>Image recognition with computer vision</li>
+            <li>Role-based access control with SSO integration</li>
+            <li>SOC 2 certified with security controls</li>
+            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better customer experience with personalization</li>
-            <li>Reduced development time with code generation</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
-            <li>Enhanced security posture with continuous monitoring</li>
-            <li>Improved product quality with automated testing</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Faster time-to-market with accelerated development</li>
           </ul>
         </div>
         

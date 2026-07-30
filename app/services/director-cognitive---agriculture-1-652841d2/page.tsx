@@ -18,22 +18,20 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Alerting system with intelligent notifications</li>
-            <li>Data encryption at rest and in transit</li>
-            <li>Logistics route optimization with traffic prediction</li>
-            <li>A/B testing framework for continuous optimization</li>
-            <li>Data governance with policy enforcement</li>
+            <li>Machine learning integration with automatic model training</li>
+            <li>Microservices deployment with container orchestration</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better supply chain visibility with tracking</li>
-            <li>Reduced churn with proactive customer retention</li>
-            <li>Improved forecast accuracy with ML models</li>
-            <li>Improved sales performance with lead scoring</li>
-            <li>Better financial planning with predictive models</li>
+            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Performance benchmarking against industry standards</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Insights for Finance - Zion Tech Group",
-  description: "Transform your finance operations with our Automated Insights for Finance. This AI-driven solution automates content generation with unprecedented accuracy and ",
+  description: "The future of finance is here with Automated Insights for Finance. Powered by cutting-edge AI, this platform delivers decision support like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-insights-for-finance-fa99d09c`
   }
@@ -13,24 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automated Insights for Finance</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your finance operations with our Automated Insights for Finance. This AI-driven solution automates content generation with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of finance is here with Automated Insights for Finance. Powered by cutting-edge AI, this platform delivers decision support like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Performance dashboards with real-time metrics</li>
-            <li>Multi-region deployment with automatic failover</li>
+            <li>Security monitoring with threat intelligence</li>
+            <li>Manufacturing quality control with defect detection</li>
             <li>Document processing with OCR and NLP</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Logistics route optimization with traffic prediction</li>
+            <li>Real-time processing with streaming analytics</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Performance benchmarking against industry standards</li>
             <li>Zero manual intervention required for routine tasks</li>
-            <li>3x faster decision making with real-time insights</li>
-            <li>Better risk management with predictive analytics</li>
             <li>Dynamic resource allocation based on demand patterns</li>
           </ul>
         </div>

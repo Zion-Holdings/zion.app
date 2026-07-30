@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Manager for Construction - Zion Tech Group",
-  description: "Next-generation construction solution: Autonomous Manager for Construction. Combines customer insights with adaptive intelligence for optimal results.",
+  description: "The future of construction is here with Autonomous Manager for Construction. Powered by cutting-edge AI, this platform delivers workflow management like never b",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-manager-for-construction-52ca7f77`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Autonomous Manager for Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: Autonomous Manager for Construction. Combines customer insights with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Autonomous Manager for Construction. Powered by cutting-edge AI, this platform delivers workflow management like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Security monitoring with threat intelligence</li>
-            <li>Logistics route optimization with traffic prediction</li>
-            <li>Market analysis with buyer behavior insights</li>
-            <li>Automation opportunity identification</li>
-            <li>Version control with rollback capabilities</li>
+            <li>A/B testing framework for continuous optimization</li>
+            <li>Compliance monitoring with regulatory updates</li>
+            <li>GDPR compliance with data portability</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>Network optimization with traffic analysis</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Improved conversion rates with personalization</li>
-            <li>Improved product quality with automated testing</li>
-            <li>Zero manual intervention required for routine tasks</li>
-            <li>Seamless integration with existing systems and workflows</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
           </ul>
         </div>
         

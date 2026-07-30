@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Platform Smart - Insurance - Zion Tech Group",
-  description: "Unlock unprecedented growth with Platform Smart - Insurance. This autonomous system provides market analysis with zero manual intervention needed.",
+  description: "The future of insurance is here with Platform Smart - Insurance. Powered by cutting-edge AI, this platform delivers process automation like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/platform-smart---insurance-2e5c8231`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Platform Smart - Insurance</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Platform Smart - Insurance. This autonomous system provides market analysis with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of insurance is here with Platform Smart - Insurance. Powered by cutting-edge AI, this platform delivers process automation like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>SOC 2 certified with security controls</li>
-            <li>Business intelligence with KPI dashboards</li>
-            <li>Performance dashboards with real-time metrics</li>
-            <li>Microservices deployment with container orchestration</li>
+            <li>A/B testing framework for continuous optimization</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>Inventory prediction with demand forecasting</li>
             <li>Manufacturing quality control with defect detection</li>
+            <li>Machine learning integration with automatic model training</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Improved customer retention with proactive service</li>
-            <li>Improved customer satisfaction with faster response times</li>
-            <li>Improved forecast accuracy with ML models</li>
-            <li>Reduced shipping costs with route optimization</li>
+            <li>Reduced human error by 95% with automated processes</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>Faster time-to-market with accelerated development</li>
           </ul>
         </div>
         

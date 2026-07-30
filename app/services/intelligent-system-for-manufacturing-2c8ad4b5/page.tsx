@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent System for Manufacturing - Zion Tech Group",
-  description: "Revolutionize manufacturing through intelligent automation. Our Intelligent System for Manufacturing leverages advanced machine learning to deliver revenue fore",
+  description: "The future of manufacturing is here with Intelligent System for Manufacturing. Powered by cutting-edge AI, this platform delivers process automation like never ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-system-for-manufacturing-2c8ad4b5`
   }
@@ -13,26 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent System for Manufacturing</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize manufacturing through intelligent automation. Our Intelligent System for Manufacturing leverages advanced machine learning to deliver revenue forecasting at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of manufacturing is here with Intelligent System for Manufacturing. Powered by cutting-edge AI, this platform delivers process automation like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Brand monitoring across social channels</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
-            <li>Network optimization with traffic analysis</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>Serverless functions for cost-effective scaling</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Data encryption at rest and in transit</li>
             <li>Manufacturing quality control with defect detection</li>
-            <li>Real-time processing with streaming analytics</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Seamless integration with existing systems and workflows</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Better inventory management with demand forecasting</li>
-            <li>Improved product quality with automated testing</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Performance benchmarking against industry standards</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
           </ul>
         </div>
         

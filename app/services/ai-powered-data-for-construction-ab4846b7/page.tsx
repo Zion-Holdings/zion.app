@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI-Powered Data for Construction - Zion Tech Group",
-  description: "Transform your construction operations with our AI-Powered Data for Construction. This AI-driven solution automates market intelligence with unprecedented accur",
+  description: "Unlock unprecedented growth with AI-Powered Data for Construction. This autonomous system provides fraud prevention with zero manual intervention needed.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-powered-data-for-construction-ab4846b7`
   }
@@ -13,24 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI-Powered Data for Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your construction operations with our AI-Powered Data for Construction. This AI-driven solution automates market intelligence with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with AI-Powered Data for Construction. This autonomous system provides fraud prevention with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Maintenance scheduling with predictive analytics</li>
-            <li>Code optimization with performance profiling</li>
-            <li>Version control with rollback capabilities</li>
+            <li>Multi-language support with localization</li>
+            <li>Logistics route optimization with traffic prediction</li>
             <li>Sales process optimization with pipeline management</li>
+            <li>Data encryption at rest and in transit</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Performance benchmarking against industry standards</li>
-            <li>3x faster decision making with real-time insights</li>
+            <li>Increased revenue with optimized pricing strategies</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

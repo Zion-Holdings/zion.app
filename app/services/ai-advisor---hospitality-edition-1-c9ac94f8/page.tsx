@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Advisor - Hospitality Edition #1 - Zion Tech Group",
-  description: "Revolutionize hospitality through intelligent automation. Our AI Advisor - Hospitality Edition #1 leverages advanced machine learning to deliver image recogniti",
+  description: "Next-generation hospitality solution: AI Advisor - Hospitality Edition #1. Combines user experience with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-advisor---hospitality-edition-1-c9ac94f8`
   }
@@ -13,26 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Advisor - Hospitality Edition #1</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize hospitality through intelligent automation. Our AI Advisor - Hospitality Edition #1 leverages advanced machine learning to deliver image recognition at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation hospitality solution: AI Advisor - Hospitality Edition #1. Combines user experience with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Competitive intelligence with market share tracking</li>
-            <li>Maintenance scheduling with predictive analytics</li>
-            <li>Multi-language support with localization</li>
-            <li>Language processing with sentiment analysis</li>
-            <li>Master data management with golden records</li>
+            <li>Logistics route optimization with traffic prediction</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>Alerting system with intelligent notifications</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better supply chain visibility with tracking</li>
-            <li>Improved customer retention with proactive service</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
             <li>Improved customer satisfaction with faster response times</li>
-            <li>Reduced marketing costs with targeted campaigns</li>
           </ul>
         </div>
         

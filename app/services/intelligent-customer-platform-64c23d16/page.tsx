@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Customer Platform - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent Customer Platform. This autonomous system provides logistics route optimization with zero manual intervention neede",
+  description: "Next-generation transportation solution: Intelligent Customer Platform. Combines supply chain with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-customer-platform-64c23d16`
   }
@@ -13,26 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Customer Platform</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Intelligent Customer Platform. This autonomous system provides logistics route optimization with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation transportation solution: Intelligent Customer Platform. Combines supply chain with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Financial risk management with scenario analysis</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>GDPR compliance with data portability</li>
-            <li>Security monitoring with threat intelligence</li>
-            <li>Sales process optimization with pipeline management</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Manufacturing quality control with defect detection</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better compliance with automated audit trails</li>
-            <li>Seamless integration with existing systems and workflows</li>
-            <li>Scalable to millions of transactions per second</li>
             <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Zero manual intervention required for routine tasks</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

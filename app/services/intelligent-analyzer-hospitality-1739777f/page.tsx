@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent analyzer-hospitality - Zion Tech Group",
-  description: "Revolutionize hospitality through intelligent automation. Our Intelligent analyzer-hospitality leverages advanced machine learning to deliver image recognition ",
+  description: "Next-generation hospitality solution: Intelligent analyzer-hospitality. Combines image recognition with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-analyzer-hospitality-1739777f`
   }
@@ -13,26 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent analyzer-hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize hospitality through intelligent automation. Our Intelligent analyzer-hospitality leverages advanced machine learning to deliver image recognition at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation hospitality solution: Intelligent analyzer-hospitality. Combines image recognition with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Data quality with anomaly detection</li>
-            <li>Image recognition with computer vision</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
-            <li>Cost reduction with process mining</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Inventory prediction with demand forecasting</li>
+            <li>Compliance monitoring with regulatory updates</li>
+            <li>Machine learning integration with automatic model training</li>
+            <li>Multi-region deployment with automatic failover</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Faster content creation with AI assistance</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
-            <li>Reduced support tickets with self-service options</li>
-            <li>Better supply chain visibility with tracking</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>50% reduction in operational costs through automation</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
           </ul>
         </div>
         

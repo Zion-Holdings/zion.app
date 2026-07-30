@@ -18,22 +18,19 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Cloud-native architecture with multi-region deployment</li>
-            <li>A/B testing framework for continuous optimization</li>
-            <li>Language processing with sentiment analysis</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Role-based access control with SSO integration</li>
+            <li>Fraud detection with anomaly analysis</li>
+            <li>Custom integrations with webhook support</li>
+            <li>Audit trails with compliance reporting</li>
+            <li>User experience analytics with behavior tracking</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better compliance with automated audit trails</li>
-            <li>Zero manual intervention required for routine tasks</li>
-            <li>Faster time-to-market with accelerated development</li>
-            <li>Scalable to millions of transactions per second</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>Reduced human error by 95% with automated processes</li>
           </ul>
         </div>
         

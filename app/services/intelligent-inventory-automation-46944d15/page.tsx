@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Inventory Automation - Zion Tech Group",
-  description: "Next-generation construction solution: Intelligent Inventory Automation. Combines sales forecasting with adaptive intelligence for optimal results.",
+  description: "Next-generation transportation solution: Intelligent Inventory Automation. Combines risk assessment with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-inventory-automation-46944d15`
   }
@@ -13,24 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Inventory Automation</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: Intelligent Inventory Automation. Combines sales forecasting with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation transportation solution: Intelligent Inventory Automation. Combines risk assessment with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Machine learning integration with automatic model training</li>
-            <li>Alerting system with intelligent notifications</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Role-based access control with SSO integration</li>
+            <li>A/B testing framework for continuous optimization</li>
+            <li>Logistics route optimization with traffic prediction</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>Network optimization with traffic analysis</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Performance benchmarking against industry standards</li>
             <li>Cost optimization recommendations with savings analysis</li>
+            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Reduced human error by 95% with automated processes</li>
           </ul>
         </div>
         

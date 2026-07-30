@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Platform for Education - Zion Tech Group",
-  description: "Revolutionize education through intelligent automation. Our Intelligent Platform for Education leverages advanced machine learning to deliver manufacturing qual",
+  description: "Next-generation education solution: Intelligent Platform for Education. Combines process automation with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-platform-for-education-27cdc1db`
   }
@@ -13,24 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Platform for Education</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize education through intelligent automation. Our Intelligent Platform for Education leverages advanced machine learning to deliver manufacturing quality control at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation education solution: Intelligent Platform for Education. Combines process automation with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Audit trails with compliance reporting</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>GDPR compliance with data portability</li>
+            <li>Image recognition with computer vision</li>
+            <li>Microservices deployment with container orchestration</li>
+            <li>Open-source friendly with plugin architecture</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Fraud detection with anomaly analysis</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Faster time-to-market with accelerated development</li>
-            <li>Real-time insights and alerts for proactive management</li>
+            <li>50% reduction in operational costs through automation</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Seamless integration with existing systems and workflows</li>
           </ul>
         </div>
         

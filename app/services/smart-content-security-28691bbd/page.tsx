@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Content Security - Zion Tech Group",
-  description: "Revolutionize logistics through intelligent automation. Our Smart Content Security leverages advanced machine learning to deliver inventory management at scale.",
+  description: "Next-generation hospitality solution: Smart Content Security. Combines performance monitoring with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-content-security-28691bbd`
   }
@@ -13,26 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart Content Security</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize logistics through intelligent automation. Our Smart Content Security leverages advanced machine learning to deliver inventory management at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation hospitality solution: Smart Content Security. Combines performance monitoring with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Performance dashboards with real-time metrics</li>
-            <li>Image recognition with computer vision</li>
-            <li>Security monitoring with threat intelligence</li>
+            <li>Auto-scaling capabilities with predictive scaling</li>
+            <li>Network optimization with traffic analysis</li>
             <li>Healthcare data analytics with patient insights</li>
-            <li>Audit trails with compliance reporting</li>
+            <li>Inventory prediction with demand forecasting</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced security with continuous threat monitoring</li>
-            <li>24/7 automated operations without human intervention</li>
             <li>50% reduction in operational costs through automation</li>
-            <li>Faster time-to-market with accelerated development</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>Performance benchmarking against industry standards</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>3x faster decision making with real-time insights</li>
           </ul>
         </div>
         

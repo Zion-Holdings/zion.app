@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Security - Construction Edition #2 - Zion Tech Group",
-  description: "The future of construction is here with AI Security - Construction Edition #2. Powered by cutting-edge AI, this platform delivers sales forecasting like never b",
+  description: "Unlock unprecedented growth with AI Security - Construction Edition #2. This autonomous system provides customer service automation with zero manual interventio",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-security---construction-edition-2-3c203972`
   }
@@ -13,24 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Security - Construction Edition #2</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with AI Security - Construction Edition #2. Powered by cutting-edge AI, this platform delivers sales forecasting like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with AI Security - Construction Edition #2. This autonomous system provides customer service automation with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Inventory prediction with demand forecasting</li>
-            <li>Fraud detection with anomaly analysis</li>
-            <li>Security monitoring with threat intelligence</li>
-            <li>Healthcare data analytics with patient insights</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Auto-scaling capabilities with predictive scaling</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>ROI achieved in under 90 days with cost savings</li>
             <li>Increased revenue with optimized pricing strategies</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
             <li>Enhanced team productivity with intelligent assistance</li>
+            <li>Cost optimization recommendations with savings analysis</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent finance-healthcare - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent finance-healthcare. This autonomous system provides supply chain with zero manual intervention needed.",
+  description: "Revolutionize healthcare through intelligent automation. Our Intelligent finance-healthcare leverages advanced machine learning to deliver compliance monitoring",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-finance-healthcare-774def21`
   }
@@ -13,25 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent finance-healthcare</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Intelligent finance-healthcare. This autonomous system provides supply chain with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize healthcare through intelligent automation. Our Intelligent finance-healthcare leverages advanced machine learning to deliver compliance monitoring at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Audit trails with compliance reporting</li>
-            <li>Energy optimization with consumption tracking</li>
-            <li>Inventory prediction with demand forecasting</li>
             <li>Multi-language support with localization</li>
-            <li>Edge computing support for low-latency operations</li>
+            <li>SOC 2 certified with security controls</li>
+            <li>Custom integrations with webhook support</li>
+            <li>Content generation with plagiarism checks</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>Seamless integration with existing systems and workflows</li>
             <li>Improved quality with automated testing and validation</li>
+            <li>99.9% uptime guarantee with redundant architecture</li>
           </ul>
         </div>
         

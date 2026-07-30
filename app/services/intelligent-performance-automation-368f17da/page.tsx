@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Performance Automation - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent Performance Automation. This autonomous system provides network optimization with zero manual intervention needed.",
+  description: "Next-generation logistics solution: Intelligent Performance Automation. Combines manufacturing quality control with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-performance-automation-368f17da`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Performance Automation</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Intelligent Performance Automation. This autonomous system provides network optimization with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation logistics solution: Intelligent Performance Automation. Combines manufacturing quality control with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Master data management with golden records</li>
-            <li>Multi-language support with localization</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
-            <li>Machine learning integration with automatic model training</li>
-            <li>Fraud detection with anomaly analysis</li>
+            <li>Security monitoring with threat intelligence</li>
+            <li>Language processing with sentiment analysis</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Role-based access control with SSO integration</li>
+            <li>Performance dashboards with real-time metrics</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced customer acquisition costs with optimization</li>
-            <li>Improved forecast accuracy with ML models</li>
-            <li>Improved brand awareness with social monitoring</li>
-            <li>Improved product quality with automated testing</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
           </ul>
         </div>
         

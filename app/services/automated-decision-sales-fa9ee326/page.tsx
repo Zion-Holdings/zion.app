@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Decision Sales - Zion Tech Group",
-  description: "Revolutionize energy through intelligent automation. Our Automated Decision Sales leverages advanced machine learning to deliver market intelligence at scale.",
+  description: "The future of insurance is here with Automated Decision Sales. Powered by cutting-edge AI, this platform delivers document processing like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-decision-sales-fa9ee326`
   }
@@ -13,16 +13,15 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automated Decision Sales</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize energy through intelligent automation. Our Automated Decision Sales leverages advanced machine learning to deliver market intelligence at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of insurance is here with Automated Decision Sales. Powered by cutting-edge AI, this platform delivers document processing like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Microservices deployment with container orchestration</li>
+            <li>Multi-region deployment with automatic failover</li>
             <li>Security monitoring with threat intelligence</li>
-            <li>A/B testing framework for continuous optimization</li>
-            <li>Serverless functions for cost-effective scaling</li>
-            <li>Audit trails with compliance reporting</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Auto-scaling capabilities with predictive scaling</li>
           </ul>
         </div>
         
@@ -30,9 +29,8 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Real-time insights and alerts for proactive management</li>
-            <li>Better compliance with automated audit trails</li>
-            <li>Cost optimization recommendations with savings analysis</li>
-            <li>Scalable to millions of transactions per second</li>
+            <li>50% reduction in operational costs through automation</li>
+            <li>24/7 automated operations without human intervention</li>
           </ul>
         </div>
         

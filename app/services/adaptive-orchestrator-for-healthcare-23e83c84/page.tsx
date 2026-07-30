@@ -18,22 +18,21 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Document processing with OCR and NLP</li>
-            <li>Healthcare data analytics with patient insights</li>
-            <li>Real-time processing with streaming analytics</li>
-            <li>Open-source friendly with plugin architecture</li>
+            <li>A/B testing framework for continuous optimization</li>
             <li>Role-based access control with SSO integration</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Serverless functions for cost-effective scaling</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better compliance with automated audit trails</li>
+            <li>Cost optimization recommendations with savings analysis</li>
             <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Enhanced security with continuous threat monitoring</li>
-            <li>3x faster decision making with real-time insights</li>
-            <li>Scalable to millions of transactions per second</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

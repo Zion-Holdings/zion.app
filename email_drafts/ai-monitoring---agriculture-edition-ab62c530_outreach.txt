@@ -4,7 +4,7 @@ Hi there,
 
 I'm reaching out to introduce AI Monitoring - Agriculture Edition from Zion Tech Group - an AI-powered solution that could significantly impact your business.
 
-Revolutionize agriculture through intelligent automation. Our AI Monitoring - Agriculture Edition leverages advanced machine learning to deliver data processing at scale.
+Revolutionize agriculture through intelligent automation. Our AI Monitoring - Agriculture Edition leverages advanced machine learning to deliver image recognition at scale.
 
 Key Benefits:
 - AI-driven automation for faster results

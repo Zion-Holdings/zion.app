@@ -18,19 +18,21 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Content generation with plagiarism checks</li>
-            <li>Custom integrations with webhook support</li>
-            <li>Fraud detection with anomaly analysis</li>
-            <li>Performance dashboards with real-time metrics</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Multi-region deployment with automatic failover</li>
+            <li>Machine learning integration with automatic model training</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>99.9% uptime guarantee with redundant architecture</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>3x faster decision making with real-time insights</li>
             <li>Performance benchmarking against industry standards</li>
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>50% reduction in operational costs through automation</li>
           </ul>
         </div>
         

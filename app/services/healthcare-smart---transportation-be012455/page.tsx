@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Healthcare Smart - Transportation - Zion Tech Group",
-  description: "Unlock unprecedented growth with Healthcare Smart - Transportation. This autonomous system provides process discovery with zero manual intervention needed.",
+  description: "Next-generation transportation solution: Healthcare Smart - Transportation. Combines customer insights with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/healthcare-smart---transportation-be012455`
   }
@@ -13,15 +13,15 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Healthcare Smart - Transportation</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Healthcare Smart - Transportation. This autonomous system provides process discovery with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation transportation solution: Healthcare Smart - Transportation. Combines customer insights with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Content generation with plagiarism checks</li>
-            <li>Financial risk management with scenario analysis</li>
-            <li>Multi-language support with localization</li>
-            <li>Brand monitoring across social channels</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>Compliance monitoring with regulatory updates</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>Data encryption at rest and in transit</li>
             <li>Healthcare data analytics with patient insights</li>
           </ul>
         </div>
@@ -29,9 +29,10 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better financial planning with predictive models</li>
-            <li>Improved brand awareness with social monitoring</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>Increased revenue with optimized pricing strategies</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
             <li>50% reduction in operational costs through automation</li>
           </ul>
         </div>

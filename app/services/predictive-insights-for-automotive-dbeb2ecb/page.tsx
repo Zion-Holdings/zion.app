@@ -18,19 +18,20 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Healthcare data analytics with patient insights</li>
-            <li>Fraud detection with anomaly analysis</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>A/B testing framework for continuous optimization</li>
+            <li>HIPAA ready with healthcare data protection</li>
+            <li>Network optimization with traffic analysis</li>
+            <li>Financial risk management with scenario analysis</li>
+            <li>Data encryption at rest and in transit</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Seamless integration with existing systems and workflows</li>
-            <li>Reduced churn with proactive customer retention</li>
+            <li>Performance benchmarking against industry standards</li>
+            <li>50% reduction in operational costs through automation</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         
