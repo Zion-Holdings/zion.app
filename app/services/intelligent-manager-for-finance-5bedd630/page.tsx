@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Manager for Finance - Zion Tech Group",
-  description: "Revolutionize finance through intelligent automation. Our Intelligent Manager for Finance leverages advanced machine learning to deliver sentiment analysis at s",
+  description: "Revolutionize finance through intelligent automation. Our Intelligent Manager for Finance leverages advanced machine learning to deliver financial risk manageme",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-manager-for-finance-5bedd630`
   }
@@ -13,27 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Manager for Finance</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize finance through intelligent automation. Our Intelligent Manager for Finance leverages advanced machine learning to deliver sentiment analysis at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize finance through intelligent automation. Our Intelligent Manager for Finance leverages advanced machine learning to deliver financial risk management at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Inventory prediction with demand forecasting</li>
-            <li>Brand monitoring across social channels</li>
-            <li>Market analysis with buyer behavior insights</li>
-            <li>Role-based access control with SSO integration</li>
-            <li>Sentiment analysis with real-time monitoring</li>
+            <li>User experience analytics with behavior tracking</li>
+            <li>Document processing with OCR and NLP</li>
+            <li>Maintenance scheduling with predictive analytics</li>
+            <li>A/B testing framework for continuous optimization</li>
+            <li>Custom integrations with webhook support</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced operational risks with predictive models</li>
-            <li>Enhanced decision making with data-driven insights</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>Better risk management with predictive analytics</li>
             <li>Real-time insights and alerts for proactive management</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Better market positioning with competitive analysis</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>
         

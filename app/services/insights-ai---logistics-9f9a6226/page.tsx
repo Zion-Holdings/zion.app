@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Insights AI - Logistics - Zion Tech Group",
-  description: "Next-generation logistics solution: Insights AI - Logistics. Combines supply chain with adaptive intelligence for optimal results.",
+  description: "Revolutionize logistics through intelligent automation. Our Insights AI - Logistics leverages advanced machine learning to deliver network optimization at scale",
   alternates: {
     canonical: `https://ziontechgroup.com/services/insights-ai---logistics-9f9a6226`
   }
@@ -13,26 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Insights AI - Logistics</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation logistics solution: Insights AI - Logistics. Combines supply chain with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize logistics through intelligent automation. Our Insights AI - Logistics leverages advanced machine learning to deliver network optimization at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Version control with rollback capabilities</li>
-            <li>Customer service automation with chatbot integration</li>
-            <li>Document processing with OCR and NLP</li>
-            <li>Custom integrations with webhook support</li>
+            <li>Content generation with plagiarism checks</li>
+            <li>HIPAA ready with healthcare data protection</li>
+            <li>Multi-region deployment with automatic failover</li>
+            <li>Multi-language support with localization</li>
+            <li>Healthcare data analytics with patient insights</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>24/7 automated operations without human intervention</li>
             <li>Reduced churn with proactive customer retention</li>
-            <li>Improved customer satisfaction with faster response times</li>
+            <li>Increased revenue with optimized pricing strategies</li>
           </ul>
         </div>
         

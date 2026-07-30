@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Finance for Construction - Zion Tech Group",
-  description: "The future of construction is here with Smart Finance for Construction. Powered by cutting-edge AI, this platform delivers energy management like never before.",
+  description: "Next-generation construction solution: Smart Finance for Construction. Combines workflow management with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-finance-for-construction-4fdcc3d9`
   }
@@ -13,15 +13,16 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart Finance for Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Smart Finance for Construction. Powered by cutting-edge AI, this platform delivers energy management like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: Smart Finance for Construction. Combines workflow management with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>Code optimization with performance profiling</li>
+            <li>Fraud detection with anomaly analysis</li>
             <li>Data encryption at rest and in transit</li>
-            <li>Inventory prediction with demand forecasting</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
           </ul>
         </div>
         
@@ -29,9 +30,8 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Zero manual intervention required for routine tasks</li>
-            <li>Reduced human error by 95% with automated processes</li>
-            <li>Reduced churn with proactive customer retention</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>Better compliance with automated audit trails</li>
           </ul>
         </div>
         

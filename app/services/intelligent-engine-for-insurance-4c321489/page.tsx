@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Engine for Insurance - Zion Tech Group",
-  description: "The future of insurance is here with Intelligent Engine for Insurance. Powered by cutting-edge AI, this platform delivers language processing like never before.",
+  description: "Next-generation insurance solution: Intelligent Engine for Insurance. Combines security monitoring with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-engine-for-insurance-4c321489`
   }
@@ -13,27 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Engine for Insurance</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of insurance is here with Intelligent Engine for Insurance. Powered by cutting-edge AI, this platform delivers language processing like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation insurance solution: Intelligent Engine for Insurance. Combines security monitoring with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Custom integrations with webhook support</li>
-            <li>Fraud detection with anomaly analysis</li>
-            <li>A/B testing framework for continuous optimization</li>
-            <li>Open-source friendly with plugin architecture</li>
+            <li>Multi-language support with localization</li>
+            <li>Compliance monitoring with regulatory updates</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Cost optimization recommendations with savings analysis</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Faster time-to-market with accelerated development</li>
-            <li>Performance benchmarking against industry standards</li>
-            <li>Real-time insights and alerts for proactive management</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>Improved quality with automated testing and validation</li>
           </ul>
         </div>
         

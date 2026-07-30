@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent analyzer-healthcare - Zion Tech Group",
-  description: "Next-generation healthcare solution: Intelligent analyzer-healthcare. Combines supply chain with adaptive intelligence for optimal results.",
+  description: "Revolutionize healthcare through intelligent automation. Our Intelligent analyzer-healthcare leverages advanced machine learning to deliver inventory management",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-analyzer-healthcare-d6c3a222`
   }
@@ -13,25 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent analyzer-healthcare</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation healthcare solution: Intelligent analyzer-healthcare. Combines supply chain with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize healthcare through intelligent automation. Our Intelligent analyzer-healthcare leverages advanced machine learning to deliver inventory management at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Multi-region deployment with automatic failover</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Machine learning integration with automatic model training</li>
-            <li>Open-source friendly with plugin architecture</li>
-            <li>User experience analytics with behavior tracking</li>
+            <li>Language processing with sentiment analysis</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Edge computing support for low-latency operations</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>3x faster decision making with real-time insights</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Real-time insights and alerts for proactive management</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Improved customer satisfaction with faster response times</li>
           </ul>
         </div>
         

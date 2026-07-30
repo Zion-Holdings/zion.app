@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Image DevOps - Zion Tech Group",
-  description: "Next-generation telecom solution: Intelligent Image DevOps. Combines content generation with adaptive intelligence for optimal results.",
+  description: "Transform your media operations with our Intelligent Image DevOps. This AI-driven solution automates threat detection with unprecedented accuracy and efficiency",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-image-devops-2f9dde64`
   }
@@ -13,15 +13,15 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Image DevOps</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation telecom solution: Intelligent Image DevOps. Combines content generation with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your media operations with our Intelligent Image DevOps. This AI-driven solution automates threat detection with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>SOC 2 certified with security controls</li>
-            <li>Compliance monitoring with regulatory updates</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Logistics route optimization with traffic prediction</li>
+            <li>GDPR compliance with data portability</li>
+            <li>Inventory prediction with demand forecasting</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
             <li>Image recognition with computer vision</li>
           </ul>
         </div>
@@ -29,9 +29,11 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved quality with automated testing and validation</li>
-            <li>Reduced human error by 95% with automated processes</li>
             <li>Improved customer satisfaction with faster response times</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Better compliance with automated audit trails</li>
           </ul>
         </div>
         

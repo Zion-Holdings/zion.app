@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Data for Transportation - Zion Tech Group",
-  description: "Next-generation transportation solution: Predictive Data for Transportation. Combines customer insights with adaptive intelligence for optimal results.",
+  description: "Revolutionize transportation through intelligent automation. Our Predictive Data for Transportation leverages advanced machine learning to deliver risk assessme",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-data-for-transportation-5d010b34`
   }
@@ -13,26 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Predictive Data for Transportation</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation transportation solution: Predictive Data for Transportation. Combines customer insights with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize transportation through intelligent automation. Our Predictive Data for Transportation leverages advanced machine learning to deliver risk assessment at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Audit trails with compliance reporting</li>
-            <li>Multi-language support with localization</li>
-            <li>Version control with rollback capabilities</li>
-            <li>SOC 2 certified with security controls</li>
-            <li>Healthcare data analytics with patient insights</li>
+            <li>Role-based access control with SSO integration</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>Fraud detection with anomaly analysis</li>
+            <li>Custom integrations with webhook support</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Increased revenue with optimized pricing strategies</li>
+            <li>Better compliance with automated audit trails</li>
             <li>50% reduction in operational costs through automation</li>
-            <li>Reduced human error by 95% with automated processes</li>
           </ul>
         </div>
         

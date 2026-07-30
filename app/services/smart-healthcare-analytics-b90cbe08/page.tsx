@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Healthcare Analytics - Zion Tech Group",
-  description: "The future of telecom is here with Smart Healthcare Analytics. Powered by cutting-edge AI, this platform delivers risk assessment like never before.",
+  description: "Revolutionize real-estate through intelligent automation. Our Smart Healthcare Analytics leverages advanced machine learning to deliver healthcare data analytic",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-healthcare-analytics-b90cbe08`
   }
@@ -13,25 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart Healthcare Analytics</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of telecom is here with Smart Healthcare Analytics. Powered by cutting-edge AI, this platform delivers risk assessment like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize real-estate through intelligent automation. Our Smart Healthcare Analytics leverages advanced machine learning to deliver healthcare data analytics at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Custom integrations with webhook support</li>
-            <li>Role-based access control with SSO integration</li>
-            <li>Inventory prediction with demand forecasting</li>
-            <li>Content generation with plagiarism checks</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Role-based access control with SSO integration</li>
+            <li>Version control with rollback capabilities</li>
+            <li>Logistics route optimization with traffic prediction</li>
+            <li>Network optimization with traffic analysis</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced security with continuous threat monitoring</li>
             <li>Reduced churn with proactive customer retention</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Reduced human error by 95% with automated processes</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Scalable to millions of transactions per second</li>
+            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

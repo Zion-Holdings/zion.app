@@ -18,20 +18,21 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Logistics route optimization with traffic prediction</li>
-            <li>Edge computing support for low-latency operations</li>
-            <li>Inventory prediction with demand forecasting</li>
+            <li>SOC 2 certified with security controls</li>
+            <li>Machine learning integration with automatic model training</li>
+            <li>Security monitoring with threat intelligence</li>
+            <li>A/B testing framework for continuous optimization</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>50% reduction in operational costs through automation</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Zero manual intervention required for routine tasks</li>
+            <li>Improved quality with automated testing and validation</li>
             <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Reduced human error by 95% with automated processes</li>
+            <li>Seamless integration with existing systems and workflows</li>
           </ul>
         </div>
         
