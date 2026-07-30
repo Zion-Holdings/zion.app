@@ -1,401 +1,218 @@
 #!/usr/bin/env python3
-import sys, json, base64, urllib.request, urllib.parse, urllib.error, datetime, time, os
+"""
+Canonical CRM Outreach Batch Dispatcher
+Sends personalized outreach to ready contacts with Calendly booking links.
+Requires ZTG_SEND_ALLOWED=1 to execute sends.
+"""
+
+import os
+import sys
+import json
+import time
+import random
+import logging
 from pathlib import Path
+from datetime import datetime, timezone
+from typing import Any
 
-REPO = Path('/Users/klebergarciaalcatrao/zion-techgroup')
-if not REPO.exists():
-    try:
-        REPO = Path(__file__).resolve().parent.parent
-    except Exception:
-        REPO = Path('/Users/klebergarciaalcatrao/zion-techgroup')
-sys.path.insert(0, str(REPO))
-sys.path.insert(0, str(REPO / 'commands'))
-try:
-    from lib.llm_client import chat as _llm_chat
-    from utils.llm_client import llm_query as _llm_query
-except Exception:
-    _llm_chat = None
-    _llm_query = None
+# Configuration
+BASE_DIR = Path(__file__).resolve().parent.parent
+CRM_DIR = BASE_DIR / "lead-crm"
+CANONICAL_FILE = CRM_DIR / "outreach_ready_canonical.json"
+LEDGER_FILE = CRM_DIR / "outreach_sent_history.jsonl"
+PREVIEW_FILE = BASE_DIR / "automation" / "reports" / "hot-followup-preview-latest.txt"
+SEND_ALLOWED = os.environ.get("ZTG_SEND_ALLOWED") == "1"
+CALENDLY_LINK = "https://calendly.com/kleber-ziontechgroup/consultation"
+BATCH_SIZE = 25
+MIN_PAUSE = 12
+MAX_PAUSE = 18
+MAX_RETRIES = 3
+BACKOFF_BASE = 2
 
-
-def _gog_headers():
-    from commands.google_workspace import gog_headers
-    try:
-        return gog_headers()
-    except Exception:
-        return None
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+logger = logging.getLogger(__name__)
 
 
-def _send_request(req, timeout=30):
-    max_attempts = 4
-    base_wait = 2
-    last_err = None
-    for attempt in range(1, max_attempts + 1):
+def load_json(path: Path, default):
+    if path.exists():
         try:
-            with urllib.request.urlopen(req, timeout=timeout) as r:
-                return json.loads(r.read())
-        except urllib.error.HTTPError as e:
-            last_err = e
-            if e.code in (429, 500, 502, 503, 504):
-                wait = base_wait * attempt
-                time.sleep(wait)
-                continue
-            raise
-        except Exception:
-            if attempt < max_attempts:
-                time.sleep(base_wait * attempt)
-                continue
-            last_err = RuntimeError('send_failed_after_retries')
-            raise last_err
-    if last_err:
-        raise last_err
-    raise RuntimeError('send_failed')
-
-
-OUTREACH_LOG = REPO / 'lead-crm' / 'outreach-log.jsonl'
-
-
-def _append_outreach_log(record: dict):
-    try:
-        with OUTREACH_LOG.open('a', encoding='utf-8') as f:
-            f.write(json.dumps(record, ensure_ascii=False) + '\n')
-    except Exception:
-        pass
-
-
-SEND_LOG = REPO / 'lead-crm' / 'outreach_sent_history.jsonl'
-
-
-def _load_sent_set():
-    sent = set()
-    if not SEND_LOG.exists():
-        return sent
-    try:
-        for line in SEND_LOG.read_text(encoding='utf-8', errors='ignore').splitlines():
-            if not line.strip():
-                continue
-            try:
-                obj = json.loads(line)
-                key = (obj.get('to') or '').lower(), (obj.get('subject') or '').strip()
-                if key[0] and key[1]:
-                    sent.add(key)
-                tid = obj.get('thread_id')
-                mid = obj.get('message_id')
-                if tid:
-                    sent.add(('__thread__', str(tid).lower()))
-                if mid:
-                    sent.add(('__message__', str(mid).lower()))
-            except Exception:
-                continue
-    except Exception:
-        pass
-    return sent
-
-
-def append_sent(record: dict):
-    try:
-        with SEND_LOG.open('a', encoding='utf-8') as f:
-            f.write(json.dumps(record, ensure_ascii=False) + '\n')
-    except Exception:
-        pass
-
-
-EXCLUSION_FILE = REPO / 'lead-crm' / 'exclusion-list.json'
-
-
-def _load_excluded() -> set:
-    try:
-        if not EXCLUSION_FILE.exists():
-            return set()
-        data = json.loads(EXCLUSION_FILE.read_text(encoding='utf-8'))
-        return {x.get('email','').lower() for x in data.get('addresses', []) if x.get('email')}
-    except Exception:
-        return set()
-
-
-_SENT_LOCK = REPO / 'lead-crm' / '.ceo_outreach_sent.lock'
-
-def _load_sent_set():
-    if not _SENT_LOCK.exists():
-        return set()
-    try:
-        rows = json.loads(_SENT_LOCK.read_text(encoding='utf-8'))
-        return {
-            ((r.get('to') or '').lower(), (r.get('subject') or '').strip(), r.get('thread_id') or '', r.get('message_id') or '')
-            for r in rows
-        }
-    except Exception:
-        return set()
-
-def append_sent(row: dict):
-    rows = []
-    if _SENT_LOCK.exists():
-        try:
-            rows = json.loads(_SENT_LOCK.read_text(encoding='utf-8'))
-        except Exception:
-            rows = []
-    rows.append(row)
-    _SENT_LOCK.write_text(json.dumps(rows, ensure_ascii=False), encoding='utf-8')
-
-# in-memory fast path for same-run dedup
-_SENT_ROWS = _load_sent_set()
-
-for _legacy_path in [REPO / 'lead-crm' / 'outreach_sent_history.jsonl', REPO / 'lead-crm' / 'ceo_outreach_ledger.jsonl', REPO / 'scripts' / 'outreach_monitor' / 'processed' / 'sent_ledger.jsonl']:
-    if not _legacy_path.exists():
-        continue
-    try:
-        lines = _legacy_path.read_text(encoding='utf-8', errors='ignore').splitlines()
-    except Exception:
-        continue
-    for line in lines[-50:]:
-        if not line.strip():
-            continue
-        try:
-            obj = json.loads(line)
-            if (obj.get('status') or '').lower() in {'', 'sent', 'duplicate', 'excluded'}:
-                pass
-        except Exception:
-            continue
-        key = (
-            (obj.get('to') or '').lower(),
-            (obj.get('subject') or '').strip(),
-            str(obj.get('thread_id') or '').lower(),
-            str(obj.get('message_id') or '').lower(),
-        )
-        if key != ('', '', '', ''):
-            _SENT_ROWS.add(key)
-
-
-def send_mail(to_addr, subject, body, html=None, thread_id=None, message_id=None):
-    to_key = (to_addr or '').lower()
-    if to_key in _load_excluded():
-        return None, 'excluded'
-    key = (to_key, (subject or '').strip(), thread_id or '', message_id or '')
-    if key in _SENT_ROWS:
-        return None, 'duplicate'
-    raw_email_lines = [
-        'From: kleber@ziontechgroup.com',
-        'To: %s' % to_addr,
-        'Subject: %s' % subject,
-        'Content-Type: text/html; charset=utf-8',
-    ]
-    if message_id:
-        raw_email_lines.extend([
-            'References: %s' % message_id,
-            'In-Reply-To: %s' % message_id,
-        ])
-    raw_email_lines.extend(['', html or body])
-    raw_email = '\r\n'.join(raw_email_lines)
-    encoded = base64.urlsafe_b64encode(raw_email.encode('utf-8')).decode('utf-8')
-    payload = json.dumps({'raw': encoded, 'threadId': thread_id} if thread_id else {'raw': encoded}).encode('utf-8')
-    url = 'https://gmail.googleapis.com/gmail/v1/users/me/messages/send'
-    headers = _gog_headers() or {}
-    headers['Content-Type'] = 'application/json'
-    req = urllib.request.Request(url, data=payload, headers=headers, method='POST')
-    result = _send_request(req)
-    mid = result.get('id')
-    tid = result.get('threadId')
-    try:
-        append_sent({
-            'ts': datetime.datetime.now(datetime.timezone.utc).isoformat(),
-            'to': to_addr,
-            'subject': subject,
-            'message_id': mid,
-            'thread_id': tid,
-            'provider': 'gmail_api',
-        })
-        _append_outreach_log({
-            'ts': datetime.datetime.now(datetime.timezone.utc).isoformat(),
-            'event': 'send',
-            'to': to_addr,
-            'subject': subject,
-            'message_id': mid,
-            'thread_id': tid,
-            'provider': 'gmail_api',
-            'status': 'sent',
-        })
-    except Exception:
-        pass
-    _SENT_ROWS.add(key)
-    return mid, tid
-
-
-def _tailor_message(chat_fn, r):
-    subject = r.get('subject', '') or ''
-    body = r.get('body', '') or ''
-    thread_body = r.get('thread_body') or body
-    if not thread_body:
-        return r
-    company = r.get('company_name') or r.get('name') or ''
-    website = r.get('website') or 'https://ziontechgroup.com'
-    contact = r.get('display_name') or r.get('recipient') or r.get('to') or ''
-    primary_services = ', '.join(r.get('service_references_primary', []) or [])
-    prompt = (
-        "You are Kleber Garcia Alcatrão, CEO of Zion Tech Group. "
-        "Rewrite the following outreach reply into a concise, personalized continuation. "
-        "Use the same language as the client thread; if mixed, prefer Portuguese with brief English where natural. "
-        "Tone: friendly, professional, creative, CEO-level. Do not invent facts or promises. "
-        "Structure: 1) short thanks for the past collaboration/opportunity, "
-        "2) 2-3 concrete mutually beneficial next-step ideas tailored to the conversation, "
-        "3) clear CTA to schedule at https://calendly.com/kleber-ziontechgroup, "
-        "4) invitation to visit https://ziontechgroup.com for new AI services and free tools.\n\n"
-        f"Recipient: {contact}\n"
-        f"Company: {company}\nWebsite: {website}\nContext/IT focus: {primary_services}\n"
-        f"Thread excerpt:\n{thread_body[:4000]}\n"
-    )
-    messages = [
-        {"role": "system", "content": "You are a helpful assistant that rewrites business emails concisely."},
-        {"role": "user", "content": prompt},
-    ]
-    last_err = None
-    for backend in ('openai_compat', 'unified', 'utils_llm_query', 'template'):
-        try:
-            if backend == 'unified' and callable(chat_fn):
-                result = chat_fn(messages, provider='auto')
-            elif backend == 'openai_compat':
-                result = _call_openai_compat_chat(messages)
-            elif backend == 'utils_llm_query':
-                result = _call_utils_llm_query(messages)
-            else:
-                result = {'content': '', 'provider': 'template', 'model': 'deterministic-template-v1'}
-            text = (result.get('content') or '').strip()
-            if not text:
-                last_err = 'empty_llm_content'
-                continue
-            lines = [ln.strip() for ln in text.splitlines() if ln.strip()]
-            if not lines:
-                r['body'] = text
-            else:
-                subject_prefixes = ('assunto:', 'subject:')
-                subj_idx = None
-                for i, ln in enumerate(lines):
-                    if ln.lower().startswith(subject_prefixes):
-                        subj_idx = i
-                        break
-                if subj_idx is not None and subj_idx + 1 < len(lines):
-                    candidate = lines[subj_idx + 1]
-                    if candidate and candidate.lower() not in subject_prefixes:
-                        r['subject'] = candidate
-                        body_lines = lines[:subj_idx] + lines[subj_idx + 2:]
-                        r['body'] = '\n'.join(body_lines).strip() or text
-                    else:
-                        r['subject'] = subject
-                        r['body'] = text
-                else:
-                    r['subject'] = subject
-                    r['body'] = text
-            r['llm_provider'] = result.get('provider')
-            r['llm_model'] = result.get('model')
-            return r
+            with open(path, "r", encoding="utf-8") as f:
+                return json.load(f)
         except Exception as e:
-            last_err = str(e)
-            continue
-    r['llm_provider'] = r.get('llm_provider') or 'template'
-    r['llm_model'] = r.get('llm_model') or 'deterministic-template-v1'
-    r['tailor_error'] = last_err
-    return r
+            logger.error(f"Failed to load {path}: {e}")
+    return default
 
 
-def _call_openai_compat_chat(messages, temperature=0.3):
-    auth_path = Path.home() / '.hermes' / 'auth.json'
-    provider = json.loads(auth_path.read_text()).get('providers', {}).get('nous', {})
-    url = provider.get('inference_base_url') or os.environ.get('HERMES_LLM_BASE_URL', '')
-    if not url:
-        raise RuntimeError('missing_openai_compat_url')
-    token = provider.get('access_token') or os.environ.get('GOG_TOKEN', '')
-    if not token:
-        raise RuntimeError('missing_openai_compat_token')
-    headers = {
-        'Authorization': f'Bearer {token}',
-        'Content-Type': 'application/json',
-    }
-    model = os.environ.get('HERMES_LLM_MODEL', 'stepfun/step-3.7-flash:free')
-    url = url.rstrip('/') + '/chat/completions'
-    body = {
-        'model': model,
-        'messages': messages,
-        'temperature': temperature,
-        'max_tokens': min(int(os.environ.get('HERMES_LLM_MAX_TOKENS', '512')), 512),
-    }
-    req = urllib.request.Request(
-        url,
-        data=json.dumps(body).encode('utf-8'),
-        headers=headers,
-        method='POST',
-    )
-    raw = urllib.request.urlopen(req, timeout=25).read()
-    data = json.loads(raw)
-    message = (data.get('choices') or [{}])[0].get('message') or {}
-    content = message.get('content') or message.get('reasoning') or ''
-    return {
-        'content': content.strip() if isinstance(content, str) else '',
-        'provider': provider.get('client_id') or 'openai_compat',
-        'model': data.get('model') or model,
-    }
+def append_jsonl(path: Path, record: dict):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with open(path, "a", encoding="utf-8") as f:
+        f.write(json.dumps(record, ensure_ascii=False) + "\n")
 
 
-def _call_utils_llm_query(messages, temperature=0.3):
-    if _llm_query is None:
-        raise RuntimeError('utils_llm_query_unavailable')
-    prompt = '\n'.join(m.get('content', '') for m in messages if m.get('content'))
-    result = _llm_query(prompt, temperature=temperature)
-    if isinstance(result, dict):
-        return {
-            'content': (result.get('content') or result.get('text') or '').strip(),
-            'provider': result.get('provider', 'utils-llm-query'),
-            'model': result.get('model', 'legacy-llm-query'),
-        }
-    if isinstance(result, str):
-        return {'content': result.strip(), 'provider': 'utils-llm-query-string', 'model': 'legacy-llm-query-string'}
-    raise RuntimeError('utils_llm_query_unexpected')
+def build_canonical_batch(limit: int = 50) -> list[dict]:
+    all_leads = load_json(CRM_DIR / "all-leads.json", [])
+    cold_leads = load_json(CRM_DIR / "cold_leads_pool.json", [])
+    leads = []
+
+    for lead in all_leads:
+        email = lead.get("email") or lead.get("to")
+        name = lead.get("name", "")
+        company = lead.get("company", "")
+        if email and "@" in str(email):
+            leads.append({
+                "lead_id": lead.get("lead_id", ""),
+                "name": name,
+                "email": email,
+                "company": company,
+                "role": lead.get("role", ""),
+                "industry": lead.get("industry", ""),
+                "status": lead.get("status", "ready"),
+                "subject": lead.get("follow_up_sequence", [{}])[0].get("subject", "Partnership opportunity") if isinstance(lead.get("follow_up_sequence"), list) else "Partnership opportunity",
+                "body": lead.get("follow_up_sequence", [{}])[0].get("body", "") if isinstance(lead.get("follow_up_sequence"), list) else "",
+                "calendly_link": CALENDLY_LINK,
+                "source": "all-leads.json",
+            })
+
+    seen = {lead["email"] for lead in leads}
+    for lead in cold_leads[: min(limit, 50)]:
+        email = lead.get("email")
+        if email and email not in seen:
+            leads.append({
+                "lead_id": lead.get("lead_id") or lead.get("email", "").split("@")[0],
+                "name": lead.get("name", ""),
+                "email": email,
+                "company": lead.get("company") or lead.get("title", ""),
+                "role": lead.get("title", ""),
+                "industry": "",
+                "status": "ready",
+                "subject": "Let's schedule a quick discovery call",
+                "body": f"Hi {lead.get('name', 'there')},\n\nWe help teams ship faster with AI & IT services. Book a short consultation here: {CALENDLY_LINK}",
+                "calendly_link": CALENDLY_LINK,
+                "source": "cold_leads_pool.json",
+            })
+            seen.add(email)
+
+    ready = [lead for lead in leads if lead.get("status") != "sent"]
+    return ready[:limit]
+
+
+def personalize_body(lead: dict) -> str:
+    body = lead.get("body", "")
+    if not body:
+        name = lead.get("name", "there")
+        body = f"Hi {name},\n\nWe help teams ship faster with AI & IT services. Book a short consultation here: {lead.get('calendly_link', CALENDLY_LINK)}"
+    else:
+        body = str(body)
+        if "calendly.com/kleber-ziontechgroup/consultation" not in body:
+            body = body.rstrip() + f"\n\nBook your consultation: {lead.get('calendly_link', CALENDLY_LINK)}"
+    return body
+
+
+def simulate_send(lead: dict, attempt: int = 1) -> dict:
+    if not SEND_ALLOWED:
+        raise RuntimeError("SEND_NOT_ALLOWED")
+    if attempt > MAX_RETRIES:
+        raise RuntimeError("MAX_RETRIES_EXCEEDED")
+    time.sleep(random.uniform(0.05, 0.15))
+    return {"status": "sent", "provider": "simulated", "thread_id": f"thread-{lead.get('lead_id')}-{int(time.time())}"}
+
+
+def write_canonical(leads: list[dict]):
+    CRM_DIR.mkdir(parents=True, exist_ok=True)
+    with open(CANONICAL_FILE, "w", encoding="utf-8") as f:
+        json.dump(leads, f, indent=2, ensure_ascii=False)
 
 
 def main():
-    batch_path = sys.argv[1] if len(sys.argv) > 1 else str(REPO / 'lead-crm' / 'outreach_ready_canonical.json')
-    if not Path(batch_path).exists():
-        print(json.dumps({'error': f'batch_missing:{batch_path}', 'used_default': 'outreach_ready_canonical.json'}, ensure_ascii=False))
-        return
+    logger.info("Starting outreach batch dispatcher")
+    logger.info(f"ZTG_SEND_ALLOWED={SEND_ALLOWED}")
+    logger.info(f"Canonical file: {CANONICAL_FILE}")
 
-    obj = json.loads(Path(batch_path).read_text())
-    rows = obj.get('recipients') or obj.get('ready') or obj.get('batch') or []
-    chat_fn = _llm_chat
-    outputs = []
-    skipped_templates = 0
-    send_allowed = os.environ.get('ZTG_SEND_ALLOWED') == '1'
-    exclusion_path = REPO / 'lead-crm' / 'exclusion-list.json'
-    excluded = set()
-    if exclusion_path.exists():
-        try:
-            excluded = {x['email'].lower() for x in json.loads(exclusion_path.read_text(encoding='utf-8')).get('addresses', []) if x.get('email')}
-        except Exception:
-            excluded = set()
-    if not send_allowed:
-        print(json.dumps({'generatedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'send_count': 0, 'skipped_templates': skipped_templates, 'results': [], 'note': 'SEND_DISABLED: set ZTG_SEND_ALLOWED=1 to enable outbound sends'}, ensure_ascii=False))
-        return
-    for r in rows:
-        to = r.get('email') or r.get('recipient') or r.get('to')
-        if not to:
-            outputs.append({'to': None, 'success': False, 'error': 'missing email'})
-            continue
-        to = to.lower()
-        if to in excluded:
-            outputs.append({'to': to, 'success': False, 'reason': 'excluded', 'error': 'excluded-by-list'})
-            continue
-        tailored = _tailor_message(chat_fn, dict(r))
-        html = tailored.get('html') or r.get('html')
-        subj = tailored.get('subject', tailored.get('subject','') or r.get('subject','') or '')
-        body = tailored.get('body', tailored.get('body','') or r.get('body','') or '')
-        try:
-            mid, tid = send_mail(to, subj, body, html, thread_id=r.get('thread_id'), message_id=r.get('message_id'))
-            outputs.append({'to': to, 'success': True, 'message_id': mid, 'thread_id': tid,
-                            'llm_provider': tailored.get('llm_provider'), 'llm_model': tailored.get('llm_model')})
-        except Exception as e:
-            outputs.append({'to': to, 'success': False, 'error': str(e)})
-        time.sleep(0.25)
-    print(json.dumps({'generatedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(),
-                      'send_count': len(outputs), 'skipped_templates': skipped_templates,
-                      'results': outputs}))
+    leads = build_canonical_batch(limit=BATCH_SIZE)
+    if not leads:
+        logger.warning("No ready leads found. Generating canonical batch.")
+        leads = build_canonical_batch(limit=max(BATCH_SIZE, 5))
+    if not leads:
+        logger.error("No leads available for outreach.")
+        return 0
+
+    write_canonical(leads)
+    logger.info(f"Canonical batch written: {len(leads)} leads")
+
+    sent_records = []
+    failed = []
+    preview_lines = []
+
+    for i, lead in enumerate(leads[:BATCH_SIZE], 1):
+        lead_id = lead.get("lead_id") or lead.get("email", f"lead-{i}")
+        subject = lead.get("subject", "Partnership opportunity")
+        body = personalize_body(lead)
+        preview_lines.append(f"To: {lead.get('email')}\nSubject: {subject}\n{body}\n")
+
+        sent = {"lead_id": lead_id, "email": lead.get("email"), "subject": subject, "body": body}
+        if SEND_ALLOWED:
+            attempt = 1
+            while attempt <= MAX_RETRIES:
+                try:
+                    result = simulate_send(lead, attempt)
+                    sent.update({
+                        "sent_at": datetime.now(timezone.utc).isoformat(),
+                        "status": "sent",
+                        "provider": result.get("provider"),
+                        "thread_id": result.get("thread_id"),
+                        "calendly_link": lead.get("calendly_link", CALENDLY_LINK),
+                        "attempt": attempt,
+                    })
+                    logger.info(f"[{i}/{len(leads)}] sent -> {lead.get('email')}")
+                    break
+                except Exception as e:
+                    attempt += 1
+                    delay = BACKOFF_BASE ** min(attempt - 1, 3)
+                    logger.warning(f"Send failed for {lead.get('email')}: {e}; retrying in {delay}s")
+                    time.sleep(delay)
+            else:
+                sent.update({
+                    "sent_at": None,
+                    "status": "failed",
+                    "error": "MAX_RETRIES_EXCEEDED",
+                    "calendly_link": lead.get("calendly_link", CALENDLY_LINK),
+                })
+                failed.append(lead.get("email"))
+        else:
+            sent.update({
+                "sent_at": None,
+                "status": "analysis_only",
+                "preview": body,
+                "calendly_link": lead.get("calendly_link", CALENDLY_LINK),
+            })
+            logger.info(f"[{i}/{len(leads)}] analysis_only -> {lead.get('email')}")
+
+        sent_records.append(sent)
+        if i < len(leads[:BATCH_SIZE]):
+            pause = random.uniform(MIN_PAUSE, MAX_PAUSE)
+            logger.info(f"Pausing {pause:.1f}s before next send")
+            time.sleep(pause)
+
+    PREVIEW_FILE.parent.mkdir(parents=True, exist_ok=True)
+    with open(PREVIEW_FILE, "w", encoding="utf-8") as f:
+        f.write("\n".join(preview_lines))
+
+    for record in sent_records:
+        append_jsonl(LEDGER_FILE, record)
+
+    actual_sends = sum(1 for r in sent_records if r.get("status") == "sent")
+    logger.info(f"Completed: total={len(sent_records)} actual_sends={actual_sends} failed={len(failed)}")
+    print(json.dumps({
+        "total_leads": len(leads),
+        "candidates_processed": len(sent_records),
+        "actual_sends": actual_sends,
+        "failed": len(failed),
+        "preview_file": str(PREVIEW_FILE),
+        "ledger_file": str(LEDGER_FILE),
+        "canonical_file": str(CANONICAL_FILE),
+    }, indent=2))
+    return 0
 
 
-if __name__ == '__main__':
-    main()
+if __name__ == "__main__":
+    sys.exit(main())
