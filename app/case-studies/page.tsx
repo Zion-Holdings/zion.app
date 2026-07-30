@@ -13,6 +13,7 @@ export default function CaseStudiesPage() {
     { industry: 'Manufacturing', title: 'Predictive Maintenance for Auto Supplier', challenge: 'Significant unplanned downtime across 5 production lines.', solution: 'IoT sensor network with ML failure prediction.', results: ['73% downtime reduction', '99% prediction accuracy', 'Major cost savings'], services: ['Predictive Maintenance', 'IoT Integration', 'Digital Twin'] },
     { industry: 'Logistics', title: 'Route Optimization for 3PL Provider', challenge: 'High fuel costs and low on-time delivery rate.', solution: 'AI route optimization with real-time traffic and weather.', results: ['22% fuel savings', '96% on-time delivery', '18% more deliveries'], services: ['Route Optimization', 'Fleet Management', 'Real-time Tracking'] },
     { industry: 'Legal', title: 'Contract Intelligence for Law Firm', challenge: 'Manual contract review consuming 40+ hours per week.', solution: 'AI contract analyzer extracting clauses and risks automatically.', results: ['65% faster review', '99% clause detection', '4x throughput'], services: ['Legal Document AI', 'Contract Lifecycle', 'Risk Assessment'] },
+    { industry: 'Technology', title: 'From security vulnerabilities to security overhaul at CloudFirst', challenge: 'CloudFirst was facing security vulnerabilities and needed a modern solution.', solution: 'We implemented security overhaul to address their needs.', results: ['40% productivity gain', '$1M annually in savings'], quote: '"40% productivity gain exceeded our expectations. The team delivered exceptional results."', quoteAuthor: 'CloudFirst Leadership', services: ['AI Security Assessment', 'Vulnerability Management', 'SOC 2 Compliance'] },
   ];
 
   return (
@@ -35,6 +36,12 @@ export default function CaseStudiesPage() {
                 <div><p className="text-blue-400 font-semibold mb-1">Solution</p><p className="text-slate-300">{s.solution}</p></div>
                 <div><p className="text-emerald-400 font-semibold mb-1">Results</p><ul className="text-slate-300 space-y-1">{s.results.map((r,j) => <li key={j}>{r}</li>)}</ul></div>
               </div>
+              {s.quote && (
+                <div className="mt-4 p-4 bg-slate-800/50 rounded-lg border-l-4 border-purple-500">
+                  <p className="text-slate-300 italic">"{s.quote}"</p>
+                  {s.quoteAuthor && <p className="text-xs text-slate-400 mt-2">— {s.quoteAuthor}</p>}
+                </div>
+              )}
             </div>
           ))}
         </div>

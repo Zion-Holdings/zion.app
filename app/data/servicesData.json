@@ -55354,5 +55354,75 @@
     "popular": false,
     "category": "micro-saas",
     "industry": "Ecommerce"
+  },
+  {
+    "id": "ai-implementation-healthcare",
+    "title": "Complete AI Implementation Package",
+    "description": "Professional AI implementation solutions for healthcare organizations. End-to-end AI transformation from strategy to production deployment.",
+    "features": [
+      "AI strategy and roadmap development",
+      "Data pipeline and infrastructure setup",
+      "Model development and validation",
+      "Integration with existing healthcare systems",
+      "Compliance and security implementation",
+      "Staff training and knowledge transfer"
+    ],
+    "benefits": [
+      "Reduce healthcare costs by 30-50%",
+      "Improve healthcare efficiency by 40%",
+      "Scale AI implementation without infrastructure limits"
+    ],
+    "pricing": {
+      "basic": "25000",
+      "pro": "50000",
+      "enterprise": "Contact for Quote"
+    },
+    "contactInfo": {
+      "website": "/services/ai-implementation/healthcare",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🏥",
+    "href": "/services/ai-implementation/healthcare",
+    "popular": true,
+    "category": "ai",
+    "industry": "Healthcare",
+    "implementationTime": "6 weeks",
+    "roiPotential": "29% cost reduction"
+  },
+  {
+    "id": "ml-model-deployment-government",
+    "title": "Enterprise-Grade ML Model Deployment",
+    "description": "Professional ML model deployment solutions for government agencies. Secure, compliant, and scalable AI deployment for public sector operations.",
+    "features": [
+      "Secure model deployment with FedRAMP compliance",
+      "Integration with existing government systems",
+      "Automated monitoring and alerting",
+      "Audit trails and compliance reporting",
+      "Scalable infrastructure on government cloud",
+      "24/7 support and maintenance"
+    ],
+    "benefits": [
+      "Reduce government costs by 30-50%",
+      "Improve government efficiency by 40%",
+      "Scale ML model deployment without infrastructure limits"
+    ],
+    "pricing": {
+      "basic": "35000",
+      "pro": "75000",
+      "enterprise": "Contact for Quote"
+    },
+    "contactInfo": {
+      "website": "/services/ml-model-deployment/government",
+      "email": "kleber@ziontechgroup.com",
+      "phone": "+1 302 464 0950"
+    },
+    "icon": "🏛️",
+    "href": "/services/ml-model-deployment/government",
+    "popular": true,
+    "category": "ai",
+    "industry": "Government",
+    "implementationTime": "5 weeks",
+    "roiPotential": "56% cost reduction"
   }
 ]
