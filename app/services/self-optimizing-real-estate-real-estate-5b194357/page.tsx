@@ -18,22 +18,20 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Compliance monitoring with regulatory updates</li>
-            <li>Fraud detection with anomaly analysis</li>
-            <li>Edge computing support for low-latency operations</li>
-            <li>Audit trails with compliance reporting</li>
-            <li>Logistics route optimization with traffic prediction</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Financial risk management with scenario analysis</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Inventory prediction with demand forecasting</li>
+            <li>Data encryption at rest and in transit</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved customer satisfaction with faster response times</li>
-            <li>Increased revenue with optimized pricing strategies</li>
-            <li>Reduced churn with proactive customer retention</li>
             <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>50% reduction in operational costs through automation</li>
+            <li>Faster time-to-market with accelerated development</li>
           </ul>
         </div>
         

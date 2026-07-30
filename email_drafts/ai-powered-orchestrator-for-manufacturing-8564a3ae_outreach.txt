@@ -4,7 +4,7 @@ Hi there,
 
 I'm reaching out to introduce AI-Powered Orchestrator for Manufacturing from Zion Tech Group - an AI-powered solution that could significantly impact your business.
 
-Revolutionize manufacturing through intelligent automation. Our AI-Powered Orchestrator for Manufacturing leverages advanced machine learning to deliver process automation at scale.
+Revolutionize manufacturing through intelligent automation. Our AI-Powered Orchestrator for Manufacturing leverages advanced machine learning to deliver document processing at scale.
 
 Key Benefits:
 - AI-driven automation for faster results

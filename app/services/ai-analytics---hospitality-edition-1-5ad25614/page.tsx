@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Analytics - Hospitality Edition #1 - Zion Tech Group",
-  description: "Transform your hospitality operations with our AI Analytics - Hospitality Edition #1. This AI-driven solution automates sales process optimization with unpreced",
+  description: "Transform your hospitality operations with our AI Analytics - Hospitality Edition #1. This AI-driven solution automates decision support with unprecedented accu",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-analytics---hospitality-edition-1-5ad25614`
   }
@@ -13,27 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Analytics - Hospitality Edition #1</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your hospitality operations with our AI Analytics - Hospitality Edition #1. This AI-driven solution automates sales process optimization with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your hospitality operations with our AI Analytics - Hospitality Edition #1. This AI-driven solution automates decision support with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Fraud detection with anomaly analysis</li>
+            <li>Financial risk management with scenario analysis</li>
             <li>Customer service automation with chatbot integration</li>
             <li>Content generation with plagiarism checks</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Sales process optimization with pipeline management</li>
+            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Better customer experience with personalization</li>
-            <li>24/7 automated operations without human intervention</li>
-            <li>Performance benchmarking against industry standards</li>
-            <li>Improved conversion rates with personalization</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>Increased revenue with optimized pricing strategies</li>
           </ul>
         </div>
         

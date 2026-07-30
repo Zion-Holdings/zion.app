@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Decision Director - Zion Tech Group",
-  description: "Transform your construction operations with our Automated Decision Director. This AI-driven solution automates quality control with unprecedented accuracy and e",
+  description: "Transform your agriculture operations with our Automated Decision Director. This AI-driven solution automates sales process optimization with unprecedented accu",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-decision-director-37b1aace`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automated Decision Director</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your construction operations with our Automated Decision Director. This AI-driven solution automates quality control with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your agriculture operations with our Automated Decision Director. This AI-driven solution automates sales process optimization with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Content generation with plagiarism checks</li>
-            <li>Revenue forecasting with market trend analysis</li>
-            <li>Maintenance scheduling with predictive analytics</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
+            <li>Performance dashboards with real-time metrics</li>
             <li>Logistics route optimization with traffic prediction</li>
+            <li>A/B testing framework for continuous optimization</li>
+            <li>Content generation with plagiarism checks</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better risk management with predictive analytics</li>
-            <li>Improved sales performance with lead scoring</li>
-            <li>Better market positioning with competitive analysis</li>
-            <li>Better financial planning with predictive models</li>
-            <li>Enhanced security posture with continuous monitoring</li>
+            <li>Performance benchmarking against industry standards</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>Reduced human error by 95% with automated processes</li>
+            <li>Improved customer satisfaction with faster response times</li>
           </ul>
         </div>
         

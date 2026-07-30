@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Processor for Construction - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent Processor for Construction. This autonomous system provides manufacturing quality control with zero manual interven",
+  description: "Unlock unprecedented growth with Intelligent Processor for Construction. This autonomous system provides workflow management with zero manual intervention neede",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-processor-for-construction-1b60fafb`
   }
@@ -13,26 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Processor for Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Intelligent Processor for Construction. This autonomous system provides manufacturing quality control with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Intelligent Processor for Construction. This autonomous system provides workflow management with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Language processing with sentiment analysis</li>
-            <li>Custom integrations with webhook support</li>
             <li>Content generation with plagiarism checks</li>
-            <li>Customer service automation with chatbot integration</li>
-            <li>Role-based access control with SSO integration</li>
+            <li>A/B testing framework for continuous optimization</li>
+            <li>Maintenance scheduling with predictive analytics</li>
+            <li>Network optimization with traffic analysis</li>
+            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Increased revenue with optimized pricing strategies</li>
             <li>Performance benchmarking against industry standards</li>
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>24/7 automated operations without human intervention</li>
-            <li>Reduced human error by 95% with automated processes</li>
+            <li>3x faster decision making with real-time insights</li>
           </ul>
         </div>
         

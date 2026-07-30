@@ -18,19 +18,19 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Code optimization with performance profiling</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
             <li>Document processing with OCR and NLP</li>
-            <li>Content generation with plagiarism checks</li>
             <li>GDPR compliance with data portability</li>
+            <li>Edge computing support for low-latency operations</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced security with continuous threat monitoring</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Better compliance with automated audit trails</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>Scalable to millions of transactions per second</li>
+            <li>Faster time-to-market with accelerated development</li>
           </ul>
         </div>
         

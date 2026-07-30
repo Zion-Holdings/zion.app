@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Energy Insights - Zion Tech Group",
-  description: "The future of telecom is here with Self-Optimizing Energy Insights. Powered by cutting-edge AI, this platform delivers revenue forecasting like never before.",
+  description: "Transform your construction operations with our Self-Optimizing Energy Insights. This AI-driven solution automates financial planning with unprecedented accurac",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-energy-insights-5975080f`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Self-Optimizing Energy Insights</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of telecom is here with Self-Optimizing Energy Insights. Powered by cutting-edge AI, this platform delivers revenue forecasting like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your construction operations with our Self-Optimizing Energy Insights. This AI-driven solution automates financial planning with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Document processing with OCR and NLP</li>
             <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Revenue forecasting with market trend analysis</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Process discovery with activity analysis</li>
-            <li>Network optimization with traffic analysis</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>Real-time processing with streaming analytics</li>
+            <li>Compliance monitoring with regulatory updates</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved conversion rates with personalization</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Faster time-to-market with accelerated development</li>
             <li>Increased revenue with optimized pricing strategies</li>
-            <li>Reduced development time with code generation</li>
-            <li>Performance benchmarking against industry standards</li>
-            <li>Zero manual intervention required for routine tasks</li>
+            <li>50% reduction in operational costs through automation</li>
           </ul>
         </div>
         

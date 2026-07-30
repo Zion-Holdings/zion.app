@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Coordinator for Insurance - Zion Tech Group",
-  description: "The future of insurance is here with Intelligent Coordinator for Insurance. Powered by cutting-edge AI, this platform delivers process discovery like never befo",
+  description: "The future of insurance is here with Intelligent Coordinator for Insurance. Powered by cutting-edge AI, this platform delivers document processing like never be",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-coordinator-for-insurance-b85c25b5`
   }
@@ -13,27 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Coordinator for Insurance</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of insurance is here with Intelligent Coordinator for Insurance. Powered by cutting-edge AI, this platform delivers process discovery like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of insurance is here with Intelligent Coordinator for Insurance. Powered by cutting-edge AI, this platform delivers document processing like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Serverless functions for cost-effective scaling</li>
-            <li>Revenue forecasting with market trend analysis</li>
-            <li>Scenario planning with Monte Carlo simulations</li>
-            <li>Machine learning integration with automatic model training</li>
-            <li>Competitive intelligence with market share tracking</li>
+            <li>GDPR compliance with data portability</li>
+            <li>Compliance monitoring with regulatory updates</li>
+            <li>Audit trails with compliance reporting</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved conversion rates with personalization</li>
-            <li>Reduced operational risks with predictive models</li>
-            <li>Better resource utilization with auto-scaling</li>
-            <li>Better inventory management with demand forecasting</li>
-            <li>Enhanced security posture with continuous monitoring</li>
+            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>Cost optimization recommendations with savings analysis</li>
           </ul>
         </div>
         

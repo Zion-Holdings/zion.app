@@ -18,22 +18,21 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Maintenance scheduling with predictive analytics</li>
             <li>Version control with rollback capabilities</li>
-            <li>Fraud detection with anomaly analysis</li>
-            <li>Logistics route optimization with traffic prediction</li>
-            <li>User experience analytics with behavior tracking</li>
+            <li>Microservices deployment with container orchestration</li>
+            <li>SOC 2 certified with security controls</li>
+            <li>Manufacturing quality control with defect detection</li>
+            <li>Document processing with OCR and NLP</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Improved customer satisfaction with faster response times</li>
             <li>99.9% uptime guarantee with redundant architecture</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Automation for Hospitality - Zion Tech Group",
-  description: "Next-generation hospitality solution: Self-Optimizing Automation for Hospitality. Combines customer service automation with adaptive intelligence for optimal re",
+  description: "Next-generation hospitality solution: Self-Optimizing Automation for Hospitality. Combines resource optimization with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-automation-for-hospitality-cf9697d4`
   }
@@ -13,25 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Self-Optimizing Automation for Hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation hospitality solution: Self-Optimizing Automation for Hospitality. Combines customer service automation with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation hospitality solution: Self-Optimizing Automation for Hospitality. Combines resource optimization with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Energy optimization with consumption tracking</li>
-            <li>Multi-language support with localization</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Serverless functions for cost-effective scaling</li>
-            <li>Image recognition with computer vision</li>
+            <li>Multi-region deployment with automatic failover</li>
+            <li>Inventory prediction with demand forecasting</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Audit trails with compliance reporting</li>
+            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Real-time insights and alerts for proactive management</li>
             <li>Faster time-to-market with accelerated development</li>
-            <li>Better risk management with predictive analytics</li>
-            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

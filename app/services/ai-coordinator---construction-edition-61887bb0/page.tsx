@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Coordinator - Construction Edition - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our AI Coordinator - Construction Edition leverages advanced machine learning to deliver financial pl",
+  description: "Next-generation construction solution: AI Coordinator - Construction Edition. Combines resource optimization with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-coordinator---construction-edition-61887bb0`
   }
@@ -13,25 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Coordinator - Construction Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our AI Coordinator - Construction Edition leverages advanced machine learning to deliver financial planning at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: AI Coordinator - Construction Edition. Combines resource optimization with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Serverless functions for cost-effective scaling</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Audit trails with compliance reporting</li>
-            <li>User experience analytics with behavior tracking</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Sales process optimization with pipeline management</li>
+            <li>Manufacturing quality control with defect detection</li>
+            <li>Edge computing support for low-latency operations</li>
+            <li>Multi-language support with localization</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced churn with proactive customer retention</li>
-            <li>Reduced human error by 95% with automated processes</li>
+            <li>Seamless integration with existing systems and workflows</li>
             <li>Cost optimization recommendations with savings analysis</li>
-            <li>Improved customer satisfaction with faster response times</li>
+            <li>Increased revenue with optimized pricing strategies</li>
+            <li>Zero manual intervention required for routine tasks</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Analytics for Tech - Zion Tech Group",
-  description: "Revolutionize technology through intelligent automation. Our Intelligent Analytics for Tech leverages advanced machine learning to deliver manufacturing quality",
+  description: "Revolutionize technology through intelligent automation. Our Intelligent Analytics for Tech leverages advanced machine learning to deliver logistics route optim",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-analytics-for-tech-87354525`
   }
@@ -13,26 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Analytics for Tech</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize technology through intelligent automation. Our Intelligent Analytics for Tech leverages advanced machine learning to deliver manufacturing quality control at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize technology through intelligent automation. Our Intelligent Analytics for Tech leverages advanced machine learning to deliver logistics route optimization at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>HIPAA ready with healthcare data protection</li>
-            <li>Budget optimization with cost allocation</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
             <li>Microservices deployment with container orchestration</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Data quality with anomaly detection</li>
+            <li>Custom integrations with webhook support</li>
+            <li>Role-based access control with SSO integration</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced decision making with data-driven insights</li>
-            <li>Improved forecast accuracy with ML models</li>
-            <li>Enhanced security with continuous threat monitoring</li>
-            <li>Reduced customer acquisition costs with optimization</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
           </ul>
         </div>
         
