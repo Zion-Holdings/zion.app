@@ -99,11 +99,26 @@ function ServicesContent() {
             Our Complete <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-violet-400 bg-clip-text text-transparent">Service Catalog</span>
           </h1>
           <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-4">
-            {allServices.length}+ real-world services across {CATEGORIES.filter(c => c.key !== 'all').length} categories — from machine learning and cybersecurity to cloud infrastructure and automation.
+            {allServices.length}+ production-ready services across {CATEGORIES.filter(c => c.key !== 'all').length} categories — with scope, pricing, and a direct path to delivery.
           </p>
-          <p className="text-slate-400 text-sm mb-8">
-            Every service includes scope, starting price, features, and a direct path to a scoped engagement.
-          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto mb-8">
+            <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4 text-center">
+              <div className="text-xl font-bold text-white">4.8/5</div>
+              <div className="text-[11px] text-slate-400 mt-1">Client rating</div>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4 text-center">
+              <div className="text-xl font-bold text-white">&lt;7 days</div>
+              <div className="text-[11px] text-slate-400 mt-1">Engagement start</div>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4 text-center">
+              <div className="text-xl font-bold text-white">99.9% SLA</div>
+              <div className="text-[11px] text-slate-400 mt-1">Delivery guarantee</div>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4 text-center">
+              <div className="text-xl font-bold text-white">US-based</div>
+              <div className="text-[11px] text-slate-400 mt-1">Delivery lead</div>
+            </div>
+          </div>
           <div className="flex flex-wrap justify-center gap-3">
             <Link href="/contact/" className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-white text-slate-900 font-semibold hover:bg-slate-200 transition-colors">
               Request a Proposal
