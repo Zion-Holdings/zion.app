@@ -87,47 +87,8 @@ function ServicesContent() {
       />
     <main className="min-h-screen bg-slate-950 py-20">
       <div className="container-page">
-        <div className="text-center max-w-4xl mx-auto mb-14">
-          <div className="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-6">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            <span className="text-xs text-emerald-300 font-medium uppercase tracking-wider">Live Production Catalog</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            Our Complete <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-violet-400 bg-clip-text text-transparent">Service Catalog</span>
-          </h1>
-          <p className="text-lg md:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed mb-4">
-            {allServices.length}+ production-ready services across {CATEGORIES.filter(c => c.key !== 'all').length} categories — with scope, pricing, and a direct path to delivery.
-          </p>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-4xl mx-auto mb-8">
-            <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4 text-center">
-              <div className="text-xl font-bold text-white">4.8/5</div>
-              <div className="text-[11px] text-slate-400 mt-1">Client rating</div>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4 text-center">
-              <div className="text-xl font-bold text-white">&lt;7 days</div>
-              <div className="text-[11px] text-slate-400 mt-1">Engagement start</div>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4 text-center">
-              <div className="text-xl font-bold text-white">99.9% SLA</div>
-              <div className="text-[11px] text-slate-400 mt-1">Delivery guarantee</div>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/[0.03] p-4 text-center">
-              <div className="text-xl font-bold text-white">US-based</div>
-              <div className="text-[11px] text-slate-400 mt-1">Delivery lead</div>
-            </div>
-          </div>
-          <div className="flex flex-wrap justify-center gap-3">
-            <Link href="/contact/" className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-white text-slate-900 font-semibold hover:bg-slate-200 transition-colors">
-              Request a Proposal
-            </Link>
-            <Link href="/free-consultation/" className="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-white/10 text-slate-100 font-semibold hover:border-white/30 hover:bg-white/5 transition-colors">
-              Free Consultation
-            </Link>
-          </div>
-        </div>
+        <h1 className="text-4xl font-bold text-white mb-2 text-center">Our Complete Service Catalog</h1>
+        <p className="section-subheading text-center">{allServices.length}+ real-world services across 10 categories</p>
         {/* Smart Fuzzy Search Bar */}
         <div className="max-w-3xl mx-auto mt-8">
           <SmartSearchBar
@@ -183,6 +144,14 @@ export default function ServicesPage() {
         <div className="container-page">
           <h1 className="text-4xl font-bold text-white mb-2 text-center">Our Complete Service Catalog</h1>
           <p className="section-subheading text-center">Browse all services</p>
+          <div className="text-center mb-10">
+            <p className="text-slate-300">Every engagement starts with measurable outcomes, not feature lists. Pick a category below or tell us your goal — we’ll map it to the right stack.</p>
+            <div className="flex flex-wrap justify-center gap-3 mt-4">
+              <Link href="/contact/" className="btn-primary">Start With a Proposal</Link>
+              <Link href="/case-studies/" className="btn-secondary">See Proof Points</Link>
+              <Link href="/free-ai-consultation/" className="btn-secondary">Free AI Consultation</Link>
+            </div>
+          </div>
           <div className="mt-8">
             <ServiceGridSkeleton />
           </div>
