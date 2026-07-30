@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Sales for Automotive - Zion Tech Group",
-  description: "The future of automotive is here with Smart Sales for Automotive. Powered by cutting-edge AI, this platform delivers healthcare data analytics like never before",
+  description: "Unlock unprecedented growth with Smart Sales for Automotive. This autonomous system provides data processing with zero manual intervention needed.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-sales-for-automotive-adf9bb34`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart Sales for Automotive</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of automotive is here with Smart Sales for Automotive. Powered by cutting-edge AI, this platform delivers healthcare data analytics like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Smart Sales for Automotive. This autonomous system provides data processing with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Machine learning integration with automatic model training</li>
-            <li>Cost reduction with process mining</li>
-            <li>Business intelligence with KPI dashboards</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Revenue forecasting with market trend analysis</li>
+            <li>Sales process optimization with pipeline management</li>
+            <li>Role-based access control with SSO integration</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>User experience analytics with behavior tracking</li>
+            <li>Healthcare data analytics with patient insights</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Scalable to millions of transactions per second</li>
-            <li>Reduced infrastructure costs with cloud optimization</li>
-            <li>Reduced development time with code generation</li>
-            <li>Reduced churn with proactive customer retention</li>
             <li>Enhanced security with continuous threat monitoring</li>
+            <li>Seamless integration with existing systems and workflows</li>
+            <li>Faster time-to-market with accelerated development</li>
           </ul>
         </div>
         

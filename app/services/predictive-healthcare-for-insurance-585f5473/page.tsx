@@ -18,21 +18,21 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Maintenance scheduling with predictive analytics</li>
-            <li>Edge computing support for low-latency operations</li>
-            <li>Sales process optimization with pipeline management</li>
-            <li>Revenue forecasting with market trend analysis</li>
-            <li>User experience analytics with behavior tracking</li>
+            <li>Content generation with plagiarism checks</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Fraud detection with anomaly analysis</li>
+            <li>Compliance monitoring with regulatory updates</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Faster content creation with AI assistance</li>
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>Enhanced decision making with data-driven insights</li>
-            <li>24/7 automated operations without human intervention</li>
+            <li>Scalable to millions of transactions per second</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>Increased revenue with optimized pricing strategies</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
           </ul>
         </div>
         

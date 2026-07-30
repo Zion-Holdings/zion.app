@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Processor Platform - Insurance - Zion Tech Group",
-  description: "Transform your insurance operations with our Smart Processor Platform - Insurance. This AI-driven solution automates financial risk management with unprecedented accuracy and efficiency.",
+  description: "Transform your insurance operations with our Smart Processor Platform - Insurance. This AI-driven solution automates financial risk management with unprecedente",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-processor-platform-insurance-d31a62f2`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

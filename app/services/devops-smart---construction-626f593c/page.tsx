@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "DevOps Smart - Construction - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our DevOps Smart - Construction leverages advanced machine learning to deliver user experience at sca",
+  description: "Next-generation construction solution: DevOps Smart - Construction. Combines network optimization with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/devops-smart---construction-626f593c`
   }
@@ -13,26 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">DevOps Smart - Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our DevOps Smart - Construction leverages advanced machine learning to deliver user experience at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: DevOps Smart - Construction. Combines network optimization with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Edge computing support for low-latency operations</li>
-            <li>User experience analytics with behavior tracking</li>
+            <li>Network optimization with traffic analysis</li>
             <li>Machine learning integration with automatic model training</li>
-            <li>Microservices deployment with container orchestration</li>
-            <li>Custom integrations with webhook support</li>
+            <li>Image recognition with computer vision</li>
+            <li>Multi-language support with localization</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Performance benchmarking against industry standards</li>
-            <li>50% reduction in operational costs through automation</li>
             <li>Seamless integration with existing systems and workflows</li>
             <li>24/7 automated operations without human intervention</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>Increased revenue with optimized pricing strategies</li>
           </ul>
         </div>
         

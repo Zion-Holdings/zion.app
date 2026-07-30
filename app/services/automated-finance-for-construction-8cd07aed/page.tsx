@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Finance for Construction - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our Automated Finance for Construction leverages advanced machine learning to deliver sentiment analy",
+  description: "Unlock unprecedented growth with Automated Finance for Construction. This autonomous system provides customer service automation with zero manual intervention n",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-finance-for-construction-8cd07aed`
   }
@@ -13,27 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automated Finance for Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our Automated Finance for Construction leverages advanced machine learning to deliver sentiment analysis at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Automated Finance for Construction. This autonomous system provides customer service automation with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Market analysis with buyer behavior insights</li>
-            <li>Customer service automation with chatbot integration</li>
-            <li>User experience analytics with behavior tracking</li>
-            <li>Executive dashboards with drill-down capabilities</li>
-            <li>Security monitoring with threat intelligence</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Fraud detection with anomaly analysis</li>
+            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved quality with automated testing and validation</li>
-            <li>Reduced customer acquisition costs with optimization</li>
-            <li>Improved customer satisfaction with faster response times</li>
-            <li>Better supply chain visibility with tracking</li>
-            <li>Improved forecast accuracy with ML models</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Performance benchmarking against industry standards</li>
+            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         
