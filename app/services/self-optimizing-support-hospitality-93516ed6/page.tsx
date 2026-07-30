@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing support-hospitality - Zion Tech Group",
-  description: "Revolutionize hospitality through intelligent automation. Our Self-Optimizing support-hospitality leverages advanced machine learning to deliver risk assessment at scale.",
+  description: "Revolutionize hospitality through intelligent automation. Our Self-Optimizing support-hospitality leverages advanced machine learning to deliver risk assessment",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-support-hospitality-93516ed6`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

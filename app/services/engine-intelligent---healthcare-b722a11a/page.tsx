@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Engine Intelligent - Healthcare - Zion Tech Group",
-  description: "The future of healthcare is here with Engine Intelligent - Healthcare. Powered by cutting-edge AI, this platform delivers competitive intelligence like never be",
+  description: "The future of healthcare is here with Engine Intelligent - Healthcare. Powered by cutting-edge AI, this platform delivers market intelligence like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/engine-intelligent---healthcare-b722a11a`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Engine Intelligent - Healthcare</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of healthcare is here with Engine Intelligent - Healthcare. Powered by cutting-edge AI, this platform delivers competitive intelligence like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of healthcare is here with Engine Intelligent - Healthcare. Powered by cutting-edge AI, this platform delivers market intelligence like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Version control with rollback capabilities</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Security monitoring with threat intelligence</li>
-            <li>Audit trails with compliance reporting</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>Multi-region deployment with automatic failover</li>
+            <li>Maintenance scheduling with predictive analytics</li>
+            <li>Compliance monitoring with regulatory updates</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced risk with early warning systems</li>
-            <li>Better risk management with predictive analytics</li>
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>Reduced support tickets with self-service options</li>
-            <li>Reduced operational risks with predictive models</li>
+            <li>Zero manual intervention required for routine tasks</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>Improved quality with automated testing and validation</li>
+            <li>3x faster decision making with real-time insights</li>
           </ul>
         </div>
         

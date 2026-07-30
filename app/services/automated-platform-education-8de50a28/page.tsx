@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated platform-education - Zion Tech Group",
-  description: "Transform your education operations with our Automated platform-education. This AI-driven solution automates capacity management with unprecedented accuracy and efficiency.",
+  description: "Transform your education operations with our Automated platform-education. This AI-driven solution automates capacity management with unprecedented accuracy and",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-platform-education-8de50a28`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Data for Telecom - Zion Tech Group",
-  description: "The future of telecom is here with Intelligent Data for Telecom. Powered by cutting-edge AI, this platform delivers manufacturing quality control like never bef",
+  description: "The future of telecom is here with Intelligent Data for Telecom. Powered by cutting-edge AI, this platform delivers compliance monitoring like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-data-for-telecom-bfdf91bc`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Data for Telecom</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of telecom is here with Intelligent Data for Telecom. Powered by cutting-edge AI, this platform delivers manufacturing quality control like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of telecom is here with Intelligent Data for Telecom. Powered by cutting-edge AI, this platform delivers compliance monitoring like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Real-time processing with streaming analytics</li>
-            <li>Content generation with plagiarism checks</li>
-            <li>Competitive intelligence with market share tracking</li>
-            <li>Serverless functions for cost-effective scaling</li>
-            <li>Process discovery with activity analysis</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Multi-language support with localization</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>GDPR compliance with data portability</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved sales performance with lead scoring</li>
-            <li>Better supply chain visibility with tracking</li>
-            <li>Improved conversion rates with personalization</li>
+            <li>Increased revenue with optimized pricing strategies</li>
+            <li>Faster time-to-market with accelerated development</li>
             <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Reduced operational risks with predictive models</li>
+            <li>Seamless integration with existing systems and workflows</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Security Platform - Hospitality - Zion Tech Group",
-  description: "Revolutionize hospitality through intelligent automation. Our Smart Security Platform - Hospitality leverages advanced machine learning to deliver release management at scale.",
+  description: "Revolutionize hospitality through intelligent automation. Our Smart Security Platform - Hospitality leverages advanced machine learning to deliver release manag",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-security-platform-hospitality-5c696242`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Intelligence for Construction - Zion Tech Group",
-  description: "The future of construction is here with Predictive Intelligence for Construction. Powered by cutting-edge AI, this platform delivers data processing like never ",
+  description: "Transform your construction operations with our Predictive Intelligence for Construction. This AI-driven solution automates inventory management with unpreceden",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-intelligence-for-construction-da9fc972`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Predictive Intelligence for Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Predictive Intelligence for Construction. Powered by cutting-edge AI, this platform delivers data processing like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your construction operations with our Predictive Intelligence for Construction. This AI-driven solution automates inventory management with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Compliance monitoring with regulatory updates</li>
-            <li>Content generation with plagiarism checks</li>
-            <li>Security monitoring with threat intelligence</li>
-            <li>Inventory prediction with demand forecasting</li>
-            <li>Market analysis with buyer behavior insights</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>HIPAA ready with healthcare data protection</li>
+            <li>Edge computing support for low-latency operations</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Financial risk management with scenario analysis</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced shipping costs with route optimization</li>
-            <li>24/7 automated operations without human intervention</li>
-            <li>Better inventory management with demand forecasting</li>
-            <li>Better code quality with automated reviews</li>
-            <li>Improved customer retention with proactive service</li>
+            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>Zero manual intervention required for routine tasks</li>
           </ul>
         </div>
         

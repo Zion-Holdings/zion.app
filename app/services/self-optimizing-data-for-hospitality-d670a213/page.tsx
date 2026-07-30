@@ -18,22 +18,20 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Role-based access control with SSO integration</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Manufacturing quality control with defect detection</li>
+            <li>Auto-scaling capabilities with predictive scaling</li>
+            <li>Maintenance scheduling with predictive analytics</li>
             <li>Real-time processing with streaming analytics</li>
-            <li>Performance dashboards with real-time metrics</li>
-            <li>GDPR compliance with data portability</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Scalable to millions of transactions per second</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>Performance benchmarking against industry standards</li>
             <li>Dynamic resource allocation based on demand patterns</li>
-            <li>24/7 automated operations without human intervention</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Increased revenue with optimized pricing strategies</li>
           </ul>
         </div>
         

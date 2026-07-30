@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "System Intelligent - Insurance - Zion Tech Group",
-  description: "Transform your insurance operations with our System Intelligent - Insurance. This AI-driven solution automates financial planning with unprecedented accuracy an",
+  description: "Transform your insurance operations with our System Intelligent - Insurance. This AI-driven solution automates resource optimization with unprecedented accuracy",
   alternates: {
     canonical: `https://ziontechgroup.com/services/system-intelligent---insurance-2badd810`
   }
@@ -13,15 +13,16 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">System Intelligent - Insurance</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your insurance operations with our System Intelligent - Insurance. This AI-driven solution automates financial planning with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your insurance operations with our System Intelligent - Insurance. This AI-driven solution automates resource optimization with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>User experience analytics with behavior tracking</li>
             <li>Performance dashboards with real-time metrics</li>
-            <li>Microservices deployment with container orchestration</li>
-            <li>Data encryption at rest and in transit</li>
-            <li>Security monitoring with threat intelligence</li>
+            <li>A/B testing framework for continuous optimization</li>
+            <li>Sales process optimization with pipeline management</li>
+            <li>Alerting system with intelligent notifications</li>
           </ul>
         </div>
         
@@ -29,10 +30,8 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Better compliance with automated audit trails</li>
-            <li>Scalable to millions of transactions per second</li>
             <li>Enhanced security with continuous threat monitoring</li>
-            <li>Improved quality with automated testing and validation</li>
-            <li>24/7 automated operations without human intervention</li>
+            <li>50% reduction in operational costs through automation</li>
           </ul>
         </div>
         

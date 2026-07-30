@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Data System - Agriculture - Zion Tech Group",
-  description: "Drive innovation in agriculture with Autonomous Data System - Agriculture. This AI-powered platform transforms influencer identification into a competitive advantage.",
+  description: "Drive innovation in agriculture with Autonomous Data System - Agriculture. This AI-powered platform transforms influencer identification into a competitive adva",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-data-system-agriculture-dbde83be`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

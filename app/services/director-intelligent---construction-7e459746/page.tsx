@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Director Intelligent - Construction - Zion Tech Group",
-  description: "Unlock unprecedented growth with Director Intelligent - Construction. This autonomous system provides sales forecasting with zero manual intervention needed.",
+  description: "Next-generation construction solution: Director Intelligent - Construction. Combines maintenance scheduling with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/director-intelligent---construction-7e459746`
   }
@@ -13,27 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Director Intelligent - Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Director Intelligent - Construction. This autonomous system provides sales forecasting with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: Director Intelligent - Construction. Combines maintenance scheduling with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Language processing with sentiment analysis</li>
             <li>Customer service automation with chatbot integration</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Edge computing support for low-latency operations</li>
-            <li>Budget optimization with cost allocation</li>
+            <li>Inventory prediction with demand forecasting</li>
+            <li>HIPAA ready with healthcare data protection</li>
+            <li>User experience analytics with behavior tracking</li>
+            <li>Audit trails with compliance reporting</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Increased revenue with optimized pricing strategies</li>
-            <li>Reduced marketing costs with targeted campaigns</li>
-            <li>Zero manual intervention required for routine tasks</li>
-            <li>50% reduction in operational costs through automation</li>
-            <li>Reduced risk with early warning systems</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>Faster time-to-market with accelerated development</li>
           </ul>
         </div>
         

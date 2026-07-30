@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Image Insights - Zion Tech Group",
-  description: "The future of insurance is here with Autonomous Image Insights. Powered by cutting-edge AI, this platform delivers decision support like never before.",
+  description: "Revolutionize construction through intelligent automation. Our Autonomous Image Insights leverages advanced machine learning to deliver language processing at s",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-image-insights-db540ac6`
   }
@@ -13,25 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Autonomous Image Insights</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of insurance is here with Autonomous Image Insights. Powered by cutting-edge AI, this platform delivers decision support like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our Autonomous Image Insights leverages advanced machine learning to deliver language processing at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>HIPAA ready with healthcare data protection</li>
-            <li>Custom integrations with webhook support</li>
-            <li>Serverless functions for cost-effective scaling</li>
-            <li>SOC 2 certified with security controls</li>
+            <li>Machine learning integration with automatic model training</li>
+            <li>Role-based access control with SSO integration</li>
+            <li>Audit trails with compliance reporting</li>
+            <li>Auto-scaling capabilities with predictive scaling</li>
+            <li>Financial risk management with scenario analysis</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>50% reduction in operational costs through automation</li>
-            <li>24/7 automated operations without human intervention</li>
+            <li>Better risk management with predictive analytics</li>
             <li>Zero manual intervention required for routine tasks</li>
-            <li>Seamless integration with existing systems and workflows</li>
+            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Performance Engine - Real-Estate - Zion Tech Group",
-  description: "The future of real-estate is here with Predictive Performance Engine - Real-Estate. Powered by cutting-edge AI, this platform delivers release management like never before.",
+  description: "The future of real-estate is here with Predictive Performance Engine - Real-Estate. Powered by cutting-edge AI, this platform delivers release management like n",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-performance-engine-real-estate-569d2e8b`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

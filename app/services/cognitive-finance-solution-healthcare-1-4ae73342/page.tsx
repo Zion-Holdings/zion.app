@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Finance Solution - Healthcare #1 - Zion Tech Group",
-  description: "The future of healthcare is here with Cognitive Finance Solution - Healthcare #1. Powered by cutting-edge AI, this platform delivers hr analytics like never before.",
+  description: "The future of healthcare is here with Cognitive Finance Solution - Healthcare #1. Powered by cutting-edge AI, this platform delivers hr analytics like never bef",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-finance-solution-healthcare-1-4ae73342`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

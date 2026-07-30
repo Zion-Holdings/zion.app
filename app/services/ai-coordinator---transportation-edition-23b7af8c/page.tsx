@@ -18,21 +18,20 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Compliance monitoring with regulatory updates</li>
-            <li>SOC 2 certified with security controls</li>
-            <li>Performance dashboards with real-time metrics</li>
-            <li>Document processing with OCR and NLP</li>
-            <li>Multi-language support with localization</li>
+            <li>A/B testing framework for continuous optimization</li>
+            <li>Language processing with sentiment analysis</li>
+            <li>Auto-scaling capabilities with predictive scaling</li>
+            <li>Network optimization with traffic analysis</li>
+            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>3x faster decision making with real-time insights</li>
-            <li>24/7 automated operations without human intervention</li>
             <li>Reduced churn with proactive customer retention</li>
-            <li>Reduced human error by 95% with automated processes</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>Improved customer satisfaction with faster response times</li>
           </ul>
         </div>
         

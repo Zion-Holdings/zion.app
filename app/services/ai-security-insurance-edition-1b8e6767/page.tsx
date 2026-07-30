@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Security - Insurance Edition - Zion Tech Group",
-  description: "Revolutionize insurance through intelligent automation. Our AI Security - Insurance Edition leverages advanced machine learning to deliver recommendation system at scale.",
+  description: "Revolutionize insurance through intelligent automation. Our AI Security - Insurance Edition leverages advanced machine learning to deliver recommendation system",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-security-insurance-edition-1b8e6767`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

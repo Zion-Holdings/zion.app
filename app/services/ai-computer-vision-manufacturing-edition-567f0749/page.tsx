@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Computer Vision - Manufacturing Edition - Zion Tech Group",
-  description: "Revolutionize manufacturing through intelligent automation. Our AI Computer Vision - Manufacturing Edition leverages advanced machine learning to deliver financial risk management at scale.",
+  description: "Revolutionize manufacturing through intelligent automation. Our AI Computer Vision - Manufacturing Edition leverages advanced machine learning to deliver financ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-computer-vision-manufacturing-edition-567f0749`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

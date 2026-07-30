@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart DevOps Platform - Education - Zion Tech Group",
-  description: "Revolutionize education through intelligent automation. Our Smart DevOps Platform - Education leverages advanced machine learning to deliver image recognition at scale.",
+  description: "Revolutionize education through intelligent automation. Our Smart DevOps Platform - Education leverages advanced machine learning to deliver image recognition a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-devops-platform-education-714912a8`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Processor for Automotive #1 - Zion Tech Group",
-  description: "Revolutionize automotive through intelligent automation. Our Intelligent Processor for Automotive #1 leverages advanced machine learning to deliver performance reviews at scale.",
+  description: "Revolutionize automotive through intelligent automation. Our Intelligent Processor for Automotive #1 leverages advanced machine learning to deliver performance ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-processor-for-automotive-1-5dbe0013`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

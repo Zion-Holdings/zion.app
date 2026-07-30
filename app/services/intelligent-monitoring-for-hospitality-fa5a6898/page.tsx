@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Monitoring for Hospitality - Zion Tech Group",
-  description: "The future of hospitality is here with Intelligent Monitoring for Hospitality. Powered by cutting-edge AI, this platform delivers decision support like never be",
+  description: "The future of hospitality is here with Intelligent Monitoring for Hospitality. Powered by cutting-edge AI, this platform delivers network optimization like neve",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-monitoring-for-hospitality-fa5a6898`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Monitoring for Hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of hospitality is here with Intelligent Monitoring for Hospitality. Powered by cutting-edge AI, this platform delivers decision support like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of hospitality is here with Intelligent Monitoring for Hospitality. Powered by cutting-edge AI, this platform delivers network optimization like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>GDPR compliance with data portability</li>
+            <li>Multi-language support with localization</li>
+            <li>Content generation with plagiarism checks</li>
             <li>Multi-region deployment with automatic failover</li>
-            <li>Revenue forecasting with market trend analysis</li>
-            <li>Competitive intelligence with market share tracking</li>
-            <li>Security monitoring with threat intelligence</li>
+            <li>Code optimization with performance profiling</li>
+            <li>Customer service automation with chatbot integration</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>Improved employee productivity with automation</li>
-            <li>Reduced customer acquisition costs with optimization</li>
-            <li>Reduced marketing costs with targeted campaigns</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
           </ul>
         </div>
         

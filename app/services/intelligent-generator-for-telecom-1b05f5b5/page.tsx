@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Generator for Telecom - Zion Tech Group",
-  description: "Transform your telecom operations with our Intelligent Generator for Telecom. This AI-driven solution automates threat detection with unprecedented accuracy and efficiency.",
+  description: "Transform your telecom operations with our Intelligent Generator for Telecom. This AI-driven solution automates threat detection with unprecedented accuracy and",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-generator-for-telecom-1b05f5b5`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

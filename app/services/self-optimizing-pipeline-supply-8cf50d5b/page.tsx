@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Pipeline Supply - Zion Tech Group",
-  description: "Optimize your hospitality workflows with Self-Optimizing Pipeline Supply. This intelligent platform delivers social media monitoring through advanced automation and AI.",
+  description: "Optimize your hospitality workflows with Self-Optimizing Pipeline Supply. This intelligent platform delivers social media monitoring through advanced automation",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-pipeline-supply-8cf50d5b`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

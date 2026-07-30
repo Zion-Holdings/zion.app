@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Insights Solution - Legal - Zion Tech Group",
-  description: "The future of legal is here with Cognitive Insights Solution - Legal. Powered by cutting-edge AI, this platform delivers manufacturing quality control like never before.",
+  description: "The future of legal is here with Cognitive Insights Solution - Legal. Powered by cutting-edge AI, this platform delivers manufacturing quality control like neve",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-insights-solution-legal-3fdd871a`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

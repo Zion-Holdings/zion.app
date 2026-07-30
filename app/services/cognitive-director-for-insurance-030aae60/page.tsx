@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Director for Insurance - Zion Tech Group",
-  description: "Optimize your insurance workflows with Cognitive Director for Insurance. This intelligent platform delivers content moderation through advanced automation and AI.",
+  description: "Optimize your insurance workflows with Cognitive Director for Insurance. This intelligent platform delivers content moderation through advanced automation and A",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-director-for-insurance-030aae60`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

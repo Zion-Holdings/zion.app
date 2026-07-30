@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Security Smart - Construction - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our Security Smart - Construction leverages advanced machine learning to deliver fraud prevention at ",
+  description: "Transform your construction operations with our Security Smart - Construction. This AI-driven solution automates language processing with unprecedented accuracy",
   alternates: {
     canonical: `https://ziontechgroup.com/services/security-smart---construction-dd84412a`
   }
@@ -13,26 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Security Smart - Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our Security Smart - Construction leverages advanced machine learning to deliver fraud prevention at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your construction operations with our Security Smart - Construction. This AI-driven solution automates language processing with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Sales process optimization with pipeline management</li>
             <li>Multi-language support with localization</li>
-            <li>Real-time processing with streaming analytics</li>
-            <li>Audit trails with compliance reporting</li>
-            <li>Inventory prediction with demand forecasting</li>
-            <li>Network optimization with traffic analysis</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Manufacturing quality control with defect detection</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Zero manual intervention required for routine tasks</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Better compliance with automated audit trails</li>
+            <li>Improved customer satisfaction with faster response times</li>
             <li>Better risk management with predictive analytics</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         

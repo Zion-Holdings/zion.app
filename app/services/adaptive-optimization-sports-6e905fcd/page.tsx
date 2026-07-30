@@ -18,11 +18,10 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Open-source friendly with plugin architecture</li>
-            <li>Network optimization with traffic analysis</li>
-            <li>Maintenance scheduling with predictive analytics</li>
-            <li>Fraud detection with anomaly analysis</li>
             <li>Logistics route optimization with traffic prediction</li>
+            <li>Sales process optimization with pipeline management</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         
@@ -30,10 +29,8 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>50% reduction in operational costs through automation</li>
-            <li>Seamless integration with existing systems and workflows</li>
-            <li>Reduced human error by 95% with automated processes</li>
-            <li>Faster time-to-market with accelerated development</li>
-            <li>Scalable to millions of transactions per second</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

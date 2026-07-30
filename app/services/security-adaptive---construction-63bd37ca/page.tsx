@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Security Adaptive - Construction - Zion Tech Group",
-  description: "Revolutionize construction through intelligent automation. Our Security Adaptive - Construction leverages advanced machine learning to deliver revenue forecasti",
+  description: "Next-generation construction solution: Security Adaptive - Construction. Combines workflow management with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/security-adaptive---construction-63bd37ca`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Security Adaptive - Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our Security Adaptive - Construction leverages advanced machine learning to deliver revenue forecasting at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: Security Adaptive - Construction. Combines workflow management with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Master data management with golden records</li>
-            <li>Energy optimization with consumption tracking</li>
-            <li>Machine learning integration with automatic model training</li>
             <li>Version control with rollback capabilities</li>
-            <li>Predictive modeling with ensemble methods</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved customer satisfaction with faster response times</li>
-            <li>Better risk management with predictive analytics</li>
+            <li>Zero manual intervention required for routine tasks</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Increased revenue with optimized pricing strategies</li>
             <li>3x faster decision making with real-time insights</li>
-            <li>Enhanced security with continuous threat monitoring</li>
-            <li>Better financial planning with predictive models</li>
           </ul>
         </div>
         

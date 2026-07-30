@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Intelligence - Construction Edition - Zion Tech Group",
-  description: "Next-generation construction solution: AI Intelligence - Construction Edition. Combines performance monitoring with adaptive intelligence for optimal results.",
+  description: "Unlock unprecedented growth with AI Intelligence - Construction Edition. This autonomous system provides workflow management with zero manual intervention neede",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-intelligence---construction-edition-cf8149f8`
   }
@@ -13,25 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Intelligence - Construction Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: AI Intelligence - Construction Edition. Combines performance monitoring with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with AI Intelligence - Construction Edition. This autonomous system provides workflow management with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Logistics route optimization with traffic prediction</li>
-            <li>Financial risk management with scenario analysis</li>
-            <li>Data encryption at rest and in transit</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Inventory prediction with demand forecasting</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Content generation with plagiarism checks</li>
+            <li>GDPR compliance with data portability</li>
+            <li>Code optimization with performance profiling</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>50% reduction in operational costs through automation</li>
-            <li>Real-time insights and alerts for proactive management</li>
+            <li>Seamless integration with existing systems and workflows</li>
+            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>24/7 automated operations without human intervention</li>
+            <li>Faster time-to-market with accelerated development</li>
           </ul>
         </div>
         

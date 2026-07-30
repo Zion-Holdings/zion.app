@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Cognitive Platform - Telecom - Zion Tech Group",
-  description: "Revolutionize telecom through intelligent automation. Our Smart Cognitive Platform - Telecom leverages advanced machine learning to deliver resource optimization at scale.",
+  description: "Revolutionize telecom through intelligent automation. Our Smart Cognitive Platform - Telecom leverages advanced machine learning to deliver resource optimizatio",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-cognitive-platform-telecom-ed37ba7a`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

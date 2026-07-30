@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Risk Engine - Telecom - Zion Tech Group",
-  description: "Enhance your telecom business with Predictive Risk Engine - Telecom. Our solution provides manufacturing quality control with enterprise-grade reliability and security.",
+  description: "Enhance your telecom business with Predictive Risk Engine - Telecom. Our solution provides manufacturing quality control with enterprise-grade reliability and s",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-risk-engine-telecom-cbf49acf`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

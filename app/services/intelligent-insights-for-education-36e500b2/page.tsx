@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Insights for Education - Zion Tech Group",
-  description: "Transform your education operations with our Intelligent Insights for Education. This AI-driven solution automates supply chain with unprecedented accuracy and ",
+  description: "The future of education is here with Intelligent Insights for Education. Powered by cutting-edge AI, this platform delivers inventory management like never befo",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-insights-for-education-36e500b2`
   }
@@ -13,26 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Insights for Education</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your education operations with our Intelligent Insights for Education. This AI-driven solution automates supply chain with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of education is here with Intelligent Insights for Education. Powered by cutting-edge AI, this platform delivers inventory management like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Multi-language support with localization</li>
-            <li>Role-based access control with SSO integration</li>
-            <li>Business intelligence with KPI dashboards</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
+            <li>Edge computing support for low-latency operations</li>
+            <li>Microservices deployment with container orchestration</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced security with continuous threat monitoring</li>
-            <li>50% reduction in operational costs through automation</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Improved forecast accuracy with ML models</li>
+            <li>Reduced human error by 95% with automated processes</li>
+            <li>Performance benchmarking against industry standards</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>3x faster decision making with real-time insights</li>
           </ul>
         </div>
         
