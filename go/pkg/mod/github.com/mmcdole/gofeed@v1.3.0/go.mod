@@ -1,6 +1,6 @@
 module github.com/mmcdole/gofeed
 
-go 1.19
+go 1.25.0
 
 require (
 	github.com/PuerkitoBio/goquery v1.8.0
@@ -8,8 +8,8 @@ require (
 	github.com/mmcdole/goxpp v1.1.1-0.20240225020742-a0c311522b23
 	github.com/stretchr/testify v1.8.1
 	github.com/urfave/cli v1.22.3
-	golang.org/x/net v0.4.0
-	golang.org/x/text v0.5.0
+	golang.org/x/net v0.55.0
+	golang.org/x/text v0.37.0
 )
 
 require (
