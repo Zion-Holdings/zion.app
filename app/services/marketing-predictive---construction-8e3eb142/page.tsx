@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Marketing Predictive - Construction - Zion Tech Group",
-  description: "The future of construction is here with Marketing Predictive - Construction. Powered by cutting-edge AI, this platform delivers compliance monitoring like never",
+  description: "The future of construction is here with Marketing Predictive - Construction. Powered by cutting-edge AI, this platform delivers healthcare data analytics like n",
   alternates: {
     canonical: `https://ziontechgroup.com/services/marketing-predictive---construction-8e3eb142`
   }
@@ -13,16 +13,16 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Marketing Predictive - Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Marketing Predictive - Construction. Powered by cutting-edge AI, this platform delivers compliance monitoring like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Marketing Predictive - Construction. Powered by cutting-edge AI, this platform delivers healthcare data analytics like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Alerting system with intelligent notifications</li>
-            <li>Multi-region deployment with automatic failover</li>
-            <li>Open-source friendly with plugin architecture</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>A/B testing framework for continuous optimization</li>
+            <li>HIPAA ready with healthcare data protection</li>
+            <li>Machine learning integration with automatic model training</li>
+            <li>Serverless functions for cost-effective scaling</li>
+            <li>Audit trails with compliance reporting</li>
+            <li>Code optimization with performance profiling</li>
           </ul>
         </div>
         
@@ -30,8 +30,8 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Increased revenue with optimized pricing strategies</li>
-            <li>Seamless integration with existing systems and workflows</li>
             <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>Improved customer satisfaction with faster response times</li>
           </ul>
         </div>
         

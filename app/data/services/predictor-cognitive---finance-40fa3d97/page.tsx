@@ -18,21 +18,21 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Edge computing support for low-latency operations</li>
-            <li>SOC 2 certified with security controls</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
             <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Open-source friendly with plugin architecture</li>
             <li>Maintenance scheduling with predictive analytics</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Open-source friendly with plugin architecture</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Better compliance with automated audit trails</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>Improved quality with automated testing and validation</li>
             <li>Improved customer satisfaction with faster response times</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
           </ul>
         </div>
         

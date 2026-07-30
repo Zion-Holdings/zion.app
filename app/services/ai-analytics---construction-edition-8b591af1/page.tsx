@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Analytics - Construction Edition - Zion Tech Group",
-  description: "The future of construction is here with AI Analytics - Construction Edition. Powered by cutting-edge AI, this platform delivers process automation like never be",
+  description: "Revolutionize construction through intelligent automation. Our AI Analytics - Construction Edition leverages advanced machine learning to deliver decision suppo",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-analytics---construction-edition-8b591af1`
   }
@@ -13,26 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Analytics - Construction Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with AI Analytics - Construction Edition. Powered by cutting-edge AI, this platform delivers process automation like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our AI Analytics - Construction Edition leverages advanced machine learning to deliver decision support at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>HIPAA ready with healthcare data protection</li>
-            <li>SOC 2 certified with security controls</li>
-            <li>Code optimization with performance profiling</li>
-            <li>Logistics route optimization with traffic prediction</li>
+            <li>Security monitoring with threat intelligence</li>
+            <li>Compliance monitoring with regulatory updates</li>
+            <li>Real-time processing with streaming analytics</li>
+            <li>Content generation with plagiarism checks</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Performance benchmarking against industry standards</li>
-            <li>Better risk management with predictive analytics</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>50% reduction in operational costs through automation</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>24/7 automated operations without human intervention</li>
-            <li>Real-time insights and alerts for proactive management</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>
         

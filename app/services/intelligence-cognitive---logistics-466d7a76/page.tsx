@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligence Cognitive - Logistics - Zion Tech Group",
-  description: "Next-generation logistics solution: Intelligence Cognitive - Logistics. Combines predictive analytics with adaptive intelligence for optimal results.",
+  description: "The future of logistics is here with Intelligence Cognitive - Logistics. Powered by cutting-edge AI, this platform delivers data processing like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligence-cognitive---logistics-466d7a76`
   }
@@ -13,25 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligence Cognitive - Logistics</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation logistics solution: Intelligence Cognitive - Logistics. Combines predictive analytics with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of logistics is here with Intelligence Cognitive - Logistics. Powered by cutting-edge AI, this platform delivers data processing like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Inventory prediction with demand forecasting</li>
-            <li>Content generation with plagiarism checks</li>
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Compliance monitoring with regulatory updates</li>
-            <li>A/B testing framework for continuous optimization</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>HIPAA ready with healthcare data protection</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Audit trails with compliance reporting</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved quality with automated testing and validation</li>
-            <li>Performance benchmarking against industry standards</li>
-            <li>Seamless integration with existing systems and workflows</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>50% reduction in operational costs through automation</li>
           </ul>
         </div>
         
