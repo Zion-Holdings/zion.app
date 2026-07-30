@@ -29,11 +29,32 @@ const CASE_STUDIES = [
     category: 'Technology & SaaS',
     href: '/case-studies/meridian-ai-mlops-automation/',
   },
+  {
+    id: 'ai-automated-reporting-2-week-to-overnight',
+    title: 'AtlasIndustrial collapsed reporting from 2 weeks to overnight',
+    description: 'Automated reporting pipeline with anomaly detection and executive-ready narratives saved 120+ hours per month.',
+    category: 'Manufacturing & Industrial',
+    href: '/case-studies/ai-automated-reporting-2-week-to-overnight/',
+  },
+  {
+    id: 'ai-customer-support-64pct-less-resolution-time',
+    title: 'Cloud Systems cut support resolution time 64%',
+    description: 'AI intent classification, automated triage, and proactive incident handling reduced mean resolution time.',
+    category: 'Cloud & Infrastructure',
+    href: '/case-studies/ai-customer-support-64pct-less-resolution-time/',
+  },
+  {
+    id: 'cloud-cost-optimization-35pct-savings',
+    title: 'Northgate Finance cut cloud costs 35%',
+    description: 'Cloud cost optimization, rightsizing, and automated governance reduced spend with zero downtime.',
+    category: 'Cloud & Financial Services',
+    href: '/case-studies/cloud-cost-optimization-35pct-savings/',
+  },
 ];
 
 export const metadata = {
   title: 'Case Studies | Zion Tech Group',
-  description: 'Proven AI and IT outcomes across manufacturing, healthcare, fintech, and SaaS.',
+  description: 'Proven AI and IT outcomes across manufacturing, healthcare, fintech, SaaS, and cloud.',
   openGraph: {
     title: 'Zion Tech Group Case Studies',
     description: 'Real customer outcomes from AI, IT, cloud, and security engagements.',
