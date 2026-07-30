@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-workflow-for-proptech-e8335c4b",
+  "service_name": "Predictive Workflow for PROPTECH",
+  "industry": "proptech",
+  "lead_magnet": "Property Valuation Automation Guide",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$12.9M",
+    "timeframe": "6 months",
+    "similar": "PropTech Co"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, PropTech Co just implemented Predictive Workflow for PROPTECH last month - 52% improvement already. Thoughts?",
+      "sequence_id": "seq-13",
+      "service_id": "predictive-workflow-for-proptech-e8335c4b"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: PropTech Co saw $12.9M in savings. Your proptech peers are seeing similar results.",
+      "sequence_id": "seq-13",
+      "service_id": "predictive-workflow-for-proptech-e8335c4b"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-13",
+      "service_id": "predictive-workflow-for-proptech-e8335c4b"
+    }
+  ],
+  "hot_lead_score": 72,
+  "conversion_likelihood": "48%",
+  "timestamp": "2026-07-30T05:59:56.163593+00:00"
+}

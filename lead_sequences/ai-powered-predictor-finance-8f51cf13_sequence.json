@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-powered-predictor-finance-8f51cf13",
+  "service_name": "AI-Powered predictor-finance",
+  "industry": "finance",
+  "lead_magnet": "Regulatory Compliance Automation Guide",
+  "metrics": {
+    "improvement": "58%",
+    "savings": "$24.1M",
+    "timeframe": "5 months",
+    "similar": "Capital Group"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, Capital Group just implemented AI-Powered predictor-finance last month - 58% improvement already. Thoughts?",
+      "sequence_id": "seq-53",
+      "service_id": "ai-powered-predictor-finance-8f51cf13"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: Capital Group saw $24.1M in savings. Your finance peers are seeing similar results.",
+      "sequence_id": "seq-53",
+      "service_id": "ai-powered-predictor-finance-8f51cf13"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-53",
+      "service_id": "ai-powered-predictor-finance-8f51cf13"
+    }
+  ],
+  "hot_lead_score": 70,
+  "conversion_likelihood": "66%",
+  "timestamp": "2026-07-30T05:59:56.178014+00:00"
+}

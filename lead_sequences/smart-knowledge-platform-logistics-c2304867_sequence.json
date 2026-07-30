@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-knowledge-platform-logistics-c2304867",
+  "service_name": "Smart Knowledge Platform - Logistics",
+  "industry": "logistics",
+  "lead_magnet": "Route Optimization Savings Estimator",
+  "metrics": {
+    "improvement": "49%",
+    "savings": "$11.2M",
+    "timeframe": "6 months",
+    "similar": "LogisticsPlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, LogisticsPlus just implemented Smart Knowledge Platform - Logistics last month - 49% improvement already. Thoughts?",
+      "sequence_id": "seq-73",
+      "service_id": "smart-knowledge-platform-logistics-c2304867"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: LogisticsPlus saw $11.2M in savings. Your logistics peers are seeing similar results.",
+      "sequence_id": "seq-73",
+      "service_id": "smart-knowledge-platform-logistics-c2304867"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-73",
+      "service_id": "smart-knowledge-platform-logistics-c2304867"
+    }
+  ],
+  "hot_lead_score": 94,
+  "conversion_likelihood": "54%",
+  "timestamp": "2026-07-30T05:59:56.183765+00:00"
+}

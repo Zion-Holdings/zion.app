@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Suite for Hospitality - Zion Tech Group",
-  description: "Next-generation hospitality solution: Intelligent Suite for Hospitality. Combines quality control with adaptive intelligence for optimal results.",
+  description: "Transform your hospitality operations with our Intelligent Suite for Hospitality. This AI-driven solution automates network optimization with unprecedented accu",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-suite-for-hospitality-1292f4c8`
   }
@@ -13,27 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Suite for Hospitality</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation hospitality solution: Intelligent Suite for Hospitality. Combines quality control with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your hospitality operations with our Intelligent Suite for Hospitality. This AI-driven solution automates network optimization with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Zero-downtime updates with blue-green deployment</li>
-            <li>SOC 2 certified with security controls</li>
-            <li>Language processing with sentiment analysis</li>
-            <li>Maintenance scheduling with predictive analytics</li>
-            <li>Multi-region deployment with automatic failover</li>
+            <li>GDPR compliance with data portability</li>
+            <li>Code optimization with performance profiling</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>User experience analytics with behavior tracking</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Performance benchmarking against industry standards</li>
-            <li>Increased revenue with optimized pricing strategies</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Improved customer satisfaction with faster response times</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>Reduced human error by 95% with automated processes</li>
+            <li>Seamless integration with existing systems and workflows</li>
+            <li>3x faster decision making with real-time insights</li>
           </ul>
         </div>
         

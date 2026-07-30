@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-risk-system-manufacturing-04ec2650",
+  "service_name": "Autonomous Risk System - Manufacturing",
+  "industry": "manufacturing",
+  "lead_magnet": "Predictive Maintenance ROI Calculator",
+  "metrics": {
+    "improvement": "51%",
+    "savings": "$15.8M",
+    "timeframe": "8 months",
+    "similar": "ManufactureCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows manufacturing companies using Autonomous Risk System - Manufacturing see 51% improvement. Your current process?",
+      "sequence_id": "seq-35",
+      "service_id": "autonomous-risk-system-manufacturing-04ec2650"
+    },
+    {
+      "step": 2,
+      "message": "Based on your manufacturing profile, Autonomous Risk System - Manufacturing could save {company} approximately $15.8M. Interested in details?",
+      "sequence_id": "seq-35",
+      "service_id": "autonomous-risk-system-manufacturing-04ec2650"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Autonomous Risk System - Manufacturing is proven to deliver 51% results.",
+      "sequence_id": "seq-35",
+      "service_id": "autonomous-risk-system-manufacturing-04ec2650"
+    }
+  ],
+  "hot_lead_score": 86,
+  "conversion_likelihood": "56%",
+  "timestamp": "2026-07-30T05:59:56.170912+00:00"
+}

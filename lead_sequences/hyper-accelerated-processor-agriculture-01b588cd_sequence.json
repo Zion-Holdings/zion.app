@@ -1,0 +1,35 @@
+{
+  "service_id": "hyper-accelerated-processor-agriculture-01b588cd",
+  "service_name": "Hyper-Accelerated Processor - Agriculture",
+  "industry": "agriculture",
+  "lead_magnet": "Precision Farming ROI Analysis",
+  "metrics": {
+    "improvement": "40%",
+    "savings": "$4.2M",
+    "timeframe": "12 months",
+    "similar": "FarmTech"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with agriculture neural?",
+      "sequence_id": "seq-87",
+      "service_id": "hyper-accelerated-processor-agriculture-01b588cd"
+    },
+    {
+      "step": 2,
+      "message": "We've helped FarmTech solve this exact problem with Hyper-Accelerated Processor - Agriculture. Achieved 40% in 12 months.",
+      "sequence_id": "seq-87",
+      "service_id": "hyper-accelerated-processor-agriculture-01b588cd"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-87",
+      "service_id": "hyper-accelerated-processor-agriculture-01b588cd"
+    }
+  ],
+  "hot_lead_score": 67,
+  "conversion_likelihood": "53%",
+  "timestamp": "2026-07-30T05:59:56.188399+00:00"
+}

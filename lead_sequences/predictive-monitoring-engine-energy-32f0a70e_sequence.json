@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-monitoring-engine-energy-32f0a70e",
+  "service_name": "Predictive Monitoring Engine - Energy",
+  "industry": "energy",
+  "lead_magnet": "Energy Savings Calculator",
+  "metrics": {
+    "improvement": "48%",
+    "savings": "$16.5M",
+    "timeframe": "8 months",
+    "similar": "EnergyCorp"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, EnergyCorp is closing their Q3 deals this week. Want to see how Predictive Monitoring Engine - Energy can help {company} save $16.5M?",
+      "sequence_id": "seq-39",
+      "service_id": "predictive-monitoring-engine-energy-32f0a70e"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Predictive Monitoring Engine - Energy delivers 48% in 8 months.",
+      "sequence_id": "seq-39",
+      "service_id": "predictive-monitoring-engine-energy-32f0a70e"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-39",
+      "service_id": "predictive-monitoring-engine-energy-32f0a70e"
+    }
+  ],
+  "hot_lead_score": 94,
+  "conversion_likelihood": "51%",
+  "timestamp": "2026-07-30T05:59:56.172287+00:00"
+}

@@ -1,0 +1,42 @@
+{
+  "service_id": "intelligence-autonomous---sports-84ebd404",
+  "service_name": null,
+  "industry": "sports",
+  "conversion_metrics": {
+    "open_rate": "70%",
+    "click_rate": "43%",
+    "reply_rate": "29%",
+    "close_rate": "17%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, Q3 Special: Service at 20% off. 52% improvement, $18.4M savings. Offer ends: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-20",
+      "service_id": "intelligence-autonomous---sports-84ebd404",
+      "conversion_rate": "17%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "Exclusive offer for {company}: 20% discount on Service. 52% improvement guaranteed. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-20",
+      "service_id": "intelligence-autonomous---sports-84ebd404",
+      "conversion_rate": "17%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Limited-time: Service at 20% off. $18.4M savings. Book by Friday: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-20",
+      "service_id": "intelligence-autonomous---sports-84ebd404",
+      "conversion_rate": "17%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T05:57:06.244981+00:00"
+}

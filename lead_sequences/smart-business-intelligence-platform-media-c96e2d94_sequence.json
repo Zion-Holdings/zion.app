@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-business-intelligence-platform-media-c96e2d94",
+  "service_name": "Smart Business Intelligence Platform - Media",
+  "industry": "media",
+  "lead_magnet": "Content Performance Optimization Guide",
+  "metrics": {
+    "improvement": "43%",
+    "savings": "$6.8M",
+    "timeframe": "9 months",
+    "similar": "MediaHouse"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows media companies using Smart Business Intelligence Platform - Media see 43% improvement. Your current process?",
+      "sequence_id": "seq-75",
+      "service_id": "smart-business-intelligence-platform-media-c96e2d94"
+    },
+    {
+      "step": 2,
+      "message": "Based on your media profile, Smart Business Intelligence Platform - Media could save {company} approximately $6.8M. Interested in details?",
+      "sequence_id": "seq-75",
+      "service_id": "smart-business-intelligence-platform-media-c96e2d94"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Smart Business Intelligence Platform - Media is proven to deliver 43% results.",
+      "sequence_id": "seq-75",
+      "service_id": "smart-business-intelligence-platform-media-c96e2d94"
+    }
+  ],
+  "hot_lead_score": 68,
+  "conversion_likelihood": "64%",
+  "timestamp": "2026-07-30T05:56:06.474626+00:00"
+}

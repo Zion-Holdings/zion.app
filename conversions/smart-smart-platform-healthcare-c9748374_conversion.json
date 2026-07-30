@@ -1,0 +1,42 @@
+{
+  "service_id": "smart-smart-platform-healthcare-c9748374",
+  "service_name": "Smart Smart Platform - Healthcare",
+  "industry": "healthcare",
+  "conversion_metrics": {
+    "open_rate": "71%",
+    "click_rate": "45%",
+    "reply_rate": "32%",
+    "close_rate": "18%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, {company} can save $18.4 million with Smart Smart Platform - Healthcare. Quick call? https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-56",
+      "service_id": "smart-smart-platform-healthcare-c9748374",
+      "conversion_rate": "18%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "$18.4M in annual savings with Smart Smart Platform - Healthcare. 52% improvement in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-56",
+      "service_id": "smart-smart-platform-healthcare-c9748374",
+      "conversion_rate": "18%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Save $18.4 million/year. Smart Smart Platform - Healthcare delivers 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-56",
+      "service_id": "smart-smart-platform-healthcare-c9748374",
+      "conversion_rate": "18%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T05:58:37.452037+00:00"
+}

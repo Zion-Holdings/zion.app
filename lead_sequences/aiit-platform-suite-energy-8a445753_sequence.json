@@ -1,0 +1,35 @@
+{
+  "service_id": "aiit-platform-suite-energy-8a445753",
+  "service_name": "AI/IT Platform Suite - Energy",
+  "industry": "energy",
+  "lead_magnet": "Energy Savings Calculator",
+  "metrics": {
+    "improvement": "48%",
+    "savings": "$16.5M",
+    "timeframe": "8 months",
+    "similar": "EnergyCorp"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve energy. Our AI platform helped EnergyCorp achieve 48% improvement in 8 months. Quick 5-minute call?",
+      "sequence_id": "seq-91",
+      "service_id": "aiit-platform-suite-energy-8a445753"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the AI/IT Platform Suite - Energy typically saves $16.5M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-91",
+      "service_id": "aiit-platform-suite-energy-8a445753"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 48% results. If not interested, just let me know!",
+      "sequence_id": "seq-91",
+      "service_id": "aiit-platform-suite-energy-8a445753"
+    }
+  ],
+  "hot_lead_score": 72,
+  "conversion_likelihood": "47%",
+  "timestamp": "2026-07-30T05:59:56.190120+00:00"
+}

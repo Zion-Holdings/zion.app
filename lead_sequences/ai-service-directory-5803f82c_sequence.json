@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-service-directory-5803f82c",
+  "service_name": "AI Service Directory",
+  "industry": "Marketplace",
+  "lead_magnet": "AI Solutions Guide",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, TechStart Inc. just implemented AI Service Directory last month - 52% improvement already. Thoughts?",
+      "sequence_id": "seq-48",
+      "service_id": "ai-service-directory-5803f82c"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: TechStart Inc. saw $18.4M in savings. Your Marketplace peers are seeing similar results.",
+      "sequence_id": "seq-48",
+      "service_id": "ai-service-directory-5803f82c"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-48",
+      "service_id": "ai-service-directory-5803f82c"
+    }
+  ],
+  "hot_lead_score": 67,
+  "conversion_likelihood": "68%",
+  "timestamp": "2026-07-30T05:56:06.471920+00:00"
+}

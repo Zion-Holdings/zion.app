@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-cognitive-for-martech-63e8fc5d",
+  "service_name": "Intelligent Cognitive for MARTECH",
+  "industry": "martech",
+  "lead_magnet": "Marketing Automation ROI Calculator",
+  "metrics": {
+    "improvement": "50%",
+    "savings": "$11.6M",
+    "timeframe": "6 months",
+    "similar": "MarketingPro"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve martech. Our AI platform helped MarketingPro achieve 50% improvement in 6 months. Quick 5-minute call?",
+      "sequence_id": "seq-26",
+      "service_id": "intelligent-cognitive-for-martech-63e8fc5d"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Intelligent Cognitive for MARTECH typically saves $11.6M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-26",
+      "service_id": "intelligent-cognitive-for-martech-63e8fc5d"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 50% results. If not interested, just let me know!",
+      "sequence_id": "seq-26",
+      "service_id": "intelligent-cognitive-for-martech-63e8fc5d"
+    }
+  ],
+  "hot_lead_score": 65,
+  "conversion_likelihood": "46%",
+  "timestamp": "2026-07-30T05:59:56.168111+00:00"
+}

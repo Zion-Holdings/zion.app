@@ -1,0 +1,35 @@
+{
+  "service_id": "process-cognitive-manufacturing-0c935f7f",
+  "service_name": "Process Cognitive - Manufacturing",
+  "industry": "manufacturing",
+  "lead_magnet": "Predictive Maintenance ROI Calculator",
+  "metrics": {
+    "improvement": "51%",
+    "savings": "$15.8M",
+    "timeframe": "8 months",
+    "similar": "ManufactureCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve manufacturing. Our AI platform helped ManufactureCo achieve 51% improvement in 8 months. Quick 5-minute call?",
+      "sequence_id": "seq-31",
+      "service_id": "process-cognitive-manufacturing-0c935f7f"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Process Cognitive - Manufacturing typically saves $15.8M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-31",
+      "service_id": "process-cognitive-manufacturing-0c935f7f"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 51% results. If not interested, just let me know!",
+      "sequence_id": "seq-31",
+      "service_id": "process-cognitive-manufacturing-0c935f7f"
+    }
+  ],
+  "hot_lead_score": 71,
+  "conversion_likelihood": "42%",
+  "timestamp": "2026-07-30T05:59:56.169634+00:00"
+}

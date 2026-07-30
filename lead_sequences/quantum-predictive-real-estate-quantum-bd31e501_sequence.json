@@ -1,0 +1,35 @@
+{
+  "service_id": "quantum-predictive-real-estate-quantum-bd31e501",
+  "service_name": "Quantum Predictive - Real-Estate Quantum",
+  "industry": "real-estate",
+  "lead_magnet": "Property Management Automation Guide",
+  "metrics": {
+    "improvement": "46%",
+    "savings": "$13.4M",
+    "timeframe": "7 months",
+    "similar": "PropertyGroup"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, PropertyGroup just implemented Quantum Predictive - Real-Estate Quantum last month - 46% improvement already. Thoughts?",
+      "sequence_id": "seq-28",
+      "service_id": "quantum-predictive-real-estate-quantum-bd31e501"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: PropertyGroup saw $13.4M in savings. Your real-estate peers are seeing similar results.",
+      "sequence_id": "seq-28",
+      "service_id": "quantum-predictive-real-estate-quantum-bd31e501"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-28",
+      "service_id": "quantum-predictive-real-estate-quantum-bd31e501"
+    }
+  ],
+  "hot_lead_score": 77,
+  "conversion_likelihood": "74%",
+  "timestamp": "2026-07-30T05:59:56.168816+00:00"
+}

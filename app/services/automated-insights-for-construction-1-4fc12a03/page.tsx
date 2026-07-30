@@ -18,21 +18,22 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Energy optimization with consumption tracking</li>
-            <li>SOC 2 certified with security controls</li>
-            <li>Sales process optimization with pipeline management</li>
-            <li>Data encryption at rest and in transit</li>
+            <li>Logistics route optimization with traffic prediction</li>
+            <li>Open-source friendly with plugin architecture</li>
             <li>Cloud-native architecture with multi-region deployment</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Seamless integration with existing systems and workflows</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Improved quality with automated testing and validation</li>
+            <li>50% reduction in operational costs through automation</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

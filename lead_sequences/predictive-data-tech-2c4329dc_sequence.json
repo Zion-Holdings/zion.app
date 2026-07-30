@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-data-tech-2c4329dc",
+  "service_name": "Predictive data-tech",
+  "industry": "technology",
+  "lead_magnet": "AI Cost Calculator - See Your Potential Savings",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows technology companies using Predictive data-tech see 52% improvement. Your current process?",
+      "sequence_id": "seq-100",
+      "service_id": "predictive-data-tech-2c4329dc"
+    },
+    {
+      "step": 2,
+      "message": "Based on your technology profile, Predictive data-tech could save {company} approximately $18.4M. Interested in details?",
+      "sequence_id": "seq-100",
+      "service_id": "predictive-data-tech-2c4329dc"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Predictive data-tech is proven to deliver 52% results.",
+      "sequence_id": "seq-100",
+      "service_id": "predictive-data-tech-2c4329dc"
+    }
+  ],
+  "hot_lead_score": 82,
+  "conversion_likelihood": "72%",
+  "timestamp": "2026-07-30T05:56:06.477272+00:00"
+}

@@ -1,0 +1,42 @@
+{
+  "service_id": "adaptive-customer-advisor-7a730fac",
+  "service_name": "Adaptive Customer Advisor",
+  "industry": "insurance",
+  "conversion_metrics": {
+    "open_rate": "70%",
+    "click_rate": "43%",
+    "reply_rate": "29%",
+    "close_rate": "17%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest insurance challenge? Adaptive Customer Advisor solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-68",
+      "service_id": "adaptive-customer-advisor-7a730fac",
+      "conversion_rate": "17%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is manager holding you back? Adaptive Customer Advisor delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-68",
+      "service_id": "adaptive-customer-advisor-7a730fac",
+      "conversion_rate": "17%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop manager headaches. Adaptive Customer Advisor = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-68",
+      "service_id": "adaptive-customer-advisor-7a730fac",
+      "conversion_rate": "17%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T05:58:37.455229+00:00"
+}

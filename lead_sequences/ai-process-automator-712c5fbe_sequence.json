@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-process-automator-712c5fbe",
+  "service_name": "AI Process Automator",
+  "industry": "Business Process",
+  "lead_magnet": "AI Solutions Guide",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve Business Process. Our AI platform helped TechStart Inc. achieve 52% improvement in 6 months. Quick 5-minute call?",
+      "sequence_id": "seq-41",
+      "service_id": "ai-process-automator-712c5fbe"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the AI Process Automator typically saves $18.4M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-41",
+      "service_id": "ai-process-automator-712c5fbe"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 52% results. If not interested, just let me know!",
+      "sequence_id": "seq-41",
+      "service_id": "ai-process-automator-712c5fbe"
+    }
+  ],
+  "hot_lead_score": 94,
+  "conversion_likelihood": "66%",
+  "timestamp": "2026-07-30T05:56:06.471175+00:00"
+}

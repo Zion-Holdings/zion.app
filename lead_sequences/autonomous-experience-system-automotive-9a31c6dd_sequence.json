@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-experience-system-automotive-9a31c6dd",
+  "service_name": "Autonomous Experience System - Automotive",
+  "industry": "automotive",
+  "lead_magnet": "Supply Chain Efficiency Audit",
+  "metrics": {
+    "improvement": "50%",
+    "savings": "$14.1M",
+    "timeframe": "6 months",
+    "similar": "AutoMakers"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows automotive companies using Autonomous Experience System - Automotive see 50% improvement. Your current process?",
+      "sequence_id": "seq-100",
+      "service_id": "autonomous-experience-system-automotive-9a31c6dd"
+    },
+    {
+      "step": 2,
+      "message": "Based on your automotive profile, Autonomous Experience System - Automotive could save {company} approximately $14.1M. Interested in details?",
+      "sequence_id": "seq-100",
+      "service_id": "autonomous-experience-system-automotive-9a31c6dd"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Autonomous Experience System - Automotive is proven to deliver 50% results.",
+      "sequence_id": "seq-100",
+      "service_id": "autonomous-experience-system-automotive-9a31c6dd"
+    }
+  ],
+  "hot_lead_score": 91,
+  "conversion_likelihood": "42%",
+  "timestamp": "2026-07-30T05:59:56.194573+00:00"
+}

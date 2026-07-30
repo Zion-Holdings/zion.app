@@ -1,0 +1,35 @@
+{
+  "service_id": "self-optimizing-process-mining-for-agriculture-d3322482",
+  "service_name": "Self-Optimizing Process Mining for Agriculture",
+  "industry": "agriculture",
+  "lead_magnet": "Precision Farming ROI Analysis",
+  "metrics": {
+    "improvement": "40%",
+    "savings": "$4.2M",
+    "timeframe": "12 months",
+    "similar": "FarmTech"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, FarmTech is closing their Q3 deals this week. Want to see how Self-Optimizing Process Mining for Agriculture can help {company} save $4.2M?",
+      "sequence_id": "seq-54",
+      "service_id": "self-optimizing-process-mining-for-agriculture-d3322482"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Self-Optimizing Process Mining for Agriculture delivers 40% in 12 months.",
+      "sequence_id": "seq-54",
+      "service_id": "self-optimizing-process-mining-for-agriculture-d3322482"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-54",
+      "service_id": "self-optimizing-process-mining-for-agriculture-d3322482"
+    }
+  ],
+  "hot_lead_score": 90,
+  "conversion_likelihood": "44%",
+  "timestamp": "2026-07-30T05:56:06.472521+00:00"
+}

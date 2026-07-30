@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-data-insights-engine-0af275ce",
+  "service_name": "AI Data Insights Engine",
+  "industry": "Business Intelligence",
+  "lead_magnet": "AI Solutions Guide",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with Business Intelligence data?",
+      "sequence_id": "seq-27",
+      "service_id": "ai-data-insights-engine-0af275ce"
+    },
+    {
+      "step": 2,
+      "message": "We've helped TechStart Inc. solve this exact problem with AI Data Insights Engine. Achieved 52% in 6 months.",
+      "sequence_id": "seq-27",
+      "service_id": "ai-data-insights-engine-0af275ce"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-27",
+      "service_id": "ai-data-insights-engine-0af275ce"
+    }
+  ],
+  "hot_lead_score": 93,
+  "conversion_likelihood": "74%",
+  "timestamp": "2026-07-30T05:56:06.469839+00:00"
+}

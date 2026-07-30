@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-api-gateway-db6ee9f7",
+  "service_name": "AI API Gateway",
+  "industry": "API Management",
+  "lead_magnet": "AI Solutions Guide",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows API Management companies using AI API Gateway see 52% improvement. Your current process?",
+      "sequence_id": "seq-35",
+      "service_id": "ai-api-gateway-db6ee9f7"
+    },
+    {
+      "step": 2,
+      "message": "Based on your API Management profile, AI API Gateway could save {company} approximately $18.4M. Interested in details?",
+      "sequence_id": "seq-35",
+      "service_id": "ai-api-gateway-db6ee9f7"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. AI API Gateway is proven to deliver 52% results.",
+      "sequence_id": "seq-35",
+      "service_id": "ai-api-gateway-db6ee9f7"
+    }
+  ],
+  "hot_lead_score": 75,
+  "conversion_likelihood": "60%",
+  "timestamp": "2026-07-30T05:56:06.470613+00:00"
+}

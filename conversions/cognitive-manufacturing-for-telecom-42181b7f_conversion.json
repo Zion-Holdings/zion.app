@@ -1,0 +1,42 @@
+{
+  "service_id": "cognitive-manufacturing-for-telecom-42181b7f",
+  "service_name": null,
+  "industry": "telecom",
+  "conversion_metrics": {
+    "open_rate": "72%",
+    "click_rate": "46%",
+    "reply_rate": "33%",
+    "close_rate": "19%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest telecom challenge? Service solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-12",
+      "service_id": "cognitive-manufacturing-for-telecom-42181b7f",
+      "conversion_rate": "19%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is cloud holding you back? Service delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-12",
+      "service_id": "cognitive-manufacturing-for-telecom-42181b7f",
+      "conversion_rate": "19%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop cloud headaches. Service = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-12",
+      "service_id": "cognitive-manufacturing-for-telecom-42181b7f",
+      "conversion_rate": "19%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T05:57:06.243386+00:00"
+}

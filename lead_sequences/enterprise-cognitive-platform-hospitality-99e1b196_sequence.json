@@ -1,0 +1,35 @@
+{
+  "service_id": "enterprise-cognitive-platform-hospitality-99e1b196",
+  "service_name": "Enterprise Cognitive Platform - Hospitality",
+  "industry": "hospitality",
+  "lead_magnet": "Guest Experience Automation Blueprint",
+  "metrics": {
+    "improvement": "42%",
+    "savings": "$7.6M",
+    "timeframe": "10 months",
+    "similar": "HotelChain"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, HotelChain just implemented Enterprise Cognitive Platform - Hospitality last month - 42% improvement already. Thoughts?",
+      "sequence_id": "seq-33",
+      "service_id": "enterprise-cognitive-platform-hospitality-99e1b196"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: HotelChain saw $7.6M in savings. Your hospitality peers are seeing similar results.",
+      "sequence_id": "seq-33",
+      "service_id": "enterprise-cognitive-platform-hospitality-99e1b196"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-33",
+      "service_id": "enterprise-cognitive-platform-hospitality-99e1b196"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "55%",
+  "timestamp": "2026-07-30T05:59:56.170159+00:00"
+}

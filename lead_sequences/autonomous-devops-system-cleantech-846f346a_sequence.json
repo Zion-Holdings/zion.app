@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-devops-system-cleantech-846f346a",
+  "service_name": "Autonomous DevOps System - CLEANTECH",
+  "industry": "cleantech",
+  "lead_magnet": "Energy Consumption Reduction Report",
+  "metrics": {
+    "improvement": "55%",
+    "savings": "$22.1M",
+    "timeframe": "5 months",
+    "similar": "CleanTech Inc"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows cleantech companies using Autonomous DevOps System - CLEANTECH see 55% improvement. Your current process?",
+      "sequence_id": "seq-65",
+      "service_id": "autonomous-devops-system-cleantech-846f346a"
+    },
+    {
+      "step": 2,
+      "message": "Based on your cleantech profile, Autonomous DevOps System - CLEANTECH could save {company} approximately $22.1M. Interested in details?",
+      "sequence_id": "seq-65",
+      "service_id": "autonomous-devops-system-cleantech-846f346a"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Autonomous DevOps System - CLEANTECH is proven to deliver 55% results.",
+      "sequence_id": "seq-65",
+      "service_id": "autonomous-devops-system-cleantech-846f346a"
+    }
+  ],
+  "hot_lead_score": 79,
+  "conversion_likelihood": "60%",
+  "timestamp": "2026-07-30T05:59:56.181123+00:00"
+}

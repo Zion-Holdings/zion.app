@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-computer-vision-platform-legal-e6061a6d",
+  "service_name": "Smart Computer Vision Platform - Legal",
+  "industry": "legal",
+  "lead_magnet": "Document Review Automation Checklist",
+  "metrics": {
+    "improvement": "39%",
+    "savings": "$3.1M",
+    "timeframe": "14 months",
+    "similar": "LawFirm"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve legal. Our AI platform helped LawFirm achieve 39% improvement in 14 months. Quick 5-minute call?",
+      "sequence_id": "seq-56",
+      "service_id": "smart-computer-vision-platform-legal-e6061a6d"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Smart Computer Vision Platform - Legal typically saves $3.1M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-56",
+      "service_id": "smart-computer-vision-platform-legal-e6061a6d"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 39% results. If not interested, just let me know!",
+      "sequence_id": "seq-56",
+      "service_id": "smart-computer-vision-platform-legal-e6061a6d"
+    }
+  ],
+  "hot_lead_score": 90,
+  "conversion_likelihood": "67%",
+  "timestamp": "2026-07-30T05:59:56.178851+00:00"
+}

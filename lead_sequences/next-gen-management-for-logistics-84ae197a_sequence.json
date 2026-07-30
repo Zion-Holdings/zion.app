@@ -1,0 +1,35 @@
+{
+  "service_id": "next-gen-management-for-logistics-84ae197a",
+  "service_name": "Next-Gen Management for Logistics",
+  "industry": "logistics",
+  "lead_magnet": "Route Optimization Savings Estimator",
+  "metrics": {
+    "improvement": "49%",
+    "savings": "$11.2M",
+    "timeframe": "6 months",
+    "similar": "LogisticsPlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, LogisticsPlus just implemented Next-Gen Management for Logistics last month - 49% improvement already. Thoughts?",
+      "sequence_id": "seq-98",
+      "service_id": "next-gen-management-for-logistics-84ae197a"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: LogisticsPlus saw $11.2M in savings. Your logistics peers are seeing similar results.",
+      "sequence_id": "seq-98",
+      "service_id": "next-gen-management-for-logistics-84ae197a"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-98",
+      "service_id": "next-gen-management-for-logistics-84ae197a"
+    }
+  ],
+  "hot_lead_score": 65,
+  "conversion_likelihood": "72%",
+  "timestamp": "2026-07-30T05:59:56.192942+00:00"
+}

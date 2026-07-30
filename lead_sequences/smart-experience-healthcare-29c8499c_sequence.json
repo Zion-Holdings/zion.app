@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-experience-healthcare-29c8499c",
+  "service_name": "Smart experience-healthcare",
+  "industry": "healthcare",
+  "lead_magnet": "HIPAA-Compliant Automation Checklist",
+  "metrics": {
+    "improvement": "47%",
+    "savings": "$12.7M",
+    "timeframe": "9 months",
+    "similar": "HealthFirst Hospital"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows healthcare companies using Smart experience-healthcare see 47% improvement. Your current process?",
+      "sequence_id": "seq-70",
+      "service_id": "smart-experience-healthcare-29c8499c"
+    },
+    {
+      "step": 2,
+      "message": "Based on your healthcare profile, Smart experience-healthcare could save {company} approximately $12.7M. Interested in details?",
+      "sequence_id": "seq-70",
+      "service_id": "smart-experience-healthcare-29c8499c"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Smart experience-healthcare is proven to deliver 47% results.",
+      "sequence_id": "seq-70",
+      "service_id": "smart-experience-healthcare-29c8499c"
+    }
+  ],
+  "hot_lead_score": 78,
+  "conversion_likelihood": "75%",
+  "timestamp": "2026-07-30T05:56:06.474146+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "hyper-accelerated-supply-proptech-0eb50b15",
+  "service_name": "Hyper-Accelerated Supply - PROPTECH",
+  "industry": "proptech",
+  "lead_magnet": "Property Valuation Automation Guide",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$12.9M",
+    "timeframe": "6 months",
+    "similar": "PropTech Co"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, PropTech Co is closing their Q3 deals this week. Want to see how Hyper-Accelerated Supply - PROPTECH can help {company} save $12.9M?",
+      "sequence_id": "seq-69",
+      "service_id": "hyper-accelerated-supply-proptech-0eb50b15"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Hyper-Accelerated Supply - PROPTECH delivers 52% in 6 months.",
+      "sequence_id": "seq-69",
+      "service_id": "hyper-accelerated-supply-proptech-0eb50b15"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-69",
+      "service_id": "hyper-accelerated-supply-proptech-0eb50b15"
+    }
+  ],
+  "hot_lead_score": 86,
+  "conversion_likelihood": "72%",
+  "timestamp": "2026-07-30T05:59:56.182255+00:00"
+}

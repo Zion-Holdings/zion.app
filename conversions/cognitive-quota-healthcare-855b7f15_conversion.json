@@ -1,0 +1,42 @@
+{
+  "service_id": "cognitive-quota-healthcare-855b7f15",
+  "service_name": "Cognitive Quota Healthcare",
+  "industry": "energy",
+  "conversion_metrics": {
+    "open_rate": "68%",
+    "click_rate": "42%",
+    "reply_rate": "28%",
+    "close_rate": "16%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest energy challenge? Cognitive Quota Healthcare solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-40",
+      "service_id": "cognitive-quota-healthcare-855b7f15",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is performance holding you back? Cognitive Quota Healthcare delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-40",
+      "service_id": "cognitive-quota-healthcare-855b7f15",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop performance headaches. Cognitive Quota Healthcare = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-40",
+      "service_id": "cognitive-quota-healthcare-855b7f15",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T05:58:37.446852+00:00"
+}

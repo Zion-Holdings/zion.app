@@ -1,0 +1,35 @@
+{
+  "service_id": "enterprise-manufacturing-platform-edtech-6a08fb2b",
+  "service_name": "Enterprise Manufacturing Platform - EDTECH",
+  "industry": "edtech",
+  "lead_magnet": "Learning Outcome Improvement Framework",
+  "metrics": {
+    "improvement": "46%",
+    "savings": "$6.2M",
+    "timeframe": "9 months",
+    "similar": "EduTech Solutions"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, EduTech Solutions is closing their Q3 deals this week. Want to see how Enterprise Manufacturing Platform - EDTECH can help {company} save $6.2M?",
+      "sequence_id": "seq-64",
+      "service_id": "enterprise-manufacturing-platform-edtech-6a08fb2b"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Enterprise Manufacturing Platform - EDTECH delivers 46% in 9 months.",
+      "sequence_id": "seq-64",
+      "service_id": "enterprise-manufacturing-platform-edtech-6a08fb2b"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-64",
+      "service_id": "enterprise-manufacturing-platform-edtech-6a08fb2b"
+    }
+  ],
+  "hot_lead_score": 69,
+  "conversion_likelihood": "58%",
+  "timestamp": "2026-07-30T05:59:56.180888+00:00"
+}

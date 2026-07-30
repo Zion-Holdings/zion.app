@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-powered-nlp-automotive-5a8e9705",
+  "service_name": "AI-Powered nlp-automotive",
+  "industry": "automotive",
+  "lead_magnet": "Supply Chain Efficiency Audit",
+  "metrics": {
+    "improvement": "50%",
+    "savings": "$14.1M",
+    "timeframe": "6 months",
+    "similar": "AutoMakers"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, AutoMakers just implemented AI-Powered nlp-automotive last month - 50% improvement already. Thoughts?",
+      "sequence_id": "seq-68",
+      "service_id": "ai-powered-nlp-automotive-5a8e9705"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: AutoMakers saw $14.1M in savings. Your automotive peers are seeing similar results.",
+      "sequence_id": "seq-68",
+      "service_id": "ai-powered-nlp-automotive-5a8e9705"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-68",
+      "service_id": "ai-powered-nlp-automotive-5a8e9705"
+    }
+  ],
+  "hot_lead_score": 92,
+  "conversion_likelihood": "45%",
+  "timestamp": "2026-07-30T05:56:06.473955+00:00"
+}

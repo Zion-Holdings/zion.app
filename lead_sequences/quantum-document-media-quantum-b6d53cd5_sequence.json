@@ -1,0 +1,35 @@
+{
+  "service_id": "quantum-document-media-quantum-b6d53cd5",
+  "service_name": "Quantum Document - Media Quantum",
+  "industry": "media",
+  "lead_magnet": "Content Performance Optimization Guide",
+  "metrics": {
+    "improvement": "43%",
+    "savings": "$6.8M",
+    "timeframe": "9 months",
+    "similar": "MediaHouse"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, MediaHouse just implemented Quantum Document - Media Quantum last month - 43% improvement already. Thoughts?",
+      "sequence_id": "seq-93",
+      "service_id": "quantum-document-media-quantum-b6d53cd5"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: MediaHouse saw $6.8M in savings. Your media peers are seeing similar results.",
+      "sequence_id": "seq-93",
+      "service_id": "quantum-document-media-quantum-b6d53cd5"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-93",
+      "service_id": "quantum-document-media-quantum-b6d53cd5"
+    }
+  ],
+  "hot_lead_score": 68,
+  "conversion_likelihood": "73%",
+  "timestamp": "2026-07-30T05:59:56.190913+00:00"
+}

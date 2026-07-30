@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-quality-hospitality-edition-266da07f",
+  "service_name": "AI Quality - Hospitality Edition",
+  "industry": "hospitality",
+  "lead_magnet": "Guest Experience Automation Blueprint",
+  "metrics": {
+    "improvement": "42%",
+    "savings": "$7.6M",
+    "timeframe": "10 months",
+    "similar": "HotelChain"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, HotelChain just implemented AI Quality - Hospitality Edition last month - 42% improvement already. Thoughts?",
+      "sequence_id": "seq-83",
+      "service_id": "ai-quality-hospitality-edition-266da07f"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: HotelChain saw $7.6M in savings. Your hospitality peers are seeing similar results.",
+      "sequence_id": "seq-83",
+      "service_id": "ai-quality-hospitality-edition-266da07f"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-83",
+      "service_id": "ai-quality-hospitality-edition-266da07f"
+    }
+  ],
+  "hot_lead_score": 65,
+  "conversion_likelihood": "75%",
+  "timestamp": "2026-07-30T05:56:06.475459+00:00"
+}

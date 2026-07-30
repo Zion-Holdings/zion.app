@@ -1,0 +1,42 @@
+{
+  "service_id": "autonomous-devops-system-agriculture-28b7c780",
+  "service_name": "Autonomous DevOps System - Agriculture",
+  "industry": "agriculture",
+  "conversion_metrics": {
+    "open_rate": "62%",
+    "click_rate": "35%",
+    "reply_rate": "22%",
+    "close_rate": "12%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, data shows agriculture companies using Autonomous DevOps System - Agriculture achieve 52%. Your baseline: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-25",
+      "service_id": "autonomous-devops-system-agriculture-28b7c780",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "Based on {company}'s profile, Autonomous DevOps System - Agriculture can save $18.4 million. Details: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-25",
+      "service_id": "autonomous-devops-system-agriculture-28b7c780",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "ROI Analysis for {company}: 52% improvement, 6 months payback. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-25",
+      "service_id": "autonomous-devops-system-agriculture-28b7c780",
+      "conversion_rate": "12%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T05:58:37.444204+00:00"
+}

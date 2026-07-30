@@ -1,0 +1,35 @@
+{
+  "service_id": "intelligent-suite-for-regtech-d8be99c0",
+  "service_name": "Intelligent Suite for REGTECH",
+  "industry": "regtech",
+  "lead_magnet": "Compliance Automation Efficiency Guide",
+  "metrics": {
+    "improvement": "53%",
+    "savings": "$15.9M",
+    "timeframe": "7 months",
+    "similar": "RegTech Solutions"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, RegTech Solutions is closing their Q3 deals this week. Want to see how Intelligent Suite for REGTECH can help {company} save $15.9M?",
+      "sequence_id": "seq-94",
+      "service_id": "intelligent-suite-for-regtech-d8be99c0"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Intelligent Suite for REGTECH delivers 53% in 7 months.",
+      "sequence_id": "seq-94",
+      "service_id": "intelligent-suite-for-regtech-d8be99c0"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-94",
+      "service_id": "intelligent-suite-for-regtech-d8be99c0"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "58%",
+  "timestamp": "2026-07-30T05:59:56.191288+00:00"
+}

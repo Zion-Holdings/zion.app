@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-powered-ai-for-energy-df1a1408",
+  "service_name": "AI-Powered AI for Energy",
+  "industry": "energy",
+  "lead_magnet": "Energy Savings Calculator",
+  "metrics": {
+    "improvement": "48%",
+    "savings": "$16.5M",
+    "timeframe": "8 months",
+    "similar": "EnergyCorp"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, EnergyCorp is closing their Q3 deals this week. Want to see how AI-Powered AI for Energy can help {company} save $16.5M?",
+      "sequence_id": "seq-89",
+      "service_id": "ai-powered-ai-for-energy-df1a1408"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. AI-Powered AI for Energy delivers 48% in 8 months.",
+      "sequence_id": "seq-89",
+      "service_id": "ai-powered-ai-for-energy-df1a1408"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-89",
+      "service_id": "ai-powered-ai-for-energy-df1a1408"
+    }
+  ],
+  "hot_lead_score": 91,
+  "conversion_likelihood": "65%",
+  "timestamp": "2026-07-30T05:56:06.476062+00:00"
+}

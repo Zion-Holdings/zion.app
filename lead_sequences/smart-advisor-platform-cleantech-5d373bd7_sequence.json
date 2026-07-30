@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-advisor-platform-cleantech-5d373bd7",
+  "service_name": "Smart Advisor Platform - CLEANTECH",
+  "industry": "cleantech",
+  "lead_magnet": "Energy Consumption Reduction Report",
+  "metrics": {
+    "improvement": "55%",
+    "savings": "$22.1M",
+    "timeframe": "5 months",
+    "similar": "CleanTech Inc"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows cleantech companies using Smart Advisor Platform - CLEANTECH see 55% improvement. Your current process?",
+      "sequence_id": "seq-95",
+      "service_id": "smart-advisor-platform-cleantech-5d373bd7"
+    },
+    {
+      "step": 2,
+      "message": "Based on your cleantech profile, Smart Advisor Platform - CLEANTECH could save {company} approximately $22.1M. Interested in details?",
+      "sequence_id": "seq-95",
+      "service_id": "smart-advisor-platform-cleantech-5d373bd7"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Smart Advisor Platform - CLEANTECH is proven to deliver 55% results.",
+      "sequence_id": "seq-95",
+      "service_id": "smart-advisor-platform-cleantech-5d373bd7"
+    }
+  ],
+  "hot_lead_score": 78,
+  "conversion_likelihood": "57%",
+  "timestamp": "2026-07-30T05:59:56.191682+00:00"
+}

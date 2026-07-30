@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-explainability-dashboard-65c10030",
+  "service_name": "AI Explainability Dashboard",
+  "industry": "AI Explainability",
+  "lead_magnet": "AI Solutions Guide",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, TechStart Inc. is closing their Q3 deals this week. Want to see how AI Explainability Dashboard can help {company} save $18.4M?",
+      "sequence_id": "seq-44",
+      "service_id": "ai-explainability-dashboard-65c10030"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. AI Explainability Dashboard delivers 52% in 6 months.",
+      "sequence_id": "seq-44",
+      "service_id": "ai-explainability-dashboard-65c10030"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-44",
+      "service_id": "ai-explainability-dashboard-65c10030"
+    }
+  ],
+  "hot_lead_score": 91,
+  "conversion_likelihood": "47%",
+  "timestamp": "2026-07-30T05:56:06.471514+00:00"
+}

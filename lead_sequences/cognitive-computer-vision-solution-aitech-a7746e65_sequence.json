@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-computer-vision-solution-aitech-a7746e65",
+  "service_name": "Cognitive Computer Vision Solution - AITECH",
+  "industry": "aitech",
+  "lead_magnet": "AI Implementation Roadmap",
+  "metrics": {
+    "improvement": "58%",
+    "savings": "$25.3M",
+    "timeframe": "5 months",
+    "similar": "AI Innovators"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, AI Innovators is closing their Q3 deals this week. Want to see how Cognitive Computer Vision Solution - AITECH can help {company} save $25.3M?",
+      "sequence_id": "seq-44",
+      "service_id": "cognitive-computer-vision-solution-aitech-a7746e65"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Cognitive Computer Vision Solution - AITECH delivers 58% in 5 months.",
+      "sequence_id": "seq-44",
+      "service_id": "cognitive-computer-vision-solution-aitech-a7746e65"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-44",
+      "service_id": "cognitive-computer-vision-solution-aitech-a7746e65"
+    }
+  ],
+  "hot_lead_score": 84,
+  "conversion_likelihood": "52%",
+  "timestamp": "2026-07-30T05:59:56.175617+00:00"
+}

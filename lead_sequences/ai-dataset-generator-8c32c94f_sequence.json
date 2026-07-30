@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-dataset-generator-8c32c94f",
+  "service_name": "AI Dataset Generator",
+  "industry": "Data Science",
+  "lead_magnet": "AI Solutions Guide",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, TechStart Inc. just implemented AI Dataset Generator last month - 52% improvement already. Thoughts?",
+      "sequence_id": "seq-23",
+      "service_id": "ai-dataset-generator-8c32c94f"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: TechStart Inc. saw $18.4M in savings. Your Data Science peers are seeing similar results.",
+      "sequence_id": "seq-23",
+      "service_id": "ai-dataset-generator-8c32c94f"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-23",
+      "service_id": "ai-dataset-generator-8c32c94f"
+    }
+  ],
+  "hot_lead_score": 79,
+  "conversion_likelihood": "58%",
+  "timestamp": "2026-07-30T05:56:06.469451+00:00"
+}

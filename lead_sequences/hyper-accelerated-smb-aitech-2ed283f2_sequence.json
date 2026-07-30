@@ -1,0 +1,35 @@
+{
+  "service_id": "hyper-accelerated-smb-aitech-2ed283f2",
+  "service_name": "Hyper-Accelerated SMB - AITECH",
+  "industry": "aitech",
+  "lead_magnet": "AI Implementation Roadmap",
+  "metrics": {
+    "improvement": "58%",
+    "savings": "$25.3M",
+    "timeframe": "5 months",
+    "similar": "AI Innovators"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve aitech. Our AI platform helped AI Innovators achieve 58% improvement in 5 months. Quick 5-minute call?",
+      "sequence_id": "seq-36",
+      "service_id": "hyper-accelerated-smb-aitech-2ed283f2"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Hyper-Accelerated SMB - AITECH typically saves $25.3M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-36",
+      "service_id": "hyper-accelerated-smb-aitech-2ed283f2"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 58% results. If not interested, just let me know!",
+      "sequence_id": "seq-36",
+      "service_id": "hyper-accelerated-smb-aitech-2ed283f2"
+    }
+  ],
+  "hot_lead_score": 68,
+  "conversion_likelihood": "41%",
+  "timestamp": "2026-07-30T05:59:56.171253+00:00"
+}

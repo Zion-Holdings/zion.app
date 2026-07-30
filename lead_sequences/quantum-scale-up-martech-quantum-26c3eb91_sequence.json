@@ -1,0 +1,35 @@
+{
+  "service_id": "quantum-scale-up-martech-quantum-26c3eb91",
+  "service_name": "Quantum Scale-up - MARTECH Quantum",
+  "industry": "martech",
+  "lead_magnet": "Marketing Automation ROI Calculator",
+  "metrics": {
+    "improvement": "50%",
+    "savings": "$11.6M",
+    "timeframe": "6 months",
+    "similar": "MarketingPro"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, MarketingPro just implemented Quantum Scale-up - MARTECH Quantum last month - 50% improvement already. Thoughts?",
+      "sequence_id": "seq-23",
+      "service_id": "quantum-scale-up-martech-quantum-26c3eb91"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: MarketingPro saw $11.6M in savings. Your martech peers are seeing similar results.",
+      "sequence_id": "seq-23",
+      "service_id": "quantum-scale-up-martech-quantum-26c3eb91"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-23",
+      "service_id": "quantum-scale-up-martech-quantum-26c3eb91"
+    }
+  ],
+  "hot_lead_score": 91,
+  "conversion_likelihood": "67%",
+  "timestamp": "2026-07-30T05:59:56.167278+00:00"
+}

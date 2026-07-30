@@ -1,0 +1,35 @@
+{
+  "service_id": "aiit-project-cognitive-907069fa",
+  "service_name": "AI/IT Project Cognitive",
+  "industry": "althealth",
+  "lead_magnet": "Patient Care Automation Blueprint",
+  "metrics": {
+    "improvement": "49%",
+    "savings": "$13.7M",
+    "timeframe": "8 months",
+    "similar": "HealthPlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with althealth neural?",
+      "sequence_id": "seq-62",
+      "service_id": "aiit-project-cognitive-907069fa"
+    },
+    {
+      "step": 2,
+      "message": "We've helped HealthPlus solve this exact problem with AI/IT Project Cognitive. Achieved 49% in 8 months.",
+      "sequence_id": "seq-62",
+      "service_id": "aiit-project-cognitive-907069fa"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-62",
+      "service_id": "aiit-project-cognitive-907069fa"
+    }
+  ],
+  "hot_lead_score": 93,
+  "conversion_likelihood": "75%",
+  "timestamp": "2026-07-30T05:59:56.180371+00:00"
+}

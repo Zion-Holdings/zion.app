@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-processor-engine-martech-d8f64e3a",
+  "service_name": "Predictive Processor Engine - MARTECH",
+  "industry": "martech",
+  "lead_magnet": "Marketing Automation ROI Calculator",
+  "metrics": {
+    "improvement": "50%",
+    "savings": "$11.6M",
+    "timeframe": "6 months",
+    "similar": "MarketingPro"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows martech companies using Predictive Processor Engine - MARTECH see 50% improvement. Your current process?",
+      "sequence_id": "seq-10",
+      "service_id": "predictive-processor-engine-martech-d8f64e3a"
+    },
+    {
+      "step": 2,
+      "message": "Based on your martech profile, Predictive Processor Engine - MARTECH could save {company} approximately $11.6M. Interested in details?",
+      "sequence_id": "seq-10",
+      "service_id": "predictive-processor-engine-martech-d8f64e3a"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Predictive Processor Engine - MARTECH is proven to deliver 50% results.",
+      "sequence_id": "seq-10",
+      "service_id": "predictive-processor-engine-martech-d8f64e3a"
+    }
+  ],
+  "hot_lead_score": 87,
+  "conversion_likelihood": "67%",
+  "timestamp": "2026-07-30T05:59:56.162710+00:00"
+}

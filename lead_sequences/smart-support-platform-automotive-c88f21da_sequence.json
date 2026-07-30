@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-support-platform-automotive-c88f21da",
+  "service_name": "Smart Support Platform - Automotive",
+  "industry": "automotive",
+  "lead_magnet": "Supply Chain Efficiency Audit",
+  "metrics": {
+    "improvement": "50%",
+    "savings": "$14.1M",
+    "timeframe": "6 months",
+    "similar": "AutoMakers"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, AutoMakers is closing their Q3 deals this week. Want to see how Smart Support Platform - Automotive can help {company} save $14.1M?",
+      "sequence_id": "seq-99",
+      "service_id": "smart-support-platform-automotive-c88f21da"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Smart Support Platform - Automotive delivers 50% in 6 months.",
+      "sequence_id": "seq-99",
+      "service_id": "smart-support-platform-automotive-c88f21da"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-99",
+      "service_id": "smart-support-platform-automotive-c88f21da"
+    }
+  ],
+  "hot_lead_score": 75,
+  "conversion_likelihood": "50%",
+  "timestamp": "2026-07-30T05:56:06.477169+00:00"
+}

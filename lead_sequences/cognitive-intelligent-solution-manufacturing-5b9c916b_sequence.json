@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-intelligent-solution-manufacturing-5b9c916b",
+  "service_name": "Cognitive Intelligent Solution - Manufacturing",
+  "industry": "manufacturing",
+  "lead_magnet": "Predictive Maintenance ROI Calculator",
+  "metrics": {
+    "improvement": "51%",
+    "savings": "$15.8M",
+    "timeframe": "8 months",
+    "similar": "ManufactureCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, ManufactureCo is closing their Q3 deals this week. Want to see how Cognitive Intelligent Solution - Manufacturing can help {company} save $15.8M?",
+      "sequence_id": "seq-84",
+      "service_id": "cognitive-intelligent-solution-manufacturing-5b9c916b"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Cognitive Intelligent Solution - Manufacturing delivers 51% in 8 months.",
+      "sequence_id": "seq-84",
+      "service_id": "cognitive-intelligent-solution-manufacturing-5b9c916b"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-84",
+      "service_id": "cognitive-intelligent-solution-manufacturing-5b9c916b"
+    }
+  ],
+  "hot_lead_score": 68,
+  "conversion_likelihood": "72%",
+  "timestamp": "2026-07-30T05:56:06.475548+00:00"
+}

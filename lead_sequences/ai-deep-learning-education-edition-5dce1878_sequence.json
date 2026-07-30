@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-deep-learning-education-edition-5dce1878",
+  "service_name": "AI Deep Learning - Education Edition",
+  "industry": "education",
+  "lead_magnet": "Student Success Automation Framework",
+  "metrics": {
+    "improvement": "41%",
+    "savings": "$5.4M",
+    "timeframe": "11 months",
+    "similar": "EduCore"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with education data?",
+      "sequence_id": "seq-77",
+      "service_id": "ai-deep-learning-education-edition-5dce1878"
+    },
+    {
+      "step": 2,
+      "message": "We've helped EduCore solve this exact problem with AI Deep Learning - Education Edition. Achieved 41% in 11 months.",
+      "sequence_id": "seq-77",
+      "service_id": "ai-deep-learning-education-edition-5dce1878"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-77",
+      "service_id": "ai-deep-learning-education-edition-5dce1878"
+    }
+  ],
+  "hot_lead_score": 92,
+  "conversion_likelihood": "72%",
+  "timestamp": "2026-07-30T05:56:06.474830+00:00"
+}

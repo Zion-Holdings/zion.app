@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing DevOps for Construction - Zion Tech Group",
-  description: "The future of construction is here with Self-Optimizing DevOps for Construction. Powered by cutting-edge AI, this platform delivers healthcare data analytics li",
+  description: "Next-generation construction solution: Self-Optimizing DevOps for Construction. Combines financial risk management with adaptive intelligence for optimal result",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-devops-for-construction-2e4a57fa`
   }
@@ -13,27 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Self-Optimizing DevOps for Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Self-Optimizing DevOps for Construction. Powered by cutting-edge AI, this platform delivers healthcare data analytics like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: Self-Optimizing DevOps for Construction. Combines financial risk management with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Competitive intelligence with market share tracking</li>
-            <li>Budget optimization with cost allocation</li>
-            <li>Edge computing support for low-latency operations</li>
+            <li>Security monitoring with threat intelligence</li>
+            <li>Document processing with OCR and NLP</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
             <li>Healthcare data analytics with patient insights</li>
-            <li>Inventory prediction with demand forecasting</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Improved forecast accuracy with ML models</li>
-            <li>Reduced support tickets with self-service options</li>
-            <li>Improved product quality with automated testing</li>
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>Improved employee productivity with automation</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Cost optimization recommendations with savings analysis</li>
           </ul>
         </div>
         

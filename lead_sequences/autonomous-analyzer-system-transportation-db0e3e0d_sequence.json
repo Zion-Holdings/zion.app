@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-analyzer-system-transportation-db0e3e0d",
+  "service_name": "Autonomous Analyzer System - Transportation",
+  "industry": "transportation",
+  "lead_magnet": "Fleet Efficiency Optimization Report",
+  "metrics": {
+    "improvement": "48%",
+    "savings": "$11.9M",
+    "timeframe": "6 months",
+    "similar": "TransitCorp"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with transportation analytics?",
+      "sequence_id": "seq-12",
+      "service_id": "autonomous-analyzer-system-transportation-db0e3e0d"
+    },
+    {
+      "step": 2,
+      "message": "We've helped TransitCorp solve this exact problem with Autonomous Analyzer System - Transportation. Achieved 48% in 6 months.",
+      "sequence_id": "seq-12",
+      "service_id": "autonomous-analyzer-system-transportation-db0e3e0d"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-12",
+      "service_id": "autonomous-analyzer-system-transportation-db0e3e0d"
+    }
+  ],
+  "hot_lead_score": 80,
+  "conversion_likelihood": "68%",
+  "timestamp": "2026-07-30T05:56:06.467827+00:00"
+}

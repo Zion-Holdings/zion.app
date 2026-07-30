@@ -1,0 +1,35 @@
+{
+  "service_id": "enterprise-intelligence-for-finance-d7de848e",
+  "service_name": "Enterprise Intelligence for Finance",
+  "industry": "finance",
+  "lead_magnet": "Regulatory Compliance Automation Guide",
+  "metrics": {
+    "improvement": "58%",
+    "savings": "$24.1M",
+    "timeframe": "5 months",
+    "similar": "Capital Group"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, Capital Group just implemented Enterprise Intelligence for Finance last month - 58% improvement already. Thoughts?",
+      "sequence_id": "seq-38",
+      "service_id": "enterprise-intelligence-for-finance-d7de848e"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: Capital Group saw $24.1M in savings. Your finance peers are seeing similar results.",
+      "sequence_id": "seq-38",
+      "service_id": "enterprise-intelligence-for-finance-d7de848e"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-38",
+      "service_id": "enterprise-intelligence-for-finance-d7de848e"
+    }
+  ],
+  "hot_lead_score": 94,
+  "conversion_likelihood": "51%",
+  "timestamp": "2026-07-30T05:59:56.171920+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "insights-intelligent-logistics-c616a557",
+  "service_name": "Insights Intelligent - Logistics",
+  "industry": "logistics",
+  "lead_magnet": "Route Optimization Savings Estimator",
+  "metrics": {
+    "improvement": "49%",
+    "savings": "$11.2M",
+    "timeframe": "6 months",
+    "similar": "LogisticsPlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows logistics companies using Insights Intelligent - Logistics see 49% improvement. Your current process?",
+      "sequence_id": "seq-90",
+      "service_id": "insights-intelligent-logistics-c616a557"
+    },
+    {
+      "step": 2,
+      "message": "Based on your logistics profile, Insights Intelligent - Logistics could save {company} approximately $11.2M. Interested in details?",
+      "sequence_id": "seq-90",
+      "service_id": "insights-intelligent-logistics-c616a557"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Insights Intelligent - Logistics is proven to deliver 49% results.",
+      "sequence_id": "seq-90",
+      "service_id": "insights-intelligent-logistics-c616a557"
+    }
+  ],
+  "hot_lead_score": 92,
+  "conversion_likelihood": "46%",
+  "timestamp": "2026-07-30T05:56:06.476181+00:00"
+}

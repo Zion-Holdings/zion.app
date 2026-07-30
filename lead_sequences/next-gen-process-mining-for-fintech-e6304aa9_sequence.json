@@ -1,0 +1,35 @@
+{
+  "service_id": "next-gen-process-mining-for-fintech-e6304aa9",
+  "service_name": "Next-Gen Process Mining for FINTECH",
+  "industry": "fintech",
+  "lead_magnet": "Payment Processing Cost Reduction Report",
+  "metrics": {
+    "improvement": "59%",
+    "savings": "$28.4M",
+    "timeframe": "4 months",
+    "similar": "FinTech Startup"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows fintech companies using Next-Gen Process Mining for FINTECH see 59% improvement. Your current process?",
+      "sequence_id": "seq-85",
+      "service_id": "next-gen-process-mining-for-fintech-e6304aa9"
+    },
+    {
+      "step": 2,
+      "message": "Based on your fintech profile, Next-Gen Process Mining for FINTECH could save {company} approximately $28.4M. Interested in details?",
+      "sequence_id": "seq-85",
+      "service_id": "next-gen-process-mining-for-fintech-e6304aa9"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Next-Gen Process Mining for FINTECH is proven to deliver 59% results.",
+      "sequence_id": "seq-85",
+      "service_id": "next-gen-process-mining-for-fintech-e6304aa9"
+    }
+  ],
+  "hot_lead_score": 74,
+  "conversion_likelihood": "62%",
+  "timestamp": "2026-07-30T05:59:56.187703+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "data-predictive-real-estate-ee8f82eb",
+  "service_name": "Data Predictive - Real-Estate",
+  "industry": "real-estate",
+  "lead_magnet": "Property Management Automation Guide",
+  "metrics": {
+    "improvement": "46%",
+    "savings": "$13.4M",
+    "timeframe": "7 months",
+    "similar": "PropertyGroup"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows real-estate companies using Data Predictive - Real-Estate see 46% improvement. Your current process?",
+      "sequence_id": "seq-15",
+      "service_id": "data-predictive-real-estate-ee8f82eb"
+    },
+    {
+      "step": 2,
+      "message": "Based on your real-estate profile, Data Predictive - Real-Estate could save {company} approximately $13.4M. Interested in details?",
+      "sequence_id": "seq-15",
+      "service_id": "data-predictive-real-estate-ee8f82eb"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Data Predictive - Real-Estate is proven to deliver 46% results.",
+      "sequence_id": "seq-15",
+      "service_id": "data-predictive-real-estate-ee8f82eb"
+    }
+  ],
+  "hot_lead_score": 75,
+  "conversion_likelihood": "59%",
+  "timestamp": "2026-07-30T05:56:06.468136+00:00"
+}

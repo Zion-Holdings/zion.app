@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-model-comparison-tool-bc75ffb1",
+  "service_name": "AI Model Comparison Tool",
+  "industry": "AI Evaluation",
+  "lead_magnet": "AI Solutions Guide",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows AI Evaluation companies using AI Model Comparison Tool see 52% improvement. Your current process?",
+      "sequence_id": "seq-50",
+      "service_id": "ai-model-comparison-tool-bc75ffb1"
+    },
+    {
+      "step": 2,
+      "message": "Based on your AI Evaluation profile, AI Model Comparison Tool could save {company} approximately $18.4M. Interested in details?",
+      "sequence_id": "seq-50",
+      "service_id": "ai-model-comparison-tool-bc75ffb1"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. AI Model Comparison Tool is proven to deliver 52% results.",
+      "sequence_id": "seq-50",
+      "service_id": "ai-model-comparison-tool-bc75ffb1"
+    }
+  ],
+  "hot_lead_score": 78,
+  "conversion_likelihood": "54%",
+  "timestamp": "2026-07-30T05:56:06.472110+00:00"
+}
