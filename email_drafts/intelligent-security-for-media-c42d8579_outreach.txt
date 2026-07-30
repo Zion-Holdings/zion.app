@@ -4,7 +4,7 @@ Hi there,
 
 I'm reaching out to introduce Intelligent Security for Media from Zion Tech Group - an AI-powered solution that could significantly impact your business.
 
-Revolutionize media through intelligent automation. Our Intelligent Security for Media leverages advanced machine learning to deliver financial risk management at scale.
+Revolutionize media through intelligent automation. Our Intelligent Security for Media leverages advanced machine learning to deliver customer insights at scale.
 
 Key Benefits:
 - AI-driven automation for faster results
@@ -29,3 +29,4 @@ hello@ziontechgroup.com
 
 ---
 This is an automated outreach from Zion Tech Group's Instant Pipeline Orchestrator.
+v3.0.

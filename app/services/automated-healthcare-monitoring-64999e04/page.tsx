@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Healthcare Monitoring - Zion Tech Group",
-  description: "The future of agriculture is here with Automated Healthcare Monitoring. Powered by cutting-edge AI, this platform delivers workflow management like never before",
+  description: "Next-generation real-estate solution: Automated Healthcare Monitoring. Combines image recognition with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-healthcare-monitoring-64999e04`
   }
@@ -13,25 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automated Healthcare Monitoring</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of agriculture is here with Automated Healthcare Monitoring. Powered by cutting-edge AI, this platform delivers workflow management like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation real-estate solution: Automated Healthcare Monitoring. Combines image recognition with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Security monitoring with threat intelligence</li>
-            <li>Document processing with OCR and NLP</li>
-            <li>Maintenance scheduling with predictive analytics</li>
             <li>User experience analytics with behavior tracking</li>
-            <li>Role-based access control with SSO integration</li>
+            <li>Code optimization with performance profiling</li>
+            <li>Manufacturing quality control with defect detection</li>
+            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Scalable to millions of transactions per second</li>
+            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Improved quality with automated testing and validation</li>
+            <li>Increased revenue with optimized pricing strategies</li>
             <li>Seamless integration with existing systems and workflows</li>
+            <li>3x faster decision making with real-time insights</li>
           </ul>
         </div>
         

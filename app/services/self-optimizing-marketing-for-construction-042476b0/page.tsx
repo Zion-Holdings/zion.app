@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Self-Optimizing Marketing for Construction - Zion Tech Group",
-  description: "The future of construction is here with Self-Optimizing Marketing for Construction. Powered by cutting-edge AI, this platform delivers risk assessment like neve",
+  description: "Revolutionize construction through intelligent automation. Our Self-Optimizing Marketing for Construction leverages advanced machine learning to deliver mainten",
   alternates: {
     canonical: `https://ziontechgroup.com/services/self-optimizing-marketing-for-construction-042476b0`
   }
@@ -13,23 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Self-Optimizing Marketing for Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Self-Optimizing Marketing for Construction. Powered by cutting-edge AI, this platform delivers risk assessment like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize construction through intelligent automation. Our Self-Optimizing Marketing for Construction leverages advanced machine learning to deliver maintenance scheduling at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Open-source friendly with plugin architecture</li>
-            <li>Manufacturing quality control with defect detection</li>
-            <li>Network optimization with traffic analysis</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>A/B testing framework for continuous optimization</li>
             <li>SOC 2 certified with security controls</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>Machine learning integration with automatic model training</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced human error by 95% with automated processes</li>
+            <li>Increased revenue with optimized pricing strategies</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
             <li>Cost optimization recommendations with savings analysis</li>
             <li>Zero manual intervention required for routine tasks</li>
           </ul>

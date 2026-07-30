@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Sales Smart - Transportation - Zion Tech Group",
-  description: "The future of transportation is here with Sales Smart - Transportation. Powered by cutting-edge AI, this platform delivers supply chain like never before.",
+  description: "Next-generation transportation solution: Sales Smart - Transportation. Combines customer insights with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/sales-smart---transportation-3260e7bf`
   }
@@ -13,25 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Sales Smart - Transportation</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of transportation is here with Sales Smart - Transportation. Powered by cutting-edge AI, this platform delivers supply chain like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation transportation solution: Sales Smart - Transportation. Combines customer insights with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Microservices deployment with container orchestration</li>
+            <li>Financial risk management with scenario analysis</li>
+            <li>Data encryption at rest and in transit</li>
+            <li>Manufacturing quality control with defect detection</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Customer service automation with chatbot integration</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Code optimization with performance profiling</li>
-            <li>Version control with rollback capabilities</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Increased revenue with optimized pricing strategies</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>Reduced churn with proactive customer retention</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
             <li>50% reduction in operational costs through automation</li>
-            <li>Improved customer satisfaction with faster response times</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
           </ul>
         </div>
         
