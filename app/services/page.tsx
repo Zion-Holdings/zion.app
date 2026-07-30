@@ -87,8 +87,14 @@ function ServicesContent() {
       />
     <main className="min-h-screen bg-slate-950 py-20">
       <div className="container-page">
-        <h1 className="text-4xl font-bold text-white mb-2 text-center">Our Complete Service Catalog</h1>
-        <p className="section-subheading text-center">{allServices.length}+ real-world services across 10 categories</p>
+        <div className="text-center mb-10">
+          <h1 className="text-4xl font-bold text-white mb-2">Our Complete Service Catalog</h1>
+          <p className="section-subheading text-center">{allServices.length}+ real-world services across 10 categories</p>
+        </div>
+        <div className="flex flex-wrap justify-center gap-3 mb-10">
+          <Link href="/contact/" className="btn-primary text-base px-8 py-3">Start a Project →</Link>
+          <Link href="/case-studies/" className="btn-secondary text-base px-8 py-3">View Proof</Link>
+        </div>
         {/* Smart Fuzzy Search Bar */}
         <div className="max-w-3xl mx-auto mt-8">
           <SmartSearchBar
