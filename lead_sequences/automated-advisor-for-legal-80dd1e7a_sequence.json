@@ -1,0 +1,35 @@
+{
+  "service_id": "automated-advisor-for-legal-80dd1e7a",
+  "service_name": "Automated Advisor for Legal",
+  "industry": "legal",
+  "lead_magnet": "Document Review Automation Checklist",
+  "metrics": {
+    "improvement": "39%",
+    "savings": "$3.1M",
+    "timeframe": "14 months",
+    "similar": "LawFirm"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows legal companies using Automated Advisor for Legal see 39% improvement. Your current process?",
+      "sequence_id": "seq-40",
+      "service_id": "automated-advisor-for-legal-80dd1e7a"
+    },
+    {
+      "step": 2,
+      "message": "Based on your legal profile, Automated Advisor for Legal could save {company} approximately $3.1M. Interested in details?",
+      "sequence_id": "seq-40",
+      "service_id": "automated-advisor-for-legal-80dd1e7a"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Automated Advisor for Legal is proven to deliver 39% results.",
+      "sequence_id": "seq-40",
+      "service_id": "automated-advisor-for-legal-80dd1e7a"
+    }
+  ],
+  "hot_lead_score": 70,
+  "conversion_likelihood": "47%",
+  "timestamp": "2026-07-30T06:52:09.688913+00:00"
+}

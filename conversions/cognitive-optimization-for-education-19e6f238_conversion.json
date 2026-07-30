@@ -11,24 +11,24 @@
   "variations": [
     {
       "step": 1,
-      "message": "Hi {first_name}, 90-day money-back guarantee on Service. 52% improvement, $18.4M savings. Try free: https://calendly.com/kleber-ziontechgroup/consultation",
-      "sequence_id": "rev-seq-52",
+      "message": "Hi {first_name}, Industry Leader just signed - 52% improvement in 6 months. {company} next? https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-23",
       "service_id": "cognitive-optimization-for-education-19e6f238",
       "conversion_rate": "14%",
       "expected_revenue": "$18.4M"
     },
     {
       "step": 2,
-      "message": "Risk-free trial: Service delivers 52% or you don't pay. https://calendly.com/kleber-ziontechgroup/consultation",
-      "sequence_id": "rev-seq-52",
+      "message": "{company} + Industry Leader = $18.4M in annual savings. Service case study attached. Let's talk: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-23",
       "service_id": "cognitive-optimization-for-education-19e6f238",
       "conversion_rate": "14%",
       "expected_revenue": "$18.4M"
     },
     {
       "step": 3,
-      "message": "No risk, all reward: $18.4M savings with Service. 90-day guarantee. https://calendly.com/kleber-ziontechgroup/consultation",
-      "sequence_id": "rev-seq-52",
+      "message": "Results: Industry Leader \u2192 52% \u2192 $18.4M. Your turn? Book call: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-23",
       "service_id": "cognitive-optimization-for-education-19e6f238",
       "conversion_rate": "14%",
       "expected_revenue": "$18.4M"
@@ -38,5 +38,5 @@
   "conversion_likelihood": "68%",
   "expected_revenue": "$15.2M",
   "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
-  "timestamp": "2026-07-30T05:57:06.253221+00:00"
+  "timestamp": "2026-07-30T06:51:53.994769+00:00"
 }

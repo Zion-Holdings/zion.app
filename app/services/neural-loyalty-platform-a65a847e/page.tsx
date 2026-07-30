@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Custom integrations with webhook support</li>
             <li>Compliance automation with audit trails</li>
             <li>Cache optimization with Redis</li>
-            <li>User experience analytics with behavior tracking</li>
           </ul>
         </div>
         
@@ -35,9 +34,6 @@ export default function ServicePage() {
             <li>improved customer loyalty programs</li>
             <li>Improved customer satisfaction scores</li>
             <li>Reduced human error by 95% with automated processes</li>
-            <li>Improved customer satisfaction with faster response times</li>
-            <li>Reduced stockouts and overstocks</li>
-            <li>Reduced churn with proactive customer retention</li>
           </ul>
         </div>
         

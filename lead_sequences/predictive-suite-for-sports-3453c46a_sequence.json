@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-suite-for-sports-3453c46a",
+  "service_name": "Predictive Suite for Sports",
+  "industry": "sports",
+  "lead_magnet": "Fan Engagement Growth Framework",
+  "metrics": {
+    "improvement": "55%",
+    "savings": "$8.9M",
+    "timeframe": "4 months",
+    "similar": "SportsTeam"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, SportsTeam just implemented Predictive Suite for Sports last month - 55% improvement already. Thoughts?",
+      "sequence_id": "seq-68",
+      "service_id": "predictive-suite-for-sports-3453c46a"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: SportsTeam saw $8.9M in savings. Your sports peers are seeing similar results.",
+      "sequence_id": "seq-68",
+      "service_id": "predictive-suite-for-sports-3453c46a"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-68",
+      "service_id": "predictive-suite-for-sports-3453c46a"
+    }
+  ],
+  "hot_lead_score": 91,
+  "conversion_likelihood": "75%",
+  "timestamp": "2026-07-30T06:52:09.692574+00:00"
+}

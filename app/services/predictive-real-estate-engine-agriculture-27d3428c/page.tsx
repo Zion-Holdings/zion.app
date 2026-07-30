@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Real Estate Engine - Agriculture - Zion Tech Group",
-  description: "Unlock unprecedented growth with Predictive Real Estate Engine - Agriculture. This autonomous system provides reputation management with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Predictive Real Estate Engine - Agriculture. This autonomous system provides reputation management with zero manual interventio",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-real-estate-engine-agriculture-27d3428c`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Privileged access management (PAM)</li>
             <li>Performance testing with load simulation</li>
             <li>Cache optimization with Redis</li>
-            <li>Incident response with playbooks</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better inventory turnover ratios</li>
             <li>Better financial planning with predictive models</li>
             <li>reduced environmental impact and costs</li>
-            <li>Improved sales performance with lead scoring</li>
           </ul>
         </div>
         

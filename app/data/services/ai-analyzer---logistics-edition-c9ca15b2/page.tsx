@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Analyzer - Logistics Edition - Zion Tech Group",
-  description: "The future of logistics is here with AI Analyzer - Logistics Edition. Powered by cutting-edge AI, this platform delivers fraud prevention like never before.",
+  description: "Revolutionize logistics through intelligent automation. Our AI Analyzer - Logistics Edition leverages advanced machine learning to deliver supply chain at scale.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-analyzer---logistics-edition-c9ca15b2`
   }
@@ -13,17 +13,15 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Analyzer - Logistics Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of logistics is here with AI Analyzer - Logistics Edition. Powered by cutting-edge AI, this platform delivers fraud prevention like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize logistics through intelligent automation. Our AI Analyzer - Logistics Edition leverages advanced machine learning to deliver supply chain at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Alerting system with intelligent notifications</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Sales process optimization with pipeline management</li>
-            <li>Manufacturing quality control with defect detection</li>
-            <li>Inventory prediction with demand forecasting</li>
-            <li>Compliance monitoring with regulatory updates</li>
+            <li>Edge computing support for low-latency operations</li>
+            <li>A/B testing framework for continuous optimization</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
+            <li>Data encryption at rest and in transit</li>
           </ul>
         </div>
         
@@ -31,8 +29,10 @@ export default function ServicePage() {
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
             <li>Reduced churn with proactive customer retention</li>
+            <li>Increased revenue with optimized pricing strategies</li>
             <li>50% reduction in operational costs through automation</li>
-            <li>3x faster decision making with real-time insights</li>
+            <li>Performance benchmarking against industry standards</li>
+            <li>Faster time-to-market with accelerated development</li>
           </ul>
         </div>
         

@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-engine-platform-tech-e4f1643c",
+  "service_name": "Smart Engine Platform - Tech",
+  "industry": "technology",
+  "lead_magnet": "AI Cost Calculator - See Your Potential Savings",
+  "metrics": {
+    "improvement": "52%",
+    "savings": "$18.4M",
+    "timeframe": "6 months",
+    "similar": "TechStart Inc."
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, TechStart Inc. is closing their Q3 deals this week. Want to see how Smart Engine Platform - Tech can help {company} save $18.4M?",
+      "sequence_id": "seq-99",
+      "service_id": "smart-engine-platform-tech-e4f1643c"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Smart Engine Platform - Tech delivers 52% in 6 months.",
+      "sequence_id": "seq-99",
+      "service_id": "smart-engine-platform-tech-e4f1643c"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-99",
+      "service_id": "smart-engine-platform-tech-e4f1643c"
+    }
+  ],
+  "hot_lead_score": 75,
+  "conversion_likelihood": "74%",
+  "timestamp": "2026-07-30T06:57:06.887098+00:00"
+}

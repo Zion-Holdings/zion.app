@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-07-30T06:47:15.625318+00:00",
-  "performance_score": 7.0726,
+  "timestamp": "2026-07-30T06:55:27.981367+00:00",
+  "performance_score": 8.261400000000002,
   "optimized_parameters": {
     "service_generation_rate": 1724,
     "email_templates_per_service": 5,
@@ -14,11 +14,11 @@
   },
   "adaptive_strategy": "value_first",
   "artifact_counts": {
-    "services": 700,
-    "case_studies": 18352,
-    "email_drafts": 18354,
-    "lead_sequences": 1200,
-    "conversion_sequences": 1502
+    "services": 6997,
+    "case_studies": 20301,
+    "email_drafts": 20303,
+    "lead_sequences": 1400,
+    "conversion_sequences": 1801
   },
   "recommendations": [
     "Increase service generation to 1724 services/minute",

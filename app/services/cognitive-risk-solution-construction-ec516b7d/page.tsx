@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Risk Solution - Construction - Zion Tech Group",
-  description: "Transform your construction operations with our Cognitive Risk Solution - Construction. This AI-driven solution automates data governance with unprecedented accuracy and efficiency.",
+  description: "Transform your construction operations with our Cognitive Risk Solution - Construction. This AI-driven solution automates data governance with unprecedented acc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-risk-solution-construction-ec516b7d`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>FinOps with cloud financial management</li>
             <li>Manufacturing quality control with defect detection</li>
             <li>Healthcare data analytics with patient insights</li>
-            <li>Customer service automation with chatbot integration</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved Net Promoter Score (NPS)</li>
             <li>Enhanced security posture with continuous monitoring</li>
             <li>Improved performance review completion rates</li>
-            <li>Reduced customer acquisition costs with optimization</li>
           </ul>
         </div>
         

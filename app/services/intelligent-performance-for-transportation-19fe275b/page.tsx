@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Performance for Transportation - Zion Tech Group",
-  description: "Drive innovation in transportation with Intelligent Performance for Transportation. This AI-powered platform transforms revenue forecasting into a competitive advantage.",
+  description: "Drive innovation in transportation with Intelligent Performance for Transportation. This AI-powered platform transforms revenue forecasting into a competitive a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-performance-for-transportation-19fe275b`
   }
@@ -34,9 +34,6 @@ export default function ServicePage() {
             <li>Better lead quality and conversion rates</li>
             <li>improved compliance audit scores</li>
             <li>Better employee engagement scores</li>
-            <li>Enhanced security with continuous threat monitoring</li>
-            <li>Better benefits utilization rates</li>
-            <li>Reduced sales cycle length</li>
           </ul>
         </div>
         

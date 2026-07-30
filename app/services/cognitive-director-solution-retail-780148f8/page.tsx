@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Director Solution - Retail - Zion Tech Group",
-  description: "Revolutionize retail through intelligent automation. Our Cognitive Director Solution - Retail leverages advanced machine learning to deliver inventory management at scale.",
+  description: "Revolutionize retail through intelligent automation. Our Cognitive Director Solution - Retail leverages advanced machine learning to deliver inventory managemen",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-director-solution-retail-780148f8`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>SSL/TLS encryption for all connections</li>
             <li>Security information and event management (SIEM)</li>
             <li>Self-healing with auto-recovery</li>
-            <li>Load balancing with health checks</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>3x faster decision making with real-time insights</li>
             <li>Reduced paid advertising costs</li>
             <li>Reduced time to market for new products</li>
-            <li>Reduced training time to productivity</li>
           </ul>
         </div>
         

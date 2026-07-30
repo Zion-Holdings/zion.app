@@ -1,0 +1,35 @@
+{
+  "service_id": "neural-competitive-automation-654a5b93",
+  "service_name": "Neural Competitive Automation",
+  "industry": "gaming",
+  "lead_magnet": "Player Retention Strategy Playbook",
+  "metrics": {
+    "improvement": "57%",
+    "savings": "$10.3M",
+    "timeframe": "5 months",
+    "similar": "GameStudio"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, GameStudio just implemented Neural Competitive Automation last month - 57% improvement already. Thoughts?",
+      "sequence_id": "seq-98",
+      "service_id": "neural-competitive-automation-654a5b93"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: GameStudio saw $10.3M in savings. Your gaming peers are seeing similar results.",
+      "sequence_id": "seq-98",
+      "service_id": "neural-competitive-automation-654a5b93"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-98",
+      "service_id": "neural-competitive-automation-654a5b93"
+    }
+  ],
+  "hot_lead_score": 78,
+  "conversion_likelihood": "62%",
+  "timestamp": "2026-07-30T06:57:06.886449+00:00"
+}

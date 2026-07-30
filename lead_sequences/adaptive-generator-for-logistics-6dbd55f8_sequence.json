@@ -1,0 +1,35 @@
+{
+  "service_id": "adaptive-generator-for-logistics-6dbd55f8",
+  "service_name": "Adaptive Generator for Logistics",
+  "industry": "logistics",
+  "lead_magnet": "Route Optimization Savings Estimator",
+  "metrics": {
+    "improvement": "49%",
+    "savings": "$11.2M",
+    "timeframe": "6 months",
+    "similar": "LogisticsPlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, LogisticsPlus just implemented Adaptive Generator for Logistics last month - 49% improvement already. Thoughts?",
+      "sequence_id": "seq-23",
+      "service_id": "adaptive-generator-for-logistics-6dbd55f8"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: LogisticsPlus saw $11.2M in savings. Your logistics peers are seeing similar results.",
+      "sequence_id": "seq-23",
+      "service_id": "adaptive-generator-for-logistics-6dbd55f8"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-23",
+      "service_id": "adaptive-generator-for-logistics-6dbd55f8"
+    }
+  ],
+  "hot_lead_score": 67,
+  "conversion_likelihood": "44%",
+  "timestamp": "2026-07-30T06:52:09.686922+00:00"
+}

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Web Application Firewall (WAF)</li>
             <li>Process discovery with activity analysis</li>
             <li>Alerting system with intelligent notifications</li>
-            <li>Email security with anti-phishing</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved forecast accuracy</li>
             <li>Reduced procurement cycle times</li>
             <li>Better supply chain visibility with tracking</li>
-            <li>improved customer loyalty programs</li>
           </ul>
         </div>
         

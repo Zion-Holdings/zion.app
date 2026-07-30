@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Experience Solution - Hospitality - Zion Tech Group",
-  description: "Enhance your hospitality business with Cognitive Experience Solution - Hospitality. Our solution provides performance monitoring with enterprise-grade reliability and security.",
+  description: "Enhance your hospitality business with Cognitive Experience Solution - Hospitality. Our solution provides performance monitoring with enterprise-grade reliabili",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-experience-solution-hospitality-e7411d51`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>FinOps with cloud financial management</li>
             <li>Capacity planning with forecasting</li>
             <li>Behavioral analytics for anomaly detection</li>
-            <li>Email security with anti-phishing</li>
           </ul>
         </div>
         
@@ -35,9 +34,6 @@ export default function ServicePage() {
             <li>Reduced customer acquisition costs with optimization</li>
             <li>Automated compliance reporting for regulatory requirements</li>
             <li>Improved brand awareness with social monitoring</li>
-            <li>Reduced human error by 95% with automated processes</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Improved agent productivity and satisfaction</li>
           </ul>
         </div>
         

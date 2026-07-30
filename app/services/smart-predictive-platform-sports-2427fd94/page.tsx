@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Predictive Platform - Sports - Zion Tech Group",
-  description: "Transform your sports operations with our Smart Predictive Platform - Sports. This AI-driven solution automates data quality with unprecedented accuracy and efficiency.",
+  description: "Transform your sports operations with our Smart Predictive Platform - Sports. This AI-driven solution automates data quality with unprecedented accuracy and eff",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-predictive-platform-sports-2427fd94`
   }
@@ -34,9 +34,6 @@ export default function ServicePage() {
             <li>Better customer experience with personalization</li>
             <li>Improved agent productivity and satisfaction</li>
             <li>Better supply chain visibility with tracking</li>
-            <li>Reduced legal review cycles</li>
-            <li>Zero manual intervention required for routine tasks</li>
-            <li>Better inventory turnover ratios</li>
           </ul>
         </div>
         

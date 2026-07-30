@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural monitoring-manufacturing - Zion Tech Group",
-  description: "Revolutionize manufacturing through intelligent automation. Our Neural monitoring-manufacturing leverages advanced machine learning to deliver capacity management at scale.",
+  description: "Revolutionize manufacturing through intelligent automation. Our Neural monitoring-manufacturing leverages advanced machine learning to deliver capacity manageme",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-monitoring-manufacturing-f943d957`
   }
@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced team productivity with intelligent assistance</li>
             <li>Reduced shipping costs with route optimization</li>
             <li>Better risk management with predictive analytics</li>
-            <li>Better inventory management with demand forecasting</li>
           </ul>
         </div>
         

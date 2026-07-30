@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>GDPR compliance with data portability</li>
             <li>Image recognition with computer vision</li>
             <li>Multi-language support with localization</li>
-            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>better stakeholder satisfaction ratings</li>
             <li>Reduced procurement cycle times</li>
             <li>50% reduction in operational costs through automation</li>
-            <li>Better inventory turnover ratios</li>
           </ul>
         </div>
         

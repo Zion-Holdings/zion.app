@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Suite for Automotive - Zion Tech Group",
-  description: "The future of automotive is here with Intelligent Suite for Automotive. Powered by cutting-edge AI, this platform delivers competitive intelligence like never b",
+  description: "The future of automotive is here with Intelligent Suite for Automotive. Powered by cutting-edge AI, this platform delivers image recognition like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-suite-for-automotive-edcf2327`
   }
@@ -13,27 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Suite for Automotive</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of automotive is here with Intelligent Suite for Automotive. Powered by cutting-edge AI, this platform delivers competitive intelligence like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of automotive is here with Intelligent Suite for Automotive. Powered by cutting-edge AI, this platform delivers image recognition like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Market analysis with buyer behavior insights</li>
-            <li>Healthcare data analytics with patient insights</li>
+            <li>Open-source friendly with plugin architecture</li>
+            <li>Fraud detection with anomaly analysis</li>
+            <li>Audit trails with compliance reporting</li>
             <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Edge computing support for low-latency operations</li>
-            <li>Sentiment analysis with real-time monitoring</li>
+            <li>Real-time processing with streaming analytics</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Reduced human error by 95% with automated processes</li>
-            <li>Performance benchmarking against industry standards</li>
-            <li>Reduced shipping costs with route optimization</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Real-time insights and alerts for proactive management</li>
+            <li>Seamless integration with existing systems and workflows</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>Improved quality with automated testing and validation</li>
           </ul>
         </div>
         

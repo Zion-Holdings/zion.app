@@ -34,7 +34,6 @@ export default function ServicePage() {
             <li>Improved contract renewal rates</li>
             <li>Reduced cart abandonment rates</li>
             <li>Better supply chain visibility with tracking</li>
-            <li>Better warranty claim processing</li>
           </ul>
         </div>
         

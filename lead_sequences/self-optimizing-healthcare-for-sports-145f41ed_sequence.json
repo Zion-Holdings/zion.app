@@ -1,0 +1,35 @@
+{
+  "service_id": "self-optimizing-healthcare-for-sports-145f41ed",
+  "service_name": "Self-Optimizing Healthcare for Sports",
+  "industry": "sports",
+  "lead_magnet": "Fan Engagement Growth Framework",
+  "metrics": {
+    "improvement": "55%",
+    "savings": "$8.9M",
+    "timeframe": "4 months",
+    "similar": "SportsTeam"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, SportsTeam just implemented Self-Optimizing Healthcare for Sports last month - 55% improvement already. Thoughts?",
+      "sequence_id": "seq-93",
+      "service_id": "self-optimizing-healthcare-for-sports-145f41ed"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: SportsTeam saw $8.9M in savings. Your sports peers are seeing similar results.",
+      "sequence_id": "seq-93",
+      "service_id": "self-optimizing-healthcare-for-sports-145f41ed"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-93",
+      "service_id": "self-optimizing-healthcare-for-sports-145f41ed"
+    }
+  ],
+  "hot_lead_score": 95,
+  "conversion_likelihood": "52%",
+  "timestamp": "2026-07-30T06:52:09.695416+00:00"
+}

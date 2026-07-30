@@ -1,0 +1,35 @@
+{
+  "service_id": "coordinator-automated-real-estate-17d7826a",
+  "service_name": "Coordinator Automated - Real-Estate",
+  "industry": "real-estate",
+  "lead_magnet": "Property Management Automation Guide",
+  "metrics": {
+    "improvement": "46%",
+    "savings": "$13.4M",
+    "timeframe": "7 months",
+    "similar": "PropertyGroup"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with real-estate insights?",
+      "sequence_id": "seq-82",
+      "service_id": "coordinator-automated-real-estate-17d7826a"
+    },
+    {
+      "step": 2,
+      "message": "We've helped PropertyGroup solve this exact problem with Coordinator Automated - Real-Estate. Achieved 46% in 7 months.",
+      "sequence_id": "seq-82",
+      "service_id": "coordinator-automated-real-estate-17d7826a"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-82",
+      "service_id": "coordinator-automated-real-estate-17d7826a"
+    }
+  ],
+  "hot_lead_score": 82,
+  "conversion_likelihood": "51%",
+  "timestamp": "2026-07-30T06:57:06.883371+00:00"
+}

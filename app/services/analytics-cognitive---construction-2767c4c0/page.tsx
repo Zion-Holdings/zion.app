@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Analytics Cognitive - Construction - Zion Tech Group",
-  description: "Unlock unprecedented growth with Analytics Cognitive - Construction. This autonomous system provides user experience with zero manual intervention needed.",
+  description: "The future of construction is here with Analytics Cognitive - Construction. Powered by cutting-edge AI, this platform delivers energy management like never befo",
   alternates: {
     canonical: `https://ziontechgroup.com/services/analytics-cognitive---construction-2767c4c0`
   }
@@ -13,27 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Analytics Cognitive - Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Analytics Cognitive - Construction. This autonomous system provides user experience with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of construction is here with Analytics Cognitive - Construction. Powered by cutting-edge AI, this platform delivers energy management like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Cost reduction with process mining</li>
-            <li>HIPAA ready with healthcare data protection</li>
-            <li>Data quality with anomaly detection</li>
-            <li>Inventory prediction with demand forecasting</li>
+            <li>Serverless functions for cost-effective scaling</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Logistics route optimization with traffic prediction</li>
+            <li>GDPR compliance with data portability</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced development time with code generation</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>Better resource utilization with auto-scaling</li>
-            <li>Enhanced decision making with data-driven insights</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>Faster time-to-market with accelerated development</li>
+            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         

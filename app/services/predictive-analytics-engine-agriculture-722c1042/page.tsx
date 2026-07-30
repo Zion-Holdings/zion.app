@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Analytics Engine - Agriculture - Zion Tech Group",
-  description: "Unlock unprecedented growth with Predictive Analytics Engine - Agriculture. This autonomous system provides content moderation with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with Predictive Analytics Engine - Agriculture. This autonomous system provides content moderation with zero manual intervention nee",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-analytics-engine-agriculture-722c1042`
   }
@@ -34,9 +34,6 @@ export default function ServicePage() {
             <li>Zero manual intervention required for routine tasks</li>
             <li>Reduced infrastructure costs with cloud optimization</li>
             <li>Increased upsell and cross-sell opportunities</li>
-            <li>Improved order fulfillment rates</li>
-            <li>Faster content creation with AI assistance</li>
-            <li>Improved quality with automated testing and validation</li>
           </ul>
         </div>
         

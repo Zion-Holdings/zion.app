@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-social-director-c1c4bd1c",
+  "service_name": "Autonomous Social Director",
+  "industry": "finance",
+  "lead_magnet": "Regulatory Compliance Automation Guide",
+  "metrics": {
+    "improvement": "58%",
+    "savings": "$24.1M",
+    "timeframe": "5 months",
+    "similar": "Capital Group"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve finance. Our AI platform helped Capital Group achieve 58% improvement in 5 months. Quick 5-minute call?",
+      "sequence_id": "seq-66",
+      "service_id": "autonomous-social-director-c1c4bd1c"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Autonomous Social Director typically saves $24.1M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-66",
+      "service_id": "autonomous-social-director-c1c4bd1c"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 58% results. If not interested, just let me know!",
+      "sequence_id": "seq-66",
+      "service_id": "autonomous-social-director-c1c4bd1c"
+    }
+  ],
+  "hot_lead_score": 81,
+  "conversion_likelihood": "45%",
+  "timestamp": "2026-07-30T06:57:06.863649+00:00"
+}

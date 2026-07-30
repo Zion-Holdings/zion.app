@@ -1,0 +1,35 @@
+{
+  "service_id": "self-optimizing-data-for-telecom-75dfc5ee",
+  "service_name": "Self-Optimizing Data for Telecom",
+  "industry": "telecom",
+  "lead_magnet": "Network Optimization Cost Analysis",
+  "metrics": {
+    "improvement": "53%",
+    "savings": "$19.2M",
+    "timeframe": "5 months",
+    "similar": "TeleCom Solutions"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, TeleCom Solutions is closing their Q3 deals this week. Want to see how Self-Optimizing Data for Telecom can help {company} save $19.2M?",
+      "sequence_id": "seq-79",
+      "service_id": "self-optimizing-data-for-telecom-75dfc5ee"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Self-Optimizing Data for Telecom delivers 53% in 5 months.",
+      "sequence_id": "seq-79",
+      "service_id": "self-optimizing-data-for-telecom-75dfc5ee"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-79",
+      "service_id": "self-optimizing-data-for-telecom-75dfc5ee"
+    }
+  ],
+  "hot_lead_score": 72,
+  "conversion_likelihood": "43%",
+  "timestamp": "2026-07-30T06:52:09.693795+00:00"
+}

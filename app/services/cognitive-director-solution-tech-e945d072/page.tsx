@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Director Solution - Tech - Zion Tech Group",
-  description: "Transform your technology operations with our Cognitive Director Solution - Tech. This AI-driven solution automates campaign optimization with unprecedented accuracy and efficiency.",
+  description: "Transform your technology operations with our Cognitive Director Solution - Tech. This AI-driven solution automates campaign optimization with unprecedented acc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-director-solution-tech-e945d072`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Security information and event management (SIEM)</li>
             <li>Financial risk management with scenario analysis</li>
             <li>Chargeback with cost allocation</li>
-            <li>Authorization with fine-grained permissions</li>
           </ul>
         </div>
         
@@ -35,8 +34,6 @@ export default function ServicePage() {
             <li>Reduced infrastructure costs with cloud optimization</li>
             <li>50% reduction in operational costs through automation</li>
             <li>Reduced operational risks with predictive models</li>
-            <li>Scalable to millions of transactions per second</li>
-            <li>Improved customer satisfaction with faster response times</li>
           </ul>
         </div>
         

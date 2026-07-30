@@ -18,19 +18,22 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Document processing with OCR and NLP</li>
+            <li>Custom integrations with webhook support</li>
+            <li>Sales process optimization with pipeline management</li>
             <li>SOC 2 certified with security controls</li>
-            <li>Real-time processing with streaming analytics</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Security monitoring with threat intelligence</li>
+            <li>HIPAA ready with healthcare data protection</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Zero manual intervention required for routine tasks</li>
-            <li>Faster time-to-market with accelerated development</li>
             <li>50% reduction in operational costs through automation</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>Predictive maintenance scheduling to prevent downtime</li>
+            <li>24/7 automated operations without human intervention</li>
           </ul>
         </div>
         

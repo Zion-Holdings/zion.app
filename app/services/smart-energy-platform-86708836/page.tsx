@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart Energy Platform - Zion Tech Group",
-  description: "Revolutionize education through intelligent automation. Our Smart Energy Platform leverages advanced machine learning to deliver master data management at scale",
+  description: "The future of retail is here with Smart Energy Platform. Powered by cutting-edge AI, this platform delivers resource optimization like never before.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-energy-platform-86708836`
   }
@@ -13,26 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart Energy Platform</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize education through intelligent automation. Our Smart Energy Platform leverages advanced machine learning to deliver master data management at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of retail is here with Smart Energy Platform. Powered by cutting-edge AI, this platform delivers resource optimization like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Business intelligence with KPI dashboards</li>
-            <li>Brand monitoring across social channels</li>
-            <li>Document processing with OCR and NLP</li>
-            <li>Real-time processing with streaming analytics</li>
-            <li>Content generation with plagiarism checks</li>
+            <li>Role-based access control with SSO integration</li>
+            <li>Auto-scaling capabilities with predictive scaling</li>
+            <li>Healthcare data analytics with patient insights</li>
+            <li>Compliance monitoring with regulatory updates</li>
+            <li>GDPR compliance with data portability</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced support tickets with self-service options</li>
-            <li>Better code quality with automated reviews</li>
-            <li>Better financial planning with predictive models</li>
-            <li>Reduced customer acquisition costs with optimization</li>
+            <li>Increased revenue with optimized pricing strategies</li>
+            <li>Seamless integration with existing systems and workflows</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automated Platform for Education - Zion Tech Group",
-  description: "Revolutionize education through intelligent automation. Our Automated Platform for Education leverages advanced machine learning to deliver language processing ",
+  description: "Revolutionize education through intelligent automation. Our Automated Platform for Education leverages advanced machine learning to deliver logistics route opti",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automated-platform-for-education-bb4c02b2`
   }
@@ -13,25 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automated Platform for Education</h1>
-        <p className="text-lg text-gray-300 mb-8">Revolutionize education through intelligent automation. Our Automated Platform for Education leverages advanced machine learning to deliver language processing at scale.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize education through intelligent automation. Our Automated Platform for Education leverages advanced machine learning to deliver logistics route optimization at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Sales process optimization with pipeline management</li>
-            <li>Content generation with plagiarism checks</li>
-            <li>Open-source friendly with plugin architecture</li>
-            <li>Security monitoring with threat intelligence</li>
+            <li>Role-based access control with SSO integration</li>
+            <li>Inventory prediction with demand forecasting</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Edge computing support for low-latency operations</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
             <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Zero manual intervention required for routine tasks</li>
+            <li>Seamless integration with existing systems and workflows</li>
+            <li>50% reduction in operational costs through automation</li>
+            <li>Better compliance with automated audit trails</li>
+            <li>Faster time-to-market with accelerated development</li>
           </ul>
         </div>
         

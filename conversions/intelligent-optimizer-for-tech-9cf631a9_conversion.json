@@ -1,0 +1,42 @@
+{
+  "service_id": "intelligent-optimizer-for-tech-9cf631a9",
+  "service_name": "Intelligent Optimizer for Tech",
+  "industry": "technology",
+  "conversion_metrics": {
+    "open_rate": "68%",
+    "click_rate": "42%",
+    "reply_rate": "28%",
+    "close_rate": "15%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, Industry Leader just signed - 52% improvement in 6 months. {company} next? https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-44",
+      "service_id": "intelligent-optimizer-for-tech-9cf631a9",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} + Industry Leader = $18.4M in annual savings. Intelligent Optimizer for Tech case study attached. Let's talk: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-44",
+      "service_id": "intelligent-optimizer-for-tech-9cf631a9",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Results: Industry Leader \u2192 52% \u2192 $18.4M. Your turn? Book call: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-44",
+      "service_id": "intelligent-optimizer-for-tech-9cf631a9",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:57:13.613497+00:00"
+}

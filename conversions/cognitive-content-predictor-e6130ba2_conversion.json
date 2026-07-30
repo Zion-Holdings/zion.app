@@ -1,0 +1,42 @@
+{
+  "service_id": "cognitive-content-predictor-e6130ba2",
+  "service_name": null,
+  "industry": "healthcare",
+  "conversion_metrics": {
+    "open_rate": "71%",
+    "click_rate": "45%",
+    "reply_rate": "32%",
+    "close_rate": "18%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, Industry Leader just signed - 52% improvement in 6 months. {company} next? https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-93",
+      "service_id": "cognitive-content-predictor-e6130ba2",
+      "conversion_rate": "18%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} + Industry Leader = $18.4M in annual savings. Service case study attached. Let's talk: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-93",
+      "service_id": "cognitive-content-predictor-e6130ba2",
+      "conversion_rate": "18%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Results: Industry Leader \u2192 52% \u2192 $18.4M. Your turn? Book call: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-93",
+      "service_id": "cognitive-content-predictor-e6130ba2",
+      "conversion_rate": "18%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:51:54.004907+00:00"
+}

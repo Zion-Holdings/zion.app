@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-optimizer-platform-education-1aa82fef",
+  "service_name": "Smart Optimizer Platform - Education",
+  "industry": "education",
+  "lead_magnet": "Student Success Automation Framework",
+  "metrics": {
+    "improvement": "41%",
+    "savings": "$5.4M",
+    "timeframe": "11 months",
+    "similar": "EduCore"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows education companies using Smart Optimizer Platform - Education see 41% improvement. Your current process?",
+      "sequence_id": "seq-70",
+      "service_id": "smart-optimizer-platform-education-1aa82fef"
+    },
+    {
+      "step": 2,
+      "message": "Based on your education profile, Smart Optimizer Platform - Education could save {company} approximately $5.4M. Interested in details?",
+      "sequence_id": "seq-70",
+      "service_id": "smart-optimizer-platform-education-1aa82fef"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Smart Optimizer Platform - Education is proven to deliver 41% results.",
+      "sequence_id": "seq-70",
+      "service_id": "smart-optimizer-platform-education-1aa82fef"
+    }
+  ],
+  "hot_lead_score": 80,
+  "conversion_likelihood": "68%",
+  "timestamp": "2026-07-30T06:57:06.864251+00:00"
+}

@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-manager-for-logistics-2f7799bc",
+  "service_name": "Smart Manager for Logistics",
+  "industry": "logistics",
+  "lead_magnet": "Route Optimization Savings Estimator",
+  "metrics": {
+    "improvement": "49%",
+    "savings": "$11.2M",
+    "timeframe": "6 months",
+    "similar": "LogisticsPlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, LogisticsPlus is closing their Q3 deals this week. Want to see how Smart Manager for Logistics can help {company} save $11.2M?",
+      "sequence_id": "seq-34",
+      "service_id": "smart-manager-for-logistics-2f7799bc"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Smart Manager for Logistics delivers 49% in 6 months.",
+      "sequence_id": "seq-34",
+      "service_id": "smart-manager-for-logistics-2f7799bc"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-34",
+      "service_id": "smart-manager-for-logistics-2f7799bc"
+    }
+  ],
+  "hot_lead_score": 75,
+  "conversion_likelihood": "64%",
+  "timestamp": "2026-07-30T06:52:09.688226+00:00"
+}

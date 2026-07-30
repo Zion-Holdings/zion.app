@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Performance testing with load simulation</li>
             <li>Self-healing with auto-recovery</li>
             <li>Forensic analysis with chain of custody</li>
-            <li>Budget optimization with cost allocation</li>
           </ul>
         </div>
         
@@ -35,9 +34,6 @@ export default function ServicePage() {
             <li>reduced workplace safety incidents</li>
             <li>Better customer experience with personalization</li>
             <li>Faster content creation with AI assistance</li>
-            <li>Improved conversion rates with personalization</li>
-            <li>Improved sales performance with lead scoring</li>
-            <li>Scalable to millions of transactions per second</li>
           </ul>
         </div>
         

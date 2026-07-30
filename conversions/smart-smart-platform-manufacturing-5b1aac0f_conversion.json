@@ -1,0 +1,42 @@
+{
+  "service_id": "smart-smart-platform-manufacturing-5b1aac0f",
+  "service_name": "Smart Smart Platform - Manufacturing",
+  "industry": "manufacturing",
+  "conversion_metrics": {
+    "open_rate": "69%",
+    "click_rate": "41%",
+    "reply_rate": "27%",
+    "close_rate": "16%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, {company} can save $18.4 million with Smart Smart Platform - Manufacturing. Quick call? https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-49",
+      "service_id": "smart-smart-platform-manufacturing-5b1aac0f",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "$18.4M in annual savings with Smart Smart Platform - Manufacturing. 52% improvement in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-49",
+      "service_id": "smart-smart-platform-manufacturing-5b1aac0f",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Save $18.4 million/year. Smart Smart Platform - Manufacturing delivers 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-49",
+      "service_id": "smart-smart-platform-manufacturing-5b1aac0f",
+      "conversion_rate": "16%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:57:13.618550+00:00"
+}

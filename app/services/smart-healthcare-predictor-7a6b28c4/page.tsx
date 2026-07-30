@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Compliance monitoring with regulatory updates</li>
             <li>Multi-language support with localization</li>
             <li>Session management with timeout controls</li>
-            <li>A/B testing framework for continuous optimization</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Reduced return rates and costs</li>
             <li>Reduced legal review cycles</li>
             <li>Better lead quality and conversion rates</li>
-            <li>Reduced stockouts and overstocks</li>
           </ul>
         </div>
         

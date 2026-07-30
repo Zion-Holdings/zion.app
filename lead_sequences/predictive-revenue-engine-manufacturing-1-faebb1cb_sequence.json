@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-revenue-engine-manufacturing-1-faebb1cb",
+  "service_name": "Predictive Revenue Engine - Manufacturing #1",
+  "industry": "manufacturing",
+  "lead_magnet": "Predictive Maintenance ROI Calculator",
+  "metrics": {
+    "improvement": "51%",
+    "savings": "$15.8M",
+    "timeframe": "8 months",
+    "similar": "ManufactureCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, ManufactureCo is closing their Q3 deals this week. Want to see how Predictive Revenue Engine - Manufacturing #1 can help {company} save $15.8M?",
+      "sequence_id": "seq-74",
+      "service_id": "predictive-revenue-engine-manufacturing-1-faebb1cb"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Predictive Revenue Engine - Manufacturing #1 delivers 51% in 8 months.",
+      "sequence_id": "seq-74",
+      "service_id": "predictive-revenue-engine-manufacturing-1-faebb1cb"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-74",
+      "service_id": "predictive-revenue-engine-manufacturing-1-faebb1cb"
+    }
+  ],
+  "hot_lead_score": 74,
+  "conversion_likelihood": "51%",
+  "timestamp": "2026-07-30T06:57:06.864839+00:00"
+}

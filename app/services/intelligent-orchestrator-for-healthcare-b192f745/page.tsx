@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Orchestrator for Healthcare - Zion Tech Group",
-  description: "Drive innovation in healthcare with Intelligent Orchestrator for Healthcare. This AI-powered platform transforms financial risk management into a competitive advantage.",
+  description: "Drive innovation in healthcare with Intelligent Orchestrator for Healthcare. This AI-powered platform transforms financial risk management into a competitive ad",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-orchestrator-for-healthcare-b192f745`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Energy optimization with consumption tracking</li>
             <li>Data quality with anomaly detection</li>
             <li>Budget optimization with cost allocation</li>
-            <li>Auto-scaling capabilities with predictive scaling</li>
           </ul>
         </div>
         
@@ -35,8 +34,6 @@ export default function ServicePage() {
             <li>Enterprise-grade security with end-to-end encryption</li>
             <li>50% reduction in operational costs through automation</li>
             <li>better employee performance metrics</li>
-            <li>Reduced contract negotiation time</li>
-            <li>Enhanced security posture with continuous monitoring</li>
           </ul>
         </div>
         

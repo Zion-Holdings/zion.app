@@ -1,0 +1,35 @@
+{
+  "service_id": "neural-monitoring-for-hospitality-f4a1d015",
+  "service_name": "Neural Monitoring for Hospitality",
+  "industry": "hospitality",
+  "lead_magnet": "Guest Experience Automation Blueprint",
+  "metrics": {
+    "improvement": "42%",
+    "savings": "$7.6M",
+    "timeframe": "10 months",
+    "similar": "HotelChain"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, HotelChain just implemented Neural Monitoring for Hospitality last month - 42% improvement already. Thoughts?",
+      "sequence_id": "seq-13",
+      "service_id": "neural-monitoring-for-hospitality-f4a1d015"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: HotelChain saw $7.6M in savings. Your hospitality peers are seeing similar results.",
+      "sequence_id": "seq-13",
+      "service_id": "neural-monitoring-for-hospitality-f4a1d015"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-13",
+      "service_id": "neural-monitoring-for-hospitality-f4a1d015"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "74%",
+  "timestamp": "2026-07-30T06:57:06.796479+00:00"
+}

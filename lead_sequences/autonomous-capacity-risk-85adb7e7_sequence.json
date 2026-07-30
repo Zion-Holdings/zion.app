@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-capacity-risk-85adb7e7",
+  "service_name": "Autonomous Capacity Risk",
+  "industry": "automotive",
+  "lead_magnet": "Supply Chain Efficiency Audit",
+  "metrics": {
+    "improvement": "50%",
+    "savings": "$14.1M",
+    "timeframe": "6 months",
+    "similar": "AutoMakers"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, AutoMakers is closing their Q3 deals this week. Want to see how Autonomous Capacity Risk can help {company} save $14.1M?",
+      "sequence_id": "seq-19",
+      "service_id": "autonomous-capacity-risk-85adb7e7"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Autonomous Capacity Risk delivers 50% in 6 months.",
+      "sequence_id": "seq-19",
+      "service_id": "autonomous-capacity-risk-85adb7e7"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-19",
+      "service_id": "autonomous-capacity-risk-85adb7e7"
+    }
+  ],
+  "hot_lead_score": 65,
+  "conversion_likelihood": "40%",
+  "timestamp": "2026-07-30T06:57:06.804406+00:00"
+}

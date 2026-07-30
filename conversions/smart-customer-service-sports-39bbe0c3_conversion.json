@@ -1,0 +1,42 @@
+{
+  "service_id": "smart-customer-service-sports-39bbe0c3",
+  "service_name": null,
+  "industry": "sports",
+  "conversion_metrics": {
+    "open_rate": "70%",
+    "click_rate": "43%",
+    "reply_rate": "29%",
+    "close_rate": "17%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest sports challenge? Service solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-61",
+      "service_id": "smart-customer-service-sports-39bbe0c3",
+      "conversion_rate": "17%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is customer service holding you back? Service delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-61",
+      "service_id": "smart-customer-service-sports-39bbe0c3",
+      "conversion_rate": "17%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop customer service headaches. Service = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-61",
+      "service_id": "smart-customer-service-sports-39bbe0c3",
+      "conversion_rate": "17%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:54:15.497601+00:00"
+}

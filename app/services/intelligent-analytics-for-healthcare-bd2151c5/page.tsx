@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent Analytics for Healthcare - Zion Tech Group",
-  description: "Transform your healthcare operations with our Intelligent Analytics for Healthcare. This AI-driven solution automates language processing with unprecedented acc",
+  description: "The future of healthcare is here with Intelligent Analytics for Healthcare. Powered by cutting-edge AI, this platform delivers sales forecasting like never befo",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-analytics-for-healthcare-bd2151c5`
   }
@@ -13,25 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent Analytics for Healthcare</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your healthcare operations with our Intelligent Analytics for Healthcare. This AI-driven solution automates language processing with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of healthcare is here with Intelligent Analytics for Healthcare. Powered by cutting-edge AI, this platform delivers sales forecasting like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Version control with rollback capabilities</li>
-            <li>Financial risk management with scenario analysis</li>
-            <li>Audit trails with compliance reporting</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Serverless functions for cost-effective scaling</li>
+            <li>SOC 2 certified with security controls</li>
+            <li>Sales process optimization with pipeline management</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>Multi-language support with localization</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>ROI achieved in under 90 days with cost savings</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
-            <li>50% reduction in operational costs through automation</li>
+            <li>Scalable to millions of transactions per second</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
             <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>

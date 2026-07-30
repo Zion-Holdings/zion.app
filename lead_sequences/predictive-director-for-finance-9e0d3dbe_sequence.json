@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-director-for-finance-9e0d3dbe",
+  "service_name": "Predictive Director for Finance",
+  "industry": "finance",
+  "lead_magnet": "Regulatory Compliance Automation Guide",
+  "metrics": {
+    "improvement": "58%",
+    "savings": "$24.1M",
+    "timeframe": "5 months",
+    "similar": "Capital Group"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, Capital Group is closing their Q3 deals this week. Want to see how Predictive Director for Finance can help {company} save $24.1M?",
+      "sequence_id": "seq-19",
+      "service_id": "predictive-director-for-finance-9e0d3dbe"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Predictive Director for Finance delivers 58% in 5 months.",
+      "sequence_id": "seq-19",
+      "service_id": "predictive-director-for-finance-9e0d3dbe"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-19",
+      "service_id": "predictive-director-for-finance-9e0d3dbe"
+    }
+  ],
+  "hot_lead_score": 79,
+  "conversion_likelihood": "45%",
+  "timestamp": "2026-07-30T06:52:09.686318+00:00"
+}

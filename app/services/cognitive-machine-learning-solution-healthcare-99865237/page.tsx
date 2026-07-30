@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Machine Learning Solution - Healthcare - Zion Tech Group",
-  description: "Drive innovation in healthcare with Cognitive Machine Learning Solution - Healthcare. This AI-powered platform transforms user experience into a competitive advantage.",
+  description: "Drive innovation in healthcare with Cognitive Machine Learning Solution - Healthcare. This AI-powered platform transforms user experience into a competitive adv",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-machine-learning-solution-healthcare-99865237`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Real-time processing with streaming analytics</li>
             <li>Usage analytics with insights</li>
             <li>Risk quantification with scoring</li>
-            <li>Custom integrations with webhook support</li>
           </ul>
         </div>
         
@@ -35,9 +34,6 @@ export default function ServicePage() {
             <li>Faster time-to-market with accelerated development</li>
             <li>Improved customer satisfaction with faster response times</li>
             <li>Better shipping and delivery times</li>
-            <li>Performance benchmarking against industry standards</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
           </ul>
         </div>
         

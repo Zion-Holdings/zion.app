@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-cognitive-system-logistics-2928fc2c",
+  "service_name": "Autonomous Cognitive System - Logistics",
+  "industry": "logistics",
+  "lead_magnet": "Route Optimization Savings Estimator",
+  "metrics": {
+    "improvement": "49%",
+    "savings": "$11.2M",
+    "timeframe": "6 months",
+    "similar": "LogisticsPlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, LogisticsPlus is closing their Q3 deals this week. Want to see how Autonomous Cognitive System - Logistics can help {company} save $11.2M?",
+      "sequence_id": "seq-59",
+      "service_id": "autonomous-cognitive-system-logistics-2928fc2c"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Autonomous Cognitive System - Logistics delivers 49% in 6 months.",
+      "sequence_id": "seq-59",
+      "service_id": "autonomous-cognitive-system-logistics-2928fc2c"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-59",
+      "service_id": "autonomous-cognitive-system-logistics-2928fc2c"
+    }
+  ],
+  "hot_lead_score": 69,
+  "conversion_likelihood": "61%",
+  "timestamp": "2026-07-30T06:57:06.851215+00:00"
+}

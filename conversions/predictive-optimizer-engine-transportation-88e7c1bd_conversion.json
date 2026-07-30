@@ -1,0 +1,42 @@
+{
+  "service_id": "predictive-optimizer-engine-transportation-88e7c1bd",
+  "service_name": "Predictive Optimizer Engine - Transportation",
+  "industry": "transportation",
+  "conversion_metrics": {
+    "open_rate": "66%",
+    "click_rate": "39%",
+    "reply_rate": "25%",
+    "close_rate": "14%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest transportation challenge? Predictive Optimizer Engine - Transportation solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-89",
+      "service_id": "predictive-optimizer-engine-transportation-88e7c1bd",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is insights holding you back? Predictive Optimizer Engine - Transportation delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-89",
+      "service_id": "predictive-optimizer-engine-transportation-88e7c1bd",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop insights headaches. Predictive Optimizer Engine - Transportation = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-89",
+      "service_id": "predictive-optimizer-engine-transportation-88e7c1bd",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:57:13.638266+00:00"
+}

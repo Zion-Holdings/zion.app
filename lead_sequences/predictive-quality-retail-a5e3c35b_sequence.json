@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-quality-retail-a5e3c35b",
+  "service_name": "Predictive quality-retail",
+  "industry": "retail",
+  "lead_magnet": "Customer Retention Playbook",
+  "metrics": {
+    "improvement": "44%",
+    "savings": "$9.3M",
+    "timeframe": "7 months",
+    "similar": "RetailPro"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, RetailPro just implemented Predictive quality-retail last month - 44% improvement already. Thoughts?",
+      "sequence_id": "seq-73",
+      "service_id": "predictive-quality-retail-a5e3c35b"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: RetailPro saw $9.3M in savings. Your retail peers are seeing similar results.",
+      "sequence_id": "seq-73",
+      "service_id": "predictive-quality-retail-a5e3c35b"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-73",
+      "service_id": "predictive-quality-retail-a5e3c35b"
+    }
+  ],
+  "hot_lead_score": 68,
+  "conversion_likelihood": "70%",
+  "timestamp": "2026-07-30T06:57:06.864698+00:00"
+}

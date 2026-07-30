@@ -1,0 +1,42 @@
+{
+  "service_id": "coordinator-automated-real-estate-17d7826a",
+  "service_name": "Coordinator Automated - Real-Estate",
+  "industry": "real-estate",
+  "conversion_metrics": {
+    "open_rate": "66%",
+    "click_rate": "39%",
+    "reply_rate": "24%",
+    "close_rate": "14%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest real-estate challenge? Coordinator Automated - Real-Estate solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-82",
+      "service_id": "coordinator-automated-real-estate-17d7826a",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is insights holding you back? Coordinator Automated - Real-Estate delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-82",
+      "service_id": "coordinator-automated-real-estate-17d7826a",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop insights headaches. Coordinator Automated - Real-Estate = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-82",
+      "service_id": "coordinator-automated-real-estate-17d7826a",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:57:13.636439+00:00"
+}

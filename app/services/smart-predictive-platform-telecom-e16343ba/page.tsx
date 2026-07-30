@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Authentication with multiple providers</li>
             <li>Fault tolerance with redundancy</li>
             <li>Brand monitoring across social channels</li>
-            <li>Resource optimization with analytics</li>
           </ul>
         </div>
         
@@ -35,9 +34,6 @@ export default function ServicePage() {
             <li>Improved brand awareness with social monitoring</li>
             <li>Reduced stockouts and overstocks</li>
             <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Better benefits utilization rates</li>
-            <li>reduced workplace safety incidents</li>
-            <li>Better market positioning with competitive analysis</li>
           </ul>
         </div>
         

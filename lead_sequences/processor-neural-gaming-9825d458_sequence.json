@@ -1,0 +1,35 @@
+{
+  "service_id": "processor-neural-gaming-9825d458",
+  "service_name": "Processor Neural - Gaming",
+  "industry": "gaming",
+  "lead_magnet": "Player Retention Strategy Playbook",
+  "metrics": {
+    "improvement": "57%",
+    "savings": "$10.3M",
+    "timeframe": "5 months",
+    "similar": "GameStudio"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, GameStudio just implemented Processor Neural - Gaming last month - 57% improvement already. Thoughts?",
+      "sequence_id": "seq-33",
+      "service_id": "processor-neural-gaming-9825d458"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: GameStudio saw $10.3M in savings. Your gaming peers are seeing similar results.",
+      "sequence_id": "seq-33",
+      "service_id": "processor-neural-gaming-9825d458"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-33",
+      "service_id": "processor-neural-gaming-9825d458"
+    }
+  ],
+  "hot_lead_score": 79,
+  "conversion_likelihood": "70%",
+  "timestamp": "2026-07-30T06:57:06.823888+00:00"
+}

@@ -18,22 +18,20 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Mobile-responsive interface with offline capabilities</li>
-            <li>Healthcare data analytics with patient insights</li>
-            <li>Open-source friendly with plugin architecture</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Image recognition with computer vision</li>
+            <li>Version control with rollback capabilities</li>
+            <li>Serverless functions for cost-effective scaling</li>
+            <li>Content generation with plagiarism checks</li>
+            <li>Manufacturing quality control with defect detection</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced human error by 95% with automated processes</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
             <li>Real-time insights and alerts for proactive management</li>
-            <li>Cost optimization recommendations with savings analysis</li>
-            <li>Faster time-to-market with accelerated development</li>
+            <li>Performance benchmarking against industry standards</li>
+            <li>Improved customer satisfaction with faster response times</li>
           </ul>
         </div>
         

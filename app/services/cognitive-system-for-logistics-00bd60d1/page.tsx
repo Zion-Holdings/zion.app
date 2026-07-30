@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive System for Logistics - Zion Tech Group",
-  description: "Unlock unprecedented growth with Cognitive System for Logistics. This autonomous system provides manufacturing quality control with zero manual intervention nee",
+  description: "Unlock unprecedented growth with Cognitive System for Logistics. This autonomous system provides decision support with zero manual intervention needed.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-system-for-logistics-00bd60d1`
   }
@@ -13,25 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Cognitive System for Logistics</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Cognitive System for Logistics. This autonomous system provides manufacturing quality control with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Cognitive System for Logistics. This autonomous system provides decision support with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Energy optimization with consumption tracking</li>
-            <li>Sales process optimization with pipeline management</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Manufacturing quality control with defect detection</li>
-            <li>Open-source friendly with plugin architecture</li>
+            <li>Code optimization with performance profiling</li>
+            <li>Language processing with sentiment analysis</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>Data encryption at rest and in transit</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>3x faster decision making with real-time insights</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
             <li>50% reduction in operational costs through automation</li>
+            <li>Reduced human error by 95% with automated processes</li>
+            <li>Improved quality with automated testing and validation</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
           </ul>
         </div>
         

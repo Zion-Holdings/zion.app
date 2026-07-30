@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-management-engine-sports-6c44846c",
+  "service_name": "Predictive Management Engine - Sports",
+  "industry": "sports",
+  "lead_magnet": "Fan Engagement Growth Framework",
+  "metrics": {
+    "improvement": "55%",
+    "savings": "$8.9M",
+    "timeframe": "4 months",
+    "similar": "SportsTeam"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve sports. Our AI platform helped SportsTeam achieve 55% improvement in 4 months. Quick 5-minute call?",
+      "sequence_id": "seq-46",
+      "service_id": "predictive-management-engine-sports-6c44846c"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Predictive Management Engine - Sports typically saves $8.9M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-46",
+      "service_id": "predictive-management-engine-sports-6c44846c"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 55% results. If not interested, just let me know!",
+      "sequence_id": "seq-46",
+      "service_id": "predictive-management-engine-sports-6c44846c"
+    }
+  ],
+  "hot_lead_score": 71,
+  "conversion_likelihood": "71%",
+  "timestamp": "2026-07-30T06:57:06.844858+00:00"
+}

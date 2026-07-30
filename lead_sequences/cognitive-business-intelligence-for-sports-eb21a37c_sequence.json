@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-business-intelligence-for-sports-eb21a37c",
+  "service_name": "Cognitive Business Intelligence for Sports",
+  "industry": "sports",
+  "lead_magnet": "Fan Engagement Growth Framework",
+  "metrics": {
+    "improvement": "55%",
+    "savings": "$8.9M",
+    "timeframe": "4 months",
+    "similar": "SportsTeam"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with sports automation?",
+      "sequence_id": "seq-57",
+      "service_id": "cognitive-business-intelligence-for-sports-eb21a37c"
+    },
+    {
+      "step": 2,
+      "message": "We've helped SportsTeam solve this exact problem with Cognitive Business Intelligence for Sports. Achieved 55% in 4 months.",
+      "sequence_id": "seq-57",
+      "service_id": "cognitive-business-intelligence-for-sports-eb21a37c"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-57",
+      "service_id": "cognitive-business-intelligence-for-sports-eb21a37c"
+    }
+  ],
+  "hot_lead_score": 83,
+  "conversion_likelihood": "53%",
+  "timestamp": "2026-07-30T06:57:06.850798+00:00"
+}

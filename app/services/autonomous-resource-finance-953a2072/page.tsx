@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Resource Finance - Zion Tech Group",
-  description: "Revolutionize manufacturing through intelligent automation. Our Autonomous Resource Finance leverages advanced machine learning to deliver healthcare data analytics at scale.",
+  description: "Revolutionize manufacturing through intelligent automation. Our Autonomous Resource Finance leverages advanced machine learning to deliver healthcare data analy",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-resource-finance-953a2072`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Language processing with sentiment analysis</li>
             <li>SOC 2 certified with security controls</li>
             <li>Comprehensive monitoring with custom dashboards</li>
-            <li>Multi-language support with localization</li>
           </ul>
         </div>
         
@@ -35,9 +34,6 @@ export default function ServicePage() {
             <li>Higher customer lifetime value (CLV)</li>
             <li>Reduced customer acquisition costs with optimization</li>
             <li>Improved customer retention with proactive service</li>
-            <li>Better benefits utilization rates</li>
-            <li>Performance benchmarking against industry standards</li>
-            <li>Better shipping and delivery times</li>
           </ul>
         </div>
         

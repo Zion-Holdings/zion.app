@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cost management with budget alerts</li>
             <li>Revenue forecasting with market trend analysis</li>
             <li>Machine learning integration with automatic model training</li>
-            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         
@@ -35,9 +34,6 @@ export default function ServicePage() {
             <li>Improved order fulfillment rates</li>
             <li>Improved customer retention with proactive service</li>
             <li>Reduced infrastructure costs with cloud optimization</li>
-            <li>reduced returns and exchanges</li>
-            <li>Faster content creation with AI assistance</li>
-            <li>Cost optimization recommendations with savings analysis</li>
           </ul>
         </div>
         

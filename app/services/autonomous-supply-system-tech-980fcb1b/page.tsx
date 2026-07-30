@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Zero-downtime updates with blue-green deployment</li>
             <li>Real-time processing with streaming analytics</li>
             <li>Mobile-responsive interface with offline capabilities</li>
-            <li>CDN integration for global delivery</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Better inventory turnover ratios</li>
             <li>Improved customer satisfaction scores</li>
             <li>Reduced time to resolve (TTR) incidents</li>
-            <li>Better email open and click-through rates</li>
           </ul>
         </div>
         

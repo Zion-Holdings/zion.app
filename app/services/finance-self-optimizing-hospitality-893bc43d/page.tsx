@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Finance Self-Optimizing - Hospitality - Zion Tech Group",
-  description: "Transform your hospitality operations with our Finance Self-Optimizing - Hospitality. This AI-driven solution automates access management with unprecedented accuracy and efficiency.",
+  description: "Transform your hospitality operations with our Finance Self-Optimizing - Hospitality. This AI-driven solution automates access management with unprecedented acc",
   alternates: {
     canonical: `https://ziontechgroup.com/services/finance-self-optimizing-hospitality-893bc43d`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Threat intelligence with feeds</li>
             <li>API gateway with rate limiting</li>
             <li>Network optimization with traffic analysis</li>
-            <li>Process discovery with activity analysis</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Improved employee productivity with automation</li>
             <li>Improved customer satisfaction scores</li>
             <li>Dynamic resource allocation based on demand patterns</li>
-            <li>Reduced content creation time</li>
           </ul>
         </div>
         

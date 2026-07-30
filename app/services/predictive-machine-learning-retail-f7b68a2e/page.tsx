@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive machine learning-retail - Zion Tech Group",
-  description: "Drive innovation in retail with Predictive machine learning-retail. This AI-powered platform transforms data pipeline orchestration into a competitive advantage.",
+  description: "Drive innovation in retail with Predictive machine learning-retail. This AI-powered platform transforms data pipeline orchestration into a competitive advantage",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-machine-learning-retail-f7b68a2e`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Security information and event management (SIEM)</li>
             <li>Micro-segmentation for security zones</li>
             <li>User experience analytics with behavior tracking</li>
-            <li>Serverless functions for cost-effective scaling</li>
           </ul>
         </div>
         
@@ -35,9 +34,6 @@ export default function ServicePage() {
             <li>Improved forecast accuracy with ML models</li>
             <li>Faster time-to-market with accelerated development</li>
             <li>Reduced procurement cycle times</li>
-            <li>Improved customer satisfaction with faster response times</li>
-            <li>Reduced stockouts and overstocks</li>
-            <li>Reduced paid advertising costs</li>
           </ul>
         </div>
         

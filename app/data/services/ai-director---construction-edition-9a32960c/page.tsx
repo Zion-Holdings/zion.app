@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Director - Construction Edition - Zion Tech Group",
-  description: "Unlock unprecedented growth with AI Director - Construction Edition. This autonomous system provides supply chain with zero manual intervention needed.",
+  description: "Transform your construction operations with our AI Director - Construction Edition. This AI-driven solution automates decision support with unprecedented accuracy and efficiency.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-director---construction-edition-9a32960c`
   }
@@ -13,26 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Director - Construction Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with AI Director - Construction Edition. This autonomous system provides supply chain with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Transform your construction operations with our AI Director - Construction Edition. This AI-driven solution automates decision support with unprecedented accuracy and efficiency.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Microservices deployment with container orchestration</li>
-            <li>Open-source friendly with plugin architecture</li>
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Fraud detection with anomaly analysis</li>
-            <li>User experience analytics with behavior tracking</li>
-            <li>Inventory prediction with demand forecasting</li>
+            <li>Performance dashboards with real-time metrics</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>Maintenance scheduling with predictive analytics</li>
+            <li>Custom integrations with webhook support</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced human error by 95% with automated processes</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>Faster time-to-market with accelerated development</li>
             <li>Reduced churn with proactive customer retention</li>
-            <li>Improved quality with automated testing and validation</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
           </ul>
         </div>
         

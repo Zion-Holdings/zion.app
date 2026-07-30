@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Compliance Engine - Energy - Zion Tech Group",
-  description: "Enhance your energy business with Predictive Compliance Engine - Energy. Our solution provides feature engineering with enterprise-grade reliability and security.",
+  description: "Enhance your energy business with Predictive Compliance Engine - Energy. Our solution provides feature engineering with enterprise-grade reliability and securit",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-compliance-engine-energy-0d1fe397`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Audit trails with compliance reporting</li>
             <li>Inventory prediction with demand forecasting</li>
             <li>A/B testing framework for continuous optimization</li>
-            <li>Multi-language support with localization</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>Enhanced team productivity with intelligent assistance</li>
             <li>Zero manual intervention required for routine tasks</li>
             <li>ROI achieved in under 90 days with cost savings</li>
-            <li>Reduced shipping costs with route optimization</li>
           </ul>
         </div>
         

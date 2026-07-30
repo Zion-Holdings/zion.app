@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-processor-hospitality-edition-c531b40b",
+  "service_name": "AI Processor - Hospitality Edition",
+  "industry": "hospitality",
+  "lead_magnet": "Guest Experience Automation Blueprint",
+  "metrics": {
+    "improvement": "42%",
+    "savings": "$7.6M",
+    "timeframe": "10 months",
+    "similar": "HotelChain"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve hospitality. Our AI platform helped HotelChain achieve 42% improvement in 10 months. Quick 5-minute call?",
+      "sequence_id": "seq-61",
+      "service_id": "ai-processor-hospitality-edition-c531b40b"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the AI Processor - Hospitality Edition typically saves $7.6M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-61",
+      "service_id": "ai-processor-hospitality-edition-c531b40b"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 42% results. If not interested, just let me know!",
+      "sequence_id": "seq-61",
+      "service_id": "ai-processor-hospitality-edition-c531b40b"
+    }
+  ],
+  "hot_lead_score": 70,
+  "conversion_likelihood": "42%",
+  "timestamp": "2026-07-30T06:57:06.862867+00:00"
+}

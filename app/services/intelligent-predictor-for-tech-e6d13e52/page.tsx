@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Code optimization with performance profiling</li>
             <li>SOC 2 certified with security controls</li>
             <li>Automation opportunity identification</li>
-            <li>API gateway with rate limiting</li>
           </ul>
         </div>
         
@@ -35,8 +34,6 @@ export default function ServicePage() {
             <li>Improved conversion rates with personalization</li>
             <li>Higher first call resolution (FCR) rates</li>
             <li>Lower total cost of ownership (TCO)</li>
-            <li>50% reduction in operational costs through automation</li>
-            <li>Improved employee productivity with automation</li>
           </ul>
         </div>
         

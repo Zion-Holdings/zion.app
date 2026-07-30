@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Real Estate Engine - Healthcare - Zion Tech Group",
-  description: "Enhance your healthcare business with Predictive Real Estate Engine - Healthcare. Our solution provides project portfolio with enterprise-grade reliability and security.",
+  description: "Enhance your healthcare business with Predictive Real Estate Engine - Healthcare. Our solution provides project portfolio with enterprise-grade reliability and ",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-real-estate-engine-healthcare-7d17d656`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>GDPR compliance with data portability</li>
             <li>Machine learning integration with automatic model training</li>
             <li>Email security with anti-phishing</li>
-            <li>Security information and event management (SIEM)</li>
           </ul>
         </div>
         
@@ -35,9 +34,6 @@ export default function ServicePage() {
             <li>Improved performance review completion rates</li>
             <li>Reduced operational risks with predictive models</li>
             <li>Enhanced security with continuous threat monitoring</li>
-            <li>Performance benchmarking against industry standards</li>
-            <li>Faster time-to-market with accelerated development</li>
-            <li>Improved order fulfillment rates</li>
           </ul>
         </div>
         

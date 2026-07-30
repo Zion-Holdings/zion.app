@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-security-solution-retail-3c5311b8",
+  "service_name": "Cognitive Security Solution - Retail",
+  "industry": "retail",
+  "lead_magnet": "Customer Retention Playbook",
+  "metrics": {
+    "improvement": "44%",
+    "savings": "$9.3M",
+    "timeframe": "7 months",
+    "similar": "RetailPro"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, RetailPro just implemented Cognitive Security Solution - Retail last month - 44% improvement already. Thoughts?",
+      "sequence_id": "seq-78",
+      "service_id": "cognitive-security-solution-retail-3c5311b8"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: RetailPro saw $9.3M in savings. Your retail peers are seeing similar results.",
+      "sequence_id": "seq-78",
+      "service_id": "cognitive-security-solution-retail-3c5311b8"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-78",
+      "service_id": "cognitive-security-solution-retail-3c5311b8"
+    }
+  ],
+  "hot_lead_score": 82,
+  "conversion_likelihood": "43%",
+  "timestamp": "2026-07-30T06:57:06.865967+00:00"
+}

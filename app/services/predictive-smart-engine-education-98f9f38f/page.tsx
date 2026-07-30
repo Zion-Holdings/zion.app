@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Predictive Smart Engine - Education - Zion Tech Group",
-  description: "Transform your education operations with our Predictive Smart Engine - Education. This AI-driven solution automates supply chain with unprecedented accuracy and efficiency.",
+  description: "Transform your education operations with our Predictive Smart Engine - Education. This AI-driven solution automates supply chain with unprecedented accuracy and",
   alternates: {
     canonical: `https://ziontechgroup.com/services/predictive-smart-engine-education-98f9f38f`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Executive dashboards with drill-down capabilities</li>
             <li>Alerting system with intelligent notifications</li>
             <li>Fault tolerance with redundancy</li>
-            <li>Risk quantification with scoring</li>
           </ul>
         </div>
         
@@ -35,9 +34,6 @@ export default function ServicePage() {
             <li>reduced returns and exchanges</li>
             <li>Reduced content creation time</li>
             <li>Improved SEO rankings and organic traffic</li>
-            <li>Zero manual intervention required for routine tasks</li>
-            <li>Improved customer satisfaction with faster response times</li>
-            <li>Improved product quality with automated testing</li>
           </ul>
         </div>
         

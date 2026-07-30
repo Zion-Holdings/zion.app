@@ -1,0 +1,35 @@
+{
+  "service_id": "predictive-support-engine-manufacturing-ccad9509",
+  "service_name": "Predictive Support Engine - Manufacturing",
+  "industry": "manufacturing",
+  "lead_magnet": "Predictive Maintenance ROI Calculator",
+  "metrics": {
+    "improvement": "51%",
+    "savings": "$15.8M",
+    "timeframe": "8 months",
+    "similar": "ManufactureCo"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Question for {first_name} at {company}: What's your biggest challenge with manufacturing process mining?",
+      "sequence_id": "seq-22",
+      "service_id": "predictive-support-engine-manufacturing-ccad9509"
+    },
+    {
+      "step": 2,
+      "message": "We've helped ManufactureCo solve this exact problem with Predictive Support Engine - Manufacturing. Achieved 51% in 8 months.",
+      "sequence_id": "seq-22",
+      "service_id": "predictive-support-engine-manufacturing-ccad9509"
+    },
+    {
+      "step": 3,
+      "message": "Closing this out - would love to help {company} achieve similar results. Free 15-min call?",
+      "sequence_id": "seq-22",
+      "service_id": "predictive-support-engine-manufacturing-ccad9509"
+    }
+  ],
+  "hot_lead_score": 78,
+  "conversion_likelihood": "43%",
+  "timestamp": "2026-07-30T06:57:06.806936+00:00"
+}

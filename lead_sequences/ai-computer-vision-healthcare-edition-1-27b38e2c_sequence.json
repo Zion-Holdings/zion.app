@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-computer-vision-healthcare-edition-1-27b38e2c",
+  "service_name": "AI Computer Vision - Healthcare Edition #1",
+  "industry": "healthcare",
+  "lead_magnet": "HIPAA-Compliant Automation Checklist",
+  "metrics": {
+    "improvement": "47%",
+    "savings": "$12.7M",
+    "timeframe": "9 months",
+    "similar": "HealthFirst Hospital"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows healthcare companies using AI Computer Vision - Healthcare Edition #1 see 47% improvement. Your current process?",
+      "sequence_id": "seq-5",
+      "service_id": "ai-computer-vision-healthcare-edition-1-27b38e2c"
+    },
+    {
+      "step": 2,
+      "message": "Based on your healthcare profile, AI Computer Vision - Healthcare Edition #1 could save {company} approximately $12.7M. Interested in details?",
+      "sequence_id": "seq-5",
+      "service_id": "ai-computer-vision-healthcare-edition-1-27b38e2c"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. AI Computer Vision - Healthcare Edition #1 is proven to deliver 47% results.",
+      "sequence_id": "seq-5",
+      "service_id": "ai-computer-vision-healthcare-edition-1-27b38e2c"
+    }
+  ],
+  "hot_lead_score": 71,
+  "conversion_likelihood": "44%",
+  "timestamp": "2026-07-30T06:57:06.778616+00:00"
+}

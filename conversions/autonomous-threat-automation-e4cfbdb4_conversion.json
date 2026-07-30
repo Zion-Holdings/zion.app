@@ -1,0 +1,42 @@
+{
+  "service_id": "autonomous-threat-automation-e4cfbdb4",
+  "service_name": "Autonomous Threat Automation",
+  "industry": "hospitality",
+  "conversion_metrics": {
+    "open_rate": "63%",
+    "click_rate": "36%",
+    "reply_rate": "23%",
+    "close_rate": "13%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, data shows hospitality companies using Autonomous Threat Automation achieve 52%. Your baseline: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-11",
+      "service_id": "autonomous-threat-automation-e4cfbdb4",
+      "conversion_rate": "13%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "Based on {company}'s profile, Autonomous Threat Automation can save $18.4 million. Details: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-11",
+      "service_id": "autonomous-threat-automation-e4cfbdb4",
+      "conversion_rate": "13%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "ROI Analysis for {company}: 52% improvement, 6 months payback. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-11",
+      "service_id": "autonomous-threat-automation-e4cfbdb4",
+      "conversion_rate": "13%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:57:13.574440+00:00"
+}

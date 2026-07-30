@@ -1,0 +1,42 @@
+{
+  "service_id": "system-automated---real-estate-815f9430",
+  "service_name": null,
+  "industry": "real-estate",
+  "conversion_metrics": {
+    "open_rate": "66%",
+    "click_rate": "39%",
+    "reply_rate": "24%",
+    "close_rate": "14%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, {company} can save $18.4 million with Service. Quick call? https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-84",
+      "service_id": "system-automated---real-estate-815f9430",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "$18.4M in annual savings with Service. 52% improvement in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-84",
+      "service_id": "system-automated---real-estate-815f9430",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Save $18.4 million/year. Service delivers 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-84",
+      "service_id": "system-automated---real-estate-815f9430",
+      "conversion_rate": "14%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:51:54.004027+00:00"
+}

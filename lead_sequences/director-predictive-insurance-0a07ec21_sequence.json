@@ -1,0 +1,35 @@
+{
+  "service_id": "director-predictive-insurance-0a07ec21",
+  "service_name": "Director Predictive - Insurance",
+  "industry": "insurance",
+  "lead_magnet": "Claims Processing Automation Guide",
+  "metrics": {
+    "improvement": "54%",
+    "savings": "$17.3M",
+    "timeframe": "7 months",
+    "similar": "InsurePlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, InsurePlus just implemented Director Predictive - Insurance last month - 54% improvement already. Thoughts?",
+      "sequence_id": "seq-48",
+      "service_id": "director-predictive-insurance-0a07ec21"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: InsurePlus saw $17.3M in savings. Your insurance peers are seeing similar results.",
+      "sequence_id": "seq-48",
+      "service_id": "director-predictive-insurance-0a07ec21"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-48",
+      "service_id": "director-predictive-insurance-0a07ec21"
+    }
+  ],
+  "hot_lead_score": 76,
+  "conversion_likelihood": "55%",
+  "timestamp": "2026-07-30T06:57:06.845761+00:00"
+}

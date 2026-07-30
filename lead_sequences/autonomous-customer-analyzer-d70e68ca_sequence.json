@@ -1,0 +1,35 @@
+{
+  "service_id": "autonomous-customer-analyzer-d70e68ca",
+  "service_name": "Autonomous Customer Analyzer",
+  "industry": "legal",
+  "lead_magnet": "Document Review Automation Checklist",
+  "metrics": {
+    "improvement": "39%",
+    "savings": "$3.1M",
+    "timeframe": "14 months",
+    "similar": "LawFirm"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, LawFirm is closing their Q3 deals this week. Want to see how Autonomous Customer Analyzer can help {company} save $3.1M?",
+      "sequence_id": "seq-4",
+      "service_id": "autonomous-customer-analyzer-d70e68ca"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Autonomous Customer Analyzer delivers 39% in 14 months.",
+      "sequence_id": "seq-4",
+      "service_id": "autonomous-customer-analyzer-d70e68ca"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-4",
+      "service_id": "autonomous-customer-analyzer-d70e68ca"
+    }
+  ],
+  "hot_lead_score": 93,
+  "conversion_likelihood": "54%",
+  "timestamp": "2026-07-30T06:57:06.774293+00:00"
+}

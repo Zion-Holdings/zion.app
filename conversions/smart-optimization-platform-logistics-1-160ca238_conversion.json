@@ -1,0 +1,42 @@
+{
+  "service_id": "smart-optimization-platform-logistics-1-160ca238",
+  "service_name": "Smart Optimization Platform - Logistics #1",
+  "industry": "logistics",
+  "conversion_metrics": {
+    "open_rate": "67%",
+    "click_rate": "40%",
+    "reply_rate": "26%",
+    "close_rate": "15%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, Q3 Special: Smart Optimization Platform - Logistics #1 at 20% off. 52% improvement, $18.4M savings. Offer ends: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-69",
+      "service_id": "smart-optimization-platform-logistics-1-160ca238",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "Exclusive offer for {company}: 20% discount on Smart Optimization Platform - Logistics #1. 52% improvement guaranteed. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-69",
+      "service_id": "smart-optimization-platform-logistics-1-160ca238",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Limited-time: Smart Optimization Platform - Logistics #1 at 20% off. $18.4M savings. Book by Friday: https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-69",
+      "service_id": "smart-optimization-platform-logistics-1-160ca238",
+      "conversion_rate": "15%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:57:13.630710+00:00"
+}

@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Micro-segmentation for security zones</li>
             <li>Microservices deployment with container orchestration</li>
             <li>Sentiment analysis with real-time monitoring</li>
-            <li>Zero-trust network architecture</li>
           </ul>
         </div>
         
@@ -35,9 +34,6 @@ export default function ServicePage() {
             <li>Reduced compensation administration time</li>
             <li>Improved checkout conversion rates</li>
             <li>Reduced infrastructure costs with cloud optimization</li>
-            <li>Improved supplier performance scores</li>
-            <li>Reduced development time with code generation</li>
-            <li>Better compliance with automated audit trails</li>
           </ul>
         </div>
         

@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-adaptive-logistics-61df85b4",
+  "service_name": "Smart Adaptive - Logistics",
+  "industry": "logistics",
+  "lead_magnet": "Route Optimization Savings Estimator",
+  "metrics": {
+    "improvement": "49%",
+    "savings": "$11.2M",
+    "timeframe": "6 months",
+    "similar": "LogisticsPlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows logistics companies using Smart Adaptive - Logistics see 49% improvement. Your current process?",
+      "sequence_id": "seq-60",
+      "service_id": "smart-adaptive-logistics-61df85b4"
+    },
+    {
+      "step": 2,
+      "message": "Based on your logistics profile, Smart Adaptive - Logistics could save {company} approximately $11.2M. Interested in details?",
+      "sequence_id": "seq-60",
+      "service_id": "smart-adaptive-logistics-61df85b4"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Smart Adaptive - Logistics is proven to deliver 49% results.",
+      "sequence_id": "seq-60",
+      "service_id": "smart-adaptive-logistics-61df85b4"
+    }
+  ],
+  "hot_lead_score": 69,
+  "conversion_likelihood": "65%",
+  "timestamp": "2026-07-30T06:57:06.851383+00:00"
+}

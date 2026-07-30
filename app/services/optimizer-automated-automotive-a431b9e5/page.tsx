@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Data governance with policy enforcement</li>
             <li>Image recognition with computer vision</li>
             <li>Cost management with budget alerts</li>
-            <li>Disaster recovery automation</li>
           </ul>
         </div>
         
@@ -35,9 +34,6 @@ export default function ServicePage() {
             <li>Reduced infrastructure costs with cloud optimization</li>
             <li>Reduced marketing costs with targeted campaigns</li>
             <li>Improved contract renewal rates</li>
-            <li>better stakeholder satisfaction ratings</li>
-            <li>Improved checkout conversion rates</li>
-            <li>Better employee engagement scores</li>
           </ul>
         </div>
         

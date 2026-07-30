@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Scenario planning with Monte Carlo simulations</li>
             <li>Machine learning integration with automatic model training</li>
             <li>Backup and restore with versioning</li>
-            <li>Showback with utilization reports</li>
           </ul>
         </div>
         
@@ -35,9 +34,6 @@ export default function ServicePage() {
             <li>Reduced average handle time (AHT)</li>
             <li>Improved recruitment conversion rates</li>
             <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Improved employee productivity with automation</li>
-            <li>better stakeholder satisfaction ratings</li>
-            <li>Better lead quality and conversion rates</li>
           </ul>
         </div>
         

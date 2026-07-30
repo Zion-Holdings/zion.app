@@ -34,8 +34,6 @@ export default function ServicePage() {
             <li>Enterprise-grade security with end-to-end encryption</li>
             <li>Reduced sales cycle length</li>
             <li>improved compliance audit scores</li>
-            <li>Reduced time to resolve (TTR) incidents</li>
-            <li>Better supply chain visibility with tracking</li>
           </ul>
         </div>
         

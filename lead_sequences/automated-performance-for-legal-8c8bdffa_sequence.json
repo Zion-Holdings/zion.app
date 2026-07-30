@@ -1,0 +1,35 @@
+{
+  "service_id": "automated-performance-for-legal-8c8bdffa",
+  "service_name": "Automated Performance for Legal",
+  "industry": "legal",
+  "lead_magnet": "Document Review Automation Checklist",
+  "metrics": {
+    "improvement": "39%",
+    "savings": "$3.1M",
+    "timeframe": "14 months",
+    "similar": "LawFirm"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, I noticed {company} is exploring ways to improve legal. Our AI platform helped LawFirm achieve 39% improvement in 14 months. Quick 5-minute call?",
+      "sequence_id": "seq-16",
+      "service_id": "automated-performance-for-legal-8c8bdffa"
+    },
+    {
+      "step": 2,
+      "message": "Following up - the Automated Performance for Legal typically saves $3.1M annually. Would a brief chat this week work?",
+      "sequence_id": "seq-16",
+      "service_id": "automated-performance-for-legal-8c8bdffa"
+    },
+    {
+      "step": 3,
+      "message": "Last attempt - happy to share a case study showing 39% results. If not interested, just let me know!",
+      "sequence_id": "seq-16",
+      "service_id": "automated-performance-for-legal-8c8bdffa"
+    }
+  ],
+  "hot_lead_score": 73,
+  "conversion_likelihood": "48%",
+  "timestamp": "2026-07-30T06:52:09.685944+00:00"
+}

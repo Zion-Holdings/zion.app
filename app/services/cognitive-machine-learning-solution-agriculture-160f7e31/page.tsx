@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Machine Learning Solution - Agriculture - Zion Tech Group",
-  description: "Transform your agriculture operations with our Cognitive Machine Learning Solution - Agriculture. This AI-driven solution automates expense management with unprecedented accuracy and efficiency.",
+  description: "Transform your agriculture operations with our Cognitive Machine Learning Solution - Agriculture. This AI-driven solution automates expense management with unpr",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-machine-learning-solution-agriculture-160f7e31`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Network optimization with traffic analysis</li>
             <li>Business continuity planning</li>
             <li>Authentication with multiple providers</li>
-            <li>Zero-trust network architecture</li>
           </ul>
         </div>
         
@@ -35,9 +34,6 @@ export default function ServicePage() {
             <li>Faster time-to-market with accelerated development</li>
             <li>Predictive maintenance scheduling to prevent downtime</li>
             <li>Reduced procurement cycle times</li>
-            <li>Better vendor compliance rates</li>
-            <li>Improved conversion funnel metrics</li>
-            <li>Reduced content creation time</li>
           </ul>
         </div>
         

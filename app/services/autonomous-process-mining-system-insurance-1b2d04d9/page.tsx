@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Process Mining System - Insurance - Zion Tech Group",
-  description: "Drive innovation in insurance with Autonomous Process Mining System - Insurance. This AI-powered platform transforms customer service automation into a competitive advantage.",
+  description: "Drive innovation in insurance with Autonomous Process Mining System - Insurance. This AI-powered platform transforms customer service automation into a competit",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-process-mining-system-insurance-1b2d04d9`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Comprehensive monitoring with custom dashboards</li>
             <li>Web Application Firewall (WAF)</li>
             <li>Compliance monitoring with regulatory updates</li>
-            <li>Energy optimization with consumption tracking</li>
           </ul>
         </div>
         
@@ -35,9 +34,6 @@ export default function ServicePage() {
             <li>Reduced development time with code generation</li>
             <li>Zero manual intervention required for routine tasks</li>
             <li>Enhanced security with continuous threat monitoring</li>
-            <li>Reduced time to market for new products</li>
-            <li>Seamless integration with existing systems and workflows</li>
-            <li>Reduced human error by 95% with automated processes</li>
           </ul>
         </div>
         

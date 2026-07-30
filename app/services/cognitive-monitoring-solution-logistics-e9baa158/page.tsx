@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Identity management with IAM</li>
             <li>Code optimization with performance profiling</li>
             <li>Session management with timeout controls</li>
-            <li>Customer journey mapping with touchpoint analysis</li>
           </ul>
         </div>
         
@@ -35,9 +34,6 @@ export default function ServicePage() {
             <li>Enhanced security with continuous threat monitoring</li>
             <li>reduced workplace safety incidents</li>
             <li>Reduced paid advertising costs</li>
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>24/7 automated operations without human intervention</li>
-            <li>Seamless integration with existing systems and workflows</li>
           </ul>
         </div>
         

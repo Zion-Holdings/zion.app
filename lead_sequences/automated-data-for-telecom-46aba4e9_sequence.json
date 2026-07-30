@@ -1,0 +1,35 @@
+{
+  "service_id": "automated-data-for-telecom-46aba4e9",
+  "service_name": "Automated Data for Telecom",
+  "industry": "telecom",
+  "lead_magnet": "Network Optimization Cost Analysis",
+  "metrics": {
+    "improvement": "53%",
+    "savings": "$19.2M",
+    "timeframe": "5 months",
+    "similar": "TeleCom Solutions"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows telecom companies using Automated Data for Telecom see 53% improvement. Your current process?",
+      "sequence_id": "seq-85",
+      "service_id": "automated-data-for-telecom-46aba4e9"
+    },
+    {
+      "step": 2,
+      "message": "Based on your telecom profile, Automated Data for Telecom could save {company} approximately $19.2M. Interested in details?",
+      "sequence_id": "seq-85",
+      "service_id": "automated-data-for-telecom-46aba4e9"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. Automated Data for Telecom is proven to deliver 53% results.",
+      "sequence_id": "seq-85",
+      "service_id": "automated-data-for-telecom-46aba4e9"
+    }
+  ],
+  "hot_lead_score": 73,
+  "conversion_likelihood": "64%",
+  "timestamp": "2026-07-30T06:52:09.694465+00:00"
+}

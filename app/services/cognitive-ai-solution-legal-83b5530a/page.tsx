@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Incident response with playbooks</li>
             <li>Chaos engineering for resilience</li>
             <li>Risk quantification with scoring</li>
-            <li>FinOps with cloud financial management</li>
           </ul>
         </div>
         
@@ -35,7 +34,6 @@ export default function ServicePage() {
             <li>improved customer loyalty programs</li>
             <li>Reduced content creation time</li>
             <li>Reduced risk with early warning systems</li>
-            <li>Faster content creation with AI assistance</li>
           </ul>
         </div>
         

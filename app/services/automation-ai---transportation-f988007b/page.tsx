@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Automation AI - Transportation - Zion Tech Group",
-  description: "Next-generation transportation solution: Automation AI - Transportation. Combines sales process optimization with adaptive intelligence for optimal results.",
+  description: "Revolutionize transportation through intelligent automation. Our Automation AI - Transportation leverages advanced machine learning to deliver process automatio",
   alternates: {
     canonical: `https://ziontechgroup.com/services/automation-ai---transportation-f988007b`
   }
@@ -13,27 +13,26 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Automation AI - Transportation</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation transportation solution: Automation AI - Transportation. Combines sales process optimization with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize transportation through intelligent automation. Our Automation AI - Transportation leverages advanced machine learning to deliver process automation at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Network optimization with traffic analysis</li>
-            <li>Machine learning integration with automatic model training</li>
-            <li>Edge computing support for low-latency operations</li>
+            <li>Logistics route optimization with traffic prediction</li>
             <li>Custom integrations with webhook support</li>
-            <li>Alerting system with intelligent notifications</li>
+            <li>Multi-language support with localization</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>User experience analytics with behavior tracking</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>ROI achieved in under 90 days with cost savings</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Faster time-to-market with accelerated development</li>
-            <li>Improved quality with automated testing and validation</li>
-            <li>50% reduction in operational costs through automation</li>
+            <li>Zero manual intervention required for routine tasks</li>
+            <li>Enhanced security with continuous threat monitoring</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Cost optimization recommendations with savings analysis</li>
           </ul>
         </div>
         

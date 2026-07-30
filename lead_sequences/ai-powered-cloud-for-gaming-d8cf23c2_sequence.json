@@ -1,0 +1,35 @@
+{
+  "service_id": "ai-powered-cloud-for-gaming-d8cf23c2",
+  "service_name": "AI-Powered Cloud for Gaming",
+  "industry": "gaming",
+  "lead_magnet": "Player Retention Strategy Playbook",
+  "metrics": {
+    "improvement": "57%",
+    "savings": "$10.3M",
+    "timeframe": "5 months",
+    "similar": "GameStudio"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, our data shows gaming companies using AI-Powered Cloud for Gaming see 57% improvement. Your current process?",
+      "sequence_id": "seq-95",
+      "service_id": "ai-powered-cloud-for-gaming-d8cf23c2"
+    },
+    {
+      "step": 2,
+      "message": "Based on your gaming profile, AI-Powered Cloud for Gaming could save {company} approximately $10.3M. Interested in details?",
+      "sequence_id": "seq-95",
+      "service_id": "ai-powered-cloud-for-gaming-d8cf23c2"
+    },
+    {
+      "step": 3,
+      "message": "Wrapping up outreach - the data doesn't lie. AI-Powered Cloud for Gaming is proven to deliver 57% results.",
+      "sequence_id": "seq-95",
+      "service_id": "ai-powered-cloud-for-gaming-d8cf23c2"
+    }
+  ],
+  "hot_lead_score": 78,
+  "conversion_likelihood": "54%",
+  "timestamp": "2026-07-30T06:52:09.695606+00:00"
+}

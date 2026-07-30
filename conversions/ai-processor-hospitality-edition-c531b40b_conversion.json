@@ -1,0 +1,42 @@
+{
+  "service_id": "ai-processor-hospitality-edition-c531b40b",
+  "service_name": "AI Processor - Hospitality Edition",
+  "industry": "hospitality",
+  "conversion_metrics": {
+    "open_rate": "63%",
+    "click_rate": "36%",
+    "reply_rate": "23%",
+    "close_rate": "13%"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, biggest hospitality challenge? AI Processor - Hospitality Edition solves it. 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-61",
+      "service_id": "ai-processor-hospitality-edition-c531b40b",
+      "conversion_rate": "13%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 2,
+      "message": "{company} - is analyzer holding you back? AI Processor - Hospitality Edition delivers 52% in 6 months. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-61",
+      "service_id": "ai-processor-hospitality-edition-c531b40b",
+      "conversion_rate": "13%",
+      "expected_revenue": "$18.4M"
+    },
+    {
+      "step": 3,
+      "message": "Stop analyzer headaches. AI Processor - Hospitality Edition = 52% improvement. https://calendly.com/kleber-ziontechgroup/consultation",
+      "sequence_id": "rev-seq-61",
+      "service_id": "ai-processor-hospitality-edition-c531b40b",
+      "conversion_rate": "13%",
+      "expected_revenue": "$18.4M"
+    }
+  ],
+  "hot_lead_score": 85,
+  "conversion_likelihood": "68%",
+  "expected_revenue": "$15.2M",
+  "calendly_url": "https://calendly.com/kleber-ziontechgroup/consultation",
+  "timestamp": "2026-07-30T06:57:13.625413+00:00"
+}

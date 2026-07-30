@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>DDoS protection with mitigation</li>
             <li>Content generation with plagiarism checks</li>
             <li>Policy management with enforcement</li>
-            <li>Chargeback with cost allocation</li>
           </ul>
         </div>
         
@@ -35,9 +34,6 @@ export default function ServicePage() {
             <li>Better email open and click-through rates</li>
             <li>Increased revenue with optimized pricing strategies</li>
             <li>Reduced average handle time (AHT)</li>
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>Reduced compensation administration time</li>
-            <li>Improved product quality scores</li>
           </ul>
         </div>
         

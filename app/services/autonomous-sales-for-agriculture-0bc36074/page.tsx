@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Autonomous Sales for Agriculture - Zion Tech Group",
-  description: "Revolutionize agriculture through intelligent automation. Our Autonomous Sales for Agriculture leverages advanced machine learning to deliver content moderation at scale.",
+  description: "Revolutionize agriculture through intelligent automation. Our Autonomous Sales for Agriculture leverages advanced machine learning to deliver content moderation",
   alternates: {
     canonical: `https://ziontechgroup.com/services/autonomous-sales-for-agriculture-0bc36074`
   }
@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Authorization with fine-grained permissions</li>
             <li>Identity management with IAM</li>
             <li>Code optimization with performance profiling</li>
-            <li>Sentiment analysis with real-time monitoring</li>
           </ul>
         </div>
         
@@ -35,9 +34,6 @@ export default function ServicePage() {
             <li>Faster time-to-market with accelerated development</li>
             <li>Cost optimization recommendations with savings analysis</li>
             <li>Reduced training time to productivity</li>
-            <li>Better inventory management with demand forecasting</li>
-            <li>Higher customer lifetime value (CLV)</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
           </ul>
         </div>
         

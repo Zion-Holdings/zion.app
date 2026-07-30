@@ -23,7 +23,6 @@ export default function ServicePage() {
             <li>Cache optimization with Redis</li>
             <li>Cost reduction with process mining</li>
             <li>Version control with rollback capabilities</li>
-            <li>Network optimization with traffic analysis</li>
           </ul>
         </div>
         
@@ -35,9 +34,6 @@ export default function ServicePage() {
             <li>Scalable to millions of transactions per second</li>
             <li>reduced returns and exchanges</li>
             <li>Reduced procurement cycle times</li>
-            <li>Better shipping and delivery times</li>
-            <li>Reduced customer acquisition costs with optimization</li>
-            <li>Reduced compensation administration time</li>
           </ul>
         </div>
         

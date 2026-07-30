@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Adaptive cognitive-gaming - Zion Tech Group",
-  description: "Revolutionize gaming through intelligent automation. Our Adaptive cognitive-gaming leverages advanced machine learning to deliver compliance monitoring at scale.",
+  description: "Revolutionize gaming through intelligent automation. Our Adaptive cognitive-gaming leverages advanced machine learning to deliver compliance monitoring at scale",
   alternates: {
     canonical: `https://ziontechgroup.com/services/adaptive-cognitive-gaming-ec0273ee`
   }
@@ -56,8 +56,8 @@ export default function ServicePage() {
         </div>
         
         <div className="text-center">
-          <a
-            href="https://calendly.com/kleber-ziontechgroup/consultation"
+          <a 
+            href="https://calendly.com/kleber-ziontechgroup/consultation" 
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full text-lg transition-colors"

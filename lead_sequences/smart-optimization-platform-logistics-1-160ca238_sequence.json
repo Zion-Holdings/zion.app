@@ -1,0 +1,35 @@
+{
+  "service_id": "smart-optimization-platform-logistics-1-160ca238",
+  "service_name": "Smart Optimization Platform - Logistics #1",
+  "industry": "logistics",
+  "lead_magnet": "Route Optimization Savings Estimator",
+  "metrics": {
+    "improvement": "49%",
+    "savings": "$11.2M",
+    "timeframe": "6 months",
+    "similar": "LogisticsPlus"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, LogisticsPlus is closing their Q3 deals this week. Want to see how Smart Optimization Platform - Logistics #1 can help {company} save $11.2M?",
+      "sequence_id": "seq-69",
+      "service_id": "smart-optimization-platform-logistics-1-160ca238"
+    },
+    {
+      "step": 2,
+      "message": "Final reminder - Q3 budget decisions are being made. Smart Optimization Platform - Logistics #1 delivers 49% in 6 months.",
+      "sequence_id": "seq-69",
+      "service_id": "smart-optimization-platform-logistics-1-160ca238"
+    },
+    {
+      "step": 3,
+      "message": "That's it from me - hope {company} achieves great results this quarter!",
+      "sequence_id": "seq-69",
+      "service_id": "smart-optimization-platform-logistics-1-160ca238"
+    }
+  ],
+  "hot_lead_score": 75,
+  "conversion_likelihood": "55%",
+  "timestamp": "2026-07-30T06:57:06.864078+00:00"
+}

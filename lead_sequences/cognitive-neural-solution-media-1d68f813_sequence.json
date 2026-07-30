@@ -1,0 +1,35 @@
+{
+  "service_id": "cognitive-neural-solution-media-1d68f813",
+  "service_name": "Cognitive Neural Solution - Media",
+  "industry": "media",
+  "lead_magnet": "Content Performance Optimization Guide",
+  "metrics": {
+    "improvement": "43%",
+    "savings": "$6.8M",
+    "timeframe": "9 months",
+    "similar": "MediaHouse"
+  },
+  "variations": [
+    {
+      "step": 1,
+      "message": "Hi {first_name}, MediaHouse just implemented Cognitive Neural Solution - Media last month - 43% improvement already. Thoughts?",
+      "sequence_id": "seq-93",
+      "service_id": "cognitive-neural-solution-media-1d68f813"
+    },
+    {
+      "step": 2,
+      "message": "Quick update: MediaHouse saw $6.8M in savings. Your media peers are seeing similar results.",
+      "sequence_id": "seq-93",
+      "service_id": "cognitive-neural-solution-media-1d68f813"
+    },
+    {
+      "step": 3,
+      "message": "Last note - happy to share the full case study. Otherwise, I'll stop reaching out. Thanks for your time!",
+      "sequence_id": "seq-93",
+      "service_id": "cognitive-neural-solution-media-1d68f813"
+    }
+  ],
+  "hot_lead_score": 75,
+  "conversion_likelihood": "41%",
+  "timestamp": "2026-07-30T06:57:06.885362+00:00"
+}

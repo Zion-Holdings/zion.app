@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Smart sales-transportation - Zion Tech Group",
-  description: "Transform your transportation operations with our Smart sales-transportation. This AI-driven solution automates risk assessment with unprecedented accuracy and ",
+  description: "Revolutionize transportation through intelligent automation. Our Smart sales-transportation leverages advanced machine learning to deliver threat detection at s",
   alternates: {
     canonical: `https://ziontechgroup.com/services/smart-sales-transportation-ff0577b5`
   }
@@ -13,27 +13,27 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Smart sales-transportation</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your transportation operations with our Smart sales-transportation. This AI-driven solution automates risk assessment with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize transportation through intelligent automation. Our Smart sales-transportation leverages advanced machine learning to deliver threat detection at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Maintenance scheduling with predictive analytics</li>
+            <li>Version control with rollback capabilities</li>
+            <li>GDPR compliance with data portability</li>
+            <li>HIPAA ready with healthcare data protection</li>
             <li>Network optimization with traffic analysis</li>
-            <li>Alerting system with intelligent notifications</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Customer service automation with chatbot integration</li>
-            <li>Performance dashboards with real-time metrics</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>50% reduction in operational costs through automation</li>
-            <li>Reduced human error by 95% with automated processes</li>
-            <li>99.9% uptime guarantee with redundant architecture</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>Better compliance with automated audit trails</li>
             <li>Faster time-to-market with accelerated development</li>
+            <li>Improved quality with automated testing and validation</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Better risk management with predictive analytics</li>
           </ul>
         </div>
         
