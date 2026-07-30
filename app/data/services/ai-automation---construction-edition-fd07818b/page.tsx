@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Automation - Construction Edition - Zion Tech Group",
-  description: "Unlock unprecedented growth with AI Automation - Construction Edition. This autonomous system provides document processing with zero manual intervention needed.",
+  description: "Unlock unprecedented growth with AI Automation - Construction Edition. This autonomous system provides user experience with zero manual intervention needed.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-automation---construction-edition-fd07818b`
   }
@@ -13,26 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Automation - Construction Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with AI Automation - Construction Edition. This autonomous system provides document processing with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with AI Automation - Construction Edition. This autonomous system provides user experience with zero manual intervention needed.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Auto-scaling capabilities with predictive scaling</li>
-            <li>Data encryption at rest and in transit</li>
-            <li>Real-time processing with streaming analytics</li>
-            <li>User experience analytics with behavior tracking</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Multi-region deployment with automatic failover</li>
+            <li>GDPR compliance with data portability</li>
+            <li>Alerting system with intelligent notifications</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>Microservices deployment with container orchestration</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Better risk management with predictive analytics</li>
-            <li>Automated compliance reporting for regulatory requirements</li>
-            <li>Zero manual intervention required for routine tasks</li>
+            <li>3x faster decision making with real-time insights</li>
+            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Performance benchmarking against industry standards</li>
           </ul>
         </div>
         
