@@ -18,22 +18,21 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
-            <li>Logistics route optimization with traffic prediction</li>
-            <li>A/B testing framework for continuous optimization</li>
-            <li>Custom integrations with webhook support</li>
-            <li>GDPR compliance with data portability</li>
+            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Sales process optimization with pipeline management</li>
+            <li>Open-source friendly with plugin architecture</li>
+            <li>SOC 2 certified with security controls</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Improved customer satisfaction with faster response times</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Faster time-to-market with accelerated development</li>
-            <li>Performance benchmarking against industry standards</li>
+            <li>24/7 automated operations without human intervention</li>
+            <li>50% reduction in operational costs through automation</li>
+            <li>Reduced human error by 95% with automated processes</li>
+            <li>Cost optimization recommendations with savings analysis</li>
+            <li>Better risk management with predictive analytics</li>
           </ul>
         </div>
         

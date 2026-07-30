@@ -18,22 +18,20 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Content generation with plagiarism checks</li>
-            <li>Real-time processing with streaming analytics</li>
-            <li>Customer service automation with chatbot integration</li>
-            <li>Alerting system with intelligent notifications</li>
-            <li>Code optimization with performance profiling</li>
+            <li>Serverless functions for cost-effective scaling</li>
+            <li>Multi-language support with localization</li>
+            <li>HIPAA ready with healthcare data protection</li>
+            <li>Fraud detection with anomaly analysis</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>50% reduction in operational costs through automation</li>
-            <li>Performance benchmarking against industry standards</li>
-            <li>Enterprise-grade security with end-to-end encryption</li>
-            <li>Improved quality with automated testing and validation</li>
-            <li>Dynamic resource allocation based on demand patterns</li>
+            <li>Increased revenue with optimized pricing strategies</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Enhanced security with continuous threat monitoring</li>
           </ul>
         </div>
         

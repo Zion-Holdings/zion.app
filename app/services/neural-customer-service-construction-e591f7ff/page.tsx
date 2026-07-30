@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Neural customer service-construction - Zion Tech Group",
-  description: "Transform your construction operations with our Neural customer service-construction. This AI-driven solution automates brand monitoring with unprecedented accu",
+  description: "Next-generation construction solution: Neural customer service-construction. Combines image recognition with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/neural-customer-service-construction-e591f7ff`
   }
@@ -13,26 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Neural customer service-construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Transform your construction operations with our Neural customer service-construction. This AI-driven solution automates brand monitoring with unprecedented accuracy and efficiency.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: Neural customer service-construction. Combines image recognition with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Network optimization with traffic analysis</li>
-            <li>Inventory prediction with demand forecasting</li>
+            <li>Mobile-responsive interface with offline capabilities</li>
+            <li>Financial risk management with scenario analysis</li>
             <li>Image recognition with computer vision</li>
-            <li>Market analysis with buyer behavior insights</li>
-            <li>Comprehensive monitoring with custom dashboards</li>
+            <li>Performance dashboards with real-time metrics</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced churn with proactive customer retention</li>
-            <li>3x faster decision making with real-time insights</li>
-            <li>Reduced development time with code generation</li>
-            <li>Improved conversion rates with personalization</li>
+            <li>50% reduction in operational costs through automation</li>
+            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Improved customer satisfaction with faster response times</li>
           </ul>
         </div>
         

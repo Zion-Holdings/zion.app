@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Cognitive Logistics Manager - Zion Tech Group",
-  description: "Next-generation construction solution: Cognitive Logistics Manager. Combines executive dashboards with adaptive intelligence for optimal results.",
+  description: "Next-generation real-estate solution: Cognitive Logistics Manager. Combines data processing with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/cognitive-logistics-manager-2ce9f16f`
   }
@@ -13,25 +13,23 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Cognitive Logistics Manager</h1>
-        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: Cognitive Logistics Manager. Combines executive dashboards with adaptive intelligence for optimal results.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation real-estate solution: Cognitive Logistics Manager. Combines data processing with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Logistics route optimization with traffic prediction</li>
-            <li>Maintenance scheduling with predictive analytics</li>
-            <li>Real-time processing with streaming analytics</li>
             <li>Sales process optimization with pipeline management</li>
-            <li>Predictive modeling with ensemble methods</li>
+            <li>Multi-language support with localization</li>
+            <li>Customer service automation with chatbot integration</li>
+            <li>A/B testing framework for continuous optimization</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>24/7 automated operations without human intervention</li>
-            <li>Improved product quality with automated testing</li>
-            <li>Reduced customer acquisition costs with optimization</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
             <li>Cost optimization recommendations with savings analysis</li>
           </ul>
         </div>

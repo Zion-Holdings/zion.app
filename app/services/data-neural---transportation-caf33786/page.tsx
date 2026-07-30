@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Data Neural - Transportation - Zion Tech Group",
-  description: "The future of transportation is here with Data Neural - Transportation. Powered by cutting-edge AI, this platform delivers inventory management like never befor",
+  description: "Revolutionize transportation through intelligent automation. Our Data Neural - Transportation leverages advanced machine learning to deliver image recognition a",
   alternates: {
     canonical: `https://ziontechgroup.com/services/data-neural---transportation-caf33786`
   }
@@ -13,25 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Data Neural - Transportation</h1>
-        <p className="text-lg text-gray-300 mb-8">The future of transportation is here with Data Neural - Transportation. Powered by cutting-edge AI, this platform delivers inventory management like never before.</p>
+        <p className="text-lg text-gray-300 mb-8">Revolutionize transportation through intelligent automation. Our Data Neural - Transportation leverages advanced machine learning to deliver image recognition at scale.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Real-time processing with streaming analytics</li>
             <li>Multi-region deployment with automatic failover</li>
-            <li>Version control with rollback capabilities</li>
-            <li>SOC 2 certified with security controls</li>
-            <li>Language processing with sentiment analysis</li>
-            <li>HIPAA ready with healthcare data protection</li>
+            <li>Manufacturing quality control with defect detection</li>
+            <li>Energy optimization with consumption tracking</li>
+            <li>Multi-language support with localization</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Real-time insights and alerts for proactive management</li>
+            <li>50% reduction in operational costs through automation</li>
             <li>Improved customer satisfaction with faster response times</li>
-            <li>24/7 automated operations without human intervention</li>
+            <li>3x faster decision making with real-time insights</li>
           </ul>
         </div>
         

@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "Intelligent DevOps for Construction - Zion Tech Group",
-  description: "Unlock unprecedented growth with Intelligent DevOps for Construction. This autonomous system provides document processing with zero manual intervention needed.",
+  description: "Next-generation construction solution: Intelligent DevOps for Construction. Combines customer insights with adaptive intelligence for optimal results.",
   alternates: {
     canonical: `https://ziontechgroup.com/services/intelligent-devops-for-construction-b77ae181`
   }
@@ -13,15 +13,15 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">Intelligent DevOps for Construction</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with Intelligent DevOps for Construction. This autonomous system provides document processing with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">Next-generation construction solution: Intelligent DevOps for Construction. Combines customer insights with adaptive intelligence for optimal results.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
+            <li>Energy optimization with consumption tracking</li>
             <li>Alerting system with intelligent notifications</li>
-            <li>Financial risk management with scenario analysis</li>
-            <li>Cloud-native architecture with multi-region deployment</li>
-            <li>Customer service automation with chatbot integration</li>
+            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>Code optimization with performance profiling</li>
             <li>Machine learning integration with automatic model training</li>
           </ul>
         </div>
@@ -29,10 +29,10 @@ export default function ServicePage() {
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>24/7 automated operations without human intervention</li>
-            <li>3x faster decision making with real-time insights</li>
-            <li>Enhanced team productivity with intelligent assistance</li>
-            <li>Zero manual intervention required for routine tasks</li>
+            <li>Enterprise-grade security with end-to-end encryption</li>
+            <li>Automated compliance reporting for regulatory requirements</li>
+            <li>Better risk management with predictive analytics</li>
+            <li>Better compliance with automated audit trails</li>
           </ul>
         </div>
         

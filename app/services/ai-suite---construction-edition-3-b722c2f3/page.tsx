@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Suite - Construction Edition #3 - Zion Tech Group",
-  description: "Unlock unprecedented growth with AI Suite - Construction Edition #3. This autonomous system provides financial risk management with zero manual intervention nee",
+  description: "The future of construction is here with AI Suite - Construction Edition #3. Powered by cutting-edge AI, this platform delivers network optimization like never b",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-suite---construction-edition-3-b722c2f3`
   }
@@ -13,26 +13,25 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Suite - Construction Edition #3</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with AI Suite - Construction Edition #3. This autonomous system provides financial risk management with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of construction is here with AI Suite - Construction Edition #3. Powered by cutting-edge AI, this platform delivers network optimization like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>HIPAA ready with healthcare data protection</li>
-            <li>Data encryption at rest and in transit</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
-            <li>Multi-region deployment with automatic failover</li>
+            <li>Multi-language support with localization</li>
+            <li>Logistics route optimization with traffic prediction</li>
+            <li>Security monitoring with threat intelligence</li>
+            <li>Machine learning integration with automatic model training</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Reduced churn with proactive customer retention</li>
-            <li>Real-time insights and alerts for proactive management</li>
-            <li>Improved quality with automated testing and validation</li>
-            <li>ROI achieved in under 90 days with cost savings</li>
+            <li>Enhanced team productivity with intelligent assistance</li>
             <li>3x faster decision making with real-time insights</li>
+            <li>Improved customer satisfaction with faster response times</li>
+            <li>Better compliance with automated audit trails</li>
           </ul>
         </div>
         

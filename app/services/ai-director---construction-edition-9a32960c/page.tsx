@@ -2,7 +2,7 @@ import { } from 'next/navigation';
 
 export const metadata = {
   title: "AI Director - Construction Edition - Zion Tech Group",
-  description: "Unlock unprecedented growth with AI Director - Construction Edition. This autonomous system provides maintenance scheduling with zero manual intervention needed",
+  description: "The future of construction is here with AI Director - Construction Edition. Powered by cutting-edge AI, this platform delivers data processing like never before",
   alternates: {
     canonical: `https://ziontechgroup.com/services/ai-director---construction-edition-9a32960c`
   }
@@ -13,27 +13,24 @@ export default function ServicePage() {
     <main className="min-h-screen bg-slate-950 text-white py-12 px-4">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold mb-6">AI Director - Construction Edition</h1>
-        <p className="text-lg text-gray-300 mb-8">Unlock unprecedented growth with AI Director - Construction Edition. This autonomous system provides maintenance scheduling with zero manual intervention needed.</p>
+        <p className="text-lg text-gray-300 mb-8">The future of construction is here with AI Director - Construction Edition. Powered by cutting-edge AI, this platform delivers data processing like never before.</p>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Key Features</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>HIPAA ready with healthcare data protection</li>
+            <li>Cloud-native architecture with multi-region deployment</li>
+            <li>Manufacturing quality control with defect detection</li>
             <li>Healthcare data analytics with patient insights</li>
-            <li>Custom integrations with webhook support</li>
-            <li>Version control with rollback capabilities</li>
-            <li>Zero-downtime updates with blue-green deployment</li>
+            <li>API-first design with comprehensive REST and GraphQL endpoints</li>
           </ul>
         </div>
         
         <div className="bg-slate-900 rounded-xl p-6 mb-8">
           <h2 className="text-2xl font-semibold mb-4">Benefits</h2>
           <ul className="list-disc list-inside space-y-2">
-            <li>Scalable to millions of transactions per second</li>
             <li>Real-time insights and alerts for proactive management</li>
-            <li>Better compliance with automated audit trails</li>
-            <li>Faster time-to-market with accelerated development</li>
-            <li>Performance benchmarking against industry standards</li>
+            <li>50% reduction in operational costs through automation</li>
+            <li>Cost optimization recommendations with savings analysis</li>
           </ul>
         </div>
         
