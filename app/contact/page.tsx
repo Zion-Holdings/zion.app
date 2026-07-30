@@ -24,10 +24,19 @@ export default function ContactPage() {
             Tell us about your AI, IT, or automation project. We respond fast and can start with a free consultation.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 mt-6">
-            <a href="tel:+13024640950" className="btn-primary text-lg">☎ +1 302 464 0950</a>
+            <a href="tel:+130****0950" className="btn-primary text-lg">☎ +1 302 464 0950</a>
             <a href="https://calendly.com/kleber-ziontechgroup" target="_blank" rel="noreferrer" className="btn-secondary text-lg">📅 Book Consultation</a>
             <a href="https://meet.google.com/ouu-khao-kuy" target="_blank" rel="noreferrer" className="btn-secondary text-lg">🎥 Google Meet</a>
             <Link href="/services/" className="btn-secondary text-lg">Our Services</Link>
+          </div>
+          <div className="flex flex-wrap justify-center gap-3 mt-4 text-sm text-slate-400">
+            <span>24h response</span>
+            <span>•</span>
+            <span>US-based delivery</span>
+            <span>•</span>
+            <span>SLA-backed</span>
+            <span>•</span>
+            <span>HIPAA ready</span>
           </div>
         </header>
 

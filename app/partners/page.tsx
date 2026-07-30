@@ -41,6 +41,13 @@ export default function PartnersPage() {
             <a href="/contact/" className="btn-primary text-lg px-8 py-3">Become a partner</a>
             <a href="/proposals/" className="btn-secondary text-lg px-8 py-3">Submit a proposal</a>
           </div>
+          <div className="flex flex-wrap justify-center gap-4 mt-5 text-sm text-slate-400">
+            <span>4.8/5</span><span>Client rating</span>
+            <span>•</span>
+            <span>24h</span><span>Response</span>
+            <span>•</span>
+            <span>US-Based</span><span>Delivery</span>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto mb-16">
